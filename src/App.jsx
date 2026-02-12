@@ -1,0 +1,2140 @@
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import {
+  Calendar,
+  Activity,
+  TrendingUp,
+  AlertTriangle,
+  ChevronDown,
+  ChevronUp,
+  X,
+  Filter,
+  Search,
+  Clock,
+  Shield,
+  Zap,
+  Target,
+  BarChart3,
+  ArrowUpRight,
+  ExternalLink,
+} from 'lucide-react';
+
+const CATALYSTS_DATA = [
+  {
+    id: 'vrdn-veligrotug-2026-06-30',
+    date: '2026-06-30',
+    company: 'Viridian Therapeutics',
+    ticker: 'VRDN',
+    drug: 'Veligrotug',
+    indication: 'Thyroid Eye Disease',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6916,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1134,
+  },
+  {
+    id: 'kura-tipifarnib-2026-07-01',
+    date: '2026-07-01',
+    company: 'Kura Oncology',
+    ticker: 'KURA',
+    drug: 'Tipifarnib',
+    indication: 'HRAS-mutant HNSCC',
+    type: 'PDUFA',
+    appType: 'NDA',
+    ta: 'Oncology',
+    phase: 'Phase 2',
+    designations: ['Breakthrough Therapy', 'Orphan Drug', 'Priority Review'],
+    enrollment: 63,
+    nctId: 'NCT02383927',
+    prob: 0.9365,
+    tier: 'TIER_1',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S1_btd: 0.07,
+      S2_orphan: 0.06,
+      S3_priority_review: 0.06,
+      designation_cap_applied: -0.03,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.1315,
+  },
+  {
+    id: 'gsk-varicella-vaccine-2026-07-01',
+    date: '2026-07-01',
+    company: 'GSK',
+    ticker: 'GSK',
+    drug: 'Varicella vaccine (investigational)',
+    indication: 'Chickenpox',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Vaccines',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8614,
+    tier: 'TIER_1',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0664,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0564,
+  },
+  {
+    id: 'mrk-pembrolizumab-combos-2026-07-06',
+    date: '2026-07-06',
+    company: 'Merck',
+    ticker: 'MRK',
+    drug: 'Pembrolizumab combos',
+    indication: 'Lung Cancer (multiple trials)',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Oncology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8365,
+    tier: 'TIER_2',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0315,
+  },
+  {
+    id: 'dnli-dnl310-2026-07-07',
+    date: '2026-07-07',
+    company: 'Denali Therapeutics',
+    ticker: 'DNLI',
+    drug: 'DNL310 (tividenofusp alfa)',
+    indication: 'Mucopolysaccharidosis Type II',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Rare Disease',
+    phase: 'Phase 2/3',
+    designations: ['Breakthrough Therapy', 'Orphan Drug', 'Priority Review'],
+    enrollment: 63,
+    nctId: 'NCT05371613',
+    prob: 0.7954,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S1_btd: 0.07,
+      S2_orphan: 0.06,
+      S3_priority_review: 0.06,
+      designation_cap_applied: -0.03,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: -0.0996,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0096,
+  },
+  {
+    id: 'tvtx-sparsentan-2026-07-07',
+    date: '2026-07-07',
+    company: 'Travere Therapeutics',
+    ticker: 'TVTX',
+    drug: 'Sparsentan',
+    indication: 'IgA Nephropathy (full approval)',
+    type: 'PDUFA',
+    appType: 'sNDA',
+    ta: 'Nephrology',
+    phase: 'Phase 3',
+    designations: ['Priority Review', 'Accelerated Approval conversion'],
+    enrollment: 406,
+    nctId: 'NCT03762850',
+    prob: 0.782,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-7 to T-10',
+    runner: '0%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      snda_base: -0.03,
+      S3_priority_review: 0.06,
+      S5_accelerated: 0.03,
+      S16_therapeutic_area: -0.083,
+      social_total: 0.0,
+    },
+    totalAdj: -0.023,
+  },
+  {
+    id: 'vera-atacicept-2026-07-07',
+    date: '2026-07-07',
+    company: 'Vera Therapeutics',
+    ticker: 'VERA',
+    drug: 'Atacicept',
+    indication: 'IgA Nephropathy',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Nephrology',
+    phase: 'Phase 3',
+    designations: ['Breakthrough Therapy', 'Orphan Drug'],
+    enrollment: 376,
+    nctId: 'NCT04716231',
+    prob: 0.782,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S1_btd: 0.07,
+      S2_orphan: 0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: -0.083,
+      social_total: 0.0,
+    },
+    totalAdj: -0.023,
+  },
+  {
+    id: 'incy-ruxolitinib-2026-07-13',
+    date: '2026-07-13',
+    company: 'Incyte',
+    ticker: 'INCY',
+    drug: 'Ruxolitinib',
+    indication: 'Atopic Dermatitis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Dermatology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7701,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0249,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0349,
+  },
+  {
+    id: 'regn-mibavademab-2026-07-14',
+    date: '2026-07-14',
+    company: 'Regeneron',
+    ticker: 'REGN',
+    drug: 'Mibavademab',
+    indication: 'Generalized Lipodystrophy',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Rare Disease',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6954,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0996,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1096,
+  },
+  {
+    id: 'azn-tezepelumab-2026-07-14',
+    date: '2026-07-14',
+    company: 'AstraZeneca',
+    ticker: 'AZN',
+    drug: 'Tezepelumab',
+    indication: 'Eosinophilic Esophagitis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'GI/Hepatology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.629,
+    tier: 'TIER_3',
+    taRisk: 'HIGH_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.176,
+  },
+  {
+    id: 'lly-lebrikizumab-2026-07-15',
+    date: '2026-07-15',
+    company: 'Eli Lilly',
+    ticker: 'LLY',
+    drug: 'Lebrikizumab',
+    indication: 'Atopic Hand/Foot Dermatitis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Dermatology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7701,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0249,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0349,
+  },
+  {
+    id: 'hrmy-pitolisant-2026-07-15',
+    date: '2026-07-15',
+    company: 'Harmony Biosciences',
+    ticker: 'HRMY',
+    drug: 'Pitolisant',
+    indication: 'Prader-Willi Syndrome',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'CNS',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6205,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      S16_therapeutic_area: -0.1245,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1845,
+  },
+  {
+    id: 'lxrx-sotagliflozin-2026-07-15',
+    date: '2026-07-15',
+    company: 'Lexicon Pharmaceuticals',
+    ticker: 'LXRX',
+    drug: 'Sotagliflozin',
+    indication: 'Hypertrophic Obstructive Cardiomyopathy',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Cardiovascular',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.745,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      social_total: 0.0,
+    },
+    totalAdj: -0.06,
+  },
+  {
+    id: 'rare-gtx-102-2026-07-15',
+    date: '2026-07-15',
+    company: 'Ultragenyx',
+    ticker: 'RARE',
+    drug: 'GTX-102',
+    indication: 'Angelman Syndrome',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Rare Disease',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6454,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      S16_therapeutic_area: -0.0996,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1596,
+  },
+  {
+    id: 'vrdn-vrdn-003-2026-07-15',
+    date: '2026-07-15',
+    company: 'Viridian Therapeutics',
+    ticker: 'VRDN',
+    drug: 'VRDN-003',
+    indication: 'Thyroid Eye Disease',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6916,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1134,
+  },
+  {
+    id: 'mrk-tulisokibart-2026-08-01',
+    date: '2026-08-01',
+    company: 'Merck',
+    ticker: 'MRK',
+    drug: 'Tulisokibart (IV+SC)',
+    indication: 'Ulcerative Colitis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'GI/Hepatology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.629,
+    tier: 'TIER_3',
+    taRisk: 'HIGH_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.176,
+  },
+  {
+    id: 'bmrn-vosoritide-2026-08-01',
+    date: '2026-08-01',
+    company: 'BioMarin',
+    ticker: 'BMRN',
+    drug: 'Vosoritide',
+    indication: 'Hypochondroplasia',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Rare Disease',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6954,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0996,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1096,
+  },
+  {
+    id: 'dskyf-t-dxd-2026-08-03',
+    date: '2026-08-03',
+    company: 'Daiichi Sankyo',
+    ticker: 'DSKYF',
+    drug: 'T-DXd (trastuzumab deruxtecan)',
+    indication: 'Advanced Cancer',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Oncology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8365,
+    tier: 'TIER_2',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0315,
+  },
+  {
+    id: 'capr-cap-1002-2026-08-06',
+    date: '2026-08-06',
+    company: 'Capricor Therapeutics',
+    ticker: 'CAPR',
+    drug: 'CAP-1002 (deramiocel)',
+    indication: 'Duchenne Muscular Dystrophy',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Rare Disease',
+    phase: 'Phase 3',
+    designations: ['Orphan Drug', 'Rare Pediatric Disease'],
+    enrollment: 106,
+    nctId: 'NCT05126758',
+    prob: 0.6954,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S2_orphan: 0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: -0.0996,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1096,
+  },
+  {
+    id: 'ucbjy-bimekizumab-2026-08-07',
+    date: '2026-08-07',
+    company: 'UCB',
+    ticker: 'UCBJY',
+    drug: 'Bimekizumab',
+    indication: 'Axial Spondyloarthritis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8116,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0066,
+  },
+  {
+    id: 'private-177lu-edotreotide-2026-08-28',
+    date: '2026-08-28',
+    company: 'ITM Isotopen Technologien',
+    ticker: 'Private',
+    drug: '177Lu-edotreotide',
+    indication: 'GEP Neuroendocrine Tumors',
+    type: 'PDUFA',
+    appType: 'NDA',
+    ta: 'Oncology',
+    phase: 'Phase 3',
+    designations: ['Orphan Drug'],
+    enrollment: 259,
+    nctId: 'NCT04919226',
+    prob: 0.8365,
+    tier: 'TIER_2',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S2_orphan: 0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0315,
+  },
+  {
+    id: 'phar-besremi-2026-08-30',
+    date: '2026-08-30',
+    company: 'PharmaEssentia',
+    ticker: 'PHAR',
+    drug: 'Besremi (ropeginterferon alfa-2b)',
+    indication: 'Essential Thrombocythemia',
+    type: 'PDUFA',
+    appType: 'sBLA',
+    ta: 'Hematology',
+    phase: 'Phase 2',
+    designations: ['Orphan Drug'],
+    enrollment: 91,
+    nctId: 'NCT05482971',
+    prob: 0.7935,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-7 to T-10',
+    runner: '0%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      sbla_base: -0.03,
+      S2_orphan: 0.06,
+      S16_therapeutic_area: -0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0115,
+  },
+  {
+    id: 'nvo-semaglutide-2026-09-01',
+    date: '2026-09-01',
+    company: 'Novo Nordisk',
+    ticker: 'NVO',
+    drug: 'Semaglutide',
+    indication: 'Chronic Kidney Disease',
+    type: 'Phase 2 Readout',
+    appType: '',
+    ta: 'Nephrology',
+    phase: 'Phase 2',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.712,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.083,
+      social_total: 0.0,
+    },
+    totalAdj: -0.093,
+  },
+  {
+    id: 'nvo-awiqli-2026-09-01',
+    date: '2026-09-01',
+    company: 'Novo Nordisk',
+    ticker: 'NVO',
+    drug: 'Awiqli (insulin icodec)',
+    indication: 'Type 2 Diabetes',
+    type: 'PDUFA (Expected)',
+    appType: 'NDA (resubmission)',
+    ta: 'Metabolic',
+    phase: 'Phase 3',
+    designations: ['Resubmission fall 2025'],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.795,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      social_total: 0.0,
+    },
+    totalAdj: -0.01,
+  },
+  {
+    id: 'amgn-dazodalibep-2026-09-02',
+    date: '2026-09-02',
+    company: 'Amgen',
+    ticker: 'AMGN',
+    drug: 'Dazodalibep',
+    indication: 'Sjogren\'s Syndrome',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8116,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0066,
+  },
+  {
+    id: 'nvo-ziltivekimab-2026-09-03',
+    date: '2026-09-03',
+    company: 'Novo Nordisk',
+    ticker: 'NVO',
+    drug: 'Ziltivekimab',
+    indication: 'Cardiovascular/Heart Failure',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Cardiovascular',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.795,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      social_total: 0.0,
+    },
+    totalAdj: -0.01,
+  },
+  {
+    id: 'ucbjy-fenfluramine-2026-09-03',
+    date: '2026-09-03',
+    company: 'UCB',
+    ticker: 'UCBJY',
+    drug: 'Fenfluramine',
+    indication: 'Dravet Syndrome',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'CNS',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6705,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.1245,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1345,
+  },
+  {
+    id: 'hluyy-eptinezumab-2026-09-05',
+    date: '2026-09-05',
+    company: 'Lundbeck',
+    ticker: 'HLUYY',
+    drug: 'Eptinezumab',
+    indication: 'Chronic Migraine (Pediatric)',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'CNS',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6705,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.1245,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1345,
+  },
+  {
+    id: 'nuvl-zidesamtinib-2026-09-18',
+    date: '2026-09-18',
+    company: 'Nuvalent',
+    ticker: 'NUVL',
+    drug: 'Zidesamtinib',
+    indication: 'ROS1-positive NSCLC',
+    type: 'PDUFA',
+    appType: 'NDA',
+    ta: 'Oncology',
+    phase: 'Phase 1/2',
+    designations: ['Breakthrough Therapy', 'Orphan Drug'],
+    enrollment: 359,
+    nctId: 'NCT05118789',
+    prob: 0.9065,
+    tier: 'TIER_1',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S1_btd: 0.07,
+      S2_orphan: 0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.1015,
+  },
+  {
+    id: 'argx-efgartigimod-ph20-sc-2026-10-01',
+    date: '2026-10-01',
+    company: 'argenx',
+    ticker: 'ARGX',
+    drug: 'Efgartigimod PH20 SC',
+    indication: 'Generalized Myasthenia Gravis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7616,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0434,
+  },
+  {
+    id: 'nvo-cagrisema-2026-10-01',
+    date: '2026-10-01',
+    company: 'Novo Nordisk',
+    ticker: 'NVO',
+    drug: 'CagriSema',
+    indication: 'Obesity/Weight Management',
+    type: 'PDUFA (Expected)',
+    appType: 'NDA',
+    ta: 'Metabolic',
+    phase: 'Phase 3',
+    designations: ['NDA filed Dec 2025', '10-month review expected'],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.795,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      social_total: 0.0,
+    },
+    totalAdj: -0.01,
+  },
+  {
+    id: 'nvo-ziltivekimab-2026-10-05',
+    date: '2026-10-05',
+    company: 'Novo Nordisk',
+    ticker: 'NVO',
+    drug: 'Ziltivekimab',
+    indication: 'Heart Failure',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Cardiovascular',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.795,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      social_total: 0.0,
+    },
+    totalAdj: -0.01,
+  },
+  {
+    id: 'azn-benralizumab-2026-10-06',
+    date: '2026-10-06',
+    company: 'AstraZeneca',
+    ticker: 'AZN',
+    drug: 'Benralizumab',
+    indication: 'Eosinophilic Granulomatosis w/ Polyangiitis',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8116,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0066,
+  },
+  {
+    id: 'incy-ruxolitinib-cream-2026-10-09',
+    date: '2026-10-09',
+    company: 'Incyte',
+    ticker: 'INCY',
+    drug: 'Ruxolitinib Cream',
+    indication: 'Hidradenitis Suppurativa',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Dermatology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7701,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0249,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0349,
+  },
+  {
+    id: 'private-tabelecleucel-2026-10-10',
+    date: '2026-10-10',
+    company: 'Pierre Fabre',
+    ticker: 'Private',
+    drug: 'Tabelecleucel',
+    indication: 'EBV+ Post-transplant Lymphoproliferative Disease',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Oncology',
+    phase: 'Phase 3',
+    designations: ['Breakthrough Therapy', 'Orphan Drug'],
+    enrollment: 115,
+    nctId: 'NCT03394365',
+    prob: 0.99,
+    tier: 'TIER_1',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S1_btd: 0.07,
+      S2_orphan: 0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.185,
+  },
+  {
+    id: 'ino-ino-3107-2026-10-30',
+    date: '2026-10-30',
+    company: 'INOVIO Pharmaceuticals',
+    ticker: 'INO',
+    drug: 'INO-3107',
+    indication: 'Recurrent Respiratory Papillomatosis',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Infectious',
+    phase: 'Phase 1/2',
+    designations: ['Breakthrough Therapy', 'Orphan Drug'],
+    enrollment: 32,
+    nctId: 'NCT04398433',
+    prob: 0.9065,
+    tier: 'TIER_1',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S1_btd: 0.07,
+      S2_orphan: 0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.1015,
+  },
+  {
+    id: 'bmy-karxt-2026-11-01',
+    date: '2026-11-01',
+    company: 'Bristol-Myers Squibb',
+    ticker: 'BMY',
+    drug: 'KarXT (xanomeline-trospium)',
+    indication: 'Bipolar-I Disorder',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'CNS',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.6705,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.1245,
+      social_total: 0.0,
+    },
+    totalAdj: -0.1345,
+  },
+  {
+    id: 'srrk-apitegromab-2026-11-01',
+    date: '2026-11-01',
+    company: 'Scholar Rock',
+    ticker: 'SRRK',
+    drug: 'Apitegromab',
+    indication: 'Spinal Muscular Atrophy',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Rare Disease',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.5754,
+    tier: 'TIER_4',
+    taRisk: 'MOD_RISK',
+    action: 'NO_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: -0.0996,
+      social_total: 0.0,
+    },
+    totalAdj: -0.2296,
+  },
+  {
+    id: 'sny-fitusiran-2026-11-05',
+    date: '2026-11-05',
+    company: 'Sanofi',
+    ticker: 'SNY',
+    drug: 'Fitusiran',
+    indication: 'Hemophilia',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Hematology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7535,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0515,
+  },
+  {
+    id: 'smmt-ivonescimab-2026-11-14',
+    date: '2026-11-14',
+    company: 'Summit Therapeutics',
+    ticker: 'SMMT',
+    drug: 'Ivonescimab',
+    indication: 'EGFR-mutated NSCLC (post-TKI)',
+    type: 'PDUFA',
+    appType: 'BLA',
+    ta: 'Oncology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: 'TBD',
+    prob: 0.7165,
+    tier: 'TIER_3',
+    taRisk: 'LOW_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: true,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_inexperienced: -0.07,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0885,
+  },
+  {
+    id: 'sny-itepekimab-2026-12-01',
+    date: '2026-12-01',
+    company: 'Sanofi',
+    ticker: 'SNY',
+    drug: 'Itepekimab',
+    indication: 'COPD',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Respiratory',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7784,
+    tier: 'TIER_2',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0266,
+  },
+  {
+    id: 'biib-felzartamab-2026-12-01',
+    date: '2026-12-01',
+    company: 'Biogen',
+    ticker: 'BIIB',
+    drug: 'Felzartamab',
+    indication: 'Primary Membranous Nephropathy',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Nephrology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.712,
+    tier: 'TIER_3',
+    taRisk: 'MOD_RISK',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: -0.083,
+      social_total: 0.0,
+    },
+    totalAdj: -0.093,
+  },
+  {
+    id: 'argx-efgartigimod-ph20-sc-2026-12-01',
+    date: '2026-12-01',
+    company: 'argenx',
+    ticker: 'ARGX',
+    drug: 'Efgartigimod PH20 SC',
+    indication: 'Inflammatory Myopathy',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.7616,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: -0.0434,
+  },
+  {
+    id: 'sny-pcv21-2026-12-01',
+    date: '2026-12-01',
+    company: 'Sanofi',
+    ticker: 'SNY',
+    drug: 'PCV21',
+    indication: 'Pneumococcal Infections',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Vaccines',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8614,
+    tier: 'TIER_1',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0664,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0564,
+  },
+  {
+    id: 'jnj-icotrokinra-2026-12-01',
+    date: '2026-12-01',
+    company: 'Johnson & Johnson',
+    ticker: 'JNJ',
+    drug: 'Icotrokinra',
+    indication: 'Psoriasis / IBD (oral IL-23)',
+    type: 'PDUFA (Expected)',
+    appType: 'NDA',
+    ta: 'Immunology',
+    phase: 'Phase 3',
+    designations: ['First oral IL-23 blocker'],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8116,
+    tier: 'TIER_2',
+    taRisk: 'MOD_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0166,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0066,
+  },
+  {
+    id: 'pfe-pf-06821497-2026-12-02',
+    date: '2026-12-02',
+    company: 'Pfizer',
+    ticker: 'PFE',
+    drug: 'PF-06821497 (mevrometostat)',
+    indication: 'mCRPC',
+    type: 'Phase 3 Readout',
+    appType: '',
+    ta: 'Oncology',
+    phase: 'Phase 3',
+    designations: [],
+    enrollment: 0,
+    nctId: '',
+    prob: 0.8365,
+    tier: 'TIER_2',
+    taRisk: 'LOW_RISK',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
+    avoid: false,
+    weekend: false,
+    signals: {
+      S25_no_designation: -0.06,
+      sponsor_experienced: 0.05,
+      S16_therapeutic_area: 0.0415,
+      social_total: 0.0,
+    },
+    totalAdj: 0.0315,
+  },
+];
+
+const getTierColor = (tier) => {
+  const colors = {
+    TIER_1: '#22c55e',
+    TIER_2: '#eab308',
+    TIER_3: '#f97316',
+    TIER_4: '#ef4444',
+  };
+  return colors[tier] || '#6b7280';
+};
+
+const getTierBgClass = (tier) => {
+  const classes = {
+    TIER_1: 'bg-green-950 text-green-400 border border-green-700',
+    TIER_2: 'bg-yellow-950 text-yellow-400 border border-yellow-700',
+    TIER_3: 'bg-orange-950 text-orange-400 border border-orange-700',
+    TIER_4: 'bg-red-950 text-red-400 border border-red-700',
+  };
+  return classes[tier] || 'bg-gray-800 text-gray-400 border border-gray-700';
+};
+
+const formatDate = (dateStr) => {
+  const date = new Date(dateStr);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+};
+
+const CountdownTimer = ({ targetDate }) => {
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const target = new Date(targetDate).getTime();
+      const distance = target - now;
+
+      if (distance < 0) {
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      setCountdown({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000),
+      });
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, [targetDate]);
+
+  return (
+    <div className="flex gap-2 items-center font-mono text-sm tabular-nums">
+      <div className="text-center">
+        <div className="text-2xl font-bold text-blue-400">{countdown.days}</div>
+        <div className="text-xs text-gray-400">days</div>
+      </div>
+      <span className="text-gray-500">:</span>
+      <div className="text-center">
+        <div className="text-2xl font-bold text-blue-400">{String(countdown.hours).padStart(2, '0')}</div>
+        <div className="text-xs text-gray-400">hrs</div>
+      </div>
+      <span className="text-gray-500">:</span>
+      <div className="text-center">
+        <div className="text-2xl font-bold text-blue-400">{String(countdown.minutes).padStart(2, '0')}</div>
+        <div className="text-xs text-gray-400">min</div>
+      </div>
+      <span className="text-gray-500">:</span>
+      <div className="text-center">
+        <div className="text-2xl font-bold text-blue-400">{String(countdown.seconds).padStart(2, '0')}</div>
+        <div className="text-xs text-gray-400">sec</div>
+      </div>
+    </div>
+  );
+};
+
+const fmtProb = (p) => (p * 100).toFixed(1);
+
+const CatalystCard = ({ catalyst, onExpand }) => {
+  return (
+    <div
+      onClick={() => onExpand(catalyst)}
+      className="bg-gray-900 border border-gray-700 p-4 cursor-pointer hover:border-blue-500 hover:bg-gray-800 transition-all rounded-none"
+    >
+      <div className="flex justify-between items-start mb-3">
+        <div className="flex-1">
+          <div className="text-xs text-gray-400 mb-1">{formatDate(catalyst.date)}</div>
+          <div className="flex gap-2 items-baseline">
+            <span className="font-bold text-white">{catalyst.ticker}</span>
+            <span className="text-sm text-gray-400 truncate">{catalyst.drug}</span>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-between items-end">
+        <div>
+          <div className="text-xs text-gray-500 mb-1">Probability</div>
+          <div className="text-2xl font-bold tabular-nums" style={{ color: getTierColor(catalyst.tier) }}>
+            {fmtProb(catalyst.prob)}%
+          </div>
+        </div>
+        <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
+          {catalyst.tier.replace('_', ' ')}
+        </div>
+      </div>
+      <div className="text-xs text-gray-500 mt-3">{catalyst.indication}</div>
+      {catalyst.weekend && (
+        <div className="mt-2 text-xs text-red-400 flex items-center gap-1">
+          <AlertTriangle size={10} /> Weekend Decision
+        </div>
+      )}
+    </div>
+  );
+};
+
+const DetailModal = ({ catalyst, onClose }) => {
+  if (!catalyst) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-start justify-center pt-8 overflow-y-auto" onClick={onClose}>
+      <div className="bg-gray-900 border border-gray-700 w-full max-w-2xl mx-4 mb-8" onClick={(e) => e.stopPropagation()}>
+        {/* Header */}
+        <div className="border-b border-gray-700 p-6 flex justify-between items-start">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <h2 className="text-2xl font-bold text-white">{catalyst.drug}</h2>
+              <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
+                {catalyst.tier.replace('_', ' ')}
+              </div>
+            </div>
+            <p className="text-sm text-gray-400">
+              {catalyst.company} ({catalyst.ticker}) &middot; {formatDate(catalyst.date)}
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white transition"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Body */}
+        <div className="p-6 space-y-6">
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <div className="text-xs text-gray-500 mb-2">INDICATION</div>
+              <div className="text-sm text-white">{catalyst.indication}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-2">PHASE</div>
+              <div className="text-sm text-white">{catalyst.phase}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-2">TYPE</div>
+              <div className="text-sm text-white">{catalyst.type}</div>
+            </div>
+            <div>
+              <div className="text-xs text-gray-500 mb-2">TA</div>
+              <div className="text-sm text-white">{catalyst.ta}</div>
+            </div>
+          </div>
+
+          {/* Probability Section */}
+          <div>
+            <div className="text-xs text-gray-500 mb-3">ODIN v10.7 PROBABILITY</div>
+            <div className="flex items-center gap-6">
+              <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
+                {fmtProb(catalyst.prob)}%
+              </div>
+              <div className="flex-1">
+                <div className="w-full bg-gray-800 border border-gray-700 h-6 relative rounded-none overflow-hidden">
+                  <div
+                    className="h-full transition-all duration-500"
+                    style={{
+                      width: `${catalyst.prob * 100}%`,
+                      backgroundColor: getTierColor(catalyst.tier),
+                      opacity: 0.7,
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center px-2">
+                    <span className="text-xs font-mono text-gray-300">BASE 80.5%</span>
+                    <div className="flex-1" />
+                    <span className="text-xs font-mono" style={{ color: getTierColor(catalyst.tier) }}>
+                      {catalyst.totalAdj > 0 ? '+' : ''}{fmtProb(catalyst.totalAdj)} adj
+                    </span>
+                  </div>
+                </div>
+                <div className="flex justify-between mt-1 text-xs text-gray-600 font-mono">
+                  <span>0%</span>
+                  <span>50%</span>
+                  <span>100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Signals */}
+          <div>
+            <div className="text-xs text-gray-500 mb-3">SIGNAL ADJUSTMENTS</div>
+            <div className="space-y-2 text-xs font-mono">
+              {Object.entries(catalyst.signals).map(([key, value]) => (
+                <div key={key} className="flex justify-between">
+                  <span className="text-gray-400">{key}</span>
+                  <span
+                    className={value > 0 ? 'text-green-400' : value < 0 ? 'text-red-400' : 'text-gray-400'}
+                  >
+                    {value > 0 ? '+' : ''}{(value * 100).toFixed(1)}%
+                  </span>
+                </div>
+              ))}
+              <div className="flex justify-between pt-2 border-t border-gray-700">
+                <span className="text-gray-300 font-bold">Total Adjustment</span>
+                <span
+                  className={catalyst.totalAdj > 0 ? 'text-green-400' : catalyst.totalAdj < 0 ? 'text-red-400' : 'text-gray-400'}
+                >
+                  {catalyst.totalAdj > 0 ? '+' : ''}{(catalyst.totalAdj * 100).toFixed(1)}%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Trading Rec */}
+          <div>
+            <div className="text-xs text-gray-500 mb-3">TRADING RECOMMENDATION</div>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <span className="text-gray-400">Action: </span>
+                <span className="text-white">{catalyst.action.replace(/_/g, ' ')}</span>
+              </div>
+              <div>
+                <span className="text-gray-400">Exit: </span>
+                <span className="text-white">{catalyst.exit}</span>
+              </div>
+              <div>
+                <span className="text-gray-400">Runner: </span>
+                <span className="text-white">{catalyst.runner}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Designations */}
+          {catalyst.designations.length > 0 && (
+            <div>
+              <div className="text-xs text-gray-500 mb-3">DESIGNATIONS</div>
+              <div className="flex flex-wrap gap-2">
+                {catalyst.designations.map((des) => (
+                  <div
+                    key={des}
+                    className="bg-blue-950 text-blue-300 text-xs px-3 py-1 border border-blue-700 rounded-none font-mono"
+                  >
+                    {des}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Warnings */}
+          {catalyst.weekend && (
+            <div className="bg-red-950 border border-red-700 p-3 rounded-none flex gap-2">
+              <AlertTriangle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
+              <span className="text-sm text-red-300">Weekend PDUFA decision expected</span>
+            </div>
+          )}
+
+          {/* Links */}
+          {catalyst.nctId && (
+            <div className="flex gap-2 pt-4 border-t border-gray-700">
+              <a
+                href={`https://clinicaltrials.gov/ct2/show/${catalyst.nctId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm"
+              >
+                <ExternalLink size={16} />
+                ClinicalTrials.gov
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DashboardView = ({ catalysts, onExpandCatalyst }) => {
+  const nextCatalyst = catalysts[0];
+  const tier1Count = catalysts.filter((c) => c.tier === 'TIER_1').length;
+  const avgProb = (catalysts.reduce((sum, c) => sum + c.prob, 0) / catalysts.length * 100).toFixed(1);
+
+  return (
+    <div className="space-y-6">
+      {/* Next Catalyst Hero */}
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 p-6 rounded-none cursor-pointer hover:border-blue-500 transition"
+        onClick={() => onExpandCatalyst(nextCatalyst)}>
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xs text-gray-400 font-mono uppercase">NEXT CATALYST EVENT</h3>
+          <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(nextCatalyst.tier)}`}>
+            {nextCatalyst.tier.replace('_', ' ')}
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-6 mb-6">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-2">{nextCatalyst.drug}</h2>
+            <p className="text-gray-400">{nextCatalyst.company}</p>
+            <p className="text-sm text-gray-500 mt-1">{nextCatalyst.indication}</p>
+          </div>
+          <div className="flex flex-col justify-between">
+            <div>
+              <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(nextCatalyst.tier) }}>
+                {fmtProb(nextCatalyst.prob)}%
+              </div>
+              <div className="text-gray-400 text-sm mt-1">ODIN Approval Probability</div>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-gray-700 pt-4">
+          <div className="text-xs text-gray-500 mb-2">COUNTDOWN TO DECISION</div>
+          <CountdownTimer targetDate={nextCatalyst.date} />
+        </div>
+      </div>
+
+      {/* Stats Row */}
+      <div className="grid grid-cols-4 gap-4">
+        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
+          <div className="text-xs text-gray-400 mb-2">TOTAL CATALYSTS</div>
+          <div className="text-3xl font-bold text-white tabular-nums font-mono">{catalysts.length}</div>
+        </div>
+        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
+          <div className="text-xs text-gray-400 mb-2">TIER 1 EVENTS</div>
+          <div className="text-3xl font-bold text-green-400 tabular-nums font-mono">{tier1Count}</div>
+        </div>
+        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
+          <div className="text-xs text-gray-400 mb-2">AVG PROBABILITY</div>
+          <div className="text-3xl font-bold text-yellow-400 tabular-nums font-mono">{avgProb}%</div>
+        </div>
+        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
+          <div className="text-xs text-gray-400 mb-2">WEEKEND PDUFAs</div>
+          <div className="text-3xl font-bold text-red-400 tabular-nums font-mono">{catalysts.filter(c => c.weekend).length}</div>
+        </div>
+      </div>
+
+      {/* Tier Distribution Bar */}
+      <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
+        <div className="text-xs text-gray-400 mb-3">TIER DISTRIBUTION</div>
+        <div className="flex h-8 w-full overflow-hidden rounded-none">
+          {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => {
+            const count = catalysts.filter((c) => c.tier === tier).length;
+            const pct = (count / catalysts.length) * 100;
+            return (
+              <div
+                key={tier}
+                style={{ width: `${pct}%`, backgroundColor: getTierColor(tier), opacity: 0.8 }}
+                className="flex items-center justify-center text-xs font-bold font-mono text-black transition-all"
+                title={`${tier}: ${count} (${pct.toFixed(0)}%)`}
+              >
+                {count > 0 && `${count}`}
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex justify-between mt-2 text-xs font-mono">
+          {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => {
+            const count = catalysts.filter((c) => c.tier === tier).length;
+            return (
+              <span key={tier} style={{ color: getTierColor(tier) }}>
+                {tier.replace('_', ' ')}: {count}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Upcoming Queue - Next 5 */}
+      <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
+        <div className="text-xs text-gray-400 mb-3">UPCOMING QUEUE</div>
+        <div className="space-y-1">
+          {catalysts.slice(1, 6).map((cat, i) => (
+            <div
+              key={cat.id}
+              onClick={() => onExpandCatalyst(cat)}
+              className="flex items-center gap-4 p-2 hover:bg-gray-800 cursor-pointer transition border-l-2"
+              style={{ borderLeftColor: getTierColor(cat.tier) }}
+            >
+              <span className="text-xs text-gray-600 font-mono w-4">{i + 2}</span>
+              <span className="text-xs text-gray-500 font-mono w-20">{formatDate(cat.date)}</span>
+              <span className="font-bold text-white text-sm w-16">{cat.ticker}</span>
+              <span className="text-sm text-gray-400 flex-1 truncate">{cat.drug}</span>
+              <span className="font-bold font-mono tabular-nums text-sm" style={{ color: getTierColor(cat.tier) }}>
+                {fmtProb(cat.prob)}%
+              </span>
+              <span className={`px-2 py-0.5 text-xs font-mono font-bold rounded-none ${getTierBgClass(cat.tier)}`}>
+                {cat.tier.replace('_', ' ')}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Catalyst Grid */}
+      <div>
+        <h3 className="text-sm font-mono text-gray-400 mb-3 uppercase">ALL CATALYSTS</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {catalysts.map((catalyst) => (
+            <CatalystCard
+              key={catalyst.id}
+              catalyst={catalyst}
+              onExpand={onExpandCatalyst}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CalendarView = ({ catalysts, onExpandCatalyst }) => {
+  const months = useMemo(() => {
+    const monthMap = {};
+    catalysts.forEach((c) => {
+      const date = new Date(c.date);
+      const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+      if (!monthMap[key]) {
+        monthMap[key] = [];
+      }
+      monthMap[key].push(c);
+    });
+    return monthMap;
+  }, [catalysts]);
+
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  return (
+    <div className="space-y-6">
+      {Object.entries(months).map(([monthKey, monthCatalysts]) => {
+        const [year, month] = monthKey.split('-');
+        const monthName = monthNames[parseInt(month) - 1];
+
+        return (
+          <div key={monthKey} className="border border-gray-700 rounded-none p-4 bg-gray-900">
+            <h3 className="text-sm font-mono text-gray-400 mb-4 uppercase">
+              {monthName} {year}
+            </h3>
+            <div className="space-y-2">
+              {monthCatalysts.map((catalyst) => (
+                <div
+                  key={catalyst.id}
+                  onClick={() => onExpandCatalyst(catalyst)}
+                  className="flex items-center gap-4 p-3 hover:bg-gray-800 cursor-pointer transition rounded-none border-l-2"
+                  style={{ borderLeftColor: getTierColor(catalyst.tier) }}
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-white">{catalyst.ticker}</span>
+                        <span className="text-xs text-gray-500">{catalyst.type}</span>
+                      </div>
+                      <span className="text-xs text-gray-400 ml-2 font-mono">{formatDate(catalyst.date)}</span>
+                    </div>
+                    <div className="flex justify-between items-center mt-1">
+                      <div className="text-sm text-gray-400 truncate">{catalyst.drug}</div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {catalyst.weekend && <AlertTriangle size={12} className="text-red-400" />}
+                        <span
+                          className="text-sm font-bold font-mono tabular-nums"
+                          style={{ color: getTierColor(catalyst.tier) }}
+                        >
+                          {fmtProb(catalyst.prob)}%
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
+  const [filterTier, setFilterTier] = useState(null);
+  const [filterTA, setFilterTA] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortCol, setSortCol] = useState('date');
+  const [sortDir, setSortDir] = useState('asc');
+
+  const tas = useMemo(() => [...new Set(catalysts.map((c) => c.ta))].sort(), [catalysts]);
+
+  const filtered = useMemo(() => {
+    return catalysts.filter((c) => {
+      if (filterTier && c.tier !== filterTier) return false;
+      if (filterTA && c.ta !== filterTA) return false;
+      if (
+        searchTerm &&
+        !c.drug.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !c.ticker.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !c.company.toLowerCase().includes(searchTerm.toLowerCase())
+      ) {
+        return false;
+      }
+      return true;
+    });
+  }, [catalysts, filterTier, filterTA, searchTerm]);
+
+  const sorted = useMemo(() => {
+    const copy = [...filtered];
+    copy.sort((a, b) => {
+      let aVal = a[sortCol];
+      let bVal = b[sortCol];
+      if (sortCol === 'prob') {
+        aVal = a.prob;
+        bVal = b.prob;
+      }
+      if (typeof aVal === 'string') {
+        aVal = aVal.toLowerCase();
+        bVal = bVal.toLowerCase();
+      }
+      if (aVal < bVal) return sortDir === 'asc' ? -1 : 1;
+      if (aVal > bVal) return sortDir === 'asc' ? 1 : -1;
+      return 0;
+    });
+    return copy;
+  }, [filtered, sortCol, sortDir]);
+
+  const handleSort = (col) => {
+    if (sortCol === col) {
+      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortCol(col);
+      setSortDir('asc');
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      {/* Controls */}
+      <div className="bg-gray-900 border border-gray-700 p-4 rounded-none space-y-3">
+        <div className="flex gap-2 items-center">
+          <Search size={16} className="text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search drug, ticker, company..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="flex-1 bg-gray-800 border border-gray-700 px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 rounded-none"
+          />
+        </div>
+        <div className="flex gap-2">
+          <div>
+            <label className="text-xs text-gray-400 block mb-2">Tier</label>
+            <div className="flex gap-1">
+              {[null, 'TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => (
+                <button
+                  key={tier || 'all'}
+                  onClick={() => setFilterTier(tier)}
+                  className={`px-3 py-1 text-xs font-mono rounded-none border transition ${
+                    filterTier === tier
+                      ? 'bg-blue-900 border-blue-500 text-blue-300'
+                      : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'
+                  }`}
+                >
+                  {tier ? tier.replace('_', ' ') : 'All'}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="flex-1">
+            <label className="text-xs text-gray-400 block mb-2">TA</label>
+            <select
+              value={filterTA || ''}
+              onChange={(e) => setFilterTA(e.target.value || null)}
+              className="w-full bg-gray-800 border border-gray-700 px-3 py-1 text-xs text-white focus:outline-none focus:border-blue-500 rounded-none"
+            >
+              <option value="">All Therapeutic Areas</option>
+              {tas.map((ta) => (
+                <option key={ta} value={ta}>
+                  {ta}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {/* Table */}
+      <div className="bg-gray-900 border border-gray-700 rounded-none overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm font-mono">
+            <thead>
+              <tr className="border-b border-gray-700 bg-gray-800">
+                {[
+                  { col: 'date', label: 'Date' },
+                  { col: 'ticker', label: 'Ticker' },
+                  { col: 'drug', label: 'Drug' },
+                  { col: 'indication', label: 'Indication' },
+                  { col: 'type', label: 'Type' },
+                  { col: 'ta', label: 'TA' },
+                  { col: 'prob', label: 'Prob %' },
+                  { col: 'tier', label: 'Tier' },
+                ].map((col) => (
+                  <th
+                    key={col.col}
+                    onClick={() => handleSort(col.col)}
+                    className="px-4 py-3 text-left text-gray-400 cursor-pointer hover:text-white transition uppercase text-xs font-bold"
+                  >
+                    {col.label}{' '}
+                    {sortCol === col.col && (sortDir === 'asc' ? '▲' : '▼')}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {sorted.map((cat) => (
+                <tr
+                  key={cat.id}
+                  onClick={() => onExpandCatalyst(cat)}
+                  className="border-b border-gray-800 hover:bg-gray-800 cursor-pointer transition"
+                >
+                  <td className="px-4 py-3 text-gray-300 font-mono text-xs">{formatDate(cat.date)}</td>
+                  <td className="px-4 py-3 font-bold text-white">{cat.ticker}</td>
+                  <td className="px-4 py-3 text-gray-300">{cat.drug}</td>
+                  <td className="px-4 py-3 text-gray-400 text-xs max-w-48 truncate">{cat.indication}</td>
+                  <td className="px-4 py-3 text-gray-400 text-xs">{cat.type}</td>
+                  <td className="px-4 py-3 text-gray-400 text-xs">{cat.ta}</td>
+                  <td
+                    className="px-4 py-3 font-bold font-mono tabular-nums"
+                    style={{ color: getTierColor(cat.tier) }}
+                  >
+                    {fmtProb(cat.prob)}%
+                  </td>
+                  <td className="px-4 py-3">
+                    <span className={`px-2 py-1 text-xs font-bold rounded-none inline-block ${getTierBgClass(cat.tier)}`}>
+                      {cat.tier}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="text-xs text-gray-500">
+        Showing {sorted.length} of {catalysts.length} catalysts
+      </div>
+    </div>
+  );
+};
+
+export default function PdufaBio() {
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [selectedCatalyst, setSelectedCatalyst] = useState(null);
+  const today = new Date();
+  const dateStr = `${today.toLocaleString('en-US', { weekday: 'short' })} ${today.toLocaleString('en-US', { month: 'short' })} ${today.getDate()}, ${today.getFullYear()}`;
+
+  const sortedCatalysts = useMemo(
+    () => [...CATALYSTS_DATA].sort((a, b) => new Date(a.date) - new Date(b.date)),
+    []
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-950 text-white font-sans">
+      {/* Top Bar */}
+      <div className="border-b border-gray-700 bg-gray-900 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <h1 className="text-2xl font-bold font-mono tracking-tight">PDUFA<span className="text-blue-400">.BIO</span></h1>
+            <div className="bg-gray-800 border border-gray-700 px-3 py-1 rounded-none text-xs font-mono text-blue-400">
+              ODIN v10.7
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-4 text-xs font-mono text-gray-500">
+              <span>Brier: <span className="text-green-400">0.1087</span></span>
+              <span>AUC: <span className="text-green-400">0.866</span></span>
+              <span>CRL Det: <span className="text-green-400">94%</span></span>
+            </div>
+            <div className="text-sm text-gray-400 font-mono">{dateStr}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Nav Tabs */}
+      <div className="border-b border-gray-700 bg-gray-900 sticky top-14 z-30">
+        <div className="max-w-7xl mx-auto px-6 flex gap-0">
+          {[
+            { id: 'dashboard', label: 'Dashboard', icon: Activity },
+            { id: 'calendar', label: 'Calendar', icon: Calendar },
+            { id: 'screener', label: 'Screener', icon: BarChart3 },
+          ].map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-4 font-mono text-sm uppercase border-b-2 transition flex items-center gap-2 ${
+                  activeTab === tab.id
+                    ? 'border-blue-400 text-blue-400'
+                    : 'border-transparent text-gray-400 hover:text-gray-300'
+                }`}
+              >
+                <Icon size={16} />
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        {activeTab === 'dashboard' && (
+          <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />
+        )}
+        {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
+        {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
+      </div>
+
+      {/* Detail Modal */}
+      {selectedCatalyst && (
+        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} />
+      )}
+    </div>
+  );
+}
