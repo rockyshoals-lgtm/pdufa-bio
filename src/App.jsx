@@ -2339,7 +2339,7 @@ const DetailModal = ({ catalyst, onClose }) => {
                   <DollarSign size={24} className="text-gray-500 mx-auto mb-2" />
                   <div className="text-sm text-gray-400 mb-1">Market data unavailable</div>
                   <div className="text-xs text-gray-500">
-                    FMP API key required. Add <code className="bg-gray-700 px-1">FMP_API_KEY</code> to Vercel Environment Variables.
+                    {catalyst.ticker === 'Private' ? 'Private company — no public market data' : 'Unable to retrieve quote data for this ticker.'}
                   </div>
                 </div>
               )}
@@ -2465,9 +2465,9 @@ const DetailModal = ({ catalyst, onClose }) => {
               {!marketLoading && insiderTrades.length === 0 && (
                 <div className="bg-gray-800 border border-gray-700 p-6 text-center">
                   <Users size={24} className="text-gray-500 mx-auto mb-2" />
-                  <div className="text-sm text-gray-400 mb-1">No insider trading data</div>
+                  <div className="text-sm text-gray-400 mb-1">No recent insider transactions</div>
                   <div className="text-xs text-gray-500">
-                    FMP API key required. Add <code className="bg-gray-700 px-1">FMP_API_KEY</code> to Vercel Environment Variables.
+                    No SEC Section 16 filings found for {catalyst.ticker}. This can mean no insider buying/selling activity in the reporting period, or the data is unavailable for this ticker.
                   </div>
                 </div>
               )}
