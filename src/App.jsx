@@ -35,6 +35,9 @@ import {
   Square,
   Star,
   Bookmark,
+  Share2,
+  Globe,
+  MessageSquare,
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
@@ -2127,6 +2130,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
 // ── Detail Modal (Enhanced with tabs) ──────────────
 const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false }) => {
   const [activeDetailTab, setActiveDetailTab] = useState('overview');
+  const [showShareMenu, setShowShareMenu] = useState(false);
   const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
   const { data: sentimentData, loading: sentimentLoading } = useSentiment(catalyst?.ticker);
 
@@ -2181,6 +2185,34 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
               <button onClick={(e) => { e.stopPropagation(); toggleWatch(catalyst.id); }} className="text-gray-400 hover:text-yellow-400 transition p-1" title={isWatched(catalyst.id) ? "Remove from watchlist" : "Add to watchlist"}>
                 <Star size={20} className={isWatched(catalyst.id) ? "fill-yellow-400 text-yellow-400" : ""} />
               </button>
+              <div className="relative">
+                <button onClick={(e) => { e.stopPropagation(); setShowShareMenu(!showShareMenu); }} className="text-gray-400 hover:text-blue-400 transition p-1" title="Share this catalyst">
+                  <Share2 size={20} />
+                </button>
+                {showShareMenu && (
+                  <div className="absolute right-0 top-8 bg-gray-800 border border-gray-600 z-50 w-48 shadow-xl" onClick={(e) => e.stopPropagation()}>
+                    <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}\n\nODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')})\nDate: ${formatDate(catalyst.date)}\n\nvia pdufa.bio`)}`}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full">
+                      <span className="text-blue-400 font-bold w-5">𝕏</span> Post on X
+                    </a>
+                    <a href={`https://www.reddit.com/submit?title=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} (${fmtProb(catalyst.prob)}% ODIN Score)`)}&url=${encodeURIComponent('https://pdufa.bio')}`}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full">
+                      <span className="text-orange-400 font-bold w-5">R</span> Post on Reddit
+                    </a>
+                    <a href={`https://stocktwits.com/symbol/${catalyst.ticker}`}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full">
+                      <span className="text-green-400 font-bold w-5">ST</span> StockTwits
+                    </a>
+                    <button onClick={() => { navigator.clipboard.writeText(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}. ODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')}). Date: ${formatDate(catalyst.date)}. https://pdufa.bio`); setShowShareMenu(false); }}
+                      className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full border-t border-gray-700">
+                      <span className="text-gray-400 w-5">📋</span> Copy to Clipboard
+                    </button>
+                  </div>
+                )}
+              </div>
               <button onClick={onClose} className="text-gray-400 hover:text-white transition p-1">
             <X size={24} />
           </button>
@@ -2193,6 +2225,7 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
             { id: 'overview', label: 'Overview', icon: Eye },
             { id: 'signals', label: 'Signals', icon: Zap },
             { id: 'market', label: 'Market', icon: TrendingUp },
+            { id: 'social', label: 'Social', icon: MessageSquare },
             { id: 'insider', label: 'Insider', icon: Users },
           ].map((tab) => {
             const Icon = tab.icon;
@@ -2436,67 +2469,153 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                 </div>
               )}
 
-              {/* Social Sentiment (LunarCrush) */}
-              {sentimentLoading && (
-                <div className="flex items-center justify-center py-6 gap-2 text-gray-400 text-xs">
-                  <Loader size={14} className="animate-spin" /> Loading sentiment...
-                </div>
-              )}
+              {/* Social Sentiment Quick Summary — full details in Social tab */}
               {!sentimentLoading && hasSentiment && (
-                <div className="bg-gray-800 border border-gray-700 p-4">
-                  <div className="text-xs text-gray-500 mb-3 font-mono flex items-center gap-2">
-                    SOCIAL SENTIMENT
+                <div className="bg-gray-800 border border-gray-700 p-4 cursor-pointer hover:border-blue-500 transition" onClick={() => setActiveDetailTab('social')}>
+                  <div className="text-xs text-gray-500 mb-2 font-mono flex items-center gap-2">
+                    <MessageSquare size={12} /> SOCIAL PULSE
                     {lcData.trend && (
                       <span className={`px-1.5 py-0.5 text-[10px] ${lcData.trend === 'up' ? 'bg-green-500/20 text-green-400' : lcData.trend === 'down' ? 'bg-red-500/20 text-red-400' : 'bg-gray-500/20 text-gray-400'}`}>
-                        {lcData.trend === 'up' ? '▲ TRENDING UP' : lcData.trend === 'down' ? '▼ TRENDING DOWN' : '─ FLAT'}
+                        {lcData.trend === 'up' ? '▲ TRENDING' : lcData.trend === 'down' ? '▼ FALLING' : '─ FLAT'}
                       </span>
                     )}
-                    <span className="text-gray-600 ml-auto">via LunarCrush</span>
+                    <span className="text-blue-400 ml-auto text-[10px] flex items-center gap-1">View Social Tab <ChevronRight size={10} /></span>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 mb-3">
-                    <div>
-                      <div className="text-xs text-gray-500 mb-1">24h Engagements</div>
-                      <div className="text-lg font-bold text-blue-400 font-mono">{fmtMoney(lcData.interactions_24h || 0)}</div>
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 mb-1">Mentions</div>
-                      <div className="text-lg font-bold text-white font-mono">{lcData.num_posts || 0}</div>
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500 mb-1">Creators</div>
-                      <div className="text-lg font-bold text-purple-400 font-mono">{lcData.num_contributors || 0}</div>
-                    </div>
+                  <div className="flex items-center gap-6">
+                    <div className="text-sm text-gray-300"><span className="font-bold text-white font-mono">{(lcData.interactions_24h || 0).toLocaleString()}</span> engagements</div>
+                    <div className="text-sm text-gray-300"><span className="font-bold text-white font-mono">{lcData.num_posts || 0}</span> mentions</div>
+                    <div className="text-sm text-gray-300"><span className="font-bold text-white font-mono">{lcData.num_contributors || 0}</span> creators</div>
                   </div>
-                  {/* Platform sentiment breakdown */}
-                  {lcData.types_sentiment && (
-                    <div className="space-y-1.5">
-                      <div className="text-[10px] text-gray-500 font-mono">SENTIMENT BY PLATFORM</div>
-                      {Object.entries(lcData.types_sentiment)
-                        .filter(([, val]) => val !== undefined && val !== null)
-                        .map(([platform, score]) => {
-                          const count = lcData.types_count?.[platform] || 0;
-                          const interactions = lcData.types_interactions?.[platform] || 0;
-                          const pName = platform.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()).replace('Reddit Post', 'Reddit').replace('Tiktok Video', 'TikTok').replace('Youtube Video', 'YouTube').replace('Tweet', 'X/Twitter');
-                          return (
-                            <div key={platform} className="flex items-center gap-2 text-xs">
-                              <span className="text-gray-400 w-20 truncate font-mono">{pName}</span>
-                              <div className="flex-1 bg-gray-700 h-1.5">
-                                <div
-                                  className={`h-full ${score >= 70 ? 'bg-green-500' : score >= 40 ? 'bg-yellow-500' : 'bg-red-500'}`}
-                                  style={{ width: `${Math.min(score, 100)}%` }}
-                                />
-                              </div>
-                              <span className={`font-mono text-xs w-8 text-right ${score >= 70 ? 'text-green-400' : score >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>
-                                {score}%
-                              </span>
-                              <span className="text-gray-600 text-[10px] w-16 text-right font-mono">{count} posts</span>
-                            </div>
-                          );
-                        })}
-                    </div>
-                  )}
                 </div>
               )}
+            </div>
+          )}
+
+          {activeDetailTab === 'social' && (
+            <div className="space-y-4">
+              {/* LunarCrush Sentiment Summary */}
+              <div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">SOCIAL SENTIMENT — ${catalyst.ticker}</div>
+                {sentimentLoading && (
+                  <div className="flex items-center justify-center py-8 gap-2 text-gray-400">
+                    <Loader size={16} className="animate-spin" /> Loading sentiment...
+                  </div>
+                )}
+                {!sentimentLoading && hasSentiment && (
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="bg-gray-800 p-3 border border-gray-700 text-center">
+                        <div className="text-lg font-bold text-white font-mono">{(lcData.interactions_24h || 0).toLocaleString()}</div>
+                        <div className="text-xs text-gray-500">24h Engagements</div>
+                      </div>
+                      <div className="bg-gray-800 p-3 border border-gray-700 text-center">
+                        <div className="text-lg font-bold text-white font-mono">{lcData.num_posts || 0}</div>
+                        <div className="text-xs text-gray-500">Mentions</div>
+                      </div>
+                      <div className="bg-gray-800 p-3 border border-gray-700 text-center">
+                        <div className="text-lg font-bold text-white font-mono">{lcData.num_contributors || 0}</div>
+                        <div className="text-xs text-gray-500">Creators</div>
+                      </div>
+                    </div>
+                    {lcData.trend && (
+                      <div className={`text-sm font-mono flex items-center gap-2 ${lcData.trend === 'up' ? 'text-green-400' : lcData.trend === 'down' ? 'text-red-400' : 'text-gray-400'}`}>
+                        {lcData.trend === 'up' ? <TrendingUp size={14} /> : lcData.trend === 'down' ? <TrendingDown size={14} /> : <Activity size={14} />}
+                        Trend: {lcData.trend === 'up' ? 'RISING' : lcData.trend === 'down' ? 'FALLING' : 'FLAT'}
+                      </div>
+                    )}
+                    {/* Per-platform breakdown */}
+                    {lcData.types_sentiment && Object.keys(lcData.types_sentiment).length > 0 && (
+                      <div>
+                        <div className="text-xs text-gray-500 mb-2 font-mono">BY PLATFORM</div>
+                        <div className="space-y-2">
+                          {Object.entries(lcData.types_sentiment).map(([platform, score]) => {
+                            const count = lcData.types_count?.[platform] || 0;
+                            const pName = platform.replace('Tweet', 'X / Twitter').replace('Reddit Post', 'Reddit').replace('Tiktok Video', 'TikTok').replace('Youtube Video', 'YouTube');
+                            return (
+                              <div key={platform} className="flex items-center gap-3">
+                                <span className="text-xs text-gray-400 w-20 flex-shrink-0 font-mono">{pName}</span>
+                                <div className="flex-1 bg-gray-800 h-4 border border-gray-700 relative overflow-hidden">
+                                  <div className="h-full transition-all" style={{ width: `${score}%`, backgroundColor: score >= 70 ? '#22c55e' : score >= 40 ? '#eab308' : '#ef4444' }} />
+                                </div>
+                                <span className="text-xs text-gray-400 font-mono w-12 text-right">{score}%</span>
+                                <span className="text-xs text-gray-600 font-mono w-10 text-right">{count}p</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                    <div className="text-[10px] text-gray-600 font-mono">via LunarCrush</div>
+                  </div>
+                )}
+                {!sentimentLoading && !hasSentiment && (
+                  <div className="text-sm text-gray-500 py-4">No social sentiment data available for {catalyst.ticker}.</div>
+                )}
+              </div>
+
+              {/* Social Discussion Links */}
+              <div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">JOIN THE DISCUSSION</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <a href={`https://stocktwits.com/symbol/${catalyst.ticker}`} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-gray-800 border border-gray-700 p-3 hover:border-green-500 hover:bg-gray-750 transition group">
+                    <div className="w-8 h-8 bg-green-900 flex items-center justify-center text-green-400 font-bold text-sm flex-shrink-0">ST</div>
+                    <div>
+                      <div className="text-sm font-bold text-white group-hover:text-green-400 transition">StockTwits</div>
+                      <div className="text-xs text-gray-500">${catalyst.ticker} stream &amp; sentiment</div>
+                    </div>
+                    <ExternalLink size={12} className="text-gray-600 ml-auto" />
+                  </a>
+                  <a href={`https://twitter.com/search?q=%24${catalyst.ticker}+PDUFA&src=typed_query&f=live`} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-gray-800 border border-gray-700 p-3 hover:border-blue-500 hover:bg-gray-750 transition group">
+                    <div className="w-8 h-8 bg-blue-900 flex items-center justify-center text-blue-400 font-bold text-sm flex-shrink-0">𝕏</div>
+                    <div>
+                      <div className="text-sm font-bold text-white group-hover:text-blue-400 transition">X / Twitter</div>
+                      <div className="text-xs text-gray-500">Live ${catalyst.ticker} discussion</div>
+                    </div>
+                    <ExternalLink size={12} className="text-gray-600 ml-auto" />
+                  </a>
+                  <a href={`https://www.reddit.com/search/?q=%24${catalyst.ticker}+${encodeURIComponent(catalyst.drug)}&sort=new`} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-gray-800 border border-gray-700 p-3 hover:border-orange-500 hover:bg-gray-750 transition group">
+                    <div className="w-8 h-8 bg-orange-900 flex items-center justify-center text-orange-400 font-bold text-sm flex-shrink-0">R</div>
+                    <div>
+                      <div className="text-sm font-bold text-white group-hover:text-orange-400 transition">Reddit</div>
+                      <div className="text-xs text-gray-500">Posts about ${catalyst.ticker}</div>
+                    </div>
+                    <ExternalLink size={12} className="text-gray-600 ml-auto" />
+                  </a>
+                  <a href={`https://lunarcrush.com/coins/${catalyst.ticker.toLowerCase()}`} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-gray-800 border border-gray-700 p-3 hover:border-purple-500 hover:bg-gray-750 transition group">
+                    <div className="w-8 h-8 bg-purple-900 flex items-center justify-center text-purple-400 font-bold text-sm flex-shrink-0">LC</div>
+                    <div>
+                      <div className="text-sm font-bold text-white group-hover:text-purple-400 transition">LunarCrush</div>
+                      <div className="text-xs text-gray-500">Full social analytics</div>
+                    </div>
+                    <ExternalLink size={12} className="text-gray-600 ml-auto" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Share */}
+              <div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">SHARE THIS CATALYST</div>
+                <div className="flex flex-wrap gap-2">
+                  <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}\n\nODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')})\nDate: ${formatDate(catalyst.date)}\n\nvia @pdufa_bio https://pdufa.bio`)}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-blue-900/50 border border-blue-700 px-4 py-2 text-sm font-mono text-blue-300 hover:bg-blue-800 transition">
+                    <span className="font-bold">𝕏</span> Tweet
+                  </a>
+                  <a href={`https://www.reddit.com/submit?title=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} (${fmtProb(catalyst.prob)}% ODIN Score)`)}&url=${encodeURIComponent('https://pdufa.bio')}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-orange-900/50 border border-orange-700 px-4 py-2 text-sm font-mono text-orange-300 hover:bg-orange-800 transition">
+                    <span className="font-bold">R</span> Reddit
+                  </a>
+                  <button onClick={() => { navigator.clipboard.writeText(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}. ODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')}). Date: ${formatDate(catalyst.date)}. https://pdufa.bio`); }}
+                    className="flex items-center gap-2 bg-gray-800 border border-gray-600 px-4 py-2 text-sm font-mono text-gray-300 hover:bg-gray-700 transition">
+                    📋 Copy
+                  </button>
+                </div>
+              </div>
             </div>
           )}
 
