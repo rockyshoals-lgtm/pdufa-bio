@@ -2095,6 +2095,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
 const DetailModal = ({ catalyst, onClose }) => {
   const [activeDetailTab, setActiveDetailTab] = useState('overview');
   const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
+  const { data: sentimentData, loading: sentimentLoading } = useSentiment(catalyst?.ticker);
 
   if (!catalyst) return null;
 
@@ -2102,6 +2103,10 @@ const DetailModal = ({ catalyst, onClose }) => {
   const financials = marketData?.financials || {};
   const insiderTrades = Array.isArray(marketData?.insider) ? marketData.insider : [];
   const cashRunway = financials?.cashRunway || {};
+
+  // Parse LunarCrush sentiment data
+  const lcData = sentimentData?.data || {};
+  const hasSentiment = !!(lcData.interactions_24h || lcData.num_posts);
 
   const histRate = HIST_APPROVAL_RATES[catalyst.ta] || null;
 
@@ -2380,6 +2385,68 @@ const DetailModal = ({ catalyst, onClose }) => {
                   {cashRunway.runwayMonths && cashRunway.runwayMonths < 12 && (
                     <div className="mt-3 text-xs text-red-400 flex items-center gap-1">
                       <AlertTriangle size={12} /> Low runway — company may need to raise capital
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Social Sentiment (LunarCrush) */}
+              {sentimentLoading && (
+                <div className="flex items-center justify-center py-6 gap-2 text-gray-400 text-xs">
+                  <Loader size={14} className="animate-spin" /> Loading sentiment...
+                </div>
+              )}
+              {!sentimentLoading && hasSentiment && (
+                <div className="bg-gray-800 border border-gray-700 p-4">
+                  <div className="text-xs text-gray-500 mb-3 font-mono flex items-center gap-2">
+                    SOCIAL SENTIMENT
+                    {lcData.trend && (
+                      <span className={`px-1.5 py-0.5 text-[10px] ${lcData.trend === 'up' ? 'bg-green-500/20 text-green-400' : lcData.trend === 'down' ? 'bg-red-500/20 text-red-400' : 'bg-gray-500/20 text-gray-400'}`}>
+                        {lcData.trend === 'up' ? '▲ TRENDING UP' : lcData.trend === 'down' ? '▼ TRENDING DOWN' : '─ FLAT'}
+                      </span>
+                    )}
+                    <span className="text-gray-600 ml-auto">via LunarCrush</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 mb-3">
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">24h Engagements</div>
+                      <div className="text-lg font-bold text-blue-400 font-mono">{fmtMoney(lcData.interactions_24h || 0)}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Mentions</div>
+                      <div className="text-lg font-bold text-white font-mono">{lcData.num_posts || 0}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Creators</div>
+                      <div className="text-lg font-bold text-purple-400 font-mono">{lcData.num_contributors || 0}</div>
+                    </div>
+                  </div>
+                  {/* Platform sentiment breakdown */}
+                  {lcData.types_sentiment && (
+                    <div className="space-y-1.5">
+                      <div className="text-[10px] text-gray-500 font-mono">SENTIMENT BY PLATFORM</div>
+                      {Object.entries(lcData.types_sentiment)
+                        .filter(([, val]) => val !== undefined && val !== null)
+                        .map(([platform, score]) => {
+                          const count = lcData.types_count?.[platform] || 0;
+                          const interactions = lcData.types_interactions?.[platform] || 0;
+                          const pName = platform.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()).replace('Reddit Post', 'Reddit').replace('Tiktok Video', 'TikTok').replace('Youtube Video', 'YouTube').replace('Tweet', 'X/Twitter');
+                          return (
+                            <div key={platform} className="flex items-center gap-2 text-xs">
+                              <span className="text-gray-400 w-20 truncate font-mono">{pName}</span>
+                              <div className="flex-1 bg-gray-700 h-1.5">
+                                <div
+                                  className={`h-full ${score >= 70 ? 'bg-green-500' : score >= 40 ? 'bg-yellow-500' : 'bg-red-500'}`}
+                                  style={{ width: `${Math.min(score, 100)}%` }}
+                                />
+                              </div>
+                              <span className={`font-mono text-xs w-8 text-right ${score >= 70 ? 'text-green-400' : score >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>
+                                {score}%
+                              </span>
+                              <span className="text-gray-600 text-[10px] w-16 text-right font-mono">{count} posts</span>
+                            </div>
+                          );
+                        })}
                     </div>
                   )}
                 </div>
