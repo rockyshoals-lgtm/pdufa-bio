@@ -2092,34 +2092,77 @@ const CMC_RISK_PROFILES = {
 };
 
 // ═══════════════════════════════════════════════════
-// BioCred PREDICTION SYSTEM (localStorage MVP)
+// BioCred PREDICTION SYSTEM (Supabase + localStorage cache)
 // ═══════════════════════════════════════════════════
+const getFingerprint = () => {
+  try {
+    let fp = localStorage.getItem('pdufa_fingerprint');
+    if (!fp) {
+      fp = 'u_' + Math.random().toString(36).substr(2, 12) + Date.now().toString(36);
+      localStorage.setItem('pdufa_fingerprint', fp);
+    }
+    return fp;
+  } catch { return 'anon_' + Math.random().toString(36).substr(2, 8); }
+};
+
 const usePredictions = () => {
+  const fingerprint = useMemo(() => getFingerprint(), []);
   const [predictions, setPredictions] = useState(() => {
     try {
       const stored = localStorage.getItem('pdufa_predictions');
       return stored ? JSON.parse(stored) : {};
     } catch { return {}; }
   });
+  const [communitySentiment, setCommunitySentiment] = useState({});
+
+  // Load community sentiment on mount
+  useEffect(() => {
+    fetch('/api/predictions?action=sentiment')
+      .then(r => r.ok ? r.json() : [])
+      .then(data => {
+        const map = {};
+        (data || []).forEach(d => { map[d.catalyst_id] = d; });
+        setCommunitySentiment(map);
+      })
+      .catch(() => {});
+  }, []);
 
   const predict = useCallback((catalystId, prediction) => {
+    // Update local state immediately (optimistic)
     setPredictions(prev => {
       const next = { ...prev, [catalystId]: { prediction, timestamp: Date.now() } };
       try { localStorage.setItem('pdufa_predictions', JSON.stringify(next)); } catch {}
       return next;
     });
-  }, []);
+
+    // Sync to Supabase in background
+    fetch('/api/predictions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fingerprint, catalyst_id: catalystId, prediction }),
+    }).then(r => r.ok ? r.json() : null)
+      .then(() => {
+        // Refresh community sentiment
+        fetch('/api/predictions?action=sentiment')
+          .then(r => r.ok ? r.json() : [])
+          .then(data => {
+            const map = {};
+            (data || []).forEach(d => { map[d.catalyst_id] = d; });
+            setCommunitySentiment(map);
+          }).catch(() => {});
+      })
+      .catch(() => {});
+  }, [fingerprint]);
 
   const getPrediction = useCallback((catalystId) => predictions[catalystId] || null, [predictions]);
+  const getCommunity = useCallback((catalystId) => communitySentiment[catalystId] || null, [communitySentiment]);
 
   const getStats = useCallback(() => {
-    const all = Object.values(predictions);
-    const total = all.length;
-    // For now, we can't score accuracy without outcomes, but we can track predictions
-    return { total, predictions };
-  }, [predictions]);
+    const total = Object.keys(predictions).length;
+    return { total, predictions, fingerprint };
+  }, [predictions, fingerprint]);
 
-  return { predict, getPrediction, getStats };
+  return { predict, getPrediction, getCommunity, getStats, fingerprint };
 };
 
 // ═══════════════════════════════════════════════════
@@ -2372,8 +2415,9 @@ const TradingWindowBar = ({ catalyst, compact = false }) => {
 };
 
 // ── BioCred Prediction Widget ────────────────────
-const PredictionWidget = ({ catalyst, predict, getPrediction }) => {
+const PredictionWidget = ({ catalyst, predict, getPrediction, getCommunity }) => {
   const existing = getPrediction(catalyst.id);
+  const community = getCommunity ? getCommunity(catalyst.id) : null;
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handlePredict = (prediction) => {
@@ -2384,7 +2428,7 @@ const PredictionWidget = ({ catalyst, predict, getPrediction }) => {
 
   if (existing) {
     return (
-      <div className="bg-gray-800 border border-gray-700 p-3">
+      <div className="bg-gray-800 border border-gray-700 p-3 space-y-3">
         <div className="text-xs text-gray-500 font-mono mb-2 flex items-center gap-1.5">
           <Award size={12} className="text-purple-400" /> YOUR PREDICTION
         </div>
@@ -2396,6 +2440,28 @@ const PredictionWidget = ({ catalyst, predict, getPrediction }) => {
           </span>
           <span className="text-xs text-gray-500">Predicted {new Date(existing.timestamp).toLocaleDateString()}</span>
         </div>
+        {/* Community Sentiment Bar */}
+        {community && community.total_votes > 0 && (
+          <div>
+            <div className="text-xs text-gray-500 font-mono mb-1 flex items-center gap-1.5">
+              <Users size={10} /> COMMUNITY ({community.total_votes} votes)
+            </div>
+            <div className="flex h-4 w-full overflow-hidden border border-gray-700">
+              <div className="h-full bg-green-600 flex items-center justify-center text-[9px] font-mono text-white font-bold transition-all"
+                style={{ width: `${community.approve_pct}%` }}>
+                {community.approve_pct > 15 && `${community.approve_pct}%`}
+              </div>
+              <div className="h-full bg-red-600 flex items-center justify-center text-[9px] font-mono text-white font-bold transition-all"
+                style={{ width: `${100 - community.approve_pct}%` }}>
+                {(100 - community.approve_pct) > 15 && `${(100 - community.approve_pct).toFixed(1)}%`}
+              </div>
+            </div>
+            <div className="flex justify-between text-[10px] font-mono mt-0.5">
+              <span className="text-green-400">APPROVE ({community.approve_votes})</span>
+              <span className="text-red-400">CRL ({community.crl_votes})</span>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -2568,7 +2634,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
 };
 
 // ── Detail Modal (Enhanced with tabs) ──────────────
-const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false, predict = () => {}, getPrediction = () => null }) => {
+const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false, predict = () => {}, getPrediction = () => null, getCommunity = () => null }) => {
   const [activeDetailTab, setActiveDetailTab] = useState('overview');
   const [showShareMenu, setShowShareMenu] = useState(false);
   const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
@@ -2830,7 +2896,7 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
               </div>
 
               {/* BioCred Prediction */}
-              <PredictionWidget catalyst={catalyst} predict={predict} getPrediction={getPrediction} />
+              <PredictionWidget catalyst={catalyst} predict={predict} getPrediction={getPrediction} getCommunity={getCommunity} />
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-700">
@@ -4460,7 +4526,7 @@ export default function PdufaBio() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
   const { watchlist, toggle: toggleWatch, isWatched } = useWatchlist();
-  const { predict, getPrediction, getStats: getPredictionStats } = usePredictions();
+  const { predict, getPrediction, getCommunity, getStats: getPredictionStats } = usePredictions();
   const [siteUnlocked, setSiteUnlocked] = useState(() => {
     try { return sessionStorage.getItem('pdufa_unlocked') === 'true'; } catch (e) { return false; }
   });
@@ -4601,7 +4667,7 @@ export default function PdufaBio() {
 
       {/* Detail Modal */}
       {selectedCatalyst && (
-        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} predict={predict} getPrediction={getPrediction} />
+        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} predict={predict} getPrediction={getPrediction} getCommunity={getCommunity} />
       )}
     </div>
   );
