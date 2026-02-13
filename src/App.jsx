@@ -33,6 +33,8 @@ import {
   ChevronRight,
   CheckSquare,
   Square,
+  Star,
+  Bookmark,
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
@@ -2095,7 +2097,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
 };
 
 // ── Detail Modal (Enhanced with tabs) ──────────────
-const DetailModal = ({ catalyst, onClose }) => {
+const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false }) => {
   const [activeDetailTab, setActiveDetailTab] = useState('overview');
   const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
   const { data: sentimentData, loading: sentimentLoading } = useSentiment(catalyst?.ticker);
@@ -2144,9 +2146,14 @@ const DetailModal = ({ catalyst, onClose }) => {
               </div>
             )}
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-white transition p-1">
+          <div className="flex items-center gap-2">
+              <button onClick={(e) => { e.stopPropagation(); toggleWatch(catalyst.id); }} className="text-gray-400 hover:text-yellow-400 transition p-1" title={isWatched(catalyst.id) ? "Remove from watchlist" : "Add to watchlist"}>
+                <Star size={20} className={isWatched(catalyst.id) ? "fill-yellow-400 text-yellow-400" : ""} />
+              </button>
+              <button onClick={onClose} className="text-gray-400 hover:text-white transition p-1">
             <X size={24} />
           </button>
+            </div>
         </div>
 
         {/* Tab Bar */}
@@ -2179,6 +2186,11 @@ const DetailModal = ({ catalyst, onClose }) => {
         <div className="p-4 sm:p-6 space-y-6">
           {activeDetailTab === 'overview' && (
             <>
+              {/* Catalyst Radar */}
+              <div className="bg-gray-800 border border-gray-700 p-4">
+                <div className="text-xs text-gray-500 mb-2 font-mono">CATALYST PROFILE</div>
+                <CatalystRadar catalyst={catalyst} />
+              </div>
               {/* Key Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
@@ -2807,17 +2819,19 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
 };
 
 // ── Screener View ──────────────────────────────────
-const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
+const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched = () => false }) => {
   const [filterTier, setFilterTier] = useState(null);
   const [filterTA, setFilterTA] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortCol, setSortCol] = useState('date');
   const [sortDir, setSortDir] = useState('asc');
+  const [watchlistOnly, setWatchlistOnly] = useState(false);
 
   const tas = useMemo(() => [...new Set(catalysts.map((c) => c.ta))].sort(), [catalysts]);
 
   const filtered = useMemo(() => {
     return catalysts.filter((c) => {
+      if (watchlistOnly && !isWatched(c.id)) return false;
       if (filterTier && c.tier !== filterTier) return false;
       if (filterTA && c.ta !== filterTA) return false;
       if (searchTerm && !c.drug.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -2849,6 +2863,10 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
     <div className="space-y-4">
       <div className="bg-gray-900 border border-gray-700 p-4 space-y-3">
         <div className="flex gap-2 items-center">
+          <button onClick={() => setWatchlistOnly(!watchlistOnly)}
+            className={`px-3 py-2 text-xs font-mono border flex items-center gap-1.5 transition flex-shrink-0 ${watchlistOnly ? 'bg-yellow-900 border-yellow-600 text-yellow-300' : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'}`}>
+            <Star size={12} className={watchlistOnly ? "fill-yellow-400" : ""} /> {watchlistOnly ? "Watching" : "Watchlist"}
+          </button>
           <Search size={16} className="text-gray-400" />
           <input type="text" placeholder="Search drug, ticker, company..."
             value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
@@ -2880,9 +2898,9 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
       </div>
 
       <div className="bg-gray-900 border border-gray-700 overflow-hidden">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto max-h-[70vh]">
           <table className="w-full text-sm font-mono">
-            <thead>
+            <thead className="sticky top-0 z-10">
               <tr className="border-b border-gray-700 bg-gray-800">
                 {[
                   { col: 'date', label: 'Date' },
@@ -3031,6 +3049,289 @@ const IntelView = ({ catalysts }) => {
 // MAIN APP
 // ═══════════════════════════════════════════════════
 // ── FDA Disclaimer Modal ──────────────────────────
+
+// ── Heatmap View (Finviz-style treemap) ──────────
+const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
+  const [sizeBy, setSizeBy] = useState('prob');
+  const [groupBy, setGroupBy] = useState('ta');
+
+  // Group catalysts
+  const groups = useMemo(() => {
+    const g = {};
+    catalysts.forEach(c => {
+      const key = groupBy === 'ta' ? c.ta : c.tier;
+      if (!g[key]) g[key] = [];
+      g[key].push(c);
+    });
+    return Object.entries(g).sort((a, b) => {
+      const sumA = a[1].reduce((s, c) => s + c.prob, 0);
+      const sumB = b[1].reduce((s, c) => s + c.prob, 0);
+      return sumB - sumA;
+    });
+  }, [catalysts, groupBy]);
+
+  // Calculate total for sizing
+  const totalSize = catalysts.reduce((s, c) => s + (sizeBy === 'prob' ? c.prob : 1), 0);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 items-center">
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-gray-400 font-mono">GROUP:</span>
+          {[{ val: 'ta', label: 'Therapeutic Area' }, { val: 'tier', label: 'Tier' }].map(opt => (
+            <button key={opt.val} onClick={() => setGroupBy(opt.val)}
+              className={`px-3 py-1 text-xs font-mono border transition ${groupBy === opt.val ? 'bg-blue-900 border-blue-500 text-blue-300' : 'bg-gray-800 border-gray-700 text-gray-400'}`}>
+              {opt.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-gray-400 font-mono">SIZE:</span>
+          {[{ val: 'prob', label: 'Probability' }, { val: 'equal', label: 'Equal' }].map(opt => (
+            <button key={opt.val} onClick={() => setSizeBy(opt.val)}
+              className={`px-3 py-1 text-xs font-mono border transition ${sizeBy === opt.val ? 'bg-blue-900 border-blue-500 text-blue-300' : 'bg-gray-800 border-gray-700 text-gray-400'}`}>
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Legend */}
+      <div className="flex gap-4 text-xs font-mono">
+        {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map(tier => (
+          <div key={tier} className="flex items-center gap-1.5">
+            <div className="w-3 h-3" style={{ backgroundColor: getTierColor(tier) }} />
+            <span className="text-gray-400">{tier.replace('_',' ')}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Treemap */}
+      <div className="space-y-2">
+        {groups.map(([groupName, items]) => {
+          const groupTotal = items.reduce((s, c) => s + (sizeBy === 'prob' ? c.prob : 1), 0);
+          const groupPct = (groupTotal / totalSize) * 100;
+          return (
+            <div key={groupName}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-mono text-gray-400">{groupName}</span>
+                <span className="text-[10px] text-gray-600 font-mono">{items.length} catalysts</span>
+              </div>
+              <div className="flex flex-wrap gap-0.5" style={{ minHeight: Math.max(48, groupPct * 2) }}>
+                {items
+                  .sort((a, b) => b.prob - a.prob)
+                  .map(cat => {
+                    const weight = sizeBy === 'prob' ? cat.prob : (1 / catalysts.length);
+                    const pct = Math.max((weight / totalSize) * 100, 1.5);
+                    const daysOut = Math.max(0, Math.ceil((new Date(cat.date) - new Date()) / 86400000));
+                    const isImminent = daysOut <= 7;
+                    return (
+                      <div
+                        key={cat.id}
+                        onClick={() => onExpandCatalyst(cat)}
+                        className="relative cursor-pointer hover:brightness-125 transition-all group overflow-hidden"
+                        style={{
+                          backgroundColor: getTierColor(cat.tier),
+                          width: `calc(${Math.min(pct * 2, 25)}% - 2px)`,
+                          minWidth: '60px',
+                          minHeight: '48px',
+                          flex: `${pct} 1 60px`,
+                          opacity: 0.85,
+                        }}
+                        title={`${cat.ticker} — ${cat.drug}\n${fmtProb(cat.prob)}% | ${cat.tier.replace('_',' ')} | ${formatDate(cat.date)}`}
+                      >
+                        <div className="absolute inset-0 p-1.5 flex flex-col justify-between">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] sm:text-xs font-bold text-black font-mono leading-none">{cat.ticker}</span>
+                            {isImminent && <span className="text-[8px] bg-black/40 text-white px-1 rounded-sm">SOON</span>}
+                          </div>
+                          <div>
+                            <div className="text-[10px] sm:text-sm font-bold text-black/90 font-mono leading-none">{fmtProb(cat.prob)}%</div>
+                            <div className="text-[8px] text-black/60 font-mono leading-none mt-0.5 hidden sm:block">{daysOut}d</div>
+                          </div>
+                        </div>
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-2 flex flex-col justify-center">
+                          <div className="text-xs font-bold text-white">{cat.ticker}</div>
+                          <div className="text-[10px] text-gray-300 truncate">{cat.drug}</div>
+                          <div className="text-[10px] text-gray-400">{formatDate(cat.date)}</div>
+                          <div className="text-xs font-bold mt-1" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</div>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+
+// ── Catalyst Radar Chart (Snowflake) ─────────────
+const CatalystRadar = ({ catalyst }) => {
+  // Compute 5 axes from catalyst data: 0-100 scale
+  const prob100 = catalyst.prob * 100;
+
+  // 1. Approval Probability (direct)
+  const axisProb = Math.min(prob100, 100);
+
+  // 2. Designation Strength (how many regulatory designations)
+  const designationScore = Math.min(catalyst.designations.length * 25, 100);
+
+  // 3. Historical TA Rate
+  const taRate = HIST_APPROVAL_RATES[catalyst.ta];
+  const axisTA = taRate ? taRate.rate : 50;
+
+  // 4. Clinical Evidence (based on phase, enrollment, signals)
+  const phaseScore = catalyst.phase === 'Phase 3' ? 70 : catalyst.phase === 'Phase 2' ? 40 : 20;
+  const enrollBonus = catalyst.enrollment > 500 ? 20 : catalyst.enrollment > 100 ? 10 : 0;
+  const axisClinical = Math.min(phaseScore + enrollBonus, 100);
+
+  // 5. Risk Profile (inverse of negative signals)
+  const negSignals = Object.values(catalyst.signals).filter(v => v < 0).length;
+  const totalSignals = Object.keys(catalyst.signals).length;
+  const axisRisk = totalSignals > 0 ? Math.max(0, 100 - (negSignals / Math.max(totalSignals, 1)) * 100) : 50;
+
+  const axes = [
+    { label: 'Approval', value: axisProb },
+    { label: 'Designations', value: designationScore },
+    { label: 'TA History', value: axisTA },
+    { label: 'Clinical', value: axisClinical },
+    { label: 'Risk Profile', value: axisRisk },
+  ];
+
+  const cx = 90, cy = 90, r = 70;
+  const angleStep = (2 * Math.PI) / 5;
+
+  const getPoint = (index, value) => {
+    const angle = (index * angleStep) - Math.PI / 2;
+    const dist = (value / 100) * r;
+    return { x: cx + dist * Math.cos(angle), y: cy + dist * Math.sin(angle) };
+  };
+
+  const polygonPoints = axes.map((a, i) => {
+    const p = getPoint(i, a.value);
+    return `${p.x},${p.y}`;
+  }).join(' ');
+
+  const gridLevels = [25, 50, 75, 100];
+
+  return (
+    <div className="flex flex-col items-center">
+      <svg viewBox="0 0 180 180" className="w-48 h-48 sm:w-56 sm:h-56">
+        {/* Grid */}
+        {gridLevels.map(level => (
+          <polygon key={level}
+            points={axes.map((_, i) => { const p = getPoint(i, level); return `${p.x},${p.y}`; }).join(' ')}
+            fill="none" stroke="#374151" strokeWidth={level === 100 ? "1" : "0.5"} />
+        ))}
+        {/* Axis lines */}
+        {axes.map((_, i) => {
+          const p = getPoint(i, 100);
+          return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#374151" strokeWidth="0.5" />;
+        })}
+        {/* Data polygon */}
+        <polygon points={polygonPoints}
+          fill={getTierColor(catalyst.tier)} fillOpacity="0.2"
+          stroke={getTierColor(catalyst.tier)} strokeWidth="2" />
+        {/* Data points */}
+        {axes.map((a, i) => {
+          const p = getPoint(i, a.value);
+          return <circle key={i} cx={p.x} cy={p.y} r="3" fill={getTierColor(catalyst.tier)} />;
+        })}
+        {/* Labels */}
+        {axes.map((a, i) => {
+          const p = getPoint(i, 120);
+          return (
+            <text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle"
+              className="text-[8px] fill-gray-400 font-mono">
+              {a.label}
+            </text>
+          );
+        })}
+      </svg>
+      {/* Scores row */}
+      <div className="flex flex-wrap justify-center gap-2 mt-2">
+        {axes.map(a => (
+          <div key={a.label} className="text-center">
+            <div className="text-[10px] text-gray-500 font-mono">{a.label}</div>
+            <div className={`text-xs font-bold font-mono ${a.value >= 70 ? 'text-green-400' : a.value >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>
+              {a.value.toFixed(0)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+// ── PDUFA This Week Alert Banner ─────────────────
+const ImminentBanner = ({ catalysts, onExpandCatalyst }) => {
+  const now = new Date();
+  const imminent = catalysts.filter(c => {
+    const d = new Date(c.date);
+    const diff = (d - now) / 86400000;
+    return diff >= 0 && diff <= 7;
+  });
+
+  if (imminent.length === 0) return null;
+
+  return (
+    <div className="bg-gradient-to-r from-orange-950 via-red-950 to-orange-950 border-b border-orange-800">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex items-center gap-3 overflow-x-auto">
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          <Bell size={14} className="text-orange-400 animate-pulse" />
+          <span className="text-xs font-mono text-orange-300 font-bold uppercase whitespace-nowrap">
+            {imminent.length === 1 ? 'PDUFA THIS WEEK' : `${imminent.length} PDUFAs THIS WEEK`}
+          </span>
+        </div>
+        <div className="flex gap-2 overflow-x-auto">
+          {imminent.map(cat => {
+            const daysOut = Math.ceil((new Date(cat.date) - now) / 86400000);
+            return (
+              <button key={cat.id} onClick={() => onExpandCatalyst(cat)}
+                className="flex items-center gap-2 bg-black/30 px-3 py-1 border border-orange-800/50 hover:border-orange-500 transition whitespace-nowrap flex-shrink-0">
+                <span className="text-xs font-bold text-white font-mono">{cat.ticker}</span>
+                <span className="text-[10px] font-mono" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</span>
+                <span className="text-[10px] text-orange-400 font-mono">
+                  {daysOut === 0 ? 'TODAY' : daysOut === 1 ? 'TOMORROW' : `${daysOut}d`}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+// ── Watchlist Hook (localStorage) ────────────────
+const useWatchlist = () => {
+  const [watchlist, setWatchlist] = useState(() => {
+    try {
+      const stored = localStorage.getItem('pdufa_watchlist');
+      return stored ? JSON.parse(stored) : [];
+    } catch { return []; }
+  });
+
+  const toggle = useCallback((id) => {
+    setWatchlist(prev => {
+      const next = prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id];
+      try { localStorage.setItem('pdufa_watchlist', JSON.stringify(next)); } catch {}
+      return next;
+    });
+  }, []);
+
+  const isWatched = useCallback((id) => watchlist.includes(id), [watchlist]);
+
+  return { watchlist, toggle, isWatched };
+};
+
 // ── Password Gate (dev mode) ──────────────────────
 const PasswordGate = ({ onUnlock }) => {
   const [pw, setPw] = useState('');
@@ -3154,6 +3455,7 @@ const DisclaimerModal = ({ onAccept }) => {
 export default function PdufaBio() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
+  const { watchlist, toggle: toggleWatch, isWatched } = useWatchlist();
   const [siteUnlocked, setSiteUnlocked] = useState(() => {
     try { return sessionStorage.getItem('pdufa_unlocked') === 'true'; } catch (e) { return false; }
   });
@@ -3172,6 +3474,7 @@ export default function PdufaBio() {
     { id: 'dashboard', label: 'Dashboard', icon: Activity },
     { id: 'calendar', label: 'Calendar', icon: Calendar },
     { id: 'screener', label: 'Screener', icon: BarChart3 },
+    { id: 'heatmap', label: 'Heatmap', icon: PieChart },
     { id: 'intel', label: 'Intel', icon: Brain },
   ];
 
@@ -3227,11 +3530,15 @@ export default function PdufaBio() {
         </div>
       </div>
 
+      {/* Imminent Alert Banner */}
+      <ImminentBanner catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />
+
       {/* Content */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
         {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} onNavigate={setActiveTab} />}
         {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
-        {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
+        {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} watchlist={watchlist} isWatched={isWatched} />}
+        {activeTab === 'heatmap' && <HeatmapView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'intel' && <IntelView catalysts={sortedCatalysts} />}
       </div>
 
@@ -3285,7 +3592,7 @@ export default function PdufaBio() {
 
       {/* Detail Modal */}
       {selectedCatalyst && (
-        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} />
+        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} />
       )}
     </div>
   );
