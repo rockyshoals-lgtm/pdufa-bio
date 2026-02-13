@@ -3031,6 +3031,55 @@ const IntelView = ({ catalysts }) => {
 // MAIN APP
 // ═══════════════════════════════════════════════════
 // ── FDA Disclaimer Modal ──────────────────────────
+// ── Password Gate (dev mode) ──────────────────────
+const PasswordGate = ({ onUnlock }) => {
+  const [pw, setPw] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (pw === 'pdufa2026') {
+      try { sessionStorage.setItem('pdufa_unlocked', 'true'); } catch (e) {}
+      onUnlock();
+    } else {
+      setError(true);
+      setPw('');
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-gray-950 z-[99999] flex items-center justify-center p-4">
+      <div className="text-center max-w-sm w-full">
+        <h1 className="text-3xl font-bold font-mono mb-1">
+          PDUFA<span className="text-blue-400">.BIO</span>
+        </h1>
+        <div className="text-xs text-yellow-500 font-mono mb-6 bg-yellow-500/10 border border-yellow-800 px-3 py-1.5 inline-block">
+          UNDER CONSTRUCTION
+        </div>
+        <p className="text-sm text-gray-400 mb-6">
+          This site is currently being rebuilt. Enter the access code to continue.
+        </p>
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <input
+            type="password"
+            value={pw}
+            onChange={(e) => { setPw(e.target.value); setError(false); }}
+            placeholder="Access code"
+            className={`w-full bg-gray-900 border ${error ? 'border-red-500' : 'border-gray-700'} text-white px-4 py-3 font-mono text-sm text-center focus:outline-none focus:border-blue-500 transition`}
+            autoFocus
+          />
+          {error && <div className="text-xs text-red-400 font-mono">Incorrect access code</div>}
+          <button type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 font-mono text-sm font-bold transition">
+            ENTER
+          </button>
+        </form>
+        <p className="text-[10px] text-gray-600 mt-6 font-mono">Powered by ODIN v10.66</p>
+      </div>
+    </div>
+  );
+};
+
 const DisclaimerModal = ({ onAccept }) => {
   const [checked, setChecked] = useState(false);
 
@@ -3105,6 +3154,9 @@ const DisclaimerModal = ({ onAccept }) => {
 export default function PdufaBio() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
+  const [siteUnlocked, setSiteUnlocked] = useState(() => {
+    try { return sessionStorage.getItem('pdufa_unlocked') === 'true'; } catch (e) { return false; }
+  });
   const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
     try { return localStorage.getItem('pdufa_disclaimer_accepted') === 'true'; } catch (e) { return false; }
   });
@@ -3125,8 +3177,13 @@ export default function PdufaBio() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
-      {/* Disclaimer Modal */}
-      {!disclaimerAccepted && (
+      {/* Password Gate */}
+      {!siteUnlocked && (
+        <PasswordGate onUnlock={() => setSiteUnlocked(true)} />
+      )}
+
+      {/* Disclaimer Modal (only after password gate) */}
+      {siteUnlocked && !disclaimerAccepted && (
         <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} />
       )}
 
