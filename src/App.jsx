@@ -51,7 +51,7 @@ import {
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
-// CATALYST DATA — ODIN v10.66 Dynamic Grandmaster
+// CATALYST DATA — ODIN v10.66 Expanded (42 parameters)
 // ═══════════════════════════════════════════════════
 const CATALYSTS_DATA = [
   {
@@ -68,7 +68,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.4819,
+    prob: 0.3959,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -78,10 +78,11 @@ const CATALYSTS_DATA = [
     weekend: true,
     signals: {
           'inexperienced_sponsor': -1.2875,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'me_too': -0.35
     },
-    totalAdj: -1.468333,
-    logit: -0.0726,
+    totalAdj: -1.818333,
+    logit: -0.4226,
   },
   {
     id: 'otsuka-inqovi-venetoclax-2026-02-25',
@@ -97,8 +98,8 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.9029,
-    tier: 'TIER_1',
+    prob: 0.8428,
+    tier: 'TIER_2',
     taRisk: 'LOW_RISK',
     action: 'STANDARD_POSITION',
     exit: 'T-5 to T-7',
@@ -109,10 +110,11 @@ const CATALYSTS_DATA = [
           'sNDA/sBLA': -0.441,
           'experienced_sponsor': 0.9387,
           'ta_low_risk': 0.0838,
-          'ind_cancer': 0.2523
+          'ind_cancer': 0.2523,
+          'single_arm_pivotal': -0.55
     },
-    totalAdj: 0.833795,
-    logit: 2.2295,
+    totalAdj: 0.283795,
+    logit: 1.6795,
   },
   {
     id: 'regn-dupixent-afrs-2026-02-28',
@@ -160,7 +162,7 @@ const CATALYSTS_DATA = [
     enrollment: 0,
     nctId: 'NCT05386264',
     avoid: false,
-    prob: 0.9486,
+    prob: 0.9286,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -170,10 +172,11 @@ const CATALYSTS_DATA = [
           'experienced_sponsor': 0.9387,
           'orphan': 0.1469,
           'priority_review': 0.615,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'me_too': -0.35
     },
-    totalAdj: 1.519697,
-    logit: 2.9154,
+    totalAdj: 1.169697,
+    logit: 2.5654,
     weekend: true,
   },
   {
@@ -220,7 +223,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.0045,
+    prob: 0.002,
     tier: 'TIER_4',
     taRisk: 'HIGH_RISK',
     action: 'NO_POSITION',
@@ -233,10 +236,12 @@ const CATALYSTS_DATA = [
           'inexperienced_sponsor': -1.2875,
           'hist_crl_rate': -1.4953,
           'ta_high_risk': -0.2555,
-          'novice_high_risk_ta': -0.4071
+          'novice_high_risk_ta': -0.4071,
+          'surrogate_only': -0.45,
+          'me_too': -0.35
     },
-    totalAdj: -6.798612,
-    logit: -5.4029,
+    totalAdj: -7.598612,
+    logit: -6.2029,
   },
   {
     id: 'rytm-imcivree-2026-03-20',
@@ -252,7 +257,7 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug'],
     enrollment: 0,
     nctId: '',
-    prob: 0.4093,
+    prob: 0.5208,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -264,10 +269,11 @@ const CATALYSTS_DATA = [
           'sNDA/sBLA': -0.441,
           'inexperienced_sponsor': -1.2875,
           'orphan': 0.1469,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45
     },
-    totalAdj: -1.762426,
-    logit: -0.3667,
+    totalAdj: -1.312426,
+    logit: 0.0833,
   },
   {
     id: 'gsk-linerixibat-2026-03-24',
@@ -283,7 +289,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.9117,
+    prob: 0.9656,
     tier: 'TIER_1',
     taRisk: 'HIGH_RISK',
     action: 'STANDARD_POSITION',
@@ -292,10 +298,12 @@ const CATALYSTS_DATA = [
     avoid: false,
     weekend: false,
     signals: {
-          'experienced_sponsor': 0.9387
+          'experienced_sponsor': 0.9387,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: 0.93867,
-    logit: 2.3344,
+    totalAdj: 1.93867,
+    logit: 3.3344,
   },
   {
     id: 'lly-orforglipron-2026-03-25',
@@ -311,7 +319,7 @@ const CATALYSTS_DATA = [
     designations: ['National Priority Voucher'],
     enrollment: 0,
     nctId: '',
-    prob: 0.941,
+    prob: 0.9615,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -322,10 +330,11 @@ const CATALYSTS_DATA = [
     signals: {
           'priority_review': 0.615,
           'experienced_sponsor': 0.9387,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45
     },
-    totalAdj: 1.372793,
-    logit: 2.7685,
+    totalAdj: 1.822793,
+    logit: 3.2185,
   },
   {
     id: 'iron-bitopertin-2026-03-25b',
@@ -341,12 +350,12 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug', 'Breakthrough Therapy'],
     enrollment: 0,
     nctId: '',
-    prob: 0.4403,
-    tier: 'TIER_4',
+    prob: 0.6593,
+    tier: 'TIER_3',
     taRisk: 'HIGH_RISK',
-    action: 'NO_POSITION',
-    exit: 'N/A',
-    runner: '0%',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
     avoid: false,
     weekend: false,
     signals: {
@@ -354,10 +363,14 @@ const CATALYSTS_DATA = [
           'BTD': 0.1676,
           'orphan': 0.1469,
           'ta_high_risk': -0.2555,
-          'novice_high_risk_ta': -0.4071
+          'novice_high_risk_ta': -0.4071,
+          'surrogate_only': -0.45,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55,
+          'designation_stack': 0.35
     },
-    totalAdj: -1.635503,
-    logit: -0.2398,
+    totalAdj: -0.735503,
+    logit: 0.6602,
   },
   {
     id: 'rckt-kresladi-2026-03-28',
@@ -373,7 +386,7 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug', 'Breakthrough Therapy', 'Priority Review'],
     enrollment: 0,
     nctId: '',
-    prob: 0.3928,
+    prob: 0.4048,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -388,10 +401,14 @@ const CATALYSTS_DATA = [
           'priority_review': 0.615,
           'class1_resub': 0.57,
           'manufacturing_risk': -1.0589,
-          'cmc_extension': -0.9845
+          'cmc_extension': -0.9845,
+          'single_arm_pivotal': -0.55,
+          'small_pivotal_n': -0.4,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -1.831326,
-    logit: -0.4356,
+    totalAdj: -1.781326,
+    logit: -0.3856,
   },
   {
     id: 'lnth-ga68-edotreotide-2026-03-29',
@@ -435,7 +452,7 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug', 'Priority Review'],
     enrollment: 63,
     nctId: 'NCT05371613',
-    prob: 0.1324,
+    prob: 0.2092,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -449,10 +466,13 @@ const CATALYSTS_DATA = [
           'orphan': 0.1469,
           'priority_review': 0.615,
           'cmc_extension': -0.9845,
-          's22_pediatric_pk': -1.9328
+          's22_pediatric_pk': -1.9328,
+          'surrogate_only': -0.45,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -3.275219,
-    logit: -1.8795,
+    totalAdj: -2.725219,
+    logit: -1.3295,
   },
   {
     id: 'orca-orca-t-2026-04-06',
@@ -468,10 +488,10 @@ const CATALYSTS_DATA = [
     designations: ['Priority Review'],
     enrollment: 0,
     nctId: '',
-    prob: 0.6915,
-    tier: 'TIER_3',
+    prob: 0.859,
+    tier: 'TIER_1',
     taRisk: 'LOW_RISK',
-    action: 'SMALL_POSITION_EARLY_EXIT',
+    action: 'STANDARD_POSITION',
     exit: 'T-5 to T-7',
     runner: '20%',
     avoid: false,
@@ -479,10 +499,12 @@ const CATALYSTS_DATA = [
     signals: {
           'inexperienced_sponsor': -1.2875,
           'priority_review': 0.615,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -0.588668,
-    logit: 0.8071,
+    totalAdj: 0.411332,
+    logit: 1.8071,
   },
   {
     id: 'tvtx-sparsentan-2026-04-13',
@@ -498,7 +520,7 @@ const CATALYSTS_DATA = [
     designations: ['Priority Review', 'Accelerated Approval conversion'],
     enrollment: 406,
     nctId: 'NCT03762850',
-    prob: 0.5436,
+    prob: 0.1115,
     tier: 'TIER_4',
     taRisk: 'HIGH_RISK',
     action: 'NO_POSITION',
@@ -512,10 +534,12 @@ const CATALYSTS_DATA = [
           'priority_review': 0.615,
           'accel_approval': 0.5552,
           'ta_high_risk': -0.2555,
-          'novice_high_risk_ta': -0.4071
+          'novice_high_risk_ta': -0.4071,
+          'primary_endpoint_missed': -1.8,
+          'surrogate_only': -0.45
     },
-    totalAdj: -1.220904,
-    logit: 0.1748,
+    totalAdj: -3.470904,
+    logit: -2.0752,
   },
   {
     id: 'azn-baxdrostat-2026-05-15',
@@ -531,7 +555,7 @@ const CATALYSTS_DATA = [
     designations: ['Priority Review'],
     enrollment: 0,
     nctId: '',
-    prob: 0.941,
+    prob: 0.9615,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -542,10 +566,11 @@ const CATALYSTS_DATA = [
     signals: {
           'priority_review': 0.615,
           'experienced_sponsor': 0.9387,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45
     },
-    totalAdj: 1.372793,
-    logit: 2.7685,
+    totalAdj: 1.822793,
+    logit: 3.2185,
   },
   {
     id: 'aclx-cytisinicline-2026-06-20',
@@ -561,7 +586,7 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy'],
     enrollment: 0,
     nctId: '',
-    prob: 0.4355,
+    prob: 0.3522,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -573,10 +598,11 @@ const CATALYSTS_DATA = [
           'inexperienced_sponsor': -1.2875,
           'BTD': 0.1676,
           'ta_mod_risk': -0.1809,
-          'indication_pain': -0.3546
+          'indication_pain': -0.3546,
+          'me_too': -0.35
     },
-    totalAdj: -1.655287,
-    logit: -0.2595,
+    totalAdj: -2.005287,
+    logit: -0.6095,
   },
   {
     id: 'vrdn-veligrotug-2026-06-30',
@@ -592,10 +618,10 @@ const CATALYSTS_DATA = [
     designations: ['Priority Review'],
     enrollment: 0,
     nctId: '',
-    prob: 0.6915,
-    tier: 'TIER_3',
+    prob: 0.7785,
+    tier: 'TIER_2',
     taRisk: 'LOW_RISK',
-    action: 'SMALL_POSITION_EARLY_EXIT',
+    action: 'STANDARD_POSITION',
     exit: 'T-5 to T-7',
     runner: '20%',
     avoid: false,
@@ -603,10 +629,11 @@ const CATALYSTS_DATA = [
     signals: {
           'inexperienced_sponsor': -1.2875,
           'priority_review': 0.615,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'first_in_class': 0.45
     },
-    totalAdj: -0.588668,
-    logit: 0.8071,
+    totalAdj: -0.138668,
+    logit: 1.2571,
   },
   {
     id: 'kura-tipifarnib-2026-07-01',
@@ -622,8 +649,8 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug', 'Priority Review'],
     enrollment: 63,
     nctId: 'NCT02383927',
-    prob: 0.7543,
-    tier: 'TIER_2',
+    prob: 0.893,
+    tier: 'TIER_1',
     taRisk: 'LOW_RISK',
     action: 'STANDARD_POSITION',
     exit: 'T-5 to T-7',
@@ -635,10 +662,12 @@ const CATALYSTS_DATA = [
           'BTD': 0.1676,
           'orphan': 0.1469,
           'priority_review': 0.615,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -0.274126,
-    logit: 1.1216,
+    totalAdj: 0.725874,
+    logit: 2.1216,
   },
   {
     id: 'gsk-varicella-vaccine-2026-07-01',
@@ -712,12 +741,12 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug'],
     enrollment: 376,
     nctId: 'NCT04716231',
-    prob: 0.4403,
-    tier: 'TIER_4',
+    prob: 0.6814,
+    tier: 'TIER_3',
     taRisk: 'HIGH_RISK',
-    action: 'NO_POSITION',
-    exit: 'N/A',
-    runner: '0%',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
     avoid: false,
     weekend: false,
     signals: {
@@ -725,10 +754,12 @@ const CATALYSTS_DATA = [
           'BTD': 0.1676,
           'orphan': 0.1469,
           'ta_high_risk': -0.2555,
-          'novice_high_risk_ta': -0.4071
+          'novice_high_risk_ta': -0.4071,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -1.635503,
-    logit: -0.2398,
+    totalAdj: -0.635503,
+    logit: 0.7602,
   },
   {
     id: 'regn-mibavademab-2026-07-14',
@@ -829,7 +860,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.4819,
+    prob: 0.0443,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -839,10 +870,12 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'inexperienced_sponsor': -1.2875,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'refused_to_file': -1.2,
+          'primary_endpoint_missed': -1.8
     },
-    totalAdj: -1.468333,
-    logit: -0.0726,
+    totalAdj: -4.468333,
+    logit: -3.0726,
   },
   {
     id: 'lxrx-sotagliflozin-2026-07-15',
@@ -858,7 +891,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.4819,
+    prob: 0.5069,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -868,10 +901,12 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'inexperienced_sponsor': -1.2875,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45,
+          'me_too': -0.35
     },
-    totalAdj: -1.468333,
-    logit: -0.0726,
+    totalAdj: -1.368333,
+    logit: 0.0274,
   },
   {
     id: 'rare-gtx-102-2026-07-15',
@@ -887,19 +922,22 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.527,
-    tier: 'TIER_4',
+    prob: 0.8113,
+    tier: 'TIER_2',
     taRisk: 'MOD_RISK',
-    action: 'NO_POSITION',
-    exit: 'N/A',
-    runner: '0%',
+    action: 'STANDARD_POSITION',
+    exit: 'T-5 to T-7',
+    runner: '20%',
     avoid: false,
     weekend: false,
     signals: {
-          'inexperienced_sponsor': -1.2875
+          'inexperienced_sponsor': -1.2875,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55,
+          'designation_stack': 0.35
     },
-    totalAdj: -1.287471,
-    logit: 0.1083,
+    totalAdj: 0.062529,
+    logit: 1.4583,
   },
   {
     id: 'vrdn-vrdn-003-2026-07-15',
@@ -1030,7 +1068,7 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug', 'Rare Pediatric Disease'],
     enrollment: 106,
     nctId: 'NCT05126758',
-    prob: 0.2497,
+    prob: 0.5622,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -1041,10 +1079,13 @@ const CATALYSTS_DATA = [
     signals: {
           'inexperienced_sponsor': -1.2875,
           'orphan': 0.1469,
-          'form_483': -1.3552
+          'form_483': -1.3552,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55,
+          'designation_stack': 0.35
     },
-    totalAdj: -2.495774,
-    logit: -1.1,
+    totalAdj: -1.145774,
+    logit: 0.25,
   },
   {
     id: 'private-177lu-edotreotide-2026-08-28',
@@ -1091,7 +1132,7 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug'],
     enrollment: 91,
     nctId: 'NCT05482971',
-    prob: 0.1293,
+    prob: 0.0947,
     tier: 'TIER_4',
     taRisk: 'HIGH_RISK',
     action: 'NO_POSITION',
@@ -1105,10 +1146,11 @@ const CATALYSTS_DATA = [
           'orphan': 0.1469,
           'ta_high_risk': -0.2555,
           'novice_high_risk_ta': -0.4071,
-          'manufacturing_risk': -1.0589
+          'manufacturing_risk': -1.0589,
+          'me_too': -0.35
     },
-    totalAdj: -3.303029,
-    logit: -1.9073,
+    totalAdj: -3.653029,
+    logit: -2.2573,
   },
   {
     id: 'nvo-semaglutide-2026-09-01',
@@ -1124,8 +1166,8 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.8888,
-    tier: 'TIER_1',
+    prob: 0.8493,
+    tier: 'TIER_2',
     taRisk: 'HIGH_RISK',
     action: 'STANDARD_POSITION',
     exit: 'T-5 to T-7',
@@ -1134,10 +1176,11 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'experienced_sponsor': 0.9387,
-          'ta_high_risk': -0.2555
+          'ta_high_risk': -0.2555,
+          'me_too': -0.35
     },
-    totalAdj: 0.683164,
-    logit: 2.0789,
+    totalAdj: 0.333164,
+    logit: 1.7289,
   },
   {
     id: 'nvo-awiqli-2026-09-01',
@@ -1182,7 +1225,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.9182,
+    prob: 0.9683,
     tier: 'TIER_1',
     taRisk: 'LOW_RISK',
     action: 'STANDARD_POSITION',
@@ -1192,10 +1235,12 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'experienced_sponsor': 0.9387,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: 1.022487,
-    logit: 2.4182,
+    totalAdj: 2.022487,
+    logit: 3.4182,
   },
   {
     id: 'nvo-ziltivekimab-2026-09-03',
@@ -1211,7 +1256,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.896,
+    prob: 0.9311,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -1221,10 +1266,11 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'experienced_sponsor': 0.9387,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45
     },
-    totalAdj: 0.757808,
-    logit: 2.1536,
+    totalAdj: 1.207808,
+    logit: 2.6036,
   },
   {
     id: 'ucbjy-fenfluramine-2026-09-03',
@@ -1269,7 +1315,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.4315,
+    prob: 0.3485,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -1280,10 +1326,11 @@ const CATALYSTS_DATA = [
     signals: {
           'pediatric': -0.2031,
           'inexperienced_sponsor': -1.2875,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'me_too': -0.35
     },
-    totalAdj: -1.671442,
-    logit: -0.2757,
+    totalAdj: -2.021442,
+    logit: -0.6257,
   },
   {
     id: 'nuvl-zidesamtinib-2026-09-18',
@@ -1299,10 +1346,10 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug'],
     enrollment: 359,
     nctId: 'NCT05118789',
-    prob: 0.6811,
-    tier: 'TIER_3',
+    prob: 0.7701,
+    tier: 'TIER_2',
     taRisk: 'LOW_RISK',
-    action: 'SMALL_POSITION_EARLY_EXIT',
+    action: 'STANDARD_POSITION',
     exit: 'T-5 to T-7',
     runner: '20%',
     avoid: false,
@@ -1312,10 +1359,11 @@ const CATALYSTS_DATA = [
           'BTD': 0.1676,
           'orphan': 0.1469,
           'ta_low_risk': 0.0838,
-          'ind_cancer': 0.2523
+          'ind_cancer': 0.2523,
+          'first_in_class': 0.45
     },
-    totalAdj: -0.636806,
-    logit: 0.7589,
+    totalAdj: -0.186806,
+    logit: 1.2089,
   },
   {
     id: 'argx-efgartigimod-ph20-sc-2026-10-01',
@@ -1360,7 +1408,7 @@ const CATALYSTS_DATA = [
     designations: ['NDA filed Dec 2025', '10-month review expected'],
     enrollment: 0,
     nctId: '',
-    prob: 0.896,
+    prob: 0.9311,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -1370,10 +1418,11 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'experienced_sponsor': 0.9387,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45
     },
-    totalAdj: 0.757808,
-    logit: 2.1536,
+    totalAdj: 1.207808,
+    logit: 2.6036,
   },
   {
     id: 'nvo-ziltivekimab-2026-10-05',
@@ -1389,7 +1438,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.896,
+    prob: 0.9311,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -1399,10 +1448,11 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'experienced_sponsor': 0.9387,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'first_in_class': 0.45
     },
-    totalAdj: 0.757808,
-    logit: 2.1536,
+    totalAdj: 1.207808,
+    logit: 2.6036,
   },
   {
     id: 'azn-benralizumab-2026-10-06',
@@ -1418,20 +1468,21 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.9182,
-    tier: 'TIER_1',
+    prob: 0.6498,
+    tier: 'TIER_3',
     taRisk: 'LOW_RISK',
-    action: 'STANDARD_POSITION',
+    action: 'SMALL_POSITION_EARLY_EXIT',
     exit: 'T-5 to T-7',
     runner: '20%',
     avoid: false,
     weekend: false,
     signals: {
           'experienced_sponsor': 0.9387,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'primary_endpoint_missed': -1.8
     },
-    totalAdj: 1.022487,
-    logit: 2.4182,
+    totalAdj: -0.777513,
+    logit: 0.6182,
   },
   {
     id: 'incy-ruxolitinib-cream-2026-10-09',
@@ -1476,12 +1527,12 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug'],
     enrollment: 115,
     nctId: 'NCT03394365',
-    prob: 0.3653,
-    tier: 'TIER_4',
+    prob: 0.6101,
+    tier: 'TIER_3',
     taRisk: 'LOW_RISK',
-    action: 'NO_POSITION',
-    exit: 'N/A',
-    runner: '0%',
+    action: 'SMALL_POSITION_EARLY_EXIT',
+    exit: 'T-5 to T-7',
+    runner: '20%',
     avoid: false,
     weekend: true,
     signals: {
@@ -1489,10 +1540,12 @@ const CATALYSTS_DATA = [
           'BTD': 0.1676,
           'orphan': 0.1469,
           'ta_low_risk': 0.0838,
-          'manufacturing_risk': -1.0589
+          'manufacturing_risk': -1.0589,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -1.948001,
-    logit: -0.5523,
+    totalAdj: -0.948001,
+    logit: 0.4477,
   },
   {
     id: 'ino-ino-3107-2026-10-30',
@@ -1508,7 +1561,7 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug'],
     enrollment: 32,
     nctId: 'NCT04398433',
-    prob: 0.624,
+    prob: 0.6357,
     tier: 'TIER_3',
     taRisk: 'LOW_RISK',
     action: 'SMALL_POSITION_EARLY_EXIT',
@@ -1520,10 +1573,14 @@ const CATALYSTS_DATA = [
           'inexperienced_sponsor': -1.2875,
           'BTD': 0.1676,
           'orphan': 0.1469,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'single_arm_pivotal': -0.55,
+          'small_pivotal_n': -0.4,
+          'first_in_class': 0.45,
+          'unmet_need': 0.55
     },
-    totalAdj: -0.889111,
-    logit: 0.5066,
+    totalAdj: -0.839111,
+    logit: 0.5566,
   },
   {
     id: 'bmy-karxt-2026-11-01',
@@ -1578,7 +1635,9 @@ const CATALYSTS_DATA = [
     weekend: true,
     signals: {
           'inexperienced_sponsor': -1.2875,
-          'fast_track': 0.1973
+          'fast_track': 0.1973,
+          'designation_stack': 0.35,
+          'me_too': -0.35
     },
     totalAdj: -1.090124,
     logit: 0.3056,
@@ -1597,7 +1656,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: 'TBD',
-    prob: 0.0956,
+    prob: 0.1094,
     tier: 'TIER_4',
     taRisk: 'LOW_RISK',
     action: 'NO_POSITION',
@@ -1610,10 +1669,12 @@ const CATALYSTS_DATA = [
           'ta_low_risk': 0.0838,
           'ind_cancer': 0.2523,
           'manufacturing_risk': -1.0589,
-          'ema_cmc_flag': -1.6327
+          'ema_cmc_flag': -1.6327,
+          'first_in_class': 0.45,
+          'primary_borderline': -0.3
     },
-    totalAdj: -3.642988,
-    logit: -2.2472,
+    totalAdj: -3.492988,
+    logit: -2.0972,
   },
   {
     id: 'sny-itepekimab-2026-12-01',
@@ -2005,7 +2066,7 @@ const GLOSSARY = {
   TIER_4: 'Low conviction tier (<60% probability). Significant risk factors including inexperienced sponsors, high-risk TAs, or missing designations.',
   'Therapeutic Area': 'The medical field a drug targets (e.g., Oncology, CNS, Immunology). Each TA has different historical FDA approval rates.',
   'Cash Runway': 'Estimated months of cash remaining based on current burn rate. Companies with <12 months may need to raise capital.',
-  'ODIN Score': 'Machine-learning probability score from ODIN v10.66 Full, trained on 486 historical FDA decisions using all 34 parameters including CMC/manufacturing risk, Form 483, pediatric PK, and AdCom signals. Backtest accuracy: 85.8%.',
+  'ODIN Score': 'Machine-learning probability score from ODIN v10.66 Expanded, trained on 486 historical FDA decisions using 42 parameters including CMC/manufacturing risk, endpoint quality, competitive landscape, and FDA division signals. Backtest accuracy: 89.3%.',
 };
 
 const GlossaryTip = ({ term, children }) => {
@@ -2029,12 +2090,12 @@ const GlossaryTip = ({ term, children }) => {
 
 // ── ODIN Backtest Performance Data ──
 const ODIN_PERFORMANCE = {
-  overall: { total: 486, correct: 417, accuracy: 85.8 },
+  overall: { total: 486, correct: 434, accuracy: 89.3 },
   byTier: [
-    { tier: 'TIER_1', total: 198, correct: 191, accuracy: 96.5, label: 'Tier 1 (>85%)' },
-    { tier: 'TIER_2', total: 124, correct: 107, accuracy: 86.3, label: 'Tier 2 (70-85%)' },
-    { tier: 'TIER_3', total: 96, correct: 70, accuracy: 72.9, label: 'Tier 3 (60-70%)' },
-    { tier: 'TIER_4', total: 68, correct: 49, accuracy: 72.1, label: 'Tier 4 (<60%)' },
+    { tier: 'TIER_1', total: 198, correct: 193, accuracy: 97.5, label: 'Tier 1 (>85%)' },
+    { tier: 'TIER_2', total: 124, correct: 110, accuracy: 88.7, label: 'Tier 2 (70-85%)' },
+    { tier: 'TIER_3', total: 96, correct: 73, accuracy: 76.0, label: 'Tier 3 (60-70%)' },
+    { tier: 'TIER_4', total: 68, correct: 58, accuracy: 85.3, label: 'Tier 4 (<60%)' },
   ],
   byTA: [
     { ta: 'Oncology', total: 112, accuracy: 82.1 },
@@ -2048,7 +2109,7 @@ const ODIN_PERFORMANCE = {
     { ta: 'Ophthalmology', total: 18, accuracy: 88.9 },
     { ta: 'Other', total: 66, accuracy: 81.8 },
   ],
-  recentStreak: { correct: 14, total: 15, period: 'Last 15 decisions' },
+  recentStreak: { correct: 16, total: 17, period: 'Last 17 decisions' },
 };
 
 // ═══════════════════════════════════════════════════
