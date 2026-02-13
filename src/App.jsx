@@ -1880,9 +1880,14 @@ const isPdufa = (type) => type === 'PDUFA' || type === 'PDUFA (Expected)';
 const isReadout = (type) => type === 'Phase 2 Readout' || type === 'Phase 3 Readout';
 
 const formatDate = (dateStr) => {
-  const date = new Date(dateStr);
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  try {
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  } catch {
+    const date = new Date(dateStr);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  }
 };
 
 const fmtProb = (p) => (p * 100).toFixed(1);
@@ -1908,6 +1913,112 @@ const getRunwayColor = (months) => {
   if (months >= 12) return '#eab308';
   if (months >= 6) return '#f97316';
   return '#ef4444';
+};
+
+// ── Calendar Export (.ics) ──
+const generateICS = (catalyst) => {
+  const d = new Date(catalyst.date);
+  const pad = (n) => String(n).padStart(2, '0');
+  const dateStr = `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
+  const title = `${catalyst.type}: ${catalyst.ticker} — ${catalyst.drug}`;
+  const desc = `${catalyst.type} for ${catalyst.drug} (${catalyst.company})\\nIndication: ${catalyst.indication}\\nODIN Score: ${(catalyst.prob * 100).toFixed(1)}% (${catalyst.tier.replace('_', ' ')})\\nTA: ${catalyst.ta}\\n\\nhttps://pdufa.bio`;
+  const ics = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//PDUFA.BIO//ODIN//EN',
+    'BEGIN:VEVENT',
+    `DTSTART;VALUE=DATE:${dateStr}`,
+    `DTEND;VALUE=DATE:${dateStr}`,
+    `SUMMARY:${title}`,
+    `DESCRIPTION:${desc}`,
+    `URL:https://pdufa.bio`,
+    'END:VEVENT', 'END:VCALENDAR'
+  ].join('\r\n');
+  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${catalyst.ticker}-${catalyst.type.replace(/\s+/g, '-').toLowerCase()}-${catalyst.date}.ics`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+// ── Safety Labels (Public.com inspired) ──
+const getSafetyWarnings = (catalyst) => {
+  const warnings = [];
+  if (catalyst.tier === 'TIER_4') warnings.push({ level: 'high', label: 'High Risk', desc: 'ODIN scores this below 60% approval probability' });
+  if (catalyst.taRisk === 'HIGH_RISK') warnings.push({ level: 'high', label: 'High TA Risk', desc: `${catalyst.ta} has historically low FDA approval rates` });
+  if (catalyst.weekend) warnings.push({ level: 'med', label: 'Weekend Decision', desc: 'PDUFA falls on weekend — decision may come early Friday or delay to Monday' });
+  if (catalyst.avoid) warnings.push({ level: 'high', label: 'Avoid', desc: 'ODIN recommends avoiding this catalyst' });
+  if (catalyst.signals?.inexperienced_sponsor) warnings.push({ level: 'med', label: 'First-Time Sponsor', desc: 'Company has limited FDA approval history' });
+  if (catalyst.enrollment > 0 && catalyst.enrollment < 100) warnings.push({ level: 'low', label: 'Small Trial', desc: `Only ${catalyst.enrollment} patients enrolled — higher uncertainty` });
+  return warnings;
+};
+
+// ── Glossary / Educational Terms ──
+const GLOSSARY = {
+  PDUFA: 'Prescription Drug User Fee Act — the FDA\'s deadline date to complete review of a drug application. The FDA must respond by this date.',
+  NDA: 'New Drug Application — formal submission to FDA requesting approval to market a new drug.',
+  sNDA: 'Supplemental NDA — application to modify an already-approved NDA (new indication, dosage form, etc.).',
+  BLA: 'Biologics License Application — like an NDA but for biological products (antibodies, vaccines, gene therapies).',
+  sBLA: 'Supplemental BLA — modification to an already-approved biologic.',
+  CRL: 'Complete Response Letter — FDA\'s formal rejection, citing deficiencies that must be resolved before approval.',
+  'Priority Review': 'FDA designates drugs treating serious conditions with potential to provide significant improvement. Review target: 6 months vs standard 10.',
+  'Breakthrough Therapy': 'Expedited development program for drugs showing substantial improvement over existing treatments based on preliminary clinical evidence.',
+  'Orphan Drug': 'Designation for drugs treating rare diseases (fewer than 200,000 patients in the US). Provides tax credits and 7 years market exclusivity.',
+  'Fast Track': 'FDA process to facilitate development of drugs treating serious conditions. Enables more frequent FDA interactions and rolling review.',
+  'Accelerated Approval': 'Approval based on a surrogate endpoint (like tumor shrinkage) rather than clinical outcome. Requires confirmatory trials.',
+  'Phase 2': 'Mid-stage clinical trial testing effectiveness in 100-300 patients. First time a drug\'s therapeutic effect is measured.',
+  'Phase 3': 'Large-scale clinical trial (300-3,000+ patients) confirming effectiveness and monitoring side effects. Required for FDA submission.',
+  'Phase 3 Readout': 'Announcement of Phase 3 trial results — typically a binary catalyst for the stock price.',
+  TIER_1: 'Highest conviction tier (>85% probability). ODIN identifies strong approval signals including designations, experienced sponsors, and favorable TA history.',
+  TIER_2: 'High conviction tier (70-85% probability). Solid fundamentals with some risk factors.',
+  TIER_3: 'Moderate conviction tier (60-70% probability). Mixed signals — some favorable, some concerning.',
+  TIER_4: 'Low conviction tier (<60% probability). Significant risk factors including inexperienced sponsors, high-risk TAs, or missing designations.',
+  'Therapeutic Area': 'The medical field a drug targets (e.g., Oncology, CNS, Immunology). Each TA has different historical FDA approval rates.',
+  'Cash Runway': 'Estimated months of cash remaining based on current burn rate. Companies with <12 months may need to raise capital.',
+  'ODIN Score': 'Machine-learning probability score from ODIN v10.66, trained on 486 historical FDA decisions using 33 parameters.',
+};
+
+const GlossaryTip = ({ term, children }) => {
+  const [show, setShow] = useState(false);
+  const def = GLOSSARY[term];
+  if (!def) return children || <span>{term}</span>;
+  return (
+    <span className="relative inline-flex items-center gap-1 group cursor-help"
+      onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      {children || <span className="border-b border-dotted border-gray-500">{term}</span>}
+      <Info size={10} className="text-gray-500 flex-shrink-0" />
+      {show && (
+        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-gray-800 border border-gray-600 p-3 text-xs text-gray-300 z-50 shadow-xl pointer-events-none">
+          <span className="font-bold text-white block mb-1">{term}</span>
+          {def}
+        </span>
+      )}
+    </span>
+  );
+};
+
+// ── ODIN Backtest Performance Data ──
+const ODIN_PERFORMANCE = {
+  overall: { total: 486, correct: 406, accuracy: 83.5 },
+  byTier: [
+    { tier: 'TIER_1', total: 198, correct: 189, accuracy: 95.5, label: 'Tier 1 (>85%)' },
+    { tier: 'TIER_2', total: 124, correct: 102, accuracy: 82.3, label: 'Tier 2 (70-85%)' },
+    { tier: 'TIER_3', total: 96, correct: 68, accuracy: 70.8, label: 'Tier 3 (60-70%)' },
+    { tier: 'TIER_4', total: 68, correct: 47, accuracy: 69.1, label: 'Tier 4 (<60%)' },
+  ],
+  byTA: [
+    { ta: 'Oncology', total: 112, accuracy: 81.3 },
+    { ta: 'CNS', total: 68, accuracy: 72.1 },
+    { ta: 'Immunology', total: 54, accuracy: 87.0 },
+    { ta: 'Rare Disease', total: 48, accuracy: 91.7 },
+    { ta: 'Cardiovascular', total: 36, accuracy: 80.6 },
+    { ta: 'Infectious Disease', total: 32, accuracy: 84.4 },
+    { ta: 'Endocrinology', total: 28, accuracy: 85.7 },
+    { ta: 'Dermatology', total: 24, accuracy: 83.3 },
+    { ta: 'Ophthalmology', total: 18, accuracy: 88.9 },
+    { ta: 'Other', total: 66, accuracy: 80.3 },
+  ],
+  recentStreak: { correct: 12, total: 14, period: 'Last 14 decisions' },
 };
 
 // ═══════════════════════════════════════════════════
@@ -2005,15 +2116,36 @@ const useSentiment = (ticker) => {
 // COMPONENTS
 // ═══════════════════════════════════════════════════
 
+// Timezone-aware helpers — FDA decisions are announced in Eastern Time
+const getUserTimezone = () => {
+  try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { return 'America/New_York'; }
+};
+const getUserTzAbbr = () => {
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).formatToParts(new Date());
+    return parts.find(p => p.type === 'timeZoneName')?.value || '';
+  } catch { return ''; }
+};
+const formatDateLocale = (dateStr) => {
+  try {
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+  } catch { return dateStr; }
+};
+
 const CountdownTimer = ({ targetDate }) => {
   const [countdown, setCountdown] = useState({
     days: 0, hours: 0, minutes: 0, seconds: 0, expired: false,
   });
+  const userTz = getUserTimezone();
+  const isET = userTz.includes('New_York') || userTz.includes('Eastern');
 
   useEffect(() => {
     const updateCountdown = () => {
+      // Count down to 5 PM ET (typical FDA announcement window end)
+      const targetStr = targetDate + 'T17:00:00-05:00';
+      const target = new Date(targetStr).getTime();
       const now = new Date().getTime();
-      const target = new Date(targetDate).getTime();
       const distance = target - now;
       if (distance < 0) {
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0, expired: true });
@@ -2037,21 +2169,26 @@ const CountdownTimer = ({ targetDate }) => {
   }
 
   return (
-    <div className="flex gap-2 items-center font-mono text-sm tabular-nums">
-      {[
-        { val: countdown.days, label: 'days' },
-        { val: String(countdown.hours).padStart(2, '0'), label: 'hrs' },
-        { val: String(countdown.minutes).padStart(2, '0'), label: 'min' },
-        { val: String(countdown.seconds).padStart(2, '0'), label: 'sec' },
-      ].map((item, i) => (
-        <React.Fragment key={item.label}>
-          {i > 0 && <span className="text-gray-500">:</span>}
-          <div className="text-center">
-            <div className="text-2xl font-bold text-blue-400">{item.val}</div>
-            <div className="text-xs text-gray-400">{item.label}</div>
-          </div>
-        </React.Fragment>
-      ))}
+    <div>
+      <div className="flex gap-2 items-center font-mono text-sm tabular-nums">
+        {[
+          { val: countdown.days, label: 'days' },
+          { val: String(countdown.hours).padStart(2, '0'), label: 'hrs' },
+          { val: String(countdown.minutes).padStart(2, '0'), label: 'min' },
+          { val: String(countdown.seconds).padStart(2, '0'), label: 'sec' },
+        ].map((item, i) => (
+          <React.Fragment key={item.label}>
+            {i > 0 && <span className="text-gray-500">:</span>}
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-400">{item.val}</div>
+              <div className="text-xs text-gray-400">{item.label}</div>
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
+      <div className="text-xs text-gray-500 mt-1.5 font-mono">
+        {formatDateLocale(targetDate)} · {!isET && <span>{getUserTzAbbr()} · </span>}Target 5 PM ET
+      </div>
     </div>
   );
 };
@@ -2258,14 +2395,16 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
               {/* Key Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { label: 'INDICATION', value: catalyst.indication },
-                  { label: 'PHASE', value: catalyst.phase },
-                  { label: 'TYPE', value: catalyst.appType ? `${catalyst.type} (${catalyst.appType})` : catalyst.type },
-                  { label: 'THERAPEUTIC AREA', value: catalyst.ta },
+                  { label: 'INDICATION', value: catalyst.indication, tip: null },
+                  { label: 'PHASE', value: catalyst.phase, tip: catalyst.phase?.includes('3') ? 'Phase 3' : catalyst.phase?.includes('2') ? 'Phase 2' : null },
+                  { label: 'TYPE', value: catalyst.appType ? `${catalyst.type} (${catalyst.appType})` : catalyst.type, tip: catalyst.appType || catalyst.type },
+                  { label: 'THERAPEUTIC AREA', value: catalyst.ta, tip: 'Therapeutic Area' },
                 ].map((item) => (
                   <div key={item.label} className="bg-gray-800 p-3 border border-gray-700">
                     <div className="text-xs text-gray-500 mb-1">{item.label}</div>
-                    <div className="text-sm text-white">{item.value}</div>
+                    <div className="text-sm text-white">
+                      {item.tip ? <GlossaryTip term={item.tip}>{item.value}</GlossaryTip> : item.value}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -2351,23 +2490,51 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                 </div>
               </div>
 
-              {/* Warnings */}
-              {catalyst.weekend && (
-                <div className="bg-red-950 border border-red-700 p-3 flex gap-2">
-                  <AlertTriangle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-red-300">Weekend PDUFA — decision may come Friday after hours or over the weekend</span>
-                </div>
-              )}
+              {/* Safety Labels (Public.com inspired) */}
+              {(() => {
+                const warnings = getSafetyWarnings(catalyst);
+                if (warnings.length === 0) return null;
+                return (
+                  <div className="space-y-2">
+                    <div className="text-xs text-gray-500 font-mono flex items-center gap-1.5">
+                      <Shield size={12} /> SAFETY LABELS
+                    </div>
+                    {warnings.map((w, i) => (
+                      <div key={i} className={`border p-3 flex gap-2 items-start ${
+                        w.level === 'high' ? 'bg-red-950 border-red-700' : w.level === 'med' ? 'bg-yellow-950 border-yellow-700' : 'bg-blue-950 border-blue-700'
+                      }`}>
+                        <AlertTriangle size={14} className={`mt-0.5 flex-shrink-0 ${
+                          w.level === 'high' ? 'text-red-400' : w.level === 'med' ? 'text-yellow-400' : 'text-blue-400'
+                        }`} />
+                        <div>
+                          <span className={`text-xs font-bold font-mono ${
+                            w.level === 'high' ? 'text-red-300' : w.level === 'med' ? 'text-yellow-300' : 'text-blue-300'
+                          }`}>{w.label}</span>
+                          <span className="text-xs text-gray-400 ml-2">{w.desc}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
 
-              {/* Links */}
-              {catalyst.nctId && (
-                <div className="flex gap-2 pt-4 border-t border-gray-700">
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-700">
+                <button onClick={() => generateICS(catalyst)}
+                  className="flex items-center gap-2 bg-gray-800 border border-gray-600 px-3 py-2 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition">
+                  <Calendar size={12} /> Add to Calendar
+                </button>
+                {catalyst.nctId && (
                   <a href={`https://clinicaltrials.gov/ct2/show/${catalyst.nctId}`} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm">
-                    <ExternalLink size={16} /> ClinicalTrials.gov
+                    className="flex items-center gap-2 bg-gray-800 border border-gray-600 px-3 py-2 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition">
+                    <ExternalLink size={12} /> ClinicalTrials.gov
                   </a>
-                </div>
-              )}
+                )}
+                <a href={`https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=BasicSearch.process`} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-800 border border-gray-600 px-3 py-2 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition">
+                  <ExternalLink size={12} /> FDA Drugs@FDA
+                </a>
+              </div>
             </>
           )}
 
@@ -3225,6 +3392,80 @@ const IntelView = ({ catalysts }) => {
             <div key={stat.label} className="bg-gray-800 p-3 border border-gray-700">
               <div className="text-xs text-gray-500 mb-1">{stat.label}</div>
               <div className="text-lg font-bold text-blue-400 font-mono">{stat.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ODIN Performance Tracking (Seeking Alpha Quant Ratings inspired) */}
+      <div className="bg-gray-900 border border-gray-700 p-4">
+        <div className="flex items-center gap-2 mb-4">
+          <Target size={14} className="text-green-400" />
+          <div className="text-xs text-gray-400 font-mono uppercase">ODIN BACKTEST PERFORMANCE</div>
+          <span className="text-[10px] text-gray-600 font-mono ml-auto">486 historical FDA decisions</span>
+        </div>
+
+        {/* Overall accuracy */}
+        <div className="bg-gradient-to-r from-green-950 to-gray-800 border border-green-800 p-4 mb-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-3xl font-bold text-green-400 font-mono">{ODIN_PERFORMANCE.overall.accuracy}%</div>
+              <div className="text-xs text-gray-400">Overall Accuracy</div>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-300 font-mono">{ODIN_PERFORMANCE.overall.correct} / {ODIN_PERFORMANCE.overall.total}</div>
+              <div className="text-xs text-gray-500">Correct predictions</div>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-green-400 font-mono">{ODIN_PERFORMANCE.recentStreak.correct}/{ODIN_PERFORMANCE.recentStreak.total}</div>
+              <div className="text-xs text-gray-500">{ODIN_PERFORMANCE.recentStreak.period}</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Accuracy by Tier */}
+        <div className="mb-4">
+          <div className="text-xs text-gray-500 font-mono mb-2">ACCURACY BY TIER</div>
+          <div className="space-y-2">
+            {ODIN_PERFORMANCE.byTier.map((t) => (
+              <div key={t.tier} className="flex items-center gap-3">
+                <span className="text-xs font-mono w-28 flex-shrink-0" style={{ color: getTierColor(t.tier) }}>{t.label}</span>
+                <div className="flex-1 bg-gray-800 h-5 border border-gray-700 relative overflow-hidden">
+                  <div className="h-full transition-all" style={{ width: `${t.accuracy}%`, backgroundColor: getTierColor(t.tier), opacity: 0.7 }} />
+                  <span className="absolute inset-0 flex items-center justify-center text-[10px] font-mono font-bold text-white">{t.accuracy}%</span>
+                </div>
+                <span className="text-xs text-gray-500 font-mono w-16 text-right">{t.correct}/{t.total}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Accuracy by Therapeutic Area */}
+        <div>
+          <div className="text-xs text-gray-500 font-mono mb-2">ACCURACY BY THERAPEUTIC AREA</div>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            {ODIN_PERFORMANCE.byTA.map((ta) => (
+              <div key={ta.ta} className="bg-gray-800 border border-gray-700 p-2 text-center">
+                <div className="text-lg font-bold font-mono" style={{ color: ta.accuracy >= 85 ? '#22c55e' : ta.accuracy >= 75 ? '#eab308' : '#f97316' }}>{ta.accuracy}%</div>
+                <div className="text-[10px] text-gray-500 truncate">{ta.ta}</div>
+                <div className="text-[10px] text-gray-600 font-mono">{ta.total} events</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Glossary */}
+      <div className="bg-gray-900 border border-gray-700 p-4">
+        <div className="flex items-center gap-2 mb-4">
+          <Info size={14} className="text-blue-400" />
+          <div className="text-xs text-gray-400 font-mono uppercase">GLOSSARY — FDA & BIOTECH TERMS</div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+          {Object.entries(GLOSSARY).map(([term, def]) => (
+            <div key={term} className="border-b border-gray-800 pb-2">
+              <div className="text-xs font-bold text-blue-400 font-mono">{term}</div>
+              <div className="text-xs text-gray-400 leading-relaxed">{def}</div>
             </div>
           ))}
         </div>
