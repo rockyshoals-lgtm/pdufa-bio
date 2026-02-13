@@ -30,6 +30,9 @@ import {
   Heart,
   Info,
   Loader,
+  ChevronRight,
+  CheckSquare,
+  Square,
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
@@ -2527,9 +2530,10 @@ const DetailModal = ({ catalyst, onClose }) => {
 };
 
 // ── Dashboard View ─────────────────────────────────
-const DashboardView = ({ catalysts, onExpandCatalyst }) => {
+const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
   const nextCatalyst = catalysts[0];
   const tier1Count = catalysts.filter((c) => c.tier === 'TIER_1').length;
+  const tier2Count = catalysts.filter((c) => c.tier === 'TIER_2').length;
   const avgProb = (catalysts.reduce((sum, c) => sum + c.prob, 0) / catalysts.length * 100).toFixed(1);
   const weekendCount = catalysts.filter(c => c.weekend).length;
 
@@ -2541,9 +2545,59 @@ const DashboardView = ({ catalysts, onExpandCatalyst }) => {
     return diff >= 0 && diff <= 30;
   });
 
+  // Next 7 days (imminent)
+  const next7 = catalysts.filter(c => {
+    const d = new Date(c.date);
+    const diff = (d - now) / (1000 * 60 * 60 * 24);
+    return diff >= 0 && diff <= 7;
+  });
+
   return (
     <div className="space-y-6">
-      {/* Next Catalyst Hero */}
+      {/* Hero Section */}
+      <div className="text-center py-4 sm:py-8">
+        <h2 className="text-3xl sm:text-5xl font-bold font-mono tracking-tight mb-3">
+          FDA Catalyst <span className="text-blue-400">Intelligence</span>
+        </h2>
+        <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+          Machine-learning approval probability scores for upcoming PDUFA dates.
+          Powered by ODIN v10.66 — trained on 486 historical FDA decisions.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <button onClick={() => onNavigate('screener')}
+            className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 text-sm font-mono transition flex items-center gap-2">
+            <BarChart3 size={14} /> Full Screener <ChevronRight size={14} />
+          </button>
+          <button onClick={() => onNavigate('calendar')}
+            className="bg-gray-800 hover:bg-gray-700 text-gray-200 px-5 py-2.5 text-sm font-mono border border-gray-700 transition flex items-center gap-2">
+            <Calendar size={14} /> PDUFA Calendar
+          </button>
+        </div>
+      </div>
+
+      {/* Key Stats Row */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        {[
+          { label: 'ACTIVE CATALYSTS', value: catalysts.length, color: 'text-white', icon: Target },
+          { label: 'HIGH CONVICTION', value: `${tier1Count + tier2Count}`, sub: `${tier1Count} T1 · ${tier2Count} T2`, color: 'text-green-400', icon: Shield },
+          { label: 'AVG PROBABILITY', value: `${avgProb}%`, color: 'text-yellow-400', icon: Brain },
+          { label: 'NEXT 7 DAYS', value: next7.length, sub: next7.length > 0 ? `Next: ${next7[0].ticker}` : 'None imminent', color: next7.length > 0 ? 'text-orange-400' : 'text-gray-500', icon: Flame },
+        ].map((stat) => {
+          const Icon = stat.icon;
+          return (
+            <div key={stat.label} className="bg-gray-900 border border-gray-700 p-3 sm:p-4">
+              <div className="flex items-center gap-1.5 mb-2">
+                <Icon size={12} className="text-gray-500" />
+                <div className="text-[10px] sm:text-xs text-gray-400 font-mono">{stat.label}</div>
+              </div>
+              <div className={`text-2xl sm:text-3xl font-bold tabular-nums font-mono ${stat.color}`}>{stat.value}</div>
+              {stat.sub && <div className="text-[10px] text-gray-500 font-mono mt-1">{stat.sub}</div>}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Next Catalyst Spotlight */}
       <div className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-gray-700 p-4 sm:p-6 cursor-pointer hover:border-blue-500 transition"
         onClick={() => onExpandCatalyst(nextCatalyst)}>
         <div className="flex justify-between items-start mb-4">
@@ -2583,27 +2637,6 @@ const DashboardView = ({ catalysts, onExpandCatalyst }) => {
         </div>
       </div>
 
-      {/* Stats Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        {[
-          { label: 'CATALYSTS', value: catalysts.length, color: 'text-white', icon: Target },
-          { label: 'TIER 1', value: tier1Count, color: 'text-green-400', icon: Shield },
-          { label: 'AVG PROB', value: `${avgProb}%`, color: 'text-yellow-400', icon: Brain },
-          { label: 'WEEKEND', value: weekendCount, color: 'text-red-400', icon: AlertTriangle },
-        ].map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <div key={stat.label} className="bg-gray-900 border border-gray-700 p-3 sm:p-4">
-              <div className="flex items-center gap-1.5 mb-2">
-                <Icon size={12} className="text-gray-500" />
-                <div className="text-xs text-gray-400 font-mono">{stat.label}</div>
-              </div>
-              <div className={`text-2xl sm:text-3xl font-bold tabular-nums font-mono ${stat.color}`}>{stat.value}</div>
-            </div>
-          );
-        })}
-      </div>
-
       {/* Tier Distribution */}
       <div className="bg-gray-900 border border-gray-700 p-4">
         <div className="text-xs text-gray-400 mb-3 font-mono">TIER DISTRIBUTION</div>
@@ -2629,15 +2662,22 @@ const DashboardView = ({ catalysts, onExpandCatalyst }) => {
         </div>
       </div>
 
-      {/* 30-Day Pipeline */}
+      {/* 30-Day Pipeline — top 10 only */}
       {next30.length > 0 && (
         <div className="bg-gray-900 border border-gray-700 p-4">
-          <div className="text-xs text-gray-400 mb-3 font-mono flex items-center gap-2">
-            <Flame size={12} className="text-orange-400" />
-            NEXT 30 DAYS — {next30.length} EVENTS
+          <div className="text-xs text-gray-400 mb-3 font-mono flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Flame size={12} className="text-orange-400" />
+              NEXT 30 DAYS — {next30.length} EVENTS
+            </div>
+            {next30.length > 10 && (
+              <button onClick={() => onNavigate('screener')} className="text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                View all <ChevronRight size={12} />
+              </button>
+            )}
           </div>
           <div className="space-y-1">
-            {next30.map((cat, i) => (
+            {next30.slice(0, 10).map((cat, i) => (
               <div key={cat.id} onClick={() => onExpandCatalyst(cat)}
                 className="flex items-center gap-2 sm:gap-4 p-2 hover:bg-gray-800 cursor-pointer transition border-l-2"
                 style={{ borderLeftColor: getTierColor(cat.tier) }}>
@@ -2654,17 +2694,45 @@ const DashboardView = ({ catalysts, onExpandCatalyst }) => {
               </div>
             ))}
           </div>
+          {next30.length > 10 && (
+            <div className="mt-3 pt-3 border-t border-gray-800 text-center">
+              <button onClick={() => onNavigate('screener')} className="text-sm text-blue-400 hover:text-blue-300 font-mono transition">
+                + {next30.length - 10} more events — Open Screener
+              </button>
+            </div>
+          )}
         </div>
       )}
 
-      {/* All Catalysts Grid */}
-      <div>
-        <h3 className="text-sm font-mono text-gray-400 mb-3 uppercase">ALL CATALYSTS</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          {catalysts.map((catalyst) => (
-            <CatalystCard key={catalyst.id} catalyst={catalyst} onExpand={onExpandCatalyst} />
-          ))}
-        </div>
+      {/* CTA Row */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <button onClick={() => onNavigate('screener')}
+          className="bg-gray-900 border border-gray-700 hover:border-blue-500 p-4 text-left transition group">
+          <div className="flex items-center justify-between mb-2">
+            <BarChart3 size={16} className="text-blue-400" />
+            <ChevronRight size={14} className="text-gray-600 group-hover:text-blue-400 transition" />
+          </div>
+          <div className="text-sm font-bold text-white font-mono">Full Screener</div>
+          <div className="text-xs text-gray-500 mt-1">Sort, filter, and compare all {catalysts.length} catalysts</div>
+        </button>
+        <button onClick={() => onNavigate('calendar')}
+          className="bg-gray-900 border border-gray-700 hover:border-blue-500 p-4 text-left transition group">
+          <div className="flex items-center justify-between mb-2">
+            <Calendar size={16} className="text-purple-400" />
+            <ChevronRight size={14} className="text-gray-600 group-hover:text-blue-400 transition" />
+          </div>
+          <div className="text-sm font-bold text-white font-mono">PDUFA Calendar</div>
+          <div className="text-xs text-gray-500 mt-1">Month-by-month view of all decision dates</div>
+        </button>
+        <button onClick={() => onNavigate('intel')}
+          className="bg-gray-900 border border-gray-700 hover:border-blue-500 p-4 text-left transition group">
+          <div className="flex items-center justify-between mb-2">
+            <Brain size={16} className="text-yellow-400" />
+            <ChevronRight size={14} className="text-gray-600 group-hover:text-blue-400 transition" />
+          </div>
+          <div className="text-sm font-bold text-white font-mono">ODIN Intel</div>
+          <div className="text-xs text-gray-500 mt-1">Historical approval rates, engine stats, TA risk</div>
+        </button>
       </div>
     </div>
   );
@@ -2962,9 +3030,84 @@ const IntelView = ({ catalysts }) => {
 // ═══════════════════════════════════════════════════
 // MAIN APP
 // ═══════════════════════════════════════════════════
+// ── FDA Disclaimer Modal ──────────────────────────
+const DisclaimerModal = ({ onAccept }) => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
+      <div className="bg-gray-900 border border-gray-700 max-w-lg w-full">
+        {/* Header */}
+        <div className="bg-red-950 border-b border-red-800 p-4 sm:p-6">
+          <div className="flex items-center gap-3 mb-2">
+            <AlertTriangle size={24} className="text-red-400 flex-shrink-0" />
+            <h2 className="text-lg sm:text-xl font-bold text-white font-mono">IMPORTANT DISCLAIMER</h2>
+          </div>
+          <p className="text-red-300 text-sm font-mono">Please read and acknowledge before continuing</p>
+        </div>
+
+        {/* Body */}
+        <div className="p-4 sm:p-6 space-y-4 text-sm text-gray-300 leading-relaxed max-h-[50vh] overflow-y-auto">
+          <p>
+            <strong className="text-white">PDUFA.BIO is not affiliated with, endorsed by, or connected to the U.S. Food & Drug Administration (FDA)</strong> or any government agency. The name "PDUFA" refers to the Prescription Drug User Fee Act and is used here solely to describe the subject matter of this site.
+          </p>
+          <p>
+            <strong className="text-white">This is not financial advice.</strong> PDUFA.BIO is not a registered investment advisor, broker-dealer, or financial planner. Nothing on this site constitutes a recommendation to buy, sell, or hold any security.
+          </p>
+          <p>
+            <strong className="text-white">Probability scores are machine-learning model outputs, not guarantees.</strong> The ODIN scoring engine produces statistical estimates based on historical data and publicly available information. These scores reflect mathematical probabilities derived from pattern recognition — they do not predict the future and should not be the sole basis for any investment decision.
+          </p>
+          <p>
+            <strong className="text-white">No liability for losses.</strong> PDUFA.BIO, its operators, contributors, and affiliates accept no responsibility or liability for any financial losses, damages, or consequences arising from the use of information presented on this site. All investment decisions carry risk, including the risk of total loss.
+          </p>
+          <p className="text-gray-500 text-xs">
+            By clicking below, you acknowledge that you have read, understood, and agree to these terms. You accept full responsibility for your own investment decisions.
+          </p>
+        </div>
+
+        {/* Checkbox + Button */}
+        <div className="border-t border-gray-700 p-4 sm:p-6 space-y-4">
+          <button
+            onClick={() => setChecked(!checked)}
+            className="flex items-start gap-3 w-full text-left group"
+          >
+            {checked
+              ? <CheckSquare size={20} className="text-blue-400 flex-shrink-0 mt-0.5" />
+              : <Square size={20} className="text-gray-600 group-hover:text-gray-400 flex-shrink-0 mt-0.5 transition" />
+            }
+            <span className={`text-sm ${checked ? 'text-white' : 'text-gray-400'} transition`}>
+              I understand that PDUFA.BIO is not affiliated with the FDA, this is not financial advice, and probability scores are model outputs — not guarantees of FDA approval or stock performance.
+            </span>
+          </button>
+          <button
+            onClick={() => {
+              if (checked) {
+                try { localStorage.setItem('pdufa_disclaimer_accepted', 'true'); } catch (e) {}
+                onAccept();
+              }
+            }}
+            disabled={!checked}
+            className={`w-full py-3 font-mono text-sm font-bold transition ${
+              checked
+                ? 'bg-blue-600 hover:bg-blue-500 text-white cursor-pointer'
+                : 'bg-gray-800 text-gray-600 cursor-not-allowed'
+            }`}
+          >
+            {checked ? 'I UNDERSTAND — ENTER PDUFA.BIO' : 'CHECK THE BOX ABOVE TO CONTINUE'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ── Main App ──────────────────────────────────────
 export default function PdufaBio() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
+  const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
+    try { return localStorage.getItem('pdufa_disclaimer_accepted') === 'true'; } catch (e) { return false; }
+  });
   const today = new Date();
   const dateStr = `${today.toLocaleString('en-US', { weekday: 'short' })} ${today.toLocaleString('en-US', { month: 'short' })} ${today.getDate()}, ${today.getFullYear()}`;
 
@@ -2982,11 +3125,16 @@ export default function PdufaBio() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
+      {/* Disclaimer Modal */}
+      {!disclaimerAccepted && (
+        <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} />
+      )}
+
       {/* Top Bar */}
       <div className="border-b border-gray-700 bg-gray-900 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <h1 className="text-xl sm:text-2xl font-bold font-mono tracking-tight">
+            <h1 className="text-xl sm:text-2xl font-bold font-mono tracking-tight cursor-pointer" onClick={() => setActiveTab('dashboard')}>
               PDUFA<span className="text-blue-400">.BIO</span>
             </h1>
             <div className="bg-gray-800 border border-gray-700 px-2 py-0.5 text-xs font-mono text-blue-400 hidden sm:block">
@@ -3024,7 +3172,7 @@ export default function PdufaBio() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
-        {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
+        {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} onNavigate={setActiveTab} />}
         {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'intel' && <IntelView catalysts={sortedCatalysts} />}
@@ -3032,9 +3180,49 @@ export default function PdufaBio() {
 
       {/* Footer */}
       <div className="border-t border-gray-800 bg-gray-900 mt-8">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500 font-mono">
-          <span>PDUFA.BIO — Powered by ODIN v10.66 Dynamic Grandmaster</span>
-          <span>Not financial advice. ODIN scores are ML predictions, not guarantees.</span>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+            <div>
+              <h4 className="text-sm font-bold font-mono text-white mb-2">PDUFA<span className="text-blue-400">.BIO</span></h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                FDA catalyst intelligence powered by the ODIN v10.66 scoring engine.
+                Trained on 486 historical PDUFA decisions (2018–2025).
+              </p>
+            </div>
+            <div>
+              <h4 className="text-xs font-bold font-mono text-gray-400 mb-2">NAVIGATE</h4>
+              <div className="space-y-1">
+                {tabs.map(t => (
+                  <button key={t.id} onClick={() => setActiveTab(t.id)} className="block text-xs text-gray-500 hover:text-blue-400 font-mono transition">
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 className="text-xs font-bold font-mono text-gray-400 mb-2">ENGINE</h4>
+              <div className="text-xs text-gray-500 space-y-1 font-mono">
+                <div>Version: <span className="text-green-400">v10.66 Dynamic Grandmaster</span></div>
+                <div>Parameters: <span className="text-gray-300">33</span></div>
+                <div>Training Set: <span className="text-gray-300">486 events</span></div>
+                <div>Model: <span className="text-gray-300">GPU Logistic Regression</span></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div className="border-t border-gray-800 pt-4 space-y-3">
+            <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed">
+              <strong className="text-gray-500">DISCLAIMER:</strong> PDUFA.BIO is not affiliated with, endorsed by, or connected to the U.S. Food & Drug Administration (FDA) or any government agency. The name "PDUFA" refers to the Prescription Drug User Fee Act and is used descriptively. This site does not provide financial, investment, legal, or medical advice. PDUFA.BIO is not a registered investment advisor, broker-dealer, or financial planner. Probability scores are generated by machine-learning models based on historical data and publicly available information. These scores are statistical estimates, not predictions or guarantees of FDA action or securities performance. Past approval rates do not guarantee future results.
+            </p>
+            <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed">
+              <strong className="text-gray-500">RISK WARNING:</strong> Investing in biotechnology and pharmaceutical securities involves substantial risk, including the risk of total loss of capital. Binary catalyst events (such as PDUFA dates) can result in extreme price volatility. You should not invest money you cannot afford to lose. Always consult with a qualified financial advisor before making investment decisions. PDUFA.BIO, its operators, contributors, and affiliates accept no responsibility or liability for any losses arising from use of this site.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-2">
+              <span className="text-[10px] text-gray-600 font-mono">&copy; {new Date().getFullYear()} PDUFA.BIO — All rights reserved.</span>
+              <span className="text-[10px] text-gray-700 font-mono">Market data via FMP &middot; Social data via LunarCrush</span>
+            </div>
+          </div>
         </div>
       </div>
 
