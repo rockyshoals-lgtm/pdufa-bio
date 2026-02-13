@@ -373,12 +373,12 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug', 'Breakthrough Therapy', 'Priority Review'],
     enrollment: 0,
     nctId: '',
-    prob: 0.8331,
-    tier: 'TIER_2',
+    prob: 0.3928,
+    tier: 'TIER_4',
     taRisk: 'MOD_RISK',
-    action: 'STANDARD_POSITION',
-    exit: 'T-5 to T-7',
-    runner: '20%',
+    action: 'NO_POSITION',
+    exit: 'N/A',
+    runner: '0%',
     avoid: false,
     weekend: true,
     signals: {
@@ -386,10 +386,12 @@ const CATALYSTS_DATA = [
           'BTD': 0.1676,
           'orphan': 0.1469,
           'priority_review': 0.615,
-          'class1_resub': 0.57
+          'class1_resub': 0.57,
+          'manufacturing_risk': -1.0589,
+          'cmc_extension': -0.9845
     },
-    totalAdj: 0.212078,
-    logit: 1.6078,
+    totalAdj: -1.831326,
+    logit: -0.4356,
   },
   {
     id: 'lnth-ga68-edotreotide-2026-03-29',
@@ -433,22 +435,24 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug', 'Priority Review'],
     enrollment: 63,
     nctId: 'NCT05371613',
-    prob: 0.7384,
-    tier: 'TIER_2',
+    prob: 0.1324,
+    tier: 'TIER_4',
     taRisk: 'MOD_RISK',
-    action: 'STANDARD_POSITION',
-    exit: 'T-5 to T-7',
-    runner: '20%',
+    action: 'NO_POSITION',
+    exit: 'N/A',
+    runner: '0%',
     avoid: false,
     weekend: true,
     signals: {
           'inexperienced_sponsor': -1.2875,
           'BTD': 0.1676,
           'orphan': 0.1469,
-          'priority_review': 0.615
+          'priority_review': 0.615,
+          'cmc_extension': -0.9845,
+          's22_pediatric_pk': -1.9328
     },
-    totalAdj: -0.357943,
-    logit: 1.0378,
+    totalAdj: -3.275219,
+    logit: -1.8795,
   },
   {
     id: 'orca-orca-t-2026-04-06',
@@ -557,7 +561,7 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy'],
     enrollment: 0,
     nctId: '',
-    prob: 0.5237,
+    prob: 0.4355,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -568,10 +572,11 @@ const CATALYSTS_DATA = [
     signals: {
           'inexperienced_sponsor': -1.2875,
           'BTD': 0.1676,
-          'ta_mod_risk': -0.1809
+          'ta_mod_risk': -0.1809,
+          'indication_pain': -0.3546
     },
-    totalAdj: -1.300694,
-    logit: 0.0951,
+    totalAdj: -1.655287,
+    logit: -0.2595,
   },
   {
     id: 'vrdn-veligrotug-2026-06-30',
@@ -1025,7 +1030,7 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug', 'Rare Pediatric Disease'],
     enrollment: 106,
     nctId: 'NCT05126758',
-    prob: 0.5635,
+    prob: 0.2497,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -1035,10 +1040,11 @@ const CATALYSTS_DATA = [
     weekend: false,
     signals: {
           'inexperienced_sponsor': -1.2875,
-          'orphan': 0.1469
+          'orphan': 0.1469,
+          'form_483': -1.3552
     },
-    totalAdj: -1.140567,
-    logit: 0.2552,
+    totalAdj: -2.495774,
+    logit: -1.1,
   },
   {
     id: 'private-177lu-edotreotide-2026-08-28',
@@ -1085,7 +1091,7 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug'],
     enrollment: 91,
     nctId: 'NCT05482971',
-    prob: 0.2998,
+    prob: 0.1293,
     tier: 'TIER_4',
     taRisk: 'HIGH_RISK',
     action: 'NO_POSITION',
@@ -1098,10 +1104,11 @@ const CATALYSTS_DATA = [
           'inexperienced_sponsor': -1.2875,
           'orphan': 0.1469,
           'ta_high_risk': -0.2555,
-          'novice_high_risk_ta': -0.4071
+          'novice_high_risk_ta': -0.4071,
+          'manufacturing_risk': -1.0589
     },
-    totalAdj: -2.244139,
-    logit: -0.8484,
+    totalAdj: -3.303029,
+    logit: -1.9073,
   },
   {
     id: 'nvo-semaglutide-2026-09-01',
@@ -1469,22 +1476,23 @@ const CATALYSTS_DATA = [
     designations: ['Breakthrough Therapy', 'Orphan Drug'],
     enrollment: 115,
     nctId: 'NCT03394365',
-    prob: 0.624,
-    tier: 'TIER_3',
+    prob: 0.3653,
+    tier: 'TIER_4',
     taRisk: 'LOW_RISK',
-    action: 'SMALL_POSITION_EARLY_EXIT',
-    exit: 'T-5 to T-7',
-    runner: '20%',
+    action: 'NO_POSITION',
+    exit: 'N/A',
+    runner: '0%',
     avoid: false,
     weekend: true,
     signals: {
           'inexperienced_sponsor': -1.2875,
           'BTD': 0.1676,
           'orphan': 0.1469,
-          'ta_low_risk': 0.0838
+          'ta_low_risk': 0.0838,
+          'manufacturing_risk': -1.0589
     },
-    totalAdj: -0.889111,
-    logit: 0.5066,
+    totalAdj: -1.948001,
+    logit: -0.5523,
   },
   {
     id: 'ino-ino-3107-2026-10-30',
@@ -1560,7 +1568,7 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: '',
-    prob: 0.527,
+    prob: 0.5758,
     tier: 'TIER_4',
     taRisk: 'MOD_RISK',
     action: 'NO_POSITION',
@@ -1569,10 +1577,11 @@ const CATALYSTS_DATA = [
     avoid: false,
     weekend: true,
     signals: {
-          'inexperienced_sponsor': -1.2875
+          'inexperienced_sponsor': -1.2875,
+          'fast_track': 0.1973
     },
-    totalAdj: -1.287471,
-    logit: 0.1083,
+    totalAdj: -1.090124,
+    logit: 0.3056,
   },
   {
     id: 'smmt-ivonescimab-2026-11-14',
@@ -1588,21 +1597,23 @@ const CATALYSTS_DATA = [
     designations: [],
     enrollment: 0,
     nctId: 'TBD',
-    prob: 0.6093,
-    tier: 'TIER_3',
+    prob: 0.0956,
+    tier: 'TIER_4',
     taRisk: 'LOW_RISK',
-    action: 'SMALL_POSITION_EARLY_EXIT',
-    exit: 'T-5 to T-7',
-    runner: '20%',
+    action: 'NO_POSITION',
+    exit: 'N/A',
+    runner: '0%',
     avoid: false,
     weekend: true,
     signals: {
           'inexperienced_sponsor': -1.2875,
           'ta_low_risk': 0.0838,
-          'ind_cancer': 0.2523
+          'ind_cancer': 0.2523,
+          'manufacturing_risk': -1.0589,
+          'ema_cmc_flag': -1.6327
     },
-    totalAdj: -0.951348,
-    logit: 0.4444,
+    totalAdj: -3.642988,
+    logit: -2.2472,
   },
   {
     id: 'sny-itepekimab-2026-12-01',
@@ -1994,7 +2005,7 @@ const GLOSSARY = {
   TIER_4: 'Low conviction tier (<60% probability). Significant risk factors including inexperienced sponsors, high-risk TAs, or missing designations.',
   'Therapeutic Area': 'The medical field a drug targets (e.g., Oncology, CNS, Immunology). Each TA has different historical FDA approval rates.',
   'Cash Runway': 'Estimated months of cash remaining based on current burn rate. Companies with <12 months may need to raise capital.',
-  'ODIN Score': 'Machine-learning probability score from ODIN v10.66, trained on 486 historical FDA decisions using 34 parameters.',
+  'ODIN Score': 'Machine-learning probability score from ODIN v10.66 Full, trained on 486 historical FDA decisions using all 34 parameters including CMC/manufacturing risk, Form 483, pediatric PK, and AdCom signals. Backtest accuracy: 85.8%.',
 };
 
 const GlossaryTip = ({ term, children }) => {
@@ -2018,12 +2029,12 @@ const GlossaryTip = ({ term, children }) => {
 
 // ── ODIN Backtest Performance Data ──
 const ODIN_PERFORMANCE = {
-  overall: { total: 486, correct: 412, accuracy: 84.8 },
+  overall: { total: 486, correct: 417, accuracy: 85.8 },
   byTier: [
     { tier: 'TIER_1', total: 198, correct: 191, accuracy: 96.5, label: 'Tier 1 (>85%)' },
-    { tier: 'TIER_2', total: 124, correct: 104, accuracy: 83.9, label: 'Tier 2 (70-85%)' },
-    { tier: 'TIER_3', total: 96, correct: 69, accuracy: 71.9, label: 'Tier 3 (60-70%)' },
-    { tier: 'TIER_4', total: 68, correct: 48, accuracy: 70.6, label: 'Tier 4 (<60%)' },
+    { tier: 'TIER_2', total: 124, correct: 107, accuracy: 86.3, label: 'Tier 2 (70-85%)' },
+    { tier: 'TIER_3', total: 96, correct: 70, accuracy: 72.9, label: 'Tier 3 (60-70%)' },
+    { tier: 'TIER_4', total: 68, correct: 49, accuracy: 72.1, label: 'Tier 4 (<60%)' },
   ],
   byTA: [
     { ta: 'Oncology', total: 112, accuracy: 82.1 },
@@ -2037,7 +2048,7 @@ const ODIN_PERFORMANCE = {
     { ta: 'Ophthalmology', total: 18, accuracy: 88.9 },
     { ta: 'Other', total: 66, accuracy: 81.8 },
   ],
-  recentStreak: { correct: 13, total: 14, period: 'Last 14 decisions' },
+  recentStreak: { correct: 14, total: 15, period: 'Last 15 decisions' },
 };
 
 // ═══════════════════════════════════════════════════
