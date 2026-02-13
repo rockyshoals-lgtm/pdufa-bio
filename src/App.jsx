@@ -1851,6 +1851,31 @@ const getTierBgClass = (tier) => {
   return classes[tier] || 'bg-gray-800 text-gray-400 border border-gray-700';
 };
 
+// ── Catalyst Type Utilities ──
+const getTypeColor = (type) => {
+  if (type === 'Phase 2 Readout') return '#a78bfa';
+  if (type === 'Phase 3 Readout') return '#818cf8';
+  if (type === 'PDUFA (Expected)') return '#38bdf8';
+  return '#3b82f6';
+};
+
+const getTypeBadgeClass = (type) => {
+  if (type === 'Phase 2 Readout') return 'bg-purple-950 text-purple-400 border border-purple-700';
+  if (type === 'Phase 3 Readout') return 'bg-indigo-950 text-indigo-400 border border-indigo-700';
+  if (type === 'PDUFA (Expected)') return 'bg-sky-950 text-sky-400 border border-sky-700';
+  return 'bg-blue-950 text-blue-400 border border-blue-700';
+};
+
+const getTypeLabel = (type) => {
+  if (type === 'Phase 2 Readout') return 'PH2';
+  if (type === 'Phase 3 Readout') return 'PH3';
+  if (type === 'PDUFA (Expected)') return 'PDUFA*';
+  return 'PDUFA';
+};
+
+const isPdufa = (type) => type === 'PDUFA' || type === 'PDUFA (Expected)';
+const isReadout = (type) => type === 'Phase 2 Readout' || type === 'Phase 3 Readout';
+
 const formatDate = (dateStr) => {
   const date = new Date(dateStr);
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -2045,6 +2070,9 @@ const CatalystCard = ({ catalyst, onExpand }) => {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs text-gray-400">{formatDate(catalyst.date)}</span>
+            <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(catalyst.type)}`}>
+              {getTypeLabel(catalyst.type)}
+            </span>
             {isImminent && !isPast && (
               <span className="text-xs bg-yellow-900 text-yellow-300 px-1.5 py-0.5 font-mono border border-yellow-700 animate-pulse">
                 {daysUntil === 0 ? 'TODAY' : `${daysUntil}d`}
@@ -2059,7 +2087,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
       </div>
       <div className="flex justify-between items-end">
         <div>
-          <div className="text-xs text-gray-500 mb-1">Approval Prob.</div>
+          <div className="text-xs text-gray-500 mb-1">{isPdufa(catalyst.type) ? 'Approval Prob.' : 'Success Prob.'}</div>
           <div className="text-2xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
             {fmtProb(catalyst.prob)}%
           </div>
@@ -2125,6 +2153,9 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
               <h2 className="text-xl sm:text-2xl font-bold text-white">{catalyst.drug}</h2>
               <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
                 {catalyst.tier.replace('_', ' ')}
+              </div>
+              <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTypeBadgeClass(catalyst.type)}`}>
+                {catalyst.type}
               </div>
             </div>
             <p className="text-sm text-gray-400">
@@ -2196,7 +2227,7 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                 {[
                   { label: 'INDICATION', value: catalyst.indication },
                   { label: 'PHASE', value: catalyst.phase },
-                  { label: 'TYPE', value: `${catalyst.type} (${catalyst.appType})` },
+                  { label: 'TYPE', value: catalyst.appType ? `${catalyst.type} (${catalyst.appType})` : catalyst.type },
                   { label: 'THERAPEUTIC AREA', value: catalyst.ta },
                 ].map((item) => (
                   <div key={item.label} className="bg-gray-800 p-3 border border-gray-700">
@@ -2208,7 +2239,7 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
 
               {/* ODIN Probability */}
               <div>
-                <div className="text-xs text-gray-500 mb-3 font-mono">ODIN v10.66 PROBABILITY</div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">ODIN v10.66 {isPdufa(catalyst.type) ? 'APPROVAL' : 'SUCCESS'} PROBABILITY</div>
                 <div className="flex items-center gap-6">
                   <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
                     {fmtProb(catalyst.prob)}%
@@ -2548,6 +2579,8 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
   const tier2Count = catalysts.filter((c) => c.tier === 'TIER_2').length;
   const avgProb = (catalysts.reduce((sum, c) => sum + c.prob, 0) / catalysts.length * 100).toFixed(1);
   const weekendCount = catalysts.filter(c => c.weekend).length;
+  const pdufaCount = catalysts.filter(c => isPdufa(c.type)).length;
+  const readoutCount = catalysts.filter(c => isReadout(c.type)).length;
 
   // Next 30 days catalysts
   const now = new Date();
@@ -2572,7 +2605,7 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
           FDA Catalyst <span className="text-blue-400">Intelligence</span>
         </h2>
         <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-          Machine-learning approval probability scores for upcoming PDUFA dates.
+          ML probability scores for PDUFA dates &amp; Phase 2/3 readouts.
           Powered by ODIN v10.66 — trained on 486 historical FDA decisions.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
@@ -2582,7 +2615,7 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
           </button>
           <button onClick={() => onNavigate('calendar')}
             className="bg-gray-800 hover:bg-gray-700 text-gray-200 px-5 py-2.5 text-sm font-mono border border-gray-700 transition flex items-center gap-2">
-            <Calendar size={14} /> PDUFA Calendar
+            <Calendar size={14} /> Catalyst Calendar
           </button>
         </div>
       </div>
@@ -2590,7 +2623,7 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
       {/* Key Stats Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         {[
-          { label: 'ACTIVE CATALYSTS', value: catalysts.length, color: 'text-white', icon: Target },
+          { label: 'ACTIVE CATALYSTS', value: catalysts.length, sub: `${pdufaCount} PDUFA · ${readoutCount} Readouts`, color: 'text-white', icon: Target },
           { label: 'HIGH CONVICTION', value: `${tier1Count + tier2Count}`, sub: `${tier1Count} T1 · ${tier2Count} T2`, color: 'text-green-400', icon: Shield },
           { label: 'AVG PROBABILITY', value: `${avgProb}%`, color: 'text-yellow-400', icon: Brain },
           { label: 'NEXT 7 DAYS', value: next7.length, sub: next7.length > 0 ? `Next: ${next7[0].ticker}` : 'None imminent', color: next7.length > 0 ? 'text-orange-400' : 'text-gray-500', icon: Flame },
@@ -2639,7 +2672,7 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
               <div className="text-4xl sm:text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(nextCatalyst.tier) }}>
                 {fmtProb(nextCatalyst.prob)}%
               </div>
-              <div className="text-gray-400 text-sm mt-1">ODIN Approval Probability</div>
+              <div className="text-gray-400 text-sm mt-1">ODIN {isPdufa(nextCatalyst.type) ? 'Approval' : 'Success'} Probability</div>
             </div>
           </div>
         </div>
@@ -2695,6 +2728,9 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
                 style={{ borderLeftColor: getTierColor(cat.tier) }}>
                 <span className="text-xs text-gray-600 font-mono w-4 hidden sm:block">{i + 1}</span>
                 <span className="text-xs text-gray-500 font-mono w-20 flex-shrink-0">{formatDate(cat.date)}</span>
+                <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(cat.type)} hidden sm:inline-block`}>
+                  {getTypeLabel(cat.type)}
+                </span>
                 <span className="font-bold text-white text-sm w-14 flex-shrink-0">{cat.ticker}</span>
                 <span className="text-sm text-gray-400 flex-1 truncate hidden sm:block">{cat.drug}</span>
                 <span className="font-bold font-mono tabular-nums text-sm flex-shrink-0" style={{ color: getTierColor(cat.tier) }}>
@@ -2733,8 +2769,8 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
             <Calendar size={16} className="text-purple-400" />
             <ChevronRight size={14} className="text-gray-600 group-hover:text-blue-400 transition" />
           </div>
-          <div className="text-sm font-bold text-white font-mono">PDUFA Calendar</div>
-          <div className="text-xs text-gray-500 mt-1">Month-by-month view of all decision dates</div>
+          <div className="text-sm font-bold text-white font-mono">Catalyst Calendar</div>
+          <div className="text-xs text-gray-500 mt-1">Month-by-month view of PDUFAs &amp; phase readouts</div>
         </button>
         <button onClick={() => onNavigate('intel')}
           className="bg-gray-900 border border-gray-700 hover:border-blue-500 p-4 text-left transition group">
@@ -2789,7 +2825,9 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-white">{catalyst.ticker}</span>
-                        <span className="text-xs text-gray-500">{catalyst.type}</span>
+                        <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(catalyst.type)}`}>
+                          {getTypeLabel(catalyst.type)}
+                        </span>
                         {catalyst.designations.length > 0 && (
                           <span className="text-xs text-blue-400 bg-blue-950 px-1 border border-blue-800 font-mono hidden sm:inline">
                             {catalyst.designations[0].replace('Breakthrough Therapy', 'BTD').replace('Priority Review', 'PR').replace('Orphan Drug', 'OD')}
@@ -2822,6 +2860,7 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
 const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched = () => false }) => {
   const [filterTier, setFilterTier] = useState(null);
   const [filterTA, setFilterTA] = useState(null);
+  const [filterType, setFilterType] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortCol, setSortCol] = useState('date');
   const [sortDir, setSortDir] = useState('asc');
@@ -2829,17 +2868,28 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
 
   const tas = useMemo(() => [...new Set(catalysts.map((c) => c.ta))].sort(), [catalysts]);
 
+  const typeFilters = [
+    { key: null, label: 'All' },
+    { key: 'pdufa', label: 'PDUFA', match: (t) => t === 'PDUFA' || t === 'PDUFA (Expected)' },
+    { key: 'ph3', label: 'Phase 3', match: (t) => t === 'Phase 3 Readout' },
+    { key: 'ph2', label: 'Phase 2', match: (t) => t === 'Phase 2 Readout' },
+  ];
+
   const filtered = useMemo(() => {
     return catalysts.filter((c) => {
       if (watchlistOnly && !isWatched(c.id)) return false;
       if (filterTier && c.tier !== filterTier) return false;
       if (filterTA && c.ta !== filterTA) return false;
+      if (filterType) {
+        const tf = typeFilters.find(f => f.key === filterType);
+        if (tf && tf.match && !tf.match(c.type)) return false;
+      }
       if (searchTerm && !c.drug.toLowerCase().includes(searchTerm.toLowerCase()) &&
           !c.ticker.toLowerCase().includes(searchTerm.toLowerCase()) &&
           !c.company.toLowerCase().includes(searchTerm.toLowerCase())) return false;
       return true;
     });
-  }, [catalysts, filterTier, filterTA, searchTerm]);
+  }, [catalysts, filterTier, filterTA, filterType, searchTerm]);
 
   const sorted = useMemo(() => {
     const copy = [...filtered];
@@ -2874,6 +2924,19 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
         </div>
         <div className="flex flex-wrap gap-2">
           <div>
+            <label className="text-xs text-gray-400 block mb-2">Type</label>
+            <div className="flex gap-1 flex-wrap">
+              {typeFilters.map((tf) => (
+                <button key={tf.key || 'all'} onClick={() => setFilterType(tf.key)}
+                  className={`px-3 py-1 text-xs font-mono border transition ${
+                    filterType === tf.key ? 'bg-blue-900 border-blue-500 text-blue-300' : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'
+                  }`}>
+                  {tf.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
             <label className="text-xs text-gray-400 block mb-2">Tier</label>
             <div className="flex gap-1 flex-wrap">
               {[null, 'TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => (
@@ -2904,6 +2967,7 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
               <tr className="border-b border-gray-700 bg-gray-800">
                 {[
                   { col: 'date', label: 'Date' },
+                  { col: 'type', label: 'Type' },
                   { col: 'ticker', label: 'Ticker' },
                   { col: 'drug', label: 'Drug' },
                   { col: 'indication', label: 'Indication' },
@@ -2923,6 +2987,11 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
                 <tr key={cat.id} onClick={() => onExpandCatalyst(cat)}
                   className="border-b border-gray-800 hover:bg-gray-800 cursor-pointer transition">
                   <td className="px-2 sm:px-4 py-3 text-gray-300 text-xs whitespace-nowrap">{formatDate(cat.date)}</td>
+                  <td className="px-2 sm:px-4 py-3">
+                    <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(cat.type)}`}>
+                      {getTypeLabel(cat.type)}
+                    </span>
+                  </td>
                   <td className="px-2 sm:px-4 py-3 font-bold text-white">{cat.ticker}</td>
                   <td className="px-2 sm:px-4 py-3 text-gray-300 max-w-32 truncate">{cat.drug}</td>
                   <td className="px-2 sm:px-4 py-3 text-gray-400 text-xs max-w-32 truncate hidden sm:table-cell">{cat.indication}</td>
@@ -3059,7 +3128,7 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
   const groups = useMemo(() => {
     const g = {};
     catalysts.forEach(c => {
-      const key = groupBy === 'ta' ? c.ta : c.tier;
+      const key = groupBy === 'ta' ? c.ta : groupBy === 'type' ? (isPdufa(c.type) ? 'PDUFA' : c.type) : c.tier;
       if (!g[key]) g[key] = [];
       g[key].push(c);
     });
@@ -3078,7 +3147,7 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
       <div className="flex flex-wrap gap-3 items-center">
         <div className="flex items-center gap-2">
           <span className="text-xs text-gray-400 font-mono">GROUP:</span>
-          {[{ val: 'ta', label: 'Therapeutic Area' }, { val: 'tier', label: 'Tier' }].map(opt => (
+          {[{ val: 'ta', label: 'Therapeutic Area' }, { val: 'tier', label: 'Tier' }, { val: 'type', label: 'Event Type' }].map(opt => (
             <button key={opt.val} onClick={() => setGroupBy(opt.val)}
               className={`px-3 py-1 text-xs font-mono border transition ${groupBy === opt.val ? 'bg-blue-900 border-blue-500 text-blue-300' : 'bg-gray-800 border-gray-700 text-gray-400'}`}>
               {opt.label}
@@ -3155,7 +3224,8 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
                           <div className="text-xs font-bold text-white">{cat.ticker}</div>
                           <div className="text-[10px] text-gray-300 truncate">{cat.drug}</div>
                           <div className="text-[10px] text-gray-400">{formatDate(cat.date)}</div>
-                          <div className="text-xs font-bold mt-1" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</div>
+                          <div className="text-[10px] font-mono mt-0.5" style={{ color: getTypeColor(cat.type) }}>{getTypeLabel(cat.type)}</div>
+                          <div className="text-xs font-bold mt-0.5" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</div>
                         </div>
                       </div>
                     );
