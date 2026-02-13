@@ -38,6 +38,16 @@ import {
   Share2,
   Globe,
   MessageSquare,
+  Award,
+  Trophy,
+  Crosshair,
+  Radio,
+  Newspaper,
+  Calculator,
+  ArrowRight,
+  Gauge,
+  Factory,
+  Beaker,
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
@@ -1941,7 +1951,7 @@ const generateICS = (catalyst) => {
   URL.revokeObjectURL(url);
 };
 
-// ── Safety Labels (Public.com inspired) ──
+// ── Safety Labels (Public.com inspired + CMC/Dilution) ──
 const getSafetyWarnings = (catalyst) => {
   const warnings = [];
   if (catalyst.tier === 'TIER_4') warnings.push({ level: 'high', label: 'High Risk', desc: 'ODIN scores this below 60% approval probability' });
@@ -1950,6 +1960,15 @@ const getSafetyWarnings = (catalyst) => {
   if (catalyst.avoid) warnings.push({ level: 'high', label: 'Avoid', desc: 'ODIN recommends avoiding this catalyst' });
   if (catalyst.signals?.inexperienced_sponsor) warnings.push({ level: 'med', label: 'First-Time Sponsor', desc: 'Company has limited FDA approval history' });
   if (catalyst.enrollment > 0 && catalyst.enrollment < 100) warnings.push({ level: 'low', label: 'Small Trial', desc: `Only ${catalyst.enrollment} patients enrolled — higher uncertainty` });
+  // CMC risk — modality complexity (74% of CRLs are CMC-related)
+  if (catalyst.modality && CMC_RISK_PROFILES[catalyst.modality]?.multiplier >= 2.0) {
+    warnings.push({ level: 'high', label: 'CMC Risk', desc: `${catalyst.modality} products have elevated manufacturing risk. 74% of CRLs cite CMC deficiencies.` });
+  }
+  // T-7 exit warning
+  const tw = getTradingWindow(catalyst);
+  if (tw.zone === 'EXIT' || tw.zone === 'DANGER') {
+    warnings.push({ level: 'high', label: tw.zone === 'DANGER' ? 'Binary Risk Zone' : 'T-7 Exit Zone', desc: tw.desc });
+  }
   return warnings;
 };
 
@@ -2019,6 +2038,108 @@ const ODIN_PERFORMANCE = {
     { ta: 'Other', total: 66, accuracy: 80.3 },
   ],
   recentStreak: { correct: 12, total: 14, period: 'Last 14 decisions' },
+};
+
+// ═══════════════════════════════════════════════════
+// T-25 TRADING WINDOW & J-CURVE SYSTEM
+// ═══════════════════════════════════════════════════
+const getTradingWindow = (catalyst) => {
+  const now = new Date();
+  const eventDate = new Date(catalyst.date + 'T00:00:00');
+  const tradingDaysOut = Math.ceil((eventDate - now) / (1000 * 60 * 60 * 24));
+
+  // Define zones
+  if (tradingDaysOut < 0) return { zone: 'EXPIRED', label: 'Past', color: '#6b7280', daysOut: tradingDaysOut, progress: 100, desc: 'Event has passed' };
+  if (tradingDaysOut <= 3) return { zone: 'DANGER', label: 'Binary Risk', color: '#ef4444', daysOut: tradingDaysOut, progress: 95, desc: 'EXIT — extreme binary risk. IV crush imminent.' };
+  if (tradingDaysOut <= 7) return { zone: 'EXIT', label: 'T-7 Risk Off', color: '#f97316', daysOut: tradingDaysOut, progress: 85, desc: 'ODIN exit zone. Professional standard: close positions before T-7.' };
+  if (tradingDaysOut <= 14) return { zone: 'PEAK', label: 'Peak Runup', color: '#eab308', daysOut: tradingDaysOut, progress: 70, desc: 'Peak momentum phase. Watch for volume confirmation.' };
+  if (tradingDaysOut <= 25) return { zone: 'OPTIMAL', label: 'T-25 Entry', color: '#22c55e', daysOut: tradingDaysOut, progress: 45, desc: 'Optimal entry window. Captures ~85% of runup with 53% less risk.' };
+  if (tradingDaysOut <= 45) return { zone: 'EARLY', label: 'Early Watch', color: '#3b82f6', daysOut: tradingDaysOut, progress: 20, desc: 'Research phase. Build thesis before T-25 entry.' };
+  return { zone: 'FAR', label: 'Pre-Watch', color: '#6b7280', daysOut: tradingDaysOut, progress: 5, desc: 'Too early. Monitor for news and data updates.' };
+};
+
+// ═══════════════════════════════════════════════════
+// CONFERENCE / SOFT CATALYST DATA
+// ═══════════════════════════════════════════════════
+const CONFERENCES_2026 = [
+  { name: 'ASCO GI', dates: 'Jan 22-24, 2026', abstractRelease: '2026-01-08', month: 1, ta: 'Oncology', tier: 'Major' },
+  { name: 'AACR Annual', dates: 'Apr 11-16, 2026', abstractRelease: '2026-03-15', month: 4, ta: 'Oncology', tier: 'Major' },
+  { name: 'AAN Annual', dates: 'Apr 25-30, 2026', abstractRelease: '2026-03-20', month: 4, ta: 'CNS', tier: 'Major' },
+  { name: 'ASCO Annual', dates: 'May 29 - Jun 2, 2026', abstractRelease: '2026-05-14', month: 5, ta: 'Oncology', tier: 'Tier 1' },
+  { name: 'EHA Annual', dates: 'Jun 11-14, 2026', abstractRelease: '2026-05-28', month: 6, ta: 'Hematology', tier: 'Major' },
+  { name: 'ESMO', dates: 'Sep 18-22, 2026', abstractRelease: '2026-08-20', month: 9, ta: 'Oncology', tier: 'Tier 1' },
+  { name: 'ASH Annual', dates: 'Dec 5-8, 2026', abstractRelease: '2026-11-10', month: 12, ta: 'Hematology', tier: 'Tier 1' },
+  { name: 'ACR Convergence', dates: 'Nov 13-18, 2026', abstractRelease: '2026-10-15', month: 11, ta: 'Immunology', tier: 'Major' },
+  { name: 'ADA Scientific Sessions', dates: 'Jun 12-15, 2026', abstractRelease: '2026-05-20', month: 6, ta: 'Endocrinology', tier: 'Major' },
+  { name: 'EASL Congress', dates: 'Jun 24-28, 2026', abstractRelease: '2026-06-01', month: 6, ta: 'Hepatology', tier: 'Major' },
+  { name: 'IDWeek', dates: 'Oct 15-18, 2026', abstractRelease: '2026-09-15', month: 10, ta: 'Infectious Disease', tier: 'Major' },
+  { name: 'AHA Scientific Sessions', dates: 'Nov 14-17, 2026', abstractRelease: '2026-10-20', month: 11, ta: 'Cardiovascular', tier: 'Tier 1' },
+];
+
+// ═══════════════════════════════════════════════════
+// CMC RISK DATA (manually curated for now)
+// ═══════════════════════════════════════════════════
+const CMC_RISK_PROFILES = {
+  // Modality risk multipliers
+  'Small Molecule': { multiplier: 1.0, label: 'Standard', color: '#22c55e' },
+  'Monoclonal Antibody': { multiplier: 1.5, label: 'Moderate', color: '#eab308' },
+  'ADC': { multiplier: 2.0, label: 'High', color: '#f97316' },
+  'Gene Therapy': { multiplier: 3.0, label: 'Extreme', color: '#ef4444' },
+  'Cell Therapy': { multiplier: 3.0, label: 'Extreme', color: '#ef4444' },
+  'mRNA': { multiplier: 2.0, label: 'High', color: '#f97316' },
+  'Biologic': { multiplier: 1.5, label: 'Moderate', color: '#eab308' },
+  'Default': { multiplier: 1.0, label: 'Unknown', color: '#6b7280' },
+};
+
+// ═══════════════════════════════════════════════════
+// BioCred PREDICTION SYSTEM (localStorage MVP)
+// ═══════════════════════════════════════════════════
+const usePredictions = () => {
+  const [predictions, setPredictions] = useState(() => {
+    try {
+      const stored = localStorage.getItem('pdufa_predictions');
+      return stored ? JSON.parse(stored) : {};
+    } catch { return {}; }
+  });
+
+  const predict = useCallback((catalystId, prediction) => {
+    setPredictions(prev => {
+      const next = { ...prev, [catalystId]: { prediction, timestamp: Date.now() } };
+      try { localStorage.setItem('pdufa_predictions', JSON.stringify(next)); } catch {}
+      return next;
+    });
+  }, []);
+
+  const getPrediction = useCallback((catalystId) => predictions[catalystId] || null, [predictions]);
+
+  const getStats = useCallback(() => {
+    const all = Object.values(predictions);
+    const total = all.length;
+    // For now, we can't score accuracy without outcomes, but we can track predictions
+    return { total, predictions };
+  }, [predictions]);
+
+  return { predict, getPrediction, getStats };
+};
+
+// ═══════════════════════════════════════════════════
+// IV CRUSH CALCULATOR (Black-Scholes)
+// ═══════════════════════════════════════════════════
+const blackScholesCall = (S, K, T, r, sigma) => {
+  if (T <= 0 || sigma <= 0) return Math.max(S - K, 0);
+  const d1 = (Math.log(S / K) + (r + (sigma * sigma) / 2) * T) / (sigma * Math.sqrt(T));
+  const d2 = d1 - sigma * Math.sqrt(T);
+  const cdf = (x) => 0.5 * (1 + erf(x / Math.sqrt(2)));
+  return S * cdf(d1) - K * Math.exp(-r * T) * cdf(d2);
+};
+
+const erf = (x) => {
+  const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
+  const p = 0.3275911;
+  const sign = x < 0 ? -1 : 1;
+  const t = 1 / (1 + p * Math.abs(x));
+  const y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+  return sign * y;
 };
 
 // ═══════════════════════════════════════════════════
@@ -2193,6 +2314,187 @@ const CountdownTimer = ({ targetDate }) => {
   );
 };
 
+// ── T-25 Trading Window Bar ──────────────────────
+const TradingWindowBar = ({ catalyst, compact = false }) => {
+  const tw = getTradingWindow(catalyst);
+  if (tw.zone === 'EXPIRED') return compact ? null : <div className="text-xs text-gray-500 font-mono">Event passed</div>;
+
+  const zones = [
+    { label: 'Pre-Watch', range: '45+d', color: '#6b7280', w: 15 },
+    { label: 'Early', range: '26-45d', color: '#3b82f6', w: 15 },
+    { label: 'T-25 Entry', range: '15-25d', color: '#22c55e', w: 25 },
+    { label: 'Peak', range: '8-14d', color: '#eab308', w: 20 },
+    { label: 'T-7 Exit', range: '4-7d', color: '#f97316', w: 15 },
+    { label: 'Binary', range: '0-3d', color: '#ef4444', w: 10 },
+  ];
+
+  if (compact) {
+    return (
+      <div className="flex items-center gap-2">
+        <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: tw.color }} />
+        <span className="text-xs font-mono" style={{ color: tw.color }}>{tw.label}</span>
+        <span className="text-xs text-gray-500 font-mono">{tw.daysOut}d</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Crosshair size={12} style={{ color: tw.color }} />
+          <span className="text-xs font-mono font-bold" style={{ color: tw.color }}>{tw.label}</span>
+          <span className="text-xs text-gray-500 font-mono">T-{tw.daysOut}</span>
+        </div>
+        {tw.zone === 'EXIT' || tw.zone === 'DANGER' ? (
+          <span className="text-xs bg-red-950 text-red-400 border border-red-700 px-2 py-0.5 font-mono font-bold animate-pulse">
+            RISK OFF
+          </span>
+        ) : tw.zone === 'OPTIMAL' ? (
+          <span className="text-xs bg-green-950 text-green-400 border border-green-700 px-2 py-0.5 font-mono font-bold">
+            ENTRY WINDOW
+          </span>
+        ) : null}
+      </div>
+      {/* Progress bar with zone indicators */}
+      <div className="flex h-3 w-full overflow-hidden border border-gray-700">
+        {zones.map((z, i) => (
+          <div key={z.label} className="relative h-full transition-all" style={{ width: `${z.w}%`, backgroundColor: z.color, opacity: z.label === tw.label ? 1 : 0.2 }}>
+            {z.label === tw.label && (
+              <div className="absolute inset-0 animate-pulse" style={{ backgroundColor: z.color, opacity: 0.4 }} />
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="text-xs text-gray-400">{tw.desc}</div>
+    </div>
+  );
+};
+
+// ── BioCred Prediction Widget ────────────────────
+const PredictionWidget = ({ catalyst, predict, getPrediction }) => {
+  const existing = getPrediction(catalyst.id);
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  const handlePredict = (prediction) => {
+    predict(catalyst.id, prediction);
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 2000);
+  };
+
+  if (existing) {
+    return (
+      <div className="bg-gray-800 border border-gray-700 p-3">
+        <div className="text-xs text-gray-500 font-mono mb-2 flex items-center gap-1.5">
+          <Award size={12} className="text-purple-400" /> YOUR PREDICTION
+        </div>
+        <div className="flex items-center gap-3">
+          <span className={`text-sm font-bold font-mono px-3 py-1 border ${
+            existing.prediction === 'APPROVE' ? 'bg-green-950 text-green-400 border-green-700' : 'bg-red-950 text-red-400 border-red-700'
+          }`}>
+            {existing.prediction === 'APPROVE' ? '✓ APPROVE' : '✗ CRL'}
+          </span>
+          <span className="text-xs text-gray-500">Predicted {new Date(existing.timestamp).toLocaleDateString()}</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-gradient-to-r from-purple-950/30 to-blue-950/30 border border-purple-800/50 p-3 relative overflow-hidden">
+      {showConfetti && (
+        <div className="absolute inset-0 flex items-center justify-center text-4xl animate-bounce z-10">🎯</div>
+      )}
+      <div className="text-xs text-gray-500 font-mono mb-2 flex items-center gap-1.5">
+        <Trophy size={12} className="text-yellow-400" /> MAKE YOUR CALL
+        <span className="text-purple-400 ml-auto">+10 BioCred</span>
+      </div>
+      <div className="text-xs text-gray-400 mb-3">
+        What's your prediction for {catalyst.ticker}'s {isPdufa(catalyst.type) ? 'PDUFA' : 'readout'}?
+      </div>
+      <div className="flex gap-2">
+        <button onClick={() => handlePredict('APPROVE')}
+          className="flex-1 bg-green-950 border border-green-700 text-green-400 py-2 text-sm font-mono font-bold hover:bg-green-900 transition flex items-center justify-center gap-2">
+          <ArrowUpRight size={14} /> {isPdufa(catalyst.type) ? 'APPROVE' : 'POSITIVE'}
+        </button>
+        <button onClick={() => handlePredict('CRL')}
+          className="flex-1 bg-red-950 border border-red-700 text-red-400 py-2 text-sm font-mono font-bold hover:bg-red-900 transition flex items-center justify-center gap-2">
+          <ArrowDownRight size={14} /> {isPdufa(catalyst.type) ? 'CRL' : 'NEGATIVE'}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// ── IV Crush Simulator ──────────────────────────
+const IVCrushSimulator = () => {
+  const [stockPrice, setStockPrice] = useState(50);
+  const [strikePrice, setStrikePrice] = useState(55);
+  const [preIV, setPreIV] = useState(150);
+  const [postIV, setPostIV] = useState(60);
+  const [daysToExpiry, setDaysToExpiry] = useState(30);
+  const [stockMove, setStockMove] = useState(10);
+
+  const T = daysToExpiry / 365;
+  const r = 0.05;
+  const prePremium = blackScholesCall(stockPrice, strikePrice, T, r, preIV / 100);
+  const postPrice = stockPrice * (1 + stockMove / 100);
+  const postT = Math.max((daysToExpiry - 1) / 365, 0.001);
+  const postPremium = blackScholesCall(postPrice, strikePrice, postT, r, postIV / 100);
+  const pnl = postPremium - prePremium;
+  const pnlPct = prePremium > 0 ? (pnl / prePremium) * 100 : 0;
+
+  return (
+    <div className="bg-gray-800 border border-gray-700 p-4 space-y-4">
+      <div className="flex items-center gap-2">
+        <Calculator size={14} className="text-blue-400" />
+        <span className="text-xs font-mono text-gray-400">IV CRUSH SIMULATOR</span>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {[
+          { label: 'Stock Price', val: stockPrice, set: setStockPrice, prefix: '$', min: 1, max: 500 },
+          { label: 'Strike', val: strikePrice, set: setStrikePrice, prefix: '$', min: 1, max: 500 },
+          { label: 'Pre-Event IV', val: preIV, set: setPreIV, prefix: '', suffix: '%', min: 10, max: 500 },
+          { label: 'Post-Event IV', val: postIV, set: setPostIV, prefix: '', suffix: '%', min: 5, max: 300 },
+          { label: 'Days to Expiry', val: daysToExpiry, set: setDaysToExpiry, prefix: '', suffix: 'd', min: 1, max: 365 },
+          { label: 'Stock Move', val: stockMove, set: setStockMove, prefix: '', suffix: '%', min: -80, max: 200 },
+        ].map(item => (
+          <div key={item.label}>
+            <div className="text-[10px] text-gray-500 mb-1 font-mono">{item.label}</div>
+            <input type="number" value={item.val} onChange={e => item.set(Number(e.target.value))}
+              min={item.min} max={item.max}
+              className="w-full bg-gray-900 border border-gray-600 text-white px-2 py-1.5 text-sm font-mono focus:border-blue-500 focus:outline-none" />
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-3 gap-3 pt-2 border-t border-gray-700">
+        <div className="text-center">
+          <div className="text-[10px] text-gray-500 font-mono">PRE-EVENT</div>
+          <div className="text-lg font-bold text-white font-mono">${prePremium.toFixed(2)}</div>
+        </div>
+        <div className="text-center">
+          <div className="text-[10px] text-gray-500 font-mono">POST-EVENT</div>
+          <div className="text-lg font-bold text-white font-mono">${postPremium.toFixed(2)}</div>
+        </div>
+        <div className="text-center">
+          <div className="text-[10px] text-gray-500 font-mono">P&L</div>
+          <div className={`text-lg font-bold font-mono ${pnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+            {pnl >= 0 ? '+' : ''}{pnlPct.toFixed(1)}%
+          </div>
+        </div>
+      </div>
+      {pnl < 0 && stockMove > 0 && (
+        <div className="bg-red-950 border border-red-800 p-2 flex items-start gap-2">
+          <AlertTriangle size={14} className="text-red-400 flex-shrink-0 mt-0.5" />
+          <div className="text-xs text-red-300">
+            <span className="font-bold">IV Trap Detected:</span> Stock rises {stockMove}% but your call LOSES {Math.abs(pnlPct).toFixed(1)}% due to IV crush from {preIV}% → {postIV}%.
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // ── Catalyst Card ──────────────────────────────────
 const CatalystCard = ({ catalyst, onExpand }) => {
   const daysUntil = Math.ceil((new Date(catalyst.date) - new Date()) / (1000 * 60 * 60 * 24));
@@ -2248,7 +2550,8 @@ const CatalystCard = ({ catalyst, onExpand }) => {
         </div>
       </div>
       <div className="text-xs text-gray-500 mt-3 truncate">{catalyst.indication}</div>
-      <div className="flex gap-2 mt-2">
+      <div className="flex gap-2 mt-2 items-center flex-wrap">
+        <TradingWindowBar catalyst={catalyst} compact={true} />
         {catalyst.weekend && (
           <span className="text-xs text-red-400 flex items-center gap-1">
             <AlertTriangle size={10} /> Weekend
@@ -2265,7 +2568,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
 };
 
 // ── Detail Modal (Enhanced with tabs) ──────────────
-const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false }) => {
+const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false, predict = () => {}, getPrediction = () => null }) => {
   const [activeDetailTab, setActiveDetailTab] = useState('overview');
   const [showShareMenu, setShowShareMenu] = useState(false);
   const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
@@ -2517,6 +2820,17 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                   </div>
                 );
               })()}
+
+              {/* T-25 Trading Window */}
+              <div className="bg-gray-800 border border-gray-700 p-4">
+                <div className="text-xs text-gray-500 mb-3 font-mono flex items-center gap-1.5">
+                  <Crosshair size={12} /> ODIN TRADING WINDOW (J-CURVE)
+                </div>
+                <TradingWindowBar catalyst={catalyst} />
+              </div>
+
+              {/* BioCred Prediction */}
+              <PredictionWidget catalyst={catalyst} predict={predict} getPrediction={getPrediction} />
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-700">
@@ -3600,6 +3914,266 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
 };
 
 
+// ── Feed View ("The Tape") ───────────────────────
+const FeedView = ({ catalysts, onExpandCatalyst, predict, getPrediction }) => {
+  const now = new Date();
+
+  // Generate feed items from catalysts
+  const feedItems = useMemo(() => {
+    const items = [];
+
+    catalysts.forEach(c => {
+      const tw = getTradingWindow(c);
+      const daysOut = tw.daysOut;
+
+      // T-25 Entry signals
+      if (tw.zone === 'OPTIMAL') {
+        items.push({ type: 'ENTRY_SIGNAL', catalyst: c, priority: 90, tw, icon: Crosshair, color: '#22c55e',
+          title: `T-25 Entry Window Open`, desc: `$${c.ticker} enters optimal buy zone. ${daysOut} days to ${c.type}.` });
+      }
+
+      // T-7 Exit alerts
+      if (tw.zone === 'EXIT') {
+        items.push({ type: 'EXIT_ALERT', catalyst: c, priority: 100, tw, icon: AlertTriangle, color: '#f97316',
+          title: `T-7 EXIT ALERT`, desc: `$${c.ticker} — Professional standard: close positions before T-7. ${daysOut} days remain.` });
+      }
+
+      // Binary risk zone
+      if (tw.zone === 'DANGER') {
+        items.push({ type: 'BINARY_RISK', catalyst: c, priority: 110, tw, icon: Flame, color: '#ef4444',
+          title: `BINARY RISK — ${daysOut === 0 ? 'TODAY' : daysOut + ' DAYS'}`, desc: `$${c.ticker} ${c.type} ${daysOut === 0 ? 'is TODAY' : 'in ' + daysOut + ' days'}. Extreme IV crush territory. ${fmtProb(c.prob)}% ODIN score.` });
+      }
+
+      // Tier 1 high conviction
+      if (c.tier === 'TIER_1' && daysOut > 0 && daysOut <= 45) {
+        items.push({ type: 'HIGH_CONVICTION', catalyst: c, priority: 70, tw, icon: Shield, color: '#22c55e',
+          title: `High Conviction: $${c.ticker}`, desc: `ODIN scores ${fmtProb(c.prob)}% (Tier 1). ${c.drug} for ${c.indication}. ${daysOut}d to decision.` });
+      }
+
+      // Weekend PDUFA warnings
+      if (c.weekend && daysOut > 0 && daysOut <= 14) {
+        items.push({ type: 'WEEKEND_WARN', catalyst: c, priority: 60, tw, icon: Clock, color: '#eab308',
+          title: `Weekend PDUFA: $${c.ticker}`, desc: `Decision falls on weekend. May come early Friday or delay to Monday.` });
+      }
+
+      // Avoid signals
+      if (c.avoid && daysOut > 0) {
+        items.push({ type: 'AVOID', catalyst: c, priority: 80, tw, icon: X, color: '#ef4444',
+          title: `ODIN AVOID: $${c.ticker}`, desc: `ODIN recommends no position. ${fmtProb(c.prob)}% probability — risk/reward unfavorable.` });
+      }
+
+      // Unpredicted catalysts coming up (gamification prompt)
+      if (!getPrediction(c.id) && daysOut > 0 && daysOut <= 30) {
+        items.push({ type: 'PREDICT_PROMPT', catalyst: c, priority: 30, tw, icon: Trophy, color: '#a855f7',
+          title: `Make your call: $${c.ticker}`, desc: `${c.drug} ${c.type} in ${daysOut} days. Predict the outcome to earn BioCred.` });
+      }
+    });
+
+    // Add upcoming conferences
+    CONFERENCES_2026.forEach(conf => {
+      const confDate = new Date(conf.abstractRelease + 'T00:00:00');
+      const daysUntil = Math.ceil((confDate - now) / 86400000);
+      if (daysUntil > 0 && daysUntil <= 60) {
+        items.push({ type: 'CONFERENCE', catalyst: null, priority: 40, tw: null, icon: Newspaper, color: '#3b82f6',
+          title: `${conf.name} Abstracts`, desc: `Abstract release ~${formatDate(conf.abstractRelease)}. ${conf.ta} conference (${conf.tier}). ${daysUntil} days.`,
+          conf });
+      }
+    });
+
+    return items.sort((a, b) => b.priority - a.priority);
+  }, [catalysts, getPrediction, now]);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-bold font-mono">The Tape</h2>
+          <p className="text-sm text-gray-400">Real-time catalyst intelligence feed</p>
+        </div>
+        <div className="text-xs text-gray-500 font-mono flex items-center gap-1.5">
+          <Radio size={12} className="text-green-400 animate-pulse" /> LIVE
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        {feedItems.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <div key={i}
+              onClick={() => item.catalyst && onExpandCatalyst(item.catalyst)}
+              className={`bg-gray-900 border border-gray-700 p-3 sm:p-4 ${item.catalyst ? 'cursor-pointer hover:border-blue-500' : ''} transition flex gap-3 items-start`}>
+              <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border rounded-none"
+                style={{ borderColor: item.color + '60', backgroundColor: item.color + '15' }}>
+                <Icon size={14} style={{ color: item.color }} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                  <span className="text-sm font-bold text-white">{item.title}</span>
+                  {item.catalyst && (
+                    <span className={`text-xs px-1.5 py-0.5 font-mono ${getTierBgClass(item.catalyst.tier)}`}>
+                      {item.catalyst.tier.replace('_', ' ')}
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-gray-400">{item.desc}</p>
+                {item.type === 'PREDICT_PROMPT' && item.catalyst && (
+                  <div className="mt-2 flex gap-2">
+                    <button onClick={(e) => { e.stopPropagation(); predict(item.catalyst.id, 'APPROVE'); }}
+                      className="text-xs bg-green-950 border border-green-700 text-green-400 px-3 py-1 font-mono hover:bg-green-900 transition">
+                      ✓ {isPdufa(item.catalyst.type) ? 'APPROVE' : 'POSITIVE'}
+                    </button>
+                    <button onClick={(e) => { e.stopPropagation(); predict(item.catalyst.id, 'CRL'); }}
+                      className="text-xs bg-red-950 border border-red-700 text-red-400 px-3 py-1 font-mono hover:bg-red-900 transition">
+                      ✗ {isPdufa(item.catalyst.type) ? 'CRL' : 'NEGATIVE'}
+                    </button>
+                  </div>
+                )}
+              </div>
+              {item.catalyst && (
+                <div className="flex-shrink-0 text-right">
+                  <div className="text-lg font-bold font-mono" style={{ color: getTierColor(item.catalyst.tier) }}>
+                    {fmtProb(item.catalyst.prob)}%
+                  </div>
+                  <div className="text-[10px] text-gray-500 font-mono">{item.catalyst.ticker}</div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {feedItems.length === 0 && (
+        <div className="text-center py-12 text-gray-500">
+          <Radio size={32} className="mx-auto mb-3 text-gray-600" />
+          <div className="text-sm">No active signals right now. Check back when catalysts are approaching.</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ── Tools View (IV Crush, Conference Calendar) ──
+const ToolsView = ({ catalysts }) => {
+  const [activeTool, setActiveTool] = useState('iv');
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-xl font-bold font-mono">Trading Tools</h2>
+        <p className="text-sm text-gray-400">Institutional-grade analysis tools for biotech catalysts</p>
+      </div>
+
+      <div className="flex gap-2 overflow-x-auto pb-1">
+        {[
+          { id: 'iv', label: 'IV Crush Simulator', icon: Calculator },
+          { id: 'jcurve', label: 'J-Curve Scanner', icon: Crosshair },
+          { id: 'conferences', label: 'Conference Calendar', icon: Newspaper },
+        ].map(tool => {
+          const Icon = tool.icon;
+          return (
+            <button key={tool.id} onClick={() => setActiveTool(tool.id)}
+              className={`flex items-center gap-1.5 px-4 py-2 text-xs font-mono border transition whitespace-nowrap ${
+                activeTool === tool.id ? 'bg-blue-950 border-blue-700 text-blue-400' : 'bg-gray-900 border-gray-700 text-gray-400 hover:text-white'
+              }`}>
+              <Icon size={12} /> {tool.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {activeTool === 'iv' && (
+        <div className="space-y-4">
+          <div className="bg-gray-900 border border-gray-700 p-4">
+            <div className="text-xs text-gray-400 mb-4">
+              Simulates how options pricing changes when Implied Volatility (IV) collapses after a binary catalyst event.
+              Biotech PDUFAs routinely see IV crush of 40-60%. Even if the stock rises, your call may lose value.
+            </div>
+            <IVCrushSimulator />
+          </div>
+          <div className="bg-gray-900 border border-gray-700 p-4 space-y-2">
+            <div className="text-xs font-mono text-gray-500">TYPICAL IV CRUSH BY EVENT TYPE</div>
+            {[
+              { label: 'PDUFA (Binary)', crush: '40-60%', risk: 'Extreme' },
+              { label: 'Phase 3 Readout', crush: '30-50%', risk: 'Very High' },
+              { label: 'Phase 2 Readout', crush: '20-40%', risk: 'High' },
+              { label: 'Conference Presentation', crush: '10-20%', risk: 'Moderate' },
+            ].map(item => (
+              <div key={item.label} className="flex justify-between items-center text-xs py-1.5 border-b border-gray-800 last:border-0">
+                <span className="text-gray-300">{item.label}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-red-400 font-mono">-{item.crush}</span>
+                  <span className="text-gray-500 w-20 text-right">{item.risk}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {activeTool === 'jcurve' && (
+        <div className="space-y-3">
+          <div className="text-xs text-gray-400 mb-2">
+            All active catalysts ranked by their position in the ODIN T-25 trading window.
+            Green = optimal entry, Yellow = peak momentum, Red = exit zone.
+          </div>
+          {catalysts.filter(c => getTradingWindow(c).zone !== 'EXPIRED').sort((a, b) => getTradingWindow(a).daysOut - getTradingWindow(b).daysOut).map(c => {
+            const tw = getTradingWindow(c);
+            return (
+              <div key={c.id} className="bg-gray-900 border border-gray-700 p-3 space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-white font-mono">{c.ticker}</span>
+                    <span className="text-xs text-gray-400">{c.drug}</span>
+                    <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(c.type)}`}>{getTypeLabel(c.type)}</span>
+                  </div>
+                  <span className="text-sm font-bold font-mono" style={{ color: getTierColor(c.tier) }}>{fmtProb(c.prob)}%</span>
+                </div>
+                <TradingWindowBar catalyst={c} />
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {activeTool === 'conferences' && (
+        <div className="space-y-3">
+          <div className="text-xs text-gray-400 mb-2">
+            Major medical conferences with abstract release dates. "Soft catalysts" — companies may present trial data at these events.
+          </div>
+          {CONFERENCES_2026.map((conf, i) => {
+            const absDate = new Date(conf.abstractRelease + 'T00:00:00');
+            const daysUntil = Math.ceil((absDate - new Date()) / 86400000);
+            const isPast = daysUntil < 0;
+            return (
+              <div key={i} className={`bg-gray-900 border border-gray-700 p-3 ${isPast ? 'opacity-50' : ''}`}>
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-white text-sm">{conf.name}</span>
+                    <span className={`text-xs px-1.5 py-0.5 font-mono ${
+                      conf.tier === 'Tier 1' ? 'bg-green-950 text-green-400 border border-green-700' : 'bg-blue-950 text-blue-400 border border-blue-700'
+                    }`}>{conf.tier}</span>
+                  </div>
+                  <span className="text-xs text-gray-500 font-mono">{conf.ta}</span>
+                </div>
+                <div className="flex items-center gap-4 text-xs text-gray-400">
+                  <span>{conf.dates}</span>
+                  <span className="text-gray-600">|</span>
+                  <span>Abstracts: {formatDate(conf.abstractRelease)}</span>
+                  {!isPast && (
+                    <span className={`font-mono ${daysUntil <= 30 ? 'text-yellow-400' : 'text-gray-500'}`}>
+                      {daysUntil}d
+                    </span>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
 // ── Catalyst Radar Chart (Snowflake) ─────────────
 const CatalystRadar = ({ catalyst }) => {
   // Compute 5 axes from catalyst data: 0-100 scale
@@ -3886,6 +4460,7 @@ export default function PdufaBio() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
   const { watchlist, toggle: toggleWatch, isWatched } = useWatchlist();
+  const { predict, getPrediction, getStats: getPredictionStats } = usePredictions();
   const [siteUnlocked, setSiteUnlocked] = useState(() => {
     try { return sessionStorage.getItem('pdufa_unlocked') === 'true'; } catch (e) { return false; }
   });
@@ -3902,9 +4477,11 @@ export default function PdufaBio() {
 
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Activity },
+    { id: 'feed', label: 'Feed', icon: Radio },
     { id: 'calendar', label: 'Calendar', icon: Calendar },
     { id: 'screener', label: 'Screener', icon: BarChart3 },
     { id: 'heatmap', label: 'Heatmap', icon: PieChart },
+    { id: 'tools', label: 'Tools', icon: Calculator },
     { id: 'intel', label: 'Intel', icon: Brain },
   ];
 
@@ -3966,9 +4543,11 @@ export default function PdufaBio() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
         {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} onNavigate={setActiveTab} />}
+        {activeTab === 'feed' && <FeedView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} predict={predict} getPrediction={getPrediction} />}
         {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} watchlist={watchlist} isWatched={isWatched} />}
         {activeTab === 'heatmap' && <HeatmapView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
+        {activeTab === 'tools' && <ToolsView catalysts={sortedCatalysts} />}
         {activeTab === 'intel' && <IntelView catalysts={sortedCatalysts} />}
       </div>
 
@@ -4022,7 +4601,7 @@ export default function PdufaBio() {
 
       {/* Detail Modal */}
       {selectedCatalyst && (
-        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} />
+        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} predict={predict} getPrediction={getPrediction} />
       )}
     </div>
   );
