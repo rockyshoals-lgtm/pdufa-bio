@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import {
   Calendar,
   Activity,
   TrendingUp,
+  TrendingDown,
   AlertTriangle,
   ChevronDown,
   ChevronUp,
@@ -15,9 +16,25 @@ import {
   Target,
   BarChart3,
   ArrowUpRight,
+  ArrowDownRight,
   ExternalLink,
+  DollarSign,
+  Users,
+  MessageCircle,
+  PieChart,
+  Flame,
+  Eye,
+  Bell,
+  Brain,
+  Briefcase,
+  Heart,
+  Info,
+  Loader,
 } from 'lucide-react';
 
+// ═══════════════════════════════════════════════════
+// CATALYST DATA — ODIN v10.66 Dynamic Grandmaster
+// ═══════════════════════════════════════════════════
 const CATALYSTS_DATA = [
   {
     id: 'vnda-bysanti-2026-02-21',
@@ -1714,6 +1731,101 @@ const CATALYSTS_DATA = [
   },
 ];
 
+// ═══════════════════════════════════════════════════
+// HISTORICAL APPROVAL RATES BY THERAPEUTIC AREA
+// Source: 486-event backtest (2018-2025)
+// ═══════════════════════════════════════════════════
+const HIST_APPROVAL_RATES = {
+  "Oncology": {
+    "approved": 68,
+    "total": 78,
+    "rate": 87.2
+  },
+  "Immunology": {
+    "approved": 22,
+    "total": 25,
+    "rate": 88.0
+  },
+  "Infectious Disease": {
+    "approved": 41,
+    "total": 45,
+    "rate": 91.1
+  },
+  "Dermatology": {
+    "approved": 18,
+    "total": 20,
+    "rate": 90.0
+  },
+  "Vaccines": {
+    "approved": 12,
+    "total": 13,
+    "rate": 92.3
+  },
+  "Respiratory": {
+    "approved": 15,
+    "total": 17,
+    "rate": 88.2
+  },
+  "CNS": {
+    "approved": 38,
+    "total": 52,
+    "rate": 73.1
+  },
+  "Cardiovascular": {
+    "approved": 19,
+    "total": 24,
+    "rate": 79.2
+  },
+  "Metabolic": {
+    "approved": 24,
+    "total": 31,
+    "rate": 77.4
+  },
+  "Rare Disease": {
+    "approved": 45,
+    "total": 55,
+    "rate": 81.8
+  },
+  "Hematology": {
+    "approved": 28,
+    "total": 34,
+    "rate": 82.4
+  },
+  "Ophthalmology": {
+    "approved": 9,
+    "total": 13,
+    "rate": 69.2
+  },
+  "GI/Hepatology": {
+    "approved": 12,
+    "total": 16,
+    "rate": 75.0
+  },
+  "Nephrology": {
+    "approved": 6,
+    "total": 9,
+    "rate": 66.7
+  },
+  "Musculoskeletal": {
+    "approved": 8,
+    "total": 11,
+    "rate": 72.7
+  },
+  "Women's Health": {
+    "approved": 5,
+    "total": 6,
+    "rate": 83.3
+  },
+  "Pain Management": {
+    "approved": 3,
+    "total": 7,
+    "rate": 42.9
+  }
+};
+
+// ═══════════════════════════════════════════════════
+// UTILITY FUNCTIONS
+// ═══════════════════════════════════════════════════
 const getTierColor = (tier) => {
   const colors = {
     TIER_1: '#22c55e',
@@ -1740,12 +1852,129 @@ const formatDate = (dateStr) => {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
+const fmtProb = (p) => (p * 100).toFixed(1);
+
+const fmtMoney = (n) => {
+  if (!n && n !== 0) return 'N/A';
+  if (Math.abs(n) >= 1e9) return `$${(n / 1e9).toFixed(1)}B`;
+  if (Math.abs(n) >= 1e6) return `$${(n / 1e6).toFixed(1)}M`;
+  if (Math.abs(n) >= 1e3) return `$${(n / 1e3).toFixed(1)}K`;
+  return `$${n.toFixed(2)}`;
+};
+
+const getSentimentColor = (score) => {
+  if (score >= 80) return '#22c55e';
+  if (score >= 60) return '#eab308';
+  if (score >= 40) return '#f97316';
+  return '#ef4444';
+};
+
+const getRunwayColor = (months) => {
+  if (!months) return '#6b7280';
+  if (months >= 24) return '#22c55e';
+  if (months >= 12) return '#eab308';
+  if (months >= 6) return '#f97316';
+  return '#ef4444';
+};
+
+// ═══════════════════════════════════════════════════
+// CUSTOM HOOKS — Market Data & Sentiment
+// ═══════════════════════════════════════════════════
+const useMarketData = (ticker) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const cache = useRef({});
+
+  useEffect(() => {
+    if (!ticker || ticker === 'Private') return;
+
+    // Check cache (5 min TTL)
+    const cached = cache.current[ticker];
+    if (cached && Date.now() - cached.ts < 300000) {
+      setData(cached.data);
+      return;
+    }
+
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const [quoteRes, financialsRes, insiderRes] = await Promise.allSettled([
+          fetch(`/api/market-data?ticker=${ticker}&type=quote`),
+          fetch(`/api/market-data?ticker=${ticker}&type=financials`),
+          fetch(`/api/market-data?ticker=${ticker}&type=insider`),
+        ]);
+
+        const result = {};
+        if (quoteRes.status === 'fulfilled' && quoteRes.value.ok) {
+          result.quote = await quoteRes.value.json();
+        }
+        if (financialsRes.status === 'fulfilled' && financialsRes.value.ok) {
+          result.financials = await financialsRes.value.json();
+        }
+        if (insiderRes.status === 'fulfilled' && insiderRes.value.ok) {
+          result.insider = await insiderRes.value.json();
+        }
+
+        cache.current[ticker] = { data: result, ts: Date.now() };
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [ticker]);
+
+  return { data, loading, error };
+};
+
+const useSentiment = (ticker) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const cache = useRef({});
+
+  useEffect(() => {
+    if (!ticker || ticker === 'Private') return;
+
+    const cached = cache.current[ticker];
+    if (cached && Date.now() - cached.ts < 900000) {
+      setData(cached.data);
+      return;
+    }
+
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(`/api/sentiment?ticker=${ticker}`);
+        if (res.ok) {
+          const result = await res.json();
+          cache.current[ticker] = { data: result, ts: Date.now() };
+          setData(result);
+        }
+      } catch (err) {
+        // Silently fail for sentiment
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [ticker]);
+
+  return { data, loading };
+};
+
+// ═══════════════════════════════════════════════════
+// COMPONENTS
+// ═══════════════════════════════════════════════════
+
 const CountdownTimer = ({ targetDate }) => {
   const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    days: 0, hours: 0, minutes: 0, seconds: 0, expired: false,
   });
 
   useEffect(() => {
@@ -1753,99 +1982,137 @@ const CountdownTimer = ({ targetDate }) => {
       const now = new Date().getTime();
       const target = new Date(targetDate).getTime();
       const distance = target - now;
-
       if (distance < 0) {
-        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0, expired: true });
         return;
       }
-
       setCountdown({
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
         hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
         minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
         seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        expired: false,
       });
     };
-
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, [targetDate]);
 
+  if (countdown.expired) {
+    return <div className="text-yellow-400 font-mono text-sm font-bold animate-pulse">DECISION PENDING</div>;
+  }
+
   return (
     <div className="flex gap-2 items-center font-mono text-sm tabular-nums">
-      <div className="text-center">
-        <div className="text-2xl font-bold text-blue-400">{countdown.days}</div>
-        <div className="text-xs text-gray-400">days</div>
-      </div>
-      <span className="text-gray-500">:</span>
-      <div className="text-center">
-        <div className="text-2xl font-bold text-blue-400">{String(countdown.hours).padStart(2, '0')}</div>
-        <div className="text-xs text-gray-400">hrs</div>
-      </div>
-      <span className="text-gray-500">:</span>
-      <div className="text-center">
-        <div className="text-2xl font-bold text-blue-400">{String(countdown.minutes).padStart(2, '0')}</div>
-        <div className="text-xs text-gray-400">min</div>
-      </div>
-      <span className="text-gray-500">:</span>
-      <div className="text-center">
-        <div className="text-2xl font-bold text-blue-400">{String(countdown.seconds).padStart(2, '0')}</div>
-        <div className="text-xs text-gray-400">sec</div>
-      </div>
+      {[
+        { val: countdown.days, label: 'days' },
+        { val: String(countdown.hours).padStart(2, '0'), label: 'hrs' },
+        { val: String(countdown.minutes).padStart(2, '0'), label: 'min' },
+        { val: String(countdown.seconds).padStart(2, '0'), label: 'sec' },
+      ].map((item, i) => (
+        <React.Fragment key={item.label}>
+          {i > 0 && <span className="text-gray-500">:</span>}
+          <div className="text-center">
+            <div className="text-2xl font-bold text-blue-400">{item.val}</div>
+            <div className="text-xs text-gray-400">{item.label}</div>
+          </div>
+        </React.Fragment>
+      ))}
     </div>
   );
 };
 
-const fmtProb = (p) => (p * 100).toFixed(1);
-
+// ── Catalyst Card ──────────────────────────────────
 const CatalystCard = ({ catalyst, onExpand }) => {
+  const daysUntil = Math.ceil((new Date(catalyst.date) - new Date()) / (1000 * 60 * 60 * 24));
+  const isImminent = daysUntil <= 7 && daysUntil >= 0;
+  const isPast = daysUntil < 0;
+
   return (
     <div
       onClick={() => onExpand(catalyst)}
-      className="bg-gray-900 border border-gray-700 p-4 cursor-pointer hover:border-blue-500 hover:bg-gray-800 transition-all rounded-none"
+      className={`bg-gray-900 border p-4 cursor-pointer hover:border-blue-500 hover:bg-gray-800 transition-all rounded-none ${
+        isImminent ? 'border-yellow-600 ring-1 ring-yellow-600/30' : isPast ? 'border-gray-800 opacity-60' : 'border-gray-700'
+      }`}
     >
       <div className="flex justify-between items-start mb-3">
-        <div className="flex-1">
-          <div className="text-xs text-gray-400 mb-1">{formatDate(catalyst.date)}</div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-xs text-gray-400">{formatDate(catalyst.date)}</span>
+            {isImminent && !isPast && (
+              <span className="text-xs bg-yellow-900 text-yellow-300 px-1.5 py-0.5 font-mono border border-yellow-700 animate-pulse">
+                {daysUntil === 0 ? 'TODAY' : `${daysUntil}d`}
+              </span>
+            )}
+          </div>
           <div className="flex gap-2 items-baseline">
-            <span className="font-bold text-white">{catalyst.ticker}</span>
+            <span className="font-bold text-white text-lg">{catalyst.ticker}</span>
             <span className="text-sm text-gray-400 truncate">{catalyst.drug}</span>
           </div>
         </div>
       </div>
       <div className="flex justify-between items-end">
         <div>
-          <div className="text-xs text-gray-500 mb-1">Probability</div>
-          <div className="text-2xl font-bold tabular-nums" style={{ color: getTierColor(catalyst.tier) }}>
+          <div className="text-xs text-gray-500 mb-1">Approval Prob.</div>
+          <div className="text-2xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
             {fmtProb(catalyst.prob)}%
           </div>
         </div>
-        <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
-          {catalyst.tier.replace('_', ' ')}
+        <div className="flex flex-col items-end gap-1">
+          <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
+            {catalyst.tier.replace('_', ' ')}
+          </div>
+          {catalyst.designations.length > 0 && (
+            <div className="flex gap-1 flex-wrap justify-end">
+              {catalyst.designations.slice(0, 2).map((d) => (
+                <span key={d} className="text-xs text-blue-400 bg-blue-950 px-1 border border-blue-800 font-mono">
+                  {d.replace('Breakthrough Therapy', 'BTD').replace('Priority Review', 'PR').replace('Orphan Drug', 'OD').replace('Fast Track', 'FT').replace('Accelerated Approval', 'AA')}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
-      <div className="text-xs text-gray-500 mt-3">{catalyst.indication}</div>
-      {catalyst.weekend && (
-        <div className="mt-2 text-xs text-red-400 flex items-center gap-1">
-          <AlertTriangle size={10} /> Weekend Decision
-        </div>
-      )}
+      <div className="text-xs text-gray-500 mt-3 truncate">{catalyst.indication}</div>
+      <div className="flex gap-2 mt-2">
+        {catalyst.weekend && (
+          <span className="text-xs text-red-400 flex items-center gap-1">
+            <AlertTriangle size={10} /> Weekend
+          </span>
+        )}
+        {catalyst.taRisk === 'HIGH_RISK' && (
+          <span className="text-xs text-red-400 flex items-center gap-1">
+            <Flame size={10} /> High TA Risk
+          </span>
+        )}
+      </div>
     </div>
   );
 };
 
+// ── Detail Modal (Enhanced with tabs) ──────────────
 const DetailModal = ({ catalyst, onClose }) => {
+  const [activeDetailTab, setActiveDetailTab] = useState('overview');
+  const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
+
   if (!catalyst) return null;
 
+  const quote = marketData?.quote || {};
+  const financials = marketData?.financials || {};
+  const insiderTrades = Array.isArray(marketData?.insider) ? marketData.insider : [];
+  const cashRunway = financials?.cashRunway || {};
+
+  const histRate = HIST_APPROVAL_RATES[catalyst.ta] || null;
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-start justify-center pt-8 overflow-y-auto" onClick={onClose}>
-      <div className="bg-gray-900 border border-gray-700 w-full max-w-2xl mx-4 mb-8" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 bg-black/80 z-50 flex items-start justify-center pt-4 sm:pt-8 overflow-y-auto p-2 sm:p-0" onClick={onClose}>
+      <div className="bg-gray-900 border border-gray-700 w-full max-w-3xl mx-auto mb-8" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
-        <div className="border-b border-gray-700 p-6 flex justify-between items-start">
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <h2 className="text-2xl font-bold text-white">{catalyst.drug}</h2>
+        <div className="border-b border-gray-700 p-4 sm:p-6 flex justify-between items-start">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-3 mb-2 flex-wrap">
+              <h2 className="text-xl sm:text-2xl font-bold text-white">{catalyst.drug}</h2>
               <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
                 {catalyst.tier.replace('_', ' ')}
               </div>
@@ -1853,152 +2120,337 @@ const DetailModal = ({ catalyst, onClose }) => {
             <p className="text-sm text-gray-400">
               {catalyst.company} ({catalyst.ticker}) &middot; {formatDate(catalyst.date)}
             </p>
+            {/* Live price if available */}
+            {quote.price && (
+              <div className="flex items-center gap-3 mt-2">
+                <span className="text-lg font-bold font-mono text-white">${quote.price?.toFixed(2)}</span>
+                <span className={`text-sm font-mono flex items-center gap-1 ${
+                  quote.changesPercentage >= 0 ? 'text-green-400' : 'text-red-400'
+                }`}>
+                  {quote.changesPercentage >= 0 ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
+                  {quote.changesPercentage?.toFixed(2)}%
+                </span>
+                {quote.volume && (
+                  <span className="text-xs text-gray-500 font-mono">Vol: {fmtMoney(quote.volume)}</span>
+                )}
+              </div>
+            )}
           </div>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-white transition"
-          >
+          <button onClick={onClose} className="text-gray-400 hover:text-white transition p-1">
             <X size={24} />
           </button>
         </div>
 
-        {/* Body */}
-        <div className="p-6 space-y-6">
-          {/* Key Stats */}
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="text-xs text-gray-500 mb-2">INDICATION</div>
-              <div className="text-sm text-white">{catalyst.indication}</div>
-            </div>
-            <div>
-              <div className="text-xs text-gray-500 mb-2">PHASE</div>
-              <div className="text-sm text-white">{catalyst.phase}</div>
-            </div>
-            <div>
-              <div className="text-xs text-gray-500 mb-2">TYPE</div>
-              <div className="text-sm text-white">{catalyst.type}</div>
-            </div>
-            <div>
-              <div className="text-xs text-gray-500 mb-2">TA</div>
-              <div className="text-sm text-white">{catalyst.ta}</div>
-            </div>
-          </div>
+        {/* Tab Bar */}
+        <div className="border-b border-gray-700 flex overflow-x-auto">
+          {[
+            { id: 'overview', label: 'Overview', icon: Eye },
+            { id: 'signals', label: 'Signals', icon: Zap },
+            { id: 'market', label: 'Market', icon: TrendingUp },
+            { id: 'insider', label: 'Insider', icon: Users },
+          ].map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveDetailTab(tab.id)}
+                className={`px-4 py-3 text-xs font-mono uppercase border-b-2 transition flex items-center gap-1.5 whitespace-nowrap ${
+                  activeDetailTab === tab.id
+                    ? 'border-blue-400 text-blue-400'
+                    : 'border-transparent text-gray-500 hover:text-gray-300'
+                }`}
+              >
+                <Icon size={12} />
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
 
-          {/* Probability Section */}
-          <div>
-            <div className="text-xs text-gray-500 mb-3">ODIN v10.66 PROBABILITY</div>
-            <div className="flex items-center gap-6">
-              <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
-                {fmtProb(catalyst.prob)}%
-              </div>
-              <div className="flex-1">
-                <div className="w-full bg-gray-800 border border-gray-700 h-6 relative rounded-none overflow-hidden">
-                  <div
-                    className="h-full transition-all duration-500"
-                    style={{
-                      width: `${catalyst.prob * 100}%`,
-                      backgroundColor: getTierColor(catalyst.tier),
-                      opacity: 0.7,
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center px-2">
-                    <span className="text-xs font-mono text-gray-300">BASE 83.4%</span>
-                    <div className="flex-1" />
-                    <span className="text-xs font-mono" style={{ color: getTierColor(catalyst.tier) }}>
-                      {catalyst.totalAdj > 0 ? '+' : ''}{fmtProb(catalyst.totalAdj)} adj
-                    </span>
-                  </div>
-                </div>
-                <div className="flex justify-between mt-1 text-xs text-gray-600 font-mono">
-                  <span>0%</span>
-                  <span>50%</span>
-                  <span>100%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Signals */}
-          <div>
-            <div className="text-xs text-gray-500 mb-3">SIGNAL ADJUSTMENTS</div>
-            <div className="space-y-2 text-xs font-mono">
-              {Object.entries(catalyst.signals).map(([key, value]) => (
-                <div key={key} className="flex justify-between">
-                  <span className="text-gray-400">{key}</span>
-                  <span
-                    className={value > 0 ? 'text-green-400' : value < 0 ? 'text-red-400' : 'text-gray-400'}
-                  >
-                    {value > 0 ? '+' : ''}{(value * 100).toFixed(1)}%
-                  </span>
-                </div>
-              ))}
-              <div className="flex justify-between pt-2 border-t border-gray-700">
-                <span className="text-gray-300 font-bold">Total Adjustment</span>
-                <span
-                  className={catalyst.totalAdj > 0 ? 'text-green-400' : catalyst.totalAdj < 0 ? 'text-red-400' : 'text-gray-400'}
-                >
-                  {catalyst.totalAdj > 0 ? '+' : ''}{(catalyst.totalAdj * 100).toFixed(1)}%
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Trading Rec */}
-          <div>
-            <div className="text-xs text-gray-500 mb-3">TRADING RECOMMENDATION</div>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <span className="text-gray-400">Action: </span>
-                <span className="text-white">{catalyst.action.replace(/_/g, ' ')}</span>
-              </div>
-              <div>
-                <span className="text-gray-400">Exit: </span>
-                <span className="text-white">{catalyst.exit}</span>
-              </div>
-              <div>
-                <span className="text-gray-400">Runner: </span>
-                <span className="text-white">{catalyst.runner}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Designations */}
-          {catalyst.designations.length > 0 && (
-            <div>
-              <div className="text-xs text-gray-500 mb-3">DESIGNATIONS</div>
-              <div className="flex flex-wrap gap-2">
-                {catalyst.designations.map((des) => (
-                  <div
-                    key={des}
-                    className="bg-blue-950 text-blue-300 text-xs px-3 py-1 border border-blue-700 rounded-none font-mono"
-                  >
-                    {des}
+        {/* Tab Content */}
+        <div className="p-4 sm:p-6 space-y-6">
+          {activeDetailTab === 'overview' && (
+            <>
+              {/* Key Stats Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'INDICATION', value: catalyst.indication },
+                  { label: 'PHASE', value: catalyst.phase },
+                  { label: 'TYPE', value: `${catalyst.type} (${catalyst.appType})` },
+                  { label: 'THERAPEUTIC AREA', value: catalyst.ta },
+                ].map((item) => (
+                  <div key={item.label} className="bg-gray-800 p-3 border border-gray-700">
+                    <div className="text-xs text-gray-500 mb-1">{item.label}</div>
+                    <div className="text-sm text-white">{item.value}</div>
                   </div>
                 ))}
               </div>
+
+              {/* ODIN Probability */}
+              <div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">ODIN v10.66 PROBABILITY</div>
+                <div className="flex items-center gap-6">
+                  <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
+                    {fmtProb(catalyst.prob)}%
+                  </div>
+                  <div className="flex-1">
+                    <div className="w-full bg-gray-800 border border-gray-700 h-6 relative overflow-hidden">
+                      <div
+                        className="h-full transition-all duration-700"
+                        style={{ width: `${catalyst.prob * 100}%`, backgroundColor: getTierColor(catalyst.tier), opacity: 0.7 }}
+                      />
+                      <div className="absolute inset-0 flex items-center px-2">
+                        <span className="text-xs font-mono text-gray-300">BASE 83.4%</span>
+                        <div className="flex-1" />
+                        <span className="text-xs font-mono" style={{ color: getTierColor(catalyst.tier) }}>
+                          {catalyst.totalAdj > 0 ? '+' : ''}{fmtProb(catalyst.totalAdj)} adj
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between mt-1 text-xs text-gray-600 font-mono">
+                      <span>0%</span><span>50%</span><span>100%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Historical TA Rate */}
+              {histRate && (
+                <div className="bg-gray-800 border border-gray-700 p-4">
+                  <div className="text-xs text-gray-500 mb-2 font-mono">HISTORICAL {catalyst.ta.toUpperCase()} APPROVAL RATE</div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-2xl font-bold font-mono" style={{ color: histRate.rate >= 80 ? '#22c55e' : histRate.rate >= 70 ? '#eab308' : '#f97316' }}>
+                      {histRate.rate.toFixed(1)}%
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      {histRate.approved} approved / {histRate.total} total (2018-2025)
+                    </div>
+                    <div className="flex-1">
+                      <div className="w-full bg-gray-700 h-2 overflow-hidden">
+                        <div className="h-full bg-blue-500 transition-all" style={{ width: `${histRate.rate}%` }} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Designations */}
+              {catalyst.designations.length > 0 && (
+                <div>
+                  <div className="text-xs text-gray-500 mb-3 font-mono">DESIGNATIONS</div>
+                  <div className="flex flex-wrap gap-2">
+                    {catalyst.designations.map((des) => (
+                      <div key={des} className="bg-blue-950 text-blue-300 text-xs px-3 py-1.5 border border-blue-700 font-mono">
+                        {des}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Trading Rec */}
+              <div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">TRADING RECOMMENDATION</div>
+                <div className="grid grid-cols-3 gap-4 text-sm">
+                  <div className="bg-gray-800 p-3 border border-gray-700">
+                    <span className="text-xs text-gray-500 block mb-1">Action</span>
+                    <span className="text-white font-mono text-xs">{catalyst.action.replace(/_/g, ' ')}</span>
+                  </div>
+                  <div className="bg-gray-800 p-3 border border-gray-700">
+                    <span className="text-xs text-gray-500 block mb-1">Exit</span>
+                    <span className="text-white font-mono text-xs">{catalyst.exit}</span>
+                  </div>
+                  <div className="bg-gray-800 p-3 border border-gray-700">
+                    <span className="text-xs text-gray-500 block mb-1">Runner</span>
+                    <span className="text-white font-mono text-xs">{catalyst.runner}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Warnings */}
+              {catalyst.weekend && (
+                <div className="bg-red-950 border border-red-700 p-3 flex gap-2">
+                  <AlertTriangle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-red-300">Weekend PDUFA — decision may come Friday after hours or over the weekend</span>
+                </div>
+              )}
+
+              {/* Links */}
+              {catalyst.nctId && (
+                <div className="flex gap-2 pt-4 border-t border-gray-700">
+                  <a href={`https://clinicaltrials.gov/ct2/show/${catalyst.nctId}`} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm">
+                    <ExternalLink size={16} /> ClinicalTrials.gov
+                  </a>
+                </div>
+              )}
+            </>
+          )}
+
+          {activeDetailTab === 'signals' && (
+            <div>
+              <div className="text-xs text-gray-500 mb-3 font-mono">ODIN v10.66 SIGNAL DECOMPOSITION</div>
+              <div className="space-y-2 text-xs font-mono">
+                {Object.entries(catalyst.signals).map(([key, value]) => (
+                  <div key={key} className="flex justify-between items-center p-2 bg-gray-800 border border-gray-700">
+                    <span className="text-gray-300">{key.replace(/_/g, ' ')}</span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-24 bg-gray-700 h-2 overflow-hidden">
+                        <div
+                          className={`h-full ${value > 0 ? 'bg-green-500' : 'bg-red-500'}`}
+                          style={{ width: `${Math.min(Math.abs(value) * 100, 100)}%`, marginLeft: value < 0 ? 'auto' : 0 }}
+                        />
+                      </div>
+                      <span className={`w-16 text-right ${value > 0 ? 'text-green-400' : value < 0 ? 'text-red-400' : 'text-gray-400'}`}>
+                        {value > 0 ? '+' : ''}{(value * 100).toFixed(1)}%
+                      </span>
+                    </div>
+                  </div>
+                ))}
+                <div className="flex justify-between pt-3 border-t border-gray-600 text-sm">
+                  <span className="text-gray-200 font-bold">Total Adjustment</span>
+                  <span className={catalyst.totalAdj > 0 ? 'text-green-400' : catalyst.totalAdj < 0 ? 'text-red-400' : 'text-gray-400'}>
+                    {catalyst.totalAdj > 0 ? '+' : ''}{(catalyst.totalAdj * 100).toFixed(1)}%
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-200 font-bold">Raw Logit</span>
+                  <span className="text-blue-400">{catalyst.logit?.toFixed(4)}</span>
+                </div>
+              </div>
             </div>
           )}
 
-          {/* Warnings */}
-          {catalyst.weekend && (
-            <div className="bg-red-950 border border-red-700 p-3 rounded-none flex gap-2">
-              <AlertTriangle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
-              <span className="text-sm text-red-300">Weekend PDUFA decision expected</span>
+          {activeDetailTab === 'market' && (
+            <div className="space-y-6">
+              {marketLoading && (
+                <div className="flex items-center justify-center py-12 gap-2 text-gray-400">
+                  <Loader size={16} className="animate-spin" /> Loading market data...
+                </div>
+              )}
+
+              {!marketLoading && !quote.price && (
+                <div className="bg-gray-800 border border-gray-700 p-6 text-center">
+                  <DollarSign size={24} className="text-gray-500 mx-auto mb-2" />
+                  <div className="text-sm text-gray-400 mb-1">Market data unavailable</div>
+                  <div className="text-xs text-gray-500">
+                    FMP API key required. Add <code className="bg-gray-700 px-1">FMP_API_KEY</code> to Vercel Environment Variables.
+                  </div>
+                </div>
+              )}
+
+              {quote.price && (
+                <>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {[
+                      { label: 'PRICE', value: `$${quote.price?.toFixed(2)}`, color: 'text-white' },
+                      { label: 'CHANGE', value: `${quote.changesPercentage >= 0 ? '+' : ''}${quote.changesPercentage?.toFixed(2)}%`, color: quote.changesPercentage >= 0 ? 'text-green-400' : 'text-red-400' },
+                      { label: 'MKT CAP', value: fmtMoney(quote.marketCap), color: 'text-blue-400' },
+                      { label: 'VOLUME', value: fmtMoney(quote.volume), color: 'text-gray-300' },
+                    ].map((item) => (
+                      <div key={item.label} className="bg-gray-800 p-3 border border-gray-700">
+                        <div className="text-xs text-gray-500 mb-1 font-mono">{item.label}</div>
+                        <div className={`text-lg font-bold font-mono ${item.color}`}>{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* Cash Runway */}
+              {cashRunway.cash > 0 && (
+                <div className="bg-gray-800 border border-gray-700 p-4">
+                  <div className="text-xs text-gray-500 mb-3 font-mono">CASH RUNWAY (Desperation Index)</div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Cash</div>
+                      <div className="text-lg font-bold text-white font-mono">{fmtMoney(cashRunway.cash)}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Quarterly Burn</div>
+                      <div className="text-lg font-bold text-red-400 font-mono">{fmtMoney(cashRunway.quarterlyBurn)}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Runway</div>
+                      <div className="text-lg font-bold font-mono" style={{ color: getRunwayColor(cashRunway.runwayMonths) }}>
+                        {cashRunway.runwayMonths ? `${cashRunway.runwayMonths.toFixed(0)} mo` : 'N/A'}
+                      </div>
+                    </div>
+                  </div>
+                  {cashRunway.runwayMonths && cashRunway.runwayMonths < 12 && (
+                    <div className="mt-3 text-xs text-red-400 flex items-center gap-1">
+                      <AlertTriangle size={12} /> Low runway — company may need to raise capital
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
 
-          {/* Links */}
-          {catalyst.nctId && (
-            <div className="flex gap-2 pt-4 border-t border-gray-700">
-              <a
-                href={`https://clinicaltrials.gov/ct2/show/${catalyst.nctId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm"
-              >
-                <ExternalLink size={16} />
-                ClinicalTrials.gov
-              </a>
+          {activeDetailTab === 'insider' && (
+            <div className="space-y-4">
+              {marketLoading && (
+                <div className="flex items-center justify-center py-12 gap-2 text-gray-400">
+                  <Loader size={16} className="animate-spin" /> Loading insider data...
+                </div>
+              )}
+
+              {!marketLoading && insiderTrades.length === 0 && (
+                <div className="bg-gray-800 border border-gray-700 p-6 text-center">
+                  <Users size={24} className="text-gray-500 mx-auto mb-2" />
+                  <div className="text-sm text-gray-400 mb-1">No insider trading data</div>
+                  <div className="text-xs text-gray-500">
+                    FMP API key required. Add <code className="bg-gray-700 px-1">FMP_API_KEY</code> to Vercel Environment Variables.
+                  </div>
+                </div>
+              )}
+
+              {insiderTrades.length > 0 && (
+                <>
+                  <div className="text-xs text-gray-500 font-mono mb-2">RECENT INSIDER TRANSACTIONS (SEC Section 16)</div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs font-mono">
+                      <thead>
+                        <tr className="border-b border-gray-700 bg-gray-800">
+                          <th className="px-3 py-2 text-left text-gray-400">Date</th>
+                          <th className="px-3 py-2 text-left text-gray-400">Name</th>
+                          <th className="px-3 py-2 text-left text-gray-400">Type</th>
+                          <th className="px-3 py-2 text-right text-gray-400">Shares</th>
+                          <th className="px-3 py-2 text-right text-gray-400">Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {insiderTrades.slice(0, 10).map((trade, i) => (
+                          <tr key={i} className="border-b border-gray-800">
+                            <td className="px-3 py-2 text-gray-300">{trade.transactionDate}</td>
+                            <td className="px-3 py-2 text-gray-300 truncate max-w-32">{trade.reportingName}</td>
+                            <td className={`px-3 py-2 ${
+                              trade.transactionType === 'P-Purchase' ? 'text-green-400' : 'text-red-400'
+                            }`}>
+                              {trade.transactionType === 'P-Purchase' ? 'BUY' : 'SELL'}
+                            </td>
+                            <td className="px-3 py-2 text-right text-gray-300">{trade.securitiesTransacted?.toLocaleString()}</td>
+                            <td className="px-3 py-2 text-right text-gray-300">${trade.price?.toFixed(2)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  {(() => {
+                    const buys = insiderTrades.filter(t => t.transactionType === 'P-Purchase').length;
+                    const sells = insiderTrades.filter(t => t.transactionType !== 'P-Purchase').length;
+                    return (
+                      <div className="flex gap-4 text-xs font-mono">
+                        <span className="text-green-400">Buys: {buys}</span>
+                        <span className="text-red-400">Sells: {sells}</span>
+                        <span className={buys > sells ? 'text-green-400' : buys < sells ? 'text-red-400' : 'text-gray-400'}>
+                          Signal: {buys > sells ? 'BULLISH' : buys < sells ? 'BEARISH' : 'NEUTRAL'}
+                        </span>
+                      </div>
+                    );
+                  })()}
+                </>
+              )}
             </div>
           )}
         </div>
@@ -2007,31 +2459,51 @@ const DetailModal = ({ catalyst, onClose }) => {
   );
 };
 
+// ── Dashboard View ─────────────────────────────────
 const DashboardView = ({ catalysts, onExpandCatalyst }) => {
   const nextCatalyst = catalysts[0];
   const tier1Count = catalysts.filter((c) => c.tier === 'TIER_1').length;
   const avgProb = (catalysts.reduce((sum, c) => sum + c.prob, 0) / catalysts.length * 100).toFixed(1);
+  const weekendCount = catalysts.filter(c => c.weekend).length;
+
+  // Next 30 days catalysts
+  const now = new Date();
+  const next30 = catalysts.filter(c => {
+    const d = new Date(c.date);
+    const diff = (d - now) / (1000 * 60 * 60 * 24);
+    return diff >= 0 && diff <= 30;
+  });
 
   return (
     <div className="space-y-6">
       {/* Next Catalyst Hero */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 p-6 rounded-none cursor-pointer hover:border-blue-500 transition"
+      <div className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-gray-700 p-4 sm:p-6 cursor-pointer hover:border-blue-500 transition"
         onClick={() => onExpandCatalyst(nextCatalyst)}>
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xs text-gray-400 font-mono uppercase">NEXT CATALYST EVENT</h3>
-          <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(nextCatalyst.tier)}`}>
+          <div className="flex items-center gap-2">
+            <Zap size={14} className="text-blue-400" />
+            <h3 className="text-xs text-gray-400 font-mono uppercase">NEXT CATALYST EVENT</h3>
+          </div>
+          <div className={`px-3 py-1 text-xs font-mono font-bold ${getTierBgClass(nextCatalyst.tier)}`}>
             {nextCatalyst.tier.replace('_', ' ')}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">{nextCatalyst.drug}</h2>
-            <p className="text-gray-400">{nextCatalyst.company}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{nextCatalyst.drug}</h2>
+            <p className="text-gray-400">{nextCatalyst.company} ({nextCatalyst.ticker})</p>
             <p className="text-sm text-gray-500 mt-1">{nextCatalyst.indication}</p>
+            {nextCatalyst.designations.length > 0 && (
+              <div className="flex flex-wrap gap-1 mt-2">
+                {nextCatalyst.designations.map((d) => (
+                  <span key={d} className="text-xs text-blue-400 bg-blue-950 px-2 py-0.5 border border-blue-800 font-mono">{d}</span>
+                ))}
+              </div>
+            )}
           </div>
           <div className="flex flex-col justify-between">
             <div>
-              <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(nextCatalyst.tier) }}>
+              <div className="text-4xl sm:text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(nextCatalyst.tier) }}>
                 {fmtProb(nextCatalyst.prob)}%
               </div>
               <div className="text-gray-400 text-sm mt-1">ODIN Approval Probability</div>
@@ -2039,98 +2511,91 @@ const DashboardView = ({ catalysts, onExpandCatalyst }) => {
           </div>
         </div>
         <div className="border-t border-gray-700 pt-4">
-          <div className="text-xs text-gray-500 mb-2">COUNTDOWN TO DECISION</div>
+          <div className="text-xs text-gray-500 mb-2 font-mono">COUNTDOWN TO DECISION</div>
           <CountdownTimer targetDate={nextCatalyst.date} />
         </div>
       </div>
 
       {/* Stats Row */}
-      <div className="grid grid-cols-4 gap-4">
-        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
-          <div className="text-xs text-gray-400 mb-2">TOTAL CATALYSTS</div>
-          <div className="text-3xl font-bold text-white tabular-nums font-mono">{catalysts.length}</div>
-        </div>
-        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
-          <div className="text-xs text-gray-400 mb-2">TIER 1 EVENTS</div>
-          <div className="text-3xl font-bold text-green-400 tabular-nums font-mono">{tier1Count}</div>
-        </div>
-        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
-          <div className="text-xs text-gray-400 mb-2">AVG PROBABILITY</div>
-          <div className="text-3xl font-bold text-yellow-400 tabular-nums font-mono">{avgProb}%</div>
-        </div>
-        <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
-          <div className="text-xs text-gray-400 mb-2">WEEKEND PDUFAs</div>
-          <div className="text-3xl font-bold text-red-400 tabular-nums font-mono">{catalysts.filter(c => c.weekend).length}</div>
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        {[
+          { label: 'CATALYSTS', value: catalysts.length, color: 'text-white', icon: Target },
+          { label: 'TIER 1', value: tier1Count, color: 'text-green-400', icon: Shield },
+          { label: 'AVG PROB', value: `${avgProb}%`, color: 'text-yellow-400', icon: Brain },
+          { label: 'WEEKEND', value: weekendCount, color: 'text-red-400', icon: AlertTriangle },
+        ].map((stat) => {
+          const Icon = stat.icon;
+          return (
+            <div key={stat.label} className="bg-gray-900 border border-gray-700 p-3 sm:p-4">
+              <div className="flex items-center gap-1.5 mb-2">
+                <Icon size={12} className="text-gray-500" />
+                <div className="text-xs text-gray-400 font-mono">{stat.label}</div>
+              </div>
+              <div className={`text-2xl sm:text-3xl font-bold tabular-nums font-mono ${stat.color}`}>{stat.value}</div>
+            </div>
+          );
+        })}
       </div>
 
-      {/* Tier Distribution Bar */}
-      <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
-        <div className="text-xs text-gray-400 mb-3">TIER DISTRIBUTION</div>
-        <div className="flex h-8 w-full overflow-hidden rounded-none">
+      {/* Tier Distribution */}
+      <div className="bg-gray-900 border border-gray-700 p-4">
+        <div className="text-xs text-gray-400 mb-3 font-mono">TIER DISTRIBUTION</div>
+        <div className="flex h-8 w-full overflow-hidden">
           {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => {
             const count = catalysts.filter((c) => c.tier === tier).length;
             const pct = (count / catalysts.length) * 100;
             return (
-              <div
-                key={tier}
-                style={{ width: `${pct}%`, backgroundColor: getTierColor(tier), opacity: 0.8 }}
+              <div key={tier} style={{ width: `${pct}%`, backgroundColor: getTierColor(tier), opacity: 0.8 }}
                 className="flex items-center justify-center text-xs font-bold font-mono text-black transition-all"
-                title={`${tier}: ${count} (${pct.toFixed(0)}%)`}
-              >
+                title={`${tier}: ${count} (${pct.toFixed(0)}%)`}>
                 {count > 0 && `${count}`}
               </div>
             );
           })}
         </div>
         <div className="flex justify-between mt-2 text-xs font-mono">
-          {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => {
-            const count = catalysts.filter((c) => c.tier === tier).length;
-            return (
-              <span key={tier} style={{ color: getTierColor(tier) }}>
-                {tier.replace('_', ' ')}: {count}
-              </span>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Upcoming Queue - Next 5 */}
-      <div className="bg-gray-900 border border-gray-700 p-4 rounded-none">
-        <div className="text-xs text-gray-400 mb-3">UPCOMING QUEUE</div>
-        <div className="space-y-1">
-          {catalysts.slice(1, 6).map((cat, i) => (
-            <div
-              key={cat.id}
-              onClick={() => onExpandCatalyst(cat)}
-              className="flex items-center gap-4 p-2 hover:bg-gray-800 cursor-pointer transition border-l-2"
-              style={{ borderLeftColor: getTierColor(cat.tier) }}
-            >
-              <span className="text-xs text-gray-600 font-mono w-4">{i + 2}</span>
-              <span className="text-xs text-gray-500 font-mono w-20">{formatDate(cat.date)}</span>
-              <span className="font-bold text-white text-sm w-16">{cat.ticker}</span>
-              <span className="text-sm text-gray-400 flex-1 truncate">{cat.drug}</span>
-              <span className="font-bold font-mono tabular-nums text-sm" style={{ color: getTierColor(cat.tier) }}>
-                {fmtProb(cat.prob)}%
-              </span>
-              <span className={`px-2 py-0.5 text-xs font-mono font-bold rounded-none ${getTierBgClass(cat.tier)}`}>
-                {cat.tier.replace('_', ' ')}
-              </span>
-            </div>
+          {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => (
+            <span key={tier} style={{ color: getTierColor(tier) }}>
+              {tier.replace('_', ' ')}: {catalysts.filter((c) => c.tier === tier).length}
+            </span>
           ))}
         </div>
       </div>
 
-      {/* Catalyst Grid */}
+      {/* 30-Day Pipeline */}
+      {next30.length > 0 && (
+        <div className="bg-gray-900 border border-gray-700 p-4">
+          <div className="text-xs text-gray-400 mb-3 font-mono flex items-center gap-2">
+            <Flame size={12} className="text-orange-400" />
+            NEXT 30 DAYS — {next30.length} EVENTS
+          </div>
+          <div className="space-y-1">
+            {next30.map((cat, i) => (
+              <div key={cat.id} onClick={() => onExpandCatalyst(cat)}
+                className="flex items-center gap-2 sm:gap-4 p-2 hover:bg-gray-800 cursor-pointer transition border-l-2"
+                style={{ borderLeftColor: getTierColor(cat.tier) }}>
+                <span className="text-xs text-gray-600 font-mono w-4 hidden sm:block">{i + 1}</span>
+                <span className="text-xs text-gray-500 font-mono w-20 flex-shrink-0">{formatDate(cat.date)}</span>
+                <span className="font-bold text-white text-sm w-14 flex-shrink-0">{cat.ticker}</span>
+                <span className="text-sm text-gray-400 flex-1 truncate hidden sm:block">{cat.drug}</span>
+                <span className="font-bold font-mono tabular-nums text-sm flex-shrink-0" style={{ color: getTierColor(cat.tier) }}>
+                  {fmtProb(cat.prob)}%
+                </span>
+                <span className={`px-2 py-0.5 text-xs font-mono font-bold ${getTierBgClass(cat.tier)} hidden sm:block`}>
+                  {cat.tier.replace('_', ' ')}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* All Catalysts Grid */}
       <div>
         <h3 className="text-sm font-mono text-gray-400 mb-3 uppercase">ALL CATALYSTS</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {catalysts.map((catalyst) => (
-            <CatalystCard
-              key={catalyst.id}
-              catalyst={catalyst}
-              onExpand={onExpandCatalyst}
-            />
+            <CatalystCard key={catalyst.id} catalyst={catalyst} onExpand={onExpandCatalyst} />
           ))}
         </div>
       </div>
@@ -2138,15 +2603,14 @@ const DashboardView = ({ catalysts, onExpandCatalyst }) => {
   );
 };
 
+// ── Calendar View ──────────────────────────────────
 const CalendarView = ({ catalysts, onExpandCatalyst }) => {
   const months = useMemo(() => {
     const monthMap = {};
     catalysts.forEach((c) => {
       const date = new Date(c.date);
       const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-      if (!monthMap[key]) {
-        monthMap[key] = [];
-      }
+      if (!monthMap[key]) monthMap[key] = [];
       monthMap[key].push(c);
     });
     return monthMap;
@@ -2159,25 +2623,31 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
       {Object.entries(months).map(([monthKey, monthCatalysts]) => {
         const [year, month] = monthKey.split('-');
         const monthName = monthNames[parseInt(month) - 1];
+        const tier1 = monthCatalysts.filter(c => c.tier === 'TIER_1').length;
 
         return (
-          <div key={monthKey} className="border border-gray-700 rounded-none p-4 bg-gray-900">
-            <h3 className="text-sm font-mono text-gray-400 mb-4 uppercase">
-              {monthName} {year}
-            </h3>
+          <div key={monthKey} className="border border-gray-700 p-4 bg-gray-900">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-sm font-mono text-gray-400 uppercase">
+                {monthName} {year} <span className="text-gray-600">— {monthCatalysts.length} events</span>
+              </h3>
+              {tier1 > 0 && <span className="text-xs text-green-400 font-mono">{tier1} TIER 1</span>}
+            </div>
             <div className="space-y-2">
               {monthCatalysts.map((catalyst) => (
-                <div
-                  key={catalyst.id}
-                  onClick={() => onExpandCatalyst(catalyst)}
-                  className="flex items-center gap-4 p-3 hover:bg-gray-800 cursor-pointer transition rounded-none border-l-2"
-                  style={{ borderLeftColor: getTierColor(catalyst.tier) }}
-                >
+                <div key={catalyst.id} onClick={() => onExpandCatalyst(catalyst)}
+                  className="flex items-center gap-2 sm:gap-4 p-3 hover:bg-gray-800 cursor-pointer transition border-l-2"
+                  style={{ borderLeftColor: getTierColor(catalyst.tier) }}>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-white">{catalyst.ticker}</span>
                         <span className="text-xs text-gray-500">{catalyst.type}</span>
+                        {catalyst.designations.length > 0 && (
+                          <span className="text-xs text-blue-400 bg-blue-950 px-1 border border-blue-800 font-mono hidden sm:inline">
+                            {catalyst.designations[0].replace('Breakthrough Therapy', 'BTD').replace('Priority Review', 'PR').replace('Orphan Drug', 'OD')}
+                          </span>
+                        )}
                       </div>
                       <span className="text-xs text-gray-400 ml-2 font-mono">{formatDate(catalyst.date)}</span>
                     </div>
@@ -2185,10 +2655,7 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
                       <div className="text-sm text-gray-400 truncate">{catalyst.drug}</div>
                       <div className="flex items-center gap-2 flex-shrink-0">
                         {catalyst.weekend && <AlertTriangle size={12} className="text-red-400" />}
-                        <span
-                          className="text-sm font-bold font-mono tabular-nums"
-                          style={{ color: getTierColor(catalyst.tier) }}
-                        >
+                        <span className="text-sm font-bold font-mono tabular-nums" style={{ color: getTierColor(catalyst.tier) }}>
                           {fmtProb(catalyst.prob)}%
                         </span>
                       </div>
@@ -2204,6 +2671,7 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
   );
 };
 
+// ── Screener View ──────────────────────────────────
 const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
   const [filterTier, setFilterTier] = useState(null);
   const [filterTA, setFilterTA] = useState(null);
@@ -2217,14 +2685,9 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
     return catalysts.filter((c) => {
       if (filterTier && c.tier !== filterTier) return false;
       if (filterTA && c.ta !== filterTA) return false;
-      if (
-        searchTerm &&
-        !c.drug.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        !c.ticker.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        !c.company.toLowerCase().includes(searchTerm.toLowerCase())
-      ) {
-        return false;
-      }
+      if (searchTerm && !c.drug.toLowerCase().includes(searchTerm.toLowerCase()) &&
+          !c.ticker.toLowerCase().includes(searchTerm.toLowerCase()) &&
+          !c.company.toLowerCase().includes(searchTerm.toLowerCase())) return false;
       return true;
     });
   }, [catalysts, filterTier, filterTA, searchTerm]);
@@ -2234,14 +2697,7 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
     copy.sort((a, b) => {
       let aVal = a[sortCol];
       let bVal = b[sortCol];
-      if (sortCol === 'prob') {
-        aVal = a.prob;
-        bVal = b.prob;
-      }
-      if (typeof aVal === 'string') {
-        aVal = aVal.toLowerCase();
-        bVal = bVal.toLowerCase();
-      }
+      if (typeof aVal === 'string') { aVal = aVal.toLowerCase(); bVal = bVal.toLowerCase(); }
       if (aVal < bVal) return sortDir === 'asc' ? -1 : 1;
       if (aVal > bVal) return sortDir === 'asc' ? 1 : -1;
       return 0;
@@ -2250,67 +2706,45 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
   }, [filtered, sortCol, sortDir]);
 
   const handleSort = (col) => {
-    if (sortCol === col) {
-      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortCol(col);
-      setSortDir('asc');
-    }
+    if (sortCol === col) { setSortDir(sortDir === 'asc' ? 'desc' : 'asc'); }
+    else { setSortCol(col); setSortDir('asc'); }
   };
 
   return (
     <div className="space-y-4">
-      {/* Controls */}
-      <div className="bg-gray-900 border border-gray-700 p-4 rounded-none space-y-3">
+      <div className="bg-gray-900 border border-gray-700 p-4 space-y-3">
         <div className="flex gap-2 items-center">
           <Search size={16} className="text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search drug, ticker, company..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 bg-gray-800 border border-gray-700 px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 rounded-none"
-          />
+          <input type="text" placeholder="Search drug, ticker, company..."
+            value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
+            className="flex-1 bg-gray-800 border border-gray-700 px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <div>
             <label className="text-xs text-gray-400 block mb-2">Tier</label>
-            <div className="flex gap-1">
+            <div className="flex gap-1 flex-wrap">
               {[null, 'TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => (
-                <button
-                  key={tier || 'all'}
-                  onClick={() => setFilterTier(tier)}
-                  className={`px-3 py-1 text-xs font-mono rounded-none border transition ${
-                    filterTier === tier
-                      ? 'bg-blue-900 border-blue-500 text-blue-300'
-                      : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'
-                  }`}
-                >
+                <button key={tier || 'all'} onClick={() => setFilterTier(tier)}
+                  className={`px-3 py-1 text-xs font-mono border transition ${
+                    filterTier === tier ? 'bg-blue-900 border-blue-500 text-blue-300' : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'
+                  }`}>
                   {tier ? tier.replace('_', ' ') : 'All'}
                 </button>
               ))}
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-32">
             <label className="text-xs text-gray-400 block mb-2">TA</label>
-            <select
-              value={filterTA || ''}
-              onChange={(e) => setFilterTA(e.target.value || null)}
-              className="w-full bg-gray-800 border border-gray-700 px-3 py-1 text-xs text-white focus:outline-none focus:border-blue-500 rounded-none"
-            >
+            <select value={filterTA || ''} onChange={(e) => setFilterTA(e.target.value || null)}
+              className="w-full bg-gray-800 border border-gray-700 px-3 py-1 text-xs text-white focus:outline-none focus:border-blue-500">
               <option value="">All Therapeutic Areas</option>
-              {tas.map((ta) => (
-                <option key={ta} value={ta}>
-                  {ta}
-                </option>
-              ))}
+              {tas.map((ta) => <option key={ta} value={ta}>{ta}</option>)}
             </select>
           </div>
         </div>
       </div>
 
-      {/* Table */}
-      <div className="bg-gray-900 border border-gray-700 rounded-none overflow-hidden">
+      <div className="bg-gray-900 border border-gray-700 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm font-mono">
             <thead>
@@ -2320,43 +2754,31 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
                   { col: 'ticker', label: 'Ticker' },
                   { col: 'drug', label: 'Drug' },
                   { col: 'indication', label: 'Indication' },
-                  { col: 'type', label: 'Type' },
                   { col: 'ta', label: 'TA' },
                   { col: 'prob', label: 'Prob %' },
                   { col: 'tier', label: 'Tier' },
                 ].map((col) => (
-                  <th
-                    key={col.col}
-                    onClick={() => handleSort(col.col)}
-                    className="px-4 py-3 text-left text-gray-400 cursor-pointer hover:text-white transition uppercase text-xs font-bold"
-                  >
-                    {col.label}{' '}
-                    {sortCol === col.col && (sortDir === 'asc' ? '▲' : '▼')}
+                  <th key={col.col} onClick={() => handleSort(col.col)}
+                    className="px-2 sm:px-4 py-3 text-left text-gray-400 cursor-pointer hover:text-white transition uppercase text-xs font-bold whitespace-nowrap">
+                    {col.label} {sortCol === col.col && (sortDir === 'asc' ? '\u25B2' : '\u25BC')}
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {sorted.map((cat) => (
-                <tr
-                  key={cat.id}
-                  onClick={() => onExpandCatalyst(cat)}
-                  className="border-b border-gray-800 hover:bg-gray-800 cursor-pointer transition"
-                >
-                  <td className="px-4 py-3 text-gray-300 font-mono text-xs">{formatDate(cat.date)}</td>
-                  <td className="px-4 py-3 font-bold text-white">{cat.ticker}</td>
-                  <td className="px-4 py-3 text-gray-300">{cat.drug}</td>
-                  <td className="px-4 py-3 text-gray-400 text-xs max-w-48 truncate">{cat.indication}</td>
-                  <td className="px-4 py-3 text-gray-400 text-xs">{cat.type}</td>
-                  <td className="px-4 py-3 text-gray-400 text-xs">{cat.ta}</td>
-                  <td
-                    className="px-4 py-3 font-bold font-mono tabular-nums"
-                    style={{ color: getTierColor(cat.tier) }}
-                  >
+                <tr key={cat.id} onClick={() => onExpandCatalyst(cat)}
+                  className="border-b border-gray-800 hover:bg-gray-800 cursor-pointer transition">
+                  <td className="px-2 sm:px-4 py-3 text-gray-300 text-xs whitespace-nowrap">{formatDate(cat.date)}</td>
+                  <td className="px-2 sm:px-4 py-3 font-bold text-white">{cat.ticker}</td>
+                  <td className="px-2 sm:px-4 py-3 text-gray-300 max-w-32 truncate">{cat.drug}</td>
+                  <td className="px-2 sm:px-4 py-3 text-gray-400 text-xs max-w-32 truncate hidden sm:table-cell">{cat.indication}</td>
+                  <td className="px-2 sm:px-4 py-3 text-gray-400 text-xs hidden sm:table-cell">{cat.ta}</td>
+                  <td className="px-2 sm:px-4 py-3 font-bold font-mono tabular-nums" style={{ color: getTierColor(cat.tier) }}>
                     {fmtProb(cat.prob)}%
                   </td>
-                  <td className="px-4 py-3">
-                    <span className={`px-2 py-1 text-xs font-bold rounded-none inline-block ${getTierBgClass(cat.tier)}`}>
+                  <td className="px-2 sm:px-4 py-3">
+                    <span className={`px-2 py-1 text-xs font-bold inline-block ${getTierBgClass(cat.tier)}`}>
                       {cat.tier}
                     </span>
                   </td>
@@ -2366,14 +2788,113 @@ const ScreenerView = ({ catalysts, onExpandCatalyst }) => {
           </table>
         </div>
       </div>
+      <div className="text-xs text-gray-500 font-mono">Showing {sorted.length} of {catalysts.length} catalysts</div>
+    </div>
+  );
+};
 
-      <div className="text-xs text-gray-500">
-        Showing {sorted.length} of {catalysts.length} catalysts
+// ── Intel View (NEW) — Historical rates, TA heatmap ──
+const IntelView = ({ catalysts }) => {
+  const taGroups = useMemo(() => {
+    const groups = {};
+    catalysts.forEach((c) => {
+      if (!groups[c.ta]) groups[c.ta] = [];
+      groups[c.ta].push(c);
+    });
+    return groups;
+  }, [catalysts]);
+
+  const sortedRates = Object.entries(HIST_APPROVAL_RATES)
+    .sort((a, b) => b[1].rate - a[1].rate);
+
+  return (
+    <div className="space-y-6">
+      {/* Historical Approval Rates */}
+      <div className="bg-gray-900 border border-gray-700 p-4">
+        <div className="flex items-center gap-2 mb-4">
+          <PieChart size={14} className="text-blue-400" />
+          <div className="text-xs text-gray-400 font-mono uppercase">HISTORICAL FDA APPROVAL RATES BY THERAPEUTIC AREA</div>
+        </div>
+        <div className="text-xs text-gray-500 mb-4">Based on 486-event backtest (2018-2025 PDUFA decisions)</div>
+        <div className="space-y-2">
+          {sortedRates.map(([ta, data]) => {
+            const activeCatalysts = taGroups[ta] || [];
+            return (
+              <div key={ta} className="flex items-center gap-3 text-sm">
+                <span className="text-gray-300 w-36 sm:w-44 truncate text-xs font-mono">{ta}</span>
+                <div className="flex-1 bg-gray-800 h-5 overflow-hidden relative">
+                  <div className="h-full transition-all duration-500"
+                    style={{ width: `${data.rate}%`, backgroundColor: data.rate >= 85 ? '#22c55e' : data.rate >= 75 ? '#eab308' : data.rate >= 65 ? '#f97316' : '#ef4444', opacity: 0.7 }} />
+                  <span className="absolute inset-0 flex items-center px-2 text-xs font-mono text-gray-200">
+                    {data.rate.toFixed(1)}% ({data.approved}/{data.total})
+                  </span>
+                </div>
+                {activeCatalysts.length > 0 && (
+                  <span className="text-xs text-blue-400 font-mono w-16 text-right">{activeCatalysts.length} active</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* TA Risk Classification */}
+      <div className="bg-gray-900 border border-gray-700 p-4">
+        <div className="flex items-center gap-2 mb-4">
+          <Shield size={14} className="text-blue-400" />
+          <div className="text-xs text-gray-400 font-mono uppercase">ODIN TA RISK CLASSIFICATION</div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { label: 'LOW RISK', color: 'green', areas: ['Oncology', 'Immunology', 'Dermatology', 'Vaccines', 'Infectious Disease'], desc: 'Historically high approval rates, well-established regulatory pathways' },
+            { label: 'MODERATE RISK', color: 'yellow', areas: ['CNS', 'Cardiovascular', 'Metabolic', 'Rare Disease', 'Respiratory'], desc: 'Mixed track record, often complex endpoints or safety profiles' },
+            { label: 'HIGH RISK', color: 'red', areas: ['Ophthalmology', 'GI/Hepatology', 'Nephrology', 'Hematology', 'Musculoskeletal'], desc: 'Below-average approval rates, challenging regulatory landscape' },
+          ].map((risk) => (
+            <div key={risk.label} className={`bg-gray-800 border border-${risk.color}-800 p-4`}>
+              <div className={`text-xs font-mono font-bold text-${risk.color}-400 mb-2`}>{risk.label}</div>
+              <div className="space-y-1 mb-3">
+                {risk.areas.map((a) => (
+                  <div key={a} className="text-xs text-gray-300 flex justify-between">
+                    <span>{a}</span>
+                    {HIST_APPROVAL_RATES[a] && (
+                      <span className="text-gray-500 font-mono">{HIST_APPROVAL_RATES[a].rate.toFixed(0)}%</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="text-xs text-gray-500">{risk.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ODIN Model Stats */}
+      <div className="bg-gray-900 border border-gray-700 p-4">
+        <div className="flex items-center gap-2 mb-4">
+          <Brain size={14} className="text-blue-400" />
+          <div className="text-xs text-gray-400 font-mono uppercase">ODIN v10.66 ENGINE STATS</div>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          {[
+            { label: 'Parameters', value: '33' },
+            { label: 'Base Probability', value: '83.4%' },
+            { label: 'Backtest Events', value: '486' },
+            { label: 'Architecture', value: 'GPU Logistic' },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-gray-800 p-3 border border-gray-700">
+              <div className="text-xs text-gray-500 mb-1">{stat.label}</div>
+              <div className="text-lg font-bold text-blue-400 font-mono">{stat.value}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
+// ═══════════════════════════════════════════════════
+// MAIN APP
+// ═══════════════════════════════════════════════════
 export default function PdufaBio() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
@@ -2385,48 +2906,48 @@ export default function PdufaBio() {
     []
   );
 
+  const tabs = [
+    { id: 'dashboard', label: 'Dashboard', icon: Activity },
+    { id: 'calendar', label: 'Calendar', icon: Calendar },
+    { id: 'screener', label: 'Screener', icon: BarChart3 },
+    { id: 'intel', label: 'Intel', icon: Brain },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
       {/* Top Bar */}
       <div className="border-b border-gray-700 bg-gray-900 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold font-mono tracking-tight">PDUFA<span className="text-blue-400">.BIO</span></h1>
-            <div className="bg-gray-800 border border-gray-700 px-3 py-1 rounded-none text-xs font-mono text-blue-400">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <h1 className="text-xl sm:text-2xl font-bold font-mono tracking-tight">
+              PDUFA<span className="text-blue-400">.BIO</span>
+            </h1>
+            <div className="bg-gray-800 border border-gray-700 px-2 py-0.5 text-xs font-mono text-blue-400 hidden sm:block">
               ODIN v10.66
             </div>
           </div>
-          <div className="flex items-center gap-6">
-            <div className="hidden md:flex items-center gap-4 text-xs font-mono text-gray-500">
+          <div className="flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4 text-xs font-mono text-gray-500">
               <span>Engine: <span className="text-green-400">v10.66</span></span>
               <span>Params: <span className="text-green-400">33</span></span>
-              <span>Events: <span className="text-green-400">60</span></span>
+              <span>Events: <span className="text-green-400">{CATALYSTS_DATA.length}</span></span>
             </div>
-            <div className="text-sm text-gray-400 font-mono">{dateStr}</div>
+            <div className="text-xs sm:text-sm text-gray-400 font-mono">{dateStr}</div>
           </div>
         </div>
       </div>
 
       {/* Nav Tabs */}
-      <div className="border-b border-gray-700 bg-gray-900 sticky top-14 z-30">
-        <div className="max-w-7xl mx-auto px-6 flex gap-0">
-          {[
-            { id: 'dashboard', label: 'Dashboard', icon: Activity },
-            { id: 'calendar', label: 'Calendar', icon: Calendar },
-            { id: 'screener', label: 'Screener', icon: BarChart3 },
-          ].map((tab) => {
+      <div className="border-b border-gray-700 bg-gray-900 sticky top-[53px] z-30">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-0 overflow-x-auto">
+          {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-4 font-mono text-sm uppercase border-b-2 transition flex items-center gap-2 ${
-                  activeTab === tab.id
-                    ? 'border-blue-400 text-blue-400'
-                    : 'border-transparent text-gray-400 hover:text-gray-300'
-                }`}
-              >
-                <Icon size={16} />
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                className={`px-3 sm:px-6 py-3 sm:py-4 font-mono text-xs sm:text-sm uppercase border-b-2 transition flex items-center gap-1.5 whitespace-nowrap ${
+                  activeTab === tab.id ? 'border-blue-400 text-blue-400' : 'border-transparent text-gray-400 hover:text-gray-300'
+                }`}>
+                <Icon size={14} />
                 {tab.label}
               </button>
             );
@@ -2435,12 +2956,19 @@ export default function PdufaBio() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        {activeTab === 'dashboard' && (
-          <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />
-        )}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
+        {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
+        {activeTab === 'intel' && <IntelView catalysts={sortedCatalysts} />}
+      </div>
+
+      {/* Footer */}
+      <div className="border-t border-gray-800 bg-gray-900 mt-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500 font-mono">
+          <span>PDUFA.BIO — Powered by ODIN v10.66 Dynamic Grandmaster</span>
+          <span>Not financial advice. ODIN scores are ML predictions, not guarantees.</span>
+        </div>
       </div>
 
       {/* Detail Modal */}
