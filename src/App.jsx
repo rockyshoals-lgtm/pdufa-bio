@@ -3038,7 +3038,7 @@ const PasswordGate = ({ onUnlock }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (pw === 'pdufa2026') {
+    if (pw === '1U670NnGEhN6!Hv4Z7tJOd5Z%I9h') {
       try { sessionStorage.setItem('pdufa_unlocked', 'true'); } catch (e) {}
       onUnlock();
     } else {
