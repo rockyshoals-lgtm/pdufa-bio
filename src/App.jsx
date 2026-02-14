@@ -5198,54 +5198,74 @@ const OdinQuestGame = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const W = 400, H = 300;
+    const W = 440, H = 320;
     canvas.width = W;
     canvas.height = H;
+    let highScore = 0;
+    try { highScore = parseInt(localStorage.getItem('odin_quest_hi') || '0'); } catch {}
 
-    // Pixel art drawing helpers
-    const drawPixelChar = (x, y, color, isLarge) => {
-      const s = isLarge ? 4 : 3;
+    // ── Drawing Helpers ──
+    const drawPixelChar = (x, y, color, dir, frame) => {
+      const s = 3;
+      const bob = Math.sin(frame * 0.15) * 1.5;
       ctx.fillStyle = color;
-      // Head
-      ctx.fillRect(x - s, y - s * 5, s * 2, s * 2);
-      // Body
-      ctx.fillRect(x - s, y - s * 3, s * 2, s * 3);
-      // Legs
-      ctx.fillRect(x - s, y, s, s * 2);
-      ctx.fillRect(x, y, s, s * 2);
+      ctx.fillRect(x - s, y - s * 5 + bob, s * 2, s * 2); // Head
+      ctx.fillRect(x - s, y - s * 3, s * 2, s * 3); // Body
+      // Legs (animate)
+      const legOff = Math.sin(frame * 0.3) * 2;
+      ctx.fillRect(x - s, y + legOff, s, s * 2);
+      ctx.fillRect(x, y - legOff, s, s * 2);
       // Arms
       ctx.fillRect(x - s * 2, y - s * 3, s, s * 2);
       ctx.fillRect(x + s, y - s * 3, s, s * 2);
-      // Eyes
+      // Eyes (direction-aware)
       ctx.fillStyle = '#fff';
-      ctx.fillRect(x - s + 1, y - s * 4.5, 2, 2);
-      ctx.fillRect(x + 1, y - s * 4.5, 2, 2);
+      const ex = dir === 2 ? -1 : dir === 3 ? 1 : 0;
+      ctx.fillRect(x - s + 1 + ex, y - s * 4.5 + bob, 2, 2);
+      ctx.fillRect(x + 1 + ex, y - s * 4.5 + bob, 2, 2);
+      // Cape
+      ctx.fillStyle = '#1d4ed8';
+      ctx.fillRect(x - s - 1, y - s * 2, 1, s * 2);
+      ctx.fillRect(x + s, y - s * 2, 1, s * 2);
     };
 
-    const drawSword = (x, y, dir, attacking) => {
-      ctx.fillStyle = '#c0c0c0';
+    const drawSword = (x, y, dir, attacking, swordLevel) => {
+      const colors = ['#c0c0c0', '#60a5fa', '#fbbf24'];
+      const guards = ['#ffd700', '#3b82f6', '#ef4444'];
+      ctx.fillStyle = colors[Math.min(swordLevel, 2)];
       if (attacking) {
-        const len = 18;
+        const len = 18 + swordLevel * 4;
         if (dir === 0) ctx.fillRect(x - 1, y - 25 - len, 3, len);
         else if (dir === 1) ctx.fillRect(x - 1, y + 6, 3, len);
         else if (dir === 2) ctx.fillRect(x - 15 - len, y - 5, len, 3);
         else ctx.fillRect(x + 10, y - 5, len, 3);
-        ctx.fillStyle = '#ffd700';
+        ctx.fillStyle = guards[Math.min(swordLevel, 2)];
         if (dir === 0) ctx.fillRect(x - 3, y - 25, 7, 3);
         else if (dir === 1) ctx.fillRect(x - 3, y + 4, 7, 3);
         else if (dir === 2) ctx.fillRect(x - 15, y - 7, 3, 7);
         else ctx.fillRect(x + 10, y - 7, 3, 7);
+        // Slash trail
+        if (swordLevel >= 1) {
+          ctx.globalAlpha = 0.3;
+          ctx.fillStyle = colors[Math.min(swordLevel, 2)];
+          if (dir === 0) ctx.fillRect(x - 6, y - 25 - len, 12, len);
+          else if (dir === 1) ctx.fillRect(x - 6, y + 6, 12, len);
+          else if (dir === 2) ctx.fillRect(x - 15 - len, y - 10, len, 12);
+          else ctx.fillRect(x + 10, y - 10, len, 12);
+          ctx.globalAlpha = 1;
+        }
       }
     };
 
-    const drawSlime = (x, y, hp, maxHp) => {
+    const drawSlime = (x, y, hp, maxHp, frame) => {
+      const squish = Math.sin(frame * 0.08) * 1;
       ctx.fillStyle = '#22c55e';
       ctx.beginPath();
-      ctx.ellipse(x, y, 8, 6, 0, 0, Math.PI * 2);
+      ctx.ellipse(x, y, 8 + squish, 6 - squish, 0, 0, Math.PI * 2);
       ctx.fill();
       ctx.fillStyle = '#16a34a';
       ctx.beginPath();
-      ctx.ellipse(x, y + 2, 9, 4, 0, 0, Math.PI);
+      ctx.ellipse(x, y + 2, 9 + squish, 4, 0, 0, Math.PI);
       ctx.fill();
       ctx.fillStyle = '#fff';
       ctx.fillRect(x - 4, y - 3, 3, 3);
@@ -5253,7 +5273,6 @@ const OdinQuestGame = () => {
       ctx.fillStyle = '#000';
       ctx.fillRect(x - 3, y - 2, 2, 2);
       ctx.fillRect(x + 2, y - 2, 2, 2);
-      // HP bar
       if (hp < maxHp) {
         ctx.fillStyle = '#333';
         ctx.fillRect(x - 10, y - 14, 20, 3);
@@ -5262,79 +5281,204 @@ const OdinQuestGame = () => {
       }
     };
 
-    const drawBoss = (x, y, hp, maxHp) => {
-      // Shawn - red wizard
+    const drawBat = (x, y, hp, maxHp, frame) => {
+      const wingUp = Math.sin(frame * 0.2) > 0;
+      ctx.fillStyle = '#7c3aed';
+      ctx.fillRect(x - 3, y - 3, 6, 6); // Body
+      // Wings
+      if (wingUp) {
+        ctx.fillRect(x - 10, y - 6, 7, 4);
+        ctx.fillRect(x + 3, y - 6, 7, 4);
+      } else {
+        ctx.fillRect(x - 10, y - 2, 7, 4);
+        ctx.fillRect(x + 3, y - 2, 7, 4);
+      }
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(x - 2, y - 2, 2, 2);
+      ctx.fillRect(x + 1, y - 2, 2, 2);
+      if (hp < maxHp) {
+        ctx.fillStyle = '#333';
+        ctx.fillRect(x - 8, y - 12, 16, 2);
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(x - 8, y - 12, 16 * (hp / maxHp), 2);
+      }
+    };
+
+    const drawSkeleton = (x, y, hp, maxHp, frame) => {
+      const s = 3;
+      const bob = Math.sin(frame * 0.1) * 0.8;
+      ctx.fillStyle = '#d4d4d8';
+      ctx.fillRect(x - s, y - s * 5 + bob, s * 2, s * 2); // Skull
+      ctx.fillStyle = '#a1a1aa';
+      ctx.fillRect(x - s, y - s * 3, s * 2, s * 3); // Ribcage
+      ctx.fillRect(x - s, y, s, s * 2); // Legs
+      ctx.fillRect(x, y, s, s * 2);
+      // Eye sockets
+      ctx.fillStyle = '#000';
+      ctx.fillRect(x - s + 1, y - s * 4.5 + bob, 2, 2);
+      ctx.fillRect(x + 1, y - s * 4.5 + bob, 2, 2);
+      // Shield
+      ctx.fillStyle = '#71717a';
+      ctx.fillRect(x - s * 2 - 2, y - s * 3, 3, s * 3);
+      if (hp < maxHp) {
+        ctx.fillStyle = '#333';
+        ctx.fillRect(x - 10, y - s * 6, 20, 3);
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(x - 10, y - s * 6, 20 * (hp / maxHp), 3);
+      }
+    };
+
+    const drawBoss = (x, y, hp, maxHp, phase, frame) => {
       const s = 5;
+      const pulse = Math.sin(frame * 0.05) * 2;
+      // Aura in phase 2+
+      if (phase >= 2) {
+        ctx.globalAlpha = 0.15 + Math.sin(frame * 0.03) * 0.1;
+        ctx.fillStyle = phase >= 3 ? '#ef4444' : '#a855f7';
+        ctx.beginPath();
+        ctx.arc(x, y - s * 2, 35 + pulse * 3, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
       // Hat
-      ctx.fillStyle = '#7c2d12';
+      ctx.fillStyle = phase >= 3 ? '#450a0a' : '#7c2d12';
       ctx.beginPath();
-      ctx.moveTo(x, y - s * 8);
+      ctx.moveTo(x, y - s * 8 - pulse);
       ctx.lineTo(x - s * 2.5, y - s * 4);
       ctx.lineTo(x + s * 2.5, y - s * 4);
       ctx.fill();
       // Head
-      ctx.fillStyle = '#ef4444';
+      ctx.fillStyle = phase >= 3 ? '#dc2626' : '#ef4444';
       ctx.fillRect(x - s * 1.5, y - s * 4, s * 3, s * 2.5);
       // Body (robe)
-      ctx.fillStyle = '#991b1b';
+      ctx.fillStyle = phase >= 3 ? '#7f1d1d' : '#991b1b';
       ctx.fillRect(x - s * 2, y - s * 1.5, s * 4, s * 4);
       // Arms
-      ctx.fillStyle = '#ef4444';
+      ctx.fillStyle = phase >= 3 ? '#dc2626' : '#ef4444';
       ctx.fillRect(x - s * 3, y - s * 1.5, s, s * 3);
       ctx.fillRect(x + s * 2, y - s * 1.5, s, s * 3);
-      // Eyes
-      ctx.fillStyle = '#fbbf24';
+      // Eyes (angrier each phase)
+      ctx.fillStyle = phase >= 3 ? '#ef4444' : '#fbbf24';
       ctx.fillRect(x - s + 1, y - s * 3.2, 3, 3);
       ctx.fillRect(x + s - 3, y - s * 3.2, 3, 3);
+      if (phase >= 2) { // Angry eyebrows
+        ctx.fillStyle = '#000';
+        ctx.fillRect(x - s, y - s * 3.8, 4, 1);
+        ctx.fillRect(x + s - 4, y - s * 3.8, 4, 1);
+      }
       // Staff
       ctx.fillStyle = '#92400e';
       ctx.fillRect(x + s * 3, y - s * 5, 3, s * 7);
-      ctx.fillStyle = '#a855f7';
+      ctx.fillStyle = phase >= 3 ? '#ef4444' : '#a855f7';
       ctx.beginPath();
-      ctx.arc(x + s * 3 + 1, y - s * 5, 5, 0, Math.PI * 2);
+      ctx.arc(x + s * 3 + 1, y - s * 5, 5 + pulse * 0.5, 0, Math.PI * 2);
       ctx.fill();
-      // HP bar
+      // HP bar (wider)
       ctx.fillStyle = '#333';
-      ctx.fillRect(x - 25, y - s * 9.5, 50, 5);
+      ctx.fillRect(x - 40, y - s * 10, 80, 6);
+      const hpPct = hp / maxHp;
+      ctx.fillStyle = hpPct > 0.5 ? '#ef4444' : hpPct > 0.25 ? '#f97316' : '#fbbf24';
+      ctx.fillRect(x - 40, y - s * 10, 80 * hpPct, 6);
+      ctx.strokeStyle = '#555';
+      ctx.strokeRect(x - 40, y - s * 10, 80, 6);
+      // Name + phase
       ctx.fillStyle = '#ef4444';
-      ctx.fillRect(x - 25, y - s * 9.5, 50 * (hp / maxHp), 5);
-      // Name
-      ctx.fillStyle = '#ef4444';
-      ctx.font = '8px monospace';
+      ctx.font = 'bold 8px monospace';
       ctx.textAlign = 'center';
-      ctx.fillText('SHAWN', x, y - s * 10);
+      ctx.fillText('SHAWN' + (phase >= 2 ? ' [PHASE ' + phase + ']' : ''), x, y - s * 11);
     };
 
-    const drawProjectile = (x, y) => {
-      ctx.fillStyle = '#a855f7';
-      ctx.beginPath();
-      ctx.arc(x, y, 4, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = '#c084fc';
-      ctx.beginPath();
-      ctx.arc(x, y, 2, 0, Math.PI * 2);
-      ctx.fill();
+    const drawProjectile = (x, y, type) => {
+      if (type === 'fire') {
+        ctx.fillStyle = '#f97316';
+        ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#fbbf24';
+        ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill();
+      } else if (type === 'spiral') {
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#fca5a5';
+        ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill();
+      } else {
+        ctx.fillStyle = '#a855f7';
+        ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#c084fc';
+        ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill();
+      }
     };
 
-    const drawTile = (x, y) => {
+    const drawPickup = (x, y, type, frame) => {
+      const bob = Math.sin(frame * 0.08 + x) * 3;
+      const glow = 0.4 + Math.sin(frame * 0.06) * 0.2;
+      if (type === 'health') {
+        ctx.globalAlpha = glow;
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath(); ctx.arc(x, y + bob, 10, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = '#ef4444';
+        ctx.font = '14px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('\u2665', x, y + 5 + bob);
+      } else if (type === 'speed') {
+        ctx.globalAlpha = glow;
+        ctx.fillStyle = '#3b82f6';
+        ctx.beginPath(); ctx.arc(x, y + bob, 10, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = '#60a5fa';
+        ctx.font = 'bold 10px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('>>>', x, y + 4 + bob);
+      } else if (type === 'sword') {
+        ctx.globalAlpha = glow;
+        ctx.fillStyle = '#fbbf24';
+        ctx.beginPath(); ctx.arc(x, y + bob, 10, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = '#fbbf24';
+        ctx.font = 'bold 12px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('\u2694', x, y + 5 + bob);
+      } else if (type === 'shield') {
+        ctx.globalAlpha = glow;
+        ctx.fillStyle = '#22c55e';
+        ctx.beginPath(); ctx.arc(x, y + bob, 10, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = '#22c55e';
+        ctx.font = 'bold 12px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('\u25C6', x, y + 5 + bob);
+      }
+    };
+
+    const drawTile = (x, y, frame) => {
       ctx.fillStyle = '#1a1a2e';
       ctx.fillRect(x, y, 20, 20);
       ctx.strokeStyle = '#16213e';
       ctx.strokeRect(x, y, 20, 20);
+      // Random floor detail
+      if ((x * 7 + y * 13) % 97 < 8) {
+        ctx.fillStyle = '#1e1e3a';
+        ctx.fillRect(x + 4, y + 4, 3, 3);
+      }
     };
 
-    // Game state
+    // ── Game State ──
     const G = {
-      state: 'playing', // playing, boss, win, lose
-      tad: { x: W / 2, y: H / 2, hp: 5, maxHp: 5, dir: 0, attacking: 0, iframes: 0, speed: 2.5 },
+      state: 'playing',
+      frame: 0,
+      tad: { x: W / 2, y: H / 2, hp: 6, maxHp: 6, dir: 1, attacking: 0, iframes: 0, speed: 2.5, swordLevel: 0, dashCd: 0, dashing: 0, shieldTimer: 0, speedTimer: 0 },
       enemies: [],
       projectiles: [],
+      pickups: [],
       boss: null,
       wave: 1,
-      maxWaves: 3,
+      maxWaves: 5,
       spawnTimer: 0,
       particles: [],
+      floatingText: [],
       score: 0,
+      combo: 0,
+      comboTimer: 0,
+      kills: 0,
       flash: 0,
       shakeDur: 0,
       shakeX: 0,
@@ -5342,46 +5486,72 @@ const OdinQuestGame = () => {
     };
 
     const spawnWave = () => {
-      const count = 3 + G.wave * 2;
-      for (let i = 0; i < count; i++) {
+      const w = G.wave;
+      const spawnEdge = () => {
         const side = Math.floor(Math.random() * 4);
-        let ex, ey;
-        if (side === 0) { ex = Math.random() * W; ey = -10; }
-        else if (side === 1) { ex = Math.random() * W; ey = H + 10; }
-        else if (side === 2) { ex = -10; ey = Math.random() * H; }
-        else { ex = W + 10; ey = Math.random() * H; }
-        G.enemies.push({ x: ex, y: ey, hp: 1 + Math.floor(G.wave / 2), maxHp: 1 + Math.floor(G.wave / 2), speed: 0.5 + Math.random() * 0.5 });
+        if (side === 0) return { x: Math.random() * W, y: -15 };
+        if (side === 1) return { x: Math.random() * W, y: H + 15 };
+        if (side === 2) return { x: -15, y: Math.random() * H };
+        return { x: W + 15, y: Math.random() * H };
+      };
+      // Slimes
+      const slimeCount = 3 + w * 2;
+      for (let i = 0; i < slimeCount; i++) {
+        const pos = spawnEdge();
+        G.enemies.push({ ...pos, type: 'slime', hp: 1 + Math.floor(w / 3), maxHp: 1 + Math.floor(w / 3), speed: 0.5 + Math.random() * 0.4 });
+      }
+      // Bats (from wave 2)
+      if (w >= 2) {
+        const batCount = Math.floor(w / 2) + 1;
+        for (let i = 0; i < batCount; i++) {
+          const pos = spawnEdge();
+          G.enemies.push({ ...pos, type: 'bat', hp: 1, maxHp: 1, speed: 1.2 + Math.random() * 0.6 });
+        }
+      }
+      // Skeletons (from wave 3)
+      if (w >= 3) {
+        const skelCount = Math.floor((w - 2) / 2) + 1;
+        for (let i = 0; i < skelCount; i++) {
+          const pos = spawnEdge();
+          G.enemies.push({ ...pos, type: 'skeleton', hp: 3 + Math.floor(w / 3), maxHp: 3 + Math.floor(w / 3), speed: 0.4 + Math.random() * 0.2 });
+        }
       }
     };
 
     const spawnBoss = () => {
       G.state = 'boss';
-      G.boss = { x: W / 2, y: 60, hp: 15, maxHp: 15, shootTimer: 0, moveTimer: 0, targetX: W / 2, phase: 1 };
+      G.boss = { x: W / 2, y: 70, hp: 25, maxHp: 25, shootTimer: 0, moveTimer: 0, targetX: W / 2, phase: 1, spiralAngle: 0, summonTimer: 0 };
       G.flash = 30;
+      addFloating(W / 2, H / 2, 'BOSS FIGHT!', '#ef4444', 60);
     };
 
     const addParticles = (x, y, color, count) => {
       for (let i = 0; i < count; i++) {
-        G.particles.push({
-          x, y,
-          vx: (Math.random() - 0.5) * 4,
-          vy: (Math.random() - 0.5) * 4,
-          life: 15 + Math.random() * 15,
-          color,
-        });
+        G.particles.push({ x, y, vx: (Math.random() - 0.5) * 5, vy: (Math.random() - 0.5) * 5, life: 15 + Math.random() * 20, color, size: 2 + Math.random() * 3 });
       }
+    };
+
+    const addFloating = (x, y, text, color, dur = 40) => {
+      G.floatingText.push({ x, y, text, color, life: dur, maxLife: dur });
+    };
+
+    const maybeDropPickup = (x, y) => {
+      const roll = Math.random();
+      if (roll < 0.08) G.pickups.push({ x, y, type: 'health' });
+      else if (roll < 0.13) G.pickups.push({ x, y, type: 'speed' });
+      else if (roll < 0.17) G.pickups.push({ x, y, type: 'sword' });
+      else if (roll < 0.20) G.pickups.push({ x, y, type: 'shield' });
     };
 
     const checkSwordHit = (target, range) => {
       const t = G.tad;
+      const swordRange = range + G.tad.swordLevel * 4;
       let hx = t.x, hy = t.y;
-      if (t.dir === 0) hy -= range;
-      else if (t.dir === 1) hy += range;
-      else if (t.dir === 2) hx -= range;
-      else hx += range;
-      const dx = target.x - hx;
-      const dy = target.y - hy;
-      return Math.sqrt(dx * dx + dy * dy) < range;
+      if (t.dir === 0) hy -= swordRange;
+      else if (t.dir === 1) hy += swordRange;
+      else if (t.dir === 2) hx -= swordRange;
+      else hx += swordRange;
+      return Math.hypot(target.x - hx, target.y - hy) < swordRange;
     };
 
     spawnWave();
@@ -5389,67 +5559,121 @@ const OdinQuestGame = () => {
     const update = () => {
       const keys = keysRef.current;
       const t = G.tad;
+      G.frame++;
 
       if (G.state === 'win' || G.state === 'lose') return;
 
+      // Timers
+      if (t.speedTimer > 0) t.speedTimer--;
+      if (t.shieldTimer > 0) t.shieldTimer--;
+      if (t.dashCd > 0) t.dashCd--;
+      if (G.comboTimer > 0) { G.comboTimer--; if (G.comboTimer === 0) G.combo = 0; }
+
       // Movement
+      const spd = t.dashing > 0 ? 8 : (t.speed + (t.speedTimer > 0 ? 1.5 : 0));
       let mx = 0, my = 0;
       if (keys['ArrowUp'] || keys['w'] || keys['W']) { my = -1; t.dir = 0; }
       if (keys['ArrowDown'] || keys['s'] || keys['S']) { my = 1; t.dir = 1; }
       if (keys['ArrowLeft'] || keys['a'] || keys['A']) { mx = -1; t.dir = 2; }
       if (keys['ArrowRight'] || keys['d'] || keys['D']) { mx = 1; t.dir = 3; }
       if (mx && my) { mx *= 0.707; my *= 0.707; }
-      t.x = Math.max(10, Math.min(W - 10, t.x + mx * t.speed));
-      t.y = Math.max(20, Math.min(H - 10, t.y + my * t.speed));
+      t.x = Math.max(10, Math.min(W - 10, t.x + mx * spd));
+      t.y = Math.max(22, Math.min(H - 10, t.y + my * spd));
+      if (t.dashing > 0) { t.dashing--; addParticles(t.x, t.y, '#60a5fa', 1); }
+
+      // Dash (Shift)
+      if ((keys['Shift'] || keys['e'] || keys['E']) && t.dashCd <= 0 && (mx || my)) {
+        t.dashing = 6;
+        t.dashCd = 40;
+        t.iframes = Math.max(t.iframes, 8);
+        addParticles(t.x, t.y, '#3b82f6', 8);
+      }
 
       // Attack
+      const dmg = 1 + Math.floor(G.tad.swordLevel / 2);
       if (keys[' '] && t.attacking <= 0) {
-        t.attacking = 12;
-        // Check hits on enemies
+        t.attacking = 10;
         G.enemies = G.enemies.filter(e => {
           if (checkSwordHit(e, 25)) {
-            e.hp--;
-            addParticles(e.x, e.y, '#22c55e', 5);
+            e.hp -= dmg;
+            addParticles(e.x, e.y, e.type === 'slime' ? '#22c55e' : e.type === 'bat' ? '#7c3aed' : '#d4d4d8', 5);
             G.shakeDur = 3;
             if (e.hp <= 0) {
-              addParticles(e.x, e.y, '#fbbf24', 10);
-              G.score += 10;
+              G.combo++;
+              G.comboTimer = 60;
+              const pts = 10 * (1 + Math.floor(G.combo / 3));
+              G.score += pts;
+              G.kills++;
+              addParticles(e.x, e.y, '#fbbf24', 12);
+              addFloating(e.x, e.y - 10, '+' + pts + (G.combo >= 3 ? ' x' + G.combo : ''), G.combo >= 5 ? '#fbbf24' : '#fff');
+              maybeDropPickup(e.x, e.y);
               return false;
             }
           }
           return true;
         });
-        // Check hit on boss
         if (G.boss && checkSwordHit(G.boss, 30)) {
-          G.boss.hp--;
+          G.boss.hp -= dmg;
           addParticles(G.boss.x, G.boss.y, '#ef4444', 8);
           G.shakeDur = 5;
+          // Phase transitions
+          if (G.boss.hp <= G.boss.maxHp * 0.6 && G.boss.phase === 1) {
+            G.boss.phase = 2;
+            G.flash = 20;
+            addFloating(W / 2, H / 2, 'PHASE 2 — ENRAGED!', '#f97316', 50);
+          }
+          if (G.boss.hp <= G.boss.maxHp * 0.25 && G.boss.phase === 2) {
+            G.boss.phase = 3;
+            G.flash = 25;
+            addFloating(W / 2, H / 2, 'PHASE 3 — DESPERATE!', '#ef4444', 50);
+          }
           if (G.boss.hp <= 0) {
             G.state = 'win';
-            addParticles(G.boss.x, G.boss.y, '#fbbf24', 30);
-            G.score += 100;
+            G.score += 500;
+            addParticles(G.boss.x, G.boss.y, '#fbbf24', 40);
+            addParticles(G.boss.x, G.boss.y, '#ef4444', 20);
+            if (G.score > highScore) { highScore = G.score; try { localStorage.setItem('odin_quest_hi', String(G.score)); } catch {} }
           }
         }
       }
       if (t.attacking > 0) t.attacking--;
       if (t.iframes > 0) t.iframes--;
 
+      // Pickup collection
+      G.pickups = G.pickups.filter(p => {
+        if (Math.hypot(t.x - p.x, t.y - p.y) < 14) {
+          if (p.type === 'health') { t.hp = Math.min(t.maxHp, t.hp + 2); addFloating(p.x, p.y, '+2 HP', '#ef4444'); }
+          else if (p.type === 'speed') { t.speedTimer = 300; addFloating(p.x, p.y, 'SPEED UP!', '#3b82f6'); }
+          else if (p.type === 'sword') { t.swordLevel = Math.min(t.swordLevel + 1, 3); addFloating(p.x, p.y, 'SWORD UP!', '#fbbf24'); }
+          else if (p.type === 'shield') { t.shieldTimer = 200; t.iframes = 200; addFloating(p.x, p.y, 'SHIELD!', '#22c55e'); }
+          addParticles(p.x, p.y, '#fff', 8);
+          G.score += 25;
+          return false;
+        }
+        return true;
+      });
+
       // Enemy AI
       G.enemies.forEach(e => {
-        const dx = t.x - e.x;
-        const dy = t.y - e.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+        const dx = t.x - e.x, dy = t.y - e.y;
+        const dist = Math.hypot(dx, dy);
         if (dist > 1) {
-          e.x += (dx / dist) * e.speed;
-          e.y += (dy / dist) * e.speed;
+          const s = e.speed * (e.type === 'bat' ? (1 + Math.sin(G.frame * 0.1) * 0.3) : 1);
+          e.x += (dx / dist) * s;
+          e.y += (dy / dist) * s;
+          // Bats zigzag
+          if (e.type === 'bat') {
+            e.x += Math.cos(G.frame * 0.15 + e.y * 0.01) * 0.8;
+            e.y += Math.sin(G.frame * 0.12 + e.x * 0.01) * 0.8;
+          }
         }
-        // Collision with Tad
         if (dist < 12 && t.iframes <= 0) {
           t.hp--;
-          t.iframes = 45;
-          G.shakeDur = 8;
+          t.iframes = 40;
+          G.shakeDur = 6;
           addParticles(t.x, t.y, '#3b82f6', 8);
-          if (t.hp <= 0) G.state = 'lose';
+          addFloating(t.x, t.y - 15, '-1 HP', '#ef4444');
+          if (t.hp <= 0) { G.state = 'lose'; if (G.score > highScore) { highScore = G.score; try { localStorage.setItem('odin_quest_hi', String(G.score)); } catch {} } }
         }
       });
 
@@ -5457,192 +5681,252 @@ const OdinQuestGame = () => {
       if (G.state === 'playing' && G.enemies.length === 0) {
         if (G.wave < G.maxWaves) {
           G.wave++;
-          G.spawnTimer = 40;
+          G.spawnTimer = 45;
+          addFloating(W / 2, H / 2, 'WAVE ' + (G.wave), '#eab308', 40);
         } else if (!G.boss) {
           spawnBoss();
         }
       }
-      if (G.spawnTimer > 0) {
-        G.spawnTimer--;
-        if (G.spawnTimer === 0) spawnWave();
-      }
+      if (G.spawnTimer > 0) { G.spawnTimer--; if (G.spawnTimer === 0) spawnWave(); }
 
-      // Boss AI
+      // Boss AI (multi-phase)
       if (G.boss && G.boss.hp > 0) {
         const b = G.boss;
         b.shootTimer++;
         b.moveTimer++;
+        b.summonTimer++;
+        b.spiralAngle += 0.05;
 
-        // Move side to side
-        if (b.moveTimer > 60) {
-          b.targetX = 50 + Math.random() * (W - 100);
+        // Movement (faster in later phases)
+        if (b.moveTimer > (60 - b.phase * 10)) {
+          b.targetX = 40 + Math.random() * (W - 80);
           b.moveTimer = 0;
         }
-        b.x += (b.targetX - b.x) * 0.03;
+        b.x += (b.targetX - b.x) * (0.02 + b.phase * 0.01);
 
-        // Shoot projectiles
-        const shootRate = b.hp < 8 ? 25 : 40;
+        // Shooting patterns by phase
+        const shootRate = Math.max(12, 40 - b.phase * 10);
         if (b.shootTimer > shootRate) {
           b.shootTimer = 0;
           const angle = Math.atan2(t.y - b.y, t.x - b.x);
-          G.projectiles.push({ x: b.x, y: b.y + 15, vx: Math.cos(angle) * 2.5, vy: Math.sin(angle) * 2.5 });
-          if (b.hp < 8) {
-            G.projectiles.push({ x: b.x, y: b.y + 15, vx: Math.cos(angle + 0.3) * 2.2, vy: Math.sin(angle + 0.3) * 2.2 });
-            G.projectiles.push({ x: b.x, y: b.y + 15, vx: Math.cos(angle - 0.3) * 2.2, vy: Math.sin(angle - 0.3) * 2.2 });
+          if (b.phase === 1) {
+            G.projectiles.push({ x: b.x, y: b.y + 20, vx: Math.cos(angle) * 2.5, vy: Math.sin(angle) * 2.5, type: 'magic' });
+          } else if (b.phase === 2) {
+            // Triple shot
+            for (let i = -1; i <= 1; i++) {
+              G.projectiles.push({ x: b.x, y: b.y + 20, vx: Math.cos(angle + i * 0.25) * 2.8, vy: Math.sin(angle + i * 0.25) * 2.8, type: 'fire' });
+            }
+          } else {
+            // 5-way spread + spiral
+            for (let i = -2; i <= 2; i++) {
+              G.projectiles.push({ x: b.x, y: b.y + 20, vx: Math.cos(angle + i * 0.2) * 3, vy: Math.sin(angle + i * 0.2) * 3, type: 'fire' });
+            }
           }
         }
-
+        // Spiral attack in phase 3
+        if (b.phase >= 3 && G.frame % 8 === 0) {
+          const sa = b.spiralAngle;
+          G.projectiles.push({ x: b.x, y: b.y, vx: Math.cos(sa) * 2, vy: Math.sin(sa) * 2, type: 'spiral' });
+          G.projectiles.push({ x: b.x, y: b.y, vx: Math.cos(sa + Math.PI) * 2, vy: Math.sin(sa + Math.PI) * 2, type: 'spiral' });
+        }
+        // Summon minions in phase 2+
+        if (b.phase >= 2 && b.summonTimer > 180) {
+          b.summonTimer = 0;
+          const count = b.phase;
+          for (let i = 0; i < count; i++) {
+            G.enemies.push({ x: b.x + (Math.random() - 0.5) * 60, y: b.y + 30 + Math.random() * 20, type: 'bat', hp: 1, maxHp: 1, speed: 1.3 });
+          }
+          addFloating(b.x, b.y + 30, 'SUMMON!', '#a855f7');
+        }
         // Boss collision
-        const bdx = t.x - b.x;
-        const bdy = t.y - b.y;
-        if (Math.sqrt(bdx * bdx + bdy * bdy) < 20 && t.iframes <= 0) {
-          t.hp--;
-          t.iframes = 45;
-          G.shakeDur = 8;
-          if (t.hp <= 0) G.state = 'lose';
+        if (Math.hypot(t.x - b.x, t.y - b.y) < 22 && t.iframes <= 0) {
+          t.hp -= 2;
+          t.iframes = 50;
+          G.shakeDur = 10;
+          if (t.hp <= 0) { G.state = 'lose'; if (G.score > highScore) { highScore = G.score; try { localStorage.setItem('odin_quest_hi', String(G.score)); } catch {} } }
         }
       }
 
       // Projectiles
       G.projectiles = G.projectiles.filter(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < -10 || p.x > W + 10 || p.y < -10 || p.y > H + 10) return false;
-        const dx = t.x - p.x;
-        const dy = t.y - p.y;
-        if (Math.sqrt(dx * dx + dy * dy) < 10 && t.iframes <= 0) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -15 || p.x > W + 15 || p.y < -15 || p.y > H + 15) return false;
+        if (Math.hypot(t.x - p.x, t.y - p.y) < 10 && t.iframes <= 0) {
           t.hp--;
-          t.iframes = 45;
-          G.shakeDur = 8;
-          addParticles(t.x, t.y, '#a855f7', 6);
-          if (t.hp <= 0) G.state = 'lose';
+          t.iframes = 40;
+          G.shakeDur = 6;
+          addParticles(t.x, t.y, p.type === 'fire' ? '#f97316' : '#a855f7', 6);
+          if (t.hp <= 0) { G.state = 'lose'; if (G.score > highScore) { highScore = G.score; try { localStorage.setItem('odin_quest_hi', String(G.score)); } catch {} } }
           return false;
         }
         return true;
       });
 
-      // Particles
-      G.particles = G.particles.filter(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vx *= 0.95;
-        p.vy *= 0.95;
-        p.life--;
-        return p.life > 0;
-      });
+      // Particles & floating text
+      G.particles = G.particles.filter(p => { p.x += p.vx; p.y += p.vy; p.vx *= 0.94; p.vy *= 0.94; p.life--; return p.life > 0; });
+      G.floatingText = G.floatingText.filter(f => { f.y -= 0.5; f.life--; return f.life > 0; });
 
       if (G.flash > 0) G.flash--;
-      if (G.shakeDur > 0) {
-        G.shakeDur--;
-        G.shakeX = (Math.random() - 0.5) * 4;
-        G.shakeY = (Math.random() - 0.5) * 4;
-      } else {
-        G.shakeX = 0;
-        G.shakeY = 0;
-      }
+      if (G.shakeDur > 0) { G.shakeDur--; G.shakeX = (Math.random() - 0.5) * 5; G.shakeY = (Math.random() - 0.5) * 5; } else { G.shakeX = 0; G.shakeY = 0; }
     };
 
     const draw = () => {
       ctx.save();
       ctx.translate(G.shakeX, G.shakeY);
+      const f = G.frame;
 
-      // Background tiles
-      for (let x = 0; x < W; x += 20) {
-        for (let y = 0; y < H; y += 20) {
-          drawTile(x, y);
-        }
-      }
+      // Background
+      for (let x = 0; x < W; x += 20) for (let y = 0; y < H; y += 20) drawTile(x, y, f);
 
-      // Particles
+      // Pickups
+      G.pickups.forEach(p => drawPickup(p.x, p.y, p.type, f));
+
+      // Particles (behind entities)
       G.particles.forEach(p => {
-        ctx.globalAlpha = p.life / 30;
+        ctx.globalAlpha = Math.min(1, p.life / 15);
         ctx.fillStyle = p.color;
-        ctx.fillRect(p.x - 2, p.y - 2, 4, 4);
+        const sz = p.size * (p.life / 30);
+        ctx.fillRect(p.x - sz / 2, p.y - sz / 2, sz, sz);
       });
       ctx.globalAlpha = 1;
 
       // Enemies
-      G.enemies.forEach(e => drawSlime(e.x, e.y, e.hp, e.maxHp));
+      G.enemies.forEach(e => {
+        if (e.type === 'slime') drawSlime(e.x, e.y, e.hp, e.maxHp, f);
+        else if (e.type === 'bat') drawBat(e.x, e.y, e.hp, e.maxHp, f);
+        else if (e.type === 'skeleton') drawSkeleton(e.x, e.y, e.hp, e.maxHp, f);
+      });
 
       // Boss
-      if (G.boss && G.boss.hp > 0) drawBoss(G.boss.x, G.boss.y, G.boss.hp, G.boss.maxHp);
+      if (G.boss && G.boss.hp > 0) drawBoss(G.boss.x, G.boss.y, G.boss.hp, G.boss.maxHp, G.boss.phase, f);
 
       // Projectiles
-      G.projectiles.forEach(p => drawProjectile(p.x, p.y));
+      G.projectiles.forEach(p => drawProjectile(p.x, p.y, p.type));
 
       // Tad
       const t = G.tad;
-      if (t.iframes > 0 && Math.floor(t.iframes / 3) % 2 === 0) {
-        // Blink during iframes
+      if (t.iframes > 0 && t.shieldTimer <= 0 && Math.floor(t.iframes / 3) % 2 === 0) {
+        // blink
       } else {
-        drawPixelChar(t.x, t.y, '#3b82f6', false);
-        drawSword(t.x, t.y, t.dir, t.attacking > 6);
+        if (t.shieldTimer > 0) {
+          ctx.globalAlpha = 0.3;
+          ctx.fillStyle = '#22c55e';
+          ctx.beginPath(); ctx.arc(t.x, t.y - 5, 16, 0, Math.PI * 2); ctx.fill();
+          ctx.globalAlpha = 1;
+        }
+        drawPixelChar(t.x, t.y, t.dashing > 0 ? '#60a5fa' : '#3b82f6', t.dir, f);
+        drawSword(t.x, t.y, t.dir, t.attacking > 5, t.swordLevel);
       }
 
-      // HUD
-      ctx.fillStyle = '#0a0a0a';
-      ctx.fillRect(0, 0, W, 18);
-      ctx.fillStyle = '#333';
-      ctx.fillRect(0, 17, W, 1);
+      // Floating text
+      G.floatingText.forEach(ft => {
+        ctx.globalAlpha = ft.life / ft.maxLife;
+        ctx.fillStyle = ft.color;
+        ctx.font = 'bold 10px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(ft.text, ft.x, ft.y);
+      });
+      ctx.globalAlpha = 1;
 
-      // HP Hearts
+      // ── HUD ──
+      ctx.fillStyle = '#0a0a0a';
+      ctx.fillRect(0, 0, W, 20);
+      ctx.fillStyle = '#222';
+      ctx.fillRect(0, 19, W, 1);
+
+      // HP
       for (let i = 0; i < t.maxHp; i++) {
         ctx.fillStyle = i < t.hp ? '#ef4444' : '#333';
-        ctx.font = '12px monospace';
+        ctx.font = '11px monospace';
         ctx.textAlign = 'left';
-        ctx.fillText('\u2665', 6 + i * 14, 13);
+        ctx.fillText('\u2665', 5 + i * 13, 14);
       }
 
-      // TAD label
+      // TAD + power-up indicators
       ctx.fillStyle = '#3b82f6';
       ctx.font = 'bold 8px monospace';
       ctx.textAlign = 'left';
-      ctx.fillText('TAD', 80, 12);
+      ctx.fillText('TAD', 88, 13);
+      if (t.speedTimer > 0) { ctx.fillStyle = '#60a5fa'; ctx.fillText('\u25BA', 110, 13); }
+      if (t.shieldTimer > 0) { ctx.fillStyle = '#22c55e'; ctx.fillText('\u25C6', 118, 13); }
+      if (t.swordLevel > 0) { ctx.fillStyle = '#fbbf24'; ctx.fillText('\u2694' + t.swordLevel, 126, 13); }
 
-      // Wave / Score
+      // Dash CD
+      if (t.dashCd > 0) {
+        ctx.fillStyle = '#333';
+        ctx.fillRect(140, 8, 20, 6);
+        ctx.fillStyle = '#3b82f6';
+        ctx.fillRect(140, 8, 20 * (1 - t.dashCd / 40), 6);
+        ctx.fillStyle = '#666';
+        ctx.font = '6px monospace';
+        ctx.fillText('DSH', 141, 14);
+      } else {
+        ctx.fillStyle = '#3b82f6';
+        ctx.font = '7px monospace';
+        ctx.fillText('[E]', 141, 14);
+      }
+
+      // Combo
+      if (G.combo >= 3) {
+        ctx.fillStyle = G.combo >= 10 ? '#fbbf24' : G.combo >= 5 ? '#f97316' : '#eab308';
+        ctx.font = 'bold 9px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('x' + G.combo + ' COMBO', W / 2, 13);
+      }
+
+      // Wave / Score / Kills
       ctx.fillStyle = '#eab308';
-      ctx.font = 'bold 9px monospace';
+      ctx.font = 'bold 8px monospace';
       ctx.textAlign = 'right';
-      if (G.state === 'boss') ctx.fillText('BOSS: SHAWN', W - 8, 12);
-      else ctx.fillText('WAVE ' + G.wave + '/' + G.maxWaves + '  SCORE:' + G.score, W - 8, 12);
+      if (G.state === 'boss') ctx.fillText('BOSS: SHAWN  K:' + G.kills + '  ' + G.score, W - 6, 13);
+      else ctx.fillText('W' + G.wave + '/' + G.maxWaves + '  K:' + G.kills + '  ' + G.score, W - 6, 13);
 
-      // Flash overlay
+      // Flash
       if (G.flash > 0) {
         ctx.fillStyle = `rgba(255,255,255,${G.flash / 30 * 0.3})`;
         ctx.fillRect(0, 0, W, H);
       }
 
-      // Win/Lose screen
+      // Win/Lose
       if (G.state === 'win') {
-        ctx.fillStyle = 'rgba(0,0,0,0.7)';
+        ctx.fillStyle = 'rgba(0,0,0,0.75)';
         ctx.fillRect(0, 0, W, H);
         ctx.fillStyle = '#fbbf24';
-        ctx.font = 'bold 20px monospace';
+        ctx.font = 'bold 22px monospace';
         ctx.textAlign = 'center';
-        ctx.fillText('TAD DEFEATS SHAWN!', W / 2, H / 2 - 20);
+        ctx.fillText('TAD DEFEATS SHAWN!', W / 2, H / 2 - 30);
         ctx.fillStyle = '#eab308';
-        ctx.font = '12px monospace';
-        ctx.fillText('SCORE: ' + G.score, W / 2, H / 2 + 10);
+        ctx.font = '14px monospace';
+        ctx.fillText('SCORE: ' + G.score + '  KILLS: ' + G.kills, W / 2, H / 2);
+        ctx.fillStyle = '#a855f7';
+        ctx.font = '10px monospace';
+        ctx.fillText('BEST: ' + highScore, W / 2, H / 2 + 20);
         ctx.fillStyle = '#666';
         ctx.font = '10px monospace';
-        ctx.fillText('Press R to play again', W / 2, H / 2 + 35);
+        ctx.fillText('Press R to play again', W / 2, H / 2 + 45);
       }
       if (G.state === 'lose') {
-        ctx.fillStyle = 'rgba(0,0,0,0.7)';
+        ctx.fillStyle = 'rgba(0,0,0,0.75)';
         ctx.fillRect(0, 0, W, H);
         ctx.fillStyle = '#ef4444';
-        ctx.font = 'bold 20px monospace';
+        ctx.font = 'bold 22px monospace';
         ctx.textAlign = 'center';
-        ctx.fillText('SHAWN WINS...', W / 2, H / 2 - 20);
+        ctx.fillText('SHAWN WINS...', W / 2, H / 2 - 30);
+        ctx.fillStyle = '#888';
+        ctx.font = '12px monospace';
+        ctx.fillText('SCORE: ' + G.score + '  WAVE: ' + G.wave + '  KILLS: ' + G.kills, W / 2, H / 2);
+        ctx.fillStyle = '#a855f7';
+        ctx.font = '10px monospace';
+        ctx.fillText('BEST: ' + highScore, W / 2, H / 2 + 18);
         ctx.fillStyle = '#666';
         ctx.font = '10px monospace';
-        ctx.fillText('Press R to try again', W / 2, H / 2 + 15);
+        ctx.fillText('Press R to try again', W / 2, H / 2 + 42);
       }
 
-      // Spawn wave text
-      if (G.spawnTimer > 20) {
+      // Wave announcement
+      if (G.spawnTimer > 25) {
         ctx.fillStyle = '#eab308';
-        ctx.font = 'bold 14px monospace';
+        ctx.font = 'bold 16px monospace';
         ctx.textAlign = 'center';
         ctx.fillText('WAVE ' + G.wave, W / 2, H / 2);
       }
@@ -5651,33 +5935,20 @@ const OdinQuestGame = () => {
     };
 
     const restart = () => {
-      G.state = 'playing';
-      G.tad = { x: W / 2, y: H / 2, hp: 5, maxHp: 5, dir: 0, attacking: 0, iframes: 0, speed: 2.5 };
-      G.enemies = [];
-      G.projectiles = [];
-      G.boss = null;
-      G.wave = 1;
-      G.spawnTimer = 0;
-      G.particles = [];
-      G.score = 0;
-      G.flash = 0;
+      G.state = 'playing'; G.frame = 0;
+      G.tad = { x: W / 2, y: H / 2, hp: 6, maxHp: 6, dir: 1, attacking: 0, iframes: 0, speed: 2.5, swordLevel: 0, dashCd: 0, dashing: 0, shieldTimer: 0, speedTimer: 0 };
+      G.enemies = []; G.projectiles = []; G.pickups = []; G.boss = null;
+      G.wave = 1; G.spawnTimer = 0; G.particles = []; G.floatingText = [];
+      G.score = 0; G.combo = 0; G.comboTimer = 0; G.kills = 0; G.flash = 0;
       spawnWave();
     };
 
-    const loop = () => {
-      update();
-      draw();
-      gameRef.current = requestAnimationFrame(loop);
-    };
+    const loop = () => { update(); draw(); gameRef.current = requestAnimationFrame(loop); };
 
     const handleKeyDown = (e) => {
-      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
-        e.preventDefault();
-      }
+      if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' ','Shift','e','E'].includes(e.key)) e.preventDefault();
       keysRef.current[e.key] = true;
-      if (e.key === 'r' || e.key === 'R') {
-        if (G.state === 'win' || G.state === 'lose') restart();
-      }
+      if ((e.key === 'r' || e.key === 'R') && (G.state === 'win' || G.state === 'lose')) restart();
     };
     const handleKeyUp = (e) => { keysRef.current[e.key] = false; };
 
@@ -5694,13 +5965,10 @@ const OdinQuestGame = () => {
 
   return (
     <div className="mt-4">
-      <canvas
-        ref={canvasRef}
-        className="border border-gray-700 mx-auto block"
-        style={{ width: 400, height: 300, imageRendering: 'pixelated' }}
-      />
-      <div className="text-[10px] text-gray-600 font-mono text-center mt-2">
-        WASD/Arrows: Move &middot; Space: Attack &middot; R: Restart
+      <canvas ref={canvasRef} className="border border-gray-700 mx-auto block" style={{ width: 440, height: 320, imageRendering: 'pixelated' }} />
+      <div className="text-[10px] text-gray-600 font-mono text-center mt-2 space-y-0.5">
+        <div>WASD/Arrows: Move &middot; Space: Attack &middot; Shift/E: Dash &middot; R: Restart</div>
+        <div>Defeat 5 waves + Boss Shawn &middot; Collect power-ups &middot; Chain kills for combos</div>
       </div>
     </div>
   );
