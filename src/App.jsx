@@ -163,7 +163,7 @@ const CATALYSTS_DATA = [
     enrollment: 0,
     nctId: 'NCT05386264',
     avoid: false,
-    prob: 0.9286,
+    prob: 0.9554,
     tier: 'TIER_1',
     taRisk: 'MOD_RISK',
     action: 'STANDARD_POSITION',
@@ -173,11 +173,14 @@ const CATALYSTS_DATA = [
           'experienced_sponsor': 0.9387,
           'orphan': 0.1469,
           'priority_review': 0.615,
+          'primary_endpoint_met': 0.45,
           'ta_mod_risk': -0.1809,
-          'me_too': -0.35
+          'me_too': -0.35,
+          'pdufa_extension': -0.15,
+          'fda_no_adcom_required': 0.2
     },
-    totalAdj: 1.169697,
-    logit: 2.5654,
+    totalAdj: 1.669697,
+    logit: 3.0654,
     weekend: true,
   },
   {
