@@ -51,7 +51,7 @@ import {
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
-// CATALYST DATA — ODIN v10.67 Round 3 (46 parameters)
+// CATALYST DATA — ODIN v10.68 Round 4 (51 parameters)
 // ═══════════════════════════════════════════════════
 const CATALYSTS_DATA = [
   {
@@ -352,12 +352,12 @@ const CATALYSTS_DATA = [
     designations: ['Orphan Drug', 'Breakthrough Therapy'],
     enrollment: 0,
     nctId: '',
-    prob: 0.6593,
-    tier: 'TIER_3',
+    prob: 0.3573,
+    tier: 'TIER_4',
     taRisk: 'HIGH_RISK',
-    action: 'SMALL_POSITION_EARLY_EXIT',
-    exit: 'T-5 to T-7',
-    runner: '20%',
+    action: 'NO_POSITION',
+    exit: 'N/A',
+    runner: '0%',
     avoid: false,
     weekend: false,
     signals: {
@@ -369,10 +369,15 @@ const CATALYSTS_DATA = [
           'surrogate_only': -0.45,
           'first_in_class': 0.45,
           'unmet_need': 0.55,
-          'designation_stack': 0.35
+          'designation_stack': 0.35,
+          'accelerated_approval_non_onc': -0.30,
+          'surrogate_clinical_disconnect': -0.35,
+          'designation_surrogate_penalty': -0.25,
+          'repurposed_failed_compound': -0.20,
+          'early_action_risk': -0.15
     },
-    totalAdj: -0.735503,
-    logit: 0.6602,
+    totalAdj: -1.985503,
+    logit: -0.5898,
   },
   {
     id: 'rckt-kresladi-2026-03-28',
@@ -2096,7 +2101,7 @@ const GLOSSARY = {
   TIER_4: 'Low conviction tier (<60% probability). Significant risk factors including inexperienced sponsors, high-risk TAs, or missing designations.',
   'Therapeutic Area': 'The medical field a drug targets (e.g., Oncology, CNS, Immunology). Each TA has different historical FDA approval rates.',
   'Cash Runway': 'Estimated months of cash remaining based on current burn rate. Companies with <12 months may need to raise capital.',
-  'ODIN Score': 'Machine-learning probability score from ODIN v10.67, trained on 486 historical FDA decisions using 46 parameters including CMC/manufacturing risk, endpoint quality, competitive landscape, interaction terms, FDA division risk, and social sentiment. Backtest accuracy: 90.3%.',
+  'ODIN Score': 'Machine-learning probability score from ODIN v10.68, trained on 486 historical FDA decisions using 51 parameters including CMC/manufacturing risk, endpoint quality, competitive landscape, interaction terms, FDA division risk, and social sentiment.',
 };
 
 const GlossaryTip = ({ term, children }) => {
@@ -2120,7 +2125,7 @@ const GlossaryTip = ({ term, children }) => {
 
 // ── ODIN Backtest Performance Data ──
 const ODIN_PERFORMANCE = {
-  overall: { total: 486, correct: 439, accuracy: 90.3 },
+  overall: { total: 487, correct: 440, accuracy: 90.3 },
   byTier: [
     { tier: 'TIER_1', total: 201, correct: 197, accuracy: 98.0, label: 'Tier 1 (>85%)' },
     { tier: 'TIER_2', total: 121, correct: 108, accuracy: 89.3, label: 'Tier 2 (70-85%)' },
@@ -3862,11 +3867,11 @@ const IntelView = ({ catalysts }) => {
       <div className="bg-gray-900 border border-gray-700 p-4">
         <div className="flex items-center gap-2 mb-4">
           <Brain size={14} className="text-blue-400" />
-          <div className="text-xs text-gray-400 font-mono uppercase">ODIN v10.66 ENGINE STATS</div>
+          <div className="text-xs text-gray-400 font-mono uppercase">ODIN v10.68 ENGINE STATS</div>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           {[
-            { label: 'Parameters', value: '33' },
+            { label: 'Parameters', value: '46' },
             { label: 'Base Probability', value: '83.4%' },
             { label: 'Backtest Events', value: '486' },
             { label: 'Architecture', value: 'GPU Logistic' },
@@ -3887,23 +3892,7 @@ const IntelView = ({ catalysts }) => {
           <span className="text-[10px] text-gray-600 font-mono ml-auto">486 historical FDA decisions</span>
         </div>
 
-        {/* Overall accuracy */}
-        <div className="bg-gradient-to-r from-green-950 to-gray-800 border border-green-800 p-4 mb-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-3xl font-bold text-green-400 font-mono">{ODIN_PERFORMANCE.overall.accuracy}%</div>
-              <div className="text-xs text-gray-400">Overall Accuracy</div>
-            </div>
-            <div className="text-right">
-              <div className="text-sm text-gray-300 font-mono">{ODIN_PERFORMANCE.overall.correct} / {ODIN_PERFORMANCE.overall.total}</div>
-              <div className="text-xs text-gray-500">Correct predictions</div>
-            </div>
-            <div className="text-right">
-              <div className="text-sm text-green-400 font-mono">{ODIN_PERFORMANCE.recentStreak.correct}/{ODIN_PERFORMANCE.recentStreak.total}</div>
-              <div className="text-xs text-gray-500">{ODIN_PERFORMANCE.recentStreak.period}</div>
-            </div>
-          </div>
-        </div>
+        {/* Per-tier and per-TA breakdowns below */}
 
         {/* Accuracy by Tier */}
         <div className="mb-4">
@@ -3959,6 +3948,133 @@ const IntelView = ({ catalysts }) => {
 // ═══════════════════════════════════════════════════
 // MAIN APP
 // ═══════════════════════════════════════════════════
+// ── About ODIN View ──────────────────────────────
+// ═══════════════════════════════════════════════════
+const AboutView = () => {
+  const evolution = [
+    { version: 'v10.66 Base', params: 34, desc: 'Core logistic regression model trained via GPU on 486 historical PDUFA decisions (2018-2025). Captures regulatory designations, sponsor experience, therapeutic area risk, and application type signals.' },
+    { version: 'Round 1: CMC Forensics', params: 38, desc: 'Deep-dive into manufacturing and chemistry signals. Added Form 483 inspection flags, EMA CMC warnings, PDUFA extensions for chemistry issues, and Section 22 pediatric PK requests. Identified that CMC problems are the #1 hidden cause of CRLs for small-cap biotechs.' },
+    { version: 'Round 2: Endpoint + Landscape', params: 42, desc: 'Forensic analysis of remaining backtest errors revealed endpoint quality and competitive dynamics as key blind spots. Added primary endpoint miss history, surrogate-only endpoints, single-arm pivotal risk, first-in-class advantage, unmet medical need, and me-too competitive penalty.' },
+    { version: 'Round 3: Interactions + Division + Social', params: 46, desc: 'Non-linear interaction terms for compounding risk (inexperienced sponsors with manufacturing problems). FDA division-level risk adjustments for historically favorable vs. stringent review divisions. LunarCrush social sentiment integration for real-time market signal on high-conviction catalysts.' },
+    { version: 'Round 4: Post-Mortem Driven', params: 51, desc: 'Five new signals derived from IRON/Bitopertin CRL post-mortem (Feb 13, 2026). Accelerated approval pathway risk for non-oncology filings, surrogate-clinical endpoint disconnect quantification, designation-surrogate interaction penalty, repurposed failed compound history, and early FDA action risk detection. First real-world CRL validation: ODIN surrogate_only signal exactly matched FDA rationale.' },
+  ];
+
+  const signalCategories = [
+    { name: 'Regulatory Designations', signals: ['Priority Review', 'Breakthrough Therapy', 'Orphan Drug', 'Fast Track', 'Accelerated Approval'], color: '#22c55e' },
+    { name: 'Sponsor & Application', signals: ['Experienced vs. Inexperienced Sponsor', 'NDA vs. sNDA/sBLA', 'Prior CRL History', 'Class 1 Resubmission'], color: '#3b82f6' },
+    { name: 'Therapeutic Area Risk', signals: ['TA Approval Rate (Low/Mod/High)', 'Novice + High-Risk TA Interaction', 'Indication-Specific Adjustments'], color: '#eab308' },
+    { name: 'CMC / Manufacturing', signals: ['Manufacturing Risk Flags', 'Form 483 Observations', 'EMA CMC Warnings', 'PDUFA Extensions (CMC)'], color: '#f97316' },
+    { name: 'Endpoint Quality', signals: ['Primary Endpoint Miss History', 'Surrogate-Only Endpoints', 'Single-Arm Pivotal Design', 'Small Pivotal N', 'Surrogate-Clinical Disconnect'], color: '#a855f7' },
+    { name: 'Competitive Landscape', signals: ['First-in-Class Advantage', 'Unmet Medical Need', 'Me-Too Penalty', 'Designation Stacking'], color: '#06b6d4' },
+    { name: 'Advanced Signals', signals: ['Interaction Terms (Sponsor x CMC)', 'FDA Division Risk', 'Social Sentiment (LunarCrush)', 'Accelerated Approval Non-Onc Risk', 'Designation-Surrogate Penalty', 'Repurposed Failed Compound', 'Early Action Risk'], color: '#ec4899' },
+  ];
+
+  return (
+    <div className="space-y-6">
+      {/* Hero */}
+      <div className="bg-gray-900 border border-gray-700 p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <Beaker size={20} className="text-blue-400" />
+          <h2 className="text-lg font-bold font-mono text-white">ABOUT ODIN</h2>
+        </div>
+        <p className="text-sm text-gray-300 leading-relaxed mb-4">
+          ODIN is a machine-learning scoring engine purpose-built for one job: quantifying FDA approval probability for upcoming PDUFA catalyst events. It exists because retail biotech investors face the same binary risk events as institutional desks, but without systematic tools to assess them.
+        </p>
+        <p className="text-sm text-gray-400 leading-relaxed">
+          Every PDUFA date is a coin flip for most investors. ODIN turns that coin flip into a weighted probability by analyzing 46 distinct signals across regulatory history, manufacturing quality, clinical endpoint strength, competitive dynamics, and real-time market sentiment. The goal is simple: give you the same signal-based framework the big desks use, in a format you can actually act on.
+        </p>
+      </div>
+
+      {/* How It Works */}
+      <div className="bg-gray-900 border border-gray-700 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Brain size={16} className="text-blue-400" />
+          <h3 className="text-sm font-bold font-mono text-gray-300 uppercase">How It Works</h3>
+        </div>
+        <div className="space-y-4 text-sm text-gray-400 leading-relaxed">
+          <p>
+            At its core, ODIN is a <span className="text-blue-400 font-mono">Python logistic regression model</span> trained on 486 historical FDA PDUFA decisions from 2018 through 2025. The model was developed using scikit-learn and optimized via GPU-accelerated hyperparameter search across the full parameter space.
+          </p>
+          <p>
+            For each upcoming catalyst, ODIN starts with a base probability derived from the overall historical approval rate, then adds or subtracts weighted signals based on the specific characteristics of that drug, company, and regulatory context. The raw logit score passes through a sigmoid function to produce a final probability between 0% and 100%.
+          </p>
+          <div className="bg-gray-800 border border-gray-700 p-4 font-mono text-xs text-gray-300">
+            <div className="text-gray-500 mb-2">// ODIN scoring formula</div>
+            <div>logit = base_logit + &Sigma;(signal_weight<sub>i</sub>)</div>
+            <div>probability = 1 / (1 + e<sup>-logit</sup>)</div>
+            <div className="mt-2 text-gray-500">// 46 signal weights across 7 categories</div>
+            <div className="text-gray-500">// Tier assignment: T1 (&gt;85%), T2 (70-85%), T3 (60-70%), T4 (&lt;60%)</div>
+          </div>
+          <p>
+            Catalysts are then assigned to conviction tiers that drive position sizing and risk management. Tier 1 events represent the highest-conviction opportunities. Tier 4 events carry enough red flags that ODIN recommends no position.
+          </p>
+        </div>
+      </div>
+
+      {/* Signal Categories */}
+      <div className="bg-gray-900 border border-gray-700 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Target size={16} className="text-blue-400" />
+          <h3 className="text-sm font-bold font-mono text-gray-300 uppercase">51 Parameters Across 7 Signal Categories</h3>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {signalCategories.map((cat) => (
+            <div key={cat.name} className="bg-gray-800 border border-gray-700 p-4">
+              <div className="text-xs font-bold font-mono mb-2" style={{ color: cat.color }}>{cat.name}</div>
+              <div className="space-y-1">
+                {cat.signals.map((s) => (
+                  <div key={s} className="text-xs text-gray-400 flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 flex-shrink-0" style={{ backgroundColor: cat.color, opacity: 0.6 }} />
+                    {s}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Evolution Timeline */}
+      <div className="bg-gray-900 border border-gray-700 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <TrendingUp size={16} className="text-blue-400" />
+          <h3 className="text-sm font-bold font-mono text-gray-300 uppercase">How ODIN Evolved</h3>
+        </div>
+        <div className="space-y-4">
+          {evolution.map((step, i) => (
+            <div key={step.version} className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className={`w-8 h-8 flex items-center justify-center text-xs font-bold font-mono border ${i === evolution.length - 1 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-gray-800 border-gray-600 text-gray-400'}`}>
+                  {step.params}
+                </div>
+                {i < evolution.length - 1 && <div className="w-px flex-1 bg-gray-700 mt-1" />}
+              </div>
+              <div className="pb-4">
+                <div className="text-sm font-bold text-white font-mono">{step.version}</div>
+                <div className="text-xs text-gray-500 font-mono mb-1">{step.params} parameters</div>
+                <div className="text-xs text-gray-400 leading-relaxed">{step.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* What It Is Not */}
+      <div className="bg-gray-900 border border-yellow-800/50 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <AlertTriangle size={16} className="text-yellow-500" />
+          <h3 className="text-sm font-bold font-mono text-yellow-500 uppercase">What ODIN Is Not</h3>
+        </div>
+        <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
+          <p>ODIN is a statistical tool, not a crystal ball. It quantifies historical patterns — it does not predict the future. FDA decisions are influenced by factors no model can fully capture: advisory committee dynamics, post-submission safety signals, political considerations, and manufacturing inspections that happen behind closed doors.</p>
+          <p>ODIN does not provide financial advice. Probability scores are statistical estimates based on publicly available historical data. They are not recommendations to buy, sell, or hold any security. Past approval rates do not guarantee future results. Always consult a qualified financial advisor before making investment decisions.</p>
+          <p>Binary catalyst events can result in extreme price volatility regardless of what any model predicts. Never invest money you cannot afford to lose.</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // ── FDA Disclaimer Modal ──────────────────────────
 
 // ── Heatmap View (Finviz-style treemap) ──────────
@@ -4504,10 +4620,529 @@ const useWatchlist = () => {
   return { watchlist, toggle, isWatched };
 };
 
+// ── NES Arcade RPG: ODIN QUEST ────────────────────
+const OdinQuestGame = () => {
+  const canvasRef = useRef(null);
+  const gameRef = useRef(null);
+  const keysRef = useRef({});
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = 400, H = 300;
+    canvas.width = W;
+    canvas.height = H;
+
+    // Pixel art drawing helpers
+    const drawPixelChar = (x, y, color, isLarge) => {
+      const s = isLarge ? 4 : 3;
+      ctx.fillStyle = color;
+      // Head
+      ctx.fillRect(x - s, y - s * 5, s * 2, s * 2);
+      // Body
+      ctx.fillRect(x - s, y - s * 3, s * 2, s * 3);
+      // Legs
+      ctx.fillRect(x - s, y, s, s * 2);
+      ctx.fillRect(x, y, s, s * 2);
+      // Arms
+      ctx.fillRect(x - s * 2, y - s * 3, s, s * 2);
+      ctx.fillRect(x + s, y - s * 3, s, s * 2);
+      // Eyes
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(x - s + 1, y - s * 4.5, 2, 2);
+      ctx.fillRect(x + 1, y - s * 4.5, 2, 2);
+    };
+
+    const drawSword = (x, y, dir, attacking) => {
+      ctx.fillStyle = '#c0c0c0';
+      if (attacking) {
+        const len = 18;
+        if (dir === 0) ctx.fillRect(x - 1, y - 25 - len, 3, len);
+        else if (dir === 1) ctx.fillRect(x - 1, y + 6, 3, len);
+        else if (dir === 2) ctx.fillRect(x - 15 - len, y - 5, len, 3);
+        else ctx.fillRect(x + 10, y - 5, len, 3);
+        ctx.fillStyle = '#ffd700';
+        if (dir === 0) ctx.fillRect(x - 3, y - 25, 7, 3);
+        else if (dir === 1) ctx.fillRect(x - 3, y + 4, 7, 3);
+        else if (dir === 2) ctx.fillRect(x - 15, y - 7, 3, 7);
+        else ctx.fillRect(x + 10, y - 7, 3, 7);
+      }
+    };
+
+    const drawSlime = (x, y, hp, maxHp) => {
+      ctx.fillStyle = '#22c55e';
+      ctx.beginPath();
+      ctx.ellipse(x, y, 8, 6, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#16a34a';
+      ctx.beginPath();
+      ctx.ellipse(x, y + 2, 9, 4, 0, 0, Math.PI);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(x - 4, y - 3, 3, 3);
+      ctx.fillRect(x + 1, y - 3, 3, 3);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(x - 3, y - 2, 2, 2);
+      ctx.fillRect(x + 2, y - 2, 2, 2);
+      // HP bar
+      if (hp < maxHp) {
+        ctx.fillStyle = '#333';
+        ctx.fillRect(x - 10, y - 14, 20, 3);
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(x - 10, y - 14, 20 * (hp / maxHp), 3);
+      }
+    };
+
+    const drawBoss = (x, y, hp, maxHp) => {
+      // Shawn - red wizard
+      const s = 5;
+      // Hat
+      ctx.fillStyle = '#7c2d12';
+      ctx.beginPath();
+      ctx.moveTo(x, y - s * 8);
+      ctx.lineTo(x - s * 2.5, y - s * 4);
+      ctx.lineTo(x + s * 2.5, y - s * 4);
+      ctx.fill();
+      // Head
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(x - s * 1.5, y - s * 4, s * 3, s * 2.5);
+      // Body (robe)
+      ctx.fillStyle = '#991b1b';
+      ctx.fillRect(x - s * 2, y - s * 1.5, s * 4, s * 4);
+      // Arms
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(x - s * 3, y - s * 1.5, s, s * 3);
+      ctx.fillRect(x + s * 2, y - s * 1.5, s, s * 3);
+      // Eyes
+      ctx.fillStyle = '#fbbf24';
+      ctx.fillRect(x - s + 1, y - s * 3.2, 3, 3);
+      ctx.fillRect(x + s - 3, y - s * 3.2, 3, 3);
+      // Staff
+      ctx.fillStyle = '#92400e';
+      ctx.fillRect(x + s * 3, y - s * 5, 3, s * 7);
+      ctx.fillStyle = '#a855f7';
+      ctx.beginPath();
+      ctx.arc(x + s * 3 + 1, y - s * 5, 5, 0, Math.PI * 2);
+      ctx.fill();
+      // HP bar
+      ctx.fillStyle = '#333';
+      ctx.fillRect(x - 25, y - s * 9.5, 50, 5);
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(x - 25, y - s * 9.5, 50 * (hp / maxHp), 5);
+      // Name
+      ctx.fillStyle = '#ef4444';
+      ctx.font = '8px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('SHAWN', x, y - s * 10);
+    };
+
+    const drawProjectile = (x, y) => {
+      ctx.fillStyle = '#a855f7';
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#c084fc';
+      ctx.beginPath();
+      ctx.arc(x, y, 2, 0, Math.PI * 2);
+      ctx.fill();
+    };
+
+    const drawTile = (x, y) => {
+      ctx.fillStyle = '#1a1a2e';
+      ctx.fillRect(x, y, 20, 20);
+      ctx.strokeStyle = '#16213e';
+      ctx.strokeRect(x, y, 20, 20);
+    };
+
+    // Game state
+    const G = {
+      state: 'playing', // playing, boss, win, lose
+      tad: { x: W / 2, y: H / 2, hp: 5, maxHp: 5, dir: 0, attacking: 0, iframes: 0, speed: 2.5 },
+      enemies: [],
+      projectiles: [],
+      boss: null,
+      wave: 1,
+      maxWaves: 3,
+      spawnTimer: 0,
+      particles: [],
+      score: 0,
+      flash: 0,
+      shakeDur: 0,
+      shakeX: 0,
+      shakeY: 0,
+    };
+
+    const spawnWave = () => {
+      const count = 3 + G.wave * 2;
+      for (let i = 0; i < count; i++) {
+        const side = Math.floor(Math.random() * 4);
+        let ex, ey;
+        if (side === 0) { ex = Math.random() * W; ey = -10; }
+        else if (side === 1) { ex = Math.random() * W; ey = H + 10; }
+        else if (side === 2) { ex = -10; ey = Math.random() * H; }
+        else { ex = W + 10; ey = Math.random() * H; }
+        G.enemies.push({ x: ex, y: ey, hp: 1 + Math.floor(G.wave / 2), maxHp: 1 + Math.floor(G.wave / 2), speed: 0.5 + Math.random() * 0.5 });
+      }
+    };
+
+    const spawnBoss = () => {
+      G.state = 'boss';
+      G.boss = { x: W / 2, y: 60, hp: 15, maxHp: 15, shootTimer: 0, moveTimer: 0, targetX: W / 2, phase: 1 };
+      G.flash = 30;
+    };
+
+    const addParticles = (x, y, color, count) => {
+      for (let i = 0; i < count; i++) {
+        G.particles.push({
+          x, y,
+          vx: (Math.random() - 0.5) * 4,
+          vy: (Math.random() - 0.5) * 4,
+          life: 15 + Math.random() * 15,
+          color,
+        });
+      }
+    };
+
+    const checkSwordHit = (target, range) => {
+      const t = G.tad;
+      let hx = t.x, hy = t.y;
+      if (t.dir === 0) hy -= range;
+      else if (t.dir === 1) hy += range;
+      else if (t.dir === 2) hx -= range;
+      else hx += range;
+      const dx = target.x - hx;
+      const dy = target.y - hy;
+      return Math.sqrt(dx * dx + dy * dy) < range;
+    };
+
+    spawnWave();
+
+    const update = () => {
+      const keys = keysRef.current;
+      const t = G.tad;
+
+      if (G.state === 'win' || G.state === 'lose') return;
+
+      // Movement
+      let mx = 0, my = 0;
+      if (keys['ArrowUp'] || keys['w'] || keys['W']) { my = -1; t.dir = 0; }
+      if (keys['ArrowDown'] || keys['s'] || keys['S']) { my = 1; t.dir = 1; }
+      if (keys['ArrowLeft'] || keys['a'] || keys['A']) { mx = -1; t.dir = 2; }
+      if (keys['ArrowRight'] || keys['d'] || keys['D']) { mx = 1; t.dir = 3; }
+      if (mx && my) { mx *= 0.707; my *= 0.707; }
+      t.x = Math.max(10, Math.min(W - 10, t.x + mx * t.speed));
+      t.y = Math.max(20, Math.min(H - 10, t.y + my * t.speed));
+
+      // Attack
+      if (keys[' '] && t.attacking <= 0) {
+        t.attacking = 12;
+        // Check hits on enemies
+        G.enemies = G.enemies.filter(e => {
+          if (checkSwordHit(e, 25)) {
+            e.hp--;
+            addParticles(e.x, e.y, '#22c55e', 5);
+            G.shakeDur = 3;
+            if (e.hp <= 0) {
+              addParticles(e.x, e.y, '#fbbf24', 10);
+              G.score += 10;
+              return false;
+            }
+          }
+          return true;
+        });
+        // Check hit on boss
+        if (G.boss && checkSwordHit(G.boss, 30)) {
+          G.boss.hp--;
+          addParticles(G.boss.x, G.boss.y, '#ef4444', 8);
+          G.shakeDur = 5;
+          if (G.boss.hp <= 0) {
+            G.state = 'win';
+            addParticles(G.boss.x, G.boss.y, '#fbbf24', 30);
+            G.score += 100;
+          }
+        }
+      }
+      if (t.attacking > 0) t.attacking--;
+      if (t.iframes > 0) t.iframes--;
+
+      // Enemy AI
+      G.enemies.forEach(e => {
+        const dx = t.x - e.x;
+        const dy = t.y - e.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > 1) {
+          e.x += (dx / dist) * e.speed;
+          e.y += (dy / dist) * e.speed;
+        }
+        // Collision with Tad
+        if (dist < 12 && t.iframes <= 0) {
+          t.hp--;
+          t.iframes = 45;
+          G.shakeDur = 8;
+          addParticles(t.x, t.y, '#3b82f6', 8);
+          if (t.hp <= 0) G.state = 'lose';
+        }
+      });
+
+      // Wave management
+      if (G.state === 'playing' && G.enemies.length === 0) {
+        if (G.wave < G.maxWaves) {
+          G.wave++;
+          G.spawnTimer = 40;
+        } else if (!G.boss) {
+          spawnBoss();
+        }
+      }
+      if (G.spawnTimer > 0) {
+        G.spawnTimer--;
+        if (G.spawnTimer === 0) spawnWave();
+      }
+
+      // Boss AI
+      if (G.boss && G.boss.hp > 0) {
+        const b = G.boss;
+        b.shootTimer++;
+        b.moveTimer++;
+
+        // Move side to side
+        if (b.moveTimer > 60) {
+          b.targetX = 50 + Math.random() * (W - 100);
+          b.moveTimer = 0;
+        }
+        b.x += (b.targetX - b.x) * 0.03;
+
+        // Shoot projectiles
+        const shootRate = b.hp < 8 ? 25 : 40;
+        if (b.shootTimer > shootRate) {
+          b.shootTimer = 0;
+          const angle = Math.atan2(t.y - b.y, t.x - b.x);
+          G.projectiles.push({ x: b.x, y: b.y + 15, vx: Math.cos(angle) * 2.5, vy: Math.sin(angle) * 2.5 });
+          if (b.hp < 8) {
+            G.projectiles.push({ x: b.x, y: b.y + 15, vx: Math.cos(angle + 0.3) * 2.2, vy: Math.sin(angle + 0.3) * 2.2 });
+            G.projectiles.push({ x: b.x, y: b.y + 15, vx: Math.cos(angle - 0.3) * 2.2, vy: Math.sin(angle - 0.3) * 2.2 });
+          }
+        }
+
+        // Boss collision
+        const bdx = t.x - b.x;
+        const bdy = t.y - b.y;
+        if (Math.sqrt(bdx * bdx + bdy * bdy) < 20 && t.iframes <= 0) {
+          t.hp--;
+          t.iframes = 45;
+          G.shakeDur = 8;
+          if (t.hp <= 0) G.state = 'lose';
+        }
+      }
+
+      // Projectiles
+      G.projectiles = G.projectiles.filter(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < -10 || p.x > W + 10 || p.y < -10 || p.y > H + 10) return false;
+        const dx = t.x - p.x;
+        const dy = t.y - p.y;
+        if (Math.sqrt(dx * dx + dy * dy) < 10 && t.iframes <= 0) {
+          t.hp--;
+          t.iframes = 45;
+          G.shakeDur = 8;
+          addParticles(t.x, t.y, '#a855f7', 6);
+          if (t.hp <= 0) G.state = 'lose';
+          return false;
+        }
+        return true;
+      });
+
+      // Particles
+      G.particles = G.particles.filter(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.95;
+        p.vy *= 0.95;
+        p.life--;
+        return p.life > 0;
+      });
+
+      if (G.flash > 0) G.flash--;
+      if (G.shakeDur > 0) {
+        G.shakeDur--;
+        G.shakeX = (Math.random() - 0.5) * 4;
+        G.shakeY = (Math.random() - 0.5) * 4;
+      } else {
+        G.shakeX = 0;
+        G.shakeY = 0;
+      }
+    };
+
+    const draw = () => {
+      ctx.save();
+      ctx.translate(G.shakeX, G.shakeY);
+
+      // Background tiles
+      for (let x = 0; x < W; x += 20) {
+        for (let y = 0; y < H; y += 20) {
+          drawTile(x, y);
+        }
+      }
+
+      // Particles
+      G.particles.forEach(p => {
+        ctx.globalAlpha = p.life / 30;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x - 2, p.y - 2, 4, 4);
+      });
+      ctx.globalAlpha = 1;
+
+      // Enemies
+      G.enemies.forEach(e => drawSlime(e.x, e.y, e.hp, e.maxHp));
+
+      // Boss
+      if (G.boss && G.boss.hp > 0) drawBoss(G.boss.x, G.boss.y, G.boss.hp, G.boss.maxHp);
+
+      // Projectiles
+      G.projectiles.forEach(p => drawProjectile(p.x, p.y));
+
+      // Tad
+      const t = G.tad;
+      if (t.iframes > 0 && Math.floor(t.iframes / 3) % 2 === 0) {
+        // Blink during iframes
+      } else {
+        drawPixelChar(t.x, t.y, '#3b82f6', false);
+        drawSword(t.x, t.y, t.dir, t.attacking > 6);
+      }
+
+      // HUD
+      ctx.fillStyle = '#0a0a0a';
+      ctx.fillRect(0, 0, W, 18);
+      ctx.fillStyle = '#333';
+      ctx.fillRect(0, 17, W, 1);
+
+      // HP Hearts
+      for (let i = 0; i < t.maxHp; i++) {
+        ctx.fillStyle = i < t.hp ? '#ef4444' : '#333';
+        ctx.font = '12px monospace';
+        ctx.textAlign = 'left';
+        ctx.fillText('\u2665', 6 + i * 14, 13);
+      }
+
+      // TAD label
+      ctx.fillStyle = '#3b82f6';
+      ctx.font = 'bold 8px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('TAD', 80, 12);
+
+      // Wave / Score
+      ctx.fillStyle = '#eab308';
+      ctx.font = 'bold 9px monospace';
+      ctx.textAlign = 'right';
+      if (G.state === 'boss') ctx.fillText('BOSS: SHAWN', W - 8, 12);
+      else ctx.fillText('WAVE ' + G.wave + '/' + G.maxWaves + '  SCORE:' + G.score, W - 8, 12);
+
+      // Flash overlay
+      if (G.flash > 0) {
+        ctx.fillStyle = `rgba(255,255,255,${G.flash / 30 * 0.3})`;
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      // Win/Lose screen
+      if (G.state === 'win') {
+        ctx.fillStyle = 'rgba(0,0,0,0.7)';
+        ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = '#fbbf24';
+        ctx.font = 'bold 20px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('TAD DEFEATS SHAWN!', W / 2, H / 2 - 20);
+        ctx.fillStyle = '#eab308';
+        ctx.font = '12px monospace';
+        ctx.fillText('SCORE: ' + G.score, W / 2, H / 2 + 10);
+        ctx.fillStyle = '#666';
+        ctx.font = '10px monospace';
+        ctx.fillText('Press R to play again', W / 2, H / 2 + 35);
+      }
+      if (G.state === 'lose') {
+        ctx.fillStyle = 'rgba(0,0,0,0.7)';
+        ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = '#ef4444';
+        ctx.font = 'bold 20px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('SHAWN WINS...', W / 2, H / 2 - 20);
+        ctx.fillStyle = '#666';
+        ctx.font = '10px monospace';
+        ctx.fillText('Press R to try again', W / 2, H / 2 + 15);
+      }
+
+      // Spawn wave text
+      if (G.spawnTimer > 20) {
+        ctx.fillStyle = '#eab308';
+        ctx.font = 'bold 14px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('WAVE ' + G.wave, W / 2, H / 2);
+      }
+
+      ctx.restore();
+    };
+
+    const restart = () => {
+      G.state = 'playing';
+      G.tad = { x: W / 2, y: H / 2, hp: 5, maxHp: 5, dir: 0, attacking: 0, iframes: 0, speed: 2.5 };
+      G.enemies = [];
+      G.projectiles = [];
+      G.boss = null;
+      G.wave = 1;
+      G.spawnTimer = 0;
+      G.particles = [];
+      G.score = 0;
+      G.flash = 0;
+      spawnWave();
+    };
+
+    const loop = () => {
+      update();
+      draw();
+      gameRef.current = requestAnimationFrame(loop);
+    };
+
+    const handleKeyDown = (e) => {
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
+        e.preventDefault();
+      }
+      keysRef.current[e.key] = true;
+      if (e.key === 'r' || e.key === 'R') {
+        if (G.state === 'win' || G.state === 'lose') restart();
+      }
+    };
+    const handleKeyUp = (e) => { keysRef.current[e.key] = false; };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    gameRef.current = requestAnimationFrame(loop);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+      if (gameRef.current) cancelAnimationFrame(gameRef.current);
+    };
+  }, []);
+
+  return (
+    <div className="mt-4">
+      <canvas
+        ref={canvasRef}
+        className="border border-gray-700 mx-auto block"
+        style={{ width: 400, height: 300, imageRendering: 'pixelated' }}
+      />
+      <div className="text-[10px] text-gray-600 font-mono text-center mt-2">
+        WASD/Arrows: Move &middot; Space: Attack &middot; R: Restart
+      </div>
+    </div>
+  );
+};
+
 // ── Password Gate (dev mode) ──────────────────────
 const PasswordGate = ({ onUnlock }) => {
   const [pw, setPw] = useState('');
   const [error, setError] = useState(false);
+  const [showGame, setShowGame] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -4521,8 +5156,8 @@ const PasswordGate = ({ onUnlock }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-950 z-[99999] flex items-center justify-center p-4">
-      <div className="text-center max-w-sm w-full">
+    <div className="fixed inset-0 bg-gray-950 z-[99999] flex items-center justify-center p-4 overflow-auto">
+      <div className="text-center max-w-md w-full">
         <h1 className="text-3xl font-bold font-mono mb-1">
           PDUFA<span className="text-blue-400">.BIO</span>
         </h1>
@@ -4547,7 +5182,22 @@ const PasswordGate = ({ onUnlock }) => {
             ENTER
           </button>
         </form>
-        <p className="text-[10px] text-gray-600 mt-6 font-mono">Powered by ODIN v10.66</p>
+
+        {/* Game toggle */}
+        <button
+          onClick={() => setShowGame(!showGame)}
+          className="mt-6 text-xs text-gray-500 hover:text-blue-400 font-mono transition border border-gray-800 hover:border-gray-600 px-4 py-2">
+          {showGame ? 'HIDE GAME' : '\u2694 PLAY WHILE YOU WAIT'}
+        </button>
+
+        {showGame && (
+          <div className="mt-3">
+            <div className="text-xs text-blue-400 font-mono mb-2">ODIN QUEST</div>
+            <OdinQuestGame />
+          </div>
+        )}
+
+        <p className="text-[10px] text-gray-600 mt-6 font-mono">Powered by ODIN v10.68</p>
       </div>
     </div>
   );
@@ -4651,6 +5301,7 @@ export default function PdufaBio() {
     { id: 'heatmap', label: 'Heatmap', icon: PieChart },
     { id: 'tools', label: 'Tools', icon: Calculator },
     { id: 'intel', label: 'Intel', icon: Brain },
+    { id: 'about', label: 'About', icon: Beaker },
   ];
 
   return (
@@ -4673,13 +5324,13 @@ export default function PdufaBio() {
               PDUFA<span className="text-blue-400">.BIO</span>
             </h1>
             <div className="bg-gray-800 border border-gray-700 px-2 py-0.5 text-xs font-mono text-blue-400 hidden sm:block">
-              ODIN v10.66
+              ODIN v10.68
             </div>
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-4 text-xs font-mono text-gray-500">
-              <span>Engine: <span className="text-green-400">v10.66</span></span>
-              <span>Params: <span className="text-green-400">33</span></span>
+              <span>Engine: <span className="text-green-400">v10.68</span></span>
+              <span>Params: <span className="text-green-400">51</span></span>
               <span>Events: <span className="text-green-400">{CATALYSTS_DATA.length}</span></span>
             </div>
             <div className="text-xs sm:text-sm text-gray-400 font-mono">{dateStr}</div>
@@ -4717,6 +5368,7 @@ export default function PdufaBio() {
         {activeTab === 'heatmap' && <HeatmapView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'tools' && <ToolsView catalysts={sortedCatalysts} />}
         {activeTab === 'intel' && <IntelView catalysts={sortedCatalysts} />}
+        {activeTab === 'about' && <AboutView />}
       </div>
 
       {/* Footer */}
@@ -4726,7 +5378,7 @@ export default function PdufaBio() {
             <div>
               <h4 className="text-sm font-bold font-mono text-white mb-2">PDUFA<span className="text-blue-400">.BIO</span></h4>
               <p className="text-xs text-gray-500 leading-relaxed">
-                FDA catalyst intelligence powered by the ODIN v10.66 scoring engine.
+                FDA catalyst intelligence powered by the ODIN v10.68 scoring engine.
                 Trained on 486 historical PDUFA decisions (2018–2025).
               </p>
             </div>
@@ -4743,9 +5395,9 @@ export default function PdufaBio() {
             <div>
               <h4 className="text-xs font-bold font-mono text-gray-400 mb-2">ENGINE</h4>
               <div className="text-xs text-gray-500 space-y-1 font-mono">
-                <div>Version: <span className="text-green-400">v10.66 Dynamic Grandmaster</span></div>
-                <div>Parameters: <span className="text-gray-300">33</span></div>
-                <div>Training Set: <span className="text-gray-300">486 events</span></div>
+                <div>Version: <span className="text-green-400">v10.68</span></div>
+                <div>Parameters: <span className="text-gray-300">51</span></div>
+                <div>Training Set: <span className="text-gray-300">487 events</span></div>
                 <div>Model: <span className="text-gray-300">GPU Logistic Regression</span></div>
               </div>
             </div>
