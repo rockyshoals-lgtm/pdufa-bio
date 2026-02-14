@@ -2133,7 +2133,8 @@ const TIMESTAMPED_PREDICTIONS = [
     catalystDate: '2026-01-14', catalystType: 'PDUFA Resubmission',
     outcome: 'APPROVED (1 day early)', outcomeDate: '2026-01-13', peakGain: '+22%',
     hash: null, status: 'WIN',
-    note: 'Rare Pediatric Disease PRV granted. Double win — original CRL + resubmission approval.'
+    note: 'Rare Pediatric Disease PRV granted. Double win — original CRL + resubmission approval.',
+    originStory: 'FBIO\'s original CRL on Oct 1, 2025 was the miss that started everything. That loss triggered a complete rebuild of the ODIN scoring engine — from a simple approval probability calculator into the multi-signal intelligence system it is today. The CMC Oracle, Svartalfheim manufacturing risk module, CEWS insider detection, CRL resubmission classifier, and 63-parameter logistic regression model all trace their origins back to this single event. Dozens of iterations later, ODIN correctly identified FBIO\'s Class 1 resubmission as a high-conviction BUY — turning the original loss into a redemption arc and proving that the system learns from every miss. Without FBIO, there is no ODIN.'
   },
   // CEWS (Catalyst Early Warning System) Signals
   {
@@ -4565,6 +4566,12 @@ const TrackRecordView = () => {
                       <div className="text-[10px] text-gray-600 font-mono mt-0.5">Entry: {p.priceAtPrediction}</div>
                     )}
                     {p.note && <div className="text-[10px] text-gray-500 italic mt-1">{p.note}</div>}
+                    {p.originStory && (
+                      <div className="mt-2 bg-gradient-to-r from-amber-950/30 via-gray-900/60 to-gray-900 border-l-2 border-amber-600 pl-3 pr-2 py-2">
+                        <div className="text-[9px] font-mono text-amber-500 font-bold mb-1 tracking-wider">THE ORIGIN OF ODIN</div>
+                        <div className="text-[10px] text-gray-400 leading-relaxed">{p.originStory}</div>
+                      </div>
+                    )}
                     {p.hash && (
                       <div className="mt-1.5 bg-black/30 border border-gray-800 px-2 py-1">
                         <span className="text-[9px] font-mono text-gray-600">SHA-256: </span>
