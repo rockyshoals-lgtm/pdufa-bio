@@ -2015,6 +2015,7 @@ const VERIFIED_OUTCOMES = [
   { ticker: 'AZN', drug: 'Tezspire (Tezepelumab)', indication: 'Severe Asthma Label Expansion', date: '2026-01-25', type: 'sNDA', outcome: 'APPROVED', odinScore: 92.0, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+8%', notes: 'Label expansion. Large-cap, sell-the-news dynamic' },
   // ── February 2026 ──
   { ticker: 'ASND', drug: 'TransCon hGH Weekly', indication: 'Growth Hormone Deficiency (Adult)', date: '2026-02-07', type: 'PDUFA', outcome: 'APPROVED', odinScore: 95.5, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+19%', notes: 'Weekly formulation, strong Phase 3, experienced sponsor' },
+  { ticker: 'RGNX', drug: 'RGX-121 (Clemidsogene)', indication: 'Hunter Syndrome (MPS II)', date: '2026-02-07', type: 'PDUFA', outcome: 'CRL', odinScore: 45.0, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-21%', notes: 'DOUBLE VALIDATION: CEWS flagged delay Nov 2025, then formal CRL Feb 7 2026. FDA cited eligibility criteria, external control comparability, and surrogate endpoint concerns. Extended PDUFA from Nov 9 → Feb 8. ODIN + CEWS called both events correctly' },
   { ticker: 'IRON', drug: 'Bitopertin', indication: 'Erythropoietic Protoporphyria (EPP)', date: '2026-02-13', type: 'PDUFA', outcome: 'CRL', odinScore: 39.4, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-52%', notes: 'FDA cited insufficient evidence of clinical benefit despite biomarker improvement' },
   { ticker: 'ALDX', drug: 'Reproxalap', indication: 'Dry Eye Disease', date: '2026-02-14', type: 'PDUFA', outcome: 'CRL', odinScore: 1.1, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-71%', notes: 'Third CRL — serial efficacy failures. ODIN correctly scored near-zero' },
 ];
@@ -2148,10 +2149,11 @@ const TIMESTAMPED_PREDICTIONS = [
   {
     id: 'CEWS-002', ticker: 'RGNX', drug: 'RGX-121 (Clemidsogene)', indication: 'Hunter Syndrome',
     timestampUTC: '2025-10-25T00:00:00Z', odinVersion: 'v26 CEWS',
-    prediction: 'DELAY signal', tier: 'CEWS Alert', priceAtPrediction: '$18.20',
+    prediction: 'DELAY → CRL signal', tier: 'CEWS Alert', priceAtPrediction: '$18.20',
     catalystDate: '2025-11-09', catalystType: 'PDUFA',
-    outcome: 'DELAYED', outcomeDate: '2025-11-09', peakGain: '-18% avoided',
-    hash: null, status: 'WIN (CEWS validated)'
+    outcome: 'DELAYED Nov 9 → CRL Feb 7, 2026', outcomeDate: '2026-02-07', peakGain: '-21% avoided (CRL) + -18% avoided (delay)',
+    hash: null, status: 'DOUBLE WIN (CEWS validated twice)',
+    note: 'CEWS flagged delay risk Oct 25 → PDUFA delayed Nov 9 (-18%). Extended to Feb 8, 2026 → formal CRL issued Feb 7 (-21%). FDA cited eligibility criteria, surrogate endpoint concerns, and external control comparability issues.'
   },
   {
     id: 'CEWS-003', ticker: 'AQST', drug: 'Anaphylm', indication: 'Anaphylaxis',
