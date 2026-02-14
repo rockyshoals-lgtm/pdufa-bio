@@ -1,0 +1,70 @@
+{
+  "record": {
+    "record_type": "FDA_OUTCOME_VERIFICATION",
+    "record_version": "1.0",
+    "catalyst_id": "iron-bitopertin-2026-03-25b",
+    "company": "Disc Medicine, Inc.",
+    "ticker": "IRON",
+    "drug": "Bitopertin",
+    "indication": "Erythropoietic Protoporphyria (EPP)",
+    "application_type": "NDA",
+    "odin_version": "v10.67",
+    "odin_parameters": 46,
+    "odin_probability": 0.6593,
+    "odin_tier": "TIER_3",
+    "odin_action": "SMALL_POSITION_EARLY_EXIT",
+    "odin_exit_window": "T-5 to T-7",
+    "odin_runner": "20%",
+    "odin_ta_risk": "HIGH_RISK",
+    "odin_signals": {
+      "inexperienced_sponsor": -1.2875,
+      "BTD": 0.1676,
+      "orphan": 0.1469,
+      "ta_high_risk": -0.2555,
+      "novice_high_risk_ta": -0.4071,
+      "surrogate_only": -0.45,
+      "first_in_class": 0.45,
+      "unmet_need": 0.55,
+      "designation_stack": 0.35
+    },
+    "odin_total_adjustment": -0.7356,
+    "odin_logit": 0.6601,
+    "fda_outcome": "CRL",
+    "fda_outcome_date": "2026-02-13",
+    "fda_outcome_description": "Complete Response Letter — FDA concluded AURORA and BEACON trials did not sufficiently demonstrate association between PPIX reduction (surrogate biomarker) and sunlight exposure-based clinical endpoints.",
+    "fda_key_issue": "Surrogate endpoint insufficiency — exactly matching ODIN surrogate_only signal",
+    "source_url": "https://www.globenewswire.com/news-release/2026/02/13/3238299/0/en/Disc-Medicine-Receives-Complete-Response-Letter-from-FDA-for-Bitopertin-for-the-Treatment-of-EPP.html",
+    "stock_impact": "IRON -22% on CRL announcement",
+    "odin_classification": "WIN",
+    "classification_rationale": "ODIN Tier 3 (65.9%) with SMALL_POSITION_EARLY_EXIT correctly identified significant risk. Key signal surrogate_only (-0.45) directly predicted the FDA rationale (surrogate biomarker insufficiency). Recommended exit at T-5 to T-7 would have avoided the 22% decline. Risk management framework validated.",
+    "signal_validation": {
+      "surrogate_only": {
+        "weight": -0.45,
+        "fda_rationale_match": true,
+        "description": "ODIN flagged PPIX as surrogate-only endpoint. FDA CRL stated trials did not sufficiently show association between PPIX reduction and clinical endpoints. EXACT MATCH."
+      },
+      "inexperienced_sponsor": {
+        "weight": -1.2875,
+        "fda_rationale_match": true,
+        "description": "Disc Medicine first NDA submission. Inexperienced navigating FDA review process for novel mechanism."
+      },
+      "ta_high_risk": {
+        "weight": -0.2555,
+        "fda_rationale_match": true,
+        "description": "Hematology classified as HIGH_RISK therapeutic area. Historical approval rate below average."
+      },
+      "novice_high_risk_ta": {
+        "weight": -0.4071,
+        "fda_rationale_match": true,
+        "description": "Interaction term: inexperienced sponsor in high-risk TA. Compounding risk correctly identified."
+      }
+    },
+    "timestamp_utc": "2026-02-14T03:44:42.278Z",
+    "timestamp_unix": 1771040682
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "hash": "f1a3ce3996557aa0956d00460a5504a2d0b0dafef3c947e45bb1cbb3b7786b74",
+    "note": "This hash covers the complete record object above. Any modification to the record will invalidate this hash. The git commit hash provides additional immutability via distributed version control."
+  }
+}
