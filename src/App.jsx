@@ -1981,6 +1981,11 @@ const VERIFIED_OUTCOMES = [
   { ticker: 'VNDA', drug: 'Tradipitant', indication: 'Gastroparesis', date: '2025-12-30', type: 'PDUFA', outcome: 'APPROVED', odinScore: 73.8, odinTier: 'TIER_2', odinAction: 'BUY', correct: true, stockMove: '+42%', notes: 'First FDA-approved treatment for gastroparesis' },
   { ticker: 'ITCI', drug: 'Lumateperone (Caplyta)', indication: 'MDD Adjunct', date: '2025-11-28', type: 'PDUFA', outcome: 'APPROVED', odinScore: 88.9, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+11%', notes: 'Label expansion, strong sNDA data' },
   { ticker: 'PTGX', drug: 'Emvododstat', indication: 'MDS', date: '2025-10-18', type: 'Phase 3 Readout', outcome: 'MISS', odinScore: 31.5, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-55%', notes: 'Failed to meet primary endpoint' },
+  { ticker: 'SNDX', drug: 'Revumenib', indication: 'KMT2A-r Acute Myeloid Leukemia', date: '2025-10-24', type: 'PDUFA', outcome: 'APPROVED', odinScore: 88.3, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+18%', notes: 'Breakthrough therapy, accelerated approval for relapsed/refractory AML with KMT2A rearrangement' },
+  { ticker: 'BHVN', drug: 'Troriluzole (Vyglxia)', indication: 'Spinocerebellar Ataxia', date: '2025-11-04', type: 'PDUFA', outcome: 'CRL', odinScore: 48.7, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-41%', notes: 'Strong efficacy data but CNS TA risk + novel endpoint concerns. FDA cited insufficient evidence despite 50-70% slower progression' },
+  { ticker: 'CYTK', drug: 'Aficamten (Myqorzo)', indication: 'Obstructive Hypertrophic Cardiomyopathy', date: '2025-12-19', type: 'PDUFA', outcome: 'APPROVED', odinScore: 91.8, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+28%', notes: 'First-in-class cardiac myosin inhibitor, SEQUOIA-HCM Phase 3 met all endpoints. Cytokinetics first FDA approval' },
+  { ticker: 'OTLK', drug: 'ONS-5010 (Lytenava)', indication: 'Wet Age-Related Macular Degeneration', date: '2025-12-30', type: 'PDUFA', outcome: 'CRL', odinScore: 4.8, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-68%', notes: 'Third CRL — serial manufacturing and CMC failures. ODIN correctly scored near-zero, similar to ALDX pattern' },
+  { ticker: 'IRON', drug: 'Bitopertin', indication: 'Erythropoietic Protoporphyria (EPP)', date: '2026-02-13', type: 'PDUFA', outcome: 'CRL', odinScore: 39.4, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-52%', notes: 'FDA cited insufficient evidence of clinical benefit despite biomarker improvement. Rare disease first-filing risk with surrogate endpoint' },
 ];
 
 // Calculate track record stats
@@ -3540,7 +3545,7 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
         </h2>
         <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
           ML probability scores for PDUFA dates &amp; Phase 2/3 readouts.
-          Powered by ODIN v10.69 — 63 parameters, 95.5% accuracy on 22 verified events.
+          Powered by ODIN v10.69 — 63 parameters, 81.5% hit rate on 27 verified events.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <button onClick={() => onNavigate('screener')}
