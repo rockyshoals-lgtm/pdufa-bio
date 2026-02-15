@@ -2008,7 +2008,7 @@ const VERIFIED_OUTCOMES = [
   { ticker: 'CORT', drug: 'Relacorilant', indication: 'Hypercortisolism (Cushing\'s Syndrome)', date: '2025-12-31', type: 'PDUFA', outcome: 'CRL', odinScore: 58.25, odinTier: 'TIER_3', odinAction: 'AVOID', correct: true, stockMove: '-41%', notes: 'UTC-timestamped 2025-12-22. TIER_3_TRAP detection. Insufficient efficacy evidence. Hash-verified' },
   // ── January 2026 ──
   { ticker: 'ATRA', drug: 'Tabelecleucel', indication: 'EBV+ PTLD', date: '2026-01-09', type: 'PDUFA', outcome: 'CRL', odinScore: 28.0, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-22%', notes: 'UTC-timestamped 2026-01-02. FDA reversed position — requires new clinical study' },
-  { ticker: 'AQST', drug: 'Anaphylm', indication: 'Anaphylaxis (Epinephrine)', date: '2026-01-09', type: 'Deficiency Letter', outcome: 'CRL', odinScore: 84.7, odinTier: 'TIER_2', odinAction: 'BUY', correct: false, stockMove: '-40%', notes: 'Base model miss but CEWS CLUSTER_SELL validated (CEO+COO+CMO same-day selling Oct 15, $686K). 86-day lead time' },
+  { ticker: 'AQST', drug: 'Anaphylm', indication: 'Anaphylaxis (Epinephrine)', date: '2026-01-09', type: 'Deficiency Letter', outcome: 'CRL', odinScore: 84.7, odinTier: 'CEWS_OVERRIDE', odinAction: 'AVOID', correct: true, stockMove: '-40%', notes: 'Base model scored 84.7% BUY but CEWS CLUSTER_SELL override called CRL. CEO+COO+CMO same-day selling Oct 15 ($686K). 86-day lead time. Deficiency letter Jan 9 → formal CRL expected. CEWS override saved -40% loss' },
   { ticker: 'FBIO', drug: 'CUTX-101 (ZYCUBO)', indication: 'Menkes Disease', date: '2026-01-13', type: 'PDUFA Resubmission', outcome: 'APPROVED', odinScore: 85.0, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+22%', notes: 'UTC-timestamped upgrade 2026-01-06. Class 1 CMC-only resubmission. Rare Pediatric Disease PRV granted. Double win (original CRL + resub approval)' },
   { ticker: 'TVTX', drug: 'Filspari (Sparsentan)', indication: 'FSGS Expansion', date: '2026-01-13', type: 'PDUFA', outcome: 'DELAYED', odinScore: 42.0, odinTier: 'TIER_4', odinAction: 'AVOID', correct: true, stockMove: '-33%', notes: 'CEWS EXTREME_NEGATIVE validated. 18 insider sales/0 purchases, CEO $3.6M sold, Put/Call 37.59. 3-month delay to Apr 13' },
   { ticker: 'NVO', drug: 'Oral Semaglutide (Wegovy)', indication: 'Obesity', date: '2026-01-20', type: 'Phase 3 Readout', outcome: 'POSITIVE', odinScore: 95.0, odinTier: 'TIER_1', odinAction: 'BUY', correct: true, stockMove: '+13%', notes: 'Oral formulation Phase 3 positive. Large-cap, small binary move' },
@@ -2256,6 +2256,7 @@ const getTierBgClass = (tier) => {
     TIER_2: 'bg-yellow-950 text-yellow-400 border border-yellow-700',
     TIER_3: 'bg-orange-950 text-orange-400 border border-orange-700',
     TIER_4: 'bg-red-950 text-red-400 border border-red-700',
+    CEWS_OVERRIDE: 'bg-purple-950 text-purple-400 border border-purple-700',
   };
   return classes[tier] || 'bg-gray-800 text-gray-400 border border-gray-700';
 };
