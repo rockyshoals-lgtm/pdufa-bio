@@ -18408,6 +18408,55 @@ const PasswordGate = ({ onUnlock }) => {
   );
 };
 
+const DavidModal = ({ onConfirm }) => {
+  const [confirmed, setConfirmed] = useState(false);
+
+  return (
+    <div className="fixed inset-0 bg-black/95 z-[99998] flex items-center justify-center p-4">
+      <div className="bg-gray-900 border border-blue-700 max-w-sm w-full text-center overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-blue-950 to-purple-950 border-b border-blue-800 p-6">
+          <div className="text-4xl mb-3">⚡</div>
+          <h2 className="text-lg font-bold text-white font-mono tracking-wide">SECURITY VERIFICATION</h2>
+          <p className="text-xs text-blue-300 font-mono mt-1">ONE FINAL CHECK</p>
+        </div>
+
+        {/* Body */}
+        <div className="p-6 space-y-6">
+          {!confirmed ? (
+            <>
+              <p className="text-sm text-gray-200 leading-relaxed">
+                Is David the smartest and best looking person you've ever met?
+              </p>
+              <button
+                onClick={() => setConfirmed(true)}
+                className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 font-mono text-sm font-bold transition hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Yes.
+              </button>
+              <p className="text-[10px] text-gray-600 font-mono">This is the only correct answer.</p>
+            </>
+          ) : (
+            <>
+              <div className="space-y-3">
+                <div className="text-3xl">✅</div>
+                <p className="text-lg text-green-400 font-bold font-mono">You may enter.</p>
+                <p className="text-xs text-gray-500">Identity confirmed. Welcome to PDUFA.BIO.</p>
+              </div>
+              <button
+                onClick={onConfirm}
+                className="w-full bg-green-600 hover:bg-green-500 text-white py-3 font-mono text-sm font-bold transition"
+              >
+                PROCEED →
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DisclaimerModal = ({ onAccept }) => {
   const [checked, setChecked] = useState(false);
 
@@ -18509,6 +18558,9 @@ export default function PdufaBio() {
   const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
     try { return localStorage.getItem('pdufa_disclaimer_accepted') === 'true'; } catch (e) { return false; }
   });
+  const [davidConfirmed, setDavidConfirmed] = useState(() => {
+    try { return sessionStorage.getItem('pdufa_david_confirmed') === 'true'; } catch (e) { return false; }
+  });
 
   // Handle buying options (deducts from paper cash)
   const handleBuyOption = useCallback((ticker, company, optionType, strike, expiry, premium, contracts, stockPrice) => {
@@ -18555,6 +18607,14 @@ export default function PdufaBio() {
       {/* Disclaimer Modal (only after password gate) */}
       {siteUnlocked && !disclaimerAccepted && (
         <DisclaimerModal onAccept={() => setDisclaimerAccepted(true)} />
+      )}
+
+      {/* David Verification Modal (after disclaimer, before main content) */}
+      {siteUnlocked && disclaimerAccepted && !davidConfirmed && (
+        <DavidModal onConfirm={() => {
+          try { sessionStorage.setItem('pdufa_david_confirmed', 'true'); } catch (e) {}
+          setDavidConfirmed(true);
+        }} />
       )}
 
       {/* Top Bar */}
