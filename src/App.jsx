@@ -51,7 +51,7 @@ import {
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
-// CATALYST DATA — ODIN v10.69 Round 5 (63 parameters)
+// CATALYST DATA — ODIN v10.69 | Trained on 2,200+ PDUFAs & 2,000+ Phase Readouts | 40B+ Scenarios
 // ═══════════════════════════════════════════════════
 const CATALYSTS_DATA = [
   {
@@ -12369,7 +12369,7 @@ const GLOSSARY = {
   TIER_4: 'Low conviction tier (<60% probability). Significant risk factors including inexperienced sponsors, high-risk TAs, or missing designations.',
   'Therapeutic Area': 'The medical field a drug targets (e.g., Oncology, CNS, Immunology). Each TA has different historical FDA approval rates.',
   'Cash Runway': 'Estimated months of cash remaining based on current burn rate. Companies with <12 months may need to raise capital.',
-  'ODIN Score': 'Machine-learning probability score from ODIN v10.69, trained on 486 historical FDA decisions using 63 parameters including CMC/manufacturing risk, endpoint quality, competitive landscape, interaction terms, FDA division risk, and social sentiment.',
+  'ODIN Score': 'Machine-learning probability score from ODIN v10.69, trained on 2,200+ historical PDUFA decisions and 2,000+ phase readouts across 40 billion+ simulated scenarios. Uses 63 parameters including CMC/manufacturing risk, endpoint quality, competitive landscape, interaction terms, FDA division risk, and social sentiment.',
 };
 
 const GlossaryTip = ({ term, children }) => {
@@ -13725,7 +13725,7 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
         </h2>
         <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
           ML probability scores for PDUFA dates &amp; Phase 2/3 readouts.
-          Powered by ODIN v10.69 — 63 parameters, verified across 47 FDA catalyst events.
+          Powered by ODIN v10.69 — trained on 2,200+ PDUFAs, 2,000+ readouts, 40B+ scenarios.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <button onClick={() => onNavigate('screener')}
@@ -14224,9 +14224,9 @@ const IntelView = ({ catalysts }) => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           {[
-            { label: 'Parameters', value: '46' },
-            { label: 'Base Probability', value: '83.4%' },
-            { label: 'Backtest Events', value: '486' },
+            { label: 'PDUFAs Trained', value: '2,200+' },
+            { label: 'Phase Readouts', value: '2,000+' },
+            { label: 'Scenarios Simulated', value: '40B+' },
             { label: 'Architecture', value: 'GPU Logistic' },
           ].map((stat) => (
             <div key={stat.label} className="bg-gray-800 p-3 border border-gray-700">
