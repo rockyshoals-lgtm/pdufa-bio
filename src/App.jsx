@@ -15668,13 +15668,23 @@ const ImminentBanner = ({ catalysts, onExpandCatalyst }) => {
 
   if (imminent.length === 0) return null;
 
+  const pdufaThisWeek = imminent.filter(c => isPdufa(c.type)).length;
+  const readoutsThisWeek = imminent.filter(c => isReadout(c.type)).length;
+  const earningsThisWeek = imminent.filter(c => isEarnings(c.type)).length;
+
+  const parts = [];
+  if (pdufaThisWeek > 0) parts.push(`${pdufaThisWeek} PDUFA${pdufaThisWeek !== 1 ? 's' : ''}`);
+  if (readoutsThisWeek > 0) parts.push(`${readoutsThisWeek} Readout${readoutsThisWeek !== 1 ? 's' : ''} (Est.)`);
+  if (earningsThisWeek > 0) parts.push(`${earningsThisWeek} Earnings (Est.)`);
+  const bannerLabel = parts.join(' · ') + ' THIS WEEK';
+
   return (
     <div className="bg-gradient-to-r from-orange-950 via-red-950 to-orange-950 border-b border-orange-800">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex items-center gap-3 overflow-x-auto">
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <Bell size={14} className="text-orange-400 animate-pulse" />
           <span className="text-xs font-mono text-orange-300 font-bold uppercase whitespace-nowrap">
-            {imminent.length === 1 ? 'PDUFA THIS WEEK' : `${imminent.length} PDUFAs THIS WEEK`}
+            {bannerLabel}
           </span>
         </div>
         <div className="flex gap-2 overflow-x-auto">
@@ -15684,6 +15694,7 @@ const ImminentBanner = ({ catalysts, onExpandCatalyst }) => {
               <button key={cat.id} onClick={() => onExpandCatalyst(cat)}
                 className="flex items-center gap-2 bg-black/30 px-3 py-1 border border-orange-800/50 hover:border-orange-500 transition whitespace-nowrap flex-shrink-0">
                 <span className="text-xs font-bold text-white font-mono">{cat.ticker}</span>
+                <span className={`text-[10px] font-mono ${getTypeBadgeClass(cat.type)}`}>{getTypeLabel(cat.type)}</span>
                 {hasOdinScore(cat) && <span className="text-[10px] font-mono" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</span>}
                 <span className="text-[10px] text-orange-400 font-mono">
                   {daysOut === 0 ? 'TODAY' : daysOut === 1 ? 'TOMORROW' : `${daysOut}d`}
@@ -18584,30 +18595,27 @@ const DisclaimerModal = ({ onAccept }) => {
     <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
       <div className="bg-gray-900 border border-gray-700 max-w-lg w-full">
         {/* Header */}
-        <div className="bg-red-950 border-b border-red-800 p-4 sm:p-6">
+        <div className="bg-gradient-to-r from-gray-900 via-blue-950 to-gray-900 border-b border-blue-800 p-4 sm:p-6">
           <div className="flex items-center gap-3 mb-2">
-            <AlertTriangle size={24} className="text-red-400 flex-shrink-0" />
-            <h2 className="text-lg sm:text-xl font-bold text-white font-mono">IMPORTANT DISCLAIMER</h2>
+            <span className="text-2xl">⚖️</span>
+            <h2 className="text-lg sm:text-xl font-bold text-white font-mono">MY LAWYERS MADE ME SAY THIS</h2>
           </div>
-          <p className="text-red-300 text-sm font-mono">Please read and acknowledge before continuing</p>
+          <p className="text-blue-300 text-sm italic">Look — I scored the best domain name in the universe for a biotech catalyst engine. Naturally, my attorneys said "congratulations, now put up a disclaimer." So here we are.</p>
         </div>
 
         {/* Body */}
         <div className="p-4 sm:p-6 space-y-4 text-sm text-gray-300 leading-relaxed max-h-[50vh] overflow-y-auto">
           <p>
-            <strong className="text-white">PDUFA.BIO is not affiliated with, endorsed by, or connected to the U.S. Food & Drug Administration (FDA)</strong> or any government agency. The name "PDUFA" refers to the Prescription Drug User Fee Act and is used here solely to describe the subject matter of this site.
+            <strong className="text-white">PDUFA.BIO is not affiliated with, endorsed by, or connected to the U.S. Food & Drug Administration (FDA)</strong> or any government agency. "PDUFA" refers to the Prescription Drug User Fee Act — we just built a really cool engine around it.
           </p>
           <p>
-            <strong className="text-white">This is not financial advice.</strong> PDUFA.BIO is not a registered investment advisor, broker-dealer, or financial planner. Nothing on this site constitutes a recommendation to buy, sell, or hold any security.
+            <strong className="text-white">This is not financial advice.</strong> We are not registered investment advisors <em className="text-blue-400">(not until mid-March anyway 😏)</em>, broker-dealers <em className="text-blue-400">(but oh my God, we're about to be — stay tuned 🚀)</em>, or financial planners. Nothing on this site is a recommendation to buy, sell, or hold any security.
           </p>
           <p>
-            <strong className="text-white">Probability scores are machine-learning model outputs, not guarantees.</strong> The ODIN scoring engine produces statistical estimates based on historical data and publicly available information. These scores reflect mathematical probabilities derived from pattern recognition — they do not predict the future and should not be the sole basis for any investment decision.
+            <strong className="text-white">ODIN scores are ML model outputs, not crystal balls.</strong> They're statistical estimates based on historical data and pattern recognition. They do not predict the future and should never be the sole basis for any investment decision.
           </p>
           <p>
-            <strong className="text-white">No liability for losses.</strong> PDUFA.BIO, its operators, contributors, and affiliates accept no responsibility or liability for any financial losses, damages, or consequences arising from the use of information presented on this site. All investment decisions carry risk, including the risk of total loss.
-          </p>
-          <p className="text-gray-500 text-xs">
-            By clicking below, you acknowledge that you have read, understood, and agree to these terms. You accept full responsibility for your own investment decisions.
+            <strong className="text-white">No liability for losses.</strong> PDUFA.BIO and its operators accept zero responsibility for financial losses arising from use of this site. All investing carries risk, including total loss.
           </p>
         </div>
 
@@ -18622,16 +18630,11 @@ const DisclaimerModal = ({ onAccept }) => {
               : <Square size={20} className="text-gray-600 group-hover:text-gray-400 flex-shrink-0 mt-0.5 transition" />
             }
             <span className={`text-sm ${checked ? 'text-white' : 'text-gray-400'} transition`}>
-              I understand that PDUFA.BIO is not affiliated with the FDA, this is not financial advice, and probability scores are model outputs — not guarantees of FDA approval or stock performance.
+              I get it — great domain, not the FDA, not financial advice, and ODIN is a model, not a fortune teller.
             </span>
           </button>
           <button
-            onClick={() => {
-              if (checked) {
-                try { localStorage.setItem('pdufa_disclaimer_accepted', 'true'); } catch (e) {}
-                onAccept();
-              }
-            }}
+            onClick={() => { if (checked) onAccept(); }}
             disabled={!checked}
             className={`w-full py-3 font-mono text-sm font-bold transition ${
               checked
@@ -18639,7 +18642,7 @@ const DisclaimerModal = ({ onAccept }) => {
                 : 'bg-gray-800 text-gray-600 cursor-not-allowed'
             }`}
           >
-            {checked ? 'I UNDERSTAND — ENTER PDUFA.BIO' : 'CHECK THE BOX ABOVE TO CONTINUE'}
+            {checked ? 'LET ME IN →' : 'CHECK THE BOX ABOVE TO CONTINUE'}
           </button>
         </div>
       </div>
@@ -18675,9 +18678,7 @@ export default function PdufaBio() {
       return false;
     } catch (e) { return false; }
   });
-  const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
-    try { return localStorage.getItem('pdufa_disclaimer_accepted') === 'true'; } catch (e) { return false; }
-  });
+  const [disclaimerAccepted, setDisclaimerAccepted] = useState(false);
   const [davidConfirmed, setDavidConfirmed] = useState(() => {
     try { return sessionStorage.getItem('pdufa_david_confirmed') === 'true'; } catch (e) { return false; }
   });
