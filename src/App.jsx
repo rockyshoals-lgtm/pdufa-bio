@@ -13823,12 +13823,19 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
             )}
           </div>
           <div className="flex flex-col justify-between">
+            {hasOdinScore(nextCatalyst) ? (
             <div>
               <div className="text-4xl sm:text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(nextCatalyst.tier) }}>
                 {fmtProb(nextCatalyst.prob)}%
               </div>
-              <div className="text-gray-400 text-sm mt-1">ODIN {isPdufa(nextCatalyst.type) ? 'Approval' : 'Success'} Probability</div>
+              <div className="text-gray-400 text-sm mt-1">ODIN Approval Probability</div>
             </div>
+            ) : (
+            <div>
+              <div className="text-lg font-bold text-gray-300 font-mono">{nextCatalyst.type === 'Earnings' ? 'Earnings' : nextCatalyst.phase || 'Readout'}</div>
+              <div className="text-gray-500 text-sm mt-1">{nextCatalyst.type === 'Earnings' ? nextCatalyst.indication : nextCatalyst.indication}</div>
+            </div>
+            )}
           </div>
         </div>
         <div className="border-t border-gray-700 pt-4">
@@ -13888,12 +13895,20 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
                 </span>
                 <span className="font-bold text-white text-sm w-14 flex-shrink-0">{cat.ticker}</span>
                 <span className="text-sm text-gray-400 flex-1 truncate hidden sm:block">{cat.drug}</span>
-                <span className="font-bold font-mono tabular-nums text-sm flex-shrink-0" style={{ color: getTierColor(cat.tier) }}>
-                  {fmtProb(cat.prob)}%
-                </span>
-                <span className={`px-2 py-0.5 text-xs font-mono font-bold ${getTierBgClass(cat.tier)} hidden sm:block`}>
-                  {cat.tier.replace('_', ' ')}
-                </span>
+                {hasOdinScore(cat) ? (
+                  <>
+                    <span className="font-bold font-mono tabular-nums text-sm flex-shrink-0" style={{ color: getTierColor(cat.tier) }}>
+                      {fmtProb(cat.prob)}%
+                    </span>
+                    <span className={`px-2 py-0.5 text-xs font-mono font-bold ${getTierBgClass(cat.tier)} hidden sm:block`}>
+                      {cat.tier.replace('_', ' ')}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-xs font-mono text-gray-500">
+                    {isEarnings(cat.type) ? cat.indication : cat.phase || '—'}
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -14159,14 +14174,29 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
                   <td className="px-2 sm:px-4 py-3 text-gray-300 max-w-32 truncate">{cat.drug}</td>
                   <td className="px-2 sm:px-4 py-3 text-gray-400 text-xs max-w-32 truncate hidden sm:table-cell">{cat.indication}</td>
                   <td className="px-2 sm:px-4 py-3 text-gray-400 text-xs hidden sm:table-cell">{cat.ta}</td>
-                  <td className="px-2 sm:px-4 py-3 font-bold font-mono tabular-nums" style={{ color: getTierColor(cat.tier) }}>
-                    {fmtProb(cat.prob)}%
-                  </td>
-                  <td className="px-2 sm:px-4 py-3">
-                    <span className={`px-2 py-1 text-xs font-bold inline-block ${getTierBgClass(cat.tier)}`}>
-                      {cat.tier}
-                    </span>
-                  </td>
+                  {hasOdinScore(cat) ? (
+                    <>
+                      <td className="px-2 sm:px-4 py-3 font-bold font-mono tabular-nums" style={{ color: getTierColor(cat.tier) }}>
+                        {fmtProb(cat.prob)}%
+                      </td>
+                      <td className="px-2 sm:px-4 py-3">
+                        <span className={`px-2 py-1 text-xs font-bold inline-block ${getTierBgClass(cat.tier)}`}>
+                          {cat.tier}
+                        </span>
+                      </td>
+                    </>
+                  ) : (
+                    <>
+                      <td className="px-2 sm:px-4 py-3 font-mono tabular-nums text-xs text-gray-500">
+                        —
+                      </td>
+                      <td className="px-2 sm:px-4 py-3">
+                        <span className="text-xs font-mono text-gray-500">
+                          {isEarnings(cat.type) ? cat.indication : cat.phase || '—'}
+                        </span>
+                      </td>
+                    </>
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -15147,7 +15177,7 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
                           flex: `${pct} 1 60px`,
                           opacity: 0.85,
                         }}
-                        title={`${cat.ticker} — ${cat.drug}\n${fmtProb(cat.prob)}% | ${cat.tier.replace('_',' ')} | ${formatDate(cat.date)}`}
+                        title={hasOdinScore(cat) ? `${cat.ticker} — ${cat.drug}\n${fmtProb(cat.prob)}% | ${cat.tier.replace('_',' ')} | ${formatDate(cat.date)}` : `${cat.ticker} — ${cat.drug} | ${formatDate(cat.date)}`}
                       >
                         <div className="absolute inset-0 p-1.5 flex flex-col justify-between">
                           <div className="flex items-center justify-between">
@@ -15155,7 +15185,7 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
                             {isImminent && <span className="text-[8px] bg-black/40 text-white px-1 rounded-sm">SOON</span>}
                           </div>
                           <div>
-                            <div className="text-[10px] sm:text-sm font-bold text-black/90 font-mono leading-none">{fmtProb(cat.prob)}%</div>
+                            {hasOdinScore(cat) && <div className="text-[10px] sm:text-sm font-bold text-black/90 font-mono leading-none">{fmtProb(cat.prob)}%</div>}
                             <div className="text-[8px] text-black/60 font-mono leading-none mt-0.5 hidden sm:block">{daysOut}d</div>
                           </div>
                         </div>
@@ -15165,7 +15195,7 @@ const HeatmapView = ({ catalysts, onExpandCatalyst }) => {
                           <div className="text-[10px] text-gray-300 truncate">{cat.drug}</div>
                           <div className="text-[10px] text-gray-400">{formatDate(cat.date)}</div>
                           <div className="text-[10px] font-mono mt-0.5" style={{ color: getTypeColor(cat.type) }}>{getTypeLabel(cat.type)}</div>
-                          <div className="text-xs font-bold mt-0.5" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</div>
+                          {hasOdinScore(cat) && <div className="text-xs font-bold mt-0.5" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</div>}
                         </div>
                       </div>
                     );
@@ -15205,13 +15235,13 @@ const FeedView = ({ catalysts, onExpandCatalyst, predict, getPrediction }) => {
       }
 
       // Binary risk zone
-      if (tw.zone === 'DANGER') {
+      if (hasOdinScore(c) && tw.zone === 'DANGER') {
         items.push({ type: 'BINARY_RISK', catalyst: c, priority: 110, tw, icon: Flame, color: '#ef4444',
           title: `BINARY RISK — ${daysOut === 0 ? 'TODAY' : daysOut + ' DAYS'}`, desc: `$${c.ticker} ${c.type} ${daysOut === 0 ? 'is TODAY' : 'in ' + daysOut + ' days'}. Extreme IV crush territory. ${fmtProb(c.prob)}% ODIN score.` });
       }
 
       // Tier 1 high conviction
-      if (c.tier === 'TIER_1' && daysOut > 0 && daysOut <= 45) {
+      if (hasOdinScore(c) && c.tier === 'TIER_1' && daysOut > 0 && daysOut <= 45) {
         items.push({ type: 'HIGH_CONVICTION', catalyst: c, priority: 70, tw, icon: Shield, color: '#22c55e',
           title: `High Conviction: $${c.ticker}`, desc: `ODIN scores ${fmtProb(c.prob)}% (Tier 1). ${c.drug} for ${c.indication}. ${daysOut}d to decision.` });
       }
@@ -15223,7 +15253,7 @@ const FeedView = ({ catalysts, onExpandCatalyst, predict, getPrediction }) => {
       }
 
       // Avoid signals
-      if (c.avoid && daysOut > 0) {
+      if (hasOdinScore(c) && c.avoid && daysOut > 0) {
         items.push({ type: 'AVOID', catalyst: c, priority: 80, tw, icon: X, color: '#ef4444',
           title: `ODIN AVOID: $${c.ticker}`, desc: `ODIN recommends no position. ${fmtProb(c.prob)}% probability — risk/reward unfavorable.` });
       }
@@ -15396,7 +15426,11 @@ const ToolsView = ({ catalysts }) => {
                     <span className="text-xs text-gray-400">{c.drug}</span>
                     <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(c.type)}`}>{getTypeLabel(c.type)}</span>
                   </div>
-                  <span className="text-sm font-bold font-mono" style={{ color: getTierColor(c.tier) }}>{fmtProb(c.prob)}%</span>
+                  {hasOdinScore(c) ? (
+                    <span className="text-sm font-bold font-mono" style={{ color: getTierColor(c.tier) }}>{fmtProb(c.prob)}%</span>
+                  ) : (
+                    <span className="text-xs font-mono text-gray-500">{isEarnings(c.type) ? c.indication : c.phase || '—'}</span>
+                  )}
                 </div>
                 <TradingWindowBar catalyst={c} />
               </div>
@@ -15570,7 +15604,7 @@ const ImminentBanner = ({ catalysts, onExpandCatalyst }) => {
               <button key={cat.id} onClick={() => onExpandCatalyst(cat)}
                 className="flex items-center gap-2 bg-black/30 px-3 py-1 border border-orange-800/50 hover:border-orange-500 transition whitespace-nowrap flex-shrink-0">
                 <span className="text-xs font-bold text-white font-mono">{cat.ticker}</span>
-                <span className="text-[10px] font-mono" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</span>
+                {hasOdinScore(cat) && <span className="text-[10px] font-mono" style={{ color: getTierColor(cat.tier) }}>{fmtProb(cat.prob)}%</span>}
                 <span className="text-[10px] text-orange-400 font-mono">
                   {daysOut === 0 ? 'TODAY' : daysOut === 1 ? 'TOMORROW' : `${daysOut}d`}
                 </span>
@@ -18266,9 +18300,15 @@ const PaperTradingView = ({ catalysts, onBuyOption, optPositions, onCloseOption,
                       <span className="text-gray-500 truncate max-w-[100px]">{c.drug}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className={`text-[10px] font-mono ${c.prob >= 0.7 ? 'text-green-400' : c.prob >= 0.5 ? 'text-yellow-400' : 'text-red-400'}`}>
-                        {(c.prob * 100).toFixed(0)}%
-                      </span>
+                      {hasOdinScore(c) ? (
+                        <span className={`text-[10px] font-mono ${c.prob >= 0.7 ? 'text-green-400' : c.prob >= 0.5 ? 'text-yellow-400' : 'text-red-400'}`}>
+                          {(c.prob * 100).toFixed(0)}%
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-mono text-gray-500">
+                          {isEarnings(c.type) ? c.indication : c.phase || '—'}
+                        </span>
+                      )}
                       <span className="text-[10px] text-gray-600 font-mono">{new Date(c.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                     </div>
                   </button>
