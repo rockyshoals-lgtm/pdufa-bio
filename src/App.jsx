@@ -48,6 +48,7 @@ import {
   Gauge,
   Factory,
   Beaker,
+  Download,
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════
@@ -12331,6 +12332,33 @@ const generateICS = (catalyst) => {
   URL.revokeObjectURL(url);
 };
 
+const generateBulkICS = (catalystList) => {
+  const events = catalystList.map(catalyst => {
+    const d = new Date(catalyst.date);
+    const pad = (n) => String(n).padStart(2, '0');
+    const dateStr = `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
+    const title = `${catalyst.type}: ${catalyst.ticker} — ${catalyst.drug}`;
+    const desc = `${catalyst.type} for ${catalyst.drug} (${catalyst.company})\\nIndication: ${catalyst.indication}${isPdufa(catalyst.type) && catalyst.prob > 0 ? `\\nODIN Score: ${(catalyst.prob * 100).toFixed(1)}% (${catalyst.tier.replace('_', ' ')})` : ''}\\nTA: ${catalyst.ta}\\n\\nhttps://pdufa.bio`;
+    return [
+      'BEGIN:VEVENT',
+      `DTSTART;VALUE=DATE:${dateStr}`,
+      `DTEND;VALUE=DATE:${dateStr}`,
+      `SUMMARY:${title}`,
+      `DESCRIPTION:${desc}`,
+      `URL:https://pdufa.bio`,
+      'END:VEVENT'
+    ].join('\r\n');
+  }).join('\r\n');
+  const ics = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//PDUFA.BIO//ODIN//EN\r\n${events}\r\nEND:VCALENDAR`;
+  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'pdufa-bio-catalysts.ics';
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
 // ── Safety Labels (Public.com inspired + CMC/Dilution) ──
 const getSafetyWarnings = (catalyst) => {
   const warnings = [];
@@ -13117,15 +13145,17 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 mb-2 flex-wrap">
               <h2 className="text-xl sm:text-2xl font-bold text-white">{catalyst.drug}</h2>
-              <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
-                {catalyst.tier.replace('_', ' ')}
-              </div>
+              {hasOdinScore(catalyst) && (
+                <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
+                  {catalyst.tier.replace('_', ' ')}
+                </div>
+              )}
               <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTypeBadgeClass(catalyst.type)}`}>
                 {catalyst.type}
               </div>
             </div>
             <p className="text-sm text-gray-400">
-              {catalyst.company} ({catalyst.ticker}) &middot; {formatDate(catalyst.date)}
+              {catalyst.company} ({catalyst.ticker}) &middot; {formatDate(catalyst.date)}{!isPdufa(catalyst.type) && ' (Expected)'}
             </p>
             {/* Live price if available */}
             {quote.price && (
@@ -13805,9 +13835,11 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
             <Zap size={14} className="text-blue-400" />
             <h3 className="text-xs text-gray-400 font-mono uppercase">NEXT CATALYST EVENT</h3>
           </div>
-          <div className={`px-3 py-1 text-xs font-mono font-bold ${getTierBgClass(nextCatalyst.tier)}`}>
-            {nextCatalyst.tier.replace('_', ' ')}
-          </div>
+          {hasOdinScore(nextCatalyst) && (
+            <div className={`px-3 py-1 text-xs font-mono font-bold ${getTierBgClass(nextCatalyst.tier)}`}>
+              {nextCatalyst.tier.replace('_', ' ')}
+            </div>
+          )}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
           <div>
@@ -13845,29 +13877,31 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
       </div>
 
       {/* Tier Distribution */}
-      <div className="bg-gray-900 border border-gray-700 p-4">
-        <div className="text-xs text-gray-400 mb-3 font-mono">TIER DISTRIBUTION</div>
-        <div className="flex h-8 w-full overflow-hidden">
-          {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => {
-            const count = catalysts.filter((c) => c.tier === tier).length;
-            const pct = (count / catalysts.length) * 100;
-            return (
-              <div key={tier} style={{ width: `${pct}%`, backgroundColor: getTierColor(tier), opacity: 0.8 }}
-                className="flex items-center justify-center text-xs font-bold font-mono text-black transition-all"
-                title={`${tier}: ${count} (${pct.toFixed(0)}%)`}>
-                {count > 0 && `${count}`}
-              </div>
-            );
-          })}
+      {pdufaCatalysts.length > 0 && (
+        <div className="bg-gray-900 border border-gray-700 p-4">
+          <div className="text-xs text-gray-400 mb-3 font-mono">TIER DISTRIBUTION (PDUFA only)</div>
+          <div className="flex h-8 w-full overflow-hidden">
+            {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => {
+              const count = pdufaCatalysts.filter((c) => c.tier === tier).length;
+              const pct = (count / pdufaCatalysts.length) * 100;
+              return (
+                <div key={tier} style={{ width: `${pct}%`, backgroundColor: getTierColor(tier), opacity: 0.8 }}
+                  className="flex items-center justify-center text-xs font-bold font-mono text-black transition-all"
+                  title={`${tier}: ${count} (${pct.toFixed(0)}%)`}>
+                  {count > 0 && `${count}`}
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex justify-between mt-2 text-xs font-mono">
+            {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => (
+              <span key={tier} style={{ color: getTierColor(tier) }}>
+                {tier.replace('_', ' ')}: {pdufaCatalysts.filter((c) => c.tier === tier).length}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="flex justify-between mt-2 text-xs font-mono">
-          {['TIER_1', 'TIER_2', 'TIER_3', 'TIER_4'].map((tier) => (
-            <span key={tier} style={{ color: getTierColor(tier) }}>
-              {tier.replace('_', ' ')}: {catalysts.filter((c) => c.tier === tier).length}
-            </span>
-          ))}
-        </div>
-      </div>
+      )}
 
       {/* 30-Day Pipeline — top 10 only */}
       {next30.length > 0 && (
@@ -13887,9 +13921,9 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
             {next30.slice(0, 10).map((cat, i) => (
               <div key={cat.id} onClick={() => onExpandCatalyst(cat)}
                 className="flex items-center gap-2 sm:gap-4 p-2 hover:bg-gray-800 cursor-pointer transition border-l-2"
-                style={{ borderLeftColor: getTierColor(cat.tier) }}>
+                style={{ borderLeftColor: getTypeColor(cat.type) }}>
                 <span className="text-xs text-gray-600 font-mono w-4 hidden sm:block">{i + 1}</span>
-                <span className="text-xs text-gray-500 font-mono w-20 flex-shrink-0">{formatDate(cat.date)}</span>
+                <span className="text-xs text-gray-500 font-mono w-20 flex-shrink-0">{formatDate(cat.date)}{!isPdufa(cat.type) && ' (Est.)'}</span>
                 <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(cat.type)} hidden sm:inline-block`}>
                   {getTypeLabel(cat.type)}
                 </span>
@@ -13958,25 +13992,60 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
 
 // ── Calendar View ──────────────────────────────────
 const CalendarView = ({ catalysts, onExpandCatalyst }) => {
+  const [typeFilter, setTypeFilter] = useState('all');
+
+  const filteredCatalysts = useMemo(() => {
+    if (typeFilter === 'all') return catalysts;
+    if (typeFilter === 'pdufa') return catalysts.filter(c => isPdufa(c.type));
+    if (typeFilter === 'readout') return catalysts.filter(c => isReadout(c.type));
+    if (typeFilter === 'earnings') return catalysts.filter(c => isEarnings(c.type));
+    return catalysts;
+  }, [catalysts, typeFilter]);
+
   const months = useMemo(() => {
     const monthMap = {};
-    catalysts.forEach((c) => {
+    filteredCatalysts.forEach((c) => {
       const date = new Date(c.date);
       const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
       if (!monthMap[key]) monthMap[key] = [];
       monthMap[key].push(c);
     });
     return monthMap;
-  }, [catalysts]);
+  }, [filteredCatalysts]);
 
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+  const filterButtons = [
+    { key: 'all', label: 'All', count: catalysts.length },
+    { key: 'pdufa', label: 'PDUFA', count: catalysts.filter(c => isPdufa(c.type)).length },
+    { key: 'readout', label: 'Readouts', count: catalysts.filter(c => isReadout(c.type)).length },
+    { key: 'earnings', label: 'Earnings', count: catalysts.filter(c => isEarnings(c.type)).length },
+  ];
+
   return (
     <div className="space-y-6">
+      {/* Filter Bar */}
+      <div className="bg-gray-900 border border-gray-700 p-3 sm:p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-2">
+            {filterButtons.map(fb => (
+              <button key={fb.key} onClick={() => setTypeFilter(fb.key)}
+                className={`px-3 py-1.5 text-xs font-mono font-bold transition border ${typeFilter === fb.key ? 'bg-blue-600 border-blue-500 text-white' : 'bg-gray-800 border-gray-600 text-gray-400 hover:border-gray-500'}`}>
+                {fb.label} <span className="text-gray-500 ml-1">{fb.count}</span>
+              </button>
+            ))}
+          </div>
+          <button onClick={() => generateBulkICS(filteredCatalysts)}
+            className="px-3 py-1.5 text-xs font-mono font-bold bg-purple-900 border border-purple-700 text-purple-300 hover:bg-purple-800 transition flex items-center gap-1.5">
+            <Download size={12} /> Export .ics ({filteredCatalysts.length})
+          </button>
+        </div>
+      </div>
+
       {Object.entries(months).map(([monthKey, monthCatalysts]) => {
         const [year, month] = monthKey.split('-');
         const monthName = monthNames[parseInt(month) - 1];
-        const tier1 = monthCatalysts.filter(c => c.tier === 'TIER_1').length;
+        const pdufaInMonth = monthCatalysts.filter(c => isPdufa(c.type) && c.prob > 0).length;
 
         return (
           <div key={monthKey} className="border border-gray-700 p-4 bg-gray-900">
@@ -13984,13 +14053,13 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
               <h3 className="text-sm font-mono text-gray-400 uppercase">
                 {monthName} {year} <span className="text-gray-600">— {monthCatalysts.length} events</span>
               </h3>
-              {tier1 > 0 && <span className="text-xs text-green-400 font-mono">{tier1} TIER 1</span>}
+              {pdufaInMonth > 0 && <span className="text-xs text-green-400 font-mono">{pdufaInMonth} scored PDUFA{pdufaInMonth !== 1 ? 's' : ''}</span>}
             </div>
             <div className="space-y-2">
               {monthCatalysts.map((catalyst) => (
                 <div key={catalyst.id} onClick={() => onExpandCatalyst(catalyst)}
                   className="flex items-center gap-2 sm:gap-4 p-3 hover:bg-gray-800 cursor-pointer transition border-l-2"
-                  style={{ borderLeftColor: getTierColor(catalyst.tier) }}>
+                  style={{ borderLeftColor: getTypeColor(catalyst.type) }}>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
@@ -13998,6 +14067,9 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
                         <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(catalyst.type)}`}>
                           {getTypeLabel(catalyst.type)}
                         </span>
+                        {!isPdufa(catalyst.type) && (
+                          <span className="text-[10px] px-1 py-0.5 font-mono text-yellow-500 bg-yellow-950 border border-yellow-800">Expected</span>
+                        )}
                         {catalyst.designations.length > 0 && (
                           <span className="text-xs text-blue-400 bg-blue-950 px-1 border border-blue-800 font-mono hidden sm:inline">
                             {catalyst.designations[0].replace('Breakthrough Therapy', 'BTD').replace('Priority Review', 'PR').replace('Orphan Drug', 'OD')}
@@ -14028,6 +14100,13 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
           </div>
         );
       })}
+
+      {filteredCatalysts.length === 0 && (
+        <div className="text-center py-12 text-gray-500">
+          <Calendar size={32} className="mx-auto mb-3 text-gray-600" />
+          <div className="text-sm">No {typeFilter !== 'all' ? typeFilter : ''} events found.</div>
+        </div>
+      )}
     </div>
   );
 };
@@ -14164,7 +14243,7 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
               {sorted.map((cat) => (
                 <tr key={cat.id} onClick={() => onExpandCatalyst(cat)}
                   className="border-b border-gray-800 hover:bg-gray-800 cursor-pointer transition">
-                  <td className="px-2 sm:px-4 py-3 text-gray-300 text-xs whitespace-nowrap">{formatDate(cat.date)}</td>
+                  <td className="px-2 sm:px-4 py-3 text-gray-300 text-xs whitespace-nowrap">{formatDate(cat.date)}{!isPdufa(cat.type) && ' (Est.)'}</td>
                   <td className="px-2 sm:px-4 py-3">
                     <span className={`text-xs px-1.5 py-0.5 font-mono ${getTypeBadgeClass(cat.type)}`}>
                       {getTypeLabel(cat.type)}
@@ -15305,7 +15384,7 @@ const FeedView = ({ catalysts, onExpandCatalyst, predict, getPrediction }) => {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                   <span className="text-sm font-bold text-white">{item.title}</span>
-                  {item.catalyst && (
+                  {item.catalyst && hasOdinScore(item.catalyst) && (
                     <span className={`text-xs px-1.5 py-0.5 font-mono ${getTierBgClass(item.catalyst.tier)}`}>
                       {item.catalyst.tier.replace('_', ' ')}
                     </span>
