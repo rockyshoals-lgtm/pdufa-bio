@@ -11844,7 +11844,7 @@ const CATALYSTS_DATA = [
 
 // ═══════════════════════════════════════════════════
 // HISTORICAL APPROVAL RATES BY THERAPEUTIC AREA
-// Source: 486-event backtest (2018-2025)
+// Source: 4,200+ event backtest (2015-2026) — 2,200+ PDUFAs + 2,000+ readouts
 // ═══════════════════════════════════════════════════
 const HIST_APPROVAL_RATES = {
   "Oncology": {
@@ -14310,7 +14310,7 @@ const IntelView = ({ catalysts }) => {
           <PieChart size={14} className="text-blue-400" />
           <div className="text-xs text-gray-400 font-mono uppercase">HISTORICAL FDA APPROVAL RATES BY THERAPEUTIC AREA</div>
         </div>
-        <div className="text-xs text-gray-500 mb-4">Based on 486-event backtest (2018-2025 PDUFA decisions)</div>
+        <div className="text-xs text-gray-500 mb-4">Based on 4,200+ event backtest (2015-2026 PDUFA decisions & phase readouts)</div>
         <div className="space-y-2">
           {sortedRates.map(([ta, data]) => {
             const activeCatalysts = taGroups[ta] || [];
@@ -14389,7 +14389,7 @@ const IntelView = ({ catalysts }) => {
         <div className="flex items-center gap-2 mb-4">
           <Target size={14} className="text-green-400" />
           <div className="text-xs text-gray-400 font-mono uppercase">ODIN BACKTEST PERFORMANCE</div>
-          <span className="text-[10px] text-gray-600 font-mono ml-auto">486 historical FDA decisions</span>
+          <span className="text-[10px] text-gray-600 font-mono ml-auto">4,200+ historical events (2015-2026)</span>
         </div>
 
         {/* Per-tier and per-TA breakdowns below */}
@@ -14452,7 +14452,7 @@ const IntelView = ({ catalysts }) => {
 // ═══════════════════════════════════════════════════
 const AboutView = () => {
   const evolution = [
-    { version: 'v10.66 Base', params: 34, desc: 'Core logistic regression model trained via GPU on 486 historical PDUFA decisions (2018-2025). Captures regulatory designations, sponsor experience, therapeutic area risk, and application type signals.' },
+    { version: 'v10.66 Base', params: 34, desc: 'Core logistic regression model trained via GPU on 2,200+ historical PDUFA decisions and 2,000+ phase readouts (2015-2026). Captures regulatory designations, sponsor experience, therapeutic area risk, and application type signals.' },
     { version: 'Round 1: CMC Forensics', params: 38, desc: 'Deep-dive into manufacturing and chemistry signals. Added Form 483 inspection flags, EMA CMC warnings, PDUFA extensions for chemistry issues, and Section 22 pediatric PK requests. Identified that CMC problems are the #1 hidden cause of CRLs for small-cap biotechs.' },
     { version: 'Round 2: Endpoint + Landscape', params: 42, desc: 'Forensic analysis of remaining backtest errors revealed endpoint quality and competitive dynamics as key blind spots. Added primary endpoint miss history, surrogate-only endpoints, single-arm pivotal risk, first-in-class advantage, unmet medical need, and me-too competitive penalty.' },
     { version: 'Round 3: Interactions + Division + Social', params: 46, desc: 'Non-linear interaction terms for compounding risk (inexperienced sponsors with manufacturing problems). FDA division-level risk adjustments for historically favorable vs. stringent review divisions. LunarCrush social sentiment integration for real-time market signal on high-conviction catalysts.' },
@@ -14494,7 +14494,7 @@ const AboutView = () => {
         </div>
         <div className="space-y-4 text-sm text-gray-400 leading-relaxed">
           <p>
-            At its core, ODIN is a <span className="text-blue-400 font-mono">Python logistic regression model</span> trained on 486 historical FDA PDUFA decisions from 2018 through 2025. The model was developed using scikit-learn and optimized via GPU-accelerated hyperparameter search across the full parameter space.
+            At its core, ODIN is a <span className="text-blue-400 font-mono">Python logistic regression model</span> trained on 2,200+ historical FDA PDUFA decisions and 2,000+ phase readouts from 2015 through 2026. The model was developed using scikit-learn and optimized via GPU-accelerated hyperparameter search across the full parameter space.
           </p>
           <p>
             For each upcoming catalyst, ODIN starts with a base probability derived from the overall historical approval rate, then adds or subtracts weighted signals based on the specific characteristics of that drug, company, and regulatory context. The raw logit score passes through a sigmoid function to produce a final probability between 0% and 100%.
@@ -18823,7 +18823,7 @@ export default function PdufaBio() {
               <h4 className="text-sm font-bold font-mono text-white mb-2">PDUFA<span className="text-blue-400">.BIO</span></h4>
               <p className="text-xs text-gray-500 leading-relaxed">
                 FDA catalyst intelligence powered by the ODIN v10.69 scoring engine.
-                Trained on 486 historical PDUFA decisions (2018–2025).
+                Trained on 2,200+ PDUFA decisions & 2,000+ phase readouts (2015–2026).
               </p>
             </div>
             <div>
