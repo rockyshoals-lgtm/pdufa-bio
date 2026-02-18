@@ -12732,7 +12732,7 @@ const formatDateLocale = (dateStr) => {
   } catch { return dateStr; }
 };
 
-const CountdownTimer = ({ targetDate }) => {
+const CountdownTimer = ({ targetDate, catalystType = 'PDUFA' }) => {
   const [countdown, setCountdown] = useState({
     days: 0, hours: 0, minutes: 0, seconds: 0, expired: false,
   });
@@ -12764,7 +12764,8 @@ const CountdownTimer = ({ targetDate }) => {
   }, [targetDate]);
 
   if (countdown.expired) {
-    return <div className="text-yellow-400 font-mono text-sm font-bold animate-pulse">DECISION PENDING</div>;
+    const expiredLabel = catalystType === 'PDUFA' ? 'DECISION PENDING' : catalystType === 'Earnings' ? 'EARNINGS PASSED' : 'READOUT PASSED';
+    return <div className="text-yellow-400 font-mono text-sm font-bold animate-pulse">{expiredLabel}</div>;
   }
 
   return (
@@ -13871,8 +13872,8 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
           </div>
         </div>
         <div className="border-t border-gray-700 pt-4">
-          <div className="text-xs text-gray-500 mb-2 font-mono">COUNTDOWN TO DECISION</div>
-          <CountdownTimer targetDate={nextCatalyst.date} />
+          <div className="text-xs text-gray-500 mb-2 font-mono">{isPdufa(nextCatalyst.type) ? 'COUNTDOWN TO DECISION' : isEarnings(nextCatalyst.type) ? 'COUNTDOWN TO EARNINGS' : 'COUNTDOWN TO READOUT'}</div>
+          <CountdownTimer targetDate={nextCatalyst.date} catalystType={nextCatalyst.type} />
         </div>
       </div>
 
@@ -18697,10 +18698,23 @@ export default function PdufaBio() {
   const today = new Date();
   const dateStr = `${today.toLocaleString('en-US', { weekday: 'short' })} ${today.toLocaleString('en-US', { month: 'short' })} ${today.getDate()}, ${today.getFullYear()}`;
 
-  const sortedCatalysts = useMemo(
-    () => [...CATALYSTS_DATA].sort((a, b) => new Date(a.date) - new Date(b.date)),
-    []
-  );
+  const sortedCatalysts = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    // For PDUFAs: keep up to 3 days past (decision may still be pending)
+    // For others: only show future events
+    return [...CATALYSTS_DATA]
+      .filter(c => {
+        const d = new Date(c.date + 'T00:00:00');
+        if (isPdufa(c.type)) {
+          const pastLimit = new Date(now);
+          pastLimit.setDate(pastLimit.getDate() - 3);
+          return d >= pastLimit;
+        }
+        return d >= now;
+      })
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+  }, []);
 
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Activity },
