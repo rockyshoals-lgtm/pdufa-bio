@@ -3099,7 +3099,7 @@ const CatalystCard = ({ catalyst, onExpand }) => {
 };
 
 // ── Detail Modal (Enhanced with tabs) ──────────────
-const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false, predict = () => {}, getPrediction = () => null, getCommunity = () => null, odinCoins = null }) => {
+const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = () => false, predict = () => {}, getPrediction = () => null, getCommunity = () => null, odinCoins = null, onBuyOption = null, cashAvailable = 0, optionsLevel = 0 }) => {
   const [activeDetailTab, setActiveDetailTab] = useState('overview');
   const [showShareMenu, setShowShareMenu] = useState(false);
   const { data: marketData, loading: marketLoading } = useMarketData(catalyst?.ticker);
@@ -3195,6 +3195,7 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
           {[
             { id: 'overview', label: 'Overview', icon: Eye },
             { id: 'signals', label: 'Signals', icon: Zap },
+            { id: 'options', label: 'Options', icon: Target },
             { id: 'market', label: 'Market', icon: TrendingUp },
             { id: 'social', label: 'Social', icon: MessageSquare },
             { id: 'insider', label: 'Insider', icon: Users },
@@ -3410,6 +3411,19 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                   </div>
                 </div>
               </div>
+            </div>
+          )}
+
+          {activeDetailTab === 'options' && (
+            <div className="p-4 sm:p-6 space-y-4">
+              {onBuyOption ? (
+                <CatalystOptionsQuickTrade catalyst={catalyst} onBuyOption={onBuyOption} cashAvailable={cashAvailable} optionsLevel={optionsLevel} />
+              ) : (
+                <div className="text-center py-8">
+                  <Target size={32} className="text-gray-600 mx-auto mb-3" />
+                  <p className="text-sm text-gray-400 font-mono">Options trading available in the Paper Trade tab</p>
+                </div>
+              )}
             </div>
           )}
 
@@ -7190,6 +7204,556 @@ const OdinQuestGame = () => {
 };
 
 // ═══════════════════════════════════════════════════
+// OPTIONS KNOWLEDGE ONBOARDING
+// ═══════════════════════════════════════════════════
+const OPTIONS_QUESTIONS = [
+  {
+    q: "What is a stock option?",
+    answers: [
+      { text: "A contract giving the right to buy or sell stock at a set price", correct: true, level: 1 },
+      { text: "A type of stock that goes up faster", correct: false, level: 0 },
+      { text: "I have no idea", correct: false, level: 0 },
+    ],
+  },
+  {
+    q: "What happens to a call option if the stock price goes UP?",
+    answers: [
+      { text: "The call increases in value", correct: true, level: 2 },
+      { text: "The call decreases in value", correct: false, level: 1 },
+      { text: "Not sure", correct: false, level: 0 },
+    ],
+  },
+  {
+    q: "What is 'IV crush'?",
+    answers: [
+      { text: "When implied volatility drops sharply after an event, reducing option premiums", correct: true, level: 3 },
+      { text: "When the stock crashes", correct: false, level: 1 },
+      { text: "Never heard of it", correct: false, level: 0 },
+    ],
+  },
+  {
+    q: "What is a straddle?",
+    answers: [
+      { text: "Buying both a call and a put at the same strike — profits from big moves in either direction", correct: true, level: 3 },
+      { text: "Buying two calls", correct: false, level: 1 },
+      { text: "No clue", correct: false, level: 0 },
+    ],
+  },
+];
+
+const OPTIONS_LEVELS = {
+  0: { name: 'Beginner', desc: "Brand new to options — we'll explain everything step by step!", color: 'text-blue-400' },
+  1: { name: 'Novice', desc: "You know the basics. We'll fill in the gaps.", color: 'text-green-400' },
+  2: { name: 'Intermediate', desc: "Solid foundation. Let's refine your strategy.", color: 'text-yellow-400' },
+  3: { name: 'Advanced', desc: "You know your stuff. Let's get tactical.", color: 'text-purple-400' },
+};
+
+const OptionsOnboarding = ({ onComplete }) => {
+  const [step, setStep] = useState(0);
+  const [score, setScore] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+
+  const handleAnswer = (answer) => {
+    const newScore = score + answer.level;
+    setScore(newScore);
+    if (step < OPTIONS_QUESTIONS.length - 1) {
+      setStep(step + 1);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  const level = Math.min(3, Math.floor(score / 2));
+  const levelInfo = OPTIONS_LEVELS[level];
+
+  if (showResult) {
+    return (
+      <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+        <div className="bg-gray-900 border border-gray-700 max-w-lg w-full p-6 space-y-4">
+          <div className="text-center">
+            <div className="text-3xl mb-2">{level >= 2 ? '🎯' : '📚'}</div>
+            <h2 className="text-xl font-bold text-white font-mono">Your Options Level</h2>
+            <div className={`text-2xl font-bold font-mono mt-2 ${levelInfo.color}`}>{levelInfo.name}</div>
+            <p className="text-sm text-gray-400 mt-2">{levelInfo.desc}</p>
+          </div>
+
+          {/* Quick explainer based on level */}
+          {level <= 1 && (
+            <div className="bg-gray-800 border border-gray-700 p-4 space-y-3 text-sm text-gray-300">
+              <p className="font-bold text-white">Options in 30 seconds:</p>
+              <p>Think of options like <span className="text-blue-400 font-bold">insurance on stocks</span>. You pay a small premium for the right to buy or sell a stock at a specific price.</p>
+              <div className="grid grid-cols-2 gap-3 mt-2">
+                <div className="bg-green-950/30 border border-green-800/50 p-2">
+                  <div className="text-green-400 font-bold font-mono text-xs">📈 CALL</div>
+                  <div className="text-xs mt-1">A bet the stock goes <span className="text-green-400 font-bold">UP</span>. Like a coupon to buy at today's price later.</div>
+                </div>
+                <div className="bg-red-950/30 border border-red-800/50 p-2">
+                  <div className="text-red-400 font-bold font-mono text-xs">📉 PUT</div>
+                  <div className="text-xs mt-1">A bet the stock goes <span className="text-red-400 font-bold">DOWN</span>. Insurance against a price drop.</div>
+                </div>
+              </div>
+              <div className="bg-purple-950/30 border border-purple-800/50 p-2 mt-2">
+                <div className="text-purple-400 font-bold font-mono text-xs">↕️ STRADDLE</div>
+                <div className="text-xs mt-1">Buy BOTH a call and a put. You profit if the stock makes a <span className="text-purple-400 font-bold">BIG move in either direction</span>. Perfect for FDA decisions where the stock will definitely move — you just don't know which way.</div>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">⚠️ Options expire! If the stock doesn't move enough before expiration, you lose your premium. Paper trading lets you practice risk-free.</p>
+            </div>
+          )}
+
+          <button onClick={() => onComplete(level)} className="w-full bg-blue-600 hover:bg-blue-500 text-white py-2.5 text-sm font-mono font-bold transition">
+            {level <= 1 ? "GOT IT — LET'S PRACTICE" : "LET'S TRADE OPTIONS"}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const question = OPTIONS_QUESTIONS[step];
+  return (
+    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+      <div className="bg-gray-900 border border-gray-700 max-w-lg w-full p-6 space-y-4">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-mono text-gray-500">QUESTION {step + 1} of {OPTIONS_QUESTIONS.length}</span>
+          <div className="flex gap-1">
+            {OPTIONS_QUESTIONS.map((_, i) => (
+              <div key={i} className={`w-6 h-1 ${i <= step ? 'bg-blue-400' : 'bg-gray-700'}`} />
+            ))}
+          </div>
+        </div>
+        <h3 className="text-lg font-bold text-white">{question.q}</h3>
+        <div className="space-y-2">
+          {question.answers.map((a, i) => (
+            <button key={i} onClick={() => handleAnswer(a)}
+              className="w-full text-left bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-blue-500 p-3 text-sm text-gray-200 transition">
+              {a.text}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ═══════════════════════════════════════════════════
+// OPTIONS PAPER TRADING ENGINE
+// ═══════════════════════════════════════════════════
+const useOptionsPaperTrading = () => {
+  const [optPositions, setOptPositions] = useState(() => {
+    try {
+      const stored = localStorage.getItem('pdufa_options_portfolio');
+      if (stored) return JSON.parse(stored);
+    } catch {}
+    return { positions: [], trades: [], totalPremiumSpent: 0, totalPremiumReceived: 0 };
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem('pdufa_options_portfolio', JSON.stringify(optPositions)); } catch {}
+  }, [optPositions]);
+
+  const buyOption = useCallback((ticker, company, optionType, strike, expiry, premium, contracts, stockPrice) => {
+    const totalCost = premium * contracts * 100; // each contract = 100 shares
+    const position = {
+      id: `${ticker}-${optionType}-${strike}-${Date.now()}`,
+      ticker, company, optionType, strike, expiry, premium, contracts,
+      stockPriceAtEntry: stockPrice,
+      openDate: new Date().toISOString(),
+      status: 'open',
+    };
+    const trade = { type: 'BUY', ...position, total: totalCost, date: new Date().toISOString() };
+    setOptPositions(prev => ({
+      ...prev,
+      positions: [...prev.positions, position],
+      trades: [trade, ...prev.trades],
+      totalPremiumSpent: prev.totalPremiumSpent + totalCost,
+    }));
+    return totalCost;
+  }, []);
+
+  const closeOption = useCallback((posId, currentPremium) => {
+    setOptPositions(prev => {
+      const pos = prev.positions.find(p => p.id === posId);
+      if (!pos) return prev;
+      const proceeds = currentPremium * pos.contracts * 100;
+      const cost = pos.premium * pos.contracts * 100;
+      const pnl = proceeds - cost;
+      const trade = { type: 'CLOSE', ...pos, closePremium: currentPremium, total: proceeds, pnl, date: new Date().toISOString() };
+      return {
+        ...prev,
+        positions: prev.positions.filter(p => p.id !== posId),
+        trades: [trade, ...prev.trades],
+        totalPremiumReceived: prev.totalPremiumReceived + proceeds,
+      };
+    });
+  }, []);
+
+  const resetOptions = useCallback(() => {
+    setOptPositions({ positions: [], trades: [], totalPremiumSpent: 0, totalPremiumReceived: 0 });
+  }, []);
+
+  return { optPositions, buyOption, closeOption, resetOptions };
+};
+
+// ── Options Trade Entry Form ──
+const OptionsTradeForm = ({ catalysts, onBuyOption, cashAvailable, optionsLevel }) => {
+  const [ticker, setTicker] = useState('');
+  const [optionType, setOptionType] = useState('CALL');
+  const [contracts, setContracts] = useState(1);
+  const [quoteData, setQuoteData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [showHelp, setShowHelp] = useState(optionsLevel <= 1);
+
+  const fetchQuote = useCallback(async (t) => {
+    if (!t) return;
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/market-data?ticker=${t}&type=quote`);
+      if (res.ok) setQuoteData(await res.json());
+    } catch {} finally { setLoading(false); }
+  }, []);
+
+  useEffect(() => {
+    if (ticker.length >= 1) {
+      const timer = setTimeout(() => fetchQuote(ticker), 500);
+      return () => clearTimeout(timer);
+    } else { setQuoteData(null); }
+  }, [ticker, fetchQuote]);
+
+  const stockPrice = quoteData?.price || quoteData?.[0]?.price || 0;
+
+  // Simulated option pricing using Black-Scholes
+  const strike = optionType === 'CALL'
+    ? Math.round(stockPrice * 1.05 * 100) / 100  // 5% OTM call
+    : optionType === 'PUT'
+    ? Math.round(stockPrice * 0.95 * 100) / 100   // 5% OTM put
+    : Math.round(stockPrice * 100) / 100;           // ATM for straddle
+
+  const daysToExpiry = 30;
+  const T = daysToExpiry / 365;
+  const r = 0.05;
+  const iv = 0.80; // typical biotech pre-catalyst IV
+
+  const callPremium = stockPrice > 0 ? blackScholesCall(stockPrice, strike, T, r, iv) : 0;
+  const putPremium = stockPrice > 0 ? blackScholesCall(strike, stockPrice, T, r, iv) + strike * Math.exp(-r * T) - stockPrice + callPremium : 0;
+  // Put-call parity approximation
+  const putPremiumCalc = stockPrice > 0 ? Math.max(0.10, callPremium - stockPrice + strike * Math.exp(-r * T)) : 0;
+
+  const premium = optionType === 'CALL' ? callPremium
+    : optionType === 'PUT' ? Math.max(0.10, putPremiumCalc)
+    : callPremium + Math.max(0.10, putPremiumCalc); // straddle = call + put
+
+  const totalCost = premium * contracts * 100;
+  const canBuy = totalCost > 0 && totalCost <= cashAvailable && stockPrice > 0;
+
+  const handleSubmit = () => {
+    if (!canBuy) return;
+    const t = ticker.toUpperCase();
+    const matchedCatalyst = catalysts.find(c => c.ticker === t);
+    const company = matchedCatalyst?.company || t;
+    onBuyOption(t, company, optionType, strike, daysToExpiry, premium, contracts, stockPrice);
+    setTicker('');
+    setContracts(1);
+    setQuoteData(null);
+  };
+
+  const EXPLANATIONS = {
+    CALL: { emoji: '📈', title: 'BUYING A CALL', simple: "You're betting the stock goes UP. If the stock rises above your strike price, you profit. If it doesn't, you lose the premium you paid.", risk: 'Max loss = premium paid', reward: 'Unlimited upside' },
+    PUT: { emoji: '📉', title: 'BUYING A PUT', simple: "You're betting the stock goes DOWN. If the stock drops below your strike price, you profit. Think of it as insurance against bad news.", risk: 'Max loss = premium paid', reward: 'Profits as stock falls' },
+    STRADDLE: { emoji: '↕️', title: 'BUYING A STRADDLE', simple: "You're buying BOTH a call AND a put. You profit if the stock makes a BIG move in EITHER direction. Perfect before FDA decisions — you don't need to guess the outcome, just that it moves.", risk: 'Max loss = both premiums combined', reward: 'Profits from big moves up OR down' },
+  };
+
+  const explain = EXPLANATIONS[optionType];
+
+  return (
+    <div className="bg-gray-800 border border-gray-700 p-4 space-y-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Target size={14} className="text-purple-400" />
+          <span className="text-xs font-mono text-gray-400">OPTIONS TRADE</span>
+        </div>
+        <button onClick={() => setShowHelp(!showHelp)} className="text-[10px] text-blue-400 hover:text-blue-300 font-mono">
+          {showHelp ? 'HIDE GUIDE' : 'SHOW GUIDE'}
+        </button>
+      </div>
+
+      {/* Option Type Selector */}
+      <div className="flex gap-1">
+        {['CALL', 'PUT', 'STRADDLE'].map(t => (
+          <button key={t} onClick={() => setOptionType(t)}
+            className={`flex-1 px-2 py-1.5 text-xs font-mono font-bold transition ${
+              optionType === t
+                ? (t === 'CALL' ? 'bg-green-600 text-white' : t === 'PUT' ? 'bg-red-600 text-white' : 'bg-purple-600 text-white')
+                : 'bg-gray-700 text-gray-400 hover:text-white'
+            }`}>
+            {t === 'CALL' ? '📈' : t === 'PUT' ? '📉' : '↕️'} {t}
+          </button>
+        ))}
+      </div>
+
+      {/* ELI5 Explanation */}
+      {showHelp && (
+        <div className={`p-3 border text-xs space-y-1.5 ${
+          optionType === 'CALL' ? 'bg-green-950/30 border-green-800/50' :
+          optionType === 'PUT' ? 'bg-red-950/30 border-red-800/50' :
+          'bg-purple-950/30 border-purple-800/50'
+        }`}>
+          <div className="font-bold text-white font-mono">{explain.emoji} {explain.title}</div>
+          <p className="text-gray-300">{explain.simple}</p>
+          <div className="flex gap-3 mt-1">
+            <span className="text-red-400">⚠️ {explain.risk}</span>
+            <span className="text-green-400">✓ {explain.reward}</span>
+          </div>
+        </div>
+      )}
+
+      {/* Ticker & Contracts */}
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <div className="text-[10px] text-gray-500 mb-1 font-mono">TICKER</div>
+          <input value={ticker} onChange={e => setTicker(e.target.value.toUpperCase())}
+            placeholder="REGN"
+            className="w-full bg-gray-900 border border-gray-600 text-white px-2 py-1.5 text-sm font-mono focus:border-purple-500 focus:outline-none uppercase" />
+        </div>
+        <div>
+          <div className="text-[10px] text-gray-500 mb-1 font-mono">CONTRACTS</div>
+          <input type="number" value={contracts} onChange={e => setContracts(Math.max(1, parseInt(e.target.value) || 1))}
+            min={1} max={100}
+            className="w-full bg-gray-900 border border-gray-600 text-white px-2 py-1.5 text-sm font-mono focus:border-purple-500 focus:outline-none" />
+          {showHelp && <div className="text-[9px] text-gray-600 mt-0.5">1 contract = 100 shares</div>}
+        </div>
+      </div>
+
+      {/* Pricing Display */}
+      {loading && <div className="flex items-center gap-2 text-xs text-gray-500"><Loader size={12} className="animate-spin" /> Fetching quote...</div>}
+      {stockPrice > 0 && !loading && (
+        <div className="bg-gray-900 border border-gray-700 p-3 space-y-2">
+          <div className="grid grid-cols-4 gap-2 text-center">
+            <div>
+              <div className="text-[9px] text-gray-500 font-mono">STOCK</div>
+              <div className="text-sm font-bold text-white font-mono">${stockPrice.toFixed(2)}</div>
+            </div>
+            <div>
+              <div className="text-[9px] text-gray-500 font-mono">STRIKE</div>
+              <div className="text-sm font-bold text-blue-400 font-mono">${strike.toFixed(2)}</div>
+            </div>
+            <div>
+              <div className="text-[9px] text-gray-500 font-mono">PREMIUM</div>
+              <div className="text-sm font-bold text-yellow-400 font-mono">${premium.toFixed(2)}</div>
+            </div>
+            <div>
+              <div className="text-[9px] text-gray-500 font-mono">TOTAL COST</div>
+              <div className="text-sm font-bold text-white font-mono">${totalCost.toFixed(0)}</div>
+            </div>
+          </div>
+
+          {showHelp && (
+            <div className="text-[10px] text-gray-500 border-t border-gray-700 pt-2 space-y-1">
+              <div>IV: <span className="text-yellow-400">{(iv * 100).toFixed(0)}%</span> (simulated biotech pre-catalyst)</div>
+              <div>Expiry: <span className="text-gray-300">{daysToExpiry} days</span></div>
+              {optionType === 'STRADDLE' && (
+                <div className="text-purple-400">Straddle = Call (${callPremium.toFixed(2)}) + Put (${Math.max(0.10, putPremiumCalc).toFixed(2)})</div>
+              )}
+              {optionType === 'CALL' && (
+                <div>Breakeven: <span className="text-green-400">${(strike + premium).toFixed(2)}</span> (stock must rise {(((strike + premium) / stockPrice - 1) * 100).toFixed(1)}%)</div>
+              )}
+              {optionType === 'PUT' && (
+                <div>Breakeven: <span className="text-red-400">${(strike - premium).toFixed(2)}</span> (stock must fall {((1 - (strike - premium) / stockPrice) * 100).toFixed(1)}%)</div>
+              )}
+              {optionType === 'STRADDLE' && (
+                <div>Breakevens: <span className="text-green-400">${(strike + premium).toFixed(2)}</span> or <span className="text-red-400">${(strike - premium).toFixed(2)}</span></div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      <button onClick={handleSubmit} disabled={!canBuy}
+        className={`w-full py-2.5 text-sm font-mono font-bold transition ${
+          canBuy
+            ? (optionType === 'CALL' ? 'bg-green-600 hover:bg-green-500' : optionType === 'PUT' ? 'bg-red-600 hover:bg-red-500' : 'bg-purple-600 hover:bg-purple-500') + ' text-white'
+            : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+        }`}>
+        {optionType === 'STRADDLE' ? '↕️ BUY STRADDLE' : optionType === 'CALL' ? '📈 BUY CALL' : '📉 BUY PUT'}
+      </button>
+      {canBuy && showHelp && (
+        <div className="text-[10px] text-gray-600 text-center">
+          Paper money only — no real risk! Practice before ODIN Capital launches.
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ── Options Positions Display ──
+const OptionsPositions = ({ positions, onClose }) => {
+  if (positions.length === 0) {
+    return (
+      <div className="bg-gray-800 border border-gray-700 p-6 text-center">
+        <Target size={24} className="text-gray-600 mx-auto mb-2" />
+        <p className="text-sm text-gray-500 font-mono">No open options positions</p>
+        <p className="text-xs text-gray-600 mt-1">Buy calls, puts, or straddles above</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-gray-800 border border-gray-700 overflow-hidden">
+      <div className="px-4 py-3 border-b border-gray-700 flex items-center gap-2">
+        <Target size={14} className="text-purple-400" />
+        <span className="text-xs font-mono text-gray-400">OPEN OPTIONS ({positions.length})</span>
+      </div>
+      <div className="divide-y divide-gray-700/50">
+        {positions.map(pos => {
+          const typeColor = pos.optionType === 'CALL' ? 'text-green-400' : pos.optionType === 'PUT' ? 'text-red-400' : 'text-purple-400';
+          const typeBg = pos.optionType === 'CALL' ? 'bg-green-900/30 border-green-700/50' : pos.optionType === 'PUT' ? 'bg-red-900/30 border-red-700/50' : 'bg-purple-900/30 border-purple-700/50';
+          const cost = pos.premium * pos.contracts * 100;
+          return (
+            <div key={pos.id} className="px-4 py-3 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className={`px-1.5 py-0.5 text-[10px] font-mono font-bold border ${typeBg} ${typeColor}`}>
+                  {pos.optionType}
+                </span>
+                <div>
+                  <div className="text-sm font-bold text-white font-mono">{pos.ticker} ${pos.strike.toFixed(0)} {pos.optionType}</div>
+                  <div className="text-[10px] text-gray-500 font-mono">{pos.contracts}x @ ${pos.premium.toFixed(2)} · {pos.expiry}d exp</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="text-right">
+                  <div className="text-xs font-mono text-gray-400">Cost: ${cost.toFixed(0)}</div>
+                </div>
+                <button onClick={() => onClose(pos.id, pos.premium * 0.5)} className="text-[10px] font-mono font-bold text-red-400 hover:text-red-300 transition px-2 py-1 border border-red-800/50 hover:bg-red-950/30">
+                  CLOSE
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ── Options Trade History ──
+const OptionsTradeHistory = ({ trades }) => {
+  if (trades.length === 0) return null;
+  return (
+    <div className="bg-gray-800 border border-gray-700 overflow-hidden">
+      <div className="px-4 py-3 border-b border-gray-700 flex items-center gap-2">
+        <Clock size={14} className="text-purple-400" />
+        <span className="text-xs font-mono text-gray-400">OPTIONS HISTORY</span>
+      </div>
+      <div className="max-h-48 overflow-y-auto divide-y divide-gray-700/50">
+        {trades.slice(0, 30).map((t, i) => {
+          const typeColor = t.optionType === 'CALL' ? 'text-green-400' : t.optionType === 'PUT' ? 'text-red-400' : 'text-purple-400';
+          return (
+            <div key={i} className="px-4 py-2 flex items-center justify-between text-xs font-mono">
+              <div className="flex items-center gap-2">
+                <span className={`font-bold ${t.type === 'BUY' ? 'text-blue-400' : 'text-yellow-400'}`}>{t.type}</span>
+                <span className={typeColor}>{t.optionType}</span>
+                <span className="text-white font-bold">{t.ticker}</span>
+                <span className="text-gray-500">${t.strike?.toFixed(0)} × {t.contracts}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                {t.pnl !== undefined && (
+                  <span className={t.pnl >= 0 ? 'text-green-400' : 'text-red-400'}>
+                    {t.pnl >= 0 ? '+' : ''}${t.pnl.toFixed(0)}
+                  </span>
+                )}
+                <span className="text-gray-600 text-[10px]">{new Date(t.date).toLocaleDateString()}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ── Quick Options Trade from Catalyst (for Detail Modal) ──
+const CatalystOptionsQuickTrade = ({ catalyst, onBuyOption, cashAvailable, optionsLevel }) => {
+  const [contracts, setContracts] = useState(1);
+  const { data: marketData } = useMarketData(catalyst?.ticker);
+  const stockPrice = marketData?.quote?.price || 0;
+  const [showHelp] = useState(optionsLevel <= 1);
+
+  if (!stockPrice || stockPrice === 0) {
+    return (
+      <div className="bg-gray-800 border border-gray-700 p-4 text-center">
+        <Loader size={16} className="text-gray-500 animate-spin mx-auto mb-2" />
+        <p className="text-xs text-gray-500 font-mono">Loading price for options...</p>
+      </div>
+    );
+  }
+
+  const strike = Math.round(stockPrice);
+  const T = 30 / 365;
+  const iv = 0.80;
+  const callPrem = blackScholesCall(stockPrice, strike, T, 0.05, iv);
+  const putPrem = Math.max(0.10, callPrem - stockPrice + strike * Math.exp(-0.05 * T));
+  const straddlePrem = callPrem + putPrem;
+
+  const options = [
+    { type: 'CALL', emoji: '📈', strike: Math.round(stockPrice * 1.05), prem: blackScholesCall(stockPrice, Math.round(stockPrice * 1.05), T, 0.05, iv), color: 'green', desc: 'Bet on approval' },
+    { type: 'PUT', emoji: '📉', strike: Math.round(stockPrice * 0.95), prem: Math.max(0.10, blackScholesCall(stockPrice, Math.round(stockPrice * 0.95), T, 0.05, iv) - stockPrice + Math.round(stockPrice * 0.95) * Math.exp(-0.05 * T)), color: 'red', desc: 'Bet on CRL' },
+    { type: 'STRADDLE', emoji: '↕️', strike, prem: straddlePrem, color: 'purple', desc: 'Bet on big move' },
+  ];
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Target size={14} className="text-purple-400" />
+          <span className="text-xs font-mono text-gray-400">PAPER TRADE OPTIONS — {catalyst.ticker}</span>
+        </div>
+        <div className="text-[10px] text-gray-500 font-mono">Stock: ${stockPrice.toFixed(2)}</div>
+      </div>
+
+      {showHelp && (
+        <div className="bg-blue-950/20 border border-blue-800/30 p-2 text-[10px] text-blue-300">
+          💡 <strong>Tip:</strong> ODIN scores this at <strong>{(catalyst.prob * 100).toFixed(0)}%</strong> approval.
+          {catalyst.prob >= 0.7 ? ' A CALL might be favored.' : catalyst.prob < 0.4 ? ' A PUT or straddle might be wise.' : ' A STRADDLE lets you profit from the move regardless of direction.'}
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 gap-2">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-[10px] text-gray-500 font-mono">CONTRACTS:</span>
+          <input type="number" value={contracts} onChange={e => setContracts(Math.max(1, parseInt(e.target.value) || 1))}
+            min={1} max={50} className="w-16 bg-gray-900 border border-gray-600 text-white px-2 py-1 text-xs font-mono focus:border-purple-500 focus:outline-none" />
+        </div>
+        {options.map(opt => {
+          const total = opt.prem * contracts * 100;
+          const canAfford = total <= cashAvailable;
+          return (
+            <button key={opt.type} onClick={() => {
+              if (canAfford) onBuyOption(catalyst.ticker, catalyst.company, opt.type, opt.strike, 30, opt.prem, contracts, stockPrice);
+            }}
+              disabled={!canAfford}
+              className={`flex items-center justify-between p-3 border transition ${
+                canAfford
+                  ? `bg-${opt.color}-950/20 border-${opt.color}-700/40 hover:border-${opt.color}-500 hover:bg-${opt.color}-950/40`
+                  : 'bg-gray-800 border-gray-700 opacity-50 cursor-not-allowed'
+              }`}>
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{opt.emoji}</span>
+                <div className="text-left">
+                  <div className={`text-xs font-bold font-mono text-${opt.color}-400`}>BUY {opt.type}</div>
+                  <div className="text-[10px] text-gray-500">{opt.desc}</div>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-xs font-mono text-white">${opt.strike} strike</div>
+                <div className="text-[10px] font-mono text-gray-400">${opt.prem.toFixed(2)}/share · ${total.toFixed(0)} total</div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ═══════════════════════════════════════════════════
 // ODIN CAPITAL — LIVE TRADING ANNOUNCEMENT BANNER
 // ═══════════════════════════════════════════════════
 const OdinCapitalBanner = () => (
@@ -7559,9 +8123,10 @@ const TradeHistory = ({ trades }) => {
 };
 
 // ── Main Paper Trading View ──
-const PaperTradingView = ({ catalysts }) => {
+const PaperTradingView = ({ catalysts, onBuyOption, optPositions, onCloseOption, onResetOptions, optionsLevel, setOptionsLevel }) => {
   const { portfolio, buyStock, sellStock, resetPortfolio } = usePaperTrading();
   const [showReset, setShowReset] = useState(false);
+  const [tradeTab, setTradeTab] = useState('stocks'); // 'stocks' | 'options'
 
   // Calculate portfolio metrics
   const totalTrades = portfolio.trades.length;
@@ -7630,10 +8195,26 @@ const PaperTradingView = ({ catalysts }) => {
         </div>
       )}
 
+      {/* Stock / Options Toggle */}
+      <div className="flex gap-1 bg-gray-800 border border-gray-700 p-1 w-fit">
+        <button onClick={() => setTradeTab('stocks')}
+          className={`px-4 py-1.5 text-xs font-mono font-bold transition ${tradeTab === 'stocks' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+          <DollarSign size={12} className="inline mr-1" />STOCKS
+        </button>
+        <button onClick={() => setTradeTab('options')}
+          className={`px-4 py-1.5 text-xs font-mono font-bold transition ${tradeTab === 'options' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+          <Target size={12} className="inline mr-1" />OPTIONS
+        </button>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Trade Entry */}
         <div className="lg:col-span-1 space-y-4">
-          <TradeEntryForm catalysts={catalysts} onBuy={buyStock} onSell={sellStock} portfolio={portfolio} />
+          {tradeTab === 'stocks' ? (
+            <TradeEntryForm catalysts={catalysts} onBuy={buyStock} onSell={sellStock} portfolio={portfolio} />
+          ) : (
+            <OptionsTradeForm catalysts={catalysts} onBuyOption={onBuyOption} cashAvailable={portfolio.cash} optionsLevel={optionsLevel} />
+          )}
 
           {/* Catalyst Quick-Trade */}
           <div className="bg-gray-800 border border-gray-700 p-4">
@@ -7649,7 +8230,7 @@ const PaperTradingView = ({ catalysts }) => {
                 .map(c => (
                   <button key={c.id}
                     onClick={() => {
-                      const tickerInput = document.querySelector('input[placeholder="AAPL"]');
+                      const tickerInput = document.querySelector('input[placeholder="AAPL"], input[placeholder="REGN"]');
                       if (tickerInput) {
                         const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
                         nativeInputValueSetter.call(tickerInput, c.ticker);
@@ -7673,14 +8254,14 @@ const PaperTradingView = ({ catalysts }) => {
           </div>
 
           {/* Reset */}
-          <div className="text-center">
+          <div className="text-center space-y-1">
             {!showReset ? (
-              <button onClick={() => setShowReset(true)} className="text-[10px] text-gray-600 hover:text-gray-400 font-mono transition">Reset Portfolio</button>
+              <button onClick={() => setShowReset(true)} className="text-[10px] text-gray-600 hover:text-gray-400 font-mono transition">Reset All (Stocks + Options)</button>
             ) : (
               <div className="bg-red-950 border border-red-800 p-3 space-y-2">
-                <p className="text-xs text-red-300 font-mono">Reset to $100,000 and clear all trades?</p>
+                <p className="text-xs text-red-300 font-mono">Reset to $100,000 and clear ALL positions?</p>
                 <div className="flex gap-2 justify-center">
-                  <button onClick={() => { resetPortfolio(); setShowReset(false); }} className="px-3 py-1 bg-red-600 text-white text-xs font-mono font-bold">YES, RESET</button>
+                  <button onClick={() => { resetPortfolio(); onResetOptions(); setShowReset(false); }} className="px-3 py-1 bg-red-600 text-white text-xs font-mono font-bold">YES, RESET ALL</button>
                   <button onClick={() => setShowReset(false)} className="px-3 py-1 bg-gray-700 text-gray-300 text-xs font-mono">CANCEL</button>
                 </div>
               </div>
@@ -7690,10 +8271,17 @@ const PaperTradingView = ({ catalysts }) => {
 
         {/* Portfolio & History */}
         <div className="lg:col-span-2 space-y-4">
-          <PortfolioPositions positions={portfolio.positions} onSellClick={(pos) => {
-            // Pre-populate sell form (simplified - just trigger the sell action)
-          }} />
-          <TradeHistory trades={portfolio.trades} />
+          {tradeTab === 'stocks' ? (
+            <>
+              <PortfolioPositions positions={portfolio.positions} onSellClick={() => {}} />
+              <TradeHistory trades={portfolio.trades} />
+            </>
+          ) : (
+            <>
+              <OptionsPositions positions={optPositions.positions} onClose={onCloseOption} />
+              <OptionsTradeHistory trades={optPositions.trades} />
+            </>
+          )}
         </div>
       </div>
 
@@ -7855,12 +8443,34 @@ export default function PdufaBio() {
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
   const { watchlist, toggle: toggleWatch, isWatched } = useWatchlist();
   const { predict, getPrediction, getCommunity, getStats: getPredictionStats, odinCoins, addCoins } = usePredictions();
+  const { optPositions, buyOption, closeOption, resetOptions } = useOptionsPaperTrading();
+  const [optionsLevel, setOptionsLevel] = useState(() => {
+    try {
+      const stored = localStorage.getItem('pdufa_options_level');
+      return stored !== null ? parseInt(stored) : -1; // -1 = not assessed yet
+    } catch { return -1; }
+  });
+  const [showOptionsOnboarding, setShowOptionsOnboarding] = useState(false);
   const [siteUnlocked, setSiteUnlocked] = useState(() => {
     try { return sessionStorage.getItem('pdufa_unlocked') === 'true'; } catch (e) { return false; }
   });
   const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
     try { return localStorage.getItem('pdufa_disclaimer_accepted') === 'true'; } catch (e) { return false; }
   });
+
+  // Handle buying options (deducts from paper cash)
+  const handleBuyOption = useCallback((ticker, company, optionType, strike, expiry, premium, contracts, stockPrice) => {
+    const totalCost = buyOption(ticker, company, optionType, strike, expiry, premium, contracts, stockPrice);
+    // Cash deduction handled via paper trading store
+  }, [buyOption]);
+
+  // Navigate to trade tab with options onboarding if needed
+  const handleTradeNav = useCallback((tab) => {
+    if (tab === 'trade' && optionsLevel === -1) {
+      setShowOptionsOnboarding(true);
+    }
+    setActiveTab(tab);
+  }, [optionsLevel]);
   const today = new Date();
   const dateStr = `${today.toLocaleString('en-US', { weekday: 'short' })} ${today.toLocaleString('en-US', { month: 'short' })} ${today.getDate()}, ${today.getFullYear()}`;
 
@@ -7923,17 +8533,17 @@ export default function PdufaBio() {
         </div>
       </div>
 
-      {/* Nav Tabs */}
+      {/* Nav Tabs — single-line compact */}
       <div className="border-b border-gray-700 bg-gray-900 sticky top-[53px] z-30">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-0 overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 flex flex-wrap gap-0">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
-              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                className={`px-3 sm:px-6 py-3 sm:py-4 font-mono text-xs sm:text-sm uppercase border-b-2 transition flex items-center gap-1.5 whitespace-nowrap ${
-                  activeTab === tab.id ? 'border-blue-400 text-blue-400' : 'border-transparent text-gray-400 hover:text-gray-300'
+              <button key={tab.id} onClick={() => handleTradeNav(tab.id)}
+                className={`px-2 sm:px-3 py-2 sm:py-2.5 font-mono text-[10px] sm:text-xs uppercase border-b-2 transition flex items-center gap-1 ${
+                  activeTab === tab.id ? 'border-blue-400 text-blue-400' : 'border-transparent text-gray-500 hover:text-gray-300'
                 }`}>
-                <Icon size={14} />
+                <Icon size={12} className="hidden sm:block" />
                 {tab.label}
               </button>
             );
@@ -7946,8 +8556,8 @@ export default function PdufaBio() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
-        {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} onNavigate={setActiveTab} />}
-        {activeTab === 'trade' && <PaperTradingView catalysts={sortedCatalysts} />}
+        {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} onNavigate={handleTradeNav} />}
+        {activeTab === 'trade' && <PaperTradingView catalysts={sortedCatalysts} onBuyOption={handleBuyOption} optPositions={optPositions} onCloseOption={closeOption} onResetOptions={resetOptions} optionsLevel={Math.max(0, optionsLevel)} setOptionsLevel={setOptionsLevel} />}
         {activeTab === 'feed' && <FeedView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} predict={predict} getPrediction={getPrediction} />}
         {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} watchlist={watchlist} isWatched={isWatched} />}
@@ -8009,7 +8619,16 @@ export default function PdufaBio() {
 
       {/* Detail Modal */}
       {selectedCatalyst && (
-        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} predict={predict} getPrediction={getPrediction} getCommunity={getCommunity} odinCoins={odinCoins} />
+        <DetailModal catalyst={selectedCatalyst} onClose={() => setSelectedCatalyst(null)} toggleWatch={toggleWatch} isWatched={isWatched} predict={predict} getPrediction={getPrediction} getCommunity={getCommunity} odinCoins={odinCoins} onBuyOption={handleBuyOption} cashAvailable={100000} optionsLevel={Math.max(0, optionsLevel)} />
+      )}
+
+      {/* Options Knowledge Onboarding */}
+      {showOptionsOnboarding && optionsLevel === -1 && (
+        <OptionsOnboarding onComplete={(level) => {
+          setOptionsLevel(level);
+          try { localStorage.setItem('pdufa_options_level', String(level)); } catch {}
+          setShowOptionsOnboarding(false);
+        }} />
       )}
     </div>
   );
