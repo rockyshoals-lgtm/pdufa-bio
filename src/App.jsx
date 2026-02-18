@@ -3740,12 +3740,19 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
             className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 text-sm font-mono transition flex items-center gap-2">
             <BarChart3 size={14} /> Full Screener <ChevronRight size={14} />
           </button>
+          <button onClick={() => onNavigate('trade')}
+            className="bg-green-700 hover:bg-green-600 text-white px-5 py-2.5 text-sm font-mono transition flex items-center gap-2">
+            <DollarSign size={14} /> Paper Trade <ChevronRight size={14} />
+          </button>
           <button onClick={() => onNavigate('calendar')}
             className="bg-gray-800 hover:bg-gray-700 text-gray-200 px-5 py-2.5 text-sm font-mono border border-gray-700 transition flex items-center gap-2">
             <Calendar size={14} /> Catalyst Calendar
           </button>
         </div>
       </div>
+
+      {/* Odin Capital Announcement */}
+      <OdinCapitalBanner />
 
       {/* Key Stats Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
@@ -7182,6 +7189,531 @@ const OdinQuestGame = () => {
   );
 };
 
+// ═══════════════════════════════════════════════════
+// ODIN CAPITAL — LIVE TRADING ANNOUNCEMENT BANNER
+// ═══════════════════════════════════════════════════
+const OdinCapitalBanner = () => (
+  <div className="bg-gradient-to-r from-yellow-950/40 via-amber-950/30 to-yellow-950/40 border border-yellow-700/40 p-4 mb-6">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="flex items-center gap-2">
+        <span className="text-2xl">🔥</span>
+        <span className="text-sm font-bold font-mono text-yellow-400 tracking-wider">ODIN CAPITAL</span>
+      </div>
+      <div className="bg-yellow-500/20 border border-yellow-500/40 px-2 py-0.5 text-[10px] font-mono font-bold text-yellow-300">COMING MID-MARCH</div>
+    </div>
+    <p className="text-sm text-yellow-200/80 leading-relaxed">
+      <span className="font-bold text-yellow-300">Real money. Real markets.</span> ODIN Capital brings live trading powered by the same ML engine scoring every catalyst on this dashboard. Paper trade now to sharpen your edge before launch.
+    </p>
+    <div className="flex flex-wrap gap-3 mt-3">
+      {['ODIN-Scored Entries', 'Auto Risk Sizing', 'Catalyst Alerts', 'Options Flow'].map(f => (
+        <span key={f} className="text-[10px] font-mono text-yellow-400/70 bg-yellow-500/10 border border-yellow-500/20 px-2 py-0.5">{f}</span>
+      ))}
+    </div>
+  </div>
+);
+
+// ═══════════════════════════════════════════════════
+// PAPER TRADING ENGINE — Full Portfolio Simulation
+// ═══════════════════════════════════════════════════
+const PAPER_STARTING_CASH = 100000;
+
+const usePaperTrading = () => {
+  const [portfolio, setPortfolio] = useState(() => {
+    try {
+      const stored = localStorage.getItem('pdufa_paper_portfolio');
+      if (stored) return JSON.parse(stored);
+    } catch {}
+    return { cash: PAPER_STARTING_CASH, positions: [], trades: [], startDate: new Date().toISOString() };
+  });
+
+  // Persist on change
+  useEffect(() => {
+    try { localStorage.setItem('pdufa_paper_portfolio', JSON.stringify(portfolio)); } catch {}
+  }, [portfolio]);
+
+  const buyStock = useCallback((ticker, company, price, shares) => {
+    const cost = price * shares;
+    setPortfolio(prev => {
+      if (cost > prev.cash) return prev;
+      const existingIdx = prev.positions.findIndex(p => p.ticker === ticker);
+      const newPositions = [...prev.positions];
+      if (existingIdx >= 0) {
+        const existing = newPositions[existingIdx];
+        const totalShares = existing.shares + shares;
+        const avgCost = ((existing.avgCost * existing.shares) + (price * shares)) / totalShares;
+        newPositions[existingIdx] = { ...existing, shares: totalShares, avgCost };
+      } else {
+        newPositions.push({ ticker, company, shares, avgCost: price, openDate: new Date().toISOString() });
+      }
+      const trade = { type: 'BUY', ticker, company, shares, price, total: cost, date: new Date().toISOString() };
+      return { ...prev, cash: prev.cash - cost, positions: newPositions, trades: [trade, ...prev.trades] };
+    });
+  }, []);
+
+  const sellStock = useCallback((ticker, price, shares) => {
+    setPortfolio(prev => {
+      const posIdx = prev.positions.findIndex(p => p.ticker === ticker);
+      if (posIdx < 0) return prev;
+      const pos = prev.positions[posIdx];
+      const sellShares = Math.min(shares, pos.shares);
+      const proceeds = price * sellShares;
+      const newPositions = [...prev.positions];
+      if (sellShares >= pos.shares) {
+        newPositions.splice(posIdx, 1);
+      } else {
+        newPositions[posIdx] = { ...pos, shares: pos.shares - sellShares };
+      }
+      const trade = { type: 'SELL', ticker, company: pos.company, shares: sellShares, price, total: proceeds, date: new Date().toISOString(), pnl: (price - pos.avgCost) * sellShares };
+      return { ...prev, cash: prev.cash + proceeds, positions: newPositions, trades: [trade, ...prev.trades] };
+    });
+  }, []);
+
+  const resetPortfolio = useCallback(() => {
+    setPortfolio({ cash: PAPER_STARTING_CASH, positions: [], trades: [], startDate: new Date().toISOString() });
+  }, []);
+
+  return { portfolio, buyStock, sellStock, resetPortfolio };
+};
+
+// ── Paper Trade Entry Form ──
+const TradeEntryForm = ({ catalysts, onBuy, onSell, portfolio }) => {
+  const [ticker, setTicker] = useState('');
+  const [shares, setShares] = useState(100);
+  const [action, setAction] = useState('BUY');
+  const [showCatalysts, setShowCatalysts] = useState(false);
+  const [quoteData, setQuoteData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetchQuote = useCallback(async (t) => {
+    if (!t) return;
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/market-data?ticker=${t}&type=quote`);
+      if (res.ok) {
+        const data = await res.json();
+        setQuoteData(data);
+      }
+    } catch {} finally { setLoading(false); }
+  }, []);
+
+  useEffect(() => {
+    if (ticker.length >= 1) {
+      const timer = setTimeout(() => fetchQuote(ticker), 500);
+      return () => clearTimeout(timer);
+    } else {
+      setQuoteData(null);
+    }
+  }, [ticker, fetchQuote]);
+
+  const price = quoteData?.price || quoteData?.[0]?.price || 0;
+  const change = quoteData?.changesPercentage || quoteData?.[0]?.changesPercentage || 0;
+  const total = price * shares;
+  const canBuy = action === 'BUY' && total <= portfolio.cash && price > 0;
+  const maxShares = action === 'SELL' ? (portfolio.positions.find(p => p.ticker === ticker.toUpperCase())?.shares || 0) : Math.floor(portfolio.cash / (price || 1));
+  const canSell = action === 'SELL' && shares > 0 && shares <= maxShares && price > 0;
+
+  const handleSubmit = () => {
+    const t = ticker.toUpperCase();
+    const matchedCatalyst = catalysts.find(c => c.ticker === t);
+    const company = matchedCatalyst?.company || t;
+    if (action === 'BUY' && canBuy) {
+      onBuy(t, company, price, shares);
+      setTicker('');
+      setShares(100);
+      setQuoteData(null);
+    } else if (action === 'SELL' && canSell) {
+      onSell(t, price, shares);
+      setTicker('');
+      setShares(100);
+      setQuoteData(null);
+    }
+  };
+
+  return (
+    <div className="bg-gray-800 border border-gray-700 p-4 space-y-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <DollarSign size={14} className="text-blue-400" />
+          <span className="text-xs font-mono text-gray-400">PAPER TRADE</span>
+        </div>
+        <div className="flex gap-1">
+          <button onClick={() => setAction('BUY')} className={`px-3 py-1 text-xs font-mono font-bold transition ${action === 'BUY' ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-400 hover:text-white'}`}>BUY</button>
+          <button onClick={() => setAction('SELL')} className={`px-3 py-1 text-xs font-mono font-bold transition ${action === 'SELL' ? 'bg-red-600 text-white' : 'bg-gray-700 text-gray-400 hover:text-white'}`}>SELL</button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <div className="text-[10px] text-gray-500 mb-1 font-mono">TICKER</div>
+          <div className="relative">
+            <input value={ticker} onChange={e => setTicker(e.target.value.toUpperCase())}
+              placeholder="AAPL" onFocus={() => setShowCatalysts(true)} onBlur={() => setTimeout(() => setShowCatalysts(false), 200)}
+              className="w-full bg-gray-900 border border-gray-600 text-white px-2 py-1.5 text-sm font-mono focus:border-blue-500 focus:outline-none uppercase" />
+            {showCatalysts && ticker.length === 0 && (
+              <div className="absolute top-full left-0 right-0 bg-gray-900 border border-gray-600 z-10 max-h-48 overflow-y-auto">
+                <div className="px-2 py-1 text-[10px] text-gray-500 font-mono">ODIN CATALYSTS</div>
+                {catalysts.filter(c => c.ticker !== 'Private').map(c => (
+                  <button key={c.id} onClick={() => { setTicker(c.ticker); setShowCatalysts(false); }}
+                    className="w-full text-left px-2 py-1.5 hover:bg-gray-800 flex items-center justify-between text-xs">
+                    <span className="font-mono font-bold text-white">{c.ticker}</span>
+                    <span className="text-gray-500 truncate ml-2">{c.drug}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+        <div>
+          <div className="text-[10px] text-gray-500 mb-1 font-mono">SHARES</div>
+          <input type="number" value={shares} onChange={e => setShares(Math.max(1, parseInt(e.target.value) || 1))}
+            min={1} max={action === 'SELL' ? maxShares : 99999}
+            className="w-full bg-gray-900 border border-gray-600 text-white px-2 py-1.5 text-sm font-mono focus:border-blue-500 focus:outline-none" />
+        </div>
+      </div>
+
+      {/* Quote Display */}
+      {loading && <div className="flex items-center gap-2 text-xs text-gray-500"><Loader size={12} className="animate-spin" /> Fetching quote...</div>}
+      {price > 0 && !loading && (
+        <div className="bg-gray-900 border border-gray-700 p-3 grid grid-cols-3 gap-3">
+          <div>
+            <div className="text-[10px] text-gray-500 font-mono">PRICE</div>
+            <div className="text-lg font-bold text-white font-mono">${price.toFixed(2)}</div>
+          </div>
+          <div>
+            <div className="text-[10px] text-gray-500 font-mono">CHANGE</div>
+            <div className={`text-lg font-bold font-mono ${change >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+              {change >= 0 ? '+' : ''}{(typeof change === 'number' ? change : 0).toFixed(2)}%
+            </div>
+          </div>
+          <div>
+            <div className="text-[10px] text-gray-500 font-mono">TOTAL</div>
+            <div className="text-lg font-bold text-white font-mono">${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+          </div>
+        </div>
+      )}
+
+      {/* Max shares hint */}
+      {action === 'SELL' && ticker && (
+        <div className="text-[10px] text-gray-500 font-mono">Max sellable: {maxShares} shares</div>
+      )}
+      {action === 'BUY' && price > 0 && (
+        <div className="text-[10px] text-gray-500 font-mono">Buying power: ${portfolio.cash.toLocaleString(undefined, { minimumFractionDigits: 2 })} ({Math.floor(portfolio.cash / price)} shares max)</div>
+      )}
+
+      <button onClick={handleSubmit}
+        disabled={action === 'BUY' ? !canBuy : !canSell}
+        className={`w-full py-2.5 text-sm font-mono font-bold transition ${
+          (action === 'BUY' ? canBuy : canSell)
+            ? (action === 'BUY' ? 'bg-green-600 hover:bg-green-500 text-white' : 'bg-red-600 hover:bg-red-500 text-white')
+            : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+        }`}>
+        {action === 'BUY' ? '⚡ EXECUTE BUY' : '🔻 EXECUTE SELL'}
+      </button>
+    </div>
+  );
+};
+
+// ── Portfolio Positions Table ──
+const PortfolioPositions = ({ positions, onSellClick }) => {
+  const [prices, setPrices] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  // Fetch current prices for all positions
+  useEffect(() => {
+    if (positions.length === 0) return;
+    let cancelled = false;
+    const fetchPrices = async () => {
+      setLoading(true);
+      const newPrices = {};
+      for (const pos of positions) {
+        try {
+          const res = await fetch(`/api/market-data?ticker=${pos.ticker}&type=quote`);
+          if (res.ok) {
+            const data = await res.json();
+            newPrices[pos.ticker] = data?.price || data?.[0]?.price || pos.avgCost;
+          }
+        } catch {}
+      }
+      if (!cancelled) setPrices(newPrices);
+      setLoading(false);
+    };
+    fetchPrices();
+    const interval = setInterval(fetchPrices, 30000);
+    return () => { cancelled = true; clearInterval(interval); };
+  }, [positions.map(p => p.ticker).join(',')]);
+
+  if (positions.length === 0) {
+    return (
+      <div className="bg-gray-800 border border-gray-700 p-6 text-center">
+        <Briefcase size={24} className="text-gray-600 mx-auto mb-2" />
+        <p className="text-sm text-gray-500 font-mono">No open positions</p>
+        <p className="text-xs text-gray-600 mt-1">Use the trade form to place your first paper trade</p>
+      </div>
+    );
+  }
+
+  const totalValue = positions.reduce((sum, pos) => sum + (prices[pos.ticker] || pos.avgCost) * pos.shares, 0);
+  const totalCost = positions.reduce((sum, pos) => sum + pos.avgCost * pos.shares, 0);
+  const totalPnL = totalValue - totalCost;
+  const totalPnLPct = totalCost > 0 ? (totalPnL / totalCost) * 100 : 0;
+
+  return (
+    <div className="bg-gray-800 border border-gray-700 overflow-hidden">
+      <div className="px-4 py-3 border-b border-gray-700 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Briefcase size={14} className="text-blue-400" />
+          <span className="text-xs font-mono text-gray-400">OPEN POSITIONS</span>
+          {loading && <Loader size={10} className="text-gray-500 animate-spin" />}
+        </div>
+        <div className="flex items-center gap-4 text-xs font-mono">
+          <span className="text-gray-500">Value: <span className="text-white">${totalValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></span>
+          <span className={totalPnL >= 0 ? 'text-green-400' : 'text-red-400'}>
+            {totalPnL >= 0 ? '+' : ''}{totalPnLPct.toFixed(2)}%
+          </span>
+        </div>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-xs font-mono">
+          <thead>
+            <tr className="text-gray-500 border-b border-gray-700">
+              <th className="text-left px-4 py-2">Ticker</th>
+              <th className="text-right px-4 py-2">Shares</th>
+              <th className="text-right px-4 py-2">Avg Cost</th>
+              <th className="text-right px-4 py-2">Current</th>
+              <th className="text-right px-4 py-2">P&L</th>
+              <th className="text-right px-4 py-2">Value</th>
+              <th className="text-right px-4 py-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {positions.map(pos => {
+              const current = prices[pos.ticker] || pos.avgCost;
+              const pnl = (current - pos.avgCost) * pos.shares;
+              const pnlPct = pos.avgCost > 0 ? ((current - pos.avgCost) / pos.avgCost) * 100 : 0;
+              const value = current * pos.shares;
+              return (
+                <tr key={pos.ticker} className="border-b border-gray-700/50 hover:bg-gray-750">
+                  <td className="px-4 py-2">
+                    <div className="font-bold text-white">{pos.ticker}</div>
+                    <div className="text-[10px] text-gray-500 truncate max-w-[120px]">{pos.company}</div>
+                  </td>
+                  <td className="text-right px-4 py-2 text-white">{pos.shares}</td>
+                  <td className="text-right px-4 py-2 text-gray-400">${pos.avgCost.toFixed(2)}</td>
+                  <td className="text-right px-4 py-2 text-white">${current.toFixed(2)}</td>
+                  <td className="text-right px-4 py-2">
+                    <div className={pnl >= 0 ? 'text-green-400' : 'text-red-400'}>
+                      {pnl >= 0 ? '+' : ''}${Math.abs(pnl).toFixed(2)}
+                    </div>
+                    <div className={`text-[10px] ${pnlPct >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                      {pnlPct >= 0 ? '+' : ''}{pnlPct.toFixed(2)}%
+                    </div>
+                  </td>
+                  <td className="text-right px-4 py-2 text-white">${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                  <td className="text-right px-4 py-2">
+                    <button onClick={() => onSellClick(pos)} className="text-red-400 hover:text-red-300 text-[10px] font-bold transition">SELL</button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+// ── Trade History Log ──
+const TradeHistory = ({ trades }) => {
+  if (trades.length === 0) return null;
+  return (
+    <div className="bg-gray-800 border border-gray-700 overflow-hidden">
+      <div className="px-4 py-3 border-b border-gray-700 flex items-center gap-2">
+        <Clock size={14} className="text-blue-400" />
+        <span className="text-xs font-mono text-gray-400">TRADE HISTORY</span>
+        <span className="text-[10px] text-gray-600 font-mono ml-auto">{trades.length} trades</span>
+      </div>
+      <div className="max-h-64 overflow-y-auto">
+        {trades.slice(0, 50).map((trade, i) => (
+          <div key={i} className="px-4 py-2 border-b border-gray-700/50 flex items-center justify-between text-xs font-mono">
+            <div className="flex items-center gap-3">
+              <span className={`px-1.5 py-0.5 font-bold text-[10px] ${trade.type === 'BUY' ? 'bg-green-900/50 text-green-400 border border-green-700/50' : 'bg-red-900/50 text-red-400 border border-red-700/50'}`}>
+                {trade.type}
+              </span>
+              <span className="text-white font-bold">{trade.ticker}</span>
+              <span className="text-gray-500">{trade.shares} × ${trade.price.toFixed(2)}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-white">${trade.total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              {trade.pnl !== undefined && (
+                <span className={trade.pnl >= 0 ? 'text-green-400' : 'text-red-400'}>
+                  {trade.pnl >= 0 ? '+' : ''}${trade.pnl.toFixed(2)}
+                </span>
+              )}
+              <span className="text-gray-600 text-[10px]">{new Date(trade.date).toLocaleDateString()}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ── Main Paper Trading View ──
+const PaperTradingView = ({ catalysts }) => {
+  const { portfolio, buyStock, sellStock, resetPortfolio } = usePaperTrading();
+  const [showReset, setShowReset] = useState(false);
+
+  // Calculate portfolio metrics
+  const totalTrades = portfolio.trades.length;
+  const wins = portfolio.trades.filter(t => t.type === 'SELL' && (t.pnl || 0) > 0).length;
+  const losses = portfolio.trades.filter(t => t.type === 'SELL' && (t.pnl || 0) < 0).length;
+  const sells = portfolio.trades.filter(t => t.type === 'SELL');
+  const realizedPnL = sells.reduce((sum, t) => sum + (t.pnl || 0), 0);
+  const winRate = sells.length > 0 ? (wins / sells.length) * 100 : 0;
+  const bestTrade = sells.length > 0 ? sells.reduce((best, t) => (t.pnl || 0) > (best.pnl || 0) ? t : best, sells[0]) : null;
+  const worstTrade = sells.length > 0 ? sells.reduce((worst, t) => (t.pnl || 0) < (worst.pnl || 0) ? t : worst, sells[0]) : null;
+
+  return (
+    <div className="space-y-6">
+      {/* Odin Capital Announcement */}
+      <OdinCapitalBanner />
+
+      {/* Portfolio Summary */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="bg-gray-800 border border-gray-700 p-3">
+          <div className="text-[10px] text-gray-500 font-mono mb-1">CASH BALANCE</div>
+          <div className="text-lg font-bold text-white font-mono">${portfolio.cash.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+        <div className="bg-gray-800 border border-gray-700 p-3">
+          <div className="text-[10px] text-gray-500 font-mono mb-1">POSITIONS</div>
+          <div className="text-lg font-bold text-blue-400 font-mono">{portfolio.positions.length}</div>
+        </div>
+        <div className="bg-gray-800 border border-gray-700 p-3">
+          <div className="text-[10px] text-gray-500 font-mono mb-1">REALIZED P&L</div>
+          <div className={`text-lg font-bold font-mono ${realizedPnL >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+            {realizedPnL >= 0 ? '+' : ''}${Math.abs(realizedPnL).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          </div>
+        </div>
+        <div className="bg-gray-800 border border-gray-700 p-3">
+          <div className="text-[10px] text-gray-500 font-mono mb-1">WIN RATE</div>
+          <div className={`text-lg font-bold font-mono ${winRate >= 50 ? 'text-green-400' : winRate > 0 ? 'text-yellow-400' : 'text-gray-500'}`}>
+            {sells.length > 0 ? `${winRate.toFixed(1)}%` : '—'}
+          </div>
+        </div>
+      </div>
+
+      {/* Performance Stats (only show when trades exist) */}
+      {sells.length > 0 && (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="bg-gray-800 border border-gray-700 p-3">
+            <div className="text-[10px] text-gray-500 font-mono mb-1">TOTAL TRADES</div>
+            <div className="text-sm font-bold text-white font-mono">{totalTrades} <span className="text-gray-500 text-xs">({sells.length} closed)</span></div>
+          </div>
+          <div className="bg-gray-800 border border-gray-700 p-3">
+            <div className="text-[10px] text-gray-500 font-mono mb-1">W / L</div>
+            <div className="text-sm font-bold font-mono">
+              <span className="text-green-400">{wins}W</span> / <span className="text-red-400">{losses}L</span>
+            </div>
+          </div>
+          {bestTrade && (
+            <div className="bg-gray-800 border border-gray-700 p-3">
+              <div className="text-[10px] text-gray-500 font-mono mb-1">BEST TRADE</div>
+              <div className="text-sm font-bold text-green-400 font-mono">{bestTrade.ticker} +${(bestTrade.pnl || 0).toFixed(2)}</div>
+            </div>
+          )}
+          {worstTrade && (
+            <div className="bg-gray-800 border border-gray-700 p-3">
+              <div className="text-[10px] text-gray-500 font-mono mb-1">WORST TRADE</div>
+              <div className="text-sm font-bold text-red-400 font-mono">{worstTrade.ticker} ${(worstTrade.pnl || 0).toFixed(2)}</div>
+            </div>
+          )}
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Trade Entry */}
+        <div className="lg:col-span-1 space-y-4">
+          <TradeEntryForm catalysts={catalysts} onBuy={buyStock} onSell={sellStock} portfolio={portfolio} />
+
+          {/* Catalyst Quick-Trade */}
+          <div className="bg-gray-800 border border-gray-700 p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <Zap size={14} className="text-yellow-400" />
+              <span className="text-xs font-mono text-gray-400">CATALYST QUICK-TRADE</span>
+            </div>
+            <p className="text-[10px] text-gray-500 mb-3">Upcoming ODIN-scored catalysts. Click to populate the trade form.</p>
+            <div className="space-y-1 max-h-48 overflow-y-auto">
+              {catalysts
+                .filter(c => c.ticker !== 'Private' && new Date(c.date) >= new Date())
+                .slice(0, 10)
+                .map(c => (
+                  <button key={c.id}
+                    onClick={() => {
+                      const tickerInput = document.querySelector('input[placeholder="AAPL"]');
+                      if (tickerInput) {
+                        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+                        nativeInputValueSetter.call(tickerInput, c.ticker);
+                        tickerInput.dispatchEvent(new Event('input', { bubbles: true }));
+                      }
+                    }}
+                    className="w-full flex items-center justify-between px-2 py-1.5 hover:bg-gray-700 transition text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono font-bold text-white">{c.ticker}</span>
+                      <span className="text-gray-500 truncate max-w-[100px]">{c.drug}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className={`text-[10px] font-mono ${c.prob >= 0.7 ? 'text-green-400' : c.prob >= 0.5 ? 'text-yellow-400' : 'text-red-400'}`}>
+                        {(c.prob * 100).toFixed(0)}%
+                      </span>
+                      <span className="text-[10px] text-gray-600 font-mono">{new Date(c.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                    </div>
+                  </button>
+                ))}
+            </div>
+          </div>
+
+          {/* Reset */}
+          <div className="text-center">
+            {!showReset ? (
+              <button onClick={() => setShowReset(true)} className="text-[10px] text-gray-600 hover:text-gray-400 font-mono transition">Reset Portfolio</button>
+            ) : (
+              <div className="bg-red-950 border border-red-800 p-3 space-y-2">
+                <p className="text-xs text-red-300 font-mono">Reset to $100,000 and clear all trades?</p>
+                <div className="flex gap-2 justify-center">
+                  <button onClick={() => { resetPortfolio(); setShowReset(false); }} className="px-3 py-1 bg-red-600 text-white text-xs font-mono font-bold">YES, RESET</button>
+                  <button onClick={() => setShowReset(false)} className="px-3 py-1 bg-gray-700 text-gray-300 text-xs font-mono">CANCEL</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Portfolio & History */}
+        <div className="lg:col-span-2 space-y-4">
+          <PortfolioPositions positions={portfolio.positions} onSellClick={(pos) => {
+            // Pre-populate sell form (simplified - just trigger the sell action)
+          }} />
+          <TradeHistory trades={portfolio.trades} />
+        </div>
+      </div>
+
+      {/* Odin Capital CTA at bottom */}
+      <div className="bg-gradient-to-r from-blue-950/30 via-gray-800 to-blue-950/30 border border-blue-700/30 p-6 text-center space-y-3">
+        <div className="text-xs font-mono text-blue-400 tracking-widest">READY FOR THE REAL THING?</div>
+        <h3 className="text-xl font-bold text-white">ODIN Capital launches <span className="text-yellow-400">Mid-March</span></h3>
+        <p className="text-sm text-gray-400 max-w-xl mx-auto">
+          The same ML engine scoring every catalyst on this dashboard — now executing real trades. Auto-sized positions, catalyst-timed entries, and ODIN-powered risk management.
+        </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-2">
+          {['Stocks & Options', 'ODIN Score Integration', 'Risk Management', 'Mobile App'].map(f => (
+            <span key={f} className="text-[10px] font-mono text-blue-400/70 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1">{f}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // ── Password Gate (dev mode) ──────────────────────
 const PasswordGate = ({ onUnlock }) => {
   const [pw, setPw] = useState('');
@@ -7339,6 +7871,7 @@ export default function PdufaBio() {
 
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Activity },
+    { id: 'trade', label: 'Paper Trade', icon: DollarSign },
     { id: 'feed', label: 'Feed', icon: Radio },
     { id: 'calendar', label: 'Calendar', icon: Calendar },
     { id: 'screener', label: 'Screener', icon: BarChart3 },
@@ -7414,6 +7947,7 @@ export default function PdufaBio() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
         {activeTab === 'dashboard' && <DashboardView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} onNavigate={setActiveTab} />}
+        {activeTab === 'trade' && <PaperTradingView catalysts={sortedCatalysts} />}
         {activeTab === 'feed' && <FeedView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} predict={predict} getPrediction={getPrediction} />}
         {activeTab === 'calendar' && <CalendarView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} />}
         {activeTab === 'screener' && <ScreenerView catalysts={sortedCatalysts} onExpandCatalyst={setSelectedCatalyst} watchlist={watchlist} isWatched={isWatched} />}
