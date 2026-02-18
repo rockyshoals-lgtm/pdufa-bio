@@ -320,7 +320,7 @@ const CATALYSTS_DATA = [
     ticker: 'LLY',
     drug: 'Orforglipron',
     indication: 'Type 2 Diabetes / Obesity',
-    type: 'PDUFA (Expected)',
+    type: 'PDUFA',
     appType: 'NDA',
     ta: 'Metabolic/Endocrine',
     phase: 'Phase 3',
@@ -527,7 +527,7 @@ const CATALYSTS_DATA = [
     ticker: 'AZN',
     drug: 'Baxdrostat',
     indication: 'Treatment-Resistant Hypertension',
-    type: 'PDUFA (Expected)',
+    type: 'PDUFA',
     appType: 'NDA',
     ta: 'Cardiovascular',
     phase: 'Phase 3',
@@ -1181,7 +1181,7 @@ const CATALYSTS_DATA = [
     ticker: 'NVO',
     drug: 'Awiqli (insulin icodec)',
     indication: 'Type 2 Diabetes',
-    type: 'PDUFA (Expected)',
+    type: 'PDUFA',
     appType: 'NDA (resubmission)',
     ta: 'Metabolic',
     phase: 'Phase 3',
@@ -1394,7 +1394,7 @@ const CATALYSTS_DATA = [
     ticker: 'NVO',
     drug: 'CagriSema',
     indication: 'Obesity/Weight Management',
-    type: 'PDUFA (Expected)',
+    type: 'PDUFA',
     appType: 'NDA',
     ta: 'Metabolic',
     phase: 'Phase 3',
@@ -1768,7 +1768,7 @@ const CATALYSTS_DATA = [
     ticker: 'JNJ',
     drug: 'Icotrokinra',
     indication: 'Psoriasis / IBD (oral IL-23)',
-    type: 'PDUFA (Expected)',
+    type: 'PDUFA',
     appType: 'NDA',
     ta: 'Immunology',
     phase: 'Phase 3',
@@ -12241,28 +12241,33 @@ const getTierBgClass = (tier) => {
 
 // ── Catalyst Type Utilities ──
 const getTypeColor = (type) => {
+  if (type === 'Earnings') return '#06b6d4';
+  if (type === 'READOUT') return '#a855f7';
   if (type === 'Phase 2 Readout') return '#a78bfa';
   if (type === 'Phase 3 Readout') return '#818cf8';
-  if (type === 'PDUFA (Expected)') return '#38bdf8';
   return '#3b82f6';
 };
 
 const getTypeBadgeClass = (type) => {
+  if (type === 'Earnings') return 'bg-cyan-950 text-cyan-400 border border-cyan-700';
+  if (type === 'READOUT') return 'bg-purple-950 text-purple-400 border border-purple-700';
   if (type === 'Phase 2 Readout') return 'bg-purple-950 text-purple-400 border border-purple-700';
   if (type === 'Phase 3 Readout') return 'bg-indigo-950 text-indigo-400 border border-indigo-700';
-  if (type === 'PDUFA (Expected)') return 'bg-sky-950 text-sky-400 border border-sky-700';
   return 'bg-blue-950 text-blue-400 border border-blue-700';
 };
 
-const getTypeLabel = (type) => {
+const getTypeLabel = (type, phase) => {
+  if (type === 'Earnings') return 'EARN';
+  if (type === 'READOUT') return phase ? phase.replace('Phase ', 'PH') : 'RDOUT';
   if (type === 'Phase 2 Readout') return 'PH2';
   if (type === 'Phase 3 Readout') return 'PH3';
-  if (type === 'PDUFA (Expected)') return 'PDUFA*';
   return 'PDUFA';
 };
 
-const isPdufa = (type) => type === 'PDUFA' || type === 'PDUFA (Expected)';
-const isReadout = (type) => type === 'Phase 2 Readout' || type === 'Phase 3 Readout';
+const isPdufa = (type) => type === 'PDUFA';
+const isReadout = (type) => type === 'Phase 2 Readout' || type === 'Phase 3 Readout' || type === 'READOUT';
+const isEarnings = (type) => type === 'Earnings';
+const hasOdinScore = (catalyst) => isPdufa(catalyst.type) && catalyst.prob > 0;
 
 const formatDate = (dateStr) => {
   try {
@@ -12306,7 +12311,7 @@ const generateICS = (catalyst) => {
   const pad = (n) => String(n).padStart(2, '0');
   const dateStr = `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
   const title = `${catalyst.type}: ${catalyst.ticker} — ${catalyst.drug}`;
-  const desc = `${catalyst.type} for ${catalyst.drug} (${catalyst.company})\\nIndication: ${catalyst.indication}\\nODIN Score: ${(catalyst.prob * 100).toFixed(1)}% (${catalyst.tier.replace('_', ' ')})\\nTA: ${catalyst.ta}\\n\\nhttps://pdufa.bio`;
+  const desc = `${catalyst.type} for ${catalyst.drug} (${catalyst.company})\\nIndication: ${catalyst.indication}${isPdufa(catalyst.type) && catalyst.prob > 0 ? `\\nODIN Score: ${(catalyst.prob * 100).toFixed(1)}% (${catalyst.tier.replace('_', ' ')})` : ''}\\nTA: ${catalyst.ta}\\n\\nhttps://pdufa.bio`;
   const ics = [
     'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//PDUFA.BIO//ODIN//EN',
     'BEGIN:VEVENT',
@@ -13038,15 +13043,23 @@ const CatalystCard = ({ catalyst, onExpand }) => {
       </div>
       <div className="flex justify-between items-end">
         <div>
-          <div className="text-xs text-gray-500 mb-1">{isPdufa(catalyst.type) ? 'Approval Prob.' : 'Success Prob.'}</div>
-          <div className="text-2xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
-            {fmtProb(catalyst.prob)}%
-          </div>
+          {hasOdinScore(catalyst) ? (
+            <>
+              <div className="text-xs text-gray-500 mb-1">Approval Prob.</div>
+              <div className="text-2xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
+                {fmtProb(catalyst.prob)}%
+              </div>
+            </>
+          ) : (
+            <div className="text-xs text-gray-500">{isEarnings(catalyst.type) ? catalyst.indication : catalyst.phase || catalyst.ta}</div>
+          )}
         </div>
         <div className="flex flex-col items-end gap-1">
+          {hasOdinScore(catalyst) && (
           <div className={`px-3 py-1 text-xs font-mono font-bold rounded-none ${getTierBgClass(catalyst.tier)}`}>
             {catalyst.tier.replace('_', ' ')}
           </div>
+          )}
           {catalyst.designations.length > 0 && (
             <div className="flex gap-1 flex-wrap justify-end">
               {catalyst.designations.slice(0, 2).map((d) => (
@@ -13140,12 +13153,12 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                 </button>
                 {showShareMenu && (
                   <div className="absolute right-0 top-8 bg-gray-800 border border-gray-600 z-50 w-48 shadow-xl" onClick={(e) => e.stopPropagation()}>
-                    <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}\n\nODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')})\nDate: ${formatDate(catalyst.date)}\n\nvia pdufa.bio`)}`}
+                    <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}${hasOdinScore(catalyst) ? `\n\nODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')})` : ''}\nDate: ${formatDate(catalyst.date)}\n\nvia pdufa.bio`)}`}
                       target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full">
                       <span className="text-blue-400 font-bold w-5">𝕏</span> Post on X
                     </a>
-                    <a href={`https://www.reddit.com/submit?title=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} (${fmtProb(catalyst.prob)}% ODIN Score)`)}&url=${encodeURIComponent('https://pdufa.bio')}`}
+                    <a href={`https://www.reddit.com/submit?title=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug}${hasOdinScore(catalyst) ? ` (${fmtProb(catalyst.prob)}% ODIN Score)` : ''}`)}&url=${encodeURIComponent('https://pdufa.bio')}`}
                       target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full">
                       <span className="text-orange-400 font-bold w-5">R</span> Post on Reddit
@@ -13155,7 +13168,7 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                       className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full">
                       <span className="text-green-400 font-bold w-5">ST</span> StockTwits
                     </a>
-                    <button onClick={() => { navigator.clipboard.writeText(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}. ODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')}). Date: ${formatDate(catalyst.date)}. https://pdufa.bio`); setShowShareMenu(false); }}
+                    <button onClick={() => { navigator.clipboard.writeText(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}.${hasOdinScore(catalyst) ? ` ODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')}).` : ''} Date: ${formatDate(catalyst.date)}. https://pdufa.bio`); setShowShareMenu(false); }}
                       className="flex items-center gap-2 px-3 py-2.5 text-xs font-mono text-gray-300 hover:bg-gray-700 hover:text-white transition w-full border-t border-gray-700">
                       <span className="text-gray-400 w-5">📋</span> Copy to Clipboard
                     </button>
@@ -13201,10 +13214,12 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
           {activeDetailTab === 'overview' && (
             <>
               {/* Catalyst Radar */}
+              {hasOdinScore(catalyst) && (
               <div className="bg-gray-800 border border-gray-700 p-4">
                 <div className="text-xs text-gray-500 mb-2 font-mono">CATALYST PROFILE</div>
                 <CatalystRadar catalyst={catalyst} />
               </div>
+              )}
               {/* Key Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
@@ -13222,9 +13237,10 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                 ))}
               </div>
 
-              {/* ODIN Probability */}
+              {/* ODIN Probability — only for PDUFAs */}
+              {hasOdinScore(catalyst) ? (
               <div>
-                <div className="text-xs text-gray-500 mb-3 font-mono">ODIN v10.69 {isPdufa(catalyst.type) ? 'APPROVAL' : 'SUCCESS'} PROBABILITY</div>
+                <div className="text-xs text-gray-500 mb-3 font-mono">ODIN v10.69 APPROVAL PROBABILITY</div>
                 <div className="flex items-center gap-6">
                   <div className="text-5xl font-bold tabular-nums font-mono" style={{ color: getTierColor(catalyst.tier) }}>
                     {fmtProb(catalyst.prob)}%
@@ -13249,9 +13265,20 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
                   </div>
                 </div>
               </div>
+              ) : (
+              <div className="bg-gray-800 border border-gray-700 p-4 text-center">
+                <div className="text-xs text-gray-500 font-mono mb-2">{isEarnings(catalyst.type) ? 'EARNINGS REPORT' : 'PHASE READOUT'}</div>
+                <div className="text-sm text-gray-300">
+                  {isEarnings(catalyst.type)
+                    ? `${catalyst.drug} — ${catalyst.indication}`
+                    : `${catalyst.phase || ''} ${catalyst.drug} — ${catalyst.indication}`}
+                </div>
+                <div className="text-xs text-gray-500 mt-2">ODIN approval probability is only calculated for PDUFA dates</div>
+              </div>
+              )}
 
-              {/* Historical TA Rate */}
-              {histRate && (
+              {/* Historical TA Rate — only for PDUFAs */}
+              {histRate && hasOdinScore(catalyst) && (
                 <div className="bg-gray-800 border border-gray-700 p-4">
                   <div className="text-xs text-gray-500 mb-2 font-mono">HISTORICAL {catalyst.ta.toUpperCase()} APPROVAL RATE</div>
                   <div className="flex items-center gap-4">
@@ -13600,17 +13627,17 @@ const DetailModal = ({ catalyst, onClose, toggleWatch = () => {}, isWatched = ()
               <div>
                 <div className="text-xs text-gray-500 mb-3 font-mono">SHARE THIS CATALYST</div>
                 <div className="flex flex-wrap gap-2">
-                  <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}\n\nODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')})\nDate: ${formatDate(catalyst.date)}\n\nvia @pdufa_bio https://pdufa.bio`)}`}
+                  <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}${hasOdinScore(catalyst) ? `\n\nODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')})` : ''}\nDate: ${formatDate(catalyst.date)}\n\nvia @pdufa_bio https://pdufa.bio`)}`}
                     target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-blue-900/50 border border-blue-700 px-4 py-2 text-sm font-mono text-blue-300 hover:bg-blue-800 transition">
                     <span className="font-bold">𝕏</span> Tweet
                   </a>
-                  <a href={`https://www.reddit.com/submit?title=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} (${fmtProb(catalyst.prob)}% ODIN Score)`)}&url=${encodeURIComponent('https://pdufa.bio')}`}
+                  <a href={`https://www.reddit.com/submit?title=${encodeURIComponent(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug}${hasOdinScore(catalyst) ? ` (${fmtProb(catalyst.prob)}% ODIN Score)` : ''}`)}&url=${encodeURIComponent('https://pdufa.bio')}`}
                     target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-orange-900/50 border border-orange-700 px-4 py-2 text-sm font-mono text-orange-300 hover:bg-orange-800 transition">
                     <span className="font-bold">R</span> Reddit
                   </a>
-                  <button onClick={() => { navigator.clipboard.writeText(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}. ODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')}). Date: ${formatDate(catalyst.date)}. https://pdufa.bio`); }}
+                  <button onClick={() => { navigator.clipboard.writeText(`$${catalyst.ticker} ${catalyst.type} — ${catalyst.drug} for ${catalyst.indication}.${hasOdinScore(catalyst) ? ` ODIN Score: ${fmtProb(catalyst.prob)}% (${catalyst.tier.replace('_',' ')}).` : ''} Date: ${formatDate(catalyst.date)}. https://pdufa.bio`); }}
                     className="flex items-center gap-2 bg-gray-800 border border-gray-600 px-4 py-2 text-sm font-mono text-gray-300 hover:bg-gray-700 transition">
                     📋 Copy
                   </button>
@@ -13696,10 +13723,12 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
   const nextCatalyst = catalysts[0];
   const tier1Count = catalysts.filter((c) => c.tier === 'TIER_1').length;
   const tier2Count = catalysts.filter((c) => c.tier === 'TIER_2').length;
-  const avgProb = (catalysts.reduce((sum, c) => sum + c.prob, 0) / catalysts.length * 100).toFixed(1);
+  const pdufaCatalysts = catalysts.filter(c => isPdufa(c.type) && c.prob > 0);
+  const avgProb = pdufaCatalysts.length > 0 ? (pdufaCatalysts.reduce((sum, c) => sum + c.prob, 0) / pdufaCatalysts.length * 100).toFixed(1) : '—';
   const weekendCount = catalysts.filter(c => c.weekend).length;
-  const pdufaCount = catalysts.filter(c => isPdufa(c.type)).length;
+  const pdufaCount = pdufaCatalysts.length;
   const readoutCount = catalysts.filter(c => isReadout(c.type)).length;
+  const earningsCount = catalysts.filter(c => isEarnings(c.type)).length;
 
   // Next 30 days catalysts
   const now = new Date();
@@ -13749,9 +13778,9 @@ const DashboardView = ({ catalysts, onExpandCatalyst, onNavigate }) => {
       {/* Key Stats Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         {[
-          { label: 'ACTIVE CATALYSTS', value: catalysts.length, sub: `${pdufaCount} PDUFA · ${readoutCount} Readouts`, color: 'text-white', icon: Target },
-          { label: 'HIGH CONVICTION', value: `${tier1Count + tier2Count}`, sub: `${tier1Count} T1 · ${tier2Count} T2`, color: 'text-green-400', icon: Shield },
-          { label: 'AVG PROBABILITY', value: `${avgProb}%`, color: 'text-yellow-400', icon: Brain },
+          { label: 'ACTIVE CATALYSTS', value: catalysts.length, sub: `${pdufaCount} PDUFA · ${readoutCount} Readouts · ${earningsCount} Earnings`, color: 'text-white', icon: Target },
+          { label: 'HIGH CONVICTION', value: `${tier1Count + tier2Count}`, sub: `${tier1Count} T1 · ${tier2Count} T2 (PDUFA only)`, color: 'text-green-400', icon: Shield },
+          { label: 'AVG PDUFA PROB', value: `${avgProb}%`, color: 'text-yellow-400', icon: Brain },
           { label: 'NEXT 7 DAYS', value: next7.length, sub: next7.length > 0 ? `Next: ${next7[0].ticker}` : 'None imminent', color: next7.length > 0 ? 'text-orange-400' : 'text-gray-500', icon: Flame },
         ].map((stat) => {
           const Icon = stat.icon;
@@ -13966,9 +13995,15 @@ const CalendarView = ({ catalysts, onExpandCatalyst }) => {
                       <div className="text-sm text-gray-400 truncate">{catalyst.drug}</div>
                       <div className="flex items-center gap-2 flex-shrink-0">
                         {catalyst.weekend && <AlertTriangle size={12} className="text-red-400" />}
-                        <span className="text-sm font-bold font-mono tabular-nums" style={{ color: getTierColor(catalyst.tier) }}>
-                          {fmtProb(catalyst.prob)}%
-                        </span>
+                        {hasOdinScore(catalyst) ? (
+                          <span className="text-sm font-bold font-mono tabular-nums" style={{ color: getTierColor(catalyst.tier) }}>
+                            {fmtProb(catalyst.prob)}%
+                          </span>
+                        ) : (
+                          <span className="text-xs font-mono text-gray-500">
+                            {isEarnings(catalyst.type) ? catalyst.indication : catalyst.phase || '—'}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -13996,8 +14031,10 @@ const ScreenerView = ({ catalysts, onExpandCatalyst, watchlist = [], isWatched =
 
   const typeFilters = [
     { key: null, label: 'All' },
-    { key: 'pdufa', label: 'PDUFA', match: (t) => t === 'PDUFA' || t === 'PDUFA (Expected)' },
-    { key: 'ph3', label: 'Phase 3', match: (t) => t === 'Phase 3 Readout' },
+    { key: 'pdufa', label: 'PDUFA', match: (t) => t === 'PDUFA' },
+    { key: 'readout', label: 'Readouts', match: (t) => isReadout(t) },
+    { key: 'earnings', label: 'Earnings', match: (t) => t === 'Earnings' },
+    { key: 'ph3', label: 'Phase 3', match: (t) => t === 'Phase 3 Readout' || (t === 'READOUT') },
     { key: 'ph2', label: 'Phase 2', match: (t) => t === 'Phase 2 Readout' },
   ];
 
@@ -15260,9 +15297,13 @@ const FeedView = ({ catalysts, onExpandCatalyst, predict, getPrediction }) => {
               </div>
               {item.catalyst && (
                 <div className="flex-shrink-0 text-right">
-                  <div className="text-lg font-bold font-mono" style={{ color: getTierColor(item.catalyst.tier) }}>
-                    {fmtProb(item.catalyst.prob)}%
-                  </div>
+                  {hasOdinScore(item.catalyst) ? (
+                    <div className="text-lg font-bold font-mono" style={{ color: getTierColor(item.catalyst.tier) }}>
+                      {fmtProb(item.catalyst.prob)}%
+                    </div>
+                  ) : (
+                    <div className="text-xs font-mono text-gray-500">{item.catalyst.type}</div>
+                  )}
                   <div className="text-[10px] text-gray-500 font-mono">{item.catalyst.ticker}</div>
                 </div>
               )}
@@ -17688,8 +17729,12 @@ const CatalystOptionsQuickTrade = ({ catalyst, onBuyOption, cashAvailable, optio
 
       {showHelp && (
         <div className="bg-blue-950/20 border border-blue-800/30 p-2 text-[10px] text-blue-300">
-          💡 <strong>Tip:</strong> ODIN scores this at <strong>{(catalyst.prob * 100).toFixed(0)}%</strong> approval.
-          {catalyst.prob >= 0.7 ? ' A CALL might be favored.' : catalyst.prob < 0.4 ? ' A PUT or straddle might be wise.' : ' A STRADDLE lets you profit from the move regardless of direction.'}
+          {hasOdinScore(catalyst) ? (
+            <>💡 <strong>Tip:</strong> ODIN scores this at <strong>{(catalyst.prob * 100).toFixed(0)}%</strong> approval.
+            {catalyst.prob >= 0.7 ? ' A CALL might be favored.' : catalyst.prob < 0.4 ? ' A PUT or straddle might be wise.' : ' A STRADDLE lets you profit from the move regardless of direction.'}</>
+          ) : (
+            <>💡 <strong>Tip:</strong> {isEarnings(catalyst.type) ? 'Earnings events often cause volatility. A STRADDLE lets you profit from the move in either direction.' : 'Phase readouts are binary events. A STRADDLE lets you profit from the move regardless of direction.'}</>
+          )}
         </div>
       )}
 
@@ -18532,8 +18577,8 @@ export default function PdufaBio() {
             </button>
             <div className="hidden lg:flex items-center gap-4 text-xs font-mono text-gray-500">
               <span>Engine: <span className="text-green-400">v10.69</span></span>
-              <span>Params: <span className="text-green-400">63</span></span>
-              <span>Events: <span className="text-green-400">{CATALYSTS_DATA.length}</span></span>
+              <span>Trained: <span className="text-green-400">4,200+ events</span></span>
+              <span>Scenarios: <span className="text-green-400">40B+</span></span>
             </div>
             <div className="text-xs sm:text-sm text-gray-400 font-mono">{dateStr}</div>
           </div>
