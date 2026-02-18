@@ -8303,14 +8303,32 @@ const PaperTradingView = ({ catalysts, onBuyOption, optPositions, onCloseOption,
 };
 
 // ── Password Gate (dev mode) ──────────────────────
+// Access password + magic token for app users
+const SITE_PASSWORD = 'Ragnarok$10';
+const APP_BYPASS_TOKEN = 'odin-allfather-9realms-2026';
+
 const PasswordGate = ({ onUnlock }) => {
   const [pw, setPw] = useState('');
   const [error, setError] = useState(false);
   const [showGame, setShowGame] = useState(false);
 
+  // Check URL for app bypass token on mount
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get('access');
+      if (token === APP_BYPASS_TOKEN) {
+        sessionStorage.setItem('pdufa_unlocked', 'true');
+        // Clean the URL so the token isn't visible
+        window.history.replaceState({}, '', window.location.pathname);
+        onUnlock();
+      }
+    } catch (e) {}
+  }, [onUnlock]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (pw === '1U670NnGEhN6!Hv4Z7tJOd5Z%I9h') {
+    if (pw === SITE_PASSWORD) {
       try { sessionStorage.setItem('pdufa_unlocked', 'true'); } catch (e) {}
       onUnlock();
     } else {
@@ -8325,11 +8343,11 @@ const PasswordGate = ({ onUnlock }) => {
         <h1 className="text-3xl font-bold font-mono mb-1">
           PDUFA<span className="text-blue-400">.BIO</span>
         </h1>
-        <div className="text-xs text-yellow-500 font-mono mb-6 bg-yellow-500/10 border border-yellow-800 px-3 py-1.5 inline-block">
-          UNDER CONSTRUCTION
+        <div className="text-xs text-red-400 font-mono mb-6 bg-red-500/10 border border-red-800 px-3 py-1.5 inline-block">
+          RESTRICTED ACCESS
         </div>
         <p className="text-sm text-gray-400 mb-6">
-          This site is currently being rebuilt. Enter the access code to continue.
+          This platform is invite-only. Enter your access code to continue.
         </p>
         <form onSubmit={handleSubmit} className="space-y-3">
           <input
@@ -8452,7 +8470,18 @@ export default function PdufaBio() {
   });
   const [showOptionsOnboarding, setShowOptionsOnboarding] = useState(false);
   const [siteUnlocked, setSiteUnlocked] = useState(() => {
-    try { return sessionStorage.getItem('pdufa_unlocked') === 'true'; } catch (e) { return false; }
+    try {
+      // Check sessionStorage first
+      if (sessionStorage.getItem('pdufa_unlocked') === 'true') return true;
+      // Check URL for app bypass token
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('access') === APP_BYPASS_TOKEN) {
+        sessionStorage.setItem('pdufa_unlocked', 'true');
+        window.history.replaceState({}, '', window.location.pathname);
+        return true;
+      }
+      return false;
+    } catch (e) { return false; }
   });
   const [disclaimerAccepted, setDisclaimerAccepted] = useState(() => {
     try { return localStorage.getItem('pdufa_disclaimer_accepted') === 'true'; } catch (e) { return false; }
