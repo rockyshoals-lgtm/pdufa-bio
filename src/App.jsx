@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import {
   Calendar,
@@ -50,7 +51,8 @@ import {
   Beaker,
   Download,
 } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 // ═══════════════════════════════════════════════════
 // CATALYST DATA — ODIN v10.69 | Trained on 2,200+ PDUFAs & 2,000+ Phase Readouts | 40B+ Scenarios
@@ -18739,274 +18741,11 @@ const DisclaimerModal = ({ onAccept }) => {
   );
 };
 
-// ── SEO Helmet Component ──────────────────────────
-const SEOHelmet = ({ activeTab, catalysts = [], selectedCatalyst = null }) => {
-  const now = new Date();
-  const currentYear = now.getFullYear();
-  const currentMonth = now.toLocaleString('default', { month: 'long' });
-
-  const pdufaCount = catalysts.filter(c => c.type === 'PDUFA').length;
-  const readoutCount = catalysts.filter(c => c.type === 'Phase Readout').length;
-  const earningsCount = catalysts.filter(c => c.type === 'Earnings').length;
-  const totalCount = catalysts.length;
-
-  const nextPdufa = catalysts.find(c => c.type === 'PDUFA' && new Date(c.date) >= now);
-
-  // If a catalyst detail modal is open, use ticker-specific meta
-  if (selectedCatalyst) {
-    const cat = selectedCatalyst;
-    const isPdufa = cat.type === 'PDUFA';
-    const scoreText = isPdufa && cat.prob > 0 ? ` ODIN Score: ${Math.round(cat.prob * 100)}%.` : '';
-    return (
-      <Helmet>
-        <title>{`${cat.ticker} ${cat.type}: ${cat.drug} — ${cat.date} | PDUFA.BIO`}</title>
-        <meta name="description" content={`${cat.ticker} ${cat.type} for ${cat.drug} (${cat.indication}): ${cat.date}.${scoreText} Track this biotech catalyst on PDUFA.BIO.`} />
-        <meta property="og:title" content={`${cat.ticker} — ${cat.drug} ${cat.type} | PDUFA.BIO`} />
-        <meta property="og:description" content={`${cat.ticker} ${cat.type} for ${cat.drug} (${cat.indication}): ${cat.date}.${scoreText}`} />
-        <meta property="og:url" content={`https://pdufa.bio/ticker/${cat.ticker}`} />
-        <meta name="twitter:title" content={`${cat.ticker} — ${cat.drug} ${cat.type} | PDUFA.BIO`} />
-        <meta name="twitter:description" content={`${cat.ticker} ${cat.type}: ${cat.date}. ${cat.drug} for ${cat.indication}.${scoreText}`} />
-        <link rel="canonical" href={`https://pdufa.bio/ticker/${cat.ticker}`} />
-      </Helmet>
-    );
-  }
-
-  const seoConfig = {
-    dashboard: {
-      title: `PDUFA Calendar & Biotech Catalyst Tracker ${currentYear} | PDUFA.BIO`,
-      description: `Track ${totalCount}+ FDA PDUFA dates, Phase 2/3 readouts & biotech earnings. AI-powered approval scores from ODIN. Free catalyst calendar for quant biotech investors.`,
-      canonical: 'https://pdufa.bio/',
-      ogTitle: 'PDUFA.BIO — FDA PDUFA Calendar & Biotech Catalyst Intelligence',
-    },
-    calendar: {
-      title: `FDA PDUFA Calendar ${currentYear} — Biotech Catalyst Dates by Ticker | PDUFA.BIO`,
-      description: `Complete FDA PDUFA dates for ${currentYear}. ${pdufaCount} PDUFA decisions, ${readoutCount} phase readouts, ${earningsCount} earnings dates. Filter by ticker, type & date. AI approval scores from ODIN.`,
-      canonical: 'https://pdufa.bio/calendar',
-      ogTitle: `FDA PDUFA Calendar ${currentYear} | PDUFA.BIO`,
-    },
-    screener: {
-      title: `Biotech Catalyst Screener — Filter PDUFA Dates & Readouts | PDUFA.BIO`,
-      description: `Screen ${totalCount}+ biotech catalysts by type, tier, therapeutic area & date. Find FDA PDUFA dates, phase readouts & earnings for event-driven trading.`,
-      canonical: 'https://pdufa.bio/screener',
-      ogTitle: 'Biotech Catalyst Screener | PDUFA.BIO',
-    },
-    heatmap: {
-      title: `Biotech Catalyst Heatmap — PDUFA & Readout Visualization | PDUFA.BIO`,
-      description: `Visual heatmap of upcoming biotech catalysts. See PDUFA dates, phase readouts & earnings at a glance. Color-coded by ODIN approval probability tier.`,
-      canonical: 'https://pdufa.bio/heatmap',
-      ogTitle: 'Biotech Catalyst Heatmap | PDUFA.BIO',
-    },
-    trade: {
-      title: `Biotech Options Paper Trading — Practice PDUFA Catalyst Trades | PDUFA.BIO`,
-      description: `Practice trading biotech options around FDA PDUFA dates and catalysts with zero risk. Paper trading simulator for event-driven biotech strategies.`,
-      canonical: 'https://pdufa.bio/trade',
-      ogTitle: 'Biotech Paper Trading | PDUFA.BIO',
-    },
-    feed: {
-      title: `Biotech Catalyst Feed — Live PDUFA & Readout Updates | PDUFA.BIO`,
-      description: `Live feed of biotech catalyst updates including FDA PDUFA decisions, phase readouts & earnings. Community predictions and ODIN AI scoring.`,
-      canonical: 'https://pdufa.bio/feed',
-      ogTitle: 'Biotech Catalyst Feed | PDUFA.BIO',
-    },
-    record: {
-      title: `ODIN Track Record — FDA Approval Prediction Accuracy | PDUFA.BIO`,
-      description: `Verified track record of ODIN's FDA approval predictions. SHA-256 proofs, historical accuracy by tier, therapeutic area success rates across 2,200+ PDUFA decisions.`,
-      canonical: 'https://pdufa.bio/track-record',
-      ogTitle: 'ODIN Prediction Track Record | PDUFA.BIO',
-    },
-    leaderboard: {
-      title: `PDUFA Prediction Leaderboard — Top Biotech Forecasters | PDUFA.BIO`,
-      description: `See who's best at predicting FDA PDUFA outcomes. Community leaderboard ranked by prediction accuracy on biotech catalyst events.`,
-      canonical: 'https://pdufa.bio/leaderboard',
-      ogTitle: 'Prediction Leaderboard | PDUFA.BIO',
-    },
-    tools: {
-      title: `Biotech Trading Tools — IV Crush Calculator & More | PDUFA.BIO`,
-      description: `Free biotech trading tools: IV crush calculator, options profit/loss estimator, catalyst timeline builder. Built for event-driven biotech traders.`,
-      canonical: 'https://pdufa.bio/tools',
-      ogTitle: 'Biotech Trading Tools | PDUFA.BIO',
-    },
-    intel: {
-      title: `Biotech Market Intel — Social Sentiment & Options Flow | PDUFA.BIO`,
-      description: `Biotech market intelligence: social sentiment analysis, unusual options activity, and institutional positioning around FDA PDUFA dates and catalysts.`,
-      canonical: 'https://pdufa.bio/intel',
-      ogTitle: 'Biotech Market Intel | PDUFA.BIO',
-    },
-    about: {
-      title: `About ODIN — FDA Approval Prediction Engine | PDUFA.BIO`,
-      description: `How ODIN predicts FDA approvals: 63 parameters, 40B+ simulated scenarios, trained on 2,200+ PDUFA decisions & 2,000+ readouts (2015-2026). Machine learning meets biotech catalysts.`,
-      canonical: 'https://pdufa.bio/about',
-      ogTitle: 'About ODIN Engine | PDUFA.BIO',
-    },
-  };
-
-  const config = seoConfig[activeTab] || seoConfig.dashboard;
-
-  // Build JSON-LD structured data
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "PDUFA.BIO",
-    "url": "https://pdufa.bio",
-    "description": "FDA PDUFA Calendar & Biotech Catalyst Intelligence Platform",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://pdufa.bio/?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
-
-  const orgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PDUFA.BIO",
-    "url": "https://pdufa.bio",
-    "logo": "https://pdufa.bio/odin-favicon-512.png",
-    "description": "AI-powered FDA PDUFA date tracking and biotech catalyst intelligence for quantitative investors",
-    "sameAs": ["https://twitter.com/pdufa_bio"]
-  };
-
-  // Build breadcrumb based on active tab
-  const breadcrumbItems = [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pdufa.bio" }
-  ];
-
-  const tabNames = {
-    dashboard: null, // homepage, no second breadcrumb
-    calendar: 'PDUFA Calendar',
-    screener: 'Screener',
-    heatmap: 'Heatmap',
-    trade: 'Paper Trading',
-    feed: 'Feed',
-    record: 'Track Record',
-    leaderboard: 'Leaderboard',
-    tools: 'Tools',
-    intel: 'Intel',
-    about: 'About ODIN',
-  };
-
-  if (tabNames[activeTab]) {
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      "position": 2,
-      "name": tabNames[activeTab],
-      "item": config.canonical
-    });
-  }
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbItems
-  };
-
-  // Build Event schema for upcoming catalysts (only on calendar/dashboard)
-  const eventSchemas = (activeTab === 'calendar' || activeTab === 'dashboard') ?
-    catalysts.filter(c => new Date(c.date) >= now).slice(0, 20).map(c => ({
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": `${c.ticker} ${c.type}: ${c.drug}`,
-      "startDate": c.date,
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-      "location": {
-        "@type": "VirtualLocation",
-        "url": "https://pdufa.bio"
-      },
-      "description": `${c.company} (${c.ticker}) — ${c.drug} for ${c.indication}. ${c.type} date: ${c.date}.${c.type === 'PDUFA' && c.prob > 0 ? ` ODIN approval probability: ${Math.round(c.prob * 100)}%.` : ''}`,
-      "organizer": {
-        "@type": "Organization",
-        "name": c.type === 'PDUFA' ? "U.S. Food and Drug Administration" : c.company,
-        "url": c.type === 'PDUFA' ? "https://www.fda.gov" : `https://pdufa.bio/ticker/${c.ticker}`
-      }
-    })) : [];
-
-  // FAQ schema for about page
-  const faqSchema = activeTab === 'about' ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a PDUFA date?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A PDUFA (Prescription Drug User Fee Act) date is the FDA's target action date for making a regulatory decision on a drug application. These dates are critical binary events for biotech investors as they can cause significant stock price movements."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does ODIN predict FDA approvals?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ODIN is a machine learning scoring engine that analyzes 63 parameters across 40 billion+ simulated scenarios to generate approval probability scores for FDA PDUFA decisions. It is trained on 2,200+ historical PDUFA outcomes and 2,000+ phase readouts from 2015-2026."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a biotech catalyst calendar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A biotech catalyst calendar tracks upcoming events that can significantly impact biotech stock prices, including FDA PDUFA dates, Phase 2/3 clinical trial readouts, advisory committee meetings, and quarterly earnings dates."
-        }
-      }
-    ]
-  } : null;
-
-  // ItemList for calendar view
-  const itemListSchema = activeTab === 'calendar' ? {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": `Upcoming FDA PDUFA Dates & Biotech Catalysts ${currentYear}`,
-    "numberOfItems": catalysts.filter(c => new Date(c.date) >= now).length,
-    "itemListElement": catalysts.filter(c => new Date(c.date) >= now).slice(0, 10).map((c, i) => ({
-      "@type": "ListItem",
-      "position": i + 1,
-      "name": `${c.ticker} — ${c.drug} (${c.type}: ${c.date})`
-    }))
-  } : null;
-
-  return (
-    <Helmet>
-      <title>{config.title}</title>
-      <meta name="description" content={config.description} />
-      <link rel="canonical" href={config.canonical} />
-
-      {/* OpenGraph */}
-      <meta property="og:title" content={config.ogTitle} />
-      <meta property="og:description" content={config.description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={config.canonical} />
-      <meta property="og:site_name" content="PDUFA.BIO" />
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={config.ogTitle} />
-      <meta name="twitter:description" content={config.description} />
-      <meta name="twitter:site" content="@pdufa_bio" />
-
-      {/* Structured Data */}
-      <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
-      <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
-      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-      {eventSchemas.length > 0 && eventSchemas.map((schema, i) => (
-        <script key={`event-${i}`} type="application/ld+json">{JSON.stringify(schema)}</script>
-      ))}
-      {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
-      {itemListSchema && <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>}
-    </Helmet>
-  );
-};
-
 // ── Main App ──────────────────────────────────────
-export default function PdufaBio() {
-  // Hash-based routing for SEO — each tab gets a distinct URL
-  const getTabFromHash = () => {
-    const hash = window.location.hash.replace('#', '').replace('/', '');
-    const validTabs = ['dashboard', 'trade', 'feed', 'calendar', 'screener', 'record', 'leaderboard', 'heatmap', 'tools', 'intel', 'about'];
-    return validTabs.includes(hash) ? hash : 'dashboard';
-  };
-  const [activeTab, setActiveTab] = useState(getTabFromHash);
+export default function PdufaBio({ initialTab = 'dashboard' }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [selectedCatalyst, setSelectedCatalyst] = useState(null);
   const { watchlist, toggle: toggleWatch, isWatched } = useWatchlist();
   const { predict, getPrediction, getCommunity, getStats: getPredictionStats, odinCoins, addCoins } = usePredictions();
@@ -19037,24 +18776,12 @@ export default function PdufaBio() {
     try { return sessionStorage.getItem('pdufa_david_confirmed') === 'true'; } catch (e) { return false; }
   });
 
-  // Sync URL hash with active tab
-  useEffect(() => {
-    const handleHashChange = () => {
-      const tab = getTabFromHash();
-      setActiveTab(tab);
-    };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  // Update URL hash when tab changes
-  useEffect(() => {
-    const newHash = activeTab === 'dashboard' ? '' : activeTab;
-    const currentHash = window.location.hash.replace('#', '').replace('/', '');
-    if (newHash !== currentHash) {
-      window.history.replaceState(null, '', newHash ? `#${newHash}` : window.location.pathname);
-    }
-  }, [activeTab]);
+  // Sync tab with Next.js routing
+  const navigateTab = useCallback((tabId) => {
+    setActiveTab(tabId);
+    const path = tabId === 'dashboard' ? '/' : `/${tabId}`;
+    router.push(path, { scroll: false });
+  }, [router]);
 
   // Handle buying options (deducts from paper cash)
   const handleBuyOption = useCallback((ticker, company, optionType, strike, expiry, premium, contracts, stockPrice) => {
@@ -19067,8 +18794,8 @@ export default function PdufaBio() {
     if (tab === 'trade' && optionsLevel === -1) {
       setShowOptionsOnboarding(true);
     }
-    setActiveTab(tab);
-  }, [optionsLevel]);
+    navigateTab(tab);
+  }, [optionsLevel, navigateTab]);
   const today = new Date();
   const dateStr = `${today.toLocaleString('en-US', { weekday: 'short' })} ${today.toLocaleString('en-US', { month: 'short' })} ${today.getDate()}, ${today.getFullYear()}`;
 
@@ -19106,7 +18833,6 @@ export default function PdufaBio() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
-      <SEOHelmet activeTab={activeTab} catalysts={sortedCatalysts} selectedCatalyst={selectedCatalyst} />
       {/* Password Gate */}
       {!siteUnlocked && (
         <PasswordGate onUnlock={() => setSiteUnlocked(true)} />
@@ -19129,7 +18855,7 @@ export default function PdufaBio() {
       <div className="border-b border-gray-700 bg-gray-900 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <h1 className="text-xl sm:text-2xl font-bold font-mono tracking-tight cursor-pointer" onClick={() => setActiveTab('dashboard')}>
+            <h1 className="text-xl sm:text-2xl font-bold font-mono tracking-tight cursor-pointer" onClick={() => navigateTab('dashboard')}>
               PDUFA<span className="text-blue-400">.BIO</span>
             </h1>
             <div className="bg-gray-800 border border-gray-700 px-2 py-0.5 text-xs font-mono text-blue-400 hidden sm:block">
@@ -19204,9 +18930,9 @@ export default function PdufaBio() {
               <h4 className="text-xs font-bold font-mono text-gray-400 mb-2">NAVIGATE</h4>
               <div className="space-y-1">
                 {tabs.map(t => (
-                  <button key={t.id} onClick={() => setActiveTab(t.id)} className="block text-xs text-gray-500 hover:text-blue-400 font-mono transition">
+                  <Link key={t.id} href={t.id === 'dashboard' ? '/' : `/${t.id}`} className="block text-xs text-gray-500 hover:text-blue-400 font-mono transition">
                     {t.label}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -19225,24 +18951,24 @@ export default function PdufaBio() {
           <div className="border-t border-gray-800 pt-4 pb-4">
             <p className="text-xs text-gray-600 leading-relaxed mb-3">
               <strong className="text-gray-500">PDUFA.BIO</strong> is the data-driven{' '}
-              <button onClick={() => setActiveTab('calendar')} className="text-blue-500 hover:text-blue-400 underline">FDA PDUFA calendar</button>{' '}
+              <Link href="/calendar" className="text-blue-500 hover:text-blue-400 underline">FDA PDUFA calendar</Link>{' '}
               and{' '}
-              <button onClick={() => setActiveTab('calendar')} className="text-blue-500 hover:text-blue-400 underline">biotech catalyst calendar</button>{' '}
+              <Link href="/calendar" className="text-blue-500 hover:text-blue-400 underline">biotech catalyst calendar</Link>{' '}
               built for quantitative investors. Track upcoming{' '}
-              <button onClick={() => setActiveTab('calendar')} className="text-blue-500 hover:text-blue-400 underline">PDUFA dates for {new Date().getFullYear()}</button>,{' '}
-              <button onClick={() => setActiveTab('calendar')} className="text-blue-500 hover:text-blue-400 underline">Phase 2 and Phase 3 clinical trial readouts</button>,{' '}
+              <Link href="/calendar" className="text-blue-500 hover:text-blue-400 underline">PDUFA dates for {new Date().getFullYear()}</Link>,{' '}
+              <Link href="/calendar" className="text-blue-500 hover:text-blue-400 underline">Phase 2 and Phase 3 clinical trial readouts</Link>,{' '}
               and{' '}
-              <button onClick={() => setActiveTab('calendar')} className="text-blue-500 hover:text-blue-400 underline">biotech earnings dates</button>{' '}
+              <Link href="/calendar" className="text-blue-500 hover:text-blue-400 underline">biotech earnings dates</Link>{' '}
               in a unified, filterable calendar. Our{' '}
-              <button onClick={() => setActiveTab('about')} className="text-blue-500 hover:text-blue-400 underline">ODIN AI scoring engine</button>{' '}
+              <Link href="/about" className="text-blue-500 hover:text-blue-400 underline">ODIN AI scoring engine</Link>{' '}
               generates FDA approval probability scores using machine learning trained on 2,200+ historical PDUFA decisions. Use the{' '}
-              <button onClick={() => setActiveTab('screener')} className="text-blue-500 hover:text-blue-400 underline">biotech catalyst screener</button>{' '}
+              <Link href="/screener" className="text-blue-500 hover:text-blue-400 underline">biotech catalyst screener</Link>{' '}
               to filter by ticker, therapeutic area, and ODIN tier, or visualize upcoming events on the{' '}
-              <button onClick={() => setActiveTab('heatmap')} className="text-blue-500 hover:text-blue-400 underline">biotech catalyst heatmap</button>.{' '}
+              <Link href="/heatmap" className="text-blue-500 hover:text-blue-400 underline">biotech catalyst heatmap</Link>.{' '}
               Practice event-driven strategies with our{' '}
-              <button onClick={() => setActiveTab('trade')} className="text-blue-500 hover:text-blue-400 underline">biotech options paper trading</button>{' '}
+              <Link href="/trade" className="text-blue-500 hover:text-blue-400 underline">biotech options paper trading</Link>{' '}
               simulator, and verify ODIN's accuracy on the{' '}
-              <button onClick={() => setActiveTab('record')} className="text-blue-500 hover:text-blue-400 underline">FDA approval prediction track record</button>{' '}
+              <Link href="/record" className="text-blue-500 hover:text-blue-400 underline">FDA approval prediction track record</Link>{' '}
               page.
             </p>
           </div>
