@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block internal app routes and API
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /login/
+
+# Sitemap
+Sitemap: https://pdufa.bio/sitemap.xml
