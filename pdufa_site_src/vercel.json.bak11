@@ -1,0 +1,371 @@
+{
+ "crons": [
+  {
+   "path": "/api/data",
+   "schedule": "0 11 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 14 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 17 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 20 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 23 * * *"
+  }
+ ],
+ "redirects": [
+  {
+   "source": "/vnda-pdufa",
+   "destination": "/pdufa/VNDA",
+   "permanent": true
+  },
+  {
+   "source": "/data-provenance",
+   "destination": "/sources",
+   "permanent": true
+  },
+  {
+   "source": "/track-record",
+   "destination": "/decisions",
+   "permanent": true
+  },
+  {
+   "source": "/odin",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/odin/:path*",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/odin-score",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/score",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/scores",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/runup-heatmap",
+   "destination": "/research",
+   "permanent": true
+  },
+  {
+   "source": "/heatmap",
+   "destination": "/research",
+   "permanent": true
+  },
+  {
+   "source": "/pricing-elite",
+   "destination": "/pricing",
+   "permanent": true
+  },
+  {
+   "source": "/condition/obesity",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/metabolic",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/nash",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/mash",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/alzheimers",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/alzheimer",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/cns",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/neurology",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/oncology",
+   "destination": "/condition/cancer",
+   "permanent": true
+  },
+  {
+   "source": "/condition/cardiometabolic",
+   "destination": "/condition/cardiovascular",
+   "permanent": true
+  },
+  {
+   "source": "/condition/cardio",
+   "destination": "/condition/cardiovascular",
+   "permanent": true
+  },
+  {
+   "source": "/condition/orphan",
+   "destination": "/condition/rare-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/rare-disease-orphan",
+   "destination": "/condition/rare-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/rare",
+   "destination": "/condition/rare-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/infectious",
+   "destination": "/condition/infectious-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/inflammation",
+   "destination": "/condition/immunology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/autoimmune",
+   "destination": "/condition/immunology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/blood",
+   "destination": "/condition/hematology",
+   "permanent": true
+  }
+ ],
+ "headers": [
+  {
+   "source": "/today.html",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
+    }
+   ]
+  },
+  {
+   "source": "/app.html",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
+    }
+   ]
+  },
+  {
+   "source": "/api/data",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "s-maxage=16000, stale-while-revalidate=86400"
+    },
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex"
+    }
+   ]
+  },
+  {
+   "source": "/",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/calendar",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/decisions",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/decisions/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/pdufa/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/fda-decision/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/learn",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/learn/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/research",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/research/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/sources",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/methodology",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/fda-approval-rate",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/clinical-trial-success-rates",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/readouts",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/readout/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/devices",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  }
+ ],
+ "rewrites": [
+  {
+   "source": "/app",
+   "destination": "/app.html"
+  },
+  {
+   "source": "/today",
+   "destination": "/today.html"
+  },
+  {
+   "source": "/pricing",
+   "destination": "/pricing.html"
+  }
+ ]
+}

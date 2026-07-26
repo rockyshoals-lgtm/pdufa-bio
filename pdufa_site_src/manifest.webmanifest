@@ -1,0 +1,29 @@
+{
+ "name": "pdufa.bio \u2014 FDA decision tracker",
+ "short_name": "pdufa.bio",
+ "description": "Upcoming FDA decisions (PDUFA) with the facts to weigh them. Facts, not advice.",
+ "start_url": "/app.html",
+ "scope": "/",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#02060d",
+ "theme_color": "#050f1f",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

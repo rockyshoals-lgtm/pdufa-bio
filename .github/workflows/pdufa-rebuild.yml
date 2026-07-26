@@ -1,0 +1,87 @@
+name: pdufa daily rebuild
+
+# Deterministic daily refresh of the pdufa.bio data, on GitHub's servers (runs whether or not any
+# desktop app is open). It refreshes prices, regenerates the homepage board, runs the CI guards, and
+# reconciles against the FDA press-release feed. On success it commits the refreshed data; because the
+# Vercel project is Git-connected to this repo, that push auto-deploys.
+#
+# What it deliberately does NOT do: verify-and-publish a resolved outcome, or auto-add newly discovered
+# catalysts. Those need primary-source judgment (an LLM/human) and stay on the supervised path. When the
+# reconciliation finds an FDA approval missing from our archive, this opens a GitHub issue so it's caught.
+#
+# REQUIRED repo secrets (Settings -> Secrets and variables -> Actions):
+#   POLYGON_API_KEY   (price/market-cap refresh)
+#   FMP_API_KEY       (optional; only if a step needs it)
+# Vercel: connect this repo under the Vercel project -> Git, and set Root Directory = pdufa_site_src.
+
+on:
+  schedule:
+    - cron: '0 12 * * *'      # 12:00 UTC = 05:00 PT daily
+  workflow_dispatch: {}         # lets you run it manually from the Actions tab
+
+concurrency:
+  group: pdufa-rebuild
+  cancel-in-progress: false
+
+permissions:
+  contents: write               # commit refreshed data
+  issues: write                 # open an issue when reconciliation finds a miss
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install --quiet requests pandas openpyxl python-dateutil
+
+      - name: Refresh prices / market caps (Polygon, forward catalysts only)
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python polygon_enrich.py
+
+      - name: Regenerate homepage board (sorted + sparklines + auto-promote)
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python build_home_board.py
+
+      - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
+        run: |
+          set -e
+          for t in tests/test_*.py; do
+            echo "::group::$t"; python "$t"; echo "::endgroup::"
+          done
+
+      - name: FDA reconciliation (advisory) — capture the review list
+        run: python tests/test_fda_reconcile.py --days 30 | tee reconcile.txt
+
+      - name: Open an issue if the FDA feed has an approval we don't have
+        if: ${{ always() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if grep -q "NOT IN ARCHIVE" reconcile.txt; then
+            gh issue create \
+              --title "FDA reconciliation: approval(s) not in our archive ($(date -u +%F))" \
+              --body "$(cat reconcile.txt)" \
+              --label "reconciliation" || echo "issue create skipped"
+          else
+            echo "reconciliation clean — no issue"
+          fi
+
+      - name: Commit refreshed data (Vercel auto-deploys this push)
+        run: |
+          git config user.name  "pdufa-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html
+          if git diff --cached --quiet; then
+            echo "no data changes this run — nothing to deploy"
+          else
+            git commit -m "chore: daily data refresh $(date -u +%F)"
+            git push
+          fi

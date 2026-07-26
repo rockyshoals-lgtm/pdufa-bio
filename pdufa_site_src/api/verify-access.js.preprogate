@@ -1,0 +1,28 @@
+// Vercel serverless function  —  GET /api/verify-access?email=<addr>
+// Returns { pro: true|false } by checking the live Stripe subscription for that email.
+// The /app + /today gate calls this to unlock Pro (replaces a static shared password).
+// Requires env: STRIPE_SECRET_KEY
+//
+// SECURITY NOTE: email alone is a weak credential (anyone could type a subscriber's address).
+// For production, gate this behind an email magic-link / one-time code so the caller proves
+// they own the address before unlock. See STRIPE_SETUP.md ("Hardening").
+const Stripe = require('stripe');
+
+module.exports = async (req, res) => {
+  const email = (req.query.email || '').toString().trim().toLowerCase();
+  res.setHeader('Cache-Control', 'no-store');
+  if (!email) { res.status(400).json({ error: 'email required' }); return; }
+  if (!process.env.STRIPE_SECRET_KEY) { res.status(500).json({ error: 'Stripe not configured' }); return; }
+  const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+  try {
+    const customers = await stripe.customers.list({ email, limit: 10 });
+    let pro = false;
+    for (const c of customers.data) {
+      const subs = await stripe.subscriptions.list({ customer: c.id, status: 'all', limit: 25 });
+      if (subs.data.some(s => ['active', 'trialing', 'past_due'].includes(s.status))) { pro = true; break; }
+    }
+    res.status(200).json({ pro });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+};

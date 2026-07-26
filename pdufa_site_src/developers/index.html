@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large">
+<title>PDUFA API — Free FDA Calendar &amp; Biotech Catalyst API | pdufa.bio</title>
+<meta name="description" content="Free read-only JSON API for FDA PDUFA dates, clinical-trial readouts, medical conferences, and FDA advisory committee meetings. Filter by ticker, date, therapeutic area, and event type. Attribution required.">
+<link rel="canonical" href="https://www.pdufa.bio/developers"><meta name="theme-color" content="#060b14">
+<meta property="og:title" content="PDUFA API — FDA calendar &amp; biotech catalyst API"><meta property="og:url" content="https://www.pdufa.bio/developers">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#060b14;--card:#0e1c33;--cardh:#132745;--line:#1e3a63;--line2:#294d80;--gold:#f0c86a;--ink:#eef4fc;--mut:#9db3d4;--mut2:#7c93b6;--green:#46d17f}
+html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;background-image:radial-gradient(900px 380px at 50% -140px,rgba(240,200,106,.07),transparent 70%)}
+a{color:inherit;text-decoration:none}
+header.site{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(6,11,20,.82);border-bottom:1px solid var(--line)}
+.hd{max-width:900px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hd .brand{font-size:20px;font-weight:800;letter-spacing:-.4px}.hd .brand b{color:var(--gold)}
+.hd nav{display:flex;gap:4px;flex-wrap:wrap}.hd nav a{font-size:14px;color:var(--mut);padding:7px 11px;border-radius:8px;transition:.15s}.hd nav a:hover{color:var(--ink);background:var(--card)}
+.wrap{max-width:900px;margin:0 auto;padding:30px 22px 70px}.bc{font-size:12px;color:var(--mut2);margin:0 0 8px}.bc a{color:var(--mut2)}
+h1{font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.9px;margin:6px 0 0}h1 .g{color:var(--gold)}
+.lede{font-size:17px;color:var(--mut);line-height:1.55;margin:14px 0 0;max-width:640px}
+h2{font-size:20px;margin:34px 0 8px;letter-spacing:-.3px}
+p{color:var(--mut);line-height:1.65;font-size:15px}
+.ep{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.ep .m{display:inline-block;font-size:11px;font-weight:800;color:var(--green);background:rgba(70,209,127,.12);border:1px solid #2f6b45;border-radius:6px;padding:2px 8px;margin-right:8px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.ep code{font-size:14px;color:var(--gold)}
+pre{background:#081426;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto;font-size:12.5px;color:#cfe2ff;line-height:1.5}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--gold);font-size:12px}td:first-child code{color:var(--gold)}
+.legal{border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:11.5px;color:var(--mut2);line-height:1.6}
+@media(max-width:640px){.hd{padding:11px 14px}.wrap{padding:22px 14px 60px}h1{font-size:26px}table{display:block;overflow-x:auto;white-space:nowrap}pre{font-size:11.5px}}</style><link rel="preload" href="/fonts/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/IBMPlexMono-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fonts/fonts.css"><style id="typesys">h1,h2,h3,.brand{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif !important;letter-spacing:-.5px}body{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}.tk,.dt,.dd,.cd b,.lpn,.coh,.stat b,.count,.code,.price b,.licap,.cap,.pill,.lit{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.2px}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style id="navpolish">.brand{display:inline-flex;align-items:center;gap:0}.pd-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:transparent;cursor:pointer;color:#eef4fc;padding:0}.pd-burger span,.pd-burger span::before,.pd-burger span::after{content:"";display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:.2s}.pd-burger span::before{position:absolute;top:-6px}.pd-burger span::after{position:absolute;top:6px}body.pd-navopen .pd-burger span{background:transparent}body.pd-navopen .pd-burger span::before{top:0;transform:rotate(45deg)}body.pd-navopen .pd-burger span::after{top:0;transform:rotate(-45deg)}@media(max-width:720px){.pd-burger{display:inline-flex}.hd nav,.top .nav{position:fixed;inset:56px 0 auto 0;z-index:30;flex-direction:column;align-items:stretch;gap:0;background:#0b1626;border-bottom:1px solid #1e3a63;box-shadow:0 18px 40px rgba(0,0,0,.5);max-height:0;overflow:hidden;transition:max-height .25s ease}body.pd-navopen .hd nav,body.pd-navopen .top .nav{max-height:82vh;overflow:auto}.hd nav a,.top .nav a{padding:15px 20px!important;border-bottom:1px solid #14263f;font-size:16px!important;border-radius:0!important;min-height:44px;display:flex;align-items:center}.chip{min-height:40px}}.navdd{position:relative;display:inline-flex;align-items:center}.navddb{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:7px 11px;border-radius:8px;display:inline-flex;align-items:center;gap:3px}.navdd:hover .navddb,.navdd:focus-within .navddb{color:#eef4fc}.navddm{position:absolute;top:100%;right:0;min-width:170px;background:#0b1626;border:1px solid #294d80;border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.5);padding:6px;flex-direction:column;display:none;z-index:40}.navdd:hover .navddm,.navdd:focus-within .navddm{display:flex}.navddm a{padding:9px 12px!important;border-radius:8px;white-space:nowrap}.navddm a:hover{background:#132745}@media(max-width:720px){.navdd{display:contents}.navddb{display:none}.navddm{position:static;display:flex!important;min-width:0;background:transparent;border:0;box-shadow:none;padding:0}.navddm a{border-bottom:1px solid #14263f}}</style></head><body>
+<header class="site"><div class="hd"><a class="brand" href="/"><svg class="lm" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex:none;vertical-align:-4px;margin-right:7px"><rect x="1" y="1" width="22" height="22" rx="6" fill="#081426" stroke="#294d80"/><rect x="6.5" y="9" width="2.4" height="9" rx="1" fill="#f0c86a"/><rect x="7" y="5.5" width="1.4" height="14" rx=".7" fill="#f0c86a"/><rect x="11.6" y="6.5" width="2.4" height="11" rx="1" fill="#46d17f"/><rect x="12.1" y="4" width="1.4" height="16" rx=".7" fill="#46d17f"/><circle cx="18" cy="8" r="2" fill="#46d17f"/></svg>pdufa<b>.bio</b></a><button class="pd-burger" aria-label="Open menu" aria-expanded="false" onclick="var o=document.body.classList.toggle('pd-navopen');this.setAttribute('aria-expanded',o)"><span></span></button><nav><a href="/calendar">Calendar</a><a href="/screener">Screener</a><a href="/decisions">Decisions</a><a href="/developers" style="color:var(--gold)">API</a><a href="/pricing" style="color:var(--gold)">Pro</a></nav></div></header>
+<main class="wrap">
+<div class="bc"><a href="/">Home</a> &rsaquo; Developers</div>
+<h1>The PDUFA <span class="g">API</span></h1>
+<div class="sub">Every FDA catalyst — PDUFA dates, phase readouts, conferences, AdComm meetings — as clean JSON. <b>Keyless and free</b> for the core calendar. Run-up and cohort intelligence unlocks with Pro.</div>
+
+<div class="card" style="margin:14px 0"><b>Base URL</b> <code class="code">https://www.pdufa.bio/api/v1</code> &nbsp;·&nbsp; <b>No key needed to start</b> &nbsp;·&nbsp; <a href="#tiers">Tiers</a> · <a href="#fields">Fields</a> · <a href="#recipes">Recipes</a> · <a href="#errors">Errors</a></div>
+
+<pre class="code" style="background:#0b1626;border:1px solid #1e3a63;border-radius:12px;padding:14px;overflow:auto">curl https://www.pdufa.bio/api/v1/pdufa?limit=3</pre>
+
+<div class="card" style="border-color:#f0c86a;margin:12px 0"><b style="color:#f0c86a">Pro is not open yet.</b> <span class="sub">The free and anonymous tiers below work today and always will. Pro (run-up series, bulk export, .ics, webhooks) opens when the billing flow is finished end-to-end &mdash; <a href="/pricing" style="color:#f0c86a">get notified</a>.</span></div><h2 id="tiers">Tiers</h2>
+<div class="card"><table style="width:100%;border-collapse:collapse;font-size:13.5px">
+<tr style="color:#f0c86a;text-align:left"><th style="padding:7px 8px">Tier</th><th>Price</th><th>Quota</th><th>Burst</th><th>Fields</th></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Anonymous</b><br><span style="color:#7c93b6">no key</span></td><td>$0</td><td class="lit">1,000/day</td><td class="lit">10/min</td><td>Core</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Free</b><br><span style="color:#7c93b6">x-api-key</span></td><td>$0</td><td class="lit">10,000/mo</td><td class="lit">30/min</td><td>Core</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Pro</b></td><td class="lit">$10/mo · $100/yr</td><td class="lit">100,000/mo</td><td class="lit">120/min</td><td>Core + <b style="color:#46d17f">Depth</b></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Quant</b></td><td class="lit">$149/mo</td><td class="lit">2,000,000/mo</td><td class="lit">600/min</td><td>Core + Depth + History</td></tr>
+</table>
+<div style="font-size:12px;color:#7c93b6;margin-top:10px">Anonymous access stays free forever — every record links back to pdufa.bio. <b>Attribution + link-back required</b> on the free tiers.</div>
+</div>
+
+<h2 id="fields">What&rsquo;s free, and what isn&rsquo;t</h2>
+<div class="card" style="border-color:#46d17f">
+<b>Our rule: if it&rsquo;s visible on a public page, it&rsquo;s free in the API.</b>
+<div class="sub" style="margin-top:6px">We previously gated fields &mdash; indication, NCT ID, market cap, cash runway, cohort statistics &mdash; that we publish in plain HTML on every <code class="code">/pdufa/*</code> page. Charging for data anyone could scrape off the page was leaky and dishonest, so we stopped. <b>All of it is now free.</b></div>
+</div>
+<div class="card">
+<b>Free &mdash; every request, no key needed</b>
+<div class="code" style="color:#9db3d4;font-size:12.5px;margin:6px 0 12px">id · ticker · company · date · date_precision · name · type · therapeutic_area · market_cap_tier · status · url · updated_at · <b style="color:#46d17f">indication · nct_id · market_cap_usd · cash_runway_months · days_to_decision · cohort_move_median_pct · cohort_move_p25_pct · cohort_move_p75_pct · cohort_n</b></div>
+<b style="color:#f0c86a">Pro &mdash; what we don&rsquo;t publish as data</b>
+<div class="sub" style="margin:6px 0 0">
+&bull; <b>The per-event run-up series</b> &mdash; the full daily T-120 &rarr; T+5 price path for <b>1,786 FDA decisions</b>, as numbers. We show a picture of it; we&rsquo;ve never published the series. <code class="code">/api/v1/runup</code><br>
+&bull; <b>Bulk export</b> of the whole dataset (CSV / JSONL)<br>
+&bull; <b>Subscribable .ics</b> calendar feeds<br>
+&bull; <b>Date-slip webhooks</b><br>
+&bull; <b>100,000 requests/month</b> instead of 1,000/day
+</div></div>
+<p>In other words: <b>you pay for scale and for the series, not for secrets.</b> The catalyst facts are free forever &mdash; that&rsquo;s the whole point of the calendar.</p>
+
+<h2 id="getkey">Getting a key</h2>
+<div class="card">
+<b>You don&rsquo;t need one to start.</b> Anonymous requests work immediately &mdash; 1,000/day, no signup, no key. Just <code class="code">curl</code> it.
+<div class="sub" style="margin-top:8px">
+When you want Pro: <a href="/pricing" style="color:#f0c86a">subscribe</a> &rarr; your key is shown once on the success page &rarr; it also lives in <a href="/account" style="color:#f0c86a">your account</a>, where you can copy it, <b>regenerate</b> it, watch your usage, and cancel.<br><br>
+Send it as a header: <code class="code">x-api-key: pk_live_&hellip;</code> (or <code class="code">?key=</code> for quick tests).
+</div></div>
+
+<h2 id="limits">Rate limits &mdash; published, so they feel fair</h2>
+<div class="card"><table style="width:100%;border-collapse:collapse;font-size:13.5px">
+<tr style="color:#f0c86a;text-align:left"><th style="padding:6px 8px">Tier</th><th>Quota</th><th>Burst</th><th>Cost per call</th></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Anonymous</td><td class="lit">1,000 / day</td><td class="lit">10 / min</td><td class="lit">1</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Free (keyed)</td><td class="lit">10,000 / mo</td><td class="lit">30 / min</td><td class="lit">1</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Pro</td><td class="lit">100,000 / mo</td><td class="lit">120 / min</td><td class="lit">1 · runup 5 · export 50</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Quant</td><td class="lit">2,000,000 / mo</td><td class="lit">600 / min</td><td class="lit">same</td></tr>
+</table>
+<div style="font-size:12px;color:#7c93b6;margin-top:10px">Out of quota mid-job? You get a warning at 80%, a <b>grace overage</b> past 100% so nothing breaks, and only then a <code class="code">402</code> &mdash; with <a href="/pricing/credits" style="color:#f0c86a">top-up credits</a> that never expire. Burst abuse returns <code class="code">429</code>; a commercial limit is never disguised as an abuse error.</div>
+</div>
+
+<h2>Endpoints</h2>
+<div class="card"><table style="width:100%;border-collapse:collapse;font-size:13px">
+<tr style="color:#f0c86a;text-align:left"><th style="padding:6px 8px">Path</th><th>Tier</th><th>Notes</th></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/events</td><td>Any</td><td>All catalyst types</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/pdufa</td><td>Any</td><td>FDA decision dates</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/readouts</td><td>Any</td><td>Trial readouts</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/conferences</td><td>Any</td><td>Conference presentations</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/adcomm</td><td>Any</td><td>Advisory committee meetings</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/usage</td><td>Any</td><td>Your quota, credits, tier</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/health</td><td>Any</td><td>Liveness</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/runup</td><td style="color:#f0c86a">Pro</td><td>Per-event daily T-120&rarr;T+5 series &nbsp;<span class="lit" style="color:#7c93b6">(5 credits)</span></td></tr><tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/export</td><td style="color:#f0c86a">Pro</td><td>Bulk CSV / JSONL &nbsp;<span class="lit" style="color:#7c93b6">(50 credits)</span></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">/api/v1/calendar.ics</td><td style="color:#f0c86a">Pro</td><td>Subscribable calendar feed</td></tr>
+</table></div>
+
+<h3>Parameters</h3>
+<p><code class="code">ticker</code> (comma-separated) · <code class="code">type</code> · <code class="code">ta</code> · <code class="code">status</code> · <code class="code">from</code> · <code class="code">to</code> · <code class="code">q</code> (free-text) · <code class="code">limit</code> (max 1000) · <code class="code">offset</code> · <code class="code">include</code> · <code class="code">format</code> (<code class="code">json</code>|<code class="code">csv</code>) · <code class="code">id</code></p>
+
+<h2 id="recipes">Copy-paste recipes</h2>
+<div class="card"><b>Google Sheets</b> — live PDUFA calendar in a cell
+<pre class="code" style="margin:6px 0 0;overflow:auto">=IMPORTDATA("https://www.pdufa.bio/api/v1/pdufa?format=csv&amp;limit=100")</pre></div>
+<div class="card"><b>Python / pandas</b>
+<pre class="code" style="margin:6px 0 0;overflow:auto">import pandas as pd
+df = pd.read_csv("https://www.pdufa.bio/api/v1/pdufa?format=csv&amp;limit=1000")
+print(df[["ticker","date","name","market_cap_tier"]].head())</pre></div>
+<div class="card"><b>JavaScript</b>
+<pre class="code" style="margin:6px 0 0;overflow:auto">const r = await fetch("https://www.pdufa.bio/api/v1/events?type=PDUFA&amp;from=2026-07-01");
+const { data } = await r.json();
+data.forEach(e =&gt; console.log(e.date, e.ticker, e.name));</pre></div>
+<div class="card"><b>Subscribe in your calendar</b> <span style="color:#f0c86a">(Pro)</span>
+<pre class="code" style="margin:6px 0 0;overflow:auto">https://www.pdufa.bio/api/v1/calendar.ics?key=YOUR_KEY&amp;ticker=CELC,MNKD</pre></div>
+
+<h2>Rate-limit headers</h2>
+<p>Every response tells you exactly where you stand — no surprises.</p>
+<pre class="code" style="background:#0b1626;border:1px solid #1e3a63;border-radius:12px;padding:14px;overflow:auto;font-size:12.5px">X-Api-Tier: anonymous
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 998
+X-RateLimit-Reset: 1785542400
+X-Credits-Remaining: 0
+X-Credits-Cost: 1
+X-Quota-State: ok          # ok | warning | grace | exhausted | unmetered
+X-Request-Id: req_01J9Z...</pre>
+<p><b>We never hard-slam you.</b> At 80% you get <code class="code">warning</code>. Over 100% you get a <b>grace overage</b> so nothing breaks mid-job. Only past that do you get a <code class="code">402</code> — with credit and upgrade links, and still-cached data so your client degrades instead of dying. Burst abuse returns <code class="code">429</code>; a commercial limit is never disguised as an abuse error.</p>
+
+<h2 id="errors">Errors</h2>
+<div class="card"><table style="width:100%;border-collapse:collapse;font-size:13px">
+<tr style="color:#f0c86a;text-align:left"><th style="padding:6px 8px">Code</th><th>Meaning</th></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">400 invalid_param</td><td>Unknown parameter — the message lists the valid ones</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">401 invalid_key</td><td>Key missing or unrecognised</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">403 tier_forbidden</td><td>Endpoint/field above your tier — includes <code class="code">_upgrade</code></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">402 quota_exhausted</td><td>Commercial limit — credit + upgrade options in the body</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">429 rate_limited</td><td>Burst abuse — honour <code class="code">Retry-After</code></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">503 degraded</td><td>Serving stale cache — check <code class="code">meta.served_from</code></td></tr>
+</table>
+<div style="font-size:12px;color:#7c93b6;margin-top:10px">Every error carries an <code class="code">X-Request-Id</code>. Quote it and we can trace it.</div></div>
+
+<h2>Attribution</h2>
+<p>Free and anonymous use requires a visible link back. Copy-paste:</p>
+<pre class="code" style="background:#0b1626;border:1px solid #1e3a63;border-radius:12px;padding:12px;overflow:auto;font-size:12.5px">Catalyst data from &lt;a href="https://www.pdufa.bio"&gt;pdufa.bio&lt;/a&gt;</pre>
+
+<div class="card" style="margin-top:18px;border-color:#f0c86a">
+<b>Need Depth?</b> Run-up series, cohort distributions, NCT IDs, bulk export and calendar feeds come with Pro — <b class="lit">$10/mo</b> or <b class="lit">$100/yr</b>. <a href="/pricing?ref=developers" style="color:#f0c86a">See pricing →</a>
+</div>
+</div></body></html>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /today
+Disallow: /today.html
+Disallow: /app
+Disallow: /app.html
+Disallow: /api/
+
+Sitemap: https://www.pdufa.bio/sitemap.xml

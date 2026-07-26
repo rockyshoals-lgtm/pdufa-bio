@@ -1,0 +1,56 @@
+// pdufa.bio — private access gate (Vercel Edge Middleware).
+// Locks the WHOLE site (pages + APIs) behind one password using HTTP Basic Auth.
+//   • The password lives ONLY as the SITE_PASSWORD env var on Vercel — never in this
+//     code, never in the page, never sent to the browser. It's checked here at the edge.
+//   • Compared in constant time (no timing side-channel).
+//   • Vercel Cron requests are allowed through (via CRON_SECRET) so the auto-logger keeps
+//     running while the site is gated.
+//   • FAIL-OPEN by design: if SITE_PASSWORD isn't set, or anything unexpected throws, the
+//     site stays UP (ungated) rather than bricking itself while you're away. A locked-but-
+//     dead site is worse than a live one, so the gate never takes the site down.
+import { next } from '@vercel/edge';
+
+export const config = {
+  // gate everything except Vercel's internal asset paths + the favicon
+  matcher: '/((?!_next/|_vercel/|favicon\\.ico|robots\\.txt).*)',
+};
+
+function constantTimeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+export default function middleware(req) {
+  try {
+    const auth = req.headers.get('authorization') || '';
+
+    // 1) Vercel Cron → let it through so /api/log, /api/data, /api/surges keep updating.
+    const cronSecret = process.env.CRON_SECRET;
+    if (cronSecret && auth === `Bearer ${cronSecret}`) return next();
+
+    // 2) Not configured yet → don't lock anyone out (fail-open safety).
+    const expected = process.env.SITE_PASSWORD;
+    if (!expected) return next();
+
+    // 3) Human visitor → HTTP Basic Auth. Any username; password must match SITE_PASSWORD.
+    if (auth.startsWith('Basic ')) {
+      let decoded = '';
+      try { decoded = atob(auth.slice(6)); } catch { decoded = ''; }
+      const supplied = decoded.slice(decoded.indexOf(':') + 1); // strip "user:"
+      if (constantTimeEqual(supplied, expected)) return next();
+    }
+
+    // 4) No/!bad credentials → prompt for the password.
+    return new Response('Authorization required — this is a private tool.', {
+      status: 401,
+      headers: {
+        'WWW-Authenticate': 'Basic realm="pdufa.bio (private)", charset="UTF-8"',
+        'Cache-Control': 'no-store',
+      },
+    });
+  } catch (e) {
+    return next(); // never let the gate take the site down
+  }
+}

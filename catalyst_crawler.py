@@ -1,0 +1,1603 @@
+#!/usr/bin/env python3
+"""
+catalyst_crawler.py  (v2 — multi-catalyst)
+==========================================
+Primary-source biotech catalyst calendar across EVERY catalyst type, each row
+carrying provenance (source, filing URL, extracted snippet, confidence).
+
+Catalyst types mined:
+  PDUFA / Regulatory Decision  -> 8-K & 6-K "PDUFA goal date" / "target action date"        (day, conf .9)
+  Advisory Committee (AdComm)  -> 8-K & 6-K "Advisory Committee meeting ..."                 (day, conf .8)
+  Submission (BLA/NDA/sNDA)    -> 8-K & 6-K "accepted for review", "submitted a BLA/NDA ..." (day/quarter, conf .65)
+  Phase readout (topline)      -> 8-K/6-K/10-Q "topline data expected in 2H 2026 ..."        (quarter/half, conf .5)
+  Phase readout (structured)   -> ClinicalTrials.gov primary completion dates               (month, conf .4)
+  AdComm calendar (FDA)        -> fda.gov advisory-committee page                            (day, conf .5, EXPERIMENTAL)
+  Earnings                     -> FMP earnings calendar (needs FMP_API_KEY)                  (day, conf .9)
+
+Key fixes vs v1:  +6-K (foreign filers / ADRs were missed), wider filing window,
+multi-type rule registry, quarter/half date precision for guidance.
+
+Requirements:  pip install requests pandas python-dateutil
+Run:           python catalyst_crawler.py                       (bare = SEC all-types + FDA AdComm)
+               python catalyst_crawler.py --tickers u.txt --bpc fda.xlsx --ctgov-sponsors s.txt
+"""
+import os, re, sys, json, time, argparse, csv, shutil
+from datetime import datetime, date, timedelta, timezone
+import datetime as dt
+import requests, pandas as pd
+from dateutil import parser as dtparse
+
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+
+# The keys live in "Odin Perfection/.env_master". Every FMP path in this file is guarded by
+# `if os.environ.get("FMP_API_KEY")`, so with no loader those sources skip themselves without
+# a word — which is exactly what has been happening.
+#
+# Precedence, strongest first: real env var > ./.env > Odin Perfection/.env_master.
+# First writer wins. Override the vault path with ENV_MASTER=<path>.
+ENV_FILES = [
+    os.path.join(_HERE, '.env'),
+    os.environ.get('ENV_MASTER') or os.path.join(_HERE, 'Odin Perfection', '.env_master'),
+]
+
+def _load_dotenv(paths=ENV_FILES):
+    for p in paths:
+        if not p or not os.path.exists(p):
+            continue
+        for line in open(p, encoding='utf-8', errors='ignore'):
+            line = line.strip()
+            if not line or line.startswith('#') or '=' not in line:
+                continue
+            if line.lower().startswith('export '):
+                line = line[7:]
+            k, v = line.split('=', 1)
+            k, v = k.strip(), v.strip().strip('"').strip("'")
+            if k and v and k not in os.environ:      # first writer wins
+                os.environ[k] = v
+
+_load_dotenv()
+
+# ORATS is spelled two ways across this repo. Same secret; alias so neither comes back empty.
+for _a, _b in (('ORATS_API_KEY', 'ORATS_API_TOKEN'), ('ORATS_API_TOKEN', 'ORATS_API_KEY')):
+    if os.environ.get(_a) and not os.environ.get(_b):
+        os.environ[_b] = os.environ[_a]
+
+SEC_THROTTLE=0.12
+TODAY=date.today()
+DEVICE_TICKERS={'BJDX','VRAX','BWAY','NPCE','DRTS','GRAL','NUWE','ICU','PROF','ADGM','OBIO'}  # medical-device names (PMA/510k/De Novo) — expand as found
+DEFAULT_SINCE="2024-09-01"          # filings this recent still pending -> upcoming dates
+FIELDS=["ticker","cik","company","catalyst_type","catalyst_date","date_precision","drug","indication",
+        "source","source_url","snippet","confidence","redistribute","retrieved_at",
+        "conference","pres_type","date_basis"]   # conference cols: ConferencePresentation type
+
+def rec(**k):
+    r={f:k.get(f) for f in FIELDS}; r["retrieved_at"]=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"); return r
+
+def safe_to_csv(df, path):
+    """Write CSV robustly; fall back to a timestamped name if the file is locked (open in Excel).
+
+    QUOTE_ALL + newline sanitation is not optional here. The conference `snippet` column carries
+    raw press-release text: embedded quotes and, worse, embedded newlines. A newline inside an
+    unquoted field splits one logical row into two physical rows; the NEXT crawl re-reads the
+    file, pandas hits an unterminated field, and everything past that point is silently lost on
+    the concat+dedup+rewrite. That is exactly how the canonical file went 715 -> 224 rows.
+    QUOTE_ALL makes every field explicit; stripping newlines from object cells means a field can
+    never span a physical line. Round-trip-safe by construction, not by luck.
+    """
+    df = df.copy()
+    for c in df.columns:
+        if df[c].dtype == object:
+            df[c] = df[c].map(lambda v: re.sub(r'[\r\n]+', ' ', v) if isinstance(v, str) else v)
+    try:
+        df.to_csv(path, index=False, quoting=csv.QUOTE_ALL); return path
+    except PermissionError:
+        base,ext=os.path.splitext(path); alt=f"{base}_{datetime.now().strftime('%H%M%S')}{ext}"
+        df.to_csv(alt, index=False, quoting=csv.QUOTE_ALL)
+        print(f"  [warn] '{path}' is locked (open in Excel?) -> wrote '{alt}' instead", file=sys.stderr)
+        return alt
+
+# ----------------------------------------------------------------- date parsing
+MONTH=r'(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
+DAY=rf'{MONTH}\s+\d{{1,2}},?\s+20\d{{2}}'
+QH=r'(?:(?:first|second|third|fourth|1st|2nd|3rd|4th|Q[1-4])\s+(?:quarter\s+)?(?:of\s+)?20\d{2}|(?:first|second)\s+half\s+(?:of\s+)?20\d{2}|[12]H[\s\-]?20\d{2}|(?:year[- ]end|end of|by the end of|mid[- ])\s*20\d{2})'
+re_day=re.compile(DAY)
+
+def norm_any(s):
+    s=s.strip()
+    try:
+        if re.search(r'\d{1,2},?\s+20\d{2}', s) and re.match(MONTH, s, re.I):
+            return dtparse.parse(s, fuzzy=True).date().isoformat(), "day"
+    except Exception: pass
+    yr=re.search(r'20\d{2}', s); 
+    if not yr: return None,None
+    y=yr.group(0)
+    if re.search(r'(second|2nd|Q2)', s, re.I): return f"{y}-Q2","quarter"
+    if re.search(r'(third|3rd|Q3)', s, re.I): return f"{y}-Q3","quarter"
+    if re.search(r'(fourth|4th|Q4)', s, re.I): return f"{y}-Q4","quarter"
+    if re.search(r'(first|1st|Q1)', s, re.I) and 'half' not in s.lower(): return f"{y}-Q1","quarter"
+    if re.search(r'(second\s+half|2H)', s, re.I): return f"{y}-H2","half"
+    if re.search(r'(first\s+half|1H)', s, re.I): return f"{y}-H1","half"
+    if re.search(r'(year[- ]end|end of|mid)', s, re.I): return f"{y}-H2","half"
+    return f"{y}","year"
+
+def is_upcoming(label, precision):
+    if not label: return False
+    if precision=="day": return label>=(TODAY-timedelta(days=45)).isoformat()   # grace window: keep recently-passed catalysts so their outcome (approval/CRL) is captured, not silently dropped
+    yr=int(label[:4]); 
+    if yr>TODAY.year: return True
+    if yr<TODAY.year: return False
+    q=TODAY.month  # same year: keep H2/Q3/Q4/year always (conservative -> keep)
+    return True
+
+# ----------------------------------------------------------------- catalyst rule registry
+def _re(p): return re.compile(p, re.I)
+CATALYST_RULES=[
+  dict(ctype="PDUFA", forms="8-K,6-K", conf=0.9,
+       phrases=["PDUFA goal date","PDUFA target action date","target action date","Prescription Drug User Fee Act",
+                "PDUFA date","FDA action date","PDUFA action date","user fee goal date","FDA target action date","FDA goal date"],
+       leads=[_re(r'PDUFA[^.\n]{0,30}?(?:goal|target\s+action|action)?\s*date\s+(?:of|to|is|on|:)?\s*('+DAY+r')'),
+              _re(r'(?:FDA|PDUFA)\s+(?:goal\s+|target\s+)?action\s+date\s+(?:of|to|is|on|:)?\s*('+DAY+r')'),
+              _re(r'(?:PDUFA|user\s+fee\s+goal|FDA\s+goal)\s+date\s+(?:of|to|is|on|:)?\s*('+DAY+r')'),
+              _re(r'target\s+action\s+date\s+(?:of|to|is|on|:)?\s*('+DAY+r')'),
+              _re(r'('+DAY+r')\s*(?:[,.]| as)?\s*(?:the\s+)?PDUFA\s+(?:goal|target|action)')]),
+  dict(ctype="AdComm", forms="8-K,6-K", conf=0.8,
+       phrases=["Advisory Committee meeting","Advisory Committee will","Advisory Committee on"],
+       leads=[_re(r'[Aa]dvisory\s+[Cc]ommittee\s+(?:meeting\s+)?(?:on|is scheduled for|scheduled for|date of|to be held on|will (?:meet|be held)[^.]{0,20}?on)\s*('+DAY+r')'),
+              _re(r'('+DAY+r')[, ]+[^.]{0,30}?[Aa]dvisory\s+[Cc]ommittee')]),
+  dict(ctype="Submission", forms="8-K,6-K", conf=0.65,
+       phrases=["accepted for review","accepted for filing","accepted the BLA","accepted the NDA",
+                "Biologics License Application","New Drug Application","completed the submission",
+                "submitted a BLA","submitted an NDA","submitted a New Drug Application","submission of a BLA",
+                "BLA submission","NDA submission","supplemental Biologics License Application",
+                "supplemental New Drug Application","Marketing Authorization Application",
+                "rolling submission","resubmitted","FDA has accepted","accepted our"],
+       leads=[_re(r'(?:BLA|NDA|sBLA|sNDA|application)[^.]{0,50}?accepted[^.]{0,30}?(?:on\s+|effective\s+)?('+DAY+r')'),
+              _re(r'(?:submit|file|resubmit|complete[d]?)[a-z]*\s+(?:its\s+|a\s+|the\s+|our\s+)?(?:rolling\s+)?(?:supplemental\s+)?(?:BLA|NDA|sBLA|sNDA|New Drug Application|Biologics License Application|Marketing Authorization Application|marketing application)[^.]{0,40}?(?:in|by|on|during)\s*('+DAY+r'|'+QH+r')'),
+              _re(r'(?:BLA|NDA|sBLA|sNDA|submission|application)[^.]{0,40}?(?:submitted|completed|filed)[^.]{0,30}?(?:on|in|during)\s*('+DAY+r'|'+QH+r')')]),
+  dict(ctype="Approval", forms="8-K,6-K", conf=0.92,
+       phrases=["FDA approval","approved by the FDA","announces FDA approval","received FDA approval","granted approval","FDA has approved","approval of"],
+       leads=[_re(r'approv[a-z]*[^.]{0,60}?(?:on\s+|effective\s+|dated\s+)?('+DAY+r')'),
+              _re(r'(?:on\s+)?('+DAY+r')[^.]{0,30}?(?:the\s+)?(?:FDA\s+)?approv')]),
+  dict(ctype="CRL", forms="8-K,6-K", conf=0.90,
+       phrases=["complete response letter","received a complete response","Complete Response Letter","CRL from the FDA"],
+       leads=[_re(r'complete response[^.]{0,60}?(?:on\s+|dated\s+)?('+DAY+r')'),
+              _re(r'(?:on\s+)?('+DAY+r')[^.]{0,40}?complete response')]),
+  dict(ctype="PhaseReadout", forms="8-K,6-K,10-Q", conf=0.5,
+       phrases=["topline data","topline results","data are expected","results are expected","interim data","data readout"],
+       leads=[_re(r'topline\s+(?:data|results)\s+(?:are\s+|is\s+)?(?:expected|anticipated)\s+(?:in\s+|by\s+|during\s+)?('+DAY+r'|'+QH+r')'),
+              _re(r'(?:data|results)\s+(?:are\s+|is\s+)?(?:expected|anticipated)\s+(?:in\s+|by\s+|during\s+)?('+DAY+r'|'+QH+r')'),
+              _re(r'(?:expect|anticipate)s?\s+to\s+(?:report|announce|present)\s+(?:topline\s+)?(?:data|results)[^.]{0,30}?(?:in\s+|by\s+|during\s+)('+DAY+r'|'+QH+r')')]),
+]
+
+# ----------------------------------------------------------------- SEC
+def sec_get(url, ua, **kw):
+    h={"User-Agent":ua,"Accept-Encoding":"gzip, deflate","Accept":"*/*"}; r=None
+    for a in range(3):
+        r=requests.get(url,headers=h,timeout=30,**kw); time.sleep(SEC_THROTTLE)
+        if r.status_code in (403,429,500,502,503) and a<2: time.sleep(1.2+a); continue
+        return r
+    return r
+
+def clean_html(html): return re.sub(r'\s+',' ',re.sub(r'&#?\w+;',' ',re.sub(r'<[^>]+>',' ',html)))
+
+def sec_cik_map(ua):
+    j=sec_get("https://www.sec.gov/files/company_tickers.json",ua).json()
+    return ({v["ticker"].upper():str(v["cik_str"]).zfill(10) for v in j.values()},
+            {str(v["cik_str"]).zfill(10):v["title"] for v in j.values()})
+
+def sec_fulltext(phrase, forms, ua, startdt, enddt, max_pages=6):
+    for pg in range(max_pages):
+        params={"q":f'"{phrase}"',"forms":forms,"from":pg*100,"dateRange":"custom","startdt":startdt,"enddt":enddt}
+        r=sec_get("https://efts.sec.gov/LATEST/search-index",ua,params=params)
+        if r.status_code!=200:
+            print(f"  [efts {r.status_code}] '{phrase}' p{pg}",file=sys.stderr); break
+        hits=r.json().get("hits",{}).get("hits",[])
+        if not hits: break
+        for h in hits: yield h
+        if len(hits)<100: break
+
+def sec_catalysts(cik_set, ua, since=DEFAULT_SINCE, max_docs=400):
+    out=[]; seen=set(); enddt=TODAY.isoformat()
+    counts={}
+    for rule in CATALYST_RULES:
+        n_hits=n_fetch=n_fail=n_match=0
+        docseen=set()
+        for phrase in rule["phrases"]:
+            if n_fetch>=max_docs: break
+            for h in sec_fulltext(phrase, rule["forms"], ua, since, enddt):
+                n_hits+=1
+                s=h["_source"]; cik=str(s["ciks"][0]).zfill(10)
+                if cik_set and cik not in cik_set: continue
+                adsh,fn=h["_id"].split(":",1)
+                if (cik,adsh) in docseen: continue
+                docseen.add((cik,adsh))
+                if n_fetch>=max_docs: break
+                url=f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{adsh.replace('-','')}/{fn}"
+                try:
+                    resp=sec_get(url,ua); n_fetch+=1
+                    if resp.status_code!=200: n_fail+=1; continue
+                    txt=clean_html(resp.text)
+                except Exception: n_fail+=1; continue
+                best=None
+                for lead in rule["leads"]:
+                    m=None
+                    for _mm in lead.finditer(txt):
+                        if rule["ctype"]=="PDUFA" and _adcom_near(txt,_mm.start(1)): continue  # skip an AdCom date mislabeled as PDUFA
+                        m=_mm; break
+                    if not m: continue
+                    iso,prec=norm_any(m.group(1))
+                    if iso and is_upcoming(iso,prec):
+                        st=max(0,m.start()-240)
+                        cand=rec(cik=cik, company=s.get("display_names",[None])[0],
+                                 catalyst_type=rule["ctype"], catalyst_date=iso, date_precision=prec,
+                                 source="sec_edgar", source_url=url, snippet=txt[st:m.end()+240].strip(),
+                                 confidence=rule["conf"], redistribute=True)
+                        if best is None or (prec=="day" and best["date_precision"]!="day"): best=cand
+                if best:
+                    key=(cik,best["catalyst_type"],best["catalyst_date"])
+                    if key not in seen: seen.add(key); out.append(best); n_match+=1
+        counts[rule["ctype"]]=(n_hits,n_fetch,n_fail,n_match)
+    for ct,(hh,ff,fl,mm) in counts.items():
+        print(f"  [{ct:12s}] scanned {hh:4d} fetched {ff:4d} fail {fl:3d} -> {mm:3d} upcoming")
+    return out
+
+
+# ----------------------------------------------------------------- Conference presentations
+# The moat: nothing else in this pipeline captured WHO PRESENTS WHERE. Without it the
+# conference dataset decays into a snapshot (ASCO26 had 6 events; EHA26/ADA26 had zero).
+# A presentation's DATE comes from the conference, not the filing — see conference_presentations.py.
+try:
+    # make the import work regardless of cwd (cron, another dir, importlib load)
+    _HERE = os.path.dirname(os.path.abspath(__file__))
+    if _HERE not in sys.path: sys.path.insert(0, _HERE)
+    import conference_presentations as CONFPRES
+    _CONF_REG = CONFPRES.load_registry()
+except Exception as _ce:
+    CONFPRES = None; _CONF_REG = {}
+    print(f"  [conference] module unavailable ({_ce}) — skipping", file=sys.stderr)
+
+def sec_conference_presentations(cik_set, ua, since=DEFAULT_SINCE, max_docs=600, include_past=False):
+    """Harvest ConferencePresentation catalysts from 8-K/6-K press releases.
+
+    include_past=False -> upcoming only (the calendar)
+    include_past=True  -> everything (the STUDY: history is what makes the dataset a
+                          compounding moat rather than a snapshot)
+    """
+    if not CONFPRES or not _CONF_REG:
+        return []
+    out=[]; seen=set(); docseen=set(); enddt=TODAY.isoformat()
+    n_hits=n_fetch=n_fail=n_match=n_past=0
+    for phrase in CONFPRES.SEARCH_PHRASES:
+        if n_fetch>=max_docs: break
+        for h in sec_fulltext(phrase, "8-K,6-K", ua, since, enddt):
+            n_hits+=1
+            s=h["_source"]; cik=str(s["ciks"][0]).zfill(10)
+            if cik_set and cik not in cik_set: continue
+            adsh,fn=h["_id"].split(":",1)
+            if (cik,adsh) in docseen: continue
+            docseen.add((cik,adsh))
+            if n_fetch>=max_docs: break
+            url=f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{adsh.replace('-','')}/{fn}"
+            try:
+                resp=sec_get(url,ua); n_fetch+=1
+                if resp.status_code!=200: n_fail+=1; continue
+                txt=clean_html(resp.text)
+            except Exception:
+                n_fail+=1; continue
+            filed=None
+            try:
+                fd=s.get("file_date") or s.get("filed_at")
+                if fd: filed=dt.date.fromisoformat(str(fd)[:10])
+            except Exception: pass
+            try:
+                got=CONFPRES.extract(txt, filed or TODAY, _CONF_REG)
+            except Exception:
+                got=None
+            if not got: continue
+            # NOTE: is_upcoming() has a 45-day grace window so a recently-passed PDUFA is kept
+            # until its outcome (approval/CRL) lands. A conference has no pending outcome — once
+            # it has happened it is HISTORY (-> the study), not calendar. So: strict date test.
+            _d = got["catalyst_date"]
+            _up = (_d >= TODAY.isoformat()) if got["date_precision"]=="day" else (_d >= TODAY.strftime("%Y-%m"))
+            if not _up:
+                n_past+=1
+                if not include_past: continue            # calendar wants upcoming; the study wants both
+            key=(cik, got["conference"], got["catalyst_date"])
+            if key in seen: continue
+            seen.add(key)
+            out.append(rec(cik=cik, company=s.get("display_names",[None])[0],
+                catalyst_type="ConferencePresentation",
+                catalyst_date=got["catalyst_date"], date_precision=got["date_precision"],
+                source="sec_edgar", source_url=url, snippet=got["snippet"],
+                confidence=0.75 if got["date_basis"]=="observed" else 0.55,
+                redistribute=True,
+                conference=got["conference"], pres_type=got["pres_type"],
+                date_basis=got["date_basis"]))
+            n_match+=1
+    print(f"  [ConfPresent ] scanned {n_hits:4d} fetched {n_fetch:4d} fail {n_fail:3d} "
+          f"past {n_past:3d} -> {n_match:3d} upcoming")
+    return out
+
+# ----------------------------------------------------------------- ClinicalTrials.gov
+def _sponsor_query(name):
+    """Normalize an SEC-style company name into a ClinicalTrials.gov sponsor search term.
+    CT.gov's query.spons matches its OWN sponsor index, which fails on SEC formatting:
+    'NEUROCRINE BIOSCIENCES INC' -> 0 studies, but 'Neurocrine Biosciences' -> 21.
+    'ALNYLAM PHARMACEUTICALS, INC.' -> 0, 'Alnylam Pharmaceuticals' -> 28.
+    Drop the trailing legal entity + un-SHOUT so the sponsor index matches. THIS is the
+    fix for the coverage crater (most US biotechs are '<NAME>, INC.' in EDGAR)."""
+    if not name: return ""
+    s = str(name).split(",")[0]                       # cut ', INC.' / ', LLC' / ', L.P.' etc.
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\b(Incorporated|Inc|Corporation|Corp|Company|Co|Limited|Ltd|PLC|LLC|"
+               r"L\.?L\.?C|LP|L\.?P|N\.?V|S\.?A|AG|AB|ASA|SE|Holdings|Group)\.?$",
+               "", s, flags=re.I).strip()
+    if s.isupper(): s = s.title()                     # 'NEUROCRINE BIOSCIENCES' -> 'Neurocrine Biosciences'
+    return s
+
+def ctgov_readouts(sponsor, max_studies=30, horizon_days=730):
+    out=[]; hi=(TODAY+timedelta(days=horizon_days)).isoformat()
+    try:
+        r=requests.get("https://clinicaltrials.gov/api/v2/studies",
+            params={"query.spons":_sponsor_query(sponsor),"filter.overallStatus":"RECRUITING|ACTIVE_NOT_RECRUITING|ENROLLING_BY_INVITATION|NOT_YET_RECRUITING",
+                    "fields":"NCTId,BriefTitle,Phase,OverallStatus,PrimaryCompletionDate,Condition","pageSize":max_studies},timeout=30)
+        for st in r.json().get("studies",[]):
+            ps=st.get("protocolSection",{}); ident=ps.get("identificationModule",{})
+            stat=ps.get("statusModule",{}); des=ps.get("designModule",{})
+            phs=",".join(des.get("phases",[]) or [])
+            if "PHASE" not in phs: continue
+            pcd=stat.get("primaryCompletionDateStruct",{}).get("date")
+            if not pcd: continue
+            iso,prec=norm_any(pcd if re.search(r'\d{1,2},',pcd) else pcd+", "+pcd[:4] if False else pcd+"-01")
+            iso=iso or (pcd+"-01" if re.match(r'^\d{4}-\d{2}$',pcd) else None)
+            if not iso or not (TODAY.isoformat()<=iso<=hi): continue
+            out.append(rec(company=sponsor, catalyst_type="PhaseReadout(CT.gov)", catalyst_date=iso,
+                date_precision="month", indication=(ps.get("conditionsModule",{}).get("conditions") or [None])[0],
+                source="clinicaltrials", source_url=f"https://clinicaltrials.gov/study/{ident.get('nctId')}",
+                snippet=f"{phs} | {ident.get('briefTitle','')[:70]} | primary completion {pcd}",
+                confidence=0.4, redistribute=True))
+    except Exception as e: print(f"  ctgov {sponsor}: {e}",file=sys.stderr)
+    return out
+
+# ----------------------------------------------------------------- FDA AdComm calendar (experimental)
+def fda_adcomm(ua):
+    out=[]
+    try:
+        txt=clean_html(sec_get("https://www.fda.gov/advisory-committees/advisory-committee-calendar",ua).text)
+        for m in re_day.finditer(txt):
+            iso,prec=norm_any(m.group(0))
+            if iso and prec=="day" and iso>=TODAY.isoformat():
+                out.append(rec(catalyst_type="AdComm", catalyst_date=iso, date_precision="day",
+                    source="fda_adcomm", source_url="https://www.fda.gov/advisory-committees/advisory-committee-calendar",
+                    snippet=txt[max(0,m.start()-70):m.start()+50].strip(), confidence=0.5, redistribute=True))
+    except Exception as e: print(f"  fda adcomm: {e}",file=sys.stderr)
+    return out
+
+# ----------------------------------------------------------------- FMP earnings
+def fmp_earnings(tickers):
+    key=os.environ.get("FMP_API_KEY"); 
+    if not key: return []
+    out=[]
+    try:
+        r=requests.get("https://financialmodelingprep.com/stable/earnings-calendar",
+                       params={"from":TODAY.isoformat(),"to":f"{TODAY.year}-12-31","apikey":key},timeout=30)
+        tset=set(t.upper() for t in tickers)
+        for e in r.json():
+            if e.get("symbol","").upper() in tset and e.get("date","")>=TODAY.isoformat():
+                out.append(rec(ticker=e["symbol"], catalyst_type="Earnings", catalyst_date=e["date"], date_precision="day",
+                    source="fmp_earnings", source_url=f"https://site.financialmodelingprep.com/financial-summary/{e['symbol']}",
+                    snippet=f"earnings {e['date']}", confidence=0.9, redistribute=True))
+    except Exception as e: print(f"  fmp earnings: {e}",file=sys.stderr)
+    return out
+
+# ----------------------------------------------------------------- BioPharmaCatalyst (internal only)
+def load_bpc(path):
+    df=pd.read_excel(path) if path.lower().endswith((".xlsx",".xls")) else pd.read_csv(path)
+    cols={c.lower():c for c in df.columns}
+    def pick(*n):
+        for x in n:
+            if x in cols: return cols[x]
+        return None
+    tk=pick("ticker","symbol"); dt=pick("catalyst date","date","pdufa date"); ty=pick("next catalyst","catalyst type","stage","type")
+    dr=pick("drug","treatment"); ind=pick("indication")
+    out=[]
+    for _,r in df.iterrows():
+        d=r[dt] if dt else None
+        iso,prec=(None,None)
+        if pd.notna(d):
+            try: iso=pd.to_datetime(d).date().isoformat(); prec="day"
+            except: pass
+        out.append(rec(ticker=str(r[tk]).upper() if tk and pd.notna(r[tk]) else None,
+            catalyst_type=str(r[ty]) if ty else "Catalyst", catalyst_date=iso, date_precision=prec,
+            drug=str(r[dr]) if dr and pd.notna(r[dr]) else None, indication=str(r[ind]) if ind and pd.notna(r[ind]) else None,
+            source="biopharmacatalyst", source_url=None, snippet="(internal seed — not for republish)",
+            confidence=0.7, redistribute=False))
+    return out
+
+def qa_diff(primary, bpc, label_filter=None):
+    def norm_t(t): 
+        t=str(t).upper(); return t[:-1] if t.endswith("W") and len(t)>3 else t
+    def keyset(df, types=None):
+        d=df.copy()
+        if types: d=d[d.catalyst_type.astype(str).str.contains(types,case=False,na=False)]
+        return set((norm_t(r.ticker), str(r.catalyst_date)[:7]) for _,r in d.iterrows() if pd.notna(r.catalyst_date) and pd.notna(r.ticker))
+    def drugset(df, types=None):
+        d=df.copy()
+        if types: d=d[d.catalyst_type.astype(str).str.contains(types,case=False,na=False)]
+        s=set()
+        for _,r in d.iterrows():
+            dr=_drug_root(r.get("drug"))
+            if pd.notna(r.ticker) and dr: s.add((norm_t(r.ticker), dr))
+        return s
+    p,b=keyset(primary,label_filter),keyset(bpc,label_filter)
+    pdr,bdr=drugset(primary,label_filter),drugset(bpc,label_filter)
+    return {"overlap":len(p&b),"in_primary_not_bpc":sorted([f"{t}:{d}" for t,d in (p-b)])[:60],
+            "in_bpc_not_primary":sorted([f"{t}:{d}" for t,d in (b-p)])[:60],
+            "recall_vs_bpc":round(len(p&b)/max(1,len(b)),3),
+            "recall_vs_bpc_bydrug":round(len(pdr&bdr)/max(1,len(bdr)),3)}
+
+# ----------------------------------------------------------------- merge
+def merge(records):
+    df=pd.DataFrame(records,columns=FIELDS)
+    df=df[df.catalyst_date.notna()].copy()
+    df["k"]=df.apply(lambda r:f"{r.ticker}|{r.catalyst_type}|{r.catalyst_date}",axis=1)
+    df=df.sort_values("confidence",ascending=False)
+    agg=df.groupby("k").agg(sources=("source",lambda s:";".join(sorted(set(s.dropna())))),
+                            urls=("source_url",lambda s:";".join(sorted(set(x for x in s if x))))).reset_index()
+    return df.drop_duplicates("k").merge(agg,on="k").drop(columns="k").sort_values(["catalyst_date","catalyst_type"])
+
+_COLIST_STOP={'oral','tablet','capsule','solution','injection','cream','inhalation','autoinjector','combination','with','plus','and','the','for','low','dose','high'}
+def _drug_root(name):
+    n=re.sub(r'\([^)]*\)',' ',str(name).lower()); n=re.sub(r'[^a-z0-9 ]',' ',n)
+    for t in n.split():
+        if t.isalpha() and len(t)>=4 and t not in _COLIST_STOP: return t
+    return None
+def load_device_seed(path="device_seed.csv"):
+    """Curated medical-device catalysts (PMA/510k/De Novo/device readouts) the auto-scanner can't reliably date. Editable CSV."""
+    if not os.path.exists(path): return []
+    try: d=pd.read_csv(path)
+    except Exception as ex: print(f"  [device_seed] skipped ({ex})", file=sys.stderr); return []
+    out=[]
+    for _,r in d.iterrows():
+        if pd.isna(r.get("ticker")): continue
+        _rd=str(r.get("redistribute","True")).strip().lower() in ("true","1","yes")
+        out.append(rec(ticker=str(r.ticker).upper(), company=(r.get("company") if pd.notna(r.get("company")) else None),
+            catalyst_type=str(r.get("catalyst_type") or "Device"), catalyst_date=str(r.get("catalyst_date")),
+            date_precision=str(r.get("date_precision") or "year"),
+            drug=(r.get("drug") if pd.notna(r.get("drug")) else None), indication=(r.get("indication") if pd.notna(r.get("indication")) else None),
+            source=str(r.get("source") or "curated_device"), source_url=(r.get("source_url") if pd.notna(r.get("source_url")) else ""),
+            confidence=float(r.get("confidence") or 0.6), redistribute=_rd))
+    print(f"  [device_seed] loaded {len(out)} curated medical-device catalysts from {path}")
+    return out
+def _category(ct):
+    ct=str(ct)
+    if ct.startswith("Device"): return "device"
+    if ct in ("PDUFA","AdComm","Submission","Approval","CRL"): return "drug"
+    if "Readout" in ct: return "readout"
+    if ct=="Earnings": return "earnings"
+    return "other"
+def colist_partners(df, drug_map, universe=None):
+    """Co-list co-developer tickers that share a drug+month with a captured regulatory event.
+       Date/outcome/source_url are inherited from the independently-sourced primary row (honest provenance);
+       per-company financial fields are blanked; row is flagged colisted(<drug>). Partner identity is a public fact."""
+    if df.empty or not drug_map: return df
+    _BLANK=("market_cap","price","wk52_high","wk52_low","wk52_pos","avg_volume","cash","cash_runway_months",
+            "exp_move_pct","exp_move_expiry","atm_iv","iv_rank","iv_pct","call_premium","put_premium",
+            "flow_sentiment","darkpool_notional","max_pain","cik")
+    have=set((str(r.ticker).upper(),str(r.catalyst_type),str(r.catalyst_date)[:7]) for _,r in df.iterrows())
+    add=[]
+    for _,r in df[df.catalyst_type.isin(["PDUFA","AdComm","Submission"])].iterrows():
+        root=_drug_root(r.get("drug") or "")
+        if not root or root not in drug_map: continue
+        mo=str(r.catalyst_date)[:7]
+        for tk in drug_map[root]:
+            tk=str(tk).upper()
+            if tk==str(r.ticker).upper(): continue
+            if universe and tk not in universe: continue
+            key=(tk,str(r.catalyst_type),mo)
+            if key in have: continue
+            have.add(key)
+            nr=dict(r); nr["ticker"]=tk
+            for fld in _BLANK:
+                if fld in nr: nr[fld]=None
+            nr["source"]=(str(r.get("source") or "")+";colist").strip(";")
+            nr["data_flags"]=(str(r.get("data_flags") or "")+f" colisted({root})").strip()
+            try: nr["confidence"]=min(float(r.get("confidence") or 0.5),0.6)
+            except Exception: nr["confidence"]=0.6
+            add.append(nr)
+    if add:
+        _ad=pd.DataFrame(add).dropna(axis=1,how='all')
+        df=pd.concat([df,_ad],ignore_index=True)
+        print(f"  [colist] added {len(add)} co-developer partner rows (same drug+month, public co-development)")
+    return df
+
+def ctgov_universe(ticker2name, cap_per=8, horizon_days=545):
+    """Material near-term phase readouts from ClinicalTrials.gov across the whole universe.
+       Ranks Phase 3>2>1, then soonest primary completion, then larger enrollment; caps per ticker."""
+    import time as _t
+    out=[]; hi=(TODAY+timedelta(days=horizon_days)).isoformat(); PHW={"PHASE3":3,"PHASE2":2,"PHASE1":1}
+    done=0
+    for tk,name in ticker2name.items():
+        if not name: continue
+        try:
+            r=requests.get("https://clinicaltrials.gov/api/v2/studies",
+                params={"query.spons":_sponsor_query(name),
+                        "filter.overallStatus":"RECRUITING|ACTIVE_NOT_RECRUITING|ENROLLING_BY_INVITATION|NOT_YET_RECRUITING",
+                        "fields":"NCTId,BriefTitle,Phase,OverallStatus,PrimaryCompletionDate,Condition,EnrollmentCount",
+                        "pageSize":60},timeout=25)
+            studies=r.json().get("studies",[])
+        except Exception: continue
+        _t.sleep(0.04); cand=[]
+        for s in studies:
+            ps=s.get("protocolSection",{}); ident=ps.get("identificationModule",{})
+            stat=ps.get("statusModule",{}); des=ps.get("designModule",{})
+            phs=[p for p in (des.get("phases",[]) or []) if p in PHW]
+            if not phs: continue
+            pcd=stat.get("primaryCompletionDateStruct",{}).get("date","")
+            iso=pcd if len(pcd)==10 else (pcd+"-01" if len(pcd)==7 else "")
+            if not iso or not (TODAY.isoformat()<=iso<=hi): continue
+            enr=des.get("enrollmentInfo",{}).get("count") or 0
+            cand.append((max(PHW[p] for p in phs), iso, -int(enr), phs[-1], ident, ps, pcd))
+        cand.sort(key=lambda x:(-x[0], x[1], x[2]))
+        for rank,iso,ne,phase,ident,ps,pcd in cand[:cap_per]:
+            out.append(rec(ticker=tk, company=name, catalyst_type="PhaseReadout",
+                catalyst_date=iso, date_precision="month",
+                indication=(ps.get("conditionsModule",{}).get("conditions") or [None])[0],
+                source="clinicaltrials", source_url=f"https://clinicaltrials.gov/study/{ident.get('nctId')}",
+                snippet=f"{phase} | {ident.get('briefTitle','')[:90]} | primary completion {pcd}",
+                confidence=0.45, redistribute=True))
+        done+=1
+    print(f"  [ctgov] queried {done} sponsors -> {len(out)} ranked readouts")
+    return out
+
+def _fmp(url, params, key):
+    params=dict(params); params["apikey"]=key
+    try:
+        r=requests.get(url, params=params, timeout=20)
+        return r.json() if r.status_code==200 else None
+    except Exception: return None
+
+# ---- independent PRESS-RELEASE source: catches PR-announced PDUFA / AdComm dates that SEC full-text misses
+#      (foreign filers like RHHBY/AZN/NVO, mega-caps that don't file a standalone 8-K). Honest provenance:
+#      every row keeps its own company PR source_url so it is independently verifiable (not BPC-sourced).
+_PRESS_PDUFA=_re(r'(?:PDUFA\s+(?:goal\s+|target\s+action\s+)?date|B?sUFA\s+(?:goal\s+|target\s+action\s+)?date|GDUFA\s+(?:goal\s+)?date|target\s+action\s+date|user\s+fee\s+goal\s+date|FDA\s+(?:goal\s+|target\s+)?action\s+date|(?:FDA\s+)?regulatory\s+(?:decision|action)|FDA\s+decision|action\s+date)\s*(?:of|is|on|:|in|set\s+(?:for|to|in)|to\s+be|(?:is\s+)?(?:expected|anticipated)(?:\s+(?:on|in|during|by|for|to\s+be))?|scheduled\s+for)?\s*('+DAY+r'|'+QH+r')')
+_PRESS_ADCOM=_re(r'(?:[Aa]dvisory\s+[Cc]ommittee[^.]{0,70}?(?:on|scheduled\s+for|to\s+be\s+held\s+on|date\s+of|will\s+(?:meet|convene)[^.]{0,20}?on)\s*('+DAY+r')|('+DAY+r')[^.]{0,40}?[Aa]dvisory\s+[Cc]ommittee)')
+_PRESS_DEVICE=_re(r'(?:PMA\s*(?:application|submission|approval|filing)?|premarket\s+approval|510\(k\)\s*(?:submission|clearance|notification|filing)?|premarket\s+notification|De\s+Novo\s*(?:request|submission|classification|grant|application)?|breakthrough\s+device\s+designation)')
+def _adcom_near(txt, pos, window=55):
+    """True if the date at `pos` is anchored to advisory-committee / panel language rather than a
+    PDUFA action date. Capricor's filing said 'Ad Com July 29 ... PDUFA August 22'; without this,
+    a broad 'action date' match could grab July 29 and mislabel the panel date as the PDUFA."""
+    seg = txt[max(0, pos - window):pos + window].lower()
+    return bool(re.search(r'advisory\s+committee|\badcom\b|\bad[-\s]?com\b|advisory\s+panel|'
+                          r'panel\s+(?:meeting|review|vote|to\s+(?:review|discuss))', seg))
+
+def _scan_catalyst_text(tk, txt, url, source, conf_adj=0.0):
+    """Shared PR/news scanner: returns PDUFA / AdComm / Device catalyst recs found in one article's text."""
+    txt=re.sub(r'\b([1-4])Q[\s\-]?(20\d{2})', r'Q\1 \2', txt)  # normalize "2Q 2026" -> "Q2 2026" so quarter precision survives
+    res=[]
+    for m in _PRESS_PDUFA.finditer(txt):                       # first PDUFA date that ISN'T an AdCom date
+        if _adcom_near(txt, m.start(1)):
+            continue
+        iso,prec=norm_any(m.group(1))
+        if iso and is_upcoming(iso,prec):
+            res.append(rec(ticker=tk,catalyst_type="PDUFA",catalyst_date=iso,date_precision=prec,source=source,source_url=url,
+                snippet=txt[max(0,m.start()-50):m.end()+30].strip()[:240],confidence=round((0.8 if prec=='day' else 0.6)-conf_adj,2),redistribute=True))
+            return res
+    m=_PRESS_ADCOM.search(txt)
+    if m:
+        iso,prec=norm_any(m.group(1) or m.group(2))
+        if iso and is_upcoming(iso,prec):
+            res.append(rec(ticker=tk,catalyst_type="AdComm",catalyst_date=iso,date_precision=prec,source=source,source_url=url,
+                snippet=txt[:220].strip(),confidence=round(0.7-conf_adj,2),redistribute=True))
+            return res
+    m=_PRESS_DEVICE.search(txt)
+    if m and re.search(r'\bFDA\b|premarket|510\(k\)|De\s+Novo|\bPMA\b',txt,re.I):
+        seg=txt[max(0,m.start()-30):m.start()+180]; dm=re.search(r'('+DAY+r'|'+QH+r')',seg)
+        if dm:
+            iso,prec=norm_any(dm.group(1))
+            if iso and is_upcoming(iso,prec):
+                g=m.group(0).lower()
+                mt="DevicePMA" if ("pma" in g or "premarket approval" in g) else ("Device510k" if "510" in g else ("DeviceDeNovo" if "de novo" in g else "DeviceSubmission"))
+                res.append(rec(ticker=tk,catalyst_type=mt,catalyst_date=iso,date_precision=prec,source=source,source_url=url,
+                    snippet=txt[max(0,m.start()-40):m.end()+70].strip()[:240],confidence=round(0.6-conf_adj,2),redistribute=True))
+    return res
+def fmp_news_catalysts(tickers, key, ua=None, max_per=60):
+    """General stock-news scan (broader than company PRs) to fill foreign / mega-cap PDUFA + device dates. Facts cited to article URL."""
+    out=[]; nscan=0
+    for tk in tickers:
+        rows=_fmp("https://financialmodelingprep.com/stable/news/stock",{"symbols":tk,"limit":max_per},key)
+        if not isinstance(rows,list) or not rows:
+            rows=_fmp("https://financialmodelingprep.com/api/v3/stock_news",{"tickers":tk,"limit":max_per},key)
+        if not isinstance(rows,list): continue
+        nscan+=1
+        for x in rows:
+            if not isinstance(x,dict): continue
+            txt=clean_html(str(x.get("title","") or "")+" . "+str(x.get("text","") or x.get("content","") or ""))
+            out+=_scan_catalyst_text(tk, txt, x.get("url") or x.get("link") or "", "fmp_news", conf_adj=0.1)
+    print(f"  [fmp_news] scanned {nscan} tickers -> {len(out)} catalyst dates from general news (foreign/mega-cap fill)")
+    return out
+def fmp_press_catalysts(tickers, key, ua=None, max_per=80):
+    out=[]; nh=0; nscan=0
+    for tk in tickers:
+        rows=_fmp("https://financialmodelingprep.com/stable/news/press-releases",{"symbols":tk,"limit":max_per},key)
+        if not isinstance(rows,list) or not rows:
+            rows=_fmp(f"https://financialmodelingprep.com/api/v3/press-releases/{tk}",{"limit":max_per},key)
+        if not isinstance(rows,list): continue
+        nscan+=1
+        for x in rows:
+            if not isinstance(x,dict): continue
+            txt=clean_html(str(x.get("title","") or "")+" . "+str(x.get("text","") or x.get("content","") or ""))
+            out+=_scan_catalyst_text(tk, txt, x.get("url") or x.get("link") or "", "fmp_press")
+    print(f"  [fmp_press] scanned {nscan} tickers -> {len(out)} PDUFA/AdComm/Device dates from press releases")
+    return out
+def fmp_transcript_catalysts(tickers, key, ua=None, max_per=3):
+    """Mine recent earnings-call transcripts for PDUFA/AdComm/device dates that mega-caps disclose in
+    pipeline sections rather than a standalone 8-K (LLY/MRK/PFE/BMY/GILD/REGN/IONS/VRTX...). Each row keeps
+    its FMP transcript URL as provenance. Opt-in (--transcripts) because transcripts are long = slower."""
+    out=[]; nscan=0
+    for tk in tickers:
+        rows=_fmp("https://financialmodelingprep.com/stable/earning-call-transcript",{"symbol":tk,"limit":max_per},key)
+        if not isinstance(rows,list) or not rows:
+            rows=_fmp(f"https://financialmodelingprep.com/api/v3/earning_call_transcript/{tk}",{"limit":max_per},key)
+        if not isinstance(rows,list): continue
+        nscan+=1
+        for x in rows:
+            if not isinstance(x,dict): continue
+            txt=clean_html(str(x.get("content","") or x.get("transcript","") or ""))
+            if not txt: continue
+            yr=x.get("year") or ""; q=x.get("quarter") or ""
+            url=f"https://site.financialmodelingprep.com/earnings-transcript/{tk}"+(f"?year={yr}&quarter={q}" if yr else "")
+            out+=_scan_catalyst_text(tk, txt, url, "fmp_transcript", conf_adj=0.15)
+    print(f"  [fmp_transcript] scanned {nscan} tickers -> {len(out)} catalyst dates from earnings transcripts (mega-cap fill)")
+    return out
+
+def enrich_fmp(df, key):
+    """Add market cap, 52-week position, avg volume, and cash runway (months) per ticker."""
+    import time as _t
+    base="https://financialmodelingprep.com/stable"
+    tickers=sorted(set(t for t in df.ticker.dropna().astype(str) if t and t!="nan"))
+    cache={}
+    for tk in tickers:
+        d={}
+        q=_fmp(f"{base}/quote",{"symbol":tk},key)
+        q=(q[0] if isinstance(q,list) and q else (q if isinstance(q,dict) else {})) or {}
+        d["market_cap"]=q.get("marketCap"); d["price"]=q.get("price")
+        d["wk52_high"]=q.get("yearHigh"); d["wk52_low"]=q.get("yearLow")
+        d["avg_volume"]=q.get("avgVolume") or q.get("averageVolume") or q.get("volume")
+        if d["price"] and d["wk52_high"] and d["wk52_low"] and d["wk52_high"]>d["wk52_low"]:
+            d["wk52_pos"]=round((d["price"]-d["wk52_low"])/(d["wk52_high"]-d["wk52_low"])*100,1)
+        bs=_fmp(f"{base}/balance-sheet-statement",{"symbol":tk,"period":"quarter","limit":1},key)
+        bs=bs[0] if isinstance(bs,list) and bs else {}
+        cash=bs.get("cashAndShortTermInvestments") or bs.get("cashAndCashEquivalents")
+        cf=_fmp(f"{base}/cash-flow-statement",{"symbol":tk,"period":"quarter","limit":4},key)
+        ocf=sum((x.get("operatingCashFlow") or x.get("netCashProvidedByOperatingActivities") or 0) for x in cf) if isinstance(cf,list) else 0
+        burn=(-ocf/12.0) if ocf<0 else None
+        d["cash"]=cash
+        if cash and burn and burn>0: d["cash_runway_months"]=round(cash/burn,1)
+        cache[tk]=d; _t.sleep(0.04)
+    for col in ["market_cap","price","wk52_high","wk52_low","wk52_pos","avg_volume","cash","cash_runway_months"]:
+        df[col]=df.ticker.map(lambda t:cache.get(str(t),{}).get(col))
+    print(f"  [fmp] enriched {len(tickers)} tickers")
+    return df
+
+def _orats(path, key, params=None):
+    p=dict(params or {}); p["token"]=key
+    try:
+        r=requests.get("https://api.orats.io/datav2"+path, params=p, timeout=25)
+        return r.json() if r.status_code==200 else None
+    except Exception: return None
+
+def _uw(path, key, params=None):
+    try:
+        r=requests.get("https://api.unusualwhales.com"+path,
+                       headers={"Authorization":f"Bearer {key}","Accept":"application/json"},
+                       params=params or {}, timeout=25)
+        return r.json() if r.status_code==200 else None
+    except Exception: return None
+
+def _to_iso(label, precision):
+    if precision=="day": return str(label)
+    m=re.match(r'(\d{4})-([QH])(\d)', str(label))
+    if m:
+        y=m.group(1); mo={("Q","1"):3,("Q","2"):6,("Q","3"):9,("Q","4"):12,("H","1"):6,("H","2"):12}.get((m.group(2),m.group(3)),6)
+        return f"{y}-{mo:02d}-15"
+    if re.match(r'^\d{4}$', str(label)): return f"{label}-06-15"
+    return None
+
+def enrich_options(df, orats_key, uw_key, within_days=150):
+    """Options layer, scoped to near-term catalysts:
+       ORATS -> implied expected move to the expiry covering the catalyst + IV rank/percentile.
+       UW    -> options-flow sentiment (call vs put premium), dark-pool notional, max pain.
+       NOTE: ORATS/UW field names verified against docs; confirm on first run and adjust if a vendor renames."""
+    import time as _t
+    horizon=(TODAY+timedelta(days=within_days)).isoformat()
+    near={}
+    for _,r in df.iterrows():
+        if pd.isna(r.ticker): continue
+        iso=_to_iso(r.catalyst_date, r.date_precision)
+        if iso and TODAY.isoformat()<=iso<=horizon:
+            near.setdefault(str(r.ticker), iso)
+            near[str(r.ticker)]=min(near[str(r.ticker)], iso)   # soonest catalyst per ticker
+    cache={}
+    for tk,cat_iso in sorted(near.items()):
+        d={}
+        if orats_key:
+            import math as _m
+            days=(date.fromisoformat(cat_iso)-TODAY).days if cat_iso else None
+            summ=_orats("/summaries", orats_key, {"ticker":tk})
+            srows=summ.get("data") if isinstance(summ,dict) else (summ if isinstance(summ,list) else [])
+            if srows:
+                s=srows[0]
+                ten=[(10,"iv10d"),(20,"iv20d"),(30,"iv30d"),(60,"iv60d"),(90,"iv90d")]
+                if days: ten.sort(key=lambda t:abs(t[0]-days))
+                iv=None
+                for _,f in ten:
+                    v=s.get(f) or s.get(f.replace("iv","atmiv"))
+                    if v:
+                        iv=float(v); iv=iv/100.0 if iv>3 else iv; break   # normalize % vs decimal
+                if iv:
+                    d["atm_iv"]=round(iv*100,1)
+                    if days and days>0:
+                        d["exp_move_pct"]=round(iv*_m.sqrt(days/365.0)*100,1); d["exp_move_expiry"]=cat_iso
+            ivr=_orats("/ivrank", orats_key, {"ticker":tk})
+            ir=ivr.get("data") if isinstance(ivr,dict) else (ivr if isinstance(ivr,list) else [])
+            if ir:
+                d["iv_rank"]=ir[0].get("ivRank1y") or ir[0].get("ivRank1m")
+                d["iv_pct"]=ir[0].get("ivPct1y") or ir[0].get("ivPct1m")
+        if uw_key:
+            fa=_uw(f"/api/stock/{tk}/flow-alerts", uw_key, {"limit":200})
+            alerts=fa.get("data") if isinstance(fa,dict) else (fa if isinstance(fa,list) else [])
+            cp=pp=0.0
+            for a in (alerts or []):
+                prem=float(a.get("total_premium") or a.get("premium") or 0)
+                typ=str(a.get("type") or a.get("option_type") or "").lower()
+                if "call" in typ: cp+=prem
+                elif "put" in typ: pp+=prem
+            if cp or pp:
+                d["call_premium"]=round(cp); d["put_premium"]=round(pp)
+                d["flow_sentiment"]="bullish" if cp>pp*1.3 else ("bearish" if pp>cp*1.3 else "mixed")
+            dp=_uw(f"/api/darkpool/{tk}", uw_key, {"limit":200})
+            prints=dp.get("data") if isinstance(dp,dict) else (dp if isinstance(dp,list) else [])
+            notion=0.0
+            for p in (prints or []):
+                try: notion+=float(p.get("premium") or (float(p.get("size",0))*float(p.get("price",0))))
+                except Exception: pass
+            if notion: d["darkpool_notional"]=round(notion)
+            mp=_uw(f"/api/stock/{tk}/max-pain", uw_key)
+            mpd=mp.get("data") if isinstance(mp,dict) else mp
+            if isinstance(mpd,list) and mpd: d["max_pain"]=mpd[0].get("max_pain") or mpd[0].get("strike")
+            elif isinstance(mpd,dict): d["max_pain"]=mpd.get("max_pain")
+        cache[tk]=d; _t.sleep(0.06)
+    for col in ["exp_move_pct","exp_move_expiry","atm_iv","iv_rank","iv_pct","call_premium","put_premium","flow_sentiment","darkpool_notional","max_pain"]:
+        df[col]=df.ticker.map(lambda t:cache.get(str(t),{}).get(col))
+    print(f"  [options] enriched {len(near)} near-term tickers (ORATS implied move/IV rank + UW flow/dark pool)")
+    return df
+
+def detect_changes(df, out_dir):
+    """Diff this run against the previous snapshot. Emits changes.json (new / moved / dropped),
+       tags rows with change_status, and updates the snapshot. The freshness engine —
+       a date that MOVED (PDUFA pushed, readout slipped) is itself signal."""
+    import json as _j
+    snap=os.path.join(out_dir,"_snapshot.json")
+    def key(r):
+        tk=str(r.get("ticker")); ty=str(r.get("catalyst_type")); url=str(r.get("source_url") or "")
+        m=re.search(r'(NCT\d+)', url)
+        ident=m.group(1) if m else (str(r.get("drug"))[:24] if r.get("drug") and str(r.get("drug"))!="nan" else "")
+        if ty in ("PDUFA","AdComm","Submission","Earnings","Approval","CRL"): ident=""   # ~one per ticker+type
+        return f"{tk}|{ty}|{ident}"
+    cur={}
+    for _,r in df.iterrows():
+        if pd.isna(r.get("ticker")) or pd.isna(r.get("catalyst_date")): continue
+        cur[key(r)]={"ticker":r.ticker,"type":r.catalyst_type,"date":str(r.catalyst_date),
+                     "company":r.get("company"),"url":r.get("source_url")}
+    prev={}
+    if os.path.exists(snap):
+        try: prev=_j.load(open(snap))
+        except Exception: prev={}
+    first=not prev
+    new=[]; moved=[]; dropped=[]
+    if not first:
+        for k,v in cur.items():
+            if k not in prev: new.append(v)
+            elif prev[k].get("date")!=v["date"]:
+                moved.append({**v,"old_date":prev[k].get("date"),"new_date":v["date"]})
+        for k,v in prev.items():
+            if k not in cur: dropped.append(v)
+    # Corrections overlay (Pillar 3 — admit when wrong): operator drops corrections.json into out_dir
+    # = [{"ticker","type","reason"}]; those rows are flagged change_type=correction and surfaced visibly.
+    corr_map={}
+    cpath=os.path.join(out_dir,"corrections.json")
+    if os.path.exists(cpath):
+        try:
+            for c in _j.load(open(cpath)):
+                corr_map[(str(c.get("ticker")),str(c.get("type") or c.get("catalyst_type")))]=c.get("reason","corrected")
+        except Exception: pass
+    ts=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    status={}; ctyp={}; cdet={}
+    for v in new:
+        kk=(v["ticker"],v["type"],v["date"]); status[kk]="new"
+        ctyp[kk]="correction" if (str(v["ticker"]),str(v["type"])) in corr_map else "new"
+    for v in moved:
+        kk=(v["ticker"],v["type"],v["new_date"]); status[kk]="moved"
+        ctyp[kk]="correction" if (str(v["ticker"]),str(v["type"])) in corr_map else "date_slip"
+        cdet[kk]=f"{v['old_date']} -> {v['new_date']}"
+    def _rowtype(r):
+        k3=(r.ticker,r.catalyst_type,str(r.catalyst_date))
+        if ctyp.get(k3): return ctyp[k3]
+        return "correction" if (str(r.ticker),str(r.catalyst_type)) in corr_map else ""
+    def _rowdet(r):
+        k3=(r.ticker,r.catalyst_type,str(r.catalyst_date))
+        return cdet.get(k3, corr_map.get((str(r.ticker),str(r.catalyst_type)),""))
+    df["change_status"]=df.apply(lambda r:status.get((r.ticker,r.catalyst_type,str(r.catalyst_date)),""),axis=1)
+    df["change_type"]=df.apply(_rowtype,axis=1)
+    df["change_detail"]=df.apply(_rowdet,axis=1)
+    df["last_checked"]=ts          # freshness stamp on every row (Pillar 4)
+    corrections=[{"ticker":t,"type":ty,"reason":rs} for (t,ty),rs in corr_map.items()]
+    changes={"generated":ts,"last_checked":ts,"cadence":"scheduled 5x per trading day",
+             "counts":{"new":len(new),"moved":len(moved),"dropped":len(dropped),"corrections":len(corrections)},
+             "new":new,"moved":moved,"dropped":dropped,"corrections":corrections}
+    try: _j.dump(changes,open(os.path.join(out_dir,"changes.json"),"w"),indent=2)
+    except Exception: pass
+    try: _j.dump({"generated_at":ts,"catalysts":len(cur),"cadence":"5x/trading day","counts":changes["counts"]},
+                 open(os.path.join(out_dir,"meta.json"),"w"),indent=2)
+    except Exception: pass
+    _j.dump(cur,open(snap,"w"))
+    if first:
+        print(f"  [changes] first run — baseline snapshot saved ({len(cur)} catalysts); diffs start next run")
+    else:
+        print(f"  [changes] NEW {len(new)} · MOVED {len(moved)} · DROPPED {len(dropped)} · CORRECTIONS {len(corrections)}")
+        for m in moved[:8]: print(f"     ~ {m['ticker']} {m['type']}: {m['old_date']} -> {m['new_date']}  (date_slip)")
+        for v in new[:6]: print(f"     + {v['ticker']} {v['type']} {v['date']}  (new)")
+    for c in corrections[:6]: print(f"     ! {c['ticker']} {c['type']}: {c['reason']}  (CORRECTION)")
+    return changes
+
+# ----------------------------------------------------------------- integrity finalize
+TICKER_ALIASES={"CYBN":"HELP","HOTH":"RKTO"}   # old -> new. CIK resolution already handles the SEC path;
+                                               # this is belt-and-suspenders + powers the "formerly" tag.
+_FORMERLY={v:k for k,v in TICKER_ALIASES.items()}
+def verify_market_caps(df, ua):
+    """Cross-check FMP's market cap against SEC's cover-page share count
+    (dei:EntityCommonStockSharesOutstanding). FMP's marketCap field can carry a STALE
+    share count, which understates both market cap AND dilution (the VRDN case: FMP 90M
+    vs SEC 103M). When the two implied share counts diverge >5%, trust whichever has the
+    more recent as-of date: if SEC is fresh, FMP is the stale one -> correct the cap to
+    price x SEC shares and flag it; if SEC's own tag is stale (e.g. multi-class names like
+    RPRX whose dei tag is years old), leave FMP untouched. Primary-source, dated, flagged."""
+    import time
+    sess=requests.Session(); sess.headers.update({"User-Agent":ua})
+    cache={}
+    def sec_sh(cik):
+        if cik in cache: return cache[cik]
+        res=(None,None)
+        try:
+            c=str(int(float(cik))).zfill(10)
+            r=sess.get(f"https://data.sec.gov/api/xbrl/companyconcept/CIK{c}/dei/EntityCommonStockSharesOutstanding.json",timeout=15)
+            u=[x for x in r.json().get("units",{}).get("shares",[]) if x.get("val")]
+            u.sort(key=lambda x:x.get("end",""))
+            if u: res=(u[-1]["val"], u[-1].get("end",""))
+        except Exception: pass
+        cache[cik]=res; time.sleep(0.05); return res
+    cutoff=(pd.Timestamp.utcnow()-pd.Timedelta(days=160)).strftime("%Y-%m-%d")
+    if "data_flags" not in df.columns: df["data_flags"]=""
+    fixed=0
+    for i,r in df.iterrows():
+        try: mc=float(r.get("market_cap")); pr=float(r.get("price"))
+        except (TypeError,ValueError): continue
+        cik=r.get("cik")
+        if not (mc>0 and pr>0) or pd.isna(cik): continue
+        if "warrant" in str(r.get("data_flags","")).lower(): continue  # SEC common-share count is meaningless for a warrant
+        impl=mc/pr
+        ss,asof=sec_sh(cik)
+        if not ss or not asof or abs(impl-ss)/ss<=0.05: continue
+        if asof < cutoff: continue          # SEC tag itself stale -> trust FMP, don't touch
+        df.at[i,"market_cap"]=round(pr*ss)   # SEC fresh -> FMP was the stale one -> correct
+        note=f"mcap corrected: FMP {impl/1e6:.0f}M -> SEC {ss/1e6:.0f}M sh ({asof})"
+        old=df.at[i,"data_flags"]
+        old="" if (pd.isna(old) or str(old) in ("nan","")) else str(old)+"; "
+        df.at[i,"data_flags"]=old+note
+        fixed+=1
+    print(f"  market-cap cross-check (SEC cover shares): corrected {fixed} stale-share cap(s)")
+    return df
+
+CT_COMPARATORS={"PLACEBO","FULVESTRANT","LETROZOLE","ANASTROZOLE","EXEMESTANE","NAB-PACLITAXEL",
+"PACLITAXEL","CARBOPLATIN","CISPLATIN","OXALIPLATIN","TOPOTECAN","AMRUBICIN","ABIRATERONE",
+"ABIRATERONE ACETATE","PREDNISONE","PREDNISOLONE","DEXAMETHASONE","DOCETAXEL","GEMCITABINE",
+"CAPECITABINE","STANDARD OF CARE","BEST SUPPORTIVE CARE","CHEMOTHERAPY","PLACEBOS","SALINE"}
+def _clean_drug(name):
+    n=re.sub(r"\s+\d+(\.\d+)?\s*(mg|mcg|g|kg|mg/kg|mg/m\^?2|ml|iu|%).*$","",str(name),flags=re.I).strip()
+    n=re.sub(r"\s*\(.*?\)\s*$","",n).strip()
+    return n
+
+# Filing artefacts the raw SEC parser sometimes grabs as a "drug": exhibit labels (EX-99.1),
+# form/item numbers, bare numbers. These shipped e.g. Axsome's AXS-12 PDUFA with drug "EX-99".
+# Anything junk is blanked so the CT.gov + snippet enrichment can refill the real name (dev codes
+# like AXS-12 / DYNE-251 survive: they carry >=3 letters and don't start with "ex").
+# Match SEC filing artefacts, NOT drugs: exhibit labels (EX-99.1), form/item numbers, SEC form
+# types (8-K, 10-Q, 424B), bare numbers. Deliberately does NOT use a letter-count rule -- real
+# development codes carry a single-letter prefix (Aclaris A-101, Servier S095035) and must survive.
+_JUNK_DRUG=re.compile(r"^\s*(ex[\s\-]?\d|exhibit\b|form\s|item\s|8-?k\b|10-?[kq]\b|424b|\d+(\.\d+)?\s*$|n/?a$|none$|nan$)", re.I)
+def _is_junk_drug(name):
+    n=str(name or "").strip()
+    if not n or n.lower() in ("nan","none","n/a"): return True
+    if _JUNK_DRUG.match(n): return True
+    return False
+
+INN_SUFFIX=re.compile(r"\b([a-z][a-z]{3,}(?:mab|nib|tinib|ciclib|parib|lisib|degestrant|grotug|corilant|tide|gliflozin|sartan|prazole|fenib|sertib|degib|ridine|mostine|platin|relix|virsen|nersen|tegrast|zomib|tecan|tifan|limus|degol|parin|fusp|ganib|ciclib))\b")
+DEV_CODE=re.compile(r"\b([A-Z]{2,4}\d?-\d{2,6})\b")
+DRUG_STOP={"THE","THIS","THAT","ITS","OUR","THEIR","APPROVAL","REVIEW","TREATMENT","PATIENTS","ADULTS",
+"USE","MARKETING","PRIORITY","ACCELERATED","CONDITIONAL","FULL","BOTH","ALL","POTENTIAL","COMMERCIAL",
+"AN","WHICH","PRESCRIPTION","ITS","INITIAL","FINAL","FURTHER","CERTAIN","SEVERAL","MULTIPLE","ADDITIONAL"}
+def extract_drug(text):
+    """Best-effort per-catalyst drug name from the catalyst's own filing text (free, deterministic).
+    P1: positional 'for <drug> in/for <indication>' (caught 'for veligrotug in thyroid eye'); P2: INN
+    stem suffixes (-mab/-nib/-degestrant/...); P3: development codes (ARV-471), excluding trial-name
+    context. Returns '' when nothing confident -- a blank we can fill later beats a wrong drug."""
+    if not isinstance(text,str) or not text.strip(): return ""
+    t=re.sub(r"\s+"," ",text)
+    for mm in re.finditer(r"\bfor\s+([A-Za-z][A-Za-z0-9\-]{3,})\s+(?:in|for|to|as)\b", t):
+        c=mm.group(1)
+        if (not c.isupper()) and c.upper() not in DRUG_STOP and c.upper() not in CT_COMPARATORS and not _is_junk_drug(c):
+            return c
+    m=INN_SUFFIX.search(t)
+    if m and m.group(1).upper() not in CT_COMPARATORS and not _is_junk_drug(m.group(1)): return m.group(1)
+    for mm in DEV_CODE.finditer(t):
+        pre=t[max(0,mm.start()-14):mm.start()].lower()
+        if "trial" in pre or "study" in pre or "cohort" in pre: continue
+        if _is_junk_drug(mm.group(1)): continue
+        return mm.group(1)
+    return ""
+
+def enrich_drug_indication(df, ua):
+    """Attach drug + indication from ClinicalTrials.gov (free primary source): intervention=drug,
+    condition=indication, from the sponsor's most-recently-updated late-phase study (Phase 3, then
+    Phase 2 fallback), excluding placebo/comparator arms. Only attaches when the sponsor has a clear
+    lead asset (<=3 distinct investigational drugs); multi-asset sponsors are left blank rather than
+    guessed. Structured registry data, not generated text -- more authoritative and zero per-use cost."""
+    import time
+    sess=requests.Session(); sess.headers.update({"User-Agent":ua})
+    CT="https://clinicaltrials.gov/api/v2/studies"
+    FIELDS="protocolSection.conditionsModule.conditions,protocolSection.armsInterventionsModule.interventions"
+    for c in ("drug","indication"):
+        if c not in df.columns: df[c]=""
+        df[c]=df[c].astype(object)
+    def sponsor_of(company):
+        base=str(company).split("(")[0].strip().rstrip(",")
+        base=re.sub(r",?\s+(INC|CORP|CORPORATION|LTD|LIMITED|LLC|PLC|N\.?V\.?|S\.?A\.?|AG|CO|COMPANY|HOLDINGS?|GROUP|THERAPEUTICS|PHARMACEUTICALS?|PHARMA|BIOSCIENCES?|SCIENCES|MEDICINES)\.?$","",base,flags=re.I).strip()
+        return base or str(company)
+    cache={}
+    def lookup(sponsor):
+        if sponsor in cache: return cache[sponsor]
+        res=("","",set())
+        for af in ("phase:3","phase:2"):
+            try:
+                p={"query.spons":sponsor,"aggFilters":af,"fields":FIELDS,"pageSize":8,"sort":"LastUpdatePostDate:desc"}
+                r=sess.get(CT,params=p,timeout=20)
+                if r.status_code!=200: continue
+                alld=set(); lead=None; lead_ind=""
+                for s in r.json().get("studies",[]):
+                    ps=s.get("protocolSection",{})
+                    cond=ps.get("conditionsModule",{}).get("conditions",[]) or []
+                    drugs=[_clean_drug(i.get("name")) for i in ps.get("armsInterventionsModule",{}).get("interventions",[]) if i.get("type") in ("DRUG","BIOLOGICAL")]
+                    drugs=[d for d in drugs if d and d.upper() not in CT_COMPARATORS]
+                    for d in drugs: alld.add(d.upper())
+                    if drugs and lead is None: lead=drugs[0]; lead_ind=cond[0] if cond else ""
+                if lead and len(alld)<=5: res=(lead, lead_ind, alld); break   # clear lead asset -> confident
+                elif lead: res=("", "", alld); break                          # multi-asset -> keep dict for snippet match
+            except Exception: pass
+        cache[sponsor]=res; time.sleep(0.05); return res
+    n=0
+    for i,r in df.iterrows():
+        # Sanitise any pre-existing name before deciding to keep it. Blank it if (a) it's a filing
+        # artefact (EX-99), or (b) NONE of its words appear in the catalyst's own filing text — a
+        # mangled extraction like "zeleciment basivarsen" on Dyne's DYNE-251 8-K. A blank is refilled
+        # below from CT.gov / the snippet (dev codes are recovered); a wrong name would ship unchecked.
+        _cur=str(r.get("drug") or "").strip()
+        if _cur and not _is_junk_drug(_cur):
+            _snip=re.sub(r"\s+"," ",str(r.get("snippet") or "")).lower()
+            _toks=re.findall(r"[A-Za-z]{4,}", _cur.lower())
+            if _snip and _toks and not any(w in _snip for w in _toks):
+                df.at[i,"drug"]=""; _cur=""
+        if _is_junk_drug(_cur):
+            df.at[i,"drug"]=""
+        cur=str(r.get("drug")).strip().upper()
+        if cur and cur not in ("NAN","NONE"): continue
+        if pd.isna(r.get("company")): continue
+        dg,ind,dset=lookup(sponsor_of(r.get("company")))
+        if not dg:
+            dg=extract_drug(str(r.get("snippet")))   # per-catalyst fallback from the catalyst's own filing text
+        if not dg and dset:
+            sn=" "+re.sub(r"\s+"," ",str(r.get("snippet"))).upper()+" "
+            cands=sorted([d for d in dset if len(d)>=4 and d in sn], key=len, reverse=True)
+            if cands: dg=cands[0] if any(c.isdigit() for c in cands[0]) else cands[0].title()  # dict match from catalyst's own text
+        if dg: df.at[i,"drug"]=dg; n+=1
+        curind=str(df.at[i,"indication"]).strip().upper()
+        if ind and curind in ("","NAN","NONE"): df.at[i,"indication"]=ind
+    print(f"  drug/indication enrichment (ClinicalTrials.gov): tagged {n} catalysts with a lead drug")
+    return df
+
+def resolve_and_dedupe_outcomes(df):
+    """Unify outcome detection. SEC-detected Approval/CRL rows should RESOLVE the matching PDUFA
+    in place (stamp outcome) rather than ship as a separate catalyst. Rules: a standalone
+    Approval/CRL row never ships on its own (always dropped); it resolves the PDUFA only if the
+    outcome actually occurred (date <= today) and sits in a sane window around the PDUFA
+    [-200d,+60d]. Future-dated placeholders (detector reused the PDUFA date) and far-off misparses
+    (e.g. a 2028 'approval' on a 2026 PDUFA) are dropped WITHOUT asserting a resolution -- the grace
+    window + next crawl catch the real outcome once it lands. Eliminates the 'PDUFA listed alongside
+    an Approval/CRL row' contradiction without ever claiming an outcome we can't stand behind."""
+    import datetime as _dt
+    for c in ("outcome","outcome_date","outcome_source"):
+        if c not in df.columns: df[c]=""
+        df[c]=df[c].astype(object)
+    drop_idx=[]; merged=0
+    for oi,o in df[df["catalyst_type"].isin(["Approval","CRL"])].iterrows():
+        tk=o["ticker"]; otype=o["catalyst_type"]
+        drop_idx.append(oi)                       # outcome rows never ship as their own catalyst
+        oiso=_to_iso(o.get("catalyst_date"), o.get("date_precision"))
+        if not oiso: continue
+        try: od=_dt.date.fromisoformat(oiso)
+        except Exception: continue
+        if od > TODAY: continue                   # hasn't happened yet -> don't assert a resolution
+        for pi,p in df[(df["ticker"]==tk)&(df["catalyst_type"]=="PDUFA")].iterrows():
+            piso=_to_iso(p.get("catalyst_date"), p.get("date_precision"))
+            if not piso: continue
+            try: pdate=_dt.date.fromisoformat(piso)
+            except Exception: continue
+            if (pdate-_dt.timedelta(days=200))<=od<=(pdate+_dt.timedelta(days=60)):
+                if str(df.at[pi,"outcome"]).strip().lower() in ("","nan","none"):
+                    df.at[pi,"outcome"]="Approved" if otype=="Approval" else "CRL"
+                    df.at[pi,"outcome_date"]=oiso
+                    df.at[pi,"outcome_source"]=o.get("source_url") or ""
+                    df.at[pi,"change_type"]="resolved"; merged+=1
+                break
+    if drop_idx: df=df.drop(index=drop_idx).reset_index(drop=True)
+    print(f"  outcome unify: {merged} PDUFA(s) resolved in-place; dropped {len(drop_idx)} duplicate/standalone Approval/CRL row(s)")
+    return df
+
+def confirm_outcomes_openfda(df, ua, api_key=None):
+    """Confirm PDUFA outcomes against the FDA's OWN record (openFDA Drugs@FDA).
+    For each PDUFA whose decision window has plausibly elapsed, query openFDA by sponsor
+    (guarded by drug name when we have it); if the FDA shows an approval dated near the
+    PDUFA, mark the catalyst resolved with the FDA-sourced date + Drugs@FDA link. The
+    authoritative, automated version of the ARVN fix (VEPPANU approved 2026-05-01, ahead
+    of its June 5 PDUFA). openFDA can lag a few days on brand-new approvals, so this is a
+    confirmer, not a real-time trigger."""
+    import time
+    sess=requests.Session(); sess.headers.update({"User-Agent":ua})
+    BASE="https://api.fda.gov/drug/drugsfda.json"
+    DROP={"INC","CORP","CORPORATION","LTD","LIMITED","LLC","PLC","SA","AG","NV","CO","COMPANY",
+          "PHARMACEUTICALS","PHARMACEUTICAL","PHARMA","THERAPEUTICS","BIOSCIENCES","BIOSCIENCE",
+          "BIO","BIOPHARMA","OPERATIONS","HOLDINGS","HOLDING","GROUP","INCORPORATED","SCIENCES",
+          "MEDICINES","ONCOLOGY","US","USA"}
+    for c in ("outcome","outcome_date","outcome_source"):
+        df[c]=""   # (re)init as string; outcomes are recomputed from openFDA each run
+    for c in ("change_type","change_detail"):
+        if c in df.columns: df[c]=df[c].astype(object)
+    def token(name):
+        w=[x for x in re.sub(r"[^A-Za-z0-9 ]"," ",str(name)).upper().split() if x and x not in DROP]
+        return w[0] if w else None
+    cache={}
+    def approvals(tok):
+        if not tok: return []
+        if tok in cache: return cache[tok]
+        out=[]
+        try:
+            p={"search":f'sponsor_name:{tok}*',"limit":50}
+            if api_key: p["api_key"]=api_key
+            r=sess.get(BASE,params=p,timeout=20)
+            if r.status_code==200:
+                for a in r.json().get("results",[]):
+                    appno=a.get("application_number")
+                    names=[]
+                    for pr in (a.get("products") or []):
+                        if pr.get("brand_name"): names.append(str(pr["brand_name"]).upper())
+                        for ai in (pr.get("active_ingredients") or []):
+                            if ai.get("name"): names.append(str(ai["name"]).upper())
+                    for s in (a.get("submissions") or []):
+                        if s.get("submission_status")=="AP" and len(str(s.get("submission_status_date","")))==8:
+                            d=s["submission_status_date"]; out.append((f"{d[:4]}-{d[4:6]}-{d[6:8]}",appno,names))
+        except Exception: pass
+        cache[tok]=out; time.sleep(0.05); return out
+    n=0
+    for i,r in df.iterrows():
+        if r.get("catalyst_type")!="PDUFA": continue
+        ci=_to_iso(r.get("catalyst_date"), r.get("date_precision"))
+        if not ci: continue
+        cdate=date.fromisoformat(ci)
+        if cdate > TODAY + timedelta(days=120): continue          # decision can't have happened yet
+        lo=(cdate-timedelta(days=150)).isoformat(); hi=TODAY.isoformat()
+        dg=str(r.get("drug")).strip().upper()
+        if dg in ("NAN","NONE",""): dg=""
+        all_appr=approvals(token(r.get("company")))
+        wins=[(iso,appno,brands) for iso,appno,brands in all_appr if lo<=iso<=hi]
+        dgm=[w for w in wins if dg and any(dg[:6] in b for b in w[2] if b)]
+        bigpharma=len({a[1] for a in all_appr})>8     # many distinct applications = multi-drug sponsor
+        if dgm: iso,appno=dgm[0][0],dgm[0][1]
+        elif len(wins)==1 and not bigpharma: iso,appno=wins[0][0],wins[0][1]
+        else: continue   # ambiguous (multi-drug sponsor w/o drug match, or 0/>1 in window) -> don't auto-resolve
+        num=re.sub(r"\D","",str(appno or ""))
+        df.at[i,"outcome"]="Approved"; df.at[i,"outcome_date"]=iso
+        df.at[i,"outcome_source"]=f"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo={num}"
+        df.at[i,"change_type"]="resolved"
+        df.at[i,"change_detail"]=f"FDA-confirmed approval {iso} ({appno}); PDUFA was {ci}"
+        n+=1
+    print(f"  openFDA outcome confirmation: {n} PDUFA(s) FDA-confirmed as Approved")
+    return df
+
+def finalize_integrity(df):
+    """Last-pass integrity flags: warrant / non-common tickers (e.g. CINGW) get data_flags='warrant?'
+       for review, and renamed names carry a 'formerly' tag so old-ticker searches still resolve."""
+    if df.empty: return df
+    up=df.ticker.astype(str).str.upper()
+    warr=up.str.match(r'^[A-Z]{2,4}W$') | up.str.endswith("WS")
+    df["data_flags"]=warr.map(lambda x:"warrant?" if x else "")
+    df["formerly"]=up.map(lambda t:_FORMERLY.get(t,""))
+    nf=int(warr.sum())
+    if nf: print(f"  [integrity] flagged {nf} possible warrant ticker(s) for review (cross-check vs common stock)")
+    return df
+
+# ----------------------------------------------------------------- universe hygiene
+BIOTECH_HINTS=("biotech","pharmaceut","drug","therapeut","life scien","biopharma","diagnostic","medicine","genomic","cell therapy","clinical")
+DENYLIST={"HOTH","RKTO"}   # Hoth Therapeutics -> Rocket One (space/AI). Add known pivots/shells here.
+
+def filter_universe(df, fmp_key, denylist=DENYLIST):
+    """Drop rogue tickers using CURRENT vendor classification, not sticky SIC codes.
+       Catches: companies that pivoted out of biotech (sector != Healthcare), delisted/renamed
+       tickers (e.g. HOTH->RKTO, no live profile), and funds/ETFs. Runs the FMP sector/active
+       check when a key is present; the manual denylist always applies."""
+    if df.empty: return df
+    up=df.ticker.astype(str).str.upper()
+    drop={t:"manual denylist" for t in (denylist or set())}
+    if fmp_key:
+        import time as _t
+        for tk in sorted({str(t).upper() for t in up.tolist() if str(t).strip() and str(t).upper() not in ("NAN","NONE") and str(t).upper() not in drop}):
+            p=_fmp("https://financialmodelingprep.com/stable/profile",{"symbol":tk},fmp_key)
+            p=p[0] if isinstance(p,list) and p else (p if isinstance(p,dict) else {})
+            if not p:
+                drop[tk]="no live FMP profile (delisted/renamed?)"; _t.sleep(0.03); continue
+            sector=(p.get("sector") or "").lower(); industry=(p.get("industry") or "").lower()
+            bio=("healthcare" in sector) or any(h in industry for h in BIOTECH_HINTS)
+            if p.get("isActivelyTrading") is False: drop[tk]="not actively trading"
+            elif p.get("isFund") or p.get("isEtf"): drop[tk]="fund/ETF"
+            elif not bio: drop[tk]=f"non-biotech ({p.get('sector') or '?'} / {p.get('industry') or '?'})"
+            _t.sleep(0.03)
+    keep=~up.isin(set(drop))
+    gone=df[~keep]
+    if len(gone):
+        print(f"  [hygiene] removed {len(gone)} rows across {gone.ticker.astype(str).nunique()} rogue ticker(s):")
+        for tk in sorted(gone.ticker.astype(str).str.upper().unique()):
+            print(f"     - {tk}: {drop.get(tk,'?')}")
+    else:
+        print("  [hygiene] no rogue tickers found")
+    return df[keep].copy()
+
+# ----------------------------------------------------------------- runway / dilution (the PMN problem)
+RUNWAY_PHRASES=["fund our operations into","fund operations into","fund its operations into",
+                "fund our operations through","fund operations through","cash runway into",
+                "to fund its operations into","support our operations into","support operations into",
+                "support its operations into","fund planned operations into","runway into",
+                "fund operations and capital","fund operations beyond"]
+RUNWAY_RX=re.compile(r"fund(?:ing)?\s+(?:its|our|the company'?s)?\s*(?:planned\s+)?operations\s+(?:and[^.]{0,30}?)?(?:into|through|until)\s+([^.,;:()]{4,55})", re.I)
+
+def norm_runway(s):
+    low=re.sub(r"\s+"," ",s.strip().lower())
+    if any(k in low for k in ["foreseeable","twelve months","12 months","at least the next","next 12","one year from"]):
+        return None,"~12+ months (company-stated, non-specific)"
+    m=re.search(r"20\d{2}",low)
+    if not m: return None,None
+    y=m.group(0)
+    if "early" in low or re.search(r"(first quarter|q1|1st quarter)",low): return f"{y}-Q1",f"into early {y}"
+    if "mid" in low: return f"{y}-Q2",f"into mid-{y}"
+    if re.search(r"(second quarter|q2|2nd quarter)",low): return f"{y}-Q2",f"into Q2 {y}"
+    if re.search(r"(third quarter|q3|3rd quarter)",low): return f"{y}-Q3",f"into Q3 {y}"
+    if re.search(r"(fourth quarter|q4|4th quarter|late|end of)",low): return f"{y}-Q4",f"into late {y}"
+    if re.search(r"(second half|2h)",low): return f"{y}-H2",f"into 2H {y}"
+    if re.search(r"(first half|1h)",low): return f"{y}-H1",f"into 1H {y}"
+    return f"{y}-Q4",f"into {y}"
+
+def sec_runway_guidance(cik_set, ua, since="2025-06-01"):
+    """Mine the company's OWN stated cash runway ('fund operations into <period>') from 10-Q/10-K/8-K.
+       This is the authoritative runway — it reflects the company's real budget, not a back-of-envelope
+       cash/burn estimate. Keeps the most recent filing per company, with the source link."""
+    out={}
+    for phrase in RUNWAY_PHRASES:
+        for h in sec_fulltext(phrase,"10-Q,10-K,8-K",ua,since,TODAY.isoformat()):
+            s=h["_source"]; cik=str(s["ciks"][0]).zfill(10)
+            if cik_set and cik not in cik_set: continue
+            filed=s.get("file_date","")
+            if cik in out and filed<=out[cik]["filed"]: continue
+            adsh,fn=h["_id"].split(":",1)
+            url=f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{adsh.replace('-','')}/{fn}"
+            try:
+                resp=sec_get(url,ua)
+                if resp.status_code!=200: continue
+                txt=clean_html(resp.text)
+            except Exception: continue
+            m=RUNWAY_RX.search(txt)
+            if not m: continue
+            iso,label=norm_runway(m.group(1))
+            if not label: continue
+            out[cik]={"date":iso,"label":label,"filed":filed,"url":url}
+    print(f"  [runway] company-stated guidance found for {len(out)} companies")
+    return out
+
+def add_dilution_signals(df, guidance, cik2ticker):
+    """Attach runway (company-guided preferred, estimated fallback) and a dilution-risk flag that
+       compares when the cash runs out to the next catalyst. Runway ending BEFORE a catalyst = the
+       company likely raises into/around it = the dilution that kills positions (e.g. PMN)."""
+    if df.empty: return df
+    gby={cik2ticker.get(c):g for c,g in guidance.items() if cik2ticker.get(c)}
+    soon={}
+    for _,r in df.iterrows():
+        if pd.isna(r.get("ticker")) or pd.isna(r.get("catalyst_date")): continue
+        iso=_to_iso(r.catalyst_date,r.date_precision)
+        if iso and iso>=TODAY.isoformat():
+            t=str(r.ticker); soon[t]=min(soon.get(t,"9999-99-99"),iso)
+    has_rm="cash_runway_months" in df.columns
+    label=[];src=[];url=[];end=[];risk=[]
+    for _,r in df.iterrows():
+        t=str(r.ticker); g=gby.get(t); rm=r.get("cash_runway_months") if has_rm else None
+        if g:
+            label.append(g["label"]); src.append("company-guided"); url.append(g["url"])
+            e=_to_iso(g["date"],"quarter") if g.get("date") else None
+        elif pd.notna(rm) and rm:
+            label.append(f"~{float(rm):.0f} mo (estimated)"); src.append("estimated"); url.append("")
+            try:
+                _rm=max(0.0,min(float(rm),600.0))  # clamp 0..600 months (50y) to avoid date overflow
+                e=(TODAY+timedelta(days=int(_rm*30.4))).isoformat()
+            except (OverflowError,ValueError,TypeError):
+                e=None
+        else:
+            label.append(""); src.append(""); url.append(""); e=None
+        end.append(e or "")
+        this_iso=_to_iso(r.catalyst_date,r.date_precision); rk=""
+        if e and this_iso and this_iso>=TODAY.isoformat():
+            try:
+                if e<this_iso: rk="HIGH \u2014 runway ends before this catalyst"
+                elif e<(date.fromisoformat(this_iso)+timedelta(days=183)).isoformat(): rk="ELEVATED \u2014 thin runway around catalyst"
+            except Exception: pass
+        if not rk and pd.notna(rm) and rm and float(rm)<12: rk="ELEVATED \u2014 under 12 months"
+        risk.append(rk)
+    df["runway_label"]=label; df["runway_source"]=src; df["runway_end"]=end
+    df["runway_guidance_url"]=url; df["dilution_risk"]=risk
+    ng=sum(1 for s in src if s=="company-guided"); nh=sum(1 for x in risk if x.startswith("HIGH"))
+    print(f"  [dilution] {ng} company-guided runways \u00b7 {nh} HIGH-risk (cash runs out before the catalyst)")
+    return df
+
+# ----------------------------------------------------------------- main
+DRUG_INDUSTRIES={"Biotechnology","Drug Manufacturers - General","Drug Manufacturers - Specialty & Generic","Medical - Pharmaceuticals","Pharmaceuticals"}
+DEVDX_INDUSTRIES={"Medical - Devices","Medical - Instruments & Supplies","Medical - Diagnostics & Research"}
+def build_universe(fmp_key, exchanges=("NASDAQ","NYSE","AMEX"), include_devices=True):
+    """Layer 1: enumerate the FULL public US drug (+device/dx) universe from the FMP screener,
+       so the crawler scans everything rather than a static hand-list. Returns a set of tickers."""
+    if not fmp_key: return set()
+    inds=DRUG_INDUSTRIES | (DEVDX_INDUSTRIES if include_devices else set())
+    uni=set()
+    for ex in exchanges:
+        try:
+            r=requests.get("https://financialmodelingprep.com/stable/company-screener",
+                params={"sector":"Healthcare","exchange":ex,"isActivelyTrading":"true","limit":3000,"apikey":fmp_key},timeout=30)
+            for row in (r.json() if r.status_code==200 else []):
+                if str(row.get("industry","")) in inds and row.get("symbol"):
+                    uni.add(str(row["symbol"]).upper())
+        except Exception as _ue:
+            print(f"  [universe] screener {ex} failed ({_ue})", file=sys.stderr)
+    print(f"  [universe] FMP screener -> {len(uni)} drug/device tickers")
+    return uni
+
+def canonicalize_and_qa(df, t2c=None):
+    """CIK alias-dedup + metadata QA gate (post-mortem fixes from the DFTX/MindMed case).
+    (1) Backfill CIK on every row via ticker->CIK so CT.gov rows link to SEC rows.
+    (2) Canonicalize company name per CIK (prefer clean, most-recent) -> rebrands like
+        MNMD->DFTX no longer fracture one entity into two names.
+    (3) Drop TRUE duplicates (same NCT id, or same ticker+drug+indication+month).
+    (4) qa_flag column: 'blank_drug' (readout/drug/device w/ no drug) and 'stale_alias'
+        (row's drug isn't in the entity's CT.gov pipeline -> stale/mislabeled, e.g. the
+        'psilocybin/suicidal ideation' rows left over from old MindMed PRs)."""
+    if df is None or len(df)==0: return df
+    df=df.copy()
+    for c in ("cik","ticker","company","drug","indication","source","source_url","retrieved_at","category","catalyst_date","confidence"):
+        if c not in df.columns: df[c]=""
+    def _s(x): return "" if x is None or (isinstance(x,float) and pd.isna(x)) else str(x)
+    def nl(s): return re.sub(r"\s+"," ",_s(s).strip().lower())
+    def droot(s):
+        s=nl(s); s=re.sub(r"\b(odt|tablet|injection|capsule|snda|nda|bla)\b","",s); return re.sub(r"[^a-z0-9 ]","",s).strip()
+    def drug_sig(s):
+        d=droot(s); m=re.search(r"\b([a-z]{2,6})[- ]?(\d{2,4})\b", d)
+        return (m.group(1)+m.group(2)) if m else d   # code sig (vrdn001) so 'Veligrotug (VRDN-001)' == 'VRDN-001'
+    def nctid(u):
+        m=re.search(r"(NCT\d{8})",_s(u),re.I); return m.group(1).upper() if m else ""
+    def cleanname(s): return re.sub(r"\s*\((?:CIK|[A-Z0-9]{1,6})[^)]*\)","",_s(s)).strip() or _s(s)
+    t2c=t2c or {}
+    df["cik"]=[ _s(r.cik).strip() or t2c.get(_s(r.ticker).upper(),"") for r in df.itertuples()]
+    canon={}
+    for c,grp in df[df["cik"]!=""].groupby("cik"):
+        g=grp[grp["company"].map(lambda x:_s(x).strip()!="")]
+        if len(g)==0: continue
+        g=g.assign(_par=g["company"].map(lambda x:"(" in _s(x)),_ts=g["retrieved_at"].map(_s)).sort_values(["_par","_ts"],ascending=[True,False])
+        canon[c]=cleanname(g.iloc[0]["company"])
+    ctd={}
+    for c,grp in df[(df["cik"]!="")&(df["source"]=="clinicaltrials")].groupby("cik"):
+        ctd[c]=set(droot(x) for x in grp["drug"] if _s(x).strip())
+    def score(r):
+        try: cf=float(_s(r["confidence"]) or 0)
+        except: cf=0
+        letters=len(re.sub(r"[^a-z]","",nl(r["drug"])))   # prefer branded names over bare codes when deduping aliases
+        return (cf,1 if _s(r["drug"]).strip() else 0,1 if _s(r["indication"]).strip() else 0,_s(r["source"])=="clinicaltrials",letters)
+    df["_sc"]=df.apply(score,axis=1); df=df.sort_values("_sc",ascending=False)
+    seen=set(); rows=[]
+    for _,r in df.iterrows():
+        n=nctid(r["source_url"])
+        if n: key=("nct",n)
+        else:
+            dr=drug_sig(r["drug"]); key=("k",_s(r["ticker"]).upper(),dr,nl(r["indication"]),_s(r["catalyst_date"])[:7],_s(r["source_url"]) if not dr else "")
+        if key in seen: continue
+        seen.add(key)
+        c=_s(r["cik"]); qa=[]
+        if _s(r["category"]) in ("readout","drug","device") and not _s(r["drug"]).strip(): qa.append("blank_drug")
+        if c and canon.get(c) and cleanname(r["company"])!=canon[c] and ctd.get(c) and droot(r["drug"]) not in ctd[c]: qa.append("stale_alias")
+        rd=r.to_dict()
+        if c and canon.get(c): rd["company"]=canon[c]
+        rd["qa_flag"]="|".join(qa); rows.append(rd)
+    out=pd.DataFrame(rows).drop(columns=["_sc"],errors="ignore")
+    try:
+        print(f"  [qa] canonicalized {len(canon)} entities by CIK; removed {len(df)-len(out)} true-dupes; "
+              f"flags blank_drug={sum('blank_drug' in (x or '') for x in out['qa_flag'])}, "
+              f"stale_alias={sum('stale_alias' in (x or '') for x in out['qa_flag'])}")
+    except Exception: pass
+    return out
+
+def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--tickers", default=os.path.join(_HERE, "catalysts_out", "universe_effective.txt"))
+    ap.add_argument("--out",default="./catalysts_out")
+    ap.add_argument("--ua",default="pdufa.bio catalyst research contact@pdufa.bio")
+    ap.add_argument("--since",default=DEFAULT_SINCE)
+    ap.add_argument("--bpc"); ap.add_argument("--ctgov-sponsors",dest="ctgov")
+    ap.add_argument("--fmp",action="store_true",help="enrich with FMP market cap / cash runway / 52wk (needs FMP_API_KEY)")
+    ap.add_argument("--options",action="store_true",help="enrich near-term catalysts with ORATS implied move/IV + UW flow/dark pool (needs ORATS_API_KEY, UW_API_KEY)")
+    ap.add_argument("--auto-universe",dest="auto_universe",action="store_true",help="Layer 1: build the universe from the full FMP healthcare screener (drug+device) each run, not just the static --tickers file (needs FMP_API_KEY)")
+    ap.add_argument("--discover",action="store_true",help="Layer 2: run SEC EDGAR full-text discovery across ALL filers (not just the universe) to catch off-list PDUFA/CRL/BLA catalysts")
+    ap.add_argument("--transcripts",action="store_true",help="Layer 2b: mine FMP earnings-call transcripts for mega-cap PDUFA/AdComm dates that don't appear in a standalone 8-K (needs FMP_API_KEY; slower)")
+    args=ap.parse_args(); os.makedirs(args.out,exist_ok=True)
+    colist_map={}
+    if args.bpc and os.path.exists(args.bpc):
+        try:
+            _bdf=pd.read_excel(args.bpc)
+            for _,_r in _bdf.iterrows():
+                _rt=_drug_root(_r.get("Drug"))
+                if _rt and pd.notna(_r.get("Ticker")): colist_map.setdefault(_rt,set()).add(str(_r.get("Ticker")).upper())
+            colist_map={k:v for k,v in colist_map.items() if len(v)>1}
+            print(f"  [colist] co-developer map: {len(colist_map)} multi-ticker drugs from BPC seed")
+        except Exception as _me:
+            print(f"  [colist] map build skipped ({_me})", file=sys.stderr); colist_map={}
+
+    tickers=[]
+    if args.tickers:
+        if os.path.exists(args.tickers):
+            tickers=[l.strip().upper() for l in open(args.tickers) if l.strip()]
+            tickers=sorted(set(tickers)|DEVICE_TICKERS)  # always scan the medical-device universe too
+        else:
+            print(f"  [warn] --tickers file '{args.tickers}' not found -> running UNFILTERED (slower).")
+            print(f"         Create it from your BPC export, e.g.:")
+            print(f"         python -c \"import pandas as pd; pd.read_excel('fda_2026-05-18__1_.xlsx')['Ticker'].dropna().astype(str).str.upper().drop_duplicates().to_csv('your_universe.txt',index=False,header=False)\"")
+    if getattr(args,"auto_universe",False) and os.environ.get("FMP_API_KEY"):
+        _u=build_universe(os.environ["FMP_API_KEY"])
+        tickers=sorted(set(tickers)|_u|DEVICE_TICKERS)
+        print(f"  [universe] auto-universe ON -> scanning {len(tickers)} tickers (screener + static + device seed)")
+    print("Loading SEC CIK map ...")
+    t2c,c2name=sec_cik_map(args.ua)
+    # cik -> PREFERRED ticker: a CIK can list common + warrant(W)/unit(U)/right(R)/class shares.
+    # Prefer plain common stock so PDUFAs land on e.g. BFRI, not BFRIW.
+    def _tk_rank(tk):
+        s=len(tk)*0.01
+        if len(tk)>=5 and tk[-1] in ("W","U","R"): s+=3      # warrant / unit / right
+        if any(c in tk for c in ".-/^+"): s+=2               # preferred / class-share notations
+        return s
+    c2t={}
+    for _tk,_cik in t2c.items():
+        if _cik not in c2t or _tk_rank(_tk)<_tk_rank(c2t[_cik]): c2t[_cik]=_tk
+    cik_set=set(t2c[t] for t in tickers if t in t2c) if tickers else set()
+
+    def _src(name, fn, *a, **k):
+        try: return fn(*a,**k) or []
+        except Exception as ex: print(f"  [warn] source '{name}' failed ({ex}); continuing without it.", file=sys.stderr); return []
+    print(f"SEC multi-catalyst crawl (since {args.since}; 8-K,6-K,10-Q) ...")
+    _sec_ciks=set() if getattr(args,"discover",False) else cik_set
+    if getattr(args,"discover",False): print("  [discover] SEC full-text across ALL filers (universe-independent) — catches off-list names")
+    recs=_src("sec_edgar", sec_catalysts, _sec_ciks, args.ua, since=args.since)
+    for r in recs: r["ticker"]=c2t.get(r["cik"]) or ""
+
+    print("FDA advisory-committee calendar (experimental) ...")
+    recs+=_src("fda_adcomm", fda_adcomm, args.ua)
+
+    if tickers:
+        print("ClinicalTrials.gov readouts across universe ...")
+        ticker2name={t:c2name.get(t2c[t]) for t in tickers if t in t2c}
+        recs+=_src("ctgov_universe", ctgov_universe, ticker2name)
+    if args.ctgov:
+        print("ClinicalTrials.gov extra sponsors ...")
+        for sp in [l.strip() for l in open(args.ctgov) if l.strip()]: recs+=_src("ctgov_sponsor", ctgov_readouts, sp)
+    if tickers:
+        print("FMP earnings ..."); recs+=_src("fmp_earnings", fmp_earnings, tickers)
+    if tickers and os.environ.get("FMP_API_KEY"):
+        print("FMP press releases (independent PDUFA/AdComm source — beats SEC-only on foreign filers + mega-caps) ...")
+        recs+=_src("fmp_press", fmp_press_catalysts, tickers, os.environ["FMP_API_KEY"], args.ua)
+        print("FMP general news (foreign/mega-cap + device fill — facts cited to article URL) ...")
+        recs+=_src("fmp_news", fmp_news_catalysts, tickers, os.environ["FMP_API_KEY"], args.ua)
+        if getattr(args,"transcripts",False):
+            print("FMP earnings-call transcripts (mega-cap pipeline disclosures SEC-only misses) ...")
+            recs+=_src("fmp_transcript", fmp_transcript_catalysts, tickers, os.environ["FMP_API_KEY"], args.ua)
+
+    # ConferencePresentation — who presents where. Without this the conference dataset decays.
+    print("SEC conference presentations (who presents at ASCO/ASH/ESMO/AACR/...) ...")
+    try:
+        _conf_all = sec_conference_presentations(_sec_ciks, args.ua, args.since, include_past=True)
+        # the global cik->ticker fill already ran (it only covered the sec_edgar batch), so do ours here
+        for _r in _conf_all: _r["ticker"] = c2t.get(_r["cik"]) or ""
+        # upcoming -> the calendar
+        _t = TODAY.isoformat(); _tm = TODAY.strftime("%Y-%m")
+        def _conf_upcoming(r):
+            return (r["catalyst_date"] >= _t) if r["date_precision"] == "day" else (r["catalyst_date"] >= _tm)
+        recs += [r for r in _conf_all if _conf_upcoming(r)]
+        # everything (incl. history) -> the study. History is what makes this a compounding
+        # asset instead of a snapshot; it is the whole point of the type existing.
+        if _conf_all:
+            _cp = os.path.join(args.out, "conference_presentations_history.csv")
+            _new = pd.DataFrame(_conf_all)
+            if os.path.exists(_cp):
+                _old = pd.read_csv(_cp)
+                _new = pd.concat([_old, _new], ignore_index=True)
+            _new = _new.drop_duplicates(subset=["cik", "conference", "catalyst_date"], keep="last")
+            # Also collapse on the PUBLISHED key. The conference guard checks (ticker, date,
+            # conference); a cik-only de-dupe leaves rows with blank/duplicate ciks that share a
+            # ticker+date+conference -- that slipped 159 dupes through and failed the guard. De-dupe
+            # on the same key the guard uses so it can never see a duplicate we could have collapsed.
+            _pubkey = [k for k in ["ticker", "conference", "catalyst_date"] if k in _new.columns]
+            if len(_pubkey) == 3:
+                _new = _new.drop_duplicates(subset=_pubkey, keep="last")
+            # SHRINK-GUARD. History only grows. If a rebuild would drop >5% of rows or lose any
+            # conference vs what is already on disk, the on-disk file is probably a corrupt
+            # re-read (see safe_to_csv), and overwriting it would bake the loss in permanently.
+            # Refuse, keep the good file, and leave a .rejected copy for inspection. A crawl that
+            # returns less than last time must fail loudly, never overwrite silently.
+            # baseline is the de-duped old count, so collapsing dupes is never mistaken for data loss
+            _n_old = len(_old.drop_duplicates(subset=[c for c in _pubkey if c in _old.columns])) if _pubkey else len(_old)
+            _n_new = len(_new)
+            _lost_conf = set(_old.get("conference", pd.Series(dtype=str))) - set(_new.get("conference", pd.Series(dtype=str)))
+            if _n_old and (_n_new < _n_old * 0.95 or _lost_conf):
+                _rej = _cp.replace(".csv", f".rejected_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
+                safe_to_csv(_new, _rej)
+                print(f"  [conference] REFUSED to overwrite: {_n_old} -> {_n_new} rows, "
+                      f"lost conferences {sorted(_lost_conf)[:8]}. Kept existing {_cp}; "
+                      f"wrote candidate to {_rej} for review.", file=sys.stderr)
+            else:
+                if os.path.exists(_cp):
+                    try: shutil.copy2(_cp, _cp.replace(".csv", ".prev.csv"))   # regression baseline
+                    except Exception: pass
+                safe_to_csv(_new, _cp)
+                print(f"  [conference] history file: {_n_new} cumulative presentations -> {_cp}")
+    except Exception as _cex:
+        print(f"  [conference] pass failed ({_cex})", file=sys.stderr)
+
+    recs+=_src("device_seed", load_device_seed, "device_seed.csv")
+    recs+=_src("pharma_seed", load_device_seed, "bigpharma_pdufa_seed.csv")  # curated foreign/mega-cap PDUFAs that don't auto-mine
+    primary=merge(recs)
+    try: safe_to_csv(primary, os.path.join(args.out,"catalysts_raw.csv"))
+    except Exception: pass
+    print("Universe hygiene (drop non-biotech / delisted / renamed) ...")
+    try:
+        primary=filter_universe(primary, os.environ.get("FMP_API_KEY") if args.fmp else None)
+    except Exception as _fe:
+        print(f"  [warn] filter_universe failed ({_fe}); keeping unfiltered rows so the CSV still saves.", file=sys.stderr)
+    primary["category"]=primary["catalyst_type"].map(_category)
+    try:
+        safe_to_csv(primary[primary.redistribute==True], os.path.join(args.out,"catalysts_public.csv"))
+        print(f"  [checkpoint] core catalyst list saved ({int((primary.redistribute==True).sum())} public rows) before enrichment")
+    except Exception as _cp: print(f"  [checkpoint] skipped ({_cp})", file=sys.stderr)
+    if args.fmp and os.environ.get("FMP_API_KEY"):
+        print("Enriching with FMP (market cap / runway / 52wk) ...")
+        primary=enrich_fmp(primary, os.environ["FMP_API_KEY"])
+    elif args.fmp:
+        print("  [warn] --fmp set but FMP_API_KEY not in environment; skipping enrichment.")
+    if args.options:
+        ok=os.environ.get("ORATS_API_KEY"); uk=os.environ.get("UW_API_KEY") or os.environ.get("UNUSUAL_WHALES_API_TOKEN")
+        if ok or uk:
+            print("Enriching options layer (ORATS + Unusual Whales) ...")
+            primary=enrich_options(primary, ok, uk)
+        else:
+            print("  [warn] --options set but neither ORATS_API_KEY nor UW_API_KEY/UNUSUAL_WHALES_API_TOKEN in env; skipping.")
+    def _safe(step, fn, *a):
+        nonlocal primary
+        try: primary=fn(*a)
+        except Exception as _ex:
+            import traceback; print(f"  [warn] step '{step}' failed ({_ex}); continuing so the CSV still saves.", file=sys.stderr)
+    if cik_set:
+        print("Runway guidance + dilution risk (SEC company statements) ...")
+        try:
+            guidance=sec_runway_guidance(cik_set, args.ua)
+            _safe("dilution", add_dilution_signals, primary, guidance, c2t)
+        except Exception as _ex:
+            print(f"  [warn] runway guidance failed ({_ex}); skipping.", file=sys.stderr)
+    print("Detecting changes vs last run ...")
+    try: detect_changes(primary, args.out)
+    except Exception as _ex: print(f"  [warn] detect_changes failed ({_ex}); continuing.", file=sys.stderr)
+    _safe("finalize_integrity", finalize_integrity, primary)
+    if args.fmp and os.environ.get("FMP_API_KEY"):
+        print("Cross-checking market caps vs SEC cover-page shares ...")
+        _safe("verify_market_caps", verify_market_caps, primary, args.ua)
+    print("Enriching drug + indication from ClinicalTrials.gov (free primary source) ...")
+    _safe("enrich_drug_indication", enrich_drug_indication, primary, args.ua)
+    try:
+        # augment the co-developer map from OUR OWN primary rows (original content, no BPC dependency):
+        # any drug root we captured under 2+ tickers is a real co-development we can propagate — this
+        # closes combo-PDUFA gaps (e.g. MRK/BMY/ALPMY on one drug) without relying on the BPC seed.
+        try:
+            _own={}
+            for _,_r in primary[primary["catalyst_type"].isin(["PDUFA","AdComm","Submission","Approval","CRL"])].iterrows():
+                _rt=_drug_root(_r.get("drug"))
+                if _rt and pd.notna(_r.get("ticker")): _own.setdefault(_rt,set()).add(str(_r.get("ticker")).upper())
+            for _k,_v in _own.items():
+                if len(_v)>1: colist_map.setdefault(_k,set()).update(_v)
+            colist_map={k:v for k,v in colist_map.items() if len(v)>1}
+            print(f"  [colist] co-developer map now {len(colist_map)} multi-ticker drugs (BPC seed + our own primary data)")
+        except Exception as _oe: print(f"  [colist] own-data augment skipped ({_oe})", file=sys.stderr)
+        if colist_map: primary=colist_partners(primary, colist_map, set(tickers))
+    except Exception as _ce: print(f"  [colist] skipped ({_ce})", file=sys.stderr)
+    print("Confirming PDUFA outcomes vs openFDA (FDA primary record) ...")
+    _safe("confirm_outcomes_openfda", confirm_outcomes_openfda, primary, args.ua, os.environ.get("OPENFDA_API_KEY"))
+    _safe("resolve_and_dedupe_outcomes", resolve_and_dedupe_outcomes, primary)
+    print("CIK alias-dedup + metadata QA gate ...")
+    try: primary=canonicalize_and_qa(primary, t2c)
+    except Exception as _qe: print(f"  [qa] canonicalize_and_qa skipped ({_qe}); continuing.", file=sys.stderr)
+    safe_to_csv(primary, os.path.join(args.out,"catalysts_primary.csv"))
+    try:
+        _eff=sorted(set(str(t).upper() for t in primary.get("ticker",pd.Series(dtype=object)).dropna()) | set(tickers))
+        open(os.path.join(args.out,"universe_effective.txt"),"w").write("\n".join(_eff)+"\n")
+        _new=set(_eff)-set(tickers)
+        if _new: print(f"  [universe] closure: {len(_new)} newly-discovered tickers -> universe_effective.txt (feed back into --tickers next run)")
+    except Exception as _ue: print(f"  [universe] closure skipped ({_ue})", file=sys.stderr)
+    safe_to_csv(primary[primary.redistribute==True], os.path.join(args.out,"catalysts_public.csv"))
+    print(f"\nTotal catalysts: {len(primary)}  (public-cleared {(primary.redistribute==True).sum()})")
+    print("By type:")
+    for t,n in primary.catalyst_type.value_counts().items(): print(f"   {t:22s} {n}")
+
+    if args.bpc and not os.path.exists(args.bpc):
+        print(f"  [warn] --bpc file '{args.bpc}' not found -> skipping QA diff (your catalysts are already written).")
+    elif args.bpc:
+        print("\nLoading BioPharmaCatalyst (internal seed/QA) ...")
+        bpc=pd.DataFrame(load_bpc(args.bpc),columns=FIELDS)
+        safe_to_csv(bpc, os.path.join(args.out,"bpc_internal.csv"))
+        overall=qa_diff(primary,bpc); pdufa=qa_diff(primary,bpc,label_filter="PDUFA|Regulatory|Approval")
+        try:
+            json.dump({"overall":overall,"pdufa_only":pdufa},open(os.path.join(args.out,"qa_diff.json"),"w"),indent=2)
+        except PermissionError:
+            json.dump({"overall":overall,"pdufa_only":pdufa},open(os.path.join(args.out,f"qa_diff_{datetime.now().strftime('%H%M%S')}.json"),"w"),indent=2)
+        print(f"  PDUFA recall vs BPC: {pdufa['recall_vs_bpc']:.0%} | overall overlap {overall['overlap']}")
+        try:
+            gap_keys=set(pdufa.get("in_bpc_not_primary",[]))
+            def _nt(t): t=str(t).upper(); return t[:-1] if t.endswith("W") and len(t)>3 else t
+            grows=[]
+            for _,r in bpc.iterrows():
+                if not (pd.notna(r.get("ticker")) and pd.notna(r.get("catalyst_date"))): continue
+                if f"{_nt(r.get('ticker'))}:{str(r.get('catalyst_date'))[:7]}" in gap_keys and \
+                   re.search("PDUFA|Regulatory|Approval", str(r.get("catalyst_type")), re.I):
+                    grows.append({c:r.get(c) for c in ("ticker","catalyst_date","catalyst_type","drug","indication","company")})
+            if grows:
+                safe_to_csv(pd.DataFrame(grows).drop_duplicates(), os.path.join(args.out,"coverage_gaps.csv"))
+                print(f"  [coverage] {len(grows)} BPC PDUFA-ish events not independently sourced -> coverage_gaps.csv")
+                _seedrows=[]
+                for g in grows:
+                    _d=str(g.get("catalyst_date") or "")
+                    _prec="day" if len(_d)==10 else ("month" if len(_d)==7 else "year")
+                    _seedrows.append({"ticker":g.get("ticker"),"company":g.get("company") or "","catalyst_type":"PDUFA",
+                        "catalyst_date":g.get("catalyst_date"),"date_precision":_prec,"drug":g.get("drug") or "",
+                        "indication":g.get("indication") or "","source":"curated_pharma","source_url":"",
+                        "confidence":0.6,"redistribute":True})
+                safe_to_csv(pd.DataFrame(_seedrows).drop_duplicates(), os.path.join(args.out,"seed_candidates.csv"))
+                print("  [coverage] paste-ready -> seed_candidates.csv (add a source_url per row, append to bigpharma_pdufa_seed.csv)")
+        except Exception as e:
+            print(f"  [coverage] gap-list skipped: {e}")
+    print(f"\nDone -> {args.out}/  (catalysts_public.csv = republishable, provenance-tagged)")
+
+if __name__=="__main__": main()

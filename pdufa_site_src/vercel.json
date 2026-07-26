@@ -1,0 +1,634 @@
+{
+ "crons": [
+  {
+   "path": "/api/data",
+   "schedule": "0 11 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 14 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 17 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 20 * * *"
+  },
+  {
+   "path": "/api/data",
+   "schedule": "0 23 * * *"
+  }
+ ],
+ "redirects": [
+  {
+   "source": "/api/data.js",
+   "destination": "/api/data",
+   "permanent": true
+  },
+  {
+   "source": "/app.html",
+   "destination": "/app",
+   "permanent": true
+  },
+  {
+   "source": "/today.html",
+   "destination": "/today",
+   "permanent": true
+  },
+  {
+   "source": "/pricing.html",
+   "destination": "/pricing",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa-calendar",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa-dates-2026",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/biotech-catalyst-calendar",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/vnda-pdufa",
+   "destination": "/pdufa/VNDA",
+   "permanent": true
+  },
+  {
+   "source": "/data-provenance",
+   "destination": "/sources",
+   "permanent": true
+  },
+  {
+   "source": "/track-record",
+   "destination": "/decisions",
+   "permanent": true
+  },
+  {
+   "source": "/odin",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/odin/:path*",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/odin-score",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/score",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/scores",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
+   "source": "/runup-heatmap",
+   "destination": "/research",
+   "permanent": true
+  },
+  {
+   "source": "/heatmap",
+   "destination": "/research",
+   "permanent": true
+  },
+  {
+   "source": "/pricing-elite",
+   "destination": "/pricing",
+   "permanent": true
+  },
+  {
+   "source": "/condition/obesity",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/metabolic",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/nash",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/mash",
+   "destination": "/condition/obesity-metabolic",
+   "permanent": true
+  },
+  {
+   "source": "/condition/alzheimers",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/alzheimer",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/cns",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/neurology",
+   "destination": "/condition/cns-neurology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/oncology",
+   "destination": "/condition/cancer",
+   "permanent": true
+  },
+  {
+   "source": "/condition/cardiometabolic",
+   "destination": "/condition/cardiovascular",
+   "permanent": true
+  },
+  {
+   "source": "/condition/cardio",
+   "destination": "/condition/cardiovascular",
+   "permanent": true
+  },
+  {
+   "source": "/condition/orphan",
+   "destination": "/condition/rare-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/rare-disease-orphan",
+   "destination": "/condition/rare-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/rare",
+   "destination": "/condition/rare-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/infectious",
+   "destination": "/condition/infectious-disease",
+   "permanent": true
+  },
+  {
+   "source": "/condition/inflammation",
+   "destination": "/condition/immunology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/autoimmune",
+   "destination": "/condition/immunology",
+   "permanent": true
+  },
+  {
+   "source": "/condition/blood",
+   "destination": "/condition/hematology",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IONS-2026-06-30",
+   "destination": "/fda-decision/IONS-2026-06-24",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/GSK-2026-06-18",
+   "destination": "/fda-decision/GSK-2026-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SPRO-2026-06-18",
+   "destination": "/fda-decision/SPRO-2026-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/AZN-2026-06-30",
+   "destination": "/fda-decision/AZN-2026-06-12",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/VRDN-2026-06-29",
+   "destination": "/fda-decision/VRDN-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/VRDN-2026-06-30",
+   "destination": "/fda-decision/VRDN-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/AZN",
+   "destination": "/fda-decision/AZN-2026-06-12",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/AZN-truqap",
+   "destination": "/fda-decision/AZN-2026-06-12",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/CELC",
+   "destination": "/fda-decision/CELC-2026-07-14",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/GSK",
+   "destination": "/fda-decision/GSK-2026-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/GSK-tebipenem-hbr",
+   "destination": "/fda-decision/GSK-2026-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/GSK-tebipenem-pivoxil",
+   "destination": "/fda-decision/GSK-2026-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/IONS",
+   "destination": "/fda-decision/IONS-2026-06-24",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/IONS-olezarsen",
+   "destination": "/fda-decision/IONS-2026-06-24",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/SPRO",
+   "destination": "/fda-decision/SPRO-2026-06-17",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/VERA",
+   "destination": "/fda-decision/VERA-2026-07-07",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/VRDN",
+   "destination": "/fda-decision/VRDN-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/VRDN-veligrotug",
+   "destination": "/fda-decision/VRDN-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/VRDN-vrdn-001",
+   "destination": "/fda-decision/VRDN-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/ACHV",
+   "destination": "/fda-decision/ACHV-2026-06-22",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/ARQT",
+   "destination": "/fda-decision/ARQT-2026-06-30",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/LNTH",
+   "destination": "/fda-decision/LNTH-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/LNTH-lnth-2501",
+   "destination": "/fda-decision/LNTH-2026-06-26",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/UNCY",
+   "destination": "/fda-decision/UNCY-2026-06-30",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/NVO",
+   "destination": "/fda-decision/NVO-2026-03-03",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/NVO-sogroya",
+   "destination": "/fda-decision/NVO-2026-03-03",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/REGN-otoferlin-gene-therapy",
+   "destination": "/fda-decision/REGN-2026-04-23",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/HRMY",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/BNTX",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/CTMX",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/EVAX",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/MIRM",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/ALPMY",
+   "destination": "/fda-decision/MRK-2026-07-10",
+   "permanent": true
+  },
+  {
+   "source": "/api",
+   "destination": "/developers",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/GH",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/MNKD",
+   "destination": "/fda-decision/MNKD-2026-07-24",
+   "permanent": true
+  }
+ ],
+ "headers": [
+  {
+   "source": "/(.*)",
+   "headers": [
+    {
+     "key": "X-Frame-Options",
+     "value": "DENY"
+    },
+    {
+     "key": "X-Content-Type-Options",
+     "value": "nosniff"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "strict-origin-when-cross-origin"
+    },
+    {
+     "key": "Permissions-Policy",
+     "value": "geolocation=(), microphone=(), camera=(), payment=()"
+    },
+    {
+     "key": "Content-Security-Policy-Report-Only",
+     "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    }
+   ]
+  },
+  {
+   "source": "/fonts/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=31536000, immutable"
+    }
+   ]
+  },
+  {
+   "source": "/today.html",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
+    }
+   ]
+  },
+  {
+   "source": "/app.html",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
+    }
+   ]
+  },
+  {
+   "source": "/api/data",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "s-maxage=16000, stale-while-revalidate=86400"
+    },
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex"
+    }
+   ]
+  },
+  {
+   "source": "/",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/calendar",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/decisions",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/decisions/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/pdufa/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/fda-decision/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/learn",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/learn/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/research",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/research/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/sources",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/methodology",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/fda-approval-rate",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/clinical-trial-success-rates",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/readouts",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/readout/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/devices",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+    }
+   ]
+  },
+  {
+   "source": "/api/premarket",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex"
+    }
+   ]
+  },
+  {
+   "source": "/api/build-watchlist",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex"
+    }
+   ]
+  }
+ ],
+ "rewrites": [
+  {
+   "source": "/",
+   "destination": "/index.html"
+  },
+  {
+   "source": "/pricing",
+   "destination": "/pricing.html"
+  }
+ ]
+}

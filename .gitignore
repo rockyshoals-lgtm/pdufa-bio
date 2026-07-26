@@ -1,0 +1,62 @@
+# ============================================================================
+#  pdufa.bio — .gitignore
+#  CRITICAL: this repo must NEVER contain API keys or the multi-GB caches.
+#  Verify `git status` shows NO .env / .env_master before your first push.
+# ============================================================================
+
+# --- SECRETS (never commit) ---
+.env
+.env.*
+*.env
+**/.env_master
+Odin Perfection/
+*_secret*
+*apikey*
+*api_key*
+
+# --- large data caches / exports (not needed to build or run the site) ---
+uw_export_2026/
+orats_backtest_cache/
+backtest_progress/
+*orats*cache*/
+readout_price_cache.json
+bifrost_price_cache.json
+catalyst_ctgov_cache.json
+ctgov_cache.json
+chembl_enrichment_cache*.json
+finbrain_enrichment*.json
+xbi_daily_cache.json
+*.parquet
+*.pkl
+*.joblib
+*.bin
+*.h5
+*.xlsx
+*.csv
+
+# --- model artifacts / research (not part of the site) ---
+gungnir_*.json
+odin_v*_deploy.json
+bifrost_v*_deploy.json
+*_kaizen_results.json
+
+# --- deploy / build junk ---
+.vercel
+node_modules/
+__pycache__/
+*.pyc
+*.bak
+*.bak_*
+logs/
+runs/
+
+# ============================================================================
+#  What SHOULD be committed (the Action needs these — do NOT ignore them):
+#    pdufa_site_src/            the site + api/data.js + api/v1/*.mjs
+#    tests/test_*.py            the CI guards
+#    polygon_enrich.py  build_home_board.py  check_pdufa_decided.py
+#    catalyst_crawler.py  merge_crawl_to_slate.py
+#    catalysts_out/universe_effective.txt
+#    catalysts_out/catalysts_public.csv   (force-add: git add -f, despite *.csv above)
+#    .github/workflows/          the rebuild workflow
+# ============================================================================

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>pdufa.bio — upgrading the biotech FDA-catalyst tape</title>
+<meta name="description" content="pdufa.bio, the calm and source-verified FDA PDUFA catalyst calendar, is being upgraded. Facts, not advice. Back shortly. Owned and operated by Odin Catalyst LLC.">
+<link rel="canonical" href="https://www.pdufa.bio/">
+<meta name="theme-color" content="#02060d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="pdufa.bio">
+<meta property="og:title" content="pdufa.bio — upgrading the tape">
+<meta property="og:description" content="The calm, source-verified biotech FDA-catalyst calendar is getting an upgrade. Back shortly.">
+<meta property="og:image" content="https://www.pdufa.bio/og.png">
+<meta property="og:url" content="https://www.pdufa.bio/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2302060d'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='17' font-weight='800' text-anchor='middle' fill='%23e3ba5e'%3Ep%3C/text%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#02060d; --ink:#f2f6fc; --mut:#9fb4cd; --mut2:#6f86a8;
+    --gold:#e3ba5e; --teal:#3bd6c6; --line:rgba(120,150,190,.16);
+  }
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55;
+    min-height:100svh; display:flex; align-items:center; justify-content:center;
+    overflow:hidden; position:relative;
+  }
+  /* drifting aurora glow */
+  .aurora{position:fixed;inset:-25%;z-index:0;filter:blur(70px);opacity:.55;pointer-events:none}
+  .aurora b{position:absolute;border-radius:50%;display:block;mix-blend-mode:screen}
+  .a1{width:48vw;height:48vw;left:8%;top:6%;background:radial-gradient(circle,#0e7c86,transparent 62%);animation:drift1 18s ease-in-out infinite}
+  .a2{width:42vw;height:42vw;right:6%;top:30%;background:radial-gradient(circle,#e3ba5e,transparent 60%);opacity:.45;animation:drift2 22s ease-in-out infinite}
+  .a3{width:38vw;height:38vw;left:32%;bottom:2%;background:radial-gradient(circle,#3bd6c6,transparent 62%);opacity:.40;animation:drift3 26s ease-in-out infinite}
+  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6%,5%) scale(1.12)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-7%,4%) scale(1.08)}}
+  @keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,-6%) scale(1.14)}}
+  /* faint grid + vignette */
+  .grid{position:fixed;inset:0;z-index:0;opacity:.25;pointer-events:none;
+    background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 46px,
+               linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/46px 100%;
+    mask:radial-gradient(circle at 50% 42%,#000 25%,transparent 78%)}
+  .vig{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 30%,transparent 40%,rgba(2,6,13,.7) 100%)}
+
+  .wrap{position:relative;z-index:2;width:100%;max-width:680px;padding:40px 26px;text-align:center;
+    animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  .brand{font-size:clamp(30px,7vw,46px);font-weight:800;letter-spacing:-1.2px;
+    text-shadow:0 0 38px rgba(227,186,94,.28)}
+  .brand b{color:var(--gold)}
+
+  .pill{display:inline-flex;align-items:center;gap:8px;margin:20px 0 0;
+    font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+    border:1px solid rgba(227,186,94,.45);border-radius:30px;padding:7px 16px;background:rgba(227,186,94,.06)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(227,186,94,.7);
+    animation:ping 1.8s ease-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(227,186,94,.6)}70%,100%{box-shadow:0 0 0 9px rgba(227,186,94,0)}}
+
+  /* EKG / pulse line */
+  .pulse{width:min(440px,84vw);height:62px;margin:26px auto 0;display:block;overflow:visible}
+  .pulse .base{stroke:rgba(120,150,190,.22);stroke-width:1.4;fill:none}
+  .pulse .live{stroke:var(--teal);stroke-width:2.4;fill:none;filter:drop-shadow(0 0 6px rgba(59,214,198,.7));
+    stroke-dasharray:560;stroke-dashoffset:560;animation:trace 3.2s linear infinite}
+  @keyframes trace{0%{stroke-dashoffset:560}55%{stroke-dashoffset:0}100%{stroke-dashoffset:-560}}
+
+  h1{margin:30px auto 0;font-size:clamp(23px,4.6vw,34px);line-height:1.18;font-weight:800;letter-spacing:-.6px;max-width:14ch}
+  h1 .g{color:var(--gold)}
+  .sub{margin:16px auto 0;max-width:54ch;font-size:clamp(15px,2.3vw,17px);color:var(--mut)}
+  .sub b{color:var(--ink);font-weight:600}
+
+  .meta{margin:30px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .chip{font-size:12.5px;color:var(--mut);border:1px solid var(--line);border-radius:30px;padding:7px 14px;background:rgba(255,255,255,.015)}
+  .chip b{color:var(--teal);font-weight:700}
+
+  footer{position:relative;z-index:2;margin-top:38px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:11.5px;line-height:1.7;color:var(--mut2);max-width:60ch;margin-left:auto;margin-right:auto}
+  footer .op{color:var(--mut);font-weight:600}
+
+  @media (prefers-reduced-motion: reduce){
+    .a1,.a2,.a3,.dot,.pulse .live,.wrap{animation:none}
+    .pulse .live{stroke-dashoffset:0}
+  }
+</style>
+<link rel="preload" href="/fonts/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/IBMPlexMono-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fonts/fonts.css"><style id="typesys">h1,h2,h3,.brand{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif !important;letter-spacing:-.5px}body{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}.tk,.dt,.dd,.cd b,.lpn,.coh,.stat b,.count,.code,.price b,.licap,.cap,.pill,.lit{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.2px}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"></head>
+<body>
+  <div class="aurora"><b class="a1"></b><b class="a2"></b><b class="a3"></b></div>
+  <div class="grid"></div>
+  <div class="vig"></div>
+
+  <main class="wrap">
+    <div class="brand">pdufa<b>.bio</b></div>
+
+    <div class="pill"><span class="dot"></span>Back soon</div>
+
+    <svg class="pulse" viewBox="0 0 560 62" preserveAspectRatio="none" aria-hidden="true">
+      <polyline class="base" points="0,31 150,31 175,31 188,10 201,52 214,31 250,31 268,31 280,18 292,44 304,31 560,31"/>
+      <polyline class="live" points="0,31 150,31 175,31 188,10 201,52 214,31 250,31 268,31 280,18 292,44 304,31 560,31"/>
+    </svg>
+
+    <h1>We're upgrading <span class="g">the tape.</span></h1>
+    <p class="sub">pdufa.bio &mdash; the calm, source-verified FDA&nbsp;catalyst calendar &mdash; is taking a short break while we upgrade our data and licensing. <b>Facts, not advice.</b> We'll be back shortly.</p>
+
+    <div class="meta">
+      <span class="chip"><b>PDUFA</b> calendar</span>
+      <span class="chip"><b>CRL</b> + approval archive</span>
+      <span class="chip"><b>Run-up</b></span>
+    </div>
+
+    <footer>
+      <span class="op">Owned and operated by Odin Catalyst LLC.</span><br>
+      Not affiliated with or endorsed by the FDA. Informational and educational only &mdash; not investment advice; no individual-drug approval probabilities. &copy; 2026 Odin Catalyst LLC.
+    </footer>
+  </main>
+<script src="/cmdk.js" defer></script></body>
+</html>
