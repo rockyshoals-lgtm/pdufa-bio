@@ -46,10 +46,13 @@ jobs:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python polygon_enrich.py
 
-      - name: Regenerate homepage board (sorted + sparklines + auto-promote)
+      - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python build_home_board.py
+
+      - name: Mark decided PDUFAs on the calendar pages (idempotent)
+        run: python mark_calendar_decided.py
 
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         run: |
@@ -94,7 +97,7 @@ jobs:
         run: |
           git config user.name  "pdufa-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html
+          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"
           else

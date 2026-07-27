@@ -61,6 +61,59 @@ def poly_closes(key, t, days=95):
     return []
 
 
+def poly_daily(key, t, days=95):
+    """[(iso_date, close)] ascending; [] on any failure / no key. Same source as poly_closes but
+    keeps the date so a decision day can be located and marked on the sparkline."""
+    if not key:
+        return []
+    start = (TODAY - dt.timedelta(days=days)).isoformat()
+    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{TODAY.isoformat()}"
+           f"?adjusted=true&sort=asc&limit=200&apiKey={key}")
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=25) as r:
+                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
+                out = []
+                for x in rows:
+                    c, ts = x.get("c"), x.get("t")
+                    if c is None or ts is None:
+                        continue
+                    out.append((dt.datetime.fromtimestamp(ts / 1000, dt.timezone.utc).date().isoformat(), c))
+                return out
+        except urllib.error.HTTPError as e:
+            if e.code in (429,) or e.code >= 500:
+                time.sleep(2 ** attempt); continue
+            return []
+        except Exception:
+            time.sleep(1)
+    return []
+
+
+def sparkline_reaction(dated, decision_date):
+    """64x20 run-up polyline with a GOLD dot on the decision day, so the day-of reaction is visible.
+    Returns (svg, day_of_move_pct_or_None). Move = decision-day close vs the prior trading close."""
+    if len(dated) < 2:
+        return "", None
+    win = dated[-44:] if len(dated) > 44 else dated
+    ds = [d for d, _ in win]; cs = [c for _, c in win]
+    lo, hi = min(cs), max(cs); rng = (hi - lo) or 1.0; n = len(cs)
+    X = lambda i: round(i * 64 / (n - 1), 1)
+    Y = lambda c: round(19 - (c - lo) / rng * 18, 1)
+    pts = " ".join(f"{X(i)},{Y(c)}" for i, c in enumerate(cs))
+    color = "#46d17f" if cs[-1] >= cs[0] else "#ff7a72"
+    di = next((i for i, d in enumerate(ds) if d >= decision_date), n - 1)  # first day on/after decision
+    alld = [d for d, _ in dated]; allc = [c for _, c in dated]
+    move = None
+    if decision_date in alld:
+        j = alld.index(decision_date)
+        if j > 0 and allc[j - 1]:
+            move = (allc[j] / allc[j - 1] - 1) * 100.0
+    dot = f'<circle cx="{X(di)}" cy="{Y(cs[di])}" r="2.4" fill="#e3ba5e" stroke="#02060d" stroke-width="0.6"/>'
+    svg = (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto">'
+           f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="1.4"/>{dot}</svg>')
+    return svg, move
+
+
 def sparkline(closes):
     """A 64x20 polyline from closes; green if it ended up over the window, red if down. Empty -> ''."""
     cs = closes[-44:] if len(closes) > 44 else closes
@@ -157,10 +210,14 @@ def render_decided(decs, key):
         cls = "dec ap" if outcome == "ap" else "dec cr"   # CSS styles CRL cards via .dec.cr
         icon = "✓" if outcome == "ap" else "✕"
         word = "Approved" if outcome == "ap" else "CRL"
-        spk = sparkline(poly_closes(key, tk))
+        spk, move = sparkline_reaction(poly_daily(key, tk), date)   # gold dot marks the decision day
+        mv = ""
+        if move is not None:
+            mc = "#46d17f" if move >= 0 else "#ff7a72"
+            mv = f' · <b style="color:{mc}">{"+" if move >= 0 else ""}{move:.0f}%</b>'
         cards.append(
             f'<a class="{cls}" href="/fda-decision/{tk}-{date}"><span class="di">{icon}</span>'
-            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{date} · {word}</span></a>')
+            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{date} · {word}{mv}</span></a>')
     return "".join(cards)
 
 
