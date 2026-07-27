@@ -16,8 +16,9 @@ name: pdufa daily rebuild
 
 on:
   schedule:
-    - cron: '0 12 * * *'      # 12:00 UTC = 05:00 PT daily
-  workflow_dispatch: {}         # lets you run it manually from the Actions tab
+    - cron: '0 12 * * *'      # 12:00 UTC = 05:00 PT
+    - cron: '0 21 * * *'      # 21:00 UTC = 14:00 PT (midday refresh)
+  workflow_dispatch: {}         # manual "Run workflow" button in the Actions tab
 
 concurrency:
   group: pdufa-rebuild
@@ -57,21 +58,36 @@ jobs:
             echo "::group::$t"; python "$t"; echo "::endgroup::"
           done
 
-      - name: FDA reconciliation (advisory) — capture the review list
+      - name: FDA reconciliation (advisory) — approvals not in our archive
         run: python tests/test_fda_reconcile.py --days 30 | tee reconcile.txt
 
-      - name: Open an issue if the FDA feed has an approval we don't have
+      - name: Detect resolved PDUFAs (advisory) — pending catalysts whose date has passed
+        if: ${{ always() }}
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python check_pdufa_decided.py > decided.txt 2>&1 || true; cat decided.txt
+
+      - name: Open ONE review issue if anything needs primary-source verification
         if: ${{ always() }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if grep -q "NOT IN ARCHIVE" reconcile.txt; then
-            gh issue create \
-              --title "FDA reconciliation: approval(s) not in our archive ($(date -u +%F))" \
-              --body "$(cat reconcile.txt)" \
-              --label "reconciliation" || echo "issue create skipped"
+          NEED=0
+          grep -q "NOT IN ARCHIVE" reconcile.txt && NEED=1
+          grep -q "ALREADY DECIDED" decided.txt && NEED=1
+          if [ "$NEED" = "1" ]; then
+            {
+              echo "The server-side rebuild found item(s) needing primary-source verification before publishing."
+              echo "(The pipeline never auto-publishes an outcome — that step needs judgment.)"
+              echo; echo "## FDA reconciliation — approvals possibly not in our archive"
+              echo '```'; cat reconcile.txt; echo '```'
+              echo; echo "## Resolved-PDUFA scan — pending catalysts that may have decided"
+              echo '```'; cat decided.txt; echo '```'
+            } > issue.md
+            gh issue create --title "pdufa.bio review: verify + publish ($(date -u +%F))" \
+              --body-file issue.md --label "reconciliation" || echo "issue create skipped"
           else
-            echo "reconciliation clean — no issue"
+            echo "Nothing needs review this run."
           fi
 
       - name: Commit refreshed data (Vercel auto-deploys this push)

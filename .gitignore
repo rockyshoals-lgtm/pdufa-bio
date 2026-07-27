@@ -34,6 +34,11 @@ xbi_daily_cache.json
 *.xlsx
 *.csv
 
+# site-data CSVs the site + CI guards depend on — re-include despite the *.csv rule above
+!catalysts_out/conference_presentations_history.csv
+!catalysts_out/catalysts_public.csv
+!conf_study/conference_runup_PUBLISHED.csv
+
 # --- model artifacts / research (not part of the site) ---
 gungnir_*.json
 odin_v*_deploy.json
