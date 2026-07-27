@@ -24,7 +24,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 HOME = os.path.join(SITE, "index.html")
 API = os.path.join(SITE, "api", "data.js")
+DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 DECISIONS = os.path.join(SITE, "decisions", "index.html")
+MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 TODAY = dt.date.today()
 GRACE_DAYS = 10   # keep a just-passed, unresolved PDUFA visible this long ("awaiting decision")
 COH = {"Nano": "±10%", "Micro": "±7%", "Small": "±3%", "Mid": "±2%", "Large": "±1%", "": "±3%"}
@@ -221,6 +223,43 @@ def render_decided(decs, key):
     return "".join(cards)
 
 
+def freshness_label():
+    """Server-side twin of the homepage freshness JS: MODE of updated_at over FORWARD PDUFA rows.
+    Bakes 'Data through {date}' into the HTML so a non-JS crawler sees the real currency, not the
+    'free, no login' fallback. Returns (label, age_days) or (None, None)."""
+    try:
+        src = open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
+        arr, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
+    except Exception:
+        return None, None
+    tISO = TODAY.isoformat(); counts = {}
+    for r in arr:
+        if r.get("type") != "PDUFA" or r.get("st") == "Decided":
+            continue
+        ua = str(r.get("ua") or "")[:10]; d = str(r.get("d") or "")[:10]
+        if not ua or d < tISO:
+            continue
+        counts[ua] = counts.get(ua, 0) + 1
+    if not counts:
+        return None, None
+    best = max(counts, key=counts.get)
+    y, m, dd = (int(x) for x in best.split("-"))
+    age = (TODAY - dt.date(y, m, dd)).days
+    return f"Data through {MON3[m - 1]} {dd} · free, no login", age
+
+
+def stamp_freshness(html):
+    label, age = freshness_label()
+    if not label:
+        return html
+    html = re.sub(r'(<span id="fresh">).*?(</span>)', lambda m: m.group(1) + label + m.group(2),
+                  html, count=1, flags=re.S)
+    if age is not None and age > 7:  # never overstate currency: dim the dot server-side too
+        html = html.replace('<span class="dot"></span><span id="fresh">',
+                            '<span class="dot" style="background:#e3ba5e;box-shadow:none"></span><span id="fresh">', 1)
+    return html
+
+
 def replace_block(html, open_tag, inner):
     i = html.find(open_tag)
     if i < 0:
@@ -247,6 +286,7 @@ def main():
     html = open(HOME, encoding="utf-8").read()
     html = replace_block(html, '<div class="list">', render_upcoming(cats, key))
     html = replace_block(html, '<div class="decs">', render_decided(decs, key))
+    html = stamp_freshness(html)   # server-render the "Data through {date}" badge for non-JS crawlers
 
     if a.dry_run:
         print("\nDRY RUN -- not written.")
