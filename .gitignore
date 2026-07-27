@@ -54,6 +54,9 @@ __pycache__/
 *.bak_*
 logs/
 runs/
+.odin_api_cache*/
+.~lock.*#
+*.tmp
 
 # ============================================================================
 #  What SHOULD be committed (the Action needs these — do NOT ignore them):
