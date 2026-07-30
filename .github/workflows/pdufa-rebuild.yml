@@ -70,6 +70,10 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python check_pdufa_decided.py > decided.txt 2>&1 || true; cat decided.txt
 
+      - name: Detect AdComm meetings needing a vote result (advisory)
+        if: ${{ always() }}
+        run: python check_adcom_results.py > adcom.txt 2>&1 || true; cat adcom.txt
+
       - name: Open ONE review issue if anything needs primary-source verification
         if: ${{ always() }}
         env:
@@ -78,6 +82,7 @@ jobs:
           NEED=0
           grep -q "NOT IN ARCHIVE" reconcile.txt && NEED=1
           grep -q "ALREADY DECIDED" decided.txt && NEED=1
+          grep -q "ADCOM NEEDS RESULT" adcom.txt && NEED=1
           if [ "$NEED" = "1" ]; then
             {
               echo "The server-side rebuild found item(s) needing primary-source verification before publishing."
@@ -86,6 +91,8 @@ jobs:
               echo '```'; cat reconcile.txt; echo '```'
               echo; echo "## Resolved-PDUFA scan — pending catalysts that may have decided"
               echo '```'; cat decided.txt; echo '```'
+              echo; echo "## AdComm meetings past-date with no published vote result"
+              echo '```'; cat adcom.txt; echo '```'
             } > issue.md
             gh issue create --title "pdufa.bio review: verify + publish ($(date -u +%F))" \
               --body-file issue.md --label "reconciliation" || echo "issue create skipped"
