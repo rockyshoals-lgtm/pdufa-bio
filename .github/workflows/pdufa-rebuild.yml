@@ -54,6 +54,10 @@ jobs:
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
+      - name: Mine readout dates (enrollment-complete trials only; no enrolling trials)
+        continue-on-error: true          # advisory data source: never block the deploy
+        run: python readout_miner.py
+
       - name: Refresh /readouts (drop past months + auto-log readout window moves)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
@@ -117,6 +121,7 @@ jobs:
           git config user.name  "pdufa-bot"
           git config user.email "bot@users.noreply.github.com"
           git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html
+          git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"
           else

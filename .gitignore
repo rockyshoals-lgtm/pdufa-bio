@@ -35,6 +35,7 @@ xbi_daily_cache.json
 *.csv
 
 # site-data CSVs the site + CI guards depend on — re-include despite the *.csv rule above
+!readout_miner.csv
 !catalysts_out/conference_presentations_history.csv
 !catalysts_out/catalysts_public.csv
 !conf_study/conference_runup_PUBLISHED.csv
