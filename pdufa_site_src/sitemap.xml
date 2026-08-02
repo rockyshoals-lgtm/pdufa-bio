@@ -522,4 +522,4 @@
 <url><loc>https://www.pdufa.bio/glossary</loc><lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://www.pdufa.bio/changelog</loc><lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq></url>
 
-</urlset>
+<url><loc>https://www.pdufa.bio/research/sls-deep-dive</loc><changefreq>weekly</changefreq><priority>0.8</priority></url></urlset>

@@ -1,0 +1,212 @@
+[
+ {
+  "ann": "2024-11-27",
+  "trade_date": "2024-11-27",
+  "day_of_pct": -2.500000000000002,
+  "plus1_pct": -5.833333333333335,
+  "plus5_pct": -8.333333333333325,
+  "vol_x": 1.8250245172584054,
+  "label": "Preclinical: ASXL1 mutations predict SLS009 response",
+  "close": 1.17
+ },
+ {
+  "ann": "2024-12-09",
+  "trade_date": "2024-12-09",
+  "day_of_pct": -4.3859649122806825,
+  "plus1_pct": -8.771929824561397,
+  "plus5_pct": -19.289473684210513,
+  "vol_x": 2.1388125228353454,
+  "label": "Phase 2 SLS009 positive OS + ORR data",
+  "close": 1.09
+ },
+ {
+  "ann": "2024-12-10",
+  "trade_date": "2024-12-10",
+  "day_of_pct": -4.587155963302758,
+  "plus1_pct": -17.844036697247713,
+  "plus5_pct": -19.110091743119273,
+  "vol_x": 2.798064899564467,
+  "label": "REGAL: 60-event INTERIM ANALYSIS triggered",
+  "close": 1.04
+ },
+ {
+  "ann": "2025-01-23",
+  "trade_date": "2025-01-23",
+  "day_of_pct": -13.254385964912274,
+  "plus1_pct": -11.403508771929815,
+  "plus5_pct": 16.666666666666675,
+  "vol_x": 17.365019707564638,
+  "label": "REGAL: positive interim analysis outcome (IDMC continue)",
+  "close": 0.9889
+ },
+ {
+  "ann": "2025-01-28",
+  "trade_date": "2025-01-28",
+  "day_of_pct": -17.021276595744684,
+  "plus1_pct": -13.475177304964536,
+  "plus5_pct": 5.673758865248235,
+  "vol_x": 2.728775466814908,
+  "label": "$25M registered direct offering",
+  "close": 1.17
+ },
+ {
+  "ann": "2025-02-20",
+  "trade_date": "2025-02-20",
+  "day_of_pct": 3.9682539682539764,
+  "plus1_pct": 0.7936507936507908,
+  "plus5_pct": -9.523809523809534,
+  "vol_x": 0.45868408761802554,
+  "label": "Phase 2a SLS009 + zanubrutinib DLBCL positive data",
+  "close": 1.31
+ },
+ {
+  "ann": "2025-04-08",
+  "trade_date": "2025-04-08",
+  "day_of_pct": 0.0,
+  "plus1_pct": 7.692307692307709,
+  "plus5_pct": 24.03846153846154,
+  "vol_x": 2.372855880718179,
+  "label": "Phase 2 SLS009 r/r AML Cohort 3 positive OS",
+  "close": 1.04
+ },
+ {
+  "ann": "2025-04-28",
+  "trade_date": "2025-04-28",
+  "day_of_pct": 0.7142857142857117,
+  "plus1_pct": 2.1428571428571352,
+  "plus5_pct": 22.142857142857153,
+  "vol_x": 2.423327840672969,
+  "label": "AACR 2025 preclinical: TP53-mutated AML",
+  "close": 1.41
+ },
+ {
+  "ann": "2025-05-13",
+  "trade_date": "2025-05-13",
+  "day_of_pct": -8.441558441558449,
+  "plus1_pct": -1.9480519480519543,
+  "plus5_pct": 25.97402597402596,
+  "vol_x": 1.695174652845978,
+  "label": "Q1 2025 results",
+  "close": 1.41
+ },
+ {
+  "ann": "2025-05-15",
+  "trade_date": "2025-05-15",
+  "day_of_pct": 5.96026490066226,
+  "plus1_pct": 7.947019867549665,
+  "plus5_pct": 16.55629139072847,
+  "vol_x": 1.3186035350758385,
+  "label": "First pediatric AML patient dosed (SLS009)",
+  "close": 1.6
+ },
+ {
+  "ann": "2025-06-02",
+  "trade_date": "2025-06-02",
+  "day_of_pct": -7.602339181286544,
+  "plus1_pct": -4.093567251461994,
+  "plus5_pct": -8.187134502923977,
+  "vol_x": 1.3495066231761368,
+  "label": "ASCO 2025 preclinical (ASXL1 CRC)",
+  "close": 1.58
+ },
+ {
+  "ann": "2025-08-07",
+  "trade_date": "2025-08-07",
+  "day_of_pct": 0.6289308176100628,
+  "plus1_pct": -0.6289308176100628,
+  "plus5_pct": -2.515723270440251,
+  "vol_x": 0.4817433105934749,
+  "label": "IDMC periodic review: continue REGAL without modification",
+  "close": 1.6
+ },
+ {
+  "ann": "2025-10-27",
+  "trade_date": "2025-10-27",
+  "day_of_pct": -2.5125628140703515,
+  "plus1_pct": 0.5025125628140614,
+  "plus5_pct": -10.050251256281406,
+  "vol_x": 1.057749611711405,
+  "label": "Warrant exercise financing",
+  "close": 1.94
+ },
+ {
+  "ann": "2025-12-07",
+  "trade_date": "2025-12-08",
+  "day_of_pct": 4.597701149425282,
+  "plus1_pct": 9.195402298850563,
+  "plus5_pct": 17.24137931034484,
+  "vol_x": 2.679395290042328,
+  "label": "ASH 2025: Phase 2 SLS009 46% ORR in r/r AML-MR",
+  "close": 1.82
+ },
+ {
+  "ann": "2025-12-29",
+  "trade_date": "2025-12-29",
+  "day_of_pct": 16.724738675958186,
+  "plus1_pct": 15.33101045296168,
+  "plus5_pct": 42.85714285714284,
+  "vol_x": 4.30194640217247,
+  "label": "REGAL trial update",
+  "close": 3.35
+ },
+ {
+  "ann": "2026-01-14",
+  "trade_date": "2026-01-14",
+  "day_of_pct": -0.9638554216867434,
+  "plus1_pct": -7.469879518072298,
+  "plus5_pct": 8.674698795180703,
+  "vol_x": 0.699892181201872,
+  "label": "IMPACT-AML agreement (Europe expansion)",
+  "close": 4.11
+ },
+ {
+  "ann": "2026-03-12",
+  "trade_date": "2026-03-12",
+  "day_of_pct": -8.211678832116787,
+  "plus1_pct": -2.007299270072993,
+  "plus5_pct": -5.109489051094895,
+  "vol_x": 1.34252430920119,
+  "label": "First patient enrolled, newly diagnosed 1L AML trial",
+  "close": 5.03
+ },
+ {
+  "ann": "2026-03-17",
+  "trade_date": "2026-03-17",
+  "day_of_pct": -5.97014925373135,
+  "plus1_pct": -7.649253731343286,
+  "plus5_pct": -6.809701492537313,
+  "vol_x": 1.0336655088285778,
+  "label": "AACR 2026 preclinical announcement",
+  "close": 5.04
+ },
+ {
+  "ann": "2026-03-19",
+  "trade_date": "2026-03-19",
+  "day_of_pct": 5.050505050505061,
+  "plus1_pct": -3.838383838383841,
+  "plus5_pct": 0.0,
+  "vol_x": 0.9182692829559768,
+  "label": "FY2025 results",
+  "close": 5.2
+ },
+ {
+  "ann": "2026-05-12",
+  "trade_date": "2026-05-12",
+  "day_of_pct": -0.5714285714285783,
+  "plus1_pct": 24.380952380952394,
+  "plus5_pct": 44.57142857142857,
+  "vol_x": 1.2636004580006432,
+  "label": "Q1 2026 results - 78 of 80 events as of May 11",
+  "close": 5.22
+ },
+ {
+  "ann": "2026-06-25",
+  "trade_date": "2026-06-25",
+  "day_of_pct": 14.830970556161382,
+  "plus1_pct": 35.114503816793906,
+  "plus5_pct": 63.3587786259542,
+  "vol_x": 1.4768720970775309,
+  "label": "Stock surge (no company PR identified)",
+  "close": 10.53
+ }
+]
