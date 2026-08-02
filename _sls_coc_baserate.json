@@ -1,0 +1,35 @@
+{
+ "window_days": 365,
+ "as_of": "2026-08-01",
+ "firms": {
+  "SLS": {
+   "filed": "2026-06-25",
+   "name": "SELLAS Life Sciences Group, Inc."
+  },
+  "STOK": {
+   "filed": "2025-10-06",
+   "name": "Stoke Therapeutics, Inc."
+  },
+  "XENE": {
+   "filed": "2025-12-01",
+   "name": "Xenon Pharmaceuticals Inc."
+  },
+  "IMNN": {
+   "filed": "2026-05-04",
+   "name": "Imunon, Inc."
+  },
+  "ARDX": {
+   "filed": "2025-08-04",
+   "name": "ARDELYX, INC."
+  }
+ },
+ "alive": [
+  "ARDX",
+  "IMNN",
+  "SLS",
+  "STOK",
+  "XENE"
+ ],
+ "dead": [],
+ "unknown": []
+}
