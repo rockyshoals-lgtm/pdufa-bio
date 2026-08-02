@@ -40,10 +40,34 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 AGENT = os.environ.get("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
 TICKER_MAP_CACHE = os.path.join(HERE, "bpc_data", "_edgar_ticker_map.json")
 OUT = os.path.join(HERE, "readout_miner.csv")
-COLS = ["ticker", "pcd", "pcd_type", "days_to_pcd", "bucket", "status", "phase", "enroll",
-        "enroll_type", "nct", "company", "title"]
+TODAY = dt.date.today()
+COLS = ["ticker", "best_date", "date_source", "confidence", "guided_date", "guided_precision",
+        "guided_form", "guided_filed", "pcd", "pcd_type", "days_to_pcd", "bucket", "status",
+        "phase", "enroll", "enroll_type", "nct", "company", "title"]
 
 # The ONLY statuses where enrollment is finished -> a readout is actually coming.
+# ---------------------------------------------------------------- EDGAR guidance source
+# Readout DATES are usually announced by the company, not posted to ClinicalTrials.gov. CT.gov gives
+# you the trial's data-lock estimate; EDGAR gives you what the company actually GUIDED ("topline data
+# expected in Q4 2026"). Press releases for US issuers are filed as 8-K exhibits and for foreign
+# issuers as 6-K, and guidance is repeated in 10-Q/10-K MD&A and in registration statements -- so all
+# of those are searched, not just 8-K/6-K.
+FTS = "https://efts.sec.gov/LATEST/search-index"
+EDGAR_FORMS = "8-K,6-K,10-Q,10-K,20-F,S-1,424B4,424B5"
+GUIDE_PHRASES = [
+    "topline data expected", "topline results expected", "data expected in", "data are expected",
+    "results are expected", "results expected in", "readout expected", "readout anticipated",
+    "results anticipated", "data anticipated in", "expects to report topline",
+    "expect to report topline", "plans to report topline", "on track to report",
+    "anticipate reporting", "initial data expected", "interim analysis expected",
+    "primary endpoint data expected", "expects to announce topline", "data readout expected",
+    "proof-of-concept data expected", "topline readout",
+]
+# Date expressions companies actually use, most specific first -> (normalized date, precision)
+MONTHS = {m.lower(): i for i, m in enumerate(
+    ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+     "October", "November", "December"], 1)}
+
 READOUT_STATUS = {"ACTIVE_NOT_RECRUITING", "COMPLETED"}
 ENROLLING_STATUS = {"RECRUITING", "NOT_YET_RECRUITING", "ENROLLING_BY_INVITATION"}
 DEAD_STATUS = {"WITHDRAWN", "TERMINATED", "SUSPENDED", "UNKNOWN", "NO_LONGER_AVAILABLE"}
@@ -168,6 +192,165 @@ def classify(status, pcd, today):
     return "SCHEDULED (>6mo)"
 
 
+def _eom(y, m):
+    return dt.date(y, m, [31, 29 if y % 4 == 0 else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1])
+
+
+def parse_guided_date(text):
+    """Pull the guided readout date out of company language.
+    Returns (iso_date, precision) or (None, None). Dates are normalized to the END of the guided
+    window (a 'Q4 2026' readout is not promised on Oct 1), and the precision is recorded so nothing
+    is presented as more exact than the company actually said."""
+    t = (text or "").lower()
+    y_now = TODAY.year
+    # explicit month + year -> month precision
+    m = re.search(r'\b(' + "|".join(MONTHS) + r')\s+(20\d{2})\b', t)
+    if m:
+        y, mo = int(m.group(2)), MONTHS[m.group(1)]
+        return _eom(y, mo).isoformat(), "month"
+    # quarter -- companies write "Q4 2026", "4Q 2026", "fourth quarter of 2026"
+    m = re.search(r'\b(?:q\s?([1-4])\s*(20\d{2})|([1-4])q\s*(20\d{2})'
+                  r'|([1-4])(?:st|nd|rd|th)\s+quarter\s+(?:of\s+)?(20\d{2})'
+                  r'|(first|second|third|fourth)\s+quarter\s+(?:of\s+)?(20\d{2}))\b', t)
+    if m:
+        if m.group(1):
+            q, y = int(m.group(1)), int(m.group(2))
+        elif m.group(3):
+            q, y = int(m.group(3)), int(m.group(4))
+        elif m.group(5):
+            q, y = int(m.group(5)), int(m.group(6))
+        else:
+            q = {"first": 1, "second": 2, "third": 3, "fourth": 4}[m.group(7)]; y = int(m.group(8))
+        return _eom(y, q * 3).isoformat(), "quarter"
+    # half / mid / year-end
+    m = re.search(r'\b(?:([12])h\s*(20\d{2})|(first|second)\s+half\s+(?:of\s+)?(20\d{2}))\b', t)
+    if m:
+        if m.group(1):
+            h, y = int(m.group(1)), int(m.group(2))
+        else:
+            h = 1 if m.group(3) == "first" else 2; y = int(m.group(4))
+        return _eom(y, h * 6).isoformat(), "half"
+    m = re.search(r'\bmid[-\s]?(20\d{2})\b', t)
+    if m:
+        return _eom(int(m.group(1)), 6).isoformat(), "half"
+    m = re.search(r'\b(?:year[-\s]?end|end of)\s+(20\d{2})\b', t)
+    if m:
+        return _eom(int(m.group(1)), 12).isoformat(), "half"
+    m = re.search(r'\b(early|late)\s+(20\d{2})\b', t)
+    if m:
+        y = int(m.group(2))
+        return (_eom(y, 3) if m.group(1) == "early" else _eom(y, 12)).isoformat(), "half"
+    # bare year ("topline data expected in 2027") -> year precision, end of year
+    m = re.search(r'\bin\s+(20\d{2})\b', t)
+    if m:
+        y = int(m.group(1))
+        if TODAY.year <= y <= TODAY.year + 3:
+            return _eom(y, 12).isoformat(), "year"
+    return None, None
+
+
+def _fts(phrase, start, end, frm=0):
+    q = urllib.parse.urlencode({"q": f'"{phrase}"', "startdt": start, "enddt": end,
+                                "forms": EDGAR_FORMS, "from": frm})
+    raw = _get(f"{FTS}?{q}")
+    if not raw:
+        return None
+    try:
+        return json.loads(raw)
+    except Exception:
+        return None
+
+
+TICK = re.compile(r'\(([A-Z][A-Z.\-]{0,5})\)')
+
+
+ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
+TAG = re.compile(r"<[^>]+>")
+
+
+def _doc_text(cik, adsh, fname):
+    url = f"{ARCHIVES}/{str(cik).lstrip('0')}/{adsh.replace('-', '')}/{fname}"
+    raw = _get(url, tries=3)
+    if not raw:
+        return ""
+    return re.sub(r"\s+", " ", TAG.sub(" ", raw))
+
+
+def edgar_guidance(days, max_docs=150, verbose=True):
+    """{TICKER: {...}} of company-GUIDED readout dates, mined from EDGAR full text.
+
+    Two stages, because EDGAR's search API returns NO highlight snippets -- the guided date only
+    exists inside the filing itself:
+      1. full-text search each guidance phrase across the window -> candidate filings (+ ticker)
+      2. fetch the filing and read the sentence around the phrase -> parse the guided date
+
+    Filings are deduped and the newest are fetched first, so the doc budget is spent on current
+    guidance rather than stale repeats."""
+    step = 30
+    slices, i = [], 0
+    while i < days:
+        b = TODAY - dt.timedelta(days=min(i + step, days))
+        e = TODAY - dt.timedelta(days=i)
+        slices.append((b.isoformat(), e.isoformat()))
+        i += step
+
+    cands, calls = {}, 0
+    for ph in GUIDE_PHRASES:
+        for (a, b) in slices:
+            j = _fts(ph, a, b)
+            calls += 1
+            if not j:
+                continue
+            for h in (j.get("hits", {}) or {}).get("hits", []) or []:
+                src = h.get("_source", {}) or {}
+                mt = TICK.search(" ".join(src.get("display_names", []) or []))
+                if not mt:
+                    continue
+                _id = h.get("_id", "")
+                if ":" not in _id:
+                    continue
+                adsh, fname = _id.split(":", 1)
+                key = (mt.group(1), adsh, fname)
+                rec = cands.setdefault(key, {"phrases": set(), "form": src.get("file_type", ""),
+                                             "filed": src.get("file_date", ""),
+                                             "cik": (src.get("ciks") or [""])[0]})
+                rec["phrases"].add(ph)
+            time.sleep(0.11)          # SEC fair-use pacing
+
+    ordered = sorted(cands.items(), key=lambda kv: kv[1]["filed"] or "", reverse=True)[:max_docs]
+    out, parsed, fetched = {}, 0, 0
+    for (tk, adsh, fname), meta in ordered:
+        txt = _doc_text(meta["cik"], adsh, fname)
+        fetched += 1
+        if not txt:
+            continue
+        low = txt.lower()
+        best = None
+        for ph in meta["phrases"]:
+            pos = 0
+            while True:
+                k = low.find(ph, pos)
+                if k < 0:
+                    break
+                snip = txt[max(0, k - 200): k + 260]
+                d, prec = parse_guided_date(snip)
+                if d and d >= TODAY.isoformat() and (best is None or d < best[0]):
+                    best = (d, prec, ph, snip)
+                pos = k + len(ph)
+        if best:
+            parsed += 1
+            prev = out.get(tk)
+            if prev is None or best[0] < prev["guided_date"]:
+                out[tk] = {"guided_date": best[0], "guided_precision": best[1], "phrase": best[2],
+                           "form": meta["form"], "filed": meta["filed"], "adsh": adsh}
+        time.sleep(0.09)
+    if verbose:
+        log(f"  EDGAR: {calls} full-text queries over {days}d across [{EDGAR_FORMS}] -> "
+            f"{len(cands)} candidate filings; fetched {fetched}, parsed a forward date from {parsed}; "
+            f"{len(out)} tickers with company-guided dates")
+    return out
+
+
 def load_universe():
     tks, sources = set(), {}
     def add(t, src):
@@ -214,6 +397,10 @@ def main():
     ap.add_argument("--include-recruiting", action="store_true",
                     help="also emit a separate WATCH list of still-enrolling names (default: off)")
     ap.add_argument("--limit", type=int, default=0, help="cap tickers scanned (0 = all; for quick runs)")
+    ap.add_argument("--source", choices=["both", "ctgov", "edgar"], default="both",
+                    help="which date sources to use (default both)")
+    ap.add_argument("--edgar-days", type=int, default=180,
+                    help="how far back to full-text search EDGAR for guided readout dates")
     a = ap.parse_args()
 
     today = dt.date.today()
@@ -290,18 +477,58 @@ def main():
             write_csv(sorted(out, key=lambda r: r["pcd"]), OUT)  # checkpoint
         time.sleep(0.05)
 
-    out.sort(key=lambda r: r["pcd"])
+    # ---- merge in the EDGAR company-guided dates -------------------------------------------
+    guided = {}
+    if a.source in ("both", "edgar"):
+        log("")
+        guided = edgar_guidance(a.edgar_days)
+
+    by_tk = {r["ticker"]: r for r in out}
+    for tk, g in guided.items():
+        r = by_tk.get(tk)
+        if r:
+            r.update({"guided_date": g["guided_date"], "guided_precision": g["guided_precision"],
+                      "guided_form": g["form"], "guided_filed": g["filed"]})
+        elif a.source in ("both", "edgar"):
+            # Company guided a readout but CT.gov shows no enrollment-complete trial. Still a real
+            # readout date -- this is the SLS/"never in CT.gov" case the whole upgrade exists for.
+            by_tk[tk] = {"ticker": tk, "company": tmap.get(tk, ""), "pcd": "", "pcd_type": "",
+                         "days_to_pcd": "", "status": "", "phase": "", "enroll": "",
+                         "enroll_type": "", "nct": "", "title": "",
+                         "bucket": "GUIDED (company statement)",
+                         "guided_date": g["guided_date"], "guided_precision": g["guided_precision"],
+                         "guided_form": g["form"], "guided_filed": g["filed"]}
+
+    merged = list(by_tk.values())
+    for r in merged:
+        gd, pcd = r.get("guided_date") or "", r.get("pcd") or ""
+        if gd and pcd:
+            r["date_source"], r["confidence"] = "BOTH", "high"
+            # prefer the company's own guidance; it is what the market trades
+            r["best_date"] = gd
+        elif gd:
+            r["date_source"], r["confidence"], r["best_date"] = "EDGAR", "medium", gd
+        else:
+            r["date_source"], r["confidence"], r["best_date"] = "CTGOV", "medium", pcd
+    merged.sort(key=lambda r: (r.get("best_date") or "9999"))
+    out = merged
     dst = write_csv(out, OUT)
 
-    log("\n" + "=" * 90)
-    log(f"  {len(out)} READOUTS (enrollment complete) -> {os.path.basename(dst)}")
-    log("=" * 90)
-    log(f"  {'tkr':<6}{'PCD':<12}{'in':>6}  {'status':<22}{'phase':<14}{'bucket':<26}{'nct':<12}")
-    log("  " + "-" * 86)
+    nboth = sum(1 for r in out if r["date_source"] == "BOTH")
+    nedgar = sum(1 for r in out if r["date_source"] == "EDGAR")
+    nctg = sum(1 for r in out if r["date_source"] == "CTGOV")
+    log("\n" + "=" * 100)
+    log(f"  {len(out)} READOUT DATES -> {os.path.basename(dst)}   "
+        f"[BOTH sources {nboth} | EDGAR-guided {nedgar} | CT.gov only {nctg}]")
+    log("=" * 100)
+    log(f"  {'tkr':<6}{'best date':<12}{'src':<7}{'conf':<8}{'guided':<12}{'prec':<9}"
+        f"{'status':<22}{'bucket':<26}")
+    log("  " + "-" * 96)
     for r in out:
-        est = "~" if str(r["pcd_type"]).upper().startswith("EST") else " "
-        log(f"  {r['ticker']:<6}{est}{r['pcd']:<11}{r['days_to_pcd']:>5}d  "
-            f"{r['status'][:21]:<22}{r['phase'][:13]:<14}{r['bucket']:<26}{r['nct']:<12}")
+        log(f"  {r['ticker']:<6}{(r.get('best_date') or '')[:10]:<12}{r['date_source']:<7}"
+            f"{r['confidence']:<8}{(r.get('guided_date') or '-')[:10]:<12}"
+            f"{(r.get('guided_precision') or '-'):<9}{(r.get('status') or '-')[:21]:<22}"
+            f"{r.get('bucket',''):<26}")
 
     if a.include_recruiting and watch:
         watch.sort(key=lambda r: r["pcd"])
