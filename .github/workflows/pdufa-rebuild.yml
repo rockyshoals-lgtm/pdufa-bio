@@ -54,6 +54,11 @@ jobs:
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
+      - name: Refresh /readouts (drop past months + auto-log readout window moves)
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python build_readout_results.py
+
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         run: |
           set -e
@@ -74,6 +79,10 @@ jobs:
         if: ${{ always() }}
         run: python check_adcom_results.py > adcom.txt 2>&1 || true; cat adcom.txt
 
+      - name: Detect readouts needing exact date + outcome (advisory)
+        if: ${{ always() }}
+        run: python check_readouts_reported.py > readouts.txt 2>&1 || true; cat readouts.txt
+
       - name: Open ONE review issue if anything needs primary-source verification
         if: ${{ always() }}
         env:
@@ -83,6 +92,7 @@ jobs:
           grep -q "NOT IN ARCHIVE" reconcile.txt && NEED=1
           grep -q "ALREADY DECIDED" decided.txt && NEED=1
           grep -q "ADCOM NEEDS RESULT" adcom.txt && NEED=1
+          grep -q "READOUT NEEDS VERIFICATION" readouts.txt && NEED=1
           if [ "$NEED" = "1" ]; then
             {
               echo "The server-side rebuild found item(s) needing primary-source verification before publishing."
@@ -93,6 +103,8 @@ jobs:
               echo '```'; cat decided.txt; echo '```'
               echo; echo "## AdComm meetings past-date with no published vote result"
               echo '```'; cat adcom.txt; echo '```'
+              echo; echo "## Readouts whose window closed last month (confirm exact date + outcome to upgrade)"
+              echo '```'; cat readouts.txt; echo '```'
             } > issue.md
             gh issue create --title "pdufa.bio review: verify + publish ($(date -u +%F))" \
               --body-file issue.md --label "reconciliation" || echo "issue create skipped"
@@ -104,7 +116,7 @@ jobs:
         run: |
           git config user.name  "pdufa-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar
+          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"
           else
