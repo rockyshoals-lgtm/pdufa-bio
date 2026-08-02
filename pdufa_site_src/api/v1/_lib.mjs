@@ -182,7 +182,7 @@ export function quota402(res, m, rid, data) {
       ],
       retry_after: 1800, request_id: rid,
     },
-    meta: { served_from: 'stale_cache', as_of: new Date().toISOString().slice(0, 10) },
+    meta: { served_from: 'stale_cache', as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }) },
     data: data || [],
   });
 }
@@ -240,7 +240,7 @@ export async function serve(req, res, type) {
     meta: {
       source: 'pdufa.bio', license: 'Attribution + link-back required. Facts and historical statistics only — not investment advice.',
       tier: tier, quota_state: m.state, total, limit, offset, returned: data.length,
-      as_of: new Date().toISOString().slice(0, 10), request_id: rid,
+      as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }), request_id: rid,
       ...(TIERS[tier].depth ? {} : { pro_features: ['runup_series','export','calendar.ics','webhooks'], upgrade: 'https://www.pdufa.bio/pricing?ref=api_meta' }),
     },
     data,

@@ -54,6 +54,15 @@ jobs:
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
+      - name: Keep /decisions newest-first + year counters honest
+        run: python fix_decisions_order.py
+
+      - name: Sync the v1 API to the published pages (kills API/page drift)
+        run: python sync_api_from_pages.py
+
+      - name: Repair Event schema (location + datetime/TZ startDate)
+        run: python fix_event_schema.py
+
       - name: Mine readout dates (enrollment-complete trials only; no enrolling trials)
         continue-on-error: true          # advisory data source: never block the deploy
         run: python readout_miner.py
@@ -120,7 +129,7 @@ jobs:
         run: |
           git config user.name  "pdufa-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html
+          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html pdufa_site_src/decisions/index.html pdufa_site_src/adcomm/index.html
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"

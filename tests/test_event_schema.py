@@ -12,7 +12,7 @@ SITE = os.path.join(HERE, "..", "pdufa_site_src")
 EVENT = re.compile(r'\{"@type":"Event"(?:[^{}]|\{[^{}]*\})*\}')
 
 bad = []
-for page in ["calendar/index.html", "readouts/index.html"]:
+for page in ["calendar/index.html", "readouts/index.html", "adcomm/index.html"]:
     p = os.path.join(SITE, page)
     if not os.path.exists(p):
         continue
@@ -22,9 +22,14 @@ for page in ["calendar/index.html", "readouts/index.html"]:
     invalid = sum(1 for m in EVENT.finditer(h)
                   if '"startDate"' not in m.group(0) or '"location"' not in m.group(0))
     total = len(EVENT.findall(h))
-    print(f"  {page:22s} Events={total:4d} invalid={invalid}")
+    # Google requires a datetime WITH timezone on Event.startDate for rich-result eligibility;
+    # a bare YYYY-MM-DD is what made ~206 items ineligible (GSC: "94% not eligible").
+    dateonly = len(re.findall(r'"startDate":"\d{4}-\d{2}-\d{2}"', h))
+    print(f"  {page:22s} Events={total:4d} invalid={invalid} date_only_startDate={dateonly}")
     if invalid:
         bad.append(f"{page}: {invalid} Event object(s) missing startDate/location")
+    if dateonly:
+        bad.append(f"{page}: {dateonly} startDate(s) lack a time+timezone (not rich-result eligible)")
 
 if bad:
     print("FAIL -- invalid Event schema:")

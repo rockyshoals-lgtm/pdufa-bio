@@ -4,6 +4,7 @@ Disallow: /today
 Disallow: /today.html
 Disallow: /app
 Disallow: /app.html
+Allow: /api/v1/
 Disallow: /api/
 
 Sitemap: https://www.pdufa.bio/sitemap.xml
