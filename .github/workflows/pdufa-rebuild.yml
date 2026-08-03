@@ -133,6 +133,12 @@ jobs:
         if: steps.sls.outcome != 'success'
         run: echo "::warning::SELLAS filed something material. /sls dates were NOT advanced. Review the filing and update _sls_verified_through.json."
 
+      # Ticker hubs: name the company (SEC's own ticker file), carry the assets we hold, and never
+      # repeat a price-inferred outcome with a verified badge. Also noindexes hubs with nothing
+      # verified to show, so we stop asking Google to rank empty pages.
+      - name: Entity-enrich the ticker hubs
+        run: python enrich_ticker_hubs.py
+
       # Normalisers run AFTER every generator. Generators own the data; these own the house style,
       # so a page regenerated tomorrow cannot silently revert to the old disclaimer or reintroduce
       # em dashes. Both are idempotent.
