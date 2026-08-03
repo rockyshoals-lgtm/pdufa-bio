@@ -103,7 +103,7 @@ def main():
     trs = []
     for e in sorted(EV, key=lambda x: x["trade_date"], reverse=True):
         c = lambda v: "#46d17f" if v >= 0 else "#ff7a72"
-        volx = f'{e["vol_x"]:.1f}x' if e.get("vol_x") else "&mdash;"
+        volx = f'{e["vol_x"]:.1f}x' if e.get("vol_x") else "n/a"
         trs.append(
             f'<tr><td class="dt">{e["trade_date"]}</td><td>{e["label"]}</td>'
             f'<td class="num" style="color:{c(e["day_of_pct"])}">{e["day_of_pct"]:+.1f}%</td>'
@@ -150,7 +150,7 @@ ol,ul{{color:var(--mut);font-size:14px}}li{{margin:5px 0}}
 <div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/readouts">Readouts</a><a href="/decisions">Decisions</a><a href="/research">Research</a></div></div>
 <div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; SLS deep dive</div>
 
-<h1>SELLAS Life Sciences <span class="g">(SLS)</span> &mdash; the REGAL 80th-event deep dive</h1>
+<h1>SELLAS Life Sciences <span class="g">(SLS)</span>: the REGAL 80th-event deep dive</h1>
 <p>A facts-only reconstruction of what SELLAS has actually disclosed, what the 80th event in the Phase 3 REGAL
 trial mechanically triggers, how fast events have accrued, and how the stock has actually reacted to every dated
 catalyst since late 2024. Every figure below is either quoted from a primary source (SEC filing or company press
@@ -161,11 +161,11 @@ opinions, estimates of success, or price targets on this page.</p>
   <div class="stat"><div class="note">REGAL events (deaths)</div><div class="big">78 / 80</div><div class="note">as of May 11, 2026</div></div>
   <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$107.1M</div><div class="note">at Mar 31, 2026 (+$7.5M warrants)</div></div>
   <div class="stat"><div class="note">Mean absolute day-of move</div><div class="big">{mean_abs:.1f}%</div><div class="note">{len(EV)} dated events since Nov 2024</div></div>
-  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}</div><div class="note">52w ${lo52:.2f} &ndash; ${hi52:.2f}</div></div>
+  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}</div><div class="note">52w ${lo52:.2f} to ${hi52:.2f}</div></div>
 </div>
 
 <div class="card">{chart}
-<div class="note" style="margin-top:8px">SLS daily closes, Oct 2024 &ndash; Aug 2026 (Polygon, split-adjusted). Gold dots mark the five
+<div class="note" style="margin-top:8px">SLS daily closes, Oct 2024 to Aug 2026 (Polygon, split-adjusted). Gold dots mark the five
 REGAL milestone disclosures: the 60th-event interim-analysis trigger (Dec 10, 2024), the interim analysis passing
 (Jan 23, 2025), the IDMC periodic review (Aug 7, 2025), the 72-event disclosure (Dec 29, 2025) and the 78-event
 disclosure (May 12, 2026). Hover a dot for the date and close.</div></div>
@@ -192,7 +192,7 @@ penalty</b> and does not affect future analyses.</p>
 
 <h2>How fast events have actually accrued</h2>
 <p>SELLAS has disclosed the pooled event count on three dates. The pace below is computed from those disclosed
-counts and their stated as-of dates &mdash; it is arithmetic on company-reported figures, not a projection model.</p>
+counts and their stated as-of dates; it is arithmetic on company-reported figures, not a projection model.</p>
 <div class="card"><table>
 <tr><th>Interval</th><th>Days elapsed</th><th>Events accrued</th><th class="num">Days per event</th></tr>
 <tr><td class="dt">Dec 10, 2024 (60) &rarr; Dec 26, 2025 (72)</td><td>381</td><td>12</td><td class="num">31.8</td></tr>
@@ -201,8 +201,8 @@ counts and their stated as-of dates &mdash; it is arithmetic on company-reported
 </table>
 <div class="note" style="margin-top:10px">Applying each observed pace to the 2 remaining events from the 78-event
 as-of date (May 11, 2026) gives arithmetic arrival windows of approximately <b>Jun 25, 2026</b> (recent pace),
-<b>Jul 7, 2026</b> (overall pace) and <b>Jul 14, 2026</b> (earlier pace). As of <b>Aug 1, 2026</b> &mdash; 82 days
-after the 78-event as-of date &mdash; SELLAS has not announced the 80th event. The company has said it will
+<b>Jul 7, 2026</b> (overall pace) and <b>Jul 14, 2026</b> (earlier pace). As of <b>Aug 1, 2026</b>: 82 days
+after the 78-event as-of date: SELLAS has not announced the 80th event. The company has said it will
 announce the 80th event when it occurs.</div></div>
 <p>Context from the company's own December 29, 2025 release: after the IDMC's August 2025 recommendation, the
 80th event had been <b>expected to occur before year-end 2025</b>. It did not. In that release CEO Angelos Stergiou
@@ -224,14 +224,14 @@ trailing 30-day average. Computed from Polygon split-adjusted daily closes.</p>
 <div class="fact">Across {len(EV)} dated events, the <b>mean absolute day-of move was {mean_abs:.1f}%</b> and the median
 absolute move was {med_abs:.1f}%. {up} of {len(EV)} ({100*up/len(EV):.0f}%) closed higher on the day.</div>
 <div class="fact">The mean signed day-of move was <b>{st.mean(dayof):+.1f}%</b>, while the mean move measured five
-sessions later was <b>{mean_p5:+.1f}%</b> &mdash; i.e. on average the five-day drift after these events was larger
+sessions later was <b>{mean_p5:+.1f}%</b>: i.e. on average the five-day drift after these events was larger
 and more positive than the day-of reaction.</div>
 <div class="fact">Only 4 of {len(EV)} events produced a day-of move of 10% or more in absolute terms; the largest
 single-day gain was +16.7% (Dec 29, 2025, the 72-event update) and the largest loss was &minus;17.0% (Jan 28, 2025,
 the $25M registered direct offering).</div>
 <div class="fact">The two <b>most positive-sounding REGAL headlines were sold on the day</b>: the 60th-event interim
 analysis trigger (Dec 10, 2024) closed &minus;4.6% and fell a further 17.8% by the next session, and the
-positive interim-analysis outcome (Jan 23, 2025) closed &minus;13.3% on 17.4x average volume &mdash; though it was
+positive interim-analysis outcome (Jan 23, 2025) closed &minus;13.3% on 17.4x average volume, though it was
 +16.7% five sessions later.</div>
 <div class="fact">Conversely, the Dec 29, 2025 release disclosing that the 80th event had <b>not</b> arrived on the
 prior schedule closed <b>+16.7%</b> on 4.3x volume and was +42.9% five sessions later.</div>
@@ -257,7 +257,7 @@ survival times appearing longer than expected (pooled, blinded).</div>
 plus FDA Fast Track designation in AML.</div>
 <div class="fact"><b>Balance sheet:</b> $107.1M cash and equivalents at Mar 31, 2026, plus $7.5M of warrant
 proceeds received in Q2 2026 to date; total liabilities of $6.8M and no debt disclosed.</div>
-<div class="fact"><b>A $150M ATM facility is established and entirely unused</b> &mdash; the company states it has not
+<div class="fact"><b>A $150M ATM facility is established and entirely unused</b>: the company states it has not
 sold any shares through it to date.</div>
 <div class="fact"><b>R&amp;D spend is being directed at launch readiness:</b> Q1 2026 R&amp;D rose to $5.1M from
 $3.2M, which the company attributes partly to preparation for a potential Biologics License Application for GPS
@@ -270,7 +270,7 @@ diagnosed first-line AML began dosing, with topline data expected in Q4 2026.</d
 </div>
 <div class="card bear"><h3>Facts cited by the bear case</h3>
 <div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025;
-as of Aug 1, 2026 it has not been announced &mdash; 82 days past the 78-event as-of date and beyond all three
+as of Aug 1, 2026 it has not been announced, 82 days past the 78-event as-of date and beyond all three
 arrival windows implied by the company's own disclosed event pace.</div>
 <div class="fact"><b>Blinded pooled event counts cannot distinguish the arms.</b> Slower accrual means the pooled
 population is living longer; because SELLAS is blinded, the disclosed counts do not indicate whether that is
@@ -300,7 +300,7 @@ over the trailing year.</div>
 
 <h2>Program facts</h2>
 <div class="card">
-<div class="kv"><span>Lead asset</span><b>Galinpepimut-S (GPS) &mdash; WT1-targeting immunotherapeutic</b></div>
+<div class="kv"><span>Lead asset</span><b>Galinpepimut-S (GPS): WT1-targeting immunotherapeutic</b></div>
 <div class="kv"><span>GPS origin</span><b>Licensed from Memorial Sloan Kettering Cancer Center</b></div>
 <div class="kv"><span>Pivotal trial</span><b>REGAL, Phase 3, NCT04229979</b></div>
 <div class="kv"><span>Population</span><b>AML in CR2/CRp2 after second-line salvage, transplant-ineligible</b></div>
@@ -309,20 +309,20 @@ over the trailing year.</div>
 <div class="kv"><span>Final-analysis trigger</span><b>80 events (deaths), pooled across arms</b></div>
 <div class="kv"><span>Events disclosed</span><b>60 (Dec 2024) &rarr; 72 (Dec 26, 2025) &rarr; 78 (May 11, 2026)</b></div>
 <div class="kv"><span>Designations</span><b>FDA + EMA orphan drug (AML); FDA Fast Track (AML)</b></div>
-<div class="kv"><span>Second asset</span><b>SLS009 (tambiciclib) &mdash; selective CDK9 inhibitor</b></div>
-<div class="kv"><span>SLS009 next catalyst</span><b>Phase 2, newly diagnosed 1L AML, 80 patients &mdash; topline expected Q4 2026</b></div>
+<div class="kv"><span>Second asset</span><b>SLS009 (tambiciclib): selective CDK9 inhibitor</b></div>
+<div class="kv"><span>SLS009 next catalyst</span><b>Phase 2, newly diagnosed 1L AML, 80 patients: topline expected Q4 2026</b></div>
 <div class="kv"><span>Q1 2026 net loss</span><b>$8.4M ($0.05/share)</b></div>
 <div class="kv"><span>Cash at Mar 31, 2026</span><b>$107.1M (+$7.5M warrant proceeds in Q2 to date)</b></div>
 </div>
 
 <h2>Primary sources</h2>
 <ul>
-<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC Form 8-K Exhibit 99.1 &mdash; SELLAS Q1 2026 results (May 12, 2026)</a> &mdash; 78 events as of May 11, 2026; 80th-event trigger sequence; $107.1M cash; Q1 financials; SLS009 Q4 2026 topline.</li>
-<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Provides-Update-on-Pivotal-Phase-3-REGAL-Trial-of-Galinpepimut-S-GPS-in-Acute-Myeloid-Leukemia-AML/default.aspx">SELLAS &mdash; REGAL trial update (Dec 29, 2025)</a> &mdash; 72 events as of Dec 26, 2025; no statistical penalty; management and steering-committee quotes.</li>
-<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Announces-Independent-Data-Monitoring-Committee-Periodic-Review-and-Positive-Recommendation-to-Continue-Pivotal-Phase-3-REGAL-Trial-of-GPS-in-AML-Without-Modification/default.aspx">SELLAS &mdash; IDMC periodic review, continue without modification (Aug 7, 2025)</a></li>
-<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Presents-Positive-Phase-2-Data-of-SLS009-in-Combination-with-AZAVEN-in-RelapsedRefractory-AML-MR-at-ASH-2025/default.aspx">SELLAS &mdash; ASH 2025 Phase 2 SLS009 data (Dec 7, 2025)</a> &mdash; 46% ORR, 58% in one prior line, mOS 8.9 months.</li>
-<li><a href="https://clinicaltrials.gov/study/NCT04229979">ClinicalTrials.gov &mdash; REGAL (NCT04229979)</a> &mdash; design, population, endpoint.</li>
-<li><a href="https://ir.sellaslifesciences.com/news/default.aspx">SELLAS investor news archive</a> &mdash; full dated press-release history.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC Form 8-K Exhibit 99.1: SELLAS Q1 2026 results (May 12, 2026)</a>: 78 events as of May 11, 2026; 80th-event trigger sequence; $107.1M cash; Q1 financials; SLS009 Q4 2026 topline.</li>
+<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Provides-Update-on-Pivotal-Phase-3-REGAL-Trial-of-Galinpepimut-S-GPS-in-Acute-Myeloid-Leukemia-AML/default.aspx">SELLAS: REGAL trial update (Dec 29, 2025)</a>: 72 events as of Dec 26, 2025; no statistical penalty; management and steering-committee quotes.</li>
+<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Announces-Independent-Data-Monitoring-Committee-Periodic-Review-and-Positive-Recommendation-to-Continue-Pivotal-Phase-3-REGAL-Trial-of-GPS-in-AML-Without-Modification/default.aspx">SELLAS, IDMC periodic review, continue without modification (Aug 7, 2025)</a></li>
+<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Presents-Positive-Phase-2-Data-of-SLS009-in-Combination-with-AZAVEN-in-RelapsedRefractory-AML-MR-at-ASH-2025/default.aspx">SELLAS, ASH 2025 Phase 2 SLS009 data (Dec 7, 2025)</a>, 46% ORR, 58% in one prior line, mOS 8.9 months.</li>
+<li><a href="https://clinicaltrials.gov/study/NCT04229979">ClinicalTrials.gov: REGAL (NCT04229979)</a>: design, population, endpoint.</li>
+<li><a href="https://ir.sellaslifesciences.com/news/default.aspx">SELLAS investor news archive</a>: full dated press-release history.</li>
 </ul>
 <p class="note">Stock reaction figures on this page are computed by pdufa.bio from Polygon split-adjusted daily
 closing prices. Daily closes understate intraday ranges. Event dates are announcement dates; where an announcement
@@ -330,7 +330,7 @@ fell on a non-trading day, the first following trading session is used.</p>
 
 <div class="legal"><a href="/about" style="color:#8aa0bf">About</a> &middot; <a href="/corrections" style="color:#8aa0bf">Corrections</a> &middot; <a href="/methodology" style="color:#8aa0bf">Methodology</a><br><br>
 <b>Not affiliated with or endorsed by the FDA, SELLAS Life Sciences, or any company mentioned.</b> pdufa.bio is an
-independent service. <b>Informational and educational only &mdash; not investment advice.</b> This page contains
+independent service. <b>Informational and educational only. Not investment advice.</b> This page contains
 factual statements and historical price statistics only; it makes no forecast and no recommendation. Clinical-trial
 timelines, event-driven readout dates and interim results can change. Verify every figure against primary FDA, SEC
 and company filings before acting. Page compiled {TODAY.isoformat()}. &copy; 2026 pdufa.bio</div>

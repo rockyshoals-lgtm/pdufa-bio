@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large">
-<title>PDUFA API — Free FDA Calendar &amp; Biotech Catalyst API | pdufa.bio</title>
+<title>PDUFA API: Free FDA Calendar &amp; Biotech Catalyst API | pdufa.bio</title>
 <meta name="description" content="Free read-only JSON API for FDA PDUFA dates, clinical-trial readouts, medical conferences, and FDA advisory committee meetings. Filter by ticker, date, therapeutic area, and event type. Attribution required.">
 <link rel="canonical" href="https://www.pdufa.bio/developers"><meta name="theme-color" content="#060b14">
-<meta property="og:title" content="PDUFA API — FDA calendar &amp; biotech catalyst API"><meta property="og:url" content="https://www.pdufa.bio/developers">
+<meta property="og:title" content="PDUFA API: FDA calendar &amp; biotech catalyst API"><meta property="og:url" content="https://www.pdufa.bio/developers">
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--bg:#060b14;--card:#0e1c33;--cardh:#132745;--line:#1e3a63;--line2:#294d80;--gold:#f0c86a;--ink:#eef4fc;--mut:#9db3d4;--mut2:#7c93b6;--green:#46d17f}
@@ -30,13 +30,13 @@ table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}th,td{te
 <main class="wrap">
 <div class="bc"><a href="/">Home</a> &rsaquo; Developers</div>
 <h1>The PDUFA <span class="g">API</span></h1>
-<div class="sub">Every FDA catalyst — PDUFA dates, phase readouts, conferences, AdComm meetings — as clean JSON. <b>Keyless and free</b> for the core calendar. Run-up and cohort intelligence unlocks with Pro.</div>
+<div class="sub">Every FDA catalyst, PDUFA dates, phase readouts, conferences, AdComm meetings: as clean JSON. <b>Keyless and free</b> for the core calendar. Run-up and cohort intelligence unlocks with Pro.</div>
 
 <div class="card" style="margin:14px 0"><b>Base URL</b> <code class="code">https://www.pdufa.bio/api/v1</code> &nbsp;·&nbsp; <b>No key needed to start</b> &nbsp;·&nbsp; <a href="#tiers">Tiers</a> · <a href="#fields">Fields</a> · <a href="#recipes">Recipes</a> · <a href="#errors">Errors</a></div>
 
 <pre class="code" style="background:#0b1626;border:1px solid #1e3a63;border-radius:12px;padding:14px;overflow:auto">curl https://www.pdufa.bio/api/v1/pdufa?limit=3</pre>
 
-<div class="card" style="border-color:#f0c86a;margin:12px 0"><b style="color:#f0c86a">Pro is not open yet.</b> <span class="sub">The free and anonymous tiers below work today and always will. Pro (run-up series, bulk export, .ics, webhooks) opens when the billing flow is finished end-to-end &mdash; <a href="/pricing" style="color:#f0c86a">get notified</a>.</span></div><h2 id="tiers">Tiers</h2>
+<div class="card" style="border-color:#f0c86a;margin:12px 0"><b style="color:#f0c86a">Pro is not open yet.</b> <span class="sub">The free and anonymous tiers below work today and always will. Pro (run-up series, bulk export, .ics, webhooks) opens when the billing flow is finished end-to-end, <a href="/pricing" style="color:#f0c86a">get notified</a>.</span></div><h2 id="tiers">Tiers</h2>
 <div class="card"><table style="width:100%;border-collapse:collapse;font-size:13.5px">
 <tr style="color:#f0c86a;text-align:left"><th style="padding:7px 8px">Tier</th><th>Price</th><th>Quota</th><th>Burst</th><th>Fields</th></tr>
 <tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Anonymous</b><br><span style="color:#7c93b6">no key</span></td><td>$0</td><td class="lit">1,000/day</td><td class="lit">10/min</td><td>Core</td></tr>
@@ -44,36 +44,36 @@ table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}th,td{te
 <tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Pro</b></td><td class="lit">$10/mo · $100/yr</td><td class="lit">100,000/mo</td><td class="lit">120/min</td><td>Core + <b style="color:#46d17f">Depth</b></td></tr>
 <tr style="border-top:1px solid #1e3a63"><td style="padding:7px 8px"><b>Quant</b></td><td class="lit">$149/mo</td><td class="lit">2,000,000/mo</td><td class="lit">600/min</td><td>Core + Depth + History</td></tr>
 </table>
-<div style="font-size:12px;color:#7c93b6;margin-top:10px">Anonymous access stays free forever — every record links back to pdufa.bio. <b>Attribution + link-back required</b> on the free tiers.</div>
+<div style="font-size:12px;color:#7c93b6;margin-top:10px">Anonymous access stays free forever: every record links back to pdufa.bio. <b>Attribution + link-back required</b> on the free tiers.</div>
 </div>
 
 <h2 id="fields">What&rsquo;s free, and what isn&rsquo;t</h2>
 <div class="card" style="border-color:#46d17f">
 <b>Our rule: if it&rsquo;s visible on a public page, it&rsquo;s free in the API.</b>
-<div class="sub" style="margin-top:6px">We previously gated fields &mdash; indication, NCT ID, market cap, cash runway, cohort statistics &mdash; that we publish in plain HTML on every <code class="code">/pdufa/*</code> page. Charging for data anyone could scrape off the page was leaky and dishonest, so we stopped. <b>All of it is now free.</b></div>
+<div class="sub" style="margin-top:6px">We previously gated fields, indication, NCT ID, market cap, cash runway, cohort statistics: that we publish in plain HTML on every <code class="code">/pdufa/*</code> page. Charging for data anyone could scrape off the page was leaky and dishonest, so we stopped. <b>All of it is now free.</b></div>
 </div>
 <div class="card">
-<b>Free &mdash; every request, no key needed</b>
+<b>Free: every request, no key needed</b>
 <div class="code" style="color:#9db3d4;font-size:12.5px;margin:6px 0 12px">id · ticker · company · date · date_precision · name · type · therapeutic_area · market_cap_tier · status · url · updated_at · <b style="color:#46d17f">indication · nct_id · market_cap_usd · cash_runway_months · days_to_decision · cohort_move_median_pct · cohort_move_p25_pct · cohort_move_p75_pct · cohort_n</b></div>
-<b style="color:#f0c86a">Pro &mdash; what we don&rsquo;t publish as data</b>
+<b style="color:#f0c86a">Pro: what we don&rsquo;t publish as data</b>
 <div class="sub" style="margin:6px 0 0">
-&bull; <b>The per-event run-up series</b> &mdash; the full daily T-120 &rarr; T+5 price path for <b>1,786 FDA decisions</b>, as numbers. We show a picture of it; we&rsquo;ve never published the series. <code class="code">/api/v1/runup</code><br>
+&bull; <b>The per-event run-up series</b>: the full daily T-120 &rarr; T+5 price path for <b>1,786 FDA decisions</b>, as numbers. We show a picture of it; we&rsquo;ve never published the series. <code class="code">/api/v1/runup</code><br>
 &bull; <b>Bulk export</b> of the whole dataset (CSV / JSONL)<br>
 &bull; <b>Subscribable .ics</b> calendar feeds<br>
 &bull; <b>Date-slip webhooks</b><br>
 &bull; <b>100,000 requests/month</b> instead of 1,000/day
 </div></div>
-<p>In other words: <b>you pay for scale and for the series, not for secrets.</b> The catalyst facts are free forever &mdash; that&rsquo;s the whole point of the calendar.</p>
+<p>In other words: <b>you pay for scale and for the series, not for secrets.</b> The catalyst facts are free forever: that&rsquo;s the whole point of the calendar.</p>
 
 <h2 id="getkey">Getting a key</h2>
 <div class="card">
-<b>You don&rsquo;t need one to start.</b> Anonymous requests work immediately &mdash; 1,000/day, no signup, no key. Just <code class="code">curl</code> it.
+<b>You don&rsquo;t need one to start.</b> Anonymous requests work immediately: 1,000/day, no signup, no key. Just <code class="code">curl</code> it.
 <div class="sub" style="margin-top:8px">
 When you want Pro: <a href="/pricing" style="color:#f0c86a">subscribe</a> &rarr; your key is shown once on the success page &rarr; it also lives in <a href="/account" style="color:#f0c86a">your account</a>, where you can copy it, <b>regenerate</b> it, watch your usage, and cancel.<br><br>
 Send it as a header: <code class="code">x-api-key: pk_live_&hellip;</code> (or <code class="code">?key=</code> for quick tests).
 </div></div>
 
-<h2 id="limits">Rate limits &mdash; published, so they feel fair</h2>
+<h2 id="limits">Rate limits: published, so they feel fair</h2>
 <div class="card"><table style="width:100%;border-collapse:collapse;font-size:13.5px">
 <tr style="color:#f0c86a;text-align:left"><th style="padding:6px 8px">Tier</th><th>Quota</th><th>Burst</th><th>Cost per call</th></tr>
 <tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Anonymous</td><td class="lit">1,000 / day</td><td class="lit">10 / min</td><td class="lit">1</td></tr>
@@ -81,7 +81,7 @@ Send it as a header: <code class="code">x-api-key: pk_live_&hellip;</code> (or <
 <tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Pro</td><td class="lit">100,000 / mo</td><td class="lit">120 / min</td><td class="lit">1 · runup 5 · export 50</td></tr>
 <tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px">Quant</td><td class="lit">2,000,000 / mo</td><td class="lit">600 / min</td><td class="lit">same</td></tr>
 </table>
-<div style="font-size:12px;color:#7c93b6;margin-top:10px">Out of quota mid-job? You get a warning at 80%, a <b>grace overage</b> past 100% so nothing breaks, and only then a <code class="code">402</code> &mdash; with <a href="/pricing/credits" style="color:#f0c86a">top-up credits</a> that never expire. Burst abuse returns <code class="code">429</code>; a commercial limit is never disguised as an abuse error.</div>
+<div style="font-size:12px;color:#7c93b6;margin-top:10px">Out of quota mid-job? You get a warning at 80%, a <b>grace overage</b> past 100% so nothing breaks, and only then a <code class="code">402</code>: with <a href="/pricing/credits" style="color:#f0c86a">top-up credits</a> that never expire. Burst abuse returns <code class="code">429</code>; a commercial limit is never disguised as an abuse error.</div>
 </div>
 
 <h2>Endpoints</h2>
@@ -102,7 +102,7 @@ Send it as a header: <code class="code">x-api-key: pk_live_&hellip;</code> (or <
 <p><code class="code">ticker</code> (comma-separated) · <code class="code">type</code> · <code class="code">ta</code> · <code class="code">status</code> · <code class="code">from</code> · <code class="code">to</code> · <code class="code">q</code> (free-text) · <code class="code">limit</code> (max 1000) · <code class="code">offset</code> · <code class="code">include</code> · <code class="code">format</code> (<code class="code">json</code>|<code class="code">csv</code>) · <code class="code">id</code></p>
 
 <h2 id="recipes">Copy-paste recipes</h2>
-<div class="card"><b>Google Sheets</b> — live PDUFA calendar in a cell
+<div class="card"><b>Google Sheets</b>: live PDUFA calendar in a cell
 <pre class="code" style="margin:6px 0 0;overflow:auto">=IMPORTDATA("https://www.pdufa.bio/api/v1/pdufa?format=csv&amp;limit=100")</pre></div>
 <div class="card"><b>Python / pandas</b>
 <pre class="code" style="margin:6px 0 0;overflow:auto">import pandas as pd
@@ -116,7 +116,7 @@ data.forEach(e =&gt; console.log(e.date, e.ticker, e.name));</pre></div>
 <pre class="code" style="margin:6px 0 0;overflow:auto">https://www.pdufa.bio/api/v1/calendar.ics?key=YOUR_KEY&amp;ticker=CELC,MNKD</pre></div>
 
 <h2>Rate-limit headers</h2>
-<p>Every response tells you exactly where you stand — no surprises.</p>
+<p>Every response tells you exactly where you stand, no surprises.</p>
 <pre class="code" style="background:#0b1626;border:1px solid #1e3a63;border-radius:12px;padding:14px;overflow:auto;font-size:12.5px">X-Api-Tier: anonymous
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 998
@@ -125,17 +125,17 @@ X-Credits-Remaining: 0
 X-Credits-Cost: 1
 X-Quota-State: ok          # ok | warning | grace | exhausted | unmetered
 X-Request-Id: req_01J9Z...</pre>
-<p><b>We never hard-slam you.</b> At 80% you get <code class="code">warning</code>. Over 100% you get a <b>grace overage</b> so nothing breaks mid-job. Only past that do you get a <code class="code">402</code> — with credit and upgrade links, and still-cached data so your client degrades instead of dying. Burst abuse returns <code class="code">429</code>; a commercial limit is never disguised as an abuse error.</p>
+<p><b>We never hard-slam you.</b> At 80% you get <code class="code">warning</code>. Over 100% you get a <b>grace overage</b> so nothing breaks mid-job. Only past that do you get a <code class="code">402</code>, with credit and upgrade links, and still-cached data so your client degrades instead of dying. Burst abuse returns <code class="code">429</code>; a commercial limit is never disguised as an abuse error.</p>
 
 <h2 id="errors">Errors</h2>
 <div class="card"><table style="width:100%;border-collapse:collapse;font-size:13px">
 <tr style="color:#f0c86a;text-align:left"><th style="padding:6px 8px">Code</th><th>Meaning</th></tr>
-<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">400 invalid_param</td><td>Unknown parameter — the message lists the valid ones</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">400 invalid_param</td><td>Unknown parameter: the message lists the valid ones</td></tr>
 <tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">401 invalid_key</td><td>Key missing or unrecognised</td></tr>
-<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">403 tier_forbidden</td><td>Endpoint/field above your tier — includes <code class="code">_upgrade</code></td></tr>
-<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">402 quota_exhausted</td><td>Commercial limit — credit + upgrade options in the body</td></tr>
-<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">429 rate_limited</td><td>Burst abuse — honour <code class="code">Retry-After</code></td></tr>
-<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">503 degraded</td><td>Serving stale cache — check <code class="code">meta.served_from</code></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">403 tier_forbidden</td><td>Endpoint/field above your tier: includes <code class="code">_upgrade</code></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">402 quota_exhausted</td><td>Commercial limit: credit + upgrade options in the body</td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">429 rate_limited</td><td>Burst abuse: honour <code class="code">Retry-After</code></td></tr>
+<tr style="border-top:1px solid #1e3a63"><td style="padding:6px 8px" class="code">503 degraded</td><td>Serving stale cache: check <code class="code">meta.served_from</code></td></tr>
 </table>
 <div style="font-size:12px;color:#7c93b6;margin-top:10px">Every error carries an <code class="code">X-Request-Id</code>. Quote it and we can trace it.</div></div>
 
@@ -144,6 +144,6 @@ X-Request-Id: req_01J9Z...</pre>
 <pre class="code" style="background:#0b1626;border:1px solid #1e3a63;border-radius:12px;padding:12px;overflow:auto;font-size:12.5px">Catalyst data from &lt;a href="https://www.pdufa.bio"&gt;pdufa.bio&lt;/a&gt;</pre>
 
 <div class="card" style="margin-top:18px;border-color:#f0c86a">
-<b>Need Depth?</b> Run-up series, cohort distributions, NCT IDs, bulk export and calendar feeds come with Pro — <b class="lit">$10/mo</b> or <b class="lit">$100/yr</b>. <a href="/pricing?ref=developers" style="color:#f0c86a">See pricing →</a>
+<b>Need Depth?</b> Run-up series, cohort distributions, NCT IDs, bulk export and calendar feeds come with Pro, <b class="lit">$10/mo</b> or <b class="lit">$100/yr</b>. <a href="/pricing?ref=developers" style="color:#f0c86a">See pricing →</a>
 </div>
-</div></body></html>
+</div><div class="legal" style="border-top:1px solid #1e3a63;margin-top:32px;padding-top:14px;font-size:11.5px;color:#8aa0bf;line-height:1.6"><a href="/about" style="color:#8aa0bf">About</a> &middot; <a href="/corrections" style="color:#8aa0bf">Corrections</a> &middot; <a href="/methodology" style="color:#8aa0bf">Methodology</a><br><br><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is published by <b>Odin Catalyst LLC</b>, an independent company that is not affiliated with, endorsed by, sponsored by, or connected to the U.S. Food and Drug Administration or any other government agency. &ldquo;FDA&rdquo;, &ldquo;PDUFA&rdquo; and all company, drug and ticker names are used descriptively and remain the property of their respective owners.<br><br><b>Informational and educational purposes only. Not investment advice.</b> Nothing on this page is investment, legal, tax or medical advice, or an offer or solicitation to buy or sell any security. Odin Catalyst LLC is not a registered investment adviser or broker-dealer and does not recommend trades or publish individual-drug approval probabilities. Verify every date and outcome against primary FDA, SEC or company filings. Data is provided as is, without warranty of any kind, and past behaviour does not predict future outcomes.<br><br>&copy; 2026 Odin Catalyst LLC. All rights reserved.</div></body></html>

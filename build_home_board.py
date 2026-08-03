@@ -260,6 +260,23 @@ def stamp_freshness(html):
     return html
 
 
+def stamp_study_size(html):
+    """The homepage headline stat "N events in the run-up study" was a hardcoded literal, so it
+    drifted every time the study grew (it read 1,754 while the study held 1,827). Drive it from
+    runup_study_stats.json, the same file every other published run-up figure comes from."""
+    f = os.path.join(HERE, "runup_study_stats.json")
+    if not os.path.exists(f):
+        return html
+    n = json.load(open(f, encoding="utf-8")).get("n_events")
+    if not n:
+        return html
+    new, k = re.subn(r'(<b>)[\d,]+(</b><span>events in the run-up study</span>)',
+                     lambda m: m.group(1) + f"{n:,}" + m.group(2), html, count=1)
+    if k:
+        print(f"  run-up study stat -> {n:,} events")
+    return new
+
+
 def replace_block(html, open_tag, inner):
     i = html.find(open_tag)
     if i < 0:
@@ -286,6 +303,7 @@ def main():
     html = open(HOME, encoding="utf-8").read()
     html = replace_block(html, '<div class="list">', render_upcoming(cats, key))
     html = replace_block(html, '<div class="decs">', render_decided(decs, key))
+    html = stamp_study_size(html)  # keep the headline study count from drifting
     html = stamp_freshness(html)   # server-render the "Data through {date}" badge for non-JS crawlers
 
     if a.dry_run:

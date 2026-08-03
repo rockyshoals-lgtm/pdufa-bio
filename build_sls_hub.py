@@ -103,7 +103,7 @@ def main():
     ch = chart(rows, marks)
 
     html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="index,follow,max-image-preview:large">
-<title>SLS (SELLAS Life Sciences) Tracker &mdash; REGAL 80th Event, the Change-of-Control Amendment, and the Facts | pdufa.bio</title>
+<title>SLS (SELLAS Life Sciences) Tracker, REGAL 80th Event, the Change-of-Control Amendment, and the Facts | pdufa.bio</title>
 <meta name="description" content="The canonical SELLAS Life Sciences (NASDAQ: SLS) tracker: live REGAL 80th-event status (78 of 80 as of May 11, 2026), exactly what the June 24 2026 executive change-of-control amendment says, whether such amendments have historically preceded buyouts, and every dated catalyst with its measured stock reaction. Primary sources only.">
 <link rel="canonical" href="https://www.pdufa.bio/sls"><meta name="theme-color" content="#060b14">
 <meta property="og:type" content="article"><meta property="og:title" content="SLS Tracker: REGAL 80th event + the change-of-control amendment, in facts"><meta property="og:url" content="https://www.pdufa.bio/sls">
@@ -147,10 +147,10 @@ ol,ul{{color:var(--mut);font-size:14px}}li{{margin:5px 0}}
 <header class="site"><div class="hd"><a class="brand" href="/">pdufa<b>.bio</b></a>{NAV}</div></header>
 <main class="wrap">
 <div class="bc"><a href="/">Home</a> &rsaquo; SLS tracker</div>
-<h1>SELLAS Life Sciences <span class="g">(SLS)</span> &mdash; the facts, tracked</h1>
+<h1>SELLAS Life Sciences <span class="g">(SLS)</span>: the facts, tracked</h1>
 <p>SELLAS is at a rare juncture: a Phase 3 survival trial sitting two deaths from its final analysis, and an
 executive-compensation filing that a large part of the retail market read as merger preparation. Both are
-knowable from primary documents. This page states exactly what has been filed and disclosed &mdash; the
+knowable from primary documents. This page states exactly what has been filed and disclosed: the
 REGAL event mechanics, the full text and terms of the June 24 2026 amendment, whether such amendments have
 historically preceded buyouts, and how the stock has actually reacted to every dated catalyst. There are no
 forecasts, price targets, or recommendations anywhere on this page.</p>
@@ -159,11 +159,11 @@ forecasts, price targets, or recommendations anywhere on this page.</p>
   <div class="stat"><div class="note">REGAL events (deaths)</div><div class="big">78 / 80</div><div class="note">as of May 11, 2026 &middot; {DAYS_SINCE}d ago</div></div>
   <div class="stat"><div class="note">80th event announced?</div><div class="big" style="color:var(--gold)">Not yet</div><div class="note">company says it will announce it</div></div>
   <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$107.1M</div><div class="note">Mar 31, 2026 (+$7.5M warrants)</div></div>
-  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}</div><div class="note">52w ${lo52:.2f}&ndash;${hi52:.2f} &middot; {lastd}</div></div>
+  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}</div><div class="note">52w ${lo52:.2f}: ${hi52:.2f} &middot; {lastd}</div></div>
 </div>
 
 <div class="card">{ch}
-<div class="note" style="margin-top:9px">SLS daily closes, Oct 2024 &ndash; Aug 2026 (Polygon, split-adjusted). Gold markers = REGAL
+<div class="note" style="margin-top:9px">SLS daily closes, Oct 2024 to Aug 2026 (Polygon, split-adjusted). Gold markers = REGAL
 milestone disclosures. Green marker = the June 24 2026 executive change-of-control amendment. Hover any marker for the date and close.</div></div>
 
 <h2>1. The 80th event: what it is and where it stands</h2>
@@ -190,7 +190,7 @@ aggregate update <b>incurred no statistical penalty</b>.</p>
 </table>
 <div class="note" style="margin-top:10px">Applying each observed pace to the 2 remaining events from the 78-event as-of date
 (May 11, 2026) implies arrival around <b>Jun 25</b>, <b>Jul 7</b> and <b>Jul 14, 2026</b> respectively. As of
-<b>Aug 1, 2026</b> &mdash; <b>{DAYS_SINCE} days</b> after that as-of date &mdash; the 80th event has not been announced. This is
+<b>Aug 1, 2026</b>, <b>{DAYS_SINCE} days</b> after that as-of date: the 80th event has not been announced. This is
 arithmetic on company-disclosed counts, not a projection model.</div></div>
 <p>Context in the company's own words. After the IDMC's August 2025 recommendation, the 80th event had been
 expected before year-end 2025; it did not occur. In the December 29, 2025 release CEO Angelos Stergiou stated
@@ -198,27 +198,27 @@ that survival times "appear longer than expected," and REGAL steering-committee 
 for non-transplant patients in this setting standard treatment carries "an expected median overall survival of
 around eight months."</p>
 
-<h2>2. The June 24, 2026 amendment &mdash; what it actually says</h2>
+<h2>2. The June 24, 2026 amendment: what it actually says</h2>
 <p>On June 25, 2026 SELLAS shares rose roughly 15% and hit a 52-week high, on volume near double the 65-day
 average. Widely-read coverage attributed the move substantially to a Form 8-K filed that week amending
 executive severance terms, which was interpreted as preparation for a sale. Here is the filing itself.</p>
-<p>The 8-K was filed under <b>Item 5.02(e) &mdash; Compensatory Arrangements of Certain Officers</b>, covering three
+<p>The 8-K was filed under <b>Item 5.02(e): Compensatory Arrangements of Certain Officers</b>, covering three
 agreements: an amendment to CEO Dr. Angelos Stergiou's employment agreement, and amended-and-restated severance
 and change-of-control letter agreements with CFO John Burns and Chief Development Officer Dr. Dragan Cicic.</p>
 
 <div class="quote">"The Agreements were approved by the Board of Directors&hellip; upon recommendation of the
 Compensation Committee of the Board, <b>following a review with the Company's independent compensation
 consulting firm of certain market and competitive practices relating to executive severance agreements</b>."
-<div class="note" style="margin-top:6px">&mdash; SELLAS Form 8-K, filed June 24, 2026 (Item 5.02(e))</div></div>
+<div class="note" style="margin-top:6px">, SELLAS Form 8-K, filed June 24, 2026 (Item 5.02(e))</div></div>
 
 <h3>The actual terms</h3>
 <div class="card">
-<div class="kv"><span>CEO (Stergiou) &mdash; what changed</span><b>Only that certain change-of-control severance payments are paid as a <u>lump sum</u></b></div>
-<div class="kv"><span>CEO &mdash; everything else</span><b>"The terms&hellip; remain unchanged in all other respects"</b></div>
-<div class="kv"><span>CFO/CDO &mdash; non-CoC severance</span><b>9 months base salary + pro-rata target bonus + 9 months COBRA</b></div>
-<div class="kv"><span>CFO/CDO &mdash; CoC severance</span><b>Lump sum = 15 months base salary; lump sum = target bonus; 18 months COBRA; full acceleration of unvested equity</b></div>
+<div class="kv"><span>CEO (Stergiou): what changed</span><b>Only that certain change-of-control severance payments are paid as a <u>lump sum</u></b></div>
+<div class="kv"><span>CEO: everything else</span><b>"The terms&hellip; remain unchanged in all other respects"</b></div>
+<div class="kv"><span>CFO/CDO: non-CoC severance</span><b>9 months base salary + pro-rata target bonus + 9 months COBRA</b></div>
+<div class="kv"><span>CFO/CDO: CoC severance</span><b>Lump sum = 15 months base salary; lump sum = target bonus; 18 months COBRA; full acceleration of unvested equity</b></div>
 <div class="kv"><span>Change-of-Control Period</span><b>1 month before &rarr; 12 months after a change of control</b></div>
-<div class="kv"><span>Trigger structure</span><b style="color:var(--green)">DOUBLE trigger &mdash; requires a change of control <u>AND</u> termination without Cause / resignation for Good Reason</b></div>
+<div class="kv"><span>Trigger structure</span><b style="color:var(--green)">DOUBLE trigger: requires a change of control <u>AND</u> termination without Cause / resignation for Good Reason</b></div>
 <div class="kv"><span>Conditioned on</span><b>Effective separation and general release agreement</b></div>
 </div>
 
@@ -230,7 +230,7 @@ executive must also be terminated without Cause or resign for Good Reason inside
 (vesting on the deal alone) is the structure that pays out on simply completing a sale. Double-trigger is also
 the <b>majority market structure</b>, not an unusual one: Meridian Compensation Partners' 2023 study of
 change-in-control severance arrangements found <b>91% of companies vest time-based equity on a double trigger</b>
-&mdash; i.e. a qualifying termination following a change of control. SELLAS adopted the prevailing structure.
+: i.e. a qualifying termination following a change of control. SELLAS adopted the prevailing structure.
 </div>
 <div class="myth">
 <div class="r">Read as</div>"A sudden, unexplained restructuring of executive contracts."
@@ -243,14 +243,14 @@ That is the standard description of routine benchmarking, and it is stated on th
 <div class="f">What the document says</div>The change-of-control cash benefit for the CFO and CDO is <b>15 months of
 base salary</b> (1.25&times;) plus target bonus, with COBRA for up to 18 months. For scale, Meridian's 2023 study
 found a <b>3&times; cash multiple is the plurality practice for CEOs (47%)</b>, with 2&times; also common. We note
-explicitly that this is <b>not a like-for-like comparison</b> &mdash; that benchmark is for chief executives, while
+explicitly that this is <b>not a like-for-like comparison</b>: that benchmark is for chief executives, while
 the 15-month figure here applies to a CFO and a CDO, and non-CEO officers customarily carry lower multiples than
 the CEO. The defensible statement is the narrow one: these are the disclosed terms, and they are cash multiples
 of roughly one year's salary rather than multi-year packages.
 </div>
 <div class="myth">
 <div class="r">Read as</div>"The CEO's package was overhauled."
-<div class="f">What the document says</div>For the CEO the <b>only</b> change is the <b>form of payment</b> &mdash; certain
+<div class="f">What the document says</div>For the CEO the <b>only</b> change is the <b>form of payment</b>: certain
 change-of-control severance is now paid as a lump sum rather than over time. The filing states the agreement is
 otherwise unchanged. Converting instalments to a lump sum is a common administrative/tax-timing change.
 </div>
@@ -263,12 +263,12 @@ merger or tender offer.
 </div>
 <p class="note">None of the above establishes that a transaction is <i>not</i> occurring. Companies do amend
 compensation ahead of deals, and boards are not required to disclose negotiations. It establishes only what this
-particular document does and does not say &mdash; and this document describes benchmarking with a double-trigger structure.</p>
+particular document does and does not say, and this document describes benchmarking with a double-trigger structure.</p>
 
 <h2>3. Has this pattern historically preceded a buyout?</h2>
 <p>The inference "change-of-control amendment &rarr; imminent acquisition" is testable. We searched SEC EDGAR
 full-text for 8-K filings containing comparable change-of-control severance language over the trailing 12 months
-(Aug 1, 2025 &ndash; Aug 1, 2026), kept filers in pharma/biotech SIC codes (2834, 2836, 8731), deduplicated to one
+(Aug 1, 2025, Aug 1, 2026), kept filers in pharma/biotech SIC codes (2834, 2836, 8731), deduplicated to one
 row per company, and then checked whether each ticker still trades independently today.</p>
 <div class="card"><table>
 <tr><th>Company</th><th>Ticker</th><th>Comparable CoC 8-K filed</th><th>Status as of Aug 1, 2026</th></tr>
@@ -283,7 +283,7 @@ row per company, and then checked whether each ticker still trades independently
 <p class="note"><b>Stated limits of this measurement.</b> EDGAR full-text search matches exact phrases in the filing
 body, and many companies describe these arrangements in other words or incorporate them by reference to an exhibit;
 this search therefore <b>undercounts</b> the true population, and 5 is a small sample rather than a census. The
-"still trading" check is also a proxy &mdash; a ticker can stop quoting for reasons other than acquisition
+"still trading" check is also a proxy; a ticker can stop quoting for reasons other than acquisition
 (bankruptcy, reverse merger, ticker change, delisting). Treat this as a directional check on a popular inference,
 not a precise base rate. Readers can reproduce it: the filings are public and the tickers are named above.</p>
 <p>The academic literature addresses a related but distinct question. Studies of <i>golden parachutes</i> find that
@@ -299,8 +299,8 @@ five sessions later versus that same prior close. Computed from Polygon split-ad
 21-event table, including volume multiples, is in the companion study.</p>
 <div class="card">
 <div class="fact">Across 21 dated events since Nov 2024, the <b>mean absolute day-of move was 6.1%</b>; only <b>8 of 21 (38%)</b> closed higher on the day.</div>
-<div class="fact">Mean signed day-of move was <b>&minus;1.1%</b>, while the mean move five sessions later was <b>+9.5%</b> &mdash; the drift after these events was consistently larger and more positive than the day-of reaction.</div>
-<div class="fact">The two most positive-sounding REGAL headlines were sold on the day: the 60th-event interim-analysis trigger (Dec 10, 2024) closed <b>&minus;4.6%</b> and fell a further 17.8% the next session; the positive interim-analysis outcome (Jan 23, 2025) closed <b>&minus;13.3%</b> on <b>17.4&times;</b> average volume &mdash; then was +16.7% five sessions later.</div>
+<div class="fact">Mean signed day-of move was <b>&minus;1.1%</b>, while the mean move five sessions later was <b>+9.5%</b>; the drift after these events was consistently larger and more positive than the day-of reaction.</div>
+<div class="fact">The two most positive-sounding REGAL headlines were sold on the day: the 60th-event interim-analysis trigger (Dec 10, 2024) closed <b>&minus;4.6%</b> and fell a further 17.8% the next session; the positive interim-analysis outcome (Jan 23, 2025) closed <b>&minus;13.3%</b> on <b>17.4&times;</b> average volume: then was +16.7% five sessions later.</div>
 <div class="fact">The Dec 29, 2025 release disclosing that the 80th event had <b>not</b> arrived on schedule closed <b>+16.7%</b> on 4.3&times; volume, and was <b>+42.9%</b> five sessions later.</div>
 <div class="fact">REGAL/IDMC events (n=5) averaged a 7.2% absolute day-of move and <b>+16.5%</b> at +5d; SLS009 and conference-data events (n=9) averaged 4.0% day-of and +3.1% at +5d.</div>
 <div style="margin-top:12px"><a href="/research/sls-deep-dive" style="font-weight:700">Full event-by-event table with volume multiples &rarr;</a></div>
@@ -311,54 +311,54 @@ five sessions later versus that same prior close. Computed from Polygon split-ad
 without weighting. Neither column is a recommendation.</p>
 <div class="grid2">
 <div class="card bull"><h3>Cited by the bull case</h3>
-<div class="fact">The pre-specified <b>60-event interim analysis was passed</b> (futility, efficacy, safety) &mdash; announced Jan 23, 2025.</div>
+<div class="fact">The pre-specified <b>60-event interim analysis was passed</b> (futility, efficacy, safety): announced Jan 23, 2025.</div>
 <div class="fact">At that analysis, <b>pooled median survival appeared to be at least 13.5 months</b> against an expected ~6 months in a comparable population.</div>
 <div class="fact">The <b>IDMC recommended continuation without modification</b> in August 2025, with no safety concerns identified.</div>
 <div class="fact"><b>Event accrual has run slower than projected</b>, which the company attributes to survival times appearing longer than expected (pooled, blinded).</div>
 <div class="fact"><b>FDA and EMA orphan drug designation</b> for GPS in AML, plus <b>FDA Fast Track</b> in AML.</div>
 <div class="fact"><b>$107.1M cash</b> at Mar 31, 2026 plus $7.5M of Q2 warrant proceeds; total liabilities $6.8M; no debt disclosed.</div>
-<div class="fact">A <b>$150M ATM is established and entirely unused</b> &mdash; the company states it has not sold any shares through it.</div>
+<div class="fact">A <b>$150M ATM is established and entirely unused</b>; the company states it has not sold any shares through it.</div>
 <div class="fact">Q1 2026 R&amp;D rose to $5.1M from $3.2M, attributed partly to <b>preparation for a potential BLA</b> for GPS following the final analysis.</div>
 <div class="fact">SLS009 at ASH 2025: <b>46% ORR</b> across cohorts, 58% in patients with one prior line, median OS 8.9 months in the least pre-treated cohort vs a stated ~2.5-month historical benchmark.</div>
 <div class="fact">A second, independent catalyst: 80-patient <b>Phase 2 of SLS009 in first-line AML, topline expected Q4 2026</b>.</div>
 </div>
 <div class="card bear"><h3>Cited by the bear case</h3>
-<div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025; as of Aug 1, 2026 it is unannounced &mdash; {DAYS_SINCE} days past the 78-event as-of date and beyond all three windows implied by the company's own disclosed pace.</div>
+<div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025; as of Aug 1, 2026 it is unannounced, {DAYS_SINCE} days past the 78-event as-of date and beyond all three windows implied by the company's own disclosed pace.</div>
 <div class="fact"><b>Blinded pooled counts cannot distinguish the arms.</b> Longer pooled survival could reflect the control arm, the GPS arm, or both; SELLAS is blinded and cannot say.</div>
 <div class="fact"><b>REGAL is open-label</b>, a 1:1 randomized comparison against investigator's choice, not a blinded placebo-controlled design.</div>
-<div class="fact"><b>Share count roughly doubled year over year</b> &mdash; weighted-average shares 87.8M (Q1 2025) to 172.5M (Q1 2026); shares outstanding 153.1M to 181.3M between Dec 31, 2025 and Mar 31, 2026.</div>
+<div class="fact"><b>Share count roughly doubled year over year</b>: weighted-average shares 87.8M (Q1 2025) to 172.5M (Q1 2026); shares outstanding 153.1M to 181.3M between Dec 31, 2025 and Mar 31, 2026.</div>
 <div class="fact">The <b>unused $150M ATM</b> represents authorized future dilution on top of that increase.</div>
 <div class="fact"><b>Losses are widening</b>: net loss $8.4M in Q1 2026 vs $5.8M in Q1 2025; accumulated deficit $283.4M.</div>
-<div class="fact"><b>The interim analysis was a continuation decision, not a success declaration</b> &mdash; it permitted the trial to continue; it did not establish the primary endpoint will be met.</div>
+<div class="fact"><b>The interim analysis was a continuation decision, not a success declaration</b>: it permitted the trial to continue; it did not establish the primary endpoint will be met.</div>
 <div class="fact"><b>Positive REGAL headlines have historically been sold</b> (see the reaction record above).</div>
-<div class="fact"><b>Part of the mid-2026 move was not clinical</b> &mdash; coverage attributed the June 25 surge substantially to the change-of-control amendment being read as merger preparation, and to retail/WallStreetBets momentum.</div>
-<div class="fact"><b>Expectations are elevated</b>: the stock closed at ${last:.2f} on {lastd} against a 52-week range of ${lo52:.2f}&ndash;${hi52:.2f}, having risen roughly 503% over the trailing year.</div>
+<div class="fact"><b>Part of the mid-2026 move was not clinical</b>, coverage attributed the June 25 surge substantially to the change-of-control amendment being read as merger preparation, and to retail/WallStreetBets momentum.</div>
+<div class="fact"><b>Expectations are elevated</b>: the stock closed at ${last:.2f} on {lastd} against a 52-week range of ${lo52:.2f}: ${hi52:.2f}, having risen roughly 503% over the trailing year.</div>
 </div>
 </div>
 
 <h2>Program reference</h2>
 <div class="card">
-<div class="kv"><span>Lead asset</span><b>Galinpepimut-S (GPS) &mdash; WT1-targeting immunotherapeutic</b></div>
+<div class="kv"><span>Lead asset</span><b>Galinpepimut-S (GPS): WT1-targeting immunotherapeutic</b></div>
 <div class="kv"><span>GPS origin</span><b>Licensed from Memorial Sloan Kettering Cancer Center</b></div>
 <div class="kv"><span>Pivotal trial</span><b>REGAL, Phase 3, NCT04229979</b></div>
 <div class="kv"><span>Population</span><b>AML in CR2/CRp2 after second-line salvage, transplant-ineligible</b></div>
 <div class="kv"><span>Design / endpoint</span><b>1:1 randomized, open-label, GPS vs best available therapy / overall survival</b></div>
 <div class="kv"><span>Final-analysis trigger</span><b>80 events (deaths), pooled across arms</b></div>
 <div class="kv"><span>Events disclosed</span><b>60 (Dec 2024) &rarr; 72 (Dec 26, 2025) &rarr; 78 (May 11, 2026)</b></div>
-<div class="kv"><span>Second asset</span><b>SLS009 (tambiciclib) &mdash; selective CDK9 inhibitor</b></div>
-<div class="kv"><span>SLS009 next catalyst</span><b>Phase 2 first-line AML, 80 patients &mdash; topline expected Q4 2026</b></div>
+<div class="kv"><span>Second asset</span><b>SLS009 (tambiciclib): selective CDK9 inhibitor</b></div>
+<div class="kv"><span>SLS009 next catalyst</span><b>Phase 2 first-line AML, 80 patients: topline expected Q4 2026</b></div>
 </div>
 
 <h2>Primary sources</h2>
 <ul>
-<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_8k.htm">SEC Form 8-K, filed June 24, 2026 (Item 5.02(e))</a> &mdash; the executive change-of-control amendments, in full.</li>
-<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-1.htm">Exhibit 10.1</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-2.htm">Exhibit 10.2</a> &mdash; the underlying agreements.</li>
-<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC 8-K Exhibit 99.1 &mdash; Q1 2026 results (May 12, 2026)</a> &mdash; 78 events as of May 11; 80th-event trigger sequence; $107.1M cash.</li>
-<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Provides-Update-on-Pivotal-Phase-3-REGAL-Trial-of-Galinpepimut-S-GPS-in-Acute-Myeloid-Leukemia-AML/default.aspx">SELLAS &mdash; REGAL update (Dec 29, 2025)</a> &mdash; 72 events as of Dec 26, 2025; no statistical penalty.</li>
-<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Announces-Independent-Data-Monitoring-Committee-Periodic-Review-and-Positive-Recommendation-to-Continue-Pivotal-Phase-3-REGAL-Trial-of-GPS-in-AML-Without-Modification/default.aspx">SELLAS &mdash; IDMC periodic review (Aug 7, 2025)</a></li>
-<li><a href="https://clinicaltrials.gov/study/NCT04229979">ClinicalTrials.gov &mdash; REGAL (NCT04229979)</a></li>
-<li><a href="https://www.meridiancp.com/app/uploads/2024/01/Meridian_2023-Study-of-CIC-Severance-Arrangements-1.pdf">Meridian Compensation Partners &mdash; 2023 Study of Change-in-Control Severance Arrangements</a> &mdash; market prevalence of double-trigger vesting (91%) and CEO cash multiples.</li>
-<li><a href="/research/sls-deep-dive">pdufa.bio &mdash; SLS event-reaction study</a> (full 21-event table)</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_8k.htm">SEC Form 8-K, filed June 24, 2026 (Item 5.02(e))</a>: the executive change-of-control amendments, in full.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-1.htm">Exhibit 10.1</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-2.htm">Exhibit 10.2</a>: the underlying agreements.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC 8-K Exhibit 99.1: Q1 2026 results (May 12, 2026)</a>: 78 events as of May 11; 80th-event trigger sequence; $107.1M cash.</li>
+<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Provides-Update-on-Pivotal-Phase-3-REGAL-Trial-of-Galinpepimut-S-GPS-in-Acute-Myeloid-Leukemia-AML/default.aspx">SELLAS: REGAL update (Dec 29, 2025)</a>: 72 events as of Dec 26, 2025; no statistical penalty.</li>
+<li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Announces-Independent-Data-Monitoring-Committee-Periodic-Review-and-Positive-Recommendation-to-Continue-Pivotal-Phase-3-REGAL-Trial-of-GPS-in-AML-Without-Modification/default.aspx">SELLAS: IDMC periodic review (Aug 7, 2025)</a></li>
+<li><a href="https://clinicaltrials.gov/study/NCT04229979">ClinicalTrials.gov: REGAL (NCT04229979)</a></li>
+<li><a href="https://www.meridiancp.com/app/uploads/2024/01/Meridian_2023-Study-of-CIC-Severance-Arrangements-1.pdf">Meridian Compensation Partners: 2023 Study of Change-in-Control Severance Arrangements</a>, market prevalence of double-trigger vesting (91%) and CEO cash multiples.</li>
+<li><a href="/research/sls-deep-dive">pdufa.bio: SLS event-reaction study</a> (full 21-event table)</li>
 </ul>
 <p class="note">Stock-reaction figures are computed by pdufa.bio from Polygon split-adjusted daily closes; daily closes
 understate intraday ranges. Where an announcement fell on a non-trading day, the first following session is used.
@@ -366,7 +366,7 @@ Page compiled {TODAY.isoformat()} and updated as new filings are published.</p>
 
 <div class="legal"><a href="/about" style="color:#8aa0bf">About</a> &middot; <a href="/corrections" style="color:#8aa0bf">Corrections</a> &middot; <a href="/methodology" style="color:#8aa0bf">Methodology</a><br><br>
 <b>Not affiliated with or endorsed by the FDA, SELLAS Life Sciences, or any company mentioned.</b> pdufa.bio is an
-independent service. <b>Informational and educational only &mdash; not investment advice.</b> This page contains factual
+independent service. <b>Informational and educational only. Not investment advice.</b> This page contains factual
 statements, filed document text, and historical price statistics only; it makes no forecast and no recommendation
 about any security. Event-driven readout timing, interim results and corporate transactions are inherently uncertain.
 Verify every figure against primary FDA, SEC and company filings before acting. &copy; 2026 pdufa.bio</div>

@@ -72,7 +72,7 @@ def main():
         dp = r.get("dp") or "day"
         dtxt = d + ("" if dp == "day" else " (est.)")
         # only link the drug to /pdufa/<T> when that page really exists; otherwise plain text
-        drug_cell = f'<a href="/pdufa/{t}">{nm}</a>' if (nm and has_pdufa_page(t)) else (nm or "&mdash;")
+        drug_cell = f'<a href="/pdufa/{t}">{nm}</a>' if (nm and has_pdufa_page(t)) else (nm or "n/a")
         trs.append(
             f'<tr><td><a href="/ticker/{t}">{t}</a></td>'
             f'<td>{dtxt}</td><td>{typ}</td>'
@@ -81,7 +81,7 @@ def main():
     block = (START +
              '<table id="ssr-table" style="width:100%;border-collapse:collapse;font-size:13.5px">'
              '<caption style="text-align:left;color:#9db3d4;font-size:12.5px;padding:6px 0">'
-             f'Next {len(trs)} catalysts &mdash; server-rendered. Sorting and filtering load with JavaScript; '
+             f'Next {len(trs)} catalysts: server-rendered. Sorting and filtering load with JavaScript; '
              'this table is the same data without it.</caption>'
              '<thead><tr>'
              '<th style="text-align:left;padding:7px 6px;color:#f0c86a;font-size:11.5px;text-transform:uppercase">Ticker</th>'

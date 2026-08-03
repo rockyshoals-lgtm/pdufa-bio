@@ -69,3 +69,18 @@ runs/
 #    catalysts_out/catalysts_public.csv   (force-add: git add -f, despite *.csv above)
 #    .github/workflows/          the rebuild workflow
 # ============================================================================
+
+runup_t120_cache.json
+dash_sweep_review.txt
+*.bak_t120
+*.bak_extend
+*.bak_board
+
+# Local scratch/cache trees. Never part of the deploy; `git add -A` used to sweep 13k of these in.
+.odin_cache_v4/
+opt_charts/
+Momentum Scanner/
+smart_money_cache/
+phase_readout_cache/
+daily_scans/
+readout_runs/

@@ -80,7 +80,7 @@ def build_chart(dated, decision_date):
               f' (decision-day close vs prior close).')
     cap = (f'<p class="note" style="margin-top:10px">Gray = run-up into the FDA decision; '
            f'gold dot &amp; dashed line = the decision day ({dhuman}); colored line = the day-of '
-           f'reaction and after.{mv} Daily closes via Polygon &mdash; not a prediction.</p>')
+           f'reaction and after.{mv} Daily closes via Polygon. Not a prediction.</p>')
     return (f'<div class="card" id="reaction-chart"><div style="font-size:12px;color:#94a9c9;'
             f'margin-bottom:6px">Run-up &amp; decision-day reaction</div>{svg}{cap}</div>')
 

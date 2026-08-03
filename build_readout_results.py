@@ -149,10 +149,10 @@ def build_section(readouts, key, limit):
     if not rows:
         return ""
     return ('<div id="readout-results">'
-            '<div class="mhead" style="color:#46d17f">Recently reported &mdash; stock move over the estimated readout window</div>'
+            '<div class="mhead" style="color:#46d17f">Recently reported: stock move over the estimated readout window</div>'
             '<div class="note" style="margin:-2px 0 8px">Auto-logged: each stock\'s price move across its '
             'estimated readout window (Polygon daily closes). These are estimated month windows, so the exact '
-            'announcement date and clinical outcome are not yet verified &mdash; this shows the market\'s move '
+            'announcement date and clinical outcome are not yet verified: this shows the market\'s move '
             'over the window, not a statement about trial success. '
             '<a href="/methodology" style="color:#e3ba5e">Methodology</a>.</div>'
             f'<div class="grid">{"".join(rows)}</div></div><!--/readout-results-->')

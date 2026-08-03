@@ -102,10 +102,10 @@ def main():
         body.append(f'<h2 id="{L}">{L}</h2><div class="grid">{"".join(rows)}</div>')
 
     html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="index,follow,max-image-preview:large">
-<title>All Biotech Tickers We Track (A&ndash;Z) &mdash; FDA Catalysts by Company | pdufa.bio</title>
-<meta name="description" content="Every biotech and pharma ticker tracked by pdufa.bio, A to Z ({len(tickers)} companies) &mdash; with each company's next FDA catalyst and how many FDA decisions we have on record. Free, no login.">
+<title>All Biotech Tickers We Track (A-Z): FDA Catalysts by Company | pdufa.bio</title>
+<meta name="description" content="Every biotech and pharma ticker tracked by pdufa.bio, A to Z ({len(tickers)} companies), with each company's next FDA catalyst and how many FDA decisions we have on record. Free, no login.">
 <link rel="canonical" href="https://www.pdufa.bio/tickers"><meta name="theme-color" content="#060b14">
-<meta property="og:type" content="website"><meta property="og:title" content="All biotech tickers we track (A&ndash;Z)"><meta property="og:url" content="https://www.pdufa.bio/tickers">
+<meta property="og:type" content="website"><meta property="og:title" content="All biotech tickers we track (A-Z)"><meta property="og:url" content="https://www.pdufa.bio/tickers">
 <style>*{{box-sizing:border-box}}
 :root{{--bg:#060b14;--card:#0e1c33;--cardh:#132745;--line:#1e3a63;--line2:#294d80;--gold:#f0c86a;--ink:#eef4fc;--mut:#9db3d4;--mut2:#7c93b6;--green:#46d17f}}
 html,body{{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}}
@@ -140,7 +140,7 @@ h2{{font-size:17px;color:var(--gold);margin:26px 0 8px;border-bottom:1px solid v
 <header class="site"><div class="hd"><a class="brand" href="/">pdufa<b>.bio</b></a>{NAV}</div></header>
 <main class="wrap">
 <div class="bc"><a href="/">Home</a> &rsaquo; All tickers</div>
-<h1>Every ticker we <span class="g">track</span> &mdash; A to Z</h1>
+<h1>Every ticker we <span class="g">track</span>: A to Z</h1>
 <p class="sub">All {len(tickers)} biotech and pharma companies covered by pdufa.bio, with each company's next
 FDA catalyst and the number of FDA decisions we hold on record for it. Every calendar date and outcome on this
 site is sourced to a primary FDA, SEC or company filing. Free, no login.</p>
@@ -159,7 +159,7 @@ site is sourced to a primary FDA, SEC or company filing. Free, no login.</p>
 <a href="/developers" style="color:#6fb6ff">API</a>.</p>
 <div class="legal"><a href="/about" style="color:#8aa0bf">About</a> &middot; <a href="/corrections" style="color:#8aa0bf">Corrections</a> &middot; <a href="/methodology" style="color:#8aa0bf">Methodology</a> &middot; <a href="/developers" style="color:#8aa0bf">API</a><br><br>
 <b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent service.
-<b>Informational and educational only &mdash; not investment advice.</b> Verify every date and outcome against
+<b>Informational and educational only. Not investment advice.</b> Verify every date and outcome against
 primary FDA / SEC / company filings. &copy; 2026 pdufa.bio</div>
 </main><script src="/cmdk.js" defer></script></body></html>"""
 

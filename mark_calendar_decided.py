@@ -56,7 +56,7 @@ def match_decision(by_tk, tk, caldate):
 
 def strip_marker(dtext):
     """Remove a previously-injected outcome span so re-marking never stacks."""
-    return re.sub(r'^\s*<span style="color:#[0-9a-fA-F]{6};font-weight:700">[^<]*</span>\s*&mdash;\s*', "", dtext)
+    return re.sub(r'^\s*<span style="color:#[0-9a-fA-F]{6};font-weight:700">[^<]*</span>\s*: \s*', "", dtext)
 
 
 def mark_page(path, by_tk, dry):
@@ -79,7 +79,7 @@ def mark_page(path, by_tk, dry):
         return (f'<a class="row" data-dec="1" href="/fda-decision/{tk}-{decdate}">'
                 f'<div class="t">{tk} &middot; {caldate} '
                 f'<span style="color:{col};font-weight:700">{icon}</span></div>'
-                f'<div class="d"><span style="color:{col};font-weight:700">{word}</span> &mdash; {body}</div></a>')
+                f'<div class="d"><span style="color:{col};font-weight:700">{word}</span>: {body}</div></a>')
 
     new = ROW.sub(repl, html)
     if changed[0] and not dry:

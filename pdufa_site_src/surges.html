@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>pdufa.bio — Momentum Surge Radar</title>
+<title>pdufa.bio: Momentum Surge Radar</title>
 <meta name="description" content="Live momentum-surge radar: catches small/micro-cap stocks surging intraday and rates their historical continuation odds. Educational only, not investment advice.">
 <link rel="canonical" href="https://www.pdufa.bio/surges">
 <style>
@@ -49,8 +49,8 @@ footer{margin-top:24px;border-top:1px solid var(--bd);padding-top:13px;color:var
 </style><link rel="preload" href="/fonts/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/IBMPlexMono-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fonts/fonts.css"><style id="typesys">h1,h2,h3,.brand{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif !important;letter-spacing:-.5px}body{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}.tk,.dt,.dd,.cd b,.lpn,.coh,.stat b,.count,.code,.price b,.licap,.cap,.pill,.lit{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.2px}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style id="navpolish">.brand{display:inline-flex;align-items:center;gap:0}.pd-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:transparent;cursor:pointer;color:#eef4fc;padding:0}.pd-burger span,.pd-burger span::before,.pd-burger span::after{content:"";display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:.2s}.pd-burger span::before{position:absolute;top:-6px}.pd-burger span::after{position:absolute;top:6px}body.pd-navopen .pd-burger span{background:transparent}body.pd-navopen .pd-burger span::before{top:0;transform:rotate(45deg)}body.pd-navopen .pd-burger span::after{top:0;transform:rotate(-45deg)}@media(max-width:720px){.pd-burger{display:inline-flex}.hd nav,.top .nav{position:fixed;inset:56px 0 auto 0;z-index:30;flex-direction:column;align-items:stretch;gap:0;background:#0b1626;border-bottom:1px solid #1e3a63;box-shadow:0 18px 40px rgba(0,0,0,.5);max-height:0;overflow:hidden;transition:max-height .25s ease}body.pd-navopen .hd nav,body.pd-navopen .top .nav{max-height:82vh;overflow:auto}.hd nav a,.top .nav a{padding:15px 20px!important;border-bottom:1px solid #14263f;font-size:16px!important;border-radius:0!important;min-height:44px;display:flex;align-items:center}.chip{min-height:40px}}.navdd{position:relative;display:inline-flex;align-items:center}.navddb{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:7px 11px;border-radius:8px;display:inline-flex;align-items:center;gap:3px}.navdd:hover .navddb,.navdd:focus-within .navddb{color:#eef4fc}.navddm{position:absolute;top:100%;right:0;min-width:170px;background:#0b1626;border:1px solid #294d80;border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.5);padding:6px;flex-direction:column;display:none;z-index:40}.navdd:hover .navddm,.navdd:focus-within .navddm{display:flex}.navddm a{padding:9px 12px!important;border-radius:8px;white-space:nowrap}.navddm a:hover{background:#132745}@media(max-width:720px){.navdd{display:contents}.navddb{display:none}.navddm{position:static;display:flex!important;min-width:0;background:transparent;border:0;box-shadow:none;padding:0}.navddm a{border-bottom:1px solid #14263f}}</style></head>
 <body><div class="wrap">
 <header>
-  <h1>pdufa<b>.bio</b> — Momentum Surge Radar</h1>
-  <div class="tag">Catches small/micro-cap gappers — <b>pre-market from 4:00am</b> and the morning surge (9:30am–noon ET) — and rates the odds they keep running. Ride the wave, exit by midday.</div>
+  <h1>pdufa<b>.bio</b>: Momentum Surge Radar</h1>
+  <div class="tag">Catches small/micro-cap gappers, <b>pre-market from 4:00am</b> and the morning surge (9:30am-noon ET), and rates the odds they keep running. Ride the wave, exit by midday.</div>
   <div class="status">
     <span><span id="dot" class="dot"></span> <span id="conn">Loading…</span></span>
     <span>·</span><span>Data <b id="asof">—</b></span>
@@ -59,7 +59,7 @@ footer{margin-top:24px;border-top:1px solid var(--bd);padding-top:13px;color:var
     <label style="display:flex;align-items:center;gap:5px"><input type="checkbox" id="auto" checked style="padding:0"> auto 20s</label>
   </div>
 </header>
-<div class="note"><b>How to read this:</b> a "surge" is a small-cap moving hard in the morning. The <b>continuation odds</b> estimate whether it keeps running from the open toward <b>midday (~noon)</b> — the idea is to <b>ride the morning wave and exit by midday, not hold all day.</b> Odds are <b>unbiased historical base rates</b> — P(a name at this move × relative-volume went on to +25% intraday), built from whole-market data that includes since-delisted tickers (winners <i>and</i> losers). <b>Not predictions.</b> Pre-market: of every name that eventually surged +25%, ~83% were already up ≥10% by 9:00am. The green <b>⚡ HIGH-ODDS</b> flag is an educational "worth being aware of" marker, <b>not a buy signal.</b> You make all decisions.</div>
+<div class="note"><b>How to read this:</b> a "surge" is a small-cap moving hard in the morning. The <b>continuation odds</b> estimate whether it keeps running from the open toward <b>midday (~noon)</b>: the idea is to <b>ride the morning wave and exit by midday, not hold all day.</b> Odds are <b>unbiased historical base rates</b>; P(a name at this move × relative-volume went on to +25% intraday), built from whole-market data that includes since-delisted tickers (winners <i>and</i> losers). <b>Not predictions.</b> Pre-market: of every name that eventually surged +25%, ~83% were already up ≥10% by 9:00am. The green <b>⚡ HIGH-ODDS</b> flag is an educational "worth being aware of" marker, <b>not a buy signal.</b> You make all decisions.</div>
 <div id="scorecard" class="note" style="border-left-color:#48d597;display:none"></div>
 <div class="toolbar">
   <input id="q" placeholder="search ticker / name…" style="min-width:180px">
@@ -67,14 +67,12 @@ footer{margin-top:24px;border-top:1px solid var(--bd);padding-top:13px;color:var
   <select id="tf"><option value="">All tiers</option><option value="HIGH_ODDS">⚡ High-odds only</option><option value="MODERATE">Moderate</option><option value="FADE_RISK">Fade-risk</option></select>
 </div>
 <main class="grid">
-  <div><div class="panel" style="height:100%"><h2>⚡ On-Watch (High-Odds)</h2><div class="sub">Educational flag — not a recommendation</div><div id="alerts"></div></div></div>
+  <div><div class="panel" style="height:100%"><h2>⚡ On-Watch (High-Odds)</h2><div class="sub">Educational flag, not a recommendation</div><div id="alerts"></div></div></div>
   <div><div class="panel"><h2>Live Surge Board</h2><div class="sub" id="wsub">Small/micro-cap movers, rated</div><div id="list"></div></div></div>
 </main>
 <div id="modal" class="modal"><div class="mbg" onclick="App.hide()"></div><div class="mbox" id="mbox"></div></div>
 <footer>
-  <b>Informational and educational only — not investment advice.</b> Owned and operated by Odin Catalyst LLC.
-  Odds are <b>unbiased historical base rates</b> — P(+25% intraday) built from whole-market data including since-delisted names (winners and losers). They describe a name at this move × relative-volume; they're not predictions, and "reached +25% intraday" is not the same as your entry P&L. The intent is to ride a morning surge and exit by midday, never hold through the day. Nothing here is a recommendation to buy, sell, or hold; verify liquidity and news yourself. <b>You make all decisions.</b>
-</footer></div>
+  <b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is published by <b>Odin Catalyst LLC</b>, an independent company that is not affiliated with, endorsed by, sponsored by, or connected to the U.S. Food and Drug Administration or any other government agency. &ldquo;FDA&rdquo;, &ldquo;PDUFA&rdquo; and all company, drug and ticker names are used descriptively and remain the property of their respective owners.<br><br><b>Informational and educational purposes only. Not investment advice.</b> Nothing on this page is investment, legal, tax or medical advice, or an offer or solicitation to buy or sell any security. Odin Catalyst LLC is not a registered investment adviser or broker-dealer and does not recommend trades or publish individual-drug approval probabilities. Odds are unbiased historical base rates, P(+25% intraday) built from whole-market data including since-delisted names (winners and losers). They describe a name at this move × relative-volume; they're not predictions, and "reached +25% intraday" is not the same as your entry P&L. The intent is to ride a morning surge and exit by midday, never hold through the day. Nothing here is a recommendation to buy, sell, or hold; verify liquidity and news yourself. You make all decisions. Verify every date and outcome against primary FDA, SEC or company filings. Data is provided as is, without warranty of any kind, and past behaviour does not predict future outcomes.<br><br>&copy; 2026 Odin Catalyst LLC. All rights reserved.</footer></div>
 <script>
 const App={
   data:[], timer:null, session:'OPEN',
@@ -83,14 +81,14 @@ const App={
     document.getElementById('conn').textContent='Loading…'; document.getElementById('dot').className='dot';
     try{
       const r=await fetch('/api/surges',{cache:'no-store'}); const j=await r.json();
-      this.session=j.session||'OPEN'; document.getElementById('asof').textContent=j.as_of||'—';
+      this.session=j.session||'OPEN'; document.getElementById('asof').textContent=j.as_of||'n/a';
       const cs={OPEN:['live','dot ok'],PRE_OPEN:['pre-market · opens 9:30','dot'],CLOSED:['market closed','dot']}[this.session]||['live','dot ok'];
       document.getElementById('conn').textContent=cs[0]; document.getElementById('dot').className=cs[1];
       if(this.session==='PRE_OPEN'){ await this.loadPremarket(); this.auto(); return; }
       if(this.session!=='OPEN'){
         this.data=[]; document.getElementById('cnt').innerHTML=''; document.getElementById('wsub').textContent='';
-        document.getElementById('list').innerHTML='<div class="empty">'+(j.note||'Not live right now.')+'<br><br>The live board runs <b>9:30am–4:00pm ET</b>, weekdays. The <b>pre-market board</b> runs <b>4:00–9:30am ET</b>.</div>';
-        document.getElementById('alerts').innerHTML='<div class="empty">—</div>';
+        document.getElementById('list').innerHTML='<div class="empty">'+(j.note||'Not live right now.')+'<br><br>The live board runs <b>9:30am-4:00pm ET</b>, weekdays. The <b>pre-market board</b> runs <b>4:00-9:30am ET</b>.</div>';
+        document.getElementById('alerts').innerHTML='<div class="empty">No alerts right now</div>';
         this.auto(); return;
       }
       this.data=j.surges||[]; document.getElementById('cnt').innerHTML='<b>'+this.data.length+'</b> surges';
@@ -101,13 +99,13 @@ const App={
   async loadPremarket(){
     try{
       const r=await fetch('/api/premarket',{cache:'no-store'}); const j=await r.json();
-      document.getElementById('asof').textContent=j.as_of||'—';
+      document.getElementById('asof').textContent=j.as_of||'n/a';
       document.getElementById('conn').textContent='pre-market · live'; document.getElementById('dot').className='dot ok';
       this.data=(j.premarket||[]);
       document.getElementById('cnt').innerHTML='<b>'+this.data.length+'</b> pre-market gappers';
       document.getElementById('wsub').textContent=(j.relvol_enabled?'move × volume rated':'move-rated (ADV map pending)');
-      document.querySelector('#wsub').closest('.panel').querySelector('h2').textContent='Pre-Market Board (4:00–9:30am ET)';
-      if(!this.data.length){ document.getElementById('list').innerHTML='<div class="empty">No pre-market gappers ≥ 5% yet.</div>'; document.getElementById('alerts').innerHTML='<div class="empty">—</div>'; return; }
+      document.querySelector('#wsub').closest('.panel').querySelector('h2').textContent='Pre-Market Board (4:00-9:30am ET)';
+      if(!this.data.length){ document.getElementById('list').innerHTML='<div class="empty">No pre-market gappers ≥ 5% yet.</div>'; document.getElementById('alerts').innerHTML='<div class="empty">No alerts right now</div>'; return; }
       this.render();
     }catch(e){ document.getElementById('dot').className='dot err'; document.getElementById('conn').textContent='Feed error';
       document.getElementById('list').innerHTML='<div class="empty">Could not load /api/premarket.</div>'; }
@@ -129,13 +127,13 @@ const App={
     const hi=this.data.filter(s=>s.tier==='HIGH_ODDS');
     al.innerHTML=hi.length?'':'<div class="empty">No high-odds surges right now.</div>'; hi.forEach(s=>al.appendChild(this.card(s,true)));
   },
-  mcap(m){ return m?(m>=1e9?'$'+(m/1e9).toFixed(1)+'B':'$'+Math.round(m/1e6)+'M'):'—'; },
+  mcap(m){ return m?(m>=1e9?'$'+(m/1e9).toFixed(1)+'B':'$'+Math.round(m/1e6)+'M'):'n/a'; },
   card(s,alert){
     const el=document.createElement('div'); el.className='card'+(alert&&s.tier==='HIGH_ODDS'?' alert':''); el.onclick=()=>this.show(s);
     const col=this.oddsColor(s.cont_odds_pct);
     if(alert){ el.innerHTML='<div class="top"><span class="tk pos">'+s.ticker+'</span><span class="badge '+s.tier+'">'+this.tierLabel(s.tier_new||s.tier)+'</span></div><div class="nm">'+s.name+'</div><div style="margin-top:4px">Odds <b style="color:'+col+'">'+s.cont_odds_pct+'%</b> · '+(s.chg>=0?'+':'')+s.chg+'% today</div>'; return el; }
     el.innerHTML='<div class="top"><div><span class="tk">'+s.ticker+'</span> <span class="chip">'+this.mcap(s.marketCap)+'</span> <span class="badge '+s.tier+'">'+this.tierLabel(s.tier_new||s.tier)+'</span><div class="nm">'+s.name+'</div></div>'+
-      '<div><div class="px">$'+(s.price!=null?s.price.toFixed(2):'—')+'</div><div class="'+(s.chg>=0?'pos':'neg')+'" style="text-align:right;font-size:12.5px">'+(s.chg>=0?'+':'')+s.chg+'%</div></div></div>'+
+      '<div><div class="px">$'+(s.price!=null?s.price.toFixed(2):'n/a')+'</div><div class="'+(s.chg>=0?'pos':'neg')+'" style="text-align:right;font-size:12.5px">'+(s.chg>=0?'+':'')+s.chg+'%</div></div></div>'+
       '<div class="barwrap"><div class="barrow"><span>Continuation odds (historical)</span><span style="color:'+col+';font-weight:700">'+s.cont_odds_pct+'%</span></div><div class="barbg"><div class="bar" style="width:'+s.cont_odds_pct+'%;background:'+col+'"></div></div></div>'+
       '<div class="flags">'+(s.relvol!=null?'<span class="f">'+s.relvol+'× avg vol</span>':'')+(s.flags||[]).map(f=>'<span class="f">'+f.replace(/_/g,' ')+'</span>').join('')+'</div>';
     return el;
@@ -144,19 +142,19 @@ const App={
     const col=this.oddsColor(s.cont_odds_pct);
     document.getElementById('mbox').innerHTML='<div style="display:flex;justify-content:space-between;align-items:flex-start"><div><h2 style="font-size:22px">'+s.ticker+' <span class="badge '+s.tier+'">'+this.tierLabel(s.tier_new||s.tier)+'</span></h2><div class="nm" style="max-width:none">'+s.name+'</div></div><button onclick="App.hide()" style="background:none;border:none;color:var(--mut);font-size:26px">×</button></div>'+
       '<div style="font-size:30px;font-weight:800;color:'+col+';margin:6px 0">'+s.cont_odds_pct+'% <span style="font-size:13px;color:var(--mut);font-weight:400">historical continuation odds</span></div>'+
-      '<div class="mrow"><span>Price</span><span>$'+(s.price!=null?s.price.toFixed(2):'—')+' ('+(s.chg>=0?'+':'')+s.chg+'% today)</span></div>'+
+      '<div class="mrow"><span>Price</span><span>$'+(s.price!=null?s.price.toFixed(2):'n/a')+' ('+(s.chg>=0?'+':'')+s.chg+'% today)</span></div>'+
       '<div class="mrow"><span>Move today</span><span>'+s.move+'%</span></div>'+
-      '<div class="mrow"><span>Volume vs 20-day avg</span><span>'+(s.relvol!=null?s.relvol+'×':'—')+'</span></div>'+
+      '<div class="mrow"><span>Volume vs 20-day avg</span><span>'+(s.relvol!=null?s.relvol+'×':'n/a')+'</span></div>'+
       '<div class="mrow"><span>Market cap</span><span>'+this.mcap(s.marketCap)+'</span></div>'+
-      '<div class="mrow"><span>Signals</span><span>'+((s.flags||[]).join(', ')||'—')+'</span></div>'+
-      '<div class="note" style="margin-top:14px">These odds are <b>unbiased historical base rates</b> — P(a small/micro name at this move × relative-volume went on to +25% intraday), from whole-market data that <b>includes since-delisted tickers</b> (winners <i>and</i> losers, not just survivors). <b>Not a prediction, not a recommendation.</b> "Reached +25% intraday" is not the same as your entry P&L — realized results depend on fills, and micro-cap / pre-market liquidity can be thin. Verify liquidity, spread, and news before doing anything. <b>You make all decisions.</b></div>';
+      '<div class="mrow"><span>Signals</span><span>'+((s.flags||[]).join(', ')||'n/a')+'</span></div>'+
+      '<div class="note" style="margin-top:14px">These odds are <b>unbiased historical base rates</b>: P(a small/micro name at this move × relative-volume went on to +25% intraday), from whole-market data that <b>includes since-delisted tickers</b> (winners <i>and</i> losers, not just survivors). <b>Not a prediction, not a recommendation.</b> "Reached +25% intraday" is not the same as your entry P&L; realized results depend on fills, and micro-cap / pre-market liquidity can be thin. Verify liquidity, spread, and news before doing anything. <b>You make all decisions.</b></div>';
     document.getElementById('modal').classList.add('show');
   },
   hide(){ document.getElementById('modal').classList.remove('show'); },
   async loadScorecard(){
     try{ const j=await (await fetch('/api/scorecard',{cache:'no-store'})).json(); const sc=j.scorecard; const el=document.getElementById('scorecard');
       if(sc && sc.hi_calls){ el.style.display='block';
-        el.innerHTML='<b>Call scorecard (educational, live-building):</b> of <b>'+sc.hi_calls+'</b> high-odds morning setups logged over <b>'+sc.days+'</b> trading day(s), <b>'+(sc.hi_hit_rate_pct??'—')+'%</b> continued up to midday; overall '+(sc.overall_continuation_pct??'—')+'% of the '+sc.surges+' logged 25%+ surges continued. <span style="color:var(--dim)">Reconstructed from intraday, survivorship-biased — not advice.</span>'; } }catch(e){}
+        el.innerHTML='<b>Call scorecard (educational, live-building):</b> of <b>'+sc.hi_calls+'</b> high-odds morning setups logged over <b>'+sc.days+'</b> trading day(s), <b>'+(sc.hi_hit_rate_pct??'n/a')+'%</b> continued up to midday; overall '+(sc.overall_continuation_pct??'n/a')+'% of the '+sc.surges+' logged 25%+ surges continued. <span style="color:var(--dim)">Reconstructed from intraday, survivorship-biased, not advice.</span>'; } }catch(e){}
   }
 };
 ['q','sort','tf'].forEach(id=>document.getElementById(id).addEventListener('input',()=>App.render()));

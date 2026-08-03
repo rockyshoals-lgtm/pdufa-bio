@@ -51,6 +51,20 @@ print(f"  PDUFA RUN-UP STUDY  |  {len(rows)} events  |  {min(dates)} .. {max(dat
 print("=" * 78)
 print(f"  approvals {len(appr)} ({out['approval_rate']}%)   CRLs {len(crl)}")
 
+# T-120 is the site-wide baseline: one baseline everywhere, no page quoting a different window.
+print("\n  RUN-UP FROM THE T-120 BASELINE (fractions in the csv, shown as %)")
+t120n = sum(1 for r in rows if f(r, "T-120_T-1") is not None)
+out["t120_coverage_n"] = t120n
+out["t120_coverage_pct"] = round(100 * t120n / len(rows), 1)
+for k in ("T-120_T-1", "T-120_T-7", "T-120_T-3", "T-120_peak"):
+    vals = [f(r, k) for r in rows]
+    m, mn = med(vals), mean(vals)
+    out[k + "_median_pct"] = round(m * 100, 2) if m is not None else None
+    out[k + "_mean_pct"] = round(mn * 100, 2) if mn is not None else None
+    if m is not None:
+        print(f"    {k:12s} median {m*100:+6.2f}%   mean {mn*100:+6.2f}%")
+print(f"    coverage: {t120n:,}/{len(rows):,} events ({out['t120_coverage_pct']}%) have 120 sessions of prior history")
+
 print("\n  RUN-UP INTO THE DECISION (median %, eve vs N trading days before)")
 for k in ("runup_30d", "runup_21d", "runup_14d", "runup_7d", "runup_5d", "runup_3d"):
     m = med([f(r, k) for r in rows])
@@ -91,13 +105,19 @@ for y in sorted(byyr):
     g = byyr[y]
     r30 = med([f(r, "runup_30d") for r in g])
     p1 = med([f(r, "post_1d") for r in g])
+    t120 = med([f(r, "T-120_T-1") for r in g])
+    t120pk = med([f(r, "T-120_peak") for r in g])
+    t120n = sum(1 for r in g if f(r, "T-120_T-1") is not None)
     ar = 100 * sum(1 for r in g if r.get("outcome") == "APPROVAL") / len(g)
     out["by_year"][y] = {"n": len(g),
+                         "t120_median_pct": round(t120 * 100, 2) if t120 is not None else None,
+                         "t120_peak_median_pct": round(t120pk * 100, 2) if t120pk is not None else None,
+                         "t120_n": t120n,
                          "runup_30d_median": round(r30, 2) if r30 is not None else None,
                          "post_1d_median": round(p1, 2) if p1 is not None else None,
                          "approval_rate": round(ar, 1)}
-    print(f"    {y}  n={len(g):4d}   runup30 median {r30:+6.2f}%   post1d median {p1:+6.2f}%   "
-          f"approval {ar:4.1f}%")
+    print(f"    {y}  n={len(g):4d}   T-120 median {(t120*100 if t120 is not None else 0):+6.2f}% (n={t120n:4d})   "
+          f"runup30 {r30:+6.2f}%   post1d {p1:+6.2f}%   approval {ar:4.1f}%")
 
 json.dump(out, open(os.path.join(HERE, "runup_study_stats.json"), "w"), indent=1)
 print(f"\nwrote runup_study_stats.json")
