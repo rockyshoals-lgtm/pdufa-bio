@@ -4,6 +4,12 @@ Disallow: /today
 Disallow: /today.html
 Disallow: /app
 Disallow: /app.html
+Disallow: /_pdufa_bak8/
+Disallow: /_pdufa_xbak/
+Disallow: /_retired_pdufa_2026-07-19/
+Disallow: /preview
+Disallow: /holding
+Disallow: /ping
 Allow: /api/v1/
 Disallow: /api/
 

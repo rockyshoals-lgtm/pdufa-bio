@@ -11,9 +11,27 @@ import urllib.request, urllib.error
 import statistics as st
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+
+# The "80th event has not been announced" claim is a statement of ABSENCE. It is dated from
+# _sls_verified_through.json, which check_sls_filings.py only advances when EDGAR confirms SELLAS
+# has filed nothing material. Never from the clock: stamping today's date on an unverified negative
+# is how a site ends up confidently wrong the morning after an announcement.
+def _verified_through():
+    import json as _json
+    p = os.path.join(HERE, "_sls_verified_through.json")
+    if os.path.exists(p):
+        try:
+            return dt.date.fromisoformat(_json.load(open(p, encoding="utf-8"))["verified_through"])
+        except Exception:
+            pass
+    return dt.date(2026, 8, 1)
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUTDIR = os.path.join(SITE, "research", "sls-deep-dive")
-TODAY = dt.date(2026, 8, 1)
+TODAY = _verified_through()
+BASE78 = dt.date(2026, 5, 11)          # as-of date of the 78-event disclosure
+DAYS_SINCE = (TODAY - BASE78).days
+VERIFIED_TXT = TODAY.strftime("%b ") + str(TODAY.day) + TODAY.strftime(", %Y")
 
 
 def load_key():
@@ -201,7 +219,7 @@ counts and their stated as-of dates; it is arithmetic on company-reported figure
 </table>
 <div class="note" style="margin-top:10px">Applying each observed pace to the 2 remaining events from the 78-event
 as-of date (May 11, 2026) gives arithmetic arrival windows of approximately <b>Jun 25, 2026</b> (recent pace),
-<b>Jul 7, 2026</b> (overall pace) and <b>Jul 14, 2026</b> (earlier pace). As of <b>Aug 1, 2026</b>: 82 days
+<b>Jul 7, 2026</b> (overall pace) and <b>Jul 14, 2026</b> (earlier pace). As of <b>{VERIFIED_TXT}</b>: {DAYS_SINCE} days
 after the 78-event as-of date: SELLAS has not announced the 80th event. The company has said it will
 announce the 80th event when it occurs.</div></div>
 <p>Context from the company's own December 29, 2025 release: after the IDMC's August 2025 recommendation, the
@@ -270,7 +288,7 @@ diagnosed first-line AML began dosing, with topline data expected in Q4 2026.</d
 </div>
 <div class="card bear"><h3>Facts cited by the bear case</h3>
 <div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025;
-as of Aug 1, 2026 it has not been announced, 82 days past the 78-event as-of date and beyond all three
+as of {VERIFIED_TXT} it has not been announced, {DAYS_SINCE} days past the 78-event as-of date and beyond all three
 arrival windows implied by the company's own disclosed event pace.</div>
 <div class="fact"><b>Blinded pooled event counts cannot distinguish the arms.</b> Slower accrual means the pooled
 population is living longer; because SELLAS is blinded, the disclosed counts do not indicate whether that is

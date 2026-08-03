@@ -14,11 +14,27 @@ import datetime as dt
 import urllib.request, urllib.error
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+
+# The "80th event has not been announced" claim is a statement of ABSENCE. It is dated from
+# _sls_verified_through.json, which check_sls_filings.py only advances when EDGAR confirms SELLAS
+# has filed nothing material. Never from the clock: stamping today's date on an unverified negative
+# is how a site ends up confidently wrong the morning after an announcement.
+def _verified_through():
+    import json as _json
+    p = os.path.join(HERE, "_sls_verified_through.json")
+    if os.path.exists(p):
+        try:
+            return dt.date.fromisoformat(_json.load(open(p, encoding="utf-8"))["verified_through"])
+        except Exception:
+            pass
+    return dt.date(2026, 8, 1)
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUTDIR = os.path.join(SITE, "sls")
-TODAY = dt.date(2026, 8, 1)
+TODAY = _verified_through()
 BASE78 = dt.date(2026, 5, 11)          # as-of date of the 78-event disclosure
 DAYS_SINCE = (TODAY - BASE78).days
+VERIFIED_TXT = TODAY.strftime("%b ") + str(TODAY.day) + TODAY.strftime(", %Y")
 
 
 def load_key():
@@ -190,7 +206,7 @@ aggregate update <b>incurred no statistical penalty</b>.</p>
 </table>
 <div class="note" style="margin-top:10px">Applying each observed pace to the 2 remaining events from the 78-event as-of date
 (May 11, 2026) implies arrival around <b>Jun 25</b>, <b>Jul 7</b> and <b>Jul 14, 2026</b> respectively. As of
-<b>Aug 1, 2026</b>, <b>{DAYS_SINCE} days</b> after that as-of date: the 80th event has not been announced. This is
+<b>{VERIFIED_TXT}</b>, <b>{DAYS_SINCE} days</b> after that as-of date: the 80th event has not been announced. This is
 arithmetic on company-disclosed counts, not a projection model.</div></div>
 <p>Context in the company's own words. After the IDMC's August 2025 recommendation, the 80th event had been
 expected before year-end 2025; it did not occur. In the December 29, 2025 release CEO Angelos Stergiou stated
@@ -268,10 +284,10 @@ particular document does and does not say, and this document describes benchmark
 <h2>3. Has this pattern historically preceded a buyout?</h2>
 <p>The inference "change-of-control amendment &rarr; imminent acquisition" is testable. We searched SEC EDGAR
 full-text for 8-K filings containing comparable change-of-control severance language over the trailing 12 months
-(Aug 1, 2025, Aug 1, 2026), kept filers in pharma/biotech SIC codes (2834, 2836, 8731), deduplicated to one
+(Aug 1, 2025 to Aug 1, 2026, a fixed 12-month window, not a rolling one), kept filers in pharma/biotech SIC codes (2834, 2836, 8731), deduplicated to one
 row per company, and then checked whether each ticker still trades independently today.</p>
 <div class="card"><table>
-<tr><th>Company</th><th>Ticker</th><th>Comparable CoC 8-K filed</th><th>Status as of Aug 1, 2026</th></tr>
+<tr><th>Company</th><th>Ticker</th><th>Comparable CoC 8-K filed</th><th>Status as of {VERIFIED_TXT}</th></tr>
 <tr><td>Ardelyx, Inc.</td><td class="dt">ARDX</td><td class="dt">2025-08-04</td><td>Still trading independently</td></tr>
 <tr><td>Stoke Therapeutics, Inc.</td><td class="dt">STOK</td><td class="dt">2025-10-06</td><td>Still trading independently</td></tr>
 <tr><td>Xenon Pharmaceuticals Inc.</td><td class="dt">XENE</td><td class="dt">2025-12-01</td><td>Still trading independently</td></tr>
@@ -279,7 +295,7 @@ row per company, and then checked whether each ticker still trades independently
 <tr><td>SELLAS Life Sciences Group, Inc.</td><td class="dt">SLS</td><td class="dt">2026-06-25</td><td>Still trading independently</td></tr>
 </table>
 <div class="note" style="margin-top:10px"><b>Result: of the 5 comparable biotech/pharma filers identified in the window,
-0 have been acquired or taken private as of Aug 1, 2026.</b></div></div>
+0 have been acquired or taken private as of {VERIFIED_TXT}.</b></div></div>
 <p class="note"><b>Stated limits of this measurement.</b> EDGAR full-text search matches exact phrases in the filing
 body, and many companies describe these arrangements in other words or incorporate them by reference to an exhibit;
 this search therefore <b>undercounts</b> the true population, and 5 is a small sample rather than a census. The
@@ -323,7 +339,7 @@ without weighting. Neither column is a recommendation.</p>
 <div class="fact">A second, independent catalyst: 80-patient <b>Phase 2 of SLS009 in first-line AML, topline expected Q4 2026</b>.</div>
 </div>
 <div class="card bear"><h3>Cited by the bear case</h3>
-<div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025; as of Aug 1, 2026 it is unannounced, {DAYS_SINCE} days past the 78-event as-of date and beyond all three windows implied by the company's own disclosed pace.</div>
+<div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025; as of {VERIFIED_TXT} it is unannounced, {DAYS_SINCE} days past the 78-event as-of date and beyond all three windows implied by the company's own disclosed pace.</div>
 <div class="fact"><b>Blinded pooled counts cannot distinguish the arms.</b> Longer pooled survival could reflect the control arm, the GPS arm, or both; SELLAS is blinded and cannot say.</div>
 <div class="fact"><b>REGAL is open-label</b>, a 1:1 randomized comparison against investigator's choice, not a blinded placebo-controlled design.</div>
 <div class="fact"><b>Share count roughly doubled year over year</b>: weighted-average shares 87.8M (Q1 2025) to 172.5M (Q1 2026); shares outstanding 153.1M to 181.3M between Dec 31, 2025 and Mar 31, 2026.</div>

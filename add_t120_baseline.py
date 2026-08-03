@@ -37,6 +37,9 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 CSVF = os.path.join(HERE, "pdufa_runup_bifrost_v2.csv")
 CACHE = os.path.join(HERE, "runup_t120_cache.json")
+# Small, committed: keys we have already proven cannot be measured (company not listed long
+# enough). Without it CI would re-query Polygon for the same 71 dead ends every single night.
+SHORT = os.path.join(HERE, "runup_t120_short.json")
 
 NEW_COLS = ["T-120_T-1", "T-120_T-7", "T-120_T-3", "T-120_peak"]
 
@@ -108,6 +111,8 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--all", action="store_true",
+                    help="recompute every row from scratch instead of only the missing ones")
     a = ap.parse_args()
 
     rows = list(csv.DictReader(open(CSVF, encoding="utf-8-sig", errors="replace")))
@@ -122,17 +127,34 @@ def main():
         except Exception:
             cache = {}
 
+    # Incremental by default. The bar cache is 9 MB of local convenience and is NOT committed, so
+    # in CI it starts empty; refetching all 1,827 series every night would be pointless when the
+    # answers are already sitting in the CSV. Only rows with no T-120 value are fetched, minus the
+    # ones already proven to lack 120 sessions of history (they would be retried forever otherwise).
+    short = set()
+    if os.path.exists(SHORT):
+        try:
+            short = set(json.load(open(SHORT, encoding="utf-8")))
+        except Exception:
+            short = set()
+
     todo = []
     for r in rows:
         d = (r.get("pdufa_date") or "")[:10]
         tk = (r.get("ticker") or "").strip().upper()
-        if len(d) == 10 and tk:
-            k = f"{tk}|{d}"
-            if k not in cache:
-                todo.append((tk, d, k))
+        if len(d) != 10 or not tk:
+            continue
+        k = f"{tk}|{d}"
+        if not a.all and (r.get("T-120_T-1") or "").strip():
+            continue                      # already computed
+        if not a.all and k in short:
+            continue                      # known to lack the window; do not retry nightly
+        if k not in cache:
+            todo.append((tk, d, k))
     if a.limit:
         todo = todo[:a.limit]
-    print(f"need bars for {len(todo):,} events")
+    print(f"need bars for {len(todo):,} event(s)  "
+          f"({len(short):,} known short-history, skipped)")
 
     done = [0]
 
@@ -163,26 +185,38 @@ def main():
         save_cache()
         print(f"cached {len(cache):,} series -> {os.path.basename(CACHE)}")
 
-    filled, short = 0, 0
+    filled, missing, new = 0, 0, 0
     for r in rows:
         d = (r.get("pdufa_date") or "")[:10]
         tk = (r.get("ticker") or "").strip().upper()
-        vals = compute(cache.get(f"{tk}|{d}") or [], d) if len(d) == 10 else {}
+        k = f"{tk}|{d}"
+        had = bool((r.get("T-120_T-1") or "").strip())
+        if had and not a.all:
+            filled += 1
+            continue                      # never recompute a value we already have
+        vals = compute(cache.get(k) or [], d) if len(d) == 10 else {}
         if vals:
             filled += 1
+            new += 1
+            for c in NEW_COLS:
+                v = vals.get(c)
+                r[c] = f"{v:.6f}" if v is not None else ""
         else:
-            short += 1
-        for c in NEW_COLS:
-            v = vals.get(c)
-            r[c] = f"{v:.6f}" if v is not None else ""
+            missing += 1
+            if k in cache:
+                short.add(k)              # asked Polygon, window genuinely not there
+            for c in NEW_COLS:
+                r.setdefault(c, "")
 
     for c in NEW_COLS:
         if c not in cols:
             cols.append(c)
 
-    print(f"\nT-120 computed for {filled:,} events; {short:,} lack 120 sessions of prior history")
+    print(f"\nT-120 present for {filled:,} events ({new:,} newly computed this run); "
+          f"{missing:,} lack 120 sessions of prior history")
     if a.dry_run:
         print("DRY RUN -- csv not written."); return
+    json.dump(sorted(short), open(SHORT, "w", encoding="utf-8"), indent=0)
 
     bak = CSVF + ".bak_t120"
     if not os.path.exists(bak):

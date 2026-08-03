@@ -27,7 +27,8 @@ OUT = os.path.join(SITE, "sitemap.xml")
 BASE = "https://www.pdufa.bio"
 
 SKIP_DIRS = {"api", "fonts", ".well-known", "_next", "assets", "img", "images"}
-SKIP_PAT = re.compile(r'(^|/)(today|app|login|account|preview|index_redesign|_home_pdufa_backup)'
+SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired path segment
+                      r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding)\b'
                       r'|\.bak|\.tmp', re.I)
 
 # crawl priority / cadence by section -- decisions and the live calendar change most often
@@ -50,13 +51,34 @@ def meta(url_path):
     return "monthly", "0.5"
 
 
+def redirect_sources():
+    """Paths that vercel.json 301s away. Advertising a URL in the sitemap that immediately
+    redirects is a self-inflicted duplicate-content signal: the crawler is told a page is
+    canonical and then bounced off it. Read them from the config so the two can never disagree."""
+    p = os.path.join(SITE, "vercel.json")
+    if not os.path.exists(p):
+        return set()
+    try:
+        import json
+        cfg = json.load(open(p, encoding="utf-8"))
+        return {r.get("source", "").rstrip("/") for r in cfg.get("redirects", [])}
+    except Exception:
+        return set()
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
+    redirected = redirect_sources()
     urls = {}
     for root, dirs, files in os.walk(SITE):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
+        # Underscore-prefixed directories are backups and retired page sets (_pdufa_bak8,
+        # _pdufa_xbak, _retired_*). They were being walked, so the sitemap was actively inviting
+        # Google to index 203 stale duplicate pages -- near-duplicate thin content pointing at
+        # superseded data, which is the worst possible thing to volunteer to a crawler.
+        dirs[:] = [d for d in dirs
+                   if d not in SKIP_DIRS and not d.startswith(".") and not d.startswith("_")]
         for f in files:
             if f not in ("index.html",) and not (f.endswith(".html") and root == SITE):
                 continue
@@ -67,7 +89,7 @@ def main():
             else:
                 path = "/" + rel[: -len(".html")]
             path = path if path else "/"
-            if SKIP_PAT.search(path):
+            if SKIP_PAT.search(path) or path.rstrip("/") in redirected:
                 continue
             lastmod = dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d")
             urls[path] = lastmod

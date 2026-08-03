@@ -30,7 +30,10 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 
-ENTITY = "Odin Catalyst LLC"
+# The footer deliberately does NOT name an operating entity. pdufa.bio is not registered as a
+# fictitious name / DBA of any company, so stating "published by X LLC" would assert a filed
+# relationship that does not exist. The site attributes itself; the disclaimers do the real work.
+ENTITY = "pdufa.bio"
 SKIP = {"index_redesign.html", "preview.html", "ping.html", "holding.html", "app.html"}
 
 # Sentences that are pure boilerplate. Anything NOT matched here is page-specific and is kept.
@@ -53,6 +56,8 @@ BOILER = [
     r"Nothing on this page is investment[^.<]*\.",
     r"does not recommend trades or publish individual-drug approval probabilities\.?",
     r"an independent company that is not affiliated[^.<]*\.",
+    r"pdufabio is an independent publication[^.<]*\.",
+    r"pdufabio is not a registered[^.<]*\.",
     r"Verify (?:every date and outcome |against |every figure )?[^.<]*\.",
     r"Data and historical statistics only[^.<]*\.",
     r"Data is provided as is[^.<]*\.",
@@ -89,18 +94,18 @@ def canonical(affil, extra):
     """affil: the page's own 'Not affiliated with X.' sentence. extra: preserved page-specific text."""
     ex = (" " + extra.strip()) if extra.strip() else ""
     return (
-        f"<b>{affil}</b> pdufa.bio is published by <b>{ENTITY}</b>, an independent company that is "
-        f"not affiliated with, endorsed by, sponsored by, or connected to the U.S. Food and Drug "
-        f"Administration or any other government agency. &ldquo;FDA&rdquo;, &ldquo;PDUFA&rdquo; and "
-        f"all company, drug and ticker names are used descriptively and remain the property of their "
-        f"respective owners.<br><br>"
+        f"<b>{affil}</b> pdufa.bio is an independent publication with no affiliation with, "
+        f"endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration or "
+        f"any other government agency. &ldquo;FDA&rdquo;, &ldquo;PDUFA&rdquo; and all company, drug "
+        f"and ticker names are used descriptively and remain the property of their respective "
+        f"owners.<br><br>"
         f"<b>Informational and educational purposes only. Not investment advice.</b> Nothing on this "
         f"page is investment, legal, tax or medical advice, or an offer or solicitation to buy or "
-        f"sell any security. {ENTITY} is not a registered investment adviser or broker-dealer and "
+        f"sell any security. pdufa.bio is not a registered investment adviser or broker-dealer and "
         f"does not recommend trades or publish individual-drug approval probabilities.{ex} "
         f"Verify every date and outcome against primary FDA, SEC or company filings. Data is provided "
         f"as is, without warranty of any kind, and past behaviour does not predict future outcomes."
-        f"<br><br>&copy; 2026 {ENTITY}. All rights reserved."
+        f"<br><br>&copy; 2026 pdufa.bio. All rights reserved."
     )
 
 
@@ -197,7 +202,7 @@ def main():
 
             # Some pages were built without any footer block at all, so there was nothing to
             # rewrite and they silently shipped with no disclaimer. Give them one.
-            if ENTITY not in html and "</body>" in html:
+            if "is an independent publication" not in html and "</body>" in html:
                 affil = "Not affiliated with or endorsed by the FDA."
                 affils[affil] += 1
                 block = ('<div class="legal" style="border-top:1px solid #1e3a63;margin-top:32px;'

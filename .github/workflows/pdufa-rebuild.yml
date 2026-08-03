@@ -46,6 +46,33 @@ jobs:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python polygon_enrich.py
 
+      # ---------------------------------------------------------------------------------------
+      # RUN-UP STUDY. The study is the site's proprietary asset, and every decision published and
+      # never folded back into it is data the moat does not compound. This block makes that
+      # automatic: extend from the decision archive, compute the T-120 baseline for whatever is
+      # new, recompute the published statistics, then push those numbers into every page that
+      # quotes them. Runs BEFORE the homepage board so the headline count is same-day, not a day
+      # behind. Every step is incremental and idempotent; a day with no new decisions is a no-op.
+      # ---------------------------------------------------------------------------------------
+      - name: Run-up study: fold in newly decided PDUFAs
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python extend_runup_study.py
+
+      - name: Run-up study: compute T-120 baseline for new events only
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python add_t120_baseline.py
+
+      - name: Run-up study: recompute the published statistics (single source of truth)
+        run: python runup_study_stats.py
+
+      - name: Run-up study: refresh cohort figures quoted on every decision page
+        run: python refresh_cohort_figures.py
+
+      - name: Run-up study: rebuild /runup-by-year from the master dataset
+        run: python build_runup_by_year.py
+
       - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
@@ -75,6 +102,27 @@ jobs:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python build_readout_results.py
 
+      # /sls asserts that the 80th REGAL event has not been announced. That is a claim of absence,
+      # so its date is advanced by EDGAR evidence, never by the clock. If SELLAS files anything
+      # material this step exits non-zero, the date stays frozen, and the page keeps saying what it
+      # was last able to verify until a human reads the filing.
+      - name: SLS: verify the "not yet announced" claim against EDGAR
+        id: sls
+        continue-on-error: true
+        run: python check_sls_filings.py
+
+      - name: SLS: rebuild the tracker pages (only if the claim still verifies)
+        if: steps.sls.outcome == 'success'
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: |
+          python build_sls_hub.py
+          python build_sls_deepdive.py
+
+      - name: SLS: flag for manual review (material filing found)
+        if: steps.sls.outcome != 'success'
+        run: echo "::warning::SELLAS filed something material. /sls dates were NOT advanced. Review the filing and update _sls_verified_through.json."
+
       # Normalisers run AFTER every generator. Generators own the data; these own the house style,
       # so a page regenerated tomorrow cannot silently revert to the old disclaimer or reintroduce
       # em dashes. Both are idempotent.
@@ -83,6 +131,10 @@ jobs:
 
       - name: Apply the canonical Odin Catalyst LLC legal footer to every page
         run: python apply_legal_footer.py
+
+      - name: Currency audit (advisory) — anything stale anywhere on the site
+        continue-on-error: true
+        run: python audit_currency.py
 
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         run: |

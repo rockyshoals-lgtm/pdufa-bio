@@ -36,7 +36,12 @@ SCRIPT = re.compile(
     re.S | re.I)
 DASH = re.compile(r"&mdash;|&ndash;|[—–]")
 
-REQUIRED = ["Odin Catalyst LLC", "Not affiliated"]
+# Deliberately does NOT require a company name: pdufa.bio has no registered DBA, so naming an
+# entity would assert a filed relationship that does not exist. What every page MUST carry is the
+# FDA non-affiliation and the no-advice disclaimer.
+REQUIRED = ["Not affiliated", "Not investment advice", "not a registered investment adviser"]
+# And what no page may carry, until a DBA is actually filed:
+FORBIDDEN = ["Odin Catalyst LLC"]
 
 
 def pages():
@@ -49,7 +54,7 @@ def pages():
 
 
 def main():
-    dash_hits, missing = [], []
+    dash_hits, missing, banned = [], [], []
     n = 0
     for p in pages():
         n += 1
@@ -60,6 +65,10 @@ def main():
         for need in REQUIRED:
             if need not in html:
                 missing.append((p, need))
+                break
+        for bad in FORBIDDEN:
+            if bad in html:
+                banned.append((p, bad))
                 break
 
     print(f"checked {n:,} published pages")
@@ -85,7 +94,18 @@ def main():
             print(f"   ... and {len(missing) - 15} more")
         print("   fix: python apply_legal_footer.py")
     else:
-        print("  PASS: every page names Odin Catalyst LLC and disclaims FDA affiliation")
+        print("  PASS: every page disclaims FDA affiliation and carries the no-advice language")
+
+    if banned:
+        ok = False
+        print(f"\nFAIL: {len(banned)} page(s) name an operating entity that has no registered DBA "
+              f"for pdufa.bio:")
+        for p, bad in banned[:10]:
+            print(f"   {os.path.relpath(p, HERE)}  ({bad!r})")
+        print("   fix: python apply_legal_footer.py  (and only re-add a company name once a "
+              "fictitious-name/DBA registration actually exists)")
+    else:
+        print("  PASS: no unregistered entity attribution")
 
     sys.exit(0 if ok else 1)
 
