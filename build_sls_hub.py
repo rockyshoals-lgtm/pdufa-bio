@@ -34,6 +34,7 @@ OUTDIR = os.path.join(SITE, "sls")
 TODAY = _verified_through()
 BASE78 = dt.date(2026, 5, 11)          # as-of date of the 78-event disclosure
 DAYS_SINCE = (TODAY - BASE78).days
+PXDATE = ''
 VERIFIED_TXT = TODAY.strftime("%b ") + str(TODAY.day) + TODAY.strftime(", %Y")
 
 
@@ -103,8 +104,67 @@ NAV = ('<nav><a href="/calendar">Calendar</a><a href="/conferences">Conferences<
        '<a class="pro" href="/pricing" style="color:var(--gold)">Pro</a></nav>')
 
 
+def activity_log():
+    """Everything sls_daily.py has recorded, newest first. Primary sources only: SEC filings and
+    SELLAS's own press releases, with executive quotes lifted verbatim."""
+    f = os.path.join(HERE, "_sls_activity.json")
+    if not os.path.exists(f):
+        return [], {}
+    try:
+        d = json.load(open(f, encoding="utf-8"))
+    except Exception:
+        return [], {}
+    ev = sorted(d.get("events", []), key=lambda e: e.get("date", ""), reverse=True)
+    return ev, d.get("price", {})
+
+
+def esc(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace('"', "&quot;"))
+
+
+ROUTINE = {"4", "3", "5", "S-8", "SCHEDULE 13G", "SCHEDULE 13G/A", "SCHEDULE 13D/A",
+           "ARS", "DEFA14A", "DEF 14A", "S-3ASR", "EFFECT", "424B5", "424B3", "CERT", "8-A12B"}
+
+
+def activity_html(events, limit=12):
+    """Material filings and company press releases. Form 4s, S-8s and 13Gs are real filings but
+    they are not news, and letting them head the list buries the 8-K that matters."""
+    if not events:
+        return ""
+    shown = [e for e in events if e.get("material") or e.get("kind") == "press_release"]
+    routine = [e for e in events if e not in shown]
+    out = []
+    for e in shown[:limit]:
+        badge = ("<span class='pill mat'>SEC filing</span>" if e.get("kind") == "filing"
+                 else "<span class='pill pr'>Press release</span>")
+        form = esc(e.get("form", ""))
+        exh = e.get("exhibits") or []
+        exh_s = (" &middot; " + ", ".join(esc(x) for x in exh)) if exh else ""
+        quotes = "".join(
+            f"<div class='quote'>&ldquo;{esc(q['quote'])}&rdquo;"
+            f"<div class='qby'>{esc(q['speaker'])}"
+            f"{', ' + esc(q['role']) if q.get('role') else ''}</div></div>"
+            for q in (e.get("quotes") or []))
+        out.append(
+            f"<div class='act'><div class='actd'>{esc(e.get('date',''))}</div>"
+            f"<div class='actb'>{badge}<span class='actf'>{form}{exh_s}</span>"
+            f"<div class='actt'><a href='{esc(e.get('url',''))}' rel='nofollow'>"
+            f"{esc((e.get('title') or form)[:150])}</a></div>{quotes}</div></div>")
+    if routine:
+        out.append(f"<div class='act'><div class='actd'>&nbsp;</div><div class='actb'>"
+                   f"<span class='actf'>Plus {len(routine)} routine filing(s) in this period "
+                   f"(Form 4, S-8, 13G and similar). See the full list on "
+                   f"<a href='https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001390478"
+                   f"&type=&dateb=&owner=include&count=40' rel='nofollow'>EDGAR</a>.</span></div></div>")
+    return "".join(out)
+
+
 def main():
     key = load_key()
+    events, px = activity_log()
+    globals()['PXDATE'] = px.get('as_of') or TODAY.isoformat()
+    act = activity_html(events)
     rows = daily("SLS", "2024-10-01", TODAY.isoformat(), key)
     last = rows[-1][1] if rows else 0
     lastd = rows[-1][0] if rows else ""
@@ -117,6 +177,31 @@ def main():
              ("2026-05-12", "78 events disclosed", "#e3ba5e"),
              ("2026-06-25", "Exec change-of-control amendment", "#46d17f")]
     ch = chart(rows, marks)
+
+    # Price detail comes from the daily collector when it has run; the page must not invent a
+    # day-move it did not measure, so every piece is conditional on the value existing.
+    if px.get("close"):
+        last, lastd = px["close"], px.get("as_of", lastd)
+        if px.get("low_52w"):
+            lo52, hi52 = px["low_52w"], px["high_52w"]
+    chg = px.get("change_pct")
+    px_chg = (f" <span style=\"font-size:15px;color:{'#46d17f' if chg >= 0 else '#ff8f6b'}\">"
+              f"{chg:+.1f}%</span>") if chg is not None else ""
+    px_vol = ""
+    if px.get("volume"):
+        rv = px.get("rel_volume")
+        px_vol = (f"<br>vol {px['volume']:,}"
+                  + (f" ({rv:.2f}x 20d avg)" if rv else ""))
+    act_block = ""
+    if act:
+        act_block = (
+            '<h2>Latest activity</h2>'
+            '<p>Every SEC filing and company press release, newest first, with executive quotes '
+            'taken verbatim from the source document. Updated daily. Nothing here is a third-party '
+            'report: each item links to the filing or the release it came from.</p>'
+            f'<div class="card acts">{act}</div>'
+            f'<div class="note" style="margin-top:-4px">Sources: SEC EDGAR (CIK 1390478) and the '
+            f'SELLAS investor newsroom. Last collected {PXDATE}.</div>')
 
     html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="index,follow,max-image-preview:large">
 <title>SLS (SELLAS Life Sciences) Tracker, REGAL 80th Event, the Change-of-Control Amendment, and the Facts | pdufa.bio</title>
@@ -156,6 +241,19 @@ td.num{{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}}
 .myth{{background:#081426;border:1px solid var(--line2);border-radius:10px;padding:13px 15px;margin:10px 0}}
 .myth .r{{color:var(--red);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.4px}}
 .myth .f{{color:var(--green);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.4px;margin-top:8px}}
+.acts{{padding:4px 14px}}
+.act{{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}}
+.act:last-child{{border-bottom:0}}
+.actd{{flex:0 0 84px;color:var(--mut2);font-size:12.5px;font-variant-numeric:tabular-nums;padding-top:2px}}
+.actb{{flex:1;min-width:0}}
+.pill{{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.3px;padding:2px 7px;border-radius:20px;margin-right:8px;text-transform:uppercase}}
+.pill.mat{{background:rgba(111,182,255,.13);color:#6fb6ff;border:1px solid #24507f}}
+.pill.pr{{background:rgba(70,209,127,.13);color:#46d17f;border:1px solid #2f6b45}}
+.actf{{font-size:11.5px;color:var(--mut2)}}
+.actt{{margin-top:5px;font-size:14.5px;line-height:1.45}}
+.actt a{{color:var(--ink)}}
+.quote{{margin:9px 0 0;padding:9px 12px;border-left:2px solid var(--gold);background:rgba(240,200,106,.05);font-size:13.5px;color:var(--mut);line-height:1.55}}
+.qby{{margin-top:5px;font-size:12px;color:var(--mut2)}}
 .legal{{border-top:1px solid var(--line);margin-top:38px;padding-top:16px;font-size:11.5px;color:#8aa0bf;line-height:1.6}}
 ol,ul{{color:var(--mut);font-size:14px}}li{{margin:5px 0}}
 .pill{{display:inline-block;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:20px;background:rgba(70,209,127,.14);color:var(--green);border:1px solid #2f6b45}}
@@ -175,12 +273,14 @@ forecasts, price targets, or recommendations anywhere on this page.</p>
   <div class="stat"><div class="note">REGAL events (deaths)</div><div class="big">78 / 80</div><div class="note">as of May 11, 2026 &middot; {DAYS_SINCE}d ago</div></div>
   <div class="stat"><div class="note">80th event announced?</div><div class="big" style="color:var(--gold)">Not yet</div><div class="note">company says it will announce it</div></div>
   <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$107.1M</div><div class="note">Mar 31, 2026 (+$7.5M warrants)</div></div>
-  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}</div><div class="note">52w ${lo52:.2f}: ${hi52:.2f} &middot; {lastd}</div></div>
+  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}{px_chg}</div><div class="note">52w ${lo52:.2f} to ${hi52:.2f} &middot; {lastd}{px_vol}</div></div>
 </div>
 
 <div class="card">{ch}
 <div class="note" style="margin-top:9px">SLS daily closes, Oct 2024 to Aug 2026 (Polygon, split-adjusted). Gold markers = REGAL
 milestone disclosures. Green marker = the June 24 2026 executive change-of-control amendment. Hover any marker for the date and close.</div></div>
+
+{act_block}
 
 <h2>1. The 80th event: what it is and where it stands</h2>
 <p>REGAL (<a href="https://clinicaltrials.gov/study/NCT04229979">NCT04229979</a>) is a Phase 3, randomized,

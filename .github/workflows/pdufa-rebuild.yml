@@ -111,6 +111,16 @@ jobs:
         continue-on-error: true
         run: python check_sls_filings.py
 
+      # Collect the day's primary-source activity: EDGAR filings (with the 8-K/exhibit text read,
+      # not just the form type), SELLAS's own press releases, executive quotes lifted verbatim,
+      # and the close/volume. Append-only, so nothing already published is rewritten.
+      - name: SLS: collect filings, press releases, quotes and price
+        continue-on-error: true          # a bad day at EDGAR must not block the whole deploy
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python sls_daily.py
+
       - name: SLS: rebuild the tracker pages (only if the claim still verifies)
         if: steps.sls.outcome == 'success'
         env:

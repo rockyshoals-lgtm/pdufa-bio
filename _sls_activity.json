@@ -1,0 +1,429 @@
+{
+ "events": [
+  {
+   "kind": "filing",
+   "date": "2026-01-08",
+   "form": "8-K",
+   "accession": "0001104659-26-001957",
+   "title": "Item 2.02 Results of Operations and Financial Condition; Item 8.01 Other Events Subsequent to December 31, 2025, the Company received approximately $26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926001957/tm262494d1_8k.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": "Item 2.02. Results of Operations and Financial Condition. As of December 31, 2025, SELLAS Life Sciences Group, Inc. (the \"Company\") estimates that its unaudited cash and cash equivalents position was $71.8 million. This amount is unaudited and preliminary and is subject to the completion of financia"
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002515",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002515/xslF345X05/tm262627-7_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002511",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002511/xslF345X05/tm262627-6_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002509",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002509/xslF345X05/tm262627-5_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002506",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002506/xslF345X05/tm262627-4_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002502",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002502/xslF345X05/tm262627-3_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002499",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002499/xslF345X05/tm262627-2_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-09",
+   "form": "4",
+   "accession": "0001104659-26-002491",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926002491/xslF345X05/tm262627-1_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-01-14",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences Enters Agreement with IMPACT-AML to Expand SLS009 Clinical Program into Europe",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-Enters-Agreement-with-IMPACT-AML-to-Expand-SLS009-Clinical-Program-into-Europe/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences Enters Agreement with IMPACT-AML to Expand SLS009 Clinical Program into Europe, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimut-S (GPS) SLS009 --> In",
+   "quotes": [
+    {
+     "speaker": "Angelos Stergiou",
+     "role": "President and Chief Executive Officer",
+     "quote": "This is a highly meaningful milestone for SELLAS and for the SLS009 program,"
+    },
+    {
+     "speaker": "IMPACT-AML Scientific Coordinator",
+     "role": "",
+     "quote": "IMPACT-AML is committed to accelerating access to promising new therapeutic approaches for patients with AML who face limited treatment options,"
+    }
+   ]
+  },
+  {
+   "kind": "filing",
+   "date": "2026-01-30",
+   "form": "SCHEDULE 13G/A",
+   "accession": "0000902664-26-000615",
+   "title": "SCHEDULE 13G/A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000090266426000615/xslSCHEDULE_13G_X01/primary_doc.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-02-17",
+   "form": "SCHEDULE 13G/A",
+   "accession": "0001193125-26-053508",
+   "title": "SCHEDULE 13G/A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000119312526053508/xslSCHEDULE_13G_X01/primary_doc.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-03-11",
+   "form": "8-K",
+   "accession": "0001104659-26-026384",
+   "title": "Item 8.01 Other Events As previously reported on January 8, 2026, SELLAS Life Sciences Group, Inc; Item 9.01 Financial Statements and Exhibits",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926026384/tm268596d1_8k.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": "Item 8.01 Other Events As previously reported on January 8, 2026, SELLAS Life Sciences Group, Inc. (the \"Company\") received approximately $26.5 million in proceeds as of such date from the exercise of common stock warrants subsequent to December 31, 2025. Since January 8, 2026, the Company received "
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-03-12",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences Announces Enrollment of First Patient in Newly Diagnosed First-Line AML Trial of SLS009",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-Announces-Enrollment-of-First-Patient-in-Newly-Diagnosed-First-Line-AML-Trial-of-SLS009/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences Announces Enrollment of First Patient in Newly Diagnosed First-Line AML Trial of SLS009, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimut-S (GPS) SLS0",
+   "quotes": [
+    {
+     "speaker": "Angelos Stergiou",
+     "role": "President and Chief Executive Officer",
+     "quote": "Enrolling the first patient in this first-line AML Phase 2 study represents an important milestone in the advancement of our SLS009 program and reflects our precision medicine strategy to address challenging subgroups of AML patients through our extensive transcriptomics, genomics, and proteomics models we have established,"
+    }
+   ]
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-03-17",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences to Present Preclinical Data Highlighting Potent Activity of SLS009 in AML at the 2026 AACR Conference",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-to-Present-Preclinical-Data-Highlighting-Potent-Activity-of-SLS009-in-AML-at-the-2026-AACR-Conference/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences to Present Preclinical Data Highlighting Potent Activity of SLS009 in AML at the 2026 AACR Conference, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimu",
+   "quotes": [
+    {
+     "speaker": "Dr. Philip Amrein",
+     "role": "",
+     "quote": "These new data show tambiciclib\u2019s promise in using optimized, clinically actionable schedules at patient-relevant concentrations,"
+    },
+    {
+     "speaker": "Dr. Dragan Cicic",
+     "role": "Senior Vice President and Chief Development Officer",
+     "quote": "These data demonstrate that SLS009 effectively targets AML cell survival mechanisms and induces apoptosis across diverse molecular subtypes, including high-risk genetic backgrounds,"
+    }
+   ]
+  },
+  {
+   "kind": "filing",
+   "date": "2026-03-19",
+   "form": "8-K",
+   "accession": "0001390478-26-000004",
+   "title": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000004/sls-20260319.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-03-19",
+   "form": "10-K",
+   "accession": "0001390478-26-000003",
+   "title": "10-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000003/sls-20251231.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-03-19",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences Reports Full Year 2025 Financial Results and Provides Corporate Update",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-Reports-Full-Year-2025-Financial-Results-and-Provides-Corporate-Update/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences Reports Full Year 2025 Financial Results and Provides Corporate Update, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimut-S (GPS) SLS009 --> Indication",
+   "quotes": [
+    {
+     "speaker": "Angelos Stergiou",
+     "role": "President and Chief Executive Officer",
+     "quote": "Based upon continued progress in our GPS and SLS009 clinical programs in AML, we believe 2026 is shaping up to be a pivotal year for SELLAS,"
+    }
+   ]
+  },
+  {
+   "kind": "filing",
+   "date": "2026-03-20",
+   "form": "S-3ASR",
+   "accession": "0001104659-26-032776",
+   "title": "S-3ASR",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926032776/tm269045d1_s3asr.htm",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-03-27",
+   "form": "SCHEDULE 13G/A",
+   "accession": "0000102909-26-002236",
+   "title": "SCHEDULE 13G/A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000010290926002236/xslSCHEDULE_13G_X02/primary_doc.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-04-23",
+   "form": "ARS",
+   "accession": "0001104659-26-047704",
+   "title": "ARS",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926047704/tm2612539d1_ars.pdf",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-04-23",
+   "form": "DEFA14A",
+   "accession": "0001104659-26-047697",
+   "title": "DEFA14A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926047697/tm261477d3_defa14a.htm",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-04-23",
+   "form": "DEF 14A",
+   "accession": "0001104659-26-047693",
+   "title": "FORM- DEF 14A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926047693/tm261477-1_def14a.htm",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-04-24",
+   "form": "SCHEDULE 13G/A",
+   "accession": "0002012383-26-001466",
+   "title": "SCHEDULE 13G/A",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000201238326001466/xslSCHEDULE_13G_X02/primary_doc.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-05-12",
+   "form": "8-K",
+   "accession": "0001390478-26-000009",
+   "title": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-20260512.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-05-12",
+   "form": "10-Q",
+   "accession": "0001390478-26-000008",
+   "title": "10-Q",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000008/sls-20260331.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-05-12",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences Reports First Quarter 2026 Financial Results and Provides Corporate Update",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-Reports-First-Quarter-2026-Financial-Results-and-Provides-Corporate-Update/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences Reports First Quarter 2026 Financial Results and Provides Corporate Update, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimut-S (GPS) SLS009 --> Indica",
+   "quotes": [
+    {
+     "speaker": "Angelos Stergiou",
+     "role": "President and Chief Executive Officer",
+     "quote": "The first quarter of 2026 marked an important period for SELLAS as we continued to execute across our clinical programs while preparing for the anticipated pivotal Phase 3 REGAL trial data readout,"
+    }
+   ]
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-05-14",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences to Participate in Upcoming Investor Conferences",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-to-Participate-in-Upcoming-Investor-Conferences/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences to Participate in Upcoming Investor Conferences, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimut-S (GPS) SLS009 --> Indications Science Galinpepimut-",
+   "quotes": []
+  },
+  {
+   "kind": "filing",
+   "date": "2026-06-02",
+   "form": "8-K",
+   "accession": "0001104659-26-069251",
+   "title": "Item 8.01 Other Events As previously reported, as of March 31, 2026, SELLAS Life Sciences Group, Inc; Item 9.01 Financial Statements and Exhibits",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926069251/tm2616601d1_8k.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": "Item 8.01 Other Events As previously reported, as of March 31, 2026, SELLAS Life Sciences Group, Inc. (the \"Company\") had $107.1 million of cash and cash equivalents. Subsequent to March 31, 2026, in April and May 2026, the Company received approximately $28.7 million in proceeds from the exercise o"
+  },
+  {
+   "kind": "filing",
+   "date": "2026-06-16",
+   "form": "S-8",
+   "accession": "0001104659-26-074599",
+   "title": "FORM S-8",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926074599/tm2617870d1_s8.htm",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-06-18",
+   "form": "8-K",
+   "accession": "0001104659-26-075775",
+   "title": "Item 5.07 Submission of Matters to a Vote of Security Holders",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926075775/tm2618311d1_8k.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": "Item 5.07 Submission of Matters to a Vote of Security Holders. Annual Meeting of Stockholders On June 16, 2026, SELLAS Life Sciences Group, Inc. (the \"Company\") held its Annual Meeting of Stockholders (\"Annual Meeting\"). There were 115,511,771 shares of common stock, or approximately 62.59% of all o"
+  },
+  {
+   "kind": "filing",
+   "date": "2026-06-18",
+   "form": "4",
+   "accession": "0001104659-26-075773",
+   "title": "OWNERSHIP DOCUMENT",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926075773/xslF345X06/tm2618312-1_4seq1.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-06-25",
+   "form": "8-K",
+   "accession": "0001104659-26-077556",
+   "title": "Item 5.02 Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain O; Item 9.01 Financial Statements and Exhibits",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_8k.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": "Item 5.02. Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers. (e) Compensatory Arrangements of Certain Officers On June 24, 2026, SELLAS Life Sciences Group, Inc. (the \"Company\") entered into (i) an amend",
+   "exhibits": [
+    "EX-10.1",
+    "EX-10.2",
+    "EX-10.3"
+   ]
+  },
+  {
+   "kind": "filing",
+   "date": "2026-07-27",
+   "form": "8-K",
+   "accession": "0001104659-26-087110",
+   "title": "Item 2.02 Results of Operations and Financial Condition; Item 8.01 Other Events As previously disclosed, the Company commenced a binding arbitration against 3",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000110465926087110/tm2621415d1_8k.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": "Item 2.02 Results of Operations and Financial Condition. As of June 30, 2026, SELLAS Life Sciences Group, Inc. (the \"Company\") estimates that its unaudited cash and cash equivalents position was $138.3 million. This amount is unaudited and preliminary and is subject to the completion of financial cl"
+  },
+  {
+   "kind": "filing",
+   "date": "2026-07-31",
+   "form": "SCHEDULE 13G",
+   "accession": "0002100119-26-001315",
+   "title": "SCHEDULE 13G",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000210011926001315/xslSCHEDULE_13G_X02/primary_doc.xml",
+   "material": false,
+   "quotes": [],
+   "excerpt": ""
+  }
+ ],
+ "cursor": "2026-07-31",
+ "price": {
+  "as_of": "2026-08-03",
+  "close": 11.22,
+  "prev_close": 10.01,
+  "change_pct": 12.09,
+  "volume": 6886109,
+  "rel_volume": 0.92,
+  "low_52w": 1.39,
+  "high_52w": 15.45
+ },
+ "last_run": "2026-08-03"
+}
