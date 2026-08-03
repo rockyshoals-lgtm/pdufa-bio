@@ -29,7 +29,7 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
-CSVF = os.path.join(HERE, "readout_miner.csv")
+CSVF = os.path.join(HERE, "readout_runs", "readout_verified.csv")
 TODAY = dt.date.today()
 NOW = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 GOOD_PRECISION = {"month", "quarter"}
@@ -75,7 +75,11 @@ def main():
         keep.append({"tk": tk, "d": d, "prec": r.get("guided_precision"),
                      "form": r.get("guided_form") or "", "filed": r.get("guided_filed") or "",
                      "name": (r.get("title") or "").strip(), "company": (r.get("company") or "").strip(),
-                     "nct": (r.get("nct") or "").strip()})
+                     "nct": (r.get("nct") or "").strip(),
+                     "program": (r.get("program") or "").strip(),
+                     "url": (r.get("filing_url") or "").strip(),
+                     "accession": (r.get("accession") or "").strip(),
+                     "sentence": (r.get("matched_sentence") or "").strip()})
 
     # de-dupe: soonest guided date per ticker
     best = {}
@@ -118,15 +122,21 @@ def main():
 
     added = []
     for k in keep:
-        nm = k["name"] or "Clinical readout"
+        # Name the row after the program the company actually named. "Clinical readout" tells a
+        # reader nothing; "DISC-3405 readout" is the thing they searched for.
+        nm = k["name"] or (f"{k['program']} readout" if k["program"] else "Clinical readout")
         added.append({
             "id": f"readout_{k['tk'].lower()}_{k['d']}", "t": k["tk"],
             "company": k["company"], "d": k["d"], "dp": k["prec"],
             "name": nm[:70], "type": "Readout", "ta": "", "cap": "",
-            "st": "Guided", "url": f"/ticker/{k['tk']}", "ua": NOW,
+            "st": "Guided", "url": k["url"] or f"/ticker/{k['tk']}", "ua": NOW,
             "_d": {"nct_id": k["nct"] or None, "indication": None, "market_cap_usd": None,
                    "source": "company guidance (SEC filing)", "guided_precision": k["prec"],
-                   "guided_form": k["form"], "guided_filed": k["filed"]},
+                   "guided_form": k["form"], "guided_filed": k["filed"],
+                   "program": k["program"] or None,
+                   "accession": k["accession"] or None,
+                   # the exact sentence the date came from, so the claim is checkable in one click
+                   "guidance_text": (k["sentence"][:300] or None)},
             "dm": k["d"][:7],
         })
 

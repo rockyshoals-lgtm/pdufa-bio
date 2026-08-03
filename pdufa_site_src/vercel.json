@@ -381,6 +381,11 @@
       "source": "/pdufa/MNKD",
       "destination": "/fda-decision/MNKD-2026-07-24",
       "permanent": true
+    },
+    {
+      "source": "/fda-decision/SLS-2025-02-20",
+      "destination": "/sls",
+      "permanent": true
     }
   ],
   "headers": [
