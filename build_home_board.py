@@ -29,7 +29,7 @@ DECISIONS = os.path.join(SITE, "decisions", "index.html")
 MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 TODAY = dt.date.today()
 GRACE_DAYS = 10   # keep a just-passed, unresolved PDUFA visible this long ("awaiting decision")
-COH = {"Nano": "±10%", "Micro": "±7%", "Small": "±3%", "Mid": "±2%", "Large": "±1%", "": "±3%"}
+COH = {"Nano": "8.0%", "Micro": "4.6%", "Small": "3.6%", "Mid": "2.2%", "Large": "1.0%", "": "3.6%"}  # median ABS decision-day move, recomputed from the 1,827-event study
 
 
 def load_key():
