@@ -295,10 +295,15 @@ def edgar_guidance(days, max_docs=150, verbose=True):
         i += step
 
     cands, calls = {}, 0
+    total_q = len(GUIDE_PHRASES) * len(slices)
+    if verbose:
+        log(f"  EDGAR stage 1/2: {total_q} full-text queries over {days}d ...")
     for ph in GUIDE_PHRASES:
         for (a, b) in slices:
             j = _fts(ph, a, b)
             calls += 1
+            if verbose and calls % 20 == 0:
+                log(f"    query {calls}/{total_q}  ({len(cands)} candidate filings so far)")
             if not j:
                 continue
             for h in (j.get("hits", {}) or {}).get("hits", []) or []:
@@ -318,6 +323,9 @@ def edgar_guidance(days, max_docs=150, verbose=True):
             time.sleep(0.11)          # SEC fair-use pacing
 
     ordered = sorted(cands.items(), key=lambda kv: kv[1]["filed"] or "", reverse=True)[:max_docs]
+    if verbose:
+        log(f"  EDGAR stage 2/2: fetching {len(ordered)} of {len(cands)} candidate filings "
+            f"({100*len(ordered)/max(1,len(cands)):.0f}% coverage at --edgar-docs {max_docs}) ...")
     out, parsed, fetched = {}, 0, 0
     for (tk, adsh, fname), meta in ordered:
         txt = _doc_text(meta["cik"], adsh, fname)
@@ -343,6 +351,9 @@ def edgar_guidance(days, max_docs=150, verbose=True):
             if prev is None or best[0] < prev["guided_date"]:
                 out[tk] = {"guided_date": best[0], "guided_precision": best[1], "phrase": best[2],
                            "form": meta["form"], "filed": meta["filed"], "adsh": adsh}
+        if verbose and fetched % 50 == 0:
+            log(f"    fetched {fetched}/{len(ordered)}  ({parsed} with a forward guided date, "
+                f"{len(out)} tickers)")
         time.sleep(0.09)
     if verbose:
         log(f"  EDGAR: {calls} full-text queries over {days}d across [{EDGAR_FORMS}] -> "
@@ -401,6 +412,9 @@ def main():
                     help="which date sources to use (default both)")
     ap.add_argument("--edgar-days", type=int, default=180,
                     help="how far back to full-text search EDGAR for guided readout dates")
+    ap.add_argument("--out", default=OUT,
+                    help="where to write the CSV (default readout_miner.csv). Use a dedicated path "
+                         "for manual runs so they never collide with the daily bot's committed file.")
     ap.add_argument("--edgar-docs", type=int, default=150,
                     help="max filings to FETCH in the EDGAR pass. This is the binding constraint on "
                          "coverage: a 180d window yields ~1,370 candidates, so 150 reads only ~11%%.")
@@ -484,7 +498,7 @@ def main():
             log(f"  [warn] {tk}: {type(e).__name__}: {e}")
         if (i + 1) % 25 == 0:
             log(f"  {i+1}/{len(tks)}  ({len(out)} readouts kept, {stats['rejected_enrolling']} enrolling rejected)")
-            write_csv(sorted(out, key=lambda r: r["pcd"]), OUT)  # checkpoint
+            write_csv(sorted(out, key=lambda r: r["pcd"]), a.out)  # checkpoint
         time.sleep(0.05)
 
     # ---- merge in the EDGAR company-guided dates -------------------------------------------
@@ -522,7 +536,7 @@ def main():
             r["date_source"], r["confidence"], r["best_date"] = "CTGOV", "medium", pcd
     merged.sort(key=lambda r: (r.get("best_date") or "9999"))
     out = merged
-    dst = write_csv(out, OUT)
+    dst = write_csv(out, a.out)
 
     nboth = sum(1 for r in out if r["date_source"] == "BOTH")
     nedgar = sum(1 for r in out if r["date_source"] == "EDGAR")
