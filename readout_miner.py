@@ -401,6 +401,9 @@ def main():
                     help="which date sources to use (default both)")
     ap.add_argument("--edgar-days", type=int, default=180,
                     help="how far back to full-text search EDGAR for guided readout dates")
+    ap.add_argument("--edgar-docs", type=int, default=150,
+                    help="max filings to FETCH in the EDGAR pass. This is the binding constraint on "
+                         "coverage: a 180d window yields ~1,370 candidates, so 150 reads only ~11%%.")
     a = ap.parse_args()
 
     today = dt.date.today()
@@ -420,6 +423,13 @@ def main():
     out, watch = [], []
     stats = {"no_company": 0, "query_fail": 0, "rejected_enrolling": 0, "rejected_dead": 0,
              "rejected_window": 0, "rejected_phase": 0, "rejected_sponsor": 0, "errors": 0}
+    # --source edgar means "company guidance only" -- skip the CT.gov sponsor loop entirely.
+    # (It is ~411 sequential API calls and is the stage that rate-limits/stalls; there is no reason
+    # to pay for it when the caller only wants EDGAR-guided dates.)
+    scan_ctgov = a.source in ("both", "ctgov")
+    if not scan_ctgov:
+        log("  (skipping CT.gov scan -- --source edgar)")
+        tks = []
     for i, tk in enumerate(tks):
         try:
             company = tmap.get(tk)
@@ -481,7 +491,7 @@ def main():
     guided = {}
     if a.source in ("both", "edgar"):
         log("")
-        guided = edgar_guidance(a.edgar_days)
+        guided = edgar_guidance(a.edgar_days, max_docs=a.edgar_docs)
 
     by_tk = {r["ticker"]: r for r in out}
     for tk, g in guided.items():
