@@ -171,8 +171,16 @@ def check_sitemap():
     xml = open(sm, encoding="utf-8", errors="replace").read()
     urls = {m.group(1).rstrip("/").split("pdufa.bio")[-1] or "/"
             for m in re.finditer(r"<loc>([^<]+)</loc>", xml)}
+    noindex = re.compile(r'name="robots"[^>]*content="[^"]*noindex', re.I)
     routes = set()
     for p in pages():
+        # noindex pages are deliberately absent from the sitemap; counting them as gaps would
+        # produce 324 permanent false warnings.
+        try:
+            if noindex.search(open(p, encoding="utf-8", errors="replace").read(4000)):
+                continue
+        except Exception:
+            pass
         r = rel(p)
         if r.endswith("/index.html"):
             routes.add("/" + r[:-len("/index.html")])

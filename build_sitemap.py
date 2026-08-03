@@ -27,6 +27,7 @@ OUT = os.path.join(SITE, "sitemap.xml")
 BASE = "https://www.pdufa.bio"
 
 SKIP_DIRS = {"api", "fonts", ".well-known", "_next", "assets", "img", "images"}
+NOINDEX = re.compile(r'name="robots"[^>]*content="[^"]*noindex', re.I)
 SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired path segment
                       r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding)\b'
                       r'|\.bak|\.tmp', re.I)
@@ -91,6 +92,15 @@ def main():
             path = path if path else "/"
             if SKIP_PAT.search(path) or path.rstrip("/") in redirected:
                 continue
+            # A sitemap entry says "crawl this, it matters". Listing a page that then serves
+            # noindex is a contradiction that burns crawl budget on pages we have decided not to
+            # rank. 324 of the price-only decision pages were doing exactly that.
+            try:
+                head = open(full, encoding="utf-8", errors="replace").read(4000)
+                if NOINDEX.search(head):
+                    continue
+            except Exception:
+                pass
             lastmod = dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d")
             urls[path] = lastmod
 
