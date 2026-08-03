@@ -1,23 +1,32 @@
 @echo off
 REM ==================================================================================
-REM  READOUT MINER - DEEP company-guidance run
+REM  READOUT MINER - DEEP company-guidance run   (v2)
 REM
 REM  Mines readout dates the companies themselves stated, from SEC EDGAR full text
 REM  (8-K / 6-K / 10-Q / 10-K / 20-F / S-1 / 424B), then FETCHES each filing and reads
 REM  the guided date out of the sentence around the phrase.
 REM
-REM  --source edgar     skips the ClinicalTrials.gov sponsor loop entirely (that stage
-REM                     rate-limits and was stalling; it is not needed for company guidance)
-REM  --edgar-docs 1500  reads up to 1500 filings instead of the default 150. The doc cap
-REM                     is THE binding constraint on coverage: a 180-day window turns up
-REM                     ~1,370 candidates, so the old 150 cap read only ~11% of them.
+REM  WHAT CHANGED after the first deep run returned 222 unusable rows:
+REM    * INDUSTRY GATE  - only SEC SIC 2834/2836/8731/2835/2833 filers get fetched, so
+REM                       gold miners, utilities, banks and Waste Management can no
+REM                       longer enter the set. It runs BEFORE the document fetch, so
+REM                       the doc budget is now spent only on drug companies (which
+REM                       also makes 1500 docs go roughly twice as far).
+REM    * NAMED PROGRAM  - a row is kept only if the matched sentence names the drug,
+REM                       the trial, or an NCT number. "Results are expected in Q4"
+REM                       with nothing attached is not a calendar entry.
+REM    * PROVENANCE     - every row carries filing_url, accession and the exact
+REM                       matched_sentence, so it can be checked without re-searching.
+REM    * CALENDAR VS WATCHLIST - only month/quarter guidance reaches the main CSV.
+REM                       "1H 2027" and bare "2027" go to a separate watchlist file
+REM                       with the precision stated, instead of inventing a Dec 31st.
 REM
-REM  Output (both go to the readout_runs folder so nothing collides with the daily bot):
-REM     readout_runs\readout_miner_deep.csv
+REM  EXPECT FEWER ROWS THAN LAST TIME. That is the point.
+REM
+REM  Output (all in readout_runs\ so nothing collides with the daily bot):
+REM     readout_runs\readout_miner_deep.csv             calendar-grade
+REM     readout_runs\readout_miner_deep_watchlist.csv   guided but too vague to date
 REM     readout_runs\readout_miner_deep_<timestamp>.log
-REM
-REM  Expect 25-45 minutes. Progress prints live - you'll see query N/132, then fetched N/1500.
-REM  Safe to leave running; it checkpoints and will not overwrite the site's data.
 REM ==================================================================================
 cd /d "C:\Users\dcmoo\Documents\Python\9realms"
 
@@ -32,15 +41,18 @@ set "CSV=readout_runs\readout_miner_deep.csv"
 
 echo.
 echo  ==============================================================================
-echo   READOUT MINER - DEEP company-guidance run
+echo   READOUT MINER - DEEP company-guidance run  (v2: gated + program-verified)
 echo  ==============================================================================
 echo   Source   : SEC EDGAR full text (company-stated readout dates)
-echo   Doc cap  : 1500 filings   (default is 150 - this is ~10x the coverage)
+echo   Filter   : drug developers only, and every row must name a program
+echo   Doc cap  : 1500 filings
 echo   Window   : 180 days
 echo   CSV      : %CSV%
+echo   Watchlist: readout_runs\readout_miner_deep_watchlist.csv
 echo   Log      : %LOG%
 echo.
-echo   This takes roughly 25-45 minutes. Progress prints below.
+echo   First run also builds an SEC industry-code cache (a few minutes, once).
+echo   Roughly 25-45 minutes total. Progress prints below.
 echo   Tell Claude when it finishes and point at the CSV above.
 echo  ==============================================================================
 echo.
@@ -50,11 +62,12 @@ powershell -NoProfile -Command "python -u readout_miner.py --source edgar --edga
 echo.
 echo  ==============================================================================
 echo   DONE.
-echo   Results : %CSV%
-echo   Log     : %LOG%
+echo   Calendar grade : %CSV%
+echo   Watchlist      : readout_runs\readout_miner_deep_watchlist.csv
+echo   Log            : %LOG%
 echo.
-echo   Columns : ticker, best_date, date_source, confidence,
-echo             guided_date, guided_precision (month/quarter/half/year),
-echo             guided_form (which SEC form), guided_filed (filing date)
+echo   Key columns : ticker, best_date, guided_precision (month/quarter only in the
+echo                 main CSV), program, program_kind, filing_url, accession,
+echo                 matched_sentence, sic_desc
 echo  ==============================================================================
 pause

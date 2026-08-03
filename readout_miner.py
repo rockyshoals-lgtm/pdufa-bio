@@ -41,9 +41,16 @@ AGENT = os.environ.get("SEC_USER_AGENT", "David Moody rockyshoals@gmail.com")
 TICKER_MAP_CACHE = os.path.join(HERE, "bpc_data", "_edgar_ticker_map.json")
 OUT = os.path.join(HERE, "readout_miner.csv")
 TODAY = dt.date.today()
-COLS = ["ticker", "best_date", "date_source", "confidence", "guided_date", "guided_precision",
-        "guided_form", "guided_filed", "pcd", "pcd_type", "days_to_pcd", "bucket", "status",
+COLS = ["ticker", "best_date", "date_source", "confidence", "program", "program_kind",
+        "guided_date", "guided_precision", "guided_form", "guided_filed", "accession",
+        "filing_url", "matched_sentence", "sic", "sic_desc",
+        "pcd", "pcd_type", "days_to_pcd", "bucket", "status",
         "phase", "enroll", "enroll_type", "nct", "company", "title"]
+
+# Precision good enough to put on a calendar. "1H 2027" and bare "2027" are real guidance but they
+# are NOT a date; publishing them as Dec-31 invents a day the company never said. They go to a
+# separate watchlist file with the precision stated.
+CALENDAR_PRECISION = {"month", "quarter"}
 
 # The ONLY statuses where enrollment is finished -> a readout is actually coming.
 # ---------------------------------------------------------------- EDGAR guidance source
@@ -276,6 +283,109 @@ def _doc_text(cik, adsh, fname):
     return re.sub(r"\s+", " ", TAG.sub(" ", raw))
 
 
+# ---------------------------------------------------------------- who is even a drug company
+# SIC codes for entities that develop drugs. Without this the miner happily returns Osisko Gold
+# Royalties, Agnico Eagle Mines, Williams Companies and a lumber wholesaler, because every issuer on
+# earth files sentences like "results are expected in the fourth quarter of 2026".
+DRUG_SIC = {"2834",   # pharmaceutical preparations
+            "2836",   # biological products
+            "8731",   # commercial physical & biological research
+            "2835",   # in-vitro & in-vivo diagnostic substances
+            "2833"}   # medicinal chemicals & botanical products
+SIC_CACHE = os.path.join(HERE, "bpc_data", "_edgar_sic_map.json")
+
+
+def sic_for(ciks, verbose=True):
+    """{cik: (sic, description)}. Cached on disk: a company's SIC essentially never changes, and
+    this runs before the expensive document fetch so non-drug filers cost one lookup, not a
+    download."""
+    cache = {}
+    if os.path.exists(SIC_CACHE):
+        try:
+            cache = json.load(open(SIC_CACHE, encoding="utf-8"))
+        except Exception:
+            cache = {}
+    todo = [c for c in ciks if c and str(c) not in cache]
+    if todo and verbose:
+        log(f"  SIC lookup for {len(todo)} new CIK(s) ({len(cache)} cached) ...")
+    def save():
+        os.makedirs(os.path.dirname(SIC_CACHE), exist_ok=True)
+        tmp = SIC_CACHE + ".tmp"
+        json.dump(cache, open(tmp, "w", encoding="utf-8"))
+        os.replace(tmp, SIC_CACHE)      # atomic: a kill must not leave a truncated cache
+
+    for n, c in enumerate(todo, 1):
+        try:
+            raw = _get(f"https://data.sec.gov/submissions/CIK{int(c):010d}.json")
+            d = json.loads(raw) if raw else {}
+            cache[str(c)] = [str(d.get("sic") or ""), (d.get("sicDescription") or "")[:60]]
+        except Exception:
+            cache[str(c)] = ["", ""]
+        if n % 25 == 0:
+            save()                      # checkpoint: an interrupted run keeps what it learned
+            if verbose:
+                log(f"    sic {n}/{len(todo)}")
+        time.sleep(0.11)
+    if todo:
+        save()
+    return {str(k): tuple(v) for k, v in cache.items()}
+
+
+# ---------------------------------------------------------------- what is actually reading out
+# A date with no program attached is not a calendar entry, it is a rumour with a timestamp. Every
+# kept row must name the thing that reads out. Patterns are deliberately narrow: a false negative
+# costs one row, a false positive puts a wrong drug on a public calendar.
+_STOP = {"PHASE", "NCT", "FDA", "IND", "NDA", "BLA", "EMA", "SEC", "GAAP", "CEO", "CFO", "USD",
+         "EPS", "ADS", "IPO", "PDUFA", "MHRA", "CHMP", "ODAC", "DSMB", "IDMC", "COVID",
+         # SEC document furniture. "EX-99.1" otherwise parses as a drug code called EX-99,
+         # which is how the first test run credited Tenax with a program named after an exhibit.
+         "EX", "ITEM", "FORM", "PART", "CFR", "USC", "IRS", "ASC", "IFRS", "SIC", "CIK",
+         "LLC", "INC", "LTD", "PLC", "NYSE", "NASDAQ", "ISO", "ICH", "GMP", "GCP", "SOX"}
+_NCT = re.compile(r"\bNCT\d{8}\b")
+_TM = re.compile(r"\b([A-Z][A-Za-z]{3,})\s*[®™]")            # BRANDNAME(R) / (TM)
+_CODE_H = re.compile(r"\b([A-Z]{2,6}-\d{1,5}[A-Za-z]?)\b")             # ONS-5010, VRDN-001
+_CODE_N = re.compile(r"\b([A-Z]{2,5}\d{3,5})\b")                       # SPR994, LY3002813
+# Distinctive INN stems only. Generic endings (-ate, -ine) would match ordinary English, so this is
+# a suffix test on whole words rather than a regex with a required prefix -- the earlier form needed
+# 4+ letters before the stem and so missed single-stem names like "autotemcel".
+_INN_STEMS = ("mab", "nib", "parib", "ciclib", "zomib", "lisib", "tinib", "tide", "prazole",
+              "sartan", "gliptin", "flozin", "glutide", "cycline", "mycin", "oxacin", "setron",
+              "triptan", "dipine", "siran", "leucel", "autotemcel", "cabtagene", "previr", "asvir",
+              "buvir", "ravir", "trapib", "ersen", "virsen", "parvovec", "otemcel", "eucel")
+_WORD = re.compile(r"\b([a-z]{7,})\b")
+_NAMED = re.compile(r"\b(?:trial|study|program|candidate|treatment)\s+(?:of|with|for)\s+"
+                    r"([A-Za-z][A-Za-z0-9\-]{5,})\b")
+_GENERIC = {"patients", "subjects", "adults", "children", "efficacy", "safety", "topline",
+            "several", "certain", "various", "multiple", "additional", "primary", "product",
+            "candidates", "programs", "studies", "trials", "chronic", "advanced", "relapsed"}
+
+
+def extract_program(text):
+    """-> (identifier, kind) for the drug/trial the sentence is about, or (None, None)."""
+    m = _NCT.search(text)
+    if m:
+        return m.group(0), "nct"
+    m = _TM.search(text)
+    if m and m.group(1).upper() not in _STOP:
+        return m.group(1), "brand"
+    for rx, kind in ((_CODE_H, "code"), (_CODE_N, "code")):
+        for mm in rx.finditer(text):
+            head = re.split(r"[-\d]", mm.group(1))[0]
+            if head.upper() not in _STOP:
+                return mm.group(1), kind
+    for mm in _WORD.finditer(text):
+        w = mm.group(1)
+        if w.endswith(_INN_STEMS):
+            return w, "inn"
+    # Last resort: an explicit "trial/study of <name>" construction. Requires the phrase, so it
+    # cannot fire on a generic forward-looking sentence, but it catches INNs whose stem is not in
+    # the list above (veligrotug, obicetrapib, and every stem invented next year).
+    mm = _NAMED.search(text)
+    if mm and mm.group(1).lower() not in _GENERIC:
+        return mm.group(1), "named"
+    return None, None
+
+
 def edgar_guidance(days, max_docs=150, verbose=True):
     """{TICKER: {...}} of company-GUIDED readout dates, mined from EDGAR full text.
 
@@ -322,11 +432,29 @@ def edgar_guidance(days, max_docs=150, verbose=True):
                 rec["phrases"].add(ph)
             time.sleep(0.11)          # SEC fair-use pacing
 
+    # ---- gate on industry BEFORE spending the document budget ---------------------------------
+    sic = sic_for({v["cik"] for v in cands.values() if v.get("cik")}, verbose)
+    kept, dropped = {}, {}
+    for k, v in cands.items():
+        s, desc = sic.get(str(v.get("cik") or ""), ("", ""))
+        if s in DRUG_SIC:
+            v["sic"], v["sic_desc"] = s, desc
+            kept[k] = v
+        else:
+            dropped.setdefault(desc or s or "unknown", set()).add(k[0])
+    if verbose:
+        n_drop = len(cands) - len(kept)
+        log(f"  industry gate: {len(kept)} candidate filings from drug developers, "
+            f"{n_drop} dropped as non-pharma")
+        for desc, tks in sorted(dropped.items(), key=lambda kv: -len(kv[1]))[:8]:
+            log(f"    dropped {len(tks):3d} filer(s)  {desc:<42} e.g. {', '.join(sorted(tks)[:5])}")
+    cands = kept
+
     ordered = sorted(cands.items(), key=lambda kv: kv[1]["filed"] or "", reverse=True)[:max_docs]
     if verbose:
         log(f"  EDGAR stage 2/2: fetching {len(ordered)} of {len(cands)} candidate filings "
             f"({100*len(ordered)/max(1,len(cands)):.0f}% coverage at --edgar-docs {max_docs}) ...")
-    out, parsed, fetched = {}, 0, 0
+    out, parsed, fetched, no_prog = {}, 0, 0, 0
     for (tk, adsh, fname), meta in ordered:
         txt = _doc_text(meta["cik"], adsh, fname)
         fetched += 1
@@ -342,15 +470,27 @@ def edgar_guidance(days, max_docs=150, verbose=True):
                     break
                 snip = txt[max(0, k - 200): k + 260]
                 d, prec = parse_guided_date(snip)
-                if d and d >= TODAY.isoformat() and (best is None or d < best[0]):
-                    best = (d, prec, ph, snip)
+                if d and d >= TODAY.isoformat():
+                    prog, kind = extract_program(snip)
+                    # No named program -> not a readout we can publish. Keep looking: another
+                    # sentence in the same filing usually does name the drug.
+                    if prog and (best is None or d < best[0]):
+                        best = (d, prec, ph, snip, prog, kind)
                 pos = k + len(ph)
-        if best:
+        if best is None:
+            no_prog += 1
+        else:
             parsed += 1
             prev = out.get(tk)
             if prev is None or best[0] < prev["guided_date"]:
+                sentence = re.sub(r"\s+", " ", best[3]).strip()
                 out[tk] = {"guided_date": best[0], "guided_precision": best[1], "phrase": best[2],
-                           "form": meta["form"], "filed": meta["filed"], "adsh": adsh}
+                           "form": meta["form"], "filed": meta["filed"], "adsh": adsh,
+                           "program": best[4], "program_kind": best[5],
+                           "matched_sentence": sentence[:400],
+                           "sic": meta.get("sic", ""), "sic_desc": meta.get("sic_desc", ""),
+                           "filing_url": (f"https://www.sec.gov/Archives/edgar/data/"
+                                          f"{meta['cik']}/{adsh.replace('-', '')}/{fname}")}
         if verbose and fetched % 50 == 0:
             log(f"    fetched {fetched}/{len(ordered)}  ({parsed} with a forward guided date, "
                 f"{len(out)} tickers)")
@@ -510,18 +650,26 @@ def main():
     by_tk = {r["ticker"]: r for r in out}
     for tk, g in guided.items():
         r = by_tk.get(tk)
+        prov = {"guided_date": g["guided_date"], "guided_precision": g["guided_precision"],
+                "guided_form": g["form"], "guided_filed": g["filed"], "accession": g.get("adsh", ""),
+                "filing_url": g.get("filing_url", ""), "program": g.get("program", ""),
+                "program_kind": g.get("program_kind", ""),
+                "matched_sentence": g.get("matched_sentence", ""),
+                "sic": g.get("sic", ""), "sic_desc": g.get("sic_desc", "")}
         if r:
-            r.update({"guided_date": g["guided_date"], "guided_precision": g["guided_precision"],
-                      "guided_form": g["form"], "guided_filed": g["filed"]})
+            r.update(prov)
         elif a.source in ("both", "edgar"):
             # Company guided a readout but CT.gov shows no enrollment-complete trial. Still a real
             # readout date -- this is the SLS/"never in CT.gov" case the whole upgrade exists for.
-            by_tk[tk] = {"ticker": tk, "company": tmap.get(tk, ""), "pcd": "", "pcd_type": "",
-                         "days_to_pcd": "", "status": "", "phase": "", "enroll": "",
-                         "enroll_type": "", "nct": "", "title": "",
-                         "bucket": "GUIDED (company statement)",
-                         "guided_date": g["guided_date"], "guided_precision": g["guided_precision"],
-                         "guided_form": g["form"], "guided_filed": g["filed"]}
+            row = {"ticker": tk, "company": tmap.get(tk, ""), "pcd": "", "pcd_type": "",
+                   "days_to_pcd": "", "status": "", "phase": "", "enroll": "",
+                   "enroll_type": "", "nct": "", "title": "",
+                   "bucket": "GUIDED (company statement)"}
+            # an NCT in the guidance sentence is a free join back to the trial record
+            if g.get("program_kind") == "nct":
+                row["nct"] = g["program"]
+            row.update(prov)
+            by_tk[tk] = row
 
     merged = list(by_tk.values())
     for r in merged:
@@ -535,8 +683,24 @@ def main():
         else:
             r["date_source"], r["confidence"], r["best_date"] = "CTGOV", "medium", pcd
     merged.sort(key=lambda r: (r.get("best_date") or "9999"))
-    out = merged
+
+    # ---- calendar-grade vs watchlist ----------------------------------------------------------
+    # A CT.gov primary-completion date is a real dated estimate. Company guidance is only calendar
+    # grade at month/quarter precision; "1H 2027" and bare "2027" become a Dec-31 the company never
+    # said, so they go to a watchlist that states the precision instead of inventing a day.
+    out, soft = [], []
+    for r in merged:
+        prec = (r.get("guided_precision") or "").strip()
+        if r.get("date_source") == "EDGAR" and prec and prec not in CALENDAR_PRECISION:
+            r["bucket"] = f"WATCHLIST (guided {prec} only)"
+            soft.append(r)
+        else:
+            out.append(r)
     dst = write_csv(out, a.out)
+    soft_dst = ""
+    if soft:
+        soft_dst = os.path.splitext(a.out)[0] + "_watchlist.csv"
+        write_csv(soft, soft_dst)
 
     nboth = sum(1 for r in out if r["date_source"] == "BOTH")
     nedgar = sum(1 for r in out if r["date_source"] == "EDGAR")
@@ -545,14 +709,16 @@ def main():
     log(f"  {len(out)} READOUT DATES -> {os.path.basename(dst)}   "
         f"[BOTH sources {nboth} | EDGAR-guided {nedgar} | CT.gov only {nctg}]")
     log("=" * 100)
-    log(f"  {'tkr':<6}{'best date':<12}{'src':<7}{'conf':<8}{'guided':<12}{'prec':<9}"
-        f"{'status':<22}{'bucket':<26}")
+    if soft_dst:
+        log(f"  {len(soft)} guided-but-vague row(s) (half-year / bare year) -> "
+            f"{os.path.basename(soft_dst)}; NOT calendar grade")
+    log(f"  {'tkr':<6}{'best date':<12}{'src':<7}{'prec':<9}{'program':<20}{'kind':<7}"
+        f"{'bucket':<26}")
     log("  " + "-" * 96)
     for r in out:
         log(f"  {r['ticker']:<6}{(r.get('best_date') or '')[:10]:<12}{r['date_source']:<7}"
-            f"{r['confidence']:<8}{(r.get('guided_date') or '-')[:10]:<12}"
-            f"{(r.get('guided_precision') or '-'):<9}{(r.get('status') or '-')[:21]:<22}"
-            f"{r.get('bucket',''):<26}")
+            f"{(r.get('guided_precision') or '-'):<9}{(r.get('program') or '-')[:19]:<20}"
+            f"{(r.get('program_kind') or '-'):<7}{r.get('bucket',''):<26}")
 
     if a.include_recruiting and watch:
         watch.sort(key=lambda r: r["pcd"])
