@@ -340,7 +340,13 @@ _STOP = {"PHASE", "NCT", "FDA", "IND", "NDA", "BLA", "EMA", "SEC", "GAAP", "CEO"
          # SEC document furniture. "EX-99.1" otherwise parses as a drug code called EX-99,
          # which is how the first test run credited Tenax with a program named after an exhibit.
          "EX", "ITEM", "FORM", "PART", "CFR", "USC", "IRS", "ASC", "IFRS", "SIC", "CIK",
-         "LLC", "INC", "LTD", "PLC", "NYSE", "NASDAQ", "ISO", "ICH", "GMP", "GCP", "SOX"}
+         "LLC", "INC", "LTD", "PLC", "NYSE", "NASDAQ", "ISO", "ICH", "GMP", "GCP", "SOX",
+         # Biological TARGETS, not drugs. "IL-17A" and "PD-L1" match a drug-code pattern
+         # perfectly, and labelling a readout with the target instead of the agent is wrong
+         # in a way a reader would not catch.
+         "IL", "PD", "TNF", "TGF", "VEGF", "EGFR", "HER", "CD", "GLP", "GIP", "FGF", "IGF",
+         "JAK", "BTK", "KRAS", "ALK", "NTRK", "BCMA", "PCSK", "LDL", "HDL", "HLA", "MHC",
+         "CAR", "TCR", "PSMA", "TROP", "CTLA", "LAG", "TIGIT", "APOE", "SOD", "SMN", "DMD"}
 _NCT = re.compile(r"\bNCT\d{8}\b")
 _TM = re.compile(r"\b([A-Z][A-Za-z]{3,})\s*[®™]")            # BRANDNAME(R) / (TM)
 _CODE_H = re.compile(r"\b([A-Z]{2,6}-\d{1,5}[A-Za-z]?)\b")             # ONS-5010, VRDN-001
@@ -353,11 +359,18 @@ _INN_STEMS = ("mab", "nib", "parib", "ciclib", "zomib", "lisib", "tinib", "tide"
               "triptan", "dipine", "siran", "leucel", "autotemcel", "cabtagene", "previr", "asvir",
               "buvir", "ravir", "trapib", "ersen", "virsen", "parvovec", "otemcel", "eucel")
 _WORD = re.compile(r"\b([a-z]{7,})\b")
-_NAMED = re.compile(r"\b(?:trial|study|program|candidate|treatment)\s+(?:of|with|for)\s+"
+# "trial/study/program of X" reliably precedes a drug. "TREATMENT of X" reliably precedes a
+# DISEASE, which is how Cyclerion got a program called "mitochondrial" out of "treatment of
+# mitochondrial encephalomyopathy". Trigger words are limited to the ones that introduce an agent.
+_NAMED = re.compile(r"\b(?:trial|study|program|candidate)\s+(?:of|with)\s+"
                     r"([A-Za-z][A-Za-z0-9\-]{5,})\b")
 _GENERIC = {"patients", "subjects", "adults", "children", "efficacy", "safety", "topline",
             "several", "certain", "various", "multiple", "additional", "primary", "product",
-            "candidates", "programs", "studies", "trials", "chronic", "advanced", "relapsed"}
+            "candidates", "programs", "studies", "trials", "chronic", "advanced", "relapsed",
+            # disease / anatomy adjectives that can still sit in the captured slot
+            "mitochondrial", "metastatic", "refractory", "recurrent", "systemic", "idiopathic",
+            "pulmonary", "hepatic", "cardiac", "diabetic", "pediatric", "moderate", "severe",
+            "unresectable", "locally", "newly", "previously", "healthy", "adolescent"}
 
 
 def extract_program(text):
