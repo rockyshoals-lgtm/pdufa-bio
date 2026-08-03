@@ -183,7 +183,7 @@ partial current year is marked with an asterisk and will move as more decisions 
 from the company's size at the time we recorded the event. This is a description of what happened historically; it
 is not a prediction and not investment advice.</p>
 <p class="note">Reuse encouraged with attribution: &ldquo;pdufa.bio, PDUFA run-up study (n={len(rows):,},
-{dmin}: {dmax})&rdquo;. See <a href="/research">all research</a> and the free
+{dmin} to {dmax})&rdquo;. See <a href="/research">all research</a> and the free
 <a href="/developers">API</a>.</p>
 
 <div class="legal"><a href="/about" style="color:#8aa0bf">About</a> &middot; <a href="/corrections" style="color:#8aa0bf">Corrections</a> &middot; <a href="/methodology" style="color:#8aa0bf">Methodology</a><br><br>

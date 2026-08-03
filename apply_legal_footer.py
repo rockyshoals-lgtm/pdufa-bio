@@ -56,6 +56,9 @@ BOILER = [
     r"Verify (?:every date and outcome |against |every figure )?[^.<]*\.",
     r"Data and historical statistics only[^.<]*\.",
     r"Data is provided as is[^.<]*\.",
+    # Already stated verbatim in the canonical text; preserving it too reads as a stutter.
+    r"[Pp]ast behaviour does not predict future outcomes\.?",
+    r"Historical statistics only;?\s*",
     r"No individual-drug approval probabilities[^.<]*\.",
     r"no trade recommendations[^.<]*\.",
     r"(?:&copy;|©) ?2026 (?:pdufabio|Odin Catalyst LLC)\.?",
