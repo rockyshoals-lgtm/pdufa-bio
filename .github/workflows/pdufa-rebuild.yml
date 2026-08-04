@@ -194,6 +194,15 @@ jobs:
       # One nav on every page. There were eight different navs across 858 pages, so which site you
       # could reach depended on where Google landed you. Runs with the other normalisers so a
       # regenerated page cannot revert to an old nav.
+      # Both of these write into index.html, so they MUST run after build_home_board regenerates it,
+      # or the board rebuild would silently wipe them. They sit here with the normalisers for that
+      # reason.
+      - name: Explain what a PDUFA date is (plain English + FAQ schema)
+        run: python build_explainer.py
+
+      - name: Rebuild instant search index (no model, no API)
+        run: python build_search.py
+
       - name: Normalise navigation (one nav, site-wide)
         run: python rebuild_nav.py
 

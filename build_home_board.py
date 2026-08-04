@@ -196,10 +196,16 @@ def render_upcoming(cats, key):
         tk, cap = c["ticker"], c.get("cap", "")
         date = str(c["date"])[:10]
         d = (TODAY - dt.date.fromisoformat(date)).days * -1
+        # A PDUFA date that has passed with no outcome posted yet must not render as "-1 days".
+        # The client hydrator already rewrote this to "0 due" at view time, but the BAKED html is
+        # what crawlers index and what a reader sees before JS runs, and "-1 days" reads as a bug.
+        cd_n, cd_u = (str(d), "days" if d != 1 else "day") if d > 0 else \
+                     ("0", "today" if d == 0 else "due")
         drug = esc(c.get("drug") or c.get("name") or tk)
         spk = sparkline(poly_closes(key, tk))
         rows.append(
-            f'<a class="row" href="{link_for(tk)}"><span class="cd"><b>{d}</b><i>days</i></span>'
+            f'<a class="row" href="{link_for(tk)}"><span class="cd"><b>{cd_n}</b>'
+            f'<i>{cd_u}</i></span>'
             f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
             f'<span class="dg">{drug} · PDUFA {date}</span></span>{spk}'
             f'<span class="coh">{COH.get(cap, "±3%")}<i>cohort</i></span></a>')

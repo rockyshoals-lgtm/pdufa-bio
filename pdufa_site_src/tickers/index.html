@@ -37,7 +37,63 @@ h2{font-size:17px;color:var(--gold);margin:26px 0 8px;border-bottom:1px solid va
 <header class="site"><div class="hd"><a class="brand" href="/">pdufa<b>.bio</b></a><nav><!--NAVC:BEGIN--><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/runup-by-year">Run-up</a><a href="/tickers">Stocks</a><div class="navdd"><button class="navddb" aria-haspopup="true" aria-expanded="false" onclick="this.parentNode.classList.toggle('open')">More</button><div class="navddm"><a href="/conferences">Conferences</a><a href="/adcomm">Advisory Committees</a><a href="/screener">Screener</a><a href="/research">Research</a><a href="/developers">API</a><a href="/sls">SLS tracker</a><a href="/account">Account</a></div></div><a class="pro" href="/pricing" style="color:var(--gold)">Pro</a><!--NAVC:END--></nav></div></header>
 <main class="wrap">
 <div class="bc"><a href="/">Home</a> &rsaquo; All tickers</div>
-<h1>Every ticker we <span class="g">track</span>: A to Z</h1>
+<h1>Every ticker we <span class="g">track</span>: A to Z</h1><!--SEARCH:BEGIN--><div class="pdsearch" style="margin:14px 0 18px;position:relative">
+<label for="pdq" style="position:absolute;left:-9999px">Search catalysts by ticker, drug or condition</label>
+<input id="pdq" type="search" autocomplete="off" spellcheck="false"
+ placeholder="Search a ticker, drug or condition. Try MRNA, or obesity"
+ style="width:100%;box-sizing:border-box;padding:13px 15px;font-size:15px;border-radius:12px;
+ border:1px solid var(--line);background:var(--card);color:#eef4fc;min-height:46px"
+ aria-controls="pdres" aria-expanded="false" role="combobox">
+<div id="pdres" role="listbox" style="display:none;position:absolute;z-index:60;left:0;right:0;
+ margin-top:6px;background:#0b1626;border:1px solid #294d80;border-radius:12px;
+ box-shadow:0 18px 44px rgba(0,0,0,.55);max-height:60vh;overflow:auto"></div></div>
+<script>
+(function(){var q=document.getElementById('pdq'),r=document.getElementById('pdres'),IX=null,sel=-1;
+if(!q)return;
+function load(){if(IX)return Promise.resolve(IX);
+ return fetch('/search-index.json').then(function(x){return x.json()}).then(function(j){IX=j;return j})
+ .catch(function(){IX=[];return IX})}
+var M={january:'01',february:'02',march:'03',april:'04',may:'05',june:'06',july:'07',
+ august:'08',september:'09',october:'10',november:'11',december:'12'};
+function score(row,s){var t=(row.t||'').toLowerCase(),n=(row.n||'').toLowerCase(),
+ c=(row.c||'').toLowerCase(),a=(row.a||'').toLowerCase();
+ if(t===s)return 100; if(t.indexOf(s)===0)return 90;
+ if(n.indexOf(s)===0)return 70; if(n.indexOf(s)>0)return 55;
+ if(c.indexOf(s)>-1)return 45; if(a.indexOf(s)>-1)return 35;
+ if((row.m||'').indexOf(s)===0)return 30;
+ if(M[s]&&(row.m||'').slice(5)===M[s])return 28;
+ return 0}
+function esc(x){return String(x||'').replace(/[&<>"]/g,function(m){
+ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+function draw(list){ if(!list.length){r.style.display='none';q.setAttribute('aria-expanded','false');return}
+ r.innerHTML=list.map(function(x,i){
+  var meta=[x.y,x.d?(x.p==='day'?x.d:'~'+x.d.slice(0,7)):'',x.a].filter(Boolean).join(' \u00b7 ');
+  return '<a role="option" href="'+esc(x.u)+'" data-i="'+i+'" style="display:flex;gap:10px;'+
+   'align-items:baseline;padding:10px 13px;border-bottom:1px solid #14263f;text-decoration:none">'+
+   '<b class="lit" style="color:#f0c86a;min-width:58px">'+esc(x.t)+'</b>'+
+   '<span style="flex:1;color:#dce7f7;font-size:14px">'+esc(x.n)+
+   '<span style="display:block;color:#7c93b6;font-size:11.5px">'+esc(meta)+'</span></span></a>'}).join('');
+ r.style.display='block';q.setAttribute('aria-expanded','true');sel=-1}
+function run(){var s=q.value.trim().toLowerCase(); if(s.length<1){r.style.display='none';return}
+ load().then(function(ix){var out=[];
+  for(var i=0;i<ix.length;i++){var sc=score(ix[i],s); if(sc)out.push([sc,ix[i]])}
+  out.sort(function(a,b){return b[0]-a[0]});
+  draw(out.slice(0,12).map(function(x){return x[1]}))})}
+q.addEventListener('input',run); q.addEventListener('focus',function(){load();if(q.value)run()});
+q.addEventListener('keydown',function(e){var opts=r.querySelectorAll('a');
+ if(e.key==='Escape'){r.style.display='none';q.blur();return}
+ if(!opts.length)return;
+ if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();
+  sel+=(e.key==='ArrowDown'?1:-1); if(sel<0)sel=opts.length-1; if(sel>=opts.length)sel=0;
+  for(var i=0;i<opts.length;i++)opts[i].style.background=(i===sel?'#132745':'transparent');
+  opts[sel].scrollIntoView({block:'nearest'})}
+ else if(e.key==='Enter'){e.preventDefault();(opts[sel>-1?sel:0]).click()}});
+document.addEventListener('click',function(e){if(!r.contains(e.target)&&e.target!==q)r.style.display='none'});
+document.addEventListener('keydown',function(e){
+ if(e.key==='/'&&document.activeElement!==q&&!/input|textarea/i.test((document.activeElement||{}).tagName||'')){
+  e.preventDefault();q.focus()}});
+})();
+</script><!--SEARCH:END-->
 <p class="sub">All 208 biotech and pharma companies covered by pdufa.bio, with each company's next
 FDA catalyst and the number of FDA decisions we hold on record for it. Every calendar date and outcome on this
 site is sourced to a primary FDA, SEC or company filing. Free, no login.</p>
