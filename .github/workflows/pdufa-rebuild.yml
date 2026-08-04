@@ -82,6 +82,12 @@ jobs:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python build_home_board.py
 
+      # Reconcile the calendar against the slate BEFORE marking outcomes, so a catalyst added here
+      # is marked in the same run. REPL had a confirmed date, an adcomm page and a slate row, and
+      # appeared on no calendar page at all; 42 dated PDUFAs were missing the same way.
+      - name: Add any dated PDUFA missing from the calendar
+        run: python ensure_calendar_rows.py
+
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
