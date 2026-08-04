@@ -1,0 +1,1882 @@
+{
+"pdufa_site_src/about/index.html": {
+"date": "2026-08-02",
+"hash": "bc16996b444441bc"
+},
+"pdufa_site_src/adcomm/CAPR-2026-07-29/index.html": {
+"date": "2026-08-02",
+"hash": "9750558cdc6b22eb"
+},
+"pdufa_site_src/adcomm/REPL-2026-07-30/index.html": {
+"date": "2026-08-02",
+"hash": "9b0b79ea0deff8bf"
+},
+"pdufa_site_src/adcomm/index.html": {
+"date": "2026-08-02",
+"hash": "37845920439c5cb1"
+},
+"pdufa_site_src/calendar/2026/august/index.html": {
+"date": "2026-08-02",
+"hash": "5535fd6307bff45f"
+},
+"pdufa_site_src/calendar/2026/december/index.html": {
+"date": "2026-08-02",
+"hash": "bec202e8fa6928e8"
+},
+"pdufa_site_src/calendar/2026/july/index.html": {
+"date": "2026-08-02",
+"hash": "ccb54318da07a7f5"
+},
+"pdufa_site_src/calendar/2026/june/index.html": {
+"date": "2026-08-02",
+"hash": "863faf34ced500bb"
+},
+"pdufa_site_src/calendar/2026/november/index.html": {
+"date": "2026-08-02",
+"hash": "37de08e3deab0988"
+},
+"pdufa_site_src/calendar/2026/october/index.html": {
+"date": "2026-08-02",
+"hash": "f8baa406b119eaee"
+},
+"pdufa_site_src/calendar/2026/september/index.html": {
+"date": "2026-08-02",
+"hash": "61fafd8674309ef2"
+},
+"pdufa_site_src/calendar/2027/april/index.html": {
+"date": "2026-08-02",
+"hash": "ddf7f4b19e3cae01"
+},
+"pdufa_site_src/calendar/2027/february/index.html": {
+"date": "2026-08-02",
+"hash": "7a4be7adb37bb9db"
+},
+"pdufa_site_src/calendar/2027/january/index.html": {
+"date": "2026-08-02",
+"hash": "60706b4d1d0d73a2"
+},
+"pdufa_site_src/calendar/index.html": {
+"date": "2026-08-03",
+"hash": "1455886841738a92"
+},
+"pdufa_site_src/changelog/index.html": {
+"date": "2026-08-02",
+"hash": "4b9c7afa54f47076"
+},
+"pdufa_site_src/clinical-trial-success-rates/index.html": {
+"date": "2026-08-02",
+"hash": "92623111f3d796b6"
+},
+"pdufa_site_src/condition/cancer/index.html": {
+"date": "2026-08-02",
+"hash": "16e596f27d5cc35a"
+},
+"pdufa_site_src/condition/cardiovascular/index.html": {
+"date": "2026-08-02",
+"hash": "c510566f038194f3"
+},
+"pdufa_site_src/condition/cns-neurology/index.html": {
+"date": "2026-08-02",
+"hash": "cffe4427bc2544b4"
+},
+"pdufa_site_src/condition/hematology/index.html": {
+"date": "2026-08-02",
+"hash": "e2a9112452633795"
+},
+"pdufa_site_src/condition/immunology/index.html": {
+"date": "2026-08-02",
+"hash": "55fc3ae013578ca4"
+},
+"pdufa_site_src/condition/infectious-disease/index.html": {
+"date": "2026-08-02",
+"hash": "3b779fd73c0191d0"
+},
+"pdufa_site_src/condition/obesity-metabolic/index.html": {
+"date": "2026-08-02",
+"hash": "e35a4e9925710db9"
+},
+"pdufa_site_src/condition/ophthalmology/index.html": {
+"date": "2026-08-02",
+"hash": "6205d6bf9214e011"
+},
+"pdufa_site_src/condition/rare-disease/index.html": {
+"date": "2026-08-02",
+"hash": "290f04736e9126e2"
+},
+"pdufa_site_src/conference/AASLD/index.html": {
+"date": "2026-08-02",
+"hash": "8a0732a632970c44"
+},
+"pdufa_site_src/conference/ACR/index.html": {
+"date": "2026-08-02",
+"hash": "040dc24b67ea6146"
+},
+"pdufa_site_src/conference/AES/index.html": {
+"date": "2026-08-02",
+"hash": "13c4b527ab69c01b"
+},
+"pdufa_site_src/conference/ASH/index.html": {
+"date": "2026-08-02",
+"hash": "36fda271602e3789"
+},
+"pdufa_site_src/conference/ASN/index.html": {
+"date": "2026-08-02",
+"hash": "3227b85333394077"
+},
+"pdufa_site_src/conference/CTAD/index.html": {
+"date": "2026-08-02",
+"hash": "a7120141b030e860"
+},
+"pdufa_site_src/conference/EASD/index.html": {
+"date": "2026-08-02",
+"hash": "5f126fa626c3ce3c"
+},
+"pdufa_site_src/conference/ECTRIMS/index.html": {
+"date": "2026-08-02",
+"hash": "c0ab8cb8bd82d62e"
+},
+"pdufa_site_src/conference/ESC/index.html": {
+"date": "2026-08-02",
+"hash": "101e9ba8f9ee7cc8"
+},
+"pdufa_site_src/conference/ESMO/index.html": {
+"date": "2026-08-02",
+"hash": "1c4cfc268d49a67b"
+},
+"pdufa_site_src/conference/IDWeek/index.html": {
+"date": "2026-08-02",
+"hash": "754b307a35a5c035"
+},
+"pdufa_site_src/conference/SABCS/index.html": {
+"date": "2026-08-02",
+"hash": "499d3f67007a499d"
+},
+"pdufa_site_src/conference/SITC/index.html": {
+"date": "2026-08-02",
+"hash": "b3e0c08ecc566015"
+},
+"pdufa_site_src/conference/WCLC/index.html": {
+"date": "2026-08-02",
+"hash": "a32b9fcbc60ba756"
+},
+"pdufa_site_src/conferences/index.html": {
+"date": "2026-08-02",
+"hash": "494fa5f68b411589"
+},
+"pdufa_site_src/corrections/index.html": {
+"date": "2026-08-03",
+"hash": "caa4b8ead2c6a310"
+},
+"pdufa_site_src/coverage/index.html": {
+"date": "2026-08-02",
+"hash": "1401108052b8d338"
+},
+"pdufa_site_src/decisions/approvals/index.html": {
+"date": "2026-08-03",
+"hash": "000891c9fa7c90ea"
+},
+"pdufa_site_src/decisions/crl/index.html": {
+"date": "2026-08-03",
+"hash": "52819b06ed59dc8c"
+},
+"pdufa_site_src/decisions/index.html": {
+"date": "2026-08-03",
+"hash": "1e3b655dfe80f962"
+},
+"pdufa_site_src/developers/index.html": {
+"date": "2026-08-02",
+"hash": "2b24df3f90f1650f"
+},
+"pdufa_site_src/devices/index.html": {
+"date": "2026-08-02",
+"hash": "4e83108a105b046b"
+},
+"pdufa_site_src/fda-approval-rate/index.html": {
+"date": "2026-08-02",
+"hash": "8663b54e8eb70025"
+},
+"pdufa_site_src/fda-decision/ABBV-2026-04-23/index.html": {
+"date": "2026-08-02",
+"hash": "00fc441b2644e381"
+},
+"pdufa_site_src/fda-decision/ABBV-2026-05-27/index.html": {
+"date": "2026-08-02",
+"hash": "051aa8b96c103b0c"
+},
+"pdufa_site_src/fda-decision/ABBV-2026-06-16/index.html": {
+"date": "2026-08-02",
+"hash": "9fae76a3c3d8d175"
+},
+"pdufa_site_src/fda-decision/ABBV-2026-06-26/index.html": {
+"date": "2026-08-02",
+"hash": "68cfea382b6aa61d"
+},
+"pdufa_site_src/fda-decision/ACHV-2026-06-20/index.html": {
+"date": "2026-08-02",
+"hash": "6cddc27427d7ee59"
+},
+"pdufa_site_src/fda-decision/ACHV-2026-06-22/index.html": {
+"date": "2026-08-02",
+"hash": "0974753bddee0d23"
+},
+"pdufa_site_src/fda-decision/ADMA-2026-05-04/index.html": {
+"date": "2026-08-02",
+"hash": "75c2e721c56c99d1"
+},
+"pdufa_site_src/fda-decision/ALDX-2025-04-03/index.html": {
+"date": "2026-08-02",
+"hash": "121cb1544e116bbf"
+},
+"pdufa_site_src/fda-decision/ALDX-2026-03-17/index.html": {
+"date": "2026-08-02",
+"hash": "666754a1007065eb"
+},
+"pdufa_site_src/fda-decision/ALLO-2025-02-14/index.html": {
+"date": "2026-08-02",
+"hash": "3397180075f07234"
+},
+"pdufa_site_src/fda-decision/AMPH-2026-02-24/index.html": {
+"date": "2026-08-02",
+"hash": "5a15743a1b83634a"
+},
+"pdufa_site_src/fda-decision/AMRX-2026-06-04/index.html": {
+"date": "2026-08-02",
+"hash": "898018446ad32c72"
+},
+"pdufa_site_src/fda-decision/ANIP-2026-04-08/index.html": {
+"date": "2026-08-02",
+"hash": "014b67f95696cb39"
+},
+"pdufa_site_src/fda-decision/ARGX-2026-05-08/index.html": {
+"date": "2026-08-02",
+"hash": "3d8d368642f43020"
+},
+"pdufa_site_src/fda-decision/ARQT-2026-06-29/index.html": {
+"date": "2026-08-02",
+"hash": "37a39bb70691fd98"
+},
+"pdufa_site_src/fda-decision/ARQT-2026-06-30/index.html": {
+"date": "2026-08-02",
+"hash": "e5809a4121a1122d"
+},
+"pdufa_site_src/fda-decision/ARVN-2026-05-01/index.html": {
+"date": "2026-08-02",
+"hash": "d60b3f74724932cb"
+},
+"pdufa_site_src/fda-decision/ASND-2026-02-27/index.html": {
+"date": "2026-08-02",
+"hash": "de199627e1e30a42"
+},
+"pdufa_site_src/fda-decision/ATRA-2025-01-16/index.html": {
+"date": "2026-08-02",
+"hash": "30ef6e649f97ae86"
+},
+"pdufa_site_src/fda-decision/AXSM-2026-04-30/index.html": {
+"date": "2026-08-02",
+"hash": "bb2169423d117da6"
+},
+"pdufa_site_src/fda-decision/AZN-2026-04-27/index.html": {
+"date": "2026-08-02",
+"hash": "40be5666448ec527"
+},
+"pdufa_site_src/fda-decision/AZN-2026-04-28/index.html": {
+"date": "2026-08-02",
+"hash": "d62a9f03987e35a8"
+},
+"pdufa_site_src/fda-decision/AZN-2026-05-15/index.html": {
+"date": "2026-08-02",
+"hash": "30bc21aff352d0b8"
+},
+"pdufa_site_src/fda-decision/AZN-2026-05-18/index.html": {
+"date": "2026-08-02",
+"hash": "d43a3954ddd0e7b0"
+},
+"pdufa_site_src/fda-decision/AZN-2026-05-22/index.html": {
+"date": "2026-08-02",
+"hash": "bab1a13aa0cae00a"
+},
+"pdufa_site_src/fda-decision/AZN-2026-05-28/index.html": {
+"date": "2026-08-02",
+"hash": "13a5663ebc41a5d1"
+},
+"pdufa_site_src/fda-decision/AZN-2026-06-12/index.html": {
+"date": "2026-08-02",
+"hash": "70b3d3f49c13d03e"
+},
+"pdufa_site_src/fda-decision/BAYRY-2026-06-15/index.html": {
+"date": "2026-08-02",
+"hash": "a3cb79700fd51e12"
+},
+"pdufa_site_src/fda-decision/BIIB-2026-03-30/index.html": {
+"date": "2026-08-02",
+"hash": "f8d9798b35a9ff14"
+},
+"pdufa_site_src/fda-decision/BIIB-2026-07-13/index.html": {
+"date": "2026-08-02",
+"hash": "cfc50fdac668b188"
+},
+"pdufa_site_src/fda-decision/BMRN-2026-02-27/index.html": {
+"date": "2026-08-02",
+"hash": "10faafae59fe458d"
+},
+"pdufa_site_src/fda-decision/BMY-2026-03-06/index.html": {
+"date": "2026-08-02",
+"hash": "07bc136d03c31658"
+},
+"pdufa_site_src/fda-decision/BMY-2026-03-20/index.html": {
+"date": "2026-08-02",
+"hash": "5c383f5867a8875a"
+},
+"pdufa_site_src/fda-decision/BMY-2026-06-01/index.html": {
+"date": "2026-08-02",
+"hash": "a2ce83d2c6a1b3e1"
+},
+"pdufa_site_src/fda-decision/CAPR-2025-07-11/index.html": {
+"date": "2026-08-02",
+"hash": "48a2c7019de077d3"
+},
+"pdufa_site_src/fda-decision/CELC-2026-07-14/index.html": {
+"date": "2026-08-02",
+"hash": "f7ad016c0aa97233"
+},
+"pdufa_site_src/fda-decision/CING-2026-06-02/index.html": {
+"date": "2026-08-02",
+"hash": "678803001d5b16f6"
+},
+"pdufa_site_src/fda-decision/CORT-2026-03-25/index.html": {
+"date": "2026-08-02",
+"hash": "aa4cb6386135770c"
+},
+"pdufa_site_src/fda-decision/CRSP-2026-07-01/index.html": {
+"date": "2026-08-02",
+"hash": "05bae2b43ddfc081"
+},
+"pdufa_site_src/fda-decision/DNLI-2026-03-25/index.html": {
+"date": "2026-08-02",
+"hash": "1b4011d601ebc566"
+},
+"pdufa_site_src/fda-decision/EBS-2026-02-13/index.html": {
+"date": "2026-08-02",
+"hash": "17c4032487052e3b"
+},
+"pdufa_site_src/fda-decision/ENGN-2025-11-11/index.html": {
+"date": "2026-08-02",
+"hash": "bd15bff68c6db648"
+},
+"pdufa_site_src/fda-decision/EQ-2025-03-27/index.html": {
+"date": "2026-08-02",
+"hash": "933c741802e820e4"
+},
+"pdufa_site_src/fda-decision/ESLA-2025-11-03/index.html": {
+"date": "2026-08-02",
+"hash": "d7b51ade57817b2e"
+},
+"pdufa_site_src/fda-decision/GILD-2026-02-06/index.html": {
+"date": "2026-08-02",
+"hash": "8807a83cf644e8c8"
+},
+"pdufa_site_src/fda-decision/GILD-2026-05-26/index.html": {
+"date": "2026-08-02",
+"hash": "72ecb0b3913b52af"
+},
+"pdufa_site_src/fda-decision/GILD-2026-06-24/index.html": {
+"date": "2026-08-02",
+"hash": "e7a37bc1da6370c0"
+},
+"pdufa_site_src/fda-decision/GRCE-2026-04-23/index.html": {
+"date": "2026-08-02",
+"hash": "5113c558cfb1e647"
+},
+"pdufa_site_src/fda-decision/GSK-2026-03-13/index.html": {
+"date": "2026-08-02",
+"hash": "74564fdfcd599698"
+},
+"pdufa_site_src/fda-decision/GSK-2026-03-19/index.html": {
+"date": "2026-08-02",
+"hash": "4367e2290969a721"
+},
+"pdufa_site_src/fda-decision/GSK-2026-06-17/index.html": {
+"date": "2026-08-02",
+"hash": "22e125aad054feff"
+},
+"pdufa_site_src/fda-decision/HALO-2026-03-05/index.html": {
+"date": "2026-08-02",
+"hash": "69b00fd10a11ac9e"
+},
+"pdufa_site_src/fda-decision/HRMY-2026-02-17/index.html": {
+"date": "2026-08-02",
+"hash": "26ee34ed0384cbc8"
+},
+"pdufa_site_src/fda-decision/IBRX-2026-01-16/index.html": {
+"date": "2026-08-02",
+"hash": "cab1c433c8cd6961"
+},
+"pdufa_site_src/fda-decision/INCY-2026-04-08/index.html": {
+"date": "2026-08-02",
+"hash": "32485a97dc4a0ff6"
+},
+"pdufa_site_src/fda-decision/INCY-2026-05-01/index.html": {
+"date": "2026-08-02",
+"hash": "0d308dbdc7230d5e"
+},
+"pdufa_site_src/fda-decision/IONS-2026-03-30/index.html": {
+"date": "2026-08-02",
+"hash": "7d9a7324337f5ab3"
+},
+"pdufa_site_src/fda-decision/IONS-2026-06-24/index.html": {
+"date": "2026-08-02",
+"hash": "0dd4079f7c3b33f2"
+},
+"pdufa_site_src/fda-decision/IRON-2026-02-13/index.html": {
+"date": "2026-08-02",
+"hash": "3fecfa5e96823d88"
+},
+"pdufa_site_src/fda-decision/IRWD-2026-05-27/index.html": {
+"date": "2026-08-02",
+"hash": "a6053996c86313d1"
+},
+"pdufa_site_src/fda-decision/JAGX-2026-04-29/index.html": {
+"date": "2026-08-02",
+"hash": "9210c9e5e329b2ee"
+},
+"pdufa_site_src/fda-decision/JNJ-2026-03-05/index.html": {
+"date": "2026-08-02",
+"hash": "3a559fc21249648b"
+},
+"pdufa_site_src/fda-decision/JNJ-2026-03-18/index.html": {
+"date": "2026-08-02",
+"hash": "3753ea852b927007"
+},
+"pdufa_site_src/fda-decision/JNJ-2026-05-29/index.html": {
+"date": "2026-08-02",
+"hash": "9c38a17b3a61d069"
+},
+"pdufa_site_src/fda-decision/JSPR-2025-01-08/index.html": {
+"date": "2026-08-02",
+"hash": "eabe3e9e8ac9870a"
+},
+"pdufa_site_src/fda-decision/JSPR-2025-07-07/index.html": {
+"date": "2026-08-02",
+"hash": "3026a1e647964e03"
+},
+"pdufa_site_src/fda-decision/LGND-2026-04-13/index.html": {
+"date": "2026-08-02",
+"hash": "68431f4d76bc280e"
+},
+"pdufa_site_src/fda-decision/LGND-2026-06-08/index.html": {
+"date": "2026-08-02",
+"hash": "7b08c7c5d4d05a55"
+},
+"pdufa_site_src/fda-decision/LLY-2026-04-01/index.html": {
+"date": "2026-08-02",
+"hash": "87ea2a1af355d871"
+},
+"pdufa_site_src/fda-decision/LLY-2026-06-09/index.html": {
+"date": "2026-08-02",
+"hash": "6c5c3555cac21961"
+},
+"pdufa_site_src/fda-decision/LNTH-2026-03-06/index.html": {
+"date": "2026-08-02",
+"hash": "5192b1df42dffd34"
+},
+"pdufa_site_src/fda-decision/LNTH-2026-06-26/index.html": {
+"date": "2026-08-02",
+"hash": "c5c0571817d63346"
+},
+"pdufa_site_src/fda-decision/LNTH-2026-06-29/index.html": {
+"date": "2026-08-02",
+"hash": "4e7e160caf77dbf9"
+},
+"pdufa_site_src/fda-decision/LSTA-2025-01-22/index.html": {
+"date": "2026-08-02",
+"hash": "062fd17606940039"
+},
+"pdufa_site_src/fda-decision/MGNX-2026-04-08/index.html": {
+"date": "2026-08-02",
+"hash": "697de9ba85c84fe3"
+},
+"pdufa_site_src/fda-decision/MIST-2025-03-28/index.html": {
+"date": "2026-08-02",
+"hash": "ff8a33fd89689ffe"
+},
+"pdufa_site_src/fda-decision/MNKD-2026-05-29/index.html": {
+"date": "2026-08-02",
+"hash": "9a2c060e456896ee"
+},
+"pdufa_site_src/fda-decision/MNKD-2026-07-24/index.html": {
+"date": "2026-08-02",
+"hash": "09cbf6fda2a4a3b6"
+},
+"pdufa_site_src/fda-decision/MRK-2026-02-11/index.html": {
+"date": "2026-08-02",
+"hash": "c0de0c7779d0191e"
+},
+"pdufa_site_src/fda-decision/MRK-2026-04-21/index.html": {
+"date": "2026-08-02",
+"hash": "03231d0369bc3ee1"
+},
+"pdufa_site_src/fda-decision/MRK-2026-06-12/index.html": {
+"date": "2026-08-02",
+"hash": "dba14e1f574170af"
+},
+"pdufa_site_src/fda-decision/MRK-2026-06-18/index.html": {
+"date": "2026-08-02",
+"hash": "6d8f8f22dc9f3405"
+},
+"pdufa_site_src/fda-decision/MRK-2026-06-24/index.html": {
+"date": "2026-08-02",
+"hash": "92743a81fc600d8d"
+},
+"pdufa_site_src/fda-decision/MRK-2026-07-10/index.html": {
+"date": "2026-08-02",
+"hash": "1e33fbde3789800e"
+},
+"pdufa_site_src/fda-decision/MRK-2026-07-16/index.html": {
+"date": "2026-08-02",
+"hash": "0fbc20105633fbcd"
+},
+"pdufa_site_src/fda-decision/NVCR-2026-02-12/index.html": {
+"date": "2026-08-02",
+"hash": "2155119a3f74cea5"
+},
+"pdufa_site_src/fda-decision/NVO-2026-03-03/index.html": {
+"date": "2026-08-02",
+"hash": "4eecc240313541d3"
+},
+"pdufa_site_src/fda-decision/NVO-2026-03-19/index.html": {
+"date": "2026-08-02",
+"hash": "57476465375cf6a4"
+},
+"pdufa_site_src/fda-decision/NVO-2026-03-26/index.html": {
+"date": "2026-08-02",
+"hash": "3934bf3a6b593ddf"
+},
+"pdufa_site_src/fda-decision/NVS-2026-03-13/index.html": {
+"date": "2026-08-02",
+"hash": "df88e4d1825dda21"
+},
+"pdufa_site_src/fda-decision/ONC-2026-05-13/index.html": {
+"date": "2026-08-02",
+"hash": "d5c34bbd2f551277"
+},
+"pdufa_site_src/fda-decision/OTLK-2025-08-28/index.html": {
+"date": "2026-08-02",
+"hash": "4d59506f968e5cc7"
+},
+"pdufa_site_src/fda-decision/OTLK-2026-03-05/index.html": {
+"date": "2026-08-02",
+"hash": "19c2122edfcf94ac"
+},
+"pdufa_site_src/fda-decision/OTLK-2026-04-07/index.html": {
+"date": "2026-08-02",
+"hash": "ecf4b4f6bd1efb43"
+},
+"pdufa_site_src/fda-decision/OTLK-2026-07-24/index.html": {
+"date": "2026-08-02",
+"hash": "42402909ee511767"
+},
+"pdufa_site_src/fda-decision/OTSKY-2026-07-24/index.html": {
+"date": "2026-08-02",
+"hash": "f0292e3fe79435fb"
+},
+"pdufa_site_src/fda-decision/PFE-2026-02-24/index.html": {
+"date": "2026-08-02",
+"hash": "9d5ca1e74cd9e5f0"
+},
+"pdufa_site_src/fda-decision/PFE-2026-05-01/index.html": {
+"date": "2026-08-02",
+"hash": "fa7b018369fec312"
+},
+"pdufa_site_src/fda-decision/PFE-2026-06-08/index.html": {
+"date": "2026-08-02",
+"hash": "926cc0a2e4afb789"
+},
+"pdufa_site_src/fda-decision/PFE-2026-06-24/index.html": {
+"date": "2026-08-02",
+"hash": "da174bddfbde0991"
+},
+"pdufa_site_src/fda-decision/PFE-2026-07-10/index.html": {
+"date": "2026-08-02",
+"hash": "a660ba760d88ba1b"
+},
+"pdufa_site_src/fda-decision/PGEN-2026-05-27/index.html": {
+"date": "2026-08-02",
+"hash": "099ad00f76369c30"
+},
+"pdufa_site_src/fda-decision/PHAR-2026-02-01/index.html": {
+"date": "2026-08-02",
+"hash": "c052eb8e836d197d"
+},
+"pdufa_site_src/fda-decision/PHIO-2025-01-13/index.html": {
+"date": "2026-08-02",
+"hash": "b1886dda9b82fd2d"
+},
+"pdufa_site_src/fda-decision/PTGX-2026-03-18/index.html": {
+"date": "2026-08-02",
+"hash": "93a6f56fce50ff96"
+},
+"pdufa_site_src/fda-decision/RCKT-2026-03-27/index.html": {
+"date": "2026-08-02",
+"hash": "0106d37e07db281f"
+},
+"pdufa_site_src/fda-decision/REGN-2026-04-02/index.html": {
+"date": "2026-08-02",
+"hash": "4954bb35a35f2b53"
+},
+"pdufa_site_src/fda-decision/REGN-2026-04-22/index.html": {
+"date": "2026-08-02",
+"hash": "cec7a2416df66107"
+},
+"pdufa_site_src/fda-decision/REGN-2026-04-23/index.html": {
+"date": "2026-08-02",
+"hash": "b4ae7d83a94f1457"
+},
+"pdufa_site_src/fda-decision/REPL-2025-07-22/index.html": {
+"date": "2026-08-02",
+"hash": "4c88fb0f08511303"
+},
+"pdufa_site_src/fda-decision/REPL-2026-04-10/index.html": {
+"date": "2026-08-02",
+"hash": "f1368effc226725e"
+},
+"pdufa_site_src/fda-decision/RGNX-2026-02-09/index.html": {
+"date": "2026-08-02",
+"hash": "b88a4d77487396ee"
+},
+"pdufa_site_src/fda-decision/RHHBY-2026-02-20/index.html": {
+"date": "2026-08-02",
+"hash": "570e1ccf54fa80d8"
+},
+"pdufa_site_src/fda-decision/RYTM-2026-03-20/index.html": {
+"date": "2026-08-02",
+"hash": "e8103d29bd8a3f27"
+},
+"pdufa_site_src/fda-decision/SNSE-2025-10-17/index.html": {
+"date": "2026-08-02",
+"hash": "cc9afba19eb350e3"
+},
+"pdufa_site_src/fda-decision/SNY-2026-04-22/index.html": {
+"date": "2026-08-02",
+"hash": "1fa20f2938acdced"
+},
+"pdufa_site_src/fda-decision/SPRO-2026-06-17/index.html": {
+"date": "2026-08-02",
+"hash": "ffda6e2b3789f2c6"
+},
+"pdufa_site_src/fda-decision/SPRY-2026-05-15/index.html": {
+"date": "2026-08-02",
+"hash": "16bb7cfa52584705"
+},
+"pdufa_site_src/fda-decision/SVRA-2025-05-27/index.html": {
+"date": "2026-08-02",
+"hash": "7bd96c1f90f9dfdc"
+},
+"pdufa_site_src/fda-decision/TEVA-2026-03-30/index.html": {
+"date": "2026-08-02",
+"hash": "2bc2d2518cf865ab"
+},
+"pdufa_site_src/fda-decision/TRAW-2025-06-03/index.html": {
+"date": "2026-08-02",
+"hash": "0b07ae0996696a78"
+},
+"pdufa_site_src/fda-decision/TVTX-2026-04-13/index.html": {
+"date": "2026-08-02",
+"hash": "7b8f8656b7968cd4"
+},
+"pdufa_site_src/fda-decision/UNCY-2025-06-30/index.html": {
+"date": "2026-08-02",
+"hash": "18b4b8df3cefc22e"
+},
+"pdufa_site_src/fda-decision/UNCY-2026-06-29/index.html": {
+"date": "2026-08-02",
+"hash": "17891b1bc7eaa250"
+},
+"pdufa_site_src/fda-decision/UNCY-2026-06-30/index.html": {
+"date": "2026-08-02",
+"hash": "ce95cf9c5037e897"
+},
+"pdufa_site_src/fda-decision/VERA-2026-07-07/index.html": {
+"date": "2026-08-02",
+"hash": "9a918bcf865bbabc"
+},
+"pdufa_site_src/fda-decision/VNDA-2026-02-20/index.html": {
+"date": "2026-08-02",
+"hash": "76d106a6b10769aa"
+},
+"pdufa_site_src/fda-decision/VRDN-2026-06-26/index.html": {
+"date": "2026-08-02",
+"hash": "a05dc8030eec95dd"
+},
+"pdufa_site_src/fda-decision/VRTX-2026-07-01/index.html": {
+"date": "2026-08-02",
+"hash": "b185ffc6f09a3396"
+},
+"pdufa_site_src/fda-decision/VTRS-2026-07-29/index.html": {
+"date": "2026-08-02",
+"hash": "d498c93572c0966a"
+},
+"pdufa_site_src/fda-decision/XOMA-2026-06-08/index.html": {
+"date": "2026-08-02",
+"hash": "abc62026d0cb5f30"
+},
+"pdufa_site_src/fda-decision/ZVRA-2026-06-08/index.html": {
+"date": "2026-08-02",
+"hash": "613ae9e0eacd0ff3"
+},
+"pdufa_site_src/glossary/index.html": {
+"date": "2026-08-02",
+"hash": "957559f103435e54"
+},
+"pdufa_site_src/index.html": {
+"date": "2026-08-03",
+"hash": "5c1a4be50b209a48"
+},
+"pdufa_site_src/learn/accelerated-approval-explained/index.html": {
+"date": "2026-08-02",
+"hash": "7f3e5c3708fcd920"
+},
+"pdufa_site_src/learn/fda-advisory-committee-adcom/index.html": {
+"date": "2026-08-02",
+"hash": "7ec42e68715aabcd"
+},
+"pdufa_site_src/learn/index.html": {
+"date": "2026-08-02",
+"hash": "6f00fdf531721740"
+},
+"pdufa_site_src/learn/pdufa-vs-bsufa-vs-gdufa/index.html": {
+"date": "2026-08-02",
+"hash": "287f344ef9333686"
+},
+"pdufa_site_src/learn/priority-review-vs-standard-review/index.html": {
+"date": "2026-08-02",
+"hash": "36d3cbeee66e9d21"
+},
+"pdufa_site_src/learn/what-happens-to-a-stock-on-a-pdufa-date/index.html": {
+"date": "2026-08-02",
+"hash": "de57772b214bedc3"
+},
+"pdufa_site_src/learn/what-is-a-crl/index.html": {
+"date": "2026-08-02",
+"hash": "60b8fedc4f656b32"
+},
+"pdufa_site_src/learn/what-is-a-pdufa-date/index.html": {
+"date": "2026-08-02",
+"hash": "230f4f3603c3829c"
+},
+"pdufa_site_src/methodology/index.html": {
+"date": "2026-08-02",
+"hash": "f2728165ad243bef"
+},
+"pdufa_site_src/pdufa/ABBV-rinvoq/index.html": {
+"date": "2026-08-02",
+"hash": "6fea4fb22810391d"
+},
+"pdufa_site_src/pdufa/ABBV-tavapadon-2/index.html": {
+"date": "2026-08-02",
+"hash": "59192117c9002fe8"
+},
+"pdufa_site_src/pdufa/ABBV-tavapadon/index.html": {
+"date": "2026-08-02",
+"hash": "58aaa6388efdb262"
+},
+"pdufa_site_src/pdufa/ABEO/index.html": {
+"date": "2026-08-02",
+"hash": "f6dcb883cdc84f48"
+},
+"pdufa_site_src/pdufa/AGIO/index.html": {
+"date": "2026-08-02",
+"hash": "49c134230fe5cd91"
+},
+"pdufa_site_src/pdufa/ANAB/index.html": {
+"date": "2026-08-02",
+"hash": "df5bcb529b184b5d"
+},
+"pdufa_site_src/pdufa/AZN-camizestrant/index.html": {
+"date": "2026-08-02",
+"hash": "d0649341fb816f18"
+},
+"pdufa_site_src/pdufa/AZN-enhertu/index.html": {
+"date": "2026-08-02",
+"hash": "7e1bad46b4b675cd"
+},
+"pdufa_site_src/pdufa/AZN-gefurulimab/index.html": {
+"date": "2026-08-02",
+"hash": "875f78a5658377bc"
+},
+"pdufa_site_src/pdufa/AZN-ultomiris/index.html": {
+"date": "2026-08-02",
+"hash": "00c857c9f437441e"
+},
+"pdufa_site_src/pdufa/BAYRY-hyrnuo/index.html": {
+"date": "2026-08-02",
+"hash": "cbeff9268cf5a2e0"
+},
+"pdufa_site_src/pdufa/BAYRY-kerendia/index.html": {
+"date": "2026-08-02",
+"hash": "d6c5a5d8cd734504"
+},
+"pdufa_site_src/pdufa/BBIO/index.html": {
+"date": "2026-08-02",
+"hash": "a3826efcbfdd34da"
+},
+"pdufa_site_src/pdufa/BFRI/index.html": {
+"date": "2026-08-02",
+"hash": "001b2cc7a694504f"
+},
+"pdufa_site_src/pdufa/BIIB/index.html": {
+"date": "2026-08-02",
+"hash": "3575a8fd048f744c"
+},
+"pdufa_site_src/pdufa/BMY/index.html": {
+"date": "2026-08-02",
+"hash": "514a4da3a600a3a3"
+},
+"pdufa_site_src/pdufa/BTAI/index.html": {
+"date": "2026-08-02",
+"hash": "92174a700ebb4f0f"
+},
+"pdufa_site_src/pdufa/CAPR/index.html": {
+"date": "2026-08-02",
+"hash": "3646c888cab2461e"
+},
+"pdufa_site_src/pdufa/CGEM/index.html": {
+"date": "2026-08-02",
+"hash": "864f6f8a57b05033"
+},
+"pdufa_site_src/pdufa/COGT/index.html": {
+"date": "2026-08-02",
+"hash": "ebf41b5425064238"
+},
+"pdufa_site_src/pdufa/CORT/index.html": {
+"date": "2026-08-02",
+"hash": "0eb48c5ea525a842"
+},
+"pdufa_site_src/pdufa/CYTK/index.html": {
+"date": "2026-08-02",
+"hash": "b7567c7865cb5c24"
+},
+"pdufa_site_src/pdufa/EXEL/index.html": {
+"date": "2026-08-02",
+"hash": "a55538cab70ee54f"
+},
+"pdufa_site_src/pdufa/GILD-bictegravir-and-lenacapavi/index.html": {
+"date": "2026-08-02",
+"hash": "e3f737ad6212b493"
+},
+"pdufa_site_src/pdufa/GILD-trodelvy/index.html": {
+"date": "2026-08-02",
+"hash": "69568758e144af65"
+},
+"pdufa_site_src/pdufa/GILD/index.html": {
+"date": "2026-08-02",
+"hash": "d1a74ceab781ce59"
+},
+"pdufa_site_src/pdufa/IBRX/index.html": {
+"date": "2026-08-02",
+"hash": "3d33bda8d96aded9"
+},
+"pdufa_site_src/pdufa/INBX/index.html": {
+"date": "2026-08-02",
+"hash": "b6498646aebec092"
+},
+"pdufa_site_src/pdufa/INCY/index.html": {
+"date": "2026-08-02",
+"hash": "76fc51cb6a055b2c"
+},
+"pdufa_site_src/pdufa/INO/index.html": {
+"date": "2026-08-02",
+"hash": "8ef3b648125e11e1"
+},
+"pdufa_site_src/pdufa/IONS-zilganersen/index.html": {
+"date": "2026-08-02",
+"hash": "e34adb9d19d4bb3a"
+},
+"pdufa_site_src/pdufa/IRD/index.html": {
+"date": "2026-08-02",
+"hash": "e65874a8183eaebe"
+},
+"pdufa_site_src/pdufa/JAZZ/index.html": {
+"date": "2026-08-02",
+"hash": "87ccb6a4e934c690"
+},
+"pdufa_site_src/pdufa/LLY/index.html": {
+"date": "2026-08-02",
+"hash": "1a4edc68046cfe4a"
+},
+"pdufa_site_src/pdufa/LNTH-florquinitau/index.html": {
+"date": "2026-08-02",
+"hash": "701ba39459f8cb4e"
+},
+"pdufa_site_src/pdufa/MLYS/index.html": {
+"date": "2026-08-02",
+"hash": "5fa2099c9cb7c8eb"
+},
+"pdufa_site_src/pdufa/MRK-ifinatamab-deruxtecan/index.html": {
+"date": "2026-08-02",
+"hash": "5da0064ceb74cb4a"
+},
+"pdufa_site_src/pdufa/MRK-keytruda/index.html": {
+"date": "2026-08-02",
+"hash": "448b2236398d9c64"
+},
+"pdufa_site_src/pdufa/MRK-trodelvy/index.html": {
+"date": "2026-08-02",
+"hash": "d1aef41ab2312375"
+},
+"pdufa_site_src/pdufa/MRK-winrevair/index.html": {
+"date": "2026-08-02",
+"hash": "394dd2d7d69b80c6"
+},
+"pdufa_site_src/pdufa/MRK/index.html": {
+"date": "2026-08-02",
+"hash": "f51e728a406a8883"
+},
+"pdufa_site_src/pdufa/MRNA/index.html": {
+"date": "2026-08-02",
+"hash": "052fca8a57abc6c4"
+},
+"pdufa_site_src/pdufa/NRXP/index.html": {
+"date": "2026-08-02",
+"hash": "2f7c4f3554bef7bf"
+},
+"pdufa_site_src/pdufa/NUVB/index.html": {
+"date": "2026-08-02",
+"hash": "46b9b0e80fa7c629"
+},
+"pdufa_site_src/pdufa/NUVL-neladalkib/index.html": {
+"date": "2026-08-02",
+"hash": "91ffc2f651e5f18b"
+},
+"pdufa_site_src/pdufa/NUVL-zidesamtinib/index.html": {
+"date": "2026-08-02",
+"hash": "51b8c6862f149502"
+},
+"pdufa_site_src/pdufa/NUVL/index.html": {
+"date": "2026-08-02",
+"hash": "d1e09ee1f5b2495b"
+},
+"pdufa_site_src/pdufa/NVO-am833/index.html": {
+"date": "2026-08-02",
+"hash": "293a346f7075bfb2"
+},
+"pdufa_site_src/pdufa/NVO-mim8/index.html": {
+"date": "2026-08-02",
+"hash": "6893a75ae9048e65"
+},
+"pdufa_site_src/pdufa/NVS/index.html": {
+"date": "2026-08-02",
+"hash": "69366876258e1a6a"
+},
+"pdufa_site_src/pdufa/ONC/index.html": {
+"date": "2026-08-02",
+"hash": "a90a841fc9ea89d9"
+},
+"pdufa_site_src/pdufa/OTLK/index.html": {
+"date": "2026-08-02",
+"hash": "c73142900e7b2a77"
+},
+"pdufa_site_src/pdufa/PFE-brepocitinib/index.html": {
+"date": "2026-08-02",
+"hash": "d26f9cbe393fa8b0"
+},
+"pdufa_site_src/pdufa/PFE-keytruda/index.html": {
+"date": "2026-08-02",
+"hash": "86e664775a46ef7d"
+},
+"pdufa_site_src/pdufa/PFE-tukysa-trastuzumab-and/index.html": {
+"date": "2026-08-02",
+"hash": "cc69a7cca3f84a3c"
+},
+"pdufa_site_src/pdufa/PFE/index.html": {
+"date": "2026-08-02",
+"hash": "3de2a635f9cc64bc"
+},
+"pdufa_site_src/pdufa/PHAR/index.html": {
+"date": "2026-08-02",
+"hash": "ffa4f383ea89946a"
+},
+"pdufa_site_src/pdufa/PHVS/index.html": {
+"date": "2026-08-02",
+"hash": "78c261119722ee0c"
+},
+"pdufa_site_src/pdufa/PRAX/index.html": {
+"date": "2026-08-02",
+"hash": "ebbe65e3ed015d54"
+},
+"pdufa_site_src/pdufa/PTGX/index.html": {
+"date": "2026-08-02",
+"hash": "d0e22166b1a56fc1"
+},
+"pdufa_site_src/pdufa/RARE-dtx401-aav-gene/index.html": {
+"date": "2026-08-02",
+"hash": "aefcf23871f484f7"
+},
+"pdufa_site_src/pdufa/RARE-ux111/index.html": {
+"date": "2026-08-02",
+"hash": "648c6436478de5fa"
+},
+"pdufa_site_src/pdufa/RARE/index.html": {
+"date": "2026-08-02",
+"hash": "a8e2d2ae0959dd2a"
+},
+"pdufa_site_src/pdufa/REGN-garetosmab/index.html": {
+"date": "2026-08-02",
+"hash": "f6ba4c3f8f51678f"
+},
+"pdufa_site_src/pdufa/REGN/index.html": {
+"date": "2026-08-02",
+"hash": "902159cb0d23d6df"
+},
+"pdufa_site_src/pdufa/RHHBY-gazyva/index.html": {
+"date": "2026-08-02",
+"hash": "ef6963ea8cf3a671"
+},
+"pdufa_site_src/pdufa/RHHBY-giredestrant-in-combinatio/index.html": {
+"date": "2026-08-02",
+"hash": "bca36c3a14e0e80e"
+},
+"pdufa_site_src/pdufa/RHHBY-giredestrant/index.html": {
+"date": "2026-08-02",
+"hash": "c3f9e491ed290315"
+},
+"pdufa_site_src/pdufa/RHHBY-lunsumio-polivy/index.html": {
+"date": "2026-08-02",
+"hash": "6d8d5e4fad111b79"
+},
+"pdufa_site_src/pdufa/RHHBY-tecentriq/index.html": {
+"date": "2026-08-02",
+"hash": "dfee62b57821df45"
+},
+"pdufa_site_src/pdufa/ROIV/index.html": {
+"date": "2026-08-02",
+"hash": "f3f559b89f09b545"
+},
+"pdufa_site_src/pdufa/RPRX/index.html": {
+"date": "2026-08-02",
+"hash": "c1f6c19ea222b257"
+},
+"pdufa_site_src/pdufa/SMMT/index.html": {
+"date": "2026-08-02",
+"hash": "ce0ba0dc9f71efba"
+},
+"pdufa_site_src/pdufa/SVRA/index.html": {
+"date": "2026-08-02",
+"hash": "ca810c84b120fc07"
+},
+"pdufa_site_src/pdufa/TAK-oveporexton/index.html": {
+"date": "2026-08-02",
+"hash": "937c8553ed070833"
+},
+"pdufa_site_src/pdufa/TAK-rusfertide/index.html": {
+"date": "2026-08-02",
+"hash": "266d87023249f39d"
+},
+"pdufa_site_src/pdufa/TAK/index.html": {
+"date": "2026-08-02",
+"hash": "1f57ad8608d09305"
+},
+"pdufa_site_src/pdufa/TLX/index.html": {
+"date": "2026-08-02",
+"hash": "4197c72c14355014"
+},
+"pdufa_site_src/pdufa/VNDA/index.html": {
+"date": "2026-08-02",
+"hash": "5326fb7bb44dc985"
+},
+"pdufa_site_src/pdufa/VRTX/index.html": {
+"date": "2026-08-02",
+"hash": "8c1f054db75c5e0c"
+},
+"pdufa_site_src/pdufa/VTRS-mr-100a-01/index.html": {
+"date": "2026-08-02",
+"hash": "97cdbc1313bfdc7c"
+},
+"pdufa_site_src/pdufa/VTRS-mr-107a-02/index.html": {
+"date": "2026-08-02",
+"hash": "9d394e0abb80ad20"
+},
+"pdufa_site_src/pdufa/VTRS-mr-141/index.html": {
+"date": "2026-08-02",
+"hash": "e1519a7bdb914120"
+},
+"pdufa_site_src/pdufa/VTRS/index.html": {
+"date": "2026-08-02",
+"hash": "50d3d4880edb016c"
+},
+"pdufa_site_src/pdufa/ZYME/index.html": {
+"date": "2026-08-02",
+"hash": "11b7eb5732e1e851"
+},
+"pdufa_site_src/pricing.html": {
+"date": "2026-08-02",
+"hash": "1df97bdfa0630279"
+},
+"pdufa_site_src/pricing/credits/index.html": {
+"date": "2026-08-02",
+"hash": "b30c4f4db6eb9b42"
+},
+"pdufa_site_src/readouts/2026/august/index.html": {
+"date": "2026-08-02",
+"hash": "226ce5c5cbdb3bf3"
+},
+"pdufa_site_src/readouts/2026/december/index.html": {
+"date": "2026-08-02",
+"hash": "6bb968eda4a830d7"
+},
+"pdufa_site_src/readouts/2026/july/index.html": {
+"date": "2026-08-02",
+"hash": "60dce9a384ca31c0"
+},
+"pdufa_site_src/readouts/2026/june/index.html": {
+"date": "2026-08-02",
+"hash": "f8bbce465dade23a"
+},
+"pdufa_site_src/readouts/2026/november/index.html": {
+"date": "2026-08-02",
+"hash": "b6e27ef9b28755a7"
+},
+"pdufa_site_src/readouts/2026/october/index.html": {
+"date": "2026-08-02",
+"hash": "81e8de7faab5ba48"
+},
+"pdufa_site_src/readouts/2026/september/index.html": {
+"date": "2026-08-02",
+"hash": "c35f9ada4852e7ef"
+},
+"pdufa_site_src/readouts/2027/april/index.html": {
+"date": "2026-08-02",
+"hash": "4f7eafa7681ed5a1"
+},
+"pdufa_site_src/readouts/2027/august/index.html": {
+"date": "2026-08-02",
+"hash": "b4e0e96b15257fba"
+},
+"pdufa_site_src/readouts/2027/december/index.html": {
+"date": "2026-08-02",
+"hash": "83f7f474564ef4ea"
+},
+"pdufa_site_src/readouts/2027/february/index.html": {
+"date": "2026-08-02",
+"hash": "5244123616be0226"
+},
+"pdufa_site_src/readouts/2027/january/index.html": {
+"date": "2026-08-02",
+"hash": "bd4e942a5997950e"
+},
+"pdufa_site_src/readouts/2027/july/index.html": {
+"date": "2026-08-02",
+"hash": "afdf855317bcf452"
+},
+"pdufa_site_src/readouts/2027/june/index.html": {
+"date": "2026-08-02",
+"hash": "202279d58f0b81d7"
+},
+"pdufa_site_src/readouts/2027/march/index.html": {
+"date": "2026-08-02",
+"hash": "e8183d1fdcdfa0f1"
+},
+"pdufa_site_src/readouts/2027/may/index.html": {
+"date": "2026-08-02",
+"hash": "f5f5f0f25792efa7"
+},
+"pdufa_site_src/readouts/2027/november/index.html": {
+"date": "2026-08-02",
+"hash": "5f15f508bb9030a2"
+},
+"pdufa_site_src/readouts/2027/october/index.html": {
+"date": "2026-08-02",
+"hash": "37a413699d356eb3"
+},
+"pdufa_site_src/readouts/2027/september/index.html": {
+"date": "2026-08-02",
+"hash": "c8c32192db0316e0"
+},
+"pdufa_site_src/readouts/index.html": {
+"date": "2026-08-03",
+"hash": "76bd6c74a6443a0e"
+},
+"pdufa_site_src/research/conference-runup/index.html": {
+"date": "2026-08-02",
+"hash": "18606d9c2ead2e8f"
+},
+"pdufa_site_src/research/index.html": {
+"date": "2026-08-02",
+"hash": "2442ea116a47a21f"
+},
+"pdufa_site_src/research/pdufa-stock-run-up-by-market-cap/index.html": {
+"date": "2026-08-02",
+"hash": "cda8c7e08904ae22"
+},
+"pdufa_site_src/research/readout-reaction/index.html": {
+"date": "2026-08-02",
+"hash": "357ae33b99edae2b"
+},
+"pdufa_site_src/research/short-interest-fda/index.html": {
+"date": "2026-08-02",
+"hash": "5e5a7a426873980c"
+},
+"pdufa_site_src/research/sls-deep-dive/index.html": {
+"date": "2026-08-03",
+"hash": "daec349d194b49a4"
+},
+"pdufa_site_src/runup-by-year/index.html": {
+"date": "2026-08-02",
+"hash": "f806ac73f002b7aa"
+},
+"pdufa_site_src/screener/index.html": {
+"date": "2026-08-02",
+"hash": "551bdea99e0f8d9d"
+},
+"pdufa_site_src/sls/index.html": {
+"date": "2026-08-03",
+"hash": "d12109d8fa0e7131"
+},
+"pdufa_site_src/sources/index.html": {
+"date": "2026-08-02",
+"hash": "59067879d2184b6e"
+},
+"pdufa_site_src/surges.html": {
+"date": "2026-08-02",
+"hash": "6db017584af90ed3"
+},
+"pdufa_site_src/ticker/ABBV/index.html": {
+"date": "2026-08-03",
+"hash": "dd259d969923a6dd"
+},
+"pdufa_site_src/ticker/ABEO/index.html": {
+"date": "2026-08-03",
+"hash": "279c936c0ecf13af"
+},
+"pdufa_site_src/ticker/ACAD/index.html": {
+"date": "2026-08-03",
+"hash": "5dbfd2deb7f8a5d5"
+},
+"pdufa_site_src/ticker/ACHV/index.html": {
+"date": "2026-08-03",
+"hash": "a5dfe516f979fe76"
+},
+"pdufa_site_src/ticker/ADCT/index.html": {
+"date": "2026-08-03",
+"hash": "8b8e75e2d7f0d1ec"
+},
+"pdufa_site_src/ticker/ADMA/index.html": {
+"date": "2026-08-03",
+"hash": "93da44bcf69cbf23"
+},
+"pdufa_site_src/ticker/AGIO/index.html": {
+"date": "2026-08-03",
+"hash": "ea5bdcead3ad99fd"
+},
+"pdufa_site_src/ticker/ALDX/index.html": {
+"date": "2026-08-03",
+"hash": "5db468115261f6a0"
+},
+"pdufa_site_src/ticker/ALLO/index.html": {
+"date": "2026-08-03",
+"hash": "48f34775567c0c8d"
+},
+"pdufa_site_src/ticker/ALNY/index.html": {
+"date": "2026-08-03",
+"hash": "07a30d99f55e094e"
+},
+"pdufa_site_src/ticker/ALPMY/index.html": {
+"date": "2026-08-03",
+"hash": "76db60b22e7f0011"
+},
+"pdufa_site_src/ticker/ALVO/index.html": {
+"date": "2026-08-03",
+"hash": "147059350762e19c"
+},
+"pdufa_site_src/ticker/AMGN/index.html": {
+"date": "2026-08-03",
+"hash": "5cfce2f5fbd4a763"
+},
+"pdufa_site_src/ticker/AMPH/index.html": {
+"date": "2026-08-03",
+"hash": "01bb799550006b91"
+},
+"pdufa_site_src/ticker/AMRX/index.html": {
+"date": "2026-08-03",
+"hash": "0462f692b32625f3"
+},
+"pdufa_site_src/ticker/ANAB/index.html": {
+"date": "2026-08-03",
+"hash": "0199bb979424beb2"
+},
+"pdufa_site_src/ticker/ANIP/index.html": {
+"date": "2026-08-03",
+"hash": "130efef44f690572"
+},
+"pdufa_site_src/ticker/APLS/index.html": {
+"date": "2026-08-03",
+"hash": "f26d18b097a60655"
+},
+"pdufa_site_src/ticker/AQST/index.html": {
+"date": "2026-08-03",
+"hash": "7cd95db12e67d4f0"
+},
+"pdufa_site_src/ticker/ARGX/index.html": {
+"date": "2026-08-03",
+"hash": "66b3bfcadba783b3"
+},
+"pdufa_site_src/ticker/ARQT/index.html": {
+"date": "2026-08-03",
+"hash": "46583e6a2eaac86a"
+},
+"pdufa_site_src/ticker/ARVN/index.html": {
+"date": "2026-08-03",
+"hash": "8b66bac04b2bbcb8"
+},
+"pdufa_site_src/ticker/ASND/index.html": {
+"date": "2026-08-03",
+"hash": "53997cf022e8fa79"
+},
+"pdufa_site_src/ticker/ATRA/index.html": {
+"date": "2026-08-03",
+"hash": "61f3a31d5daf4adb"
+},
+"pdufa_site_src/ticker/AURA/index.html": {
+"date": "2026-08-03",
+"hash": "de2727bda784d570"
+},
+"pdufa_site_src/ticker/AUTL/index.html": {
+"date": "2026-08-03",
+"hash": "def66d024cd36201"
+},
+"pdufa_site_src/ticker/AXSM/index.html": {
+"date": "2026-08-03",
+"hash": "5b6d34823040be59"
+},
+"pdufa_site_src/ticker/AZN/index.html": {
+"date": "2026-08-03",
+"hash": "20b3d1ae82ca786d"
+},
+"pdufa_site_src/ticker/BAYRY/index.html": {
+"date": "2026-08-03",
+"hash": "60224f40a56c116a"
+},
+"pdufa_site_src/ticker/BBIO/index.html": {
+"date": "2026-08-03",
+"hash": "4d1f10ab4e5af865"
+},
+"pdufa_site_src/ticker/BFRI/index.html": {
+"date": "2026-08-03",
+"hash": "027861ef916ff968"
+},
+"pdufa_site_src/ticker/BIIB/index.html": {
+"date": "2026-08-03",
+"hash": "167aedc356c96bfd"
+},
+"pdufa_site_src/ticker/BMRN/index.html": {
+"date": "2026-08-03",
+"hash": "a1a0ae94c2f78bd7"
+},
+"pdufa_site_src/ticker/BMY/index.html": {
+"date": "2026-08-03",
+"hash": "e0e938e4c0465453"
+},
+"pdufa_site_src/ticker/BNTX/index.html": {
+"date": "2026-08-03",
+"hash": "95de27a76367ad71"
+},
+"pdufa_site_src/ticker/BTAI/index.html": {
+"date": "2026-08-03",
+"hash": "f70caf2daf7af46c"
+},
+"pdufa_site_src/ticker/CAPR/index.html": {
+"date": "2026-08-03",
+"hash": "b01f552f4e52f76f"
+},
+"pdufa_site_src/ticker/CASI/index.html": {
+"date": "2026-08-03",
+"hash": "ff7409ecf11a2d6e"
+},
+"pdufa_site_src/ticker/CELC/index.html": {
+"date": "2026-08-03",
+"hash": "d9e414aefbc81c73"
+},
+"pdufa_site_src/ticker/CGEM/index.html": {
+"date": "2026-08-03",
+"hash": "3c78f8ff4259a00f"
+},
+"pdufa_site_src/ticker/CHRS/index.html": {
+"date": "2026-08-03",
+"hash": "d037144e4e059ed5"
+},
+"pdufa_site_src/ticker/CING/index.html": {
+"date": "2026-08-03",
+"hash": "dd7191b5f9a6e938"
+},
+"pdufa_site_src/ticker/CLDX/index.html": {
+"date": "2026-08-03",
+"hash": "8e084cf77a5b5e36"
+},
+"pdufa_site_src/ticker/CLLS/index.html": {
+"date": "2026-08-03",
+"hash": "5b3d9f48565073e7"
+},
+"pdufa_site_src/ticker/CMND/index.html": {
+"date": "2026-08-03",
+"hash": "3b12937b056ee876"
+},
+"pdufa_site_src/ticker/CMPX/index.html": {
+"date": "2026-08-03",
+"hash": "132cfcac7c24077b"
+},
+"pdufa_site_src/ticker/COGT/index.html": {
+"date": "2026-08-03",
+"hash": "23a9cbf94892c74d"
+},
+"pdufa_site_src/ticker/CORT/index.html": {
+"date": "2026-08-03",
+"hash": "ebf06ed73092f9d3"
+},
+"pdufa_site_src/ticker/CRSP/index.html": {
+"date": "2026-08-03",
+"hash": "bda1fe6436da848e"
+},
+"pdufa_site_src/ticker/CYTK/index.html": {
+"date": "2026-08-03",
+"hash": "539fcc5e6a7b363a"
+},
+"pdufa_site_src/ticker/DNLI/index.html": {
+"date": "2026-08-03",
+"hash": "2c7c86962f67c620"
+},
+"pdufa_site_src/ticker/DSNKY/index.html": {
+"date": "2026-08-03",
+"hash": "0ef7073ab9d5c8eb"
+},
+"pdufa_site_src/ticker/EBS/index.html": {
+"date": "2026-08-03",
+"hash": "133414200d50ec3b"
+},
+"pdufa_site_src/ticker/ENGN/index.html": {
+"date": "2026-08-03",
+"hash": "340824a67c8761ee"
+},
+"pdufa_site_src/ticker/ENTA/index.html": {
+"date": "2026-08-03",
+"hash": "49851bc3d60580cd"
+},
+"pdufa_site_src/ticker/EQ/index.html": {
+"date": "2026-08-03",
+"hash": "a8a6fc1b857d35ec"
+},
+"pdufa_site_src/ticker/ESLA/index.html": {
+"date": "2026-08-03",
+"hash": "30e453da3bf3b7fe"
+},
+"pdufa_site_src/ticker/ETON/index.html": {
+"date": "2026-08-03",
+"hash": "9dc6ff229a2a5d82"
+},
+"pdufa_site_src/ticker/EXEL/index.html": {
+"date": "2026-08-03",
+"hash": "a95ace1c41cad6da"
+},
+"pdufa_site_src/ticker/FBIO/index.html": {
+"date": "2026-08-03",
+"hash": "40c7c4a0cda16c6e"
+},
+"pdufa_site_src/ticker/GILD/index.html": {
+"date": "2026-08-03",
+"hash": "e77721763689a50c"
+},
+"pdufa_site_src/ticker/GKOS/index.html": {
+"date": "2026-08-03",
+"hash": "3e7a85dfccd93aea"
+},
+"pdufa_site_src/ticker/GLPG/index.html": {
+"date": "2026-08-03",
+"hash": "8c302ba26b62fc2c"
+},
+"pdufa_site_src/ticker/GMAB/index.html": {
+"date": "2026-08-03",
+"hash": "772567a239c126ff"
+},
+"pdufa_site_src/ticker/GRCE/index.html": {
+"date": "2026-08-03",
+"hash": "bf3bc064265ba0fa"
+},
+"pdufa_site_src/ticker/GSK/index.html": {
+"date": "2026-08-03",
+"hash": "acb079de8d618613"
+},
+"pdufa_site_src/ticker/HALO/index.html": {
+"date": "2026-08-03",
+"hash": "8cd3299916a7bb0a"
+},
+"pdufa_site_src/ticker/HRMY/index.html": {
+"date": "2026-08-03",
+"hash": "aff55ebe78afb41d"
+},
+"pdufa_site_src/ticker/IBRX/index.html": {
+"date": "2026-08-03",
+"hash": "77bfd6305940f0be"
+},
+"pdufa_site_src/ticker/IMMX/index.html": {
+"date": "2026-08-03",
+"hash": "470cb8749b13f64c"
+},
+"pdufa_site_src/ticker/INBX/index.html": {
+"date": "2026-08-03",
+"hash": "267c47fa7ed90ad7"
+},
+"pdufa_site_src/ticker/INCY/index.html": {
+"date": "2026-08-03",
+"hash": "99ab1c0b8eaefb51"
+},
+"pdufa_site_src/ticker/INO/index.html": {
+"date": "2026-08-03",
+"hash": "2524e5abc3bdce1a"
+},
+"pdufa_site_src/ticker/INVA/index.html": {
+"date": "2026-08-03",
+"hash": "667266e29a913a97"
+},
+"pdufa_site_src/ticker/IONS/index.html": {
+"date": "2026-08-03",
+"hash": "78c6a52bb9b9c199"
+},
+"pdufa_site_src/ticker/IPSEY/index.html": {
+"date": "2026-08-03",
+"hash": "cc490076ed823de2"
+},
+"pdufa_site_src/ticker/IRON/index.html": {
+"date": "2026-08-03",
+"hash": "b1f6915c1a2501b9"
+},
+"pdufa_site_src/ticker/IRWD/index.html": {
+"date": "2026-08-03",
+"hash": "1c112c56e5d7d3d4"
+},
+"pdufa_site_src/ticker/JAGX/index.html": {
+"date": "2026-08-03",
+"hash": "ced3760a6f44cff2"
+},
+"pdufa_site_src/ticker/JAZZ/index.html": {
+"date": "2026-08-03",
+"hash": "a8c3940e10f1f43a"
+},
+"pdufa_site_src/ticker/JNJ/index.html": {
+"date": "2026-08-03",
+"hash": "91ac90e757e6760b"
+},
+"pdufa_site_src/ticker/JSPR/index.html": {
+"date": "2026-08-03",
+"hash": "56388a16c7b21109"
+},
+"pdufa_site_src/ticker/LGND/index.html": {
+"date": "2026-08-03",
+"hash": "489afc5f6f737670"
+},
+"pdufa_site_src/ticker/LLY/index.html": {
+"date": "2026-08-03",
+"hash": "f972271cec0ee5bc"
+},
+"pdufa_site_src/ticker/LNTH/index.html": {
+"date": "2026-08-03",
+"hash": "a8d749fcaa12a0fc"
+},
+"pdufa_site_src/ticker/LQDA/index.html": {
+"date": "2026-08-03",
+"hash": "83018f2f7d914a1f"
+},
+"pdufa_site_src/ticker/LSTA/index.html": {
+"date": "2026-08-03",
+"hash": "7f8f889ccdec32d9"
+},
+"pdufa_site_src/ticker/LYEL/index.html": {
+"date": "2026-08-03",
+"hash": "f3ef52f1562f3654"
+},
+"pdufa_site_src/ticker/MGNX/index.html": {
+"date": "2026-08-03",
+"hash": "9a0f7abcbd9f8399"
+},
+"pdufa_site_src/ticker/MIRM/index.html": {
+"date": "2026-08-03",
+"hash": "df484b8956bd956b"
+},
+"pdufa_site_src/ticker/MIST/index.html": {
+"date": "2026-08-03",
+"hash": "f40ab8116ce6a58b"
+},
+"pdufa_site_src/ticker/MLYS/index.html": {
+"date": "2026-08-03",
+"hash": "5790c9efe20282b7"
+},
+"pdufa_site_src/ticker/MNKD/index.html": {
+"date": "2026-08-03",
+"hash": "353dbc48e50435ea"
+},
+"pdufa_site_src/ticker/MRK/index.html": {
+"date": "2026-08-03",
+"hash": "7b7c65f832cfeb8f"
+},
+"pdufa_site_src/ticker/MRKR/index.html": {
+"date": "2026-08-03",
+"hash": "3321a7ae17d01e54"
+},
+"pdufa_site_src/ticker/MRNA/index.html": {
+"date": "2026-08-03",
+"hash": "2ea3d5cde721b454"
+},
+"pdufa_site_src/ticker/NRIX/index.html": {
+"date": "2026-08-03",
+"hash": "cf6c42996bd48db7"
+},
+"pdufa_site_src/ticker/NUVB/index.html": {
+"date": "2026-08-03",
+"hash": "509ab1f8d428a015"
+},
+"pdufa_site_src/ticker/NUVL/index.html": {
+"date": "2026-08-03",
+"hash": "72d40bea3b1fd75c"
+},
+"pdufa_site_src/ticker/NVAX/index.html": {
+"date": "2026-08-03",
+"hash": "9f5900f5a76358f9"
+},
+"pdufa_site_src/ticker/NVCR/index.html": {
+"date": "2026-08-03",
+"hash": "44cdda3eb6442815"
+},
+"pdufa_site_src/ticker/NVO/index.html": {
+"date": "2026-08-03",
+"hash": "734d07b06ac6aaf1"
+},
+"pdufa_site_src/ticker/NVS/index.html": {
+"date": "2026-08-03",
+"hash": "b826a1e673944d03"
+},
+"pdufa_site_src/ticker/OMER/index.html": {
+"date": "2026-08-03",
+"hash": "a85ce78aaa11a18a"
+},
+"pdufa_site_src/ticker/ONC/index.html": {
+"date": "2026-08-03",
+"hash": "3eb203a8b606f9d8"
+},
+"pdufa_site_src/ticker/ONCY/index.html": {
+"date": "2026-08-03",
+"hash": "110d6f45bf339166"
+},
+"pdufa_site_src/ticker/OTLK/index.html": {
+"date": "2026-08-03",
+"hash": "0d437bc43c61bfe1"
+},
+"pdufa_site_src/ticker/OTSKY/index.html": {
+"date": "2026-08-03",
+"hash": "abf3b2d100fe4145"
+},
+"pdufa_site_src/ticker/PFE/index.html": {
+"date": "2026-08-03",
+"hash": "5acbcf9bc242669c"
+},
+"pdufa_site_src/ticker/PGEN/index.html": {
+"date": "2026-08-03",
+"hash": "007105dca504baa4"
+},
+"pdufa_site_src/ticker/PHAR/index.html": {
+"date": "2026-08-03",
+"hash": "bc086232b337890f"
+},
+"pdufa_site_src/ticker/PHIO/index.html": {
+"date": "2026-08-03",
+"hash": "08a8134c2411ba81"
+},
+"pdufa_site_src/ticker/PHRRF/index.html": {
+"date": "2026-08-03",
+"hash": "be4f47145681e9c9"
+},
+"pdufa_site_src/ticker/PHVS/index.html": {
+"date": "2026-08-03",
+"hash": "3b1f719770956fae"
+},
+"pdufa_site_src/ticker/PRAX/index.html": {
+"date": "2026-08-03",
+"hash": "7096469db369647e"
+},
+"pdufa_site_src/ticker/PRTC/index.html": {
+"date": "2026-08-03",
+"hash": "375a86300be4f583"
+},
+"pdufa_site_src/ticker/PTCT/index.html": {
+"date": "2026-08-03",
+"hash": "1c49bd8da5c044b9"
+},
+"pdufa_site_src/ticker/PTGX/index.html": {
+"date": "2026-08-03",
+"hash": "72ba57deb2577b8c"
+},
+"pdufa_site_src/ticker/RARE/index.html": {
+"date": "2026-08-03",
+"hash": "39bf4cc25c61cb34"
+},
+"pdufa_site_src/ticker/RCKT/index.html": {
+"date": "2026-08-03",
+"hash": "4898a37672824192"
+},
+"pdufa_site_src/ticker/REGN/index.html": {
+"date": "2026-08-03",
+"hash": "3548d1c0cb54a217"
+},
+"pdufa_site_src/ticker/REPL/index.html": {
+"date": "2026-08-03",
+"hash": "1b7ade7a0f615962"
+},
+"pdufa_site_src/ticker/RGNX/index.html": {
+"date": "2026-08-03",
+"hash": "5f0bbe2f9997de7e"
+},
+"pdufa_site_src/ticker/RHHBY/index.html": {
+"date": "2026-08-03",
+"hash": "93d10ee9ac493931"
+},
+"pdufa_site_src/ticker/RNAZ/index.html": {
+"date": "2026-08-03",
+"hash": "5ea7eeb42dd13795"
+},
+"pdufa_site_src/ticker/ROIV/index.html": {
+"date": "2026-08-03",
+"hash": "f2f29cb33c87d6eb"
+},
+"pdufa_site_src/ticker/RYTM/index.html": {
+"date": "2026-08-03",
+"hash": "b539c41c53608667"
+},
+"pdufa_site_src/ticker/SLS/index.html": {
+"date": "2026-08-03",
+"hash": "dd8f3f462fec3458"
+},
+"pdufa_site_src/ticker/SMMT/index.html": {
+"date": "2026-08-03",
+"hash": "ed8df3ca90a34578"
+},
+"pdufa_site_src/ticker/SNDX/index.html": {
+"date": "2026-08-03",
+"hash": "475d18b83a81efe2"
+},
+"pdufa_site_src/ticker/SNSE/index.html": {
+"date": "2026-08-03",
+"hash": "170f2cd96db27b17"
+},
+"pdufa_site_src/ticker/SNY/index.html": {
+"date": "2026-08-03",
+"hash": "f795008b94b81b07"
+},
+"pdufa_site_src/ticker/SPRO/index.html": {
+"date": "2026-08-03",
+"hash": "a8adc6e3ff09cf2e"
+},
+"pdufa_site_src/ticker/SPRY/index.html": {
+"date": "2026-08-03",
+"hash": "e7f3e36a2a3e1ab5"
+},
+"pdufa_site_src/ticker/SRPT/index.html": {
+"date": "2026-08-03",
+"hash": "5d3621ed4abd4899"
+},
+"pdufa_site_src/ticker/SUPN/index.html": {
+"date": "2026-08-03",
+"hash": "e791de306b4cc93e"
+},
+"pdufa_site_src/ticker/SVRA/index.html": {
+"date": "2026-08-03",
+"hash": "64993b05706fed60"
+},
+"pdufa_site_src/ticker/TAK/index.html": {
+"date": "2026-08-03",
+"hash": "ebc4aa3a56230e3c"
+},
+"pdufa_site_src/ticker/TARA/index.html": {
+"date": "2026-08-03",
+"hash": "89a71ff9a112d564"
+},
+"pdufa_site_src/ticker/TEVA/index.html": {
+"date": "2026-08-03",
+"hash": "866869b76aa17747"
+},
+"pdufa_site_src/ticker/TLX/index.html": {
+"date": "2026-08-03",
+"hash": "dbbfa2255af3a074"
+},
+"pdufa_site_src/ticker/TRAW/index.html": {
+"date": "2026-08-03",
+"hash": "64c8db78175b5d9d"
+},
+"pdufa_site_src/ticker/TVTX/index.html": {
+"date": "2026-08-03",
+"hash": "ce12e1af34d32429"
+},
+"pdufa_site_src/ticker/UNCY/index.html": {
+"date": "2026-08-03",
+"hash": "501fbf839a2c4662"
+},
+"pdufa_site_src/ticker/URGN/index.html": {
+"date": "2026-08-03",
+"hash": "1a81bfc67e68a4b3"
+},
+"pdufa_site_src/ticker/VERA/index.html": {
+"date": "2026-08-03",
+"hash": "95f7374967485267"
+},
+"pdufa_site_src/ticker/VNDA/index.html": {
+"date": "2026-08-03",
+"hash": "8d3024c832ff6df6"
+},
+"pdufa_site_src/ticker/VRDN/index.html": {
+"date": "2026-08-03",
+"hash": "4ddac812b01b74c3"
+},
+"pdufa_site_src/ticker/VRTX/index.html": {
+"date": "2026-08-03",
+"hash": "280cee6b1739f24b"
+},
+"pdufa_site_src/ticker/VSTM/index.html": {
+"date": "2026-08-03",
+"hash": "bfb2d4f669868287"
+},
+"pdufa_site_src/ticker/VTRS/index.html": {
+"date": "2026-08-03",
+"hash": "28a2d673325f0745"
+},
+"pdufa_site_src/ticker/XERS/index.html": {
+"date": "2026-08-03",
+"hash": "361ae2bba636dde6"
+},
+"pdufa_site_src/ticker/XNCR/index.html": {
+"date": "2026-08-03",
+"hash": "6c7ec75c8591d708"
+},
+"pdufa_site_src/ticker/XOMA/index.html": {
+"date": "2026-08-03",
+"hash": "556e2a59cb3ed37b"
+},
+"pdufa_site_src/ticker/ZLAB/index.html": {
+"date": "2026-08-03",
+"hash": "311c85a4f7e8394c"
+},
+"pdufa_site_src/ticker/ZVRA/index.html": {
+"date": "2026-08-03",
+"hash": "12bd17799b2c001d"
+},
+"pdufa_site_src/ticker/ZYME/index.html": {
+"date": "2026-08-03",
+"hash": "56fe91bc3e0130d4"
+},
+"pdufa_site_src/tickers/index.html": {
+"date": "2026-08-03",
+"hash": "dfa2af9509cd5f35"
+},
+"pdufa_site_src/vktx/index.html": {
+"date": "2026-08-03",
+"hash": "2d908d2feb2d360b"
+},
+"pdufa_site_src/why-no-approval-probability/index.html": {
+"date": "2026-08-02",
+"hash": "dd730031936185d2"
+}
+}

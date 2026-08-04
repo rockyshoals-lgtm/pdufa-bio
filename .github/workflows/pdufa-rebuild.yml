@@ -177,12 +177,26 @@ jobs:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python build_retail_pages.py
 
+      # Per-stock T-120 figures, measured from that ticker's own daily closes on the same basis as
+      # the cohort study. Also lifts the noindex on hubs that are no longer thin.
+      - name: Rebuild per-stock run-up (measured, small-n disclosed)
+        continue-on-error: true
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python build_stock_runup.py
+
       - name: Keep the featured deep dives linked (no orphan pages)
         run: python link_featured_pages.py
 
       # Normalisers run AFTER every generator. Generators own the data; these own the house style,
       # so a page regenerated tomorrow cannot silently revert to the old disclaimer or reintroduce
       # em dashes. Both are idempotent.
+      # One nav on every page. There were eight different navs across 858 pages, so which site you
+      # could reach depended on where Google landed you. Runs with the other normalisers so a
+      # regenerated page cannot revert to an old nav.
+      - name: Normalise navigation (one nav, site-wide)
+        run: python rebuild_nav.py
+
       - name: Normalise copy (remove em dashes used as punctuation)
         run: python strip_dashes.py
 
@@ -192,6 +206,11 @@ jobs:
       - name: Currency audit (advisory) — anything stale anywhere on the site
         continue-on-error: true
         run: python audit_currency.py
+
+      # Rebuilt again here, after the normalisers: build_stock_runup lifts the noindex on hubs that
+      # gained real content, and those pages only belong in the sitemap once that has happened.
+      - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
+        run: python build_sitemap.py
 
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         run: |

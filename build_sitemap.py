@@ -27,7 +27,7 @@ Excluded: anything robots.txt disallows (/today, /app), plus internal/backup art
 
     python build_sitemap.py [--dry-run]
 """
-import argparse, os, re, subprocess, sys
+import argparse, hashlib, json, os, re, subprocess, sys
 import datetime as dt
 
 try:
@@ -48,7 +48,8 @@ SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired pat
 
 TODAY = dt.date.today().isoformat()
 _GIT_DATES = None
-_DIRTY = None
+_STATE = None
+STATE_F = os.path.join(HERE, "_sitemap_lastmod.json")
 
 
 def git_dates():
@@ -77,39 +78,65 @@ def git_dates():
     return out
 
 
-def dirty_paths():
-    """Pages the generators changed in THIS run, which are not in git history yet.
+# Boilerplate that appears on every page. A change confined to these is a template change, not a
+# content change, and must not advance lastmod.
+#
+# This is the second version of this logic. The first marked any file with uncommitted changes as
+# modified today, which was right until a site-wide nav rebuild touched 846 pages at once and the
+# sitemap went straight back to claiming 99.8% of URLs changed today. That is the same
+# credibility-burning signal the git-history fix was written to remove, arriving by a different
+# route. Google's guidance is that lastmod reflects the last SIGNIFICANT change, and swapping the
+# nav on every page is not one.
+BOILER = [
+    re.compile(r"<!--NAVC:BEGIN-->.*?<!--NAVC:END-->", re.S),
+    re.compile(r'<style id="(navcanon|navpolish|typesys)">.*?</style>', re.S),
+    re.compile(r"<nav[^>]*>.*?</nav>", re.S),
+    re.compile(r'<div class="nav">.*?</div>', re.S),
+    re.compile(r'<div class="legal".*?</div>', re.S),
+    re.compile(r"<footer.*?</footer>", re.S),
+]
 
-    The sitemap is built before the commit step, so git alone would date a page we just rewrote to
-    its *previous* change, understating exactly the pages we most want recrawled. An uncommitted
-    change is a real change happening today.
+
+def content_hash(html):
+    """Hash of the page with template furniture removed, so lastmod tracks content."""
+    for rx in BOILER:
+        html = rx.sub("", html)
+    return hashlib.sha1(re.sub(r"\s+", " ", html).encode("utf-8", "replace")).hexdigest()[:16]
+
+
+def load_state():
+    global _STATE
+    if _STATE is None:
+        try:
+            _STATE = json.load(open(STATE_F, encoding="utf-8"))
+        except Exception:
+            _STATE = {}
+    return _STATE
+
+
+def last_changed(rel, full, html):
+    """Date this page's CONTENT last changed.
+
+    Seeded from git history the first time a page is seen, then advanced only when the
+    boilerplate-stripped hash actually moves. The state file is committed, so this survives a fresh
+    CI checkout where every mtime is the checkout time.
     """
-    global _DIRTY
-    if _DIRTY is not None:
-        return _DIRTY
-    s = set()
-    try:
-        p = subprocess.run(["git", "status", "--porcelain", "--", "pdufa_site_src"],
-                           cwd=HERE, capture_output=True, text=True, timeout=90)
-        for line in p.stdout.splitlines():
-            path = line[3:].strip().strip('"')
-            if path.endswith(".html"):
-                s.add(path)
-    except Exception:
-        pass
-    _DIRTY = s
-    return s
-
-
-def last_changed(rel, full):
-    """Honest last-modified date for one page. git first, mtime only as a fallback."""
     key = "pdufa_site_src/" + rel
-    if key in dirty_paths():
-        return TODAY
-    d = git_dates().get(key)
-    if not d:
-        d = dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d")
-    return min(d, TODAY)          # a sitemap claiming tomorrow is a reason to distrust all of it
+    st = load_state()
+    h = content_hash(html)
+    prev = st.get(key)
+
+    if prev and prev.get("hash") == h:
+        d = prev.get("date") or git_dates().get(key) or TODAY
+    elif prev:
+        d = TODAY                                   # a real content change
+    else:
+        d = (git_dates().get(key)
+             or dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d"))
+
+    d = min(d, TODAY)             # a sitemap claiming tomorrow is a reason to distrust all of it
+    st[key] = {"hash": h, "date": d}
+    return d
 
 
 # crawl priority / cadence by section -- decisions and the live calendar change most often
@@ -176,12 +203,12 @@ def main():
             # noindex is a contradiction that burns crawl budget on pages we have decided not to
             # rank. 324 of the price-only decision pages were doing exactly that.
             try:
-                head = open(full, encoding="utf-8", errors="replace").read(4000)
-                if NOINDEX.search(head):
-                    continue
+                doc = open(full, encoding="utf-8", errors="replace").read()
             except Exception:
-                pass
-            urls[path] = last_changed(rel, full)
+                continue
+            if NOINDEX.search(doc[:4000]):
+                continue
+            urls[path] = last_changed(rel, full, doc)
 
     # count by section for the report
     sec = {}
@@ -214,6 +241,12 @@ def main():
         print("DRY RUN -- not written."); return
     open(OUT, "w", encoding="utf-8").write(xml)
     print(f"wrote sitemap.xml ({len(xml)} bytes)")
+
+    # Committed, so a fresh CI checkout keeps knowing when each page's content last really changed.
+    st = load_state()
+    json.dump(st, open(STATE_F, "w", encoding="utf-8"), indent=0, sort_keys=True)
+    today_n = sum(1 for v in st.values() if v.get("date") == TODAY)
+    print(f"lastmod state: {len(st):,} pages tracked, {today_n:,} with a content change today")
 
 
 if __name__ == "__main__":
