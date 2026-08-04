@@ -6,14 +6,28 @@ The problem this fixes: the sitemap was a stale static list. It carried 145 of t
 The newest decision URL in it was from late June. Those are the freshest, most linkable pages on the
 site, and they were invisible to the one file Google uses to prioritise recrawl.
 
-The durable fix is to stop maintaining a list: walk pdufa_site_src for index.html files, emit one URL
-per real page, and set <lastmod> from the file's own modification time so it is always truthful.
+The durable fix is to stop maintaining a list: walk pdufa_site_src for index.html files and emit one
+URL per real page.
+
+<lastmod> comes from git history, NOT the filesystem mtime. That distinction is the whole point:
+actions/checkout writes every file fresh, so in CI every mtime is the checkout time, and the sitemap
+was telling Google that all 430 pages changed today, every single day. Two costs, both real:
+
+  * Google says explicitly that it ignores lastmod on sites where it finds the value untrustworthy.
+    A sitemap where everything changed today, forever, is the canonical example. We were spending our
+    credibility to say nothing.
+  * ping_search_engines.py submits "recently changed" URLs to IndexNow. With every date equal to
+    today, that meant re-pushing all 430 URLs nightly, which its own docstring warns is how you train
+    Bing and Yandex to ignore you.
+
+The last commit that touched a file is the honest answer to "when did this page last change", and it
+survives a fresh checkout. Untracked/new files fall back to mtime, capped at today.
 
 Excluded: anything robots.txt disallows (/today, /app), plus internal/backup artifacts.
 
     python build_sitemap.py [--dry-run]
 """
-import argparse, os, re, sys
+import argparse, os, re, subprocess, sys
 import datetime as dt
 
 try:
@@ -31,6 +45,72 @@ NOINDEX = re.compile(r'name="robots"[^>]*content="[^"]*noindex', re.I)
 SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired path segment
                       r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding)\b'
                       r'|\.bak|\.tmp', re.I)
+
+TODAY = dt.date.today().isoformat()
+_GIT_DATES = None
+_DIRTY = None
+
+
+def git_dates():
+    """path (relative to SITE) -> date of the last commit that touched it.
+
+    One `git log --name-only` walk builds the whole map, rather than 430 subprocess calls. Newest
+    commits come first, so the first date seen for a path is its last change.
+    """
+    global _GIT_DATES
+    if _GIT_DATES is not None:
+        return _GIT_DATES
+    out = {}
+    try:
+        p = subprocess.run(["git", "log", "--format=@%cs", "--name-only", "--", "pdufa_site_src"],
+                           cwd=HERE, capture_output=True, text=True, timeout=120)
+        cur = None
+        for line in p.stdout.splitlines():
+            if line.startswith("@"):
+                cur = line[1:].strip()
+            elif line.endswith(".html") and cur and line not in out:
+                out[line] = cur
+    except Exception as e:
+        print(f"  note: git history unavailable ({type(e).__name__}); falling back to file mtimes. "
+              f"In CI that yields today's date for every page, which is not a truthful lastmod.")
+    _GIT_DATES = out
+    return out
+
+
+def dirty_paths():
+    """Pages the generators changed in THIS run, which are not in git history yet.
+
+    The sitemap is built before the commit step, so git alone would date a page we just rewrote to
+    its *previous* change, understating exactly the pages we most want recrawled. An uncommitted
+    change is a real change happening today.
+    """
+    global _DIRTY
+    if _DIRTY is not None:
+        return _DIRTY
+    s = set()
+    try:
+        p = subprocess.run(["git", "status", "--porcelain", "--", "pdufa_site_src"],
+                           cwd=HERE, capture_output=True, text=True, timeout=90)
+        for line in p.stdout.splitlines():
+            path = line[3:].strip().strip('"')
+            if path.endswith(".html"):
+                s.add(path)
+    except Exception:
+        pass
+    _DIRTY = s
+    return s
+
+
+def last_changed(rel, full):
+    """Honest last-modified date for one page. git first, mtime only as a fallback."""
+    key = "pdufa_site_src/" + rel
+    if key in dirty_paths():
+        return TODAY
+    d = git_dates().get(key)
+    if not d:
+        d = dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d")
+    return min(d, TODAY)          # a sitemap claiming tomorrow is a reason to distrust all of it
+
 
 # crawl priority / cadence by section -- decisions and the live calendar change most often
 def meta(url_path):
@@ -101,8 +181,7 @@ def main():
                     continue
             except Exception:
                 pass
-            lastmod = dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d")
-            urls[path] = lastmod
+            urls[path] = last_changed(rel, full)
 
     # count by section for the report
     sec = {}

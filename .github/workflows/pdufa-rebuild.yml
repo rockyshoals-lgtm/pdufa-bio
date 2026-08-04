@@ -97,9 +97,16 @@ jobs:
       - name: Regenerate sitemap from live pages (real lastmod, no stale list)
         run: python build_sitemap.py
 
-      - name: Mine readout dates (enrollment-complete trials only; no enrolling trials)
+      # Bounded on purpose. The default run also walks 411 CT.gov sponsors sequentially, which is
+      # the stage that rate-limits and can take 20+ minutes, delaying the deploy for a data source
+      # that is advisory. The daily job takes the fast EDGAR pass; the exhaustive sweep stays on the
+      # manual Readout_Miner_DEEP.bat, whose output is verified before anything is published.
+      - name: Mine readout dates (bounded EDGAR pass; deep sweep is manual)
         continue-on-error: true          # advisory data source: never block the deploy
-        run: python readout_miner.py
+        timeout-minutes: 12
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python readout_miner.py --source edgar --edgar-days 30 --edgar-docs 200
 
       - name: Refresh /readouts (drop past months + auto-log readout window moves)
         env:
