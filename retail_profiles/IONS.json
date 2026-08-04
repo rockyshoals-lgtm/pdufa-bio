@@ -1,0 +1,80 @@
+{
+  "ticker": "IONS",
+  "company": "Ionis Pharmaceuticals, Inc.",
+  "asset": "Zilganersen (ION373)",
+  "headline": "Ionis has one small, properly controlled trial in an ultra-rare brain disease, and a marginal p-value",
+  "as_of": "2026-08-03",
+  "status": {
+    "label": "FDA decision expected",
+    "date": "2026-09-22",
+    "detail": "New Drug Application under Priority Review for Alexander disease, an ultra-rare inherited brain disorder. First review cycle, with no prior FDA action on this application and no advisory committee announced. Zilganersen carries Orphan Drug, Rare Pediatric Disease, Fast Track and Breakthrough Therapy designations.",
+    "source": "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-zilganersen-new-drug-application-alexander"
+  },
+  "plain": "Alexander disease is an ultra-rare inherited brain disorder. A faulty gene makes the brain's support cells produce far too much of a protein called GFAP, which builds up and progressively damages the brain. It usually begins in early childhood and is usually fatal. Zilganersen is given by injection into the fluid around the spinal cord, through a lumbar puncture, once every twelve weeks, and instructs the body to make less of that protein. The goal is not to cure the disease but to slow it, for example to stop a child's walking from continuing to deteriorate.",
+  "technical": "Antisense oligonucleotide administered by intrathecal bolus injection every 12 weeks, targeting GFAP messenger RNA to reduce production of glial fibrillary acidic protein in the central nervous system. Wholly owned by Ionis in the US; Recordati holds rights outside the US.",
+  "technical_source": "https://ir.ionis.com/news-releases/news-release-details/ionis-presents-new-data-pivotal-study-zilganersen-alexander",
+
+  "results": [
+    {
+      "trial": "ION373-CS1 pivotal study, 54 participants",
+      "verdict": "met",
+      "verdict_label": "Met its primary endpoint, narrowly",
+      "plain": "The design here is unusually good for a disease this rare. Patients were randomly assigned, neither they nor their doctors knew who was getting the drug, and it was compared against a placebo rather than against records of past patients. Walking speed, the main measure, improved by 33% relative to the control group. The result to keep in perspective is the p-value of 0.041. That is inside the conventional 0.05 threshold but not far inside, and in a trial this small a handful of patients moving the other way could have changed it. Everything pointed the same direction, though: the patient-reported measures, the doctor-reported measures and the biological marker all favoured the drug, and serious side effects were less common on the drug than on placebo.",
+      "technical": "Randomised, double-blind, placebo-controlled, 2:1 drug to placebo, 60-week double-blind period, 13 sites in 8 countries, 50 mg designated the pivotal dose cohort. Primary endpoint, percent change from baseline in gait speed on the 10-Meter Walk Test at week 61 in patients aged 5 and over: least-squares mean difference +33.3%, p=0.0412. No confidence intervals disclosed. Serious treatment-emergent adverse events 37.5% on drug against 47.1% pooled control.",
+      "detail": "The number of patients actually analysed for the primary endpoint has not been publicly disclosed.",
+      "announced": "2025-09-22",
+      "source": "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-positive-topline-results-pivotal-study"
+    },
+    {
+      "trial": "Supporting endpoints, ION373-CS1",
+      "verdict": "note",
+      "verdict_label": "Supportive, but not statistically confirmatory",
+      "plain": "The results in the youngest children, aged two to four, and the blood marker showing the target protein falling are both encouraging and both point the same way as the main result. They are labelled nominal, which is a specific statistical term meaning they were not adjusted for the fact that many measures were tested at once. When you test enough things, some will look significant by chance. So these support the main finding rather than independently confirming it, and that distinction is one the FDA will apply.",
+      "technical": "GMFM-88 in children aged 2 to 4 at week 61: +22.9 points, p=0.034, nominal. Plasma GFAP at week 61: -33.6% against control, p=0.003, nominal and exploratory. Patient-reported Most Bothersome Symptom: 32% much better on drug against 0% on control. Clinician Global Impression of Change improved or unchanged in 75% against 47%. Secondary endpoints reported as raw percentages with no p-values or confidence intervals disclosed.",
+      "announced": "2026-04-21",
+      "source": "https://ir.ionis.com/news-releases/news-release-details/ionis-presents-new-data-pivotal-study-zilganersen-alexander"
+    }
+  ],
+
+  "events": [
+    ["2020-09-30", "FDA Orphan Drug designation granted", "https://ir.ionis.com/news-releases/news-release-details/ionis-treatment-alexander-disease-receives-orphan-drug"],
+    ["2024-10-01", "FDA Fast Track designation granted", "https://ir.ionis.com/news-releases/news-release-details/zilganersen-granted-us-fda-fast-track-designation-people-living"],
+    ["2025-09-22", "Pivotal topline: primary endpoint met, gait speed +33.3%, p=0.0412", "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-positive-topline-results-pivotal-study"],
+    ["2025-12-02", "FDA Breakthrough Therapy designation granted", "https://ir.ionis.com/news-releases/news-release-details/ionis-receives-us-fda-breakthrough-therapy-designation"],
+    ["2026-03-23", "NDA accepted with Priority Review; PDUFA date 22 September 2026", "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-zilganersen-new-drug-application-alexander"],
+    ["2026-04-21", "Full pivotal data presented at the AAN 2026 annual meeting", "https://ir.ionis.com/news-releases/news-release-details/ionis-presents-new-data-pivotal-study-zilganersen-alexander"],
+    ["2026-06-25", "Recordati licensed ex-US rights: $30M upfront plus milestones and royalties", "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-license-agreement-recordati-zilganersen"],
+    ["2026-07-29", "Q2 2026 results reaffirmed the 22 September PDUFA date", "https://ir.ionis.com/news-releases/news-release-details/ionis-reports-second-quarter-2026-financial-results-and"]
+  ],
+
+  "reactions": [
+    {"date": "2026-06-25", "what": "Recordati licensed rights outside the US"},
+    {"date": "2026-04-21", "what": "Full pivotal data presented at AAN"},
+    {"date": "2026-03-23", "what": "NDA accepted with Priority Review, PDUFA date set"},
+    {"date": "2025-12-02", "what": "Breakthrough Therapy designation (release also covered olezarsen)"},
+    {"date": "2025-09-22", "what": "Pivotal topline announced"}
+  ],
+
+  "contested": {
+    "heading": "The question the FDA has to answer",
+    "plain": "Nobody is disputing that the trial hit its target. The open question is narrower and more technical. The headline result was measured in patients aged five and over, but the trial enrolled children as young as two, and the results in the youngest group rest on a supporting measure that was not adjusted for multiple testing. Whether that age-restricted analysis was planned in advance, and whether one small trial is enough on its own, are matters for the FDA's review, and it has published nothing. A second point worth knowing: the full results have never been peer-reviewed or published in a journal, so the confidence intervals, the per-group patient numbers and the complete safety tables are not in the public domain. Everything above comes from company announcements and a conference presentation.",
+    "sources": [
+      "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-positive-topline-results-pivotal-study",
+      "https://ir.ionis.com/news-releases/news-release-details/ionis-presents-new-data-pivotal-study-zilganersen-alexander"
+    ]
+  },
+
+  "caveats": [
+    "The entire application rests on a single small trial, with 54 participants enrolled across two dose cohorts and a 2:1 randomisation. The number analysed for the primary endpoint has not been disclosed.",
+    "The primary p-value of 0.0412 is marginal. In a trial this small, a modest shift in a few patients could change it.",
+    "Every measure other than the primary endpoint is nominal, meaning not adjusted for multiple testing. They support the result rather than independently confirming it.",
+    "The primary endpoint was reported in patients aged 5 and over, while the trial enrolled from age 2. Whether that population was pre-specified is not publicly known, and the approved age range, if approved, is unknown.",
+    "No peer-reviewed publication exists. Confidence intervals, per-group patient numbers and full safety tables are not public.",
+    "Ionis's own descriptions of the study population are inconsistent across releases, giving both 54 participants aged 1.5 to 53 and 53 people aged 2 to 53.",
+    "The trial had no independent data monitoring committee, per its ClinicalTrials.gov record.",
+    "Treatment requires a lumbar puncture every twelve weeks, indefinitely.",
+    "Alexander disease affects roughly one person per one to three million, so the commercial scale is inherently small. Ionis has issued no revenue guidance for this drug.",
+    "Ionis runs many programs. Share price moves around these dates are not attributable to this drug alone, and two of the dates below coincided with unrelated company news.",
+    "Priority Review is a commitment to a timeline, not to an outcome. The FDA can still issue a Complete Response Letter, extend the review, or convene an advisory committee."
+  ]
+}

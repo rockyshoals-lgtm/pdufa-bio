@@ -1,0 +1,92 @@
+{
+  "ticker": "RARE",
+  "company": "Ultragenyx Pharmaceutical Inc.",
+  "asset": "DTX401 and UX111",
+  "headline": "Ultragenyx has two FDA decisions weeks apart, and the two applications rest on very different evidence",
+  "as_of": "2026-08-03",
+  "status": {
+    "label": "Two FDA decisions, the nearer one",
+    "date": "2026-08-23",
+    "detail": "DTX401 (pariglasgene brecaparvovec), a BLA under Priority Review for glycogen storage disease type Ia. First review cycle, no prior FDA action, and Ultragenyx has said the FDA does not currently anticipate an advisory committee. A second decision follows on 19 September 2026 for UX111 in Sanfilippo syndrome type A, which is a resubmission after a Complete Response Letter.",
+    "source": "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-us-fda-acceptance-and-priority-review"
+  },
+  "plain": "Both are one-time gene therapies given as a single infusion into a vein. DTX401 treats a liver disease in which the body cannot release its stored sugar, so patients must eat raw cornstarch around the clock, including waking at night, to stop their blood sugar crashing. UX111 treats Sanfilippo syndrome type A, a fatal childhood brain disease with no approved treatment, where a missing enzyme lets waste build up and destroy brain cells. In both cases the therapy delivers a working copy of the missing gene and the aim is to slow the disease, not to cure it.",
+  "technical": "DTX401: AAV8-vectored liver-directed gene therapy delivering the G6PC gene under its native promoter to restore glucose-6-phosphatase activity in hepatocytes; single IV infusion at 1.0 x 10^13 GC/kg. UX111: self-complementary AAV9 delivering the SGSH gene to restore sulfamidase; transduced cells secrete functional enzyme taken up by neighbouring neurons, single IV infusion at 3 x 10^13 vg/kg.",
+  "technical_source": "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-us-fda-acceptance-and-priority-review",
+
+  "results": [
+    {
+      "trial": "DTX401, Phase 3 GlucoGene, 46 patients",
+      "verdict": "met",
+      "verdict_label": "Met its primary endpoint, in a properly controlled trial",
+      "plain": "This is the stronger of the two datasets, because it is randomised, blinded and placebo-controlled, which is the most reliable design available. Patients on the gene therapy cut their daily cornstarch by 41% against 10% for placebo, and by week 96 the reduction had deepened to about 61%. Two thirds dropped at least one nighttime dose. The honest qualification is what was measured: the main endpoint is treatment burden, meaning how much cornstarch someone has to eat, not a hard health outcome like fewer hypoglycaemic emergencies. Blood sugar control was shown to be maintained rather than improved, and the quality-of-life measure at week 48 favoured the drug but did not reach statistical significance.",
+      "technical": "Primary endpoint, percent reduction in daily cornstarch intake at week 48: -41.3% (n=20) against -10.3% for placebo (n=24), p<0.0001. Reduction in doses per day -1.1 against -0.2, p=0.0011. Glucose control non-inferiority established, p<0.0001. Patient Global Impression of Change at week 48 median 2.0 against 1.0, p=0.132, not significant. Responders at 30% or greater reduction: 68% against 13%. Week 96 open-label extension: mean 61% reduction from baseline in both original and crossover groups.",
+      "detail": "48-week randomised, double-blind, placebo-controlled, ages 8 and over. Safety: liver enzyme elevations managed with prophylactic corticosteroids, and hypertriglyceridaemia more frequent after treatment. No dorsal root ganglion toxicity, thrombotic microangiopathy or malignancy through week 96.",
+      "announced": "2024-05-30",
+      "source": "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-positive-top-line-results-phase-3-study"
+    },
+    {
+      "trial": "UX111, Transpher A, 17 patients in the main analysis group",
+      "verdict": "note",
+      "verdict_label": "Large effects, but a much weaker study design",
+      "plain": "The effects reported here are large and the follow-up is unusually long for a gene therapy, out to eight and a half years. But there was no control group. Every child received the drug, and the comparison is against records of how untreated children with the same disease normally decline. That method can overstate a benefit if the two groups differ in ways nobody accounted for. The numbers are also very small, seventeen children in the main analysis. One of the five developmental measures, gross motor skills, did not reach statistical significance. Because this is an accelerated approval filing, the primary basis is a laboratory marker rather than a confirmed clinical outcome, which by design carries an obligation to confirm the benefit later.",
+      "technical": "Open-label, single-arm, non-randomised, assessed against external natural-history controls. Surrogate endpoint, cerebrospinal fluid heparan sulfate exposure: median -63.98%, p<0.001. Bayley-III cognitive raw score against natural history, ages 24 to 60 months (n=17): +23.2 points, p<0.0001. Receptive communication +8.1, p=0.0076. Expressive communication +11.1, p=0.0008. Fine motor +9.0, p=0.0026. Gross motor +3.9, p=0.070, not significant. Median follow-up 4.8 years, range 0.6 to 8.5.",
+      "detail": "Sanfilippo syndrome type A is uniformly fatal and has no approved treatment, which is the context in which the FDA weighs evidence of this kind.",
+      "announced": "2026-02-03",
+      "source": "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-positive-longer-term-data-demonstrating"
+    },
+    {
+      "trial": "UX111, Complete Response Letter, July 2025",
+      "verdict": "missed",
+      "verdict_label": "Rejected on manufacturing, not on the clinical data",
+      "plain": "The FDA turned this application down in July 2025. According to Ultragenyx the letter was about manufacturing and facility inspection findings, and raised no issue with the clinical data or the clinical inspections. The company resubmitted in January 2026 and the FDA accepted it in April, setting the new September decision date. Whether the manufacturing observations have since been formally cleared is not something we can verify from any public FDA document.",
+      "technical": "Complete Response Letter issued 11 July 2025. Ultragenyx states the FDA requested additional information on specific chemistry, manufacturing and controls aspects plus observations from recently completed facility inspections, and asked for updated clinical data from current patients. BLA resubmitted 30 January 2026, accepted 2 April 2026.",
+      "announced": "2025-07-11",
+      "source": "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-receives-complete-response-letter-fda-ux111-aav-gene"
+    }
+  ],
+
+  "events": [
+    ["2024-05-30", "DTX401 Phase 3 GlucoGene topline: primary endpoint met, p<0.0001", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-positive-top-line-results-phase-3-study"],
+    ["2025-07-11", "UX111 Complete Response Letter, on manufacturing and facility observations", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-receives-complete-response-letter-fda-ux111-aav-gene"],
+    ["2025-09-08", "DTX401 week 96 data: mean 61% cornstarch reduction from baseline", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-us-fda-acceptance-and-priority-review"],
+    ["2025-12-30", "DTX401 rolling BLA submission completed", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-completes-rolling-submission-biologics-license"],
+    ["2026-01-30", "UX111 BLA resubmitted to the FDA", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-resubmits-biologics-license-application-ux111-aav"],
+    ["2026-02-03", "UX111 longer-term data out to 8.5 years presented at WORLDSymposium", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-positive-longer-term-data-demonstrating"],
+    ["2026-02-23", "DTX401 BLA accepted with Priority Review; PDUFA date 23 August 2026", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-us-fda-acceptance-and-priority-review"],
+    ["2026-04-02", "UX111 resubmission accepted; PDUFA date 19 September 2026", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-us-fda-acceptance-bla-resubmission-ux111"],
+    ["2026-05-05", "Q1 2026 update: FDA does not currently anticipate an advisory committee for DTX401", "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and"]
+  ],
+
+  "reactions": [
+    {"date": "2026-04-02", "what": "UX111 resubmission accepted, September PDUFA date set"},
+    {"date": "2026-02-23", "what": "DTX401 accepted with Priority Review, August PDUFA date set"},
+    {"date": "2026-02-03", "what": "UX111 longer-term data presented"},
+    {"date": "2026-01-30", "what": "UX111 BLA resubmitted"},
+    {"date": "2025-09-08", "what": "DTX401 week 96 data"},
+    {"date": "2025-07-11", "what": "UX111 Complete Response Letter disclosed"},
+    {"date": "2024-05-30", "what": "DTX401 Phase 3 topline announced"}
+  ],
+
+  "contested": {
+    "heading": "One company, two very different standards of evidence",
+    "plain": "It is worth seeing these two applications side by side, because they are not comparable. DTX401 was tested the rigorous way: patients were randomly assigned, nobody knew who got what, and the drug beat a placebo. UX111 was not. Every child in that study received the drug, and the benefit is measured against historical records of untreated children. Neither approach is wrong. Randomising children with a rapidly fatal brain disease to placebo raises real ethical problems, and the FDA accepts external comparisons in that situation. But the confidence a reader should attach to each result is different, and a headline that reports both as positive Phase 3 data flattens a distinction that matters.",
+    "sources": [
+      "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-positive-top-line-results-phase-3-study",
+      "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-positive-longer-term-data-demonstrating"
+    ]
+  },
+
+  "caveats": [
+    "The FDA has published no documents on either application. Every description of the FDA's views here comes from Ultragenyx's own account and is presented as such.",
+    "DTX401's primary endpoint measures treatment burden, how much cornstarch a patient must eat, not a hard clinical outcome. Blood sugar control was shown to be maintained, not improved.",
+    "DTX401's quality-of-life measure at week 48 did not reach statistical significance, at p=0.132.",
+    "UX111 rests on a single-arm study with an external comparison group and only 17 patients in its main analysis. Gross motor function did not reach significance.",
+    "UX111 seeks accelerated approval on a surrogate biomarker, which carries an obligation to confirm the benefit in later study.",
+    "The UX111 rejection was driven by manufacturing facility inspection observations. Whether those have been formally re-cleared is not verifiable from any public FDA record.",
+    "Both are one-time gene therapies. Durability beyond the reported follow-up is not established.",
+    "Ultragenyx has never commercialised a gene therapy and states it has limited experience operating its own manufacturing facility.",
+    "Ultragenyx sells several approved products and guided to $730M to $760M of 2026 revenue before any new launch. Share price moves around these dates are not attributable to one program, which is why the reaction to the UX111 rejection was far smaller than a single-asset company would have seen.",
+    "A PDUFA date is a goal, not a guarantee. The FDA can act early, act late, or issue a Complete Response Letter."
+  ]
+}
