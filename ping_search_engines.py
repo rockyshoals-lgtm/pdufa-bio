@@ -109,9 +109,30 @@ def submit_gsc(dry):
         creds = service_account.Credentials.from_service_account_info(
             json.loads(raw), scopes=["https://www.googleapis.com/auth/webmasters"])
         svc = build("searchconsole", "v1", credentials=creds, cache_discovery=False)
-        svc.sitemaps().submit(siteUrl=f"https://{HOST}/",
-                              feedpath=f"https://{HOST}/sitemap.xml").execute()
-        print("  Google Search Console: sitemap resubmitted")
+
+        # A property is either URL-prefix ("https://www.pdufa.bio/") or Domain
+        # ("sc-domain:pdufa.bio"), and sitemaps.submit needs the exact form. Rather than make the
+        # owner work out which they have, ask Google which properties this account can see and use
+        # those. If it can see none, the service account was not added to the property, which is
+        # the step people miss.
+        try:
+            visible = [s["siteUrl"] for s in (svc.sites().list().execute().get("siteEntry") or [])]
+        except Exception:
+            visible = []
+        wanted = [s for s in visible if HOST in s or s == f"sc-domain:{HOST.replace('www.', '')}"]
+        if not wanted:
+            print(f"  Google Search Console: the service account can see {len(visible)} propert(ies)"
+                  f"{' (' + ', '.join(visible[:4]) + ')' if visible else ''}, none of them pdufa.bio. "
+                  f"Add its client_email as an OWNER on the property in Search Console "
+                  f"(Settings -> Users and permissions). That is the step that is usually missed.")
+            return
+        for site in wanted:
+            try:
+                svc.sitemaps().submit(siteUrl=site,
+                                      feedpath=f"https://{HOST}/sitemap.xml").execute()
+                print(f"  Google Search Console: sitemap resubmitted for {site}")
+            except Exception as e:
+                print(f"  Google Search Console: {site} failed -> {type(e).__name__}: {e}")
     except Exception as e:
         print(f"  Google Search Console: {type(e).__name__}: {e}")
 
