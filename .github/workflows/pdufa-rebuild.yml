@@ -136,6 +136,15 @@ jobs:
       # Ticker hubs: name the company (SEC's own ticker file), carry the assets we hold, and never
       # repeat a price-inferred outcome with a verified badge. Also noindexes hubs with nothing
       # verified to show, so we stop asking Google to rank empty pages.
+      - name: Rebuild the VKTX tracker (measured reactions from daily closes)
+        continue-on-error: true
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python build_vktx_hub.py
+
+      - name: Surface company-guided readouts at the top of /readouts
+        run: python build_guided_readouts.py
+
       - name: Entity-enrich the ticker hubs
         run: python enrich_ticker_hubs.py
 
@@ -145,7 +154,7 @@ jobs:
       - name: Normalise copy (remove em dashes used as punctuation)
         run: python strip_dashes.py
 
-      - name: Apply the canonical Odin Catalyst LLC legal footer to every page
+      - name: Apply the canonical legal footer to every page
         run: python apply_legal_footer.py
 
       - name: Currency audit (advisory) — anything stale anywhere on the site
@@ -209,7 +218,7 @@ jobs:
         run: |
           git config user.name  "pdufa-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html pdufa_site_src/decisions/index.html pdufa_site_src/adcomm/index.html
+          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html pdufa_site_src/decisions/index.html pdufa_site_src/adcomm/index.html pdufa_site_src/sitemap.xml pdufa_site_src/ticker pdufa_site_src/sls pdufa_site_src/research
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"
@@ -217,3 +226,16 @@ jobs:
             git commit -m "chore: daily data refresh $(date -u +%F)"
             git push
           fi
+
+      # Tell the search engines, AFTER Vercel has had a moment to build the pushed commit.
+      # Note: the classic sitemap ping is gone. google.com/ping returns 404 "deprecated" and
+      # bing.com/ping returns 410, both verified live. IndexNow is the only working push channel
+      # (Bing/Yandex/Seznam/Naver); Google's supported route is the Search Console API, which needs
+      # the GSC_SERVICE_ACCOUNT_JSON secret. Without it this step says so rather than pretending.
+      - name: Ping search engines (IndexNow + Search Console)
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          sleep 60
+          python ping_search_engines.py
