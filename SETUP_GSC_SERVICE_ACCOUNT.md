@@ -80,11 +80,24 @@ Tell me when the secret exists and I will make that edit and confirm it end to e
 
 ## Checking it worked
 
-Run the ping manually, or watch the last step of the next scheduled run. Success looks like:
+Run `python diagnose_gsc.py <path-to-key.json>`, which reports exactly which of the four failure
+modes you have, or confirms success. Or watch the last step of the next scheduled run.
 
-```
-  Google Search Console: sitemap resubmitted
-```
+**Do not judge this by the "Last read" column in Search Console.** That was the original advice here
+and it is wrong, which cost an evening. Two different timestamps are involved:
+
+| Field | Who controls it | When it moves |
+|---|---|---|
+| `lastSubmitted` | us | immediately, every time the ping step runs |
+| `lastDownloaded` (shown in the UI as **Last read**) | Google | whenever Google decides to fetch the file |
+
+Submitting a sitemap does not make Google read it. It is a notification, not a trigger. A perfectly
+working setup will show `lastSubmitted` = today and **Last read** = weeks ago, which looks broken and
+is not. Verified on this property: submission accepted with 0 warnings and 0 errors while Last read
+sat on 2026-07-27.
+
+So: success is `lastSubmitted` advancing and `errors=0`. The ping step prints both fields side by
+side for exactly this reason.
 
 Failure modes and what they mean:
 
@@ -92,11 +105,17 @@ Failure modes and what they mean:
 |---|---|
 | `NOT CONFIGURED` | the `GSC_SERVICE_ACCOUNT_JSON` secret is missing or empty |
 | `google-api-python-client is not installed` | step 6 not done |
-| `HttpError 403` | the service account was not added as an **Owner** in step 4, or was added to a different property |
+| `can see N properties, none of them pdufa.bio` | added to the wrong property, or not added at all |
+| `HttpError 403` | added as **Full** rather than **Owner**. `sitemaps.submit` is Owner-only |
 | `HttpError 404` | `siteUrl` does not match the property type; see the note in step 4 |
 
-Then confirm in Search Console under **Sitemaps**: the "Last read" date for `sitemap.xml` should
-start tracking the deploy date instead of drifting a week behind.
+### If Last read really is stuck
+
+That is a crawl-demand problem, not a submission problem, and no amount of pinging fixes it. The
+lever that does apply is a truthful `<lastmod>`, which Google names as the replacement for the
+retired ping. `build_sitemap.py` derives it from git history for that reason: it previously used file
+mtime, which in CI marked all 430 URLs as changed today, every day, and an untrustworthy lastmod is
+one Google is documented to ignore outright.
 
 ---
 

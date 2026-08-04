@@ -126,13 +126,30 @@ def submit_gsc(dry):
                   f"Add its client_email as an OWNER on the property in Search Console "
                   f"(Settings -> Users and permissions). That is the step that is usually missed.")
             return
+        feed = f"https://{HOST}/sitemap.xml"
         for site in wanted:
             try:
-                svc.sitemaps().submit(siteUrl=site,
-                                      feedpath=f"https://{HOST}/sitemap.xml").execute()
-                print(f"  Google Search Console: sitemap resubmitted for {site}")
+                svc.sitemaps().submit(siteUrl=site, feedpath=feed).execute()
+                # Read the state back. lastSubmitted and lastDownloaded are different things and
+                # confusing them wastes an afternoon: submit is us telling Google the file changed
+                # (updates immediately, always), lastDownloaded is Google choosing to fetch it
+                # (their schedule, not ours). Search Console's "Last read" column shows the second
+                # one, so a successful submit legitimately leaves "Last read" weeks in the past.
+                # Logging both means this step can be judged from its own output.
+                try:
+                    d = svc.sitemaps().get(siteUrl=site, feedpath=feed).execute()
+                    print(f"  Google Search Console: accepted for {site}\n"
+                          f"      lastSubmitted (us)     {d.get('lastSubmitted')}\n"
+                          f"      lastDownloaded (Google){d.get('lastDownloaded')}   "
+                          f"warnings={d.get('warnings')} errors={d.get('errors')}")
+                except Exception:
+                    print(f"  Google Search Console: sitemap resubmitted for {site}")
             except Exception as e:
-                print(f"  Google Search Console: {site} failed -> {type(e).__name__}: {e}")
+                msg = str(e)
+                print(f"  Google Search Console: {site} failed -> {type(e).__name__}: {msg[:180]}")
+                if "403" in msg:
+                    print("      403 means the service account is not an Owner on this property. "
+                          "sitemaps.submit is not available to a 'Full' user.")
     except Exception as e:
         print(f"  Google Search Console: {type(e).__name__}: {e}")
 
