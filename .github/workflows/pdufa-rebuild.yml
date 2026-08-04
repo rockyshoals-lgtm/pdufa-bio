@@ -108,6 +108,12 @@ jobs:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python readout_miner.py --source edgar --edgar-days 30 --edgar-docs 200
 
+      # Free subscribable calendar. Deliberately a STATIC file, not the Pro-gated /api/v1/calendar.ics,
+      # so this costs the paid API tiering nothing. Runs after the dataset sync so the feed matches
+      # the published pages, and before the normalisers so its injected copy gets swept like any other.
+      - name: "Calendar: rebuild the free subscribable .ics feed"
+        run: python build_calendar_feed.py
+
       - name: Refresh /readouts (drop past months + auto-log readout window moves)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
@@ -158,6 +164,12 @@ jobs:
 
       - name: Entity-enrich the ticker hubs
         run: python enrich_ticker_hubs.py
+
+      # Runs AFTER the hub generator so a regeneration cannot re-orphan the deep dives. /vktx was
+      # live and in the sitemap for a day with nothing linking to it, which is the same as not
+      # having shipped it.
+      - name: Keep the featured deep dives linked (no orphan pages)
+        run: python link_featured_pages.py
 
       # Normalisers run AFTER every generator. Generators own the data; these own the house style,
       # so a page regenerated tomorrow cannot silently revert to the old disclaimer or reintroduce
