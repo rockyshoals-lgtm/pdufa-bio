@@ -168,6 +168,15 @@ jobs:
       # Runs AFTER the hub generator so a regeneration cannot re-orphan the deep dives. /vktx was
       # live and in the sitemap for a day with nothing linking to it, which is the same as not
       # having shipped it.
+      # Researched, plain-English deep dives injected into the existing ticker hubs. Runs after the
+      # hub generator so it is never overwritten, and re-measures every stock reaction from daily
+      # closes so the published moves cannot drift from what happened.
+      - name: Rebuild the retail deep dives (plain English, measured reactions)
+        continue-on-error: true
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: python build_retail_pages.py
+
       - name: Keep the featured deep dives linked (no orphan pages)
         run: python link_featured_pages.py
 

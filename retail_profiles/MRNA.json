@@ -1,0 +1,73 @@
+{
+  "ticker": "MRNA",
+  "company": "Moderna, Inc.",
+  "asset": "mFLUSIVA (mRNA-1010)",
+  "headline": "Moderna's mRNA flu vaccine, and what the Phase 3 data actually showed",
+  "as_of": "2026-08-03",
+  "status": {
+    "label": "FDA decision expected",
+    "date": "2026-08-05",
+    "detail": "Original BLA (STN 125869/0) for prevention of influenza in adults 50 and over. Moderna proposed full approval for ages 50 to 64 and accelerated approval for 65 and over, with a post-marketing study required in older adults.",
+    "source": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement"
+  },
+  "plain": "mRNA-1010 is a seasonal flu shot built on the same basic technology as Moderna's COVID-19 vaccines. Instead of using grown-and-inactivated flu virus, it carries genetic instructions that tell your own cells to briefly make one protein from the surface of the flu virus, which teaches your immune system to recognise the real thing. It is intended to prevent seasonal flu in adults aged 50 and over.",
+  "technical": "Lipid-nanoparticle-formulated messenger RNA vaccine encoding hemagglutinin (HA) glycoproteins from WHO-recommended influenza strains. Trivalent, 37.5 micrograms total (12.5 micrograms per strain). Non-egg-based. Efficacy reported against A/H1N1, A/H3N2 and B/Victoria.",
+  "technical_source": "https://doi.org/10.1056/NEJMoa2516491",
+
+  "results": [
+    {
+      "trial": "P304 (\"Fluent\"), Phase 3 pivotal efficacy trial",
+      "verdict": "met",
+      "verdict_label": "Met its primary endpoint",
+      "plain": "Over about six months, 2.0% of people who got mRNA-1010 caught a lab-confirmed flu-like illness, against 2.8% of people who got an ordinary flu shot. That gap of 0.8 percentage points is what the widely quoted \"26.6%\" describes: it is the difference expressed as a proportion, not the share of people protected. Because the comparison was against another licensed vaccine rather than a dummy injection, the result says this shot did better than an existing shot. It cleared the hardest of three statistical bars that were written down before the trial began, so the win was not a case of moving the goalposts afterwards.",
+      "technical": "Relative vaccine efficacy against RT-PCR-confirmed, protocol-defined influenza-like illness from at least 14 days post-vaccination. Hierarchical testing for non-inferiority, superiority, and higher-level superiority (>9.1%); all three met. rVE 26.6% (95% CI 16.7 to 35.4). 411/20,179 cases against 557/20,124. By strain: A/H1N1 29.6%, A/H3N2 22.2%, B/Victoria 29.1%. Adults 65 and over 27.4%. Median follow-up 181 days.",
+      "detail": "Randomised, active-controlled, 40,703 participants randomised and vaccinated across 11 countries, against a licensed standard-dose seasonal influenza vaccine.",
+      "announced": "2025-06-30",
+      "source": "https://doi.org/10.1056/NEJMoa2516491"
+    },
+    {
+      "trial": "Safety and tolerability, P304",
+      "verdict": "note",
+      "verdict_label": "Side effects roughly twice as common as the comparator",
+      "plain": "Reactions to the shot itself were about twice as frequent as with the standard vaccine: sore arm in 66% against 30%, tiredness in 45% against 20%. These were described as mostly mild to moderate and short-lived. The more serious category of adverse events was similar between the two groups.",
+      "technical": "Solicited adverse reactions, mRNA-1010 against standard-dose comparator: injection-site pain 65.8% / 29.8%, fatigue 45.1% / 20.3%, headache 37.8% / 18.0%, myalgia 35.4% / 11.6%. Serious adverse events 2.2% (3 investigator-assessed as vaccine-related) against 1.9% (2 vaccine-related).",
+      "announced": "2026-05-07",
+      "source": "https://doi.org/10.1056/NEJMoa2516491"
+    }
+  ],
+
+  "events": [
+    ["2025-06-30", "P304 Phase 3 topline announced: primary endpoint met, rVE 26.6%", "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-positive-phase-3-results-for-seasonal-influenza-vac-1044119"],
+    ["2026-02-03", "FDA issued a Refusal to File letter on the original BLA", "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000012/mrna-20260203.htm"],
+    ["2026-02-10", "Moderna disclosed the Refusal to File letter and published it", "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-receives-refusal-to-file-letter-from-the-u.s.-food-and-drug-a-1135749"],
+    ["2026-02-18", "After a Type A meeting, FDA accepted the amended BLA; PDUFA date set for 5 August 2026", "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-the-u.s.-food-and-drug-administration-will-initiate-1138398"],
+    ["2026-05-07", "Pivotal results published in the New England Journal of Medicine", "https://doi.org/10.1056/NEJMoa2516491"],
+    ["2026-06-18", "FDA advisory committee (VRBPAC) voted 9-0 and 9-0 that benefits outweigh risks, for ages 50-64 and 65+", "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement"],
+    ["2026-07-31", "Q2 2026 results reaffirmed the 5 August PDUFA date", "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000147/exhibit9912026q2pressrelea.htm"]
+  ],
+
+  "reactions": [
+    {"date": "2026-06-18", "what": "FDA advisory committee voted 9-0 in favour"},
+    {"date": "2026-05-06", "what": "NEJM publication of the pivotal data announced"},
+    {"date": "2026-02-10", "what": "Refusal to File letter disclosed"},
+    {"date": "2025-06-30", "what": "Phase 3 topline announced"}
+  ],
+
+  "contested": {
+    "heading": "The disagreement that shaped this review",
+    "plain": "In February 2026 the FDA refused even to file Moderna's application. The stated reason was not safety and not the efficacy result: it was the choice of comparison vaccine. Moderna tested against a standard-dose flu shot, while the CDC's advisory committee preferentially recommends stronger vaccines for people over 65, which is a large part of the group this shot is meant for. Moderna's position is that the FDA's own vaccines centre had earlier written that a standard-dose comparator would be acceptable, and that two already-licensed flu vaccines were approved using the same design. The application was refiled and accepted two weeks later.",
+    "sources": [
+      "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-receives-refusal-to-file-letter-from-the-u.s.-food-and-drug-a-1135749",
+      "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-the-u.s.-food-and-drug-administration-will-initiate-1138398"
+    ]
+  },
+
+  "caveats": [
+    "The 26.6% figure is a relative comparison against another vaccine, not an absolute measure of protection. In absolute terms the difference was 2.0% against 2.8% of participants over roughly six months.",
+    "Part of what Moderna requested is accelerated approval, for adults 65 and over, which carries an obligation to confirm the benefit in a later study.",
+    "Advisory committee votes are advice. The FDA is not bound by them.",
+    "Efficacy rests on a single influenza season in one trial. Flu vaccine performance varies year to year with how well the strains match.",
+    "The trial was funded by Blackstone Life Sciences and Moderna, and several authors of the published paper are Moderna employees.",
+    "A PDUFA date is a goal, not a guarantee. The FDA can act early, act late, or issue a Complete Response Letter. This application has already been refused once at the filing stage."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "ticker": "CAPR",
+  "company": "Capricor Therapeutics, Inc.",
+  "asset": "Deramiocel (CAP-1002)",
+  "headline": "Capricor's cell therapy for Duchenne heart disease, and why the FDA and The Lancet reached opposite conclusions",
+  "as_of": "2026-08-03",
+  "status": {
+    "label": "FDA decision expected",
+    "date": "2026-08-22",
+    "detail": "BLA 125842, for cardiomyopathy in male patients with Duchenne muscular dystrophy. This is the second review cycle: the first ended in a Complete Response Letter on 9 July 2025. An FDA advisory committee voted 3 for and 9 against on 29 July 2026.",
+    "source": "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"
+  },
+  "plain": "Deramiocel is an experimental cell therapy made from heart cells recovered from donated human hearts. It is given as a drip into a vein once every three months in an outpatient clinic, so there is no surgery and no hospital stay. The cells are not meant to replace damaged muscle: the idea is that they release tiny packages called exosomes that calm inflammation and scarring, with the aim of slowing the loss of heart and arm function in boys and young men with Duchenne muscular dystrophy.",
+  "technical": "Human allogeneic cardiosphere-derived cells (CDCs) derived from cadaver donor hearts. 1.5 x 10^8 (150 million) cells per intravenous infusion, every three months; four doses over twelve months in the Phase 3 trial. Capricor describes the mechanism as exosome-mediated macrophage reprogramming with immunomodulatory and anti-fibrotic effects; the FDA describes the same mechanism as hypothesised.",
+  "technical_source": "https://www.fda.gov/media/193839/download",
+
+  "results": [
+    {
+      "trial": "HOPE-3, Phase 3, 106 patients",
+      "verdict": "contested",
+      "verdict_label": "Result depends on which statistical plan is used",
+      "plain": "This is the trial the decision turns on, and whether it succeeded depends entirely on which version of the analysis plan you read. Under the plan written in 2022, before anyone had seen the data, arm function declined by 1.73 points on the drug and 2.39 points on placebo. That gap of 0.66 points was well within the range of chance. Heart function was essentially identical between the two groups. After the blinded phase ended, the analysis plan was rewritten twice. The final version measured arm function as a percentage change rather than an absolute one, ranked the heart results instead of averaging them, and changed how missing data from a small number of patients were handled. Under that final plan both results became statistically significant. The FDA re-ran the new model using the original missing-data rules and the significance disappeared again.",
+      "technical": "Primary endpoint, PUL 2.0 at 12 months. Pre-specified SAP 1.1: difference 0.66 (95% CI -0.45 to 1.77), p=0.24. SAP 3.0 as modified in the clinical study report: 4.55% (0.47 to 8.63), p=0.029. FDA re-analysis of SAP 3.0 without the applicant's imputation: 2.53% (-1.48 to 6.53), p=0.21. Key secondary endpoint, LVEF by cardiac MRI. Pre-specified: -0.041 percentage points (-2.58 to 2.49), p=0.97. SAP 3.0 as modified: ranked change 11.65 (0.47 to 22.82), p=0.041. FDA re-analysis without imputation: 6.88 (-4.29 to 18.05), p=0.22.",
+      "detail": "Randomised, double-blind, placebo-controlled, 20 US sites. Mean age about 15, predominantly non-ambulatory. Mean baseline LVEF 57%, with only 5 of 106 patients below 45%.",
+      "announced": "2025-12-03",
+      "source": "https://www.fda.gov/media/193839/download"
+    },
+    {
+      "trial": "HOPE-2, Phase 2, 20 patients",
+      "verdict": "missed",
+      "verdict_label": "Missed its primary endpoint as originally planned",
+      "plain": "This earlier trial was designed for 84 patients but stopped after 20, which left it too small to reliably detect a benefit. It was published as positive, but that result came from a re-analysis performed after the treatment codes were opened. On the analysis agreed in advance, it did not show a significant effect on its main measure or on any secondary measure.",
+      "technical": "Primary endpoint mid-level elbow PUL 1.2 at 12 months. Published result: percentile difference 36.2 (95% CI 12.7 to 59.7), p=0.014, using a percentile-rank transformation applied after unblinding. FDA: on the model pre-specified before unblinding, no statistically significant effect on the primary or any secondary endpoint.",
+      "announced": "2022-03-12",
+      "source": "https://www.fda.gov/media/193839/download"
+    },
+    {
+      "trial": "Safety, HOPE-3",
+      "verdict": "note",
+      "verdict_label": "Allergic-type reactions markedly more common on the drug",
+      "plain": "Hypersensitivity reactions, meaning allergic-type responses to the infusion, occurred in about 42% of patients on the drug against 15% on placebo. Serious adverse events were uncommon and were actually more frequent in the placebo group, including one life-threatening allergic reaction that the FDA attributes to ingredients shared by both the drug and the placebo.",
+      "technical": "Hypersensitivity reactions 22/53 (41.5%) deramiocel against 8/52 (15.4%) placebo. Six serious adverse events in total, five in placebo patients and one in a deramiocel patient. One Grade 4 anaphylactic reaction, in a placebo recipient. The FDA noted that the differing reaction profile raises the possibility that patients and investigators could infer treatment assignment despite formal blinding.",
+      "announced": "2026-07-29",
+      "source": "https://www.fda.gov/media/193839/download"
+    }
+  ],
+
+  "events": [
+    ["2024-12-31", "Original BLA submitted, based on HOPE-2 and its open-label extension", "https://www.fda.gov/media/193839/download"],
+    ["2025-07-09", "FDA issued a Complete Response Letter, citing lack of substantial evidence of effectiveness", "https://www.capricor.com/investors/news-events/press-releases/detail/319/capricor-therapeutics-provides-regulatory-update-on"],
+    ["2025-08-13", "At a Type A meeting Capricor proposed changing the HOPE-3 primary endpoint to LVEF; FDA disagreed because the trial was already under way", "https://www.fda.gov/media/193839/download"],
+    ["2025-11-24", "Final statistical analysis plan (version 3.0) created, one day before database lock; not submitted to FDA for review", "https://www.fda.gov/media/193839/download"],
+    ["2025-12-03", "HOPE-3 topline announced as positive on the primary endpoint", "https://www.capricor.com/investors/news-events/press-releases/detail/331/capricor-therapeutics-announces-positive-topline-results"],
+    ["2026-03-10", "FDA lifted the Complete Response Letter and set a new PDUFA date of 22 August 2026", "https://www.capricor.com/investors/news-events/press-releases/detail/338/capricor-therapeutics-announces-establishment-of-new-pdufa"],
+    ["2026-07-27", "FDA briefing document published ahead of the advisory committee", "https://www.fda.gov/media/193839/download"],
+    ["2026-07-29", "HOPE-3 published in The Lancet; FDA advisory committee voted 3 for, 9 against", "https://www.capricor.com/investors/news-events/press-releases/detail/350/the-lancet-publishes-hope-3-data-for-capricor"],
+    ["2026-07-30", "Capricor disclosed the advisory committee vote and reaffirmed the PDUFA date", "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"]
+  ],
+
+  "reactions": [
+    {"date": "2026-07-30", "what": "Advisory committee vote disclosed (3 for, 9 against)"},
+    {"date": "2026-07-27", "what": "FDA briefing document published"},
+    {"date": "2026-03-10", "what": "Complete Response Letter lifted, new PDUFA date set"},
+    {"date": "2025-12-03", "what": "HOPE-3 topline announced"},
+    {"date": "2025-07-11", "what": "Complete Response Letter disclosed"}
+  ],
+
+  "contested": {
+    "heading": "Two expert bodies, one dataset, opposite conclusions",
+    "plain": "On the same morning in July 2026, The Lancet published HOPE-3 as a trial that met its primary endpoint, and an FDA advisory committee voted 9 to 3 that the evidence did not establish effectiveness. Both were looking at the same patients. The difference is which analysis plan counts. Peer reviewers assessed the plan the company finalised in November 2025; the FDA assessed the plan agreed in 2022 and objected that the later version was never submitted to it, that the submitted analyses departed even from that later version, and that the result rests on how missing data from two placebo patients were handled. The committee was asked only whether the evidence showed effectiveness. It was not asked to weigh benefit against risk, a point Capricor has emphasised. The FDA acknowledged in its own briefing document that there is an urgent unmet need, since no approved therapy exists for heart disease in Duchenne.",
+    "sources": [
+      "https://www.fda.gov/media/193839/download",
+      "https://doi.org/10.1016/S0140-6736(26)01385-1",
+      "https://www.capricor.com/investors/news-events/press-releases/detail/351/capricor-therapeutics-provides-update-on-fda-advisory"
+    ]
+  },
+
+  "caveats": [
+    "Advisory committee votes are advice. The FDA is not bound by them, and the PDUFA date of 22 August 2026 stands.",
+    "The committee voted only on whether the evidence showed effectiveness. It did not vote on overall benefit against risk.",
+    "This is the second review cycle. The first ended in a Complete Response Letter in July 2025.",
+    "The efficacy claim rests on a statistical analysis plan the FDA says it never reviewed or agreed to, finalised one day before the data were unblinded.",
+    "The FDA's re-analyses under the original missing-data rules produced p=0.21 for arm function and p=0.22 for heart function.",
+    "Most patients in the trial did not have severe heart disease at entry, despite the application seeking a cardiomyopathy indication: mean baseline ejection fraction was 57%, and only 5 of 106 patients were below 45%.",
+    "Measurements of heart scarring were missing for more than half the patients in the group where they were collected.",
+    "Chemistry and manufacturing sections were not fully reviewed in the first cycle because of the timing of the Complete Response Letter.",
+    "Capricor is in litigation with its US distribution partner, seeking rescission of the agreement. The company states the FDA review is unaffected.",
+    "A PDUFA date is a goal, not a guarantee. The FDA can act early, act late, or issue another Complete Response Letter."
+  ]
+}
