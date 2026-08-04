@@ -197,6 +197,18 @@ jobs:
       # Both of these write into index.html, so they MUST run after build_home_board regenerates it,
       # or the board rebuild would silently wipe them. They sit here with the normalisers for that
       # reason.
+      # Who has SAID they are presenting, from their own SEC filings, months before organisers
+      # publish abstract titles. Bounded and advisory; the page states it is not the full programme.
+      - name: "Conferences: mine presenter announcements from EDGAR"
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python conference_presenter_miner.py --days 240
+
+      - name: "Conferences: rebuild the calendar and presenter lists"
+        run: python build_conferences.py
+
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
         run: python build_explainer.py
 
