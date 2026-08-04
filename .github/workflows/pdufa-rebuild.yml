@@ -39,7 +39,11 @@ jobs:
           python-version: '3.12'
 
       - name: Install deps
+        # google-api-python-client + google-auth are only used by ping_search_engines.py to call
+        # Search Console sitemaps.submit. Harmless if the GSC_SERVICE_ACCOUNT_JSON secret is not
+        # set yet: that step reports itself unconfigured and the run continues.
         run: pip install --quiet requests pandas openpyxl python-dateutil
+             google-api-python-client google-auth
 
       - name: Refresh prices / market caps (Polygon, forward catalysts only)
         env:
@@ -54,23 +58,23 @@ jobs:
       # quotes them. Runs BEFORE the homepage board so the headline count is same-day, not a day
       # behind. Every step is incremental and idempotent; a day with no new decisions is a no-op.
       # ---------------------------------------------------------------------------------------
-      - name: Run-up study: fold in newly decided PDUFAs
+      - name: "Run-up study: fold in newly decided PDUFAs"
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python extend_runup_study.py
 
-      - name: Run-up study: compute T-120 baseline for new events only
+      - name: "Run-up study: compute T-120 baseline for new events only"
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python add_t120_baseline.py
 
-      - name: Run-up study: recompute the published statistics (single source of truth)
+      - name: "Run-up study: recompute the published statistics (single source of truth)"
         run: python runup_study_stats.py
 
-      - name: Run-up study: refresh cohort figures quoted on every decision page
+      - name: "Run-up study: refresh cohort figures quoted on every decision page"
         run: python refresh_cohort_figures.py
 
-      - name: Run-up study: rebuild /runup-by-year from the master dataset
+      - name: "Run-up study: rebuild /runup-by-year from the master dataset"
         run: python build_runup_by_year.py
 
       - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
@@ -106,7 +110,7 @@ jobs:
       # so its date is advanced by EDGAR evidence, never by the clock. If SELLAS files anything
       # material this step exits non-zero, the date stays frozen, and the page keeps saying what it
       # was last able to verify until a human reads the filing.
-      - name: SLS: verify the "not yet announced" claim against EDGAR
+      - name: "SLS: verify the 'not yet announced' claim against EDGAR"
         id: sls
         continue-on-error: true
         run: python check_sls_filings.py
@@ -114,14 +118,14 @@ jobs:
       # Collect the day's primary-source activity: EDGAR filings (with the 8-K/exhibit text read,
       # not just the form type), SELLAS's own press releases, executive quotes lifted verbatim,
       # and the close/volume. Append-only, so nothing already published is rewritten.
-      - name: SLS: collect filings, press releases, quotes and price
+      - name: "SLS: collect filings, press releases, quotes and price"
         continue-on-error: true          # a bad day at EDGAR must not block the whole deploy
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python sls_daily.py
 
-      - name: SLS: rebuild the tracker pages (only if the claim still verifies)
+      - name: "SLS: rebuild the tracker pages (only if the claim still verifies)"
         if: steps.sls.outcome == 'success'
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
@@ -129,7 +133,7 @@ jobs:
           python build_sls_hub.py
           python build_sls_deepdive.py
 
-      - name: SLS: flag for manual review (material filing found)
+      - name: "SLS: flag for manual review (material filing found)"
         if: steps.sls.outcome != 'success'
         run: echo "::warning::SELLAS filed something material. /sls dates were NOT advanced. Review the filing and update _sls_verified_through.json."
 
