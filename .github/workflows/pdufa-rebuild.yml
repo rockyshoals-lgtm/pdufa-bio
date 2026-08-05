@@ -296,7 +296,16 @@ jobs:
         run: |
           git config user.name  "pdufa-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html pdufa_site_src/decisions/index.html pdufa_site_src/adcomm/index.html pdufa_site_src/sitemap.xml pdufa_site_src/ticker pdufa_site_src/sls pdufa_site_src/research
+          # The run-up study's own artifacts MUST be committed alongside the pages that quote them.
+          # They were not, and the result was a repo that contradicted itself: each run grew the
+          # study to 1,829 events, stamped that on the homepage, passed its guards (everything
+          # agreed inside the runner), then committed the homepage and discarded the study. The
+          # committed stats file stayed on 1,827, so a fresh checkout failed its own guard while CI
+          # went on passing, because CI regenerates the study before the guard runs. It also meant
+          # the study never actually persisted its growth: every run redid the same work.
+          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html pdufa_site_src/decisions/index.html pdufa_site_src/adcomm/index.html pdufa_site_src/sitemap.xml pdufa_site_src/ticker pdufa_site_src/sls pdufa_site_src/research pdufa_site_src/conferences pdufa_site_src/tickers pdufa_site_src/calendar.ics pdufa_site_src/search-index.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json
+          git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no data changes this run — nothing to deploy"

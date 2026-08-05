@@ -1,30 +1,30 @@
 {
- "n_events": 1827,
+ "n_events": 1829,
  "date_min": "2020-01-08",
  "date_max": "2026-07-29",
- "n_approval": 1296,
+ "n_approval": 1298,
  "n_crl": 531,
- "approval_rate": 70.9,
- "t120_coverage_n": 1756,
+ "approval_rate": 71.0,
+ "t120_coverage_n": 1758,
  "t120_coverage_pct": 96.1,
  "T-120_T-1_median_pct": 1.8,
- "T-120_T-1_mean_pct": 7.17,
- "T-120_T-7_median_pct": 2.39,
- "T-120_T-7_mean_pct": 7.03,
- "T-120_T-3_median_pct": 2.71,
- "T-120_T-3_mean_pct": 7.33,
- "T-120_peak_median_pct": 17.81,
- "T-120_peak_mean_pct": 34.64,
- "runup_30d_median": 0.51,
+ "T-120_T-1_mean_pct": 7.16,
+ "T-120_T-7_median_pct": 2.36,
+ "T-120_T-7_mean_pct": 7.01,
+ "T-120_T-3_median_pct": 2.67,
+ "T-120_T-3_mean_pct": 7.32,
+ "T-120_peak_median_pct": 17.72,
+ "T-120_peak_mean_pct": 34.61,
+ "runup_30d_median": 0.52,
  "runup_21d_median": 0.4,
  "runup_14d_median": 0.13,
- "runup_7d_median": -0.04,
+ "runup_7d_median": -0.03,
  "runup_5d_median": 0.0,
  "runup_3d_median": 0.0,
  "post_1d_median": -0.02,
  "post_1d_median_approval": 0.13,
  "post_1d_median_crl": -0.92,
- "post_2d_median": 0.05,
+ "post_2d_median": 0.06,
  "post_2d_median_approval": 0.47,
  "post_2d_median_crl": -1.71,
  "post_5d_median": -0.14,
@@ -49,7 +49,7 @@
   },
   "Large (>$10B)": {
    "median_abs_pct": 0.97,
-   "n": 824
+   "n": 825
   }
  },
  "by_year": {
@@ -108,13 +108,13 @@
    "approval_rate": 70.0
   },
   "2026": {
-   "n": 131,
-   "t120_median_pct": 11.84,
-   "t120_peak_median_pct": 29.5,
-   "t120_n": 131,
+   "n": 133,
+   "t120_median_pct": 11.43,
+   "t120_peak_median_pct": 28.51,
+   "t120_n": 133,
    "runup_30d_median": 1.04,
-   "post_1d_median": 0.0,
-   "approval_rate": 82.4
+   "post_1d_median": 0.09,
+   "approval_rate": 82.7
   }
  }
 }
