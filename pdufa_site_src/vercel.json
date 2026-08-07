@@ -656,6 +656,14 @@
   {
    "source": "/pricing",
    "destination": "/pricing.html"
+  },
+  {
+   "source": "/runup",
+   "destination": "/runup.html"
+  },
+  {
+   "source": "/surges",
+   "destination": "/surges.html"
   }
  ]
 }

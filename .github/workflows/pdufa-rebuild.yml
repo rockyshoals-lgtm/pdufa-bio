@@ -91,8 +91,19 @@ jobs:
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
+      # Comparator arms captured as the sponsor's own drug. BMY's title read "Bevacizumab", a
+      # Roche product, because the CT.gov ingest took whichever intervention it saw first.
+      - name: "Data quality: resolve comparator names against the trial record"
+        continue-on-error: true
+        run: python fix_comparator_names.py
+
       - name: Keep /decisions newest-first + year counters honest
         run: python fix_decisions_order.py
+
+      # Recompute the archive's provenance split from the pages. The old claim counted 116 pages
+      # with no source at all as "verified with a primary source".
+      - name: "Publish the honest sourced / inferred / unsourced split"
+        run: python refresh_provenance_counts.py
 
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_api_from_pages.py

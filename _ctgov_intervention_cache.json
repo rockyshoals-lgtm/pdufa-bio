@@ -1,0 +1,185 @@
+{
+"NCT05938725": {
+"sponsor": "Kyverna Therapeutics",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Biological: KYV-101 anti-CD19 CAR-T cell therapy",
+"Drug: Standard lymphodepletion regimen"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Biological: KYV-101 anti-CD19 CAR-T cell therapy",
+"Drug: Standard lymphodepletion regimen"
+]
+}
+]
+},
+"NCT05130827": {
+"sponsor": "Memorial Sloan Kettering Cancer Center",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: Plinabulin"
+]
+}
+]
+},
+"NCT04442022": {
+"sponsor": "Karyopharm Therapeutics Inc",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: Selinexor (combination therapy)",
+"Drug: Rituximab (combination therapy)",
+"Drug: Gemcitabine (combination therapy)",
+"Drug: Dexamethasone (combination therapy)",
+"Drug: Cisplatin (combination therapy)",
+"Drug: Selinexor (continuous therapy)"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: Selinexor (combination therapy)",
+"Drug: Rituximab (combination therapy)",
+"Drug: Gemcitabine (combination therapy)",
+"Drug: Dexamethasone (combination therapy)",
+"Drug: Cisplatin (combination therapy)",
+"Drug: Selinexor (continuous therapy)"
+]
+},
+{
+"type": "ACTIVE_COMPARATOR",
+"names": [
+"Drug: Rituximab (combination therapy)",
+"Drug: Gemcitabine (combination therapy)",
+"Drug: Dexamethasone (combination therapy)",
+"Drug: Cisplatin (combination therapy)"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: Selinexor (combination therapy)",
+"Drug: Rituximab (combination therapy)",
+"Drug: Gemcitabine (combination therapy)",
+"Drug: Dexamethasone (combination therapy)",
+"Drug: Cisplatin (combination therapy)",
+"Drug: Selinexor (continuous therapy)"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: Selinexor (combination therapy)",
+"Drug: Rituximab (combination therapy)",
+"Drug: Gemcitabine (combination therapy)",
+"Drug: Dexamethasone (combination therapy)",
+"Drug: Cisplatin (combination therapy)",
+"Drug: Placebo matching for Selinexor (continuous therapy)"
+]
+},
+{
+"type": "PLACEBO_COMPARATOR",
+"names": [
+"Drug: Placebo matching for Selinexor (combination therapy)",
+"Drug: Rituximab (combination therapy)",
+"Drug: Gemcitabine (combination therapy)",
+"Drug: Dexamethasone (combination therapy)",
+"Drug: Cisplatin (combination therapy)",
+"Drug: Placebo matching for Selinexor (continuous therapy)"
+]
+}
+]
+},
+"NCT06152172": {
+"sponsor": "David Porter",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: KYV-101",
+"Drug: Cyclophosphamide",
+"Drug: Fludarabine"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: KYV-101",
+"Drug: Cyclophosphamide",
+"Drug: Fludarabine"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: KYV-101",
+"Drug: Cyclophosphamide",
+"Drug: Fludarabine"
+]
+},
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: KYV-101",
+"Drug: Cyclophosphamide",
+"Drug: Fludarabine"
+]
+}
+]
+},
+"NCT06384976": {
+"sponsor": "Kyverna Therapeutics",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Biological: KYV-101",
+"Drug: Standard lymphodepletion regimen"
+]
+},
+{
+"type": "ACTIVE_COMPARATOR",
+"names": [
+"Drug: Anti-CD20 mAB"
+]
+}
+]
+},
+"NCT06475495": {
+"sponsor": "Charite University, Berlin, Germany",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: KYV101"
+]
+},
+{
+"type": "ACTIVE_COMPARATOR",
+"names": [
+"Drug: Rituximab (active comparator)"
+]
+}
+]
+},
+"NCT05607953": {
+"sponsor": "TriSalus Life Sciences, Inc.",
+"arms": [
+{
+"type": "EXPERIMENTAL",
+"names": [
+"Drug: SD-101",
+"Biological: anti-PD-1"
+]
+}
+]
+}
+}

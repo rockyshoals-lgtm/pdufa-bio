@@ -28,8 +28,11 @@ ROW = re.compile(r'<a class="row" href="/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})
 
 NOTE = ('<div class="note" style="border:1px solid #6b5a2f;background:rgba(240,200,106,.07);'
         'border-radius:10px;padding:11px 13px;margin:12px 0;color:#e8d9a8;font-size:13px;'
-        'line-height:1.6"><b>Verified records only.</b> This page lists {kept} decision(s) confirmed '
-        'against an FDA, SEC or company document. A further {dropped} record(s) in our archive have '
+        'line-height:1.6"><b>Not inferred from price.</b> This page lists {kept} decision(s) whose '
+        'outcome was read from a document rather than from the share-price reaction. '
+        '<b>{sourced} of them link that document</b>; the rest are older entries we have not yet '
+        'gone back and sourced, and we would rather say so than call them all verified. '
+        'A further {dropped} record(s) in our archive have '
         'their outcome inferred from the share-price reaction rather than read from a filing, and '
         'they are deliberately not listed under a heading that asserts what the FDA did. They remain '
         'in the <a href="/decisions" style="color:#f0c86a">full archive</a>, labelled unverified. '
@@ -37,21 +40,37 @@ NOTE = ('<div class="note" style="border:1px solid #6b5a2f;background:rgba(240,2
         '<a href="/corrections" style="color:#f0c86a">corrections</a>.</div>')
 
 
-def verified_slugs():
-    """A decision is verified if its own page does not carry the price-only marker."""
-    ok = set()
+def sourced_slugs():
+    """A decision is verified when its page LINKS a primary source.
+
+    This used to be "does not carry the price-only marker", which counted 150 pages as verified
+    when only 31 of them showed anything to check. Absence of a disclaimer is not evidence, and the
+    difference was published on /decisions as "142 with a primary source". Requiring the source to
+    be present is the whole point of the claim.
+    """
+    import re as _re
+    GOOD = _re.compile(r"(fda\.gov|sec\.gov|clinicaltrials\.gov|nih\.gov|doi\.org|nejm\.org|"
+                       r"thelancet\.com|jamanetwork\.com|globenewswire\.com|prnewswire\.com|"
+                       r"businesswire\.com|accessnewswire\.com|stocktitan\.net|newsroom\.|"
+                       r"ir\.|investors?\.)", _re.I)
+    ok, sourced = set(), set()
     for p in glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html")):
         t = open(p, encoding="utf-8", errors="replace").read()
-        if "price-only" not in t:
-            ok.add(os.path.basename(os.path.dirname(p)))
-    return ok
+        if "price-only" in t:
+            continue
+        slug = os.path.basename(os.path.dirname(p))
+        ok.add(slug)                       # not inferred from price: eligible to be listed
+        ext = [u for u in _re.findall(r'href="(https?://[^"]+)"', t) if "pdufa.bio" not in u]
+        if any(GOOD.search(u) for u in ext):
+            sourced.add(slug)              # and it shows you the document
+    return ok, sourced
 
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
-    ok = verified_slugs()
-    print(f"verified decision pages: {len(ok)}")
+    ok, sourced = sourced_slugs()
+    print(f"decisions not inferred from price: {len(ok)}  ({len(sourced)} of them link the document)")
 
     for name in ("approvals", "crl"):
         p = os.path.join(SITE, "decisions", name, "index.html")
@@ -59,20 +78,22 @@ def main():
             continue
         t = open(p, encoding="utf-8", errors="replace").read()
         kept = dropped = 0
-        missing = []
+        missing, kept_slugs = [], []
 
         def keep(m):
             nonlocal kept, dropped
             slug = m.group(1)
             if slug in ok:
                 kept += 1
+                kept_slugs.append(slug)
                 return m.group(0)
             dropped += 1
             missing.append(slug)
             return ""
 
         t2 = ROW.sub(keep, t)
-        note = NOTE.format(kept=kept, dropped=dropped)
+        note = NOTE.format(kept=kept, dropped=dropped,
+                           sourced=sum(1 for s in kept_slugs if s in sourced))
         t2 = re.sub(r'<div class="note" style="border:1px solid #6b5a2f.*?</div>', "", t2, flags=re.S)
         anchor = re.search(r"</h1>", t2)
         if anchor:
