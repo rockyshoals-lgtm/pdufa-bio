@@ -2,18 +2,17 @@
   "ticker": "MRNA",
   "company": "Moderna, Inc.",
   "asset": "mFLUSIVA (mRNA-1010)",
-  "headline": "Moderna's mRNA flu vaccine, and what the Phase 3 data actually showed",
-  "as_of": "2026-08-03",
+  "headline": "Moderna's mRNA flu vaccine is approved, and what the Phase 3 data actually showed",
+  "as_of": "2026-08-06",
   "status": {
-    "label": "FDA decision expected",
+    "label": "Approved by the FDA",
     "date": "2026-08-05",
-    "detail": "Original BLA (STN 125869/0) for prevention of influenza in adults 50 and over. Moderna proposed full approval for ages 50 to 64 and accelerated approval for 65 and over, with a post-marketing study required in older adults.",
-    "source": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement"
+    "detail": "Approved on its goal date as MFLUSIVA, the first mRNA influenza vaccine licensed in the United States, for active immunisation against influenza A and B in people 50 and over. The approval is split in exactly the way Moderna proposed: traditional approval for the 50 and over population, with the indication for people 65 and older granted under accelerated approval, carrying a required post-marketing study against a high-dose influenza vaccine in adults 65 and over, due to complete in 2029.",
+    "source": "https://www.fda.gov/vaccines-blood-biologics/vaccines/mflusiva"
   },
   "plain": "mRNA-1010 is a seasonal flu shot built on the same basic technology as Moderna's COVID-19 vaccines. Instead of using grown-and-inactivated flu virus, it carries genetic instructions that tell your own cells to briefly make one protein from the surface of the flu virus, which teaches your immune system to recognise the real thing. It is intended to prevent seasonal flu in adults aged 50 and over.",
   "technical": "Lipid-nanoparticle-formulated messenger RNA vaccine encoding hemagglutinin (HA) glycoproteins from WHO-recommended influenza strains. Trivalent, 37.5 micrograms total (12.5 micrograms per strain). Non-egg-based. Efficacy reported against A/H1N1, A/H3N2 and B/Victoria.",
   "technical_source": "https://doi.org/10.1056/NEJMoa2516491",
-
   "results": [
     {
       "trial": "P304 (\"Fluent\"), Phase 3 pivotal efficacy trial",
@@ -35,24 +34,70 @@
       "source": "https://doi.org/10.1056/NEJMoa2516491"
     }
   ],
-
   "events": [
-    ["2025-06-30", "P304 Phase 3 topline announced: primary endpoint met, rVE 26.6%", "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-positive-phase-3-results-for-seasonal-influenza-vac-1044119"],
-    ["2026-02-03", "FDA issued a Refusal to File letter on the original BLA", "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000012/mrna-20260203.htm"],
-    ["2026-02-10", "Moderna disclosed the Refusal to File letter and published it", "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-receives-refusal-to-file-letter-from-the-u.s.-food-and-drug-a-1135749"],
-    ["2026-02-18", "After a Type A meeting, FDA accepted the amended BLA; PDUFA date set for 5 August 2026", "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-the-u.s.-food-and-drug-administration-will-initiate-1138398"],
-    ["2026-05-07", "Pivotal results published in the New England Journal of Medicine", "https://doi.org/10.1056/NEJMoa2516491"],
-    ["2026-06-18", "FDA advisory committee (VRBPAC) voted 9-0 and 9-0 that benefits outweigh risks, for ages 50-64 and 65+", "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement"],
-    ["2026-07-31", "Q2 2026 results reaffirmed the 5 August PDUFA date", "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000147/exhibit9912026q2pressrelea.htm"]
+    [
+      "2025-06-30",
+      "P304 Phase 3 topline announced: primary endpoint met, rVE 26.6%",
+      "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-positive-phase-3-results-for-seasonal-influenza-vac-1044119"
+    ],
+    [
+      "2026-02-03",
+      "FDA issued a Refusal to File letter on the original BLA",
+      "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000012/mrna-20260203.htm"
+    ],
+    [
+      "2026-02-10",
+      "Moderna disclosed the Refusal to File letter and published it",
+      "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-receives-refusal-to-file-letter-from-the-u.s.-food-and-drug-a-1135749"
+    ],
+    [
+      "2026-02-18",
+      "After a Type A meeting, FDA accepted the amended BLA; PDUFA date set for 5 August 2026",
+      "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-the-u.s.-food-and-drug-administration-will-initiate-1138398"
+    ],
+    [
+      "2026-05-07",
+      "Pivotal results published in the New England Journal of Medicine",
+      "https://doi.org/10.1056/NEJMoa2516491"
+    ],
+    [
+      "2026-06-18",
+      "FDA advisory committee (VRBPAC) voted 9-0 and 9-0 that benefits outweigh risks, for ages 50-64 and 65+",
+      "https://www.fda.gov/advisory-committees/advisory-committee-calendar/vaccines-and-related-biological-products-advisory-committee-june-18-2026-meeting-announcement"
+    ],
+    [
+      "2026-07-31",
+      "Q2 2026 results reaffirmed the 5 August PDUFA date",
+      "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000147/exhibit9912026q2pressrelea.htm"
+    ],
+    [
+      "2026-08-05",
+      "FDA approved MFLUSIVA for people 50 and over; 65+ under accelerated approval",
+      "https://www.fda.gov/vaccines-blood-biologics/vaccines/mflusiva"
+    ]
   ],
-
   "reactions": [
-    {"date": "2026-06-18", "what": "FDA advisory committee voted 9-0 in favour"},
-    {"date": "2026-05-06", "what": "NEJM publication of the pivotal data announced"},
-    {"date": "2026-02-10", "what": "Refusal to File letter disclosed"},
-    {"date": "2025-06-30", "what": "Phase 3 topline announced"}
+    {
+      "date": "2026-08-05",
+      "what": "FDA approval announced"
+    },
+    {
+      "date": "2026-06-18",
+      "what": "FDA advisory committee voted 9-0 in favour"
+    },
+    {
+      "date": "2026-05-06",
+      "what": "NEJM publication of the pivotal data announced"
+    },
+    {
+      "date": "2026-02-10",
+      "what": "Refusal to File letter disclosed"
+    },
+    {
+      "date": "2025-06-30",
+      "what": "Phase 3 topline announced"
+    }
   ],
-
   "contested": {
     "heading": "The disagreement that shaped this review",
     "plain": "In February 2026 the FDA refused even to file Moderna's application. The stated reason was not safety and not the efficacy result: it was the choice of comparison vaccine. Moderna tested against a standard-dose flu shot, while the CDC's advisory committee preferentially recommends stronger vaccines for people over 65, which is a large part of the group this shot is meant for. Moderna's position is that the FDA's own vaccines centre had earlier written that a standard-dose comparator would be acceptable, and that two already-licensed flu vaccines were approved using the same design. The application was refiled and accepted two weeks later.",
@@ -61,13 +106,13 @@
       "https://www.accessnewswire.com/newsroom/en/healthcare-and-pharmaceutical/moderna-announces-the-u.s.-food-and-drug-administration-will-initiate-1138398"
     ]
   },
-
   "caveats": [
     "The 26.6% figure is a relative comparison against another vaccine, not an absolute measure of protection. In absolute terms the difference was 2.0% against 2.8% of participants over roughly six months.",
     "Part of what Moderna requested is accelerated approval, for adults 65 and over, which carries an obligation to confirm the benefit in a later study.",
     "Advisory committee votes are advice. The FDA is not bound by them.",
     "Efficacy rests on a single influenza season in one trial. Flu vaccine performance varies year to year with how well the strains match.",
     "The trial was funded by Blackstone Life Sciences and Moderna, and several authors of the published paper are Moderna employees.",
-    "A PDUFA date is a goal, not a guarantee. The FDA can act early, act late, or issue a Complete Response Letter. This application has already been refused once at the filing stage."
+    "Part of this approval, the indication for people 65 and older, is an accelerated approval. That carries an obligation to confirm the benefit in a post-marketing study against a high-dose vaccine, due to complete in 2029.",
+    "Approval is not the same as a recommendation, coverage, or uptake. The CDC advisory committee's position is decided separately."
   ]
 }

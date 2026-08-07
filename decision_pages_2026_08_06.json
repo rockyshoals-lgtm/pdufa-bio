@@ -1,0 +1,41 @@
+[
+  {
+    "ticker": "REPL",
+    "date": "2026-08-06",
+    "outcome": "Approved",
+    "drug": "TUDRIQEV (vusolimogene oderparepvec-wtpg)",
+    "indication": "Unresectable advanced cutaneous melanoma after progression on a PD-1 blocking antibody",
+    "company": "Replimune Group, Inc.",
+    "cap": "Small",
+    "headline": "TUDRIQEV (vusolimogene oderparepvec-wtpg) granted accelerated approval, in combination with nivolumab, for adults with unresectable advanced cutaneous melanoma who progressed on a PD-1 blocking antibody-based regimen (Aug 6 2026).",
+    "pdufa_note": "This was the third review cycle. The FDA issued a Complete Response Letter on July 21, 2025, a second action letter on April 10, 2026, and accepted the Class 1 resubmission on June 26, 2026 with a goal date of August 2, 2026. The agency acted on August 6, four days past the goal date. Approval is <em>accelerated</em>, based on objective response rate and duration of response in the single-arm IGNYTE study (ORR 24%, median duration of response 14.1 months), and continued approval may be contingent on verifying benefit in the confirmatory Phase 3 IGNYTE-3 trial, whose primary endpoint is overall survival and which is due to complete in 2030. An advisory committee voted 10 to 3 on July 30, 2026 that the IGNYTE results were evaluable and clinically meaningful. The label carries no boxed warning and no REMS.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-engineered-viral-immunotherapy-patients-treatment-resistant-advanced-melanoma",
+    "source_label": "FDA press announcement, August 6, 2026"
+  },
+  {
+    "ticker": "MRNA",
+    "date": "2026-08-05",
+    "outcome": "Approved",
+    "drug": "MFLUSIVA (Influenza Vaccine, mRNA)",
+    "indication": "Prevention of influenza in adults 50 years and older",
+    "company": "Moderna, Inc.",
+    "cap": "Large",
+    "headline": "MFLUSIVA (Influenza Vaccine, mRNA), the first mRNA influenza vaccine licensed in the United States, approved for active immunisation against influenza A and B in people 50 years and older (Aug 5 2026).",
+    "pdufa_note": "Approved on the August 5, 2026 goal date. The approval is split: traditional approval for the 50 and over population, with the indication for people 65 and older granted under <em>accelerated</em> approval, carrying a required post-marketing study comparing relative vaccine efficacy against a high-dose influenza vaccine in US adults 65 and over, due to complete in 2029. This application had previously received a Refusal to File letter on February 3, 2026, which the FDA based solely on the choice of a standard-dose comparator rather than on safety or efficacy; the amended application was accepted two weeks later. An advisory committee voted 9 to 0 in favour for both age groups on June 18, 2026.",
+    "source": "https://www.fda.gov/vaccines-blood-biologics/vaccines/mflusiva",
+    "source_label": "FDA CBER product page and approval letter, August 5, 2026"
+  },
+  {
+    "ticker": "TAK",
+    "date": "2026-08-05",
+    "outcome": "Approved",
+    "drug": "ORZEYFUL (oveporexton)",
+    "indication": "Narcolepsy type 1 in adults",
+    "company": "Takeda Pharmaceutical Company Limited",
+    "cap": "Large",
+    "headline": "ORZEYFUL (oveporexton), an oral orexin receptor 2 agonist taken twice daily, approved for narcolepsy type 1 in adults (Aug 5 2026).",
+    "pdufa_note": "A traditional approval, granted with Breakthrough Therapy designation and Priority Review, and the 30th novel drug approval of 2026. One practical caveat that matters for timing: the FDA has recommended the product for scheduling, and it cannot lawfully be marketed until the DEA issues its scheduling decision, so approval and availability are not the same date here.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-full-range-narcolepsy-type-1-symptoms",
+    "source_label": "FDA press announcement, August 5, 2026"
+  }
+]
