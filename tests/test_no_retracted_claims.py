@@ -68,6 +68,23 @@ def main():
 
     print(f"checked {len(pages):,} pages, {len(on_disk):,} decision pages on disk")
     ok = True
+
+    # Duplicate page files. A Windows file operation left "index (1).html" beside the real
+    # index.html in five decision directories, and a rebase committed all five. Each is a stale
+    # near-copy of a live page, served at its own URL, which is duplicate content pointing at
+    # superseded data on exactly the pages whose job is being right. They are invisible in normal
+    # review because every listing and the sitemap only ever look at index.html.
+    dupes = [os.path.relpath(p, SITE).replace("\\", "/")
+             for p in glob.glob(os.path.join(SITE, "**", "*(*)*"), recursive=True)
+             if os.path.isfile(p) and p.lower().endswith((".html", ".htm"))]
+    if dupes:
+        ok = False
+        print(f"\nFAIL: {len(dupes)} duplicate page file(s) that would be served as their own URL:")
+        for d in dupes[:10]:
+            print(f"   {d}")
+        print("   Delete them. The real page is index.html in the same directory.")
+    else:
+        print("  PASS: no duplicate 'index (N).html' page files")
     if bad_retracted:
         ok = False
         print(f"\nFAIL: {len(bad_retracted)} reference(s) to a RETRACTED decision:")
