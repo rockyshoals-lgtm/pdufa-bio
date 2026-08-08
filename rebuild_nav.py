@@ -42,7 +42,7 @@ B, E = "<!--NAVC:BEGIN-->", "<!--NAVC:END-->"
 
 PRIMARY = [("/calendar", "Calendar"), ("/decisions", "Decisions"), ("/readouts", "Readouts"),
            ("/runup-by-year", "Run-up"), ("/tickers", "Stocks")]
-MORE = [("/conferences", "Conferences"), ("/adcomm", "Advisory Committees"),
+MORE = [("/drug", "Drug Index"), ("/conferences", "Conferences"), ("/adcomm", "Advisory Committees"),
         ("/screener", "Screener"), ("/research", "Research"), ("/developers", "API"),
         ("/sls", "SLS tracker"), ("/account", "Account")]
 PRO = ("/pricing", "Pro")

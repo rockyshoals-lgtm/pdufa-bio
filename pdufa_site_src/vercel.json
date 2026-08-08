@@ -396,6 +396,61 @@
    "source": "/ticker/SLS",
    "destination": "/sls",
    "permanent": true
+  },
+  {
+   "source": "/pdufa-calendar-2026",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/q1-2026-oncology-pdufa-dates",
+   "destination": "/condition/cancer",
+   "permanent": true
+  },
+  {
+   "source": "/vnda-vqw-pdufa",
+   "destination": "/pdufa/VNDA",
+   "permanent": true
+  },
+  {
+   "source": "/meso-ryoncil-pdufa",
+   "destination": "/decisions",
+   "permanent": true
+  },
+  {
+   "source": "/verv-verv101-pdufa",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
+   "source": "/leaderboard",
+   "destination": "/decisions",
+   "permanent": true
+  },
+  {
+   "source": "/record",
+   "destination": "/decisions",
+   "permanent": true
+  },
+  {
+   "source": "/trade",
+   "destination": "/research",
+   "permanent": true
+  },
+  {
+   "source": "/intel",
+   "destination": "/research",
+   "permanent": true
+  },
+  {
+   "source": "/tools",
+   "destination": "/screener",
+   "permanent": true
+  },
+  {
+   "source": "/feed",
+   "destination": "/developers",
+   "permanent": true
   }
  ],
  "headers": [

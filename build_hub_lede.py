@@ -217,6 +217,20 @@ def main():
         s = sentence(rel, rows)
         if not s:
             continue
+
+        # GSC: ~250 impressions on head "pdufa calendar/date" terms, zero clicks, position ~20.
+        # The title is a label; make it a reason to click. KEYWORD-FIRST deliberately: /calendar
+        # ranks #3 on Bing with the phrase at the front, so the ranking phrase keeps its position
+        # and the count + cadence go after it. The count is the same row count the lede publishes,
+        # so title, sentence and table cannot disagree.
+        titles = {
+            "calendar":  f"2026 FDA PDUFA Calendar: {len(rows)} Dates, Updated Daily | pdufa.bio",
+            "decisions": f"FDA Decisions Archive: {len(rows)} Tracked, Updated Daily | pdufa.bio",
+            "readouts":  f"Clinical Trial Readout Calendar: {len(rows)} Dates | pdufa.bio",
+        }
+        if rel in titles:
+            doc = re.sub(r"(<title[^>]*>).*?(</title>)",
+                         lambda m: m.group(1) + titles[rel] + m.group(2), doc, count=1, flags=re.S)
         block = (f'{B}<p style="margin:0 0 14px;font-size:14.5px;line-height:1.75;color:#cfe0f5;'
                  f'max-width:74ch">{html.escape(s)}</p>{E}')
 

@@ -243,6 +243,14 @@ jobs:
       - name: "Answers: FAQ + FAQPage schema on every ticker hub"
         run: python build_ticker_faq.py
 
+      # GSC: every non-branded click ever earned came from a drug-name query; two of the three
+      # had no page. This is the surface for the queries we can prove convert.
+      - name: "Drug pages (/drug/{name}) from dataset + decisions archive"
+        run: python build_drug_pages.py
+
+      - name: "Noindex empty calendar months (both directions)"
+        run: python noindex_empty_months.py
+
       - name: "Answer-first lede above every hub table"
         run: python build_hub_lede.py
 

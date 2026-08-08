@@ -43,7 +43,7 @@ BASE = "https://www.pdufa.bio"
 SKIP_DIRS = {"api", "fonts", ".well-known", "_next", "assets", "img", "images"}
 NOINDEX = re.compile(r'name="robots"[^>]*content="[^"]*noindex', re.I)
 SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired path segment
-                      r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding)\b'
+                      r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding|changelog)\b'
                       r'|\.bak|\.tmp', re.I)
 
 # UTC, not local. The timestamp recorded alongside this is UTC, and CI runs UTC, so a local

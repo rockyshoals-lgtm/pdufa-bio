@@ -1,0 +1,337 @@
+# -*- coding: utf-8 -*-
+"""build_drug_pages.py -- a page per drug, because drug names are the only queries we convert on.
+
+The GSC click data settles this: over three months, every non-branded click the site earned came
+from a drug-name query -- "deramiocel pdufa", "monalizumab", "miplyffa" -- at 50-100% CTR on one or
+two impressions, and two of those three had NO dedicated page; Google was surfacing something
+adjacent. Meanwhile ~250 impressions on head "pdufa calendar/date" terms produced zero clicks at
+position ~20. The demand we can win is entity demand, and this builds the surface for it.
+
+WHAT GETS A PAGE, AND WHAT DOES NOT
+
+The dataset's name field is not clean: alongside "Cenerimod" it holds "LEVEL-2 readout" (a trial,
+not a drug), "150ug CFA (Elonva) at stimulation day (SD) 1 an" (a truncated protocol description)
+and "Annamycin readout" (a drug plus a descriptor). Publishing /drug/level-2-readout would be
+exactly the junk-page problem the GSC audit says is suppressing our crawl budget, so a validator
+gates every candidate and the build prints what it rejected and why. Descriptors are stripped
+("Annamycin readout" -> Annamycin); strings that do not look like a drug name after cleaning are
+dropped, not repaired into something we would be guessing at.
+
+Every fact on the page is already published elsewhere on the site -- catalyst rows from the
+dataset, outcomes from the decisions archive -- so these pages introduce no new claims, only a new
+door. Each links its sources: the ticker hub, the event page, the decision page.
+
+Idempotent: pages are regenerated from scratch each run, and a drug that disappears from the data
+loses its page (a stale drug page asserting an upcoming catalyst that no longer exists would be a
+false claim with a URL).
+
+    python build_drug_pages.py [--dry-run]
+"""
+import argparse, datetime as dt, glob, html, json, os, re, shutil, sys
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SITE = os.path.join(HERE, "pdufa_site_src")
+OUT = os.path.join(SITE, "drug")
+DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
+BASE = "https://www.pdufa.bio"
+
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+# Trailing descriptors that name an EVENT about the drug, not the drug.
+#
+# NO acronym group in here. The first version had (?:[A-Z]{2,6}\s+)? to strip trial acronyms, and
+# because the whole pattern ran under re.I that character class matched lowercase word ENDINGS:
+# "anifrolumab readout" lost "olumab readout" and published /drug/anifr; "Clinical readout" became
+# /drug/cl. Five garbage pages from one careless flag. Trial-name tails are handled by the CORE
+# reduction instead, which never removes characters from inside a word.
+DESCRIPTOR = re.compile(
+    r"\s*(?:Phase\s+[0-9][ab]?(?:/[0-9][ab]?)?\s*)?"
+    r"(?:readout|topline|data|results?|interim|update|dose\s*\d*)\s*$", re.I)
+
+# Words that are trial names or generic study vocabulary, not drugs. LEVEL-2 and REGAL are trials;
+# "VGX-3100" and "A-101" are drugs; the difference a regex can see is that trial names are built on
+# ordinary English words. Kept small and explicit rather than clever.
+TRIAL_WORDS = {"level", "regal", "hope", "reset", "glow", "vanquish", "luminous", "clinical",
+               "combined", "interim", "topline", "open-label", "pivotal", "registrational"}
+
+# Hard rejections: strings that are trial names, dosing protocols or sentence fragments.
+JUNK = re.compile(
+    r"\breadout\b|\btopline\b|\bstimulation\b|\bday\s*\(|\bSD\)|μg|\bmg\b|\blow dose\b"
+    r"|\bhigh dose\b|\bcohort\b|\barm\b|\bweek \d|\bn=\d|\bvs\.?\b|\bplus\b.*\bplus\b", re.I)
+
+
+CORE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9'\u2019./-]*(?:\s+[A-Za-z0-9][A-Za-z0-9'\u2019./-]*)?)"
+                  r"(\s*\([^()]{2,45}\))?")
+
+
+def clean_name(raw):
+    """The drug's CORE name, or None if this string does not confidently name a drug.
+
+    Core means "Brand (generic)" or just the name -- one or two words plus an optional
+    parenthetical. Everything after that is trial names, dose arms and indication acronyms:
+    "Deramiocel (CAP-1002) HOPE-2" and "Deramiocel (CAP-1002) CTGTAC DMD" are the same drug, and
+    the first run gave it two pages because the tails differ. Reducing to the core both dedupes
+    and rescues names truncated mid-sentence at source ("Ameluz (aminolevulinic acid
+    hydrochloride) topical gel in co" -> the brand form), which is better than rejecting a real
+    drug because its row carried a broken tail.
+    """
+    s = re.sub(r"\s+", " ", str(raw or "")).strip(" -:\u2013")
+    prev = None
+    while s != prev:
+        prev = s
+        s = DESCRIPTOR.sub("", s).strip(" -:\u2013")
+    m = CORE.match(s)
+    if not m:
+        return None
+    paren = m.group(2) or ""
+    # A parenthetical in ALL CAPS is an advisory-committee or trial acronym riding along with the
+    # name -- "Deramiocel (CTGTAC)" is Deramiocel at a CTGTAC meeting, not a drug called that. Drop
+    # it so the entry merges with the drug's other rows instead of spawning a second page.
+    inner = paren.strip(" ()")
+    if inner and inner.isupper() and len(inner) >= 4 and "-" not in inner:
+        paren = ""
+    s = (m.group(1) + paren).strip()
+    first = re.split(r"[\s(-]", s, maxsplit=1)[0].lower()
+    if first in TRIAL_WORDS or s.lower() in TRIAL_WORDS:
+        return None
+    if s.isdigit() or len(re.sub(r"[^A-Za-z0-9]", "", s)) < 3:
+        return None
+    if not (2 <= len(s) <= 70):
+        return None
+    if JUNK.search(s):
+        return None
+    if s.count("(") != s.count(")"):
+        return None
+    # Articles and prepositions as the first WORD mean a sentence fragment, but the boundary must
+    # be whitespace: \b after "A" also matches "A-101", which is a real drug candidate and was
+    # falsely rejected on the first run.
+    if re.match(r"^(?:the|a|an|in|for|with)\s", s, re.I):
+        return None
+    return s
+
+
+def slugify(name):
+    s = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    return s[:60].rstrip("-")
+
+
+def pretty(d, dp="day"):
+    y, m, day = int(d[:4]), int(d[5:7]), int(d[8:10])
+    if dp == "day":
+        return f"{MONTHS[m - 1]} {day}, {y}"
+    if dp == "month":
+        return f"{MONTHS[m - 1]} {y}"
+    return f"Q{(m - 1) // 3 + 1} {y}"
+
+
+def esc(s):
+    return html.escape(str(s or ""), quote=True)
+
+
+SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{canon}">
+<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
+<link rel="preload" href="/fonts/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/IBMPlexMono-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{{--bg:#0b1017;--card:#111826;--line:#1f2a3c;--mut2:#8fa3bd;--gold:#e8b44c}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:#dfe9f7;
+font:15px/1.65 "IBM Plex Mono",ui-monospace,monospace}}
+.wrap{{max-width:880px;margin:0 auto;padding:18px 16px 60px}}
+.top{{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}}
+.brand{{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:20px;color:#fff;
+text-decoration:none}}.brand b{{color:var(--gold)}}
+.nav a{{color:var(--mut2);text-decoration:none;margin-left:14px;font-size:13px}}
+h1{{font-family:"Space Grotesk",sans-serif;font-size:26px;margin:0 0 6px}}
+h2{{font-family:"Space Grotesk",sans-serif;font-size:17px;margin:26px 0 8px}}
+.row{{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding:11px 0;
+border-top:1px solid var(--line);color:inherit;text-decoration:none}}
+.row:hover{{background:#141d2d}}
+.t{{font-weight:600}}.d{{color:var(--mut2);font-size:13.5px}}
+.ok{{color:#46d17f}}.bad{{color:#ff8f6b}}
+a.lit{{color:#9ec5ff}}
+.legal{{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--mut2);
+font-size:12px;line-height:1.7}}
+</style></head><body><div class="wrap">
+<div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a>
+<div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a>
+<a href="/readouts">Readouts</a></div></div>
+<h1>{h1}</h1>
+{body}
+<div class="legal">Facts and dates only; not investment advice. Verify against primary FDA, SEC
+and company filings. pdufa.bio is not affiliated with the FDA.</div>
+</div></body></html>
+"""
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+
+    rows = json.loads(re.search(r"export default (\[.*\])",
+                                open(DATASET, encoding="utf-8", errors="replace").read(),
+                                re.S).group(1))
+
+    # outcome facts from the decisions archive
+    arch = {}
+    darch = os.path.join(SITE, "decisions", "index.html")
+    if os.path.exists(darch):
+        dh = open(darch, encoding="utf-8", errors="replace").read()
+        for tk, day, frag in re.findall(
+                r'<a class="row" href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"[^>]*>(.*?)</a>',
+                dh, re.S):
+            txt = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", frag))).strip()
+            outcome = ("Approved" if re.search(r"\bapproved\b", txt, re.I)
+                       else "CRL" if re.search(r"\bcrl\b|complete response", txt, re.I) else "")
+            arch.setdefault((tk, day), outcome)
+
+    drugs = {}
+    rejected = []
+    for r in rows:
+        name = clean_name(r.get("name"))
+        if not name:
+            if str(r.get("name") or "").strip():
+                rejected.append(str(r.get("name"))[:60])
+            continue
+        # Key on the brand token(s) alone, so "Deramiocel" and "Deramiocel (CAP-1002)" are one
+        # page. The parenthetical stays in the DISPLAY name -- and the form whose parenthetical
+        # looks like a generic (has lowercase) beats a bare name, because "Brand (generic)" is the
+        # form both searchers and the FDA use.
+        slug = slugify(re.split(r"\s*\(", name)[0])
+        if not slug:
+            continue
+        d = drugs.setdefault(slug, {"name": name, "rows": []})
+        cur_has = "(" in d["name"] and re.search(r"\([^)]*[a-z]", d["name"])
+        new_has = "(" in name and re.search(r"\([^)]*[a-z]", name)
+        if (new_has and not cur_has) or (bool(new_has) == bool(cur_has) and len(name) > len(d["name"])):
+            d["name"] = name
+        d["rows"].append(r)
+
+    # regenerate from scratch: a vanished drug must lose its page
+    if not a.dry_run:
+        if os.path.isdir(OUT):
+            shutil.rmtree(OUT)
+        os.makedirs(OUT, exist_ok=True)
+
+    today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    written = 0
+    index_items = []
+
+    for slug, d in sorted(drugs.items()):
+        name = d["name"]
+        rs = sorted(d["rows"], key=lambda r: r.get("d") or "")
+        tks = sorted({str(r.get("t") or "").upper() for r in rs if r.get("t")})
+        comps = sorted({r.get("company") for r in rs if r.get("company")})
+        inds = sorted({(r.get("_d") or {}).get("indication") for r in rs
+                       if (r.get("_d") or {}).get("indication")})
+
+        events = []
+        n_dec = 0
+        for r in rs:
+            day = r.get("d") or ""
+            dp = r.get("dp") or "day"
+            typ = str(r.get("type") or "catalyst")
+            typ = typ.upper() if typ.lower() == "pdufa" else typ
+            tk = str(r.get("t") or "").upper()
+            outcome = arch.get((tk, day), "")
+            decided = str(r.get("st") or "").lower() == "decided"
+            if decided and not outcome:
+                outcome = "decided"
+            if outcome and outcome not in ("decided",):
+                n_dec += 1
+            when = pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day
+            badge = (f' <span class="ok">&#10003; Approved</span>' if outcome == "Approved"
+                     else f' <span class="bad">CRL</span>' if outcome == "CRL" else "")
+            href = (f"/fda-decision/{tk}-{day}" if outcome in ("Approved", "CRL")
+                    else str(r.get("url") or f"/ticker/{tk}"))
+            events.append(
+                f'<a class="row" href="{esc(href)}"><span class="t">{esc(typ)} &middot; '
+                f'{esc(when)}{badge}</span><span class="d">{esc(tk)}</span></a>')
+
+        if not events:
+            continue
+
+        # answer-first lede, from the same rows the table shows
+        up = [r for r in rs if (r.get("d") or "") >= today
+              and str(r.get("st") or "").lower() != "decided"]
+        lede = f"{name} "
+        if comps:
+            lede += f"is a {esc(', '.join(comps[:2]))} program"
+            if inds:
+                lede += f" in {esc(inds[0])}"
+            lede += ". "
+        elif inds:
+            lede += f"is in development for {esc(inds[0])}. "
+        if up:
+            n = up[0]
+            lede += (f"Its next catalyst is a {esc(str(n.get('type') or 'catalyst'))} "
+                     f"{'on' if (n.get('dp') or 'day') == 'day' else 'in'} "
+                     f"{esc(pretty(n['d'], n.get('dp') or 'day'))}. ")
+        if n_dec:
+            lede += f"{n_dec} FDA decision{'s' if n_dec != 1 else ''} on record below. "
+        lede += "Every date links its source."
+
+        hubs = " &middot; ".join(
+            f'<a class="lit" href="/ticker/{esc(t)}">{esc(t)} catalyst hub</a>' for t in tks
+            if os.path.isdir(os.path.join(SITE, "ticker", t)))
+
+        body = (f'<p style="color:var(--mut2);max-width:72ch">{lede}</p>'
+                + (f"<p>{hubs}</p>" if hubs else "")
+                + "<h2>Catalyst history</h2>" + "".join(events))
+
+        title = f"{name}: FDA Decision Dates &amp; Catalyst History | pdufa.bio"
+        if len(html.unescape(title)) > 100:
+            title = f"{name} FDA Catalysts | pdufa.bio"
+        # Clause-fitting, not slicing: desc[:158] cut two long drug names mid-word on the first
+        # run ("...links its primary sourc"), which is the exact defect test_meta_lengths exists
+        # to block. Clauses are dropped whole, never cut.
+        desc = f"{name}: FDA catalyst dates and outcomes."
+        for extra in ((f" For {', '.join(comps[:1])}." if comps else ""),
+                      " Every date and decision links its primary source.",
+                      " Facts only."):
+            if extra and len(desc) + len(extra) <= 158:
+                desc += extra
+
+        page = SHELL.format(title=esc(html.unescape(title)), desc=esc(desc),
+                            canon=f"{BASE}/drug/{slug}", h1=esc(name), body=body)
+        if not a.dry_run:
+            os.makedirs(os.path.join(OUT, slug), exist_ok=True)
+            open(os.path.join(OUT, slug, "index.html"), "w", encoding="utf-8").write(page)
+        written += 1
+        index_items.append((name, slug, len(events)))
+
+    # the index page: the crawl path in
+    items = "".join(
+        f'<a class="row" href="/drug/{esc(s)}"><span class="t">{esc(n)}</span>'
+        f'<span class="d">{c} event{"s" if c != 1 else ""}</span></a>'
+        for n, s, c in sorted(index_items, key=lambda x: x[0].lower()))
+    idx_lede = (f"This page lists {written} drugs with an FDA decision date or clinical readout "
+                f"we track, each with its full catalyst history and sourced outcomes.")
+    idx = SHELL.format(
+        title="FDA Drug Decision Index: Every Drug We Track | pdufa.bio",
+        desc=esc(idx_lede[:158]),
+        canon=f"{BASE}/drug", h1="Drugs we track",
+        body=f'<p style="color:var(--mut2);max-width:72ch">{esc(idx_lede)}</p>' + items)
+    if not a.dry_run:
+        open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(idx)
+
+    print(f"drug pages written: {written} (+ index)")
+    print(f"rejected as not-a-drug-name: {len(rejected)}")
+    for r in rejected[:8]:
+        print(f"   {r!r}")
+    if a.dry_run:
+        print("DRY RUN -- nothing written.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
