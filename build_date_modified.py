@@ -40,7 +40,7 @@ Runs AFTER build_sitemap.py, which is what computes the dates it reads.
 
     python build_date_modified.py [--dry-run]
 """
-import argparse, glob, json, os, re, sys
+import argparse, glob, json, os, re, subprocess, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -61,11 +61,62 @@ PAGE_TYPES = {"WebPage", "CollectionPage", "ItemPage", "Article", "NewsArticle",
               "FAQPage", "AboutPage"}
 
 
+_FIRST = None
+
+
+def first_published():
+    """path -> ISO date of the commit that FIRST added it.
+
+    A real publication date, not a guess. The audit asked for datePublished and the temptation is
+    to reach for something plausible; the honest answer is already in git, which knows exactly when
+    each page first appeared. One `git log --diff-filter=A` walk gets all of them.
+
+    Pages never committed (a brand-new page in this very build) get nothing rather than today's
+    date, because "published today" would be a claim we make about a file that has not shipped yet.
+    """
+    global _FIRST
+    if _FIRST is not None:
+        return _FIRST
+    out = {}
+    try:
+        r = subprocess.run(["git", "log", "--diff-filter=A", "--format=@%h %cs", "--name-only",
+                            "--", "pdufa_site_src"],
+                           cwd=HERE, capture_output=True, text=True, timeout=180)
+        rows, cur = [], None
+        for line in r.stdout.splitlines():
+            if line.startswith("@"):
+                sha, _, day = line[1:].strip().partition(" ")
+                cur = (sha, day)
+            elif line.endswith(".html") and cur:
+                rows.append((line, cur))
+
+        # The repo's initial import added 461 pages in one commit ("pdufa.bio site + pipeline",
+        # 2026-07-25). For those, git records when the REPOSITORY was created, not when the page
+        # was published, and the site may well have been live before the import. Publishing that
+        # date as datePublished would be asserting a fact about 461 pages that we cannot defend
+        # from any source, which is the one thing this site does not do. Pages created after the
+        # import have a real, checkable creation date, and only those get one.
+        # Exclude by the repo's start DATE, not just its first commit. The import was spread over
+        # several commits on 2026-07-25, so keying on one sha still left 188 pages claiming that
+        # day. Any page whose git creation falls on the day the repository itself began has an
+        # unknowable real publication date, and gets none.
+        import_day = rows[-1][1][1] if rows else None
+        for path, (sha, day) in rows:
+            if day == import_day:
+                out.pop(path, None)
+                continue
+            out[path] = day              # newest first, so the last write wins = the oldest add
+    except Exception as e:
+        print(f"  note: git history unavailable ({type(e).__name__}); no datePublished emitted.")
+    _FIRST = out
+    return out
+
+
 def norm(u):
     return re.sub(r"/+$", "", str(u or "").strip().lower())
 
 
-def stamp_nodes(obj, date, canon, changed, depth=0):
+def stamp_nodes(obj, date, canon, changed, pub=None, depth=0, seen=None):
     """Stamp only nodes that mean THIS page.
 
     The first version stamped every page-type node it found, which on /calendar meant 14 nested
@@ -80,7 +131,7 @@ def stamp_nodes(obj, date, canon, changed, depth=0):
     """
     if isinstance(obj, list):
         for o in obj:
-            stamp_nodes(o, date, canon, changed, depth + 1)
+            stamp_nodes(o, date, canon, changed, pub, depth + 1, seen)
         return
     if not isinstance(obj, dict):
         return
@@ -95,8 +146,24 @@ def stamp_nodes(obj, date, canon, changed, depth=0):
             is_self = norm(u) == norm(canon)
 
         if is_self:
+            # Record that this page HAS a node of its own, separately from whether we had to
+            # change it. Conflating the two meant a page whose node was already correct looked
+            # like a page with no node, and got a second, duplicate one bolted on.
+            if seen is not None:
+                seen.append(True)
             if obj.get("dateModified") != date:
                 obj["dateModified"] = date
+                changed.append(True)
+            if pub:
+                if obj.get("datePublished") != pub:
+                    obj["datePublished"] = pub
+                    changed.append(True)
+            elif "datePublished" in obj:
+                # We can no longer defend this value, so it comes off. An earlier run wrote the
+                # repo-import date onto 188 pages before that rule existed, and a writer with no
+                # removal path leaves bad data on the page forever: the same omission that left 14
+                # wrong dateModified stamps in place a few commits ago.
+                del obj["datePublished"]
                 changed.append(True)
         elif "dateModified" in obj:
             # A modification date on a node describing a DIFFERENT url. A listing page cannot know
@@ -109,7 +176,7 @@ def stamp_nodes(obj, date, canon, changed, depth=0):
 
     for v in obj.values():
         if isinstance(v, (dict, list)):
-            stamp_nodes(v, date, canon, changed, depth + 1)
+            stamp_nodes(v, date, canon, changed, pub, depth + 1, seen)
 
 
 def main():
@@ -117,7 +184,13 @@ def main():
     a = ap.parse_args()
 
     try:
-        state = {k: v.get("date") for k, v in json.load(open(STATE, encoding="utf-8")).items()}
+        raw = json.load(open(STATE, encoding="utf-8"))
+        # Prefer the exact moment the content changed, recorded by build_sitemap.py at the instant
+        # the hash moved. Pages that have not changed since that was introduced have only a date,
+        # and a date is what they get: back-filling a clock time we never observed would be
+        # inventing precision, which is the one thing this site cannot do.
+        state = {k: (v.get("ts") or v.get("date")) for k, v in raw.items()}
+        day_of = {k: v.get("date") for k, v in raw.items()}
     except Exception:
         print("  no _sitemap_lastmod.json; run build_sitemap.py first."); return 0
 
@@ -126,6 +199,10 @@ def main():
     for p in sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True)):
         rel = "pdufa_site_src/" + os.path.relpath(p, SITE).replace("\\", "/")
         date = state.get(rel)
+        pub = first_published().get(rel)
+        # A page cannot have been published after it was last modified.
+        if pub and day_of.get(rel) and pub > day_of[rel]:
+            pub = None
         if not date:
             continue                      # not in the sitemap: noindex, or not a real page
         doc = open(p, encoding="utf-8", errors="replace").read()
@@ -134,6 +211,14 @@ def main():
             continue
         original = doc
         marker_payload = []
+
+        # Work from the page WITHOUT our own block. The generated WebPage node lives inside DMOD,
+        # so leaving it in place made the script eat its own output: the stamper would update that
+        # node, count it as a hit, skip regenerating it, and then overwrite the whole block with an
+        # empty payload -- deleting the only node carrying the date. /calendar and /decisions both
+        # lost their dateModified exactly once this way. Stripping first means the decision below
+        # is made about the page's real schema, not about what we wrote last night.
+        doc = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
 
         # 1. schema.org dateModified on the node that means this page
         canon_m = re.search(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', doc)
@@ -146,10 +231,9 @@ def main():
             except Exception:
                 return m.group(0)         # leave anything unparseable exactly as it is
             changed = []
-            stamp_nodes(data, date, canon, changed)
+            stamp_nodes(data, date, canon, changed, pub, 0, hit)
             if not changed:
                 return m.group(0)
-            hit.append(True)
             return m.group(1) + json.dumps(data, separators=(",", ":")) + m.group(3)
 
         doc = LD.sub(repl, doc)
@@ -165,6 +249,7 @@ def main():
             if can:
                 node = {"@context": "https://schema.org", "@type": "WebPage",
                         "url": can.group(1), "dateModified": date,
+                        **({"datePublished": pub} if pub else {}),
                         "isPartOf": {"@type": "WebSite", "name": "pdufa.bio",
                                      "url": "https://www.pdufa.bio/"}}
                 if ttl:
@@ -182,9 +267,7 @@ def main():
         block = (B + f'<meta property="og:updated_time" content="{date}">'
                  + f'<meta property="article:modified_time" content="{date}">'
                  + "".join(marker_payload) + E)
-        if B in doc:
-            doc = doc.split(B, 1)[0] + block + doc.split(E, 1)[1]
-        elif "</head>" in doc:
+        if "</head>" in doc:
             i = doc.index("</head>")
             doc = doc[:i] + block + doc[i:]
         if B in doc:

@@ -39,7 +39,8 @@ def main():
     except Exception:
         print("  SKIP: no _sitemap_lastmod.json yet"); return 0
 
-    today = dt.date.today().isoformat()
+    # Same clock as the builder: UTC.
+    today = dt.datetime.now(dt.timezone.utc).date().isoformat()
     missing, wrong, future = [], [], []
     checked = 0
 

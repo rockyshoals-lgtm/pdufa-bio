@@ -46,7 +46,11 @@ SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired pat
                       r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding)\b'
                       r'|\.bak|\.tmp', re.I)
 
-TODAY = dt.date.today().isoformat()
+# UTC, not local. The timestamp recorded alongside this is UTC, and CI runs UTC, so a local
+# build using a local date produced pages whose ts (04:10 UTC on the 8th) sat in the "future"
+# relative to their own date (the 7th, local). One clock for the whole pipeline removes a class of
+# bug that only ever shows up in the evening.
+TODAY = dt.datetime.now(dt.timezone.utc).date().isoformat()
 _GIT_DATES = None
 _STATE = None
 STATE_F = os.path.join(HERE, "_sitemap_lastmod.json")
@@ -100,7 +104,7 @@ BOILER = [
     # while nothing real changed. That is the same runaway the nav sweep and the freshness stamp
     # each caused once.
     re.compile(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", re.S),
-    re.compile(r'"dateModified"\s*:\s*"[^"]*",?'),
+    re.compile(r'"date(?:Modified|Published)"\s*:\s*"[^"]*",?'),
     re.compile(r'<style id="(navcanon|navpolish|typesys)">.*?</style>', re.S),
     re.compile(r"<nav[^>]*>.*?</nav>", re.S),
     re.compile(r'<div class="nav">.*?</div>', re.S),
@@ -138,16 +142,34 @@ def last_changed(rel, full, html):
     h = content_hash(html)
     prev = st.get(key)
 
+    ts = prev.get("ts") if prev else None
+    # Repair pairs written before the pipeline moved to UTC: a ts whose own date does not match the
+    # stored date is internally inconsistent, and publishing it makes the page claim a moment that
+    # contradicts its own day. Drop the ts and fall back to the date, which is the value we can
+    # still stand behind. Self-heals on the next real content change.
+    if ts and str(ts)[:10] != str(prev.get("date") or "")[:10]:
+        ts = None
+
     if prev and prev.get("hash") == h:
         d = prev.get("date") or git_dates().get(key) or TODAY
     elif prev:
         d = TODAY                                   # a real content change
+        # The exact moment we noticed it. Recorded ONLY here, at the instant the hash moves, which
+        # is what makes a precise timestamp safe: an unchanged page keeps the timestamp it already
+        # had, so nothing churns and no page ever claims to be fresher than it is.
+        ts = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     else:
         d = (git_dates().get(key)
              or dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d"))
+        # Deliberately no ts for a page seen for the first time. We know the day it last changed,
+        # from git, but not the hour, and back-filling "now" for 473 pages at once would publish a
+        # single false burst of freshness across the whole site. Precision accrues honestly: a page
+        # gets a timestamp the first time it actually changes after this.
 
     d = min(d, TODAY)             # a sitemap claiming tomorrow is a reason to distrust all of it
     st[key] = {"hash": h, "date": d}
+    if ts:
+        st[key]["ts"] = ts
     return d
 
 
