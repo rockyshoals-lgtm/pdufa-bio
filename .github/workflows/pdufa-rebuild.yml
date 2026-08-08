@@ -159,9 +159,11 @@ jobs:
         if: steps.sls.outcome == 'success'
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: |
           python build_sls_hub.py
           python build_sls_deepdive.py
+          python build_sls_ownership.py
 
       - name: "SLS: flag for manual review (material filing found)"
         if: steps.sls.outcome != 'success'
