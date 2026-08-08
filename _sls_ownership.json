@@ -1,0 +1,60 @@
+{
+ "as_of": "2026-08-07",
+ "filings": [
+  {
+   "accession": "0000093751-26-000539",
+   "filer": "STATE STREET CORP",
+   "filer_cik": "93751",
+   "shares": 12996558.0,
+   "percent": 7.0,
+   "sole_voting": 0.0,
+   "shared_voting": 12677559.0,
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000009375126000539/primary_doc.xml",
+   "date": "2026-08-07"
+  },
+  {
+   "accession": "0002100119-26-001315",
+   "filer": "VANGUARD CAPITAL MANAGEMENT LLC",
+   "filer_cik": "2100119",
+   "shares": 9666278.0,
+   "percent": 5.19,
+   "sole_voting": 1400173.0,
+   "shared_voting": 0.0,
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000210011926001315/primary_doc.xml",
+   "date": "2026-07-31"
+  },
+  {
+   "accession": "0002012383-26-001466",
+   "filer": "BlackRock, Inc.",
+   "filer_cik": "2012383",
+   "shares": 12136331.0,
+   "percent": 6.8,
+   "sole_voting": 11966938.0,
+   "shared_voting": 0.0,
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000201238326001466/primary_doc.xml",
+   "date": "2026-04-24"
+  },
+  {
+   "accession": "0001193125-26-053508",
+   "filer": "Anson Funds Management LP",
+   "filer_cik": "1193125",
+   "shares": 7481178.0,
+   "percent": 4.9,
+   "sole_voting": 0.0,
+   "shared_voting": 7481178.0,
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000119312526053508/primary_doc.xml",
+   "date": "2026-02-17"
+  },
+  {
+   "accession": "0000902664-26-000615",
+   "filer": "HIGHBRIDGE CAPITAL MANAGEMENT LLC",
+   "filer_cik": "902664",
+   "shares": 6514658.0,
+   "percent": 3.7,
+   "sole_voting": 6514658.0,
+   "shared_voting": 0.0,
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000090266426000615/primary_doc.xml",
+   "date": "2026-01-30"
+  }
+ ]
+}
