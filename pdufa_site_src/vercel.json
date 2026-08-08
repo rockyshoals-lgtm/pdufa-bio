@@ -391,6 +391,11 @@
    "source": "/ticker/VKTX",
    "destination": "/vktx",
    "permanent": true
+  },
+  {
+   "source": "/ticker/SLS",
+   "destination": "/sls",
+   "permanent": true
   }
  ],
  "headers": [

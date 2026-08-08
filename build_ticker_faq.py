@@ -39,6 +39,10 @@ DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 STATS = os.path.join(HERE, "runup_study_stats.json")
 B, E = "<!--TICKERFAQ:BEGIN-->", "<!--TICKERFAQ:END-->"
 
+# Company deep-dives that live at the site root rather than under /ticker/.
+# directory -> ticker symbol
+STANDALONE = {"vktx": "VKTX", "sls": "SLS"}
+
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
 
@@ -81,15 +85,39 @@ def faqs(tk, company, rows, decisions, runup, cohort):
         conf = {"day": "a confirmed date",
                 "month": "known to the month only",
                 "quarter": "known to the quarter only"}.get(n.get("dp") or "day", "")
-        extra = ""
-        if len(upcoming) > 1:
-            extra = f" {len(upcoming)} catalysts are scheduled in total."
+
+        # Everything sharing the earliest date, not just whichever sorted first. SELLAS has its
+        # Phase 2 AML readout and its REGAL Phase 3 both guided to Q4 2026, and the tiebreak was
+        # arbitrarily naming the Phase 2 -- so the answer buried the Phase 3 that "when is the SLS
+        # phase 3 readout", the People-Also-Ask question this page exists to win, is asking about.
+        same = [r for r in upcoming if r["d"] == n["d"]]
+
+        def label(r):
+            # "PDUFA" is an acronym and looks illiterate lowercased. This text is written to be
+            # lifted verbatim into a search result or an assistant answer, so the copy has to hold
+            # up out of context.
+            raw = str(r.get("type") or "catalyst")
+            typ = raw.upper() if raw.lower() == "pdufa" else raw.lower()
+            nm = r.get("name") or "an undisclosed program"
+            return nm if typ.lower() in nm.lower() else f"{nm} ({typ})"
+
+        if len(same) > 1:
+            body = (f"{company} has {len(same)} catalysts guided to that date: "
+                    f"{'; '.join(label(r) for r in same)}. That date is {conf}.")
+        else:
+            # Not "{company}'s": most of these names end in s ("Viking Therapeutics's"), and the
+            # possessive reads badly for exactly the sentence most likely to be quoted.
+            body = f"The next catalyst for {company} is {label(n)}. That date is {conf}."
+
+        rest = len(upcoming) - len(same)
+        extra = ("" if not rest else
+                 f" One further catalyst is scheduled after it." if rest == 1 else
+                 f" {rest} further catalysts are scheduled after it.")
         out.append((
             f"When is the next FDA decision or readout for {company} ({tk})?",
-            f"{when}. {company} has a {n.get('type', 'catalyst')} for "
-            f"{n.get('name') or 'an undisclosed program'}, and that date is {conf}."
-            f"{extra} Dates are taken from FDA notices, company filings or ClinicalTrials.gov, and "
-            f"we do not publish a specific day when the source only gives a month or a quarter."))
+            f"{when}. {body}{extra} Dates are taken from FDA notices, company filings or "
+            f"ClinicalTrials.gov, and we do not publish a specific day when the source only gives "
+            f"a month or a quarter."))
     else:
         out.append((
             f"When is the next FDA decision for {company} ({tk})?",
@@ -192,12 +220,20 @@ def main():
         v.sort(key=lambda x: x[1], reverse=True)
 
     pages = sorted(glob.glob(os.path.join(SITE, "ticker", "*", "index.html")))
+
+    # The two flagship deep-dives do not live under /ticker/. /vktx is 301'd to from /ticker/VKTX
+    # and /sls is linked from the nav, so the glob above missed both -- which meant the single most
+    # valuable page we own for "when is the SLS phase 3 readout" (Google's own People-Also-Ask
+    # question, quoted in the competitive brief) had no FAQPage on it at all.
+    pages += [os.path.join(SITE, d, "index.html") for d in STANDALONE
+              if os.path.exists(os.path.join(SITE, d, "index.html"))]
     if a.limit:
         pages = pages[:a.limit]
 
     n = 0
     for p in pages:
-        tk = os.path.basename(os.path.dirname(p))
+        d = os.path.basename(os.path.dirname(p))
+        tk = STANDALONE.get(d, d.upper())
         doc = open(p, encoding="utf-8", errors="replace").read()
 
         # Pull the measured run-up sentence straight off the page, so the FAQ can never disagree

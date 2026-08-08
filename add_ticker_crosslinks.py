@@ -36,8 +36,25 @@ TARGETS = (["calendar/index.html", "decisions/index.html", "decisions/approvals/
               for p in glob.glob(os.path.join(SITE, "calendar", "*", "*", "index.html"))])
 
 
+def redirect_map():
+    """/ticker/X -> wherever vercel.json actually sends it.
+
+    Two companies (VKTX, SLS) have a richer deep-dive at the site root, and /ticker/<T> 301s to it.
+    Linking at the redirect wastes the hop and, worse, spreads our internal links across two URLs
+    for one company, which is the exact authority-splitting the competitive brief says to avoid.
+    Read the map from the config so the links and the redirects can never disagree."""
+    try:
+        import json
+        cfg = json.load(open(os.path.join(SITE, "vercel.json"), encoding="utf-8"))
+        return {r["source"]: r["destination"] for r in cfg.get("redirects", [])
+                if str(r.get("source", "")).startswith("/ticker/")}
+    except Exception:
+        return {}
+
+
 def hubs_ticker(tk):
-    return os.path.isdir(os.path.join(SITE, "ticker", tk))
+    return (os.path.isdir(os.path.join(SITE, "ticker", tk))
+            or ("/ticker/" + tk) in redirect_map())
 
 
 def main():
@@ -62,8 +79,9 @@ def main():
         if not live:
             continue
 
+        rmap = redirect_map()
         links = "".join(
-            f'<a href="/ticker/{t}" style="display:inline-block;padding:3px 8px;margin:2px;'
+            f'<a href="{rmap.get("/ticker/" + t, "/ticker/" + t)}" style="display:inline-block;padding:3px 8px;margin:2px;'
             f'border:1px solid var(--line);border-radius:7px;font-size:12.5px;'
             f'text-decoration:none" class="lit">{html.escape(t)}</a>' for t in live)
 
