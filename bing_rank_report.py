@@ -35,7 +35,11 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 HISTORY = os.path.join(HERE, "_bing_rank_history.json")
 BASE = "https://ssl.bing.com/webmaster/api.svc/json"
-SITE = "https://www.pdufa.bio"
+# Trailing slash is REQUIRED and is not cosmetic. Bing matches siteUrl against the verified
+# property string exactly: "https://www.pdufa.bio" returns an empty result set with HTTP 200 and no
+# error, which is indistinguishable from "no data yet". The property registered in Webmaster Tools
+# is "https://www.pdufa.bio/", confirmed via GetUserSites.
+SITE = "https://www.pdufa.bio/"
 
 
 def call(method, key, site, timeout=45):
