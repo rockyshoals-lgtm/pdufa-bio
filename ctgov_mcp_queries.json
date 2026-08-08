@@ -1,0 +1,5773 @@
+[
+  {
+    "drug_name": "hbi10101",
+    "brand": "NXC-201",
+    "indication": "relapsed/refractory multiple myeloma and relapsed/refractory",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      218,
+      230,
+      339,
+      535,
+      545,
+      1152,
+      1175,
+      1396,
+      1646
+    ],
+    "n_events": 9
+  },
+  {
+    "drug_name": "zanidatamab-hrii",
+    "brand": "Ziihera",
+    "indication": "HER2-amplified biliary tract cancers",
+    "phase": "Phase 2",
+    "event_indices": [
+      377,
+      378,
+      379,
+      887,
+      893,
+      894,
+      1619,
+      1621,
+      1622
+    ],
+    "n_events": 9
+  },
+  {
+    "drug_name": "enhertu",
+    "brand": null,
+    "indication": "Multiple HER2-expressing advanced solid tumors",
+    "phase": "Phase 2",
+    "event_indices": [
+      270,
+      273,
+      375,
+      459,
+      460,
+      567,
+      826,
+      827
+    ],
+    "n_events": 8
+  },
+  {
+    "drug_name": "mb-106",
+    "brand": null,
+    "indication": "B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      402,
+      403,
+      477,
+      478,
+      672,
+      673,
+      916,
+      921
+    ],
+    "n_events": 8
+  },
+  {
+    "drug_name": "cdx-0159",
+    "brand": "Barzolvolimab",
+    "indication": "Chronic spontaneous urticaria (CSU)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      7,
+      179,
+      392,
+      595,
+      888,
+      1034,
+      1480
+    ],
+    "n_events": 7
+  },
+  {
+    "drug_name": "sotatercept-csrk",
+    "brand": "WINREVAIR",
+    "indication": "Pulmonary arterial hypertension (PAH)",
+    "phase": "Phase 3",
+    "event_indices": [
+      113,
+      271,
+      1115,
+      1227,
+      1425,
+      1624
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "anzutresgene autoleucel, ima203",
+    "brand": "Anzu-cel",
+    "indication": "Melanoma",
+    "phase": "Phase 1b",
+    "event_indices": [
+      114,
+      327,
+      603,
+      1051,
+      1390,
+      1668
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "axatilimab-csfr",
+    "brand": "Niktimvo",
+    "indication": "Chronic Graft versus host disease (cGvHD)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      170,
+      172,
+      453,
+      457,
+      665,
+      666
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "epcoritamab-bysp",
+    "brand": "EPKINLY",
+    "indication": "Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      199,
+      205,
+      211,
+      1501,
+      1720,
+      1721
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "apx3330 oral pill",
+    "brand": null,
+    "indication": "Diabetic Retinopathy (DR) / Macular Edema (DME)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      238,
+      239,
+      424,
+      425,
+      485,
+      487
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "ciltacabtagene autoleucel",
+    "brand": "CARVYKTI",
+    "indication": "Multiple Myeloma",
+    "phase": "Phase 3",
+    "event_indices": [
+      244,
+      245,
+      372,
+      376,
+      683,
+      686
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "cln-081/tas6417",
+    "brand": "Zipalertinib",
+    "indication": "Non-small cell lung cancer",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1023,
+      1226,
+      1251,
+      1355,
+      1380,
+      1499
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "jnj-2113",
+    "brand": "Icotrokinra",
+    "indication": "Moderate-to-severe psoriasis",
+    "phase": "Phase 3",
+    "event_indices": [
+      1102,
+      1103,
+      1261,
+      1263,
+      1574,
+      1576
+    ],
+    "n_events": 6
+  },
+  {
+    "drug_name": "camizestrant",
+    "brand": null,
+    "indication": "Advanced ER-positive Breast Cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      185,
+      1247,
+      1249,
+      1378,
+      1379
+    ],
+    "n_events": 5
+  },
+  {
+    "drug_name": "phvs416",
+    "brand": null,
+    "indication": "Hereditary angioedema - on demand",
+    "phase": "Phase 2",
+    "event_indices": [
+      187,
+      264,
+      395,
+      451,
+      1637
+    ],
+    "n_events": 5
+  },
+  {
+    "drug_name": "ph-762",
+    "brand": null,
+    "indication": "Cutaneous Squamous Cell Carcinoma",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1092,
+      1207,
+      1258,
+      1325,
+      1462
+    ],
+    "n_events": 5
+  },
+  {
+    "drug_name": "ionis-fb-lrx",
+    "brand": null,
+    "indication": "Immunoglobulin A nephropathy (IgAN)",
+    "phase": "Phase 2",
+    "event_indices": [
+      15,
+      16,
+      964,
+      965
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "ker-012",
+    "brand": "Cibotercept",
+    "indication": "Pulmonary arterial hypertension (PAH) and disorders associat",
+    "phase": "Phase 1",
+    "event_indices": [
+      79,
+      1167,
+      1198,
+      1374
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "pemvidutide",
+    "brand": null,
+    "indication": "Metabolic dysfunction-associated steatohepatitis (MASH)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      84,
+      1432,
+      1596,
+      1687
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "iph4102",
+    "brand": "Lacutamab",
+    "indication": "Mycosis Fungoides, S\u00e9zary Syndrome",
+    "phase": "Phase 2",
+    "event_indices": [
+      92,
+      200,
+      406,
+      661
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "dmt310",
+    "brand": "Xyngari(TM)",
+    "indication": "Rosacea",
+    "phase": "Phase 2",
+    "event_indices": [
+      174,
+      385,
+      1284,
+      1302
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "odronextamab",
+    "brand": null,
+    "indication": "Non-Hodgkin Lymphoma (NHL)",
+    "phase": "Phase 2",
+    "event_indices": [
+      208,
+      209,
+      1142,
+      1145
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "glpg5101",
+    "brand": null,
+    "indication": "Relapsed/refractory Non-Hodgkin Lymphoma (rrNHL)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      212,
+      912,
+      1421,
+      1648
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "glpg5201",
+    "brand": null,
+    "indication": "B-cell malignancies, Chronic Lymphocytic Leukemia (CLL) and ",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      249,
+      387,
+      663,
+      816
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "lorundrostat",
+    "brand": null,
+    "indication": "Hypertension",
+    "phase": "Phase 2",
+    "event_indices": [
+      268,
+      1259,
+      1341,
+      1366
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "allo-501/501a + allo-647",
+    "brand": null,
+    "indication": "Large B-cell lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      400,
+      404,
+      1239,
+      1240
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "mt-601",
+    "brand": "Neldaleucel",
+    "indication": "Lymphoma who have failed or are ineligible to receive anti-C",
+    "phase": "Phase 1",
+    "event_indices": [
+      500,
+      677,
+      1188,
+      1484
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "vtx958",
+    "brand": null,
+    "indication": "Plaque psoriasis",
+    "phase": "Phase 2",
+    "event_indices": [
+      596,
+      597,
+      951,
+      952
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "177lu-pnt2002",
+    "brand": null,
+    "indication": "Metastatic Castration-Resistant Prostate Cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      693,
+      698,
+      1014,
+      1015
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "barzolvolimab",
+    "brand": null,
+    "indication": "Chronic inducible urticaria (CIndU), cold urticaria (ColdU) ",
+    "phase": "Phase 2",
+    "event_indices": [
+      717,
+      955,
+      1070,
+      1590
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "tara-002",
+    "brand": null,
+    "indication": "Non-muscle invasive bladder cancer (NMIBC)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      799,
+      1133,
+      1314,
+      1626
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "obefazimod",
+    "brand": null,
+    "indication": "Ulcerative colitis",
+    "phase": "Phase 3",
+    "event_indices": [
+      1459,
+      1502,
+      1529,
+      1585
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "obexelimab",
+    "brand": null,
+    "indication": "Relapsing Multiple Sclerosis (RMS)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1575,
+      1702,
+      1703,
+      1744
+    ],
+    "n_events": 4
+  },
+  {
+    "drug_name": "botensilimab plus balstilimab",
+    "brand": null,
+    "indication": "Relapsed/refractory microsatellite stable colorectal cancer ",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1,
+      295,
+      1313
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "piclidenoson",
+    "brand": null,
+    "indication": "Psoriasis",
+    "phase": "Phase 3",
+    "event_indices": [
+      2,
+      80,
+      429
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "d-plex100",
+    "brand": null,
+    "indication": "Abdominal (soft tissue) sternal surgical site infections",
+    "phase": "Phase 3",
+    "event_indices": [
+      56,
+      1062,
+      1400
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "rhenium re186 obisbemeda",
+    "brand": "REYOBIQ",
+    "indication": "Glioma",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      160,
+      430,
+      1043
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "adi-001",
+    "brand": null,
+    "indication": "Non-Hodgkin\u2019s lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      193,
+      421,
+      664
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "rusfertide",
+    "brand": null,
+    "indication": "Polycythemia vera",
+    "phase": "Phase 2",
+    "event_indices": [
+      278,
+      1253,
+      1256
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "tak-279",
+    "brand": "Zasocitinib",
+    "indication": "Moderate-to-severe plaque psoriasis (PsO)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      285,
+      602,
+      1684
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "gc012f",
+    "brand": null,
+    "indication": "Relapsed/refractory multiple myeloma (RRMM)",
+    "phase": "Phase 1",
+    "event_indices": [
+      391,
+      498,
+      678
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "sonelokimab",
+    "brand": "Nanobody",
+    "indication": "Hidradenitis suppurativa",
+    "phase": "Phase 2",
+    "event_indices": [
+      417,
+      548,
+      1525
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "cb-010",
+    "brand": null,
+    "indication": "B-Cell Non-Hodgkin Lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      439,
+      1310,
+      1586
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "bmf-219",
+    "brand": "Icovamenib",
+    "indication": "Acute myeloid leukemia (AML) / acute lymphocytic leukemia (A",
+    "phase": "Phase 1",
+    "event_indices": [
+      454,
+      671,
+      1174
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "gsbr-1290",
+    "brand": "Aleniglipron",
+    "indication": "Type 2 Diabetes, obesity",
+    "phase": "Phase 1b",
+    "event_indices": [
+      530,
+      695,
+      884
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "revumenib",
+    "brand": "Revuforj",
+    "indication": "Relapsed/refractory (R/R) acute leukemias",
+    "phase": "Phase 2",
+    "event_indices": [
+      532,
+      685,
+      1096
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "nvl-655",
+    "brand": "Neladalkib",
+    "indication": "ALK non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      537,
+      1556,
+      1620
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "sls009",
+    "brand": "Tambiciclib",
+    "indication": "Hematologic malignancies, acute myeloid leukemia (AML), chro",
+    "phase": "Phase 2a",
+    "event_indices": [
+      550,
+      610,
+      1449
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "belzupacap sarotalocan",
+    "brand": null,
+    "indication": "Non-muscular invasive bladder cancer (NMIBC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      598,
+      1061,
+      1280
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "nyxol + low-dose pilocarpine eye drops",
+    "brand": null,
+    "indication": "Presbyopia",
+    "phase": "Phase 3",
+    "event_indices": [
+      623,
+      1429,
+      1430
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "lyt-200",
+    "brand": null,
+    "indication": "Solid tumors, urothelial and head and neck cancers, acute my",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      657,
+      1146,
+      1642
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "rademikibart",
+    "brand": null,
+    "indication": "Asthma",
+    "phase": "Phase 2",
+    "event_indices": [
+      681,
+      1288,
+      1413
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "bria-imt",
+    "brand": null,
+    "indication": "Advanced breast cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      705,
+      862,
+      880
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "tak-861-2001",
+    "brand": "Oveporexton",
+    "indication": "Narcolepsy type 1 (NT1)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      737,
+      892,
+      1448
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "tezepelumab-ekko",
+    "brand": "TEZSPIRE",
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      849,
+      1086,
+      1087
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "truqap",
+    "brand": null,
+    "indication": "Metastatic triple-negative breast cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      922,
+      1114,
+      1318
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "[212pb]vmt-\u03b1-net",
+    "brand": null,
+    "indication": "Neuroendocrine tumors (NETs)",
+    "phase": "Phase 1",
+    "event_indices": [
+      971,
+      1561,
+      1714
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "rinatabart sesutecan",
+    "brand": null,
+    "indication": "Ovarian cancer, Endometrial Cancers, Solid tumors",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1017,
+      1272,
+      1384
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "cldn18.2 x 4-1bb bispecific antibody",
+    "brand": "Givastomig",
+    "indication": "HER2-negative metastatic gastric cancer, solid tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1026,
+      1431,
+      1439
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "taldefgrobep",
+    "brand": null,
+    "indication": "Spinal Muscular Atrophy (SMA)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1117,
+      1118,
+      1119
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "allocetra",
+    "brand": null,
+    "indication": "Knee osteoarthritis (OA)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1128,
+      1500,
+      1629
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "impt-314",
+    "brand": "LYL314",
+    "indication": "Large B-cell lymphoma",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1147,
+      1419,
+      1650
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "bpl-003",
+    "brand": null,
+    "indication": "Resistant Depression",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1438,
+      1515,
+      1608
+    ],
+    "n_events": 3
+  },
+  {
+    "drug_name": "haduvio",
+    "brand": null,
+    "indication": "Prurigo Nodularis (PN)",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      3,
+      88
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "tecentriq hybreza  with enhanze",
+    "brand": null,
+    "indication": "Lung, liver, skin and soft tissue cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      35,
+      37
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "imgn632",
+    "brand": "Pivekimab",
+    "indication": "Relapse/Refractory AML, ALL, BPDCN",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      55,
+      388
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "avacincaptad pegol intravitreal solution",
+    "brand": "IZERVAY",
+    "indication": "Geographic atrophy (GA) secondary to age-related macular deg",
+    "phase": "Phase 3",
+    "event_indices": [
+      59,
+      516
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bnt211",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      72,
+      1010
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "hzn-4920",
+    "brand": "Dazodalibep",
+    "indication": "Rheumatoid Arthritis",
+    "phase": "Phase 2",
+    "event_indices": [
+      87,
+      232
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "au-011",
+    "brand": "Bel-sar",
+    "indication": "Indeterminate lesions (ILs) and choroidal melanoma (CM)",
+    "phase": "Phase 2",
+    "event_indices": [
+      102,
+      103
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "vs-6766 and defactinib",
+    "brand": null,
+    "indication": "KRAS mutant non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      108,
+      1357
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "multikine",
+    "brand": null,
+    "indication": "Head and Neck cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      120,
+      950
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nx-2127",
+    "brand": null,
+    "indication": "B-cell malignancies, chronic lymphocytic leukemia (CLL)",
+    "phase": "Phase 1a",
+    "event_indices": [
+      129,
+      675
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "iomab-b",
+    "brand": null,
+    "indication": "Acute myeloid leukemia (AML)",
+    "phase": "Phase 3",
+    "event_indices": [
+      132,
+      259
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "fastcar-t gc012f",
+    "brand": null,
+    "indication": "Diffuse large B-cell lymphoma (DLBCL)",
+    "phase": "Phase 1",
+    "event_indices": [
+      135,
+      197
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "mavorixafor",
+    "brand": "XOLREMDI",
+    "indication": "WHIM syndrome",
+    "phase": "Phase 3",
+    "event_indices": [
+      164,
+      334
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nkx019",
+    "brand": null,
+    "indication": "B-cell malignancies",
+    "phase": "Phase 1",
+    "event_indices": [
+      173,
+      394
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "obecabtagene autoleucel",
+    "brand": "AUCATZYL",
+    "indication": "B-Cell Acute Lymphoblastic Leukemia",
+    "phase": "Phase 2",
+    "event_indices": [
+      189,
+      909
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "seclidemstat",
+    "brand": null,
+    "indication": "Myelodysplastic Syndromes (MDS) and Chronic Myelomonocytic L",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      206,
+      709
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "resmetirom",
+    "brand": "Rezdiffra",
+    "indication": "Non-alcoholic steatohepatitis (NASH) with liver fibrosis (al",
+    "phase": "Phase 3",
+    "event_indices": [
+      220,
+      413
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "cm-101",
+    "brand": null,
+    "indication": "Liver Fibrosis",
+    "phase": "Phase 2a",
+    "event_indices": [
+      225,
+      1285
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "ly3471851 or rezpeg",
+    "brand": "Rezpegaldesleukin",
+    "indication": "Systemic lupus erythematosus (SLE)",
+    "phase": "Phase 2",
+    "event_indices": [
+      261,
+      262
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "mk-7684a",
+    "brand": null,
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      280,
+      656
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "karxt, xanomeline and trospium chloride",
+    "brand": "COBENFY",
+    "indication": "Schizophrenia",
+    "phase": "Phase 3",
+    "event_indices": [
+      286,
+      287
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "hbv003",
+    "brand": "VTP-300",
+    "indication": "Hepatitis B (HBV)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      297,
+      412
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "thio-101",
+    "brand": "Ateganosine",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      307,
+      308
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nkx101",
+    "brand": null,
+    "indication": "Acute myeloid leukemia / myelodysplastic syndromes",
+    "phase": "Phase 1",
+    "event_indices": [
+      319,
+      422
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "morf-057-201",
+    "brand": null,
+    "indication": "Ulcerative colitis",
+    "phase": "Phase 2a",
+    "event_indices": [
+      320,
+      521
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "vk2809",
+    "brand": null,
+    "indication": "Non-alcoholic steatohepatitis (NASH) and fibrosis",
+    "phase": "Phase 2b",
+    "event_indices": [
+      335,
+      336
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "anx007",
+    "brand": null,
+    "indication": "Geographic atrophy",
+    "phase": "Phase 2",
+    "event_indices": [
+      344,
+      837
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "apvo436",
+    "brand": null,
+    "indication": "Acute myeloid leukemia (AML) and myelodysplastic syndromes (",
+    "phase": "Phase 1b",
+    "event_indices": [
+      448,
+      449
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "4d-150",
+    "brand": null,
+    "indication": "Wet age-related macular degeneration (AMD)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      469,
+      1469
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "tisotumab vedotin-tftv",
+    "brand": "TIVDAK",
+    "indication": "Cervical Cancer with disease progression on or after first-l",
+    "phase": "Phase 3",
+    "event_indices": [
+      491,
+      492
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "io102-io103 with pembrolizumab",
+    "brand": null,
+    "indication": "Metastatic solid tumors",
+    "phase": "Phase 2",
+    "event_indices": [
+      509,
+      510
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "lomecel-b",
+    "brand": "Laromestrocel",
+    "indication": "Alzheimer's Disease",
+    "phase": "Phase 2a",
+    "event_indices": [
+      540,
+      701
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "tpst-1120",
+    "brand": "Amezalpat",
+    "indication": "Hepatocellular carcinoma (HCC)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      546,
+      547
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "optune lua is )",
+    "brand": null,
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      553,
+      554
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "narsoplimab",
+    "brand": null,
+    "indication": "IgA nephropathy",
+    "phase": "Phase 3",
+    "event_indices": [
+      556,
+      1184
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "zanidatamab with chemotherapy  + tislelizumab",
+    "brand": null,
+    "indication": "Gastric/gastroesophageal junction adenocarcinoma (G/GEJC)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      561,
+      562
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "rmc-6236",
+    "brand": "Daraxonrasib",
+    "indication": "Advanced Solid Tumors",
+    "phase": "Phase 1b",
+    "event_indices": [
+      565,
+      1123
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "al102",
+    "brand": null,
+    "indication": "Desmoid tumors",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      569,
+      1672
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "srp-9001-301",
+    "brand": "ELEVIDYS",
+    "indication": "Duchenne muscular dystrophy",
+    "phase": "Phase 3",
+    "event_indices": [
+      575,
+      576
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "cnty-101",
+    "brand": null,
+    "indication": "Lymphoma or Indolent Lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      585,
+      662
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "srk-181",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      586,
+      896
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "fid-007",
+    "brand": null,
+    "indication": "Various cancers",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      590,
+      1560
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "zanzalintinib monotherapy or  in combination with atezolizumab",
+    "brand": null,
+    "indication": "Metastatic solid tumors",
+    "phase": "Phase 1b",
+    "event_indices": [
+      613,
+      1219
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "brepocitinib",
+    "brand": null,
+    "indication": "Systemic lupus erythematosus (SLE)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      631,
+      632
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bx004",
+    "brand": null,
+    "indication": "P. aeruginosa in patients with Cystic Fibrosis (CF)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      635,
+      1655
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "stenoparib",
+    "brand": null,
+    "indication": "Advanced ovarian cancer (AOC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      645,
+      828
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "primec",
+    "brand": null,
+    "indication": "Amyotrophic Lateral Sclerosis (ALS)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      647,
+      1130
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bezuclastinib",
+    "brand": null,
+    "indication": "Non-Advanced Systemic Mastocytosis",
+    "phase": "Phase 2",
+    "event_indices": [
+      660,
+      1644
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "loncastuximab tesirine-lpyl",
+    "brand": "ZYNLONTA",
+    "indication": "High-Risk Relapsed/Refractory Follicular Lymphoma",
+    "phase": "Phase 2",
+    "event_indices": [
+      679,
+      1140
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "sys6002",
+    "brand": "CRB-701",
+    "indication": "Solid tumors, Locally advanced or metastatic urothelial carc",
+    "phase": "Phase 1",
+    "event_indices": [
+      725,
+      1562
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "domvanalimab + zimberelimab vs. zimberelimab vs. chemotherapy",
+    "brand": null,
+    "indication": "Non Small Cell Lung Cancer (NSCLC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      729,
+      1081
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "psilocybin treatment",
+    "brand": "PSX-001",
+    "indication": "Generalized anxiety disorder (GAD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      751,
+      1483
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "mb-101",
+    "brand": null,
+    "indication": "High-Grade Glioma",
+    "phase": "Phase 1",
+    "event_indices": [
+      762,
+      763
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "vtx2735",
+    "brand": null,
+    "indication": "Healthy volunteers,  cryopyrin-associated periodic syndrome ",
+    "phase": "Phase 2",
+    "event_indices": [
+      770,
+      771
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "formerly sln360",
+    "brand": "Zerlasiran",
+    "indication": "Cardiovascular diseases and Polycythemia vera",
+    "phase": "Phase 2",
+    "event_indices": [
+      774,
+      1101
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "ok-101",
+    "brand": "urcosimod",
+    "indication": "Dry Eye Disease (DED)",
+    "phase": "Phase 2",
+    "event_indices": [
+      781,
+      1452
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "stk-001",
+    "brand": "Zorevunersen",
+    "indication": "Dravet Syndrome",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      785,
+      1492
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "leqvio",
+    "brand": null,
+    "indication": "Low-density lipoprotein cholesterol (LDL-C) in patients with",
+    "phase": "Phase 3",
+    "event_indices": [
+      803,
+      984
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "-endoxifen with abemaciclib",
+    "brand": null,
+    "indication": "Pre-menopausal women w/ early-stage estrogen receptor positi",
+    "phase": "Phase 2",
+    "event_indices": [
+      804,
+      807
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "evorpacept",
+    "brand": "ALX148",
+    "indication": "Non-Hodgkin lymphoma (NHL)",
+    "phase": "Phase 1",
+    "event_indices": [
+      805,
+      1656
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "columvi + gemox",
+    "brand": null,
+    "indication": "2L+ Diffuse Large B-Cell Lymphoma (DLBCL)",
+    "phase": "Phase 3",
+    "event_indices": [
+      811,
+      1365
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "cretostimogene",
+    "brand": null,
+    "indication": "BCG-unresponsive Non-Muscle Invasive Bladder Cancer (NMIBC) ",
+    "phase": "Phase 3",
+    "event_indices": [
+      830,
+      1279
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "kt-333",
+    "brand": null,
+    "indication": "Cutaneous T-cell lymphoma (CTCL)",
+    "phase": "Phase 1a",
+    "event_indices": [
+      844,
+      910
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "ozuriftamab vedotin",
+    "brand": null,
+    "indication": "Solid Tumors, Non-small cell lung cancer (NSCLC), recurrent ",
+    "phase": "Phase 2",
+    "event_indices": [
+      846,
+      1011
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "rz402",
+    "brand": null,
+    "indication": "Diabetic macular edema (DME)",
+    "phase": "Phase 2",
+    "event_indices": [
+      852,
+      853
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "abbv-400",
+    "brand": null,
+    "indication": "Colorectal cancer (CRC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      865,
+      1539
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "ik-930",
+    "brand": null,
+    "indication": "Solid tumors, non-small cell lung cancer",
+    "phase": "Phase 1",
+    "event_indices": [
+      866,
+      869
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "smt112",
+    "brand": "Ivonescimab",
+    "indication": "Epidermal growth factor receptor (EGFR)-mutated, locally adv",
+    "phase": "Phase 3",
+    "event_indices": [
+      872,
+      995
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "taletrectinib",
+    "brand": null,
+    "indication": "ROS1-positive non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      875,
+      1002
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "com701, com902 and pembrolizumab",
+    "brand": null,
+    "indication": "Advanced malignancies, Ovarian cancer",
+    "phase": "Phase 1",
+    "event_indices": [
+      876,
+      1088
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "anx005",
+    "brand": "Tanruprubart",
+    "indication": "Guillain-Barr\u00e9 Syndrome (GBS)",
+    "phase": "Phase 3",
+    "event_indices": [
+      897,
+      930
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nx-5948-301",
+    "brand": null,
+    "indication": "B-cell malignancies / graft-versus-host disease",
+    "phase": "Phase 1b",
+    "event_indices": [
+      913,
+      1651
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "fremanezumab-vfrm",
+    "brand": "AJOVY",
+    "indication": "Episodic migraine in children and adolescent patients aged 6",
+    "phase": "Phase 3",
+    "event_indices": [
+      944,
+      1132
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "epetraborole",
+    "brand": null,
+    "indication": "Mycobacterium avium complex (MAC) lung disease, Chronic non-",
+    "phase": "Phase 2",
+    "event_indices": [
+      974,
+      1099
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nbi-'568",
+    "brand": "NBI-1117568",
+    "indication": "Schizophrenia",
+    "phase": "Phase 2",
+    "event_indices": [
+      985,
+      1369
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "rec-994",
+    "brand": null,
+    "indication": "Cerebral Cavernous Malformation (CCM)",
+    "phase": "Phase 2",
+    "event_indices": [
+      988,
+      1322
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "alg-055009",
+    "brand": null,
+    "indication": "Metabolic dysfunction-associated steatohepatitis (MASH)",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1028,
+      1328
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bdtx-1535",
+    "brand": "Silevertinib",
+    "indication": "Glioblastoma multiforme (GBM) and NSCLC",
+    "phase": "Phase 2",
+    "event_indices": [
+      1030,
+      1640
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "detalimogene voraplasmid",
+    "brand": null,
+    "indication": "BCG-unresponsive non-muscle invasive bladder cancer (NMIBC)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1037,
+      1611
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "apitegromab",
+    "brand": null,
+    "indication": "Type 2 and Type 3 Spinal Muscular Atrophy (SMA)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1044,
+      1271
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bb-301",
+    "brand": null,
+    "indication": "Oculopharyngeal muscular dystrophy (OPMD)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1052,
+      1275
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "low dose interleukin-2",
+    "brand": null,
+    "indication": "Alzheimer\u2019s Disease (AD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1072,
+      1230
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "-endoxifen",
+    "brand": null,
+    "indication": "Locally advanced breast cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      1075,
+      1217
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "revita",
+    "brand": null,
+    "indication": "Type 2 Diabetes",
+    "phase": "Phase 1",
+    "event_indices": [
+      1079,
+      1733
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "allo-316",
+    "brand": null,
+    "indication": "Clear cell renal cell carcinoma (ccRCC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1083,
+      1085
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "pyx-201-101",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1111,
+      1685
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "optune pax",
+    "brand": null,
+    "indication": "Locally advanced pancreatic cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      1124,
+      1437
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nx-5948",
+    "brand": null,
+    "indication": "R/R Chronic Lymphocytic Leukemia (CLL)",
+    "phase": "Phase 1a",
+    "event_indices": [
+      1144,
+      1411
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "retifanlimab-dlwr",
+    "brand": "ZYNYZ",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1148,
+      1149
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "luvelta",
+    "brand": null,
+    "indication": "Platinum-resistant ovarian cancer (PROC)",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      1157,
+      1269
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "loncastuximab tesirine-ipyl",
+    "brand": "ZYNLONTA",
+    "indication": "B-cell non-Hodgkin lymphoma",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1159,
+      1409
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bp1002",
+    "brand": null,
+    "indication": "Refractory/relapsed lymphoma and chronic lymphocytic leukemi",
+    "phase": "Phase 1",
+    "event_indices": [
+      1160,
+      1236
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "evorpacept with zanidatamab",
+    "brand": null,
+    "indication": "Metastatic breast cancer",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1168,
+      1170
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "tev-'574/sar447189",
+    "brand": "Duvakitug",
+    "indication": "Moderate-to-severe inflammatory bowel disease (IBD); this in",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1176,
+      1177
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "da-1241",
+    "brand": "Vanoglipel",
+    "indication": "Metabolic dysfunction-associated steatohepatitis (MASH)",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1180,
+      1594
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "casdozokitug/toripalimab/bevacizumab",
+    "brand": null,
+    "indication": "Unresectable locally advanced or metastatic hepatocellular c",
+    "phase": "Phase 2",
+    "event_indices": [
+      1183,
+      1212
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "oral nalbuphine er",
+    "brand": "Haduvio",
+    "indication": "Refractory chronic cough (RCC)",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1262,
+      1273
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "imvt-1401",
+    "brand": "Batoclimab",
+    "indication": "Myasthenia Gravis (MG)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1274,
+      1277
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "edg-7500",
+    "brand": null,
+    "indication": "Hypertrophic Cardiomyopathy (HCM)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1293,
+      1693
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "eb613",
+    "brand": null,
+    "indication": "Osteoporosis",
+    "phase": "Phase 2",
+    "event_indices": [
+      1303,
+      1497
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "ath434-201",
+    "brand": null,
+    "indication": "Multiple System Atrophy (MSA)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1329,
+      1503
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "xl092",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1350,
+      1360
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "iberdomide in combination with dexamethasone",
+    "brand": null,
+    "indication": "Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1352,
+      1410
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "tebipenem hbr",
+    "brand": null,
+    "indication": "Complicated urinary tract infection (cUTI), including acute ",
+    "phase": "Phase 3",
+    "event_indices": [
+      1368,
+      1564
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "rinvecalinase alfa",
+    "brand": "DM199",
+    "indication": "Preeclampsia (PE)",
+    "phase": "Phase 1a",
+    "event_indices": [
+      1372,
+      1454
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "itepekimab",
+    "brand": null,
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1375,
+      1377
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "gedatolisib with fulvestrant",
+    "brand": null,
+    "indication": "HR+/HER2- advanced breast cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      1434,
+      1552
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "cosentyx",
+    "brand": null,
+    "indication": "Newly diagnosed or relapsing giant cell arteritis (GCA)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1440,
+      1568
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "avutometinib in combination with defactinib",
+    "brand": null,
+    "indication": "Low-Grade Serous Ovarian Cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      1444,
+      1738
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "telitacicept",
+    "brand": null,
+    "indication": "Primary Sj\u00f6gren's disease",
+    "phase": "Phase 3",
+    "event_indices": [
+      1477,
+      1486
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "mk-0616",
+    "brand": null,
+    "indication": "Low-density lipoprotein (LDL) cholesterol reduction",
+    "phase": "Phase 3",
+    "event_indices": [
+      1490,
+      1598
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "star-001",
+    "brand": "LP-184",
+    "indication": "Solid tumors",
+    "phase": "Phase 1a",
+    "event_indices": [
+      1506,
+      1639
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nbtxr3",
+    "brand": "JNJ-1900",
+    "indication": "Primary Cutaneous Melanoma Resistant to Anti-PD-1",
+    "phase": "Phase 1",
+    "event_indices": [
+      1507,
+      1526
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "nbi-1065845",
+    "brand": "Osavampator",
+    "indication": "Major depressive disorder",
+    "phase": "Phase 2",
+    "event_indices": [
+      1511,
+      1514
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "orforglipron",
+    "brand": null,
+    "indication": "Type 2 diabetes",
+    "phase": "Phase 3",
+    "event_indices": [
+      1543,
+      1682
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "formerly sns-101",
+    "brand": "Solnerstotug",
+    "indication": "One microsatellite stable (MSS) endometrial cancer",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1548,
+      1549
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "prx004",
+    "brand": "Coramitug",
+    "indication": "ATTR-cardiomyopathy",
+    "phase": "Phase 2",
+    "event_indices": [
+      1612,
+      1613
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "milvexian",
+    "brand": null,
+    "indication": "Acute coronary syndromes",
+    "phase": "Phase 3",
+    "event_indices": [
+      1617,
+      1618
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bnt327-02",
+    "brand": null,
+    "indication": "1-2L Metastatic Triple-negative breast cancer (TNBC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1662,
+      1663
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "quemliclustat, domvanalimab, zimberelimab, and chemotherapy",
+    "brand": null,
+    "indication": "Locally advanced unresectable or metastatic gastric, gastroe",
+    "phase": "Phase 3",
+    "event_indices": [
+      1669,
+      1671
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "bhv-7000",
+    "brand": null,
+    "indication": "Major Depressive Disorder",
+    "phase": "Phase 2",
+    "event_indices": [
+      1694,
+      1695
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "crdf-004",
+    "brand": null,
+    "indication": "Metastatic colorectal cancer (mCRC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1729,
+      1730
+    ],
+    "n_events": 2
+  },
+  {
+    "drug_name": "mim8",
+    "brand": null,
+    "indication": "Hemophilia A",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      17
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sugemalimab",
+    "brand": null,
+    "indication": "Stage III Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      41
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "karxt",
+    "brand": null,
+    "indication": "Acute psychosis in patients with schizophrenia",
+    "phase": "Phase 3",
+    "event_indices": [
+      42
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cpg 1018/alum",
+    "brand": "SCB-2019",
+    "indication": "COVID-19 vaccine in adolescents",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      52
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "idose tr",
+    "brand": null,
+    "indication": "Glaucoma",
+    "phase": "Phase 3",
+    "event_indices": [
+      63
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zanidatamab zovodotin",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      82
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "i-spy covid-19",
+    "brand": "Narsoplimab",
+    "indication": "COVID-19",
+    "phase": "Phase 2",
+    "event_indices": [
+      85
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lecanemab-irmb",
+    "brand": "LEQEMBI",
+    "indication": "IV Maintenance Dosing for Alzheimer\u2019s disease",
+    "phase": "Phase 3",
+    "event_indices": [
+      94
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "quilience",
+    "brand": null,
+    "indication": "Narcolepsy",
+    "phase": "Phase 2a",
+    "event_indices": [
+      95
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "glepaglutideb",
+    "brand": null,
+    "indication": "Short bowel syndrome (SBS)",
+    "phase": "Phase 3",
+    "event_indices": [
+      100
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "kvd824",
+    "brand": null,
+    "indication": "Hereditary angioedema (HAE)",
+    "phase": "Phase 2",
+    "event_indices": [
+      107
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ino-3107",
+    "brand": null,
+    "indication": "HPV 6 and HPV 11-associated Recurrent respiratory papillomat",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      119
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dare-hrt1",
+    "brand": null,
+    "indication": "Hormone replacement therapy",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      122
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "morf-057-202",
+    "brand": null,
+    "indication": "Ulcerative Colitis (UC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      126
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "biolexa",
+    "brand": null,
+    "indication": "Atopic Dermatitis (AD)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      131
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "atrasentan",
+    "brand": null,
+    "indication": "Chronic kidney disease",
+    "phase": "Phase 2",
+    "event_indices": [
+      136
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ft516",
+    "brand": null,
+    "indication": "Acute Myelogenous Leukemia / B-cell Lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      137
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lifileucel (ln-144",
+    "brand": "AMTAGVI",
+    "indication": "Refractory metastatic melanoma",
+    "phase": "Phase 2",
+    "event_indices": [
+      142
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prax-114",
+    "brand": null,
+    "indication": "Major depressive disorder",
+    "phase": "Phase 2",
+    "event_indices": [
+      148
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "can-3110",
+    "brand": "linoserpaturev",
+    "indication": "Glioma",
+    "phase": "Phase 1",
+    "event_indices": [
+      156
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "anavex2-73-ad-004",
+    "brand": "Blarcamesine",
+    "indication": "Mild to moderate Alzheimer\u2019s disease",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      166
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vla1553-303",
+    "brand": "IXCHIQ",
+    "indication": "Chikungunya vaccine",
+    "phase": "Phase 3",
+    "event_indices": [
+      175
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cc-95266",
+    "brand": "BMS-986393",
+    "indication": "Relapsed and/or Refractory (R/R) Multiple Myeloma (MM)",
+    "phase": "Phase 1",
+    "event_indices": [
+      194
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cc-92480",
+    "brand": "Mezigdomide",
+    "indication": "Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "phase": "Phase 1",
+    "event_indices": [
+      203
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cevostamab",
+    "brand": null,
+    "indication": "Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "phase": "Phase 1",
+    "event_indices": [
+      204
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "elranatamab-bcmm",
+    "brand": "ELREXFIO",
+    "indication": "Multiple Myeloma",
+    "phase": "Phase 2",
+    "event_indices": [
+      210
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prgn-3006 ultracar-t",
+    "brand": null,
+    "indication": "Myelodysplastic Syndromes, Acute Myeloid Leukemia",
+    "phase": "Phase 1b",
+    "event_indices": [
+      214
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "amt-101",
+    "brand": null,
+    "indication": "Pouchitis",
+    "phase": "Phase 2",
+    "event_indices": [
+      222
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "fosrenol bioequivalent",
+    "brand": "Renazorb",
+    "indication": "Hyperphosphatemia",
+    "phase": "Phase 1",
+    "event_indices": [
+      223
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "fidanacogene elaparvovec-dzkt",
+    "brand": "BEQVEZ",
+    "indication": "Hemophilia B",
+    "phase": "Phase 3",
+    "event_indices": [
+      224
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rvt-3101",
+    "brand": null,
+    "indication": "Ulcerative colitis",
+    "phase": "Phase 2b",
+    "event_indices": [
+      228
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ctx-009 in combination with paclitaxel",
+    "brand": null,
+    "indication": "Biliary Tract Cancer (cholangiocarcinoma)",
+    "phase": "Phase 2",
+    "event_indices": [
+      233
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zopapogene imadenovec-drba",
+    "brand": "PAPZIMEOS",
+    "indication": "Recurrent Respiratory Papillomatosis (RRP)",
+    "phase": "Phase 1",
+    "event_indices": [
+      237
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tosatoxumab",
+    "brand": "AR-301",
+    "indication": "Ventilator associated pneumonia (VAP) / Staphylococcus aureu",
+    "phase": "Phase 3",
+    "event_indices": [
+      241
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "fx-345",
+    "brand": null,
+    "indication": "Sensorineural hearing loss progression (SNHL)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      251
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bicycle toxin conjugates zelenectide pevedotin",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      252
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "toripalimab-tpzi",
+    "brand": "LOQTORZI",
+    "indication": "1L Metastatic Nasopharyngeal Carcinoma",
+    "phase": "Phase 3",
+    "event_indices": [
+      253
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cabotegravir, rilpivirine",
+    "brand": "Cabenuva",
+    "indication": "HIV-1",
+    "phase": "Phase 3",
+    "event_indices": [
+      263
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "clr 131",
+    "brand": null,
+    "indication": "Various lymphoma",
+    "phase": "Phase 2",
+    "event_indices": [
+      265
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ati-450-hs-201",
+    "brand": "Zunsemetinib",
+    "indication": "Hidradenitis suppurativa",
+    "phase": "Phase 2a",
+    "event_indices": [
+      272
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ar-501",
+    "brand": null,
+    "indication": "Cystic Fibrosis",
+    "phase": "Phase 2a",
+    "event_indices": [
+      277
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "adoring 2",
+    "brand": null,
+    "indication": "Atopic Dermatitis",
+    "phase": "Phase 3",
+    "event_indices": [
+      279
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "validive",
+    "brand": null,
+    "indication": "Oral mucositis",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      293
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "aneb-001",
+    "brand": "Selonabant",
+    "indication": "Cannabinoid Intoxication",
+    "phase": "Phase 2a",
+    "event_indices": [
+      298
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "evx-02",
+    "brand": null,
+    "indication": "Adjuvant melanoma",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      313
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tislelizumab-jsgr",
+    "brand": "TEVIMBRA",
+    "indication": "Gastric or gastroesophageal junction (G/GEJ) adenocarcinoma",
+    "phase": "Phase 3",
+    "event_indices": [
+      314
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cti-1601",
+    "brand": "Nomlabofusp",
+    "indication": "Friedreich\u2019s ataxia (FA)",
+    "phase": "Phase 2",
+    "event_indices": [
+      333
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sepiapterin  (ptc923",
+    "brand": "SEPHIENCE",
+    "indication": "Phenylketonuria (PKU)",
+    "phase": "Phase 3",
+    "event_indices": [
+      338
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dehydratech-cbd",
+    "brand": null,
+    "indication": "Cardiovascular disease (CVD)",
+    "phase": "Phase 1",
+    "event_indices": [
+      341
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vs-6766 plus avutometinib and defactinib",
+    "brand": null,
+    "indication": "Low-grade serous ovarian cancer (LGSOC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      349
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "olvimulogene nanivacirepvec",
+    "brand": null,
+    "indication": "Platinum-Resistant or Refractory Ovarian Cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      351
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "marstacimab-hncq",
+    "brand": "Hympavzi",
+    "indication": "Hemophilia A or B",
+    "phase": "Phase 3",
+    "event_indices": [
+      355
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gotistobart",
+    "brand": "BNT316/ONC-392",
+    "indication": "Cancer, PD-(L)1-resistant non-small cell lung cancer",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      359
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nrg/rtog 0521",
+    "brand": null,
+    "indication": "Prostate cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      361
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sgn-b6a",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      362
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ab154",
+    "brand": "Domvanalimab",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      369
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zn-c3",
+    "brand": "Azenosertib",
+    "indication": "Uterine serous carcinoma (USC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      384
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bgb-11417",
+    "brand": "Sonrotoclax",
+    "indication": "Chronic lymphocytic leukemia/small lymphocytic leukemia",
+    "phase": "Phase 1",
+    "event_indices": [
+      386
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lava-051",
+    "brand": null,
+    "indication": "Chronic lymphocytic leukemia (CLL), multiple myeloma (MM) an",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      398
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "inm-755",
+    "brand": null,
+    "indication": "Epidermolysis Bullosa",
+    "phase": "Phase 2",
+    "event_indices": [
+      414
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "retatrutide",
+    "brand": null,
+    "indication": "Osteoarthritis pain of the knee and overweight or obesity",
+    "phase": "Phase 2",
+    "event_indices": [
+      420
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "datopotamab deruxtecan-dlnk",
+    "brand": "DATROWAY",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      434
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vrdn-001",
+    "brand": null,
+    "indication": "Active Thyroid Eye Disease (TED)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      437
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "upifitamab rilsodotin",
+    "brand": null,
+    "indication": "Ovarian Cancer, Non Small Cell Lung Cancer",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      467
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "aflibercept-abzv",
+    "brand": "Enzeevu",
+    "indication": "Neovascular age-related macular degeneration (nAMD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      476
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "welireg",
+    "brand": null,
+    "indication": "Advanced renal cell carcinoma (RCC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      479
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tj101",
+    "brand": "Eftansomatropin",
+    "indication": "Growth hormone deficiency",
+    "phase": "Phase 3",
+    "event_indices": [
+      480
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "trv045",
+    "brand": null,
+    "indication": "Epilepsy and other CNS disorders",
+    "phase": "Phase 1",
+    "event_indices": [
+      493
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ab-161",
+    "brand": null,
+    "indication": "Healthy volunteers",
+    "phase": "Phase 1",
+    "event_indices": [
+      502
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ht-kit",
+    "brand": null,
+    "indication": "Aggressive systemic mastocytosis (ASM), mast cell leukemia (",
+    "phase": "Phase 1a",
+    "event_indices": [
+      513
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "val-083",
+    "brand": null,
+    "indication": "Newly diagnosed MGMT-unmethylated Glioblastoma Multiform (GB",
+    "phase": "Phase 2",
+    "event_indices": [
+      522
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vykat xr  extended-release tablets",
+    "brand": null,
+    "indication": "Prader-Willi syndrome (PWS)",
+    "phase": "Phase 3",
+    "event_indices": [
+      525
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "edp2939",
+    "brand": null,
+    "indication": "Psoriasis, healthy volunteers",
+    "phase": "Phase 2",
+    "event_indices": [
+      557
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "oric-114",
+    "brand": "Enozertinib",
+    "indication": "Tumors - EGFR/HER2 Exon 20 Inhibitor, 1L NSCLC",
+    "phase": "Phase 1b",
+    "event_indices": [
+      568
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lutetium (177lu",
+    "brand": "Pluvicto",
+    "indication": "Metastatic castration-resistant prostate cancer (mCRPC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      570
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "brilaroxazine",
+    "brand": null,
+    "indication": "Schizophrenia",
+    "phase": "Phase 3",
+    "event_indices": [
+      574
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "amg 509",
+    "brand": "Xaluritamig",
+    "indication": "Metastatic castrate-resistant prostate cancer (mCRPC)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      577
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rt-101",
+    "brand": null,
+    "indication": "Neuroendocrine tumors (NETs) and acromegaly",
+    "phase": "Phase 1",
+    "event_indices": [
+      581
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nanobody sonelokimab",
+    "brand": null,
+    "indication": "Active psoriatic arthritis (PsA)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      599
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ata188",
+    "brand": null,
+    "indication": "Multiple sclerosis",
+    "phase": "Phase 2",
+    "event_indices": [
+      608
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "kio-301",
+    "brand": null,
+    "indication": "Later-stage Retinitis Pigmentosa",
+    "phase": "Phase 2",
+    "event_indices": [
+      611
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "star-0215",
+    "brand": "Navenibart",
+    "indication": "Hereditary angioedema (HAE), healthy volunteers",
+    "phase": "Phase 1a",
+    "event_indices": [
+      614
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vla1553-321",
+    "brand": null,
+    "indication": "Chikungunya Vaccine for adolecents",
+    "phase": "Phase 3",
+    "event_indices": [
+      615
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ati-450-ra-202",
+    "brand": "Zunsemetinib",
+    "indication": "Rheumatoid arthritis (RA)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      617
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "glyph allopregnanolone; formerly lyt-300",
+    "brand": "SPT-300",
+    "indication": "Healthy volunteers, neurological and neuropsychological cond",
+    "phase": "Phase 2a",
+    "event_indices": [
+      624
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "eb01",
+    "brand": null,
+    "indication": "Allergic contact dermatitis (ACD)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      626
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "berubicin",
+    "brand": null,
+    "indication": "Glioblastoma (GBM) (adult)",
+    "phase": "Phase 2",
+    "event_indices": [
+      627
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "blenrep",
+    "brand": null,
+    "indication": "Multiple myeloma",
+    "phase": "Phase 3",
+    "event_indices": [
+      630
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dyai-100",
+    "brand": null,
+    "indication": "COVID-19 booster vaccine",
+    "phase": "Phase 1",
+    "event_indices": [
+      637
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "soquelitinib",
+    "brand": null,
+    "indication": "Peripheral T-cell lymphoma (PTCL)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      659
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mp0533",
+    "brand": null,
+    "indication": "Acute myeloid leukemia (AML)",
+    "phase": "Phase 1",
+    "event_indices": [
+      669
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ca-4948",
+    "brand": null,
+    "indication": "Relapsed or Refractory Non-Hodgkin Lymphoma",
+    "phase": "Phase 2",
+    "event_indices": [
+      682
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tearcare",
+    "brand": null,
+    "indication": "Dry Eye Disease",
+    "phase": "Phase 1",
+    "event_indices": [
+      694
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lonapegsomatropin-tcgd (ranscon hgh",
+    "brand": "SKYTROFA",
+    "indication": "Growth Hormone Deficiency - adults",
+    "phase": "Phase 3",
+    "event_indices": [
+      699
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gb2064",
+    "brand": null,
+    "indication": "Myelofibrosis",
+    "phase": "Phase 2a",
+    "event_indices": [
+      704
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "adct-901",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      711
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "scemblix",
+    "brand": null,
+    "indication": "1L Chronic myeloid leukemia (CML)",
+    "phase": "Phase 3",
+    "event_indices": [
+      714
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "acoltremon ophthalmic solution",
+    "brand": "TRYPTYR",
+    "indication": "Dry eye disease (DED)",
+    "phase": "Phase 3",
+    "event_indices": [
+      715
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "casdozo",
+    "brand": "Casdozokitug",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      716
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cr845/difelikefalin",
+    "brand": "KORSUVA",
+    "indication": "Stage 3-4 Chronic Kidney Disease-Associated Pruritus",
+    "phase": "Phase 3",
+    "event_indices": [
+      720
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "oral sulopenem",
+    "brand": "ORLYNVAH",
+    "indication": "Uncomplicated urinary tract infections (uUTI)",
+    "phase": "Phase 3",
+    "event_indices": [
+      730
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vx-121/tezacaftor/vx-561",
+    "brand": null,
+    "indication": "Cystic Fibrosis",
+    "phase": "Phase 3",
+    "event_indices": [
+      733
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "st-920",
+    "brand": "Civaparvovec",
+    "indication": "Fabry disease",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      734
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "clemidsogene lanparvovec",
+    "brand": null,
+    "indication": "MPS II (Hunter Syndrome)",
+    "phase": "Phase 3",
+    "event_indices": [
+      736
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "4d-310",
+    "brand": null,
+    "indication": "Fabry Disease",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      738
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rvt-2001",
+    "brand": null,
+    "indication": "Transfusion-Dependent Anemia in Patients with Lower-Risk MDS",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      740
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sebetralstat",
+    "brand": "EKTERLY",
+    "indication": "Hereditary Angioedema (HAE)",
+    "phase": "Phase 3",
+    "event_indices": [
+      741
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "aur200",
+    "brand": "Aritinercept",
+    "indication": "BAFF/APRIL (B-Cell Activating Factor)",
+    "phase": "Phase 1",
+    "event_indices": [
+      743
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nt219 in combination with cetuximab",
+    "brand": null,
+    "indication": "Recurrent/metastatic squamous cell carcinoma of the head and",
+    "phase": "Phase 1",
+    "event_indices": [
+      747
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tp-04",
+    "brand": null,
+    "indication": "Rosacea",
+    "phase": "Phase 2a",
+    "event_indices": [
+      748
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vk2735",
+    "brand": null,
+    "indication": "Obesity",
+    "phase": "Phase 2",
+    "event_indices": [
+      749
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "pl9643",
+    "brand": null,
+    "indication": "Dry eye disease (DED)",
+    "phase": "Phase 3",
+    "event_indices": [
+      750
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "clr 131  in combination with external beam radiation",
+    "brand": null,
+    "indication": "Head & neck cancer",
+    "phase": "Phase 1",
+    "event_indices": [
+      757
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dibutepinephrine",
+    "brand": "Anaphylm",
+    "indication": "Anaphylaxis",
+    "phase": "Phase 3",
+    "event_indices": [
+      776
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ak112-202",
+    "brand": "ivonescimab",
+    "indication": "Patients with Advanced Non-Small Cell Lung Cancer (NSCLC) an",
+    "phase": "Phase 2",
+    "event_indices": [
+      782
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sdx",
+    "brand": "Serdexmethylphenidate",
+    "indication": "Idiopathic hypersomnia (IH)",
+    "phase": "Phase 2",
+    "event_indices": [
+      786
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prax-628",
+    "brand": null,
+    "indication": "Photo-Paroxysmal Response (PPR)",
+    "phase": "Phase 2",
+    "event_indices": [
+      787
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bitopertin",
+    "brand": null,
+    "indication": "Erythropoietic Protoporphyria (EPP)",
+    "phase": "Phase 2",
+    "event_indices": [
+      792
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mnk1/2",
+    "brand": "Tomivosertib",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      795
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gt-30",
+    "brand": null,
+    "indication": "Cancer Vaccine in advanced hepatocellular carcinoma",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      800
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vusolimogene oderparepvec",
+    "brand": "RP1",
+    "indication": "Liver and kidney transplant recipients with recurrent Cutane",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      801
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "abrysvo",
+    "brand": null,
+    "indication": "Respiratory syncytial virus (RSV)-associated lower respirato",
+    "phase": "Phase 3",
+    "event_indices": [
+      806
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gtx-102",
+    "brand": null,
+    "indication": "Angelman Syndrome",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      813
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cln-978",
+    "brand": null,
+    "indication": "Relapsed/refractory B-cell non-Hodgkin lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      814
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vtp-200",
+    "brand": null,
+    "indication": "Human papillomavirus (HPV)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      818
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lcd supplement capsule",
+    "brand": null,
+    "indication": "Dry eyes",
+    "phase": "Phase 1",
+    "event_indices": [
+      822
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ph15",
+    "brand": null,
+    "indication": "Psychomotor impairment caused by mental fatigue",
+    "phase": "Phase 2a",
+    "event_indices": [
+      823
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "eyp-1901 vorolanib intravitreal",
+    "brand": "DURAVYU",
+    "indication": "Non-proliferative diabetic retinopathy (NPDR)",
+    "phase": "Phase 2",
+    "event_indices": [
+      835
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ck-586",
+    "brand": "CK-4021586",
+    "indication": "Heart failure with preserved ejection fraction (HFpEF)",
+    "phase": "Phase 1",
+    "event_indices": [
+      838
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "op-1250",
+    "brand": "Palazestrant",
+    "indication": "Breast Cancer",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      845
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mino-lok",
+    "brand": null,
+    "indication": "Catheter related blood stream infection (CRBSI)",
+    "phase": "Phase 3",
+    "event_indices": [
+      851
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "abl503",
+    "brand": "Ragistomig",
+    "indication": "Solid tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      855
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "yl202/bnt326",
+    "brand": null,
+    "indication": "Locally advanced or metastatic non-small cell lung cancer an",
+    "phase": "Phase 1",
+    "event_indices": [
+      861
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "trodelvy",
+    "brand": null,
+    "indication": "Metastatic urothelial cancer (mUC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      871
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "c-car301",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      898
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "inebilizumab-cdon",
+    "brand": "UPLIZNA",
+    "indication": "Immunoglobulin G4-related disease (IgG4-RD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      899
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "hmpl-760",
+    "brand": null,
+    "indication": "Bruton's Tyrosine Kinase (BTK) Relapsed/Refractory (R/R) Lym",
+    "phase": "Phase 1",
+    "event_indices": [
+      908
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "xb2001",
+    "brand": "Natrunix",
+    "indication": "Pancreatic Cancer",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      923
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vx-880",
+    "brand": "Zimislecel",
+    "indication": "Type 1 Diabetes",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      926
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "oxylanthanum carbonate",
+    "brand": null,
+    "indication": "Kidney disease",
+    "phase": "Phase 3",
+    "event_indices": [
+      929
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ocedurenone",
+    "brand": null,
+    "indication": "Chronic kidney disease",
+    "phase": "Phase 3",
+    "event_indices": [
+      932
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "molgradex",
+    "brand": "MOLBREEVI",
+    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP)",
+    "phase": "Phase 3",
+    "event_indices": [
+      933
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "buntanetap",
+    "brand": null,
+    "indication": "Parkinson's Disease (PD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      934
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "protheracytes",
+    "brand": null,
+    "indication": "Acute myocardial infarction",
+    "phase": "Phase 2",
+    "event_indices": [
+      940
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ide397 and trodelvy",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 2",
+    "event_indices": [
+      941
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ct-996",
+    "brand": null,
+    "indication": "Type 2 diabetes and obesity",
+    "phase": "Phase 1",
+    "event_indices": [
+      943
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "transrectal high-intensity focused ultrasound",
+    "brand": null,
+    "indication": "Rectal Deep Infiltrating Endometriosis",
+    "phase": "Phase 3",
+    "event_indices": [
+      945
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "atev",
+    "brand": null,
+    "indication": "Acellular tissue engineered vessel (ATEV) in arteriovenous a",
+    "phase": "Phase 3",
+    "event_indices": [
+      961
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lonvoguran ziclumeran",
+    "brand": null,
+    "indication": "Hereditary angioedema (HAE)",
+    "phase": "Phase 2",
+    "event_indices": [
+      967
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ct-0508 with pembrolizumab",
+    "brand": null,
+    "indication": "HER2+ solid tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      969
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ctx-009",
+    "brand": null,
+    "indication": "Colorectal cancer (CRC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      972
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cnside",
+    "brand": null,
+    "indication": "Breast or Non-Small Cell Lung Cancer (NSCLC) who have suspic",
+    "phase": "Phase 1",
+    "event_indices": [
+      973
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "palm 007",
+    "brand": null,
+    "indication": "Monkeypox (mpox)",
+    "phase": "Phase 2",
+    "event_indices": [
+      978
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "elevai enfinity topical exosome serum",
+    "brand": null,
+    "indication": "Facial appearance",
+    "phase": "Phase 1",
+    "event_indices": [
+      982
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "aef0117",
+    "brand": null,
+    "indication": "Cannabis-Related Disorders (CrD)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      989
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ifinatamab deruxtecan",
+    "brand": null,
+    "indication": "Extensive-stage small cell lung cancer (SCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      997
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "monalizuma",
+    "brand": null,
+    "indication": "Early-stage non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1000
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tnx-801",
+    "brand": null,
+    "indication": "Monkeypox, horse pox and smallpox infection",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1001
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gsk3943104",
+    "brand": null,
+    "indication": "Herpes simplex virus (HSV) vaccine",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1006
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mgc018",
+    "brand": null,
+    "indication": "Metastatic castration-resistant prostate cancer (mCRPC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1016
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ak112-206",
+    "brand": null,
+    "indication": "Metastatic microsatellite-stable (MSS) colorectal cancer (CR",
+    "phase": "Phase 2",
+    "event_indices": [
+      1024
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gazyva/gazyvaro",
+    "brand": null,
+    "indication": "Lupus Nephritis",
+    "phase": "Phase 3",
+    "event_indices": [
+      1036
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "albuterol/budesonide",
+    "brand": "Airsupra",
+    "indication": "Severe exacerbations in patients with intermittent or mild p",
+    "phase": "Phase 3",
+    "event_indices": [
+      1045
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rlf-td011",
+    "brand": null,
+    "indication": "Epidermolysis bullosa (EB)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1046
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "60+ at increased risk",
+    "brand": "Arexvy",
+    "indication": "Respiratory Syncytial Virus Vaccine, Adjuvanted",
+    "phase": "Phase 3",
+    "event_indices": [
+      1047
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vk0214",
+    "brand": null,
+    "indication": "X-linked adrenoleukodystrophy (X-ALD)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1050
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "epi-on",
+    "brand": "Epioxa",
+    "indication": "Progressive keratoconus",
+    "phase": "Phase 3",
+    "event_indices": [
+      1059
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "faricimab-svoa",
+    "brand": "Vabysmo",
+    "indication": "Diabetic macular edema (DME)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1063
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lyl845",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1066
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bbp-812",
+    "brand": null,
+    "indication": "Canavan Disease",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1067
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dll3 adc",
+    "brand": "ZL-1310",
+    "indication": "Solid tumors,  relapsed and refractory second-line+ SCLC",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1068
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ab521",
+    "brand": "Casdatifan",
+    "indication": "Clear cell renal cell carcinoma (ccRCC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1069
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "z-endoxifen",
+    "brand": null,
+    "indication": "Mammographic breast density (MBD), breast cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      1077
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "io102-io103 in combination with pembrolizumab",
+    "brand": null,
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1082
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cue-102",
+    "brand": null,
+    "indication": "Wilms' Tumor (WT1)-expressing cancers",
+    "phase": "Phase 1",
+    "event_indices": [
+      1091
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ngn-101",
+    "brand": null,
+    "indication": "CLN5 Batten Disease",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1095
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ft522",
+    "brand": null,
+    "indication": "Lupus",
+    "phase": "Phase 1",
+    "event_indices": [
+      1100
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bevacizumab-vikg",
+    "brand": "LYTENAVA",
+    "indication": "Wet age-related macular degeneration (wet AMD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1122
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "janx007",
+    "brand": "PSMA-TRACTr",
+    "indication": "Metastatic castration-resistant prostate cancer (mCPRC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1125
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mcla-158",
+    "brand": "Petosemtamab",
+    "indication": "Recurrent/metastatic (r/m) head and neck squamous cell carci",
+    "phase": "Phase 2",
+    "event_indices": [
+      1126
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "svr12 in combination of bemnifosbuvir and ruzasvir",
+    "brand": null,
+    "indication": "Hepatitis C virus (HCV)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1131
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vesigel ugn-102 (mitomycin",
+    "brand": "ZUSDURI",
+    "indication": "Low grade non-muscle invasive bladder cancer (LG-NMIBC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1134
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bnt324/db-1311",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1135
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bgb-16673-101",
+    "brand": null,
+    "indication": "Relapsed or refractory (R/R) CLL/SLL",
+    "phase": "Phase 1",
+    "event_indices": [
+      1150
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dazals",
+    "brand": "Dazucorilant",
+    "indication": "Amyotrophic Lateral Sclerosis (ALS)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1161
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prt2527",
+    "brand": null,
+    "indication": "Solid tumors and hematological malignancies",
+    "phase": "Phase 1",
+    "event_indices": [
+      1163
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "kb408",
+    "brand": null,
+    "indication": "Alpha-1 antitrypsin deficiency (AATD)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1164
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "anb032",
+    "brand": null,
+    "indication": "Atopic dermatitis",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1165
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "korlym",
+    "brand": null,
+    "indication": "Hypercortisolism (Cushing's Syndrome) and Difficult-to-Contr",
+    "phase": "Phase 3",
+    "event_indices": [
+      1166
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mecbotamab vedotin",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 2",
+    "event_indices": [
+      1171
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "fhd-286",
+    "brand": null,
+    "indication": "Acute myeloid leukemia (AML)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1172
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "kb707",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1181
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cagrisema",
+    "brand": "AM833",
+    "indication": "Obesity",
+    "phase": "Phase 3",
+    "event_indices": [
+      1192
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "natrunix",
+    "brand": null,
+    "indication": "Rheumatoid Arthritis",
+    "phase": "Phase 2",
+    "event_indices": [
+      1193
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prf-110",
+    "brand": null,
+    "indication": "Bunionectomy",
+    "phase": "Phase 3",
+    "event_indices": [
+      1195
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "onasemnogene abeparvovec-brve",
+    "brand": "Itvisma",
+    "indication": "Spinal muscular atrophy (SMA)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1196
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nmra-140",
+    "brand": "Navacaprant",
+    "indication": "Major depressive disorder",
+    "phase": "Phase 3",
+    "event_indices": [
+      1197
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ocs-05",
+    "brand": null,
+    "indication": "Acute optic neuritis",
+    "phase": "Phase 2",
+    "event_indices": [
+      1201
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ht-001",
+    "brand": null,
+    "indication": "EGFRI-induced skin toxicity",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1202
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gh001-bd-202",
+    "brand": "GH1001",
+    "indication": "Bipolar II Disorder",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1204
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "crn04894",
+    "brand": "Atumelnant",
+    "indication": "Congenital adrenal hyperplasia (CAH) and Cushing\u2019s disease",
+    "phase": "Phase 2",
+    "event_indices": [
+      1206
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "travelan",
+    "brand": null,
+    "indication": "Enterotoxigenic Escherichia coli (ETEC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1209
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "inbrx-109",
+    "brand": "ozekibart",
+    "indication": "Advanced or metastatic, unresectable colorectal adenocarcino",
+    "phase": "Phase 1",
+    "event_indices": [
+      1211
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lsta1 in combination with gemcitabine and nab-paclitaxel",
+    "brand": null,
+    "indication": "1L metastatic pancreatic ductal adenocarcinoma",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1215
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tividenofusp alfa",
+    "brand": null,
+    "indication": "Hunter syndrome MPS II",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1231
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "adx-097",
+    "brand": null,
+    "indication": "Renal Diseases",
+    "phase": "Phase 2",
+    "event_indices": [
+      1233
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gtx-104",
+    "brand": null,
+    "indication": "Subarachnoid hemorrhage (SAH)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1235
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nivolumab and relatlimab-rmbw",
+    "brand": "Opdualag",
+    "indication": "Stage III-IV melanoma",
+    "phase": "Phase 3",
+    "event_indices": [
+      1237
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "spn-820",
+    "brand": null,
+    "indication": "Treatment-resistant depression",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1241
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sgt-003",
+    "brand": null,
+    "indication": "Duchenne Muscular Dystrophy (DMD)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1242
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sep-786",
+    "brand": null,
+    "indication": "Hypoparathyroidism in healthy volunteers",
+    "phase": "Phase 1",
+    "event_indices": [
+      1243
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tambiciclib",
+    "brand": "SLS009",
+    "indication": "relapsed/refractory Diffuse Large B-Cell Lymphoma (r/r DLBCL",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1245
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "moseic meloxicam-rizatriptan (axs-07",
+    "brand": "SYMBRAVO",
+    "indication": "Migraine",
+    "phase": "Phase 3",
+    "event_indices": [
+      1246
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "qrx003",
+    "brand": null,
+    "indication": "Netherton Syndrome",
+    "phase": "Phase 1",
+    "event_indices": [
+      1250
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ulixacaltamide \u200b",
+    "brand": null,
+    "indication": "Essential tremor",
+    "phase": "Phase 3",
+    "event_indices": [
+      1252
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "batoclimab",
+    "brand": null,
+    "indication": "Myasthenia Gravis (MG)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1276
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bmt-801 with bremelanotide plus tirzepatide",
+    "brand": null,
+    "indication": "Obesity",
+    "phase": "Phase 2",
+    "event_indices": [
+      1287
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dll4 x vegf-a bispecific",
+    "brand": "CTX-009",
+    "indication": "Biliary tract cancer (BTC)",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      1292
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lx2006",
+    "brand": null,
+    "indication": "Cardiomyopathy associated with Friedreich's ataxia (FA)",
+    "phase": "Phase 1a",
+    "event_indices": [
+      1296
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rlyb212",
+    "brand": null,
+    "indication": "Fetal and neonatal alloimmune thrombocytopenia (FNAIT)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1298
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "latozinemab",
+    "brand": null,
+    "indication": "Frontotemporal dementia",
+    "phase": "Phase 2",
+    "event_indices": [
+      1299
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cobenfy",
+    "brand": null,
+    "indication": "Schizophrenia",
+    "phase": "Phase 3",
+    "event_indices": [
+      1306
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lp-310",
+    "brand": null,
+    "indication": "Oral Lichen Planus (OLP)",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1307
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ivonescimab with platinum-based chemotherapy compared with tislelizumab",
+    "brand": null,
+    "indication": "Locally advanced or metastatic squamous non-small cell lung ",
+    "phase": "Phase 3",
+    "event_indices": [
+      1308
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rmc-9805",
+    "brand": "Zoldonrasib",
+    "indication": "Pancreatic cancer, non-small cell lung cancer (NSCLC), and c",
+    "phase": "Phase 1",
+    "event_indices": [
+      1316
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "enekinragene inzadenovec",
+    "brand": "PCRX-201",
+    "indication": "Osteoarthritis of the knee",
+    "phase": "Phase 3",
+    "event_indices": [
+      1317
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mk-6240",
+    "brand": "Florquinitau",
+    "indication": "Alzheimer's disease",
+    "phase": "Phase 3",
+    "event_indices": [
+      1319
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ebo-301",
+    "brand": null,
+    "indication": "Treatment-Refractory MAC Lung Disease",
+    "phase": "Phase 3",
+    "event_indices": [
+      1320
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "breztri aerosphere",
+    "brand": null,
+    "indication": "Asthma",
+    "phase": "Phase 3",
+    "event_indices": [
+      1321
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "trem-cel + mylotarg",
+    "brand": null,
+    "indication": "Acute myeloid leukemia (AML)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1326
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "evorpacept with padcev",
+    "brand": null,
+    "indication": "Urothelial Carcinoma (UC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1327
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "4d-110",
+    "brand": null,
+    "indication": "Choroideremia",
+    "phase": "Phase 1",
+    "event_indices": [
+      1330
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tnx-1300",
+    "brand": null,
+    "indication": "Drug overdose",
+    "phase": "Phase 2",
+    "event_indices": [
+      1339
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "emiltatug ledadotin",
+    "brand": null,
+    "indication": "Metastatic triple-negative breast cancer (TNBC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1340
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "azetukalner",
+    "brand": null,
+    "indication": "Major depressive disorder (MDD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1343
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nexiguran ziclumeran",
+    "brand": null,
+    "indication": "Polyneuropathy and cardiomyopathy",
+    "phase": "Phase 1",
+    "event_indices": [
+      1345
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "dexmethlyphenidate hci",
+    "brand": "CTx-1301",
+    "indication": "ADHD  in patients six years of age or older",
+    "phase": "Phase 3",
+    "event_indices": [
+      1347
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "syn-2510 / imm2510",
+    "brand": "AXN-2510",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1348
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "f351",
+    "brand": "Hydronidone",
+    "indication": "Chronic hepatitis B (CHB)-associated liver fibrosis in the P",
+    "phase": "Phase 3",
+    "event_indices": [
+      1349
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ziftomenib",
+    "brand": "KOMZIFTI",
+    "indication": "Relapsed or Refractory NPM1-Mutated Acute Myeloid Leukemia (",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1351
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bbi-355",
+    "brand": null,
+    "indication": "Oncogene amplified cancers",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1358
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "imnn-001",
+    "brand": null,
+    "indication": "Ovarian cancer",
+    "phase": "Phase 2",
+    "event_indices": [
+      1361
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "linvoseltamab +  carfilzomib",
+    "brand": null,
+    "indication": "Relapsed/refractory multiple myeloma (RRMM)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1363
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "pali-2108",
+    "brand": null,
+    "indication": "Moderate-to-severe ulcerative colitis (UC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1367
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "pgn-edo51",
+    "brand": null,
+    "indication": "Duchenne muscular dystrophy (DMD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1373
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ivonescimab plus platinum-doublet chemotherapy",
+    "brand": null,
+    "indication": "EGFR-mutated, locally advanced or metastatic non-squamous no",
+    "phase": "Phase 3",
+    "event_indices": [
+      1376
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "xtx101",
+    "brand": "Vilastobart",
+    "indication": "Microsatellite stable colorectal cancer (MSS CRC)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1381
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sofetabart mipitecan",
+    "brand": null,
+    "indication": "Platinum-resistant ovarian cancer",
+    "phase": "Phase 1",
+    "event_indices": [
+      1383
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mr-142",
+    "brand": null,
+    "indication": "Chronic night driving impairment",
+    "phase": "Phase 3",
+    "event_indices": [
+      1385
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "pluvicto",
+    "brand": null,
+    "indication": "PSMA-positive metastatic hormone-sensitive prostate cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      1389
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "anb030",
+    "brand": "Rosnilimab",
+    "indication": "Rheumatoid arthritis",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1398
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vgl101",
+    "brand": "iluzanebart",
+    "indication": "Adult-onset leukoencephalopathy with axonal spheroids and pi",
+    "phase": "Phase 2",
+    "event_indices": [
+      1399
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "resecabtagene autoleucel (caba-201",
+    "brand": "Rese-cel",
+    "indication": "Active idiopathic inflammatory myopathy (IIM, or myositis)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1404
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "fabhalta",
+    "brand": null,
+    "indication": "Paroxysmal nocturnal hemoglobinuria (PNH)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1408
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "jnj-4496",
+    "brand": null,
+    "indication": "R/R diffuse large B-cell lymphoma (DLBCL)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1412
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "alto-203",
+    "brand": null,
+    "indication": "Major depressive disorder",
+    "phase": "Phase 2",
+    "event_indices": [
+      1414
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cibotercept",
+    "brand": null,
+    "indication": "Pulmonary arterial hypertension",
+    "phase": "Phase 2",
+    "event_indices": [
+      1415
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lp-300",
+    "brand": null,
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1417
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "astegolimab",
+    "brand": null,
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1422
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "xl092 with atezolizumab",
+    "brand": null,
+    "indication": "Colorectal Cancer (CRC)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1423
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "comp360 psilocybin",
+    "brand": null,
+    "indication": "Treatment-resistant depression (TRD)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1426
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "adl-018",
+    "brand": null,
+    "indication": "Chronic Idiopathic Urticaria (CIU) or Chronic Spontaneous Ur",
+    "phase": "Phase 3",
+    "event_indices": [
+      1427
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "jsp191",
+    "brand": "Briquilimab",
+    "indication": "Severe combined immunodeficiency (SCID)",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1441
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "apg777",
+    "brand": null,
+    "indication": "Healthy volunteers, Atopic dermatitis (AD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1442
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rilparencel",
+    "brand": null,
+    "indication": "Diabetic CKD Stage 3/4",
+    "phase": "Phase 2",
+    "event_indices": [
+      1443
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "astegolima",
+    "brand": null,
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1445
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ovaprene",
+    "brand": null,
+    "indication": "Contraception",
+    "phase": "Phase 3",
+    "event_indices": [
+      1447
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cue-101",
+    "brand": null,
+    "indication": "HPV+ head and neck squamous cell carcinoma (HNSCC)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1451
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "votoplam",
+    "brand": null,
+    "indication": "Huntington's disease",
+    "phase": "Phase 2",
+    "event_indices": [
+      1453
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gefurulimab",
+    "brand": null,
+    "indication": "Generalised myasthenia gravis",
+    "phase": "Phase 3",
+    "event_indices": [
+      1460
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "formerly rl-007",
+    "brand": "Inidascamine",
+    "indication": "Cognitive Impairment Associated with Schizophrenia",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1461
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "hyalofast",
+    "brand": null,
+    "indication": "Cartilage defects of the knee",
+    "phase": "Phase 3",
+    "event_indices": [
+      1466
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "repibresib gel",
+    "brand": null,
+    "indication": "Vitiligo",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1467
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ihl-42x",
+    "brand": null,
+    "indication": "Obstructive  sleep apnea (OSA)",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      1468
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vx-993",
+    "brand": null,
+    "indication": "Moderate to severe acute pain",
+    "phase": "Phase 2",
+    "event_indices": [
+      1470
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "exenatide implant",
+    "brand": "NPM-115",
+    "indication": "Subdermal implants in development for chronic weight managem",
+    "phase": "Phase 1",
+    "event_indices": [
+      1471
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "arq-255",
+    "brand": null,
+    "indication": "Alopecia Areata",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1472
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sgr-2921",
+    "brand": null,
+    "indication": "Relapsed/refractory acute myeloid leukemia (AML)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1478
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ve202",
+    "brand": null,
+    "indication": "Ulcerative colitis (UC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1479
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tour006",
+    "brand": null,
+    "indication": "Atherosclerotic cardiovascular disease (ASCVD)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1489
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zw171",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1491
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "decoy-20",
+    "brand": null,
+    "indication": "Advanced/metastatic solid tumors",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1496
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ksi-101",
+    "brand": null,
+    "indication": "Macular edema secondary",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1505
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "garetosmab",
+    "brand": null,
+    "indication": "Fibrodysplasia Ossificans Progressiva (FOP)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1510
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mbx 2109",
+    "brand": "Canvuparatide",
+    "indication": "Hypoparathyroidism",
+    "phase": "Phase 2",
+    "event_indices": [
+      1513
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "iberdomide, daratumumab, and dexamethasone vs. daratumumab, bortezomib, and dexamethasone",
+    "brand": null,
+    "indication": "Relapsed/refractory multiple myeloma (RRMM)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1516
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "amt-130",
+    "brand": null,
+    "indication": "Huntington's disease",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1517
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "acp-101",
+    "brand": "Carbetocin",
+    "indication": "Prader-Willi syndrome (PWS)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1519
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "kpi-012",
+    "brand": null,
+    "indication": "Persistent corneal epithelial defect (PCED)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1521
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "repatha",
+    "brand": null,
+    "indication": "Risk of cardiovascular (CV) events without prior myocardial ",
+    "phase": "Phase 3",
+    "event_indices": [
+      1527
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "anavex 3-71",
+    "brand": null,
+    "indication": "Schizophrenia",
+    "phase": "Phase 2",
+    "event_indices": [
+      1528
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nimacimab",
+    "brand": null,
+    "indication": "Obesity",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1531
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "abi-5366",
+    "brand": null,
+    "indication": "HSV-2",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1533
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "otoferlin gene therapy",
+    "brand": null,
+    "indication": "Genetic hearing loss",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1535
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zipalertinib",
+    "brand": null,
+    "indication": "Locally advanced/metastatic NSCLC",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1536
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tti-101",
+    "brand": null,
+    "indication": "Idiopathic pulmonary fibrosis (IPF)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1537
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "domvanalimab + zimberelimab and chemotherapy",
+    "brand": null,
+    "indication": "Unresectable or Advanced Gastroesophageal Adenocarcinomas",
+    "phase": "Phase 2",
+    "event_indices": [
+      1538
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ucart22",
+    "brand": null,
+    "indication": "Relapsed/refractory B-cell acute lymphoblastic leukemia (B-A",
+    "phase": "Phase 1",
+    "event_indices": [
+      1544
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "otensilimab, balstilimab and regorafenib",
+    "brand": null,
+    "indication": "Microsatellite stable (MSS) metastatic colorectal cancer",
+    "phase": "Phase 1",
+    "event_indices": [
+      1551
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "crb-701",
+    "brand": null,
+    "indication": "Oncology",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1554
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "viktoria-1",
+    "brand": "Gedatolisib",
+    "indication": "HR+/HER2- breast cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      1557
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "raludotatug deruxtecan",
+    "brand": null,
+    "indication": "Recurrent platinum-resistant ovarian, primary peritoneal or ",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      1559
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mrna-1647",
+    "brand": null,
+    "indication": "CMV vaccine (Cytomegalovirus Infection)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1567
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rmc-6291",
+    "brand": "Elironrasib",
+    "indication": "Solid Tumors",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1569
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zw191",
+    "brand": null,
+    "indication": "Non-small cell lung cancer, endometrial cancer, and triple-n",
+    "phase": "Phase 1",
+    "event_indices": [
+      1570
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ianalumab",
+    "brand": null,
+    "indication": "Sj\u00f6gren\u2019s syndrome",
+    "phase": "Phase 3",
+    "event_indices": [
+      1572
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ft819-102",
+    "brand": null,
+    "indication": "Moderate-to-severe Systemic Lupus Erythematosus",
+    "phase": "Phase 1",
+    "event_indices": [
+      1573
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mivocabtagene autoleucel, kyv-101",
+    "brand": "Miv-cel",
+    "indication": "Myasthenia gravis (MG)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1580
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gazyva",
+    "brand": null,
+    "indication": "Systemic Lupus Erythematosus",
+    "phase": "Phase 3",
+    "event_indices": [
+      1584
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "da-1726",
+    "brand": null,
+    "indication": "NASH and obesity",
+    "phase": "Phase 1",
+    "event_indices": [
+      1587
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "n-803 anktiva",
+    "brand": "t-haNK",
+    "indication": "Non-Hodgkin's lymphoma (NHL)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1589
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tn-201",
+    "brand": null,
+    "indication": "Hypertrophic cardiomyopathy (HCM)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1599
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "rosnilimab",
+    "brand": null,
+    "indication": "Ulcerative colitis (UC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1604
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nbi-1070770",
+    "brand": null,
+    "indication": "Major Depressive Disorder",
+    "phase": "Phase 2",
+    "event_indices": [
+      1609
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "alks 2680",
+    "brand": "Alixorexton",
+    "indication": "Narcolepsy and excessive daytime sleepiness",
+    "phase": "Phase 2",
+    "event_indices": [
+      1614
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ima402",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1a",
+    "event_indices": [
+      1615
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "mrna-3745",
+    "brand": null,
+    "indication": "Glycogen Storage Disease Type 1a (GSD1a)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1628
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "hqp1351",
+    "brand": "Olverembatinib",
+    "indication": "Gastrointestinal Stromal Tumors",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1632
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ficerafusp alfa  with pembrolizumab",
+    "brand": null,
+    "indication": "R/M Head and Neck Squamous Cell Carcinoma",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1633
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lbs-008",
+    "brand": "Tinlarebant",
+    "indication": "Adolescent Stargardt disease (STGD1)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1634
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sts-j01",
+    "brand": null,
+    "indication": "Non-metastatic solid tumors",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      1636
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "pln-101095",
+    "brand": null,
+    "indication": "Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1641
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ucart20x22",
+    "brand": null,
+    "indication": "Non-Hodgkin Lymphoma",
+    "phase": "Phase 1",
+    "event_indices": [
+      1645
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "cid-103",
+    "brand": null,
+    "indication": "Immune Thrombocytopenia (ITP)",
+    "phase": "Phase 1",
+    "event_indices": [
+      1647
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sonrotoclax",
+    "brand": null,
+    "indication": "R/R MCL",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1649
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "vt-1953",
+    "brand": null,
+    "indication": "Malignant fungating wounds (MFW)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1653
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nhbe galnac sirna",
+    "brand": null,
+    "indication": "Obesity",
+    "phase": "Phase 1",
+    "event_indices": [
+      1654
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prax-562",
+    "brand": "Relutrigine",
+    "indication": "Developmental epileptic encephalopathies (DEEs)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1657
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "obe-cel",
+    "brand": null,
+    "indication": "pediatric relapsed or refractory (r/r) B-ALL",
+    "phase": "Phase 1",
+    "event_indices": [
+      1658
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "burixafor",
+    "brand": "GPC-100",
+    "indication": "Multiple myeloma (MM)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1659
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "olverembatinib",
+    "brand": null,
+    "indication": "Acute lymphoblastic leukemia (ALL)",
+    "phase": "Phase 3",
+    "event_indices": [
+      1661
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gri-0621-ipf-02",
+    "brand": null,
+    "indication": "Idiopathic pulmonary fibrosis (IPF)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1664
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "triumph-4",
+    "brand": "Retatrutide",
+    "indication": "Obesity with knee osteoarthritis",
+    "phase": "Phase 3",
+    "event_indices": [
+      1665
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bhv-1510 with libtayo",
+    "brand": null,
+    "indication": "Advanced or metastatic epithelial cell tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1666
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "4d-710",
+    "brand": null,
+    "indication": "Cystic fibrosis",
+    "phase": "Phase 2",
+    "event_indices": [
+      1681
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "glpg3667",
+    "brand": null,
+    "indication": "Duchenne Muscular (DM)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1686
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "fidrisertib",
+    "brand": null,
+    "indication": "Fibrodysplasia ossificans progressiva (FOP)",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1688
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "zugocabtagene geleucel",
+    "brand": null,
+    "indication": "Systemic lupus erythematosus (SLE)",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1690
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tlx591-cdx",
+    "brand": null,
+    "indication": "Prostate cancer",
+    "phase": "Phase 3",
+    "event_indices": [
+      1691
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "agen1571 with botensilimab and balstilimab",
+    "brand": null,
+    "indication": "Solid tumors",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1692
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "gen1046/bnt311",
+    "brand": "Acasunlimab",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "phase": "Phase 2",
+    "event_indices": [
+      1696
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "glp-1-h24-4",
+    "brand": null,
+    "indication": "Diabetes and Weight Loss",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1699
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "nmra-511",
+    "brand": null,
+    "indication": "Neuropsychiatric, Alzheimer's disease agitation",
+    "phase": "Phase 1b",
+    "event_indices": [
+      1701
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "axn-2510",
+    "brand": null,
+    "indication": "Relapsed/Refractory Solid Tumors",
+    "phase": "Phase 1",
+    "event_indices": [
+      1706
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "bmb-101",
+    "brand": null,
+    "indication": "Absence Epilepsy & Dravet Syndrome",
+    "phase": "Phase 2",
+    "event_indices": [
+      1707
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "sovleplenib",
+    "brand": null,
+    "indication": "Warm antibody autoimmune hemolytic anemia (wAIHA)",
+    "phase": "Phase 2/3",
+    "event_indices": [
+      1708
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "lx2020",
+    "brand": null,
+    "indication": "PKP2-ACM",
+    "phase": "Phase 1/2",
+    "event_indices": [
+      1717
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "onward",
+    "brand": "Envudeucitinib",
+    "indication": "Moderate-to-severe plaque psoriasis",
+    "phase": "Phase 3",
+    "event_indices": [
+      1719
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ns002",
+    "brand": null,
+    "indication": "Anaphylaxis",
+    "phase": "Phase 2",
+    "event_indices": [
+      1724
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "amorphous-rifaximin ssd",
+    "brand": null,
+    "indication": "Prevention of cirrhosis complications",
+    "phase": "Phase 3",
+    "event_indices": [
+      1728
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "pcp",
+    "brand": "MCS-8",
+    "indication": "Urinary system diseases",
+    "phase": "Phase 2",
+    "event_indices": [
+      1735
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "met-097i",
+    "brand": null,
+    "indication": "Obesity",
+    "phase": "Phase 2b",
+    "event_indices": [
+      1737
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "biosimilar to entyvio",
+    "brand": "AVT80",
+    "indication": "Healthy volunteers",
+    "phase": "Phase 1",
+    "event_indices": [
+      1739
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "ameluz and bf-rhodoled xl",
+    "brand": null,
+    "indication": "Actinic keratosis on the extremities, neck and trunk",
+    "phase": "Phase 3",
+    "event_indices": [
+      1742
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "evo301",
+    "brand": null,
+    "indication": "Atopic Dermatitis",
+    "phase": "Phase 2a",
+    "event_indices": [
+      1745
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "tonmya cyclobenzaprine",
+    "brand": null,
+    "indication": "Fibromyalgia",
+    "phase": "Phase 3",
+    "event_indices": [
+      1746
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "verekitug",
+    "brand": null,
+    "indication": "Severe asthma",
+    "phase": "Phase 2",
+    "event_indices": [
+      1747
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "neat",
+    "brand": "eDSP",
+    "indication": "Ataxia-telangiectasia",
+    "phase": "Phase 3",
+    "event_indices": [
+      1749
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "qtorin rapamycin",
+    "brand": null,
+    "indication": "Microcystic lymphatic malformations",
+    "phase": "Phase 3",
+    "event_indices": [
+      1750
+    ],
+    "n_events": 1
+  },
+  {
+    "drug_name": "prosera",
+    "brand": "Seralutinib",
+    "indication": "Pulmonary arterial hypertension",
+    "phase": "Phase 3",
+    "event_indices": [
+      1751
+    ],
+    "n_events": 1
+  }
+]

@@ -1,0 +1,130 @@
+{
+  "model_name": "ODIN_vNEXT_v4",
+  "model_type": "LogisticRegression_elasticnet",
+  "C": 2.0,
+  "penalty": "elasticnet",
+  "l1_ratio": 0.2,
+  "training_cutoff": "2025-01-01",
+  "training_events": 1845,
+  "features": [
+    "prior_crl",
+    "btd",
+    "priority_review",
+    "ppm_flag",
+    "sponsor_naive",
+    "sponsor_experienced",
+    "is_resub",
+    "ta_very_high",
+    "log_spa",
+    "surrogate",
+    "had_adcom",
+    "spa_sweet",
+    "orphan_flag",
+    "spa_mega",
+    "multi_crl"
+  ],
+  "intercept": 1.1078783778665924,
+  "coefficients": {
+    "prior_crl": -1.1717486699252149,
+    "btd": 0.17901422383980997,
+    "priority_review": 0.2323775579692126,
+    "ppm_flag": -0.13863670954125806,
+    "sponsor_naive": 0.13996536174215518,
+    "sponsor_experienced": 1.6303080415198108,
+    "is_resub": -0.22021081741743329,
+    "ta_very_high": 0.2463508254197312,
+    "log_spa": -0.005938861610768314,
+    "surrogate": 0.34866238978556047,
+    "had_adcom": 0.3213438451388834,
+    "spa_sweet": 1.488108841052644,
+    "orphan_flag": -0.1896311854565688,
+    "spa_mega": 0.3036881670151524,
+    "multi_crl": -0.14911115441246348
+  },
+  "scaler_means": {
+    "prior_crl": 0.06666666666666667,
+    "btd": 0.14579945799457994,
+    "priority_review": 0.35284552845528455,
+    "ppm_flag": 0.007588075880758808,
+    "sponsor_naive": 0.2742547425474255,
+    "sponsor_experienced": 0.4065040650406504,
+    "is_resub": 0.1821138211382114,
+    "ta_very_high": 0.16802168021680217,
+    "log_spa": 1.4407115361765326,
+    "surrogate": 0.1040650406504065,
+    "had_adcom": 0.024390243902439025,
+    "spa_sweet": 0.44769647696476966,
+    "orphan_flag": 0.2021680216802168,
+    "spa_mega": 0.21355013550135502,
+    "multi_crl": 0.05040650406504065
+  },
+  "scaler_scales": {
+    "prior_crl": 0.24944382578492943,
+    "btd": 0.35290505244763304,
+    "priority_review": 0.47785516791638394,
+    "ppm_flag": 0.08677843617619906,
+    "sponsor_naive": 0.4461379593104255,
+    "sponsor_experienced": 0.49118073063392576,
+    "is_resub": 0.3859383076200793,
+    "ta_very_high": 0.3738855375565158,
+    "log_spa": 1.4034099202734611,
+    "surrogate": 0.30534490001445214,
+    "had_adcom": 0.15425744683748188,
+    "spa_sweet": 0.4972568164219603,
+    "orphan_flag": 0.40161687301472304,
+    "spa_mega": 0.40981273177966043,
+    "multi_crl": 0.21878228541859074
+  },
+  "validation": {
+    "wf_auc": 0.8699582950163756,
+    "holdout_auc": 0.8837380011293056,
+    "holdout_brier": 0.13256114654508966,
+    "holdout_accuracy": 0.8128491620111732,
+    "holdout_events": 358,
+    "v3_holdout_auc": 0.8690570299265952,
+    "v102_holdout_auc": 0.8519104084321475,
+    "event_wins_vs_v3": 239,
+    "good_flips_vs_v3": 8,
+    "bad_flips_vs_v3": 4
+  },
+  "tier_thresholds": {
+    "TIER_1": {
+      "min": 0.85,
+      "action": "STRONG LONG"
+    },
+    "TIER_2": {
+      "min": 0.65,
+      "action": "CAUTIOUS LONG"
+    },
+    "TIER_3": {
+      "min": 0.4,
+      "action": "MONITOR"
+    },
+    "TIER_4": {
+      "min": 0.0,
+      "action": "AVOID"
+    }
+  },
+  "avoid_signals": [
+    "ppm_flag",
+    "gene_therapy_cmc",
+    "ema_cmc_flag",
+    "hiring_void_nda",
+    "pediatric_no_pk",
+    "cmc_extension_active",
+    "insider_critical_sell"
+  ],
+  "feature_engineering": {
+    "sponsor_naive": "sponsor_prior_approvals == 0",
+    "sponsor_experienced": "sponsor_prior_approvals >= 5",
+    "is_resub": "resubmission_class > 0",
+    "ta_very_high": "ta_very_high_risk (binary)",
+    "log_spa": "log1p(sponsor_prior_approvals)",
+    "surrogate": "surrogate_endpoint (binary)",
+    "had_adcom": "had_adcom (binary)",
+    "orphan_flag": "orphan (binary)",
+    "spa_sweet": "1 <= sponsor_prior_approvals <= 5",
+    "spa_mega": "sponsor_prior_approvals >= 30",
+    "multi_crl": "prior_crl_count >= 2"
+  }
+}

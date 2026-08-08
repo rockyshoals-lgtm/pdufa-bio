@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "WakeQuest",
+    "slug": "wakequest",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#070B14",
+    "splash": {
+      "backgroundColor": "#070B14"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ninerealms.wakequest",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
+    },
+    "android": {
+      "package": "com.ninerealms.wakequest",
+      "permissions": [
+        "SCHEDULE_EXACT_ALARM",
+        "POST_NOTIFICATIONS",
+        "VIBRATE",
+        "WAKE_LOCK"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#8B5CF6"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "WakeQuest uses the camera to scan a friend's Battle Code so your monsters can fight."
+        }
+      ]
+    ]
+  }
+}

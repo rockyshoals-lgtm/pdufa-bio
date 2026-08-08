@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9REALMS 改善 Kaizen Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.7/Recharts.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #1a2332;
+    --bg-card-hover: #1e2a3a;
+    --border: #2d3748;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-green: #10b981;
+    --accent-green-dim: rgba(16, 185, 129, 0.15);
+    --accent-blue: #3b82f6;
+    --accent-blue-dim: rgba(59, 130, 246, 0.15);
+    --accent-purple: #8b5cf6;
+    --accent-purple-dim: rgba(139, 92, 246, 0.15);
+    --accent-orange: #f59e0b;
+    --accent-orange-dim: rgba(245, 158, 11, 0.15);
+    --accent-red: #ef4444;
+    --accent-red-dim: rgba(239, 68, 68, 0.15);
+    --accent-cyan: #06b6d4;
+    --accent-cyan-dim: rgba(6, 182, 212, 0.15);
+    --kaizen-gold: #fbbf24;
+    --kaizen-gold-dim: rgba(251, 191, 36, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.1); }
+    50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.25); }
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in {
+    animation: slide-up 0.4s ease-out forwards;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useCallback, useRef } = React;
+const {
+  LineChart, Line, AreaChart, Area, BarChart, Bar, RadarChart, Radar,
+  PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  ReferenceLine, Cell, PieChart, Pie, Legend
+} = Recharts;
+
+// ═══════════════════════════════════════════════════════════════
+// DEMO DATA GENERATOR (used when no live data available)
+// ═══════════════════════════════════════════════════════════════
+
+function generateDemoData() {
+  const rounds = 80;
+  const auc_series = [];
+  const brier_series = [];
+  const promotions = [];
+  let bestAuc = 0.90;
+  let totalPromotions = 0;
+
+  for (let i = 1; i <= rounds; i++) {
+    const noise = (Math.random() - 0.5) * 0.04;
+    const trend = i * 0.0003;
+    const auc = Math.min(0.98, Math.max(0.82, bestAuc + noise + trend * 0.1));
+    const promoted = auc > bestAuc + 0.0003;
+    if (promoted) {
+      bestAuc = auc;
+      totalPromotions++;
+      promotions.push({ round: i, wf_auc: +auc.toFixed(6), timestamp: new Date().toISOString() });
+    }
+    auc_series.push({
+      round: i, wf_auc: +auc.toFixed(6), promoted,
+      timestamp: new Date(Date.now() - (rounds - i) * 120000).toISOString()
+    });
+    brier_series.push({ round: i, wf_brier: +(0.12 - i * 0.0005 + (Math.random() - 0.5) * 0.02).toFixed(6) });
+  }
+
+  const featureWins = {
+    "btd_x_oncology": 0.82, "pr_x_experienced": 0.74, "desig_x_experienced": 0.71,
+    "year": 0.68, "is_hoeg_era": 0.65, "cash_x_experienced": 0.59,
+    "prior_crl_x_base_rate": 0.55, "orphan_x_desig_stack": 0.51,
+    "is_oncology": 0.48, "is_neurology": 0.42, "is_class1_resub": 0.38,
+    "base_rate_ta_sq": 0.35, "log_pubs": 0.30, "insider_x_social": 0.25,
+  };
+
+  const featureApps = {};
+  Object.keys(featureWins).forEach(k => { featureApps[k] = Math.floor(Math.random() * 60) + 10; });
+
+  return {
+    meta: { generated_at: new Date().toISOString(), session_start: new Date(Date.now() - 3600000).toISOString(), daemon_version: "kaizen-v1.0" },
+    summary: {
+      total_rounds: rounds, total_promotions: totalPromotions,
+      promotion_rate: +(totalPromotions / rounds).toFixed(4),
+      best_auc_ever: +bestAuc.toFixed(6), worst_auc_ever: 0.8234,
+      auc_range: +(bestAuc - 0.8234).toFixed(6),
+      current_streak: 3, longest_streak: 14, duplicate_count: 2,
+      unique_configs: rounds - 2, avg_round_time_s: 8.4,
+    },
+    kaizen: { score: 72.5, improvement_velocity: 15.3, exploration_diversity: 88.1, efficiency_ratio: 18.7, freshness: 94.0 },
+    adaptive: { mutation_rate: 0.2847, temperature: 0.95, search_width: 1.0 },
+    auc_series, brier_series,
+    promotion_history: promotions,
+    plateau_events: [{ round: 35, streak: 10, timestamp: new Date().toISOString() }],
+    feature_win_rates: featureWins,
+    feature_appearances: featureApps,
+    recent_rounds: auc_series.slice(-20).map(r => ({
+      ...r, wf_brier: +(0.08 + Math.random() * 0.03).toFixed(6),
+      wf_t4p: +(0.7 + Math.random() * 0.15).toFixed(4),
+      n_eng: Math.floor(Math.random() * 8) + 6, elapsed: +(3 + Math.random() * 8).toFixed(1),
+      yearly_aucs: [0.90, 0.92, 0.88, 0.91, 0.93].map(v => +(v + (Math.random()-0.5)*0.04).toFixed(4)),
+    })),
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// COMPONENTS
+// ═══════════════════════════════════════════════════════════════
+
+function KaizenGauge({ score }) {
+  const radius = 70;
+  const stroke = 10;
+  const normalizedRadius = radius - stroke / 2;
+  const circumference = normalizedRadius * 2 * Math.PI;
+  const arc = circumference * 0.75; // 270 degrees
+  const offset = arc - (score / 100) * arc;
+
+  const getColor = (s) => {
+    if (s >= 80) return '#10b981';
+    if (s >= 60) return '#fbbf24';
+    if (s >= 40) return '#f59e0b';
+    return '#ef4444';
+  };
+
+  return (
+    <div style={{ position: 'relative', width: radius * 2, height: radius * 2, margin: '0 auto' }}>
+      <svg width={radius * 2} height={radius * 2} viewBox={`0 0 ${radius * 2} ${radius * 2}`}>
+        <circle
+          stroke="var(--border)" fill="none" strokeWidth={stroke}
+          r={normalizedRadius} cx={radius} cy={radius}
+          strokeDasharray={`${arc} ${circumference}`}
+          strokeDashoffset={0}
+          transform={`rotate(135 ${radius} ${radius})`}
+          strokeLinecap="round"
+        />
+        <circle
+          stroke={getColor(score)} fill="none" strokeWidth={stroke}
+          r={normalizedRadius} cx={radius} cy={radius}
+          strokeDasharray={`${arc} ${circumference}`}
+          strokeDashoffset={offset}
+          transform={`rotate(135 ${radius} ${radius})`}
+          strokeLinecap="round"
+          style={{ transition: 'stroke-dashoffset 1s ease-in-out, stroke 0.5s ease' }}
+        />
+      </svg>
+      <div style={{
+        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -40%)',
+        textAlign: 'center'
+      }}>
+        <div className="mono" style={{ fontSize: 28, fontWeight: 700, color: getColor(score) }}>
+          {score.toFixed(1)}
+        </div>
+        <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>改善 SCORE</div>
+      </div>
+    </div>
+  );
+}
+
+function StatCard({ label, value, unit, color, icon, sub }) {
+  return (
+    <div style={{
+      background: 'var(--bg-card)', border: '1px solid var(--border)',
+      borderRadius: 12, padding: '16px 20px',
+      transition: 'all 0.2s ease', cursor: 'default',
+    }}
+    onMouseEnter={e => { e.currentTarget.style.borderColor = color; e.currentTarget.style.background = 'var(--bg-card-hover)'; }}
+    onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-card)'; }}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div>
+          <div style={{ fontSize: 12, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5 }}>{label}</div>
+          <div className="mono" style={{ fontSize: 24, fontWeight: 700, color, marginTop: 4 }}>
+            {value}{unit && <span style={{ fontSize: 14, fontWeight: 400, marginLeft: 2 }}>{unit}</span>}
+          </div>
+          {sub && <div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 4 }}>{sub}</div>}
+        </div>
+        <div style={{ fontSize: 24, opacity: 0.6 }}>{icon}</div>
+      </div>
+    </div>
+  );
+}
+
+function ChartCard({ title, children, span = 1 }) {
+  return (
+    <div style={{
+      background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12,
+      padding: 20, gridColumn: `span ${span}`,
+    }}>
+      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-secondary)', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+        {title}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function CustomTooltip({ active, payload, label }) {
+  if (!active || !payload?.length) return null;
+  return (
+    <div style={{
+      background: 'var(--bg-secondary)', border: '1px solid var(--border)',
+      borderRadius: 8, padding: '10px 14px', fontSize: 12,
+    }}>
+      <div className="mono" style={{ fontWeight: 600, marginBottom: 4 }}>Round {label}</div>
+      {payload.map((p, i) => (
+        <div key={i} style={{ color: p.color, marginTop: 2 }}>
+          {p.name}: <span className="mono" style={{ fontWeight: 600 }}>{typeof p.value === 'number' ? p.value.toFixed(6) : p.value}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MAIN DASHBOARD
+// ═══════════════════════════════════════════════════════════════
+
+function Dashboard() {
+  const [data, setData] = useState(null);
+  const [autoRefresh, setAutoRefresh] = useState(true);
+  const [refreshInterval, setRefreshInterval] = useState(10);
+  const [lastRefresh, setLastRefresh] = useState(null);
+  const [isLive, setIsLive] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview');
+  const fileInput = useRef(null);
+
+  const loadData = useCallback(async () => {
+    try {
+      const response = await fetch('kaizen_dashboard.json?t=' + Date.now());
+      if (response.ok) {
+        const json = await response.json();
+        setData(json);
+        setIsLive(true);
+        setLastRefresh(new Date());
+      } else {
+        throw new Error('Not found');
+      }
+    } catch {
+      // Fall back to demo data
+      setData(generateDemoData());
+      setIsLive(false);
+      setLastRefresh(new Date());
+    }
+  }, []);
+
+  useEffect(() => { loadData(); }, [loadData]);
+  useEffect(() => {
+    if (!autoRefresh) return;
+    const id = setInterval(loadData, refreshInterval * 1000);
+    return () => clearInterval(id);
+  }, [autoRefresh, refreshInterval, loadData]);
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const json = JSON.parse(ev.target.result);
+        setData(json);
+        setIsLive(true);
+        setLastRefresh(new Date());
+      } catch { alert('Invalid JSON file'); }
+    };
+    reader.readAsText(file);
+  };
+
+  if (!data) return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: 48, marginBottom: 16 }}>改善</div>
+        <div style={{ color: 'var(--text-muted)' }}>Loading Kaizen Dashboard...</div>
+      </div>
+    </div>
+  );
+
+  const s = data.summary;
+  const k = data.kaizen;
+  const a = data.adaptive;
+  const tabs = ['overview', 'features', 'yearly', 'rounds'];
+
+  // Prepare feature chart data
+  const featureData = Object.entries(data.feature_win_rates || {})
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 14)
+    .map(([name, rate]) => ({
+      name: name.length > 18 ? name.slice(0, 16) + '…' : name,
+      full_name: name,
+      win_rate: +(rate * 100).toFixed(1),
+      appearances: data.feature_appearances?.[name] || 0,
+    }));
+
+  // Radar data for Kaizen components
+  const radarData = [
+    { axis: 'Velocity', value: k.improvement_velocity },
+    { axis: 'Diversity', value: k.exploration_diversity },
+    { axis: 'Efficiency', value: k.efficiency_ratio * 5 },
+    { axis: 'Freshness', value: k.freshness },
+  ];
+
+  // Yearly AUC heatmap data from recent rounds
+  const yearlyData = (data.recent_rounds || [])
+    .filter(r => r.yearly_aucs && r.yearly_aucs.length > 0)
+    .slice(-15)
+    .map(r => {
+      const obj = { round: r.round };
+      const years = [2021, 2022, 2023, 2024, 2025];
+      r.yearly_aucs.forEach((auc, i) => {
+        if (i < years.length) obj[`y${years[i]}`] = auc;
+      });
+      return obj;
+    });
+
+  return (
+    <div style={{ minHeight: '100vh', padding: '20px 24px' }}>
+      {/* HEADER */}
+      <div style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        marginBottom: 24, paddingBottom: 16, borderBottom: '1px solid var(--border)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div style={{ fontSize: 32, fontWeight: 300 }}>改善</div>
+          <div>
+            <div style={{ fontSize: 20, fontWeight: 700 }}>9REALMS Kaizen Dashboard</div>
+            <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
+              LightGBM Perpetual Auto-ML Daemon Monitor
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: 6,
+            padding: '6px 12px', borderRadius: 20,
+            background: isLive ? 'var(--accent-green-dim)' : 'var(--accent-orange-dim)',
+            border: `1px solid ${isLive ? 'var(--accent-green)' : 'var(--accent-orange)'}`,
+            fontSize: 12, fontWeight: 500,
+          }}>
+            <div style={{
+              width: 8, height: 8, borderRadius: '50%',
+              background: isLive ? 'var(--accent-green)' : 'var(--accent-orange)',
+              animation: isLive ? 'pulse-glow 2s ease-in-out infinite' : 'none',
+            }} />
+            {isLive ? 'LIVE' : 'DEMO'}
+          </div>
+          <input type="file" ref={fileInput} style={{ display: 'none' }} accept=".json" onChange={handleFileUpload} />
+          <button onClick={() => fileInput.current.click()} style={{
+            padding: '6px 14px', borderRadius: 6, border: '1px solid var(--border)',
+            background: 'var(--bg-card)', color: 'var(--text-secondary)', cursor: 'pointer',
+            fontSize: 12,
+          }}>Load JSON</button>
+          <button onClick={loadData} style={{
+            padding: '6px 14px', borderRadius: 6, border: '1px solid var(--accent-blue)',
+            background: 'var(--accent-blue-dim)', color: 'var(--accent-blue)', cursor: 'pointer',
+            fontSize: 12, fontWeight: 500,
+          }}>↻ Refresh</button>
+        </div>
+      </div>
+
+      {/* TAB BAR */}
+      <div style={{ display: 'flex', gap: 4, marginBottom: 20 }}>
+        {tabs.map(tab => (
+          <button key={tab} onClick={() => setActiveTab(tab)} style={{
+            padding: '8px 20px', borderRadius: 8, border: 'none',
+            background: activeTab === tab ? 'var(--accent-blue)' : 'var(--bg-card)',
+            color: activeTab === tab ? '#fff' : 'var(--text-secondary)',
+            cursor: 'pointer', fontSize: 13, fontWeight: 500,
+            transition: 'all 0.2s ease', textTransform: 'capitalize',
+          }}>
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* OVERVIEW TAB */}
+      {activeTab === 'overview' && (
+        <div className="animate-in">
+          {/* KAIZEN SCORE + KEY STATS */}
+          <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 20, marginBottom: 20 }}>
+            {/* Kaizen Gauge */}
+            <div style={{
+              background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 12,
+              padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center',
+              animation: 'pulse-glow 3s ease-in-out infinite',
+            }}>
+              <KaizenGauge score={k.score} />
+              <div style={{ marginTop: 12, width: '100%' }}>
+                {[
+                  { label: 'Velocity', value: k.improvement_velocity, color: 'var(--accent-green)' },
+                  { label: 'Diversity', value: k.exploration_diversity, color: 'var(--accent-purple)' },
+                  { label: 'Efficiency', value: (k.efficiency_ratio * 5).toFixed(1), color: 'var(--accent-blue)' },
+                  { label: 'Freshness', value: k.freshness, color: 'var(--accent-cyan)' },
+                ].map(item => (
+                  <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '3px 0', fontSize: 11 }}>
+                    <span style={{ color: 'var(--text-muted)' }}>{item.label}</span>
+                    <span className="mono" style={{ color: item.color, fontWeight: 600 }}>{typeof item.value === 'number' ? item.value.toFixed(1) : item.value}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Stats Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12 }}>
+              <StatCard label="Total Rounds" value={s.total_rounds} icon="🔄" color="var(--text-primary)" sub={`${s.avg_round_time_s}s avg`} />
+              <StatCard label="Promotions" value={s.total_promotions} icon="🏆" color="var(--kaizen-gold)" sub={`${(s.promotion_rate * 100).toFixed(1)}% rate`} />
+              <StatCard label="Best AUC" value={s.best_auc_ever.toFixed(4)} icon="📈" color="var(--accent-green)" sub={`range: ${s.auc_range.toFixed(4)}`} />
+              <StatCard label="Current Streak" value={s.current_streak} icon={s.current_streak > 10 ? "🔥" : "⏳"} color={s.current_streak > 15 ? 'var(--accent-red)' : s.current_streak > 8 ? 'var(--accent-orange)' : 'var(--accent-green)'} sub={`longest: ${s.longest_streak}`} />
+              <StatCard label="Mutation Rate" value={(a.mutation_rate * 100).toFixed(1)} unit="%" icon="🧬" color="var(--accent-purple)" sub={`temp: ${a.temperature.toFixed(2)}`} />
+              <StatCard label="Search Width" value={a.search_width.toFixed(1)} unit="×" icon="🔍" color="var(--accent-blue)" sub="trial multiplier" />
+              <StatCard label="Unique Configs" value={s.unique_configs} icon="🎲" color="var(--accent-cyan)" sub={`${s.duplicate_count} dupes`} />
+              <StatCard label="Ensemble Pool" value={10} icon="🎯" color="var(--accent-orange)" sub="stacked models" />
+            </div>
+          </div>
+
+          {/* AUC TIMELINE */}
+          <ChartCard title="Walk-Forward AUC Over Time" span={1}>
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={data.auc_series}>
+                <defs>
+                  <linearGradient id="aucGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="var(--accent-blue)" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="var(--accent-blue)" stopOpacity={0.02}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="round" stroke="var(--text-muted)" fontSize={11} />
+                <YAxis domain={['auto', 'auto']} stroke="var(--text-muted)" fontSize={11} tickFormatter={v => v.toFixed(3)} />
+                <Tooltip content={<CustomTooltip />} />
+                <Area type="monotone" dataKey="wf_auc" stroke="var(--accent-blue)" fill="url(#aucGradient)" strokeWidth={2} name="WF AUC" dot={false} />
+                {data.auc_series.filter(d => d.promoted).map((d, i) => (
+                  <ReferenceLine key={i} x={d.round} stroke="var(--kaizen-gold)" strokeDasharray="3 3" strokeWidth={1} />
+                ))}
+              </AreaChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          {/* BRIER + ADAPTIVE PARAMS */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 20 }}>
+            <ChartCard title="Brier Score (Lower = Better Calibration)">
+              <ResponsiveContainer width="100%" height={220}>
+                <AreaChart data={data.brier_series}>
+                  <defs>
+                    <linearGradient id="brierGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="var(--accent-purple)" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="var(--accent-purple)" stopOpacity={0.02}/>
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                  <XAxis dataKey="round" stroke="var(--text-muted)" fontSize={10} />
+                  <YAxis domain={['auto', 'auto']} stroke="var(--text-muted)" fontSize={10} tickFormatter={v => v.toFixed(3)} />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Area type="monotone" dataKey="wf_brier" stroke="var(--accent-purple)" fill="url(#brierGrad)" strokeWidth={2} name="Brier" dot={false} />
+                </AreaChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Kaizen Radar">
+              <ResponsiveContainer width="100%" height={220}>
+                <RadarChart data={radarData} outerRadius={80}>
+                  <PolarGrid stroke="var(--border)" />
+                  <PolarAngleAxis dataKey="axis" stroke="var(--text-muted)" fontSize={11} />
+                  <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
+                  <Radar name="Score" dataKey="value" stroke="var(--kaizen-gold)" fill="var(--kaizen-gold)" fillOpacity={0.2} strokeWidth={2} />
+                </RadarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+        </div>
+      )}
+
+      {/* FEATURES TAB */}
+      {activeTab === 'features' && (
+        <div className="animate-in">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+            <ChartCard title="Feature Win Rates (% of Appearances → Champion)">
+              <ResponsiveContainer width="100%" height={420}>
+                <BarChart data={featureData} layout="vertical" margin={{ left: 20 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                  <XAxis type="number" domain={[0, 100]} stroke="var(--text-muted)" fontSize={10} tickFormatter={v => `${v}%`} />
+                  <YAxis type="category" dataKey="name" stroke="var(--text-muted)" fontSize={10} width={130} />
+                  <Tooltip content={({ active, payload }) => {
+                    if (!active || !payload?.length) return null;
+                    const d = payload[0].payload;
+                    return (
+                      <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 8, padding: 10, fontSize: 12 }}>
+                        <div className="mono" style={{ fontWeight: 600 }}>{d.full_name}</div>
+                        <div>Win Rate: <span className="mono" style={{ color: 'var(--accent-green)' }}>{d.win_rate}%</span></div>
+                        <div>Appearances: <span className="mono">{d.appearances}</span></div>
+                      </div>
+                    );
+                  }} />
+                  <Bar dataKey="win_rate" radius={[0, 4, 4, 0]} name="Win Rate">
+                    {featureData.map((entry, i) => (
+                      <Cell key={i} fill={entry.win_rate > 60 ? 'var(--accent-green)' : entry.win_rate > 40 ? 'var(--accent-blue)' : 'var(--text-muted)'} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Feature Appearances (How Often Tried)">
+              <ResponsiveContainer width="100%" height={420}>
+                <BarChart data={featureData} layout="vertical" margin={{ left: 20 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                  <XAxis type="number" stroke="var(--text-muted)" fontSize={10} />
+                  <YAxis type="category" dataKey="name" stroke="var(--text-muted)" fontSize={10} width={130} />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Bar dataKey="appearances" fill="var(--accent-purple)" radius={[0, 4, 4, 0]} name="Appearances" />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+        </div>
+      )}
+
+      {/* YEARLY TAB */}
+      {activeTab === 'yearly' && (
+        <div className="animate-in">
+          <ChartCard title="Walk-Forward AUC by Year (Per Round)" span={1}>
+            <ResponsiveContainer width="100%" height={350}>
+              <LineChart data={yearlyData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="round" stroke="var(--text-muted)" fontSize={11} />
+                <YAxis domain={['auto', 'auto']} stroke="var(--text-muted)" fontSize={11} tickFormatter={v => v.toFixed(2)} />
+                <Tooltip content={<CustomTooltip />} />
+                <Legend />
+                <Line type="monotone" dataKey="y2021" stroke="#ef4444" strokeWidth={2} dot={false} name="2021" />
+                <Line type="monotone" dataKey="y2022" stroke="#f59e0b" strokeWidth={2} dot={false} name="2022" />
+                <Line type="monotone" dataKey="y2023" stroke="#10b981" strokeWidth={2} dot={false} name="2023" />
+                <Line type="monotone" dataKey="y2024" stroke="#3b82f6" strokeWidth={2} dot={false} name="2024" />
+                <Line type="monotone" dataKey="y2025" stroke="#8b5cf6" strokeWidth={2} dot={false} name="2025" />
+              </LineChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 20 }}>
+            <ChartCard title="Promotion Timeline">
+              <ResponsiveContainer width="100%" height={250}>
+                <BarChart data={data.promotion_history.slice(-20)}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                  <XAxis dataKey="round" stroke="var(--text-muted)" fontSize={10} />
+                  <YAxis domain={['auto', 'auto']} stroke="var(--text-muted)" fontSize={10} tickFormatter={v => v.toFixed(3)} />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Bar dataKey="wf_auc" fill="var(--kaizen-gold)" radius={[4, 4, 0, 0]} name="Champion AUC" />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Plateau Events">
+              {data.plateau_events.length > 0 ? (
+                <div style={{ maxHeight: 250, overflow: 'auto' }}>
+                  <table style={{ width: '100%', fontSize: 12, borderCollapse: 'collapse' }}>
+                    <thead>
+                      <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                        <th style={{ textAlign: 'left', padding: '8px 12px', color: 'var(--text-muted)' }}>Round</th>
+                        <th style={{ textAlign: 'left', padding: '8px 12px', color: 'var(--text-muted)' }}>Streak</th>
+                        <th style={{ textAlign: 'left', padding: '8px 12px', color: 'var(--text-muted)' }}>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.plateau_events.map((pe, i) => (
+                        <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
+                          <td className="mono" style={{ padding: '8px 12px' }}>R{pe.round}</td>
+                          <td style={{ padding: '8px 12px', color: pe.streak > 20 ? 'var(--accent-red)' : 'var(--accent-orange)' }}>
+                            {pe.streak} rounds
+                          </td>
+                          <td style={{ padding: '8px 12px', color: 'var(--text-muted)', fontSize: 11 }}>
+                            {pe.timestamp?.split('T')[0] || '—'}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div style={{ textAlign: 'center', padding: 40, color: 'var(--text-muted)' }}>
+                  No plateau events (streak &lt; 10) — 改善 is flowing!
+                </div>
+              )}
+            </ChartCard>
+          </div>
+        </div>
+      )}
+
+      {/* ROUNDS TAB */}
+      {activeTab === 'rounds' && (
+        <div className="animate-in">
+          <ChartCard title="Recent Rounds Detail" span={1}>
+            <div style={{ maxHeight: 600, overflow: 'auto' }}>
+              <table style={{ width: '100%', fontSize: 12, borderCollapse: 'collapse' }}>
+                <thead style={{ position: 'sticky', top: 0, background: 'var(--bg-card)' }}>
+                  <tr style={{ borderBottom: '2px solid var(--border)' }}>
+                    {['Round', 'WF AUC', 'Brier', 'T4 Prec', 'Eng Feat', 'Time', 'Status'].map(h => (
+                      <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: 'var(--text-muted)', fontSize: 11, textTransform: 'uppercase' }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {(data.recent_rounds || []).slice().reverse().map((r, i) => (
+                    <tr key={i} style={{
+                      borderBottom: '1px solid var(--border)',
+                      background: r.promoted ? 'var(--kaizen-gold-dim)' : 'transparent',
+                    }}>
+                      <td className="mono" style={{ padding: '10px 12px', fontWeight: 600 }}>R{r.round}</td>
+                      <td className="mono" style={{ padding: '10px 12px', color: r.wf_auc > 0.91 ? 'var(--accent-green)' : r.wf_auc > 0.88 ? 'var(--accent-blue)' : 'var(--text-secondary)' }}>
+                        {r.wf_auc.toFixed(6)}
+                      </td>
+                      <td className="mono" style={{ padding: '10px 12px' }}>{r.wf_brier?.toFixed(4) || '—'}</td>
+                      <td className="mono" style={{ padding: '10px 12px' }}>{r.wf_t4p?.toFixed(3) || '—'}</td>
+                      <td style={{ padding: '10px 12px' }}>{r.n_eng}</td>
+                      <td className="mono" style={{ padding: '10px 12px', color: 'var(--text-muted)' }}>{r.elapsed}s</td>
+                      <td style={{ padding: '10px 12px' }}>
+                        {r.promoted ? (
+                          <span style={{ padding: '2px 8px', borderRadius: 4, background: 'var(--kaizen-gold-dim)', color: 'var(--kaizen-gold)', fontWeight: 600, fontSize: 11 }}>
+                            🏆 PROMOTED
+                          </span>
+                        ) : (
+                          <span style={{ color: 'var(--text-muted)', fontSize: 11 }}>—</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </ChartCard>
+        </div>
+      )}
+
+      {/* FOOTER */}
+      <div style={{
+        marginTop: 32, paddingTop: 16, borderTop: '1px solid var(--border)',
+        display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--text-muted)',
+      }}>
+        <div>9REALMS 改善 Kaizen Engine v1.0 • {data.meta?.daemon_version || 'unknown'}</div>
+        <div>
+          Last refresh: {lastRefresh?.toLocaleTimeString() || '—'} •
+          Auto-refresh: {autoRefresh ? `${refreshInterval}s` : 'OFF'}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.render(<Dashboard />, document.getElementById('root'));
+</script>
+</body>
+</html>

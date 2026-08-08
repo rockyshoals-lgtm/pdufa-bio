@@ -1,0 +1,165 @@
+{
+  "pack_id": "ODIN_GUTS_VERIFICATION_PACK_v1",
+  "generated_at_utc": "2026-01-14T18:20:07Z",
+  "ticker": "GUTS",
+  "company": "Fractyl Health",
+  "catalyst": {
+    "name": "REMAIN-1 Midpoint Cohort randomized 6-month data",
+    "expected_timing": "late January 2026",
+    "engine": "PHASE_READOUT_HEAD",
+    "mode": "LEARNING_ONLY"
+  },
+  "claude_snapshot": {
+    "rating": "BUY",
+    "odin_score": 76,
+    "tier": 3,
+    "prob_positive_range": [
+      0.72,
+      0.78
+    ],
+    "expected_value_claimed": 0.21,
+    "position_size_claimed": "3-5% of portfolio",
+    "stop_loss_claimed": "-20%"
+  },
+  "engineering_verification_summary": {
+    "status": "PARTIAL",
+    "confirmed": [
+      "REMAIN-1 midpoint 3-month data: -2.5% vs +10% (p=0.014), N=45 randomized sham-controlled",
+      "REVEAL-1 6-month open-label: +1.5% \u00b1 1.3% SEM (n=17) after GLP-1 discontinuation",
+      "CEO open-market purchase: 10,416 shares at $1.92 on 2025-12-04 (Form 4 filed 2025-12-08)",
+      "Tranche A warrant call: exercise price $1.05, deadline 2025-12-30, potential gross proceeds up to $17.9M",
+      "Price ~ $2.005 on 2026-01-14 (finance tool snapshot)"
+    ],
+    "challenged_or_adjusted": [
+      "Market cap assumption ~$150M likely stale; use shares outstanding from 10-Q and current price for updated cap estimate",
+      "Short interest claim 12-14% not verified; verified range ~8.6%\u201311.7% of float depending on source",
+      "Germany registry durability is supportive but lower evidentiary weight (non-U.S., selection bias, real-world cohort)",
+      "EV and position sizing should incorporate dilution/overhang dynamics (warrants) and updated market cap"
+    ],
+    "suggested_engineering_adjustment": {
+      "score_adjustment": -4,
+      "revised_score": 72,
+      "revised_tier": 3,
+      "revised_prob_positive_range": [
+        0.65,
+        0.72
+      ],
+      "notes": "Adjustment driven by dilution/overhang + market cap correction + conservative weighting of real-world durability."
+    }
+  },
+  "key_metrics": {
+    "price": {
+      "value": 2.005,
+      "as_of_utc": "2026-01-14T18:00:29Z",
+      "source": "finance_tool"
+    },
+    "cash": {
+      "value_musd": 85.6,
+      "as_of": "2026-01-02",
+      "source_url": "https://ir.fractyl.com/news-releases/news-release-details/fractyl-health-enters-catalyst-rich-2026-positioned-define-post"
+    },
+    "shares_outstanding": {
+      "value": 132216275,
+      "as_of": "2025-09-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312525277531/guts-20250930.htm"
+    },
+    "cash_per_share_estimate": {
+      "value_usd": 0.647,
+      "method": "cash / shares_outstanding",
+      "note": "Assumes shares did not change materially post 2025-09-30."
+    }
+  },
+  "evidence": [
+    {
+      "claim": "REMAIN-1 midpoint 3-month data: -2.5% Revita vs +10% sham; p=0.014; N=45; safety clean",
+      "sources": [
+        {
+          "url": "https://ir.fractyl.com/news-releases/news-release-details/fractyl-health-enters-catalyst-rich-2026-positioned-define-post",
+          "type": "IR_press_release"
+        },
+        {
+          "url": "https://t.co/tSpPvtW7Ii",
+          "type": "IR_deck_link_shortened"
+        }
+      ],
+      "retrieved_at_utc": "2026-01-14T18:20:07Z"
+    },
+    {
+      "claim": "REVEAL-1 6-month open-label: +1.5% \u00b1 1.3% SEM; n=17",
+      "sources": [
+        {
+          "url": "https://ir.fractyl.com/news-releases/news-release-details/fractyl-health-reports-positive-6-month-reveal-1-open-label",
+          "type": "IR_press_release"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312525304486/guts-20251202.htm",
+          "type": "SEC_8K"
+        }
+      ],
+      "retrieved_at_utc": "2026-01-14T18:20:07Z"
+    },
+    {
+      "claim": "Tranche A warrant call: $1.05 strike, deadline 2025-12-30, up to $17.9M",
+      "sources": [
+        {
+          "url": "https://ir.fractyl.com/news-releases/news-release-details/fractyl-health-announces-call-tranche-warrants-tied-august-2025",
+          "type": "IR_press_release"
+        },
+        {
+          "url": "https://www.stocktitan.net/news/GUTS/fractyl-health-announces-call-of-tranche-a-warrants-tied-to-august-ef8jsbfqq1qz.html",
+          "type": "secondary_summary"
+        }
+      ],
+      "retrieved_at_utc": "2026-01-14T18:20:07Z"
+    },
+    {
+      "claim": "CEO open market buy: 10,416 shares @ $1.92 on 2025-12-04",
+      "sources": [
+        {
+          "url": "https://ir.fractyl.com/financial-information/sec-filings",
+          "type": "IR_SEC_filings_index"
+        },
+        {
+          "url": "https://finviz.com/quote.ashx?t=GUTS&ty=si",
+          "type": "secondary_insider_summary"
+        }
+      ],
+      "retrieved_at_utc": "2026-01-14T18:20:07Z"
+    },
+    {
+      "claim": "Shares outstanding 132,216,275 at 2025-09-30",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1572616/000119312525277531/guts-20250930.htm",
+          "type": "SEC_10Q"
+        }
+      ],
+      "retrieved_at_utc": "2026-01-14T18:20:07Z"
+    },
+    {
+      "claim": "Short interest range ~8.6%\u201311.7% of float (varies by source)",
+      "sources": [
+        {
+          "url": "https://www.stockanalysis.com/stocks/guts/statistics/",
+          "type": "secondary_short_interest"
+        },
+        {
+          "url": "https://www.marketbeat.com/stocks/NASDAQ/GUTS/short-interest/",
+          "type": "secondary_short_interest"
+        },
+        {
+          "url": "https://www.marketwatch.com/investing/stock/guts",
+          "type": "secondary_short_interest"
+        }
+      ],
+      "retrieved_at_utc": "2026-01-14T18:20:07Z"
+    }
+  ],
+  "open_items_for_research_authority": [
+    "Confirm endpoint definition/denominator for regain separation and p-value calculation details.",
+    "Verify fully diluted share count after Tranche A warrant exercises; quantify dilution.",
+    "Verify cash/runway after warrant exercise proceeds and any subsequent financing.",
+    "Competitive landscape: GLP-1 maintenance strategies and new agents affecting relevance.",
+    "Confirm if any additional REMAIN-1 updates were released after latest IR release."
+  ]
+}

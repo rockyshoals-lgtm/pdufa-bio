@@ -1,0 +1,11 @@
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+$ATXS: possibly delisted; no timezone found
+
+1 Failed download:
+['ATXS']: possibly delisted; no timezone found
+progress 20 / 142 ok 18
+$CLSD: possibly delisted; no price data found  (1d 2021-10-01 -> 2026-07-11)
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+$BPMC: possibly delisted; no timezone found

@@ -1,0 +1,69 @@
+{
+  "version": "9.2",
+  "optimization": {
+    "method": "GPU_random_search",
+    "configs_tested": 1000000000,
+    "timestamp": "2026-01-27T22:54:05.262943"
+  },
+  "performance": {
+    "brier": 0.06570073962211609,
+    "tier4_crl_rate": 0.9903846153846154,
+    "tier4_count": 104,
+    "crl_recall": 0.7611111111111111
+  },
+  "champion_params": {
+    "btd_weight": 0.02531474083662033,
+    "orphan_weight": 0.019316833466291428,
+    "priority_review_weight": 0.024023106321692467,
+    "fast_track_weight": 0.014605214819312096,
+    "accelerated_approval_weight": 0.029466746374964714,
+    "no_designation_penalty": -0.021069733425974846,
+    "btd_pr_synergy_bonus": 0.11446114629507065,
+    "btd_alone_bonus": 0.042738281190395355,
+    "full_stack_bonus": 0.022566286846995354,
+    "adcom_high_boost": 0.09546827524900436,
+    "adcom_mid_penalty": -0.07218863815069199,
+    "adcom_low_penalty": -0.08149131387472153,
+    "prior_crl_penalty": -0.0636439248919487,
+    "class1_resubmission_boost": 0.0931159108877182,
+    "class2_resubmission_penalty": -0.0577588751912117,
+    "sponsor_one_approval_penalty": -0.021640891209244728,
+    "sponsor_sweet_spot_boost": 0.09018799662590027,
+    "sponsor_mid_tier_penalty": -0.015779906883835793,
+    "sponsor_large_pharma_boost": 0.028882162645459175,
+    "form_483_penalty": -0.14383961260318756,
+    "ta_adjustment_weight": 0.6127407550811768,
+    "temporal_2024_plus_boost": 0.07878392189741135,
+    "tier1_threshold": 0.8321688771247864,
+    "tier2_threshold": 0.7067523002624512,
+    "tier3_threshold": 0.6111470460891724
+  },
+  "therapeutic_area_adjustments": {
+    "Pain Management": -0.286,
+    "Hematology": -0.224,
+    "Nephrology": -0.177,
+    "Ophthalmology": -0.131,
+    "CNS/Neurology": -0.098,
+    "Cardiovascular": -0.081,
+    "Metabolic/Endocrine": -0.067,
+    "Rare Disease": -0.043,
+    "Other": -0.019,
+    "Immunology": 0.016,
+    "Dermatology": 0.028,
+    "Oncology": 0.061,
+    "GI/Hepatology": 0.067,
+    "Respiratory": 0.09,
+    "Infectious Disease": 0.103,
+    "Vaccines": 0.133,
+    "Women's Health": 0.133
+  },
+  "modality_mfg_penalties": {
+    "Small Molecule": -0.45,
+    "Antibody": -0.15,
+    "Cell/Gene Therapy": -0.08,
+    "RNA Therapy": -0.08,
+    "Peptide": -0.12,
+    "Vaccine": -0.05,
+    "ADC": -0.12
+  }
+}

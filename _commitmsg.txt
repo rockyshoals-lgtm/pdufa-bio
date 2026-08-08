@@ -1,0 +1,40 @@
+seo: build the roads to the long tail, answer the questions, show the freshness
+
+Acting on the competitive teardown. Its central finding is the one worth building against: Assyro,
+BiopharmaWatch and FDA Tracker keep their catalyst data behind query parameters, so their entire
+dataset ranks on one URL each. Nobody in the category has a per-drug, per-ticker or per-decision
+page. We have ~377 of them. The hub-page war is crowded and we are behind on authority; the long
+tail is empty and we are the only one with an army in it.
+
+Except the army had no roads. /calendar and /decisions linked to ZERO ticker pages. That is also the
+mechanical reason 421 URLs sit in "Discovered, currently not indexed": Google found them in the
+sitemap, and nothing on the site argued they mattered. 405 internal links now route from every
+catalyst list into the company pages, as a "Companies on this page" index. It went in as an index
+rather than inline links because calendar rows are themselves <a> elements and nested anchors are
+invalid; browsers silently unnest them.
+
+FAQ + FAQPage schema on all 209 ticker hubs, which had zero. The uncontested queries are questions
+("when is the SLS phase 3 readout" is Google's own People-Also-Ask), and PAA eligibility needs
+question-shaped content plus schema. Every answer is generated from data we hold and show: next
+catalyst at its real date precision, decision history with outcomes, measured run-up. Answer first,
+evidence second, because Google and the assistants lift the first clean sentence. A ticker with no
+dated catalyst gets an answer saying so rather than a plausible invention.
+
+Freshness stamp site-wide, which attacks the single most exploitable weakness found: the category
+leader ships a badge reading "Synced 1w ago". Ours cannot be seen unless we show it.
+
+The stamp took two attempts and the first was wrong in an instructive way. Baking the build time
+into 850 pages made every page's content hash change on every build, so the sitemap immediately went
+back to claiming 100% of URLs changed today, the exact signal the lastmod work exists to remove. It
+would also have committed 850 modified files daily, forever, for a string nobody reads. My own guard
+caught it. Now the markup is constant and one small /build-info.json carries the timestamp, fetched
+at view time. Page bytes verified stable across consecutive builds.
+
+The static fallback had to be true on its own, since a crawler without JS sees only that. It reads
+"rebuilt daily", a claim about the schedule that is verifiable and cannot rot. "Updated 4 hours ago"
+baked into a cached page becomes a false claim about honesty, which is the worst kind to publish
+here.
+
+Sitemap boilerplate list extended to cover the stamp and the company index, so template furniture
+never advances lastmod. Result on this build: 164 pages report a real content change across 5
+distinct dates, which is the FAQ landing on the ticker hubs, not a sweep.

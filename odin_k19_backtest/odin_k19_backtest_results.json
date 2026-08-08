@@ -1,0 +1,105 @@
+{
+  "kaizen_id": "K19",
+  "parent": "K18",
+  "codename": "Backtest P&L",
+  "training_date": "2026-02-16T03:18:21.608890",
+  "n_events": 1732,
+  "return_assumptions": {
+    "positive": 0.08,
+    "negative": -0.03
+  },
+  "strategy_comparison": {
+    "Baseline (trade all)": {
+      "n_trades": 1732,
+      "total_pnl": 95.87999999999998,
+      "avg_return": 0.05535796766743648,
+      "win_rate": 0.7759815242494227,
+      "sharpe": 1.2066864419958525,
+      "max_drawdown": -0.18000000000000682
+    },
+    "ML Only (K15)": {
+      "n_trades": 1377,
+      "total_pnl": 104.315,
+      "avg_return": 0.07575526506899055,
+      "win_rate": 0.9607843137254902,
+      "sharpe": 3.620247637580414,
+      "max_drawdown": -0.060000000000002274
+    },
+    "Gungnir (K18)": {
+      "n_trades": 1352,
+      "total_pnl": 103.20999999999998,
+      "avg_return": 0.0763387573964497,
+      "win_rate": 0.9696745562130178,
+      "sharpe": 3.9858160891970087,
+      "max_drawdown": -0.060000000000002274
+    }
+  },
+  "tier_breakdown": {
+    "TIER_1": {
+      "count": 1341,
+      "traded": 1341,
+      "win_rate": 0.9694258016405667,
+      "avg_return": 0.07663683818046232,
+      "total_pnl": 102.76999999999998
+    },
+    "TIER_2": {
+      "count": 11,
+      "traded": 11,
+      "win_rate": 1.0,
+      "avg_return": 0.039999999999999994,
+      "total_pnl": 0.43999999999999995
+    },
+    "TIER_3": {
+      "count": 10,
+      "traded": 0,
+      "win_rate": 1.0,
+      "avg_return": 0.0,
+      "total_pnl": 0.0
+    },
+    "TIER_4": {
+      "count": 370,
+      "traded": 0,
+      "win_rate": 0.062162162162162166,
+      "avg_return": 0.0,
+      "total_pnl": 0.0
+    }
+  },
+  "year_breakdown": {
+    "2023": {
+      "events": 578,
+      "traded": 459,
+      "win_rate": 0.9607843137254902,
+      "pnl": 34.660000000000004
+    },
+    "2024": {
+      "events": 567,
+      "traded": 439,
+      "win_rate": 0.9726651480637813,
+      "pnl": 33.64
+    },
+    "2025": {
+      "events": 538,
+      "traded": 417,
+      "win_rate": 0.9784172661870504,
+      "pnl": 32.209999999999994
+    },
+    "2026": {
+      "events": 49,
+      "traded": 37,
+      "win_rate": 0.9459459459459459,
+      "pnl": 2.7
+    }
+  },
+  "edge": {
+    "base_rate": 0.7795,
+    "tier1_win_rate": 0.9694258016405667,
+    "tier1_edge": 0.18992580164056672,
+    "tier4_loss_rate": 0.9378378378378378
+  },
+  "gungnir_impact": {
+    "events_changed": 43,
+    "events_downgraded": 25,
+    "correct_saves": 13,
+    "incorrect_blocks": 12
+  }
+}

@@ -1,0 +1,49 @@
+================================================================================
+  CROSS-ENGINE META v1.0 — ODIN × BIFROST
+================================================================================
+
+[STEP 1] ODIN honest rebuild ...
+  ODIN train: 1081  val: 764  test: 358
+  Building ODIN temporal features ...
+  Engineering ODIN features ...
+  ODIN val AUC  = 0.8600
+  ODIN test AUC = 0.9096
+
+[STEP 2] BIFROST honest explosion rebuild ...
+  BIFROST events: 1705
+  BIFROST train: 672  val: 701  test: 331
+    train explosion rate: 0.036
+    val   explosion rate: 0.054
+    test  explosion rate: 0.103
+    BIFROST C=0.01: val AUC = 0.7717
+    BIFROST C=0.03: val AUC = 0.7350
+    BIFROST C=0.05: val AUC = 0.7171
+    BIFROST C=0.1: val AUC = 0.6885
+    BIFROST C=0.25: val AUC = 0.6560
+    BIFROST C=0.5: val AUC = 0.6312
+    BIFROST C=1.0: val AUC = 0.6052
+  BIFROST C winner: C=0.01  val AUC=0.7717
+  BIFROST test AUC (explosion target) = 0.8434
+
+[STEP 3] Merging ODIN × BIFROST predictions ...
+  Meta merged  train: 659  val: 676  test: 326
+  ODIN-only val (on merged intersection)  = 0.8523
+  ODIN-only test (on merged intersection) = 0.9099
+
+[STEP 4] Meta-learner fit (C sweep on val) ...
+    Meta C=0.1: 5-fold CV val AUC = 0.8477
+    Meta C=1.0: 5-fold CV val AUC = 0.8470
+    Meta C=10.0: 5-fold CV val AUC = 0.8506
+    Meta C=100.0: 5-fold CV val AUC = 0.8505
+  Meta C winner: C=10.0  CV val AUC=0.8506
+
+[STEP 5] Bootstrap CI on lift ...
+  ODIN-only  test AUC = 0.9099  CI95 [0.8735, 0.9417]
+  META       test AUC = 0.9124  CI95 [0.8780, 0.9428]
+  LIFT       mean = +0.0025  CI95 [-0.0038, +0.0090]
+  P(lift>0) = 0.776
+
+  VERDICT: NULL (no lift)
+
+  Results → /sessions/confident-serene-ptolemy/mnt/9realms/cross_engine_meta_v1_results.json
+================================================================================

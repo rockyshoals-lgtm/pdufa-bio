@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Momentum / Meme / UOA Radar — Odin Catalyst</title>
+<style>
+*{box-sizing:border-box;margin:0}body{background:#02060d;color:#eaf1fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;padding:20px 16px 60px}
+.wrap{max-width:1360px;margin:0 auto}
+h1{font-size:20px;font-weight:800;letter-spacing:-.3px}h1 b{color:#e3ba5e}
+.sub{color:#9fb4cd;font-size:13px;margin:4px 0 14px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+input,select{background:#0c1d38;border:1px solid #1a3358;color:#eaf1fb;border-radius:8px;padding:8px 10px;font-size:13px}
+button{background:#13315c;border:1px solid #2a496f;color:#cfe2ff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;font-weight:700}
+button.gold{background:#e3ba5e;border-color:#e3ba5e;color:#1a1206}
+label.chk{font-size:13px;color:#9fb4cd;display:flex;align-items:center;gap:6px;cursor:pointer}
+.kpis{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.kpi{background:#0c1d38;border:1px solid #1a3358;border-radius:10px;padding:8px 12px;font-size:12px;color:#9fb4cd}
+.kpi b{display:block;font-size:18px;font-weight:800;color:#eaf1fb}
+.kpi.rk b{color:#ffd24a}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:7px 8px;text-align:left;border-bottom:1px solid #14294a;white-space:nowrap}
+th{color:#9fb4cd;font-weight:700;cursor:pointer;position:sticky;top:0;background:#02060d;user-select:none}
+td.tk{font-weight:800;font-size:13px}
+tr.rocket td{background:#0f0a02}
+.sb{display:inline-block;height:7px;border-radius:4px;vertical-align:middle;margin-left:5px}
+.badge{font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:20px;letter-spacing:.3px}
+.MEME_SQUEEZE{background:#5a1228;color:#ff8fb0}.NEWS_EXPLOSION{background:#0e3a2a;color:#5fd9b0}
+.MOMENTUM{background:#123a5c;color:#7cc0ff}.WATCH{background:#3a2f0e;color:#e3ba5e}.NOISE{background:#1a2433;color:#6f86a8}
+.UOA_LEADER{background:#2a1a4a;color:#c9b3ff}
+.bio{font-size:10px;font-weight:800;color:#1a1206;background:#e3ba5e;border-radius:4px;padding:1px 5px;margin-left:5px}
+.cap{font-size:10px;font-weight:700;color:#9fb4cd;background:#10263f;border:1px solid #1a3358;border-radius:4px;padding:1px 5px;margin-left:5px;text-transform:uppercase}
+.cap.nano{color:#ffd24a;border-color:#5a4a0e}.cap.micro{color:#7cc0ff}
+.BULLISH{color:#5fd07a;font-weight:700}.BEARISH{color:#ff7a7a;font-weight:700}.MIXED{color:#e3ba5e;font-weight:700}
+.flags{color:#7e94b4;font-size:11px;white-space:normal;max-width:300px}
+.flags .rkf{color:#ffd24a;font-weight:800}
+.pos{color:#5fd07a}.neg{color:#ff7a7a}.cmp{font-size:11px;color:#9fb4cd}
+.empty{background:#0c1d38;border:1px solid #1a3358;border-radius:12px;padding:28px;text-align:center;color:#9fb4cd;line-height:1.7}
+code{background:#0a1626;border:1px solid #1a3358;border-radius:5px;padding:1px 6px;color:#e3ba5e}
+footer{margin-top:18px;border-top:1px solid #1a3358;padding-top:12px;color:#6f86a8;font-size:11px;line-height:1.6}
+.muted{color:#6f86a8}
+</style></head><body><div class="wrap">
+<h1>Momentum / Meme / <b>UOA</b> Radar</h1>
+<div class="sub" id="meta">Micro/nano caps (≤ $300M) only — movers ∪ all-sector unusual-options firehose. 🚀 = abnormal volume AND options at once.</div>
+<div class="bar">
+  <input id="q" placeholder="search ticker / flag / headline…" style="min-width:180px">
+  <select id="kindf"><option value="">All classes</option><option>UOA_LEADER</option><option>MEME_SQUEEZE</option><option>NEWS_EXPLOSION</option><option>MOMENTUM</option><option>WATCH</option><option>NOISE</option></select>
+  <select id="capf"><option value="">All (micro/nano)</option><option>nano</option><option>micro</option></select>
+  <label class="chk"><input type="checkbox" id="rocketf"> 🚀 rockets</label>
+  <label class="chk"><input type="checkbox" id="biof"> biotech</label>
+  <label class="chk">min MOM <input type="range" id="mins" min="0" max="100" value="0" style="width:80px"><span id="minsv" class="muted">0</span></label>
+  <label class="chk">min UOA <input type="range" id="minu" min="0" max="100" value="0" style="width:80px"><span id="minuv" class="muted">0</span></label>
+  <button class="gold" onclick="reload()">↻ Refresh</button>
+  <label class="chk"><input type="checkbox" id="auto"> auto 60s</label>
+</div>
+<div class="kpis" id="kpis"></div>
+<div id="board"></div>
+<footer><b>Informational and educational only — not investment advice.</b> Owned and operated by Odin Catalyst LLC.
+  Universe capped at micro ($300M) — only high-torque nano/micro names. 🚀 ROCKET = ≥5× relative volume AND unusual options (spike / sweeps / UOA) firing together. Social (LunarCrush/Reddit/StockTwits) is secondary and capped, never proof. UOA = Unusual Whales firehose; volume isn't confirmed positioning until the next OI update. Re-run <code>momentum_meme_scanner_v1.py</code> to refresh.</footer>
+</div>
+<script src="momentum_scan_latest.js" onerror="window.__nojs=1"></script>
+<script>
+let DATA=null, sortKey="", sortDir=-1, timer=null;
+function load(cb){ if(window.MOMENTUM_DATA){DATA=window.MOMENTUM_DATA;cb&&cb();return;}
+  fetch('momentum_scan_latest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{DATA=d;cb&&cb();}).catch(()=>{DATA=null;cb&&cb();}); }
+function reload(){ const s=document.createElement('script'); s.src='momentum_scan_latest.js?t='+Date.now();
+  s.onload=()=>{DATA=window.MOMENTUM_DATA;render();}; s.onerror=()=>load(render); document.body.appendChild(s); }
+const F=n=>n==null?'–':(+n).toFixed(0);
+const bar=(v,c)=>`<span class="sb" style="width:${Math.max(3,(+v||0)*0.9)}px;background:${c}"></span>`;
+function render(){
+  const board=document.getElementById('board'),meta=document.getElementById('meta'),kpis=document.getElementById('kpis');
+  if(!DATA||!DATA.results){board.innerHTML='<div class="empty">No scan data yet.<br>Run <code>python momentum_meme_scanner_v1.py</code> (FMP_API_KEY + UW_API_KEY set) — it writes <code>momentum_scan_latest.js</code> next to this page; then Refresh.</div>';kpis.innerHTML='';return;}
+  meta.innerHTML=`Generated <b>${DATA.generated}</b> · ${DATA.n} micro/nano names · 🚀 = abnormal volume AND options · UOA can lead price`;
+  const q=document.getElementById('q').value.toLowerCase(),kf=document.getElementById('kindf').value,cf=document.getElementById('capf').value,
+        rf=document.getElementById('rocketf').checked,bf=document.getElementById('biof').checked,
+        ms=+document.getElementById('mins').value,mu=+document.getElementById('minu').value;
+  let rows=DATA.results.filter(r=>r.score>=ms&&(r.uoa_score||0)>=mu&&(!kf||r.kind===kf)&&(!cf||r.mcap_tier===cf)&&(!rf||r.rocket)&&(!bf||r.biotech)&&
+    (!q||(r.ticker+' '+(r.flags||[]).join(' ')+' '+(r.headline||'')).toLowerCase().includes(q)));
+  if(sortKey) rows.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(typeof x==='string')return sortDir*((x||'').localeCompare(y||''));return sortDir*((x||0)-(y||0));});
+  const cnt={},cap={};let nrk=0;DATA.results.forEach(r=>{cnt[r.kind]=(cnt[r.kind]||0)+1;cap[r.mcap_tier]=(cap[r.mcap_tier]||0)+1;if(r.rocket)nrk++;});
+  kpis.innerHTML=`<div class="kpi rk">🚀 ROCKETS<b>${nrk}</b></div>`
+    +['UOA_LEADER','MEME_SQUEEZE','NEWS_EXPLOSION','MOMENTUM'].map(k=>`<div class="kpi">${k.replace('_',' ')}<b>${cnt[k]||0}</b></div>`).join('')
+    +`<div class="kpi">nano/micro<b>${(cap.nano||0)}/${(cap.micro||0)}</b></div>`
+    +`<div class="kpi">biotech<b>${DATA.results.filter(r=>r.biotech).length}</b></div><div class="kpi">showing<b>${rows.length}</b></div>`;
+  const th=(k,l)=>`<th onclick="sortBy('${k}')">${l}${sortKey===k?(sortDir<0?' ▾':' ▴'):''}</th>`;
+  let h=`<table><thead><tr><th>Ticker</th>${th('kind','Class')}${th('score','MOM')}${th('uoa_score','UOA')}<th>Bias</th>${th('day_change_pct','Chg%')}${th('rel_volume','RVol')}<th>Comp P·V·O·S·N·So</th><th>Flags</th><th>Headline</th></tr></thead><tbody>`;
+  rows.forEach(r=>{const c=r.components||{};
+    h+=`<tr class="${r.rocket?'rocket':''}"><td class="tk">${r.rocket?'🚀 ':''}${r.ticker}<span class="cap ${r.mcap_tier||''}">${r.mcap_tier||'?'}</span>${r.biotech?'<span class="bio">BIO</span>':''}<div class="muted" style="font-weight:400">$${r.price}</div></td>`+
+       `<td><span class="badge ${r.kind}">${r.kind.replace('_',' ')}</span></td>`+
+       `<td class="tk">${F(r.score)}${bar(r.score,'#3bd6c6')}</td>`+
+       `<td class="tk">${F(r.uoa_score)}${bar(r.uoa_score,'#c9b3ff')}</td>`+
+       `<td class="${r.uoa_bias||''}">${r.uoa_bias||''}${r.uoa_premium>=1e6?(' $'+(r.uoa_premium/1e6).toFixed(1)+'M'):''}</td>`+
+       `<td class="${r.day_change_pct>=0?'pos':'neg'}">${r.day_change_pct>=0?'+':''}${r.day_change_pct}%</td>`+
+       `<td>${r.rel_volume}×</td>`+
+       `<td class="cmp">${F(c.price)}·${F(c.volume)}·${F(c.options)}·${F(c.short)}·${F(c.news)}·${F(c.social)}</td>`+
+       `<td class="flags">${(r.flags||[]).map(f=>f==='ROCKET'?'<span class="rkf">🚀 ROCKET</span>':f).join(' · ')}</td>`+
+       `<td class="flags">${r.headline||''}</td></tr>`;});
+  board.innerHTML=h+'</tbody></table>';
+}
+function sortBy(k){if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=(k==='kind'?1:-1);}render();}
+['q','kindf','capf','rocketf','biof','mins','minu'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{
+  document.getElementById('minsv').textContent=document.getElementById('mins').value;
+  document.getElementById('minuv').textContent=document.getElementById('minu').value;render();}));
+document.getElementById('auto').addEventListener('change',e=>{if(e.target.checked)timer=setInterval(reload,60000);else clearInterval(timer);});
+load(render);
+</script></body></html>

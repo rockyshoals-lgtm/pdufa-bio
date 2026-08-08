@@ -1,0 +1,4271 @@
+{
+  "scan_date": "2026-04-19",
+  "catalysts_scanned": 292,
+  "api_calls": 83,
+  "cache_hits": 62,
+  "errors": [],
+  "tickers": {
+    "AAPG": {
+      "ticker": "AAPG",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "ABSI": {
+      "ticker": "ABSI",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.786,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 457533576.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 45,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ABVX": {
+      "ticker": "ABVX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8896,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 9419866634.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 625,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ACET": {
+      "ticker": "ACET",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9767,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 62856466.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9428,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 62856466.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 30,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ACHV": {
+      "ticker": "ACHV",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-20",
+          "type": "",
+          "gungnir_prob": 0.8573,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 173562361.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 18,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ACIU": {
+      "ticker": "ACIU",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.801,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 326693169.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.7331,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 326693169.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 15,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ACRV": {
+      "ticker": "ACRV",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "ACTU": {
+      "ticker": "ACTU",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9866,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 45513007.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9942,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 45513007.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "ADAG": {
+      "ticker": "ADAG",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "ADCT": {
+      "ticker": "ADCT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9676,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 473875448.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 15,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "AGEN": {
+      "ticker": "AGEN",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "ALEC": {
+      "ticker": "ALEC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.7424,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 267077446.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 31,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ALKS": {
+      "ticker": "ALKS",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8339,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5780607005.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 209,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ALLO": {
+      "ticker": "ALLO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.935,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 658200384.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8963,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 658200384.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 35,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ALXO": {
+      "ticker": "ALXO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-07",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.971,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 249397687.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 36,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ANRO": {
+      "ticker": "ANRO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.3702,
+          "gungnir_tier": "Lean Negative",
+          "mcap": 693537152.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 52,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "APGE": {
+      "ticker": "APGE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8528,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5775613731.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 125,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "APRE": {
+      "ticker": "APRE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9691,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8035040.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "AQST": {
+      "ticker": "AQST",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9443,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 510148305.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 47,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ARGX": {
+      "ticker": "ARGX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "ARQT": {
+      "ticker": "ARQT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-29",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9455,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 3052461531.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 70,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ARTV": {
+      "ticker": "ARTV",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8438,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 152996200.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "ARVN": {
+      "ticker": "ARVN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-05",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9341,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 717002776.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 126,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ASND": {
+      "ticker": "ASND",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9896,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 14453131546.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 308,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ATYR": {
+      "ticker": "ATYR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "End of Phase Meeting",
+          "gungnir_prob": 0.7315,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 78421359.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 51,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "AVBP": {
+      "ticker": "AVBP",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "AVTX": {
+      "ticker": "AVTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8691,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 328381593.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 58,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "AXSM": {
+      "ticker": "AXSM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8128,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8859238122.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-04-30",
+          "type": "",
+          "gungnir_prob": 0.8068,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8859238122.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 198,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "AZN": {
+      "ticker": "AZN",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "BBIO": {
+      "ticker": "BBIO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.7584,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 14372993256.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 261,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BCAB": {
+      "ticker": "BCAB",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8591,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 7356751.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8857,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 7356751.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 28,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BCDA": {
+      "ticker": "BCDA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-31",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9129,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 13237850.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "BCRX": {
+      "ticker": "BCRX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8528,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2452830064.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 121,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BCTX": {
+      "ticker": "BCTX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "BCYC": {
+      "ticker": "BCYC",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "BHC": {
+      "ticker": "BHC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9298,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1982508990.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 172,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BHVN": {
+      "ticker": "BHVN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.8777,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1410945078.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 167,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BIIB": {
+      "ticker": "BIIB",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-24",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.7651,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 26401859187.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 615,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BIOA": {
+      "ticker": "BIOA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8681,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 800610744.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 85,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BIVI": {
+      "ticker": "BIVI",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9195,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11239921.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-05-17",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.7155,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11239921.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "BLTE": {
+      "ticker": "BLTE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.905,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 7031231051.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "BMEA": {
+      "ticker": "BMEA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9371,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 127247014.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8549,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 127247014.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 47,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BMRN": {
+      "ticker": "BMRN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8832,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11000896135.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.962,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11000896135.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 161,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BMY": {
+      "ticker": "BMY",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9929,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9373,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9271,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8591,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 418,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "BOLD": {
+      "ticker": "BOLD",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "CABA": {
+      "ticker": "CABA",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "CADL": {
+      "ticker": "CADL",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8689,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 271734453.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 56,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CAPR": {
+      "ticker": "CAPR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8689,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1817336066.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 256,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CATX": {
+      "ticker": "CATX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "CGEM": {
+      "ticker": "CGEM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8778,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 905470875.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8523,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 905470875.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 171,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CGON": {
+      "ticker": "CGON",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.9071,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5815052224.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9506,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5815052224.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 84,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CING": {
+      "ticker": "CING",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-31",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9247,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 68027386.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "CLDI": {
+      "ticker": "CLDI",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "CLNN": {
+      "ticker": "CLNN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "End of Phase Meeting",
+          "gungnir_prob": 0.9558,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 75381165.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "CLYM": {
+      "ticker": "CLYM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-05",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.4698,
+          "gungnir_tier": "Uncertain",
+          "mcap": 339152658.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 33,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CMPX": {
+      "ticker": "CMPX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9851,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 972474741.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.9711,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 972474741.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 111,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CNTB": {
+      "ticker": "CNTB",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8283,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 148650972.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 15,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CNTX": {
+      "ticker": "CNTX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "COCP": {
+      "ticker": "COCP",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-27",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9378,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 19851493.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "COGT": {
+      "ticker": "COGT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.9915,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5997310899.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 186,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CRBP": {
+      "ticker": "CRBP",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-30",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9834,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 174526806.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 42,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CRDF": {
+      "ticker": "CRDF",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "CRSP": {
+      "ticker": "CRSP",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.6732,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 4988913791.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 444,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CRVO": {
+      "ticker": "CRVO",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "CTNM": {
+      "ticker": "CTNM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9284,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 477527900.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 75,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "CVAC": {
+      "ticker": "CVAC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9019,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1045416278.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "CYTK": {
+      "ticker": "CYTK",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.7738,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8100417816.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 127,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "DBVT": {
+      "ticker": "DBVT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8541,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1273574598.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "DMAC": {
+      "ticker": "DMAC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.5668,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 333056837.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 32,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "DTIL": {
+      "ticker": "DTIL",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.7958,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 154561162.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 37,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "EBS": {
+      "ticker": "EBS",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8725,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 433297313.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 109,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "EDSA": {
+      "ticker": "EDSA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-20",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.8644,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 49755040.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "ELTX": {
+      "ticker": "ELTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8926,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 186352230.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 47,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ENGN": {
+      "ticker": "ENGN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 489692996.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 67,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ENTX": {
+      "ticker": "ENTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.7526,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 54548020.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 25,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "EVAX": {
+      "ticker": "EVAX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "EVMN": {
+      "ticker": "EVMN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.5777,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 977178432.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "EWTX": {
+      "ticker": "EWTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8404,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 3544218014.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8915,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 3544218014.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 176,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "GH": {
+      "ticker": "GH",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9454,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 12177863742.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 185,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "GILD": {
+      "ticker": "GILD",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8854,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 175710661533.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 696,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "GLPG": {
+      "ticker": "GLPG",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.7513,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1903766381.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 68,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "GNPX": {
+      "ticker": "GNPX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "GRCE": {
+      "ticker": "GRCE",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "GSK": {
+      "ticker": "GSK",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8295,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120401431715.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.8215,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120401431715.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.6027,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 120401431715.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 322,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "GYRE": {
+      "ticker": "GYRE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9244,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 687472002.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 30,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "HCM": {
+      "ticker": "HCM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9952,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2613493550.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.982,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2613493550.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.9762,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2613493550.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 56,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "HCWB": {
+      "ticker": "HCWB",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9241,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2210133.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "HIND": {
+      "ticker": "HIND",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "HRMY": {
+      "ticker": "HRMY",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.823,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1647484565.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 88,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "HURA": {
+      "ticker": "HURA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "End of Phase Meeting",
+          "gungnir_prob": 0.928,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 115077136.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "IDYA": {
+      "ticker": "IDYA",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "IMMP": {
+      "ticker": "IMMP",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-04",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9373,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 51899911.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 35,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "IMNM": {
+      "ticker": "IMNM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.9528,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2454990418.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 150,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "IMRX": {
+      "ticker": "IMRX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "IMTX": {
+      "ticker": "IMTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9113,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1412036945.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 90,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "INBX": {
+      "ticker": "INBX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.9422,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 980570327.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9531,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 980570327.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 135,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "INKT": {
+      "ticker": "INKT",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "IONS": {
+      "ticker": "IONS",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.8979,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 12386096985.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8382,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 12386096985.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.7752,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 12386096985.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 291,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "IPSEY": {
+      "ticker": "IPSEY",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.6979,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 15926832381.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "IRD": {
+      "ticker": "IRD",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8712,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 366417582.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 17,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "JAGX": {
+      "ticker": "JAGX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-05",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9027,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5194692.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "JAZZ": {
+      "ticker": "JAZZ",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "JBIO": {
+      "ticker": "JBIO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.7285,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 826540970.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.7285,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 826540970.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 60,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "KTTA": {
+      "ticker": "KTTA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9135,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 19104000.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "KURA": {
+      "ticker": "KURA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9914,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 776418582.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9891,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 776418582.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 91,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "KYKOF": {
+      "ticker": "KYKOF",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9891,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 6675399756.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "KYTX": {
+      "ticker": "KYTX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "LIAN": {
+      "ticker": "LIAN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9416,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 34471982.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "LIXT": {
+      "ticker": "LIXT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9571,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 33111140.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "LNTH": {
+      "ticker": "LNTH",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-29",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.8735,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5199677468.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 164,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "LRMR": {
+      "ticker": "LRMR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8595,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 528764149.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 32,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "LSTA": {
+      "ticker": "LSTA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9859,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 45161455.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8782,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 45161455.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "LYEL": {
+      "ticker": "LYEL",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9187,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 534453415.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 154,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "MBX": {
+      "ticker": "MBX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.7462,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1504174293.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 123,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "MCRB": {
+      "ticker": "MCRB",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8106,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 83975970.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 60,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "MIRM": {
+      "ticker": "MIRM",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9083,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5910461385.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 159,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "MNKD": {
+      "ticker": "MNKD",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-29",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.8131,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 805956978.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 124,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "MNMD": {
+      "ticker": "MNMD",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8841,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1479609371.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.7239,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1479609371.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "MOLN": {
+      "ticker": "MOLN",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "MRK": {
+      "ticker": "MRK",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "MRKR": {
+      "ticker": "MRKR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8707,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 24342765.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "MTVA": {
+      "ticker": "MTVA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9369,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 6261851.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "NBTX": {
+      "ticker": "NBTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9571,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1491514195.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "NMRA": {
+      "ticker": "NMRA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.873,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 396849260.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 35,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "NTHI": {
+      "ticker": "NTHI",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-31",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9403,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 127839380.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "NUVB": {
+      "ticker": "NUVB",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "NVCR": {
+      "ticker": "NVCR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9297,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1227841533.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 128,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "NVO": {
+      "ticker": "NVO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.8256,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 167928650000.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.7678,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 167928650000.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 391,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "NVS": {
+      "ticker": "NVS",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8445,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 294656782271.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.7557,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 294656782271.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 290,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "NXTC": {
+      "ticker": "NXTC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-29",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9244,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 39734176.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "OCS": {
+      "ticker": "OCS",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9096,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1585294535.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 39,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "OLMA": {
+      "ticker": "OLMA",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "ONC": {
+      "ticker": "ONC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.9491,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 34635314526.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 172,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ORKA": {
+      "ticker": "ORKA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9143,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 3072142269.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 166,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "OSTX": {
+      "ticker": "OSTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8921,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 49416534.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "PASG": {
+      "ticker": "PASG",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.5643,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 29800555.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "PBYI": {
+      "ticker": "PBYI",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9243,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 382082417.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9163,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 382082417.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 26,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "PFE": {
+      "ticker": "PFE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.9736,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 156259142864.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.8476,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 156259142864.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-05",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9441,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 156259142864.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.6508,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 156259142864.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 357,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "PHVS": {
+      "ticker": "PHVS",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.2876,
+          "gungnir_tier": "Lean Negative",
+          "mcap": 1802639574.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 48,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "PRAX": {
+      "ticker": "PRAX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "PRLD": {
+      "ticker": "PRLD",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "PRQR": {
+      "ticker": "PRQR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.803,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 192810747.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 15,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "PRTC": {
+      "ticker": "PRTC",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.9443,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 369865835.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "PSTV": {
+      "ticker": "PSTV",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-17",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9326,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 21752629.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "PTN": {
+      "ticker": "PTN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8528,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 34380661.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "PVLA": {
+      "ticker": "PVLA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.7915,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1763013379.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 156,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "QURE": {
+      "ticker": "QURE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.7293,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 993592293.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 232,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "RAPP": {
+      "ticker": "RAPP",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "REGN": {
+      "ticker": "REGN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9071,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 81988881147.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.7878,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 81988881147.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.6187,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 81988881147.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 1625,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "RGNX": {
+      "ticker": "RGNX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.7851,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 447521410.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 97,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "RHHBY": {
+      "ticker": "RHHBY",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "RLAY": {
+      "ticker": "RLAY",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-20",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.92,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2593311489.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 107,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "RLFTF": {
+      "ticker": "RLFTF",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "",
+          "gungnir_prob": 0.893,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5206430.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "RNA": {
+      "ticker": "RNA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.891,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2125550150.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8729,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2125550150.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.4871,
+          "gungnir_tier": "Uncertain",
+          "mcap": 2125550150.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 122,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "RVMD": {
+      "ticker": "RVMD",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "RXRX": {
+      "ticker": "RXRX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9612,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1787879210.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 209,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "SDGR": {
+      "ticker": "SDGR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9572,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 848988662.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8256,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 848988662.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 79,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "SGMO": {
+      "ticker": "SGMO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8638,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 105515592.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 41,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "SGMT": {
+      "ticker": "SGMT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8898,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 182150748.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 39,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "SILO": {
+      "ticker": "SILO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.6772,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 6261634.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "SRPT": {
+      "ticker": "SRPT",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8034,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2299276007.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 409,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "STTK": {
+      "ticker": "STTK",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8957,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 502380803.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 24,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "SYRE": {
+      "ticker": "SYRE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.7194,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 4082517725.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 109,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TAK": {
+      "ticker": "TAK",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8504,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 58728604789.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 58,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TELO": {
+      "ticker": "TELO",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "TERN": {
+      "ticker": "TERN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.9507,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 6077669223.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 241,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TGTX": {
+      "ticker": "TGTX",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "TLSA": {
+      "ticker": "TLSA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8703,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 161619096.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 15,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TNXP": {
+      "ticker": "TNXP",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 2d)"
+    },
+    "TNYA": {
+      "ticker": "TNYA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8607,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 157367585.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 35,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TRDA": {
+      "ticker": "TRDA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8894,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 548231362.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8368,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 548231362.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 49,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TRML": {
+      "ticker": "TRML",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.6827,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 1232715019.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data"
+    },
+    "TSHA": {
+      "ticker": "TSHA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9347,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1307077977.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 70,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "TYRA": {
+      "ticker": "TYRA",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8251,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2000085980.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 66,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "UNCY": {
+      "ticker": "UNCY",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-27",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.6752,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 162783694.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 30,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "UTHR": {
+      "ticker": "UTHR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8775,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 25494126669.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.8135,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 25494126669.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 404,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "VRDN": {
+      "ticker": "VRDN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9241,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1478929082.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.8434,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1478929082.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.774,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1478929082.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 174,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "VRTX": {
+      "ticker": "VRTX",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.897,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 112958534127.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.695,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 112958534127.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 913,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "VSTM": {
+      "ticker": "VSTM",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "VTGN": {
+      "ticker": "VTGN",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.5733,
+          "gungnir_tier": "Lean Positive",
+          "mcap": 21799098.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 39,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "WHWK": {
+      "ticker": "WHWK",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    },
+    "WVE": {
+      "ticker": "WVE",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-18",
+          "type": "Interim Data",
+          "gungnir_prob": 0.5268,
+          "gungnir_tier": "Uncertain",
+          "mcap": 1336610173.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 174,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "XAIR": {
+      "ticker": "XAIR",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "XENE": {
+      "ticker": "XENE",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "XLO": {
+      "ticker": "XLO",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "XNCR": {
+      "ticker": "XNCR",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-05-02",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.8666,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 898398365.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9217,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 898398365.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 50,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ZBIO": {
+      "ticker": "ZBIO",
+      "scorable": false,
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.9327,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1196759978.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ],
+      "chain_data": {
+        "total_strikes": 94,
+        "min_dte": 1
+      },
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)"
+    },
+    "ZLAB": {
+      "ticker": "ZLAB",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "ZNTL": {
+      "ticker": "ZNTL",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)"
+    },
+    "ZYME": {
+      "ticker": "ZYME",
+      "scorable": false,
+      "catalysts": [],
+      "chain_data": null,
+      "selected_atm": null,
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)"
+    }
+  }
+}

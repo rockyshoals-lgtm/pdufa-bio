@@ -1,0 +1,17 @@
+refreshing 205 tickers · cache latest was 2026-06-18 · today 2026-07-14
+  25/205  (updated 24, new 0, fail 0)
+  50/205  (updated 48, new 0, fail 0)
+  75/205  (updated 72, new 0, fail 1)
+  100/205  (updated 97, new 0, fail 1)
+  125/205  (updated 121, new 0, fail 1)
+  150/205  (updated 146, new 0, fail 1)
+  175/205  (updated 170, new 0, fail 1)
+  200/205  (updated 195, new 0, fail 1)
+Traceback (most recent call last):
+  File "C:\Users\dcmoo\Documents\Python\9realms\refresh_pxcache.py", line 109, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\dcmoo\Documents\Python\9realms\refresh_pxcache.py", line 100, in main
+    for dd, c in days.items():
+                 ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'items'

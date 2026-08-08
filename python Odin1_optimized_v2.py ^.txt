@@ -1,0 +1,10 @@
+python Odin1_optimized_v2.py ^
+    --data ODIN_ENRICHED_PDUFA_1349_v2.csv ^
+    --lunarcrush lunarcrush_cache.json ^
+    --outdir .\results ^
+    --iters 1000000000 ^
+    --device gpu ^
+    --precision float16 ^
+    --safety-factor 0.9 ^
+    --ce-ratio 0.1 ^
+    --ce-sigma 0.4

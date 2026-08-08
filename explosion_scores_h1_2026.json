@@ -1,0 +1,3663 @@
+[
+  {
+    "ticker": "GYRE",
+    "drug": "Hydronidone (F351)",
+    "indication": "MASH-associated liver fibrosis",
+    "catalyst_date": "2026-06-30",
+    "price": 7.04,
+    "market_cap": 682623821.0,
+    "size_tier": "small",
+    "odin_proxy": 0.5503,
+    "explosion_probability": 0.1069,
+    "explosion_tier": "ELEVATED",
+    "position_multiplier": 1.5,
+    "investment_tier": "DELTA",
+    "investment_score": 36.1,
+    "flags": [],
+    "top_drivers": [
+      [
+        "spa_log_x_is_small",
+        1.3183
+      ],
+      [
+        "log_float_inv",
+        0.5441
+      ],
+      [
+        "days_to_cover",
+        0.3538
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.3481
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ]
+    ],
+    "si_pct": 0.0877,
+    "days_to_cover": 11.3,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "ACHV",
+    "drug": "Cytisinicline - (ORCA-3)",
+    "indication": "Smoking cessation of cigarettes",
+    "catalyst_date": "2026-06-20",
+    "price": 2.89,
+    "market_cap": 153863565.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8808,
+    "explosion_probability": 0.0718,
+    "explosion_tier": "NORMAL",
+    "position_multiplier": 1.0,
+    "investment_tier": "GAMMA",
+    "investment_score": 47.0,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "days_to_cover",
+        0.8551
+      ],
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "log_float_inv",
+        0.3677
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ]
+    ],
+    "si_pct": 0.1538,
+    "days_to_cover": 20.7,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "PHVS",
+    "drug": "PHVS416 - (RAPIDe-3)",
+    "indication": "Hereditary angioedema - on demand",
+    "catalyst_date": "2026-06-30",
+    "price": 27.39,
+    "market_cap": 1492567159.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.5799,
+    "explosion_probability": 0.0524,
+    "explosion_tier": "NORMAL",
+    "position_multiplier": 1.0,
+    "investment_tier": "GAMMA",
+    "investment_score": 40.6,
+    "flags": [],
+    "top_drivers": [
+      [
+        "spa_log_x_is_small",
+        1.3183
+      ],
+      [
+        "log_float_inv",
+        0.436
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.3481
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.0137,
+    "days_to_cover": 6.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "GRCE",
+    "drug": "GTX-104 - (STRIVE-ON)",
+    "indication": "Subarachnoid hemorrhage (SAH)",
+    "catalyst_date": "2026-04-23",
+    "price": 4.77,
+    "market_cap": 63997826.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8673,
+    "explosion_probability": 0.0491,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "ALPHA",
+    "investment_score": 77.3,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.71
+      ],
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ]
+    ],
+    "si_pct": 0.1191,
+    "days_to_cover": 4.7,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "UNCY",
+    "drug": "Oxylanthanum Carbonate (OLC)",
+    "indication": "Kidney disease",
+    "catalyst_date": "2026-06-27",
+    "price": 6.63,
+    "market_cap": 142487955.0,
+    "size_tier": "small",
+    "odin_proxy": 0.8758,
+    "explosion_probability": 0.0483,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 65.6,
+    "flags": [],
+    "top_drivers": [
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "log_float_inv",
+        0.5434
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.0827,
+    "days_to_cover": 3.6,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "CNTB",
+    "drug": "Rademikibart (RADIANT-AD)",
+    "indication": "Adolescent patients with Atopic dermatitis (AD)",
+    "catalyst_date": "2026-03-28",
+    "price": 3.69,
+    "market_cap": 206283963.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.5503,
+    "explosion_probability": 0.0438,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 73.3,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.6545
+      ],
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ]
+    ],
+    "si_pct": 0.0106,
+    "days_to_cover": 3.2,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "ARVN",
+    "drug": "Vepdegestrant (ARV-471) - (VERITAC-2)",
+    "indication": "Breast cancer",
+    "catalyst_date": "2026-06-05",
+    "price": 10.87,
+    "market_cap": 695256037.0,
+    "size_tier": "small",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0394,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 65.6,
+    "flags": [],
+    "top_drivers": [
+      [
+        "spa_log_x_is_small",
+        1.3183
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.3481
+      ],
+      [
+        "log_float_inv",
+        0.3327
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.0762,
+    "days_to_cover": 5.6,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "IMNM",
+    "drug": "AL102 - (RINGSIDE)",
+    "indication": "Desmoid tumors",
+    "catalyst_date": "2026-06-30",
+    "price": 20.41,
+    "market_cap": 2309048592.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.4808,
+    "explosion_probability": 0.0347,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 60.5,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "days_to_cover",
+        0.6764
+      ],
+      [
+        "log_float_inv",
+        0.2167
+      ],
+      [
+        "pct_float_short",
+        0.1973
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.1634,
+    "days_to_cover": 17.4,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "CING",
+    "drug": "CTx-1301 (fixed dose, pediatric study)",
+    "indication": "ADHD",
+    "catalyst_date": "2026-05-31",
+    "price": 6.28,
+    "market_cap": 73027690.0,
+    "size_tier": "small",
+    "odin_proxy": 0.8728,
+    "explosion_probability": 0.0346,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 68.1,
+    "flags": [
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.6767
+      ],
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "naive_x_small",
+        -0.2825
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ]
+    ],
+    "si_pct": 0.0554,
+    "days_to_cover": 1.4,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "SGMO",
+    "drug": "Civaparvovec (ST-920) - (STAAR)",
+    "indication": "Fabry disease",
+    "catalyst_date": "2026-06-30",
+    "price": 0.3441,
+    "market_cap": 115787754.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8808,
+    "explosion_probability": 0.033,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 52.2,
+    "flags": [
+      "GENE_THERAPY",
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "gene_th_x_small_cap",
+        0.3347
+      ],
+      [
+        "naive_x_small",
+        -0.2825
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ]
+    ],
+    "si_pct": 0.0907,
+    "days_to_cover": 8.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": true
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "PRAX",
+    "drug": "Relutrigine (PRAX-562) - (EMBOLD)",
+    "indication": "Developmental epileptic encephalopathies (DEEs)",
+    "catalyst_date": "2026-04-30",
+    "price": 302.69,
+    "market_cap": 8430168641.0,
+    "size_tier": "large",
+    "odin_proxy": 0.5074,
+    "explosion_probability": 0.0327,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.9,
+    "flags": [
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.499
+      ],
+      [
+        "days_to_cover",
+        0.2467
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "pct_float_short",
+        0.1403
+      ]
+    ],
+    "si_pct": 0.1346,
+    "days_to_cover": 9.3,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "LRMR",
+    "drug": "Nomlabofusp (CTI-1601)",
+    "indication": "Friedreich\u2019s ataxia (FA)",
+    "catalyst_date": "2026-06-30",
+    "price": 4.85,
+    "market_cap": 503832244.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8728,
+    "explosion_probability": 0.0321,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 45.1,
+    "flags": [],
+    "top_drivers": [
+      [
+        "spa_log_x_is_small",
+        1.3183
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.3481
+      ],
+      [
+        "log_float_inv",
+        0.3341
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ]
+    ],
+    "si_pct": 0.0968,
+    "days_to_cover": 0.7,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "BIIB",
+    "drug": "LEQEMBI IQLIK (lecanemab-irmb)(at-home injection)",
+    "indication": "Early Alzheimer's disease (AD) a-home injection",
+    "catalyst_date": "2026-05-24",
+    "price": 191.06,
+    "market_cap": 28039684360.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8728,
+    "explosion_probability": 0.032,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 41.2,
+    "flags": [
+      "BTD",
+      "FAST_TRACK",
+      "PPM",
+      "SAFETY_HIGH"
+    ],
+    "top_drivers": [
+      [
+        "ppm_x_dtc",
+        1.4562
+      ],
+      [
+        "safety_h_x_dtc",
+        -0.2432
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0381,
+    "days_to_cover": 4.8,
+    "designations": {
+      "orphan": false,
+      "btd": true,
+      "fast_track": true,
+      "ppm": true,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 2,
+    "sponsor_prior_approvals": 15
+  },
+  {
+    "ticker": "BIIB",
+    "drug": "SPINRAZA (Nusinersen) - (DEVOTE)",
+    "indication": "Spinal muscular atrophy (SMA)",
+    "catalyst_date": "2026-04-03",
+    "price": 191.06,
+    "market_cap": 28039684360.0,
+    "size_tier": "large",
+    "odin_proxy": 0.9473,
+    "explosion_probability": 0.0301,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 44.9,
+    "flags": [
+      "BTD",
+      "FAST_TRACK",
+      "PPM",
+      "SAFETY_HIGH"
+    ],
+    "top_drivers": [
+      [
+        "ppm_x_dtc",
+        1.4562
+      ],
+      [
+        "safety_h_x_dtc",
+        -0.2432
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0381,
+    "days_to_cover": 4.8,
+    "designations": {
+      "orphan": false,
+      "btd": true,
+      "fast_track": true,
+      "ppm": true,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 2,
+    "sponsor_prior_approvals": 15
+  },
+  {
+    "ticker": "NUVL",
+    "drug": "Neladalkib (NVL-655) - (ALKove-1)",
+    "indication": "ALK non-small cell lung cancer (NSCLC)",
+    "catalyst_date": "2026-06-30",
+    "price": 98.06,
+    "market_cap": 7709183118.0,
+    "size_tier": "large",
+    "odin_proxy": 0.4808,
+    "explosion_probability": 0.0279,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 42.9,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3606
+      ],
+      [
+        "days_to_cover",
+        0.3307
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "pct_float_short",
+        0.1744
+      ]
+    ],
+    "si_pct": 0.1518,
+    "days_to_cover": 10.9,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "MGNX",
+    "drug": "ZYNYZ (retifanlimab-dlwr) - (POD1UM-304)",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "catalyst_date": "2026-04-30",
+    "price": 3.18,
+    "market_cap": 202107562.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0277,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.4,
+    "flags": [],
+    "top_drivers": [
+      [
+        "is_micro",
+        0.5889
+      ],
+      [
+        "log_float_inv",
+        0.3317
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ]
+    ],
+    "si_pct": 0.0768,
+    "days_to_cover": 2.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "CRSP",
+    "drug": "CASGEVY",
+    "indication": "Sickle cell disease (SCD) or transfusion-dependent beta thalassemia (TDT) in patients aged 5-11 years",
+    "catalyst_date": "2026-06-30",
+    "price": 47.55,
+    "market_cap": 4564101586.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.5503,
+    "explosion_probability": 0.0257,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 53.7,
+    "flags": [
+      "GENE_THERAPY",
+      "NAIVE_SPONSOR",
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "pct_float_short",
+        0.3754
+      ],
+      [
+        "days_to_cover",
+        0.2505
+      ],
+      [
+        "log_float_inv",
+        0.2139
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.2534,
+    "days_to_cover": 9.4,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": true
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "SRPT",
+    "drug": "AMONDYS 45 (casimersen) and VYONDYS 53 (golodirsen)",
+    "indication": "Duchenne muscular dystrophy (DMD)",
+    "catalyst_date": "2026-04-30",
+    "price": 21.68,
+    "market_cap": 2276178257.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.6701,
+    "explosion_probability": 0.0246,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 49.6,
+    "flags": [
+      "ORPHAN",
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "pct_float_short",
+        0.3738
+      ],
+      [
+        "days_to_cover",
+        0.3035
+      ],
+      [
+        "log_float_inv",
+        0.2226
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.2526,
+    "days_to_cover": 10.4,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 3
+  },
+  {
+    "ticker": "BLTE",
+    "drug": "Tinlarebant (LBS-008) - (DRAGON)",
+    "indication": "Adolescent Stargardt disease (STGD1)",
+    "catalyst_date": "2026-06-30",
+    "price": 149.18,
+    "market_cap": 5596432503.0,
+    "size_tier": "large",
+    "odin_proxy": 0.4999,
+    "explosion_probability": 0.0244,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 58.4,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.5681
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0455,
+    "days_to_cover": 5.6,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "OSTX",
+    "drug": "OST-HER2 (AOST-2121)",
+    "indication": "Resected osteosarcoma",
+    "catalyst_date": "2026-03-31",
+    "price": 1.37,
+    "market_cap": 48243662.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0244,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 49.2,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.4784
+      ],
+      [
+        "is_nano",
+        0.4242
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ]
+    ],
+    "si_pct": 0.0405,
+    "days_to_cover": 3.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "REPL",
+    "drug": "RP1 (vusolimogene oderparepvec) and OPDIVO (nivolumab) - (IGNYTE-3)",
+    "indication": "Non-melanoma (NMSC) / Non-small cell lung cancer (NSCLC)",
+    "catalyst_date": "2026-04-10",
+    "price": 7.54,
+    "market_cap": 622597547.0,
+    "size_tier": "small",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.024,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "DELTA",
+    "investment_score": 34.3,
+    "flags": [
+      "NAIVE_SPONSOR",
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "pct_float_short",
+        0.5711
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.4085
+      ],
+      [
+        "days_to_cover",
+        0.3329
+      ],
+      [
+        "log_float_inv",
+        0.3049
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ]
+    ],
+    "si_pct": 0.3523,
+    "days_to_cover": 10.9,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "COGT",
+    "drug": "Bezuclastinib and SUTENT (sunitinib) - (PEAK)",
+    "indication": "Gastrointestinal Stromal Tumors (GIST)",
+    "catalyst_date": "2026-06-30",
+    "price": 36.87,
+    "market_cap": 5984326193.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.4808,
+    "explosion_probability": 0.0208,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 55.2,
+    "flags": [],
+    "top_drivers": [
+      [
+        "days_to_cover",
+        0.198
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.1071,
+    "days_to_cover": 8.4,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "TVTX",
+    "drug": "FILSPARI (sparsentan)",
+    "indication": "Focal segmental glomerulosclerosis (FSGS)",
+    "catalyst_date": "2026-04-13",
+    "price": 27.92,
+    "market_cap": 2575384076.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8348,
+    "explosion_probability": 0.0192,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 48.3,
+    "flags": [],
+    "top_drivers": [
+      [
+        "days_to_cover",
+        0.2323
+      ],
+      [
+        "log_float_inv",
+        0.224
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "pct_float_short",
+        0.1631
+      ]
+    ],
+    "si_pct": 0.1461,
+    "days_to_cover": 9.1,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "BBIO",
+    "drug": "Encaleret - (CALIBRATE)",
+    "indication": "Autosomal Dominant Hypocalcemia Type 1 (ADH1)",
+    "catalyst_date": "2026-06-30",
+    "price": 72.58,
+    "market_cap": 14070567177.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.5616,
+    "explosion_probability": 0.019,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.7,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "pct_float_short",
+        0.2729
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "days_to_cover",
+        0.1633
+      ],
+      [
+        "short_high",
+        -0.1403
+      ]
+    ],
+    "si_pct": 0.2016,
+    "days_to_cover": 7.8,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "AXSM",
+    "drug": "Reboxetine (AXS-12) - (ENCORE)",
+    "indication": "Narcolepsy",
+    "catalyst_date": "2026-04-30",
+    "price": 164.265,
+    "market_cap": 8402695018.0,
+    "size_tier": "large",
+    "odin_proxy": 0.527,
+    "explosion_probability": 0.0176,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 42.9,
+    "flags": [
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3864
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0641,
+    "days_to_cover": 4.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "BBIO",
+    "drug": "BBP-418 - (FORTIFY)",
+    "indication": "Limb Girdle Muscular Dystrophy Type 2i (LGMD2i)",
+    "catalyst_date": "2026-06-30",
+    "price": 72.58,
+    "market_cap": 14070567177.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.6701,
+    "explosion_probability": 0.0173,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 56.7,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "pct_float_short",
+        0.2729
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "days_to_cover",
+        0.1633
+      ],
+      [
+        "short_high",
+        -0.1403
+      ]
+    ],
+    "si_pct": 0.2016,
+    "days_to_cover": 7.8,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "IONS",
+    "drug": "Bepirovirsen (IONIS-HBVRx)",
+    "indication": "Chronic hepatitis B virus (CHB)",
+    "catalyst_date": "2026-03-31",
+    "price": 74.24,
+    "market_cap": 12263854897.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.6037,
+    "explosion_probability": 0.0165,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 53.7,
+    "flags": [
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ],
+      [
+        "crl_count_x_small",
+        0.0965
+      ]
+    ],
+    "si_pct": 0.1108,
+    "days_to_cover": 6.2,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "LNTH",
+    "drug": "LNTH-2501 (Gallium-68 edotreotide)",
+    "indication": "Neuroendocrine tumors (NETs) in adult and pediatric patients",
+    "catalyst_date": "2026-06-29",
+    "price": 76.36,
+    "market_cap": 4961231681.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0151,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 49.5,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3232
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.1149,
+    "days_to_cover": 4.7,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "RCKT",
+    "drug": "KRESLADI (marnetegragene autotemcel)",
+    "indication": "Leukocyte Adhesion Deficiency-I (LAD-I)",
+    "catalyst_date": "2026-03-28",
+    "price": 4.69,
+    "market_cap": 509189281.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8913,
+    "explosion_probability": 0.015,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 58.2,
+    "flags": [
+      "GENE_THERAPY",
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "pct_float_short",
+        0.3924
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.3481
+      ],
+      [
+        "gene_th_x_small_cap",
+        0.3347
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ]
+    ],
+    "si_pct": 0.262,
+    "days_to_cover": 4.6,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": true
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "HCM",
+    "drug": "Sovleplenib - (ESLIM-02)",
+    "indication": "Warm antibody autoimmune hemolytic anemia (wAIHA)",
+    "catalyst_date": "2026-06-30",
+    "price": 14.16,
+    "market_cap": 2470431820.0,
+    "size_tier": "small",
+    "odin_proxy": 0.5503,
+    "explosion_probability": 0.0149,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 63.7,
+    "flags": [],
+    "top_drivers": [
+      [
+        "days_to_cover",
+        0.3891
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "log_float_inv",
+        -0.15
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0027,
+    "days_to_cover": 12.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "VRDN",
+    "drug": "Veligrotug (VRDN-001) - (THRIVE-2)",
+    "indication": "Thyroid Eye Disease (TED)",
+    "catalyst_date": "2026-06-30",
+    "price": 28.2,
+    "market_cap": 2882225302.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8348,
+    "explosion_probability": 0.0145,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 55.2,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.1993
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0834,
+    "days_to_cover": 6.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "VRDN",
+    "drug": "VRDN-001 - (THRIVE)",
+    "indication": "Active Thyroid Eye Disease (TED)",
+    "catalyst_date": "2026-06-30",
+    "price": 28.2,
+    "market_cap": 2882225302.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8348,
+    "explosion_probability": 0.0145,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 41.1,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.1993
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0834,
+    "days_to_cover": 6.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "HCM",
+    "drug": "Sovleplenib - (China trial)",
+    "indication": "Warm antibody autoimmune hemolytic anemia (wAIHA)",
+    "catalyst_date": "2026-06-30",
+    "price": 14.16,
+    "market_cap": 2470431820.0,
+    "size_tier": "small",
+    "odin_proxy": 0.5799,
+    "explosion_probability": 0.0145,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "DELTA",
+    "investment_score": 32.2,
+    "flags": [],
+    "top_drivers": [
+      [
+        "days_to_cover",
+        0.3891
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "log_float_inv",
+        -0.15
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0027,
+    "days_to_cover": 12.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "JAZZ",
+    "drug": "Ziihera (zanidatamab-hrii) - (HERIZON-GEA-01)",
+    "indication": "First-line HER2-positive gastroesophageal adenocarcinoma (GEA)",
+    "catalyst_date": "2026-03-31",
+    "price": 189.15,
+    "market_cap": 11644140203.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0141,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 44.8,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3165
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.1155,
+    "days_to_cover": 5.5,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "IONS",
+    "drug": "Olezarsen - (CORE)",
+    "indication": "Hypertriglyceridemia",
+    "catalyst_date": "2026-06-30",
+    "price": 74.24,
+    "market_cap": 12263854897.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8398,
+    "explosion_probability": 0.0135,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 60.7,
+    "flags": [
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ],
+      [
+        "crl_count_x_small",
+        0.0965
+      ]
+    ],
+    "si_pct": 0.1108,
+    "days_to_cover": 6.2,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "RLFTF",
+    "drug": "RLF-OD032",
+    "indication": "Phenylketonuria (PKU)",
+    "catalyst_date": "2026-04-30",
+    "price": 0.5102,
+    "market_cap": 6416234.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.5142,
+    "explosion_probability": 0.0134,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 67.7,
+    "flags": [],
+    "top_drivers": [
+      [
+        "is_nano",
+        0.4242
+      ],
+      [
+        "log_float_inv",
+        -0.2971
+      ],
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "days_to_cover",
+        -0.253
+      ]
+    ],
+    "si_pct": 0.0,
+    "days_to_cover": 0.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "HRMY",
+    "drug": "WAKIX - (Pitolisant GR)",
+    "indication": "GI symptoms;",
+    "catalyst_date": "2026-06-30",
+    "price": 27.44,
+    "market_cap": 1587146448.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.513,
+    "explosion_probability": 0.0134,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 53.3,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "crl_rate_x_is_small",
+        -0.7094
+      ],
+      [
+        "pct_float_short",
+        0.4411
+      ],
+      [
+        "log_float_inv",
+        0.3509
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.2866,
+    "days_to_cover": 5.6,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "AXSM",
+    "drug": "AXS-05 (dextromethorphan HBr and bupropion HCl) - (ACCORD-2)",
+    "indication": "Agitation in patients with Alzheimer\u2019s disease (AD)",
+    "catalyst_date": "2026-04-30",
+    "price": 164.265,
+    "market_cap": 8402695018.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8728,
+    "explosion_probability": 0.0131,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 45.4,
+    "flags": [
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3864
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0641,
+    "days_to_cover": 4.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "ARGX",
+    "drug": "VYVGART - (ADAPT SERON)",
+    "indication": "Myasthenia Gravis",
+    "catalyst_date": "2026-05-10",
+    "price": 692.83,
+    "market_cap": 42999030693.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8913,
+    "explosion_probability": 0.013,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 44.5,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3081
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0337,
+    "days_to_cover": 5.1,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "GH",
+    "drug": "Camizestrant - (SERENA-6)",
+    "indication": "Hormone Receptor-Positive/Human Epidermal Growth Factor Receptor 2-Negative (HR+/HER2-) Metastatic Breast Cancer (mBC)",
+    "catalyst_date": "2026-06-30",
+    "price": 88.1,
+    "market_cap": 11556115852.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.013,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 43.9,
+    "flags": [],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "log_float_inv",
+        0.154
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0914,
+    "days_to_cover": 5.8,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "ARGX",
+    "drug": "ARGX-119",
+    "indication": "Healthy volunteers, Muscle-specific kinase (MuSK)",
+    "catalyst_date": "2026-04-30",
+    "price": 692.83,
+    "market_cap": 42999030693.0,
+    "size_tier": "large",
+    "odin_proxy": 0.9473,
+    "explosion_probability": 0.0124,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 45.4,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.3081
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0337,
+    "days_to_cover": 5.1,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "IONS",
+    "drug": "SPINRAZA (Nusinersen) - (DEVOTE)",
+    "indication": "Spinal muscular atrophy (SMA)",
+    "catalyst_date": "2026-04-03",
+    "price": 74.24,
+    "market_cap": 12263854897.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.9473,
+    "explosion_probability": 0.0123,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.5,
+    "flags": [
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ],
+      [
+        "surprise_factor",
+        -0.1041
+      ]
+    ],
+    "si_pct": 0.1108,
+    "days_to_cover": 6.2,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "RNA",
+    "drug": "Delpacibart braxlosiran (del-brax) - (FORTITUDE)",
+    "indication": "Facioscapulohumeral Muscular Dystrophy (FSHD)",
+    "catalyst_date": "2026-06-30",
+    "price": 13.1,
+    "market_cap": 2032460363.0,
+    "size_tier": "small",
+    "odin_proxy": 0.9473,
+    "explosion_probability": 0.012,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 46.7,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        0.6163
+      ],
+      [
+        "days_to_cover",
+        -0.2503
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0,
+    "days_to_cover": 0.1,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "INCY",
+    "drug": "ZYNYZ (retifanlimab-dlwr) - (POD1UM-304)",
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "catalyst_date": "2026-04-30",
+    "price": 92.26,
+    "market_cap": 18361076478.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0114,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "DELTA",
+    "investment_score": 38.1,
+    "flags": [
+      "BTD",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "days_to_cover",
+        0.1253
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0778,
+    "days_to_cover": 7.1,
+    "designations": {
+      "orphan": false,
+      "btd": true,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 4
+  },
+  {
+    "ticker": "ARQT",
+    "drug": "ZORYVE (roflumilast) Cream 0.3%",
+    "indication": "Plaque Psoriasis in Children Ages 2 to 5",
+    "catalyst_date": "2026-06-29",
+    "price": 22.38,
+    "market_cap": 2775867089.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8913,
+    "explosion_probability": 0.0108,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.4,
+    "flags": [
+      "HIGH_SI"
+    ],
+    "top_drivers": [
+      [
+        "ta_vh_x_log_float_inv",
+        -0.4826
+      ],
+      [
+        "days_to_cover",
+        0.3543
+      ],
+      [
+        "log_float_inv",
+        0.2223
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.1557,
+    "days_to_cover": 11.3,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "VRTX",
+    "drug": "TRIKAFTA",
+    "indication": "Cystic fibrosis in patients one year to less than two years of age",
+    "catalyst_date": "2026-06-30",
+    "price": 453.74,
+    "market_cap": 115265473371.0,
+    "size_tier": "large",
+    "odin_proxy": 0.5503,
+    "explosion_probability": 0.0099,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 47.9,
+    "flags": [
+      "ORPHAN",
+      "BTD",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ],
+      [
+        "days_to_cover",
+        -0.0979
+      ]
+    ],
+    "si_pct": 0.0183,
+    "days_to_cover": 2.9,
+    "designations": {
+      "orphan": true,
+      "btd": true,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 8
+  },
+  {
+    "ticker": "VRTX",
+    "drug": "CASGEVY",
+    "indication": "Sickle cell disease (SCD) or transfusion-dependent beta thalassemia (TDT) in patients aged 5-11 years",
+    "catalyst_date": "2026-06-30",
+    "price": 453.74,
+    "market_cap": 115265473371.0,
+    "size_tier": "large",
+    "odin_proxy": 0.5503,
+    "explosion_probability": 0.0099,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 47.9,
+    "flags": [
+      "ORPHAN",
+      "BTD",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ],
+      [
+        "days_to_cover",
+        -0.0979
+      ]
+    ],
+    "si_pct": 0.0183,
+    "days_to_cover": 2.9,
+    "designations": {
+      "orphan": true,
+      "btd": true,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 8
+  },
+  {
+    "ticker": "ZYME",
+    "drug": "Ziihera (zanidatamab-hrii) - (HERIZON-GEA-01)",
+    "indication": "First-line HER2-positive gastroesophageal adenocarcinoma (GEA)",
+    "catalyst_date": "2026-03-31",
+    "price": 24.69,
+    "market_cap": 1820877797.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0081,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 49.1,
+    "flags": [],
+    "top_drivers": [
+      [
+        "crl_rate_x_is_small",
+        -0.528
+      ],
+      [
+        "log_float_inv",
+        0.2731
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0816,
+    "days_to_cover": 5.4,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "REGN",
+    "drug": "C5 Combo (pozelimab and cemdisiran) - (NIMBLE)",
+    "indication": "Myasthenia gravis (MG)",
+    "catalyst_date": "2026-03-31",
+    "price": 756.73,
+    "market_cap": 80001348794.0,
+    "size_tier": "large",
+    "odin_proxy": 0.7,
+    "explosion_probability": 0.0078,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 46.5,
+    "flags": [],
+    "top_drivers": [
+      [
+        "ta_vh_x_log_float_inv",
+        -0.4676
+      ],
+      [
+        "log_float_inv",
+        0.2071
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0245,
+    "days_to_cover": 4.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 10
+  },
+  {
+    "ticker": "VRTX",
+    "drug": "Povetacicept (ALPN-303) - (RAINIER)",
+    "indication": "Lupus nephritis, IgA nephropathy",
+    "catalyst_date": "2026-03-31",
+    "price": 453.74,
+    "market_cap": 115265473371.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8758,
+    "explosion_probability": 0.0075,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 47.1,
+    "flags": [
+      "ORPHAN",
+      "BTD",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ],
+      [
+        "days_to_cover",
+        -0.0979
+      ]
+    ],
+    "si_pct": 0.0183,
+    "days_to_cover": 2.9,
+    "designations": {
+      "orphan": true,
+      "btd": true,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 8
+  },
+  {
+    "ticker": "MNKD",
+    "drug": "Afrezza (Technosphere Insulin) - (INHALE-1)",
+    "indication": "Pediatric type 1/2 diabetes",
+    "catalyst_date": "2026-05-29",
+    "price": 2.3,
+    "market_cap": 708630996.0,
+    "size_tier": "micro",
+    "odin_proxy": 0.8798,
+    "explosion_probability": 0.0068,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 63.7,
+    "flags": [],
+    "top_drivers": [
+      [
+        "is_penny",
+        -0.256
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.2559
+      ],
+      [
+        "is_low_price",
+        0.2544
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.0748,
+    "days_to_cover": 3.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "REGN",
+    "drug": "Otoferlin gene therapy (DB-OTO) - (CHORD)",
+    "indication": "Genetic hearing loss",
+    "catalyst_date": "2026-06-30",
+    "price": 756.73,
+    "market_cap": 80001348794.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8808,
+    "explosion_probability": 0.0067,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 52.3,
+    "flags": [],
+    "top_drivers": [
+      [
+        "ta_vh_x_log_float_inv",
+        -0.4676
+      ],
+      [
+        "log_float_inv",
+        0.2071
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0245,
+    "days_to_cover": 4.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 10
+  },
+  {
+    "ticker": "GSK",
+    "drug": "Bepirovirsen (IONIS-HBVRx)",
+    "indication": "Chronic hepatitis B virus (CHB)",
+    "catalyst_date": "2026-03-31",
+    "price": 53.94,
+    "market_cap": 106260679168.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.6037,
+    "explosion_probability": 0.0055,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 53.2,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.5923
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "days_to_cover",
+        -0.1316
+      ]
+    ],
+    "si_pct": 0.0062,
+    "days_to_cover": 2.3,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 35
+  },
+  {
+    "ticker": "ONC",
+    "drug": "Ziihera (zanidatamab-hrii) - (HERIZON-GEA-01)",
+    "indication": "First-line HER2-positive gastroesophageal adenocarcinoma (GEA)",
+    "catalyst_date": "2026-03-31",
+    "price": 276.95,
+    "market_cap": 30725681021.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0054,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 45.8,
+    "flags": [
+      "SAFETY_HIGH",
+      "NAIVE_SPONSOR"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.2714
+      ],
+      [
+        "safety_h_x_dtc",
+        -0.2689
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0193,
+    "days_to_cover": 5.3,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 2,
+    "sponsor_prior_approvals": 0
+  },
+  {
+    "ticker": "BMY",
+    "drug": "Opdivo (nivolumab) in combination with doxorubicin, vinblastine and dacarbazine (AVD)",
+    "indication": "Previously untreated Stage III or IV classical Hodgkin Lymphoma (cHL)",
+    "catalyst_date": "2026-04-08",
+    "price": 59.43,
+    "market_cap": 121027632288.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0051,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 52.1,
+    "flags": [
+      "BTD"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.4515
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "days_to_cover",
+        -0.1187
+      ]
+    ],
+    "si_pct": 0.0147,
+    "days_to_cover": 2.5,
+    "designations": {
+      "orphan": false,
+      "btd": true,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 40
+  },
+  {
+    "ticker": "ALPN",
+    "drug": "Povetacicept (ALPN-303) - (RAINIER)",
+    "indication": "Lupus nephritis, IgA nephropathy",
+    "catalyst_date": "2026-03-31",
+    "price": 64.97,
+    "market_cap": 4456781329.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8758,
+    "explosion_probability": 0.0051,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.6,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.2971
+      ],
+      [
+        "days_to_cover",
+        -0.253
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0,
+    "days_to_cover": 0.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 5
+  },
+  {
+    "ticker": "NVO",
+    "drug": "Sogroya (somapacitan) - (REAL8)",
+    "indication": "Noonan syndrome (NS)",
+    "catalyst_date": "2026-06-30",
+    "price": 36.4,
+    "market_cap": 162526000000.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.7,
+    "explosion_probability": 0.005,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 51.1,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.5494
+      ],
+      [
+        "days_to_cover",
+        -0.2011
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0077,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 20
+  },
+  {
+    "ticker": "MRK",
+    "drug": "Doravirine/Islatravir (DOR/ISL) - (MK-8591A-052)",
+    "indication": "HIV-1 Infection",
+    "catalyst_date": "2026-04-28",
+    "price": 118.93,
+    "market_cap": 294041580917.0,
+    "size_tier": "large",
+    "odin_proxy": 0.9033,
+    "explosion_probability": 0.005,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 42.6,
+    "flags": [
+      "ORPHAN",
+      "BTD"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.4937
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0131,
+    "days_to_cover": 3.0,
+    "designations": {
+      "orphan": true,
+      "btd": true,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 50
+  },
+  {
+    "ticker": "AZN",
+    "drug": "Baxdrostat (CIN-107) - (BaxHTN)",
+    "indication": "Uncontrolled Hypertension (rHTN)",
+    "catalyst_date": "2026-06-30",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8398,
+    "explosion_probability": 0.0046,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 41.9,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "GSK",
+    "drug": "Tebipenem pivoxil",
+    "indication": "cUTI",
+    "catalyst_date": "2026-06-30",
+    "price": 53.94,
+    "market_cap": 106260679168.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8758,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 50.8,
+    "flags": [],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.5923
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "days_to_cover",
+        -0.1316
+      ]
+    ],
+    "si_pct": 0.0062,
+    "days_to_cover": 2.3,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 35
+  },
+  {
+    "ticker": "AZN",
+    "drug": "Saphnelo - (TULIP-SC)",
+    "indication": "Systemic lupus erythematosus",
+    "catalyst_date": "2026-06-30",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8913,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 47.7,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "AZN",
+    "drug": "BREZTRI AEROSPHERE (budesonide/glycopyrrolate/formoterol fumarate) - (KALOS/LOGOS)",
+    "indication": "Asthma",
+    "catalyst_date": "2026-06-30",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8983,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 47.3,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "AZN",
+    "drug": "Camizestrant - (SERENA-6)",
+    "indication": "Hormone Receptor-Positive/Human Epidermal Growth Factor Receptor 2-Negative (HR+/HER2-) Metastatic Breast Cancer (mBC)",
+    "catalyst_date": "2026-06-30",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 44.1,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "AZN",
+    "drug": "Imfinzi (durvalumab) - (POTOMAC)",
+    "indication": "Non-Muscle Invasive Bladder Cancer (NMIBC)",
+    "catalyst_date": "2026-06-30",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 43.6,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "AZN",
+    "drug": "Truqap - (CAPItello-281)",
+    "indication": "Dephosphorylated Phosphatase and Tensin Homolog (dPTEN) Hormone-Sensitive Prostate Cancer (HSPC)",
+    "catalyst_date": "2026-06-30",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 43.4,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "AZN",
+    "drug": "ENHERTU (trastuzumab deruxtecan) - (DESTINY-Breast11)",
+    "indication": "High-Risk HER2 Positive Early-Stage Breast Cancer",
+    "catalyst_date": "2026-05-18",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 43.2,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "AZN",
+    "drug": "Datopotamab Deruxtecan (Dato-DXd) - (TROPION-Breast02) - (TB02)",
+    "indication": "Metastatic triple negative breast cancer (TNBC)",
+    "catalyst_date": "2026-06-02",
+    "price": 183.4,
+    "market_cap": 560917036168.0,
+    "size_tier": "large",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.0044,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 43.0,
+    "flags": [
+      "ORPHAN",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.3915
+      ],
+      [
+        "days_to_cover",
+        -0.2001
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0013,
+    "days_to_cover": 1.0,
+    "designations": {
+      "orphan": true,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 1,
+    "sponsor_prior_approvals": 30
+  },
+  {
+    "ticker": "PFE",
+    "drug": "HYMPAVZI (marstacimab)",
+    "indication": "Hemophilia A or B",
+    "catalyst_date": "2026-06-30",
+    "price": 27.57,
+    "market_cap": 156827978477.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8673,
+    "explosion_probability": 0.004,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 51.8,
+    "flags": [
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.675
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0231,
+    "days_to_cover": 3.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 50
+  },
+  {
+    "ticker": "PFE",
+    "drug": "Vepdegestrant (ARV-471) - (VERITAC-2)",
+    "indication": "Breast cancer",
+    "catalyst_date": "2026-06-05",
+    "price": 27.57,
+    "market_cap": 156827978477.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.8873,
+    "explosion_probability": 0.004,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 45.8,
+    "flags": [
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "log_float_inv",
+        -0.675
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ],
+      [
+        "is_micro",
+        -0.1173
+      ]
+    ],
+    "si_pct": 0.0231,
+    "days_to_cover": 3.5,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 50
+  },
+  {
+    "ticker": "PHAR",
+    "drug": "Leniolisib - (pediactric)",
+    "indication": "Activated phosphoinositide 3-kinase delta syndrome (APDS)",
+    "catalyst_date": "2026-03-31",
+    "price": 16.31,
+    "market_cap": 1115491591.0,
+    "size_tier": "small",
+    "odin_proxy": 0.8913,
+    "explosion_probability": 0.0038,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "BETA",
+    "investment_score": 65.7,
+    "flags": [],
+    "top_drivers": [
+      [
+        "crl_rate_x_is_small",
+        -0.4095
+      ],
+      [
+        "days_to_cover",
+        -0.214
+      ],
+      [
+        "log_float_inv",
+        -0.2007
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ]
+    ],
+    "si_pct": 0.0002,
+    "days_to_cover": 0.7,
+    "designations": {
+      "orphan": false,
+      "btd": false,
+      "fast_track": false,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  },
+  {
+    "ticker": "DBVT",
+    "drug": "Viaskin Peanut - (VITESSE)",
+    "indication": "Peanut allergy",
+    "catalyst_date": "2026-06-30",
+    "price": 20.21,
+    "market_cap": 683557252.0,
+    "size_tier": "mid",
+    "odin_proxy": 0.9163,
+    "explosion_probability": 0.002,
+    "explosion_tier": "QUIET",
+    "position_multiplier": 0.8,
+    "investment_tier": "GAMMA",
+    "investment_score": 46.8,
+    "flags": [
+      "BTD",
+      "FAST_TRACK"
+    ],
+    "top_drivers": [
+      [
+        "ft_x_is_small",
+        -0.8154
+      ],
+      [
+        "crl_rate_x_is_small",
+        -0.7432
+      ],
+      [
+        "price_compression",
+        -0.1856
+      ],
+      [
+        "drawdown_pct",
+        -0.1854
+      ],
+      [
+        "drawdown_x_vol",
+        0.1342
+      ]
+    ],
+    "si_pct": 0.0307,
+    "days_to_cover": 6.0,
+    "designations": {
+      "orphan": false,
+      "btd": true,
+      "fast_track": true,
+      "ppm": false,
+      "gene_therapy": false
+    },
+    "resub_class": 0,
+    "safety_severity": 0,
+    "sponsor_prior_approvals": 1
+  }
+]

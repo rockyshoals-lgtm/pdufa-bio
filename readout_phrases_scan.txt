@@ -1,0 +1,49 @@
+# readout_phrases_scan.txt — for:  edgar_miner.py scan
+#
+# `scan` downloads the documents and searches them LOCALLY, so regex works here and the
+# adjacency rule that cripples `fts` does not apply. This is where the accuracy is.
+#
+# WHY REGEX IS THE WHOLE POINT OF `scan`
+# `fts` can only ask "does this exact string appear". It cannot ask the question we actually
+# have, which is "does a readout verb appear NEAR a date". These patterns do, in one pass,
+# what the fts leg needs 26 phrase-crawls plus a second document fetch to approximate.
+#
+# THE BACKTRACKING TRAP — READ BEFORE ADDING A PATTERN.
+# A pattern that chains unbounded/lazy gaps across a 40 KB filing catastrophically backtracks.
+# The phase_readout_miner's PR_SCHED chained `[^.]{0,150}?` and burned 649 CPU-SECONDS on one
+# document, then died silently. Rules that keep that from happening:
+#   * bound every gap ([^.]{0,60}, never .*? or {0,300})
+#   * never chain more than TWO bounded gaps in one pattern
+#   * keep gaps inside a sentence with [^.] so a match cannot run across the whole document
+# edgar_miner.py has no PR_TEXT_CAP — `scan` searches the FULL document text. That is a feature
+# (the date is often deep in a 10-K), but it means these rules are not optional here.
+#
+# Each `re:` line is one hit row with its own label, so you can measure which pattern earns
+# its keep in hits.csv and drop the ones that don't. That is the honing loop.
+
+# ---------- A. COMMITTED WINDOW: readout verb + quarter/half/year ----------
+# Yields the same class of row as the fts leg (quarter/half precision) but in ONE pass.
+re:(?:topline|top-line|primary\s+endpoint|pivotal|interim)\s+(?:data|results|readout|analysis)[^.]{0,60}?(?:expected|anticipated|on\s+track|projected|planned)[^.]{0,40}?(?:1H|2H|first\s+half|second\s+half|Q[1-4]|first|second|third|fourth)\s*(?:quarter\s*(?:of\s*)?)?20\d\d
+re:(?:expect|anticipate|project|plan)\w*\s+to\s+(?:report|announce|present)[^.]{0,60}?(?:topline|top-line|data|results)[^.]{0,40}?(?:1H|2H|Q[1-4]|mid-?|early|late|end\s+of)\s*-?\s*20\d\d
+re:(?:data|results|readout)\s+(?:expected|anticipated)[^.]{0,30}?(?:mid|early|late|end)\s*-\s*20\d\d
+
+# ---------- B. EXACT DAY: the highest-value pattern class ----------
+# Rare in EDGAR (a scheduling PR is usually not 8-K material) but when a readout IS material
+# enough to furnish, the day is right here and the fts leg cannot express this question at all.
+re:(?:will\s+)?(?:report|announce|present|host)[^.]{0,60}?(?:topline|top-line|results|data)[^.]{0,60}?on\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+20\d\d
+re:(?:conference\s+call|webcast)[^.]{0,60}?(?:to\s+discuss|regarding)[^.]{0,50}?(?:topline|results|data)[^.]{0,60}?(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}
+
+# ---------- C. CLOCK-STARTERS: enrollment done => readout is now datable ----------
+# The current miner does not look for these at all. "Completed enrollment" plus a stated
+# follow-up duration is a DERIVABLE readout date and is often stated long before guidance.
+re:(?:completed|complete[ds]?)\s+(?:target\s+)?enrollment[^.]{0,70}?(?:topline|data|results)[^.]{0,40}?(?:expected|anticipated)
+re:(?:last\s+patient\s+(?:last\s+visit|dosed|enrolled)|database\s+lock)[^.]{0,60}?(?:20\d\d|Q[1-4]|1H|2H)
+re:fully\s+enrolled[^.]{0,70}?(?:topline|data|results)[^.]{0,40}?(?:expected|anticipated|20\d\d)
+
+# ---------- D. NEGATIVE CONTROLS — label them, then EXCLUDE them downstream ----------
+# Do not delete these. A hit here on the same document as an A/B hit means the A/B hit is
+# probably about an ALREADY-REPORTED or LONG-TERM-FOLLOW-UP dataset, not an upcoming readout.
+# This is the cheapest false-positive filter available and it costs one extra column.
+re:(?:\d+-year|\d+-month|long-?term|follow-?up|real-?world|post-?hoc|subgroup|extension\s+study)\s+(?:data|results|analysis)
+re:(?:reported|announced|presented)\s+(?:positive|negative|mixed)?\s*(?:topline|top-line)\s+(?:data|results)
+re:(?:met|did\s+not\s+meet|missed)\s+(?:its\s+)?(?:the\s+)?primary\s+endpoint

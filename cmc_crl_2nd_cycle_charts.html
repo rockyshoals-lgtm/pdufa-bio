@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CMC-only FDA CRLs: do manufacturing rejections come back? (2020–2026)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0b0f14;--card:#121821;--line:#1e2733;--tx:#e6edf3;--mut:#8b98a5;--teal:#2dd4bf;--tealdk:#0E7C86;--grn:#36c275;--amb:#f0b429;--red:#ef5350}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:30px 20px 60px}
+h1{font-size:25px;margin:0 0 6px;letter-spacing:-.2px}
+h2{font-size:17px;margin:34px 0 12px;border-left:3px solid var(--teal);padding-left:10px}
+.sub{color:var(--mut);font-size:13.5px;margin:0 0 18px}
+.lede{background:linear-gradient(180deg,#13202a,#0f1620);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0 8px}
+.lede b{color:var(--teal)}
+.tag{display:inline-block;font-size:11px;color:var(--mut);border:1px solid var(--line);border-radius:20px;padding:2px 9px;margin:2px 4px 2px 0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card .n{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.card .l{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.35}
+.grn{color:var(--grn)}.amb{color:var(--amb)}.tl{color:var(--teal)}.rd{color:var(--red)}
+.chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 14px 8px;margin:10px 0}
+.chartbox .cap{font-size:12px;color:var(--mut);padding:4px 4px 10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+td .tk{font-weight:700}
+.pill{font-size:10.5px;padding:1px 7px;border-radius:20px;border:1px solid}
+.pill.w{color:var(--amb);border-color:#4a3a12;background:#1c1608}
+.warn{background:#1d1410;border:1px solid #5a2e22;border-radius:12px;padding:14px 16px;margin:10px 0}
+.warn b{color:var(--red)}
+.foot{color:var(--mut);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+.foot a{color:var(--teal)}
+.disc{font-size:11.5px;color:#6b7785;margin-top:10px;font-style:italic}
+@media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+
+<h1>Do CMC-only FDA rejections come back? <span class="tl">CMC-only CRLs, 2020–2026</span></h1>
+<p class="sub">A source-verified, named-case look at Complete Response Letters driven <i>only</i> by manufacturing / facility (CMC) problems — where the drug's efficacy and safety were <b>not</b> in question. pdufa.bio · data as of Jun 26 2026.</p>
+
+<div class="lede">
+The pattern: when the FDA's only problem is the <b>factory, not the molecule</b>, the drug almost always comes back — usually on the next cycle.
+Of <b>11</b> verified CMC/facility-<i>only</i> CRLs from 2020–2026 that have reached a final decision, <b>all 11 were ultimately approved</b> — <b>7 on the very next review cycle</b> (median ≈10 months). The catch is in the fine print below: this is a curated sample, most 2025–26 cases are still pending, and a "CMC" label can hide a deeper problem.
+</div>
+
+<div class="cards">
+ <div class="card"><div class="n grn">11/11</div><div class="l">Resolved CMC-only CRLs → <b>approved</b> (not a random sample)</div></div>
+ <div class="card"><div class="n tl">7</div><div class="l">Approved on the <b>next</b> cycle · median <b>10.4 mo</b> (6–13)</div></div>
+ <div class="card"><div class="n amb">6</div><div class="l"><b>Pending</b> CMC-only (right-censored) — the watchlist</div></div>
+ <div class="card"><div class="n rd">1</div><div class="l">Counterexample: factory fixed, then <b>efficacy</b> CRL</div></div>
+</div>
+
+<h2>How long the "next cycle" CMC fixes took</h2>
+<div class="chartbox"><canvas id="tts" height="200"></canvas>
+<div class="cap">Single CMC-only CRL → next-cycle approval. Months from CRL to approval. Median ≈10.4; range 6.1–13.2.</div></div>
+
+<h2>Every case on one timeline</h2>
+<div class="chartbox"><canvas id="gantt" height="300"></canvas>
+<div class="cap">Bar = CRL date → approval (green/teal) or → today if still pending (amber, ▸). Red = counterexample. Hover for detail.</div></div>
+
+<h2>Why manufacturing rejections are the recoverable kind</h2>
+<div class="two">
+ <div class="chartbox"><canvas id="recov" height="220"></canvas>
+ <div class="cap">FDA's own data (Sacks et al., JAMA 2014, n=151 first-cycle CRLs to new drugs): drugs rejected on <b>safety</b> recovered to approval far more often than those rejected on <b>efficacy</b>. Manufacturing sits with the recoverable kind — the molecule isn't the problem.</div></div>
+ <div class="chartbox"><canvas id="mix" height="220"></canvas>
+ <div class="cap">What CRLs are actually about (same FDA analysis): pure CMC/labeling is only ~15% of letters — but it's the most fixable slice.</div></div>
+</div>
+
+<h2>On deck — pending CMC-only CRLs (the watchlist)</h2>
+<table><thead><tr><th>Ticker</th><th>Drug</th><th>CRL date</th><th>Status / next action</th></tr></thead><tbody id="watchrows"></tbody></table>
+<p class="disc">Listed because the CRL was manufacturing/facility-only at the time of issue. Inclusion is not a prediction — these are unresolved. UNCY's resubmission carries a PDUFA of Jun 29 2026.</p>
+
+<h2>The honest counterexamples</h2>
+<div class="warn">
+<b>tab-cel / Ebvallo (Atara → Pierre Fabre).</b> The cleanest cautionary tale: a CMC CRL in Jan 2025 → the facility issue was resolved → and then a <b>second CRL in Jan 2026 rejected the drug on efficacy</b> (the single-arm ALLELE study was deemed inadequate). ~18 months unapproved, Atara cut ~85% of staff and flagged going-concern. Lesson: a clean factory fix doesn't make an un-approvable molecule approvable — verify the CRL was <i>only</i> CMC.
+<br><br>
+<b>Ycanth (Verrica).</b> Genuinely CMC-only — but it took <b>three cycles over ~3 years</b> to clear. "Next cycle" is the mode, not a guarantee.
+</div>
+
+<div class="foot">
+<b>Method &amp; honesty notes.</b> Cohort = named, source-verified U.S. NDA/BLA CRLs (2020–2026) where the letter was driven only by manufacturing / third-party-facility / cGMP / Form-483 / fill-finish issues, with efficacy and safety not cited. Each case was checked against the FDA's published CRL letter text and company disclosures; four cases were re-classified out during review (insulin icodec, patritumab deruxtecan, odronextamab, glepaglutide, tab-cel's 2nd cycle were <i>not</i> CMC-only). <b>This is not a random sample and not a base rate.</b> Raw "CRL → approval" rates from the openFDA file are biased (older letters were published precisely because they later approved; 2024–26 letters are mostly still pending), so we rely on named precedent + published literature, not a computed percentage.
+<br><br>
+<b>Sources:</b> openFDA Complete Response Letter transparency corpus (full letter text) · Sacks LV et al., <i>JAMA</i> 2014;311(4):378–384 &amp; <i>Nat Rev Drug Discov</i> 2014 (CRL reasons &amp; recovery) · Avalere / Clarivate (CRL prevalence &amp; eventual-approval) · FDA PDUFA goals (Class 1 = 2-mo, Class 2 = 6-mo review) · company press releases / SEC filings.
+<p class="disc">Educational and informational only. Not investment advice, not a prediction of any FDA decision. Do your own research.</p>
+</div>
+
+<script>
+var COH=[
+ {t:"SPPI",d:"Rolvedon (eflapegrastim)",crl:"2021-08-03",appr:"2022-09-09",m:13.2,b:"single"},
+ {t:"LLY",d:"Omvoh (mirikizumab)",crl:"2023-03-30",appr:"2023-10-26",m:6.9,b:"single"},
+ {t:"LLY",d:"Ebglyss (lebrikizumab)",crl:"2023-09-28",appr:"2024-09-13",m:11.5,b:"single"},
+ {t:"ALVO",d:"Selarsdi (ustekinumab-aekn)",crl:"2023-10-12",appr:"2024-04-16",m:6.1,b:"single"},
+ {t:"CKPT",d:"Unloxcyt (cosibelimab)",crl:"2023-12-15",appr:"2024-12-13",m:12.0,b:"single"},
+ {t:"ALPMY",d:"Vyloy (zolbetuximab)",crl:"2024-01-04",appr:"2024-10-18",m:9.5,b:"single"},
+ {t:"REGN",d:"Lynozyfic (linvoseltamab)",crl:"2024-08-20",appr:"2025-07-02",m:10.4,b:"single"},
+ {t:"VRCA",d:"Ycanth (cantharidin) · 3 cycles",crl:"2020-07-13",appr:"2023-07-21",m:36.3,b:"multi"},
+ {t:"FENC",d:"Pedmark (Na-thiosulfate) · 2 cycles",crl:"2020-08-10",appr:"2022-09-20",m:25.4,b:"multi"},
+ {t:"ALVO",d:"Simlandi (adalimumab-ryvk) · 3 cycles",crl:"2022-12-20",appr:"2024-02-23",m:14.2,b:"multi"},
+ {t:"ABBV",d:"Vyalev (foscarbidopa/levodopa) · 2 cycles",crl:"2023-03-17",appr:"2024-10-17",m:19.0,b:"multi"},
+ {t:"ZLDPF",d:"dasiglucagon",crl:"2024-10-08",appr:null,b:"pending"},
+ {t:"UNCY",d:"oxylanthanum carbonate (OLC)",crl:"2025-06-27",appr:null,b:"pending",pdufa:"PDUFA Jun 29 2026"},
+ {t:"RARE",d:"UX111 (gene therapy)",crl:"2025-07-07",appr:null,b:"pending"},
+ {t:"SRRK",d:"apitegromab (SAPPHIRE/SMA)",crl:"2025-09-22",appr:null,b:"pending",pdufa:"PDUFA ~Sep 30 2026"},
+ {t:"ALVO",d:"AVT05 (golimumab biosimilar)",crl:"2025-11-26",appr:null,b:"pending"},
+ {t:"ABBV",d:"TrenibotE (trenibotulinumtoxinE)",crl:"2026-04-22",appr:null,b:"pending"},
+ {t:"ATRA/PF",d:"tab-cel (Ebvallo) · CMC→then EFFICACY",crl:"2025-01-15",appr:null,b:"counter"}
+];
+function dy(s){if(!s)return null;var p=s.split("-").map(Number);var t=new Date(p[0],(p[1]||1)-1,p[2]||1);return p[0]+((t-new Date(p[0],0,0))/864e5)/365;}
+var NOW=2026.49;
+Chart.defaults.color="#8b98a5";Chart.defaults.font.family="Inter,system-ui,sans-serif";
+var C={grn:"#36c275",teal:"#2dd4bf",amb:"#f0b429",red:"#ef5350",line:"#1e2733"};
+
+// 1) time-to-resolution (single)
+var S=COH.filter(function(x){return x.b==="single"}).slice().sort(function(a,b){return a.m-b.m});
+new Chart(document.getElementById("tts"),{type:"bar",data:{labels:S.map(function(x){return x.t+" "+x.d.split(" (")[0]}),
+ datasets:[{data:S.map(function(x){return x.m}),backgroundColor:"#2dd4bf",borderRadius:4,barThickness:18}]},
+ options:{indexAxis:"y",plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.x+" months CRL→approval"}}}},
+ scales:{x:{title:{display:true,text:"months from CRL to approval"},grid:{color:C.line}},y:{grid:{display:false}}}}});
+
+// 2) gantt
+var G=COH.slice().sort(function(a,b){return dy(a.crl)-dy(b.crl)});
+var colByB={single:C.grn,multi:C.teal,pending:C.amb,counter:C.red};
+new Chart(document.getElementById("gantt"),{type:"bar",data:{labels:G.map(function(x){return x.t+"  "+x.d}),
+ datasets:[{data:G.map(function(x){var s=dy(x.crl);var e=x.appr?dy(x.appr):NOW;return [s,e]}),
+   backgroundColor:G.map(function(x){return colByB[x.b]}),borderRadius:3,barThickness:11}]},
+ options:{indexAxis:"y",plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){var x=G[c.dataIndex];
+   return x.appr?("CRL "+x.crl+" → approved "+x.appr):("CRL "+x.crl+" → PENDING"+(x.pdufa?(" · "+x.pdufa):""))}}}},
+ scales:{x:{min:2020,max:2026.6,ticks:{stepSize:1,callback:function(v){return v}},grid:{color:C.line},title:{display:true,text:"year"}},
+   y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+// 3) recovery by reason (Sacks/JAMA)
+new Chart(document.getElementById("recov"),{type:"bar",data:{labels:["Efficacy-only CRL","Safety-only CRL"],
+ datasets:[{data:[31.3,61.5],backgroundColor:["#ef5350","#36c275"],borderRadius:5,barThickness:46}]},
+ options:{plugins:{legend:{display:false},title:{display:true,text:"% later approved, by CRL reason (FDA/JAMA)",color:"#e6edf3",font:{size:13}},
+   tooltip:{callbacks:{label:function(c){return c.parsed.y+"% eventually approved"}}}},
+ scales:{y:{max:80,title:{display:true,text:"% eventually approved"},grid:{color:C.line}},x:{grid:{display:false}}}}});
+
+// 4) reason mix doughnut
+new Chart(document.getElementById("mix"),{type:"doughnut",data:{labels:["Efficacy 32%","Safety 26%","Both 27%","CMC/labeling ~15%"],
+ datasets:[{data:[32,26,27,15],backgroundColor:["#ef5350","#f0b429","#9b6dff","#2dd4bf"],borderColor:"#0b0f14",borderWidth:2}]},
+ options:{plugins:{legend:{position:"bottom",labels:{boxWidth:12,font:{size:11}}},
+   title:{display:true,text:"What CRLs are about",color:"#e6edf3",font:{size:13}}}}});
+
+// watchlist table
+var W=COH.filter(function(x){return x.b==="pending"});
+document.getElementById("watchrows").innerHTML=W.map(function(x){
+ return "<tr><td><span class='tk'>"+x.t+"</span></td><td>"+x.d+"</td><td>"+x.crl+"</td><td>"+
+ (x.pdufa?("<span class='pill w'>"+x.pdufa+"</span>"):"<span class='pill w'>resubmission pending</span>")+"</td></tr>";
+}).join("");
+</script>
+</div></body></html>

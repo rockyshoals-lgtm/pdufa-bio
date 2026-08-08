@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Phase 1: Form 4 Insider Classification</title>
+    <style>
+        :root {
+            --color-background: #fcfcf9;
+            --color-surface: #fffffd;
+            --color-text: #134252;
+            --color-text-secondary: #626c71;
+            --color-primary: #21808d;
+            --color-primary-hover: #1d7480;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-success: #21808d;
+            --color-warning: #a84b2f;
+            --color-error: #c0152f;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1f2121;
+                --color-surface: #262828;
+                --color-text: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-primary: #32b8c6;
+                --color-primary-hover: #2da6b2;
+                --color-border: rgba(119, 124, 124, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-base);
+            background: var(--color-background);
+            color: var(--color-text);
+            padding: var(--space-24);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: var(--space-24);
+            padding-bottom: var(--space-16);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-24);
+            margin-bottom: var(--space-24);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: var(--space-16);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-16);
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            background: var(--color-background);
+            color: var(--color-text);
+            font-family: var(--font-base);
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+        }
+
+        .decision-flow {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            margin-top: var(--space-24);
+        }
+
+        .decision-step {
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: var(--radius-base);
+            font-size: 14px;
+        }
+
+        .step-pending {
+            background: rgba(98, 108, 113, 0.1);
+            border-left: 4px solid var(--color-text-secondary);
+        }
+
+        .step-active {
+            background: rgba(33, 128, 141, 0.1);
+            border-left: 4px solid var(--color-primary);
+            font-weight: 500;
+        }
+
+        .step-passed {
+            background: rgba(33, 128, 141, 0.05);
+            border-left: 4px solid var(--color-success);
+            opacity: 0.6;
+        }
+
+        .result-box {
+            margin-top: var(--space-24);
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+        }
+
+        .result-planned {
+            background: rgba(33, 128, 141, 0.15);
+            border: 2px solid var(--color-success);
+            color: var(--color-text);
+        }
+
+        .result-discretionary {
+            background: rgba(192, 21, 47, 0.15);
+            border: 2px solid var(--color-error);
+            color: var(--color-text);
+        }
+
+        .result-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .result-detail {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: var(--space-16);
+        }
+
+        .metric {
+            background: var(--color-background);
+            padding: 12px;
+            border-radius: var(--radius-base);
+            border: 1px solid var(--color-border);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: rgba(50, 184, 198, 0.08);
+            padding: 12px;
+            border-radius: var(--radius-base);
+            font-size: 13px;
+            margin-top: 12px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        code {
+            background: var(--color-background);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 Odin Phase 1: Form 4 Insider Classification</h1>
+            <p class="subtitle">Biotech FDA Catalyst Prediction System - Insider Trading Decision Tree</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h2>📋 Form 4 Transaction Input</h2>
+                
+                <div class="form-group">
+                    <label>Insider Name & Title</label>
+                    <input type="text" id="insiderName" placeholder="e.g., John Smith, CEO">
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Date</label>
+                    <input type="date" id="transactionDate">
+                </div>
+
+                <div class="form-group">
+                    <label>Shares Sold</label>
+                    <input type="number" id="sharesSold" placeholder="e.g., 50000">
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Price</label>
+                    <input type="number" step="0.01" id="transactionPrice" placeholder="e.g., 15.50">
+                </div>
+
+                <div class="form-group">
+                    <label>Footnote Text (from Form 4)</label>
+                    <textarea id="footnoteText" placeholder="Paste any footnote descriptions from the Form 4 filing..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="hasRule10b51">
+                    <label for="hasRule10b51" style="margin-bottom: 0;">Transaction marked as Rule 10b5-1 plan</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Days Since Last Opposite Transaction</label>
+                    <input type="number" id="daysSinceOpposite" placeholder="e.g., 180">
+                </div>
+
+                <button class="btn btn-primary" onclick="classifyTransaction()">Classify Transaction</button>
+            </div>
+
+            <div class="card">
+                <h2>🧮 S2S Ratio Validator (PGEN Historical)</h2>
+                
+                <div class="form-group">
+                    <label>Google Trends Peak (0-100)</label>
+                    <input type="number" id="googleTrendsPeak" placeholder="e.g., 85" min="0" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label>Pre-Catalyst Searches (Avg Index)</label>
+                    <input type="number" id="preCatalystSearches" placeholder="e.g., 12">
+                </div>
+
+                <div class="form-group">
+                    <label>Post-Catalyst Insider Sales ($M)</label>
+                    <input type="number" step="0.01" id="insiderSalesVolume" placeholder="e.g., 2.5">
+                </div>
+
+                <div class="form-group">
+                    <label>Stock Price at Sale ($)</label>
+                    <input type="number" step="0.01" id="stockPrice" placeholder="e.g., 18.75">
+                </div>
+
+                <button class="btn btn-primary" onclick="calculateS2S()">Calculate S2S Ratio</button>
+
+                <div class="info-box">
+                    <strong>S2S Formula:</strong> (Search Spike %) / (Insider Sale $M)<br>
+                    High S2S (&gt;3.0) = Media-driven hype, low commercial traction
+                </div>
+            </div>
+        </div>
+
+        <div class="decision-flow">
+            <h2>🔍 Decision Tree Analysis</h2>
+            <div id="decisionSteps"></div>
+            <div id="classificationResult"></div>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+            <h2>📊 GT Commercial Ramp Filter</h2>
+            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;">
+                Distinguishes media-driven spikes from prescription-driven commercial ramps
+            </p>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Google Trends Spike</div>
+                    <div class="metric-value" id="gtSpike">-</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">S2S Ratio</div>
+                    <div class="metric-value" id="s2sRatio">-</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Classification</div>
+                    <div class="metric-value" id="rampType">-</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 16px;">
+                <strong>Thresholds:</strong><br>
+                • Media Spike: S2S &gt; 3.0, sudden Google spike, low insider follow-through<br>
+                • Commercial Ramp: S2S &lt; 2.0, sustained search growth, heavy insider selling<br>
+                • Research: ADHD meds (r=0.876), Wegovy/Zepbound correlation with prescriptions
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function classifyTransaction() {
+            const insiderName = document.getElementById('insiderName').value;
+            const transactionDate = document.getElementById('transactionDate').value;
+            const sharesSold = parseFloat(document.getElementById('sharesSold').value) || 0;
+            const transactionPrice = parseFloat(document.getElementById('transactionPrice').value) || 0;
+            const footnote = document.getElementById('footnoteText').value.toLowerCase();
+            const hasRule10b51 = document.getElementById('hasRule10b51').checked;
+            const daysSinceOpposite = parseInt(document.getElementById('daysSinceOpposite').value) || 0;
+
+            const steps = [];
+            let classification = '';
+            let reasoning = '';
+
+            // Step 1: Check for Rule 10b5-1 explicit marking
+            if (hasRule10b51) {
+                steps.push({
+                    text: '✓ Form 4 explicitly marks Rule 10b5-1 plan',
+                    status: 'passed'
+                });
+                
+                // Step 2: Check footnote for discretionary indicators
+                const discretionaryKeywords = [
+                    'discretion', 'personal', 'liquidity needs', 'financial planning',
+                    'estate planning', 'diversification', 'elected to', 'chose to'
+                ];
+                
+                const hasDiscretionaryLanguage = discretionaryKeywords.some(keyword => 
+                    footnote.includes(keyword)
+                );
+
+                if (hasDiscretionaryLanguage) {
+                    steps.push({
+                        text: '⚠ Footnote contains discretionary language despite 10b5-1 marking',
+                        status: 'active'
+                    });
+                    classification = 'HYBRID (10b5-1 with Discretionary Elements)';
+                    reasoning = 'Research shows CEOs can trade opportunistically even under 10b5-1 plans, especially with high incentive sales. SEC 2022 rules require disclosure but don\'t eliminate timing advantages.';
+                } else {
+                    steps.push({
+                        text: '✓ No discretionary language in footnote',
+                        status: 'passed'
+                    });
+                    classification = 'PLANNED (Rule 10b5-1)';
+                    reasoning = 'Pre-established trading plan with required cooling-off period (90-120 days). Affirmative defense against insider trading allegations.';
+                }
+            } else {
+                steps.push({
+                    text: '✗ No Rule 10b5-1 marking on Form 4',
+                    status: 'passed'
+                });
+
+                // Check for automatic/non-discretionary indicators
+                const automaticKeywords = [
+                    'automatic', 'required', 'mandatory', 'pursuant to plan',
+                    'scheduled', 'predetermined', 'tax withholding', 'sell-to-cover',
+                    'retirement', 'termination', 'disability', 'death'
+                ];
+
+                const hasAutomaticLanguage = automaticKeywords.some(keyword => 
+                    footnote.includes(keyword)
+                );
+
+                if (hasAutomaticLanguage) {
+                    steps.push({
+                        text: '✓ Footnote indicates automatic/non-discretionary transaction',
+                        status: 'passed'
+                    });
+                    classification = 'NON-DISCRETIONARY (Automatic Plan)';
+                    reasoning = 'Transaction executed under compensation plan provisions without insider discretion over timing. Includes sell-to-cover, required distributions, etc.';
+                } else {
+                    // Check 6-month rule for discretionary transactions
+                    if (daysSinceOpposite >= 180) {
+                        steps.push({
+                            text: `✓ ${daysSinceOpposite} days since opposite transaction (≥180 required)`,
+                            status: 'passed'
+                        });
+                    } else {
+                        steps.push({
+                            text: `⚠ Only ${daysSinceOpposite} days since opposite transaction (<180 required)`,
+                            status: 'active'
+                        });
+                    }
+
+                    if (footnote.trim() === '') {
+                        steps.push({
+                            text: '⚠ No explanatory footnote provided',
+                            status: 'active'
+                        });
+                        classification = 'DISCRETIONARY (Open Market Sale)';
+                        reasoning = 'No explanation provided. Research shows discretionary sales predict 1.31% stock decline, higher likelihood of future analyst downgrades and earnings misses.';
+                    } else {
+                        steps.push({
+                            text: '⚠ Footnote provided but transaction appears discretionary',
+                            status: 'active'
+                        });
+                        classification = 'DISCRETIONARY (Explained)';
+                        reasoning = 'Insider-initiated transaction with timing discretion. Even with explanation, these sales are highly informative and correlate with negative future news.';
+                    }
+                }
+            }
+
+            // Display decision steps
+            const stepsHTML = steps.map(step => 
+                `<div class="decision-step step-${step.status}">${step.text}</div>`
+            ).join('');
+            
+            document.getElementById('decisionSteps').innerHTML = stepsHTML;
+
+            // Display classification result
+            const resultClass = classification.includes('DISCRETIONARY') || classification.includes('HYBRID') 
+                ? 'result-discretionary' 
+                : 'result-planned';
+            
+            const notionalValue = (sharesSold * transactionPrice / 1000000).toFixed(2);
+            
+            const resultHTML = `
+                <div class="result-box ${resultClass}">
+                    <div class="result-title">${classification}</div>
+                    <div class="result-detail">${reasoning}</div>
+                    <div style="margin-top: 12px; font-size: 13px;">
+                        <strong>Transaction:</strong> ${insiderName || 'N/A'} | 
+                        ${sharesSold.toLocaleString()} shares @ $${transactionPrice.toFixed(2)} | 
+                        Notional: $${notionalValue}M
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('classificationResult').innerHTML = resultHTML;
+        }
+
+        function calculateS2S() {
+            const googlePeak = parseFloat(document.getElementById('googleTrendsPeak').value) || 0;
+            const preCatalyst = parseFloat(document.getElementById('preCatalystSearches').value) || 1;
+            const insiderSales = parseFloat(document.getElementById('insiderSalesVolume').value) || 0;
+            const stockPrice = parseFloat(document.getElementById('stockPrice').value) || 0;
+
+            if (insiderSales === 0) {
+                alert('Please enter insider sales volume');
+                return;
+            }
+
+            // Calculate search spike percentage
+            const searchSpike = ((googlePeak - preCatalyst) / preCatalyst) * 100;
+            
+            // S2S Ratio = Search Spike % / Insider Sale $M
+            const s2sRatio = searchSpike / insiderSales;
+
+            // Update GT metrics
+            document.getElementById('gtSpike').textContent = searchSpike.toFixed(1) + '%';
+            document.getElementById('s2sRatio').textContent = s2sRatio.toFixed(2);
+
+            // Classify ramp type
+            let rampType = '';
+            let rampColor = '';
+            
+            if (s2sRatio > 3.0) {
+                rampType = 'Media Spike';
+                rampColor = 'var(--color-warning)';
+            } else if (s2sRatio < 2.0 && insiderSales > 1.0) {
+                rampType = 'Commercial';
+                rampColor = 'var(--color-success)';
+            } else {
+                rampType = 'Ambiguous';
+                rampColor = 'var(--color-text-secondary)';
+            }
+
+            const rampElement = document.getElementById('rampType');
+            rampElement.textContent = rampType;
+            rampElement.style.color = rampColor;
+
+            // Create validation summary
+            const validationHTML = `
+                <div class="info-box" style="margin-top: 16px; background: rgba(33, 128, 141, 0.1);">
+                    <strong>Analysis Results:</strong><br>
+                    • Search spike: ${searchSpike.toFixed(1)}% increase over baseline<br>
+                    • Insider sales: $${insiderSales}M at $${stockPrice}/share<br>
+                    • S2S Ratio: ${s2sRatio.toFixed(2)} ${s2sRatio > 3.0 ? '(HIGH - media driven)' : s2sRatio < 2.0 ? '(LOW - commercial traction)' : '(MODERATE)'}<br>
+                    • Classification: <strong>${rampType}</strong>
+                </div>
+            `;
+
+            // Append validation to GT card
+            const gtCard = document.querySelector('.card:nth-of-type(2)');
+            const existingValidation = gtCard.querySelector('.info-box:last-of-type');
+            if (existingValidation && existingValidation.textContent.includes('Analysis Results')) {
+                existingValidation.remove();
+            }
+            gtCard.insertAdjacentHTML('beforeend', validationHTML);
+        }
+
+        // Initialize with example data
+        window.addEventListener('load', () => {
+            document.getElementById('transactionDate').value = '2025-09-26';
+            document.getElementById('googleTrendsPeak').value = '85';
+            document.getElementById('preCatalystSearches').value = '12';
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Phase 1: Form 4 Insider Classification</title>
+    <style>
+        :root {
+            --color-background: #fcfcf9;
+            --color-surface: #fffffd;
+            --color-text: #134252;
+            --color-text-secondary: #626c71;
+            --color-primary: #21808d;
+            --color-primary-hover: #1d7480;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-success: #21808d;
+            --color-warning: #a84b2f;
+            --color-error: #c0152f;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1f2121;
+                --color-surface: #262828;
+                --color-text: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-primary: #32b8c6;
+                --color-primary-hover: #2da6b2;
+                --color-border: rgba(119, 124, 124, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-base);
+            background: var(--color-background);
+            color: var(--color-text);
+            padding: var(--space-24);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: var(--space-24);
+            padding-bottom: var(--space-16);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-24);
+            margin-bottom: var(--space-24);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: var(--space-16);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-16);
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            background: var(--color-background);
+            color: var(--color-text);
+            font-family: var(--font-base);
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+        }
+
+        .decision-flow {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            margin-top: var(--space-24);
+        }
+
+        .decision-step {
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: var(--radius-base);
+            font-size: 14px;
+        }
+
+        .step-pending {
+            background: rgba(98, 108, 113, 0.1);
+            border-left: 4px solid var(--color-text-secondary);
+        }
+
+        .step-active {
+            background: rgba(33, 128, 141, 0.1);
+            border-left: 4px solid var(--color-primary);
+            font-weight: 500;
+        }
+
+        .step-passed {
+            background: rgba(33, 128, 141, 0.05);
+            border-left: 4px solid var(--color-success);
+            opacity: 0.6;
+        }
+
+        .result-box {
+            margin-top: var(--space-24);
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+        }
+
+        .result-planned {
+            background: rgba(33, 128, 141, 0.15);
+            border: 2px solid var(--color-success);
+            color: var(--color-text);
+        }
+
+        .result-discretionary {
+            background: rgba(192, 21, 47, 0.15);
+            border: 2px solid var(--color-error);
+            color: var(--color-text);
+        }
+
+        .result-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .result-detail {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: var(--space-16);
+        }
+
+        .metric {
+            background: var(--color-background);
+            padding: 12px;
+            border-radius: var(--radius-base);
+            border: 1px solid var(--color-border);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: rgba(50, 184, 198, 0.08);
+            padding: 12px;
+            border-radius: var(--radius-base);
+            font-size: 13px;
+            margin-top: 12px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        code {
+            background: var(--color-background);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 Odin Phase 1: Form 4 Insider Classification</h1>
+            <p class="subtitle">Biotech FDA Catalyst Prediction System - Insider Trading Decision Tree</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h2>📋 Form 4 Transaction Input</h2>
+                
+                <div class="form-group">
+                    <label>Insider Name &amp; Title</label>
+                    <input type="text" id="insiderName" placeholder="e.g., John Smith, CEO">
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Date</label>
+                    <input type="date" id="transactionDate">
+                </div>
+
+                <div class="form-group">
+                    <label>Shares Sold</label>
+                    <input type="number" id="sharesSold" placeholder="e.g., 50000">
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Price</label>
+                    <input type="number" step="0.01" id="transactionPrice" placeholder="e.g., 15.50">
+                </div>
+
+                <div class="form-group">
+                    <label>Footnote Text (from Form 4)</label>
+                    <textarea id="footnoteText" placeholder="Paste any footnote descriptions from the Form 4 filing..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="hasRule10b51">
+                    <label for="hasRule10b51" style="margin-bottom: 0;">Transaction marked as Rule 10b5-1 plan</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Days Since Last Opposite Transaction</label>
+                    <input type="number" id="daysSinceOpposite" placeholder="e.g., 180">
+                </div>
+
+                <button class="btn btn-primary" onclick="classifyTransaction()">Classify Transaction</button>
+            </div>
+
+            <div class="card">
+                <h2>🧮 S2S Ratio Validator (PGEN Historical)</h2>
+                
+                <div class="form-group">
+                    <label>Google Trends Peak (0-100)</label>
+                    <input type="number" id="googleTrendsPeak" placeholder="e.g., 85" min="0" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label>Pre-Catalyst Searches (Avg Index)</label>
+                    <input type="number" id="preCatalystSearches" placeholder="e.g., 12">
+                </div>
+
+                <div class="form-group">
+                    <label>Post-Catalyst Insider Sales ($M)</label>
+                    <input type="number" step="0.01" id="insiderSalesVolume" placeholder="e.g., 2.5">
+                </div>
+
+                <div class="form-group">
+                    <label>Stock Price at Sale ($)</label>
+                    <input type="number" step="0.01" id="stockPrice" placeholder="e.g., 18.75">
+                </div>
+
+                <button class="btn btn-primary" onclick="calculateS2S()">Calculate S2S Ratio</button>
+
+                <div class="info-box">
+                    <strong>S2S Formula:</strong> (Search Spike %) / (Insider Sale $M)<br>
+                    High S2S (&gt;3.0) = Media-driven hype, low commercial traction
+                </div>
+            </div>
+        </div>
+
+        <div class="decision-flow">
+            <h2>🔍 Decision Tree Analysis</h2>
+            <div id="decisionSteps"></div>
+            <div id="classificationResult"></div>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+            <h2>📊 GT Commercial Ramp Filter</h2>
+            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;">
+                Distinguishes media-driven spikes from prescription-driven commercial ramps
+            </p>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Google Trends Spike</div>
+                    <div class="metric-value" id="gtSpike">-</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">S2S Ratio</div>
+                    <div class="metric-value" id="s2sRatio">-</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Classification</div>
+                    <div class="metric-value" id="rampType">-</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 16px;">
+                <strong>Thresholds:</strong><br>
+                • Media Spike: S2S &gt; 3.0, sudden Google spike, low insider follow-through<br>
+                • Commercial Ramp: S2S &lt; 2.0, sustained search growth, heavy insider selling<br>
+                • Research: ADHD meds (r=0.876), Wegovy/Zepbound correlation with prescriptions
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function classifyTransaction() {
+            const insiderName = document.getElementById('insiderName').value;
+            const transactionDate = document.getElementById('transactionDate').value;
+            const sharesSold = parseFloat(document.getElementById('sharesSold').value) || 0;
+            const transactionPrice = parseFloat(document.getElementById('transactionPrice').value) || 0;
+            const footnote = document.getElementById('footnoteText').value.toLowerCase();
+            const hasRule10b51 = document.getElementById('hasRule10b51').checked;
+            const daysSinceOpposite = parseInt(document.getElementById('daysSinceOpposite').value) || 0;
+
+            const steps = [];
+            let classification = '';
+            let reasoning = '';
+
+            // Step 1: Check for Rule 10b5-1 explicit marking
+            if (hasRule10b51) {
+                steps.push({
+                    text: '✓ Form 4 explicitly marks Rule 10b5-1 plan',
+                    status: 'passed'
+                });
+                
+                // Step 2: Check footnote for discretionary indicators
+                const discretionaryKeywords = [
+                    'discretion', 'personal', 'liquidity needs', 'financial planning',
+                    'estate planning', 'diversification', 'elected to', 'chose to'
+                ];
+                
+                const hasDiscretionaryLanguage = discretionaryKeywords.some(keyword => 
+                    footnote.includes(keyword)
+                );
+
+                if (hasDiscretionaryLanguage) {
+                    steps.push({
+                        text: '⚠ Footnote contains discretionary language despite 10b5-1 marking',
+                        status: 'active'
+                    });
+                    classification = 'HYBRID (10b5-1 with Discretionary Elements)';
+                    reasoning = 'Research shows CEOs can trade opportunistically even under 10b5-1 plans, especially with high incentive sales. SEC 2022 rules require disclosure but don\'t eliminate timing advantages.';
+                } else {
+                    steps.push({
+                        text: '✓ No discretionary language in footnote',
+                        status: 'passed'
+                    });
+                    classification = 'PLANNED (Rule 10b5-1)';
+                    reasoning = 'Pre-established trading plan with required cooling-off period (90-120 days). Affirmative defense against insider trading allegations.';
+                }
+            } else {
+                steps.push({
+                    text: '✗ No Rule 10b5-1 marking on Form 4',
+                    status: 'passed'
+                });
+
+                // Check for automatic/non-discretionary indicators
+                const automaticKeywords = [
+                    'automatic', 'required', 'mandatory', 'pursuant to plan',
+                    'scheduled', 'predetermined', 'tax withholding', 'sell-to-cover',
+                    'retirement', 'termination', 'disability', 'death'
+                ];
+
+                const hasAutomaticLanguage = automaticKeywords.some(keyword => 
+                    footnote.includes(keyword)
+                );
+
+                if (hasAutomaticLanguage) {
+                    steps.push({
+                        text: '✓ Footnote indicates automatic/non-discretionary transaction',
+                        status: 'passed'
+                    });
+                    classification = 'NON-DISCRETIONARY (Automatic Plan)';
+                    reasoning = 'Transaction executed under compensation plan provisions without insider discretion over timing. Includes sell-to-cover, required distributions, etc.';
+                } else {
+                    // Check 6-month rule for discretionary transactions
+                    if (daysSinceOpposite >= 180) {
+                        steps.push({
+                            text: `✓ ${daysSinceOpposite} days since opposite transaction (≥180 required)`,
+                            status: 'passed'
+                        });
+                    } else {
+                        steps.push({
+                            text: `⚠ Only ${daysSinceOpposite} days since opposite transaction (<180 required)`,
+                            status: 'active'
+                        });
+                    }
+
+                    if (footnote.trim() === '') {
+                        steps.push({
+                            text: '⚠ No explanatory footnote provided',
+                            status: 'active'
+                        });
+                        classification = 'DISCRETIONARY (Open Market Sale)';
+                        reasoning = 'No explanation provided. Research shows discretionary sales predict 1.31% stock decline, higher likelihood of future analyst downgrades and earnings misses.';
+                    } else {
+                        steps.push({
+                            text: '⚠ Footnote provided but transaction appears discretionary',
+                            status: 'active'
+                        });
+                        classification = 'DISCRETIONARY (Explained)';
+                        reasoning = 'Insider-initiated transaction with timing discretion. Even with explanation, these sales are highly informative and correlate with negative future news.';
+                    }
+                }
+            }
+
+            // Display decision steps
+            const stepsHTML = steps.map(step => 
+                `<div class="decision-step step-${step.status}">${step.text}</div>`
+            ).join('');
+            
+            document.getElementById('decisionSteps').innerHTML = stepsHTML;
+
+            // Display classification result
+            const resultClass = classification.includes('DISCRETIONARY') || classification.includes('HYBRID') 
+                ? 'result-discretionary' 
+                : 'result-planned';
+            
+            const notionalValue = (sharesSold * transactionPrice / 1000000).toFixed(2);
+            
+            const resultHTML = `
+                <div class="result-box ${resultClass}">
+                    <div class="result-title">${classification}</div>
+                    <div class="result-detail">${reasoning}</div>
+                    <div style="margin-top: 12px; font-size: 13px;">
+                        <strong>Transaction:</strong> ${insiderName || 'N/A'} | 
+                        ${sharesSold.toLocaleString()} shares @ $${transactionPrice.toFixed(2)} | 
+                        Notional: $${notionalValue}M
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('classificationResult').innerHTML = resultHTML;
+        }
+
+        function calculateS2S() {
+            const googlePeak = parseFloat(document.getElementById('googleTrendsPeak').value) || 0;
+            const preCatalyst = parseFloat(document.getElementById('preCatalystSearches').value) || 1;
+            const insiderSales = parseFloat(document.getElementById('insiderSalesVolume').value) || 0;
+            const stockPrice = parseFloat(document.getElementById('stockPrice').value) || 0;
+
+            if (insiderSales === 0) {
+                alert('Please enter insider sales volume');
+                return;
+            }
+
+            // Calculate search spike percentage
+            const searchSpike = ((googlePeak - preCatalyst) / preCatalyst) * 100;
+            
+            // S2S Ratio = Search Spike % / Insider Sale $M
+            const s2sRatio = searchSpike / insiderSales;
+
+            // Update GT metrics
+            document.getElementById('gtSpike').textContent = searchSpike.toFixed(1) + '%';
+            document.getElementById('s2sRatio').textContent = s2sRatio.toFixed(2);
+
+            // Classify ramp type
+            let rampType = '';
+            let rampColor = '';
+            
+            if (s2sRatio > 3.0) {
+                rampType = 'Media Spike';
+                rampColor = 'var(--color-warning)';
+            } else if (s2sRatio < 2.0 && insiderSales > 1.0) {
+                rampType = 'Commercial';
+                rampColor = 'var(--color-success)';
+            } else {
+                rampType = 'Ambiguous';
+                rampColor = 'var(--color-text-secondary)';
+            }
+
+            const rampElement = document.getElementById('rampType');
+            rampElement.textContent = rampType;
+            rampElement.style.color = rampColor;
+
+            // Create validation summary
+            const validationHTML = `
+                <div class="info-box" style="margin-top: 16px; background: rgba(33, 128, 141, 0.1);">
+                    <strong>Analysis Results:</strong><br>
+                    • Search spike: ${searchSpike.toFixed(1)}% increase over baseline<br>
+                    • Insider sales: $${insiderSales}M at $${stockPrice}/share<br>
+                    • S2S Ratio: ${s2sRatio.toFixed(2)} ${s2sRatio > 3.0 ? '(HIGH - media driven)' : s2sRatio < 2.0 ? '(LOW - commercial traction)' : '(MODERATE)'}<br>
+                    • Classification: <strong>${rampType}</strong>
+                </div>
+            `;
+
+            // Append validation to GT card
+            const gtCard = document.querySelector('.card:nth-of-type(2)');
+            const existingValidation = gtCard.querySelector('.info-box:last-of-type');
+            if (existingValidation && existingValidation.textContent.includes('Analysis Results')) {
+                existingValidation.remove();
+            }
+            gtCard.insertAdjacentHTML('beforeend', validationHTML);
+        }
+
+        // Initialize with example data
+        window.addEventListener('load', () => {
+            document.getElementById('transactionDate').value = '2025-09-26';
+            document.getElementById('googleTrendsPeak').value = '85';
+            document.getElementById('preCatalystSearches').value = '12';
+        });
+    </script>
+</body>
+</html>

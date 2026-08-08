@@ -1,0 +1,623 @@
+{
+  "kaizen_id": "K13",
+  "parent": "K12",
+  "training_date": "2026-02-16T01:24:44.272488",
+  "tier_thresholds": {
+    "TIER_1": 0.7,
+    "TIER_2": 0.5,
+    "TIER_3": 0.35
+  },
+  "tier_stats": {
+    "TIER_1": {
+      "count": 1366,
+      "precision": 0.9670571010248902,
+      "mean_prob": 0.9489192551681825,
+      "pct_of_total": 78.86836027713626
+    },
+    "TIER_2": {
+      "count": 19,
+      "precision": 0.21052631578947367,
+      "mean_prob": 0.5598166306926707,
+      "pct_of_total": 1.0969976905311778
+    },
+    "TIER_3": {
+      "count": 25,
+      "precision": 0.16,
+      "mean_prob": 0.3868494749797105,
+      "pct_of_total": 1.443418013856813
+    },
+    "TIER_4": {
+      "count": 322,
+      "precision": 0.046583850931677016,
+      "mean_prob": 0.12964003899563792,
+      "pct_of_total": 18.59122401847575
+    }
+  },
+  "optimization_targets": {
+    "max_trading_edge": {
+      "threshold": 0.7,
+      "precision": 0.9670571010248902,
+      "count": 1366
+    },
+    "max_profit_proxy": {
+      "threshold": 0.7,
+      "precision": 0.9670571010248902,
+      "count": 1366
+    },
+    "max_f1": {
+      "threshold": 0.7,
+      "precision": 0.9670571010248902,
+      "count": 1366
+    },
+    "min_95pct": {
+      "threshold": 0.5,
+      "precision": 0.9566787003610109,
+      "count": 1385
+    }
+  },
+  "stacker_weights": {
+    "intercept": -3.551613159805156,
+    "xgb_coef": 1.5637083385662236,
+    "logit_coef": 6.056567105870264
+  },
+  "sweep_results": [
+    {
+      "threshold": 0.5,
+      "count": 1385,
+      "precision": 0.9566787003610109,
+      "recall": 0.9858630952380952,
+      "f1": 0.971051667277391,
+      "trading_edge": 35.60336048715541,
+      "expected_per_trade": 0.05610108303249098,
+      "profit_proxy": 77.7
+    },
+    {
+      "threshold": 0.51,
+      "count": 1385,
+      "precision": 0.9566787003610109,
+      "recall": 0.9858630952380952,
+      "f1": 0.971051667277391,
+      "trading_edge": 35.60336048715541,
+      "expected_per_trade": 0.05610108303249098,
+      "profit_proxy": 77.7
+    },
+    {
+      "threshold": 0.52,
+      "count": 1377,
+      "precision": 0.9615105301379812,
+      "recall": 0.9851190476190477,
+      "f1": 0.9731716280779126,
+      "trading_edge": 35.679685283122765,
+      "expected_per_trade": 0.0565359477124183,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.53,
+      "count": 1377,
+      "precision": 0.9615105301379812,
+      "recall": 0.9851190476190477,
+      "f1": 0.9731716280779126,
+      "trading_edge": 35.679685283122765,
+      "expected_per_trade": 0.0565359477124183,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.54,
+      "count": 1374,
+      "precision": 0.962882096069869,
+      "recall": 0.984375,
+      "f1": 0.9735099337748344,
+      "trading_edge": 35.69163785959446,
+      "expected_per_trade": 0.05665938864628821,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.55,
+      "count": 1374,
+      "precision": 0.962882096069869,
+      "recall": 0.984375,
+      "f1": 0.9735099337748344,
+      "trading_edge": 35.69163785959446,
+      "expected_per_trade": 0.05665938864628821,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.56,
+      "count": 1373,
+      "precision": 0.9628550619082301,
+      "recall": 0.9836309523809523,
+      "f1": 0.9731321310268678,
+      "trading_edge": 35.6776455479153,
+      "expected_per_trade": 0.05665695557174071,
+      "profit_proxy": 77.78999999999999
+    },
+    {
+      "threshold": 0.57,
+      "count": 1371,
+      "precision": 0.9635302698760029,
+      "recall": 0.9828869047619048,
+      "f1": 0.9731123388581953,
+      "trading_edge": 35.67665183991065,
+      "expected_per_trade": 0.056717724288840254,
+      "profit_proxy": 77.75999999999999
+    },
+    {
+      "threshold": 0.58,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.59,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.6,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.61,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.62,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.63,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.64,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.65,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.66,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.67,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.68,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.69,
+      "count": 1369,
+      "precision": 0.9649379108838568,
+      "recall": 0.9828869047619048,
+      "f1": 0.973829708809436,
+      "trading_edge": 35.7027027027027,
+      "expected_per_trade": 0.05684441197954711,
+      "profit_proxy": 77.82
+    },
+    {
+      "threshold": 0.7,
+      "count": 1366,
+      "precision": 0.9670571010248902,
+      "recall": 0.9828869047619048,
+      "f1": 0.9749077490774908,
+      "trading_edge": 35.741886218467535,
+      "expected_per_trade": 0.05703513909224012,
+      "profit_proxy": 77.91
+    },
+    {
+      "threshold": 0.71,
+      "count": 1365,
+      "precision": 0.967032967032967,
+      "recall": 0.9821428571428571,
+      "f1": 0.9745293466223699,
+      "trading_edge": 35.72790948941061,
+      "expected_per_trade": 0.05703296703296703,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.72,
+      "count": 1365,
+      "precision": 0.967032967032967,
+      "recall": 0.9821428571428571,
+      "f1": 0.9745293466223699,
+      "trading_edge": 35.72790948941061,
+      "expected_per_trade": 0.05703296703296703,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.73,
+      "count": 1365,
+      "precision": 0.967032967032967,
+      "recall": 0.9821428571428571,
+      "f1": 0.9745293466223699,
+      "trading_edge": 35.72790948941061,
+      "expected_per_trade": 0.05703296703296703,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.74,
+      "count": 1365,
+      "precision": 0.967032967032967,
+      "recall": 0.9821428571428571,
+      "f1": 0.9745293466223699,
+      "trading_edge": 35.72790948941061,
+      "expected_per_trade": 0.05703296703296703,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.75,
+      "count": 1365,
+      "precision": 0.967032967032967,
+      "recall": 0.9821428571428571,
+      "f1": 0.9745293466223699,
+      "trading_edge": 35.72790948941061,
+      "expected_per_trade": 0.05703296703296703,
+      "profit_proxy": 77.85
+    },
+    {
+      "threshold": 0.76,
+      "count": 1363,
+      "precision": 0.966984592809978,
+      "recall": 0.9806547619047619,
+      "f1": 0.9737717029922422,
+      "trading_edge": 35.69993968235172,
+      "expected_per_trade": 0.05702861335289801,
+      "profit_proxy": 77.72999999999999
+    },
+    {
+      "threshold": 0.77,
+      "count": 1363,
+      "precision": 0.966984592809978,
+      "recall": 0.9806547619047619,
+      "f1": 0.9737717029922422,
+      "trading_edge": 35.69993968235172,
+      "expected_per_trade": 0.05702861335289801,
+      "profit_proxy": 77.72999999999999
+    },
+    {
+      "threshold": 0.78,
+      "count": 1362,
+      "precision": 0.9676945668135095,
+      "recall": 0.9806547619047619,
+      "f1": 0.9741315594974131,
+      "trading_edge": 35.71304298236438,
+      "expected_per_trade": 0.05709251101321586,
+      "profit_proxy": 77.75999999999999
+    },
+    {
+      "threshold": 0.79,
+      "count": 1361,
+      "precision": 0.967670830271859,
+      "recall": 0.9799107142857143,
+      "f1": 0.9737523105360444,
+      "trading_edge": 35.699054377784826,
+      "expected_per_trade": 0.057090374724467305,
+      "profit_proxy": 77.7
+    },
+    {
+      "threshold": 0.8,
+      "count": 1358,
+      "precision": 0.9698085419734904,
+      "recall": 0.9799107142857143,
+      "f1": 0.9748334566987417,
+      "trading_edge": 35.738464569411576,
+      "expected_per_trade": 0.05728276877761414,
+      "profit_proxy": 77.78999999999999
+    },
+    {
+      "threshold": 0.81,
+      "count": 1356,
+      "precision": 0.9697640117994101,
+      "recall": 0.9784226190476191,
+      "f1": 0.9740740740740742,
+      "trading_edge": 35.71049811352712,
+      "expected_per_trade": 0.0572787610619469,
+      "profit_proxy": 77.67
+    },
+    {
+      "threshold": 0.82,
+      "count": 1354,
+      "precision": 0.9697193500738552,
+      "recall": 0.9769345238095238,
+      "f1": 0.9733135656041513,
+      "trading_edge": 35.682509814290974,
+      "expected_per_trade": 0.05727474150664697,
+      "profit_proxy": 77.55
+    },
+    {
+      "threshold": 0.83,
+      "count": 1354,
+      "precision": 0.9697193500738552,
+      "recall": 0.9769345238095238,
+      "f1": 0.9733135656041513,
+      "trading_edge": 35.682509814290974,
+      "expected_per_trade": 0.05727474150664697,
+      "profit_proxy": 77.55
+    },
+    {
+      "threshold": 0.84,
+      "count": 1353,
+      "precision": 0.9696969696969697,
+      "recall": 0.9761904761904762,
+      "f1": 0.9729328883945123,
+      "trading_edge": 35.668507457453615,
+      "expected_per_trade": 0.057272727272727274,
+      "profit_proxy": 77.49
+    },
+    {
+      "threshold": 0.85,
+      "count": 1343,
+      "precision": 0.9694713328369322,
+      "recall": 0.96875,
+      "f1": 0.9691105321920357,
+      "trading_edge": 35.52818142480256,
+      "expected_per_trade": 0.057252419955323895,
+      "profit_proxy": 76.88999999999999
+    },
+    {
+      "threshold": 0.86,
+      "count": 1341,
+      "precision": 0.9694258016405667,
+      "recall": 0.9672619047619048,
+      "f1": 0.9683426443202979,
+      "trading_edge": 35.50004988915842,
+      "expected_per_trade": 0.057248322147651,
+      "profit_proxy": 76.77
+    },
+    {
+      "threshold": 0.87,
+      "count": 1338,
+      "precision": 0.9693572496263079,
+      "recall": 0.9650297619047619,
+      "f1": 0.9671886651752423,
+      "trading_edge": 35.457810885125454,
+      "expected_per_trade": 0.057242152466367706,
+      "profit_proxy": 76.58999999999999
+    },
+    {
+      "threshold": 0.88,
+      "count": 1327,
+      "precision": 0.9706103993971364,
+      "recall": 0.9583333333333334,
+      "f1": 0.9644327967053538,
+      "trading_edge": 35.35740650024422,
+      "expected_per_trade": 0.05735493594574228,
+      "profit_proxy": 76.11
+    },
+    {
+      "threshold": 0.89,
+      "count": 1319,
+      "precision": 0.9704321455648218,
+      "recall": 0.9523809523809523,
+      "f1": 0.9613218174990611,
+      "trading_edge": 35.24419308656352,
+      "expected_per_trade": 0.05733889310083396,
+      "profit_proxy": 75.63
+    },
+    {
+      "threshold": 0.9,
+      "count": 1279,
+      "precision": 0.9702892885066459,
+      "recall": 0.9233630952380952,
+      "f1": 0.9462447579107891,
+      "trading_edge": 34.70056205649625,
+      "expected_per_trade": 0.05732603596559813,
+      "profit_proxy": 73.32000000000001
+    },
+    {
+      "threshold": 0.91,
+      "count": 1252,
+      "precision": 0.9704472843450479,
+      "recall": 0.9040178571428571,
+      "f1": 0.936055469953775,
+      "trading_edge": 34.33793020086145,
+      "expected_per_trade": 0.05734025559105431,
+      "profit_proxy": 71.78999999999999
+    },
+    {
+      "threshold": 0.92,
+      "count": 1191,
+      "precision": 0.9731318219983207,
+      "recall": 0.8623511904761905,
+      "f1": 0.9143984220907297,
+      "trading_edge": 33.5836237129952,
+      "expected_per_trade": 0.05758186397984886,
+      "profit_proxy": 68.57999999999998
+    },
+    {
+      "threshold": 0.93,
+      "count": 1141,
+      "precision": 0.9737072743207712,
+      "recall": 0.8266369047619048,
+      "f1": 0.8941649899396379,
+      "trading_edge": 32.89055763848306,
+      "expected_per_trade": 0.057633654688869405,
+      "profit_proxy": 65.75999999999999
+    },
+    {
+      "threshold": 0.94,
+      "count": 1026,
+      "precision": 0.9736842105263158,
+      "recall": 0.7433035714285714,
+      "f1": 0.8430379746835444,
+      "trading_edge": 31.188307525670407,
+      "expected_per_trade": 0.05763157894736842,
+      "profit_proxy": 59.13
+    },
+    {
+      "threshold": 0.95,
+      "count": 788,
+      "precision": 0.9784263959390863,
+      "recall": 0.5736607142857143,
+      "f1": 0.723264540337711,
+      "trading_edge": 27.465737770339167,
+      "expected_per_trade": 0.05805837563451777,
+      "profit_proxy": 45.75
+    }
+  ],
+  "calibration_curve": [
+    {
+      "bin_center": 0.025,
+      "predicted_mean": 0.046289085395244185,
+      "actual_mean": 0.02040816326530612,
+      "count": 49
+    },
+    {
+      "bin_center": 0.07500000000000001,
+      "predicted_mean": 0.07230488082539513,
+      "actual_mean": 0.03260869565217391,
+      "count": 92
+    },
+    {
+      "bin_center": 0.125,
+      "predicted_mean": 0.12274115843314327,
+      "actual_mean": 0.011904761904761904,
+      "count": 84
+    },
+    {
+      "bin_center": 0.17500000000000002,
+      "predicted_mean": 0.1837299468760346,
+      "actual_mean": 0.03636363636363636,
+      "count": 55
+    },
+    {
+      "bin_center": 0.225,
+      "predicted_mean": 0.23657483656325592,
+      "actual_mean": 0.15384615384615385,
+      "count": 13
+    },
+    {
+      "bin_center": 0.275,
+      "predicted_mean": 0.27548129967936,
+      "actual_mean": 0.0,
+      "count": 5
+    },
+    {
+      "bin_center": 0.32500000000000007,
+      "predicted_mean": 0.33148310733362624,
+      "actual_mean": 0.25,
+      "count": 24
+    },
+    {
+      "bin_center": 0.375,
+      "predicted_mean": 0.35899751098273924,
+      "actual_mean": 0.1875,
+      "count": 16
+    },
+    {
+      "bin_center": 0.42500000000000004,
+      "predicted_mean": 0.41938506488415794,
+      "actual_mean": 0.0,
+      "count": 6
+    },
+    {
+      "bin_center": 0.525,
+      "predicted_mean": 0.5213460708565455,
+      "actual_mean": 0.18181818181818182,
+      "count": 11
+    },
+    {
+      "bin_center": 0.5750000000000001,
+      "predicted_mean": 0.5643447294972351,
+      "actual_mean": 0.4,
+      "count": 5
+    },
+    {
+      "bin_center": 0.775,
+      "predicted_mean": 0.7767551727899605,
+      "actual_mean": 0.42857142857142855,
+      "count": 7
+    },
+    {
+      "bin_center": 0.8250000000000001,
+      "predicted_mean": 0.8369444418733206,
+      "actual_mean": 1.0,
+      "count": 15
+    },
+    {
+      "bin_center": 0.875,
+      "predicted_mean": 0.8883592338913826,
+      "actual_mean": 0.953125,
+      "count": 64
+    },
+    {
+      "bin_center": 0.925,
+      "predicted_mean": 0.9353459187832392,
+      "actual_mean": 0.9572301425661914,
+      "count": 491
+    },
+    {
+      "bin_center": 0.9750000000000001,
+      "predicted_mean": 0.9662673526331582,
+      "actual_mean": 0.9784263959390863,
+      "count": 788
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "v11_baseline": 0.9255403744668547,
+  "v12_final": 0.9313959372515,
+  "delta": 0.005855562784645385,
+  "features_added": [
+    "safety_high_x_naive",
+    "adcom_x_naive",
+    "psychedelics_bin",
+    "psychedelics_x_naive",
+    "ta_bucket_MOD",
+    "crl_count_x_naive"
+  ],
+  "features_dropped": [
+    "multi_crl",
+    "sweet_x_btd",
+    "experienced_x_btd",
+    "resub_class_1"
+  ],
+  "stability": 20,
+  "p_value": 0.0,
+  "top_10": [
+    [
+      "safety_high_x_naive",
+      0.9264801561483409,
+      0.0009397816814862292
+    ],
+    [
+      "adcom_x_naive",
+      0.9264440106990529,
+      0.0009036362321982461
+    ],
+    [
+      "psychedelics_bin",
+      0.9263355743511892,
+      0.0007951998843345187
+    ],
+    [
+      "psychedelics_x_naive",
+      0.9263355743511892,
+      0.0007951998843345187
+    ],
+    [
+      "ta_bucket_MOD",
+      0.9260825562061736,
+      0.0005421817393189698
+    ],
+    [
+      "crl_count_x_naive",
+      0.9257572471625823,
+      0.00021687269572767676
+    ],
+    [
+      "prior_crl_count_sq",
+      0.9257211017132942,
+      0.0001807272464395826
+    ],
+    [
+      "prior_crl_log",
+      0.9255765199161425,
+      3.614544928787211e-05
+    ],
+    [
+      "cat_is_q1",
+      0.9255403744668547,
+      0.0
+    ],
+    [
+      "gene_x_naive",
+      0.9254680835682787,
+      -7.229089857596627e-05
+    ]
+  ]
+}

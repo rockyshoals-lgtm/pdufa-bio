@@ -1,0 +1,18 @@
+{
+  "version": "bifrost_v513_si_honest",
+  "n_match": 1671,
+  "pct_match": 98.00586510263929,
+  "base_test_auc": 0.7413146466640348,
+  "honest_test_auc": 0.7427951046190289,
+  "d_auc_bp": 14.804579549940744,
+  "d_bri_bp": -32.23138572896203,
+  "feats": [
+    "log_eve_price",
+    "surprise_pct",
+    "vol_ratio_log",
+    "is_micro",
+    "log_si_honest",
+    "log_dtc_honest"
+  ],
+  "elapsed": 0.5812015533447266
+}

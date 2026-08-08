@@ -1,0 +1,79 @@
+{
+  "version": "t60_runup_gap_v1.0_q2_portfolio",
+  "generated": "2026-04-19T21:57:20.850351",
+  "quintile_thresholds": [
+    -0.0012738417692087,
+    0.0177907233883693,
+    0.0468667315231565,
+    0.0706786268796373
+  ],
+  "results": [
+    {
+      "ticker": "GRCE",
+      "company": "Grace Therapeutics",
+      "pdufa_date": "2026-04-23",
+      "drug": "GTX-104 (IV nimodipine nanoparticle)",
+      "mcap_tier": "micro",
+      "pred_mu_ap": -0.0481,
+      "pred_mu_cr": -0.0179,
+      "pred_gap": -0.0302,
+      "gap_quintile": "Q1",
+      "historical_actual_gap": -0.1291,
+      "historical_ap_runup": 0.0677,
+      "historical_cr_runup": 0.1967,
+      "interpretation": "AVOID \u2014 CRs run up MORE than APs; asymmetric downside if ODIN flags risk"
+    },
+    {
+      "ticker": "AXSM",
+      "company": "Axsome Therapeutics",
+      "pdufa_date": "2026-04-30",
+      "drug": "AXS-07 (migraine)",
+      "mcap_tier": "mid",
+      "pred_mu_ap": 0.0047,
+      "pred_mu_cr": -0.0139,
+      "pred_gap": 0.0186,
+      "gap_quintile": "Q3",
+      "historical_actual_gap": 0.0355,
+      "historical_ap_runup": 0.1038,
+      "historical_cr_runup": 0.0683,
+      "interpretation": "NEUTRAL \u2014 small edge but both run up"
+    },
+    {
+      "ticker": "LNTH",
+      "company": "Lantheus Holdings",
+      "pdufa_date": "2026-06-29",
+      "drug": "MK-6240 (tau imaging)",
+      "mcap_tier": "mid",
+      "pred_mu_ap": -0.0091,
+      "pred_mu_cr": 0.0284,
+      "pred_gap": -0.0374,
+      "gap_quintile": "Q1",
+      "historical_actual_gap": -0.1291,
+      "historical_ap_runup": 0.0677,
+      "historical_cr_runup": 0.1967,
+      "interpretation": "AVOID \u2014 CRs run up MORE than APs; asymmetric downside if ODIN flags risk"
+    },
+    {
+      "ticker": "UNCY",
+      "company": "Unicycive Therapeutics",
+      "pdufa_date": "2026-06-27",
+      "drug": "OLC (oxylanthanum carbonate)",
+      "mcap_tier": "micro",
+      "pred_mu_ap": -0.068,
+      "pred_mu_cr": -0.0752,
+      "pred_gap": 0.0073,
+      "gap_quintile": "Q2",
+      "historical_actual_gap": -0.2033,
+      "historical_ap_runup": 0.0069,
+      "historical_cr_runup": 0.2102,
+      "interpretation": "AVOID \u2014 worst quintile, APs barely move and CRs spike"
+    }
+  ],
+  "notes": [
+    "Predictor outputs are for RANKING, not calibrated magnitude (individual-return R\u00b2 is negative).",
+    "Quintile sort on test set IS monotonic: Q1 actual gap -12.9pp \u2192 Q5 +8.2pp.",
+    "Apply T-60 window entry (T-60 to T-7 preferred), exit T-1.",
+    "Combine with ODIN tier filter: only enter equity when ODIN \u2265T2 AND gap_quintile \u2265 Q3.",
+    "For Q1/Q2 events: consider SKIP or SMALL size; asymmetric downside if CRL."
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "version": "10.3",
+  "codename": "AQST_INSIDER_CALIBRATION",
+  "release_date": "2026-02-03",
+  "changelog": "S23 Insider Selling signal (AQST calibration), S6 Commercial Hiring NDA/sNDA bifurcation (PHAR calibration), new AVOID signals for coordinated insider selling",
+  
+  "performance": {
+    "parent_version": "10.2",
+    "brier_score": "pending_backtest",
+    "notes": "S23 provides 2-3 month early warning for CRLs via insider behavior patterns"
+  },
+
+  "base_parameters": {
+    "base_approval_rate": 0.867,
+    "nda_base_penalty": 0.0,
+    "snda_base_penalty": -0.03,
+    "snda_pediatric_base_penalty": -0.08
+  },
+
+  "designation_weights": {
+    "btd_weight": 0.12,
+    "orphan_weight": 0.10,
+    "priority_review_weight": 0.085,
+    "fast_track_weight": 0.03,
+    "accelerated_approval_weight": 0.05
+  },
+
+  "adcom_parameters": {
+    "adcom_high_threshold": 0.65,
+    "adcom_high_boost": 0.08,
+    "adcom_mid_threshold": 0.50,
+    "adcom_mid_penalty": -0.06,
+    "adcom_low_penalty": -0.19
+  },
+
+  "prior_crl_parameters": {
+    "prior_crl_penalty": -0.085,
+    "class1_resubmission_boost": 0.157,
+    "class2_resubmission_penalty": -0.05
+  },
+
+  "sponsor_experience": {
+    "experienced_sponsor_boost": 0.053,
+    "inexperienced_sponsor_penalty": -0.068,
+    "experienced_threshold": 5,
+    "inexperienced_threshold": 0
+  },
+
+  "manufacturing_risk": {
+    "manufacturing_risk_penalty": -0.12,
+    "form_483_penalty": -0.07,
+    "ema_cmc_flag_penalty": -0.10,
+    "cmc_extension_penalty": -0.08,
+    "analytical_method_flag_penalty": -0.06
+  },
+
+  "therapeutic_area_adjustments": {
+    "ta_adjustment_weight": 0.829,
+    "Pain Management": -0.30,
+    "Hematology": -0.224,
+    "Nephrology": -0.177,
+    "Ophthalmology": -0.25,
+    "CNS/Neurology": -0.098,
+    "Cardiovascular": -0.081,
+    "Metabolic/Endocrine": -0.067,
+    "Rare Disease": -0.043,
+    "Other": -0.019,
+    "Immunology": 0.016,
+    "Dermatology": 0.028,
+    "Oncology": 0.061,
+    "GI/Hepatology": 0.067,
+    "Respiratory": 0.09,
+    "Infectious Disease": 0.103,
+    "Vaccines": 0.133,
+    "Women's Health": 0.133
+  },
+
+  "tier_thresholds": {
+    "tier1_threshold": 0.858,
+    "tier2_threshold": 0.734,
+    "tier3_threshold": 0.578,
+    "tier4_threshold": 0.0
+  },
+
+  "signals": {
+    "S6_commercial_hiring": {
+      "name": "Commercial Hiring Intelligence - NDA/sNDA Bifurcated",
+      "version": "3.0",
+      "changelog": "PHAR fix: sNDA label expansions use different thresholds than new NDAs",
+      "source": "LinkedIn/Indeed job postings",
+      
+      "nda_bla_logic": {
+        "description": "For new product launches requiring full commercial build",
+        "timing_thresholds": {
+          "cco_bullish_months": 18,
+          "cco_neutral_months": 12,
+          "msl_bullish_months": 12,
+          "msl_neutral_months": 6,
+          "sales_bullish_months": 6,
+          "sales_neutral_months": 3,
+          "market_access_bullish_months": 15,
+          "market_access_neutral_months": 9
+        },
+        "minimum_postings": {
+          "min_msl_postings": 3,
+          "min_sales_postings": 5
+        },
+        "signal_determination": {
+          "bearish_trigger": "2+ bearish signals OR (1+ bearish AND 0 bullish)",
+          "void_trigger": "3+ bearish signals",
+          "bullish_trigger": "3+ bullish signals"
+        }
+      },
+      
+      "snda_sbla_logic": {
+        "description": "For label expansions with existing commercial infrastructure",
+        "bearish_override": "Commercial layoffs during label expansion",
+        "neutral_default": "Existing salesforce with maintenance hiring",
+        "bearish_unusual": "sNDA without existing commercial infrastructure"
+      },
+      
+      "adjustments": {
+        "bullish_boost": 0.03,
+        "neutral": 0.0,
+        "bearish_penalty": -0.05,
+        "void_penalty": -0.05
+      },
+      
+      "case_study": "PHAR Jan 2026: sNDA with 54-rep salesforce + CCO transition → NEUTRAL signal (CRL was technical/PK, not commercial)"
+    },
+
+    "S23_insider_selling": {
+      "name": "Insider Selling Pattern Detection",
+      "version": "1.0",
+      "changelog": "NEW - Calibrated from AQST January 2026 CRL",
+      "source": "SEC Form 4 filings via FinBrain API",
+      
+      "lookback_window": {
+        "start_days": 180,
+        "end_days": 30,
+        "notes": "Analyze 6 months prior to analysis date, exclude 30 days before PDUFA (blackout)"
+      },
+      
+      "thresholds": {
+        "single_transaction_pct": {
+          "elevated": 0.03,
+          "high": 0.08,
+          "critical": 0.15
+        },
+        "cumulative_selling_pct": {
+          "elevated": 0.05,
+          "high": 0.10,
+          "critical": 0.20
+        },
+        "same_day_sellers": {
+          "elevated": 2,
+          "high": 3
+        },
+        "same_30day_window": {
+          "elevated": 2,
+          "high": 3
+        },
+        "aggregate_sell_value": {
+          "elevated": 250000,
+          "high": 500000,
+          "critical": 1000000
+        },
+        "quiet_period_days": 45
+      },
+      
+      "risk_level_determination": {
+        "CRITICAL": "1+ critical triggers OR 2+ high triggers",
+        "HIGH_RISK": "1+ high triggers OR 3+ elevated triggers",
+        "ELEVATED": "1+ elevated triggers",
+        "NORMAL": "No triggers"
+      },
+      
+      "adjustments": {
+        "NORMAL": 0.0,
+        "ELEVATED": -0.03,
+        "HIGH_RISK": -0.06,
+        "CRITICAL": -0.10
+      },
+      
+      "trigger_examples": [
+        "C-suite cumulative selling >10% holdings in 6 months",
+        "Single transaction >8% holdings reduction",
+        "3+ insiders selling same day (AQST Oct 15 pattern)",
+        "2+ C-suite selling within 30-day window",
+        "Zero purchases + >$500K aggregate sales",
+        "Quiet period >45 days after selling cluster"
+      ],
+      
+      "case_study": {
+        "ticker": "AQST",
+        "pdufa_date": "2026-01-31",
+        "crl_date": "2026-01-09",
+        "pattern_detected": "2025-11-15",
+        "warning_lead_time_days": 55,
+        "transactions": {
+          "total_sell_value": 1692596,
+          "total_buy_value": 0,
+          "c_suite_sellers": ["COO Jung (35%)", "CEO Barber (9%)", "CMO Kraus (6.7%)", "SVP Boyd (12%)"],
+          "same_day_event": "Oct 15, 2025 - 3 executives sold $685,605",
+          "coo_cumulative": "35% of holdings = CRITICAL trigger"
+        },
+        "outcome": "CRITICAL risk level would have flagged 2+ months before public disclosure"
+      },
+      
+      "asymmetry_note": "Insider selling provides STRONGER bearish signal than commercial hiring provides bullish signal. Weight accordingly."
+    },
+
+    "S12_cmc_risk": {
+      "name": "CMC Risk Intelligence - Cross-Regulatory",
+      "version": "2.0",
+      "changelog": "PHAR fix: Now monitors EMA, not just FDA",
+      "sources": [
+        "FDA_Form_483",
+        "FDA_Warning_Letter",
+        "EMA_CHMP_Questions",
+        "EMA_CMC_Extension",
+        "Company_Press_Release_CMC",
+        "Import_Alert"
+      ],
+      "keywords": [
+        "CMC question",
+        "manufacturing extension", 
+        "analytical method",
+        "starting materials",
+        "batch testing",
+        "production batch",
+        "CHMP extension",
+        "quality issue",
+        "GMP deficiency"
+      ],
+      "adjustments": {
+        "fda_483_penalty": -0.07,
+        "ema_cmc_flag_penalty": -0.10,
+        "multiple_flags_penalty": -0.15,
+        "no_flags": 0.0
+      }
+    },
+
+    "S21_specialist_sentiment": {
+      "name": "Specialist Fund Composite Sentiment",
+      "version": "2.1",
+      "changelog": "v10.3: Added S23 as cap trigger",
+      "max_contribution": 0.03,
+      "capped_contribution": 0.02,
+      "cap_triggers": [
+        "S12_cmc_risk >= -0.05",
+        "P3_publication_volume <= -0.08",
+        "S6_hiring_void == True",
+        "S22_pediatric_pk_risk == True",
+        "S23_insider_selling_risk >= HIGH_RISK"
+      ],
+      "notes": "Prevent crowd optimism from overriding objective red flags. If any cap_trigger fires, max S21 = 0.02"
+    },
+
+    "S22_pediatric_pk_risk": {
+      "name": "Pediatric PK Bridging Risk",
+      "version": "1.0",
+      "trigger_conditions": {
+        "submission_type": ["sNDA_PEDIATRIC", "BLA_SUPPLEMENT_PEDIATRIC"],
+        "dosing_type": ["weight_based", "age_tiered"],
+        "pediatric_pk_published": false
+      },
+      "penalty": -0.10
+    },
+
+    "P3_publication_volume": {
+      "name": "Publication Volume Signal",
+      "version": "2.0",
+      "thresholds": {
+        "very_low": 10,
+        "low": 25,
+        "adequate": 50
+      },
+      "adjustments": {
+        "very_low_penalty": -0.08,
+        "low_penalty": -0.04,
+        "adequate": 0.0,
+        "high_boost": 0.02
+      },
+      "unpublished_data_penalty": -0.05
+    }
+  },
+
+  "social_signals": {
+    "S17_social_sentiment": {
+      "bullish_threshold": 80,
+      "bearish_threshold": 60,
+      "bullish_boost": 0.03,
+      "neutral": 0.0,
+      "bearish_penalty": -0.02
+    },
+    "S18_engagement_spike": {
+      "spike_threshold": 1.5,
+      "boost": 0.02,
+      "requires_bullish_sentiment": true
+    },
+    "S19_social_silence": {
+      "silence_threshold": 0.3,
+      "penalty": -0.03
+    },
+    "S20_smart_money_divergence": {
+      "galaxy_score_threshold": 40,
+      "divergence_penalty": -0.02
+    }
+  },
+
+  "trading_protocol": {
+    "version": "3.0_AQST_CALIBRATED",
+    "rules": {
+      "novel_nda": {
+        "exit_window": "T-5 to T-7",
+        "runner_position": "20%"
+      },
+      "snda_label_expansion": {
+        "exit_window": "T-7 to T-10",
+        "runner_position": "0%"
+      },
+      "snda_pediatric": {
+        "exit_window": "T-10",
+        "runner_position": "0%",
+        "avoid_if_no_pk_data": true
+      },
+      "weekend_pdufa": {
+        "exit_day": "Thursday Close or Friday Open"
+      },
+      "insider_selling_critical": {
+        "action": "AVOID_POSITION",
+        "notes": "S23 CRITICAL = do not enter. AQST pattern detected 2+ months before CRL."
+      },
+      "insider_selling_high_risk": {
+        "action": "REDUCE_SIZE_50%",
+        "notes": "S23 HIGH_RISK = half position, exit T-10"
+      },
+      "cmc_delay_mentioned": {
+        "action": "SELL_IMMEDIATELY"
+      }
+    }
+  },
+
+  "avoid_signals": {
+    "description": "Hard avoid list - do not enter position if ANY of these fire",
+    "signals": [
+      {
+        "id": "AVOID_001",
+        "name": "EMA_CMC_Flag",
+        "condition": "ema_cmc_flag == True",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "AVOID_002", 
+        "name": "Hiring_Void_NDA",
+        "condition": "application_type IN ('NDA', 'BLA') AND commercial_hires < 3 AND months_to_pdufa < 6",
+        "severity": "HIGH"
+      },
+      {
+        "id": "AVOID_003",
+        "name": "Pediatric_No_PK",
+        "condition": "submission_type == 'sNDA_PEDIATRIC' AND pediatric_pk_published == False",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "AVOID_004",
+        "name": "CMC_Extension_Any_Agency",
+        "condition": "cmc_extension_flag == True",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "AVOID_005",
+        "name": "Weekend_PDUFA_Low_Prob",
+        "condition": "pdufa_day IN ('Saturday', 'Sunday') AND odin_probability < 0.80",
+        "severity": "HIGH"
+      },
+      {
+        "id": "AVOID_006",
+        "name": "Insider_Selling_Critical",
+        "condition": "s23_risk_level == 'CRITICAL'",
+        "severity": "CRITICAL",
+        "notes": "AQST pattern: 3+ insiders same day, C-suite >10% holdings sold, $1M+ aggregate"
+      },
+      {
+        "id": "AVOID_007",
+        "name": "Insider_Selling_Coordinated",
+        "condition": "s23_same_day_count >= 3",
+        "severity": "CRITICAL",
+        "notes": "Same-day coordinated selling is strongest CRL predictor from AQST calibration"
+      },
+      {
+        "id": "AVOID_008",
+        "name": "CSuite_Exodus",
+        "condition": "s23_csuite_sellers >= 3 AND s23_total_sell_value >= 500000",
+        "severity": "HIGH",
+        "notes": "3+ C-suite selling + >$500K = significant concern"
+      }
+    ]
+  },
+
+  "dataset_fields_required": {
+    "new_fields_v103": [
+      "application_type",
+      "s23_insider_risk_level",
+      "s23_total_sell_value",
+      "s23_csuite_sellers_count",
+      "s23_same_day_count",
+      "s23_triggers",
+      "s6_signal_type",
+      "existing_salesforce_size",
+      "recent_commercial_layoffs"
+    ],
+    "inherited_v102": [
+      "submission_type",
+      "ema_cmc_flag",
+      "cmc_extension_flag",
+      "analytical_method_flag",
+      "pediatric_pk_published",
+      "dosing_type",
+      "commercial_hire_count",
+      "publication_count",
+      "pivotal_data_peer_reviewed",
+      "pdufa_day_of_week"
+    ]
+  },
+
+  "aqst_crl_record": {
+    "event_id": "AQST_2026_01_31_ANAPHYLM",
+    "ticker": "AQST",
+    "company": "Aquestive Therapeutics",
+    "asset": "Anaphylm",
+    "indication": "Anaphylaxis",
+    "therapeutic_area": "Immunology",
+    "catalyst_date": "2026-01-31",
+    "deficiency_letter_date": "2026-01-09",
+    "catalyst_type": "PDUFA",
+    "outcome": "DEFICIENCY_LETTER",
+    "s23_analysis": {
+      "risk_level": "CRITICAL",
+      "total_sell_value": 1692596,
+      "csuite_sellers": ["COO Jung", "CEO Barber", "CMO Kraus", "SVP Boyd"],
+      "same_day_event": "2025-10-15",
+      "same_day_count": 3,
+      "coo_pct_sold": 0.35,
+      "pattern_detection_date": "2025-11-15",
+      "warning_lead_days": 55
+    },
+    "notes": "Index case for S23 signal. Insider selling pattern detected 2+ months before deficiency letter. Stock dropped 37% on news."
+  }
+}

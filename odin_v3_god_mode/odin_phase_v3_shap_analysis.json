@@ -1,0 +1,184 @@
+{
+  "shap_importance": [
+    {
+      "feature": "failure_signal",
+      "shap_importance": 2.4803507328033447
+    },
+    {
+      "feature": "is_hard_endpoint",
+      "shap_importance": 0.18518705666065216
+    },
+    {
+      "feature": "phase_PHASE3",
+      "shap_importance": 0.18128301203250885
+    },
+    {
+      "feature": "is_competitive_space",
+      "shap_importance": 0.17635051906108856
+    },
+    {
+      "feature": "sentiment_score",
+      "shap_importance": 0.1346474587917328
+    },
+    {
+      "feature": "phase_PHASE2",
+      "shap_importance": 0.11908837407827377
+    },
+    {
+      "feature": "primary_endpoint_met",
+      "shap_importance": 0.0787268877029419
+    },
+    {
+      "feature": "ta_ONCOLOGY",
+      "shap_importance": 0.0024379983078688383
+    },
+    {
+      "feature": "blind_x_phase3",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "float_ratio",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "has_pubmed",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_blinded",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_large_mega",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_pubmed",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_mcap",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_enrollment",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_employees",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_small",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_randomized",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_open_label",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_micro",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase_PHASE1_2",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase_PHASE1",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "multi_arm",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase2_x_oncology",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_oncology",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_small",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_cns",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_large",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_CNS",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_CARDIOVASCULAR",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "single_arm_x_oncology",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "single_arm",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "rct_x_phase3",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase_PHASE2_3",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_INFECTIOUS",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_HEMATOLOGY",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_lead_asset",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_micro_cap",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "short_interest_pct",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_METABOLIC",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "relative_efficacy",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_orphan_designated",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "regulatory_alignment",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "alpha_status",
+      "shap_importance": 0.0
+    }
+  ]
+}

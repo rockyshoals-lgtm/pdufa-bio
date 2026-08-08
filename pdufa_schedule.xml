@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!--
+  pdufa.bio 5x/trading-day refresh.
+  Five triggers at MARKET (ET) anchors: pre-market, open, midday, pre-close, post-close.
+  NOTE ON TIME ZONE: Task Scheduler fires on the machine's LOCAL time. The times below are
+  written as ET anchors. If your machine's clock is Pacific, either (a) run this on a cloud
+  box whose TZ is America/New_York, or (b) shift each StartBoundary time by -3h (06:00 -> 03:00,
+  09:30 -> 06:30, 12:00 -> 09:00, 15:00 -> 12:00, 18:00 -> 15:00).
+  Register with:
+      schtasks /create /tn "pdufa_bio_refresh" /xml "C:\Users\dcmoo\Documents\Python\9realms\pdufa_schedule.xml"
+-->
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>pdufa.bio catalyst refresh — crawl, freshness guard, integrity audit (5x per trading day)</Description>
+    <URI>\pdufa_bio_refresh</URI>
+  </RegistrationInfo>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-01T06:00:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByWeek><DaysOfWeek><Monday/><Tuesday/><Wednesday/><Thursday/><Friday/></DaysOfWeek><WeeksInterval>1</WeeksInterval></ScheduleByWeek>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-01T09:30:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByWeek><DaysOfWeek><Monday/><Tuesday/><Wednesday/><Thursday/><Friday/></DaysOfWeek><WeeksInterval>1</WeeksInterval></ScheduleByWeek>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-01T12:00:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByWeek><DaysOfWeek><Monday/><Tuesday/><Wednesday/><Thursday/><Friday/></DaysOfWeek><WeeksInterval>1</WeeksInterval></ScheduleByWeek>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-01T15:00:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByWeek><DaysOfWeek><Monday/><Tuesday/><Wednesday/><Thursday/><Friday/></DaysOfWeek><WeeksInterval>1</WeeksInterval></ScheduleByWeek>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-01T18:00:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByWeek><DaysOfWeek><Monday/><Tuesday/><Wednesday/><Thursday/><Friday/></DaysOfWeek><WeeksInterval>1</WeeksInterval></ScheduleByWeek>
+    </CalendarTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <LogonType>InteractiveToken</LogonType>
+      <RunLevel>LeastPrivilege</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>true</RunOnlyIfNetworkAvailable>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <ExecutionTimeLimit>PT2H</ExecutionTimeLimit>
+    <Priority>7</Priority>
+    <RestartOnFailure>
+      <Interval>PT10M</Interval>
+      <Count>2</Count>
+    </RestartOnFailure>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>python</Command>
+      <Arguments>run_pdufa.py</Arguments>
+      <WorkingDirectory>C:\Users\dcmoo\Documents\Python\9realms</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

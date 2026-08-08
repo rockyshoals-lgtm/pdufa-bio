@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-03-01T03:04:41.456418Z",
+  "model_version": "ODIN v2.1 LGB Champion",
+  "dataset_version": "v1071_T1_2015on_ENRICHED",
+  "dataset_events": 2210,
+  "hashes": {
+    "dataset": "261b0765519dcaddc1be6bec82ed9603098e558b794dbc517da621c8f0f5076a",
+    "odin_lgb_champion": "5d41360ac41585ea9024b5a18e24b2d317e3bc52675d321932405447822b24d0",
+    "gungnir_lgb_champion": "3f62db7ec91b0706049c77f7bd0ba07658b07c0c176a97f262737246a559d2bb",
+    "champion_ladder": "0d39358ca16723e11e33159e0f9d62fb969081479daf3b8d0c87ccba8c1f4b58"
+  }
+}

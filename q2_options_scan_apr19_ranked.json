@@ -1,0 +1,915 @@
+{
+  "scan_date": "2026-04-19",
+  "api_calls": 83,
+  "cache_hits": 62,
+  "errors": [],
+  "summary": {
+    "total_tickers_scanned": 190,
+    "scorable_tickers": 0,
+    "core_tickers": 0,
+    "lotto_tickers": 0,
+    "avoid_tickers": 190
+  },
+  "core": [],
+  "lotto": [],
+  "avoid": [
+    {
+      "ticker": "AAPG",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "ABSI",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.786,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 457533576.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ABVX",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8896,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 9419866634.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ACET",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9767,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 62856466.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.9428,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 62856466.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ACHV",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-20",
+          "type": "",
+          "gungnir_prob": 0.8573,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 173562361.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "ACIU",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.801,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 326693169.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.7331,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 326693169.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ACRV",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "ACTU",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9866,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 45513007.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.9942,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 45513007.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ADAG",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "ADCT",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9676,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 473875448.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "AGEN",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "ALEC",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.7424,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 267077446.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ALKS",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8339,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5780607005.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ALLO",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.935,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 658200384.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8963,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 658200384.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ALXO",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-05-07",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.971,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 249397687.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ANRO",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.3702,
+          "gungnir_tier": "Lean Negative",
+          "mcap": 693537152.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "APGE",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8528,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 5775613731.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "APRE",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9691,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8035040.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "AQST",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9443,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 510148305.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ARGX",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "ARQT",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-29",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9455,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 3052461531.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "ARTV",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8438,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 152996200.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ARVN",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-05",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.9341,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 717002776.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "ASND",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9896,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 14453131546.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "ATYR",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "End of Phase Meeting",
+          "gungnir_prob": 0.7315,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 78421359.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "AVBP",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "AVTX",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.8691,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 328381593.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "AXSM",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8128,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8859238122.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        },
+        {
+          "date": "2026-04-30",
+          "type": "",
+          "gungnir_prob": 0.8068,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 8859238122.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "AZN",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "BBIO",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.7584,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 14372993256.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "BCAB",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8591,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 7356751.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8857,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 7356751.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BCDA",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data",
+      "catalysts": [
+        {
+          "date": "2026-05-31",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.9129,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 13237850.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BCRX",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8528,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 2452830064.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BCTX",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "BCYC",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "BHC",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9298,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1982508990.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BHVN",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "",
+          "gungnir_prob": 0.8777,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1410945078.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BIIB",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-05-24",
+          "type": "Regulatory Decision",
+          "gungnir_prob": 0.7651,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 26401859187.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "BIOA",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Full Results",
+          "gungnir_prob": 0.8681,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 800610744.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BIVI",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9195,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11239921.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-05-17",
+          "type": "Conference Presentation",
+          "gungnir_prob": 0.7155,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11239921.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BLTE",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No options chain data",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.905,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 7031231051.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": true
+        }
+      ]
+    },
+    {
+      "ticker": "BMEA",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.9371,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 127247014.0,
+          "is_phase1": false,
+          "is_phase2": true,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8549,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 127247014.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BMRN",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-04-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8832,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11000896135.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Topline Data",
+          "gungnir_prob": 0.962,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 11000896135.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BMY",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9929,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9373,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-04-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.9271,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Submission",
+          "gungnir_prob": 0.8591,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 120870738936.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "BOLD",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 1d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "CABA",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "CADL",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Interim Data",
+          "gungnir_prob": 0.8689,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 271734453.0,
+          "is_phase1": false,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "CAPR",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8689,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 1817336066.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    },
+    {
+      "ticker": "CATX",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "All catalysts <5 trading days away (min: 0d)",
+      "catalysts": []
+    },
+    {
+      "ticker": "CGEM",
+      "entry_score": 0,
+      "edge_tier": "UNKNOWN",
+      "edge_reason": "No valid calls (DTE 10-45)",
+      "catalysts": [
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8778,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 905470875.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        },
+        {
+          "date": "2026-06-30",
+          "type": "Initial Data",
+          "gungnir_prob": 0.8523,
+          "gungnir_tier": "Strong Positive",
+          "mcap": 905470875.0,
+          "is_phase1": true,
+          "is_phase2": false,
+          "is_pdufa": false
+        }
+      ]
+    }
+  ]
+}

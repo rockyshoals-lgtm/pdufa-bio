@@ -1,0 +1,2178 @@
+{
+  "2015-01-15": {
+    "date": "2015-01-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-01-30": {
+    "date": "2015-01-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-02-13": {
+    "date": "2015-02-13",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-02-27": {
+    "date": "2015-02-27",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-03-31": {
+    "date": "2015-03-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-03-13": {
+    "date": "2015-03-13",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-04-15": {
+    "date": "2015-04-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-04-30": {
+    "date": "2015-04-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-05-15": {
+    "date": "2015-05-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-05-29": {
+    "date": "2015-05-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-06-15": {
+    "date": "2015-06-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-06-30": {
+    "date": "2015-06-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-07-15": {
+    "date": "2015-07-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-07-31": {
+    "date": "2015-07-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-08-31": {
+    "date": "2015-08-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-09-15": {
+    "date": "2015-09-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-09-30": {
+    "date": "2015-09-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-10-15": {
+    "date": "2015-10-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-08-14": {
+    "date": "2015-08-14",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-10-30": {
+    "date": "2015-10-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-11-13": {
+    "date": "2015-11-13",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-11-30": {
+    "date": "2015-11-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-12-15": {
+    "date": "2015-12-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2015-12-31": {
+    "date": "2015-12-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-01-15": {
+    "date": "2016-01-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-01-29": {
+    "date": "2016-01-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-02-12": {
+    "date": "2016-02-12",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-02-29": {
+    "date": "2016-02-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-03-15": {
+    "date": "2016-03-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-03-31": {
+    "date": "2016-03-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-04-15": {
+    "date": "2016-04-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-04-29": {
+    "date": "2016-04-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-05-13": {
+    "date": "2016-05-13",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-05-31": {
+    "date": "2016-05-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-06-15": {
+    "date": "2016-06-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-06-30": {
+    "date": "2016-06-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-07-15": {
+    "date": "2016-07-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-07-29": {
+    "date": "2016-07-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-08-15": {
+    "date": "2016-08-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-08-31": {
+    "date": "2016-08-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-09-15": {
+    "date": "2016-09-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-09-30": {
+    "date": "2016-09-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-10-14": {
+    "date": "2016-10-14",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-10-31": {
+    "date": "2016-10-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-11-15": {
+    "date": "2016-11-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-11-30": {
+    "date": "2016-11-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-12-15": {
+    "date": "2016-12-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2016-12-30": {
+    "date": "2016-12-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-01-13": {
+    "date": "2017-01-13",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-01-31": {
+    "date": "2017-01-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-02-15": {
+    "date": "2017-02-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-02-28": {
+    "date": "2017-02-28",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-03-15": {
+    "date": "2017-03-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-03-31": {
+    "date": "2017-03-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-04-14": {
+    "date": "2017-04-14",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-04-28": {
+    "date": "2017-04-28",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-05-15": {
+    "date": "2017-05-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-05-31": {
+    "date": "2017-05-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-06-15": {
+    "date": "2017-06-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-06-30": {
+    "date": "2017-06-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-07-14": {
+    "date": "2017-07-14",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-07-31": {
+    "date": "2017-07-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-08-15": {
+    "date": "2017-08-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-08-31": {
+    "date": "2017-08-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-09-15": {
+    "date": "2017-09-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-09-29": {
+    "date": "2017-09-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-10-13": {
+    "date": "2017-10-13",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-10-31": {
+    "date": "2017-10-31",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-11-15": {
+    "date": "2017-11-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-11-30": {
+    "date": "2017-11-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-12-15": {
+    "date": "2017-12-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2017-12-29": {
+    "date": "2017-12-29",
+    "http_code": 200,
+    "size": 1507693,
+    "rows": 15495,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20171229.csv",
+    "cached": false
+  },
+  "2018-01-31": {
+    "date": "2018-01-31",
+    "http_code": 200,
+    "size": 1522055,
+    "rows": 15627,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180131.csv",
+    "cached": false
+  },
+  "2018-01-12": {
+    "date": "2018-01-12",
+    "http_code": 200,
+    "size": 1513511,
+    "rows": 15579,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180112.csv",
+    "cached": false
+  },
+  "2018-02-15": {
+    "date": "2018-02-15",
+    "http_code": 200,
+    "size": 1515146,
+    "rows": 15561,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180215.csv",
+    "cached": false
+  },
+  "2018-02-28": {
+    "date": "2018-02-28",
+    "http_code": 200,
+    "size": 1515946,
+    "rows": 15628,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180228.csv",
+    "cached": false
+  },
+  "2018-03-30": {
+    "date": "2018-03-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2018-03-15": {
+    "date": "2018-03-15",
+    "http_code": 200,
+    "size": 1503813,
+    "rows": 15486,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180315.csv",
+    "cached": false
+  },
+  "2018-04-13": {
+    "date": "2018-04-13",
+    "http_code": 200,
+    "size": 1502449,
+    "rows": 15378,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180413.csv",
+    "cached": false
+  },
+  "2018-04-30": {
+    "date": "2018-04-30",
+    "http_code": 200,
+    "size": 1511324,
+    "rows": 15474,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180430.csv",
+    "cached": false
+  },
+  "2018-05-15": {
+    "date": "2018-05-15",
+    "http_code": 200,
+    "size": 1518621,
+    "rows": 15533,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180515.csv",
+    "cached": false
+  },
+  "2018-05-31": {
+    "date": "2018-05-31",
+    "http_code": 200,
+    "size": 1515278,
+    "rows": 15498,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180531.csv",
+    "cached": false
+  },
+  "2018-06-15": {
+    "date": "2018-06-15",
+    "http_code": 200,
+    "size": 1520719,
+    "rows": 15563,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180615.csv",
+    "cached": false
+  },
+  "2018-06-29": {
+    "date": "2018-06-29",
+    "http_code": 200,
+    "size": 1523132,
+    "rows": 15573,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180629.csv",
+    "cached": false
+  },
+  "2018-07-13": {
+    "date": "2018-07-13",
+    "http_code": 200,
+    "size": 1535010,
+    "rows": 15702,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180713.csv",
+    "cached": false
+  },
+  "2018-07-31": {
+    "date": "2018-07-31",
+    "http_code": 200,
+    "size": 1542485,
+    "rows": 15783,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180731.csv",
+    "cached": false
+  },
+  "2018-08-15": {
+    "date": "2018-08-15",
+    "http_code": 200,
+    "size": 1537980,
+    "rows": 15744,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180815.csv",
+    "cached": false
+  },
+  "2018-08-31": {
+    "date": "2018-08-31",
+    "http_code": 200,
+    "size": 1539405,
+    "rows": 15749,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180831.csv",
+    "cached": false
+  },
+  "2018-09-14": {
+    "date": "2018-09-14",
+    "http_code": 200,
+    "size": 1538468,
+    "rows": 15775,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180914.csv",
+    "cached": false
+  },
+  "2018-09-28": {
+    "date": "2018-09-28",
+    "http_code": 200,
+    "size": 1551139,
+    "rows": 15873,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20180928.csv",
+    "cached": false
+  },
+  "2018-10-15": {
+    "date": "2018-10-15",
+    "http_code": 200,
+    "size": 1556436,
+    "rows": 15905,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20181015.csv",
+    "cached": false
+  },
+  "2018-10-31": {
+    "date": "2018-10-31",
+    "http_code": 200,
+    "size": 1549489,
+    "rows": 15825,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20181031.csv",
+    "cached": false
+  },
+  "2018-11-15": {
+    "date": "2018-11-15",
+    "http_code": 200,
+    "size": 1546784,
+    "rows": 15802,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20181115.csv",
+    "cached": false
+  },
+  "2018-11-30": {
+    "date": "2018-11-30",
+    "http_code": 200,
+    "size": 1534213,
+    "rows": 15691,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20181130.csv",
+    "cached": false
+  },
+  "2018-12-31": {
+    "date": "2018-12-31",
+    "http_code": 200,
+    "size": 1537274,
+    "rows": 15687,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20181231.csv",
+    "cached": false
+  },
+  "2018-12-14": {
+    "date": "2018-12-14",
+    "http_code": 200,
+    "size": 1537904,
+    "rows": 15714,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20181214.csv",
+    "cached": false
+  },
+  "2019-01-15": {
+    "date": "2019-01-15",
+    "http_code": 200,
+    "size": 1548209,
+    "rows": 15812,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190115.csv",
+    "cached": false
+  },
+  "2019-01-31": {
+    "date": "2019-01-31",
+    "http_code": 200,
+    "size": 1548528,
+    "rows": 15804,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190131.csv",
+    "cached": false
+  },
+  "2019-02-15": {
+    "date": "2019-02-15",
+    "http_code": 200,
+    "size": 1553120,
+    "rows": 15878,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190215.csv",
+    "cached": false
+  },
+  "2019-02-28": {
+    "date": "2019-02-28",
+    "http_code": 200,
+    "size": 1547252,
+    "rows": 15840,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190228.csv",
+    "cached": false
+  },
+  "2019-03-15": {
+    "date": "2019-03-15",
+    "http_code": 200,
+    "size": 1552887,
+    "rows": 15880,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190315.csv",
+    "cached": false
+  },
+  "2019-03-29": {
+    "date": "2019-03-29",
+    "http_code": 200,
+    "size": 1549066,
+    "rows": 15839,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190329.csv",
+    "cached": false
+  },
+  "2019-04-15": {
+    "date": "2019-04-15",
+    "http_code": 200,
+    "size": 1559688,
+    "rows": 15950,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190415.csv",
+    "cached": false
+  },
+  "2019-04-30": {
+    "date": "2019-04-30",
+    "http_code": 200,
+    "size": 1566298,
+    "rows": 16038,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190430.csv",
+    "cached": false
+  },
+  "2019-05-15": {
+    "date": "2019-05-15",
+    "http_code": 200,
+    "size": 1569213,
+    "rows": 16064,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190515.csv",
+    "cached": false
+  },
+  "2019-05-31": {
+    "date": "2019-05-31",
+    "http_code": 200,
+    "size": 1569257,
+    "rows": 16058,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190531.csv",
+    "cached": false
+  },
+  "2019-06-14": {
+    "date": "2019-06-14",
+    "http_code": 200,
+    "size": 1570943,
+    "rows": 16076,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190614.csv",
+    "cached": false
+  },
+  "2019-06-28": {
+    "date": "2019-06-28",
+    "http_code": 200,
+    "size": 1577080,
+    "rows": 16147,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190628.csv",
+    "cached": false
+  },
+  "2019-07-15": {
+    "date": "2019-07-15",
+    "http_code": 200,
+    "size": 1585107,
+    "rows": 16229,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190715.csv",
+    "cached": false
+  },
+  "2019-07-31": {
+    "date": "2019-07-31",
+    "http_code": 200,
+    "size": 1582249,
+    "rows": 16190,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190731.csv",
+    "cached": false
+  },
+  "2019-08-15": {
+    "date": "2019-08-15",
+    "http_code": 200,
+    "size": 1585497,
+    "rows": 16230,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190815.csv",
+    "cached": false
+  },
+  "2019-08-30": {
+    "date": "2019-08-30",
+    "http_code": 200,
+    "size": 1586200,
+    "rows": 16249,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190830.csv",
+    "cached": false
+  },
+  "2019-09-13": {
+    "date": "2019-09-13",
+    "http_code": 200,
+    "size": 1581371,
+    "rows": 16203,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190913.csv",
+    "cached": false
+  },
+  "2019-09-30": {
+    "date": "2019-09-30",
+    "http_code": 200,
+    "size": 1577242,
+    "rows": 16133,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20190930.csv",
+    "cached": false
+  },
+  "2019-10-15": {
+    "date": "2019-10-15",
+    "http_code": 200,
+    "size": 1578226,
+    "rows": 16165,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20191015.csv",
+    "cached": false
+  },
+  "2019-10-31": {
+    "date": "2019-10-31",
+    "http_code": 200,
+    "size": 1583695,
+    "rows": 16204,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20191031.csv",
+    "cached": false
+  },
+  "2019-11-15": {
+    "date": "2019-11-15",
+    "http_code": 200,
+    "size": 1577217,
+    "rows": 16136,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20191115.csv",
+    "cached": false
+  },
+  "2019-11-29": {
+    "date": "2019-11-29",
+    "http_code": 200,
+    "size": 1589605,
+    "rows": 16287,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20191129.csv",
+    "cached": false
+  },
+  "2019-12-13": {
+    "date": "2019-12-13",
+    "http_code": 200,
+    "size": 1579453,
+    "rows": 16175,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20191213.csv",
+    "cached": false
+  },
+  "2019-12-31": {
+    "date": "2019-12-31",
+    "http_code": 200,
+    "size": 1583785,
+    "rows": 16208,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20191231.csv",
+    "cached": false
+  },
+  "2020-01-15": {
+    "date": "2020-01-15",
+    "http_code": 200,
+    "size": 1586635,
+    "rows": 16246,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200115.csv",
+    "cached": false
+  },
+  "2020-01-31": {
+    "date": "2020-01-31",
+    "http_code": 200,
+    "size": 1601631,
+    "rows": 16387,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200131.csv",
+    "cached": false
+  },
+  "2020-02-14": {
+    "date": "2020-02-14",
+    "http_code": 200,
+    "size": 1607542,
+    "rows": 16473,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200214.csv",
+    "cached": false
+  },
+  "2020-02-28": {
+    "date": "2020-02-28",
+    "http_code": 200,
+    "size": 1608199,
+    "rows": 16464,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200228.csv",
+    "cached": false
+  },
+  "2020-03-13": {
+    "date": "2020-03-13",
+    "http_code": 200,
+    "size": 1627399,
+    "rows": 16620,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200313.csv",
+    "cached": false
+  },
+  "2020-03-31": {
+    "date": "2020-03-31",
+    "http_code": 200,
+    "size": 1642334,
+    "rows": 16676,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200331.csv",
+    "cached": false
+  },
+  "2020-04-15": {
+    "date": "2020-04-15",
+    "http_code": 200,
+    "size": 1635082,
+    "rows": 16699,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200415.csv",
+    "cached": false
+  },
+  "2020-04-30": {
+    "date": "2020-04-30",
+    "http_code": 200,
+    "size": 1631376,
+    "rows": 16681,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200430.csv",
+    "cached": false
+  },
+  "2020-05-15": {
+    "date": "2020-05-15",
+    "http_code": 200,
+    "size": 1642967,
+    "rows": 16775,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200515.csv",
+    "cached": false
+  },
+  "2020-05-29": {
+    "date": "2020-05-29",
+    "http_code": 200,
+    "size": 1647337,
+    "rows": 16858,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200529.csv",
+    "cached": false
+  },
+  "2020-06-15": {
+    "date": "2020-06-15",
+    "http_code": 200,
+    "size": 1691141,
+    "rows": 17285,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200615.csv",
+    "cached": false
+  },
+  "2020-06-30": {
+    "date": "2020-06-30",
+    "http_code": 200,
+    "size": 1695046,
+    "rows": 17339,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200630.csv",
+    "cached": false
+  },
+  "2020-07-15": {
+    "date": "2020-07-15",
+    "http_code": 200,
+    "size": 1702032,
+    "rows": 17412,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200715.csv",
+    "cached": false
+  },
+  "2020-07-31": {
+    "date": "2020-07-31",
+    "http_code": 200,
+    "size": 1706711,
+    "rows": 17462,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200731.csv",
+    "cached": false
+  },
+  "2020-08-14": {
+    "date": "2020-08-14",
+    "http_code": 200,
+    "size": 1711064,
+    "rows": 17520,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200814.csv",
+    "cached": false
+  },
+  "2020-08-31": {
+    "date": "2020-08-31",
+    "http_code": 200,
+    "size": 1712943,
+    "rows": 17548,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200831.csv",
+    "cached": false
+  },
+  "2020-09-15": {
+    "date": "2020-09-15",
+    "http_code": 200,
+    "size": 1720913,
+    "rows": 17649,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200915.csv",
+    "cached": false
+  },
+  "2020-09-30": {
+    "date": "2020-09-30",
+    "http_code": 200,
+    "size": 1731870,
+    "rows": 17742,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20200930.csv",
+    "cached": false
+  },
+  "2020-10-15": {
+    "date": "2020-10-15",
+    "http_code": 200,
+    "size": 1748999,
+    "rows": 17924,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20201015.csv",
+    "cached": false
+  },
+  "2020-10-30": {
+    "date": "2020-10-30",
+    "http_code": 200,
+    "size": 1744997,
+    "rows": 17874,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20201030.csv",
+    "cached": false
+  },
+  "2020-11-13": {
+    "date": "2020-11-13",
+    "http_code": 200,
+    "size": 1757957,
+    "rows": 18009,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20201113.csv",
+    "cached": false
+  },
+  "2020-11-30": {
+    "date": "2020-11-30",
+    "http_code": 200,
+    "size": 1767492,
+    "rows": 18088,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20201130.csv",
+    "cached": false
+  },
+  "2020-12-15": {
+    "date": "2020-12-15",
+    "http_code": 200,
+    "size": 1792495,
+    "rows": 18322,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20201215.csv",
+    "cached": false
+  },
+  "2020-12-31": {
+    "date": "2020-12-31",
+    "http_code": 200,
+    "size": 1810493,
+    "rows": 18509,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20201231.csv",
+    "cached": false
+  },
+  "2021-01-15": {
+    "date": "2021-01-15",
+    "http_code": 200,
+    "size": 1826674,
+    "rows": 18646,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210115.csv",
+    "cached": false
+  },
+  "2021-01-29": {
+    "date": "2021-01-29",
+    "http_code": 200,
+    "size": 1856523,
+    "rows": 18948,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210129.csv",
+    "cached": false
+  },
+  "2021-02-12": {
+    "date": "2021-02-12",
+    "http_code": 200,
+    "size": 1898802,
+    "rows": 19356,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210212.csv",
+    "cached": false
+  },
+  "2021-02-26": {
+    "date": "2021-02-26",
+    "http_code": 200,
+    "size": 1910911,
+    "rows": 19495,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210226.csv",
+    "cached": false
+  },
+  "2021-03-15": {
+    "date": "2021-03-15",
+    "http_code": 200,
+    "size": 1918837,
+    "rows": 19580,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210315.csv",
+    "cached": false
+  },
+  "2021-03-31": {
+    "date": "2021-03-31",
+    "http_code": 200,
+    "size": 1927609,
+    "rows": 19677,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210331.csv",
+    "cached": false
+  },
+  "2021-04-15": {
+    "date": "2021-04-15",
+    "http_code": 200,
+    "size": 1936445,
+    "rows": 19816,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210415.csv",
+    "cached": false
+  },
+  "2021-04-30": {
+    "date": "2021-04-30",
+    "http_code": 200,
+    "size": 1946070,
+    "rows": 19913,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210430.csv",
+    "cached": false
+  },
+  "2021-05-14": {
+    "date": "2021-05-14",
+    "http_code": 200,
+    "size": 1954951,
+    "rows": 20006,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210514.csv",
+    "cached": false
+  },
+  "2021-05-28": {
+    "date": "2021-05-28",
+    "http_code": 200,
+    "size": 1964865,
+    "rows": 20132,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210528.csv",
+    "cached": false
+  },
+  "2021-06-30": {
+    "date": "2021-06-30",
+    "http_code": 200,
+    "size": 1970993,
+    "rows": 20134,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210630.csv",
+    "cached": false
+  },
+  "2021-06-15": {
+    "date": "2021-06-15",
+    "http_code": 200,
+    "size": 1986262,
+    "rows": 20251,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210615.csv",
+    "cached": false
+  },
+  "2021-07-15": {
+    "date": "2021-07-15",
+    "http_code": 200,
+    "size": 1969330,
+    "rows": 20164,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210715.csv",
+    "cached": false
+  },
+  "2021-08-13": {
+    "date": "2021-08-13",
+    "http_code": 200,
+    "size": 1962862,
+    "rows": 20109,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210813.csv",
+    "cached": false
+  },
+  "2021-07-30": {
+    "date": "2021-07-30",
+    "http_code": 200,
+    "size": 1969226,
+    "rows": 20156,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210730.csv",
+    "cached": false
+  },
+  "2021-08-31": {
+    "date": "2021-08-31",
+    "http_code": 200,
+    "size": 1965728,
+    "rows": 20123,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210831.csv",
+    "cached": false
+  },
+  "2021-09-15": {
+    "date": "2021-09-15",
+    "http_code": 200,
+    "size": 1956926,
+    "rows": 20060,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210915.csv",
+    "cached": false
+  },
+  "2021-09-30": {
+    "date": "2021-09-30",
+    "http_code": 200,
+    "size": 1965849,
+    "rows": 20111,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20210930.csv",
+    "cached": false
+  },
+  "2021-10-15": {
+    "date": "2021-10-15",
+    "http_code": 200,
+    "size": 1966284,
+    "rows": 20141,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20211015.csv",
+    "cached": false
+  },
+  "2021-10-29": {
+    "date": "2021-10-29",
+    "http_code": 200,
+    "size": 1969495,
+    "rows": 20188,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20211029.csv",
+    "cached": false
+  },
+  "2021-11-15": {
+    "date": "2021-11-15",
+    "http_code": 200,
+    "size": 1991766,
+    "rows": 20385,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20211115.csv",
+    "cached": false
+  },
+  "2021-11-30": {
+    "date": "2021-11-30",
+    "http_code": 200,
+    "size": 1991959,
+    "rows": 20409,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20211130.csv",
+    "cached": false
+  },
+  "2021-12-15": {
+    "date": "2021-12-15",
+    "http_code": 200,
+    "size": 1983834,
+    "rows": 20312,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20211215.csv",
+    "cached": false
+  },
+  "2021-12-31": {
+    "date": "2021-12-31",
+    "http_code": 200,
+    "size": 1984060,
+    "rows": 20317,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20211231.csv",
+    "cached": false
+  },
+  "2022-01-14": {
+    "date": "2022-01-14",
+    "http_code": 200,
+    "size": 1998641,
+    "rows": 20503,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220114.csv",
+    "cached": false
+  },
+  "2022-01-31": {
+    "date": "2022-01-31",
+    "http_code": 200,
+    "size": 2006615,
+    "rows": 20554,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220131.csv",
+    "cached": false
+  },
+  "2022-02-15": {
+    "date": "2022-02-15",
+    "http_code": 200,
+    "size": 2014552,
+    "rows": 20648,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220215.csv",
+    "cached": false
+  },
+  "2022-02-28": {
+    "date": "2022-02-28",
+    "http_code": 200,
+    "size": 2017476,
+    "rows": 20696,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220228.csv",
+    "cached": false
+  },
+  "2022-04-15": {
+    "date": "2022-04-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2022-03-31": {
+    "date": "2022-03-31",
+    "http_code": 200,
+    "size": 2037149,
+    "rows": 20848,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220331.csv",
+    "cached": false
+  },
+  "2022-03-15": {
+    "date": "2022-03-15",
+    "http_code": 200,
+    "size": 2027148,
+    "rows": 20747,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220315.csv",
+    "cached": false
+  },
+  "2022-04-29": {
+    "date": "2022-04-29",
+    "http_code": 200,
+    "size": 2021725,
+    "rows": 20739,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220429.csv",
+    "cached": false
+  },
+  "2022-05-13": {
+    "date": "2022-05-13",
+    "http_code": 200,
+    "size": 2020742,
+    "rows": 20709,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220513.csv",
+    "cached": false
+  },
+  "2022-05-31": {
+    "date": "2022-05-31",
+    "http_code": 200,
+    "size": 2033142,
+    "rows": 20832,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220531.csv",
+    "cached": false
+  },
+  "2022-06-15": {
+    "date": "2022-06-15",
+    "http_code": 200,
+    "size": 2025807,
+    "rows": 20752,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220615.csv",
+    "cached": false
+  },
+  "2022-06-30": {
+    "date": "2022-06-30",
+    "http_code": 200,
+    "size": 2024830,
+    "rows": 20724,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220630.csv",
+    "cached": false
+  },
+  "2022-07-15": {
+    "date": "2022-07-15",
+    "http_code": 200,
+    "size": 2021709,
+    "rows": 20732,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220715.csv",
+    "cached": false
+  },
+  "2022-07-29": {
+    "date": "2022-07-29",
+    "http_code": 200,
+    "size": 2008894,
+    "rows": 20601,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220729.csv",
+    "cached": false
+  },
+  "2022-08-15": {
+    "date": "2022-08-15",
+    "http_code": 200,
+    "size": 2028061,
+    "rows": 20781,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220815.csv",
+    "cached": false
+  },
+  "2022-08-31": {
+    "date": "2022-08-31",
+    "http_code": 200,
+    "size": 2025264,
+    "rows": 20764,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220831.csv",
+    "cached": false
+  },
+  "2022-09-15": {
+    "date": "2022-09-15",
+    "http_code": 200,
+    "size": 2022850,
+    "rows": 20768,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220915.csv",
+    "cached": false
+  },
+  "2022-09-30": {
+    "date": "2022-09-30",
+    "http_code": 200,
+    "size": 2025149,
+    "rows": 20742,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20220930.csv",
+    "cached": false
+  },
+  "2022-10-14": {
+    "date": "2022-10-14",
+    "http_code": 200,
+    "size": 2024522,
+    "rows": 20754,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20221014.csv",
+    "cached": false
+  },
+  "2022-10-31": {
+    "date": "2022-10-31",
+    "http_code": 200,
+    "size": 2020848,
+    "rows": 20696,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20221031.csv",
+    "cached": false
+  },
+  "2022-11-15": {
+    "date": "2022-11-15",
+    "http_code": 200,
+    "size": 2031736,
+    "rows": 20787,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20221115.csv",
+    "cached": false
+  },
+  "2022-11-30": {
+    "date": "2022-11-30",
+    "http_code": 200,
+    "size": 2005378,
+    "rows": 20547,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20221130.csv",
+    "cached": false
+  },
+  "2022-12-15": {
+    "date": "2022-12-15",
+    "http_code": 200,
+    "size": 1988507,
+    "rows": 20389,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20221215.csv",
+    "cached": false
+  },
+  "2023-01-13": {
+    "date": "2023-01-13",
+    "http_code": 200,
+    "size": 1961972,
+    "rows": 20125,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230113.csv",
+    "cached": false
+  },
+  "2022-12-30": {
+    "date": "2022-12-30",
+    "http_code": 200,
+    "size": 1968126,
+    "rows": 20186,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20221230.csv",
+    "cached": false
+  },
+  "2023-01-31": {
+    "date": "2023-01-31",
+    "http_code": 200,
+    "size": 1970987,
+    "rows": 20189,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230131.csv",
+    "cached": false
+  },
+  "2023-02-15": {
+    "date": "2023-02-15",
+    "http_code": 200,
+    "size": 1961269,
+    "rows": 20099,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230215.csv",
+    "cached": false
+  },
+  "2023-02-28": {
+    "date": "2023-02-28",
+    "http_code": 200,
+    "size": 1945194,
+    "rows": 19992,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230228.csv",
+    "cached": false
+  },
+  "2023-03-15": {
+    "date": "2023-03-15",
+    "http_code": 200,
+    "size": 1944478,
+    "rows": 19946,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230315.csv",
+    "cached": false
+  },
+  "2023-03-31": {
+    "date": "2023-03-31",
+    "http_code": 200,
+    "size": 1946953,
+    "rows": 19959,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230331.csv",
+    "cached": false
+  },
+  "2023-04-14": {
+    "date": "2023-04-14",
+    "http_code": 200,
+    "size": 1939975,
+    "rows": 19922,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230414.csv",
+    "cached": false
+  },
+  "2023-04-28": {
+    "date": "2023-04-28",
+    "http_code": 200,
+    "size": 1932751,
+    "rows": 19854,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230428.csv",
+    "cached": false
+  },
+  "2023-05-15": {
+    "date": "2023-05-15",
+    "http_code": 200,
+    "size": 1926133,
+    "rows": 19774,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230515.csv",
+    "cached": false
+  },
+  "2023-06-15": {
+    "date": "2023-06-15",
+    "http_code": 200,
+    "size": 1912454,
+    "rows": 19611,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230615.csv",
+    "cached": false
+  },
+  "2023-06-30": {
+    "date": "2023-06-30",
+    "http_code": 200,
+    "size": 1900950,
+    "rows": 19465,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230630.csv",
+    "cached": false
+  },
+  "2023-07-14": {
+    "date": "2023-07-14",
+    "http_code": 200,
+    "size": 1882884,
+    "rows": 19322,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230714.csv",
+    "cached": false
+  },
+  "2023-05-31": {
+    "date": "2023-05-31",
+    "http_code": 200,
+    "size": 1920137,
+    "rows": 19707,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230531.csv",
+    "cached": false
+  },
+  "2023-07-31": {
+    "date": "2023-07-31",
+    "http_code": 200,
+    "size": 1896857,
+    "rows": 19442,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230731.csv",
+    "cached": false
+  },
+  "2023-08-15": {
+    "date": "2023-08-15",
+    "http_code": 200,
+    "size": 1887845,
+    "rows": 19367,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230815.csv",
+    "cached": false
+  },
+  "2023-08-31": {
+    "date": "2023-08-31",
+    "http_code": 200,
+    "size": 1886016,
+    "rows": 19336,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230831.csv",
+    "cached": false
+  },
+  "2023-09-15": {
+    "date": "2023-09-15",
+    "http_code": 200,
+    "size": 1879655,
+    "rows": 19297,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230915.csv",
+    "cached": false
+  },
+  "2023-09-29": {
+    "date": "2023-09-29",
+    "http_code": 200,
+    "size": 1870171,
+    "rows": 19209,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20230929.csv",
+    "cached": false
+  },
+  "2023-10-13": {
+    "date": "2023-10-13",
+    "http_code": 200,
+    "size": 1884613,
+    "rows": 19369,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20231013.csv",
+    "cached": false
+  },
+  "2023-11-15": {
+    "date": "2023-11-15",
+    "http_code": 200,
+    "size": 1873111,
+    "rows": 19222,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20231115.csv",
+    "cached": false
+  },
+  "2023-11-30": {
+    "date": "2023-11-30",
+    "http_code": 200,
+    "size": 1868440,
+    "rows": 19205,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20231130.csv",
+    "cached": false
+  },
+  "2023-12-15": {
+    "date": "2023-12-15",
+    "http_code": 200,
+    "size": 1877694,
+    "rows": 19268,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20231215.csv",
+    "cached": false
+  },
+  "2023-12-29": {
+    "date": "2023-12-29",
+    "http_code": 200,
+    "size": 1874384,
+    "rows": 19224,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20231229.csv",
+    "cached": false
+  },
+  "2023-10-31": {
+    "date": "2023-10-31",
+    "http_code": 200,
+    "size": 1881106,
+    "rows": 19303,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20231031.csv",
+    "cached": false
+  },
+  "2024-01-12": {
+    "date": "2024-01-12",
+    "http_code": 200,
+    "size": 1869155,
+    "rows": 19223,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240112.csv",
+    "cached": false
+  },
+  "2024-01-31": {
+    "date": "2024-01-31",
+    "http_code": 200,
+    "size": 1877452,
+    "rows": 19271,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240131.csv",
+    "cached": false
+  },
+  "2024-02-29": {
+    "date": "2024-02-29",
+    "http_code": 200,
+    "size": 1875551,
+    "rows": 19276,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240229.csv",
+    "cached": false
+  },
+  "2024-02-15": {
+    "date": "2024-02-15",
+    "http_code": 200,
+    "size": 1881607,
+    "rows": 19323,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240215.csv",
+    "cached": false
+  },
+  "2024-03-29": {
+    "date": "2024-03-29",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2024-03-15": {
+    "date": "2024-03-15",
+    "http_code": 200,
+    "size": 1887549,
+    "rows": 19387,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240315.csv",
+    "cached": false
+  },
+  "2024-04-15": {
+    "date": "2024-04-15",
+    "http_code": 200,
+    "size": 1895932,
+    "rows": 19464,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240415.csv",
+    "cached": false
+  },
+  "2024-05-15": {
+    "date": "2024-05-15",
+    "http_code": 200,
+    "size": 1896045,
+    "rows": 19471,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240515.csv",
+    "cached": false
+  },
+  "2024-04-30": {
+    "date": "2024-04-30",
+    "http_code": 200,
+    "size": 1896384,
+    "rows": 19468,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240430.csv",
+    "cached": false
+  },
+  "2024-05-31": {
+    "date": "2024-05-31",
+    "http_code": 200,
+    "size": 1898549,
+    "rows": 19491,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240531.csv",
+    "cached": false
+  },
+  "2024-06-28": {
+    "date": "2024-06-28",
+    "http_code": 200,
+    "size": 1891007,
+    "rows": 19427,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240628.csv",
+    "cached": false
+  },
+  "2024-06-14": {
+    "date": "2024-06-14",
+    "http_code": 200,
+    "size": 1893051,
+    "rows": 19450,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240614.csv",
+    "cached": false
+  },
+  "2024-07-15": {
+    "date": "2024-07-15",
+    "http_code": 200,
+    "size": 1906335,
+    "rows": 19573,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240715.csv",
+    "cached": false
+  },
+  "2024-07-31": {
+    "date": "2024-07-31",
+    "http_code": 200,
+    "size": 1903595,
+    "rows": 19527,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240731.csv",
+    "cached": false
+  },
+  "2024-08-30": {
+    "date": "2024-08-30",
+    "http_code": 200,
+    "size": 1900851,
+    "rows": 19514,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240830.csv",
+    "cached": false
+  },
+  "2024-08-15": {
+    "date": "2024-08-15",
+    "http_code": 200,
+    "size": 1903399,
+    "rows": 19530,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240815.csv",
+    "cached": false
+  },
+  "2024-09-13": {
+    "date": "2024-09-13",
+    "http_code": 200,
+    "size": 1902479,
+    "rows": 19566,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240913.csv",
+    "cached": false
+  },
+  "2024-09-30": {
+    "date": "2024-09-30",
+    "http_code": 200,
+    "size": 1920378,
+    "rows": 19692,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20240930.csv",
+    "cached": false
+  },
+  "2024-10-15": {
+    "date": "2024-10-15",
+    "http_code": 200,
+    "size": 1926144,
+    "rows": 19755,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20241015.csv",
+    "cached": false
+  },
+  "2024-11-15": {
+    "date": "2024-11-15",
+    "http_code": 200,
+    "size": 1926518,
+    "rows": 19729,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20241115.csv",
+    "cached": false
+  },
+  "2024-10-31": {
+    "date": "2024-10-31",
+    "http_code": 200,
+    "size": 1919437,
+    "rows": 19659,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20241031.csv",
+    "cached": false
+  },
+  "2024-11-29": {
+    "date": "2024-11-29",
+    "http_code": 200,
+    "size": 1946565,
+    "rows": 19946,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20241129.csv",
+    "cached": false
+  },
+  "2024-12-13": {
+    "date": "2024-12-13",
+    "http_code": 200,
+    "size": 1940257,
+    "rows": 19883,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20241213.csv",
+    "cached": false
+  },
+  "2024-12-31": {
+    "date": "2024-12-31",
+    "http_code": 200,
+    "size": 1931555,
+    "rows": 19763,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20241231.csv",
+    "cached": false
+  },
+  "2025-01-15": {
+    "date": "2025-01-15",
+    "http_code": 200,
+    "size": 1944546,
+    "rows": 19921,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250115.csv",
+    "cached": false
+  },
+  "2025-01-31": {
+    "date": "2025-01-31",
+    "http_code": 200,
+    "size": 1954436,
+    "rows": 19999,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250131.csv",
+    "cached": false
+  },
+  "2025-02-14": {
+    "date": "2025-02-14",
+    "http_code": 200,
+    "size": 1961622,
+    "rows": 20108,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250214.csv",
+    "cached": false
+  },
+  "2025-02-28": {
+    "date": "2025-02-28",
+    "http_code": 200,
+    "size": 1962154,
+    "rows": 20101,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250228.csv",
+    "cached": false
+  },
+  "2025-03-14": {
+    "date": "2025-03-14",
+    "http_code": 200,
+    "size": 1972621,
+    "rows": 20194,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250314.csv",
+    "cached": false
+  },
+  "2025-04-15": {
+    "date": "2025-04-15",
+    "http_code": 200,
+    "size": 1988707,
+    "rows": 20324,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250415.csv",
+    "cached": false
+  },
+  "2025-03-31": {
+    "date": "2025-03-31",
+    "http_code": 200,
+    "size": 1978656,
+    "rows": 20270,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250331.csv",
+    "cached": false
+  },
+  "2025-04-30": {
+    "date": "2025-04-30",
+    "http_code": 200,
+    "size": 1984282,
+    "rows": 20325,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250430.csv",
+    "cached": false
+  },
+  "2025-05-15": {
+    "date": "2025-05-15",
+    "http_code": 200,
+    "size": 1987195,
+    "rows": 20354,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250515.csv",
+    "cached": false
+  },
+  "2025-05-30": {
+    "date": "2025-05-30",
+    "http_code": 200,
+    "size": 1987925,
+    "rows": 20362,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250530.csv",
+    "cached": false
+  },
+  "2025-06-13": {
+    "date": "2025-06-13",
+    "http_code": 200,
+    "size": 1995804,
+    "rows": 20462,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250613.csv",
+    "cached": false
+  },
+  "2025-07-15": {
+    "date": "2025-07-15",
+    "http_code": 200,
+    "size": 2014011,
+    "rows": 20611,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250715.csv",
+    "cached": false
+  },
+  "2025-06-30": {
+    "date": "2025-06-30",
+    "http_code": 200,
+    "size": 2004145,
+    "rows": 20516,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250630.csv",
+    "cached": false
+  },
+  "2025-07-31": {
+    "date": "2025-07-31",
+    "http_code": 200,
+    "size": 2013521,
+    "rows": 20595,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250731.csv",
+    "cached": false
+  },
+  "2025-08-15": {
+    "date": "2025-08-15",
+    "http_code": 200,
+    "size": 2017357,
+    "rows": 20659,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250815.csv",
+    "cached": false
+  },
+  "2025-08-29": {
+    "date": "2025-08-29",
+    "http_code": 200,
+    "size": 2013507,
+    "rows": 20625,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250829.csv",
+    "cached": false
+  },
+  "2025-09-15": {
+    "date": "2025-09-15",
+    "http_code": 200,
+    "size": 2019681,
+    "rows": 20685,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250915.csv",
+    "cached": false
+  },
+  "2025-10-15": {
+    "date": "2025-10-15",
+    "http_code": 200,
+    "size": 2052842,
+    "rows": 20952,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20251015.csv",
+    "cached": false
+  },
+  "2025-09-30": {
+    "date": "2025-09-30",
+    "http_code": 200,
+    "size": 2039094,
+    "rows": 20835,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20250930.csv",
+    "cached": false
+  },
+  "2025-10-31": {
+    "date": "2025-10-31",
+    "http_code": 200,
+    "size": 2053422,
+    "rows": 20957,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20251031.csv",
+    "cached": false
+  },
+  "2025-11-14": {
+    "date": "2025-11-14",
+    "http_code": 200,
+    "size": 2060789,
+    "rows": 21069,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20251114.csv",
+    "cached": false
+  },
+  "2025-12-15": {
+    "date": "2025-12-15",
+    "http_code": 200,
+    "size": 2064630,
+    "rows": 21107,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20251215.csv",
+    "cached": false
+  },
+  "2026-01-15": {
+    "date": "2026-01-15",
+    "http_code": 200,
+    "size": 2079871,
+    "rows": 21264,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20260115.csv",
+    "cached": false
+  },
+  "2025-12-31": {
+    "date": "2025-12-31",
+    "http_code": 200,
+    "size": 2074828,
+    "rows": 21202,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20251231.csv",
+    "cached": false
+  },
+  "2026-01-30": {
+    "date": "2026-01-30",
+    "http_code": 200,
+    "size": 2093288,
+    "rows": 21375,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20260130.csv",
+    "cached": false
+  },
+  "2025-11-28": {
+    "date": "2025-11-28",
+    "http_code": 200,
+    "size": 2073779,
+    "rows": 21195,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20251128.csv",
+    "cached": false
+  },
+  "2026-02-13": {
+    "date": "2026-02-13",
+    "http_code": 200,
+    "size": 2107115,
+    "rows": 21530,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20260213.csv",
+    "cached": false
+  },
+  "2026-02-27": {
+    "date": "2026-02-27",
+    "http_code": 200,
+    "size": 2109555,
+    "rows": 21578,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20260227.csv",
+    "cached": false
+  },
+  "2026-04-15": {
+    "date": "2026-04-15",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2026-03-31": {
+    "date": "2026-03-31",
+    "http_code": 200,
+    "size": 2122995,
+    "rows": 21680,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20260331.csv",
+    "cached": false
+  },
+  "2026-04-30": {
+    "date": "2026-04-30",
+    "http_code": 403,
+    "size": 0,
+    "rows": 0,
+    "path": null,
+    "cached": false
+  },
+  "2026-03-13": {
+    "date": "2026-03-13",
+    "http_code": 200,
+    "size": 2113556,
+    "rows": 21589,
+    "path": "/sessions/confident-serene-ptolemy/mnt/9realms/si_raw/shrt20260313.csv",
+    "cached": false
+  }
+}

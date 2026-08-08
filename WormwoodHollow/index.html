@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wormwood Hollow</title>
+  <link rel="stylesheet" href="/src/ui/styles.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <div class="veil" id="veil">
+    <div class="card">
+      <h2>Come Morning</h2>
+      <div class="s" id="cmSub">You were away. The hollow did not rest.</div>
+      <div id="cmLines"></div>
+      <button id="cmClose">Face the day</button>
+    </div>
+  </div>
+
+  <div class="veil" id="prologueVeil">
+    <div class="card">
+      <h2 id="plTitle">The Salt Line</h2>
+      <div class="prologue" id="plBody"></div>
+      <button id="plNext">Go on</button>
+    </div>
+  </div>
+
+  <div class="veil" id="endVeil">
+    <div class="card">
+      <h2>The Bottom of the World</h2>
+      <div class="s">Nine shards in hand, the master-rune before you. What do you do with the name?</div>
+      <div id="endList"></div>
+      <button id="endCancel">Not yet</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

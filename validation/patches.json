@@ -1,0 +1,11 @@
+{
+  "date": "2026-02-28T22:35:03.297901",
+  "kills": [
+    {
+      "switch": "ALDX_LIFT_INSUFFICIENT",
+      "lift_pp": 5.3,
+      "threshold": 6.0,
+      "action": "FLAG \u2014 CEO module needs recalibration"
+    }
+  ]
+}

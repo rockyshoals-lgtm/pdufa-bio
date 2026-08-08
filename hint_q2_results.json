@@ -1,0 +1,112 @@
+{
+  "generated": "2026-04-19",
+  "model": "HINT_TOP",
+  "results": [
+    {
+      "id": "GRCE_PDUFA_STRIVEON",
+      "ticker": "GRCE",
+      "drug": "nimodipine",
+      "trade_name": "GTX-104",
+      "phase": 3,
+      "nct": "NCT05995405",
+      "icd10": "I60.9",
+      "indication": "Aneurysmal subarachnoid hemorrhage (SAH)",
+      "catalyst_date": "2026-04-23",
+      "catalyst_type": "PDUFA",
+      "note": "505(b)(2) IV nanoparticle reformulation of approved nimodipine. ODD.",
+      "eligibility": "Inclusion:\nAdults age 18 or older\nConfirmed aneurysmal subarachnoid hemorrhage\nRandomization within 96 hours of bleed onset\nWFNS grade I-IV\nModified Fisher score 1-4\nAble to receive full 21-day course of nimodipine\nExclusion:\nSevere cardiac disease\nHypotension at screening\nHypersensitivity to nimodipine\nPregnancy\nPrior CYP3A inducer use",
+      "ood": false,
+      "hint": {
+        "scorable": true,
+        "phase_ckpt": 3,
+        "smiles": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC(C)COC)C1C1=CC([N+](=O)[O-])=CC=C1",
+        "raw_logit": -0.43957725167274475,
+        "prob_success": 0.39184167981147766,
+        "tier": "NEUT-"
+      }
+    },
+    {
+      "id": "CRDF_READOUT_P2_mCRC",
+      "ticker": "CRDF",
+      "drug": "onvansertib",
+      "trade_name": "CRDF-004",
+      "phase": 2,
+      "nct": "NCT06106308",
+      "icd10": "C18.9",
+      "indication": "Metastatic colorectal cancer (mCRC), 1L KRAS-mutant",
+      "catalyst_date": "2026-06-30",
+      "catalyst_type": "READOUT",
+      "note": "PLK1 inhibitor + FOLFIRI + bevacizumab. Jan 2026 interim: 72.2% ORR at 30mg vs 43% SOC.",
+      "eligibility": "Inclusion:\nAge 18 or older with histologically confirmed metastatic colorectal adenocarcinoma\nKRAS mutation (any variant)\nNo prior therapy for metastatic disease\nECOG performance status 0-1\nMeasurable disease per RECIST 1.1\nAdequate organ function\nExclusion:\nPrior PLK1 inhibitor exposure\nActive CNS metastases\nGrade 3 or higher peripheral neuropathy\nUncontrolled hypertension\nPregnancy or breastfeeding",
+      "ood": false,
+      "hint": {
+        "scorable": true,
+        "phase_ckpt": 2,
+        "smiles": "CN1N=C(C(F)(F)F)C=C1C1=CN2N=CC(=CC2=N1)NC1=NC=C(C=N1)CN1CCC(N(C)C)CC1",
+        "raw_logit": 0.7231026887893677,
+        "prob_success": 0.6732898950576782,
+        "tier": "NEUT+"
+      }
+    },
+    {
+      "id": "WHWK_AACR_PRECLIN",
+      "ticker": "WHWK",
+      "drug": "hwk-007",
+      "trade_name": "HWK-007",
+      "phase": 1,
+      "nct": null,
+      "icd10": "C80.1",
+      "indication": "Various cancers (disclosed preclinically)",
+      "catalyst_date": "2026-04-21",
+      "catalyst_type": "CONFERENCE_PRECLIN",
+      "note": "PRECLINICAL data at AACR. No NCT, no public SMILES. HINT INFERENCE NOT RELIABLE.",
+      "eligibility": "Preclinical \u2014 no clinical eligibility criteria available",
+      "ood": true,
+      "ood_reason": "Preclinical AACR data, no disclosed SMILES for HWK-007, HINT requires clinical trial context",
+      "hint": {
+        "scorable": false,
+        "reason": "Preclinical AACR data, no disclosed SMILES for HWK-007, HINT requires clinical trial context"
+      }
+    },
+    {
+      "id": "CABA_AAN_RESETMG",
+      "ticker": "CABA",
+      "drug": "rese-cel",
+      "trade_name": "CABA-201 (resecabtagene autoleucel)",
+      "phase": 2,
+      "nct": "NCT06359041",
+      "icd10": "G70.00",
+      "indication": "Generalized myasthenia gravis (gMG)",
+      "catalyst_date": "2026-04-20",
+      "catalyst_type": "CONFERENCE",
+      "note": "Autologous CD19 CAR-T. CELL THERAPY \u2014 out of scope for HINT molecular encoder.",
+      "eligibility": "N/A \u2014 cell therapy",
+      "ood": true,
+      "ood_reason": "CAR-T cell therapy \u2014 no drug-like small molecule SMILES. HINT MPNN encoder is drug-molecule specific.",
+      "hint": {
+        "scorable": false,
+        "reason": "CAR-T cell therapy \u2014 no drug-like small molecule SMILES. HINT MPNN encoder is drug-molecule specific."
+      }
+    },
+    {
+      "id": "ALXO_ESMO_CD47",
+      "ticker": "ALXO",
+      "drug": "evorpacept",
+      "trade_name": "Evorpacept (ALX148) + zanidatamab",
+      "phase": 2,
+      "nct": "NCT05027139",
+      "icd10": "C50.911",
+      "indication": "HER2+ breast cancer, CD47 inhibitor combo",
+      "catalyst_date": "2026-05-07",
+      "catalyst_type": "CONFERENCE",
+      "note": "CD47 myeloid checkpoint inhibitor \u2014 Fc-inactive IgG fusion protein. BIOLOGIC \u2014 out of scope.",
+      "eligibility": "N/A \u2014 biologic fusion protein",
+      "ood": true,
+      "ood_reason": "Biologic (engineered fusion protein), not a drug-like small molecule. HINT MPNN encoder cannot embed.",
+      "hint": {
+        "scorable": false,
+        "reason": "Biologic (engineered fusion protein), not a drug-like small molecule. HINT MPNN encoder cannot embed."
+      }
+    }
+  ]
+}

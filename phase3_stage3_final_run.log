@@ -1,0 +1,114 @@
+================================================================================
+  BIFROST v5.9 KAIZEN — Phase 3 ORATS Honest Evaluation
+================================================================================
+  Loading: pdufa_runup_bifrost_v2.csv
+  BIFROST events: 1705
+  Price cache: 1662 entries
+  SI snapshot: 588 tickers (cutoff 2026-04-03)
+  ODIN enrichment: 2108 rows
+  XBI cache: 1823 days
+  ORATS cache: 14703 files
+
+--------------------------------------------------------------------------------
+  Feature engineering
+--------------------------------------------------------------------------------
+  Events built: 1704  (skipped 1)
+  ORATS coverage (of 1704 events):
+    T-14 core:    1360   (79.8%)
+    T-7  core:    1138   (66.8%)
+    T-1  core:    1141   (67.0%)
+    T-14 strikes: 1360   (79.8%)
+    T-1  strikes: 1137   (66.7%)
+  Total ORATS features generated: 128
+  Train (<=2023): 1032  explosion_rate=0.047
+  Val   (2024):   341  explosion_rate=0.041
+  Test  (>=2025): 331  explosion_rate=0.103
+  ORATS candidates after variance filter (>=15 non-zero, std>0): 128
+
+--------------------------------------------------------------------------------
+  Step 1: Reproduce v5.8 60-feature baseline
+--------------------------------------------------------------------------------
+  v5.8 final 60 features @ C=0.01: val AUC = 0.8124
+
+--------------------------------------------------------------------------------
+  Step 2: C sweep on baseline
+--------------------------------------------------------------------------------
+    C=0.01  : val AUC = 0.8124
+    C=0.03  : val AUC = 0.7837
+    C=0.05  : val AUC = 0.7652
+    C=0.1   : val AUC = 0.7442
+    C=0.25  : val AUC = 0.7173
+    C=0.5   : val AUC = 0.6981
+    C=1.0   : val AUC = 0.6813
+  C sweep winner: C=0.01  val AUC=0.8124
+
+--------------------------------------------------------------------------------
+  Step 3: Fast single-feature pre-screen
+--------------------------------------------------------------------------------
+  Top 15 solo additions (vs baseline 0.8124):
+    ✅ orats_fwd30_20_T14                                 val=0.8630  Δ=+0.0507
+    ✅ orats_contango_T1                                  val=0.8606  Δ=+0.0483
+    ✅ orats_rVol30_T14                                   val=0.8582  Δ=+0.0459
+    ✅ orats_iv60d_T14                                    val=0.8534  Δ=+0.0411
+    ✅ orats_skewing_T14                                  val=0.8523  Δ=+0.0400
+    ✅ orats_iv30d_T14                                    val=0.8506  Δ=+0.0382
+    ✅ orats_fwd60_30_T14                                 val=0.8478  Δ=+0.0354
+    ✅ orats_iv10d_T1                                     val=0.8464  Δ=+0.0341
+    ✅ orats_iv10d_T7                                     val=0.8427  Δ=+0.0304
+    ✅ orats_iv90d_T14                                    val=0.8427  Δ=+0.0304
+    ✅ orats_put_skew_T1                                  val=0.8397  Δ=+0.0273
+    ✅ orats_iv20d_T7                                     val=0.8394  Δ=+0.0271
+    ✅ orats_fwd90_30_T14                                 val=0.8386  Δ=+0.0262
+    ✅ orats_iv20d_T1                                     val=0.8386  Δ=+0.0262
+    ✅ orats_iv_T14                                       val=0.8384  Δ=+0.0260
+  Greedy pool (solo Δ >= -0.001): 97
+
+--------------------------------------------------------------------------------
+  Step 4: Greedy forward selection on ORATS candidates
+--------------------------------------------------------------------------------
+  round 1: +orats_fwd30_20_T14                                  val=0.8630  Δ=+0.0507
+  round 2: +orats_contango_T1                                   val=0.8834  Δ=+0.0203
+  round 3: +orats_skewing_T14                                   val=0.8941  Δ=+0.0107
+  round 4: +orats_put_skew_T1                                   val=0.9006  Δ=+0.0066
+  round 5: +orats_fwd60_30_T14                                  val=0.9059  Δ=+0.0052
+  round 6: +orats_scorable_strikes_T1                           val=0.9111  Δ=+0.0052
+  round 7: +orats_fwd60_30_T7                                   val=0.9155  Δ=+0.0044
+  round 8: no candidate meets gate (best gain +0.0020)
+
+  Final selected features: 67  (baseline 60 + 7 ORATS)
+
+--------------------------------------------------------------------------------
+  Step 5: Architecture sweep on VAL
+--------------------------------------------------------------------------------
+  R=1.00 G=0.00 L=0.00: val AUC = 0.9155
+/sessions/confident-serene-ptolemy/.local/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+  R=0.90 G=0.05 L=0.05: val AUC = 0.9135
+/sessions/confident-serene-ptolemy/.local/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+  R=0.80 G=0.10 L=0.10: val AUC = 0.9113
+/sessions/confident-serene-ptolemy/.local/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+  R=0.70 G=0.15 L=0.15: val AUC = 0.9093
+/sessions/confident-serene-ptolemy/.local/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+  R=0.60 G=0.20 L=0.20: val AUC = 0.9045
+/sessions/confident-serene-ptolemy/.local/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+  R=0.50 G=0.25 L=0.25: val AUC = 0.9017
+  BEST arch: weights=[1.0, 0.0, 0.0]  val AUC=0.9155
+
+================================================================================
+  FINAL TEST (touched once)
+================================================================================
+  Final test AUC (Ridge only):        0.8657  CI95=[0.8180, 0.9101]
+  Final test AUC (ensemble):          0.8657  CI95=[0.8180, 0.9101]
+  v5.6 honest bar:                    0.8861
+  v5.8 honest recent:                 0.8671
+  Δ vs v5.6 bar (ensemble):           -2.04 pp
+  Δ vs v5.8 (ensemble):               -0.14 pp
+  VERDICT: REGRESSION — hold v5.5 deployment
+
+  WROTE /sessions/confident-serene-ptolemy/mnt/9realms/bifrost_v59_kaizen_results.json
+  NOT PROMOTED — no deploy file written
+================================================================================

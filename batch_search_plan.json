@@ -1,0 +1,5464 @@
+[
+  {
+    "drug": "GLPG5201 - (EUPLAGIA-1)",
+    "drug_clean": "GLPG5201",
+    "query": "GLPG5201 B-cell malignancies, Chronic Lymphocytic",
+    "n_rows": 4,
+    "rows": [
+      249,
+      387,
+      663,
+      816
+    ],
+    "indication": "B-cell malignancies, Chronic Lymphocytic Leukemia (CLL) and ",
+    "sponsor": ""
+  },
+  {
+    "drug": "Barzolvolimab - (CindU)",
+    "drug_clean": "Barzolvolimab",
+    "query": "Barzolvolimab Chronic inducible urticaria (CIndU),",
+    "n_rows": 4,
+    "rows": [
+      717,
+      955,
+      1070,
+      1590
+    ],
+    "indication": "Chronic inducible urticaria (CIndU), cold urticaria (ColdU) ",
+    "sponsor": ""
+  },
+  {
+    "drug": "Botensilimab plus balstilimab - (BATTMAN)",
+    "drug_clean": "Botensilimab plus balstilimab",
+    "query": "Botensilimab plus balstilimab Relapsed/refractory microsatellite stable colorectal",
+    "n_rows": 3,
+    "rows": [
+      1,
+      295,
+      1313
+    ],
+    "indication": "Relapsed/refractory microsatellite stable colorectal cancer ",
+    "sponsor": ""
+  },
+  {
+    "drug": "Piclidenoson - (COMFORT)",
+    "drug_clean": "Piclidenoson",
+    "query": "Piclidenoson Psoriasis",
+    "n_rows": 3,
+    "rows": [
+      2,
+      80,
+      429
+    ],
+    "indication": "Psoriasis",
+    "sponsor": ""
+  },
+  {
+    "drug": "REYOBIQ (rhenium Re186 obisbemeda) - (ReSPECT-GBM)",
+    "drug_clean": "REYOBIQ",
+    "query": "REYOBIQ Glioma",
+    "n_rows": 3,
+    "rows": [
+      160,
+      430,
+      1043
+    ],
+    "indication": "Glioma",
+    "sponsor": ""
+  },
+  {
+    "drug": "ADI-001",
+    "drug_clean": "ADI-001",
+    "query": "ADI-001 Non-Hodgkin\u2019s lymphoma",
+    "n_rows": 3,
+    "rows": [
+      193,
+      421,
+      664
+    ],
+    "indication": "Non-Hodgkin\u2019s lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "GC012F",
+    "drug_clean": "GC012F",
+    "query": "GC012F Relapsed/refractory multiple myeloma (RRMM)",
+    "n_rows": 3,
+    "rows": [
+      391,
+      498,
+      678
+    ],
+    "indication": "Relapsed/refractory multiple myeloma (RRMM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Aleniglipron (GSBR-1290) - (ACCESS and ACCESS II )",
+    "drug_clean": "Aleniglipron",
+    "query": "Aleniglipron Type 2 Diabetes, obesity",
+    "n_rows": 3,
+    "rows": [
+      530,
+      695,
+      884
+    ],
+    "indication": "Type 2 Diabetes, obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "Revuforj (revumenib)  - (AUGMENT-101)",
+    "drug_clean": "Revuforj",
+    "query": "Revuforj Relapsed/refractory (R/R) acute leukemias",
+    "n_rows": 3,
+    "rows": [
+      532,
+      685,
+      1096
+    ],
+    "indication": "Relapsed/refractory (R/R) acute leukemias",
+    "sponsor": ""
+  },
+  {
+    "drug": "Neladalkib (NVL-655) - (ALKove-1)",
+    "drug_clean": "Neladalkib",
+    "query": "Neladalkib ALK non-small cell lung",
+    "n_rows": 3,
+    "rows": [
+      537,
+      1556,
+      1620
+    ],
+    "indication": "ALK non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tambiciclib (SLS009) (GFH009) with venetoclax",
+    "drug_clean": "Tambiciclib with venetoclax",
+    "query": "Tambiciclib with venetoclax Hematologic malignancies, acute myeloid",
+    "n_rows": 3,
+    "rows": [
+      550,
+      610,
+      1449
+    ],
+    "indication": "Hematologic malignancies, acute myeloid leukemia (AML), chro",
+    "sponsor": ""
+  },
+  {
+    "drug": "Belzupacap sarotalocan (AU-011)",
+    "drug_clean": "Belzupacap sarotalocan",
+    "query": "Belzupacap sarotalocan Non-muscular invasive bladder cancer",
+    "n_rows": 3,
+    "rows": [
+      598,
+      1061,
+      1280
+    ],
+    "indication": "Non-muscular invasive bladder cancer (NMIBC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Nyxol + Low-Dose Pilocarpine Eye Drops - (VEGA-2/VEGA-3)",
+    "drug_clean": "Nyxol + Low-Dose Pilocarpine Eye Drops",
+    "query": "Nyxol + Low-Dose Pilocarpine Eye Drops Presbyopia",
+    "n_rows": 3,
+    "rows": [
+      623,
+      1429,
+      1430
+    ],
+    "indication": "Presbyopia",
+    "sponsor": ""
+  },
+  {
+    "drug": "LYT-200",
+    "drug_clean": "LYT-200",
+    "query": "LYT-200 Solid tumors, urothelial and",
+    "n_rows": 3,
+    "rows": [
+      657,
+      1146,
+      1642
+    ],
+    "indication": "Solid tumors, urothelial and head and neck cancers, acute my",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rademikibart - (Seabreeze STAT Asthma)",
+    "drug_clean": "Rademikibart",
+    "query": "Rademikibart Asthma",
+    "n_rows": 3,
+    "rows": [
+      681,
+      1288,
+      1413
+    ],
+    "indication": "Asthma",
+    "sponsor": ""
+  },
+  {
+    "drug": "Bria-IMT - (BRIA-ABC)",
+    "drug_clean": "Bria-IMT",
+    "query": "Bria-IMT Advanced breast cancer",
+    "n_rows": 3,
+    "rows": [
+      705,
+      862,
+      880
+    ],
+    "indication": "Advanced breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "[212Pb]VMT-\u03b1-NET",
+    "drug_clean": "[212Pb]VMT-\u03b1-NET",
+    "query": "[212Pb]VMT-\u03b1-NET Neuroendocrine tumors (NETs)",
+    "n_rows": 3,
+    "rows": [
+      971,
+      1561,
+      1714
+    ],
+    "indication": "Neuroendocrine tumors (NETs)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rinatabart sesutecan (Rina-S) - (RAINFOL)",
+    "drug_clean": "Rinatabart sesutecan",
+    "query": "Rinatabart sesutecan Ovarian cancer, Endometrial Cancers,",
+    "n_rows": 3,
+    "rows": [
+      1017,
+      1272,
+      1384
+    ],
+    "indication": "Ovarian cancer, Endometrial Cancers, Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Givastomig (CLDN18.2 x 4-1BB bispecific antibody)",
+    "drug_clean": "Givastomig",
+    "query": "Givastomig HER2-negative metastatic gastric cancer,",
+    "n_rows": 3,
+    "rows": [
+      1026,
+      1431,
+      1439
+    ],
+    "indication": "HER2-negative metastatic gastric cancer, solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Taldefgrobep - (RESILIENT)",
+    "drug_clean": "Taldefgrobep",
+    "query": "Taldefgrobep Spinal Muscular Atrophy (SMA)",
+    "n_rows": 3,
+    "rows": [
+      1117,
+      1118,
+      1119
+    ],
+    "indication": "Spinal Muscular Atrophy (SMA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Allocetra - (ENX-CL-05-001)",
+    "drug_clean": "Allocetra",
+    "query": "Allocetra Knee osteoarthritis (OA)",
+    "n_rows": 3,
+    "rows": [
+      1128,
+      1500,
+      1629
+    ],
+    "indication": "Knee osteoarthritis (OA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LYL314 (IMPT-314)",
+    "drug_clean": "LYL314",
+    "query": "LYL314 Large B-cell lymphoma",
+    "n_rows": 3,
+    "rows": [
+      1147,
+      1419,
+      1650
+    ],
+    "indication": "Large B-cell lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "BPL-003",
+    "drug_clean": "BPL-003",
+    "query": "BPL-003 Resistant Depression",
+    "n_rows": 3,
+    "rows": [
+      1438,
+      1515,
+      1608
+    ],
+    "indication": "Resistant Depression",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) with ENHANZE",
+    "drug_clean": "Tecentriq Hybreza with ENHANZE",
+    "query": "Tecentriq Hybreza with ENHANZE Lung, liver, skin and",
+    "n_rows": 2,
+    "rows": [
+      35,
+      37
+    ],
+    "indication": "Lung, liver, skin and soft tissue cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Pivekimab (IMGN632) - (CADENZA)",
+    "drug_clean": "Pivekimab",
+    "query": "Pivekimab Relapse/Refractory AML, ALL, BPDCN",
+    "n_rows": 2,
+    "rows": [
+      55,
+      388
+    ],
+    "indication": "Relapse/Refractory AML, ALL, BPDCN",
+    "sponsor": ""
+  },
+  {
+    "drug": "D-PLEX100 - (SHIELD I)",
+    "drug_clean": "D-PLEX100",
+    "query": "D-PLEX100 Abdominal (soft tissue) sternal",
+    "n_rows": 2,
+    "rows": [
+      56,
+      1062
+    ],
+    "indication": "Abdominal (soft tissue) sternal surgical site infections",
+    "sponsor": ""
+  },
+  {
+    "drug": "IZERVAY (avacincaptad pegol intravitreal solution)",
+    "drug_clean": "IZERVAY",
+    "query": "IZERVAY Geographic atrophy (GA) secondary",
+    "n_rows": 2,
+    "rows": [
+      59,
+      516
+    ],
+    "indication": "Geographic atrophy (GA) secondary to age-related macular deg",
+    "sponsor": ""
+  },
+  {
+    "drug": "BNT211",
+    "drug_clean": "BNT211",
+    "query": "BNT211 Solid tumors",
+    "n_rows": 2,
+    "rows": [
+      72,
+      1010
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Multikine - (IT-MATTERS)",
+    "drug_clean": "Multikine",
+    "query": "Multikine Head and Neck cancer",
+    "n_rows": 2,
+    "rows": [
+      120,
+      950
+    ],
+    "indication": "Head and Neck cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "NX-2127",
+    "drug_clean": "NX-2127",
+    "query": "NX-2127 B-cell malignancies, chronic lymphocytic",
+    "n_rows": 2,
+    "rows": [
+      129,
+      675
+    ],
+    "indication": "B-cell malignancies, chronic lymphocytic leukemia (CLL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Iomab-B - (SIERRA)",
+    "drug_clean": "Iomab-B",
+    "query": "Iomab-B Acute myeloid leukemia (AML)",
+    "n_rows": 2,
+    "rows": [
+      132,
+      259
+    ],
+    "indication": "Acute myeloid leukemia (AML)",
+    "sponsor": ""
+  },
+  {
+    "drug": "FasTCAR-T GC012F",
+    "drug_clean": "FasTCAR-T GC012F",
+    "query": "FasTCAR-T GC012F Diffuse large B-cell lymphoma",
+    "n_rows": 2,
+    "rows": [
+      135,
+      197
+    ],
+    "indication": "Diffuse large B-cell lymphoma (DLBCL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "XOLREMDI (mavorixafor)",
+    "drug_clean": "XOLREMDI",
+    "query": "XOLREMDI WHIM syndrome",
+    "n_rows": 2,
+    "rows": [
+      164,
+      334
+    ],
+    "indication": "WHIM syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "NKX019",
+    "drug_clean": "NKX019",
+    "query": "NKX019 B-cell malignancies",
+    "n_rows": 2,
+    "rows": [
+      173,
+      394
+    ],
+    "indication": "B-cell malignancies",
+    "sponsor": ""
+  },
+  {
+    "drug": "AUCATZYL (obecabtagene autoleucel)  - (FELIX)",
+    "drug_clean": "AUCATZYL",
+    "query": "AUCATZYL B-Cell Acute Lymphoblastic Leukemia",
+    "n_rows": 2,
+    "rows": [
+      189,
+      909
+    ],
+    "indication": "B-Cell Acute Lymphoblastic Leukemia",
+    "sponsor": ""
+  },
+  {
+    "drug": "Seclidemstat",
+    "drug_clean": "Seclidemstat",
+    "query": "Seclidemstat Myelodysplastic Syndromes (MDS) and",
+    "n_rows": 2,
+    "rows": [
+      206,
+      709
+    ],
+    "indication": "Myelodysplastic Syndromes (MDS) and Chronic Myelomonocytic L",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rezdiffra (resmetirom)",
+    "drug_clean": "Rezdiffra",
+    "query": "Rezdiffra Non-alcoholic steatohepatitis (NASH) with",
+    "n_rows": 2,
+    "rows": [
+      220,
+      413
+    ],
+    "indication": "Non-alcoholic steatohepatitis (NASH) with liver fibrosis (al",
+    "sponsor": ""
+  },
+  {
+    "drug": "MK-7684A - (KeyVibe-002)",
+    "drug_clean": "MK-7684A",
+    "query": "MK-7684A Non-small cell lung cancer",
+    "n_rows": 2,
+    "rows": [
+      280,
+      656
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "COBENFY (KarXT, xanomeline and trospium chloride)",
+    "drug_clean": "COBENFY",
+    "query": "COBENFY Schizophrenia",
+    "n_rows": 2,
+    "rows": [
+      286,
+      287
+    ],
+    "indication": "Schizophrenia",
+    "sponsor": ""
+  },
+  {
+    "drug": "VTP-300 (HBV003)",
+    "drug_clean": "VTP-300",
+    "query": "VTP-300 Hepatitis B (HBV)",
+    "n_rows": 2,
+    "rows": [
+      297,
+      412
+    ],
+    "indication": "Hepatitis B (HBV)",
+    "sponsor": ""
+  },
+  {
+    "drug": "NKX101",
+    "drug_clean": "NKX101",
+    "query": "NKX101 Acute myeloid leukemia /",
+    "n_rows": 2,
+    "rows": [
+      319,
+      422
+    ],
+    "indication": "Acute myeloid leukemia / myelodysplastic syndromes",
+    "sponsor": ""
+  },
+  {
+    "drug": "MORF-057-201 - (EMERALD-1)",
+    "drug_clean": "MORF-057-201",
+    "query": "MORF-057-201 Ulcerative colitis",
+    "n_rows": 2,
+    "rows": [
+      320,
+      521
+    ],
+    "indication": "Ulcerative colitis",
+    "sponsor": ""
+  },
+  {
+    "drug": "VK2809 - (VOYAGE)",
+    "drug_clean": "VK2809",
+    "query": "VK2809 Non-alcoholic steatohepatitis (NASH) and",
+    "n_rows": 2,
+    "rows": [
+      335,
+      336
+    ],
+    "indication": "Non-alcoholic steatohepatitis (NASH) and fibrosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "ANX007 - (ARCHER-II)",
+    "drug_clean": "ANX007",
+    "query": "ANX007 Geographic atrophy",
+    "n_rows": 2,
+    "rows": [
+      344,
+      837
+    ],
+    "indication": "Geographic atrophy",
+    "sponsor": ""
+  },
+  {
+    "drug": "Nanobody (sonelokimab) - (VELA-1)",
+    "drug_clean": "Nanobody",
+    "query": "Nanobody Hidradenitis suppurativa",
+    "n_rows": 2,
+    "rows": [
+      417,
+      548
+    ],
+    "indication": "Hidradenitis suppurativa",
+    "sponsor": ""
+  },
+  {
+    "drug": "CB-010 - (ANTLER)",
+    "drug_clean": "CB-010",
+    "query": "CB-010 B-Cell Non-Hodgkin Lymphoma",
+    "n_rows": 2,
+    "rows": [
+      439,
+      1586
+    ],
+    "indication": "B-Cell Non-Hodgkin Lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "APVO436",
+    "drug_clean": "APVO436",
+    "query": "APVO436 Acute myeloid leukemia (AML)",
+    "n_rows": 2,
+    "rows": [
+      448,
+      449
+    ],
+    "indication": "Acute myeloid leukemia (AML) and myelodysplastic syndromes (",
+    "sponsor": ""
+  },
+  {
+    "drug": "Icovamenib (BMF-219) - (COVALENT-101)",
+    "drug_clean": "Icovamenib",
+    "query": "Icovamenib Acute myeloid leukemia (AML)",
+    "n_rows": 2,
+    "rows": [
+      454,
+      671
+    ],
+    "indication": "Acute myeloid leukemia (AML) / acute lymphocytic leukemia (A",
+    "sponsor": ""
+  },
+  {
+    "drug": "IO102-IO103 with pembrolizumab - (basket trial)",
+    "drug_clean": "IO102-IO103 with pembrolizumab",
+    "query": "IO102-IO103 with pembrolizumab Metastatic solid tumors",
+    "n_rows": 2,
+    "rows": [
+      509,
+      510
+    ],
+    "indication": "Metastatic solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Laromestrocel (lomecel-B) - (CLEAR MIND)",
+    "drug_clean": "Laromestrocel",
+    "query": "Laromestrocel Alzheimer's Disease",
+    "n_rows": 2,
+    "rows": [
+      540,
+      701
+    ],
+    "indication": "Alzheimer's Disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Amezalpat (TPST-1120) with atezolizumab and bevacizumab - (TPST-1120-301)",
+    "drug_clean": "Amezalpat with atezolizumab and bevacizumab",
+    "query": "Amezalpat with atezolizumab and bevacizumab Hepatocellular carcinoma (HCC)",
+    "n_rows": 2,
+    "rows": [
+      546,
+      547
+    ],
+    "indication": "Hepatocellular carcinoma (HCC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Optune Lua is (Tumor Treating Fields (TTFields)) - (LUNAR)",
+    "drug_clean": "Optune Lua is)",
+    "query": "Optune Lua is) Non-small cell lung cancer",
+    "n_rows": 2,
+    "rows": [
+      553,
+      554
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zanidatamab with chemotherapy (chemo) + tislelizumab",
+    "drug_clean": "Zanidatamab with chemotherapy + tislelizumab",
+    "query": "Zanidatamab with chemotherapy + tislelizumab Gastric/gastroesophageal junction adenocarcinoma (G/GEJC)",
+    "n_rows": 2,
+    "rows": [
+      561,
+      562
+    ],
+    "indication": "Gastric/gastroesophageal junction adenocarcinoma (G/GEJC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "AL102 - (RINGSIDE)",
+    "drug_clean": "AL102",
+    "query": "AL102 Desmoid tumors",
+    "n_rows": 2,
+    "rows": [
+      569,
+      1672
+    ],
+    "indication": "Desmoid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "ELEVIDYS (SRP-9001-301) - (EMBARK)",
+    "drug_clean": "ELEVIDYS",
+    "query": "ELEVIDYS Duchenne muscular dystrophy",
+    "n_rows": 2,
+    "rows": [
+      575,
+      576
+    ],
+    "indication": "Duchenne muscular dystrophy",
+    "sponsor": ""
+  },
+  {
+    "drug": "CNTY-101 - (ELiPSE-1)",
+    "drug_clean": "CNTY-101",
+    "query": "CNTY-101 Lymphoma or Indolent Lymphoma",
+    "n_rows": 2,
+    "rows": [
+      585,
+      662
+    ],
+    "indication": "Lymphoma or Indolent Lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "SRK-181 - (DRAGON)",
+    "drug_clean": "SRK-181",
+    "query": "SRK-181 Solid Tumors",
+    "n_rows": 2,
+    "rows": [
+      586,
+      896
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "FID-007",
+    "drug_clean": "FID-007",
+    "query": "FID-007 Various cancers",
+    "n_rows": 2,
+    "rows": [
+      590,
+      1560
+    ],
+    "indication": "Various cancers",
+    "sponsor": ""
+  },
+  {
+    "drug": "VTX958 - (SERENITY)",
+    "drug_clean": "VTX958",
+    "query": "VTX958 Plaque psoriasis",
+    "n_rows": 2,
+    "rows": [
+      596,
+      597
+    ],
+    "indication": "Plaque psoriasis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zanzalintinib monotherapy or  in combination with atezolizumab - (STELLAR-001)",
+    "drug_clean": "Zanzalintinib monotherapy or  in combination with atezolizumab",
+    "query": "Zanzalintinib monotherapy or  in combination with atezolizumab Metastatic solid tumors",
+    "n_rows": 2,
+    "rows": [
+      613,
+      1219
+    ],
+    "indication": "Metastatic solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Brepocitinib",
+    "drug_clean": "Brepocitinib",
+    "query": "Brepocitinib Systemic lupus erythematosus (SLE)",
+    "n_rows": 2,
+    "rows": [
+      631,
+      632
+    ],
+    "indication": "Systemic lupus erythematosus (SLE)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BX004",
+    "drug_clean": "BX004",
+    "query": "BX004 P. aeruginosa in patients",
+    "n_rows": 2,
+    "rows": [
+      635,
+      1655
+    ],
+    "indication": "P. aeruginosa in patients with Cystic Fibrosis (CF)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Stenoparib",
+    "drug_clean": "Stenoparib",
+    "query": "Stenoparib Advanced ovarian cancer (AOC)",
+    "n_rows": 2,
+    "rows": [
+      645,
+      828
+    ],
+    "indication": "Advanced ovarian cancer (AOC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PrimeC - (PARADIGM)",
+    "drug_clean": "PrimeC",
+    "query": "PrimeC Amyotrophic Lateral Sclerosis (ALS)",
+    "n_rows": 2,
+    "rows": [
+      647,
+      1130
+    ],
+    "indication": "Amyotrophic Lateral Sclerosis (ALS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Bezuclastinib - (SUMMIT)",
+    "drug_clean": "Bezuclastinib",
+    "query": "Bezuclastinib Non-Advanced Systemic Mastocytosis",
+    "n_rows": 2,
+    "rows": [
+      660,
+      1644
+    ],
+    "indication": "Non-Advanced Systemic Mastocytosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "CRB-701 (SYS6002) with Pembrolizumab",
+    "drug_clean": "CRB-701 with Pembrolizumab",
+    "query": "CRB-701 with Pembrolizumab Solid tumors, Locally advanced",
+    "n_rows": 2,
+    "rows": [
+      725,
+      1562
+    ],
+    "indication": "Solid tumors, Locally advanced or metastatic urothelial carc",
+    "sponsor": ""
+  },
+  {
+    "drug": "Domvanalimab + zimberelimab vs. zimberelimab vs. chemotherapy - (ARC-10)",
+    "drug_clean": "Domvanalimab + zimberelimab vs. zimberelimab vs. chemotherapy",
+    "query": "Domvanalimab + zimberelimab vs. zimberelimab vs. chemotherapy Non Small Cell Lung",
+    "n_rows": 2,
+    "rows": [
+      729,
+      1081
+    ],
+    "indication": "Non Small Cell Lung Cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PSX-001 (Psilocybin treatment) - (PsiGAD2)",
+    "drug_clean": "PSX-001",
+    "query": "PSX-001 Generalized anxiety disorder (GAD)",
+    "n_rows": 2,
+    "rows": [
+      751,
+      1483
+    ],
+    "indication": "Generalized anxiety disorder (GAD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "MB-101 - (City of Hope)",
+    "drug_clean": "MB-101",
+    "query": "MB-101 High-Grade Glioma",
+    "n_rows": 2,
+    "rows": [
+      762,
+      763
+    ],
+    "indication": "High-Grade Glioma",
+    "sponsor": ""
+  },
+  {
+    "drug": "VTX2735",
+    "drug_clean": "VTX2735",
+    "query": "VTX2735 Healthy volunteers, cryopyrin-associated periodic",
+    "n_rows": 2,
+    "rows": [
+      770,
+      771
+    ],
+    "indication": "Healthy volunteers,  cryopyrin-associated periodic syndrome ",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zerlasiran (formerly SLN360) - (ALPACAR-360)",
+    "drug_clean": "Zerlasiran",
+    "query": "Zerlasiran Cardiovascular diseases and Polycythemia",
+    "n_rows": 2,
+    "rows": [
+      774,
+      1101
+    ],
+    "indication": "Cardiovascular diseases and Polycythemia vera",
+    "sponsor": ""
+  },
+  {
+    "drug": "(Z)-endoxifen with abemaciclib (VERZENIO) - (EVANGELINE)",
+    "drug_clean": "-endoxifen with abemaciclib",
+    "query": "-endoxifen with abemaciclib Pre-menopausal women w/ early-stage",
+    "n_rows": 2,
+    "rows": [
+      804,
+      807
+    ],
+    "indication": "Pre-menopausal women w/ early-stage estrogen receptor positi",
+    "sponsor": ""
+  },
+  {
+    "drug": "Columvi + GemOx - (STARGLO)",
+    "drug_clean": "Columvi + GemOx",
+    "query": "Columvi + GemOx 2L+ Diffuse Large B-Cell",
+    "n_rows": 2,
+    "rows": [
+      811,
+      1365
+    ],
+    "indication": "2L+ Diffuse Large B-Cell Lymphoma (DLBCL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cretostimogene - (BOND-003)",
+    "drug_clean": "Cretostimogene",
+    "query": "Cretostimogene BCG-unresponsive Non-Muscle Invasive Bladder",
+    "n_rows": 2,
+    "rows": [
+      830,
+      1279
+    ],
+    "indication": "BCG-unresponsive Non-Muscle Invasive Bladder Cancer (NMIBC) ",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ozuriftamab Vedotin (BA3021)",
+    "drug_clean": "Ozuriftamab Vedotin",
+    "query": "Ozuriftamab Vedotin Solid Tumors, Non-small cell",
+    "n_rows": 2,
+    "rows": [
+      846,
+      1011
+    ],
+    "indication": "Solid Tumors, Non-small cell lung cancer (NSCLC), recurrent ",
+    "sponsor": ""
+  },
+  {
+    "drug": "RZ402",
+    "drug_clean": "RZ402",
+    "query": "RZ402 Diabetic macular edema (DME)",
+    "n_rows": 2,
+    "rows": [
+      852,
+      853
+    ],
+    "indication": "Diabetic macular edema (DME)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ABBV-400",
+    "drug_clean": "ABBV-400",
+    "query": "ABBV-400 Colorectal cancer (CRC)",
+    "n_rows": 2,
+    "rows": [
+      865,
+      1539
+    ],
+    "indication": "Colorectal cancer (CRC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "IK-930",
+    "drug_clean": "IK-930",
+    "query": "IK-930 Solid tumors, non-small cell",
+    "n_rows": 2,
+    "rows": [
+      866,
+      869
+    ],
+    "indication": "Solid tumors, non-small cell lung cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ivonescimab (SMT112) with chemotherapy - (HARMONi-2)",
+    "drug_clean": "Ivonescimab with chemotherapy",
+    "query": "Ivonescimab with chemotherapy Epidermal growth factor receptor",
+    "n_rows": 2,
+    "rows": [
+      872,
+      995
+    ],
+    "indication": "Epidermal growth factor receptor (EGFR)-mutated, locally adv",
+    "sponsor": ""
+  },
+  {
+    "drug": "COM701, COM902 and Pembrolizumab",
+    "drug_clean": "COM701, COM902 and Pembrolizumab",
+    "query": "COM701, COM902 and Pembrolizumab Advanced malignancies, Ovarian cancer",
+    "n_rows": 2,
+    "rows": [
+      876,
+      1088
+    ],
+    "indication": "Advanced malignancies, Ovarian cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tanruprubart  (ANX005)",
+    "drug_clean": "Tanruprubart",
+    "query": "Tanruprubart Guillain-Barr\u00e9 Syndrome (GBS)",
+    "n_rows": 2,
+    "rows": [
+      897,
+      930
+    ],
+    "indication": "Guillain-Barr\u00e9 Syndrome (GBS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "NX-5948-301",
+    "drug_clean": "NX-5948-301",
+    "query": "NX-5948-301 B-cell malignancies / graft-versus-host",
+    "n_rows": 2,
+    "rows": [
+      913,
+      1651
+    ],
+    "indication": "B-cell malignancies / graft-versus-host disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "AJOVY (fremanezumab-vfrm)",
+    "drug_clean": "AJOVY",
+    "query": "AJOVY Episodic migraine in children",
+    "n_rows": 2,
+    "rows": [
+      944,
+      1132
+    ],
+    "indication": "Episodic migraine in children and adolescent patients aged 6",
+    "sponsor": ""
+  },
+  {
+    "drug": "VTX958",
+    "drug_clean": "VTX958",
+    "query": "VTX958 Crohn's disease",
+    "n_rows": 2,
+    "rows": [
+      951,
+      952
+    ],
+    "indication": "Crohn's disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Epetraborole - (EBO-103)",
+    "drug_clean": "Epetraborole",
+    "query": "Epetraborole Mycobacterium avium complex (MAC)",
+    "n_rows": 2,
+    "rows": [
+      974,
+      1099
+    ],
+    "indication": "Mycobacterium avium complex (MAC) lung disease, Chronic non-",
+    "sponsor": ""
+  },
+  {
+    "drug": "REC-994 - (SYCAMORE)",
+    "drug_clean": "REC-994",
+    "query": "REC-994 Cerebral Cavernous Malformation (CCM)",
+    "n_rows": 2,
+    "rows": [
+      988,
+      1322
+    ],
+    "indication": "Cerebral Cavernous Malformation (CCM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ALG-055009 - (HERALD)",
+    "drug_clean": "ALG-055009",
+    "query": "ALG-055009 Metabolic dysfunction-associated steatohepatitis (MASH)",
+    "n_rows": 2,
+    "rows": [
+      1028,
+      1328
+    ],
+    "indication": "Metabolic dysfunction-associated steatohepatitis (MASH)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Silevertinib (BDTX-1535)",
+    "drug_clean": "Silevertinib",
+    "query": "Silevertinib Glioblastoma multiforme (GBM) and",
+    "n_rows": 2,
+    "rows": [
+      1030,
+      1640
+    ],
+    "indication": "Glioblastoma multiforme (GBM) and NSCLC",
+    "sponsor": ""
+  },
+  {
+    "drug": "Detalimogene voraplasmid (EG-70) - (LEGEND)",
+    "drug_clean": "Detalimogene voraplasmid",
+    "query": "Detalimogene voraplasmid BCG-unresponsive non-muscle invasive bladder",
+    "n_rows": 2,
+    "rows": [
+      1037,
+      1611
+    ],
+    "indication": "BCG-unresponsive non-muscle invasive bladder cancer (NMIBC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Apitegromab - (SAPPHIRE)",
+    "drug_clean": "Apitegromab",
+    "query": "Apitegromab Type 2 and Type",
+    "n_rows": 2,
+    "rows": [
+      1044,
+      1271
+    ],
+    "indication": "Type 2 and Type 3 Spinal Muscular Atrophy (SMA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BB-301",
+    "drug_clean": "BB-301",
+    "query": "BB-301 Oculopharyngeal muscular dystrophy (OPMD)",
+    "n_rows": 2,
+    "rows": [
+      1052,
+      1275
+    ],
+    "indication": "Oculopharyngeal muscular dystrophy (OPMD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Low Dose Interleukin-2 (LD IL-2) - (COYA 301)",
+    "drug_clean": "Low Dose Interleukin-2",
+    "query": "Low Dose Interleukin-2 Alzheimer\u2019s Disease (AD)",
+    "n_rows": 2,
+    "rows": [
+      1072,
+      1230
+    ],
+    "indication": "Alzheimer\u2019s Disease (AD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ALLO-316 - (TRAVERSE)",
+    "drug_clean": "ALLO-316",
+    "query": "ALLO-316 Clear cell renal cell",
+    "n_rows": 2,
+    "rows": [
+      1083,
+      1085
+    ],
+    "indication": "Clear cell renal cell carcinoma (ccRCC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TEZSPIRE (tezepelumab-ekko)",
+    "drug_clean": "TEZSPIRE",
+    "query": "TEZSPIRE Chronic Rhinosinusitis with Nasal",
+    "n_rows": 2,
+    "rows": [
+      1086,
+      1087
+    ],
+    "indication": "Chronic Rhinosinusitis with Nasal Polyps (CRwNP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PYX-201-101 - (MICVO)",
+    "drug_clean": "PYX-201-101",
+    "query": "PYX-201-101 Solid tumors",
+    "n_rows": 2,
+    "rows": [
+      1111,
+      1685
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Optune Pax",
+    "drug_clean": "Optune Pax",
+    "query": "Optune Pax Locally advanced pancreatic cancer",
+    "n_rows": 2,
+    "rows": [
+      1124,
+      1437
+    ],
+    "indication": "Locally advanced pancreatic cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "TARA-002 - (ADVANCED-2)",
+    "drug_clean": "TARA-002",
+    "query": "TARA-002 High-grade non-muscle invasive bladder",
+    "n_rows": 2,
+    "rows": [
+      1133,
+      1314
+    ],
+    "indication": "High-grade non-muscle invasive bladder cancer (NMIBC) patien",
+    "sponsor": ""
+  },
+  {
+    "drug": "Luvelta - (REFR\u03b1ME-O1)",
+    "drug_clean": "Luvelta",
+    "query": "Luvelta Platinum-resistant ovarian cancer (PROC)",
+    "n_rows": 2,
+    "rows": [
+      1157,
+      1269
+    ],
+    "indication": "Platinum-resistant ovarian cancer (PROC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BP1002",
+    "drug_clean": "BP1002",
+    "query": "BP1002 Refractory/relapsed lymphoma and chronic",
+    "n_rows": 2,
+    "rows": [
+      1160,
+      1236
+    ],
+    "indication": "Refractory/relapsed lymphoma and chronic lymphocytic leukemi",
+    "sponsor": ""
+  },
+  {
+    "drug": "Evorpacept with zanidatamab",
+    "drug_clean": "Evorpacept with zanidatamab",
+    "query": "Evorpacept with zanidatamab Metastatic breast cancer",
+    "n_rows": 2,
+    "rows": [
+      1168,
+      1170
+    ],
+    "indication": "Metastatic breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Casdozokitug/toripalimab/bevacizumab",
+    "drug_clean": "Casdozokitug/toripalimab/bevacizumab",
+    "query": "Casdozokitug/toripalimab/bevacizumab Unresectable locally advanced or",
+    "n_rows": 2,
+    "rows": [
+      1183,
+      1212
+    ],
+    "indication": "Unresectable locally advanced or metastatic hepatocellular c",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rusfertide - (VERIFY)",
+    "drug_clean": "Rusfertide",
+    "query": "Rusfertide Polycythemia vera",
+    "n_rows": 2,
+    "rows": [
+      1253,
+      1256
+    ],
+    "indication": "Polycythemia vera",
+    "sponsor": ""
+  },
+  {
+    "drug": "Haduvio (oral nalbuphine ER) - (RIVER)",
+    "drug_clean": "Haduvio",
+    "query": "Haduvio Refractory chronic cough (RCC)",
+    "n_rows": 2,
+    "rows": [
+      1262,
+      1273
+    ],
+    "indication": "Refractory chronic cough (RCC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Batoclimab (IMVT-1401)",
+    "drug_clean": "Batoclimab",
+    "query": "Batoclimab Myasthenia Gravis (MG)",
+    "n_rows": 2,
+    "rows": [
+      1274,
+      1277
+    ],
+    "indication": "Myasthenia Gravis (MG)",
+    "sponsor": ""
+  },
+  {
+    "drug": "EDG-7500 - (CIRRUS-HCM)",
+    "drug_clean": "EDG-7500",
+    "query": "EDG-7500 Hypertrophic Cardiomyopathy (HCM)",
+    "n_rows": 2,
+    "rows": [
+      1293,
+      1693
+    ],
+    "indication": "Hypertrophic Cardiomyopathy (HCM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "EB613",
+    "drug_clean": "EB613",
+    "query": "EB613 Osteoporosis",
+    "n_rows": 2,
+    "rows": [
+      1303,
+      1497
+    ],
+    "indication": "Osteoporosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "ATH434-201",
+    "drug_clean": "ATH434-201",
+    "query": "ATH434-201 Multiple System Atrophy (MSA)",
+    "n_rows": 2,
+    "rows": [
+      1329,
+      1503
+    ],
+    "indication": "Multiple System Atrophy (MSA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "XL092 - (STELLAR-002)",
+    "drug_clean": "XL092",
+    "query": "XL092 Solid Tumors",
+    "n_rows": 2,
+    "rows": [
+      1350,
+      1360
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Iberdomide in Combination with Dexamethasone - (CC-220-MM-001)",
+    "drug_clean": "Iberdomide in Combination with Dexamethasone",
+    "query": "Iberdomide in Combination with Dexamethasone Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "n_rows": 2,
+    "rows": [
+      1352,
+      1410
+    ],
+    "indication": "Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tebipenem HBr (SPR994) - (PIVOT-PO)",
+    "drug_clean": "Tebipenem HBr",
+    "query": "Tebipenem HBr Complicated urinary tract infection",
+    "n_rows": 2,
+    "rows": [
+      1368,
+      1564
+    ],
+    "indication": "Complicated urinary tract infection (cUTI), including acute ",
+    "sponsor": ""
+  },
+  {
+    "drug": "DM199 (rinvecalinase alfa)",
+    "drug_clean": "DM199",
+    "query": "DM199 Preeclampsia (PE)",
+    "n_rows": 2,
+    "rows": [
+      1372,
+      1454
+    ],
+    "indication": "Preeclampsia (PE)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Itepekimab - (AERIFY)",
+    "drug_clean": "Itepekimab",
+    "query": "Itepekimab Chronic obstructive pulmonary disease",
+    "n_rows": 2,
+    "rows": [
+      1375,
+      1377
+    ],
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Gedatolisib with Fulvestrant - (VIKTORIA-1)",
+    "drug_clean": "Gedatolisib with Fulvestrant",
+    "query": "Gedatolisib with Fulvestrant HR+/HER2- advanced breast cancer",
+    "n_rows": 2,
+    "rows": [
+      1434,
+      1552
+    ],
+    "indication": "HR+/HER2- advanced breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Avutometinib in Combination with Defactinib - (RAMP 201)",
+    "drug_clean": "Avutometinib in Combination with Defactinib",
+    "query": "Avutometinib in Combination with Defactinib Low-Grade Serous Ovarian Cancer",
+    "n_rows": 2,
+    "rows": [
+      1444,
+      1738
+    ],
+    "indication": "Low-Grade Serous Ovarian Cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Telitacicept",
+    "drug_clean": "Telitacicept",
+    "query": "Telitacicept Primary Sj\u00f6gren's disease",
+    "n_rows": 2,
+    "rows": [
+      1477,
+      1486
+    ],
+    "indication": "Primary Sj\u00f6gren's disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Solnerstotug (formerly SNS-101) with Libtayo - (VISTA)",
+    "drug_clean": "Solnerstotug with Libtayo",
+    "query": "Solnerstotug with Libtayo One microsatellite stable (MSS)",
+    "n_rows": 2,
+    "rows": [
+      1548,
+      1549
+    ],
+    "indication": "One microsatellite stable (MSS) endometrial cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Obexelimab - (MoonStone)",
+    "drug_clean": "Obexelimab",
+    "query": "Obexelimab Relapsing Multiple Sclerosis (RMS)",
+    "n_rows": 2,
+    "rows": [
+      1575,
+      1744
+    ],
+    "indication": "Relapsing Multiple Sclerosis (RMS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Coramitug (PRX004) - (CLEOPATTRA)",
+    "drug_clean": "Coramitug",
+    "query": "Coramitug ATTR-cardiomyopathy",
+    "n_rows": 2,
+    "rows": [
+      1612,
+      1613
+    ],
+    "indication": "ATTR-cardiomyopathy",
+    "sponsor": ""
+  },
+  {
+    "drug": "Milvexian - (Librexia ACS)",
+    "drug_clean": "Milvexian",
+    "query": "Milvexian Acute coronary syndromes",
+    "n_rows": 2,
+    "rows": [
+      1617,
+      1618
+    ],
+    "indication": "Acute coronary syndromes",
+    "sponsor": ""
+  },
+  {
+    "drug": "BNT327-02",
+    "drug_clean": "BNT327-02",
+    "query": "BNT327-02 1-2L Metastatic Triple-negative breast",
+    "n_rows": 2,
+    "rows": [
+      1662,
+      1663
+    ],
+    "indication": "1-2L Metastatic Triple-negative breast cancer (TNBC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy (ARC-21) - (STAR-221)",
+    "drug_clean": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy",
+    "query": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy Locally advanced unresectable or",
+    "n_rows": 2,
+    "rows": [
+      1669,
+      1671
+    ],
+    "indication": "Locally advanced unresectable or metastatic gastric, gastroe",
+    "sponsor": ""
+  },
+  {
+    "drug": "BHV-7000",
+    "drug_clean": "BHV-7000",
+    "query": "BHV-7000 Major Depressive Disorder",
+    "n_rows": 2,
+    "rows": [
+      1694,
+      1695
+    ],
+    "indication": "Major Depressive Disorder",
+    "sponsor": ""
+  },
+  {
+    "drug": "Obexelimab - (INDIGO)",
+    "drug_clean": "Obexelimab",
+    "query": "Obexelimab Secondary Progressive MS (SPMS)",
+    "n_rows": 2,
+    "rows": [
+      1702,
+      1703
+    ],
+    "indication": "Secondary Progressive MS (SPMS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "CRDF-004",
+    "drug_clean": "CRDF-004",
+    "query": "CRDF-004 Metastatic colorectal cancer (mCRC)",
+    "n_rows": 2,
+    "rows": [
+      1729,
+      1730
+    ],
+    "indication": "Metastatic colorectal cancer (mCRC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Haduvio - (PRISM)",
+    "drug_clean": "Haduvio",
+    "query": "Haduvio Prurigo Nodularis (PN)",
+    "n_rows": 1,
+    "rows": [
+      3
+    ],
+    "indication": "Prurigo Nodularis (PN)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Mim8 - (FRONTIER2)",
+    "drug_clean": "Mim8",
+    "query": "Mim8 Hemophilia A",
+    "n_rows": 1,
+    "rows": [
+      17
+    ],
+    "indication": "Hemophilia A",
+    "sponsor": ""
+  },
+  {
+    "drug": "Sugemalimab - (GEMSTONE-301)",
+    "drug_clean": "Sugemalimab",
+    "query": "Sugemalimab Stage III Non-small cell",
+    "n_rows": 1,
+    "rows": [
+      41
+    ],
+    "indication": "Stage III Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "KarXT - (EMERGENT-2)",
+    "drug_clean": "KarXT",
+    "query": "KarXT Acute psychosis in patients",
+    "n_rows": 1,
+    "rows": [
+      42
+    ],
+    "indication": "Acute psychosis in patients with schizophrenia",
+    "sponsor": ""
+  },
+  {
+    "drug": "SCB-2019 (CpG 1018/Alum)",
+    "drug_clean": "SCB-2019",
+    "query": "SCB-2019 COVID-19 vaccine in adolescents",
+    "n_rows": 1,
+    "rows": [
+      52
+    ],
+    "indication": "COVID-19 vaccine in adolescents",
+    "sponsor": ""
+  },
+  {
+    "drug": "iDose TR",
+    "drug_clean": "iDose TR",
+    "query": "iDose TR Glaucoma",
+    "n_rows": 1,
+    "rows": [
+      63
+    ],
+    "indication": "Glaucoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zanidatamab zovodotin - (ZW49)",
+    "drug_clean": "Zanidatamab zovodotin",
+    "query": "Zanidatamab zovodotin Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      82
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Haduvio - (CANAL)",
+    "drug_clean": "Haduvio",
+    "query": "Haduvio Chronic cough - Idiopathic",
+    "n_rows": 1,
+    "rows": [
+      88
+    ],
+    "indication": "Chronic cough - Idiopathic pulmonary fibrosis (IPF)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LEQEMBI (lecanemab-irmb)",
+    "drug_clean": "LEQEMBI",
+    "query": "LEQEMBI IV Maintenance Dosing for",
+    "n_rows": 1,
+    "rows": [
+      94
+    ],
+    "indication": "IV Maintenance Dosing for Alzheimer\u2019s disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Glepaglutideb - (EASE 1)",
+    "drug_clean": "Glepaglutideb",
+    "query": "Glepaglutideb Short bowel syndrome (SBS)",
+    "n_rows": 1,
+    "rows": [
+      100
+    ],
+    "indication": "Short bowel syndrome (SBS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "KVD824 - (KOMPLETE)",
+    "drug_clean": "KVD824",
+    "query": "KVD824 Hereditary angioedema (HAE)",
+    "n_rows": 1,
+    "rows": [
+      107
+    ],
+    "indication": "Hereditary angioedema (HAE)",
+    "sponsor": ""
+  },
+  {
+    "drug": "VS-6766 and defactinib - (RAMP 202)",
+    "drug_clean": "VS-6766 and defactinib",
+    "query": "VS-6766 and defactinib KRAS mutant non-small cell",
+    "n_rows": 1,
+    "rows": [
+      108
+    ],
+    "indication": "KRAS mutant non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "INO-3107",
+    "drug_clean": "INO-3107",
+    "query": "INO-3107 HPV 6 and HPV",
+    "n_rows": 1,
+    "rows": [
+      119
+    ],
+    "indication": "HPV 6 and HPV 11-associated Recurrent respiratory papillomat",
+    "sponsor": ""
+  },
+  {
+    "drug": "DARE-HRT1",
+    "drug_clean": "DARE-HRT1",
+    "query": "DARE-HRT1 Hormone replacement therapy",
+    "n_rows": 1,
+    "rows": [
+      122
+    ],
+    "indication": "Hormone replacement therapy",
+    "sponsor": ""
+  },
+  {
+    "drug": "MORF-057-202 - (EMERALD-2)",
+    "drug_clean": "MORF-057-202",
+    "query": "MORF-057-202 Ulcerative Colitis (UC)",
+    "n_rows": 1,
+    "rows": [
+      126
+    ],
+    "indication": "Ulcerative Colitis (UC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BioLexa",
+    "drug_clean": "BioLexa",
+    "query": "BioLexa Atopic Dermatitis (AD)",
+    "n_rows": 1,
+    "rows": [
+      131
+    ],
+    "indication": "Atopic Dermatitis (AD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Atrasentan - (AFFINITY)",
+    "drug_clean": "Atrasentan",
+    "query": "Atrasentan Chronic kidney disease",
+    "n_rows": 1,
+    "rows": [
+      136
+    ],
+    "indication": "Chronic kidney disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "FT516",
+    "drug_clean": "FT516",
+    "query": "FT516 Acute Myelogenous Leukemia /",
+    "n_rows": 1,
+    "rows": [
+      137
+    ],
+    "indication": "Acute Myelogenous Leukemia / B-cell Lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "AMTAGVI (Lifileucel (LN-144)) - (TILVANCE-301)",
+    "drug_clean": "AMTAGVI)",
+    "query": "AMTAGVI) Refractory metastatic melanoma",
+    "n_rows": 1,
+    "rows": [
+      142
+    ],
+    "indication": "Refractory metastatic melanoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "PRAX-114 - (Acapella)",
+    "drug_clean": "PRAX-114",
+    "query": "PRAX-114 Major depressive disorder",
+    "n_rows": 1,
+    "rows": [
+      148
+    ],
+    "indication": "Major depressive disorder",
+    "sponsor": ""
+  },
+  {
+    "drug": "Blarcamesine  (ANAVEX2-73-AD-004) - (ATTENTION-AD)",
+    "drug_clean": "Blarcamesine",
+    "query": "Blarcamesine Mild to moderate Alzheimer\u2019s",
+    "n_rows": 1,
+    "rows": [
+      166
+    ],
+    "indication": "Mild to moderate Alzheimer\u2019s disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "IXCHIQ (VLA1553-303)",
+    "drug_clean": "IXCHIQ",
+    "query": "IXCHIQ Chikungunya vaccine",
+    "n_rows": 1,
+    "rows": [
+      175
+    ],
+    "indication": "Chikungunya vaccine",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cevostamab - (CAMMA 1)",
+    "drug_clean": "Cevostamab",
+    "query": "Cevostamab Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "n_rows": 1,
+    "rows": [
+      204
+    ],
+    "indication": "Relapsed/Refractory Multiple Myeloma (RRMM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PRGN-3006 UltraCAR-T",
+    "drug_clean": "PRGN-3006 UltraCAR-T",
+    "query": "PRGN-3006 UltraCAR-T Myelodysplastic Syndromes, Acute Myeloid",
+    "n_rows": 1,
+    "rows": [
+      214
+    ],
+    "indication": "Myelodysplastic Syndromes, Acute Myeloid Leukemia",
+    "sponsor": ""
+  },
+  {
+    "drug": "AMT-101 - (FILLMORE)",
+    "drug_clean": "AMT-101",
+    "query": "AMT-101 Pouchitis",
+    "n_rows": 1,
+    "rows": [
+      222
+    ],
+    "indication": "Pouchitis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Renazorb (Fosrenol bioequivalent)",
+    "drug_clean": "Renazorb",
+    "query": "Renazorb Hyperphosphatemia",
+    "n_rows": 1,
+    "rows": [
+      223
+    ],
+    "indication": "Hyperphosphatemia",
+    "sponsor": ""
+  },
+  {
+    "drug": "BEQVEZ (fidanacogene elaparvovec-dzkt)",
+    "drug_clean": "BEQVEZ",
+    "query": "BEQVEZ Hemophilia B",
+    "n_rows": 1,
+    "rows": [
+      224
+    ],
+    "indication": "Hemophilia B",
+    "sponsor": ""
+  },
+  {
+    "drug": "CM-101",
+    "drug_clean": "CM-101",
+    "query": "CM-101 Liver Fibrosis",
+    "n_rows": 1,
+    "rows": [
+      225
+    ],
+    "indication": "Liver Fibrosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "RVT-3101 - (TUSCANY-2)",
+    "drug_clean": "RVT-3101",
+    "query": "RVT-3101 Ulcerative colitis",
+    "n_rows": 1,
+    "rows": [
+      228
+    ],
+    "indication": "Ulcerative colitis",
+    "sponsor": ""
+  },
+  {
+    "drug": "CTX-009 in combination with paclitaxel",
+    "drug_clean": "CTX-009 in combination with paclitaxel",
+    "query": "CTX-009 in combination with paclitaxel Biliary Tract Cancer (cholangiocarcinoma)",
+    "n_rows": 1,
+    "rows": [
+      233
+    ],
+    "indication": "Biliary Tract Cancer (cholangiocarcinoma)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PAPZIMEOS (zopapogene imadenovec-drba)",
+    "drug_clean": "PAPZIMEOS",
+    "query": "PAPZIMEOS Recurrent Respiratory Papillomatosis (RRP)",
+    "n_rows": 1,
+    "rows": [
+      237
+    ],
+    "indication": "Recurrent Respiratory Papillomatosis (RRP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "AR-301 (tosatoxumab)",
+    "drug_clean": "AR-301",
+    "query": "AR-301 Ventilator associated pneumonia (VAP)",
+    "n_rows": 1,
+    "rows": [
+      241
+    ],
+    "indication": "Ventilator associated pneumonia (VAP) / Staphylococcus aureu",
+    "sponsor": ""
+  },
+  {
+    "drug": "FX-345",
+    "drug_clean": "FX-345",
+    "query": "FX-345 Sensorineural hearing loss progression",
+    "n_rows": 1,
+    "rows": [
+      251
+    ],
+    "indication": "Sensorineural hearing loss progression (SNHL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Bicycle Toxin Conjugates zelenectide pevedotin (BT8009) - (Duravelo-2)",
+    "drug_clean": "Bicycle Toxin Conjugates zelenectide pevedotin",
+    "query": "Bicycle Toxin Conjugates zelenectide pevedotin Solid tumors",
+    "n_rows": 1,
+    "rows": [
+      252
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cabenuva (cabotegravir, rilpivirine) - (SOLAR)",
+    "drug_clean": "Cabenuva",
+    "query": "Cabenuva HIV-1",
+    "n_rows": 1,
+    "rows": [
+      263
+    ],
+    "indication": "HIV-1",
+    "sponsor": ""
+  },
+  {
+    "drug": "AR-501",
+    "drug_clean": "AR-501",
+    "query": "AR-501 Cystic Fibrosis",
+    "n_rows": 1,
+    "rows": [
+      277
+    ],
+    "indication": "Cystic Fibrosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rusfertide - (REVIVE)",
+    "drug_clean": "Rusfertide",
+    "query": "Rusfertide Polycythemia vera",
+    "n_rows": 1,
+    "rows": [
+      278
+    ],
+    "indication": "Polycythemia vera",
+    "sponsor": ""
+  },
+  {
+    "drug": "ADORING 2",
+    "drug_clean": "ADORING 2",
+    "query": "ADORING 2 Atopic Dermatitis",
+    "n_rows": 1,
+    "rows": [
+      279
+    ],
+    "indication": "Atopic Dermatitis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Validive - (VOICE)",
+    "drug_clean": "Validive",
+    "query": "Validive Oral mucositis",
+    "n_rows": 1,
+    "rows": [
+      293
+    ],
+    "indication": "Oral mucositis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Selonabant (ANEB-001)",
+    "drug_clean": "Selonabant",
+    "query": "Selonabant Cannabinoid Intoxication",
+    "n_rows": 1,
+    "rows": [
+      298
+    ],
+    "indication": "Cannabinoid Intoxication",
+    "sponsor": ""
+  },
+  {
+    "drug": "EVX-02",
+    "drug_clean": "EVX-02",
+    "query": "EVX-02 Adjuvant melanoma",
+    "n_rows": 1,
+    "rows": [
+      313
+    ],
+    "indication": "Adjuvant melanoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "SEPHIENCE (Sepiapterin  (PTC923)) - (APHENITY)",
+    "drug_clean": "SEPHIENCE)",
+    "query": "SEPHIENCE) Phenylketonuria (PKU)",
+    "n_rows": 1,
+    "rows": [
+      338
+    ],
+    "indication": "Phenylketonuria (PKU)",
+    "sponsor": ""
+  },
+  {
+    "drug": "DehydraTECH-CBD - (HYPER-H21-4)",
+    "drug_clean": "DehydraTECH-CBD",
+    "query": "DehydraTECH-CBD Cardiovascular disease (CVD)",
+    "n_rows": 1,
+    "rows": [
+      341
+    ],
+    "indication": "Cardiovascular disease (CVD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "VS-6766 plus avutometinib and defactinib - (RAMP 301)",
+    "drug_clean": "VS-6766 plus avutometinib and defactinib",
+    "query": "VS-6766 plus avutometinib and defactinib Low-grade serous ovarian cancer",
+    "n_rows": 1,
+    "rows": [
+      349
+    ],
+    "indication": "Low-grade serous ovarian cancer (LGSOC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Olvimulogene Nanivacirepvec (Olvi-Vec) - (OnPrime/GOG-3076)",
+    "drug_clean": "Olvimulogene Nanivacirepvec",
+    "query": "Olvimulogene Nanivacirepvec Platinum-Resistant or Refractory Ovarian",
+    "n_rows": 1,
+    "rows": [
+      351
+    ],
+    "indication": "Platinum-Resistant or Refractory Ovarian Cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Hympavzi (marstacimab-hncq)",
+    "drug_clean": "Hympavzi",
+    "query": "Hympavzi Hemophilia A or B",
+    "n_rows": 1,
+    "rows": [
+      355
+    ],
+    "indication": "Hemophilia A or B",
+    "sponsor": ""
+  },
+  {
+    "drug": "BNT316/ONC-392 (gotistobart) - (PRESERVE-003)",
+    "drug_clean": "BNT316/ONC-392",
+    "query": "BNT316/ONC-392 Cancer, PD-(L)1-resistant non-small cell",
+    "n_rows": 1,
+    "rows": [
+      359
+    ],
+    "indication": "Cancer, PD-(L)1-resistant non-small cell lung cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "NRG/RTOG 0521 - (STREAM)",
+    "drug_clean": "NRG/RTOG 0521",
+    "query": "NRG/RTOG 0521 Prostate cancer",
+    "n_rows": 1,
+    "rows": [
+      361
+    ],
+    "indication": "Prostate cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "SGN-B6A",
+    "drug_clean": "SGN-B6A",
+    "query": "SGN-B6A Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      362
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Domvanalimab (AB154) + Zimberelimab (AB122) - (ARC-7)",
+    "drug_clean": "Domvanalimab + Zimberelimab",
+    "query": "Domvanalimab + Zimberelimab Non-small cell lung cancer",
+    "n_rows": 1,
+    "rows": [
+      369
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LAVA-051",
+    "drug_clean": "LAVA-051",
+    "query": "LAVA-051 Chronic lymphocytic leukemia (CLL),",
+    "n_rows": 1,
+    "rows": [
+      398
+    ],
+    "indication": "Chronic lymphocytic leukemia (CLL), multiple myeloma (MM) an",
+    "sponsor": ""
+  },
+  {
+    "drug": "INM-755",
+    "drug_clean": "INM-755",
+    "query": "INM-755 Epidermolysis Bullosa",
+    "n_rows": 1,
+    "rows": [
+      414
+    ],
+    "indication": "Epidermolysis Bullosa",
+    "sponsor": ""
+  },
+  {
+    "drug": "Retatrutide - (TRIUMPH-4)",
+    "drug_clean": "Retatrutide",
+    "query": "Retatrutide Osteoarthritis pain of the",
+    "n_rows": 1,
+    "rows": [
+      420
+    ],
+    "indication": "Osteoarthritis pain of the knee and overweight or obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "VRDN-001 - (THRIVE)",
+    "drug_clean": "VRDN-001",
+    "query": "VRDN-001 Active Thyroid Eye Disease",
+    "n_rows": 1,
+    "rows": [
+      437
+    ],
+    "indication": "Active Thyroid Eye Disease (TED)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Upifitamab Rilsodotin (XMT-1536) - (UPLIFT)",
+    "drug_clean": "Upifitamab Rilsodotin",
+    "query": "Upifitamab Rilsodotin Ovarian Cancer, Non Small",
+    "n_rows": 1,
+    "rows": [
+      467
+    ],
+    "indication": "Ovarian Cancer, Non Small Cell Lung Cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "4D-150 - (PRISM)",
+    "drug_clean": "4D-150",
+    "query": "4D-150 Wet age-related macular degeneration",
+    "n_rows": 1,
+    "rows": [
+      469
+    ],
+    "indication": "Wet age-related macular degeneration (AMD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Eftansomatropin (TJ101) - (TALLER)",
+    "drug_clean": "Eftansomatropin",
+    "query": "Eftansomatropin Growth hormone deficiency",
+    "n_rows": 1,
+    "rows": [
+      480
+    ],
+    "indication": "Growth hormone deficiency",
+    "sponsor": ""
+  },
+  {
+    "drug": "TRV045",
+    "drug_clean": "TRV045",
+    "query": "TRV045 Epilepsy and other CNS",
+    "n_rows": 1,
+    "rows": [
+      493
+    ],
+    "indication": "Epilepsy and other CNS disorders",
+    "sponsor": ""
+  },
+  {
+    "drug": "AB-161",
+    "drug_clean": "AB-161",
+    "query": "AB-161 Healthy volunteers",
+    "n_rows": 1,
+    "rows": [
+      502
+    ],
+    "indication": "Healthy volunteers",
+    "sponsor": ""
+  },
+  {
+    "drug": "HT-KIT",
+    "drug_clean": "HT-KIT",
+    "query": "HT-KIT Aggressive systemic mastocytosis (ASM),",
+    "n_rows": 1,
+    "rows": [
+      513
+    ],
+    "indication": "Aggressive systemic mastocytosis (ASM), mast cell leukemia (",
+    "sponsor": ""
+  },
+  {
+    "drug": "VAL-083",
+    "drug_clean": "VAL-083",
+    "query": "VAL-083 Newly diagnosed MGMT-unmethylated Glioblastoma",
+    "n_rows": 1,
+    "rows": [
+      522
+    ],
+    "indication": "Newly diagnosed MGMT-unmethylated Glioblastoma Multiform (GB",
+    "sponsor": ""
+  },
+  {
+    "drug": "VYKAT XR (diazoxide choline) extended-release tablets",
+    "drug_clean": "VYKAT XR extended-release tablets",
+    "query": "VYKAT XR extended-release tablets Prader-Willi syndrome (PWS)",
+    "n_rows": 1,
+    "rows": [
+      525
+    ],
+    "indication": "Prader-Willi syndrome (PWS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Narsoplimab - (ARTEMIS-IGAN)",
+    "drug_clean": "Narsoplimab",
+    "query": "Narsoplimab IgA nephropathy",
+    "n_rows": 1,
+    "rows": [
+      556
+    ],
+    "indication": "IgA nephropathy",
+    "sponsor": ""
+  },
+  {
+    "drug": "EDP2939",
+    "drug_clean": "EDP2939",
+    "query": "EDP2939 Psoriasis, healthy volunteers",
+    "n_rows": 1,
+    "rows": [
+      557
+    ],
+    "indication": "Psoriasis, healthy volunteers",
+    "sponsor": ""
+  },
+  {
+    "drug": "Enozertinib (ORIC-114)",
+    "drug_clean": "Enozertinib",
+    "query": "Enozertinib Tumors - EGFR/HER2 Exon",
+    "n_rows": 1,
+    "rows": [
+      568
+    ],
+    "indication": "Tumors - EGFR/HER2 Exon 20 Inhibitor, 1L NSCLC",
+    "sponsor": ""
+  },
+  {
+    "drug": "Pluvicto (lutetium (177Lu) vipivotide tetraxetan)",
+    "drug_clean": "Pluvicto vipivotide tetraxetan)",
+    "query": "Pluvicto vipivotide tetraxetan) Metastatic castration-resistant prostate cancer",
+    "n_rows": 1,
+    "rows": [
+      570
+    ],
+    "indication": "Metastatic castration-resistant prostate cancer (mCRPC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Brilaroxazine - (RECOVER-2)",
+    "drug_clean": "Brilaroxazine",
+    "query": "Brilaroxazine Schizophrenia",
+    "n_rows": 1,
+    "rows": [
+      574
+    ],
+    "indication": "Schizophrenia",
+    "sponsor": ""
+  },
+  {
+    "drug": "Xaluritamig (AMG 509) - (STEAP1)",
+    "drug_clean": "Xaluritamig",
+    "query": "Xaluritamig Metastatic castrate-resistant prostate cancer",
+    "n_rows": 1,
+    "rows": [
+      577
+    ],
+    "indication": "Metastatic castrate-resistant prostate cancer (mCRPC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "RT-101",
+    "drug_clean": "RT-101",
+    "query": "RT-101 Neuroendocrine tumors (NETs) and",
+    "n_rows": 1,
+    "rows": [
+      581
+    ],
+    "indication": "Neuroendocrine tumors (NETs) and acromegaly",
+    "sponsor": ""
+  },
+  {
+    "drug": "Nanobody sonelokimab - (IZAR-1)",
+    "drug_clean": "Nanobody sonelokimab",
+    "query": "Nanobody sonelokimab Active psoriatic arthritis (PsA)",
+    "n_rows": 1,
+    "rows": [
+      599
+    ],
+    "indication": "Active psoriatic arthritis (PsA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ATA188 - (EMBOLD)",
+    "drug_clean": "ATA188",
+    "query": "ATA188 Multiple sclerosis",
+    "n_rows": 1,
+    "rows": [
+      608
+    ],
+    "indication": "Multiple sclerosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "KIO-301 - (ABACUS)",
+    "drug_clean": "KIO-301",
+    "query": "KIO-301 Later-stage Retinitis Pigmentosa",
+    "n_rows": 1,
+    "rows": [
+      611
+    ],
+    "indication": "Later-stage Retinitis Pigmentosa",
+    "sponsor": ""
+  },
+  {
+    "drug": "VLA1553-321 - (Adolescents trial)",
+    "drug_clean": "VLA1553-321",
+    "query": "VLA1553-321 Chikungunya Vaccine for adolecents",
+    "n_rows": 1,
+    "rows": [
+      615
+    ],
+    "indication": "Chikungunya Vaccine for adolecents",
+    "sponsor": ""
+  },
+  {
+    "drug": "SPT-300 (Glyph allopregnanolone; formerly LYT-300)",
+    "drug_clean": "SPT-300",
+    "query": "SPT-300 Healthy volunteers, neurological and",
+    "n_rows": 1,
+    "rows": [
+      624
+    ],
+    "indication": "Healthy volunteers, neurological and neuropsychological cond",
+    "sponsor": ""
+  },
+  {
+    "drug": "EB01",
+    "drug_clean": "EB01",
+    "query": "EB01 Allergic contact dermatitis (ACD)",
+    "n_rows": 1,
+    "rows": [
+      626
+    ],
+    "indication": "Allergic contact dermatitis (ACD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Berubicin",
+    "drug_clean": "Berubicin",
+    "query": "Berubicin Glioblastoma (GBM) (adult)",
+    "n_rows": 1,
+    "rows": [
+      627
+    ],
+    "indication": "Glioblastoma (GBM) (adult)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Blenrep",
+    "drug_clean": "Blenrep",
+    "query": "Blenrep Multiple myeloma",
+    "n_rows": 1,
+    "rows": [
+      630
+    ],
+    "indication": "Multiple myeloma",
+    "sponsor": ""
+  },
+  {
+    "drug": "DYAI-100",
+    "drug_clean": "DYAI-100",
+    "query": "DYAI-100 COVID-19 booster vaccine",
+    "n_rows": 1,
+    "rows": [
+      637
+    ],
+    "indication": "COVID-19 booster vaccine",
+    "sponsor": ""
+  },
+  {
+    "drug": "Soquelitinib  - (CPI-818)",
+    "drug_clean": "Soquelitinib",
+    "query": "Soquelitinib Peripheral T-cell lymphoma (PTCL)",
+    "n_rows": 1,
+    "rows": [
+      659
+    ],
+    "indication": "Peripheral T-cell lymphoma (PTCL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "MP0533",
+    "drug_clean": "MP0533",
+    "query": "MP0533 Acute myeloid leukemia (AML)",
+    "n_rows": 1,
+    "rows": [
+      669
+    ],
+    "indication": "Acute myeloid leukemia (AML)",
+    "sponsor": ""
+  },
+  {
+    "drug": "CA-4948 - (TakeAim Lymphoma)",
+    "drug_clean": "CA-4948",
+    "query": "CA-4948 Relapsed or Refractory Non-Hodgkin",
+    "n_rows": 1,
+    "rows": [
+      682
+    ],
+    "indication": "Relapsed or Refractory Non-Hodgkin Lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "TearCare - (SAHARA RCT)",
+    "drug_clean": "TearCare",
+    "query": "TearCare Dry Eye Disease",
+    "n_rows": 1,
+    "rows": [
+      694
+    ],
+    "indication": "Dry Eye Disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "SKYTROFA (lonapegsomatropin-tcgd (ransCon hGH)) -  (foresiGHt)",
+    "drug_clean": "SKYTROFA)",
+    "query": "SKYTROFA) Growth Hormone Deficiency -",
+    "n_rows": 1,
+    "rows": [
+      699
+    ],
+    "indication": "Growth Hormone Deficiency - adults",
+    "sponsor": ""
+  },
+  {
+    "drug": "GB2064 - (MYLOX-1)",
+    "drug_clean": "GB2064",
+    "query": "GB2064 Myelofibrosis",
+    "n_rows": 1,
+    "rows": [
+      704
+    ],
+    "indication": "Myelofibrosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "ADCT-901",
+    "drug_clean": "ADCT-901",
+    "query": "ADCT-901 Solid tumors",
+    "n_rows": 1,
+    "rows": [
+      711
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Scemblix - (ASC4FIRST)",
+    "drug_clean": "Scemblix",
+    "query": "Scemblix 1L Chronic myeloid leukemia",
+    "n_rows": 1,
+    "rows": [
+      714
+    ],
+    "indication": "1L Chronic myeloid leukemia (CML)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TRYPTYR (acoltremon ophthalmic solution) 0.003%",
+    "drug_clean": "TRYPTYR 0.003%",
+    "query": "TRYPTYR 0.003% Dry eye disease (DED)",
+    "n_rows": 1,
+    "rows": [
+      715
+    ],
+    "indication": "Dry eye disease (DED)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Casdozokitug (casdozo)",
+    "drug_clean": "Casdozokitug",
+    "query": "Casdozokitug Non-small cell lung cancer",
+    "n_rows": 1,
+    "rows": [
+      716
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "KORSUVA (CR845/difelikefalin) oral - (KICK)",
+    "drug_clean": "KORSUVA oral",
+    "query": "KORSUVA oral Stage 3-4 Chronic Kidney",
+    "n_rows": 1,
+    "rows": [
+      720
+    ],
+    "indication": "Stage 3-4 Chronic Kidney Disease-Associated Pruritus",
+    "sponsor": ""
+  },
+  {
+    "drug": "ORLYNVAH (Oral Sulopenem)",
+    "drug_clean": "ORLYNVAH",
+    "query": "ORLYNVAH Uncomplicated urinary tract infections",
+    "n_rows": 1,
+    "rows": [
+      730
+    ],
+    "indication": "Uncomplicated urinary tract infections (uUTI)",
+    "sponsor": ""
+  },
+  {
+    "drug": "VX-121/tezacaftor/VX-561 - (SKYLINE-102)",
+    "drug_clean": "VX-121/tezacaftor/VX-561",
+    "query": "VX-121/tezacaftor/VX-561 Cystic Fibrosis",
+    "n_rows": 1,
+    "rows": [
+      733
+    ],
+    "indication": "Cystic Fibrosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "clemidsogene lanparvovec (RGX-121) - (CAMPSIITE)",
+    "drug_clean": "clemidsogene lanparvovec",
+    "query": "clemidsogene lanparvovec MPS II (Hunter Syndrome)",
+    "n_rows": 1,
+    "rows": [
+      736
+    ],
+    "indication": "MPS II (Hunter Syndrome)",
+    "sponsor": ""
+  },
+  {
+    "drug": "4D-310 - (INGLAXA)",
+    "drug_clean": "4D-310",
+    "query": "4D-310 Fabry Disease",
+    "n_rows": 1,
+    "rows": [
+      738
+    ],
+    "indication": "Fabry Disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "RVT-2001",
+    "drug_clean": "RVT-2001",
+    "query": "RVT-2001 Transfusion-Dependent Anemia in Patients",
+    "n_rows": 1,
+    "rows": [
+      740
+    ],
+    "indication": "Transfusion-Dependent Anemia in Patients with Lower-Risk MDS",
+    "sponsor": ""
+  },
+  {
+    "drug": "EKTERLY (sebetralstat)",
+    "drug_clean": "EKTERLY",
+    "query": "EKTERLY Hereditary Angioedema (HAE)",
+    "n_rows": 1,
+    "rows": [
+      741
+    ],
+    "indication": "Hereditary Angioedema (HAE)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Aritinercept (AUR200)",
+    "drug_clean": "Aritinercept",
+    "query": "Aritinercept BAFF/APRIL (B-Cell Activating Factor)",
+    "n_rows": 1,
+    "rows": [
+      743
+    ],
+    "indication": "BAFF/APRIL (B-Cell Activating Factor)",
+    "sponsor": ""
+  },
+  {
+    "drug": "NT219 in combination with cetuximab",
+    "drug_clean": "NT219 in combination with cetuximab",
+    "query": "NT219 in combination with cetuximab Recurrent/metastatic squamous cell carcinoma",
+    "n_rows": 1,
+    "rows": [
+      747
+    ],
+    "indication": "Recurrent/metastatic squamous cell carcinoma of the head and",
+    "sponsor": ""
+  },
+  {
+    "drug": "TP-04 - (Galatea)",
+    "drug_clean": "TP-04",
+    "query": "TP-04 Rosacea",
+    "n_rows": 1,
+    "rows": [
+      748
+    ],
+    "indication": "Rosacea",
+    "sponsor": ""
+  },
+  {
+    "drug": "VK2735 - (VENTURE)",
+    "drug_clean": "VK2735",
+    "query": "VK2735 Obesity",
+    "n_rows": 1,
+    "rows": [
+      749
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "PL9643 - (MELODY-1)",
+    "drug_clean": "PL9643",
+    "query": "PL9643 Dry eye disease (DED)",
+    "n_rows": 1,
+    "rows": [
+      750
+    ],
+    "indication": "Dry eye disease (DED)",
+    "sponsor": ""
+  },
+  {
+    "drug": "CLR 131 (iopofosine) in combination with external beam radiation (EBRT)",
+    "drug_clean": "CLR 131 in combination with external beam radiation",
+    "query": "CLR 131 in combination with external beam radiation Head & neck cancer",
+    "n_rows": 1,
+    "rows": [
+      757
+    ],
+    "indication": "Head & neck cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Anaphylm  (dibutepinephrine) - (103)",
+    "drug_clean": "Anaphylm",
+    "query": "Anaphylm Anaphylaxis",
+    "n_rows": 1,
+    "rows": [
+      776
+    ],
+    "indication": "Anaphylaxis",
+    "sponsor": ""
+  },
+  {
+    "drug": "ivonescimab (AK112-202)",
+    "drug_clean": "ivonescimab",
+    "query": "ivonescimab Patients with Advanced Non-Small",
+    "n_rows": 1,
+    "rows": [
+      782
+    ],
+    "indication": "Patients with Advanced Non-Small Cell Lung Cancer (NSCLC) an",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zorevunersen (STK-001) - (BUTTERFLY)",
+    "drug_clean": "Zorevunersen",
+    "query": "Zorevunersen Dravet Syndrome",
+    "n_rows": 1,
+    "rows": [
+      785
+    ],
+    "indication": "Dravet Syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "Serdexmethylphenidate (SDX) - (KP1077)",
+    "drug_clean": "Serdexmethylphenidate",
+    "query": "Serdexmethylphenidate Idiopathic hypersomnia (IH)",
+    "n_rows": 1,
+    "rows": [
+      786
+    ],
+    "indication": "Idiopathic hypersomnia (IH)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PRAX-628",
+    "drug_clean": "PRAX-628",
+    "query": "PRAX-628 Photo-Paroxysmal Response (PPR)",
+    "n_rows": 1,
+    "rows": [
+      787
+    ],
+    "indication": "Photo-Paroxysmal Response (PPR)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Bitopertin - (APOLLO)",
+    "drug_clean": "Bitopertin",
+    "query": "Bitopertin Erythropoietic Protoporphyria (EPP)",
+    "n_rows": 1,
+    "rows": [
+      792
+    ],
+    "indication": "Erythropoietic Protoporphyria (EPP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tomivosertib (MNK1/2) - (KICKSTART)",
+    "drug_clean": "Tomivosertib",
+    "query": "Tomivosertib Non-small cell lung cancer",
+    "n_rows": 1,
+    "rows": [
+      795
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TARA-002 - (ADVANCED-1)",
+    "drug_clean": "TARA-002",
+    "query": "TARA-002 Non-muscle invasive bladder cancer",
+    "n_rows": 1,
+    "rows": [
+      799
+    ],
+    "indication": "Non-muscle invasive bladder cancer (NMIBC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "GT-30",
+    "drug_clean": "GT-30",
+    "query": "GT-30 Cancer Vaccine in advanced",
+    "n_rows": 1,
+    "rows": [
+      800
+    ],
+    "indication": "Cancer Vaccine in advanced hepatocellular carcinoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "RP1 (vusolimogene oderparepvec) - (ARTACUS)",
+    "drug_clean": "RP1",
+    "query": "RP1 Liver and kidney transplant",
+    "n_rows": 1,
+    "rows": [
+      801
+    ],
+    "indication": "Liver and kidney transplant recipients with recurrent Cutane",
+    "sponsor": ""
+  },
+  {
+    "drug": "Leqvio - (V-INITIATE)",
+    "drug_clean": "Leqvio",
+    "query": "Leqvio Low-density lipoprotein cholesterol (LDL-C)",
+    "n_rows": 1,
+    "rows": [
+      803
+    ],
+    "indication": "Low-density lipoprotein cholesterol (LDL-C) in patients with",
+    "sponsor": ""
+  },
+  {
+    "drug": "ABRYSVO - (MONeT)",
+    "drug_clean": "ABRYSVO",
+    "query": "ABRYSVO Respiratory syncytial virus (RSV)-associated",
+    "n_rows": 1,
+    "rows": [
+      806
+    ],
+    "indication": "Respiratory syncytial virus (RSV)-associated lower respirato",
+    "sponsor": ""
+  },
+  {
+    "drug": "GTX-102 - (Aspire)",
+    "drug_clean": "GTX-102",
+    "query": "GTX-102 Angelman Syndrome",
+    "n_rows": 1,
+    "rows": [
+      813
+    ],
+    "indication": "Angelman Syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "CLN-978",
+    "drug_clean": "CLN-978",
+    "query": "CLN-978 Relapsed/refractory B-cell non-Hodgkin lymphoma",
+    "n_rows": 1,
+    "rows": [
+      814
+    ],
+    "indication": "Relapsed/refractory B-cell non-Hodgkin lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "VTP-200 - (APOLLO)",
+    "drug_clean": "VTP-200",
+    "query": "VTP-200 Human papillomavirus (HPV)",
+    "n_rows": 1,
+    "rows": [
+      818
+    ],
+    "indication": "Human papillomavirus (HPV)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LCD supplement capsule",
+    "drug_clean": "LCD supplement capsule",
+    "query": "LCD supplement capsule Dry eyes",
+    "n_rows": 1,
+    "rows": [
+      822
+    ],
+    "indication": "Dry eyes",
+    "sponsor": ""
+  },
+  {
+    "drug": "PH15",
+    "drug_clean": "PH15",
+    "query": "PH15 Psychomotor impairment caused by",
+    "n_rows": 1,
+    "rows": [
+      823
+    ],
+    "indication": "Psychomotor impairment caused by mental fatigue",
+    "sponsor": ""
+  },
+  {
+    "drug": "KT-333",
+    "drug_clean": "KT-333",
+    "query": "KT-333 Cutaneous T-cell lymphoma (CTCL)",
+    "n_rows": 1,
+    "rows": [
+      844
+    ],
+    "indication": "Cutaneous T-cell lymphoma (CTCL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TEZSPIRE (tezepelumab-ekko) - (COURSE)",
+    "drug_clean": "TEZSPIRE",
+    "query": "TEZSPIRE Chronic obstructive pulmonary disease",
+    "n_rows": 1,
+    "rows": [
+      849
+    ],
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Mino-Lok",
+    "drug_clean": "Mino-Lok",
+    "query": "Mino-Lok Catheter related blood stream",
+    "n_rows": 1,
+    "rows": [
+      851
+    ],
+    "indication": "Catheter related blood stream infection (CRBSI)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ragistomig (ABL503)",
+    "drug_clean": "Ragistomig",
+    "query": "Ragistomig Solid tumors",
+    "n_rows": 1,
+    "rows": [
+      855
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "YL202/BNT326",
+    "drug_clean": "YL202/BNT326",
+    "query": "YL202/BNT326 Locally advanced or metastatic",
+    "n_rows": 1,
+    "rows": [
+      861
+    ],
+    "indication": "Locally advanced or metastatic non-small cell lung cancer an",
+    "sponsor": ""
+  },
+  {
+    "drug": "Trodelvy - (TROPiCS-04)",
+    "drug_clean": "Trodelvy",
+    "query": "Trodelvy Metastatic urothelial cancer (mUC)",
+    "n_rows": 1,
+    "rows": [
+      871
+    ],
+    "indication": "Metastatic urothelial cancer (mUC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Taletrectinib - (TRUST-I) (China)",
+    "drug_clean": "Taletrectinib",
+    "query": "Taletrectinib ROS1-positive non-small cell lung",
+    "n_rows": 1,
+    "rows": [
+      875
+    ],
+    "indication": "ROS1-positive non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "C-CAR301",
+    "drug_clean": "C-CAR301",
+    "query": "C-CAR301 Solid tumors",
+    "n_rows": 1,
+    "rows": [
+      898
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "HMPL-760",
+    "drug_clean": "HMPL-760",
+    "query": "HMPL-760 Bruton's Tyrosine Kinase (BTK)",
+    "n_rows": 1,
+    "rows": [
+      908
+    ],
+    "indication": "Bruton's Tyrosine Kinase (BTK) Relapsed/Refractory (R/R) Lym",
+    "sponsor": ""
+  },
+  {
+    "drug": "KT-333 - (STAT3)",
+    "drug_clean": "KT-333",
+    "query": "KT-333 Peripheral T-cell Lymphoma (PTCL)",
+    "n_rows": 1,
+    "rows": [
+      910
+    ],
+    "indication": "Peripheral T-cell Lymphoma (PTCL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Natrunix (XB2001) - (1-BETTER)",
+    "drug_clean": "Natrunix",
+    "query": "Natrunix Pancreatic Cancer",
+    "n_rows": 1,
+    "rows": [
+      923
+    ],
+    "indication": "Pancreatic Cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Oxylanthanum Carbonate (OLC)",
+    "drug_clean": "Oxylanthanum Carbonate",
+    "query": "Oxylanthanum Carbonate Kidney disease",
+    "n_rows": 1,
+    "rows": [
+      929
+    ],
+    "indication": "Kidney disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ocedurenone - (CLARION-CKD)",
+    "drug_clean": "Ocedurenone",
+    "query": "Ocedurenone Chronic kidney disease",
+    "n_rows": 1,
+    "rows": [
+      932
+    ],
+    "indication": "Chronic kidney disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "MOLBREEVI (Molgradex) - (IMPALA-2)",
+    "drug_clean": "MOLBREEVI",
+    "query": "MOLBREEVI Autoimmune pulmonary alveolar proteinosis",
+    "n_rows": 1,
+    "rows": [
+      933
+    ],
+    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Buntanetap",
+    "drug_clean": "Buntanetap",
+    "query": "Buntanetap Parkinson's Disease (PD)",
+    "n_rows": 1,
+    "rows": [
+      934
+    ],
+    "indication": "Parkinson's Disease (PD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ProtheraCytes - (EXCELLENT)",
+    "drug_clean": "ProtheraCytes",
+    "query": "ProtheraCytes Acute myocardial infarction",
+    "n_rows": 1,
+    "rows": [
+      940
+    ],
+    "indication": "Acute myocardial infarction",
+    "sponsor": ""
+  },
+  {
+    "drug": "IDE397 and Trodelvy",
+    "drug_clean": "IDE397 and Trodelvy",
+    "query": "IDE397 and Trodelvy Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      941
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "CT-996",
+    "drug_clean": "CT-996",
+    "query": "CT-996 Type 2 diabetes and",
+    "n_rows": 1,
+    "rows": [
+      943
+    ],
+    "indication": "Type 2 diabetes and obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "Transrectal High-intensity focused ultrasound (TR-HIFU)",
+    "drug_clean": "Transrectal High-intensity focused ultrasound",
+    "query": "Transrectal High-intensity focused ultrasound Rectal Deep Infiltrating Endometriosis",
+    "n_rows": 1,
+    "rows": [
+      945
+    ],
+    "indication": "Rectal Deep Infiltrating Endometriosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "ATEV - (V007)",
+    "drug_clean": "ATEV",
+    "query": "ATEV Acellular tissue engineered vessel",
+    "n_rows": 1,
+    "rows": [
+      961
+    ],
+    "indication": "Acellular tissue engineered vessel (ATEV) in arteriovenous a",
+    "sponsor": ""
+  },
+  {
+    "drug": "Lonvoguran ziclumeran (lonvo-z, formerly NTLA-2002) - (HAELO)",
+    "drug_clean": "Lonvoguran ziclumeran",
+    "query": "Lonvoguran ziclumeran Hereditary angioedema (HAE)",
+    "n_rows": 1,
+    "rows": [
+      967
+    ],
+    "indication": "Hereditary angioedema (HAE)",
+    "sponsor": ""
+  },
+  {
+    "drug": "CT-0508 with pembrolizumab",
+    "drug_clean": "CT-0508 with pembrolizumab",
+    "query": "CT-0508 with pembrolizumab HER2+ solid tumors",
+    "n_rows": 1,
+    "rows": [
+      969
+    ],
+    "indication": "HER2+ solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "CTX-009 - (COMPANION-003)",
+    "drug_clean": "CTX-009",
+    "query": "CTX-009 Colorectal cancer (CRC)",
+    "n_rows": 1,
+    "rows": [
+      972
+    ],
+    "indication": "Colorectal cancer (CRC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "CNSide - (FORESEE)",
+    "drug_clean": "CNSide",
+    "query": "CNSide Breast or Non-Small Cell",
+    "n_rows": 1,
+    "rows": [
+      973
+    ],
+    "indication": "Breast or Non-Small Cell Lung Cancer (NSCLC) who have suspic",
+    "sponsor": ""
+  },
+  {
+    "drug": "PALM 007 (Tecovirimat for Treatment of Monkeypox Virus)",
+    "drug_clean": "PALM 007",
+    "query": "PALM 007 Monkeypox (mpox)",
+    "n_rows": 1,
+    "rows": [
+      978
+    ],
+    "indication": "Monkeypox (mpox)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Elevai Enfinity Topical Exosome Serum",
+    "drug_clean": "Elevai Enfinity Topical Exosome Serum",
+    "query": "Elevai Enfinity Topical Exosome Serum Facial appearance",
+    "n_rows": 1,
+    "rows": [
+      982
+    ],
+    "indication": "Facial appearance",
+    "sponsor": ""
+  },
+  {
+    "drug": "Leqvio - (V-Mono)",
+    "drug_clean": "Leqvio",
+    "query": "Leqvio CVRR (Primary prevention)",
+    "n_rows": 1,
+    "rows": [
+      984
+    ],
+    "indication": "CVRR (Primary prevention)",
+    "sponsor": ""
+  },
+  {
+    "drug": "AEF0117",
+    "drug_clean": "AEF0117",
+    "query": "AEF0117 Cannabis-Related Disorders (CrD)",
+    "n_rows": 1,
+    "rows": [
+      989
+    ],
+    "indication": "Cannabis-Related Disorders (CrD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ifinatamab deruxtecan (DS-7300) - (IDeate-Lung02 )",
+    "drug_clean": "Ifinatamab deruxtecan",
+    "query": "Ifinatamab deruxtecan Extensive-stage small cell lung",
+    "n_rows": 1,
+    "rows": [
+      997
+    ],
+    "indication": "Extensive-stage small cell lung cancer (SCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TNX-801 - (Kenya study)",
+    "drug_clean": "TNX-801",
+    "query": "TNX-801 Monkeypox, horse pox and",
+    "n_rows": 1,
+    "rows": [
+      1001
+    ],
+    "indication": "Monkeypox, horse pox and smallpox infection",
+    "sponsor": ""
+  },
+  {
+    "drug": "IBTROZI (taletrectinib)",
+    "drug_clean": "IBTROZI",
+    "query": "IBTROZI ROS1+ Non\u2013Small Cell Lung",
+    "n_rows": 1,
+    "rows": [
+      1002
+    ],
+    "indication": "ROS1+ Non\u2013Small Cell Lung Cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "GSK3943104 - (TH HSV REC-003)",
+    "drug_clean": "GSK3943104",
+    "query": "GSK3943104 Herpes simplex virus (HSV)",
+    "n_rows": 1,
+    "rows": [
+      1006
+    ],
+    "indication": "Herpes simplex virus (HSV) vaccine",
+    "sponsor": ""
+  },
+  {
+    "drug": "MGC018 - (TAMARACK)",
+    "drug_clean": "MGC018",
+    "query": "MGC018 Metastatic castration-resistant prostate cancer",
+    "n_rows": 1,
+    "rows": [
+      1016
+    ],
+    "indication": "Metastatic castration-resistant prostate cancer (mCRPC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "AK112-206",
+    "drug_clean": "AK112-206",
+    "query": "AK112-206 Metastatic microsatellite-stable (MSS) colorectal",
+    "n_rows": 1,
+    "rows": [
+      1024
+    ],
+    "indication": "Metastatic microsatellite-stable (MSS) colorectal cancer (CR",
+    "sponsor": ""
+  },
+  {
+    "drug": "Airsupra (albuterol/budesonide) - (BATURA)",
+    "drug_clean": "Airsupra",
+    "query": "Airsupra Severe exacerbations in patients",
+    "n_rows": 1,
+    "rows": [
+      1045
+    ],
+    "indication": "Severe exacerbations in patients with intermittent or mild p",
+    "sponsor": ""
+  },
+  {
+    "drug": "RLF-TD011",
+    "drug_clean": "RLF-TD011",
+    "query": "RLF-TD011 Epidermolysis bullosa (EB)",
+    "n_rows": 1,
+    "rows": [
+      1046
+    ],
+    "indication": "Epidermolysis bullosa (EB)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Arexvy (60+ at increased risk) - (AReSVi-006)",
+    "drug_clean": "Arexvy",
+    "query": "Arexvy Respiratory Syncytial Virus Vaccine,",
+    "n_rows": 1,
+    "rows": [
+      1047
+    ],
+    "indication": "Respiratory Syncytial Virus Vaccine, Adjuvanted",
+    "sponsor": ""
+  },
+  {
+    "drug": "VK0214",
+    "drug_clean": "VK0214",
+    "query": "VK0214 X-linked adrenoleukodystrophy (X-ALD)",
+    "n_rows": 1,
+    "rows": [
+      1050
+    ],
+    "indication": "X-linked adrenoleukodystrophy (X-ALD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Vabysmo (faricimab-svoa) - (ELEVATUM)",
+    "drug_clean": "Vabysmo",
+    "query": "Vabysmo Diabetic macular edema (DME)",
+    "n_rows": 1,
+    "rows": [
+      1063
+    ],
+    "indication": "Diabetic macular edema (DME)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LYL845",
+    "drug_clean": "LYL845",
+    "query": "LYL845 Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1066
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "BBP-812 - (CANaspire)",
+    "drug_clean": "BBP-812",
+    "query": "BBP-812 Canavan Disease",
+    "n_rows": 1,
+    "rows": [
+      1067
+    ],
+    "indication": "Canavan Disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "ZL-1310 (DLL3 ADC)",
+    "drug_clean": "ZL-1310",
+    "query": "ZL-1310 Solid tumors, relapsed and",
+    "n_rows": 1,
+    "rows": [
+      1068
+    ],
+    "indication": "Solid tumors,  relapsed and refractory second-line+ SCLC",
+    "sponsor": ""
+  },
+  {
+    "drug": "Casdatifan (AB521) + volrustomig",
+    "drug_clean": "Casdatifan + volrustomig",
+    "query": "Casdatifan + volrustomig Clear cell renal cell",
+    "n_rows": 1,
+    "rows": [
+      1069
+    ],
+    "indication": "Clear cell renal cell carcinoma (ccRCC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "(Z)-Endoxifen - (I-SPY 2)",
+    "drug_clean": "-Endoxifen",
+    "query": "-Endoxifen Locally advanced breast cancer",
+    "n_rows": 1,
+    "rows": [
+      1075
+    ],
+    "indication": "Locally advanced breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Z-Endoxifen - (Karisma)",
+    "drug_clean": "Z-Endoxifen",
+    "query": "Z-Endoxifen Mammographic breast density (MBD),",
+    "n_rows": 1,
+    "rows": [
+      1077
+    ],
+    "indication": "Mammographic breast density (MBD), breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Revita - (REVITALIZE-1)",
+    "drug_clean": "Revita",
+    "query": "Revita Type 2 Diabetes",
+    "n_rows": 1,
+    "rows": [
+      1079
+    ],
+    "indication": "Type 2 Diabetes",
+    "sponsor": ""
+  },
+  {
+    "drug": "IO102-IO103 in combination with pembrolizumab  - (IOB-022)",
+    "drug_clean": "IO102-IO103 in combination with pembrolizumab",
+    "query": "IO102-IO103 in combination with pembrolizumab Non-small cell lung cancer",
+    "n_rows": 1,
+    "rows": [
+      1082
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "CUE-102",
+    "drug_clean": "CUE-102",
+    "query": "CUE-102 Wilms' Tumor (WT1)-expressing cancers",
+    "n_rows": 1,
+    "rows": [
+      1091
+    ],
+    "indication": "Wilms' Tumor (WT1)-expressing cancers",
+    "sponsor": ""
+  },
+  {
+    "drug": "NGN-101",
+    "drug_clean": "NGN-101",
+    "query": "NGN-101 CLN5 Batten Disease",
+    "n_rows": 1,
+    "rows": [
+      1095
+    ],
+    "indication": "CLN5 Batten Disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "FT522",
+    "drug_clean": "FT522",
+    "query": "FT522 Lupus",
+    "n_rows": 1,
+    "rows": [
+      1100
+    ],
+    "indication": "Lupus",
+    "sponsor": ""
+  },
+  {
+    "drug": "PSMA-TRACTr (JANX007) - (ENGAGER-PSMA-01)",
+    "drug_clean": "PSMA-TRACTr",
+    "query": "PSMA-TRACTr Metastatic castration-resistant prostate cancer",
+    "n_rows": 1,
+    "rows": [
+      1125
+    ],
+    "indication": "Metastatic castration-resistant prostate cancer (mCPRC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Petosemtamab (MCLA-158)",
+    "drug_clean": "Petosemtamab",
+    "query": "Petosemtamab Recurrent/metastatic (r/m) head and",
+    "n_rows": 1,
+    "rows": [
+      1126
+    ],
+    "indication": "Recurrent/metastatic (r/m) head and neck squamous cell carci",
+    "sponsor": ""
+  },
+  {
+    "drug": "SVR12 in combination of bemnifosbuvir and ruzasvir - (C-BEYOND)",
+    "drug_clean": "SVR12 in combination of bemnifosbuvir and ruzasvir",
+    "query": "SVR12 in combination of bemnifosbuvir and ruzasvir Hepatitis C virus (HCV)",
+    "n_rows": 1,
+    "rows": [
+      1131
+    ],
+    "indication": "Hepatitis C virus (HCV)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ZUSDURI (VesiGel UGN-102 (mitomycin)) - (ENVISION)",
+    "drug_clean": "ZUSDURI)",
+    "query": "ZUSDURI) Low grade non-muscle invasive",
+    "n_rows": 1,
+    "rows": [
+      1134
+    ],
+    "indication": "Low grade non-muscle invasive bladder cancer (LG-NMIBC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BNT324/DB-1311",
+    "drug_clean": "BNT324/DB-1311",
+    "query": "BNT324/DB-1311 Solid tumors",
+    "n_rows": 1,
+    "rows": [
+      1135
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "NX-5948",
+    "drug_clean": "NX-5948",
+    "query": "NX-5948 R/R Chronic Lymphocytic Leukemia",
+    "n_rows": 1,
+    "rows": [
+      1144
+    ],
+    "indication": "R/R Chronic Lymphocytic Leukemia (CLL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BGB-16673-101 - (CaDAnCe-101)",
+    "drug_clean": "BGB-16673-101",
+    "query": "BGB-16673-101 Relapsed or refractory (R/R)",
+    "n_rows": 1,
+    "rows": [
+      1150
+    ],
+    "indication": "Relapsed or refractory (R/R) CLL/SLL",
+    "sponsor": ""
+  },
+  {
+    "drug": "Dazucorilant (DAZALS)",
+    "drug_clean": "Dazucorilant",
+    "query": "Dazucorilant Amyotrophic Lateral Sclerosis (ALS)",
+    "n_rows": 1,
+    "rows": [
+      1161
+    ],
+    "indication": "Amyotrophic Lateral Sclerosis (ALS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PRT2527",
+    "drug_clean": "PRT2527",
+    "query": "PRT2527 Solid tumors and hematological",
+    "n_rows": 1,
+    "rows": [
+      1163
+    ],
+    "indication": "Solid tumors and hematological malignancies",
+    "sponsor": ""
+  },
+  {
+    "drug": "KB408 - (SERPENTINE-1)",
+    "drug_clean": "KB408",
+    "query": "KB408 Alpha-1 antitrypsin deficiency (AATD)",
+    "n_rows": 1,
+    "rows": [
+      1164
+    ],
+    "indication": "Alpha-1 antitrypsin deficiency (AATD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ANB032 - (ARISE-AD)",
+    "drug_clean": "ANB032",
+    "query": "ANB032 Atopic dermatitis",
+    "n_rows": 1,
+    "rows": [
+      1165
+    ],
+    "indication": "Atopic dermatitis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Korlym - (CATALYST)",
+    "drug_clean": "Korlym",
+    "query": "Korlym Hypercortisolism (Cushing's Syndrome) and",
+    "n_rows": 1,
+    "rows": [
+      1166
+    ],
+    "indication": "Hypercortisolism (Cushing's Syndrome) and Difficult-to-Contr",
+    "sponsor": ""
+  },
+  {
+    "drug": "Mecbotamab Vedotin (BA3011)",
+    "drug_clean": "Mecbotamab Vedotin",
+    "query": "Mecbotamab Vedotin Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1171
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "FHD-286",
+    "drug_clean": "FHD-286",
+    "query": "FHD-286 Acute myeloid leukemia (AML)",
+    "n_rows": 1,
+    "rows": [
+      1172
+    ],
+    "indication": "Acute myeloid leukemia (AML)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Icovamenib (BMF-219) - (COVALENT-111)",
+    "drug_clean": "Icovamenib",
+    "query": "Icovamenib Type 2 Diabetes",
+    "n_rows": 1,
+    "rows": [
+      1174
+    ],
+    "indication": "Type 2 Diabetes",
+    "sponsor": ""
+  },
+  {
+    "drug": "KB707 - (KYANITE-1)",
+    "drug_clean": "KB707",
+    "query": "KB707 Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1181
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "YARTEMLEA (Narsoplimab)",
+    "drug_clean": "YARTEMLEA",
+    "query": "YARTEMLEA Hematopoietic stem cell-associated TMA",
+    "n_rows": 1,
+    "rows": [
+      1184
+    ],
+    "indication": "Hematopoietic stem cell-associated TMA (HSCT-TMA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "AM833 (CagriSema) - (REDEFINE)",
+    "drug_clean": "AM833",
+    "query": "AM833 Obesity",
+    "n_rows": 1,
+    "rows": [
+      1192
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "Natrunix",
+    "drug_clean": "Natrunix",
+    "query": "Natrunix Rheumatoid Arthritis",
+    "n_rows": 1,
+    "rows": [
+      1193
+    ],
+    "indication": "Rheumatoid Arthritis",
+    "sponsor": ""
+  },
+  {
+    "drug": "PRF-110",
+    "drug_clean": "PRF-110",
+    "query": "PRF-110 Bunionectomy",
+    "n_rows": 1,
+    "rows": [
+      1195
+    ],
+    "indication": "Bunionectomy",
+    "sponsor": ""
+  },
+  {
+    "drug": "Itvisma (onasemnogene abeparvovec-brve)",
+    "drug_clean": "Itvisma",
+    "query": "Itvisma Spinal muscular atrophy (SMA)",
+    "n_rows": 1,
+    "rows": [
+      1196
+    ],
+    "indication": "Spinal muscular atrophy (SMA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Navacaprant (NMRA-140) - (KOASTAL-1)",
+    "drug_clean": "Navacaprant",
+    "query": "Navacaprant Major depressive disorder",
+    "n_rows": 1,
+    "rows": [
+      1197
+    ],
+    "indication": "Major depressive disorder",
+    "sponsor": ""
+  },
+  {
+    "drug": "OCS-05 - (ACUITY)",
+    "drug_clean": "OCS-05",
+    "query": "OCS-05 Acute optic neuritis",
+    "n_rows": 1,
+    "rows": [
+      1201
+    ],
+    "indication": "Acute optic neuritis",
+    "sponsor": ""
+  },
+  {
+    "drug": "HT-001 - (CLEER-001)",
+    "drug_clean": "HT-001",
+    "query": "HT-001 EGFRI-induced skin toxicity",
+    "n_rows": 1,
+    "rows": [
+      1202
+    ],
+    "indication": "EGFRI-induced skin toxicity",
+    "sponsor": ""
+  },
+  {
+    "drug": "GH1001 (GH001-BD-202)",
+    "drug_clean": "GH1001",
+    "query": "GH1001 Bipolar II Disorder",
+    "n_rows": 1,
+    "rows": [
+      1204
+    ],
+    "indication": "Bipolar II Disorder",
+    "sponsor": ""
+  },
+  {
+    "drug": "Atumelnant (CRN04894) - (TouCAHn)",
+    "drug_clean": "Atumelnant",
+    "query": "Atumelnant Congenital adrenal hyperplasia (CAH)",
+    "n_rows": 1,
+    "rows": [
+      1206
+    ],
+    "indication": "Congenital adrenal hyperplasia (CAH) and Cushing\u2019s disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Travelan - (CHIM)",
+    "drug_clean": "Travelan",
+    "query": "Travelan Enterotoxigenic Escherichia coli (ETEC)",
+    "n_rows": 1,
+    "rows": [
+      1209
+    ],
+    "indication": "Enterotoxigenic Escherichia coli (ETEC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ozekibart (INBRX-109) in combination with FOLFIRI",
+    "drug_clean": "ozekibart in combination with FOLFIRI",
+    "query": "ozekibart in combination with FOLFIRI Advanced or metastatic, unresectable",
+    "n_rows": 1,
+    "rows": [
+      1211
+    ],
+    "indication": "Advanced or metastatic, unresectable colorectal adenocarcino",
+    "sponsor": ""
+  },
+  {
+    "drug": "LSTA1 in combination with gemcitabine and nab-paclitaxel - (ASCEND)",
+    "drug_clean": "LSTA1 in combination with gemcitabine and nab-paclitaxel",
+    "query": "LSTA1 in combination with gemcitabine and nab-paclitaxel 1L metastatic pancreatic ductal",
+    "n_rows": 1,
+    "rows": [
+      1215
+    ],
+    "indication": "1L metastatic pancreatic ductal adenocarcinoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "(Z)-endoxifen - (KARISMA-Endoxifen)",
+    "drug_clean": "-endoxifen",
+    "query": "-endoxifen Breast cancer",
+    "n_rows": 1,
+    "rows": [
+      1217
+    ],
+    "indication": "Breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tividenofusp alfa (DNL310) - (COMPASS)",
+    "drug_clean": "Tividenofusp alfa",
+    "query": "Tividenofusp alfa Hunter syndrome MPS II",
+    "n_rows": 1,
+    "rows": [
+      1231
+    ],
+    "indication": "Hunter syndrome MPS II",
+    "sponsor": ""
+  },
+  {
+    "drug": "ADX-097",
+    "drug_clean": "ADX-097",
+    "query": "ADX-097 Renal Diseases",
+    "n_rows": 1,
+    "rows": [
+      1233
+    ],
+    "indication": "Renal Diseases",
+    "sponsor": ""
+  },
+  {
+    "drug": "GTX-104 - (STRIVE-ON)",
+    "drug_clean": "GTX-104",
+    "query": "GTX-104 Subarachnoid hemorrhage (SAH)",
+    "n_rows": 1,
+    "rows": [
+      1235
+    ],
+    "indication": "Subarachnoid hemorrhage (SAH)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Opdualag  (nivolumab and relatlimab-rmbw)- (RELATIVITY-098)",
+    "drug_clean": "Opdualag-",
+    "query": "Opdualag- Stage III-IV melanoma",
+    "n_rows": 1,
+    "rows": [
+      1237
+    ],
+    "indication": "Stage III-IV melanoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "SPN-820",
+    "drug_clean": "SPN-820",
+    "query": "SPN-820 Treatment-resistant depression",
+    "n_rows": 1,
+    "rows": [
+      1241
+    ],
+    "indication": "Treatment-resistant depression",
+    "sponsor": ""
+  },
+  {
+    "drug": "SGT-003 - (INSPIRE DUCHENNE)",
+    "drug_clean": "SGT-003",
+    "query": "SGT-003 Duchenne Muscular Dystrophy (DMD)",
+    "n_rows": 1,
+    "rows": [
+      1242
+    ],
+    "indication": "Duchenne Muscular Dystrophy (DMD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "SEP-786",
+    "drug_clean": "SEP-786",
+    "query": "SEP-786 Hypoparathyroidism in healthy volunteers",
+    "n_rows": 1,
+    "rows": [
+      1243
+    ],
+    "indication": "Hypoparathyroidism in healthy volunteers",
+    "sponsor": ""
+  },
+  {
+    "drug": "SLS009 (tambiciclib) with zanubrutinib",
+    "drug_clean": "SLS009 with zanubrutinib",
+    "query": "SLS009 with zanubrutinib relapsed/refractory Diffuse Large B-Cell",
+    "n_rows": 1,
+    "rows": [
+      1245
+    ],
+    "indication": "relapsed/refractory Diffuse Large B-Cell Lymphoma (r/r DLBCL",
+    "sponsor": ""
+  },
+  {
+    "drug": "SYMBRAVO (MoSEIC meloxicam-rizatriptan (AXS-07)) - (EMERGE)",
+    "drug_clean": "SYMBRAVO)",
+    "query": "SYMBRAVO) Migraine",
+    "n_rows": 1,
+    "rows": [
+      1246
+    ],
+    "indication": "Migraine",
+    "sponsor": ""
+  },
+  {
+    "drug": "QRX003 - (CL-QRX003-002)",
+    "drug_clean": "QRX003",
+    "query": "QRX003 Netherton Syndrome",
+    "n_rows": 1,
+    "rows": [
+      1250
+    ],
+    "indication": "Netherton Syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ulixacaltamide \u200b(PRAX-944) - (Essential3)",
+    "drug_clean": "Ulixacaltamide \u200b",
+    "query": "Ulixacaltamide \u200b Essential tremor",
+    "n_rows": 1,
+    "rows": [
+      1252
+    ],
+    "indication": "Essential tremor",
+    "sponsor": ""
+  },
+  {
+    "drug": "Batoclimab",
+    "drug_clean": "Batoclimab",
+    "query": "Batoclimab Myasthenia Gravis (MG)",
+    "n_rows": 1,
+    "rows": [
+      1276
+    ],
+    "indication": "Myasthenia Gravis (MG)",
+    "sponsor": ""
+  },
+  {
+    "drug": "BMT-801 with bremelanotide plus tirzepatide",
+    "drug_clean": "BMT-801 with bremelanotide plus tirzepatide",
+    "query": "BMT-801 with bremelanotide plus tirzepatide Obesity",
+    "n_rows": 1,
+    "rows": [
+      1287
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "CTX-009 (DLL4 X VEGF-A bispecific) - (COMPANION-002)",
+    "drug_clean": "CTX-009",
+    "query": "CTX-009 Biliary tract cancer (BTC)",
+    "n_rows": 1,
+    "rows": [
+      1292
+    ],
+    "indication": "Biliary tract cancer (BTC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LX2006 - (Weill Cornell Medicine)",
+    "drug_clean": "LX2006",
+    "query": "LX2006 Cardiomyopathy associated with Friedreich's",
+    "n_rows": 1,
+    "rows": [
+      1296
+    ],
+    "indication": "Cardiomyopathy associated with Friedreich's ataxia (FA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "RLYB212",
+    "drug_clean": "RLYB212",
+    "query": "RLYB212 Fetal and neonatal alloimmune",
+    "n_rows": 1,
+    "rows": [
+      1298
+    ],
+    "indication": "Fetal and neonatal alloimmune thrombocytopenia (FNAIT)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Latozinemab",
+    "drug_clean": "Latozinemab",
+    "query": "Latozinemab Frontotemporal dementia",
+    "n_rows": 1,
+    "rows": [
+      1299
+    ],
+    "indication": "Frontotemporal dementia",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cobenfy - (ARISE)",
+    "drug_clean": "Cobenfy",
+    "query": "Cobenfy Schizophrenia",
+    "n_rows": 1,
+    "rows": [
+      1306
+    ],
+    "indication": "Schizophrenia",
+    "sponsor": ""
+  },
+  {
+    "drug": "LP-310",
+    "drug_clean": "LP-310",
+    "query": "LP-310 Oral Lichen Planus (OLP)",
+    "n_rows": 1,
+    "rows": [
+      1307
+    ],
+    "indication": "Oral Lichen Planus (OLP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ivonescimab with platinum-based chemotherapy compared with tislelizumab - (AK112-306/HARMONi-6)",
+    "drug_clean": "Ivonescimab with platinum-based chemotherapy compared with tislelizumab",
+    "query": "Ivonescimab with platinum-based chemotherapy compared with tislelizumab Locally advanced or metastatic",
+    "n_rows": 1,
+    "rows": [
+      1308
+    ],
+    "indication": "Locally advanced or metastatic squamous non-small cell lung ",
+    "sponsor": ""
+  },
+  {
+    "drug": "CB-010 - (GALLOP)",
+    "drug_clean": "CB-010",
+    "query": "CB-010 Lupus nephritis (LN), extrarenal",
+    "n_rows": 1,
+    "rows": [
+      1310
+    ],
+    "indication": "Lupus nephritis (LN), extrarenal lupus (ERL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PCRX-201 (enekinragene inzadenovec) - (ASCEND)",
+    "drug_clean": "PCRX-201",
+    "query": "PCRX-201 Osteoarthritis of the knee",
+    "n_rows": 1,
+    "rows": [
+      1317
+    ],
+    "indication": "Osteoarthritis of the knee",
+    "sponsor": ""
+  },
+  {
+    "drug": "EBO-301",
+    "drug_clean": "EBO-301",
+    "query": "EBO-301 Treatment-Refractory MAC Lung Disease",
+    "n_rows": 1,
+    "rows": [
+      1320
+    ],
+    "indication": "Treatment-Refractory MAC Lung Disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "BREZTRI AEROSPHERE (budesonide/glycopyrrolate/formoterol fumarate) - (KALOS/LOGOS)",
+    "drug_clean": "BREZTRI AEROSPHERE",
+    "query": "BREZTRI AEROSPHERE Asthma",
+    "n_rows": 1,
+    "rows": [
+      1321
+    ],
+    "indication": "Asthma",
+    "sponsor": ""
+  },
+  {
+    "drug": "Trem-cel + Mylotarg (VBP101)",
+    "drug_clean": "Trem-cel + Mylotarg",
+    "query": "Trem-cel + Mylotarg Acute myeloid leukemia (AML)",
+    "n_rows": 1,
+    "rows": [
+      1326
+    ],
+    "indication": "Acute myeloid leukemia (AML)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Evorpacept with PADCEV (enfortumab vedotin-ejfv) - (ASPEN-07)",
+    "drug_clean": "Evorpacept with PADCEV",
+    "query": "Evorpacept with PADCEV Urothelial Carcinoma (UC)",
+    "n_rows": 1,
+    "rows": [
+      1327
+    ],
+    "indication": "Urothelial Carcinoma (UC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "4D-110",
+    "drug_clean": "4D-110",
+    "query": "4D-110 Choroideremia",
+    "n_rows": 1,
+    "rows": [
+      1330
+    ],
+    "indication": "Choroideremia",
+    "sponsor": ""
+  },
+  {
+    "drug": "TNX-1300 - (CATALYST)",
+    "drug_clean": "TNX-1300",
+    "query": "TNX-1300 Drug overdose",
+    "n_rows": 1,
+    "rows": [
+      1339
+    ],
+    "indication": "Drug overdose",
+    "sponsor": ""
+  },
+  {
+    "drug": "Emiltatug Ledadotin (XMT-1660) - (Emi-Le)",
+    "drug_clean": "Emiltatug Ledadotin",
+    "query": "Emiltatug Ledadotin Metastatic triple-negative breast cancer",
+    "n_rows": 1,
+    "rows": [
+      1340
+    ],
+    "indication": "Metastatic triple-negative breast cancer (TNBC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Azetukalner - (IIT)",
+    "drug_clean": "Azetukalner",
+    "query": "Azetukalner Major depressive disorder (MDD)",
+    "n_rows": 1,
+    "rows": [
+      1343
+    ],
+    "indication": "Major depressive disorder (MDD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Nexiguran Ziclumeran (nex-z)",
+    "drug_clean": "Nexiguran Ziclumeran",
+    "query": "Nexiguran Ziclumeran Polyneuropathy and cardiomyopathy",
+    "n_rows": 1,
+    "rows": [
+      1345
+    ],
+    "indication": "Polyneuropathy and cardiomyopathy",
+    "sponsor": ""
+  },
+  {
+    "drug": "CTx-1301 (dexmethlyphenidate HCI)",
+    "drug_clean": "CTx-1301",
+    "query": "CTx-1301 ADHD in patients six",
+    "n_rows": 1,
+    "rows": [
+      1347
+    ],
+    "indication": "ADHD  in patients six years of age or older",
+    "sponsor": ""
+  },
+  {
+    "drug": "Hydronidone (F351)",
+    "drug_clean": "Hydronidone",
+    "query": "Hydronidone Chronic hepatitis B (CHB)-associated",
+    "n_rows": 1,
+    "rows": [
+      1349
+    ],
+    "indication": "Chronic hepatitis B (CHB)-associated liver fibrosis in the P",
+    "sponsor": ""
+  },
+  {
+    "drug": "KOMZIFTI (ziftomenib)",
+    "drug_clean": "KOMZIFTI",
+    "query": "KOMZIFTI Relapsed or Refractory NPM1-Mutated",
+    "n_rows": 1,
+    "rows": [
+      1351
+    ],
+    "indication": "Relapsed or Refractory NPM1-Mutated Acute Myeloid Leukemia (",
+    "sponsor": ""
+  },
+  {
+    "drug": "VS-6766 and defactinib - (RAMP 205)",
+    "drug_clean": "VS-6766 and defactinib",
+    "query": "VS-6766 and defactinib Metastatic pancreatic cancer",
+    "n_rows": 1,
+    "rows": [
+      1357
+    ],
+    "indication": "Metastatic pancreatic cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "BBI-355 - (POTENTIATE)",
+    "drug_clean": "BBI-355",
+    "query": "BBI-355 Oncogene amplified cancers",
+    "n_rows": 1,
+    "rows": [
+      1358
+    ],
+    "indication": "Oncogene amplified cancers",
+    "sponsor": ""
+  },
+  {
+    "drug": "IMNN-001 - (OVATION 2)",
+    "drug_clean": "IMNN-001",
+    "query": "IMNN-001 Ovarian cancer",
+    "n_rows": 1,
+    "rows": [
+      1361
+    ],
+    "indication": "Ovarian cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Linvoseltamab +  carfilzomib - (LINKER-MM2)",
+    "drug_clean": "Linvoseltamab +  carfilzomib",
+    "query": "Linvoseltamab +  carfilzomib Relapsed/refractory multiple myeloma (RRMM)",
+    "n_rows": 1,
+    "rows": [
+      1363
+    ],
+    "indication": "Relapsed/refractory multiple myeloma (RRMM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PALI-2108",
+    "drug_clean": "PALI-2108",
+    "query": "PALI-2108 Moderate-to-severe ulcerative colitis (UC)",
+    "n_rows": 1,
+    "rows": [
+      1367
+    ],
+    "indication": "Moderate-to-severe ulcerative colitis (UC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "PGN-EDO51 - (CONNECT1)",
+    "drug_clean": "PGN-EDO51",
+    "query": "PGN-EDO51 Duchenne muscular dystrophy (DMD)",
+    "n_rows": 1,
+    "rows": [
+      1373
+    ],
+    "indication": "Duchenne muscular dystrophy (DMD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ivonescimab plus platinum-doublet chemotherapy - (HARMONi)",
+    "drug_clean": "Ivonescimab plus platinum-doublet chemotherapy",
+    "query": "Ivonescimab plus platinum-doublet chemotherapy EGFR-mutated, locally advanced or",
+    "n_rows": 1,
+    "rows": [
+      1376
+    ],
+    "indication": "EGFR-mutated, locally advanced or metastatic non-squamous no",
+    "sponsor": ""
+  },
+  {
+    "drug": "Vilastobart (XTX101) with atezolizumab",
+    "drug_clean": "Vilastobart with atezolizumab",
+    "query": "Vilastobart with atezolizumab Microsatellite stable colorectal cancer",
+    "n_rows": 1,
+    "rows": [
+      1381
+    ],
+    "indication": "Microsatellite stable colorectal cancer (MSS CRC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "sofetabart mipitecan (LY4170156)",
+    "drug_clean": "sofetabart mipitecan",
+    "query": "sofetabart mipitecan Platinum-resistant ovarian cancer",
+    "n_rows": 1,
+    "rows": [
+      1383
+    ],
+    "indication": "Platinum-resistant ovarian cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "MR-142 - (LYNX-2)",
+    "drug_clean": "MR-142",
+    "query": "MR-142 Chronic night driving impairment",
+    "n_rows": 1,
+    "rows": [
+      1385
+    ],
+    "indication": "Chronic night driving impairment",
+    "sponsor": ""
+  },
+  {
+    "drug": "Pluvicto",
+    "drug_clean": "Pluvicto",
+    "query": "Pluvicto PSMA-positive metastatic hormone-sensitive prostate",
+    "n_rows": 1,
+    "rows": [
+      1389
+    ],
+    "indication": "PSMA-positive metastatic hormone-sensitive prostate cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rosnilimab (ANB030) - (RENOIR)",
+    "drug_clean": "Rosnilimab",
+    "query": "Rosnilimab Rheumatoid arthritis",
+    "n_rows": 1,
+    "rows": [
+      1398
+    ],
+    "indication": "Rheumatoid arthritis",
+    "sponsor": ""
+  },
+  {
+    "drug": "iluzanebart  (VGL101) - (IGNITE)",
+    "drug_clean": "iluzanebart",
+    "query": "iluzanebart Adult-onset leukoencephalopathy with axonal",
+    "n_rows": 1,
+    "rows": [
+      1399
+    ],
+    "indication": "Adult-onset leukoencephalopathy with axonal spheroids and pi",
+    "sponsor": ""
+  },
+  {
+    "drug": "D-PLEX100 - (SHIELD II)",
+    "drug_clean": "D-PLEX100",
+    "query": "D-PLEX100 Surgical Site Infection",
+    "n_rows": 1,
+    "rows": [
+      1400
+    ],
+    "indication": "Surgical Site Infection",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rese-cel (resecabtagene autoleucel (CABA-201) - (RESET-Myositis)",
+    "drug_clean": "Rese-cel",
+    "query": "Rese-cel Active idiopathic inflammatory myopathy",
+    "n_rows": 1,
+    "rows": [
+      1404
+    ],
+    "indication": "Active idiopathic inflammatory myopathy (IIM, or myositis)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Fabhalta - (APPULSE-PNH)",
+    "drug_clean": "Fabhalta",
+    "query": "Fabhalta Paroxysmal nocturnal hemoglobinuria (PNH)",
+    "n_rows": 1,
+    "rows": [
+      1408
+    ],
+    "indication": "Paroxysmal nocturnal hemoglobinuria (PNH)",
+    "sponsor": ""
+  },
+  {
+    "drug": "JNJ-4496",
+    "drug_clean": "JNJ-4496",
+    "query": "JNJ-4496 R/R diffuse large B-cell",
+    "n_rows": 1,
+    "rows": [
+      1412
+    ],
+    "indication": "R/R diffuse large B-cell lymphoma (DLBCL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ALTO-203",
+    "drug_clean": "ALTO-203",
+    "query": "ALTO-203 Major depressive disorder",
+    "n_rows": 1,
+    "rows": [
+      1414
+    ],
+    "indication": "Major depressive disorder",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cibotercept",
+    "drug_clean": "Cibotercept",
+    "query": "Cibotercept Pulmonary arterial hypertension",
+    "n_rows": 1,
+    "rows": [
+      1415
+    ],
+    "indication": "Pulmonary arterial hypertension",
+    "sponsor": ""
+  },
+  {
+    "drug": "LP-300 - (Harmonic)",
+    "drug_clean": "LP-300",
+    "query": "LP-300 Non-small cell lung cancer",
+    "n_rows": 1,
+    "rows": [
+      1417
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Astegolimab - (ARNASA)",
+    "drug_clean": "Astegolimab",
+    "query": "Astegolimab Chronic obstructive pulmonary disease",
+    "n_rows": 1,
+    "rows": [
+      1422
+    ],
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "XL092 with atezolizumab - (STELLAR-303)",
+    "drug_clean": "XL092 with atezolizumab",
+    "query": "XL092 with atezolizumab Colorectal Cancer (CRC)",
+    "n_rows": 1,
+    "rows": [
+      1423
+    ],
+    "indication": "Colorectal Cancer (CRC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "COMP360 psilocybin - (COMP005)",
+    "drug_clean": "COMP360 psilocybin",
+    "query": "COMP360 psilocybin Treatment-resistant depression (TRD)",
+    "n_rows": 1,
+    "rows": [
+      1426
+    ],
+    "indication": "Treatment-resistant depression (TRD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ADL-018 - (biosimilar to XOLAIR)",
+    "drug_clean": "ADL-018",
+    "query": "ADL-018 Chronic Idiopathic Urticaria (CIU)",
+    "n_rows": 1,
+    "rows": [
+      1427
+    ],
+    "indication": "Chronic Idiopathic Urticaria (CIU) or Chronic Spontaneous Ur",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cosentyx - (GCAptAIN)",
+    "drug_clean": "Cosentyx",
+    "query": "Cosentyx Newly diagnosed or relapsing",
+    "n_rows": 1,
+    "rows": [
+      1440
+    ],
+    "indication": "Newly diagnosed or relapsing giant cell arteritis (GCA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Briquilimab (JSP191)",
+    "drug_clean": "Briquilimab",
+    "query": "Briquilimab Severe combined immunodeficiency (SCID)",
+    "n_rows": 1,
+    "rows": [
+      1441
+    ],
+    "indication": "Severe combined immunodeficiency (SCID)",
+    "sponsor": ""
+  },
+  {
+    "drug": "APG777 - (APEX)",
+    "drug_clean": "APG777",
+    "query": "APG777 Healthy volunteers, Atopic dermatitis",
+    "n_rows": 1,
+    "rows": [
+      1442
+    ],
+    "indication": "Healthy volunteers, Atopic dermatitis (AD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rilparencel  - (REGEN-007)",
+    "drug_clean": "Rilparencel",
+    "query": "Rilparencel Diabetic CKD Stage 3/4",
+    "n_rows": 1,
+    "rows": [
+      1443
+    ],
+    "indication": "Diabetic CKD Stage 3/4",
+    "sponsor": ""
+  },
+  {
+    "drug": "Astegolima - (ALIENTO)",
+    "drug_clean": "Astegolima",
+    "query": "Astegolima Chronic obstructive pulmonary disease",
+    "n_rows": 1,
+    "rows": [
+      1445
+    ],
+    "indication": "Chronic obstructive pulmonary disease (COPD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ovaprene",
+    "drug_clean": "Ovaprene",
+    "query": "Ovaprene Contraception",
+    "n_rows": 1,
+    "rows": [
+      1447
+    ],
+    "indication": "Contraception",
+    "sponsor": ""
+  },
+  {
+    "drug": "CUE-101",
+    "drug_clean": "CUE-101",
+    "query": "CUE-101 HPV+ head and neck",
+    "n_rows": 1,
+    "rows": [
+      1451
+    ],
+    "indication": "HPV+ head and neck squamous cell carcinoma (HNSCC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Votoplam - (PIVOT-HD)",
+    "drug_clean": "Votoplam",
+    "query": "Votoplam Huntington's disease",
+    "n_rows": 1,
+    "rows": [
+      1453
+    ],
+    "indication": "Huntington's disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Gefurulimab - (PREVAIL)",
+    "drug_clean": "Gefurulimab",
+    "query": "Gefurulimab Generalised myasthenia gravis",
+    "n_rows": 1,
+    "rows": [
+      1460
+    ],
+    "indication": "Generalised myasthenia gravis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Inidascamine (formerly RL-007)",
+    "drug_clean": "Inidascamine",
+    "query": "Inidascamine Cognitive Impairment Associated with",
+    "n_rows": 1,
+    "rows": [
+      1461
+    ],
+    "indication": "Cognitive Impairment Associated with Schizophrenia",
+    "sponsor": ""
+  },
+  {
+    "drug": "HYALOFAST - (FastTRACK)",
+    "drug_clean": "HYALOFAST",
+    "query": "HYALOFAST Cartilage defects of the",
+    "n_rows": 1,
+    "rows": [
+      1466
+    ],
+    "indication": "Cartilage defects of the knee",
+    "sponsor": ""
+  },
+  {
+    "drug": "Repibresib Gel (VYN201)",
+    "drug_clean": "Repibresib Gel",
+    "query": "Repibresib Gel Vitiligo",
+    "n_rows": 1,
+    "rows": [
+      1467
+    ],
+    "indication": "Vitiligo",
+    "sponsor": ""
+  },
+  {
+    "drug": "IHL-42X - (RePOSA)",
+    "drug_clean": "IHL-42X",
+    "query": "IHL-42X Obstructive sleep apnea (OSA)",
+    "n_rows": 1,
+    "rows": [
+      1468
+    ],
+    "indication": "Obstructive  sleep apnea (OSA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "4D-150 - (SPECTRA)",
+    "drug_clean": "4D-150",
+    "query": "4D-150 Wet Age-Related Macular Degeneration",
+    "n_rows": 1,
+    "rows": [
+      1469
+    ],
+    "indication": "Wet Age-Related Macular Degeneration (wet AMD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "VX-993",
+    "drug_clean": "VX-993",
+    "query": "VX-993 Moderate to severe acute",
+    "n_rows": 1,
+    "rows": [
+      1470
+    ],
+    "indication": "Moderate to severe acute pain",
+    "sponsor": ""
+  },
+  {
+    "drug": "NPM-115 (exenatide implant) - (LIBERATE-1)",
+    "drug_clean": "NPM-115",
+    "query": "NPM-115 Subdermal implants in development",
+    "n_rows": 1,
+    "rows": [
+      1471
+    ],
+    "indication": "Subdermal implants in development for chronic weight managem",
+    "sponsor": ""
+  },
+  {
+    "drug": "ARQ-255",
+    "drug_clean": "ARQ-255",
+    "query": "ARQ-255 Alopecia Areata",
+    "n_rows": 1,
+    "rows": [
+      1472
+    ],
+    "indication": "Alopecia Areata",
+    "sponsor": ""
+  },
+  {
+    "drug": "SGR-2921",
+    "drug_clean": "SGR-2921",
+    "query": "SGR-2921 Relapsed/refractory acute myeloid leukemia",
+    "n_rows": 1,
+    "rows": [
+      1478
+    ],
+    "indication": "Relapsed/refractory acute myeloid leukemia (AML)",
+    "sponsor": ""
+  },
+  {
+    "drug": "VE202 - (COLLECTiVE202)",
+    "drug_clean": "VE202",
+    "query": "VE202 Ulcerative colitis (UC)",
+    "n_rows": 1,
+    "rows": [
+      1479
+    ],
+    "indication": "Ulcerative colitis (UC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TOUR006 - (TRANQUILITY)",
+    "drug_clean": "TOUR006",
+    "query": "TOUR006 Atherosclerotic cardiovascular disease (ASCVD)",
+    "n_rows": 1,
+    "rows": [
+      1489
+    ],
+    "indication": "Atherosclerotic cardiovascular disease (ASCVD)",
+    "sponsor": ""
+  },
+  {
+    "drug": "ZW171",
+    "drug_clean": "ZW171",
+    "query": "ZW171 Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1491
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zorevunersen (STK-001) - (EMPEROR)",
+    "drug_clean": "Zorevunersen",
+    "query": "Zorevunersen Dravet syndrome",
+    "n_rows": 1,
+    "rows": [
+      1492
+    ],
+    "indication": "Dravet syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "Decoy-20 - (INDP-D101)",
+    "drug_clean": "Decoy-20",
+    "query": "Decoy-20 Advanced/metastatic solid tumors",
+    "n_rows": 1,
+    "rows": [
+      1496
+    ],
+    "indication": "Advanced/metastatic solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "KSI-101 - (APEX)",
+    "drug_clean": "KSI-101",
+    "query": "KSI-101 Macular edema secondary",
+    "n_rows": 1,
+    "rows": [
+      1505
+    ],
+    "indication": "Macular edema secondary",
+    "sponsor": ""
+  },
+  {
+    "drug": "JNJ-1900 (NBTXR3) in Combination With Immune Checkpoint Inhibitors",
+    "drug_clean": "JNJ-1900 in Combination With Immune Checkpoint Inhibitors",
+    "query": "JNJ-1900 in Combination With Immune Checkpoint Inhibitors Primary Cutaneous Melanoma Resistant",
+    "n_rows": 1,
+    "rows": [
+      1507
+    ],
+    "indication": "Primary Cutaneous Melanoma Resistant to Anti-PD-1",
+    "sponsor": ""
+  },
+  {
+    "drug": "Garetosmab - (OPTIMA)",
+    "drug_clean": "Garetosmab",
+    "query": "Garetosmab Fibrodysplasia Ossificans Progressiva (FOP)",
+    "n_rows": 1,
+    "rows": [
+      1510
+    ],
+    "indication": "Fibrodysplasia Ossificans Progressiva (FOP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Canvuparatide (MBX 2109) - (Avail)",
+    "drug_clean": "Canvuparatide",
+    "query": "Canvuparatide Hypoparathyroidism",
+    "n_rows": 1,
+    "rows": [
+      1513
+    ],
+    "indication": "Hypoparathyroidism",
+    "sponsor": ""
+  },
+  {
+    "drug": "iberdomide, daratumumab, and dexamethasone vs. daratumumab, bortezomib, and dexamethasone - (EXCALIBER RRMM)",
+    "drug_clean": "iberdomide, daratumumab, and dexamethasone vs. daratumumab, bortezomib, and dexamethasone",
+    "query": "iberdomide, daratumumab, and dexamethasone vs. daratumumab, bortezomib, and dexamethasone Relapsed/refractory multiple myeloma (RRMM)",
+    "n_rows": 1,
+    "rows": [
+      1516
+    ],
+    "indication": "Relapsed/refractory multiple myeloma (RRMM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "AMT-130",
+    "drug_clean": "AMT-130",
+    "query": "AMT-130 Huntington's disease",
+    "n_rows": 1,
+    "rows": [
+      1517
+    ],
+    "indication": "Huntington's disease",
+    "sponsor": ""
+  },
+  {
+    "drug": "Carbetocin (ACP-101) - (COMPASS PWS)",
+    "drug_clean": "Carbetocin",
+    "query": "Carbetocin Prader-Willi syndrome (PWS)",
+    "n_rows": 1,
+    "rows": [
+      1519
+    ],
+    "indication": "Prader-Willi syndrome (PWS)",
+    "sponsor": ""
+  },
+  {
+    "drug": "KPI-012 - (CHASE)",
+    "drug_clean": "KPI-012",
+    "query": "KPI-012 Persistent corneal epithelial defect",
+    "n_rows": 1,
+    "rows": [
+      1521
+    ],
+    "indication": "Persistent corneal epithelial defect (PCED)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Nanobody (sonelokimab) - (VELA-2)",
+    "drug_clean": "Nanobody",
+    "query": "Nanobody Hidradenitis suppurativa",
+    "n_rows": 1,
+    "rows": [
+      1525
+    ],
+    "indication": "Hidradenitis suppurativa",
+    "sponsor": ""
+  },
+  {
+    "drug": "JNJ-1900 (NBTXR3)",
+    "drug_clean": "JNJ-1900",
+    "query": "JNJ-1900 Recurrent and/or metastatic head",
+    "n_rows": 1,
+    "rows": [
+      1526
+    ],
+    "indication": "Recurrent and/or metastatic head and neck squamous cell carc",
+    "sponsor": ""
+  },
+  {
+    "drug": "Repatha - (VESALIUS-CV)",
+    "drug_clean": "Repatha",
+    "query": "Repatha Risk of cardiovascular (CV)",
+    "n_rows": 1,
+    "rows": [
+      1527
+    ],
+    "indication": "Risk of cardiovascular (CV) events without prior myocardial ",
+    "sponsor": ""
+  },
+  {
+    "drug": "ANAVEX 3-71 (AF710B)",
+    "drug_clean": "ANAVEX 3-71",
+    "query": "ANAVEX 3-71 Schizophrenia",
+    "n_rows": 1,
+    "rows": [
+      1528
+    ],
+    "indication": "Schizophrenia",
+    "sponsor": ""
+  },
+  {
+    "drug": "Nimacimab - (CBeyond)",
+    "drug_clean": "Nimacimab",
+    "query": "Nimacimab Obesity",
+    "n_rows": 1,
+    "rows": [
+      1531
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "ABI-5366",
+    "drug_clean": "ABI-5366",
+    "query": "ABI-5366 HSV-2",
+    "n_rows": 1,
+    "rows": [
+      1533
+    ],
+    "indication": "HSV-2",
+    "sponsor": ""
+  },
+  {
+    "drug": "Otoferlin gene therapy (DB-OTO) - (CHORD)",
+    "drug_clean": "Otoferlin gene therapy",
+    "query": "Otoferlin gene therapy Genetic hearing loss",
+    "n_rows": 1,
+    "rows": [
+      1535
+    ],
+    "indication": "Genetic hearing loss",
+    "sponsor": ""
+  },
+  {
+    "drug": "TTI-101 - (REVERT IPF)",
+    "drug_clean": "TTI-101",
+    "query": "TTI-101 Idiopathic pulmonary fibrosis (IPF)",
+    "n_rows": 1,
+    "rows": [
+      1537
+    ],
+    "indication": "Idiopathic pulmonary fibrosis (IPF)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Domvanalimab + Zimberelimab and Chemotherapy - (EDGE-Gastric)",
+    "drug_clean": "Domvanalimab + Zimberelimab and Chemotherapy",
+    "query": "Domvanalimab + Zimberelimab and Chemotherapy Unresectable or Advanced Gastroesophageal",
+    "n_rows": 1,
+    "rows": [
+      1538
+    ],
+    "indication": "Unresectable or Advanced Gastroesophageal Adenocarcinomas",
+    "sponsor": ""
+  },
+  {
+    "drug": "Orforglipron - (ACHIEVE-5)",
+    "drug_clean": "Orforglipron",
+    "query": "Orforglipron Type 2 diabetes",
+    "n_rows": 1,
+    "rows": [
+      1543
+    ],
+    "indication": "Type 2 diabetes",
+    "sponsor": ""
+  },
+  {
+    "drug": "UCART22 - (BALLI-01)",
+    "drug_clean": "UCART22",
+    "query": "UCART22 Relapsed/refractory B-cell acute lymphoblastic",
+    "n_rows": 1,
+    "rows": [
+      1544
+    ],
+    "indication": "Relapsed/refractory B-cell acute lymphoblastic leukemia (B-A",
+    "sponsor": ""
+  },
+  {
+    "drug": "otensilimab, balstilimab and regorafenib (BBR)",
+    "drug_clean": "otensilimab, balstilimab and regorafenib",
+    "query": "otensilimab, balstilimab and regorafenib Microsatellite stable (MSS) metastatic",
+    "n_rows": 1,
+    "rows": [
+      1551
+    ],
+    "indication": "Microsatellite stable (MSS) metastatic colorectal cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "CRB-701",
+    "drug_clean": "CRB-701",
+    "query": "CRB-701 Oncology",
+    "n_rows": 1,
+    "rows": [
+      1554
+    ],
+    "indication": "Oncology",
+    "sponsor": ""
+  },
+  {
+    "drug": "Gedatolisib (VIKTORIA-1)",
+    "drug_clean": "Gedatolisib",
+    "query": "Gedatolisib HR+/HER2- breast cancer",
+    "n_rows": 1,
+    "rows": [
+      1557
+    ],
+    "indication": "HR+/HER2- breast cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "Raludotatug deruxtecan (R-DXd) - (REJOICE-Ovarian01)",
+    "drug_clean": "Raludotatug deruxtecan",
+    "query": "Raludotatug deruxtecan Recurrent platinum-resistant ovarian, primary",
+    "n_rows": 1,
+    "rows": [
+      1559
+    ],
+    "indication": "Recurrent platinum-resistant ovarian, primary peritoneal or ",
+    "sponsor": ""
+  },
+  {
+    "drug": "mRNA-1647 - (CMVictory)",
+    "drug_clean": "mRNA-1647",
+    "query": "mRNA-1647 CMV vaccine (Cytomegalovirus Infection)",
+    "n_rows": 1,
+    "rows": [
+      1567
+    ],
+    "indication": "CMV vaccine (Cytomegalovirus Infection)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Cosentyx - (REPLENISH)",
+    "drug_clean": "Cosentyx",
+    "query": "Cosentyx Polymyalgia rheumatica",
+    "n_rows": 1,
+    "rows": [
+      1568
+    ],
+    "indication": "Polymyalgia rheumatica",
+    "sponsor": ""
+  },
+  {
+    "drug": "ZW191",
+    "drug_clean": "ZW191",
+    "query": "ZW191 Non-small cell lung cancer,",
+    "n_rows": 1,
+    "rows": [
+      1570
+    ],
+    "indication": "Non-small cell lung cancer, endometrial cancer, and triple-n",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ianalumab - (NEPTUNUS-2)",
+    "drug_clean": "Ianalumab",
+    "query": "Ianalumab Sj\u00f6gren\u2019s syndrome",
+    "n_rows": 1,
+    "rows": [
+      1572
+    ],
+    "indication": "Sj\u00f6gren\u2019s syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "FT819-102",
+    "drug_clean": "FT819-102",
+    "query": "FT819-102 Moderate-to-severe Systemic Lupus Erythematosus",
+    "n_rows": 1,
+    "rows": [
+      1573
+    ],
+    "indication": "Moderate-to-severe Systemic Lupus Erythematosus",
+    "sponsor": ""
+  },
+  {
+    "drug": "Miv-cel (mivocabtagene autoleucel, KYV-101) - (KYSA-6)",
+    "drug_clean": "Miv-cel",
+    "query": "Miv-cel Myasthenia gravis (MG)",
+    "n_rows": 1,
+    "rows": [
+      1580
+    ],
+    "indication": "Myasthenia gravis (MG)",
+    "sponsor": ""
+  },
+  {
+    "drug": "DA-1726",
+    "drug_clean": "DA-1726",
+    "query": "DA-1726 NASH and obesity",
+    "n_rows": 1,
+    "rows": [
+      1587
+    ],
+    "indication": "NASH and obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "TN-201 - (MyPeak-1)",
+    "drug_clean": "TN-201",
+    "query": "TN-201 Hypertrophic cardiomyopathy (HCM)",
+    "n_rows": 1,
+    "rows": [
+      1599
+    ],
+    "indication": "Hypertrophic cardiomyopathy (HCM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Rosnilimab",
+    "drug_clean": "Rosnilimab",
+    "query": "Rosnilimab Ulcerative colitis (UC)",
+    "n_rows": 1,
+    "rows": [
+      1604
+    ],
+    "indication": "Ulcerative colitis (UC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "NBI-1070770",
+    "drug_clean": "NBI-1070770",
+    "query": "NBI-1070770 Major Depressive Disorder",
+    "n_rows": 1,
+    "rows": [
+      1609
+    ],
+    "indication": "Major Depressive Disorder",
+    "sponsor": ""
+  },
+  {
+    "drug": "Alixorexton (ALKS 2680) - (Vibrance-2)",
+    "drug_clean": "Alixorexton",
+    "query": "Alixorexton Narcolepsy and excessive daytime",
+    "n_rows": 1,
+    "rows": [
+      1614
+    ],
+    "indication": "Narcolepsy and excessive daytime sleepiness",
+    "sponsor": ""
+  },
+  {
+    "drug": "IMA402",
+    "drug_clean": "IMA402",
+    "query": "IMA402 Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1615
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "KLU156 (GanLum)",
+    "drug_clean": "KLU156",
+    "query": "KLU156 Malaria",
+    "n_rows": 1,
+    "rows": [
+      1616
+    ],
+    "indication": "Malaria",
+    "sponsor": ""
+  },
+  {
+    "drug": "TARA-002 - (STARBORN-1)",
+    "drug_clean": "TARA-002",
+    "query": "TARA-002 Pediatric patients with lymphatic",
+    "n_rows": 1,
+    "rows": [
+      1626
+    ],
+    "indication": "Pediatric patients with lymphatic malformations (LMs)",
+    "sponsor": ""
+  },
+  {
+    "drug": "mRNA-3745 - (Ba1ance)",
+    "drug_clean": "mRNA-3745",
+    "query": "mRNA-3745 Glycogen Storage Disease Type",
+    "n_rows": 1,
+    "rows": [
+      1628
+    ],
+    "indication": "Glycogen Storage Disease Type 1a (GSD1a)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Olverembatinib (HQP1351)",
+    "drug_clean": "Olverembatinib",
+    "query": "Olverembatinib Gastrointestinal Stromal Tumors",
+    "n_rows": 1,
+    "rows": [
+      1632
+    ],
+    "indication": "Gastrointestinal Stromal Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ficerafusp Alfa (BCA101) with Pembrolizumab - (FORTIFI-HN01)",
+    "drug_clean": "Ficerafusp Alfa with Pembrolizumab",
+    "query": "Ficerafusp Alfa with Pembrolizumab R/M Head and Neck",
+    "n_rows": 1,
+    "rows": [
+      1633
+    ],
+    "indication": "R/M Head and Neck Squamous Cell Carcinoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "Tinlarebant (LBS-008) - (DRAGON)",
+    "drug_clean": "Tinlarebant",
+    "query": "Tinlarebant Adolescent Stargardt disease (STGD1)",
+    "n_rows": 1,
+    "rows": [
+      1634
+    ],
+    "indication": "Adolescent Stargardt disease (STGD1)",
+    "sponsor": ""
+  },
+  {
+    "drug": "STS-J01",
+    "drug_clean": "STS-J01",
+    "query": "STS-J01 Non-metastatic solid tumors",
+    "n_rows": 1,
+    "rows": [
+      1636
+    ],
+    "indication": "Non-metastatic solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "PLN-101095",
+    "drug_clean": "PLN-101095",
+    "query": "PLN-101095 Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1641
+    ],
+    "indication": "Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "UCART20x22 - (NatHaLi-01)",
+    "drug_clean": "UCART20x22",
+    "query": "UCART20x22 Non-Hodgkin Lymphoma",
+    "n_rows": 1,
+    "rows": [
+      1645
+    ],
+    "indication": "Non-Hodgkin Lymphoma",
+    "sponsor": ""
+  },
+  {
+    "drug": "CID-103",
+    "drug_clean": "CID-103",
+    "query": "CID-103 Immune Thrombocytopenia (ITP)",
+    "n_rows": 1,
+    "rows": [
+      1647
+    ],
+    "indication": "Immune Thrombocytopenia (ITP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Sonrotoclax",
+    "drug_clean": "Sonrotoclax",
+    "query": "Sonrotoclax R/R MCL",
+    "n_rows": 1,
+    "rows": [
+      1649
+    ],
+    "indication": "R/R MCL",
+    "sponsor": ""
+  },
+  {
+    "drug": "VT-1953",
+    "drug_clean": "VT-1953",
+    "query": "VT-1953 Malignant fungating wounds (MFW)",
+    "n_rows": 1,
+    "rows": [
+      1653
+    ],
+    "indication": "Malignant fungating wounds (MFW)",
+    "sponsor": ""
+  },
+  {
+    "drug": "NHBE GalNAc siRNA (WVE-007) - (INLIGHT)",
+    "drug_clean": "NHBE GalNAc siRNA",
+    "query": "NHBE GalNAc siRNA Obesity",
+    "n_rows": 1,
+    "rows": [
+      1654
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "Obe-cel - (CATULUS)",
+    "drug_clean": "Obe-cel",
+    "query": "Obe-cel pediatric relapsed or refractory",
+    "n_rows": 1,
+    "rows": [
+      1658
+    ],
+    "indication": "pediatric relapsed or refractory (r/r) B-ALL",
+    "sponsor": ""
+  },
+  {
+    "drug": "GPC-100 (burixafor) in combination with propranolol and G-CSF",
+    "drug_clean": "GPC-100 in combination with propranolol and G-CSF",
+    "query": "GPC-100 in combination with propranolol and G-CSF Multiple myeloma (MM)",
+    "n_rows": 1,
+    "rows": [
+      1659
+    ],
+    "indication": "Multiple myeloma (MM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Olverembatinib - (POLARIS-1)",
+    "drug_clean": "Olverembatinib",
+    "query": "Olverembatinib Acute lymphoblastic leukemia (ALL)",
+    "n_rows": 1,
+    "rows": [
+      1661
+    ],
+    "indication": "Acute lymphoblastic leukemia (ALL)",
+    "sponsor": ""
+  },
+  {
+    "drug": "GRI-0621-IPF-02",
+    "drug_clean": "GRI-0621-IPF-02",
+    "query": "GRI-0621-IPF-02 Idiopathic pulmonary fibrosis (IPF)",
+    "n_rows": 1,
+    "rows": [
+      1664
+    ],
+    "indication": "Idiopathic pulmonary fibrosis (IPF)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Retatrutide (TRIUMPH-4)",
+    "drug_clean": "Retatrutide",
+    "query": "Retatrutide Obesity with knee osteoarthritis",
+    "n_rows": 1,
+    "rows": [
+      1665
+    ],
+    "indication": "Obesity with knee osteoarthritis",
+    "sponsor": ""
+  },
+  {
+    "drug": "BHV-1510 with Libtayo",
+    "drug_clean": "BHV-1510 with Libtayo",
+    "query": "BHV-1510 with Libtayo Advanced or metastatic epithelial",
+    "n_rows": 1,
+    "rows": [
+      1666
+    ],
+    "indication": "Advanced or metastatic epithelial cell tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "4D-710 - (AEROW)",
+    "drug_clean": "4D-710",
+    "query": "4D-710 Cystic fibrosis",
+    "n_rows": 1,
+    "rows": [
+      1681
+    ],
+    "indication": "Cystic fibrosis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Orforglipron - (ATTAIN-MAINTAIN)",
+    "drug_clean": "Orforglipron",
+    "query": "Orforglipron Obesity, weight maintenance",
+    "n_rows": 1,
+    "rows": [
+      1682
+    ],
+    "indication": "Obesity, weight maintenance",
+    "sponsor": ""
+  },
+  {
+    "drug": "GLPG3667 - (GALARISSO)",
+    "drug_clean": "GLPG3667",
+    "query": "GLPG3667 Duchenne Muscular (DM)",
+    "n_rows": 1,
+    "rows": [
+      1686
+    ],
+    "indication": "Duchenne Muscular (DM)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Fidrisertib - (FALKON)",
+    "drug_clean": "Fidrisertib",
+    "query": "Fidrisertib Fibrodysplasia ossificans progressiva (FOP)",
+    "n_rows": 1,
+    "rows": [
+      1688
+    ],
+    "indication": "Fibrodysplasia ossificans progressiva (FOP)",
+    "sponsor": ""
+  },
+  {
+    "drug": "Zugocabtagene geleucel (zugo-cel; formerly CTX112)",
+    "drug_clean": "Zugocabtagene geleucel",
+    "query": "Zugocabtagene geleucel Systemic lupus erythematosus (SLE)",
+    "n_rows": 1,
+    "rows": [
+      1690
+    ],
+    "indication": "Systemic lupus erythematosus (SLE)",
+    "sponsor": ""
+  },
+  {
+    "drug": "TLX591-CDx",
+    "drug_clean": "TLX591-CDx",
+    "query": "TLX591-CDx Prostate cancer",
+    "n_rows": 1,
+    "rows": [
+      1691
+    ],
+    "indication": "Prostate cancer",
+    "sponsor": ""
+  },
+  {
+    "drug": "AGEN1571 with botensilimab and balstilimab - (C-800-01)",
+    "drug_clean": "AGEN1571 with botensilimab and balstilimab",
+    "query": "AGEN1571 with botensilimab and balstilimab Solid tumors",
+    "n_rows": 1,
+    "rows": [
+      1692
+    ],
+    "indication": "Solid tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "Acasunlimab (GEN1046/BNT311)",
+    "drug_clean": "Acasunlimab",
+    "query": "Acasunlimab Non-small cell lung cancer",
+    "n_rows": 1,
+    "rows": [
+      1696
+    ],
+    "indication": "Non-small cell lung cancer (NSCLC)",
+    "sponsor": ""
+  },
+  {
+    "drug": "GLP-1-H24-4",
+    "drug_clean": "GLP-1-H24-4",
+    "query": "GLP-1-H24-4 Diabetes and Weight Loss",
+    "n_rows": 1,
+    "rows": [
+      1699
+    ],
+    "indication": "Diabetes and Weight Loss",
+    "sponsor": ""
+  },
+  {
+    "drug": "NMRA-511",
+    "drug_clean": "NMRA-511",
+    "query": "NMRA-511 Neuropsychiatric, Alzheimer's disease agitation",
+    "n_rows": 1,
+    "rows": [
+      1701
+    ],
+    "indication": "Neuropsychiatric, Alzheimer's disease agitation",
+    "sponsor": ""
+  },
+  {
+    "drug": "AXN-2510",
+    "drug_clean": "AXN-2510",
+    "query": "AXN-2510 Relapsed/Refractory Solid Tumors",
+    "n_rows": 1,
+    "rows": [
+      1706
+    ],
+    "indication": "Relapsed/Refractory Solid Tumors",
+    "sponsor": ""
+  },
+  {
+    "drug": "BMB-101 - (BREAKTHROUGH)",
+    "drug_clean": "BMB-101",
+    "query": "BMB-101 Absence Epilepsy & Dravet",
+    "n_rows": 1,
+    "rows": [
+      1707
+    ],
+    "indication": "Absence Epilepsy & Dravet Syndrome",
+    "sponsor": ""
+  },
+  {
+    "drug": "Sovleplenib - (ESLIM-02)",
+    "drug_clean": "Sovleplenib",
+    "query": "Sovleplenib Warm antibody autoimmune hemolytic",
+    "n_rows": 1,
+    "rows": [
+      1708
+    ],
+    "indication": "Warm antibody autoimmune hemolytic anemia (wAIHA)",
+    "sponsor": ""
+  },
+  {
+    "drug": "LX2020 - (HEROIC-PKP2)",
+    "drug_clean": "LX2020",
+    "query": "LX2020 PKP2-ACM",
+    "n_rows": 1,
+    "rows": [
+      1717
+    ],
+    "indication": "PKP2-ACM",
+    "sponsor": ""
+  },
+  {
+    "drug": "NS002",
+    "drug_clean": "NS002",
+    "query": "NS002 Anaphylaxis",
+    "n_rows": 1,
+    "rows": [
+      1724
+    ],
+    "indication": "Anaphylaxis",
+    "sponsor": ""
+  },
+  {
+    "drug": "Amorphous-Rifaximin SSD - (RED-C)",
+    "drug_clean": "Amorphous-Rifaximin SSD",
+    "query": "Amorphous-Rifaximin SSD Prevention of cirrhosis complications",
+    "n_rows": 1,
+    "rows": [
+      1728
+    ],
+    "indication": "Prevention of cirrhosis complications",
+    "sponsor": ""
+  },
+  {
+    "drug": "Revita - (REMAIN-1)",
+    "drug_clean": "Revita",
+    "query": "Revita Obesity",
+    "n_rows": 1,
+    "rows": [
+      1733
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "MCS-8 (PCP)",
+    "drug_clean": "MCS-8",
+    "query": "MCS-8 Urinary system diseases",
+    "n_rows": 1,
+    "rows": [
+      1735
+    ],
+    "indication": "Urinary system diseases",
+    "sponsor": ""
+  },
+  {
+    "drug": "MET-097i - (VESPER-4)",
+    "drug_clean": "MET-097i",
+    "query": "MET-097i Obesity",
+    "n_rows": 1,
+    "rows": [
+      1737
+    ],
+    "indication": "Obesity",
+    "sponsor": ""
+  },
+  {
+    "drug": "AVT80 (biosimilar to Entyvio) - (AVT80-GL-P01)",
+    "drug_clean": "AVT80",
+    "query": "AVT80 Healthy volunteers",
+    "n_rows": 1,
+    "rows": [
+      1739
+    ],
+    "indication": "Healthy volunteers",
+    "sponsor": ""
+  },
+  {
+    "drug": "Ameluz and BF-RhodoLED XL",
+    "drug_clean": "Ameluz and BF-RhodoLED XL",
+    "query": "Ameluz and BF-RhodoLED XL Actinic keratosis on the",
+    "n_rows": 1,
+    "rows": [
+      1742
+    ],
+    "indication": "Actinic keratosis on the extremities, neck and trunk",
+    "sponsor": ""
+  },
+  {
+    "drug": "EVO301",
+    "drug_clean": "EVO301",
+    "query": "EVO301 Atopic Dermatitis",
+    "n_rows": 1,
+    "rows": [
+      1745
+    ],
+    "indication": "Atopic Dermatitis",
+    "sponsor": ""
+  },
+  {
+    "drug": "TONMYA cyclobenzaprine (RESILIENT)",
+    "drug_clean": "TONMYA cyclobenzaprine",
+    "query": "TONMYA cyclobenzaprine Fibromyalgia",
+    "n_rows": 1,
+    "rows": [
+      1746
+    ],
+    "indication": "Fibromyalgia",
+    "sponsor": ""
+  },
+  {
+    "drug": "Verekitug - (VALIANT)",
+    "drug_clean": "Verekitug",
+    "query": "Verekitug Severe asthma",
+    "n_rows": 1,
+    "rows": [
+      1747
+    ],
+    "indication": "Severe asthma",
+    "sponsor": ""
+  },
+  {
+    "drug": "eDSP (NEAT)",
+    "drug_clean": "eDSP",
+    "query": "eDSP Ataxia-telangiectasia",
+    "n_rows": 1,
+    "rows": [
+      1749
+    ],
+    "indication": "Ataxia-telangiectasia",
+    "sponsor": ""
+  },
+  {
+    "drug": "QTORIN rapamycin (SELVA)",
+    "drug_clean": "QTORIN rapamycin",
+    "query": "QTORIN rapamycin Microcystic lymphatic malformations",
+    "n_rows": 1,
+    "rows": [
+      1750
+    ],
+    "indication": "Microcystic lymphatic malformations",
+    "sponsor": ""
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "kaizen_id": "K15",
+  "parent": "K14",
+  "training_date": "2026-02-16T01:37:54.868850",
+  "bug_fixed": "coefficient sign flips on risk features",
+  "sign_violations_k13": [
+    "rct_x_phase3",
+    "is_gene_therapy",
+    "is_psychedelic",
+    "accel_approval_2025",
+    "single_arm_2025",
+    "strong_positive",
+    "safety_clean",
+    "gene_therapy_x_phase3",
+    "safety_x_hoeg"
+  ],
+  "champion": "sign_constrained",
+  "champion_composite": 0.963859117114464,
+  "strategies": {
+    "k13_baseline": {
+      "auc": 0.9554153982636404,
+      "brier": 0.040188935027768845,
+      "ece": 0.03912014281766988,
+      "tier1_count": 341.5,
+      "tier1_precision": 0.9627047332109505,
+      "tier1_recall": 0.987067412242268
+    },
+    "sign_constrained": {
+      "auc": 0.9613931183888549,
+      "brier": 0.03681342317851568,
+      "ece": 0.028333674816023828,
+      "tier1_count": 340.25,
+      "tier1_precision": 0.9643952534432155,
+      "tier1_recall": 0.9859759869381366
+    },
+    "xgb_dominant_80": {
+      "auc": 0.9102266146528855,
+      "brier": 0.11414413004162427,
+      "ece": 0.1819303908678766,
+      "tier1_count": 203.0,
+      "tier1_precision": 0.9477349800532506,
+      "tier1_recall": 0.6105459885164626
+    },
+    "xgb_dominant_90": {
+      "auc": 0.889273304209196,
+      "brier": 0.1319630697768197,
+      "ece": 0.21270361253518055,
+      "tier1_count": 185.75,
+      "tier1_precision": 0.9381434376393174,
+      "tier1_recall": 0.5659041461652927
+    },
+    "xgb_solo": {
+      "auc": 0.8539814490898754,
+      "brier": 0.1516844742000103,
+      "ece": 0.19914255274173703,
+      "tier1_count": 159.25,
+      "tier1_precision": 0.9356023699802501,
+      "tier1_recall": 0.49940681125992203
+    },
+    "pruned_stacked": {
+      "auc": 0.965146400819999,
+      "brier": 0.038415490442248075,
+      "ece": 0.038399626194002695,
+      "tier1_count": 341.0,
+      "tier1_precision": 0.9626614122799895,
+      "tier1_recall": 0.9860023354816895
+    },
+    "pruned_xgb_only": {
+      "auc": 0.7580943823837212,
+      "brier": 0.19321325793862343,
+      "ece": 0.216203325279127,
+      "tier1_count": 129.25,
+      "tier1_precision": 0.9571184863523573,
+      "tier1_recall": 0.41482582677150964
+    },
+    "sign_fix_stacked": {
+      "auc": 0.9531151168089183,
+      "brier": 0.03827607955160528,
+      "ece": 0.031631695148077295,
+      "tier1_count": 341.75,
+      "tier1_precision": 0.9627213813796519,
+      "tier1_recall": 0.9876698218808222
+    }
+  },
+  "pruned_features": [
+    "is_hard_endpoint",
+    "phase_PHASE3",
+    "is_competitive_space",
+    "sentiment_score",
+    "phase_PHASE2",
+    "primary_endpoint_met",
+    "ta_ONCOLOGY",
+    "rct_x_phase3",
+    "has_breakthrough",
+    "has_orphan",
+    "has_priority_review",
+    "has_fast_track",
+    "is_gene_therapy",
+    "is_psychedelic",
+    "safety_signal",
+    "ppm_flag",
+    "is_single_arm",
+    "has_surrogate",
+    "is_hoeg_era",
+    "failure_signal",
+    "strong_positive",
+    "dose_response",
+    "safety_clean",
+    "ta_CNS",
+    "ta_RARE",
+    "ta_PAIN",
+    "ta_IMMUNOLOGY"
+  ],
+  "n_pruned_features": 27,
+  "pruned_sign_violations": 5
+}

@@ -1,0 +1,10 @@
+{
+  "events_processed": 349,
+  "events_complete": 277,
+  "new_calls": 636,
+  "cached_calls": 62,
+  "errors": 141,
+  "elapsed_s": 520.6,
+  "done": true,
+  "updated_at": "2026-04-21T05:48:38.499017Z"
+}

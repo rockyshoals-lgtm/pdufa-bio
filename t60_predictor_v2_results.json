@@ -1,0 +1,91 @@
+{
+  "version": "2.0.0",
+  "generated": "2026-04-20T06:04:10.910590Z",
+  "candidates_tested": 83,
+  "features_from_v1": 5,
+  "features_v2_new": 2,
+  "final_feature_count": 7,
+  "mu_AP_greedy_history": [
+    {
+      "round": 0,
+      "added": "ppm_flag",
+      "val_R2": 0.032976672044044086,
+      "delta": Infinity,
+      "selected_count": 1
+    },
+    {
+      "round": 1,
+      "added": "ch_scorable",
+      "val_R2": 0.039110713172657796,
+      "delta": 0.00613404112861371,
+      "selected_count": 2
+    },
+    {
+      "round": 2,
+      "added": "ta_very_high_risk",
+      "val_R2": 0.044014784444755595,
+      "delta": 0.004904071272097799,
+      "selected_count": 3
+    },
+    {
+      "round": 3,
+      "added": "naive_sponsor",
+      "val_R2": 0.04649102287316509,
+      "delta": 0.002476238428409494,
+      "selected_count": 4
+    },
+    {
+      "round": 4,
+      "no_improvement": true,
+      "best_candidate": "surrogate_endpoint",
+      "delta": 0.0003652172032958534
+    }
+  ],
+  "mu_CR_greedy_history": [
+    {
+      "round": 0,
+      "added": "experienced_sponsor",
+      "val_R2": 0.006685995908588871,
+      "delta": Infinity,
+      "selected_count": 1
+    },
+    {
+      "round": 1,
+      "added": "accelerated_approval",
+      "val_R2": 0.02245037444717879,
+      "delta": 0.015764378538589918,
+      "selected_count": 2
+    },
+    {
+      "round": 2,
+      "added": "ch_tc_kinase",
+      "val_R2": 0.027039538760958548,
+      "delta": 0.004589164313779759,
+      "selected_count": 3
+    },
+    {
+      "round": 3,
+      "no_improvement": true,
+      "best_candidate": "ch_is_small_molecule",
+      "delta": 0.001785522482045443
+    }
+  ],
+  "mu_AP_test_R2": -0.08537095232624226,
+  "mu_CR_test_R2": -0.032378320621611945,
+  "pred_gap_mean_test_pp": 6.08168646683362,
+  "pred_gap_ci95_pp": [
+    5.481954162447156,
+    6.691852579369486
+  ],
+  "seed_stability_pct": 100.0,
+  "v2_vs_v1_delta_gap_pp": 2.4609607064758885,
+  "v2_selected_features": [
+    "ppm_flag",
+    "ch_scorable",
+    "ta_very_high_risk",
+    "naive_sponsor",
+    "experienced_sponsor",
+    "accelerated_approval",
+    "ch_tc_kinase"
+  ]
+}

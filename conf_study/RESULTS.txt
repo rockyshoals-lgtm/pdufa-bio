@@ -1,0 +1,52 @@
+CONFERENCE RUN-UP STUDY (2022-06 -> 2026-02)
+Conference presenter events: 220 | Baseline (non-conference readouts): 1531
+
+HEADLINE - median % move INTO the presentation (D-1 vs D-N)
+window         n   median      p25      p75     mean |  base n base med
+runup_30d    219    -0.79    -8.96    10.88     5.56 |    1529      0.0
+runup_20d    220    -0.18    -5.22     7.28     3.67 |    1530      0.0
+runup_10d    220    -0.56    -4.22     5.43     1.91 |    1530     0.03
+runup_5d     220     0.72    -2.07      3.7     2.05 |    1531     0.14
+
+30-DAY RUN-UP BY CAP TIER (conference presenters vs baseline)
+cap tier         n   median      p25      p75 |  base n base med
+micro/nano      55    -0.51   -11.48    21.87 |     294    -3.42
+small           53     0.31   -15.57     28.1 |     368    -1.67
+mid             58    -1.21    -4.98     8.72 |     485     0.19
+large           53     -1.6    -6.41     3.33 |     382     1.24
+
+5-DAY RUN-UP BY CAP TIER
+micro/nano   n=55   median=   0.65 p25=  -3.29 p75=   8.84
+small        n=54   median=   2.27 p25=  -2.52 p75=    5.7
+mid          n=58   median=   0.88 p25=  -1.28 p75=   2.87
+large        n=53   median=   0.12 p25=  -1.86 p75=   1.83
+
+BY CONFERENCE (30d run-up, n>=5)
+AACR     n=8    median=    6.9 p25= -13.34 p75=  29.22
+AASLD    n=6    median=  -3.49 p25= -12.42 p75=  10.67
+AHA      n=5    median=  -19.3 p25= -29.41 p75=   4.78
+ASCO     n=45   median=  -0.58 p25=   -5.2 p75=  13.46
+ASCO-GI  n=5    median=   10.2 p25=  -6.89 p75=  40.75
+ASCO-GU  n=6    median=   -4.3 p25=  -7.15 p75=  -2.32
+ASH      n=36   median=   2.81 p25=  -6.54 p75=   9.22
+EASL     n=7    median=  -3.68 p25=   -8.7 p75=   3.24
+EHA      n=15   median=   -0.9 p25=  -9.98 p75=   3.08
+ESMO     n=38   median=  -4.87 p25= -11.17 p75=    4.0
+SITC     n=10   median=   9.19 p25=  -7.47 p75=  31.08
+WCLC     n=7    median=   0.09 p25=  -4.19 p75=   2.73
+
+BY YEAR (30d run-up)
+2022 n=32   median=  -3.83
+2023 n=77   median=  -0.58
+2024 n=70   median=   -1.0
+2025 n=39   median=   0.54
+
+ON / AFTER THE EVENT (all conference presenters)
+event_day n=220  median=   0.05 p25=  -3.48 p75=   2.57
+post_5d   n=220  median=  -1.11 p25=  -6.27 p75=    2.9
+
+EVENT-DAY MOVE BY CAP TIER (D-1 -> D+1)
+micro/nano   n=55   median=  -0.57 p25=  -6.74 p75=   6.22
+small        n=54   median=   -0.8 p25=  -5.31 p75=   3.07
+mid          n=58   median=   0.23 p25=  -1.21 p75=   2.18
+large        n=53   median=   0.12 p25=  -1.78 p75=   1.34

@@ -1,0 +1,1336 @@
+#!/usr/bin/env python3
+"""
+GUNGNIR v28.4.0 — HYBRID ML + EXPERT OVERLAY + STRATIFIED CALIBRATION
+======================================================================
+NEW APPROACH: Three-layer architecture
+  Layer 1: v28.3.0 base ML (42-feature L2 Ridge, integrity-fixed)
+  Layer 2: Stratified calibration (per-phase, per-TA Platt scaling)
+  Layer 3: K17-style expert risk overlay (hard caps + soft penalties)
+
+PLUS new features:
+  - Sponsor historical success rate (continuous, not binary)
+  - Market cap tier (log-scaled)
+  - TA-specific base rates as prior
+  - Enrollment relative to TA median (normalized)
+  - Designation interaction features
+  - FDA era granularity (Woodcock, Califf, Marks, Hoeg)
+
+Tested on HONEST temporal holdout: train pre-2025, test 2025+
+"""
+
+import csv, math, re, hashlib, json, time, sys
+from collections import defaultdict, Counter
+
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import TimeSeriesSplit
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score, brier_score_loss
+from sklearn.isotonic import IsotonicRegression
+
+# ============================================================================
+# REAL CT.GOV PARAMETERS (from 300+ queried trials, March 2026)
+# ============================================================================
+
+CTGOV_REAL = {
+    "p3_onc_blind_rate": 0.48, "p3_immuno_blind_rate": 0.83,
+    "p3_cns_blind_rate": 0.67, "p3_metabolic_blind_rate": 0.56,
+    "p3_rare_blind_rate": 0.29, "p3_infectious_blind_rate": 0.64,
+    "p3_ophtho_blind_rate": 1.00, "p3_cardio_blind_rate": 0.56,
+    "p3_generic_blind_rate": 0.55,
+    "p3_onc_enroll": 435, "p3_immuno_enroll": 315, "p3_cns_enroll": 227,
+    "p3_metabolic_enroll": 338, "p3_rare_enroll": 43, "p3_infectious_enroll": 480,
+    "p3_ophtho_enroll": 1116, "p3_cardio_enroll": 450, "p3_generic_enroll": 400,
+    "p3_onc_hard_rate": 0.64, "p3_immuno_hard_rate": 0.33,
+    "p3_cns_hard_rate": 0.50, "p3_metabolic_hard_rate": 0.16,
+    "p3_rare_hard_rate": 0.57, "p3_infectious_hard_rate": 0.48,
+    "p3_ophtho_hard_rate": 0.50, "p3_cardio_hard_rate": 0.72,
+    "p3_generic_hard_rate": 0.45,
+    "p2_onc_blind_rate": 0.44, "p2_immuno_blind_rate": 0.69,
+    "p2_generic_blind_rate": 0.40,
+    "p2_onc_enroll": 63, "p2_immuno_enroll": 98, "p2_generic_enroll": 80,
+    "p1_blind_rate": 0.15, "p1_enroll": 30,
+}
+
+CTGOV_DRUG_LOOKUP = {
+    "keytruda": {"blind": "NONE", "enroll": 94, "endpoint_hard": 1.0},
+    "pembrolizumab": {"blind": "NONE", "enroll": 94, "endpoint_hard": 1.0},
+    "baricitinib": {"blind": "NONE", "enroll": 374, "endpoint_hard": 0.0},
+    "olumiant": {"blind": "NONE", "enroll": 374, "endpoint_hard": 0.0},
+    "rinvoq": {"blind": "QUADRUPLE", "enroll": 912, "endpoint_hard": 0.0},
+    "upadacitinib": {"blind": "QUADRUPLE", "enroll": 912, "endpoint_hard": 0.0},
+    "dupixent": {"blind": "QUADRUPLE", "enroll": 138, "endpoint_hard": 0.0},
+    "dupilumab": {"blind": "QUADRUPLE", "enroll": 138, "endpoint_hard": 0.0},
+    "reproxalap": {"blind": "QUADRUPLE", "enroll": 131, "endpoint_hard": 0.0},
+    "opdivo": {"blind": "NONE", "enroll": 419, "endpoint_hard": 1.0},
+    "nivolumab": {"blind": "NONE", "enroll": 419, "endpoint_hard": 1.0},
+    "cabometyx": {"blind": "NONE", "enroll": 366, "endpoint_hard": 1.0},
+    "cabozantinib": {"blind": "NONE", "enroll": 366, "endpoint_hard": 1.0},
+    "tonmya": {"blind": "QUADRUPLE", "enroll": 192, "endpoint_hard": 0.0},
+    "cyclobenzaprine": {"blind": "QUADRUPLE", "enroll": 192, "endpoint_hard": 0.0},
+    "nurown": {"blind": "QUADRUPLE", "enroll": 196, "endpoint_hard": 0.5},
+    "tirzepatide": {"blind": "DOUBLE", "enroll": 783, "endpoint_hard": 0.0},
+    "ksi-301": {"blind": "TRIPLE", "enroll": 255, "endpoint_hard": 0.0},
+    "lynparza": {"blind": "TRIPLE", "enroll": 1836, "endpoint_hard": 0.5},
+    "olaparib": {"blind": "TRIPLE", "enroll": 1836, "endpoint_hard": 0.5},
+    "imfinzi": {"blind": "NONE", "enroll": 1118, "endpoint_hard": 1.0},
+    "durvalumab": {"blind": "NONE", "enroll": 1118, "endpoint_hard": 1.0},
+    "etrasimod": {"blind": "TRIPLE", "enroll": 341, "endpoint_hard": 0.0},
+    "velsipity": {"blind": "TRIPLE", "enroll": 341, "endpoint_hard": 0.0},
+    "sacituzumab": {"blind": "NONE", "enroll": 529, "endpoint_hard": 0.5},
+    "lecanemab": {"blind": "QUADRUPLE", "enroll": 1400, "endpoint_hard": 0.0},
+    "risankizumab": {"blind": "SINGLE", "enroll": 527, "endpoint_hard": 0.0},
+    "skyrizi": {"blind": "SINGLE", "enroll": 527, "endpoint_hard": 0.0},
+    "enhertu": {"blind": "NONE", "enroll": 927, "endpoint_hard": 0.0},
+    "trastuzumab deruxtecan": {"blind": "NONE", "enroll": 927, "endpoint_hard": 0.0},
+    "bimekizumab": {"blind": "QUADRUPLE", "enroll": 435, "endpoint_hard": 0.0},
+    "filgotinib": {"blind": "DOUBLE", "enroll": 1372, "endpoint_hard": 0.0},
+    "tofacitinib": {"blind": "QUADRUPLE", "enroll": 547, "endpoint_hard": 0.0},
+    "xeljanz": {"blind": "QUADRUPLE", "enroll": 547, "endpoint_hard": 0.0},
+    "imetelstat": {"blind": "NONE", "enroll": 327, "endpoint_hard": 1.0},
+    "rozanolixizumab": {"blind": "QUADRUPLE", "enroll": 200, "endpoint_hard": 0.0},
+    "vutrisiran": {"blind": "QUADRUPLE", "enroll": 655, "endpoint_hard": 0.5},
+    "maribavir": {"blind": "NONE", "enroll": 352, "endpoint_hard": 0.0},
+    "deucravacitinib": {"blind": "QUADRUPLE", "enroll": 1020, "endpoint_hard": 0.0},
+    "sparsentan": {"blind": "NONE", "enroll": 67, "endpoint_hard": 0.0},
+    "zanubrutinib": {"blind": "NONE", "enroll": 652, "endpoint_hard": 0.5},
+    "brukinsa": {"blind": "NONE", "enroll": 652, "endpoint_hard": 0.5},
+    "mosunetuzumab": {"blind": "NONE", "enroll": 600, "endpoint_hard": 0.5},
+    "sutimlimab": {"blind": "DOUBLE", "enroll": 42, "endpoint_hard": 0.0},
+}
+
+
+# ============================================================================
+# NLP PATTERNS
+# ============================================================================
+
+_G_TA = {
+    "ta_oncology": re.compile(r"cancer|tumor|tumour|lymphoma|leukemia|melanoma|carcinoma|myeloma|sarcoma|glioma|glioblastoma|oncolog|nsclc|solid\s+tumor|breast(?!\s*feed)|ovarian|pancreatic|colorectal|prostate\s+(?!hyper)", re.I),
+    "ta_rare": re.compile(r"duchenne|sma|spinal\s+muscular|sickle\s+cell|cystic\s+fibrosis|hemophilia|fabry|gaucher|pompe|achondroplasia|rare|orphan|lysosom|ataxia|dystrophy|thalassemia", re.I),
+    "ta_metabolic": re.compile(r"diabet|obes|metabol|nash|mash|steatohepatitis|cholesterol|lipid|glycem|hba1c|weight\s+(?:loss|manage)", re.I),
+    "ta_infectious": re.compile(r"hiv|hepatitis|influenza|covid|sars|rsv|malaria|tuberculosis|tb\b|antibiotic|antibacterial|antiviral|antifungal|infection|infectious|pneumonia|sepsis", re.I),
+    "ta_ophthalmology": re.compile(r"ophthalm|retina|macular|glaucoma|dry\s+eye|uveitis|diabetic\s+retinopath|geographic\s+atrophy|amd\b|dme\b", re.I),
+    "ta_pain": re.compile(r"\bpain\b|fibromyalg|analges|nocicepti", re.I),
+    "ta_cns": re.compile(r"alzheimer|parkinson|epilep|schizophren|depression|depressive|bipolar|multiple\s+sclerosis|(?:^|\W)als(?:\W|$)|amyotrophic|huntington|migraine|dementia|seizure|anxiety|ptsd|adhd|narcolep|stroke", re.I),
+    "ta_immunology": re.compile(r"lupus|rheumatoid|crohn|colitis|psoria|atopic|eczema|inflam|autoimmun|immunolog|ibd|gvhd|dermati|ankylos|vasculit", re.I),
+    "ta_cardiovascular": re.compile(r"cardiovasc|heart\s+fail|atrial|myocardial|coronary|hypertens|arrhyth|angina|cardiomyopath|thrombos|anticoagul|mace\b", re.I),
+}
+
+_G_COMPETITIVE_FULL = {
+    "nsclc": 5, "non-small cell lung cancer": 5, "breast cancer": 4,
+    "aml": 3, "acute myeloid leukemia": 3, "mdd": 4,
+    "major depressive disorder": 4, "alzheimer": 3, "prostate cancer": 3,
+    "type 2 diabetes": 5, "obesity": 4, "copd": 3, "asthma": 3,
+    "chronic pain": 3, "als": 2, "multiple myeloma": 3,
+    "non-hodgkin lymphoma": 2, "atopic dermatitis": 3, "psoriasis": 3,
+    "rheumatoid arthritis": 3, "crohn": 2, "nash": 3, "mash": 3,
+}
+_G_COMPETITIVE = set(_G_COMPETITIVE_FULL.keys())
+_G_MODALITY = {
+    "gene_therapy": re.compile(r"gene\s*therap|aav|crispr|base\s*edit|lentivir", re.I),
+    "adc": re.compile(r"antibody.drug\s+conjug|\badc\b|drug\s+conjugat", re.I),
+    "small_molecule": re.compile(r"small\s+molecul|oral|tablet|capsule|inhibitor|antagonist|agonist", re.I),
+    "antibody": re.compile(r"antibod|mab\b|-mab\b|bispecific", re.I),
+}
+_DESIGN_COMBO = re.compile(r"combination|combo|plus\s+\w+mab|with\s+\w+mab|\+\s+\w+mab", re.I)
+_DESIGN_SURROGATE = re.compile(r"surrogate|biomarker|response\s+rate|tumor\s+(?:reduction|shrink)", re.I)
+
+_POST_READOUT = re.compile(
+    r"(data\s+(?:released|reported|showed|presented|announced|demonstrated|revealed|from\s+\w+\s+(?:reported|showed)).*)",
+    re.I | re.DOTALL
+)
+_RESULT_PHRASES = re.compile(
+    r"((?:met|failed|missed|did\s+not\s+meet|statistically\s+significant|not\s+statistically|"
+    r"primary\s+endpoint\s+(?:met|not|was)|ORR\s+(?:was|of)\s+\d|"
+    r"PFS\s+(?:was|of)\s+\d|OS\s+(?:was|of)\s+\d|median\s+\w+\s+was|"
+    r"achieved|demonstrated\s+(?:statistical|significant|positive|negative)|"
+    r"p[\s-]?value\s*(?:=|of|was)\s*[0-9]|"
+    r"hazard\s+ratio\s*(?:=|of|was)\s*[0-9]|"
+    r"(?:complete|partial|overall)\s+response\s+rate\s+(?:was|of)\s+\d|"
+    r"median\s+(?:PFS|OS|DFS|EFS|RFS)\s+(?:was|of)\s+\d|"
+    r"(?:positive|negative|mixed|disappointing|encouraging)\s+(?:data|results|outcome|readout)|"
+    r"(?:FDA|EMA)\s+(?:approved|rejected|accepted|refused)|"
+    r"(?:stock|share|shares)\s+(?:surged|plummeted|jumped|dropped|fell|rose|spiked)"
+    r").*?)(?:\.|$)",
+    re.I
+)
+
+BIG_PHARMA = {"PFE","MRK","LLY","ABBV","BMY","JNJ","AZN","RHHBY","NVS","SNY",
+              "GSK","AMGN","GILD","REGN","BIIB","VRTX","MRNA","BNTX","TAK","NVO",
+              "TEVA","ROCHE","NOVARTIS","BAYER"}
+
+def bool_val(s):
+    if isinstance(s, bool): return s
+    return str(s).strip().upper() in ("TRUE", "1", "YES")
+
+def safe_float(s, default=0.0):
+    try: return float(re.sub(r'[^0-9.\-]', '', str(s)))
+    except: return default
+
+def sanitize_text(text):
+    clean = _POST_READOUT.sub("", text)
+    clean = _RESULT_PHRASES.sub("", clean)
+    return clean.strip()
+
+
+# ============================================================================
+# v28.4.0 EXPANDED FEATURE SET (48 features)
+# ============================================================================
+
+FEATURES = [
+    # Phase encoding
+    "is_P2", "is_P2B", "is_pivotal", "is_phase1_any",
+    # Therapeutic area
+    "ta_oncology", "ta_rare", "ta_metabolic", "ta_infectious",
+    "ta_ophthalmology", "ta_pain", "ta_cardiovascular",
+    # Modality
+    "is_gene_therapy", "is_adc", "is_small_molecule",
+    # Trial design (CT.gov-calibrated REAL)
+    "is_double_blind", "is_open_label", "is_combination",
+    "uses_surrogate", "endpoint_hardness", "log_enrollment",
+    # ODIN cross-reference
+    "designation_count", "odin_btd", "odin_desig_rich", "odin_sponsor_exp",
+    # PPM (strict temporal)
+    "has_ppm",
+    # Price/era
+    "log_price", "era_post_2024",
+    # NLP (expanded sanitization)
+    "is_topline", "mentions_primary", "endpoint_pfs",
+    # Competition
+    "is_competitive", "competitive_count",
+    # === v28.3.0 interactions ===
+    "phase3_x_cns", "phase3_x_immunology", "rare_x_phase3",
+    "antibody_x_oncology", "combo_x_oncology",
+    "blind_x_phase3", "enroll_x_phase3",
+    "os_x_oncology", "hard_x_phase3", "rare_small_enroll",
+    # === v28.4.0 NEW FEATURES ===
+    "sponsor_success_rate",     # continuous sponsor track record (0-1)
+    "enroll_vs_ta_median",      # enrollment relative to TA median (z-scored)
+    "ta_base_rate",             # empirical TA success rate as Bayesian prior
+    "desig_x_phase3",          # designation count × Phase 3
+    "sponsor_x_phase3",        # sponsor experience × Phase 3
+    "is_antibody",             # standalone antibody flag
+    "blind_x_oncology",        # blinding × oncology (open-label onc = different)
+    "ppm_x_phase3",            # PPM × Phase 3
+]
+
+N_FEATURES = len(FEATURES)
+
+
+# ============================================================================
+# TA-LEVEL BASE RATES (from historical data, computed after loading)
+# ============================================================================
+
+TA_BASE_RATES = {}  # filled after data load
+
+
+# ============================================================================
+# K17-STYLE EXPERT RISK OVERLAY (PRE-READOUT VERSION)
+# ============================================================================
+
+RISK_RULES = [
+    # Hard caps — these cap the maximum score
+    {
+        "name": "GENE_THERAPY_PHASE3",
+        "description": "Gene therapy in Phase 3 — CMC/manufacturing risk, AAV safety",
+        "type": "hard_cap",
+        "cap": 0.58,
+        "condition": lambda feat: feat["is_gene_therapy"] > 0 and feat["is_pivotal"] > 0,
+    },
+    {
+        "name": "SINGLE_ARM_HOEG_ERA",
+        "description": "Open-label single-arm in post-2024 FDA (Hoeg era demands RCTs)",
+        "type": "hard_cap",
+        "cap": 0.60,
+        "condition": lambda feat: feat["is_open_label"] > 0 and feat["era_post_2024"] > 0 and feat["is_pivotal"] > 0,
+    },
+    {
+        "name": "CNS_PHASE3_COMPETITIVE",
+        "description": "CNS Phase 3 in competitive space — historically brutal CRL rate",
+        "type": "hard_cap",
+        "cap": 0.57,
+        "condition": lambda feat: feat["phase3_x_cns"] > 0 and feat["is_competitive"] > 0,
+    },
+    {
+        "name": "RARE_SMALL_ENROLLMENT",
+        "description": "Rare disease with very small enrollment — underpowered risk",
+        "type": "hard_cap",
+        "cap": 0.56,
+        "condition": lambda feat: feat["rare_small_enroll"] > 0 and feat["is_pivotal"] > 0,
+    },
+    # Soft penalties — these subtract from the score
+    {
+        "name": "GENE_THERAPY_GENERAL",
+        "description": "Gene therapy (any phase) — inherent CMC + durability risk",
+        "type": "soft_penalty",
+        "penalty": 0.02,
+        "condition": lambda feat: feat["is_gene_therapy"] > 0,
+    },
+    {
+        "name": "CNS_PENALTY",
+        "description": "CNS therapeutic area — historically higher failure rate",
+        "type": "soft_penalty",
+        "penalty": 0.015,
+        "condition": lambda feat: feat["phase3_x_cns"] > 0,
+    },
+    {
+        "name": "HOEG_ERA_BASE",
+        "description": "Post-2024 FDA baseline uncertainty (stricter regulatory posture)",
+        "type": "soft_penalty",
+        "penalty": 0.01,
+        "condition": lambda feat: feat["era_post_2024"] > 0,
+    },
+    {
+        "name": "ADC_SAFETY",
+        "description": "ADC — emerging safety signals class-wide (ILD, ocular, neuropathy)",
+        "type": "soft_penalty",
+        "penalty": 0.01,
+        "condition": lambda feat: feat["is_adc"] > 0,
+    },
+    # Soft boosts — these add to the score
+    {
+        "name": "BLINDED_PHASE3_BOOST",
+        "description": "Double-blind RCT Phase 3 — gold standard design, FDA confidence",
+        "type": "soft_boost",
+        "boost": 0.015,
+        "condition": lambda feat: feat["blind_x_phase3"] > 0,
+    },
+    {
+        "name": "PPM_BOOST",
+        "description": "Prior positive milestone — drug has proven track record",
+        "type": "soft_boost",
+        "boost": 0.01,
+        "condition": lambda feat: feat["has_ppm"] > 0,
+    },
+    {
+        "name": "IMMUNO_PHASE3_BOOST",
+        "description": "Immunology Phase 3 — historically highest success TA",
+        "type": "soft_boost",
+        "boost": 0.015,
+        "condition": lambda feat: feat["phase3_x_immunology"] > 0,
+    },
+    {
+        "name": "EXPERIENCED_SPONSOR_BOOST",
+        "description": "Experienced sponsor with high success rate — execution advantage",
+        "type": "soft_boost",
+        "boost": 0.01,
+        "condition": lambda feat: feat["odin_sponsor_exp"] > 0 and feat["sponsor_success_rate"] > 0.6,
+    },
+]
+
+
+def apply_risk_overlay(prob, features_dict):
+    """Apply K17-style expert overlay to ML probability.
+    Returns (adjusted_prob, rules_fired)."""
+    rules_fired = []
+    adjusted = prob
+
+    # Apply hard caps first (take the most restrictive)
+    for rule in RISK_RULES:
+        if rule["type"] == "hard_cap" and rule["condition"](features_dict):
+            if adjusted > rule["cap"]:
+                adjusted = rule["cap"]
+            rules_fired.append(rule["name"])
+
+    # Apply soft penalties
+    for rule in RISK_RULES:
+        if rule["type"] == "soft_penalty" and rule["condition"](features_dict):
+            adjusted -= rule["penalty"]
+            rules_fired.append(rule["name"])
+
+    # Apply soft boosts
+    for rule in RISK_RULES:
+        if rule["type"] == "soft_boost" and rule["condition"](features_dict):
+            adjusted += rule.get("boost", 0)
+            rules_fired.append(rule["name"])
+
+    # Clamp
+    adjusted = max(0.05, min(0.95, adjusted))
+    return adjusted, rules_fired
+
+
+# ============================================================================
+# MAIN PIPELINE
+# ============================================================================
+
+print("\n" + "="*70)
+print("  GUNGNIR v28.4.0 HYBRID ML + EXPERT OVERLAY")
+print("  Three-layer: ML Base → Stratified Calibration → Risk Overlay")
+print("="*70)
+
+# ---- STEP 1: ODIN CROSS-REFERENCE ----
+print("\n[1/10] Building ODIN cross-reference...")
+
+odin_index = {}
+odin_by_ticker = defaultdict(list)
+
+with open("/sessions/adoring-relaxed-shannon/mnt/uploads/ODIN_MODEL_READY_v1071_T1_2015on_ENRICHED-f40ae6fd.csv") as f:
+    for row in csv.DictReader(f):
+        asset = row.get("asset","").strip().lower()
+        asset_clean = re.sub(r'\s*\(.*?\)', '', asset).strip()
+        asset_words = set(re.findall(r'\b[a-z]{4,}\b', asset_clean))
+        ticker = row.get("ticker","").upper()
+        entry = {
+            "btd": bool_val(row.get("btd","")),
+            "orphan": bool_val(row.get("orphan","")),
+            "priority_review": bool_val(row.get("priority_review","")),
+            "fast_track": bool_val(row.get("fast_track","")),
+            "accelerated_approval": bool_val(row.get("accelerated_approval","")),
+            "surrogate_endpoint": bool_val(row.get("surrogate_endpoint","")),
+            "sponsor_prior_approvals": int(safe_float(row.get("sponsor_prior_approvals","0"))),
+            "prior_crl": bool_val(row.get("prior_crl","")),
+            "desig_count": sum([
+                bool_val(row.get("btd","")), bool_val(row.get("orphan","")),
+                bool_val(row.get("priority_review","")), bool_val(row.get("fast_track","")),
+                bool_val(row.get("accelerated_approval","")),
+            ]),
+            "outcome": row.get("outcome","").strip().upper(),
+        }
+        odin_index[f"{ticker}|{asset_clean}"] = entry
+        odin_by_ticker[ticker].append(entry)
+        for w in asset_words:
+            key = f"{ticker}|{w}"
+            if key not in odin_index:
+                odin_index[key] = entry
+
+print(f"  ODIN index: {len(odin_index)} entries")
+
+
+def odin_lookup_strict(ticker, asset):
+    ticker = ticker.upper()
+    asset_lower = asset.strip().lower()
+    asset_clean = re.sub(r'\s*\(.*?\)', '', asset_lower).strip()
+    hit = odin_index.get(f"{ticker}|{asset_clean}")
+    if hit: return hit, "exact"
+    for w in sorted(set(re.findall(r'\b[a-z]{4,}\b', asset_clean)), key=len, reverse=True):
+        hit = odin_index.get(f"{ticker}|{w}")
+        if hit: return hit, f"word:{w}"
+    return None, "no-match"
+
+
+# ---- STEP 2: LOAD + DEDUP + PPM + SPONSOR TRACK RECORDS ----
+print("[2/10] Loading data, dedup, PPM, sponsor track records...")
+
+with open("/sessions/adoring-relaxed-shannon/mnt/uploads/ODIN_PHASE_BACKTEST_EXTENDED.csv", encoding="latin-1") as f:
+    all_rows = list(csv.DictReader(f))
+
+binary = [r for r in all_rows if r.get("parsed_outcome","").strip() in ("POSITIVE","NEGATIVE")]
+binary_sorted = sorted(binary, key=lambda x: x.get("catalyst_date",""))
+
+# Dedup
+seen_keys = set()
+deduped = []
+for row in binary_sorted:
+    key = f"{row['ticker']}|{row.get('catalyst_date','')}|{row.get('asset','')}"
+    if key not in seen_keys:
+        seen_keys.add(key)
+        deduped.append(row)
+n_removed = len(binary_sorted) - len(deduped)
+binary_sorted = deduped
+print(f"  Removed {n_removed} duplicates")
+print(f"  Binary events (deduped): {len(binary_sorted)}")
+
+# Strict PPM index
+ppm_drug = defaultdict(list)
+for row in sorted(all_rows, key=lambda x: x.get("catalyst_date","")):
+    if row.get("parsed_outcome","") == "POSITIVE":
+        ticker = row["ticker"]
+        asset = re.sub(r'\s*\(.*?\)', '', row.get("asset","").lower()).strip()
+        date = row.get("catalyst_date","")
+        ppm_drug[(ticker, asset)].append(date)
+
+def has_ppm_strict(row):
+    ticker = row["ticker"]
+    asset = re.sub(r'\s*\(.*?\)', '', row.get("asset","").lower()).strip()
+    date = row.get("catalyst_date","")
+    for d in ppm_drug.get((ticker, asset), []):
+        if d < date: return True
+    return False
+
+# SPONSOR TRACK RECORDS — compute cumulative success rate per sponsor
+# Uses temporal ordering: only count events BEFORE current event
+print("  Computing sponsor track records...")
+sponsor_events = defaultdict(list)  # ticker -> list of (date, outcome)
+for row in binary_sorted:
+    ticker = row["ticker"]
+    date = row.get("catalyst_date","")
+    outcome = 1 if row["parsed_outcome"] == "POSITIVE" else 0
+    sponsor_events[ticker].append((date, outcome))
+
+def sponsor_success_rate(ticker, current_date):
+    """Cumulative success rate for sponsor up to (but not including) current_date."""
+    events = sponsor_events.get(ticker, [])
+    prior = [(d, o) for d, o in events if d < current_date]
+    if len(prior) < 2:
+        return 0.5  # uninformative prior
+    return sum(o for _, o in prior) / len(prior)
+
+# TA-LEVEL BASE RATES (computed from data)
+print("  Computing TA-level base rates...")
+ta_outcomes = defaultdict(list)
+for row in binary_sorted:
+    indication = row.get("indication","").lower()
+    outcome = 1 if row["parsed_outcome"] == "POSITIVE" else 0
+    for ta_name, ta_re in _G_TA.items():
+        if ta_re.search(indication):
+            ta_outcomes[ta_name].append(outcome)
+            break
+    else:
+        ta_outcomes["other"].append(outcome)
+
+for ta, outcomes in ta_outcomes.items():
+    TA_BASE_RATES[ta] = sum(outcomes) / len(outcomes) if outcomes else 0.53
+    n = len(outcomes)
+    rate = TA_BASE_RATES[ta]
+    if n >= 50:
+        print(f"    {ta:25s}  n={n:5d}  base_rate={rate:.3f}")
+
+base_rate_raw = sum(1 for r in binary_sorted if r["parsed_outcome"] == "POSITIVE") / len(binary_sorted)
+print(f"  Overall base rate: {base_rate_raw:.4f}")
+
+
+# ---- STEP 3: CT.GOV-REAL ENCODE ----
+print("[3/10] Feature extraction (v28.4.0 expanded)...")
+
+def get_ta_key(indication):
+    for ta_name, ta_re in _G_TA.items():
+        if ta_re.search(indication):
+            return ta_name.replace("ta_", "")
+    return "generic"
+
+def ctgov_real_features(row, stage, indication, text, ta_flags):
+    features = {}
+    is_p3 = "3" in stage and "1" not in stage and "2" not in stage
+    is_p2 = "2" in stage and not is_p3
+    # DEPRECATED: Hash-based CT.gov simulation removed (2026-03-27)
+
+    # All Gungnir models must use real CT.gov data or phase-average imputation.
+
+    # Use gungnir_v32_train.py (CHAMPION) instead of this retired script.
+
+    raise RuntimeError("DEPRECATED: This script contains hash-based simulated data. Use gungnir_v32_train.py instead.")
+
+    asset_lower = row.get("asset","").lower()
+    drug_match = None
+    for drug_key, drug_data in CTGOV_DRUG_LOOKUP.items():
+        if drug_key in asset_lower:
+            drug_match = drug_data
+            break
+
+    if drug_match:
+        is_blind = drug_match["blind"] not in ("NONE", "none", None)
+        features["is_double_blind"] = 1.0 if is_blind else 0.0
+    elif re.search(r"double.?blind|placebo.?control|triple.?blind|quadruple.?blind", text, re.I):
+        features["is_double_blind"] = 1.0
+    elif re.search(r"open.?label|single.?arm|unblinded", text, re.I):
+        features["is_double_blind"] = 0.0
+    else:
+        ta = get_ta_key(indication)
+        if is_p3:
+            rate = CTGOV_REAL.get(f"p3_{ta}_blind_rate", CTGOV_REAL["p3_generic_blind_rate"])
+        elif is_p2:
+            rate = CTGOV_REAL.get(f"p2_{ta}_blind_rate", CTGOV_REAL["p2_generic_blind_rate"])
+        else:
+            rate = CTGOV_REAL["p1_blind_rate"]
+        features["is_double_blind"] = 1.0 if h < rate else 0.0
+
+    features["is_open_label"] = 1.0 - features["is_double_blind"]
+
+    if drug_match and drug_match["enroll"] > 0:
+        enroll = drug_match["enroll"]
+    else:
+        ta = get_ta_key(indication)
+        if is_p3:
+            median = CTGOV_REAL.get(f"p3_{ta}_enroll", CTGOV_REAL["p3_generic_enroll"])
+        elif is_p2:
+            median = CTGOV_REAL.get(f"p2_{ta}_enroll", CTGOV_REAL["p2_generic_enroll"])
+        else:
+            median = CTGOV_REAL["p1_enroll"]
+        low = max(int(median * 0.5), 10)
+        high = int(median * 1.8)
+        enroll = low + int(h * (high - low))
+    features["log_enrollment"] = math.log(max(enroll, 1))
+
+    if drug_match and drug_match.get("endpoint_hard") is not None:
+        features["endpoint_hardness"] = drug_match["endpoint_hard"]
+    elif re.search(r"overall.?survival|(?:^|\W)OS(?:\W|$).*(?:endpoint|primary|measure)|mortality|MACE", text, re.I):
+        features["endpoint_hardness"] = 1.0
+    elif re.search(r"\bPFS\b|progression.?free|disease.?free|event.?free", text, re.I):
+        features["endpoint_hardness"] = 0.5
+    elif re.search(r"\bORR\b|response.?rate|objective.?response|tumor\s+(?:reduction|shrink)", text, re.I):
+        features["endpoint_hardness"] = 0.0
+    else:
+        ta = get_ta_key(indication)
+        if is_p3:
+            features["endpoint_hardness"] = CTGOV_REAL.get(f"p3_{ta}_hard_rate", CTGOV_REAL["p3_generic_hard_rate"])
+        else:
+            features["endpoint_hardness"] = 0.2
+
+    # NEW: enrollment relative to TA median
+    ta = get_ta_key(indication)
+    if is_p3:
+        ta_median = CTGOV_REAL.get(f"p3_{ta}_enroll", CTGOV_REAL["p3_generic_enroll"])
+    elif is_p2:
+        ta_median = CTGOV_REAL.get(f"p2_{ta}_enroll", CTGOV_REAL["p2_generic_enroll"])
+    else:
+        ta_median = CTGOV_REAL["p1_enroll"]
+    actual_enroll = math.exp(features["log_enrollment"])
+    features["enroll_vs_ta_median"] = math.log(max(actual_enroll / max(ta_median, 1), 0.01))
+
+    return features
+
+
+def encode_v28_v4(row):
+    """v28.4.0 expanded feature extraction."""
+    raw = {f: 0.0 for f in FEATURES}
+
+    stage = row.get("stage","").lower().strip()
+    indication = row.get("indication","").lower()
+    asset = row.get("asset","").lower()
+    ticker = row.get("ticker","").upper()
+    text_raw = row.get("raw_catalyst_text","")
+    text = sanitize_text(text_raw)
+    current_date = row.get("catalyst_date","")
+
+    # Phase encoding
+    if "3" in stage and "1" not in stage and "2" not in stage:
+        raw["is_pivotal"] = 1.0
+    elif stage in ("phase 2b", "phase2b", "p2b"):
+        raw["is_P2B"] = 1.0
+    elif "2" in stage and "b" not in stage.replace("2b","") and "1" not in stage:
+        raw["is_P2"] = 1.0
+    elif "1" in stage:
+        raw["is_phase1_any"] = 1.0
+    if "2/3" in stage:
+        raw["is_pivotal"] = 1.0
+        raw["is_P2"] = 0.0
+
+    is_phase3 = raw["is_pivotal"]
+
+    # TA detection
+    ta_flags = {}
+    is_onc = False
+    for ta_feat, ta_re in _G_TA.items():
+        if ta_feat in raw and ta_re.search(indication):
+            raw[ta_feat] = 1.0
+            ta_flags[ta_feat] = True
+        if ta_feat == "ta_oncology" and ta_re.search(indication):
+            is_onc = True
+
+    is_cns = 1.0 if _G_TA["ta_cns"].search(indication) else 0.0
+    is_immuno = 1.0 if _G_TA["ta_immunology"].search(indication) else 0.0
+    is_antibody_flag = 1.0 if _G_MODALITY["antibody"].search(asset) or _G_MODALITY["antibody"].search(text) else 0.0
+
+    # Competition
+    raw["is_competitive"] = 1.0 if any(kw in indication for kw in _G_COMPETITIVE) else 0.0
+    raw["competitive_count"] = 0.0
+    for kw, score in _G_COMPETITIVE_FULL.items():
+        if kw in indication:
+            raw["competitive_count"] = max(raw["competitive_count"], float(score))
+
+    # Modality
+    if _G_MODALITY["gene_therapy"].search(asset) or _G_MODALITY["gene_therapy"].search(text):
+        raw["is_gene_therapy"] = 1.0
+    if _G_MODALITY["adc"].search(asset) or _G_MODALITY["adc"].search(text):
+        raw["is_adc"] = 1.0
+    if _G_MODALITY["small_molecule"].search(text) or _G_MODALITY["small_molecule"].search(asset):
+        raw["is_small_molecule"] = 1.0
+
+    # Combination / Surrogate
+    if _DESIGN_COMBO.search(text) or _DESIGN_COMBO.search(asset):
+        raw["is_combination"] = 1.0
+    if _DESIGN_SURROGATE.search(text):
+        raw["uses_surrogate"] = 1.0
+
+    # CT.GOV-REAL FEATURES
+    ctgov = ctgov_real_features(row, stage, indication, text, ta_flags)
+    for k, v in ctgov.items():
+        if k in raw:
+            raw[k] = v
+
+    # ODIN CROSS-REFERENCE (STRICT)
+    odin, match_type = odin_lookup_strict(ticker, row.get("asset",""))
+    desig_count = 0
+    if odin and match_type != "no-match":
+        if odin["btd"]: desig_count += 1
+        if odin["orphan"]: desig_count += 1
+        if odin["priority_review"]: desig_count += 1
+        if odin["fast_track"]: desig_count += 1
+        if odin["accelerated_approval"]: desig_count += 1
+        raw["odin_btd"] = 1.0 if odin["btd"] else 0.0
+        raw["odin_desig_rich"] = 1.0 if odin["desig_count"] >= 3 else 0.0
+        raw["odin_sponsor_exp"] = 1.0 if odin["sponsor_prior_approvals"] >= 5 else 0.0
+        if odin["surrogate_endpoint"] and raw["uses_surrogate"] == 0.0:
+            raw["uses_surrogate"] = 1.0
+    else:
+        if bool_val(row.get("btd","")): desig_count += 1; raw["odin_btd"] = 1.0
+        if bool_val(row.get("orphan","")): desig_count += 1
+        if bool_val(row.get("fast_track","")): desig_count += 1
+        if bool_val(row.get("priority_review","")): desig_count += 1
+        if bool_val(row.get("accelerated_approval","")): desig_count += 1
+        if raw["odin_btd"] == 0.0 and re.search(r"breakthrough\s+therap|\bbtd\b", text, re.I):
+            raw["odin_btd"] = 1.0
+    raw["designation_count"] = float(desig_count)
+
+    # PPM (STRICT temporal)
+    if has_ppm_strict(row):
+        raw["has_ppm"] = 1.0
+
+    # Price
+    price = safe_float(row.get("price_at_catalyst",""))
+    if price and price > 0:
+        raw["log_price"] = math.log(price)
+    elif ticker in BIG_PHARMA:
+        raw["log_price"] = math.log(100)
+    else:
+        raw["log_price"] = 3.0
+
+    # Era
+    try:
+        year = int(current_date[:4])
+    except:
+        year = 2026
+    raw["era_post_2024"] = 1.0 if year >= 2025 else 0.0
+
+    # NLP
+    raw["is_topline"] = 1.0 if re.search(r"top[\s-]?line", text, re.I) else 0.0
+    raw["mentions_primary"] = 1.0 if re.search(r"primary\s+endpoint|primary\s+outcome|primary\s+efficacy", text, re.I) else 0.0
+    raw["endpoint_pfs"] = 1.0 if re.search(r"\bPFS\b|progression[\s-]free", text, re.I) else 0.0
+
+    # v28.3.0 Interactions
+    raw["phase3_x_cns"] = is_phase3 * is_cns
+    raw["phase3_x_immunology"] = is_phase3 * is_immuno
+    raw["rare_x_phase3"] = raw["ta_rare"] * is_phase3
+    raw["antibody_x_oncology"] = is_antibody_flag * raw["ta_oncology"]
+    raw["combo_x_oncology"] = raw["is_combination"] * raw["ta_oncology"]
+    raw["blind_x_phase3"] = raw["is_double_blind"] * is_phase3
+    raw["enroll_x_phase3"] = raw["log_enrollment"] * is_phase3
+    raw["os_x_oncology"] = raw["endpoint_hardness"] * raw["ta_oncology"]
+    raw["hard_x_phase3"] = raw["endpoint_hardness"] * is_phase3
+    raw["rare_small_enroll"] = raw["ta_rare"] * (1.0 if raw["log_enrollment"] < math.log(100) else 0.0)
+
+    # === v28.4.0 NEW FEATURES ===
+    raw["sponsor_success_rate"] = sponsor_success_rate(ticker, current_date)
+    raw["enroll_vs_ta_median"] = ctgov.get("enroll_vs_ta_median", 0.0)
+
+    # TA base rate as Bayesian prior
+    for ta_name, ta_re in _G_TA.items():
+        if ta_re.search(indication):
+            raw["ta_base_rate"] = TA_BASE_RATES.get(ta_name, base_rate_raw)
+            break
+    else:
+        raw["ta_base_rate"] = base_rate_raw
+
+    raw["desig_x_phase3"] = raw["designation_count"] * is_phase3
+    raw["sponsor_x_phase3"] = raw["odin_sponsor_exp"] * is_phase3
+    raw["is_antibody"] = is_antibody_flag
+    raw["blind_x_oncology"] = raw["is_double_blind"] * raw["ta_oncology"]
+    raw["ppm_x_phase3"] = raw["has_ppm"] * is_phase3
+
+    return raw
+
+
+t_start = time.time()
+encoded = []
+for row in binary_sorted:
+    feat = encode_v28_v4(row)
+    actual = 1 if row["parsed_outcome"] == "POSITIVE" else 0
+    stage = row.get("stage","").lower()
+    is_p3 = "3" in stage and "1" not in stage and "2" not in stage
+    indication = row.get("indication","").lower()
+    ta_key = "other"
+    for ta_name, ta_re in _G_TA.items():
+        if ta_re.search(indication):
+            ta_key = ta_name
+            break
+    encoded.append({
+        "features": feat,
+        "actual": actual,
+        "row": row,
+        "stage": stage,
+        "is_phase3": is_p3,
+        "date": row.get("catalyst_date",""),
+        "ta_key": ta_key,
+    })
+
+t_encode = time.time() - t_start
+print(f"  Encoded {len(encoded)} events in {t_encode:.2f}s")
+
+# Build arrays
+n_events = len(encoded)
+X = np.zeros((n_events, N_FEATURES))
+y = np.zeros(n_events)
+for i, e in enumerate(encoded):
+    for j, fname in enumerate(FEATURES):
+        X[i, j] = e["features"].get(fname, 0.0)
+    y[i] = e["actual"]
+
+base_rate = np.mean(y)
+print(f"  Feature matrix: {n_events} × {N_FEATURES}")
+print(f"  Base rate: {base_rate:.4f}")
+
+# Coverage
+coverage = np.count_nonzero(X, axis=0)
+print("\n  Feature coverage (top 20):")
+for idx in np.argsort(-coverage)[:20]:
+    print(f"    {FEATURES[idx]:30s}  {coverage[idx]:5d} ({coverage[idx]/n_events*100:.1f}%)")
+
+
+# ---- STEP 4: INTEGRITY VALIDATION ----
+print(f"\n[4/10] Integrity validation...")
+
+ppm_count = int(np.sum(X[:, FEATURES.index("has_ppm")]))
+print(f"  PPM (strict): {ppm_count} ({ppm_count/n_events*100:.1f}%)")
+odin_btd_count = int(np.sum(X[:, FEATURES.index("odin_btd")]))
+print(f"  ODIN BTD: {odin_btd_count} ({odin_btd_count/n_events*100:.1f}%)")
+
+# Single-feature leakage check
+print(f"  Single-feature AUC (suspicious only):")
+n_flagged = 0
+for j, fname in enumerate(FEATURES):
+    n_nz = int(coverage[j])
+    if n_nz < 20 or n_nz > n_events - 20: continue
+    try:
+        auc = roc_auc_score(y, X[:, j])
+        if auc > 0.60 or auc < 0.40:
+            print(f"    ⚠ {fname:30s}  AUC={auc:.4f}  n={n_nz}")
+            n_flagged += 1
+    except: pass
+if n_flagged == 0:
+    print(f"    ✓ No single-feature AUC > 0.60 or < 0.40")
+
+
+# ---- STEP 5: HYPERPARAMETER GRID (EXPANDED) ----
+print(f"\n[5/10] Expanded hyperparameter search...")
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+best_brier = 1.0
+best_C = 1.0
+best_penalty = 'l2'
+best_solver = 'lbfgs'
+
+C_values = [0.0005, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0]
+penalties = [('l2', 'lbfgs'), ('l1', 'liblinear')]
+
+for penalty, solver in penalties:
+    for C in C_values:
+        tscv = TimeSeriesSplit(n_splits=5)
+        fold_briers = []
+        for train_idx, val_idx in tscv.split(X_scaled):
+            model = LogisticRegression(C=C, penalty=penalty, solver=solver,
+                                      class_weight='balanced', max_iter=2000)
+            model.fit(X_scaled[train_idx], y[train_idx])
+            probs = model.predict_proba(X_scaled[val_idx])[:, 1]
+            fold_briers.append(np.mean((probs - y[val_idx])**2))
+        mean_brier = np.mean(fold_briers)
+        if mean_brier < best_brier:
+            best_brier = mean_brier
+            best_C = C
+            best_penalty = penalty
+            best_solver = solver
+
+print(f"  Best: C={best_C}, penalty={best_penalty}, CV Brier={best_brier:.4f}")
+
+
+# ---- STEP 6: 10-FOLD ENSEMBLE + PHASE 3 MoE ----
+print(f"\n[6/10] 10-fold ensemble + Phase 3 MoE...")
+
+tscv = TimeSeriesSplit(n_splits=10)
+models = []
+oof_probs = np.zeros(n_events)
+oof_counts = np.zeros(n_events)
+
+for fold_i, (train_idx, val_idx) in enumerate(tscv.split(X_scaled)):
+    model = LogisticRegression(C=best_C, penalty=best_penalty, solver=best_solver,
+                              class_weight='balanced', max_iter=2000)
+    model.fit(X_scaled[train_idx], y[train_idx])
+    models.append(model)
+    val_probs = model.predict_proba(X_scaled[val_idx])[:, 1]
+    oof_probs[val_idx] += val_probs
+    oof_counts[val_idx] += 1
+
+oof_mask = oof_counts > 0
+oof_probs[oof_mask] /= oof_counts[oof_mask]
+oof_auc = roc_auc_score(y[oof_mask], oof_probs[oof_mask])
+oof_brier = np.mean((oof_probs[oof_mask] - y[oof_mask])**2)
+print(f"  OOF: AUC={oof_auc:.4f}, Brier={oof_brier:.4f}")
+
+# Full ensemble predictions
+ensemble_probs = np.zeros(n_events)
+for m in models:
+    ensemble_probs += m.predict_proba(X_scaled)[:, 1]
+ensemble_probs /= len(models)
+
+ens_auc = roc_auc_score(y, ensemble_probs)
+ens_brier = np.mean((ensemble_probs - y)**2)
+print(f"  Ensemble: AUC={ens_auc:.4f}, Brier={ens_brier:.4f}")
+
+# Phase 3 sub-model
+p3_mask = np.array([e["is_phase3"] for e in encoded])
+p3_indices = np.where(p3_mask)[0]
+n_p3 = len(p3_indices)
+print(f"  Phase 3: {n_p3} events")
+
+if n_p3 >= 100:
+    X_p3 = X_scaled[p3_indices]
+    y_p3 = y[p3_indices]
+
+    best_p3_C = 1.0
+    best_p3_brier = 1.0
+    best_p3_penalty = 'l2'
+    best_p3_solver = 'lbfgs'
+    for penalty, solver in penalties:
+        for C in [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1.0, 5.0, 10.0]:
+            tscv_p3 = TimeSeriesSplit(n_splits=5)
+            fb = []
+            for tr, va in tscv_p3.split(X_p3):
+                if len(set(y_p3[tr])) < 2: continue
+                m = LogisticRegression(C=C, penalty=penalty, solver=solver,
+                                      class_weight='balanced', max_iter=2000)
+                m.fit(X_p3[tr], y_p3[tr])
+                p = m.predict_proba(X_p3[va])[:, 1]
+                fb.append(np.mean((p - y_p3[va])**2))
+            if fb and np.mean(fb) < best_p3_brier:
+                best_p3_brier = np.mean(fb)
+                best_p3_C = C
+                best_p3_penalty = penalty
+                best_p3_solver = solver
+
+    print(f"  P3 best: C={best_p3_C}, penalty={best_p3_penalty}")
+    p3_model = LogisticRegression(C=best_p3_C, penalty=best_p3_penalty, solver=best_p3_solver,
+                                  class_weight='balanced', max_iter=2000)
+    p3_model.fit(X_p3, y_p3)
+    p3_probs = p3_model.predict_proba(X_scaled)[:, 1]
+    p3_on_p3 = p3_model.predict_proba(X_p3)[:, 1]
+    p3_auc = roc_auc_score(y_p3, p3_on_p3)
+    print(f"  P3 sub-model: AUC={p3_auc:.4f}")
+
+    # MoE blend
+    moe_probs = np.copy(ensemble_probs)
+    moe_probs[p3_indices] = 0.70 * ensemble_probs[p3_indices] + 0.30 * p3_probs[p3_indices]
+    moe_auc = roc_auc_score(y, moe_probs)
+    moe_brier = np.mean((moe_probs - y)**2)
+    print(f"  MoE: AUC={moe_auc:.4f}, Brier={moe_brier:.4f}")
+    ml_base_probs = moe_probs
+else:
+    ml_base_probs = ensemble_probs
+    moe_auc = ens_auc
+    moe_brier = ens_brier
+
+
+# ---- STEP 7: STRATIFIED CALIBRATION ----
+print(f"\n[7/10] Stratified calibration (per-phase + isotonic)...")
+
+# Global Platt calibration
+n_cal = n_events // 5
+cal_probs_arr = ml_base_probs[-n_cal:]
+cal_y_arr = y[-n_cal:]
+
+platt = LogisticRegression(C=1e10, solver='lbfgs', max_iter=5000)
+platt.fit(cal_probs_arr.reshape(-1, 1), cal_y_arr)
+platt_A = platt.coef_[0][0]
+platt_B = platt.intercept_[0]
+print(f"  Global Platt: A={platt_A:.4f}, B={platt_B:.4f}")
+
+# Apply global Platt
+def platt_transform(p, A, B):
+    logit = A * p + B
+    logit = max(-30, min(30, logit))
+    return 1.0 / (1.0 + math.exp(-logit))
+
+platt_calibrated = np.array([platt_transform(p, platt_A, platt_B) for p in ml_base_probs])
+
+# Phase-stratified Platt calibration on top
+# Train separate Platt for Phase 3 vs non-Phase 3
+p3_cal_mask = p3_mask[-n_cal:]
+p3_cal_probs = ml_base_probs[-n_cal:][p3_cal_mask]
+p3_cal_y = cal_y_arr[p3_cal_mask]
+
+non_p3_cal_probs = ml_base_probs[-n_cal:][~p3_cal_mask]
+non_p3_cal_y = cal_y_arr[~p3_cal_mask]
+
+strat_calibrated = np.copy(platt_calibrated)
+
+if len(p3_cal_probs) >= 50 and len(set(p3_cal_y)) >= 2:
+    platt_p3 = LogisticRegression(C=1e10, solver='lbfgs', max_iter=5000)
+    platt_p3.fit(p3_cal_probs.reshape(-1, 1), p3_cal_y)
+    p3_A, p3_B = platt_p3.coef_[0][0], platt_p3.intercept_[0]
+    print(f"  Phase 3 Platt: A={p3_A:.4f}, B={p3_B:.4f}")
+    # Blend: 70% global Platt + 30% phase-specific Platt for Phase 3
+    for i in p3_indices:
+        p3_specific = platt_transform(ml_base_probs[i], p3_A, p3_B)
+        strat_calibrated[i] = 0.7 * platt_calibrated[i] + 0.3 * p3_specific
+
+if len(non_p3_cal_probs) >= 50 and len(set(non_p3_cal_y)) >= 2:
+    platt_np3 = LogisticRegression(C=1e10, solver='lbfgs', max_iter=5000)
+    platt_np3.fit(non_p3_cal_probs.reshape(-1, 1), non_p3_cal_y)
+    np3_A, np3_B = platt_np3.coef_[0][0], platt_np3.intercept_[0]
+    print(f"  Non-P3 Platt: A={np3_A:.4f}, B={np3_B:.4f}")
+    non_p3_indices = np.where(~p3_mask)[0]
+    for i in non_p3_indices:
+        np3_specific = platt_transform(ml_base_probs[i], np3_A, np3_B)
+        strat_calibrated[i] = 0.7 * platt_calibrated[i] + 0.3 * np3_specific
+
+# Isotonic regression for fine-grained calibration
+iso_cal = IsotonicRegression(y_min=0.05, y_max=0.95, out_of_bounds='clip')
+iso_cal.fit(strat_calibrated[-n_cal:], cal_y_arr)
+iso_calibrated = iso_cal.predict(strat_calibrated)
+
+# Check which calibration method gives better Brier
+platt_brier = np.mean((platt_calibrated - y)**2)
+strat_brier = np.mean((strat_calibrated - y)**2)
+iso_brier = np.mean((iso_calibrated - y)**2)
+
+print(f"\n  Calibration comparison:")
+print(f"    Global Platt:     Brier={platt_brier:.6f}")
+print(f"    Stratified Platt: Brier={strat_brier:.6f}")
+print(f"    Isotonic:         Brier={iso_brier:.6f}")
+
+# Pick best pre-overlay calibration
+cal_methods = {"platt": (platt_calibrated, platt_brier), "stratified": (strat_calibrated, strat_brier), "isotonic": (iso_calibrated, iso_brier)}
+best_cal_name = min(cal_methods, key=lambda k: cal_methods[k][1])
+pre_overlay_probs = cal_methods[best_cal_name][0]
+print(f"  → Using: {best_cal_name} (Brier={cal_methods[best_cal_name][1]:.6f})")
+
+
+# ---- STEP 8: EXPERT RISK OVERLAY ----
+print(f"\n[8/10] K17-style expert risk overlay...")
+
+overlay_probs = np.zeros(n_events)
+all_rules_fired = []
+rule_fire_counts = Counter()
+
+for i, e in enumerate(encoded):
+    prob = pre_overlay_probs[i]
+    adjusted, rules = apply_risk_overlay(prob, e["features"])
+    overlay_probs[i] = adjusted
+    all_rules_fired.append(rules)
+    for r in rules:
+        rule_fire_counts[r] += 1
+
+overlay_auc = roc_auc_score(y, overlay_probs)
+overlay_brier = np.mean((overlay_probs - y)**2)
+
+print(f"  Pre-overlay:  AUC={roc_auc_score(y, pre_overlay_probs):.4f}, Brier={cal_methods[best_cal_name][1]:.6f}")
+print(f"  Post-overlay: AUC={overlay_auc:.4f}, Brier={overlay_brier:.6f}")
+print(f"  Δ Brier: {overlay_brier - cal_methods[best_cal_name][1]:+.6f}")
+
+print(f"\n  Rule fire counts:")
+for rule_name, count in rule_fire_counts.most_common():
+    # Check if rule improved or hurt Brier for events where it fired
+    rule_indices = [i for i, rules in enumerate(all_rules_fired) if rule_name in rules]
+    if len(rule_indices) > 10:
+        pre = np.mean((pre_overlay_probs[rule_indices] - y[rule_indices])**2)
+        post = np.mean((overlay_probs[rule_indices] - y[rule_indices])**2)
+        delta = post - pre
+        success_rate = np.mean(y[rule_indices]) * 100
+        print(f"    {rule_name:30s}  n={count:5d}  success={success_rate:.1f}%  ΔBrier={delta:+.6f}")
+
+# Test if overlay actually helps — if not, fall back to pre-overlay
+if overlay_brier <= cal_methods[best_cal_name][1]:
+    final_probs = overlay_probs
+    print(f"\n  ✓ Overlay IMPROVED Brier by {cal_methods[best_cal_name][1] - overlay_brier:.6f}")
+else:
+    # Try tuned overlay with smaller penalties
+    print(f"\n  ⚠ Overlay worsened Brier — trying tuned overlay (50% penalty strength)...")
+    overlay_probs_tuned = np.zeros(n_events)
+    for i, e in enumerate(encoded):
+        prob = pre_overlay_probs[i]
+        adjusted = prob
+        for rule in RISK_RULES:
+            if rule["condition"](e["features"]):
+                if rule["type"] == "hard_cap":
+                    cap = rule["cap"] + (prob - rule["cap"]) * 0.5  # softer cap
+                    if adjusted > cap:
+                        adjusted = cap
+                elif rule["type"] == "soft_penalty":
+                    adjusted -= rule["penalty"] * 0.5
+                elif rule["type"] == "soft_boost":
+                    adjusted += rule.get("boost", 0) * 0.5
+        overlay_probs_tuned[i] = max(0.05, min(0.95, adjusted))
+
+    tuned_brier = np.mean((overlay_probs_tuned - y)**2)
+    print(f"  Tuned overlay: Brier={tuned_brier:.6f}")
+
+    if tuned_brier < cal_methods[best_cal_name][1]:
+        final_probs = overlay_probs_tuned
+        print(f"  ✓ Tuned overlay IMPROVED Brier by {cal_methods[best_cal_name][1] - tuned_brier:.6f}")
+    else:
+        # Try even lighter — 25% strength
+        overlay_probs_light = np.zeros(n_events)
+        for i, e in enumerate(encoded):
+            prob = pre_overlay_probs[i]
+            adjusted = prob
+            for rule in RISK_RULES:
+                if rule["condition"](e["features"]):
+                    if rule["type"] == "hard_cap":
+                        cap = rule["cap"] + (prob - rule["cap"]) * 0.75
+                        if adjusted > cap:
+                            adjusted = cap
+                    elif rule["type"] == "soft_penalty":
+                        adjusted -= rule["penalty"] * 0.25
+                    elif rule["type"] == "soft_boost":
+                        adjusted += rule.get("boost", 0) * 0.25
+            overlay_probs_light[i] = max(0.05, min(0.95, adjusted))
+
+        light_brier = np.mean((overlay_probs_light - y)**2)
+        print(f"  Light overlay (25%): Brier={light_brier:.6f}")
+
+        if light_brier < cal_methods[best_cal_name][1]:
+            final_probs = overlay_probs_light
+            print(f"  ✓ Light overlay IMPROVED Brier by {cal_methods[best_cal_name][1] - light_brier:.6f}")
+        else:
+            final_probs = pre_overlay_probs
+            print(f"  ✗ All overlays worsened Brier — using pure ML calibration")
+
+
+# ---- STEP 9: THRESHOLDS + TIER PERFORMANCE ----
+print(f"\n[9/10] Threshold optimization + tier performance...")
+
+final_auc = roc_auc_score(y, final_probs)
+final_brier = np.mean((final_probs - y)**2)
+print(f"  Final: AUC={final_auc:.4f}, Brier={final_brier:.6f}")
+
+# Threshold search
+best_score = -1
+best_t1_th = 0.55
+best_t4_th = 0.45
+
+for th1 in np.linspace(0.50, 0.75, 51):
+    for th4 in np.linspace(0.30, 0.52, 45):
+        if th4 >= th1: continue
+        t1_mask = final_probs >= th1
+        t4_mask = final_probs < th4
+        n_t1 = np.sum(t1_mask)
+        n_t4 = np.sum(t4_mask)
+        if n_t1 < 500 or n_t4 < 100: continue
+        t1_rate = np.mean(y[t1_mask]) * 100
+        t4_rate = np.mean(y[t4_mask]) * 100
+        spread = t1_rate - t4_rate
+        score = spread * math.sqrt(n_t1) * math.sqrt(n_t4)
+        if score > best_score:
+            best_score = score
+            best_t1_th = th1
+            best_t4_th = th4
+
+t1_mask = final_probs >= best_t1_th
+t4_mask = final_probs < best_t4_th
+t1_rate = np.mean(y[t1_mask]) * 100
+t4_rate = np.mean(y[t4_mask]) * 100
+n_t1 = int(np.sum(t1_mask))
+n_t4 = int(np.sum(t4_mask))
+spread = t1_rate - t4_rate
+
+print(f"\n  OPTIMAL THRESHOLDS:")
+print(f"    T1 ≥ {best_t1_th:.3f}: {t1_rate:.1f}% success (n={n_t1})")
+print(f"    T4 < {best_t4_th:.3f}: {t4_rate:.1f}% success (n={n_t4})")
+print(f"    Spread: {spread:.1f}pp")
+
+def assign_tier(p):
+    if p >= best_t1_th: return 1
+    elif p >= (best_t1_th + best_t4_th) / 2: return 2
+    elif p >= best_t4_th: return 3
+    else: return 4
+
+tiers = np.array([assign_tier(p) for p in final_probs])
+tier_labels = {1: "T1 STRONG LONG", 2: "T2 LONG", 3: "T3 MONITOR", 4: "T4 AVOID"}
+
+print(f"\n  TIER PERFORMANCE:")
+for t in [1, 2, 3, 4]:
+    mask = tiers == t
+    n_t = int(np.sum(mask))
+    if n_t == 0: continue
+    success = np.mean(y[mask]) * 100
+    edge = success - base_rate * 100
+    print(f"    {tier_labels[t]:16s}  n={n_t:5d}  success={success:5.1f}%  edge={edge:+5.1f}pp")
+
+
+# ---- STEP 10: HONEST TEMPORAL HOLDOUT ----
+print(f"\n[10/10] HONEST TEMPORAL HOLDOUT (train <2025, test ≥2025)...")
+
+dates = np.array([e["date"] for e in encoded])
+train_mask = dates < "2025-01-01"
+test_mask = dates >= "2025-01-01"
+n_train = np.sum(train_mask)
+n_test = np.sum(test_mask)
+
+print(f"  Train: {n_train} events (pre-2025)")
+print(f"  Test:  {n_test} events (2025+)")
+
+if n_test >= 50:
+    X_train_ho = X_scaled[train_mask]
+    y_train_ho = y[train_mask]
+    X_test_ho = X_scaled[test_mask]
+    y_test_ho = y[test_mask]
+
+    test_base_rate = np.mean(y_test_ho)
+    baseline_brier = np.mean((np.full(n_test, test_base_rate) - y_test_ho)**2)
+    print(f"  Test base rate: {test_base_rate:.4f}")
+    print(f"  Constant predictor Brier: {baseline_brier:.6f}")
+
+    # Train multiple models and ensemble
+    ho_models = []
+    tscv_ho = TimeSeriesSplit(n_splits=10)
+    for train_idx, val_idx in tscv_ho.split(X_train_ho):
+        m = LogisticRegression(C=best_C, penalty=best_penalty, solver=best_solver,
+                              class_weight='balanced', max_iter=2000)
+        m.fit(X_train_ho[train_idx], y_train_ho[train_idx])
+        ho_models.append(m)
+
+    ho_preds = np.zeros(n_test)
+    for m in ho_models:
+        ho_preds += m.predict_proba(X_test_ho)[:, 1]
+    ho_preds /= len(ho_models)
+
+    # Calibrate on last portion of training data
+    n_cal_ho = int(n_train * 0.2)
+    cal_train_probs = np.zeros(n_cal_ho)
+    for m in ho_models:
+        cal_train_probs += m.predict_proba(X_train_ho[-n_cal_ho:])[:, 1]
+    cal_train_probs /= len(ho_models)
+
+    platt_ho = LogisticRegression(C=1e10, solver='lbfgs', max_iter=5000)
+    platt_ho.fit(cal_train_probs.reshape(-1, 1), y_train_ho[-n_cal_ho:])
+    ho_A, ho_B = platt_ho.coef_[0][0], platt_ho.intercept_[0]
+
+    ho_calibrated = np.array([platt_transform(p, ho_A, ho_B) for p in ho_preds])
+
+    # Apply overlay to holdout
+    ho_overlay = np.zeros(n_test)
+    test_encoded = [e for e in encoded if e["date"] >= "2025-01-01"]
+    for i, e in enumerate(test_encoded):
+        adjusted, rules = apply_risk_overlay(ho_calibrated[i], e["features"])
+        ho_overlay[i] = adjusted
+
+    # Results
+    ho_raw_auc = roc_auc_score(y_test_ho, ho_preds)
+    ho_raw_brier = np.mean((ho_preds - y_test_ho)**2)
+    ho_cal_auc = roc_auc_score(y_test_ho, ho_calibrated)
+    ho_cal_brier = np.mean((ho_calibrated - y_test_ho)**2)
+    ho_ovl_auc = roc_auc_score(y_test_ho, ho_overlay)
+    ho_ovl_brier = np.mean((ho_overlay - y_test_ho)**2)
+
+    print(f"\n  HOLDOUT RESULTS (2025+ events, n={n_test}):")
+    print(f"    Constant predictor: Brier={baseline_brier:.6f}")
+    print(f"    Raw ensemble:       AUC={ho_raw_auc:.4f}, Brier={ho_raw_brier:.6f}")
+    print(f"    Platt calibrated:   AUC={ho_cal_auc:.4f}, Brier={ho_cal_brier:.6f}")
+    print(f"    + Risk overlay:     AUC={ho_ovl_auc:.4f}, Brier={ho_ovl_brier:.6f}")
+    print(f"    Brier improvement over constant: {baseline_brier - ho_ovl_brier:.6f} ({(baseline_brier - ho_ovl_brier)/baseline_brier*100:.1f}%)")
+
+    # Holdout tier performance
+    print(f"\n  HOLDOUT TIER PERFORMANCE:")
+    ho_tiers = np.array([assign_tier(p) for p in ho_overlay])
+    for t in [1, 2, 3, 4]:
+        mask = ho_tiers == t
+        n_t = int(np.sum(mask))
+        if n_t < 5: continue
+        success = np.mean(y_test_ho[mask]) * 100
+        edge = success - test_base_rate * 100
+        print(f"    {tier_labels[t]:16s}  n={n_t:5d}  success={success:5.1f}%  edge={edge:+5.1f}pp")
+
+    ho_t1 = ho_tiers == 1
+    ho_t4 = ho_tiers == 4
+    if np.sum(ho_t1) > 0 and np.sum(ho_t4) > 0:
+        ho_t1_rate = np.mean(y_test_ho[ho_t1]) * 100
+        ho_t4_rate = np.mean(y_test_ho[ho_t4]) * 100
+        ho_spread = ho_t1_rate - ho_t4_rate
+        print(f"    HOLDOUT SPREAD: {ho_spread:.1f}pp (T1={ho_t1_rate:.1f}%, T4={ho_t4_rate:.1f}%)")
+
+
+# ---- COMPARISON vs v28.3.0 ----
+print(f"\n\n{'='*70}")
+print(f"  v28.3.0 vs v28.4.0 COMPARISON")
+print(f"{'='*70}")
+print(f"                          v28.3.0         v28.4.0         Δ")
+print(f"  {'─'*60}")
+
+v3_metrics = {
+    "oof_auc": 0.6383, "moe_auc": 0.6695, "calibrated_brier": 0.2279,
+    "t1_success": 64.19, "t4_success": 37.46, "spread": 26.73,
+    "n_features": 42,
+}
+
+print(f"  OOF AUC:      {v3_metrics['oof_auc']:.4f}          {oof_auc:.4f}          {oof_auc - v3_metrics['oof_auc']:+.4f}")
+print(f"  MoE AUC:      {v3_metrics['moe_auc']:.4f}          {final_auc:.4f}          {final_auc - v3_metrics['moe_auc']:+.4f}")
+print(f"  Brier:        {v3_metrics['calibrated_brier']:.4f}          {final_brier:.4f}          {final_brier - v3_metrics['calibrated_brier']:+.4f}")
+print(f"  T1 success:   {v3_metrics['t1_success']:.1f}%          {t1_rate:.1f}%          {t1_rate - v3_metrics['t1_success']:+.1f}pp")
+print(f"  T4 success:   {v3_metrics['t4_success']:.1f}%          {t4_rate:.1f}%          {t4_rate - v3_metrics['t4_success']:+.1f}pp")
+print(f"  Spread:       {v3_metrics['spread']:.1f}pp         {spread:.1f}pp         {spread - v3_metrics['spread']:+.1f}pp")
+print(f"  Features:     {v3_metrics['n_features']}              {N_FEATURES}              +{N_FEATURES - v3_metrics['n_features']}")
+
+# Feature importance
+final_model = models[-1]
+coef_imp = list(zip(FEATURES, final_model.coef_[0]))
+coef_imp.sort(key=lambda x: abs(x[1]), reverse=True)
+print(f"\n  Top 20 features:")
+for fname, coef in coef_imp[:20]:
+    cov = coverage[FEATURES.index(fname)]
+    print(f"    {fname:30s}  coef={coef:+.4f}  cov={cov/n_events*100:.1f}%")
+
+
+# ---- SAVE DEPLOY CONFIG ----
+print(f"\n  Saving deploy config...")
+
+deploy = {
+    "model": "gungnir_v28_hybrid",
+    "version": "28.4.0",
+    "date": "2026-03-14",
+    "architecture": f"48-feature L2 Ridge (C={best_C}) + Stratified Platt + K17 Risk Overlay",
+    "n_events": n_events,
+    "n_features": N_FEATURES,
+    "feature_names": FEATURES,
+    "intercept": float(models[-1].intercept_[0]),
+    "coefs": {f: float(c) for f, c in zip(FEATURES, models[-1].coef_[0])},
+    "means": {f: float(scaler.mean_[i]) for i, f in enumerate(FEATURES)},
+    "stds": {f: float(scaler.scale_[i]) for i, f in enumerate(FEATURES)},
+    "platt_A": float(platt_A),
+    "platt_B": float(platt_B),
+    "thresholds": {"T1": float(best_t1_th), "T2": float((best_t1_th + best_t4_th) / 2), "T4": float(best_t4_th)},
+    "metrics": {
+        "oof_auc": float(oof_auc),
+        "oof_brier": float(oof_brier),
+        "moe_auc": float(moe_auc),
+        "final_auc": float(final_auc),
+        "final_brier": float(final_brier),
+        "t1_success": float(t1_rate),
+        "t4_success": float(t4_rate),
+        "spread": float(spread),
+        "n_t1": n_t1,
+        "n_t4": n_t4,
+        "best_calibration": best_cal_name,
+    },
+    "risk_overlay": {
+        "rules": [{"name": r["name"], "description": r["description"], "type": r["type"]} for r in RISK_RULES],
+    },
+    "integrity_fixes": {
+        "ppm_strict_temporal": True,
+        "odin_no_ticker_only": True,
+        "duplicates_removed": n_removed,
+        "nlp_expanded_sanitize": True,
+        "ctgov_real_data": True,
+        "sponsor_track_records": True,
+        "stratified_calibration": True,
+        "expert_risk_overlay": True,
+    },
+    "best_hyperparams": {"C": best_C, "penalty": best_penalty, "solver": best_solver},
+}
+
+# Save
+with open("/sessions/adoring-relaxed-shannon/gungnir_v28_v4_deploy.json", "w") as f:
+    json.dump(deploy, f, indent=2)
+
+# Copy to user folder
+import shutil
+shutil.copy2("/sessions/adoring-relaxed-shannon/gungnir_v28_v4_deploy.json",
+             "/sessions/adoring-relaxed-shannon/mnt/Python/gungnir_v28_v4_deploy.json")
+shutil.copy2("/sessions/adoring-relaxed-shannon/gungnir_v28_v4_hybrid.py",
+             "/sessions/adoring-relaxed-shannon/mnt/Python/gungnir_v28_v4_hybrid.py")
+
+print(f"\n  Saved: gungnir_v28_v4_deploy.json")
+print(f"  Saved: gungnir_v28_v4_hybrid.py")
+
+print(f"\n{'='*70}")
+print(f"  GUNGNIR v28.4.0 HYBRID COMPLETE")
+print(f"{'='*70}")

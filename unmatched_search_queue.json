@@ -1,0 +1,4875 @@
+[
+  {
+    "query": "Niktimvo (axatilimab-csfr) Chronic Graft versus host disease",
+    "rows": [
+      170,
+      172,
+      453,
+      457,
+      665,
+      666
+    ],
+    "drug": "Niktimvo (axatilimab-csfr)",
+    "acronym": ""
+  },
+  {
+    "query": "Ziihera (zanidatamab-hrii) HER2-amplified biliary tract cancers",
+    "rows": [
+      377,
+      378,
+      379,
+      887,
+      893,
+      894
+    ],
+    "drug": "Ziihera (zanidatamab-hrii)",
+    "acronym": ""
+  },
+  {
+    "query": "WINREVAIR (sotatercept-csrk) Pulmonary arterial hypertension",
+    "rows": [
+      113,
+      271,
+      1115,
+      1227,
+      1425
+    ],
+    "drug": "WINREVAIR (sotatercept-csrk)",
+    "acronym": ""
+  },
+  {
+    "query": "PHVS416 Hereditary angioedema - on demand",
+    "rows": [
+      187,
+      264,
+      395,
+      451,
+      1637
+    ],
+    "drug": "PHVS416",
+    "acronym": ""
+  },
+  {
+    "query": "Zipalertinib (CLN-081 Non-small cell lung cancer",
+    "rows": [
+      1023,
+      1226,
+      1355,
+      1380,
+      1499
+    ],
+    "drug": "Zipalertinib (CLN-081/TAS6417)",
+    "acronym": "REZILIENT1"
+  },
+  {
+    "query": "PH-762 Cutaneous Squamous Cell Carcinoma",
+    "rows": [
+      1092,
+      1207,
+      1258,
+      1325,
+      1462
+    ],
+    "drug": "PH-762",
+    "acronym": ""
+  },
+  {
+    "query": "Cibotercept (KER-012) Pulmonary arterial hypertension  and disorders associated wi",
+    "rows": [
+      79,
+      1167,
+      1198,
+      1374
+    ],
+    "drug": "Cibotercept (KER-012)",
+    "acronym": "KER-012"
+  },
+  {
+    "query": "Pemvidutide Metabolic dysfunction-associated steatohepatitis",
+    "rows": [
+      84,
+      1432,
+      1596,
+      1687
+    ],
+    "drug": "Pemvidutide",
+    "acronym": "IMPACT"
+  },
+  {
+    "query": "Lacutamab (IPH4102) Mycosis Fungoides",
+    "rows": [
+      92,
+      200,
+      406,
+      661
+    ],
+    "drug": "Lacutamab (IPH4102)",
+    "acronym": "IPH4102"
+  },
+  {
+    "query": "Odronextamab Non-Hodgkin Lymphoma",
+    "rows": [
+      208,
+      209,
+      1142,
+      1145
+    ],
+    "drug": "Odronextamab",
+    "acronym": "OLYMPIA"
+  },
+  {
+    "query": "GLPG5101 Relapsed/refractory Non-Hodgkin Lymphoma",
+    "rows": [
+      212,
+      912,
+      1421,
+      1648
+    ],
+    "drug": "GLPG5101",
+    "acronym": "ATALANTA-1"
+  },
+  {
+    "query": "GLPG5201 B-cell malignancies",
+    "rows": [
+      249,
+      387,
+      663,
+      816
+    ],
+    "drug": "GLPG5201",
+    "acronym": "EUPLAGIA-1"
+  },
+  {
+    "query": "ALLO-501 Large B-cell lymphoma",
+    "rows": [
+      400,
+      404,
+      1239,
+      1240
+    ],
+    "drug": "ALLO-501/501A + ALLO-647",
+    "acronym": "ALPHA2"
+  },
+  {
+    "query": "Neldaleucel (MT-601) Lymphoma who have failed or are ineligible to receive anti-C",
+    "rows": [
+      500,
+      677,
+      1188,
+      1484
+    ],
+    "drug": "Neldaleucel (MT-601)",
+    "acronym": "MT-601"
+  },
+  {
+    "query": "177Lu-PNT2002 Metastatic Castration-Resistant Prostate Cancer",
+    "rows": [
+      693,
+      698,
+      1014,
+      1015
+    ],
+    "drug": "177Lu-PNT2002",
+    "acronym": "SPLASH"
+  },
+  {
+    "query": "Barzolvolimab Chronic inducible urticaria",
+    "rows": [
+      717,
+      955,
+      1070,
+      1590
+    ],
+    "drug": "Barzolvolimab",
+    "acronym": ""
+  },
+  {
+    "query": "Camizestrant Hormone Receptor-Positive/Human Epidermal Growth Factor Rece",
+    "rows": [
+      1247,
+      1249,
+      1378,
+      1379
+    ],
+    "drug": "Camizestrant",
+    "acronym": "SERENA-6"
+  },
+  {
+    "query": "Icotrokinra  (JNJ-2113) Ulcerative colitis",
+    "rows": [
+      1261,
+      1263,
+      1574,
+      1576
+    ],
+    "drug": "Icotrokinra  (JNJ-2113)",
+    "acronym": "JNJ-2113"
+  },
+  {
+    "query": "Obefazimod Ulcerative colitis",
+    "rows": [
+      1459,
+      1502,
+      1529,
+      1585
+    ],
+    "drug": "Obefazimod",
+    "acronym": "ABTECT"
+  },
+  {
+    "query": "Botensilimab Relapsed/refractory microsatellite stable colorectal cancer ",
+    "rows": [
+      1,
+      295,
+      1313
+    ],
+    "drug": "Botensilimab plus balstilimab",
+    "acronym": "BATTMAN"
+  },
+  {
+    "query": "Piclidenoson Psoriasis",
+    "rows": [
+      2,
+      80,
+      429
+    ],
+    "drug": "Piclidenoson",
+    "acronym": "COMFORT"
+  },
+  {
+    "query": "REYOBIQ (rhenium Re186 obisbemeda) Glioma",
+    "rows": [
+      160,
+      430,
+      1043
+    ],
+    "drug": "REYOBIQ (rhenium Re186 obisbemeda)",
+    "acronym": ""
+  },
+  {
+    "query": "ADI-001 Non-Hodgkin\u2019s lymphoma",
+    "rows": [
+      193,
+      421,
+      664
+    ],
+    "drug": "ADI-001",
+    "acronym": ""
+  },
+  {
+    "query": "Rusfertide Polycythemia vera",
+    "rows": [
+      278,
+      1253,
+      1256
+    ],
+    "drug": "Rusfertide",
+    "acronym": "REVIVE"
+  },
+  {
+    "query": "Zasocitinib (TAK-279) Moderate-to-severe plaque psoriasis",
+    "rows": [
+      285,
+      602,
+      1684
+    ],
+    "drug": "Zasocitinib (TAK-279)",
+    "acronym": "TAK-279"
+  },
+  {
+    "query": "Xyngari(TM) (DMT310) Moderate-to-severe acne",
+    "rows": [
+      385,
+      1284,
+      1302
+    ],
+    "drug": "Xyngari(TM) (DMT310)",
+    "acronym": "TM"
+  },
+  {
+    "query": "GC012F Relapsed/refractory multiple myeloma",
+    "rows": [
+      391,
+      498,
+      678
+    ],
+    "drug": "GC012F",
+    "acronym": ""
+  },
+  {
+    "query": "Nanobody (sonelokimab) Hidradenitis suppurativa",
+    "rows": [
+      417,
+      548,
+      1525
+    ],
+    "drug": "Nanobody (sonelokimab)",
+    "acronym": "VELA-1"
+  },
+  {
+    "query": "Aleniglipron (GSBR-1290) Type 2 Diabetes",
+    "rows": [
+      530,
+      695,
+      884
+    ],
+    "drug": "Aleniglipron (GSBR-1290)",
+    "acronym": "GSBR-1290"
+  },
+  {
+    "query": "Revuforj (revumenib) Relapsed/refractory  acute leukemias",
+    "rows": [
+      532,
+      685,
+      1096
+    ],
+    "drug": "Revuforj (revumenib)",
+    "acronym": "AUGMENT-101"
+  },
+  {
+    "query": "Neladalkib (NVL-655) ALK non-small cell lung cancer",
+    "rows": [
+      537,
+      1556,
+      1620
+    ],
+    "drug": "Neladalkib (NVL-655)",
+    "acronym": "NVL-655"
+  },
+  {
+    "query": "Tambiciclib (SLS009) (GFH009) with venetoclax Hematologic malignancies",
+    "rows": [
+      550,
+      610,
+      1449
+    ],
+    "drug": "Tambiciclib (SLS009) (GFH009) with venetoclax",
+    "acronym": "SLS009"
+  },
+  {
+    "query": "Belzupacap sarotalocan (AU-011) Non-muscular invasive bladder cancer",
+    "rows": [
+      598,
+      1061,
+      1280
+    ],
+    "drug": "Belzupacap sarotalocan (AU-011)",
+    "acronym": "AU-011"
+  },
+  {
+    "query": "Nyxol + Low-Dose Pilocarpine Eye Drops Presbyopia",
+    "rows": [
+      623,
+      1429,
+      1430
+    ],
+    "drug": "Nyxol + Low-Dose Pilocarpine Eye Drops",
+    "acronym": ""
+  },
+  {
+    "query": "Rademikibart Asthma",
+    "rows": [
+      681,
+      1288,
+      1413
+    ],
+    "drug": "Rademikibart",
+    "acronym": ""
+  },
+  {
+    "query": "Bria-IMT Advanced breast cancer",
+    "rows": [
+      705,
+      862,
+      880
+    ],
+    "drug": "Bria-IMT",
+    "acronym": "BRIA-ABC"
+  },
+  {
+    "query": "Oveporexton (TAK-861-2001) Narcolepsy type 1",
+    "rows": [
+      737,
+      892,
+      1448
+    ],
+    "drug": "Oveporexton (TAK-861-2001)",
+    "acronym": "TAK-861-2001"
+  },
+  {
+    "query": "[212Pb]VMT-\u03b1-NET Neuroendocrine tumors",
+    "rows": [
+      971,
+      1561,
+      1714
+    ],
+    "drug": "[212Pb]VMT-\u03b1-NET",
+    "acronym": ""
+  },
+  {
+    "query": "Rinatabart sesutecan (Rina-S) Ovarian cancer",
+    "rows": [
+      1017,
+      1272,
+      1384
+    ],
+    "drug": "Rinatabart sesutecan (Rina-S)",
+    "acronym": "RAINFOL"
+  },
+  {
+    "query": "Givastomig (CLDN18.2 x 4-1BB bispecific antibody) HER2-negative metastatic gastric cancer",
+    "rows": [
+      1026,
+      1431,
+      1439
+    ],
+    "drug": "Givastomig (CLDN18.2 x 4-1BB bispecific antibody)",
+    "acronym": ""
+  },
+  {
+    "query": "Taldefgrobep Spinal Muscular Atrophy",
+    "rows": [
+      1117,
+      1118,
+      1119
+    ],
+    "drug": "Taldefgrobep",
+    "acronym": "RESILIENT"
+  },
+  {
+    "query": "Allocetra Knee osteoarthritis",
+    "rows": [
+      1128,
+      1500,
+      1629
+    ],
+    "drug": "Allocetra",
+    "acronym": "ENX-CL-05-001"
+  },
+  {
+    "query": "LYL314 (IMPT-314) Large B-cell lymphoma",
+    "rows": [
+      1147,
+      1419,
+      1650
+    ],
+    "drug": "LYL314 (IMPT-314)",
+    "acronym": "IMPT-314"
+  },
+  {
+    "query": "Lorundrostat Uncontrolled hypertension  or resistant hypertension .",
+    "rows": [
+      1259,
+      1341,
+      1366
+    ],
+    "drug": "Lorundrostat",
+    "acronym": ""
+  },
+  {
+    "query": "BPL-003 Resistant Depression",
+    "rows": [
+      1438,
+      1515,
+      1608
+    ],
+    "drug": "BPL-003",
+    "acronym": ""
+  },
+  {
+    "query": "Ziihera (zanidatamab-hrii) First-line HER2-positive gastroesophageal adenocarcinoma",
+    "rows": [
+      1619,
+      1621,
+      1622
+    ],
+    "drug": "Ziihera (zanidatamab-hrii)",
+    "acronym": "HERIZON-GEA-01"
+  },
+  {
+    "query": "IONIS-FB-LRx Immunoglobulin A nephropathy",
+    "rows": [
+      15,
+      16
+    ],
+    "drug": "IONIS-FB-LRx",
+    "acronym": ""
+  },
+  {
+    "query": "Tecentriq Hybreza (atezolizumab Lung",
+    "rows": [
+      35,
+      37
+    ],
+    "drug": "Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) with ENHANZE",
+    "acronym": ""
+  },
+  {
+    "query": "Pivekimab (IMGN632) Relapse/Refractory AML",
+    "rows": [
+      55,
+      388
+    ],
+    "drug": "Pivekimab (IMGN632)",
+    "acronym": "IMGN632"
+  },
+  {
+    "query": "D-PLEX100 Abdominal  sternal surgical site infections",
+    "rows": [
+      56,
+      1062
+    ],
+    "drug": "D-PLEX100",
+    "acronym": ""
+  },
+  {
+    "query": "IZERVAY (avacincaptad pegol intravitreal solution) Geographic atrophy  secondary to age-related macular degener",
+    "rows": [
+      59,
+      516
+    ],
+    "drug": "IZERVAY (avacincaptad pegol intravitreal solution)",
+    "acronym": ""
+  },
+  {
+    "query": "BNT211 Solid tumors",
+    "rows": [
+      72,
+      1010
+    ],
+    "drug": "BNT211",
+    "acronym": ""
+  },
+  {
+    "query": "Bel-sar (AU-011) Indeterminate lesions  and choroidal melanoma",
+    "rows": [
+      102,
+      103
+    ],
+    "drug": "Bel-sar (AU-011)",
+    "acronym": "AU-011"
+  },
+  {
+    "query": "Multikine Head and Neck cancer",
+    "rows": [
+      120,
+      950
+    ],
+    "drug": "Multikine",
+    "acronym": "IT-MATTERS"
+  },
+  {
+    "query": "NX-2127 B-cell malignancies",
+    "rows": [
+      129,
+      675
+    ],
+    "drug": "NX-2127",
+    "acronym": ""
+  },
+  {
+    "query": "Iomab-B Acute myeloid leukemia",
+    "rows": [
+      132,
+      259
+    ],
+    "drug": "Iomab-B",
+    "acronym": "SIERRA"
+  },
+  {
+    "query": "FasTCAR-T GC012F Diffuse large B-cell lymphoma",
+    "rows": [
+      135,
+      197
+    ],
+    "drug": "FasTCAR-T GC012F",
+    "acronym": ""
+  },
+  {
+    "query": "XOLREMDI (mavorixafor) WHIM syndrome",
+    "rows": [
+      164,
+      334
+    ],
+    "drug": "XOLREMDI (mavorixafor)",
+    "acronym": ""
+  },
+  {
+    "query": "NKX019 B-cell malignancies",
+    "rows": [
+      173,
+      394
+    ],
+    "drug": "NKX019",
+    "acronym": ""
+  },
+  {
+    "query": "AUCATZYL (obecabtagene autoleucel) B-Cell Acute Lymphoblastic Leukemia",
+    "rows": [
+      189,
+      909
+    ],
+    "drug": "AUCATZYL (obecabtagene autoleucel)",
+    "acronym": "FELIX"
+  },
+  {
+    "query": "Seclidemstat Myelodysplastic Syndromes  and Chronic Myelomonocytic Leukem",
+    "rows": [
+      206,
+      709
+    ],
+    "drug": "Seclidemstat",
+    "acronym": ""
+  },
+  {
+    "query": "Rezdiffra (resmetirom) Non-alcoholic steatohepatitis  with liver fibrosis",
+    "rows": [
+      220,
+      413
+    ],
+    "drug": "Rezdiffra (resmetirom)",
+    "acronym": ""
+  },
+  {
+    "query": "Rezpegaldesleukin (LY3471851 or REZPEG) Systemic lupus erythematosus",
+    "rows": [
+      261,
+      262
+    ],
+    "drug": "Rezpegaldesleukin (LY3471851 or REZPEG)",
+    "acronym": ""
+  },
+  {
+    "query": "MK-7684A Non-small cell lung cancer",
+    "rows": [
+      280,
+      656
+    ],
+    "drug": "MK-7684A",
+    "acronym": ""
+  },
+  {
+    "query": "COBENFY (KarXT, xanomeline Schizophrenia",
+    "rows": [
+      286,
+      287
+    ],
+    "drug": "COBENFY (KarXT, xanomeline and trospium chloride)",
+    "acronym": ""
+  },
+  {
+    "query": "VTP-300 (HBV003) Hepatitis B",
+    "rows": [
+      297,
+      412
+    ],
+    "drug": "VTP-300 (HBV003)",
+    "acronym": "HBV003"
+  },
+  {
+    "query": "Ateganosine (THIO-101) Non-small cell lung cancer",
+    "rows": [
+      307,
+      308
+    ],
+    "drug": "Ateganosine (THIO-101)",
+    "acronym": "THIO-101"
+  },
+  {
+    "query": "NKX101 Acute myeloid leukemia / myelodysplastic syndromes",
+    "rows": [
+      319,
+      422
+    ],
+    "drug": "NKX101",
+    "acronym": ""
+  },
+  {
+    "query": "MORF-057-201 Ulcerative colitis",
+    "rows": [
+      320,
+      521
+    ],
+    "drug": "MORF-057-201",
+    "acronym": "EMERALD-1"
+  },
+  {
+    "query": "VK2809 Non-alcoholic steatohepatitis  and fibrosis",
+    "rows": [
+      335,
+      336
+    ],
+    "drug": "VK2809",
+    "acronym": "VOYAGE"
+  },
+  {
+    "query": "ANX007 Geographic atrophy",
+    "rows": [
+      344,
+      837
+    ],
+    "drug": "ANX007",
+    "acronym": "ARCHER-II"
+  },
+  {
+    "query": "CB-010 B-Cell Non-Hodgkin Lymphoma",
+    "rows": [
+      439,
+      1586
+    ],
+    "drug": "CB-010",
+    "acronym": "ANTLER"
+  },
+  {
+    "query": "APVO436 Acute myeloid leukemia  and myelodysplastic syndromes",
+    "rows": [
+      448,
+      449
+    ],
+    "drug": "APVO436",
+    "acronym": ""
+  },
+  {
+    "query": "Icovamenib (BMF-219) Acute myeloid leukemia  / acute lymphocytic leukemia  / Diff",
+    "rows": [
+      454,
+      671
+    ],
+    "drug": "Icovamenib (BMF-219)",
+    "acronym": "BMF-219"
+  },
+  {
+    "query": "TIVDAK (tisotumab vedotin-tftv) Cervical Cancer with disease progression on or after first-l",
+    "rows": [
+      491,
+      492
+    ],
+    "drug": "TIVDAK (tisotumab vedotin-tftv)",
+    "acronym": ""
+  },
+  {
+    "query": "IO102-IO103 with pembrolizumab Metastatic solid tumors",
+    "rows": [
+      509,
+      510
+    ],
+    "drug": "IO102-IO103 with pembrolizumab",
+    "acronym": ""
+  },
+  {
+    "query": "Laromestrocel (lomecel-B) Alzheimer's Disease",
+    "rows": [
+      540,
+      701
+    ],
+    "drug": "Laromestrocel (lomecel-B)",
+    "acronym": ""
+  },
+  {
+    "query": "Amezalpat (TPST-1120) with atezolizumab Hepatocellular carcinoma",
+    "rows": [
+      546,
+      547
+    ],
+    "drug": "Amezalpat (TPST-1120) with atezolizumab and bevacizumab",
+    "acronym": "TPST-1120"
+  },
+  {
+    "query": "Optune Lua is (Tumor Treating Fields (TTFields)) Non-small cell lung cancer",
+    "rows": [
+      553,
+      554
+    ],
+    "drug": "Optune Lua is (Tumor Treating Fields (TTFields))",
+    "acronym": "LUNAR"
+  },
+  {
+    "query": "Zanidatamab with chemotherapy (chemo) + tislelizumab Gastric/gastroesophageal junction adenocarcinoma",
+    "rows": [
+      561,
+      562
+    ],
+    "drug": "Zanidatamab with chemotherapy (chemo) + tislelizumab",
+    "acronym": ""
+  },
+  {
+    "query": "AL102 Desmoid tumors",
+    "rows": [
+      569,
+      1672
+    ],
+    "drug": "AL102",
+    "acronym": "RINGSIDE"
+  },
+  {
+    "query": "ELEVIDYS (SRP-9001-301) Duchenne muscular dystrophy",
+    "rows": [
+      575,
+      576
+    ],
+    "drug": "ELEVIDYS (SRP-9001-301)",
+    "acronym": "SRP-9001-301"
+  },
+  {
+    "query": "CNTY-101 Lymphoma or Indolent Lymphoma",
+    "rows": [
+      585,
+      662
+    ],
+    "drug": "CNTY-101",
+    "acronym": ""
+  },
+  {
+    "query": "SRK-181 Solid Tumors",
+    "rows": [
+      586,
+      896
+    ],
+    "drug": "SRK-181",
+    "acronym": "DRAGON"
+  },
+  {
+    "query": "FID-007 Various cancers",
+    "rows": [
+      590,
+      1560
+    ],
+    "drug": "FID-007",
+    "acronym": ""
+  },
+  {
+    "query": "VTX958 Plaque psoriasis",
+    "rows": [
+      596,
+      597
+    ],
+    "drug": "VTX958",
+    "acronym": "SERENITY"
+  },
+  {
+    "query": "Zanzalintinib monotherapy or  in combination with atezolizumab Metastatic solid tumors",
+    "rows": [
+      613,
+      1219
+    ],
+    "drug": "Zanzalintinib monotherapy or  in combination with atezolizumab",
+    "acronym": "STELLAR-001"
+  },
+  {
+    "query": "Brepocitinib Systemic lupus erythematosus",
+    "rows": [
+      631,
+      632
+    ],
+    "drug": "Brepocitinib",
+    "acronym": ""
+  },
+  {
+    "query": "BX004 P. aeruginosa in patients with Cystic Fibrosis",
+    "rows": [
+      635,
+      1655
+    ],
+    "drug": "BX004",
+    "acronym": ""
+  },
+  {
+    "query": "Stenoparib Advanced ovarian cancer",
+    "rows": [
+      645,
+      828
+    ],
+    "drug": "Stenoparib",
+    "acronym": ""
+  },
+  {
+    "query": "PrimeC Amyotrophic Lateral Sclerosis",
+    "rows": [
+      647,
+      1130
+    ],
+    "drug": "PrimeC",
+    "acronym": "PARADIGM"
+  },
+  {
+    "query": "Bezuclastinib Non-Advanced Systemic Mastocytosis",
+    "rows": [
+      660,
+      1644
+    ],
+    "drug": "Bezuclastinib",
+    "acronym": "SUMMIT"
+  },
+  {
+    "query": "CARVYKTI (ciltacabtagene autoleucel) Multiple Myeloma",
+    "rows": [
+      683,
+      686
+    ],
+    "drug": "CARVYKTI (ciltacabtagene autoleucel)",
+    "acronym": "CARTITUDE-4"
+  },
+  {
+    "query": "CRB-701 (SYS6002) with Pembrolizumab Solid tumors",
+    "rows": [
+      725,
+      1562
+    ],
+    "drug": "CRB-701 (SYS6002) with Pembrolizumab",
+    "acronym": "SYS6002"
+  },
+  {
+    "query": "Domvanalimab + zimberelimab vs. zimberelimab vs. chemotherapy Non Small Cell Lung Cancer",
+    "rows": [
+      729,
+      1081
+    ],
+    "drug": "Domvanalimab + zimberelimab vs. zimberelimab vs. chemotherapy",
+    "acronym": "ARC-10"
+  },
+  {
+    "query": "PSX-001 (Psilocybin treatment) Generalized anxiety disorder",
+    "rows": [
+      751,
+      1483
+    ],
+    "drug": "PSX-001 (Psilocybin treatment)",
+    "acronym": ""
+  },
+  {
+    "query": "MB-101 High-Grade Glioma",
+    "rows": [
+      762,
+      763
+    ],
+    "drug": "MB-101",
+    "acronym": ""
+  },
+  {
+    "query": "VTX2735 Healthy volunteers",
+    "rows": [
+      770,
+      771
+    ],
+    "drug": "VTX2735",
+    "acronym": ""
+  },
+  {
+    "query": "Zerlasiran (formerly SLN360) Cardiovascular diseases and Polycythemia vera",
+    "rows": [
+      774,
+      1101
+    ],
+    "drug": "Zerlasiran (formerly SLN360)",
+    "acronym": "ALPACAR-360"
+  },
+  {
+    "query": "(Z)-endoxifen with abemaciclib (VERZENIO) Pre-menopausal women w/ early-stage estrogen receptor positi",
+    "rows": [
+      804,
+      807
+    ],
+    "drug": "(Z)-endoxifen with abemaciclib (VERZENIO)",
+    "acronym": "Z"
+  },
+  {
+    "query": "ALX148 (evorpacept) + rituximab Non-Hodgkin lymphoma",
+    "rows": [
+      805,
+      1656
+    ],
+    "drug": "ALX148 (evorpacept) + rituximab and lenalidomide",
+    "acronym": ""
+  },
+  {
+    "query": "Columvi + GemOx 2L+ Diffuse Large B-Cell Lymphoma",
+    "rows": [
+      811,
+      1365
+    ],
+    "drug": "Columvi + GemOx",
+    "acronym": "STARGLO"
+  },
+  {
+    "query": "Cretostimogene BCG-unresponsive Non-Muscle Invasive Bladder Cancer  with Ca",
+    "rows": [
+      830,
+      1279
+    ],
+    "drug": "Cretostimogene",
+    "acronym": "BOND-003"
+  },
+  {
+    "query": "Ozuriftamab Vedotin (BA3021) Solid Tumors",
+    "rows": [
+      846,
+      1011
+    ],
+    "drug": "Ozuriftamab Vedotin (BA3021)",
+    "acronym": "BA3021"
+  },
+  {
+    "query": "RZ402 Diabetic macular edema",
+    "rows": [
+      852,
+      853
+    ],
+    "drug": "RZ402",
+    "acronym": ""
+  },
+  {
+    "query": "ABBV-400 Colorectal cancer",
+    "rows": [
+      865,
+      1539
+    ],
+    "drug": "ABBV-400",
+    "acronym": ""
+  },
+  {
+    "query": "IK-930 Solid tumors",
+    "rows": [
+      866,
+      869
+    ],
+    "drug": "IK-930",
+    "acronym": ""
+  },
+  {
+    "query": "Ivonescimab (SMT112) with chemotherapy Epidermal growth factor receptor -mutated",
+    "rows": [
+      872,
+      995
+    ],
+    "drug": "Ivonescimab (SMT112) with chemotherapy",
+    "acronym": "SMT112"
+  },
+  {
+    "query": "COM701, COM902 Advanced malignancies",
+    "rows": [
+      876,
+      1088
+    ],
+    "drug": "COM701, COM902 and Pembrolizumab",
+    "acronym": ""
+  },
+  {
+    "query": "Tanruprubart  (ANX005) Guillain-Barr\u00e9 Syndrome",
+    "rows": [
+      897,
+      930
+    ],
+    "drug": "Tanruprubart  (ANX005)",
+    "acronym": "ANX005"
+  },
+  {
+    "query": "NX-5948-301 B-cell malignancies / graft-versus-host disease",
+    "rows": [
+      913,
+      1651
+    ],
+    "drug": "NX-5948-301",
+    "acronym": ""
+  },
+  {
+    "query": "AJOVY (fremanezumab-vfrm) Episodic migraine in children and adolescent patients aged 6",
+    "rows": [
+      944,
+      1132
+    ],
+    "drug": "AJOVY (fremanezumab-vfrm)",
+    "acronym": ""
+  },
+  {
+    "query": "VTX958 Crohn's disease",
+    "rows": [
+      951,
+      952
+    ],
+    "drug": "VTX958",
+    "acronym": ""
+  },
+  {
+    "query": "IONIS-FB-LRx Geographic atrophy due to age-related macular degeneration",
+    "rows": [
+      964,
+      965
+    ],
+    "drug": "IONIS-FB-LRx",
+    "acronym": "GOLDEN"
+  },
+  {
+    "query": "Epetraborole Mycobacterium avium complex  lung disease",
+    "rows": [
+      974,
+      1099
+    ],
+    "drug": "Epetraborole",
+    "acronym": "EBO-103"
+  },
+  {
+    "query": "NBI-1117568 (NBI-'568) Schizophrenia",
+    "rows": [
+      985,
+      1369
+    ],
+    "drug": "NBI-1117568 (NBI-'568)",
+    "acronym": ""
+  },
+  {
+    "query": "REC-994 Cerebral Cavernous Malformation",
+    "rows": [
+      988,
+      1322
+    ],
+    "drug": "REC-994",
+    "acronym": "SYCAMORE"
+  },
+  {
+    "query": "ALG-055009 Metabolic dysfunction-associated steatohepatitis",
+    "rows": [
+      1028,
+      1328
+    ],
+    "drug": "ALG-055009",
+    "acronym": "HERALD"
+  },
+  {
+    "query": "Silevertinib (BDTX-1535) Glioblastoma multiforme  and NSCLC",
+    "rows": [
+      1030,
+      1640
+    ],
+    "drug": "Silevertinib (BDTX-1535)",
+    "acronym": "BDTX-1535"
+  },
+  {
+    "query": "Detalimogene voraplasmid (EG-70) BCG-unresponsive non-muscle invasive bladder cancer",
+    "rows": [
+      1037,
+      1611
+    ],
+    "drug": "Detalimogene voraplasmid (EG-70)",
+    "acronym": "EG-70"
+  },
+  {
+    "query": "Apitegromab Type 2 and Type 3 Spinal Muscular Atrophy",
+    "rows": [
+      1044,
+      1271
+    ],
+    "drug": "Apitegromab",
+    "acronym": "SAPPHIRE"
+  },
+  {
+    "query": "BB-301 Oculopharyngeal muscular dystrophy",
+    "rows": [
+      1052,
+      1275
+    ],
+    "drug": "BB-301",
+    "acronym": ""
+  },
+  {
+    "query": "Low Dose Interleukin-2 (LD IL-2) Alzheimer\u2019s Disease",
+    "rows": [
+      1072,
+      1230
+    ],
+    "drug": "Low Dose Interleukin-2 (LD IL-2)",
+    "acronym": ""
+  },
+  {
+    "query": "ALLO-316 Clear cell renal cell carcinoma",
+    "rows": [
+      1083,
+      1085
+    ],
+    "drug": "ALLO-316",
+    "acronym": "TRAVERSE"
+  },
+  {
+    "query": "TEZSPIRE (tezepelumab-ekko) Chronic Rhinosinusitis with Nasal Polyps",
+    "rows": [
+      1086,
+      1087
+    ],
+    "drug": "TEZSPIRE (tezepelumab-ekko)",
+    "acronym": ""
+  },
+  {
+    "query": "Icotrokinra (JNJ-2113) Moderate-to-severe psoriasis",
+    "rows": [
+      1102,
+      1103
+    ],
+    "drug": "Icotrokinra (JNJ-2113)",
+    "acronym": "JNJ-2113"
+  },
+  {
+    "query": "PYX-201-101 Solid tumors",
+    "rows": [
+      1111,
+      1685
+    ],
+    "drug": "PYX-201-101",
+    "acronym": "MICVO"
+  },
+  {
+    "query": "Optune Pax Locally advanced pancreatic cancer",
+    "rows": [
+      1124,
+      1437
+    ],
+    "drug": "Optune Pax",
+    "acronym": ""
+  },
+  {
+    "query": "TARA-002 High-grade non-muscle invasive bladder cancer  patients with",
+    "rows": [
+      1133,
+      1314
+    ],
+    "drug": "TARA-002",
+    "acronym": "ADVANCED-2"
+  },
+  {
+    "query": "LYT-200 Relapsed/refractory AML and MDS",
+    "rows": [
+      1146,
+      1642
+    ],
+    "drug": "LYT-200",
+    "acronym": ""
+  },
+  {
+    "query": "ZYNYZ (retifanlimab-dlwr) Non-small cell lung cancer",
+    "rows": [
+      1148,
+      1149
+    ],
+    "drug": "ZYNYZ (retifanlimab-dlwr)",
+    "acronym": "POD1UM-304"
+  },
+  {
+    "query": "Luvelta Platinum-resistant ovarian cancer",
+    "rows": [
+      1157,
+      1269
+    ],
+    "drug": "Luvelta",
+    "acronym": ""
+  },
+  {
+    "query": "ZYNLONTA (Loncastuximab Tesirine-Ipyl) B-cell non-Hodgkin lymphoma",
+    "rows": [
+      1159,
+      1409
+    ],
+    "drug": "ZYNLONTA (Loncastuximab Tesirine-Ipyl)",
+    "acronym": "LOTIS-7"
+  },
+  {
+    "query": "Evorpacept with zanidatamab Metastatic breast cancer",
+    "rows": [
+      1168,
+      1170
+    ],
+    "drug": "Evorpacept with zanidatamab",
+    "acronym": ""
+  },
+  {
+    "query": "Duvakitug (TEV-'574 Moderate-to-severe inflammatory bowel disease ; this include",
+    "rows": [
+      1176,
+      1177
+    ],
+    "drug": "Duvakitug (TEV-'574/SAR447189)",
+    "acronym": ""
+  },
+  {
+    "query": "Vanoglipel (DA-1241) Metabolic dysfunction-associated steatohepatitis",
+    "rows": [
+      1180,
+      1594
+    ],
+    "drug": "Vanoglipel (DA-1241)",
+    "acronym": "DA-1241"
+  },
+  {
+    "query": "Casdozokitug Unresectable locally advanced or metastatic hepatocellular c",
+    "rows": [
+      1183,
+      1212
+    ],
+    "drug": "Casdozokitug/toripalimab/bevacizumab",
+    "acronym": ""
+  },
+  {
+    "query": "Haduvio (oral nalbuphine ER) Refractory chronic cough",
+    "rows": [
+      1262,
+      1273
+    ],
+    "drug": "Haduvio (oral nalbuphine ER)",
+    "acronym": "RIVER"
+  },
+  {
+    "query": "Batoclimab (IMVT-1401) Myasthenia Gravis",
+    "rows": [
+      1274,
+      1277
+    ],
+    "drug": "Batoclimab (IMVT-1401)",
+    "acronym": "IMVT-1401"
+  },
+  {
+    "query": "EDG-7500 Hypertrophic Cardiomyopathy",
+    "rows": [
+      1293,
+      1693
+    ],
+    "drug": "EDG-7500",
+    "acronym": "CIRRUS-HCM"
+  },
+  {
+    "query": "EB613 Osteoporosis",
+    "rows": [
+      1303,
+      1497
+    ],
+    "drug": "EB613",
+    "acronym": ""
+  },
+  {
+    "query": "ATH434-201 Multiple System Atrophy",
+    "rows": [
+      1329,
+      1503
+    ],
+    "drug": "ATH434-201",
+    "acronym": ""
+  },
+  {
+    "query": "XL092 Solid Tumors",
+    "rows": [
+      1350,
+      1360
+    ],
+    "drug": "XL092",
+    "acronym": "STELLAR-002"
+  },
+  {
+    "query": "Iberdomide in Combination with Dexamethasone Relapsed/Refractory Multiple Myeloma",
+    "rows": [
+      1352,
+      1410
+    ],
+    "drug": "Iberdomide in Combination with Dexamethasone",
+    "acronym": "CC-220-MM-001"
+  },
+  {
+    "query": "Tebipenem HBr (SPR994) Complicated urinary tract infection",
+    "rows": [
+      1368,
+      1564
+    ],
+    "drug": "Tebipenem HBr (SPR994)",
+    "acronym": "SPR994"
+  },
+  {
+    "query": "DM199 (rinvecalinase alfa) Preeclampsia",
+    "rows": [
+      1372,
+      1454
+    ],
+    "drug": "DM199 (rinvecalinase alfa)",
+    "acronym": ""
+  },
+  {
+    "query": "Itepekimab Chronic obstructive pulmonary disease",
+    "rows": [
+      1375,
+      1377
+    ],
+    "drug": "Itepekimab",
+    "acronym": "AERIFY"
+  },
+  {
+    "query": "Gedatolisib with Fulvestrant HR+/HER2- advanced breast cancer",
+    "rows": [
+      1434,
+      1552
+    ],
+    "drug": "Gedatolisib with Fulvestrant",
+    "acronym": "VIKTORIA-1"
+  },
+  {
+    "query": "Avutometinib in Combination with Defactinib Low-Grade Serous Ovarian Cancer",
+    "rows": [
+      1444,
+      1738
+    ],
+    "drug": "Avutometinib in Combination with Defactinib",
+    "acronym": ""
+  },
+  {
+    "query": "MK-0616 Low-density lipoprotein  cholesterol reduction",
+    "rows": [
+      1490,
+      1598
+    ],
+    "drug": "MK-0616",
+    "acronym": ""
+  },
+  {
+    "query": "LP-184 (STAR-001) Solid tumors",
+    "rows": [
+      1506,
+      1639
+    ],
+    "drug": "LP-184 (STAR-001)",
+    "acronym": "STAR-001"
+  },
+  {
+    "query": "Osavampator  (NBI-1065845) Major depressive disorder",
+    "rows": [
+      1511,
+      1514
+    ],
+    "drug": "Osavampator  (NBI-1065845)",
+    "acronym": "NBI-1065845"
+  },
+  {
+    "query": "Solnerstotug (formerly SNS-101) with Libtayo One microsatellite stable  endometrial cancer",
+    "rows": [
+      1548,
+      1549
+    ],
+    "drug": "Solnerstotug (formerly SNS-101) with Libtayo",
+    "acronym": "VISTA"
+  },
+  {
+    "query": "Obexelimab Relapsing Multiple Sclerosis",
+    "rows": [
+      1575,
+      1744
+    ],
+    "drug": "Obexelimab",
+    "acronym": ""
+  },
+  {
+    "query": "Coramitug (PRX004) ATTR-cardiomyopathy",
+    "rows": [
+      1612,
+      1613
+    ],
+    "drug": "Coramitug (PRX004)",
+    "acronym": "PRX004"
+  },
+  {
+    "query": "Milvexian Acute coronary syndromes",
+    "rows": [
+      1617,
+      1618
+    ],
+    "drug": "Milvexian",
+    "acronym": ""
+  },
+  {
+    "query": "BNT327-02 1-2L Metastatic Triple-negative breast cancer",
+    "rows": [
+      1662,
+      1663
+    ],
+    "drug": "BNT327-02",
+    "acronym": ""
+  },
+  {
+    "query": "Quemliclustat, domvanalimab, zimberelimab, Locally advanced unresectable or metastatic gastric",
+    "rows": [
+      1669,
+      1671
+    ],
+    "drug": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy (ARC-21)",
+    "acronym": "ARC-21"
+  },
+  {
+    "query": "Obexelimab Secondary Progressive MS",
+    "rows": [
+      1702,
+      1703
+    ],
+    "drug": "Obexelimab",
+    "acronym": "INDIGO"
+  },
+  {
+    "query": "CRDF-004 Metastatic colorectal cancer",
+    "rows": [
+      1729,
+      1730
+    ],
+    "drug": "CRDF-004",
+    "acronym": ""
+  },
+  {
+    "query": "Haduvio Prurigo Nodularis",
+    "rows": [
+      3
+    ],
+    "drug": "Haduvio",
+    "acronym": "PRISM"
+  },
+  {
+    "query": "Mim8 Hemophilia A",
+    "rows": [
+      17
+    ],
+    "drug": "Mim8",
+    "acronym": "FRONTIER2"
+  },
+  {
+    "query": "Sugemalimab Stage III Non-small cell lung cancer",
+    "rows": [
+      41
+    ],
+    "drug": "Sugemalimab",
+    "acronym": "GEMSTONE-301"
+  },
+  {
+    "query": "KarXT Acute psychosis in patients with schizophrenia",
+    "rows": [
+      42
+    ],
+    "drug": "KarXT",
+    "acronym": "EMERGENT-2"
+  },
+  {
+    "query": "SCB-2019 (CpG 1018 COVID-19 vaccine in adolescents",
+    "rows": [
+      52
+    ],
+    "drug": "SCB-2019 (CpG 1018/Alum)",
+    "acronym": ""
+  },
+  {
+    "query": "iDose TR Glaucoma",
+    "rows": [
+      63
+    ],
+    "drug": "iDose TR",
+    "acronym": ""
+  },
+  {
+    "query": "Zanidatamab zovodotin Solid Tumors",
+    "rows": [
+      82
+    ],
+    "drug": "Zanidatamab zovodotin",
+    "acronym": "ZW49"
+  },
+  {
+    "query": "Narsoplimab (I-SPY COVID-19) COVID-19",
+    "rows": [
+      85
+    ],
+    "drug": "Narsoplimab (I-SPY COVID-19)",
+    "acronym": ""
+  },
+  {
+    "query": "Dazodalibep (HZN-4920) Rheumatoid Arthritis",
+    "rows": [
+      87
+    ],
+    "drug": "Dazodalibep (HZN-4920)",
+    "acronym": "HZN-4920"
+  },
+  {
+    "query": "Haduvio Chronic cough - Idiopathic pulmonary fibrosis",
+    "rows": [
+      88
+    ],
+    "drug": "Haduvio",
+    "acronym": "CANAL"
+  },
+  {
+    "query": "LEQEMBI (lecanemab-irmb) IV Maintenance Dosing for Alzheimer\u2019s disease",
+    "rows": [
+      94
+    ],
+    "drug": "LEQEMBI (lecanemab-irmb)",
+    "acronym": ""
+  },
+  {
+    "query": "Quilience(R) Narcolepsy",
+    "rows": [
+      95
+    ],
+    "drug": "Quilience(R)",
+    "acronym": "R"
+  },
+  {
+    "query": "Glepaglutideb Short bowel syndrome",
+    "rows": [
+      100
+    ],
+    "drug": "Glepaglutideb",
+    "acronym": ""
+  },
+  {
+    "query": "KVD824 Hereditary angioedema",
+    "rows": [
+      107
+    ],
+    "drug": "KVD824",
+    "acronym": "KOMPLETE"
+  },
+  {
+    "query": "VS-6766 KRAS mutant non-small cell lung cancer",
+    "rows": [
+      108
+    ],
+    "drug": "VS-6766 and defactinib",
+    "acronym": ""
+  },
+  {
+    "query": "INO-3107 HPV 6 and HPV 11-associated Recurrent respiratory papillomat",
+    "rows": [
+      119
+    ],
+    "drug": "INO-3107",
+    "acronym": ""
+  },
+  {
+    "query": "DARE-HRT1 Hormone replacement therapy",
+    "rows": [
+      122
+    ],
+    "drug": "DARE-HRT1",
+    "acronym": ""
+  },
+  {
+    "query": "MORF-057-202 Ulcerative Colitis",
+    "rows": [
+      126
+    ],
+    "drug": "MORF-057-202",
+    "acronym": "EMERALD-2"
+  },
+  {
+    "query": "BioLexa Atopic Dermatitis",
+    "rows": [
+      131
+    ],
+    "drug": "BioLexa",
+    "acronym": ""
+  },
+  {
+    "query": "Atrasentan Chronic kidney disease",
+    "rows": [
+      136
+    ],
+    "drug": "Atrasentan",
+    "acronym": "AFFINITY"
+  },
+  {
+    "query": "FT516 Acute Myelogenous Leukemia / B-cell Lymphoma",
+    "rows": [
+      137
+    ],
+    "drug": "FT516",
+    "acronym": ""
+  },
+  {
+    "query": "AMTAGVI (Lifileucel (LN-144)) Refractory metastatic melanoma",
+    "rows": [
+      142
+    ],
+    "drug": "AMTAGVI (Lifileucel (LN-144))",
+    "acronym": "LN-144"
+  },
+  {
+    "query": "PRAX-114 Major depressive disorder",
+    "rows": [
+      148
+    ],
+    "drug": "PRAX-114",
+    "acronym": ""
+  },
+  {
+    "query": "linoserpaturev (CAN-3110) Glioma",
+    "rows": [
+      156
+    ],
+    "drug": "linoserpaturev (CAN-3110)",
+    "acronym": "CAN-3110"
+  },
+  {
+    "query": "Blarcamesine  (ANAVEX2-73-AD-004) Mild to moderate Alzheimer\u2019s disease",
+    "rows": [
+      166
+    ],
+    "drug": "Blarcamesine  (ANAVEX2-73-AD-004)",
+    "acronym": "ANAVEX2-73-AD-004"
+  },
+  {
+    "query": "Xyngari(TM) (DMT310) Rosacea",
+    "rows": [
+      174
+    ],
+    "drug": "Xyngari(TM) (DMT310)",
+    "acronym": "TM"
+  },
+  {
+    "query": "IXCHIQ (VLA1553-303) Chikungunya vaccine",
+    "rows": [
+      175
+    ],
+    "drug": "IXCHIQ (VLA1553-303)",
+    "acronym": "VLA1553-303"
+  },
+  {
+    "query": "Camizestrant Advanced ER-positive Breast Cancer",
+    "rows": [
+      185
+    ],
+    "drug": "Camizestrant",
+    "acronym": "SERENA-2"
+  },
+  {
+    "query": "BMS-986393 (CC-95266) Relapsed and/or Refractory  Multiple Myeloma",
+    "rows": [
+      194
+    ],
+    "drug": "BMS-986393 (CC-95266)",
+    "acronym": "CC-95266"
+  },
+  {
+    "query": "Mezigdomide (CC-92480) in combination with Dexamethasone Relapsed/Refractory Multiple Myeloma",
+    "rows": [
+      203
+    ],
+    "drug": "Mezigdomide (CC-92480) in combination with Dexamethasone",
+    "acronym": "CC-92480"
+  },
+  {
+    "query": "Cevostamab Relapsed/Refractory Multiple Myeloma",
+    "rows": [
+      204
+    ],
+    "drug": "Cevostamab",
+    "acronym": ""
+  },
+  {
+    "query": "ELREXFIO (elranatamab-bcmm) Multiple Myeloma",
+    "rows": [
+      210
+    ],
+    "drug": "ELREXFIO (elranatamab-bcmm)",
+    "acronym": ""
+  },
+  {
+    "query": "PRGN-3006 UltraCAR-T Myelodysplastic Syndromes",
+    "rows": [
+      214
+    ],
+    "drug": "PRGN-3006 UltraCAR-T",
+    "acronym": ""
+  },
+  {
+    "query": "AMT-101 Pouchitis",
+    "rows": [
+      222
+    ],
+    "drug": "AMT-101",
+    "acronym": "FILLMORE"
+  },
+  {
+    "query": "Renazorb (Fosrenol bioequivalent) Hyperphosphatemia",
+    "rows": [
+      223
+    ],
+    "drug": "Renazorb (Fosrenol bioequivalent)",
+    "acronym": ""
+  },
+  {
+    "query": "BEQVEZ (fidanacogene elaparvovec-dzkt) Hemophilia B",
+    "rows": [
+      224
+    ],
+    "drug": "BEQVEZ (fidanacogene elaparvovec-dzkt)",
+    "acronym": ""
+  },
+  {
+    "query": "CM-101 Liver Fibrosis",
+    "rows": [
+      225
+    ],
+    "drug": "CM-101",
+    "acronym": ""
+  },
+  {
+    "query": "RVT-3101 Ulcerative colitis",
+    "rows": [
+      228
+    ],
+    "drug": "RVT-3101",
+    "acronym": "TUSCANY-2"
+  },
+  {
+    "query": "Dazodalibep (HZN-4920) Sj\u00f6gren\u2019s syndrome",
+    "rows": [
+      232
+    ],
+    "drug": "Dazodalibep (HZN-4920)",
+    "acronym": "HZN-4920"
+  },
+  {
+    "query": "CTX-009 in combination with paclitaxel Biliary Tract Cancer",
+    "rows": [
+      233
+    ],
+    "drug": "CTX-009 in combination with paclitaxel",
+    "acronym": ""
+  },
+  {
+    "query": "PAPZIMEOS (zopapogene imadenovec-drba) Recurrent Respiratory Papillomatosis",
+    "rows": [
+      237
+    ],
+    "drug": "PAPZIMEOS (zopapogene imadenovec-drba)",
+    "acronym": ""
+  },
+  {
+    "query": "AR-301 (tosatoxumab) Ventilator associated pneumonia  / Staphylococcus aureus",
+    "rows": [
+      241
+    ],
+    "drug": "AR-301 (tosatoxumab)",
+    "acronym": ""
+  },
+  {
+    "query": "FX-345 Sensorineural hearing loss progression",
+    "rows": [
+      251
+    ],
+    "drug": "FX-345",
+    "acronym": ""
+  },
+  {
+    "query": "Bicycle Toxin Conjugates zelenectide pevedotin (BT8009) Solid tumors",
+    "rows": [
+      252
+    ],
+    "drug": "Bicycle Toxin Conjugates zelenectide pevedotin (BT8009)",
+    "acronym": "BT8009"
+  },
+  {
+    "query": "LOQTORZI (toripalimab-tpzi) with cisplatin 1L Metastatic Nasopharyngeal Carcinoma",
+    "rows": [
+      253
+    ],
+    "drug": "LOQTORZI (toripalimab-tpzi) with cisplatin and gemcitabine",
+    "acronym": ""
+  },
+  {
+    "query": "Cabenuva (cabotegravir, rilpivirine) HIV-1",
+    "rows": [
+      263
+    ],
+    "drug": "Cabenuva (cabotegravir, rilpivirine)",
+    "acronym": "SOLAR"
+  },
+  {
+    "query": "CLR 131 Various lymphoma",
+    "rows": [
+      265
+    ],
+    "drug": "CLR 131",
+    "acronym": "CLOVER-1"
+  },
+  {
+    "query": "Lorundrostat Hypertension",
+    "rows": [
+      268
+    ],
+    "drug": "Lorundrostat",
+    "acronym": ""
+  },
+  {
+    "query": "Zunsemetinib  (ATI-450-HS-201) Hidradenitis suppurativa",
+    "rows": [
+      272
+    ],
+    "drug": "Zunsemetinib  (ATI-450-HS-201)",
+    "acronym": "ATI-450-HS-201"
+  },
+  {
+    "query": "AR-501 Cystic Fibrosis",
+    "rows": [
+      277
+    ],
+    "drug": "AR-501",
+    "acronym": ""
+  },
+  {
+    "query": "ADORING 2 Atopic Dermatitis",
+    "rows": [
+      279
+    ],
+    "drug": "ADORING 2",
+    "acronym": ""
+  },
+  {
+    "query": "Validive Oral mucositis",
+    "rows": [
+      293
+    ],
+    "drug": "Validive",
+    "acronym": "VOICE"
+  },
+  {
+    "query": "Selonabant (ANEB-001) Cannabinoid Intoxication",
+    "rows": [
+      298
+    ],
+    "drug": "Selonabant (ANEB-001)",
+    "acronym": "ANEB-001"
+  },
+  {
+    "query": "EVX-02 Adjuvant melanoma",
+    "rows": [
+      313
+    ],
+    "drug": "EVX-02",
+    "acronym": ""
+  },
+  {
+    "query": "TEVIMBRA (tislelizumab-jsgr) Gastric or gastroesophageal junction  adenocarcinoma",
+    "rows": [
+      314
+    ],
+    "drug": "TEVIMBRA (tislelizumab-jsgr)",
+    "acronym": ""
+  },
+  {
+    "query": "Nomlabofusp (CTI-1601) Friedreich\u2019s ataxia",
+    "rows": [
+      333
+    ],
+    "drug": "Nomlabofusp (CTI-1601)",
+    "acronym": "CTI-1601"
+  },
+  {
+    "query": "SEPHIENCE (Sepiapterin  (PTC923)) Phenylketonuria",
+    "rows": [
+      338
+    ],
+    "drug": "SEPHIENCE (Sepiapterin  (PTC923))",
+    "acronym": "PTC923"
+  },
+  {
+    "query": "DehydraTECH-CBD Cardiovascular disease",
+    "rows": [
+      341
+    ],
+    "drug": "DehydraTECH-CBD",
+    "acronym": "HYPER-H21-4"
+  },
+  {
+    "query": "VS-6766 Low-grade serous ovarian cancer",
+    "rows": [
+      349
+    ],
+    "drug": "VS-6766 plus avutometinib and defactinib",
+    "acronym": ""
+  },
+  {
+    "query": "Olvimulogene Nanivacirepvec (Olvi-Vec) Platinum-Resistant or Refractory Ovarian Cancer",
+    "rows": [
+      351
+    ],
+    "drug": "Olvimulogene Nanivacirepvec (Olvi-Vec)",
+    "acronym": ""
+  },
+  {
+    "query": "Hympavzi (marstacimab-hncq) Hemophilia A or B",
+    "rows": [
+      355
+    ],
+    "drug": "Hympavzi (marstacimab-hncq)",
+    "acronym": ""
+  },
+  {
+    "query": "BNT316 Cancer",
+    "rows": [
+      359
+    ],
+    "drug": "BNT316/ONC-392 (gotistobart)",
+    "acronym": "PRESERVE-003"
+  },
+  {
+    "query": "NRG Prostate cancer",
+    "rows": [
+      361
+    ],
+    "drug": "NRG/RTOG 0521",
+    "acronym": "STREAM"
+  },
+  {
+    "query": "SGN-B6A Solid Tumors",
+    "rows": [
+      362
+    ],
+    "drug": "SGN-B6A",
+    "acronym": ""
+  },
+  {
+    "query": "Domvanalimab (AB154) + Zimberelimab (AB122) Non-small cell lung cancer",
+    "rows": [
+      369
+    ],
+    "drug": "Domvanalimab (AB154) + Zimberelimab (AB122)",
+    "acronym": "AB154"
+  },
+  {
+    "query": "Azenosertib  (ZN-c3) Uterine serous carcinoma",
+    "rows": [
+      384
+    ],
+    "drug": "Azenosertib  (ZN-c3)",
+    "acronym": "TETON"
+  },
+  {
+    "query": "Sonrotoclax (BGB-11417) Chronic lymphocytic leukemia/small lymphocytic leukemia",
+    "rows": [
+      386
+    ],
+    "drug": "Sonrotoclax (BGB-11417)",
+    "acronym": "BGB-11417"
+  },
+  {
+    "query": "LAVA-051 Chronic lymphocytic leukemia",
+    "rows": [
+      398
+    ],
+    "drug": "LAVA-051",
+    "acronym": ""
+  },
+  {
+    "query": "INM-755 Epidermolysis Bullosa",
+    "rows": [
+      414
+    ],
+    "drug": "INM-755",
+    "acronym": ""
+  },
+  {
+    "query": "Retatrutide Osteoarthritis pain of the knee and overweight or obesity",
+    "rows": [
+      420
+    ],
+    "drug": "Retatrutide",
+    "acronym": "TRIUMPH-4"
+  },
+  {
+    "query": "DATROWAY (datopotamab deruxtecan-dlnk) Non-small cell lung cancer",
+    "rows": [
+      434
+    ],
+    "drug": "DATROWAY (datopotamab deruxtecan-dlnk)",
+    "acronym": ""
+  },
+  {
+    "query": "VRDN-001 Active Thyroid Eye Disease",
+    "rows": [
+      437
+    ],
+    "drug": "VRDN-001",
+    "acronym": "THRIVE"
+  },
+  {
+    "query": "Upifitamab Rilsodotin (XMT-1536) Ovarian Cancer",
+    "rows": [
+      467
+    ],
+    "drug": "Upifitamab Rilsodotin (XMT-1536)",
+    "acronym": "XMT-1536"
+  },
+  {
+    "query": "4D-150 Wet age-related macular degeneration",
+    "rows": [
+      469
+    ],
+    "drug": "4D-150",
+    "acronym": "PRISM"
+  },
+  {
+    "query": "Enzeevu (aflibercept-abzv) Neovascular age-related macular degeneration",
+    "rows": [
+      476
+    ],
+    "drug": "Enzeevu (aflibercept-abzv)",
+    "acronym": ""
+  },
+  {
+    "query": "WELIREG Advanced renal cell carcinoma",
+    "rows": [
+      479
+    ],
+    "drug": "WELIREG",
+    "acronym": "LITESPARK-005"
+  },
+  {
+    "query": "Eftansomatropin (TJ101) Growth hormone deficiency",
+    "rows": [
+      480
+    ],
+    "drug": "Eftansomatropin (TJ101)",
+    "acronym": "TJ101"
+  },
+  {
+    "query": "TRV045 Epilepsy and other CNS disorders",
+    "rows": [
+      493
+    ],
+    "drug": "TRV045",
+    "acronym": ""
+  },
+  {
+    "query": "AB-161 Healthy volunteers",
+    "rows": [
+      502
+    ],
+    "drug": "AB-161",
+    "acronym": ""
+  },
+  {
+    "query": "HT-KIT Aggressive systemic mastocytosis",
+    "rows": [
+      513
+    ],
+    "drug": "HT-KIT",
+    "acronym": ""
+  },
+  {
+    "query": "VAL-083 Newly diagnosed MGMT-unmethylated Glioblastoma Multiform",
+    "rows": [
+      522
+    ],
+    "drug": "VAL-083",
+    "acronym": ""
+  },
+  {
+    "query": "VYKAT XR (diazoxide choline) extended-release tablets Prader-Willi syndrome",
+    "rows": [
+      525
+    ],
+    "drug": "VYKAT XR (diazoxide choline) extended-release tablets",
+    "acronym": ""
+  },
+  {
+    "query": "Narsoplimab IgA nephropathy",
+    "rows": [
+      556
+    ],
+    "drug": "Narsoplimab",
+    "acronym": "ARTEMIS-IGAN"
+  },
+  {
+    "query": "EDP2939 Psoriasis",
+    "rows": [
+      557
+    ],
+    "drug": "EDP2939",
+    "acronym": ""
+  },
+  {
+    "query": "Daraxonrasib (RMC-6236) Advanced Solid Tumors",
+    "rows": [
+      565
+    ],
+    "drug": "Daraxonrasib (RMC-6236)",
+    "acronym": "RMC-6236"
+  },
+  {
+    "query": "Enozertinib (ORIC-114) Tumors - EGFR/HER2 Exon 20 Inhibitor",
+    "rows": [
+      568
+    ],
+    "drug": "Enozertinib (ORIC-114)",
+    "acronym": "ORIC-114"
+  },
+  {
+    "query": "Pluvicto (lutetium (177Lu) vipivotide tetraxetan) Metastatic castration-resistant prostate cancer",
+    "rows": [
+      570
+    ],
+    "drug": "Pluvicto (lutetium (177Lu) vipivotide tetraxetan)",
+    "acronym": ""
+  },
+  {
+    "query": "Brilaroxazine Schizophrenia",
+    "rows": [
+      574
+    ],
+    "drug": "Brilaroxazine",
+    "acronym": "RECOVER-2"
+  },
+  {
+    "query": "Xaluritamig (AMG 509) Metastatic castrate-resistant prostate cancer",
+    "rows": [
+      577
+    ],
+    "drug": "Xaluritamig (AMG 509)",
+    "acronym": "STEAP1"
+  },
+  {
+    "query": "RT-101 Neuroendocrine tumors  and acromegaly",
+    "rows": [
+      581
+    ],
+    "drug": "RT-101",
+    "acronym": ""
+  },
+  {
+    "query": "Nanobody sonelokimab Active psoriatic arthritis",
+    "rows": [
+      599
+    ],
+    "drug": "Nanobody sonelokimab",
+    "acronym": "IZAR-1"
+  },
+  {
+    "query": "ATA188 Multiple sclerosis",
+    "rows": [
+      608
+    ],
+    "drug": "ATA188",
+    "acronym": "EMBOLD"
+  },
+  {
+    "query": "KIO-301 Later-stage Retinitis Pigmentosa",
+    "rows": [
+      611
+    ],
+    "drug": "KIO-301",
+    "acronym": "ABACUS"
+  },
+  {
+    "query": "Navenibart (STAR-0215) Hereditary angioedema",
+    "rows": [
+      614
+    ],
+    "drug": "Navenibart (STAR-0215)",
+    "acronym": "STAR-0215"
+  },
+  {
+    "query": "VLA1553-321 Chikungunya Vaccine for adolecents",
+    "rows": [
+      615
+    ],
+    "drug": "VLA1553-321",
+    "acronym": ""
+  },
+  {
+    "query": "Zunsemetinib  (ATI-450-RA-202) Rheumatoid arthritis",
+    "rows": [
+      617
+    ],
+    "drug": "Zunsemetinib  (ATI-450-RA-202)",
+    "acronym": "ATI-450-RA-202"
+  },
+  {
+    "query": "SPT-300 (Glyph allopregnanolone; formerly LYT-300) Healthy volunteers",
+    "rows": [
+      624
+    ],
+    "drug": "SPT-300 (Glyph allopregnanolone; formerly LYT-300)",
+    "acronym": ""
+  },
+  {
+    "query": "EB01 Allergic contact dermatitis",
+    "rows": [
+      626
+    ],
+    "drug": "EB01",
+    "acronym": ""
+  },
+  {
+    "query": "Berubicin Glioblastoma",
+    "rows": [
+      627
+    ],
+    "drug": "Berubicin",
+    "acronym": ""
+  },
+  {
+    "query": "Blenrep Multiple myeloma",
+    "rows": [
+      630
+    ],
+    "drug": "Blenrep",
+    "acronym": ""
+  },
+  {
+    "query": "DYAI-100 COVID-19 booster vaccine",
+    "rows": [
+      637
+    ],
+    "drug": "DYAI-100",
+    "acronym": ""
+  },
+  {
+    "query": "LYT-200 Solid tumors",
+    "rows": [
+      657
+    ],
+    "drug": "LYT-200",
+    "acronym": ""
+  },
+  {
+    "query": "Soquelitinib Peripheral T-cell lymphoma",
+    "rows": [
+      659
+    ],
+    "drug": "Soquelitinib",
+    "acronym": "CPI-818"
+  },
+  {
+    "query": "MP0533 Acute myeloid leukemia",
+    "rows": [
+      669
+    ],
+    "drug": "MP0533",
+    "acronym": ""
+  },
+  {
+    "query": "ZYNLONTA (loncastuximab tesirine-lpyl) with rituximab (Lonca-R) High-Risk Relapsed/Refractory Follicular Lymphoma",
+    "rows": [
+      679
+    ],
+    "drug": "ZYNLONTA (loncastuximab tesirine-lpyl) with rituximab (Lonca-R)",
+    "acronym": "LOTIS-9"
+  },
+  {
+    "query": "CA-4948 Relapsed or Refractory Non-Hodgkin Lymphoma",
+    "rows": [
+      682
+    ],
+    "drug": "CA-4948",
+    "acronym": ""
+  },
+  {
+    "query": "TearCare Dry Eye Disease",
+    "rows": [
+      694
+    ],
+    "drug": "TearCare",
+    "acronym": ""
+  },
+  {
+    "query": "SKYTROFA (lonapegsomatropin-tcgd (ransCon hGH)) Growth Hormone Deficiency - adults",
+    "rows": [
+      699
+    ],
+    "drug": "SKYTROFA (lonapegsomatropin-tcgd (ransCon hGH))",
+    "acronym": ""
+  },
+  {
+    "query": "GB2064 Myelofibrosis",
+    "rows": [
+      704
+    ],
+    "drug": "GB2064",
+    "acronym": "MYLOX-1"
+  },
+  {
+    "query": "ADCT-901 Solid tumors",
+    "rows": [
+      711
+    ],
+    "drug": "ADCT-901",
+    "acronym": ""
+  },
+  {
+    "query": "Scemblix 1L Chronic myeloid leukemia",
+    "rows": [
+      714
+    ],
+    "drug": "Scemblix",
+    "acronym": "ASC4FIRST"
+  },
+  {
+    "query": "TRYPTYR (acoltremon ophthalmic solution) 0.003% Dry eye disease",
+    "rows": [
+      715
+    ],
+    "drug": "TRYPTYR (acoltremon ophthalmic solution) 0.003%",
+    "acronym": ""
+  },
+  {
+    "query": "Casdozokitug (casdozo) Non-small cell lung cancer",
+    "rows": [
+      716
+    ],
+    "drug": "Casdozokitug (casdozo)",
+    "acronym": ""
+  },
+  {
+    "query": "KORSUVA (CR845 Stage 3-4 Chronic Kidney Disease-Associated Pruritus",
+    "rows": [
+      720
+    ],
+    "drug": "KORSUVA (CR845/difelikefalin) oral",
+    "acronym": "KICK"
+  },
+  {
+    "query": "ORLYNVAH (Oral Sulopenem) Uncomplicated urinary tract infections",
+    "rows": [
+      730
+    ],
+    "drug": "ORLYNVAH (Oral Sulopenem)",
+    "acronym": ""
+  },
+  {
+    "query": "VX-121 Cystic Fibrosis",
+    "rows": [
+      733
+    ],
+    "drug": "VX-121/tezacaftor/VX-561",
+    "acronym": "SKYLINE-102"
+  },
+  {
+    "query": "Civaparvovec (ST-920) Fabry disease",
+    "rows": [
+      734
+    ],
+    "drug": "Civaparvovec (ST-920)",
+    "acronym": "ST-920"
+  },
+  {
+    "query": "clemidsogene lanparvovec (RGX-121) MPS II",
+    "rows": [
+      736
+    ],
+    "drug": "clemidsogene lanparvovec (RGX-121)",
+    "acronym": "RGX-121"
+  },
+  {
+    "query": "4D-310 Fabry Disease",
+    "rows": [
+      738
+    ],
+    "drug": "4D-310",
+    "acronym": "INGLAXA"
+  },
+  {
+    "query": "RVT-2001 Transfusion-Dependent Anemia in Patients with Lower-Risk MDS",
+    "rows": [
+      740
+    ],
+    "drug": "RVT-2001",
+    "acronym": ""
+  },
+  {
+    "query": "EKTERLY (sebetralstat) Hereditary Angioedema",
+    "rows": [
+      741
+    ],
+    "drug": "EKTERLY (sebetralstat)",
+    "acronym": ""
+  },
+  {
+    "query": "Aritinercept (AUR200) BAFF/APRIL",
+    "rows": [
+      743
+    ],
+    "drug": "Aritinercept (AUR200)",
+    "acronym": "AUR200"
+  },
+  {
+    "query": "NT219 in combination with cetuximab Recurrent/metastatic squamous cell carcinoma of the head and",
+    "rows": [
+      747
+    ],
+    "drug": "NT219 in combination with cetuximab",
+    "acronym": ""
+  },
+  {
+    "query": "TP-04 Rosacea",
+    "rows": [
+      748
+    ],
+    "drug": "TP-04",
+    "acronym": ""
+  },
+  {
+    "query": "VK2735 Obesity",
+    "rows": [
+      749
+    ],
+    "drug": "VK2735",
+    "acronym": "VENTURE"
+  },
+  {
+    "query": "PL9643 Dry eye disease",
+    "rows": [
+      750
+    ],
+    "drug": "PL9643",
+    "acronym": "MELODY-1"
+  },
+  {
+    "query": "CLR 131 (iopofosine) in combination with external beam radiation (EBRT) Head & neck cancer",
+    "rows": [
+      757
+    ],
+    "drug": "CLR 131 (iopofosine) in combination with external beam radiation (EBRT)",
+    "acronym": "EBRT"
+  },
+  {
+    "query": "Anaphylm  (dibutepinephrine) Anaphylaxis",
+    "rows": [
+      776
+    ],
+    "drug": "Anaphylm  (dibutepinephrine)",
+    "acronym": "103"
+  },
+  {
+    "query": "urcosimod (OK-101) Dry Eye Disease",
+    "rows": [
+      781
+    ],
+    "drug": "urcosimod (OK-101)",
+    "acronym": "OK-101"
+  },
+  {
+    "query": "ivonescimab (AK112-202) Patients with Advanced Non-Small Cell Lung Cancer  and Brain",
+    "rows": [
+      782
+    ],
+    "drug": "ivonescimab (AK112-202)",
+    "acronym": "AK112-202"
+  },
+  {
+    "query": "Zorevunersen (STK-001) Dravet Syndrome",
+    "rows": [
+      785
+    ],
+    "drug": "Zorevunersen (STK-001)",
+    "acronym": "STK-001"
+  },
+  {
+    "query": "Serdexmethylphenidate (SDX) Idiopathic hypersomnia",
+    "rows": [
+      786
+    ],
+    "drug": "Serdexmethylphenidate (SDX)",
+    "acronym": "SDX"
+  },
+  {
+    "query": "PRAX-628 Photo-Paroxysmal Response",
+    "rows": [
+      787
+    ],
+    "drug": "PRAX-628",
+    "acronym": ""
+  },
+  {
+    "query": "Bitopertin Erythropoietic Protoporphyria",
+    "rows": [
+      792
+    ],
+    "drug": "Bitopertin",
+    "acronym": "APOLLO"
+  },
+  {
+    "query": "Tomivosertib (MNK1 Non-small cell lung cancer",
+    "rows": [
+      795
+    ],
+    "drug": "Tomivosertib (MNK1/2)",
+    "acronym": "KICKSTART"
+  },
+  {
+    "query": "TARA-002 Non-muscle invasive bladder cancer",
+    "rows": [
+      799
+    ],
+    "drug": "TARA-002",
+    "acronym": "ADVANCED-1"
+  },
+  {
+    "query": "GT-30 Cancer Vaccine in advanced hepatocellular carcinoma",
+    "rows": [
+      800
+    ],
+    "drug": "GT-30",
+    "acronym": ""
+  },
+  {
+    "query": "RP1 (vusolimogene oderparepvec) Liver and kidney transplant recipients with recurrent Cutane",
+    "rows": [
+      801
+    ],
+    "drug": "RP1 (vusolimogene oderparepvec)",
+    "acronym": "ARTACUS"
+  },
+  {
+    "query": "Leqvio Low-density lipoprotein cholesterol  in patients with athero",
+    "rows": [
+      803
+    ],
+    "drug": "Leqvio",
+    "acronym": "V-INITIATE"
+  },
+  {
+    "query": "ABRYSVO Respiratory syncytial virus -associated lower respiratory tr",
+    "rows": [
+      806
+    ],
+    "drug": "ABRYSVO",
+    "acronym": ""
+  },
+  {
+    "query": "GTX-102 Angelman Syndrome",
+    "rows": [
+      813
+    ],
+    "drug": "GTX-102",
+    "acronym": ""
+  },
+  {
+    "query": "CLN-978 Relapsed/refractory B-cell non-Hodgkin lymphoma",
+    "rows": [
+      814
+    ],
+    "drug": "CLN-978",
+    "acronym": ""
+  },
+  {
+    "query": "VTP-200 Human papillomavirus",
+    "rows": [
+      818
+    ],
+    "drug": "VTP-200",
+    "acronym": "APOLLO"
+  },
+  {
+    "query": "LCD supplement capsule Dry eyes",
+    "rows": [
+      822
+    ],
+    "drug": "LCD supplement capsule",
+    "acronym": ""
+  },
+  {
+    "query": "PH15 Psychomotor impairment caused by mental fatigue",
+    "rows": [
+      823
+    ],
+    "drug": "PH15",
+    "acronym": ""
+  },
+  {
+    "query": "DURAVYU ( EYP-1901 vorolanib intravitreal) Non-proliferative diabetic retinopathy",
+    "rows": [
+      835
+    ],
+    "drug": "DURAVYU ( EYP-1901 vorolanib intravitreal)",
+    "acronym": "PAVIA"
+  },
+  {
+    "query": "CK-4021586 (CK-586) Heart failure with preserved ejection fraction",
+    "rows": [
+      838
+    ],
+    "drug": "CK-4021586 (CK-586)",
+    "acronym": "CK-586"
+  },
+  {
+    "query": "KT-333 Cutaneous T-cell lymphoma",
+    "rows": [
+      844
+    ],
+    "drug": "KT-333",
+    "acronym": ""
+  },
+  {
+    "query": "Palazestrant (OP-1250) Breast Cancer",
+    "rows": [
+      845
+    ],
+    "drug": "Palazestrant (OP-1250) and ribociclib",
+    "acronym": "OP-1250"
+  },
+  {
+    "query": "TEZSPIRE (tezepelumab-ekko) Chronic obstructive pulmonary disease",
+    "rows": [
+      849
+    ],
+    "drug": "TEZSPIRE (tezepelumab-ekko)",
+    "acronym": "COURSE"
+  },
+  {
+    "query": "Mino-Lok Catheter related blood stream infection",
+    "rows": [
+      851
+    ],
+    "drug": "Mino-Lok",
+    "acronym": ""
+  },
+  {
+    "query": "Ragistomig (ABL503) Solid tumors",
+    "rows": [
+      855
+    ],
+    "drug": "Ragistomig (ABL503)",
+    "acronym": "ABL503"
+  },
+  {
+    "query": "YL202 Locally advanced or metastatic non-small cell lung cancer an",
+    "rows": [
+      861
+    ],
+    "drug": "YL202/BNT326",
+    "acronym": ""
+  },
+  {
+    "query": "Trodelvy Metastatic urothelial cancer",
+    "rows": [
+      871
+    ],
+    "drug": "Trodelvy",
+    "acronym": ""
+  },
+  {
+    "query": "Taletrectinib(China) ROS1-positive non-small cell lung cancer",
+    "rows": [
+      875
+    ],
+    "drug": "Taletrectinib(China)",
+    "acronym": "TRUST-I"
+  },
+  {
+    "query": "C-CAR301 Solid tumors",
+    "rows": [
+      898
+    ],
+    "drug": "C-CAR301",
+    "acronym": ""
+  },
+  {
+    "query": "UPLIZNA (INEBILIZUMAB-CDON) Immunoglobulin G4-related disease",
+    "rows": [
+      899
+    ],
+    "drug": "UPLIZNA (INEBILIZUMAB-CDON)",
+    "acronym": "INEBILIZUMAB-CDON"
+  },
+  {
+    "query": "HMPL-760 Bruton's Tyrosine Kinase  Relapsed/Refractory  Lymphomas",
+    "rows": [
+      908
+    ],
+    "drug": "HMPL-760",
+    "acronym": ""
+  },
+  {
+    "query": "KT-333 Peripheral T-cell Lymphoma",
+    "rows": [
+      910
+    ],
+    "drug": "KT-333",
+    "acronym": "STAT3"
+  },
+  {
+    "query": "Truqap Metastatic triple-negative breast cancer",
+    "rows": [
+      922
+    ],
+    "drug": "Truqap",
+    "acronym": ""
+  },
+  {
+    "query": "Natrunix (XB2001) Pancreatic Cancer",
+    "rows": [
+      923
+    ],
+    "drug": "Natrunix (XB2001)",
+    "acronym": "XB2001"
+  },
+  {
+    "query": "Zimislecel (VX-880) Type 1 Diabetes",
+    "rows": [
+      926
+    ],
+    "drug": "Zimislecel (VX-880)",
+    "acronym": "VX-880"
+  },
+  {
+    "query": "Oxylanthanum Carbonate (OLC) Kidney disease",
+    "rows": [
+      929
+    ],
+    "drug": "Oxylanthanum Carbonate (OLC)",
+    "acronym": "OLC"
+  },
+  {
+    "query": "Ocedurenone Chronic kidney disease",
+    "rows": [
+      932
+    ],
+    "drug": "Ocedurenone",
+    "acronym": "CLARION-CKD"
+  },
+  {
+    "query": "MOLBREEVI (Molgradex) Autoimmune pulmonary alveolar proteinosis",
+    "rows": [
+      933
+    ],
+    "drug": "MOLBREEVI (Molgradex)",
+    "acronym": "IMPALA-2"
+  },
+  {
+    "query": "Buntanetap Parkinson's Disease",
+    "rows": [
+      934
+    ],
+    "drug": "Buntanetap",
+    "acronym": ""
+  },
+  {
+    "query": "ProtheraCytes Acute myocardial infarction",
+    "rows": [
+      940
+    ],
+    "drug": "ProtheraCytes",
+    "acronym": "EXCELLENT"
+  },
+  {
+    "query": "IDE397 Solid Tumors",
+    "rows": [
+      941
+    ],
+    "drug": "IDE397 and Trodelvy",
+    "acronym": ""
+  },
+  {
+    "query": "CT-996 Type 2 diabetes and obesity",
+    "rows": [
+      943
+    ],
+    "drug": "CT-996",
+    "acronym": ""
+  },
+  {
+    "query": "Transrectal High-intensity focused ultrasound (TR-HIFU) Rectal Deep Infiltrating Endometriosis",
+    "rows": [
+      945
+    ],
+    "drug": "Transrectal High-intensity focused ultrasound (TR-HIFU)",
+    "acronym": "TR-HIFU"
+  },
+  {
+    "query": "ATEV Acellular tissue engineered vessel  in arteriovenous access ",
+    "rows": [
+      961
+    ],
+    "drug": "ATEV",
+    "acronym": "V007"
+  },
+  {
+    "query": "Lonvoguran ziclumeran (lonvo-z, formerly NTLA-2002) Hereditary angioedema",
+    "rows": [
+      967
+    ],
+    "drug": "Lonvoguran ziclumeran (lonvo-z, formerly NTLA-2002)",
+    "acronym": "HAELO"
+  },
+  {
+    "query": "CT-0508 with pembrolizumab HER2+ solid tumors",
+    "rows": [
+      969
+    ],
+    "drug": "CT-0508 with pembrolizumab",
+    "acronym": ""
+  },
+  {
+    "query": "CTX-009 Colorectal cancer",
+    "rows": [
+      972
+    ],
+    "drug": "CTX-009",
+    "acronym": "COMPANION-003"
+  },
+  {
+    "query": "CNSide Breast or Non-Small Cell Lung Cancer  who have suspicious or",
+    "rows": [
+      973
+    ],
+    "drug": "CNSide",
+    "acronym": "FORESEE"
+  },
+  {
+    "query": "PALM 007 (Tecovirimat for Treatment of Monkeypox Virus) Monkeypox",
+    "rows": [
+      978
+    ],
+    "drug": "PALM 007 (Tecovirimat for Treatment of Monkeypox Virus)",
+    "acronym": ""
+  },
+  {
+    "query": "Elevai Enfinity Topical Exosome Serum Facial appearance",
+    "rows": [
+      982
+    ],
+    "drug": "Elevai Enfinity Topical Exosome Serum",
+    "acronym": ""
+  },
+  {
+    "query": "Leqvio CVRR",
+    "rows": [
+      984
+    ],
+    "drug": "Leqvio",
+    "acronym": ""
+  },
+  {
+    "query": "AEF0117 Cannabis-Related Disorders",
+    "rows": [
+      989
+    ],
+    "drug": "AEF0117",
+    "acronym": ""
+  },
+  {
+    "query": "Ifinatamab deruxtecan (DS-7300) Extensive-stage small cell lung cancer",
+    "rows": [
+      997
+    ],
+    "drug": "Ifinatamab deruxtecan (DS-7300)",
+    "acronym": "DS-7300"
+  },
+  {
+    "query": "Monalizuma Early-stage non-small cell lung cancer",
+    "rows": [
+      1000
+    ],
+    "drug": "Monalizuma",
+    "acronym": ""
+  },
+  {
+    "query": "TNX-801 Monkeypox",
+    "rows": [
+      1001
+    ],
+    "drug": "TNX-801",
+    "acronym": ""
+  },
+  {
+    "query": "IBTROZI (taletrectinib) ROS1+ Non\u2013Small Cell Lung Cancer",
+    "rows": [
+      1002
+    ],
+    "drug": "IBTROZI (taletrectinib)",
+    "acronym": ""
+  },
+  {
+    "query": "GSK3943104 Herpes simplex virus  vaccine",
+    "rows": [
+      1006
+    ],
+    "drug": "GSK3943104",
+    "acronym": ""
+  },
+  {
+    "query": "MGC018 Metastatic castration-resistant prostate cancer",
+    "rows": [
+      1016
+    ],
+    "drug": "MGC018",
+    "acronym": "TAMARACK"
+  },
+  {
+    "query": "AK112-206 Metastatic microsatellite-stable  colorectal cancer",
+    "rows": [
+      1024
+    ],
+    "drug": "AK112-206",
+    "acronym": ""
+  },
+  {
+    "query": "Gazyva Lupus Nephritis",
+    "rows": [
+      1036
+    ],
+    "drug": "Gazyva/Gazyvaro",
+    "acronym": ""
+  },
+  {
+    "query": "Airsupra (albuterol Severe exacerbations in patients with intermittent or mild p",
+    "rows": [
+      1045
+    ],
+    "drug": "Airsupra (albuterol/budesonide)",
+    "acronym": "BATURA"
+  },
+  {
+    "query": "RLF-TD011 Epidermolysis bullosa",
+    "rows": [
+      1046
+    ],
+    "drug": "RLF-TD011",
+    "acronym": ""
+  },
+  {
+    "query": "Arexvy (60+ at increased risk) Respiratory Syncytial Virus Vaccine",
+    "rows": [
+      1047
+    ],
+    "drug": "Arexvy (60+ at increased risk)",
+    "acronym": ""
+  },
+  {
+    "query": "VK0214 X-linked adrenoleukodystrophy",
+    "rows": [
+      1050
+    ],
+    "drug": "VK0214",
+    "acronym": ""
+  },
+  {
+    "query": "Epioxa (Epi-on) Progressive keratoconus",
+    "rows": [
+      1059
+    ],
+    "drug": "Epioxa (Epi-on)",
+    "acronym": ""
+  },
+  {
+    "query": "Vabysmo (faricimab-svoa) Diabetic macular edema",
+    "rows": [
+      1063
+    ],
+    "drug": "Vabysmo (faricimab-svoa)",
+    "acronym": "ELEVATUM"
+  },
+  {
+    "query": "LYL845 Solid Tumors",
+    "rows": [
+      1066
+    ],
+    "drug": "LYL845",
+    "acronym": ""
+  },
+  {
+    "query": "BBP-812 Canavan Disease",
+    "rows": [
+      1067
+    ],
+    "drug": "BBP-812",
+    "acronym": ""
+  },
+  {
+    "query": "ZL-1310 (DLL3 ADC) Solid tumors",
+    "rows": [
+      1068
+    ],
+    "drug": "ZL-1310 (DLL3 ADC)",
+    "acronym": ""
+  },
+  {
+    "query": "Casdatifan (AB521) + volrustomig Clear cell renal cell carcinoma",
+    "rows": [
+      1069
+    ],
+    "drug": "Casdatifan (AB521) + volrustomig",
+    "acronym": "AB521"
+  },
+  {
+    "query": "(Z)-Endoxifen Locally advanced breast cancer",
+    "rows": [
+      1075
+    ],
+    "drug": "(Z)-Endoxifen",
+    "acronym": "Z"
+  },
+  {
+    "query": "Z-Endoxifen Mammographic breast density",
+    "rows": [
+      1077
+    ],
+    "drug": "Z-Endoxifen",
+    "acronym": ""
+  },
+  {
+    "query": "Revita Type 2 Diabetes",
+    "rows": [
+      1079
+    ],
+    "drug": "Revita",
+    "acronym": "REVITALIZE-1"
+  },
+  {
+    "query": "IO102-IO103 in combination with pembrolizumab Non-small cell lung cancer",
+    "rows": [
+      1082
+    ],
+    "drug": "IO102-IO103 in combination with pembrolizumab",
+    "acronym": "IOB-022"
+  },
+  {
+    "query": "CUE-102 Wilms' Tumor -expressing cancers",
+    "rows": [
+      1091
+    ],
+    "drug": "CUE-102",
+    "acronym": ""
+  },
+  {
+    "query": "NGN-101 CLN5 Batten Disease",
+    "rows": [
+      1095
+    ],
+    "drug": "NGN-101",
+    "acronym": ""
+  },
+  {
+    "query": "FT522 Lupus",
+    "rows": [
+      1100
+    ],
+    "drug": "FT522",
+    "acronym": ""
+  },
+  {
+    "query": "Truqap Dephosphorylated Phosphatase and Tensin Homolog  Hormone-Sen",
+    "rows": [
+      1114
+    ],
+    "drug": "Truqap",
+    "acronym": ""
+  },
+  {
+    "query": "LYTENAVA (bevacizumab-vikg) Wet age-related macular degeneration",
+    "rows": [
+      1122
+    ],
+    "drug": "LYTENAVA (bevacizumab-vikg) / ONS-5010",
+    "acronym": ""
+  },
+  {
+    "query": "Daraxonrasib (RMC-6236) Metastatic pancreatic ductal adenocarcinoma",
+    "rows": [
+      1123
+    ],
+    "drug": "Daraxonrasib (RMC-6236)",
+    "acronym": "RMC-6236"
+  },
+  {
+    "query": "PSMA-TRACTr (JANX007) Metastatic castration-resistant prostate cancer",
+    "rows": [
+      1125
+    ],
+    "drug": "PSMA-TRACTr (JANX007)",
+    "acronym": "JANX007"
+  },
+  {
+    "query": "Petosemtamab (MCLA-158) Recurrent/metastatic  head and neck squamous cell carcinoma",
+    "rows": [
+      1126
+    ],
+    "drug": "Petosemtamab (MCLA-158)",
+    "acronym": "MCLA-158"
+  },
+  {
+    "query": "SVR12 in combination of bemnifosbuvir Hepatitis C virus",
+    "rows": [
+      1131
+    ],
+    "drug": "SVR12 in combination of bemnifosbuvir and ruzasvir",
+    "acronym": "C-BEYOND"
+  },
+  {
+    "query": "ZUSDURI (VesiGel UGN-102 (mitomycin)) Low grade non-muscle invasive bladder cancer",
+    "rows": [
+      1134
+    ],
+    "drug": "ZUSDURI (VesiGel UGN-102 (mitomycin))",
+    "acronym": "ENVISION"
+  },
+  {
+    "query": "BNT324 Solid tumors",
+    "rows": [
+      1135
+    ],
+    "drug": "BNT324/DB-1311",
+    "acronym": ""
+  },
+  {
+    "query": "ZYNLONTA (loncastuximab tesirine-lpyl) Relapsed/refractory  marginal zone lymphoma",
+    "rows": [
+      1140
+    ],
+    "drug": "ZYNLONTA (loncastuximab tesirine-lpyl)",
+    "acronym": ""
+  },
+  {
+    "query": "NX-5948 R/R Chronic Lymphocytic Leukemia",
+    "rows": [
+      1144
+    ],
+    "drug": "NX-5948",
+    "acronym": ""
+  },
+  {
+    "query": "BGB-16673-101 Relapsed or refractory  CLL/SLL",
+    "rows": [
+      1150
+    ],
+    "drug": "BGB-16673-101",
+    "acronym": ""
+  },
+  {
+    "query": "BP1002 Refractory/relapsed lymphoma and chronic lymphocytic leukemi",
+    "rows": [
+      1160
+    ],
+    "drug": "BP1002",
+    "acronym": ""
+  },
+  {
+    "query": "Dazucorilant (DAZALS) Amyotrophic Lateral Sclerosis",
+    "rows": [
+      1161
+    ],
+    "drug": "Dazucorilant (DAZALS)",
+    "acronym": "DAZALS"
+  },
+  {
+    "query": "PRT2527 Solid tumors and hematological malignancies",
+    "rows": [
+      1163
+    ],
+    "drug": "PRT2527",
+    "acronym": ""
+  },
+  {
+    "query": "KB408 Alpha-1 antitrypsin deficiency",
+    "rows": [
+      1164
+    ],
+    "drug": "KB408",
+    "acronym": "SERPENTINE-1"
+  },
+  {
+    "query": "ANB032 Atopic dermatitis",
+    "rows": [
+      1165
+    ],
+    "drug": "ANB032",
+    "acronym": "ARISE-AD"
+  },
+  {
+    "query": "Korlym Hypercortisolism  and Difficult-to-Control Diabetes",
+    "rows": [
+      1166
+    ],
+    "drug": "Korlym",
+    "acronym": "CATALYST"
+  },
+  {
+    "query": "Mecbotamab Vedotin (BA3011) Solid Tumors",
+    "rows": [
+      1171
+    ],
+    "drug": "Mecbotamab Vedotin (BA3011)",
+    "acronym": "BA3011"
+  },
+  {
+    "query": "FHD-286 Acute myeloid leukemia",
+    "rows": [
+      1172
+    ],
+    "drug": "FHD-286",
+    "acronym": ""
+  },
+  {
+    "query": "Icovamenib (BMF-219) Type 2 Diabetes",
+    "rows": [
+      1174
+    ],
+    "drug": "Icovamenib (BMF-219)",
+    "acronym": "BMF-219"
+  },
+  {
+    "query": "KB707 Solid Tumors",
+    "rows": [
+      1181
+    ],
+    "drug": "KB707",
+    "acronym": "KYANITE-1"
+  },
+  {
+    "query": "YARTEMLEA (Narsoplimab) Hematopoietic stem cell-associated TMA",
+    "rows": [
+      1184
+    ],
+    "drug": "YARTEMLEA (Narsoplimab)",
+    "acronym": ""
+  },
+  {
+    "query": "AM833 (CagriSema) Obesity",
+    "rows": [
+      1192
+    ],
+    "drug": "AM833 (CagriSema)",
+    "acronym": "REDEFINE"
+  },
+  {
+    "query": "Natrunix Rheumatoid Arthritis",
+    "rows": [
+      1193
+    ],
+    "drug": "Natrunix",
+    "acronym": ""
+  },
+  {
+    "query": "PRF-110 Bunionectomy",
+    "rows": [
+      1195
+    ],
+    "drug": "PRF-110",
+    "acronym": ""
+  },
+  {
+    "query": "Itvisma (onasemnogene abeparvovec-brve) Spinal muscular atrophy",
+    "rows": [
+      1196
+    ],
+    "drug": "Itvisma (onasemnogene abeparvovec-brve)",
+    "acronym": ""
+  },
+  {
+    "query": "Navacaprant (NMRA-140) Major depressive disorder",
+    "rows": [
+      1197
+    ],
+    "drug": "Navacaprant (NMRA-140)",
+    "acronym": "NMRA-140"
+  },
+  {
+    "query": "OCS-05 Acute optic neuritis",
+    "rows": [
+      1201
+    ],
+    "drug": "OCS-05",
+    "acronym": "ACUITY"
+  },
+  {
+    "query": "HT-001 EGFRI-induced skin toxicity",
+    "rows": [
+      1202
+    ],
+    "drug": "HT-001",
+    "acronym": "CLEER-001"
+  },
+  {
+    "query": "GH1001 (GH001-BD-202) Bipolar II Disorder",
+    "rows": [
+      1204
+    ],
+    "drug": "GH1001 (GH001-BD-202)",
+    "acronym": "GH001-BD-202"
+  },
+  {
+    "query": "Atumelnant (CRN04894) Congenital adrenal hyperplasia  and Cushing\u2019s disease",
+    "rows": [
+      1206
+    ],
+    "drug": "Atumelnant (CRN04894)",
+    "acronym": "CRN04894"
+  },
+  {
+    "query": "Travelan Enterotoxigenic Escherichia coli",
+    "rows": [
+      1209
+    ],
+    "drug": "Travelan",
+    "acronym": "CHIM"
+  },
+  {
+    "query": "ozekibart (INBRX-109) in combination with FOLFIRI Advanced or metastatic",
+    "rows": [
+      1211
+    ],
+    "drug": "ozekibart (INBRX-109) in combination with FOLFIRI",
+    "acronym": "INBRX-109"
+  },
+  {
+    "query": "LSTA1 in combination with gemcitabine 1L metastatic pancreatic ductal adenocarcinoma",
+    "rows": [
+      1215
+    ],
+    "drug": "LSTA1 in combination with gemcitabine and nab-paclitaxel",
+    "acronym": "ASCEND"
+  },
+  {
+    "query": "(Z)-endoxifen Breast cancer",
+    "rows": [
+      1217
+    ],
+    "drug": "(Z)-endoxifen",
+    "acronym": "Z"
+  },
+  {
+    "query": "Tividenofusp alfa (DNL310) Hunter syndrome MPS II",
+    "rows": [
+      1231
+    ],
+    "drug": "Tividenofusp alfa (DNL310)",
+    "acronym": "DNL310"
+  },
+  {
+    "query": "ADX-097 Renal Diseases",
+    "rows": [
+      1233
+    ],
+    "drug": "ADX-097",
+    "acronym": ""
+  },
+  {
+    "query": "GTX-104 Subarachnoid hemorrhage",
+    "rows": [
+      1235
+    ],
+    "drug": "GTX-104",
+    "acronym": "STRIVE-ON"
+  },
+  {
+    "query": "BP1002 Acute Myeloid Leukemia",
+    "rows": [
+      1236
+    ],
+    "drug": "BP1002",
+    "acronym": ""
+  },
+  {
+    "query": "Opdualag  (nivolumab Stage III-IV melanoma",
+    "rows": [
+      1237
+    ],
+    "drug": "Opdualag  (nivolumab and relatlimab-rmbw)",
+    "acronym": "RELATIVITY-098"
+  },
+  {
+    "query": "SPN-820 Treatment-resistant depression",
+    "rows": [
+      1241
+    ],
+    "drug": "SPN-820",
+    "acronym": ""
+  },
+  {
+    "query": "SGT-003 Duchenne Muscular Dystrophy",
+    "rows": [
+      1242
+    ],
+    "drug": "SGT-003",
+    "acronym": ""
+  },
+  {
+    "query": "SEP-786 Hypoparathyroidism in healthy volunteers",
+    "rows": [
+      1243
+    ],
+    "drug": "SEP-786",
+    "acronym": ""
+  },
+  {
+    "query": "SLS009 (tambiciclib) with zanubrutinib relapsed/refractory Diffuse Large B-Cell Lymphoma",
+    "rows": [
+      1245
+    ],
+    "drug": "SLS009 (tambiciclib) with zanubrutinib",
+    "acronym": ""
+  },
+  {
+    "query": "SYMBRAVO (MoSEIC meloxicam-rizatriptan (AXS-07)) Migraine",
+    "rows": [
+      1246
+    ],
+    "drug": "SYMBRAVO (MoSEIC meloxicam-rizatriptan (AXS-07))",
+    "acronym": "AXS-07"
+  },
+  {
+    "query": "QRX003 Netherton Syndrome",
+    "rows": [
+      1250
+    ],
+    "drug": "QRX003",
+    "acronym": "CL-QRX003-002"
+  },
+  {
+    "query": "Zipalertinib (CLN-081 Non-small cell lung Cancer",
+    "rows": [
+      1251
+    ],
+    "drug": "Zipalertinib (CLN-081/TAS6417)",
+    "acronym": "REZILIENT3"
+  },
+  {
+    "query": "Ulixacaltamide \u200b(PRAX-944) Essential tremor",
+    "rows": [
+      1252
+    ],
+    "drug": "Ulixacaltamide \u200b(PRAX-944)",
+    "acronym": "PRAX-944"
+  },
+  {
+    "query": "Batoclimab Myasthenia Gravis",
+    "rows": [
+      1276
+    ],
+    "drug": "Batoclimab",
+    "acronym": ""
+  },
+  {
+    "query": "Nebokitug (CM-101) Primary Sclerosing Cholangitis",
+    "rows": [
+      1285
+    ],
+    "drug": "Nebokitug (CM-101)",
+    "acronym": "CM-101"
+  },
+  {
+    "query": "BMT-801 with bremelanotide Obesity",
+    "rows": [
+      1287
+    ],
+    "drug": "BMT-801 with bremelanotide plus tirzepatide",
+    "acronym": ""
+  },
+  {
+    "query": "CTX-009 (DLL4 X VEGF-A bispecific) Biliary tract cancer",
+    "rows": [
+      1292
+    ],
+    "drug": "CTX-009 (DLL4 X VEGF-A bispecific)",
+    "acronym": "COMPANION-002"
+  },
+  {
+    "query": "LX2006 Cardiomyopathy associated with Friedreich's ataxia",
+    "rows": [
+      1296
+    ],
+    "drug": "LX2006",
+    "acronym": ""
+  },
+  {
+    "query": "RLYB212 Fetal and neonatal alloimmune thrombocytopenia",
+    "rows": [
+      1298
+    ],
+    "drug": "RLYB212",
+    "acronym": ""
+  },
+  {
+    "query": "Latozinemab Frontotemporal dementia",
+    "rows": [
+      1299
+    ],
+    "drug": "Latozinemab",
+    "acronym": ""
+  },
+  {
+    "query": "Cobenfy Schizophrenia",
+    "rows": [
+      1306
+    ],
+    "drug": "Cobenfy",
+    "acronym": "ARISE"
+  },
+  {
+    "query": "LP-310 Oral Lichen Planus",
+    "rows": [
+      1307
+    ],
+    "drug": "LP-310",
+    "acronym": ""
+  },
+  {
+    "query": "Ivonescimab with platinum-based chemotherapy compared with tislelizumab Locally advanced or metastatic squamous non-small cell lung ",
+    "rows": [
+      1308
+    ],
+    "drug": "Ivonescimab with platinum-based chemotherapy compared with tislelizumab",
+    "acronym": ""
+  },
+  {
+    "query": "CB-010 Lupus nephritis",
+    "rows": [
+      1310
+    ],
+    "drug": "CB-010",
+    "acronym": "GALLOP"
+  },
+  {
+    "query": "Zoldonrasib (RMC-9805) Pancreatic cancer",
+    "rows": [
+      1316
+    ],
+    "drug": "Zoldonrasib (RMC-9805)",
+    "acronym": "RMC-9805"
+  },
+  {
+    "query": "PCRX-201 (enekinragene inzadenovec) Osteoarthritis of the knee",
+    "rows": [
+      1317
+    ],
+    "drug": "PCRX-201 (enekinragene inzadenovec)",
+    "acronym": "ASCEND"
+  },
+  {
+    "query": "Truqap Metastatic castration-resistant prostate cancer",
+    "rows": [
+      1318
+    ],
+    "drug": "Truqap",
+    "acronym": ""
+  },
+  {
+    "query": "Florquinitau  (MK-6240) Alzheimer's disease",
+    "rows": [
+      1319
+    ],
+    "drug": "Florquinitau  (MK-6240)",
+    "acronym": "MK-6240"
+  },
+  {
+    "query": "EBO-301 Treatment-Refractory MAC Lung Disease",
+    "rows": [
+      1320
+    ],
+    "drug": "EBO-301",
+    "acronym": ""
+  },
+  {
+    "query": "BREZTRI AEROSPHERE (budesonide Asthma",
+    "rows": [
+      1321
+    ],
+    "drug": "BREZTRI AEROSPHERE (budesonide/glycopyrrolate/formoterol fumarate)",
+    "acronym": ""
+  },
+  {
+    "query": "Trem-cel + Mylotarg (VBP101) Acute myeloid leukemia",
+    "rows": [
+      1326
+    ],
+    "drug": "Trem-cel + Mylotarg (VBP101)",
+    "acronym": "VBP101"
+  },
+  {
+    "query": "Evorpacept with PADCEV (enfortumab vedotin-ejfv) Urothelial Carcinoma",
+    "rows": [
+      1327
+    ],
+    "drug": "Evorpacept with PADCEV (enfortumab vedotin-ejfv)",
+    "acronym": "ASPEN-07"
+  },
+  {
+    "query": "4D-110 Choroideremia",
+    "rows": [
+      1330
+    ],
+    "drug": "4D-110",
+    "acronym": ""
+  },
+  {
+    "query": "TNX-1300 Drug overdose",
+    "rows": [
+      1339
+    ],
+    "drug": "TNX-1300",
+    "acronym": "CATALYST"
+  },
+  {
+    "query": "Emiltatug Ledadotin (XMT-1660) Metastatic triple-negative breast cancer",
+    "rows": [
+      1340
+    ],
+    "drug": "Emiltatug Ledadotin (XMT-1660)",
+    "acronym": "XMT-1660"
+  },
+  {
+    "query": "Azetukalner Major depressive disorder",
+    "rows": [
+      1343
+    ],
+    "drug": "Azetukalner",
+    "acronym": "IIT"
+  },
+  {
+    "query": "Nexiguran Ziclumeran (nex-z) Polyneuropathy and cardiomyopathy",
+    "rows": [
+      1345
+    ],
+    "drug": "Nexiguran Ziclumeran (nex-z)",
+    "acronym": ""
+  },
+  {
+    "query": "CTx-1301 (dexmethlyphenidate HCI) ADHD  in patients six years of age or older",
+    "rows": [
+      1347
+    ],
+    "drug": "CTx-1301 (dexmethlyphenidate HCI)",
+    "acronym": ""
+  },
+  {
+    "query": "AXN-2510 (SYN-2510 Non-small cell lung cancer",
+    "rows": [
+      1348
+    ],
+    "drug": "AXN-2510 (SYN-2510 / IMM2510) + chemo",
+    "acronym": ""
+  },
+  {
+    "query": "Hydronidone (F351) Chronic hepatitis B -associated liver fibrosis in the PRC",
+    "rows": [
+      1349
+    ],
+    "drug": "Hydronidone (F351)",
+    "acronym": "F351"
+  },
+  {
+    "query": "KOMZIFTI (ziftomenib) Relapsed or Refractory NPM1-Mutated Acute Myeloid Leukemia",
+    "rows": [
+      1351
+    ],
+    "drug": "KOMZIFTI (ziftomenib)",
+    "acronym": ""
+  },
+  {
+    "query": "VS-6766 Metastatic pancreatic cancer",
+    "rows": [
+      1357
+    ],
+    "drug": "VS-6766 and defactinib",
+    "acronym": ""
+  },
+  {
+    "query": "BBI-355 Oncogene amplified cancers",
+    "rows": [
+      1358
+    ],
+    "drug": "BBI-355",
+    "acronym": "POTENTIATE"
+  },
+  {
+    "query": "IMNN-001 Ovarian cancer",
+    "rows": [
+      1361
+    ],
+    "drug": "IMNN-001",
+    "acronym": ""
+  },
+  {
+    "query": "Linvoseltamab +  carfilzomib Relapsed/refractory multiple myeloma",
+    "rows": [
+      1363
+    ],
+    "drug": "Linvoseltamab +  carfilzomib",
+    "acronym": "LINKER-MM2"
+  },
+  {
+    "query": "PALI-2108 Moderate-to-severe ulcerative colitis",
+    "rows": [
+      1367
+    ],
+    "drug": "PALI-2108",
+    "acronym": ""
+  },
+  {
+    "query": "PGN-EDO51 Duchenne muscular dystrophy",
+    "rows": [
+      1373
+    ],
+    "drug": "PGN-EDO51",
+    "acronym": "CONNECT1"
+  },
+  {
+    "query": "Ivonescimab EGFR-mutated",
+    "rows": [
+      1376
+    ],
+    "drug": "Ivonescimab plus platinum-doublet chemotherapy",
+    "acronym": ""
+  },
+  {
+    "query": "Vilastobart (XTX101) with atezolizumab Microsatellite stable colorectal cancer",
+    "rows": [
+      1381
+    ],
+    "drug": "Vilastobart (XTX101) with atezolizumab",
+    "acronym": "XTX101"
+  },
+  {
+    "query": "sofetabart mipitecan (LY4170156) Platinum-resistant ovarian cancer",
+    "rows": [
+      1383
+    ],
+    "drug": "sofetabart mipitecan (LY4170156)",
+    "acronym": "LY4170156"
+  },
+  {
+    "query": "MR-142 Chronic night driving impairment",
+    "rows": [
+      1385
+    ],
+    "drug": "MR-142",
+    "acronym": "LYNX-2"
+  },
+  {
+    "query": "Pluvicto PSMA-positive metastatic hormone-sensitive prostate cancer",
+    "rows": [
+      1389
+    ],
+    "drug": "Pluvicto",
+    "acronym": ""
+  },
+  {
+    "query": "Rosnilimab (ANB030) Rheumatoid arthritis",
+    "rows": [
+      1398
+    ],
+    "drug": "Rosnilimab (ANB030)",
+    "acronym": "ANB030"
+  },
+  {
+    "query": "iluzanebart  (VGL101) Adult-onset leukoencephalopathy with axonal spheroids and pi",
+    "rows": [
+      1399
+    ],
+    "drug": "iluzanebart  (VGL101)",
+    "acronym": "VGL101"
+  },
+  {
+    "query": "D-PLEX100 Surgical Site Infection",
+    "rows": [
+      1400
+    ],
+    "drug": "D-PLEX100",
+    "acronym": ""
+  },
+  {
+    "query": "Rese-cel (resecabtagene autoleucel (CABA-201) Active idiopathic inflammatory myopathy",
+    "rows": [
+      1404
+    ],
+    "drug": "Rese-cel (resecabtagene autoleucel (CABA-201)",
+    "acronym": "CABA-201"
+  },
+  {
+    "query": "Fabhalta Paroxysmal nocturnal hemoglobinuria",
+    "rows": [
+      1408
+    ],
+    "drug": "Fabhalta",
+    "acronym": "APPULSE-PNH"
+  },
+  {
+    "query": "Bexobrutideg (NX-5948) Relapsed/Refractory Waldenstrom's Macroglobulinemia",
+    "rows": [
+      1411
+    ],
+    "drug": "Bexobrutideg (NX-5948)",
+    "acronym": "NX-5948"
+  },
+  {
+    "query": "JNJ-4496 R/R diffuse large B-cell lymphoma",
+    "rows": [
+      1412
+    ],
+    "drug": "JNJ-4496",
+    "acronym": ""
+  },
+  {
+    "query": "ALTO-203 Major depressive disorder",
+    "rows": [
+      1414
+    ],
+    "drug": "ALTO-203",
+    "acronym": ""
+  },
+  {
+    "query": "Cibotercept Pulmonary arterial hypertension",
+    "rows": [
+      1415
+    ],
+    "drug": "Cibotercept",
+    "acronym": ""
+  },
+  {
+    "query": "LP-300 Non-small cell lung cancer",
+    "rows": [
+      1417
+    ],
+    "drug": "LP-300",
+    "acronym": ""
+  },
+  {
+    "query": "Astegolimab Chronic obstructive pulmonary disease",
+    "rows": [
+      1422
+    ],
+    "drug": "Astegolimab",
+    "acronym": "ARNASA"
+  },
+  {
+    "query": "XL092 with atezolizumab Colorectal Cancer",
+    "rows": [
+      1423
+    ],
+    "drug": "XL092 with atezolizumab",
+    "acronym": "STELLAR-303"
+  },
+  {
+    "query": "COMP360 psilocybin Treatment-resistant depression",
+    "rows": [
+      1426
+    ],
+    "drug": "COMP360 psilocybin",
+    "acronym": "COMP005"
+  },
+  {
+    "query": "ADL-018 Chronic Idiopathic Urticaria  or Chronic Spontaneous Urticar",
+    "rows": [
+      1427
+    ],
+    "drug": "ADL-018",
+    "acronym": ""
+  },
+  {
+    "query": "Cosentyx Newly diagnosed or relapsing giant cell arteritis",
+    "rows": [
+      1440
+    ],
+    "drug": "Cosentyx",
+    "acronym": ""
+  },
+  {
+    "query": "Briquilimab (JSP191) Severe combined immunodeficiency",
+    "rows": [
+      1441
+    ],
+    "drug": "Briquilimab (JSP191)",
+    "acronym": "JSP191"
+  },
+  {
+    "query": "APG777 Healthy volunteers",
+    "rows": [
+      1442
+    ],
+    "drug": "APG777",
+    "acronym": "APEX"
+  },
+  {
+    "query": "Rilparencel Diabetic CKD Stage 3/4",
+    "rows": [
+      1443
+    ],
+    "drug": "Rilparencel",
+    "acronym": "REGEN-007"
+  },
+  {
+    "query": "Astegolima Chronic obstructive pulmonary disease",
+    "rows": [
+      1445
+    ],
+    "drug": "Astegolima",
+    "acronym": "ALIENTO"
+  },
+  {
+    "query": "Ovaprene Contraception",
+    "rows": [
+      1447
+    ],
+    "drug": "Ovaprene",
+    "acronym": ""
+  },
+  {
+    "query": "CUE-101 HPV+ head and neck squamous cell carcinoma",
+    "rows": [
+      1451
+    ],
+    "drug": "CUE-101",
+    "acronym": ""
+  },
+  {
+    "query": "Urcosimod (OK-101) Neuropathic corneal pain",
+    "rows": [
+      1452
+    ],
+    "drug": "Urcosimod (OK-101)",
+    "acronym": "OK-101"
+  },
+  {
+    "query": "Votoplam Huntington's disease",
+    "rows": [
+      1453
+    ],
+    "drug": "Votoplam",
+    "acronym": "PIVOT-HD"
+  },
+  {
+    "query": "Gefurulimab Generalised myasthenia gravis",
+    "rows": [
+      1460
+    ],
+    "drug": "Gefurulimab",
+    "acronym": "PREVAIL"
+  },
+  {
+    "query": "Inidascamine (formerly RL-007) Cognitive Impairment Associated with Schizophrenia",
+    "rows": [
+      1461
+    ],
+    "drug": "Inidascamine (formerly RL-007)",
+    "acronym": ""
+  },
+  {
+    "query": "HYALOFAST Cartilage defects of the knee",
+    "rows": [
+      1466
+    ],
+    "drug": "HYALOFAST",
+    "acronym": ""
+  },
+  {
+    "query": "Repibresib Gel (VYN201) Vitiligo",
+    "rows": [
+      1467
+    ],
+    "drug": "Repibresib Gel (VYN201)",
+    "acronym": "VYN201"
+  },
+  {
+    "query": "IHL-42X Obstructive  sleep apnea",
+    "rows": [
+      1468
+    ],
+    "drug": "IHL-42X",
+    "acronym": ""
+  },
+  {
+    "query": "4D-150 Wet Age-Related Macular Degeneration",
+    "rows": [
+      1469
+    ],
+    "drug": "4D-150",
+    "acronym": "SPECTRA"
+  },
+  {
+    "query": "VX-993 Moderate to severe acute pain",
+    "rows": [
+      1470
+    ],
+    "drug": "VX-993",
+    "acronym": ""
+  },
+  {
+    "query": "NPM-115 (exenatide implant) Subdermal implants in development for chronic weight managem",
+    "rows": [
+      1471
+    ],
+    "drug": "NPM-115 (exenatide implant)",
+    "acronym": "LIBERATE-1"
+  },
+  {
+    "query": "ARQ-255 Alopecia Areata",
+    "rows": [
+      1472
+    ],
+    "drug": "ARQ-255",
+    "acronym": ""
+  },
+  {
+    "query": "Telitacicept Primary Sj\u00f6gren's disease",
+    "rows": [
+      1477
+    ],
+    "drug": "Telitacicept",
+    "acronym": ""
+  },
+  {
+    "query": "SGR-2921 Relapsed/refractory acute myeloid leukemia",
+    "rows": [
+      1478
+    ],
+    "drug": "SGR-2921",
+    "acronym": ""
+  },
+  {
+    "query": "VE202 Ulcerative colitis",
+    "rows": [
+      1479
+    ],
+    "drug": "VE202",
+    "acronym": ""
+  },
+  {
+    "query": "Telitacicept IgA Nephropathy",
+    "rows": [
+      1486
+    ],
+    "drug": "Telitacicept",
+    "acronym": ""
+  },
+  {
+    "query": "TOUR006 Atherosclerotic cardiovascular disease",
+    "rows": [
+      1489
+    ],
+    "drug": "TOUR006",
+    "acronym": "TRANQUILITY"
+  },
+  {
+    "query": "ZW171 Solid Tumors",
+    "rows": [
+      1491
+    ],
+    "drug": "ZW171",
+    "acronym": ""
+  },
+  {
+    "query": "Zorevunersen (STK-001) Dravet syndrome",
+    "rows": [
+      1492
+    ],
+    "drug": "Zorevunersen (STK-001)",
+    "acronym": "STK-001"
+  },
+  {
+    "query": "Decoy-20 Advanced/metastatic solid tumors",
+    "rows": [
+      1496
+    ],
+    "drug": "Decoy-20",
+    "acronym": "INDP-D101"
+  },
+  {
+    "query": "KSI-101 Macular edema secondary",
+    "rows": [
+      1505
+    ],
+    "drug": "KSI-101",
+    "acronym": "APEX"
+  },
+  {
+    "query": "JNJ-1900 (NBTXR3) in Combination With Immune Checkpoint Inhibitors Primary Cutaneous Melanoma Resistant to Anti-PD-1",
+    "rows": [
+      1507
+    ],
+    "drug": "JNJ-1900 (NBTXR3) in Combination With Immune Checkpoint Inhibitors",
+    "acronym": "NBTXR3"
+  },
+  {
+    "query": "Garetosmab Fibrodysplasia Ossificans Progressiva",
+    "rows": [
+      1510
+    ],
+    "drug": "Garetosmab",
+    "acronym": "OPTIMA"
+  },
+  {
+    "query": "Canvuparatide (MBX 2109) Hypoparathyroidism",
+    "rows": [
+      1513
+    ],
+    "drug": "Canvuparatide (MBX 2109)",
+    "acronym": ""
+  },
+  {
+    "query": "iberdomide, daratumumab, Relapsed/refractory multiple myeloma",
+    "rows": [
+      1516
+    ],
+    "drug": "iberdomide, daratumumab, and dexamethasone vs. daratumumab, bortezomib, and dexamethasone",
+    "acronym": ""
+  },
+  {
+    "query": "AMT-130 Huntington's disease",
+    "rows": [
+      1517
+    ],
+    "drug": "AMT-130",
+    "acronym": ""
+  },
+  {
+    "query": "Carbetocin (ACP-101) Prader-Willi syndrome",
+    "rows": [
+      1519
+    ],
+    "drug": "Carbetocin (ACP-101)",
+    "acronym": "ACP-101"
+  },
+  {
+    "query": "KPI-012 Persistent corneal epithelial defect",
+    "rows": [
+      1521
+    ],
+    "drug": "KPI-012",
+    "acronym": "CHASE"
+  },
+  {
+    "query": "JNJ-1900 (NBTXR3) Recurrent and/or metastatic head and neck squamous cell carc",
+    "rows": [
+      1526
+    ],
+    "drug": "JNJ-1900 (NBTXR3)",
+    "acronym": "NBTXR3"
+  },
+  {
+    "query": "Repatha Risk of cardiovascular  events without prior myocardial infa",
+    "rows": [
+      1527
+    ],
+    "drug": "Repatha",
+    "acronym": "VESALIUS-CV"
+  },
+  {
+    "query": "ANAVEX 3-71 (AF710B) Schizophrenia",
+    "rows": [
+      1528
+    ],
+    "drug": "ANAVEX 3-71 (AF710B)",
+    "acronym": "AF710B"
+  },
+  {
+    "query": "Nimacimab Obesity",
+    "rows": [
+      1531
+    ],
+    "drug": "Nimacimab",
+    "acronym": ""
+  },
+  {
+    "query": "ABI-5366 HSV-2",
+    "rows": [
+      1533
+    ],
+    "drug": "ABI-5366",
+    "acronym": ""
+  },
+  {
+    "query": "Otoferlin gene therapy (DB-OTO) Genetic hearing loss",
+    "rows": [
+      1535
+    ],
+    "drug": "Otoferlin gene therapy (DB-OTO)",
+    "acronym": "DB-OTO"
+  },
+  {
+    "query": "Zipalertinib Locally advanced/metastatic NSCLC",
+    "rows": [
+      1536
+    ],
+    "drug": "Zipalertinib",
+    "acronym": "REZILIENT2"
+  },
+  {
+    "query": "TTI-101 Idiopathic pulmonary fibrosis",
+    "rows": [
+      1537
+    ],
+    "drug": "TTI-101",
+    "acronym": ""
+  },
+  {
+    "query": "Domvanalimab + Zimberelimab Unresectable or Advanced Gastroesophageal Adenocarcinomas",
+    "rows": [
+      1538
+    ],
+    "drug": "Domvanalimab + Zimberelimab and Chemotherapy",
+    "acronym": ""
+  },
+  {
+    "query": "Orforglipron Type 2 diabetes",
+    "rows": [
+      1543
+    ],
+    "drug": "Orforglipron",
+    "acronym": "ACHIEVE-5"
+  },
+  {
+    "query": "UCART22 Relapsed/refractory B-cell acute lymphoblastic leukemia",
+    "rows": [
+      1544
+    ],
+    "drug": "UCART22",
+    "acronym": "BALLI-01"
+  },
+  {
+    "query": "otensilimab, balstilimab Microsatellite stable  metastatic colorectal cancer",
+    "rows": [
+      1551
+    ],
+    "drug": "otensilimab, balstilimab and regorafenib (BBR)",
+    "acronym": "BBR"
+  },
+  {
+    "query": "CRB-701 Oncology",
+    "rows": [
+      1554
+    ],
+    "drug": "CRB-701",
+    "acronym": ""
+  },
+  {
+    "query": "Gedatolisib (VIKTORIA-1) HR+/HER2- breast cancer",
+    "rows": [
+      1557
+    ],
+    "drug": "Gedatolisib (VIKTORIA-1)",
+    "acronym": "VIKTORIA-1"
+  },
+  {
+    "query": "Raludotatug deruxtecan (R-DXd) Recurrent platinum-resistant ovarian",
+    "rows": [
+      1559
+    ],
+    "drug": "Raludotatug deruxtecan (R-DXd)",
+    "acronym": ""
+  },
+  {
+    "query": "mRNA-1647 CMV vaccine",
+    "rows": [
+      1567
+    ],
+    "drug": "mRNA-1647",
+    "acronym": ""
+  },
+  {
+    "query": "Cosentyx Polymyalgia rheumatica",
+    "rows": [
+      1568
+    ],
+    "drug": "Cosentyx",
+    "acronym": "REPLENISH"
+  },
+  {
+    "query": "Elironrasib (RMC-6291) Solid Tumors",
+    "rows": [
+      1569
+    ],
+    "drug": "Elironrasib (RMC-6291)",
+    "acronym": "RMC-6291"
+  },
+  {
+    "query": "ZW191 Non-small cell lung cancer",
+    "rows": [
+      1570
+    ],
+    "drug": "ZW191",
+    "acronym": ""
+  },
+  {
+    "query": "Ianalumab Sj\u00f6gren\u2019s syndrome",
+    "rows": [
+      1572
+    ],
+    "drug": "Ianalumab",
+    "acronym": "NEPTUNUS-2"
+  },
+  {
+    "query": "FT819-102 Moderate-to-severe Systemic Lupus Erythematosus",
+    "rows": [
+      1573
+    ],
+    "drug": "FT819-102",
+    "acronym": ""
+  },
+  {
+    "query": "Miv-cel (mivocabtagene autoleucel, KYV-101) Myasthenia gravis",
+    "rows": [
+      1580
+    ],
+    "drug": "Miv-cel (mivocabtagene autoleucel, KYV-101)",
+    "acronym": "KYSA-6"
+  },
+  {
+    "query": "Gazyva Systemic Lupus Erythematosus",
+    "rows": [
+      1584
+    ],
+    "drug": "Gazyva",
+    "acronym": "ALLEGORY"
+  },
+  {
+    "query": "DA-1726 NASH and obesity",
+    "rows": [
+      1587
+    ],
+    "drug": "DA-1726",
+    "acronym": ""
+  },
+  {
+    "query": "t-haNK (N-803 ANKTIVA) in combination with rituximab Non-Hodgkin's lymphoma",
+    "rows": [
+      1589
+    ],
+    "drug": "t-haNK (N-803 ANKTIVA) in combination with rituximab",
+    "acronym": ""
+  },
+  {
+    "query": "TN-201 Hypertrophic cardiomyopathy",
+    "rows": [
+      1599
+    ],
+    "drug": "TN-201",
+    "acronym": ""
+  },
+  {
+    "query": "Rosnilimab Ulcerative colitis",
+    "rows": [
+      1604
+    ],
+    "drug": "Rosnilimab",
+    "acronym": ""
+  },
+  {
+    "query": "NBI-1070770 Major Depressive Disorder",
+    "rows": [
+      1609
+    ],
+    "drug": "NBI-1070770",
+    "acronym": ""
+  },
+  {
+    "query": "Alixorexton (ALKS 2680) Narcolepsy and excessive daytime sleepiness",
+    "rows": [
+      1614
+    ],
+    "drug": "Alixorexton (ALKS 2680)",
+    "acronym": ""
+  },
+  {
+    "query": "IMA402 Solid Tumors",
+    "rows": [
+      1615
+    ],
+    "drug": "IMA402",
+    "acronym": ""
+  },
+  {
+    "query": "KLU156 (GanLum) Malaria",
+    "rows": [
+      1616
+    ],
+    "drug": "KLU156 (GanLum)",
+    "acronym": ""
+  },
+  {
+    "query": "WINREVAIR (sotatercept-csrk) Combined Post- and Precapillary Pulmonary Hypertension  due ",
+    "rows": [
+      1624
+    ],
+    "drug": "WINREVAIR (sotatercept-csrk)",
+    "acronym": "CADENCE"
+  },
+  {
+    "query": "TARA-002 Pediatric patients with lymphatic malformations",
+    "rows": [
+      1626
+    ],
+    "drug": "TARA-002",
+    "acronym": "STARBORN-1"
+  },
+  {
+    "query": "mRNA-3745 Glycogen Storage Disease Type 1a",
+    "rows": [
+      1628
+    ],
+    "drug": "mRNA-3745",
+    "acronym": ""
+  },
+  {
+    "query": "Olverembatinib (HQP1351) Gastrointestinal Stromal Tumors",
+    "rows": [
+      1632
+    ],
+    "drug": "Olverembatinib (HQP1351)",
+    "acronym": "HQP1351"
+  },
+  {
+    "query": "Ficerafusp Alfa (BCA101) with Pembrolizumab R/M Head and Neck Squamous Cell Carcinoma",
+    "rows": [
+      1633
+    ],
+    "drug": "Ficerafusp Alfa (BCA101) with Pembrolizumab",
+    "acronym": "BCA101"
+  },
+  {
+    "query": "Tinlarebant (LBS-008) Adolescent Stargardt disease",
+    "rows": [
+      1634
+    ],
+    "drug": "Tinlarebant (LBS-008)",
+    "acronym": "LBS-008"
+  },
+  {
+    "query": "STS-J01 Non-metastatic solid tumors",
+    "rows": [
+      1636
+    ],
+    "drug": "STS-J01",
+    "acronym": ""
+  },
+  {
+    "query": "PLN-101095 Solid Tumors",
+    "rows": [
+      1641
+    ],
+    "drug": "PLN-101095",
+    "acronym": ""
+  },
+  {
+    "query": "UCART20x22 Non-Hodgkin Lymphoma",
+    "rows": [
+      1645
+    ],
+    "drug": "UCART20x22",
+    "acronym": ""
+  },
+  {
+    "query": "CID-103 Immune Thrombocytopenia",
+    "rows": [
+      1647
+    ],
+    "drug": "CID-103",
+    "acronym": ""
+  },
+  {
+    "query": "Sonrotoclax R/R MCL",
+    "rows": [
+      1649
+    ],
+    "drug": "Sonrotoclax",
+    "acronym": ""
+  },
+  {
+    "query": "VT-1953 Malignant fungating wounds",
+    "rows": [
+      1653
+    ],
+    "drug": "VT-1953",
+    "acronym": ""
+  },
+  {
+    "query": "NHBE GalNAc siRNA (WVE-007) Obesity",
+    "rows": [
+      1654
+    ],
+    "drug": "NHBE GalNAc siRNA (WVE-007)",
+    "acronym": "WVE-007"
+  },
+  {
+    "query": "Relutrigine (PRAX-562) Developmental epileptic encephalopathies",
+    "rows": [
+      1657
+    ],
+    "drug": "Relutrigine (PRAX-562)",
+    "acronym": "PRAX-562"
+  },
+  {
+    "query": "Obe-cel pediatric relapsed or refractory  B-ALL",
+    "rows": [
+      1658
+    ],
+    "drug": "Obe-cel",
+    "acronym": "CATULUS"
+  },
+  {
+    "query": "GPC-100 (burixafor) in combination with propranolol Multiple myeloma",
+    "rows": [
+      1659
+    ],
+    "drug": "GPC-100 (burixafor) in combination with propranolol and G-CSF",
+    "acronym": ""
+  },
+  {
+    "query": "Olverembatinib Acute lymphoblastic leukemia",
+    "rows": [
+      1661
+    ],
+    "drug": "Olverembatinib",
+    "acronym": "POLARIS-1"
+  },
+  {
+    "query": "GRI-0621-IPF-02 Idiopathic pulmonary fibrosis",
+    "rows": [
+      1664
+    ],
+    "drug": "GRI-0621-IPF-02",
+    "acronym": ""
+  },
+  {
+    "query": "Retatrutide (TRIUMPH-4) Obesity with knee osteoarthritis",
+    "rows": [
+      1665
+    ],
+    "drug": "Retatrutide (TRIUMPH-4)",
+    "acronym": "TRIUMPH-4"
+  },
+  {
+    "query": "BHV-1510 with Libtayo Advanced or metastatic epithelial cell tumors",
+    "rows": [
+      1666
+    ],
+    "drug": "BHV-1510 with Libtayo",
+    "acronym": ""
+  },
+  {
+    "query": "4D-710 Cystic fibrosis",
+    "rows": [
+      1681
+    ],
+    "drug": "4D-710",
+    "acronym": "AEROW"
+  },
+  {
+    "query": "Orforglipron Obesity",
+    "rows": [
+      1682
+    ],
+    "drug": "Orforglipron",
+    "acronym": "ATTAIN-MAINTAIN"
+  },
+  {
+    "query": "GLPG3667 Duchenne Muscular",
+    "rows": [
+      1686
+    ],
+    "drug": "GLPG3667",
+    "acronym": "GALARISSO"
+  },
+  {
+    "query": "Fidrisertib Fibrodysplasia ossificans progressiva",
+    "rows": [
+      1688
+    ],
+    "drug": "Fidrisertib",
+    "acronym": "FALKON"
+  },
+  {
+    "query": "Zugocabtagene geleucel (zugo-cel; formerly CTX112) Systemic lupus erythematosus",
+    "rows": [
+      1690
+    ],
+    "drug": "Zugocabtagene geleucel (zugo-cel; formerly CTX112)",
+    "acronym": ""
+  },
+  {
+    "query": "TLX591-CDx Prostate cancer",
+    "rows": [
+      1691
+    ],
+    "drug": "TLX591-CDx",
+    "acronym": ""
+  },
+  {
+    "query": "AGEN1571 with botensilimab Solid tumors",
+    "rows": [
+      1692
+    ],
+    "drug": "AGEN1571 with botensilimab and balstilimab",
+    "acronym": "C-800-01"
+  },
+  {
+    "query": "BHV-7000 Major Depressive Disorder",
+    "rows": [
+      1694
+    ],
+    "drug": "BHV-7000",
+    "acronym": ""
+  },
+  {
+    "query": "BHV-7000 Major depressive disorder",
+    "rows": [
+      1695
+    ],
+    "drug": "BHV-7000",
+    "acronym": ""
+  },
+  {
+    "query": "Acasunlimab (GEN1046 Non-small cell lung cancer",
+    "rows": [
+      1696
+    ],
+    "drug": "Acasunlimab (GEN1046/BNT311)",
+    "acronym": ""
+  },
+  {
+    "query": "GLP-1-H24-4 Diabetes and Weight Loss",
+    "rows": [
+      1699
+    ],
+    "drug": "GLP-1-H24-4",
+    "acronym": ""
+  },
+  {
+    "query": "NMRA-511 Neuropsychiatric",
+    "rows": [
+      1701
+    ],
+    "drug": "NMRA-511",
+    "acronym": ""
+  },
+  {
+    "query": "AXN-2510 Relapsed/Refractory Solid Tumors",
+    "rows": [
+      1706
+    ],
+    "drug": "AXN-2510",
+    "acronym": ""
+  },
+  {
+    "query": "BMB-101 Absence Epilepsy & Dravet Syndrome",
+    "rows": [
+      1707
+    ],
+    "drug": "BMB-101",
+    "acronym": "BREAKTHROUGH"
+  },
+  {
+    "query": "Sovleplenib Warm antibody autoimmune hemolytic anemia",
+    "rows": [
+      1708
+    ],
+    "drug": "Sovleplenib",
+    "acronym": "ESLIM-02"
+  },
+  {
+    "query": "LX2020 PKP2-ACM",
+    "rows": [
+      1717
+    ],
+    "drug": "LX2020",
+    "acronym": "HEROIC-PKP2"
+  },
+  {
+    "query": "Envudeucitinib (ONWARD) Moderate-to-severe plaque psoriasis",
+    "rows": [
+      1719
+    ],
+    "drug": "Envudeucitinib (ONWARD)",
+    "acronym": "ONWARD"
+  },
+  {
+    "query": "NS002 Anaphylaxis",
+    "rows": [
+      1724
+    ],
+    "drug": "NS002",
+    "acronym": ""
+  },
+  {
+    "query": "Amorphous-Rifaximin SSD Prevention of cirrhosis complications",
+    "rows": [
+      1728
+    ],
+    "drug": "Amorphous-Rifaximin SSD",
+    "acronym": "RED-C"
+  },
+  {
+    "query": "Revita Obesity",
+    "rows": [
+      1733
+    ],
+    "drug": "Revita",
+    "acronym": "REMAIN-1"
+  },
+  {
+    "query": "MCS-8 (PCP) Urinary system diseases",
+    "rows": [
+      1735
+    ],
+    "drug": "MCS-8 (PCP)",
+    "acronym": "PCP"
+  },
+  {
+    "query": "MET-097i Obesity",
+    "rows": [
+      1737
+    ],
+    "drug": "MET-097i",
+    "acronym": "VESPER-4"
+  },
+  {
+    "query": "AVT80 (biosimilar to Entyvio) Healthy volunteers",
+    "rows": [
+      1739
+    ],
+    "drug": "AVT80 (biosimilar to Entyvio)",
+    "acronym": "AVT80-GL-P01"
+  },
+  {
+    "query": "Ameluz Actinic keratosis on the extremities",
+    "rows": [
+      1742
+    ],
+    "drug": "Ameluz and BF-RhodoLED XL",
+    "acronym": ""
+  },
+  {
+    "query": "EVO301 Atopic Dermatitis",
+    "rows": [
+      1745
+    ],
+    "drug": "EVO301",
+    "acronym": ""
+  },
+  {
+    "query": "TONMYA cyclobenzaprine (RESILIENT) Fibromyalgia",
+    "rows": [
+      1746
+    ],
+    "drug": "TONMYA cyclobenzaprine (RESILIENT)",
+    "acronym": "RESILIENT"
+  },
+  {
+    "query": "Verekitug Severe asthma",
+    "rows": [
+      1747
+    ],
+    "drug": "Verekitug",
+    "acronym": "VALIANT"
+  },
+  {
+    "query": "eDSP (NEAT) Ataxia-telangiectasia",
+    "rows": [
+      1749
+    ],
+    "drug": "eDSP (NEAT)",
+    "acronym": "NEAT"
+  },
+  {
+    "query": "QTORIN rapamycin (SELVA) Microcystic lymphatic malformations",
+    "rows": [
+      1750
+    ],
+    "drug": "QTORIN rapamycin (SELVA)",
+    "acronym": "SELVA"
+  },
+  {
+    "query": "Seralutinib (PROSERA) Pulmonary arterial hypertension",
+    "rows": [
+      1751
+    ],
+    "drug": "Seralutinib (PROSERA)",
+    "acronym": "PROSERA"
+  }
+]

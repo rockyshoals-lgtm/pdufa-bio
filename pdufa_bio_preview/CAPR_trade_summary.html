@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade Ledger — CAPR — Jun 17 2026</title>
+<style>
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  :root{
+    --ink:#1b2722; --muted:#5c6b64; --teal:#0d9488; --teal-deep:#0f6e56;
+    --gain:#15803d; --line:#e3eae7; --panel:#f6f9f8; --paper:#ffffff;
+  }
+  html,body{ margin:0; }
+  body{
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color:var(--ink); background:#eef2f0; line-height:1.4; -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    position:relative; background:var(--paper); max-width:760px; margin:26px auto;
+    padding:46px 52px 38px; border:1px solid var(--line); border-radius:2px;
+  }
+  .sheet::before{ content:""; position:absolute; top:0; left:0; right:0; height:4px; background:var(--teal); border-radius:2px 2px 0 0; }
+
+  header{ display:flex; justify-content:space-between; align-items:baseline; padding-bottom:18px; border-bottom:1px solid var(--line); }
+  .wordmark{ font-size:17px; font-weight:800; letter-spacing:.01em; color:var(--teal-deep); }
+  .wordmark span{ color:var(--teal); }
+  .docmeta{ text-align:right; font-size:11px; color:var(--muted); line-height:1.5; }
+  .docmeta b{ color:var(--ink); font-weight:600; }
+
+  .eyebrow{ text-transform:uppercase; letter-spacing:.15em; font-size:10.5px; font-weight:700; color:var(--muted); }
+
+  .hero{ padding:26px 0 22px; border-bottom:1px solid var(--line); }
+  .hero .ticker{ font-size:14px; font-weight:600; color:var(--ink); margin:6px 0 10px; }
+  .hero .ticker em{ font-style:normal; color:var(--muted); font-weight:400; }
+  .gainrow{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .gain{ font-size:48px; font-weight:800; color:var(--gain); letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1; }
+  .pct{ display:inline-block; background:rgba(13,148,136,.12); color:var(--teal-deep); font-weight:700;
+        font-size:16px; padding:5px 11px; border-radius:6px; font-variant-numeric:tabular-nums; }
+  .herolabel{ font-size:12.5px; color:var(--muted); margin-top:12px; }
+
+  .sec{ margin-top:26px; }
+  .sec h2{ font-size:10.5px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); font-weight:700; margin:0 0 12px; }
+
+  table{ width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+  th{ text-align:right; text-transform:uppercase; letter-spacing:.06em; font-size:10px; color:var(--muted);
+      font-weight:700; padding:0 0 8px; border-bottom:1px solid var(--line); }
+  th.l, td.l{ text-align:left; }
+  td{ text-align:right; padding:10px 0; border-bottom:1px solid var(--line); font-size:13px; }
+  td.l .acct{ font-weight:600; } td.l .sub{ font-size:11px; color:var(--muted); }
+  .pos{ color:var(--gain); font-weight:600; }
+  tr.total td{ border-top:2px solid var(--ink); border-bottom:none; font-weight:800; font-size:14px; padding-top:12px; }
+  tr.total td.l .acct{ font-weight:800; }
+  tr.total .pos{ font-weight:800; }
+
+  .note{ font-size:12.5px; line-height:1.6; color:#33403a; max-width:64ch; }
+  .detail{ font-size:11.5px; line-height:1.65; color:var(--muted); }
+  .detail b{ color:var(--ink); font-weight:600; }
+
+  footer{ margin-top:30px; padding-top:14px; border-top:1px solid var(--line);
+           display:flex; justify-content:space-between; gap:16px; font-size:10px; color:var(--muted); }
+
+  .actions{ max-width:760px; margin:0 auto 8px; text-align:right; }
+  .actions button{ font:inherit; font-size:12px; font-weight:600; color:#fff; background:var(--teal-deep);
+                   border:none; padding:9px 16px; border-radius:6px; cursor:pointer; }
+  .actions button:hover{ background:#0c5b47; }
+
+  @media print{
+    body{ background:#fff; }
+    .sheet{ margin:0; border:none; border-radius:0; padding:0 8px; max-width:none; }
+    .sheet::before{ display:none; }
+    .actions{ display:none; }
+    tr, td, th{ page-break-inside:avoid; }
+    @page{ size:letter; margin:0.7in; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="actions"><button onclick="window.print()">Print / Save as PDF</button></div>
+
+  <div class="sheet">
+    <header>
+      <div class="wordmark">pdufa<span>.bio</span></div>
+      <div class="docmeta">
+        <div class="eyebrow">Trade Ledger</div>
+        <div style="margin-top:4px;">Prepared for <b>David &amp; Anna</b> · Co-owners</div>
+        <div>As of <b>June 17, 2026</b></div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Realized result · closed position</div>
+      <div class="ticker">CAPR &nbsp;<em>Capricor Therapeutics</em></div>
+      <div class="gainrow">
+        <div class="gain">+$5,014.25</div>
+        <div class="pct">+7.43%</div>
+      </div>
+      <div class="herolabel">Net realized gain on $67,494.44 deployed across two accounts · bought Jun 11–15, sold Jun 17, 2026.</div>
+    </section>
+
+    <section class="sec">
+      <h2>Breakdown by account</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="l">Account</th>
+            <th>Opened</th><th>Closed</th><th>Days</th><th>Shares</th>
+            <th>Cost</th><th>Proceeds</th><th>Net P&amp;L</th><th>Return</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="l"><span class="acct">Merrill Lynch</span></td>
+            <td>Jun 15</td><td>Jun 17</td><td>2</td><td>1,972</td>
+            <td>$52,109.46</td><td>$55,354.87</td><td class="pos">+$3,245.41</td><td class="pos">+6.23%</td>
+          </tr>
+          <tr>
+            <td class="l"><span class="acct">thinkorswim</span></td>
+            <td>Jun 11</td><td>Jun 17</td><td>6</td><td>611</td>
+            <td>$15,384.98</td><td>$17,153.83</td><td class="pos">+$1,768.85</td><td class="pos">+11.50%</td>
+          </tr>
+          <tr class="total">
+            <td class="l"><span class="acct">Combined</span></td>
+            <td>Jun 11</td><td>Jun 17</td><td>—</td><td>2,583</td>
+            <td>$67,494.44</td><td>$72,508.69</td><td class="pos">+$5,014.25</td><td class="pos">+7.43%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="sec">
+      <h2>What this trade was</h2>
+      <p class="note">Capricor Therapeutics (CAPR) is developing deramiocel, a cell therapy for Duchenne muscular dystrophy. The FDA is scheduled to decide whether to approve it by August 22, 2026. In the run-up to a June 17 court hearing in Capricor's distribution dispute with its commercial partner, NS Pharma, the shares moved higher. We held the position into that strength across both brokerage accounts and closed it on June 17 for a combined gain of $5,014.25 (+7.43%). Setup type: <b>PDUFA run-up</b>.</p>
+    </section>
+
+    <section class="sec">
+      <h2>Execution detail</h2>
+      <p class="detail">
+        <b>Merrill Lynch</b> — Bought Jun 15: 100 @ $26.3725, 700 @ $26.3750, 1,172 @ $26.4588. &nbsp;Sold Jun 17: 411 @ $28.1100, 1,561 @ $28.0600.<br>
+        <b>thinkorswim</b> — Bought Jun 11: 611 @ $25.1800. &nbsp;Sold Jun 17: 611 @ $28.0750.
+      </p>
+    </section>
+
+    <footer>
+      <div>Realized, fully closed positions. Figures from broker fills (Merrill Lynch, thinkorswim).</div>
+      <div>Generated Jun 17, 2026 · Internal review</div>
+    </footer>
+  </div>
+
+</body>
+</html>

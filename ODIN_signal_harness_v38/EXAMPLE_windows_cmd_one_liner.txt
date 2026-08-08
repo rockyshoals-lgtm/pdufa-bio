@@ -1,0 +1,2 @@
+REM Example (edit paths)
+run_v38a_signal_discovery.cmd --dataset "C:\path\to\ODIN_ENRICHED_PDUFA_1349_v2.csv" --baseline-config "C:\path\to\ODIN_v88_UNIFIED_CONFIG.json" --outdir "C:\path\to\odin_runs\v38.b" --version v38.b --ram-mode dynamic --ram-frac-available 0.35 --ram-reserve-gb 4 --ram-recompute-every-s 1.0

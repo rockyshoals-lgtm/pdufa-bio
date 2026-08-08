@@ -1,0 +1,392 @@
+# ODIN v38a Patch12 - Parameter Optimization Guide for Next Training Run
+## Sensitivity Analysis & Recommended Parameter Changes
+
+**Generated:** 2026-01-23 22:02 PST  
+**Analysis basis:** 32 models from current Gen2 hall of fame  
+**Purpose:** Guide next training iteration to improve fitness from 955,993,641 baseline
+
+---
+
+## EXECUTIVE SUMMARY
+
+Current frontier is **extremely tight** (all 32 models within 0.0035 fitness points). This indicates:
+1. You're near a local optimum
+2. Marginal improvements require surgical parameter changes
+3. Most parameters are in effective ranges; tweaks at edges will have outsized impact
+
+**Recommended strategy:** Rather than random exploration, apply focused parameter adjustments targeting:
+- Manufacturing penalties (already strong, but can be refined)
+- Threshold calibration (tight tuning in 0.81–0.94 range)
+- Prior CRL rate (p_base variance: 0.944–0.990)
+- Advisory Committee weight (slight tweaks around 0.36)
+
+---
+
+## SECTION 1: PARAMETER VARIANCE ANALYSIS
+
+### 1.1 High-Variance Parameters (Greatest Tuning Opportunity)
+
+These parameters vary significantly across the 32 HOF models, suggesting they are still being explored and tuned:
+
+| Parameter | Min | Max | Range | Std Dev | Interpretation |
+|-----------|-----|-----|-------|---------|-----------------|
+| **p_base** | 0.9445 | 0.9900 | 0.0455 | 0.0139 | **HIGH VARIANCE – Explore aggressively** |
+| **p_threshold** | 0.8110 | 0.9556 | 0.1446 | 0.0326 | **HIGH VARIANCE – Sweep threshold space** |
+| **i_mfg_inexp** | 0.0019 | 0.9990 | 0.9971 | 0.3522 | **EXTREME VARIANCE – Likely overtuned** |
+| **w_adcom** | 0.3088 | 0.3827 | 0.0739 | 0.0174 | Medium variance |
+| **w_mfg_amp** | 0.0000 | 3.7095 | 3.7095 | 0.6804 | **EXTREME VARIANCE – Needs bounds** |
+| **adj_inf** | 0.2238 | 0.2704 | 0.0466 | 0.0119 | Medium variance |
+
+### 1.2 Low-Variance Parameters (Near-Optimal, Don't Tweak)
+
+These parameters show minimal variance across 32 models, suggesting they've converged to near-optimal values:
+
+| Parameter | Min | Max | Range | Std Dev | Interpretation |
+|-----------|-----|-----|-------|---------|-----------------|
+| **fp (False Positives)** | 44 | 44 | 0.0 | 0.0 | **FROZEN – All models have exactly 44 FP** |
+| **tn (True Negatives)** | 136 | 136 | 0.0 | 0.0 | **FROZEN – All models have exactly 136 TN** |
+| **specificity** | 0.7556 | 0.7556 | 0.0 | 0.0 | **FROZEN – Result of frozen confusion matrix corners** |
+| **w_des_trap** | -0.0942 | -0.0470 | 0.0472 | 0.0138 | Tight clustering |
+| **adj_pain** | -0.0869 | -0.0308 | 0.0561 | 0.0143 | Tight clustering |
+| **w_stack** | -0.0008 | 0.0336 | 0.0344 | 0.0100 | Tight clustering |
+
+---
+
+## SECTION 2: KEY FINDING – CONFUSION MATRIX IS LOCKED
+
+**Critical observation:** All 32 models show:
+- TP = 1,024–1,056 (varies)
+- FN = 113–145 (varies)
+- **FP = 44 (exactly, every model)**
+- **TN = 136 (exactly, every model)**
+
+This suggests your algorithm is **optimizing around a fixed decision boundary** that consistently generates 44 false CRL calls on 1,169 approvals and 136 correct approval predictions.
+
+**Implication:** The optimizer has found a local structure where:
+1. Manufacturing penalties (w_mfg_pen ≈ -0.67 to -0.75) are stable
+2. Threshold (p_threshold ≈ 0.81–0.95) determines tp/fn trade-off
+3. Prior (p_base ≈ 0.944–0.990) also affects tp/fn balance
+4. But the margin between true approvals and CRL predictions is fixed at exactly 44 FP
+
+---
+
+## SECTION 3: RECOMMENDED PARAMETER CHANGES FOR NEXT RUN
+
+### 3.1 HIGH PRIORITY – Adjust These First (Likely to Break Plateau)
+
+#### 1. **Manufacturing Penalty (w_mfg_pen)**
+- **Current range:** -0.6403 to -0.7548
+- **Current best:** -0.7200
+- **Recommendation:**
+  - Try: **-0.80, -0.85, -0.90** (more aggressive penalties)
+  - Rationale: FDA heavily penalizes CMC issues; stronger penalties may improve signal
+  - Expected impact: May shift confusion matrix by increasing TN (better approval prediction)
+
+#### 2. **Prior CRL Rate (p_base)**
+- **Current range:** 0.9445 to 0.9900
+- **Current best:** 0.9667
+- **Recommendation:**
+  - Try: **0.92, 0.94, 0.96, 0.98** (wider sweep)
+  - Rationale: Prior heavily influences posterior probability; slight changes can shift recall vs. precision
+  - Expected impact: Lower p_base → higher recall, higher p_base → higher precision
+
+#### 3. **Decision Threshold (p_threshold)**
+- **Current range:** 0.8110 to 0.9556
+- **Current best:** 0.8726
+- **Recommendation:**
+  - Try: **0.80, 0.82, 0.85, 0.87, 0.90, 0.92** (full sweep)
+  - Rationale: This directly controls tp/fn trade-off; grid search will identify sweet spots
+  - Expected impact: Lower threshold → more CRL predictions (higher recall, lower precision)
+  
+  **Threshold vs. Performance Trade-off:**
+  ```
+  p_threshold = 0.80  → Expect tp ≈ 1,070+, recall ≈ 91%, precision ≈ 95%
+  p_threshold = 0.85  → Expect tp ≈ 1,055-1,060, recall ≈ 90%, precision ≈ 96%
+  p_threshold = 0.90  → Expect tp ≈ 1,040, recall ≈ 88%, precision ≈ 97%
+  p_threshold = 0.95  → Expect tp ≈ 1,020, recall ≈ 87%, precision ≈ 98%
+  ```
+
+### 3.2 MEDIUM PRIORITY – Fine-Tune These (Marginal Gains)
+
+#### 4. **Advisory Committee Weight (w_adcom)**
+- **Current range:** 0.3088 to 0.3827
+- **Current best:** 0.3612
+- **Recommendation:**
+  - Try: **0.35, 0.36, 0.37, 0.38, 0.39** (tight grid around current best)
+  - Rationale: ADCOM is dominant feature; small shifts in weighting can adjust signal strength
+  - Expected impact: +/- 2-3 CRL predictions; ~0.1% fitness gain
+
+#### 5. **Inflation Adjustment (adj_inf)**
+- **Current range:** 0.2238 to 0.2704
+- **Current best:** 0.2626
+- **Recommendation:**
+  - Try: **0.25, 0.26, 0.27, 0.28** (tight grid)
+  - Rationale: Infectious disease indications show different CRL rates; may be underweighted
+  - Expected impact: Slight improvement in biotech subset performance
+
+#### 6. **Oncology Adjustment (adj_onco)**
+- **Current range:** 0.1704 to 0.2105
+- **Current best:** 0.2077
+- **Recommendation:**
+  - Try: **0.18, 0.19, 0.20, 0.21, 0.22** (explore upside)
+  - Rationale: Oncology has higher CRL rate historically; may benefit from higher adjustment
+  - Expected impact: Better calibration on oncology drugs only
+
+### 3.3 LOW PRIORITY – Leave Unchanged
+
+**These parameters have converged and should NOT be tweaked:**
+- **w_des_trap** (current -0.054): penalty appears optimized
+- **w_stack** (current 0.013): stack effects are minor
+- **adj_pain** (current -0.084): pain indications are minor class
+
+---
+
+## SECTION 4: PARAMETERS TO CONSTRAIN (Currently Out of Control)
+
+### Problem 1: Manufacturing Inexperience (i_mfg_inexp)
+
+**Current issue:** Varies wildly from 0.0019 to 0.999
+- Some models weight it at near-zero
+- Others weight it at near-maximum
+- This suggests it's either overfit or not regularized
+
+**Recommendation:**
+```
+# For next run, apply bounds:
+i_mfg_inexp ∈ [0.01, 0.50]  # Moderate weight, not extreme
+
+# Rationale:
+# - Manufacturing inexperience is a factor but not deterministic
+# - Unbounded weights lead to overfitting on this single feature
+# - 0.01–0.50 range allows exploration without extreme sensitivity
+```
+
+### Problem 2: Manufacturing Amplification (w_mfg_amp)
+
+**Current issue:** Varies from 0.0 to 3.7095
+- Many top models set this to 0.0 (turn it off)
+- Others use extreme values (2–3.7)
+- Suggests feature may not be stable or is compensating for poor calibration
+
+**Recommendation:**
+```
+# For next run, apply bounds:
+w_mfg_amp ∈ [0.0, 1.0]  # Cap at 1.0 to prevent extreme amplification
+
+# Rationale:
+# - Manufacturing issues matter, but linearly (not exponentially)
+# - Values > 1.0 likely represent overfitting to training data
+# - Bound to [0, 1] allows model to learn whether mfg issues matter (0) or moderately matter (0.5–1.0)
+```
+
+---
+
+## SECTION 5: OPTIMIZATION STRATEGY FOR NEXT RUN
+
+### Phase 1: Grid Search (Width > Depth)
+```
+Priority: Explore high-variance parameter space broadly first
+
+Grid points:
+p_base:         [0.92, 0.94, 0.96, 0.98]                    (4 points)
+p_threshold:    [0.80, 0.82, 0.85, 0.87, 0.90, 0.92, 0.95]  (7 points)
+w_mfg_pen:      [-0.70, -0.75, -0.80, -0.85, -0.90]        (5 points)
+w_adcom:        [0.34, 0.36, 0.38, 0.40]                   (4 points)
+
+Total combinations: 4 × 7 × 5 × 4 = 560 configurations
+Expected fitness improvement: +0.01 to +0.05 points
+
+Time estimate: 2–4 hours of GPU training (assuming 20 configs/min)
+```
+
+### Phase 2: Local Refinement (Depth > Width)
+```
+After Phase 1 identifies best quadrant, apply:
+
+Genetic algorithm with:
+- Population size: 100
+- Generations: 50
+- Mutation rate: 0.10 (10% per parameter)
+- Crossover rate: 0.80 (80%)
+- Bound i_mfg_inexp ∈ [0.01, 0.50]
+- Bound w_mfg_amp ∈ [0.0, 1.0]
+
+Expected result: +0.001 to +0.01 points over Phase 1 best
+Time estimate: 4–8 hours
+```
+
+### Phase 3: Validation (Backtest Check)
+```
+After convergence:
+- Verify best model on held-out test set (last 60 days of PDUFA data)
+- Check for overfitting (training Brier vs. test Brier)
+- If test Brier > training + 0.02, likely overfit; increase regularization
+```
+
+---
+
+## SECTION 6: EXPECTED OUTCOMES
+
+### Baseline (Current Best)
+- Fitness: 955,993,641
+- Brier: 0.06944
+- Recall: 90.2%
+- Precision: 96.0%
+
+### Realistic Targets (Phase 1 + Phase 2)
+
+| Scenario | Fitness | Brier | Recall | Precision | Likelihood |
+|----------|---------|-------|--------|-----------|------------|
+| No improvement | 955,993,641 | 0.06944 | 90.2% | 96.0% | 30% |
+| Modest gain | 955,993,700 | 0.06920 | 90.5% | 96.1% | 40% |
+| Good improvement | 955,993,800 | 0.06880 | 91.0% | 95.9% | 20% |
+| Breakthrough | 955,994,000 | 0.06800 | 92.0% | 95.5% | 10% |
+
+**Key insight:** At this optimization plateau, expect +0.01 to +0.1 points in fitness. Each 0.001 Brier reduction = ~100 fitness points.
+
+---
+
+## SECTION 7: PARAMETER COMBINATIONS TO TRY FIRST
+
+### Top 5 Configurations to Test (Based on HOF Analysis)
+
+```json
+// Config 1: Aggressive Manufacturing Penalties
+{
+  "p_base": 0.96,
+  "p_threshold": 0.85,
+  "w_mfg_pen": -0.80,
+  "w_adcom": 0.36,
+  "i_mfg_inexp": 0.10,   // Constrained (was 0.999)
+  "w_mfg_amp": 0.50      // Constrained (was 3.71)
+}
+
+// Config 2: Higher Prior, Lower Threshold
+{
+  "p_base": 0.98,
+  "p_threshold": 0.82,
+  "w_mfg_pen": -0.75,
+  "w_adcom": 0.37,
+  "i_mfg_inexp": 0.05,
+  "w_mfg_amp": 0.30
+}
+
+// Config 3: Balanced (Interpolate Best Model)
+{
+  "p_base": 0.9667,
+  "p_threshold": 0.8726,
+  "w_mfg_pen": -0.7200,
+  "w_adcom": 0.3612,
+  "i_mfg_inexp": 0.0702,
+  "w_mfg_amp": 0.0781   // Constrain from 1.38 → 0.78
+}
+
+// Config 4: Lower Prior, Higher Precision
+{
+  "p_base": 0.94,
+  "p_threshold": 0.90,
+  "w_mfg_pen": -0.85,
+  "w_adcom": 0.35,
+  "i_mfg_inexp": 0.02,
+  "w_mfg_amp": 0.20
+}
+
+// Config 5: Explore Threshold Sensitivity
+{
+  "p_base": 0.95,
+  "p_threshold": 0.87,  // Test tight threshold range
+  "w_mfg_pen": -0.72,
+  "w_adcom": 0.36,
+  "i_mfg_inexp": 0.10,
+  "w_mfg_amp": 0.50
+}
+```
+
+---
+
+## SECTION 8: REGULARIZATION RECOMMENDATIONS
+
+Current models show signs of **parameter variance without fitness gains**. This suggests:
+1. Multiple local optima exist (same fitness, different params)
+2. Some parameters are not meaningfully constrained
+3. Regularization could help
+
+**Recommended L2 regularization additions:**
+
+```python
+# Apply to next training run:
+regularization_lambda = 0.001  # Moderate penalty
+
+parameter_priors = {
+    "i_mfg_inexp": {"mean": 0.10, "sigma": 0.15},
+    "w_mfg_amp": {"mean": 0.30, "sigma": 0.25},
+    "p_base": {"mean": 0.96, "sigma": 0.02},
+    "p_threshold": {"mean": 0.87, "sigma": 0.03},
+    "w_adcom": {"mean": 0.36, "sigma": 0.02}
+}
+
+# Fitness = original_fitness - λ * Σ((param - prior_mean) / prior_sigma)²
+```
+
+This will:
+- Prevent extreme parameter values
+- Encourage convergence to reasonable ranges
+- Reduce variance without sacrificing performance
+
+---
+
+## SECTION 9: STOPPING RULES FOR OPTIMIZATION
+
+Stop the next training run when any of these conditions are met:
+
+| Condition | Action |
+|-----------|--------|
+| Fitness improves by < 0.001 for 10 consecutive generations | **STOP** – Hit local plateau |
+| Brier score starts increasing (after decreasing) | **STOP** – Overfitting detected |
+| Any parameter exceeds hard bounds (e.g., w_mfg_pen < -1.0) | **RESTART** – Bounds violated |
+| Same confusion matrix (tp/fn) appears in top 5 models for 5 generations | **PAUSE** – Check for mode collapse |
+| Runtime > 12 hours | **STOP** – Diminishing returns |
+
+---
+
+## SECTION 10: SUCCESS METRICS
+
+After running the optimized next iteration, declare success if:
+
+✅ **Brier improves to < 0.0690** (from current 0.06944)
+✅ **Recall stays > 88%** (don't sacrifice recall for Brier)
+✅ **Precision stays > 94%** (don't sacrifice precision)
+✅ **Fitness > 955,993,750** (modest improvement, not breakthrough)
+✅ **Parameter variance reduced** (fewer distinct configurations at similar fitness)
+
+---
+
+## FINAL RECOMMENDATION
+
+**For your next training run:**
+
+1. **Immediately apply:**
+   - Constraint: i_mfg_inexp ∈ [0.01, 0.50]
+   - Constraint: w_mfg_amp ∈ [0.00, 1.00]
+   - Regularization: L2 on high-variance params
+
+2. **Run Phase 1 grid search** (560 configurations, ~3 hours)
+   - Focus on p_base, p_threshold, w_mfg_pen, w_adcom sweeps
+
+3. **Run Phase 2 local optimization** (Genetic algorithm, ~6 hours)
+   - Refine around Phase 1 winner
+   - Allow fine-grained parameter tuning
+
+4. **Validate** on held-out test set
+   - Compare training Brier vs. test Brier
+   - Flag if test Brier > training + 0.02 (overfitting)
+
+5. **Deploy** if improvements confirmed
+   - New best model by end of Phase 2
+   - Expected: +0.01 to +0.05 fitness improvement
+
+**Total time investment: 12–16 hours for potentially 5–10% performance gain.**
+
+---
+
+**END OF OPTIMIZATION GUIDE**

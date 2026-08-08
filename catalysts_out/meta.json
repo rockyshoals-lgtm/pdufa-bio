@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-07-24T12:34:14Z",
+  "catalysts": 849,
+  "cadence": "5x/trading day",
+  "counts": {
+    "new": 125,
+    "moved": 12,
+    "dropped": 124,
+    "corrections": 0
+  }
+}

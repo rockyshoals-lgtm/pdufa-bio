@@ -1,0 +1,1079 @@
+{
+  "generated": "2026-06-29_1305",
+  "n": 35,
+  "weights": {
+    "price": 25,
+    "volume": 20,
+    "options": 15,
+    "short": 15,
+    "news": 15,
+    "social": 10
+  },
+  "social_weights": {
+    "lunarcrush": 0.4,
+    "reddit": 0.35,
+    "stocktwits": 0.25
+  },
+  "disclaimer": "Informational/educational only - not investment advice.",
+  "results": [
+    {
+      "ticker": "MU",
+      "score": 28.3,
+      "uoa_score": 82.4,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 10433630.0,
+      "kind": "UOA_LEADER",
+      "biotech": false,
+      "price": 1145.28,
+      "day_change_pct": 1.14,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.95,
+        "volume": 0.0,
+        "options": 12.36,
+        "short": 0.0,
+        "news": 15,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$10.4M_BEARISH",
+        "SWEEP_CLUSTER",
+        "FRESH_CATALYST",
+        "ANALYST_UPGRADE_x12"
+      ],
+      "headline": "Micron's monster post-earnings rally is almost gone. Traders divided on where it goes next",
+      "sector": "Technology",
+      "market_cap": 1293467779200,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "SPCX",
+      "score": 29.2,
+      "uoa_score": 75.4,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 2268974.0,
+      "kind": "UOA_LEADER",
+      "biotech": false,
+      "price": 164.06,
+      "day_change_pct": 7.06,
+      "rel_volume": 0,
+      "components": {
+        "price": 5.89,
+        "volume": 0.0,
+        "options": 11.31,
+        "short": 0.0,
+        "news": 12.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$2.3M_BULLISH",
+        "SWEEP_CLUSTER",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Musk Is A Trillionaire Again: SpaceX And Tesla Boost Net Worth By $50 Billion",
+      "sector": "Industrials",
+      "market_cap": 2145161105087,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "TSLA",
+      "score": 27.6,
+      "uoa_score": 66.9,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 3770233.0,
+      "kind": "UOA_LEADER",
+      "biotech": false,
+      "price": 411.84,
+      "day_change_pct": 8.46,
+      "rel_volume": 0,
+      "components": {
+        "price": 7.05,
+        "volume": 0.0,
+        "options": 10.04,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$3.8M_BULLISH",
+        "VOL>>OI",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Musk Is A Trillionaire Again: SpaceX And Tesla Boost Net Worth By $50 Billion",
+      "sector": "Consumer Cyclical",
+      "market_cap": 1546755724800,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "SNDK",
+      "score": 22.5,
+      "uoa_score": 56.6,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 1518907.0,
+      "kind": "WATCH",
+      "biotech": false,
+      "price": 2050.39,
+      "day_change_pct": -1.93,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 8.49,
+        "short": 0.0,
+        "news": 14.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$1.5M_BULLISH",
+        "FRESH_CATALYST",
+        "ANALYST_UPGRADE_x1"
+      ],
+      "headline": "Citi Just Slapped a Massive $2,500 Price Target on SanDisk. Here's Why They're So Bullish",
+      "sector": "Technology",
+      "market_cap": 303641742503,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "QCOM",
+      "score": 23.4,
+      "uoa_score": 56.1,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 5409620.0,
+      "kind": "WATCH",
+      "biotech": false,
+      "price": 188.73,
+      "day_change_pct": -0.35,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 8.42,
+        "short": 0.0,
+        "news": 15,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$5.4M_BULLISH",
+        "FRESH_CATALYST",
+        "ANALYST_UPGRADE_x4"
+      ],
+      "headline": "Have $2,000? Buy These 3 Stocks and Hold for the Next Decade.",
+      "sector": "Technology",
+      "market_cap": 198921420000,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "PCVX",
+      "score": 10.1,
+      "uoa_score": 55.3,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 6033740.0,
+      "kind": "WATCH",
+      "biotech": true,
+      "price": 57.72,
+      "day_change_pct": 2.12,
+      "rel_volume": 0,
+      "components": {
+        "price": 1.77,
+        "volume": 0.0,
+        "options": 8.29,
+        "short": 0.0,
+        "news": 0.0,
+        "social": 0.0
+      },
+      "flags": [
+        "UOA_$6.0M_BEARISH",
+        "BIOTECH"
+      ],
+      "headline": "",
+      "sector": "Healthcare",
+      "market_cap": 8334634205,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "CVX",
+      "score": 18.3,
+      "uoa_score": 52.2,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 1657431.0,
+      "kind": "WATCH",
+      "biotech": false,
+      "price": 168.43,
+      "day_change_pct": -1.54,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 7.83,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$1.7M_BULLISH",
+        "FRESH_CATALYST"
+      ],
+      "headline": "After a Weekend of Skirmishes, the U.S. and Iran Agree to Halt Hostilities. Here's What it Means for Energy Investors.",
+      "sector": "Energy",
+      "market_cap": 335445188000,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "TER",
+      "score": 18.7,
+      "uoa_score": 47.7,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 387040.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 463.28,
+      "day_change_pct": 6.05,
+      "rel_volume": 0,
+      "components": {
+        "price": 5.04,
+        "volume": 0.0,
+        "options": 9.64,
+        "short": 0.0,
+        "news": 4.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$387K_BULLISH",
+        "VOL>>OI",
+        "ANALYST_UPGRADE_x2"
+      ],
+      "headline": "",
+      "sector": "Technology",
+      "market_cap": 72523478980,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "GM",
+      "score": 11.6,
+      "uoa_score": 47.5,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 372841.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 77.35,
+      "day_change_pct": -0.96,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 7.12,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$373K_BEARISH",
+        "VOL>>OI"
+      ],
+      "headline": "US Car Company Trouble As VW Lays Off 100,000",
+      "sector": "Consumer Cyclical",
+      "market_cap": 69743801457,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "MSTR",
+      "score": 21.7,
+      "uoa_score": 44.7,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 1705364.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 92.68,
+      "day_change_pct": 12.6,
+      "rel_volume": 0,
+      "components": {
+        "price": 10.5,
+        "volume": 0.0,
+        "options": 6.71,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$1.7M_BEARISH"
+      ],
+      "headline": "Big Shorts In Palantir, Rocket Lab, MSTR Crush S&P 500 In June's Hottest Trades",
+      "sector": "Technology",
+      "market_cap": 27532696724,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "MXL",
+      "score": 21.4,
+      "uoa_score": 44.5,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 761553.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 108.47,
+      "day_change_pct": 12.29,
+      "rel_volume": 0,
+      "components": {
+        "price": 10.24,
+        "volume": 0.0,
+        "options": 6.67,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$762K_BEARISH",
+        "VOL>>OI"
+      ],
+      "headline": "MaxLinear: Quietly Riding The AI Wave",
+      "sector": "Technology",
+      "market_cap": 9713050173,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "BBWI",
+      "score": 29.4,
+      "uoa_score": 43.8,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 861290.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 23.51,
+      "day_change_pct": 2.84,
+      "rel_volume": 0,
+      "components": {
+        "price": 2.37,
+        "volume": 0.0,
+        "options": 15.0,
+        "short": 0.0,
+        "news": 12.0,
+        "social": 0.0
+      },
+      "flags": [
+        "OPTIONS_SPIKE",
+        "CALL_SWEEPS",
+        "UOA_$861K_BULLISH",
+        "VOL>>OI",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Bath & Body Works: Ulta Beauty Partnership Adds To An Already Compelling Value Story",
+      "sector": "Consumer Cyclical",
+      "market_cap": 4738718246,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "CBRS",
+      "score": 43.7,
+      "uoa_score": 28.3,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 1301769.0,
+      "kind": "WATCH",
+      "biotech": false,
+      "price": 216.16,
+      "day_change_pct": 19.04,
+      "rel_volume": 0,
+      "components": {
+        "price": 15.86,
+        "volume": 0.0,
+        "options": 12.88,
+        "short": 0.0,
+        "news": 15,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$1.3M_MIXED",
+        "FRESH_CATALYST",
+        "ANALYST_UPGRADE_x4"
+      ],
+      "headline": "Why Cerebras Stock Is Skyrocketing Today",
+      "sector": "Technology",
+      "market_cap": 48171375104,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "MSFT",
+      "score": 17.8,
+      "uoa_score": 39.6,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 852787.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 368.57,
+      "day_change_pct": -1.18,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 7.32,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$853K_BULLISH",
+        "FRESH_CATALYST"
+      ],
+      "headline": "\u201cBig Short\u201d Legend Michael Burry Just Bet Big on Microsoft",
+      "sector": "Technology",
+      "market_cap": 2737896445100,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "C",
+      "score": 13.3,
+      "uoa_score": 38.4,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 456610.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 142.52,
+      "day_change_pct": 0.54,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.45,
+        "volume": 0.0,
+        "options": 6.36,
+        "short": 0.0,
+        "news": 6.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$457K_BULLISH",
+        "ANALYST_UPGRADE_x1"
+      ],
+      "headline": "Citigroup Bets Big on AI to Drive Efficiency & Long-Term Growth",
+      "sector": "Financial Services",
+      "market_cap": 244408973200,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "CHTR",
+      "score": 31.1,
+      "uoa_score": 38.2,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 425189.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 146.17,
+      "day_change_pct": 9.38,
+      "rel_volume": 0,
+      "components": {
+        "price": 7.81,
+        "volume": 0.0,
+        "options": 12.75,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$425K_BULLISH",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Charter to Hold Webcast to Discuss Second Quarter 2026 Financial and Operating Results",
+      "sector": "Communication Services",
+      "market_cap": 20636042197,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "ALB",
+      "score": 10.1,
+      "uoa_score": 37.3,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 530080.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 129.74,
+      "day_change_pct": -2.96,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 5.59,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$530K_BULLISH"
+      ],
+      "headline": "Lithium Is on the Rise Again. Does That Make Albemarle a Buy?",
+      "sector": "Basic Materials",
+      "market_cap": 15300841621,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "STX",
+      "score": 18.1,
+      "uoa_score": 37.3,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 511700.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 968.53,
+      "day_change_pct": 7.63,
+      "rel_volume": 0,
+      "components": {
+        "price": 6.36,
+        "volume": 0.0,
+        "options": 7.26,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$512K_BEARISH"
+      ],
+      "headline": "3 AI Infrastructure Stocks Up 500%+ With More Upside in 2H 2026",
+      "sector": "Technology",
+      "market_cap": 217172513370,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "NTRA",
+      "score": 23.8,
+      "uoa_score": 36.8,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 416000.0,
+      "kind": "NOISE",
+      "biotech": true,
+      "price": 272.31,
+      "day_change_pct": 3.97,
+      "rel_volume": 0,
+      "components": {
+        "price": 3.31,
+        "volume": 0.0,
+        "options": 5.52,
+        "short": 0.0,
+        "news": 15,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$416K_BEARISH",
+        "VOL>>OI",
+        "FRESH_CATALYST",
+        "ANALYST_UPGRADE_x2",
+        "BIOTECH"
+      ],
+      "headline": "Natera, Aveta partner on late-stage head and neck cancer trial",
+      "sector": "Healthcare",
+      "market_cap": 38998876650,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "ASX",
+      "score": 12.2,
+      "uoa_score": 36.1,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 649089.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 42.13,
+      "day_change_pct": 4.79,
+      "rel_volume": 0,
+      "components": {
+        "price": 3.99,
+        "volume": 0.0,
+        "options": 8.24,
+        "short": 0.0,
+        "news": 0.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$649K_BULLISH"
+      ],
+      "headline": "",
+      "sector": "Technology",
+      "market_cap": 92441851508,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "ASTS",
+      "score": 36.0,
+      "uoa_score": 26.4,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 497796.0,
+      "kind": "WATCH",
+      "biotech": false,
+      "price": 86.71,
+      "day_change_pct": 21.36,
+      "rel_volume": 0,
+      "components": {
+        "price": 17.8,
+        "volume": 0.0,
+        "options": 7.67,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "PRICE_PARABOLIC",
+        "CALL_SWEEPS",
+        "UOA_$498K_BEARISH",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Why AST SpaceMobile Keeps Gaining",
+      "sector": "Technology",
+      "market_cap": 35281609829,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "DDOG",
+      "score": 20.9,
+      "uoa_score": 35.6,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 388500.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 248.57,
+      "day_change_pct": 3.67,
+      "rel_volume": 0,
+      "components": {
+        "price": 3.06,
+        "volume": 0.0,
+        "options": 5.34,
+        "short": 0.0,
+        "news": 12.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$388K_BULLISH",
+        "VOL>>OI",
+        "FRESH_CATALYST",
+        "ANALYST_UPGRADE_x1"
+      ],
+      "headline": "The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure.",
+      "sector": "Technology",
+      "market_cap": 88481022688,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "ANET",
+      "score": 13.9,
+      "uoa_score": 33.9,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 344000.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 163.97,
+      "day_change_pct": 4.04,
+      "rel_volume": 0,
+      "components": {
+        "price": 3.37,
+        "volume": 0.0,
+        "options": 5.98,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$344K_BULLISH"
+      ],
+      "headline": "Arista Networks, Inc. (ANET) Is a Trending Stock: Facts to Know Before Betting on It",
+      "sector": "Technology",
+      "market_cap": 206466012749,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "CRS",
+      "score": 7.2,
+      "uoa_score": 33.1,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 405680.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 607.39,
+      "day_change_pct": 2.64,
+      "rel_volume": 0,
+      "components": {
+        "price": 2.2,
+        "volume": 0.0,
+        "options": 4.96,
+        "short": 0.0,
+        "news": 0.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$406K_BEARISH"
+      ],
+      "headline": "",
+      "sector": "Industrials",
+      "market_cap": 30178543873,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "TLN",
+      "score": 15.4,
+      "uoa_score": 32.9,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 370740.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 399.34,
+      "day_change_pct": -1.18,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 4.93,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$371K_BULLISH",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Talen Energy, Stock Of The Day, Delivers For Amazon, AI Data Centers",
+      "sector": "Utilities",
+      "market_cap": 18128042495,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "CLS",
+      "score": 11.3,
+      "uoa_score": 32.6,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 630000.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 343.51,
+      "day_change_pct": 1.77,
+      "rel_volume": 0,
+      "components": {
+        "price": 1.48,
+        "volume": 0.0,
+        "options": 5.31,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$630K_MIXED",
+        "VOL>>OI"
+      ],
+      "headline": "Best Growth Stocks to Buy for June 29th",
+      "sector": "Technology",
+      "market_cap": 39494950095,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "AVGO",
+      "score": 18.6,
+      "uoa_score": 32.3,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 616600.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 372.45,
+      "day_change_pct": 2.04,
+      "rel_volume": 0,
+      "components": {
+        "price": 1.7,
+        "volume": 0.0,
+        "options": 6.39,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$617K_BULLISH",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Wall Street Just Supersized Its Price Target on Intel. Is the Stock Still Too Cheap?",
+      "sector": "Technology",
+      "market_cap": 1771960671000,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "TTWO",
+      "score": 25.4,
+      "uoa_score": 29.5,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 436340.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 247.15,
+      "day_change_pct": 3.61,
+      "rel_volume": 0,
+      "components": {
+        "price": 3.01,
+        "volume": 0.0,
+        "options": 10.42,
+        "short": 0.0,
+        "news": 12.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$436K_BULLISH",
+        "ANALYST_UPGRADE_x6"
+      ],
+      "headline": "",
+      "sector": "Communication Services",
+      "market_cap": 45887515760,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "GS",
+      "score": 8.8,
+      "uoa_score": 28.7,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 437000.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 1020.2,
+      "day_change_pct": 0.06,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.05,
+        "volume": 0.0,
+        "options": 4.3,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$437K_MIXED",
+        "VOL>>OI"
+      ],
+      "headline": "Goldman Sees S&P 500 Earnings Jumping 22% on AI Boom",
+      "sector": "Financial Services",
+      "market_cap": 300966570904,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "FSLR",
+      "score": 14.5,
+      "uoa_score": 26.6,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 327770.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 232.8,
+      "day_change_pct": -2.62,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 4.03,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$328K_MIXED",
+        "VOL>>OI",
+        "FRESH_CATALYST"
+      ],
+      "headline": "FSLR INVESTOR DEADLINE APPROACHING: Faruqi & Faruqi, LLP Reminds First Solar (FSLR) Investors of Securities Class Action Lawsuit Deadline on",
+      "sector": "Energy",
+      "market_cap": 25015058400,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "KLAC",
+      "score": 26.5,
+      "uoa_score": 24.8,
+      "uoa_bias": "BEARISH",
+      "uoa_premium": 458470.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 278.39,
+      "day_change_pct": 11.97,
+      "rel_volume": 0,
+      "components": {
+        "price": 9.97,
+        "volume": 0.0,
+        "options": 10.03,
+        "short": 0.0,
+        "news": 6.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$458K_BEARISH",
+        "ANALYST_UPGRADE_x1"
+      ],
+      "headline": "Can KLAC Keep Outgrowing the Wafer Equipment Market Through 2027?",
+      "sector": "Technology",
+      "market_cap": 363655289200,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "AMZN",
+      "score": 23.8,
+      "uoa_score": 20.6,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 570131.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 240.14,
+      "day_change_pct": 3.2,
+      "rel_volume": 0,
+      "components": {
+        "price": 2.67,
+        "volume": 0.0,
+        "options": 9.16,
+        "short": 0.0,
+        "news": 12.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$570K_MIXED",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Watch out, Amazon: the Kobo eReader now has a Goodreads rival",
+      "sector": "Consumer Cyclical",
+      "market_cap": 2583209994000,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "NVDA",
+      "score": 17.6,
+      "uoa_score": 14.2,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 558624.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 194.89,
+      "day_change_pct": 1.23,
+      "rel_volume": 0,
+      "components": {
+        "price": 1.02,
+        "volume": 0.0,
+        "options": 6.04,
+        "short": 0.0,
+        "news": 10.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$559K_MIXED",
+        "FRESH_CATALYST"
+      ],
+      "headline": "Super Micro Plunges 7% as Taiwan Raids Its Offices in NVIDIA AI Chip Smuggling Probe",
+      "sector": "Technology",
+      "market_cap": 4720430690000,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "ABVX",
+      "score": 7.2,
+      "uoa_score": 16.5,
+      "uoa_bias": "BULLISH",
+      "uoa_premium": 508000.0,
+      "kind": "NOISE",
+      "biotech": true,
+      "price": 96.15,
+      "day_change_pct": -1.38,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 7.25,
+        "short": 0.0,
+        "news": 0.0,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$508K_BULLISH",
+        "BIOTECH"
+      ],
+      "headline": "",
+      "sector": "Healthcare",
+      "market_cap": 6304353681,
+      "social_sources": [],
+      "social_detail": {}
+    },
+    {
+      "ticker": "AG",
+      "score": 9.9,
+      "uoa_score": 12.1,
+      "uoa_bias": "MIXED",
+      "uoa_premium": 337610.0,
+      "kind": "NOISE",
+      "biotech": false,
+      "price": 16.82,
+      "day_change_pct": -0.38,
+      "rel_volume": 0,
+      "components": {
+        "price": 0.0,
+        "volume": 0.0,
+        "options": 5.43,
+        "short": 0.0,
+        "news": 4.5,
+        "social": 0.0
+      },
+      "flags": [
+        "CALL_SWEEPS",
+        "UOA_$338K_MIXED"
+      ],
+      "headline": "Silver Just Hit A 'Now Or Never' Level: Which Miner Is Best Positioned If The Metal Bounces?",
+      "sector": "Basic Materials",
+      "market_cap": 8307673358,
+      "social_sources": [],
+      "social_detail": {}
+    }
+  ]
+}

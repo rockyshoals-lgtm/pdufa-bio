@@ -1,0 +1,274 @@
+{
+  "total_rounds": 4,
+  "total_promotions": 5,
+  "best_auc_ever": 0.997868459720707,
+  "worst_auc_ever": 0.9971217335080456,
+  "mutation_rate": 0.15,
+  "temperature": 0.7,
+  "rounds_since_promotion": 0,
+  "current_streak": 0,
+  "longest_streak": 2,
+  "feature_hits": {
+    "endpoint_x_safety": 4,
+    "endpoint_x_strong": 4,
+    "failure_x_safety_signal": 1,
+    "indication_freq": 8,
+    "indication_positive_rate": 10,
+    "is_recent_year": 5,
+    "log_text_len": 6,
+    "os_phase3": 2,
+    "sentiment_composite": 10,
+    "stage_freq": 10,
+    "ta_cns_phase3": 7,
+    "catalyst_text_len": 5,
+    "surrogate_endpoint": 5,
+    "primary_endpoint_met": 5,
+    "year": 5,
+    "failure_signal": 5,
+    "has_pfs": 5,
+    "is_interim": 4,
+    "strong_positive": 3,
+    "ta_immunology": 2,
+    "stage_numeric": 4,
+    "is_phase2": 4,
+    "ta_infectious": 1,
+    "ta_oncology": 3,
+    "interim_phase3": 2,
+    "safety_clean_phase3": 1,
+    "has_os": 3,
+    "ta_cns": 2,
+    "ta_cardiovascular": 1,
+    "ta_rare": 1,
+    "is_phase3": 3,
+    "pfs_phase3": 2,
+    "blockbuster_convenience": 2,
+    "cns_phase3_strong": 2,
+    "complete_response_rare": 2,
+    "cr_immunology": 2,
+    "cr_phase3": 2,
+    "endpoint_met_phase3": 2,
+    "high_rr_phase2plus": 1,
+    "moonshot_composite": 4,
+    "phase3_efficacy_beat": 1,
+    "price_adj_sentiment": 4,
+    "refractory_immunotherapy": 2,
+    "refractory_onco_rr": 2,
+    "small_cap_phase3_clean": 2,
+    "efficacy_beat_prior": 2,
+    "price_at_catalyst": 2,
+    "safety_signal": 1,
+    "ta_immunology_phase3": 1,
+    "ta_oncology_phase2": 2,
+    "log_price": 1,
+    "high_response_rate": 1
+  },
+  "feature_appearances": {
+    "endpoint_x_safety": 5,
+    "endpoint_x_strong": 6,
+    "failure_x_safety_signal": 1,
+    "indication_freq": 6,
+    "indication_positive_rate": 7,
+    "is_recent_year": 7,
+    "log_text_len": 3,
+    "os_phase3": 1,
+    "sentiment_composite": 7,
+    "stage_freq": 7,
+    "ta_cns_phase3": 6,
+    "interim_phase3": 2,
+    "safety_clean_phase3": 2,
+    "pfs_phase3": 2,
+    "blockbuster_convenience": 4,
+    "cns_phase3_strong": 3,
+    "complete_response_rare": 4,
+    "cr_immunology": 4,
+    "cr_phase3": 4,
+    "endpoint_met_phase3": 4,
+    "high_rr_phase2plus": 3,
+    "moonshot_composite": 4,
+    "phase3_efficacy_beat": 3,
+    "price_adj_sentiment": 4,
+    "refractory_immunotherapy": 3,
+    "refractory_onco_rr": 3,
+    "small_cap_phase3_clean": 4,
+    "gene_therapy_rare": 1,
+    "ta_oncology_phase3": 1,
+    "gene_therapy_early": 1,
+    "penny_phase3_hit": 1,
+    "ta_immunology_phase3": 1,
+    "ta_oncology_phase2": 1
+  },
+  "duplicate_count": 0,
+  "auc_history": [
+    {
+      "round": 1,
+      "wf_auc": 0.997124,
+      "wf_brier": 0.103924,
+      "wf_t4p": 0.9764,
+      "promoted": true,
+      "n_eng_features": 11,
+      "timestamp": "2026-03-01T00:12:23.077055",
+      "elapsed_s": 5.9,
+      "yearly_aucs": [
+        0.9925,
+        0.997,
+        0.9989,
+        1.0
+      ]
+    },
+    {
+      "round": 2,
+      "wf_auc": 0.997515,
+      "wf_brier": 0.078287,
+      "wf_t4p": 0.9803,
+      "promoted": true,
+      "n_eng_features": 11,
+      "timestamp": "2026-03-01T00:12:32.440120",
+      "elapsed_s": 9.3,
+      "yearly_aucs": [
+        0.9948,
+        0.9971,
+        0.9981,
+        1.0
+      ]
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.997868,
+      "wf_brier": 0.0312,
+      "wf_t4p": 0.9722,
+      "promoted": true,
+      "n_eng_features": 10,
+      "timestamp": "2026-03-01T00:13:27.276641",
+      "elapsed_s": 18.4,
+      "yearly_aucs": [
+        0.9951,
+        0.9974,
+        0.999,
+        1.0
+      ]
+    },
+    {
+      "round": 1,
+      "wf_auc": 0.99713,
+      "wf_brier": 0.028125,
+      "wf_t4p": 0.9655,
+      "promoted": true,
+      "n_eng_features": 21,
+      "timestamp": "2026-03-01T00:24:25.940483",
+      "elapsed_s": 8.4,
+      "yearly_aucs": [
+        0.9932,
+        0.9967,
+        0.9986,
+        1.0
+      ]
+    },
+    {
+      "round": 2,
+      "wf_auc": 0.997226,
+      "wf_brier": 0.138487,
+      "wf_t4p": 0.0,
+      "promoted": false,
+      "n_eng_features": 22,
+      "timestamp": "2026-03-01T00:24:40.789762",
+      "elapsed_s": 14.8,
+      "yearly_aucs": [
+        0.9928,
+        0.997,
+        0.9992,
+        1.0
+      ]
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.997122,
+      "wf_brier": 0.020158,
+      "wf_t4p": 0.9458,
+      "promoted": false,
+      "n_eng_features": 22,
+      "timestamp": "2026-03-01T00:36:55.280467",
+      "elapsed_s": 64.4,
+      "yearly_aucs": [
+        0.9929,
+        0.9968,
+        0.9988,
+        1.0
+      ]
+    },
+    {
+      "round": 4,
+      "wf_auc": 0.997574,
+      "wf_brier": 0.064264,
+      "wf_t4p": 0.9869,
+      "promoted": true,
+      "n_eng_features": 18,
+      "timestamp": "2026-03-01T00:37:20.668351",
+      "elapsed_s": 20.4,
+      "yearly_aucs": [
+        0.9938,
+        0.9974,
+        0.9991,
+        1.0
+      ]
+    }
+  ],
+  "brier_history": [
+    {
+      "round": 1,
+      "wf_brier": 0.103924
+    },
+    {
+      "round": 2,
+      "wf_brier": 0.078287
+    },
+    {
+      "round": 3,
+      "wf_brier": 0.0312
+    },
+    {
+      "round": 1,
+      "wf_brier": 0.028125
+    },
+    {
+      "round": 2,
+      "wf_brier": 0.138487
+    },
+    {
+      "round": 3,
+      "wf_brier": 0.020158
+    },
+    {
+      "round": 4,
+      "wf_brier": 0.064264
+    }
+  ],
+  "promotion_rounds": [
+    {
+      "round": 1,
+      "wf_auc": 0.997124,
+      "timestamp": "2026-03-01T00:12:23.077055"
+    },
+    {
+      "round": 2,
+      "wf_auc": 0.997515,
+      "timestamp": "2026-03-01T00:12:32.440120"
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.997868,
+      "timestamp": "2026-03-01T00:13:27.276641"
+    },
+    {
+      "round": 1,
+      "wf_auc": 0.99713,
+      "timestamp": "2026-03-01T00:24:25.940483"
+    },
+    {
+      "round": 4,
+      "wf_auc": 0.997574,
+      "timestamp": "2026-03-01T00:37:20.668351"
+    }
+  ],
+  "plateau_events": [],
+  "saved_at": "2026-03-01T00:37:20.674117"
+}

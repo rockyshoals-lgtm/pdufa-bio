@@ -1,0 +1,24 @@
+{
+  "odin_version": "v10.3+ AxFactorial (optimized)",
+  "run_started": "2026-02-11 12:06:40",
+  "input_rows": 1933,
+  "features": 22,
+  "approval_rate": 0.8277289187790998,
+  "input_path": "C:\\Users\\dcmoo\\Documents\\Python\\ODIN_ENRICHED_PDUFA_1933_v4_T1_COMPLIANT.csv",
+  "raw_rows": 1933,
+  "outcome_col": "outcome",
+  "outcome_unknown_n": 0,
+  "outcome_unknown_examples": [],
+  "usable_rows": 1933,
+  "grid_size": 531441,
+  "objective": {
+    "primary": "maximize score=(t1_tp - fp_penalty*t1_fp)/N - brier_weight*brier",
+    "constraints": {
+      "min_tn": 10,
+      "min_neg_preds": 10,
+      "max_t1_frac": 0.65
+    }
+  },
+  "run_seconds": 543.4233977794647,
+  "run_finished": "2026-02-11 12:15:46"
+}

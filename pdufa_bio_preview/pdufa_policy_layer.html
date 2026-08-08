@@ -1,0 +1,132 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pdufa.bio — Policy & Regulatory layer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f8;--surface:#fff;--surface2:#f0f3f5;--fg:#1a2230;--mut:#667085;--faint:#98a1ae;--border:#e3e8ed;--hair:#eef1f4;--accent:#0f7d72;--accent2:#0c655c;--abg:#e6f3f1;--green:#2f8f6b;--red:#bc5249;--amber:#b07d18;--blue:#3a7ca5;
+--sans:'Inter',system-ui,sans-serif;--serif:'Source Serif 4',Georgia,serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:34px 22px 60px}
+.top{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:22px}
+.brand{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--serif);font-size:30px;font-weight:700;margin:8px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:14.5px;max-width:620px}
+.sub b{color:var(--fg);font-weight:600}
+h2.sec{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+h2.sec .pip{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+/* method */
+.method{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.m{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px 16px}
+.m .n{font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:700}
+.m .h{font-weight:600;font-size:14px;margin:7px 0 5px}
+.m .d{color:var(--mut);font-size:12.5px;line-height:1.5}
+/* policy card */
+.pcard{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+.pc-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.ptag{font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:4px;background:rgba(58,124,165,.12);color:var(--blue)}
+.pdate{font-family:var(--mono);font-size:12px;color:var(--mut)}
+.pc-title{font-family:var(--serif);font-size:21px;font-weight:700;margin:4px 0 3px}
+.pc-doc{color:var(--mut);font-size:12.5px;font-family:var(--mono)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0}
+.chip{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:20px;background:var(--abg);color:var(--accent2);font-weight:500}
+.pblk{margin-top:15px}
+.pblk h4{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 8px}
+.pblk ul{margin:0;padding-left:18px}.pblk li{font-size:13.5px;margin-bottom:6px;color:var(--fg)}
+.pblk li b{font-weight:600}
+.note{background:var(--surface2);border-radius:8px;padding:10px 13px;font-size:12.5px;color:var(--mut);margin-top:12px;border-left:2px solid var(--faint)}
+.affected{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.aff{font-family:var(--mono);font-size:12px;font-weight:600;padding:4px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface)}
+.react{display:flex;align-items:baseline;gap:9px;margin-top:12px;font-size:13px}
+.react .l{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.srcs{display:flex;gap:14px;flex-wrap:wrap;margin-top:15px;padding-top:13px;border-top:1px solid var(--hair)}
+.srcs a{font-family:var(--mono);font-size:11.5px;color:var(--accent);text-decoration:none;display:inline-flex;gap:5px}
+.srcs a:hover{text-decoration:underline}
+/* monitored + themes */
+.feeds{display:flex;gap:8px;flex-wrap:wrap}
+.feed{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-family:var(--mono);font-size:12px;display:flex;align-items:center;gap:7px}
+.feed .dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.themes{display:flex;gap:8px;flex-wrap:wrap}
+.theme{border:1px dashed var(--border);border-radius:20px;padding:6px 13px;font-family:var(--mono);font-size:11.5px;color:var(--mut)}
+.theme.live{border-style:solid;border-color:var(--accent);color:var(--accent2);background:var(--abg)}
+.foot{margin-top:30px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;font-size:13px;color:var(--mut)}
+.foot b{color:var(--fg);font-weight:600}
+@media(max-width:680px){.method{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+
+<div class="top">
+  <div class="brand">pdufa.bio · policy &amp; regulatory</div>
+  <h1>Policy is a catalyst.</h1>
+  <div class="sub">When Washington moves, biotech moves. We treat policy and regulatory actions as <b>sourced, dated catalysts</b> — what the action does, which programs and tickers it touches — and never as opinion about whether it's good or bad. Same standard as every other event on pdufa.bio: <b>facts, sourced, dated, labeled.</b></div>
+</div>
+
+<h2 class="sec"><span class="pip"></span>How this layer works</h2>
+<div class="method">
+  <div class="m"><div class="n">01</div><div class="h">Dated to the document</div><div class="d">Every policy catalyst is pinned to the signing or effective date and linked to the primary source — the order, rule, or filing itself — not a headline about it.</div></div>
+  <div class="m"><div class="n">02</div><div class="h">Apolitical by design</div><div class="d">We report the mechanism and the programs in scope. We don't tell you whether a policy is good, bad, or who it favors. No sentiment, no spin.</div></div>
+  <div class="m"><div class="n">03</div><div class="h">Effects are history, not forecasts</div><div class="d">Any market reaction is shown as a dated fact that already happened — never a prediction of what a future policy will do to a price.</div></div>
+</div>
+
+<h2 class="sec"><span class="pip"></span>Active policy catalyst</h2>
+<div class="pcard">
+  <div class="pc-top">
+    <span class="ptag">Executive Order</span>
+    <span class="ptag" style="background:rgba(47,143,107,.12);color:var(--green)">FDA review pathway</span>
+    <span class="pdate">signed Apr 18, 2026</span>
+  </div>
+  <div class="pc-title">Accelerating Medical Treatments for Serious Mental Illness</div>
+  <div class="pc-doc">Executive Order · The White House · directs FDA + DEA + HHS</div>
+
+  <div class="chips">
+    <span class="chip">Psychedelics</span><span class="chip">Mental health</span><span class="chip">FDA priority review</span><span class="chip">Breakthrough Therapy</span><span class="chip">Right to Try</span>
+  </div>
+
+  <div class="pblk"><h4>What the action does</h4>
+  <ul>
+    <li>Directs the FDA Commissioner to grant <b>Commissioner's National Priority Vouchers</b> to psychedelic drugs that already hold Breakthrough Therapy designation and meet the program criteria — compressing review once an NDA is filed.</li>
+    <li>Directs the FDA and DEA to establish a patient-access pathway under the <b>Right to Try Act</b>, including ibogaine compounds under FDA-authorized study.</li>
+    <li>Directs HHS to direct <b>$50M</b> toward federal–state collaboration on psychedelic research.</li>
+  </ul></div>
+
+  <div class="note">The order does <b>not</b>, by itself, approve any psychedelic drug or create enforceable patient/provider rights. It is a process-acceleration directive — which is exactly why we file it as a catalyst, not an outcome.</div>
+
+  <div class="pblk"><h4>Programs this touches</h4>
+  <div class="affected">
+    <span class="aff">CMPS</span><span class="aff">ATAI</span><span class="aff">GHRS</span><span class="aff">HELP <span style="color:var(--faint);font-weight:400">· fmly CYBN</span></span>
+  </div>
+  <div style="font-size:11.5px;color:var(--faint);margin-top:7px;font-family:var(--mono)">Developers with psychedelic programs in BTD scope. Listed because the policy names this class — not a recommendation.</div></div>
+
+  <div class="react"><span class="l">Sector reaction, Apr 18</span><span>Psychedelic developers rallied sharply on the signing. <span style="color:var(--mut)">The product attaches the exact dated move per ticker from price data — shown as what happened, not what will.</span></span></div>
+
+  <div class="srcs">
+    <a href="https://www.whitehouse.gov/fact-sheets/2026/04/fact-sheet-president-donald-j-trump-is-accelerating-medical-treatments-for-serious-mental-illness/" target="_blank" rel="noopener">↗ White House fact sheet</a>
+    <a href="https://www.fda.gov/news-events/press-announcements/fda-accelerates-action-treatments-serious-mental-illness-following-executive-order" target="_blank" rel="noopener">↗ FDA press announcement</a>
+    <span style="font-family:var(--mono);font-size:11.5px;color:var(--faint)">Federal Register · primary text</span>
+  </div>
+</div>
+
+<h2 class="sec"><span class="pip"></span>Sources we monitor</h2>
+<div class="feeds">
+  <div class="feed"><span class="dot"></span>Federal Register</div>
+  <div class="feed"><span class="dot"></span>whitehouse.gov</div>
+  <div class="feed"><span class="dot"></span>FDA.gov</div>
+  <div class="feed"><span class="dot"></span>DEA</div>
+  <div class="feed"><span class="dot"></span>Congress.gov</div>
+  <div class="feed"><span class="dot"></span>CMS</div>
+</div>
+<div style="font-size:12.5px;color:var(--mut);margin-top:11px">Polled on the same cadence as the catalyst engine. A new order, final rule, or agency action surfaces here as a dated catalyst with its primary-source link — automatically.</div>
+
+<h2 class="sec"><span class="pip"></span>Theme tags</h2>
+<div class="themes">
+  <span class="theme live">Psychedelics</span>
+  <span class="theme">Cannabis / rescheduling</span>
+  <span class="theme">IRA drug pricing</span>
+  <span class="theme">PDUFA / user-fee reform</span>
+  <span class="theme">Tariffs / supply chain</span>
+  <span class="theme">CMS coverage &amp; reimbursement</span>
+  <span class="theme">340B</span>
+</div>
+<div style="font-size:12.5px;color:var(--mut);margin-top:11px">Every policy catalyst is tagged so you can filter to the themes you actually trade. Solid = live in this build; dashed = wired, populates as the policy feed comes online.</div>
+
+<div class="foot"><b>The commitment:</b> this layer will never tell you a policy is good or bad, or who should have won. It tells you a thing happened, when, what it changes, and which tickers sit in its path — sourced and dated — and then gets out of your way. Political neutrality is part of the data-integrity promise, not separate from it.</div>
+
+</div></body></html>

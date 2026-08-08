@@ -1,0 +1,150 @@
+{
+  "T1": {
+    "nano": {
+      "action": "HOLD",
+      "window": "T-90_T-3",
+      "sharpe": 8.808057493451376,
+      "hit_rate": 0.6,
+      "n": 5
+    },
+    "micro": {
+      "action": "STRONG_BUY",
+      "window": "T-90_T-7",
+      "sharpe": 6.123708963877892,
+      "hit_rate": 0.6,
+      "n": 20
+    },
+    "small": {
+      "action": "LEAN_LONG",
+      "window": "T-60_T-1",
+      "sharpe": 1.6738512415586329,
+      "hit_rate": 0.5098039215686274,
+      "n": 51
+    },
+    "mid": {
+      "action": "LEAN_LONG",
+      "window": "T-90_T-1",
+      "sharpe": 8.413551964413074,
+      "hit_rate": 0.8,
+      "n": 10
+    },
+    "large": {
+      "action": "STRONG_BUY",
+      "window": "T-90_T-3",
+      "sharpe": 5.457035728077731,
+      "hit_rate": 0.6896551724137931,
+      "n": 87
+    }
+  },
+  "T2": {
+    "nano": {
+      "action": "BUY",
+      "window": "T-90_T-1",
+      "sharpe": 7.54748415737546,
+      "hit_rate": 0.75,
+      "n": 16
+    },
+    "micro": {
+      "action": "STRONG_BUY",
+      "window": "T-90_T-3",
+      "sharpe": 7.672608584080692,
+      "hit_rate": 0.6730769230769231,
+      "n": 52
+    },
+    "small": {
+      "action": "STRONG_BUY",
+      "window": "T-90_T-3",
+      "sharpe": 4.885465443751707,
+      "hit_rate": 0.6041666666666666,
+      "n": 48
+    },
+    "mid": {
+      "action": "STRONG_BUY",
+      "window": "T-90_T-3",
+      "sharpe": 6.538403455849483,
+      "hit_rate": 0.6,
+      "n": 20
+    },
+    "large": {
+      "action": "STRONG_BUY",
+      "window": "T-25_T-1",
+      "sharpe": 4.254774444325577,
+      "hit_rate": 0.59375,
+      "n": 96
+    }
+  },
+  "T3": {
+    "nano": {
+      "action": "HOLD",
+      "window": "T-90_T-7",
+      "sharpe": 13.320143204200448,
+      "hit_rate": 0.8333333333333334,
+      "n": 6
+    },
+    "micro": {
+      "action": "HOLD",
+      "window": "T-25_T-1",
+      "sharpe": 4.70958550814797,
+      "hit_rate": 0.45454545454545453,
+      "n": 11
+    },
+    "small": {
+      "action": "HOLD",
+      "window": "T-90_T-7",
+      "sharpe": 18.224894857376068,
+      "hit_rate": 0.8,
+      "n": 5
+    },
+    "mid": {
+      "action": "HOLD",
+      "window": "T-90_T-3",
+      "sharpe": 74.05823052530118,
+      "hit_rate": 1.0,
+      "n": 4
+    },
+    "large": {
+      "action": "AVOID",
+      "window": "T-25_T-1",
+      "sharpe": 3.084850907218703,
+      "hit_rate": 0.25,
+      "n": 4
+    }
+  },
+  "T4": {
+    "nano": {
+      "action": "BUY",
+      "window": "T-45_T-3",
+      "sharpe": 0.8709956614428266,
+      "hit_rate": 0.5230769230769231,
+      "n": 65
+    },
+    "micro": {
+      "action": "BUY",
+      "window": "T-25_T-1",
+      "sharpe": 3.6342780081139052,
+      "hit_rate": 0.5263157894736842,
+      "n": 114
+    },
+    "small": {
+      "action": "STRONG_BUY",
+      "window": "T-90_T-3",
+      "sharpe": 4.446787579442599,
+      "hit_rate": 0.5714285714285714,
+      "n": 56
+    },
+    "mid": {
+      "action": "LEAN_LONG",
+      "window": "T-45_T-7",
+      "sharpe": 1.6892321233170566,
+      "hit_rate": 0.5,
+      "n": 42
+    },
+    "large": {
+      "action": "HOLD",
+      "window": "T-60_T-1",
+      "sharpe": 2.6799068177249303,
+      "hit_rate": 0.4845360824742268,
+      "n": 97
+    }
+  }
+}

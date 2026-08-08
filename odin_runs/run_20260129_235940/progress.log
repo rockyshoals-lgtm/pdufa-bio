@@ -1,0 +1,28 @@
+2026-01-30T07:59:40+00:00 | start | rows=1350 | features=['btd', 'orphan', 'priority_review', 'accelerated_approval', 'had_adcom', 'adcom_vote_pct'] | device=cuda
+2026-01-30T07:59:40+00:00 | baseline_brier=0.11555555 | base_rate=0.8667
+2026-01-30T07:59:41+00:00 | progress | configs_done=5,044,605 | best_brier=0.11205027 | sigma=0.7534 | rate=6,749,829/s | free_ram=3.32GB | free_vram=4.89GB
+2026-01-30T07:59:41+00:00 | progress | configs_done=10,029,380 | best_brier=0.11204102 | sigma=0.7571 | rate=7,253,314/s | free_ram=3.33GB | free_vram=4.89GB
+2026-01-30T07:59:42+00:00 | progress | configs_done=15,014,155 | best_brier=0.11204102 | sigma=0.7735 | rate=7,454,476/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:43+00:00 | progress | configs_done=20,114,855 | best_brier=0.11204102 | sigma=0.7907 | rate=7,563,653/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:43+00:00 | progress | configs_done=25,099,630 | best_brier=0.11203939 | sigma=0.8035 | rate=7,629,006/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:44+00:00 | progress | configs_done=30,084,405 | best_brier=0.11203939 | sigma=0.8209 | rate=7,676,587/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:45+00:00 | progress | configs_done=35,069,180 | best_brier=0.11203758 | sigma=0.8342 | rate=7,707,507/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:45+00:00 | progress | configs_done=40,053,955 | best_brier=0.11203758 | sigma=0.8523 | rate=7,728,446/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:46+00:00 | progress | configs_done=45,038,730 | best_brier=0.11203758 | sigma=0.8708 | rate=7,749,420/s | free_ram=3.35GB | free_vram=4.89GB
+2026-01-30T07:59:46+00:00 | progress | configs_done=50,023,505 | best_brier=0.11203758 | sigma=0.8897 | rate=7,767,401/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:47+00:00 | progress | configs_done=55,008,280 | best_brier=0.11203758 | sigma=0.9091 | rate=7,780,618/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:48+00:00 | progress | configs_done=60,108,980 | best_brier=0.11203758 | sigma=0.9293 | rate=7,795,443/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:48+00:00 | progress | configs_done=65,093,755 | best_brier=0.11203758 | sigma=0.9495 | rate=7,803,587/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:49+00:00 | progress | configs_done=70,078,530 | best_brier=0.11203758 | sigma=0.9701 | rate=7,814,096/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:50+00:00 | progress | configs_done=75,063,305 | best_brier=0.11203758 | sigma=0.9912 | rate=7,821,153/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:50+00:00 | progress | configs_done=80,048,080 | best_brier=0.11203758 | sigma=1.0127 | rate=7,823,303/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:51+00:00 | progress | configs_done=85,032,855 | best_brier=0.11203758 | sigma=1.0347 | rate=7,825,376/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:52+00:00 | progress | configs_done=90,017,630 | best_brier=0.11203758 | sigma=1.0572 | rate=7,828,032/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:52+00:00 | progress | configs_done=95,002,405 | best_brier=0.11203758 | sigma=1.0802 | rate=7,830,885/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:53+00:00 | progress | configs_done=100,103,105 | best_brier=0.11203758 | sigma=1.1042 | rate=7,833,918/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:53+00:00 | progress | configs_done=105,087,880 | best_brier=0.11203758 | sigma=1.1282 | rate=7,835,392/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:54+00:00 | progress | configs_done=110,072,655 | best_brier=0.11203758 | sigma=1.1527 | rate=7,843,214/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:55+00:00 | progress | configs_done=115,057,430 | best_brier=0.11203758 | sigma=1.1777 | rate=7,842,600/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:55+00:00 | progress | configs_done=120,042,205 | best_brier=0.11203758 | sigma=1.2033 | rate=7,837,674/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:56+00:00 | progress | configs_done=125,026,980 | best_brier=0.11203758 | sigma=1.2295 | rate=7,832,398/s | free_ram=3.34GB | free_vram=4.89GB
+2026-01-30T07:59:57+00:00 | progress | configs_done=130,011,755 | best_brier=0.11203758 | sigma=1.2562 | rate=7,834,588/s | free_ram=3.34GB | free_vram=4.89GB

@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Haul of Fame — Find it. Haul it. Fame it.</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root{
+    --coral:#FF6B35; --coral-dark:#E8531F; --teal:#2EC4B6; --teal-dark:#21A99C;
+    --sun:#FFD23F; --navy:#1D3557; --cream:#FFF8EF; --card:#FFFFFF;
+    --ink:#22304A; --muted:#7A8699; --line:#F0E4D3;
+    --gold:#F5B301; --blue:#2E7CF6;
+    --ok:#157F3D; --ok-bg:#E7F8EE; --warn:#8A6D00; --warn-bg:#FFF6DC;
+    --bad:#B03A3A; --bad-bg:#FDE8E8;
+    --shadow:0 6px 18px rgba(29,53,87,.10); --r:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{height:100%;}
+  body{
+    font-family:"Segoe UI","SF Pro Rounded",system-ui,-apple-system,Arial,sans-serif;
+    background:linear-gradient(160deg,#FFEDD9 0%,#FDF6EC 40%,#E8F7F5 100%);
+    color:var(--ink); display:flex; justify-content:center;
+  }
+  button{font-family:inherit;}
+  button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
+  #app{
+    width:100%; max-width:540px; height:100vh; height:100dvh;
+    display:flex; flex-direction:column; background:var(--cream);
+    box-shadow:0 0 50px rgba(29,53,87,.15); position:relative; overflow:hidden;
+  }
+
+  /* ================= Header ================= */
+  header{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:10px 14px; background:var(--cream); border-bottom:2px solid var(--line);
+    z-index:1200; flex:0 0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:18px;color:var(--navy);letter-spacing:-.3px;}
+  .logo svg{width:28px;height:28px;flex:0 0 auto;}
+  .logo .of{color:var(--gold);font-size:12px;font-style:italic;margin:0 1px;align-self:center;}
+  .logo .hop{color:var(--coral);}
+  .hdr-right{display:flex;align-items:center;gap:8px;}
+  .bell-btn{
+    position:relative;width:38px;height:38px;border-radius:50%;border:2px solid var(--line);
+    background:#fff;font-size:16px;cursor:pointer;transition:transform .12s;
+  }
+  .bell-btn:active{transform:scale(.92);}
+  .bell-badge{
+    position:absolute;top:-5px;right:-5px;background:#E0245E;color:#fff;font-size:9.5px;
+    font-weight:800;border-radius:99px;min-width:17px;height:17px;line-height:17px;padding:0 4px;
+  }
+  .pts-pill{
+    display:flex;align-items:center;gap:5px;background:var(--navy);color:#fff;
+    border-radius:999px;padding:7px 12px;font-weight:700;font-size:13.5px;cursor:pointer;border:none;
+    transition:transform .15s;
+  }
+  .pts-pill:active{transform:scale(.94);}
+  .pts-pill .star{color:var(--sun);}
+  .avatar-btn{
+    width:38px;height:38px;border-radius:50%;border:3px solid var(--coral);
+    background:linear-gradient(135deg,var(--sun),var(--coral));color:#fff;
+    font-weight:800;font-size:15px;cursor:pointer;position:relative;flex:0 0 auto;
+  }
+  .avatar-btn .flair{position:absolute;bottom:-6px;right:-8px;font-size:14px;}
+
+  /* ================= Level + event strips ================= */
+  .level-strip{padding:7px 14px 8px;background:var(--cream);border-bottom:2px solid var(--line);flex:0 0 auto;}
+  .level-row{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .level-row .lvl-name{color:var(--coral);font-size:12.5px;}
+  .level-row .lvl-next{color:var(--muted);font-weight:600;}
+  .xp-bar{height:7px;background:#EFE3D0;border-radius:99px;overflow:hidden;}
+  .xp-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--coral));width:0%;transition:width .6s cubic-bezier(.22,1,.36,1);}
+  .event-banner{
+    display:none;align-items:center;justify-content:space-between;gap:10px;
+    background:linear-gradient(90deg,var(--coral),var(--gold));color:#fff;
+    padding:8px 14px;font-size:12px;font-weight:800;flex:0 0 auto;
+  }
+  .event-banner.show{display:flex;}
+  .event-join{
+    background:#fff;color:var(--coral-dark);border-radius:99px;padding:5px 12px;
+    font-size:11px;font-weight:800;border:none;cursor:pointer;flex:0 0 auto;
+  }
+  .event-join.joined{background:rgba(255,255,255,.25);color:#fff;cursor:default;}
+
+  /* ================= Main / views ================= */
+  main{flex:1 1 auto;position:relative;overflow:hidden;}
+  .view{position:absolute;inset:0;display:none;overflow-y:auto;overscroll-behavior:contain;}
+  .view.active{display:block;}
+  #view-map.active{display:block;}
+  #map{position:absolute;inset:0;background:#DDEEE9;z-index:1;}
+  .map-overlay-top{position:absolute;top:12px;left:12px;right:12px;z-index:900;display:flex;gap:8px;pointer-events:none;}
+  .map-banner{
+    pointer-events:auto;flex:1;background:rgba(255,255,255,.95);border:2px solid var(--line);
+    border-radius:14px;padding:9px 13px;font-size:12.5px;font-weight:600;color:var(--navy);
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;
+  }
+  .map-banner b{color:var(--coral);}
+  .map-legend{
+    position:absolute;bottom:14px;left:12px;z-index:900;background:rgba(255,255,255,.95);
+    border:2px solid var(--line);border-radius:12px;padding:8px 11px;font-size:11px;font-weight:600;
+    color:var(--ink);box-shadow:var(--shadow);line-height:1.7;
+  }
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;}
+  .dot.today{background:var(--coral);} .dot.soon{background:var(--teal);} .dot.gold{background:var(--gold);}
+  .locate-btn{
+    position:absolute;bottom:96px;right:12px;z-index:900;width:46px;height:46px;border-radius:50%;
+    background:#fff;border:2px solid var(--line);box-shadow:var(--shadow);font-size:20px;cursor:pointer;
+    transition:transform .12s;
+  }
+  .locate-btn:active{transform:scale(.9);}
+  .you-dot{
+    width:18px;height:18px;border-radius:50%;background:var(--blue);border:3px solid #fff;
+    animation:youPulse 2s infinite;
+  }
+  @keyframes youPulse{
+    0%{box-shadow:0 0 0 0 rgba(46,124,246,.45);}
+    70%{box-shadow:0 0 0 16px rgba(46,124,246,0);}
+    100%{box-shadow:0 0 0 0 rgba(46,124,246,0);}
+  }
+  .pin{
+    position:relative;display:flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border-radius:50% 50% 50% 6px;
+    background:var(--teal);border:3px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.3);font-size:15px;
+  }
+  .pin.today{background:var(--coral);}
+  .pin.featured{background:var(--gold);box-shadow:0 0 0 4px rgba(245,179,1,.35),0 3px 8px rgba(0,0,0,.3);}
+  .pin.found{background:#9FB3C8;}
+  .pin .pin-num{
+    position:absolute;top:-9px;right:-9px;background:var(--navy);color:#fff;border-radius:50%;
+    width:19px;height:19px;font-size:11px;font-weight:800;display:flex;align-items:center;
+    justify-content:center;border:2px solid #fff;
+  }
+  .leaflet-popup-content-wrapper{border-radius:14px;font-family:inherit;}
+  .leaflet-popup-content{margin:12px 14px;min-width:200px;}
+  .pop-title{font-weight:800;font-size:14px;color:var(--navy);margin-bottom:2px;}
+  .pop-meta{font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:8px;}
+  .pop-row{display:flex;gap:6px;}
+  .pop-btn{
+    flex:1;border:none;border-radius:10px;padding:9px 8px;font-weight:800;font-size:12.5px;
+    cursor:pointer;background:var(--coral);color:#fff;
+  }
+  .pop-btn.sec{flex:0 0 auto;background:#fff;border:2px solid var(--line);color:var(--navy);}
+  .pop-btn.sec.on{background:var(--sun);border-color:var(--gold);}
+  .pop-btn.done{background:#E5EAF0;color:var(--muted);cursor:default;}
+
+  /* ================= Shared UI atoms ================= */
+  .pad{padding:14px 14px 96px;}
+  .section-title{font-size:18px;font-weight:800;color:var(--navy);margin:4px 2px 8px;display:flex;align-items:center;gap:8px;}
+  .section-sub{font-size:12.5px;color:var(--muted);font-weight:600;margin:-4px 2px 12px;}
+  .seg{display:flex;background:#EFE6D8;border-radius:13px;padding:3px;gap:3px;}
+  .seg-btn{
+    flex:1;border:none;background:transparent;border-radius:10px;padding:8px 6px;
+    font-size:12.5px;font-weight:800;color:var(--muted);cursor:pointer;transition:all .15s;
+  }
+  .seg-btn.on{background:#fff;color:var(--navy);box-shadow:0 2px 6px rgba(29,53,87,.12);}
+  .fchips{display:flex;gap:7px;margin:10px 0 2px;flex-wrap:wrap;}
+  .fchip{
+    border:2px solid var(--line);background:#fff;border-radius:99px;padding:6px 13px;
+    font-size:12px;font-weight:800;color:var(--muted);cursor:pointer;transition:all .15s;
+  }
+  .fchip.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .sticky-head{
+    position:sticky;top:0;background:var(--cream);z-index:60;padding:12px 14px 8px;
+    border-bottom:2px solid var(--line);
+  }
+  .card{
+    background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);
+    border:2px solid var(--line);margin-bottom:14px;overflow:hidden;
+  }
+  .card.featured-card{border-color:var(--gold);box-shadow:0 6px 20px rgba(245,179,1,.25);}
+  .featured-ribbon{
+    background:linear-gradient(90deg,var(--gold),#FFD968);color:#5C4300;font-size:11px;
+    font-weight:800;padding:5px 14px;letter-spacing:.5px;
+  }
+  .photo-wrap{position:relative;}
+  .photo-strip{display:flex;gap:4px;height:132px;overflow-x:auto;background:#F6EFE3;}
+  .photo-strip::-webkit-scrollbar{height:0;}
+  .photo-tile{
+    flex:1 0 40%;display:flex;align-items:center;justify-content:center;font-size:44px;
+    background:linear-gradient(135deg,#FFE9D6,#D9F4F1);min-width:40%;
+  }
+  .photo-tile img{width:100%;height:100%;object-fit:cover;}
+  .status-chip{
+    position:absolute;top:9px;left:9px;font-size:10.5px;font-weight:800;padding:5px 10px;
+    border-radius:99px;z-index:5;box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  .status-chip.open{background:var(--ok-bg);color:var(--ok);}
+  .status-chip.picked{background:var(--warn-bg);color:var(--warn);}
+  .status-chip.closed{background:var(--bad-bg);color:var(--bad);}
+  .status-chip.upcoming{background:#EDF3FF;color:#2E5CB8;}
+  .star-btn{
+    position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:50%;z-index:5;
+    background:rgba(255,255,255,.94);border:2px solid var(--line);font-size:17px;cursor:pointer;
+    transition:transform .12s;box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  .star-btn:active{transform:scale(.88);}
+  .star-btn.on{background:var(--sun);border-color:var(--gold);}
+  .card-body{padding:12px 14px 13px;}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .card-title{font-weight:800;font-size:16px;color:var(--navy);line-height:1.25;}
+  .date-chip{
+    flex:0 0 auto;background:var(--navy);color:#fff;border-radius:10px;padding:4px 9px;
+    font-size:11px;font-weight:800;text-align:center;line-height:1.3;
+  }
+  .date-chip.today{background:var(--coral);}
+  .card-host{font-size:12px;color:var(--muted);font-weight:600;margin:3px 0 6px;}
+  .card-host b{color:var(--teal-dark);}
+  .card-desc{font-size:13px;color:var(--ink);line-height:1.45;margin-bottom:9px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+  .chip{background:#F1F6F5;border:1.5px solid #DCEBE8;color:var(--teal-dark);font-size:11px;font-weight:700;border-radius:99px;padding:3px 9px;}
+  .card-meta{display:flex;gap:12px;font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:11px;flex-wrap:wrap;}
+  .cta-btn{
+    width:100%;display:flex;align-items:center;justify-content:center;gap:7px;
+    border:none;border-radius:13px;padding:12px;font-size:14px;font-weight:800;cursor:pointer;
+    background:var(--coral);color:#fff;transition:transform .12s;margin-bottom:8px;
+  }
+  .cta-btn:active{transform:scale(.97);}
+  .cta-btn.done{background:#EDF2EE;color:#4C7A5C;cursor:default;}
+  .card-actions{display:flex;gap:8px;}
+  .act-btn{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:5px;
+    border:2px solid var(--line);background:#fff;border-radius:12px;padding:9px 4px;
+    font-size:12px;font-weight:800;color:var(--navy);cursor:pointer;transition:transform .12s;
+    text-decoration:none;
+  }
+  .act-btn:active{transform:scale(.95);}
+  .act-btn.liked{border-color:#FFB3C0;background:#FFF0F3;color:#E0245E;}
+  .act-btn.primary{background:var(--coral);border-color:var(--coral);color:#fff;}
+  .pts-tag{font-size:9.5px;font-weight:800;color:var(--sun);background:var(--navy);border-radius:6px;padding:1px 4px;}
+  .act-btn.liked .pts-tag{display:none;}
+  .status-report{
+    display:flex;align-items:center;gap:7px;margin-top:9px;padding-top:9px;
+    border-top:1.5px dashed var(--line);font-size:11.5px;font-weight:700;color:var(--muted);flex-wrap:wrap;
+  }
+  .st-btn{
+    border:2px solid var(--line);background:#fff;border-radius:99px;padding:5px 10px;
+    font-size:11px;font-weight:800;cursor:pointer;color:var(--ink);
+  }
+  .st-btn.open.on{background:var(--ok-bg);border-color:#9ADBB4;color:var(--ok);}
+  .st-btn.picked.on{background:var(--warn-bg);border-color:#EBD48A;color:var(--warn);}
+  .st-btn.closed.on{background:var(--bad-bg);border-color:#F0B4B4;color:var(--bad);}
+
+  /* ================= Forms ================= */
+  .fld{margin-bottom:14px;}
+  .fld label{display:block;font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+  .fld label .req{color:var(--coral);}
+  .fld input[type=text],.fld input[type=number],.fld input[type=date],.fld input[type=time],.fld textarea{
+    width:100%;border:2px solid var(--line);border-radius:12px;padding:12px;font-size:14px;
+    font-family:inherit;background:#fff;color:var(--ink);outline:none;transition:border-color .15s;
+  }
+  .fld input:focus,.fld textarea:focus{border-color:var(--teal);}
+  .fld textarea{resize:vertical;min-height:70px;}
+  .time-row{display:flex;gap:10px;}
+  .time-row .fld{flex:1;}
+  .cat-grid{display:flex;flex-wrap:wrap;gap:8px;}
+  .cat-chip{
+    border:2px solid var(--line);background:#fff;border-radius:99px;padding:8px 13px;
+    font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;transition:all .15s;
+  }
+  .cat-chip.on{background:var(--teal);border-color:var(--teal);color:#fff;}
+  #miniMap{height:200px;border-radius:14px;border:2px solid var(--line);z-index:1;}
+  .mini-hint{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:6px;}
+  .photo-picker{
+    border:2px dashed var(--teal);background:#F2FBFA;border-radius:14px;padding:16px;
+    text-align:center;font-size:13px;font-weight:700;color:var(--teal-dark);cursor:pointer;
+  }
+  .photo-previews{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .photo-previews img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:2px solid var(--line);}
+  .submit-btn{
+    width:100%;border:none;border-radius:14px;padding:15px;font-size:16px;font-weight:800;
+    background:linear-gradient(90deg,var(--coral),var(--coral-dark));color:#fff;cursor:pointer;
+    box-shadow:0 6px 16px rgba(255,107,53,.35);transition:transform .12s;
+  }
+  .submit-btn:active{transform:scale(.97);}
+  .earn-note{
+    display:flex;align-items:center;gap:8px;background:#FFF6DC;border:2px solid #F5E3A9;
+    border-radius:12px;padding:10px 12px;font-size:12.5px;font-weight:700;color:#7A5C00;margin-bottom:14px;
+  }
+
+  /* ================= Route ================= */
+  .route-sum{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;
+  }
+  .route-stat{
+    background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 6px;
+    text-align:center;box-shadow:var(--shadow);
+  }
+  .route-stat .n{font-size:20px;font-weight:800;color:var(--navy);}
+  .route-stat .l{font-size:9.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+  .route-actions{display:flex;gap:9px;margin-bottom:16px;}
+  .stop-row{
+    display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);
+    border-radius:14px;padding:11px 13px;margin-bottom:9px;box-shadow:var(--shadow);
+  }
+  .stop-row.found-stop{opacity:.62;}
+  .stop-num{
+    width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;
+    font-size:14px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  }
+  .stop-info{flex:1;min-width:0;}
+  .stop-title{font-weight:800;font-size:13.5px;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .stop-sub{font-size:11px;color:var(--muted);font-weight:600;}
+  .stop-x{border:none;background:none;font-size:16px;cursor:pointer;color:var(--muted);padding:6px;}
+
+  /* ================= Hauls ================= */
+  .winner-banner{
+    background:linear-gradient(120deg,#F5B301,#FFD968);border-radius:var(--r);padding:13px 15px;
+    color:#5C4300;font-weight:800;font-size:13px;margin-bottom:12px;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:10px;
+  }
+  .haul-card{
+    display:flex;gap:12px;background:#fff;border:2px solid var(--line);border-radius:var(--r);
+    padding:12px;margin-bottom:11px;box-shadow:var(--shadow);align-items:center;
+  }
+  .haul-card.winner{border-color:var(--gold);background:#FFFDF4;}
+  .haul-photo{
+    width:76px;height:76px;border-radius:14px;background:linear-gradient(135deg,#FFE9D6,#D9F4F1);
+    display:flex;align-items:center;justify-content:center;font-size:36px;flex:0 0 auto;overflow:hidden;
+  }
+  .haul-photo img{width:100%;height:100%;object-fit:cover;}
+  .haul-info{flex:1;min-width:0;}
+  .haul-user{font-size:11px;font-weight:700;color:var(--muted);}
+  .haul-title{font-weight:800;font-size:13.5px;color:var(--navy);line-height:1.3;margin:2px 0;}
+  .haul-paid{font-size:11.5px;font-weight:800;color:var(--ok);}
+  .vote-btn{
+    flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:1px;
+    border:2px solid var(--line);background:#fff;border-radius:13px;padding:8px 13px;
+    font-size:13px;font-weight:800;color:var(--navy);cursor:pointer;transition:transform .12s;
+  }
+  .vote-btn:active{transform:scale(.92);}
+  .vote-btn.on{background:#FFF0F3;border-color:#FFB3C0;color:#E0245E;}
+  .haul-cta{
+    width:100%;border:2px dashed var(--coral);background:#FFF4EC;border-radius:14px;padding:14px;
+    font-size:13.5px;font-weight:800;color:var(--coral-dark);cursor:pointer;margin-bottom:13px;
+  }
+
+  /* ================= Leaderboard / rewards ================= */
+  .lb-row{
+    display:flex;align-items:center;gap:11px;background:#fff;border:2px solid var(--line);
+    border-radius:14px;padding:10px 13px;margin-bottom:9px;box-shadow:var(--shadow);
+  }
+  .lb-row.me{border-color:var(--coral);background:#FFF4EC;}
+  .lb-rank{font-size:17px;font-weight:800;color:var(--navy);width:32px;text-align:center;flex:0 0 auto;}
+  .lb-ava{
+    width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:19px;flex:0 0 auto;border:2px solid var(--line);background:linear-gradient(135deg,#FFE9D6,#D9F4F1);
+    position:relative;
+  }
+  .lb-ava .flair{position:absolute;bottom:-7px;right:-7px;font-size:14px;}
+  .lb-info{flex:1;min-width:0;}
+  .lb-name{font-weight:800;font-size:14px;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .lb-sub{font-size:11px;color:var(--muted);font-weight:600;}
+  .lb-pts{font-weight:800;font-size:14px;color:var(--coral);flex:0 0 auto;}
+  .lb-pts small{display:block;font-size:9.5px;color:var(--muted);text-align:right;font-weight:700;}
+  .challenge{
+    background:linear-gradient(120deg,#1D3557,#2B4A76);border-radius:var(--r);padding:14px 15px;
+    color:#fff;margin-bottom:12px;box-shadow:var(--shadow);
+  }
+  .challenge .ch-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .challenge .ch-name{font-weight:800;font-size:14px;}
+  .challenge .ch-reward{background:var(--sun);color:#5C4300;font-size:11px;font-weight:800;border-radius:8px;padding:3px 8px;}
+  .challenge .ch-desc{font-size:12px;opacity:.85;font-weight:600;margin-bottom:9px;}
+  .ch-bar{height:7px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;}
+  .ch-fill{height:100%;background:var(--sun);border-radius:99px;transition:width .5s;}
+  .ch-done-tag{font-size:11px;font-weight:800;color:var(--sun);margin-top:7px;}
+  .prize-card{
+    display:flex;align-items:center;gap:13px;background:#fff;border:2px solid var(--line);
+    border-radius:var(--r);padding:13px 14px;margin-bottom:11px;box-shadow:var(--shadow);position:relative;
+  }
+  .sponsor-tag{
+    position:absolute;top:-9px;right:12px;background:var(--teal);color:#fff;font-size:9px;
+    font-weight:800;letter-spacing:.6px;border-radius:6px;padding:2px 7px;
+  }
+  .prize-emoji{
+    width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#FFE9D6,#D9F4F1);
+    display:flex;align-items:center;justify-content:center;font-size:27px;flex:0 0 auto;
+  }
+  .prize-info{flex:1;}
+  .prize-name{font-weight:800;font-size:14px;color:var(--navy);}
+  .prize-desc{font-size:11.5px;color:var(--muted);font-weight:600;line-height:1.4;}
+  .prize-btn{
+    border:none;border-radius:11px;padding:9px 13px;font-weight:800;font-size:12px;cursor:pointer;
+    background:var(--teal);color:#fff;flex:0 0 auto;transition:transform .12s;
+  }
+  .prize-btn:active{transform:scale(.94);}
+  .prize-btn:disabled{background:#E5EAF0;color:var(--muted);cursor:default;}
+  .prize-btn.owned{background:var(--gold);color:#5C4300;}
+
+  /* ================= Profile ================= */
+  .prof-head{display:flex;align-items:center;gap:15px;margin-bottom:16px;}
+  .prof-ava{
+    width:74px;height:74px;border-radius:50%;border:4px solid var(--coral);
+    background:linear-gradient(135deg,var(--sun),var(--coral));display:flex;align-items:center;
+    justify-content:center;font-size:32px;font-weight:800;color:#fff;position:relative;flex:0 0 auto;
+  }
+  .prof-ava .flair{position:absolute;bottom:-6px;right:-10px;font-size:24px;}
+  .prof-name{font-size:20px;font-weight:800;color:var(--navy);}
+  .prof-level{font-size:13px;font-weight:800;color:var(--coral);}
+  .prof-pts{font-size:12px;color:var(--muted);font-weight:700;margin-top:3px;}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:18px;}
+  .stat{background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 6px;text-align:center;}
+  .stat .n{font-size:18px;font-weight:800;color:var(--navy);}
+  .stat .l{font-size:9.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+  .badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;}
+  .badge{background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 4px;text-align:center;}
+  .badge .b-emoji{font-size:25px;display:block;margin-bottom:4px;}
+  .badge .b-name{font-size:9.5px;font-weight:800;color:var(--navy);line-height:1.25;}
+  .badge.locked{opacity:.38;filter:grayscale(1);}
+  .badge.unlocked{border-color:var(--sun);background:#FFFBEB;}
+  .trophy-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .trophy{background:#FFFBEB;border:2px solid var(--gold);border-radius:12px;padding:7px 12px;font-size:12.5px;font-weight:800;color:#7A5C00;}
+  .reset-btn{
+    width:100%;border:2px solid #F3C4C4;background:#FFF5F5;color:#B03A3A;border-radius:12px;
+    padding:11px;font-weight:800;font-size:13px;cursor:pointer;
+  }
+
+  /* ================= Bottom nav ================= */
+  nav{
+    flex:0 0 auto;display:flex;justify-content:space-around;align-items:center;
+    background:#fff;border-top:2px solid var(--line);padding:6px 4px calc(8px + env(safe-area-inset-bottom));
+    z-index:1200;position:relative;
+  }
+  .nav-btn{
+    display:flex;flex-direction:column;align-items:center;gap:2px;border:none;background:none;
+    font-size:10px;font-weight:800;color:var(--muted);cursor:pointer;
+    padding:5px 8px;border-radius:12px;transition:color .15s;min-width:54px;
+  }
+  .nav-btn .ic{font-size:21px;}
+  .nav-btn.on{color:var(--coral);}
+  .nav-btn.post-btn{
+    background:linear-gradient(135deg,var(--coral),var(--coral-dark));color:#fff;border-radius:50%;
+    width:56px;height:56px;min-width:56px;justify-content:center;margin-top:-24px;
+    box-shadow:0 6px 16px rgba(255,107,53,.45);border:4px solid var(--cream);
+  }
+  .nav-btn.post-btn .ic{font-size:26px;}
+  .nav-btn.post-btn span:not(.ic){display:none;}
+  .nav-dot{
+    position:absolute;top:2px;right:8px;width:8px;height:8px;border-radius:50%;background:#E0245E;display:none;
+  }
+
+  /* ================= Alert panel ================= */
+  .alert-panel{
+    position:absolute;top:58px;right:8px;left:8px;background:#fff;border:2px solid var(--line);
+    border-radius:16px;box-shadow:0 16px 40px rgba(29,53,87,.28);z-index:2500;display:none;overflow:hidden;
+  }
+  .alert-panel.open{display:block;}
+  .ap-head{
+    display:flex;justify-content:space-between;align-items:center;padding:12px 15px;
+    border-bottom:2px solid var(--line);font-weight:800;font-size:14px;color:var(--navy);
+  }
+  .ap-close{border:none;background:none;font-size:16px;cursor:pointer;color:var(--muted);padding:4px;}
+  .ap-list{max-height:290px;overflow-y:auto;}
+  .alert-item{display:flex;gap:10px;padding:11px 15px;border-bottom:1.5px solid #F7F0E4;font-size:12.5px;font-weight:600;align-items:flex-start;}
+  .alert-item .a-emoji{font-size:18px;flex:0 0 auto;}
+  .alert-item .when{display:block;color:var(--muted);font-size:10.5px;font-weight:700;margin-top:2px;}
+  .ap-radius{
+    display:flex;align-items:center;gap:8px;padding:11px 15px;font-size:11.5px;font-weight:800;color:var(--muted);
+    background:#FBF5EA;
+  }
+  .rad-chip{border:2px solid var(--line);background:#fff;border-radius:99px;padding:4px 11px;font-size:11px;font-weight:800;color:var(--muted);cursor:pointer;}
+  .rad-chip.on{background:var(--teal);border-color:var(--teal);color:#fff;}
+
+  /* ================= Bottom sheets / modals ================= */
+  .modal-back{
+    position:absolute;inset:0;background:rgba(29,53,87,.5);z-index:2800;display:none;
+    align-items:flex-end;justify-content:center;
+  }
+  .modal-back.open{display:flex;}
+  .sheet{
+    background:var(--cream);border-radius:22px 22px 0 0;width:100%;max-height:88%;
+    overflow-y:auto;padding:10px 16px 22px;animation:sheetUp .3s cubic-bezier(.22,1,.36,1);
+  }
+  @keyframes sheetUp{from{transform:translateY(60px);opacity:.4;}to{transform:none;opacity:1;}}
+  .sheet-grab{width:44px;height:5px;border-radius:99px;background:#DCCFBA;margin:4px auto 14px;}
+  .sheet-title{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+  .sheet-x{border:none;background:none;font-size:18px;cursor:pointer;color:var(--muted);padding:4px;}
+
+  /* ================= Yard sign ================= */
+  .sign{
+    background:#fff;border:6px solid var(--navy);border-radius:8px;padding:24px 18px;
+    text-align:center;margin-bottom:14px;
+  }
+  .sign .s-yard{font-size:40px;font-weight:800;color:var(--coral);letter-spacing:2px;line-height:1;}
+  .sign .s-sale{font-size:40px;font-weight:800;color:var(--navy);letter-spacing:6px;line-height:1.1;}
+  .sign .s-title{font-size:17px;font-weight:800;color:var(--ink);margin:12px 0 4px;}
+  .sign .s-when{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:4px;}
+  .sign .s-addr{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;}
+  .sign .s-qr{display:flex;justify-content:center;margin:10px 0 8px;}
+  .sign .s-qr img,.sign .s-qr canvas{border:8px solid #fff;}
+  .sign .s-scan{font-size:12.5px;font-weight:800;color:var(--teal-dark);}
+  .sign .s-foot{font-size:11px;font-weight:700;color:var(--muted);margin-top:10px;}
+  @media print{
+    body *{visibility:hidden !important;}
+    #signSheet, #signSheet *{visibility:visible !important;}
+    .modal-back{position:fixed !important;inset:0 !important;background:#fff !important;align-items:flex-start !important;}
+    .sheet{max-height:none !important;border-radius:0 !important;}
+    .sheet-grab,.sheet-title,.sign-actions{display:none !important;}
+  }
+  .sign-actions{display:flex;gap:9px;}
+
+  /* ================= Onboarding ================= */
+  .onb{
+    position:absolute;inset:0;z-index:3500;display:none;flex-direction:column;align-items:center;
+    justify-content:center;padding:34px 28px;text-align:center;color:#fff;
+    background:linear-gradient(160deg,var(--coral) 0%,var(--gold) 100%);
+  }
+  .onb.open{display:flex;}
+  .onb .o-emoji{font-size:74px;margin-bottom:18px;animation:bob 2.4s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .onb .o-title{font-size:24px;font-weight:800;margin-bottom:10px;letter-spacing:-.3px;}
+  .onb .o-sub{font-size:14.5px;font-weight:600;line-height:1.55;opacity:.95;max-width:320px;margin-bottom:26px;}
+  .onb .o-dots{display:flex;gap:7px;margin-bottom:22px;}
+  .onb .o-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);}
+  .onb .o-dot.on{background:#fff;}
+  .onb .o-next{
+    border:none;border-radius:99px;background:#fff;color:var(--coral-dark);font-size:15px;
+    font-weight:800;padding:14px 42px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.18);
+    transition:transform .12s;
+  }
+  .onb .o-next:active{transform:scale(.95);}
+  .onb .o-skip{border:none;background:none;color:rgba(255,255,255,.85);font-size:12.5px;font-weight:700;margin-top:14px;cursor:pointer;text-decoration:underline;}
+
+  /* ================= Toasts / confetti / empty ================= */
+  #toasts{
+    position:absolute;bottom:92px;left:0;right:0;display:flex;flex-direction:column;
+    align-items:center;gap:8px;z-index:3000;pointer-events:none;
+  }
+  .toast{
+    background:var(--navy);color:#fff;border-radius:14px;padding:11px 18px;font-size:13.5px;
+    font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.25);display:flex;align-items:center;gap:9px;
+    animation:toastIn .35s cubic-bezier(.22,1.4,.36,1), toastOut .3s ease 2.7s forwards;
+    max-width:88%;text-align:center;
+  }
+  .toast .t-pts{color:var(--sun);}
+  @keyframes toastIn{from{transform:translateY(24px) scale(.8);opacity:0;}to{transform:none;opacity:1;}}
+  @keyframes toastOut{to{transform:translateY(12px);opacity:0;}}
+  .confetti{position:absolute;top:-24px;font-size:18px;z-index:4000;pointer-events:none;animation:fall linear forwards;}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.6;}}
+  .empty{text-align:center;padding:38px 20px;color:var(--muted);font-weight:700;font-size:14px;line-height:1.6;}
+  .empty .big{font-size:44px;display:block;margin-bottom:8px;}
+  .empty .cta-btn{max-width:260px;margin:14px auto 0;}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="logo" title="Sir Hauls-a-Lot, the Golden Gnome">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Sir Hauls-a-Lot">
+        <ellipse cx="32" cy="47" rx="13" ry="12" fill="#FFFFFF"/>
+        <circle cx="32" cy="37" r="9" fill="#FFD9B3"/>
+        <circle cx="29" cy="35.5" r="1.4" fill="#1D3557"/>
+        <circle cx="35" cy="35.5" r="1.4" fill="#1D3557"/>
+        <circle cx="32" cy="40" r="2.6" fill="#F5A97F"/>
+        <path d="M32 2 C40 12 46 20 47 28 L17 28 C18 20 24 12 32 2 Z" fill="#FF6B35"/>
+        <rect x="15" y="26" width="34" height="5.5" rx="2.75" fill="#1D3557"/>
+        <path d="M32 23.6 l1.7 3.4 3.8 .55 -2.75 2.7 .65 3.8 -3.4 -1.8 -3.4 1.8 .65 -3.8 -2.75 -2.7 3.8 -.55 Z" fill="#FFD23F"/>
+      </svg>
+      Haul<span class="of">of</span><span class="hop">Fame</span></div>
+    <div class="hdr-right">
+      <button class="bell-btn" onclick="toggleAlerts()" aria-label="Alerts">🔔<span class="bell-badge" id="bellBadge" style="display:none">0</span></button>
+      <button class="pts-pill" onclick="openRewards('prizes')" title="Spendable points"><span class="star">⭐</span><span id="hdrPts">0</span></button>
+      <button class="avatar-btn" onclick="switchView('profile')" aria-label="Profile">D<span class="flair" id="avaFlair"></span></button>
+    </div>
+  </header>
+
+  <div class="level-strip">
+    <div class="level-row">
+      <span>Lv <span id="lvlNum">1</span> · <span class="lvl-name" id="lvlName">Curb Cruiser</span></span>
+      <span class="lvl-next" id="lvlNext"></span>
+    </div>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+  </div>
+
+  <div class="event-banner" id="eventBanner">
+    <span id="eventText">🎪 MEGA SALE WEEKEND — double points!</span>
+    <button class="event-join" id="eventJoinBtn" onclick="joinEvent()">Join +10 ⭐</button>
+  </div>
+
+  <div class="alert-panel" id="alertPanel">
+    <div class="ap-head">🔔 Early-Bird Alerts <button class="ap-close" onclick="toggleAlerts()" aria-label="Close alerts">✕</button></div>
+    <div class="ap-list" id="alertList"></div>
+    <div class="ap-radius">Alert radius:
+      <button class="rad-chip" data-r="1" onclick="setRadius(1)">1 mi</button>
+      <button class="rad-chip" data-r="5" onclick="setRadius(5)">5 mi</button>
+      <button class="rad-chip" data-r="10" onclick="setRadius(10)">10 mi</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- MAP -->
+    <section class="view active" id="view-map">
+      <div id="map"></div>
+      <div class="map-overlay-top">
+        <div class="map-banner">📍 <span id="mapBanner"></span></div>
+      </div>
+      <div class="map-legend">
+        <span class="dot today"></span>Today<br>
+        <span class="dot soon"></span>Coming up<br>
+        <span class="dot gold"></span>Featured
+      </div>
+      <button class="locate-btn" onclick="goToMe()" title="My location" aria-label="My location">🧭</button>
+    </section>
+
+    <!-- FEED -->
+    <section class="view" id="view-feed">
+      <div class="sticky-head">
+        <div class="seg" role="tablist">
+          <button class="seg-btn on" id="segSales" onclick="setFeedTab('sales')">🏷️ Sales</button>
+          <button class="seg-btn" id="segHauls" onclick="setFeedTab('hauls')">🧺 Haul Brags</button>
+        </div>
+        <div class="fchips" id="dateChips">
+          <button class="fchip on" data-f="all" onclick="setDateFilter('all')">All</button>
+          <button class="fchip" data-f="today" onclick="setDateFilter('today')">Today</button>
+          <button class="fchip" data-f="weekend" onclick="setDateFilter('weekend')">This weekend</button>
+        </div>
+      </div>
+      <div class="pad" style="padding-top:12px">
+        <div id="feedList"></div>
+        <div id="haulPanel" style="display:none">
+          <div id="winnerBanner"></div>
+          <button class="haul-cta" onclick="openHaulComposer()">🧺 Brag about your haul · +25 ⭐</button>
+          <div id="haulList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POST -->
+    <section class="view" id="view-post">
+      <div class="pad">
+        <div class="section-title">➕ Host a Yard Sale</div>
+        <div class="earn-note">🎉 Posting earns <b>&nbsp;+50 ⭐&nbsp;</b> — and you'll get a printable QR yard sign!</div>
+        <div class="fld">
+          <label for="fTitle">Sale title <span class="req">*</span></label>
+          <input type="text" id="fTitle" maxlength="60" placeholder="e.g. Huge Multi-Family Blowout">
+        </div>
+        <div class="fld">
+          <label for="fDesc">What are you selling?</label>
+          <textarea id="fDesc" maxlength="240" placeholder="Furniture, kids' stuff, tools, hidden treasures..."></textarea>
+        </div>
+        <div class="fld">
+          <label for="fAddr">Address / cross streets <span class="req">*</span></label>
+          <input type="text" id="fAddr" maxlength="80" placeholder="412 Maple Ave (corner of 3rd)">
+        </div>
+        <div class="fld">
+          <label for="fDate">Date <span class="req">*</span></label>
+          <input type="date" id="fDate">
+        </div>
+        <div class="time-row">
+          <div class="fld"><label for="fStart">Starts</label><input type="time" id="fStart" value="08:00"></div>
+          <div class="fld"><label for="fEnd">Ends</label><input type="time" id="fEnd" value="14:00"></div>
+        </div>
+        <div class="fld">
+          <label>Categories</label>
+          <div class="cat-grid" id="catGrid"></div>
+        </div>
+        <div class="fld">
+          <label>Pin your spot <span class="req">*</span></label>
+          <div id="miniMap"></div>
+          <div class="mini-hint">Tap the map to drop your sale pin 📍</div>
+        </div>
+        <div class="fld">
+          <label>Photos <span style="color:var(--teal-dark)">(+15 ⭐ each, up to 4)</span></label>
+          <div class="photo-picker" onclick="document.getElementById('fPhotos').click()">📸 Tap to add photos of your goods</div>
+          <input type="file" id="fPhotos" accept="image/*" multiple style="display:none">
+          <div class="photo-previews" id="photoPreviews"></div>
+        </div>
+        <button class="submit-btn" onclick="submitSale()">Post my sale · +50 ⭐</button>
+        <div style="height:10px"></div>
+      </div>
+    </section>
+
+    <!-- ROUTE -->
+    <section class="view" id="view-route">
+      <div class="pad">
+        <div class="section-title">🧭 Saturday Route</div>
+        <div class="section-sub">Star ☆ sales anywhere in the app — we'll plot the fastest loop.</div>
+        <div id="routeBody"></div>
+      </div>
+    </section>
+
+    <!-- REWARDS -->
+    <section class="view" id="view-rewards">
+      <div class="sticky-head">
+        <div class="seg" role="tablist">
+          <button class="seg-btn on" id="rwRanks" onclick="setRewardsTab('ranks')">🏆 Ranks</button>
+          <button class="seg-btn" id="rwPrizes" onclick="setRewardsTab('prizes')">🎁 Prizes</button>
+          <button class="seg-btn" id="rwChall" onclick="setRewardsTab('chall')">⚔️ Challenges</button>
+        </div>
+      </div>
+      <div class="pad" style="padding-top:12px">
+        <div id="panelRanks">
+          <div class="fchips" style="margin-top:0">
+            <button class="fchip on" id="lbTabWeek" onclick="setLbMode('week')">This Week</button>
+            <button class="fchip" id="lbTabAll" onclick="setLbMode('all')">All-Time</button>
+          </div>
+          <div id="lbList"></div>
+        </div>
+        <div id="panelPrizes" style="display:none">
+          <div class="section-sub" style="margin-top:2px">Spendable balance: <b style="color:var(--coral)" id="prizeBal">0 ⭐</b> · sponsor rewards are real local coupons</div>
+          <div id="prizeList"></div>
+        </div>
+        <div id="panelChall" style="display:none">
+          <div id="challengeList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="view" id="view-profile">
+      <div class="pad">
+        <div class="prof-head">
+          <div class="prof-ava">D<span class="flair" id="profFlair"></span></div>
+          <div>
+            <div class="prof-name">David</div>
+            <div class="prof-level" id="profLevel">Lv 1 · Curb Cruiser</div>
+            <div class="prof-pts" id="profPts"></div>
+          </div>
+        </div>
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="section-title" style="font-size:16px;">🎖️ Badges</div>
+        <div class="badge-grid" id="badgeGrid"></div>
+        <div class="section-title" style="font-size:16px;">👑 Trophy Shelf</div>
+        <div class="trophy-row" id="trophyRow"></div>
+        <button class="reset-btn" onclick="resetDemo()">Reset demo data</button>
+        <div style="height:10px"></div>
+      </div>
+    </section>
+  </main>
+
+  <nav>
+    <button class="nav-btn on" data-v="map" onclick="switchView('map')"><span class="ic">🗺️</span><span>Map</span></button>
+    <button class="nav-btn" data-v="feed" onclick="switchView('feed')"><span class="ic">🧾</span><span>Feed</span></button>
+    <button class="nav-btn post-btn" data-v="post" onclick="switchView('post')" aria-label="Post a sale"><span class="ic">➕</span><span>Post</span></button>
+    <button class="nav-btn" data-v="route" onclick="switchView('route')" style="position:relative"><span class="ic">🧭</span><span>Route</span><span class="nav-dot" id="routeDot"></span></button>
+    <button class="nav-btn" data-v="rewards" onclick="switchView('rewards')"><span class="ic">🏆</span><span>Rewards</span></button>
+  </nav>
+
+  <!-- Haul composer sheet -->
+  <div class="modal-back" id="haulSheet">
+    <div class="sheet">
+      <div class="sheet-grab"></div>
+      <div class="sheet-title">🧺 Brag about your haul <button class="sheet-x" onclick="closeHaulComposer()" aria-label="Close">✕</button></div>
+      <div class="fld">
+        <label for="hWhat">What did you score? <span class="req">*</span></label>
+        <input type="text" id="hWhat" maxlength="80" placeholder="e.g. Cast-iron skillet set, barely used">
+      </div>
+      <div class="fld">
+        <label for="hPaid">What did you pay? ($)</label>
+        <input type="number" id="hPaid" min="0" step="0.5" placeholder="3">
+      </div>
+      <div class="fld">
+        <label>Photo</label>
+        <div class="photo-picker" onclick="document.getElementById('hPhoto').click()">📸 Show off the goods</div>
+        <input type="file" id="hPhoto" accept="image/*" style="display:none">
+        <div class="photo-previews" id="hPreview"></div>
+      </div>
+      <button class="submit-btn" onclick="submitHaul()">Post my brag · +25 ⭐</button>
+    </div>
+  </div>
+
+  <!-- QR sign sheet -->
+  <div class="modal-back" id="signSheet">
+    <div class="sheet">
+      <div class="sheet-grab"></div>
+      <div class="sheet-title">🪧 Your printable yard sign <button class="sheet-x" onclick="closeSign()" aria-label="Close">✕</button></div>
+      <div class="sign" id="signBody"></div>
+      <div class="sign-actions">
+        <button class="cta-btn" style="margin:0" onclick="window.print()">🖨️ Print sign</button>
+        <button class="act-btn" style="flex:0 0 auto;padding:12px 16px" onclick="closeSign()">Done</button>
+      </div>
+      <div class="mini-hint" style="text-align:center;margin-top:10px">Shoppers scan the QR to check in — every scan recruits a new Hauler 😉</div>
+    </div>
+  </div>
+
+  <!-- Onboarding -->
+  <div class="onb" id="onb">
+    <div class="o-emoji" id="onbEmoji">📍</div>
+    <div class="o-title" id="onbTitle"></div>
+    <div class="o-sub" id="onbSub"></div>
+    <div class="o-dots" id="onbDots"></div>
+    <button class="o-next" id="onbNextBtn" onclick="onbNext()">Next</button>
+    <button class="o-skip" onclick="finishOnb()">Skip the tour</button>
+  </div>
+
+  <div id="toasts"></div>
+  <input type="file" id="saleCamInput" accept="image/*" style="display:none">
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+"use strict";
+/* ============================================================
+   HAUL OF FAME — gamified yard sale finder (demo prototype)
+   Mascot: Sir Hauls-a-Lot, the Golden Gnome
+   ============================================================ */
+
+const LS_KEY = "yardhopper_v2";
+const DEFAULT_CENTER = [35.5951, -82.5515];
+
+const CATEGORIES = [
+  ["🛋️","Furniture"],["👕","Clothes"],["🧸","Toys"],["🔧","Tools"],["📚","Books"],
+  ["🕰️","Vintage"],["📺","Electronics"],["🪴","Plants"],["🍼","Baby"],["🎪","Everything"]
+];
+
+const LEVELS = [
+  {at:0,    name:"Curb Cruiser"},
+  {at:100,  name:"Bargain Scout"},
+  {at:250,  name:"Deal Hunter"},
+  {at:500,  name:"Thrift Boss"},
+  {at:1000, name:"Haul of Famer"}
+];
+
+const BADGES = [
+  {id:"first_find",  emoji:"📍", name:"First Find",       test:s=>s.user.checkins.length>=1},
+  {id:"hot_streak",  emoji:"🔥", name:"Hot Streak",       test:s=>s.user.checkins.length>=3},
+  {id:"super_scout", emoji:"🕵️", name:"Super Scout",      test:s=>s.user.checkins.length>=6},
+  {id:"shutterbug",  emoji:"📸", name:"Shutterbug",       test:s=>s.user.photoCount>=3},
+  {id:"host",        emoji:"🏠", name:"Host w/ the Most", test:s=>s.user.salesPosted>=1},
+  {id:"early_bird",  emoji:"🐦", name:"Early Bird",       test:s=>s.user.earlyBird===true},
+  {id:"flock_star",  emoji:"🦩", name:"Flock Star",       test:s=>s.user.likesGiven>=5},
+  {id:"big_spender", emoji:"💰", name:"Big Spender",      test:s=>s.user.redeemed.length>=1},
+  {id:"trailblazer", emoji:"🧭", name:"Trailblazer",      test:s=>s.user.starred.length>=2},
+  {id:"haul_hero",   emoji:"🧺", name:"Haul Hero",        test:s=>s.user.haulsPosted>=1},
+  {id:"town_crier",  emoji:"📣", name:"Town Crier",       test:s=>s.user.statusReports.length>=3},
+  {id:"event_goer",  emoji:"🎪", name:"Event Goer",       test:s=>s.user.eventJoined===true}
+];
+
+const PRIZES = [
+  {id:"flamingo",emoji:"🦩", name:"Flamingo Flair",       cost:150, sponsor:false, desc:"A lawn flamingo struts beside your name everywhere in the app."},
+  {id:"boost",   emoji:"🚀", name:"Featured Boost",       cost:200, sponsor:false, desc:"Your sale gets a gold pin & rides the top of the feed all weekend."},
+  {id:"thrift",  emoji:"🛍️", name:"Second Chance Thrift", cost:250, sponsor:true,  desc:"20% off one item at Second Chance Thrift. (Demo sponsor reward)"},
+  {id:"coffee",  emoji:"☕", name:"Bean There Coffee",    cost:300, sponsor:true,  desc:"Free coffee while you hop sales. (Demo sponsor reward)"},
+  {id:"diner",   emoji:"🥞", name:"Maple Diner Breakfast",cost:400, sponsor:true,  desc:"Early-bird breakfast combo on the house. (Demo sponsor reward)"},
+  {id:"gnome",   emoji:"👑", name:"Golden Gnome Trophy",  cost:500, sponsor:false, desc:"Sir Hauls-a-Lot's own golden likeness. Only true Haul of Famers may hold it."}
+];
+
+const CHALLENGES = [
+  {id:"weekend_warrior", name:"Weekend Warrior", emoji:"⚔️", reward:100, goal:3,
+   desc:"Check in at 3 yard sales", prog:s=>s.user.checkins.length},
+  {id:"shutter_sprint",  name:"Shutter Sprint",  emoji:"📷", reward:75,  goal:5,
+   desc:"Snap 5 photos at sales", prog:s=>s.user.photoCount},
+  {id:"open_house",      name:"Open House",      emoji:"🏠", reward:60,  goal:1,
+   desc:"Host your own yard sale", prog:s=>s.user.salesPosted},
+  {id:"status_sentinel", name:"Status Sentinel", emoji:"📣", reward:50,  goal:3,
+   desc:"Report live status at 3 sales", prog:s=>s.user.statusReports.length}
+];
+
+const STATUS_LABEL = {open:"🟢 OPEN NOW", picked:"🟡 PICKED OVER", closed:"🔴 CLOSED EARLY"};
+
+/* ---------- demo data ---------- */
+function demoSales(center){
+  const [clat,clng]=center;
+  const mk=(id,dLat,dLng,title,host,desc,dayOff,ts,te,cats,photos,likes,ppl,status)=>({
+    id, lat:clat+dLat, lng:clng+dLng, title, host, desc,
+    date:isoDay(dayOff), timeStart:ts, timeEnd:te, cats, photos,
+    likes, checkinCount:ppl, mine:false, featured:false, status:status||null
+  });
+  return [
+    mk("d1", 0.006, 0.004, "Huge Multi-Family Blowout", "GarageGoddess",
+       "Three families, one driveway. Mid-century dresser, kids' bikes, records, and a mystery box table.",
+       0, "07:00","14:00", ["Furniture","Vintage","Toys"], ["🛋️","🚲","💿"], 14, 9, "open"),
+    mk("d2", -0.005, 0.007, "Tool Shed Cleanout", "CurbAlert Carl",
+       "40 years of tools. Drill press, hand planes, boxes of hardware. Everything must go.",
+       0, "08:00","13:00", ["Tools","Electronics"], ["🔧","🪚"], 9, 6, "picked"),
+    mk("d3", 0.004, -0.008, "Moving Sale — Everything $5 or Less", "DollarDana",
+       "Cross-country move. Dishes, lamps, plants, books galore. Bring a truck, pay pennies.",
+       1, "09:00","15:00", ["Everything","Books","Plants"], ["🪴","📚","🛍️"], 21, 12, null),
+    mk("d4", -0.008, -0.004, "Vintage & Vinyl Pop-Up", "PickerPatty",
+       "Curated vintage clothing, 300+ records, film cameras, and weird little treasures.",
+       1, "10:00","16:00", ["Vintage","Clothes","Electronics"], ["🕰️","👗","🎞️"], 33, 17, null),
+    mk("d5", 0.009, 0.010, "Baby & Kids Mega Sale", "ThriftKing Tom",
+       "Strollers, cribs, mountains of clothes 0-5T, and enough toys to open a store.",
+       2, "08:00","12:00", ["Baby","Toys","Clothes"], ["🍼","🧸"], 11, 4, null),
+    mk("d6", -0.011, 0.002, "Estate Sale: The Professor's House", "EarlyBirdErnie",
+       "A lifetime of books, maps, globes, oak furniture, and a telescope that works.",
+       2, "07:30","17:00", ["Books","Furniture","Vintage"], ["📚","🔭","🗺️"], 27, 15, null)
+  ];
+}
+function demoHauls(){
+  return [
+    {id:"h1", user:"PickerPatty",    ava:"🧢", photo:"🎻", what:"1962 student violin — plays beautifully", paid:12, votes:18, mine:false},
+    {id:"h2", user:"EarlyBirdErnie", ava:"🐦", photo:"📚", what:"Complete first-edition Hardy Boys set",   paid:5,  votes:11, mine:false},
+    {id:"h3", user:"GarageGoddess",  ava:"👒", photo:"💡", what:"Pair of mid-century teak lamps",          paid:8,  votes:9,  mine:false}
+  ];
+}
+const DEMO_LB = [
+  {name:"PickerPatty",    ava:"🧢", week:310, all:4120, finds:212},
+  {name:"EarlyBirdErnie", ava:"🐦", week:275, all:3890, finds:198},
+  {name:"GarageGoddess",  ava:"👒", week:240, all:2760, finds:141},
+  {name:"ThriftKing Tom", ava:"👑", week:180, all:2214, finds:120},
+  {name:"DollarDana",     ava:"💃", week:135, all:1670, finds:88},
+  {name:"CurbAlert Carl", ava:"🧔", week:90,  all:980,  finds:52}
+];
+
+/* ---------- state ---------- */
+let state = null;
+function freshState(){
+  return {
+    center: DEFAULT_CENTER.slice(),
+    geoApplied:false, simSalePosted:false,
+    sales: demoSales(DEFAULT_CENTER),
+    hauls: demoHauls(),
+    user:{
+      name:"David", lifetime:0, balance:0, weekPts:0,
+      salesPosted:0, photoCount:0, likesGiven:0, haulsPosted:0,
+      checkins:[], likedSales:[], badges:[], redeemed:[], challengesDone:[],
+      starred:[], statusReports:[], votedHaul:null,
+      earlyBird:false, onboarded:false, alertRadius:5, eventJoined:false
+    },
+    alerts:[]
+  };
+}
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+function load(){ try{ const raw=localStorage.getItem(LS_KEY); return raw?JSON.parse(raw):null; }catch(e){ return null; } }
+
+/* ---------- date & geo helpers ---------- */
+function isoDay(offset){
+  const d=new Date(); d.setDate(d.getDate()+offset);
+  return d.toISOString().slice(0,10);
+}
+function dayLabel(iso){
+  if(iso===isoDay(0)) return "TODAY";
+  if(iso===isoDay(1)) return "TMRW";
+  return new Date(iso+"T12:00:00").toLocaleDateString(undefined,{weekday:"short"}).toUpperCase();
+}
+function niceDate(iso){
+  return new Date(iso+"T12:00:00").toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+}
+function fmtTime(t){
+  const [h,m]=t.split(":").map(Number);
+  const ap=h>=12?"PM":"AM"; const hh=((h+11)%12)+1;
+  return m? `${hh}:${String(m).padStart(2,"0")} ${ap}` : `${hh} ${ap}`;
+}
+function hav(lat1,lng1,lat2,lng2){
+  const R=3958.8, toR=x=>x*Math.PI/180;
+  const dLat=toR(lat2-lat1), dLng=toR(lng2-lng1);
+  const a=Math.sin(dLat/2)**2 + Math.cos(toR(lat1))*Math.cos(toR(lat2))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(a));
+}
+function distMi(lat,lng){ return hav(state.center[0],state.center[1],lat,lng); }
+
+/* ---------- event weekend ---------- */
+function eventDates(){
+  const d=new Date(); const dow=d.getDay(); /* 0 Sun..6 Sat */
+  let sat=new Date(d);
+  if(dow===0) sat.setDate(d.getDate()-1);          /* Sunday → yesterday was Sat */
+  else sat.setDate(d.getDate()+(6-dow));           /* else upcoming (or today's) Sat */
+  const sun=new Date(sat); sun.setDate(sat.getDate()+1);
+  return [sat.toISOString().slice(0,10), sun.toISOString().slice(0,10)];
+}
+function isEventActive(){ return eventDates().includes(isoDay(0)); }
+
+/* ---------- gamification engine ---------- */
+function awardPoints(n,label){
+  const mult=isEventActive()?2:1;
+  const total=n*mult;
+  state.user.lifetime+=total; state.user.balance+=total; state.user.weekPts+=total;
+  showToast(label, `+${total} ⭐${mult>1?" ×2 🎪":""}`);
+  checkLevelUp(); checkBadges(); checkChallenges();
+  save(); renderHUD();
+}
+function levelInfo(pts){
+  let lvl=0;
+  for(let i=0;i<LEVELS.length;i++){ if(pts>=LEVELS[i].at) lvl=i; }
+  const cur=LEVELS[lvl], next=LEVELS[lvl+1]||null;
+  const base=cur.at, ceil=next?next.at:cur.at;
+  const pct=next?Math.min(100,Math.round((pts-base)/(ceil-base)*100)):100;
+  return {num:lvl+1, name:cur.name, next, pct};
+}
+let lastLevel=1;
+function checkLevelUp(){
+  const li=levelInfo(state.user.lifetime);
+  if(li.num>lastLevel){
+    lastLevel=li.num; confettiBurst();
+    setTimeout(()=>showToast(`LEVEL UP! You're now a ${li.name}`,"🎉"),350);
+  }
+}
+function checkBadges(){
+  BADGES.forEach(b=>{
+    if(!state.user.badges.includes(b.id) && b.test(state)){
+      state.user.badges.push(b.id);
+      setTimeout(()=>showToast(`Badge unlocked: ${b.emoji} ${b.name}`,"🎖️"),600);
+      confettiBurst(18);
+    }
+  });
+}
+function checkChallenges(){
+  CHALLENGES.forEach(c=>{
+    if(!state.user.challengesDone.includes(c.id) && c.prog(state)>=c.goal){
+      state.user.challengesDone.push(c.id);
+      const mult=isEventActive()?2:1, total=c.reward*mult;
+      state.user.lifetime+=total; state.user.balance+=total; state.user.weekPts+=total;
+      setTimeout(()=>showToast(`Challenge complete: ${c.emoji} ${c.name}`,`+${total} ⭐${mult>1?" ×2":""}`),900);
+      confettiBurst(26); checkLevelUp();
+    }
+  });
+}
+
+/* ---------- core actions ---------- */
+function checkIn(id){
+  if(state.user.checkins.includes(id)) return;
+  state.user.checkins.push(id);
+  const sale=state.sales.find(s=>s.id===id);
+  if(sale) sale.checkinCount++;
+  if(new Date().getHours()<8) state.user.earlyBird=true;
+  awardPoints(20,"Found it! Checked in 📍");
+  renderAll();
+}
+function toggleStar(id){
+  const i=state.user.starred.indexOf(id);
+  if(i>=0){ state.user.starred.splice(i,1); showToast("Removed from your route",""); }
+  else {
+    state.user.starred.push(id);
+    showToast("Added to your Saturday route 🧭","");
+    document.getElementById("routeDot").style.display="block";
+  }
+  checkBadges(); save(); renderAll();
+}
+function setStatus(id, st){
+  const sale=state.sales.find(s=>s.id===id);
+  if(!sale) return;
+  sale.status = (sale.status===st)? null : st;
+  if(!sale.mine && sale.status && !state.user.statusReports.includes(id)){
+    state.user.statusReports.push(id);
+    awardPoints(5,"Status reported — neighbors thank you 📣");
+  } else {
+    save();
+  }
+  renderAll();
+}
+function toggleLike(id){
+  const i=state.user.likedSales.indexOf(id);
+  const sale=state.sales.find(s=>s.id===id);
+  if(!sale) return;
+  if(i>=0){ state.user.likedSales.splice(i,1); sale.likes--; save(); renderAll(); return; }
+  state.user.likedSales.push(id); sale.likes++; state.user.likesGiven++;
+  awardPoints(2,"Nice find shared ❤️");
+  renderAll();
+}
+let camSaleId=null;
+function addPhotoTo(id){ camSaleId=id; document.getElementById("saleCamInput").click(); }
+function redeem(id){
+  const p=PRIZES.find(x=>x.id===id);
+  if(!p || state.user.redeemed.includes(id) || state.user.balance<p.cost) return;
+  state.user.balance-=p.cost;
+  state.user.redeemed.push(id);
+  if(id==="boost"){
+    const mine=state.sales.filter(s=>s.mine);
+    (mine.length?mine:[state.sales[0]]).forEach(s=>s.featured=true);
+  }
+  confettiBurst(30);
+  showToast(`Redeemed: ${p.emoji} ${p.name}!`,"🎁");
+  checkBadges(); save(); renderAll();
+}
+function joinEvent(){
+  if(state.user.eventJoined) return;
+  state.user.eventJoined=true;
+  awardPoints(10,"You're in! Mega Sale Weekend 🎪");
+  renderAll();
+}
+function voteHaul(id){
+  if(state.user.votedHaul===id) return;
+  const prev=state.hauls.find(h=>h.id===state.user.votedHaul);
+  if(prev) prev.votes--;
+  const h=state.hauls.find(x=>x.id===id);
+  if(!h) return;
+  h.votes++;
+  const first = state.user.votedHaul===null;
+  state.user.votedHaul=id;
+  if(first) awardPoints(2,"Vote cast for Best Find 🗳️");
+  else { save(); showToast("Vote moved 🗳️",""); }
+  renderAll();
+}
+function resetDemo(){
+  if(!confirm("Reset all demo progress?")) return;
+  try{ localStorage.removeItem(LS_KEY); }catch(e){}
+  location.reload();
+}
+function esc(s){ return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+/* JS_A_END */
+/* ================= rendering ================= */
+function renderHUD(){
+  document.getElementById("hdrPts").textContent=state.user.balance;
+  document.getElementById("prizeBal").textContent=state.user.balance+" ⭐";
+  const li=levelInfo(state.user.lifetime);
+  document.getElementById("lvlNum").textContent=li.num;
+  document.getElementById("lvlName").textContent=li.name;
+  document.getElementById("lvlNext").textContent=li.next
+    ? `${li.next.at-state.user.lifetime} ⭐ to ${li.next.name}` : "MAX LEVEL 🏆";
+  document.getElementById("xpFill").style.width=li.pct+"%";
+  const flair=state.user.redeemed.includes("gnome")?"👑":state.user.redeemed.includes("flamingo")?"🦩":"";
+  document.getElementById("avaFlair").textContent=flair;
+  document.getElementById("profFlair").textContent=flair;
+  /* event banner */
+  const eb=document.getElementById("eventBanner");
+  const [sat]=eventDates();
+  if(isEventActive()){
+    eb.classList.add("show");
+    document.getElementById("eventText").textContent="🎪 MEGA SALE WEEKEND IS LIVE — all points ×2!";
+  } else {
+    eb.classList.add("show");
+    document.getElementById("eventText").textContent=`🎪 Mega Sale Weekend ${niceDate(sat)} — double points!`;
+  }
+  const jb=document.getElementById("eventJoinBtn");
+  if(state.user.eventJoined){ jb.textContent="Joined ✓"; jb.classList.add("joined"); }
+  else { jb.textContent="Join +10 ⭐"; jb.classList.remove("joined"); }
+  /* bell */
+  const unread=state.alerts.filter(a=>!a.read).length;
+  const bb=document.getElementById("bellBadge");
+  bb.style.display=unread?"block":"none"; bb.textContent=unread;
+}
+
+/* ----- status helpers ----- */
+function statusChip(s){
+  if(s.status) return `<span class="status-chip ${s.status}">${STATUS_LABEL[s.status]}</span>`;
+  return `<span class="status-chip upcoming">⏰ OPENS ${dayLabel(s.date)} ${fmtTime(s.timeStart)}</span>`;
+}
+
+/* ----- map ----- */
+let map=null, miniMap=null, markerLayer=null, routeLayer=null, miniMarker=null;
+function buildMaps(){
+  map=L.map("map",{zoomControl:false}).setView(state.center,15);
+  L.control.zoom({position:"bottomright"}).addTo(map);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
+  markerLayer=L.layerGroup().addTo(map);
+  routeLayer=L.layerGroup().addTo(map);
+  miniMap=L.map("miniMap",{zoomControl:false}).setView(state.center,15);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19}).addTo(miniMap);
+  miniMap.on("click",e=>{
+    if(miniMarker) miniMap.removeLayer(miniMarker);
+    miniMarker=L.marker(e.latlng,{icon:pinIcon("🏡","today")}).addTo(miniMap);
+  });
+}
+function pinIcon(emoji,cls,num){
+  return L.divIcon({
+    className:"", iconSize:[34,34], iconAnchor:[17,30], popupAnchor:[0,-28],
+    html:`<div class="pin ${cls}">${emoji}${num?`<span class="pin-num">${num}</span>`:""}</div>`
+  });
+}
+function renderMap(){
+  if(!map) return;
+  markerLayer.clearLayers();
+  const today=isoDay(0);
+  const route=optimizedRoute();
+  const orderOf={}; route.forEach((s,i)=>orderOf[s.id]=i+1);
+  state.sales.forEach(s=>{
+    const found=state.user.checkins.includes(s.id);
+    const starred=state.user.starred.includes(s.id);
+    const cls=s.featured?"featured":found?"found":(s.date===today?"today":"soon");
+    const emoji=s.featured?"⭐":found?"✅":"🏷️";
+    const m=L.marker([s.lat,s.lng],{icon:pinIcon(emoji,cls,orderOf[s.id])}).addTo(markerLayer);
+    const ciBtn=found
+      ? `<button class="pop-btn done">✅ Found it</button>`
+      : `<button class="pop-btn" onclick="checkIn('${s.id}')">📍 Check in +20⭐</button>`;
+    m.bindPopup(`
+      <div class="pop-title">${s.featured?"⭐ ":""}${esc(s.title)}</div>
+      <div class="pop-meta">${s.status?STATUS_LABEL[s.status]+" · ":""}${dayLabel(s.date)} · ${fmtTime(s.timeStart)}–${fmtTime(s.timeEnd)} · ${distMi(s.lat,s.lng).toFixed(1)} mi</div>
+      <div class="pop-row">${ciBtn}
+        <button class="pop-btn sec ${starred?'on':''}" onclick="toggleStar('${s.id}')" title="Add to route">${starred?"★":"☆"}</button>
+      </div>`);
+  });
+  /* route polyline */
+  routeLayer.clearLayers();
+  if(route.length>=2){
+    const pts=route.map(s=>[s.lat,s.lng]);
+    if(userPos) pts.unshift(userPos);
+    L.polyline(pts,{color:"#F5B301",weight:5,opacity:.85,dashArray:"2 8"}).addTo(routeLayer);
+  }
+  const openNow=state.sales.filter(s=>s.status==="open").length;
+  document.getElementById("mapBanner").innerHTML=
+    `<b>${state.sales.length}</b> sales nearby${openNow?` · <b>${openNow}</b> open right now`:""} — tap a pin to check in`;
+}
+
+/* ----- feed (sales) ----- */
+let feedTab="sales", dateFilter="all";
+function setFeedTab(t){
+  feedTab=t;
+  document.getElementById("segSales").classList.toggle("on",t==="sales");
+  document.getElementById("segHauls").classList.toggle("on",t==="hauls");
+  document.getElementById("feedList").style.display=t==="sales"?"block":"none";
+  document.getElementById("haulPanel").style.display=t==="hauls"?"block":"none";
+  document.getElementById("dateChips").style.display=t==="sales"?"flex":"none";
+}
+function setDateFilter(f){
+  dateFilter=f;
+  document.querySelectorAll("#dateChips .fchip").forEach(c=>c.classList.toggle("on",c.dataset.f===f));
+  renderFeed();
+}
+function inWeekend(iso){ return eventDates().includes(iso); }
+function photoTiles(s){
+  return s.photos.map(p=>String(p).startsWith("data:")
+    ? `<div class="photo-tile"><img src="${p}" alt="sale photo"></div>`
+    : `<div class="photo-tile">${p}</div>`).join("");
+}
+function statusRow(s){
+  const opts=["open","picked","closed"];
+  const lbl={open:"🟢 Open",picked:"🟡 Picked",closed:"🔴 Closed"};
+  if(s.mine){
+    return `<div class="status-report">Set your status:
+      ${opts.map(o=>`<button class="st-btn ${o} ${s.status===o?'on':''}" onclick="setStatus('${s.id}','${o}')">${lbl[o]}</button>`).join("")}
+      <span style="margin-left:auto"><button class="st-btn" onclick="openSign('${s.id}')">🪧 Print QR sign</button></span></div>`;
+  }
+  if(s.date===isoDay(0)){
+    const reported=state.user.statusReports.includes(s.id);
+    return `<div class="status-report">${reported?"Thanks for reporting! 📣":"Report status <span class='pts-tag'>+5</span>:"}
+      ${opts.map(o=>`<button class="st-btn ${o} ${s.status===o?'on':''}" onclick="setStatus('${s.id}','${o}')">${lbl[o]}</button>`).join("")}</div>`;
+  }
+  return "";
+}
+function renderFeed(){
+  const el=document.getElementById("feedList");
+  const today=isoDay(0);
+  let sales=[...state.sales];
+  if(dateFilter==="today") sales=sales.filter(s=>s.date===today);
+  if(dateFilter==="weekend") sales=sales.filter(s=>inWeekend(s.date));
+  sales.sort((a,b)=>{
+    if(a.featured!==b.featured) return a.featured?-1:1;
+    if(a.date!==b.date) return a.date<b.date?-1:1;
+    return distMi(a.lat,a.lng)-distMi(b.lat,b.lng);
+  });
+  if(!sales.length){
+    el.innerHTML=`<div class="empty"><span class="big">🏜️</span>No sales match this filter.<br>
+      <button class="cta-btn" onclick="switchView('post')">➕ Host one & earn +50 ⭐</button></div>`;
+    return;
+  }
+  el.innerHTML=sales.map(s=>{
+    const found=state.user.checkins.includes(s.id);
+    const liked=state.user.likedSales.includes(s.id);
+    const starred=state.user.starred.includes(s.id);
+    return `
+    <div class="card ${s.featured?'featured-card':''}">
+      ${s.featured?`<div class="featured-ribbon">⭐ FEATURED SALE</div>`:""}
+      <div class="photo-wrap">
+        ${statusChip(s)}
+        <button class="star-btn ${starred?'on':''}" onclick="toggleStar('${s.id}')" aria-label="Add to route">${starred?"★":"☆"}</button>
+        <div class="photo-strip">${photoTiles(s)}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-title">${esc(s.title)}</div>
+          <div class="date-chip ${s.date===today?'today':''}">${dayLabel(s.date)}<br>${fmtTime(s.timeStart)}</div>
+        </div>
+        <div class="card-host">hosted by <b>${esc(s.host)}${s.mine?" (you!)":""}</b></div>
+        <div class="card-desc">${esc(s.desc)}</div>
+        <div class="chips">${s.cats.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
+        <div class="card-meta">
+          <span>📍 ${distMi(s.lat,s.lng).toFixed(1)} mi</span>
+          <span>🗓️ ${niceDate(s.date)} · ${fmtTime(s.timeStart)}–${fmtTime(s.timeEnd)}</span>
+          <span>👥 ${s.checkinCount} found it</span>
+        </div>
+        ${found
+          ? `<button class="cta-btn done">✅ You found this one</button>`
+          : `<button class="cta-btn" onclick="checkIn('${s.id}')">📍 Found it! <span class="pts-tag">+20 ⭐</span></button>`}
+        <div class="card-actions">
+          <button class="act-btn ${liked?'liked':''}" onclick="toggleLike('${s.id}')">${liked?"❤️":"🤍"} ${s.likes}</button>
+          <button class="act-btn" onclick="addPhotoTo('${s.id}')">📸 Snap <span class="pts-tag">+15</span></button>
+          <button class="act-btn" onclick="toggleStar('${s.id}')">${starred?"★ Routed":"☆ Route"}</button>
+        </div>
+        ${statusRow(s)}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+/* ----- hauls ----- */
+function renderHauls(){
+  const hauls=[...state.hauls].sort((a,b)=>b.votes-a.votes);
+  const winner=hauls[0];
+  document.getElementById("winnerBanner").innerHTML=winner
+    ? `<div class="winner-banner">👑 <span>This Week's Haul of Fame Inductee: <b>${esc(winner.what)}</b> by ${esc(winner.user)} — ${winner.votes} votes</span></div>`
+    : "";
+  document.getElementById("haulList").innerHTML=hauls.map((h,i)=>{
+    const voted=state.user.votedHaul===h.id;
+    const photo=String(h.photo).startsWith("data:")?`<img src="${h.photo}" alt="haul">`:h.photo;
+    return `
+    <div class="haul-card ${i===0?'winner':''}">
+      <div class="haul-photo">${photo}</div>
+      <div class="haul-info">
+        <div class="haul-user">${h.ava} ${esc(h.user)}${h.mine?" (you)":""}${i===0?" · 👑 next inductee":""}</div>
+        <div class="haul-title">${esc(h.what)}</div>
+        <div class="haul-paid">paid $${h.paid}</div>
+      </div>
+      <button class="vote-btn ${voted?'on':''}" onclick="voteHaul('${h.id}')" aria-label="Vote">
+        ${voted?"❤️":"▲"}<span style="font-size:12px">${h.votes}</span>
+      </button>
+    </div>`;
+  }).join("");
+}
+
+/* ----- route ----- */
+function optimizedRoute(){
+  const stops=state.sales.filter(s=>state.user.starred.includes(s.id));
+  const rem=[...stops], route=[];
+  let cur={lat:state.center[0], lng:state.center[1]};
+  while(rem.length){
+    let bi=0, bd=Infinity;
+    rem.forEach((s,i)=>{ const d=hav(cur.lat,cur.lng,s.lat,s.lng); if(d<bd){bd=d;bi=i;} });
+    const nxt=rem.splice(bi,1)[0];
+    nxt._leg=bd; route.push(nxt); cur=nxt;
+  }
+  return route;
+}
+function gmapsLink(route){
+  const pts=route.map(s=>s.lat.toFixed(6)+","+s.lng.toFixed(6));
+  if(userPos) pts.unshift(userPos[0].toFixed(6)+","+userPos[1].toFixed(6));
+  return "https://www.google.com/maps/dir/"+pts.join("/");
+}
+function renderRoute(){
+  const el=document.getElementById("routeBody");
+  const route=optimizedRoute();
+  document.getElementById("routeDot").style.display="none";
+  if(!route.length){
+    el.innerHTML=`<div class="empty"><span class="big">🧭</span>No stops yet!<br>Tap the ☆ on any sale to build your route.
+      <button class="cta-btn" onclick="switchView('feed')">🧾 Browse the feed</button></div>`;
+    return;
+  }
+  const totalMi=route.reduce((a,s)=>a+s._leg,0);
+  const estMin=Math.round(totalMi*3 + route.length*20);
+  el.innerHTML=`
+    <div class="route-sum">
+      <div class="route-stat"><div class="n">${route.length}</div><div class="l">Stops</div></div>
+      <div class="route-stat"><div class="n">${totalMi.toFixed(1)}</div><div class="l">Miles</div></div>
+      <div class="route-stat"><div class="n">${Math.floor(estMin/60)}h ${estMin%60}m</div><div class="l">Est. hop</div></div>
+    </div>
+    <div class="route-actions">
+      <button class="act-btn primary" onclick="switchView('map')" style="padding:12px">🗺️ Show on map</button>
+      <a class="act-btn" href="${gmapsLink(route)}" target="_blank" rel="noopener" style="padding:12px">📲 Open in Google Maps</a>
+    </div>
+    ${route.map((s,i)=>{
+      const found=state.user.checkins.includes(s.id);
+      return `
+      <div class="stop-row ${found?'found-stop':''}">
+        <div class="stop-num">${i+1}</div>
+        <div class="stop-info">
+          <div class="stop-title">${found?"✅ ":""}${esc(s.title)}</div>
+          <div class="stop-sub">${dayLabel(s.date)} ${fmtTime(s.timeStart)} · ${s._leg.toFixed(1)} mi leg${s.status?" · "+STATUS_LABEL[s.status]:""}</div>
+        </div>
+        <button class="stop-x" onclick="toggleStar('${s.id}')" aria-label="Remove stop">✕</button>
+      </div>`;
+    }).join("")}
+    <div class="mini-hint" style="text-align:center">Route optimized nearest-first from your location. Check in at each stop for +20 ⭐!</div>`;
+}
+
+/* ----- rewards ----- */
+let rewardsTab="ranks", lbMode="week";
+function setRewardsTab(t){
+  rewardsTab=t;
+  document.getElementById("rwRanks").classList.toggle("on",t==="ranks");
+  document.getElementById("rwPrizes").classList.toggle("on",t==="prizes");
+  document.getElementById("rwChall").classList.toggle("on",t==="chall");
+  document.getElementById("panelRanks").style.display=t==="ranks"?"block":"none";
+  document.getElementById("panelPrizes").style.display=t==="prizes"?"block":"none";
+  document.getElementById("panelChall").style.display=t==="chall"?"block":"none";
+}
+function openRewards(tab){ switchView("rewards"); setRewardsTab(tab); }
+function setLbMode(m){
+  lbMode=m;
+  document.getElementById("lbTabWeek").classList.toggle("on",m==="week");
+  document.getElementById("lbTabAll").classList.toggle("on",m==="all");
+  renderRanks();
+}
+function renderRanks(){
+  const me={name:"David",ava:"😎",me:true,week:state.user.weekPts,all:state.user.lifetime,finds:state.user.checkins.length};
+  const rows=[...DEMO_LB,me].sort((a,b)=>b[lbMode]-a[lbMode]);
+  const medals=["🥇","🥈","🥉"];
+  const flair=state.user.redeemed.includes("gnome")?"👑":state.user.redeemed.includes("flamingo")?"🦩":"";
+  document.getElementById("lbList").innerHTML=rows.map((r,i)=>`
+    <div class="lb-row ${r.me?'me':''}">
+      <div class="lb-rank">${medals[i]||"#"+(i+1)}</div>
+      <div class="lb-ava">${r.ava}${r.me&&flair?`<span class="flair">${flair}</span>`:""}</div>
+      <div class="lb-info">
+        <div class="lb-name">${esc(r.name)}${r.me?" (you)":""}</div>
+        <div class="lb-sub">${r.finds} sales found</div>
+      </div>
+      <div class="lb-pts">${r[lbMode]} ⭐<small>${lbMode==="week"?"this week":"all-time"}</small></div>
+    </div>`).join("");
+}
+function renderPrizes(){
+  document.getElementById("challengeList").innerHTML=CHALLENGES.map(c=>{
+    const done=state.user.challengesDone.includes(c.id);
+    const p=Math.min(c.goal,c.prog(state));
+    return `
+    <div class="challenge">
+      <div class="ch-top"><span class="ch-name">${c.emoji} ${c.name}</span><span class="ch-reward">+${c.reward} ⭐</span></div>
+      <div class="ch-desc">${c.desc} · ${p}/${c.goal}</div>
+      <div class="ch-bar"><div class="ch-fill" style="width:${Math.round(p/c.goal*100)}%"></div></div>
+      ${done?`<div class="ch-done-tag">✅ COMPLETE — points awarded!</div>`:""}
+    </div>`;
+  }).join("");
+  document.getElementById("prizeList").innerHTML=PRIZES.map(p=>{
+    const owned=state.user.redeemed.includes(p.id);
+    const afford=state.user.balance>=p.cost;
+    return `
+    <div class="prize-card">
+      ${p.sponsor?`<span class="sponsor-tag">LOCAL SPONSOR</span>`:""}
+      <div class="prize-emoji">${p.emoji}</div>
+      <div class="prize-info">
+        <div class="prize-name">${p.name}</div>
+        <div class="prize-desc">${p.desc}</div>
+      </div>
+      ${owned?`<button class="prize-btn owned">Owned ✓</button>`
+             :`<button class="prize-btn" ${afford?"":"disabled"} onclick="redeem('${p.id}')">${p.cost} ⭐</button>`}
+    </div>`;
+  }).join("");
+}
+
+/* ----- profile ----- */
+function renderProfile(){
+  const li=levelInfo(state.user.lifetime);
+  document.getElementById("profLevel").textContent=`Lv ${li.num} · ${li.name}`;
+  document.getElementById("profPts").textContent=
+    `${state.user.lifetime} ⭐ lifetime · ${state.user.balance} ⭐ spendable`;
+  const st=[["🏠",state.user.salesPosted,"Hosted"],["📍",state.user.checkins.length,"Finds"],
+            ["📸",state.user.photoCount,"Photos"],["❤️",state.user.likesGiven,"Likes"],
+            ["🧺",state.user.haulsPosted,"Hauls"],["📣",state.user.statusReports.length,"Reports"]];
+  document.getElementById("statGrid").innerHTML=st.map(([e,n,l])=>
+    `<div class="stat"><div class="n">${e} ${n}</div><div class="l">${l}</div></div>`).join("");
+  document.getElementById("badgeGrid").innerHTML=BADGES.map(b=>{
+    const un=state.user.badges.includes(b.id);
+    return `<div class="badge ${un?'unlocked':'locked'}"><span class="b-emoji">${b.emoji}</span><span class="b-name">${b.name}</span></div>`;
+  }).join("");
+  const tr=state.user.redeemed.map(id=>{
+    const p=PRIZES.find(x=>x.id===id);
+    return `<div class="trophy">${p.emoji} ${p.name}</div>`;
+  }).join("");
+  document.getElementById("trophyRow").innerHTML=tr||
+    `<div style="font-size:12.5px;color:var(--muted);font-weight:600;">Nothing yet — redeem prizes to fill your shelf! 🎁</div>`;
+}
+
+function renderAll(){
+  renderHUD(); renderMap(); renderFeed(); renderHauls();
+  renderRoute(); renderRanks(); renderPrizes(); renderProfile(); renderAlerts();
+}
+
+/* ----- view switching ----- */
+function switchView(v){
+  document.querySelectorAll(".view").forEach(el=>el.classList.toggle("active",el.id==="view-"+v));
+  document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
+  document.getElementById("alertPanel").classList.remove("open");
+  if(v==="map"&&map) setTimeout(()=>map.invalidateSize(),80);
+  if(v==="post"&&miniMap) setTimeout(()=>miniMap.invalidateSize(),80);
+  if(v==="route") renderRoute();
+}
+/* JS_B_END */
+/* ================= post a sale ================= */
+const selectedCats=new Set();
+let pendingPhotos=[];
+function buildCatGrid(){
+  document.getElementById("catGrid").innerHTML=CATEGORIES.map(([e,n])=>
+    `<button type="button" class="cat-chip" data-c="${n}" onclick="toggleCat(this)">${e} ${n}</button>`).join("");
+}
+function toggleCat(btn){
+  const c=btn.dataset.c;
+  if(selectedCats.has(c)){ selectedCats.delete(c); btn.classList.remove("on"); }
+  else { selectedCats.add(c); btn.classList.add("on"); }
+}
+function readFilesAsDataURLs(files,cap,cb){
+  const list=[...files].slice(0,cap); const out=[]; let n=0;
+  if(!list.length){ cb([]); return; }
+  list.forEach(f=>{
+    const r=new FileReader();
+    r.onload=()=>{ out.push(r.result); if(++n===list.length) cb(out); };
+    r.onerror=()=>{ if(++n===list.length) cb(out); };
+    r.readAsDataURL(f);
+  });
+}
+function submitSale(){
+  const title=document.getElementById("fTitle").value.trim();
+  const addr=document.getElementById("fAddr").value.trim();
+  const date=document.getElementById("fDate").value;
+  if(!title){ showToast("Give your sale a title! ✏️",""); return; }
+  if(!addr){ showToast("Add an address or cross streets 🗺️",""); return; }
+  if(!date){ showToast("Pick a date for your sale 🗓️",""); return; }
+  if(!miniMarker){ showToast("Tap the mini-map to drop your pin 📍",""); return; }
+  const ll=miniMarker.getLatLng();
+  const sale={
+    id:"u"+Date.now(), lat:ll.lat, lng:ll.lng,
+    title, host:"David", desc:document.getElementById("fDesc").value.trim()||addr,
+    addr, date,
+    timeStart:document.getElementById("fStart").value||"08:00",
+    timeEnd:document.getElementById("fEnd").value||"14:00",
+    cats:selectedCats.size?[...selectedCats]:["Everything"],
+    photos:pendingPhotos.length?pendingPhotos.slice():["🏡"],
+    likes:0, checkinCount:0, mine:true, status:null,
+    featured:state.user.redeemed.includes("boost")
+  };
+  state.sales.push(sale);
+  state.user.salesPosted++;
+  awardPoints(50,"Sale posted! You're hosting 🏠");
+  if(pendingPhotos.length){
+    state.user.photoCount+=pendingPhotos.length;
+    awardPoints(15*pendingPhotos.length,`Photo bonus ×${pendingPhotos.length} 📸`);
+  }
+  ["fTitle","fDesc","fAddr"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("fDate").value=isoDay(1);
+  selectedCats.clear(); buildCatGrid();
+  pendingPhotos=[]; document.getElementById("photoPreviews").innerHTML="";
+  if(miniMarker){ miniMap.removeLayer(miniMarker); miniMarker=null; }
+  renderAll();
+  openSign(sale.id);   /* straight to the printable QR sign */
+  switchView("map");
+  map.setView([sale.lat,sale.lng],16);
+}
+
+/* ================= haul composer ================= */
+let pendingHaulPhoto=null;
+function openHaulComposer(){ document.getElementById("haulSheet").classList.add("open"); }
+function closeHaulComposer(){ document.getElementById("haulSheet").classList.remove("open"); }
+function submitHaul(){
+  const what=document.getElementById("hWhat").value.trim();
+  if(!what){ showToast("Tell us what you scored! ✏️",""); return; }
+  const paid=parseFloat(document.getElementById("hPaid").value)||0;
+  state.hauls.push({
+    id:"uh"+Date.now(), user:"David", ava:"😎",
+    photo:pendingHaulPhoto||"🧺", what, paid, votes:1, mine:true
+  });
+  state.user.haulsPosted++;
+  awardPoints(25,"Haul posted — brag away! 🧺");
+  document.getElementById("hWhat").value="";
+  document.getElementById("hPaid").value="";
+  document.getElementById("hPreview").innerHTML="";
+  pendingHaulPhoto=null;
+  closeHaulComposer();
+  switchView("feed"); setFeedTab("hauls");
+  renderAll();
+}
+
+/* ================= QR yard sign ================= */
+function openSign(id){
+  const s=state.sales.find(x=>x.id===id);
+  if(!s) return;
+  const body=document.getElementById("signBody");
+  body.innerHTML=`
+    <div class="s-yard">YARD</div>
+    <div class="s-sale">SALE</div>
+    <div class="s-title">${esc(s.title)}</div>
+    <div class="s-when">${niceDate(s.date)} · ${fmtTime(s.timeStart)}–${fmtTime(s.timeEnd)}</div>
+    <div class="s-addr">📍 ${esc(s.addr||s.desc)}</div>
+    <div class="s-qr" id="qrBox"></div>
+    <div class="s-scan">📱 SCAN to check in & earn +20 ⭐</div>
+    <div class="s-foot">🏆 HAUL OF FAME — Find it. Haul it. Fame it.</div>`;
+  try{
+    if(typeof QRCode!=="undefined"){
+      new QRCode(document.getElementById("qrBox"),{
+        text:"https://hauloffame.app/s/"+encodeURIComponent(id),
+        width:150, height:150,
+        colorDark:"#1D3557", colorLight:"#ffffff"
+      });
+    } else {
+      document.getElementById("qrBox").innerHTML="<div style='font-size:60px'>🏡</div>";
+    }
+  }catch(e){ document.getElementById("qrBox").innerHTML="<div style='font-size:60px'>🏡</div>"; }
+  document.getElementById("signSheet").classList.add("open");
+}
+function closeSign(){ document.getElementById("signSheet").classList.remove("open"); }
+
+/* ================= alerts ================= */
+function pushAlert(emoji,text){
+  state.alerts.unshift({id:"a"+Date.now()+Math.random().toString(36).slice(2,6),
+    emoji, text, time:new Date().toLocaleTimeString([],{hour:"numeric",minute:"2-digit"}), read:false});
+  if(state.alerts.length>20) state.alerts.pop();
+  save(); renderHUD(); renderAlerts();
+}
+function buildInitialAlerts(){
+  if(state.alerts.length) return;
+  if(isEventActive()) pushAlert("🎪","Mega Sale Weekend is LIVE — every point counts DOUBLE today!");
+  const today=isoDay(0), rad=state.user.alertRadius;
+  state.sales.filter(s=>s.date===today && distMi(s.lat,s.lng)<=rad).forEach(s=>{
+    pushAlert("⏰",`${s.title} opens at ${fmtTime(s.timeStart)} — early birds get the goods (${distMi(s.lat,s.lng).toFixed(1)} mi)`);
+  });
+  const near=[...state.sales].sort((a,b)=>distMi(a.lat,a.lng)-distMi(b.lat,b.lng))[0];
+  if(near) pushAlert("📍",`${near.title} is only ${distMi(near.lat,near.lng).toFixed(1)} mi from you`);
+}
+function toggleAlerts(){
+  const p=document.getElementById("alertPanel");
+  const opening=!p.classList.contains("open");
+  p.classList.toggle("open");
+  if(opening){ state.alerts.forEach(a=>a.read=true); save(); renderHUD(); renderAlerts(); }
+}
+function renderAlerts(){
+  const el=document.getElementById("alertList");
+  el.innerHTML=state.alerts.length
+    ? state.alerts.map(a=>`
+      <div class="alert-item"><span class="a-emoji">${a.emoji}</span>
+        <span>${esc(a.text)}<span class="when">${a.time}</span></span></div>`).join("")
+    : `<div class="empty" style="padding:22px">🔕 All quiet — alerts appear when sales pop up nearby.</div>`;
+  document.querySelectorAll(".rad-chip").forEach(c=>
+    c.classList.toggle("on",Number(c.dataset.r)===state.user.alertRadius));
+}
+function setRadius(r){
+  state.user.alertRadius=r; save(); renderAlerts();
+  showToast(`Alert radius set to ${r} mi 🔔`,"");
+}
+function simulateLiveSale(){
+  if(state.simSalePosted) return;
+  setTimeout(()=>{
+    if(state.simSalePosted) return;
+    state.simSalePosted=true;
+    const [clat,clng]=state.center;
+    state.sales.push({
+      id:"d7", lat:clat-0.003, lng:clng+0.009,
+      title:"Sunday Surprise Sale", host:"DollarDana",
+      desc:"Impulse declutter! Kitchen gadgets, board games, craft supplies — priced to vanish.",
+      addr:"88 Birch Lane", date:isoDay(1), timeStart:"09:00", timeEnd:"13:00",
+      cats:["Everything","Toys"], photos:["🎲","🍳"], likes:2, checkinCount:0,
+      mine:false, featured:false, status:null
+    });
+    pushAlert("🆕","DollarDana just posted 'Sunday Surprise Sale' — 0.6 mi away, tomorrow 9 AM");
+    showToast("🆕 New sale just posted near you!","🔔");
+    save(); renderAll();
+  },45000);
+}
+
+/* ================= onboarding ================= */
+const MASCOT_BIG=`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="width:104px;height:104px" aria-label="Sir Hauls-a-Lot">
+  <ellipse cx="32" cy="47" rx="13" ry="12" fill="#FFFFFF"/>
+  <circle cx="32" cy="37" r="9" fill="#FFD9B3"/>
+  <circle cx="29" cy="35.5" r="1.4" fill="#1D3557"/>
+  <circle cx="35" cy="35.5" r="1.4" fill="#1D3557"/>
+  <circle cx="32" cy="40" r="2.6" fill="#F5A97F"/>
+  <path d="M32 2 C40 12 46 20 47 28 L17 28 C18 20 24 12 32 2 Z" fill="#FFD23F"/>
+  <rect x="15" y="26" width="34" height="5.5" rx="2.75" fill="#1D3557"/>
+  <path d="M32 23.6 l1.7 3.4 3.8 .55 -2.75 2.7 .65 3.8 -3.4 -1.8 -3.4 1.8 .65 -3.8 -2.75 -2.7 3.8 -.55 Z" fill="#FF6B35"/>
+</svg>`;
+const ONB=[
+  {emoji:"MASCOT", title:"Meet Sir Hauls-a-Lot", sub:"The legendary Golden Gnome roams your town's yard sales, seeking worthy Haulers. Check in at sales you find (+20 ⭐) and earn your place in the Haul of Fame."},
+  {emoji:"🧭", title:"Plan your Saturday quest", sub:"Star ☆ the sales you want and we plot the fastest loop — then send it straight to Google Maps. Early birds (before 8 AM) earn extra glory."},
+  {emoji:"👑", title:"Get inducted", sub:"Post your hauls, win Inductee of the Week, climb the ranks, and cash points in for real prizes — up to the Golden Gnome itself."}
+];
+let onbStep=0;
+function showOnb(){
+  document.getElementById("onb").classList.add("open");
+  renderOnb();
+}
+function renderOnb(){
+  const o=ONB[onbStep];
+  document.getElementById("onbEmoji").innerHTML=o.emoji==="MASCOT"?MASCOT_BIG:o.emoji;
+  document.getElementById("onbTitle").textContent=o.title;
+  document.getElementById("onbSub").textContent=o.sub;
+  document.getElementById("onbDots").innerHTML=ONB.map((_,i)=>
+    `<span class="o-dot ${i===onbStep?'on':''}"></span>`).join("");
+  document.getElementById("onbNextBtn").textContent=onbStep===ONB.length-1?"Go forth & haul! ⚔️":"Next";
+}
+function onbNext(){
+  if(onbStep<ONB.length-1){ onbStep++; renderOnb(); }
+  else finishOnb();
+}
+function finishOnb(){
+  document.getElementById("onb").classList.remove("open");
+  if(!state.user.onboarded){
+    state.user.onboarded=true;
+    awardPoints(10,"Sir Hauls-a-Lot dubs thee Hauler, David ⚔️");
+  }
+  save();
+}
+
+/* ================= toasts & confetti ================= */
+function showToast(text,pts){
+  const t=document.createElement("div");
+  t.className="toast";
+  t.innerHTML=`${esc(text)} ${pts?`<span class="t-pts">${esc(pts)}</span>`:""}`;
+  document.getElementById("toasts").appendChild(t);
+  setTimeout(()=>t.remove(),3200);
+}
+const CONFETTI=["🎉","⭐","🏷️","💛","🧡","💚","🎈","✨"];
+function confettiBurst(n=36){
+  const app=document.getElementById("app");
+  for(let i=0;i<n;i++){
+    const s=document.createElement("span");
+    s.className="confetti";
+    s.textContent=CONFETTI[Math.floor(Math.random()*CONFETTI.length)];
+    s.style.left=(Math.random()*95)+"%";
+    s.style.animationDuration=(1.4+Math.random()*1.4)+"s";
+    s.style.animationDelay=(Math.random()*.4)+"s";
+    s.style.fontSize=(13+Math.random()*14)+"px";
+    app.appendChild(s);
+    setTimeout(()=>s.remove(),3200);
+  }
+}
+
+/* ================= GPS ================= */
+let userMarker=null, userPos=null, lastGpsRender=null;
+function tryGeolocate(){
+  if(state.geoApplied || !navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const nlat=pos.coords.latitude, nlng=pos.coords.longitude;
+    const dLat=nlat-state.center[0], dLng=nlng-state.center[1];
+    state.sales.forEach(s=>{ s.lat+=dLat; s.lng+=dLng; });
+    state.center=[nlat,nlng];
+    state.geoApplied=true;
+    save();
+    map.setView(state.center,15); miniMap.setView(state.center,15);
+    renderAll();
+    showToast("Sales moved to your neighborhood 📍","");
+  },()=>{},{timeout:6000});
+}
+function startGpsWatch(){
+  if(!navigator.geolocation) return;
+  navigator.geolocation.watchPosition(pos=>{
+    userPos=[pos.coords.latitude,pos.coords.longitude];
+    state.center=userPos;
+    if(!userMarker){
+      const icon=L.divIcon({className:"",iconSize:[18,18],iconAnchor:[9,9],html:'<div class="you-dot"></div>'});
+      userMarker=L.marker(userPos,{icon,zIndexOffset:1000}).addTo(map).bindPopup("📍 You are here");
+    } else userMarker.setLatLng(userPos);
+    if(!lastGpsRender ||
+       Math.abs(userPos[0]-lastGpsRender[0])>0.0003 ||
+       Math.abs(userPos[1]-lastGpsRender[1])>0.0003){
+      lastGpsRender=userPos.slice();
+      renderFeed(); renderMap(); renderRoute();
+    }
+  },()=>{},{enableHighAccuracy:true,maximumAge:15000,timeout:10000});
+}
+function goToMe(){
+  if(userPos){ map.setView(userPos,16); if(userMarker) userMarker.openPopup(); }
+  else {
+    showToast("Allow location access to see yourself on the map 🧭","");
+    tryGeolocate(); startGpsWatch();
+  }
+}
+
+/* ================= file inputs ================= */
+document.getElementById("saleCamInput").addEventListener("change",e=>{
+  if(!camSaleId||!e.target.files.length){ e.target.value=""; return; }
+  readFilesAsDataURLs(e.target.files,1,urls=>{
+    if(urls.length){
+      const sale=state.sales.find(s=>s.id===camSaleId);
+      if(sale){ sale.photos.unshift(urls[0]); if(sale.photos.length>6) sale.photos.pop(); }
+      state.user.photoCount++;
+      awardPoints(15,"Great shot! Photo added 📸");
+      renderAll();
+    }
+    camSaleId=null; e.target.value="";
+  });
+});
+document.getElementById("fPhotos").addEventListener("change",e=>{
+  readFilesAsDataURLs(e.target.files,4,urls=>{
+    pendingPhotos=urls;
+    document.getElementById("photoPreviews").innerHTML=urls.map(u=>`<img src="${u}" alt="preview">`).join("");
+    e.target.value="";
+  });
+});
+document.getElementById("hPhoto").addEventListener("change",e=>{
+  readFilesAsDataURLs(e.target.files,1,urls=>{
+    pendingHaulPhoto=urls[0]||null;
+    document.getElementById("hPreview").innerHTML=pendingHaulPhoto?`<img src="${pendingHaulPhoto}" alt="haul preview">`:"";
+    e.target.value="";
+  });
+});
+
+/* ================= init ================= */
+(function init(){
+  state=load()||freshState();
+  lastLevel=levelInfo(state.user.lifetime).num;
+  const dateEl=document.getElementById("fDate");
+  dateEl.min=isoDay(0); dateEl.value=isoDay(1);
+  buildCatGrid();
+  buildMaps();
+  buildInitialAlerts();
+  renderAll();
+  setFeedTab("sales");
+  tryGeolocate();
+  startGpsWatch();
+  simulateLiveSale();
+  if(!state.user.onboarded) showOnb();
+})();
+</script>
+</body>
+</html>

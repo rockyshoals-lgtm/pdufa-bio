@@ -89,6 +89,11 @@ def git_dates():
 # nav on every page is not one.
 BOILER = [
     re.compile(r"<!--NAVC:BEGIN-->.*?<!--NAVC:END-->", re.S),
+    # Template furniture added site-wide. The freshness stamp is deliberately constant markup, and
+    # the company index is generated from the rows already on the page, so neither is new content
+    # about the subject. Counting them would mark all 850 pages as changed on any sweep.
+    re.compile(r"<!--FRESH:BEGIN-->.*?<!--FRESH:END-->", re.S),
+    re.compile(r"<!--TICKERIDX:BEGIN-->.*?<!--TICKERIDX:END-->", re.S),
     re.compile(r'<style id="(navcanon|navpolish|typesys)">.*?</style>', re.S),
     re.compile(r"<nav[^>]*>.*?</nav>", re.S),
     re.compile(r'<div class="nav">.*?</div>', re.S),

@@ -1,0 +1,22 @@
+{
+  "tier1_cadence_minutes": 30,
+  "tier1_market_open_et": "09:30",
+  "tier1_market_close_et": "16:00",
+  "tier1_postclose_run_et": "16:30",
+  "tier2_run_day": "Sunday",
+  "tier2_run_time_local": "06:00",
+  "scanner_script": "runner.py",
+  "postmortem_script": "auto_postmortem_v1.py",
+  "feature_miner_script": "feature_miner_v1.py",
+  "overlay_optimizer_script": "overlay_weight_optimizer_v1.py",
+  "high_priority_alert_thresholds": {
+    "tier_flip_pp": 5.0,
+    "price_move_pct": 20.0,
+    "new_catalyst_score": 50.0
+  },
+  "throttle": {
+    "max_fmp_calls_per_minute": 50,
+    "min_seconds_between_cycles": 30
+  },
+  "python_executable": "C:\\Python314\\python.exe"
+}

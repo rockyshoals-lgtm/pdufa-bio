@@ -1,0 +1,58 @@
+# readout_phrases_fts.txt — for:  edgar_miner.py fts
+#
+# EXACT PHRASES ONLY. `fts` is server-side EDGAR full-text search and rejects `re:` lines.
+# For regex use readout_phrases_scan.txt with the `scan` subcommand.
+#
+# THE ADJACENCY RULE — the single thing that governs this file.
+# EDGAR FTS matches a quoted phrase only if the words are ADJACENT. Intervening words break it:
+#     "to report topline"  does NOT match  "to Report 36-Week Topline Results"
+# So every line here is a SHORT, UNIVERSAL fragment. Long natural-sounding phrases feel more
+# precise and silently match almost nothing. Let the fragment find the DOCUMENT; let the regex
+# in readout_phrases_scan.txt (or the miner's LEAD/PR_SCHED patterns) find the DATE inside it.
+#
+# Keep this list SHORT and HIGH-YIELD. Every phrase is a full paginated crawl. Cheap phrases
+# that return the same documents as another phrase cost real time and add nothing — the `scan`
+# cache dedupes by document, so overlap is wasted requests, not wasted rows.
+#
+# WHAT SEC FILINGS CAN AND CANNOT GIVE YOU (measured, 2026-07-16, n=158 sec_edgar rows):
+#   quarter/half precision : 158  ("topline expected in Q3 2026")
+#   EXACT DAY              : 0
+# Zero. Not a tuning problem — a scheduling PR ("we will report on July 13") is usually not
+# material enough to furnish as an 8-K exhibit, so it never enters EDGAR at all. It goes over
+# the newswire. Do not add more phrases hoping for a day; use the FMP newswire leg for that.
+# What SEC IS for: the company's own COMMITTED WINDOW, which CT.gov's estimate cannot give you.
+
+# ---- committed timing: the core yield. These are what produce company_guidance rows. ----
+topline results
+topline data
+topline results from
+announces topline
+reports topline
+topline readout
+data readout
+readout expected
+data expected in
+data are expected
+results are expected
+results anticipated
+anticipate reporting
+expects to report topline
+on track to report
+plans to report topline
+primary endpoint data
+pivotal data
+initial data expected
+interim analysis expected
+
+# ---- scheduling PRs. Low yield on EDGAR (see note above) but nonzero when the readout is
+# ---- material enough to 8-K, and these are the only lines that can carry a day.
+conference call to discuss
+will host a conference call
+to discuss the topline
+
+# ---- readout-adjacent language the current 26-phrase list misses entirely.
+# ---- Companies announce completion of enrollment/dosing as the readout clock starting.
+completed enrollment in
+last patient last visit
+fully enrolled
+database lock

@@ -1,0 +1,1602 @@
+[
+  {
+    "ticker": "ABBV",
+    "scan_timestamp": "2026-01-29T09:49:43.629537",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ACET",
+    "scan_timestamp": "2026-01-29T09:49:43.638065",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ACIU",
+    "scan_timestamp": "2026-01-29T09:49:43.638065",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ACRV",
+    "scan_timestamp": "2026-01-29T09:49:43.638065",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ADAG",
+    "scan_timestamp": "2026-01-29T09:49:43.638065",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ALDX",
+    "scan_timestamp": "2026-01-29T09:49:50.513020",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ALMS",
+    "scan_timestamp": "2026-01-29T09:49:50.513020",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ALZN",
+    "scan_timestamp": "2026-01-29T09:49:50.513020",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ANRO",
+    "scan_timestamp": "2026-01-29T09:49:50.513020",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "APGE",
+    "scan_timestamp": "2026-01-29T09:49:50.513020",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "APRE",
+    "scan_timestamp": "2026-01-29T09:49:52.083271",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "AQST",
+    "scan_timestamp": "2026-01-29T09:49:52.083271",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ARQT",
+    "scan_timestamp": "2026-01-29T09:49:52.083271",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ARTV",
+    "scan_timestamp": "2026-01-29T09:49:52.083271",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ASND",
+    "scan_timestamp": "2026-01-29T09:49:52.084022",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ATAI",
+    "scan_timestamp": "2026-01-29T09:49:53.667597",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "AXSM",
+    "scan_timestamp": "2026-01-29T09:49:53.667916",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BAYRY",
+    "scan_timestamp": "2026-01-29T09:49:53.667916",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BBIO",
+    "scan_timestamp": "2026-01-29T09:49:53.667916",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BCDA",
+    "scan_timestamp": "2026-01-29T09:49:53.667916",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BCYC",
+    "scan_timestamp": "2026-01-29T09:49:55.231423",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BFRI",
+    "scan_timestamp": "2026-01-29T09:49:55.231423",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BMRN",
+    "scan_timestamp": "2026-01-29T09:49:55.231423",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BMY",
+    "scan_timestamp": "2026-01-29T09:49:55.231423",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "BTAI",
+    "scan_timestamp": "2026-01-29T09:49:55.231423",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CAPR",
+    "scan_timestamp": "2026-01-29T09:49:56.599149",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CGEM",
+    "scan_timestamp": "2026-01-29T09:49:56.599149",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CLDX",
+    "scan_timestamp": "2026-01-29T09:49:56.599149",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CLLS",
+    "scan_timestamp": "2026-01-29T09:49:56.599149",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CLNN",
+    "scan_timestamp": "2026-01-29T09:49:56.599149",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CLSD",
+    "scan_timestamp": "2026-01-29T09:49:58.148672",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CMPS",
+    "scan_timestamp": "2026-01-29T09:49:58.148672",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CMPX",
+    "scan_timestamp": "2026-01-29T09:49:58.148672",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CTMX",
+    "scan_timestamp": "2026-01-29T09:49:58.148672",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "CYBN",
+    "scan_timestamp": "2026-01-29T09:49:58.148672",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ETON",
+    "scan_timestamp": "2026-01-29T09:49:59.653867",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "FGEN",
+    "scan_timestamp": "2026-01-29T09:49:59.653867",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "GLUE",
+    "scan_timestamp": "2026-01-29T09:49:59.653867",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "GOSS",
+    "scan_timestamp": "2026-01-29T09:49:59.653867",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "GSK",
+    "scan_timestamp": "2026-01-29T09:49:59.653867",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "HOTH",
+    "scan_timestamp": "2026-01-29T09:50:01.109472",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "IDYA",
+    "scan_timestamp": "2026-01-29T09:50:01.109472",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "IMMP",
+    "scan_timestamp": "2026-01-29T09:50:01.109472",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "INMB",
+    "scan_timestamp": "2026-01-29T09:50:01.109472",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "INSM",
+    "scan_timestamp": "2026-01-29T09:50:01.109472",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "IONS",
+    "scan_timestamp": "2026-01-29T09:50:03.682170",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "IOVA",
+    "scan_timestamp": "2026-01-29T09:50:03.682170",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "IRD",
+    "scan_timestamp": "2026-01-29T09:50:03.682170",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "JNJ",
+    "scan_timestamp": "2026-01-29T09:50:03.682170",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "KLRS",
+    "scan_timestamp": "2026-01-29T09:50:03.682170",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "KOD",
+    "scan_timestamp": "2026-01-29T09:50:05.430680",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "KPTI",
+    "scan_timestamp": "2026-01-29T09:50:05.430680",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "KZR",
+    "scan_timestamp": "2026-01-29T09:50:05.430680",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "LLY",
+    "scan_timestamp": "2026-01-29T09:50:05.430680",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "LNTH",
+    "scan_timestamp": "2026-01-29T09:50:05.430680",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "LSTA",
+    "scan_timestamp": "2026-01-29T09:50:07.140439",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "LXEO",
+    "scan_timestamp": "2026-01-29T09:50:07.140439",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "MAZE",
+    "scan_timestamp": "2026-01-29T09:50:07.140439",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "MBRX",
+    "scan_timestamp": "2026-01-29T09:50:07.140439",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "MDCX",
+    "scan_timestamp": "2026-01-29T09:50:07.140439",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "MLTX",
+    "scan_timestamp": "2026-01-29T09:50:09.133078",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "MLYS",
+    "scan_timestamp": "2026-01-29T09:50:09.133078",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "MRK",
+    "scan_timestamp": "2026-01-29T09:50:09.133078",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "NRSN",
+    "scan_timestamp": "2026-01-29T09:50:09.133078",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "NSRX",
+    "scan_timestamp": "2026-01-29T09:50:09.133078",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "OCUL",
+    "scan_timestamp": "2026-01-29T09:50:10.685663",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "OKUR",
+    "scan_timestamp": "2026-01-29T09:50:10.685663",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ONCY",
+    "scan_timestamp": "2026-01-29T09:50:10.685663",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ORIC",
+    "scan_timestamp": "2026-01-29T09:50:10.685663",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "OSTX",
+    "scan_timestamp": "2026-01-29T09:50:10.685663",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "PALI",
+    "scan_timestamp": "2026-01-29T09:50:12.116318",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "PCSA",
+    "scan_timestamp": "2026-01-29T09:50:12.116318",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "PDSB",
+    "scan_timestamp": "2026-01-29T09:50:12.116318",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "PEPG",
+    "scan_timestamp": "2026-01-29T09:50:12.116318",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "PHAR",
+    "scan_timestamp": "2026-01-29T09:50:12.116318",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "PVLA",
+    "scan_timestamp": "2026-01-29T09:50:13.531842",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "QNCX",
+    "scan_timestamp": "2026-01-29T09:50:13.531842",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "RCKT",
+    "scan_timestamp": "2026-01-29T09:50:13.531842",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "RCUS",
+    "scan_timestamp": "2026-01-29T09:50:13.531842",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "REGN",
+    "scan_timestamp": "2026-01-29T09:50:13.531842",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "RGNX",
+    "scan_timestamp": "2026-01-29T09:50:15.130980",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "RHHBY",
+    "scan_timestamp": "2026-01-29T09:50:15.130980",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "RXRX",
+    "scan_timestamp": "2026-01-29T09:50:15.130980",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "RYTM",
+    "scan_timestamp": "2026-01-29T09:50:15.130980",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "SCYX",
+    "scan_timestamp": "2026-01-29T09:50:15.130980",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "SKYE",
+    "scan_timestamp": "2026-01-29T09:50:16.815504",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "SPRB",
+    "scan_timestamp": "2026-01-29T09:50:16.815504",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "TARA",
+    "scan_timestamp": "2026-01-29T09:50:16.815504",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "TBPH",
+    "scan_timestamp": "2026-01-29T09:50:16.815504",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "TCRX",
+    "scan_timestamp": "2026-01-29T09:50:16.815504",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "TGTX",
+    "scan_timestamp": "2026-01-29T09:50:18.519588",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "UPB",
+    "scan_timestamp": "2026-01-29T09:50:18.519940",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "VNDA",
+    "scan_timestamp": "2026-01-29T09:50:18.519940",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "VRDN",
+    "scan_timestamp": "2026-01-29T09:50:18.519940",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "VTYX",
+    "scan_timestamp": "2026-01-29T09:50:18.519940",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "WVE",
+    "scan_timestamp": "2026-01-29T09:50:19.926237",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "XCUR",
+    "scan_timestamp": "2026-01-29T09:50:19.926237",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "XENE",
+    "scan_timestamp": "2026-01-29T09:50:19.926237",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "XOMA",
+    "scan_timestamp": "2026-01-29T09:50:19.926237",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  },
+  {
+    "ticker": "ZBIO",
+    "scan_timestamp": "2026-01-29T09:50:19.926237",
+    "quote": {},
+    "insider": {
+      "status": "ERROR_401"
+    },
+    "options_chain": {
+      "status": "ERROR_403"
+    },
+    "options_flow": {},
+    "signals": {
+      "insider": "NO_DATA",
+      "options": "NO_DATA"
+    }
+  }
+]

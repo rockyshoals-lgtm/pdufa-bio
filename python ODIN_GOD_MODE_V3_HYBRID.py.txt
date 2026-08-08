@@ -1,0 +1,4 @@
+python ODIN_GOD_MODE_V3_HYBRID.py \
+    --data ODIN_PDUFA_1349_GPU_READY_T1_FIXED.csv \
+    --split train \
+    --out ODIN_TOP_CONFIGS_V6.json

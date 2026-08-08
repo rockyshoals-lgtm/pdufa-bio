@@ -1,0 +1,163 @@
+{
+  "name": "SENTINEL",
+  "version": "1.1.0",
+  "generated_utc": "2026-04-18T22:27:37.097303Z",
+  "components": {
+    "C1_SOCIAL_BUZZ": {
+      "weight_max": 30,
+      "status": "forward-only (no historical snapshots)"
+    },
+    "C2_PREPRINT_MOMENTUM": {
+      "weight_max": 20,
+      "status": "active"
+    },
+    "C3_TARGET_EVIDENCE": {
+      "weight_max": 25,
+      "status": "active"
+    },
+    "C4_ENROLLMENT_VELOCITY": {
+      "weight_max": 25,
+      "status": "active"
+    },
+    "C5_INSIDER_INSTITUTIONAL": {
+      "weight_max": 20,
+      "status": "active (SEC EDGAR)"
+    },
+    "C6_PRICE_MOMENTUM": {
+      "weight_max": 15,
+      "status": "active (Polygon)"
+    },
+    "C7_QUALITATIVE_NEWS": {
+      "weight_max": 15,
+      "status": "active (Perplexity Sonar)"
+    }
+  },
+  "normalization": "raw_sum / 120 * 100",
+  "tier_matrix": [
+    {
+      "lo": 80,
+      "hi": 100,
+      "tier": "SENTINEL_ALPHA",
+      "boost": 0.25
+    },
+    {
+      "lo": 65,
+      "hi": 79,
+      "tier": "SENTINEL_BETA",
+      "boost": 0.15
+    },
+    {
+      "lo": 45,
+      "hi": 64,
+      "tier": "SENTINEL_GAMMA",
+      "boost": 0.05
+    },
+    {
+      "lo": 25,
+      "hi": 44,
+      "tier": "SENTINEL_DELTA",
+      "boost": 0.0
+    },
+    {
+      "lo": 15,
+      "hi": 24,
+      "tier": "SENTINEL_OMEGA",
+      "boost": -0.1
+    },
+    {
+      "lo": 0,
+      "hi": 14,
+      "tier": "SENTINEL_KILL",
+      "boost": null
+    }
+  ],
+  "aggregation_formula": "sentinel_adjusted = base_investment_score * (1 + boost)",
+  "base_investment_score_source": "max(ODIN v14, Gungnir v46) per catalyst type",
+  "t1_compliance": {
+    "C1": "live social snapshots (public)",
+    "C2": "bioRxiv timestamped",
+    "C3": "Open Targets snapshot (public research DB)",
+    "C4": "ClinicalTrials.gov enrollment dates (public)",
+    "C5": "SEC EDGAR Form 4 / 13F-HR (public, 2-day/45-day lag)",
+    "C6": "Polygon historical daily prices (public OHLCV)",
+    "C7": "Perplexity Sonar news (public web)"
+  },
+  "kill_switch": "raw_score_100 < 15 \u2192 DO NOT TRADE",
+  "size_tilt": {
+    "nano_micro_alpha": "LOTTERY_OK \u2014 up to 2% equity, OTM options permitted",
+    "nano_omega_kill": "equity only, max 1%"
+  },
+  "tier_counts": {
+    "SENTINEL_GAMMA": 32,
+    "SENTINEL_BETA": 7,
+    "SENTINEL_DELTA": 1
+  },
+  "n_scored": 40,
+  "known_limitations": [
+    "C1 validated forward-only (LunarCrush free tier has no historical snapshots)",
+    "C5 uses filing counts as proxy; dollar magnitude & insider-role not yet parsed",
+    "C6 overextension modifier applied (-3 if r30>50% AND vol_spike>2x)",
+    "C7 parses sentiment label + keyword hits; no full-LLM classifier yet",
+    "Applied only to top 40 C2+C3+C4 finalists (budget-conscious)"
+  ],
+  "backtest_2025_holdout": {
+    "method": "Stratified random sample, n=80 (40 APPROVAL, 40 CRL) drawn from 345 2025 PDUFA events",
+    "seed": 42,
+    "gated_components": [
+      "C2_preprint",
+      "C3_target (median proxy)",
+      "C5_insider",
+      "C6_momentum"
+    ],
+    "excluded": {
+      "C1_social": "no historical snapshots on free LunarCrush tier",
+      "C4_enrollment": "skipped \u2014 requires complex lastUpdatePosted gating",
+      "C7_news": "news queries cannot be reliably date-filtered"
+    },
+    "auc_by_component": {
+      "C2_preprint": 0.49625,
+      "C3_target": 0.5,
+      "C5_insider": 0.5140625,
+      "C6_momentum": 0.5234375,
+      "raw_sum": 0.48375
+    },
+    "mean_by_outcome": {
+      "C2_preprint": {
+        "approve": 6.675,
+        "crl": 6.85
+      },
+      "C3_target": {
+        "approve": 10.0,
+        "crl": 10.0
+      },
+      "C5_insider": {
+        "approve": 12.2,
+        "crl": 12.35
+      },
+      "C6_momentum": {
+        "approve": 1.4,
+        "crl": 1.225
+      },
+      "raw_sum": {
+        "approve": 30.275,
+        "crl": 30.425
+      }
+    },
+    "honest_interpretation": [
+      "AUC \u2248 0.50 across individual and summed components on 2025 PDUFA holdout.",
+      "SENTINEL components as currently designed carry NO meaningful signal for APPROVAL vs CRL on 2025 survivor-biased cohort.",
+      "The 2025 cohort is selected (made it to PDUFA); most residual signal is already captured by ODIN v14 (HO AUC 0.8995 honest).",
+      "SENTINEL should be treated as a RANKING CO-SORTER within ODIN tiers, NOT a probability modifier.",
+      "The KILL switch (raw<15) triggered on ZERO events in this cohort \u2014 minimum observed raw was 14.",
+      "C6 (price momentum) was the only component trending positive (AUC 0.523) \u2014 consistent with market sniffing out approvals.",
+      "Do NOT blindly apply the \u00b125% boost to probabilities \u2014 use it only to re-rank within tier, not to alter model-calibrated probabilities."
+    ],
+    "actionable_rule": "Use SENTINEL for ranking WITHIN ODIN/Gungnir tiers only. Do not update probability scores directly.",
+    "known_blind_spots": [
+      "No C1/C7 measurement (forward-only)",
+      "C3 set to constant 10 in backtest (OT API was slow) \u2014 forward validation needed",
+      "n=80 sample, SE on AUC \u00b10.06 \u2014 signal <0.06 above/below 0.5 is within noise",
+      "2025 cohort heavily approval-skewed (71.3%) \u2014 under-represents CRL base rates of ODIN training"
+    ]
+  }
+}

@@ -1,0 +1,5305 @@
+{
+  "pilot_config": {
+    "seed": 42,
+    "strata": {
+      "2020_2021": {
+        "years": [
+          2020,
+          2021
+        ],
+        "n": 10
+      },
+      "2022_2023": {
+        "years": [
+          2022,
+          2023
+        ],
+        "n": 10
+      },
+      "2024": {
+        "years": [
+          2024
+        ],
+        "n": 15
+      },
+      "2025_2026": {
+        "years": [
+          2025,
+          2026
+        ],
+        "n": 15
+      }
+    },
+    "core_endpoints": [
+      "/hist/ivrank",
+      "/hist/summaries",
+      "/hist/dailies"
+    ],
+    "probe_endpoints": [
+      "/hist/strikes"
+    ],
+    "sample_size": 50
+  },
+  "totals": {
+    "api_calls": 462,
+    "elapsed_s": 284.8,
+    "cache_entries": 462
+  },
+  "coverage_by_bucket_endpoint_snapshot": {
+    "2020_2021|/hist/dailies|T-1": {
+      "ok": 8,
+      "empty": 0,
+      "error": 2,
+      "pct_ok": 80.0
+    },
+    "2020_2021|/hist/dailies|T-14": {
+      "ok": 8,
+      "empty": 0,
+      "error": 2,
+      "pct_ok": 80.0
+    },
+    "2020_2021|/hist/dailies|T-7": {
+      "ok": 8,
+      "empty": 0,
+      "error": 2,
+      "pct_ok": 80.0
+    },
+    "2020_2021|/hist/ivrank|T-1": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2020_2021|/hist/ivrank|T-14": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2020_2021|/hist/ivrank|T-7": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2020_2021|/hist/strikes|T-1": {
+      "ok": 1,
+      "empty": 0,
+      "error": 0,
+      "pct_ok": 100.0
+    },
+    "2020_2021|/hist/strikes|T-14": {
+      "ok": 1,
+      "empty": 0,
+      "error": 0,
+      "pct_ok": 100.0
+    },
+    "2020_2021|/hist/strikes|T-7": {
+      "ok": 1,
+      "empty": 0,
+      "error": 0,
+      "pct_ok": 100.0
+    },
+    "2020_2021|/hist/summaries|T-1": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2020_2021|/hist/summaries|T-14": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2020_2021|/hist/summaries|T-7": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/dailies|T-1": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/dailies|T-14": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/dailies|T-7": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/ivrank|T-1": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/ivrank|T-14": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/ivrank|T-7": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/strikes|T-1": {
+      "ok": 0,
+      "empty": 0,
+      "error": 1,
+      "pct_ok": 0.0
+    },
+    "2022_2023|/hist/strikes|T-14": {
+      "ok": 0,
+      "empty": 0,
+      "error": 1,
+      "pct_ok": 0.0
+    },
+    "2022_2023|/hist/strikes|T-7": {
+      "ok": 0,
+      "empty": 0,
+      "error": 1,
+      "pct_ok": 0.0
+    },
+    "2022_2023|/hist/summaries|T-1": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/summaries|T-14": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2022_2023|/hist/summaries|T-7": {
+      "ok": 7,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 70.0
+    },
+    "2024|/hist/dailies|T-1": {
+      "ok": 11,
+      "empty": 0,
+      "error": 4,
+      "pct_ok": 73.33
+    },
+    "2024|/hist/dailies|T-14": {
+      "ok": 12,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 80.0
+    },
+    "2024|/hist/dailies|T-7": {
+      "ok": 12,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 80.0
+    },
+    "2024|/hist/ivrank|T-1": {
+      "ok": 11,
+      "empty": 0,
+      "error": 4,
+      "pct_ok": 73.33
+    },
+    "2024|/hist/ivrank|T-14": {
+      "ok": 12,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 80.0
+    },
+    "2024|/hist/ivrank|T-7": {
+      "ok": 12,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 80.0
+    },
+    "2024|/hist/strikes|T-1": {
+      "ok": 1,
+      "empty": 0,
+      "error": 0,
+      "pct_ok": 100.0
+    },
+    "2024|/hist/strikes|T-14": {
+      "ok": 1,
+      "empty": 0,
+      "error": 0,
+      "pct_ok": 100.0
+    },
+    "2024|/hist/strikes|T-7": {
+      "ok": 1,
+      "empty": 0,
+      "error": 0,
+      "pct_ok": 100.0
+    },
+    "2024|/hist/summaries|T-1": {
+      "ok": 11,
+      "empty": 0,
+      "error": 4,
+      "pct_ok": 73.33
+    },
+    "2024|/hist/summaries|T-14": {
+      "ok": 12,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 80.0
+    },
+    "2024|/hist/summaries|T-7": {
+      "ok": 12,
+      "empty": 0,
+      "error": 3,
+      "pct_ok": 80.0
+    },
+    "2025_2026|/hist/dailies|T-1": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/dailies|T-14": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/dailies|T-7": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/ivrank|T-1": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/ivrank|T-14": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/ivrank|T-7": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/strikes|T-1": {
+      "ok": 0,
+      "empty": 0,
+      "error": 1,
+      "pct_ok": 0.0
+    },
+    "2025_2026|/hist/strikes|T-14": {
+      "ok": 0,
+      "empty": 0,
+      "error": 1,
+      "pct_ok": 0.0
+    },
+    "2025_2026|/hist/strikes|T-7": {
+      "ok": 0,
+      "empty": 0,
+      "error": 1,
+      "pct_ok": 0.0
+    },
+    "2025_2026|/hist/summaries|T-1": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/summaries|T-14": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    },
+    "2025_2026|/hist/summaries|T-7": {
+      "ok": 10,
+      "empty": 0,
+      "error": 5,
+      "pct_ok": 66.67
+    }
+  },
+  "bucket_rollup": {
+    "2020_2021": {
+      "ok": 66,
+      "total": 90,
+      "pct_ok": 73.33
+    },
+    "2022_2023": {
+      "ok": 63,
+      "total": 90,
+      "pct_ok": 70.0
+    },
+    "2024": {
+      "ok": 105,
+      "total": 135,
+      "pct_ok": 77.78
+    },
+    "2025_2026": {
+      "ok": 90,
+      "total": 135,
+      "pct_ok": 66.67
+    }
+  },
+  "verdict": "NO-GO \u2014 historical endpoints do not return enough data; escalate to ORATS support or pivot data source.",
+  "verdict_detail": [
+    "NO-GO \u2014 historical endpoints do not return enough data; escalate to ORATS support or pivot data source.",
+    "  2020-2021 OK rate: 73.3%",
+    "  2022-2023 OK rate: 70.0%",
+    "  2024      OK rate: 77.8%",
+    "  2025-2026 OK rate: 66.7%"
+  ],
+  "errors": [
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-02",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-02",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-02",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-02",
+      "endpoint": "/hist/strikes",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-11",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-11",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-11",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-11",
+      "endpoint": "/hist/strikes",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-19",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-19",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-19",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "RHHBY",
+      "trade_date": "2025-12-19",
+      "endpoint": "/hist/strikes",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-06",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-06",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-06",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-15",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-15",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-15",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-23",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-23",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "BAYRY",
+      "trade_date": "2025-10-23",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-05-27",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-05-27",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-05-27",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-06-05",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-06-05",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-06-05",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-06-13",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-06-13",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "HOTH",
+      "trade_date": "2025-06-13",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-10",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-10",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-10",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-19",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-19",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-19",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-27",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-27",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "INTE",
+      "trade_date": "2025-03-27",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-03",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-03",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-03",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-12",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-12",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-12",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-20",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-20",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "TLX",
+      "trade_date": "2025-03-20",
+      "endpoint": "/hist/dailies",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "DERM",
+      "trade_date": "2024-10-15",
+      "endpoint": "/hist/ivrank",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    },
+    {
+      "ticker": "DERM",
+      "trade_date": "2024-10-15",
+      "endpoint": "/hist/summaries",
+      "error": "HTTP 404",
+      "body_snippet": "{\"message\":\"Not Found.\"}"
+    }
+  ],
+  "event_results": [
+    {
+      "ticker": "RHHBY",
+      "pdufa_date": "2025-12-22",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.595
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.378
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.373
+          },
+          "/hist/strikes": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.453
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.414
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.382
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.391
+          },
+          "/hist/strikes": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.485
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.41
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.381
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.485
+          },
+          "/hist/strikes": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.504
+          }
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "pdufa_date": "2025-12-03",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.368,
+            "sample": {
+              "iv": 35.798,
+              "ivPct1y": 76.98,
+              "ivRank1y": 39.27
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.441,
+            "sample": {
+              "iv30d": 0.373869,
+              "iv60d": 0.358847,
+              "iv90d": 0.380129,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.516,
+            "sample": {
+              "clsPx": 1019.67,
+              "open": 1006.93
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.349,
+            "sample": {
+              "iv": 31.364,
+              "ivPct1y": 40.48,
+              "ivRank1y": 23.85
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.506,
+            "sample": {
+              "iv30d": 0.304626,
+              "iv60d": 0.33659,
+              "iv90d": 0.355218,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.476,
+            "sample": {
+              "clsPx": 1068.38,
+              "open": 1055.01
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.367,
+            "sample": {
+              "iv": 30.527,
+              "ivPct1y": 32.94,
+              "ivRank1y": 20.94
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.471,
+            "sample": {
+              "iv30d": 0.293227,
+              "iv60d": 0.331172,
+              "iv90d": 0.344803,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.444,
+            "sample": {
+              "clsPx": 1044.38,
+              "open": 1050.82
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "BAYRY",
+      "pdufa_date": "2025-10-24",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.354
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.423
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.394
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.365
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.369
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.48
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.365
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.421
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.423
+          }
+        }
+      }
+    },
+    {
+      "ticker": "NVAX",
+      "pdufa_date": "2025-08-27",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.348,
+            "sample": {
+              "iv": 62.759,
+              "ivPct1y": 2.78,
+              "ivRank1y": 7.85
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.451,
+            "sample": {
+              "iv30d": 0.661108,
+              "iv60d": 0.631862,
+              "iv90d": 0.644446,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.528,
+            "sample": {
+              "clsPx": 8.78,
+              "open": 7.61
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.349,
+            "sample": {
+              "iv": 74.539,
+              "ivPct1y": 19.84,
+              "ivRank1y": 33.31
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.415,
+            "sample": {
+              "iv30d": 0.777918,
+              "iv60d": 0.725676,
+              "iv90d": 0.724249,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.49,
+            "sample": {
+              "clsPx": 9.71,
+              "open": 10
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.362,
+            "sample": {
+              "iv": 73.41,
+              "ivPct1y": 19.44,
+              "ivRank1y": 30.87
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.428,
+            "sample": {
+              "iv30d": 0.732122,
+              "iv60d": 0.741445,
+              "iv90d": 0.749098,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.433,
+            "sample": {
+              "clsPx": 7.5,
+              "open": 7.5
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TVTX",
+      "pdufa_date": "2025-08-27",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.395,
+            "sample": {
+              "iv": 65.527,
+              "ivPct1y": 39.29,
+              "ivRank1y": 22.82
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.461,
+            "sample": {
+              "iv30d": 0.779329,
+              "iv60d": 0.779329,
+              "iv90d": 0.779329,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.509,
+            "sample": {
+              "clsPx": 16.91,
+              "open": 17.41
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.364,
+            "sample": {
+              "iv": 52.908,
+              "ivPct1y": 5.95,
+              "ivRank1y": 9.77
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.477,
+            "sample": {
+              "iv30d": 0.542856,
+              "iv60d": 0.542856,
+              "iv90d": 0.652048,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.411,
+            "sample": {
+              "clsPx": 18.77,
+              "open": 18.83
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.36,
+            "sample": {
+              "iv": 61.639,
+              "ivPct1y": 29.76,
+              "ivRank1y": 18.8
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.444,
+            "sample": {
+              "iv30d": 0.550789,
+              "iv60d": 0.650721,
+              "iv90d": 0.727401,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.388,
+            "sample": {
+              "clsPx": 17.44,
+              "open": 17.33
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "PGEN",
+      "pdufa_date": "2025-08-15",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.347,
+            "sample": {
+              "iv": 153.441,
+              "ivPct1y": 80.56,
+              "ivRank1y": 57.88
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.445,
+            "sample": {
+              "iv30d": 1.57236,
+              "iv60d": 1.57236,
+              "iv90d": 1.55409,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.513,
+            "sample": {
+              "clsPx": 1.58,
+              "open": 1.59
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "iv": 202.5,
+              "ivPct1y": 93.25,
+              "ivRank1y": 73.85
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.444,
+            "sample": {
+              "iv30d": 2.08879,
+              "iv60d": 1.91978,
+              "iv90d": 2.08879,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.487,
+            "sample": {
+              "clsPx": 1.83,
+              "open": 1.95
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.451,
+            "sample": {
+              "iv": 227.235,
+              "ivPct1y": 98.02,
+              "ivRank1y": 81.9
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.434,
+            "sample": {
+              "iv30d": 2.45471,
+              "iv60d": 1.98494,
+              "iv90d": 1.73242,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.415,
+            "sample": {
+              "clsPx": 1.85,
+              "open": 1.9
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TEVA",
+      "pdufa_date": "2025-08-06",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.341,
+            "sample": {
+              "iv": 36.058,
+              "ivPct1y": 48.02,
+              "ivRank1y": 24.66
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.417,
+            "sample": {
+              "iv30d": 0.448281,
+              "iv60d": 0.416556,
+              "iv90d": 0.403133,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.63,
+            "sample": {
+              "clsPx": 16.31,
+              "open": 16.04
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.583,
+            "sample": {
+              "iv": 39.586,
+              "ivPct1y": 76.19,
+              "ivRank1y": 34.51
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.462,
+            "sample": {
+              "iv30d": 0.491301,
+              "iv60d": 0.406668,
+              "iv90d": 0.392166,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.434,
+            "sample": {
+              "clsPx": 16.51,
+              "open": 16.69
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.358,
+            "sample": {
+              "iv": 35.797,
+              "ivPct1y": 42.86,
+              "ivRank1y": 23.93
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.422,
+            "sample": {
+              "iv30d": 0.371499,
+              "iv60d": 0.361234,
+              "iv90d": 0.365764,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.447,
+            "sample": {
+              "clsPx": 15.71,
+              "open": 15.62
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "REGN",
+      "pdufa_date": "2025-07-30",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.362,
+            "sample": {
+              "iv": 36.094,
+              "ivPct1y": 71.83,
+              "ivRank1y": 47.5
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.549,
+            "sample": {
+              "iv30d": 0.427488,
+              "iv60d": 0.396164,
+              "iv90d": 0.391381,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.605,
+            "sample": {
+              "clsPx": 557.54,
+              "open": 552.18
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.357,
+            "sample": {
+              "iv": 35.597,
+              "ivPct1y": 67.86,
+              "ivRank1y": 45.42
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.439,
+            "sample": {
+              "iv30d": 0.424119,
+              "iv60d": 0.396589,
+              "iv90d": 0.387606,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.514,
+            "sample": {
+              "clsPx": 543.37,
+              "open": 541.29
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.35,
+            "sample": {
+              "iv": 35.499,
+              "ivPct1y": 65.87,
+              "ivRank1y": 45.1
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.461,
+            "sample": {
+              "iv30d": 0.433895,
+              "iv60d": 0.392676,
+              "iv90d": 0.380149,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.563,
+            "sample": {
+              "clsPx": 555.93,
+              "open": 555.79
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "HOTH",
+      "pdufa_date": "2025-06-16",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.349
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.383
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.447
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.339
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.376
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.364
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.36
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.381
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.387
+          }
+        }
+      }
+    },
+    {
+      "ticker": "INTE",
+      "pdufa_date": "2025-03-28",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.388
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.471
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.409
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.36
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.37
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.394
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.342
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.384
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.38
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TLX",
+      "pdufa_date": "2025-03-21",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.366
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.389
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.417
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.419
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.493
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.441
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.369
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.379
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.434
+          }
+        }
+      }
+    },
+    {
+      "ticker": "NVS",
+      "pdufa_date": "2025-03-20",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.36,
+            "sample": {
+              "iv": 18.082,
+              "ivPct1y": 73.41,
+              "ivRank1y": 53.32
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.438,
+            "sample": {
+              "iv30d": 0.181336,
+              "iv60d": 0.182203,
+              "iv90d": 0.184227,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.561,
+            "sample": {
+              "clsPx": 104.46,
+              "open": 103.85
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.466,
+            "sample": {
+              "iv": 20.804,
+              "ivPct1y": 91.27,
+              "ivRank1y": 77.47
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.538,
+            "sample": {
+              "iv30d": 0.217334,
+              "iv60d": 0.217334,
+              "iv90d": 0.217334,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.502,
+            "sample": {
+              "clsPx": 106.67,
+              "open": 108.97
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.386,
+            "sample": {
+              "iv": 18.702,
+              "ivPct1y": 73.02,
+              "ivRank1y": 58.82
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.464,
+            "sample": {
+              "iv30d": 0.191965,
+              "iv60d": 0.189547,
+              "iv90d": 0.187692,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.493,
+            "sample": {
+              "clsPx": 109.42,
+              "open": 109.62
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "XERS",
+      "pdufa_date": "2025-03-17",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.373,
+            "sample": {
+              "iv": 77.599,
+              "ivPct1y": 67.46,
+              "ivRank1y": 32.48
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.462,
+            "sample": {
+              "iv30d": 0.991471,
+              "iv60d": 0.954854,
+              "iv90d": 0.83567,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.548,
+            "sample": {
+              "clsPx": 3.66,
+              "open": 3.77
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.393,
+            "sample": {
+              "iv": 54.082,
+              "ivPct1y": 15.48,
+              "ivRank1y": 19.54
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.516,
+            "sample": {
+              "iv30d": 0.73039,
+              "iv60d": 0.73039,
+              "iv90d": 0.73039,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.418,
+            "sample": {
+              "clsPx": 4.13,
+              "open": 4.14
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.386,
+            "sample": {
+              "iv": 59.564,
+              "ivPct1y": 22.22,
+              "ivRank1y": 22.56
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.443,
+            "sample": {
+              "iv30d": 0.601663,
+              "iv60d": 0.606771,
+              "iv90d": 0.613671,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.435,
+            "sample": {
+              "clsPx": 4.82,
+              "open": 4.59
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "INDV",
+      "pdufa_date": "2025-02-24",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.361,
+            "sample": {
+              "iv": 90.925,
+              "ivPct1y": 53.42,
+              "ivRank1y": 33.83
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.429,
+            "sample": {
+              "iv30d": 0.798704,
+              "iv60d": 0.798704,
+              "iv90d": 0.798704,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.51,
+            "sample": {
+              "clsPx": 11.4,
+              "open": 11.6
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.443,
+            "sample": {
+              "iv": 115.484,
+              "ivPct1y": 88.05,
+              "ivRank1y": 47.39
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.466,
+            "sample": {
+              "iv30d": 1.24467,
+              "iv60d": 1.10702,
+              "iv90d": 1.03452,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.488,
+            "sample": {
+              "clsPx": 10.08,
+              "open": 9.8
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.409,
+            "sample": {
+              "iv": 62.523,
+              "ivPct1y": 13.42,
+              "ivRank1y": 18.16
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.43,
+            "sample": {
+              "iv30d": 0.601184,
+              "iv60d": 0.605633,
+              "iv90d": 0.686794,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.413,
+            "sample": {
+              "clsPx": 8.45,
+              "open": 8.82
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "AZN",
+      "pdufa_date": "2025-01-27",
+      "bucket": "2025_2026",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.355,
+            "sample": {
+              "iv": 23.191,
+              "ivPct1y": 86.51,
+              "ivRank1y": 52.28
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "iv30d": 0.253907,
+              "iv60d": 0.269376,
+              "iv90d": 0.261665,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.528,
+            "sample": {
+              "clsPx": 65.27,
+              "open": 65.43
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.375,
+            "sample": {
+              "iv": 23.538,
+              "ivPct1y": 86.9,
+              "ivRank1y": 55.28
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.527,
+            "sample": {
+              "iv30d": 0.273261,
+              "iv60d": 0.265343,
+              "iv90d": 0.251912,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.563,
+            "sample": {
+              "clsPx": 65.54,
+              "open": 64.6
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.363,
+            "sample": {
+              "iv": 23.843,
+              "ivPct1y": 88.1,
+              "ivRank1y": 57.93
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.437,
+            "sample": {
+              "iv30d": 0.285114,
+              "iv60d": 0.255996,
+              "iv90d": 0.248377,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.454,
+            "sample": {
+              "clsPx": 67.64,
+              "open": 67.69
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "pdufa_date": "2024-12-20",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.451,
+            "sample": {
+              "iv": 31.832,
+              "ivPct1y": 86.9,
+              "ivRank1y": 44.4
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.413,
+            "sample": {
+              "iv30d": 0.32813,
+              "iv60d": 0.331976,
+              "iv90d": 0.344259,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "clsPx": 792.56,
+              "open": 790.88
+            }
+          },
+          "/hist/strikes": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 1.197,
+            "n_strikes": 1549
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.362,
+            "sample": {
+              "iv": 33.343,
+              "ivPct1y": 91.67,
+              "ivRank1y": 51.58
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.55,
+            "sample": {
+              "iv30d": 0.351287,
+              "iv60d": 0.35563,
+              "iv90d": 0.353947,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.464,
+            "sample": {
+              "clsPx": 788.82,
+              "open": 788.05
+            }
+          },
+          "/hist/strikes": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 1.164,
+            "n_strikes": 1565
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.563,
+            "sample": {
+              "iv": 36.587,
+              "ivPct1y": 97.62,
+              "ivRank1y": 67
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.52,
+            "sample": {
+              "iv30d": 0.390518,
+              "iv60d": 0.387708,
+              "iv90d": 0.375405,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.511,
+            "sample": {
+              "clsPx": 750.68,
+              "open": 758.17
+            }
+          },
+          "/hist/strikes": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 1.151,
+            "n_strikes": 1551
+          }
+        }
+      }
+    },
+    {
+      "ticker": "PYXS",
+      "pdufa_date": "2024-11-20",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.37,
+            "sample": {
+              "iv": 228.768,
+              "ivPct1y": 82.14,
+              "ivRank1y": 49.49
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.548,
+            "sample": {
+              "iv30d": 2.84464,
+              "iv60d": 2.66107,
+              "iv90d": 2.29395,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.428,
+            "sample": {
+              "clsPx": 3.56,
+              "open": 3.77
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.386,
+            "sample": {
+              "iv": 280.886,
+              "ivPct1y": 90.48,
+              "ivRank1y": 62.21
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.452,
+            "sample": {
+              "iv30d": 2.76686,
+              "iv60d": 2.54744,
+              "iv90d": 2.36114,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.439,
+            "sample": {
+              "clsPx": 4.74,
+              "open": 4.84
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.42,
+            "sample": {
+              "iv": 227.661,
+              "ivPct1y": 75.79,
+              "ivRank1y": 49.22
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.441,
+            "sample": {
+              "iv30d": 2.41833,
+              "iv60d": 2.14289,
+              "iv90d": 1.93912,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.439,
+            "sample": {
+              "clsPx": 4.16,
+              "open": 4.07
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "DERM",
+      "pdufa_date": "2024-11-04",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.356
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.401
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.455
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.488
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.494
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.425
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.467
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.414
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.506
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TEVA",
+      "pdufa_date": "2024-10-22",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.368,
+            "sample": {
+              "iv": 34.712,
+              "ivPct1y": 67.46,
+              "ivRank1y": 46.71
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.46,
+            "sample": {
+              "iv30d": 0.350874,
+              "iv60d": 0.418153,
+              "iv90d": 0.392293,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.507,
+            "sample": {
+              "clsPx": 17.46,
+              "open": 17.55
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.451,
+            "sample": {
+              "iv": 36.283,
+              "ivPct1y": 79.76,
+              "ivRank1y": 57.33
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.483,
+            "sample": {
+              "iv30d": 0.486946,
+              "iv60d": 0.432061,
+              "iv90d": 0.410017,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.485,
+            "sample": {
+              "clsPx": 17.25,
+              "open": 17.4
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.362,
+            "sample": {
+              "iv": 33.805,
+              "ivPct1y": 55.16,
+              "ivRank1y": 40.58
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.457,
+            "sample": {
+              "iv30d": 0.46844,
+              "iv60d": 0.415943,
+              "iv90d": 0.372086,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.457,
+            "sample": {
+              "clsPx": 18.18,
+              "open": 18.04
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "pdufa_date": "2024-09-15",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.363,
+            "sample": {
+              "iv": 26.319,
+              "ivPct1y": 46.83,
+              "ivRank1y": 28.95
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.513,
+            "sample": {
+              "iv30d": 0.260135,
+              "iv60d": 0.276302,
+              "iv90d": 0.316843,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.472,
+            "sample": {
+              "clsPx": 944.27,
+              "open": 942.31
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.43,
+            "sample": {
+              "iv": 28.243,
+              "ivPct1y": 71.83,
+              "ivRank1y": 34.01
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.409,
+            "sample": {
+              "iv30d": 0.284015,
+              "iv60d": 0.302975,
+              "iv90d": 0.333366,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.461,
+            "sample": {
+              "clsPx": 902.99,
+              "open": 931.09
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.384,
+            "sample": {
+              "iv": 28.371,
+              "ivPct1y": 71.83,
+              "ivRank1y": 32.56
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.431,
+            "sample": {
+              "iv30d": 0.274437,
+              "iv60d": 0.321337,
+              "iv90d": 0.326856,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.53,
+            "sample": {
+              "clsPx": 913.83,
+              "open": 926.99
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TVTX",
+      "pdufa_date": "2024-09-05",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.412,
+            "sample": {
+              "iv": 138.687,
+              "ivPct1y": 95.24,
+              "ivRank1y": 52.63
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "iv30d": 1.46034,
+              "iv60d": 1.52448,
+              "iv90d": 1.4206,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.416,
+            "sample": {
+              "clsPx": 8.68,
+              "open": 8.69
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.369,
+            "sample": {
+              "iv": 117.402,
+              "ivPct1y": 87.7,
+              "ivRank1y": 38.25
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.474,
+            "sample": {
+              "iv30d": 1.395,
+              "iv60d": 1.09681,
+              "iv90d": 0.989367,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.938,
+            "sample": {
+              "clsPx": 9.06,
+              "open": 9.06
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.476,
+            "sample": {
+              "iv": 140.186,
+              "ivPct1y": 96.03,
+              "ivRank1y": 52.84
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.709,
+            "sample": {
+              "iv30d": 1.49263,
+              "iv60d": 1.05429,
+              "iv90d": 0.948272,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.5,
+            "sample": {
+              "clsPx": 10.05,
+              "open": 9.51
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "SCLX",
+      "pdufa_date": "2024-08-29",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.574,
+            "sample": {
+              "iv": 275.942,
+              "ivPct1y": 96.83,
+              "ivRank1y": 68.75
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.558,
+            "sample": {
+              "iv30d": 2.99385,
+              "iv60d": 1.79517,
+              "iv90d": 1.72521,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.598,
+            "sample": {
+              "clsPx": 44.45,
+              "open": 46.2
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.433,
+            "sample": {
+              "iv": 149.155,
+              "ivPct1y": 48.02,
+              "ivRank1y": 36.81
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.581,
+            "sample": {
+              "iv30d": 1.4948,
+              "iv60d": 1.81671,
+              "iv90d": 1.70354,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.515,
+            "sample": {
+              "clsPx": 44.1,
+              "open": 44.1
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.446,
+            "sample": {
+              "iv": 153.552,
+              "ivPct1y": 53.17,
+              "ivRank1y": 37.92
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.598,
+            "sample": {
+              "iv30d": 1.64489,
+              "iv60d": 1.1969,
+              "iv90d": 1.76868,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.525,
+            "sample": {
+              "clsPx": 38.85,
+              "open": 39.55
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "RHHBY",
+      "pdufa_date": "2024-07-05",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.457
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.453
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.509
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.441
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.462
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.58
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.452
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.5
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.449
+          }
+        }
+      }
+    },
+    {
+      "ticker": "AZN",
+      "pdufa_date": "2024-06-12",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.421,
+            "sample": {
+              "iv": 17.902,
+              "ivPct1y": 1.19,
+              "ivRank1y": 7.53
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.546,
+            "sample": {
+              "iv30d": 0.17204,
+              "iv60d": 0.180866,
+              "iv90d": 0.194627,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.488,
+            "sample": {
+              "clsPx": 76.12,
+              "open": 77.23
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.437,
+            "sample": {
+              "iv": 17.985,
+              "ivPct1y": 3.97,
+              "ivRank1y": 8.38
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.522,
+            "sample": {
+              "iv30d": 0.181809,
+              "iv60d": 0.184879,
+              "iv90d": 0.191757,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.478,
+            "sample": {
+              "clsPx": 76.91,
+              "open": 76.43
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.466,
+            "sample": {
+              "iv": 17.777,
+              "ivPct1y": 3.17,
+              "ivRank1y": 6.25
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.566,
+            "sample": {
+              "iv30d": 0.182956,
+              "iv60d": 0.209351,
+              "iv90d": 0.20891,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.593,
+            "sample": {
+              "clsPx": 77.14,
+              "open": 77.02
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "DVAX",
+      "pdufa_date": "2024-05-14",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.575,
+            "sample": {
+              "iv": 35.069,
+              "ivPct1y": 44.44,
+              "ivRank1y": 39.05
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.595,
+            "sample": {
+              "iv30d": 0.446049,
+              "iv60d": 0.398304,
+              "iv90d": 0.398288,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.619,
+            "sample": {
+              "clsPx": 11.42,
+              "open": 11.7
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.416,
+            "sample": {
+              "iv": 35.454,
+              "ivPct1y": 48.81,
+              "ivRank1y": 41.09
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.557,
+            "sample": {
+              "iv30d": 0.494801,
+              "iv60d": 0.39047,
+              "iv90d": 0.391145,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.461,
+            "sample": {
+              "clsPx": 11.74,
+              "open": 11.87
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.464,
+            "sample": {
+              "iv": 34.912,
+              "ivPct1y": 44.05,
+              "ivRank1y": 38.22
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.522,
+            "sample": {
+              "iv30d": 0.349689,
+              "iv60d": 0.343632,
+              "iv90d": 0.366017,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.538,
+            "sample": {
+              "clsPx": 11.03,
+              "open": 10.74
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "IKT",
+      "pdufa_date": "2024-05-09",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.422
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.481
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.505
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.411
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.486
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.487
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.461
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.566
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.661
+          }
+        }
+      }
+    },
+    {
+      "ticker": "GILD",
+      "pdufa_date": "2024-04-26",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.488,
+            "sample": {
+              "iv": 23.086,
+              "ivPct1y": 94.44,
+              "ivRank1y": 70.34
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.519,
+            "sample": {
+              "iv30d": 0.255728,
+              "iv60d": 0.234976,
+              "iv90d": 0.233138,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.696,
+            "sample": {
+              "clsPx": 65.55,
+              "open": 65.2
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.477,
+            "sample": {
+              "iv": 23.804,
+              "ivPct1y": 98.02,
+              "ivRank1y": 88.51
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.552,
+            "sample": {
+              "iv30d": 0.261442,
+              "iv60d": 0.250974,
+              "iv90d": 0.248032,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.518,
+            "sample": {
+              "clsPx": 63.19,
+              "open": 63.59
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.438,
+            "sample": {
+              "iv": 21.601,
+              "ivPct1y": 80.56,
+              "ivRank1y": 64.08
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.486,
+            "sample": {
+              "iv30d": 0.252684,
+              "iv60d": 0.243354,
+              "iv90d": 0.23364,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.571,
+            "sample": {
+              "clsPx": 61.63,
+              "open": 63.7
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "JNJ",
+      "pdufa_date": "2024-04-05",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.423,
+            "sample": {
+              "iv": 14.254,
+              "ivPct1y": 27.38,
+              "ivRank1y": 38.16
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.589,
+            "sample": {
+              "iv30d": 0.15129,
+              "iv60d": 0.149454,
+              "iv90d": 0.147559,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.61,
+            "sample": {
+              "clsPx": 147.77,
+              "open": 149.48
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.477,
+            "sample": {
+              "iv": 13.089,
+              "ivPct1y": 10.71,
+              "ivRank1y": 26.56
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.58,
+            "sample": {
+              "iv30d": 0.159919,
+              "iv60d": 0.145715,
+              "iv90d": 0.143084,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.54,
+            "sample": {
+              "clsPx": 148.9,
+              "open": 147.04
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.465,
+            "sample": {
+              "iv": 15.118,
+              "ivPct1y": 59.13,
+              "ivRank1y": 46.77
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.623,
+            "sample": {
+              "iv30d": 0.183599,
+              "iv60d": 0.162269,
+              "iv90d": 0.160841,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.7,
+            "sample": {
+              "clsPx": 143.75,
+              "open": 146.4
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TARA",
+      "pdufa_date": "2024-04-05",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.672,
+            "sample": {
+              "iv": 146.618,
+              "ivPct1y": 93.25,
+              "ivRank1y": 65.17
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.851,
+            "sample": {
+              "iv30d": 1.14752,
+              "iv60d": 1.41022,
+              "iv90d": 1.35165,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.706,
+            "sample": {
+              "clsPx": 4,
+              "open": 3.8
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.636,
+            "sample": {
+              "iv": 139.528,
+              "ivPct1y": 89.68,
+              "ivRank1y": 61.95
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.782,
+            "sample": {
+              "iv30d": 1.17075,
+              "iv60d": 1.39978,
+              "iv90d": 1.43155,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.496,
+            "sample": {
+              "clsPx": 4,
+              "open": 4.23
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.475,
+            "sample": {
+              "iv": 119.597,
+              "ivPct1y": 76.59,
+              "ivRank1y": 52.91
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.509,
+            "sample": {
+              "iv30d": 1.34226,
+              "iv60d": 1.48366,
+              "iv90d": 1.43304,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.585,
+            "sample": {
+              "clsPx": 4.02,
+              "open": 4.24
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "VRTX",
+      "pdufa_date": "2024-01-16",
+      "bucket": "2024",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.475,
+            "sample": {
+              "iv": 23.852,
+              "ivPct1y": 59.52,
+              "ivRank1y": 45.28
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.531,
+            "sample": {
+              "iv30d": 0.20027,
+              "iv60d": 0.248763,
+              "iv90d": 0.246951,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.634,
+            "sample": {
+              "clsPx": 408.05,
+              "open": 408.65
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.421,
+            "sample": {
+              "iv": 28.841,
+              "ivPct1y": 95.63,
+              "ivRank1y": 82.95
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.601,
+            "sample": {
+              "iv30d": 0.290747,
+              "iv60d": 0.284637,
+              "iv90d": 0.27416,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.593,
+            "sample": {
+              "clsPx": 416.5,
+              "open": 415.01
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.488
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.532
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.517
+          }
+        }
+      }
+    },
+    {
+      "ticker": "MOLN",
+      "pdufa_date": "2023-12-10",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.469
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.485
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.493
+          },
+          "/hist/strikes": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.592
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.431
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.511
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.494
+          },
+          "/hist/strikes": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.688
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.426
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.396
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.378
+          },
+          "/hist/strikes": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.469
+          }
+        }
+      }
+    },
+    {
+      "ticker": "OTLK",
+      "pdufa_date": "2023-11-02",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.352
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.419
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.422
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.378
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.38
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.481
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.357
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.388
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.46
+          }
+        }
+      }
+    },
+    {
+      "ticker": "IPSEY",
+      "pdufa_date": "2023-08-16",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.38
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.452
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.354
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.347
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.458
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.459
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.343
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.385
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.382
+          }
+        }
+      }
+    },
+    {
+      "ticker": "BMY",
+      "pdufa_date": "2023-01-26",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.41,
+            "sample": {
+              "iv": 19.569,
+              "ivPct1y": 16.67,
+              "ivRank1y": 37.61
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "iv30d": 0.229796,
+              "iv60d": 0.213656,
+              "iv90d": 0.212609,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.466,
+            "sample": {
+              "clsPx": 63.67,
+              "open": 63.1
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.374,
+            "sample": {
+              "iv": 18.405,
+              "ivPct1y": 9.13,
+              "ivRank1y": 28.1
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.48,
+            "sample": {
+              "iv30d": 0.210453,
+              "iv60d": 0.202441,
+              "iv90d": 0.205745,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.436,
+            "sample": {
+              "clsPx": 63.07,
+              "open": 63.77
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.347,
+            "sample": {
+              "iv": 17.867,
+              "ivPct1y": 6.75,
+              "ivRank1y": 23.7
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.473,
+            "sample": {
+              "iv30d": 0.197786,
+              "iv60d": 0.188551,
+              "iv90d": 0.189603,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "clsPx": 63.82,
+              "open": 63.29
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "ADMA",
+      "pdufa_date": "2022-12-13",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.439,
+            "sample": {
+              "iv": 72.982,
+              "ivPct1y": 24.6,
+              "ivRank1y": 28.54
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.492,
+            "sample": {
+              "iv30d": 0.808267,
+              "iv60d": 0.707647,
+              "iv90d": 0.597893,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.555,
+            "sample": {
+              "clsPx": 3.16,
+              "open": 3.21
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.364,
+            "sample": {
+              "iv": 71.056,
+              "ivPct1y": 22.22,
+              "ivRank1y": 27.12
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.435,
+            "sample": {
+              "iv30d": 0.643371,
+              "iv60d": 0.752259,
+              "iv90d": 0.80236,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.466,
+            "sample": {
+              "clsPx": 3.36,
+              "open": 3.23
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.436,
+            "sample": {
+              "iv": 67.572,
+              "ivPct1y": 15.48,
+              "ivRank1y": 24.55
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.426,
+            "sample": {
+              "iv30d": 0.699393,
+              "iv60d": 0.686959,
+              "iv90d": 0.686155,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.401,
+            "sample": {
+              "clsPx": 3.65,
+              "open": 3.61
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "ETON",
+      "pdufa_date": "2022-05-27",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.376,
+            "sample": {
+              "iv": 126.922,
+              "ivPct1y": 92.06,
+              "ivRank1y": 45.77
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.423,
+            "sample": {
+              "iv30d": 1.11719,
+              "iv60d": 1.19572,
+              "iv90d": 1.12487,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.452,
+            "sample": {
+              "clsPx": 3.27,
+              "open": 3.47
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.338,
+            "sample": {
+              "iv": 115.72,
+              "ivPct1y": 78.97,
+              "ivRank1y": 37.5
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.51,
+            "sample": {
+              "iv30d": 1.28529,
+              "iv60d": 1.11824,
+              "iv90d": 0.984728,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.431,
+            "sample": {
+              "clsPx": 3.17,
+              "open": 3.21
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.443,
+            "sample": {
+              "iv": 137.754,
+              "ivPct1y": 94.84,
+              "ivRank1y": 53.78
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.508,
+            "sample": {
+              "iv30d": 1.61549,
+              "iv60d": 1.08412,
+              "iv90d": 1.00987,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.411,
+            "sample": {
+              "clsPx": 3.35,
+              "open": 3.25
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "IOVA",
+      "pdufa_date": "2022-05-26",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.542,
+            "sample": {
+              "iv": 92.898,
+              "ivPct1y": 72.22,
+              "ivRank1y": 47.31
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.573,
+            "sample": {
+              "iv30d": 0.983913,
+              "iv60d": 0.923551,
+              "iv90d": 0.913447,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.488,
+            "sample": {
+              "clsPx": 14.46,
+              "open": 14.86
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.413,
+            "sample": {
+              "iv": 102.381,
+              "ivPct1y": 91.67,
+              "ivRank1y": 61.65
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.436,
+            "sample": {
+              "iv30d": 1.05588,
+              "iv60d": 1.01311,
+              "iv90d": 0.977469,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.548,
+            "sample": {
+              "clsPx": 14.88,
+              "open": 14.37
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.497,
+            "sample": {
+              "iv": 102.237,
+              "ivPct1y": 89.68,
+              "ivRank1y": 61.44
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.42,
+            "sample": {
+              "iv30d": 1.04973,
+              "iv60d": 0.996494,
+              "iv90d": 0.976322,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.416,
+            "sample": {
+              "clsPx": 14.78,
+              "open": 14.43
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "BMY",
+      "pdufa_date": "2022-03-04",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.348,
+            "sample": {
+              "iv": 21.117,
+              "ivPct1y": 62.7,
+              "ivRank1y": 37.37
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.418,
+            "sample": {
+              "iv30d": 0.213899,
+              "iv60d": 0.219653,
+              "iv90d": 0.225091,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.419,
+            "sample": {
+              "clsPx": 56.56,
+              "open": 56.62
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.347,
+            "sample": {
+              "iv": 22.603,
+              "ivPct1y": 80.56,
+              "ivRank1y": 46.95
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.493,
+            "sample": {
+              "iv30d": 0.223299,
+              "iv60d": 0.22247,
+              "iv90d": 0.227175,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.423,
+            "sample": {
+              "clsPx": 57.51,
+              "open": 57.49
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.383,
+            "sample": {
+              "iv": 21.711,
+              "ivPct1y": 73.41,
+              "ivRank1y": 41.2
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.535,
+            "sample": {
+              "iv30d": 0.230232,
+              "iv60d": 0.210005,
+              "iv90d": 0.21897,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.407,
+            "sample": {
+              "clsPx": 58.51,
+              "open": 58.29
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "GILD",
+      "pdufa_date": "2022-03-01",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.361,
+            "sample": {
+              "iv": 24.898,
+              "ivPct1y": 75,
+              "ivRank1y": 59.19
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.44,
+            "sample": {
+              "iv30d": 0.215555,
+              "iv60d": 0.262221,
+              "iv90d": 0.260175,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.4,
+            "sample": {
+              "clsPx": 54.54,
+              "open": 54.98
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.402,
+            "sample": {
+              "iv": 33.139,
+              "ivPct1y": 100,
+              "ivRank1y": 100
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.449,
+            "sample": {
+              "iv30d": 0.350945,
+              "iv60d": 0.326289,
+              "iv90d": 0.299747,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.418,
+            "sample": {
+              "clsPx": 52.54,
+              "open": 52.84
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.36,
+            "sample": {
+              "iv": 33.749,
+              "ivPct1y": 100,
+              "ivRank1y": 100
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.44,
+            "sample": {
+              "iv30d": 0.359441,
+              "iv60d": 0.319889,
+              "iv90d": 0.299798,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.422,
+            "sample": {
+              "clsPx": 51.98,
+              "open": 51.85
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "pdufa_date": "2022-02-24",
+      "bucket": "2022_2023",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.35,
+            "sample": {
+              "iv": 29.978,
+              "ivPct1y": 81.35,
+              "ivRank1y": 45.6
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.454,
+            "sample": {
+              "iv30d": 0.295347,
+              "iv60d": 0.305379,
+              "iv90d": 0.308466,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.468,
+            "sample": {
+              "clsPx": 233,
+              "open": 233.44
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.353,
+            "sample": {
+              "iv": 28.582,
+              "ivPct1y": 74.6,
+              "ivRank1y": 38.35
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.435,
+            "sample": {
+              "iv30d": 0.286622,
+              "iv60d": 0.288127,
+              "iv90d": 0.30163,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.494,
+            "sample": {
+              "clsPx": 235.49,
+              "open": 228.55
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.345,
+            "sample": {
+              "iv": 30.866,
+              "ivPct1y": 88.89,
+              "ivRank1y": 50.22
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.443,
+            "sample": {
+              "iv30d": 0.309216,
+              "iv60d": 0.315907,
+              "iv90d": 0.325943,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.435,
+            "sample": {
+              "clsPx": 230.15,
+              "open": 232.32
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "XNCR",
+      "pdufa_date": "2021-11-12",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.36,
+            "sample": {
+              "iv": 71.388,
+              "ivPct1y": 96.43,
+              "ivRank1y": 83.35
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.459,
+            "sample": {
+              "iv30d": 0.617168,
+              "iv60d": 0.866015,
+              "iv90d": 0.663863,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.567,
+            "sample": {
+              "clsPx": 39.02,
+              "open": 39.27
+            }
+          },
+          "/hist/strikes": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.57,
+            "n_strikes": 41
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.379,
+            "sample": {
+              "iv": 57.037,
+              "ivPct1y": 64.68,
+              "ivRank1y": 45.39
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.465,
+            "sample": {
+              "iv30d": 0.743777,
+              "iv60d": 0.724535,
+              "iv90d": 0.581427,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.406,
+            "sample": {
+              "clsPx": 43.44,
+              "open": 41.2
+            }
+          },
+          "/hist/strikes": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.652,
+            "n_strikes": 45
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.386,
+            "sample": {
+              "iv": 62.094,
+              "ivPct1y": 79.76,
+              "ivRank1y": 53.01
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.456,
+            "sample": {
+              "iv30d": 0.708485,
+              "iv60d": 0.611007,
+              "iv90d": 0.557715,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.493,
+            "sample": {
+              "clsPx": 39.57,
+              "open": 39.06
+            }
+          },
+          "/hist/strikes": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.579,
+            "n_strikes": 45
+          }
+        }
+      }
+    },
+    {
+      "ticker": "ETON",
+      "pdufa_date": "2021-11-08",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.365,
+            "sample": {
+              "iv": 107.315,
+              "ivPct1y": 60.15,
+              "ivRank1y": 65.75
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.459,
+            "sample": {
+              "iv30d": 1.2187,
+              "iv60d": 0.905145,
+              "iv90d": 0.918228,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.411,
+            "sample": {
+              "clsPx": 5.33,
+              "open": 5.21
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.348,
+            "sample": {
+              "iv": 113.385,
+              "ivPct1y": 75,
+              "ivRank1y": 70.25
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.534,
+            "sample": {
+              "iv30d": 1.28702,
+              "iv60d": 1.05542,
+              "iv90d": 1.01505,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.433,
+            "sample": {
+              "clsPx": 5.78,
+              "open": 5.59
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.377,
+            "sample": {
+              "iv": 142.446,
+              "ivPct1y": 95.89,
+              "ivRank1y": 91.78
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.421,
+            "sample": {
+              "iv30d": 1.84876,
+              "iv60d": 1.37035,
+              "iv90d": 1.17757,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.442,
+            "sample": {
+              "clsPx": 6.29,
+              "open": 6.56
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "EXEL",
+      "pdufa_date": "2021-09-17",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.382,
+            "sample": {
+              "iv": 39.273,
+              "ivPct1y": 12.3,
+              "ivRank1y": 19.81
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.4,
+            "sample": {
+              "iv30d": 0.385088,
+              "iv60d": 0.411159,
+              "iv90d": 0.434867,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.571,
+            "sample": {
+              "clsPx": 19.26,
+              "open": 19.44
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.346,
+            "sample": {
+              "iv": 35.852,
+              "ivPct1y": 6.35,
+              "ivRank1y": 10.39
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.422,
+            "sample": {
+              "iv30d": 0.354423,
+              "iv60d": 0.407945,
+              "iv90d": 0.430814,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.426,
+            "sample": {
+              "clsPx": 19.88,
+              "open": 19.5
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.382,
+            "sample": {
+              "iv": 38.211,
+              "ivPct1y": 13.1,
+              "ivRank1y": 16.88
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.412,
+            "sample": {
+              "iv30d": 0.379807,
+              "iv60d": 0.425797,
+              "iv90d": 0.425275,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.435,
+            "sample": {
+              "clsPx": 20.54,
+              "open": 20.47
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "RHHBY",
+      "pdufa_date": "2020-10-16",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.379
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.359
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.387
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.37
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.387
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.387
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.371
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.44
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.395
+          }
+        }
+      }
+    },
+    {
+      "ticker": "GSK",
+      "pdufa_date": "2020-09-09",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.359,
+            "sample": {
+              "iv": 20.017,
+              "ivPct1y": 51.59,
+              "ivRank1y": 16.36
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.444,
+            "sample": {
+              "iv30d": 0.187056,
+              "iv60d": 0.201333,
+              "iv90d": 0.236907,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.521,
+            "sample": {
+              "clsPx": 31.96,
+              "open": 31.98
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.357,
+            "sample": {
+              "iv": 19.908,
+              "ivPct1y": 50.79,
+              "ivRank1y": 16.13
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.412,
+            "sample": {
+              "iv30d": 0.195651,
+              "iv60d": 0.213983,
+              "iv90d": 0.233681,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.419,
+            "sample": {
+              "clsPx": 31.18,
+              "open": 31.17
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.353,
+            "sample": {
+              "iv": 25.826,
+              "ivPct1y": 80.16,
+              "ivRank1y": 28.52
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.491,
+            "sample": {
+              "iv30d": 0.264813,
+              "iv60d": 0.271283,
+              "iv90d": 0.272092,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.426,
+            "sample": {
+              "clsPx": 30.68,
+              "open": 30.82
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "VTRS",
+      "pdufa_date": "2020-08-17",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.382
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.387
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.596,
+            "sample": {
+              "clsPx": 13.1,
+              "open": 13.35
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.35
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.388
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.677,
+            "sample": {
+              "clsPx": 13.31,
+              "open": 13.99
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.352
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.379
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.435,
+            "sample": {
+              "clsPx": 13.12,
+              "open": 12.97
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "ABBV",
+      "pdufa_date": "2020-06-15",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.432,
+            "sample": {
+              "iv": 29.336,
+              "ivPct1y": 75,
+              "ivRank1y": 22.09
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.434,
+            "sample": {
+              "iv30d": 0.291536,
+              "iv60d": 0.303977,
+              "iv90d": 0.308885,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.546,
+            "sample": {
+              "clsPx": 72.17,
+              "open": 74.35
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.433,
+            "sample": {
+              "iv": 27.945,
+              "ivPct1y": 71.43,
+              "ivRank1y": 19.35
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.416,
+            "sample": {
+              "iv30d": 0.278574,
+              "iv60d": 0.318958,
+              "iv90d": 0.298388,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.414,
+            "sample": {
+              "clsPx": 74.03,
+              "open": 71.83
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.349,
+            "sample": {
+              "iv": 32.888,
+              "ivPct1y": 82.54,
+              "ivRank1y": 29.09
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.514,
+            "sample": {
+              "iv30d": 0.314059,
+              "iv60d": 0.318574,
+              "iv90d": 0.33181,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.519,
+            "sample": {
+              "clsPx": 73.56,
+              "open": 74.58
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "IOVA",
+      "pdufa_date": "2020-05-27",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.368,
+            "sample": {
+              "iv": 109.693,
+              "ivPct1y": 83.33,
+              "ivRank1y": 44.88
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.474,
+            "sample": {
+              "iv30d": 1.16258,
+              "iv60d": 1.01973,
+              "iv90d": 0.930682,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.463,
+            "sample": {
+              "clsPx": 33.78,
+              "open": 33.14
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.359,
+            "sample": {
+              "iv": 92.828,
+              "ivPct1y": 75.4,
+              "ivRank1y": 33.95
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.443,
+            "sample": {
+              "iv30d": 0.924641,
+              "iv60d": 0.895733,
+              "iv90d": 0.851612,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.44,
+            "sample": {
+              "clsPx": 36.56,
+              "open": 37.36
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.418,
+            "sample": {
+              "iv": 94.148,
+              "ivPct1y": 75.4,
+              "ivRank1y": 34.81
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.519,
+            "sample": {
+              "iv30d": 0.976635,
+              "iv60d": 0.873749,
+              "iv90d": 0.821335,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.391,
+            "sample": {
+              "clsPx": 37.41,
+              "open": 41.45
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "TAK",
+      "pdufa_date": "2020-05-22",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.46,
+            "sample": {
+              "iv": 37.657,
+              "ivPct1y": 87.3,
+              "ivRank1y": 42.13
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.416,
+            "sample": {
+              "iv30d": 0.428714,
+              "iv60d": 0.386761,
+              "iv90d": 0.373255,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.552,
+            "sample": {
+              "clsPx": 17.76,
+              "open": 17.63
+            }
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.377,
+            "sample": {
+              "iv": 31.57,
+              "ivPct1y": 81.75,
+              "ivRank1y": 29.9
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.424,
+            "sample": {
+              "iv30d": 0.353693,
+              "iv60d": 0.325921,
+              "iv90d": 0.343246,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.421,
+            "sample": {
+              "clsPx": 18.76,
+              "open": 19.02
+            }
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.416,
+            "sample": {
+              "iv": 33.038,
+              "ivPct1y": 81.35,
+              "ivRank1y": 32.85
+            }
+          },
+          "/hist/summaries": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.449,
+            "sample": {
+              "iv30d": 0.298031,
+              "iv60d": 0.308776,
+              "iv90d": 0.326237,
+              "slope": null
+            }
+          },
+          "/hist/dailies": {
+            "status": "OK",
+            "cached": false,
+            "elapsed_s": 0.513,
+            "sample": {
+              "clsPx": 19.17,
+              "open": 19.3
+            }
+          }
+        }
+      }
+    },
+    {
+      "ticker": "ETON",
+      "pdufa_date": "2020-03-18",
+      "bucket": "2020_2021",
+      "snapshots": {
+        "T-14": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.452
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.367
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.41
+          }
+        },
+        "T-7": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.366
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.52
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.412
+          }
+        },
+        "T-1": {
+          "/hist/ivrank": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.418
+          },
+          "/hist/summaries": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.429
+          },
+          "/hist/dailies": {
+            "status": "ERROR",
+            "cached": false,
+            "elapsed_s": 0.42
+          }
+        }
+      }
+    }
+  ]
+}

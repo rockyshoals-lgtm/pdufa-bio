@@ -1,0 +1,25 @@
+# ODIN Multi-AI Orchestrator Dependencies
+# Install with: pip install -r requirements.txt
+
+# AI SDKs
+anthropic>=0.39.0          # Claude API
+openai>=1.50.0             # ChatGPT API
+google-generativeai>=0.8.0 # Gemini API
+
+# HTTP/Async
+aiohttp>=3.9.0             # Async HTTP client
+httpx>=0.27.0              # Modern HTTP client
+
+# Data Processing
+pandas>=2.0.0              # Data manipulation
+numpy>=1.24.0              # Numerical operations
+
+# Token Counting
+tiktoken>=0.7.0            # OpenAI tokenizer
+
+# Utilities
+python-dotenv>=1.0.0       # Environment variable loading
+
+# Optional: for enhanced features
+# cupy-cuda12x>=13.0.0     # GPU acceleration (requires CUDA)
+# torch>=2.0.0             # For HINT integration

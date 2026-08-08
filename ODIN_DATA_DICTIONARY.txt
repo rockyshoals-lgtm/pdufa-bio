@@ -1,0 +1,89 @@
+
+ODIN PDUFA T-1 COMPLIANT DATASET
+================================
+Version: 2.0 (Production)
+Generated: 2026-01-23
+Total Events: 1,449
+
+COLUMN CATEGORIES:
+==================
+
+METADATA COLUMNS (11) - For identification and stratification, NOT model features:
+  - event_uid: Unique 16-char hash identifier
+  - event_id_unique: Composite key (ticker|asset|type|date|uid)
+  - ticker: Stock symbol
+  - asset: Drug/product name
+  - indication: Specific disease target
+  - therapeutic_area: Broad category (Oncology, CNS, etc.)
+  - modality: Drug type (Antibody, Small Molecule, etc.)
+  - catalyst_date: PDUFA decision date (T)
+  - data_cutoff_date: Last day features available (T-1)
+  - split_default: train_2020_2023 / val_2024 / test_2025_2026
+  - prior_crl_reason: CMC/CLINICAL/SAFETY (if prior CRL)
+
+FEATURE COLUMNS (21) - Model inputs, all T-1 compliant:
+  Designations (9):
+    - btd: Breakthrough Therapy Designation (0/1)
+    - orphan: Orphan Drug Designation (0/1)
+    - priority_review: Priority Review status (0/1)
+    - fast_track: Fast Track Designation (0/1)
+    - accelerated_approval: Accelerated Approval pathway (0/1)
+    - designation_stack_count: Total designations (0-5)
+    - rmat: Regenerative Medicine Advanced Therapy (0/1)
+    - rare_pediatric_disease: Rare Pediatric Disease (0/1)
+    - qidp: Qualified Infectious Disease Product (0/1)
+  
+  Sponsor Experience (2):
+    - sponsor_prior_approvals: Count of prior FDA approvals
+    - experienced_sponsor: Binary flag if sponsor_prior_approvals > threshold
+  
+  Advisory Committee (2):
+    - had_adcom: Whether FDA held AdCom meeting (0/1)
+    - adcom_vote_pct: Advisory Committee approval % (NaN if no AdCom)
+  
+  Resubmission (3):
+    - prior_crl: Whether this is a resubmission after CRL (0/1)
+    - resubmission_class: Class 1 or 2 resubmission (NaN if first cycle)
+    - class1_cmc_resubmission_flag: CMC-focused Class 1 resub (0/1)
+  
+  Modality Risk (4):
+    - simple_modality_risk: Basic modality complexity score
+    - is_antibody: Antibody/biologic modality (0/1)
+    - is_novel_modality: Novel platform (Cell/Gene/RNA therapy) (0/1)
+    - manufacturing_risk: Modality-based CMC complexity proxy (0/1)
+  
+  Base Rates (3) - Rolling T-1 historical approval rates:
+    - base_rate_ta: Historical approval rate for therapeutic area
+    - base_rate_modality: Historical approval rate for modality
+    - base_rate_stack: Historical approval rate for designation count
+  
+  Flags (1):
+    - designation_trap_flag: High designations but historical CRL pattern
+
+TARGET COLUMNS (2):
+  - outcome: APPROVAL or CRL
+  - outcome_binary: 1 (approval) or 0 (CRL)
+
+T-1 COMPLIANCE NOTES:
+=====================
+- All features are available BEFORE the PDUFA decision date
+- Base rates are calculated using ONLY historical events (rolling window)
+- No post-decision information leaks into features
+- LEAKED_mfg_risk_DO_NOT_USE column has been REMOVED
+
+USAGE:
+======
+# Training
+X_train = df[df['split_default'] == 'train_2020_2023'][FEATURE_COLS]
+y_train = df[df['split_default'] == 'train_2020_2023']['outcome_binary']
+
+# Validation (for hyperparameter tuning)
+X_val = df[df['split_default'] == 'val_2024'][FEATURE_COLS]
+y_val = df[df['split_default'] == 'val_2024']['outcome_binary']
+
+# Test (for final evaluation ONLY)
+X_test = df[df['split_default'] == 'test_2025_2026'][FEATURE_COLS]
+y_test = df[df['split_default'] == 'test_2025_2026']['outcome_binary']
+
+IMPORTANT: y_val and y_test are used ONLY for computing metrics,
+NOT as model inputs. The model predicts ŷ, then metrics compare ŷ to y.

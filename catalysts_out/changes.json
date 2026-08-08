@@ -1,0 +1,1869 @@
+{
+  "generated": "2026-07-24T12:34:14Z",
+  "last_checked": "2026-07-24T12:34:14Z",
+  "cadence": "scheduled 5x per trading day",
+  "counts": {
+    "new": 125,
+    "moved": 12,
+    "dropped": 124,
+    "corrections": 0
+  },
+  "new": [
+    {
+      "ticker": "NTHI",
+      "type": "PhaseReadout",
+      "date": "2026-07-30",
+      "company": "NEONC TECHNOLOGIES HOLDINGS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT02704858"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-07-31",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04255849"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06727565"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT05463848"
+    },
+    {
+      "ticker": "RADX",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "Radiopharm Theranostics Ltd",
+      "url": "https://clinicaltrials.gov/study/NCT05799274"
+    },
+    {
+      "ticker": "RCUS",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "Arcus Biosciences, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT05568095"
+    },
+    {
+      "ticker": "RGNX",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "REGENXBIO Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04514653"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT03539744"
+    },
+    {
+      "ticker": "AVIR",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "Atea Pharmaceuticals, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT07314346"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2026-08-06",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT07017179"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-08-08",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT07103148"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-08-15",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT03974113"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2026-08-23",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT05262400"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-08-25",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05132075"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT01688492"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06001320"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05285917"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06100744"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT06419179"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2026-09-23",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT04557449"
+    },
+    {
+      "ticker": "INMB",
+      "type": "Approval",
+      "date": "2026-09-30",
+      "company": "Inmune Bio, Inc.  (INMB)  (CIK 0001711754)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390025011733/ea023027701ex99-1_inmune.htm"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-09-30",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT03117751"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-09-30",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06459310"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-09-30",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05358249"
+    },
+    {
+      "ticker": "ARWR",
+      "type": "PhaseReadout",
+      "date": "2026-09-30",
+      "company": "ARROWHEAD PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07223658"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT06584071"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05813964"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT04088396"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT03090165"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT07123090"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-10-05",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT05511363"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-10-06",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT06003426"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2026-10-07",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT02612454"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-10-07",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT02612454"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-10-09",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06958211"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "Earnings",
+      "date": "2026-10-13",
+      "company": NaN,
+      "url": "https://site.financialmodelingprep.com/financial-summary/JNJ"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-10-19",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06516952"
+    },
+    {
+      "ticker": "MGNX",
+      "type": "ConferencePresentation",
+      "date": "2026-10-23",
+      "company": "MACROGENICS INC  (MGNX)  (CIK 0001125345)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1125345/000112534526000050/exhibit991_clinicalupdatem.htm"
+    },
+    {
+      "ticker": "EVAX",
+      "type": "ConferencePresentation",
+      "date": "2026-10-23",
+      "company": "Evaxion A/S  (EVAX)  (CIK 0001828253)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1828253/000117184326004747/exh_991.htm"
+    },
+    {
+      "ticker": "MOLN",
+      "type": "ConferencePresentation",
+      "date": "2026-10-23",
+      "company": "MOLECULAR PARTNERS AG  (MOLN)  (CIK 0001745114)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1745114/000117184326004758/exh_991.htm"
+    },
+    {
+      "ticker": "DBVT",
+      "type": "Earnings",
+      "date": "2026-10-27",
+      "company": NaN,
+      "url": "https://site.financialmodelingprep.com/financial-summary/DBVT"
+    },
+    {
+      "ticker": "NVS",
+      "type": "Earnings",
+      "date": "2026-10-27",
+      "company": NaN,
+      "url": "https://site.financialmodelingprep.com/financial-summary/NVS"
+    },
+    {
+      "ticker": "NVCR",
+      "type": "Earnings",
+      "date": "2026-10-29",
+      "company": NaN,
+      "url": "https://site.financialmodelingprep.com/financial-summary/NVCR"
+    },
+    {
+      "ticker": "ARGX",
+      "type": "Earnings",
+      "date": "2026-10-29",
+      "company": NaN,
+      "url": "https://site.financialmodelingprep.com/financial-summary/ARGX"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2026-10-30",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT05918133"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-10-31",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06266338"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2026-11-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06662383"
+    },
+    {
+      "ticker": "ONC",
+      "type": "PhaseReadout",
+      "date": "2026-11-01",
+      "company": "BeOne Medicines Ltd.",
+      "url": "https://clinicaltrials.gov/study/NCT04973605"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2026-11-01",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05720325"
+    },
+    {
+      "ticker": "SMMT",
+      "type": "Earnings",
+      "date": "2026-11-11",
+      "company": NaN,
+      "url": "https://site.financialmodelingprep.com/financial-summary/SMMT"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2026-11-15",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT05226455"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT04989946"
+    },
+    {
+      "ticker": "EXEL",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "EXELIXIS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05263050"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05396885"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT06964958"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT04989946"
+    },
+    {
+      "ticker": "SNDX",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "Syndax Pharmaceuticals Inc",
+      "url": "https://clinicaltrials.gov/study/NCT06229912"
+    },
+    {
+      "ticker": "CRSP",
+      "type": "ConferencePresentation",
+      "date": "2026-12-12",
+      "company": "CRISPR Therapeutics AG  (CRSP)  (CIK 0001674416)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674416/000119312525273329/crsp-ex99_1.htm"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2026-12-14",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT07184632"
+    },
+    {
+      "ticker": "JAZZ",
+      "type": "PhaseReadout",
+      "date": "2026-12-24",
+      "company": "Jazz Pharmaceuticals plc",
+      "url": "https://clinicaltrials.gov/study/NCT04652115"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-12-30",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07197164"
+    },
+    {
+      "ticker": "CAPR",
+      "type": "Approval",
+      "date": "2026-12-31",
+      "company": "CAPRICOR THERAPEUTICS, INC.  (CAPR)  (CIK 0001133869)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1133869/000110465926083559/capr-20260709x8k.htm"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2026-12-31",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT06449625"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2026-12-31",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT05303532"
+    },
+    {
+      "ticker": "BCAB",
+      "type": "PhaseReadout",
+      "date": "2026-12-31",
+      "company": "BioAtla, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04918186"
+    },
+    {
+      "ticker": "ARGX",
+      "type": "PhaseReadout",
+      "date": "2026-H1",
+      "company": "ARGENX SE  (ARGX)  (CIK 0001697862)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1697862/000169786225000059/a02earningspressreleaseq3.htm"
+    },
+    {
+      "ticker": "NBP",
+      "type": "PhaseReadout",
+      "date": "2026-Q1",
+      "company": "I-Mab  (IMAB)  (CIK 0001778016)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1778016/000177801625000009/imab-ex99_1.htm"
+    },
+    {
+      "ticker": "PCVX",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "Vaxcyte, Inc.  (PCVX)  (CIK 0001649094)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1649094/000119312525067901/d848914dex991.htm"
+    },
+    {
+      "ticker": "INSM",
+      "type": "PhaseReadout",
+      "date": "2026-Q1",
+      "company": "INSMED Inc  (INSM)  (CIK 0001104506)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1104506/000114036125000711/ef20041296_ex99-1.htm"
+    },
+    {
+      "ticker": "CELC",
+      "type": "PhaseReadout",
+      "date": "2026-Q2",
+      "company": "Celcuity Inc.  (CELC)  (CIK 0001603454)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1603454/000149315225018565/ex99-2.htm"
+    },
+    {
+      "ticker": "GUTS",
+      "type": "DeviceDeNovo",
+      "date": "2026-Q4",
+      "company": NaN,
+      "url": "https://www.globenewswire.com/news-release/2026/07/15/3327527/0/en/fractyl-health-reports-positive-randomized-data-from-remain-1-midpoint-cohort-demonstrating-durable-weight-maintenance-one-year-after-glp-1-discontinuation.html"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2027-01-01",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT03839498"
+    },
+    {
+      "ticker": "TLX",
+      "type": "PhaseReadout",
+      "date": "2027-01-01",
+      "company": "Telix Pharmaceuticals Ltd",
+      "url": "https://clinicaltrials.gov/study/NCT07052214"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-01-02",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07128641"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2027-01-04",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06356311"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-01-15",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT04644575"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2027-01-25",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT06616532"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-01-29",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT06857955"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-02-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04086264"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-02-22",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT06834932"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-02-28",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06522386"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-03-01",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT07011667"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-03-25",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT05662319"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2027-03-30",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT04595565"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2027-04-01",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT05558319"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-04-01",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT05558319"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "PhaseReadout",
+      "date": "2027-04-14",
+      "company": "JOHNSON & JOHNSON",
+      "url": "https://clinicaltrials.gov/study/NCT06116786"
+    },
+    {
+      "ticker": "AXSM",
+      "type": "PDUFA",
+      "date": "2027-05-01",
+      "company": "Axsome Therapeutics, Inc.  (AXSM)  (CIK 0001579428)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm"
+    },
+    {
+      "ticker": "IRON",
+      "type": "PhaseReadout",
+      "date": "2027-05-01",
+      "company": "Disc Medicine, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT05320198"
+    },
+    {
+      "ticker": "XNCR",
+      "type": "PhaseReadout",
+      "date": "2027-05-01",
+      "company": "Xencor Inc",
+      "url": "https://clinicaltrials.gov/study/NCT07713485"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-05-15",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06448026"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-05-17",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07213778"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-05-17",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06736041"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-05-28",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT07619118"
+    },
+    {
+      "ticker": "SNDX",
+      "type": "PhaseReadout",
+      "date": "2027-06-01",
+      "company": "Syndax Pharmaceuticals Inc",
+      "url": "https://clinicaltrials.gov/study/NCT03179930"
+    },
+    {
+      "ticker": "SPRY",
+      "type": "PhaseReadout",
+      "date": "2027-06-01",
+      "company": "ARS Pharmaceuticals, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06927999"
+    },
+    {
+      "ticker": "SYRE",
+      "type": "PhaseReadout",
+      "date": "2027-06-01",
+      "company": "Spyre Therapeutics, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT07012395"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-06-07",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT07348692"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-06-22",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05126277"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-06-30",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT04550260"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2027-07-01",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT06419621"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-07-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT07232719"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-07-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04401748"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-07-02",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT05636176"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2027-07-22",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT07062965"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2027-07-30",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT06072183"
+    },
+    {
+      "ticker": "ASND",
+      "type": "PhaseReadout",
+      "date": "2027-08-01",
+      "company": "Ascendis Pharma A/S",
+      "url": "https://clinicaltrials.gov/study/NCT07706764"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-08-10",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05852938"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-09-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06952530"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-09-01",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT05669755"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2027-09-28",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06585774"
+    },
+    {
+      "ticker": "CGEM",
+      "type": "PhaseReadout",
+      "date": "2027-09-30",
+      "company": "Cullinan Therapeutics, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT07722767"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2027-10-28",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04624204"
+    },
+    {
+      "ticker": "ONC",
+      "type": "PhaseReadout",
+      "date": "2027-10-30",
+      "company": "BeOne Medicines Ltd.",
+      "url": "https://clinicaltrials.gov/study/NCT07043400"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-11-04",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT05624450"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-11-07",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT03811561"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-12-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06672939"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2027-12-01",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT07226089"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-12-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06158841"
+    },
+    {
+      "ticker": "OCUL",
+      "type": "PhaseReadout",
+      "date": "2027-H1",
+      "company": "OCULAR THERAPEUTIX, INC  (OCUL)  (CIK 0001393434)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1393434/000110465925073909/tm2522503d1_ex99-1.htm"
+    },
+    {
+      "ticker": "MBX",
+      "type": "PhaseReadout",
+      "date": "2028-01-01",
+      "company": "MBX Biosciences, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT07699471"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2028-01-01",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT03496883"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "PhaseReadout",
+      "date": "2028-01-12",
+      "company": "JOHNSON & JOHNSON",
+      "url": "https://clinicaltrials.gov/study/NCT07525141"
+    },
+    {
+      "ticker": "AGIO",
+      "type": "PhaseReadout",
+      "date": "2028-01-17",
+      "company": "AGIOS PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07241234"
+    },
+    {
+      "ticker": "BHVN",
+      "type": "Approval",
+      "date": "2030-12-31",
+      "company": "Biohaven Ltd.  (BHVN)  (CIK 0001935979)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1935979/000193597925000026/exhibit9912025oberlandpres.htm"
+    }
+  ],
+  "moved": [
+    {
+      "ticker": "RGNX",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "REGENXBIO Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT05693142",
+      "old_date": "2026-08-01",
+      "new_date": "2026-09-01"
+    },
+    {
+      "ticker": "BBIO",
+      "type": "PDUFA",
+      "date": "2027-05-08",
+      "company": "BridgeBio Pharma, Inc.  (BBIO)  (CIK 0001743881)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
+      "old_date": "2026-11-27",
+      "new_date": "2027-05-08"
+    },
+    {
+      "ticker": "MIRM",
+      "type": "PhaseReadout",
+      "date": "2026-Q2",
+      "company": "Mirum Pharmaceuticals, Inc.  (MIRM)  (CIK 0001759425)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000010/mirm-20260225xexx991.htm",
+      "old_date": "2026-Q4",
+      "new_date": "2026-Q2"
+    },
+    {
+      "ticker": "ZBIO",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "Zenas BioPharma, Inc.  (ZBIO)  (CIK 0001953926)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1953926/000110465925048948/tm2514981d1_ex99-1.htm",
+      "old_date": "2026-Q4",
+      "new_date": "2026-H2"
+    },
+    {
+      "ticker": "SABS",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "SAB Biotherapeutics, Inc.  (SABS, SABSW)  (CIK 0001833214)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1833214/000095017025009474/sabs-ex99_2.htm",
+      "old_date": "2027-H2",
+      "new_date": "2026-H2"
+    },
+    {
+      "ticker": "ADCT",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "ADC Therapeutics SA  (ADCT)  (CIK 0001771910)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1771910/000162828026001386/adctjpmcorporateupdatepr-0.htm",
+      "old_date": "2026-Q2",
+      "new_date": "2026-H2"
+    },
+    {
+      "ticker": "NGNE",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "Neurogene Inc.  (NGNE)  (CIK 0001404644)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1404644/000140464426000044/ngne_prxemboldendosingcomp.htm",
+      "old_date": "2027-H2",
+      "new_date": "2026-H2"
+    },
+    {
+      "ticker": "ANNX",
+      "type": "PhaseReadout",
+      "date": "2026-Q2",
+      "company": "Annexon, Inc.  (ANNX)  (CIK 0001528115)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1528115/000095017024127027/annx-ex99_1.htm",
+      "old_date": "2026-Q4",
+      "new_date": "2026-Q2"
+    },
+    {
+      "ticker": "ADCT",
+      "type": "PhaseReadout",
+      "date": "2027-03-31",
+      "company": "ADC Therapeutics SA",
+      "url": "https://clinicaltrials.gov/study/NCT04970901",
+      "old_date": "2026-10-30",
+      "new_date": "2027-03-31"
+    },
+    {
+      "ticker": "TGTX",
+      "type": "PhaseReadout",
+      "date": "2027-05-30",
+      "company": "TG THERAPEUTICS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07503873",
+      "old_date": "2027-07-31",
+      "new_date": "2027-05-30"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-06-07",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT06932263",
+      "old_date": "2027-06-24",
+      "new_date": "2027-06-07"
+    },
+    {
+      "ticker": "VTRS",
+      "type": "PhaseReadout",
+      "date": "2027-07-01",
+      "company": "Viatris Inc",
+      "url": "https://clinicaltrials.gov/study/NCT04957719",
+      "old_date": "2026-12-01",
+      "new_date": "2027-07-01"
+    }
+  ],
+  "dropped": [
+    {
+      "ticker": "CING",
+      "type": "PDUFA",
+      "date": "2026-05-31",
+      "company": "Cingulate Inc.  (CING, CINGW)  (CIK 0001862150)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1862150/000149315225021410/ex99-1.htm"
+    },
+    {
+      "ticker": "DBVT",
+      "type": "Approval",
+      "date": "2026-06-03",
+      "company": "DBV Technologies S.A.  (DBVT, DBVTF)  (CIK 0001613780)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1613780/000119312526259488/d139789d8k.htm"
+    },
+    {
+      "ticker": "ARVN",
+      "type": "Approval",
+      "date": "2026-06-05",
+      "company": "ARVINAS, INC.  (ARVN)  (CIK 0001655759)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1655759/000162828026029210/fdaapprovalpressrelease_.htm"
+    },
+    {
+      "ticker": "BCDA",
+      "type": "DevicePMA",
+      "date": "2026-06-05",
+      "company": NaN,
+      "url": "https://www.globenewswire.com/news-release/2026/06/05/3307342/0/en/FDA-Confirms-CardiAMP-HF-II-May-Support-Premarket-Approval-of-CardiAMP-Cell-Therapy-for-Ischemic-HFrEF.html"
+    },
+    {
+      "ticker": "ARVN",
+      "type": "PDUFA",
+      "date": "2026-06-05",
+      "company": "ARVINAS, INC.  (ARVN)  (CIK 0001655759)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1655759/000162828026010865/q42025earningsrelease.htm"
+    },
+    {
+      "ticker": "EXEL",
+      "type": "PhaseReadout",
+      "date": "2026-07-12",
+      "company": "EXELIXIS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05502315"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-07-13",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06832618"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2026-07-13",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT06551324"
+    },
+    {
+      "ticker": "HCWB",
+      "type": "PhaseReadout",
+      "date": "2026-07-16",
+      "company": "HCW Biologics Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT07049328"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2026-07-23",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT05543616"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-07-31",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT04599140"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT03340129"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT07133750"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06158113"
+    },
+    {
+      "ticker": "RCUS",
+      "type": "PhaseReadout",
+      "date": "2026-08-01",
+      "company": "Arcus Biosciences, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06727565"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "PhaseReadout",
+      "date": "2026-08-02",
+      "company": "JOHNSON & JOHNSON",
+      "url": "https://clinicaltrials.gov/study/NCT04049669"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2026-08-03",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT06174987"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-08-05",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06557772"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-08-09",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT03015896"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-08-15",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06066957"
+    },
+    {
+      "ticker": "SGMO",
+      "type": "PhaseReadout",
+      "date": "2026-08-24",
+      "company": "SANGAMO THERAPEUTICS, INC",
+      "url": "https://clinicaltrials.gov/study/NCT02500849"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT03681561"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT02932150"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-09-01",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT05346809"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2026-09-15",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04634877"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-09-29",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT04577014"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05119907"
+    },
+    {
+      "ticker": "TENX",
+      "type": "PhaseReadout",
+      "date": "2026-10-01",
+      "company": "TENAX THERAPEUTICS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05983250"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-10-09",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06959225"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2026-10-19",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT05617677"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2026-10-19",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06516965"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2026-11-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06329869"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2026-11-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT07215312"
+    },
+    {
+      "ticker": "ONC",
+      "type": "PhaseReadout",
+      "date": "2026-11-01",
+      "company": "BeOne Medicines Ltd.",
+      "url": "https://clinicaltrials.gov/study/NCT05006716"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2026-11-05",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT04923542"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-11-06",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05677451"
+    },
+    {
+      "ticker": "BBIO",
+      "type": "Approval",
+      "date": "2026-11-27",
+      "company": "BridgeBio Pharma, Inc.  (BBIO)  (CIK 0001743881)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126022979/ef20074977_ex99-1.htm"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-11-30",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT05669989"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2026-11-30",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT07081633"
+    },
+    {
+      "ticker": "EXEL",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "EXELIXIS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06568562"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT02738866"
+    },
+    {
+      "ticker": "SNDX",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "Syndax Pharmaceuticals Inc",
+      "url": "https://clinicaltrials.gov/study/NCT05360160"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06468228"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06838000"
+    },
+    {
+      "ticker": "ADCT",
+      "type": "PhaseReadout",
+      "date": "2026-12-01",
+      "company": "ADC Therapeutics SA",
+      "url": "https://clinicaltrials.gov/study/NCT05660395"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-12-14",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT06004661"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2026-12-17",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06975722"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-12-30",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT06388941"
+    },
+    {
+      "ticker": "HRMY",
+      "type": "Approval",
+      "date": "2026-12-31",
+      "company": "Harmony Biosciences Holdings, Inc.  (HRMY)  (CIK 0001802665)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926056786/hrmy-20260507xex99d1.htm"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2026-12-31",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT06629584"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2026-12-31",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT04553133"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2026-12-31",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT00223145"
+    },
+    {
+      "ticker": "JAZZ",
+      "type": "Submission",
+      "date": "2026-H1",
+      "company": "Jazz Pharmaceuticals plc  (JAZZ)  (CIK 0001232524)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1232524/000119312525283887/d827060dex991.htm"
+    },
+    {
+      "ticker": "PBM",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "PSYENCE BIOMEDICAL LTD.  (PBM, PBMWW)  (CIK 0001985062)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1985062/000121390025108225/ea026479201ex99-1_psyence.htm"
+    },
+    {
+      "ticker": "AXSM",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "Axsome Therapeutics, Inc.  (AXSM)  (CIK 0001579428)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526202506/axsm-ex99_2.htm"
+    },
+    {
+      "ticker": "SPRY",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "ARS Pharmaceuticals, Inc.  (SPRY)  (CIK 0001671858)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1671858/000119312525273107/spry-ex99_1.htm"
+    },
+    {
+      "ticker": "BHVN",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "Biohaven Ltd.  (BHVN)  (CIK 0001935979)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1935979/000193597926000044/a2026q1bhvnearningsprex991.htm"
+    },
+    {
+      "ticker": "NAMS",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "NewAmsterdam Pharma Co N.V.  (NAMS, NAMSW)  (CIK 0001936258)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1936258/000119312526056020/nams-ex99_1.htm"
+    },
+    {
+      "ticker": "CLYM",
+      "type": "PhaseReadout",
+      "date": "2026-H2",
+      "company": "Climb Bio, Inc.  (CLYM)  (CIK 0001768446)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1768446/000119312526210295/clym-ex99_1.htm"
+    },
+    {
+      "ticker": "MNPR",
+      "type": "Submission",
+      "date": "2026-H2",
+      "company": "Monopar Therapeutics  (MNPR)  (CIK 0001645469)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1645469/000143774926010030/ex_937864.htm"
+    },
+    {
+      "ticker": "CTXR",
+      "type": "PhaseReadout",
+      "date": "2026-Q1",
+      "company": "Citius Pharmaceuticals, Inc.  (CTXR)  (CIK 0001506251)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1506251/000121390025116760/ea026756201ex99-1_citius.htm"
+    },
+    {
+      "ticker": "BMEA",
+      "type": "PhaseReadout",
+      "date": "2026-Q2",
+      "company": "Biomea Fusion, Inc.  (BMEA)  (CIK 0001840439)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1840439/000119312526068375/d95198dex991.htm"
+    },
+    {
+      "ticker": "EVMN",
+      "type": "PhaseReadout",
+      "date": "2026-Q2",
+      "company": "Evommune, Inc.  (EVMN)  (CIK 0002044725)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2044725/000119312526211934/evmn-ex99_2.htm"
+    },
+    {
+      "ticker": "AGIO",
+      "type": "PhaseReadout",
+      "date": "2026-Q2",
+      "company": "AGIOS PHARMACEUTICALS, INC.  (AGIO)  (CIK 0001439222)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1439222/000143922226000023/agio-21226xfyxex991earning.htm"
+    },
+    {
+      "ticker": "IVVD",
+      "type": "PhaseReadout",
+      "date": "2026-Q3",
+      "company": "Invivyd, Inc.  (IVVD)  (CIK 0001832038)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1832038/000119312526222762/d120795dex992.htm"
+    },
+    {
+      "ticker": "EPRX",
+      "type": "PhaseReadout",
+      "date": "2026-Q3",
+      "company": "EUPRAXIA PHARMACEUTICALS INC.  (EPRX)  (CIK 0001581178)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1581178/000119312525264619/d35661dex993.htm"
+    },
+    {
+      "ticker": "GPCR",
+      "type": "PhaseReadout",
+      "date": "2026-Q4",
+      "company": "Structure Therapeutics Inc.  (GPCR)  (CIK 0001888886)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926057226/tm2613721d1_ex99-1.htm"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2027-01-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05329766"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2027-01-01",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04874311"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-01-08",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06356571"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-01-14",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT07395687"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-01-15",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT07218627"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-01-18",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06686654"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-01-26",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT07411560"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2027-01-29",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT05911295"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-01-29",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT04544189"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2027-01-29",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT05911295"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2027-01-31",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04241185"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-01-31",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT03836261"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2027-02-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT04724018"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-02-01",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT05180695"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-02-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06972446"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-02-05",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT07220564"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-03-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06632951"
+    },
+    {
+      "ticker": "MRK",
+      "type": "PhaseReadout",
+      "date": "2027-03-01",
+      "company": "Merck & Co., Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT04784247"
+    },
+    {
+      "ticker": "SNDX",
+      "type": "PhaseReadout",
+      "date": "2027-03-02",
+      "company": "Syndax Pharmaceuticals Inc",
+      "url": "https://clinicaltrials.gov/study/NCT06313437"
+    },
+    {
+      "ticker": "PFE",
+      "type": "PhaseReadout",
+      "date": "2027-03-31",
+      "company": "PFIZER INC",
+      "url": "https://clinicaltrials.gov/study/NCT05639647"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-04-01",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT04385290"
+    },
+    {
+      "ticker": "NVS",
+      "type": "PhaseReadout",
+      "date": "2027-04-22",
+      "company": "NOVARTIS AG",
+      "url": "https://clinicaltrials.gov/study/NCT07203001"
+    },
+    {
+      "ticker": "TLX",
+      "type": "PhaseReadout",
+      "date": "2027-04-26",
+      "company": "Telix Pharmaceuticals Ltd",
+      "url": "https://clinicaltrials.gov/study/NCT07197645"
+    },
+    {
+      "ticker": "INCY",
+      "type": "PhaseReadout",
+      "date": "2027-04-30",
+      "company": "INCYTE CORP",
+      "url": "https://clinicaltrials.gov/study/NCT06804811"
+    },
+    {
+      "ticker": "RCUS",
+      "type": "PhaseReadout",
+      "date": "2027-04-30",
+      "company": "Arcus Biosciences, Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT03821246"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-05-01",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT04410796"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-05-16",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT06979375"
+    },
+    {
+      "ticker": "SNY",
+      "type": "PhaseReadout",
+      "date": "2027-05-17",
+      "company": "Sanofi",
+      "url": "https://clinicaltrials.gov/study/NCT06290128"
+    },
+    {
+      "ticker": "BNTX",
+      "type": "PhaseReadout",
+      "date": "2027-06-01",
+      "company": "BioNTech SE",
+      "url": "https://clinicaltrials.gov/study/NCT07379580"
+    },
+    {
+      "ticker": "GILD",
+      "type": "PhaseReadout",
+      "date": "2027-06-01",
+      "company": "GILEAD SCIENCES, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT05633654"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-06-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06417775"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-06-18",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07220772"
+    },
+    {
+      "ticker": "BMY",
+      "type": "PhaseReadout",
+      "date": "2027-06-28",
+      "company": "BRISTOL MYERS SQUIBB CO",
+      "url": "https://clinicaltrials.gov/study/NCT07140913"
+    },
+    {
+      "ticker": "SVRA",
+      "type": "Approval",
+      "date": "2027-06-30",
+      "company": "Savara Inc  (SVRA)  (CIK 0001160308)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1160308/000119312526023378/d39349d8k.htm"
+    },
+    {
+      "ticker": "ONC",
+      "type": "PhaseReadout",
+      "date": "2027-06-30",
+      "company": "BeOne Medicines Ltd.",
+      "url": "https://clinicaltrials.gov/study/NCT03967977"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-07-01",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06672237"
+    },
+    {
+      "ticker": "SGMO",
+      "type": "PhaseReadout",
+      "date": "2027-07-01",
+      "company": "SANGAMO THERAPEUTICS, INC",
+      "url": "https://clinicaltrials.gov/study/NCT06980948"
+    },
+    {
+      "ticker": "JAZZ",
+      "type": "PhaseReadout",
+      "date": "2027-07-30",
+      "company": "Jazz Pharmaceuticals plc",
+      "url": "https://clinicaltrials.gov/study/NCT05918640"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "PhaseReadout",
+      "date": "2027-08-01",
+      "company": "JOHNSON & JOHNSON",
+      "url": "https://clinicaltrials.gov/study/NCT05972135"
+    },
+    {
+      "ticker": "ABBV",
+      "type": "PhaseReadout",
+      "date": "2027-08-01",
+      "company": "AbbVie Inc.",
+      "url": "https://clinicaltrials.gov/study/NCT06880744"
+    },
+    {
+      "ticker": "ASND",
+      "type": "PhaseReadout",
+      "date": "2027-08-01",
+      "company": "Ascendis Pharma A/S",
+      "url": "https://clinicaltrials.gov/study/NCT05081609"
+    },
+    {
+      "ticker": "AZN",
+      "type": "PhaseReadout",
+      "date": "2027-08-13",
+      "company": "ASTRAZENECA PLC",
+      "url": "https://clinicaltrials.gov/study/NCT07007793"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-08-27",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT06612268"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-09-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06948435"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-10-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT05254743"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-10-16",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT07675811"
+    },
+    {
+      "ticker": "RYTM",
+      "type": "PhaseReadout",
+      "date": "2027-10-30",
+      "company": "RHYTHM PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06596135"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-11-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06119581"
+    },
+    {
+      "ticker": "NVO",
+      "type": "PhaseReadout",
+      "date": "2027-11-16",
+      "company": "NOVO NORDISK A S",
+      "url": "https://clinicaltrials.gov/study/NCT06979362"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-11-29",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06541704"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "PhaseReadout",
+      "date": "2027-12-01",
+      "company": "JOHNSON & JOHNSON",
+      "url": "https://clinicaltrials.gov/study/NCT05669170"
+    },
+    {
+      "ticker": "LLY",
+      "type": "PhaseReadout",
+      "date": "2027-12-01",
+      "company": "ELI LILLY & Co",
+      "url": "https://clinicaltrials.gov/study/NCT06739122"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-12-01",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06128629"
+    },
+    {
+      "ticker": "JNJ",
+      "type": "PhaseReadout",
+      "date": "2027-12-31",
+      "company": "JOHNSON & JOHNSON",
+      "url": "https://clinicaltrials.gov/study/NCT07657312"
+    },
+    {
+      "ticker": "REGN",
+      "type": "PhaseReadout",
+      "date": "2027-12-31",
+      "company": "REGENERON PHARMACEUTICALS, INC.",
+      "url": "https://clinicaltrials.gov/study/NCT06616584"
+    },
+    {
+      "ticker": "VSTM",
+      "type": "PhaseReadout",
+      "date": "2027-H2",
+      "company": "Verastem, Inc.  (VSTM)  (CIK 0001526119)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1526119/000110465926023462/tm267866d1_ex99-1.htm"
+    },
+    {
+      "ticker": "OCGN",
+      "type": "Submission",
+      "date": "2027-H2",
+      "company": "Ocugen, Inc.  (OCGN)  (CIK 0001372299)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1372299/000110465926055411/tm2613584d1_ex99-1.htm"
+    }
+  ],
+  "corrections": []
+}

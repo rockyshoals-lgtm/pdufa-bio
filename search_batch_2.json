@@ -1,0 +1,702 @@
+[
+  {
+    "idx": 88,
+    "ticker": "TRVI",
+    "date": "2022-09-19",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "CANAL",
+      "drug": "Haduvio",
+      "indication": "Chronic cough"
+    },
+    "drug_raw": "Haduvio - (CANAL)"
+  },
+  {
+    "idx": 156,
+    "ticker": "CADL",
+    "date": "2022-11-17",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "CAN-3110",
+      "drug": "linoserpaturev",
+      "indication": "Glioma"
+    },
+    "drug_raw": "linoserpaturev (CAN-3110)"
+  },
+  {
+    "idx": 206,
+    "ticker": "DCOY",
+    "date": "2022-12-12",
+    "stage": "Phase 1/2",
+    "terms": {
+      "drug": "Seclidemstat",
+      "indication": "Myelodysplastic Syndromes"
+    },
+    "drug_raw": "Seclidemstat"
+  },
+  {
+    "idx": 223,
+    "ticker": "UNCY",
+    "date": "2022-12-28",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "Fosrenol bioequivalent",
+      "drug": "Renazorb",
+      "indication": "Hyperphosphatemia"
+    },
+    "drug_raw": "Renazorb (Fosrenol bioequivalent)"
+  },
+  {
+    "idx": 263,
+    "ticker": "GSK",
+    "date": "2023-02-23",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "SOLAR",
+      "drug": "Cabenuva",
+      "indication": "HIV-1"
+    },
+    "drug_raw": "Cabenuva (cabotegravir, rilpivirine) - (SOLAR)"
+  },
+  {
+    "idx": 277,
+    "ticker": "ARDS",
+    "date": "2023-03-13",
+    "stage": "Phase 2a",
+    "terms": {
+      "code": "AR-501",
+      "drug": "AR-501",
+      "indication": "Cystic Fibrosis"
+    },
+    "drug_raw": "AR-501"
+  },
+  {
+    "idx": 341,
+    "ticker": "LEXX",
+    "date": "2023-05-23",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "HYPER-H21-4",
+      "drug": "DehydraTECH-CBD",
+      "indication": "Cardiovascular disease"
+    },
+    "drug_raw": "DehydraTECH-CBD - (HYPER-H21-4)"
+  },
+  {
+    "idx": 412,
+    "ticker": "BRNS",
+    "date": "2023-06-21",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "HBV003",
+      "code": "VTP-300",
+      "drug": "VTP-300",
+      "indication": "Hepatitis B"
+    },
+    "drug_raw": "VTP-300 (HBV003)"
+  },
+  {
+    "idx": 480,
+    "ticker": "NBP",
+    "date": "2023-08-17",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "TJ101",
+      "drug": "Eftansomatropin",
+      "indication": "Growth hormone deficiency"
+    },
+    "drug_raw": "Eftansomatropin (TJ101) - (TALLER)"
+  },
+  {
+    "idx": 546,
+    "ticker": "RHHBY",
+    "date": "2023-10-11",
+    "stage": "Phase 1/2",
+    "terms": {
+      "code": "TPST-1120",
+      "drug": "Amezalpat",
+      "indication": "Hepatocellular carcinoma"
+    },
+    "drug_raw": "Amezalpat (TPST-1120) with atezolizumab and bevacizumab - (TPST-1120-301)"
+  },
+  {
+    "idx": 637,
+    "ticker": "DYAI",
+    "date": "2023-11-29",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "DYAI-100",
+      "drug": "DYAI-100",
+      "indication": "COVID-19 booster vaccine"
+    },
+    "drug_raw": "DYAI-100"
+  },
+  {
+    "idx": 669,
+    "ticker": "MOLN",
+    "date": "2023-12-10",
+    "stage": "Phase 1",
+    "terms": {
+      "drug": "MP0533",
+      "indication": "Acute myeloid leukemia"
+    },
+    "drug_raw": "MP0533"
+  },
+  {
+    "idx": 695,
+    "ticker": "GPCR",
+    "date": "2023-12-18",
+    "stage": "Phase 2a",
+    "terms": {
+      "trial": "ACCESS and ACCESS II",
+      "code": "GSBR-1290",
+      "drug": "Aleniglipron",
+      "indication": "Type 2 Diabetes, obesity"
+    },
+    "drug_raw": "Aleniglipron (GSBR-1290) - (ACCESS and ACCESS II )"
+  },
+  {
+    "idx": 738,
+    "ticker": "FDMT",
+    "date": "2024-02-12",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "INGLAXA",
+      "drug": "4D-310",
+      "indication": "Fabry Disease"
+    },
+    "drug_raw": "4D-310 - (INGLAXA)"
+  },
+  {
+    "idx": 763,
+    "ticker": "MBIO",
+    "date": "2024-03-07",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "City of Hope",
+      "code": "MB-101",
+      "drug": "MB-101",
+      "indication": "High-Grade Glioma"
+    },
+    "drug_raw": "MB-101 - (City of Hope)"
+  },
+  {
+    "idx": 830,
+    "ticker": "CGON",
+    "date": "2024-05-03",
+    "stage": "Phase 3",
+    "terms": {
+      "code": "BOND-003",
+      "drug": "Cretostimogene",
+      "indication": "BCG-unresponsive Non-Muscle Invasive Bladder Cancer"
+    },
+    "drug_raw": "Cretostimogene - (BOND-003)"
+  },
+  {
+    "idx": 865,
+    "ticker": "ABBV",
+    "date": "2024-05-28",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "ABBV-706",
+      "drug": "ABBV-706",
+      "indication": "Colorectal cancer"
+    },
+    "drug_raw": "ABBV-706"
+  },
+  {
+    "idx": 913,
+    "ticker": "NRIX",
+    "date": "2024-06-16",
+    "stage": "Phase 1b",
+    "terms": {
+      "code": "NX-5948",
+      "drug": "NX-5948-301",
+      "indication": "B-cell malignancies / graft-versus-host disease"
+    },
+    "drug_raw": "NX-5948-301"
+  },
+  {
+    "idx": 952,
+    "ticker": "VTYX",
+    "date": "2024-07-29",
+    "stage": "Phase 2",
+    "terms": {
+      "drug": "VTX958",
+      "indication": "Crohn's disease"
+    },
+    "drug_raw": "VTX958"
+  },
+  {
+    "idx": 972,
+    "ticker": "CMPX",
+    "date": "2024-08-12",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "COMPANION-003",
+      "code": "CTX-009",
+      "drug": "CTX-009",
+      "indication": "Colorectal cancer"
+    },
+    "drug_raw": "CTX-009 - (COMPANION-003)"
+  },
+  {
+    "idx": 1002,
+    "ticker": "NUVB",
+    "date": "2024-09-10",
+    "stage": "Phase 2",
+    "terms": {
+      "drug": "IBTROZI",
+      "indication": "ROS1+ Non\u2013Small Cell Lung Cancer"
+    },
+    "drug_raw": "IBTROZI (taletrectinib)"
+  },
+  {
+    "idx": 1023,
+    "ticker": "CGEM",
+    "date": "2024-09-16",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "REZILIENT1",
+      "code": "CLN-081",
+      "drug": "Zipalertinib",
+      "indication": "Non-small cell lung cancer"
+    },
+    "drug_raw": "Zipalertinib (CLN-081/TAS6417) - (REZILIENT1)"
+  },
+  {
+    "idx": 1045,
+    "ticker": "AZN",
+    "date": "2024-10-07",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "BATURA",
+      "drug": "Airsupra",
+      "indication": "Severe exacerbations in patients with intermittent or mild p"
+    },
+    "drug_raw": "Airsupra (albuterol/budesonide) - (BATURA)"
+  },
+  {
+    "idx": 1059,
+    "ticker": "GKOS",
+    "date": "2024-10-16",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "Epi-on",
+      "drug": "Epioxa",
+      "indication": "Progressive keratoconus"
+    },
+    "drug_raw": "Epioxa (Epi-on)"
+  },
+  {
+    "idx": 1100,
+    "ticker": "FATE",
+    "date": "2024-11-18",
+    "stage": "Phase 1",
+    "terms": {
+      "drug": "FT522",
+      "indication": "Lupus"
+    },
+    "drug_raw": "FT522"
+  },
+  {
+    "idx": 1131,
+    "ticker": "AVIR",
+    "date": "2024-12-04",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "C-BEYOND",
+      "drug": "SVR12",
+      "indication": "Hepatitis C virus"
+    },
+    "drug_raw": "SVR12 in combination of bemnifosbuvir and ruzasvir - (C-BEYOND)"
+  },
+  {
+    "idx": 1150,
+    "ticker": "ONC",
+    "date": "2024-12-09",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "CaDAnCe-101",
+      "code": "BGB-16673",
+      "drug": "BGB-16673-101",
+      "indication": "Relapsed or refractory"
+    },
+    "drug_raw": "BGB-16673-101 - (CaDAnCe-101)"
+  },
+  {
+    "idx": 1174,
+    "ticker": "BMEA",
+    "date": "2024-12-17",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "COVALENT-111",
+      "code": "BMF-219",
+      "drug": "Icovamenib",
+      "indication": "Type 2 Diabetes"
+    },
+    "drug_raw": "Icovamenib (BMF-219) - (COVALENT-111)"
+  },
+  {
+    "idx": 1207,
+    "ticker": "PHIO",
+    "date": "2025-01-13",
+    "stage": "Phase 1b",
+    "terms": {
+      "code": "PH-762",
+      "drug": "PH-762",
+      "indication": "Cutaneous Squamous Cell Carcinoma"
+    },
+    "drug_raw": "PH-762"
+  },
+  {
+    "idx": 1239,
+    "ticker": "ALLO",
+    "date": "2025-02-14",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "ALPHA2",
+      "code": "ALLO-501",
+      "drug": "ALLO-501/501A",
+      "indication": "Large B-cell lymphoma"
+    },
+    "drug_raw": "ALLO-501/501A + ALLO-647 - (ALPHA2)"
+  },
+  {
+    "idx": 1258,
+    "ticker": "PHIO",
+    "date": "2025-03-10",
+    "stage": "Phase 1b",
+    "terms": {
+      "code": "PH-762",
+      "drug": "PH-762",
+      "indication": "Cutaneous Squamous Cell Carcinoma"
+    },
+    "drug_raw": "PH-762"
+  },
+  {
+    "idx": 1277,
+    "ticker": "IMVT",
+    "date": "2025-03-19",
+    "stage": "Phase 3",
+    "terms": {
+      "code": "IMVT-1401",
+      "drug": "Batoclimab",
+      "indication": "Myasthenia Gravis"
+    },
+    "drug_raw": "Batoclimab (IMVT-1401)"
+  },
+  {
+    "idx": 1293,
+    "ticker": "EWTX",
+    "date": "2025-04-02",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "CIRRUS-HCM",
+      "code": "EDG-7500",
+      "drug": "EDG-7500",
+      "indication": "Hypertrophic Cardiomyopathy"
+    },
+    "drug_raw": "EDG-7500 - (CIRRUS-HCM)"
+  },
+  {
+    "idx": 1316,
+    "ticker": "RVMD",
+    "date": "2025-04-28",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "RMC-9805",
+      "drug": "Zoldonrasib",
+      "indication": "Pancreatic cancer, non-small cell lung cancer"
+    },
+    "drug_raw": "Zoldonrasib (RMC-9805)"
+  },
+  {
+    "idx": 1329,
+    "ticker": "ATHE",
+    "date": "2025-05-09",
+    "stage": "Phase 2",
+    "terms": {
+      "drug": "ATH434-201",
+      "indication": "Multiple System Atrophy"
+    },
+    "drug_raw": "ATH434-201"
+  },
+  {
+    "idx": 1341,
+    "ticker": "MLYS",
+    "date": "2025-05-15",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "Launch-HTN",
+      "drug": "Lorundrostat",
+      "indication": "Uncontrolled hypertension"
+    },
+    "drug_raw": "Lorundrostat - (Launch-HTN)"
+  },
+  {
+    "idx": 1366,
+    "ticker": "MLYS",
+    "date": "2025-05-24",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "Launch-HTN",
+      "drug": "Lorundrostat",
+      "indication": "Uncontrolled hypertension"
+    },
+    "drug_raw": "Lorundrostat - (Launch-HTN)"
+  },
+  {
+    "idx": 1380,
+    "ticker": "CGEM",
+    "date": "2025-06-01",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "REZILIENT1",
+      "code": "CLN-081",
+      "drug": "Zipalertinib",
+      "indication": "Non-small cell lung cancer"
+    },
+    "drug_raw": "Zipalertinib (CLN-081/TAS6417) - (REZILIENT1)"
+  },
+  {
+    "idx": 1399,
+    "ticker": "SNY",
+    "date": "2025-06-04",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "VGL101",
+      "drug": "iluzanebart",
+      "indication": "Adult-onset leukoencephalopathy with axonal spheroids and pi"
+    },
+    "drug_raw": "iluzanebart  (VGL101) - (IGNITE)"
+  },
+  {
+    "idx": 1423,
+    "ticker": "EXEL",
+    "date": "2025-06-23",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "STELLAR-303",
+      "code": "ELLAR-303",
+      "drug": "XL092",
+      "indication": "Colorectal Cancer"
+    },
+    "drug_raw": "XL092 with atezolizumab - (STELLAR-303)"
+  },
+  {
+    "idx": 1434,
+    "ticker": "CELC",
+    "date": "2025-06-30",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "CELC-G-201",
+      "drug": "Gedatolisib",
+      "indication": "HR+/HER2- advanced breast cancer"
+    },
+    "drug_raw": "Gedatolisib in combination with Nubeqa (darolutamide) - (CELC-G-201)"
+  },
+  {
+    "idx": 1445,
+    "ticker": "RHHBY",
+    "date": "2025-07-12",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "ALIENTO",
+      "drug": "Astegolima",
+      "indication": "Chronic obstructive pulmonary disease"
+    },
+    "drug_raw": "Astegolima - (ALIENTO)"
+  },
+  {
+    "idx": 1470,
+    "ticker": "VRTX",
+    "date": "2025-08-04",
+    "stage": "Phase 2",
+    "terms": {
+      "code": "VX-993",
+      "drug": "VX-993",
+      "indication": "Moderate to severe acute pain"
+    },
+    "drug_raw": "VX-993"
+  },
+  {
+    "idx": 1490,
+    "ticker": "MRK",
+    "date": "2025-09-02",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "CORALreef Lipids",
+      "code": "MK-0616",
+      "drug": "MK-0616",
+      "indication": "Low-density lipoprotein"
+    },
+    "drug_raw": "MK-0616 - (CORALreef Lipids)"
+  },
+  {
+    "idx": 1513,
+    "ticker": "MBX",
+    "date": "2025-09-22",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "MBX 2109",
+      "drug": "Canvuparatide",
+      "indication": "Hypoparathyroidism"
+    },
+    "drug_raw": "Canvuparatide (MBX 2109) - (Avail)"
+  },
+  {
+    "idx": 1544,
+    "ticker": "CLLS",
+    "date": "2025-10-16",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "BALLI-01",
+      "drug": "UCART22",
+      "indication": "Relapsed/refractory B-cell acute lymphoblastic leukemia"
+    },
+    "drug_raw": "UCART22 - (BALLI-01)"
+  },
+  {
+    "idx": 1561,
+    "ticker": "CATX",
+    "date": "2025-10-20",
+    "stage": "Phase 1",
+    "terms": {
+      "drug": "[212Pb]VMT-\u03b1-NET",
+      "indication": "Neuroendocrine tumors"
+    },
+    "drug_raw": "[212Pb]VMT-\u03b1-NET"
+  },
+  {
+    "idx": 1572,
+    "ticker": "NVS",
+    "date": "2025-10-26",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "NEPTUNUS-2",
+      "drug": "Ianalumab",
+      "indication": "Sj\u00f6gren\u2019s syndrome"
+    },
+    "drug_raw": "Ianalumab - (NEPTUNUS-2)"
+  },
+  {
+    "idx": 1586,
+    "ticker": "CRBU",
+    "date": "2025-11-03",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "ANTLER",
+      "code": "CB-010",
+      "drug": "CB-010",
+      "indication": "B-Cell Non-Hodgkin Lymphoma"
+    },
+    "drug_raw": "CB-010 - (ANTLER)"
+  },
+  {
+    "idx": 1612,
+    "ticker": "NVO",
+    "date": "2025-11-11",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "PRX004",
+      "drug": "Coramitug",
+      "indication": "ATTR-cardiomyopathy"
+    },
+    "drug_raw": "Coramitug (PRX004) - (CLEOPATTRA)"
+  },
+  {
+    "idx": 1650,
+    "ticker": "LYEL",
+    "date": "2025-12-08",
+    "stage": "Phase 1/2",
+    "terms": {
+      "code": "IMPT-314",
+      "drug": "LYL314",
+      "indication": "Large B-cell lymphoma"
+    },
+    "drug_raw": "LYL314 (IMPT-314)"
+  },
+  {
+    "idx": 1662,
+    "ticker": "BNTX",
+    "date": "2025-12-09",
+    "stage": "Phase 2",
+    "terms": {
+      "drug": "BNT327-02",
+      "indication": "1-2L Metastatic Triple-negative breast cancer"
+    },
+    "drug_raw": "BNT327-02"
+  },
+  {
+    "idx": 1671,
+    "ticker": "RCUS",
+    "date": "2025-12-12",
+    "stage": "Phase 3",
+    "terms": {
+      "code": "ARC-21",
+      "drug": "Quemliclustat,",
+      "indication": "Locally advanced unresectable or metastatic gastric, gastroe"
+    },
+    "drug_raw": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy (ARC-21) - (STAR-221)"
+  },
+  {
+    "idx": 1684,
+    "ticker": "TAK",
+    "date": "2025-12-18",
+    "stage": "Phase 3",
+    "terms": {
+      "code": "TAK-279",
+      "drug": "Zasocitinib",
+      "indication": "Moderate-to-severe plaque psoriasis"
+    },
+    "drug_raw": "Zasocitinib (TAK-279)"
+  },
+  {
+    "idx": 1692,
+    "ticker": "AGEN",
+    "date": "2025-12-23",
+    "stage": "Phase 1b",
+    "terms": {
+      "trial": "C-800-01",
+      "drug": "AGEN1571",
+      "indication": "Solid tumors"
+    },
+    "drug_raw": "AGEN1571 with botensilimab and balstilimab - (C-800-01)"
+  },
+  {
+    "idx": 1708,
+    "ticker": "HCM",
+    "date": "2026-01-07",
+    "stage": "Phase 2/3",
+    "terms": {
+      "code": "ESLIM-02",
+      "drug": "Sovleplenib",
+      "indication": "Warm antibody autoimmune hemolytic anemia"
+    },
+    "drug_raw": "Sovleplenib - (ESLIM-02)"
+  },
+  {
+    "idx": 1733,
+    "ticker": "GUTS",
+    "date": "2026-01-29",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "REMAIN-1",
+      "drug": "Revita",
+      "indication": "Obesity"
+    },
+    "drug_raw": "Revita - (REMAIN-1)"
+  },
+  {
+    "idx": 1745,
+    "ticker": "EVMN",
+    "date": "2026-02-09",
+    "stage": "Phase 2a",
+    "terms": {
+      "drug": "EVO301",
+      "indication": "Atopic Dermatitis"
+    },
+    "drug_raw": "EVO301"
+  }
+]

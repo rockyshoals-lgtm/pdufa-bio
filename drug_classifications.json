@@ -1,0 +1,6267 @@
+{
+  "177LU-PNT2002": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "212PB]VMT-\u0391-NET": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "4D-110": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "4D-150": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "4D-310": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "4D-710": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "5-FU": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AAV-GAD": {
+    "drug_class": "gene_therapy_aav",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "AB-161": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AB-343": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABBV-400": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABBV-706": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABECMA (IDECABTAGENE VICLEUCEL; IDE-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "ABEMACICLIB": {
+    "drug_class": "cdk_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ABEMACICLIB (MONARCH 3": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABI-5366": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABIPRUBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABP 959 - (SOLIRIS BIOSIMILAR": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABP-450 (PRABOTULINUMTOXINA": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ABRYSVO - (MONET": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ACALABRUTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ACASUNLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ACASUNLIMAB (DUOBODY-PD-L1X4-1BB) WITH PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ACCESS II": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ACIMTAMIG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ACOLTREMON OPHTHALMIC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADAGRASIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADAGRASIB WITH PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ADCT-901": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADG20": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADI-001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADL-018 - (BIOSIMILAR TO XOLAIR": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADO-TRASTUZUMAB EMTANSINE (T-DM1, KADCYLA),": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "ADORING 2": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADP-A2M4CD8": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADX-097": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADX-2191": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADX-2191 (METHOTREXATE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADX-629": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADX71149 (MGLU2 PAM": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ADX\u2011629": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AEF0117": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AFICAMTEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AFICAMTEN - (FOREST-HCM) (OLE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AFLIBERCEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "AFLIBERCEPT-ABZV": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AFM13": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AFM24-102": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AGEN1571 WITH BOTENSILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "AGLATIMAGENE BESADENOVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "AGN-151607": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AIRSUPRA (ALBUTEROL/BUDESONIDE": {
+    "drug_class": "corticosteroid",
+    "modality": "small_molecule",
+    "target_class": "nuclear_receptor"
+  },
+  "AK112-206": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AK117-201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AK117-203": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AL002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AL102": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALECTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ALENIGLIPRON - (ACCESS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALG-055009": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALIXOREXTON (ALKS 2680) - (VIBRANCE-2": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALKS 2680 - (VIBRANCE-1": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALLN-346-202": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALLO-316": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALLO-501/501A": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALLO-647": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALLOCETRA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALLONK - (LUMINICE-203": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALRN-6924": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALTO-203": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ALX148": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AM-125": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AM833 (CAGRISEMA": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMCENESTRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMDIZALISIB": {
+    "drug_class": "pi3k_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "AMELUZ": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMEZALPAT WITH ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "AMIVANTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "AMORPHOUS-RIFAXIMIN SSD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMPLIGEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMT-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMT-130": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AMX0035": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ANAVEX 3-71": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ANAVEX3-71-002": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ANB032": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ANNAMYCIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ANSELAMIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ANX007": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ANZU-CEL (ANZUTRESGENE AUTOLEUCEL,": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "APG777": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "APITEGROMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "APRAGLUTIDE": {
+    "drug_class": "glp1_agonist",
+    "modality": "peptide",
+    "target_class": "gpcr"
+  },
+  "APVO436": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "APX3330": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AR-15512": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AR-501": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AREXVY (60+ AT INCREASED RISK) - (ARESVI-006": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ARIMOCLOMOL (EAP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ARITINERCEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "ARQ-255": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ASTEGOLIMA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ASTEGOLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ASUNDEXIAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AT-001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATA188": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATACICEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "ATEGANOSINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATEV": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ATEZOLIZUMAB (TECENTRIQ": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATH434-201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATOGEPANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATOGEPANT (QULIPTA/AQUIPTA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATRASENTAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATTRUBY (ACORAMIDIS) - (ATTRIBUTE-CM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ATUMELNANT - (TOUCAHN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AUXORA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AV-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AVACINCAPTAD PEGOL INTRAVITREAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AVAPRITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "AVELUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "AVT06 - (EYLEA BIOSIMILAR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AVT23 - (XOLAIR BIOSIMILAR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AVT80 (BIOSIMILAR TO ENTYVIO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AVUTOMETINIB": {
+    "drug_class": "met_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "AXA1125": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AXATILIMAB-CSFR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AXICABTAGENE CILOLEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "AXN-2510": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AXS-05 (DEXTROMETHORPHAN HBR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AZACITIDINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AZACITIDINE (AZA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AZENOSERTIB  (ZN-C3": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AZENOSERTIB (ZN-C3": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "AZETUKALNER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BA.2.86": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BALOXAVIR MARBOXIL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BALSTILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BARDOXOLONE": {
+    "drug_class": "corticosteroid",
+    "modality": "small_molecule",
+    "target_class": "nuclear_receptor"
+  },
+  "BARZOLVOLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BARZOLVOLIMAB - (CINDU": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BASKET TRIAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BATOCLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BAXDROSTAT - (BAX24": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BAXDROSTAT - (BAXHTN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BB-301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BBI-355": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BBP-812 - (CANASPIRE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEL-SAR - (COMPASS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BELANTAMAB MAFODOTIN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "BELAPECTIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BELRESTOTUG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BELRESTOTUG - (GALAXIES H&N-202": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BELRESTOTUG - (GALAXIES LUNG-201": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BELZUPACAP SAROTALOCAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BELZUTIFAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEMARITUZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BEMNIFOSBUVIR": {
+    "drug_class": "hcv_antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "BEMPEDOIC ACID": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BENRALIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BENTRIO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEPIROVIRSEN (IONIS-HBVRX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BERAHYALURONIDASE ALFA-PMPH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BERUBICIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEVACIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BEVACIZUMAB-VIKG": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEXOBRUTIDEG": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEXOTEGRAST": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEZISTERIM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEZISTERIM - (BIOMARKER TRIAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BEZUCLASTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "BF-RHODOLED XL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BGB-16673-101 - (CADANCE-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BHV-1510 WITH LIBTAYO": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BHV-7000": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BI 456906": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BI-1206 WITH RITUXIMAB - (CHINA TRIAL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BICYCLE TOXIN CONJUGATES ZELENECTIDE PEVEDOTIN - (DURAVELO-2": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "BIIB104": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BINTRAFUSP ALPHA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BIOLEXA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BIOSIMILAR TO GOLIMUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BIRTAMIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BITOPERTIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BLARCAMESINE  (ANAVEX2-73-AD-004": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BLENREP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BLU-451": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BLU-945 WITH OSIMERTINIB": {
+    "drug_class": "egfr_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "BLUJEPA (GEPOTIDACIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BMB-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BMS-986207": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BMS-986393": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BMT-801 WITH BREMELANOTIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "BNC210": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BNT211": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BNT324/DB-1311": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BNT327-02": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BOOSTER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BOTENSILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BP1002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BPL-003": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BRENSOCATIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BRENSOCATIB - (BIRCH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BRENTUXIMAB VEDOTIN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "BREPOCITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "BRIA-IMT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BRILAROXAZINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BRIQUILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "BRYOSTATIN-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BT5528": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BUDESONIDE": {
+    "drug_class": "corticosteroid",
+    "modality": "small_molecule",
+    "target_class": "nuclear_receptor"
+  },
+  "BUDESONIDE/GLYCOPYRROLATE/FORMOTEROL FUMARATE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BUNTANETAP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BUPROPION HCL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BURIXAFOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BX004": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BXCL501": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "BXCL701": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "C-CAR301": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CA-4948 - (TAKEAIM LYMPHOMA": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CABENUVA (CABOTEGRAVIR, RILPIVIRINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CABOZANTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "CAMIZESTRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CAMONSERTIB/ RG6526": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CAN-2409": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CANAKINUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CANNABIDIOL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CANVUPARATIDE (MBX 2109) - (AVAIL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CAP-1002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CAPIVASERTIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "CARBETOCIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CARBOPLATIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CARDIOLRX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CARFILZOMIB": {
+    "drug_class": "proteasome_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "proteasome"
+  },
+  "CASDATIFAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CASDOZO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CASDOZOKITUG/TORIPALIMAB/BEVACIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CB-010": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CB-012 - (AMPLIFY": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CBP-201 - (CHINA TRIAL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CD19 CAR-NK CELL THERAPY  WITH RITUXIMAB": {
+    "drug_class": "mab_chimeric",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CD33CART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CELECOXIB - (BATEMAN HORNE CENTER TRIAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CELECOXIB WITH OR WITHOUT INTRON A": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CEMIPLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CEMIPLIMAB-RWLC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CENERIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CETUXIMAB": {
+    "drug_class": "mab_chimeric",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CEVOSTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CEVOSTAMAB (FCRH5XCD3": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CHEMO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CHEMORADIOTHERAPY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CHEMOTHERAPY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CHEMOTHERAPY - (CHECKMATE-816": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CHEMOTHERAPY - (EDGE-GASTRIC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CIBOTERCEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "CID-103": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CIFORADENANT WITH IPILIMUMAB (ANTI-CTLA-4": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CILTACABTAGENE AUTOLEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "CIN-107 - (BRIGHTN": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CINGAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CISPLATIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CIVAPARVOVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "CK-4021586 - (AMBER-HFPEF": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CLASEPRUBART - (MAGIC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CLEMIDSOGENE LANPARVOVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "CLN-978": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CLR 131": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CLS-AX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CM-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CM24": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CNM-AU8": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CNSIDE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CNTY-101 - (ELIPSE-1": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COBENFY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COBENFY (KARXT, XANOMELINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COBOLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "COLUMVI": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COM701, COM902": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COMBINATION": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COMP360 PSILOCYBIN": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CORAMITUG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "COSENTYX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COSENTYX - (GCAPTAIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "COVID-19 BOOSTER WITH GEO-CM04S1 OR PFIZER-BIONTECH BIVALENT VACCINE": {
+    "drug_class": "vaccine",
+    "modality": "vaccine",
+    "target_class": null
+  },
+  "CR845/DIFELIKEFALIN": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CRB-701": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CRB-701 WITH PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CRDF-004": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CRETOSTIMOGENE": {
+    "drug_class": "gene_therapy",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "CRINECERFONT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CRINECERFONT - (CAHTALYST PEDIATRIC STUDY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CRIZOTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "CROFELEMER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CROVALIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CSL112": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CT-0508 WITH PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "CT-996": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CT1812": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CTX-009": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CTX-1301 (DEXMETHLYPHENIDATE HCI": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CUE-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CUE-102": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CYAD-211": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CYB003 - (EXTEND": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "CYTARABINE - (ARA-C, MIRACLE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "D-PLEX100": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DA-1726": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DALZANEMDOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DANICOPAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DANUGLIPRON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DANUGLIPRON - (PK STUDY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DAPIROLIZUMAB PEGOL (ANTI-CD40L": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DARAXONRASIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DARAXONRASIB - (RASOLUTE 302": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DARE-HRT1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DAROLUTAMIDE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DAROVASERTIB, MEKTOVI (\u200bBINIMETINIB": {
+    "drug_class": "met_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "DARVADSTROCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN (DATO-DXD": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN (DATO-DXD) - (TROPION-BREAST02": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN - (TROPION-BREAST01": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN - (TROPION-LUNG05": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN - (TROPION-PANTUMOR01": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN WITH PEMBROLIZUMAB - (TROPION-LUNG02": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DATOPOTAMAB DERUXTECAN-DLNK": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "DAZODALIBEP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DAZUCORILANT (DAZALS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DECOY-20": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DEFACTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "DEHYDRATECH-CBD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DEL-BRAX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DEL-DESIRAN": {
+    "drug_class": "sirna",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "DEL-ZOTA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DENIFANSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DENOSUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DEPEMOKIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DERAMIOCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "DESCARTES-08": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DETALIMOGENE VORAPLASMID": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DEUCRAVACITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "DEUCRICTIBANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DEXAMETHASONE": {
+    "drug_class": "corticosteroid",
+    "modality": "small_molecule",
+    "target_class": "nuclear_receptor"
+  },
+  "DEXAMETHASONE VS. DARATUMUMAB, BORTEZOMIB,": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DEXMEDETOMIDINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DIAZOXIDE CHOLINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DIAZOXIDE CHOLINE CONTROLLED-RELEASE (DCCR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DIBUTEPINEPHRINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DIFELIKEFALIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DKN-01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DKN-01 WITH BEVACIZUMAB - (DEFIANCE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DNL343": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DNL758": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DNL788": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DOCETAXEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DOMVANALIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DONANEMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DONIDALORSEN": {
+    "drug_class": "antisense",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "DORAVIRINE/ISLATRAVIR (DOR/ISL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DOSTARLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DOSTARLIMAB - (GALAXIES LUNG-301": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DTX401": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DUPILUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DURVALUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "DURVALUMAB,  WITH OR WITHOUT CARBOPLATIN - (TROPION-LUNG04": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DUVAKITUG (TEV-'574/SAR447189": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "DYAI-100": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EB01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EB103": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EB613": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EBLASAKIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "EBO-301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EDG-7500": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EDP-235": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EDP1815": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EDP2939": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EDSP (NEAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFGARTIGIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFGARTIGIMOD - (UPLIGHTED": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFSITORA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFTANSOMATROPIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFTILAGIMOD ALPHA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFTILAGIMOD ALPHA WITH WEEKLY PACLITAXEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EFZOFITIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELAFIBRANOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELEVAI ENFINITY TOPICAL EXOSOME SERUM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELI-002 (AMPLIFY-201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELIRONRASIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELRAGLUSIB (9-ING-41": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELRAGLUSIB (9-ING-41) - (ACTUATE-1902": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELRANATAMAB-BCMM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELX-02": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ELX-02 COMBINATION WITH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EMBRACE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EMILTATUG LEDADOTIN - (EMI-LE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EMPAGLIFLOZIN": {
+    "drug_class": "sglt2_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "transporter"
+  },
+  "EMPAGLIFLOZIN (JARDIANCE1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EMRACLIDINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENCALERET (CALIBRATE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENCORAFENIB": {
+    "drug_class": "raf_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ENEBOPARATIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "ENEKINRAGENE INZADENOVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "ENFORTUMAB VEDOTIN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "ENFORTUMAB VEDOTIN-EJFV": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "ENHANZE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENHERTU": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENHERTU - (DESTINY-BREAST06": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENLICITIDE - (CORALREEF HEFH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENLICITIDE DECANOATE - (CORALREEF ADDON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENOBLITUZUMAB, RETIFANLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ENOBOSARM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENOBOSARM WITH SEMAGLUTIDE (WEGOVY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENOZERTINIB": {
+    "drug_class": "egfr_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ENSIFENTRINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENVAFOLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ENVUDEUCITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ENVUDEUCITINIB (ONWARD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENZALUTAMIDE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ENZALUTAMIDE - (INVESTIGATOR-SPONSORED TRIAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EO-3021 WITH RAMUCIRUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "EPCORITAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "EPCORITAMAB-BYSP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EPETRABOROLE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EPIOXA (EPI-ON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ERYDEX (DEXAMETHASONE SODIUM PHOSPHATE ENCAPSULATED IN AUTOLOGOUS ERYTHROCYTES (EDSP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ESEBA-VEC (FORMERLY HB-200": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ETRIPAMIL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EVO100": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EVO301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EVORPACEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "EVORPACEPT WITH ZANIDATAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "EVX-01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EVX-02": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EXEBACASE": {
+    "drug_class": "enzyme_replacement",
+    "modality": "enzyme",
+    "target_class": null
+  },
+  "EXENATIDE": {
+    "drug_class": "glp1_agonist",
+    "modality": "peptide",
+    "target_class": "gpcr"
+  },
+  "EXPAREL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EXTERNAL BEAM RADIATION (EBRT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EYLEA HD (AFLIBERCEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "EYP-1901": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "EYP-1901 VOROLANIB INTRAVITREAL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FABHALTA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FACTOR XIA (FXIA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FARABURSEN (MAD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FARICIMAB-SVOA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FASLODEX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FASTCAR-T GC012F": {
+    "drug_class": "car_t",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "FAVEZELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "FCR001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FENEBRUTINIB - (FENHANCE 1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FENEBRUTINIB - (FENOPTA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FENEBRUTINIB - (FENTREPID": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FESOMERSEN (IONIS-FXI-LRX": {
+    "drug_class": "antisense",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "FEZOLINETANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FG-3246": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FHD-286": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FIANLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "FICERAFUSP ALFA WITH PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "FID-007": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FIDANACOGENE ELAPARVOVEC-DZKT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FIDRISERTIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "FINERENONE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FIRI-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "FLORQUINITAU": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FOLFIRI": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FORDADISTROGENE MOVAPARVOVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "FOSGONIMETON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FOSTROXACITABINE BRALPAMIDE WITH LENVIMA OR WITH KEYTRUDA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FREMANEZUMAB-VFRM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FRTX-02": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FRUQUINTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "FT516": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FT522": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FT819-102": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FULVESTRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FX-322-208": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FX-345": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "FXR314": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "G-CSF": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GANAXOLONE": {
+    "drug_class": "corticosteroid",
+    "modality": "small_molecule",
+    "target_class": "nuclear_receptor"
+  },
+  "GANAXOLONE - (TRUSTTSC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GARETOSMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "GAZYVA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GAZYVA/GAZYVARO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GB0139": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GB1211": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GB2064": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GC012F": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GEDATOLISIB": {
+    "drug_class": "pi3k_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "GEDATOLISIB (VIKTORIA-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GEDATOLISIB WITH FULVESTRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GEFURULIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "GEMCITABINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GEMCITABINE INTRAVESICAL SYSTEM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GEMOX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GH1001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GIREDESTRANT - (LIDERA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GIVASTOMIG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "GLATIRAMER (GA DEPOT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GLEPAGLUTIDEB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GLP-1-H24-4": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GLPG3667": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GLPG5101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GLPG5201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GOTISTOBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GOVORESTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GOVORESTAT - (ACTION-GALACTOSEMIA KIDS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GRANULOCYTE COLONY-STIMULATING FACTOR (G-CSF": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GRI-0621-IPF-02": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GSK3943104": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GT-30": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GTX-102 - (ASPIRE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GTX-104": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "GUSELKUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "HADUVIO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HADUVIO (ORAL NALBUPHINE ER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HADUVIO - (HUMAN ABUSE POTENTIAL TRIAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HB-200 WITH PEMBROLIZUMAB - (INVESTIGATOR LEAD TRIAL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HIL-214": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HMPL-306": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HMPL-523": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HMPL-760": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HT-001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HT-KIT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HYALOFAST - (FASTTRACK": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HYALURONIDASE-FIHJ": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HYALURONIDASE-NVHY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HYALURONIDASE-QVFC) WITH ENHANZE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HYALURONIDASE-TQJS) WITH ENHANZE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "HYDRONIDONE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IANALUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "IBERDOMIDE": {
+    "drug_class": "imid",
+    "modality": "small_molecule",
+    "target_class": "cereblon"
+  },
+  "IBERDOMIDE, DARATUMUMAB,": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IBEZAPOLSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IBREXAFUNGERP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ICOTROKINRA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ICOVAMENIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "IDE397": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IDECABTAGENE VICLEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "IDOSE TR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IFETROBAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IFINATAMAB DERUXTECAN - (IDEATE-LUNG02": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "IHL-42X - (REPOSA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IK-930": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ILUZANEBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMA402": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMC-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMC-2 WITH VALACYCLOVIR": {
+    "drug_class": "antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "IMETELSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMMUNE CHECKPOINT INHIBITORS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMMUNE FX (IFX-2.0": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMMUNE GLOBULIN INFUSION 10% WITH RECOMBINANT HUMAN HYALURONIDASE": {
+    "drug_class": "enzyme_replacement",
+    "modality": "enzyme",
+    "target_class": null
+  },
+  "IMNN-001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IMSIDOLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "INAVOLISIB": {
+    "drug_class": "pi3k_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "INAXAPLIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INCLACUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "INCLACUMAB (THRIVE-131": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INEBILIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "INEBILIZUMAB-CDON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INFIGRATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "INHALED CLOFAZIMINE - (ICON-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INHALED FORMULATION OF ALPHA-1 ANTITRYPSIN (AAT) - (INNOVAATE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INIDASCAMINE (FORMERLY RL-007": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INM-755": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INO-3107": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INOPULSE DELIVERY DEVICE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INSULIN ICODEC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INT230-6": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "INTERFERON-ALPHA (IFN\u0391": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IO102-IO103": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IOMAB-B": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IONIS-FB-LRX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IOPOFOSINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IOPOFOSINE (CLR 131) - (CLOVER-WAM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IPILIMUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "IPILIMUMAB (NIVO+IPI) - (CHECKMATE 901": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IPTACOPAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IRINOTECAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ISATUXIMAB": {
+    "drug_class": "mab_chimeric",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ISTAROXIME - (SEISMIC C": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ITEPEKIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ITOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "IVONESCIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "IVONESCIMAB WITH CHEMOTHERAPY - (HARMONI-2": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "IVONESCIMAB WITH PLATINUM-BASED CHEMOTHERAPY COMPARED WITH TISLELIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "IXEKIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "IZOKIBEP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "JNJ-1900": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "JNJ-4496": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "JTX-4014": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "JTX-8064": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "JZP150": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KARXT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KB408": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KB707": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KEYNOTE-564": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KEYTRUDA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KEYTRUDA QLEX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KEYTRUDA QLEX (PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "KEYTRUDA VERSUS CHEMOTHERAPY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KEYTRUDA WITH CHEMOTHERAPY (GEMCITABINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KEYVIBE-010": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KIO-201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KIO-301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KLU156 (GANLUM": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KORLYM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KPI-012": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KSI-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KSI-301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KT-333": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "KVD824": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LACUTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "LANIFIBRANOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LAROMESTROCEL (LOMECEL-B": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LARSUCOSTEROL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LATOZINEMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "LAVA-051": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LAZERTINIB": {
+    "drug_class": "egfr_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "LB1148": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LCD SUPPLEMENT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LEBRIKIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "LECANEMAB-IRMB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LENACAPAVIR": {
+    "drug_class": "antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "LENALIDOMIDE": {
+    "drug_class": "imid",
+    "modality": "small_molecule",
+    "target_class": "cereblon"
+  },
+  "LENVATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "LENVIMA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LENVIMA VERSUS REGORAFENIB": {
+    "drug_class": "raf_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "LENVIMA WITH TACE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LENZILUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "LEQVIO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LEQVIO - (V-MONO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LETE-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "LIFILEUCEL (LN-144": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LINACLOTIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "LINERIXIBAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LINOSERPATUREV": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LINVOSELTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "LIRENTELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "LISO-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "LISOCABTAGENE MARALEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "LIVDELZI (SELADELPAR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LN-145": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LONAFARNIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "LONAPEGSOMATROPIN-TCGD (RANSCON HGH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LONCASTUXIMAB TESIRINE-IPYL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LONCASTUXIMAB TESIRINE-LPYL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LONVOGURAN ZICLUMERAN (LONVO-Z, FORMERLY NTLA-2002": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LORUNDROSTAT - (LAUNCH-HTN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LORUNDROSTAT - (TARGET-HTN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LOSMAPIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LOW DOSE INTERLEUKIN-2 (LD IL-2": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LOW-DOSE INFIGRATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "LOW-DOSE PILOCARPINE EYE DROPS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LP-184": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LP-300 - (HARMONIC": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LP-310": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LPCN 1148": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LSTA1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LTI-03 - (CAVEOLIN-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LUM-201 - (ORAGROWTH210": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LUM-201 - (ORAGROWTH212": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LUMATEPERONE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LURBINECTEDIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LUSPATERCEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "LUTETIUM LU 177": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LUVADAXISTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LUVELTA - (REFR\u0391ME-O1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LX2006 - (WEILL CORNELL MEDICINE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LX2020": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LX9211": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LYL314": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LYL845": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LYNPARZA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LYR-210": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LYR-220": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "LYT-200": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAAT013 (ARES": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MACIMORELIN ACETATE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAGROLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "MARALIXIBAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MARSTACIMAB-HNCQ": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MASOFANITEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAT2203": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAVACAMTEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAVEROPEPIMUT-S (DPX-SURVIVAC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAVODELPAR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MAVORIXAFOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MB-101 - (CITY OF HOPE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MB-106": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MCS-8 (PCP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MECBOTAMAB VEDOTIN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "MENABCWY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MEPOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "MET-097I": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MEZIGDOMIDE": {
+    "drug_class": "imid",
+    "modality": "small_molecule",
+    "target_class": "cereblon"
+  },
+  "MFOLFIRINOX WITH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MFOLFOX6": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MGC018": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MILADEMETAN WITH ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "MILVEXIAN - (LIBREXIA ACS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MIM8": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MINO-LOK": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MIRDAMETINIB": {
+    "drug_class": "met_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "MIRVETUXIMAB": {
+    "drug_class": "mab_chimeric",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "MIRVETUXIMAB SORAVTANSINE": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "MITAPIVAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MITAPIVAT - (ACTIVATE KIDS-T STUDY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MITOMYCIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MIV-CEL (MIVOCABTAGENE AUTOLEUCEL, KYV-101": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MK-0616 - (CORALREEF LIPIDS": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MK-7684A - (KEYVIBE-002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MM-120 (LSD": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MM120 - (VOYAGE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MM120 ODT (LYSERGIDE (LSD)) - (EMERGE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MOBOCERTINIB EXCLAIM-2": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MODIFIED RNA (MODRNA) VACCINE": {
+    "drug_class": "vaccine",
+    "modality": "vaccine",
+    "target_class": null
+  },
+  "MOLGRADEX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MOLNUPIRAVIR - (MOVE-AHEAD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MONALIZUMA - (NEOCOAST-2": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MONALIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "MORF-057-201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MORF-057-202": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MOSEIC MELOXICAM-RIZATRIPTAN (AXS-07": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MP0533": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MR-142": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MRNA-1010": {
+    "drug_class": "mrna",
+    "modality": "mrna_therapeutic",
+    "target_class": null
+  },
+  "MRNA-1083": {
+    "drug_class": "mrna",
+    "modality": "mrna_therapeutic",
+    "target_class": null
+  },
+  "MRNA-1273.222 - (INCLUDING EG.5, FL.1.5.1,": {
+    "drug_class": "mrna",
+    "modality": "mrna_therapeutic",
+    "target_class": null
+  },
+  "MRNA-1468": {
+    "drug_class": "mrna",
+    "modality": "mrna_therapeutic",
+    "target_class": null
+  },
+  "MRNA-1647 - (CMVICTORY": {
+    "drug_class": "mrna",
+    "modality": "mrna_therapeutic",
+    "target_class": null
+  },
+  "MRNA-3745 - (BA1ANCE": {
+    "drug_class": "mrna",
+    "modality": "mrna_therapeutic",
+    "target_class": null
+  },
+  "MT-0169": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MULTIKINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "MYLOTARG": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NAB-PACLITAXEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NAB-PACLITAXEL (NAB-P": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NABIXIMOLS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NALBUPHINE ER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NAMILUMAB - (RESOLVE-LUNG": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NANA-VAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NANATINOSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NANOBODY SONELOKIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "NARSOPLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "NARSOPLIMAB (I-SPY COVID-19": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NATRUNIX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NATRUNIX - (1-BETTER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NAVACAPRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NAVENIBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NBI-1070770": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NBI-1117568 (NBI-'568": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NBI-827104": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NBI-921352": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NBTXR3 - (STUDY 102": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NE3107": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NEBOKITUG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "NEFLAMAPIMOD - (ASCEND-LB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NEFLAMAPIMOD - (REWIND-LB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NELADALKIB - (ALKOVE-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NELDALEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "NEOADJUVANT NIVOLUMAB (N": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NERATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "NEURO-SPINAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NEX-Z": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NGN-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NHBE GALNAC SIRNA": {
+    "drug_class": "sirna",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "NIMACIMAB - (CBEYOND": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NIPOCALIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "NIRAPARIB": {
+    "drug_class": "parp_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "enzyme"
+  },
+  "NIROGACESTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NIVOLUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "NIVOLUMAB (ANTI-PD-1": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NK CELLS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NKX019": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NKX101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NMRA-511": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NOMLABOFUSP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NRG/RTOG 0521": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NRX-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NS002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NT219": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NUC-3373": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NUC-3373 (NUTIDE: 323": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NUSINERSEN": {
+    "drug_class": "antisense",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "NX-2127": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NX-5948": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NX-5948-301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NXC-201": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "NYXOL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OBE-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "OBECABTAGENE AUTOLEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "OBEFAZIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OBEXELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OBEXELIMAB - (MOONSTONE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OBICETRAPIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OCEDURENONE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OCRELIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OCREVUS ZUNOVO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OCS-01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OCS-05": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ODEVIXIBAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ODRONEXTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OFATUMUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OFRANERGENE OBADENOVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "OLANZAPINE LAI (44749": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OLEZARSEN": {
+    "drug_class": "antisense",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "OLVEREMBATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "OLVIMULOGENE NANIVACIREPVEC (OLVI-VEC) - (ONPRIME/GOG-3076": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ONABOTULINUMTOXINA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ONABOTULINUMTOXINA (BOTOX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ONASEMNOGENE ABEPARVOVEC-BRVE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ONIVYDE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ONIVYDE (NALIRIFOX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ONVANSERTIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ONVANSERTIB, FOLFIRI": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OPAGANIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "OPDIVO QVANTIG (NIVOLUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OPDUALAG  (NIVOLUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OPTUNE LUA IS (TUMOR TREATING FIELDS (TTFIELDS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OPTUNE PAX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OPZELURA (RUXOLITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ORAL AMPHOTERICIN B - (ENACT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ORAL SEMAGLUTIDE": {
+    "drug_class": "glp1_agonist",
+    "modality": "peptide",
+    "target_class": "gpcr"
+  },
+  "ORAL SULOPENEM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ORFORGLIPRON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OSANETANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OSAVAMPATOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OSIMERTINIB": {
+    "drug_class": "egfr_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "OTENSILIMAB, BALSTILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "OTOFERLIN GENE THERAPY (DB-OTO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OVAPRENE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OVEPOREXTON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OXYLANTHANUM CARBONATE (OLC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OZEKIBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "OZURIFTAMAB VEDOTIN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "P-BCMA-101": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PACLITAXEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PALAZESTRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PALBOCICLIB": {
+    "drug_class": "cdk_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "PALBOCICLIB (IBRANCE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PALI-2108": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PALM 007 (TECOVIRIMAT FOR TREATMENT OF MONKEYPOX VIRUS": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PALTUSOTINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PAMREVLUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PAMREVLUMAB (LAPIS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PAMREVLUMAB - (PANCAN_PRECISION PROMISE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PANITUMUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PATISIRAN": {
+    "drug_class": "sirna",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "PAXALISIB": {
+    "drug_class": "pi3k_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "PAXALISIB WITH RADIOTHERAPY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PAXALISIB, VAL-083, TRORILUZOLE,": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PCS12852": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PD-1/PD-L1 INHIBITOR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PDS0101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PEGCETACOPLAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PEGINTERFERON LAMBDA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PEGOZAFERMIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PELAREOREP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PELAREOREP, (TAXOL) PACLITAXEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PEMBROLIZUMAB OR DOCETAXEL - NUTIDE: 303": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PEMETREXED (ALIMTA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PEMVIDUTIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "PEPINEMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PETOSEMTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PF-06939926 (CIFFREO": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PGN-EDO51": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PH-762": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PH15": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PH80 - (NASAL SPRAY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PH94B": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PHENTOLAMINE OPHTHALMIC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PHVS416 - (RAPIDE-3": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PICLIDENOSON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PIKA RABIES VACCINE": {
+    "drug_class": "vaccine",
+    "modality": "vaccine",
+    "target_class": null
+  },
+  "PILAVAPADIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PIMAVANSERIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PIMECROLIMUS 0.3%": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PIRTOBRUTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "PITOLISANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PIVEKIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PL9643": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLAMOTAMAB (XMAB13676": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLATINUM-DOUBLET CHEMOTHERAPY - (HARMONI": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLINABULIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLINABULIN (TRIAL 103": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLN-101095": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLN-74809": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLUVICTO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PLUVICTO (LUTETIUM (177LU) VIPIVOTIDE TETRAXETAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PN-235": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PNEUMOCOCCAL 21-VALENT CONJUGATE VACCINE": {
+    "drug_class": "vaccine",
+    "modality": "vaccine",
+    "target_class": null
+  },
+  "POMALIDOMIDE": {
+    "drug_class": "imid",
+    "modality": "small_molecule",
+    "target_class": "cereblon"
+  },
+  "PONATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "POSOLEUCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "POSOLEUCEL (VIRALYM-M, ALVR105": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "POVORCITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "POZIOTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "PRALUZATAMAB RAVTANSINE": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "PRASINEZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "PRAX-114 - (ACAPELLA": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PRAX-628": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PRF-110": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PRGN-3006 ULTRACAR-T": {
+    "drug_class": "car_t",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "PRIMEC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PROPRANOLOL": {
+    "drug_class": "beta_blocker",
+    "modality": "small_molecule",
+    "target_class": "gpcr"
+  },
+  "PROTHERACYTES": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PRT2527": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PSMA-TRACTR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PSX-001 (PSILOCYBIN TREATMENT) - (PSIGAD2": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PTC518": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PTC857 - (CARDINALS": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "PYX-201-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "QRX003": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "QTORIN RAPAMYCIN (SELVA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "QUEMLICLUSTAT, DOMVANALIMAB, ZIMBERELIMAB,": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "QUILIENCE(R": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "QUISOVALIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "RADEMIKIBART - (SEABREEZE STAT ASTHMA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RADIOTHERAPY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RAGISTOMIG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "RALUDOTATUG DERUXTECAN (R-DXD) - (REJOICE-OVARIAN01": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "RAMUCIRUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "REBOXETINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REC-2282": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REC-3964": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REC-994": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REGORAFENIB (BBR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REL-1017": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REL-1017 - (RELIANCE-OLS STUDY 310": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REL-1017 - (RELIGHT": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RELACORILANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RELATLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "RELATLIMAB-RMBW": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RELDESEMTIV": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RELUTRIGINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RENAZORB (FOSRENOL BIOEQUIVALENT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REPATHA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REPIBRESIB GEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REPROXALAP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REPROXALAP - (CROSSOVER STUDY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RESE-CEL (RESECABTAGENE AUTOLEUCEL - (RESET-MYOSITIS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RESMETIROM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RETATRUTIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "RETATRUTIDE (TRIUMPH-4": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RETIFANLIMAB-DLWR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REVEFENACIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REVITA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REVUMENIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "REXLEMESTROCEL-L": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "REZPEGALDESLEUKIN": {
+    "drug_class": "interleukin",
+    "modality": "biologic_other",
+    "target_class": "cytokine"
+  },
+  "RHAPSIDO (REMIBRUTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "RHENIUM RE186 OBISBEMEDA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RIBOCICLIB": {
+    "drug_class": "cdk_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "RIDINILAZOLE - (RI-CODIFY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RIGOSERTIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "RILPARENCEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "RILVEGOSTOMIG - (TROPION-PANTUMOR03": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RINATABART SESUTECAN (RINA-S": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RINTATOLIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RINVECALINASE ALFA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RIPRETINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "RISANKIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "RISDIPLAM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RITUXIMAB": {
+    "drug_class": "mab_chimeric",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "RITUXIMAB - (QUILT.106": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RLF-TD011": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RLYB212": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ROFLUMILAST": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ROSNILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ROXADUSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ROXADUSTAT - (CHINA TRIAL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RT-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RUCOSOPASEM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RUSFERTIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "RUXOLITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "RUZASVIR": {
+    "drug_class": "hcv_antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "RVT-2001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RVT-3101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RZ358 - (SUNRIZE": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "RZ402": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SABATOLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SACITUZUMAB GOVITECAN-HZIY": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "SACITUZUMAB TIRUMOTECAN - (OPTITROP-BREAST01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SAGE-718": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SAPHNELO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SAR4442454, BNT111": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SASANLIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SAVOLITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SBI-100": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SCB-2019 (CPG 1018/ALUM": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SCEMBLIX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SEBETRALSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SECLIDEMSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SELONABANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SELPERCATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SEMAGLUTIDE": {
+    "drug_class": "glp1_agonist",
+    "modality": "peptide",
+    "target_class": "gpcr"
+  },
+  "SEMAGLUTIDE (EVOKE/EVOKE+": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SEP-786": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SEPIAPTERIN  (PTC923": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SERALUTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SERALUTINIB (PROSERA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SERDEXMETHYLPHENIDATE (SDX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SETANAXIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SETANAXIB WITH PEMBROLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SETMELANOTIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "SETRUSUMAB (ORBIT/COSMIC": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SEVASEMTEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SGN-B6A": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SGR-2921": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SGT-003": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SILDENAFIL": {
+    "drug_class": "pde_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "enzyme"
+  },
+  "SILEVERTINIB": {
+    "drug_class": "egfr_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SIMUFILAM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SINTILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SITRAVATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SL-172154": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SLS-002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SLS-005 (IV TREHALOSE) - (HEALEY ALS PLATFORM TRIAL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SM-88, GEMCITABINE, NAB-PACLITAXEL,": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SOFETABART MIPITECAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SOLNERSTOTUG (FORMERLY SNS-101) WITH LIBTAYO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SONELOKIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SONROTOCLAX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SOQUELITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SOTAGLIFLOZIN": {
+    "drug_class": "sglt2_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "transporter"
+  },
+  "SOTATERCEPT-CSRK": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SOTICLESTAT- (SKYLINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SOTORASIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SOVLEPLENIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SOZINIBERCEPT WITH AFLIBERCEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "SOZINIBERCEPT WITH RANIBIZUMAB - (SHORE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SPARSENTAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SPN-820": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SPR720": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SPT-300 (GLYPH ALLOPREGNANOLONE; FORMERLY LYT-300": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SRK-181": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SRP-9001-301": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "STENOPARIB": {
+    "drug_class": "parp_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "enzyme"
+  },
+  "STS-J01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "STS101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SUBCUTANEOUS BRIQUILIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SUBCUTANEOUS LONIGUTAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SUGEMALIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "SUNITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "SUNOSI (SOLRIAMFETOL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SURAMIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SUVECALTAMIDE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SUZETRIGINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "SVR12 IN COMBINATION OF BEMNIFOSBUVIR": {
+    "drug_class": "hcv_antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "T-HANK": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAB-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "TACE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAFASITAMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TAK-041 / NBI-1065846": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TALAZOPARIB": {
+    "drug_class": "parp_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "enzyme"
+  },
+  "TALDEFGROBEP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TALETRECTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "TALETRECTINIB - (TRUST-I) (CHINA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TALQUETAMAB-TGVS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAMBICICLIB": {
+    "drug_class": "cdk_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "TAMBICICLIB WITH VENETOCLAX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAMUZIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TANRUPRUBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAR-200 WITH CETRELIMAB - (SUNRISE-4": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TARA-002": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TARCOCIMAB TEDROMER": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TARLATAMAB (AMG 757) - (DELLPHI-301": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAVAPADON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TAXOTERE (DOCETAXEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TEARCARE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TEBIPENEM HBR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TEBOTELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TECENTRIQ HYBREZA (ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TEGOPRUBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TELITACICEPT": {
+    "drug_class": "receptor_fusion",
+    "modality": "fusion_protein",
+    "target_class": null
+  },
+  "TEMAB-A": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TEPROTUMUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TERN-501": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TEZEPELUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TEZEPELUMAB-EKKO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TIDAL-01 / TBIO-4101 (TIL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TILDACERFONT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TILDACERFONT - (CAHMELIA-203": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TILDACERFONT - (CAHMELIA-204": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TINLAREBANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TIPIFARNIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "TIRAGOLUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TIRZEPATIDE": {
+    "drug_class": "peptide",
+    "modality": "peptide",
+    "target_class": null
+  },
+  "TIS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TISLELIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TISLELIZUMAB - (DISTINGUISH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TISLELIZUMAB - (RATIONALE-301": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TISLELIZUMAB-JSGR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TISOTUMAB VEDOTIN - (INNOVATV 207": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "TISOTUMAB VEDOTIN-TFTV": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "TIVIDENOFUSP ALFA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TIVUMECIRNON": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TLX591-CDX": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TN-201 - (MYPEAK-1": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TNX-102 SL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TNX-1300": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TNX-601 ER": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TNX-801 - (KENYA STUDY": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TOMIVOSERTIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "TONMYA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TONMYA CYCLOBENZAPRINE (RESILIENT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TORIPALIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TORIPALIMAB-TPZI": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TOSATOXUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TOUR006": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TOVORAFENIB": {
+    "drug_class": "raf_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "TP-03": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TP-04 - (GALATEA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRADIPITANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRANSCON CNP - (ACCOMPLISH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRANSCON CNP - (APPROACH": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRANSRECTAL HIGH-INTENSITY FOCUSED ULTRASOUND (TR-HIFU": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRASTUZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "TRASTUZUMAB DERUXTECAN": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "TRASTUZUMAB EMTANSINE": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "TRAVELAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRC101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TREM-CEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "TREM-CEL VCAR33": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TREPROSTINIL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TREPROSTINIL PALMITIL INHALATION POWDER (TPIP": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRODELVY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRODELVY (SACITUZUMAB GOVITECAN-HZIY; SG) VS. DOCETAXEL": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "TRODELVY - (TROPICS-04": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRORILUZOLE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TROSPIUM CHLORIDE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRUQAP - (CAPITELLO-280": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRUQAP - (CAPITELLO-281": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRUQAP - (CAPITELLO-290": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TRV045": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TTI-101": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TUCATINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "TULISOKIBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TUMOR TREATING FIELDS (TTFIELDS": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "TUSAMITAMAB RAVTANSINE (ANTI-CEACAM5 ADC": {
+    "drug_class": "adc",
+    "modality": "antibody_drug_conjugate",
+    "target_class": null
+  },
+  "UBX1325": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UBX1325-02": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UBX1325-03": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UCART20X22 - (NATHALI-01": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UCART22": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UGN-102": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ULIXACALTAMIDE \u200b - (ESSENTIAL3": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UPADACITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "UPADACITINIB (RINVOQ": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UPADACITINIB (RINVOQ) - (SLEEK": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UPAMOSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UPIFITAMAB RILSODOTIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UPROLESELAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UPROLESELAN - NCI-SPONSORED": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "URCOSIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "UTOMILUMAB": {
+    "drug_class": "mab_human",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "V116": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VADADUSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VAL-083": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VALACYCLOVIR": {
+    "drug_class": "antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "VALBENAZINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VALIDIVE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VANOGLIPEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VATIQUINONE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VCAR33": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VE202 - (COLLECTIVE202": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VEDOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "VENETOCLAX": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VENGLUSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VENLAFAXINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VEPDEGESTRANT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VERDIPERSTAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VEREKITUG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "VERICIGUAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VGX-3100": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VIASKIN PEANUT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VIDOFLUDIMUS CALCIUM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VILASTOBART WITH ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "VILOBELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "VIMSELTINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "VIR-2482": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VIRALYM-M": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VK0214": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VK2735": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VK2809": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VLA15": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VLA1553-303": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VLA1553-321 - (ADOLESCENTS TRIAL": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VOLIXIBAT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VOLRUSTOMIG": {
+    "drug_class": "bispecific",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "VONOPRAZAN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VOPRATELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "VOTOPLAM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VP-315": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VRDN-001": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VS-6766": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VT-1953": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VT1021": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VTP-200": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VTP-300": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VTX2735": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VTX958": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VUSOLIMOGENE ODERPAREPVEC": {
+    "drug_class": "gene_therapy_viral",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "VUTRISIRAN": {
+    "drug_class": "sirna",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "VX-121/TEZACAFTOR/VX-561": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VX-993": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VYVGART EFGARTIGIMOD": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "VYVGART HYTRULO (EFGARTIGIMOD ALFA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "WEGOVY (SEMAGLUTIDE": {
+    "drug_class": "glp1_agonist",
+    "modality": "peptide",
+    "target_class": "gpcr"
+  },
+  "WELIREG": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "WITHOUT ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "XALURITAMIG (AMG 509": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "XL092": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "XL092 WITH ATEZOLIZUMAB": {
+    "drug_class": "mab_humanized",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "XYNGARI(TM": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "YERVOY - (CHECKMATE -8HW": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "YESCARTA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "YL202/BNT326": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "Z)-ENDOXIFEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "Z)-ENDOXIFEN - (KARISMA-ENDOXIFEN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "Z)-ENDOXIFEN WITH ABEMACICLIB (VERZENIO": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "Z-ENDOXIFEN - (KARISMA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZANDELISIB": {
+    "drug_class": "pi3k_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ZANIDATAMAB - (MGEA": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZANIDATAMAB ZOVODOTIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZANIDATAMAB-HRII": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZANZALINTINIB MONOTHERAPY OR": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZASOCITINIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ZELICAPAVIR": {
+    "drug_class": "antiviral",
+    "modality": "small_molecule",
+    "target_class": null
+  },
+  "ZERLASIRAN (FORMERLY SLN360": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZERVIMESINE": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZIBOTENTAN WITH DAPAGLIFLOZIN": {
+    "drug_class": "sglt2_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "transporter"
+  },
+  "ZIFTOMENIB": {
+    "drug_class": "kinase_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ZIGAKIBART": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZILEBESIRAN": {
+    "drug_class": "sirna",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "ZILEBESIRAN (ALN-AGT": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZIMBERELIMAB": {
+    "drug_class": "mab_other",
+    "modality": "monoclonal_antibody",
+    "target_class": null
+  },
+  "ZIMBERELIMAB VS. ZIMBERELIMAB VS. CHEMOTHERAPY": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZIMISLECEL": {
+    "drug_class": "cell_therapy",
+    "modality": "cell_therapy",
+    "target_class": null
+  },
+  "ZIPALERTINIB": {
+    "drug_class": "egfr_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ZL-1310": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZOLDONRASIB": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZOLIFLODACIN": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZOPAPOGENE": {
+    "drug_class": "gene_therapy",
+    "modality": "gene_therapy",
+    "target_class": null
+  },
+  "ZOREVUNERSEN": {
+    "drug_class": "antisense",
+    "modality": "oligonucleotide",
+    "target_class": null
+  },
+  "ZUGOCABTAGENE GELEUCEL (ZUGO-CEL; FORMERLY CTX112": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZUNSEMETINIB": {
+    "drug_class": "met_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  },
+  "ZW171": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZW191": {
+    "drug_class": "unknown_code",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "ZYGEL": {
+    "drug_class": "unknown",
+    "modality": "unknown",
+    "target_class": null
+  },
+  "\u200bBINIMETINIB": {
+    "drug_class": "met_inhibitor",
+    "modality": "small_molecule",
+    "target_class": "kinase"
+  }
+}

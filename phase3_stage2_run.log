@@ -1,0 +1,94 @@
+================================================================================
+PHASE 3 STAGE 2 — ORATS Historical Full Pull
+================================================================================
+Mode:         LIVE
+BIFROST CSV:  pdufa_runup_bifrost.csv
+Cache dir:    orats_phase3_cache/ (502 files pre-run)
+Excluded:     ['BAYRY', 'DERM', 'HOTH', 'INTE', 'RHHBY', 'TLX']
+Endpoints:    core=['/hist/ivrank', '/hist/summaries', '/hist/dailies'] all snaps; strikes @ ['T-14', 'T-1']
+Rate limit:   0.65s sleep → ~92 calls/min
+
+Universe: 1705 raw → 1649 after excluding 56 problem-ticker events
+Target universe: 1649 events
+Per-event call count: 11  (max total if zero cache: 18139)
+
+  [  25/1649] URGN   2020-04-15 calls=275 (new=251, cached=24) elapsed=  2.8m  eta=201.9m
+  [  50/1649] AZN    2020-05-19 calls=550 (new=502, cached=48) elapsed=  5.7m  eta=199.7m
+  [  75/1649] KPTI   2020-06-22 calls=825 (new=744, cached=81) elapsed=  8.5m  eta=196.9m
+  [ 100/1649] GSK    2020-08-05 calls=1100 (new=1012, cached=88) elapsed= 11.5m  eta=193.6m
+  [ 125/1649] ETON   2020-09-25 calls=1375 (new=1248, cached=127) elapsed= 14.1m  eta=189.8m
+  [ 150/1649] RYTM   2020-11-27 calls=1650 (new=1523, cached=127) elapsed= 17.2m  eta=186.6m
+  [ 175/1649] VRTX   2020-12-21 calls=1925 (new=1796, cached=129) elapsed= 20.3m  eta=183.5m
+  [ 200/1649] BBIO   2021-02-26 calls=2200 (new=2055, cached=145) elapsed= 23.2m  eta=180.3m
+  [ 225/1649] ANAB   2021-04-22 calls=2475 (new=2326, cached=149) elapsed= 26.3m  eta=176.9m
+  [ 250/1649] AZN    2021-06-07 calls=2750 (new=2590, cached=160) elapsed= 29.2m  eta=173.8m
+  [ 275/1649] MRK    2021-07-16 calls=3025 (new=2860, cached=165) elapsed= 32.3m  eta=170.5m
+  [ 300/1649] FATE   2021-08-19 calls=3300 (new=3113, cached=187) elapsed= 35.2m  eta=167.6m
+  [ 325/1649] EXEL   2021-09-20 calls=3575 (new=3376, cached=199) elapsed= 38.1m  eta=164.4m
+  [ 350/1649] GILD   2021-10-18 calls=3850 (new=3648, cached=202) elapsed= 41.2m  eta=161.4m
+================================================================================
+PHASE 3 STAGE 2 — ORATS Historical Full Pull
+================================================================================
+Mode:         LIVE
+BIFROST CSV:  pdufa_runup_bifrost.csv
+Cache dir:    orats_phase3_cache/ (4268 files pre-run)
+Excluded:     ['BAYRY', 'DERM', 'HOTH', 'INTE', 'RHHBY', 'TLX']
+Endpoints:    core=['/hist/ivrank', '/hist/summaries', '/hist/dailies'] all snaps; strikes @ ['T-14', 'T-1']
+Rate limit:   0.65s sleep → ~92 calls/min
+
+Universe: 1705 raw → 1649 after excluding 56 problem-ticker events
+Target universe: 1649 events
+Per-event call count: 11  (max total if zero cache: 18139)
+
+  [  25/1649] URGN   2020-04-15 calls=275 (new=0, cached=275) elapsed=  0.0m  eta=  0.0m
+  [  50/1649] AZN    2020-05-19 calls=550 (new=0, cached=550) elapsed=  0.0m  eta=  0.0m
+  [  75/1649] KPTI   2020-06-22 calls=825 (new=0, cached=825) elapsed=  0.0m  eta=  0.0m
+  [ 100/1649] GSK    2020-08-05 calls=1100 (new=0, cached=1100) elapsed=  0.0m  eta=  0.0m
+  [ 125/1649] ETON   2020-09-25 calls=1375 (new=0, cached=1375) elapsed=  0.0m  eta=  0.0m
+  [ 150/1649] RYTM   2020-11-27 calls=1650 (new=0, cached=1650) elapsed=  0.0m  eta=  0.0m
+  [ 175/1649] VRTX   2020-12-21 calls=1925 (new=0, cached=1925) elapsed=  0.0m  eta=  0.0m
+  [ 200/1649] BBIO   2021-02-26 calls=2200 (new=0, cached=2200) elapsed=  0.1m  eta=  0.0m
+  [ 225/1649] ANAB   2021-04-22 calls=2475 (new=0, cached=2475) elapsed=  0.1m  eta=  0.0m
+  [ 250/1649] AZN    2021-06-07 calls=2750 (new=0, cached=2750) elapsed=  0.1m  eta=  0.0m
+  [ 275/1649] MRK    2021-07-16 calls=3025 (new=0, cached=3025) elapsed=  0.1m  eta=  0.0m
+  [ 300/1649] FATE   2021-08-19 calls=3300 (new=0, cached=3300) elapsed=  0.1m  eta=  0.0m
+  [ 325/1649] EXEL   2021-09-20 calls=3575 (new=0, cached=3575) elapsed=  0.1m  eta=  0.0m
+  [ 350/1649] GILD   2021-10-18 calls=3850 (new=0, cached=3850) elapsed=  0.1m  eta=  0.0m
+  [ 375/1649] FENC   2021-11-29 calls=4125 (new=137, cached=3988) elapsed=  1.6m  eta=166.1m
+  [ 400/1649] EGRX   2021-12-15 calls=4400 (new=398, cached=4002) elapsed=  4.6m  eta=157.1m
+  [ 425/1649] PFE    2022-01-03 calls=4675 (new=663, cached=4012) elapsed=  7.9m  eta=160.6m
+  [ 450/1649] LLY    2022-02-24 calls=4950 (new=915, cached=4035) elapsed= 11.0m  eta=158.9m
+  [ 475/1649] AKBA   2022-03-30 calls=5225 (new=1158, cached=4067) elapsed= 13.8m  eta=153.9m
+  [ 500/1649] URGN   2022-05-13 calls=5500 (new=1429, cached=4071) elapsed= 17.1m  eta=150.9m
+  [ 525/1649] ADPT   2022-06-11 calls=5775 (new=1686, cached=4089) elapsed= 20.0m  eta=146.5m
+  [ 550/1649] AVDL   2022-07-19 calls=6050 (new=1946, cached=4104) elapsed= 23.1m  eta=143.7m
+  [ 575/1649] BMY    2022-09-10 calls=6325 (new=2210, cached=4115) elapsed= 26.4m  eta=141.3m
+  [ 600/1649] GILD   2022-10-27 calls=6600 (new=2472, cached=4128) elapsed= 29.6m  eta=138.4m
+  [ 625/1649] ACET   2022-12-10 calls=6875 (new=2745, cached=4130) elapsed= 33.0m  eta=135.2m
+  [ 650/1649] ONC    2023-01-19 calls=7150 (new=3000, cached=4150) elapsed= 35.8m  eta=131.2m
+  [ 675/1649] CYTK   2023-02-28 calls=7425 (new=3249, cached=4176) elapsed= 38.9m  eta=128.2m
+  [ 700/1649] JNJ    2023-04-03 calls=7700 (new=3524, cached=4176) elapsed= 42.3m  eta=125.3m
+  [ 725/1649] GSK    2023-05-03 calls=7975 (new=3799, cached=4176) elapsed= 45.6m  eta=122.0m
+  [ 750/1649] REGN   2023-05-25 calls=8250 (new=4049, cached=4201) elapsed= 48.4m  eta=118.3m
+  [ 775/1649] IRWD   2023-06-12 calls=8525 (new=4297, cached=4228) elapsed= 51.3m  eta=114.7m
+  [ 800/1649] ACET   2023-06-26 calls=8800 (new=4542, cached=4258) elapsed= 54.0m  eta=111.0m
+  [ 825/1649] URGN   2023-07-27 calls=9075 (new=4801, cached=4274) elapsed= 57.1m  eta=107.8m
+  [ 850/1649] ANIP   2023-08-28 calls=9350 (new=5045, cached=4305) elapsed= 59.8m  eta=104.2m
+  [ 875/1649] CHRS   2023-09-25 calls=9625 (new=5307, cached=4318) elapsed= 63.2m  eta=101.4m
+  [ 900/1649] BMY    2023-10-16 calls=9900 (new=5579, cached=4321) elapsed= 66.5m  eta= 98.2m
+  [ 925/1649] MRK    2023-11-01 calls=10175 (new=5840, cached=4335) elapsed= 69.6m  eta= 95.0m
+  [ 950/1649] REPL   2023-12-05 calls=10450 (new=6106, cached=4344) elapsed= 72.6m  eta= 91.4m
+  [ 975/1649] CRIS   2023-12-12 calls=10725 (new=6359, cached=4366) elapsed= 75.4m  eta= 87.9m
+  [1000/1649] CHRS   2023-12-26 calls=11000 (new=6601, cached=4399) elapsed= 78.1m  eta= 84.4m
+  [1025/1649] IPSEY  2024-02-13 calls=11275 (new=6845, cached=4430) elapsed= 80.8m  eta= 81.0m
+  [1050/1649] ONC    2024-03-14 calls=11550 (new=7114, cached=4436) elapsed= 83.7m  eta= 77.6m
+  [1075/1649] VNDA   2024-04-02 calls=11825 (new=7329, cached=4496) elapsed= 86.2m  eta= 74.2m
+  [1100/1649] GILD   2024-04-26 calls=12100 (new=7572, cached=4528) elapsed= 88.9m  eta= 70.9m
+  [1125/1649] ASND   2024-05-30 calls=12375 (new=7829, cached=4546) elapsed= 91.7m  eta= 67.5m
+  [1150/1649] AZN    2024-06-17 calls=12650 (new=8067, cached=4583) elapsed= 94.4m  eta= 64.2m
+  [1175/1649] NVO    2024-07-11 calls=12925 (new=8325, cached=4600) elapsed= 97.4m  eta= 61.0m
+  [1200/1649] LQDA   2024-08-19 calls=13200 (new=8597, cached=4603) elapsed=100.4m  eta= 57.7m
+  [1225/1649] NVS    2024-09-17 calls=13475 (new=8842, cached=4633) elapsed=103.2m  eta= 54.4m
+  [1250/1649] TEVA   2024-10-08 calls=13750 (new=9105, cached=4645) elapsed=106.2m  eta= 51.2m
+  [1275/1649] RXRX   2024-10-24 calls=14025 (new=9357, cached=4668) elapsed=109.0m  eta= 47.9m
+  [1300/1649] GMAB   2024-12-02 calls=14300 (new=9617, cached=4683) elapsed=112.1m  eta= 44.8m

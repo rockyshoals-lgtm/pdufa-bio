@@ -1,0 +1,497 @@
+{
+ "summary": {
+  "as_of": "2026-06-26",
+  "definition": "CMC/facility-only CRL = driven ONLY by manufacturing/quality/third-party-facility/cGMP/483/fill-finish; drug efficacy & safety NOT cited.",
+  "method_caveat": "Curated, source-verified NAMED cohort of public companies -- NOT a random sample. openFDA raw rates are biased (publication bias + 2024-26 right-censoring). Directional precedent, not a population probability.",
+  "headline": "Of source-verified CMC/facility-ONLY CRLs (2020-2026) that have reached a final decision, ALL 11 went on to FDA approval -- 7 on the very NEXT cycle (median ~10 mo), 4 after 2-3 cycles (up to ~3 yrs).",
+  "n_resolved_cmc_only": 14,
+  "n_resolved_approved": 14,
+  "n_single_next_cycle": 10,
+  "n_multi_cycle": 4,
+  "n_pending_censored": 6,
+  "n_excluded_not_cmc_only": 6,
+  "n_watchlist": 5,
+  "single_crl_time_to_resolution_months": {
+   "min": 3.4,
+   "median": 9.95,
+   "max": 20.9
+  },
+  "counterexamples": [
+   "tab-cel (Atara/Pierre Fabre): CMC 1st cycle -> facility fixed -> EFFICACY 2nd-cycle rejection. A clean factory fix does NOT make an un-approvable molecule approvable.",
+   "Ycanth (Verrica): genuinely CMC-only but took 3 cycles / ~3 years -- 'next cycle' is the mode, not a guarantee."
+  ],
+  "population_anchors": {
+   "fda_crl_reason_mix": "First-cycle CRLs to NMEs 2000-2012 (n=151, Sacks et al. JAMA 2014 / Nat Rev Drug Discov 2014): efficacy 32% / safety 26% / both 27% / CMC+labeling ~15%.",
+   "recovery_by_reason": "Sacks/JAMA: safety-only CRLs recovered 61.5% vs efficacy-only 31.3% -- manufacturing/safety far more recoverable than efficacy. No primary CMC-specific % exists; do not invent.",
+   "crl_prevalence": "~37% (Avalere FY2018-22) to ~41% (Clarivate) of NDAs/BLAs receive a CRL.",
+   "eventual_approval_after_any_crl": ">50% eventually approved (Clarivate).",
+   "resubmission_clock": "Class 1 resubmission = 2-month FDA review; Class 2 = 6-month."
+  },
+  "sources": [
+   "openFDA CRL transparency corpus (letter text)",
+   "Sacks LV et al. JAMA 2014;311(4):378-384; Nat Rev Drug Discov 2014",
+   "Avalere; Clarivate; FDA PDUFA goals",
+   "Company PRs / SEC filings"
+  ]
+ },
+ "cohort": [
+  {
+   "ticker": "SPPI",
+   "drug": "Rolvedon (eflapegrastim)",
+   "sponsor": "Spectrum",
+   "app": "BLA 761148",
+   "crl": "2021-08-03",
+   "appr": "2022-09-09",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "Manufacturing-facility (CMC) deficiencies; efficacy/safety not cited.",
+   "src": [
+    "openFDA letter",
+    "Spectrum PR"
+   ],
+   "t_months": 13.2
+  },
+  {
+   "ticker": "LLY",
+   "drug": "Omvoh (mirikizumab), UC",
+   "sponsor": "Eli Lilly",
+   "app": "BLA 761279",
+   "crl": "2023-03-30",
+   "appr": "2023-10-26",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "GMP/Form-483 finding at Lilly's OWN Branchburg NJ plant; LUCENT UC efficacy fine.",
+   "src": [
+    "openFDA letter",
+    "FiercePharma"
+   ],
+   "note": "Lilly announced 2023-04-13; FDA letter dated 2023-03-30.",
+   "t_months": 6.9
+  },
+  {
+   "ticker": "LLY",
+   "drug": "Ebglyss (lebrikizumab)",
+   "sponsor": "Eli Lilly",
+   "app": "BLA 761306",
+   "crl": "2023-09-28",
+   "appr": "2024-09-13",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "Data-reliability/GMP finding at the drug-substance contract manufacturer; ADhere/ADvocate efficacy fine.",
+   "src": [
+    "openFDA letter",
+    "Lilly PR"
+   ],
+   "t_months": 11.5
+  },
+  {
+   "ticker": "ALVO",
+   "drug": "Selarsdi (ustekinumab-aekn)",
+   "sponsor": "Alvotech/Teva",
+   "app": "BLA 761343",
+   "crl": "2023-10-12",
+   "appr": "2024-04-16",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "Reykjavik facility re-inspection (biosimilar); comparability fine.",
+   "src": [
+    "openFDA letter",
+    "Alvotech PR"
+   ],
+   "t_months": 6.1
+  },
+  {
+   "ticker": "CKPT",
+   "drug": "Unloxcyt (cosibelimab)",
+   "sponsor": "Checkpoint Therapeutics",
+   "app": "BLA 761297",
+   "crl": "2023-12-15",
+   "appr": "2024-12-13",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "Findings at a third-party contract manufacturer (CMO); drug data not in question.",
+   "src": [
+    "openFDA letter",
+    "Checkpoint PR"
+   ],
+   "t_months": 12.0
+  },
+  {
+   "ticker": "ALPMY",
+   "drug": "Vyloy (zolbetuximab)",
+   "sponsor": "Astellas",
+   "app": "BLA 761365",
+   "crl": "2024-01-04",
+   "appr": "2024-10-18",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "Unresolved deficiency at a third-party manufacturing facility; CLDN18.2 efficacy fine.",
+   "src": [
+    "openFDA letter",
+    "Astellas PR"
+   ],
+   "t_months": 9.5
+  },
+  {
+   "ticker": "REGN",
+   "drug": "Lynozyfic (linvoseltamab)",
+   "sponsor": "Regeneron",
+   "app": "BLA 761080",
+   "crl": "2024-08-20",
+   "appr": "2025-07-02",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "Third-party fill/finish inspection finding; LINKER-MM1 efficacy fine.",
+   "src": [
+    "openFDA letter",
+    "Regeneron PR"
+   ],
+   "verify": "app# approximate",
+   "t_months": 10.4
+  },
+  {
+   "ticker": "RCKT",
+   "drug": "Kresladi (marnetegragene autotemcel)",
+   "sponsor": "Rocket Pharmaceuticals",
+   "app": "BLA (verify)",
+   "crl": "2024-06-30",
+   "appr": "2026-03-27",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "CMC: FDA requested limited additional Chemistry/Manufacturing/Controls info; no clinical/safety issue. (Feb-2024 was a PDUFA extension, NOT a CRL.)",
+   "src": [
+    "Rocket PR/8-K",
+    "CGTLive"
+   ],
+   "note": "Long gap: CRL Jun-2024 -> resub accepted Oct-2025 -> approved Mar-2026 (~21 mo). Public record = single CRL.",
+   "t_months": 20.9
+  },
+  {
+   "ticker": "MIST",
+   "drug": "Cardamyst (etripamil) nasal spray",
+   "sponsor": "Milestone Pharmaceuticals",
+   "app": "NDA (verify)",
+   "crl": "2025-03-28",
+   "appr": "2025-12-12",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "CMC-only: additional nitrosamine-impurity data + cGMP inspection of a release-testing facility; no safety/efficacy issue.",
+   "src": [
+    "Milestone PR",
+    "HCPLive"
+   ],
+   "t_months": 8.5
+  },
+  {
+   "ticker": "FBIO",
+   "drug": "CUTX-101 (copper histidinate), Menkes",
+   "sponsor": "Fortress/Cyprium/Sentynl",
+   "app": "NDA (verify)",
+   "crl": "2025-09-30",
+   "appr": "2026-01-13",
+   "n_crls": 1,
+   "bucket": "resolved_single",
+   "cmc_only": true,
+   "deficiency": "CMC-only: cGMP deficiencies at the manufacturing site; no efficacy/safety concern. Class 1 resubmission.",
+   "src": [
+    "Fortress/Cyprium PR",
+    "StockTitan"
+   ],
+   "t_months": 3.4
+  },
+  {
+   "ticker": "VRCA",
+   "drug": "Ycanth (cantharidin)",
+   "sponsor": "Verrica",
+   "app": "NDA 212905",
+   "crl": "2020-07-13",
+   "appr": "2023-07-21",
+   "n_crls": 3,
+   "bucket": "resolved_multi",
+   "cmc_only": true,
+   "deficiency": "Repeated CMC/quality + third-party facility deficiencies across THREE cycles (~3 yrs).",
+   "src": [
+    "openFDA letter",
+    "Dermatology Times"
+   ],
+   "note": "SPEED counterexample: CMC-only but took 3 cycles / ~3 years.",
+   "t_months": 36.2
+  },
+  {
+   "ticker": "FENC",
+   "drug": "Pedmark (sodium thiosulfate)",
+   "sponsor": "Fennec",
+   "app": "NDA 212937",
+   "crl": "2020-08-10",
+   "appr": "2022-09-20",
+   "n_crls": 2,
+   "bucket": "resolved_multi",
+   "cmc_only": false,
+   "deficiency": "Cycle-1 facility (CMC); cycle-2 (2021-11-26) ADDED a safety/labeling analysis -> CMC-dominant, not strictly CMC-only.",
+   "src": [
+    "openFDA letter"
+   ],
+   "note": "Flag: not a pure-CMC exemplar.",
+   "t_months": 25.3
+  },
+  {
+   "ticker": "ALVO",
+   "drug": "Simlandi (adalimumab-ryvk)",
+   "sponsor": "Alvotech/Teva",
+   "app": "BLA 761299",
+   "crl": "2022-12-20",
+   "appr": "2024-02-23",
+   "n_crls": 3,
+   "bucket": "resolved_multi",
+   "cmc_only": true,
+   "deficiency": "Reykjavik plant 483/re-inspection across multiple cycles (biosimilar).",
+   "src": [
+    "openFDA letter",
+    "Alvotech PR"
+   ],
+   "t_months": 14.1
+  },
+  {
+   "ticker": "ABBV",
+   "drug": "Vyalev (foscarbidopa/foslevodopa)",
+   "sponsor": "AbbVie",
+   "app": "NDA 216962",
+   "crl": "2023-03-17",
+   "appr": "2024-10-17",
+   "n_crls": 2,
+   "bucket": "resolved_multi",
+   "cmc_only": true,
+   "deficiency": "Device/manufacturing (pump + CMC) across two cycles; not the drug substances.",
+   "src": [
+    "openFDA letter",
+    "AbbVie PR"
+   ],
+   "t_months": 19.1
+  },
+  {
+   "ticker": "UNCY",
+   "drug": "oxylanthanum carbonate (OLC)",
+   "sponsor": "Unicycive",
+   "app": "NDA 218607",
+   "crl": "2025-06-27",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "pending",
+   "watch": true,
+   "cmc_only": true,
+   "deficiency": "Third-party manufacturing/CMC ONLY -- FDA cited NO preclinical/clinical/safety concerns.",
+   "src": [
+    "openFDA letter",
+    "Unicycive PR",
+    "HCPLive"
+   ],
+   "note": "Resubmission accepted (Class 2); PDUFA 2026-06-29 (this week).",
+   "t_months": null
+  },
+  {
+   "ticker": "RARE",
+   "drug": "UX111/rebisufligene etisparvovec (gene tx)",
+   "sponsor": "Ultragenyx",
+   "app": "BL 125845",
+   "crl": "2025-07-07",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "pending",
+   "watch": true,
+   "cmc_only": true,
+   "deficiency": "CMC/manufacturing for the AAV gene therapy; Sanfilippo clinical not at issue.",
+   "src": [
+    "openFDA letter",
+    "Ultragenyx PR"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "SRRK",
+   "drug": "apitegromab (SAPPHIRE)",
+   "sponsor": "Scholar Rock",
+   "app": "BLA 761463",
+   "crl": "2025-09-22",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "pending",
+   "watch": true,
+   "cmc_only": true,
+   "deficiency": "Third-party (Catalent Indiana) manufacturing/CMC; SAPPHIRE Ph3 SMA efficacy not at issue.",
+   "src": [
+    "openFDA letter",
+    "Scholar Rock PR"
+   ],
+   "note": "Resubmitted; PDUFA ~2026-09-30.",
+   "t_months": null
+  },
+  {
+   "ticker": "ALVO",
+   "drug": "AVT05 (golimumab biosimilar)",
+   "sponsor": "Alvotech",
+   "app": "BLA 761461",
+   "crl": "2025-11-26",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "pending",
+   "watch": true,
+   "cmc_only": true,
+   "deficiency": "Facility/inspection (biosimilar).",
+   "src": [
+    "openFDA letter",
+    "Alvotech PR"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "ABBV",
+   "drug": "trenibotulinumtoxinE (TrenibotE)",
+   "sponsor": "AbbVie",
+   "app": "BLA 761459",
+   "crl": "2026-04-22",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "pending",
+   "watch": true,
+   "cmc_only": true,
+   "deficiency": "CMC/manufacturing.",
+   "src": [
+    "openFDA letter",
+    "AbbVie PR"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "ZLDPF",
+   "drug": "dasiglucagon",
+   "sponsor": "Zealand Pharma",
+   "app": "NDA 217724",
+   "crl": "2024-10-08",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "pending",
+   "cmc_only": true,
+   "deficiency": "CMC/device manufacturing; clinical not at issue.",
+   "src": [
+    "openFDA letter",
+    "Zealand PR"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "DNLI",
+   "drug": "tividenofusp alfa (AVLAYAH), Hunter syndrome",
+   "sponsor": "Denali",
+   "app": "BLA (verify)",
+   "crl": null,
+   "appr": "2026-03-25",
+   "n_crls": 0,
+   "bucket": "excluded",
+   "cmc_only": false,
+   "deficiency": "NO CRL -- received a PDUFA EXTENSION (routine info request: additional pharmacology data), then accelerated approval. Not a CRL case.",
+   "src": [
+    "Denali PR",
+    "NeurologyLive"
+   ],
+   "note": "User-named example corrected: never received a CRL.",
+   "t_months": null
+  },
+  {
+   "ticker": "NVO",
+   "drug": "insulin icodec (Awiqli)",
+   "sponsor": "Novo Nordisk",
+   "app": "BLA 761326",
+   "crl": "2024-07-10",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "excluded",
+   "cmc_only": false,
+   "deficiency": "MIXED: manufacturing PLUS Type-1-diabetes benefit-risk (ONWARDS-6 hypoglycemia; AdCom). Not CMC-only.",
+   "src": [
+    "Novo PR",
+    "FiercePharma",
+    "FDA AdCom"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "DSNKY",
+   "drug": "patritumab deruxtecan (HER3-DXd)",
+   "sponsor": "Daiichi/Merck",
+   "app": "BLA 761366",
+   "crl": "2024-06-26",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "excluded",
+   "cmc_only": false,
+   "deficiency": "MIXED: facility inspection PLUS confirmatory-trial efficacy (HERTHENA-Lung02 missed PFS). BLA WITHDRAWN 2025-05-29 -- never approved.",
+   "src": [
+    "Merck PR",
+    "Drugs.com"
+   ],
+   "note": "Cohort error caught: prior 'approved 2025-06-23' was a mix-up with Datroway.",
+   "t_months": null
+  },
+  {
+   "ticker": "REGN",
+   "drug": "odronextamab (Ordspono, EU-only)",
+   "sponsor": "Regeneron",
+   "app": "BLA 761303",
+   "crl": "2024-03-22",
+   "appr": null,
+   "n_crls": 2,
+   "bucket": "excluded",
+   "cmc_only": false,
+   "deficiency": "Confirmatory-trial enrollment status (clinical), not CMC. 2nd CRL 2025-07-30; still not US-approved.",
+   "src": [
+    "Regeneron PR",
+    "Targeted Oncology"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "ZLDPF",
+   "drug": "glepaglutide",
+   "sponsor": "Zealand Pharma",
+   "app": "NDA 218828",
+   "crl": "2024-12-19",
+   "appr": null,
+   "n_crls": 1,
+   "bucket": "excluded",
+   "cmc_only": false,
+   "deficiency": "PURE EFFICACY CRL: 'unable to conclude substantial evidence of effectiveness... EASE-1 not sufficiently persuasive.' Not CMC.",
+   "src": [
+    "openFDA letter"
+   ],
+   "t_months": null
+  },
+  {
+   "ticker": "ATRA/PF",
+   "drug": "tab-cel (Ebvallo, tabelecleucel)",
+   "sponsor": "Atara/Pierre Fabre",
+   "app": "BL 125745",
+   "crl": "2026-01-09",
+   "appr": null,
+   "n_crls": 2,
+   "bucket": "excluded",
+   "cmc_only": false,
+   "counterexample": true,
+   "deficiency": "COUNTEREXAMPLE: 1st CRL (2025-01-15) CMC; FDA accepted the fix, then 2nd CRL (2026-01-09) REJECTED on EFFICACY (ALLELE single-arm inadequate). Unapproved ~18 mo; Atara cut ~85% staff, going-concern, Nasdaq delisting.",
+   "src": [
+    "openFDA letters",
+    "FiercePharma",
+    "Targeted Oncology"
+   ],
+   "t_months": null
+  }
+ ]
+}

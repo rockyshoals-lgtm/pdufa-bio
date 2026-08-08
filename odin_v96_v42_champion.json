@@ -1,0 +1,78 @@
+{
+  "version": "9.6_v42_T1_COMPLIANT",
+  "dataset": "ODIN_ENRICHED_PDUFA_v4_2_AUDITED.csv",
+  "timestamp": "2026-01-31T03:10:54.940535",
+  "n_events": 1934,
+  "n_features": 34,
+  "approval_rate": 0.827817993795243,
+  "baseline_brier": 0.14253536294406202,
+  "champion_model": "Stacking_Extended",
+  "champion_brier": 0.07343766232199236,
+  "improvement_pct": 48.4775842253175,
+  "t1_compliance": {
+    "excluded": [
+      "manufacturing_risk",
+      "crl_notes"
+    ],
+    "replaced": {
+      "manufacturing_risk": "modality_complexity"
+    },
+    "verified_safe": [
+      "btd",
+      "orphan",
+      "priority_review",
+      "fast_track",
+      "accelerated_approval",
+      "designation_stack",
+      "had_adcom",
+      "adcom_vote_pct",
+      "experienced_sponsor",
+      "sponsor_prior_log",
+      "prior_crl",
+      "resubmission_class",
+      "first_cycle",
+      "modality_complexity",
+      "form_483_issues",
+      "ta_adjustment",
+      "year_norm",
+      "ta_x_sponsor_prior",
+      "ta_x_exp_sponsor",
+      "btd_x_orphan",
+      "btd_x_priority",
+      "year_x_ta",
+      "modality_x_ta",
+      "sponsor_prior_sq",
+      "ta_adjustment_sq",
+      "high_risk",
+      "low_risk",
+      "ta_Pain_Management",
+      "ta_Hematology",
+      "ta_Oncology",
+      "ta_CNS_Neurology",
+      "ta_Ophthalmology",
+      "ta_Infectious_Disease",
+      "ta_Cardiovascular"
+    ]
+  },
+  "all_model_scores": {
+    "LogisticRegression_L2": 0.07753657092044644,
+    "LogisticRegression_L1": 0.07765386952822353,
+    "LogisticRegression_EN": 0.07757705874517679,
+    "XGBoost": 0.07798472412600316,
+    "LightGBM": 0.07500733458168699,
+    "GradientBoosting": 0.07522131577079241,
+    "MLP": 0.07553394251990074,
+    "Weighted_Ensemble": 0.0744416965576941,
+    "Stacking_MetaLR": 0.07711970903491323,
+    "Stacking_Extended": 0.07343766232199236
+  },
+  "optimal_weights": {
+    "LogisticRegression_L2": 1.0858727464617304e-17,
+    "LogisticRegression_L1": 0.0,
+    "LogisticRegression_EN": 8.673617379884035e-19,
+    "XGBoost": 0.0,
+    "LightGBM": 0.311883445554612,
+    "GradientBoosting": 0.2607503992990645,
+    "MLP": 0.4273661551463236
+  }
+}

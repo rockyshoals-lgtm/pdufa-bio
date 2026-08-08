@@ -1,0 +1,34 @@
+{
+  "prediction": {
+    "ticker": "DNLI",
+    "drug": "Tividenofusp alfa",
+    "indication": "Hunter Syndrome (MPS II)",
+    "therapeutic_area": "Rare Disease",
+    "modality": "Antibody",
+    "pdufa_date": "2026-04-05",
+    "btd": true,
+    "orphan": true,
+    "priority_review": true,
+    "fast_track": true,
+    "prior_crl": false,
+    "odin_probability": 0.96931,
+    "odin_tier": "T1_STRONG_LONG",
+    "trading_signal": "STRONG LONG",
+    "notes": "ERT crosses blood-brain barrier",
+    "source_file": "ODIN_v96_H1_2026_PREDICTIONS.csv",
+    "source_line": 18,
+    "model_version": "ODIN_vNEXT_v5"
+  },
+  "outcome": {
+    "outcome": "APPROVED",
+    "approval_date": "2026-03-25",
+    "days_early": 11,
+    "prediction_correct": true,
+    "verified_timestamp": "2026-03-25T21:08:21.735769+00:00"
+  },
+  "integrity": {
+    "sha256": "1cd03c2a8d4c96d2b3206664f6a40834aec3fe7c8568d54057484e1c66461998",
+    "hash_input": "canonical_json_sorted_keys",
+    "algorithm": "SHA-256"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "baseline_v1071": 0.0554,
+  "best_case": 0.1085,
+  "worst_case": 0.0487,
+  "bullish_quiet_normal": 0.1085,
+  "total_configurations": 32,
+  "configurations_above_10pct": 4,
+  "configurations_tier_upgrade": 0
+}

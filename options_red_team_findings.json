@@ -1,0 +1,58 @@
+{
+  "generated": "2026-04-18",
+  "version": "v1.0",
+  "dataset": {
+    "n_trades": 1828,
+    "n_pdufa": 795,
+    "n_readout": 1033,
+    "dte_matched": 830
+  },
+  "critical_findings": [
+    "DTE mismatch: 30% of exit trades picked shorter-dated options (weekly traps)",
+    "13% of trades have exit_dte<3 (option expiring before catalyst)",
+    "v5_score LIKELY LEAKED: perfect separation across all years (approvals 0.78-0.89 vs CRLs 0.29-0.40)",
+    "ODIN T1 filter INVERTS options edge: T1 -11.0% vs T4 +12.8%",
+    "PDUFA micro 'gold' is driven by top 2 moonshots (+619% and +452%)",
+    "IV change calculations unreliable: exit_iv values as extreme as 10^14%",
+    "Announced BIFROST Options Strategy (PDUFA Small/Mid Approvals +6.4%) is HONEST -2.7%",
+    "Survivorship bias: spread>55% filter excludes 15-25% of illiquid biotech options",
+    "Sample sizes below n=20 for half of sub-segments",
+    "Nano caps entirely excluded from backtest"
+  ],
+  "honest_numbers_mid_fill": {
+    "PDUFA_micro_matched": 30.5,
+    "PDUFA_small_matched": 6.3,
+    "PDUFA_mid_matched": -9.9,
+    "PDUFA_large_matched": -17.6,
+    "Readout_Phase_1_2_matched": 45.0,
+    "Readout_Phase_2_matched": 12.8,
+    "Readout_Phase_2b_matched": -31.7,
+    "Readout_Phase_3_matched": -10.5
+  },
+  "honest_numbers_at_40pct_spread_capture": {
+    "PDUFA_micro_matched": 22.8,
+    "PDUFA_small_matched": -0.6,
+    "PDUFA_mid_matched": -14.7,
+    "PDUFA_large_matched": -19.5,
+    "Readout_micro_matched": -23.8,
+    "Readout_small_matched": -1.1,
+    "Readout_mid_matched": -5.8,
+    "Readout_large_matched": -4.2
+  },
+  "strategy_honest": {
+    "name": "PDUFA Small/Mid Approvals",
+    "claimed_mid": 6.4,
+    "honest_mid": -2.7,
+    "honest_40pct": -7.9,
+    "n": 97,
+    "win_rate_mid": 40.2,
+    "ci_95": [
+      -13.5,
+      10.3
+    ]
+  },
+  "only_robust_edges": {
+    "PDUFA_micro_approve_OR_crl_matched": "avg ~30% but median near zero, tail-driven",
+    "Readout_Phase_1_2_positive_matched": "+45.1% avg, 58.3% win, n=36 \u2014 the ONLY survivable edge"
+  }
+}

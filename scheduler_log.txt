@@ -1,0 +1,46 @@
+[Sat 02/28/2026 15:34:45.68] Starting 9REALMS daily update... 
+C:\Users\dcmoo\Documents\Python\9realms\mcp_core\9realms_update_loop.py:41: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ts = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+Traceback (most recent call last):
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_core\9realms_update_loop.py", line 131, in main
+    metrics = daily_benchmark()
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_core\benchmark_v1071.py", line 556, in daily_benchmark
+    metrics = run_benchmark()
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_core\benchmark_v1071.py", line 372, in run_benchmark
+    rows = list(reader)
+  File "C:\Python314\Lib\csv.py", line 177, in __next__
+    row = next(self.reader)
+  File "C:\Python314\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 250: character maps to <undefined>
+[2026-02-28 23:34:45] [INFO] ============================================================
+[2026-02-28 23:34:45] [INFO] 9REALMS DAILY UPDATE LOOP STARTING
+[2026-02-28 23:34:45] [INFO] ============================================================
+[2026-02-28 23:34:45] [INFO] STEP 1: Running v1071 vs V2.0 benchmark...
+Loading dataset: C:\Users\dcmoo\Documents\Python\9realms\data\ODIN_ENRICHED_1349.csv
+[2026-02-28 23:34:45] [ERROR] Benchmark FAILED: 'charmap' codec can't decode byte 0x9d in position 250: character maps to <undefined>
+[Sat 02/28/2026 15:34:45.88] 9REALMS daily update complete. 
+[Sat 02/28/2026 15:36:06.42] Starting 9REALMS daily update... 
+C:\Users\dcmoo\Documents\Python\9realms\mcp_core\9realms_update_loop.py:41: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  ts = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+Traceback (most recent call last):
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_core\9realms_update_loop.py", line 131, in main
+    metrics = daily_benchmark()
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_core\benchmark_v1071.py", line 556, in daily_benchmark
+    metrics = run_benchmark()
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_core\benchmark_v1071.py", line 372, in run_benchmark
+    rows = list(reader)
+  File "C:\Python314\Lib\csv.py", line 177, in __next__
+    row = next(self.reader)
+  File "C:\Python314\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position 250: character maps to <undefined>
+[2026-02-28 23:36:06] [INFO] ============================================================
+[2026-02-28 23:36:06] [INFO] 9REALMS DAILY UPDATE LOOP STARTING
+[2026-02-28 23:36:06] [INFO] ============================================================
+[2026-02-28 23:36:06] [INFO] STEP 1: Running v1071 vs V2.0 benchmark...
+Loading dataset: C:\Users\dcmoo\Documents\Python\9realms\data\ODIN_ENRICHED_1349.csv
+[2026-02-28 23:36:06] [ERROR] Benchmark FAILED: 'charmap' codec can't decode byte 0x9d in position 250: character maps to <undefined>
+[Sat 02/28/2026 15:36:06.52] 9REALMS daily update complete. 

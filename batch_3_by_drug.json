@@ -1,0 +1,902 @@
+{
+  "CUE-101": [
+    {
+      "idx": 1451,
+      "ticker": "CUE",
+      "date": "2025-07-16",
+      "indication": "HPV+ head and neck squamous cell carcinoma (HNSCC)",
+      "stage": "Phase 1",
+      "drug": "CUE-101",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "CUE-101"
+    }
+  ],
+  "HYALOFAST": [
+    {
+      "idx": 1466,
+      "ticker": "ANIK",
+      "date": "2025-07-30",
+      "indication": "Cartilage defects of the knee",
+      "stage": "Phase 3",
+      "drug": "HYALOFAST - (FastTRACK)",
+      "trial_name": "FastTRACK",
+      "generic_name": "",
+      "brand_name": "HYALOFAST"
+    }
+  ],
+  "Repibresib": [
+    {
+      "idx": 1467,
+      "ticker": "VYNE",
+      "date": "2025-07-30",
+      "indication": "Vitiligo",
+      "stage": "Phase 2b",
+      "drug": "Repibresib Gel (VYN201)",
+      "trial_name": "",
+      "generic_name": "VYN201",
+      "brand_name": "Repibresib Gel"
+    }
+  ],
+  "VX-993": [
+    {
+      "idx": 1470,
+      "ticker": "VRTX",
+      "date": "2025-08-04",
+      "indication": "Moderate to severe acute pain",
+      "stage": "Phase 2",
+      "drug": "VX-993",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "VX-993"
+    }
+  ],
+  "NPM-115": [
+    {
+      "idx": 1471,
+      "ticker": "VANI",
+      "date": "2025-08-05",
+      "indication": "Subdermal implants in development for chronic weight management",
+      "stage": "Phase 1",
+      "drug": "NPM-115 (exenatide implant) - (LIBERATE-1)",
+      "trial_name": "LIBERATE-1",
+      "generic_name": "exenatide implant",
+      "brand_name": "NPM-115"
+    }
+  ],
+  "ARQ-255": [
+    {
+      "idx": 1472,
+      "ticker": "ARQT",
+      "date": "2025-08-06",
+      "indication": "Alopecia Areata",
+      "stage": "Phase 1b",
+      "drug": "ARQ-255",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "ARQ-255"
+    }
+  ],
+  "Neldaleucel": [
+    {
+      "idx": 1484,
+      "ticker": "MRKR",
+      "date": "2025-08-26",
+      "indication": "Lymphoma who have failed or are ineligible to receive anti-CD19 CAR T cell treatment",
+      "stage": "Phase 1",
+      "drug": "Neldaleucel (MT-601) - (APOLLO)",
+      "trial_name": "APOLLO",
+      "generic_name": "MT-601",
+      "brand_name": "Neldaleucel"
+    }
+  ],
+  "MK-0616": [
+    {
+      "idx": 1490,
+      "ticker": "MRK",
+      "date": "2025-09-02",
+      "indication": "Low-density lipoprotein (LDL) cholesterol reduction",
+      "stage": "Phase 3",
+      "drug": "MK-0616 - (CORALreef Lipids)",
+      "trial_name": "CORALreef Lipids",
+      "generic_name": "",
+      "brand_name": "MK-0616"
+    }
+  ],
+  "Zorevunersen": [
+    {
+      "idx": 1492,
+      "ticker": "STOK",
+      "date": "2025-09-02",
+      "indication": "Dravet syndrome",
+      "stage": "Phase 1/2",
+      "drug": "Zorevunersen (STK-001) - (EMPEROR)",
+      "trial_name": "EMPEROR",
+      "generic_name": "STK-001",
+      "brand_name": "Zorevunersen"
+    }
+  ],
+  "Decoy-20": [
+    {
+      "idx": 1496,
+      "ticker": "INDP",
+      "date": "2025-09-04",
+      "indication": "Advanced/metastatic solid tumors",
+      "stage": "Phase 1/2",
+      "drug": "Decoy-20 - (INDP-D101)",
+      "trial_name": "INDP-D101",
+      "generic_name": "",
+      "brand_name": "Decoy-20"
+    }
+  ],
+  "Zipalertinib": [
+    {
+      "idx": 1499,
+      "ticker": "CGEM",
+      "date": "2025-09-09",
+      "indication": "Non-small cell lung cancer",
+      "stage": "Phase 2b",
+      "drug": "Zipalertinib (CLN-081/TAS6417) - (REZILIENT1)",
+      "trial_name": "REZILIENT1",
+      "generic_name": "CLN-081/TAS6417",
+      "brand_name": "Zipalertinib"
+    },
+    {
+      "idx": 1536,
+      "ticker": "CGEM",
+      "date": "2025-10-13",
+      "indication": "Locally advanced/metastatic NSCLC",
+      "stage": "Phase 2b",
+      "drug": "Zipalertinib - (REZILIENT2)",
+      "trial_name": "REZILIENT2",
+      "generic_name": "",
+      "brand_name": "Zipalertinib"
+    }
+  ],
+  "ATH434-201": [
+    {
+      "idx": 1503,
+      "ticker": "ATHE",
+      "date": "2025-09-15",
+      "indication": "Multiple System Atrophy (MSA)",
+      "stage": "Phase 2",
+      "drug": "ATH434-201",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "ATH434-201"
+    }
+  ],
+  "Garetosmab": [
+    {
+      "idx": 1510,
+      "ticker": "REGN",
+      "date": "2025-09-17",
+      "indication": "Fibrodysplasia Ossificans Progressiva (FOP)",
+      "stage": "Phase 3",
+      "drug": "Garetosmab - (OPTIMA)",
+      "trial_name": "OPTIMA",
+      "generic_name": "",
+      "brand_name": "Garetosmab"
+    }
+  ],
+  "Canvuparatide": [
+    {
+      "idx": 1513,
+      "ticker": "MBX",
+      "date": "2025-09-22",
+      "indication": "Hypoparathyroidism",
+      "stage": "Phase 2",
+      "drug": "Canvuparatide (MBX 2109) - (Avail)",
+      "trial_name": "Avail",
+      "generic_name": "MBX 2109",
+      "brand_name": "Canvuparatide"
+    }
+  ],
+  "Nimacimab": [
+    {
+      "idx": 1531,
+      "ticker": "SKYE",
+      "date": "2025-10-06",
+      "indication": "Obesity",
+      "stage": "Phase 2a",
+      "drug": "Nimacimab - (CBeyond)",
+      "trial_name": "CBeyond",
+      "generic_name": "",
+      "brand_name": "Nimacimab"
+    }
+  ],
+  "ABI-5366": [
+    {
+      "idx": 1533,
+      "ticker": "ASMB",
+      "date": "2025-10-10",
+      "indication": "HSV-2",
+      "stage": "Phase 1b",
+      "drug": "ABI-5366",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "ABI-5366"
+    }
+  ],
+  "Orforglipron": [
+    {
+      "idx": 1543,
+      "ticker": "LLY",
+      "date": "2025-10-15",
+      "indication": "Type 2 diabetes",
+      "stage": "Phase 3",
+      "drug": "Orforglipron - (ACHIEVE-2)",
+      "trial_name": "ACHIEVE-2",
+      "generic_name": "",
+      "brand_name": "Orforglipron"
+    },
+    {
+      "idx": 1682,
+      "ticker": "LLY",
+      "date": "2025-12-18",
+      "indication": "Obesity, weight maintenance",
+      "stage": "Phase 3",
+      "drug": "Orforglipron - (ATTAIN-MAINTAIN)",
+      "trial_name": "ATTAIN-MAINTAIN",
+      "generic_name": "",
+      "brand_name": "Orforglipron"
+    }
+  ],
+  "UCART22": [
+    {
+      "idx": 1544,
+      "ticker": "CLLS",
+      "date": "2025-10-16",
+      "indication": "Relapsed/refractory B-cell acute lymphoblastic leukemia (B-ALL)",
+      "stage": "Phase 1",
+      "drug": "UCART22 - (BALLI-01)",
+      "trial_name": "BALLI-01",
+      "generic_name": "",
+      "brand_name": "UCART22"
+    }
+  ],
+  "Solnerstotug": [
+    {
+      "idx": 1549,
+      "ticker": "REGN",
+      "date": "2025-10-17",
+      "indication": "One microsatellite stable (MSS) endometrial cancer",
+      "stage": "Phase 1/2",
+      "drug": "Solnerstotug (formerly SNS-101) with Libtayo - (VISTA)",
+      "trial_name": "VISTA",
+      "generic_name": "formerly SNS-101",
+      "brand_name": "Solnerstotugwith Libtayo"
+    }
+  ],
+  "Gedatolisib": [
+    {
+      "idx": 1552,
+      "ticker": "CELC",
+      "date": "2025-10-18",
+      "indication": "HR+/HER2- advanced breast cancer",
+      "stage": "Phase 3",
+      "drug": "Gedatolisib with Fulvestrant - (VIKTORIA-1)",
+      "trial_name": "VIKTORIA-1",
+      "generic_name": "",
+      "brand_name": "Gedatolisib with Fulvestrant"
+    }
+  ],
+  "FID-007": [
+    {
+      "idx": 1560,
+      "ticker": "FLGT",
+      "date": "2025-10-20",
+      "indication": "Various cancers",
+      "stage": "Phase 2",
+      "drug": "FID-007",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "FID-007"
+    }
+  ],
+  "[212Pb]VMT-\u03b1-NET": [
+    {
+      "idx": 1561,
+      "ticker": "CATX",
+      "date": "2025-10-20",
+      "indication": "Neuroendocrine tumors (NETs)",
+      "stage": "Phase 1",
+      "drug": "[212Pb]VMT-\u03b1-NET",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "[212Pb]VMT-\u03b1-NET"
+    },
+    {
+      "idx": 1714,
+      "ticker": "CATX",
+      "date": "2026-01-09",
+      "indication": "Neuroendocrine tumors (NETs)",
+      "stage": "Phase 1",
+      "drug": "[212Pb]VMT-\u03b1-NET",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "[212Pb]VMT-\u03b1-NET"
+    }
+  ],
+  "CRB-701": [
+    {
+      "idx": 1562,
+      "ticker": "CRBP",
+      "date": "2025-10-20",
+      "indication": "Solid tumors, Locally advanced or metastatic urothelial carcinoma",
+      "stage": "Phase 1",
+      "drug": "CRB-701 (SYS6002) with Pembrolizumab",
+      "trial_name": "",
+      "generic_name": "SYS6002",
+      "brand_name": "CRB-701with Pembrolizumab"
+    }
+  ],
+  "Tebipenem": [
+    {
+      "idx": 1564,
+      "ticker": "SPRO",
+      "date": "2025-10-21",
+      "indication": "Complicated urinary tract infection (cUTI), including acute pyelonephritis (AP)",
+      "stage": "Phase 3",
+      "drug": "Tebipenem HBr (SPR994) - (PIVOT-PO)",
+      "trial_name": "PIVOT-PO",
+      "generic_name": "SPR994",
+      "brand_name": "Tebipenem HBr"
+    }
+  ],
+  "mRNA-1647": [
+    {
+      "idx": 1567,
+      "ticker": "MRNA",
+      "date": "2025-10-22",
+      "indication": "CMV vaccine (Cytomegalovirus Infection)",
+      "stage": "Phase 3",
+      "drug": "mRNA-1647 - (CMVictory)",
+      "trial_name": "CMVictory",
+      "generic_name": "",
+      "brand_name": "mRNA-1647"
+    }
+  ],
+  "Ianalumab": [
+    {
+      "idx": 1572,
+      "ticker": "NVS",
+      "date": "2025-10-26",
+      "indication": "Sj\u00f6gren\u2019s syndrome",
+      "stage": "Phase 3",
+      "drug": "Ianalumab - (NEPTUNUS-2)",
+      "trial_name": "NEPTUNUS-2",
+      "generic_name": "",
+      "brand_name": "Ianalumab"
+    }
+  ],
+  "FT819-102": [
+    {
+      "idx": 1573,
+      "ticker": "FATE",
+      "date": "2025-10-26",
+      "indication": "Moderate-to-severe Systemic Lupus Erythematosus",
+      "stage": "Phase 1",
+      "drug": "FT819-102",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "FT819-102"
+    }
+  ],
+  "Icotrokinra": [
+    {
+      "idx": 1574,
+      "ticker": "JNJ",
+      "date": "2025-10-27",
+      "indication": "Ulcerative colitis",
+      "stage": "Phase 2b",
+      "drug": "Icotrokinra  (JNJ-2113) - (ANTHEM-UC)",
+      "trial_name": "ANTHEM-UC",
+      "generic_name": "JNJ-2113",
+      "brand_name": "Icotrokinra"
+    }
+  ],
+  "Obefazimod": [
+    {
+      "idx": 1585,
+      "ticker": "ABVX",
+      "date": "2025-11-03",
+      "indication": "Ulcerative colitis",
+      "stage": "Phase 3",
+      "drug": "Obefazimod - (ABTECT)",
+      "trial_name": "ABTECT",
+      "generic_name": "",
+      "brand_name": "Obefazimod"
+    }
+  ],
+  "CB-010": [
+    {
+      "idx": 1586,
+      "ticker": "CRBU",
+      "date": "2025-11-03",
+      "indication": "B-Cell Non-Hodgkin Lymphoma",
+      "stage": "Phase 1",
+      "drug": "CB-010 - (ANTLER)",
+      "trial_name": "ANTLER",
+      "generic_name": "",
+      "brand_name": "CB-010"
+    }
+  ],
+  "DA-1726": [
+    {
+      "idx": 1587,
+      "ticker": "MTVA",
+      "date": "2025-11-04",
+      "indication": "NASH and obesity",
+      "stage": "Phase 1",
+      "drug": "DA-1726",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "DA-1726"
+    }
+  ],
+  "Barzolvolimab": [
+    {
+      "idx": 1590,
+      "ticker": "CLDX",
+      "date": "2025-11-06",
+      "indication": "Chronic inducible urticaria (CIndU), cold urticaria (ColdU) and symptomatic dermographism (SD), Chronic Spontaneous Urticaria (CSU)",
+      "stage": "Phase 2",
+      "drug": "Barzolvolimab - (CindU)",
+      "trial_name": "CindU",
+      "generic_name": "",
+      "brand_name": "Barzolvolimab"
+    }
+  ],
+  "Detalimogene": [
+    {
+      "idx": 1611,
+      "ticker": "ENGN",
+      "date": "2025-11-11",
+      "indication": "BCG-unresponsive non-muscle invasive bladder cancer (NMIBC)",
+      "stage": "Phase 1/2",
+      "drug": "Detalimogene voraplasmid (EG-70) - (LEGEND)",
+      "trial_name": "LEGEND",
+      "generic_name": "EG-70",
+      "brand_name": "Detalimogene voraplasmid"
+    }
+  ],
+  "Coramitug": [
+    {
+      "idx": 1612,
+      "ticker": "NVO",
+      "date": "2025-11-11",
+      "indication": "ATTR-cardiomyopathy",
+      "stage": "Phase 2",
+      "drug": "Coramitug (PRX004) - (CLEOPATTRA)",
+      "trial_name": "CLEOPATTRA",
+      "generic_name": "PRX004",
+      "brand_name": "Coramitug"
+    }
+  ],
+  "TARA-002": [
+    {
+      "idx": 1626,
+      "ticker": "TARA",
+      "date": "2025-11-19",
+      "indication": "Pediatric patients with lymphatic malformations (LMs)",
+      "stage": "Phase 2",
+      "drug": "TARA-002 - (STARBORN-1)",
+      "trial_name": "STARBORN-1",
+      "generic_name": "",
+      "brand_name": "TARA-002"
+    }
+  ],
+  "LYT-200": [
+    {
+      "idx": 1642,
+      "ticker": "PRTC",
+      "date": "2025-12-05",
+      "indication": "Relapsed/refractory AML and MDS",
+      "stage": "Phase 1b",
+      "drug": "LYT-200",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "LYT-200"
+    }
+  ],
+  "Bezuclastinib": [
+    {
+      "idx": 1644,
+      "ticker": "COGT",
+      "date": "2025-12-06",
+      "indication": "Non-Advanced Systemic Mastocytosis",
+      "stage": "Phase 2",
+      "drug": "Bezuclastinib - (SUMMIT)",
+      "trial_name": "SUMMIT",
+      "generic_name": "",
+      "brand_name": "Bezuclastinib"
+    }
+  ],
+  "LYL314": [
+    {
+      "idx": 1650,
+      "ticker": "LYEL",
+      "date": "2025-12-08",
+      "indication": "Large B-cell lymphoma",
+      "stage": "Phase 1/2",
+      "drug": "LYL314 (IMPT-314)",
+      "trial_name": "",
+      "generic_name": "IMPT-314",
+      "brand_name": "LYL314"
+    }
+  ],
+  "VT-1953": [
+    {
+      "idx": 1653,
+      "ticker": "HIND",
+      "date": "2025-12-08",
+      "indication": "Malignant fungating wounds (MFW)",
+      "stage": "Phase 2",
+      "drug": "VT-1953",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "VT-1953"
+    }
+  ],
+  "BX004": [
+    {
+      "idx": 1655,
+      "ticker": "PHGE",
+      "date": "2025-12-08",
+      "indication": "P. aeruginosa in patients with Cystic Fibrosis (CF)",
+      "stage": "Phase 2",
+      "drug": "BX004",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "BX004"
+    }
+  ],
+  "Obe-cel": [
+    {
+      "idx": 1658,
+      "ticker": "AUTL",
+      "date": "2025-12-08",
+      "indication": "pediatric relapsed or refractory (r/r) B-ALL",
+      "stage": "Phase 1",
+      "drug": "Obe-cel - (CATULUS)",
+      "trial_name": "CATULUS",
+      "generic_name": "",
+      "brand_name": "Obe-cel"
+    }
+  ],
+  "BNT327-02": [
+    {
+      "idx": 1662,
+      "ticker": "BNTX",
+      "date": "2025-12-09",
+      "indication": "1-2L Metastatic Triple-negative breast cancer (TNBC)",
+      "stage": "Phase 2",
+      "drug": "BNT327-02",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "BNT327-02"
+    },
+    {
+      "idx": 1663,
+      "ticker": "BMY",
+      "date": "2025-12-09",
+      "indication": "1-2L Metastatic Triple-negative breast cancer (TNBC)",
+      "stage": "Phase 2",
+      "drug": "BNT327-02",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "BNT327-02"
+    }
+  ],
+  "GRI-0621-IPF-02": [
+    {
+      "idx": 1664,
+      "ticker": "GRI",
+      "date": "2025-12-10",
+      "indication": "Idiopathic pulmonary fibrosis (IPF)",
+      "stage": "Phase 2",
+      "drug": "GRI-0621-IPF-02",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "GRI-0621-IPF-02"
+    }
+  ],
+  "BHV-1510": [
+    {
+      "idx": 1666,
+      "ticker": "BHVN",
+      "date": "2025-12-11",
+      "indication": "Advanced or metastatic epithelial cell tumors",
+      "stage": "Phase 1",
+      "drug": "BHV-1510 with Libtayo",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "BHV-1510 with Libtayo"
+    }
+  ],
+  "Quemliclustat,": [
+    {
+      "idx": 1671,
+      "ticker": "RCUS",
+      "date": "2025-12-12",
+      "indication": "Locally advanced unresectable or metastatic gastric, gastroesophageal junction or esophageal adenocarcinoma",
+      "stage": "Phase 3",
+      "drug": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy (ARC-21) - (STAR-221)",
+      "trial_name": "STAR-221",
+      "generic_name": "ARC-21",
+      "brand_name": "Quemliclustat, domvanalimab, zimberelimab, and chemotherapy"
+    }
+  ],
+  "AL102": [
+    {
+      "idx": 1672,
+      "ticker": "IMNM",
+      "date": "2025-12-15",
+      "indication": "Desmoid tumors",
+      "stage": "Phase 3",
+      "drug": "AL102 - (RINGSIDE)",
+      "trial_name": "RINGSIDE",
+      "generic_name": "",
+      "brand_name": "AL102"
+    }
+  ],
+  "4D-710": [
+    {
+      "idx": 1681,
+      "ticker": "FDMT",
+      "date": "2025-12-17",
+      "indication": "Cystic fibrosis",
+      "stage": "Phase 2",
+      "drug": "4D-710 - (AEROW)",
+      "trial_name": "AEROW",
+      "generic_name": "",
+      "brand_name": "4D-710"
+    }
+  ],
+  "Zasocitinib": [
+    {
+      "idx": 1684,
+      "ticker": "TAK",
+      "date": "2025-12-18",
+      "indication": "Moderate-to-severe plaque psoriasis (PsO)",
+      "stage": "Phase 3",
+      "drug": "Zasocitinib (TAK-279)",
+      "trial_name": "",
+      "generic_name": "TAK-279",
+      "brand_name": "Zasocitinib"
+    }
+  ],
+  "GLPG3667": [
+    {
+      "idx": 1686,
+      "ticker": "GLPG",
+      "date": "2025-12-18",
+      "indication": "Duchenne Muscular (DM)",
+      "stage": "Phase 2",
+      "drug": "GLPG3667 - (GALARISSO)",
+      "trial_name": "GALARISSO",
+      "generic_name": "",
+      "brand_name": "GLPG3667"
+    }
+  ],
+  "Fidrisertib": [
+    {
+      "idx": 1688,
+      "ticker": "IPSEY",
+      "date": "2025-12-19",
+      "indication": "Fibrodysplasia ossificans progressiva (FOP)",
+      "stage": "Phase 2b",
+      "drug": "Fidrisertib - (FALKON)",
+      "trial_name": "FALKON",
+      "generic_name": "",
+      "brand_name": "Fidrisertib"
+    }
+  ],
+  "Zugocabtagene": [
+    {
+      "idx": 1690,
+      "ticker": "CRSP",
+      "date": "2025-12-22",
+      "indication": "Systemic lupus erythematosus (SLE)",
+      "stage": "Phase 1/2",
+      "drug": "Zugocabtagene geleucel (zugo-cel; formerly CTX112)",
+      "trial_name": "",
+      "generic_name": "zugo-cel; formerly CTX112",
+      "brand_name": "Zugocabtagene geleucel"
+    }
+  ],
+  "AGEN1571": [
+    {
+      "idx": 1692,
+      "ticker": "AGEN",
+      "date": "2025-12-23",
+      "indication": "Solid tumors",
+      "stage": "Phase 1b",
+      "drug": "AGEN1571 with botensilimab and balstilimab - (C-800-01)",
+      "trial_name": "C-800-01",
+      "generic_name": "",
+      "brand_name": "AGEN1571 with botensilimab and balstilimab"
+    }
+  ],
+  "BHV-7000": [
+    {
+      "idx": 1694,
+      "ticker": "BHVN",
+      "date": "2025-12-24",
+      "indication": "Major Depressive Disorder",
+      "stage": "Phase 2",
+      "drug": "BHV-7000",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "BHV-7000"
+    },
+    {
+      "idx": 1695,
+      "ticker": "BHVN",
+      "date": "2025-12-28",
+      "indication": "Major depressive disorder",
+      "stage": "Phase 2",
+      "drug": "BHV-7000",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "BHV-7000"
+    }
+  ],
+  "BMB-101": [
+    {
+      "idx": 1707,
+      "ticker": "DRUG",
+      "date": "2026-01-06",
+      "indication": "Absence Epilepsy & Dravet Syndrome",
+      "stage": "Phase 2",
+      "drug": "BMB-101 - (BREAKTHROUGH)",
+      "trial_name": "BREAKTHROUGH",
+      "generic_name": "",
+      "brand_name": "BMB-101"
+    }
+  ],
+  "Sovleplenib": [
+    {
+      "idx": 1708,
+      "ticker": "HCM",
+      "date": "2026-01-07",
+      "indication": "Warm antibody autoimmune hemolytic anemia (wAIHA)",
+      "stage": "Phase 2/3",
+      "drug": "Sovleplenib - (ESLIM-02)",
+      "trial_name": "ESLIM-02",
+      "generic_name": "",
+      "brand_name": "Sovleplenib"
+    }
+  ],
+  "NS002": [
+    {
+      "idx": 1724,
+      "ticker": "NSRX",
+      "date": "2026-01-20",
+      "indication": "Anaphylaxis",
+      "stage": "Phase 2",
+      "drug": "NS002",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "NS002"
+    }
+  ],
+  "CRDF-004": [
+    {
+      "idx": 1730,
+      "ticker": "CRDF",
+      "date": "2026-01-27",
+      "indication": "Metastatic colorectal cancer (mCRC)",
+      "stage": "Phase 2",
+      "drug": "CRDF-004",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "CRDF-004"
+    }
+  ],
+  "Revita": [
+    {
+      "idx": 1733,
+      "ticker": "GUTS",
+      "date": "2026-01-29",
+      "indication": "Obesity",
+      "stage": "Phase 3",
+      "drug": "Revita - (REMAIN-1)",
+      "trial_name": "REMAIN-1",
+      "generic_name": "",
+      "brand_name": "Revita"
+    }
+  ],
+  "MET-097i": [
+    {
+      "idx": 1737,
+      "ticker": "PFE",
+      "date": "2026-02-03",
+      "indication": "Obesity",
+      "stage": "Phase 2b",
+      "drug": "MET-097i - (VESPER-4)",
+      "trial_name": "VESPER-4",
+      "generic_name": "",
+      "brand_name": "MET-097i"
+    }
+  ],
+  "AVT80": [
+    {
+      "idx": 1739,
+      "ticker": "ALVO",
+      "date": "2026-02-05",
+      "indication": "Healthy volunteers",
+      "stage": "Phase 1",
+      "drug": "AVT80 (biosimilar to Entyvio) - (AVT80-GL-P01)",
+      "trial_name": "AVT80-GL-P01",
+      "generic_name": "biosimilar to Entyvio",
+      "brand_name": "AVT80"
+    }
+  ],
+  "Ameluz": [
+    {
+      "idx": 1742,
+      "ticker": "BFRI",
+      "date": "2026-02-09",
+      "indication": "Actinic keratosis on the extremities, neck and trunk",
+      "stage": "Phase 3",
+      "drug": "Ameluz and BF-RhodoLED XL",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "Ameluz and BF-RhodoLED XL"
+    }
+  ],
+  "EVO301": [
+    {
+      "idx": 1745,
+      "ticker": "EVMN",
+      "date": "2026-02-09",
+      "indication": "Atopic Dermatitis",
+      "stage": "Phase 2a",
+      "drug": "EVO301",
+      "trial_name": "",
+      "generic_name": "",
+      "brand_name": "EVO301"
+    }
+  ],
+  "TONMYA": [
+    {
+      "idx": 1746,
+      "ticker": "TONX",
+      "date": "2026-02-10",
+      "indication": "Fibromyalgia",
+      "stage": "Phase 3",
+      "drug": "TONMYA cyclobenzaprine (RESILIENT)",
+      "trial_name": "",
+      "generic_name": "RESILIENT",
+      "brand_name": "TONMYA cyclobenzaprine"
+    }
+  ],
+  "QTORIN": [
+    {
+      "idx": 1750,
+      "ticker": "PVLA",
+      "date": "2026-02-23",
+      "indication": "Microcystic lymphatic malformations",
+      "stage": "Phase 3",
+      "drug": "QTORIN rapamycin (SELVA)",
+      "trial_name": "",
+      "generic_name": "SELVA",
+      "brand_name": "QTORIN rapamycin"
+    }
+  ],
+  "Seralutinib": [
+    {
+      "idx": 1751,
+      "ticker": "GOSS",
+      "date": "2026-02-23",
+      "indication": "Pulmonary arterial hypertension",
+      "stage": "Phase 3",
+      "drug": "Seralutinib (PROSERA)",
+      "trial_name": "",
+      "generic_name": "PROSERA",
+      "brand_name": "Seralutinib"
+    }
+  ]
+}

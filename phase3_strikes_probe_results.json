@@ -1,0 +1,402 @@
+[
+  {
+    "bucket": "2020_2021",
+    "ticker": "GILD",
+    "pdufa": "2020-03-19",
+    "snapshot": "T-14",
+    "snap_date": "2020-02-28",
+    "http": 200,
+    "n_strikes": 449,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "GILD",
+    "pdufa": "2020-03-19",
+    "snapshot": "T-1",
+    "snap_date": "2020-03-18",
+    "http": 200,
+    "n_strikes": 432,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "BHC",
+    "pdufa": "2020-09-25",
+    "snapshot": "T-14",
+    "snap_date": "2020-09-07",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "BHC",
+    "pdufa": "2020-09-25",
+    "snapshot": "T-1",
+    "snap_date": "2020-09-24",
+    "http": 200,
+    "n_strikes": 323,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "MRK",
+    "pdufa": "2021-07-08",
+    "snapshot": "T-14",
+    "snap_date": "2021-06-18",
+    "http": 200,
+    "n_strikes": 475,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "MRK",
+    "pdufa": "2021-07-08",
+    "snapshot": "T-1",
+    "snap_date": "2021-07-07",
+    "http": 200,
+    "n_strikes": 405,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "SNY",
+    "pdufa": "2021-02-22",
+    "snapshot": "T-14",
+    "snap_date": "2021-02-02",
+    "http": 200,
+    "n_strikes": 90,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "SNY",
+    "pdufa": "2021-02-22",
+    "snapshot": "T-1",
+    "snap_date": "2021-02-19",
+    "http": 200,
+    "n_strikes": 106,
+    "ok": true
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "ZLAB",
+    "pdufa": "2020-12-16",
+    "snapshot": "T-14",
+    "snap_date": "2020-11-26",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2020_2021",
+    "ticker": "ZLAB",
+    "pdufa": "2020-12-16",
+    "snapshot": "T-1",
+    "snap_date": "2020-12-15",
+    "http": 200,
+    "n_strikes": 95,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "MRK",
+    "pdufa": "2023-06-01",
+    "snapshot": "T-14",
+    "snap_date": "2023-05-12",
+    "http": 200,
+    "n_strikes": 565,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "MRK",
+    "pdufa": "2023-06-01",
+    "snapshot": "T-1",
+    "snap_date": "2023-05-31",
+    "http": 200,
+    "n_strikes": 512,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "LLY",
+    "pdufa": "2023-09-22",
+    "snapshot": "T-14",
+    "snap_date": "2023-09-04",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "LLY",
+    "pdufa": "2023-09-22",
+    "snapshot": "T-1",
+    "snap_date": "2023-09-21",
+    "http": 200,
+    "n_strikes": 1027,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "BLCO",
+    "pdufa": "2023-06-29",
+    "snapshot": "T-14",
+    "snap_date": "2023-06-09",
+    "http": 200,
+    "n_strikes": 84,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "BLCO",
+    "pdufa": "2023-06-29",
+    "snapshot": "T-1",
+    "snap_date": "2023-06-28",
+    "http": 200,
+    "n_strikes": 84,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "TRAW",
+    "pdufa": "2022-09-12",
+    "snapshot": "T-14",
+    "snap_date": "2022-08-23",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "TRAW",
+    "pdufa": "2022-09-12",
+    "snapshot": "T-1",
+    "snap_date": "2022-09-09",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "AMRX",
+    "pdufa": "2022-11-02",
+    "snapshot": "T-14",
+    "snap_date": "2022-10-13",
+    "http": 200,
+    "n_strikes": 12,
+    "ok": true
+  },
+  {
+    "bucket": "2022_2023",
+    "ticker": "AMRX",
+    "pdufa": "2022-11-02",
+    "snapshot": "T-1",
+    "snap_date": "2022-11-01",
+    "http": 200,
+    "n_strikes": 12,
+    "ok": true
+  },
+  {
+    "bucket": "2024",
+    "ticker": "MRK",
+    "pdufa": "2024-06-26",
+    "snapshot": "T-14",
+    "snap_date": "2024-06-06",
+    "http": 200,
+    "n_strikes": 568,
+    "ok": true
+  },
+  {
+    "bucket": "2024",
+    "ticker": "MRK",
+    "pdufa": "2024-06-26",
+    "snapshot": "T-1",
+    "snap_date": "2024-06-25",
+    "http": 200,
+    "n_strikes": 510,
+    "ok": true
+  },
+  {
+    "bucket": "2024",
+    "ticker": "ZYME",
+    "pdufa": "2024-11-21",
+    "snapshot": "T-14",
+    "snap_date": "2024-11-01",
+    "http": 200,
+    "n_strikes": 40,
+    "ok": true
+  },
+  {
+    "bucket": "2024",
+    "ticker": "ZYME",
+    "pdufa": "2024-11-21",
+    "snapshot": "T-1",
+    "snap_date": "2024-11-20",
+    "http": 200,
+    "n_strikes": 64,
+    "ok": true
+  },
+  {
+    "bucket": "2024",
+    "ticker": "ZLDPF",
+    "pdufa": "2024-12-23",
+    "snapshot": "T-14",
+    "snap_date": "2024-12-03",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2024",
+    "ticker": "ZLDPF",
+    "pdufa": "2024-12-23",
+    "snapshot": "T-1",
+    "snap_date": "2024-12-20",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2024",
+    "ticker": "CMND",
+    "pdufa": "2024-02-23",
+    "snapshot": "T-14",
+    "snap_date": "2024-02-05",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2024",
+    "ticker": "CMND",
+    "pdufa": "2024-02-23",
+    "snapshot": "T-1",
+    "snap_date": "2024-02-22",
+    "http": 404,
+    "n_strikes": 0,
+    "ok": false
+  },
+  {
+    "bucket": "2024",
+    "ticker": "ABBV",
+    "pdufa": "2024-03-22",
+    "snapshot": "T-14",
+    "snap_date": "2024-03-04",
+    "http": 200,
+    "n_strikes": 542,
+    "ok": true
+  },
+  {
+    "bucket": "2024",
+    "ticker": "ABBV",
+    "pdufa": "2024-03-22",
+    "snapshot": "T-1",
+    "snap_date": "2024-03-21",
+    "http": 200,
+    "n_strikes": 584,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "BIIB",
+    "pdufa": "2025-01-26",
+    "snapshot": "T-14",
+    "snap_date": "2025-01-07",
+    "http": 200,
+    "n_strikes": 613,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "BIIB",
+    "pdufa": "2025-01-26",
+    "snapshot": "T-1",
+    "snap_date": "2025-01-24",
+    "http": 200,
+    "n_strikes": 660,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "AZN",
+    "pdufa": "2025-01-17",
+    "snapshot": "T-14",
+    "snap_date": "2024-12-30",
+    "http": 200,
+    "n_strikes": 391,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "AZN",
+    "pdufa": "2025-01-17",
+    "snapshot": "T-1",
+    "snap_date": "2025-01-16",
+    "http": 200,
+    "n_strikes": 393,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "ABBV",
+    "pdufa": "2025-05-14",
+    "snapshot": "T-14",
+    "snap_date": "2025-04-24",
+    "http": 200,
+    "n_strikes": 661,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "ABBV",
+    "pdufa": "2025-05-14",
+    "snapshot": "T-1",
+    "snap_date": "2025-05-13",
+    "http": 200,
+    "n_strikes": 571,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "NUVB",
+    "pdufa": "2025-06-11",
+    "snapshot": "T-14",
+    "snap_date": "2025-05-22",
+    "http": 200,
+    "n_strikes": 28,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "NUVB",
+    "pdufa": "2025-06-11",
+    "snapshot": "T-1",
+    "snap_date": "2025-06-10",
+    "http": 200,
+    "n_strikes": 28,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "NVAX",
+    "pdufa": "2025-08-27",
+    "snapshot": "T-14",
+    "snap_date": "2025-08-07",
+    "http": 200,
+    "n_strikes": 234,
+    "ok": true
+  },
+  {
+    "bucket": "2025_2026",
+    "ticker": "NVAX",
+    "pdufa": "2025-08-27",
+    "snapshot": "T-1",
+    "snap_date": "2025-08-26",
+    "http": 200,
+    "n_strikes": 247,
+    "ok": true
+  }
+]

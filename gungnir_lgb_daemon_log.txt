@@ -1,0 +1,143 @@
+2026-03-01 00:12:16,993 [INFO] ======================================================================
+2026-03-01 00:12:16,994 [INFO]   GUNGNIR HISTORICAL EVOLVE — LightGBM Phase Readout Daemon
+2026-03-01 00:12:16,995 [INFO]   Started: 2026-03-01T00:12:16.995458
+2026-03-01 00:12:16,996 [INFO]   Dataset: /sessions/elegant-practical-maxwell/mnt/Python/9realms/historical_readouts_2000.csv (2K events)
+2026-03-01 00:12:16,996 [INFO]   Optuna trials/round: 5
+2026-03-01 00:12:16,997 [INFO]   Kaizen engine: ENABLED
+2026-03-01 00:12:16,998 [INFO] ======================================================================
+2026-03-01 00:12:17,000 [INFO]   改善 Kaizen tracker (Gungnir) → /sessions/elegant-practical-maxwell/mnt/Python/9realms/kaizen_gungnir
+2026-03-01 00:12:17,159 [INFO]   Loaded 2000 readout events
+2026-03-01 00:12:17,160 [INFO]   Positive: 1559, Negative: 441
+2026-03-01 00:12:17,166 [INFO]   Fresh start — no Gungnir LGB champion yet
+2026-03-01 00:12:17,167 [INFO] 
+────────────────────────────────────────────────────────────
+2026-03-01 00:12:17,168 [INFO]   GUNGNIR ROUND 1 | 2026-03-01 00:12:17
+2026-03-01 00:12:17,169 [INFO]   改善 score=0.0, mutRate=0.300, temp=1.00, trials=10
+2026-03-01 00:12:17,169 [INFO] ────────────────────────────────────────────────────────────
+2026-03-01 00:12:17,170 [INFO]   Features: 23 base + 11 engineered = 34 total
+2026-03-01 00:12:22,026 [INFO]   Optuna best WF AUC: 0.997124 (10 trials)
+2026-03-01 00:12:22,075 [INFO]   Walk-forward: AUC=0.997124, Brier=0.103924, T4P=0.9764, Years=4
+2026-03-01 00:12:22,483 [INFO]   Top features: indication_positive_rate(599), catalyst_text_len(421), sentiment_composite(272), surrogate_endpoint(151), primary_endpoint_met(122)
+2026-03-01 00:12:22,676 [INFO] 🏆 GUNGNIR CHAMPION: WF AUC 0.997124 (Δ+0.997124 vs 0.000000)
+2026-03-01 00:12:23,073 [INFO]   Round 1 complete in 5.9s | Champion AUC: 0.997124
+2026-03-01 00:12:23,085 [INFO]   改善 Kaizen score: 60.0/100 | Streak: 0
+2026-03-01 00:12:23,087 [INFO] 
+────────────────────────────────────────────────────────────
+2026-03-01 00:12:23,087 [INFO]   GUNGNIR ROUND 2 | 2026-03-01 00:12:23
+2026-03-01 00:12:23,088 [INFO]   改善 score=60.0, mutRate=0.240, temp=0.90, trials=10
+2026-03-01 00:12:23,088 [INFO] ────────────────────────────────────────────────────────────
+2026-03-01 00:12:23,089 [INFO]   Features: 23 base + 11 engineered = 34 total
+2026-03-01 00:12:31,441 [INFO]   Optuna best WF AUC: 0.997515 (10 trials)
+2026-03-01 00:12:31,492 [INFO]   Walk-forward: AUC=0.997515, Brier=0.078287, T4P=0.9803, Years=4
+2026-03-01 00:12:31,921 [INFO]   Top features: indication_positive_rate(260), catalyst_text_len(224), sentiment_composite(148), log_text_len(95), indication_freq(86)
+2026-03-01 00:12:32,114 [INFO] 🏆 GUNGNIR CHAMPION: WF AUC 0.997515 (Δ+0.000391 vs 0.997124)
+2026-03-01 00:12:32,436 [INFO]   Round 2 complete in 9.3s | Champion AUC: 0.997515
+2026-03-01 00:12:32,449 [INFO]   改善 Kaizen score: 100/100 | Streak: 0
+2026-03-01 00:12:32,454 [INFO] 
+======================================================================
+2026-03-01 00:12:32,456 [INFO]   GUNGNIR DAEMON SESSION COMPLETE
+2026-03-01 00:12:32,456 [INFO]   Total rounds: 2
+2026-03-01 00:12:32,457 [INFO]   Total promotions: 2
+2026-03-01 00:12:32,458 [INFO]   Champion WF AUC: 0.997515
+2026-03-01 00:12:32,459 [INFO]   改善 Final Kaizen Score: 100/100
+2026-03-01 00:12:32,459 [INFO] ======================================================================
+2026-03-01 00:24:11,480 [INFO] ======================================================================
+2026-03-01 00:24:11,481 [INFO]   GUNGNIR HISTORICAL EVOLVE — LightGBM Phase Readout Daemon
+2026-03-01 00:24:11,482 [INFO]   Started: 2026-03-01T00:24:11.482945
+2026-03-01 00:24:11,483 [INFO]   Dataset: /sessions/elegant-practical-maxwell/mnt/Python/9realms/historical_readouts_2000.csv (2K events)
+2026-03-01 00:24:11,484 [INFO]   Optuna trials/round: 15
+2026-03-01 00:24:11,485 [INFO]   Kaizen engine: ENABLED
+2026-03-01 00:24:11,485 [INFO] ======================================================================
+2026-03-01 00:24:11,489 [INFO]   改善 Kaizen tracker (Gungnir) → /sessions/elegant-practical-maxwell/mnt/Python/9realms/kaizen_gungnir
+2026-03-01 00:24:17,523 [INFO]   Loaded 2000 readout events
+2026-03-01 00:24:17,525 [INFO]   Positive: 1559, Negative: 441
+2026-03-01 00:24:17,530 [INFO]   Fresh start — no Gungnir LGB champion yet
+2026-03-01 00:24:17,532 [INFO] 
+────────────────────────────────────────────────────────────
+2026-03-01 00:24:17,532 [INFO]   GUNGNIR ROUND 1 | 2026-03-01 00:24:17
+2026-03-01 00:24:17,533 [INFO]   改善 score=0.0, mutRate=0.154, temp=0.73, trials=15
+2026-03-01 00:24:17,534 [INFO] ────────────────────────────────────────────────────────────
+2026-03-01 00:24:17,534 [INFO]   Features: 38 base + 21 engineered = 59 total
+2026-03-01 00:24:25,309 [INFO]   Optuna best WF AUC: 0.997130 (15 trials)
+2026-03-01 00:24:25,379 [INFO]   Walk-forward: AUC=0.997130, Brier=0.028125, T4P=0.9655, Years=4
+2026-03-01 00:24:25,592 [INFO]   Top features: indication_positive_rate(95), catalyst_text_len(47), sentiment_composite(39), primary_endpoint_met(33), price_adj_sentiment(15)
+2026-03-01 00:24:25,682 [INFO]   🌙 Surge tiers (positives): T5:0, T4:25, T3:203, T2:551, T1:780
+2026-03-01 00:24:25,683 [INFO]   🚀 Tier4+5 moonshots: 25
+2026-03-01 00:24:25,751 [INFO]   Ensemble (4 models): in-sample AUC=0.999194
+2026-03-01 00:24:25,752 [INFO] 🏆 GUNGNIR CHAMPION: WF AUC 0.997130 (Δ+0.997130 vs 0.000000)
+2026-03-01 00:24:25,935 [INFO]   Round 1 complete in 8.4s | Champion AUC: 0.997130
+2026-03-01 00:24:25,950 [INFO]   改善 Kaizen score: 100/100 | Streak: 0
+2026-03-01 00:24:25,951 [INFO] 
+────────────────────────────────────────────────────────────
+2026-03-01 00:24:25,951 [INFO]   GUNGNIR ROUND 2 | 2026-03-01 00:24:25
+2026-03-01 00:24:25,952 [INFO]   改善 score=100, mutRate=0.150, temp=0.70, trials=15
+2026-03-01 00:24:25,953 [INFO] ────────────────────────────────────────────────────────────
+2026-03-01 00:24:25,954 [INFO]   Features: 38 base + 22 engineered = 60 total
+2026-03-01 00:24:39,376 [INFO]   Optuna best WF AUC: 0.997226 (15 trials)
+2026-03-01 00:24:39,437 [INFO]   Walk-forward: AUC=0.997226, Brier=0.138487, T4P=0.0000, Years=4
+2026-03-01 00:24:40,242 [INFO]   Top features: indication_positive_rate(765), catalyst_text_len(587), sentiment_composite(369), price_adj_sentiment(228), primary_endpoint_met(192)
+2026-03-01 00:24:40,610 [INFO]   🌙 Surge tiers (positives): T5:0, T4:25, T3:203, T2:551, T1:780
+2026-03-01 00:24:40,611 [INFO]   🚀 Tier4+5 moonshots: 25
+2026-03-01 00:24:40,777 [INFO]   Ensemble (5 models): in-sample AUC=0.999753
+2026-03-01 00:24:40,777 [INFO]   ❌ Not promoted: 0.997226 < champion 0.997130 + 0.0003
+2026-03-01 00:24:40,782 [INFO]   Round 2 complete in 14.8s | Champion AUC: 0.997130
+2026-03-01 00:24:40,798 [INFO]   改善 Kaizen score: 99.8/100 | Streak: 1
+2026-03-01 00:24:40,802 [INFO] 
+======================================================================
+2026-03-01 00:24:40,803 [INFO]   GUNGNIR DAEMON SESSION COMPLETE
+2026-03-01 00:24:40,804 [INFO]   Total rounds: 2
+2026-03-01 00:24:40,805 [INFO]   Total promotions: 1
+2026-03-01 00:24:40,806 [INFO]   Champion WF AUC: 0.997130
+2026-03-01 00:24:40,807 [INFO]   改善 Final Kaizen Score: 99.8/100
+2026-03-01 00:24:40,807 [INFO] ======================================================================
+2026-03-01 00:35:44,707 [INFO] ======================================================================
+2026-03-01 00:35:44,707 [INFO]   GUNGNIR HISTORICAL EVOLVE — LightGBM Phase Readout Daemon
+2026-03-01 00:35:44,708 [INFO]   Started: 2026-03-01T00:35:44.708706
+2026-03-01 00:35:44,709 [INFO]   Dataset: /sessions/elegant-practical-maxwell/mnt/Python/9realms/historical_readouts_2000.csv (2K events)
+2026-03-01 00:35:44,710 [INFO]   Optuna trials/round: 40
+2026-03-01 00:35:44,710 [INFO]   Kaizen engine: ENABLED
+2026-03-01 00:35:44,711 [INFO] ======================================================================
+2026-03-01 00:35:44,715 [INFO]   改善 Kaizen tracker (Gungnir) → /sessions/elegant-practical-maxwell/mnt/Python/9realms/kaizen_gungnir
+2026-03-01 00:35:50,855 [INFO]   Loaded 2000 readout events
+2026-03-01 00:35:50,857 [INFO]   Positive: 1559, Negative: 441
+2026-03-01 00:35:50,863 [INFO]   Resuming from round 3, champion AUC: 0.997130
+2026-03-01 00:35:50,865 [INFO] 
+────────────────────────────────────────────────────────────
+2026-03-01 00:35:50,865 [INFO]   GUNGNIR ROUND 3 | 2026-03-01 00:35:50
+2026-03-01 00:35:50,866 [INFO]   改善 score=0.0, mutRate=0.165, temp=0.73, trials=40
+2026-03-01 00:35:50,867 [INFO] ────────────────────────────────────────────────────────────
+2026-03-01 00:35:50,867 [INFO]   Features: 38 base + 22 engineered = 60 total
+2026-03-01 00:36:47,412 [INFO]   Optuna best WF AUC: 0.997122 (40 trials)
+2026-03-01 00:36:49,227 [INFO]   Walk-forward: AUC=0.997122, Brier=0.020158, T4P=0.9458, Years=4
+2026-03-01 00:36:54,518 [INFO]   Top features: indication_positive_rate(1112), catalyst_text_len(886), sentiment_composite(704), primary_endpoint_met(257), surrogate_endpoint(195)
+2026-03-01 00:36:54,952 [INFO]   🌙 Surge tiers (positives): T5:0, T4:25, T3:203, T2:551, T1:780
+2026-03-01 00:36:54,953 [INFO]   🚀 Tier4+5 moonshots: 25
+2026-03-01 00:36:55,265 [INFO]   Ensemble (6 models): in-sample AUC=0.990156
+2026-03-01 00:36:55,266 [INFO]   ❌ Not promoted: 0.997122 < champion 0.997130 + 0.0003
+2026-03-01 00:36:55,271 [INFO]   Round 3 complete in 64.4s | Champion AUC: 0.997130
+2026-03-01 00:36:55,291 [INFO]   改善 Kaizen score: 79.6/100 | Streak: 2
+2026-03-01 00:37:00,298 [INFO] 
+────────────────────────────────────────────────────────────
+2026-03-01 00:37:00,299 [INFO]   GUNGNIR ROUND 4 | 2026-03-01 00:37:00
+2026-03-01 00:37:00,300 [INFO]   改善 score=79.6, mutRate=0.178, temp=0.76, trials=40
+2026-03-01 00:37:00,300 [INFO] ────────────────────────────────────────────────────────────
+2026-03-01 00:37:00,301 [INFO]   Features: 38 base + 18 engineered = 56 total
+2026-03-01 00:37:19,317 [INFO]   Optuna best WF AUC: 0.997574 (40 trials)
+2026-03-01 00:37:19,401 [INFO]   Walk-forward: AUC=0.997574, Brier=0.064264, T4P=0.9869, Years=4
+2026-03-01 00:37:19,916 [INFO]   Top features: indication_positive_rate(287), catalyst_text_len(210), sentiment_composite(102), primary_endpoint_met(72), price_at_catalyst(65)
+2026-03-01 00:37:20,112 [INFO]   🌙 Surge tiers (positives): T5:0, T4:25, T3:203, T2:551, T1:780
+2026-03-01 00:37:20,113 [INFO]   🚀 Tier4+5 moonshots: 25
+2026-03-01 00:37:20,285 [INFO]   Ensemble (7 models): in-sample AUC=0.999879
+2026-03-01 00:37:20,286 [INFO] 🏆 GUNGNIR CHAMPION: WF AUC 0.997574 (Δ+0.000443 vs 0.997130)
+2026-03-01 00:37:20,659 [INFO]   Round 4 complete in 20.4s | Champion AUC: 0.997574
+2026-03-01 00:37:20,679 [INFO]   改善 Kaizen score: 85.0/100 | Streak: 0
+2026-03-01 00:37:22,862 [INFO] ⚡ Shutdown signal received — finishing current round...
+2026-03-01 00:37:25,683 [INFO] ⚡ Graceful shutdown.
+2026-03-01 00:37:25,690 [INFO] 
+======================================================================
+2026-03-01 00:37:25,691 [INFO]   GUNGNIR DAEMON SESSION COMPLETE
+2026-03-01 00:37:25,692 [INFO]   Total rounds: 4
+2026-03-01 00:37:25,692 [INFO]   Total promotions: 2
+2026-03-01 00:37:25,693 [INFO]   Champion WF AUC: 0.997574
+2026-03-01 00:37:25,693 [INFO]   改善 Final Kaizen Score: 85.0/100
+2026-03-01 00:37:25,694 [INFO] ======================================================================

@@ -234,6 +234,18 @@ jobs:
       - name: Rebuild instant search index (no model, no API)
         run: python build_search.py
 
+      # Competitive: the long tail is uncontested because no competitor has a per-event URL at all.
+      # These three make ours reachable, answerable and visibly fresher than a rival shipping
+      # "Synced 1w ago".
+      - name: "Crawl paths: link the ticker hubs from every catalyst list"
+        run: python add_ticker_crosslinks.py
+
+      - name: "Answers: FAQ + FAQPage schema on every ticker hub"
+        run: python build_ticker_faq.py
+
+      - name: "Freshness stamp (constant markup + build-info.json)"
+        run: python build_freshness_stamp.py
+
       - name: Normalise navigation (one nav, site-wide)
         run: python rebuild_nav.py
 

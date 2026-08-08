@@ -1,0 +1,803 @@
+{
+  "generated": "2026-06-03T04:28:27.359910+00:00",
+  "dataset": "catalysts_out\\catalysts_public.csv",
+  "rows": 490,
+  "tickers": 210,
+  "integrity_score": 0,
+  "publish_ready": false,
+  "blockers": 4,
+  "severity_counts": {
+    "HIGH": 4,
+    "MED": 74,
+    "LOW": 2,
+    "INFO": 37
+  },
+  "data_age_hours": 1.0,
+  "freshness_ok": true,
+  "corrections_this_run": [
+    {
+      "ticker": "UNCY",
+      "date": "2026-06-29",
+      "detail": "mcap corrected: FMP 21M -> SEC 27M sh (2026-05-12)"
+    },
+    {
+      "ticker": "VRDN",
+      "date": "2026-06-30",
+      "detail": "mcap corrected: FMP 90M -> SEC 103M sh (2026-05-01)"
+    },
+    {
+      "ticker": "CAPR",
+      "date": "2026-08-22",
+      "detail": "mcap corrected: FMP 46M -> SEC 58M sh (2026-05-11)"
+    },
+    {
+      "ticker": "MIRM",
+      "date": "2026-09-26",
+      "detail": "mcap corrected: FMP 50M -> SEC 61M sh (2026-05-01)"
+    },
+    {
+      "ticker": "INO",
+      "date": "2026-10-30",
+      "detail": "mcap corrected: FMP 54M -> SEC 82M sh (2026-05-12)"
+    },
+    {
+      "ticker": "MLYS",
+      "date": "2026-12-22",
+      "detail": "mcap corrected: FMP 66M -> SEC 82M sh (2026-04-27)"
+    },
+    {
+      "ticker": "NBP",
+      "date": "2026-H1",
+      "detail": "mcap corrected: FMP 115M -> SEC 265M sh (2025-12-31)"
+    },
+    {
+      "ticker": "AMLX",
+      "date": "2026-H1",
+      "detail": "mcap corrected: FMP 83M -> SEC 111M sh (2026-04-27)"
+    },
+    {
+      "ticker": "KYTX",
+      "date": "2026-H1",
+      "detail": "mcap corrected: FMP 44M -> SEC 61M sh (2026-05-01)"
+    },
+    {
+      "ticker": "VRDN",
+      "date": "2026-H2",
+      "detail": "mcap corrected: FMP 90M -> SEC 103M sh (2026-05-01)"
+    },
+    {
+      "ticker": "PHVS",
+      "date": "2026-H2",
+      "detail": "mcap corrected: FMP 69M -> SEC 65M sh (2025-12-31)"
+    },
+    {
+      "ticker": "MIRM",
+      "date": "2026-H2",
+      "detail": "mcap corrected: FMP 50M -> SEC 61M sh (2026-05-01)"
+    },
+    {
+      "ticker": "ZBIO",
+      "date": "2026-H2",
+      "detail": "mcap corrected: FMP 45M -> SEC 63M sh (2026-04-30)"
+    },
+    {
+      "ticker": "AURA",
+      "date": "2026-H2",
+      "detail": "mcap corrected: FMP 64M -> SEC 103M sh (2026-05-08)"
+    },
+    {
+      "ticker": "QTTB",
+      "date": "2026-H2",
+      "detail": "mcap corrected: FMP 13M -> SEC 17M sh (2026-05-01)"
+    },
+    {
+      "ticker": "NBP",
+      "date": "2026-Q1",
+      "detail": "mcap corrected: FMP 115M -> SEC 265M sh (2025-12-31)"
+    },
+    {
+      "ticker": "MLYS",
+      "date": "2026-Q1",
+      "detail": "mcap corrected: FMP 66M -> SEC 82M sh (2026-04-27)"
+    },
+    {
+      "ticker": "VRDN",
+      "date": "2026-Q1",
+      "detail": "mcap corrected: FMP 90M -> SEC 103M sh (2026-05-01)"
+    },
+    {
+      "ticker": "MIRM",
+      "date": "2026-Q2",
+      "detail": "mcap corrected: FMP 50M -> SEC 61M sh (2026-05-01)"
+    },
+    {
+      "ticker": "TENX",
+      "date": "2026-Q2",
+      "detail": "mcap corrected: FMP 17M -> SEC 27M sh (2026-05-08)"
+    },
+    {
+      "ticker": "TENX",
+      "date": "2026-Q3",
+      "detail": "mcap corrected: FMP 17M -> SEC 27M sh (2026-05-08)"
+    },
+    {
+      "ticker": "AMLX",
+      "date": "2026-Q3",
+      "detail": "mcap corrected: FMP 83M -> SEC 111M sh (2026-04-27)"
+    },
+    {
+      "ticker": "ZURA",
+      "date": "2026-Q3",
+      "detail": "mcap corrected: FMP 65M -> SEC 95M sh (2026-05-04)"
+    },
+    {
+      "ticker": "CLDX",
+      "date": "2026-Q4",
+      "detail": "mcap corrected: FMP 67M -> SEC 78M sh (2026-04-29)"
+    },
+    {
+      "ticker": "ZURA",
+      "date": "2026-Q4",
+      "detail": "mcap corrected: FMP 65M -> SEC 95M sh (2026-05-04)"
+    },
+    {
+      "ticker": "PRAX",
+      "date": "2026-Q4",
+      "detail": "mcap corrected: FMP 21M -> SEC 28M sh (2026-05-04)"
+    },
+    {
+      "ticker": "PRAX",
+      "date": "2027-01-29",
+      "detail": "mcap corrected: FMP 21M -> SEC 28M sh (2026-05-04)"
+    },
+    {
+      "ticker": "AQST",
+      "date": "2027-06-30",
+      "detail": "mcap corrected: FMP 99M -> SEC 125M sh (2026-05-11)"
+    },
+    {
+      "ticker": "VRDN",
+      "date": "2027-Q1",
+      "detail": "mcap corrected: FMP 90M -> SEC 103M sh (2026-05-01)"
+    },
+    {
+      "ticker": "VALN",
+      "date": "2028-03-31",
+      "detail": "mcap corrected: FMP 89M -> SEC 174M sh (2025-12-31)"
+    },
+    {
+      "ticker": "BHVN",
+      "date": "2030-12-31",
+      "detail": "mcap corrected: FMP 106M -> SEC 151M sh (2026-04-30)"
+    }
+  ],
+  "findings": [
+    {
+      "check": "outcome_on_record",
+      "severity": "HIGH",
+      "title": "Catalyst still listed despite a known FDA outcome",
+      "rows": [
+        {
+          "ticker": "ARVN",
+          "date": "2026-06-05",
+          "detail": "PDUFA still listed but Approval on record (2026-06-05) \u2014 resolve or remove"
+        },
+        {
+          "ticker": "ACHV",
+          "date": "2026-06-20",
+          "detail": "PDUFA still listed but CRL on record (2026-06-20) \u2014 resolve or remove"
+        },
+        {
+          "ticker": "VERA",
+          "date": "2026-07-07",
+          "detail": "PDUFA still listed but Approval on record (2026-07-07) \u2014 resolve or remove"
+        },
+        {
+          "ticker": "IRD",
+          "date": "2026-10-17",
+          "detail": "PDUFA still listed but Approval on record (2028-03-31) \u2014 resolve or remove"
+        }
+      ]
+    },
+    {
+      "check": "below_cash",
+      "severity": "INFO",
+      "title": "Trading below cash on hand \u2014 surfaced signal (real sub-cash vs stale cap)",
+      "rows": [
+        {
+          "ticker": "ARVN",
+          "date": "2026-06-05",
+          "detail": "cap $516M < cash $615M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "ARVN",
+          "date": "2026-06-05",
+          "detail": "cap $516M < cash $615M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "LGVN",
+          "date": "2026-06-30",
+          "detail": "cap $15M < cash $16M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "DWTX",
+          "date": "2026-07-01",
+          "detail": "cap $3M < cash $13M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "BIVI",
+          "date": "2026-08-01",
+          "detail": "cap $13M < cash $13M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "IVVD",
+          "date": "2026-08-01",
+          "detail": "cap $151M < cash $184M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "NCNA",
+          "date": "2026-08-01",
+          "detail": "cap $13M < cash $22M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "MSLE",
+          "date": "2026-08-30",
+          "detail": "cap $9M < cash $70M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "ARVN",
+          "date": "2026-09-01",
+          "detail": "cap $516M < cash $615M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "RNA",
+          "date": "2026-09-02",
+          "detail": "cap $210M < cash $268M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "IMMP",
+          "date": "2026-09-02",
+          "detail": "cap $61M < cash $99M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "BIVI",
+          "date": "2026-09-02",
+          "detail": "cap $13M < cash $13M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "NCEL",
+          "date": "2026-09-02",
+          "detail": "cap $1M < cash $3M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "GNPX",
+          "date": "2026-09-02",
+          "detail": "cap $1M < cash $18M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "KZIA",
+          "date": "2026-09-04",
+          "detail": "cap $19M < cash $69M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "RADX",
+          "date": "2026-09-24",
+          "detail": "cap $6M < cash $36M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "BFRIW",
+          "date": "2026-09-28",
+          "detail": "cap $0M < cash $6M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "GOSS",
+          "date": "2026-12-01",
+          "detail": "cap $47M < cash $99M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "PMN",
+          "date": "2026-12-01",
+          "detail": "cap $13M < cash $64M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "NXTC",
+          "date": "2026-12-01",
+          "detail": "cap $9M < cash $30M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "ARVN",
+          "date": "2026-12-04",
+          "detail": "cap $516M < cash $615M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "TCRX",
+          "date": "2026-12-30",
+          "detail": "cap $60M < cash $128M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "ARVN",
+          "date": "2026-12-30",
+          "detail": "cap $516M < cash $615M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "ARVN",
+          "date": "2026-12-31",
+          "detail": "cap $516M < cash $615M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "SABSW",
+          "date": "2026-H2",
+          "detail": "cap $0M < cash $107M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "INAB",
+          "date": "2027-01-01",
+          "detail": "cap $7M < cash $22M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "AZTR",
+          "date": "2027-01-15",
+          "detail": "cap $2M < cash $10M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "ALT",
+          "date": "2027-03-31",
+          "detail": "cap $256M < cash $332M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "MSLE",
+          "date": "2027-03-31",
+          "detail": "cap $9M < cash $70M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "NKTX",
+          "date": "2027-04-01",
+          "detail": "cap $208M < cash $230M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "AIM",
+          "date": "2027-04-30",
+          "detail": "cap $3M < cash $6M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "BOLT",
+          "date": "2027-05-01",
+          "detail": "cap $10M < cash $23M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "SNSE",
+          "date": "2027-06-01",
+          "detail": "cap $22M < cash $203M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "KYNB",
+          "date": "2027-07-31",
+          "detail": "cap $28M < cash $87M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "RADX",
+          "date": "2027-08-30",
+          "detail": "cap $6M < cash $36M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "KTTA",
+          "date": "2027-09-01",
+          "detail": "cap $5M < cash $50M \u2014 verify: genuine sub-cash valuation or stale share count"
+        },
+        {
+          "ticker": "SABS",
+          "date": "2027-11-01",
+          "detail": "cap $33M < cash $107M \u2014 verify: genuine sub-cash valuation or stale share count"
+        }
+      ]
+    },
+    {
+      "check": "date_conflict",
+      "severity": "MED",
+      "title": "Same drug + catalyst type carrying conflicting dates",
+      "rows": [
+        {
+          "ticker": "ABBV",
+          "date": "2026-08-01 / 2026-12-01",
+          "detail": "PhaseReadout for RGX-314: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ABCL",
+          "date": "2027-02-01 / 2027-04-01",
+          "detail": "PhaseReadout for LY3819253: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ABVX",
+          "date": "2026-09-01 / 2026-12-01",
+          "detail": "PhaseReadout for ABX464: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ACAD",
+          "date": "2026-12-31 / 2027-01-01 / 2027-08-01",
+          "detail": "PhaseReadout for ACP-204: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ACRS",
+          "date": "2026-08-01 / 2027-06-30",
+          "detail": "PhaseReadout for A-101: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "AGIO",
+          "date": "2026-06-30 / 2027-03-01",
+          "detail": "PhaseReadout for Mitapivat: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ALMS",
+          "date": "2026-07-01 / 2026-12-01 / 2026-Q1 / 2026-Q3",
+          "detail": "PhaseReadout for Open-Label Envudeucitinib: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "AMLX",
+          "date": "2026-H1 / 2026-Q3 / 2027-02-01",
+          "detail": "PhaseReadout for AMX0035: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ANNX",
+          "date": "2026-10-31 / 2026-12-31 / 2026-Q2",
+          "detail": "PhaseReadout for Tanruprubart: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "APGE",
+          "date": "2026-09-01 / 2026-11-01 / 2026-12-01",
+          "detail": "PhaseReadout for APG777: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ARVN",
+          "date": "2026-09-01 / 2026-12-04 / 2026-12-30 / 2026-12-31",
+          "detail": "PhaseReadout for ARV-471: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ASND",
+          "date": "2027-06-01 / 2027-08-01",
+          "detail": "PhaseReadout for TransCon CNP: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "AVIR",
+          "date": "2026-09-01 / 2026-12-01 / 2026-H2",
+          "detail": "PhaseReadout for Bemnifosbuvir-Ruzasvir: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "AXSM",
+          "date": "2026-07-01 / 2026-12-01",
+          "detail": "PhaseReadout for AXS-12: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CADL",
+          "date": "2026-08-01 / 2027-01-01",
+          "detail": "PhaseReadout for Aglatimagene besadenovec + valacyclovir: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CGEM",
+          "date": "2026-09-01 / 2026-11-01 / 2026-12-01 / 2027-01-01",
+          "detail": "PhaseReadout for CLN-081: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CGEN",
+          "date": "2027-03-01 / 2027-11-22",
+          "detail": "PhaseReadout for COM701: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CGON",
+          "date": "2026-H1 / 2027-03-31",
+          "detail": "PhaseReadout for Cretostimogene Grenadenorepvec: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CHRS",
+          "date": "2026-09-30 / 2027-09-01 / 2027-11-01",
+          "detail": "PhaseReadout for CHS-1420: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CLLS",
+          "date": "2026-06-30 / 2027-08-01",
+          "detail": "PhaseReadout for UCART22: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CLRB",
+          "date": "2026-06-22 / 2026-08-25",
+          "detail": "PhaseReadout for NOV-002: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CLYM",
+          "date": "2026-07-01 / 2027-04-01 / 2027-08-01 / 2027-09-01 / 2027-10-01",
+          "detail": "PhaseReadout for Budoprutug: 5 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "CRVS",
+          "date": "2027-06-01 / 2027-11-01",
+          "detail": "PhaseReadout for Soquelitinib: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "DFTX",
+          "date": "2026-11-01 / 2027-08-01 / 2027-09-01",
+          "detail": "PhaseReadout for DT120: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "DFTX",
+          "date": "2026-H1 / 2026-H2",
+          "detail": "PhaseReadout for Psilocybin assisted therapy: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "DSGN",
+          "date": "2026-09-01 / 2026-12-01",
+          "detail": "PhaseReadout for DT-168: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "FBRX",
+          "date": "2026-12-31 / 2027-02-28 / 2027-03-10",
+          "detail": "PhaseReadout for FB102: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "GPCR",
+          "date": "2026-08-01 / 2026-09-01",
+          "detail": "PhaseReadout for aleniglipron or placebo: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "HELP",
+          "date": "2026-Q1 / 2026-Q4",
+          "detail": "PhaseReadout for CYB003: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "HUMA",
+          "date": "2026-10-01 / 2027-09-01",
+          "detail": "PhaseReadout for Human Acellular Vessel: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "INBX",
+          "date": "2026-10-30 / 2027-06-01",
+          "detail": "PhaseReadout for INBRX-106: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "IOVA",
+          "date": "2026-07-01 / 2026-09-01 / 2026-10-01 / 2026-11-01 / 2027-01-01 / 2027-04-30 / 2027-05-01",
+          "detail": "PhaseReadout for Lifileucel plus Pembrolizumab: 7 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "IRON",
+          "date": "2026-09-01 / 2026-10-01 / 2026-Q4 / 2027-02-01 / 2027-06-01",
+          "detail": "PhaseReadout for DISC-1459: 5 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "JBIO",
+          "date": "2026-10-01 / 2027-05-01 / 2027-10-01",
+          "detail": "PhaseReadout for JADE101: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "KOD",
+          "date": "2027-02-01 / 2027-04-01",
+          "detail": "PhaseReadout for KSI-101: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "KRYS",
+          "date": "2026-12-01 / 2027-02-01 / 2027-07-01",
+          "detail": "PhaseReadout for KB803: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "KURA",
+          "date": "2026-08-01 / 2027-01-01 / 2027-07-01",
+          "detail": "PhaseReadout for Ziftomenib: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "KYMR",
+          "date": "2026-12-01 / 2027-06-01",
+          "detail": "PhaseReadout for KT-621: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "LTRN",
+          "date": "2026-07-28 / 2026-12-01",
+          "detail": "PhaseReadout for BNP7787: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "MANE",
+          "date": "2026-08-01 / 2026-12-01 / 2027-06-01",
+          "detail": "PhaseReadout for VDPHL01: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "MDGL",
+          "date": "2026-12-01 / 2027-03-01",
+          "detail": "PhaseReadout for Resmetirom: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "MLTX",
+          "date": "2026-09-28 / 2027-01-15 / 2027-02-04",
+          "detail": "PhaseReadout for Sonelokimab: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "MRK",
+          "date": "2027-02-26 / 2027-04-29",
+          "detail": "PhaseReadout for MK-6482: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "MSLE",
+          "date": "2026-08-30 / 2027-03-31",
+          "detail": "PhaseReadout for SAT-3247: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "NBP",
+          "date": "2026-H1 / 2026-Q1",
+          "detail": "PhaseReadout for TJ003234: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "NMRA",
+          "date": "2026-H1 / 2026-Q2 / 2027-06-01",
+          "detail": "PhaseReadout for NMRA-335140: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "NVCR",
+          "date": "2026-09-01 / 2027-02-17 / 2027-08-01 / 2027-10-01",
+          "detail": "PhaseReadout for Temozolomide: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "NVO",
+          "date": "2026-06-09 / 2026-10-01 / 2026-12-14 / 2027-01-14 / 2027-03-01 / 2027-07-02 / 2027-09-01 / 2027-11-07",
+          "detail": "PhaseReadout for NNC0487-0111: 8 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "OLMA",
+          "date": "2026-06-30 / 2027-05-30",
+          "detail": "PhaseReadout for Palazestrant: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ORKA",
+          "date": "2027-01-01 / 2027-06-01 / 2027-10-01",
+          "detail": "PhaseReadout for ORKA-001: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "PBYI",
+          "date": "2026-06-22 / 2026-12-01 / 2026-12-31 / 2027-04-30 / 2027-06-30",
+          "detail": "PhaseReadout for neratinib: 5 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "PCVX",
+          "date": "2026-H2 / 2027-01-01 / 2027-03-01",
+          "detail": "PhaseReadout for 31-valent pneumococcal conjugate vaccine: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "RGNX",
+          "date": "2026-08-01 / 2026-10-01 / 2026-12-01 / 2026-Q4",
+          "detail": "PhaseReadout for Ranibizumab: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "RYTM",
+          "date": "2026-10-31 / 2027-03-13 / 2027-10-30 / 2027-11-01",
+          "detail": "PhaseReadout for Setmelanotide: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "SION",
+          "date": "2026-07-01 / 2026-H2",
+          "detail": "PhaseReadout for SION-719: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "SLDB",
+          "date": "2026-10-15 / 2027-05-06 / 2027-06-01",
+          "detail": "PhaseReadout for SGT-003: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "SYRE",
+          "date": "2026-10-31 / 2026-11-18",
+          "detail": "PhaseReadout for SPY001: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "TARS",
+          "date": "2026-12-31 / 2027-10-01",
+          "detail": "PhaseReadout for TP-03: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "TENX",
+          "date": "2026-10-01 / 2026-Q2 / 2026-Q3",
+          "detail": "PhaseReadout for TNX-103: 3 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "TYRA",
+          "date": "2026-09-01 / 2026-11-01",
+          "detail": "PhaseReadout for Dabogratinib: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "VERA",
+          "date": "2026-09-01 / 2027-11-01",
+          "detail": "PhaseReadout for Atacicept: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "VSTM",
+          "date": "2026-08-31 / 2027-03-01 / 2027-04-01 / 2027-08-16",
+          "detail": "PhaseReadout for avutometinib: 4 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "XENE",
+          "date": "2026-08-01 / 2026-10-01 / 2027-01-01 / 2027-04-01 / 2027-05-01",
+          "detail": "PhaseReadout for Azetukalner: 5 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ZNTL",
+          "date": "2026-12-01 / 2026-H2",
+          "detail": "PhaseReadout for Investigator's choice of Chemotherapy: 2 different dates \u2014 true conflict, reconcile"
+        },
+        {
+          "ticker": "ZURA",
+          "date": "2026-Q3 / 2026-Q4",
+          "detail": "PhaseReadout for Tibulizumab: 2 different dates \u2014 true conflict, reconcile"
+        }
+      ]
+    },
+    {
+      "check": "dilution_inconsistent",
+      "severity": "MED",
+      "title": "Runway ends before catalyst yet no dilution flag",
+      "rows": [
+        {
+          "ticker": "KPTI",
+          "date": "2027-04-01",
+          "detail": "runway ends 2026-12-15 before catalyst 2027-04-01 but no dilution flag set \u2014 should be HIGH"
+        },
+        {
+          "ticker": "KPTI",
+          "date": "2027-06-01",
+          "detail": "runway ends 2026-12-15 before catalyst 2027-06-01 but no dilution flag set \u2014 should be HIGH"
+        },
+        {
+          "ticker": "SNSE",
+          "date": "2027-06-01",
+          "detail": "runway ends 2026-06-15 before catalyst 2027-06-01 but no dilution flag set \u2014 should be HIGH"
+        },
+        {
+          "ticker": "KPTI",
+          "date": "2027-07-01",
+          "detail": "runway ends 2026-12-15 before catalyst 2027-07-01 but no dilution flag set \u2014 should be HIGH"
+        },
+        {
+          "ticker": "VKTX",
+          "date": "2027-07-01",
+          "detail": "runway ends 2027-03-15 before catalyst 2027-07-01 but no dilution flag set \u2014 should be HIGH"
+        },
+        {
+          "ticker": "VSTM",
+          "date": "2027-08-16",
+          "detail": "runway ends 2027-08-13 before catalyst 2027-08-16 but no dilution flag set \u2014 should be HIGH"
+        },
+        {
+          "ticker": "RADX",
+          "date": "2027-08-30",
+          "detail": "runway ends 2027-07-05 before catalyst 2027-08-30 but no dilution flag set \u2014 should be HIGH"
+        }
+      ]
+    },
+    {
+      "check": "warrant_ticker",
+      "severity": "MED",
+      "title": "Warrant / non-common tickers flagged",
+      "rows": [
+        {
+          "ticker": "BFRIW",
+          "date": "2026-09-28",
+          "detail": "warrant?"
+        },
+        {
+          "ticker": "SABSW",
+          "date": "2026-H2",
+          "detail": "warrant?"
+        }
+      ]
+    },
+    {
+      "check": "beyond_horizon",
+      "severity": "LOW",
+      "title": "Catalyst dates beyond the coverage horizon",
+      "rows": [
+        {
+          "ticker": "URGN",
+          "date": "2030-09-15",
+          "detail": "1567d out \u2014 beyond 730d horizon, verify it's real"
+        },
+        {
+          "ticker": "BHVN",
+          "date": "2030-12-31",
+          "detail": "1674d out \u2014 beyond 730d horizon, verify it's real"
+        }
+      ]
+    }
+  ]
+}

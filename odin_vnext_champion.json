@@ -1,0 +1,205 @@
+{
+  "version": "vNEXT_1.0",
+  "description": "ODIN vNEXT - semantic fixes + walk-forward tuned",
+  "base_weights": {
+    "base_logit": 2.0,
+    "snda_base_penalty": -3.0,
+    "snda_pediatric_base_penalty": -0.41,
+    "prior_crl_penalty": -3.0,
+    "inexperienced_sponsor_penalty": -1.0,
+    "manufacturing_risk_penalty": -0.4,
+    "form_483_penalty": -1.5,
+    "ema_cmc_flag_penalty": -2.16,
+    "cmc_extension_penalty": -1.51,
+    "adcom_mid_penalty": -0.52,
+    "adcom_low_penalty": -0.3,
+    "s22_pediatric_pk_penalty": -1.83,
+    "btd_weight": 0.6,
+    "orphan_weight": 0.4,
+    "priority_review_weight": 2.5,
+    "fast_track_weight": 1.0,
+    "accelerated_approval_weight": 0.35,
+    "class1_resubmission_boost": 0.2,
+    "experienced_sponsor_boost": 1.1,
+    "adcom_high_boost": 3.2,
+    "ta_adjustment_weight": -0.06,
+    "ta_high_risk_penalty": -0.87,
+    "ta_mod_risk_penalty": -0.57,
+    "ta_low_risk_boost": 0.8,
+    "ta_very_high_boost": 1.14,
+    "s23_insider_weight": 0.3,
+    "s6_hiring_weight": 0.5,
+    "social_weight": 0.12,
+    "odin_weight": 0.85,
+    "hint_weight": 0.74,
+    "hint_crl_rate_penalty": -0.29,
+    "indication_pain_penalty": -0.1,
+    "indication_onc_boost": -0.3,
+    "novice_sponsor_high_risk_ta_penalty": -0.3,
+    "gene_therapy_penalty": -1.0,
+    "single_arm_study_penalty": -1.0,
+    "surrogate_endpoint_penalty": -0.5,
+    "prior_crl_count_penalty": -0.73,
+    "safety_severity_penalty": -0.15,
+    "ppm_penalty": -3.8,
+    "eu_approved_boost": 0.39,
+    "eu_approved_2026_penalty": -0.19,
+    "psychedelics_penalty": -0.0001,
+    "hoeg_era_constant": -0.1,
+    "accel_approval_2025plus_penalty": -1.44,
+    "experienced_sponsor_2026_reduction": -1.26,
+    "btd_oncology_boost": 2.11,
+    "double_crl_penalty": -2.0,
+    "ix_prior_crl_x_mfg_risk": -1.2,
+    "ix_prior_crl_x_form483": -0.8,
+    "ix_gene_therapy_x_mfg_risk": -0.6,
+    "ix_inexperienced_x_mfg_risk": -1.0,
+    "ix_single_arm_x_surrogate": -0.3,
+    "ix_btd_x_single_arm": 2.16,
+    "platt_a": -0.027,
+    "platt_b": 0.583
+  },
+  "tier_thresholds": [
+    0.85,
+    0.65,
+    0.4,
+    0.0
+  ],
+  "tier_actions": [
+    "LONG",
+    "CAUTIOUS_LONG",
+    "MONITOR",
+    "NO_TRADE"
+  ],
+  "avoid_signals": [
+    "ppm_flag",
+    "gene_therapy_cmc",
+    "ema_cmc_flag",
+    "hiring_void_nda",
+    "pediatric_no_pk",
+    "cmc_extension_active",
+    "insider_critical_sell"
+  ],
+  "calibration": "walk_forward_platt",
+  "metrics": {
+    "agg_wf_auc": 0.7302,
+    "agg_wf_brier": 0.1875,
+    "agg_raw_auc": 0.7488,
+    "n_events": 1871,
+    "test_years": "2020-2026"
+  },
+  "improvements": [
+    {
+      "param": "manufacturing_risk_penalty",
+      "old": -0.8,
+      "new": -0.4,
+      "delta_auc": 0.0012610004292199495,
+      "delta_brier": -0.0003814847604753646
+    },
+    {
+      "param": "single_arm_study_penalty",
+      "old": -0.2,
+      "new": -1.0,
+      "delta_auc": 0.003467084689641964,
+      "delta_brier": -0.000698615853170409
+    },
+    {
+      "param": "priority_review_weight",
+      "old": 2.0,
+      "new": 2.5,
+      "delta_auc": 0.006242352019066977,
+      "delta_brier": -0.0023509512785522546
+    },
+    {
+      "param": "class1_resubmission_boost",
+      "old": 0.5,
+      "new": 0.2,
+      "delta_auc": 0.004866715187190507,
+      "delta_brier": -0.002868019137145822
+    },
+    {
+      "param": "ta_low_risk_boost",
+      "old": 0.4,
+      "new": 0.8,
+      "delta_auc": 0.0047547447473867965,
+      "delta_brier": -0.0005358111159476098
+    },
+    {
+      "param": "indication_onc_boost",
+      "old": 0.2,
+      "new": -0.3,
+      "delta_auc": 0.03533267217454594,
+      "delta_brier": -0.011552725530518143
+    },
+    {
+      "param": "adcom_low_penalty",
+      "old": -0.7,
+      "new": -0.3,
+      "delta_auc": 2.5326647098533606e-05,
+      "delta_brier": -2.6035289970860465e-05
+    },
+    {
+      "param": "btd_weight",
+      "old": 0.15,
+      "new": 0.6,
+      "delta_auc": 0.001228342384277159,
+      "delta_brier": -0.0007706081343915316
+    },
+    {
+      "param": "orphan_weight",
+      "old": 0.1,
+      "new": 0.4,
+      "delta_auc": 0.0009344199797919339,
+      "delta_brier": -0.0005750297133741977
+    },
+    {
+      "param": "fast_track_weight",
+      "old": 0.8,
+      "new": 1.0,
+      "delta_auc": 0.004740081951698172,
+      "delta_brier": -0.0007269494690533562
+    },
+    {
+      "param": "gene_therapy_penalty",
+      "old": -2.0,
+      "new": -1.0,
+      "delta_auc": 0.002689956518145742,
+      "delta_brier": -0.0012422321716070162
+    },
+    {
+      "param": "inexperienced_sponsor_penalty",
+      "old": -0.5,
+      "new": -1.0,
+      "delta_auc": 0.014900066382475208,
+      "delta_brier": -0.0036275354908987256
+    },
+    {
+      "param": "double_crl_penalty",
+      "old": -1.5,
+      "new": -2.0,
+      "delta_auc": 0.0019474858637318349,
+      "delta_brier": -0.0009012818298650693
+    },
+    {
+      "param": "ix_prior_crl_x_mfg_risk",
+      "old": -0.5,
+      "new": -1.2,
+      "delta_auc": -0.00018661739967307245,
+      "delta_brier": -1.4973977728677257e-05
+    },
+    {
+      "param": "ix_inexperienced_x_mfg_risk",
+      "old": -2.5,
+      "new": -1.0,
+      "delta_auc": 0.0021294378284132387,
+      "delta_brier": -0.0011308321202494198
+    },
+    {
+      "param": "base_logit",
+      "old": 1.6878,
+      "new": 2.0,
+      "delta_auc": -5.398574776238618e-05,
+      "delta_brier": -0.00024532024755427595
+    }
+  ]
+}

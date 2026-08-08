@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDUFA Runup Heatmap Preview</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #030712; color: #e5e7eb; font-family: system-ui, -apple-system, sans-serif; }
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 32px; font-weight: 800; color: #f9fafb; margin-bottom: 8px; }
+.sub { color: #9ca3af; font-size: 15px; margin-bottom: 24px; }
+.badge { background: #10b981; color: #030712; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; display: inline-block; margin-bottom: 12px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 28px; }
+.stat { background: #0a0f1a; border: 1px solid #1f2937; border-radius: 8px; padding: 14px; text-align: center; }
+.stat-label { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.stat-value { font-size: 24px; font-weight: 800; color: #f9fafb; font-family: "JetBrains Mono", monospace; }
+.stat-sub { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+.tabs { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab { padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: #1f2937; color: #9ca3af; }
+.tab.active { background: #1d4ed8; color: #fff; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { padding: 10px 12px; text-align: center; color: #9ca3af; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #1f2937; background: #0a0f1a; }
+th:first-child { text-align: left; min-width: 140px; }
+td { padding: 8px 10px; text-align: center; border-bottom: 1px solid #1f2937; }
+td:first-child { text-align: left; color: #e5e7eb; font-weight: 600; font-size: 13px; }
+.cell-val { font-size: 15px; font-weight: 700; font-family: "JetBrains Mono", monospace; }
+.cell-sub { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+tr:nth-child(even) { background: #0a0f1a; }
+tr:nth-child(odd) { background: #030712; }
+.overflow { overflow-x: auto; border: 1px solid #1f2937; border-radius: 8px; margin-bottom: 20px; }
+.cta { background: linear-gradient(135deg, #1e3a5f 0%, #0a0f1a 100%); border: 2px solid #1d4ed8; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 20px; }
+.cta-title { font-size: 14px; color: #93c5fd; font-weight: 600; margin-bottom: 8px; }
+.cta-val { font-size: 28px; font-weight: 800; color: #fff; font-family: "JetBrains Mono", monospace; margin-bottom: 4px; }
+.cta-sub { font-size: 14px; color: #93c5fd; margin-bottom: 16px; }
+.cta-btn { display: inline-block; background: #2563eb; color: #fff; padding: 12px 32px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(37,99,235,0.4); }
+.money-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; max-width: 700px; margin: 0 auto 16px; }
+.money-cell { background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; text-align: center; }
+.money-cell-val { color: #10b981; font-weight: 700; font-size: 18px; font-family: "JetBrains Mono", monospace; }
+.money-cell-label { color: #d1d5db; font-size: 12px; margin-top: 2px; }
+.money-cell-sub { color: #6b7280; font-size: 11px; }
+.green { color: #10b981; }
+</style>
+</head>
+<body>
+<div class="container">
+<span class="badge">Updated Feb 2026</span>
+<h1>PDUFA Runup Heatmap</h1>
+<p class="sub">1,719 events analyzed (2020–2025) · ODIN Gungnir v24 (AUC 0.988)</p>
+
+<div class="stats">
+<div class="stat"><div class="stat-label">Total Events</div><div class="stat-value">1,719</div><div class="stat-sub">2020–2025</div></div>
+<div class="stat"><div class="stat-label">Best Segment</div><div class="stat-value green">+19.2%</div><div class="stat-sub">T1 Small T-60→T-7</div></div>
+<div class="stat"><div class="stat-label">Model AUC</div><div class="stat-value">0.988</div><div class="stat-sub">Gungnir v24</div></div>
+<div class="stat"><div class="stat-label">Avg Win Rate</div><div class="stat-value">54%</div><div class="stat-sub">Tier 1 overall</div></div>
+</div>
+
+<div class="tabs">
+<button class="tab active" onclick="showTab('tier')">By ODIN Tier</button>
+<button class="tab" onclick="showTab('mcap')">By Market Cap</button>
+<button class="tab" onclick="showTab('cross')">Tier × Cap 🔒</button>
+<button class="tab" onclick="showTab('ta')">By Disease Area 🔒</button>
+</div>
+<div id="tab-tier" class="tab-contentactive"><div class="overflow"><table><thead><tr><th>Segment</th><th>T-60→T-7</th><th>T-30→T-7</th><th>T-25→T-7</th><th>T-18→T-7</th><th>T-7→T-1</th></tr></thead><tbody><tr><td>TIER_1</td><td style="background:rgb(8,201,66)"><div class="cell-val" style="color:#fff">+3.9%</div><div class="cell-sub">57% win · n=614</div></td><td style="background:rgb(10,198,80)"><div class="cell-val" style="color:#fff">+3.0%</div><div class="cell-sub">57% win · n=614</div></td><td style="background:rgb(11,193,96)"><div class="cell-val" style="color:#fff">+2.0%</div><div class="cell-sub">55% win · n=614</div></td><td style="background:rgb(12,191,103)"><div class="cell-val" style="color:#fff">+1.6%</div><div class="cell-sub">55% win · n=614</div></td><td style="background:rgb(104,98,98)"><div class="cell-val" style="color:#fca5a5">-0.2%</div><div class="cell-sub">45% win · n=614</div></td></tr><tr><td>TIER_2</td><td style="background:rgb(10,196,86)"><div class="cell-val" style="color:#fff">+2.6%</div><div class="cell-sub">54% win · n=299</div></td><td style="background:rgb(13,189,112)"><div class="cell-val" style="color:#fff">+1.0%</div><div class="cell-sub">57% win · n=299</div></td><td style="background:rgb(13,190,107)"><div class="cell-val" style="color:#fff">+1.3%</div><div class="cell-sub">55% win · n=299</div></td><td style="background:rgb(12,193,98)"><div class="cell-val" style="color:#fff">+1.9%</div><div class="cell-sub">56% win · n=299</div></td><td style="background:rgb(15,185,125)"><div class="cell-val" style="color:#fff">+0.2%</div><div class="cell-sub">48% win · n=299</div></td></tr><tr><td>TIER_3</td><td style="background:rgb(4,210,33)"><div class="cell-val" style="color:#fff">+5.9%</div><div class="cell-sub">55% win · n=306</div></td><td style="background:rgb(8,202,65)"><div class="cell-val" style="color:#fff">+3.9%</div><div class="cell-sub">53% win · n=307</div></td><td style="background:rgb(9,199,74)"><div class="cell-val" style="color:#fff">+3.4%</div><div class="cell-sub">54% win · n=307</div></td><td style="background:rgb(12,192,102)"><div class="cell-val" style="color:#fff">+1.7%</div><div class="cell-sub">52% win · n=307</div></td><td style="background:rgb(14,189,113)"><div class="cell-val" style="color:#fff">+1.0%</div><div class="cell-sub">51% win · n=307</div></td></tr><tr><td>TIER_4</td><td style="background:rgb(14,187,118)"><div class="cell-val" style="color:#fff">+0.6%</div><div class="cell-sub">43% win · n=498</div></td><td style="background:rgb(13,190,109)"><div class="cell-val" style="color:#fff">+1.2%</div><div class="cell-sub">48% win · n=499</div></td><td style="background:rgb(13,191,105)"><div class="cell-val" style="color:#fff">+1.4%</div><div class="cell-sub">48% win · n=499</div></td><td style="background:rgb(12,193,99)"><div class="cell-val" style="color:#fff">+1.8%</div><div class="cell-sub">48% win · n=499</div></td><td style="background:rgb(13,191,105)"><div class="cell-val" style="color:#fff">+1.5%</div><div class="cell-sub">49% win · n=499</div></td></tr></tbody></table></div></div><div id="tab-mcap" class="tab-content"><div class="overflow"><table><thead><tr><th>Segment</th><th>T-60→T-7</th><th>T-30→T-7</th><th>T-25→T-7</th><th>T-18→T-7</th><th>T-7→T-1</th></tr></thead><tbody><tr><td>nano</td><td style="background:rgb(14,188,117)"><div class="cell-val" style="color:#fff">+0.7%</div><div class="cell-sub">38% win · n=290</div></td><td style="background:rgb(13,190,107)"><div class="cell-val" style="color:#fff">+1.3%</div><div class="cell-sub">43% win · n=290</div></td><td style="background:rgb(13,189,110)"><div class="cell-val" style="color:#fff">+1.1%</div><div class="cell-sub">44% win · n=290</div></td><td style="background:rgb(11,194,94)"><div class="cell-val" style="color:#fff">+2.2%</div><div class="cell-sub">44% win · n=290</div></td><td style="background:rgb(12,191,104)"><div class="cell-val" style="color:#fff">+1.5%</div><div class="cell-sub">46% win · n=290</div></td></tr><tr><td>micro</td><td style="background:rgb(8,202,64)"><div class="cell-val" style="color:#fff">+4.0%</div><div class="cell-sub">49% win · n=296</div></td><td style="background:rgb(8,201,66)"><div class="cell-val" style="color:#fff">+3.9%</div><div class="cell-sub">54% win · n=297</div></td><td style="background:rgb(9,198,77)"><div class="cell-val" style="color:#fff">+3.2%</div><div class="cell-sub">49% win · n=297</div></td><td style="background:rgb(8,200,70)"><div class="cell-val" style="color:#fff">+3.6%</div><div class="cell-sub">51% win · n=297</div></td><td style="background:rgb(13,190,108)"><div class="cell-val" style="color:#fff">+1.2%</div><div class="cell-sub">47% win · n=297</div></td></tr><tr><td>small</td><td style="background:rgb(3,212,26)"><div class="cell-val" style="color:#fff">+6.4%</div><div class="cell-sub">54% win · n=223</div></td><td style="background:rgb(7,203,61)"><div class="cell-val" style="color:#fff">+4.2%</div><div class="cell-sub">57% win · n=224</div></td><td style="background:rgb(6,204,55)"><div class="cell-val" style="color:#fff">+4.6%</div><div class="cell-sub">58% win · n=224</div></td><td style="background:rgb(11,194,92)"><div class="cell-val" style="color:#fff">+2.2%</div><div class="cell-sub">52% win · n=224</div></td><td style="background:rgb(14,187,118)"><div class="cell-val" style="color:#fff">+0.7%</div><div class="cell-sub">50% win · n=224</div></td></tr><tr><td>mid</td><td style="background:rgb(10,197,83)"><div class="cell-val" style="color:#fff">+2.9%</div><div class="cell-sub">55% win · n=223</div></td><td style="background:rgb(12,193,97)"><div class="cell-val" style="color:#fff">+2.0%</div><div class="cell-sub">46% win · n=223</div></td><td style="background:rgb(12,192,100)"><div class="cell-val" style="color:#fff">+1.8%</div><div class="cell-sub">50% win · n=223</div></td><td style="background:rgb(13,190,108)"><div class="cell-val" style="color:#fff">+1.3%</div><div class="cell-sub">57% win · n=223</div></td><td style="background:rgb(15,186,125)"><div class="cell-val" style="color:#fff">+0.2%</div><div class="cell-sub">53% win · n=223</div></td></tr><tr><td>large</td><td style="background:rgb(10,196,85)"><div class="cell-val" style="color:#fff">+2.7%</div><div class="cell-sub">57% win · n=685</div></td><td style="background:rgb(12,191,104)"><div class="cell-val" style="color:#fff">+1.5%</div><div class="cell-sub">59% win · n=685</div></td><td style="background:rgb(13,189,112)"><div class="cell-val" style="color:#fff">+1.0%</div><div class="cell-sub">58% win · n=685</div></td><td style="background:rgb(14,187,118)"><div class="cell-val" style="color:#fff">+0.7%</div><div class="cell-sub">56% win · n=685</div></td><td style="background:rgb(101,99,99)"><div class="cell-val" style="color:#fca5a5">-0.0%</div><div class="cell-sub">47% win · n=685</div></td></tr></tbody></table></div></div><div id="tab-cross" class="tab-content">
+<div class="cta">
+<div class="cta-title">🔥 TOP MONEY CELLS — Pro Members Only</div>
+<div class="cta-val">Tier 1 × Small Cap: +19.2% avg</div>
+<div class="cta-sub">68% win rate · 40 events · T-60 to T-7 window</div>
+<div class="money-grid">
+<div class="money-cell"><div class="money-cell-val">+11.3%</div><div class="money-cell-label">Tier 1 × Nano</div><div class="money-cell-sub">T-30→T-7 · 54% win</div></div>
+<div class="money-cell"><div class="money-cell-val">+13.2%</div><div class="money-cell-label">Tier 2 × Nano</div><div class="money-cell-sub">T-18→T-7 · 68% win</div></div>
+<div class="money-cell"><div class="money-cell-val">+9.7%</div><div class="money-cell-label">Tier 1 × Small</div><div class="money-cell-sub">T-30→T-7 · 60% win</div></div>
+<div class="money-cell"><div class="money-cell-val">+10.9%</div><div class="money-cell-label">Tier 2 × Nano</div><div class="money-cell-sub">T-25→T-7 · 47% win</div></div>
+</div>
+<a class="cta-btn" href="https://pdufa.bio/pricing">Unlock Full Tier × Cap Heatmap →</a>
+</div>
+</div><div id="tab-ta" class="tab-content"><div class="cta"><div class="cta-title">💊 THERAPEUTIC AREA RUNUP (T-25→T-7)</div><div class="money-grid"><div class="money-cell"><div class="money-cell-val" style="color:#10b981">+2.1%</div><div class="money-cell-label">Oncology</div><div class="money-cell-sub">52% win · n=809</div></div><div class="money-cell"><div class="money-cell-val" style="color:#10b981">+1.9%</div><div class="money-cell-label">Other</div><div class="money-cell-sub">55% win · n=298</div></div><div class="money-cell"><div class="money-cell-val" style="color:#10b981">+0.7%</div><div class="money-cell-label">Infectious Disease</div><div class="money-cell-sub">50% win · n=130</div></div></div><a class="cta-btn" href="https://pdufa.bio/pricing">Unlock All 10 Disease Areas →</a></div></div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+==========================================================================================
+  READOUT MINER  2026-08-02 18:48  |  411 tickers  |  PCD window 2026-04-04 .. 2027-08-09
+  keeping ONLY enrollment-complete trials (ACTIVE_NOT_RECRUITING, COMPLETED); recruiting/enrolling REJECTED
+==========================================================================================
+  (skipping CT.gov scan -- --source edgar)
+
+  EDGAR: 132 full-text queries over 180d across [8-K,6-K,10-Q,10-K,20-F,S-1,424B4,424B5] -> 1370 candidate filings; fetched 150, parsed a forward date from 40; 32 tickers with company-guided dates
+
+====================================================================================================
+  32 READOUT DATES -> readout_miner.csv   [BOTH sources 0 | EDGAR-guided 32 | CT.gov only 0]
+====================================================================================================
+  tkr   best date   src    conf    guided      prec     status                bucket                    
+  ------------------------------------------------------------------------------------------------
+  TENX  2026-08-31  EDGAR  medium  2026-08-31  month    -                     GUIDED (company statement)
+  ALZN  2026-08-31  EDGAR  medium  2026-08-31  month    -                     GUIDED (company statement)
+  MBRX  2026-09-30  EDGAR  medium  2026-09-30  month    -                     GUIDED (company statement)
+  IRON  2026-09-30  EDGAR  medium  2026-09-30  quarter  -                     GUIDED (company statement)
+  BSEM  2026-09-30  EDGAR  medium  2026-09-30  quarter  -                     GUIDED (company statement)
+  MSLE  2026-09-30  EDGAR  medium  2026-09-30  quarter  -                     GUIDED (company statement)
+  CBIO  2026-12-31  EDGAR  medium  2026-12-31  half     -                     GUIDED (company statement)
+  AEM   2026-12-31  EDGAR  medium  2026-12-31  half     -                     GUIDED (company statement)
+  QURE  2026-12-31  EDGAR  medium  2026-12-31  half     -                     GUIDED (company statement)
+  VOGX  2026-12-31  EDGAR  medium  2026-12-31  year     -                     GUIDED (company statement)
+  TTRX  2026-12-31  EDGAR  medium  2026-12-31  quarter  -                     GUIDED (company statement)
+  INCY  2026-12-31  EDGAR  medium  2026-12-31  half     -                     GUIDED (company statement)
+  HELP  2026-12-31  EDGAR  medium  2026-12-31  quarter  -                     GUIDED (company statement)
+  GUTS  2026-12-31  EDGAR  medium  2026-12-31  quarter  -                     GUIDED (company statement)
+  MANE  2026-12-31  EDGAR  medium  2026-12-31  half     -                     GUIDED (company statement)
+  SNDX  2026-12-31  EDGAR  medium  2026-12-31  quarter  -                     GUIDED (company statement)
+  EWTX  2026-12-31  EDGAR  medium  2026-12-31  quarter  -                     GUIDED (company statement)
+  MOLN  2026-12-31  EDGAR  medium  2026-12-31  year     -                     GUIDED (company statement)
+  CANF  2026-12-31  EDGAR  medium  2026-12-31  quarter  -                     GUIDED (company statement)
+  QNCX  2027-03-31  EDGAR  medium  2027-03-31  quarter  -                     GUIDED (company statement)
+  PMN   2027-03-31  EDGAR  medium  2027-03-31  quarter  -                     GUIDED (company statement)
+  OCGN  2027-03-31  EDGAR  medium  2027-03-31  quarter  -                     GUIDED (company statement)
+  SCTX  2027-06-30  EDGAR  medium  2027-06-30  half     -                     GUIDED (company statement)
+  LBRX  2027-06-30  EDGAR  medium  2027-06-30  half     -                     GUIDED (company statement)
+  TARS  2027-06-30  EDGAR  medium  2027-06-30  half     -                     GUIDED (company statement)
+  EVMN  2027-12-31  EDGAR  medium  2027-12-31  year     -                     GUIDED (company statement)
+  PCSA  2027-12-31  EDGAR  medium  2027-12-31  year     -                     GUIDED (company statement)
+  IONS  2027-12-31  EDGAR  medium  2027-12-31  half     -                     GUIDED (company statement)
+  VYNE  2027-12-31  EDGAR  medium  2027-12-31  half     -                     GUIDED (company statement)
+  MPLT  2027-12-31  EDGAR  medium  2027-12-31  half     -                     GUIDED (company statement)
+  KLRS  2027-12-31  EDGAR  medium  2027-12-31  quarter  -                     GUIDED (company statement)
+  VXRT  2027-12-31  EDGAR  medium  2027-12-31  year     -                     GUIDED (company statement)
+
+  filter tally: 
+  kept 32 readouts | rejected 0 enrolling, 0 dead/unknown, 0 out-of-window.
+  ~ = estimated PCD (slips). Data can print weeks after the lock. Verify vs IR. Not investment advice.

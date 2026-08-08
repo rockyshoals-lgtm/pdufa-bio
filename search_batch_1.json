@@ -1,0 +1,714 @@
+[
+  {
+    "idx": 84,
+    "ticker": "ALT",
+    "date": "2022-09-14",
+    "stage": "Phase 1b",
+    "terms": {
+      "trial": "IMPACT",
+      "drug": "Pemvidutide",
+      "indication": "Metabolic dysfunction-associated steatohepatitis"
+    },
+    "drug_raw": "Pemvidutide - (IMPACT)"
+  },
+  {
+    "idx": 126,
+    "ticker": "LLY",
+    "date": "2022-10-25",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "EMERALD-2",
+      "code": "MORF-057",
+      "drug": "MORF-057-202",
+      "indication": "Ulcerative Colitis"
+    },
+    "drug_raw": "MORF-057-202 - (EMERALD-2)"
+  },
+  {
+    "idx": 203,
+    "ticker": "BMY",
+    "date": "2022-12-12",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "CC-92480",
+      "drug": "Mezigdomide",
+      "indication": "Relapsed/Refractory Multiple Myeloma"
+    },
+    "drug_raw": "Mezigdomide (CC-92480) in combination with Dexamethasone - (CC-92480-MM-001)"
+  },
+  {
+    "idx": 222,
+    "ticker": "RFL",
+    "date": "2022-12-23",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "FILLMORE",
+      "code": "AMT-101",
+      "drug": "AMT-101",
+      "indication": "Pouchitis"
+    },
+    "drug_raw": "AMT-101 - (FILLMORE)"
+  },
+  {
+    "idx": 261,
+    "ticker": "NKTR",
+    "date": "2023-02-23",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "LY3471851 or REZPEG",
+      "drug": "Rezpegaldesleukin",
+      "indication": "Systemic lupus erythematosus"
+    },
+    "drug_raw": "Rezpegaldesleukin (LY3471851 or REZPEG)"
+  },
+  {
+    "idx": 272,
+    "ticker": "ACRS",
+    "date": "2023-03-06",
+    "stage": "Phase 2a",
+    "terms": {
+      "code": "ATI-450",
+      "drug": "Zunsemetinib",
+      "indication": "Hidradenitis suppurativa"
+    },
+    "drug_raw": "Zunsemetinib  (ATI-450-HS-201)"
+  },
+  {
+    "idx": 320,
+    "ticker": "LLY",
+    "date": "2023-04-25",
+    "stage": "Phase 2a",
+    "terms": {
+      "trial": "EMERALD-1",
+      "code": "MORF-057",
+      "drug": "MORF-057-201",
+      "indication": "Ulcerative colitis"
+    },
+    "drug_raw": "MORF-057-201 - (EMERALD-1)"
+  },
+  {
+    "idx": 385,
+    "ticker": "DRMA",
+    "date": "2023-06-08",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "DMT310",
+      "drug": "Xyngari",
+      "indication": "Moderate-to-severe acne"
+    },
+    "drug_raw": "Xyngari(TM) (DMT310) - (STAR-1)"
+  },
+  {
+    "idx": 451,
+    "ticker": "PHVS",
+    "date": "2023-07-21",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "RAPIDe-3",
+      "drug": "PHVS416",
+      "indication": "Hereditary angioedema"
+    },
+    "drug_raw": "PHVS416 - (RAPIDe-3)"
+  },
+  {
+    "idx": 521,
+    "ticker": "LLY",
+    "date": "2023-09-23",
+    "stage": "Phase 2a",
+    "terms": {
+      "trial": "EMERALD-1",
+      "code": "MORF-057",
+      "drug": "MORF-057-201",
+      "indication": "Ulcerative colitis"
+    },
+    "drug_raw": "MORF-057-201 - (EMERALD-1)"
+  },
+  {
+    "idx": 598,
+    "ticker": "AURA",
+    "date": "2023-11-06",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "AU-011",
+      "drug": "Belzupacap",
+      "indication": "Non-muscular invasive bladder cancer"
+    },
+    "drug_raw": "Belzupacap sarotalocan (AU-011)"
+  },
+  {
+    "idx": 663,
+    "ticker": "GLPG",
+    "date": "2023-12-09",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "ATALANTA-1",
+      "drug": "GLPG5101",
+      "indication": "B-cell malignancies, Chronic Lymphocytic Leukemia"
+    },
+    "drug_raw": "GLPG5101 - (ATALANTA-1)"
+  },
+  {
+    "idx": 682,
+    "ticker": "CRIS",
+    "date": "2023-12-12",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "TakeAim Lymphoma",
+      "code": "CA-4948",
+      "drug": "CA-4948",
+      "indication": "Relapsed or Refractory Non-Hodgkin Lymphoma"
+    },
+    "drug_raw": "CA-4948 - (TakeAim Lymphoma)"
+  },
+  {
+    "idx": 715,
+    "ticker": "ALC",
+    "date": "2024-01-09",
+    "stage": "Phase 3",
+    "terms": {
+      "code": "AR-15512",
+      "drug": "AR-15512",
+      "indication": "Dry eye disease"
+    },
+    "drug_raw": "AR-15512 (AVX-012) - (COMET-2)"
+  },
+  {
+    "idx": 751,
+    "ticker": "IXHL",
+    "date": "2024-02-28",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "Psilocybin treatment",
+      "code": "PSX-001",
+      "drug": "PSX-001",
+      "indication": "Generalized anxiety disorder"
+    },
+    "drug_raw": "PSX-001 (Psilocybin treatment) - (PsiGAD2)"
+  },
+  {
+    "idx": 813,
+    "ticker": "RARE",
+    "date": "2024-04-15",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "Aspire",
+      "code": "GTX-102",
+      "drug": "GTX-102",
+      "indication": "Angelman Syndrome"
+    },
+    "drug_raw": "GTX-102 - (Aspire)"
+  },
+  {
+    "idx": 846,
+    "ticker": "BCAB",
+    "date": "2024-05-15",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "BA3021",
+      "drug": "Ozuriftamab",
+      "indication": "Solid Tumors, Non-small cell lung cancer"
+    },
+    "drug_raw": "Ozuriftamab Vedotin (BA3021)"
+  },
+  {
+    "idx": 898,
+    "ticker": "AZN",
+    "date": "2024-06-04",
+    "stage": "Phase 1",
+    "terms": {
+      "drug": "C-CAR301",
+      "indication": "Solid tumors"
+    },
+    "drug_raw": "C-CAR301"
+  },
+  {
+    "idx": 945,
+    "ticker": "EDAP",
+    "date": "2024-07-19",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "TR-HIFU",
+      "drug": "Transrectal",
+      "indication": "Rectal Deep Infiltrating Endometriosis"
+    },
+    "drug_raw": "Transrectal High-intensity focused ultrasound (TR-HIFU)"
+  },
+  {
+    "idx": 971,
+    "ticker": "CATX",
+    "date": "2024-08-12",
+    "stage": "Phase 1",
+    "terms": {
+      "drug": "[212Pb]VMT-\u03b1-NET",
+      "indication": "Neuroendocrine tumors"
+    },
+    "drug_raw": "[212Pb]VMT-\u03b1-NET"
+  },
+  {
+    "idx": 995,
+    "ticker": "SMMT",
+    "date": "2024-09-08",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "SMT112",
+      "drug": "Ivonescimab",
+      "indication": "Epidermal growth factor receptor"
+    },
+    "drug_raw": "Ivonescimab (SMT112) with chemotherapy - (HARMONi-2)"
+  },
+  {
+    "idx": 1017,
+    "ticker": "GMAB",
+    "date": "2024-09-16",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "Rina-S",
+      "drug": "Rinatabart",
+      "indication": "Ovarian cancer, Endometrial Cancers, Solid tumors"
+    },
+    "drug_raw": "Rinatabart sesutecan (Rina-S) - (RAINFOL)"
+  },
+  {
+    "idx": 1036,
+    "ticker": "RHHBY",
+    "date": "2024-09-26",
+    "stage": "Phase 3",
+    "terms": {
+      "drug": "Gazyva/Gazyvaro",
+      "indication": "Lupus Nephritis"
+    },
+    "drug_raw": "Gazyva/Gazyvaro"
+  },
+  {
+    "idx": 1050,
+    "ticker": "VKTX",
+    "date": "2024-10-09",
+    "stage": "Phase 1b",
+    "terms": {
+      "drug": "VK0214",
+      "indication": "X-linked adrenoleukodystrophy"
+    },
+    "drug_raw": "VK0214"
+  },
+  {
+    "idx": 1099,
+    "ticker": "ANTX",
+    "date": "2024-11-14",
+    "stage": "Phase 2",
+    "terms": {
+      "code": "EBO-103",
+      "drug": "Epetraborole",
+      "indication": "Mycobacterium avium complex"
+    },
+    "drug_raw": "Epetraborole - (EBO-103)"
+  },
+  {
+    "idx": 1130,
+    "ticker": "NRSN",
+    "date": "2024-12-04",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "PARADIGM",
+      "drug": "PrimeC",
+      "indication": "Amyotrophic Lateral Sclerosis"
+    },
+    "drug_raw": "PrimeC - (PARADIGM)"
+  },
+  {
+    "idx": 1142,
+    "ticker": "ZLAB",
+    "date": "2024-12-09",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "OLYMPIA",
+      "drug": "Odronextamab",
+      "indication": "Non-Hodgkin Lymphoma"
+    },
+    "drug_raw": "Odronextamab - (OLYMPIA)"
+  },
+  {
+    "idx": 1163,
+    "ticker": "PRLD",
+    "date": "2024-12-11",
+    "stage": "Phase 1",
+    "terms": {
+      "drug": "PRT2527",
+      "indication": "Solid tumors and hematological malignancies"
+    },
+    "drug_raw": "PRT2527"
+  },
+  {
+    "idx": 1192,
+    "ticker": "NVO",
+    "date": "2024-12-20",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "CagriSema",
+      "drug": "AM833",
+      "indication": "Obesity"
+    },
+    "drug_raw": "AM833 (CagriSema) - (REDEFINE)"
+  },
+  {
+    "idx": 1237,
+    "ticker": "BMY",
+    "date": "2025-02-13",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "RELATIVITY-098",
+      "code": "IVITY-098",
+      "drug": "Opdualag",
+      "indication": "Stage III-IV melanoma"
+    },
+    "drug_raw": "Opdualag  (nivolumab and relatlimab-rmbw)- (RELATIVITY-098)"
+  },
+  {
+    "idx": 1245,
+    "ticker": "SLS",
+    "date": "2025-02-20",
+    "stage": "Phase 2a",
+    "terms": {
+      "drug": "SLS009",
+      "indication": "relapsed/refractory Diffuse Large B-Cell Lymphoma"
+    },
+    "drug_raw": "SLS009 (tambiciclib) with zanubrutinib"
+  },
+  {
+    "idx": 1276,
+    "ticker": "ROIV",
+    "date": "2025-03-19",
+    "stage": "Phase 3",
+    "terms": {
+      "drug": "Batoclimab",
+      "indication": "Myasthenia Gravis"
+    },
+    "drug_raw": "Batoclimab"
+  },
+  {
+    "idx": 1285,
+    "ticker": "CMMB",
+    "date": "2025-03-27",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "SPRING",
+      "code": "CM-101",
+      "drug": "Nebokitug",
+      "indication": "Primary Sclerosing Cholangitis"
+    },
+    "drug_raw": "Nebokitug (CM-101) - (SPRING)"
+  },
+  {
+    "idx": 1307,
+    "ticker": "LIPO",
+    "date": "2025-04-22",
+    "stage": "Phase 2a",
+    "terms": {
+      "code": "LP-310",
+      "drug": "LP-310",
+      "indication": "Oral Lichen Planus"
+    },
+    "drug_raw": "LP-310"
+  },
+  {
+    "idx": 1326,
+    "ticker": "VOR",
+    "date": "2025-05-08",
+    "stage": "Phase 1/2",
+    "terms": {
+      "drug": "VCAR33",
+      "indication": "Acute myeloid leukemia"
+    },
+    "drug_raw": "VCAR33"
+  },
+  {
+    "idx": 1340,
+    "ticker": "DAWN",
+    "date": "2025-05-15",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "Emi-Le",
+      "code": "XMT-1660",
+      "drug": "Emiltatug",
+      "indication": "Metastatic triple-negative breast cancer"
+    },
+    "drug_raw": "Emiltatug Ledadotin (XMT-1660) - (Emi-Le)"
+  },
+  {
+    "idx": 1365,
+    "ticker": "RHHBY",
+    "date": "2025-05-23",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "STARGLO",
+      "drug": "Columvi",
+      "indication": "2L+ Diffuse Large B-Cell Lymphoma"
+    },
+    "drug_raw": "Columvi + GemOx - (STARGLO)"
+  },
+  {
+    "idx": 1379,
+    "ticker": "GH",
+    "date": "2025-06-01",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "SERENA-6",
+      "drug": "Camizestrant",
+      "indication": "Hormone Receptor-Positive/Human Epidermal Growth Factor Rece"
+    },
+    "drug_raw": "Camizestrant - (SERENA-6)"
+  },
+  {
+    "idx": 1398,
+    "ticker": "ANAB",
+    "date": "2025-06-04",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "ANB030",
+      "drug": "Rosnilimab",
+      "indication": "Rheumatoid arthritis"
+    },
+    "drug_raw": "Rosnilimab (ANB030) - (RENOIR)"
+  },
+  {
+    "idx": 1414,
+    "ticker": "ALTO",
+    "date": "2025-06-15",
+    "stage": "Phase 2",
+    "terms": {
+      "code": "ALTO-203",
+      "drug": "ALTO-203",
+      "indication": "Major depressive disorder"
+    },
+    "drug_raw": "ALTO-203"
+  },
+  {
+    "idx": 1432,
+    "ticker": "ALT",
+    "date": "2025-06-26",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "IMPACT",
+      "drug": "Pemvidutide",
+      "indication": "Metabolic dysfunction-associated steatohepatitis"
+    },
+    "drug_raw": "Pemvidutide - (IMPACT)"
+  },
+  {
+    "idx": 1444,
+    "ticker": "VSTM",
+    "date": "2025-07-11",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "RAMP 201",
+      "drug": "Avutometinib",
+      "indication": "Low-Grade Serous Ovarian Cancer"
+    },
+    "drug_raw": "Avutometinib in Combination with Defactinib - (RAMP 201)"
+  },
+  {
+    "idx": 1467,
+    "ticker": "VYNE",
+    "date": "2025-07-30",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "VYN201",
+      "drug": "Repibresib",
+      "indication": "Vitiligo"
+    },
+    "drug_raw": "Repibresib Gel (VYN201)"
+  },
+  {
+    "idx": 1484,
+    "ticker": "MRKR",
+    "date": "2025-08-26",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "APOLLO",
+      "code": "MT-601",
+      "drug": "Neldaleucel",
+      "indication": "Lymphoma who have failed or are ineligible to receive anti-C"
+    },
+    "drug_raw": "Neldaleucel (MT-601) - (APOLLO)"
+  },
+  {
+    "idx": 1510,
+    "ticker": "REGN",
+    "date": "2025-09-17",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "OPTIMA",
+      "drug": "Garetosmab",
+      "indication": "Fibrodysplasia Ossificans Progressiva"
+    },
+    "drug_raw": "Garetosmab - (OPTIMA)"
+  },
+  {
+    "idx": 1536,
+    "ticker": "CGEM",
+    "date": "2025-10-13",
+    "stage": "Phase 2b",
+    "terms": {
+      "trial": "REZILIENT2",
+      "drug": "Zipalertinib",
+      "indication": "Locally advanced/metastatic NSCLC"
+    },
+    "drug_raw": "Zipalertinib - (REZILIENT2)"
+  },
+  {
+    "idx": 1560,
+    "ticker": "FLGT",
+    "date": "2025-10-20",
+    "stage": "Phase 2",
+    "terms": {
+      "code": "FID-007",
+      "drug": "FID-007",
+      "indication": "Various cancers"
+    },
+    "drug_raw": "FID-007"
+  },
+  {
+    "idx": 1567,
+    "ticker": "MRNA",
+    "date": "2025-10-22",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "CMVictory",
+      "code": "RNA-1647",
+      "drug": "mRNA-1647",
+      "indication": "CMV vaccine"
+    },
+    "drug_raw": "mRNA-1647 - (CMVictory)"
+  },
+  {
+    "idx": 1585,
+    "ticker": "ABVX",
+    "date": "2025-11-03",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "ABTECT",
+      "drug": "Obefazimod",
+      "indication": "Ulcerative colitis"
+    },
+    "drug_raw": "Obefazimod - (ABTECT)"
+  },
+  {
+    "idx": 1611,
+    "ticker": "ENGN",
+    "date": "2025-11-11",
+    "stage": "Phase 1/2",
+    "terms": {
+      "trial": "LEGEND",
+      "code": "EG-70",
+      "drug": "Detalimogene",
+      "indication": "BCG-unresponsive non-muscle invasive bladder cancer"
+    },
+    "drug_raw": "Detalimogene voraplasmid (EG-70) - (LEGEND)"
+  },
+  {
+    "idx": 1644,
+    "ticker": "COGT",
+    "date": "2025-12-06",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "SUMMIT",
+      "drug": "Bezuclastinib",
+      "indication": "Non-Advanced Systemic Mastocytosis"
+    },
+    "drug_raw": "Bezuclastinib - (SUMMIT)"
+  },
+  {
+    "idx": 1658,
+    "ticker": "AUTL",
+    "date": "2025-12-08",
+    "stage": "Phase 1",
+    "terms": {
+      "trial": "CATULUS",
+      "drug": "Obe-cel",
+      "indication": "pediatric relapsed or refractory"
+    },
+    "drug_raw": "Obe-cel - (CATULUS)"
+  },
+  {
+    "idx": 1666,
+    "ticker": "BHVN",
+    "date": "2025-12-11",
+    "stage": "Phase 1",
+    "terms": {
+      "code": "BHV-1510",
+      "drug": "BHV-1510",
+      "indication": "Advanced or metastatic epithelial cell tumors"
+    },
+    "drug_raw": "BHV-1510 with Libtayo"
+  },
+  {
+    "idx": 1682,
+    "ticker": "LLY",
+    "date": "2025-12-18",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "ATTAIN-MAINTAIN",
+      "drug": "Orforglipron",
+      "indication": "Obesity, weight maintenance"
+    },
+    "drug_raw": "Orforglipron - (ATTAIN-MAINTAIN)"
+  },
+  {
+    "idx": 1690,
+    "ticker": "CRSP",
+    "date": "2025-12-22",
+    "stage": "Phase 1/2",
+    "terms": {
+      "drug": "Zugocabtagene",
+      "indication": "Systemic lupus erythematosus"
+    },
+    "drug_raw": "Zugocabtagene geleucel (zugo-cel; formerly CTX112)"
+  },
+  {
+    "idx": 1707,
+    "ticker": "DRUG",
+    "date": "2026-01-06",
+    "stage": "Phase 2",
+    "terms": {
+      "trial": "BREAKTHROUGH",
+      "code": "BMB-101",
+      "drug": "BMB-101",
+      "indication": "Absence Epilepsy & Dravet Syndrome"
+    },
+    "drug_raw": "BMB-101 - (BREAKTHROUGH)"
+  },
+  {
+    "idx": 1730,
+    "ticker": "CRDF",
+    "date": "2026-01-27",
+    "stage": "Phase 2",
+    "terms": {
+      "code": "CRDF-004",
+      "drug": "CRDF-004",
+      "indication": "Metastatic colorectal cancer"
+    },
+    "drug_raw": "CRDF-004"
+  },
+  {
+    "idx": 1742,
+    "ticker": "BFRI",
+    "date": "2026-02-09",
+    "stage": "Phase 3",
+    "terms": {
+      "drug": "Ameluz",
+      "indication": "Actinic keratosis on the extremities, neck and trunk"
+    },
+    "drug_raw": "Ameluz and BF-RhodoLED XL"
+  },
+  {
+    "idx": 1751,
+    "ticker": "GOSS",
+    "date": "2026-02-23",
+    "stage": "Phase 3",
+    "terms": {
+      "trial": "PROSERA",
+      "drug": "Seralutinib",
+      "indication": "Pulmonary arterial hypertension"
+    },
+    "drug_raw": "Seralutinib (PROSERA)"
+  }
+]

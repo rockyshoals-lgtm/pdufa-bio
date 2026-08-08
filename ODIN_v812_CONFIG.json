@@ -1,0 +1,69 @@
+{
+  "version": "ODIN_v8.12_clean",
+  "created_utc": "2026-01-24T19:04:59.125307Z",
+  "mode": "IMPROVEMENT-ONLY",
+  "description": "Manufacturing-risk leakage remediation. Removes leaked manufacturing_risk (derived from post-decision CRL notes) and adds placeholders for T-1 compliant inspection/CMC proxies (s21/s22/s23).",
+  "t1_compliance": {
+    "rule": "data_cutoff_date = catalyst_date - 1",
+    "unknown_policy": "UNKNOWN stays UNKNOWN (no imputation/backfill)",
+    "notes": "manufacturing_risk removed because it was derived from post-decision CRL reason text."
+  },
+  "disabled_features": [
+    {
+      "name": "manufacturing_risk",
+      "reason": "T-1 leakage: populated from post-decision CRL notes (CMC keyword).",
+      "disabled_on_utc": "2026-01-24"
+    }
+  ],
+  "params": {
+    "p_base": 0.9393115639686584,
+    "p_threshold": 0.84023118019104,
+    "w_btd": 0.10022135078907013,
+    "w_orphan": 0.03742901608347893,
+    "w_priority": 0.12178225070238113,
+    "w_fast": 0.1091541051864624,
+    "w_accel": 0.09100804477930069,
+    "w_exp": 0.000368080276530236,
+    "w_stack": 0.021296488121151924,
+    "w_s21_oai": 0.0,
+    "w_s22_cmc": 0.0,
+    "w_s23_trend": 0.0,
+    "adj_pain": -0.057543180882930756,
+    "adj_cns": 0.046579740941524506,
+    "adj_onco": 0.19496889412403107,
+    "adj_inf": 0.25246769189834595,
+    "adj_cns_amp": -0.07908579707145691,
+    "w_adcom": 0.3570864796638489,
+    "w_des_trap": -0.0670957863330841
+  },
+  "signals": {
+    "s21_form_483_oai": {
+      "enabled": false,
+      "column": "s21_form_483_oai",
+      "source": "FDA Data Dashboard inspections_classifications",
+      "definition": "1.0 if any OAI inspection for sponsor/manufacturing facility within lookback window pre-PDUFA; else 0.0",
+      "t1_gating": "Only inspections with InspectionEndDate <= catalyst_date - 1 day"
+    },
+    "s22_cmc_citations": {
+      "enabled": false,
+      "column": "s22_cmc_citations",
+      "source": "FDA Data Dashboard inspections_citations",
+      "definition": "Scaled citation density/severity proxy computed from Form 483 citations pre-PDUFA (e.g., log1p(citation_count)/k)",
+      "t1_gating": "Only citations tied to inspections with InspectionEndDate <= catalyst_date - 1 day"
+    },
+    "s23_inspection_trend": {
+      "enabled": false,
+      "column": "s23_inspection_trend",
+      "source": "FDA Data Dashboard inspections_classifications",
+      "definition": "Scaled trend metric from pre-PDUFA inspection classifications (OAI/VAI/NAI severity over time).",
+      "t1_gating": "Only inspections with InspectionEndDate <= catalyst_date - 1 day"
+    }
+  },
+  "audit_trail": [
+    {
+      "date_utc": "2026-01-24",
+      "change": "Disabled/removed manufacturing_risk due to confirmed leakage.",
+      "evidence": "manufacturing_risk derived from post-decision CRL notes (CMC keywording)."
+    }
+  ]
+}

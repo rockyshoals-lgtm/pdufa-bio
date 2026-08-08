@@ -1,0 +1,176 @@
+{
+  "version": "v8.9-MCP-BRIER",
+  "timestamp": "2026-01-19T12:00:00Z",
+  "parent_version": "v8.8",
+  "target_brier": 0.12,
+  "current_brier": 0.1761,
+  "expected_brier": 0.114,
+  "mcp_patterns": {
+    "P1_cluster_sell": {
+      "enabled": true,
+      "weight": -0.015,
+      "data_source": "FinBrain:insider_transactions_by_ticker",
+      "rule": {
+        "trigger": "c_suite_count >= 2 AND same_day = True",
+        "base_penalty": -0.1,
+        "ceo_bonus_penalty": -0.05,
+        "same_day_3_plus_penalty": -0.05,
+        "large_value_penalty": -0.03,
+        "repeated_cluster_penalty": -0.05,
+        "max_penalty": -0.25,
+        "10b5_1_discount": 0.5
+      }
+    },
+    "P2_options_pcr": {
+      "enabled": true,
+      "weight": -0.012,
+      "data_source": "FinBrain:options_put_call",
+      "rule": {
+        "extreme_bearish": {
+          "pcr_threshold": 10.0,
+          "adjustment": -0.2
+        },
+        "very_bearish": {
+          "pcr_threshold": 5.0,
+          "adjustment": -0.15
+        },
+        "bearish": {
+          "pcr_threshold": 3.0,
+          "adjustment": -0.1
+        },
+        "mildly_bearish": {
+          "pcr_threshold": 2.0,
+          "adjustment": -0.05
+        },
+        "bullish": {
+          "pcr_threshold": 0.3,
+          "adjustment": 0.05
+        },
+        "strong_bullish": {
+          "pcr_threshold": 0.1,
+          "adjustment": 0.08
+        }
+      }
+    },
+    "P3_publication_volume": {
+      "enabled": true,
+      "weight": -0.01,
+      "data_source": "PubMed:search_articles",
+      "rule": {
+        "very_low": {
+          "threshold": 10,
+          "adjustment": -0.08
+        },
+        "low": {
+          "threshold": 20,
+          "adjustment": -0.05
+        },
+        "moderate": {
+          "threshold": 50,
+          "adjustment": 0
+        },
+        "high": {
+          "threshold": 100,
+          "adjustment": 0.04
+        },
+        "recent_velocity_bonus": {
+          "threshold": 20,
+          "adjustment": 0.02
+        }
+      }
+    },
+    "P4_trial_velocity": {
+      "enabled": true,
+      "weight": -0.008,
+      "data_source": "ClinicalTrials:search_trials",
+      "rule": {
+        "extreme_slow": {
+          "years_threshold": 10,
+          "adjustment": -0.1
+        },
+        "slow": {
+          "years_threshold": 7,
+          "adjustment": -0.06
+        },
+        "normal": {
+          "years_threshold": 4,
+          "adjustment": 0
+        }
+      }
+    },
+    "P5_analyst_insider_divergence": {
+      "enabled": true,
+      "weight": -0.008,
+      "data_source": "FinBrain:analyst_ratings + insider_transactions",
+      "rule": {
+        "triple_divergence": {
+          "condition": "analyst_bullish AND cluster_sell AND pcr_bearish",
+          "adjustment": -0.2
+        },
+        "double_divergence": {
+          "condition": "(analyst_bullish AND cluster_sell) OR (analyst_bullish AND pcr_bearish)",
+          "adjustment": -0.12
+        }
+      }
+    },
+    "P6_eu_not_us": {
+      "enabled": true,
+      "weight": -0.005,
+      "data_source": "ChEMBL:compound_search",
+      "rule": {
+        "condition": "has_EMA_approval AND NOT has_FDA_approval",
+        "adjustment": -0.05
+      }
+    },
+    "P7_selling_timing": {
+      "enabled": true,
+      "weight": -0.004,
+      "data_source": "FinBrain:insider_transactions_by_ticker",
+      "rule": {
+        "pre_catalyst_selling": {
+          "adjustment": -0.05
+        },
+        "post_catalyst_selling": {
+          "adjustment": 0.03
+        }
+      }
+    }
+  },
+  "validated_patches": {
+    "P001": {
+      "name": "Class 1 CMC Resubmission",
+      "rule": "IF resubmission_class = 1 AND crl_reason = 'CMC' THEN p_approval = 0.995",
+      "validated_by": "FBIO 2026-01-09",
+      "brier_impact": -0.002
+    },
+    "P002": {
+      "name": "Cluster Sell Override",
+      "rule": "IF cluster_sell_detected THEN max_penalty = -0.25",
+      "validated_by": "AQST 2025-10-15",
+      "brier_impact": -0.015
+    },
+    "P003": {
+      "name": "Designation Trap",
+      "rule": "IF designation_stack >= 4 AND experienced_sponsor = False THEN adjustment = -0.10",
+      "validated_by": "9 historical FP cases",
+      "brier_impact": -0.003
+    }
+  },
+  "scoring_caps": {
+    "max_negative_adjustment": -0.35,
+    "max_positive_adjustment": 0.15,
+    "confidence_threshold": 3
+  },
+  "backtest_results": {
+    "total_crls": 180,
+    "estimated_fps_before": 71,
+    "estimated_fps_after": 23,
+    "fp_reduction_pct": 67.6,
+    "brier_improvement": -0.062
+  },
+  "audit": {
+    "t_minus_1_compliance": true,
+    "data_cutoff_rule": "All features from data \u2265 1 day before catalyst",
+    "append_only_ledger": true
+  }
+}

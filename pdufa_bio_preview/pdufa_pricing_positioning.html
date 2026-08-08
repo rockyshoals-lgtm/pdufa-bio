@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pdufa.bio — Pricing & Positioning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0d14;--card:#0f131c;--card2:#121826;--fg:#e9ebef;--mut:#8a92a3;--amber:#f5a524;--blue:#54b0e0;--green:#38c98f;--red:#e0564f;--border:#232a38;--hair:#1a2030;--r:5px;--mono:'JetBrains Mono',monospace;--disp:'Fraunces',Georgia,serif;--sans:'Onest',system-ui,sans-serif}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.grain:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:980px;margin:0 auto;padding:34px 30px 40px;position:relative;z-index:2}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+h1{font-family:var(--disp);font-weight:700;font-size:34px;margin:8px 0 6px;letter-spacing:-.015em;line-height:1.05}
+.lede{color:#c4cad4;font-size:14px;max-width:760px;line-height:1.55}
+.lede b{color:var(--fg)}
+.thesis{margin:18px 0 22px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--r);padding:14px 18px;font-size:13px;line-height:1.6;color:#cfd4dd}
+.thesis b{color:var(--amber)}
+h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:26px 0 12px;border-bottom:1px solid var(--hair);padding-bottom:7px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+td{padding:10px;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.45}
+td.name{font-family:var(--mono);font-weight:600;color:var(--fg);white-space:nowrap}
+td.price{font-family:var(--mono);color:var(--blue);white-space:nowrap}
+.gap{color:#b9a06a;font-size:11.5px}
+tr.us td{background:rgba(245,165,36,.07)}
+tr.us td.name{color:var(--amber)}
+tr.us td.price{color:var(--amber);font-weight:700}
+tr.us .gap{color:var(--green)}
+.bundle{margin:14px 0 4px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.bundle .calc{flex:1;min-width:300px;font-size:13px;line-height:1.7;color:#cfd4dd}
+.bundle .calc .pc{font-family:var(--mono);color:var(--fg)}
+.bundle .calc s{color:var(--mut)}
+.bigmath{font-family:var(--mono);text-align:center;white-space:nowrap}
+.bigmath .a{font-size:30px;font-weight:700;color:var(--mut);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+.bigmath .arrow{color:var(--amber);font-size:22px;margin:0 12px}
+.bigmath .b{font-size:38px;font-weight:700;color:var(--amber)}
+.bigmath .lbl{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:6px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.tier{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 16px 18px;display:flex;flex-direction:column}
+.tier.feature{border-color:rgba(245,165,36,.5);box-shadow:0 0 0 1px rgba(245,165,36,.2)}
+.tier .tname{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.tier.feature .tname{color:var(--amber)}
+.tier .tprice{font-family:var(--disp);font-size:27px;font-weight:600;margin:6px 0 2px}
+.tier .tprice small{font-family:var(--mono);font-size:12px;color:var(--mut);font-weight:400}
+.tier .tsub{font-size:11px;color:var(--mut);margin-bottom:10px;min-height:14px}
+.tier ul{list-style:none;margin:0;padding:0;font-size:12px;line-height:1.5}
+.tier li{padding:4px 0 4px 16px;position:relative;color:#cdd2dc}
+.tier li:before{content:"›";position:absolute;left:0;color:var(--amber)}
+.tier .tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-top:2px}
+.tag.land{background:rgba(84,176,224,.16);color:var(--blue)}
+.tag.pop{background:rgba(245,165,36,.18);color:var(--amber)}
+.tag.found{background:rgba(56,201,143,.16);color:var(--green)}
+.win{display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;margin-top:6px;font-size:12.5px;line-height:1.5}
+.win div{padding-left:20px;position:relative;color:#cdd2dc}
+.win div:before{content:"◆";position:absolute;left:0;color:var(--amber);font-size:10px;top:2px}
+.win b{color:var(--fg)}
+.note{font-family:var(--mono);font-size:10px;color:var(--mut);margin-top:8px}
+.foot{margin-top:26px;border-top:1px solid var(--border);padding-top:14px;font-size:10.5px;line-height:1.55;color:var(--mut);font-family:var(--mono)}
+.foot b{color:#aeb4c0}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}.win{grid-template-columns:1fr}}
+</style></head><body class="grain"><div class="wrap">
+
+<div class="eyebrow">pdufa.bio · pricing &amp; positioning · confidential</div>
+<h1>Own the word “PDUFA.”</h1>
+<div class="lede">The only product that merges the <b>biotech-catalyst calendar</b> with <b>live options positioning</b> — every date traced to the primary filing it came from. <b>Facts, not advice.</b></div>
+
+<div class="thesis">Today a biotech trader buys a <b>calendar</b> from one vendor and <b>options flow</b> from another — both manually updated, both paywalled, neither showing where a date came from or whether it moved. <b>pdufa.bio is the merge:</b> the full catalyst calendar (PDUFA, readouts, submissions, AdComms) automated from SEC EDGAR + ClinicalTrials.gov, enriched with ORATS + Unusual Whales options data, every catalyst linked to its source document, and a “what-moved” change feed no competitor offers.</div>
+
+<h2>The competitive board · May 2026</h2>
+<table>
+<thead><tr><th>Product</th><th>Price</th><th>What it covers</th><th>The gap we exploit</th></tr></thead>
+<tbody>
+<tr><td class="name">BPIQ<br><span style="font-weight:400;color:var(--mut);font-size:10px">closest comp</span></td><td class="price">Free<br>$20 / $25 / $45<br><span style="color:var(--mut);font-size:10px">mo, billed annually</span></td><td>Catalyst + PDUFA calendar, options chain, short interest, hedge-fund data</td><td class="gap">Manually updated 2×/day · calendar paywalled · no provenance links · runs model portfolios (advice exposure)</td></tr>
+<tr><td class="name">BioPharma&shy;Catalyst</td><td class="price">Free + premium<br><span style="color:var(--mut);font-size:10px">price gated</span></td><td>FDA / PDUFA calendar, company screener &amp; database</td><td class="gap">Manual · calendar-only · no options or positioning layer</td></tr>
+<tr><td class="name">BiopharmaWatch<br>FDATracker</td><td class="price">Free + paid</td><td>PDUFA / AdComm calendars</td><td class="gap">Thin coverage · no options layer · little depth</td></tr>
+<tr><td class="name">Unusual Whales</td><td class="price">$48 / mo<br><span style="color:var(--mut);font-size:10px">~$448–528 / yr</span></td><td>Options flow, dark pool, congressional trades</td><td class="gap">No biotech-catalyst layer at all — pure options</td></tr>
+<tr class="us"><td class="name">pdufa.bio</td><td class="price">Free<br>$29 · $19 founder</td><td>Calendar + options/UOA + provenance + change-detection</td><td class="gap">— the only one that does all four, in one login</td></tr>
+</tbody></table>
+<div class="note">Competitor pricing from public pricing pages, May 2026; BPIQ tiers reflect annual billing during an active sale.</div>
+
+<h2>The bundle math</h2>
+<div class="bundle">
+<div class="calc">To get what pdufa.bio does today, a trader buys <b>two</b> products:<br>
+<span class="pc">BPIQ Elite &nbsp;$25/mo</span> &nbsp;+&nbsp; <span class="pc">Unusual Whales &nbsp;$48/mo</span><br>
+= <s>~$73/mo across two logins</s> — and still no provenance, no change feed.<br>
+<span style="color:var(--fg)">pdufa.bio delivers all of it in one product.</span></div>
+<div class="bigmath"><span class="a">$73</span><span class="arrow">→</span><span class="b">$29</span><span class="lbl">two subscriptions → one</span></div>
+</div>
+
+<h2>The tiers</h2>
+<div class="tiers">
+<div class="tier"><div class="tname">Free</div><div class="tprice">$0</div><div class="tsub">The land-grab</div>
+<ul><li>Every upcoming catalyst — PDUFA, readouts, submissions, AdComms</li><li>Full dates + source-filing links</li><li>More complete than competitors’ <i>paid</i> calendars</li></ul>
+<div style="margin-top:auto;padding-top:10px"><span class="tag land">own the category</span></div></div>
+
+<div class="tier feature"><div class="tname">Pro</div><div class="tprice">$29<small>/mo · $249/yr</small></div><div class="tsub">Everything</div>
+<ul><li>Implied expected move + IV rank</li><li>Options flow &amp; dark-pool positioning</li><li>UOA + “what-moved” change alerts</li><li>Cash runway &amp; fundamentals</li><li>Full history + push notifications</li></ul>
+<div style="margin-top:auto;padding-top:10px"><span class="tag pop">the product</span></div></div>
+
+<div class="tier"><div class="tname">Founding</div><div class="tprice">$19<small>/mo · locked</small></div><div class="tsub">First 1,000 members</div>
+<ul><li>Everything in Pro</li><li>Rate never rises — locked forever</li><li>Rewards the early believers</li></ul>
+<div style="margin-top:auto;padding-top:10px"><span class="tag found">cult-starter</span></div></div>
+</div>
+<div class="note">API / institutional access — by request.</div>
+
+<h2>Why we win</h2>
+<div class="win">
+<div><b>Most complete.</b> SEC EDGAR + ClinicalTrials.gov across the full universe; every catalyst type.</div>
+<div><b>Only one with provenance.</b> Every date links to the filing it came from — verifiable, not asserted.</div>
+<div><b>Only one that flags what moved.</b> PDUFA slips and readout delays, surfaced the moment they happen.</div>
+<div><b>Cheapest, and a bundle.</b> Two categories in one product, under the price of either competitor alone.</div>
+</div>
+
+<div class="foot"><b>Information only — not investment advice.</b> Data sourced from public filings (SEC EDGAR, ClinicalTrials.gov) and third-party market data (FMP, ORATS, Unusual Whales). <b>pdufa.bio is not affiliated with, endorsed by, or sponsored by the U.S. Food and Drug Administration or any U.S. government agency.</b> “PDUFA” refers to the Prescription Drug User Fee Act, a federal statute. Figures as of May 2026 and subject to change.</div>
+
+</div></body></html>

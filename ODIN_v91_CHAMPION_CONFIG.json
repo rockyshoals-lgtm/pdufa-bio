@@ -1,0 +1,63 @@
+{
+  "version": "9.1",
+  "improvement": "indication_difficulty_adjustments",
+  "optimization": {
+    "configs_tested": 500000,
+    "feasible_configs": 170510,
+    "feasibility_rate": 0.341
+  },
+  "performance": {
+    "brier_score": 0.08864,
+    "baseline_brier": 0.0996,
+    "improvement_pct": 11.0,
+    "tier1_approval_rate": 0.956,
+    "tier4_crl_rate": 0.857,
+    "tier4_count": 28,
+    "crl_recall_at_85": 0.767
+  },
+  "champion_params": {
+    "btd_weight": 0.0573,
+    "orphan_weight": 0.0377,
+    "priority_review_weight": 0.0845,
+    "fast_track_weight": 0.0291,
+    "accelerated_approval_weight": 0.0483,
+    "adcom_high_boost": 0.0812,
+    "adcom_mid_penalty": -0.0623,
+    "adcom_low_penalty": -0.1894,
+    "prior_crl_penalty": -0.0845,
+    "class1_resubmission_boost": 0.1567,
+    "class2_resubmission_penalty": -0.0512,
+    "experienced_sponsor_boost": 0.0534,
+    "inexperienced_sponsor_penalty": -0.0678,
+    "manufacturing_risk_penalty": -0.1234,
+    "form_483_penalty": -0.0712,
+    "ta_adjustment_weight": 0.829,
+    "tier1_threshold": 0.858,
+    "tier2_threshold": 0.734,
+    "tier3_threshold": 0.578
+  },
+  "therapeutic_area_adjustments": {
+    "Pain Management": -0.286,
+    "Hematology": -0.224,
+    "Nephrology": -0.177,
+    "Ophthalmology": -0.131,
+    "CNS/Neurology": -0.098,
+    "Cardiovascular": -0.081,
+    "Metabolic/Endocrine": -0.067,
+    "Rare Disease": -0.043,
+    "Other": -0.019,
+    "Immunology": 0.016,
+    "Dermatology": 0.028,
+    "Oncology": 0.061,
+    "GI/Hepatology": 0.067,
+    "Respiratory": 0.09,
+    "Infectious Disease": 0.103,
+    "Vaccines": 0.133,
+    "Women's Health": 0.133
+  },
+  "notes": {
+    "key_finding": "Optimal TA adjustment weight is 83% of raw historical rates",
+    "tier4_discovery": "TIER_4 emerged as high-precision CRL detector (85.7% CRL rate)",
+    "crl_recall_boost": "CRL recall improved from 66.7% to 76.7% at 85% threshold"
+  }
+}

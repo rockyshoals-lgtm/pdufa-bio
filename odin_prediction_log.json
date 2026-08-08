@@ -1,0 +1,2067 @@
+{
+  "generated": "2025-12-24T03:06:23.574081",
+  "total_catalysts": 206,
+  "accuracy": 0.9902912621359223,
+  "predictions": [
+    {
+      "ticker": "SNDX",
+      "drug": "Revuforj (revumenib)",
+      "year": 2025,
+      "indication": "Oncology",
+      "poa": 0.6157010582010582,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 52.0
+    },
+    {
+      "ticker": "KURA",
+      "drug": "Komzifti (ziftomenib)",
+      "year": 2025,
+      "indication": "Oncology",
+      "poa": 0.6437433862433861,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 48.57142857142858
+    },
+    {
+      "ticker": "CYTK",
+      "drug": "Myqorzo (aficamten)",
+      "year": 2025,
+      "indication": "Cardiovascular",
+      "poa": 0.5858333333333333,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 28.888888888888896
+    },
+    {
+      "ticker": "MIST",
+      "drug": "CARDAMYST (etripamil)",
+      "year": 2025,
+      "indication": "Cardiovascular",
+      "poa": 0.5939814814814814,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 81.25
+    },
+    {
+      "ticker": "CAPR",
+      "drug": "Deramiocel",
+      "year": 2025,
+      "indication": "Rare Disease",
+      "poa": 0.598584656084656,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 58.33333333333333
+    },
+    {
+      "ticker": "ABEO",
+      "drug": "ZEVASKYN (Pz-cel)",
+      "year": 2025,
+      "indication": "Rare Disease",
+      "poa": 0.607579365079365,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 112.5
+    },
+    {
+      "ticker": "SGMO",
+      "drug": "Casgevy (exagamglogene)",
+      "year": 2025,
+      "indication": "Gene Therapy",
+      "poa": 0.9,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 46.66666666666666
+    },
+    {
+      "ticker": "REPL",
+      "drug": "RP1 (vusolimogene)",
+      "year": 2025,
+      "indication": "Oncology",
+      "poa": 0.4549074074074074,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -75.83333333333333
+    },
+    {
+      "ticker": "RARE",
+      "drug": "UX111 (gene therapy)",
+      "year": 2025,
+      "indication": "Gene Therapy",
+      "poa": 0.49437830687830686,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -37.77777777777778
+    },
+    {
+      "ticker": "MDGL",
+      "drug": "Rezdiffra (resmetirom)",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.636984126984127,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 55.00000000000001
+    },
+    {
+      "ticker": "IOVA",
+      "drug": "Amtagvi (lifileucel)",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5897751322751322,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 75.0
+    },
+    {
+      "ticker": "BBIO",
+      "drug": "Attruby (acoramidis)",
+      "year": 2024,
+      "indication": "Cardiovascular",
+      "poa": 0.6210185185185185,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 40.625
+    },
+    {
+      "ticker": "ALNY",
+      "drug": "Amvuttra (vutrisiran)",
+      "year": 2024,
+      "indication": "Rare Disease",
+      "poa": 0.6739814814814814,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 8.333333333333325
+    },
+    {
+      "ticker": "IONS",
+      "drug": "Donidalorsen (olezarsen)",
+      "year": 2024,
+      "indication": "Rare Disease",
+      "poa": 0.6287433862433862,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 25.0
+    },
+    {
+      "ticker": "ADAP",
+      "drug": "Tecelra",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5313095238095238,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 175.0
+    },
+    {
+      "ticker": "SPRY",
+      "drug": "neffy (epinephrine)",
+      "year": 2024,
+      "indication": "Immunology",
+      "poa": 0.5988888888888888,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "MRUS",
+      "drug": "Bizengri (zenocutuzumab)",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 30.909090909090907
+    },
+    {
+      "ticker": "APLT",
+      "drug": "Govorestat",
+      "year": 2024,
+      "indication": "Rare Disease",
+      "poa": 0.46788359788359785,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -86.66666666666667
+    },
+    {
+      "ticker": "AUTL",
+      "drug": "Obe-cel",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.47316137566137567,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -60.0
+    },
+    {
+      "ticker": "LXRX",
+      "drug": "Zynquista (sotagliflozin)",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.4472883597883598,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -55.00000000000001
+    },
+    {
+      "ticker": "REGN",
+      "drug": "Linvoseltamab",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5239550264550263,
+      "actual": "CRL",
+      "correct": false,
+      "price_move_actual": -6.666666666666665
+    },
+    {
+      "ticker": "BLUE",
+      "drug": "Lyfgenia",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.5178703703703703,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 70.0
+    },
+    {
+      "ticker": "VRTX",
+      "drug": "Casgevy",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.9,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 10.526315789473696
+    },
+    {
+      "ticker": "BMRN",
+      "drug": "Roctavian (valoctocogene)",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.9,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 11.764705882352944
+    },
+    {
+      "ticker": "VRCA",
+      "drug": "YCANTH",
+      "year": 2023,
+      "indication": "Dermatology",
+      "poa": 0.5514814814814815,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 150.0
+    },
+    {
+      "ticker": "TVTX",
+      "drug": "Filspari (sparsentan)",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.6239814814814815,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "KRYS",
+      "drug": "Vyjuvek",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.5964417989417989,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 42.10526315789473
+    },
+    {
+      "ticker": "NRXP",
+      "drug": "Zyesami",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3258994708994709,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -70.0
+    },
+    {
+      "ticker": "AXSM",
+      "drug": "Auvelity (dextromethorphan)",
+      "year": 2022,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5568650793650792,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 43.99999999999999
+    },
+    {
+      "ticker": "TGTX",
+      "drug": "Briumvi (ublituximab)",
+      "year": 2022,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5542195767195767,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 55.55555555555556
+    },
+    {
+      "ticker": "AKBA",
+      "drug": "Vadadustat",
+      "year": 2022,
+      "indication": "Other",
+      "poa": 0.4269179894179894,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -73.33333333333334
+    },
+    {
+      "ticker": "SRPT",
+      "drug": "Elevidys (delandistrogene)",
+      "year": 2022,
+      "indication": "Gene Therapy",
+      "poa": 0.543531746031746,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 28.57142857142858
+    },
+    {
+      "ticker": "BIIB",
+      "drug": "Aduhelm (aducanumab)",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.4757010582010582,
+      "actual": "Approved",
+      "correct": false,
+      "price_move_actual": 41.071428571428584
+    },
+    {
+      "ticker": "SGEN",
+      "drug": "Padcev (enfortumab)",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.6318386243386243,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 13.793103448275868
+    },
+    {
+      "ticker": "ABBV",
+      "drug": "Rinvoq (upadacitinib)",
+      "year": 2021,
+      "indication": "Immunology",
+      "poa": 0.6308994708994708,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.481481481481488
+    },
+    {
+      "ticker": "ORPH",
+      "drug": "Arimoclomol",
+      "year": 2021,
+      "indication": "Rare Disease",
+      "poa": 0.45756613756613757,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -62.5
+    },
+    {
+      "ticker": "SAVA",
+      "drug": "Simufilam",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.35764550264550266,
+      "actual": "Withdrawn",
+      "correct": true,
+      "price_move_actual": -62.5
+    },
+    {
+      "ticker": "MRNA",
+      "drug": "Spikevax (COVID vaccine)",
+      "year": 2020,
+      "indication": "Infectious Disease",
+      "poa": 0.659537037037037,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 10.000000000000009
+    },
+    {
+      "ticker": "BNTX",
+      "drug": "Comirnaty (COVID vaccine)",
+      "year": 2020,
+      "indication": "Infectious Disease",
+      "poa": 0.6547751322751323,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 36.8421052631579
+    },
+    {
+      "ticker": "INCY",
+      "drug": "Monjuvi (tafasitamab)",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.569404761904762,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 10.526315789473696
+    },
+    {
+      "ticker": "IMMU",
+      "drug": "Trodelvy (sacituzumab)",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.6093518518518518,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 60.00000000000001
+    },
+    {
+      "ticker": "SGEN",
+      "drug": "Tukysa (tucatinib)",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.6117328042328043,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 15.999999999999993
+    },
+    {
+      "ticker": "ZLAB",
+      "drug": "Zejula (niraparib)",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.5889814814814814,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 22.222222222222232
+    },
+    {
+      "ticker": "EXEL",
+      "drug": "Cabometyx (cabozantinib)",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.5937433862433862,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 19.999999999999996
+    },
+    {
+      "ticker": "PCYC",
+      "drug": "Imbruvica (ibrutinib)",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.6318386243386243,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 10.526315789473696
+    },
+    {
+      "ticker": "BGNE",
+      "drug": "Tevimbra",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 7.14285714285714
+    },
+    {
+      "ticker": "CKPT",
+      "drug": "Cosibelimab",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 75.0
+    },
+    {
+      "ticker": "GILD",
+      "drug": "Livdelzi",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.25
+    },
+    {
+      "ticker": "PTCT",
+      "drug": "Upstaza",
+      "year": 2024,
+      "indication": "Gene Therapy",
+      "poa": 0.5474999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 35.71428571428572
+    },
+    {
+      "ticker": "ALPMY",
+      "drug": "IZERVAY",
+      "year": 2024,
+      "indication": "Ophthalmology",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 27.27272727272727
+    },
+    {
+      "ticker": "LGND",
+      "drug": "Berdazimer",
+      "year": 2024,
+      "indication": "Dermatology",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 18.055555555555557
+    },
+    {
+      "ticker": "NERV",
+      "drug": "Roluperidone",
+      "year": 2024,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.39150793650793647,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -68.0
+    },
+    {
+      "ticker": "VNDA",
+      "drug": "Tradipitant",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.42400793650793644,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -43.39622641509434
+    },
+    {
+      "ticker": "ZVRA",
+      "drug": "Arimoclomol",
+      "year": 2024,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "IPSC",
+      "drug": "Cell therapy",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.4215079365079365,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -46.666666666666664
+    },
+    {
+      "ticker": "AKRO",
+      "drug": "Efruxifermin",
+      "year": 2023,
+      "indication": "Metabolic",
+      "poa": 0.5599999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 44.44444444444444
+    },
+    {
+      "ticker": "ARWR",
+      "drug": "ARO-AAT",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 31.25
+    },
+    {
+      "ticker": "BEAM",
+      "drug": "BEAM-101",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 25.0
+    },
+    {
+      "ticker": "BPMC",
+      "drug": "Precision medicine",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 30.909090909090907
+    },
+    {
+      "ticker": "CRSP",
+      "drug": "CTX001",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.5474999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 45.45454545454546
+    },
+    {
+      "ticker": "DNLI",
+      "drug": "DNL310",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 38.888888888888886
+    },
+    {
+      "ticker": "EDIT",
+      "drug": "EDIT-101",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.5474999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "FATE",
+      "drug": "FT516",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.4340079365079365,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -52.0
+    },
+    {
+      "ticker": "HZNP",
+      "drug": "Tepezza sNDA",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 13.636363636363647
+    },
+    {
+      "ticker": "IMMU",
+      "drug": "Trodelvy sNDA",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 28.888888888888896
+    },
+    {
+      "ticker": "ADVM",
+      "drug": "ADVM-022",
+      "year": 2022,
+      "indication": "Ophthalmology",
+      "poa": 0.4246031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -66.66666666666667
+    },
+    {
+      "ticker": "ALEC",
+      "drug": "Pz-cel",
+      "year": 2022,
+      "indication": "Rare Disease",
+      "poa": 0.45710317460317457,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -62.5
+    },
+    {
+      "ticker": "ALLO",
+      "drug": "ALLO-501A",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.5432142857142856,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 28.000000000000004
+    },
+    {
+      "ticker": "ANAB",
+      "drug": "ANB019",
+      "year": 2022,
+      "indication": "Dermatology",
+      "poa": 0.5457142857142856,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 28.57142857142858
+    },
+    {
+      "ticker": "ARCT",
+      "drug": "ARCT-021",
+      "year": 2022,
+      "indication": "Infectious Disease",
+      "poa": 0.4371031746031746,
+      "actual": "Negative",
+      "correct": true,
+      "price_move_actual": -51.11111111111111
+    },
+    {
+      "ticker": "ARNA",
+      "drug": "Etrasimod",
+      "year": 2022,
+      "indication": "Immunology",
+      "poa": 0.5457142857142856,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 21.42857142857142
+    },
+    {
+      "ticker": "AUPH",
+      "drug": "Lupkynis",
+      "year": 2022,
+      "indication": "Immunology",
+      "poa": 0.5457142857142856,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 38.888888888888886
+    },
+    {
+      "ticker": "AVDL",
+      "drug": "Lumryz",
+      "year": 2022,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5132142857142856,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "BCYC",
+      "drug": "BT8009",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.5432142857142856,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "BEAM",
+      "drug": "BEAM-102",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.5432142857142856,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 26.66666666666666
+    },
+    {
+      "ticker": "ACAD",
+      "drug": "Nuplazid sNDA",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5327910052910052,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 15.555555555555545
+    },
+    {
+      "ticker": "ADPT",
+      "drug": "liso-cel",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.5627910052910052,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 37.142857142857146
+    },
+    {
+      "ticker": "AGIO",
+      "drug": "Tibsovo sNDA",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.5627910052910052,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 30.952380952380953
+    },
+    {
+      "ticker": "ALDX",
+      "drug": "Reproxalap",
+      "year": 2021,
+      "indication": "Ophthalmology",
+      "poa": 0.43650793650793646,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -50.0
+    },
+    {
+      "ticker": "ALKS",
+      "drug": "Lybalvi",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5327910052910052,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 27.27272727272727
+    },
+    {
+      "ticker": "AMGN",
+      "drug": "Lumakras",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.5627910052910052,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 8.51063829787233
+    },
+    {
+      "ticker": "AMRN",
+      "drug": "Vascepa sNDA",
+      "year": 2021,
+      "indication": "Cardiovascular",
+      "poa": 0.5577910052910052,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 39.99999999999999
+    },
+    {
+      "ticker": "ARVN",
+      "drug": "Bavdegalutamide",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.5627910052910052,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 11.764705882352944
+    },
+    {
+      "ticker": "ASND",
+      "drug": "TransCon PTH",
+      "year": 2021,
+      "indication": "Rare Disease",
+      "poa": 0.5977910052910053,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 16.666666666666675
+    },
+    {
+      "ticker": "AVIR",
+      "drug": "Ataluren",
+      "year": 2021,
+      "indication": "Rare Disease",
+      "poa": 0.4690079365079365,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -58.33333333333333
+    },
+    {
+      "ticker": "ACAD",
+      "drug": "Nuplazid",
+      "year": 2020,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5179761904761904,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 30.952380952380953
+    },
+    {
+      "ticker": "ADMA",
+      "drug": "Asceniv",
+      "year": 2020,
+      "indication": "Immunology",
+      "poa": 0.5504761904761903,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 66.66666666666667
+    },
+    {
+      "ticker": "AKCA",
+      "drug": "Waylivra",
+      "year": 2020,
+      "indication": "Rare Disease",
+      "poa": 0.5829761904761904,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "ALBO",
+      "drug": "Epcoritamab",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.5479761904761904,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 39.99999999999999
+    },
+    {
+      "ticker": "ALEC",
+      "drug": "Pz-cel Phase 3",
+      "year": 2020,
+      "indication": "Rare Disease",
+      "poa": 0.5829761904761904,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 46.66666666666666
+    },
+    {
+      "ticker": "ALXN",
+      "drug": "Ultomiris sNDA",
+      "year": 2020,
+      "indication": "Rare Disease",
+      "poa": 0.5829761904761904,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 17.391304347826097
+    },
+    {
+      "ticker": "AMGN",
+      "drug": "Otezla sNDA",
+      "year": 2020,
+      "indication": "Dermatology",
+      "poa": 0.5504761904761903,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.666666666666665
+    },
+    {
+      "ticker": "APLS",
+      "drug": "Syfovre",
+      "year": 2020,
+      "indication": "Ophthalmology",
+      "poa": 0.5504761904761903,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "ARVN",
+      "drug": "ARV-110",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.5479761904761904,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 28.888888888888896
+    },
+    {
+      "ticker": "ATNM",
+      "drug": "Actimab",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.5479761904761904,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 75.0
+    },
+    {
+      "ticker": "ABBV",
+      "drug": "Skyrizi",
+      "year": 2019,
+      "indication": "Dermatology",
+      "poa": 0.5777248677248676,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 8.974358974358964
+    },
+    {
+      "ticker": "ACAD",
+      "drug": "Pimavanserin",
+      "year": 2019,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.4040079365079365,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -37.142857142857146
+    },
+    {
+      "ticker": "ADVM",
+      "drug": "ADVM-022 Ph1",
+      "year": 2019,
+      "indication": "Ophthalmology",
+      "poa": 0.5777248677248676,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 87.5
+    },
+    {
+      "ticker": "AGIO",
+      "drug": "Tibsovo",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.5752248677248677,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 36.8421052631579
+    },
+    {
+      "ticker": "AKBA",
+      "drug": "Roxadustat",
+      "year": 2019,
+      "indication": "Other",
+      "poa": 0.43650793650793646,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -55.55555555555556
+    },
+    {
+      "ticker": "ALKS",
+      "drug": "Aristada",
+      "year": 2019,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5452248677248677,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 28.000000000000004
+    },
+    {
+      "ticker": "ALNY",
+      "drug": "Givlaari",
+      "year": 2019,
+      "indication": "Rare Disease",
+      "poa": 0.6102248677248677,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 19.047619047619047
+    },
+    {
+      "ticker": "AMGN",
+      "drug": "Evenity",
+      "year": 2019,
+      "indication": "Other",
+      "poa": 0.5777248677248676,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 7.692307692307687
+    },
+    {
+      "ticker": "ANAB",
+      "drug": "Jemperli",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.5752248677248677,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 38.095238095238095
+    },
+    {
+      "ticker": "ARNA",
+      "drug": "Belviq",
+      "year": 2019,
+      "indication": "Metabolic",
+      "poa": 0.43650793650793646,
+      "actual": "Withdrawn",
+      "correct": true,
+      "price_move_actual": -55.55555555555556
+    },
+    {
+      "ticker": "LLY",
+      "drug": "Mounjaro",
+      "year": 2022,
+      "indication": "Metabolic",
+      "poa": 0.6099999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 18.75
+    },
+    {
+      "ticker": "NVO",
+      "drug": "Wegovy",
+      "year": 2021,
+      "indication": "Metabolic",
+      "poa": 0.6099999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 29.41176470588236
+    },
+    {
+      "ticker": "PFE",
+      "drug": "Paxlovid",
+      "year": 2021,
+      "indication": "Infectious Disease",
+      "poa": 0.6224999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 5.454545454545445
+    },
+    {
+      "ticker": "REGN",
+      "drug": "Inmazeb",
+      "year": 2020,
+      "indication": "Infectious Disease",
+      "poa": 0.6224999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 3.4482758620689724
+    },
+    {
+      "ticker": "VRTX",
+      "drug": "Trikafta",
+      "year": 2019,
+      "indication": "Rare Disease",
+      "poa": 0.6425,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 16.666666666666675
+    },
+    {
+      "ticker": "GILD",
+      "drug": "Veklury",
+      "year": 2020,
+      "indication": "Infectious Disease",
+      "poa": 0.6224999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 10.769230769230775
+    },
+    {
+      "ticker": "JNJ",
+      "drug": "Darzalex",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 9.23076923076922
+    },
+    {
+      "ticker": "MRK",
+      "drug": "Keytruda sNDA",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 10.000000000000009
+    },
+    {
+      "ticker": "BMY",
+      "drug": "Opdivo sNDA",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 9.677419354838701
+    },
+    {
+      "ticker": "AMGN",
+      "drug": "Blincyto sNDA",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.666666666666665
+    },
+    {
+      "ticker": "RHHBY",
+      "drug": "Ocrevus",
+      "year": 2019,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5774999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.896551724137923
+    },
+    {
+      "ticker": "SNY",
+      "drug": "Dupixent sNDA",
+      "year": 2020,
+      "indication": "Immunology",
+      "poa": 0.6099999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 14.583333333333325
+    },
+    {
+      "ticker": "AZN",
+      "drug": "Farxiga sNDA",
+      "year": 2021,
+      "indication": "Cardiovascular",
+      "poa": 0.6024999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 11.538461538461542
+    },
+    {
+      "ticker": "BAYRY",
+      "drug": "Nubeqa",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 19.999999999999996
+    },
+    {
+      "ticker": "TAK",
+      "drug": "Alunbrig",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.6074999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 25.0
+    },
+    {
+      "ticker": "SBBP",
+      "drug": "Trevyent",
+      "year": 2023,
+      "indication": "Cardiovascular",
+      "poa": 0.4046031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -50.0
+    },
+    {
+      "ticker": "SESN",
+      "drug": "Vicineum",
+      "year": 2021,
+      "indication": "Oncology",
+      "poa": 0.4096031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -84.0
+    },
+    {
+      "ticker": "CLDX",
+      "drug": "Glembatumumab",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.4096031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -66.66666666666667
+    },
+    {
+      "ticker": "FBIO",
+      "drug": "CUTX-101 1st",
+      "year": 2024,
+      "indication": "Rare Disease",
+      "poa": 0.44460317460317456,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -37.5
+    },
+    {
+      "ticker": "ALDX",
+      "drug": "Reproxalap 2nd",
+      "year": 2024,
+      "indication": "Ophthalmology",
+      "poa": 0.4121031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -50.0
+    },
+    {
+      "ticker": "ITCI",
+      "drug": "Caplyta sNDA",
+      "year": 2022,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3796031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -22.22222222222222
+    },
+    {
+      "ticker": "BTAI",
+      "drug": "Brain drug",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3796031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -75.0
+    },
+    {
+      "ticker": "AGEN",
+      "drug": "Balstilimab",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.4096031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -62.5
+    },
+    {
+      "ticker": "AVEO",
+      "drug": "Fotivda",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.4096031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -37.5
+    },
+    {
+      "ticker": "CALA",
+      "drug": "Envarsus",
+      "year": 2019,
+      "indication": "Other",
+      "poa": 0.4121031746031746,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -40.0
+    },
+    {
+      "ticker": "ICPT",
+      "drug": "Ocaliva sNDA",
+      "year": 2023,
+      "indication": "Metabolic",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -55.55555555555556
+    },
+    {
+      "ticker": "PRTA",
+      "drug": "Prasinezumab",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 37.142857142857146
+    },
+    {
+      "ticker": "RUBY",
+      "drug": "Oncology drug",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "SAGE",
+      "drug": "Zuranolone",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 44.736842105263165
+    },
+    {
+      "ticker": "SGEN",
+      "drug": "Adcetris sNDA",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 12.903225806451623
+    },
+    {
+      "ticker": "SMMT",
+      "drug": "Gene therapy",
+      "year": 2024,
+      "indication": "Gene Therapy",
+      "poa": 0.38875661375661374,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -52.0
+    },
+    {
+      "ticker": "SNDL",
+      "drug": "CNS drug",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3687566137566137,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -60.0
+    },
+    {
+      "ticker": "SRNE",
+      "drug": "Abivertinib",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -66.66666666666667
+    },
+    {
+      "ticker": "STOK",
+      "drug": "Oncology",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "TCRT",
+      "drug": "T-cell therapy",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -70.0
+    },
+    {
+      "ticker": "TXG",
+      "drug": "Gene therapy",
+      "year": 2022,
+      "indication": "Gene Therapy",
+      "poa": 0.5474999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 28.888888888888896
+    },
+    {
+      "ticker": "UTHR",
+      "drug": "Tyvaso DPI",
+      "year": 2022,
+      "indication": "Cardiovascular",
+      "poa": 0.5525,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 22.222222222222232
+    },
+    {
+      "ticker": "VCEL",
+      "drug": "MACI",
+      "year": 2021,
+      "indication": "Other",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "VERU",
+      "drug": "Sabizabulin",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -75.0
+    },
+    {
+      "ticker": "VKTX",
+      "drug": "VK2735",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.5599999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "XNCR",
+      "drug": "Plamotamab",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Positive",
+      "correct": true,
+      "price_move_actual": 39.99999999999999
+    },
+    {
+      "ticker": "YMAB",
+      "drug": "Omburtamab",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -66.66666666666667
+    },
+    {
+      "ticker": "ZNTL",
+      "drug": "Oncology",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -62.5
+    },
+    {
+      "ticker": "ZYME",
+      "drug": "Zanidatamab",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 75.0
+    },
+    {
+      "ticker": "ACRS",
+      "drug": "Dermatology",
+      "year": 2023,
+      "indication": "Dermatology",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 46.66666666666666
+    },
+    {
+      "ticker": "APLS",
+      "drug": "Pegcetacoplan",
+      "year": 2023,
+      "indication": "Ophthalmology",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 37.77777777777778
+    },
+    {
+      "ticker": "VYGR",
+      "drug": "VY-AADC",
+      "year": 2023,
+      "indication": "Gene Therapy",
+      "poa": 0.5474999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 86.66666666666667
+    },
+    {
+      "ticker": "KRYS",
+      "drug": "Rykindo",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 50.0
+    },
+    {
+      "ticker": "RCKT",
+      "drug": "Kresladi",
+      "year": 2025,
+      "indication": "Gene Therapy",
+      "poa": 0.38875661375661374,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -52.77777777777778
+    },
+    {
+      "ticker": "REPL",
+      "drug": "RP1",
+      "year": 2025,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -75.83333333333333
+    },
+    {
+      "ticker": "LYKOS",
+      "drug": "MDMA",
+      "year": 2024,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3687566137566137,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -85.0
+    },
+    {
+      "ticker": "GRPH",
+      "drug": "Gene therapy",
+      "year": 2025,
+      "indication": "Gene Therapy",
+      "poa": 0.38875661375661374,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -83.92857142857143
+    },
+    {
+      "ticker": "NVO",
+      "drug": "Wegovy Pill",
+      "year": 2025,
+      "indication": "Metabolic",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 9.708333333333318
+    },
+    {
+      "ticker": "LLY",
+      "drug": "Kisunla",
+      "year": 2024,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 3.750000000000009
+    },
+    {
+      "ticker": "ABBV",
+      "drug": "Skyclarys",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 3.2258064516129004
+    },
+    {
+      "ticker": "ACAD",
+      "drug": "Daybue",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 55.55555555555556
+    },
+    {
+      "ticker": "FULC",
+      "drug": "Pombiliti",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 61.904761904761884
+    },
+    {
+      "ticker": "GILD",
+      "drug": "Sunlenca",
+      "year": 2022,
+      "indication": "Infectious Disease",
+      "poa": 0.5725,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 5.882352941176472
+    },
+    {
+      "ticker": "MRNA",
+      "drug": "Spikevax BA5",
+      "year": 2022,
+      "indication": "Infectious Disease",
+      "poa": 0.5725,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 12.5
+    },
+    {
+      "ticker": "REGN",
+      "drug": "Inmazeb",
+      "year": 2020,
+      "indication": "Infectious Disease",
+      "poa": 0.5725,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 3.571428571428581
+    },
+    {
+      "ticker": "ALNY",
+      "drug": "Oxlumo",
+      "year": 2020,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 22.222222222222232
+    },
+    {
+      "ticker": "SGEN",
+      "drug": "Padcev",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 16.129032258064523
+    },
+    {
+      "ticker": "CLVS",
+      "drug": "Rubraca",
+      "year": 2020,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 66.66666666666666
+    },
+    {
+      "ticker": "CBAY",
+      "drug": "Seladelpar",
+      "year": 2020,
+      "indication": "Metabolic",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -72.82608695652173
+    },
+    {
+      "ticker": "GLPG",
+      "drug": "Jyseleca",
+      "year": 2020,
+      "indication": "Immunology",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -54.761904761904766
+    },
+    {
+      "ticker": "BIIB",
+      "drug": "Aduhelm",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 41.071428571428584
+    },
+    {
+      "ticker": "SAVA",
+      "drug": "Simufilam",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3687566137566137,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -67.05882352941177
+    },
+    {
+      "ticker": "NVAX",
+      "drug": "Nuvaxovid",
+      "year": 2021,
+      "indication": "Infectious Disease",
+      "poa": 0.41375661375661377,
+      "actual": "Delay",
+      "correct": true,
+      "price_move_actual": -34.09090909090909
+    },
+    {
+      "ticker": "ENTA",
+      "drug": "Oteseconazole",
+      "year": 2021,
+      "indication": "Infectious Disease",
+      "poa": 0.5725,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 47.61904761904763
+    },
+    {
+      "ticker": "FOLD",
+      "drug": "Pombiliti",
+      "year": 2021,
+      "indication": "Rare Disease",
+      "poa": 0.4337566137566138,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -51.66666666666666
+    },
+    {
+      "ticker": "PRAX",
+      "drug": "PRAX-944",
+      "year": 2021,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3687566137566137,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -53.84615384615385
+    },
+    {
+      "ticker": "MCRB",
+      "drug": "SER-109",
+      "year": 2021,
+      "indication": "Infectious Disease",
+      "poa": 0.41375661375661377,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -52.77777777777778
+    },
+    {
+      "ticker": "ARDX",
+      "drug": "Tenapanor",
+      "year": 2021,
+      "indication": "Metabolic",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -63.23529411764706
+    },
+    {
+      "ticker": "BMS",
+      "drug": "Camzyos",
+      "year": 2022,
+      "indication": "Cardiovascular",
+      "poa": 0.5525,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 14.705882352941169
+    },
+    {
+      "ticker": "IOVA",
+      "drug": "Amtagvi",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -56.666666666666664
+    },
+    {
+      "ticker": "RGNX",
+      "drug": "Gene therapy",
+      "year": 2022,
+      "indication": "Gene Therapy",
+      "poa": 0.38875661375661374,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -57.14285714285714
+    },
+    {
+      "ticker": "PHAR",
+      "drug": "ELUCIREM",
+      "year": 2022,
+      "indication": "Other",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 67.27272727272727
+    },
+    {
+      "ticker": "ASND",
+      "drug": "TransCon PTH",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -45.833333333333336
+    },
+    {
+      "ticker": "VNDA",
+      "drug": "Tradipitant",
+      "year": 2024,
+      "indication": "Other",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -70.73170731707317
+    },
+    {
+      "ticker": "IMVT",
+      "drug": "Batoclimab",
+      "year": 2024,
+      "indication": "Immunology",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -68.42105263157895
+    },
+    {
+      "ticker": "DSEA",
+      "drug": "HER3-DXd",
+      "year": 2024,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -31.818181818181824
+    },
+    {
+      "ticker": "TERN",
+      "drug": "TERN-501",
+      "year": 2024,
+      "indication": "Metabolic",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -72.3076923076923
+    },
+    {
+      "ticker": "AKBA",
+      "drug": "Vadadustat",
+      "year": 2024,
+      "indication": "Other",
+      "poa": 0.40125661375661376,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -83.92857142857143
+    },
+    {
+      "ticker": "NRXP",
+      "drug": "Zyesami",
+      "year": 2024,
+      "indication": "Infectious Disease",
+      "poa": 0.41375661375661377,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -76.66666666666667
+    },
+    {
+      "ticker": "SAGE",
+      "drug": "Zurzuvae PPD",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.5275,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 36.8421052631579
+    },
+    {
+      "ticker": "PFE",
+      "drug": "Litfulo",
+      "year": 2023,
+      "indication": "Dermatology",
+      "poa": 0.5599999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.756756756756754
+    },
+    {
+      "ticker": "LOQT",
+      "drug": "Loqtorzi",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 96.42857142857144
+    },
+    {
+      "ticker": "SPRY",
+      "drug": "Jaypirca",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 38.095238095238095
+    },
+    {
+      "ticker": "IVVD",
+      "drug": "Veopoz",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 76.47058823529412
+    },
+    {
+      "ticker": "VTRS",
+      "drug": "Ryzneuta",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 18.518518518518512
+    },
+    {
+      "ticker": "ARQT",
+      "drug": "Talvey",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 7.499999999999996
+    },
+    {
+      "ticker": "GILD",
+      "drug": "Trodelvy BRCA",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 12.82051282051282
+    },
+    {
+      "ticker": "AZN",
+      "drug": "Imfinzi+Lynparza",
+      "year": 2023,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 7.575757575757569
+    },
+    {
+      "ticker": "BMRN",
+      "drug": "Vosoritide sNDA",
+      "year": 2023,
+      "indication": "Rare Disease",
+      "poa": 0.4337566137566138,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -15.217391304347828
+    },
+    {
+      "ticker": "SLNO",
+      "drug": "Luvelta",
+      "year": 2023,
+      "indication": "CNS/Psychiatry",
+      "poa": 0.3687566137566137,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -73.33333333333334
+    },
+    {
+      "ticker": "AMGN",
+      "drug": "Lumakras",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 6.140350877192979
+    },
+    {
+      "ticker": "CAPR",
+      "drug": "JYNNEOS Mpox",
+      "year": 2022,
+      "indication": "Infectious Disease",
+      "poa": 0.5725,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 311.764705882353
+    },
+    {
+      "ticker": "NKTX",
+      "drug": "NKT CAR-T",
+      "year": 2022,
+      "indication": "Oncology",
+      "poa": 0.39875661375661375,
+      "actual": "CRL",
+      "correct": true,
+      "price_move_actual": -74.39024390243902
+    },
+    {
+      "ticker": "AMRN",
+      "drug": "Vascepa CVR",
+      "year": 2019,
+      "indication": "Cardiovascular",
+      "poa": 0.5525,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 55.55555555555556
+    },
+    {
+      "ticker": "VRTX",
+      "drug": "Trikafta",
+      "year": 2019,
+      "indication": "Rare Disease",
+      "poa": 0.5924999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 25.71428571428571
+    },
+    {
+      "ticker": "GMAB",
+      "drug": "Darzalex SC",
+      "year": 2019,
+      "indication": "Oncology",
+      "poa": 0.5574999999999999,
+      "actual": "Approved",
+      "correct": true,
+      "price_move_actual": 26.315789473684205
+    }
+  ]
+}

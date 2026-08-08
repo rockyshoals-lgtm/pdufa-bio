@@ -1,0 +1,25 @@
+{
+  "best_brier": 0.11203757673501968,
+  "bias": 1.545233964920044,
+  "configs_done": 131518780,
+  "device": "cuda",
+  "elapsed_seconds": 16.789287328720093,
+  "features": [
+    "btd",
+    "orphan",
+    "priority_review",
+    "accelerated_approval",
+    "had_adcom",
+    "adcom_vote_pct"
+  ],
+  "reason": "stall_reached",
+  "utc_finished": "2026-01-30T07:59:57+00:00",
+  "weights": [
+    1.0424450635910034,
+    -1.111283779144287,
+    0.7644568681716919,
+    1.0703206062316895,
+    1.013185977935791,
+    2.9283971786499023
+  ]
+}

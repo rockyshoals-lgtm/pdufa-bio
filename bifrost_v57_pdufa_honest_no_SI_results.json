@@ -1,0 +1,73 @@
+{
+  "version": "bifrost_v57_pdufa_honest_no_SI_no_v5score",
+  "panel": "pdufa_runup_bifrost.csv (1705 events)",
+  "target": "|post_1d| > 25 (pct)",
+  "base_rate_train": 0.046511627906976744,
+  "base_rate_test": 0.10240963855421686,
+  "n_features": 28,
+  "features": [
+    "vol_ratio",
+    "runup_30d",
+    "runup_21d",
+    "runup_14d",
+    "runup_7d",
+    "runup_5d",
+    "runup_3d",
+    "T-90_T-7",
+    "T-90_T-3",
+    "T-90_T-1",
+    "T-60_T-7",
+    "T-60_T-3",
+    "T-60_T-1",
+    "T-45_T-7",
+    "T-45_T-3",
+    "T-45_T-1",
+    "T-25_T-7",
+    "T-25_T-3",
+    "T-25_T-1",
+    "mcap_Large (>$10B)",
+    "mcap_Micro ($50M-$300M)",
+    "mcap_Small ($300M-$2B)",
+    "mcap_Mid ($2B-$10B)",
+    "mcap_Nano (<$50M)",
+    "ta_LOW",
+    "ta_MOD",
+    "ta_VERY_HIGH",
+    "ta_HIGH"
+  ],
+  "C": 0.02,
+  "val": {
+    "auc": 0.7933595456531237,
+    "brier": 0.037195948916883166
+  },
+  "test": {
+    "auc": 0.7714172917489144,
+    "brier": 0.08876157796567785
+  },
+  "ridge_only_baseline_test": {
+    "auc": 0.7377615475720489,
+    "brier": 0.08929202846394912
+  },
+  "delta_vs_ridge": {
+    "d_auc_bp": 336.55744176865454,
+    "d_bri_bp": -5.304504982712732
+  },
+  "seed_20": {
+    "auc_mean": 0.77249309119621,
+    "auc_std": 0.0031940248981360206,
+    "bri_mean": 0.08892035655731581,
+    "bri_std": 0.00016575043832971938
+  },
+  "boot_100": {
+    "n": 100,
+    "auc_wins": 100,
+    "bri_wins": 44,
+    "both_wins": 44,
+    "p_auc": 5.250515311572044e-44,
+    "p_bri": 0.6477085097006152,
+    "mean_d_auc_bp": 391.0185550730357,
+    "mean_d_bri_bp": 0.42454831390051484
+  },
+  "verdict": "KILL",
+  "notes": "Honest 3-way on PDUFA panel. Target explosion=|post_1d|>25pct. EXCLUDED: SI features (lookahead), v5_score (unverified provenance). Ridge-baseline comparison. si_raw/ has FINRA data 2017-2026 available for future non-lookahead SI backfill."
+}

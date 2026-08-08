@@ -1,0 +1,571 @@
+{
+  "_meta": {
+    "title": "ODIN PDUFA Runup Research — Complete Validated Findings",
+    "version": "1.0",
+    "date": "2026-02-20",
+    "author": "David Moore + Claude (ODIN Project)",
+    "dataset": "934 verified PDUFA events with price data (2020-2025), from 1,845 total verified events",
+    "price_source": "Yahoo Finance daily close",
+    "benchmark": "SPY (for cumulative abnormal returns)",
+    "windows_computed": 10,
+    "purpose": "Single source of truth for PDUFA pre-catalyst runup trading strategy. Ingest this into any new chat for full context."
+  },
+
+  "core_thesis": {
+    "summary": "Biotech stocks systematically appreciate 3-12% in the 25-30 trading days before PDUFA catalyst dates. This runup occurs regardless of whether the drug is ultimately approved or rejected (CRL). The optimal strategy is to buy T-25 to T-30 and exit T-5 to T-7, NEVER holding through the binary event.",
+    "why_it_works": [
+      "Specialist biotech funds (Perceptive, RTW, RA Capital, Baker Bros) accumulate positions ahead of catalysts",
+      "Options market makers delta-hedge, creating mechanical buying pressure (gamma effect)",
+      "Retail FOMO amplifies as PDUFA date approaches",
+      "IV expansion in options creates synthetic demand for underlying shares"
+    ],
+    "critical_insight": "CRL stocks run up almost as much as approvals (+5.9% vs +7.7% for nano-cap T-25→T-7). The runup is driven by speculation and flow, NOT outcome prediction. This means the runup trade works regardless of what any model predicts for approval probability."
+  },
+
+  "validated_returns": {
+    "all_events_T25_to_T7": {
+      "N": 934,
+      "mean_return_pct": 4.5,
+      "median_return_pct": 1.2,
+      "win_rate_pct": 52.0,
+      "note": "Full dataset including large-caps which dilute the signal"
+    },
+
+    "nano_cap_under_10_T25_to_T7": {
+      "N": 352,
+      "mean_return_pct": 6.7,
+      "median_return_pct": 2.0,
+      "win_rate_pct": 53.7,
+      "p_greater_than_5pct": 37.5,
+      "p_greater_than_20pct": 20.5,
+      "sharpe_per_trade": 0.79,
+      "P75_return_pct": 15.2,
+      "P95_return_pct": 52.4
+    },
+
+    "nano_cap_under_10_T30_to_T7": {
+      "N": 352,
+      "mean_return_pct": 8.4,
+      "median_return_pct": 7.2,
+      "win_rate_pct": 55.1,
+      "note": "Longer hold captures more of the move but ties up capital"
+    },
+
+    "by_outcome_nano_T25_to_T7": {
+      "approvals": {
+        "N": 167,
+        "mean_return_pct": 7.7,
+        "median_return_pct": 2.2,
+        "win_rate_pct": 56.9
+      },
+      "CRLs": {
+        "N": 185,
+        "mean_return_pct": 5.9,
+        "median_return_pct": 0.6,
+        "win_rate_pct": 50.8
+      },
+      "insight": "CRL stocks still run up. Proves the trade is flow-driven, not outcome-driven."
+    },
+
+    "dead_money_zone": {
+      "window": "T-7 to T-1",
+      "mean_return_pct": 0.9,
+      "win_rate_pct": 47.0,
+      "sell_the_news_frequency_pct": 53.0,
+      "conclusion": "NEVER hold through this window. Exit by T-7 (low confidence) or T-5 (high confidence)."
+    },
+
+    "window_capture_rates": {
+      "T45_captures_pct_of_total_move": 91,
+      "T25_captures_pct_of_total_move": 82,
+      "T18_captures_pct_of_total_move": 49,
+      "note": "T-25 is the sweet spot — captures 82% of the move with only 18 calendar days of capital commitment"
+    }
+  },
+
+  "cohort_returns_by_therapeutic_area": {
+    "_note": "Micro-cap (<$20 stock price), T-25→T-7, N=438",
+    "rare_disease": {
+      "N": 16,
+      "mean_return_pct": 11.8,
+      "median_return_pct": 12.9,
+      "win_rate_pct": 68.8,
+      "sharpe": 2.299,
+      "tier": "MONSTER"
+    },
+    "cns_neurology": {
+      "N": 29,
+      "mean_return_pct": 7.6,
+      "median_return_pct": 3.3,
+      "win_rate_pct": 62.1,
+      "sharpe": 1.159,
+      "tier": "STRONG"
+    },
+    "oncology": {
+      "N": 251,
+      "mean_return_pct": 6.5,
+      "median_return_pct": 1.7,
+      "win_rate_pct": 51.0,
+      "sharpe": 0.626,
+      "tier": "GOOD"
+    },
+    "other": {
+      "N": 88,
+      "mean_return_pct": 3.8,
+      "median_return_pct": 1.4,
+      "win_rate_pct": 53.4,
+      "sharpe": 0.439,
+      "tier": "AVERAGE"
+    },
+    "ophthalmology": {
+      "N": 10,
+      "mean_return_pct": 2.2,
+      "median_return_pct": 0.3,
+      "win_rate_pct": 50.0,
+      "sharpe": 0.322,
+      "tier": "WEAK"
+    },
+    "immunology": {
+      "N": 21,
+      "mean_return_pct": 0.1,
+      "median_return_pct": -3.1,
+      "win_rate_pct": 52.4,
+      "sharpe": -0.206,
+      "tier": "AVOID"
+    },
+    "infectious_disease": {
+      "N": 17,
+      "mean_return_pct": -0.3,
+      "median_return_pct": -2.9,
+      "win_rate_pct": 41.2,
+      "sharpe": -0.36,
+      "tier": "AVOID"
+    },
+    "pain_management": {
+      "N": 8,
+      "mean_return_pct": -7.8,
+      "median_return_pct": -3.3,
+      "win_rate_pct": 37.5,
+      "sharpe": -2.092,
+      "tier": "DEAD_ZONE"
+    }
+  },
+
+  "specialist_fund_signal": {
+    "finding": "Stocks with specialist biotech fund interest have +12.6pp higher approval rates (90.1% vs 77.5%)",
+    "z_score": 7.24,
+    "p_value": "4.6e-13",
+    "proxy_definition": "Orphan OR BTD OR Rare Disease/Oncology TA OR designation_count >= 3",
+    "individual_approval_rates": {
+      "BTD": {"approval_rate_pct": 96.3, "lift_vs_baseline_pp": 16.3},
+      "designation_stack_gte_3": {"approval_rate_pct": 94.2, "lift_vs_baseline_pp": 13.8},
+      "orphan": {"approval_rate_pct": 92.8, "lift_vs_baseline_pp": 12.1},
+      "oncology_TA": {"approval_rate_pct": 89.1, "lift_vs_baseline_pp": 7.6},
+      "rare_disease_TA": {"approval_rate_pct": 82.9, "lift_vs_baseline_pp": 0.1}
+    },
+    "designation_stacking_effect": {
+      "0_designations": {"approval_rate_pct": 71.7},
+      "1_designation": {"approval_rate_pct": 87.1, "incremental_pp": 15.4},
+      "2_designations": {"approval_rate_pct": 94.2, "incremental_pp": 7.1},
+      "3_designations": {"approval_rate_pct": 94.5, "incremental_pp": 0.3},
+      "4_designations": {"approval_rate_pct": 93.2, "incremental_pp": -1.3},
+      "5_designations": {"approval_rate_pct": 100.0, "incremental_pp": 6.8, "N_small": 52},
+      "note": "Diminishing returns above stack 2-3"
+    },
+    "nano_cap_runup_boost": {
+      "specialist_interest_mean_return_pct": 9.54,
+      "non_specialist_mean_return_pct": 6.2,
+      "boost_pp": 3.81
+    }
+  },
+
+  "window_selection_logic": {
+    "decision_tree": {
+      "step_1_exit_day": {
+        "ODIN_tier_1_or_2": "Exit T-5 (high confidence)",
+        "ODIN_tier_3": "Exit T-7 (lower confidence)",
+        "ODIN_tier_4": "NO ENTRY — do not trade"
+      },
+      "step_2_entry_day": {
+        "dense_pipeline_gte_5_concurrent": {
+          "entry": "T-18",
+          "window_name": "SHORT_HOLD",
+          "expected_return_range_pct": [2.5, 6.0],
+          "calendar_days": 11
+        },
+        "nano_cap_lt_500M_mcap_with_designations": {
+          "entry": "T-30",
+          "window_name": "HIGH_CONVICTION",
+          "expected_return_range_pct": [4.0, 12.0],
+          "calendar_days": 23
+        },
+        "rare_disease_lt_2B_mcap": {
+          "entry": "T-25",
+          "window_name": "RARE_DISEASE_PLAY",
+          "expected_return_range_pct": [6.0, 18.0],
+          "calendar_days": 18
+        },
+        "default_all_sub_3B": {
+          "entry": "T-25",
+          "window_name": "DEFAULT",
+          "expected_return_range_pct": [3.0, 8.0],
+          "calendar_days": 18
+        }
+      }
+    },
+
+    "non_negotiable_rules": [
+      "EXIT BY T-7 (Tier 3/4) or T-5 (Tier 1/2) — T-7→T-1 is dead money (+0.9% mean, 47% WR)",
+      "NO ENTRY AFTER T-15 — Late entries capture <58% of the move with maximum binary risk exposure",
+      "NO AVERAGING UP AFTER T-10 — FOMO buying in danger zone",
+      "WEEKEND PDUFA → EXIT THURSDAY/FRIDAY — No exit opportunity after weekend announcement",
+      "TIER_4 = NO TRADE — No exceptions regardless of revenue impact or alpha score"
+    ]
+  },
+
+  "exit_protocol": {
+    "tier_based_rules": {
+      "TIER_1_gte_86pct": {
+        "exit_day": "T-5",
+        "runner_pct": 10,
+        "position_size": "Full",
+        "rationale": "High confidence, small runner acceptable"
+      },
+      "TIER_2_73_to_85pct": {
+        "exit_day": "T-5",
+        "runner_pct": 0,
+        "position_size": "75%",
+        "rationale": "Moderate confidence, no runner"
+      },
+      "TIER_3_58_to_72pct": {
+        "exit_day": "T-7",
+        "runner_pct": 0,
+        "position_size": "50%",
+        "rationale": "Low confidence, exit early"
+      },
+      "TIER_4_lt_58pct": {
+        "exit_day": "NO ENTRY",
+        "runner_pct": 0,
+        "position_size": "0%",
+        "rationale": "High CRL risk, avoid entirely"
+      }
+    },
+
+    "CRL_avoidance_value": {
+      "avg_CRL_loss_if_held_through_pct": -38.5,
+      "avg_return_with_T5_exit_pct": 11.0,
+      "savings_per_event_pp": 49.5,
+      "per_event_capital_saved_usd": 4958,
+      "based_on": "180 historical CRLs"
+    },
+
+    "hard_avoid_signals": [
+      "EMA_CMC_FLAG — Cross-regulatory CMC concern",
+      "COMMERCIAL_HIRES_LT_3 — <3 commercial hires in 6 months",
+      "PEDIATRIC_SNDA_NO_PK_STUDY — Dosing complexity risk",
+      "CMC_EXTENSION_ANY_AGENCY — Manufacturing delay",
+      "WEEKEND_PDUFA_PROB_LT_80 — Weekend PDUFA with prob <80%"
+    ],
+
+    "special_exit_cases": {
+      "weekend_pdufa": "Exit Thursday close — no exit opportunity after weekend announcement",
+      "cmc_delay_mention": "IMMEDIATE EXIT — 2-5x CRL probability increase",
+      "ema_concern_disclosure": "IMMEDIATE EXIT — cross-regulatory signal",
+      "stock_up_gt_30pct_from_entry": "Take 50% profit — lock gains, reduce exposure",
+      "stock_down_gt_25pct_from_entry": "Full exit — cut losses"
+    },
+
+    "scaling_out_schedule": {
+      "days_1_to_10": "Hold — let it run",
+      "days_10_to_20_if_up_15pct": "Take 1/3 profit",
+      "days_20_to_35_if_up_25pct": "Take another 1/3",
+      "T7_or_T5": "Exit remaining 100%"
+    }
+  },
+
+  "revenue_impact_module": {
+    "purpose": "Higher revenue impact = larger pre-PDUFA runup. Transformational drugs attract more specialist fund positioning, options hedging, and retail FOMO.",
+    "revenue_tiers": {
+      "R1_transformational": {
+        "revenue_impact_ratio_gte": 0.50,
+        "description": "Peak sales > 50% of current market cap",
+        "runup_multiplier": 1.8,
+        "examples": "First-in-class drugs, gene therapies for rare disease"
+      },
+      "R2_significant": {
+        "revenue_impact_ratio_range": [0.20, 0.50],
+        "description": "Peak sales 20-50% of current market cap",
+        "runup_multiplier": 1.3
+      },
+      "R3_moderate": {
+        "revenue_impact_ratio_range": [0.05, 0.20],
+        "description": "Peak sales 5-20% of current market cap",
+        "runup_multiplier": 1.0
+      },
+      "R4_negligible": {
+        "revenue_impact_ratio_lt": 0.05,
+        "description": "Peak sales < 5% of current market cap (big pharma line extensions)",
+        "runup_multiplier": 0.6
+      }
+    },
+    "revenue_adjustment_multipliers": {
+      "positive": {
+        "first_in_class": 1.5,
+        "best_in_class": 1.3,
+        "unmet_need_high": 1.4,
+        "novel_mechanism": 1.6,
+        "orphan_pricing": 1.3,
+        "global_rights": 1.2,
+        "acquisition_target": 1.3
+      },
+      "negative": {
+        "me_too": 0.6,
+        "crowded_market": 0.7,
+        "generic_threat_near": 0.5,
+        "limited_geography": 0.7,
+        "partnership_split": 0.5,
+        "big_pharma_sponsor": 0.5
+      }
+    }
+  },
+
+  "alpha_score_composite": {
+    "purpose": "Combines multiple signals into a 0-100 composite score predicting runup magnitude",
+    "components_and_weights": {
+      "iv_slope": {"weight": 0.20, "description": "Front/back month IV ratio — steeper = larger expected move, more gamma hedging"},
+      "smart_money": {"weight": 0.25, "description": "Insider trades + options flow (put/call ratio) + congressional trades"},
+      "ta_quality": {"weight": 0.20, "description": "Therapeutic area runup quality (Rare Disease=1.0, Pain Management=0.0)"},
+      "designation_boost": {"weight": 0.15, "description": "BTD/Orphan/Fast Track/Priority Review stacking effect"},
+      "revenue_impact": {"weight": 0.10, "description": "S24 revenue tier (R1=0.9, R4=0.2)"},
+      "technical_score": {"weight": 0.10, "description": "Price trend, RSI, volume patterns"}
+    },
+    "alpha_tiers": {
+      "ALPHA_1_gte_80": "Strong runup expected, maximum position size",
+      "ALPHA_2_60_to_79": "Moderate runup expected, standard position",
+      "ALPHA_3_40_to_59": "Weak runup expected, reduced position",
+      "ALPHA_4_lt_40": "No meaningful runup expected, skip or minimum position"
+    },
+    "backtest_validation": {
+      "ALPHA_2_mean_return_pct": 2.79,
+      "ALPHA_3_mean_return_pct": 1.56,
+      "specialist_boost_pp": 3.81,
+      "ta_quality_correlation_with_realized_returns": 0.836,
+      "positive_across_all_time_splits": true
+    }
+  },
+
+  "smart_money_signals": {
+    "insider_trading": {
+      "weight_in_smart_money_score": 0.40,
+      "lookback_days": 90,
+      "signals": {
+        "cluster_buy_gte_3_insiders": "STRONG_BULLISH — Multiple insiders buying = high conviction",
+        "ceo_cfo_buy": "BULLISH — C-suite has best information",
+        "director_buy": "MILD_BULLISH — Less informative but still positive",
+        "any_sell": "NEUTRAL_TO_BEARISH — Could be routine but timing matters",
+        "no_activity": "NEUTRAL"
+      }
+    },
+    "options_flow": {
+      "weight_in_smart_money_score": 0.45,
+      "metric": "10-day average put/call ratio",
+      "signals": {
+        "pc_lt_0.4": {"signal": "STRONG_BULLISH", "score": 0.9},
+        "pc_0.4_to_0.7": {"signal": "BULLISH", "score": 0.7},
+        "pc_0.7_to_1.2": {"signal": "NEUTRAL", "score": 0.5},
+        "pc_1.2_to_3.0": {"signal": "BEARISH", "score": 0.3},
+        "pc_gt_3.0": {"signal": "EXTREME_BEARISH", "score": 0.1}
+      },
+      "real_examples": {
+        "APLS": "P/C 6.97 avg / 25.33 max → EXTREME_BEARISH (correctly predicted issues)",
+        "VERA": "P/C 0.34 → BULLISH"
+      }
+    },
+    "congressional_trades": {
+      "weight_in_smart_money_score": 0.15,
+      "note": "Low sample size, use as tiebreaker only. Any purchase within 90 days of PDUFA = potential signal."
+    }
+  },
+
+  "iv_framework": {
+    "typical_iv_evolution": {
+      "T-60": {"iv_range": [0.60, 0.80], "phase": "BASE_VOL"},
+      "T-45": {"iv_range": [0.70, 0.90], "phase": "EARLY_EXPANSION"},
+      "T-30": {"iv_range": [0.90, 1.20], "phase": "POSITIONING"},
+      "T-14": {"iv_range": [1.20, 1.80], "phase": "PEAK_GAMMA"},
+      "T-7": {"iv_range": [1.30, 2.00], "phase": "TERMINAL_APPROACH"},
+      "T-3": {"iv_range": [1.50, 2.50], "phase": "TERMINAL_VOL"},
+      "T+1": {"iv_range": [0.40, 0.80], "phase": "IV_CRUSH"},
+      "T+7": {"iv_range": [0.30, 0.60], "phase": "NORMALIZATION"}
+    },
+    "iv_slope_signal": {
+      "metric": "front_month_IV / back_month_IV",
+      "steep_gt_1.5": "Market pricing large binary event → larger expected runup (gamma hedging amplifies buying)",
+      "flat_lt_1.0": "Market skeptical of catalyst significance → muted runup"
+    },
+    "limitation": "Historical IV data NOT in our 934-event dataset. Framework based on documented biotech patterns and real-time observations. Live validation only."
+  },
+
+  "options_strategies": {
+    "STRADDLE_IV_EXPANSION": {
+      "entry": "T-45 to T-30",
+      "exit": "T-15 to T-10 (when IV Percentile >70%)",
+      "condition": "IV Percentile < 50% at entry",
+      "expected_return": "+50% to +100% on premium",
+      "risk": "Theta decay if IV doesn't expand"
+    },
+    "CALL_SPREAD_BULLISH": {
+      "entry": "T-45",
+      "exit": "T-10 to T-5",
+      "condition": "ODIN Tier 1 or 2, R1/R2 revenue tier",
+      "expected_return": "+80% to +100% on debit",
+      "risk": "Max loss = debit paid"
+    },
+    "SELL_PREMIUM_IV_CRUSH": {
+      "entry": "T-30 to T-15 (when IV elevated)",
+      "exit": "Post-event IV crush",
+      "condition": "ODIN Tier 1 only (high confidence approval)",
+      "expected_return": "Premium collected",
+      "risk": "Unlimited on naked; defined on spreads"
+    }
+  },
+
+  "regime_detection": {
+    "method": "XBI-based regime detection using 50/200 day moving averages, drawdown from highs, golden cross/death cross, and VIX level",
+    "regimes": {
+      "BULL": "XBI above 200 MA, golden cross active, drawdown <10%, VIX <25",
+      "NEUTRAL": "Mixed signals",
+      "BEAR": "XBI below 200 MA, death cross, drawdown >20%, VIX >30"
+    },
+    "regime_impact_on_runups": "Bull regime amplifies runups; bear regime compresses them. Regime is an input to position sizing, not entry/exit timing."
+  },
+
+  "gemini_claims_audit": {
+    "purpose": "Gemini AI produced a PDUFA Runup Master Report. We audited every claim against our 934-event dataset.",
+    "confirmed": [
+      "T-45 captures ~100% of move (reality: 91%) ✅",
+      "T-25 captures ~85% of move (reality: 82%) ✅",
+      "T-7→T-1 is dead money (reality: +0.9%, 47% WR) ✅",
+      "Oncology and Rare Disease have largest runups ✅",
+      "Sell-the-news 40-65% of the time (reality: 53%) ✅"
+    ],
+    "overstated": [
+      "T-18 captures ~70% (reality: 49%) — OVERSTATED 42%",
+      "T-25 Sharpe ~1.8-2.1 (reality: 0.79) — OVERSTATED 2.3-2.7×",
+      "T-18 Sharpe ~2.3-2.6 (reality: 0.72) — OVERSTATED 3.2-3.6×",
+      "P(R>5%) ~65% for T-18 (reality: 37.5-44.9%) — OVERSTATED 1.4-1.7×",
+      "T-18 avg ~5% (reality: 4.0-4.5%) — Close but below"
+    ],
+    "root_cause": "Gemini likely used hand-picked favorable sample and aggressive annualization (√(365/D) vs √(252/D))",
+    "bottom_line": "Directional conclusions confirmed. Magnitude claims inflated 2-3×. Always use OUR corrected numbers."
+  },
+
+  "size_cohort_definitions": {
+    "price_based_proxy": {
+      "NANO": {"price_max": 10, "mcap_proxy": "<$500M"},
+      "MICRO": {"price_max": 20, "mcap_proxy": "$500M-$2B"},
+      "SMALL": {"price_max": 50, "mcap_proxy": "$2B-$10B"},
+      "MID": {"price_max": 200, "mcap_proxy": "$10B-$50B"},
+      "LARGE": {"price_min": 200, "mcap_proxy": ">$50B"}
+    },
+    "preferred_mcap_based": {
+      "MICRO": {"max_usd": 300000000},
+      "SMALL": {"max_usd": 1000000000},
+      "MID": {"max_usd": 10000000000},
+      "LARGE": {"max_usd": null}
+    },
+    "note": "Use actual market cap when available. Price-based proxy used when mcap data unavailable."
+  },
+
+  "comparable_drug_database": {
+    "oncology": {
+      "NSCLC_1L": {"drug": "Keytruda", "peak_sales_usd": 25000000000},
+      "HER2_BREAST": {"drug": "Herceptin", "peak_sales_usd": 7500000000},
+      "AML": {"drug": "Venclexta", "peak_sales_usd": 2500000000}
+    },
+    "cns": {
+      "ALZHEIMERS": {"drug": "Leqembi", "peak_sales_usd": 5000000000},
+      "DEPRESSION_TRD": {"drug": "Spravato", "peak_sales_usd": 1500000000},
+      "PARKINSONS": {"drug": "Nuplazid", "peak_sales_usd": 800000000}
+    },
+    "rare_disease": {
+      "DMD": {"drug": "Exondys 51", "peak_sales_usd": 500000000},
+      "SMA": {"drug": "Spinraza", "peak_sales_usd": 2100000000},
+      "DANON": {"drug": null, "peak_sales_usd": 300000000, "note": "Gene therapy"},
+      "EPP": {"drug": "Scenesse", "peak_sales_usd": 200000000},
+      "HUNTER_MPS2": {"drug": "Elaprase", "peak_sales_usd": 700000000}
+    },
+    "gi": {
+      "GASTROPARESIS": {"drug": null, "peak_sales_usd": 1000000000, "note": "First-in-class"},
+      "IBD_UC": {"drug": "Entyvio", "peak_sales_usd": 5000000000}
+    },
+    "cardiology": {
+      "HEART_FAILURE": {"drug": "Entresto", "peak_sales_usd": 6000000000},
+      "HOCM": {"drug": "Camzyos", "peak_sales_usd": 2000000000}
+    },
+    "hematology": {
+      "SICKLE_CELL": {"drug": "Casgevy", "peak_sales_usd": 2000000000},
+      "HEMOPHILIA_A": {"drug": "Hemlibra", "peak_sales_usd": 4000000000}
+    }
+  },
+
+  "position_sizing": {
+    "base_position_usd": 10000,
+    "multiplier_formula": "base × tier_mult × revenue_mult × alpha_mult × regime_mult",
+    "tier_multipliers": {
+      "TIER_1": 1.0,
+      "TIER_2": 0.75,
+      "TIER_3": 0.50,
+      "TIER_4": 0.0
+    },
+    "revenue_multipliers": {
+      "R1": 1.8,
+      "R2": 1.3,
+      "R3": 1.0,
+      "R4": 0.6
+    },
+    "alpha_multipliers": {
+      "ALPHA_1": 1.2,
+      "ALPHA_2": 1.0,
+      "ALPHA_3": 0.7,
+      "ALPHA_4": 0.4
+    }
+  },
+
+  "live_validation_targets_2026": {
+    "note": "These were the Q1-Q2 2026 targets. IRON and RGNX already resolved as CRLs.",
+    "resolved": {
+      "IRON": {"drug": "bitopertin", "indication": "EPP", "pdufa": "2026-02-15", "outcome": "CRL", "odin_score": 0.919, "odin_tier": "TIER_1", "note": "False positive — FDA wanted Phase 3 APOLLO data"},
+      "RGNX": {"drug": "RGX-121", "indication": "Hunter syndrome", "pdufa": "2026-02-08", "outcome": "CRL", "odin_score": 0.464, "odin_tier": "TIER_4", "note": "Correctly flagged as risky"}
+    },
+    "pending": [
+      {"ticker": "VNDA", "drug": "tradipitant", "indication": "Gastroparesis", "pdufa": "2026-02-21", "odin_score": 0.799, "tier": "TIER_2", "revenue_tier": "R1"},
+      {"ticker": "ASND", "drug": "unknown", "pdufa": "2026-02-28", "odin_score": 0.840, "tier": "TIER_2"},
+      {"ticker": "BMY", "drug": "unknown", "pdufa": "2026-03-06", "odin_score": 0.880, "tier": "TIER_1"},
+      {"ticker": "ALDX", "drug": "Reproxalap", "indication": "DED", "pdufa": "2026-03-16", "odin_score": 0.031, "tier": "TIER_4", "note": "3rd resubmission after 2 CRLs"},
+      {"ticker": "RCKT", "drug": "RP-A501", "indication": "Danon Disease", "pdufa": "2026-03-28", "odin_score": 0.039, "tier": "TIER_4", "revenue_tier": "R1"},
+      {"ticker": "DNLI", "drug": "DNL310", "indication": "Hunter Syndrome", "pdufa": "2026-04-05", "odin_score": 0.818, "tier": "TIER_2", "revenue_tier": "R2"},
+      {"ticker": "TVTX", "drug": "unknown", "pdufa": "2026-04-13", "odin_score": 0.730, "tier": "TIER_3"},
+      {"ticker": "ORCA", "drug": "unknown", "pdufa": "2026-04-06", "odin_score": 0.510, "tier": "TIER_4"}
+    ]
+  },
+
+  "model_blind_spots_identified": {
+    "IRON_false_positive": "BTD+Orphan+Priority Review stacked to 91.9% but FDA wanted additional Phase 3 data. Model has no 'FDA wants more data' feature.",
+    "SNY_false_positive": "Major pharma + BTD scored 92.4% but severe DILI safety concern caused CRL. Model has no safety signal severity feature.",
+    "resubmission_bias": "RCKT scores 3.9% due to prior_crl + manufacturing_risk + inexperienced sponsor, but this is a resubmission specifically addressing manufacturing. Model may penalize resubmissions too heavily when the resubmission directly addresses CRL reasons."
+  },
+
+  "key_takeaways_for_trading": [
+    "1. THE RUNUP IS THE TRADE. Buy T-25 to T-30, exit T-5 to T-7. Never hold through the binary event.",
+    "2. CRL stocks run up too (+5.9% nano-cap). The trade is flow-driven, not outcome-driven.",
+    "3. T-7→T-1 is dead money (+0.9%, 47% WR, 53% sell-the-news). NEVER hold through this window.",
+    "4. Rare Disease micro-caps are the MONSTER cohort (+11.8% mean, 68.8% WR, 2.3 Sharpe).",
+    "5. Pain Management is the DEAD ZONE (-7.8% mean, 37.5% WR). Avoid completely.",
+    "6. Specialist fund interest (BTD/Orphan/designation stacking) adds +3.8pp to nano-cap runups.",
+    "7. R1 revenue tier (transformational drugs) = 1.8× runup multiplier vs baseline.",
+    "8. TIER_4 = NO TRADE. No exceptions. This rule saved $4,958 per event on 180 historical CRLs.",
+    "9. T-25 captures 82% of the total move with only 18 calendar days. Best risk-adjusted entry point.",
+    "10. Weekend PDUFAs exit Thursday close. No negotiation."
+  ]
+}

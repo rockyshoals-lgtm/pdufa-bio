@@ -1,0 +1,348 @@
+{
+  "version": "odin_phase_v3.0_god_mode",
+  "training_date": "2026-02-16T00:29:52.253478",
+  "dataset": "historical_readouts_2000.csv",
+  "base_model": "odin_phase_v2_2_refined_OUT.json",
+  "n_features": 45,
+  "feature_names": [
+    "blind_x_phase3",
+    "float_ratio",
+    "has_pubmed",
+    "is_blinded",
+    "is_large_mega",
+    "is_micro",
+    "is_open_label",
+    "is_randomized",
+    "is_small",
+    "log_employees",
+    "log_enrollment",
+    "log_mcap",
+    "log_pubmed",
+    "multi_arm",
+    "phase2_x_oncology",
+    "phase3_x_cns",
+    "phase3_x_large",
+    "phase3_x_oncology",
+    "phase3_x_small",
+    "phase_PHASE1",
+    "phase_PHASE1_2",
+    "phase_PHASE2",
+    "phase_PHASE2_3",
+    "phase_PHASE3",
+    "rct_x_phase3",
+    "single_arm",
+    "single_arm_x_oncology",
+    "ta_CARDIOVASCULAR",
+    "ta_CNS",
+    "ta_HEMATOLOGY",
+    "ta_INFECTIOUS",
+    "ta_METABOLIC",
+    "ta_ONCOLOGY",
+    "primary_endpoint_met",
+    "short_interest_pct",
+    "is_micro_cap",
+    "is_lead_asset",
+    "is_hard_endpoint",
+    "relative_efficacy",
+    "failure_signal",
+    "sentiment_score",
+    "is_orphan_designated",
+    "regulatory_alignment",
+    "alpha_status",
+    "is_competitive_space"
+  ],
+  "cv_results": {
+    "xgb_auc": [
+      0.9706985722610723,
+      0.902152534965035,
+      0.9518684440559441,
+      0.9614838286713288,
+      0.9593012753350916
+    ],
+    "xgb_prauc": [
+      0.9861707745432599,
+      0.9497160659106202,
+      0.9778555827328721,
+      0.9802534338278583,
+      0.9784970946497156
+    ],
+    "xgb_brier": [
+      0.042075205594301224,
+      0.05441809073090553,
+      0.03677567467093468,
+      0.03695932775735855,
+      0.042036280035972595
+    ],
+    "xgb_tier1_prec": [
+      0.970873786407767,
+      0.9393939393939394,
+      0.965625,
+      0.9657320872274143,
+      0.9741100323624595
+    ],
+    "logit_auc": [
+      0.9611742424242424,
+      0.9118953962703963,
+      0.9672384906759907,
+      0.9455674533799534,
+      0.9686946782759494
+    ],
+    "logit_tier1_prec": [
+      0.965625,
+      0.9393939393939394,
+      0.9658385093167702,
+      0.9657320872274143,
+      0.9746031746031746
+    ],
+    "ensemble_auc": [
+      0.970826048951049,
+      0.9060314685314685,
+      0.9555106351981352,
+      0.9628314393939394,
+      0.9622638101087466
+    ],
+    "ensemble_prauc": [
+      0.9869782264526524,
+      0.9531098265674056,
+      0.9798254048247318,
+      0.9818053065548057,
+      0.9813723760734762
+    ],
+    "ensemble_brier": [
+      0.037187605551035494,
+      0.05196757447477088,
+      0.03319739432997242,
+      0.034207772975637145,
+      0.035571125134631884
+    ],
+    "ensemble_tier1_prec": [
+      0.965625,
+      0.9393939393939394,
+      0.9658385093167702,
+      0.9657320872274143,
+      0.9746031746031746
+    ]
+  },
+  "cv_mean": {
+    "xgb_auc": 0.9491009310576943,
+    "xgb_tier1_prec": 0.963146969078316,
+    "ensemble_auc": 0.9514926804366677,
+    "ensemble_tier1_prec": 0.9622385421082595
+  },
+  "final_metrics": {
+    "xgb_auc": 0.9388088632131047,
+    "xgb_tier1_precision": 0.9569230769230769,
+    "xgb_tier1_count": 325,
+    "logit_auc": 0.9694044316065524,
+    "logit_tier1_precision": 0.9571865443425076,
+    "ensemble_auc": 0.9432936794496598,
+    "ensemble_tier1_precision": 0.9571865443425076,
+    "ensemble_tier1_count": 327
+  },
+  "shap_importance": [
+    {
+      "feature": "failure_signal",
+      "shap_importance": 2.4803507328033447
+    },
+    {
+      "feature": "is_hard_endpoint",
+      "shap_importance": 0.18518705666065216
+    },
+    {
+      "feature": "phase_PHASE3",
+      "shap_importance": 0.18128301203250885
+    },
+    {
+      "feature": "is_competitive_space",
+      "shap_importance": 0.17635051906108856
+    },
+    {
+      "feature": "sentiment_score",
+      "shap_importance": 0.1346474587917328
+    },
+    {
+      "feature": "phase_PHASE2",
+      "shap_importance": 0.11908837407827377
+    },
+    {
+      "feature": "primary_endpoint_met",
+      "shap_importance": 0.0787268877029419
+    },
+    {
+      "feature": "ta_ONCOLOGY",
+      "shap_importance": 0.0024379983078688383
+    },
+    {
+      "feature": "blind_x_phase3",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "float_ratio",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "has_pubmed",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_blinded",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_large_mega",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_pubmed",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_mcap",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_enrollment",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "log_employees",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_small",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_randomized",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_open_label",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_micro",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase_PHASE1_2",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase_PHASE1",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "multi_arm",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase2_x_oncology",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_oncology",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_small",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_cns",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase3_x_large",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_CNS",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_CARDIOVASCULAR",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "single_arm_x_oncology",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "single_arm",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "rct_x_phase3",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "phase_PHASE2_3",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_INFECTIOUS",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_HEMATOLOGY",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_lead_asset",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_micro_cap",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "short_interest_pct",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "ta_METABOLIC",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "relative_efficacy",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "is_orphan_designated",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "regulatory_alignment",
+      "shap_importance": 0.0
+    },
+    {
+      "feature": "alpha_status",
+      "shap_importance": 0.0
+    }
+  ],
+  "xgb_params": {
+    "n_estimators": 500,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 3,
+    "gamma": 0.1,
+    "reg_alpha": 0.05,
+    "reg_lambda": 1.0,
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "ensemble_weights": {
+    "xgb": 0.6,
+    "logistic": 0.4
+  },
+  "tier_thresholds": {
+    "TIER_1": 0.6,
+    "TIER_2": 0.5,
+    "TIER_3": 0.35
+  }
+}

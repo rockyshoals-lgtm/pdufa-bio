@@ -1,0 +1,110 @@
+================================================================================
+Phase 3 Stage 1 — ORATS Historical Pilot
+================================================================================
+BIFROST source: pdufa_runup_bifrost.csv
+Cache dir:      orats_phase3_cache/
+Seed:           42
+
+Pilot sample: 50 events
+pilot_bucket
+2025_2026    15
+2024         15
+2022_2023    10
+2020_2021    10
+
+  [ 10/50] INTE   2025-03-28 bucket=2025_2026  calls=93 elapsed= 40.0s
+  [ 20/50] LLY    2024-09-15 bucket=2024       calls=186 elapsed=104.1s
+  [ 30/50] VRTX   2024-01-16 bucket=2024       calls=276 elapsed=166.9s
+  [ 40/50] LLY    2022-02-24 bucket=2022_2023  calls=369 elapsed=225.9s
+  [ 50/50] ETON   2020-03-18 bucket=2020_2021  calls=462 elapsed=284.8s
+
+--------------------------------------------------------------------------------
+COVERAGE BY BUCKET × ENDPOINT × SNAPSHOT
+--------------------------------------------------------------------------------
+  2020_2021|/hist/dailies|T-1               OK=  8  EMPTY=  0  ERR=  2  ( 80.0%)
+  2020_2021|/hist/dailies|T-14              OK=  8  EMPTY=  0  ERR=  2  ( 80.0%)
+  2020_2021|/hist/dailies|T-7               OK=  8  EMPTY=  0  ERR=  2  ( 80.0%)
+  2020_2021|/hist/ivrank|T-1                OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2020_2021|/hist/ivrank|T-14               OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2020_2021|/hist/ivrank|T-7                OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2020_2021|/hist/strikes|T-1               OK=  1  EMPTY=  0  ERR=  0  (100.0%)
+  2020_2021|/hist/strikes|T-14              OK=  1  EMPTY=  0  ERR=  0  (100.0%)
+  2020_2021|/hist/strikes|T-7               OK=  1  EMPTY=  0  ERR=  0  (100.0%)
+  2020_2021|/hist/summaries|T-1             OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2020_2021|/hist/summaries|T-14            OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2020_2021|/hist/summaries|T-7             OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/dailies|T-1               OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/dailies|T-14              OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/dailies|T-7               OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/ivrank|T-1                OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/ivrank|T-14               OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/ivrank|T-7                OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/strikes|T-1               OK=  0  EMPTY=  0  ERR=  1  (  0.0%)
+  2022_2023|/hist/strikes|T-14              OK=  0  EMPTY=  0  ERR=  1  (  0.0%)
+  2022_2023|/hist/strikes|T-7               OK=  0  EMPTY=  0  ERR=  1  (  0.0%)
+  2022_2023|/hist/summaries|T-1             OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/summaries|T-14            OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2022_2023|/hist/summaries|T-7             OK=  7  EMPTY=  0  ERR=  3  ( 70.0%)
+  2024|/hist/dailies|T-1                    OK= 11  EMPTY=  0  ERR=  4  ( 73.3%)
+  2024|/hist/dailies|T-14                   OK= 12  EMPTY=  0  ERR=  3  ( 80.0%)
+  2024|/hist/dailies|T-7                    OK= 12  EMPTY=  0  ERR=  3  ( 80.0%)
+  2024|/hist/ivrank|T-1                     OK= 11  EMPTY=  0  ERR=  4  ( 73.3%)
+  2024|/hist/ivrank|T-14                    OK= 12  EMPTY=  0  ERR=  3  ( 80.0%)
+  2024|/hist/ivrank|T-7                     OK= 12  EMPTY=  0  ERR=  3  ( 80.0%)
+  2024|/hist/strikes|T-1                    OK=  1  EMPTY=  0  ERR=  0  (100.0%)
+  2024|/hist/strikes|T-14                   OK=  1  EMPTY=  0  ERR=  0  (100.0%)
+  2024|/hist/strikes|T-7                    OK=  1  EMPTY=  0  ERR=  0  (100.0%)
+  2024|/hist/summaries|T-1                  OK= 11  EMPTY=  0  ERR=  4  ( 73.3%)
+  2024|/hist/summaries|T-14                 OK= 12  EMPTY=  0  ERR=  3  ( 80.0%)
+  2024|/hist/summaries|T-7                  OK= 12  EMPTY=  0  ERR=  3  ( 80.0%)
+  2025_2026|/hist/dailies|T-1               OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/dailies|T-14              OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/dailies|T-7               OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/ivrank|T-1                OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/ivrank|T-14               OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/ivrank|T-7                OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/strikes|T-1               OK=  0  EMPTY=  0  ERR=  1  (  0.0%)
+  2025_2026|/hist/strikes|T-14              OK=  0  EMPTY=  0  ERR=  1  (  0.0%)
+  2025_2026|/hist/strikes|T-7               OK=  0  EMPTY=  0  ERR=  1  (  0.0%)
+  2025_2026|/hist/summaries|T-1             OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/summaries|T-14            OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+  2025_2026|/hist/summaries|T-7             OK= 10  EMPTY=  0  ERR=  5  ( 66.7%)
+
+--------------------------------------------------------------------------------
+BUCKET-LEVEL ROLL-UP (any core endpoint success rate, averaged)
+--------------------------------------------------------------------------------
+  2020_2021   core-endpoint OK rate =  73.3%  (66/90)
+  2022_2023   core-endpoint OK rate =  70.0%  (63/90)
+  2024        core-endpoint OK rate =  77.8%  (105/135)
+  2025_2026   core-endpoint OK rate =  66.7%  (90/135)
+
+--------------------------------------------------------------------------------
+TOTAL API CALLS: 462
+TOTAL ELAPSED:   284.8s  (1.6 calls/s)
+CACHE ENTRIES:   462
+
+--------------------------------------------------------------------------------
+ERRORS (132 — showing first 10)
+--------------------------------------------------------------------------------
+  RHHBY  2025-12-02 /hist/ivrank          HTTP 404
+  RHHBY  2025-12-02 /hist/summaries       HTTP 404
+  RHHBY  2025-12-02 /hist/dailies         HTTP 404
+  RHHBY  2025-12-02 /hist/strikes         HTTP 404
+  RHHBY  2025-12-11 /hist/ivrank          HTTP 404
+  RHHBY  2025-12-11 /hist/summaries       HTTP 404
+  RHHBY  2025-12-11 /hist/dailies         HTTP 404
+  RHHBY  2025-12-11 /hist/strikes         HTTP 404
+  RHHBY  2025-12-19 /hist/ivrank          HTTP 404
+  RHHBY  2025-12-19 /hist/summaries       HTTP 404
+
+================================================================================
+STAGE 2 GO/NO-GO RECOMMENDATION
+================================================================================
+NO-GO — historical endpoints do not return enough data; escalate to ORATS support or pivot data source.
+  2020-2021 OK rate: 73.3%
+  2022-2023 OK rate: 70.0%
+  2024      OK rate: 77.8%
+  2025-2026 OK rate: 66.7%
+
+Report written: phase3_pilot_report.json
+================================================================================

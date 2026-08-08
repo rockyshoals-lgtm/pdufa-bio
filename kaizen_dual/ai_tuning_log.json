@@ -1,0 +1,975 @@
+{
+  "tunings": [
+    {
+      "timestamp": "2026-02-28T21:56:12.374858",
+      "source": "auto_tune",
+      "reason": "Search space exploration below 50%. Increase temperature to explore more unique configs.",
+      "params_applied": {
+        "gungnir_temperature": 1.3,
+        "odin_temperature": 1.3
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-02-28T21:56:23.716008",
+      "source": "dashboard_ai",
+      "reason": "AI suggestion: low_diversity",
+      "params_applied": {
+        "gungnir_temperature": 1.3,
+        "odin_temperature": 1.3
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-02-28T21:57:10.390953",
+      "source": "auto_tune",
+      "reason": "Search space exploration below 50%. Increase temperature to explore more unique configs.",
+      "params_applied": {
+        "gungnir_temperature": 1.3,
+        "odin_temperature": 1.3
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-02-28T21:57:33.902875",
+      "source": "auto_tune",
+      "reason": "Search space exploration below 50%. Increase temperature to explore more unique configs.",
+      "params_applied": {
+        "gungnir_temperature": 1.3,
+        "odin_temperature": 1.3
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-02-28T22:05:19.713445",
+      "source": "auto_tune",
+      "reason": "Search space exploration below 50%. Increase temperature to explore more unique configs.",
+      "params_applied": {
+        "gungnir_temperature": 1.47,
+        "odin_temperature": 1.47
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-02-28T22:06:03.338217",
+      "source": "dashboard_ai",
+      "reason": "AI suggestion: low_diversity",
+      "params_applied": {
+        "gungnir_temperature": 1.47,
+        "odin_temperature": 1.47
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-03-01T02:36:41.284595",
+      "source": "auto_tune",
+      "reason": "Search space exploration below 50%. Increase temperature to explore more unique configs.",
+      "params_applied": {
+        "gungnir_temperature": 1.723,
+        "odin_temperature": 1.723
+      },
+      "errors": []
+    },
+    {
+      "timestamp": "2026-03-01T02:36:51.884165",
+      "source": "auto_tune",
+      "reason": "Search space exploration below 50%. Increase temperature to explore more unique configs.",
+      "params_applied": {
+        "gungnir_temperature": 1.723,
+        "odin_temperature": 1.723
+      },
+      "errors": []
+    }
+  ],
+  "recommendations": [
+    {
+      "timestamp": "2026-02-28T21:55:16.696854",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9976 is near theoretical max. Shift focus to Brier score (0.0643) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T21:55:50.756568",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9976 is near theoretical max. Shift focus to Brier score (0.0643) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T21:56:24.823998",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9976 is near theoretical max. Shift focus to Brier score (0.0643) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T21:56:58.901122",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9976 is near theoretical max. Shift focus to Brier score (0.0643) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T21:57:33.004727",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9976 is near theoretical max. Shift focus to Brier score (0.0643) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:01:32.894181",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:02:06.952566",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:02:41.021808",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:03:15.100545",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:03:49.208922",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:04:23.291413",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:04:57.365887",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:05:31.427128",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:06:05.513853",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:06:39.563907",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:07:13.632961",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:07:47.708467",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:08:21.793178",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:08:55.879280",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:09:29.961914",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:10:04.044238",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:10:38.118092",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:11:12.184906",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:11:46.232458",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:12:50.469726",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:13:24.524235",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:13:58.593380",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:15:00.333414",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:15:34.394398",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:16:08.461286",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:16:42.552274",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:17:16.633296",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:17:50.715915",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:18:24.804422",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:18:58.894459",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:19:32.976758",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:20:07.028783",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:20:41.114068",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:21:15.211780",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:21:49.266527",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:22:23.323085",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:22:57.395453",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:23:31.483003",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:24:05.544880",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:24:39.614516",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:25:13.673136",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:25:47.724660",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:26:21.791782",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:26:55.864600",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:27:29.932458",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:28:04.007352",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:28:38.076708",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:29:12.137298",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:29:46.216505",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:30:20.288783",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:30:54.358688",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:31:28.431315",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:32:02.508850",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:32:36.576171",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:33:10.639705",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:33:44.698783",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:34:18.756496",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:34:52.830941",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:35:26.898018",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:36:00.967771",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:36:35.039095",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:37:09.106639",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:37:43.155951",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:38:17.223435",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:38:51.280523",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:39:25.366965",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:39:59.420877",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:40:33.515926",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:41:07.601168",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:41:41.683687",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:42:15.780464",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-02-28T22:42:49.833538",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:40:46.354769",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:41:20.450592",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:41:54.525884",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:42:28.594269",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:43:02.663045",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:43:36.749145",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:44:10.790876",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:44:44.860064",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:45:18.918983",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:45:52.984409",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:46:27.055883",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:47:01.110171",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:47:35.201824",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:48:09.262376",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:48:43.345325",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:49:17.405369",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:49:51.484244",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:50:25.534692",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:50:59.607592",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:51:33.710380",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:52:07.786351",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:52:41.885971",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:53:15.959496",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:53:50.033182",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:54:24.100336",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:54:58.171613",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:55:32.238114",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:56:06.335410",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:56:40.404924",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:57:14.473788",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:57:48.575937",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:58:22.645405",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:58:56.727455",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T00:59:30.829171",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:00:04.902859",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:00:38.982496",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:01:13.076077",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:01:47.170299",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:02:21.220954",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:02:55.295910",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:03:29.355474",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:04:03.454142",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:04:37.501154",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:05:11.574205",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:05:45.687345",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:06:19.763210",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:06:53.825724",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:07:27.951094",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:08:02.044711",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    },
+    {
+      "timestamp": "2026-03-02T01:08:36.138550",
+      "source": "ai_monitor",
+      "recommendation": "AUC at 0.9980 is near theoretical max. Shift focus to Brier score (0.0393) and T4 Precision. Consider ensemble diversification over raw AUC gains.",
+      "priority": "MEDIUM",
+      "applied": false
+    }
+  ]
+}

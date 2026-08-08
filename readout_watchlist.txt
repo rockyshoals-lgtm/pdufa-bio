@@ -1,0 +1,12 @@
+# READOUT WATCHLIST — tickers you KNOW (or suspect) have a readout coming.
+# ctgov_readouts.py queries ClinicalTrials.gov for each and pulls the primary completion
+# date, so a name is caught even when EDGAR never had forward-guidance language in the last
+# 45 days (the SLS miss). One ticker per line. # starts a comment.
+#
+# Seeded 2026-07-18 with SLS (the miss that prompted this) + names from recent sessions.
+SLS
+ORKA
+EYPT
+PMN
+BCTX
+CABA

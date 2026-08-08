@@ -1,0 +1,162 @@
+{
+  "name": "MJOLNIR",
+  "version": "1.1.0",
+  "purpose": "Predict optimal PDUFA runup ENTRY window among {T-60,T-45,T-25}. Exit ALWAYS T-1.",
+  "generated_utc": "2026-04-19T03:19:20.662374Z",
+  "architecture": {
+    "type": "Decoupled: binary NO_TRADE gate + per-window regression",
+    "windows": [
+      "T-60",
+      "T-45",
+      "T-25"
+    ],
+    "gate_lr": {
+      "C": 3.0
+    },
+    "gate_gbm": {
+      "n": 200,
+      "lr": 0.03,
+      "d": 2
+    },
+    "gate_ensemble_weight_lr": 0.0,
+    "per_window_reg": {
+      "T-60": {
+        "ridge_alpha": 0.5,
+        "gbm_params": {
+          "n": 200,
+          "lr": 0.05,
+          "d": 2
+        },
+        "ens_w": 0.7000000000000001,
+        "val_mse": 0.06480033276773155
+      },
+      "T-45": {
+        "ridge_alpha": 30.0,
+        "gbm_params": {
+          "n": 100,
+          "lr": 0.03,
+          "d": 3
+        },
+        "ens_w": 0.30000000000000004,
+        "val_mse": 0.060943025663829205
+      },
+      "T-25": {
+        "ridge_alpha": 30.0,
+        "gbm_params": {
+          "n": 100,
+          "lr": 0.03,
+          "d": 3
+        },
+        "ens_w": 0.5,
+        "val_mse": 0.03830358399350043
+      }
+    }
+  },
+  "features": [
+    "odin_prob",
+    "odin_t1",
+    "odin_t2",
+    "odin_t3",
+    "odin_t4",
+    "mcap_log",
+    "is_nano",
+    "is_micro",
+    "is_small",
+    "is_mid",
+    "is_large",
+    "crl_rate",
+    "ta_risk_high",
+    "log_vol_ratio",
+    "xbi_ret_60d",
+    "xbi_vol_60d",
+    "xbi_drawdown",
+    "stk_ret_90_60",
+    "stk_ret_120_60",
+    "stk_vol_120_60",
+    "log_price",
+    "is_penny",
+    "is_2024_plus",
+    "is_2022_crisis"
+  ],
+  "training": {
+    "n_train": 1030,
+    "n_val": 342,
+    "n_test": 329,
+    "train_period": "<=2023",
+    "val_period": "2024",
+    "test_period": ">=2025"
+  },
+  "honest_metrics": {
+    "no_trade_val_auc": 0.6542612248523338,
+    "no_trade_test_auc": 0.5189704116169888,
+    "no_trade_threshold_tau": 0.3
+  },
+  "backtest_test_set": {
+    "n_events": 329,
+    "mjolnir_unfiltered_mean_pct": 13.830608422953466,
+    "bifrost_v4_static_mean_pct": 9.381770896475915,
+    "equal_weight_mean_pct": 8.25969166199822,
+    "optimal_ceiling_mean_pct": 18.348812518508833
+  },
+  "cardinal_rule": "Exit T-1. Always. No exceptions.",
+  "decision_protocol": "1. Score event with ODIN v14 \u2192 tier + prob. 2. Feed features to MJOLNIR \u2192 P(no_trade) + predicted returns for 3 windows. 3. If P(no_trade) > 0.30 OR max(pred_return) < 0 \u2192 skip. 4. Otherwise enter at argmax(pred_return) and exit T-1.",
+  "feature_importance_gate": {
+    "xbi_vol_60d": 0.20124023542998098,
+    "crl_rate": 0.1611633121111435,
+    "stk_ret_90_60": 0.14799550075242676,
+    "log_vol_ratio": 0.09391421938138472,
+    "xbi_drawdown": 0.08701224823800202,
+    "log_price": 0.07104593786575374,
+    "mcap_log": 0.07047402350550022,
+    "xbi_ret_60d": 0.059649638649890875,
+    "odin_prob": 0.051536408784348585,
+    "stk_vol_120_60": 0.02357580812281548,
+    "is_mid": 0.022271938491922452,
+    "is_2022_crisis": 0.006041559998080896,
+    "is_nano": 0.002302321552373745,
+    "is_small": 0.0017768471163761475,
+    "odin_t1": 0.0
+  },
+  "known_limitations": [
+    "T-90 window excluded (sparse data; BIFROST v4 static matrix handles nano/micro T-90)",
+    "ODIN input uses v9_score proxy; v14/v15 re-scoring in follow-up",
+    "No historical short-interest time series (blocker)",
+    "No intraday microstructure features",
+    "Stock price cache coverage ~97% for 2025+ events"
+  ],
+  "ablation": {
+    "baseline_static_t45_all_mean_pct": 9.381770896475915,
+    "full_strategy_mean_pct": 21.095656518969452,
+    "total_alpha_vs_baseline_pp": 11.713885622493537,
+    "window_selection_alpha_filtered_pp": 9.195655007626977,
+    "no_trade_filter_alpha_static_pp": 2.5182306148665607,
+    "pick_distribution_filtered": {
+      "T-60": {
+        "n": 81,
+        "mjolnir_realized_pct": 27.243584295268075,
+        "static_t45_counterfactual_pct": 11.023216352989678
+      },
+      "T-45": {
+        "n": 20,
+        "mjolnir_realized_pct": 20.779071383862828,
+        "static_t45_counterfactual_pct": 20.779071383862828
+      },
+      "T-25": {
+        "n": 26,
+        "mjolnir_realized_pct": 2.1860239351980804,
+        "static_t45_counterfactual_pct": 7.801470756579759
+      }
+    },
+    "note_t25_underperforms": "MJOLNIR T-25 picks (n=26 on test) underperform static T-45 on same events by ~5.6pp. v1.2 should constrain to {T-60, T-45} or retrain with T-25 excluded."
+  },
+  "bootstrap": {
+    "n_boot": 2000,
+    "seed": 42,
+    "ci_95_mean_pct": [
+      13.64935963038566,
+      29.215312328413383
+    ],
+    "note": "CI on MJOLNIR full-strategy mean return; CI does NOT include baseline (+9.38%) or zero."
+  },
+  "champion_rationale": "Honest 3-way temporal split (train \u22642023, val 2024, test \u22652025). Per-window regression + NO_TRADE gate decoupled. Bootstrap-significant alpha of +11.71pp over BIFROST v4 static T-45. Filtered to ~39% of events (127/329 test events). Win rate 71.7%, median +11.52%."
+}

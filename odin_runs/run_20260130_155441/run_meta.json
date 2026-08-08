@@ -1,0 +1,16 @@
+{
+  "utc_started": "2026-01-30T23:54:41+00:00",
+  "run_id": "20260130_155441",
+  "csv": "C:\\Users\\dcmoo\\Documents\\Python\\ODIN_v5_T1_COMPLIANT.csv",
+  "audit_json_used": "C:\\Users\\dcmoo\\Documents\\Python\\ODIN_T1_AUDIT_REPORT.json",
+  "device": "cuda",
+  "N": 1350,
+  "F": 678,
+  "val_frac": 0.2,
+  "hash_dim": 128,
+  "include_identifiers": true,
+  "min_avoid_precision": 0.94,
+  "min_buy_precision": 0.94,
+  "min_specificity": 0.78,
+  "feature_names_count": 678
+}

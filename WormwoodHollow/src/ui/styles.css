@@ -1,0 +1,82 @@
+:root{
+  --bg:#0b0d0a; --panel:#14170f; --panel2:#1b1f15; --line:#2a3020;
+  --bone:#d8d2c0; --dim:#8f927e; --salt:#f2efe4;
+  --ward:#7fb0b6; --rot:#8aa02a; --rothi:#c0402e; --blood:#8a271a;
+  --gold:#c9a24a; --ink:#0b0d0a;
+  --serif:Georgia,'Iowan Old Style',Palatino,serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--bone);font-family:var(--sans);font-size:15px}
+body{background:
+   radial-gradient(1200px 500px at 50% -10%, #16190f 0%, transparent 60%),
+   var(--bg);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:18px 16px 60px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:.02em;font-size:26px;margin:0;color:var(--salt)}
+.tag{color:var(--dim);font-style:italic;font-family:var(--serif);margin:2px 0 14px;font-size:14px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 15px;box-shadow:0 2px 0 #000 inset, 0 6px 18px rgba(0,0,0,.35)}
+.grow{flex:1;min-width:250px}
+.hd{font-family:var(--serif);font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);margin:0 0 10px}
+.keeper{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.kn{font-family:var(--serif);font-size:19px;color:var(--salt)}
+.kmeta{color:var(--dim);font-size:13px}
+.stage{display:inline-block;font-family:var(--serif);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+   border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--gold);margin-left:6px}
+.meter{margin:11px 0}
+.meter .ml{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim);margin-bottom:4px}
+.meter .ml b{color:var(--bone);font-variant-numeric:tabular-nums}
+.bar{height:11px;border-radius:6px;background:#0a0c08;border:1px solid var(--line);overflow:hidden}
+.bar>i{display:block;height:100%;border-radius:6px;transition:width .35s ease, background .6s}
+.res{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.res .r{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:8px 10px}
+.res .r .n{font-family:var(--serif);font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.res .r .v{font-size:18px;font-variant-numeric:tabular-nums;color:var(--salt);margin-top:1px}
+.res .r .p{font-size:11px;color:var(--rot);opacity:.85}
+.acts{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+button.act{width:100%;text-align:left;background:linear-gradient(#1d2216,#171b11);color:var(--bone);
+   border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:14px;
+   display:flex;justify-content:space-between;align-items:center;gap:10px;transition:transform .06s, border-color .15s}
+button.act:hover:not(:disabled){border-color:#46502e;transform:translateY(-1px)}
+button.act:disabled{opacity:.4;cursor:not-allowed}
+button.act .c{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+button.act.danger{border-color:#4a231b} button.act.danger:hover:not(:disabled){border-color:var(--blood)}
+button.act.rite{border-color:#4a3d1b;background:linear-gradient(#26210f,#1a1710)}
+.log{height:230px;overflow:auto;font-size:13.5px;line-height:1.5}
+.log .e{padding:6px 0;border-bottom:1px solid #1c2016;color:var(--bone)}
+.log .e:first-child{color:var(--salt)}
+.log .e.whisper{font-family:var(--serif);font-style:italic;color:#9aa878}
+.log .e.bad{color:#d98a7e}
+.log .e.good{color:#a9c06a}
+.log .e small{color:var(--dim)}
+.foot{color:var(--dim);font-size:11.5px;margin-top:16px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.foot button{background:none;border:1px solid var(--line);color:var(--dim);border-radius:7px;padding:5px 9px;cursor:pointer;font-size:11.5px}
+.foot button:hover{color:var(--bone);border-color:#46502e}
+/* Come Morning overlay */
+.veil{position:fixed;inset:0;background:rgba(4,5,3,.86);display:none;align-items:center;justify-content:center;padding:20px;z-index:9}
+.veil.on{display:flex}
+.card{max-width:460px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h2{font-family:var(--serif);color:var(--salt);margin:0 0 4px;font-size:22px}
+.card .s{color:var(--dim);font-style:italic;font-family:var(--serif);margin:0 0 14px}
+.card .line{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #1c2016;font-size:14px}
+.card .line .k{color:var(--dim)} .card .line .v{font-variant-numeric:tabular-nums}
+.card .v.up{color:#a9c06a}.card .v.down{color:#d98a7e}
+.card button{margin-top:16px;width:100%;background:linear-gradient(#26210f,#1a1710);border:1px solid #4a3d1b;color:var(--salt);
+   border-radius:10px;padding:11px;font-family:var(--serif);font-size:15px;cursor:pointer}
+.card button:hover{border-color:var(--gold)}
+/* Prologue */
+.prologue{font-family:var(--serif);font-size:15.5px;line-height:1.62;color:var(--bone);min-height:120px}
+.prologue .who{color:var(--gold);font-style:normal;display:block;margin-bottom:2px;letter-spacing:.04em}
+.prologue.final{color:var(--salt);font-size:19px;text-align:center;font-style:italic;padding:24px 6px}
+.pldot{color:var(--dim);font-size:12px;text-align:center;margin-top:12px;letter-spacing:.3em}
+/* Endings */
+.endopt{width:100%;text-align:left;margin-top:10px;background:linear-gradient(#1d2216,#171b11);color:var(--bone);
+   border:1px solid var(--line);border-radius:10px;padding:12px 13px;cursor:pointer;font-family:var(--sans)}
+.endopt:hover:not(:disabled){border-color:var(--gold)}
+.endopt:disabled{opacity:.5;cursor:not-allowed}
+.endopt .en{font-family:var(--serif);font-size:16px;color:var(--salt);display:block;margin-bottom:3px}
+.endopt.unmake .en{color:var(--gold)}
+.endopt .eb{font-size:12.5px;color:var(--dim);line-height:1.45}
+.endopt .lock{font-size:11.5px;color:var(--rothi);margin-top:5px;font-style:italic}
+.depthname{font-size:12px;color:var(--dim);font-style:italic;font-family:var(--serif);margin-top:3px}
+.wonbanner{margin-top:8px;font-family:var(--serif);color:var(--gold);font-size:13px}

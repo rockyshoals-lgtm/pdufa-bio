@@ -1,0 +1,86 @@
+[
+  {
+    "ticker": "AQST",
+    "company": "Aquestive Therapeutics",
+    "drug": "Anaphylm",
+    "indication": "Anaphylaxis",
+    "pdufa_date": "2025-01-31",
+    "priority": "critical",
+    "btd": false,
+    "orphan": false,
+    "priority_review": false,
+    "notes": "FDA deficiencies identified; high IV environment"
+  },
+  {
+    "ticker": "GUTS",
+    "company": "Fractyl Health",
+    "drug": "Revita DMR",
+    "indication": "Type 2 Diabetes",
+    "pdufa_date": "2025-02-15",
+    "priority": "high",
+    "btd": true,
+    "orphan": false,
+    "priority_review": true,
+    "notes": "Strong Phase 3 data; procedural treatment"
+  },
+  {
+    "ticker": "VNDA",
+    "company": "Vanda Pharmaceuticals",
+    "drug": "Tradipitant",
+    "indication": "Gastroparesis",
+    "pdufa_date": "2025-02-28",
+    "priority": "medium",
+    "btd": false,
+    "orphan": false,
+    "priority_review": false,
+    "notes": "Prior CRL history; resubmission"
+  },
+  {
+    "ticker": "PRAX",
+    "company": "Praxis Precision Medicines",
+    "drug": "Ulixacaltamide",
+    "indication": "Essential Tremor",
+    "pdufa_date": "2025-03-15",
+    "priority": "high",
+    "btd": true,
+    "orphan": true,
+    "priority_review": true,
+    "notes": "Strong designation stack; first-in-class potential"
+  },
+  {
+    "ticker": "IBRX",
+    "company": "ImmunityBio",
+    "drug": "Anktiva",
+    "indication": "BCG-Unresponsive NMIBC",
+    "pdufa_date": "2025-04-23",
+    "priority": "high",
+    "btd": true,
+    "orphan": true,
+    "priority_review": true,
+    "notes": "sBLA path; strong social sentiment; short squeeze dynamics"
+  },
+  {
+    "ticker": "CYTK",
+    "company": "Cytokinetics",
+    "drug": "Aficamten",
+    "indication": "Obstructive HCM",
+    "pdufa_date": "2025-09-26",
+    "priority": "medium",
+    "btd": true,
+    "orphan": true,
+    "priority_review": true,
+    "notes": "Myqorzo already approved; strong sponsor"
+  },
+  {
+    "ticker": "MRNA",
+    "company": "Moderna",
+    "drug": "mRNA-4157/Keytruda",
+    "indication": "Melanoma",
+    "pdufa_date": "2025-12-15",
+    "priority": "medium",
+    "btd": true,
+    "orphan": false,
+    "priority_review": true,
+    "notes": "Cancer vaccine 5-year data; combo therapy"
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "v11_baseline_ho_auc": 0.9146965452847806,
+  "v11_baseline_c": 0.01,
+  "v11_num_features": 35,
+  "v12_candidate_ho_auc": 0.9273576097105509,
+  "v12_candidate_c": 0.02,
+  "v12_num_features": 35,
+  "v12_delta_ho": 0.012661064425770308,
+  "v12_is_champion": true,
+  "v12_stability_mean_auc": 0.9273576097105509,
+  "v12_stability_std_auc": 0.0,
+  "v12_features_added": [
+    [
+      "ta_base_x_sponsor_naive",
+      0.007096171802054241,
+      0.01
+    ],
+    [
+      "psychedelics_bin",
+      0.0007096171802053464,
+      0.01
+    ],
+    [
+      "safety_high_x_naive",
+      0.0014192343604108038,
+      0.015
+    ],
+    [
+      "cat_is_q4",
+      0.0002614379084967533,
+      0.015
+    ],
+    [
+      "prior_crl_count_sq",
+      0.00014939309056949401,
+      0.015
+    ]
+  ],
+  "v12_features_dropped": [
+    "multi_crl",
+    "sweet_x_btd",
+    "experienced_x_btd",
+    "ta_base_continuous",
+    "consistency_x_naive"
+  ],
+  "top_10_candidates": [
+    {
+      "feature": "ta_base_x_sponsor_naive",
+      "ho_auc": 0.9217927170868349,
+      "delta": 0.007096171802054241,
+      "c": 0.01
+    },
+    {
+      "feature": "psychedelics_bin",
+      "ho_auc": 0.9156302521008404,
+      "delta": 0.0009337068160597539,
+      "c": 0.01
+    },
+    {
+      "feature": "psychedelics_x_naive",
+      "ho_auc": 0.9156302521008404,
+      "delta": 0.0009337068160597539,
+      "c": 0.01
+    },
+    {
+      "feature": "cat_is_q1",
+      "ho_auc": 0.915219421101774,
+      "delta": 0.0005228758169933956,
+      "c": 0.01
+    },
+    {
+      "feature": "safety_high_x_naive",
+      "ho_auc": 0.9150700280112045,
+      "delta": 0.00037348272642390157,
+      "c": 0.01
+    },
+    {
+      "feature": "cat_is_q4",
+      "ho_auc": 0.9150700280112045,
+      "delta": 0.00037348272642390157,
+      "c": 0.01
+    },
+    {
+      "feature": "cat_is_december",
+      "ho_auc": 0.9150326797385621,
+      "delta": 0.0003361344537814448,
+      "c": 0.01
+    },
+    {
+      "feature": "ta_density_x_swr",
+      "ho_auc": 0.9148832866479925,
+      "delta": 0.00018674136321183976,
+      "c": 0.01
+    },
+    {
+      "feature": "ta_bucket_HIGH",
+      "ho_auc": 0.9148085901027077,
+      "delta": 0.00011204481792703724,
+      "c": 0.01
+    },
+    {
+      "feature": "ta_bucket_MOD",
+      "ho_auc": 0.9147712418300655,
+      "delta": 7.469654528491354e-05,
+      "c": 0.015
+    }
+  ],
+  "final_feature_set": [
+    "btd_bin",
+    "ppm_flag_bin",
+    "ta_very_high",
+    "spa_mega",
+    "crl_rate_low",
+    "btd_and_priority",
+    "era_post",
+    "is_nda",
+    "mfg_risk_bin",
+    "sponsor_win_rate",
+    "spa_6_15",
+    "resub1_x_naive",
+    "resub_class_2",
+    "resub_class_1",
+    "spa_16_plus",
+    "log_spa_sq",
+    "swr_x_btd",
+    "crl_rate_x_naive",
+    "swr_x_streak",
+    "swr_x_ta_vh",
+    "single_arm_x_btd",
+    "resub2_x_experienced",
+    "momentum_x_btd",
+    "sponsor_consistency",
+    "ta_momentum",
+    "swr_cubed",
+    "ta_crl_streak",
+    "accel_x_btd",
+    "accel_orphan_btd",
+    "ta_recent_rate_sq",
+    "ta_base_x_sponsor_naive",
+    "psychedelics_bin",
+    "safety_high_x_naive",
+    "cat_is_q4",
+    "prior_crl_count_sq"
+  ]
+}

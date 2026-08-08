@@ -1,0 +1,90 @@
+{
+  "version": "9.3",
+  "optimization_date": "2026-01-28T21:51:42.807734",
+  "total_configs_tested": 100000000,
+  "feasible_configs": 11416997,
+  "feasibility_rate": 0.11416997,
+  "performance": {
+    "brier_score": 0.10605735331773758,
+    "baseline_brier": 0.0996,
+    "improvement_pct": -6.483286463591954,
+    "tier4_count": 61,
+    "tier4_crl_rate": 0.9672130942344666,
+    "crl_recall_at_85": 0.6606606841087341
+  },
+  "champion_params": {
+    "btd_weight": 0.10878031700849533,
+    "orphan_weight": 0.020202798768877983,
+    "priority_review_weight": 0.03266860544681549,
+    "fast_track_weight": 0.012821299955248833,
+    "accelerated_approval_weight": 0.02054494246840477,
+    "btd_pr_synergy": 0.11944607645273209,
+    "triple_designation_bonus": 0.031635165214538574,
+    "adcom_positive_boost": 0.1319522261619568,
+    "adcom_negative_penalty": -0.24671225249767303,
+    "prior_crl_base_penalty": -0.17978712916374207,
+    "class1_resubmission_boost": 0.17190447449684143,
+    "class2_resubmission_penalty": -0.02531537041068077,
+    "experienced_sponsor_boost": 0.07020165771245956,
+    "inexperienced_sponsor_penalty": -0.11897878348827362,
+    "modality_complexity_weight": -0.12558065354824066,
+    "ta_adjustment_weight": 0.5355783700942993,
+    "tier1_threshold": 0.8237364292144775,
+    "tier2_threshold": 0.7048836946487427,
+    "tier3_threshold": 0.5725287199020386
+  },
+  "therapeutic_area_adjustments": {
+    "Pain Management": -0.286,
+    "Hematology": -0.224,
+    "Nephrology": -0.177,
+    "Ophthalmology": -0.131,
+    "CNS/Neurology": -0.098,
+    "Cardiovascular": -0.081,
+    "Metabolic/Endocrine": -0.067,
+    "Rare Disease": -0.043,
+    "Other": -0.019,
+    "Immunology": 0.016,
+    "Dermatology": 0.028,
+    "Oncology": 0.061,
+    "GI/Hepatology": 0.067,
+    "Respiratory": 0.09,
+    "Infectious Disease": 0.103,
+    "Vaccines": 0.133,
+    "Women's Health": 0.133
+  },
+  "modality_complexity": {
+    "Small Molecule": 0.0,
+    "Peptide": 0.15,
+    "Antibody": 0.3,
+    "ADC": 0.45,
+    "Vaccine": 0.5,
+    "RNA Therapy": 0.55,
+    "Cell/Gene Therapy": 0.65
+  },
+  "indication_overrides": {
+    "opioid use disorder": -0.184,
+    "opioid-induced constipation": -0.184,
+    "chronic pain": -0.184,
+    "sickle cell disease": -0.15,
+    "beta-thalassemia": -0.15,
+    "acute myeloid leukemia": -0.12,
+    "myelodysplastic syndromes": -0.12,
+    "diabetic kidney disease": -0.13,
+    "iga nephropathy": -0.13,
+    "lupus nephritis": -0.13,
+    "dry eye disease": -0.1,
+    "diabetic macular edema": -0.1,
+    "geographic atrophy": -0.1
+  },
+  "constraints": {
+    "min_tier4_count": 20,
+    "min_tier4_crl_rate": 0.35,
+    "min_crl_recall": 0.6
+  },
+  "optimizer": {
+    "batch_size": 2500000,
+    "event_chunk_size": 256,
+    "progress_log_every": 10000000,
+    "checkpoint_interval_batches": 50
+  }
+}

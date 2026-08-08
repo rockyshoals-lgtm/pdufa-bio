@@ -1,0 +1,32 @@
+[+] Loading ODIN
+    2,203 events with outcomes
+[+] Loading SI features
+    3,463 events with SI data, 23 feature columns
+    Matched: 1,860/2,203 ODIN events (84.4%)
+[+] Split: train=1081, val=764, test=358
+[+] C sweep on baseline (val-only selection)
+    C=0.005: val_auc=0.5000, test_auc=0.5000
+    C=0.01: val_auc=0.5000, test_auc=0.5000
+    C=0.025: val_auc=0.5000, test_auc=0.5000
+    C=0.05: val_auc=0.5000, test_auc=0.5000
+    C=0.1: val_auc=0.5000, test_auc=0.5000
+    C=0.25: val_auc=0.5000, test_auc=0.5000
+[+] Best C on val: 0.005 (val_auc=0.5000)
+[+] Greedy forward selection over 23 SI features
+    Round 1: best candidate=si_t1_adv Δval=+0.1414
+              top5: [('si_t1_adv', 0.1414), ('si_t1_log_adv', 0.1414), ('si_t1_short_qty', 0.1185), ('si_t1_log_short_qty', 0.1185), ('si_t1_log_short_qty_sq', 0.1185)]
+    Round 2: best candidate=si_t1_change_pct Δval=+0.0146
+              top5: [('si_t1_change_pct', 0.0146), ('si_trend_monotonic_up', 0.0129), ('si_delta_1_2_short_pct', 0.0116), ('si_n_snapshots_total', 0.0104), ('si_t1_lag_days', 0.0014)]
+    Round 3: best candidate=si_n_snapshots_total Δval=+0.0066
+              top5: [('si_n_snapshots_total', 0.0066), ('si_t1_log_adv', 0.0015), ('si_t1_lag_days', -0.0016), ('si_t1_short_to_adv_sq', -0.0021), ('si_t1_has_snapshot', -0.0024)]
+    Round 4: best candidate=si_delta_1_2_short_pct Δval=-0.0017
+              top5: [('si_delta_1_2_short_pct', -0.0017), ('si_t1_short_to_adv_sq', -0.0018), ('si_trend_4pt_slope', -0.0029), ('si_delta_1_3_dtc', -0.0036), ('si_t1_lag_days', -0.0042)]
+    STOP: best delta -0.0017 < gate 0.002
+
+=== SUMMARY ===
+Baseline val_auc=0.5000  test_auc=0.5000  CI95=[0.5000, 0.5000]
+Final    val_auc=0.6626  test_auc=0.6370  CI95=[0.5750, 0.6971]
+Lift     Δtest=+0.1370  CI95=[+0.0750, +0.1971]  p(lift>0)=1.000
+Selected features (3): ['si_t1_adv', 'si_t1_change_pct', 'si_n_snapshots_total']
+
+Wrote /sessions/confident-serene-ptolemy/mnt/9realms/si_odin_honest_results.json

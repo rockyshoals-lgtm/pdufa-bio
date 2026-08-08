@@ -1,0 +1,36 @@
+{
+  "version": "9.4-annealing",
+  "optimization": {
+    "method": "simulated_annealing",
+    "configs_tested": 1000029536,
+    "improvements_found": 16,
+    "timestamp": "2026-01-29T12:12:29.299111"
+  },
+  "performance": {
+    "brier_score": 0.08206348866224289,
+    "tier1_approval_rate": 0.9618239660657476,
+    "tier4_crl_rate": 0.6666666666666666,
+    "temperature": 0.6494639744680049
+  },
+  "champion_params": {
+    "btd_weight": 0.11619801819324493,
+    "orphan_weight": 0.0,
+    "priority_review_weight": 0.002672746544703841,
+    "fast_track_weight": 0.0,
+    "accelerated_approval_weight": 0.041479580104351044,
+    "adcom_high_boost": 0.20000000298023224,
+    "adcom_mid_penalty": -0.1451379656791687,
+    "adcom_low_penalty": -0.05000000074505806,
+    "prior_crl_penalty": -0.18756750226020813,
+    "class1_resubmission_boost": 0.1509801596403122,
+    "class2_resubmission_penalty": -0.15000000596046448,
+    "experienced_sponsor_boost": 0.0,
+    "inexperienced_sponsor_penalty": -0.1004689633846283,
+    "manufacturing_risk_penalty": -0.25,
+    "form_483_penalty": -0.0895184651017189,
+    "modality_penalty": 0.0,
+    "ta_adjustment_weight": 0.8603041172027588,
+    "tier1_threshold": 0.83669513463974,
+    "tier2_threshold": 0.6655823588371277
+  }
+}

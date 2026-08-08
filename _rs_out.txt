@@ -1,0 +1,72 @@
+============================================================================================
+  FORWARD READOUT SCAN — last 45d in 7d slices
+============================================================================================
+  15 FORWARD phrases (a readout is COMING — this is the tradeable set)
+  excluded on purpose: ['will host a conference call', 'conference call to discuss']  (45% of corpus, ~0 signal)
+
+    expects to report topline      +   4
+    expect to announce topline     +   0
+    plans to report topline        +   0
+    on track to report             +   3
+    anticipate reporting           +   1
+    initial data expected          +   2
+    readout expected               +   5
+    data are expected              +   2
+    results are expected           +  17
+    results anticipated            +  49
+    data expected in               +  19
+    interim analysis expected      +   0
+    topline data expected          +   3
+    expects to announce            +   7
+    we expect topline              +   1
+
+  105 FTS calls in 68s
+  113 filings, 81 tickers
+  biotech SIC: 69 filings, 51 tickers
+
+  fetching up to 40 docs for the WINDOW (stage 2)...
+    10/40
+    20/40
+    30/40
+    40/40
+
+============================================================================================
+  FORWARD GUIDANCE — a readout is COMING (this is the list that pays)
+============================================================================================
+  tkr     filed       form  window           company
+  KLRS    2026-07-17  8-K   1H 2027          Kalaris Therapeutics, Inc.
+  GLMD    2026-07-16  6-K   -                Galmed Pharmaceuticals Ltd.
+  HELP    2026-07-16  6-K   fourth quarter of 2026 CYBIN INC.
+  GCTK    2026-07-15  8-K   -                Glucotrack, Inc.
+  PRFX    2026-07-15  6-K   -                PRF Technologies Ltd.
+  MANE    2026-07-15  8-K   1H 2027          Veradermics, Inc
+  GUTS    2026-07-15  8-K   July 15, 2026    FRACTYL HEALTH, INC.
+  SNDX    2026-07-14  8-K   July 14, 2026    Syndax Pharmaceuticals Inc
+  OCGN    2026-07-13  8-K   -                Ocugen, Inc.
+  CPIX    2026-07-13  8-K   -                CUMBERLAND PHARMACEUTICALS INC
+  CPIX    2026-07-13  8-K   -                CUMBERLAND PHARMACEUTICALS INC
+  EWTX    2026-07-13  8-K   fourth quarter of 2026 Edgewise Therapeutics, Inc.
+  MSLE    2026-07-08  6-K   July 8, 2026     Satellos Bioscience Inc.
+  AEMD    2026-07-08  8-K   -                AETHLON MEDICAL INC
+  PRFX    2026-07-08  6-K   July 08, 2026    PRF Technologies Ltd.
+  TARS    2026-07-08  8-K   July 8, 2026     Tarsus Pharmaceuticals, Inc.
+  GLMD    2026-07-08  6-K   March 31, 2026   Galmed Pharmaceuticals Ltd.
+  RFL     2026-07-08  8-K   2nd half 2026    Rafael Holdings, Inc.
+  MOLN    2026-07-07  6-K   -                MOLECULAR PARTNERS AG
+  CRBP    2026-07-06  8-K   early 2027       Corbus Pharmaceuticals Holdings, Inc
+  CANF    2026-07-06  6-K   JULY 6, 2026     Can-Fite BioPharma Ltd.
+  TENX    2026-07-02  8-K   -                TENAX THERAPEUTICS, INC.
+  TENX    2026-07-02  8-K   -                TENAX THERAPEUTICS, INC.
+  MOLN    2026-07-02  6-K   July 02, 2026    MOLECULAR PARTNERS AG
+  CPIX    2026-07-01  8-K   -                CUMBERLAND PHARMACEUTICALS INC
+  CMPX    2026-07-01  8-K   2H 2027          Compass Therapeutics, Inc.
+  ZURA    2026-07-01  8-K   March 31, 2026   Zura Bio Ltd
+  EVMN    2026-06-29  8-K   June 29, 2026    Evommune, Inc.
+  MSLE    2026-06-29  6-K   June 29, 2026    Satellos Bioscience Inc.
+  NGNE    2026-06-29  8-K   June 16, 2026    Neurogene Inc.
+
+  69 forward, 0 past-tense
+  -> C:\Users\dcmoo\Documents\Python\9realms\readout_forward.csv
+
+  NOT investment advice. A company saying 'we expect topline in 2H' is a PLAN.
+  Verify against IR/SEC before acting. Readout dates slip constantly.

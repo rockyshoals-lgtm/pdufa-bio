@@ -1,0 +1,54 @@
+[
+  {
+    "ticker": "BIIB",
+    "date": "2026-07-13",
+    "outcome": "Approved",
+    "drug": "LEQEMBI IQLIK (lecanemab-irmb) (at-home injection)",
+    "indication": "Early Alzheimer's disease",
+    "company": "Biogen Inc.",
+    "cap": "Large",
+    "headline": "LEQEMBI IQLIK (lecanemab-irmb) subcutaneous injection approved as an initiation (starting) dose for early Alzheimer's disease (Jul 13 2026).",
+    "pdufa_note": "The PDUFA goal date was August 24, 2026 — itself a three-month extension announced May 8, 2026, after the FDA deemed additional information a major amendment to the sBLA. The FDA approved on July 13, 2026, about six weeks early. Subcutaneous <em>maintenance</em> dosing was approved separately on August 26, 2025; this decision covers the <em>starting</em> dose.",
+    "source": "https://investors.biogen.com/news-releases/news-release-details/fda-approves-leqembi-iqlikr-lecanemab-irmb-subcutaneous",
+    "source_label": "Eisai / Biogen investor release, July 13, 2026"
+  },
+  {
+    "ticker": "MRK",
+    "date": "2026-07-10",
+    "outcome": "Approved",
+    "drug": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+    "indication": "Muscle-invasive bladder cancer (MIBC)",
+    "company": "Merck & Company Inc.",
+    "cap": "Large",
+    "headline": "KEYTRUDA (pembrolizumab) and KEYTRUDA QLEX (pembrolizumab and berahyaluronidase alfa-pmph), each with Padcev (enfortumab vedotin-ejfv), approved as treatment before and after surgery for muscle-invasive bladder cancer (Jul 10 2026).",
+    "pdufa_note": "The PDUFA goal date was August 17, 2026 for the cisplatin-eligible population, based on the Phase 3 KEYNOTE-B15 trial (also known as EV-304) — a date Merck disclosed in its Q1 2026 Form 8-K. The FDA approved on July 10, 2026, about five weeks early, and did so regardless of cisplatin eligibility.",
+    "source": "https://www.businesswire.com/news/home/20260710192353/en/",
+    "source_label": "Merck press release, July 10, 2026"
+  },
+  {
+    "ticker": "PFE",
+    "date": "2026-07-10",
+    "outcome": "Approved",
+    "drug": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+    "indication": "Muscle-invasive bladder cancer (MIBC)",
+    "company": "Pfizer Inc.",
+    "cap": "Large",
+    "headline": "PADCEV (enfortumab vedotin-ejfv) plus Keytruda approved as neoadjuvant and adjuvant treatment for muscle-invasive bladder cancer, regardless of cisplatin eligibility (Jul 10 2026).",
+    "pdufa_note": "The PDUFA goal date was August 17, 2026 for the cisplatin-eligible population, based on the Phase 3 KEYNOTE-B15 trial (also known as EV-304). The FDA approved on July 10, 2026, about five weeks early. PADCEV is partnered between Pfizer and Astellas.",
+    "source": "https://www.businesswire.com/news/home/20260710224617/en/",
+    "source_label": "Pfizer / Astellas press release, July 10, 2026"
+  },
+  {
+    "ticker": "CELC",
+    "date": "2026-07-14",
+    "outcome": "Approved",
+    "drug": "Gedatolisib with Fulvestrant - (VIKTORIA-1)",
+    "indication": "HR+/HER2− advanced breast cancer (PIK3CA wild-type)",
+    "company": "Celcuity Inc.",
+    "cap": "Mid",
+    "headline": "REVTORPYK (gedatolisib) plus fulvestrant approved for HR+/HER2−, PIK3CA wild-type advanced breast cancer (Jul 14 2026).",
+    "pdufa_note": "The PDUFA goal date was July 17, 2026; the FDA approved on July 14, 2026, three days early. This page previously carried another company's chart, indication and dates through a template-copy bug; it was rebuilt from Celcuity's own price history on July 15, 2026. See /corrections.",
+    "source": "https://ir.celcuity.com/news-releases",
+    "source_label": "Celcuity investor releases"
+  }
+]

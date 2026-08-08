@@ -1,0 +1,853 @@
+{
+  "metadata": {
+    "project": "ODIN",
+    "topic": "PDUFA runup trading analysis + best entry/exit windows",
+    "generated_at_local": "2026-02-20T16:31:58-08:00",
+    "timezone": "America/Los_Angeles",
+    "sources": [
+      {
+        "file": "ODIN_PDUFA_RUNUP_PLAYBOOK.md",
+        "version": "1.0",
+        "date": "2026-02-01"
+      },
+      {
+        "file": "PDUFA_CHEAT_SHEET.md",
+        "date": null
+      },
+      {
+        "file": "ODIN_T5_EXIT_PROTOCOL_v102.md",
+        "version": "v10.2",
+        "date": "2026-02-02"
+      },
+      {
+        "file": "Run-Up_Wave_Performance_Summary.csv",
+        "date": null
+      },
+      {
+        "file": "t5_exit_simulation.csv",
+        "date": null
+      },
+      {
+        "file": "ODIN_v103_SIGNALS_QUICKREF.md",
+        "date": null
+      },
+      {
+        "file": "first_launch_earnings_research.md",
+        "date": null
+      }
+    ]
+  },
+  "core_thesis": {
+    "one_liner": "Most profit is captured in the pre-decision runup; the FDA decision itself is an unhedgeable binary gap risk.",
+    "cardinal_rule": "Never hold through the FDA decision. The runup IS the trade.",
+    "why": [
+      "By ~T-5 you typically capture ~80–90% of the runup while taking ~0% of the binary event risk.",
+      "Post-decision outcomes often include IV crush, 'sell-the-news' behavior, or catastrophic gap downs on CRL.",
+      "Weekend action dates can remove the ability to exit after announcements."
+    ]
+  },
+  "definitions": {
+    "T_minus_N": "N trading days before the PDUFA action date (T-0).",
+    "PDUFA": "FDA target action date for NDA/BLA/sNDA/sBLA decisions.",
+    "IV": "Implied volatility; tends to expand into binary catalysts and collapse after.",
+    "runup": "Price/IV appreciation into the catalyst date due to positioning, momentum, and uncertainty premium."
+  },
+  "best_entry_exit_windows": {
+    "primary_entry_window": {
+      "days_before_pdufa": [
+        60,
+        45
+      ],
+      "why": [
+        "PDUFA date is usually confirmed and institutional positioning begins.",
+        "Implied volatility is often lower (better risk/reward for calls/straddles).",
+        "Avoids late-cycle retail FOMO and elevated option premiums."
+      ],
+      "entry_criteria_require_at_least_4_of_6": [
+        {
+          "id": 1,
+          "criterion": "PDUFA date officially confirmed",
+          "source": "FDA/company press release"
+        },
+        {
+          "id": 2,
+          "criterion": "Market cap $100M–$2B (sweet spot)",
+          "source": "market data"
+        },
+        {
+          "id": 3,
+          "criterion": "Binary outcome is NDA/BLA (not sNDA)",
+          "source": "filing type"
+        },
+        {
+          "id": 4,
+          "criterion": "Prior positive Phase 3 data",
+          "source": "press release/publication"
+        },
+        {
+          "id": 5,
+          "criterion": "No prior CRL OR prior efficacy CRL clearly addressed",
+          "source": "FDA history"
+        },
+        {
+          "id": 6,
+          "criterion": "Options liquidity exists (≥500 OI near the money)",
+          "source": "options chain"
+        }
+      ],
+      "late_entry_window_if_missed": {
+        "days_before_pdufa": [
+          30,
+          20
+        ],
+        "note": "This is a 'late but still workable' entry window used in the T-5 protocol checklist; avoid chasing after T-30 if IV is already elevated."
+      }
+    },
+    "exit_window_default": {
+      "days_before_pdufa": [
+        10,
+        7
+      ],
+      "rule": "Close positions within T-10 to T-7 as the default conservative policy (especially for options/IV trades).",
+      "notes": [
+        "Exit before IV peak and before the highest-risk binary window.",
+        "Do not hold through T-7 to T-0."
+      ]
+    },
+    "exit_window_t5_protocol": {
+      "by_odin_tier": {
+        "TIER_1": {
+          "exit_day": -5,
+          "runner": {
+            "max_pct_of_position": 10
+          },
+          "position_size_guidance": "full",
+          "rationale": "High confidence but still exit before event; small runner only."
+        },
+        "TIER_2": {
+          "exit_day": -5,
+          "runner": {
+            "max_pct_of_position": 0
+          },
+          "position_size_guidance": "75% of standard",
+          "rationale": "Moderate confidence; no runner."
+        },
+        "TIER_3": {
+          "exit_day": -7,
+          "runner": {
+            "max_pct_of_position": 0
+          },
+          "position_size_guidance": "50% of standard",
+          "rationale": "Lower confidence; exit earlier."
+        },
+        "TIER_4": {
+          "exit_day": null,
+          "runner": null,
+          "position_size_guidance": "0%",
+          "rationale": "No entry / avoid entirely."
+        }
+      },
+      "special_cases_overrides": [
+        {
+          "scenario": "Weekend PDUFA",
+          "exit_rule": "Exit Thursday close / Friday open",
+          "rationale": "No exit opportunity after announcement; gap risk into Monday."
+        },
+        {
+          "scenario": "Pediatric sNDA",
+          "exit_rule": "Exit T-10, 0% runner",
+          "rationale": "Dosing/PK bridging risk + label expansion nuance."
+        },
+        {
+          "scenario": "Any CMC delay mention (FDA/EMA/other)",
+          "exit_rule": "Immediate exit / do not enter",
+          "rationale": "Historically 2–5× higher CRL probability."
+        },
+        {
+          "scenario": "EMA concerns disclosed (CMC LoQ, extensions)",
+          "exit_rule": "Immediate exit / avoid",
+          "rationale": "Cross-regulatory CMC flags often precede FDA issues."
+        },
+        {
+          "scenario": "Hiring void (<3 meaningful commercial hires) on NDA/BLA",
+          "exit_rule": "Exit T-10 (or avoid)",
+          "rationale": "Potential sponsor caution / low confidence signal."
+        }
+      ]
+    }
+  },
+  "strategies": [
+    {
+      "name": "Strategy 1: Momentum Runup Trade (Primary)",
+      "setup": {
+        "entry_window_days_before_pdufa": [
+          60,
+          45
+        ],
+        "target_return": "8–15% median; outliers >100%",
+        "instruments": [
+          "long equity",
+          "ITM/ATM calls (2–3 month expiry)"
+        ]
+      },
+      "entry_criteria": "Require ≥4 of 6 (see best_entry_exit_windows.primary_entry_window.entry_criteria_require_at_least_4_of_6).",
+      "exit_rules": {
+        "primary_exit": {
+          "days_before_pdufa": [
+            10,
+            7
+          ],
+          "rule": "Exit regardless of P/L."
+        },
+        "early_exit_triggers": [
+          {
+            "trigger": "20% gain achieved",
+            "action": "Sell 50% of position"
+          },
+          {
+            "trigger": "Negative news (manufacturing delay, RTOR issues)",
+            "action": "Exit immediately"
+          },
+          {
+            "trigger": "Competitor approval in same indication",
+            "action": "Reassess within 24h"
+          }
+        ],
+        "stop_loss": {
+          "pct_from_entry": 15,
+          "note": "Accept as cost of binary exposure; binary catalysts make tight stops impractical."
+        }
+      },
+      "position_sizing": {
+        "max_pct_portfolio": 5,
+        "recommended_pct_portfolio": "2–3% for newer traders",
+        "portfolio_construction": "Basket of 8–12 positions across different dates"
+      }
+    },
+    {
+      "name": "Strategy 2: Vol-Expansion Straddle (ODIN Specialty)",
+      "theory": "IV tends to expand materially from ~T-45 to ~T-1; capture IV expansion and exit before IV crush.",
+      "volatility_cycle": [
+        {
+          "phase": 1,
+          "window_days_before_pdufa": [
+            60,
+            45
+          ],
+          "description": "IV below ~30th percentile; BUY"
+        },
+        {
+          "phase": 2,
+          "window_days_before_pdufa": [
+            45,
+            20
+          ],
+          "description": "IV expansion begins; HOLD"
+        },
+        {
+          "phase": 3,
+          "window_days_before_pdufa": [
+            20,
+            7
+          ],
+          "description": "IV acceleration/peak pricing; SELL WINDOW"
+        },
+        {
+          "phase": 4,
+          "window_days_before_pdufa": [
+            7,
+            -1
+          ],
+          "description": "Max IV then crush; DO NOT HOLD"
+        }
+      ],
+      "execution": {
+        "entry": "Buy ATM straddle when 30-day IV < 60% (or <30th percentile historically for ticker).",
+        "target": "IV doubles; ~70–150% straddle gain typical in expansion phase.",
+        "exit": "Exit T-10 to T-7 regardless of stock direction.",
+        "risk": "If IV doesn't expand, max loss is premium paid."
+      },
+      "position_sizing": {
+        "max_pct_portfolio": 3,
+        "stop_loss_pct": 20
+      }
+    },
+    {
+      "name": "Strategy 3: CRL Early Warning Short (Advanced)",
+      "multi_signal_framework": {
+        "rule": "Require ≥3 of 5 red flags before initiating short.",
+        "signals": [
+          {
+            "signal": "IV term spread inverted (30d IV > 90d IV)",
+            "weight": 0.25
+          },
+          {
+            "signal": "Discretionary insider sales ratio >0.6",
+            "weight": 0.25
+          },
+          {
+            "signal": "Late sales cluster (>50% in final 14 days)",
+            "weight": 0.2
+          },
+          {
+            "signal": "Price peaked ~T-15 and declining into PDUFA",
+            "weight": 0.15
+          },
+          {
+            "signal": "Negative SSOF (signed small order flow)",
+            "weight": 0.15
+          }
+        ]
+      },
+      "execution": {
+        "entry_window_days_before_pdufa": [
+          7,
+          3
+        ],
+        "instruments": [
+          "short equity",
+          "buy puts",
+          "sell call spreads"
+        ],
+        "target_return": "15–25% (typical CRL gap -30% to -50%)",
+        "exit": "Day before PDUFA or upon early FDA announcement",
+        "position_size_max_pct_portfolio": 2
+      },
+      "risk_controls": [
+        "Never short strong designation stacks (BTD+Orphan+Priority).",
+        "Never short Class 1 resubmissions.",
+        "Accept possibility of full loss if approval occurs."
+      ]
+    },
+    {
+      "name": "Strategy 4: Resubmission Recovery (Post-CRL)",
+      "setup": [
+        "After CMC/manufacturing-only CRL (NOT efficacy failure): wait for timeline clarity.",
+        "Enter when resubmission is accepted (often after -40% to -60% drop).",
+        "Target recovery toward 70–80% of pre-CRL level.",
+        "Exit T-10 before resubmission PDUFA."
+      ],
+      "qualification_criteria": [
+        "CRL explicitly cites CMC/manufacturing issues only.",
+        "No efficacy or safety concerns in CRL rationale.",
+        "Financial runway >18 months.",
+        "Experienced sponsor (previous approvals)."
+      ],
+      "position_sizing": {
+        "max_pct_portfolio": 5,
+        "note": "Higher conviction than initial PDUFA but longer holding period implies more volatility exposure."
+      }
+    }
+  ],
+  "risk_management_rules": {
+    "portfolio_level": [
+      "Max 25% of portfolio in catalyst trades simultaneously.",
+      "Max 5 concurrent PDUFA positions.",
+      "Maintain ≥50% cash reserve for unexpected opportunities."
+    ],
+    "position_level": [
+      "Never exceed 5% on any single PDUFA event.",
+      "Use 15–20% stop as a guideline (binary gaps can skip stops).",
+      "Take 50% profits at +20% gain; let remainder ride to planned exit."
+    ],
+    "behavioral_rules": [
+      "Never hold through FDA decision (no exceptions).",
+      "Never average down on catalyst positions.",
+      "Never chase entries after T-30 if IV already elevated.",
+      "Always verify PDUFA date via official sources before entering."
+    ]
+  },
+  "early_warning_signals": {
+    "rule_of_thumb": "If ≥3 signals present: exit early and/or consider bearish/hedged setups.",
+    "signals": [
+      {
+        "signal": "IV30 > IV90 (term inversion)",
+        "how_to_check": "options chain"
+      },
+      {
+        "signal": "Discretionary insider sales >60%",
+        "how_to_check": "SEC Form 4 / EDGAR"
+      },
+      {
+        "signal": "CEO/CFO sold within T-14",
+        "how_to_check": "SEC Form 4 / EDGAR"
+      },
+      {
+        "signal": "Price peaked T-15 and declining toward PDUFA",
+        "how_to_check": "price chart"
+      },
+      {
+        "signal": ">50% of insider sales in final 2 weeks",
+        "how_to_check": "SEC Form 4 / EDGAR"
+      }
+    ]
+  },
+  "hard_avoid_signals": {
+    "rule": "If ANY hard avoid triggers: no position at any tier.",
+    "signals": [
+      {
+        "id": "AVOID_001",
+        "severity": "CRITICAL",
+        "trigger": "EMA CMC flag"
+      },
+      {
+        "id": "AVOID_002",
+        "severity": "HIGH",
+        "trigger": "<3 meaningful commercial hires within 6 months (NDA/BLA context)"
+      },
+      {
+        "id": "AVOID_003",
+        "severity": "CRITICAL",
+        "trigger": "Pediatric sNDA without published/credible PK bridging evidence"
+      },
+      {
+        "id": "AVOID_004",
+        "severity": "CRITICAL",
+        "trigger": "CMC extension from any regulator"
+      },
+      {
+        "id": "AVOID_005",
+        "severity": "HIGH",
+        "trigger": "Weekend PDUFA with probability <80%"
+      }
+    ]
+  },
+  "odins_runup_relevant_signals": {
+    "S23_insider_selling": {
+      "key_insight": "Insider selling is asymmetrically bearish; coordinated selling clusters can precede deficiency/CRL events by 2–3 months.",
+      "trigger_thresholds": [
+        {
+          "id": "T1",
+          "trigger": "Cumulative selling",
+          "threshold": ">10% holdings in 6 months"
+        },
+        {
+          "id": "T2",
+          "trigger": "Single transaction",
+          "threshold": ">8% of holdings sold"
+        },
+        {
+          "id": "T3",
+          "trigger": "C-suite cluster",
+          "threshold": "≥2 execs within 30 days"
+        },
+        {
+          "id": "T4",
+          "trigger": "Same-day cluster",
+          "threshold": "≥3 insiders same day"
+        },
+        {
+          "id": "T5",
+          "trigger": "No purchases",
+          "threshold": "$500K+ sells, zero buys"
+        },
+        {
+          "id": "T6",
+          "trigger": "Cluster → quiet",
+          "threshold": "Selling 60–120d pre-PDUFA then silence"
+        }
+      ],
+      "score_mapping": [
+        {
+          "triggers_fired": 0,
+          "risk": "LOW",
+          "adjustment": 0.0
+        },
+        {
+          "triggers_fired": 1,
+          "risk": "ELEVATED",
+          "adjustment": -0.03
+        },
+        {
+          "triggers_fired": "2–3",
+          "risk": "HIGH",
+          "adjustment": -0.06
+        },
+        {
+          "triggers_fired": "4+",
+          "risk": "CRITICAL",
+          "adjustment": -0.1
+        }
+      ]
+    },
+    "S6_commercial_hiring": {
+      "key_insight": "NDA/BLA launches require commercial build; sNDA label expansions can be neutral if an existing salesforce exists.",
+      "NDA_BLA_thresholds": {
+        "CCO": {
+          "bullish": "≥18mo pre-PDUFA",
+          "neutral": "12–18mo",
+          "bearish_void": "<12mo or none"
+        },
+        "MSLs": {
+          "bullish": "≥12mo",
+          "neutral": "6–12mo",
+          "bearish_void": "<6mo or none"
+        },
+        "Market_Access": {
+          "bullish": "≥15mo",
+          "neutral": "9–15mo",
+          "bearish_void": "<9mo or none"
+        },
+        "Sales_Force": {
+          "bullish": "≥6mo pre-PDUFA",
+          "neutral": "at approval",
+          "bearish_void": "after approval only"
+        }
+      },
+      "sNDA_default": [
+        "Maintenance hiring is neutral if infrastructure exists.",
+        "Only explicit commercial pullback (layoffs/hiring freeze) is bearish."
+      ]
+    }
+  },
+  "empirical_evidence": {
+    "t5_exit_protocol_simulation": {
+      "n_events": 180,
+      "population": "CRL events analyzed in the simulation dataset",
+      "overall": {
+        "n": 180,
+        "mean_t5_exit_return": 0.11041363472811515,
+        "median_t5_exit_return": 0.1001762590235993,
+        "mean_hold_through_return": -0.38541969860521813,
+        "median_hold_through_return": -0.39749590577929017,
+        "mean_delta": 0.49583333333333335,
+        "pct_t5_positive": 0.9444444444444444,
+        "pct_hold_positive": 0.0
+      },
+      "by_tier": {
+        "TIER_1": {
+          "n": 72,
+          "pct_t5_positive": 0.9861111111111112,
+          "pct_hold_positive": 0.0,
+          "pct_t5_beats_hold": 1.0,
+          "avg_delta": 0.5
+        },
+        "TIER_2": {
+          "n": 17,
+          "pct_t5_positive": 1.0,
+          "pct_hold_positive": 0.0,
+          "pct_t5_beats_hold": 1.0,
+          "avg_delta": 0.48235294117647043
+        },
+        "TIER_3": {
+          "n": 67,
+          "pct_t5_positive": 0.8955223880597015,
+          "pct_hold_positive": 0.0,
+          "pct_t5_beats_hold": 1.0,
+          "avg_delta": 0.4932835820895522
+        },
+        "TIER_4": {
+          "n": 24,
+          "pct_t5_positive": 0.9166666666666666,
+          "pct_hold_positive": 0.0,
+          "pct_t5_beats_hold": 1.0,
+          "avg_delta": 0.5
+        }
+      },
+      "by_tier_mean_returns": {
+        "t5_exit_return": {
+          "TIER_1": 0.1496993314976587,
+          "TIER_2": 0.15241086020185488,
+          "TIER_3": 0.07571128423213246,
+          "TIER_4": 0.05968590484353705
+        },
+        "hold_through_return": {
+          "TIER_1": -0.3503006685023412,
+          "TIER_2": -0.32994208097461564,
+          "TIER_3": -0.4175722978574197,
+          "TIER_4": -0.44031409515646286
+        },
+        "capital_saved": {
+          "TIER_1": 0.5,
+          "TIER_2": 0.48235294117647054,
+          "TIER_3": 0.4932835820895522,
+          "TIER_4": 0.5
+        }
+      },
+      "notes": [
+        "The simulation dataset shows T-5 exits were positive in ~94% of CRL cases and avoided the negative gap of holding through the FDA decision.",
+        "Hold-through returns are negative across the simulation CRL dataset; this supports the 'runup is the trade' doctrine."
+      ]
+    },
+    "runup_wave_performance_examples": {
+      "summary_stats": {
+        "sample_size": 12,
+        "outcomes": {
+          "APPROVAL": 11,
+          "CRL": 1
+        },
+        "runup_T_minus_45_to_T_minus_5_pct": {
+          "mean": 48.26666666666667,
+          "median": 24.05,
+          "min": 4.9,
+          "max": 300.0
+        },
+        "annualized_runup_40d_pct": {
+          "mean": 331.4166666666667,
+          "median": 244.0,
+          "min": 47.0,
+          "max": 1000.0
+        },
+        "approval_only_runup_pct": {
+          "count": 11.0,
+          "mean": 25.38181818181818,
+          "median": 23.5,
+          "min": 4.9,
+          "max": 66.7
+        },
+        "crl_only_runup_pct": {
+          "count": 1.0,
+          "mean": 300.0,
+          "median": 300.0,
+          "min": 300.0,
+          "max": 300.0
+        }
+      },
+      "examples": [
+        {
+          "Ticker": "PTHS",
+          "Company": "Pelthos Therapeutics Inc.",
+          "Catalyst_Date": "2024-01-05",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 4.1,
+          "Price_T-30": 4.25,
+          "Price_T-15": 4.5,
+          "Price_T-7": 4.7,
+          "Price_T-1": 4.85,
+          "Price_T0": 5.0,
+          "Price_T+1": 5.1,
+          "Price_T+15": 5.3,
+          "Runup_T-45_to_T-5 (%)": 18.3,
+          "Annualized_Runup_40d (%)": 173.0,
+          "capital_after_trade": 59150.0
+        },
+        {
+          "Ticker": "LGND",
+          "Company": "Ligand Pharmaceuticals Inc.",
+          "Catalyst_Date": "2024-01-05",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 64.5,
+          "Price_T-30": 66.1,
+          "Price_T-15": 68.0,
+          "Price_T-7": 70.25,
+          "Price_T-1": 72.0,
+          "Price_T0": 71.8,
+          "Price_T+1": 70.45,
+          "Price_T+15": 68.0,
+          "Runup_T-45_to_T-5 (%)": 12.0,
+          "Annualized_Runup_40d (%)": 112.0,
+          "capital_after_trade": 66248.0
+        },
+        {
+          "Ticker": "NOVN",
+          "Company": "Novan Inc.",
+          "Catalyst_Date": "2024-01-05",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 0.85,
+          "Price_T-30": 0.88,
+          "Price_T-15": 0.92,
+          "Price_T-7": 1.0,
+          "Price_T-1": 1.05,
+          "Price_T0": 1.02,
+          "Price_T+1": 0.9,
+          "Price_T+15": 0.75,
+          "Runup_T-45_to_T-5 (%)": 23.5,
+          "Annualized_Runup_40d (%)": 252.0,
+          "capital_after_trade": 81816.28
+        },
+        {
+          "Ticker": "ALPMY",
+          "Company": "Astellas Pharma Inc. ADR",
+          "Catalyst_Date": "2024-01-09",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 14.2,
+          "Price_T-30": 14.3,
+          "Price_T-15": 14.5,
+          "Price_T-7": 14.6,
+          "Price_T-1": 14.55,
+          "Price_T0": 14.5,
+          "Price_T+1": 14.4,
+          "Price_T+15": 14.1,
+          "Runup_T-45_to_T-5 (%)": 4.9,
+          "Annualized_Runup_40d (%)": 47.0,
+          "capital_after_trade": 85825.27772
+        },
+        {
+          "Ticker": "MRK",
+          "Company": "Merck & Co.",
+          "Catalyst_Date": "2024-01-12",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 108.0,
+          "Price_T-30": 109.5,
+          "Price_T-15": 111.0,
+          "Price_T-7": 112.25,
+          "Price_T-1": 113.1,
+          "Price_T0": 112.8,
+          "Price_T+1": 113.5,
+          "Price_T+15": 115.0,
+          "Runup_T-45_to_T-5 (%)": 5.4,
+          "Annualized_Runup_40d (%)": 52.0,
+          "capital_after_trade": 90459.84271688
+        },
+        {
+          "Ticker": "CRSP",
+          "Company": "CRISPR Therapeutics AG",
+          "Catalyst_Date": "2024-01-16",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 45.0,
+          "Price_T-30": 48.2,
+          "Price_T-15": 52.0,
+          "Price_T-7": 55.1,
+          "Price_T-1": 58.0,
+          "Price_T0": 60.5,
+          "Price_T+1": 62.0,
+          "Price_T+15": 65.0,
+          "Runup_T-45_to_T-5 (%)": 37.8,
+          "Annualized_Runup_40d (%)": 449.0,
+          "capital_after_trade": 124653.66326386062
+        },
+        {
+          "Ticker": "VRTX",
+          "Company": "Vertex Pharmaceuticals Inc.",
+          "Catalyst_Date": "2024-01-16",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 300.0,
+          "Price_T-30": 305.0,
+          "Price_T-15": 310.0,
+          "Price_T-7": 315.0,
+          "Price_T-1": 318.0,
+          "Price_T0": 320.0,
+          "Price_T+1": 322.0,
+          "Price_T+15": 330.0,
+          "Runup_T-45_to_T-5 (%)": 6.0,
+          "Annualized_Runup_40d (%)": 59.0,
+          "capital_after_trade": 132132.88305969228
+        },
+        {
+          "Ticker": "AIM",
+          "Company": "AIM ImmunoTech Inc.",
+          "Catalyst_Date": "2024-01-22",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 0.3,
+          "Price_T-30": 0.35,
+          "Price_T-15": 0.4,
+          "Price_T-7": 0.45,
+          "Price_T-1": 0.48,
+          "Price_T0": 0.46,
+          "Price_T+1": 0.5,
+          "Price_T+15": 0.44,
+          "Runup_T-45_to_T-5 (%)": 50.0,
+          "Annualized_Runup_40d (%)": 557.0,
+          "capital_after_trade": 198199.3245895384
+        },
+        {
+          "Ticker": "HRTX",
+          "Company": "Heron Therapeutics Inc.",
+          "Catalyst_Date": "2024-01-23",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 2.85,
+          "Price_T-30": 3.0,
+          "Price_T-15": 3.2,
+          "Price_T-7": 3.4,
+          "Price_T-1": 3.55,
+          "Price_T0": 3.5,
+          "Price_T+1": 3.45,
+          "Price_T+15": 3.3,
+          "Runup_T-45_to_T-5 (%)": 24.6,
+          "Annualized_Runup_40d (%)": 236.0,
+          "capital_after_trade": 246956.35843856487
+        },
+        {
+          "Ticker": "ANIP",
+          "Company": "ANI Pharmaceuticals Inc.",
+          "Catalyst_Date": "2024-04-30",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 50.0,
+          "Price_T-30": 54.0,
+          "Price_T-15": 58.0,
+          "Price_T-7": 62.0,
+          "Price_T-1": 65.0,
+          "Price_T0": 64.5,
+          "Price_T+1": 66.0,
+          "Price_T+15": 68.0,
+          "Runup_T-45_to_T-5 (%)": 30.0,
+          "Annualized_Runup_40d (%)": 280.0,
+          "capital_after_trade": 321043.26597013435
+        },
+        {
+          "Ticker": "NERV",
+          "Company": "Minerva Neurosciences Inc.",
+          "Catalyst_Date": "2024-10-08",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "CRL",
+          "Price_T-45": 2.0,
+          "Price_T-30": 3.1,
+          "Price_T-15": 4.5,
+          "Price_T-7": 6.5,
+          "Price_T-1": 8.0,
+          "Price_T0": 7.8,
+          "Price_T+1": 3.2,
+          "Price_T+15": 2.5,
+          "Runup_T-45_to_T-5 (%)": 300.0,
+          "Annualized_Runup_40d (%)": 1000.0,
+          "capital_after_trade": 1284173.0638805374
+        },
+        {
+          "Ticker": "AKBA",
+          "Company": "Akebia Therapeutics Inc.",
+          "Catalyst_Date": "2024-03-27",
+          "Catalyst_Type": "PDUFA",
+          "Outcome": "APPROVAL",
+          "Price_T-45": 0.5,
+          "Price_T-30": 0.55,
+          "Price_T-15": 0.6,
+          "Price_T-7": 0.7,
+          "Price_T-1": 0.8,
+          "Price_T0": 0.78,
+          "Price_T+1": 0.85,
+          "Price_T+15": 0.9,
+          "Runup_T-45_to_T-5 (%)": 66.7,
+          "Annualized_Runup_40d (%)": 760.0,
+          "capital_after_trade": 2140716.497488856
+        }
+      ]
+    },
+    "notable_case_studies": [
+      {
+        "case": "PHAR (Pharming) pediatric Joenja (leniolisib) sNDA",
+        "pdufa_target_date": "2026-01-31",
+        "index_case_for": "T-5 exit protocol",
+        "example_price_path": {
+          "T-30": 17.06,
+          "T-5": 21.18,
+          "T_plus_1_after_crl": "approx 10–12"
+        },
+        "lesson": "Weekend action date + CRL = catastrophic gap with no stop-loss protection; exit ahead of event preserves runup."
+      },
+      {
+        "case": "NERV example (from runup wave sample)",
+        "outcome": "CRL",
+        "runup_T-45_to_T-5_pct": 300.0,
+        "lesson": "Even a CRL can have an enormous runup; exiting pre-event monetizes the uncertainty premium regardless of ultimate outcome."
+      }
+    ]
+  },
+  "post_event_notes_optional": {
+    "sell_the_news_context": [
+      "Company value often peaks at FDA approval or even earlier (pivotal data), not at first commercial earnings.",
+      "Approval-to-revenue transition introduces an execution gap: clinical risk ends, commercial execution risk begins.",
+      "This supports exiting into the runup rather than holding for 'approval pop'."
+    ],
+    "post_approval_trade_idea": "After approval, consider waiting for the initial selloff/overreaction and then re-enter based on evidence of commercial traction (e.g., prescriptions, guidance, early earnings), rather than holding through the catalyst itself."
+  }
+}

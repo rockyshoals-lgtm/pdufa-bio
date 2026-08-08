@@ -1,0 +1,66 @@
+{
+  "overall": {
+    "n": 2980,
+    "pct_up_close": 89.0,
+    "pct_held_1h": 84.3,
+    "mean_close_in_range": 0.692,
+    "mean_close_vs_open_pct": 33.07
+  },
+  "by_early_volume_bin": [
+    {
+      "bin": "<0.5x",
+      "n": 1072,
+      "pct_up_close": 96.0,
+      "pct_held_1h": 95.8,
+      "pct_new_high_after_1h": 95.1,
+      "mean_close_in_range": 0.768,
+      "mean_close_vs_open_pct": 40.65
+    },
+    {
+      "bin": "0.5-1x",
+      "n": 325,
+      "pct_up_close": 97.2,
+      "pct_held_1h": 93.8,
+      "pct_new_high_after_1h": 93.5,
+      "mean_close_in_range": 0.762,
+      "mean_close_vs_open_pct": 36.26
+    },
+    {
+      "bin": "1-2x",
+      "n": 369,
+      "pct_up_close": 93.5,
+      "pct_held_1h": 87.5,
+      "pct_new_high_after_1h": 87.8,
+      "mean_close_in_range": 0.741,
+      "mean_close_vs_open_pct": 29.29
+    },
+    {
+      "bin": "2-5x",
+      "n": 360,
+      "pct_up_close": 92.8,
+      "pct_held_1h": 81.7,
+      "pct_new_high_after_1h": 80.6,
+      "mean_close_in_range": 0.717,
+      "mean_close_vs_open_pct": 26.03
+    },
+    {
+      "bin": "5-10x",
+      "n": 210,
+      "pct_up_close": 89.0,
+      "pct_held_1h": 75.2,
+      "pct_new_high_after_1h": 75.2,
+      "mean_close_in_range": 0.662,
+      "mean_close_vs_open_pct": 26.19
+    },
+    {
+      "bin": "10x+",
+      "n": 644,
+      "pct_up_close": 68.5,
+      "pct_held_1h": 62.7,
+      "pct_new_high_after_1h": 56.4,
+      "mean_close_in_range": 0.498,
+      "mean_close_vs_open_pct": 27.17
+    }
+  ],
+  "corr_v60_vs_close_in_range": -0.115
+}

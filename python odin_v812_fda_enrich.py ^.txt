@@ -1,0 +1,55 @@
+python odin_v812_fda_enrich.py ^
+  --input .\ODIN_ENRICHED_PDUFA_1349_v2.csv ^
+  --output .\ODIN_ENRICHED_PDUFA_1349_v2_v812_enriched.csv ^
+  --auth-user rockyshoals@gmail.com ^
+  --auth-key Xu7m6I0XS4kwTmiI ^
+  --cache-dir .\fda_cache ^
+  --lookback-days 730 ^
+  --validate ^
+  --report-md .\v812_validation_report.md
+
+
+python run_billion_search_v38b_patch3.py ^
+More?   --data .\ODIN_ENRICHED_PDUFA_1349_v2.csv ^
+More?   --top-configs .\ODIN_TOP_CONFIGS_V5.json ^
+More?   --outdir .\outputs\v38b_stageA_gpu ^
+More?   --iters 1000000000 ^
+More?   --batch 700000 ^
+More?   --device gpu ^
+More?   --row-chunk 256 ^
+More?   --min-precision 0.94 ^
+More?   --min-positive 400 ^
+More?   --bounds-file .\bounds_next_v38b_patch3.json ^
+More?   --explore-frac 0.60 ^
+More?   --sigma-frac 0.18 ^
+More?   --report-every 1 ^
+More?   --seed 1337
+
+
+# 1. Delete the failed audit file (so it starts fresh)
+del ODIN_ENRICHED_PDUFA_1349_v2_v812_enriched_mfg_audit.jsonl
+
+# 2. Run the fixed script - NO credentials needed!
+python odin_v812_fda_enrich_FIXED.py \
+    --input ODIN_ENRICHED_PDUFA_1349_v2.csv \
+    --output ODIN_ENRICHED_PDUFA_1349_v2_v812_enriched.csv
+
+
+pip install finbrain-python
+python odin_finbrain_collector.py --api-key 5813fe19-a03c-4873-a7be-354315c39b80
+
+
+
+setx LUNARCRUSH_API_KEY "wyy0sr5cpo91napnt6cz6rtynmkmurndcr9bbdtd"
+setx FINBRAIN_API_KEY "5813fe19-a03c-4873-a7be-354315c39b80"
+setx FMP_API_KEY "kyI0t6mDZD1YBTfxtKZSgkp6eILZR3v6"
+setx PATENTSVIEW_API_KEY "4YlLCCkI.05uMSH55hWywCWoB7FPLwXW7qJwX5qrr"
+setx OPENFDA_API_KEY "j3eLDwnktH7CPacXZe0HrBaUdMbCBcudUt3iDXoc"
+setx CENSUS_API_KEY "8dec01c29504e940224aac94978c1a81bd3baed8"
+setx FDA_OIIWEB_API_KEY "Xu7m6I0XS4kwTmiI"
+setx OPENAI_API_KEY "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"
+setx GEMINI_API_KEY "AIzaSyDoK_flYyCvlkg-bvHHxWA2Q9SZFQDSF2k"
+setx PERPLEXITY_API_KEY "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"
+
+
+python run_billion_search_v38c_rtx4070.py --data ODIN_ENRICHED_PDUFA_1349_v2.csv --top-configs ODIN_TOP_CONFIGS.json --outdir ./results --device gpu --iters 1000000000

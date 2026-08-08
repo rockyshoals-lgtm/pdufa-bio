@@ -1,0 +1,113 @@
+{
+  "date": "2026-05-15",
+  "verifications": [
+    {
+      "ticker": "SPRO",
+      "drug": "tebipenem HBr",
+      "panel_date": "2026-06-18",
+      "pr_date": "2026-06-18",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-06-18 matches panel"
+    },
+    {
+      "ticker": "MNKD",
+      "drug": "Afrezza pediatric",
+      "panel_date": "2026-05-29",
+      "pr_date": "2026-05-29",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-05-29 matches panel"
+    },
+    {
+      "ticker": "ACHV",
+      "drug": "cytisinicline",
+      "panel_date": "2026-06-20",
+      "pr_date": "2026-06-20",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-06-20 matches panel"
+    },
+    {
+      "ticker": "VRDN",
+      "drug": "veligrotug",
+      "panel_date": "2026-06-30",
+      "pr_date": "2026-06-30",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-06-30 matches panel"
+    },
+    {
+      "ticker": "UNCY",
+      "drug": "oxylanthanum carbonate",
+      "panel_date": "2026-06-29",
+      "pr_date": "2026-06-29",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-06-29 matches panel"
+    },
+    {
+      "ticker": "VERA",
+      "drug": "atacicept",
+      "panel_date": "2026-07-07",
+      "pr_date": "2026-07-07",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-07-07 matches panel"
+    },
+    {
+      "ticker": "ARQT",
+      "drug": "roflumilast cream 0.3% pediatric",
+      "panel_date": "2026-06-29",
+      "pr_date": "2026-06-29",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-06-29 matches panel"
+    },
+    {
+      "ticker": "CING",
+      "drug": "CTx-1301",
+      "panel_date": "2026-05-31",
+      "pr_date": "2026-05-31",
+      "drift_days": 0,
+      "verdict": "CONFIRMED",
+      "confidence": "HIGH",
+      "action": "NO_ACTION",
+      "note": "PR confirms date 2026-05-31 matches panel"
+    },
+    {
+      "ticker": "IRWD",
+      "drug": "apraglutide",
+      "panel_date": "2026-05-24",
+      "verdict": "CATALYST_DEAD",
+      "confidence": "LOW",
+      "action": "REMOVE_FROM_PANEL",
+      "note": "No PDUFA date found in recent PR/news. May be stale.",
+      "bad_signals": [
+        "STRATEGIC_REVIEW",
+        "GOING_CONCERN"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "confirmed": 8,
+    "dead": 1,
+    "drift_detected": 0,
+    "no_pr_found": 0
+  }
+}

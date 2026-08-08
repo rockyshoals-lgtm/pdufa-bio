@@ -1,0 +1,17 @@
+{
+  "utc_started": "2026-01-31T00:22:39+00:00",
+  "csv": "C:\\Users\\dcmoo\\Documents\\Python\\ODIN_v5_T1_COMPLIANT.csv",
+  "device": "cuda",
+  "N": 1350,
+  "F": 677,
+  "kfold": 5,
+  "hash_dim": 128,
+  "include_identifiers": true,
+  "constraints": {
+    "min_avoid_precision": 0.94,
+    "min_buy_precision": 0.94,
+    "min_specificity": 0.78,
+    "min_avoid_count": 5,
+    "min_buy_count": 5
+  }
+}

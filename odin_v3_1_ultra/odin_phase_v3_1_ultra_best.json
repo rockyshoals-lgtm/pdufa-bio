@@ -1,0 +1,168 @@
+{
+  "version": "odin_phase_v3.1_ultra",
+  "training_date": "2026-02-16T00:41:17.972717",
+  "dataset": "historical_readouts_2000.csv",
+  "n_xgb_features": 8,
+  "xgb_features": [
+    "is_hard_endpoint",
+    "phase_PHASE3",
+    "is_competitive_space",
+    "sentiment_score",
+    "phase_PHASE2",
+    "primary_endpoint_met",
+    "ta_ONCOLOGY",
+    "rct_x_phase3"
+  ],
+  "n_logit_features": 9,
+  "logit_features": [
+    "is_hard_endpoint",
+    "phase_PHASE3",
+    "is_competitive_space",
+    "sentiment_score",
+    "phase_PHASE2",
+    "primary_endpoint_met",
+    "ta_ONCOLOGY",
+    "rct_x_phase3",
+    "failure_signal"
+  ],
+  "data_leakage_fix": "failure_signal excluded from XGB, included in Logit only",
+  "cv_results": {
+    "xgb_auc": [
+      0.7307510198135199,
+      0.7365785256410255,
+      0.7305689102564104,
+      0.7314066142191142,
+      0.7202752989631128
+    ],
+    "xgb_logloss": [
+      0.6215019802003389,
+      0.6082568102685556,
+      0.610929601962756,
+      0.5875263816813651,
+      0.6070381854870367
+    ],
+    "xgb_tier1_prec": [
+      0.9154929577464789,
+      0.9079754601226994,
+      0.9025974025974026,
+      0.9112426035502958,
+      0.937984496124031
+    ],
+    "logit_auc": [
+      0.961374562937063,
+      0.9116768648018648,
+      0.966291520979021,
+      0.9449847027972027,
+      0.968839192167347
+    ],
+    "logit_logloss": [
+      0.17150591445659372,
+      0.22065220720445164,
+      0.16251405114543124,
+      0.1695184809451292,
+      0.15910237292021953
+    ],
+    "logit_tier1_prec": [
+      0.965625,
+      0.9393939393939394,
+      0.9658385093167702,
+      0.9657320872274143,
+      0.9746031746031746
+    ],
+    "ensemble_auc": [
+      0.9640515734265734,
+      0.913206585081585,
+      0.9681308275058276,
+      0.9489729020979022,
+      0.9660211712850898
+    ],
+    "ensemble_logloss": [
+      0.29747953506798824,
+      0.31470031076265803,
+      0.289040876759234,
+      0.2899356016889268,
+      0.2914287924876931
+    ],
+    "ensemble_tier1_prec": [
+      0.965625,
+      0.9393939393939394,
+      0.9658385093167702,
+      0.9657320872274143,
+      0.9746031746031746
+    ]
+  },
+  "cv_mean": {
+    "xgb_auc": 0.7299160737786365,
+    "xgb_tier1_prec": 0.9150585840281815,
+    "ensemble_auc": 0.9520766118793956,
+    "ensemble_tier1_prec": 0.9622385421082595
+  },
+  "final_metrics": {
+    "xgb_auc": 0.8398008437535633,
+    "xgb_tier1_precision": 0.972972972972973,
+    "xgb_tier1_count": 148,
+    "logit_auc": 0.9691763901029987,
+    "logit_tier1_precision": 0.9571865443425076,
+    "ensemble_auc": 0.9713427843867584,
+    "ensemble_tier1_precision": 0.9571865443425076,
+    "ensemble_tier1_count": 327
+  },
+  "shap_importance": [
+    {
+      "feature": "primary_endpoint_met",
+      "shap_importance": 0.27997368574142456
+    },
+    {
+      "feature": "sentiment_score",
+      "shap_importance": 0.2783101797103882
+    },
+    {
+      "feature": "is_hard_endpoint",
+      "shap_importance": 0.20892904698848724
+    },
+    {
+      "feature": "phase_PHASE3",
+      "shap_importance": 0.15357470512390137
+    },
+    {
+      "feature": "is_competitive_space",
+      "shap_importance": 0.10263089835643768
+    },
+    {
+      "feature": "phase_PHASE2",
+      "shap_importance": 0.06684399396181107
+    },
+    {
+      "feature": "ta_ONCOLOGY",
+      "shap_importance": 0.053642187267541885
+    },
+    {
+      "feature": "rct_x_phase3",
+      "shap_importance": 0.00039244722574949265
+    }
+  ],
+  "xgb_params": {
+    "n_estimators": 300,
+    "learning_rate": 0.03,
+    "max_depth": 4,
+    "subsample": 0.7,
+    "colsample_bytree": 0.7,
+    "min_child_weight": 5,
+    "gamma": 0.2,
+    "reg_alpha": 0.1,
+    "reg_lambda": 2.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "ensemble_weights": {
+    "xgb": 0.4,
+    "logit": 0.6
+  },
+  "tier_thresholds": {
+    "TIER_1": 0.6,
+    "TIER_2": 0.5,
+    "TIER_3": 0.35
+  }
+}

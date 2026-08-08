@@ -1,0 +1,42 @@
+{
+  "module": "cmc_crl_overlay",
+  "version": "1.0",
+  "applies_after": "odin_score_honest",
+  "purpose": "Re-anchor ODIN probability for clean CMC-only resubmissions (ODIN over-penalizes; naive+CMC collinear & training cell CRL-enriched).",
+  "fires_when": [
+    "is_resubmission==True",
+    "cmc_only==True",
+    "has_efficacy_or_safety_deficiency==False"
+  ],
+  "calibration": {
+    "cmc_base": 0.72,
+    "weight": 0.6,
+    "naive_haircut": 0.05,
+    "facility_verified_bonus": 0.07,
+    "double_crl_penalty": 0.1,
+    "clip": [
+      0.05,
+      0.95
+    ]
+  },
+  "empirical_anchors": {
+    "naive_cmc_cohort_resolved": 0.83,
+    "real_naive_first_cycle_2020on": 0.74,
+    "experienced_counterfactual": 0.57,
+    "odin_core_uncy": 0.318,
+    "sources": [
+      "openFDA+BPC CMC/facility cohort (CRL_CMC_cases.csv)",
+      "naive_sponsor_first_cycle_2020on.csv",
+      "Amin et al. CPT 2025 (no naive/experienced diff)",
+      "FDA CDER first-cycle 74-92% 2020-24"
+    ]
+  },
+  "t1_compliance": "All inputs public pre-decision (CRL reason, resubmission status, sponsor history, facility remediation).",
+  "mcp_tool_suggestion": "cmc_crl_score",
+  "test_results": {
+    "UNCY_facility_verified": 0.579,
+    "UNCY_not_verified": 0.509,
+    "experienced_cmc": 0.652,
+    "double_crl": 0.392
+  }
+}

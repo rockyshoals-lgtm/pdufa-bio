@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE HOLLER — an Ozark folk-horror farm tale</title>
+<style>
+  :root{ --bone:#E8DCC8; --blood:#7A2E2E; --moss:#4A5D3A; --night:#0B0E14; --haint:#9FD8D4; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;background:#000;overflow:hidden;}
+  body{font-family:"Courier New",Courier,monospace;color:var(--bone);}
+  #wrap{position:relative;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;}
+  canvas#game{image-rendering:pixelated;image-rendering:crisp-edges;background:#000;}
+
+  /* ---------- HUD ---------- */
+  #hud{position:absolute;inset:0;pointer-events:none;display:none;}
+  #hud.on{display:block;}
+  .hud-top{
+    position:absolute;top:10px;left:12px;display:flex;gap:14px;align-items:center;
+    background:rgba(11,14,20,.78);border:2px solid #2A3242;border-radius:6px;padding:7px 13px;
+    font-size:14px;letter-spacing:1px;
+  }
+  .hud-top b{color:#F4C95D;}
+  #curseWrap{position:absolute;top:10px;right:12px;text-align:right;
+    background:rgba(11,14,20,.78);border:2px solid #2A3242;border-radius:6px;padding:7px 13px;font-size:12px;}
+  #curseBar{width:130px;height:9px;background:#1A1F2B;border:1px solid #444;margin-top:4px;}
+  #curseFill{height:100%;background:linear-gradient(90deg,#4A2C5E,#B13BFF);width:30%;}
+  #meters{position:absolute;top:64px;left:12px;font-size:13px;background:rgba(11,14,20,.78);
+    border:2px solid #2A3242;border-radius:6px;padding:7px 13px;line-height:1.7;}
+  .bar{display:inline-block;width:110px;height:9px;background:#1A1F2B;border:1px solid #444;vertical-align:middle;margin-left:6px;}
+  .bar>div{height:100%;}
+  #hpFill{background:#B03A3A;width:100%;}
+  #fearFill{background:#6FB7B0;width:0%;}
+  #hotbar{
+    position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;pointer-events:auto;
+  }
+  .slot{cursor:pointer;}
+  #tutBox{
+    position:absolute;left:12px;bottom:96px;width:262px;background:rgba(11,14,20,.88);
+    border:2px solid #5A4B33;border-radius:6px;padding:10px 13px;font-size:12.5px;line-height:1.5;
+  }
+  #tutBox .tt{color:#F4C95D;font-size:11px;letter-spacing:1px;margin-bottom:4px;}
+  #hintBar{
+    position:absolute;bottom:14px;right:14px;color:#55607A;font-size:11px;letter-spacing:1px;
+    background:rgba(11,14,20,.6);padding:4px 9px;border-radius:4px;
+  }
+  .helprow{display:flex;justify-content:space-between;border-bottom:1px solid #232B3A;padding:6px 0;}
+  .helprow b{color:#F4C95D;font-weight:normal;min-width:170px;}
+  .slot{
+    width:54px;height:54px;background:rgba(11,14,20,.85);border:2px solid #3A4356;border-radius:6px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;position:relative;
+  }
+  .slot.sel{border-color:#F4C95D;box-shadow:0 0 10px rgba(244,201,93,.4);}
+  .slot .k{position:absolute;top:1px;left:4px;font-size:9px;color:#7A8699;}
+  .slot .n{position:absolute;bottom:1px;right:4px;font-size:10px;color:#F4C95D;}
+  .slot canvas{image-rendering:pixelated;}
+  #toastBox{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;}
+  .gtoast{
+    background:rgba(11,14,20,.92);border:1px solid #3A4356;border-radius:5px;padding:6px 14px;font-size:13px;
+    animation:gt .3s ease, gto .4s ease 2.8s forwards;white-space:nowrap;
+  }
+  @keyframes gt{from{opacity:0;transform:translateY(8px);}to{opacity:1;}}
+  @keyframes gto{to{opacity:0;}}
+  #relicTray{position:absolute;top:64px;right:12px;display:flex;flex-direction:column;gap:4px;font-size:11px;
+    background:rgba(11,14,20,.78);border:2px solid #2A3242;border-radius:6px;padding:8px 12px;}
+  .relic{color:#555F70;}
+  .relic.got{color:#F4C95D;}
+  .relic.laid{color:#9FD8D4;text-decoration:line-through;}
+
+  /* ---------- dialogue ---------- */
+  #dlg{
+    position:absolute;left:50%;bottom:84px;transform:translateX(-50%);width:min(620px,92vw);
+    background:rgba(8,10,15,.95);border:3px double #5A4B33;border-radius:4px;padding:14px 18px;display:none;
+    font-size:14.5px;line-height:1.55;pointer-events:none;
+  }
+  #dlg.on{display:block;}
+  #dlgName{color:#F4C95D;font-weight:bold;letter-spacing:1px;margin-bottom:5px;font-size:12.5px;text-transform:uppercase;}
+  #dlgText{white-space:pre-wrap;}
+  #dlgOpts{margin-top:8px;color:#9FD8D4;}
+  #dlgMore{margin-top:8px;color:#7A8699;font-size:11.5px;text-align:right;}
+
+  /* ---------- journal / overlays ---------- */
+  .overlay{
+    position:absolute;inset:0;background:rgba(4,5,8,.9);display:none;align-items:center;justify-content:center;
+    pointer-events:auto;z-index:50;
+  }
+  .overlay.on{display:flex;}
+  .panel{
+    width:min(680px,94vw);max-height:86vh;overflow-y:auto;background:#0E1119;border:3px double #5A4B33;
+    padding:26px 30px;font-size:14px;line-height:1.6;
+  }
+  .panel h1{font-size:22px;color:#F4C95D;letter-spacing:3px;margin-bottom:4px;}
+  .panel h2{font-size:14px;color:#9FD8D4;letter-spacing:1px;margin:16px 0 6px;}
+  .panel .dim{color:#7A8699;font-size:12px;}
+  .panel p{margin-bottom:10px;}
+  .jentry{border-bottom:1px solid #232B3A;padding:9px 0;}
+  .jentry .jt{color:#F4C95D;}
+  .jentry.locked{color:#3A4356;}
+  .keyhint{color:#F4C95D;}
+
+  /* ---------- title ---------- */
+  #title{
+    position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%, #141A26 0%, #05070B 70%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;text-align:center;
+  }
+  #title h1{
+    font-size:min(64px,10vw);letter-spacing:14px;color:var(--bone);text-shadow:0 0 24px rgba(159,216,212,.25);
+    margin-bottom:6px;font-weight:bold;
+  }
+  #title .sub{color:#9FD8D4;font-size:14px;letter-spacing:3px;margin-bottom:34px;}
+  #title .letter{
+    width:min(560px,90vw);background:#151A25;border:2px solid #2A3242;padding:20px 24px;font-size:13.5px;
+    line-height:1.7;text-align:left;color:#C9BFA8;margin-bottom:28px;
+  }
+  #title .letter i{color:#F4C95D;}
+  .tbtn{
+    background:#7A2E2E;color:#E8DCC8;border:2px solid #A54848;padding:12px 34px;font-family:inherit;
+    font-size:15px;letter-spacing:2px;cursor:pointer;margin:0 8px;
+  }
+  .tbtn:hover{background:#8E3939;}
+  .tbtn.ghost{background:transparent;border-color:#3A4356;color:#7A8699;}
+  #title .ctl{margin-top:26px;color:#55607A;font-size:11.5px;line-height:1.8;}
+  #vign{position:absolute;inset:0;pointer-events:none;z-index:40;
+    background:radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.55) 100%);}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game"></canvas>
+  <div id="vign"></div>
+
+  <div id="hud">
+    <div class="hud-top">
+      <span id="hudDay"><b>Day 1</b></span>
+      <span id="hudClock">6:00 AM</span>
+      <span id="hudBits" style="color:#F4C95D">⛃ 50</span>
+    </div>
+    <div id="curseWrap">DARK OF THE MOON<div id="curseBar"><div id="curseFill"></div></div></div>
+    <div id="meters">
+      HEALTH<span class="bar"><div id="hpFill"></div></span><br>
+      FEAR&nbsp;&nbsp;<span class="bar"><div id="fearFill"></div></span><br>
+      WOLF PEN: <span id="standingTxt" style="color:#F4C95D">Stranger</span>
+    </div>
+    <div id="relicTray"></div>
+    <div id="toastBox"></div>
+    <div id="tutBox" style="display:none"><div class="tt">FIRST STEPS</div><div id="tutText"></div></div>
+    <div id="hintBar">H help · J journal · Q seed · M sound</div>
+    <div id="hotbar"></div>
+    <div id="dlg"><div id="dlgName"></div><div id="dlgText"></div><div id="dlgOpts"></div><div id="dlgMore"></div></div>
+  </div>
+
+  <div class="overlay" id="journal">
+    <div class="panel">
+      <h1>FIELD JOURNAL</h1>
+      <div class="dim">Granny's notes on the things that walk the holler. Entries appear as you meet them. — press <span class="keyhint">J</span> to close</div>
+      <div id="jList"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="endScreen">
+    <div class="panel" id="endPanel"></div>
+  </div>
+
+  <div class="overlay" id="help">
+    <div class="panel">
+      <h1>HOW TO WORK THE HOLLER</h1>
+      <div class="dim">press <span class="keyhint">H</span> to close</div>
+      <h2>MOVING & DOING</h2>
+      <div class="helprow"><b>WASD / Arrow keys</b> walk</div>
+      <div class="helprow"><b>E or SPACE</b> use selected tool on the tile you FACE (white outline) · talk · harvest · forage</div>
+      <div class="helprow"><b>1 – 6 or click the bar</b> select tool: Hoe, Water, Seeds, Salt, Lamp, Tonic</div>
+      <div class="helprow"><b>Q</b> switch seed type (corn → beans → moonflower)</div>
+      <h2>FARMING (the daily loop)</h2>
+      <div class="helprow"><b>1 · Hoe + E</b> till a dark plot inside the fenced field</div>
+      <div class="helprow"><b>3 · Seeds + E</b> plant on tilled soil</div>
+      <div class="helprow"><b>2 · Water + E</b> water it — EVERY day, or it won't grow</div>
+      <div class="helprow"><b>E on well / creek</b> refill the watering can (6 uses)</div>
+      <div class="helprow"><b>E on ripe crop</b> harvest · sell at Dry Goods for bits</div>
+      <h2>SURVIVING THE NIGHT</h2>
+      <div class="helprow"><b>4 · Salt + E</b> pour a salt ring — burns haints (3 charges)</div>
+      <div class="helprow"><b>5 · Lamp + E</b> light the lantern — big light, scares the Howler, burns oil</div>
+      <div class="helprow"><b>6 · Tonic + E</b> drink to clear fear</div>
+      <div class="helprow"><b>E on cabin door</b> sleep: saves, skips to morning</div>
+      <h2>ODDS & ENDS</h2>
+      <div class="helprow"><b>J</b> folklore journal · <b>M</b> sound · <b>ESC</b> pause</div>
+      <div class="helprow"><b>Goal</b> lay 5 relics on the church altar, then survive the ritual night</div>
+    </div>
+  </div>
+
+  <div id="title">
+    <h1>THE HOLLER</h1>
+    <div class="sub">AN OZARK FOLK-HORROR FARM TALE</div>
+    <div class="letter">
+      <i>Dear child,</i><br><br>
+      If you are reading this, I have gone on. The homestead in Boggy Holler is yours now — the field, the well,
+      and everything that comes with it. Mind what I taught you: <i>salt the doorways, keep your lantern full, and
+      never follow a light that don't throw a shadow.</i><br><br>
+      The Dark of the Moon is rising over these hills again. Five holy things will put it down —
+      my journal will show you the way.<br><br>
+      Work the land by day. Be somewhere safe by dark.<br><br>
+      — <i>Granny Nettie Blackthorn</i>
+    </div>
+    <div>
+      <button class="tbtn" id="btnNew" onclick="startGame(true)">TAKE THE DEED</button>
+      <button class="tbtn ghost" id="btnCont" onclick="startGame(false)" style="display:none">CONTINUE</button>
+    </div>
+    <div class="ctl">
+      WASD / ARROWS move · E or SPACE use tool / talk · 1-6 or CLICK tools · Q cycle seed · H help · J journal · M sound · ESC pause<br>
+      Farm by day. Survive the night. Lay five relics on the church altar to lift the curse.
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* =====================================================================
+   THE HOLLER — an Ozark folk-horror farm tale
+   Stardew-style loop x Arkansas Ozark folklore. Single file, no deps.
+   ===================================================================== */
+
+/* ---------- constants ---------- */
+const TILE=16, SCALE=3, TS=TILE*SCALE;
+const MAPW=48, MAPH=36;
+const DAY_START=6*60, NIGHT_START=20*60, DAWN=6*60;
+const LS_KEY="theholler_v1";
+
+/* ---------- palette ---------- */
+const PAL={
+  _:null,
+  k:"#0B0E14", K:"#161B26",           /* blacks */
+  g:"#4A5D3A", G:"#3A4A2E", h:"#5C7145", /* grass greens */
+  d:"#6B4A32", D:"#4E3423", w:"#7FB3C8", /* dirt, water */
+  W:"#5A88A0", s:"#C9BFA8", S:"#8A7A5E", /* deep water, straw */
+  b:"#8B5E3C", B:"#5E3F27",            /* wood */
+  r:"#7A8699", R:"#4C5566",            /* rock */
+  f:"#E8DCC8", F:"#C9A227",            /* bone, gold */
+  p:"#E8B08A", P:"#B37D5C",            /* skin */
+  o:"#B65C2E", O:"#7A2E2E",            /* orange, blood red */
+  c:"#2E6B4F", C:"#1E4A36",            /* crop greens */
+  m:"#9FD8D4", M:"#6FB7B0",            /* haint teal */
+  v:"#B13BFF", V:"#4A2C5E",            /* curse violet */
+  y:"#F4C95D", n:"#232B3A",            /* gold-lite, navy */
+  e:"#D94F4F", x:"#FFFFFF", z:"#101010"
+};
+
+/* ---------- sprite factory ---------- */
+function makeSprite(rows){
+  const h=rows.length, w=rows[0].length;
+  const c=document.createElement("canvas"); c.width=w; c.height=h;
+  const g=c.getContext("2d");
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+    const col=PAL[rows[y][x]];
+    if(col){ g.fillStyle=col; g.fillRect(x,y,1,1); }
+  }
+  return c;
+}
+
+/* ---------- sprites ---------- */
+const SPR={};
+function buildSprites(){
+
+SPR.player_d=makeSprite([
+"____kkkk________",
+"___kssssk_______",
+"__kspppspk______",
+"__ksppppsk______",
+"__kpzppzpk______",
+"___kppppk_______",
+"___kpOOpk_______",
+"__kOOOOOOk______",
+"_kbOOOOOObk_____",
+"_kbOOOOOObk_____",
+"_kbkOOOOkbk_____",
+"___kOOOOk_______",
+"___kDkkDk_______",
+"___kDk_kDk______",
+"__kkDk_kDkk_____",
+"__kkkk_kkkk_____"]);
+SPR.player_u=makeSprite([
+"____kkkk________",
+"___kssssk_______",
+"__kssssssk______",
+"__kssssssk______",
+"__kssssssk______",
+"___kssssk_______",
+"___kOOOOk_______",
+"__kOOOOOOk______",
+"_kbOOOOOObk_____",
+"_kbOOOOOObk_____",
+"_kbkOOOOkbk_____",
+"___kOOOOk_______",
+"___kDkkDk_______",
+"___kDk_kDk______",
+"__kkDk_kDkk_____",
+"__kkkk_kkkk_____"]);
+SPR.player_l=makeSprite([
+"____kkkk________",
+"___kssssk_______",
+"__ksppspsk______",
+"__ksppppsk______",
+"__kzpppssk______",
+"___kppppk_______",
+"___kOOOOk_______",
+"__kOOOOOOk______",
+"__kbOOOOOk______",
+"__kbOOOOOk______",
+"__kbkOOOOk______",
+"___kOOOOk_______",
+"___kDDkk________",
+"___kDkDk________",
+"__kkDkkDk_______",
+"__kkk_kkk_______"]);
+SPR.player_r=makeSprite([
+"____kkkk________",
+"___kssssk_______",
+"__kspsppsk______",
+"__ksppppsk______",
+"__ksspppzk______",
+"___kppppk_______",
+"___kOOOOk_______",
+"__kOOOOOOk______",
+"__kOOOOObk______",
+"__kOOOOObk______",
+"__kOOOOkbk______",
+"___kOOOOk_______",
+"____kkDDk_______",
+"___kDkDk________",
+"__kDkkDkk_______",
+"__kkk_kkk_______"]);
+
+SPR.haint=makeSprite([
+"_____mmmm_______",
+"___mmmmmmmm_____",
+"__mmmmmmmmmm____",
+"__mmkmmmmkmm____",
+"__mmkmmmmkmm____",
+"_mmmmmmmmmmmm___",
+"_mmmmmkkmmmmm___",
+"_mmmmmmmmmmmm___",
+"_mMmmmmmmmmMm___",
+"_mMmmmmmmmmMm___",
+"__MmmmmmmmmM____",
+"__Mmm_mmm_M_____",
+"___m___m________",
+"________________",
+"________________",
+"________________"]);
+
+SPR.howler=makeSprite([
+"__kk________kk__",
+"_kKKk______kKKk_",
+"_kKKKk____kKKKk_",
+"__kKKKkkkkKKKk__",
+"___kKKKKKKKKk___",
+"__kKKeKKKKeKKk__",
+"__kKKKKKKKKKKk__",
+"_kKKKKKkkKKKKKk_",
+"_kKKKKKKKKKKKKk_",
+"kKKKKKKKKKKKKKKk",
+"kKKkKKKKKKKKkKKk",
+"kKKkKKKKKKKKkKKk",
+"_kkKKKKKKKKKKkk_",
+"__kKKkkkkkkKKk__",
+"__kKKk____kKKk__",
+"__kkkk____kkkk__"]);
+
+SPR.snawfus=makeSprite([
+"_F__m__F__m_____",
+"_mF_F_mF_F______",
+"__kx_kx_________",
+"___kxx__________",
+"___kxxx_________",
+"___kxxxx________",
+"____xxxxxxxxx___",
+"____xxxxxxxxxx__",
+"____xxxxxxxxxx__",
+"____xx______xx__",
+"____xx______xx__",
+"____xx______xx__",
+"___kxx_____kxx__",
+"___kx______kx___",
+"________________",
+"________________"]);
+
+SPR.granny=makeSprite([
+"____kkkk________",
+"___krrrrk_______",
+"__krrrrrrk______",
+"__krpppprk______",
+"__kpzppzpk______",
+"___kppppk_______",
+"___kVVVVk_______",
+"__kVVVVVVk______",
+"_kpVVVVVVpk_____",
+"_kpVVVVVVpk_____",
+"__kVVVVVVk______",
+"___kVVVVk_______",
+"___kVVVVk_______",
+"___kVVVVk_______",
+"__kkVVVVkk______",
+"__kkkkkkkk______"]);
+
+SPR.keeper=makeSprite([
+"____kkkk________",
+"___kbbbbk_______",
+"__kbbbbbbk______",
+"__kbpppbbk______",
+"__kpzppzpk______",
+"___kppppk_______",
+"___knnnnk_______",
+"__knnnnnnk______",
+"_kpnnnnnnpk_____",
+"_kpnnnnnnpk_____",
+"__knnnnnnk______",
+"___knnnnk_______",
+"___kDkkDk_______",
+"___kDk_kDk______",
+"__kkDk_kDkk_____",
+"__kkkk_kkkk_____"]);
+
+SPR.scarecrow=makeSprite([
+"______kkk_______",
+"_____ksssk______",
+"_____kszsk______",
+"_____kssssk_____",
+"______kkk_______",
+"__bbbbObbbbb____",
+"_____bOOb_______",
+"_____bOOb_______",
+"_____bOOb_______",
+"_____bOOb_______",
+"______bb________",
+"______bb________",
+"______bb________",
+"______bb________",
+"______bb________",
+"______bb________"]);
+
+SPR.tree=makeSprite([
+"_____GGGG_______",
+"___GGGGGGGG_____",
+"__GGGgGGgGGG____",
+"_GGgGGGGGGgGG___",
+"_GGGGgGGGGGGG___",
+"_GGgGGGGgGGGG___",
+"__GGGGgGGGGG____",
+"___GGGGGGGG_____",
+"_____BBBB_______",
+"_____BBBB_______",
+"_____BBBB_______",
+"_____BBBB_______",
+"____BBBBBB______",
+"________________",
+"________________",
+"________________"]);
+
+SPR.pine=makeSprite([
+"_______K________",
+"______KKK_______",
+"_____KKKKK______",
+"____KKKKKKK_____",
+"_____KKKKK______",
+"____KKKKKKK_____",
+"___KKKKKKKKK____",
+"____KKKKKKK_____",
+"___KKKKKKKKK____",
+"__KKKKKKKKKKK___",
+"_______BB_______",
+"_______BB_______",
+"_______BB_______",
+"________________",
+"________________",
+"________________"]);
+
+SPR.brush=makeSprite([
+"________________",
+"________________",
+"____g__g__g_____",
+"___ghgghggg_____",
+"__gghhghhggg____",
+"__ghgghgghgg____",
+"___gghhgggg_____",
+"____ggggg_______",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________"]);
+
+SPR.rock=makeSprite([
+"________________",
+"________________",
+"________________",
+"_____rrrr_______",
+"____rrrrrr______",
+"___rrRrrrrr_____",
+"___rRRrrRrr_____",
+"___rrrrrrrr_____",
+"____RRRRRR______",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________"]);
+
+SPR.well=makeSprite([
+"_____bbbbb______",
+"____b_____b_____",
+"___b_______b____",
+"___rrrrrrrrr____",
+"___rRRRRRRRr____",
+"___rrkkkkkrr____",
+"___rkkkkkkkr____",
+"___rkkkkkkkr____",
+"___rrrrrrrrr____",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________"]);
+
+SPR.grave=makeSprite([
+"________________",
+"________________",
+"________________",
+"_____rrrr_______",
+"____rrrrrr______",
+"____rr__rr______",
+"____rrrrrr______",
+"____rr__rr______",
+"____rrrrrr______",
+"____rrrrrr______",
+"___GGGGGGGG_____",
+"________________",
+"________________",
+"________________",
+"________________",
+"________________"]);
+
+/* crops: [seedling, growing, ripe] per type painted procedurally */
+function cropSprite(stage,type){
+  const rows=[];
+  for(let i=0;i<16;i++) rows.push("________________".split(""));
+  const put=(x,y,ch)=>{ if(y>=0&&y<16&&x>=0&&x<16) rows[y][x]=ch; };
+  if(stage===0){ put(7,12,"c");put(8,12,"c");put(7,13,"C"); }
+  else if(stage===1){
+    for(let y=8;y<14;y++){put(7,y,"c");put(8,y,"C");}
+    put(6,9,"c");put(9,10,"c");
+  } else {
+    for(let y=5;y<14;y++){put(7,y,"C");put(8,y,"c");}
+    put(6,7,"c");put(9,8,"c");put(5,9,"c");put(10,9,"c");
+    if(type==="corn"){ put(6,5,"y");put(7,4,"F");put(8,4,"F");put(9,5,"y");put(7,5,"F");put(8,5,"F"); }
+    if(type==="beans"){ put(6,8,"e");put(9,9,"e");put(6,11,"e");put(9,12,"e"); }
+    if(type==="moonflower"){ put(7,3,"m");put(8,3,"m");put(6,4,"x");put(9,4,"x");put(7,4,"x");put(8,4,"x"); }
+  }
+  return makeSprite(rows.map(r=>r.join("")));
+}
+SPR.crop={};
+["corn","beans","moonflower"].forEach(t=>{
+  SPR.crop[t]=[cropSprite(0,t),cropSprite(1,t),cropSprite(2,t)];
+});
+
+/* buildings drawn as multi-tile sprites (w x h tiles) */
+SPR.cabin=makeSprite([
+"________KKKKKKKKKKKKKKKK________",
+"______KKmmKKKKKKKKKKKKKKKK______",
+"____KKKKKKKKKKKKKKKKKKKKKKKK____",
+"__KKKKKKKKKKKKKKKKKKKKKKKKKKKK__",
+"_KKKKKKKKKKKKKKKKKKKKKKKKKKKKK_",
+"_bbbbbbbbbbbbbbbbbbbbbbbbbbbbb_",
+"_bBBbbBBbbBBbbBBbbBBbbBBbbBBbb_",
+"_bbbbbbbbbbbbbbbbbbbbbbbbbbbbb_",
+"_bbyybbbbbbbbmmmmbbbbbbbbbyybb_",
+"_bbyybbbbbbbbmKKmbbbbbbbbbyybb_",
+"_bbbbbbbbbbbbmKKmbbbbbbbbbbbbb_",
+"_bBBbbBBbbBBbmKKmbBBbbBBbbBBbb_",
+"_bbbbbbbbbbbbmKKmbbbbbbbbbbbbb_",
+"_bbbbbbbbbbbbmmmmbbbbbbbbbbbbb_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDD_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDD_"]);
+
+SPR.store=makeSprite([
+"____ssssssssssssssssssssssss____",
+"___ssssssssssssssssssssssssss___",
+"__ssssssssssssssssssssssssssss__",
+"_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb_",
+"_byyyyyyyyyyyyyyyyyyyyyyyyyyyyb_",
+"_bykkkkkkkkkkkkkkkkkkkkkkkkkkyb_",
+"_byykDRYkGOODSkkkkkkkkkkkkkyyyb_",
+"_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb_",
+"_bbwwwwbbbbbbbkkkkbbbbbwwwwbbbb_",
+"_bbwwwwbbbbbbbkKKkbbbbbwwwwbbbb_",
+"_bbwwwwbbbbbbbkKKkbbbbbwwwwbbbb_",
+"_bbbbbbbbbbbbbkKKkbbbbbbbbbbbbb_",
+"_bbbbbbbbbbbbbkKKkbbbbbbbbbbbbb_",
+"_bbbbbbbbbbbbbkkkkbbbbbbbbbbbbb_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD_"]);
+
+SPR.grannyhut=makeSprite([
+"______KKKKKKKKKKKKKKKKKKKK______",
+"____KKKKKKKKKKKKKKKKKKKKKKKK____",
+"__KKKKKKKKKKKKKKKKKKKKKKKKKKKK__",
+"_KKKKKKKKKKKKKKKKKKKKKKKKKKKKK_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDD_",
+"_DBBDDBBDDBBDDBBDDBBDDBBDDBBDD_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDD_",
+"_DDvvDDDDDDDDmmmmDDDDDDDDDvvDD_",
+"_DDvvDDDDDDDDmVVmDDDDDDDDDvvDD_",
+"_DDDDDDDDDDDDmVVmDDDDDDDDDDDDD_",
+"_DBBDDBBDDBBDmVVmDBBDDBBDDBBDD_",
+"_DDDDDDDDDDDDmVVmDDDDDDDDDDDDD_",
+"_DDDDDDDDDDDDmmmmDDDDDDDDDDDDD_",
+"_DDDDDDDDDDDDDDDDDDDDDDDDDDDDD_",
+"_GGGGGGGGGGGGGGGGGGGGGGGGGGGGG_",
+"_GGGGGGGGGGGGGGGGGGGGGGGGGGGGG_"]);
+
+SPR.church=makeSprite([
+"_______________ff_______________",
+"_______________ff_______________",
+"______________ffff______________",
+"_____________ssssss_____________",
+"____________ssssssss____________",
+"____________ss____ss____________",
+"___sssssssssssssssssssssssss____",
+"___ssssssssssssssssssssssssss___",
+"___ss______________________ss___",
+"___ss__rrr____________rrr__ss___",
+"___ss__r_r____________r_r__ss___",
+"___ss______________________ss___",
+"___ssssss______________sssss____",
+"___ss__________________________",
+"___rrrr____rrr_____rr____rrrr___",
+"___rrrrr__rrrrr___rrrr__rrrrr___"]);
+
+SPR.cave=makeSprite([
+"________rrrrrrrrrrrrrr__________",
+"______rrrrrrrrrrrrrrrrrr________",
+"____rrrrrrrrrrrrrrrrrrrrrr______",
+"___rrrrrrrrkkkkkkkkrrrrrrrr_____",
+"__rrrrrrrkkkkkkkkkkkkrrrrrrr____",
+"__rrrrrrkkkkkkkkkkkkkkrrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"__rrrrrkkkkkekkkkekkkkkrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"__rrrrrkkkkkkkkkkkkkkkkrrrrr____",
+"________________________________",
+"________________________________"]);
+
+SPR.altar=makeSprite([
+"________________",
+"________________",
+"_____ffff_______",
+"____f____f______",
+"____f_ff_f______",
+"____f_ff_f______",
+"____f____f______",
+"___rrrrrrrr_____",
+"___rRRRRRRr_____",
+"___rrrrrrrr_____",
+"____rRRRRr______",
+"____rrrrrr______",
+"___rrrrrrrr_____",
+"________________",
+"________________",
+"________________"]);
+
+/* Wolf Pen houses (24x16 → 3x2 tiles) */
+SPR.house1=makeSprite([
+"____KKKKKKKKKKKKKKKK____",
+"__KKKKKKKKKKKKKKKKKKKK__",
+"_KKKKKKKKKKKKKKKKKKKKKK_",
+"_bbbbbbbbbbbbbbbbbbbbbb_",
+"_bBBbbBBbbBBbbBBbbBBbbb_",
+"_bbbbbbbbbbbbbbbbbbbbbb_",
+"_bbyybbbbbmmmmbbbbbyybb_",
+"_bbyybbbbbmKKmbbbbbyybb_",
+"_bbbbbbbbbmKKmbbbbbbbbb_",
+"_bBBbbBBbbmKKmbbBBbbBBb_",
+"_bbbbbbbbbmKKmbbbbbbbbb_",
+"_bbbbbbbbbmmmmbbbbbbbbb_",
+"_bbbbbbbbbbbbbbbbbbbbbb_",
+"_DDDDDDDDDDDDDDDDDDDDDD_",
+"________________________",
+"________________________"]);
+SPR.house2=makeSprite([
+"____ssssssssssssssss____",
+"__ssssssssssssssssssss__",
+"_SSSSSSSSSSSSSSSSSSSSSS_",
+"_DDDDDDDDDDDDDDDDDDDDDD_",
+"_DBBDDBBDDBBDDBBDDBBDDD_",
+"_DDDDDDDDDDDDDDDDDDDDDD_",
+"_DDyyDDDDDmmmmDDDDDyyDD_",
+"_DDyyDDDDDmKKmDDDDDyyDD_",
+"_DDDDDDDDDmKKmDDDDDDDDD_",
+"_DBBDDBBDDmKKmDDBBDDBBD_",
+"_DDDDDDDDDmKKmDDDDDDDDD_",
+"_DDDDDDDDDmmmmDDDDDDDDD_",
+"_DDDDDDDDDDDDDDDDDDDDDD_",
+"_GGGGGGGGGGGGGGGGGGGGGG_",
+"________________________",
+"________________________"]);
+
+/* villager generator: recolor the player template */
+const VILL_BASE=[
+"____kkkk________",
+"___kssssk_______",
+"__kspppspk______",
+"__ksppppsk______",
+"__kpzppzpk______",
+"___kppppk_______",
+"___kpOOpk_______",
+"__kOOOOOOk______",
+"_kbOOOOOObk_____",
+"_kbOOOOOObk_____",
+"_kbkOOOOkbk_____",
+"___kOOOOk_______",
+"___kDkkDk_______",
+"___kDk_kDk______",
+"__kkDk_kDkk_____",
+"__kkkk_kkkk_____"];
+function villagerSprite(hair,shirt){
+  return makeSprite(VILL_BASE.map(r=>r.split("O").join(shirt).split("s").join(hair)));
+}
+SPR.vill={
+  tull:    villagerSprite("r","n"),
+  maylene: villagerSprite("S","V"),
+  ferris:  villagerSprite("b","o"),
+  oralee:  villagerSprite("F","c"),
+  croaker: villagerSprite("R","D")
+};
+
+/* item icons (12x12 drawn in 16 grid) */
+SPR.icon={};
+SPR.icon.hoe=makeSprite([
+"________________","______kk________","_____kbbk_______","____kb_bk_______",
+"___kb__kk_______","__kb____________","_kb_____________","_kbk____________",
+"_kbbk___________","__kbbk__________","___kbk__________","____k___________",
+"________________","________________","________________","________________"]);
+SPR.icon.can=makeSprite([
+"________________","________________","____kk__________","___k__k_kkk_____",
+"__kwwwwkk_wk____","__kwwwwk__wk____","__kwwwwkkwk_____","__kwwwwwwk______",
+"__kwwwwwwk______","___kwwwwk_______","____kkkk________","________________",
+"________________","________________","________________","________________"]);
+SPR.icon.seeds=makeSprite([
+"________________","________________","_____sss________","____s___s_______",
+"___s__F__s______","___s_F_F_s______","___s__F__s______","___s_F_F_s______",
+"____s___s_______","_____sss________","________________","________________",
+"________________","________________","________________","________________"]);
+SPR.icon.salt=makeSprite([
+"________________","________________","_____xxx________","____x___x_______",
+"___x_____x______","___x__x__x______","___x_x_x_x______","___x__x__x______",
+"___x_____x______","____xxxxx_______","________________","________________",
+"________________","________________","________________","________________"]);
+SPR.icon.lantern=makeSprite([
+"________________","______kk________","_____k__k_______","____kkkkkk______",
+"____k_yy_k______","____kyyyyk______","____kyFFyk______","____kyFFyk______",
+"____kyyyyk______","____kkkkkk______","______kk________","________________",
+"________________","________________","________________","________________"]);
+SPR.icon.tonic=makeSprite([
+"________________","______kk________","______kk________","_____kkkk_______",
+"____k_mm_k______","____kmmmmk______","____kmmmmk______","____kmMMmk______",
+"____kmmmmk______","_____kkkk_______","________________","________________",
+"________________","________________","________________","________________"]);
+SPR.icon.relic=makeSprite([
+"________________","________________","______yy________","_____yFFy_______",
+"____yFFFFy______","____yFFFFy______","_____yFFy_______","______yy________",
+"________________","________________","________________","________________",
+"________________","________________","________________","________________"]);
+} /* end buildSprites */
+
+/* =====================================================================
+   WORLD MAP
+   ===================================================================== */
+let tiles=[];            /* tiles[y][x] = char */
+const BUILDINGS=[
+  {key:"cabin",  x:5,  y:5,  w:4, h:2, door:{x:6, y:7}},
+  {key:"store",  x:26, y:4,  w:4, h:2, door:{x:27,y:6}},
+  {key:"grannyhut",x:38,y:19,w:4, h:2, door:{x:39,y:21}},
+  {key:"church", x:22, y:25, w:4, h:2, door:{x:23,y:27}},
+  {key:"cave",   x:42, y:2,  w:4, h:2, door:{x:43,y:4}},
+  /* Wolf Pen hamlet */
+  {key:"house1", x:4,  y:22, w:3, h:2, door:{x:5, y:24}, npc:"tull"},
+  {key:"house2", x:13, y:22, w:3, h:2, door:{x:14,y:24}, npc:"maylene"},
+  {key:"house1", x:4,  y:29, w:3, h:2, door:{x:5, y:31}, npc:"ferris"},
+  {key:"house2", x:13, y:29, w:3, h:2, door:{x:14,y:31}, npc:"oralee"}
+];
+const SPOTS={
+  well:{x:12,y:7}, scarecrow:{x:14,y:19}, digSpot:{x:14,y:20},
+  altar:{x:27,y:26}, oak:{x:16,y:19}
+};
+const SOLID=new Set(["T","P","r","~","f","%","W","O","A","#"]);
+
+let seed=1971;
+function rng(){ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; }
+
+function inRect(x,y,rx,ry,rw,rh){ return x>=rx&&x<rx+rw&&y>=ry&&y<ry+rh; }
+
+function genMap(){
+  seed=1971;
+  tiles=[];
+  for(let y=0;y<MAPH;y++){
+    const row=[];
+    for(let x=0;x<MAPW;x++) row.push(".");
+    tiles.push(row);
+  }
+  /* woods border */
+  for(let x=0;x<MAPW;x++)for(let y=0;y<MAPH;y++){
+    const edge=Math.min(x,y,MAPW-1-x,MAPH-1-y);
+    if(edge===0) tiles[y][x]="P";
+    else if(edge===1 && rng()<0.85) tiles[y][x]=(rng()<0.5?"T":"P");
+    else if(edge===2 && rng()<0.35) tiles[y][x]="T";
+  }
+  /* creek: vertical then bend east */
+  for(let y=1;y<15;y++){ tiles[y][20]="~"; tiles[y][21]="~"; }
+  for(let x=20;x<MAPW-1;x++){ tiles[14][x]="~"; tiles[15][x]="~"; }
+  /* bridge on the main path */
+  tiles[14][33]="-"; tiles[15][33]="-";
+  /* main paths */
+  for(let x=3;x<45;x++) if(tiles[17][x]!=="~") tiles[17][x]="-";
+  for(let y=8;y<18;y++) if(tiles[y][7]!=="~") tiles[y][7]="-";           /* cabin spur */
+  for(let y=7;y<14;y++) if(tiles[y][27]!=="~") tiles[y][27]="-";          /* store spur */
+  for(let x=27;x<34;x++) if(tiles[13][x]!=="~") tiles[13][x]="-";
+  for(let y=15;y<18;y++) tiles[y][33]="-";
+  for(let y=18;y<28;y++) tiles[y][23]="-";                               /* church spur */
+  for(let y=18;y<32;y++) tiles[y][10]="-";                               /* Wolf Pen spur */
+  for(let x=5;x<17;x++) if(tiles[27][x]!=="~") tiles[27][x]="-";          /* town lane */
+  for(let y=18;y<22;y++) tiles[y][39]="-";                               /* granny spur */
+  for(let y=5;y<18;y++) if(tiles[y][43]!=="~") tiles[y][43]="-";          /* cave spur */
+  for(let x=43;x<45;x++) tiles[13][x]="-";
+  /* farm field + fence */
+  for(let x=4;x<=11;x++)for(let y=10;y<=15;y++) tiles[y][x]="F";
+  for(let x=3;x<=12;x++){ if(tiles[9][x]!=="-")tiles[9][x]="f"; if(tiles[16][x]!=="-")tiles[16][x]="f"; }
+  for(let y=9;y<=16;y++){ if(tiles[y][3]!=="-")tiles[y][3]="f"; if(tiles[y][12]!=="-")tiles[y][12]="f"; }
+  tiles[9][7]="-"; tiles[16][7]="-";  /* gates */
+  /* graveyard */
+  for(let x=19;x<=29;x++)for(let y=29;y<=31;y++){
+    tiles[y][x]=","
+    ;if(rng()<0.3&&!(x===23)) tiles[y][x]="%";
+  }
+  /* dark grass around woods + church */
+  for(let y=2;y<MAPH-2;y++)for(let x=2;x<MAPW-2;x++){
+    if(tiles[y][x]==="." ){
+      const edge=Math.min(x,y,MAPW-1-x,MAPH-1-y);
+      if(edge<=4&&rng()<0.5) tiles[y][x]=",";
+      if(y>24&&rng()<0.25) tiles[y][x]=",";
+    }
+  }
+  /* brush + rocks + scattered trees */
+  for(let i=0;i<90;i++){
+    const x=2+Math.floor(rng()*(MAPW-4)), y=2+Math.floor(rng()*(MAPH-4));
+    if((tiles[y][x]==="."||tiles[y][x]===",")
+       && !inRect(x,y,3,4,12,14) && !inRect(x,y,21,3,10,6) && !inRect(x,y,18,24,14,6)
+       && !inRect(x,y,36,17,8,7) && !inRect(x,y,40,1,8,6) && !inRect(x,y,3,21,15,12)){
+      const r=rng();
+      tiles[y][x]= r<0.45?"b" : r<0.6?"r" : (r<0.8?"T":"P");
+    }
+  }
+  /* clear + mark special spots */
+  tiles[SPOTS.well.y][SPOTS.well.x]="W";
+  tiles[SPOTS.scarecrow.y][SPOTS.scarecrow.x]="O";
+  tiles[SPOTS.digSpot.y][SPOTS.digSpot.x]=",";
+  tiles[SPOTS.altar.y][SPOTS.altar.x]="A";
+  tiles[SPOTS.oak.y][SPOTS.oak.x]="#";
+  /* building footprints */
+  BUILDINGS.forEach(B=>{
+    for(let y=B.y;y<B.y+B.h;y++)for(let x=B.x;x<B.x+B.w;x++) tiles[y][x]="@";
+    tiles[B.door.y][B.door.x]="-";
+    if(tiles[B.door.y+1]&&tiles[B.door.y+1][B.door.x]!=="~") tiles[B.door.y+1][B.door.x]="-";
+  });
+}
+
+function isSolid(tx,ty){
+  if(tx<0||ty<0||tx>=MAPW||ty>=MAPH) return true;
+  const c=tiles[ty][tx];
+  if(c==="@") return true;
+  return SOLID.has(c);
+}
+
+/* ---------- pre-rendered ground ---------- */
+let mapCanvas=null;
+const TILE_COLOR={".":"#4A5D3A", ",":"#3E4F30", "-":"#8A7A5E", "F":"#5A4632",
+  "~":"#5A88A0", "f":"#4A5D3A", "b":"#4A5D3A", "r":"#4A5D3A", "T":"#4A5D3A",
+  "P":"#3E4F30", "%":"#3E4F30", "W":"#4A5D3A", "O":"#5A4632", "A":"#3E4F30",
+  "#":"#3E4F30", "@":"#4A5D3A"};
+
+function drawTileOnto(g,x,y,fr){
+  fr=fr||0;
+  const c=tiles[y][x];
+  g.fillStyle=TILE_COLOR[c]||"#4A5D3A";
+  g.fillRect(x*TILE,y*TILE,TILE,TILE);
+  /* fixed random budget so both animation frames stay aligned */
+  seed=((x*73856093)^(y*19349663))>>>0; seed=seed%2147483646+1;
+  const R=[]; for(let i=0;i<12;i++) R.push(rng());
+  const X=x*TILE, Y=y*TILE;
+
+  if(c==="."||c===","){
+    /* subtle per-tile tone variation */
+    g.fillStyle=`rgba(${c==="."?"92,113,69":"70,88,54"},${0.12+R[0]*0.16})`;
+    g.fillRect(X,Y,TILE,TILE);
+    for(let i=0;i<3;i++){
+      g.fillStyle=R[i]<0.5?"#55693F":"#42532F";
+      g.fillRect(X+Math.floor(R[i+3]*14),Y+Math.floor(R[i+6]*14),1,2);
+    }
+    /* wind shimmer blade — frame 2 only */
+    if(fr===1&&R[1]<0.6){ g.fillStyle="#64794B"; g.fillRect(X+Math.floor(R[2]*14),Y+Math.floor(R[4]*14),1,2); }
+    /* wildflowers */
+    if(R[9]<0.055){
+      const cols=["#F4C95D","#D94F4F","#C9A9E8","#E8DCC8"];
+      g.fillStyle="#3A4A2E"; g.fillRect(X+2+Math.floor(R[11]*11),Y+4+Math.floor(R[0]*9),1,3);
+      g.fillStyle=cols[Math.floor(R[10]*4)];
+      g.fillRect(X+1+Math.floor(R[11]*11),Y+2+Math.floor(R[0]*9),3,2);
+    }
+    /* pebbles */
+    if(R[8]<0.05){ g.fillStyle="#7A8699"; g.fillRect(X+Math.floor(R[7]*13),Y+Math.floor(R[5]*13),2,2); }
+  }
+  if(c==="-"){
+    g.fillStyle="#9C8B6C"; g.fillRect(X+Math.floor(R[0]*12),Y+Math.floor(R[1]*12),2,1);
+    g.fillStyle="#77684E"; g.fillRect(X+Math.floor(R[2]*12),Y+Math.floor(R[3]*12),2,2);
+    g.fillStyle="rgba(0,0,0,.07)"; g.fillRect(X,Y,TILE,2);
+  }
+  if(c==="~"){
+    g.fillStyle="#4E7890"; g.fillRect(X,Y,TILE,TILE);
+    g.fillStyle="#5A88A0"; g.fillRect(X,Y+((Math.floor(R[0]*10)+fr*4)%14),TILE,3);
+    g.fillStyle="#6FA0B8"; g.fillRect(X,Y+((Math.floor(R[1]*12)+fr*7)%15),TILE,1);
+    g.fillStyle="#8FC0D4"; g.fillRect(X+((Math.floor(R[2]*12)+fr*5)%12),Y+Math.floor(R[3]*14),4,1);
+    if(fr===1&&R[4]<0.3){ g.fillStyle="#CFE9F5"; g.fillRect(X+Math.floor(R[5]*13),Y+Math.floor(R[6]*13),2,1); }
+  }
+  if(c==="F"){
+    g.fillStyle="#4E3C2A"; for(let i=0;i<4;i++) g.fillRect(X+Math.floor(R[i]*14),Y+Math.floor(R[i+4]*14),2,1);
+    g.fillStyle="rgba(0,0,0,.10)"; g.fillRect(X,Y,TILE,1); g.fillRect(X,Y,1,TILE);
+  }
+  if(c==="f"){
+    g.fillStyle="#5E3F27"; g.fillRect(X+2,Y+6,12,3); g.fillRect(X+3,Y+2,2,12); g.fillRect(X+11,Y+2,2,12);
+    g.fillStyle="#7A5335"; g.fillRect(X+2,Y+6,12,1);
+    g.fillStyle="rgba(0,0,0,.2)"; g.fillRect(X+3,Y+14,10,2);
+  }
+  /* shadows under tall things, then the sprite */
+  const shadow=()=>{ g.fillStyle="rgba(0,0,0,.22)"; g.fillRect(X+2,Y+12,12,3); };
+  if(c==="T"){ shadow(); g.drawImage(SPR.tree,X,Y-5); }
+  if(c==="P"){ shadow(); g.drawImage(SPR.pine,X,Y-4); }
+  if(c==="b") g.drawImage(SPR.brush,X,Y);
+  if(c==="r"){ g.fillStyle="rgba(0,0,0,.18)"; g.fillRect(X+3,Y+9,10,2); g.drawImage(SPR.rock,X,Y); }
+  if(c==="%"){ shadow(); g.drawImage(SPR.grave,X,Y); }
+  if(c==="W"){ shadow(); g.drawImage(SPR.well,X,Y); }
+  if(c==="O"){ shadow(); g.drawImage(SPR.scarecrow,X,Y); }
+  if(c==="A"){ shadow(); g.drawImage(SPR.altar,X,Y); }
+  if(c==="#"){ shadow(); g.drawImage(SPR.tree,X-3,Y-10,22,22); g.drawImage(SPR.tree,X,Y-4); }
+}
+
+let mapFrames=[];
+function buildMapCanvas(){
+  mapFrames=[0,1].map(fr=>{
+    const cv=document.createElement("canvas");
+    cv.width=MAPW*TILE; cv.height=MAPH*TILE;
+    const g=cv.getContext("2d");
+    g.imageSmoothingEnabled=false;
+    for(let y=0;y<MAPH;y++)for(let x=0;x<MAPW;x++) drawTileOnto(g,x,y,fr);
+    /* buildings + drop shadows */
+    BUILDINGS.forEach(B=>{
+      g.fillStyle="rgba(0,0,0,.25)";
+      g.fillRect(B.x*TILE+2,(B.y+B.h)*TILE-2,B.w*TILE-4,5);
+      g.drawImage(SPR[B.key], B.x*TILE, B.y*TILE, B.w*TILE, B.h*TILE);
+    });
+    /* soft dark edges — the woods press in */
+    const grd=g.createRadialGradient(MAPW*TILE/2,MAPH*TILE/2,MAPH*TILE*0.42,MAPW*TILE/2,MAPH*TILE/2,MAPW*TILE*0.62);
+    grd.addColorStop(0,"rgba(10,14,10,0)");
+    grd.addColorStop(1,"rgba(10,14,10,.38)");
+    g.fillStyle=grd; g.fillRect(0,0,MAPW*TILE,MAPH*TILE);
+    return cv;
+  });
+  mapCanvas=mapFrames[0];
+}
+function redrawTile(x,y){
+  mapFrames.forEach((cv,fr)=>{
+    const g=cv.getContext("2d");
+    drawTileOnto(g,x,y,fr);
+    /* repaint canopy that spills up from the tile below */
+    if(y+1<MAPH && ["T","P","#"].includes(tiles[y+1][x])) drawTileOnto(g,x,y+1,fr);
+  });
+}
+/* =====================================================================
+   CORE SIM — state, time, player, farming, economy, dialogue
+   ===================================================================== */
+const cvs=document.getElementById("game");
+const ctx=cvs.getContext("2d");
+let VW=0,VH=0;
+function fitCanvas(){
+  VW=Math.min(window.innerWidth,1280); VH=Math.min(window.innerHeight,800);
+  cvs.width=VW; cvs.height=VH;
+  ctx.imageSmoothingEnabled=false;
+}
+window.addEventListener("resize",fitCanvas);
+
+let state=null, running=false, paused=false;
+const GROW={corn:4,beans:3,moonflower:5};
+const SELLP={corn:40,beans:25,moonflower:60,ginseng:80,morel:35,pawpaw:20};
+const SEEDKEY={corn:"cornSeed",beans:"beanSeed",moonflower:"moonSeed"};
+
+function freshGame(){
+  return {
+    day:1, tmin:DAY_START, bits:50, hp:100, fear:0, curse:30,
+    px:7.5, py:8.5, dir:"d", anim:0,
+    inv:{cornSeed:4,beanSeed:2,moonSeed:0,salt:3,oil:100,tonic:1,
+         corn:0,beans:0,moonflower:0,ginseng:0,morel:0,pawpaw:0},
+    seedSel:"corn", tool:0, lanternOn:false, canWater:6,
+    farm:{}, salts:{}, cleared:{},
+    relics:{dime:0,madstone:0,bloom:0,shard:0,hymnal:0},
+    moonGiven:0, journal:["intro"], flags:{}, nightsSurvived:0,
+    finalNight:false, won:false, deaths:0, tut:0, moving:false,
+    trust:0, talkedToday:{}, npcFlags:{}
+  };
+}
+function saveGame(){ try{ localStorage.setItem(LS_KEY,JSON.stringify(state)); }catch(e){} }
+function loadGame(){ try{ const r=localStorage.getItem(LS_KEY); return r?JSON.parse(r):null; }catch(e){ return null; } }
+
+/* ---------- input ---------- */
+const keys={};
+let interactQueued=false;
+window.addEventListener("keydown",e=>{
+  const k=e.key.toLowerCase();
+  if(["arrowup","arrowdown","arrowleft","arrowright"," "].includes(e.key.toLowerCase())||e.key===" ") e.preventDefault();
+  if(e.key==="ArrowUp")keys.w=true; else if(e.key==="ArrowDown")keys.s=true;
+  else if(e.key==="ArrowLeft")keys.a=true; else if(e.key==="ArrowRight")keys.d=true;
+  else keys[k]=true;
+  if(!running) return;
+  if(k==="e"||k===" "||e.key===" ") interactQueued=true;
+  if(k==="j"){ toggleJournal(); }
+  if(k==="h"){ toggleHelp(); }
+  if(k==="m"){ audioOn=!audioOn; toast(audioOn?"sound on":"sound off"); if(!audioOn)stopDrone(); }
+  if(k==="escape"){ if(!dlg){ paused=!paused; toast(paused?"— paused —":"back to it"); } }
+  if(k==="q"){ cycleSeed(); }
+  if(dlg && dlg.opts && "123456789".includes(k)){ pickOpt(Number(k)-1); return; }
+  if((!dlg||!dlg.opts) && "123456".includes(k)){
+    state.tool=Number(k)-1; renderHotbar();
+    toast(["Hoe","Watering can","Seed pouch","Salt","Lantern","Tonic"][state.tool]+" in hand");
+  }
+});
+window.addEventListener("keyup",e=>{
+  if(e.key==="ArrowUp")keys.w=false; else if(e.key==="ArrowDown")keys.s=false;
+  else if(e.key==="ArrowLeft")keys.a=false; else if(e.key==="ArrowRight")keys.d=false;
+  else keys[e.key.toLowerCase()]=false;
+});
+
+/* ---------- helpers ---------- */
+function toast(t){
+  const d=document.createElement("div"); d.className="gtoast"; d.textContent=t;
+  document.getElementById("toastBox").appendChild(d);
+  setTimeout(()=>d.remove(),3300);
+}
+function clock12(m){
+  let h=Math.floor(m/60), mm=m%60;
+  const ap=h>=12?"PM":"AM"; h=((h+11)%12)+1;
+  return `${h}:${String(mm).padStart(2,"0")} ${ap}`;
+}
+function isNight(){ return state.tmin>=NIGHT_START || state.tmin<DAWN; }
+function fKey(x,y){ return x+","+y; }
+function facingTile(){
+  const dx=state.dir==="l"?-1:state.dir==="r"?1:0;
+  const dy=state.dir==="u"?-1:state.dir==="d"?1:0;
+  return {x:Math.floor(state.px+dx), y:Math.floor(state.py+dy)};
+}
+function near(x,y,r){ return Math.hypot(state.px-(x+0.5), state.py-(y+0.5))<=r; }
+
+/* ---------- time & days ---------- */
+function advanceTime(dt){
+  const prev=state.tmin;
+  state.tmin+=dt*2;
+  if(prev<NIGHT_START && state.tmin>=NIGHT_START){
+    toast("dark falls on the holler…");
+    playStinger(110,1.2);
+    unlockJournal("haint");
+  }
+  if(prev<NIGHT_START-60 && state.tmin>=NIGHT_START-60) toast("sun's getting low. salt up or get inside.");
+  if(state.tmin>=1440){
+    state.tmin-=1440;
+  }
+  if(prev>state.tmin){ /* wrapped midnight */ }
+  if(state.tmin>=DAWN && (prev<DAWN || prev>state.tmin) && state.flags.wasNight){
+    morning(false);
+  }
+  state.flags.wasNight=isNight();
+}
+function morning(slept){
+  state.day++;
+  state.tmin=DAY_START;
+  state.nightsSurvived++;
+  state.talkedToday={};
+  growCrops();
+  regrowBrush();
+  clearNight();
+  if(state.day%2===0 && state.curse<100) state.curse=Math.min(100,state.curse+7);
+  if(state.finalNight){ winGame(); return; }
+  toast(`Day ${state.day}. The holler is quiet — for now.`);
+  spawnDayEvents();
+  saveGame();
+  updateHUD();
+}
+function growCrops(){
+  Object.keys(state.farm).forEach(k=>{
+    const p=state.farm[k];
+    if(p.crop){
+      if(p.watered){ p.grown=(p.grown||0)+1; }
+      const need=GROW[p.crop];
+      p.stage = p.grown>=need?2 : p.grown>=Math.ceil(need/2)?1:0;
+      p.watered=false;
+    }
+  });
+}
+function regrowBrush(){
+  Object.keys(state.cleared).forEach(k=>{
+    if(state.day-state.cleared[k]>=2){
+      const [x,y]=k.split(",").map(Number);
+      if(tiles[y][x]===","||tiles[y][x]==="."){ tiles[y][x]="b"; redrawTile(x,y); }
+      delete state.cleared[k];
+    }
+  });
+}
+
+/* ---------- movement ---------- */
+function tryMove(nx,ny){
+  const r=0.28;
+  const pts=[[nx-r,ny],[nx+r,ny],[nx,ny-r],[nx,ny+r]];
+  for(const [x,y] of pts){ if(isSolid(Math.floor(x),Math.floor(y))) return false; }
+  return true;
+}
+function updatePlayer(dt){
+  let vx=0,vy=0;
+  if(keys.w)vy-=1; if(keys.s)vy+=1; if(keys.a)vx-=1; if(keys.d)vx+=1;
+  if(vx&&vy){ vx*=0.707; vy*=0.707; }
+  if(vx<0)state.dir="l"; else if(vx>0)state.dir="r";
+  if(vy<0)state.dir="u"; else if(vy>0)state.dir="d";
+  const spd=(state.fear>70?3.0:4.2)*dt;
+  if(vx||vy){
+    state.moving=true;
+    state.anim+=dt*8;
+    state.flags.walked=(state.flags.walked||0)+spd;
+    const nx=state.px+vx*spd, ny=state.py+vy*spd;
+    if(tryMove(nx,state.py)) state.px=nx;
+    if(tryMove(state.px,ny)) state.py=ny;
+  } else state.moving=false;
+  if(state.lanternOn){
+    state.inv.oil=Math.max(0,state.inv.oil-dt*1.1);
+    if(state.inv.oil<=0){ state.lanternOn=false; toast("the lantern gutters out."); }
+  }
+}
+
+/* ---------- interact ---------- */
+function doInteract(){
+  if(dlg){ advanceDlg(); return; }
+  /* villagers first — they're standing right there */
+  if(villagersOut()){
+    for(const v of villagers){
+      if(near(v.x,v.y,1.3)){ npcTalk(v.id); return; }
+    }
+  }
+  /* doors & spots */
+  const B=BUILDINGS;
+  for(let i=5;i<B.length;i++){
+    if(near(B[i].door.x,B[i].door.y,1.3)){ houseKnock(B[i].npc); return; }
+  }
+  if(near(B[0].door.x,B[0].door.y,1.3)){ cabinMenu(); return; }
+  if(near(B[1].door.x,B[1].door.y,1.3)){ storeMenu(); return; }
+  if(near(B[2].door.x,B[2].door.y,1.3)){ grannyMenu(); return; }
+  if(near(B[3].door.x,B[3].door.y,1.3)){ churchMenu(); return; }
+  if(near(B[4].door.x,B[4].door.y,1.3)){ caveMenu(); return; }
+  if(near(SPOTS.altar.x,SPOTS.altar.y,1.4)){ altarMenu(); return; }
+  if(near(SPOTS.well.x,SPOTS.well.y,1.4)){ state.canWater=6; state.flags.refilled=true; toast("watering can filled from the well."); return; }
+  if(near(SPOTS.scarecrow.x,SPOTS.scarecrow.y,1.4)&&!state.flags.dimeHint2){
+    say("SCARECROW","It's Granny's old scarecrow. Straw face gone grey.\nIts shadow points south of its feet.",()=>{state.flags.dimeHint2=true;});
+    return;
+  }
+  if(snawfus.active && near(snawfus.x,snawfus.y,2)){ snawfusTouch(); return; }
+  /* tile actions */
+  const t=facingTile();
+  const c=(t.y>=0&&t.y<MAPH&&t.x>=0&&t.x<MAPW)?tiles[t.y][t.x]:"P";
+  const k=fKey(t.x,t.y);
+  const tool=["hoe","can","seeds","salt","lantern","tonic"][state.tool];
+  const plot=state.farm[k];
+
+  /* harvest / forage always available with E */
+  if(plot && plot.crop && plot.stage===2){ harvest(k,plot); return; }
+  if(c==="b"){ forage(t.x,t.y); return; }
+  if(c==="~"){ state.canWater=6; state.flags.refilled=true; toast("watering can filled from the creek."); return; }
+
+  if(tool==="hoe"){
+    if(t.x===SPOTS.digSpot.x&&t.y===SPOTS.digSpot.y&&state.relics.dime===0){
+      state.relics.dime=1; unlockJournal("dime");
+      playStinger(660,0.4);
+      say("✦ RELIC FOUND ✦","Under the scarecrow's shadow: a SILVER DIME, black with tarnish.\nGranny's journal: “silver turns what iron can't.”");
+      updateHUD(); return;
+    }
+    if(c==="F"&&!plot){ state.farm[k]={tilled:true,watered:false,crop:null,stage:0,grown:0}; return; }
+    if(plot&&plot.crop){ delete state.farm[k]; toast("cleared the plot."); return; }
+  }
+  if(tool==="can"){
+    if(state.canWater<=0){ toast("can's dry — fill it at the well or creek."); return; }
+    if(plot){ if(!plot.watered){plot.watered=true; state.canWater--;} return; }
+  }
+  if(tool==="seeds"){
+    if(plot&&plot.tilled&&!plot.crop){
+      const sk=SEEDKEY[state.seedSel];
+      if(state.inv[sk]>0){ state.inv[sk]--; plot.crop=state.seedSel; plot.stage=0; plot.grown=0; updateHUD(); renderHotbar(); }
+      else toast(`no ${state.seedSel} seed. Dry Goods sells some.`);
+      return;
+    }
+  }
+  if(tool==="salt"){
+    if(state.inv.salt>0 && !isSolid(t.x,t.y) && !state.salts[k]){
+      state.inv.salt--; state.salts[k]=3; renderHotbar();
+      toast("a ring of salt. nothing hateful crosses it.");
+      unlockJournal("salt");
+      return;
+    }
+  }
+  if(tool==="lantern"){
+    if(state.inv.oil>0){ state.lanternOn=!state.lanternOn; toast(state.lanternOn?"lantern lit.":"lantern out."); }
+    else toast("no oil left.");
+    return;
+  }
+  if(tool==="tonic"){
+    if(state.inv.tonic>0){ state.inv.tonic--; state.fear=0; toast("Granny's tonic. warm as a church stove."); renderHotbar(); }
+    else toast("no tonic. Granny Hettie brews it.");
+    return;
+  }
+  /* nothing matched — tell the player why */
+  const HINTS={
+    hoe:"nothing to hoe there — till the DARK PLOTS inside the farm fence",
+    can:"water a tilled plot — refill with E at the well or creek",
+    seeds:"seeds want tilled soil — use the hoe (1) on a field plot first",
+    salt:"salt wants open ground with no ring on it yet"
+  };
+  if(HINTS[tool]) toast(HINTS[tool]);
+}
+function harvest(k,plot){
+  const n=1+(Math.random()<0.4?1:0);
+  state.inv[plot.crop]+=n;
+  toast(`harvested ${plot.crop} ×${n}`);
+  state.farm[k]={tilled:true,watered:false,crop:null,stage:0,grown:0};
+  updateHUD();
+}
+function forage(x,y){
+  tiles[y][x]=","; redrawTile(x,y);
+  state.cleared[fKey(x,y)]=state.day;
+  const r=Math.random();
+  if(r<0.06){ state.fear=Math.min(100,state.fear+18); playStinger(90,0.6); toast("something HISSED in the brush—"); }
+  else if(r<0.30){ state.inv.pawpaw++; toast("found a ripe pawpaw."); }
+  else if(r<0.50){ state.inv.morel++; toast("found a morel mushroom."); }
+  else if(r<0.62){ state.inv.ginseng++; toast("dug wild ginseng — worth good bits."); }
+  else toast("nothing but ticks in that brush.");
+  updateHUD();
+}
+function cycleSeed(){
+  const order=["corn","beans","moonflower"];
+  state.seedSel=order[(order.indexOf(state.seedSel)+1)%3];
+  toast("seed pouch: "+state.seedSel);
+  renderHotbar();
+}
+
+/* ---------- dialogue ---------- */
+let dlg=null;
+function say(name,text,onDone,opts){
+  const pages=Array.isArray(text)?text:[text];
+  dlg={name,pages,i:0,onDone,opts:null,optsFinal:opts||null};
+  showDlgPage();
+}
+function showDlgPage(){
+  const box=document.getElementById("dlg");
+  box.classList.add("on");
+  document.getElementById("dlgName").textContent=dlg.name;
+  document.getElementById("dlgText").textContent=dlg.pages[dlg.i];
+  const last=dlg.i===dlg.pages.length-1;
+  dlg.opts=(last&&dlg.optsFinal)?dlg.optsFinal:null;
+  document.getElementById("dlgOpts").innerHTML=dlg.opts
+    ? dlg.opts.map((o,i)=>`[${i+1}] ${o.t}`).join("<br>") : "";
+  document.getElementById("dlgMore").textContent=dlg.opts?"press a number":"E to continue";
+}
+function advanceDlg(){
+  if(!dlg) return;
+  if(dlg.opts) return; /* waiting on a numbered choice */
+  if(dlg.i<dlg.pages.length-1){ dlg.i++; showDlgPage(); }
+  else closeDlg();
+}
+function closeDlg(){
+  const done=dlg&&dlg.onDone;
+  dlg=null;
+  document.getElementById("dlg").classList.remove("on");
+  if(done) done();
+}
+function pickOpt(i){
+  if(!dlg||!dlg.opts||i>=dlg.opts.length) return;
+  const fn=dlg.opts[i].fn;
+  dlg=null; document.getElementById("dlg").classList.remove("on");
+  if(fn) fn();
+}
+
+/* ---------- places ---------- */
+function cabinMenu(){
+  const opts=[
+    {t:"Sleep till morning", fn:()=>{
+      if(isNight()||state.tmin>17*60){ sleepNow(); }
+      else say("HOME","Too early to sleep. Daylight's for working.");
+    }},
+    {t:"Just looking", fn:null}
+  ];
+  say("GRANNY'S CABIN","The old cabin. Door lintel painted haint blue.\nSleeping saves your progress and skips to morning.",null,opts);
+  unlockJournal("haintblue");
+}
+function sleepNow(){
+  if(state.finalNight){ say("THE HOLLER","No sleeping tonight. The ritual holds you to the churchyard."); return; }
+  state.flags.wasNight=false;
+  morning(true);
+  say("MORNING",`You slept hard and dreamed of blue smoke.\nDay ${state.day}. Bits: ${state.bits}.`);
+}
+function storeMenu(){
+  if(isNight()){ say("DRY GOODS","Shutters bolted. Emmett don't open after dark. Smart man."); return; }
+  if(!state.flags.metEmmett){
+    state.flags.metEmmett=true; state.flags.dimeHint=true;
+    say("EMMETT — DRY GOODS",[
+      "So you're Nettie Blackthorn's kin. Condolences… and, well, sympathies. That holler takes some getting used to.",
+      "Buy what you need. And listen — your granny buried a SILVER DIME under her scarecrow's shadow. Said it'd be needed 'when the moon goes dark.' Take a hoe to it.",
+    ],()=>storeShop());
+    return;
+  }
+  storeShop();
+}
+function storeShop(){
+  const s=state.inv;
+  const sellable=["corn","beans","moonflower","ginseng","morel","pawpaw"].filter(k=>s[k]>0);
+  const sellSum=sellable.reduce((a,k)=>a+s[k]*SELLP[k],0);
+  const opts=[
+    {t:`Corn seed — 10 ⛃ (have ${s.cornSeed})`, fn:()=>buy("cornSeed",10,"corn seed")},
+    {t:`Bean seed — 8 ⛃ (have ${s.beanSeed})`, fn:()=>buy("beanSeed",8,"bean seed")},
+    {t:`Moonflower seed — 25 ⛃ (have ${s.moonSeed})`, fn:()=>buy("moonSeed",25,"moonflower seed")},
+    {t:`Salt pouch ×3 — 15 ⛃ (have ${s.salt})`, fn:()=>buy("salt",15,"salt",3)},
+    {t:`Lantern oil — 20 ⛃ (${Math.round(s.oil)}%)`, fn:()=>buyOil()},
+    {t:sellable.length?`SELL produce — get ${sellSum} ⛃`:"(nothing to sell)", fn:()=>sellAll()}
+  ];
+  say("EMMETT — DRY GOODS",`Bits: ${state.bits} ⛃. What'll it be?`,null,opts);
+}
+function buy(k,cost,label,qty){
+  if(state.bits<cost){ say("EMMETT","Short on bits, friend."); return; }
+  state.bits-=cost; state.inv[k]+=(qty||1);
+  toast(`bought ${label}`); updateHUD(); renderHotbar(); storeShop();
+}
+function buyOil(){
+  if(state.bits<20){ say("EMMETT","Short on bits, friend."); return; }
+  state.bits-=20; state.inv.oil=Math.min(100,state.inv.oil+100);
+  toast("lantern oil topped up"); updateHUD(); renderHotbar(); storeShop();
+}
+function sellAll(){
+  let sum=0;
+  ["corn","beans","moonflower","ginseng","morel","pawpaw"].forEach(k=>{
+    sum+=state.inv[k]*SELLP[k]; state.inv[k]=0;
+  });
+  if(sum<=0){ storeShop(); return; }
+  state.bits+=sum; toast(`sold produce for ${sum} ⛃`);
+  updateHUD(); storeShop();
+}
+function grannyMenu(){
+  if(isNight()){ say("HETTIE'S CABIN","A voice through the door: “Git home, child. Nothin' good knocks after dark.”"); return; }
+  state.flags.metGranny=true;
+  unlockJournal("granny");
+  if(state.relics.hymnal===0){
+    const have=state.inv.moonflower;
+    const opts=[
+      {t:`Give 3 moonflowers (have ${have})`, fn:()=>{
+        if(state.inv.moonflower>=3){
+          state.inv.moonflower-=3; state.relics.hymnal=1; state.moonGiven=3;
+          playStinger(660,0.4); updateHUD();
+          say("✦ RELIC ✦","Hettie presses a worn HYMNAL into your hands.\n“Your granny's. Page 91 is dog-eared. Sing it at the altar and mean it.”");
+        } else say("HETTIE","“That ain't three. Moonflowers only open if you water 'em faithful. Plant, water, wait five days.”");
+      }},
+      {t:`Buy fear tonic — 30 ⛃ (have ${state.inv.tonic})`, fn:()=>{
+        if(state.bits>=30){ state.bits-=30; state.inv.tonic++; toast("tonic bought"); updateHUD(); renderHotbar(); grannyMenu(); }
+        else say("HETTIE","“Bits first, comfort after.”");
+      }},
+      {t:"Ask about the curse", fn:()=>grannyLore()}
+    ];
+    say("GRANNY HETTIE",[
+      "A power doctor older than the county. She smells of sassafras and woodsmoke.",
+      "“Nettie's kin. Good. Listen close: five holy things on that church altar, 'fore the moon goes full dark. Dime. Madstone. Snawfus bloom. Bell shard. And Nettie's hymnal.”",
+      "“The hymnal I'm keepin' safe. Bring me THREE MOONFLOWERS grown in her field and it's yours.”"
+    ],null,opts);
+  } else {
+    const opts=[
+      {t:`Buy fear tonic — 30 ⛃ (have ${state.inv.tonic})`, fn:()=>{
+        if(state.bits>=30){ state.bits-=30; state.inv.tonic++; toast("tonic bought"); updateHUD(); renderHotbar(); }
+        else say("HETTIE","“Bits first, comfort after.”");
+      }},
+      {t:"Ask about the relics", fn:()=>grannyLore()}
+    ];
+    say("GRANNY HETTIE","“Lay 'em on the altar, child. All five. Then survive what comes sniffin'.”",null,opts);
+  }
+}
+function grannyLore(){
+  say("GRANNY HETTIE",[
+    "“The DIME: your granny buried it where her scarecrow's shadow falls. Emmett knows.”",
+    "“The MADSTONE: in the bluff cave north-east. Take a LIT LANTERN and don't dawdle — the Gowrow sleeps light.”",
+    "“The SNAWFUS BLOOM: the white stag walks near the church at first light on EVEN days. Approach slow, lantern OUT. He gives to the gentle.”",
+    "“The BELL SHARD: when the Gurdon Light drifts over the graveyard at night, dig where it hovers. The light marks old iron.”",
+    "“And my price for the hymnal you know already. Now git — daylight's burnin'.”"
+  ]);
+}
+function churchMenu(){
+  unlockJournal("church");
+  say("RUINED CHURCH","Burned in '31, they say. The bell tower fell and the bell broke.\nThe stone ALTAR still stands out back — that's where relics get laid.");
+}
+/* =====================================================================
+   WOLF PEN — villagers, trust, and what they won't say
+   ===================================================================== */
+const TIER_NAMES=["Stranger","Neighbor","Kin","Blood"];
+function trustTier(){ const t=state.trust||0; return t>=16?3:t>=10?2:t>=5?1:0; }
+function gainTrust(n){
+  const before=trustTier();
+  state.trust=(state.trust||0)+n;
+  if(trustTier()>before){
+    playStinger(520,0.5);
+    toast(`Wolf Pen counts you ${TIER_NAMES[trustTier()].toUpperCase()} now.`);
+  }
+  updateHUD();
+}
+
+const NPC_DATA={
+ tull:{ tag:"Deacon Tull", name:"DEACON TULL RAINEY", fav:"beans",
+  pool:[
+   ["The old man doesn't look up from his whittling. “Blackthorn kin.” The knife keeps moving. “We heard.”",
+    "“Fine weather.” He says it like a door closing."],
+   ["“You keep Nettie's field neat. She'd have liked that.” He almost smiles — then checks the sun like a pocketwatch.",
+    "“One sermon left in me, outsider: be indoors 'fore dusk, and don't sing after sundown. Some things sing back.”"],
+   ["“Sit a minute.” He makes room on the stump — first time anyone here has made room for you.",
+    "“You notice nobody in Wolf Pen keeps a bell? Not a dinner bell, not a cowbell. Think on why that might be.”"],
+   ["He grips your arm — his hand is shaking. “Whatever my daughter-in-law tells you about me being brave in '31 — I was in the creek. That's the only reason I'm alive.”"]
+  ],
+  ask:[
+   "“Ask somebody else.” He turns the whittling over. Whatever it is, it has too many legs.",
+   "“The church? Lightning, they say.” He spits, careful and deliberate, like punctuation. “They say.”",
+   ["“You've earned a piece of it. The church didn't burn from lightning. In '31 the congregation stayed past dark for a revival.”",
+    "“Something came up the aisle wearing the dark like a coat. The lamps inverted — light poured INTO them. Your granny walked in alone and spoke to it, and then came the fire.”",
+    "“We let folks believe 'lightning' because the truth don't fit in a mouth.”"],
+   ["“The bell rang once when the tower fell — with no hand pulling. Every soul that heard it clear is in that yard now. I had creek water in my ears, baptizing the Dunkard boy.”",
+    "“Lay that shard on the altar, child. Let Deacon Tull sleep nights again.”"]
+  ]},
+ maylene:{ tag:"Widow Maylene", name:"WIDOW MAYLENE COBB", fav:"pawpaw",
+  pool:[
+   ["She's hanging wash that's already dry. “We don't take callers.” Her eyes flick to the ridge and back, quick as a bird.",
+    "“Store's north. Granny woman's east.” The clothespins snap like little traps."],
+   ["“You're still here. Most Blackthorn kin had the sense to leave.” It might be respect. It might be pity.",
+    "“I keep every lamp in the house burning, dark to dawn. Folks call it wasteful. Folks still have husbands.”"],
+   ["“My Harlan went up the ridge after a lost heifer, November of '58. The dogs came home. The heifer came home.” She folds the same sheet twice.",
+    "“What I heard that night weren't a cat and weren't a wolf and weren't a train, and it called with HARLAN'S VOICE, and I did not open the door.” Her chin lifts. “I did NOT.”"],
+   ["“I'll say this once, because you're carrying Nettie's load now: it can't cross running water, it hates a flame, and it knows every voice it's ever eaten. Don't answer the dark when it's polite.”"]
+  ],
+  ask:[
+   "“No.” Just that. The clothespin bag trembles.",
+   "“Keep a light. Whatever else you do or don't. Keep. A. Light.”",
+   ["“The thing on the ridge — the old folks called it the Howler, back when naming it felt safe. It circles the holler like a dog on a chain.”",
+    "“And the chain, child — the chain was your grandmother.”"],
+   ["“Nettie fed it her own years to keep it staked. That's granny-woman work: you don't kill a thing like that, you MORTGAGE it. Her dying is the note coming due.”"]
+  ],
+  reward:{tier:1,flag:"mayleneSalt",give:s=>{s.inv.salt+=2;},text:"She presses two salt pouches into your hand. “From my own sill. Don't tell.”"}},
+ ferris:{ tag:"Ferris Dunkard", name:"FERRIS DUNKARD", fav:"corn",
+  pool:[
+   ["A wiry man mending a fish trap. “Traps is empty again.” He says it AT you, like it's your fault.",
+    "“Whatever you're selling, the answer's no. Whatever you're asking, the answer's ALSO no.”"],
+   ["“Blackthorn, huh. Your granny bought my mash and never preached at me once. Finest woman in three counties.”",
+    "“Creek's been wrong lately. Fish won't hold in the deep pools no more. Fish know things.”"],
+   ["“You been up by the bluff cave? Don't lie, I seen your lantern.” He leans close; his breath is pure corn whiskey. “I POURED A JAR OUT for that thing once. It drank it. Ground shook for a week after.”",
+    "“Gowrow's old, older'n the town, older'n the Osage even said. It ain't the problem. It's the LOCK on the problem. Caves go down further than you think.”"],
+   ["“Listen here. Night the church burned, something came UP out of that cave and something came DOWN off that ridge, and they met in the middle of town like two dogs meeting. Your granny stood between 'em. THAT's what Wolf Pen won't say out loud.”"]
+  ],
+  ask:[
+   "He laughs with no humor in it and goes back to the trap.",
+   "“Stay off the bluff after dark. Man's got to have SOME rules.”",
+   ["“That cave breathes. In all morning, out all evening, regular as a sleeper. Whatever you took out of there—” he taps his nose, “—it noticed.”"],
+   ["“You want it calm when the ritual comes? Corn. Leave good corn at the cave mouth. Old debts, old manners. It remembers your granny's mash, I promise you that.”"]
+  ],
+  reward:{tier:1,flag:"ferrisOil",give:s=>{s.inv.oil=Math.min(100,s.inv.oil+40);},text:"He tops your lantern off from a filthy jug that is definitely not lamp oil. It burns fine. Better, maybe."}},
+ oralee:{ tag:"Miss Ora Lee", name:"MISS ORA LEE PRUETT", fav:"moonflower",
+  pool:[
+   ["The young schoolteacher gathers her students the moment you approach — a hen with chicks, and you're the hawk. “School's in session.” There is no school building.",
+    "“Good day.” She holds her slate like a shield."],
+   ["“Forgive the town its manners. The last outsider who asked questions was a folklore man from the university, in '49.” She pauses. “His car is still behind Dunkard's barn.”",
+    "“The children like you. Children can tell.” She seems to find this significant, and troubling."],
+   ["“The children have a counting rhyme. They don't know what it means. Their great-grandparents did.” She recites it in a whisper, sing-song and terrible.",
+    "“One's the dime beneath the corn, / Two's the stone where none was born, / Three's the bloom that walks the sky, / Four's the bell that will not die, / Five's the song her own hand wrote — / five holy things to still its throat.”",
+    "“They skip rope to that, outsider. Rope-skipping. To THAT.”"],
+   ["“I write everything down — every rhyme, every ward, every rule. Somebody has to, after Nettie.” Her voice drops. “If the ritual fails, my notebook is in the schoolhouse chimney. Whoever comes after you will need it.”"]
+  ],
+  ask:[
+   "“I really couldn't say.” She could. She won't.",
+   "“Count the graves sometime. Then count the town. The arithmetic is why nobody talks to you.”",
+   ["“Haints are just the RESIDUE, you understand. Grief with nowhere to go. What frightens Wolf Pen isn't the dead—”",
+    "“—it's the thing that COLLECTS them.”"],
+   ["“The rhyme is a RECIPE, of course. Five relics, one altar. Nettie taught it to the children herself, hid it in a game so it couldn't be forgotten or burned. Your grandmother was the smartest woman I ever knew.”"]
+  ],
+  rewardKin:{flag:"oraleeRhyme",journal:"rhyme",text:"You copy the rhyme into your journal before she can change her mind."}},
+ croaker:{ tag:"Croaker Jessup", name:"SILAS 'CROAKER' JESSUP", fav:"morel",
+  pool:[
+   ["The gravedigger leans on his spade and looks at you the way a man measures lumber. “Five foot ten?” he asks. You don't answer. “Eleven,” he decides.",
+    "“Town don't talk to strangers.” He grins with nine teeth. “Me, I talk to everybody. Eventually.”"],
+   ["“You want the truth about this town, read the yard. Same four family names on every stone, and every twenty, thirty year — a BAD season. Whole rows planted at once.”",
+    "“I dug for my daddy and he dug for his. We keep the rows straight and we don't dig after dark. House rules.”"],
+   ["“The light that floats over my yard some nights? Gurdon light, folks call it. It ain't a haint. It's a FINGER. Something pointing at what it wants dug up.” He shrugs. “I don't dig for it. You maybe did. That's your business.”",
+    "“Silver dime under a scarecrow, madstone in a cave, bloom off the white stag… your granny scattered the pieces where the thing couldn't gather 'em. Smart. Cold-smart.”"],
+   ["“You want to know why she scattered 'em 'stead of using 'em? Because the ritual needs a BLACKTHORN to hold the song, and she was done. Wore through. It was always going to be you, child. She wrote you that letter YEARS ago.”"]
+  ],
+  ask:[
+   "“Dig your own graves, do you?” He chuckles at his own joke for a long time.",
+   "“That yard fills up in bad years. This is shaping to be a bad year. I keep the south row clear, just in practice.”",
+   ["“Every stone out there's got iron nails driven in the corners, and a dime under the tongue of every soul I ever boxed. My own addition. Nobody in MY yard walks.”"],
+   ["“When the ritual night comes, stand your ground at that altar. The haints'll come at you wearing faces you know. They're checking if you'll flinch. Blackthorns don't flinch.”"]
+  ],
+  reward:{tier:1,flag:"croakerTonic",give:s=>{s.inv.tonic++;},text:"He hands you a flask. “Hettie's recipe, my batch. For the nerves. You'll need the nerves.”"}}
+};
+
+let villagers=[];
+function initVillagers(){
+  villagers=[
+    {id:"tull",   ax:6.5, ay:25.8},
+    {id:"maylene",ax:14.5,ay:25.8},
+    {id:"ferris", ax:6.5, ay:28.4},
+    {id:"oralee", ax:11.5,ay:28.4},
+    {id:"croaker",ax:17.5,ay:30.2}
+  ].map(v=>({...v,x:v.ax,y:v.ay,tx:v.ax,ty:v.ay,wait:Math.random()*3}));
+}
+function villagersOut(){ return state.tmin>=DAY_START+30 && state.tmin<NIGHT_START-40; }
+function villagersTick(dt){
+  if(!villagersOut()) return;
+  villagers.forEach(v=>{
+    const dx=v.tx-v.x, dy=v.ty-v.y, d=Math.hypot(dx,dy);
+    if(d>0.12){
+      const s=1.05*dt;
+      const nx=v.x+dx/d*s, ny=v.y+dy/d*s;
+      if(!isSolid(Math.floor(nx),Math.floor(v.y))) v.x=nx; else v.tx=v.x;
+      if(!isSolid(Math.floor(v.x),Math.floor(ny))) v.y=ny; else v.ty=v.y;
+    } else {
+      v.wait-=dt;
+      if(v.wait<=0){
+        v.tx=v.ax+(Math.random()*5-2.5);
+        v.ty=v.ay+(Math.random()*3-1.5);
+        if(isSolid(Math.floor(v.tx),Math.floor(v.ty))){ v.tx=v.ax; v.ty=v.ay; }
+        v.wait=2.5+Math.random()*5;
+      }
+    }
+  });
+}
+function npcTalk(id){
+  const D=NPC_DATA[id];
+  unlockJournal("wolfpen");
+  if(!state.talkedToday[id]){ state.talkedToday[id]=true; gainTrust(1); }
+  const tier=trustTier();
+  /* one-time tier rewards */
+  if(D.reward && tier>=D.reward.tier && !state.npcFlags[D.reward.flag]){
+    state.npcFlags[D.reward.flag]=true;
+    D.reward.give(state);
+    renderHotbar(); updateHUD();
+    setTimeout(()=>toast(D.reward.text),800);
+  }
+  if(D.rewardKin && tier>=2 && !state.npcFlags[D.rewardKin.flag]){
+    state.npcFlags[D.rewardKin.flag]=true;
+    unlockJournal(D.rewardKin.journal);
+    setTimeout(()=>toast(D.rewardKin.text),800);
+  }
+  if(id==="tull" && tier>=3 && !state.npcFlags.tullFire){ state.npcFlags.tullFire=true; unlockJournal("fire31"); }
+  const pool=D.pool[tier];
+  const line=pool[(state.day+id.length)%pool.length];
+  const pages=Array.isArray(line)?line:[line];
+  const giftables=["corn","beans","moonflower","ginseng","morel","pawpaw"].filter(k=>state.inv[k]>0);
+  const opts=[];
+  opts.push({t:"Ask about the holler", fn:()=>{
+    const a=D.ask[Math.min(tier,D.ask.length-1)];
+    say(D.name,Array.isArray(a)?a:[a]);
+  }});
+  if(giftables.length) opts.push({t:"Offer something from the field", fn:()=>giftMenu(id)});
+  opts.push({t:"Leave them be", fn:null});
+  say(D.name+` — ${TIER_NAMES[tier].toUpperCase()}`,pages,null,opts);
+  saveGame();
+}
+function giftMenu(id){
+  const D=NPC_DATA[id];
+  const giftables=["corn","beans","moonflower","ginseng","morel","pawpaw"].filter(k=>state.inv[k]>0);
+  const opts=giftables.slice(0,5).map(k=>({t:`Give ${k} (have ${state.inv[k]})${k===D.fav?" ✦":""}`, fn:()=>{
+    state.inv[k]--;
+    const fav=k===D.fav;
+    gainTrust(fav?4:2);
+    updateHUD(); renderHotbar();
+    say(D.name, fav
+      ? "Their whole face changes — for a moment you see the person they were before whatever it is happened here. “…Nettie used to bring me these.”"
+      : "They take it with both hands, country-polite, and something in their shoulders comes down an inch.");
+  }}));
+  opts.push({t:"Never mind", fn:null});
+  say(D.name,"You open your satchel.",null,opts);
+}
+function houseKnock(npcId){
+  if(isNight()){
+    const lines=[
+      "No answer. Behind the door: breathing, and the scrape of something heavy being pushed against it.",
+      "A voice, muffled: “We're PRAYING in here.” Several voices, actually. None of them praying.",
+      "The lamplight inside snuffs out the instant you knock.",
+      "From inside, barely: “…it knocks polite too. Go AWAY.”"
+    ];
+    say("A BOLTED DOOR",lines[Math.floor(Math.random()*lines.length)]);
+    state.fear=Math.min(100,state.fear+4);
+    return;
+  }
+  const D=NPC_DATA[npcId];
+  say(D?D.name:"WOLF PEN","Iron nails driven over the lintel in a row, heads worn shiny from touching.\nNobody's home — folks keep to the square while the sun holds.");
+}
+
+/* =====================================================================
+   HORROR LAYER — night, creatures, relics, journal, render, loop
+   ===================================================================== */
+let enemies=[];
+let snawfus={active:false,x:26.5,y:29.5};
+let gurdon={active:false,x:24,y:30,t:0};
+let nightSpawned=false;
+
+function clearNight(){ enemies=[]; gurdon.active=false; nightSpawned=false; }
+function spawnDayEvents(){
+  snawfus.active=(state.day%2===0 && state.relics.bloom===0);
+  snawfus.x=26.5; snawfus.y=29.5;
+}
+
+/* ---------- creatures ---------- */
+function spawnNight(){
+  nightSpawned=true;
+  const n=2+Math.floor(state.curse/25)+(state.finalNight?4:0);
+  for(let i=0;i<n;i++) spawnHaint();
+  if(state.day>=3 || state.finalNight){
+    if(Math.random()<0.55 || state.finalNight){
+      enemies.push({type:"howler",x:2.5,y:2.5,cool:0});
+      toast("something big is moving in the treeline…");
+      playStinger(70,1.5);
+      unlockJournal("howler");
+    }
+  }
+  /* gurdon light over the graveyard */
+  gurdon.active=true;
+  gurdon.x=20+Math.random()*8; gurdon.y=29.2+Math.random()*2;
+  if(!state.journal.includes("gurdon")){ unlockJournal("gurdon"); toast("a pale light drifts over the graves…"); }
+}
+function spawnHaint(){
+  const edge=Math.floor(Math.random()*4);
+  const x=edge===0?2:edge===1?MAPW-3:2+Math.random()*(MAPW-4);
+  const y=edge===2?2:edge===3?MAPH-3:2+Math.random()*(MAPH-4);
+  enemies.push({type:"haint",x,y,ph:Math.random()*6.28});
+}
+function nightTick(dt){
+  if(isNight()&&!nightSpawned) spawnNight();
+  if(!isNight()&&nightSpawned) clearNight();
+  if(gurdon.active){ gurdon.t+=dt; gurdon.x+=Math.sin(gurdon.t*0.7)*dt*0.4; }
+  if(snawfus.active && (state.tmin>7.5*60||isNight())) snawfus.active=false;
+
+  enemies.forEach(en=>{
+    const dx=state.px-en.x, dy=state.py-en.y, d=Math.hypot(dx,dy)||0.001;
+    if(en.type==="haint"){
+      en.ph+=dt*2;
+      const spd=(state.finalNight?1.7:1.15)*dt;
+      en.x+=dx/d*spd+Math.sin(en.ph)*dt*0.4;
+      en.y+=dy/d*spd+Math.cos(en.ph*0.8)*dt*0.3;
+      /* salt wards */
+      for(const k in state.salts){
+        const [sx,sy]=k.split(",").map(Number);
+        if(Math.hypot(en.x-(sx+0.5),en.y-(sy+0.5))<0.8){
+          state.salts[k]--; if(state.salts[k]<=0) delete state.salts[k];
+          en.dead=true; toast("a haint sizzles out on your salt line.");
+          playStinger(880,0.25);
+        }
+      }
+      if(d<0.55){
+        state.hp-=8; state.fear=Math.min(100,state.fear+22);
+        playStinger(140,0.5);
+        toast("cold fingers pass THROUGH you—");
+        en.x=state.px+(Math.random()*16-8); en.y=state.py+(Math.random()*16-8);
+      }
+    }
+    if(en.type==="howler"){
+      en.cool=Math.max(0,en.cool-dt);
+      const nearCabin=Math.hypot(en.x-(BUILDINGS[0].door.x+0.5),en.y-(BUILDINGS[0].door.y+0.5))<3.5;
+      const litOff=state.lanternOn&&d<4.5;
+      let spd=(state.finalNight?3.6:3.1)*dt;
+      if(litOff||nearCabin) spd=-2.2*dt; /* backs away from light & the haint-blue door */
+      const nx=en.x+dx/d*spd, ny=en.y+dy/d*spd;
+      if(!isSolid(Math.floor(nx),Math.floor(en.y))) en.x=nx;
+      if(!isSolid(Math.floor(en.x),Math.floor(ny))) en.y=ny;
+      if(d<0.8&&en.cool<=0){
+        en.cool=3;
+        state.hp-=25; state.fear=Math.min(100,state.fear+40);
+        playStinger(60,1.4);
+        toast("THE HOWLER — teeth and shadow and horns—");
+      }
+    }
+  });
+  enemies=enemies.filter(e=>!e.dead);
+
+  /* fear & health drift */
+  const playerSafe=near(BUILDINGS[0].door.x,BUILDINGS[0].door.y,2);
+  if(isNight()&&!playerSafe){
+    const close=enemies.some(e=>Math.hypot(e.x-state.px,e.y-state.py)<4);
+    state.fear=Math.min(100,state.fear+dt*(close?4:1.2));
+  } else {
+    state.fear=Math.max(0,state.fear-dt*3);
+    if(!isNight()) state.hp=Math.min(100,state.hp+dt*1.2);
+  }
+  if(state.fear>=100) state.hp-=dt*2;
+  if(state.hp<=0) die();
+}
+function die(){
+  state.deaths++;
+  state.bits=Math.floor(state.bits/2);
+  state.hp=60; state.fear=30;
+  state.px=BUILDINGS[0].door.x+0.5; state.py=BUILDINGS[0].door.y+1.2;
+  clearNight();
+  if(state.finalNight){
+    state.finalNight=false; state.curse=70;
+    state.tmin=DAY_START; state.day++;
+    say("YOU WOKE ON THE PORCH","The ritual broke. The relics still lie on the altar, patient as stone.\nGather your nerve and try the ritual again at the altar.");
+  } else {
+    state.tmin=DAY_START; state.day++;
+    growCrops(); regrowBrush(); spawnDayEvents();
+    say("YOU WOKE ON THE PORCH",`Something carried you home. Half your bits are gone.\nDay ${state.day}. Be more careful.`);
+  }
+  saveGame(); updateHUD();
+}
+
+/* ---------- snawfus / cave / altar / gurdon ---------- */
+function snawfusTouch(){
+  if(state.lanternOn){
+    snawfus.active=false;
+    say("THE SNAWFUS","The white stag WHUFFS — blue smoke pours from its nostrils —\nand it is gone between two breaths. It fears the flame. Come gentler.");
+    return;
+  }
+  state.relics.bloom=1; snawfus.active=false;
+  unlockJournal("snawfus");
+  playStinger(660,0.4);
+  say("✦ RELIC ✦",[
+    "The Snawfus lowers its great white head. Dogwood blossoms grow from its antlers like stars.",
+    "One BLOOM drops into your palm, cool as creekwater. The stag steps into the air itself and is gone."
+  ]);
+  updateHUD();
+}
+function caveMenu(){
+  unlockJournal("gowrow");
+  if(state.relics.madstone>0){ say("BLUFF CAVE","The dark inside is total. Whatever sleeps down there, you owe it no more visits."); return; }
+  if(!state.lanternOn){ say("BLUFF CAVE","A cold mouth in the bluff. Absolute dark.\nYou'll want your LANTERN LIT before stepping in (5, then E)."); return; }
+  say("BLUFF CAVE",[
+    "Lantern high, you edge into the bluff. Water ticks somewhere below.",
+    "The passage forks. Left: a cool draft, smelling of rain. Right: dripping, and a faint wet BREATHING."
+  ],null,[
+    {t:"Follow the cool draft (left)", fn:caveStep2},
+    {t:"Toward the breathing (right)", fn:()=>caveHurt("You round a knob of stone and the BREATHING STOPS.\nTwo eyes like carriage lamps blink once — you run.")}
+  ]);
+}
+function caveStep2(){
+  say("BLUFF CAVE",[
+    "The draft opens to a low room. On a flat stone: the MADSTONE — porous, grey, humming faint as a hive.",
+    "Behind you, far off, something enormous turns over in its sleep."
+  ],null,[
+    {t:"Take it and GO", fn:()=>{
+      state.relics.madstone=1; updateHUD();
+      playStinger(660,0.4);
+      say("✦ RELIC ✦","You palm the MADSTONE and walk out fast, not running, the way Granny taught.\nBehind you the dark exhales.");
+    }},
+    {t:"Linger and look around", fn:()=>caveHurt("Greed. A tail like a felled oak sweeps the gravel —\nyou grab the MADSTONE and DIVE for daylight.", true)}
+  ]);
+}
+function caveHurt(text,gotIt){
+  state.hp=Math.max(5,state.hp-20);
+  state.fear=Math.min(100,state.fear+30);
+  playStinger(60,1.4);
+  if(gotIt){ state.relics.madstone=1; }
+  say("THE GOWROW",text);
+  updateHUD();
+}
+function altarMenu(){
+  const R=state.relics;
+  const held=Object.keys(R).filter(k=>R[k]===1);
+  const laid=Object.keys(R).filter(k=>R[k]===2).length;
+  if(held.length){
+    held.forEach(k=>R[k]=2);
+    playStinger(440,0.8);
+    updateHUD();
+    const nowLaid=Object.keys(R).filter(k=>R[k]===2).length;
+    if(nowLaid===5){ ritualPrompt(); return; }
+    say("THE ALTAR",`You lay the ${held.join(", ")} on the cold stone.\n${nowLaid} of 5 relics rest on the altar.`);
+    return;
+  }
+  if(laid===5){ ritualPrompt(); return; }
+  say("THE ALTAR",`A slab of creek stone, older than the church around it.\n${laid} of 5 relics laid. Granny's list: dime, madstone, bloom, shard, hymnal.`);
+}
+function ritualPrompt(){
+  say("THE ALTAR",[
+    "Five relics on the stone. The air goes still as held breath.",
+    "Begin the ritual? Night will fall AT ONCE, and everything hateful in this holler will come to stop you. Survive until dawn."
+  ],null,[
+    {t:"Begin the ritual", fn:()=>{
+      state.finalNight=true; state.tmin=NIGHT_START; state.flags.wasNight=true;
+      clearNight();
+      toast("THE DARK OF THE MOON RISES —");
+      playStinger(50,2.5);
+    }},
+    {t:"Not yet", fn:null}
+  ]);
+}
+function gurdonGrab(){
+  if(gurdon.active && state.relics.shard===0 && near(gurdon.x,gurdon.y,1.7)){
+    if(state.day<3){ say("GRAVEYARD","The light hovers, but the ground is hard as judgment. (Come back after Day 3 — the thaw.)"); return true; }
+    state.relics.shard=1; updateHUD();
+    playStinger(660,0.4);
+    say("✦ RELIC ✦","You dig where the Gurdon Light hovers. Six inches down: a BELL SHARD,\nchurch-bronze, still faintly warm. The light bows — and goes out.");
+    gurdon.active=false;
+    return true;
+  }
+  return false;
+}
+function winGame(){
+  state.won=true; running=false;
+  try{ localStorage.removeItem(LS_KEY); }catch(e){}
+  stopDrone();
+  const p=document.getElementById("endPanel");
+  p.innerHTML=`
+    <h1>DAWN</h1>
+    <p>The sun comes up the color of sorghum. The haints thin like morning fog off the creek,
+    and somewhere far up the ridge, the Howler gives one last cry — not angry. Relieved.</p>
+    <p>On the altar, five relics turn to plain old things: a dime, a stone, a flower, a shard, a book.
+    The Dark of the Moon is lifted.</p>
+    <p>The Snawfus walks the treetops one slow circle around the holler, dogwood falling from its antlers like snow, and Granny's field has never looked so green.</p>
+    <h2>THE HOLLER SLEEPS</h2>
+    <p class="dim">Days: ${state.day} · Nights survived: ${state.nightsSurvived} · Deaths: ${state.deaths} · Bits: ${state.bits}<br><br>
+    Press F5 to work the land again.</p>`;
+  document.getElementById("endScreen").classList.add("on");
+}
+
+/* ---------- journal ---------- */
+const LORE=[
+ {id:"intro",   t:"Boggy Holler",      x:"Granny's homestead. Ozark folk say every holler has its own weather, its own luck, and its own dead. This one has all three."},
+ {id:"haint",   t:"Haints",            x:"Ozark word for a restless spirit. They drift, they moan, they pass cold through a body. Salt stops them; iron worries them; running just tires you out."},
+ {id:"haintblue",t:"Haint Blue",       x:"Porch ceilings and door lintels painted sky-blue fool a haint into thinking it's water — and haints won't cross water. Granny painted hers in 1968 and never once had trouble indoors."},
+ {id:"salt",    t:"Salt Lines",        x:"Oldest ward there is. A poured ring of salt burns a haint like a griddle. Each ring holds three times before the dew takes it."},
+ {id:"granny",  t:"Granny Women",      x:"Ozark healers — power doctors. They blow fire out of burns, stop blood with a verse of Ezekiel, and brew tonics for fear. Doctors hated them mostly because they worked."},
+ {id:"church",  t:"The Burned Church", x:"Struck by no lightning anyone saw, in 1931. The bell cracked when the tower fell, and folks say the pieces still remember how to ring."},
+ {id:"howler",  t:"The Ozark Howler",  x:"A beast like a black bear crossed with a cougar, horned like a young bull, eyes like coals. Its cry is an elk, a wolf, and a freight brake all at once. It hates open flame."},
+ {id:"gowrow",  t:"The Gowrow",        x:"A twenty-foot lizard with tusks, said to den in bluff caves and sinkholes. In 1897 a traveling salesman swore he shot one near Marshall. Nobody ever found the body — or the salesman's nerve."},
+ {id:"snawfus", t:"The Snawfus",       x:"A snow-white stag with dogwood blossoms flowering from its antlers. It walks on air and breathes out the blue haze that hangs on these hills. Seeing one is luck — touching one is grace."},
+ {id:"gurdon",  t:"The Gurdon Light",  x:"A floating light seen along the tracks near Gurdon, Arkansas, since the 1930s. Science says swamp gas or quartz. The old folks say it's a lantern looking for its owner's head. It marks buried iron, either way."},
+ {id:"dime",    t:"Silver Dimes",      x:"Silver kills what iron can't. A dime in the shoe turns conjure; a dime buried in a field marks it protected. Tarnish means it's been working."},
+ {id:"madstone",t:"The Madstone",      x:"A porous stone from the gut of a white deer. Pressed to a bite it draws out poison, madness, and worse. Every county had one once; men rode fifty miles at midnight to borrow it."},
+ {id:"wolfpen", t:"Wolf Pen",          x:"The hamlet west of the graveyard. Four family names on every grave, iron nails over every lintel, and not one bell in the whole town. They don't talk to outsiders — fear wears good manners here. Earn their trust: show your face daily, work the land, bring gifts from the field."},
+ {id:"rhyme",   t:"The Counting Rhyme",x:"“One's the dime beneath the corn, / Two's the stone where none was born, / Three's the bloom that walks the sky, / Four's the bell that will not die, / Five's the song her own hand wrote — / five holy things to still its throat.” The children of Wolf Pen skip rope to a ritual. Nettie hid the recipe in a game so it couldn't be burned or forgotten."},
+ {id:"fire31",  t:"What the Church Saw",x:"Not lightning. In 1931 a revival ran past sundown and something came up the aisle wearing the dark like a coat. The lamps inverted. Nettie Blackthorn walked in alone, spoke to it, and the fire followed. The bell rang once with no hand on the rope — and everyone who heard it clear is in the yard now."}
+];
+function unlockJournal(id){
+  if(state.journal.includes(id)) return;
+  state.journal.push(id);
+  toast("✎ journal updated — press J");
+}
+function toggleHelp(){
+  const ov=document.getElementById("help");
+  if(ov.classList.contains("on")){ ov.classList.remove("on"); paused=false; }
+  else { ov.classList.add("on"); paused=true; }
+}
+
+/* ---------- tutorial ---------- */
+const TUT=[
+  {t:"Walk around with WASD or the arrow keys.", test:s=>(s.flags.walked||0)>6},
+  {t:"Press 1 (or click the bar) for the HOE. Stand in the fenced field, face a dark plot — see the white outline — and press E to till.", test:s=>Object.keys(s.farm).length>0},
+  {t:"Press 3 for SEEDS, face your tilled soil, press E to plant. (Q changes seed type.)", test:s=>Object.values(s.farm).some(p=>p.crop)},
+  {t:"Press 2 for the WATERING CAN and E to water the plant. Water every day or nothing grows.", test:s=>Object.values(s.farm).some(p=>p.watered)},
+  {t:"The can holds 6 waters. Press E at the WELL (by the field) or the creek to refill it.", test:s=>s.flags.refilled===true},
+  {t:"Go meet folks before dark: EMMETT'S DRY GOODS up the north path, GRANNY HETTIE east across the creek. Press H anytime for full help.", test:s=>s.flags.metEmmett||s.flags.metGranny}
+];
+function updateTutBox(){
+  const box=document.getElementById("tutBox");
+  if(state.tut>=TUT.length){ box.style.display="none"; return; }
+  box.style.display="block";
+  document.querySelector("#tutBox .tt").textContent=`FIRST STEPS — ${state.tut+1} of ${TUT.length}`;
+  document.getElementById("tutText").textContent=TUT[state.tut].t;
+}
+function checkTutorial(){
+  if(state.tut>=TUT.length) return;
+  if(TUT[state.tut].test(state)){
+    state.tut++;
+    state.bits+=5;
+    playStinger(520,0.3);
+    toast("✔ step done — +5 ⛃");
+    if(state.tut>=TUT.length){
+      toast("First steps complete. The holler is yours — and you are its.");
+      confirmNothing();
+    }
+    updateTutBox(); updateHUD();
+  }
+}
+function confirmNothing(){} /* reserved */
+
+function toggleJournal(){
+  const ov=document.getElementById("journal");
+  if(ov.classList.contains("on")){ ov.classList.remove("on"); paused=false; return; }
+  const list=document.getElementById("jList");
+  list.innerHTML=LORE.map(L=>{
+    const un=state.journal.includes(L.id);
+    return un
+      ? `<div class="jentry"><span class="jt">${L.t}</span><br>${L.x}</div>`
+      : `<div class="jentry locked">? ? ? — something you haven't met yet</div>`;
+  }).join("");
+  ov.classList.add("on"); paused=true;
+}
+
+/* ---------- HUD ---------- */
+const RELIC_NAMES={dime:"Silver Dime",madstone:"Madstone",bloom:"Snawfus Bloom",shard:"Bell Shard",hymnal:"Hymnal"};
+function updateHUD(){
+  document.getElementById("hudDay").innerHTML=`<b>Day ${state.day}${state.finalNight?" — RITUAL":""}</b>`;
+  document.getElementById("hudClock").textContent=clock12(Math.floor(state.tmin));
+  document.getElementById("hudBits").textContent="⛃ "+state.bits;
+  document.getElementById("hpFill").style.width=Math.max(0,state.hp)+"%";
+  document.getElementById("fearFill").style.width=state.fear+"%";
+  document.getElementById("curseFill").style.width=state.curse+"%";
+  document.getElementById("standingTxt").textContent=TIER_NAMES[trustTier()];
+  document.getElementById("relicTray").innerHTML="RELICS<br>"+Object.keys(RELIC_NAMES).map(k=>{
+    const v=state.relics[k];
+    return `<div class="relic ${v===1?'got':v===2?'laid':''}">${v===2?"✓":v===1?"◆":"◇"} ${RELIC_NAMES[k]}</div>`;
+  }).join("");
+}
+const TOOLDEFS=[["hoe","Hoe"],["can","Water"],["seeds","Seeds"],["salt","Salt"],["lantern","Lamp"],["tonic","Tonic"]];
+function renderHotbar(){
+  const hb=document.getElementById("hotbar");
+  hb.innerHTML="";
+  TOOLDEFS.forEach(([k,label],i)=>{
+    const d=document.createElement("div");
+    d.className="slot"+(state.tool===i?" sel":"");
+    d.title=label;
+    d.onclick=()=>{ state.tool=i; renderHotbar(); };
+    const ic=document.createElement("canvas"); ic.width=32; ic.height=32;
+    const g=ic.getContext("2d"); g.imageSmoothingEnabled=false;
+    g.drawImage(SPR.icon[k],0,0,32,32);
+    d.appendChild(ic);
+    const kk=document.createElement("span"); kk.className="k"; kk.textContent=i+1; d.appendChild(kk);
+    const n=document.createElement("span"); n.className="n";
+    n.textContent = k==="can"?state.canWater
+      : k==="seeds"?(state.seedSel[0].toUpperCase()+state.inv[SEEDKEY[state.seedSel]])
+      : k==="salt"?state.inv.salt
+      : k==="lantern"?Math.round(state.inv.oil)+"%"
+      : k==="tonic"?state.inv.tonic:"";
+    d.appendChild(n);
+    hb.appendChild(d);
+  });
+}
+
+/* ---------- audio ---------- */
+let AC=null, audioOn=true, droneNodes=null;
+function initAudio(){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} }
+function playStinger(freq,dur){
+  if(!AC||!audioOn) return;
+  try{
+    const o=AC.createOscillator(), g=AC.createGain();
+    o.type="triangle"; o.frequency.value=freq;
+    g.gain.setValueAtTime(0.12,AC.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0001,AC.currentTime+dur);
+    o.connect(g); g.connect(AC.destination);
+    o.start(); o.stop(AC.currentTime+dur);
+  }catch(e){}
+}
+function startDrone(){
+  if(!AC||!audioOn||droneNodes) return;
+  try{
+    const g=AC.createGain(); g.gain.value=0.028; g.connect(AC.destination);
+    const o1=AC.createOscillator(); o1.type="sawtooth"; o1.frequency.value=55;
+    const o2=AC.createOscillator(); o2.type="sawtooth"; o2.frequency.value=55.7;
+    const f=AC.createBiquadFilter(); f.type="lowpass"; f.frequency.value=220;
+    o1.connect(f); o2.connect(f); f.connect(g);
+    o1.start(); o2.start();
+    droneNodes={o1,o2,g};
+  }catch(e){}
+}
+function stopDrone(){
+  if(!droneNodes) return;
+  try{ droneNodes.o1.stop(); droneNodes.o2.stop(); droneNodes.g.disconnect(); }catch(e){}
+  droneNodes=null;
+}
+
+/* ---------- render ---------- */
+function render(){
+  if(!state) return;
+  const halfW=VW/2/TS, halfH=VH/2/TS;
+  let camX=Math.max(0,Math.min(MAPW-VW/TS, state.px-halfW));
+  let camY=Math.max(0,Math.min(MAPH-VH/TS, state.py-halfH));
+  ctx.save();
+  /* fear wobble */
+  if(state.fear>60){
+    const a=(state.fear-60)/40;
+    ctx.translate(Math.sin(performance.now()/90)*3*a, Math.cos(performance.now()/70)*2*a);
+  }
+  ctx.fillStyle="#000"; ctx.fillRect(0,0,VW,VH);
+  const mc=mapFrames.length?mapFrames[Math.floor(performance.now()/650)%2]:mapCanvas;
+  ctx.drawImage(mc, camX*TILE, camY*TILE, VW/SCALE, VH/SCALE, 0, 0, VW, VH);
+  const sx=x=>Math.round((x-camX)*TS), sy=y=>Math.round((y-camY)*TS);
+  const dropShadow=(x,y,w)=>{
+    ctx.fillStyle="rgba(0,0,0,.28)";
+    ctx.beginPath(); ctx.ellipse(sx(x),sy(y),w,w*0.35,0,0,6.283); ctx.fill();
+  };
+
+  /* farm plots */
+  for(const k in state.farm){
+    const [x,y]=k.split(",").map(Number);
+    const p=state.farm[k];
+    ctx.fillStyle=p.watered?"#3A2C1E":"#4E3C2A";
+    ctx.fillRect(sx(x)+3,sy(y)+3,TS-6,TS-6);
+    if(p.crop) ctx.drawImage(SPR.crop[p.crop][p.stage], sx(x), sy(y)-TS*0.3, TS, TS);
+  }
+  /* salt rings */
+  ctx.fillStyle="rgba(255,255,255,.85)";
+  for(const k in state.salts){
+    const [x,y]=k.split(",").map(Number);
+    for(let i=0;i<8;i++){
+      const a=i/8*6.283;
+      ctx.fillRect(sx(x)+TS/2+Math.cos(a)*TS*0.38, sy(y)+TS/2+Math.sin(a)*TS*0.38, 3,3);
+    }
+  }
+  /* facing-tile cursor */
+  if(!dlg){
+    const ft=facingTile();
+    const glow=0.35+Math.sin(performance.now()/300)*0.15;
+    ctx.strokeStyle=`rgba(244,201,93,${glow})`;
+    ctx.lineWidth=2;
+    ctx.strokeRect(sx(ft.x)+2,sy(ft.y)+2,TS-4,TS-4);
+  }
+  /* villagers of Wolf Pen */
+  if(villagersOut()){
+    ctx.font="11px 'Courier New',monospace"; ctx.textAlign="center";
+    villagers.forEach(v=>{
+      dropShadow(v.x,v.y+0.1,TS*0.3);
+      ctx.drawImage(SPR.vill[v.id], sx(v.x-0.5), sy(v.y-0.9), TS, TS);
+      if(near(v.x,v.y,2.2)){
+        const label=NPC_DATA[v.id].tag;
+        const w=ctx.measureText(label).width+8;
+        ctx.fillStyle="rgba(11,14,20,.8)";
+        ctx.fillRect(sx(v.x)-w/2, sy(v.y-1.35)-9, w, 13);
+        ctx.fillStyle="#F4C95D";
+        ctx.fillText(label, sx(v.x), sy(v.y-1.35));
+      }
+    });
+    ctx.textAlign="left";
+  }
+  /* snawfus — walks on air, faint glow, no shadow */
+  if(snawfus.active){
+    ctx.fillStyle="rgba(159,216,212,.12)";
+    ctx.beginPath(); ctx.arc(sx(snawfus.x),sy(snawfus.y-0.4),TS*0.9,0,6.283); ctx.fill();
+    const hover=Math.sin(performance.now()/500)*3;
+    ctx.drawImage(SPR.snawfus, sx(snawfus.x-0.5), sy(snawfus.y-1.1)+hover, TS, TS);
+  }
+  /* enemies */
+  enemies.forEach(en=>{
+    if(en.type==="haint"){
+      ctx.globalAlpha=0.7+Math.sin(en.ph*2)*0.2;
+      ctx.drawImage(SPR.haint, sx(en.x-0.5), sy(en.y-0.7)+Math.sin(en.ph*3)*4, TS, TS);
+      ctx.globalAlpha=1;
+    } else {
+      dropShadow(en.x,en.y+0.45,TS*0.6);
+      const lope=Math.abs(Math.sin(performance.now()/130))*4;
+      ctx.drawImage(SPR.howler, sx(en.x-0.7), sy(en.y-0.8)-lope, TS*1.4, TS*1.4);
+    }
+  });
+  /* player — body + animated legs */
+  dropShadow(state.px,state.py+0.12,TS*0.34);
+  const pspr=SPR["player_"+state.dir];
+  const ppx=sx(state.px-0.5), ppy=sy(state.py-0.9);
+  const bob=state.moving?Math.abs(Math.sin(state.anim*2))*-2:0;
+  ctx.drawImage(pspr,0,0,16,12, ppx,ppy+bob, TS,TS*0.75);
+  const legOff=state.moving?(Math.floor(state.anim*2)%2?2:-2):0;
+  ctx.drawImage(pspr,0,12,16,4, ppx+legOff,ppy+bob+TS*0.75, TS,TS*0.25);
+
+  /* hour-of-day light: golden dusk, blue dawn */
+  const tt=state.tmin;
+  if(tt>NIGHT_START-120&&tt<NIGHT_START){
+    const a=(tt-(NIGHT_START-120))/120;
+    ctx.fillStyle=`rgba(255,120,40,${0.12*a})`; ctx.fillRect(0,0,VW,VH);
+  }
+  if(tt>=DAWN&&tt<DAWN+90){
+    const a=1-(tt-DAWN)/90;
+    ctx.fillStyle=`rgba(90,120,210,${0.12*a})`; ctx.fillRect(0,0,VW,VH);
+  }
+
+  /* darkness + lights */
+  const dusk=duskAmount();
+  if(dusk>0.01){
+    const L=document.createElement("canvas"); L.width=VW; L.height=VH;
+    const lg=L.getContext("2d");
+    lg.fillStyle=`rgba(4,6,14,${0.55+0.38*dusk})`;
+    lg.fillRect(0,0,VW,VH);
+    lg.globalCompositeOperation="destination-out";
+    const punch=(x,y,r,a)=>{
+      const gr=lg.createRadialGradient(x,y,0,x,y,r);
+      gr.addColorStop(0,`rgba(0,0,0,${a})`); gr.addColorStop(1,"rgba(0,0,0,0)");
+      lg.fillStyle=gr; lg.beginPath(); lg.arc(x,y,r,0,6.283); lg.fill();
+    };
+    punch(sx(state.px),sy(state.py-0.3), state.lanternOn?TS*5:TS*2.1, state.lanternOn?0.95:0.8);
+    if(gurdon.active) punch(sx(gurdon.x),sy(gurdon.y),TS*1.6,0.85);
+    punch(sx(BUILDINGS[0].door.x+0.5),sy(BUILDINGS[0].door.y),TS*1.4,0.5); /* cabin porch */
+    ctx.drawImage(L,0,0);
+    /* gurdon glow tint */
+    if(gurdon.active){
+      ctx.fillStyle="rgba(159,216,212,0.13)";
+      ctx.beginPath(); ctx.arc(sx(gurdon.x),sy(gurdon.y),TS*0.9,0,6.283); ctx.fill();
+      ctx.fillStyle="#CFF3F0";
+      ctx.beginPath(); ctx.arc(sx(gurdon.x),sy(gurdon.y)+Math.sin(gurdon.t*2)*4,5,0,6.283); ctx.fill();
+    }
+  }
+  /* low hp vignette */
+  if(state.hp<35){
+    ctx.fillStyle=`rgba(122,46,46,${(35-state.hp)/35*0.25})`;
+    ctx.fillRect(0,0,VW,VH);
+  }
+  ctx.restore();
+}
+function duskAmount(){
+  const t=state.tmin;
+  if(t>=NIGHT_START||t<DAWN) return 1;
+  if(t>=NIGHT_START-90) return (t-(NIGHT_START-90))/90;
+  if(t<DAWN+60) return 1-((t-DAWN)/60);
+  return 0;
+}
+
+/* ---------- main loop ---------- */
+let lastT=performance.now(), hudTick=0;
+function loop(now){
+  const dt=Math.min(0.05,(now-lastT)/1000); lastT=now;
+  const anyOverlay=document.getElementById("journal").classList.contains("on")
+                 ||document.getElementById("help").classList.contains("on");
+  if(running&&!paused&&!state.won&&!anyOverlay){
+    if(!dlg){
+      advanceTime(dt);
+      updatePlayer(dt);
+      nightTick(dt);
+      villagersTick(dt);
+    }
+    if(interactQueued){
+      interactQueued=false;
+      if(dlg) doInteract();
+      else if(!gurdonGrab()) doInteract();
+    }
+    if(isNight()&&audioOn) startDrone(); else stopDrone();
+    hudTick+=dt; if(hudTick>0.5){ hudTick=0; updateHUD(); renderHotbar(); checkTutorial(); }
+  } else interactQueued=false;
+  if(running) render();
+  requestAnimationFrame(loop);
+}
+
+/* ---------- boot ---------- */
+function startGame(isNew){
+  initAudio();
+  buildSprites();
+  genMap();
+  buildMapCanvas();
+  state=(!isNew&&loadGame())||freshGame();
+  /* restore cleared brush + validate */
+  Object.keys(state.cleared||{}).forEach(k=>{
+    const [x,y]=k.split(",").map(Number);
+    if(tiles[y][x]==="b"){ tiles[y][x]=","; redrawTile(x,y); }
+  });
+  fitCanvas();
+  document.getElementById("title").style.display="none";
+  document.getElementById("hud").classList.add("on");
+  if(state.tut===undefined) state.tut=TUT.length; /* old saves skip tutorial */
+  if(state.trust===undefined) state.trust=0;
+  if(!state.talkedToday) state.talkedToday={};
+  if(!state.npcFlags) state.npcFlags={};
+  initVillagers();
+  renderHotbar(); updateHUD(); spawnDayEvents(); updateTutBox();
+  running=true;
+  if(isNew){
+    setTimeout(()=>say("BOGGY HOLLER — DAY 1",[
+      "The bus dropped you at the county road an hour back. The holler closed over the path behind you like water.",
+      "Granny's field wants working: HOE (1) the dark plots, plant SEEDS (3), WATER (2) them every day.",
+      "Sell produce at DRY GOODS up the north path. Visit GRANNY HETTIE east, past the creek — she knows about the five relics.",
+      "Southwest sits WOLF PEN — a hamlet of folks who won't meet your eye. They know everything about this holler. Show up daily, bring gifts from your field, and they may forget you're an outsider.",
+      "Follow the FIRST STEPS card in the corner to learn the ropes. Press H anytime for the full handbook.",
+      "And whatever the evening feels like — be somewhere safe when the light goes."
+    ]),400);
+  }
+}
+window.addEventListener("load",()=>{
+  if(loadGame()) document.getElementById("btnCont").style.display="inline-block";
+  fitCanvas();
+  requestAnimationFrame(loop);
+});
+</script>
+</body>
+</html>

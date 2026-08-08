@@ -1,0 +1,58 @@
+{
+  "version": "10.3",
+  "signals": {
+    "S23_insider_trading": {
+      "description": "Insider selling patterns (AQST-calibrated)",
+      "asymmetric": true,
+      "note": "Selling signals stronger than buying signals",
+      "thresholds": {
+        "cumulative_selling_6mo_pct": 0.1,
+        "single_transaction_pct": 0.08,
+        "csuite_window_days": 30,
+        "csuite_min_count": 2,
+        "same_day_insider_count": 3,
+        "aggregate_no_buys_threshold": 500000,
+        "cluster_window_start_days": 120,
+        "cluster_window_end_days": 60,
+        "quiet_period_days": 45
+      },
+      "weights": {
+        "LOW": 0.0,
+        "ELEVATED": -0.03,
+        "HIGH": -0.06,
+        "CRITICAL": -0.1
+      }
+    },
+    "S6_commercial_hiring": {
+      "description": "Commercial hiring patterns (PHAR-calibrated)",
+      "distinguishes_nda_snda": true,
+      "nda_thresholds": {
+        "cco_bullish_months": 18,
+        "cco_neutral_months": 12,
+        "msl_bullish_months": 12,
+        "msl_neutral_months": 6,
+        "market_access_bullish_months": 15,
+        "market_access_neutral_months": 9,
+        "sales_force_bullish_months": 6,
+        "min_postings_bullish": 5,
+        "min_postings_neutral": 2
+      },
+      "weights": {
+        "bullish": 0.02,
+        "neutral": 0.0,
+        "bearish_nda": -0.05,
+        "bearish_snda": -0.02
+      }
+    }
+  },
+  "calibration_sources": {
+    "AQST_CRL_2026-01-30": {
+      "trigger_count": "5/6 thresholds would have fired",
+      "warning_lead_time": "2+ months before deficiency letter"
+    },
+    "PHAR_CRL_2026-01-31": {
+      "hiring_void_would_fire": false,
+      "reason": "sNDA with existing 54-rep salesforce"
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "engine": "BIFROST v2.0",
+  "generated": "2026-03-29 15:35",
+  "simulation": {
+    "start_value": 100000,
+    "end_value": 23746786.82,
+    "total_return_pct": 23646.79,
+    "total_trades": 1524,
+    "win_rate": 0.5846,
+    "avg_return_per_trade": 5.763,
+    "sharpe_ratio": 3.43,
+    "max_drawdown_pct": -20.02,
+    "calmar_ratio": 1181.33,
+    "yearly_breakdown": {
+      "2020": {
+        "trades": 161,
+        "wins": 100,
+        "win_rate": 0.621,
+        "pnl": 112277.28
+      },
+      "2021": {
+        "trades": 212,
+        "wins": 112,
+        "win_rate": 0.528,
+        "pnl": 48131.49
+      },
+      "2022": {
+        "trades": 201,
+        "wins": 112,
+        "win_rate": 0.557,
+        "pnl": 102868.82
+      },
+      "2023": {
+        "trades": 294,
+        "wins": 147,
+        "win_rate": 0.5,
+        "pnl": 302226.82
+      },
+      "2024": {
+        "trades": 336,
+        "wins": 216,
+        "win_rate": 0.643,
+        "pnl": 3278593.78
+      },
+      "2025": {
+        "trades": 308,
+        "wins": 194,
+        "win_rate": 0.63,
+        "pnl": 15582896.75
+      },
+      "2026": {
+        "trades": 12,
+        "wins": 10,
+        "win_rate": 0.833,
+        "pnl": 4219791.88
+      }
+    },
+    "top_10_trades": [
+      {
+        "ticker": "GLSI",
+        "pdufa_date": "2026-01-22",
+        "tier": "T4",
+        "mcap": "small",
+        "action": "STRONG_BUY",
+        "window": "T-25_T-3",
+        "position_size": 8.0,
+        "return_pct": 163.72,
+        "pnl": 2799025.6,
+        "portfolio_after": 24168955.91,
+        "win": 1
+      },
+      {
+        "ticker": "OMER",
+        "pdufa_date": "2025-12-24",
+        "tier": "T3",
+        "mcap": "micro",
+        "action": "BUY",
+        "window": "T-90_T-1",
+        "position_size": 5.0,
+        "return_pct": 125.36,
+        "pnl": 1129190.48,
+        "portfolio_after": 19145008.29,
+        "win": 1
+      },
+      {
+        "ticker": "EBS",
+        "pdufa_date": "2026-01-14",
+        "tier": "T2",
+        "mcap": "micro",
+        "action": "STRONG_BUY",
+        "window": "T-90_T-7",
+        "position_size": 8.0,
+        "return_pct": 65.48,
+        "pnl": 1054871.1,
+        "portfolio_after": 21193319.32,
+        "win": 1
+      },
+      {
+        "ticker": "ARWR",
+        "pdufa_date": "2025-11-18",
+        "tier": "T2",
+        "mcap": "mid",
+        "action": "STRONG_BUY",
+        "window": "T-60_T-3",
+        "position_size": 8.0,
+        "return_pct": 100.39,
+        "pnl": 966373.31,
+        "portfolio_after": 12999557.04,
+        "win": 1
+      },
+      {
+        "ticker": "AXGN",
+        "pdufa_date": "2025-12-04",
+        "tier": "T2",
+        "mcap": "small",
+        "action": "STRONG_BUY",
+        "window": "T-25_T-3",
+        "position_size": 8.0,
+        "return_pct": 61.23,
+        "pnl": 731122.81,
+        "portfolio_after": 15657653.63,
+        "win": 1
+      },
+      {
+        "ticker": "IONI",
+        "pdufa_date": "2025-08-21",
+        "tier": "T2",
+        "mcap": "nano",
+        "action": "BUY",
+        "window": "T-90_T-3",
+        "position_size": 5.0,
+        "return_pct": 246.55,
+        "pnl": 633115.13,
+        "portfolio_after": 5768874.27,
+        "win": 1
+      },
+      {
+        "ticker": "MIST",
+        "pdufa_date": "2025-12-15",
+        "tier": "T3",
+        "mcap": "nano",
+        "action": "BUY",
+        "window": "T-25_T-1",
+        "position_size": 5.0,
+        "return_pct": 72.51,
+        "pnl": 617790.83,
+        "portfolio_after": 17656860.58,
+        "win": 1
+      },
+      {
+        "ticker": "ATRA",
+        "pdufa_date": "2026-01-12",
+        "tier": "T2",
+        "mcap": "micro",
+        "action": "STRONG_BUY",
+        "window": "T-90_T-7",
+        "position_size": 8.0,
+        "return_pct": 38.5,
+        "pnl": 601389.09,
+        "portfolio_after": 20128384.03,
+        "win": 1
+      },
+      {
+        "ticker": "LLY",
+        "pdufa_date": "2025-12-03",
+        "tier": "T1",
+        "mcap": "large",
+        "action": "STRONG_BUY",
+        "window": "T-45_T-7",
+        "position_size": 8.0,
+        "return_pct": 43.81,
+        "pnl": 509778.76,
+        "portfolio_after": 15053650.53,
+        "win": 1
+      },
+      {
+        "ticker": "AMRX",
+        "pdufa_date": "2025-12-01",
+        "tier": "T2",
+        "mcap": "micro",
+        "action": "STRONG_BUY",
+        "window": "T-90_T-7",
+        "position_size": 8.0,
+        "return_pct": 43.55,
+        "pnl": 476258.1,
+        "portfolio_after": 14146629.39,
+        "win": 1
+      }
+    ],
+    "bottom_10_trades": [
+      {
+        "ticker": "NVO",
+        "pdufa_date": "2025-08-15",
+        "tier": "T1",
+        "mcap": "large",
+        "action": "STRONG_BUY",
+        "window": "T-45_T-7",
+        "position_size": 8.0,
+        "return_pct": -38.47,
+        "pnl": -162985.93,
+        "portfolio_after": 5132589.09,
+        "win": 0
+      },
+      {
+        "ticker": "ALXO",
+        "pdufa_date": "2025-12-08",
+        "tier": "T4",
+        "mcap": "nano",
+        "action": "LEAN_LONG",
+        "window": "T-45_T-3",
+        "position_size": 3.0,
+        "return_pct": -39.45,
+        "pnl": -191484.57,
+        "portfolio_after": 15988219.73,
+        "win": 0
+      },
+      {
+        "ticker": "NVO",
+        "pdufa_date": "2025-12-22",
+        "tier": "T1",
+        "mcap": "large",
+        "action": "STRONG_BUY",
+        "window": "T-45_T-7",
+        "position_size": 8.0,
+        "return_pct": -14.73,
+        "pnl": -206394.2,
+        "portfolio_after": 17305547.94,
+        "win": 0
+      },
+      {
+        "ticker": "OGN",
+        "pdufa_date": "2025-11-17",
+        "tier": "T1",
+        "mcap": "micro",
+        "action": "BUY",
+        "window": "T-90_T-7",
+        "position_size": 5.0,
+        "return_pct": -34.27,
+        "pnl": -209764.62,
+        "portfolio_after": 12033183.74,
+        "win": 0
+      },
+      {
+        "ticker": "CASI",
+        "pdufa_date": "2025-12-07",
+        "tier": "T4",
+        "mcap": "nano",
+        "action": "LEAN_LONG",
+        "window": "T-45_T-3",
+        "position_size": 3.0,
+        "return_pct": -43.67,
+        "pnl": -210755.34,
+        "portfolio_after": 15876736.81,
+        "win": 0
+      },
+      {
+        "ticker": "SRPT",
+        "pdufa_date": "2025-11-25",
+        "tier": "T1",
+        "mcap": "mid",
+        "action": "STRONG_BUY",
+        "window": "T-25_T-1",
+        "position_size": 8.0,
+        "return_pct": -23.25,
+        "pnl": -259131.05,
+        "portfolio_after": 13670371.3,
+        "win": 0
+      },
+      {
+        "ticker": "COCP",
+        "pdufa_date": "2025-12-18",
+        "tier": "T2",
+        "mcap": "nano",
+        "action": "BUY",
+        "window": "T-90_T-3",
+        "position_size": 5.0,
+        "return_pct": -33.75,
+        "pnl": -310315.65,
+        "portfolio_after": 18078759.95,
+        "win": 0
+      },
+      {
+        "ticker": "RGNX",
+        "pdufa_date": "2026-02-08",
+        "tier": "T4",
+        "mcap": "small",
+        "action": "STRONG_BUY",
+        "window": "T-25_T-3",
+        "position_size": 8.0,
+        "return_pct": -20.56,
+        "pnl": -388125.0,
+        "portfolio_after": 23208901.16,
+        "win": 0
+      },
+      {
+        "ticker": "PBM",
+        "pdufa_date": "2025-12-19",
+        "tier": "T4",
+        "mcap": "small",
+        "action": "STRONG_BUY",
+        "window": "T-25_T-3",
+        "position_size": 8.0,
+        "return_pct": -40.82,
+        "pnl": -593483.33,
+        "portfolio_after": 17578555.61,
+        "win": 0
+      },
+      {
+        "ticker": "AQST",
+        "pdufa_date": "2026-02-02",
+        "tier": "T4",
+        "mcap": "small",
+        "action": "STRONG_BUY",
+        "window": "T-25_T-3",
+        "position_size": 8.0,
+        "return_pct": -45.91,
+        "pnl": -899713.3,
+        "portfolio_after": 23597026.16,
+        "win": 0
+      }
+    ]
+  },
+  "scanner": {
+    "as_of": "2026-03-29",
+    "total_opportunities": 0,
+    "opportunities": []
+  },
+  "v1_comparison": {
+    "v1_end_value": 1530000,
+    "v1_trades": 1562,
+    "v1_win_rate": 0.558,
+    "v1_sharpe": 2.89,
+    "v2_end_value": 23746786.82,
+    "v2_trades": 1524,
+    "v2_win_rate": 0.5846,
+    "v2_sharpe": 3.43
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "_meta": {
+    "title": "ODIN PDUFA Approval Probability Scoring System — Complete Specification",
+    "version": "v1108",
+    "architecture": "54-weight logistic regression (logit-space, sigmoid output)",
+    "dataset": "2,210 PDUFA events (2015-2026), 713 CRLs (32.3% base rate)",
+    "best_metrics": {
+      "val_brier": 0.10239,
+      "val_auc": 0.8816,
+      "wf_brier": 0.08816,
+      "wf_auc": 0.9077,
+      "note": "v1100 walk-forward metrics; v1108 adds interactions, currently honing"
+    },
+    "created": "2026-02-21",
+    "author": "David (architect) + Claude (engineering lead)",
+    "purpose": "Score FDA PDUFA events for biotech catalyst trading. Predict P(Approval). The runup IS the trade — exit T-5 (Tier 1-2) or T-7 (Tier 3). NEVER hold through binary."
+  },
+
+  "scoring_algorithm": {
+    "step_1": "Build 54-element feature vector from raw event inputs (see feature_engineering)",
+    "step_2": "Dot product: logit = sum(feature[i] * weight[i] for i in 0..53)",
+    "step_3": "Sigmoid: probability = 1 / (1 + exp(-logit))",
+    "step_4": "Tier assignment based on probability thresholds",
+    "step_5": "Trading decision based on tier"
+  },
+
+  "tier_thresholds": {
+    "TIER_1": {"min_prob": 0.85, "action": "LONG", "sizing": "100%", "exit": "T-5", "label": "HIGH CONVICTION"},
+    "TIER_2": {"min_prob": 0.65, "action": "CAUTIOUS LONG", "sizing": "50%", "exit": "T-5", "label": "MODERATE"},
+    "TIER_3": {"min_prob": 0.40, "action": "AVOID (or small speculative)", "sizing": "25%", "exit": "T-7", "label": "LOW CONVICTION"},
+    "TIER_4": {"min_prob": 0.00, "action": "NO TRADE — NO EXCEPTIONS", "sizing": "0%", "exit": "N/A", "label": "DO NOT TOUCH"}
+  },
+
+  "v1066_canonical_weights": {
+    "_note": "IMMUTABLE — these are the original 33 validated weights. Never modify.",
+    "base_logit": 1.3746806383132935,
+    "snda_base_penalty": -0.41041100025177,
+    "snda_pediatric_base_penalty": -0.21885165572166443,
+    "prior_crl_penalty": -3.209853172302246,
+    "inexperienced_sponsor_penalty": -1.1922439336776733,
+    "manufacturing_risk_penalty": -1.012204647064209,
+    "form_483_penalty": -1.3145911693572998,
+    "ema_cmc_flag_penalty": -1.7359338998794556,
+    "cmc_extension_penalty": -1.008381962776184,
+    "adcom_mid_penalty": -0.4850214719772339,
+    "adcom_low_penalty": -0.7870840430259705,
+    "s22_pediatric_pk_penalty": -1.8684545755386353,
+    "btd_weight": 0.16552969813346863,
+    "orphan_weight": 0.15409815311431885,
+    "priority_review_weight": 0.6173274517059326,
+    "fast_track_weight": 0.1978447586297989,
+    "accelerated_approval_weight": 0.5197420716285706,
+    "class1_resubmission_boost": 0.5375667214393616,
+    "experienced_sponsor_boost": 0.870597779750824,
+    "adcom_high_boost": 1.4193170070648193,
+    "ta_adjustment_weight": 0.3766118288040161,
+    "s23_insider_weight": 0.8053626418113708,
+    "s6_hiring_weight": 0.7050181031227112,
+    "social_weight": 0.37455499172210693,
+    "odin_weight": 0.7515200972557068,
+    "hint_weight": 0.2044767290353775,
+    "hint_crl_rate_penalty": -1.5633169412612915,
+    "ta_high_risk_penalty": -0.24735774099826813,
+    "ta_mod_risk_penalty": -0.17841260135173798,
+    "ta_low_risk_boost": 0.09094549715518951,
+    "indication_pain_penalty": -0.3545510768890381,
+    "indication_onc_boost": 0.25379759073257446,
+    "novice_sponsor_high_risk_ta_penalty": -0.4196004867553711
+  },
+
+  "v1070_extension_weights": {
+    "_note": "Added in v10.70 — 15 new weights for era effects, gene therapy, psychedelics, etc. These are ADDITIVE to v1066.",
+    "gene_therapy_penalty": -0.80,
+    "prior_crl_count_penalty": -0.30,
+    "safety_severity_penalty": -0.25,
+    "ppm_penalty": -0.15,
+    "surrogate_endpoint_penalty": -0.10,
+    "single_arm_study_penalty": -0.10,
+    "psychedelics_penalty": -1.50,
+    "class2_resubmission_penalty": -0.20,
+    "fda_era_hoeg_penalty": -0.10,
+    "accel_approval_post2024_penalty": -0.30,
+    "eu_approved_boost": 0.20,
+    "eu_approved_2026_penalty": -0.15,
+    "experienced_sponsor_2026_reduction": -0.10,
+    "btd_oncology_boost": 0.15,
+    "ta_very_high_boost": 0.20,
+    "double_crl_penalty": -0.50
+  },
+
+  "v1108_interaction_weights": {
+    "_note": "6 interaction features (indices 48-53). These capture non-linear compound effects. Currently being honed — anchor values shown.",
+    "ix_prior_crl_x_mfg_risk": {"anchor": -0.50, "sign_constraint": "negative", "empirical_crl_rate": 1.00, "n_events": 70, "description": "Prior CRL + still have manufacturing problems = guaranteed CRL"},
+    "ix_prior_crl_x_form483": {"anchor": -0.50, "sign_constraint": "negative", "empirical_crl_rate": 1.00, "n_events": 69, "description": "Prior CRL + Form 483 issues — 99% overlap with ix_prior_crl_x_mfg_risk"},
+    "ix_gene_therapy_x_mfg_risk": {"anchor": -0.80, "sign_constraint": "negative", "empirical_crl_rate": 0.40, "n_events": 105, "description": "Gene therapy CMC is already hard; add mfg risk = brutal"},
+    "ix_inexperienced_x_mfg_risk": {"anchor": -0.70, "sign_constraint": "negative", "empirical_crl_rate": 0.922, "n_events": 115, "description": "No playbook for fixing manufacturing problems"},
+    "ix_single_arm_x_surrogate": {"anchor": 0.40, "sign_constraint": "free", "empirical_crl_rate": 0.07, "n_events": 214, "description": "APPROVAL signal — accelerated rare disease pathway, FDA already lenient"},
+    "ix_btd_x_single_arm": {"anchor": 0.50, "sign_constraint": "free", "empirical_crl_rate": 0.047, "n_events": 128, "description": "APPROVAL signal — BTD blessed the single-arm design"}
+  },
+
+  "feature_engineering": {
+    "_note": "How to build the 54-element feature vector from raw event data. Order matters — index must match weight index.",
+    "features": [
+      {"index": 0, "name": "base_logit", "value": "always 1.0 (intercept)"},
+      {"index": 1, "name": "snda_base_penalty", "value": "1.0 if sBLA/sNDA/SUPPL and NOT pediatric, else 0.0"},
+      {"index": 2, "name": "snda_pediatric_base_penalty", "value": "1.0 if sBLA/sNDA/SUPPL AND pediatric, else 0.0"},
+      {"index": 3, "name": "prior_crl_penalty", "value": "1.0 if prior_crl=True, else 0.0"},
+      {"index": 4, "name": "inexperienced_sponsor_penalty", "value": "1.0 if sponsor_prior_approvals == 0, else 0.0"},
+      {"index": 5, "name": "manufacturing_risk_penalty", "value": "1.0 if manufacturing_risk=True, else 0.0"},
+      {"index": 6, "name": "form_483_penalty", "value": "1.0 if form_483_issues=True, else 0.0"},
+      {"index": 7, "name": "ema_cmc_flag_penalty", "value": "1.0 if ema_cmc_flag=True, else 0.0"},
+      {"index": 8, "name": "cmc_extension_penalty", "value": "1.0 if cmc_extension_flag=True, else 0.0"},
+      {"index": 9, "name": "adcom_mid_penalty", "value": "1.0 if had_adcom=True AND 50 <= adcom_vote_pct < 65, else 0.0"},
+      {"index": 10, "name": "adcom_low_penalty", "value": "1.0 if had_adcom=True AND adcom_vote_pct < 50, else 0.0"},
+      {"index": 11, "name": "s22_pediatric_pk_penalty", "value": "1.0 if s22_ped_pk_missing=True, else 0.0"},
+      {"index": 12, "name": "btd_weight", "value": "1.0 if btd=True, else 0.0"},
+      {"index": 13, "name": "orphan_weight", "value": "1.0 if orphan=True, else 0.0"},
+      {"index": 14, "name": "priority_review_weight", "value": "1.0 if priority_review=True, else 0.0"},
+      {"index": 15, "name": "fast_track_weight", "value": "1.0 if fast_track=True, else 0.0"},
+      {"index": 16, "name": "accelerated_approval_weight", "value": "1.0 if accelerated_approval=True AND NOT (year >= 2025), else 0.0"},
+      {"index": 17, "name": "class1_resubmission_boost", "value": "1.0 if prior_crl=True AND resubmission_class == 1, else 0.0"},
+      {"index": 18, "name": "experienced_sponsor_boost", "value": "1.0 if sponsor_prior_approvals >= 5, else 0.0"},
+      {"index": 19, "name": "adcom_high_boost", "value": "1.0 if had_adcom=True AND adcom_vote_pct >= 65, else 0.0"},
+      {"index": 20, "name": "ta_adjustment_weight", "value": "ta_base_score (continuous float, typically -0.3 to +0.1)"},
+      {"index": 21, "name": "s23_insider_weight", "value": "s23_signal_strength (continuous, 0.0 if unavailable)"},
+      {"index": 22, "name": "s6_hiring_weight", "value": "s6_signal_strength (continuous, 0.0 if unavailable)"},
+      {"index": 23, "name": "social_weight", "value": "social_sentiment_score (continuous, 0.0 if unavailable)"},
+      {"index": 24, "name": "odin_weight", "value": "0.65 (prior estimate — placeholder when no prior ODIN score exists)"},
+      {"index": 25, "name": "hint_weight", "value": "1.0 - historical_crl_rate (historical TA approval rate)"},
+      {"index": 26, "name": "hint_crl_rate_penalty", "value": "historical_crl_rate (continuous, e.g. 0.25 for CNS)"},
+      {"index": 27, "name": "ta_high_risk_penalty", "value": "1.0 if ta_base_score < -0.10 (CNS, Neurology, Ophthalmology, Pain, Nephrology)"},
+      {"index": 28, "name": "ta_mod_risk_penalty", "value": "1.0 if -0.10 <= ta_base_score < 0.0 (Cardiovascular, Metabolic, Hematology)"},
+      {"index": 29, "name": "ta_low_risk_boost", "value": "1.0 if ta_base_score >= 0.0 (Oncology, Immunology, Dermatology, Infectious Disease)"},
+      {"index": 30, "name": "indication_pain_penalty", "value": "1.0 if indication contains 'pain', 'analgesic', 'opioid'"},
+      {"index": 31, "name": "indication_onc_boost", "value": "1.0 if indication contains 'cancer', 'oncol', 'tumor', 'leukemia', 'lymphoma', 'melanoma'"},
+      {"index": 32, "name": "novice_sponsor_high_risk_ta_penalty", "value": "1.0 if inexperienced (0 approvals) AND ta_high_risk"},
+      {"index": 33, "name": "gene_therapy_penalty", "value": "1.0 if gene_therapy=True"},
+      {"index": 34, "name": "single_arm_study_penalty", "value": "1.0 if single_arm_study=True"},
+      {"index": 35, "name": "surrogate_endpoint_penalty", "value": "1.0 if surrogate_endpoint=True"},
+      {"index": 36, "name": "prior_crl_count_penalty", "value": "min(prior_crl_count, 3) — capped at 3"},
+      {"index": 37, "name": "safety_severity_penalty", "value": "min(safety_signal_severity, 3) — capped at 3"},
+      {"index": 38, "name": "ppm_penalty", "value": "1.0 if post-marketing commitment flag=True"},
+      {"index": 39, "name": "eu_approved_boost", "value": "1.0 if already approved in EU/EMA"},
+      {"index": 40, "name": "eu_approved_2026_penalty", "value": "1.0 if EU approved AND year >= 2026 (Hoeg era reduces EU signal value)"},
+      {"index": 41, "name": "psychedelics_penalty", "value": "1.0 if psychedelic compound (MDMA, psilocybin, etc.)"},
+      {"index": 42, "name": "hoeg_era_constant", "value": "1.0 if catalyst_date >= 2025-01-01 (Hoeg era FDA = more stringent)"},
+      {"index": 43, "name": "accel_approval_2025plus_penalty", "value": "1.0 if accelerated_approval AND year >= 2025"},
+      {"index": 44, "name": "experienced_sponsor_2026_reduction", "value": "1.0 if sponsor_prior_approvals >= 5 AND year >= 2026"},
+      {"index": 45, "name": "btd_oncology_boost", "value": "1.0 if btd=True AND therapeutic_area=='Oncology'"},
+      {"index": 46, "name": "ta_very_high_boost", "value": "1.0 if TA in (Respiratory, GI/Hepatology, Dermatology, Infectious Disease, Immunology)"},
+      {"index": 47, "name": "double_crl_penalty", "value": "1.0 if prior_crl_count >= 2"},
+      {"index": 48, "name": "ix_prior_crl_x_mfg_risk", "value": "1.0 if prior_crl AND manufacturing_risk"},
+      {"index": 49, "name": "ix_prior_crl_x_form483", "value": "1.0 if prior_crl AND form_483_issues"},
+      {"index": 50, "name": "ix_gene_therapy_x_mfg_risk", "value": "1.0 if gene_therapy AND manufacturing_risk"},
+      {"index": 51, "name": "ix_inexperienced_x_mfg_risk", "value": "1.0 if inexperienced (0 approvals) AND manufacturing_risk"},
+      {"index": 52, "name": "ix_single_arm_x_surrogate", "value": "1.0 if single_arm_study AND surrogate_endpoint"},
+      {"index": 53, "name": "ix_btd_x_single_arm", "value": "1.0 if btd AND single_arm_study"}
+    ]
+  },
+
+  "honing_architecture": {
+    "_note": "The honing engine continuously optimizes weights via random perturbation + selection on validation Brier score.",
+    "engine_version": "5.1 (v1108)",
+    "total_weights": 54,
+    "optimization": "Random perturbation + selection (not gradient-based)",
+    "objective": "Minimize validation Brier score (calibration metric)",
+    "time_splits": {
+      "train": "2002-2019",
+      "validation": "2020-2022",
+      "test": "2023-2025 (NEVER peek)"
+    },
+    "sign_constraints": {
+      "description": "Penalties must stay negative, boosts must stay positive. Prevents nonsensical weight flips.",
+      "negative_only": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 26, 27, 28, 30, 32, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 47, 48, 49, 50, 51],
+      "positive_only": [12, 13, 14, 15, 16, 17, 18, 19, 29, 31, 39, 45, 46],
+      "free": [20, 21, 22, 23, 24, 25, 52, 53]
+    },
+    "parameter_to_event_ratio": "54:2210 = 1:41 (healthy — rule of thumb is >1:20)"
+  },
+
+  "ta_base_scores": {
+    "_note": "Therapeutic area base scores (ta_base_score field). Negative = higher CRL risk.",
+    "Oncology": 0.067,
+    "Immunology": 0.045,
+    "Dermatology": 0.030,
+    "Infectious Disease": 0.020,
+    "Respiratory": 0.015,
+    "GI/Hepatology": 0.010,
+    "Rare Disease": -0.020,
+    "Other": -0.019,
+    "Endocrinology": -0.050,
+    "Metabolic": -0.060,
+    "Hematology": -0.070,
+    "Cardiovascular": -0.090,
+    "CNS": -0.150,
+    "Neurology": -0.150,
+    "Pain Management": -0.200,
+    "Ophthalmology": -0.180,
+    "Nephrology": -0.200
+  },
+
+  "historical_crl_rates": {
+    "_note": "Historical CRL rates by TA — used for hint_crl_rate_penalty and hint_weight features.",
+    "Oncology": 0.15,
+    "CNS": 0.25,
+    "Rare Disease": 0.18,
+    "Immunology": 0.20,
+    "Cardiovascular": 0.22,
+    "Infectious Disease": 0.25,
+    "Dermatology": 0.22,
+    "Hematology": 0.16,
+    "Pain Management": 0.30,
+    "Ophthalmology": 0.28,
+    "Metabolic": 0.20,
+    "GI/Hepatology": 0.20,
+    "Nephrology": 0.25,
+    "Other": 0.319,
+    "Neurology": 0.22,
+    "Endocrinology": 0.18,
+    "Respiratory": 0.20,
+    "Gene Therapy": 0.25
+  },
+
+  "dataset_schema": {
+    "_note": "Required input fields for scoring an event. All must be T1-compliant (available before catalyst_date).",
+    "fields": {
+      "ticker": "Stock ticker (string)",
+      "company": "Company name (string)",
+      "asset": "Drug/product name (string)",
+      "indication": "Target indication (string)",
+      "therapeutic_area": "TA category (string — see ta_base_scores for valid values)",
+      "catalyst_date": "PDUFA date (YYYY-MM-DD)",
+      "application_type": "NDA, BLA, sNDA, sBLA, SUPPL (string)",
+      "prior_crl": "Has this specific drug received a prior CRL? (boolean)",
+      "sponsor_prior_approvals": "Number of prior FDA approvals by sponsor (float, 0+)",
+      "manufacturing_risk": "Known manufacturing/CMC issues? (boolean)",
+      "form_483_issues": "FDA Form 483 observations at manufacturing site? (boolean)",
+      "ema_cmc_flag": "EMA CMC deficiency letter? (boolean)",
+      "cmc_extension_flag": "FDA granted CMC-related extension? (boolean)",
+      "had_adcom": "Was there an Advisory Committee meeting? (boolean)",
+      "adcom_vote_pct": "AdCom favorable vote percentage (float 0-100, 0 if no adcom)",
+      "s22_ped_pk_missing": "Missing pediatric PK data per S22 requirements? (boolean)",
+      "btd": "Breakthrough Therapy Designation? (boolean)",
+      "orphan": "Orphan Drug Designation? (boolean)",
+      "priority_review": "Priority Review? (boolean)",
+      "fast_track": "Fast Track Designation? (boolean)",
+      "accelerated_approval": "Accelerated Approval pathway? (boolean)",
+      "resubmission_class": "Resubmission class (0=none, 1=class1, 2=class2)",
+      "ta_base_score": "TA base score (see ta_base_scores lookup)",
+      "historical_crl_rate": "Historical CRL rate for this TA (see historical_crl_rates lookup)",
+      "s23_signal_strength": "Insider trading signal (0.0 if unavailable)",
+      "s6_signal_strength": "Hiring/glassdoor signal (0.0 if unavailable)",
+      "social_sentiment_score": "Social media sentiment (0.0 if unavailable)",
+      "gene_therapy": "Is this a gene therapy product? (boolean)",
+      "single_arm_study": "Was pivotal trial single-arm? (boolean)",
+      "surrogate_endpoint": "Was approval based on surrogate endpoint? (boolean)",
+      "prior_crl_count": "Total number of prior CRLs (integer, 0+)",
+      "safety_signal_severity": "Safety signal severity (0=none, 1=mild, 2=moderate, 3=severe)",
+      "ppm_flag": "Post-marketing commitment concerns? (boolean)",
+      "psychedelics": "Is this a psychedelic compound? (boolean)",
+      "eu_approved": "Already approved by EMA? (boolean)"
+    }
+  },
+
+  "trading_rules": {
+    "core_principle": "The RUNUP is the trade. Never hold through the binary event.",
+    "entry_window": "T-25 to T-15 (no entry after T-15 — late entries capture <58% of move)",
+    "exit_rules": {
+      "TIER_1": "Exit T-5 (5 trading days before PDUFA)",
+      "TIER_2": "Exit T-5",
+      "TIER_3": "Exit T-7 (7 trading days before PDUFA)",
+      "TIER_4": "NO TRADE — no exceptions regardless of revenue impact"
+    },
+    "dead_money_rule": "T-7 to T-1 is dead money. The bulk of the runup happens T-25 to T-7.",
+    "weekend_pdufa": "If PDUFA falls on Saturday/Sunday/Monday, exit Thursday/Friday before.",
+    "position_sizing": {
+      "TIER_1": "100% of allocation",
+      "TIER_2": "50% of allocation",
+      "TIER_3": "25% of allocation (speculative only)",
+      "TIER_4": "0%"
+    }
+  },
+
+  "fda_era_definitions": {
+    "PRE_COVID": {"range": "before 2020-01-01", "stance": "Neutral baseline"},
+    "COVID": {"range": "2020-01-01 to 2021-12-31", "stance": "Lenient — emergency authorizations, faster reviews"},
+    "POST_COVID": {"range": "2022-01-01 to 2024-12-31", "stance": "Tightening — backlog clearing, more scrutiny"},
+    "HOEG_ERA": {"range": "2025-01-01 onward", "stance": "Most stringent — Dr. Marty Makary era, increased CRL rates, skepticism of surrogates and accelerated approval"}
+  },
+
+  "validation_track_record": {
+    "2026_predictions": [
+      {"ticker": "VNDA", "asset": "Bysanti (milsaperidone)", "pdufa": "2026-02-21", "prediction": "APPROVAL", "score_gungnir": 0.897, "tier_gungnir": "TIER_1", "score_v1107": 0.787, "tier_v1107": "TIER_2", "outcome": "APPROVED", "correct": true, "days_pre_call": 4, "note": "Gungnir scored 89.7% TIER_1 on Feb 16, approved Feb 20"}
+    ]
+  },
+
+  "scoring_example": {
+    "_note": "Walk-through of VNDA Bysanti scoring with v1107 weights",
+    "event": {
+      "ticker": "VNDA",
+      "application_type": "NDA",
+      "therapeutic_area": "CNS",
+      "prior_crl": false,
+      "sponsor_prior_approvals": 2,
+      "manufacturing_risk": false,
+      "form_483_issues": false,
+      "btd": false,
+      "orphan": false,
+      "priority_review": false,
+      "ta_base_score": -0.15,
+      "historical_crl_rate": 0.25,
+      "gene_therapy": false,
+      "single_arm_study": false,
+      "surrogate_endpoint": false,
+      "psychedelics": false,
+      "year": 2026
+    },
+    "logit_decomposition": {
+      "base_logit": {"feature": 1.0, "contribution": "+1.172"},
+      "hint_weight (75% approval rate)": {"feature": 0.75, "contribution": "+0.742"},
+      "odin_weight": {"feature": 0.65, "contribution": "+0.504"},
+      "ta_high_risk_penalty (CNS)": {"feature": 1.0, "contribution": "-0.913"},
+      "hint_crl_rate_penalty": {"feature": 0.25, "contribution": "-0.105"},
+      "hoeg_era_constant": {"feature": 1.0, "contribution": "-0.100"},
+      "total_logit": "+1.305",
+      "probability": "78.7%",
+      "tier": "TIER_2"
+    }
+  },
+
+  "key_signals_by_importance": {
+    "_note": "Ranked by absolute weight magnitude (v1066 canonical). These are the most impactful features.",
+    "top_penalties": [
+      {"name": "prior_crl_penalty", "weight": -3.21, "interpretation": "Prior CRL is the single strongest negative signal — 3.2 logits of penalty"},
+      {"name": "s22_pediatric_pk_penalty", "weight": -1.87, "interpretation": "Missing pediatric PK = almost certain CRL"},
+      {"name": "ema_cmc_flag_penalty", "weight": -1.74, "interpretation": "EMA CMC issues = FDA will find them too"},
+      {"name": "hint_crl_rate_penalty", "weight": -1.56, "interpretation": "TA-level CRL rate history matters"},
+      {"name": "psychedelics_penalty", "weight": -1.50, "interpretation": "Post-MDMA rejection, psychedelics face extreme scrutiny"},
+      {"name": "form_483_penalty", "weight": -1.31, "interpretation": "Form 483 = FDA found manufacturing problems"},
+      {"name": "inexperienced_sponsor_penalty", "weight": -1.19, "interpretation": "First-time sponsors fail at higher rates"},
+      {"name": "manufacturing_risk_penalty", "weight": -1.01, "interpretation": "CMC is the #1 cause of CRLs"},
+      {"name": "cmc_extension_penalty", "weight": -1.01, "interpretation": "FDA needed more time on CMC = red flag"},
+      {"name": "gene_therapy_penalty", "weight": -0.80, "interpretation": "Gene therapies face unique manufacturing and durability concerns"}
+    ],
+    "top_boosts": [
+      {"name": "base_logit", "weight": 1.37, "interpretation": "Intercept — baseline approval probability (~80%)"},
+      {"name": "adcom_high_boost", "weight": 1.42, "interpretation": "Strong AdCom vote (≥65%) is the strongest positive signal"},
+      {"name": "experienced_sponsor_boost", "weight": 0.87, "interpretation": "5+ prior approvals = institutional knowledge of FDA process"},
+      {"name": "s23_insider_weight", "weight": 0.81, "interpretation": "Insider buying signal (when available)"},
+      {"name": "odin_weight", "weight": 0.75, "interpretation": "Prior ODIN score / market consensus"},
+      {"name": "s6_hiring_weight", "weight": 0.71, "interpretation": "Hiring/expansion signal"},
+      {"name": "priority_review_weight", "weight": 0.62, "interpretation": "Priority review = FDA sees meaningful advance"},
+      {"name": "class1_resubmission_boost", "weight": 0.54, "interpretation": "Class 1 resubmission (minor fix) after CRL = high approval"},
+      {"name": "accelerated_approval_weight", "weight": 0.52, "interpretation": "Accelerated pathway (pre-2025, before Hoeg era crackdown)"}
+    ]
+  },
+
+  "mcp_data_sources": {
+    "_note": "Use these tools to populate real-time signal fields (s23, s6, social) before scoring.",
+    "ClinicalTrials_MCP": "Query for trial design, endpoints, enrollment, phase, NCT ID",
+    "PubMed_MCP": "Search for supporting publications, safety data, efficacy evidence",
+    "ChEMBL_MCP": "Look up compound details, mechanism of action, bioactivity data",
+    "FinBrain_MCP": "Insider trades (s23), analyst ratings, put/call ratios, sentiment",
+    "LunarCrush_MCP": "Social media sentiment, mentions, engagement for biotech tickers",
+    "bioRxiv_MCP": "Preprint research related to the drug's mechanism or target",
+    "CMS_Coverage_MCP": "Medicare coverage decisions (relevant for post-approval market sizing)"
+  }
+}

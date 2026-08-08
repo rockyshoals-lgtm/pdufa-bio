@@ -1,0 +1,10 @@
+python Odin1_gpu_optimized.py ^
+    --data ODIN_ENRICHED_PDUFA_1349_v2.csv ^
+    --lunarcrush lunarcrush_cache.json ^
+    --outdir .\results ^
+    --iters 1000000000 ^
+    --device gpu ^
+    --safety-factor 0.95
+
+
+set CUPY_ACCELERATORS=cub && python Odin1_advanced.py --data ODIN_ENRICHED_PDUFA_1349_v2.csv --lunarcrush lunarcrush_cache.json --outdir .\results --iters 1000000000 --device gpu

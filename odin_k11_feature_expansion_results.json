@@ -1,0 +1,257 @@
+{
+  "version": "odin_k11_feature_expansion",
+  "kaizen_id": "K11",
+  "parent": "K10",
+  "n_features": 35,
+  "feature_names": [
+    "is_hard_endpoint",
+    "phase_PHASE3",
+    "is_competitive_space",
+    "sentiment_score",
+    "phase_PHASE2",
+    "primary_endpoint_met",
+    "ta_ONCOLOGY",
+    "rct_x_phase3",
+    "has_breakthrough",
+    "has_orphan",
+    "has_priority_review",
+    "has_fast_track",
+    "is_gene_therapy",
+    "is_psychedelic",
+    "safety_signal",
+    "ppm_flag",
+    "is_single_arm",
+    "has_surrogate",
+    "is_hoeg_era",
+    "accel_approval_2025",
+    "single_arm_2025",
+    "failure_signal",
+    "strong_positive",
+    "dose_response",
+    "safety_clean",
+    "ta_CNS",
+    "ta_RARE",
+    "ta_PAIN",
+    "ta_IMMUNOLOGY",
+    "gene_therapy_x_phase3",
+    "safety_x_hoeg",
+    "ppm_x_hoeg",
+    "oncology_x_phase3",
+    "rare_x_positive",
+    "failure_x_phase3"
+  ],
+  "n_original_features": 8,
+  "n_new_features": 27,
+  "training_date": "2026-02-16T01:11:37.743193",
+  "n_windows": 4,
+  "windows": [
+    {
+      "window": 1,
+      "train_period": "2022-01-01 to 2022-12-31",
+      "val_period": "2023-01-01 to 2023-12-31",
+      "train_size": 268,
+      "val_size": 578,
+      "val_success_rate": 0.7906574394463668,
+      "xgb_auc": 0.7341537515597591,
+      "xgb_brier": 0.22412478923797607,
+      "xgb_logloss": 0.6366578214127402,
+      "xgb_tier1_precision": 0.8904761904761904,
+      "xgb_tier1_count": 210,
+      "xgb_tier1_recall": 0.40919037199124725,
+      "logit_auc": 0.9334231513463659,
+      "logit_brier": 0.05502161368205177,
+      "logit_logloss": 0.21459933001994205,
+      "logit_tier1_precision": 0.958963282937365,
+      "logit_tier1_count": 463,
+      "logit_tier1_recall": 0.9715536105032823,
+      "ensemble_auc": 0.9332965622004811,
+      "ensemble_brier": 0.08726907551525537,
+      "ensemble_logloss": 0.3292106059113225,
+      "ensemble_tier1_precision": 0.9586956521739131,
+      "ensemble_tier1_count": 460,
+      "ensemble_tier1_recall": 0.9649890590809628
+    },
+    {
+      "window": 2,
+      "train_period": "2022-01-01 to 2023-12-31",
+      "val_period": "2024-01-01 to 2024-12-31",
+      "train_size": 846,
+      "val_size": 567,
+      "val_success_rate": 0.7689594356261023,
+      "xgb_auc": 0.8742646543875622,
+      "xgb_brier": 0.13954821228981018,
+      "xgb_logloss": 0.4422945674614876,
+      "xgb_tier1_precision": 0.9416909620991254,
+      "xgb_tier1_count": 343,
+      "xgb_tier1_recall": 0.7408256880733946,
+      "logit_auc": 0.9661390853701239,
+      "logit_brier": 0.03811821190469104,
+      "logit_logloss": 0.16219311487080304,
+      "logit_tier1_precision": 0.9727272727272728,
+      "logit_tier1_count": 440,
+      "logit_tier1_recall": 0.981651376146789,
+      "ensemble_auc": 0.9576651025982211,
+      "ensemble_brier": 0.06040541316989695,
+      "ensemble_logloss": 0.2480406994863017,
+      "ensemble_tier1_precision": 0.9681818181818181,
+      "ensemble_tier1_count": 440,
+      "ensemble_tier1_recall": 0.9770642201834863
+    },
+    {
+      "window": 3,
+      "train_period": "2022-01-01 to 2024-12-31",
+      "val_period": "2025-01-01 to 2025-12-31",
+      "train_size": 1413,
+      "val_size": 538,
+      "val_success_rate": 0.7713754646840149,
+      "xgb_auc": 0.8919090998138897,
+      "xgb_brier": 0.12175390869379044,
+      "xgb_logloss": 0.386259324149039,
+      "xgb_tier1_precision": 0.950920245398773,
+      "xgb_tier1_count": 326,
+      "xgb_tier1_recall": 0.7469879518072289,
+      "logit_auc": 0.977774512684886,
+      "logit_brier": 0.02487585501535472,
+      "logit_logloss": 0.11719345090712256,
+      "logit_tier1_precision": 0.9786223277909739,
+      "logit_tier1_count": 421,
+      "logit_tier1_recall": 0.9927710843373494,
+      "ensemble_auc": 0.9664707610931531,
+      "ensemble_brier": 0.046193916459657154,
+      "ensemble_logloss": 0.19902849099980513,
+      "ensemble_tier1_precision": 0.9716981132075472,
+      "ensemble_tier1_count": 424,
+      "ensemble_tier1_recall": 0.9927710843373494
+    },
+    {
+      "window": 4,
+      "train_period": "2022-01-01 to 2025-12-31",
+      "val_period": "2026-01-01 to 2026-12-31",
+      "train_size": 1951,
+      "val_size": 49,
+      "val_success_rate": 0.7346938775510204,
+      "xgb_auc": 0.9155982905982906,
+      "xgb_brier": 0.12131098657846451,
+      "xgb_logloss": 0.37211081491897585,
+      "xgb_tier1_precision": 0.9285714285714286,
+      "xgb_tier1_count": 28,
+      "xgb_tier1_recall": 0.7222222222222222,
+      "logit_auc": 0.9764957264957265,
+      "logit_brier": 0.04231191720790259,
+      "logit_logloss": 0.16786065444771567,
+      "logit_tier1_precision": 0.9473684210526315,
+      "logit_tier1_count": 38,
+      "logit_tier1_recall": 1.0,
+      "ensemble_auc": 0.9423076923076923,
+      "ensemble_brier": 0.05370435097837451,
+      "ensemble_logloss": 0.21577458427480767,
+      "ensemble_tier1_precision": 0.9473684210526315,
+      "ensemble_tier1_count": 38,
+      "ensemble_tier1_recall": 1.0
+    }
+  ],
+  "summary": {
+    "xgb_auc_mean": 0.8539814490898754,
+    "xgb_auc_std": 0.07071991826818155,
+    "xgb_tier1_mean": 0.9279147066363793,
+    "ensemble_auc_mean": 0.949935029549887,
+    "ensemble_auc_std": 0.012924775782842084,
+    "ensemble_tier1_mean": 0.9614860011539774,
+    "ensemble_brier_mean": 0.06189318903079599
+  },
+  "k10_comparison": {
+    "xgb_auc": 0.19988144908987537,
+    "xgb_tier1": 0.07591470663637934,
+    "ens_auc": -0.006864970450113028,
+    "ens_tier1": 0.0034860011539774582,
+    "ens_brier": -0.027106810969204004
+  },
+  "feature_importance_top15": [
+    {
+      "feature": "failure_x_phase3",
+      "avg_gain": 17.50162100791931
+    },
+    {
+      "feature": "primary_endpoint_met",
+      "avg_gain": 11.12951914469401
+    },
+    {
+      "feature": "has_surrogate",
+      "avg_gain": 9.160062789916992
+    },
+    {
+      "feature": "ppm_flag",
+      "avg_gain": 8.379650115966797
+    },
+    {
+      "feature": "sentiment_score",
+      "avg_gain": 5.999179124832153
+    },
+    {
+      "feature": "phase_PHASE3",
+      "avg_gain": 3.1143919825553894
+    },
+    {
+      "feature": "strong_positive",
+      "avg_gain": 2.2415210008621216
+    },
+    {
+      "feature": "phase_PHASE2",
+      "avg_gain": 2.0444941371679306
+    },
+    {
+      "feature": "is_hard_endpoint",
+      "avg_gain": 1.880792538324992
+    },
+    {
+      "feature": "ta_ONCOLOGY",
+      "avg_gain": 1.2580722868442535
+    },
+    {
+      "feature": "ta_CNS",
+      "avg_gain": 0.9245216250419617
+    },
+    {
+      "feature": "is_hoeg_era",
+      "avg_gain": 0.8152294754981995
+    },
+    {
+      "feature": "is_competitive_space",
+      "avg_gain": 0.7444845139980316
+    },
+    {
+      "feature": "oncology_x_phase3",
+      "avg_gain": 0.7255975206693014
+    },
+    {
+      "feature": "ta_IMMUNOLOGY",
+      "avg_gain": 0.36582285165786743
+    }
+  ],
+  "drift_analysis": {
+    "early_auc": 0.9454808323993511,
+    "late_auc": 0.9543892267004227,
+    "auc_drift": 0.008908394301071598,
+    "is_stable": true
+  },
+  "ensemble_weights": {
+    "xgb": 0.4,
+    "logit": 0.6
+  },
+  "tier_threshold": 0.6,
+  "xgb_params": {
+    "n_estimators": 400,
+    "learning_rate": 0.025,
+    "max_depth": 4,
+    "subsample": 0.7,
+    "colsample_bytree": 0.7,
+    "min_child_weight": 5,
+    "gamma": 0.2,
+    "reg_alpha": 0.1,
+    "reg_lambda": 2.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": -1
+  }
+}

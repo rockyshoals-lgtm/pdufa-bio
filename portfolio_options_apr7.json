@@ -1,0 +1,200 @@
+{
+  "GRCE": {
+    "price": 3.33,
+    "mcap": 51528508,
+    "volume": 5627576,
+    "expirations": [
+      "2026-04-17",
+      "2026-05-15",
+      "2026-08-21",
+      "2026-11-20"
+    ],
+    "chains": {
+      "2026-04-17": {
+        "n_calls": 3,
+        "n_puts": 2,
+        "total_call_vol": 225,
+        "total_put_vol": 181,
+        "total_call_oi": 313,
+        "total_put_oi": 71
+      },
+      "2026-05-15": {
+        "n_calls": 3,
+        "n_puts": 3,
+        "total_call_vol": 1616,
+        "total_put_vol": 423,
+        "total_call_oi": 7021,
+        "total_put_oi": 580
+      },
+      "2026-08-21": {
+        "n_calls": 3,
+        "n_puts": 3,
+        "total_call_vol": 63,
+        "total_put_vol": 2,
+        "total_call_oi": 641,
+        "total_put_oi": 7
+      },
+      "2026-11-20": {
+        "n_calls": 3,
+        "n_puts": 0,
+        "total_call_vol": 24,
+        "total_put_vol": 0,
+        "total_call_oi": 623,
+        "total_put_oi": 0
+      }
+    }
+  },
+  "CABA": {
+    "price": 3.07,
+    "mcap": 341760608,
+    "volume": 1808904,
+    "expirations": [
+      "2026-04-17",
+      "2026-05-15",
+      "2026-08-21",
+      "2026-09-18",
+      "2026-11-20",
+      "2027-01-15"
+    ],
+    "chains": {
+      "2026-04-17": {
+        "n_calls": 7,
+        "n_puts": 3,
+        "total_call_vol": 48,
+        "total_put_vol": 12,
+        "total_call_oi": 4633,
+        "total_put_oi": 332
+      },
+      "2026-08-21": {
+        "n_calls": 10,
+        "n_puts": 3,
+        "total_call_vol": 87,
+        "total_put_vol": 11,
+        "total_call_oi": 18830,
+        "total_put_oi": 40
+      },
+      "2026-11-20": {
+        "n_calls": 4,
+        "n_puts": 2,
+        "total_call_vol": 31,
+        "total_put_vol": 5,
+        "total_call_oi": 43,
+        "total_put_oi": 7
+      }
+    }
+  },
+  "ALXO": {
+    "price": 1.83,
+    "mcap": 240843152,
+    "volume": 1159295,
+    "expirations": [
+      "2026-04-17",
+      "2026-05-15",
+      "2026-08-21",
+      "2026-11-20",
+      "2027-01-15"
+    ],
+    "chains": {
+      "2026-08-21": {
+        "n_calls": 4,
+        "n_puts": 3,
+        "total_call_vol": 5,
+        "total_put_vol": 2,
+        "total_call_oi": 6,
+        "total_put_oi": 0
+      },
+      "2026-11-20": {
+        "n_calls": 1,
+        "n_puts": 0,
+        "total_call_vol": 0,
+        "total_put_vol": 0,
+        "total_call_oi": 10,
+        "total_put_oi": 0
+      },
+      "2027-01-15": {
+        "n_calls": 7,
+        "n_puts": 6,
+        "total_call_vol": 57,
+        "total_put_vol": 36,
+        "total_call_oi": 989,
+        "total_put_oi": 84
+      }
+    }
+  },
+  "CRDF": {
+    "price": 1.56,
+    "mcap": 106649360,
+    "volume": 916551,
+    "expirations": [
+      "2026-04-17",
+      "2026-05-15",
+      "2026-08-21",
+      "2026-11-20",
+      "2027-01-15",
+      "2028-01-21"
+    ],
+    "chains": {
+      "2026-05-15": {
+        "n_calls": 7,
+        "n_puts": 4,
+        "total_call_vol": 313,
+        "total_put_vol": 25,
+        "total_call_oi": 15322,
+        "total_put_oi": 307
+      },
+      "2026-11-20": {
+        "n_calls": 1,
+        "n_puts": 0,
+        "total_call_vol": 0,
+        "total_put_vol": 0,
+        "total_call_oi": 61,
+        "total_put_oi": 0
+      },
+      "2028-01-21": {
+        "n_calls": 6,
+        "n_puts": 2,
+        "total_call_vol": 128,
+        "total_put_vol": 2,
+        "total_call_oi": 731,
+        "total_put_oi": 3
+      }
+    }
+  },
+  "WHWK": {
+    "price": 3.43,
+    "mcap": 161884224,
+    "volume": 240633,
+    "expirations": [
+      "2026-04-17",
+      "2026-05-15",
+      "2026-07-17",
+      "2026-10-16"
+    ],
+    "chains": {
+      "2026-04-17": {
+        "n_calls": 3,
+        "n_puts": 2,
+        "total_call_vol": 4,
+        "total_put_vol": 200,
+        "total_call_oi": 198,
+        "total_put_oi": 200
+      },
+      "2026-07-17": {
+        "n_calls": 3,
+        "n_puts": 1,
+        "total_call_vol": 7,
+        "total_put_vol": 0,
+        "total_call_oi": 3,
+        "total_put_oi": 3
+      },
+      "2026-10-16": {
+        "n_calls": 1,
+        "n_puts": 1,
+        "total_call_vol": 3,
+        "total_put_vol": 0,
+        "total_call_oi": 0,
+        "total_put_oi": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "run_config": {
+    "dry_run": true,
+    "limit": null,
+    "problem_tickers_excluded": [
+      "BAYRY",
+      "DERM",
+      "HOTH",
+      "INTE",
+      "RHHBY",
+      "TLX"
+    ],
+    "core_endpoints": [
+      "/hist/ivrank",
+      "/hist/summaries",
+      "/hist/dailies"
+    ],
+    "strikes_endpoint": "/hist/strikes",
+    "core_snapshots": [
+      "T-14",
+      "T-7",
+      "T-1"
+    ],
+    "strikes_snapshots": [
+      "T-14",
+      "T-1"
+    ],
+    "sleep_between_calls_s": 0.65
+  },
+  "universe": {
+    "total_events": 1649,
+    "per_event_calls_max": 11,
+    "max_new_calls": 18139
+  },
+  "totals": {
+    "calls_total": 18139,
+    "calls_new": 17685,
+    "calls_cached": 454,
+    "elapsed_s": 6.8,
+    "elapsed_min": 0.1,
+    "cache_files_after": 502
+  },
+  "coverage_by_endpoint_snapshot": {
+    "/hist/dailies|T-1": {
+      "ok": 40,
+      "empty": 0,
+      "error": 1609,
+      "cached": 46,
+      "pct_ok": 2.43,
+      "total": 1649
+    },
+    "/hist/dailies|T-14": {
+      "ok": 38,
+      "empty": 0,
+      "error": 1611,
+      "cached": 43,
+      "pct_ok": 2.3,
+      "total": 1649
+    },
+    "/hist/dailies|T-7": {
+      "ok": 40,
+      "empty": 0,
+      "error": 1609,
+      "cached": 45,
+      "pct_ok": 2.43,
+      "total": 1649
+    },
+    "/hist/ivrank|T-1": {
+      "ok": 39,
+      "empty": 0,
+      "error": 1610,
+      "cached": 46,
+      "pct_ok": 2.37,
+      "total": 1649
+    },
+    "/hist/ivrank|T-14": {
+      "ok": 37,
+      "empty": 0,
+      "error": 1612,
+      "cached": 43,
+      "pct_ok": 2.24,
+      "total": 1649
+    },
+    "/hist/ivrank|T-7": {
+      "ok": 39,
+      "empty": 0,
+      "error": 1610,
+      "cached": 45,
+      "pct_ok": 2.37,
+      "total": 1649
+    },
+    "/hist/strikes|T-1": {
+      "ok": 21,
+      "empty": 0,
+      "error": 1628,
+      "cached": 25,
+      "pct_ok": 1.27,
+      "total": 1649
+    },
+    "/hist/strikes|T-14": {
+      "ok": 20,
+      "empty": 0,
+      "error": 1629,
+      "cached": 27,
+      "pct_ok": 1.21,
+      "total": 1649
+    },
+    "/hist/summaries|T-1": {
+      "ok": 39,
+      "empty": 0,
+      "error": 1610,
+      "cached": 46,
+      "pct_ok": 2.37,
+      "total": 1649
+    },
+    "/hist/summaries|T-14": {
+      "ok": 37,
+      "empty": 0,
+      "error": 1612,
+      "cached": 43,
+      "pct_ok": 2.24,
+      "total": 1649
+    },
+    "/hist/summaries|T-7": {
+      "ok": 39,
+      "empty": 0,
+      "error": 1610,
+      "cached": 45,
+      "pct_ok": 2.37,
+      "total": 1649
+    }
+  },
+  "coverage_by_year": {
+    "2020": {
+      "n_events": 175,
+      "pct_ivrank_T-14": 2.29,
+      "pct_ivrank_T-7": 2.29,
+      "pct_ivrank_T-1": 2.29,
+      "pct_summaries_T-14": 2.29,
+      "pct_summaries_T-7": 2.29,
+      "pct_summaries_T-1": 2.29,
+      "pct_dailies_T-14": 2.86,
+      "pct_dailies_T-7": 2.86,
+      "pct_dailies_T-1": 2.86,
+      "pct_strikes_T-14": 0.57,
+      "pct_strikes_T-1": 1.71
+    },
+    "2021": {
+      "n_events": 249,
+      "pct_ivrank_T-14": 1.2,
+      "pct_ivrank_T-7": 1.2,
+      "pct_ivrank_T-1": 1.2,
+      "pct_summaries_T-14": 1.2,
+      "pct_summaries_T-7": 1.2,
+      "pct_summaries_T-1": 1.2,
+      "pct_dailies_T-14": 1.2,
+      "pct_dailies_T-7": 1.2,
+      "pct_dailies_T-1": 1.2,
+      "pct_strikes_T-14": 1.61,
+      "pct_strikes_T-1": 1.2
+    },
+    "2022": {
+      "n_events": 224,
+      "pct_ivrank_T-14": 3.12,
+      "pct_ivrank_T-7": 3.12,
+      "pct_ivrank_T-1": 3.12,
+      "pct_summaries_T-14": 3.12,
+      "pct_summaries_T-7": 3.12,
+      "pct_summaries_T-1": 3.12,
+      "pct_dailies_T-14": 3.12,
+      "pct_dailies_T-7": 3.12,
+      "pct_dailies_T-1": 3.12,
+      "pct_strikes_T-14": 0.45,
+      "pct_strikes_T-1": 0.45
+    },
+    "2023": {
+      "n_events": 352,
+      "pct_ivrank_T-14": 0.28,
+      "pct_ivrank_T-7": 0.28,
+      "pct_ivrank_T-1": 0.28,
+      "pct_summaries_T-14": 0.28,
+      "pct_summaries_T-7": 0.28,
+      "pct_summaries_T-1": 0.28,
+      "pct_dailies_T-14": 0.28,
+      "pct_dailies_T-7": 0.28,
+      "pct_dailies_T-1": 0.28,
+      "pct_strikes_T-14": 0.85,
+      "pct_strikes_T-1": 0.85
+    },
+    "2024": {
+      "n_events": 332,
+      "pct_ivrank_T-14": 3.61,
+      "pct_ivrank_T-7": 3.92,
+      "pct_ivrank_T-1": 3.61,
+      "pct_summaries_T-14": 3.61,
+      "pct_summaries_T-7": 3.92,
+      "pct_summaries_T-1": 3.61,
+      "pct_dailies_T-14": 3.61,
+      "pct_dailies_T-7": 3.92,
+      "pct_dailies_T-1": 3.61,
+      "pct_strikes_T-14": 1.51,
+      "pct_strikes_T-1": 1.51
+    },
+    "2025": {
+      "n_events": 304,
+      "pct_ivrank_T-14": 3.29,
+      "pct_ivrank_T-7": 3.62,
+      "pct_ivrank_T-1": 3.95,
+      "pct_summaries_T-14": 3.29,
+      "pct_summaries_T-7": 3.62,
+      "pct_summaries_T-1": 3.95,
+      "pct_dailies_T-14": 3.29,
+      "pct_dailies_T-7": 3.62,
+      "pct_dailies_T-1": 3.95,
+      "pct_strikes_T-14": 1.97,
+      "pct_strikes_T-1": 1.97
+    },
+    "2026": {
+      "n_events": 13,
+      "pct_ivrank_T-14": 0.0,
+      "pct_ivrank_T-7": 0.0,
+      "pct_ivrank_T-1": 0.0,
+      "pct_summaries_T-14": 0.0,
+      "pct_summaries_T-7": 0.0,
+      "pct_summaries_T-1": 0.0,
+      "pct_dailies_T-14": 0.0,
+      "pct_dailies_T-7": 0.0,
+      "pct_dailies_T-1": 0.0,
+      "pct_strikes_T-14": 0.0,
+      "pct_strikes_T-1": 0.0
+    }
+  },
+  "event_completeness_histogram": {
+    "0": 1588,
+    "1": 5,
+    "2": 13,
+    "3": 4,
+    "5": 2,
+    "6": 1,
+    "9": 33,
+    "11": 3
+  },
+  "error_count": 17750,
+  "errors_sample": [
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-19",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-19",
+      "endpoint": "/hist/summaries",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-19",
+      "endpoint": "/hist/dailies",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-19",
+      "endpoint": "/hist/strikes",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-30",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-30",
+      "endpoint": "/hist/summaries",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2019-12-30",
+      "endpoint": "/hist/dailies",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/summaries",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/dailies",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 0,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/strikes",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-01",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-01",
+      "endpoint": "/hist/summaries",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-01",
+      "endpoint": "/hist/dailies",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-01",
+      "endpoint": "/hist/strikes",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-10",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-10",
+      "endpoint": "/hist/summaries",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-10",
+      "endpoint": "/hist/dailies",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-20",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-20",
+      "endpoint": "/hist/summaries",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-20",
+      "endpoint": "/hist/dailies",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 1,
+      "ticker": "AMGN",
+      "trade_date": "2020-01-20",
+      "endpoint": "/hist/strikes",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/summaries",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/dailies",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/strikes",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-16",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-16",
+      "endpoint": "/hist/summaries",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-16",
+      "endpoint": "/hist/dailies",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/summaries",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/dailies",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 2,
+      "ticker": "LLY",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/strikes",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/summaries",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/dailies",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-07",
+      "endpoint": "/hist/strikes",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-16",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-16",
+      "endpoint": "/hist/summaries",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-16",
+      "endpoint": "/hist/dailies",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/summaries",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/dailies",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 3,
+      "ticker": "MRK",
+      "trade_date": "2020-01-24",
+      "endpoint": "/hist/strikes",
+      "snap": "T-1",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 4,
+      "ticker": "ESPR",
+      "trade_date": "2020-02-03",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 4,
+      "ticker": "ESPR",
+      "trade_date": "2020-02-03",
+      "endpoint": "/hist/summaries",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 4,
+      "ticker": "ESPR",
+      "trade_date": "2020-02-03",
+      "endpoint": "/hist/dailies",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 4,
+      "ticker": "ESPR",
+      "trade_date": "2020-02-03",
+      "endpoint": "/hist/strikes",
+      "snap": "T-14",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 4,
+      "ticker": "ESPR",
+      "trade_date": "2020-02-12",
+      "endpoint": "/hist/ivrank",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    },
+    {
+      "event_id": 4,
+      "ticker": "ESPR",
+      "trade_date": "2020-02-12",
+      "endpoint": "/hist/summaries",
+      "snap": "T-7",
+      "error": "DRY_RUN"
+    }
+  ],
+  "finished_at": "2026-04-21T01:18:10.282625Z"
+}

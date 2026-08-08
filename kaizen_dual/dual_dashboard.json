@@ -1,0 +1,704 @@
+{
+  "meta": {
+    "generated_at": "2026-03-02T04:42:49.413644",
+    "session_start": "2026-02-28T21:54:08.328801",
+    "version": "dual-spear-v1.0"
+  },
+  "summary": {
+    "dual_rounds": 651,
+    "odin_rounds": 639,
+    "gungnir_rounds": 12,
+    "allocation_ratio": 0.983,
+    "dual_ensemble_auc": 0.0
+  },
+  "odin": {
+    "rounds": 639,
+    "promotions": 9,
+    "best_auc": 0.88523,
+    "current_auc": 0.877372,
+    "promotion_rate": 0.0141
+  },
+  "gungnir": {
+    "rounds": 12,
+    "promotions": 1,
+    "best_auc": 0.99798,
+    "current_auc": 0.997396,
+    "promotion_rate": 0.0833
+  },
+  "odin_series": [
+    {
+      "round": 550,
+      "wf_auc": 0.862209,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:50:17.824372"
+    },
+    {
+      "round": 551,
+      "wf_auc": 0.862486,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:51:22.360188"
+    },
+    {
+      "round": 552,
+      "wf_auc": 0.862513,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:52:30.921370"
+    },
+    {
+      "round": 553,
+      "wf_auc": 0.863838,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:53:56.400339"
+    },
+    {
+      "round": 554,
+      "wf_auc": 0.872341,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:55:07.730359"
+    },
+    {
+      "round": 555,
+      "wf_auc": 0.86358,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:55:57.815171"
+    },
+    {
+      "round": 556,
+      "wf_auc": 0.864652,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:57:41.524027"
+    },
+    {
+      "round": 557,
+      "wf_auc": 0.868039,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:59:08.121163"
+    },
+    {
+      "round": 558,
+      "wf_auc": 0.870831,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:00:03.156748"
+    },
+    {
+      "round": 559,
+      "wf_auc": 0.860558,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:01:18.255288"
+    },
+    {
+      "round": 560,
+      "wf_auc": 0.871048,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:02:16.117617"
+    },
+    {
+      "round": 561,
+      "wf_auc": 0.85968,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:03:45.816210"
+    },
+    {
+      "round": 562,
+      "wf_auc": 0.860472,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:04:30.966104"
+    },
+    {
+      "round": 563,
+      "wf_auc": 0.870349,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:05:50.477851"
+    },
+    {
+      "round": 564,
+      "wf_auc": 0.854554,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:07:06.800673"
+    },
+    {
+      "round": 565,
+      "wf_auc": 0.865639,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:08:07.839703"
+    },
+    {
+      "round": 566,
+      "wf_auc": 0.859899,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:08:58.729948"
+    },
+    {
+      "round": 567,
+      "wf_auc": 0.865282,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:10:12.667418"
+    },
+    {
+      "round": 568,
+      "wf_auc": 0.863861,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:11:39.730999"
+    },
+    {
+      "round": 569,
+      "wf_auc": 0.863569,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:12:46.354124"
+    },
+    {
+      "round": 570,
+      "wf_auc": 0.865923,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:13:57.934191"
+    },
+    {
+      "round": 571,
+      "wf_auc": 0.871764,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:14:54.603695"
+    },
+    {
+      "round": 572,
+      "wf_auc": 0.860757,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:16:04.579880"
+    },
+    {
+      "round": 573,
+      "wf_auc": 0.867679,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:17:06.708741"
+    },
+    {
+      "round": 574,
+      "wf_auc": 0.860001,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:18:37.688790"
+    },
+    {
+      "round": 575,
+      "wf_auc": 0.8767,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:19:40.637195"
+    },
+    {
+      "round": 576,
+      "wf_auc": 0.867738,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:21:07.544624"
+    },
+    {
+      "round": 577,
+      "wf_auc": 0.876634,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:22:14.958131"
+    },
+    {
+      "round": 578,
+      "wf_auc": 0.866462,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:23:29.186044"
+    },
+    {
+      "round": 579,
+      "wf_auc": 0.867273,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:25:13.204895"
+    },
+    {
+      "round": 581,
+      "wf_auc": 0.862054,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:26:45.631319"
+    },
+    {
+      "round": 582,
+      "wf_auc": 0.870522,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:27:20.817628"
+    },
+    {
+      "round": 583,
+      "wf_auc": 0.866206,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:28:19.669843"
+    },
+    {
+      "round": 584,
+      "wf_auc": 0.863319,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:29:18.639632"
+    },
+    {
+      "round": 585,
+      "wf_auc": 0.865794,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:30:03.639498"
+    },
+    {
+      "round": 586,
+      "wf_auc": 0.866166,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:30:59.634218"
+    },
+    {
+      "round": 587,
+      "wf_auc": 0.859846,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:32:13.897309"
+    },
+    {
+      "round": 588,
+      "wf_auc": 0.865131,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:32:58.771982"
+    },
+    {
+      "round": 589,
+      "wf_auc": 0.865791,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:34:11.013806"
+    },
+    {
+      "round": 590,
+      "wf_auc": 0.865538,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:35:19.819013"
+    },
+    {
+      "round": 591,
+      "wf_auc": 0.874178,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:36:34.795169"
+    },
+    {
+      "round": 592,
+      "wf_auc": 0.86186,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:37:45.513460"
+    },
+    {
+      "round": 593,
+      "wf_auc": 0.861338,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:39:00.091212"
+    },
+    {
+      "round": 594,
+      "wf_auc": 0.861249,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:40:00.085770"
+    },
+    {
+      "round": 595,
+      "wf_auc": 0.862512,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:41:09.768158"
+    },
+    {
+      "round": 596,
+      "wf_auc": 0.872145,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:41:58.398233"
+    },
+    {
+      "round": 597,
+      "wf_auc": 0.862353,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:43:09.010890"
+    },
+    {
+      "round": 598,
+      "wf_auc": 0.869198,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:43:55.994319"
+    },
+    {
+      "round": 599,
+      "wf_auc": 0.864017,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:45:09.482624"
+    },
+    {
+      "round": 600,
+      "wf_auc": 0.864072,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:46:39.419839"
+    },
+    {
+      "round": 601,
+      "wf_auc": 0.865729,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:48:21.670292"
+    },
+    {
+      "round": 602,
+      "wf_auc": 0.863627,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:49:22.983067"
+    },
+    {
+      "round": 603,
+      "wf_auc": 0.865167,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:50:26.342219"
+    },
+    {
+      "round": 604,
+      "wf_auc": 0.870114,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:51:46.200571"
+    },
+    {
+      "round": 605,
+      "wf_auc": 0.862101,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:52:54.776732"
+    },
+    {
+      "round": 606,
+      "wf_auc": 0.863148,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:54:24.326285"
+    },
+    {
+      "round": 607,
+      "wf_auc": 0.875093,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:55:18.639502"
+    },
+    {
+      "round": 608,
+      "wf_auc": 0.866646,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:56:23.770034"
+    },
+    {
+      "round": 609,
+      "wf_auc": 0.87058,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:57:22.100809"
+    },
+    {
+      "round": 610,
+      "wf_auc": 0.8646,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:58:13.029578"
+    },
+    {
+      "round": 611,
+      "wf_auc": 0.875753,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:59:06.247990"
+    },
+    {
+      "round": 612,
+      "wf_auc": 0.869517,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:00:18.608057"
+    },
+    {
+      "round": 613,
+      "wf_auc": 0.87058,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:01:28.518049"
+    },
+    {
+      "round": 614,
+      "wf_auc": 0.862574,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:02:35.623674"
+    },
+    {
+      "round": 615,
+      "wf_auc": 0.860744,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:04:01.029263"
+    },
+    {
+      "round": 616,
+      "wf_auc": 0.868626,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:05:04.626475"
+    },
+    {
+      "round": 617,
+      "wf_auc": 0.873735,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:06:10.889122"
+    },
+    {
+      "round": 618,
+      "wf_auc": 0.866224,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:07:15.539409"
+    },
+    {
+      "round": 619,
+      "wf_auc": 0.866364,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:08:48.052836"
+    },
+    {
+      "round": 620,
+      "wf_auc": 0.868831,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:10:05.920258"
+    },
+    {
+      "round": 621,
+      "wf_auc": 0.863584,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:11:17.720446"
+    },
+    {
+      "round": 622,
+      "wf_auc": 0.86386,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:12:21.741208"
+    },
+    {
+      "round": 623,
+      "wf_auc": 0.864451,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:13:18.954810"
+    },
+    {
+      "round": 624,
+      "wf_auc": 0.862087,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:14:07.346521"
+    },
+    {
+      "round": 625,
+      "wf_auc": 0.865901,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:14:52.270643"
+    },
+    {
+      "round": 626,
+      "wf_auc": 0.868132,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:16:08.469170"
+    },
+    {
+      "round": 627,
+      "wf_auc": 0.86397,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:16:51.654620"
+    },
+    {
+      "round": 628,
+      "wf_auc": 0.865326,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:17:37.014823"
+    },
+    {
+      "round": 629,
+      "wf_auc": 0.861058,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:18:54.951587"
+    },
+    {
+      "round": 630,
+      "wf_auc": 0.867451,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:19:55.280326"
+    },
+    {
+      "round": 631,
+      "wf_auc": 0.865722,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:21:08.206925"
+    },
+    {
+      "round": 632,
+      "wf_auc": 0.865717,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:22:42.581904"
+    },
+    {
+      "round": 633,
+      "wf_auc": 0.869058,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:23:42.547579"
+    },
+    {
+      "round": 634,
+      "wf_auc": 0.869522,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:24:47.574363"
+    },
+    {
+      "round": 635,
+      "wf_auc": 0.86599,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:25:57.509719"
+    },
+    {
+      "round": 636,
+      "wf_auc": 0.863167,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:27:13.952771"
+    },
+    {
+      "round": 638,
+      "wf_auc": 0.868686,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:28:23.748851"
+    },
+    {
+      "round": 639,
+      "wf_auc": 0.860821,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:29:00.388536"
+    },
+    {
+      "round": 640,
+      "wf_auc": 0.868649,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:30:00.638964"
+    },
+    {
+      "round": 641,
+      "wf_auc": 0.862442,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:31:02.348125"
+    },
+    {
+      "round": 642,
+      "wf_auc": 0.868457,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:32:19.576556"
+    },
+    {
+      "round": 643,
+      "wf_auc": 0.86652,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:33:48.632456"
+    },
+    {
+      "round": 644,
+      "wf_auc": 0.863207,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:35:00.252778"
+    },
+    {
+      "round": 645,
+      "wf_auc": 0.859168,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:35:51.524200"
+    },
+    {
+      "round": 646,
+      "wf_auc": 0.859023,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:36:48.791247"
+    },
+    {
+      "round": 647,
+      "wf_auc": 0.870553,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:38:09.216031"
+    },
+    {
+      "round": 648,
+      "wf_auc": 0.872011,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:39:34.201903"
+    },
+    {
+      "round": 649,
+      "wf_auc": 0.867598,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:40:37.013635"
+    },
+    {
+      "round": 650,
+      "wf_auc": 0.863085,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:41:59.106461"
+    },
+    {
+      "round": 651,
+      "wf_auc": 0.877372,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:42:49.413644"
+    }
+  ],
+  "gungnir_series": [
+    {
+      "round": 2,
+      "wf_auc": 0.997451,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:54:30.549236"
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.997422,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:54:52.882751"
+    },
+    {
+      "round": 5,
+      "wf_auc": 0.997714,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:55:25.295838"
+    },
+    {
+      "round": 7,
+      "wf_auc": 0.997606,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:57:56.675583"
+    },
+    {
+      "round": 9,
+      "wf_auc": 0.99798,
+      "promoted": true,
+      "timestamp": "2026-02-28T22:01:25.795512"
+    },
+    {
+      "round": 291,
+      "wf_auc": 0.997498,
+      "promoted": false,
+      "timestamp": "2026-03-01T02:28:28.019967"
+    },
+    {
+      "round": 348,
+      "wf_auc": 0.997964,
+      "promoted": false,
+      "timestamp": "2026-03-01T15:47:09.845361"
+    },
+    {
+      "round": 406,
+      "wf_auc": 0.997337,
+      "promoted": false,
+      "timestamp": "2026-03-01T16:55:24.483983"
+    },
+    {
+      "round": 464,
+      "wf_auc": 0.997207,
+      "promoted": false,
+      "timestamp": "2026-03-02T01:13:33.057943"
+    },
+    {
+      "round": 522,
+      "wf_auc": 0.997472,
+      "promoted": false,
+      "timestamp": "2026-03-02T02:19:50.891625"
+    },
+    {
+      "round": 580,
+      "wf_auc": 0.997885,
+      "promoted": false,
+      "timestamp": "2026-03-02T03:25:32.350036"
+    },
+    {
+      "round": 637,
+      "wf_auc": 0.997396,
+      "promoted": false,
+      "timestamp": "2026-03-02T04:27:26.619504"
+    }
+  ]
+}

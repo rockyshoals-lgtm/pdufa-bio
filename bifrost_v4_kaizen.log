@@ -1,0 +1,4 @@
+  File "/sessions/loving-nifty-dirac/mnt/Python/9realms/bifrost_v4_kaizen.py", line 768
+    print(f"  {'Trades':<30s} {'907':<25s} {f\"{best_result['n_trades']:<25d}\"}")
+                                                                                 ^
+SyntaxError: f-string expression part cannot include a backslash

@@ -1,0 +1,91 @@
+[WARNING] Failed to load v37 deploy: 'scaler_means'\n
+
++-----------------------------------------------------------------------------+
+|                                                                             |
+|                                                                             |
+|                        \u2584\u2580\u2580 \u2584\u2580\u2588 \u2588\u2580\u2580 \u2580\u2588\u2580 \u2588\u2580\u2584\u2580\u2588 \u2588\u2580\u2580 \u2588\u2580\u2588                        |
+|                        \u2588\u2580  \u2588\u2580\u2588 \u2584\u2584\u2588  \u2588  \u2588 \u2580 \u2588 \u2588\u2584\u2584 \u2588\u2580\u2580                        |
+|                                                                             |
+|                                                                             |
+|                                FastMCP 3.2.4                                |
+|                            https://gofastmcp.com                            |
+|                                                                             |
+|                 \U0001f5a5  Server:      9realms, 3.2.4                              |
+|                 \U0001f680 Deploy free: https://horizon.prefect.io                  |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+
+[04/23/26 15:15:49] INFO     Starting MCP server '9realms'     transport.py:209
+                             with transport 'stdio'                            
+Received exception from stream: 1 validation error for JSONRPCMessage
+  Invalid JSON: EOF while parsing a value at line 2 column 0 [type=json_invalid, input_value='\n', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+Traceback (most recent call last):
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\streams\memory.py", line 117, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\streams\memory.py", line 112, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2325, in wrapper
+    return await func(*args)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastmcp\server\mixins\transport.py", line 64, in run_async
+    await self.run_stdio_async(
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastmcp\server\mixins\transport.py", line 213, in run_stdio_async
+    await self._mcp_server.run(
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastmcp\server\low_level.py", line 236, in run
+    async with AsyncExitStack() as stack:
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 745, in __aexit__
+    raise exc_details[1]
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 728, in __aexit__
+    cb_suppress = await cb(*exc_details)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\mcp\shared\session.py", line 238, in __aexit__
+    return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 787, in __aexit__
+    raise exc_val
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastmcp\server\low_level.py", line 248, in run
+    async with anyio.create_task_group() as tg:
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 787, in __aexit__
+    raise exc_val
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastmcp\server\low_level.py", line 252, in run
+    async for message in session.incoming_messages:
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\abc\_streams.py", line 41, in __anext__
+    return await self.receive()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\streams\memory.py", line 125, in receive
+    await receive_event.wait()
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dcmoo\Documents\Python\9realms\mcp_9realms_vnext.py", line 4155, in <module>
+    mcp.run()
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastmcp\server\mixins\transport.py", line 91, in run
+    anyio.run(
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_core\_eventloop.py", line 77, in run
+    return async_backend.run(func, args, {}, backend_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2342, in run
+    return runner.run(wrapper())
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dcmoo\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+^C

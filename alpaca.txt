@@ -1,0 +1,29 @@
+68a3dbb4-7444-4541-a4d0-88c3fb272774
+
+91a7e12e-0e3f-41bd-a0d3-52d1b058749c
+
+Alpaca Secret Keys
+5tM3CT5xU5xuGp5Dv9PRf7KdaZatAzLiBQz6gTr6G2WS
+
+
+python ODIN_GOD_MODE_V7_WITH_SOCIAL.py \
+    --data ODIN_PDUFA_1925_ENRICHED_WITH_SOCIAL.csv \
+    --iters 500000000 \
+    --batch 5000000
+
+
+pip install pandas requests tqdm
+
+python odin_v812_gpu_optimizer.py --dataset odin_processed_v8.npy --configs 1000000000 --batch-size 400000 --output odin_v812_optimized.json
+
+# Full enrichment (FMP + LunarCrush + Finbrain)
+python enrich_stock_hype_LOCAL.py stock_hype_ENRICHED_FINAL.csv output.csv
+
+# Just add social data (skip price since it's done)
+python enrich_stock_hype_LOCAL.py stock_hype_ENRICHED_FINAL.csv output.csv --no-news
+
+# Process a batch (e.g., rows 0-200)
+python enrich_stock_hype_LOCAL.py stock_hype_ENRICHED_FINAL.csv output.csv --start 0 --end 200
+
+
+python ODIN_GOD_MODE_V7_WITH_SOCIAL.py --data ODIN_PDUFA_1925_ENRICHED_WITH_SOCIAL.csv --iters 1000000000 --batch 5000000 --precision_min 0.88 --recall_min 0.85

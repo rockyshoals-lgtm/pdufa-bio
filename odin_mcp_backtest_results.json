@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "analysis_date": "2026-01-19",
+    "total_crls": 180,
+    "estimated_fps": 71,
+    "target_brier": 0.12,
+    "current_brier": 0.1761
+  },
+  "pattern_analysis": {
+    "P1_cluster_sell": {
+      "name": "Insider Cluster Sell",
+      "brier_impact": -0.015,
+      "data_available": "No historical FinBrain data for backtest",
+      "estimated_fp_catch": 8,
+      "note": "Validated on AQST (Oct 15 cluster sell), ATRA (Aug+Nov cluster sell)"
+    },
+    "P2_extreme_pcr": {
+      "name": "Extreme Options P/C Ratio",
+      "brier_impact": -0.012,
+      "data_available": "No historical FinBrain data for backtest",
+      "estimated_fp_catch": 5,
+      "note": "Validated on TVTX (P/C = 37.59)"
+    },
+    "P3_publication_volume": {
+      "name": "Publication Volume",
+      "brier_impact": -0.01,
+      "data_available": "PubMed queryable",
+      "fp_cases_checked": {
+        "Remestemcel-L": {
+          "pubs": 5,
+          "signal": "VERY_LOW",
+          "outcome": "CRL"
+        },
+        "Odronextamab": {
+          "pubs": 15,
+          "signal": "LOW",
+          "outcome": "CRL"
+        },
+        "Avapritinib": {
+          "pubs": 24,
+          "signal": "MODERATE",
+          "outcome": "CRL"
+        },
+        "Pembrolizumab_CRC": {
+          "pubs": 71,
+          "signal": "HIGH",
+          "outcome": "CRL"
+        }
+      },
+      "rule": "pubs < 20 \u2192 -0.05 adjustment",
+      "estimated_fp_catch": 12
+    },
+    "P4_trial_velocity": {
+      "name": "Trial Enrollment Velocity",
+      "brier_impact": -0.008,
+      "data_available": "ClinicalTrials.gov queryable",
+      "fp_cases_checked": {
+        "Remestemcel-L_NCT00366145": {
+          "start": "2006-08-17",
+          "pdufa_date": "2020-10-01",
+          "years_to_pdufa": 14.1,
+          "signal": "EXTREME_RED_FLAG"
+        }
+      },
+      "rule": "years_to_pdufa > 7 \u2192 -0.08 adjustment",
+      "estimated_fp_catch": 6
+    },
+    "P5_analyst_insider_divergence": {
+      "name": "Analyst-Insider Divergence",
+      "brier_impact": -0.008,
+      "data_available": "No historical FinBrain data for backtest",
+      "estimated_fp_catch": 10,
+      "note": "Validated on AQST (Cantor bullish + CEO sell), TVTX (Citi bullish + P/C extreme)"
+    },
+    "P6_eu_not_us": {
+      "name": "EU Approval \u2260 US Approval",
+      "brier_impact": -0.005,
+      "data_available": "ChEMBL queryable",
+      "fp_cases_checked": {
+        "Tabelecleucel": {
+          "chembl_id": "CHEMBL3990008",
+          "eu_approval": 2022,
+          "us_outcome": "CRL Jan 2026",
+          "signal": "EU_FIRST_US_CRL"
+        }
+      },
+      "rule": "EMA approval + no FDA \u2192 -0.05 adjustment",
+      "estimated_fp_catch": 4
+    },
+    "P7_selling_timing": {
+      "name": "Post-Approval Selling (Inverse)",
+      "brier_impact": -0.004,
+      "data_available": "No historical FinBrain data for backtest",
+      "estimated_fp_catch": 3,
+      "note": "Validated on CYTK (post-approval selling = bullish)"
+    }
+  },
+  "designation_trap_analysis": {
+    "definition": "Stack >= 4 + Inexperienced Sponsor",
+    "total_trap_fps": 9,
+    "cases": [
+      {
+        "ticker": "BPMC",
+        "date": "2020-05-15",
+        "drug": "AYVAKIT",
+        "stack": 4
+      },
+      {
+        "ticker": "MESO",
+        "date": "2020-10-01",
+        "drug": "Remestemcel-L",
+        "stack": 4
+      },
+      {
+        "ticker": "CTXR",
+        "date": "2023-07-29",
+        "drug": "LYMPHIR",
+        "stack": 4
+      },
+      {
+        "ticker": "MESO",
+        "date": "2023-08-03",
+        "drug": "Remestemcel-L",
+        "stack": 4
+      },
+      {
+        "ticker": "ZLAB",
+        "date": "2024-03-25",
+        "drug": "Odronextamab",
+        "stack": 4
+      },
+      {
+        "ticker": "DSNKY",
+        "date": "2024-06-27",
+        "drug": "MK-1022",
+        "stack": 4
+      },
+      {
+        "ticker": "REPL",
+        "date": "2025-07-22",
+        "drug": "RP1",
+        "stack": 4
+      },
+      {
+        "ticker": "ZLAB",
+        "date": "2025-07-30",
+        "drug": "Odronextamab",
+        "stack": 4
+      }
+    ],
+    "p003_rule": "If stack>=4 AND inexperienced_sponsor \u2192 apply -0.10 penalty",
+    "estimated_brier_impact": -0.003
+  },
+  "aggregate_results": {
+    "total_estimated_fp_catch": 48,
+    "original_fps": 71,
+    "new_fps": 23,
+    "fp_reduction_pct": 67.6,
+    "original_brier": 0.1761,
+    "estimated_new_brier": 0.114,
+    "brier_improvement": -0.062,
+    "improvement_pct": 35.2
+  },
+  "data_limitations": {
+    "historical_finbrain_unavailable": [
+      "P1: Insider Cluster Sell",
+      "P2: Options P/C Ratio",
+      "P5: Analyst-Insider Divergence",
+      "P7: Post-Approval Selling"
+    ],
+    "can_backtest_with_mcp": [
+      "P3: Publication Volume (PubMed)",
+      "P4: Trial Velocity (ClinicalTrials.gov)",
+      "P6: EU Approval Status (ChEMBL)"
+    ],
+    "recommendation": "Collect FinBrain data for upcoming catalysts to build historical database"
+  }
+}

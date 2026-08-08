@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PDUFA.BIO//ODIN//EN
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260220
+DTEND;VALUE=DATE:20260220
+SUMMARY:PDUFA: VNDA — Bysanti (milsaperidone)
+DESCRIPTION:PDUFA for Bysanti (milsaperidone) (Vanda Pharmaceuticals)\nIndication: Schizophrenia / Bipolar-I\nODIN Score: 39.6% (TIER 4)\nTA: CNS\n\nhttps://pdufa.bio
+URL:https://pdufa.bio
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,186 @@
+{
+  "version": "2.0.0",
+  "generated": "2026-04-20T06:04:10.894884Z",
+  "target": "T-60_T-1 returns, winsorized to [-50%, +100%]",
+  "winsorization": {
+    "lo": -0.5,
+    "hi": 1.0
+  },
+  "split": {
+    "train_n": 1086,
+    "val_n": 360,
+    "test_n": 343,
+    "train_cutoff": "<2024-01-01",
+    "val": "2024",
+    "test": ">=2025-01-01"
+  },
+  "features": [
+    "ppm_flag",
+    "ch_scorable",
+    "ta_very_high_risk",
+    "naive_sponsor",
+    "experienced_sponsor",
+    "accelerated_approval",
+    "ch_tc_kinase"
+  ],
+  "feature_provenance": {
+    "from_v1": [
+      "ppm_flag",
+      "ta_very_high_risk",
+      "naive_sponsor",
+      "experienced_sponsor",
+      "accelerated_approval"
+    ],
+    "chembl": [
+      "ch_scorable",
+      "ch_tc_kinase"
+    ],
+    "large_t4": [],
+    "desig_stacking": []
+  },
+  "mu_AP": {
+    "alpha": 10.0,
+    "intercept": 0.02916969478955338,
+    "coefs": [
+      0.020721792735443095,
+      -0.013116307011172775,
+      -0.013695728681756256,
+      0.019621196973647514,
+      0.009691446155915932,
+      -0.004238936243332398,
+      0.01912470087887396
+    ],
+    "scaler_mean": [
+      0.004054054054054054,
+      0.4189189189189189,
+      0.22837837837837838,
+      0.41081081081081083,
+      0.5351351351351351,
+      0.16216216216216217,
+      0.04054054054054054
+    ],
+    "scaler_scale": [
+      0.06354225916491216,
+      0.4933820611764509,
+      0.4197876780798129,
+      0.4919809839127676,
+      0.49876399456961185,
+      0.36859950532394203,
+      0.19722323674765435
+    ],
+    "val_MAE": 0.16979192350572436,
+    "val_R2": 0.04582805723908567,
+    "test_MAE": 0.2188404739167349,
+    "test_R2": -0.08537095232624226,
+    "n_train": 740
+  },
+  "mu_CR": {
+    "alpha": 500.0,
+    "intercept": -0.02282407538927345,
+    "coefs": [
+      0.007434189984140389,
+      -0.0019150857362301053,
+      0.005579016746001295,
+      -0.006044371330977666,
+      0.005488922125051042,
+      -0.002570261264906518,
+      0.00446350397701507
+    ],
+    "scaler_mean": [
+      0.008670520231213872,
+      0.5346820809248555,
+      0.046242774566473986,
+      0.8757225433526011,
+      0.10404624277456648,
+      0.005780346820809248,
+      0.02601156069364162
+    ],
+    "scaler_scale": [
+      0.09271106897309504,
+      0.4987957029312921,
+      0.2100104291859532,
+      0.32989781814472907,
+      0.305320523612584,
+      0.07580853785320231,
+      0.15916959321403892
+    ],
+    "val_MAE": 0.22240799185538365,
+    "val_R2": 0.004946713073322062,
+    "test_MAE": 0.2173855037665161,
+    "test_R2": -0.032378320621611945,
+    "n_train": 346
+  },
+  "gap_validation": {
+    "actual_ap_mean_test": 0.07630078782925626,
+    "actual_cr_mean_test": 0.11874980679325227,
+    "actual_gap_test": -0.04244901896399601,
+    "pred_gap_mean_test": 0.0608168646683362,
+    "pred_gap_ci95": [
+      0.054819541624471564,
+      0.06691852579369485
+    ],
+    "seed_stability_positive_pct": 100.0,
+    "seed_mean": 0.060682303332687634,
+    "seed_std": 0.016177537979371284
+  },
+  "quintile_thresholds": {
+    "Q1": 0.025653937306074074,
+    "Q2": 0.06209967135527017,
+    "Q3": 0.08484473526700125,
+    "Q4": 0.3769508147311788
+  },
+  "quintile_records": [
+    {
+      "q": "Q1",
+      "n": 76,
+      "pred_gap_mean": -0.001492132344865912,
+      "actual_ap_mean": 0.02627918903389749,
+      "actual_cr_mean": 0.10164652865040341,
+      "actual_gap": -0.07536733961650592
+    },
+    {
+      "q": "Q2",
+      "n": 143,
+      "pred_gap_mean": 0.05276287612239467,
+      "actual_ap_mean": 0.12204832227283627,
+      "actual_cr_mean": 0.1384055336408894,
+      "actual_gap": -0.016357211368053126
+    },
+    {
+      "q": "Q3",
+      "n": 95,
+      "pred_gap_mean": 0.08447060852864664,
+      "actual_ap_mean": 0.08832043837133437,
+      "actual_cr_mean": 0.149026383310602,
+      "actual_gap": -0.060705944939267634
+    },
+    {
+      "q": "Q4",
+      "n": 29,
+      "pred_gap_mean": 0.18633750150776748,
+      "actual_ap_mean": 0.024969779139213864,
+      "actual_cr_mean": -0.1376364860588052,
+      "actual_gap": 0.16260626519801907
+    }
+  ],
+  "v1_comparison": {
+    "v1_pred_gap_mean": 0.03620725760357731,
+    "v1_pred_gap_ci95": [
+      0.029875382001194106,
+      0.042732240247764106
+    ],
+    "v1_seed_stability_pct": 95.0,
+    "v1_feature_count": 50,
+    "v2_vs_v1_delta_gap_pp": 2.4609607064758885,
+    "v2_vs_v1_delta_ci_width_pp": -0.0757874077346711,
+    "v2_vs_v1_feature_count_delta": -43
+  },
+  "decomposition_reference": "PDUFA Runup Decomposition v2.0 \u2014 Large x T4 segment +6.42pp",
+  "notes": [
+    "v2 adds ChEMBL drug-biology + Large\u00d7T4 interaction + designation stacking features",
+    "Honest 3-way split: train <=2023 / val 2024 / test >=2025",
+    "Val-only greedy forward selection, gate Delta_val_R2 >= 0.002",
+    "Alpha sweep per head, independent convergence",
+    "GATING FILTER ONLY \u2014 use quintile rank, not magnitude"
+  ]
+}

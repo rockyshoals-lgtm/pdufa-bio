@@ -1,0 +1,565 @@
+#!/usr/bin/env python3
+"""
+Phase-readout miner — finds EVERY upcoming clinical readout, not just the ones we asked for.
+
+    python phase_readout_miner.py                          # rest of 2026
+    python phase_readout_miner.py --from 2026-07-01 --to 2027-06-30
+    python phase_readout_miner.py --phases PHASE2,PHASE3   # default: PHASE1..PHASE3
+    python phase_readout_miner.py --listed-only            # drop trials we can't map to a ticker
+
+WHY THIS EXISTS
+The old path (catalyst_crawler.ctgov_readouts) had three compounding limits that made it
+structurally blind:
+  1. SPONSOR-DRIVEN   - it queried CT.gov by sponsor name and needed a hand-maintained list.
+                        No list -> zero readouts. A missing name -> a silently missing company.
+  2. HARD CAP OF 30   - pageSize=max_studies=30 PER SPONSOR. Big pharma runs hundreds of trials.
+  3. NO PAGINATION    - nextPageToken was never read, so 30 was a ceiling, not a page size.
+
+This queries the whole universe by PRIMARY COMPLETION DATE instead, so a company we have never
+heard of still shows up. Sponsor-independent, fully paginated, no caps.
+
+HONESTY ABOUT THE DATE
+CT.gov primary completion date is NOT the readout date. Topline typically lands weeks to months
+AFTER primary completion. We therefore mark CT.gov-derived rows date_basis='ctgov_pcd' with
+MONTH precision and a lower confidence, and we prefer a company's OWN stated guidance
+("topline expected in 2H 2026") when we can find it. We never present a proxy as a promise.
+"""
+import argparse, json, os, re, sys, time, datetime as dt
+import urllib.request as ur, urllib.parse as up
+import pandas as pd
+
+UA = {'User-Agent': 'pdufa.bio catalyst research contact@pdufa.bio'}
+CTGOV = 'https://clinicaltrials.gov/api/v2/studies'
+TODAY = dt.date.today()
+
+# ---------------------------------------------------------------- sponsor -> ticker
+SUFFIX = re.compile(
+    r'\b(inc|inc\.|incorporated|corp|corp\.|corporation|co|co\.|company|ltd|ltd\.|limited|llc|l\.l\.c\.|'
+    r'plc|p\.l\.c\.|sa|s\.a\.|ag|nv|n\.v\.|bv|ab|as|a/s|oyj|spa|s\.p\.a\.|gmbh|kk|k\.k\.|'
+    r'pharmaceuticals?|pharma|therapeutics?|biosciences?|bioscience|biopharmaceuticals?|biopharma|'
+    r'biotechnology|biotech|laboratories|labs?|holdings?|group|sciences?|medicines?|oncology|'
+    r'technologies|international|usa|us|america|the)\b', re.I)
+
+def norm(name):
+    s = (name or '').lower()
+    s = re.sub(r'[^a-z0-9 ]', ' ', s)
+    s = SUFFIX.sub(' ', s)
+    return re.sub(r'\s+', ' ', s).strip()
+
+# ---------------------------------------------------------------- subsidiary / ADR map
+# A pure name-match against SEC's company list misses two whole classes of real readouts:
+#   SUBSIDIARIES  - "Genentech, Inc." files trials; the listed entity is Roche.
+#                   "Janssen Research & Development, LLC" -> Johnson & Johnson.
+#   ADRs          - "GlaxoSmithKline" and "Hoffmann-La Roche" are US-listed as GSK / RHHBY,
+#                   but SEC's title index does not resolve those names.
+# Between them these were silently dropping ~100 trials from the biggest sponsors on the board.
+# Keys are normalised (lowercase, legal suffixes stripped) — see norm().
+PARENT = {
+    'glaxosmithkline':'GSK','glaxo smithkline':'GSK','viiv healthcare':'GSK',
+    'hoffmann la roche':'RHHBY','roche':'RHHBY','genentech':'RHHBY','chugai':'RHHBY',
+    'janssen research development':'JNJ','janssen':'JNJ','janssen biotech':'JNJ',
+    'johnson johnson':'JNJ','johnson and johnson':'JNJ',
+    'merck sharp dohme':'MRK','msd':'MRK','merck':'MRK',
+    'astrazeneca':'AZN','medimmune':'AZN','alexion':'AZN',
+    'sanofi':'SNY','genzyme':'SNY','sanofi aventis':'SNY',
+    'novartis':'NVS','sandoz':'NVS',
+    'bristol myers squibb':'BMY','celgene':'BMY','juno':'BMY',
+    'abbvie':'ABBV','allergan':'ABBV','pharmacyclics':'ABBV',
+    'eli lilly and':'LLY','eli lilly':'LLY','lilly':'LLY','loxo':'LLY',
+    'pfizer':'PFE','wyeth':'PFE','seagen':'PFE','array':'PFE',
+    'amgen':'AMGN','horizon':'AMGN',
+    'gilead':'GILD','kite':'GILD',
+    'bayer':'BAYRY','boehringer ingelheim':'',           # BI is private -> explicitly no ticker
+    'takeda':'TAK','novo nordisk':'NVO','ucb':'UCBJY','ucb biopharma':'UCBJY',
+    'daiichi sankyo':'DSNKY','astellas':'ALPMY','eisai':'ESALY','otsuka':'OTSKY',
+    'merck kgaa':'MKKGY','emd serono':'MKKGY','csl':'CSLLY','csl behring':'CSLLY',
+    'ipsen':'IPSEY','grifols':'GRFS','teva':'TEVA','viatris':'VTRS','organon':'OGN',
+    'regeneron':'REGN','vertex':'VRTX','biogen':'BIIB','biontech':'BNTX','moderna':'MRNA',
+    'incyte':'INCY','alnylam':'ALNY','ionis':'IONS','zai lab':'ZLAB','hutchmed':'HCM',
+    'genmab':'GMAB','argenx':'ARGX','ascendis':'ASND','alkermes':'ALKS','jazz':'JAZZ',
+    'neurocrine':'NBIX','sarepta':'SRPT','ultragenyx':'RARE','biomarin':'BMRN',
+    'legend':'LEGN','beigene':'ONC','servier':'','bavarian nordic':'',
+}
+
+
+def sec_ticker_index():
+    j = json.loads(ur.urlopen(ur.Request('https://www.sec.gov/files/company_tickers.json',
+                                         headers=UA), timeout=30).read())
+    idx = {}
+    for v in j.values():
+        n = norm(v['title'])
+        if n and n not in idx:
+            idx[n] = v['ticker'].upper()
+    return idx
+
+def resolve_ticker(sponsor, idx):
+    n = norm(sponsor)
+    if not n: return ''
+    # 1) curated parent/ADR map first — it is authoritative and beats a fuzzy hit
+    if n in PARENT: return PARENT[n]
+    for k, v in PARENT.items():
+        if n.startswith(k + ' ') or n == k:
+            return v
+    # 2) exact SEC title match
+    if n in idx: return idx[n]
+    # a sponsor is often a subsidiary: "Genentech, Inc." under "Roche". Try prefix containment,
+    # longest match first so "bristol myers squibb" beats "bristol".
+    cands = [(k, v) for k, v in idx.items() if k and (n.startswith(k + ' ') or k.startswith(n + ' '))]
+    if cands:
+        return sorted(cands, key=lambda kv: -len(kv[0]))[0][1]
+    return ''
+
+# ---------------------------------------------------------------- CT.gov (paginated, no caps)
+def ctgov_all(d_from, d_to, phases, statuses, sponsor_class, page_cb=None):
+    tok, out, pages = None, [], 0
+    while True:
+        p = {
+            'filter.advanced': f'AREA[PrimaryCompletionDate]RANGE[{d_from},{d_to}]'
+                               + (f' AND AREA[LeadSponsorClass]{sponsor_class}' if sponsor_class else ''),
+            'filter.overallStatus': statuses,
+            'query.term': 'AREA[Phase](' + ' OR '.join(phases) + ')',
+            'fields': 'NCTId,BriefTitle,OfficialTitle,Phase,OverallStatus,PrimaryCompletionDate,'
+                      'LeadSponsorName,Condition,EnrollmentCount,InterventionName,StudyType',
+            'pageSize': 1000,
+        }
+        # CT.gov RETURNS `nextPageToken` but the REQUEST parameter is `pageToken`.
+        # Sending it back under the name it arrived as gets you: "`nextPageToken` is unknown
+        # parameter" -> HTTP 400 on page 2, i.e. a crawler that silently stops at 1,000 rows.
+        if tok: p['pageToken'] = tok
+        else:   p['countTotal'] = 'true'
+        for attempt in range(4):
+            try:
+                r = json.loads(ur.urlopen(ur.Request(CTGOV + '?' + up.urlencode(p), headers=UA), timeout=60).read())
+                break
+            except Exception as e:
+                if attempt == 3: raise
+                time.sleep(2 + attempt * 2)
+        studies = r.get('studies', [])
+        out += studies
+        pages += 1
+        if page_cb: page_cb(pages, len(out), r.get('totalCount'))
+        tok = r.get('nextPageToken')
+        if not tok or not studies:
+            break
+        time.sleep(0.25)
+    return out
+
+def parse_study(s):
+    ps = s.get('protocolSection', {})
+    ident = ps.get('identificationModule', {})
+    stat = ps.get('statusModule', {})
+    des = ps.get('designModule', {})
+    spon = ps.get('sponsorCollaboratorsModule', {}).get('leadSponsor', {})
+    arms = ps.get('armsInterventionsModule', {})
+    pcd_s = stat.get('primaryCompletionDateStruct', {}) or {}
+    pcd = pcd_s.get('date')
+    if not pcd: return None
+    prec = 'day' if len(pcd) == 10 else 'month'
+    drugs = [i.get('name') for i in (arms.get('interventions') or []) if i.get('name')]
+    return dict(
+        nct_id=ident.get('nctId'),
+        sponsor=spon.get('name', ''),
+        title=(ident.get('briefTitle') or '')[:160],
+        phase=','.join(des.get('phases', []) or []),
+        status=stat.get('overallStatus'),
+        pcd=pcd, pcd_precision=prec,
+        pcd_type=(pcd_s.get('type') or ''),          # ACTUAL vs ESTIMATED
+        indication=(ps.get('conditionsModule', {}).get('conditions') or [None])[0],
+        drug='; '.join(drugs[:3]),
+        enrollment=(des.get('enrollmentInfo', {}) or {}).get('count'),
+    )
+
+# ==========================================================================================
+# SOURCE 2 — company communications (SEC full text)
+#
+# CT.gov gives us a trial's primary completion date. It does NOT give us what the company
+# actually TOLD the market: "we expect topline data in 2H 2026". That guidance is the thing
+# traders act on, it is often the only date that exists, and it lives in the filings.
+#
+# We read it out of every form a readout date can hide in:
+#   8-K / 6-K   press releases and their EX-99 exhibits
+#   10-Q / 10-K MD&A and pipeline discussion ("we anticipate reporting in Q3")
+#   S-1 / 424B  prospectus pipeline tables — the richest single source of forward timing
+#   20-F        foreign annual reports (the ADRs CT.gov sponsor-matching misses)
+#
+# THE TRAP WE ARE NOT FALLING INTO AGAIN
+# Our conference crawler used to read "Presented data at ESMO 2025" and file it as an UPCOMING
+# 2026 catalyst, because when it could not read a year it defaulted to the FILING year and then
+# projected forward. 74 of 121 rows were history sold as future. So here, as there:
+#   a mention is not a commitment. We require an explicit FORWARD cue, and we refuse any date
+#   that lands before the filing that announced it.
+# ==========================================================================================
+GUIDANCE_PHRASES = [
+    "topline data", "topline results", "top-line data", "top-line results",
+    "data readout", "readout expected", "data are expected", "results are expected",
+    "expects to report topline", "on track to report", "plans to report topline",
+    "primary endpoint data", "pivotal data", "interim analysis expected",
+    "initial data expected", "data expected in", "results anticipated",
+    "anticipate reporting", "expect to announce topline",
+]
+GUIDANCE_FORMS = "8-K,6-K,10-Q,10-K,S-1,424B4,424B5,20-F"
+
+# a forward-looking cue must be present. "reported topline data in Q1 2026" is HISTORY.
+FWD_CUE = _RE_FWD = None   # bound in _init_sec()
+PAST_CUE = None
+
+def _init_sec():
+    """Bind the regexes that need catalyst_crawler's DAY / QH date grammar."""
+    global FWD_CUE, PAST_CUE, LEADS, CC
+    import catalyst_crawler as CC_
+    CC = CC_
+    import re as _re_
+    FWD_CUE = _re_.compile(
+        r"\b(expect\w*|anticipat\w*|on\s+track|plan\w*\s+to|intend\w*\s+to|guidance|"
+        r"target\w*|project\w*|upcoming|forthcoming|will\s+(?:report|announce|present)|"
+        r"remains?\s+on\s+track)\b", _re_.I)
+    PAST_CUE = _re_.compile(
+        r"\b(reported|announced|presented|were\s+reported|was\s+reported|"
+        r"previously\s+(?:reported|announced))\b", _re_.I)
+    D, Q = CC.DAY, CC.QH
+    LEADS = [
+        _re_.compile(r'(?:top-?line|pivotal|primary\s+endpoint|interim|initial|final)\s+(?:data|results|readout)'
+                     r'[^.]{0,60}?(?:expect\w*|anticipat\w*|on\s+track|project\w*|target\w*)'
+                     r'[^.]{0,30}?(?:in|by|during|for)?\s*(' + D + '|' + Q + ')', _re_.I),
+        _re_.compile(r'(?:expect\w*|anticipat\w*|plan\w*|on\s+track|remains?\s+on\s+track)'
+                     r'[^.]{0,60}?(?:report|announce|present)[^.]{0,40}?(?:data|results|readout)'
+                     r'[^.]{0,30}?(?:in|by|during|for)?\s*(' + D + '|' + Q + ')', _re_.I),
+        _re_.compile(r'(?:data|results|readout)[^.]{0,30}?(?:are|is)?\s*(?:expect\w*|anticipat\w*)'
+                     r'[^.]{0,25}?(?:in|by|during|for)?\s*(' + D + '|' + Q + ')', _re_.I),
+    ]
+
+# ------------------------------------------------------------------ milestone attribution
+# THE BUG THIS EXISTS TO KILL
+# The LEAD regexes chain with [^.]{0,60} — "any run of chars that is not a period". Press-release
+# BULLETS DO NOT END IN PERIODS. So the pattern walks across bullet boundaries and stitches a
+# readout noun from one bullet to a date in another:
+#
+#   "DURAVYU Phase 3 DME trials COMO and CAPRI full enrollment anticipated in 2H 2026"
+#                                              ^^^^^^^^^^ the 2H 2026 belongs to ENROLLMENT
+#
+# 46 of 281 guidance rows were pure enrollment milestones filed as readouts, and 39 more were
+# ambiguous — 30% of the source contaminated.
+#
+# THE RULE: a date belongs to the milestone NEAREST it. Not to whichever milestone word the
+# regex could reach across a bullet list.
+# Bare "data" / "results" / "report" are useless as readout signals: a 10-Q says "results of
+# operations" and "interim reports" on every page. We require CLINICAL readout phrasing.
+READOUT_TOK = re.compile(
+    r'\b(top-?line|read-?out|primary\s+endpoint|secondary\s+endpoint|interim\s+analysis|'
+    r'final\s+analysis|pivotal\s+data|clinical\s+data|trial\s+(?:data|results)|'
+    r'study\s+(?:data|results)|(?:phase\s*[123][^.]{0,24})?(?:data|results)\s+(?:from|for|in)|'
+    r'efficacy\s+(?:data|results)|(?:report|announce|present)\s+(?:top-?line|data|results))\b', re.I)
+ENROLL_TOK = re.compile(
+    r'\b(enroll\w*|recruit\w*|randomi[sz]\w*|first\s+patient|last\s+patient|dos(?:e|ing)\s+'
+    r'the\s+first|initiat\w*\s+(?:the\s+)?(?:trial|study|dosing)|screen\w*|site\s+activation)\b', re.I)
+
+# A 10-Q/10-K is 90% accounting. These phrases mean we are inside a financial statement, not a
+# pipeline update — and the "date" nearby is a FISCAL PERIOD END, not a readout.
+#   "condensed results of operations ... for the three months ended December 31, 2026"
+# That produced 2026-12-31 rows on the readout calendar. Reject the whole window.
+FINANCIAL_NOISE = re.compile(
+    r'(results\s+of\s+operations|financial\s+(?:statements?|results|condition|position)|'
+    r'consolidated|condensed|footnotes?|\baudited|unaudited|balance\s+sheet|cash\s+flows?|'
+    r'reporting\s+period|fiscal\s+(?:year|quarter)|interim\s+(?:financial|reports?)|'
+    r'accrued|amortiz|\bGAAP\b|net\s+loss|shares\s+outstanding|prior\s+periods?)', re.I)
+
+# ...and the window must actually be talking about a CLINICAL TRIAL.
+CLINICAL_ANCHOR = re.compile(
+    r'(phase\s*[123]\b|phase\s*i{1,3}\b|top-?line|read-?out|primary\s+endpoint|pivotal|'
+    r'clinical\s+trial|clinical\s+study|\bcohort\b|patients?\s+(?:dosed|enrolled|randomi)|'
+    r'interim\s+analysis|efficacy|\bNCT\d)', re.I)
+
+
+def milestone_of(text, date_start, date_end, radius=110):
+    """Which milestone does this date belong to? Returns 'readout' | 'enrollment' | 'unknown'.
+
+    Nearest-token wins. If an enrollment word sits closer to the date than any readout word,
+    the date is an enrollment milestone and is NOT a readout — no matter what else the bullet
+    list happens to contain.
+    """
+    lo = max(0, date_start - radius)
+    hi = min(len(text), date_end + 40)
+    win = text[lo:hi]
+    dpos = date_start - lo
+
+    def nearest(rx):
+        best = None
+        for m in rx.finditer(win):
+            dist = dpos - m.end() if m.end() <= dpos else m.start() - dpos
+            if dist < 0: dist = 0
+            if best is None or dist < best: best = dist
+        return best
+
+    r = nearest(READOUT_TOK)
+    e = nearest(ENROLL_TOK)
+    if r is None: return 'unknown'          # no readout word anywhere near -> not a readout
+    if e is not None and e < r: return 'enrollment'   # enrollment word is CLOSER -> it owns the date
+    return 'readout'
+
+
+def period_bounds(iso):
+    """'2026-Q3' -> (2026-07-01, 2026-09-30). Needed because a naive string compare says
+    "2026-Q1" >= "2026-07-12" (because 'Q' > '0') and silently lets PAST quarters through."""
+    m = re.match(r'^(\d{4})-Q([1-4])$', str(iso))
+    if m:
+        y, q = int(m.group(1)), int(m.group(2))
+        sm = 3 * (q - 1) + 1
+        em = sm + 2
+        last = [31,28,31,30,31,30,31,31,30,31,30,31][em - 1]
+        if em == 2 and y % 4 == 0 and (y % 100 != 0 or y % 400 == 0): last = 29
+        return dt.date(y, sm, 1), dt.date(y, em, last)
+    m = re.match(r'^(\d{4})-H([12])$', str(iso))
+    if m:
+        y, h = int(m.group(1)), int(m.group(2))
+        return (dt.date(y,1,1), dt.date(y,6,30)) if h == 1 else (dt.date(y,7,1), dt.date(y,12,31))
+    m = re.match(r'^(\d{4})-(\d{2})$', str(iso))
+    if m:
+        y, mo = int(m.group(1)), int(m.group(2))
+        last = [31,28,31,30,31,30,31,31,30,31,30,31][mo - 1]
+        if mo == 2 and y % 4 == 0 and (y % 100 != 0 or y % 400 == 0): last = 29
+        return dt.date(y, mo, 1), dt.date(y, mo, last)
+    try:
+        d0 = dt.date.fromisoformat(str(iso)[:10]); return d0, d0
+    except Exception:
+        return None, None
+
+
+def sec_guidance_readouts(ua, since, until, max_docs=1200, workers=8, lookback_days=450):
+    """Mine company-stated readout timing out of SEC filings. Returns list of dicts.
+
+    NOTE the two different windows:
+      since/until  = the CATALYST window we care about (e.g. rest of 2026)
+      since_dt/..  = the FILING window we search (a 10-K filed 14 months ago can still be the
+                     only place a company ever stated its 2026 readout timing)
+    """
+    _init_sec()
+    since_dt = (dt.date.today() - dt.timedelta(days=lookback_days)).isoformat()
+    until_dt = dt.date.today().isoformat()
+    import concurrent.futures as _cf, re as _re_
+    from collections import OrderedDict
+
+    # 1) full-text search each guidance phrase -> candidate documents
+    docs = OrderedDict()
+    for ph in GUIDANCE_PHRASES:
+        n = 0
+        try:
+            for hit in CC.sec_fulltext(ph, GUIDANCE_FORMS, ua, since_dt, until_dt):
+                src = hit.get("_source", {})
+                _id = hit.get("_id", "")
+                if not _id or _id in docs: continue
+                adsh, _, fname = _id.partition(":")
+                cik = (src.get("ciks") or [""])[0]
+                docs[_id] = dict(cik=str(cik).lstrip("0"), adsh=adsh.replace("-", ""), fname=fname,
+                                 form=src.get("root_form") or src.get("file_type"),
+                                 filed=src.get("file_date"), phrase=ph)
+                n += 1
+                if len(docs) >= max_docs: break
+        except Exception as e:
+            print(f"  [fts] '{ph}': {e}", file=sys.stderr)
+        print(f"  [fts] {ph:28s} +{n:4d}  (pool {len(docs)})", flush=True)
+        if len(docs) >= max_docs: break
+
+    # 2) fetch + scan each document
+    def scan(item):
+        _id, m = item
+        url = f"https://www.sec.gov/Archives/edgar/data/{m['cik']}/{m['adsh']}/{m['fname']}"
+        try:
+            txt = CC.clean_html(CC.sec_get(url, ua).text)
+        except Exception:
+            return []
+        try:
+            filed = dt.date.fromisoformat(m["filed"])
+        except Exception:
+            filed = None
+        out = []
+        for rx in LEADS:
+            for mt in rx.finditer(txt):
+                raw = mt.group(1)
+                win = txt[max(0, mt.start() - 260): mt.end() + 120]
+                # --- prospectivity gate: a mention is not a commitment ---
+                if not FWD_CUE.search(win):        continue
+                if PAST_CUE.search(win) and not FWD_CUE.search(win): continue
+                # --- three gates, in order of how much junk they kill ---
+                ctx = txt[max(0, mt.start(1) - 300): mt.end(1) + 120]
+                # (a) are we inside a financial statement? then this date is a fiscal period end.
+                if FINANCIAL_NOISE.search(ctx):
+                    continue
+                # (b) is this even about a clinical trial?
+                if not CLINICAL_ANCHOR.search(ctx):
+                    continue
+                # (c) does the date belong to the READOUT, or to enrollment/dosing?
+                ms = milestone_of(txt, mt.start(1), mt.end(1))
+                if ms != 'readout':
+                    continue
+                iso, prec = CC.norm_any(raw)
+                if not iso: continue
+                # --- never accept a date that precedes the filing announcing it ---
+                probe = iso if len(iso) == 10 else (iso[:4] + "-12-28")
+                try:
+                    if filed and dt.date.fromisoformat(probe) < filed: continue
+                except Exception:
+                    pass
+                # window test on the PERIOD, not the string. "2026-Q1" is not >= "2026-07-12"
+                # just because 'Q' sorts above '0' — it is a quarter that already ended.
+                p0, p1 = period_bounds(iso)
+                if not p0: continue
+                if p1 < dt.date.fromisoformat(since) or p0 > dt.date.fromisoformat(until): continue
+                out.append(dict(nct_id="", sponsor="", title=_re_.sub(r"\s+", " ", win)[:400],
+                    phase="", status="", pcd=iso, pcd_precision=prec, indication="", drug="",
+                    enrollment=None, cik=m["cik"], form=m["form"], filed=m["filed"],
+                    catalyst_date=iso, date_precision=prec, date_basis="company_guidance",
+                    milestone='readout',      # attribution verified: nearest milestone word wins
+                    confidence=0.70,   # a company's own stated timing beats a CT.gov proxy
+                    source="sec_edgar",
+                    source_url=url,
+                    note="company-stated guidance from an SEC filing"))
+                break                                  # one date per document is enough
+            if out: break
+        return out
+
+    rows = []
+    with _cf.ThreadPoolExecutor(workers) as ex:
+        for r in ex.map(scan, list(docs.items())):
+            rows += r
+    print(f"  [fts] {len(docs)} docs scanned -> {len(rows)} guidance dates")
+    return rows
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--from', dest='d_from', default=TODAY.isoformat())
+    ap.add_argument('--to',   dest='d_to',   default='2026-12-31')
+    ap.add_argument('--phases', default='PHASE1,PHASE2,PHASE3')
+    ap.add_argument('--sponsor-class', default='INDUSTRY', help='INDUSTRY | "" for all')
+    ap.add_argument('--listed-only', action='store_true', help='keep only trials mapped to a ticker')
+    ap.add_argument('--sec', action='store_true',
+                    help='ALSO mine company-stated guidance from SEC filings (8-K/6-K/10-Q/10-K/S-1/424B/20-F). '
+                         'CT.gov gives a trial date; this gives what the company TOLD the market.')
+    ap.add_argument('--sec-only', action='store_true', help='skip CT.gov, SEC guidance only')
+    ap.add_argument('--max-docs', type=int, default=1200, help='cap on SEC documents fetched')
+    ap.add_argument('--ua', default='pdufa.bio catalyst research contact@pdufa.bio')
+    ap.add_argument('--out', default='phase_readouts_upcoming.csv')
+    a = ap.parse_args()
+
+    phases = [p.strip().upper() for p in a.phases.split(',') if p.strip()]
+    statuses = 'RECRUITING|ACTIVE_NOT_RECRUITING|ENROLLING_BY_INVITATION|NOT_YET_RECRUITING'
+    frames = []
+
+    # ---------------- SOURCE 1: CT.gov (a trial's primary completion date) ----------------
+    if not a.sec_only:
+        print(f'[1] CT.gov · {a.d_from} -> {a.d_to} · {"/".join(phases)} · {a.sponsor_class or "ALL sponsors"}')
+        print('    sponsor-independent, fully paginated — no 30-study cap')
+        def cb(pages, got, total):
+            print(f'    page {pages}: {got}/{total}', flush=True)
+        studies = ctgov_all(a.d_from, a.d_to, phases, statuses, a.sponsor_class, cb)
+        rows = [r for r in (parse_study(s_) for s_ in studies) if r]
+        c = pd.DataFrame(rows).drop_duplicates(subset=['nct_id'])
+
+        STATUS_CONF = {'ACTIVE_NOT_RECRUITING': 0.60, 'ENROLLING_BY_INVITATION': 0.50,
+                       'RECRUITING': 0.45, 'NOT_YET_RECRUITING': 0.30}
+        c['catalyst_type']  = 'PhaseReadout'
+        c['catalyst_date']  = c.pcd
+        c['date_precision'] = c.pcd_precision
+        c['date_basis']     = 'ctgov_pcd'
+        c['confidence']     = c.status.map(STATUS_CONF).fillna(0.40)
+        c['source']         = 'clinicaltrials.gov'
+        c['source_url']     = 'https://clinicaltrials.gov/study/' + c.nct_id
+        c['note']           = 'primary completion date is a proxy; topline typically lags it by weeks to months'
+        c['cik']=''; c['form']=''; c['filed']=''
+        print(f'    -> {len(c)} trials\n')
+        frames.append(c)
+
+    # ---------------- SOURCE 2: SEC filings (what the company TOLD the market) ------------
+    if a.sec or a.sec_only:
+        print(f'[2] SEC company communications · forms {GUIDANCE_FORMS}')
+        print(f'    {len(GUIDANCE_PHRASES)} guidance phrases · max {a.max_docs} docs')
+        g = sec_guidance_readouts(a.ua, a.d_from, a.d_to, max_docs=a.max_docs)
+        if g:
+            gdf = pd.DataFrame(g)
+            gdf['catalyst_type'] = 'PhaseReadout'
+            frames.append(gdf)
+        print()
+
+    if not frames: sys.exit('no sources produced rows')
+    d = pd.concat(frames, ignore_index=True, sort=False)
+
+    # ---------------- tickers ----------------
+    print('resolving sponsors -> tickers ...')
+    idx = sec_ticker_index()
+    d['ticker'] = [resolve_ticker(sp, idx) for sp in d.sponsor.fillna('')]
+    # SEC rows have no sponsor name but they DO have a CIK -> map it directly
+    if (d.cik.fillna('') != '').any():
+        j = json.loads(ur.urlopen(ur.Request('https://www.sec.gov/files/company_tickers.json',
+                                             headers=UA), timeout=30).read())
+        cik2t = {str(v['cik_str']): v['ticker'].upper() for v in j.values()}
+        need = (d.ticker == '') & (d.cik.fillna('') != '')
+        d.loc[need, 'ticker'] = [cik2t.get(str(c).lstrip('0'), '') for c in d.loc[need, 'cik']]
+    hit = int((d.ticker != '').sum())
+    print(f'  mapped to a US-listed ticker: {hit}/{len(d)} ({hit/max(len(d),1)*100:.0f}%)')
+
+    if a.listed_only:
+        d = d[d.ticker != '']
+
+    # ---------------- dedupe: WITHIN each source only ----------------
+    # I first deduped on (ticker, month) so that "company guidance would beat a CT.gov proxy".
+    # That destroyed 389 real readouts: AstraZeneca has four different Phase 3 trials completing
+    # in October and they are four different drugs, not one row said four ways.
+    #
+    # The honest constraint: a SEC guidance sentence usually carries NO NCT id, so we CANNOT
+    # establish that it refers to the same trial as a given CT.gov record. So we do not pretend
+    # to. We dedupe inside each source and keep both, clearly labelled by date_basis:
+    #   ctgov_pcd        = trial-level. one row per NCT. "this trial completes in October."
+    #   company_guidance = company-level. "we expect topline in 2H26." may or may not be the same trial.
+    # Overlap is possible. Silently collapsing it would be worse than leaving it visible.
+    before = len(d)
+    ct = d[d.date_basis == 'ctgov_pcd'].drop_duplicates(subset=['nct_id'])
+    gd = d[d.date_basis == 'company_guidance'].drop_duplicates(subset=['ticker', 'catalyst_date', 'source_url'])
+    d = pd.concat([ct, gd], ignore_index=True, sort=False)
+    print(f'  deduped within-source {before} -> {len(d)}  '
+          f'(ct.gov {len(ct)} by NCT · guidance {len(gd)} by ticker+date+doc)')
+    if len(gd):
+        both = set(ct.ticker) & set(gd.ticker)
+        print(f'  {len(both)} tickers appear in BOTH sources — these are not necessarily duplicates;'
+              f' compare nct_id vs the guidance sentence before merging.')
+
+    d['retrieved_at'] = dt.datetime.utcnow().isoformat(timespec='seconds') + 'Z'
+    d = d.sort_values('catalyst_date')
+    keep = ['ticker','catalyst_type','catalyst_date','date_precision','date_basis','confidence',
+            'milestone','phase','status','drug','indication','nct_id','sponsor','enrollment','title',
+            'source','source_url','form','filed','note','retrieved_at']
+    d = d.reindex(columns=[c for c in keep if c in d.columns])
+    d.to_csv(a.out, index=False)
+
+    print(f'\n-> {a.out}  ({len(d)} rows)')
+    print('\nby source:')
+    for b, n in d.date_basis.value_counts().items():
+        print(f'   {b:18s} {n:4d}')
+    print('\nby month:')
+    for m, n in d.catalyst_date.astype(str).str[:7].value_counts().sort_index().items():
+        print(f'   {m}  {n:4d}')
+    print(f'\n{len(d)} readouts across {d.ticker.nunique()} tickers')
+    firm = d[d.confidence >= 0.60]
+    print(f'HIGH confidence (company-stated, or fully-enrolled trial): {len(firm)}')
+
+    # ---------------- self-check: did contamination get back in? ----------------
+    # The SEC leg once shipped 30% enrollment milestones and 15% 10-Q accounting boilerplate
+    # ("condensed results of operations ... December 31, 2026" -> a fiscal year-end on the
+    # readout calendar). If that ever returns, say so loudly rather than let it ship quietly.
+    g2 = d[d.date_basis == 'company_guidance']
+    if len(g2):
+        w = g2.title.astype(str)
+        fin  = int(w.str.contains(FINANCIAL_NOISE).sum())
+        noclin = int((~w.str.contains(CLINICAL_ANCHOR)).sum())
+        enr  = int((w.str.contains(ENROLL_TOK) & ~w.str.contains(READOUT_TOK)).sum())
+        print('\nself-check on the guidance leg:')
+        print(f'   financial boilerplate   : {fin}   (must be 0)')
+        print(f'   no clinical anchor      : {noclin}   (must be 0)')
+        print(f'   enrollment-only         : {enr}   (must be 0)')
+        if fin or noclin or enr:
+            print('   *** WARNING: contamination detected in the guidance leg. Do NOT publish this file. ***')
+        else:
+            print('   clean — every guidance row is a clinical readout, not an enrollment or fiscal date.')
+
+
+if __name__ == '__main__':
+    main()

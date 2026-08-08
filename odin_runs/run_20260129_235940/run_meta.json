@@ -1,0 +1,24 @@
+{
+  "csv": "C:\\Users\\dcmoo\\Documents\\Python\\ODIN_v5_T1_COMPLIANT.csv",
+  "device": "cuda",
+  "features": [
+    "btd",
+    "orphan",
+    "priority_review",
+    "accelerated_approval",
+    "had_adcom",
+    "adcom_vote_pct"
+  ],
+  "free_ram_gb": 3.43,
+  "free_vram_gb": 10.83,
+  "max_configs": 1000000000,
+  "note": "Assumes the input CSV is already T-1 compliant (no post-event leakage features generated here).",
+  "rows": 1350,
+  "run_id": "20260129_235940",
+  "seed": 42,
+  "sigma_bias_init": 0.75,
+  "sigma_init": 0.75,
+  "stall_configs": 100000000,
+  "total_vram_gb": 11.99,
+  "utc_started": "2026-01-30T07:59:40+00:00"
+}

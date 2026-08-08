@@ -39,7 +39,20 @@ h1{font-size:30px;line-height:1.14;font-weight:800;letter-spacing:-.6px;margin:6
 <header class="site"><div class="hd"><a class="brand" href="/"><svg class="lm" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex:none;vertical-align:-4px;margin-right:7px"><rect x="1" y="1" width="22" height="22" rx="6" fill="#081426" stroke="#294d80"/><rect x="6.5" y="9" width="2.4" height="9" rx="1" fill="#f0c86a"/><rect x="7" y="5.5" width="1.4" height="14" rx=".7" fill="#f0c86a"/><rect x="11.6" y="6.5" width="2.4" height="11" rx="1" fill="#46d17f"/><rect x="12.1" y="4" width="1.4" height="16" rx=".7" fill="#46d17f"/><circle cx="18" cy="8" r="2" fill="#46d17f"/></svg>pdufa<b>.bio</b></a><button class="pd-burger" aria-label="Open menu" aria-expanded="false" onclick="var o=document.body.classList.toggle('pd-navopen');this.setAttribute('aria-expanded',o)"><span></span></button><nav><!--NAVC:BEGIN--><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/runup-by-year">Run-up</a><a href="/tickers">Stocks</a><div class="navdd"><button class="navddb" aria-haspopup="true" aria-expanded="false" onclick="this.parentNode.classList.toggle('open')">More</button><div class="navddm"><a href="/conferences">Conferences</a><a href="/adcomm">Advisory Committees</a><a href="/screener">Screener</a><a href="/research">Research</a><a href="/developers">API</a><a href="/sls">SLS tracker</a><a href="/account">Account</a></div></div><a class="pro" href="/pricing" style="color:var(--gold)">Pro</a><!--NAVC:END--></nav></div></header>
 <main class="wrap">
 <div class="bc"><a href="/">Home</a> &rsaquo; Screener</div>
-<h1>Biotech <span class="g">catalyst screener</span></h1>
+<h1>Biotech <span class="g">catalyst screener</span></h1><!--FRESH:BEGIN--><div data-fresh style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut2);margin:0 0 10px"><span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#46d17f"></span><span data-fresh-rel style="color:#eef4fc">rebuilt daily</span><span style="color:var(--mut2)">·</span><span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> <a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span></div><script>
+(function(){var e=document.querySelector('[data-fresh]');if(!e)return;
+fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+var t=Date.parse(j.built);if(isNaN(t))return;
+var s=Math.max(0,(Date.now()-t)/1000),v;
+if(s<5400)v=Math.max(1,Math.round(s/3600))+' hour'+(Math.round(s/3600)===1?'':'s')+' ago';
+else if(s<172800)v=Math.round(s/3600)+' hours ago';
+else v=Math.round(s/86400)+' days ago';
+var n=e.querySelector('[data-fresh-rel]');if(n)n.textContent='updated '+v;
+var d=e.querySelector('[data-fresh-next]');
+if(d&&j.next_days!=null)d.textContent=j.next_days===0?'today':(j.next_days===1?'tomorrow':'in '+j.next_days+' days');
+var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
+}).catch(function(){});})();
+</script><!--FRESH:END-->
 <p class="sub">Every FDA catalyst in one filterable view, PDUFA decisions, clinical-trial readouts, medical conferences, and FDA advisory committee meetings. Filter by ticker, event type, therapeutic area, and date.</p>
 <div class="bar">
   <input id="q" placeholder="Search ticker or drug…" autocomplete="off">

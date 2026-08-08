@@ -1,0 +1,37 @@
+{
+  "utc_finished": "2026-01-30T16:08:56+00:00",
+  "reason": "stall_reached",
+  "configs_done": 956608234,
+  "best_feasible_brier": 0.10877890139818192,
+  "theta": [
+    1.380873203277588,
+    0.352027952671051,
+    -1.456209421157837,
+    0.3647044897079468,
+    -0.4550631642341614,
+    0.5461215972900391,
+    0.4008118212223053,
+    3.086503267288208,
+    3.640650749206543,
+    0.023934824392199516,
+    0.35583996772766113,
+    -0.031362395733594894,
+    -9.799482359085232e-05
+  ],
+  "features": [
+    "btd",
+    "orphan",
+    "priority_review",
+    "fast_track",
+    "accelerated_approval",
+    "designation_stack_count",
+    "had_adcom",
+    "adcom_vote_pct",
+    "sponsor_prior_approvals",
+    "experienced_sponsor",
+    "modality_complexity",
+    "year"
+  ],
+  "device": "cuda",
+  "note": "theta = [bias, w1..wF]. approval p = sigmoid(bias + Xw). CRL predicted if p <= logged threshold."
+}

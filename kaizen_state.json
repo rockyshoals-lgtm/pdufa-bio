@@ -1,0 +1,28 @@
+{
+  "total_rounds": 100,
+  "total_promotions": 12,
+  "best_auc_ever": 0.9085,
+  "worst_auc_ever": 0.82,
+  "mutation_rate": 0.45,
+  "temperature": 1.5,
+  "search_width": 2.0,
+  "rounds_since_promotion": 15,
+  "current_streak": 15,
+  "longest_streak": 20,
+  "feature_hits": {
+    "btd_flag": 5,
+    "prior_crl": 3
+  },
+  "feature_appearances": {
+    "btd_flag": 50,
+    "prior_crl": 40,
+    "orphan": 30
+  },
+  "duplicate_count": 8,
+  "auc_history": [],
+  "brier_history": [],
+  "promotion_rounds": [],
+  "plateau_events": [],
+  "last_ai_tune": "2026-03-01T05:26:33.173462",
+  "saved_at": "2026-03-01T05:26:33.173548"
+}

@@ -1,0 +1,58 @@
+{
+  "audit_date": "2026-01-30T04:51:18.194259",
+  "original_records": 1934,
+  "clean_records": 1350,
+  "records_removed": 584,
+  "crl_rate": 13.33,
+  "removed_sources": [
+    "FDA_CRL_Database",
+    "FDA_2025_CRL_BATCH",
+    "FDA_NME_COMPILATION",
+    "FDA_2025_NOVEL_APPROVALS"
+  ],
+  "removed_features": [
+    "prior_crl",
+    "prior_crl_reason",
+    "resubmission_class",
+    "first_cycle",
+    "form_483_issues",
+    "manufacturing_risk",
+    "crl_notes"
+  ],
+  "t1_safe_features": [
+    "event_id",
+    "ticker",
+    "company",
+    "asset",
+    "indication",
+    "therapeutic_area",
+    "catalyst_date",
+    "catalyst_type",
+    "data_cutoff_date",
+    "outcome",
+    "btd",
+    "orphan",
+    "priority_review",
+    "fast_track",
+    "accelerated_approval",
+    "designation_stack_count",
+    "had_adcom",
+    "adcom_vote_pct",
+    "adcom_date",
+    "sponsor_prior_approvals",
+    "experienced_sponsor",
+    "modality",
+    "year",
+    "enrichment_source",
+    "enrichment_confidence",
+    "modality_complexity"
+  ],
+  "issues_found": [
+    "prior_crl: 100% correlation with outcome (FATAL)",
+    "form_483_issues: 100% CRL rate (FATAL)",
+    "manufacturing_risk: 10.5x lift (FATAL)",
+    "FDA_CRL_Database: CRL-only source (151 records)",
+    "FDA_NME_COMPILATION: Approval-only source (404 records)"
+  ],
+  "verdict": "DATASET REQUIRED COMPLETE REBUILD - v4.2 HAD FATAL LEAKAGE"
+}

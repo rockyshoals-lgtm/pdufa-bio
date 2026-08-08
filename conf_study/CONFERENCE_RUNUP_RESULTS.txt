@@ -1,0 +1,110 @@
+CONFERENCE RUN-UP STUDY — n=1401 events, 2017–2026
+
+HEADLINE (median % into the presentation)
+  runup_30d   n=1401  med=  -0.35%  p25= -10.57%  p75=   13.5%  mean=   5.41%
+  runup_20d   n=1401  med=   0.07%  p25=  -8.18%  p75=  11.26%  mean=   3.87%
+  runup_10d   n=1401  med=   0.52%  p25=   -5.3%  p75=   7.26%  mean=   2.91%
+  runup_5d    n=1401  med=  -0.08%  p25=  -3.65%  p75=   4.63%  mean=   1.08%
+  event_day   n=1401  med=  -0.48%  p25=  -4.73%  p75=    2.5%  mean=  -0.43%
+  post_5d     n=1401  med=  -1.55%  p25=  -9.02%  p75=   3.24%  mean=  -1.63%
+  post_10d    n=1401  med=  -1.92%  p25= -10.75%  p75=   4.37%  mean=  -2.31%
+
+BY CAP_TIER_FINAL (30d run-up, n>=5)
+  large                    n=414   med=   0.23%  p25=  -5.11%  p75=   6.12%
+  micro                    n=135   med=   2.14%  p25=  -11.4%  p75=  20.58%
+  mid                      n=121   med=  -1.15%  p25= -10.14%  p75=  17.32%
+  nano                     n=42    med=  -9.84%  p25= -17.37%  p75=   6.96%
+  small                    n=129   med=   3.28%  p25= -10.57%  p75=   19.5%
+
+BY CONF (30d run-up, n>=5)
+  AAAAI                    n=16    med=  -6.06%  p25= -11.18%  p75=   5.85%
+  AACR                     n=122   med=   2.83%  p25=  -7.86%  p75=  21.35%
+  AAD                      n=11    med=   -4.0%  p25= -13.19%  p75=   3.82%
+  AAIC                     n=9     med=   5.45%  p25=  -4.24%  p75=  10.07%
+  AAN                      n=24    med=  -4.22%  p25= -12.07%  p75=  10.35%
+  AAO                      n=11    med=  -8.26%  p25= -13.96%  p75=  10.64%
+  AASLD                    n=41    med=  -2.22%  p25= -12.37%  p75=  13.03%
+  ACAAI                    n=9     med=  -9.17%  p25= -19.74%  p75=   4.85%
+  ACC                      n=9     med=  -4.18%  p25=  -10.8%  p75=  -0.83%
+  ACNP                     n=6     med=  -1.18%  p25= -25.88%  p75=  13.69%
+  ACR                      n=10    med=  -9.61%  p25= -23.22%  p75=  -7.46%
+  ADPD                     n=7     med=  -8.21%  p25= -24.01%  p75=  34.74%
+  AHA                      n=23    med=  -0.36%  p25= -15.16%  p75=  12.82%
+  ANE                      n=47    med=  -1.12%  p25= -14.44%  p75=   9.69%
+  ARVO                     n=9     med=  -5.83%  p25=  -26.6%  p75=  -0.51%
+  ASCO                     n=272   med=   1.65%  p25=   -8.9%  p75=  12.44%
+  ASCO-GI                  n=21    med=   5.17%  p25=  -3.71%  p75=  28.56%
+  ASCO-GU                  n=12    med=   0.25%  p25=  -4.63%  p75=    8.1%
+  ASGCT                    n=13    med=  -3.81%  p25= -20.81%  p75=  11.05%
+  ASH                      n=201   med=   3.13%  p25=  -7.12%  p75=  20.03%
+  ASN                      n=16    med= -10.58%  p25= -18.76%  p75=  -1.75%
+  ATS                      n=11    med=  -3.62%  p25=  -10.2%  p75=   0.67%
+  ATTD                     n=5     med=  16.88%  p25= -23.47%  p75=  32.36%
+  CTAD                     n=11    med=  -7.85%  p25= -12.26%  p75=   2.12%
+  EASL                     n=33    med=  -2.86%  p25=  -9.49%  p75=   3.19%
+  ECTRIMS                  n=8     med=   10.8%  p25=  -3.51%  p75=  20.49%
+  EHA                      n=86    med=   3.07%  p25=  -4.28%  p75=  18.42%
+  ENDO                     n=13    med=  -2.22%  p25=  -6.13%  p75=   3.48%
+  ERS                      n=5     med=  -6.64%  p25= -22.93%  p75=  -3.74%
+  ESMO                     n=192   med=  -3.33%  p25= -14.21%  p75=   4.84%
+  EULAR                    n=9     med=  -4.14%  p25= -14.45%  p75=   2.73%
+  ISTH                     n=5     med=   3.21%  p25=   0.23%  p75=  10.34%
+  SABCS                    n=28    med=   5.42%  p25= -10.72%  p75=  27.88%
+  SITC                     n=65    med=  -2.27%  p25= -13.34%  p75=  16.33%
+  SNO                      n=5     med=    2.5%  p25= -12.41%  p75=  39.94%
+  WCLC                     n=12    med=   2.33%  p25=  -5.21%  p75=   5.56%
+
+BY YEAR (30d run-up, n>=5)
+  2017                     n=30    med=   2.46%  p25=  -4.46%  p75=   6.96%
+  2018                     n=36    med=   2.41%  p25=  -5.03%  p75=   4.89%
+  2019                     n=66    med=   3.24%  p25=  -4.74%  p75=   10.3%
+  2020                     n=47    med=  17.27%  p25=   4.58%  p75=  33.58%
+  2021                     n=71    med=   2.19%  p25=   -8.3%  p75=  12.27%
+  2022                     n=167   med=  -3.33%  p25= -13.22%  p75=   8.64%
+  2023                     n=357   med=  -2.86%  p25= -12.76%  p75=   9.91%
+  2024                     n=371   med=  -1.74%  p25= -12.09%  p75=  14.88%
+  2025                     n=177   med=   1.22%  p25=   -9.4%  p75=  15.19%
+  2026                     n=79    med=   4.32%  p25=  -5.12%  p75=   26.1%
+
+BY PRES_TYPE (30d run-up, n>=5)
+  late-breaking            n=13    med=   0.35%  p25=  -6.01%  p75=   8.46%
+  oral                     n=6     med=  -0.11%  p25= -20.46%  p75=  30.41%
+  poster                   n=11    med=  -1.14%  p25=  -8.21%  p75=   8.36%
+  unspecified              n=1371  med=  -0.35%  p25= -10.64%  p75=  13.57%
+
+BY TA_BUCKET_V2 (30d run-up, n>=5)
+  HIGH                     n=7     med=   2.19%  p25=  -0.56%  p75=    6.3%
+  LOW                      n=125   med=  -0.09%  p25= -10.03%  p75=  14.71%
+  MOD                      n=10    med=   3.78%  p25=   -2.7%  p75=   5.23%
+  VERY_HIGH                n=7     med=    7.4%  p25=  -3.89%  p75=  12.89%
+
+BY btd
+  btd=False  n=1389  med=  -0.31%  p75=  13.58%
+  btd=True  n=12    med=  -3.25%  p75=   0.52%
+
+BY orphan
+  orphan=False  n=1390  med=  -0.33%  p75=  13.57%
+  orphan=True  n=11    med=  -2.32%  p75=   1.96%
+
+BY priority_review
+  priority_review=False  n=1380  med=  -0.25%  p75=  13.56%
+  priority_review=True  n=21    med=  -2.86%  p75=   2.19%
+
+BY fast_track
+  fast_track=False  n=1391  med=  -0.36%  p75=  13.49%
+  fast_track=True  n=10    med=   5.68%  p75=  13.22%
+
+BY gene_therapy
+  gene_therapy=False  n=1394  med=  -0.36%  p75=   13.5%
+  gene_therapy=True  n=7     med=   1.27%  p75=  16.06%
+
+BY had_adcom
+  had_adcom=False  n=1400  med=  -0.36%  p75=  13.51%
+
+TAIL DISTRIBUTION (30d)
+  >=   50% :   6.3%  (n=88)
+  >=   25% :  15.6%  (n=219)
+  >=   10% :  29.1%  (n=408)
+  >=    0% :  49.5%  (n=693)
+  >=  -25% :  91.3%  (n=1279)
+  MEAN 5.41%  vs  MEDIAN -0.35%   std 33.6%

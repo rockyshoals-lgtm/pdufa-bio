@@ -1,0 +1,22 @@
+2026-01-30T16:05:30+00:00 | start | rows=1350 | features=['btd', 'orphan', 'priority_review', 'fast_track', 'accelerated_approval', 'designation_stack_count', 'had_adcom', 'adcom_vote_pct', 'sponsor_prior_approvals', 'experienced_sponsor', 'modality_complexity', 'year'] | device=cuda
+2026-01-30T16:05:30+00:00 | base_rate=0.8667 | init_bias=1.871802
+2026-01-30T16:05:40+00:00 | heartbeat | done=44,429,734 | best_brier=0.10878012 | since_best=1,981,800 | batch=110,100 | rate=4,439,261/s | free_ram=3.18GB | free_vram=7.33GB
+2026-01-30T16:05:50+00:00 | heartbeat | done=90,341,434 | best_brier=0.10877964 | since_best=4,514,100 | batch=110,100 | rate=4,515,091/s | free_ram=3.23GB | free_vram=7.33GB
+2026-01-30T16:06:00+00:00 | heartbeat | done=136,253,134 | best_brier=0.10877945 | since_best=1,871,700 | batch=110,100 | rate=4,540,007/s | free_ram=3.25GB | free_vram=7.33GB
+2026-01-30T16:06:10+00:00 | heartbeat | done=182,825,434 | best_brier=0.10877932 | since_best=2,312,100 | batch=110,100 | rate=4,569,125/s | free_ram=3.28GB | free_vram=7.33GB
+2026-01-30T16:06:20+00:00 | heartbeat | done=230,278,534 | best_brier=0.10877924 | since_best=1,871,700 | batch=110,100 | rate=4,602,256/s | free_ram=3.32GB | free_vram=7.33GB
+2026-01-30T16:06:30+00:00 | heartbeat | done=275,970,034 | best_brier=0.10877918 | since_best=3,413,100 | batch=110,100 | rate=4,595,368/s | free_ram=3.34GB | free_vram=7.33GB
+2026-01-30T16:06:40+00:00 | heartbeat | done=322,652,434 | best_brier=0.10877913 | since_best=13,101,900 | batch=110,100 | rate=4,605,432/s | free_ram=3.35GB | free_vram=7.33GB
+2026-01-30T16:06:50+00:00 | heartbeat | done=365,921,734 | best_brier=0.10877911 | since_best=1,651,500 | batch=110,100 | rate=4,570,066/s | free_ram=3.14GB | free_vram=7.33GB
+2026-01-30T16:07:00+00:00 | heartbeat | done=410,071,834 | best_brier=0.10877909 | since_best=15,524,100 | batch=110,100 | rate=4,552,262/s | free_ram=3.17GB | free_vram=7.33GB
+2026-01-30T16:07:10+00:00 | heartbeat | done=454,221,934 | best_brier=0.10877907 | since_best=16,074,600 | batch=110,100 | rate=4,537,798/s | free_ram=2.91GB | free_vram=7.33GB
+2026-01-30T16:07:20+00:00 | heartbeat | done=501,454,834 | best_brier=0.10877904 | since_best=5,945,400 | batch=110,100 | rate=4,554,410/s | free_ram=2.92GB | free_vram=7.33GB
+2026-01-30T16:07:30+00:00 | heartbeat | done=549,678,634 | best_brier=0.10877901 | since_best=12,000,900 | batch=110,100 | rate=4,576,714/s | free_ram=3.05GB | free_vram=7.33GB
+2026-01-30T16:07:40+00:00 | heartbeat | done=597,241,834 | best_brier=0.10877899 | since_best=13,762,500 | batch=110,100 | rate=4,589,787/s | free_ram=2.89GB | free_vram=7.33GB
+2026-01-30T16:07:50+00:00 | heartbeat | done=642,603,034 | best_brier=0.10877898 | since_best=9,909,000 | batch=110,100 | rate=4,585,400/s | free_ram=2.88GB | free_vram=7.33GB
+2026-01-30T16:08:00+00:00 | heartbeat | done=690,606,634 | best_brier=0.10877897 | since_best=42,939,000 | batch=110,100 | rate=4,599,324/s | free_ram=2.90GB | free_vram=7.33GB
+2026-01-30T16:08:10+00:00 | heartbeat | done=738,830,434 | best_brier=0.10877895 | since_best=21,469,500 | batch=110,100 | rate=4,612,759/s | free_ram=2.96GB | free_vram=7.33GB
+2026-01-30T16:08:20+00:00 | heartbeat | done=786,834,034 | best_brier=0.10877894 | since_best=33,470,400 | batch=110,100 | rate=4,623,774/s | free_ram=3.03GB | free_vram=7.33GB
+2026-01-30T16:08:30+00:00 | heartbeat | done=835,057,834 | best_brier=0.10877892 | since_best=550,500 | batch=110,100 | rate=4,634,791/s | free_ram=3.06GB | free_vram=7.33GB
+2026-01-30T16:08:41+00:00 | heartbeat | done=883,171,534 | best_brier=0.10877890 | since_best=26,644,200 | batch=110,100 | rate=4,643,541/s | free_ram=3.07GB | free_vram=7.33GB
+2026-01-30T16:08:51+00:00 | heartbeat | done=931,285,234 | best_brier=0.10877890 | since_best=74,757,900 | batch=110,100 | rate=4,651,850/s | free_ram=3.03GB | free_vram=7.33GB

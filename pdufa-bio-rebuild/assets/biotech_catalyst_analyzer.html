@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Anatomy of Alpha: Biotech Catalyst Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #e5e7eb; }
+       .card { background-color: #1f2937; border: 1px solid #374151; }
+       .modal-bg { background-color: rgba(0,0,0,0.7); }
+       .progress-bar-bg { background-color: #374151; }
+       .alert-card { border-left: 4px solid #059669; animation: pulse-border 2s infinite; }
+        @keyframes pulse-border { 0%, 100% { border-color: #059669; } 50% { border-color: #34d399; } }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div id="app" class="max-w-7xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-white mb-2">Biotech Catalyst Analyzer</h1>
+            <p class="text-lg text-gray-400">Applying the "Anatomy of Alpha" Framework</p>
+            <div id="status-bar" class="mt-4 text-sm text-gray-500">
+                <span>Connection Status: <span id="connection-status" class="font-semibold text-yellow-400">Connecting...</span></span>
+                <span class="mx-2">|</span>
+                <span>Last Updated: <span id="last-updated">Never</span></span>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
+                <div class="card rounded-lg p-6 h-full">
+                    <h2 class="text-2xl font-semibold mb-4 text-white">High-Score Alerts</h2>
+                    <div id="surge-alerts" class="space-y-4">
+                        <p class="text-gray-500">Monitoring for scores > 75...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <div class="card rounded-lg p-6">
+                    <h2 class="text-2xl font-semibold mb-4 text-white">Biotech Watchlist (30-180 Day Catalysts)</h2>
+                    <div id="biotech-list" class="space-y-4">
+                        <p class="text-gray-500">Discovering eligible companies...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="details-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+            <div class="modal-bg fixed inset-0" onclick="App.ui.hideModal()"></div>
+            <div class="relative card rounded-lg shadow-xl m-4 max-w-2xl w-full p-6" id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const App = {
+            pipelineData: [],
+            HYPE_SCORE_THRESHOLD: 75,
+
+            init() {
+                this.ws.connect();
+            },
+
+            ws: {
+                socket: null,
+                connect() {
+                    // FIX: Automatically determine whether to use a secure (wss) or insecure (ws) connection.
+                    const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+                    const url = `${protocol}://${window.location.host}/ws`;
+                    this.socket = new WebSocket(url);
+
+                    this.socket.onopen = () => App.ui.updateConnectionStatus('Connected', 'text-green-400');
+                    this.socket.onmessage = (event) => {
+                        App.pipelineData = JSON.parse(event.data);
+                        App.ui.renderDashboard();
+                        App.ui.updateTimestamp(new Date());
+                    };
+                    this.socket.onclose = () => {
+                        App.ui.updateConnectionStatus('Disconnected. Retrying...', 'text-red-400');
+                        setTimeout(() => this.connect(), 3000);
+                    };
+                    this.socket.onerror = (error) => {
+                        App.ui.updateConnectionStatus('Error', 'text-red-400');
+                        console.error("WebSocket Error:", error);
+                        this.socket.close();
+                    };
+                }
+            },
+
+            ui: {
+                renderDashboard() {
+                    const biotechStocks = this.pipelineData.sort((a, b) => b.hype_score - a.hype_score);
+                    const alertStocks = this.pipelineData.filter(s => s.hype_score >= App.HYPE_SCORE_THRESHOLD).sort((a, b) => b.hype_score - a.hype_score);
+
+                    this.renderList('biotech-list', biotechStocks);
+                    this.renderAlerts(alertStocks);
+                },
+
+                renderList(elementId, stocks) {
+                    const container = document.getElementById(elementId);
+                    container.innerHTML = stocks.length ? '' : '<p class="text-gray-500">No companies matching criteria found in the current discovery cycle.</p>';
+                    stocks.forEach(stock => container.appendChild(this.createStockCard(stock)));
+                },
+
+                renderAlerts(stocks) {
+                    const container = document.getElementById('surge-alerts');
+                    container.innerHTML = stocks.length ? '' : '<p class="text-gray-500">Monitoring for scores > 75...</p>';
+                    stocks.forEach(stock => container.appendChild(this.createAlertCard(stock)));
+                },
+
+                createStockCard(stock) {
+                    const card = document.createElement('div');
+                    card.className = 'card rounded-md p-3 cursor-pointer hover:border-indigo-500 transition-all duration-200';
+                    card.onclick = () => this.showModal(stock);
+
+                    const change = stock.changesPercentage ?? 0;
+                    const changeColor = change >= 0 ? 'text-green-400' : 'text-red-400';
+                    const scoreColor = this.getHypeColor(stock.hype_score);
+                    const daysUntil = Math.ceil((new Date(stock.pdufa_date) - new Date()) / (1000 * 60 * 60 * 24));
+
+                    card.innerHTML = `
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-bold text-lg text-white">${stock.ticker}</p>
+                                <p class="text-xs text-gray-400 truncate w-48">${stock.name}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-lg text-white">$${(stock.price ?? 0).toFixed(2)}</p>
+                                <p class="text-sm ${changeColor}">${change.toFixed(2)}%</p>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="flex justify-between text-xs text-gray-400 mb-1">
+                                <span>Hype Score</span>
+                                <span class="font-bold ${scoreColor}">${stock.hype_score}</span>
+                            </div>
+                            <div class="progress-bar-bg w-full h-2 rounded-full">
+                                <div class="${scoreColor.replace('text', 'bg')}-500" style="width: ${stock.hype_score}%; height: 100%; border-radius: 9999px;"></div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-amber-400 font-semibold mt-2 text-right">PDUFA in ${daysUntil} days</div>
+                    `;
+                    return card;
+                },
+
+                createAlertCard(stock) {
+                    const card = document.createElement('div');
+                    card.className = 'card alert-card rounded-md p-3 cursor-pointer hover:border-green-300 transition-all duration-200';
+                    card.onclick = () => this.showModal(stock);
+                    
+                    card.innerHTML = `
+                        <p class="font-bold text-green-400">${stock.ticker}</p>
+                        <p class="text-sm text-white">Biotech Catalyst</p>
+                        <p class="text-2xl font-bold text-white mt-1">Score: ${stock.hype_score}</p>
+                    `;
+                    return card;
+                },
+
+                showModal(stock) {
+                    const modal = document.getElementById('details-modal');
+                    const content = document.getElementById('modal-content');
+                    const change = stock.changesPercentage ?? 0;
+                    const changeColor = change >= 0 ? 'text-green-400' : 'text-red-400';
+                    const scoreColor = this.getHypeColor(stock.hype_score);
+                    const daysUntil = Math.ceil((new Date(stock.pdufa_date) - new Date()) / (1000 * 60 * 60 * 24));
+
+                    let breakdownHtml = Object.entries(stock.breakdown).map(([key, value]) => `
+                        <div class="flex justify-between py-1 border-b border-gray-700">
+                            <span class="text-gray-400">${key}:</span>
+                            <span class="font-semibold text-white">${value}</span>
+                        </div>
+                    `).join('');
+                    if (!Object.keys(stock.breakdown).length) {
+                        breakdownHtml = '<p class="text-gray-500">No specific drivers contributing to the score at this time.</p>';
+                    }
+
+                    content.innerHTML = `
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">${stock.ticker} - ${stock.name}</h2>
+                                <p class="text-lg text-white">$${(stock.price ?? 0).toFixed(2)} <span class="${changeColor}">(${change.toFixed(2)}%)</span></p>
+                            </div>
+                            <button onclick="App.ui.hideModal()" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="card p-4 rounded-md">
+                                <h3 class="font-semibold text-white mb-2">Hype Score: <span class="text-2xl font-bold ${scoreColor}">${stock.hype_score}</span></h3>
+                                <p class="text-sm text-gray-400">PDUFA Date: ${new Date(stock.pdufa_date).toLocaleDateString()} (${daysUntil} days)</p>
+                            </div>
+                             <div class="card p-4 rounded-md">
+                                <h3 class="font-semibold text-white mb-2">Market Cap</h3>
+                                <p class="text-xl font-bold text-white">$${((stock.marketCap ?? 0) / 1e9).toFixed(2)}B</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 card p-4 rounded-md">
+                            <h3 class="font-semibold text-white mb-2">Score Breakdown</h3>
+                            <div class="space-y-2 text-sm">${breakdownHtml}</div>
+                        </div>
+                    `;
+                    modal.classList.add('flex');
+                    modal.classList.remove('hidden');
+                },
+
+                hideModal: () => document.getElementById('details-modal').classList.add('hidden'),
+                getHypeColor: score => score > 75 ? 'text-red-500' : (score > 50 ? 'text-yellow-400' : 'text-green-400'),
+                updateConnectionStatus(text, colorClass) {
+                    const el = document.getElementById('connection-status');
+                    el.textContent = text;
+                    el.className = `font-semibold ${colorClass}`;
+                },
+                updateTimestamp: date => document.getElementById('last-updated').textContent = date.toLocaleTimeString()
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => App.init());
+    </script>
+</body>
+</html>

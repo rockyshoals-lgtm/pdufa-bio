@@ -1,0 +1,225 @@
+================================================================================
+GUNGNIR v35 - FinBrain Market Signal Features (LEVER 1)
+Technical Implementation Summary
+================================================================================
+
+PROJECT CONTEXT:
+- Training Events: 1,752 phase readout events (2022-2026)
+- Target Features: 11 T-1 compliant pre-readout market signals
+- Architecture: Add market signals to GUNGNIR v33 (103 features)
+- Validation: Walk-forward AUC comparison against v33 champion (AUC 0.7241)
+
+================================================================================
+FEATURE ENGINEERING SPECIFICATION
+================================================================================
+
+FEATURE SET 1: NEWS SENTIMENT (3 features)
+  Target API: mcp__finbrain__news_sentiment_by_ticker
+  Lookback: T-30 to T-1 (30 days pre-readout)
+  Computation:
+    - finbrain_sentiment_avg_30d = mean(sentiment[T-30:T-1])
+    - finbrain_sentiment_avg_7d = mean(sentiment[T-7:T-1])
+    - finbrain_sentiment_trend = sentiment_7d - sentiment_30d
+
+FEATURE SET 2: ANALYST RATINGS (3 features)
+  Target API: mcp__finbrain__analyst_ratings_by_ticker
+  Lookback: 90 days pre-readout
+  Computation:
+    - finbrain_analyst_upgrades_90d = count(rating_changes == 'upgrade')
+    - finbrain_analyst_downgrades_90d = count(rating_changes == 'downgrade')
+    - finbrain_analyst_net_signal = upgrades - downgrades
+
+FEATURE SET 3: INSIDER TRANSACTIONS (2 features)
+  Target API: mcp__finbrain__insider_transactions_by_ticker
+  Lookback: 90 days pre-readout
+  Computation:
+    - finbrain_insider_net_90d = count(buys) - count(sells)
+    - finbrain_insider_value_90d = sum(buy_values) - sum(sell_values)
+
+FEATURE SET 4: OPTIONS PUT/CALL RATIO (3 features)
+  Target API: mcp__finbrain__options_put_call
+  Lookback: T-30 to T-1 (30 days pre-readout)
+  Computation:
+    - finbrain_pcr_avg_30d = mean(put_call_ratio[T-30:T-1])
+    - finbrain_pcr_avg_7d = mean(put_call_ratio[T-7:T-1])
+    - finbrain_pcr_trend = pcr_7d - pcr_30d
+
+TOTAL: 11 NEW FEATURES
+  - All T-1 compliant (knowable before readout)
+  - All aggregated as rolling averages or counts
+  - All designed to capture pre-event market positioning
+
+================================================================================
+IMPLEMENTATION DETAILS
+================================================================================
+
+DATA FLOW:
+  gungnir_readout_analysis.csv (1,752 events)
+  ↓
+  finbrain_feature_extractor.py (Python script)
+  ├─ Cache FinBrain API calls (per ticker, per metric)
+  ├─ Compute features for each event
+  ├─ Handle missing data via phase-average imputation
+  └─ Save to finbrain_features.json
+  ↓
+  finbrain_features.json (keyed by "ticker|date")
+
+CACHING STRATEGY:
+  - Per-ticker API calls (avoid redundant data fetches)
+  - Data cached in memory during script run
+  - If re-running needed, would implement persistent cache
+  - FinBrain API likely has rate limits (not specified)
+
+MISSING DATA HANDLING:
+  - Approach: Phase-average imputation (same as CT.gov in v33)
+  - For each phase (1, 2, 2/3, 3, etc.), compute mean of non-null values
+  - Fill missing feature values with phase-appropriate mean
+  - Expected coverage: ~70-80% (major pharma well-covered by FinBrain)
+
+OUTPUT FORMAT:
+  finbrain_features.json
+  {
+    "MRK|2022-06-28": {
+      "finbrain_sentiment_avg_30d": -0.15,
+      "finbrain_sentiment_avg_7d": 0.05,
+      "finbrain_sentiment_trend": 0.20,
+      "finbrain_analyst_upgrades_90d": 2,
+      "finbrain_analyst_downgrades_90d": 0,
+      "finbrain_analyst_net_signal": 2,
+      "finbrain_insider_net_90d": 1,
+      "finbrain_insider_value_90d": 125000,
+      "finbrain_pcr_avg_30d": 0.85,
+      "finbrain_pcr_avg_7d": 0.90,
+      "finbrain_pcr_trend": 0.05
+    },
+    ...
+  }
+
+================================================================================
+CURRENT STATUS: BLOCKED
+================================================================================
+
+FinBrain MCP Pydantic Validation Error:
+  All four extraction tools fail with:
+  "Input should be a valid dictionary or instance of {RequestType}"
+
+  Root Cause: SDK expects typed Pydantic objects, but MCP client cannot 
+  construct these from parameter definitions.
+
+Verification:
+  ✓ Health check passed (server up)
+  ✗ All four tools return Pydantic validation errors
+  ✗ No API calls made (failure at SDK validation layer)
+
+Workaround: None available without MCP fix
+Expected Fix Effort: Low (update request validation in finbrain-python)
+
+================================================================================
+GUNGNIR v35 TRAINING PIPELINE (BLOCKED)
+================================================================================
+
+Once FinBrain MCP is fixed, the training pipeline is:
+
+1. Extract FinBrain features (this script)
+   finbrain_feature_extractor.py
+   Output: finbrain_features.json
+
+2. Merge with v33 training data (103 features)
+   gungnir_v33_deploy.json + gungnir_readout_analysis.csv + finbrain_features.json
+   → Combined dataset: 1,752 events × 114 features
+
+3. Walk-forward validation (same as v33)
+   - Split by readout date (anchored validation)
+   - Test each event against models trained on earlier events
+   - Compute AUC, Brier, win rates
+
+4. Feature selection (ablation)
+   - Test each of 11 new FinBrain features individually
+   - Test feature interactions (e.g., sentiment_trend × phase)
+   - Identify features that improve v33 AUC (0.7241)
+
+5. Train v35 meta-ensemble
+   - Same 5-model architecture as v33 (Ridge + ElasticNet + XGBoost)
+   - 114 features (103 from v33 + 11 FinBrain)
+   - Walk-forward AUC target: >0.7241 (beat v33)
+
+6. Deploy v35
+   - gungnir_v35_deploy.json
+   - catalyst_scorer_v35.py
+   - catalyst_scores_v35.json (2026 catalysts scored)
+
+================================================================================
+FILES CREATED
+================================================================================
+
+1. finbrain_feature_extractor.py (1,200+ lines)
+   - Load training data
+   - API call stubs (commented TODO, ready for uncommenting)
+   - Feature computation from time series
+   - Phase-average imputation
+   - Batch processing and caching
+   - JSON output
+
+2. FINBRAIN_MCP_BLOCK_REPORT.md (detailed error documentation)
+
+3. FINBRAIN_TECHNICAL_SUMMARY.txt (this file)
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+IMMEDIATE (once MCP is fixed):
+  1. Uncomment TODO blocks in finbrain_feature_extractor.py
+  2. Run: python finbrain_feature_extractor.py
+  3. Verify finbrain_features.json output
+
+SHORT TERM (v35 training):
+  1. Merge FinBrain features with v33 training data
+  2. Ablation study on new features
+  3. Walk-forward validation
+  4. Train v35 meta-ensemble
+
+MEDIUM TERM:
+  1. Compare v35 AUC against v33 (target: beat 0.7241)
+  2. Deploy v35 for live 2026 catalyst scoring
+  3. Monitor feature importance over time
+
+================================================================================
+RISK MITIGATION
+================================================================================
+
+Risk: FinBrain data is sparse for microcap stocks
+Mitigation: Phase-average imputation fills gaps; v33 proved this works
+
+Risk: FinBrain API rate limits or outages
+Mitigation: Script has caching; could add retry logic once live
+
+Risk: Market signals are spurious (data snooping risk)
+Mitigation: Walk-forward validation prevents leakage; strict T-1 compliance
+
+Risk: Feature drift over time
+Mitigation: Quarterly retraining; monitor correlation with outcomes
+
+================================================================================
+METRICS & TARGETS
+================================================================================
+
+Current (v33):
+  - AUC: 0.7241 (walk-forward)
+  - Brier: 0.1532
+  - Win rate (T1): 88-91%
+  - Features: 103
+
+Target (v35):
+  - AUC: >0.7241 (beat v33)
+  - Brier: <0.1532
+  - Win rate (T1): >88%
+  - Features: 114 (103 + 11 FinBrain)
+
+Success criteria:
+  ✓ v35 AUC beats v33 on hold-out set
+  ✓ FinBrain features statistically significant in ablation
+  ✓ No new data leakage (all features T-1 compliant)
+  ✓ >90% coverage of 1,752 training events
+
+================================================================================

@@ -1,0 +1,87 @@
+{
+  "version": "3.1.0",
+  "backtest": {
+    "version": "3.1.0",
+    "methodology": "walk_forward_honest",
+    "n_trades": 907,
+    "win_rate": 0.6957,
+    "avg_return": 14.88,
+    "median_return": 7.79,
+    "total_return": 14381.7,
+    "final_value": 14481651.91,
+    "sharpe": 5.35,
+    "max_drawdown": -5.3,
+    "tier_stats": {
+      "T1": {
+        "n": 466,
+        "avg_return": 8.92,
+        "win_rate": 0.665,
+        "avg_size_pct": 0.046,
+        "avg_pred": 11.51
+      },
+      "T2": {
+        "n": 216,
+        "avg_return": 15.51,
+        "win_rate": 0.699,
+        "avg_size_pct": 0.0448,
+        "avg_pred": 16.47
+      },
+      "T3": {
+        "n": 60,
+        "avg_return": 28.41,
+        "win_rate": 0.8,
+        "avg_size_pct": 0.0299,
+        "avg_pred": 22.63
+      },
+      "T4": {
+        "n": 165,
+        "avg_return": 25.98,
+        "win_rate": 0.739,
+        "avg_size_pct": 0.015,
+        "avg_pred": 25.31
+      }
+    },
+    "mcap_stats": {
+      "nano": {
+        "n": 64,
+        "avg_return": 29.33,
+        "win_rate": 0.719
+      },
+      "micro": {
+        "n": 159,
+        "avg_return": 24.64,
+        "win_rate": 0.717
+      },
+      "small": {
+        "n": 138,
+        "avg_return": 23.61,
+        "win_rate": 0.696
+      },
+      "mid": {
+        "n": 131,
+        "avg_return": 14.81,
+        "win_rate": 0.725
+      },
+      "large": {
+        "n": 415,
+        "avg_return": 6.04,
+        "win_rate": 0.675
+      }
+    },
+    "window_distribution": {
+      "T-45_T-1": 240,
+      "T-60_T-1": 275,
+      "T-25_T-1": 248,
+      "T-25_T-3": 2,
+      "T-45_T-7": 4,
+      "T-90_T-1": 138
+    },
+    "skip_reasons": {
+      "no_model": 434,
+      "low_pred": 224,
+      "low_score": 95,
+      "heat_limit": 0
+    }
+  },
+  "deploy_path": "/sessions/loving-nifty-dirac/mnt/Python/9realms/bifrost_v3_deploy.json"
+}

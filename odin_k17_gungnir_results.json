@@ -1,0 +1,222 @@
+{
+  "kaizen_id": "K17",
+  "parent": "K16",
+  "codename": "Gungnir",
+  "training_date": "2026-02-16T03:08:36.785921",
+  "architecture": "sign_constrained_stacked_ensemble + rule_based_risk_overlay",
+  "ml_walk_forward": {
+    "auc": 0.9551792847959935,
+    "brier": 0.038730862755587056,
+    "ece": 0.03096217640524345,
+    "tier1_count": 341.75,
+    "tier1_precision": 0.9627213813796519,
+    "tier1_recall": 0.9876698218808222
+  },
+  "overlay_walk_forward": {
+    "auc": 0.9467443753746916,
+    "brier": 0.041917749044329426,
+    "ece": 0.03591187944620064,
+    "tier1_count": 335.25,
+    "tier1_precision": 0.9639197903648742,
+    "tier1_recall": 0.9621836495131686
+  },
+  "adversarial": {
+    "false_positives_tested": 5,
+    "correctly_downgraded": 5,
+    "controls_tested": 2,
+    "controls_correct": 2,
+    "results": [
+      {
+        "name": "IRON \u2014 Bitopertin (schizophrenia, PPM)",
+        "expected": "TIER_4",
+        "actual": "CRL",
+        "v1069_score": 0.919,
+        "ml_score": 0.032,
+        "overlay_score": 0.01,
+        "tier": "TIER_4",
+        "hard_cap": 0.15,
+        "rules_fired": [
+          "FAILURE_SIGNAL",
+          "PPM_HOEG_ERA",
+          "CNS_PENALTY",
+          "HOEG_ERA_BASE"
+        ]
+      },
+      {
+        "name": "SNY \u2014 Tolebrutinib (MS, DILI)",
+        "expected": "TIER_3",
+        "actual": "CRL",
+        "v1069_score": 0.924,
+        "ml_score": 0.9744,
+        "overlay_score": 0.45,
+        "tier": "TIER_3",
+        "hard_cap": 0.45,
+        "rules_fired": [
+          "SEVERE_SAFETY_HOEG",
+          "CNS_PENALTY",
+          "HOEG_ERA_BASE"
+        ]
+      },
+      {
+        "name": "Ultragenyx \u2014 Gene therapy MPS IIIA",
+        "expected": "TIER_3",
+        "actual": "CRL",
+        "v1069_score": 0.95,
+        "ml_score": 0.9811,
+        "overlay_score": 0.55,
+        "tier": "TIER_2",
+        "hard_cap": 0.55,
+        "rules_fired": [
+          "GENE_THERAPY_PHASE3",
+          "SINGLE_ARM_HOEG",
+          "GENE_THERAPY_GENERAL",
+          "HOEG_ERA_BASE"
+        ]
+      },
+      {
+        "name": "Rocket \u2014 Gene therapy LAD-I",
+        "expected": "TIER_4",
+        "actual": "CRL",
+        "v1069_score": 0.91,
+        "ml_score": 0.9116,
+        "overlay_score": 0.3,
+        "tier": "TIER_4",
+        "hard_cap": 0.3,
+        "rules_fired": [
+          "PPM_HOEG_ERA",
+          "GENE_THERAPY_PHASE3",
+          "SINGLE_ARM_HOEG",
+          "GENE_THERAPY_GENERAL",
+          "HOEG_ERA_BASE"
+        ]
+      },
+      {
+        "name": "Lykos \u2014 MDMA for PTSD",
+        "expected": "TIER_4",
+        "actual": "CRL",
+        "v1069_score": 0.478,
+        "ml_score": 0.9679,
+        "overlay_score": 0.35,
+        "tier": "TIER_3",
+        "hard_cap": 0.35,
+        "rules_fired": [
+          "PSYCHEDELIC_COMPOUND",
+          "SINGLE_ARM_HOEG",
+          "MODERATE_SAFETY",
+          "HOEG_ERA_BASE"
+        ]
+      },
+      {
+        "name": "CONTROL \u2014 Strong Phase 3 positive (oncology)",
+        "expected": "TIER_1",
+        "actual": "Approved",
+        "v1069_score": 0.97,
+        "ml_score": 0.9821,
+        "overlay_score": 0.9921,
+        "tier": "TIER_1",
+        "hard_cap": null,
+        "rules_fired": [
+          "HOEG_ERA_BASE",
+          "RCT_HARD_ENDPOINT_BOOST"
+        ]
+      },
+      {
+        "name": "CONTROL \u2014 Phase 2 dose-response (immunology)",
+        "expected": "TIER_1",
+        "actual": "Positive",
+        "v1069_score": 0.85,
+        "ml_score": 0.9669,
+        "overlay_score": 0.9469,
+        "tier": "TIER_1",
+        "hard_cap": null,
+        "rules_fired": [
+          "HOEG_ERA_BASE"
+        ]
+      }
+    ]
+  },
+  "risk_rules": [
+    {
+      "name": "FAILURE_SIGNAL",
+      "description": "Explicit failure/miss in text",
+      "cap": 0.15,
+      "penalty": null,
+      "type": "hard_cap"
+    },
+    {
+      "name": "PPM_HOEG_ERA",
+      "description": "Primary pivotal miss in Hoeg-era FDA",
+      "cap": 0.3,
+      "penalty": null,
+      "type": "hard_cap"
+    },
+    {
+      "name": "PSYCHEDELIC_COMPOUND",
+      "description": "Psychedelic drug \u2014 extreme regulatory headwind",
+      "cap": 0.35,
+      "penalty": null,
+      "type": "hard_cap"
+    },
+    {
+      "name": "SEVERE_SAFETY_HOEG",
+      "description": "Severe safety signal (DILI/cardiac/fatal) in Hoeg era",
+      "cap": 0.45,
+      "penalty": null,
+      "type": "hard_cap"
+    },
+    {
+      "name": "GENE_THERAPY_PHASE3",
+      "description": "Gene therapy in Phase 3 \u2014 CMC/manufacturing risk",
+      "cap": 0.55,
+      "penalty": null,
+      "type": "hard_cap"
+    },
+    {
+      "name": "SINGLE_ARM_HOEG",
+      "description": "Single-arm study in Hoeg era \u2014 FDA demanding RCTs",
+      "cap": 0.6,
+      "penalty": null,
+      "type": "hard_cap"
+    },
+    {
+      "name": "MODERATE_SAFETY",
+      "description": "Moderate safety concern (cardiac/liver enzyme)",
+      "cap": null,
+      "penalty": 0.08,
+      "type": "soft_penalty"
+    },
+    {
+      "name": "GENE_THERAPY_GENERAL",
+      "description": "Gene therapy (any phase) \u2014 inherent CMC risk",
+      "cap": null,
+      "penalty": 0.05,
+      "type": "soft_penalty"
+    },
+    {
+      "name": "CNS_PENALTY",
+      "description": "CNS therapeutic area \u2014 historically higher CRL rate",
+      "cap": null,
+      "penalty": 0.03,
+      "type": "soft_penalty"
+    },
+    {
+      "name": "HOEG_ERA_BASE",
+      "description": "Hoeg-era baseline FDA uncertainty",
+      "cap": null,
+      "penalty": 0.02,
+      "type": "soft_penalty"
+    },
+    {
+      "name": "RCT_HARD_ENDPOINT_BOOST",
+      "description": "RCT with hard endpoint (PFS/OS) \u2014 gold standard",
+      "cap": null,
+      "penalty": -0.03,
+      "type": "soft_penalty"
+    }
+  ],
+  "stacker_weights": {
+    "intercept": -3.46937062048044,
+    "xgb_coef": 1.704605612107562,
+    "logit_coef": 5.844879742190572
+  }
+}

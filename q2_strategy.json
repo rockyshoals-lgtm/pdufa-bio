@@ -1,0 +1,35 @@
+{
+  "scored_total": 324,
+  "q2_universe": 324,
+  "tiered_roster_size": 30,
+  "total_exposure_pct": 169.5,
+  "tier_counts": {
+    "ALPHA": 24,
+    "T1": 4,
+    "T2": 2
+  },
+  "mcap_counts": {
+    "micro": 12,
+    "mid": 7,
+    "small": 6,
+    "nano": 5
+  },
+  "by_cat_class": {
+    "CONFERENCE": 21,
+    "PDUFA": 4,
+    "READOUT": 3,
+    "REGULATORY": 2
+  },
+  "top_10_tickers": [
+    "DBVT",
+    "FATE",
+    "TNXP",
+    "MOLN",
+    "CRDF",
+    "XLO",
+    "CNTX",
+    "PRLD",
+    "COGT",
+    "ZNTL"
+  ]
+}

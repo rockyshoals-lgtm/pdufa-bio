@@ -1,0 +1,696 @@
+Here’s a **summary of the existing academic and industry research** that relates to *measuring stock price performance around FDA approval and related events*, along with what it *does and does not provide* relative to your specific T‑45→T‑1 PDUFA momentum question:
+
+---
+
+## 📈 1. **Direct Event Studies on FDA‑Related Stock Returns**
+
+### **Complete Response Letter Event Study**
+
+* **Muralitharan (2026)** analyzes **stock reactions to FDA Complete Response Letters (CRLs)**.
+* Finds a **mean cumulative abnormal return (CAR) of –4.34% in the [–1,+1] day window** around a CRL (statistically significant).
+* Also identifies **pre‑event stock volatility** as a factor that amplifies negative reactions. ([SSRN][1])
+  👉 **Relevance:** This does *not* examine the pre‑event *runup* 45 days before, but quantifies volatility and returns immediately around regulatory decisions, and suggests volatility is predictive of reaction.
+
+---
+
+### **Clinical/News Event Reactions**
+
+* A broad **event study of 503,107 news releases** finds biotech firms have **larger abnormal returns and volatility responses** to news than pharmaceutical peers; segmentation by capitalization shows **larger firms display lower abnormal return magnitudes**. ([PMC][2])
+  👉 **Relevance:** This shows **biotech stocks are more sensitive to news**, but does *not* specifically isolate PDUFA timing windows (like T‑45).
+
+---
+
+### **Biotechnology Event Study on Clinical Announcements**
+
+* **Hwang (2013)** investigates clinical result announcements and reports **median cumulative abnormal returns around the ±2 day window** for positive (~0.8%) and negative events (~–2.0%). ([PLOS][3])
+  👉 **Relevance:** Confirms **short‑term event windows show measurable abnormal returns**, but does *not* extend to the *long pre‑decision horizon (e.g., T‑45)* you’re exploring.
+
+---
+
+## 📊 2. **Indirect Event Study Literature (General FDA/Catalyst Effects)**
+
+### **Stock Market Reaction to Clinical Trials**
+
+* **Singh (2022)** conducts a very large clinical outcome event study (>13,000 events) showing where significant reactions occur during trial announcements. ([PMC][4])
+  👉 **Relevance:** Shows how *clinical progress* on trials moves stocks, a factor that *feeds into PDUFA runup*, but does not statistically isolate the 45‑day runup window.
+
+---
+
+### **FDA Approval Announcement Studies**
+
+* **Sturm (2007)** and **Ankolekar (2013)** examine stock price behavior around **FDA approval announcements**, including estimating average returns with traditional event study frameworks. ([Pepperdine Digital Commons][5])
+  👉 **Relevance:** Likely contains traditional CAR estimates for the approval announcement day or short windows, but not the extended pre‑event momentum metrics you need.
+
+---
+
+### **Market Reaction to Fast Track Announcements**
+
+* **Re (2016)** finds announcements like **Fast Track designations** can correlate with abnormal stock returns, with average positive impacts (~9%). ([Stern School of Business][6])
+  👉 **Relevance:** Focuses on *regulatory milestone news*, suggesting these milestones can contribute incremental runup before approval.
+
+---
+
+## 📉 3. **Gaps in the Literature Relative to Your Request**
+
+Despite the broad event‑study literature on biotech stock reactions to clinical and FDA regulatory news:
+
+### ❗ **Missing Direct T‑45→T‑1 Studies**
+
+* There are **no peer‑reviewed academic papers identified in this search** that explicitly quantify **average/median returns or volatility in the specific 45 trading days leading up to a PDUFA date** — *i.e.*, no standard research on T‑45 runup momentum, volume/IV changes, or cohort breakdowns.
+
+### ❗ **No Published Datasets Matching T‑45 Imperative**
+
+* Databases like Drugs@FDA or FDA calendars are widely used for scheduling/monitoring but do not, by themselves, compute or publish **pre‑authorization financial performance metrics**. ([RTTNews][7])
+
+### ❗ **Lack of Controls for Selection Bias / Survivorship**
+
+* Academic event studies typically focus on *±1 or ±2 day abnormal returns* — and do not address **long horizon biases** like:
+
+  * *Survivorship bias* (only successful approvals studied)
+  * *Selection bias* (only high‑profile approvals included)
+  * *Cross‑sectional differences* by market cap or prior CRLs
+
+---
+
+## 📌 Summary of What Existing Research Supports
+
+| Research Focus                                       | Evidence Found                                    | Relevance to T‑45→T‑1                              |
+| ---------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------- |
+| Short‑term response to FDA decisions                 | Yes — CARs around decision/CRL                    | Strong for decision impact, not for long pre‑runup |
+| Sensitivity to biotech news vs pharma                | Yes — biotech shows larger reactions              | Qualitative support that momentum exists           |
+| Sensitivity by firm size                             | Yes — larger firms tend to muted abnormal returns | Valuable for segmentation                          |
+| Reaction to regulatory milestones (Fast Track, etc.) | Yes — positive abnormal returns                   | Suggestive that milestones *ahead of PDUFA* matter |
+| Long‑horizon runup studies (e.g., T‑45)              | **No academic papers found**                      | ❗ Significant gap                                  |
+
+---
+
+## 📌 Caveats and Methodological Notes from Event Study Literature
+
+* **Abnormal return calculations** typically use market models or CAPM to estimate expected returns and then derive CARs around the event.
+* **Short windows (±1, ±2 days)** limit information leakage but may miss momentum built up over weeks.
+* **Biotech stocks have greater volatility**, which can bias estimated abnormal returns if not properly controlled. ([PMC][2])
+* **Market cap effects** appear consistent: larger companies have smaller abnormal return magnitudes relative to smaller biotechs, a pattern that likely extends to runup studies.
+
+---
+
+## 📦 Conclusion
+
+➡️ **Academic research confirms that FDA‑related announcements and regulatory milestones affect biotech stock prices**, producing statistically meaningful reactions in short event windows (±1 to ±2 days) and with magnitude correlated to firm characteristics.
+
+➡️ **However, there appears to be no published academic dataset or event study that systematically quantifies the *45‑day runup momentum* (T‑45→T‑1) across PDUFA events** with breakdowns by market cap, prior CRL, AdCom, or CMC risk proxies — meaning your use of *proprietary datasets* or *original analysis with historical prices* is currently the leading source for that specific metric.
+
+---
+
+If you’d like, I can help formulate a **statistical event‑study framework you can apply** to historical stock and FDA action data to compute T‑45→T‑1 returns, volatility, and volume/IV shifts with controls for market cap and prior catalysts.
+
+[1]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6027774&utm_source=chatgpt.com "Stock Market Reactions to FDA Complete Response Letter ..."
+[2]: https://pmc.ncbi.nlm.nih.gov/articles/PMC10817120/?utm_source=chatgpt.com "How does news affect biopharma stock prices?: An event ..."
+[3]: https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0071966&utm_source=chatgpt.com "Stock Market Returns and Clinical Trial Results of ..."
+[4]: https://pmc.ncbi.nlm.nih.gov/articles/PMC9439234/?utm_source=chatgpt.com "The reaction of sponsor stock prices to clinical trial outcomes"
+[5]: https://digitalcommons.pepperdine.edu/cgi/viewcontent.cgi?article=1026&context=jef&utm_source=chatgpt.com "FDA Drug Approvals: Time Is Money!"
+[6]: https://www.stern.nyu.edu/sites/default/files/assets/documents/2016%20Re%20paper.pdf?utm_source=chatgpt.com "Stock Market Reaction to FDA Breakthrough Therapy ..."
+[7]: https://www.rttnews.com/corpinfo/fdacalendar.aspx?utm_source=chatgpt.com "FDA Calendar, FDA Drug Approval, PDUFA Calendar"
+
+Here’s a **fresh, web‑verified survey** of *new research, preprints, blog posts, and practitioner write‑ups* on **predictive market microstructure** — with an eye toward features that could be relevant around *biotech catalysts* (e.g., FDA decisions, clinical trial readouts) **and how to measure them with public or retail‑accessible data**.
+
+---
+
+## 🧠 New Academic & Preprint Research (Market Microstructure Signals)
+
+### **Order Flow & LOB Feature Extraction**
+
+**1) Optimal Signal Extraction from Order Flow (Matched Filter Perspective)**
+• Shows that **normalizing signed order flow by market capitalization**, rather than trading volume, captures *informed trading signals* more effectively, improving correlation with future returns. ([arXiv][1])
+
+**Actionable feature:**
+
+* **Scaled Signed Order Flow (SSOF):** *(Net buy – sell flow) ÷ market cap* as a predictive signal for short‑term drift.
+
+**Retail measurement:**
+
+* Aggregate trades with sign (e.g., Lee‑Ready rule) and divide by current market cap (public).
+
+---
+
+**2) ClusterLOB (Clustering Order Events in the LOB)**
+• Unsupervised clustering of order book events into *directional*, *opportunistic*, and *market‑making* clusters refines imbalance estimates and enhances signals. ([arXiv][2])
+
+**Actionable features:**
+
+* **Clustered Order Flow Imbalances:** separate imbalance measures for different agent‑type clusters.
+* **Cluster participation rates:** relative volume from directional vs market‑making events.
+
+**Retail measurement:**
+
+* Require *market‑by‑order* data (subscription L2 feeds) to build event clusters; simpler alternate is trade type segmentation.
+
+---
+
+**3) Inferring Option Movements Through Residual Transactions**
+• Identifies *residual trades* beyond standard hedging activity, showing they can forecast option price moves. ([arXiv][3])
+
+**Actionable feature:**
+
+* **Hedging residual activity:** an anomaly score derived from deviations in expected delta/gamma hedging patterns.
+
+**Retail measurement:**
+
+* Approximate by comparing actual option trade flow against expected hedging flow (using theoretical greeks).
+
+---
+
+**4) Inferring Latent Market Forces via LLM Detection of Gamma Patterns**
+• Demonstrates that raw gamma exposure patterns correlate with *structural market constraints* (e.g., dealer hedging) detectable by statistical methods. ([arXiv][4])
+
+**Actionable features:**
+
+* **Gamma exposure regime indicator:** zones of high dealer hedging pressure.
+* **Hedging constraint transitions:** sudden shifts in gamma flow patterns.
+
+**Retail measurement:**
+
+* Compute gamma exposure aggregates across strikes/expiries from public options data.
+
+---
+
+## 📈 Practitioner & Blog‑Level Insights
+
+### **Dark Pool & Hidden Liquidity Concepts**
+
+**Dark Pool Trading Liquidity Guide (2025)** — comprehensive primer on dark pool mechanics and *institutional flow detection methods*. Key points: dark pools are ATS venues where large trades are hidden and only appear in consolidated time‑and‑sales when executed; various detection heuristics aim to infer hidden liquidity activity. ([TradersPost][5])
+
+**Actionable features:**
+
+* **ATS print anomalies:** count large off‑exchange prints vs baseline.
+* **Execution price deviation:** measure block execution prices relative to NBBO.
+
+**Retail measurement:**
+
+* Dark prints appear in consolidated tape; track with scanners (broker or third‑party).
+
+---
+
+### **Market Microstructure Tools & Indicators (Practitioner)**
+
+A publicly documented set of indicators includes:
+
+* **Gamma Exposure** (total sensitivity of delta).
+* **Net Options Delta** (directional options bias).
+* **Options Dollar Flow** (money flowing into calls vs puts).
+* **FINRA Short Interest Ratio** (short pressure). ([BlackBoxDocs][6])
+
+**Actionable features:**
+
+* **Net options delta imbalance:** flows suggest bias leading up to events.
+* **Options flow volume:** aggregate buys and sells by delta exposure.
+* **Short pressure metrics (SIR / borrow changes):** indicate baseline bearish/euphoria.
+
+**Retail measurement:**
+
+* Options chain data, consolidated short interest from FINRA, broker SLB feeds.
+
+---
+
+### **Popular Order Flow / Liquidity Videos**
+
+An industry talk on *order flow & liquidity shifts including gamma interpretation* highlights real‑time trade and liquidity features that experienced traders monitor. ([YouTube][7])
+
+**Actionable ideas:**
+
+* **Liquidity shift triggers:** how bid‑ask spread expansions coincide with gamma hedging.
+* **Order flow clusters around event timing:** aggressive prints causing liquidity imbalance.
+
+**Retail measurement:**
+
+* Real‑time L1/L2, tick prints, book depth from platforms like Bookmap.
+
+---
+
+## 📍 Feature List — What to Extract & Track
+
+| **Feature Category**               | **Feature / Signal**           | **Retail/Accessible Measure**                       |
+| ---------------------------------- | ------------------------------ | --------------------------------------------------- |
+| **Order Book / Flow**              | Scaled Signed Order Flow       | (Buy – Sell) / market cap from tick data            |
+|                                    | Clustered Order Flow Imbalance | Segmented imbalance from market‑by‑order feeds      |
+| **Options Flow & Gamma**           | Gamma exposure aggregates      | Sum of (gamma × open interest) per expiry/strike    |
+|                                    | Net Options Delta              | ∑ (delta × OI) for calls/puts                       |
+|                                    | Options Dollar Flow            | ∑ (trade size × trade price) in calls/puts          |
+|                                    | Hedging residual score         | Deviation between expected and actual hedging flows |
+| **Dark Pool / ATS**                | ATS print count spikes         | Consolidated tape off‑exchange prints               |
+|                                    | Price deviation on blocks      | Execution price vs NBBO                             |
+| **Short / Borrow**                 | Short Volume Ratio             | FINRA short volume / total volume                   |
+|                                    | Borrow fee movement            | Broker SLB feed changes                             |
+| **Volatility / Liquidity Regimes** | Spread widenings around events | Bid/ask spread time‑series                          |
+|                                    | Realized vol jumps             | Intraday high frequency realized volatility         |
+
+---
+
+## 🧾 Data & Measurement Approaches (Retail‑Accessible)
+
+* **Trade & Quote Streams:** L1/L2 feeds (IEX, NASDAQ TotalView) for signed order flow, spreads, depth.
+* **Options Chains & Trades:** Public APIs (broker or third‑party) for greeks, OI, volume.
+* **Dark/Block Prints:** Consolidated tape scanners; dark print filters.
+* **Short Interest Data:** FINRA short sale volume reports; borrow feeds from broker APIs.
+* **Realized Volatility:** OHLC plus intraday data to compute short‑interval vol and spread.
+
+---
+
+## 📌 Sources & Citations
+
+**Academic Preprints**
+
+* Optimal signal extraction on normalized order flow. ([arXiv][1])
+* ClusterLOB for order book clustering signals. ([arXiv][2])
+* Residual transaction model for option movement inference. ([arXiv][3])
+* LLM detection of latent gamma exposure patterns. ([arXiv][4])
+
+**Practitioner / Blog**
+
+* Dark pool liquidity and institutional flow guide. ([TradersPost][5])
+* Trader indicators including gamma, net delta, short interest ratio. ([BlackBoxDocs][6])
+* Options flow & order flow commentary (video). ([YouTube][7])
+
+**Other**
+
+* Dark pool definition & mechanism. ([en.wikipedia.org][8])
+
+---
+
+Let me know if you want **direct links to PDFs or metadata** for each paper, or a **template for extracting these features programmatically**.
+
+[1]: https://arxiv.org/abs/2512.18648?utm_source=chatgpt.com "Optimal Signal Extraction from Order Flow: A Matched Filter Perspective on Normalization and Market Microstructure"
+[2]: https://arxiv.org/abs/2504.20349?utm_source=chatgpt.com "ClusterLOB: Enhancing Trading Strategies by Clustering Orders in Limit Order Books"
+[3]: https://arxiv.org/abs/2410.16563?utm_source=chatgpt.com "Inferring Option Movements Through Residual Transactions: A Quantitative Model"
+[4]: https://arxiv.org/abs/2512.17923?utm_source=chatgpt.com "Inferring Latent Market Forces: Evaluating LLM Detection of Gamma Exposure Patterns via Obfuscation Testing"
+[5]: https://blog.traderspost.io/article/dark-pool-trading-liquidity-guide?utm_source=chatgpt.com "Dark Pool Trading Liquidity Guide"
+[6]: https://docs.blackboxstocks.com/en/getting-started/our-proprietary-indicators/?utm_source=chatgpt.com "Our Proprietary Indicators: BlackBoxStocks Exclusive"
+[7]: https://www.youtube.com/watch?v=9BWI9YDVtyg&utm_source=chatgpt.com "Order Flow
+ for Options & Futures: Liquidity Shifts, Gamma ..."
+[8]: https://en.wikipedia.org/wiki/Dark_pool?utm_source=chatgpt.com "Dark pool"
+Here’s a **fresh, research‑grounded summary of *recent (2024–2025) academic research, datasets, and practitioner insights* on **predictive market microstructure** relevant to catalysts (e.g., biotech news/events). I focus on **actionable signals around options flow, dealer gamma/hedging dynamics, liquidity shocks, short/borrow dynamics, auction imbalance, volatility term structure, and informational leakage** — with citations.
+
+---
+
+## 🧠 **1) Order Flow & Limit Order Book Signals**
+
+**Order Flow Imbalance (OFI) & Price Impact**
+
+* OFI — net signed flow of market and limit orders — remains a core microstructure predictor of **short‑term price moves, volatility changes, and liquidity conditions**. It aggregates executed trades and cancellations to quantify directional pressure on prices. ([Emergent Mind][1])
+* *Signal extraction research* shows that the choice of normalization (e.g., scaling by market cap rather than volume) can **significantly enhance the correlation between order flow intensity and future returns**, indicating a more robust signal for informed trading. ([arXiv][2])
+
+**Actionable microstructure signals:**
+
+* **Short‑interval OFI** (e.g., 1–5 min buckets) as a dynamic signed pressure indicator.
+* **Normalized order flow intensity** (market‑cap scaled) to filter noise and highlight informed flow.
+* **Depth slope and price impact proxies** derived from limit order book structure. ([Enlighten Theses][3])
+
+---
+
+## 📈 **2) Options Flow & Volatility Term Structure**
+
+**Predictive content of volatility & option features**
+
+* Studies show that **option implied volatility dynamics (e.g., term structure shifts, skew concavity prior to earnings or events)** carry information beyond spot price history and can help anticipate realized moves. ([University of Edinburgh Research][4])
+* Machine learning applied to **volatility surfaces** (across moneyness and expiries) can uncover *predictable return patterns* that survive transaction costs, especially when *dealer/intermediary constraints* and retail demand distort surfaces. ([SSRN][5])
+
+**Actionable options signals:**
+
+* **IV term spreads** (short vs long maturities) as regime/timing indicators.
+* **Concavity or steepness of IV skew prior to catalysts** signals heightened event risk.
+* **Surface anomaly detection via ML** (especially over‑ or underreactions relative to fundamentals).
+
+---
+
+## 🔄 **3) Dealer Gamma / Hedging & Market Intermediary Effects**
+
+**Gamma exposure & hedging patterns**
+
+* Microstructure research shows that *dealer inventory/hedging constraints* shape liquidity and pricing, e.g., when dealers’ net positions are large or intermediaries are constrained, option spreads widen and liquidity thins. ([SSRN][6])
+* While direct dealer‑gamma research is less available in open recent papers, broader microstructure reviews (e.g., market making and liquidity dynamics) provide empirical grounding for focusing on **dealer inventory/hedging proxies**. ([ResearchGate][7])
+
+**Actionable gamma‑related signals:**
+
+* **Near‑the‑money options spread widening** as an inventory stress proxy.
+* **0DTE (same‑day expiration) volume spikes** correlated with mechanical delta‑hedging flows (ambiguous but indicative of hedging stress).
+
+---
+
+## 💧 **4) Liquidity Shocks & High‑Frequency Dynamics**
+
+**Liquidity and imbalance volatility**
+
+* High‑frequency imbalance volatility not only predicts short‑term liquidity changes but also *cross‑sectional return predictability*, linking liquidity shock periods to subsequent price moves. ([ResearchGate][8])
+* Practitioner feature engineering emphasizes **book imbalance metrics, short‑term aggressor dominance, depth decay, and spread elasticity** under stress as useful in machine learning and execution models. ([Digital One Agency][9])
+
+**Actionable liquidity signals:**
+
+* **Imbalance volatility metrics** (rolling standard deviation of signed flow).
+* **Spread elasticity under stress** (How quickly bid–ask widths widen relative to volume).
+* **Depth decay rates** after aggressive orders as immediate fragility signals.
+
+---
+
+## 📉 **5) Short/Securities Lending & Information Asymmetry**
+
+While dedicated academic microstructure papers on *short/borrow dynamics* at intraday scales remain scarce in the public research space, **information asymmetry models (e.g., Imperfect competition in dealer markets)** imply that aggressive short‑flow and informed trading can be detectable through order flow and spread patterns. ([Global Trading][10])
+
+**Actionable proxy signals:**
+
+* **Aggressive sell volume spikes intraday** (imbalance skewed negative).
+* **Spread widening during high short demand** reflecting adverse selection. (Proxy rather than direct borrow data)
+
+---
+
+## 📊 **6) Auction Imbalance & Price Discovery**
+
+While specific new auction imbalance academic studies are not prominent in recent public results, **limit order book and price impact studies** underscore that *auction phases (pre‑open, close)* and order flows around them contain informational signals about short‑term price biases. ([Enlighten Theses][3])
+
+**Actionable auction signals:**
+
+* **Pre‑auction bid/ask imbalance** as directional bias before open/close.
+* **Immediate post‑auction spread dynamics** as liquidity and sentiment measures.
+
+---
+
+## 🧠 **7) Machine Learning & Predictive Modeling**
+
+Recent academic work and practitioner applications confirm that **ML techniques (deep learning/ensemble models) can extract nonlinear patterns from microstructure signals** — especially when combining order flow, liquidity metrics, and volatility features — though real trading utility requires robust validation. ([Taylor & Francis Online][11])
+
+**Actionable ML signals/features:**
+
+* **Combined feature sets:** OFI, liquidity ratio, bid–ask spread dynamics, book slope, volatility surface parameters.
+* **Model‑specific importance metrics** to identify which features (e.g., skew shifts, imbalance) drive predictions.
+
+---
+
+## 📌 **Summary of Actionable Predictive Signals**
+
+| Signal Category                       | Practical Extractable Signal                         | Utility                       |
+| ------------------------------------- | ---------------------------------------------------- | ----------------------------- |
+| **Order Flow Imbalance**              | Short‑interval signed flow, normalized flows         | Intraday directional pressure |
+| **Liquidity Shock Indicators**        | Imbalance volatility, depth decay, spread elasticity | Liquidity regime shifts       |
+| **Volatility/Options Features**       | IV term spreads, skew concavity, surface anomalies   | Event risk & directional bias |
+| **Dealer/Hedging Proxies**            | Near‑ATM spread widening, 0DTE flow spikes           | Hedging stress regimes        |
+| **Auction Imbalance**                 | Pre‑open/close imbalance                             | Directional bias in auctions  |
+| **Machine‑Learned Composite Signals** | Integrated microstructure features                   | Enhanced predictive modeling  |
+
+---
+
+## 📚 Representative Citations
+
+* Order flow imbalance and market dynamics (OFI fundamentals). ([Emergent Mind][1])
+* Enhanced order flow signal extraction via normalization. ([arXiv][2])
+* Liquidity and imbalance volatility effects. ([ResearchGate][8])
+* Practitioner feature engineering on book imbalance, depth, and spread. ([Digital One Agency][9])
+* dealers’ inventory risk shaping options liquidity. ([SSRN][6])
+* Volatility surface predictability and return signals. ([SSRN][5])
+* Implied volatility term structure’s predictability around events. ([University of Edinburgh Research][4])
+* Deep LOB forecasting and ML techniques. ([Taylor & Francis Online][11])
+
+---
+
+If you need **ready‑to‑compute proxy formulas or code snippets** for any of the signals above (e.g., OFI calculation, IV term spread construction, normalized flow intensity), I can provide them too.
+
+[1]: https://www.emergentmind.com/topics/order-flow-imbalance?utm_source=chatgpt.com "Order Flow Imbalance in Market Microstructure"
+[2]: https://arxiv.org/abs/2512.18648?utm_source=chatgpt.com "Optimal Signal Extraction from Order Flow: A Matched Filter Perspective on Normalization and Market Microstructure"
+[3]: https://theses.gla.ac.uk/84848/3/2024DuongPhD.pdf?utm_source=chatgpt.com "How limit order book events and order flow affect price formation"
+[4]: https://www.research.ed.ac.uk/files/510014292/AlexiouEtalRF2025PricingEventRisk.pdf?utm_source=chatgpt.com "Pricing event risk: evidence from concave implied volatility ..."
+[5]: https://papers.ssrn.com/sol3/Delivery.cfm/4869272.pdf?abstractid=4869272&mirid=1&utm_source=chatgpt.com "Volatility Surfaces and Expected Option Returns"
+[6]: https://papers.ssrn.com/sol3/Delivery.cfm/4138512.pdf?abstractid=4138512&mirid=1&utm_source=chatgpt.com "Option Liquidity and Inventory Risk"
+[7]: https://www.researchgate.net/publication/392234151_Market_making_and_liquidity_provision_The_role_of_market_makers_in_financial_markets?utm_source=chatgpt.com "(PDF) Market making and liquidity provision: The role of ..."
+[8]: https://www.researchgate.net/publication/393340208_Incorporating_Liquidity_and_Order_Flow_Imbalances_for_Intraday_Stock_Volatility_Prediction?utm_source=chatgpt.com "Incorporating Liquidity and Order Flow Imbalances for ..."
+[9]: https://digitaloneagency.com.au/ai-and-global-trading-in-2026-how-we-predict-markets-sort-chaos-and-build-decision-engines-that-feel-the-future/?utm_source=chatgpt.com "AI And Global Trading In 2026: How We Predict Markets ..."
+[10]: https://www.globaltrading.net/research-on-the-web-in-2024/?utm_source=chatgpt.com "Six market microstructure research papers you must read"
+[11]: https://www.tandfonline.com/doi/full/10.1080/14697688.2025.2522911?utm_source=chatgpt.com "Deep limit order book forecasting: a microstructural guide"
+
+I’m sharing this because a key regulatory milestone just shifted how Glaukos’ flagship sustained‑release glaucoma therapy *iDose TR* can be used, which has real implications for clinical adoption and market perception.
+
+![Image](https://core4-cms.imgix.net/Singh_Fg1-v2_1729799239.jpg?auto=compress%2Cformat)
+
+![Image](https://www.market-scope.com/files/uploads/images/2022/09/September%202022%20OMP%20The%20iDose%20TR%20is%20implanted%20in%20the%20anterior%20chamber%2C%20anchored%20behind%20the%20trabecular%20meshwork.jpg)
+
+![Image](https://media.licdn.com/dms/image/v2/C4E0BAQEP9rz6LMeXLg/company-logo_200_200/company-logo_200_200/0/1650461011240/glaukos_corporation_logo?e=2147483647\&t=K4Sa8RTe9wSj53qFcTv9QRBe7Oeb6i9nZgBtUOeK5Qw\&v=beta)
+
+![Image](https://www.sec.gov/Archives/edgar/data/1192448/000155837018006233/ex-99d1g001.jpg)
+
+The U.S. Food and Drug Administration has approved an **NDA labeling supplement** from **Glaukos Corporation (NYSE: GKOS)** that now **permits repeat administration of iDose TR** — meaning physicians can implant a new device after removing the prior one in eligible patients rather than being limited to a single lifetime use. This reflects accumulated clinical evidence around safety and tolerability of repeated treatment supported by Phase 2 and Phase 3 data, including exchange trial results showing favorable corneal endothelial outcomes. ([investors.glaukos.com][1])
+
+Under the updated label, repeat use is allowed **only in patients who maintain a healthy cornea** per corneal endothelial cell density criteria, and physicians are advised to monitor endothelial health (e.g., specular microscopy) before re‑implantation. ([Eyes On Eyecare][2])
+
+The expanded label was widely reported to have driven a **positive stock reaction** — with shares up on the day of the announcement — and analysts viewing the change as a meaningful enhancement to the iDose TR value proposition in chronic glaucoma management. ([Investing.com][3])
+
+In short, this label update potentially **transforms iDose TR into a repeatable sustained‑release therapy option**, addressing adherence challenges with topical medications and offering clinicians greater flexibility — a real inflection point for procedural ophthalmic pharmacotherapy. ([HCPLive][4])
+
+[1]: https://investors.glaukos.com/news/news-details/2026/Glaukos-Announces-US-FDA-Approval-of-NDA-Supplement-Allowing-for-Re-Administration-of-iDose-TR/default.aspx?utm_source=chatgpt.com "Glaukos Announces US FDA Approval of NDA Supplement ..."
+[2]: https://glance.eyesoneyecare.com/stories/2026-01-29/fda-approves-glaukos-idose-tr-for-repeat-treatment-labeling/?utm_source=chatgpt.com "FDA approves Glaukos' iDose TR for repeat treatment labeling"
+[3]: https://www.investing.com/news/stock-market-news/glaukos-stock-rises-on-fda-approval-for-idose-tr-readministration-93CH-4470921?utm_source=chatgpt.com "Glaukos stock rises on FDA approval for iDose TR re ..."
+[4]: https://www.hcplive.com/view/fda-approves-labeling-update-for-idose-tr-for-open-angle-glaucoma-and-ocular-hypertension?utm_source=chatgpt.com "FDA Approves Labeling Update for iDose TR for Open-Angle Glaucoma and Ocular Hypertension"
+
+Here’s a concise **update on the most material PRV‑related developments over the past 90 days**, focused on market catalysts, evolving regulatory incentives, and how voucher dynamics are shifting:
+
+### 📈 Market‑Relevant Regulatory & Voucher Activity
+
+**The most market‑moving event recently was Jazz Pharmaceuticals publicly disclosing the sale of a traditional Rare Pediatric Disease Priority Review Voucher (PRV) for ~$200 million**, a deal highlighted in its JPMorgan presentation and SEC disclosure — one of the highest prices seen in recent years and a clear signal of **strong residual value in the PRV secondary market despite policy uncertainty**. The buyer was not disclosed, and Jazz will retain ~50 % of net proceeds. ([Fierce Pharma][1])
+
+![Image](https://pbs.twimg.com/media/G8Zn852W0AAP2Kj.jpg)
+
+![Image](https://rapsprod.blob.core.windows.net/rapsk13/raps/media/newsfiles/uploadedimages/site_setup/regulatory_focus/news/2015/03/2015-priority-voucher-system-figure%281%29.jpg)
+
+![Image](https://www.raps.org/getmedia/9159705b-ff4b-49df-b90f-7725a170ed74/710899_thumbnail.jpg.aspx?ext=.jpg\&height=257\&width=350)
+
+![Image](https://www.bio.org/sites/default/files/styles/bio_media_side_card_auto/public/2025-11/picture9.png?itok=9Y3Fzos2)
+
+### 🩺 FDA Expands Voucher Supply with Commissioner’s National Priority Vouchers (CNPVs)
+
+Unlike traditional PRVs, the FDA has been **actively issuing a new class of non‑tradable vouchers under its Commissioner’s National Priority Voucher (CNPV) pilot program**, designed to accelerate review timelines to ~1–2 months for therapies or projects aligned with U.S. national‑priority criteria (e.g., unmet needs, affordability, domestic supply chain).
+
+* A second batch of CNPVs was awarded in **early November 2025**, and another in **mid‑December 2025**, expanding the total supply of this new voucher type. ([U.S. Food and Drug Administration][2])
+* CNPVs are **not transferable or saleable** like traditional PRVs, and therefore are shaping a **separate incentive ecosystem** with distinct strategic implications for biotech sponsors. ([U.S. Food and Drug Administration][3])
+
+### 🔍 Why This Matters
+
+* **Voucher Supply Growth:** The expansion of CNPV awards increases the supply of expedited review rights — potentially moderating demand (and price) for legacy PRVs or altering how teams prioritize regulatory acceleration. ([U.S. Food and Drug Administration][2])
+* **Program Evolution & Market Signals:** The Jazz $200 M sale underscores that *classic PRV assets can still command high prices* even as the traditional PRV program awaits legislative renewal. ([BioSpace][4])
+* **Diverging Incentive Architectures:** CNPVs reshape the regulatory landscape with a broader set of priorities and stricter non‑transferability, while older PRV markets remain tied to tradable acceleration rights for rare‑disease approvals. ([U.S. Food and Drug Administration][3])
+
+### 📊 Quick Reference (Recent Events)
+
+* **Rare Pediatric Disease PRV sale — ~$200 M** (Jazz disclosed at JP Morgan, buyer undisclosed). ([Fierce Pharma][1])
+* **FDA Commissioner’s National Priority Vouchers (CNPV) awarded — Nov 6 & Dec 19, 2025.** ([U.S. Food and Drug Administration][2])
+* **CNPV program continues issuing non‑transferable accelerated review rights.** ([U.S. Food and Drug Administration][3])
+
+Let me know if you want a structured price history of PRV deals or a short analysis of how CNPV trends could affect voucher valuations.
+
+[1]: https://www.fiercepharma.com/pharma/jpm26-jazzs-prv-sale-200m-shows-drum-beat-rising-prv-prices-isnt-stopping?utm_source=chatgpt.com "JPM26: Jazz inks $200M priority review voucher sale"
+[2]: https://www.fda.gov/news-events/press-announcements/fda-grants-two-national-priority-vouchers?utm_source=chatgpt.com "FDA Grants Two National Priority Vouchers"
+[3]: https://www.fda.gov/news-events/press-announcements/faqs-commissioners-national-priority-voucher-pilot-program?utm_source=chatgpt.com "Commissioner's National Priority Voucher Pilot Program"
+[4]: https://www.biospace.com/business/jazz-sells-priority-review-voucher-for-200m-as-programs-renewal-languishes-in-senate?utm_source=chatgpt.com "Jazz Sells Priority Review Voucher for $200M as Program's ..."
+
+I’m sharing this because the **Jazz Pharmaceuticals PRV sale—at a ~$200M price tag—signals a rising tide in the secondary market for priority review vouchers (PRVs), shifting the economics of rare disease approvals and creating real valuation levers for sponsors, acquirers, and arbitrage‑focused investors**.
+
+![Image](https://www.raps.org/getmedia/9159705b-ff4b-49df-b90f-7725a170ed74/710899_thumbnail.jpg.aspx?ext=.jpg\&height=257\&width=350)
+
+![Image](https://media.licdn.com/dms/image/v2/D4E22AQGGPdjgY6YSSA/feedshare-shrink_800/B4EZuy9JKPKMAg-/0/1768233932336?e=2147483647\&t=opxMZOHvZRdS0mQJQ5P8QxrjJt41rBzPKJiI3r75ksc\&v=beta)
+
+![Image](https://static.biospace.com/dims4/default/57d0b8b/2147483647/strip/true/crop/800x1458%2B0%2B0/resize/1440x2624%21/quality/90/?url=https%3A%2F%2Fk1-prod-biospace.s3.us-east-2.amazonaws.com%2Fbrightspot%2Fde%2F0c%2F49cd6b984c8bbf5e8fb6f64614b4%2Finfographic-soft-skills-gradient-minimalist-style-2-1.png)
+
+![Image](https://cdn.document360.io/a7cea773-7486-41ac-bd50-afa0255ce01f/Images/Documentation/image-1707782945486.png)
+
+**What just happened:** Jazz disclosed at the J.P. Morgan Healthcare Conference that it sold a PRV for **$200M — one of the strongest prices in years — reflecting sustained demand and elevated secondary market pricing.** ([Fierce Pharma][1])
+
+**Why this matters to deal math:**
+
+* PRVs are earned on FDA approvals for rare/neglected disease drugs and **can be used or sold to accelerate review of another drug**, compressing FDA timelines from about 10 months to ~6 months. ([Wikipedia][2])
+* Historically PRVs have traded across a broad range (~$50M–$350M), but recent sales clustering higher (including this Jazz transaction) indicate **upward pricing pressure in the voucher market.** ([Wikipedia][2])
+
+**Implications for valuation & arbitrage:**
+
+* For sponsors targeting assets with PRV potential, **expected value (EV) models should explicitly incorporate current secondary PRV valuations**, not just binary approval outcomes.
+* A near‑term PRV sale at ~$200M can materially shift the “deal math” on acquisitions, financings, or licensing transactions where a drug’s approval could produce a voucher.
+* Elevated PRV prices also create **arbitrage opportunities** for acquirers or holders who can strategically monetize vouchers or leverage them to speed blockbuster launches.
+
+**Strategic takeaway:** In this environment, **PRV valuations are not fringe incentives — they’re real, tradable assets that can meaningfully impact upside, capital allocation, and competitive positioning** in biotech M&A and portfolio strategies.
+
+[1]: https://www.fiercepharma.com/pharma/jpm26-jazzs-prv-sale-200m-shows-drum-beat-rising-prv-prices-isnt-stopping?utm_source=chatgpt.com "JPM26: Jazz inks $200M priority review voucher sale"
+[2]: https://en.wikipedia.org/wiki/Priority_review?utm_source=chatgpt.com "Priority review"
+
+This FDA update fundamentally shifts how regulators think about **manufacturing risk in cell & gene therapies**, making **CMC less of a rigid gatekeeper and more of a risk‑based dialogue** — which in turn can materially change how you model short‑window catalysts and associated CRL risk.
+
+
+
+Instead of expecting one‑size‑fits‑all CMC compliance, the FDA’s **January 11 2026 communication** formalizes a **flexible, science‑based framework** for overseeing chemistry, manufacturing and control (CMC) requirements for cell and gene therapies (CGTs). It’s meant to accelerate development while still upholding safety and quality standards. ([U.S. Food and Drug Administration][1])
+
+**Key practical implications:**
+
+* **Phase‑specific CMC expectations:** Sponsors aren’t expected to fully meet traditional cGMP requirements (like 21 CFR Part 211) for investigational material before later‑stage trials, and final product specifications can evolve with development — reducing early manufacturing bottlenecks. ([U.S. Food and Drug Administration][2])
+* **Process validation flexibility:** Traditional requirements (e.g., fixed numbers of PPQ lots) aren’t rigid mandates; validation is evaluated on scientific justification rather than box‑checking. ([Xtalks][3])
+* **Comparability and minor changes:** CBER will accept minor manufacturing changes between clinical phases with comparability data, avoiding overly burdensome comparability packages that previously slowed progress. ([U.S. Food and Drug Administration][2])
+* **Product release specifications:** Release criteria can be adjusted in light of the unique product and process context, especially given small‑batch realities of CGTs. ([Xtalks][3])
+
+Importantly, **the FDA isn’t throwing quality out the window** — product characterization, potency, and safety monitoring remain core expectations — but many traditional CMC enforcement levers that could trigger a hard CRL are now **conditional or negotiable** if scientific justification is clear. ([2 Minute Medicine][4])
+
+From an investment and modeling perspective, this means **hard CRL bets tied to “legacy” CMC strictness should be weighted lower**, while **borderline CMC issues can be treated as conditional risks that regulators expect to be remediable through data and dialogue** rather than automatic blockers. ([cov.com][5])
+
+[1]: https://www.fda.gov/news-events/press-announcements/fda-increases-flexibility-requirements-cell-and-gene-therapies-advance-innovation?utm_source=chatgpt.com "FDA Increases Flexibility on Requirements for Cell and ..."
+[2]: https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/flexible-requirements-cell-and-gene-therapies-advance-innovation?utm_source=chatgpt.com "Flexible Requirements for Cell and Gene Therapies to ..."
+[3]: https://xtalks.com/fda-clarifies-cmc-flexibility-for-cell-and-gene-therapies-4582/?utm_source=chatgpt.com "FDA Clarifies CMC Flexibility for Cell and Gene Therapies"
+[4]: https://www.2minutemedicine.com/fda-highlights-flexible-chemistry-manufacturing-controls-expectations-for-cell-and-gene-therapies/?utm_source=chatgpt.com "FDA highlights flexible chemistry manufacturing controls ..."
+[5]: https://www.cov.com/en/news-and-insights/insights/2026/01/fda-announces-a-flexible-approach-on-chemistry-manufacturing-and-control-for-cell-and-gene-therapies?utm_source=chatgpt.com "FDA Announces a “Flexible Approach” on Chemistry ..."
+
+Here’s a tight ODIN module spec to systematically flag risky insider trades from SEC Form 4s and 4/A’s, plus the red‑flag scoring you can drop straight into your pipeline.
+
+---
+
+# ODIN F013: Form 4 / Rule 10b5‑1 Risk Scanner
+
+**Goal:** Ingest every Form 4 (and amendment 4/A) in XML, capture plan metadata and footnotes, apply the amended Rule 10b5‑1 cooling‑off logic, and score trades for governance/alpha signals.
+
+## 1) Data ingestion (EDGAR ownership XML)
+
+* Pull **Form 4 and 4/A** as XML (ownership schema). Persist transaction rows and all **footnotes** (the “Explanation of Responses” block frequently carries the 10b5‑1 details). Treat 4/A as deltas and keep **amendment lineage**. ([SEC][1])
+* Parse and store:
+
+  * `trade_execution_date` (each line item)
+  * `filing_date`
+  * `transaction_code` (e.g., P, S, M, F, A, D)
+  * `is_10b5_1_checkbox` (the post‑amendment Rule 10b5‑1 indicator on Form 4) and any **checkbox/indicator** text captured in XML
+  * Full **footnote text** and **footnote anchors**; do not lose which fields they qualify
+  * **Amendment links/history** (map each 4/A to the original 4)
+  * **Issuer quarterly results date** nearest to plan adoption (for cooling‑off calc)
+
+> Note: SEC instructions for 4/A require a **footnote explaining the amendment**—persist this verbatim; it’s often where plan adoption/modification is disclosed. ([SEC][2])
+
+## 2) NLP pass over “Explanation of Responses”
+
+Use simple, deterministic regex+keyword heuristics first; escalate to an NLP classifier later. Extract:
+
+* **Plan state verbs:** “adopted,” “entered into,” “modified,” “amended,” “terminated,” “cancelled,” “pursuant to a Rule 10b5‑1 plan,” “sell‑to‑cover,” “tax‑withholding.”
+* **Dates:** `plan_adoption_date`, `plan_modification_date`, `plan_termination_date`.
+* **Sell‑to‑cover / tax flags** to down‑weight routine payroll/vesting sells.
+* **Algorithm/formula clues** (e.g., “pre‑set formula,” “algorithmic,” “VWAP,” “specified dates/amounts”) to assess timing changes.
+
+## 3) Cooling‑off logic (amended Rule 10b5‑1)
+
+Implement **exactly**:
+
+* **Officers/Directors:** trading cannot start until the **later of** (a) **90 days** after plan adoption or modification **or** (b) **two business days after** the issuer discloses the quarter’s results; **cap** at **120 days**. ([SEC][3])
+* **All other insiders (non‑officers):** **30‑day** cooling‑off. ([SEC][4])
+* **Modifications** that change **amount, price, or timing** (including algorithm edits) **reset the clock** (treat as termination + new adoption). ([SEC][3])
+
+## 4) Severity scoring (heuristics)
+
+Score each trade (0–100) with tags:
+
+**A. Cooling‑off breach (High, +60):** `trade_execution_date` within the applicable cooling‑off window. ([SEC][3])
+
+**B. Back‑filled plan info (Critical, +80):** `plan_adoption_date` **post‑dates** the trade, or the plan disclosure **first appears only in a 4/A** after the trade. (Fraud‑adjacent behavior indicator.) ([SEC][2])
+
+**C. Earnings‑edge timing (Medium→High, +20 to +40):** first trade under a plan lands **same quarter immediately pre‑earnings** or **≤2 business days before** a results release. (Combine with checkbox/footnote “pursuant to plan” to adjust.) ([SEC][3])
+
+**D. Plan churn/overlap (Medium/High, +15 each, cap +45):** rapid adopt→terminate cycles, overlapping plans enabling sequential selling before prior plan expires; +extra if overlaps span different algorithms/schedules (implies timing discretion). ([SEC][3])
+
+**E. Issuer buyback interplay (Context, +10 to +25):** if footnotes mention issuer programs/“accordion”/debt‑linked triggers, correlate with **10‑Q/10‑K** repurchase disclosures → governance‑risk tag. ([SEC][5])
+
+**Down‑weights:** “sell‑to‑cover,” “tax withholding,” RSU release mechanics (−25 to −50) unless volume/timing is atypical. Example language is routine in footnotes. ([Twilio Investors][6])
+
+## 5) Compliance/context features (for ODIN)
+
+* **10b5‑1 checkbox** presence vs. footnote claims (mismatch → flag).
+* **Officer/Director role** (map from Form 4 header) to choose the 90/120 vs 30‑day rule. ([SEC][2])
+* **Issuer results date** source of truth: use the actual **10‑Q/10‑K/6‑K file dates** when computing “2 business days after disclosure.” (Respect the **120‑day cap**.) ([Latham & Watkins][7])
+* **EDGAR XML validation**: catch schema violations to avoid footnote loss. ([SEC][8])
+
+## 6) Why this matters (precedent)
+
+The **Peizer** case (first successful federal prosecution centered on misuse of 10b5‑1 plans; sentence **42 months** on **June 23, 2025**) shows regulators are actively targeting opportunistic plan timing—exactly what the above rules seek to detect. Use this as a training label for “plan‑timing risk.” ([Reuters][9])
+
+---
+
+## Deliverables to add to ODIN
+
+* **Schema:** `form4_trades.parquet` (row‑level) + `form4_plans.parquet` (entity/plan‑level) with the fields above.
+* **Deterministic scorer:** `f013_form4_rule10b5.py` → emits `severity_score`, tags `[cooling_off_breach, backfilled_plan, earnings_edge, plan_churn, buyback_interplay, tax_sell]`.
+* **Unit tests:** synthetic cases for each heuristic, incl. cap at 120 days and 2‑business‑day rule.
+* **Feature hooks:** expose `F013_severity` and individual tags to ODIN’s model as governance/alpha features.
+
+If you want, I can draft the exact table schemas and the regex set for the footnote parser next.
+
+[1]: https://www.sec.gov/info/edgar/ownershipxmltechspec-v3_d.pdf?utm_source=chatgpt.com "EDGAR Ownership XML Technical Specification"
+[2]: https://www.sec.gov/files/form4data.pdf?utm_source=chatgpt.com "Form 4"
+[3]: https://www.sec.gov/files/rules/final/2022/33-11138.pdf?utm_source=chatgpt.com "Final Rule: Insider Trading Arrangements and Related ..."
+[4]: https://www.sec.gov/files/33-11138-fact-sheet.pdf?utm_source=chatgpt.com "Rule 10b5-1: Insider Trading Arrangements and Related ..."
+[5]: https://www.sec.gov/files/edgar/filer-information/specifications/xbrl-guide.pdf?utm_source=chatgpt.com "EDGAR XBRL Guide, January 2026"
+[6]: https://investors.twilio.com/static-files/fa3ee883-a661-481a-a2a9-947f140473e1?utm_source=chatgpt.com "FORM 4"
+[7]: https://www.lw.com/en/insights/2023/01/Amended-Rule-10b5-1-and-New-Insider-Trading-Disclosure-Frequently-Asked-Questions?utm_source=chatgpt.com "Amended Rule 10b5-1 and New Insider Trading Disclosure"
+[8]: https://www.sec.gov/submit-filings/filer-support-resources/how-do-i-guides/understand-messages-reported-edgar?utm_source=chatgpt.com "Understand Messages Reported by EDGAR"
+[9]: https://www.reuters.com/legal/government/milken-protege-peizer-gets-3-12-years-prison-insider-trading-plans-appeal-2025-06-23/?utm_source=chatgpt.com "Milken protege Peizer gets 3-1/2 years prison for insider trading, plans appeal"
+
+Here’s a tight, production‑ready playbook for **ODIN streaming monitoring & drift detection**—what to watch, how to test it, and when to escalate.
+
+# What to monitor (3 orthogonal signal families)
+
+**A) Inputs (features)**
+
+* **Univariate drift:** PSI and KS on each feature (bin counts or ECDFs).
+* **Small joint shifts:** MMD or kernel‑CUSUM on 2–5 feature blocks; optional embedding‑distance tests if you embed feature vectors.
+* **Practical tips:** Standardize bins/splits offline; log versioned schemas.
+
+**B) Model outputs (predictions)**
+
+* **Distributional drift:** KS on predicted probability buckets (e.g., deciles).
+* **Calibration & sharpness:** Brier score with Murphy decomposition (track the *calibration* term separately from *refinement/sharpness*).
+* **Statistical calibration:** Spiegelhalter’s Z (tests reliability of probabilities).
+* **Uncertainty:** Mean entropy of ŷ; watch for entropy creep.
+
+**C) Errors / labels (when labels exist)**
+
+* **Sequential detectors:** DDM/EDDM, Page‑Hinkley, classical CUSUM, online kernel‑CUSUM, Bayesian online change‑point; for partial labels or unsupervised streams, use ADWIN/ADWIN‑U on proxy errors (e.g., conformity scores).
+
+---
+
+# Thin‑sample defaults & gates (safe for 100–500 obs rolling windows)
+
+* **Windows:** Use rolling windows of **N=100–500** (never <100). If **N<200**, **bootstrap CIs** around metrics.
+* **Persistence rule (avoid flukes):** Require **≥2 consecutive windows** flagging, **or** 1 window alarm + **short PH/CUSUM confirmation**.
+* **Numeric thresholds:**
+
+  * **PSI:** warn **0.05–0.10** (thin samples), alert **≥0.15** (moderate N).
+  * **KS (univariate):** **p<0.05** after Bonferroni across features; require **2/3 consecutive rejects**.
+  * **Brier (calibration term):** +**>0.03** absolute or **>5%** relative = warn; **>10%** = alert.
+  * **Sequential error detectors:** warning at **baseline +2σ**, drift at **+3σ** (or tune PH/CUSUM for ~**1 false alarm / 1k obs**).
+
+---
+
+# Cadence & ops
+
+* **Every minibatch (hourly near T‑1 events):** fast univariate: PSI, KS, entropy, basic Brier.
+* **Daily:** full multivariate battery (MMD/kernel‑CUSUM), Murphy decomposition, Spiegelhalter Z, sequential tests refresh.
+* **State machine:** **info → warn → critical**.
+
+  * **Critical consensus:** majority across A/B/C persist → **auto‑snapshot** immutable evidence (sha256 of raw inputs sample, model outputs, detector params + versions), **freeze model‑weighted T‑1 feeds**, route to **human review** before re‑release.
+* **Auditability:** Log detector params, window sizes, seeds, bootstrap samples, schema versions, and hash each run.
+
+---
+
+# Minimal implementation checklist (drop‑in)
+
+* [ ] Rolling window store (time‑based & count‑based), stratified by key cohorts.
+* [ ] PSI/KS per feature with Bonferroni & persistence logic.
+* [ ] MMD (RBF kernel; median heuristic) and/or kernel‑CUSUM for small blocks.
+* [ ] Brier with Murphy decomposition; Spiegelhalter Z; entropy trend.
+* [ ] Error stream hooks (labels or pseudo‑labels) + DDM/PH/CUSUM.
+* [ ] Bootstrap wrappers when N<200 (1k resamples).
+* [ ] Policy engine for thresholds → state transitions → actions (snapshot/freeze/page).
+* [ ] Immutable evidence packer (hashes, config, random seeds).
+* [ ] Alert routing (Slack/Email) with run IDs and links to artifacts.
+
+---
+
+# ODIN‑specific notes (so you can wire this fast)
+
+* **T‑1 compliance:** freeze **probability feeds** (not raw data ingestion) on critical consensus; serve last‑known‑good cal model until review.
+* **Calibration stack:** keep Venn‑Abers/Dirichlet candidates hot‑swappable; monitor **calibration term** separately to decide when to **recalibrate without retraining**.
+* **Feature families:** treat **CMC risk factors**, **hiring/insider modules**, **reg‑event timers** as separate cohorts and run PSI/KS per cohort (drift often concentrates there).
+* **Budget mode:** allow “thin battery” profile (A & B lite hourly; full A/B/C nightly) to cap compute.
+
+If you want, I can generate a small Python monitoring scaffold (PSI/KS/MMD + Brier/Murphy + PH/CUSUM + state machine) with dummy hooks that you can drop into ODIN’s stream runner.

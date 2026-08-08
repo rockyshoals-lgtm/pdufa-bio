@@ -1,0 +1,567 @@
+Dataset: 1752 events, 460 unique tickers
+Cache: 50 done, 410 remaining
+[1/410] VRTX (7 events)... [NASDAQ] sent=500, pc=500, ar=9
+[2/410] ALXO (7 events)... [NASDAQ] sent=157, pc=156, ar=10
+[3/410] CORT (7 events)... [NASDAQ] sent=500, pc=500, ar=2
+[4/410] ALDX (6 events)... [NASDAQ] sent=500, pc=500, ar=10
+[5/410] VTGN (6 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 55 tickers]
+[6/410] IPHA (6 events)... [NASDAQ] sent=157, pc=0, ar=7
+[7/410] NRIX (6 events)... [NASDAQ] sent=157, pc=75, ar=10
+[8/410] ONCY (6 events)... [NASDAQ] sent=157, pc=0, ar=3
+[9/410] ARQT (6 events)... [NASDAQ] sent=157, pc=156, ar=10
+[10/410] SNDX (6 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 60 tickers]
+[11/410] XOMA (6 events)... [NASDAQ] sent=500, pc=500, ar=10
+[12/410] IRD (6 events)... [NASDAQ] sent=157, pc=75, ar=2
+[13/410] DSNKY (6 events)... [NASDAQ] sent=500, pc=0, ar=0
+[14/410] PRTC (6 events)... [NASDAQ] sent=157, pc=0, ar=1
+[15/410] RCUS (6 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 65 tickers]
+[16/410] ARGX (6 events)... [NASDAQ] sent=500, pc=500, ar=1
+[17/410] NVCR (6 events)... [NASDAQ] sent=500, pc=500, ar=10
+[18/410] CUE (6 events)... [NASDAQ] sent=157, pc=76, ar=9
+[19/410] ALVO (6 events)... [NASDAQ] sent=157, pc=0, ar=10
+[20/410] TEVA (6 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 70 tickers]
+[21/410] AGEN (5 events)... [NASDAQ] sent=500, pc=500, ar=9
+[22/410] BIIB (5 events)... [NASDAQ] sent=500, pc=500, ar=3
+[23/410] HALO (5 events)... [NASDAQ] sent=500, pc=500, ar=10
+[24/410] RVMD (5 events)... [NASDAQ] sent=157, pc=74, ar=10
+[25/410] ALNY (5 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 75 tickers]
+[26/410] EWTX (5 events)... [NASDAQ] sent=157, pc=76, ar=10
+[27/410] KROS (5 events)... [NASDAQ] sent=157, pc=75, ar=10
+[28/410] EQ (5 events)... [NASDAQ] sent=157, pc=76, ar=8
+[29/410] AXSM (5 events)... [NASDAQ] sent=500, pc=500, ar=10
+[30/410] ROIV (5 events)... [NASDAQ] sent=156, pc=75, ar=10
+  [saved cache: 80 tickers]
+[31/410] PTCT (5 events)... [NASDAQ] sent=500, pc=500, ar=1
+[32/410] IMMP (5 events)... [NASDAQ] sent=157, pc=74, ar=10
+[33/410] BBIO (5 events)... [NASDAQ] sent=156, pc=156, ar=10
+[34/410] FBIO (5 events)... [NASDAQ] sent=500, pc=500, ar=8
+[35/410] MBIO (5 events)... [NASDAQ] sent=500, pc=222, ar=6
+  [saved cache: 85 tickers]
+[36/410] CLLS (5 events)... [NASDAQ] sent=500, pc=500, ar=10
+[37/410] AGIO (5 events)... [NASDAQ] sent=500, pc=500, ar=10
+[38/410] FDMT (5 events)... [NASDAQ] sent=157, pc=76, ar=10
+[39/410] NBP (5 events)... NOT FOUND
+[40/410] CRNX (5 events)... [NASDAQ] sent=157, pc=76, ar=10
+  [saved cache: 89 tickers]
+[41/410] ADCT (5 events)... [NASDAQ] sent=157, pc=156, ar=10
+[42/410] ACTU (5 events)... [NASDAQ] sent=157, pc=0, ar=3
+[43/410] PHIO (5 events)... [NASDAQ] sent=157, pc=0, ar=2
+[44/410] KZIA (4 events)... [NASDAQ] sent=157, pc=39, ar=3
+[45/410] PDSB (4 events)... [NASDAQ] sent=157, pc=75, ar=6
+  [saved cache: 94 tickers]
+[46/410] KOD (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+[47/410] ALT (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[48/410] AURA (4 events)... [NASDAQ] sent=156, pc=142, ar=6
+[49/410] CLNN (4 events)... [NASDAQ] sent=156, pc=0, ar=4
+[50/410] CNTB (4 events)... [NASDAQ] sent=156, pc=76, ar=7
+  [saved cache: 99 tickers]
+[51/410] APLT (4 events)... [NASDAQ] sent=157, pc=122, ar=10
+[52/410] RLMD (4 events)... [NASDAQ] sent=156, pc=75, ar=2
+[53/410] MIRM (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+[54/410] IOVA (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[55/410] PRAX (4 events)... [NASDAQ] Dataset: 1752 events, 460 unique tickers
+Cache: 100 done, 360 remaining
+[1/360] APLT (4 events)... [NASDAQ] sent=157, pc=122, ar=10
+[2/360] RLMD (4 events)... [NASDAQ] sent=156, pc=75, ar=2
+[3/360] MIRM (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+[4/360] IOVA (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[5/360] PRAX (4 events)... [NASDAQ] sent=157, pc=75, ar=2
+  [saved cache: 105 tickers]
+[6/360] DAWN (4 events)... [NASDAQ] sent=157, pc=76, ar=10
+[7/360] PSTV (4 events)... [NASDAQ] sent=157, pc=0, ar=5
+[8/360] BIVI (4 events)... [NASDAQ] sent=157, pc=0, ar=2
+[9/360] NKTX (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+[10/360] DRMA (4 events)... [NASDAQ] sent=157, pc=0, ar=0
+  [saved cache: 110 tickers]
+[11/360] PRTA (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[12/360] NKTR (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[13/360] CLRB (4 events)... [NASDAQ] sent=500, pc=401, ar=6
+[14/360] MLYS (4 events)... [NASDAQ] sent=157, pc=74, ar=9
+[15/360] EVAX (4 events)... [NASDAQ] sent=157, pc=0, ar=3
+  [saved cache: 115 tickers]
+[16/360] ANNX (4 events)... [NASDAQ] sent=157, pc=156, ar=10
+[17/360] ZNTL (4 events)... [NASDAQ] sent=156, pc=69, ar=10
+[18/360] MLTX (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+[19/360] CGTX (4 events)... [NASDAQ] sent=156, pc=0, ar=4
+[20/360] MRKR (4 events)... [NASDAQ] sent=157, pc=0, ar=7
+  [saved cache: 120 tickers]
+[21/360] LYRA (4 events)... [NASDAQ] sent=157, pc=0, ar=10
+[22/360] VTYX (4 events)... [NASDAQ] sent=157, pc=61, ar=10
+[23/360] SLS (4 events)... [NASDAQ] sent=157, pc=75, ar=4
+[24/360] DNLI (4 events)... [NASDAQ] sent=157, pc=76, ar=3
+[25/360] SRRK (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 125 tickers]
+[26/360] BYSI (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[27/360] XENE (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[28/360] AMLX (4 events)... [NASDAQ] sent=157, pc=156, ar=10
+[29/360] TARA (4 events)... [NASDAQ] sent=157, pc=75, ar=9
+[30/360] ATOS (4 events)... [NASDAQ] sent=500, pc=500, ar=1
+  [saved cache: 130 tickers]
+[31/360] ALKS (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[32/360] INSM (4 events)... [NASDAQ] sent=500, pc=500, ar=3
+[33/360] PLRX (4 events)... [NASDAQ] sent=157, pc=75, ar=10
+[34/360] LYEL (4 events)... [NASDAQ] sent=157, pc=75, ar=1
+[35/360] ALMS (4 events)... [NASDAQ] sent=157, pc=155, ar=10
+  [saved cache: 135 tickers]
+[36/360] ATAI (4 events)... [NASDAQ] sent=500, pc=500, ar=10
+[37/360] ABVX (4 events)... [NASDAQ] sent=157, pc=130, ar=10
+[38/360] CANF (3 events)... [NASDAQ] sent=157, pc=0, ar=8
+[39/360] LXRX (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[40/360] TVRD (3 events)... [NASDAQ] sent=157, pc=69, ar=10
+  [saved cache: 140 tickers]
+[41/360] MGNX (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[42/360] RYTM (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[43/360] SCYX (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[44/360] HURA (3 events)... [NASDAQ] sent=156, pc=0, ar=3
+[45/360] PYPD (3 events)... [NASDAQ] sent=157, pc=39, ar=10
+  [saved cache: 145 tickers]
+[46/360] PCRX (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[47/360] CRDF (3 events)... [NASDAQ] sent=500, pc=500, ar=9
+[48/360] TRAW (3 events)... [NASDAQ] sent=157, pc=0, ar=9
+[49/360] OMER (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[50/360] INO (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 150 tickers]
+[51/360] DARE (3 events)... [NASDAQ] sent=500, pc=0, ar=0
+[52/360] HOTH (3 events)... [NASDAQ] sent=156, pc=0, ar=1
+[53/360] FATE (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[54/360] GLTO (3 events)... [NASDAQ] sent=157, pc=0, ar=3
+[55/360] CADL (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+  [saved cache: 155 tickers]
+[56/360] VALN (3 events)... [NASDAQ] sent=157, pc=0, ar=2
+[57/360] GOSS (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[58/360] RAPT (3 events)... [NASDAQ] sent=157, pc=61, ar=10
+[59/360] AUTL (3 events)... [NASDAQ] sent=156, pc=156, ar=10
+[60/360] ACET (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 160 tickers]
+[61/360] XNCR (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[62/360] VERA (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[63/360] CMPX (3 events)... [NASDAQ] sent=156, pc=76, ar=2
+[64/360] LEGN (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[65/360] EVLO (3 events)... NOT FOUND
+[66/360] ZVRA (3 events)... [NASDAQ] sent=156, pc=75, ar=9
+[67/360] BRNS (3 events)... [NASDAQ] sent=157, pc=0, ar=4
+[68/360] ENTA (3 events)... [NASDAQ] sent=500, pc=500, ar=1
+[69/360] VKTX (3 events)... [NASDAQ] sent=500, pc=500, ar=1
+[70/360] BTAI (3 events)... [NASDAQ] sent=157, pc=95, ar=10
+  [saved cache: 169 tickers]
+[71/360] HOOK (3 events)... [NASDAQ] sent=113, pc=4, ar=9
+[72/360] CGEN (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[73/360] IVA (3 events)... [NASDAQ] sent=157, pc=0, ar=10
+[74/360] ALLO (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+[75/360] CRBU (3 events)... [NASDAQ] sent=157, pc=76, ar=10
+  [saved cache: 174 tickers]
+[76/360] BMEA (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+[77/360] URGN (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[78/360] RXRX (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[79/360] VERU (3 events)... [NASDAQ] sent=500, pc=500, ar=9
+[80/360] GPCR (3 events)... [NASDAQ] sent=157, pc=75, ar=1
+  [saved cache: 179 tickers]
+[81/360] NBTX (3 events)... [NASDAQ] sent=157, pc=0, ar=4
+[82/360] NUVL (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[83/360] EYPT (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[84/360] COGT (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[85/360] LNTH (3 events)... [NASDAQ] sent=500, pc=500, ar=1
+  [saved cache: 184 tickers]
+[86/360] BCTX (3 events)... [NASDAQ] sent=156, pc=0, ar=1
+[87/360] CRBP (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[88/360] IXHL (3 events)... [NASDAQ] sent=157, pc=0, ar=0
+[89/360] SPRB (3 events)... NOT FOUND
+[90/360] RARE (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 188 tickers]
+[91/360] BCAB (3 events)... [NASDAQ] sent=156, pc=156, ar=10
+[92/360] SUPN (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[93/360] CATX (3 events)... [NASDAQ] sent=157, pc=150, ar=10
+[94/360] ANTX (3 events)... [NASDAQ] sent=500, pc=0, ar=10
+[95/360] SPRO (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 193 tickers]
+[96/360] NAMS (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[97/360] ALEC (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+[98/360] ENLV (3 events)... [NASDAQ] sent=157, pc=75, ar=1
+[99/360] MTVA (3 events)... [NASDAQ] sent=157, pc=0, ar=2
+[100/360] JSPR (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 198 tickers]
+[101/360] VOR (3 events)... [NASDAQ] sent=157, pc=69, ar=2
+[102/360] SGMT (3 events)... [NASDAQ] sent=157, pc=75, ar=3
+[103/360] LTRN (3 events)... [NASDAQ] sent=157, pc=74, ar=1
+[104/360] CELC (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[105/360] IBRX (3 events)... [NASDAQ] sent=156, pc=75, ar=6
+  [saved cache: 203 tickers]
+[106/360] ZBIO (3 events)... [NASDAQ] sent=398, pc=88, ar=9
+[107/360] IRWD (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[108/360] BCYC (2 events)... [NASDAQ] sent=156, pc=156, ar=10
+[109/360] GKOS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[110/360] ELOX (2 events)... NOT FOUND
+[111/360] WINT (2 events)... [NASDAQ] sent=124, pc=0, ar=1
+[112/360] ZLDPF (2 events)... NOT FOUND
+[113/360] CLSD (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[114/360] KALV (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[115/360] CVM (2 events)... [NASDAQ] sent=157, pc=21, ar=2
+  [saved cache: 211 tickers]
+[116/360] PBYI (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[117/360] ATNM (2 events)... [NASDAQ] sent=156, pc=151, ar=10
+[118/360] ANIK (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[119/360] XFOR (2 events)... [NASDAQ] sent=157, pc=16, ar=1
+[120/360] AVXL (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 216 tickers]
+[121/360] ESPR (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[122/360] ADPT (2 events)... [NASDAQ] sent=157, pc=156, ar=10
+[123/360] SYRS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[124/360] DCOY (2 events)... NOT FOUND
+[125/360] PGEN (2 events)... [NASDAQ] sent=157, pc=75, ar=8
+  [saved cache: 220 tickers]
+[126/360] MDGL (2 events)... [NASDAQ] Dataset: 1752 events, 460 unique tickers
+Cache: 170 done, 290 remaining
+[1/290] HOOK (3 events)... [NASDAQ] sent=113, pc=4, ar=9
+[2/290] CGEN (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[3/290] IVA (3 events)... [NASDAQ] sent=157, pc=0, ar=10
+[4/290] ALLO (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+[5/290] CRBU (3 events)... [NASDAQ] sent=157, pc=76, ar=10
+  [saved cache: 175 tickers]
+[6/290] BMEA (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+[7/290] URGN (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[8/290] RXRX (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[9/290] VERU (3 events)... [NASDAQ] sent=500, pc=500, ar=9
+[10/290] GPCR (3 events)... [NASDAQ] sent=157, pc=75, ar=1
+  [saved cache: 180 tickers]
+[11/290] NBTX (3 events)... [NASDAQ] sent=157, pc=0, ar=4
+[12/290] NUVL (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[13/290] EYPT (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[14/290] COGT (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[15/290] LNTH (3 events)... [NASDAQ] sent=500, pc=500, ar=1
+  [saved cache: 185 tickers]
+[16/290] BCTX (3 events)... [NASDAQ] sent=156, pc=0, ar=1
+[17/290] CRBP (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[18/290] IXHL (3 events)... [NASDAQ] sent=157, pc=0, ar=0
+[19/290] SPRB (3 events)... NOT FOUND
+[20/290] RARE (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 189 tickers]
+[21/290] BCAB (3 events)... [NASDAQ] sent=156, pc=156, ar=10
+[22/290] SUPN (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[23/290] CATX (3 events)... [NASDAQ] sent=157, pc=150, ar=10
+[24/290] ANTX (3 events)... [NASDAQ] sent=500, pc=0, ar=10
+[25/290] SPRO (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 194 tickers]
+[26/290] NAMS (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+[27/290] ALEC (3 events)... [NASDAQ] sent=157, pc=156, ar=10
+[28/290] ENLV (3 events)... [NASDAQ] sent=157, pc=75, ar=1
+[29/290] MTVA (3 events)... [NASDAQ] sent=157, pc=0, ar=2
+[30/290] JSPR (3 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 199 tickers]
+[31/290] VOR (3 events)... [NASDAQ] sent=157, pc=69, ar=2
+[32/290] SGMT (3 events)... [NASDAQ] sent=157, pc=75, ar=3
+[33/290] LTRN (3 events)... [NASDAQ] sent=157, pc=74, ar=1
+[34/290] CELC (3 events)... [NASDAQ] sent=500, pc=500, ar=10
+[35/290] IBRX (3 events)... [NASDAQ] sent=156, pc=75, ar=6
+  [saved cache: 204 tickers]
+[36/290] ZBIO (3 events)... [NASDAQ] sent=398, pc=88, ar=9
+[37/290] IRWD (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[38/290] BCYC (2 events)... [NASDAQ] sent=156, pc=156, ar=10
+[39/290] GKOS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[40/290] ELOX (2 events)... NOT FOUND
+[41/290] WINT (2 events)... [NASDAQ] sent=124, pc=0, ar=1
+[42/290] ZLDPF (2 events)... NOT FOUND
+[43/290] CLSD (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[44/290] KALV (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[45/290] CVM (2 events)... [NASDAQ] sent=157, pc=21, ar=2
+  [saved cache: 212 tickers]
+[46/290] PBYI (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[47/290] ATNM (2 events)... [NASDAQ] sent=156, pc=151, ar=10
+[48/290] ANIK (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[49/290] XFOR (2 events)... [NASDAQ] sent=157, pc=16, ar=1
+[50/290] AVXL (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 217 tickers]
+[51/290] ESPR (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[52/290] ADPT (2 events)... [NASDAQ] sent=157, pc=156, ar=10
+[53/290] SYRS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[54/290] DCOY (2 events)... NOT FOUND
+[55/290] PGEN (2 events)... [NASDAQ] sent=157, pc=75, ar=8
+  [saved cache: 221 tickers]
+[56/290] MDGL (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[57/290] NEUP (2 events)... [NASDAQ] sent=157, pc=0, ar=6
+[58/290] UNCY (2 events)... [NASDAQ] sent=157, pc=70, ar=2
+[59/290] CMMB (2 events)... [NASDAQ] sent=156, pc=0, ar=3
+[60/290] RDHL (2 events)... [NASDAQ] sent=500, pc=286, ar=10
+  [saved cache: 226 tickers]
+[61/290] CAPR (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[62/290] ARDS (2 events)... NOT FOUND
+[63/290] ACRS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[64/290] IDYA (2 events)... [NASDAQ] sent=156, pc=75, ar=10
+[65/290] KPRX (2 events)... [NASDAQ] sent=157, pc=0, ar=0
+  [saved cache: 230 tickers]
+[66/290] TVTX (2 events)... [NASDAQ] sent=157, pc=75, ar=10
+[67/290] LEXX (2 events)... [NASDAQ] sent=157, pc=0, ar=0
+[68/290] APLS (2 events)... [NASDAQ] sent=157, pc=156, ar=10
+[69/290] LPCN (2 events)... [NASDAQ] sent=500, pc=315, ar=8
+[70/290] OCS (2 events)... [NASDAQ] sent=157, pc=2, ar=9
+  [saved cache: 235 tickers]
+[71/290] PALI (2 events)... [NASDAQ] sent=157, pc=0, ar=4
+[72/290] AIM (2 events)... NOT FOUND
+[73/290] IOBT (2 events)... [NASDAQ] sent=157, pc=0, ar=4
+[74/290] SLNO (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[75/290] LGVN (2 events)... [NASDAQ] sent=157, pc=0, ar=1
+  [saved cache: 239 tickers]
+[76/290] VNDA (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[77/290] KURA (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[78/290] IMNM (2 events)... [NASDAQ] sent=157, pc=75, ar=1
+[79/290] GRTX (2 events)... NOT FOUND
+[80/290] IPSC (2 events)... [NASDAQ] sent=157, pc=72, ar=10
+  [saved cache: 243 tickers]
+[81/290] FLGT (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[82/290] ATRA (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[83/290] PHGE (2 events)... [NASDAQ] sent=157, pc=0, ar=1
+[84/290] ALLR (2 events)... [NASDAQ] sent=157, pc=0, ar=1
+[85/290] NRSN (2 events)... [NASDAQ] sent=157, pc=0, ar=0
+  [saved cache: 248 tickers]
+[86/290] ARVN (2 events)... [NASDAQ] sent=157, pc=156, ar=10
+[87/290] CRVS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[88/290] TARS (2 events)... [NASDAQ] sent=157, pc=74, ar=10
+[89/290] LONA (2 events)... NOT FOUND
+[90/290] STTK (2 events)... [NASDAQ] sent=156, pc=75, ar=2
+  [saved cache: 252 tickers]
+[91/290] KNSA (2 events)... [NASDAQ] sent=157, pc=75, ar=10
+[92/290] PPBT (2 events)... [NASDAQ] sent=157, pc=65, ar=0
+[93/290] PTN (2 events)... NOT FOUND
+[94/290] CASI (2 events)... [NASDAQ] sent=500, pc=500, ar=6
+[95/290] ACAD (2 events)... [NASDAQ] sent=500, pc=500, ar=3
+  [saved cache: 256 tickers]
+[96/290] SLN (2 events)... [NASDAQ] sent=157, pc=73, ar=4
+[97/290] OKYO (2 events)... [NASDAQ] sent=157, pc=0, ar=2
+[98/290] STOK (2 events)... [NASDAQ] sent=156, pc=75, ar=10
+[99/290] ADXN (2 events)... [NASDAQ] sent=157, pc=0, ar=1
+[100/290] CGON (2 events)... [NASDAQ] sent=156, pc=84, ar=10
+  [saved cache: 261 tickers]
+[101/290] KYMR (2 events)... [NASDAQ] sent=157, pc=75, ar=10
+[102/290] RZLT (2 events)... [NASDAQ] sent=157, pc=75, ar=1
+[103/290] NUVB (2 events)... [NASDAQ] sent=157, pc=75, ar=10
+[104/290] SKYE (2 events)... [NASDAQ] sent=157, pc=75, ar=9
+[105/290] JBIO (2 events)... [NASDAQ] sent=157, pc=74, ar=10
+  [saved cache: 266 tickers]
+[106/290] XBIT (2 events)... [NASDAQ] sent=500, pc=500, ar=3
+[107/290] MTNB (2 events)... [NASDAQ] sent=157, pc=0, ar=7
+[108/290] NTLA (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[109/290] NCNA (2 events)... [NASDAQ] sent=500, pc=0, ar=9
+[110/290] ALGS (2 events)... [NASDAQ] sent=157, pc=0, ar=10
+  [saved cache: 271 tickers]
+[111/290] BDTX (2 events)... [NASDAQ] sent=156, pc=156, ar=10
+[112/290] ENGN (2 events)... [NASDAQ] sent=157, pc=0, ar=10
+[113/290] BNTC (2 events)... [NASDAQ] sent=500, pc=466, ar=10
+[114/290] COYA (2 events)... [NASDAQ] sent=156, pc=76, ar=2
+[115/290] GUTS (2 events)... [NASDAQ] sent=157, pc=0, ar=6
+  [saved cache: 276 tickers]
+[116/290] CRVO (2 events)... [NASDAQ] sent=157, pc=0, ar=10
+[117/290] AVIR (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[118/290] PYXS (2 events)... [NASDAQ] sent=157, pc=75, ar=10
+[119/290] SAVA (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[120/290] STRO (2 events)... [NASDAQ] sent=156, pc=75, ar=10
+  [saved cache: 281 tickers]
+[121/290] BPTH (2 events)... [NASDAQ] sent=500, pc=406, ar=6
+[122/290] KRYS (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[123/290] GALT (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[124/290] NMRA (2 events)... [NASDAQ] sent=157, pc=75, ar=2
+[125/290] VRCA (2 events)... [NASDAQ] sent=157, pc=11, ar=10
+  [saved cache: 286 tickers]
+[126/290] BHC (2 events)... [NASDAQ] sent=157, pc=156, ar=10
+[127/290] GH (2 events)... [NASDAQ] sent=157, pc=75, ar=3
+[128/290] LXEO (2 events)... [NASDAQ] sent=157, pc=75, ar=10
+[129/290] ENTX (2 events)... [NASDAQ] sent=157, pc=75, ar=1
+[130/290] ATHE (2 events)... [NASDAQ] sent=157, pc=0, ar=2
+  [saved cache: 291 tickers]
+[131/290] RPRX (2 events)... [NASDAQ] sent=500, pc=500, ar=10
+[132/290] TIL (2 events)... [NASDAQ] sent=500, pc=327, ar=10
+[133/290] DMAC (2 events)... [NASDAQ] sent=157, pc=76, ar=10
+[134/290] ESLA (2 events)... [NASDAQ] sent=157, pc=0, ar=0
+[135/290] BAYRY (2 events)... [NASDAQ] sent=500, pc=0, ar=0
+  [saved cache: 296 tickers]
+[136/290] AAPG (2 events)... [NASDAQ] sent=157, pc=0, ar=2
+[137/290] XCUR (2 events)... [NASDAQ] sent=157, pc=0, ar=3
+[138/290] QNCX (2 events)... [NASDAQ] sent=157, pc=75, ar=3
+[139/290] CTMX (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[140/290] DVAX (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 301 tickers]
+[141/290] NCEL (1 events)... NOT FOUND
+[142/290] EVFM (1 events)... NOT FOUND
+[143/290] MIST (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[144/290] LITS (1 events)... NOT FOUND
+[145/290] PCSA (1 events)... [NASDAQ] sent=157, pc=0, ar=1
+  [saved cache: 303 tickers]
+[146/290] RFL (1 events)... [NASDAQ] sent=157, pc=61, ar=0
+[147/290] GERN (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[148/290] PHAT (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[149/290] KRRO (1 events)... [NASDAQ] sent=157, pc=70, ar=10
+[150/290] IVVD (1 events)... [NASDAQ] sent=157, pc=75, ar=7
+  [saved cache: 308 tickers]
+[151/290] MNPR (1 events)... [NASDAQ] sent=157, pc=0, ar=10
+[152/290] ANEB (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[153/290] ELDN (1 events)... [NASDAQ] sent=157, pc=76, ar=4
+[154/290] AKBA (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[155/290] MAIA (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+  [saved cache: 313 tickers]
+[156/290] LRMR (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[157/290] GNLX (1 events)... [NASDAQ] sent=157, pc=73, ar=6
+[158/290] VCYT (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[159/290] INM (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[160/290] AVTX (1 events)... [NASDAQ] sent=156, pc=152, ar=10
+  [saved cache: 318 tickers]
+[161/290] VRDN (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[162/290] APVO (1 events)... [NASDAQ] sent=500, pc=0, ar=2
+[163/290] VIR (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[164/290] PXMD (1 events)... NOT FOUND
+[165/290] TERN (1 events)... [NASDAQ] sent=157, pc=75, ar=2
+  [saved cache: 322 tickers]
+[166/290] TRVN (1 events)... [NASDAQ] sent=500, pc=496, ar=10
+[167/290] VXRT (1 events)... [NASDAQ] sent=112, pc=17, ar=0
+[168/290] ABUS (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[169/290] ACXP (1 events)... [NASDAQ] sent=157, pc=24, ar=0
+[170/290] TPST (1 events)... [NASDAQ] sent=157, pc=2, ar=5
+  [saved cache: 327 tickers]
+[171/290] ORIC (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[172/290] RVPH (1 events)... [NASDAQ] sent=157, pc=75, ar=5
+[173/290] SRPT (1 events)... [NASDAQ] sent=500, pc=500, ar=1
+[174/290] RANI (1 events)... [NASDAQ] sent=157, pc=75, ar=7
+[175/290] INVA (1 events)... [NASDAQ] sent=500, pc=500, ar=9
+  [saved cache: 332 tickers]
+[176/290] ATXS (1 events)... [NASDAQ] sent=156, pc=104, ar=6
+[177/290] TBPH (1 events)... [NASDAQ] sent=500, pc=500, ar=2
+[178/290] EDSA (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[179/290] CNSP (1 events)... [NASDAQ] sent=156, pc=0, ar=2
+[180/290] DYAI (1 events)... [NASDAQ] sent=157, pc=45, ar=4
+  [saved cache: 337 tickers]
+[181/290] MOLN (1 events)... [NASDAQ] sent=157, pc=0, ar=7
+[182/290] CRIS (1 events)... [NASDAQ] sent=500, pc=384, ar=10
+[183/290] OKUR (1 events)... [NASDAQ] sent=157, pc=0, ar=10
+[184/290] SGHT (1 events)... [NASDAQ] sent=157, pc=73, ar=10
+[185/290] ALC (1 events)... [NASDAQ] sent=157, pc=156, ar=10
+  [saved cache: 342 tickers]
+[186/290] ITRM (1 events)... [NASDAQ] sent=157, pc=0, ar=6
+[187/290] SGMO (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[188/290] RGNX (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[189/290] CSLLY (1 events)... [NASDAQ] sent=500, pc=0, ar=0
+[190/290] AUPH (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 347 tickers]
+[191/290] AQST (1 events)... [NASDAQ] sent=157, pc=155, ar=10
+[192/290] MBRX (1 events)... [NASDAQ] sent=500, pc=0, ar=3
+[193/290] IRON (1 events)... [NASDAQ] sent=157, pc=74, ar=10
+[194/290] EFTR (1 events)... [NASDAQ] sent=112, pc=0, ar=0
+[195/290] ELTX (1 events)... [NASDAQ] sent=157, pc=76, ar=1
+  [saved cache: 352 tickers]
+[196/290] BLCO (1 events)... [NASDAQ] sent=157, pc=156, ar=9
+[197/290] AEON (1 events)... [NASDAQ] sent=157, pc=0, ar=1
+[198/290] OLMA (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[199/290] CTXR (1 events)... [NASDAQ] sent=500, pc=500, ar=2
+[200/290] NRXP (1 events)... [NASDAQ] sent=157, pc=75, ar=2
+  [saved cache: 357 tickers]
+[201/290] IMA (1 events)... [NASDAQ] sent=157, pc=0, ar=2
+[202/290] OVID (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[203/290] SVRA (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[204/290] ANVS (1 events)... [NASDAQ] sent=157, pc=156, ar=4
+[205/290] RNAC (1 events)... [NASDAQ] sent=156, pc=73, ar=10
+  [saved cache: 362 tickers]
+[206/290] BCDA (1 events)... [NASDAQ] sent=156, pc=0, ar=1
+[207/290] EDAP (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[208/290] JAGX (1 events)... [NASDAQ] sent=500, pc=276, ar=2
+[209/290] VCNX (1 events)... NOT FOUND
+[210/290] HUMA (1 events)... [NASDAQ] sent=156, pc=75, ar=10
+  [saved cache: 366 tickers]
+[211/290] CARM (1 events)... [NASDAQ] sent=157, pc=0, ar=8
+[212/290] SIGA (1 events)... [NASDAQ] sent=157, pc=75, ar=0
+[213/290] ELAB (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[214/290] INDV (1 events)... [NASDAQ] sent=157, pc=75, ar=6
+[215/290] FULC (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+  [saved cache: 371 tickers]
+[216/290] RPTX (1 events)... [NASDAQ] sent=156, pc=36, ar=10
+[217/290] RLFTF (1 events)... NOT FOUND
+[218/290] MGTX (1 events)... [NASDAQ] sent=157, pc=75, ar=9
+[219/290] IMUX (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[220/290] NGNE (1 events)... [NASDAQ] sent=157, pc=75, ar=9
+  [saved cache: 375 tickers]
+[221/290] GOVX (1 events)... [NASDAQ] sent=157, pc=0, ar=6
+[222/290] OTLK (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[223/290] JANX (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[224/290] PRLD (1 events)... [NASDAQ] sent=157, pc=74, ar=10
+[225/290] INTS (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+  [saved cache: 380 tickers]
+[226/290] FHTX (1 events)... [NASDAQ] sent=157, pc=73, ar=10
+[227/290] PRFX (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[228/290] GHRS (1 events)... [NASDAQ] sent=157, pc=75, ar=7
+[229/290] IMRN (1 events)... [NASDAQ] sent=500, pc=0, ar=0
+[230/290] INBX (1 events)... [NASDAQ] sent=157, pc=75, ar=1
+  [saved cache: 385 tickers]
+[231/290] LSTA (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[232/290] CPIX (1 events)... [NASDAQ] sent=500, pc=500, ar=7
+[233/290] QTTB (1 events)... [NASDAQ] sent=157, pc=0, ar=10
+[234/290] GRCE (1 events)... [NASDAQ] sent=157, pc=39, ar=7
+[235/290] SLDB (1 events)... [NASDAQ] sent=157, pc=75, ar=1
+  [saved cache: 390 tickers]
+[236/290] SEPN (1 events)... [NASDAQ] sent=157, pc=75, ar=9
+[237/290] QNRX (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[238/290] OABI (1 events)... [NASDAQ] sent=157, pc=70, ar=9
+[239/290] IMVT (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[240/290] RLYB (1 events)... [NASDAQ] sent=156, pc=0, ar=10
+  [saved cache: 395 tickers]
+[241/290] LIPO (1 events)... [NASDAQ] sent=112, pc=0, ar=0
+[242/290] CING (1 events)... [NASDAQ] sent=156, pc=0, ar=2
+[243/290] GYRE (1 events)... [NASDAQ] sent=157, pc=67, ar=9
+[244/290] BOLD (1 events)... [NASDAQ] sent=500, pc=0, ar=6
+[245/290] IMNN (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+  [saved cache: 400 tickers]
+[246/290] IFRX (1 events)... [NASDAQ] sent=156, pc=75, ar=10
+[247/290] PEPG (1 events)... [NASDAQ] sent=157, pc=75, ar=4
+[248/290] XLO (1 events)... [NASDAQ] sent=157, pc=0, ar=7
+[249/290] CABA (1 events)... [NASDAQ] sent=157, pc=156, ar=10
+[250/290] ALTO (1 events)... [NASDAQ] sent=157, pc=156, ar=0
+  [saved cache: 405 tickers]
+[251/290] CMPS (1 events)... [NASDAQ] sent=156, pc=76, ar=10
+[252/290] AMRX (1 events)... [NASDAQ] sent=157, pc=156, ar=10
+[253/290] APGE (1 events)... [NASDAQ] sent=157, pc=156, ar=3
+[254/290] PROK (1 events)... [NASDAQ] sent=157, pc=75, ar=10
+[255/290] VYNE (1 events)... [NASDAQ] sent=157, pc=0, ar=3
+  [saved cache: 410 tickers]
+[256/290] VANI (1 events)... [NASDAQ] sent=157, pc=75, ar=0
+[257/290] SDGR (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[258/290] UTHR (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[259/290] INDP (1 events)... [NASDAQ] sent=157, pc=0, ar=0
+[260/290] DNTH (1 events)... [NASDAQ] sent=157, pc=76, ar=10
+  [saved cache: 415 tickers]
+[261/290] ATYR (1 events)... [NASDAQ] sent=156, pc=155, ar=10
+[262/290] MBX (1 events)... [NASDAQ] sent=157, pc=75, ar=1
+[263/290] QURE (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[264/290] KALA (1 events)... [NASDAQ] sent=500, pc=206, ar=10
+[265/290] ASMB (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+  [saved cache: 420 tickers]
+[266/290] SNSE (1 events)... [NASDAQ] sent=157, pc=0, ar=8
+[267/290] KYTX (1 events)... [NASDAQ] sent=157, pc=75, ar=9
+[268/290] TNYA (1 events)... [NASDAQ] sent=157, pc=75, ar=3
+[269/290] MNKD (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[270/290] BCAX (1 events)... [NASDAQ] sent=156, pc=150, ar=10
+  [saved cache: 425 tickers]
+[271/290] BLTE (1 events)... [NASDAQ] sent=157, pc=0, ar=10
+[272/290] CRDL (1 events)... [NASDAQ] sent=157, pc=76, ar=4
+[273/290] FENC (1 events)... [NASDAQ] sent=500, pc=500, ar=7
+[274/290] KMDA (1 events)... [NASDAQ] sent=500, pc=500, ar=3
+[275/290] HIND (1 events)... NOT FOUND
+[276/290] WVE (1 events)... [NASDAQ] sent=500, pc=500, ar=1
+[277/290] GRI (1 events)... [NASDAQ] sent=157, pc=0, ar=1
+[278/290] DBVT (1 events)... [NASDAQ] sent=500, pc=384, ar=10
+[279/290] CRSP (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[280/290] TLX (1 events)... [NASDAQ] sent=157, pc=0, ar=5
+  [saved cache: 434 tickers]
+[281/290] DRUG (1 events)... [NASDAQ] sent=157, pc=0, ar=7
+[282/290] MESO (1 events)... [NASDAQ] sent=500, pc=500, ar=10
+[283/290] NSRX (1 events)... NOT FOUND
+[284/290] CALC (1 events)... [NASDAQ] sent=157, pc=47, ar=1
+[285/290] MENS (1 events)... [NASDAQ] sent=157, pc=7, ar=0
+  [saved cache: 438 tickers]
+[286/290] BFRI (1 events)... [NASDAQ] sent=156, pc=0, ar=0
+[287/290] EVMN (1 events)... NOT FOUND
+[288/290] TONX (1 events)... NOT FOUND
+[289/290] UPB (1 events)... [NASDAQ] sent=157, pc=75, ar=7
+[290/290] PVLA (1 events)... [NASDAQ] sent=157, pc=75, ar=1
+  [saved cache: 441 tickers]
+
+Done! 441 tickers in cache.
+Events with sentiment data: 1707/1752 (97.4%)

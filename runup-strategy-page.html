@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDUFA Runup Strategy: How Stocks Move Before FDA Catalyst Dates | PDUFA.BIO</title>
+  <meta name="description" content="Research-backed PDUFA runup analysis: how biotech stocks move before FDA catalyst dates, which ODIN tiers predict the best entries, and composite trading signals from 1,705 historical events.">
+  <meta name="keywords" content="PDUFA runup, PDUFA trading strategy, biotech catalyst trading, FDA approval prediction, ODIN scores, pre-PDUFA price action, biotech runup patterns, PDUFA calendar 2026">
+  <meta property="og:title" content="PDUFA Runup Strategy: 1,705 Events Analyzed | PDUFA.BIO">
+  <meta property="og:description" content="Data-driven PDUFA runup analysis: CRL-destined stocks run up MORE than approvals. ODIN v5 scores predict which tier offers the best risk-adjusted entries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pdufa.bio/runup-strategy">
+  <link rel="canonical" href="https://pdufa.bio/runup-strategy">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "PDUFA Runup Strategy: How Stocks Move Before FDA Catalyst Dates",
+    "description": "Research-backed analysis of pre-PDUFA stock price dynamics across 1,705 historical FDA catalyst events correlated with ODIN v5 approval probability scores.",
+    "author": {
+      "@type": "Organization",
+      "name": "PDUFA.BIO",
+      "url": "https://pdufa.bio"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PDUFA.BIO"
+    },
+    "datePublished": "2026-03-13",
+    "dateModified": "2026-03-13",
+    "mainEntityOfPage": "https://pdufa.bio/runup-strategy"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a PDUFA runup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A PDUFA runup is the stock price increase that occurs in the days and weeks before an FDA PDUFA (Prescription Drug User Fee Act) catalyst date. Biotech stocks often experience buying pressure ahead of binary FDA decisions as traders position for potential approval announcements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do approval-destined stocks have bigger runups than CRL-destined stocks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Counterintuitively, no. Analysis of 1,705 historical PDUFA events shows CRL-destined stocks average a +1.93% 14-day runup versus +0.86% for approvals. Speculative buying disproportionately flows into lower-probability names, creating potential bull traps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What ODIN tier has the best risk-adjusted entry for PDUFA trades?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "T1 events (ODIN score above 0.85) with below-average runups offer the best risk-adjusted entry. These have a 93% approval rate and near-zero pre-event runup, meaning the approval is likely but not yet fully priced in. T1 events with low runups produce positive post-PDUFA returns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a PDUFA bull trap?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A PDUFA bull trap occurs when a low-probability stock surges before a catalyst date, attracting speculative buyers, only to crash on a CRL (Complete Response Letter). T4 events (ODIN score below 0.40) with 14-day runups above 10% average +25% runup but only 21% approval rate — the classic bull trap setup."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #2F5496;
+      --accent: #4472C4;
+      --green: #548235;
+      --red: #C00000;
+      --bg: #FAFBFD;
+      --card-bg: #FFFFFF;
+      --text: #333333;
+      --muted: #666666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    header { background: var(--navy); color: #fff; padding: 60px 0 40px; }
+    header h1 { font-size: 2.2em; margin-bottom: 12px; line-height: 1.2; }
+    header .subtitle { font-size: 1.15em; color: #D6E4F0; max-width: 700px; }
+    header .meta { margin-top: 20px; font-size: 0.85em; color: #A0B8D8; }
+    .breadcrumb { padding: 12px 0; font-size: 0.85em; color: var(--muted); }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .content { padding: 40px 0 60px; }
+    h2 { font-size: 1.6em; color: var(--navy); margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #E0E8F0; }
+    h3 { font-size: 1.2em; color: var(--accent); margin: 32px 0 12px; }
+    p { margin-bottom: 16px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+    .stat-card { background: var(--card-bg); border: 1px solid #E0E8F0; border-radius: 8px; padding: 20px; text-align: center; }
+    .stat-card .number { font-size: 2em; font-weight: 700; color: var(--navy); }
+    .stat-card .label { font-size: 0.85em; color: var(--muted); margin-top: 4px; }
+    .insight-box { background: #F0F5FF; border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .insight-box.warning { background: #FFF5F0; border-left-color: var(--red); }
+    .insight-box.success { background: #F0FFF5; border-left-color: var(--green); }
+    .insight-box strong { color: var(--navy); }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92em; }
+    th { background: var(--navy); color: #fff; padding: 10px 12px; text-align: center; font-weight: 600; }
+    td { padding: 10px 12px; border-bottom: 1px solid #E8ECF0; text-align: center; }
+    tr:nth-child(even) { background: #F8FAFC; }
+    .positive { color: var(--green); font-weight: 600; }
+    .negative { color: var(--red); font-weight: 600; }
+    .signal-card { background: var(--card-bg); border: 1px solid #E0E8F0; border-radius: 12px; padding: 24px; margin: 20px 0; }
+    .signal-card h4 { font-size: 1.1em; color: var(--navy); margin-bottom: 8px; }
+    .signal-card .stats { display: flex; gap: 24px; margin-top: 12px; flex-wrap: wrap; }
+    .signal-card .stats span { font-size: 0.9em; color: var(--muted); }
+    .signal-card .stats strong { color: var(--text); }
+    .cta-section { background: var(--navy); color: #fff; padding: 48px; border-radius: 12px; margin: 48px 0; text-align: center; }
+    .cta-section h3 { color: #fff; margin-bottom: 12px; }
+    .cta-section p { color: #D6E4F0; margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: #FF6B35; color: #fff; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.05em; }
+    .disclaimer { font-size: 0.82em; color: var(--muted); border-top: 1px solid #E0E8F0; padding-top: 24px; margin-top: 48px; font-style: italic; }
+    .faq-item { margin: 24px 0; }
+    .faq-item h4 { font-size: 1.05em; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p { color: var(--muted); }
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.6em; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .signal-card .stats { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>PDUFA Runup Strategy</h1>
+    <p class="subtitle">How biotech stocks really move before FDA catalyst dates &mdash; and what ODIN scores reveal about the best entries, worst traps, and actionable signals.</p>
+    <p class="meta">1,705 historical events &bull; 354 tickers &bull; 2020&ndash;2026 &bull; ODIN v5 (AUC 0.9007)</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">PDUFA.BIO</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Runup Strategy
+  </nav>
+
+  <div class="content">
+
+    <!-- Hero Stats -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="number">1,705</div>
+        <div class="label">Historical PDUFA Events</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">+1.93%</div>
+        <div class="label">CRL 14-Day Runup (Mean)</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">+0.86%</div>
+        <div class="label">Approval 14-Day Runup (Mean)</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">93.3%</div>
+        <div class="label">T1 Approval Rate</div>
+      </div>
+    </div>
+
+    <h2 id="counterintuitive-finding">The Counterintuitive Finding: CRLs Run Up More</h2>
+
+    <p>Conventional wisdom says stocks run up more before approvals. The data says otherwise. Across 1,705 PDUFA events from 2020&ndash;2026, <strong>CRL-destined stocks average a +1.93% fourteen-day runup</strong>, more than double the +0.86% for approval-destined stocks.</p>
+
+    <div class="insight-box warning">
+      <strong>Bull Trap Alert:</strong> Speculative buying pressure flows disproportionately into lower-probability names before PDUFA dates. The bigger the pre-event runup, the more likely it represents retail FOMO rather than informed positioning.
+    </div>
+
+    <p>This pattern holds across all lookback windows from 3 to 30 days. The spread is widest at 30 days (CRL +3.99% vs. Approval +2.13%) and narrows at shorter intervals, but CRLs consistently outpace approvals in pre-event price appreciation.</p>
+
+    <h2 id="runup-by-odin-tier">Runup Patterns by ODIN Tier</h2>
+
+    <p>ODIN v5 assigns each PDUFA event an approval probability score (0&ndash;1) and maps it to an action tier. Correlating these tiers with runup data reveals a clear inverse relationship: <strong>the higher the approval probability, the lower the pre-event runup</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Score Range</th>
+          <th>Events</th>
+          <th>App Rate</th>
+          <th>14d Runup</th>
+          <th>Post-1d Return</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>T1</strong></td>
+          <td>&ge;0.85</td>
+          <td>758</td>
+          <td class="positive">93.3%</td>
+          <td>+0.04%</td>
+          <td class="positive">+0.26%</td>
+          <td>Strong Long</td>
+        </tr>
+        <tr>
+          <td><strong>T2</strong></td>
+          <td>0.65&ndash;0.85</td>
+          <td>469</td>
+          <td>79.7%</td>
+          <td>+1.18%</td>
+          <td class="negative">-1.46%</td>
+          <td>Cautious Long</td>
+        </tr>
+        <tr>
+          <td><strong>T3</strong></td>
+          <td>0.40&ndash;0.65</td>
+          <td>45</td>
+          <td>57.8%</td>
+          <td>+4.10%</td>
+          <td>-0.21%</td>
+          <td>Monitor</td>
+        </tr>
+        <tr>
+          <td><strong>T4</strong></td>
+          <td>&lt;0.40</td>
+          <td>433</td>
+          <td class="negative">19.4%</td>
+          <td>+2.88%</td>
+          <td>+0.49%</td>
+          <td>No Trade</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>T1 (Strong Long)</strong> events show near-zero runup (+0.04%), indicating the market efficiently prices high-probability approvals. These are not momentum plays &mdash; they are conviction holds.</p>
+
+    <p><strong>T4 (No Trade)</strong> events average +2.88% despite a 19.4% approval rate. This is the bull trap in data form: stocks surging into catalysts that will fail 80% of the time.</p>
+
+    <div class="insight-box success">
+      <strong>Best Entry Signal:</strong> T1 events with 14-day runup at or below 5% (645 events, 93% approval rate, mean post-1d return +0.30%). High probability, discounted price, positive post-event drift.
+    </div>
+
+    <h2 id="composite-signals">Composite Trading Signals</h2>
+
+    <p>Combining ODIN tier with runup dynamics creates actionable composite signals with defined risk profiles.</p>
+
+    <div class="signal-card">
+      <h4>&#9989; T1 + Low Runup (14d &le; 5%): Best Risk-Adjusted Long</h4>
+      <p>High-probability approvals that haven&rsquo;t been bid up. You&rsquo;re buying conviction at a discount.</p>
+      <div class="stats">
+        <span>Events: <strong>645</strong></span>
+        <span>App Rate: <strong class="positive">93%</strong></span>
+        <span>14d Runup: <strong>-1.99%</strong></span>
+        <span>Post-1d: <strong class="positive">+0.30%</strong></span>
+      </div>
+    </div>
+
+    <div class="signal-card">
+      <h4>&#9888;&#65039; T1 + High Runup (14d &gt; 10%): Sell the News</h4>
+      <p>Even high-probability approvals suffer negative post-event returns when they&rsquo;ve already run up 16%+ into the catalyst.</p>
+      <div class="stats">
+        <span>Events: <strong>54</strong></span>
+        <span>App Rate: <strong class="positive">91%</strong></span>
+        <span>14d Runup: <strong>+16.64%</strong></span>
+        <span>Post-1d: <strong class="negative">-0.86%</strong></span>
+      </div>
+    </div>
+
+    <div class="signal-card">
+      <h4>&#128680; T4 + Runup &gt; 10%: Classic Bull Trap</h4>
+      <p>Low-probability stocks that have surged on retail FOMO. The 79% CRL rate combined with a -1.05% mean post-1d return makes this the worst risk/reward in the dataset.</p>
+      <div class="stats">
+        <span>Events: <strong>99</strong></span>
+        <span>App Rate: <strong class="negative">21%</strong></span>
+        <span>14d Runup: <strong>+25.22%</strong></span>
+        <span>Post-1d: <strong class="negative">-1.05%</strong></span>
+      </div>
+    </div>
+
+    <div class="signal-card">
+      <h4>&#128142; Score &ge; 0.90: Conviction Hold</h4>
+      <p>The highest-conviction ODIN scores show flat price action and positive post-event returns. Not a momentum trade &mdash; a thesis trade.</p>
+      <div class="stats">
+        <span>Events: <strong>614</strong></span>
+        <span>App Rate: <strong class="positive">95%</strong></span>
+        <span>14d Runup: <strong>-0.02%</strong></span>
+        <span>Post-1d: <strong class="positive">+0.48%</strong></span>
+      </div>
+    </div>
+
+    <h2 id="score-bins">Score Bin Deep Dive</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Score Bin</th>
+          <th>Events</th>
+          <th>App Rate</th>
+          <th>14d Runup</th>
+          <th>Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Strong CRL (&lt;0.15)</td>
+          <td>120</td>
+          <td class="negative">9%</td>
+          <td>+5.45%</td>
+          <td class="negative">Bull Trap</td>
+        </tr>
+        <tr>
+          <td>Lean CRL (0.15&ndash;0.40)</td>
+          <td>313</td>
+          <td class="negative">23%</td>
+          <td>+1.89%</td>
+          <td class="negative">Caution</td>
+        </tr>
+        <tr>
+          <td>Toss-up (0.40&ndash;0.65)</td>
+          <td>45</td>
+          <td>58%</td>
+          <td>+4.10%</td>
+          <td>Avoid</td>
+        </tr>
+        <tr>
+          <td>Lean Approval (0.65&ndash;0.85)</td>
+          <td>469</td>
+          <td class="positive">80%</td>
+          <td>+1.18%</td>
+          <td>Selective</td>
+        </tr>
+        <tr>
+          <td>Strong Approval (&ge;0.85)</td>
+          <td>758</td>
+          <td class="positive">93%</td>
+          <td>+0.04%</td>
+          <td class="positive">Hold</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The Strong CRL bin (score below 0.15) has the <em>highest</em> mean 14-day runup at +5.45%, despite a 9% approval rate. Maximum speculation, maximum risk. Meanwhile, the Strong Approval bin is nearly flat &mdash; the market has already spoken.</p>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h4>What is a PDUFA runup?</h4>
+      <p>A PDUFA runup is the stock price increase in the days and weeks before an FDA PDUFA date. Biotech stocks often see buying pressure ahead of binary FDA decisions as traders position for potential approval. The typical 14-day runup averages +1.17% across all events.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Do approval-destined stocks have bigger runups?</h4>
+      <p>No. CRL-destined stocks average +1.93% (14-day) versus +0.86% for approvals. Speculative buying disproportionately targets lower-probability, higher-volatility names, creating bull traps.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Which ODIN tier has the best entry for PDUFA trades?</h4>
+      <p>T1 events (score above 0.85) with below-average runups offer the strongest risk-adjusted entry: 93% approval rate, near-zero pre-event runup, and positive post-event drift (+0.30%).</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>What is a PDUFA bull trap?</h4>
+      <p>A PDUFA bull trap occurs when a low-probability stock surges before its catalyst date, attracting speculative buyers, only to crash on a CRL. T4 events with 14-day runups above 10% average +25% runup but only 21% approval rate.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>How does ODIN score PDUFA events?</h4>
+      <p>ODIN v5 is a 25-feature logistic regression model trained on 2,200+ historical PDUFA events. It considers sponsor experience, regulatory designations (BTD, Priority Review, Orphan), prior CRLs, therapeutic area risk, and interaction effects to produce an approval probability score from 0 to 1. It achieves AUC 0.9007 on holdout validation.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3>Get ODIN Scores for Upcoming PDUFA Dates</h3>
+      <p>View real-time approval probability scores, tier assignments, and expected runup forecasts for every upcoming FDA catalyst.</p>
+      <a href="/pdufa-dates" class="cta-btn">View PDUFA Calendar &rarr;</a>
+    </div>
+
+    <p class="disclaimer">This content is for informational and educational purposes only. It does not constitute investment advice, a recommendation, or a solicitation to buy or sell any securities. Past performance is not indicative of future results. PDUFA catalyst events are inherently binary and unpredictable. ODIN model scores are probabilistic estimates, not guarantees. All trading involves risk of loss. Consult a qualified financial advisor before making investment decisions. Data: FDA PDUFA calendar, Yahoo Finance, ODIN vNEXT v5. Analysis period: January 2020 through February 2026.</p>
+
+  </div>
+</div>
+
+</body>
+</html>

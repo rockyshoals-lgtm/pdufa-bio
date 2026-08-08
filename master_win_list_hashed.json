@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "engine": "ODIN v14",
+  "wins": [
+    {
+      "id": "CRL-011",
+      "ticker": "REPL",
+      "drug": "RP1 (vusolimogene oderparepvec)",
+      "indication": "Advanced melanoma (anti-PD1 progressed)",
+      "pdufa_date": "2026-04-10",
+      "odin_prob": 0.04440998818318537,
+      "odin_tier": "T4",
+      "prediction": "CRL (No Trade)",
+      "outcome": "CRL",
+      "outcome_date": "2026-04-10",
+      "correct": true,
+      "odin_version": "v14",
+      "notes": "Second CRL for RP1. Naive sponsor (Replimune), high CRL TA (oncology). 4.4% approval probability \u2014 near-bottom of model range. BTD+PR designations could not overcome single-arm data inadequacy.",
+      "logged_utc": "2026-04-10T17:55:41.033144+00:00",
+      "sha256": "fd3f7a345422f85ad7e4fe599d2c105abeae4897379ba9a9b09c42497f0b6cde"
+    }
+  ],
+  "last_updated": "2026-04-10T17:55:41.033248+00:00",
+  "total_wins": 1
+}

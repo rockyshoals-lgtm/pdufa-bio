@@ -1,0 +1,84 @@
+[2026-05-28 18:38:20] INFO ODIN DAEMON v1.0 starting. Mode: DRY-RUN
+[2026-05-28 18:38:20] INFO Tier 1 cadence: 30min. Tier 2: weekly Sunday.
+[2026-05-28 18:38:20] INFO Logs: C:\Users\dcmoo\Documents\Python\9realms\daemon_logs
+[2026-05-28 18:38:20] INFO Alerts: C:\Users\dcmoo\Documents\Python\9realms\alerts
+[2026-05-28 18:38:20] INFO === Tier 1 cycle START ===
+[2026-05-28 18:38:20] INFO Running scanner refresh...
+[2026-05-28 18:38:20] INFO Running auto-postmortem check...
+[2026-05-28 18:38:20] INFO === Tier 1 cycle END (0.0s) ===
+[2026-05-28 18:38:54] INFO ODIN DAEMON v1.0 starting. Mode: LIVE
+[2026-05-28 18:38:54] INFO Tier 1 cadence: 30min. Tier 2: weekly Sunday.
+[2026-05-28 18:38:54] INFO Logs: C:\Users\dcmoo\Documents\Python\9realms\daemon_logs
+[2026-05-28 18:38:54] INFO Alerts: C:\Users\dcmoo\Documents\Python\9realms\alerts
+[2026-05-28 18:38:54] INFO === Tier 1 cycle START ===
+[2026-05-28 18:38:54] INFO Running scanner refresh...
+[2026-05-28 18:38:55] INFO Scanner OK
+[2026-05-28 18:38:55] HIGH_PRIORITY ALERT_HIGH_PRIORITY: Scanner detected 27 NEW catalyst events. Review phase_readout_new_events_*.csv.
+[2026-05-28 18:38:55] INFO Running auto-postmortem check...
+[2026-05-28 18:38:55] INFO Postmortem OK
+[2026-05-28 18:38:55] INFO === Tier 1 cycle END (0.3s) ===
+[2026-05-28 18:57:20] INFO ODIN DAEMON v1.0 starting. Mode: LIVE
+[2026-05-28 18:57:20] INFO Tier 1 cadence: 30min. Tier 2: weekly Sunday.
+[2026-05-28 18:57:20] INFO Logs: C:\Users\dcmoo\Documents\Python\9realms\daemon_logs
+[2026-05-28 18:57:20] INFO Alerts: C:\Users\dcmoo\Documents\Python\9realms\alerts
+[2026-05-28 18:57:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=18)
+[2026-05-28 19:02:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:07:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:12:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:17:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:22:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:27:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:32:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:37:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:42:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:47:20] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:52:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 19:57:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=19)
+[2026-05-28 20:02:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:07:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:12:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:17:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:22:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:27:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:32:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:37:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:42:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:47:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:52:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 20:57:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=20)
+[2026-05-28 21:02:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:07:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:12:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:17:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:22:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:27:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:32:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:37:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:42:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:47:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:52:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 21:57:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=21)
+[2026-05-28 22:02:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:07:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:12:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:17:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:22:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:27:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:32:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:37:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:42:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:47:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:52:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 22:57:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=22)
+[2026-05-28 23:02:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:07:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:12:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:17:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:22:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:27:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:32:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:37:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:42:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:47:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:52:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)
+[2026-05-28 23:57:19] INFO Outside market hours, idling. Next check in 5 min. (Weekday=3, hour=23)

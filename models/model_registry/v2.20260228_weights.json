@@ -1,0 +1,21 @@
+{
+  "s17_sentiment_weight": 0.127763,
+  "s18_engagement_spike_weight": 0.04726,
+  "s19_social_silence_weight": -0.029837,
+  "s20_smart_money_divergence_weight": -0.034833,
+  "social_master_amplifier": 1.196739,
+  "ceo_tone_bullish_boost": 0.166231,
+  "ceo_tone_cautious_penalty": -0.142125,
+  "ceo_tone_silent_penalty": -0.046655,
+  "quiet_review_boost": 0.239349,
+  "amendment_count_penalty": -0.040805,
+  "endpoint_change_penalty": -0.224238,
+  "pi_bad_history_penalty": -0.331877,
+  "zero_enroller_penalty": -0.148713,
+  "expectation_gap_weight": 0.011735,
+  "high_expectation_penalty": -0.096652,
+  "ix_prior_crl_x_ceo_bullish": 0.278497,
+  "ix_prior_crl_x_quiet_review": 0.358033,
+  "ix_gene_therapy_x_experienced": 0.132156,
+  "ix_orphan_x_single_arm": 0.150309
+}

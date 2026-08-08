@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "generated_at": "2026-02-28T21:49:48.450495",
+    "session_start": "2026-02-28T21:49:06.225087",
+    "daemon_version": "kaizen-v1.0"
+  },
+  "summary": {
+    "total_rounds": 8,
+    "total_promotions": 2,
+    "promotion_rate": 0.25,
+    "best_auc_ever": 0.919336,
+    "worst_auc_ever": 0.884775,
+    "auc_range": 0.034561,
+    "current_streak": 4,
+    "longest_streak": 4,
+    "duplicate_count": 0,
+    "unique_configs": 2,
+    "avg_round_time_s": 0.8
+  },
+  "kaizen": {
+    "score": 76.7,
+    "improvement_velocity": 25.0,
+    "exploration_diversity": 25.0,
+    "efficiency_ratio": 25.0,
+    "freshness": 92.0
+  },
+  "adaptive": {
+    "mutation_rate": 0.2351,
+    "temperature": 0.887,
+    "search_width": 1.0
+  },
+  "auc_series": [
+    {
+      "round": 1,
+      "wf_auc": 0.9127,
+      "promoted": true,
+      "timestamp": "2026-02-28T23:59:29.373683"
+    },
+    {
+      "round": 2,
+      "wf_auc": 0.884775,
+      "promoted": false,
+      "timestamp": "2026-02-28T23:59:32.279191"
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.903332,
+      "promoted": false,
+      "timestamp": "2026-02-28T23:59:35.054694"
+    },
+    {
+      "round": 4,
+      "wf_auc": 0.919336,
+      "promoted": true,
+      "timestamp": "2026-03-01T00:13:08.859221"
+    },
+    {
+      "round": 5,
+      "wf_auc": 0.911914,
+      "promoted": false,
+      "timestamp": "2026-03-01T00:13:47.160417"
+    },
+    {
+      "round": 6,
+      "wf_auc": 0.915103,
+      "promoted": false,
+      "timestamp": "2026-03-01T00:14:07.662274"
+    },
+    {
+      "round": 7,
+      "wf_auc": 0.0,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:49:45.616047"
+    },
+    {
+      "round": 8,
+      "wf_auc": 0.0,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:49:48.449985"
+    }
+  ],
+  "brier_series": [
+    {
+      "round": 1,
+      "wf_brier": 0.070116
+    },
+    {
+      "round": 2,
+      "wf_brier": 0.090871
+    },
+    {
+      "round": 3,
+      "wf_brier": 0.090618
+    },
+    {
+      "round": 4,
+      "wf_brier": 0.076398
+    },
+    {
+      "round": 5,
+      "wf_brier": 0.083852
+    },
+    {
+      "round": 6,
+      "wf_brier": 0.076384
+    },
+    {
+      "round": 7,
+      "wf_brier": 1.0
+    },
+    {
+      "round": 8,
+      "wf_brier": 1.0
+    }
+  ],
+  "promotion_history": [
+    {
+      "round": 1,
+      "wf_auc": 0.9127,
+      "timestamp": "2026-02-28T23:59:29.373683"
+    },
+    {
+      "round": 4,
+      "wf_auc": 0.919336,
+      "timestamp": "2026-03-01T00:13:08.859221"
+    }
+  ],
+  "plateau_events": [],
+  "feature_win_rates": {
+    "btd_x_oncology": 0.8,
+    "cash_x_experienced": 0.571,
+    "desig_x_experienced": 0.5,
+    "is_class1_resub": 0.333,
+    "is_hoeg_era": 0.375,
+    "is_neurology": 0.333,
+    "is_pain": 0.286,
+    "orphan_x_desig_stack": 0.5,
+    "pr_x_experienced": 0.429,
+    "prior_crl_x_base_rate": 0.25,
+    "year": 0.5,
+    "publications_12m": 2.0,
+    "ae_count_12m": 2.0,
+    "sponsor_prior_approvals": 2.0,
+    "cash_runway_months": 2.0,
+    "base_rate_ta": 2.0,
+    "base_rate_modality": 2.0,
+    "manufacturing_risk": 2.0,
+    "base_rate_stack": 2.0,
+    "designation_stack_count": 2.0,
+    "base_rate_mfg": 2.0,
+    "fast_track": 2.0,
+    "accelerated_approval": 2.0,
+    "btd": 2.0,
+    "base_rate_ta_sq": 0.333,
+    "insider_x_social": 0.167,
+    "is_gene_therapy": 0.25,
+    "is_ophthalmology": 0.25,
+    "log_ae": 0.333
+  },
+  "feature_appearances": {
+    "desig_x_experienced": 8,
+    "is_hoeg_era": 8,
+    "orphan_x_desig_stack": 8,
+    "year": 8,
+    "cash_x_experienced": 7,
+    "is_pain": 7,
+    "pr_x_experienced": 7,
+    "is_class1_resub": 6,
+    "is_neurology": 6,
+    "base_rate_ta_sq": 6,
+    "insider_x_social": 6,
+    "log_ae": 6,
+    "btd_x_oncology": 5,
+    "prior_crl_x_base_rate": 4,
+    "is_gene_therapy": 4,
+    "is_ophthalmology": 4,
+    "is_rare_disease": 3,
+    "is_resubmission": 2,
+    "mfg_x_prior_crl": 2,
+    "desig_stack_sq": 1,
+    "galaxy_x_sentiment": 1,
+    "crl_count_x_ta_risk": 1,
+    "s23_x_s6": 1,
+    "is_oncology": 1,
+    "log_sponsor_approvals": 1,
+    "orphan_x_surrogate": 1
+  },
+  "recent_rounds": [
+    {
+      "round": 1,
+      "wf_auc": 0.9127,
+      "wf_brier": 0.070116,
+      "wf_t4p": 0.7848,
+      "promoted": true,
+      "n_eng": 11,
+      "elapsed": 3.6,
+      "yearly_aucs": [
+        0.9139,
+        0.9305,
+        0.9004,
+        0.8953,
+        0.9234
+      ]
+    },
+    {
+      "round": 2,
+      "wf_auc": 0.884775,
+      "wf_brier": 0.090871,
+      "wf_t4p": 0.7249,
+      "promoted": false,
+      "n_eng": 13,
+      "elapsed": 2.9,
+      "yearly_aucs": [
+        0.8868,
+        0.8982,
+        0.8259,
+        0.8968,
+        0.9162
+      ]
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.903332,
+      "wf_brier": 0.090618,
+      "wf_t4p": 0.7667,
+      "promoted": false,
+      "n_eng": 12,
+      "elapsed": 2.8,
+      "yearly_aucs": [
+        0.8959,
+        0.9166,
+        0.8838,
+        0.9057,
+        0.9146
+      ]
+    },
+    {
+      "round": 4,
+      "wf_auc": 0.919336,
+      "wf_brier": 0.076398,
+      "wf_t4p": 0.7827,
+      "promoted": true,
+      "n_eng": 15,
+      "elapsed": 23.7,
+      "yearly_aucs": [
+        0.9357,
+        0.9259,
+        0.8902,
+        0.9185,
+        0.9264
+      ]
+    },
+    {
+      "round": 5,
+      "wf_auc": 0.911914,
+      "wf_brier": 0.083852,
+      "wf_t4p": 0.7671,
+      "promoted": false,
+      "n_eng": 16,
+      "elapsed": 19.9,
+      "yearly_aucs": [
+        0.9279,
+        0.928,
+        0.8864,
+        0.9188,
+        0.8984
+      ]
+    },
+    {
+      "round": 6,
+      "wf_auc": 0.915103,
+      "wf_brier": 0.076384,
+      "wf_t4p": 0.92,
+      "promoted": false,
+      "n_eng": 16,
+      "elapsed": 20.5,
+      "yearly_aucs": [
+        0.9174,
+        0.9233,
+        0.9028,
+        0.9064,
+        0.9256
+      ]
+    },
+    {
+      "round": 7,
+      "wf_auc": 0.0,
+      "wf_brier": 1.0,
+      "wf_t4p": 0.0,
+      "promoted": false,
+      "n_eng": 14,
+      "elapsed": 0.8,
+      "yearly_aucs": []
+    },
+    {
+      "round": 8,
+      "wf_auc": 0.0,
+      "wf_brier": 1.0,
+      "wf_t4p": 0.0,
+      "promoted": false,
+      "n_eng": 20,
+      "elapsed": 0.8,
+      "yearly_aucs": []
+    }
+  ]
+}

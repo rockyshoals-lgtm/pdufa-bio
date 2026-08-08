@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "version": "6.0",
+    "start_time": "2026-01-10T17:14:13.490866Z",
+    "sources": {
+      "CTgov_Phase2": 0,
+      "CTgov_Phase3": 0,
+      "FDA_CMC_Risk": 20,
+      "CRL_Linkages": 0
+    },
+    "fixes_applied": [
+      "ClinicalTrials.gov API v2 query syntax FIXED",
+      "Phase outcome parsing from results section ADDED",
+      "FDA enforcement/CMC risk mining ADDED",
+      "CRL \u2192 Resubmission linkage ADDED"
+    ],
+    "high_risk_companies": 0
+  },
+  "events": []
+}

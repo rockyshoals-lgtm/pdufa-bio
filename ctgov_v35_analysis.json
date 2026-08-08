@@ -1,0 +1,848 @@
+{
+  "metadata": {
+    "version": "3.5",
+    "module": "ctgov_v35_features.py",
+    "purpose": "Wire 37 unused CT.gov columns into 34 new features for Gungnir v35",
+    "generation_date": "2026-03-28",
+    "note": "All features are T-1 compliant (knowable before readout event)"
+  },
+  "summary": {
+    "total_ctgov_trials": 18524,
+    "v35_new_features_total": 31,
+    "features_with_100pct_coverage": 30,
+    "features_with_62_4pct_coverage": 1,
+    "features_by_category": {
+      "endpoint_granularity": 10,
+      "trial_timing": 3,
+      "trial_stringency": 4,
+      "intervention_types": 5,
+      "comparator_design": 1,
+      "sponsor_collaboration": 6,
+      "enrollment_recruitment": 2
+    }
+  },
+  "by_category": {
+    "endpoint_granularity": {
+      "ep_is_os": {
+        "description": "Overall Survival endpoint \u2014 gold standard for oncology",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "ep_is_pfs": {
+        "description": "Progression-Free Survival endpoint \u2014 intermediate, faster signal",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "ep_is_orr": {
+        "description": "Objective Response Rate endpoint \u2014 binary response measure",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "ep_is_safety": {
+        "description": "Safety endpoint \u2014 typically unblinded, lower threshold",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "1",
+          "1"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "ep_is_biomarker": {
+        "description": "Biomarker endpoint \u2014 mechanistic, not directly clinical",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "ep_is_pk_pd": {
+        "description": "PK/PD endpoint \u2014 pharmacokinetic/dynamic, early stage proof",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "ep_is_qol": {
+        "description": "Quality of Life endpoint \u2014 subjective, soft endpoint, placebo sensitive",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "num_primary_outcomes": {
+        "description": "Number of primary outcomes \u2014 trial complexity/focus",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 70,
+        "sample_values": [
+          "1",
+          "1",
+          "1"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "num_secondary_outcomes": {
+        "description": "Number of secondary outcomes \u2014 exploratory depth",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 108,
+        "sample_values": [
+          "9",
+          "5",
+          "1"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "num_total_outcomes": {
+        "description": "Total outcome measures (primary + secondary + other)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 123,
+        "sample_values": [
+          "10",
+          "6",
+          "2"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    },
+    "trial_timing": {
+      "primary_timeframe_days": {
+        "description": "Days from baseline to primary endpoint measurement \u2014 durability signal",
+        "coverage_pct": 62.4,
+        "null_rate_pct": 37.6,
+        "data_type": "numeric",
+        "unique_count": 841,
+        "sample_values": [
+          "60.88",
+          "112.0",
+          "7.0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "time_start_to_primary_completion": {
+        "description": "Total planned trial duration for primary endpoint",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 3287,
+        "sample_values": [
+          "71",
+          "335",
+          "550"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "time_to_readout_days": {
+        "description": "Calendar days from study start to readout event",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 4577,
+        "sample_values": [
+          "199",
+          "726",
+          "2259"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    },
+    "trial_stringency": {
+      "inclusion_criteria_count": {
+        "description": "Number of inclusion criteria \u2014 population specificity",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 48,
+        "sample_values": [
+          "3",
+          "3",
+          "16"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "exclusion_criteria_count": {
+        "description": "Number of exclusion criteria (note: mostly 0 in dataset)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 1,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "total_criteria_count": {
+        "description": "Total inclusion + exclusion criteria",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 48,
+        "sample_values": [
+          "3",
+          "3",
+          "16"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "elig_text_length": {
+        "description": "Character length of eligibility criteria text",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 7271,
+        "sample_values": [
+          "1982",
+          "957",
+          "3998"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    },
+    "intervention_types": {
+      "has_drug": {
+        "description": "Intervention includes drug (vs device/behavioral)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "1",
+          "1",
+          "1"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "has_biological": {
+        "description": "Intervention includes biologic agent (antibody, protein)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "has_genetic": {
+        "description": "Intervention has genetic component (gene therapy, etc)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "has_combination": {
+        "description": "Trial tests combination therapy (polypharmacy risk)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "has_active_comparator": {
+        "description": "Has active drug comparator (harder to show efficacy than placebo)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    },
+    "comparator_design": {
+      "has_sham_comparator": {
+        "description": "Has sham/device control \u2014 less common, surgical trials",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    },
+    "sponsor_collaboration": {
+      "is_industry": {
+        "description": "Sponsored by pharma/biotech industry (higher regulatory standards)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "1",
+          "1"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "is_nih": {
+        "description": "Sponsored by NIH/government (academic rigor)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "is_academic": {
+        "description": "Sponsored by academic institution (variable standards)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "1",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "has_industry_collab": {
+        "description": "Has industry co-sponsor/collaboration",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "1",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "is_fda_regulated_drug": {
+        "description": "Drug is FDA-regulated (vs experimental)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "1",
+          "1",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "num_collaborators": {
+        "description": "Number of co-sponsors/collaborators (shared risk)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 22,
+        "sample_values": [
+          "1",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    },
+    "enrollment_recruitment": {
+      "is_actual_enrollment": {
+        "description": "Enrollment is actual (vs estimated projections)",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "1",
+          "1",
+          "1"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      },
+      "healthy_volunteers": {
+        "description": "Includes healthy volunteers \u2014 unusual for phase 2/3 efficacy trials",
+        "coverage_pct": 100.0,
+        "null_rate_pct": 0.0,
+        "data_type": "numeric",
+        "unique_count": 2,
+        "sample_values": [
+          "1",
+          "0",
+          "0"
+        ],
+        "note": "All values are T-1 compliant (knowable before readout)"
+      }
+    }
+  },
+  "all_features": {
+    "ep_is_os": {
+      "description": "Overall Survival endpoint \u2014 gold standard for oncology",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "ep_is_pfs": {
+      "description": "Progression-Free Survival endpoint \u2014 intermediate, faster signal",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "ep_is_orr": {
+      "description": "Objective Response Rate endpoint \u2014 binary response measure",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "ep_is_safety": {
+      "description": "Safety endpoint \u2014 typically unblinded, lower threshold",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "1",
+        "1"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "ep_is_biomarker": {
+      "description": "Biomarker endpoint \u2014 mechanistic, not directly clinical",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "ep_is_pk_pd": {
+      "description": "PK/PD endpoint \u2014 pharmacokinetic/dynamic, early stage proof",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "ep_is_qol": {
+      "description": "Quality of Life endpoint \u2014 subjective, soft endpoint, placebo sensitive",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "num_primary_outcomes": {
+      "description": "Number of primary outcomes \u2014 trial complexity/focus",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 70,
+      "sample_values": [
+        "1",
+        "1",
+        "1"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "num_secondary_outcomes": {
+      "description": "Number of secondary outcomes \u2014 exploratory depth",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 108,
+      "sample_values": [
+        "9",
+        "5",
+        "1"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "num_total_outcomes": {
+      "description": "Total outcome measures (primary + secondary + other)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 123,
+      "sample_values": [
+        "10",
+        "6",
+        "2"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "primary_timeframe_days": {
+      "description": "Days from baseline to primary endpoint measurement \u2014 durability signal",
+      "coverage_pct": 62.4,
+      "null_rate_pct": 37.6,
+      "data_type": "numeric",
+      "unique_count": 841,
+      "sample_values": [
+        "60.88",
+        "112.0",
+        "7.0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "time_start_to_primary_completion": {
+      "description": "Total planned trial duration for primary endpoint",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 3287,
+      "sample_values": [
+        "71",
+        "335",
+        "550"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "time_to_readout_days": {
+      "description": "Calendar days from study start to readout event",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 4577,
+      "sample_values": [
+        "199",
+        "726",
+        "2259"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "inclusion_criteria_count": {
+      "description": "Number of inclusion criteria \u2014 population specificity",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 48,
+      "sample_values": [
+        "3",
+        "3",
+        "16"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "exclusion_criteria_count": {
+      "description": "Number of exclusion criteria (note: mostly 0 in dataset)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 1,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "total_criteria_count": {
+      "description": "Total inclusion + exclusion criteria",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 48,
+      "sample_values": [
+        "3",
+        "3",
+        "16"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "elig_text_length": {
+      "description": "Character length of eligibility criteria text",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 7271,
+      "sample_values": [
+        "1982",
+        "957",
+        "3998"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_drug": {
+      "description": "Intervention includes drug (vs device/behavioral)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "1",
+        "1",
+        "1"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_biological": {
+      "description": "Intervention includes biologic agent (antibody, protein)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_genetic": {
+      "description": "Intervention has genetic component (gene therapy, etc)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_combination": {
+      "description": "Trial tests combination therapy (polypharmacy risk)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_active_comparator": {
+      "description": "Has active drug comparator (harder to show efficacy than placebo)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_sham_comparator": {
+      "description": "Has sham/device control \u2014 less common, surgical trials",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "is_industry": {
+      "description": "Sponsored by pharma/biotech industry (higher regulatory standards)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "1",
+        "1"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "is_nih": {
+      "description": "Sponsored by NIH/government (academic rigor)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "0",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "is_academic": {
+      "description": "Sponsored by academic institution (variable standards)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "1",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "has_industry_collab": {
+      "description": "Has industry co-sponsor/collaboration",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "1",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "is_fda_regulated_drug": {
+      "description": "Drug is FDA-regulated (vs experimental)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "1",
+        "1",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "num_collaborators": {
+      "description": "Number of co-sponsors/collaborators (shared risk)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 22,
+      "sample_values": [
+        "1",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "is_actual_enrollment": {
+      "description": "Enrollment is actual (vs estimated projections)",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "1",
+        "1",
+        "1"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    },
+    "healthy_volunteers": {
+      "description": "Includes healthy volunteers \u2014 unusual for phase 2/3 efficacy trials",
+      "coverage_pct": 100.0,
+      "null_rate_pct": 0.0,
+      "data_type": "numeric",
+      "unique_count": 2,
+      "sample_values": [
+        "1",
+        "0",
+        "0"
+      ],
+      "note": "All values are T-1 compliant (knowable before readout)"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "version": "v4_winsorized_comparison",
+  "date_utc": "2026-04-19",
+  "winsor_bounds": [
+    -50.0,
+    100.0
+  ],
+  "baseline_v4_deployed": {
+    "sharpe": 5.45,
+    "win_rate": 0.708,
+    "max_drawdown": -4.9,
+    "final_value": 18100000,
+    "trades": 910
+  },
+  "results_by_mode": {
+    "none": [
+      {
+        "kelly": 0.5,
+        "use_lgb": false,
+        "n_trades": 926,
+        "win_rate": 0.6976,
+        "avg_return": 14.61,
+        "avg_raw_return": 14.61,
+        "total_return": 15205.9,
+        "final_value": 15305891.63,
+        "sharpe": 5.3,
+        "max_drawdown": -5.2,
+        "mode": "none"
+      },
+      {
+        "kelly": 0.5,
+        "use_lgb": true,
+        "n_trades": 910,
+        "win_rate": 0.7077,
+        "avg_return": 15.38,
+        "avg_raw_return": 15.38,
+        "total_return": 18019.3,
+        "final_value": 18119273.84,
+        "sharpe": 5.45,
+        "max_drawdown": -4.9,
+        "mode": "none"
+      },
+      {
+        "kelly": 0.67,
+        "use_lgb": false,
+        "n_trades": 926,
+        "win_rate": 0.6976,
+        "avg_return": 14.61,
+        "avg_raw_return": 14.61,
+        "total_return": 15205.9,
+        "final_value": 15305891.63,
+        "sharpe": 5.3,
+        "max_drawdown": -5.2,
+        "mode": "none"
+      },
+      {
+        "kelly": 0.67,
+        "use_lgb": true,
+        "n_trades": 910,
+        "win_rate": 0.7077,
+        "avg_return": 15.38,
+        "avg_raw_return": 15.38,
+        "total_return": 18019.3,
+        "final_value": 18119273.84,
+        "sharpe": 5.45,
+        "max_drawdown": -4.9,
+        "mode": "none"
+      }
+    ],
+    "train_only": [
+      {
+        "kelly": 0.5,
+        "use_lgb": false,
+        "n_trades": 926,
+        "win_rate": 0.7041,
+        "avg_return": 14.5,
+        "avg_raw_return": 14.5,
+        "total_return": 15053.3,
+        "final_value": 15153340.03,
+        "sharpe": 5.32,
+        "max_drawdown": -5.2,
+        "mode": "train_only"
+      },
+      {
+        "kelly": 0.5,
+        "use_lgb": true,
+        "n_trades": 910,
+        "win_rate": 0.7132,
+        "avg_return": 15.22,
+        "avg_raw_return": 15.22,
+        "total_return": 16887.4,
+        "final_value": 16987371.72,
+        "sharpe": 5.43,
+        "max_drawdown": -4.1,
+        "mode": "train_only"
+      },
+      {
+        "kelly": 0.67,
+        "use_lgb": false,
+        "n_trades": 926,
+        "win_rate": 0.7041,
+        "avg_return": 14.5,
+        "avg_raw_return": 14.5,
+        "total_return": 15053.3,
+        "final_value": 15153340.03,
+        "sharpe": 5.32,
+        "max_drawdown": -5.2,
+        "mode": "train_only"
+      },
+      {
+        "kelly": 0.67,
+        "use_lgb": true,
+        "n_trades": 910,
+        "win_rate": 0.7132,
+        "avg_return": 15.22,
+        "avg_raw_return": 15.22,
+        "total_return": 16887.4,
+        "final_value": 16987371.72,
+        "sharpe": 5.43,
+        "max_drawdown": -4.1,
+        "mode": "train_only"
+      }
+    ],
+    "full": [
+      {
+        "kelly": 0.5,
+        "use_lgb": false,
+        "n_trades": 926,
+        "win_rate": 0.7041,
+        "avg_return": 12.89,
+        "avg_raw_return": 14.5,
+        "total_return": 8757.8,
+        "final_value": 8857836.82,
+        "sharpe": 6.87,
+        "max_drawdown": -4.4,
+        "mode": "full"
+      },
+      {
+        "kelly": 0.5,
+        "use_lgb": true,
+        "n_trades": 910,
+        "win_rate": 0.7132,
+        "avg_return": 13.5,
+        "avg_raw_return": 15.22,
+        "total_return": 9535.0,
+        "final_value": 9634953.74,
+        "sharpe": 7.11,
+        "max_drawdown": -3.9,
+        "mode": "full"
+      },
+      {
+        "kelly": 0.67,
+        "use_lgb": false,
+        "n_trades": 926,
+        "win_rate": 0.7041,
+        "avg_return": 12.89,
+        "avg_raw_return": 14.5,
+        "total_return": 8757.8,
+        "final_value": 8857836.82,
+        "sharpe": 6.87,
+        "max_drawdown": -4.4,
+        "mode": "full"
+      },
+      {
+        "kelly": 0.67,
+        "use_lgb": true,
+        "n_trades": 910,
+        "win_rate": 0.7132,
+        "avg_return": 13.5,
+        "avg_raw_return": 15.22,
+        "total_return": 9535.0,
+        "final_value": 9634953.74,
+        "sharpe": 7.11,
+        "max_drawdown": -3.9,
+        "mode": "full"
+      }
+    ]
+  },
+  "verdicts": {
+    "train_only": {
+      "best_config": "Kelly=0.5, LGB=True",
+      "sharpe": 5.43,
+      "sharpe_delta_vs_v4": -0.02,
+      "max_dd": -4.1,
+      "dd_improved": true,
+      "verdict": "Within noise of v4 - log finding, keep v4"
+    },
+    "full": {
+      "best_config": "Kelly=0.5, LGB=True",
+      "sharpe": 7.11,
+      "sharpe_delta_vs_v4": 1.66,
+      "max_dd": -3.9,
+      "dd_improved": true,
+      "verdict": "SHIP as v4.1 WINSORIZED"
+    }
+  },
+  "methodology": {
+    "none": "Control re-run. Raw returns for both training targets and backtest P&L.",
+    "train_only": "Training targets clipped to [-50, 100]%; backtest P&L uses raw returns (reality).",
+    "full": "Training targets AND backtest P&L clipped to [-50, 100]%. Pessimistic realistic ceiling."
+  }
+}

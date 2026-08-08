@@ -84,3 +84,21 @@ smart_money_cache/
 phase_readout_cache/
 daily_scans/
 readout_runs/
+
+# ---------------------------------------------------------------------------
+# Bulk data artifacts. These are local caches and raw dumps, regenerable from
+# their source APIs, and none of them is an input to the site build.
+#
+# Added after a `git add -A` at repo root swept in a 1.8 GB `full database.xml`
+# and GitHub's pre-receive hook rejected the push (100 MB file limit). The push
+# failing was the good outcome; the bad one is a multi-gigabyte blob entering
+# history, where it is permanent and every future clone pays for it.
+# ---------------------------------------------------------------------------
+full database.xml
+odin_catalyst_database.json
+form4_transactions.json
+finbrain_raw_cache.json
+conf_study/si_panel_*.csv.gz
+orats_backtest_cache/
+backtest_progress/
+*.tar.gz

@@ -1,0 +1,29 @@
+{
+  "utc_started": "2026-01-30T08:59:15+00:00",
+  "run_id": "20260130_005915",
+  "csv": "C:\\Users\\dcmoo\\Documents\\Python\\ODIN_v5_T1_COMPLIANT.csv",
+  "device": "cuda",
+  "rows": 1350,
+  "features": [
+    "btd",
+    "orphan",
+    "priority_review",
+    "fast_track",
+    "accelerated_approval",
+    "designation_stack_count",
+    "had_adcom",
+    "adcom_vote_pct",
+    "sponsor_prior_approvals",
+    "experienced_sponsor",
+    "modality_complexity",
+    "year"
+  ],
+  "max_configs": 1000000000,
+  "stall_configs": 100000000,
+  "elite_frac": 0.02,
+  "alpha": 0.25,
+  "min_crl_precision": 0.94,
+  "min_specificity": 0.78,
+  "seed": 42,
+  "note": "T-1 compliant: assumes CSV is already audit-clean. Optimizer logs ODIN avoid-quality metrics for best configs."
+}

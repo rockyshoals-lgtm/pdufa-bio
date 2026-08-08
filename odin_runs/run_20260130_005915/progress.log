@@ -1,0 +1,6 @@
+2026-01-30T08:59:16+00:00 | start | rows=1350 | features=['btd', 'orphan', 'priority_review', 'fast_track', 'accelerated_approval', 'designation_stack_count', 'had_adcom', 'adcom_vote_pct', 'sponsor_prior_approvals', 'experienced_sponsor', 'modality_complexity', 'year'] | device=cuda
+2026-01-30T08:59:16+00:00 | baseline_brier=0.11555555 | base_rate=0.8667
+2026-01-30T09:21:42+00:00 | progress | configs_done=5,001,294 | best_feasible_brier=0.11390252 | rate=3,714/s | std_mean=0.9459 | free_ram=3.94GB | free_vram=4.58GB
+2026-01-30T09:42:06+00:00 | progress | configs_done=10,032,429 | best_feasible_brier=0.11358923 | rate=3,903/s | std_mean=0.9256 | free_ram=3.78GB | free_vram=4.58GB
+2026-01-30T10:02:25+00:00 | progress | configs_done=15,063,564 | best_feasible_brier=0.11314020 | rate=3,975/s | std_mean=0.8863 | free_ram=3.74GB | free_vram=4.58GB
+2026-01-30T10:25:20+00:00 | progress | configs_done=20,094,699 | best_feasible_brier=0.10885338 | rate=3,891/s | std_mean=0.2413 | free_ram=3.74GB | free_vram=4.58GB

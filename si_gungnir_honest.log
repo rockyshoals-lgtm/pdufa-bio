@@ -1,0 +1,28 @@
+[+] Building Gungnir v46 baseline (126-feature matrix)...
+    Events: 1752  Features: 126  Build time: 0.8s
+[+] Split: train=225, val=972, test=555
+    Train pos_rate=82.2%  Val pos_rate=79.4%  Test pos_rate=79.6%
+[+] Loading SI features
+    3,463 events with SI data, 23 feature columns
+    Matched: 1,752/1,752 Gungnir events (100.0%)
+[+] C sweep on baseline (val-only selection)
+    C=0.005: val_auc=0.7650  test_auc=0.7448
+    C=0.01: val_auc=0.7626  test_auc=0.7489
+    C=0.02: val_auc=0.7593  test_auc=0.7501
+    C=0.03: val_auc=0.7563  test_auc=0.7495
+    C=0.05: val_auc=0.7528  test_auc=0.7477
+    C=0.1: val_auc=0.7464  test_auc=0.7445
+    C=0.2: val_auc=0.7396  test_auc=0.7410
+[+] Best C on val: 0.005 (val_auc=0.7650)
+[+] Greedy forward selection over 23 SI features (gate Δval >= 0.002)
+    Round 1: best=si_t1_adv  Δval=+0.0002
+              top5: [('si_t1_adv', 0.0002), ('si_t1_dtc_sq', 0.0001), ('si_t1_short_to_adv', 0.0001), ('si_t1_short_to_adv_sq', 0.0001), ('si_t1_days_to_cover', 0.0001)]
+    STOP: best delta 0.0002 < gate 0.002
+
+=== SUMMARY ===
+Baseline val_auc=0.7650  test_auc=0.7448  CI95=[0.6948, 0.7923]
+Final    val_auc=0.7650  test_auc=0.7448  CI95=[0.6948, 0.7923]
+Lift     Δtest=+0.0000  CI95=[+0.0000, +0.0000]  p(lift>0)=0.000
+Selected features (0): []
+
+Wrote /sessions/confident-serene-ptolemy/mnt/9realms/si_gungnir_honest_results.json

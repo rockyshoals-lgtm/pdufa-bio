@@ -1,0 +1,78 @@
+{
+  "ledger_id": "WIN-2026-0325-DNLI-001",
+  "timestamp_utc": "2026-03-25T21:11:02.027809+00:00",
+  "status": "IMMUTABLE \u2014 DO NOT MODIFY",
+  "call_type": "PRE_DECISION_LOGGED",
+  "call_type_detail": {
+    "description": "ODIN v5 scored DNLI/Tividenofusp alfa at 96.93% T1 STRONG LONG in H1 2026 predictions batch. Approved 11 days before PDUFA date.",
+    "pre_decision_scores": [
+      {
+        "model": "ODIN vNEXT v5",
+        "score": 0.96931,
+        "tier": "T1_STRONG_LONG",
+        "action": "STRONG LONG",
+        "confidence": "HIGH",
+        "date_scored": "2026-01-10",
+        "days_before_decision": 74,
+        "source_file": "ODIN_v96_H1_2026_PREDICTIONS.csv",
+        "source_line": 18,
+        "flags": "BTD + Orphan + Priority Review + Fast Track | ERT crosses BBB"
+      }
+    ],
+    "approval_announced": "2026-03-25 (FDA early approval, 11 days before PDUFA)"
+  },
+  "event": {
+    "ticker": "DNLI",
+    "company": "Denali Therapeutics Inc.",
+    "asset": "Tividenofusp alfa",
+    "indication": "Hunter Syndrome (MPS II)",
+    "therapeutic_area": "Rare Disease",
+    "application_type": "BLA",
+    "modality": "Antibody (ERT crosses blood-brain barrier)",
+    "pdufa_date": "2026-04-05",
+    "decision_date": "2026-03-25",
+    "decision_early": true,
+    "days_early": 11,
+    "outcome": "APPROVAL",
+    "nct_id": "NCT05371613",
+    "enrollment": 63,
+    "designations": [
+      "Breakthrough Therapy",
+      "Orphan Drug",
+      "Priority Review",
+      "Fast Track"
+    ]
+  },
+  "primary_call": {
+    "model": "ODIN vNEXT v5",
+    "score": 0.96931,
+    "tier": "T1_STRONG_LONG",
+    "prediction": "APPROVAL",
+    "correct": true,
+    "date_scored": "2026-01-10",
+    "days_before_decision": 74,
+    "source_file": "ODIN_v96_H1_2026_PREDICTIONS.csv"
+  },
+  "odin_v5_features": {
+    "btd_bin": 1,
+    "orphan": 1,
+    "pr_bin": 1,
+    "fast_track": 1,
+    "prior_crl_bin": 0,
+    "is_resub": 0,
+    "ta": "Rare Disease",
+    "app_type": "BLA",
+    "note": "Full 25-feature vector scored via ODIN vNEXT v5 embedded weights"
+  },
+  "context": {
+    "notes": [
+      "First enzyme replacement therapy (ERT) that crosses the blood-brain barrier",
+      "BLA for Hunter Syndrome (MPS II) \u2014 ultra-rare lysosomal storage disorder",
+      "Phase 2/3 trial (NCT05371613), 63 patients enrolled",
+      "All 4 major FDA designations: BTD, Orphan, Priority Review, Fast Track",
+      "ODIN v5 scored 96.93% T1 STRONG LONG \u2014 74 days before approval",
+      "Approved 11 days EARLY (March 25 vs April 5 PDUFA)"
+    ]
+  },
+  "integrity_sha256": "211969bf2f628483104fb408443ff168d2b4d811fd7c8e7de77dfc4b3d099d46"
+}

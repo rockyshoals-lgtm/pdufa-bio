@@ -1,0 +1,302 @@
+{
+  "run_date": "2026-05-21",
+  "run_type": "scheduled_daily_uw_flow_monitor_THU_VS_WED",
+  "prior_date_compared": "2026-05-20",
+  "summary": {
+    "n_green": 8,
+    "n_yellow": 7,
+    "n_red": 1,
+    "red_tickers": [
+      "AXSM"
+    ],
+    "yellow_tickers": [
+      "CRDF",
+      "MNKD",
+      "ACHV",
+      "VERA",
+      "TSHA",
+      "VRDN",
+      "ZBIO"
+    ],
+    "green_tickers": [
+      "ARQT",
+      "UNCY",
+      "IRON",
+      "CABA",
+      "TRDA",
+      "NMRA",
+      "AVTX",
+      "WVE"
+    ],
+    "prior_date_compared": "2026-05-20"
+  },
+  "tickers": {
+    "CRDF": {
+      "net_call_prem": 275,
+      "net_put_prem": 40,
+      "bull_minus_bear": 235,
+      "call_ab": 1.187,
+      "put_ab": 2.0,
+      "call_vol_z": -0.466,
+      "gex": 294255.33,
+      "dp_vol_5d": 0,
+      "flow_alert_5d": 82,
+      "classification": "YELLOW",
+      "flags": [
+        "PUT_AB_JUMP_11.7x (0.17->2.00)"
+      ],
+      "delta_vs_prior": "net_call 3702->275; put_ab 0.17->2.00; call_vol_z 0.39->-0.47; gex 316006->294255; dp 0->0",
+      "action": "MONITOR \u2014 flow weakening; tighten stop, no add"
+    },
+    "MNKD": {
+      "net_call_prem": -45713,
+      "net_put_prem": -6363,
+      "bull_minus_bear": -39350,
+      "call_ab": 1.311,
+      "put_ab": 1.316,
+      "call_vol_z": 0.024,
+      "gex": 613829.49,
+      "dp_vol_5d": 33859,
+      "flow_alert_5d": 122,
+      "classification": "YELLOW",
+      "flags": [
+        "PUT_AB_JUMP_7.4x (0.18->1.32)",
+        "DP_DRY_UP (193198->33859)"
+      ],
+      "delta_vs_prior": "net_call -94917->-45713; put_ab 0.18->1.32; call_vol_z 0.34->0.02; gex 581598->613829; dp 193198->33859",
+      "action": "MONITOR \u2014 flow weakening; tighten stop, no add"
+    },
+    "ACHV": {
+      "net_call_prem": -15624,
+      "net_put_prem": 787,
+      "bull_minus_bear": -16411,
+      "call_ab": 0.462,
+      "put_ab": 1.188,
+      "call_vol_z": -0.585,
+      "gex": 20567.42,
+      "dp_vol_5d": 0,
+      "flow_alert_5d": 93,
+      "classification": "YELLOW",
+      "flags": [
+        "DP_DRY_UP (100000->0)"
+      ],
+      "delta_vs_prior": "net_call -20326->-15624; put_ab 1.00->1.19; call_vol_z -0.64->-0.58; gex 38024->20567; dp 100000->0",
+      "action": "MONITOR \u2014 secondary warning; no immediate action"
+    },
+    "VERA": {
+      "net_call_prem": -4292,
+      "net_put_prem": -2950,
+      "bull_minus_bear": -1342,
+      "call_ab": 0.308,
+      "put_ab": 0.0,
+      "call_vol_z": -0.897,
+      "gex": 54374.26,
+      "dp_vol_5d": 14669,
+      "flow_alert_5d": 200,
+      "classification": "YELLOW",
+      "flags": [
+        "CALL_PREM_FLIP_POS_TO_NEG (10434->-4292)"
+      ],
+      "delta_vs_prior": "net_call 10434->-4292; put_ab 0.33->0.00; call_vol_z -0.62->-0.90; gex 62572->54374; dp 41576->14669",
+      "action": "MONITOR \u2014 flow weakening; tighten stop, no add"
+    },
+    "ARQT": {
+      "net_call_prem": -14534,
+      "net_put_prem": -2081,
+      "bull_minus_bear": -12453,
+      "call_ab": 0.376,
+      "put_ab": 0.262,
+      "call_vol_z": 0.186,
+      "gex": 80586.02,
+      "dp_vol_5d": 337891,
+      "flow_alert_5d": 200,
+      "classification": "GREEN",
+      "flags": [],
+      "delta_vs_prior": "net_call -5093->-14534; put_ab 0.04->0.26; call_vol_z 0.56->0.19; gex 72159->80586; dp 232977->337891",
+      "action": "STABLE \u2014 flow within normal band"
+    },
+    "UNCY": {
+      "net_call_prem": -5571,
+      "net_put_prem": -720,
+      "bull_minus_bear": -4851,
+      "call_ab": 0.845,
+      "put_ab": 0.167,
+      "call_vol_z": -0.565,
+      "gex": 0,
+      "dp_vol_5d": 0,
+      "flow_alert_5d": 8,
+      "classification": "GREEN",
+      "flags": [],
+      "delta_vs_prior": "net_call -4992->-5571; put_ab 1.00->0.17; call_vol_z -0.87->-0.56; gex 0->0; dp 0->0",
+      "action": "STABLE \u2014 flow within normal band"
+    },
+    "IRON": {
+      "net_call_prem": 0,
+      "net_put_prem": -315,
+      "bull_minus_bear": 315,
+      "call_ab": 1.0,
+      "put_ab": 0.0,
+      "call_vol_z": -1.0,
+      "gex": 25978.84,
+      "dp_vol_5d": 63369,
+      "flow_alert_5d": 90,
+      "classification": "GREEN",
+      "flags": [],
+      "delta_vs_prior": "net_call 0->0; put_ab 1.00->0.00; call_vol_z -1.00->-1.00; gex 27420->25979; dp 46961->63369",
+      "action": "STABLE \u2014 flow within normal band"
+    },
+    "CABA": {
+      "net_call_prem": 14680,
+      "net_put_prem": -1416,
+      "bull_minus_bear": 16096,
+      "call_ab": 2.358,
+      "put_ab": 0.0,
+      "call_vol_z": -0.15,
+      "gex": 148199.41,
+      "dp_vol_5d": 204879,
+      "flow_alert_5d": 104,
+      "classification": "GREEN",
+      "flags": [
+        "CALL_PREM_FLIP_NEG_TO_POS_BULLISH (-21051->14680)",
+        "CALL_AB_AGGRESSIVE_BUY (0.67->2.36)"
+      ],
+      "delta_vs_prior": "net_call -21051->14680; put_ab 0.29->0.00; call_vol_z -0.45->-0.15; gex 115076->148199; dp 164205->204879",
+      "action": "STABLE \u2014 bullish flow strengthening"
+    },
+    "TRDA": {
+      "net_call_prem": -45,
+      "net_put_prem": 0,
+      "bull_minus_bear": -45,
+      "call_ab": 0.0,
+      "put_ab": 1.0,
+      "call_vol_z": -0.802,
+      "gex": 1110.38,
+      "dp_vol_5d": 0,
+      "flow_alert_5d": 0,
+      "classification": "GREEN",
+      "flags": [],
+      "delta_vs_prior": "net_call -699->-45; put_ab 1.00->1.00; call_vol_z -0.74->-0.80; gex 1111->1110; dp 0->0",
+      "action": "STABLE \u2014 flow within normal band"
+    },
+    "NMRA": {
+      "net_call_prem": 4898,
+      "net_put_prem": -339,
+      "bull_minus_bear": 5237,
+      "call_ab": 1.303,
+      "put_ab": 0.0,
+      "call_vol_z": -0.139,
+      "gex": 241268.49,
+      "dp_vol_5d": 97944,
+      "flow_alert_5d": 200,
+      "classification": "GREEN",
+      "flags": [],
+      "delta_vs_prior": "net_call 46505->4898; put_ab 8.50->0.00; call_vol_z 0.61->-0.14; gex 241884->241268; dp 66000->97944",
+      "action": "STABLE \u2014 flow within normal band"
+    },
+    "TSHA": {
+      "net_call_prem": 267,
+      "net_put_prem": 0,
+      "bull_minus_bear": 267,
+      "call_ab": 2.333,
+      "put_ab": 1.0,
+      "call_vol_z": -0.987,
+      "gex": 612061.91,
+      "dp_vol_5d": 24000,
+      "flow_alert_5d": 68,
+      "classification": "YELLOW",
+      "flags": [
+        "DP_DRY_UP (140067->24000)",
+        "CALL_AB_AGGRESSIVE_BUY (0.89->2.33)"
+      ],
+      "delta_vs_prior": "net_call 973->267; put_ab 1.40->1.00; call_vol_z -0.88->-0.99; gex 791073->612062; dp 140067->24000",
+      "action": "MONITOR \u2014 secondary warning; no immediate action"
+    },
+    "VRDN": {
+      "net_call_prem": -5251,
+      "net_put_prem": -1058,
+      "bull_minus_bear": -4193,
+      "call_ab": 0.7,
+      "put_ab": 0.0,
+      "call_vol_z": -0.051,
+      "gex": -9143.0,
+      "dp_vol_5d": 60347,
+      "flow_alert_5d": 96,
+      "classification": "YELLOW",
+      "flags": [
+        "CALL_PREM_FLIP_POS_TO_NEG (36216->-5251)",
+        "DP_DRY_UP (491440->60347)"
+      ],
+      "delta_vs_prior": "net_call 36216->-5251; put_ab 0.00->0.00; call_vol_z 0.63->-0.05; gex -11174->-9143; dp 491440->60347",
+      "action": "MONITOR \u2014 flow weakening; tighten stop, no add"
+    },
+    "AVTX": {
+      "net_call_prem": 5273,
+      "net_put_prem": -135047,
+      "bull_minus_bear": 140320,
+      "call_ab": 2.226,
+      "put_ab": 0.07,
+      "call_vol_z": -0.505,
+      "gex": 0,
+      "dp_vol_5d": 200229,
+      "flow_alert_5d": 145,
+      "classification": "GREEN",
+      "flags": [],
+      "delta_vs_prior": "net_call 140->5273; put_ab 0.31->0.07; call_vol_z -0.98->-0.51; gex 0->0; dp 219998->200229",
+      "action": "STABLE \u2014 flow within normal band"
+    },
+    "ZBIO": {
+      "net_call_prem": -1181,
+      "net_put_prem": -1785,
+      "bull_minus_bear": 604,
+      "call_ab": 0.769,
+      "put_ab": 0.614,
+      "call_vol_z": 1.34,
+      "gex": 229.99,
+      "dp_vol_5d": 0,
+      "flow_alert_5d": 19,
+      "classification": "YELLOW",
+      "flags": [
+        "CALL_VOL_Z_DROP_1.73 (3.07->1.34)"
+      ],
+      "delta_vs_prior": "net_call -4331->-1181; put_ab 0.00->0.61; call_vol_z 3.07->1.34; gex 230->230; dp 0->0",
+      "action": "MONITOR \u2014 flow weakening; tighten stop, no add"
+    },
+    "WVE": {
+      "net_call_prem": 15193,
+      "net_put_prem": -1704,
+      "bull_minus_bear": 16897,
+      "call_ab": 1.596,
+      "put_ab": 0.13,
+      "call_vol_z": -0.228,
+      "gex": 10762.39,
+      "dp_vol_5d": 82908,
+      "flow_alert_5d": 200,
+      "classification": "GREEN",
+      "flags": [
+        "CALL_PREM_FLIP_NEG_TO_POS_BULLISH (-10334->15193)"
+      ],
+      "delta_vs_prior": "net_call -10334->15193; put_ab 0.49->0.13; call_vol_z -0.76->-0.23; gex 13048->10762; dp 67831->82908",
+      "action": "STABLE \u2014 bullish flow strengthening"
+    },
+    "AXSM": {
+      "net_call_prem": -966633,
+      "net_put_prem": 145257,
+      "bull_minus_bear": -1111890,
+      "call_ab": 0.426,
+      "put_ab": 3.048,
+      "call_vol_z": 0.94,
+      "gex": 2469.35,
+      "dp_vol_5d": 111919,
+      "flow_alert_5d": 200,
+      "classification": "RED",
+      "flags": [
+        "PUT_AB_JUMP_4.0x (0.77->3.05)",
+        "DP_SPIKE_3.6x (30724->111919)"
+      ],
+      "delta_vs_prior": "net_call -288264->-966633; put_ab 0.77->3.05; call_vol_z 0.09->0.94; gex 4498->2469; dp 30724->111919",
+      "action": "REVIEW POSITION \u2014 aggressive rotation detected; trim 30-50% before next session or set tighter trailing stop"
+    }
+  },
+  "source_tool": "mcp__9realms__uw_flow_features",
+  "directive_compliance": "IMMUTABLE_DIRECTIVE_DAILY_DROPBOX (Amendment 033)"
+}

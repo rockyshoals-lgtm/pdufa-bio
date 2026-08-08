@@ -1,0 +1,50 @@
+================================================================================
+PHASE 3 STAGE 2B — SKINNY ORATS PULL
+================================================================================
+Mode:       LIVE
+Endpoints:  T-14 only × ['/hist/summaries', '/hist/strikes'] (2 calls/event)
+Rate:       0.65s sleep → ~92 calls/min
+Start:      event_id >= 1300
+Target:     349 events
+
+  [  10/349] eid=1309 QURE   2024-12-10  new=0 cached=20 err=0  el= 0.0m eta= 0.0m
+  [  20/349] eid=1319 MESO   2024-12-19  new=6 cached=34 err=0  el= 0.1m eta= 7.8m
+  [  30/349] eid=1329 LLY    2024-12-20  new=24 cached=36 err=4  el= 0.3m eta= 7.6m
+  [  40/349] eid=1339 ATRA   2025-01-16  new=43 cached=37 err=13  el= 0.5m eta= 7.5m
+  [  50/349] eid=1349 AMRX   2025-01-23  new=60 cached=40 err=21  el= 0.8m eta= 7.8m
+  [  60/349] eid=1359 SUPN   2025-02-04  new=74 cached=46 err=25  el= 1.0m eta= 7.6m
+  [  70/349] eid=1369 SLS    2025-02-20  new=94 cached=46 err=31  el= 1.2m eta= 7.4m
+  [  80/349] eid=1379 ALNY   2025-03-20  new=111 cached=49 err=37  el= 1.4m eta= 7.0m
+  [  90/349] eid=1389 EQ     2025-03-27  new=131 cached=49 err=39  el= 1.7m eta= 6.7m
+  [ 100/349] eid=1399 ALDX   2025-04-03  new=151 cached=49 err=39  el= 2.0m eta= 6.4m
+  [ 110/349] eid=1409 EQ     2025-04-24  new=171 cached=49 err=39  el= 2.3m eta= 6.5m
+  [ 120/349] eid=1419 TEVA   2025-05-05  new=191 cached=49 err=43  el= 2.6m eta= 6.3m
+  [ 130/349] eid=1429 NVAX   2025-05-19  new=210 cached=50 err=53  el= 2.9m eta= 6.1m
+  [ 140/349] eid=1439 MRNA   2025-05-31  new=230 cached=50 err=53  el= 3.2m eta= 5.8m
+  [ 150/349] eid=1449 NUVB   2025-06-11  new=249 cached=51 err=55  el= 3.4m eta= 5.5m
+  [ 160/349] eid=1459 GMAB   2025-06-15  new=269 cached=51 err=59  el= 3.7m eta= 5.1m
+  [ 170/349] eid=1469 GHRS   2025-06-20  new=289 cached=51 err=61  el= 3.9m eta= 4.8m
+  [ 180/349] eid=1479 ABBV   2025-06-30  new=307 cached=53 err=67  el= 4.1m eta= 4.5m
+  [ 190/349] eid=1489 GSK    2025-07-17  new=327 cached=53 err=69  el= 4.4m eta= 4.3m
+  [ 200/349] eid=1499 TEVA   2025-08-06  new=345 cached=55 err=71  el= 4.7m eta= 4.1m
+  [ 210/349] eid=1509 IONS   2025-08-21  new=364 cached=56 err=75  el= 5.0m eta= 3.9m
+  [ 220/349] eid=1519 MRNA   2025-08-27  new=381 cached=59 err=81  el= 5.2m eta= 3.6m
+  [ 230/349] eid=1529 KRYS   2025-09-15  new=401 cached=59 err=81  el= 5.5m eta= 3.3m
+  [ 240/349] eid=1539 JNJ    2025-09-29  new=421 cached=59 err=87  el= 5.7m eta= 3.0m
+  [ 250/349] eid=1549 REGN   2025-10-17  new=441 cached=59 err=87  el= 6.0m eta= 2.7m
+  [ 260/349] eid=1559 AMRX   2025-10-29  new=461 cached=59 err=91  el= 6.3m eta= 2.4m
+  [ 270/349] eid=1569 CYTK   2025-11-07  new=481 cached=59 err=95  el= 6.6m eta= 2.2m
+  [ 280/349] eid=1579 AMGN   2025-11-19  new=501 cached=59 err=99  el= 6.8m eta= 1.9m
+  [ 290/349] eid=1589 AMRX   2025-12-01  new=521 cached=59 err=101  el= 7.1m eta= 1.6m
+  [ 300/349] eid=1599 CASI   2025-12-07  new=540 cached=60 err=103  el= 7.4m eta= 1.3m
+  [ 310/349] eid=1609 ACAD   2025-12-12  new=560 cached=60 err=105  el= 7.7m eta= 1.1m
+  [ 320/349] eid=1619 MRK    2025-12-17  new=580 cached=60 err=111  el= 8.0m eta= 0.8m
+  [ 330/349] eid=1629 AGIO   2025-12-23  new=598 cached=62 err=117  el= 8.3m eta= 0.5m
+  [ 340/349] eid=1639 IBRX   2026-01-16  new=618 cached=62 err=123  el= 8.5m eta= 0.2m
+  [ 349/349] eid=1648 VNDA   2026-02-21  new=636 cached=62 err=141  el= 8.7m eta= 0.0m
+
+================================================================================
+DONE: 349 events, 277 complete (both endpoints)
+  new=636  cached=62  errors=141
+  elapsed 8.7m  rate 1.22 new/s
+Cache files now: 14703

@@ -1,0 +1,53 @@
+====================================================================================================
+  TIME-SLICED WALK — last 45 days, 7-day slices, high-signal phrases only
+====================================================================================================
+  phrases: 8   (excludes the conference-call phrases: 45% of corpus, ~0 signal)
+    announces topline                 4 hits over 7 slices
+    reports topline                   1 hits over 7 slices
+    to discuss the topline            3 hits over 7 slices
+    expect to announce topline        0 hits over 7 slices
+    plans to report topline           0 hits over 7 slices
+    expects to report topline         4 hits over 7 slices
+    primary endpoint data             2 hits over 7 slices
+    Topline Results                  80 hits over 7 slices
+
+  56 FTS calls, 67 phrase-hits, 45 distinct tickers
+  biotech-SIC only: 65 hits, 43 tickers
+
+  workbook knows: 182 tickers
+
+====================================================================================================
+  TICKERS THE TIME-SLICE FOUND THAT THE WORKBOOK DOES NOT HAVE: 21
+====================================================================================================
+  tkr     filed        form   phrase                       company
+  MOLN    2026-07-07   6-K    Topline Results              MOLECULAR PARTNERS AG
+  ELTX    2026-07-02   8-K    Topline Results              Elicio Therapeutics, Inc.
+  NVCR    2026-06-18   8-K    announces topline            NovoCure Ltd
+  NBP     2026-06-29   6-K    Topline Results              NovaBridge Biosciences
+  VXRT    2026-07-07   8-K    reports topline              Vaxart, Inc.
+  CRBP    2026-07-06   8-K    expects to report topline    Corbus Pharmaceuticals Holdings, I
+  AVLN    2026-06-17   8-K    expects to report topline    Avalyn Pharma Inc.
+  MLTX    2026-06-22   8-K    primary endpoint data        MoonLake Immunotherapeutics
+  SVA     2026-06-05   6-K    primary endpoint data        SINOVAC BIOTECH LTD
+  MANE    2026-07-15   8-K    Topline Results              Veradermics, Inc
+  INSM    2026-07-16   8-K    Topline Results              INSMED Inc
+  AGEN    2026-07-13   8-K    Topline Results              AGENUS INC
+  CPRX    2026-06-30   8-K    Topline Results              CATALYST PHARMACEUTICALS, INC.
+  TBPH    2026-06-29   8-K    Topline Results              Theravance Biopharma, Inc.
+  TSHA    2026-06-22   8-K    Topline Results              Taysha Gene Therapies, Inc.
+  GRCE    2026-06-18   8-K    Topline Results              Grace Therapeutics, Inc.
+  RFL     2026-06-10   8-K    Topline Results              Rafael Holdings, Inc.
+  ADCT    2026-06-03   8-K    Topline Results              ADC Therapeutics SA
+  RZLT    2026-06-02   8-K    Topline Results              Rezolute, Inc.
+  LPCN    2026-06-04   8-K    Topline Results              Lipocine Inc.
+  GYRE    2026-06-02   8-K    Topline Results              GYRE THERAPEUTICS, INC.
+
+====================================================================================================
+  THE COMPARISON THAT MATTERS
+====================================================================================================
+  current mine : 1 call/phrase over 450d, keep first 57 (relevance-ranked)
+  this walk    : 7 calls/phrase over 45d, keep EVERYTHING
+                 -> 56 calls total, ~8s of FTS. No doc fetches yet.
+  the point: these filings are from the last 45 DAYS. Their readout windows are
+  still OPEN. A relevance-ranked skim of 450 days returns mostly guidance that has
+  already expired.

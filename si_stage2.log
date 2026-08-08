@@ -1,0 +1,18 @@
+[2026-04-20 14:00:06] Loaded 272 settlement dates from 2015-01-15 to 2026-04-30
+[2026-04-20 14:00:06] Target URL pattern: https://cdn.finra.org/equity/otcmarket/biweekly/shrt{yyyymmdd}.csv
+[2026-04-20 14:00:06] Rate limit: 4.0/s, workers: 6
+[2026-04-20 14:00:13]    25 processed  ok=0  403=25  other=0  rate=3.9/s
+[2026-04-20 14:00:19]    50 processed  ok=0  403=50  other=0  rate=4.0/s
+[2026-04-20 14:00:26]    75 processed  ok=4  403=71  other=0  rate=3.9/s
+[2026-04-20 14:00:32]   100 processed  ok=28  403=72  other=0  rate=3.9/s
+[2026-04-20 14:00:38]   125 processed  ok=53  403=72  other=0  rate=3.9/s
+[2026-04-20 14:00:45]   150 processed  ok=78  403=72  other=0  rate=3.9/s
+[2026-04-20 14:00:51]   175 processed  ok=102  403=73  other=0  rate=4.0/s
+[2026-04-20 14:00:57]   200 processed  ok=127  403=73  other=0  rate=3.9/s
+[2026-04-20 14:01:04]   225 processed  ok=151  403=74  other=0  rate=3.9/s
+[2026-04-20 14:01:10]   250 processed  ok=176  403=74  other=0  rate=3.9/s
+[2026-04-20 14:01:15] Stage 2 COMPLETE: 196/272 dates downloaded
+[2026-04-20 14:01:15]   total rows: 3,671,969
+[2026-04-20 14:01:15]   total size: 358.5 MB
+[2026-04-20 14:01:15]   403 (pre-Dec-2017): 76
+[2026-04-20 14:01:15]   other failures: 0

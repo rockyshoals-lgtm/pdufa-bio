@@ -1,0 +1,218 @@
+{
+  "model_name": "ODIN_vNEXT_v3_CHAMPION",
+  "version": "3.0",
+  "architecture": "sklearn_logistic_regression_l2",
+  "regularization_C": 0.1,
+  "n_features": 11,
+  "feature_names": [
+    "prior_crl",
+    "btd",
+    "priority_review",
+    "ppm_flag",
+    "sponsor_naive",
+    "sponsor_experienced",
+    "is_resub",
+    "ta_very_high",
+    "era_covid",
+    "era_hoeg",
+    "desig_stack"
+  ],
+  "intercept": 1.1366579130277226,
+  "coefficients": {
+    "prior_crl": -0.560901,
+    "btd": 0.239838,
+    "priority_review": 0.210061,
+    "ppm_flag": -0.1862,
+    "sponsor_naive": -1.127334,
+    "sponsor_experienced": 0.49465,
+    "is_resub": -0.423226,
+    "ta_very_high": 0.316639,
+    "era_covid": -0.235491,
+    "era_hoeg": 0.184562,
+    "desig_stack": 0.158384
+  },
+  "scaler_means": {
+    "prior_crl": 0.055556,
+    "btd": 0.142728,
+    "priority_review": 0.352755,
+    "ppm_flag": 0.011743,
+    "sponsor_naive": 0.285456,
+    "sponsor_experienced": 0.385727,
+    "is_resub": 0.177055,
+    "ta_very_high": 0.15944,
+    "era_covid": 0.221319,
+    "era_hoeg": 0.166667,
+    "desig_stack": 1.059169
+  },
+  "scaler_scales": {
+    "prior_crl": 0.229061,
+    "btd": 0.349795,
+    "priority_review": 0.477827,
+    "ppm_flag": 0.107729,
+    "sponsor_naive": 0.451631,
+    "sponsor_experienced": 0.486767,
+    "is_resub": 0.381715,
+    "ta_very_high": 0.366086,
+    "era_covid": 0.415135,
+    "era_hoeg": 0.372678,
+    "desig_stack": 1.48483
+  },
+  "tier_thresholds": {
+    "TIER_1": 0.85,
+    "TIER_2": 0.65,
+    "TIER_3": 0.4
+  },
+  "tier_actions": {
+    "TIER_1": "LONG",
+    "TIER_2": "CAUTIOUS LONG",
+    "TIER_3": "MONITOR",
+    "TIER_4": "NO TRADE"
+  },
+  "avoid_signals": [
+    "ppm_flag",
+    "gene_therapy_cmc",
+    "ema_cmc_flag",
+    "hiring_void_nda",
+    "pediatric_no_pk",
+    "cmc_extension_active",
+    "insider_critical_sell"
+  ],
+  "feature_definitions": {
+    "prior_crl": "Has the drug received a prior CRL (Complete Response Letter) from FDA?",
+    "btd": "Does the drug have Breakthrough Therapy Designation?",
+    "priority_review": "Has FDA granted Priority Review?",
+    "ppm_flag": "Priority review + prior manufacturing issues flag",
+    "sponsor_naive": "Sponsor has zero prior FDA approvals (sponsor_prior_approvals == 0)",
+    "sponsor_experienced": "Sponsor has 5+ prior FDA approvals",
+    "is_resub": "Is this a resubmission (resubmission_class > 0)?",
+    "ta_very_high": "Therapeutic area in VERY_HIGH bucket (oncology, CNS, neurology, psychiatry)",
+    "era_covid": "FDA era = COVID_ERA (2020-2021)",
+    "era_hoeg": "FDA era = HOEG_ERA (2023-present, Robert Califf/Hoeg era)",
+    "desig_stack": "Count of designations: BTD + Orphan + Priority Review + Fast Track + Accelerated Approval (0-5)"
+  },
+  "scoring_function": {
+    "description": "logit = intercept + sum(coef[i] * (feature[i] - mean[i]) / scale[i]); prob = sigmoid(logit)",
+    "steps": [
+      "1. Extract 11 features from event data",
+      "2. Standardize each feature: z = (x - mean) / scale",
+      "3. Compute logit: intercept + sum(coef * z)",
+      "4. Convert to probability: P = 1 / (1 + exp(-logit))",
+      "5. Assign tier based on probability thresholds"
+    ]
+  },
+  "metrics": {
+    "quarterly_wf": {
+      "auc": 0.8935,
+      "brier": 0.1084,
+      "n_events": 2102,
+      "note": "Expanding-window quarterly walk-forward, 2-year warmup"
+    },
+    "yearly_wf": {
+      "auc_2018_2025": 0.8814,
+      "brier_2018_2025": 0.1142,
+      "auc_2021_2025": 0.8667,
+      "brier_2021_2025": 0.1229,
+      "yearly_breakdown": [
+        {
+          "year": 2018,
+          "n": 92,
+          "auc": 1.0,
+          "brier": 0.0018
+        },
+        {
+          "year": 2019,
+          "n": 85,
+          "auc": 1.0,
+          "brier": 0.0011
+        },
+        {
+          "year": 2020,
+          "n": 209,
+          "auc": 0.8144,
+          "brier": 0.1412
+        },
+        {
+          "year": 2021,
+          "n": 281,
+          "auc": 0.9003,
+          "brier": 0.1117
+        },
+        {
+          "year": 2022,
+          "n": 248,
+          "auc": 0.9034,
+          "brier": 0.1134
+        },
+        {
+          "year": 2023,
+          "n": 389,
+          "auc": 0.8485,
+          "brier": 0.1441
+        },
+        {
+          "year": 2024,
+          "n": 375,
+          "auc": 0.8676,
+          "brier": 0.1158
+        },
+        {
+          "year": 2025,
+          "n": 345,
+          "auc": 0.8829,
+          "brier": 0.1227
+        }
+      ]
+    },
+    "in_sample": {
+      "auc": 0.9101,
+      "brier": 0.0982,
+      "n_events": 2214
+    },
+    "tier_analysis_yearly_wf": [
+      {
+        "tier": 1,
+        "n": 956,
+        "approval_rate": 0.9226,
+        "mean_prob": 0.947
+      },
+      {
+        "tier": 2,
+        "n": 437,
+        "approval_rate": 0.8124,
+        "mean_prob": 0.7724
+      },
+      {
+        "tier": 3,
+        "n": 78,
+        "approval_rate": 0.5641,
+        "mean_prob": 0.5386
+      },
+      {
+        "tier": 4,
+        "n": 553,
+        "approval_rate": 0.1754,
+        "mean_prob": 0.1516
+      }
+    ]
+  },
+  "training_details": {
+    "dataset": "ODIN_MODEL_READY_v1071_T1_2015on_ENRICHED.csv",
+    "n_events": 2214,
+    "n_approvals": 1509,
+    "n_crls": 705,
+    "date_range": "2015-01-08 to 2026-02-28",
+    "feature_selection_method": "L1 regularization (C=0.02) \u2192 threshold |coef| > 0.01 \u2192 L2 refit",
+    "validation_method": "Expanding-window walk-forward (quarterly folds, 2-year minimum training)"
+  },
+  "comparison_to_predecessors": {
+    "vs_v1070": "+-0.0041 AUC (yearly WF vs v1070 in-sample)",
+    "vs_v1251": "-0.0147 AUC (quarterly WF vs v1251 quarterly WF)",
+    "vs_v2_vnext": "+0.0088 AUC (yearly WF vs vNEXT v2 yearly WF)",
+    "notes": [
+      "v1251 reported WF AUC 0.9082 but used 267 iterations of honing (potential overfit to WF splits)",
+      "v3 champion uses only 11 features vs v1251's 44 (4x more parsimonious)",
+      "v3 WF methodology is strictly out-of-sample (no honing/iterative optimization on WF results)",
+      "Remaining gap likely due to: (a) honing overfitting WF splits, (b) signals not in dataset (s23/s6/social all zeros)"
+    ]
+  }
+}

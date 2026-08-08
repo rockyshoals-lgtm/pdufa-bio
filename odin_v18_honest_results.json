@@ -1,0 +1,88 @@
+{
+  "version": "odin_v18_honest",
+  "base": "odin_v16_honest",
+  "selected_new_features": [
+    "cmc_class3_count_log"
+  ],
+  "baseline": {
+    "val_auc": 0.8720741744257983,
+    "test_auc": 0.8904397233201582,
+    "test_brier": 0.11806755338753584
+  },
+  "plus": {
+    "val_auc": 0.8729277441483488,
+    "test_auc": 0.8912867024280067,
+    "test_brier": 0.11806673890554946
+  },
+  "delta": {
+    "test_auc_bp": 8.469791078484779,
+    "test_brier_bp": -0.008144819863831199
+  },
+  "single_feature_screen": {
+    "cmc_class3_count_log": {
+      "val_auc": 0.8729277441483488,
+      "test_auc": 0.8912867024280067,
+      "test_brier": 0.11806673890554946,
+      "delta_val_bp": 8.535697225505734,
+      "delta_test_bp": 8.469791078484779,
+      "delta_brier_bp": -0.008144819863831199
+    },
+    "cmc_class2_count_log": {
+      "val_auc": 0.8722464545532855,
+      "test_auc": 0.8910043760587238,
+      "test_brier": 0.11824382068764427,
+      "delta_val_bp": 1.7228012748726762,
+      "delta_test_bp": 5.646527385656519,
+      "delta_brier_bp": 1.7626730010843195
+    },
+    "cmc_cgmp_flag": {
+      "val_auc": 0.872230792723514,
+      "test_auc": 0.891110248447205,
+      "test_brier": 0.11781377443386518,
+      "delta_val_bp": 1.566182977157382,
+      "delta_test_bp": 6.705251270467949,
+      "delta_brier_bp": -2.537789536706664
+    },
+    "cmc_class3_x_naive": {
+      "val_auc": 0.8717765996601383,
+      "test_auc": 0.8905455957086391,
+      "test_brier": 0.11852048564906975,
+      "delta_val_bp": -2.97574765659947,
+      "delta_test_bp": 1.0587238848092095,
+      "delta_brier_bp": 4.529322615339088
+    },
+    "cmc_cgmp_x_mfg_risk": {
+      "val_auc": 0.8720741744257983,
+      "test_auc": 0.8904397233201582,
+      "test_brier": 0.11806755338753584,
+      "delta_val_bp": 0.0,
+      "delta_test_bp": 0.0,
+      "delta_brier_bp": 0.0
+    },
+    "cmc_class3_x_onc": {
+      "val_auc": 0.8723325946170291,
+      "test_auc": 0.8901221061547149,
+      "test_brier": 0.1182458498273,
+      "delta_val_bp": 2.584201912307904,
+      "delta_test_bp": -3.1761716544331797,
+      "delta_brier_bp": 1.7829643976416398
+    }
+  },
+  "bootstrap": {
+    "n": 40,
+    "auc_wins": 39,
+    "bri_wins": 20,
+    "both_wins": 20,
+    "p_auc": 2.6845464054652604e-15,
+    "p_bri": 0.4965398734075245,
+    "mean_d_auc_bp": 6.608201581027872,
+    "mean_d_bri_bp": 0.0700480427929806
+  },
+  "seed": {
+    "n": 20,
+    "auc_wins": 20,
+    "bri_wins": 20,
+    "both_wins": 20
+  },
+  "verdict": "KILL"
+}

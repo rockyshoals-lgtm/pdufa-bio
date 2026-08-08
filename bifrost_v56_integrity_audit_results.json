@@ -1,0 +1,61 @@
+{
+  "version": "5.6.0_integrity_audit",
+  "integrity_framework": "3-way split (train \u22642023, val 2024, test \u22652025) + SI lookahead fix",
+  "critical_bugs_fixed": [
+    {
+      "bug": "Target formula error in v5.6 initial code",
+      "wrong": "big_move = 1 if abs(post_1d - eve_price) / eve_price > 0.25 else 0",
+      "correct": "big_move = 1 if abs(post_1d) > 25 else 0  # post_1d is in percent form",
+      "impact": "Created 98.4% base rate (0 useful signal) instead of 5.6% (real explosion rate)"
+    },
+    {
+      "bug": "SI lookahead bias in v5.1-v5.4 features",
+      "issue": "SI snapshot from 2026-04-03 applied to all historical events 2020-2026",
+      "fix": "Zero SI features for all events where pdufa_date < 2026-04-03",
+      "si_features_affected": [
+        "log_float_inv",
+        "pct_float_short",
+        "short_high",
+        "days_to_cover",
+        "cand_ppm_x_dtc",
+        "cand_safety_h_x_dtc",
+        "cand_resub2_x_log_float_inv",
+        "cand_ta_vh_x_log_float_inv",
+        "cand_resub2_x_si_pct"
+      ]
+    }
+  ],
+  "honest_baseline_v54": {
+    "target": "P(|D1 move| > 25%) \u2014 explosion detection",
+    "base_rate": 0.0563,
+    "split_counts": {
+      "train": 1032,
+      "val": 341,
+      "test": 331
+    },
+    "performance": {
+      "trainval_auc": 0.8619,
+      "test_auc": 0.8861
+    },
+    "features": 57,
+    "notes": "Test AUC 0.8861 is TRUE generalization performance. v5.5 reported 0.9487 was inflated by test-set feature selection leakage."
+  },
+  "si_audit": {
+    "snapshot_fetch_date": "2026-04-03",
+    "events_affected": 1704,
+    "events_pre_snapshot": 1704,
+    "events_with_real_si_data": 0,
+    "decision": "All SI features zeroed during P1 (integrity fix). Feature selection must now decide: (a) continue with SI=0 for all, or (b) restore SI data for post-2024 events (but this adds lookahead bias)"
+  },
+  "next_steps": [
+    "P1-DONE: Honest baseline established (test AUC 0.8861)",
+    "P2-TODO: Measure SI feature impact by comparing baseline with/without SI features (train model with SI=0 vs SI=real for post-2024)",
+    "P3-TODO: Implement honest_greedy_forward_selection (screening on VAL set, never test)",
+    "P4-TODO: Screen v5.5's 192 candidates on validation set only",
+    "P5-TODO: Feature selection gate: require \u22650.002 VAL AUC lift",
+    "P6-TODO: Ablation testing on final selected features",
+    "P7-TODO: Architecture sweep (C grid, ensemble weight optimization)",
+    "P8-TODO: 20-seed stability testing",
+    "P9-TODO: Ship with deploy config and results"
+  ]
+}

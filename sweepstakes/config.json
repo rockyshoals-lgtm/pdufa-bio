@@ -1,0 +1,49 @@
+{
+  "profile": {
+    "first_name": "David",
+    "last_name": "Moore",
+    "full_name": "David Moore",
+    "email": "rockyshoals@gmail.com",
+    "phone": "4799975437",
+    "phone_formatted": "(479) 997-5437",
+    "gender": "Male",
+    "dob": "08/23/1983",
+    "dob_month": "08",
+    "dob_day": "23",
+    "dob_year": "1983",
+    "address1": "1930 Cornell Ave",
+    "address2": "",
+    "city": "Gladstone",
+    "state": "OR",
+    "state_full": "Oregon",
+    "zip": "97027",
+    "country": "US",
+    "country_full": "United States"
+  },
+  "settings": {
+    "captcha_timeout_seconds": 120,
+    "delay_between_fields_ms": 300,
+    "delay_between_entries_ms": 2000,
+    "headless": false,
+    "browser": "chrome",
+    "verify_mode": true,
+    "verify_timeout_seconds": 180
+  },
+  "opportunities": {
+    "scratch_roi_star": 0.45,
+    "scratch_roi_superstar": 0.65,
+    "jackpot_star_millions": 200,
+    "jackpot_superstar_millions": 500,
+    "sweepstakes_prize_star": 10000,
+    "sweepstakes_prize_superstar": 50000,
+    "notify_on_superstar": true,
+    "notify_on_star": false
+  },
+  "schedule": {
+    "lottery_refresh_hour": 7,
+    "discover_hour": 8,
+    "validate_hour": 9,
+    "entry_run_hour": 9,
+    "entry_run_minute": 30
+  }
+}

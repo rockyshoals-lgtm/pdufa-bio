@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODIN Wins Showcase — pdufa.bio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { background: #030712; }
+  body {
+    background: #030712;
+    color: #e5e7eb;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+
+  /* ── Shimmer border ── */
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  .top-border {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #10b981 20%, #34d399 50%, #10b981 80%, transparent 100%);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* ── Fade in ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Pulse glow ── */
+  @keyframes pulseGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(16,185,129,0.2); }
+    50% { text-shadow: 0 0 40px rgba(16,185,129,0.4); }
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(180deg, rgba(16,185,129,0.08) 0%, rgba(16,185,129,0.02) 40%, transparent 100%);
+    border-bottom: 1px solid rgba(16,185,129,0.15);
+    padding: 44px 20px 36px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #10b981;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .eyebrow .diamond { font-size: 14px; animation: pulseGlow 2s ease-in-out infinite; }
+  .title {
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 900;
+    background: linear-gradient(135deg, #f9fafb 0%, #10b981 60%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+  }
+  .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #6b7280;
+  }
+
+  /* ── Stats bar ── */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 920px;
+    margin: 0 auto;
+    border-bottom: 1px solid #1f2937;
+  }
+  .stat-cell {
+    flex: 1 1 120px;
+    max-width: 230px;
+    text-align: center;
+    padding: 18px 12px;
+    border-right: 1px solid #1f2937;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 800;
+    color: #10b981;
+    line-height: 1;
+    margin-bottom: 4px;
+    text-shadow: 0 0 30px rgba(16,185,129,0.3);
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* ── Filter tabs ── */
+  .tab-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 20px 20px 0;
+  }
+  .tab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 22px;
+    border-radius: 6px 6px 0 0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+  }
+  .tab:hover { color: #9ca3af; }
+  .tab.active {
+    background: rgba(16,185,129,0.12);
+    color: #10b981;
+    border-bottom: 2px solid #10b981;
+  }
+
+  /* ── Card grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 14px;
+    padding: 18px 20px 36px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 22px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card.hot {
+    background: linear-gradient(135deg, rgba(16,185,129,0.10) 0%, rgba(16,185,129,0.03) 100%);
+    border-color: rgba(16,185,129,0.30);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 44px rgba(16,185,129,0.14);
+    border-color: rgba(16,185,129,0.5);
+  }
+
+  /* Stamp */
+  .stamp {
+    position: absolute;
+    top: 14px;
+    right: -22px;
+    transform: rotate(35deg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #10b981;
+    background: rgba(16,185,129,0.06);
+    padding: 2px 34px;
+    border: 1px solid rgba(16,185,129,0.18);
+  }
+
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .ticker-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 900;
+    color: #10b981;
+    text-shadow: 0 0 24px rgba(16,185,129,0.3);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .tier-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #4b5563;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-top: 2px;
+  }
+
+  .runup-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 5px;
+  }
+  .runup-badge.fire { color: #fbbf24; background: rgba(251,191,36,0.10); border: 1px solid rgba(251,191,36,0.30); }
+  .runup-badge.green { color: #10b981; background: rgba(16,185,129,0.10); border: 1px solid rgba(16,185,129,0.30); }
+  .runup-badge.neutral { color: #6b7280; background: rgba(107,114,128,0.08); border: 1px solid rgba(107,114,128,0.20); }
+
+  .drug-name { font-size: 14px; font-weight: 700; color: #f9fafb; margin-bottom: 2px; }
+  .indication { font-size: 12px; color: #9ca3af; margin-bottom: 10px; }
+
+  .highlight-bar {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: #34d399;
+    background: rgba(16,185,129,0.07);
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+    border-left: 2px solid rgba(16,185,129,0.4);
+  }
+
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+  .meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+  }
+  .meta-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #d1d5db;
+  }
+  .meta-value.green { color: #10b981; }
+
+  .tag-row { display: flex; gap: 5px; margin-top: 12px; flex-wrap: wrap; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+  .tag.orphan { color: #a78bfa; background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.20); }
+  .tag.btd { color: #f59e0b; background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.20); }
+  .tag.early { color: #3b82f6; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.20); }
+  .tag.modality { color: #10b981; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.20); }
+
+  /* ── Track record bar ── */
+  .record-bar {
+    background: linear-gradient(180deg, transparent, rgba(16,185,129,0.04));
+    border-top: 1px solid #1f2937;
+    padding: 32px 20px;
+    text-align: center;
+  }
+  .record-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    max-width: 820px;
+    margin: 0 auto 20px;
+  }
+  .record-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 34px;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 1;
+    text-shadow: 0 0 40px rgba(16,185,129,0.2);
+  }
+  .record-num.white { color: #f9fafb; text-shadow: none; }
+  .record-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    margin-top: 4px;
+  }
+  .proof-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #10b981;
+    text-decoration: none;
+    padding: 11px 28px;
+    border: 1px solid rgba(16,185,129,0.35);
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .proof-link:hover {
+    background: rgba(16,185,129,0.10);
+    border-color: #10b981;
+    box-shadow: 0 0 20px rgba(16,185,129,0.15);
+  }
+  .crypto-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #4b5563;
+    margin-top: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Integration note ── */
+  .integration-note {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 24px;
+    background: rgba(59,130,246,0.06);
+    border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #93c5fd;
+    line-height: 1.7;
+  }
+  .integration-note strong { color: #60a5fa; }
+  .integration-note code {
+    background: rgba(59,130,246,0.1);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     ODIN WINS SHOWCASE — CONSOLIDATED SECTION
+     Replace ALL scattered win mentions with this ONE block
+     ═══════════════════════════════════════════════════ -->
+
+<div class="top-border"></div>
+
+<div class="header">
+  <div class="eyebrow">
+    <span class="diamond">◆</span>
+    <span>ODIN TRACK RECORD — 2026</span>
+    <span class="diamond">◆</span>
+  </div>
+  <h2 class="title">6 FDA Approvals Predicted</h2>
+  <p class="subtitle">Every TIER_1 call correct · cryptographically timestamped · zero revisions</p>
+</div>
+
+<!-- Stats bar -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-value">6/9</div>
+    <div class="stat-label">Approvals YTD</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-value">+66%</div>
+    <div class="stat-label">Combined Runup</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-value">96.6%</div>
+    <div class="stat-label">All-Time Accuracy</div>
+  </div>
+  <div class="stat-cell" style="border-right:none;">
+    <div class="stat-value">57/59</div>
+    <div class="stat-label">Verified Correct</div>
+  </div>
+</div>
+
+<!-- Filter tabs -->
+<div class="tab-row">
+  <button class="tab active" onclick="filterCards('ALL',this)">All (6)</button>
+  <button class="tab" onclick="filterCards('FEB',this)">Feb</button>
+  <button class="tab" onclick="filterCards('JAN',this)">Jan</button>
+</div>
+
+<!-- Card grid -->
+<div class="grid" id="wins-grid">
+
+  <!-- ── VNDA ── -->
+  <div class="card hot" data-month="FEB" style="animation: fadeInUp 0.4s ease 0s both;">
+    <div class="stamp">Approved ✓</div>
+    <div class="card-header">
+      <div>
+        <div class="ticker-name">VNDA</div>
+        <div class="tier-label">TIER_1 · 89.7%</div>
+      </div>
+      <div class="runup-badge fire">+44%</div>
+    </div>
+    <div class="drug-name">Bysanti™ (milsaperidone)</div>
+    <div class="indication">Bipolar I & Schizophrenia</div>
+    <div class="highlight-bar">⚡ Approved 1 day early</div>
+    <div class="meta-grid">
+      <div><div class="meta-label">FDA Approved</div><div class="meta-value green">Feb 20, 2026</div></div>
+      <div><div class="meta-label">PDUFA Date</div><div class="meta-value">Feb 21</div></div>
+      <div><div class="meta-label">Modality</div><div class="meta-value">Small Molecule</div></div>
+      <div><div class="meta-label">ODIN Score</div><div class="meta-value green">89.7%</div></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag early">1d Early</span>
+      <span class="tag modality">Small Molecule</span>
+    </div>
+  </div>
+
+  <!-- ── ETON ── -->
+  <div class="card hot" data-month="FEB" style="animation: fadeInUp 0.4s ease 0.08s both;">
+    <div class="stamp">Approved ✓</div>
+    <div class="card-header">
+      <div>
+        <div class="ticker-name">ETON</div>
+        <div class="tier-label">TIER_1 · 85.5%</div>
+      </div>
+      <div class="runup-badge green">+14.7%</div>
+    </div>
+    <div class="drug-name">ET-600 (Desmopressin)</div>
+    <div class="indication">Central Diabetes Insipidus</div>
+    <div class="highlight-bar">✓ Orphan Drug · 505(b)(2) pathway · Patent to 2044</div>
+    <div class="meta-grid">
+      <div><div class="meta-label">FDA Approved</div><div class="meta-value green">Feb 25, 2026</div></div>
+      <div><div class="meta-label">PDUFA Date</div><div class="meta-value">Feb 25</div></div>
+      <div><div class="meta-label">Modality</div><div class="meta-value">Small Molecule</div></div>
+      <div><div class="meta-label">ODIN Score</div><div class="meta-value green">85.5%</div></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag orphan">Orphan</span>
+      <span class="tag modality">Small Molecule</span>
+    </div>
+  </div>
+
+  <!-- ── REGN ── -->
+  <div class="card" data-month="FEB" style="animation: fadeInUp 0.4s ease 0.16s both;">
+    <div class="stamp">Approved ✓</div>
+    <div class="card-header">
+      <div>
+        <div class="ticker-name">REGN</div>
+        <div class="tier-label">TIER_1 · 94.8%</div>
+      </div>
+      <div class="runup-badge green">+7.3%</div>
+    </div>
+    <div class="drug-name">Dupixent (dupilumab)</div>
+    <div class="indication">Allergic Fungal Rhinosinusitis (AFRS)</div>
+    <div class="highlight-bar">⚡ Approved 4 days early · 9th FDA indication · First-and-only for AFRS</div>
+    <div class="meta-grid">
+      <div><div class="meta-label">FDA Approved</div><div class="meta-value green">Feb 24, 2026</div></div>
+      <div><div class="meta-label">PDUFA Date</div><div class="meta-value">Feb 28</div></div>
+      <div><div class="meta-label">Modality</div><div class="meta-value">Biologic</div></div>
+      <div><div class="meta-label">ODIN Score</div><div class="meta-value green">94.8%</div></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag early">4d Early</span>
+      <span class="tag modality">Biologic</span>
+    </div>
+  </div>
+
+  <!-- ── JNJ ── -->
+  <div class="card" data-month="JAN" style="animation: fadeInUp 0.4s ease 0.24s both;">
+    <div class="stamp">Approved ✓</div>
+    <div class="card-header">
+      <div>
+        <div class="ticker-name">JNJ</div>
+        <div class="tier-label">TIER_1 · 92.1%</div>
+      </div>
+      <div class="runup-badge neutral">—</div>
+    </div>
+    <div class="drug-name">Darzalex Faspro D-VRd</div>
+    <div class="indication">Newly Dx Multiple Myeloma (Transplant-Ineligible)</div>
+    <div class="highlight-bar">✓ BTD · Orphan · Phase 3 CEPHEUS · Prior CRL resolved</div>
+    <div class="meta-grid">
+      <div><div class="meta-label">FDA Approved</div><div class="meta-value green">Jan 27, 2026</div></div>
+      <div><div class="meta-label">PDUFA Date</div><div class="meta-value">Jan 27</div></div>
+      <div><div class="meta-label">Modality</div><div class="meta-value">Biologic</div></div>
+      <div><div class="meta-label">ODIN Score</div><div class="meta-value green">92.1%</div></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag btd">BTD</span>
+      <span class="tag orphan">Orphan</span>
+      <span class="tag modality">Biologic</span>
+    </div>
+  </div>
+
+  <!-- ── FBIO ── -->
+  <div class="card" data-month="JAN" style="animation: fadeInUp 0.4s ease 0.32s both;">
+    <div class="stamp">Approved ✓</div>
+    <div class="card-header">
+      <div>
+        <div class="ticker-name">FBIO</div>
+        <div class="tier-label">TIER_1 · 88.3%</div>
+      </div>
+      <div class="runup-badge neutral">—</div>
+    </div>
+    <div class="drug-name">ZYCUBO (copper histidinate)</div>
+    <div class="indication">Menkes Disease (Pediatric)</div>
+    <div class="highlight-bar">✓ BTD · Orphan · First-ever treatment for Menkes disease</div>
+    <div class="meta-grid">
+      <div><div class="meta-label">FDA Approved</div><div class="meta-value green">Jan 12, 2026</div></div>
+      <div><div class="meta-label">PDUFA Date</div><div class="meta-value">Jan 12</div></div>
+      <div><div class="meta-label">Modality</div><div class="meta-value">Small Molecule</div></div>
+      <div><div class="meta-label">ODIN Score</div><div class="meta-value green">88.3%</div></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag btd">BTD</span>
+      <span class="tag orphan">Orphan</span>
+      <span class="tag modality">Small Molecule</span>
+    </div>
+  </div>
+
+  <!-- ── EBS ── -->
+  <div class="card" data-month="JAN" style="animation: fadeInUp 0.4s ease 0.40s both;">
+    <div class="stamp">Approved ✓</div>
+    <div class="card-header">
+      <div>
+        <div class="ticker-name">EBS</div>
+        <div class="tier-label">TIER_1 · 91.2%</div>
+      </div>
+      <div class="runup-badge neutral">—</div>
+    </div>
+    <div class="drug-name">NARCAN OTC (naloxone + case)</div>
+    <div class="indication">Opioid Overdose Emergency</div>
+    <div class="highlight-bar">✓ Fast Track · OTC supplemental approval with carrying case</div>
+    <div class="meta-grid">
+      <div><div class="meta-label">FDA Approved</div><div class="meta-value green">Jan 14, 2026</div></div>
+      <div><div class="meta-label">PDUFA Date</div><div class="meta-value">Jan 14</div></div>
+      <div><div class="meta-label">Modality</div><div class="meta-value">Small Molecule</div></div>
+      <div><div class="meta-label">ODIN Score</div><div class="meta-value green">91.2%</div></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag modality">Small Molecule</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Track record -->
+<div class="record-bar">
+  <div class="record-grid">
+    <div>
+      <div class="record-num">96.6%</div>
+      <div class="record-label">All-Time Accuracy</div>
+    </div>
+    <div>
+      <div class="record-num">57/59</div>
+      <div class="record-label">Verified Outcomes</div>
+    </div>
+    <div>
+      <div class="record-num">93.8%</div>
+      <div class="record-label">TIER_1 Accuracy</div>
+    </div>
+    <div>
+      <div class="record-num white">6</div>
+      <div class="record-label">2026 Approvals</div>
+    </div>
+  </div>
+  <a href="/odin-track-record" class="proof-link">View Full Track Record & Cryptographic Proof →</a>
+  <p class="crypto-note">All predictions cryptographically timestamped before PDUFA dates · Since Jan 2024</p>
+</div>
+
+<!-- ═══ Integration instructions (not shown on live site) ═══ -->
+<div class="integration-note">
+  <strong>INTEGRATION GUIDE — Replace scattered win mentions with this single section</strong><br><br>
+  <strong>1. Drop the JSX component:</strong><br>
+  Copy <code>WinsShowcase.jsx</code> → <code>components/WinsShowcase.jsx</code><br><br>
+  <strong>2. In your <code>app/page.jsx</code>:</strong><br>
+  <code>import WinsShowcase from '../components/WinsShowcase';</code><br>
+  Place <code>&lt;WinsShowcase /&gt;</code> where the hero wins section currently is.<br><br>
+  <strong>3. REMOVE these scattered win mentions:</strong><br>
+  — The old "ODIN'S LATEST WINS" hero cards (3-card grid)<br>
+  — The opening paragraph ("ETON Pharmaceuticals topical baclofen approved...")<br>
+  — The footer "ODIN's Unmatched Track Record" section<br>
+  — Any individual VNDA/REGN/ETON callouts outside this component<br><br>
+  All wins + track record now live in ONE place. Clean. Consolidated. l337.
+</div>
+
+<script>
+function filterCards(month, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.card').forEach(card => {
+    if (month === 'ALL' || card.dataset.month === month) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

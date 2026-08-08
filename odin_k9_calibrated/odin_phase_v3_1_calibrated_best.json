@@ -1,0 +1,38 @@
+{
+  "version": "odin_phase_v3.1_calibrated",
+  "kaizen_id": "K9",
+  "base_model": "odin_v3_1_ultra/xgb_model.json",
+  "calibration_method": "platt",
+  "training_date": "2026-02-16T00:55:35.590083",
+  "cv_results": {
+    "uncalibrated": {
+      "auc_mean": 0.7349849581282368,
+      "brier_mean": 0.21395108103752136,
+      "ece_mean": 0.24229047982394697,
+      "tier1_prec_mean": 0.9518180741053662
+    },
+    "platt": {
+      "auc_mean": 0.7349849581282368,
+      "brier_mean": 0.15206801734673153,
+      "ece_mean": 0.029615474183492103,
+      "tier1_prec_mean": 0.8227019300548479
+    },
+    "isotonic": {
+      "auc_mean": 0.7333556626928294,
+      "brier_mean": 0.1529694527387619,
+      "ece_mean": 0.031673965752124784,
+      "tier1_prec_mean": 0.8206945456249745
+    },
+    "beta": {
+      "auc_mean": 0.7349849581282368,
+      "brier_mean": 0.15207749219594655,
+      "ece_mean": 0.03083667973500092,
+      "tier1_prec_mean": 0.8227019300548479
+    }
+  },
+  "improvement": {
+    "ece_reduction": 0.21267500564045486,
+    "brier_reduction": 0.06188306369078983,
+    "tier1_prec_gain": -0.1291161440505183
+  }
+}

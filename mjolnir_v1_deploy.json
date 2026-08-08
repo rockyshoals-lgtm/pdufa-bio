@@ -1,0 +1,103 @@
+{
+  "name": "MJOLNIR",
+  "version": "1.0.0",
+  "purpose": "Predict optimal PDUFA runup ENTRY window. Exit is ALWAYS T-1.",
+  "generated_utc": "2026-04-19T03:16:09.180116Z",
+  "architecture": {
+    "type": "Multi-class softmax (5 classes)",
+    "classes": [
+      "T-90",
+      "T-60",
+      "T-45",
+      "T-25",
+      "NO_TRADE"
+    ],
+    "models": {
+      "logistic_regression": {
+        "C": 1.0,
+        "solver": "lbfgs",
+        "multinomial": true
+      },
+      "gradient_boosting": {
+        "n_est": 100,
+        "lr": 0.03,
+        "depth": 2
+      }
+    },
+    "ensemble_weights": {
+      "lr": 0.2,
+      "gbm": 0.8
+    }
+  },
+  "features": [
+    "odin_prob",
+    "odin_t1",
+    "odin_t2",
+    "odin_t3",
+    "odin_t4",
+    "mcap_log",
+    "is_nano",
+    "is_micro",
+    "is_small",
+    "is_mid",
+    "is_large",
+    "crl_rate",
+    "ta_risk_high",
+    "log_vol_ratio",
+    "xbi_ret_60d",
+    "xbi_vol_60d",
+    "xbi_drawdown",
+    "is_2024_plus",
+    "is_2022_crisis"
+  ],
+  "training": {
+    "n_train": 1030,
+    "n_val": 342,
+    "n_test": 329,
+    "train_period": "<=2023",
+    "val_period": "2024",
+    "test_period": ">=2025"
+  },
+  "honest_metrics": {
+    "val_accuracy_5class": 0.2982456140350877,
+    "test_accuracy_5class": 0.2857142857142857,
+    "random_baseline": 0.2
+  },
+  "backtest_test_set": {
+    "n_events": 329,
+    "mjolnir_argmax_mean_pct": 7.114502557573937,
+    "mjolnir_argmax_win_pct": 64.43768996960486,
+    "mjolnir_conf30_mean_pct": 7.073024974873984,
+    "mjolnir_conf30_win_pct": 61.09422492401215,
+    "bifrost_v4_static_mean_pct": 9.381770896475915,
+    "bifrost_v4_static_win_pct": 63.829787234042556,
+    "equal_weight_mean_pct": 9.580912774649132,
+    "optimal_ceiling_mean_pct": 18.348812518508833
+  },
+  "cardinal_rule": "Exit T-1. Always. No exceptions.",
+  "decision_protocol": "1. Score event with ODIN v14 \u2192 tier + prob. 2. Feed features to MJOLNIR \u2192 predicted entry class + confidence. 3. If confidence < 0.30 OR class=NO_TRADE \u2192 skip. 4. Otherwise enter at T-X and exit T-1.",
+  "feature_importance_gbm": {
+    "xbi_vol_60d": 0.3272453741426404,
+    "log_vol_ratio": 0.13706794105960834,
+    "xbi_ret_60d": 0.13688238561960422,
+    "xbi_drawdown": 0.1325683093481613,
+    "crl_rate": 0.1250170988431686,
+    "odin_prob": 0.08358998232289609,
+    "mcap_log": 0.03984754622193158,
+    "is_mid": 0.012891984478973648,
+    "odin_t4": 0.0014976119691553712,
+    "odin_t1": 0.0012257012602632537,
+    "is_2022_crisis": 0.0010027254169121653,
+    "is_micro": 0.0007186137591890479,
+    "is_nano": 0.00044472555749602876,
+    "odin_t2": 0.0,
+    "odin_t3": 0.0
+  },
+  "known_limitations": [
+    "T-90 window has sparse data (only 497/1703 events) \u2014 model under-weights this class",
+    "ODIN input uses v9_score proxy; v14 re-scoring in follow-up",
+    "No historical short-interest time series (blocker)",
+    "No intraday microstructure features",
+    "Features computed as-of T-90 (earliest decision point); for intra-window decisions use BIFROST v4"
+  ]
+}

@@ -1,0 +1,41 @@
+[2026-02-28 07:30:00] [INFO] 9REALMS INITIALIZED
+[2026-02-28 07:30:00] [INFO] v1071 GOLD STANDARD: AUC=0.7715, T4P=74.9%, Brier=0.1709
+[2026-02-28 07:30:00] [INFO] ULTIMATE V2.0:       AUC=0.8784, T4P=85.4%, Brier=0.1413
+[2026-02-28 07:30:00] [INFO] V2.0 BEATS v1071: AUC +0.1069, T4P +10.5pp, Brier -0.0296
+[2026-02-28 07:30:00] [INFO] ALDX STRESS: baseline=5.54%, bullish+quiet=10.85% (+5.3pp)
+[2026-02-28 07:30:00] [INFO] Kill switches: ALL CLEAR
+[2026-02-28 07:30:00] [INFO] 9REALMS READY FOR PERPETUAL EVOLUTION
+[2026-02-28 22:35:03] [INFO] ============================================================
+[2026-02-28 22:35:03] [INFO] 9REALMS DAILY UPDATE LOOP STARTING
+[2026-02-28 22:35:03] [INFO] ============================================================
+[2026-02-28 22:35:03] [INFO] STEP 1: Running v1071 vs V2.0 benchmark...
+[2026-02-28 22:35:03] [INFO]   v1071: AUC=0.7321, T4P=65.2%
+[2026-02-28 22:35:03] [INFO]   V2.0:  AUC=0.7902, T4P=76.0%
+[2026-02-28 22:35:03] [INFO] STEP 2: Running ALDX stress grid...
+[2026-02-28 22:35:03] [INFO]   ALDX baseline: 0.0554
+[2026-02-28 22:35:03] [INFO]   ALDX V2 (bullish+quiet): 0.1085 (+5.3pp)
+[2026-02-28 22:35:03] [INFO] STEP 3: Checking kill switches...
+[2026-02-28 22:35:03] [WARN]   ⚠ KILL SWITCH: ALDX_LIFT_INSUFFICIENT → FLAG — CEO module needs recalibration
+[2026-02-28 22:35:03] [INFO]   Saved patches: /sessions/elegant-practical-maxwell/mnt/Python/9realms/validation/patches.json
+[2026-02-28 22:35:03] [INFO] STEP 4: Running evolution cycle (3 candidates)...
+[2026-02-28 22:35:03] [INFO]   candidate_1: AUC=0.8237, T4P=70.0%
+[2026-02-28 22:35:03] [INFO]   candidate_2: AUC=0.8237, T4P=70.0%
+[2026-02-28 22:35:03] [INFO]   candidate_3: AUC=0.8237, T4P=70.0%
+[2026-02-28 22:35:03] [INFO]   Best candidate: candidate_1 (AUC=0.8237, T4P=70.0%)
+[2026-02-28 22:35:03] [ALERT]   NEW CHAMPION: v2.20260228 → T4P 70.0% > 65.2%
+[2026-02-28 22:35:03] [INFO] ============================================================
+[2026-02-28 22:35:03] [INFO] 9REALMS DAILY UPDATE COMPLETE
+[2026-02-28 22:35:03] [INFO]   v1071 AUC: 0.7321
+[2026-02-28 22:35:03] [INFO]   V2.0  AUC: 0.7902
+[2026-02-28 22:35:03] [INFO]   Kill switches: 1 triggered
+[2026-02-28 22:35:03] [INFO] ============================================================
+[2026-02-28 23:34:45] [INFO] ============================================================
+[2026-02-28 23:34:45] [INFO] 9REALMS DAILY UPDATE LOOP STARTING
+[2026-02-28 23:34:45] [INFO] ============================================================
+[2026-02-28 23:34:45] [INFO] STEP 1: Running v1071 vs V2.0 benchmark...
+[2026-02-28 23:34:45] [ERROR] Benchmark FAILED: 'charmap' codec can't decode byte 0x9d in position 250: character maps to <undefined>
+[2026-02-28 23:36:06] [INFO] ============================================================
+[2026-02-28 23:36:06] [INFO] 9REALMS DAILY UPDATE LOOP STARTING
+[2026-02-28 23:36:06] [INFO] ============================================================
+[2026-02-28 23:36:06] [INFO] STEP 1: Running v1071 vs V2.0 benchmark...
+[2026-02-28 23:36:06] [ERROR] Benchmark FAILED: 'charmap' codec can't decode byte 0x9d in position 250: character maps to <undefined>

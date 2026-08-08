@@ -1,0 +1,24 @@
+{
+  "feature_gate": [
+    "btd_x_oncology",
+    "gene_x_cmc",
+    "is_gene_therapy",
+    "is_hoeg_era",
+    "is_neurology",
+    "is_oncology",
+    "is_pain",
+    "is_resubmission",
+    "log_crl_rate",
+    "orphan_x_surrogate",
+    "single_arm_x_safety",
+    "v1067_minus_v1070",
+    "v1070_x_social",
+    "year",
+    "desig_x_experienced",
+    "prior_crl_x_base_rate"
+  ],
+  "feature_block": [],
+  "expires_rounds": 40,
+  "applied_at": "2026-03-02T03:31:25.180882",
+  "note": "Champion R241 full feature set \u2014 all 16 eng_features forced. Ghost features now defined in pool. Expires in 40 rounds."
+}

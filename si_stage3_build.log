@@ -1,0 +1,25 @@
+[2026-04-20 14:02:56] Phase 2 Stage 3 starting
+[2026-04-20 14:02:56] Manifest has 272 entries, 196 successful (200) downloads
+[2026-04-20 14:02:56] Loading 196 FINRA biweekly files...
+[2026-04-20 14:02:59]   parsed 20/196 files, 21,022 tickers seen
+[2026-04-20 14:03:02]   parsed 40/196 files, 23,902 tickers seen
+[2026-04-20 14:03:05]   parsed 60/196 files, 26,918 tickers seen
+[2026-04-20 14:03:08]   parsed 80/196 files, 31,631 tickers seen
+[2026-04-20 14:03:13]   parsed 100/196 files, 35,686 tickers seen
+[2026-04-20 14:03:16]   parsed 120/196 files, 37,965 tickers seen
+[2026-04-20 14:03:19]   parsed 140/196 files, 39,940 tickers seen
+[2026-04-20 14:03:21]   parsed 160/196 files, 42,168 tickers seen
+[2026-04-20 14:03:24]   parsed 180/196 files, 44,823 tickers seen
+[2026-04-20 14:03:27] Loaded series for 47,306 unique tickers
+[2026-04-20 14:03:27] Loaded 3,889 events from backfill_event_index.csv
+[2026-04-20 14:03:28]   processed 500/3889 events  matched_ticker=497  has_t1_snapshot=493
+[2026-04-20 14:03:29]   processed 1000/3889 events  matched_ticker=994  has_t1_snapshot=986
+[2026-04-20 14:03:29]   processed 1500/3889 events  matched_ticker=1488  has_t1_snapshot=1475
+[2026-04-20 14:03:30]   processed 2000/3889 events  matched_ticker=1987  has_t1_snapshot=1960
+[2026-04-20 14:03:30]   processed 2500/3889 events  matched_ticker=2483  has_t1_snapshot=2438
+[2026-04-20 14:03:31]   processed 3000/3889 events  matched_ticker=2981  has_t1_snapshot=2903
+[2026-04-20 14:03:32]   processed 3500/3889 events  matched_ticker=3480  has_t1_snapshot=3401
+[2026-04-20 14:03:32] Coverage: 3,866/3,889 events had ticker in FINRA series (99.4%)
+[2026-04-20 14:03:32] T-1 snapshot hit: 3,768/3,889 (96.9%)
+[2026-04-20 14:03:32] Wrote /sessions/confident-serene-ptolemy/mnt/9realms/si_event_features.csv  rows=3889  cols=26
+[2026-04-20 14:03:32] Stage 3 COMPLETE

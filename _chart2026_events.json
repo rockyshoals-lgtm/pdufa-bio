@@ -1,0 +1,1080 @@
+[
+{
+"ticker": "ATRA",
+"date": "2026-01-12",
+"outcome": "CRL",
+"drug": "EBVALLO (Tabelecleucel (ATA 129)) - (A",
+"status": "decided"
+},
+{
+"ticker": "FBIO",
+"date": "2026-01-13",
+"outcome": "APPROVAL",
+"drug": "ZYCUBO (copper histidinate)",
+"status": "decided"
+},
+{
+"ticker": "EBS",
+"date": "2026-01-14",
+"outcome": "APPROVAL",
+"drug": "OTC NARCAN Nasal Spray w/ carrying cas",
+"status": "decided"
+},
+{
+"ticker": "IBRX",
+"date": "2026-01-16",
+"outcome": "CRL",
+"drug": "CD19 CAR-NK cell therapy  with rituxim",
+"status": "decided"
+},
+{
+"ticker": "JNJ",
+"date": "2026-01-27",
+"outcome": "APPROVAL",
+"drug": "DARZALEX FASPRO (daratumumab and hyalu",
+"status": "decided"
+},
+{
+"ticker": "GKOS",
+"date": "2026-01-28",
+"outcome": "APPROVAL",
+"drug": "iDose TR",
+"status": "decided"
+},
+{
+"ticker": "PHAR",
+"date": "2026-02-01",
+"outcome": "CRL",
+"drug": "Leniolisib - (pediactric)",
+"status": "decided"
+},
+{
+"ticker": "AQST",
+"date": "2026-02-02",
+"outcome": "CRL",
+"drug": "Anaphylm  (dibutepinephrine) - (103)",
+"status": "decided"
+},
+{
+"ticker": "GILD",
+"date": "2026-02-06",
+"outcome": "APPROVAL",
+"drug": "YESCARTA - Axicabtagene ciloleucel - (",
+"status": "decided"
+},
+{
+"ticker": "ESLA",
+"date": "2026-02-07",
+"outcome": "CRL",
+"drug": "EB103 (CD19) - (STARLIGHT-1)",
+"status": "decided"
+},
+{
+"ticker": "RGNX",
+"date": "2026-02-09",
+"outcome": "CRL",
+"drug": "clemidsogene lanparvovec (RGX-121) - (",
+"status": "decided"
+},
+{
+"ticker": "MRK",
+"date": "2026-02-11",
+"outcome": "APPROVAL",
+"drug": "KEYTRUDA and KEYTRUDA QLEX",
+"status": "decided"
+},
+{
+"ticker": "NVCR",
+"date": "2026-02-12",
+"outcome": "APPROVAL",
+"drug": "Optune Pax",
+"status": "decided"
+},
+{
+"ticker": "EBS",
+"date": "2026-02-13",
+"outcome": "APPROVAL",
+"drug": "OTC NARCAN Nasal Spray w/ carrying cas",
+"status": "decided"
+},
+{
+"ticker": "IRON",
+"date": "2026-02-13",
+"outcome": "CRL",
+"drug": "Bitopertin - (BEACON)",
+"status": "decided"
+},
+{
+"ticker": "JNJ",
+"date": "2026-02-17",
+"outcome": "APPROVAL",
+"drug": "RYBREVANT FASPRO (amivantamab-vmjw and",
+"status": "decided"
+},
+{
+"ticker": "HRMY",
+"date": "2026-02-17",
+"outcome": "APPROVAL",
+"drug": "WAKIX (pitolisant)",
+"status": "decided"
+},
+{
+"ticker": "NVS",
+"date": "2026-02-18",
+"outcome": "CRL",
+"drug": "Remibrutinib - (RemIND)",
+"status": "decided"
+},
+{
+"ticker": "ABBV",
+"date": "2026-02-20",
+"outcome": "APPROVAL",
+"drug": "CALQUENCE plus venetoclax",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-02-20",
+"outcome": "APPROVAL",
+"drug": "CALQUENCE plus venetoclax",
+"status": "decided"
+},
+{
+"ticker": "RHHBY",
+"date": "2026-02-20",
+"outcome": "APPROVAL",
+"drug": "CALQUENCE plus venetoclax",
+"status": "decided"
+},
+{
+"ticker": "VNDA",
+"date": "2026-02-20",
+"outcome": "APPROVAL",
+"drug": "Bysanti (milsaperidone)",
+"status": "decided"
+},
+{
+"ticker": "AMPH",
+"date": "2026-02-24",
+"outcome": "APPROVAL",
+"drug": "Ipratropium Bromide HFA Inhalation Aer",
+"status": "decided"
+},
+{
+"ticker": "REGN",
+"date": "2026-02-24",
+"outcome": "APPROVAL",
+"drug": "Dupixent (dupilumab)",
+"status": "decided"
+},
+{
+"ticker": "PFE",
+"date": "2026-02-24",
+"outcome": "APPROVAL",
+"drug": "BRAFTOVI (encorafenib) in combination ",
+"status": "decided"
+},
+{
+"ticker": "ETON",
+"date": "2026-02-25",
+"outcome": "APPROVAL",
+"drug": "DESMODA (desmopressin acetate)",
+"status": "decided"
+},
+{
+"ticker": "TPST",
+"date": "2026-02-25",
+"outcome": "CRL",
+"drug": "TPST-2003 - (REDEEM-1)",
+"status": "decided"
+},
+{
+"ticker": "ASND",
+"date": "2026-02-27",
+"outcome": "APPROVAL",
+"drug": "YUVIWEL (navepegritide)",
+"status": "decided"
+},
+{
+"ticker": "BMRN",
+"date": "2026-02-27",
+"outcome": "APPROVAL",
+"drug": "PALYNZIQ (pegvaliase-pqpz) - (PEGASUS)",
+"status": "decided"
+},
+{
+"ticker": "CLDX",
+"date": "2026-02-27",
+"outcome": "CRL",
+"drug": "Barzolvolimab - (EMBARQ-ColdU and SD)",
+"status": "decided"
+},
+{
+"ticker": "CLDX",
+"date": "2026-03-01",
+"outcome": "CRL",
+"drug": "Barzolvolimab - (CindU)",
+"status": "decided"
+},
+{
+"ticker": "CTXR",
+"date": "2026-03-04",
+"outcome": "CRL",
+"drug": "LYMPHIR (denileukin diftitox)",
+"status": "decided"
+},
+{
+"ticker": "HALO",
+"date": "2026-03-05",
+"outcome": "APPROVAL",
+"drug": "TECVAYLI (teclistamab-cqyv) and DARZAL",
+"status": "decided"
+},
+{
+"ticker": "JNJ",
+"date": "2026-03-05",
+"outcome": "APPROVAL",
+"drug": "TECVAYLI (teclistamab-cqyv) and DARZAL",
+"status": "decided"
+},
+{
+"ticker": "LNTH",
+"date": "2026-03-06",
+"outcome": "APPROVAL",
+"drug": "PYLARIFY TruVu (piflufolastat F 18) In",
+"status": "decided"
+},
+{
+"ticker": "BMY",
+"date": "2026-03-06",
+"outcome": "APPROVAL",
+"drug": "Sotyktu (deucravacitinib) - (POETYK Ps",
+"status": "decided"
+},
+{
+"ticker": "RLMD",
+"date": "2026-03-09",
+"outcome": "CRL",
+"drug": "NDV-01 - (RESCUE)",
+"status": "decided"
+},
+{
+"ticker": "CAPR",
+"date": "2026-03-10",
+"outcome": "CRL",
+"drug": "Deramiocel (CAP-1002) - (HOPE-2)",
+"status": "decided"
+},
+{
+"ticker": "INTS",
+"date": "2026-03-12",
+"outcome": "CRL",
+"drug": "INT230-6 - (INVINCIBLE-4)",
+"status": "decided"
+},
+{
+"ticker": "GSK",
+"date": "2026-03-13",
+"outcome": "APPROVAL",
+"drug": "Arexvy",
+"status": "decided"
+},
+{
+"ticker": "NVS",
+"date": "2026-03-13",
+"outcome": "APPROVAL",
+"drug": "COSENTYX (secukinumab)- (SUNSHINE)",
+"status": "decided"
+},
+{
+"ticker": "JNJ",
+"date": "2026-03-13",
+"outcome": "CRL",
+"drug": "Erda-iDRS (formerly TAR-210)",
+"status": "decided"
+},
+{
+"ticker": "ALDX",
+"date": "2026-03-17",
+"outcome": "CRL",
+"drug": "Reproxalap (ADX-102) -  (CHAMBER)",
+"status": "decided"
+},
+{
+"ticker": "JNJ",
+"date": "2026-03-18",
+"outcome": "APPROVAL",
+"drug": "ICOTYDE (icotrokinra)",
+"status": "decided"
+},
+{
+"ticker": "PTGX",
+"date": "2026-03-18",
+"outcome": "APPROVAL",
+"drug": "ICOTYDE (icotrokinra)",
+"status": "decided"
+},
+{
+"ticker": "GSK",
+"date": "2026-03-19",
+"outcome": "APPROVAL",
+"drug": "Linerixibat - (GLISTEN)",
+"status": "decided"
+},
+{
+"ticker": "NVO",
+"date": "2026-03-19",
+"outcome": "APPROVAL",
+"drug": "Wegovy HD",
+"status": "decided"
+},
+{
+"ticker": "RYTM",
+"date": "2026-03-20",
+"outcome": "APPROVAL",
+"drug": "IMCIVREE (setmelanotide)",
+"status": "decided"
+},
+{
+"ticker": "BMY",
+"date": "2026-03-20",
+"outcome": "APPROVAL",
+"drug": "Opdivo in combination with AVD",
+"status": "decided"
+},
+{
+"ticker": "DNLI",
+"date": "2026-03-25",
+"outcome": "APPROVAL",
+"drug": "AVLAYAH (Tividenofusp alfa) - (COMPASS",
+"status": "decided"
+},
+{
+"ticker": "CORT",
+"date": "2026-03-25",
+"outcome": "APPROVAL",
+"drug": "Lifyorli (relacorilant) plus ABRAXANE ",
+"status": "decided"
+},
+{
+"ticker": "NVO",
+"date": "2026-03-26",
+"outcome": "APPROVAL",
+"drug": "Awiqli (insulin icodec-abae) injection",
+"status": "decided"
+},
+{
+"ticker": "RCKT",
+"date": "2026-03-27",
+"outcome": "APPROVAL",
+"drug": "KRESLADI (marnetegragene autotemcel)",
+"status": "decided"
+},
+{
+"ticker": "IONS",
+"date": "2026-03-30",
+"outcome": "APPROVAL",
+"drug": "SPINRAZA (Nusinersen) - (DEVOTE)",
+"status": "decided"
+},
+{
+"ticker": "BIIB",
+"date": "2026-03-30",
+"outcome": "APPROVAL",
+"drug": "SPINRAZA (Nusinersen) - (DEVOTE)",
+"status": "decided"
+},
+{
+"ticker": "TEVA",
+"date": "2026-03-30",
+"outcome": "APPROVAL",
+"drug": "PONLIMSI (denosumab-adet) (biosimilar ",
+"status": "decided"
+},
+{
+"ticker": "LLY",
+"date": "2026-04-01",
+"outcome": "APPROVAL",
+"drug": "Foundayo (orforglipron) - (ATTAIN-1)",
+"status": "decided"
+},
+{
+"ticker": "REGN",
+"date": "2026-04-02",
+"outcome": "APPROVAL",
+"drug": "EYLEA HD (aflibercept) - (PHOTON ext)",
+"status": "decided"
+},
+{
+"ticker": "ANIP",
+"date": "2026-04-08",
+"outcome": "APPROVAL",
+"drug": "Isosorbide Mononitrate Tablet USP (gen",
+"status": "decided"
+},
+{
+"ticker": "INCY",
+"date": "2026-04-08",
+"outcome": "CRL",
+"drug": "ZYNYZ (retifanlimab-dlwr) - (POD1UM-30",
+"status": "decided"
+},
+{
+"ticker": "MGNX",
+"date": "2026-04-08",
+"outcome": "CRL",
+"drug": "ZYNYZ (retifanlimab-dlwr) - (POD1UM-30",
+"status": "decided"
+},
+{
+"ticker": "REPL",
+"date": "2026-04-10",
+"outcome": "CRL",
+"drug": "RP1 (vusolimogene oderparepvec) and OP",
+"status": "decided"
+},
+{
+"ticker": "LGND",
+"date": "2026-04-13",
+"outcome": "APPROVAL",
+"drug": "FILSPARI (sparsentan)",
+"status": "decided"
+},
+{
+"ticker": "TVTX",
+"date": "2026-04-13",
+"outcome": "APPROVAL",
+"drug": "FILSPARI (sparsentan)",
+"status": "decided"
+},
+{
+"ticker": "MRNA",
+"date": "2026-04-17",
+"outcome": "CRL",
+"drug": "mRNA-4359 + Pembrolizumab",
+"status": "decided"
+},
+{
+"ticker": "MRK",
+"date": "2026-04-21",
+"outcome": "APPROVAL",
+"drug": "IDVYNSO (doravirine/islatravir)",
+"status": "decided"
+},
+{
+"ticker": "REGN",
+"date": "2026-04-22",
+"outcome": "APPROVAL",
+"drug": "DUPIXENT (dupilumab) - (LIBERTY-CUPID)",
+"status": "decided"
+},
+{
+"ticker": "SNY",
+"date": "2026-04-22",
+"outcome": "APPROVAL",
+"drug": "DUPIXENT (dupilumab) - (LIBERTY-CUPID)",
+"status": "decided"
+},
+{
+"ticker": "PRTC",
+"date": "2026-04-22",
+"outcome": "CRL",
+"drug": "LYT-200",
+"status": "decided"
+},
+{
+"ticker": "BYSI",
+"date": "2026-04-22",
+"outcome": "CRL",
+"drug": "Plinabulin plus T-DXd (trastuzumab der",
+"status": "decided"
+},
+{
+"ticker": "REGN",
+"date": "2026-04-23",
+"outcome": "APPROVAL",
+"drug": "Otarmeni (lunsotogene parvec-cwha)",
+"status": "decided"
+},
+{
+"ticker": "GRCE",
+"date": "2026-04-23",
+"outcome": "CRL",
+"drug": "GTX-104 - (STRIVE-ON)",
+"status": "decided"
+},
+{
+"ticker": "ABBV",
+"date": "2026-04-23",
+"outcome": "CRL",
+"drug": "trenibotulinumtoxinE (TrenibotE)",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-04-27",
+"outcome": "APPROVAL",
+"drug": "SAPHNELO (anifrolumab-fnia)",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-04-28",
+"outcome": "APPROVAL",
+"drug": "BREZTRI AEROSPHERE (budesonide/glycopy",
+"status": "decided"
+},
+{
+"ticker": "JAGX",
+"date": "2026-04-29",
+"outcome": "APPROVAL",
+"drug": "Canalevia-CA1",
+"status": "decided"
+},
+{
+"ticker": "AXSM",
+"date": "2026-04-30",
+"outcome": "APPROVAL",
+"drug": "AUVELITY (dextromethorphan HBr and bup",
+"status": "decided"
+},
+{
+"ticker": "PFE",
+"date": "2026-05-01",
+"outcome": "APPROVAL",
+"drug": "VEPPANU (vepdegestrant) - (VERITAC-2)",
+"status": "decided"
+},
+{
+"ticker": "ARVN",
+"date": "2026-05-01",
+"outcome": "APPROVAL",
+"drug": "VEPPANU (vepdegestrant) - (VERITAC-2)",
+"status": "decided"
+},
+{
+"ticker": "INCY",
+"date": "2026-05-01",
+"outcome": "APPROVAL",
+"drug": "Jakafi XR (ruxolitinib)",
+"status": "decided"
+},
+{
+"ticker": "ADMA",
+"date": "2026-05-04",
+"outcome": "APPROVAL",
+"drug": "ASCENIV (RI-002)",
+"status": "decided"
+},
+{
+"ticker": "XNCR",
+"date": "2026-05-04",
+"outcome": "APPROVAL",
+"drug": "XmAb412",
+"status": "decided"
+},
+{
+"ticker": "TPST",
+"date": "2026-05-06",
+"outcome": "CRL",
+"drug": "TPST-2003 - (REDEEM-1)",
+"status": "decided"
+},
+{
+"ticker": "ENGN",
+"date": "2026-05-07",
+"outcome": "CRL",
+"drug": "Detalimogene voraplasmid (EG-70) - (LE",
+"status": "decided"
+},
+{
+"ticker": "AIM",
+"date": "2026-05-07",
+"outcome": "CRL",
+"drug": "IP Ampligen (rintatolimod) and interfe",
+"status": "decided"
+},
+{
+"ticker": "ARGX",
+"date": "2026-05-08",
+"outcome": "APPROVAL",
+"drug": "VYVGART - (ADAPT SERON)",
+"status": "decided"
+},
+{
+"ticker": "RLMD",
+"date": "2026-05-12",
+"outcome": "CRL",
+"drug": "NDV-01 - (RESCUE)",
+"status": "decided"
+},
+{
+"ticker": "ONC",
+"date": "2026-05-13",
+"outcome": "APPROVAL",
+"drug": "BEQALZI (Sonrotoclax)",
+"status": "decided"
+},
+{
+"ticker": "TPST",
+"date": "2026-05-14",
+"outcome": "CRL",
+"drug": "TPST-2003 - (POEMS-1)",
+"status": "decided"
+},
+{
+"ticker": "SPRY",
+"date": "2026-05-15",
+"outcome": "APPROVAL",
+"drug": "Neffy 1 mg (epinephrine nasal spray)",
+"status": "decided"
+},
+{
+"ticker": "URGN",
+"date": "2026-05-15",
+"outcome": "APPROVAL",
+"drug": "UGN-103 - (UTOPIA)",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-05-15",
+"outcome": "APPROVAL",
+"drug": "ENHERTU (trastuzumab deruxtecan) - (DE",
+"status": "decided"
+},
+{
+"ticker": "TARA",
+"date": "2026-05-15",
+"outcome": "CRL",
+"drug": "TARA-002 - (ADVANCED-2)",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-05-18",
+"outcome": "APPROVAL",
+"drug": "BAXFENDY (baxdrostat)",
+"status": "decided"
+},
+{
+"ticker": "IBRX",
+"date": "2026-05-19",
+"outcome": "CRL",
+"drug": "Intravesical recombinant Mycobacterium",
+"status": "decided"
+},
+{
+"ticker": "SKYE",
+"date": "2026-05-20",
+"outcome": "APPROVAL",
+"drug": "Nimacimab - (CBeyond)",
+"status": "decided"
+},
+{
+"ticker": "IMMX",
+"date": "2026-05-21",
+"outcome": "CRL",
+"drug": "NXC-201 (HBI10101) - (NEXICART-2)",
+"status": "decided"
+},
+{
+"ticker": "REGN",
+"date": "2026-05-21",
+"outcome": "CRL",
+"drug": "Lynozyfic (linvoseltamab) - (LINKER-AL",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-05-22",
+"outcome": "APPROVAL",
+"drug": "Datopotamab Deruxtecan (Dato-DXd) - (T",
+"status": "decided"
+},
+{
+"ticker": "GILD",
+"date": "2026-05-26",
+"outcome": "APPROVAL",
+"drug": "Hepcludex (Bulevirtide) - (MYR301)",
+"status": "decided"
+},
+{
+"ticker": "IRWD",
+"date": "2026-05-27",
+"outcome": "APPROVAL",
+"drug": "LINZESS (Iinaclotide)",
+"status": "decided"
+},
+{
+"ticker": "ABBV",
+"date": "2026-05-27",
+"outcome": "APPROVAL",
+"drug": "LINZESS (Iinaclotide)",
+"status": "decided"
+},
+{
+"ticker": "PGEN",
+"date": "2026-05-27",
+"outcome": "APPROVAL",
+"drug": "PAPZIMEOS (zopapogene imadenovec-drba)",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-05-28",
+"outcome": "APPROVAL",
+"drug": "Imfinzi (durvalumab)",
+"status": "decided"
+},
+{
+"ticker": "JNJ",
+"date": "2026-05-29",
+"outcome": "APPROVAL",
+"drug": "TREMFYA (guselkumab)",
+"status": "decided"
+},
+{
+"ticker": "MNKD",
+"date": "2026-05-29",
+"outcome": "APPROVAL",
+"drug": "Afrezza (Technosphere Insulin) - (INHA",
+"status": "decided"
+},
+{
+"ticker": "BMY",
+"date": "2026-06-01",
+"outcome": "APPROVAL",
+"drug": "Camzyos (mavacamten) - (SCOUT-HCM)",
+"status": "decided"
+},
+{
+"ticker": "CING",
+"date": "2026-06-02",
+"outcome": "CRL",
+"drug": "CTx-1301 (fixed dose, pediatric study)",
+"status": "decided"
+},
+{
+"ticker": "AMRX",
+"date": "2026-06-04",
+"outcome": "APPROVAL",
+"drug": "Romidepsin injection solution, 27.5 mg",
+"status": "decided"
+},
+{
+"ticker": "PFE",
+"date": "2026-06-08",
+"outcome": "APPROVAL",
+"drug": "HYMPAVZI (marstacimab)",
+"status": "decided"
+},
+{
+"ticker": "XOMA",
+"date": "2026-06-08",
+"outcome": "APPROVAL",
+"drug": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
+"status": "decided"
+},
+{
+"ticker": "LGND",
+"date": "2026-06-08",
+"outcome": "APPROVAL",
+"drug": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
+"status": "decided"
+},
+{
+"ticker": "ZVRA",
+"date": "2026-06-08",
+"outcome": "APPROVAL",
+"drug": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
+"status": "decided"
+},
+{
+"ticker": "LLY",
+"date": "2026-06-09",
+"outcome": "APPROVAL",
+"drug": "EBGLYSS (lebrikizumab-lbkz) - (ADjoin)",
+"status": "decided"
+},
+{
+"ticker": "IRON",
+"date": "2026-06-09",
+"outcome": "CRL",
+"drug": "Bitopertin - (APOLLO)",
+"status": "decided"
+},
+{
+"ticker": "GMAB",
+"date": "2026-06-11",
+"outcome": "CRL",
+"drug": "EPCORE (Epcoritamab) - (EPCORE  NHL-2)",
+"status": "decided"
+},
+{
+"ticker": "MRK",
+"date": "2026-06-12",
+"outcome": "APPROVAL",
+"drug": "KEYTRUDA (pembrolizumab) and KEYTRUDA ",
+"status": "decided"
+},
+{
+"ticker": "AZN",
+"date": "2026-06-12",
+"outcome": "APPROVAL",
+"drug": "TRUQAP (capivasertib) in combination w",
+"status": "decided"
+},
+{
+"ticker": "CLLS",
+"date": "2026-06-13",
+"outcome": "CRL",
+"drug": "UCART20x22 - (NatHaLi-01)",
+"status": "decided"
+},
+{
+"ticker": "BAYRY",
+"date": "2026-06-15",
+"outcome": "APPROVAL",
+"drug": "AMBELVIST (gadoquatrane)",
+"status": "decided"
+},
+{
+"ticker": "INCY",
+"date": "2026-06-15",
+"outcome": "CRL",
+"drug": "INCA033989",
+"status": "decided"
+},
+{
+"ticker": "ABBV",
+"date": "2026-06-16",
+"outcome": "APPROVAL",
+"drug": "JUV\u00c9DERM - (SKINVIVE) (injectable HA)",
+"status": "decided"
+},
+{
+"ticker": "GSK",
+"date": "2026-06-17",
+"outcome": "APPROVAL",
+"drug": "Utebzi (Tebipenem HBr) - (PIVOT-PO)",
+"status": "decided"
+},
+{
+"ticker": "SPRO",
+"date": "2026-06-17",
+"outcome": "APPROVAL",
+"drug": "Utebzi (Tebipenem HBr) - (PIVOT-PO)",
+"status": "decided"
+},
+{
+"ticker": "MRK",
+"date": "2026-06-18",
+"outcome": "APPROVAL",
+"drug": "CAPVAXIVE (Pneumococcal 21-valent Conj",
+"status": "decided"
+},
+{
+"ticker": "UNCY",
+"date": "2026-06-29",
+"outcome": "PENDING",
+"drug": "Oxylanthanum Carbonate",
+"status": "upcoming"
+},
+{
+"ticker": "VRDN",
+"date": "2026-06-30",
+"outcome": "PENDING",
+"drug": "veligrotug",
+"status": "upcoming"
+},
+{
+"ticker": "IONS",
+"date": "2026-06-30",
+"outcome": "PENDING",
+"drug": "Donidalorsen",
+"status": "upcoming"
+},
+{
+"ticker": "VERA",
+"date": "2026-07-07",
+"outcome": "PENDING",
+"drug": "Atacicept",
+"status": "upcoming"
+},
+{
+"ticker": "CORT",
+"date": "2026-07-11",
+"outcome": "PENDING",
+"drug": "Relacorilant",
+"status": "upcoming"
+},
+{
+"ticker": "CELC",
+"date": "2026-07-14",
+"outcome": "APPROVAL",
+"drug": "gedatolisib",
+"status": "decided"
+},
+{
+"ticker": "OTLK",
+"date": "2026-07-29",
+"outcome": "PENDING",
+"drug": "bevacizumab",
+"status": "upcoming"
+},
+{
+"ticker": "LNTH",
+"date": "2026-08-13",
+"outcome": "PENDING",
+"drug": "MK-6240",
+"status": "upcoming"
+},
+{
+"ticker": "PFE",
+"date": "2026-08-17",
+"outcome": "PENDING",
+"drug": "Padcev",
+"status": "upcoming"
+},
+{
+"ticker": "CAPR",
+"date": "2026-08-22",
+"outcome": "PENDING",
+"drug": "nan",
+"status": "upcoming"
+},
+{
+"ticker": "RARE",
+"date": "2026-08-23",
+"outcome": "PENDING",
+"drug": "nan",
+"status": "upcoming"
+},
+{
+"ticker": "ZYME",
+"date": "2026-08-25",
+"outcome": "PENDING",
+"drug": "zanidatamab",
+"status": "upcoming"
+},
+{
+"ticker": "RPRX",
+"date": "2026-08-25",
+"outcome": "PENDING",
+"drug": "Ziihera",
+"status": "upcoming"
+},
+{
+"ticker": "GILD",
+"date": "2026-08-27",
+"outcome": "PENDING",
+"drug": "Lenacapavir",
+"status": "upcoming"
+},
+{
+"ticker": "TLX",
+"date": "2026-09-11",
+"outcome": "PENDING",
+"drug": "177Lu-TLX591",
+"status": "upcoming"
+},
+{
+"ticker": "NUVL",
+"date": "2026-09-18",
+"outcome": "PENDING",
+"drug": "Neladalkib",
+"status": "upcoming"
+},
+{
+"ticker": "RARE",
+"date": "2026-09-19",
+"outcome": "PENDING",
+"drug": "UX111",
+"status": "upcoming"
+},
+{
+"ticker": "MIRM",
+"date": "2026-09-26",
+"outcome": "PENDING",
+"drug": "zilurgisertib",
+"status": "upcoming"
+},
+{
+"ticker": "BFRI",
+"date": "2026-09-28",
+"outcome": "PENDING",
+"drug": "nan",
+"status": "upcoming"
+},
+{
+"ticker": "VTRS",
+"date": "2026-10-17",
+"outcome": "PENDING",
+"drug": "MR-141",
+"status": "upcoming"
+},
+{
+"ticker": "PHAR",
+"date": "2026-10-24",
+"outcome": "PENDING",
+"drug": "Leniolisib",
+"status": "upcoming"
+},
+{
+"ticker": "INO",
+"date": "2026-10-30",
+"outcome": "PENDING",
+"drug": "VGX-3100",
+"status": "upcoming"
+},
+{
+"ticker": "BTAI",
+"date": "2026-11-14",
+"outcome": "PENDING",
+"drug": "Sublingual film containing dexmedetomi",
+"status": "upcoming"
+},
+{
+"ticker": "SMMT",
+"date": "2026-11-14",
+"outcome": "PENDING",
+"drug": "Ivonescimab",
+"status": "upcoming"
+},
+{
+"ticker": "BBIO",
+"date": "2026-11-27",
+"outcome": "PENDING",
+"drug": "EX-99",
+"status": "upcoming"
+},
+{
+"ticker": "EXEL",
+"date": "2026-12-03",
+"outcome": "PENDING",
+"drug": "zanzalintinib",
+"status": "upcoming"
+},
+{
+"ticker": "VNDA",
+"date": "2026-12-12",
+"outcome": "PENDING",
+"drug": "Milsaperidone",
+"status": "upcoming"
+},
+{
+"ticker": "MLYS",
+"date": "2026-12-22",
+"outcome": "PENDING",
+"drug": "lorundrostat Dose 1",
+"status": "upcoming"
+},
+{
+"ticker": "COGT",
+"date": "2026-12-30",
+"outcome": "PENDING",
+"drug": "CGT9486",
+"status": "upcoming"
+}
+]

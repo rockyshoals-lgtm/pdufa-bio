@@ -1,0 +1,88 @@
+You are an expert Python engineer building production biotech ML systems.
+
+TASK: Create a production-ready HINT-ODIN integration layer.
+
+BACKGROUND:
+- ODIN v9.4: Regulatory FDA approval prediction model (odin_v94_scoring.py)
+- HINT: Deep learning clinical trial outcome model (separate PyTorch)
+- Goal: Ensemble combining both for 87.5% accuracy (vs 75% HINT alone)
+- Scope: Small molecules only (HINT's training domain)
+
+CURRENT STATE:
+- ODIN and HINT are completely separate
+- No HINT model loading in ODIN code
+- No SMILES/ICD-10 processing
+- No ensemble blending logic
+- Historical backtest shows potential: 70/30 ODIN/HINT = 87.5% accuracy on 16 cases
+
+YOUR TASK - 3 Deliverables:
+
+DELIVERABLE 1: hint_wrapper.py (200-300 lines)
+Create a clean interface layer that:
+1. Loads HINT Phase III checkpoint from: C:\Users\dcmoo\Documents\Python\hint_models\save_model\phase_III.ckpt
+2. Loads BioBERT tokenizer: dmis-lab/biobert-base-cased-v1.1
+3. Implements get_smiles(drug_name) → SMILES string
+   - Cache results locally (smiles_cache.json)
+   - Use pubchempy library for PubChem lookup
+   - Handle "drug not found" gracefully
+4. Implements get_icd10(indication) → ICD-10 code mapping
+   - Basic mapping for common indications (provided in hint_backtest_all_wins.py)
+5. Implements score(drug_name, indication, trial_protocol=None) → float (0.0-1.0)
+   - Extract protocol features if provided
+   - Call HINT model.forward()
+   - Return probability clamped [0.01, 0.99]
+6. Implement batch scoring with caching
+   - Don't reload model for each event
+   - Cache SMILES results across batch
+   - Add error handling (missing SMILES, invalid drugs)
+
+DELIVERABLE 2: odin_v94_scoring.py modifications
+Update the existing file to:
+1. Import hint_wrapper at top
+2. Add batch_score_with_hint() function that:
+   - Takes DataFrame as input (like existing batch_score)
+   - For each row:
+     a. Calculate ODIN score (existing logic)
+     b. If modality='Small Molecule' or 'Peptide': Calculate HINT score
+     c. Blend: ensemble = 0.70*odin_prob + 0.30*hint_prob
+     d. Add columns: hint_probability, ensemble_probability, ensemble_tier
+   - Returns DataFrame with new columns
+3. Add conflict detection function:
+   - Flag when |ODIN - HINT| > 0.20 (disagreement)
+   - Log: "CAUTION: ODIN 85%, HINT 25% - Review conflict"
+   - Useful for catching approval bias or regulatory red flags
+
+DELIVERABLE 3: ODIN_v94_CONFIG.json updates
+Add sections:
+1. "hint_config" with paths and parameters
+2. "ensemble_settings": odin_weight: 0.70, hint_weight: 0.30
+3. "decision_matrix" from migration package:
+   - >85% ODIN + >75% HINT = STRONG_BUY
+   - >85% ODIN + <45% HINT = CAUTION
+   - etc.
+
+TESTING:
+1. Validate on 5 known cases from hint_backtest_all_wins.py:
+   - MIST Etripamil (APPROVED): HINT ~85%, ODIN 82% → Ensemble ~83%
+   - ALDX Reproxalap (CRL): HINT 88%, ODIN 10% → Ensemble ~40% (catch conflict!)
+   - MITO Elamipretide (CRL): HINT 38%, ODIN 20% → Ensemble ~22% (correct)
+   
+2. Spot check 3 results:
+   - Does ensemble improve CRL detection? (should be yes)
+   - Does ensemble maintain high approval accuracy? (should be yes)
+   - Are conflicts properly flagged? (should be yes)
+
+CONSTRAINTS:
+- Use only libraries already in ODIN/HINT environments
+- No external APIs except PubChem (via pubchempy)
+- Error handling for missing data (no drug found, no protocol)
+- Type hints on all functions
+- Docstrings explaining each method
+- Performance: batch processing should handle 1,933 events in <5 min
+
+DELIVER:
+1. hint_wrapper.py (complete, runnable)
+2. Code diff for odin_v94_scoring.py (show new functions only)
+3. JSON addition for ODIN_v94_CONFIG.json
+4. Test results on 5 validation cases
+5. Brief summary: "Integration complete. Ensemble accuracy 87.5%. Conflicts properly detected."

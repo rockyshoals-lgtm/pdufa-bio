@@ -1,0 +1,156 @@
+{
+  "ledger_id": "WIN-2026-0220-VNDA-001",
+  "timestamp_utc": "2026-02-21T03:47:08.966820+00:00",
+  "status": "IMMUTABLE \u2014 DO NOT MODIFY",
+  "call_type": "PRE_DECISION_LOGGED",
+  "call_type_detail": {
+    "description": "Multiple model versions scored VNDA pre-decision with APPROVAL prediction. Strongest call: Gungnir TIER_1 89.7% on Feb 16, 4 days before approval.",
+    "pre_decision_scores": [
+      {
+        "model": "Gungnir (XGB+Logistic stacker)",
+        "score": 0.897,
+        "adjusted_score": 0.947,
+        "tier": "TIER_1",
+        "action": "LONG",
+        "confidence": "HIGH",
+        "sizing": "100%",
+        "date_scored": "2026-02-16",
+        "days_before_decision": 4,
+        "source_file": "fda_2026_scored.csv",
+        "source_chat": "https://claude.ai/chat/7776b46e-d37e-4d40-b531-106ce6bd57f4",
+        "flags": "CNS \u2014 higher CRL rate | Hoeg-era FDA uncertainty"
+      },
+      {
+        "model": "ODIN v1067",
+        "score": 0.799,
+        "tier": "TIER_2",
+        "date_scored": "2026-02-14",
+        "days_before_decision": 6,
+        "source_file": "ODIN_MODEL_READY_v1070_T1_2015on_ENRICHED.csv",
+        "source_chat": "https://claude.ai/chat/23a83e7a-3aa8-45ec-b6ae-466bc349da95"
+      },
+      {
+        "model": "ODIN v1070",
+        "score": 0.641,
+        "tier": "TIER_3",
+        "date_scored": "2026-02-15",
+        "days_before_decision": 5,
+        "source_file": "ODIN_MODEL_READY_v1070_T1_2015on_ENRICHED.csv"
+      },
+      {
+        "model": "ODIN v1107 (honed)",
+        "score": 0.787,
+        "tier": "TIER_2",
+        "date_scored": "2026-02-20 (post-announcement retroactive validation)",
+        "days_before_decision": 0,
+        "note": "Weights frozen pre-decision, scoring run post-announcement"
+      }
+    ],
+    "approval_announced": "2026-02-20 ~19:51 EST (PR Newswire)"
+  },
+  "event": {
+    "ticker": "VNDA",
+    "company": "Vanda Pharmaceuticals Inc.",
+    "asset": "Bysanti (milsaperidone)",
+    "indication": "Bipolar I Disorder / Schizophrenia",
+    "therapeutic_area": "CNS",
+    "application_type": "NDA",
+    "pdufa_date": "2026-02-21",
+    "decision_date": "2026-02-20",
+    "decision_early": true,
+    "outcome": "APPROVAL",
+    "source": "https://www.prnewswire.com/news-releases/vanda-pharmaceuticals-announces-fda-approval-of-bysanti-milsaperidone-for-the-treatment-of-bipolar-i-disorder-and-schizophrenia---a-new-chemical-entity-opening-new-horizons-in-psychiatric-innovation-302693941.html"
+  },
+  "primary_call": {
+    "model": "Gungnir",
+    "score": 0.897,
+    "tier": "TIER_1",
+    "prediction": "APPROVAL",
+    "correct": true,
+    "date_scored": "2026-02-16",
+    "days_before_decision": 4,
+    "source_file": "fda_2026_scored.csv",
+    "source_chat": "https://claude.ai/chat/7776b46e-d37e-4d40-b531-106ce6bd57f4"
+  },
+  "odin_v1107_score": {
+    "model_version": "v1107_honed",
+    "engine_version": "5.0.3",
+    "score": 0.787,
+    "logit": 1.3047,
+    "tier": "TIER_2",
+    "prediction": "APPROVAL",
+    "correct": true,
+    "note": "Retroactive validation \u2014 weights frozen pre-decision"
+  },
+  "logit_decomposition_v1107": {
+    "base_logit": {
+      "feature": 1.0,
+      "weight": 1.172,
+      "contribution": 1.172
+    },
+    "hint_weight": {
+      "feature": 0.75,
+      "weight": 0.989,
+      "contribution": 0.742
+    },
+    "odin_weight": {
+      "feature": 0.65,
+      "weight": 0.776,
+      "contribution": 0.504
+    },
+    "ta_adjustment_weight": {
+      "feature": -0.15,
+      "weight": -0.028,
+      "contribution": 0.004
+    },
+    "hoeg_era_constant": {
+      "feature": 1.0,
+      "weight": -0.1,
+      "contribution": -0.1
+    },
+    "hint_crl_rate_penalty": {
+      "feature": 0.25,
+      "weight": -0.419,
+      "contribution": -0.105
+    },
+    "ta_high_risk_penalty": {
+      "feature": 1.0,
+      "weight": -0.913,
+      "contribution": -0.913
+    }
+  },
+  "input_signals": {
+    "prior_crl": false,
+    "sponsor_prior_approvals": 2,
+    "manufacturing_risk": false,
+    "form_483_issues": false,
+    "ema_cmc_flag": false,
+    "cmc_extension_flag": false,
+    "had_adcom": false,
+    "btd": false,
+    "orphan": false,
+    "priority_review": false,
+    "fast_track": false,
+    "accelerated_approval": false,
+    "gene_therapy": false,
+    "single_arm_study": false,
+    "surrogate_endpoint": false,
+    "ppm_flag": false,
+    "safety_signal_severity": 0.0,
+    "ta_base_score": -0.15,
+    "historical_crl_rate": 0.25
+  },
+  "context": {
+    "notes": [
+      "NCE bioequivalent to iloperidone (Fanapt), 100K+ patient-years safety data",
+      "Second VNDA approval in <2 months (NEREUS/tradipitant approved Dec 30, 2025)",
+      "All models predicted APPROVAL \u2014 Gungnir (TIER_1), v1067 (TIER_2), v1107 (TIER_2)",
+      "v1070 was most conservative at TIER_3 (64.1%) \u2014 still above 50% approval probability",
+      "Approved 1 day early (Feb 20 vs Feb 21 PDUFA)",
+      "Gungnir scored 89.7% TIER_1 on Feb 16 \u2014 4 days before decision \u2014 strongest pre-call"
+    ],
+    "market_cap_at_decision": "$340M approximate",
+    "2026_revenue_guidance": "$230-260M (marketed products)"
+  },
+  "integrity_sha256": "c8cc436a01aa612434e0491f795be10446be9aa4710b36cd693253ebad120c1f"
+}

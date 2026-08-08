@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conference Catalyst Torque — H2 2026</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f6f7f9; --card:#fff; --ink:#161a22; --muted:#616a78; --line:#e6e9ef;
+  --elite:#b8860b; --elitebg:#fbf1d6; --t1:#2b6cb0; --t1bg:#e7f0fb; --t2:#2f8f4e; --t2bg:#e6f5ec; --other:#6b7280; --otherbg:#eef0f3;
+  --green:#0f9d58; --amber:#c77700; --red:#d23f31; --blue:#2b6cb0;
+  --shadow:0 1px 2px rgba(20,26,34,.05),0 6px 16px rgba(20,26,34,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14.5px;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:23px;margin:0 0 3px;letter-spacing:-.02em}
+h2{font-size:16px;margin:26px 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:14px 15px;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600;padding:7px 8px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+.chip{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.c-ELITE{background:var(--elitebg);color:var(--elite)} .c-TIER1{background:var(--t1bg);color:var(--t1)}
+.c-TIER2{background:var(--t2bg);color:var(--t2)} .c-OTHER{background:var(--otherbg);color:var(--other)}
+.conf{font-weight:700} .conf small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.dt{font-variant-numeric:tabular-nums;white-space:nowrap}
+.entry{color:var(--green);font-weight:600} .exit{color:var(--red);font-weight:600}
+.status{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap}
+.st-open{background:#e6f5ec;color:var(--green)} .st-soon{background:#fdf1dd;color:var(--amber)}
+.st-passed{background:#f0f0f0;color:var(--muted)} .st-opts{background:#e7f0fb;color:var(--blue)}
+.rowopen{background:#f4fbf6}
+.wl-add{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.wl-add input,.wl-add select{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px;background:#fff}
+.wl-add input{width:110px;text-transform:uppercase}
+.wl-add button{border:1px solid var(--line);background:var(--ink);color:#fff;border-radius:8px;padding:7px 13px;font-size:13px;font-weight:600;cursor:pointer}
+.wl-add button:hover{opacity:.9}
+.tk{font-weight:700}
+.torque{font-weight:800;font-variant-numeric:tabular-nums}
+.bar{height:5px;border-radius:3px;background:#eceff3;margin-top:3px;overflow:hidden}.bar>i{display:block;height:100%;border-radius:3px}
+.iv-cheap{color:var(--green);font-weight:700}.iv-mid{color:var(--amber);font-weight:700}.iv-rich{color:var(--red);font-weight:700}
+.rm{border:none;background:none;color:var(--muted);cursor:pointer;font-size:15px;line-height:1}
+.rm:hover{color:var(--red)}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:#eef0f3;color:var(--muted)}
+.pb{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.pb .b{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.pb .b h3{margin:0 0 5px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.pb .b p{margin:0;font-size:12.5px;color:var(--ink)}
+.loading{color:var(--muted);font-size:12.5px;padding:6px 2px}
+.err{color:var(--red);font-size:12px}
+.foot{color:var(--muted);font-size:11px;margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Conference Catalyst Torque — H2 2026</h1>
+  <p class="sub">Small/micro-cap medical-conference runup calendar with live options torque. Windows from your Conference Overlay v1.0. Educational, not advice.</p>
+
+  <h2>The slate — entry / exit windows <span id="today" class="pill"></span></h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Conf</th><th>Focus</th><th>Tier</th><th class="num">Boost</th><th>Dates</th><th>Equity D-30</th><th>Options T-14</th><th>Exit D-1</th><th>Window</th></tr></thead>
+      <tbody id="calBody"></tbody>
+    </table>
+    <div class="legend">
+      <span><b>Equity D-30</b>: micro-cap entry</span><span><b>Options T-14</b>: ATM calls, expiry spanning the conf</span>
+      <span><b>Exit D-1</b>: the runup IS the trade — never hold through</span>
+    </div>
+  </div>
+
+  <h2>Live watchlist — options torque</h2>
+  <div class="card">
+    <div class="wl-add">
+      <input id="wlTicker" placeholder="TICKER" maxlength="6">
+      <select id="wlConf"></select>
+      <button id="wlAdd">Add to watchlist</button>
+      <span class="sub" id="wlNote"></span>
+    </div>
+    <table>
+      <thead><tr><th>Ticker</th><th>Conf</th><th class="num">IV rank</th><th class="num">Impl. move</th><th class="num">Mkt cap</th><th class="num">Call OI</th><th>Torque</th><th>Window</th><th>Runup</th><th></th></tr></thead>
+      <tbody id="wlBody"></tbody>
+    </table>
+    <div class="legend"><span>Torque favors <b>low IV rank</b> (cheap), <b>micro/small cap</b>, <b>liquid calls</b>, and a <b>higher-tier</b> conf. Add presenters as abstract titles release.</span></div>
+  </div>
+
+  <h2>Playbook (empirical)</h2>
+  <div class="card"><div class="pb">
+    <div class="b"><h3>Equity runup</h3><p>Nano/micro: <b>D-30 → D-1</b>, median <b>+4.88%</b> (58.5% win). Small: D-5 → D-1, +3.02% (66.7%).</p></div>
+    <div class="b"><h3>Options torque</h3><p>Enter <b>T-14</b>, exit T-1. ATM calls on an expiry that <b>spans</b> the conf. IV expands +24% (small-cap +30%).</p></div>
+    <div class="b"><h3>Execution</h3><p><b>Limit orders only</b> — spreads cost ~23pp. Micro readout calls avg +28–37%. Avoid large-cap options (theta).</p></div>
+    <div class="b"><h3>Am I too late?</h3><p>Cheap: IV %ile &lt;30, IV/RV &lt;1.5x, term tilt &lt;1.1. Tilt &gt;1.3 = already priced — skip.</p></div>
+    <div class="b"><h3>Signal</h3><p>Presenters <b>90.2%</b> positive vs 76.7% base. Crash 4.9% vs 8.5%. Oral/LBA &gt; poster.</p></div>
+    <div class="b"><h3>Sizing</h3><p>Equity ALPHA 5% / BETA 4% / GAMMA 2%, nano cap 3%. Options max 2% (SNIPER 1.5x → 3%).</p></div>
+  </div></div>
+
+  <p class="foot">Conference dates from official society sites. Live IV rank / implied move / market cap / call OI via Unusual Whales <span id="src"></span>. Runup and options-torque math from your Conference Overlay v1.0, BIFROST Options Module v1.1, and ORATS IV module. <b>Informational only — not investment advice.</b> Conference runup trades are high-risk; use limit orders on options.</p>
+</div>
+
+<script>
+const CONFS=[
+ {k:"ESC",name:"Cardiology Congress",focus:"Cardiology",tier:"OTHER",boost:"+10%",start:"2026-08-28",city:"Munich"},
+ {k:"WCLC",name:"World Conf. Lung Cancer",focus:"Onc — lung",tier:"TIER1",boost:"+14%",start:"2026-09-12",city:"Seoul"},
+ {k:"EASD",name:"Diabetes (EASD)",focus:"Diabetes/metabolic",tier:"OTHER",boost:"+10%",start:"2026-09-28",city:"Milan"},
+ {k:"ECTRIMS",name:"ACTRIMS-ECTRIMS",focus:"Neuro — MS",tier:"TIER1",boost:"+14%",start:"2026-10-21",city:"Toronto"},
+ {k:"ASN",name:"ASN Kidney Week",focus:"Nephrology",tier:"OTHER",boost:"+10%",start:"2026-10-21",city:"Denver"},
+ {k:"IDWeek",name:"IDWeek",focus:"Infectious dis.",tier:"OTHER",boost:"+10%",start:"2026-10-21",city:"Washington DC"},
+ {k:"ESMO",name:"ESMO Congress",focus:"Oncology",tier:"ELITE",boost:"+18%",start:"2026-10-23",city:"Madrid"},
+ {k:"SITC",name:"Immunotherapy (SITC)",focus:"Immuno-onc",tier:"TIER2",boost:"+12%",start:"2026-11-04",city:"Phoenix"},
+ {k:"AASLD",name:"The Liver Meeting",focus:"Hepatology/MASH",tier:"OTHER",boost:"+10%",start:"2026-11-05",city:"Denver"},
+ {k:"ACR",name:"ACR Convergence",focus:"Rheumatology",tier:"OTHER",boost:"+10%",start:"2026-11-06",city:"Orlando"},
+ {k:"CTAD",name:"Alzheimer's (CTAD)",focus:"Neuro — AD",tier:"TIER1",boost:"+14%",start:"2026-11-16",city:"Boston"},
+ {k:"AES",name:"Epilepsy (AES)",focus:"Neuro — epilepsy",tier:"OTHER",boost:"+10%",start:"2026-12-04",city:"Denver"},
+ {k:"SABCS",name:"San Antonio Breast",focus:"Onc — breast",tier:"TIER1",boost:"+14%",start:"2026-12-08",city:"San Antonio"},
+ {k:"ASH",name:"Hematology (ASH)",focus:"Heme/onc",tier:"ELITE",boost:"+18%",start:"2026-12-12",city:"New Orleans"},
+];
+const TIER_W={ELITE:20,TIER1:15,TIER2:12,OTHER:9};
+const DAY=86400000;
+const today=new Date(); today.setHours(0,0,0,0);
+function d(iso){const x=new Date(iso+"T00:00:00");x.setHours(0,0,0,0);return x;}
+function addDays(dt,n){return new Date(dt.getTime()+n*DAY);}
+function fmt(dt){return dt.toLocaleDateString(undefined,{month:"short",day:"numeric"});}
+function daysBetween(a,b){return Math.round((a-b)/DAY);}
+function confByKey(k){return CONFS.find(c=>c.k===k);}
+
+document.getElementById("today").textContent="today: "+today.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+
+// ---- window status for a conference start date ----
+function windowStatus(startISO){
+  const s=d(startISO), d30=addDays(s,-30), d14=addDays(s,-14), d1=addDays(s,-1);
+  if(today> d1) return {cls:"st-passed",txt:"passed"};
+  if(today>=d14) return {cls:"st-opts",txt:"OPTIONS + EXIT SOON"};
+  if(today>=d30) return {cls:"st-open",txt:"EQUITY WINDOW OPEN"};
+  const n=daysBetween(d30,today);
+  return {cls:"st-soon",txt:`opens in ${n}d`};
+}
+
+// ---- calendar ----
+(function(){
+  const tb=document.getElementById("calBody");
+  CONFS.forEach(c=>{
+    const s=d(c.start), st=windowStatus(c.start);
+    const tr=document.createElement("tr");
+    if(st.txt.includes("OPEN")||st.txt.includes("OPTIONS")) tr.className="rowopen";
+    tr.innerHTML=`<td class="conf">${c.k}<small>${c.name}</small></td>
+      <td>${c.focus}</td>
+      <td><span class="chip c-${c.tier}">${c.tier}</span></td>
+      <td class="num">${c.boost}</td>
+      <td class="dt">${fmt(s)}</td>
+      <td class="dt entry">${fmt(addDays(s,-30))}</td>
+      <td class="dt entry">${fmt(addDays(s,-14))}</td>
+      <td class="dt exit">${fmt(addDays(s,-1))}</td>
+      <td><span class="status ${st.cls}">${st.txt}</span></td>`;
+    tb.appendChild(tr);
+  });
+  // conf select for watchlist
+  const sel=document.getElementById("wlConf");
+  CONFS.forEach(c=>{const o=document.createElement("option");o.value=c.k;o.textContent=`${c.k} · ${fmt(d(c.start))}`;sel.appendChild(o);});
+  sel.value="ESMO";
+})();
+
+// ---- watchlist (localStorage) ----
+const LS="conf_torque_watchlist_v2";
+function loadWL(){ try{const r=localStorage.getItem(LS);return r?JSON.parse(r):null;}catch(e){return null;} }
+function saveWL(w){ try{localStorage.setItem(LS,JSON.stringify(w));}catch(e){} }
+// Seed: mined + verified presenters (INBX/TENX confirmed via PR; MBX EASD-thematic watch). TENX shows the 'priced-in' case.
+let WL=loadWL()|| [{t:"INBX",conf:"ESMO"},{t:"TENX",conf:"ESC"},{t:"MBX",conf:"EASD"}];
+
+async function callTool(name,args){
+  const r=await window.cowork.callMcpTool(name,args);
+  let x=r.structuredContent; if(!x){try{x=JSON.parse(r.content[0].text);}catch(e){x=null;}}
+  if(!x) return null;
+  if(Array.isArray(x)) return x;
+  if(x.result) return x.result;
+  return x;
+}
+function capTier(mc){ mc=+mc; if(!mc) return {t:"?",s:12}; if(mc<3e8)return{t:"micro",s:25}; if(mc<2e9)return{t:"small",s:20}; if(mc<1e10)return{t:"mid",s:8}; return{t:"large",s:2}; }
+function money(x){const n=+x;if(!n)return"—";if(n>=1e9)return"$"+(n/1e9).toFixed(1)+"B";if(n>=1e6)return"$"+(n/1e6).toFixed(0)+"M";return"$"+n.toFixed(0);}
+function ivClass(r){r=+r; if(isNaN(r))return["—",""]; if(r<30)return[r.toFixed(0),"iv-cheap"]; if(r<60)return[r.toFixed(0),"iv-mid"]; return[r.toFixed(0),"iv-rich"];}
+function torqueScore(row,conf){
+  let s=0;
+  const iv=+row.iv_rank; if(!isNaN(iv)) s+=Math.max(0,(100-iv))*0.35;   // cheap IV = torque
+  s+=capTier(row.marketcap).s;                                          // smaller = more
+  const oi=+row.call_open_interest||0; s+=Math.min(20, oi/500);         // liquidity
+  s+=TIER_W[conf.tier]||9;                                              // conf tier
+  return Math.max(0,Math.min(100,Math.round(s)));
+}
+function scoreColor(s){return s>=70?"var(--green)":s>=50?"var(--amber)":"var(--blue)";}
+
+function renderWLShell(){
+  const tb=document.getElementById("wlBody"); tb.innerHTML="";
+  if(!WL.length){ tb.innerHTML='<tr><td colspan="10" class="loading">No tickers yet. Add presenters as abstract titles release.</td></tr>'; return; }
+  WL.forEach((w,i)=>{
+    const tr=document.createElement("tr"); tr.id="wl-"+i;
+    tr.innerHTML=`<td class="tk">${w.t}</td><td><span class="chip c-${(confByKey(w.conf)||{}).tier||'OTHER'}">${w.conf}</span></td>
+      <td colspan="7" class="loading">loading live options…</td>
+      <td><button class="rm" data-i="${i}" title="remove">✕</button></td>`;
+    tb.appendChild(tr);
+  });
+  tb.querySelectorAll(".rm").forEach(b=>b.onclick=()=>{ WL.splice(+b.dataset.i,1); saveWL(WL); refresh(); });
+}
+async function fillRow(i){
+  const w=WL[i], conf=confByKey(w.conf)||CONFS[6];
+  const tr=document.getElementById("wl-"+i); if(!tr) return;
+  try{
+    const rows=await callTool("mcp__unusual-whales__get_stock_screener",{ticker:w.t,limit:1});
+    const row=rows&&rows[0];
+    if(!row){ tr.innerHTML=`<td class="tk">${w.t}</td><td><span class="chip c-${conf.tier}">${w.conf}</span></td><td colspan="7" class="err">no data for ${w.t}</td><td><button class="rm" data-i="${i}">✕</button></td>`; wire(tr); return; }
+    const [ivv,ivc]=ivClass(row.iv_rank);
+    const im=(+row.implied_move_perc*100); const imStr=isNaN(im)?"—":im.toFixed(0)+"%";
+    const ct=capTier(row.marketcap);
+    const oi=+row.call_open_interest||0;
+    const s=torqueScore(row,conf);
+    const st=windowStatus(conf.start);
+    const runup = ct.t==="micro"?"+4.9% (D-30)": ct.t==="small"?"+3.0% (D-5)": ct.t==="mid"||ct.t==="large"?"low edge":"—";
+    tr.innerHTML=`<td class="tk">${w.t}</td>
+      <td><span class="chip c-${conf.tier}">${w.conf}</span></td>
+      <td class="num"><span class="${ivc}">${ivv}</span></td>
+      <td class="num">${imStr}</td>
+      <td class="num">${money(row.marketcap)} <span class="pill">${ct.t}</span></td>
+      <td class="num">${oi.toLocaleString()}</td>
+      <td><span class="torque" style="color:${scoreColor(s)}">${s}</span><div class="bar"><i style="width:${s}%;background:${scoreColor(s)}"></i></div></td>
+      <td><span class="status ${st.cls}">${st.txt}</span></td>
+      <td>${runup}</td>
+      <td><button class="rm" data-i="${i}" title="remove">✕</button></td>`;
+    wire(tr);
+  }catch(e){
+    tr.innerHTML=`<td class="tk">${w.t}</td><td><span class="chip c-${conf.tier}">${w.conf}</span></td><td colspan="7" class="err">${e.message}</td><td><button class="rm" data-i="${i}">✕</button></td>`; wire(tr);
+  }
+}
+function wire(tr){ const b=tr.querySelector(".rm"); if(b) b.onclick=()=>{ WL.splice(+b.dataset.i,1); saveWL(WL); refresh(); }; }
+async function refresh(){ renderWLShell(); for(let i=0;i<WL.length;i++){ await fillRow(i); } }
+
+document.getElementById("wlAdd").onclick=()=>{
+  const t=document.getElementById("wlTicker").value.trim().toUpperCase();
+  const c=document.getElementById("wlConf").value;
+  if(!t) return;
+  if(WL.some(w=>w.t===t&&w.conf===c)){ document.getElementById("wlNote").textContent=`${t} @ ${c} already listed`; return; }
+  WL.push({t,conf:c}); saveWL(WL); document.getElementById("wlTicker").value=""; document.getElementById("wlNote").textContent="";
+  refresh();
+};
+doc

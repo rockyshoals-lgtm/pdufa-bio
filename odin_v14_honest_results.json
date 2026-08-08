@@ -1,0 +1,34 @@
+{
+  "model": "odin_v14_honest_replication",
+  "split": {
+    "train_n": 1081,
+    "train_cutoff": "2022-12-31",
+    "train_approval_rate": 0.6734505087881592,
+    "val_n": 764,
+    "val_cutoff": "2024-12-31",
+    "val_approval_rate": 0.6767015706806283,
+    "holdout_n": 365,
+    "holdout_approval_rate": 0.6931506849315069
+  },
+  "replication": {
+    "train_auc": 0.9233026180618249,
+    "train_brier": 0.0860238113705447,
+    "val_auc": 0.8599871572995873,
+    "holdout_auc": 0.8995271033314512,
+    "holdout_brier": 0.11279193065264066,
+    "reported_auc": 0.9363,
+    "inflation_auc": 0.03677289666854877,
+    "best_c": 0.01
+  },
+  "stability": {
+    "val_auc_mean": 0.8599871572995873,
+    "val_auc_std": 0.0,
+    "val_auc_min": 0.8599871572995873,
+    "val_auc_max": 0.8599871572995873,
+    "holdout_auc_mean": 0.8995271033314512,
+    "holdout_auc_std": 0.0,
+    "holdout_auc_min": 0.8995271033314512,
+    "holdout_auc_max": 0.8995271033314512,
+    "seeds": 20
+  }
+}

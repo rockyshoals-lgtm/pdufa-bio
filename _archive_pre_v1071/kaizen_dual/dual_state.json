@@ -1,0 +1,55 @@
+{
+  "odin_rounds": 5,
+  "odin_promotions": 1,
+  "odin_best_auc": 0.9193356157094114,
+  "odin_current_auc": 0.0,
+  "odin_history": [
+    {
+      "round": 1,
+      "wf_auc": 0.919336,
+      "promoted": true,
+      "timestamp": "2026-03-01T00:13:08.868708"
+    },
+    {
+      "round": 3,
+      "wf_auc": 0.911914,
+      "promoted": false,
+      "timestamp": "2026-03-01T00:13:47.171041"
+    },
+    {
+      "round": 4,
+      "wf_auc": 0.915103,
+      "promoted": false,
+      "timestamp": "2026-03-01T00:14:07.671439"
+    },
+    {
+      "round": 5,
+      "wf_auc": 0.0,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:49:45.618044"
+    },
+    {
+      "round": 6,
+      "wf_auc": 0.0,
+      "promoted": false,
+      "timestamp": "2026-02-28T21:49:48.452546"
+    }
+  ],
+  "gungnir_rounds": 1,
+  "gungnir_promotions": 1,
+  "gungnir_best_auc": 0.997868459720707,
+  "gungnir_current_auc": 0.997868459720707,
+  "gungnir_history": [
+    {
+      "round": 2,
+      "wf_auc": 0.997868,
+      "promoted": true,
+      "timestamp": "2026-03-01T00:13:27.286533"
+    }
+  ],
+  "dual_rounds": 6,
+  "dual_ensemble_auc": 0.9586020377150593,
+  "allocation_ratio": 0.9742554927628847,
+  "session_start": "2026-03-01T00:12:44.954512",
+  "saved_at": "2026-02-28T21:49:48.452546"
+}

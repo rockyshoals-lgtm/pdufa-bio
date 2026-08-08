@@ -1,0 +1,376 @@
+[
+  {
+    "ticker": "WHWK",
+    "name": "WHWK - AACR Oral x3 (Nano $50M)",
+    "gungnir_prob": 0.9809,
+    "gungnir_tier": 1,
+    "base_score": 98.09,
+    "boosted_score": 100.0,
+    "overlay_tier": "ALPHA",
+    "boost_total": 0.32,
+    "timing_status": "ENTRY_ZONE",
+    "position_pct": 5.0,
+    "full_result": {
+      "version": "Conference Overlay v1.0",
+      "ticker": "WHWK",
+      "conference": "AACR",
+      "conference_tier": "ELITE",
+      "presentation_type": "oral",
+      "n_presentations": 3,
+      "conference_boost": {
+        "conf_weight": 0.2,
+        "pres_weight": 0.08,
+        "multi_bonus": 0.04,
+        "total_boost": 0.32
+      },
+      "gungnir_original": {
+        "probability": 0.9809,
+        "investment_score": 98.1
+      },
+      "boosted": {
+        "probability": 0.99,
+        "investment_score": 100.0,
+        "tier": "ALPHA",
+        "action": "STRONG_BUY"
+      },
+      "timing": {
+        "days_to_conference": 9,
+        "status": "ENTRY_ZONE",
+        "note": "ENTER NOW. 9 days to conference. Optimal window for micro-cap.",
+        "optimal_entry": "D-30",
+        "optimal_exit": "D-1",
+        "expected_median_return": 4.88,
+        "expected_win_rate": 0.585
+      },
+      "position_sizing": {
+        "position_pct": 5.0,
+        "mcap_tier": "micro",
+        "cardinal_rule": "The runup IS the trade. Exit before conference day."
+      },
+      "signal_strength": {
+        "baseline_positive_rate": 0.767,
+        "conference_positive_rate": 0.902,
+        "lift_pp": 13.5,
+        "crash_rate_conference": 0.049,
+        "crash_rate_baseline": 0.085,
+        "p_value": "7.88e-21",
+        "n_conference_events": 285
+      },
+      "trade_notes": {
+        "drug": "HWK-016/HWK-007/HWK-206",
+        "stage": "IND-Enabling/Phase 1",
+        "notes": "3 next-gen ADCs. HWK-016 oral minisymposium = HIGH PRESTIGE. ADC hot space"
+      }
+    }
+  },
+  {
+    "ticker": "CRDF",
+    "name": "CRDF - AACR Poster (Nano $60M)",
+    "gungnir_prob": 0.9013,
+    "gungnir_tier": 1,
+    "base_score": 90.13,
+    "boosted_score": 100.0,
+    "overlay_tier": "ALPHA",
+    "boost_total": 0.24,
+    "timing_status": "ENTRY_ZONE",
+    "position_pct": 5.0,
+    "full_result": {
+      "version": "Conference Overlay v1.0",
+      "ticker": "CRDF",
+      "conference": "AACR",
+      "conference_tier": "ELITE",
+      "presentation_type": "poster",
+      "n_presentations": 1,
+      "conference_boost": {
+        "conf_weight": 0.2,
+        "pres_weight": 0.04,
+        "multi_bonus": 0.0,
+        "total_boost": 0.24
+      },
+      "gungnir_original": {
+        "probability": 0.9013,
+        "investment_score": 90.1
+      },
+      "boosted": {
+        "probability": 0.99,
+        "investment_score": 100.0,
+        "tier": "ALPHA",
+        "action": "STRONG_BUY"
+      },
+      "timing": {
+        "days_to_conference": 9,
+        "status": "ENTRY_ZONE",
+        "note": "ENTER NOW. 9 days to conference. Optimal window for micro-cap.",
+        "optimal_entry": "D-30",
+        "optimal_exit": "D-1",
+        "expected_median_return": 4.88,
+        "expected_win_rate": 0.585
+      },
+      "position_sizing": {
+        "position_pct": 5.0,
+        "mcap_tier": "micro",
+        "cardinal_rule": "The runup IS the trade. Exit before conference day."
+      },
+      "signal_strength": {
+        "baseline_positive_rate": 0.767,
+        "conference_positive_rate": 0.902,
+        "lift_pp": 13.5,
+        "crash_rate_conference": 0.049,
+        "crash_rate_baseline": 0.085,
+        "p_value": "7.88e-21",
+        "n_conference_events": 285
+      },
+      "trade_notes": {
+        "drug": "Onvansertib",
+        "stage": "Preclinical",
+        "notes": "PLK1 inhibitor in combo"
+      }
+    }
+  },
+  {
+    "ticker": "CABA",
+    "name": "CABA - AAN Oral RESET-MG P3 (Small $600M)",
+    "gungnir_prob": 0.9308,
+    "gungnir_tier": 1,
+    "base_score": 93.08,
+    "boosted_score": 100.0,
+    "overlay_tier": "ALPHA",
+    "boost_total": 0.24,
+    "timing_status": "HOLDING",
+    "position_pct": 5.0,
+    "full_result": {
+      "version": "Conference Overlay v1.0",
+      "ticker": "CABA",
+      "conference": "AAN",
+      "conference_tier": "TIER1",
+      "presentation_type": "oral",
+      "n_presentations": 2,
+      "conference_boost": {
+        "conf_weight": 0.14,
+        "pres_weight": 0.08,
+        "multi_bonus": 0.02,
+        "total_boost": 0.24
+      },
+      "gungnir_original": {
+        "probability": 0.9308,
+        "investment_score": 93.1
+      },
+      "boosted": {
+        "probability": 0.99,
+        "investment_score": 100.0,
+        "tier": "ALPHA",
+        "action": "STRONG_BUY"
+      },
+      "timing": {
+        "days_to_conference": 11,
+        "status": "HOLDING",
+        "note": "Position open. 11 days to conference. Exit D-1.",
+        "optimal_entry": "D-5",
+        "optimal_exit": "D-1",
+        "expected_median_return": 3.02,
+        "expected_win_rate": 0.667
+      },
+      "position_sizing": {
+        "position_pct": 5.0,
+        "mcap_tier": "small",
+        "cardinal_rule": "The runup IS the trade. Exit before conference day."
+      },
+      "signal_strength": {
+        "baseline_positive_rate": 0.767,
+        "conference_positive_rate": 0.902,
+        "lift_pp": 13.5,
+        "crash_rate_conference": 0.049,
+        "crash_rate_baseline": 0.085,
+        "p_value": "7.88e-21",
+        "n_conference_events": 285
+      },
+      "trade_notes": {
+        "drug": "Rese-cel (CAAR-T)",
+        "stage": "Phase 1/2",
+        "notes": "CAAR-T for autoimmune. AAN presentation"
+      }
+    }
+  },
+  {
+    "ticker": "ALXO",
+    "name": "ALXO - ESMO Breast P2 (Micro $150M)",
+    "gungnir_prob": 0.839,
+    "gungnir_tier": 2,
+    "base_score": 83.89999999999999,
+    "boosted_score": 100.0,
+    "overlay_tier": "ALPHA",
+    "boost_total": 0.22,
+    "timing_status": "ENTRY_ZONE",
+    "position_pct": 5.0,
+    "full_result": {
+      "version": "Conference Overlay v1.0",
+      "ticker": "ALXO",
+      "conference": "ESMO",
+      "conference_tier": "ELITE",
+      "presentation_type": "poster",
+      "n_presentations": 1,
+      "conference_boost": {
+        "conf_weight": 0.18,
+        "pres_weight": 0.04,
+        "multi_bonus": 0.0,
+        "total_boost": 0.22
+      },
+      "gungnir_original": {
+        "probability": 0.839,
+        "investment_score": 83.9
+      },
+      "boosted": {
+        "probability": 0.929,
+        "investment_score": 100.0,
+        "tier": "ALPHA",
+        "action": "STRONG_BUY"
+      },
+      "timing": {
+        "days_to_conference": 23,
+        "status": "ENTRY_ZONE",
+        "note": "ENTER NOW. 23 days to conference. Optimal window for micro-cap.",
+        "optimal_entry": "D-30",
+        "optimal_exit": "D-1",
+        "expected_median_return": 4.88,
+        "expected_win_rate": 0.585
+      },
+      "position_sizing": {
+        "position_pct": 5.0,
+        "mcap_tier": "micro",
+        "cardinal_rule": "The runup IS the trade. Exit before conference day."
+      },
+      "signal_strength": {
+        "baseline_positive_rate": 0.767,
+        "conference_positive_rate": 0.902,
+        "lift_pp": 13.5,
+        "crash_rate_conference": 0.049,
+        "crash_rate_baseline": 0.085,
+        "p_value": "7.88e-21",
+        "n_conference_events": 285
+      }
+    }
+  },
+  {
+    "ticker": "BCTX",
+    "name": "BCTX - AACR Poster x4 (Nano $30M)",
+    "gungnir_prob": 0.9842,
+    "gungnir_tier": 1,
+    "base_score": 98.42,
+    "boosted_score": 100.0,
+    "overlay_tier": "ALPHA",
+    "boost_total": 0.3,
+    "timing_status": "ENTRY_ZONE",
+    "position_pct": 3.0,
+    "full_result": {
+      "version": "Conference Overlay v1.0",
+      "ticker": "BCTX",
+      "conference": "AACR",
+      "conference_tier": "ELITE",
+      "presentation_type": "poster",
+      "n_presentations": 4,
+      "conference_boost": {
+        "conf_weight": 0.2,
+        "pres_weight": 0.04,
+        "multi_bonus": 0.06,
+        "total_boost": 0.3
+      },
+      "gungnir_original": {
+        "probability": 0.9842,
+        "investment_score": 98.4
+      },
+      "boosted": {
+        "probability": 0.99,
+        "investment_score": 100.0,
+        "tier": "ALPHA",
+        "action": "STRONG_BUY"
+      },
+      "timing": {
+        "days_to_conference": 9,
+        "status": "ENTRY_ZONE",
+        "note": "ENTER NOW. 9 days to conference. Optimal window for nano-cap.",
+        "optimal_entry": "D-30",
+        "optimal_exit": "D-1",
+        "expected_median_return": 4.88,
+        "expected_win_rate": 0.585
+      },
+      "position_sizing": {
+        "position_pct": 3.0,
+        "mcap_tier": "nano",
+        "cardinal_rule": "The runup IS the trade. Exit before conference day."
+      },
+      "signal_strength": {
+        "baseline_positive_rate": 0.767,
+        "conference_positive_rate": 0.902,
+        "lift_pp": 13.5,
+        "crash_rate_conference": 0.049,
+        "crash_rate_baseline": 0.085,
+        "p_value": "7.88e-21",
+        "n_conference_events": 285
+      },
+      "trade_notes": {
+        "drug": "Bria-IMT (Phase 3)",
+        "stage": "Phase 3",
+        "notes": "AACR + Nature Medicine feature. QoL data. FDA Fast Track. NANO"
+      }
+    }
+  },
+  {
+    "ticker": "PMN",
+    "name": "PMN - AACR Oral P1b (Nano $30M)",
+    "gungnir_prob": 0.9916,
+    "gungnir_tier": 1,
+    "base_score": 99.16,
+    "boosted_score": 100.0,
+    "overlay_tier": "ALPHA",
+    "boost_total": 0.28,
+    "timing_status": "ENTRY_ZONE",
+    "position_pct": 3.0,
+    "full_result": {
+      "version": "Conference Overlay v1.0",
+      "ticker": "PMN",
+      "conference": "AACR",
+      "conference_tier": "ELITE",
+      "presentation_type": "oral",
+      "n_presentations": 1,
+      "conference_boost": {
+        "conf_weight": 0.2,
+        "pres_weight": 0.08,
+        "multi_bonus": 0.0,
+        "total_boost": 0.28
+      },
+      "gungnir_original": {
+        "probability": 0.9916,
+        "investment_score": 99.2
+      },
+      "boosted": {
+        "probability": 0.99,
+        "investment_score": 100.0,
+        "tier": "ALPHA",
+        "action": "STRONG_BUY"
+      },
+      "timing": {
+        "days_to_conference": 9,
+        "status": "ENTRY_ZONE",
+        "note": "ENTER NOW. 9 days to conference. Optimal window for nano-cap.",
+        "optimal_entry": "D-30",
+        "optimal_exit": "D-1",
+        "expected_median_return": 4.88,
+        "expected_win_rate": 0.585
+      },
+      "position_sizing": {
+        "position_pct": 3.0,
+        "mcap_tier": "nano",
+        "cardinal_rule": "The runup IS the trade. Exit before conference day."
+      },
+      "signal_strength": {
+        "baseline_positive_rate": 0.767,
+        "conference_positive_rate": 0.902,
+        "lift_pp": 13.5,
+        "crash_rate_conference": 0.049,
+        "crash_rate_baseline": 0.085,
+        "p_value": "7.88e-21",
+        "n_conference_events": 285
+      }
+    }
+  }
+]

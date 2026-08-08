@@ -1,0 +1,66 @@
+CRITICAL FINDING: ODIN v14 TEST-SET LEAKAGE DISCOVERED
+
+Date: 2026-04-17
+Status: CONFIRMED, RECOMMEND IMMEDIATE ROLLBACK TO v13
+
+LEAKAGE SUMMARY
+===============
+ODIN v14 (reported HO AUC 0.9363, HO Brier 0.0895) contains direct test-set leakage in the kaizen pipeline. The feature selection algorithm uses holdout AUC to accept/reject candidate features during training, which violates ML best practices.
+
+LEAKAGE LOCATION
+================
+File: /mnt/9realms/odin_v14_kaizen.py
+Phase 2 (lines 399-406): C parameter sweep uses holdout AUC in decision logic
+Phase 3 (lines 450-456): Greedy feature selection uses holdout metrics in inner loop
+
+Code Pattern:
+  for C in c_values:
+    model.fit(X_train, y_train)
+    ho_auc = roc_auc_score(y_holdout, model.predict_proba(X_holdout)[:, 1])
+    if ho_auc > best_ho_auc:  # LEAKAGE: touching holdout in optimization loop
+      best_ho_auc = ho_auc
+      best_c = C
+
+INFLATION ESTIMATE
+==================
+Precedent: BIFROST v5.5 had identical leakage pattern
+  Reported HO AUC: 0.9487
+  Honest replication: ~0.8861 (626bp inflation)
+
+Expected ODIN v14 honest AUC: 0.88-0.90 (360-450bp inflation from 0.9363)
+Expected honest Brier: 0.12-0.14 (vs reported 0.0895)
+
+EVIDENCE
+========
+1. Code inspection: Confirmed holdout access in feature selection loop
+2. No validation set: Inner loop optimizes directly on holdout
+3. Inverted AUC pattern: WF AUC 0.9011 < HO AUC 0.9363 (typical sign of HO-optimization)
+4. No HO stability audit: Only train/val randomization tested (20/20 seeds)
+5. 4x less regularization: C=0.025→0.10 allows more complex features without HO validation
+
+IMPACT
+======
+- Real-world PDUFA approval prediction 350-450bp worse than advertised
+- Confidence intervals underestimated (tighter than true uncertainty)
+- BIFROST v4 runup timing calibrated against inflated v14 tiers
+- MCP deployment of odin_score tool propagates inflated confidence
+
+RECOMMENDATION
+==============
+IMMEDIATE: Rollback ODIN v14 in MCP to ODIN v13 (HO AUC 0.9315, verified with 20/20 stability audit)
+
+OR MEDIUM-TERM: Complete honest ODIN v14_honest replication with proper 3-way temporal split, then update MCP
+
+DO NOT: Continue deploying v14 without explicit caveat about AUC inflation risk
+
+FILES GENERATED
+===============
+/mnt/9realms/odin_v14_honest_ANALYSIS.md — detailed technical analysis
+/mnt/9realms/ODIN_v14_LEAKAGE_FINDING.txt — this summary
+
+NEXT STEPS
+==========
+1. Review finding with team
+2. Decide: rollback to v13 vs ship v14_honest vs ship v14 with caveat
+3. If rollback: update MCP docstring to reference v13, document v14 retirement reason
+4. If v14_honest: implement honest replication with 3-way split, run 20/20 stability, re-baseline BIFROST

@@ -1,0 +1,312 @@
+{
+  "version": "10.2",
+  "codename": "PHAR_POSTMORTEM",
+  "release_date": "2026-02-02",
+  "changelog": "Critical fixes from PHAR CRL near-miss: S22 pediatric PK risk, S12 cross-regulatory CMC, S6 hiring gradient, S21 sentiment cap, sNDA base penalties",
+  
+  "performance": {
+    "parent_version": "10.1",
+    "brier_score": "pending_backtest",
+    "notes": "Implement immediately - risk reduction priority over Brier optimization"
+  },
+
+  "base_parameters": {
+    "base_approval_rate": 0.867,
+    "nda_base_penalty": 0.0,
+    "snda_base_penalty": -0.03,
+    "snda_pediatric_base_penalty": -0.08
+  },
+
+  "designation_weights": {
+    "btd_weight": 0.12,
+    "orphan_weight": 0.10,
+    "priority_review_weight": 0.085,
+    "fast_track_weight": 0.03,
+    "accelerated_approval_weight": 0.05
+  },
+
+  "adcom_parameters": {
+    "adcom_high_threshold": 0.65,
+    "adcom_high_boost": 0.08,
+    "adcom_mid_threshold": 0.50,
+    "adcom_mid_penalty": -0.06,
+    "adcom_low_penalty": -0.19
+  },
+
+  "prior_crl_parameters": {
+    "prior_crl_penalty": -0.085,
+    "class1_resubmission_boost": 0.157,
+    "class2_resubmission_penalty": -0.05
+  },
+
+  "sponsor_experience": {
+    "experienced_sponsor_boost": 0.053,
+    "inexperienced_sponsor_penalty": -0.068,
+    "experienced_threshold": 5,
+    "inexperienced_threshold": 0
+  },
+
+  "manufacturing_risk": {
+    "manufacturing_risk_penalty": -0.12,
+    "form_483_penalty": -0.07,
+    "ema_cmc_flag_penalty": -0.10,
+    "cmc_extension_penalty": -0.08,
+    "analytical_method_flag_penalty": -0.06
+  },
+
+  "therapeutic_area_adjustments": {
+    "ta_adjustment_weight": 0.829,
+    "Pain Management": -0.30,
+    "Hematology": -0.224,
+    "Nephrology": -0.177,
+    "Ophthalmology": -0.25,
+    "CNS/Neurology": -0.098,
+    "Cardiovascular": -0.081,
+    "Metabolic/Endocrine": -0.067,
+    "Rare Disease": -0.043,
+    "Other": -0.019,
+    "Immunology": 0.016,
+    "Dermatology": 0.028,
+    "Oncology": 0.061,
+    "GI/Hepatology": 0.067,
+    "Respiratory": 0.09,
+    "Infectious Disease": 0.103,
+    "Vaccines": 0.133,
+    "Women's Health": 0.133
+  },
+
+  "tier_thresholds": {
+    "tier1_threshold": 0.858,
+    "tier2_threshold": 0.734,
+    "tier3_threshold": 0.578,
+    "tier4_threshold": 0.0
+  },
+
+  "signals": {
+    "S6_hiring": {
+      "name": "Pre-Launch Hiring Intelligence",
+      "version": "2.0",
+      "changelog": "PHAR fix: Void signal for sparse hiring",
+      "thresholds": {
+        "void_threshold": 3,
+        "neutral_threshold": 10,
+        "bullish_threshold": 10
+      },
+      "adjustments": {
+        "void_penalty": -0.05,
+        "neutral": 0.0,
+        "bullish_boost": 0.02
+      },
+      "notes": "<3 commercial hires = AVOID SIGNAL. Token hiring is worse than no data."
+    },
+
+    "S12_cmc_risk": {
+      "name": "CMC Risk Intelligence - Cross-Regulatory",
+      "version": "2.0",
+      "changelog": "PHAR fix: Now monitors EMA, not just FDA",
+      "sources": [
+        "FDA_Form_483",
+        "FDA_Warning_Letter",
+        "EMA_CHMP_Questions",
+        "EMA_CMC_Extension",
+        "Company_Press_Release_CMC",
+        "Import_Alert"
+      ],
+      "keywords": [
+        "CMC question",
+        "manufacturing extension", 
+        "analytical method",
+        "starting materials",
+        "batch testing",
+        "production batch",
+        "CHMP extension",
+        "quality issue",
+        "GMP deficiency"
+      ],
+      "adjustments": {
+        "fda_483_penalty": -0.07,
+        "ema_cmc_flag_penalty": -0.10,
+        "multiple_flags_penalty": -0.15,
+        "no_flags": 0.0
+      },
+      "notes": "EMA CMC delays are canary in coal mine. Treat as equivalent to FDA 483."
+    },
+
+    "S21_specialist_sentiment": {
+      "name": "Specialist Fund Composite Sentiment",
+      "version": "2.0",
+      "changelog": "PHAR fix: Cap when objective signals flash yellow",
+      "max_contribution": 0.03,
+      "capped_contribution": 0.02,
+      "cap_triggers": [
+        "S12_cmc_risk >= -0.05",
+        "P3_publication_volume <= -0.08",
+        "S6_hiring_void == True",
+        "S22_pediatric_pk_risk == True"
+      ],
+      "notes": "Prevent crowd optimism from overriding objective red flags. If any cap_trigger fires, max S21 = 0.02"
+    },
+
+    "S22_pediatric_pk_risk": {
+      "name": "Pediatric PK Bridging Risk",
+      "version": "1.0",
+      "changelog": "NEW - Created from PHAR CRL failure",
+      "trigger_conditions": {
+        "submission_type": ["sNDA_PEDIATRIC", "BLA_SUPPLEMENT_PEDIATRIC"],
+        "dosing_type": ["weight_based", "age_tiered"],
+        "pediatric_pk_published": false
+      },
+      "penalty": -0.10,
+      "notes": "If ALL conditions met: pediatric submission + weight-based dosing + no published PK study = HIGH RISK. FDA consistently requests additional PK data when extrapolating from adults."
+    },
+
+    "P3_publication_volume": {
+      "name": "Publication Volume Signal",
+      "version": "2.0",
+      "changelog": "PHAR fix: Additional penalty for unpublished pivotal data",
+      "thresholds": {
+        "very_low": 10,
+        "low": 25,
+        "adequate": 50
+      },
+      "adjustments": {
+        "very_low_penalty": -0.08,
+        "low_penalty": -0.04,
+        "adequate": 0.0,
+        "high_boost": 0.02
+      },
+      "unpublished_data_penalty": -0.05,
+      "notes": "If pivotal trial data only in press release (not peer-reviewed), add -0.05. PHAR had no published pediatric PK."
+    }
+  },
+
+  "social_signals": {
+    "S17_social_sentiment": {
+      "bullish_threshold": 80,
+      "bearish_threshold": 60,
+      "bullish_boost": 0.03,
+      "neutral": 0.0,
+      "bearish_penalty": -0.02
+    },
+    "S18_engagement_spike": {
+      "spike_threshold": 1.5,
+      "boost": 0.02,
+      "requires_bullish_sentiment": true
+    },
+    "S19_social_silence": {
+      "silence_threshold": 0.3,
+      "penalty": -0.03
+    },
+    "S20_smart_money_divergence": {
+      "galaxy_score_threshold": 40,
+      "divergence_penalty": -0.02
+    }
+  },
+
+  "trading_protocol": {
+    "version": "2.0_PHAR_POSTMORTEM",
+    "rules": {
+      "novel_nda": {
+        "exit_window": "T-5 to T-7",
+        "runner_position": "20%"
+      },
+      "snda_label_expansion": {
+        "exit_window": "T-7 to T-10",
+        "runner_position": "0%",
+        "notes": "EXIT 100% - pediatric/dosing risk too high for binary hold"
+      },
+      "snda_pediatric": {
+        "exit_window": "T-10",
+        "runner_position": "0%",
+        "avoid_if_no_pk_data": true,
+        "notes": "PHAR lesson: Pediatric extensions are NOT safe expansions"
+      },
+      "weekend_pdufa": {
+        "exit_day": "Thursday Close or Friday Open",
+        "notes": "No gap protection over weekend. CRL news drops Sunday, you're trapped."
+      },
+      "cmc_delay_mentioned": {
+        "action": "SELL_IMMEDIATELY",
+        "notes": "ANY CMC delay mention (FDA or EMA) = exit regardless of probability"
+      }
+    }
+  },
+
+  "avoid_signals": {
+    "description": "Hard avoid list - do not enter position if ANY of these fire",
+    "signals": [
+      {
+        "id": "AVOID_001",
+        "name": "EMA_CMC_Flag",
+        "condition": "ema_cmc_flag == True",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "AVOID_002", 
+        "name": "Hiring_Void",
+        "condition": "commercial_hires < 3 AND months_to_pdufa < 6",
+        "severity": "HIGH"
+      },
+      {
+        "id": "AVOID_003",
+        "name": "Pediatric_No_PK",
+        "condition": "submission_type == 'sNDA_PEDIATRIC' AND pediatric_pk_published == False",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "AVOID_004",
+        "name": "CMC_Extension_Any_Agency",
+        "condition": "cmc_extension_flag == True",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "AVOID_005",
+        "name": "Weekend_PDUFA_Low_Prob",
+        "condition": "pdufa_day IN ('Saturday', 'Sunday') AND odin_probability < 0.80",
+        "severity": "HIGH"
+      }
+    ]
+  },
+
+  "dataset_fields_required": {
+    "new_fields_v102": [
+      "submission_type",
+      "ema_cmc_flag",
+      "cmc_extension_flag",
+      "analytical_method_flag",
+      "pediatric_pk_published",
+      "dosing_type",
+      "commercial_hire_count",
+      "publication_count",
+      "pivotal_data_peer_reviewed",
+      "pdufa_day_of_week"
+    ],
+    "notes": "All new fields should default to NULL for historical records. Enrich prospectively."
+  },
+
+  "phar_crl_record": {
+    "event_id": "PHAR_2026_01_31_JOENJA_PED",
+    "ticker": "PHAR",
+    "company": "Pharming Group",
+    "asset": "Joenja (leniolisib)",
+    "indication": "APDS (ages 4-11)",
+    "therapeutic_area": "Immunology",
+    "catalyst_date": "2026-01-31",
+    "catalyst_type": "PDUFA",
+    "outcome": "CRL",
+    "submission_type": "sNDA_PEDIATRIC",
+    "btd": false,
+    "orphan": true,
+    "priority_review": true,
+    "fast_track": false,
+    "ema_cmc_flag": true,
+    "cmc_extension_flag": true,
+    "pediatric_pk_published": false,
+    "dosing_type": "weight_based",
+    "commercial_hire_count": 2,
+    "publication_count": 12,
+    "pivotal_data_peer_reviewed": false,
+    "crl_reasons": ["CLINICAL_PK_UNDEREXPOSURE", "CMC_ANALYTICAL_METHOD"],
+    "notes": "Index case for v10.2 fixes. EMA CMC concerns disclosed May 2024."
+  }
+}

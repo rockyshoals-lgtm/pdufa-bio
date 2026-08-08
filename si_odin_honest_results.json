@@ -1,0 +1,164 @@
+{
+  "model": "si_odin_honest_v18",
+  "generated_utc": "2026-04-20T21:19:53.225900Z",
+  "methodology": {
+    "train_end": "2022-12-31",
+    "val_range": [
+      "2023-01-01",
+      "2024-12-31"
+    ],
+    "test_start": "2025-01-01",
+    "C_grid": [
+      0.005,
+      0.01,
+      0.025,
+      0.05,
+      0.1,
+      0.25
+    ],
+    "val_gate": 0.002,
+    "max_greedy_rounds": 10,
+    "bootstrap_n": 2000,
+    "bootstrap_seed": 42,
+    "baseline_feature_engineering": "ported from odin_v14_kaizen.py (51 features)"
+  },
+  "data": {
+    "n_events": 2203,
+    "n_train": 1081,
+    "n_val": 764,
+    "n_test": 358,
+    "train_approval_rate": 0.6734505087881592,
+    "val_approval_rate": 0.6767015706806283,
+    "test_approval_rate": 0.7067039106145251,
+    "n_si_candidate_features": 23,
+    "n_odin_events_matched_with_si": 1857,
+    "si_coverage_pct": 84.29414434861552
+  },
+  "c_sweep": {
+    "0.005": {
+      "val_auc": 0.8643842160079561,
+      "test_auc": 0.9096555618294749
+    },
+    "0.01": {
+      "val_auc": 0.8649637037095044,
+      "test_auc": 0.9127423301336344
+    },
+    "0.025": {
+      "val_auc": 0.8672581617710398,
+      "test_auc": 0.9155655938264634
+    },
+    "0.05": {
+      "val_auc": 0.865707640623654,
+      "test_auc": 0.9151138716356108
+    },
+    "0.1": {
+      "val_auc": 0.8624969655204818,
+      "test_auc": 0.9154903067946547
+    },
+    "0.25": {
+      "val_auc": 0.858792942779505,
+      "test_auc": 0.9111236589497459
+    }
+  },
+  "best_C_on_val": 0.025,
+  "baseline": {
+    "val_auc": 0.8672581617710398,
+    "test_auc": 0.9155655938264634,
+    "test_auc_ci95": [
+      0.8807344547048211,
+      0.9475509517831523
+    ],
+    "test_brier": 0.10360813353988452,
+    "n_features": 51
+  },
+  "greedy_log": [
+    {
+      "round": 1,
+      "selected": "si_trend_monotonic_up",
+      "delta_val": 0.002537216422994648,
+      "new_val_auc": 0.8697953781940344,
+      "new_test_auc": 0.9162055335968379,
+      "top5": [
+        {
+          "feature": "si_trend_monotonic_up",
+          "delta_val": 0.002537216422994648,
+          "val_auc": 0.8697953781940344
+        },
+        {
+          "feature": "si_delta_1_2_short_pct",
+          "delta_val": 0.001511366572956696,
+          "val_auc": 0.8687695283439965
+        },
+        {
+          "feature": "si_t1_change_pct",
+          "delta_val": 0.001080666254238416,
+          "val_auc": 0.8683388280252782
+        },
+        {
+          "feature": "si_t1_log_short_qty",
+          "delta_val": 0.0004620239782613389,
+          "val_auc": 0.8677201857493011
+        },
+        {
+          "feature": "si_t1_log_short_qty_sq",
+          "delta_val": 0.0003054056805456007,
+          "val_auc": 0.8675635674515854
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "stopped": true,
+      "best_candidate": "si_delta_1_2_short_pct",
+      "delta_val": 0.0007674296588069396,
+      "top5": [
+        {
+          "feature": "si_delta_1_2_short_pct",
+          "delta_val": 0.0007674296588069396,
+          "val_auc": 0.8705628078528413
+        },
+        {
+          "feature": "si_t1_change_pct",
+          "delta_val": 0.0005716567866623778,
+          "val_auc": 0.8703670349806968
+        },
+        {
+          "feature": "si_t1_adv",
+          "delta_val": -3.1323659543058824e-05,
+          "val_auc": 0.8697640545344913
+        },
+        {
+          "feature": "si_trend_monotonic_down",
+          "delta_val": -6.264731908633969e-05,
+          "val_auc": 0.8697327308749481
+        },
+        {
+          "feature": "si_t1_short_qty",
+          "delta_val": -0.00012529463817256836,
+          "val_auc": 0.8696700835558618
+        }
+      ]
+    }
+  ],
+  "selected_si_features": [
+    "si_trend_monotonic_up"
+  ],
+  "final": {
+    "val_auc": 0.8697953781940344,
+    "test_auc": 0.9162055335968379,
+    "test_auc_ci95": [
+      0.880990882719187,
+      0.9479218635417076
+    ],
+    "test_brier": 0.10374958707152916,
+    "n_features": 52,
+    "lift_vs_baseline": {
+      "test_auc_delta": 0.0006399397703744647,
+      "lift_ci95": [
+        -0.002763476680799573,
+        0.004621890739914214
+      ],
+      "p_lift_gt_0": 0.62
+    }
+  }
+}

@@ -1,17 +1,24 @@
 # -*- coding: utf-8 -*-
-"""add_ticker_crosslinks.py -- make the ticker link bidirectional (SEO playbook B2 item 2).
+"""add_ticker_crosslinks.py -- give the 377 long-tail pages a path in from the hubs.
 
-Ticker pages link out to events, but events never linked back, so /ticker/* had almost no inbound
-equity (measured: homepage 1, /calendar 0, /decisions 0). /decisions rows are themselves <a> elements,
-so a link cannot be nested inside them -- instead this links from each individual event page, which is
-cleaner and creates one path per page across ~540 pages.
+The competitive teardown found the thing that actually decides this: Assyro, BiopharmaWatch and
+FDA Tracker keep their event data behind query parameters, so their whole catalyst dataset ranks on
+one URL. We have ~377 per-ticker, per-decision and per-catalyst pages they have no equivalent of.
 
-Turns the plain ticker text in the breadcrumb into an anchor:
-    Home > Decisions > OTLK 2026-07-24   ->   Home > Decisions > <a href="/ticker/OTLK">OTLK</a> 2026-07-24
+Except /calendar and /decisions linked to exactly ZERO of them. The army existed and had no roads to
+it. That is also the mechanical reason 421 URLs sit in "Discovered, currently not indexed": Google
+found them in the sitemap, but nothing on the site argues they matter, and a sitemap entry with no
+internal links is the weakest possible signal.
 
-Idempotent: skips a page that already links to its ticker hub.
+One structural constraint drove the design. Calendar and archive rows are themselves <a> elements,
+so a ticker link cannot go inside a row: nested anchors are invalid and browsers silently unnest
+them. So each hub gets a "Companies on this page" index underneath the list. That is valid, it is
+genuinely useful to a reader scanning for one name, and every entry is a real crawl path into a page
+that currently has none.
+
+    python add_ticker_crosslinks.py [--dry-run]
 """
-import glob, os, re, sys
+import argparse, glob, html, os, re, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -20,33 +27,76 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+B, E = "<!--TICKERIDX:BEGIN-->", "<!--TICKERIDX:END-->"
 
-targets = []
-targets += glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))
-targets += glob.glob(os.path.join(SITE, "adcomm", "*", "index.html"))
-targets += glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))
+# Hubs that list catalysts and should therefore route to the company pages.
+TARGETS = (["calendar/index.html", "decisions/index.html", "decisions/approvals/index.html",
+            "decisions/crl/index.html", "adcomm/index.html"]
+           + [os.path.relpath(p, SITE).replace("\\", "/")
+              for p in glob.glob(os.path.join(SITE, "calendar", "*", "*", "index.html"))])
 
-changed, skipped, no_hub = 0, 0, 0
-for p in targets:
-    base = os.path.basename(os.path.dirname(p))
-    m = re.match(r'^([A-Z]{1,6})(?:-\d{4}-\d{2}-\d{2})?$', base)
-    if not m:
-        continue
-    tk = m.group(1)
-    if not os.path.exists(os.path.join(SITE, "ticker", tk, "index.html")):
-        no_hub += 1
-        continue
-    h = open(p, encoding="utf-8", errors="replace").read()
-    if f'href="/ticker/{tk}"' in h:
-        skipped += 1
-        continue
-    # link the bare ticker inside the breadcrumb only (avoid touching body prose)
-    pat = re.compile(r'(<div class="bc">.*?&rsaquo;\s*)(' + tk + r')(\b)', re.S)
-    new, n = pat.subn(lambda mm: mm.group(1) + f'<a href="/ticker/{tk}">{tk}</a>' + mm.group(3), h, count=1)
-    if not n:
-        continue
-    open(p, "w", encoding="utf-8").write(new)
-    changed += 1
 
-print(f"ticker cross-links added: {changed} page(s) | already linked: {skipped} | no ticker hub: {no_hub}")
-print(f"scanned {len(targets)} event pages")
+def hubs_ticker(tk):
+    return os.path.isdir(os.path.join(SITE, "ticker", tk))
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+
+    total_links = pages = 0
+    for rel in TARGETS:
+        p = os.path.join(SITE, rel)
+        if not os.path.exists(p):
+            continue
+        doc = open(p, encoding="utf-8", errors="replace").read()
+
+        # Tickers this page already talks about, taken from the rows themselves so the index can
+        # never advertise a company the page does not actually list.
+        found = set()
+        for m in re.finditer(r'<div class="t">([A-Z]{1,6})\s*(?:&middot;|·|&#183;)', doc):
+            found.add(m.group(1))
+        for m in re.finditer(r'href="/(?:pdufa|fda-decision|adcomm)/([A-Z]{1,6})[-/"]', doc):
+            found.add(m.group(1))
+        live = sorted(t for t in found if hubs_ticker(t))
+        if not live:
+            continue
+
+        links = "".join(
+            f'<a href="/ticker/{t}" style="display:inline-block;padding:3px 8px;margin:2px;'
+            f'border:1px solid var(--line);border-radius:7px;font-size:12.5px;'
+            f'text-decoration:none" class="lit">{html.escape(t)}</a>' for t in live)
+
+        block = (
+            f'{B}<section style="margin:26px 0 8px;padding-top:14px;'
+            f'border-top:1px solid var(--line)">'
+            f'<h2 style="font-size:15px;margin:0 0 4px">Companies on this page</h2>'
+            f'<div style="font-size:12.5px;color:var(--mut2);line-height:1.6;margin:0 0 8px">'
+            f'Every company listed above, with its full catalyst history, past FDA decisions and '
+            f'measured run-up into each one.</div>'
+            f'<div>{links}</div></section>{E}')
+
+        if B in doc:
+            doc = doc.split(B, 1)[0] + block + doc.split(E, 1)[1]
+        else:
+            anchor = '<div class="legal"'
+            if anchor not in doc:
+                anchor = "<footer"
+            if anchor not in doc:
+                print(f"  skip {rel}: no insertion point")
+                continue
+            doc = doc.replace(anchor, block + anchor, 1)
+
+        if not a.dry_run:
+            open(p, "w", encoding="utf-8").write(doc)
+        pages += 1
+        total_links += len(live)
+        print(f"  {rel:<38} {len(live):>3} company link(s)")
+
+    print(f"\n{total_links} internal link(s) added across {pages} hub page(s)"
+          + (" [dry run]" if a.dry_run else ""))
+    print("Each one is a crawl path into a page that previously had none reachable from a hub.")
+
+
+if __name__ == "__main__":
+    main()

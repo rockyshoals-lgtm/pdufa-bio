@@ -1,0 +1,69 @@
+{
+  "artifacts": {
+    "ablations_csv": null,
+    "marginal_tests_csv": "..\\odin_runs\\v38.b\\marginal_tests.csv"
+  },
+  "baseline_config": {
+    "path": "..\\ODIN_v88_UNIFIED_CONFIG.json",
+    "sha256": "6259b26502eda1538e0a2fd28935e47660c1c4812e20c3768b99b3b4262b8086"
+  },
+  "dataset": {
+    "path": "..\\ODIN_ENRICHED_PDUFA_1349_v2.csv",
+    "sha256": "81cb4abcc22ca05443fd7115c00870db8a7132334a8d36ad6496c08de85c4279"
+  },
+  "run_hash": "44c72cc0441b48c7a1719e537fcaba2a10c53ba08c9b5b9101e9920aeff28c3d",
+  "settings": {
+    "fixed_threshold": null,
+    "max_prob": 0.95,
+    "min_prob": 0.05,
+    "precision_floor": 0.94,
+    "scorer": "v88_points",
+    "version": "v38.b"
+  },
+  "signal_cache": {
+    "budget_bytes": 705606451,
+    "budget_gb": 0.6571472166106105,
+    "entries": 4,
+    "policy": {
+      "budget_bytes": 705606451,
+      "budget_gb": 0.6571472166106105,
+      "mem": {
+        "available_gb": 5.8775634765625,
+        "source": "ctypes:GlobalMemoryStatusEx",
+        "total_gb": 15.103504180908203,
+        "used_percent": 0.61
+      },
+      "policy": {
+        "fixed_gb": 2.0,
+        "frac_available": 0.35,
+        "max_gb": 32.0,
+        "min_gb": 0.25,
+        "mode": "dynamic",
+        "pressure_hi": 0.85,
+        "pressure_lo": 0.65,
+        "pressure_scale_hi": 0.5,
+        "recompute_every_s": 1.0,
+        "reserve_gb": 4.0
+      }
+    },
+    "stats": {
+      "bytes_current": 43168,
+      "bytes_peak": 43168,
+      "evictions": 0,
+      "hits": 0,
+      "misses": 4,
+      "sets": 4
+    }
+  },
+  "signals_registered": [
+    "adcom_vote_curve",
+    "form_483_flag",
+    "publication_velocity",
+    "rolling_t1_reference_base_rate",
+    "trap_v2_stack4_inexp_non_orphan"
+  ],
+  "t_minus_1_bad_rows": 0,
+  "t_minus_1_ok_rate": 1.0,
+  "timestamp_utc": "2026-01-26T04:17:46.453215+00:00",
+  "version": "v38.b"
+}

@@ -1,0 +1,137 @@
+{
+  "version": "10.1",
+  "validated_date": "2026-01-31",
+  "validation_summary": {
+    "dataset_size": 1934,
+    "baseline_approval_rate": 0.8278,
+    "specialist_cohort_approval": 0.901,
+    "z_score": 7.24,
+    "p_value": 4.6e-13,
+    "brier_score_target": 0.085
+  },
+  "parameters": {
+    "base_approval_rate": 0.827,
+    "btd_weight": 0.12,
+    "orphan_weight": 0.10,
+    "priority_review_weight": 0.085,
+    "fast_track_weight": 0.03,
+    "accelerated_approval_weight": 0.05,
+    "adcom_high_threshold": 0.65,
+    "adcom_high_boost": 0.08,
+    "adcom_mid_threshold": 0.50,
+    "adcom_mid_penalty": -0.06,
+    "adcom_low_penalty": -0.19,
+    "prior_crl_penalty": -0.085,
+    "class1_resubmission_boost": 0.157,
+    "class2_resubmission_penalty": -0.05,
+    "experienced_sponsor_threshold": 5,
+    "experienced_sponsor_boost": 0.05,
+    "inexperienced_sponsor_penalty": -0.07,
+    "manufacturing_risk_penalty": -0.12,
+    "form_483_penalty": -0.07,
+    "ta_adjustment_weight": 0.83,
+    "specialist_composite_bonus": 0.03,
+    "specialist_composite_threshold": 2
+  },
+  "tier_thresholds": {
+    "tier1": 0.858,
+    "tier2": 0.734,
+    "tier3": 0.578
+  },
+  "tier_expected_performance": {
+    "tier1_approval_rate": 0.956,
+    "tier4_crl_rate": 0.857,
+    "crl_recall_at_85": 0.767
+  },
+  "therapeutic_area_adjustments": {
+    "Pain Management": -0.30,
+    "Ophthalmology": -0.25,
+    "Nephrology": -0.22,
+    "Hematology": -0.18,
+    "CNS/Neurology": -0.10,
+    "Cardiovascular": -0.08,
+    "Metabolic/Endocrine": -0.07,
+    "Other": -0.06,
+    "Rare Disease": -0.04,
+    "Immunology": 0.02,
+    "Dermatology": 0.03,
+    "Oncology": 0.06,
+    "GI/Hepatology": 0.07,
+    "Respiratory": 0.09,
+    "Infectious Disease": 0.10,
+    "Vaccines": 0.13,
+    "Women's Health": 0.13
+  },
+  "ta_risk_tiers": {
+    "HIGH_RISK": ["Pain Management", "Ophthalmology", "Nephrology", "Hematology"],
+    "MOD_RISK": ["CNS/Neurology", "Cardiovascular", "Metabolic/Endocrine", "Other", "Rare Disease"],
+    "LOW_RISK": ["Immunology", "Dermatology", "Oncology", "GI/Hepatology", "Respiratory", "Infectious Disease", "Vaccines", "Women's Health"]
+  },
+  "social_signal_thresholds": {
+    "s17_bullish_sentiment": 75,
+    "s17_bearish_sentiment": 40,
+    "s17_bullish_weight": 0.03,
+    "s17_bearish_weight": -0.02,
+    "s18_engagement_spike_ratio": 2.5,
+    "s18_engagement_spike_weight": 0.02,
+    "s19_silence_ratio": 0.3,
+    "s19_silence_weight": -0.02,
+    "s20_divergence_galaxy_threshold": 35,
+    "s20_divergence_weight": -0.02
+  },
+  "specialist_proxy_definition": {
+    "description": "Event matches specialist fund investment patterns",
+    "criteria": [
+      "btd == True",
+      "orphan == True", 
+      "therapeutic_area in ['Rare Disease', 'Oncology']",
+      "designation_stack_count >= 3"
+    ],
+    "composite_trigger": "2+ criteria must be met for S21 bonus"
+  },
+  "signal_registry": {
+    "S1": {"name": "BTD", "field": "btd", "weight": 0.12, "type": "boolean"},
+    "S2": {"name": "Orphan", "field": "orphan", "weight": 0.10, "type": "boolean"},
+    "S3": {"name": "Priority Review", "field": "priority_review", "weight": 0.085, "type": "boolean"},
+    "S4": {"name": "Fast Track", "field": "fast_track", "weight": 0.03, "type": "boolean"},
+    "S5": {"name": "Accelerated Approval", "field": "accelerated_approval", "weight": 0.05, "type": "boolean"},
+    "S6": {"name": "AdCom High", "condition": "adcom_vote_pct >= 0.65", "weight": 0.08, "type": "conditional"},
+    "S7": {"name": "AdCom Mid", "condition": "0.50 <= adcom_vote_pct < 0.65", "weight": -0.06, "type": "conditional"},
+    "S8": {"name": "AdCom Low", "condition": "adcom_vote_pct < 0.50", "weight": -0.19, "type": "conditional"},
+    "S9": {"name": "Prior CRL", "field": "prior_crl", "weight": -0.085, "type": "boolean"},
+    "S10": {"name": "Class 1 Resubmission", "condition": "prior_crl AND resubmission_class == 1", "weight": 0.157, "type": "conditional"},
+    "S11": {"name": "Class 2 Resubmission", "condition": "prior_crl AND resubmission_class == 2", "weight": -0.05, "type": "conditional"},
+    "S12": {"name": "Experienced Sponsor", "condition": "sponsor_prior_approvals >= 5", "weight": 0.05, "type": "conditional"},
+    "S13": {"name": "Inexperienced Sponsor", "condition": "sponsor_prior_approvals == 0", "weight": -0.07, "type": "conditional"},
+    "S14": {"name": "Manufacturing Risk", "field": "manufacturing_risk", "weight": -0.12, "type": "boolean"},
+    "S15": {"name": "Form 483 Issues", "field": "form_483_issues", "weight": -0.07, "type": "boolean"},
+    "S16": {"name": "Therapeutic Area", "field": "therapeutic_area", "weight": "lookup * 0.83", "type": "lookup"},
+    "S17": {"name": "Social Sentiment", "source": "lunarcrush", "weight": "±0.02-0.03", "type": "external"},
+    "S18": {"name": "Engagement Spike", "source": "lunarcrush", "weight": 0.02, "type": "external"},
+    "S19": {"name": "Social Silence", "source": "lunarcrush", "weight": -0.02, "type": "external"},
+    "S20": {"name": "Smart Money Divergence", "source": "lunarcrush", "weight": -0.02, "type": "external"},
+    "S21": {"name": "Specialist Composite", "condition": "specialist_count >= 2", "weight": 0.03, "type": "composite"}
+  },
+  "changelog": {
+    "v10.1": {
+      "date": "2026-01-31",
+      "changes": [
+        "BTD weight increased from 0.06 to 0.12 (validated: 96.3% approval)",
+        "Orphan weight increased from 0.04 to 0.10 (validated: 92.8% approval)",
+        "Ophthalmology penalty increased from -0.131 to -0.25 (30.4% CRL)",
+        "Pain Management penalty increased from -0.286 to -0.30 (29.5% CRL)",
+        "Added S21 Specialist Composite signal (+0.03)",
+        "Added S17-S20 LunarCrush social signals",
+        "Validation: p=4.6e-13 on 1,934 events"
+      ]
+    },
+    "v9.1": {
+      "date": "2026-01-20",
+      "changes": [
+        "Added therapeutic area difficulty adjustments",
+        "Optimized TA weight to 0.83",
+        "Discovered TIER_4 as high-precision CRL detector (85.7%)"
+      ]
+    }
+  }
+}

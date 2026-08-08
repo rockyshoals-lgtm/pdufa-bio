@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pdufa.bio — Biotech Catalyst Momentum Tracker</title>
+<meta name="description" content="Live momentum scores for upcoming biotech FDA catalysts (PDUFAs & AdComs) — price, options-implied move, IV rank, and approval odds in one board. Informational only, not investment advice.">
+<meta property="og:title" content="pdufa.bio — Catalyst Momentum"><meta property="og:type" content="website">
+<link rel="canonical" href="https://pdufa.bio/">
+<style>
+:root{--bg:#111827;--card:#1f2937;--bd:#374151;--tx:#e5e7eb;--mut:#9ca3af;--dim:#6b7280;--acc:#818cf8;}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;padding:20px 16px 60px;line-height:1.45}
+.wrap{max-width:1180px;margin:0 auto}
+header{text-align:center;margin-bottom:18px}
+h1{font-size:30px;font-weight:800;letter-spacing:-.5px}h1 b{color:var(--acc)}
+.tag{color:var(--mut);font-size:15px;margin-top:2px}
+.status{margin-top:10px;font-size:12.5px;color:var(--dim);display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
+.status b{color:#cbd5e1;font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;background:#facc15}.dot.ok{background:#34d399}.dot.err{background:#f87171}
+button{background:#13315c;border:1px solid #2a496f;color:#cfe2ff;border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer;font-weight:600}
+button:hover{background:#1a3f70}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0}
+input,select{background:#0c1526;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:8px 10px;font-size:13px}
+input:focus,select:focus{outline:none;border-color:var(--acc)}
+.chip{font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:9999px}
+.seg{display:flex;gap:4px}.seg button{padding:5px 9px;font-size:11.5px;background:#0c1526;border:1px solid var(--bd);color:var(--mut)}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#10132a}
+.grid{display:grid;grid-template-columns:1fr 2fr;gap:20px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px}
+.panel h2{font-size:19px;font-weight:700;margin-bottom:4px}
+.panel .sub{font-size:12.5px;color:var(--dim);margin-bottom:14px}
+.card{background:#243043;border:1px solid var(--bd);border-radius:10px;padding:12px;cursor:pointer;transition:border-color .15s,transform .15s;margin-bottom:12px}
+.card:hover{border-color:var(--acc);transform:translateY(-1px)}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start}
+.tk{font-weight:800;font-size:17px}
+.nm{font-size:11.5px;color:var(--mut);max-width:16rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.px{font-weight:700;font-size:16px;text-align:right}
+.pos{color:#34d399}.neg{color:#f87171}
+.barwrap{margin-top:10px}.barrow{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-bottom:3px}
+.barbg{background:var(--bd);height:7px;border-radius:9999px;overflow:hidden}.bar{height:100%;border-radius:9999px}
+.due{font-size:11px;color:#fbbf24;font-weight:600;margin-top:8px;text-align:right}
+.alert{border-left:4px solid #059669;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{border-color:#059669}50%{border-color:#34d399}}
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.show{display:flex}.mbg{position:fixed;inset:0;background:rgba(0,0,0,.72)}
+.mbox{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:12px;max-width:640px;width:100%;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.mcell{background:#243043;border:1px solid var(--bd);border-radius:8px;padding:12px}
+.drv{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--bd);font-size:13px}.drv span:first-child{color:var(--mut)}
+.skel{height:78px;background:linear-gradient(90deg,#243043,#2c3a52,#243043);background-size:200% 100%;animation:sh 1.2s infinite;border-radius:10px;margin-bottom:12px}
+@keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.empty{color:var(--dim);text-align:center;padding:24px}
+footer{margin-top:26px;border-top:1px solid var(--bd);padding-top:14px;color:var(--dim);font-size:11.5px;line-height:1.7;text-align:center}
+kbd{background:#0c1526;border:1px solid var(--bd);border-radius:4px;padding:0 5px;font-size:11px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"pdufa.bio Catalyst Momentum Tracker","url":"https://pdufa.bio/","description":"Momentum scores for upcoming biotech FDA catalysts."}
+</script></head>
+<body><div class="wrap">
+<header>
+  <h1>pdufa<b>.bio</b> — Catalyst Momentum</h1>
+  <div class="tag">Biotech FDA catalysts, scored on the "Anatomy of Alpha" framework</div>
+  <div class="status">
+    <span><span id="dot" class="dot"></span> <span id="conn">Loading…</span></span>
+    <span>·</span><span>Updated <b id="upd">—</b></span>
+    <span>·</span><span id="cnt">—</span>
+    <button onclick="App.refresh()">↻ Refresh</button>
+    <label style="display:flex;align-items:center;gap:5px;color:var(--dim)"><input type="checkbox" id="auto" style="padding:0"> auto 5m</label>
+  </div>
+</header>
+<div class="toolbar">
+  <input id="q" placeholder="search ticker / drug…" style="min-width:190px">
+  <select id="sort">
+    <option value="hype_score">Sort: Momentum score</option>
+    <option value="days">Sort: Soonest catalyst</option>
+    <option value="mom">Sort: 120d momentum</option>
+    <option value="off">Sort: Furthest below 52wk-hi</option>
+  </select>
+  <div class="seg" id="capf">
+    <button data-c="" class="on">All caps</button><button data-c="nano">nano</button><button data-c="micro">micro</button><button data-c="small">small</button><button data-c="mid">mid</button>
+  </div>
+  <div class="seg" id="evf">
+    <button data-e="" class="on">All events</button><button data-e="PDUFA">PDUFA</button><button data-e="AdCom">AdCom</button>
+  </div>
+  <label style="font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px">min score <input type="range" id="mins" min="0" max="100" value="0" style="width:90px"><span id="minsv">0</span></label>
+</div>
+<main class="grid">
+  <div><div class="panel" style="height:100%">
+    <h2>High-Score Alerts</h2><div class="sub">Momentum score ≥ <span id="thr">75</span></div>
+    <div id="alerts"></div></div></div>
+  <div><div class="panel">
+    <h2>Catalyst Watchlist</h2><div class="sub" id="wsub">Forward PDUFAs &amp; AdComs, ranked by momentum</div>
+    <div id="list"></div></div></div>
+</main>
+<div id="modal" class="modal"><div class="mbg" onclick="App.hide()"></div><div class="mbox" id="mbox"></div></div>
+<footer>
+  <b>Informational and educational only — not investment advice.</b> Owned and operated by Odin Catalyst LLC.
+  The momentum score blends approval odds (Hist LOA), 120-day price momentum, option-implied move &amp; IV rank, and proximity to the catalyst — it is <b>not a probability of approval</b>.
+  The runup is the trade; exit by T-1, never hold the binary. Verify every date &amp; price before acting.
+</footer></div>
+<script>window.__FALLBACK_DATA__=[
+ {
+  "ticker": "OTLK",
+  "name": "Outlook Therapeutics Inc.",
+  "price": 1.59,
+  "changesPercentage": -5.92,
+  "hype_score": 94,
+  "pdufa_date": "2026-07-29",
+  "marketCap": 254000000.0,
+  "cap": "micro",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "83/100",
+   "120-day momentum": "+279%",
+   "Below 52-wk high": "-53%",
+   "ATM IV (1yr rank)": "229% (r85)",
+   "Option-implied move": "\u00b164%",
+   "Days to catalyst": "29",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "NRXP",
+  "name": "NRX Pharmaceuticals Inc.",
+  "price": 4.09,
+  "changesPercentage": 2.25,
+  "hype_score": 92,
+  "pdufa_date": "2026-07-29",
+  "marketCap": 172000000.0,
+  "cap": "micro",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "+127%",
+   "Below 52-wk high": "-19%",
+   "ATM IV (1yr rank)": "157% (r70)",
+   "Option-implied move": "\u00b144%",
+   "Days to catalyst": "29",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "REPL",
+  "name": "Replimune Group Inc.",
+  "price": 11.07,
+  "changesPercentage": -1.16,
+  "hype_score": 85,
+  "pdufa_date": "2026-08-02",
+  "marketCap": 889000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+55%",
+   "Below 52-wk high": "-16%",
+   "ATM IV (1yr rank)": "112% (r76)",
+   "Option-implied move": "\u00b133%",
+   "Days to catalyst": "33",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "MRNA",
+  "name": "Moderna Inc.",
+  "price": 70.03,
+  "changesPercentage": 0.47,
+  "hype_score": 84,
+  "pdufa_date": "2026-08-05",
+  "marketCap": 27376000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "90/100",
+   "120-day momentum": "+32%",
+   "Below 52-wk high": "-4%",
+   "ATM IV (1yr rank)": "87% (r100)",
+   "Option-implied move": "\u00b127%",
+   "Days to catalyst": "36",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "VERA",
+  "name": "Vera Therapeutics Inc.",
+  "price": 42.91,
+  "changesPercentage": -0.56,
+  "hype_score": 79,
+  "pdufa_date": "2026-07-07",
+  "marketCap": 3103000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "88/100",
+   "120-day momentum": "+6%",
+   "Below 52-wk high": "-23%",
+   "ATM IV (1yr rank)": "165% (r100)",
+   "Option-implied move": "\u00b123%",
+   "Days to catalyst": "7",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "PTGX",
+  "name": "Protagonist Therapeutics Inc.",
+  "price": 122.58,
+  "changesPercentage": 0.78,
+  "hype_score": 77,
+  "pdufa_date": "2026-09-30",
+  "marketCap": 7784000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+30%",
+   "Below 52-wk high": "-3%",
+   "ATM IV (1yr rank)": "62% (r99)",
+   "Option-implied move": "\u00b131%",
+   "Days to catalyst": "92",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "RARE",
+  "name": "Ultragenyx Pharmaceutical Inc.",
+  "price": 33.39,
+  "changesPercentage": 8.83,
+  "hype_score": 76,
+  "pdufa_date": "2026-08-23",
+  "marketCap": 3038000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "88/100",
+   "120-day momentum": "+45%",
+   "Below 52-wk high": "-21%",
+   "ATM IV (1yr rank)": "52% (r70)",
+   "Option-implied move": "\u00b120%",
+   "Days to catalyst": "54",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ZYME",
+  "name": "Zymeworks Inc.",
+  "price": 26.14,
+  "changesPercentage": 8.46,
+  "hype_score": 74,
+  "pdufa_date": "2026-08-25",
+  "marketCap": 1762000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+12%",
+   "Below 52-wk high": "-12%",
+   "ATM IV (1yr rank)": "90% (r60)",
+   "Option-implied move": "\u00b135%",
+   "Days to catalyst": "56",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "CAPR",
+  "name": "Capricor Therapeutics Inc.",
+  "price": 24.08,
+  "changesPercentage": 1.18,
+  "hype_score": 73,
+  "pdufa_date": "2026-07-29",
+  "marketCap": 1374000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "95/100",
+   "120-day momentum": "-10%",
+   "Below 52-wk high": "-40%",
+   "ATM IV (1yr rank)": "100% (r60)",
+   "Option-implied move": "\u00b128%",
+   "Days to catalyst": "29",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "BIIB",
+  "name": "Biogen Inc.",
+  "price": 216.06,
+  "changesPercentage": -0.26,
+  "hype_score": 73,
+  "pdufa_date": "2026-08-24",
+  "marketCap": 31813000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "+15%",
+   "Below 52-wk high": "-2%",
+   "ATM IV (1yr rank)": "42% (r84)",
+   "Option-implied move": "\u00b116%",
+   "Days to catalyst": "55",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ABEO",
+  "name": "Abeona Therapeutics Inc.",
+  "price": 6.18,
+  "changesPercentage": 9.19,
+  "hype_score": 73,
+  "pdufa_date": "2026-09-19",
+  "marketCap": 323000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "88/100",
+   "120-day momentum": "+22%",
+   "Below 52-wk high": "-18%",
+   "ATM IV (1yr rank)": "96% (r61)",
+   "Option-implied move": "\u00b145%",
+   "Days to catalyst": "81",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "CELC",
+  "name": "Celcuity Inc.",
+  "price": 104.62,
+  "changesPercentage": 2.05,
+  "hype_score": 72,
+  "pdufa_date": "2026-07-17",
+  "marketCap": 5025000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-3%",
+   "Below 52-wk high": "-31%",
+   "ATM IV (1yr rank)": "84% (r74)",
+   "Option-implied move": "\u00b118%",
+   "Days to catalyst": "17",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "LNTH",
+  "name": "Lantheus Holdings Inc.",
+  "price": 110.94,
+  "changesPercentage": 1.24,
+  "hype_score": 72,
+  "pdufa_date": "2026-08-13",
+  "marketCap": 7128000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "+45%",
+   "Below 52-wk high": "-1%",
+   "ATM IV (1yr rank)": "46% (r42)",
+   "Option-implied move": "\u00b116%",
+   "Days to catalyst": "44",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "MNKD",
+  "name": "MannKind Corporation",
+  "price": 4.26,
+  "changesPercentage": 0.47,
+  "hype_score": 71,
+  "pdufa_date": "2026-07-26",
+  "marketCap": 1282000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "60/100",
+   "120-day momentum": "+40%",
+   "Below 52-wk high": "-35%",
+   "ATM IV (1yr rank)": "73% (r65)",
+   "Option-implied move": "\u00b119%",
+   "Days to catalyst": "26",
+   "Watch tier": "D",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "JAZZ",
+  "name": "Jazz Pharmaceuticals plc",
+  "price": 240.97,
+  "changesPercentage": 1.37,
+  "hype_score": 71,
+  "pdufa_date": "2026-08-25",
+  "marketCap": 14820000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+26%",
+   "Below 52-wk high": "-1%",
+   "ATM IV (1yr rank)": "35% (r67)",
+   "Option-implied move": "\u00b114%",
+   "Days to catalyst": "56",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ROIV",
+  "name": "Roivant Sciences Ltd.",
+  "price": 35.39,
+  "changesPercentage": 1.9,
+  "hype_score": 70,
+  "pdufa_date": "2026-09-30",
+  "marketCap": 24858000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+26%",
+   "Below 52-wk high": "-1%",
+   "ATM IV (1yr rank)": "45% (r71)",
+   "Option-implied move": "\u00b123%",
+   "Days to catalyst": "92",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "IRD",
+  "name": "Opus Genetics Inc.",
+  "price": 4.11,
+  "changesPercentage": 1.23,
+  "hype_score": 70,
+  "pdufa_date": "2026-10-17",
+  "marketCap": 334000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "83/100",
+   "120-day momentum": "-5%",
+   "Below 52-wk high": "-29%",
+   "ATM IV (1yr rank)": "270% (r100)",
+   "Option-implied move": "\u00b1148%",
+   "Days to catalyst": "109",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "VTRS",
+  "name": "Viatris Inc.",
+  "price": 15.88,
+  "changesPercentage": -2.16,
+  "hype_score": 69,
+  "pdufa_date": "2026-07-30",
+  "marketCap": 18912000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "88/100",
+   "120-day momentum": "+3%",
+   "Below 52-wk high": "-9%",
+   "ATM IV (1yr rank)": "32% (r63)",
+   "Option-implied move": "\u00b19%",
+   "Days to catalyst": "30",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "MIRM",
+  "name": "Mirum Pharmaceuticals Inc.",
+  "price": 117.07,
+  "changesPercentage": -4.82,
+  "hype_score": 65,
+  "pdufa_date": "2026-09-26",
+  "marketCap": 7478000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "67/100",
+   "120-day momentum": "+30%",
+   "Below 52-wk high": "-7%",
+   "ATM IV (1yr rank)": "43% (r73)",
+   "Option-implied move": "\u00b121%",
+   "Days to catalyst": "88",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ANAB",
+  "name": "AnaptysBio Inc.",
+  "price": 67.5,
+  "changesPercentage": 2.32,
+  "hype_score": 65,
+  "pdufa_date": "2026-12-12",
+  "marketCap": 1910000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+23%",
+   "Below 52-wk high": "-8%",
+   "ATM IV (1yr rank)": "90% (r72)",
+   "Option-implied move": "\u00b161%",
+   "Days to catalyst": "165",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "BMY",
+  "name": "Bristol-Myers Squibb Company",
+  "price": 57.62,
+  "changesPercentage": -1.61,
+  "hype_score": 63,
+  "pdufa_date": "2026-08-17",
+  "marketCap": 119013000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-8%",
+   "Below 52-wk high": "-8%",
+   "ATM IV (1yr rank)": "27% (r42)",
+   "Option-implied move": "\u00b110%",
+   "Days to catalyst": "48",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "MRK",
+  "name": "Merck & Company Inc.",
+  "price": 128.5,
+  "changesPercentage": -0.68,
+  "hype_score": 62,
+  "pdufa_date": "2026-08-17",
+  "marketCap": 319719000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+7%",
+   "Below 52-wk high": "-1%",
+   "ATM IV (1yr rank)": "26% (r22)",
+   "Option-implied move": "\u00b19%",
+   "Days to catalyst": "48",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ALPMY",
+  "name": "Astellas Pharma Inc. ADR",
+  "price": null,
+  "changesPercentage": null,
+  "hype_score": 62,
+  "pdufa_date": "2026-08-17",
+  "marketCap": 23880000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+0%",
+   "Below 52-wk high": "n/a",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "48",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "GILD",
+  "name": "Gilead Sciences Inc.",
+  "price": 126.34,
+  "changesPercentage": 0.01,
+  "hype_score": 62,
+  "pdufa_date": "2026-08-27",
+  "marketCap": 156314000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "90/100",
+   "120-day momentum": "-15%",
+   "Below 52-wk high": "-19%",
+   "ATM IV (1yr rank)": "26% (r48)",
+   "Option-implied move": "\u00b111%",
+   "Days to catalyst": "58",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "TAK",
+  "name": "Takeda Pharmaceutical Company Limited American",
+  "price": 16.03,
+  "changesPercentage": 0.31,
+  "hype_score": 62,
+  "pdufa_date": "2026-09-30",
+  "marketCap": 50335000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "-13%",
+   "Below 52-wk high": "-15%",
+   "ATM IV (1yr rank)": "29% (r78)",
+   "Option-implied move": "\u00b115%",
+   "Days to catalyst": "92",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "AZN",
+  "name": "AstraZeneca PLC",
+  "price": 189.62,
+  "changesPercentage": -0.7,
+  "hype_score": 62,
+  "pdufa_date": "2026-09-30",
+  "marketCap": 295300000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-7%",
+   "Below 52-wk high": "-11%",
+   "ATM IV (1yr rank)": "25% (r73)",
+   "Option-implied move": "\u00b113%",
+   "Days to catalyst": "92",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "EXEL",
+  "name": "Exelixis Inc.",
+  "price": 54.41,
+  "changesPercentage": 0.24,
+  "hype_score": 62,
+  "pdufa_date": "2026-12-03",
+  "marketCap": 13737000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+33%",
+   "Below 52-wk high": "-3%",
+   "ATM IV (1yr rank)": "36% (r64)",
+   "Option-implied move": "\u00b123%",
+   "Days to catalyst": "156",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "NVO",
+  "name": "Novo Nordisk A/S",
+  "price": 47.94,
+  "changesPercentage": -0.83,
+  "hype_score": 61,
+  "pdufa_date": "2026-09-30",
+  "marketCap": 214216000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "+27%",
+   "Below 52-wk high": "-33%",
+   "ATM IV (1yr rank)": "37% (r23)",
+   "Option-implied move": "\u00b119%",
+   "Days to catalyst": "92",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ONC",
+  "name": "BeOne Medicines Ltd.",
+  "price": 284.97,
+  "changesPercentage": -1.73,
+  "hype_score": 60,
+  "pdufa_date": "2026-08-25",
+  "marketCap": 29932000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-9%",
+   "Below 52-wk high": "-26%",
+   "ATM IV (1yr rank)": "41% (r25)",
+   "Option-implied move": "\u00b116%",
+   "Days to catalyst": "56",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "TLX",
+  "name": "Telix Pharmaceuticals Limited",
+  "price": null,
+  "changesPercentage": null,
+  "hype_score": 59,
+  "pdufa_date": "2026-09-11",
+  "marketCap": 3611000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+0%",
+   "Below 52-wk high": "n/a",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "73",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "RPRX",
+  "name": "Royalty Pharma plc",
+  "price": 56.07,
+  "changesPercentage": -1.79,
+  "hype_score": 59,
+  "pdufa_date": "2026-09-18",
+  "marketCap": 25058000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+19%",
+   "Below 52-wk high": "-2%",
+   "ATM IV (1yr rank)": "26% (r15)",
+   "Option-implied move": "\u00b112%",
+   "Days to catalyst": "80",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "IONS",
+  "name": "Ionis Pharmaceuticals Inc.",
+  "price": 79.29,
+  "changesPercentage": -1.74,
+  "hype_score": 59,
+  "pdufa_date": "2026-09-22",
+  "marketCap": 13376000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "-3%",
+   "Below 52-wk high": "-9%",
+   "ATM IV (1yr rank)": "40% (r31)",
+   "Option-implied move": "\u00b119%",
+   "Days to catalyst": "84",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "GH",
+  "name": "Guardant Health Inc.",
+  "price": 150.03,
+  "changesPercentage": -2.41,
+  "hype_score": 59,
+  "pdufa_date": "2026-12-31",
+  "marketCap": 20379000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+63%",
+   "Below 52-wk high": "-2%",
+   "ATM IV (1yr rank)": "53% (r13)",
+   "Option-implied move": "\u00b137%",
+   "Days to catalyst": "184",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "PFE",
+  "name": "Pfizer Inc.",
+  "price": 24.08,
+  "changesPercentage": -1.19,
+  "hype_score": 58,
+  "pdufa_date": "2026-08-17",
+  "marketCap": 138780000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-10%",
+   "Below 52-wk high": "-15%",
+   "ATM IV (1yr rank)": "19% (r21)",
+   "Option-implied move": "\u00b17%",
+   "Days to catalyst": "48",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "BFRI",
+  "name": "Biofrontera Inc.",
+  "price": 0.95,
+  "changesPercentage": -6.86,
+  "hype_score": 58,
+  "pdufa_date": "2026-09-28",
+  "marketCap": 12000000.0,
+  "cap": "nano",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+3%",
+   "Below 52-wk high": "-20%",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "90",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "MLYS",
+  "name": "Mineralys Therapeutics Inc.",
+  "price": 26.98,
+  "changesPercentage": 0.37,
+  "hype_score": 57,
+  "pdufa_date": "2026-12-22",
+  "marketCap": 2363000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-8%",
+   "Below 52-wk high": "-43%",
+   "ATM IV (1yr rank)": "94% (r60)",
+   "Option-implied move": "\u00b165%",
+   "Days to catalyst": "175",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "LLY",
+  "name": "Eli Lilly and Company",
+  "price": 1199.43,
+  "changesPercentage": -2.48,
+  "hype_score": 57,
+  "pdufa_date": "2026-12-31",
+  "marketCap": 1097068000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "84/100",
+   "120-day momentum": "+18%",
+   "Below 52-wk high": "-3%",
+   "ATM IV (1yr rank)": "36% (r77)",
+   "Option-implied move": "\u00b126%",
+   "Days to catalyst": "184",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "NUVL",
+  "name": "Nuvalent Inc.",
+  "price": 123.5,
+  "changesPercentage": -0.01,
+  "hype_score": 56,
+  "pdufa_date": "2026-09-18",
+  "marketCap": 9773000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+22%",
+   "Below 52-wk high": "-0%",
+   "ATM IV (1yr rank)": "9% (r6)",
+   "Option-implied move": "\u00b14%",
+   "Days to catalyst": "80",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "RHHBY",
+  "name": "Roche Holding AG ADR",
+  "price": null,
+  "changesPercentage": null,
+  "hype_score": 56,
+  "pdufa_date": "2026-10-09",
+  "marketCap": 329612000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+0%",
+   "Below 52-wk high": "n/a",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "101",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "SMMT",
+  "name": "Summit Therapeutics Inc.",
+  "price": 14.57,
+  "changesPercentage": 1.75,
+  "hype_score": 56,
+  "pdufa_date": "2026-11-14",
+  "marketCap": 11222000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-10%",
+   "Below 52-wk high": "-53%",
+   "ATM IV (1yr rank)": "63% (r27)",
+   "Option-implied move": "\u00b139%",
+   "Days to catalyst": "137",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "NVS",
+  "name": "Novartis AG",
+  "price": 156.72,
+  "changesPercentage": -0.55,
+  "hype_score": 56,
+  "pdufa_date": "2026-12-31",
+  "marketCap": 299952000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-4%",
+   "Below 52-wk high": "-6%",
+   "ATM IV (1yr rank)": "24% (r95)",
+   "Option-implied move": "\u00b117%",
+   "Days to catalyst": "184",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "REGN",
+  "name": "Regeneron Pharmaceuticals Inc.",
+  "price": 623.54,
+  "changesPercentage": -1.31,
+  "hype_score": 55,
+  "pdufa_date": "2026-08-31",
+  "marketCap": 66396000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "95/100",
+   "120-day momentum": "-21%",
+   "Below 52-wk high": "-24%",
+   "ATM IV (1yr rank)": "28% (r5)",
+   "Option-implied move": "\u00b112%",
+   "Days to catalyst": "62",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "SVRA",
+  "name": "Savara Inc.",
+  "price": 6.16,
+  "changesPercentage": 2.16,
+  "hype_score": 55,
+  "pdufa_date": "2026-11-22",
+  "marketCap": 1225000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+2%",
+   "Below 52-wk high": "-12%",
+   "ATM IV (1yr rank)": "121% (r12)",
+   "Option-implied move": "\u00b176%",
+   "Days to catalyst": "145",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "PHAR",
+  "name": "Pharming Group N.V.",
+  "price": null,
+  "changesPercentage": null,
+  "hype_score": 54,
+  "pdufa_date": "2026-10-24",
+  "marketCap": 942000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+0%",
+   "Below 52-wk high": "n/a",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "116",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "INO",
+  "name": "Inovio Pharmaceuticals Inc.",
+  "price": 1.1,
+  "changesPercentage": -1.79,
+  "hype_score": 54,
+  "pdufa_date": "2026-10-30",
+  "marketCap": 93000000.0,
+  "cap": "micro",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "-37%",
+   "Below 52-wk high": "-63%",
+   "ATM IV (1yr rank)": "216% (r28)",
+   "Option-implied move": "\u00b1125%",
+   "Days to catalyst": "122",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "INCY",
+  "name": "Incyte Corporation",
+  "price": 113.36,
+  "changesPercentage": -1.13,
+  "hype_score": 53,
+  "pdufa_date": "2026-09-26",
+  "marketCap": 22881000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "67/100",
+   "120-day momentum": "+13%",
+   "Below 52-wk high": "-2%",
+   "ATM IV (1yr rank)": "32% (r14)",
+   "Option-implied move": "\u00b116%",
+   "Days to catalyst": "88",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "BBIO",
+  "name": "BridgeBio Pharma Inc.",
+  "price": 74.48,
+  "changesPercentage": 3.43,
+  "hype_score": 53,
+  "pdufa_date": "2026-11-27",
+  "marketCap": 14112000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "95/100",
+   "120-day momentum": "+14%",
+   "Below 52-wk high": "-12%",
+   "ATM IV (1yr rank)": "41% (r8)",
+   "Option-implied move": "\u00b126%",
+   "Days to catalyst": "150",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "VRTX",
+  "name": "Vertex Pharmaceuticals Incorporated",
+  "price": 496.73,
+  "changesPercentage": -0.58,
+  "hype_score": 53,
+  "pdufa_date": "2026-11-30",
+  "marketCap": 126299000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "88/100",
+   "120-day momentum": "+2%",
+   "Below 52-wk high": "-2%",
+   "ATM IV (1yr rank)": "25% (r45)",
+   "Option-implied move": "\u00b116%",
+   "Days to catalyst": "153",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "ABBV",
+  "name": "AbbVie Inc.",
+  "price": 251.64,
+  "changesPercentage": -1.05,
+  "hype_score": 53,
+  "pdufa_date": "2026-12-31",
+  "marketCap": 451370000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "+7%",
+   "Below 52-wk high": "-2%",
+   "ATM IV (1yr rank)": "27% (r65)",
+   "Option-implied move": "\u00b119%",
+   "Days to catalyst": "184",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "VNDA",
+  "name": "Vanda Pharmaceuticals Inc.",
+  "price": 6.12,
+  "changesPercentage": -0.33,
+  "hype_score": 52,
+  "pdufa_date": "2026-12-12",
+  "marketCap": 369000000.0,
+  "cap": "small",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-25%",
+   "Below 52-wk high": "-38%",
+   "ATM IV (1yr rank)": "64% (r37)",
+   "Option-implied move": "\u00b143%",
+   "Days to catalyst": "165",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "BTAI",
+  "name": "BioXcel Therapeutics Inc.",
+  "price": 1.41,
+  "changesPercentage": 0.71,
+  "hype_score": 49,
+  "pdufa_date": "2026-11-14",
+  "marketCap": 40000000.0,
+  "cap": "nano",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "-14%",
+   "Below 52-wk high": "-82%",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "137",
+   "Watch tier": "A",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "BAYRY",
+  "name": "Bayer AG ADR",
+  "price": null,
+  "changesPercentage": null,
+  "hype_score": 49,
+  "pdufa_date": "2026-11-30",
+  "marketCap": 52904000000.0,
+  "cap": "large",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "+0%",
+   "Below 52-wk high": "n/a",
+   "ATM IV (1yr rank)": "n/a",
+   "Option-implied move": "n/a",
+   "Days to catalyst": "153",
+   "Watch tier": "C",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "PRAX",
+  "name": "Praxis Precision Medicines Inc.",
+  "price": 334.79,
+  "changesPercentage": -4.5,
+  "hype_score": 48,
+  "pdufa_date": "2026-12-27",
+  "marketCap": 9683000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "+1%",
+   "Below 52-wk high": "-9%",
+   "ATM IV (1yr rank)": "62% (r11)",
+   "Option-implied move": "\u00b131%",
+   "Days to catalyst": "180",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "COGT",
+  "name": "Cogent Biosciences Inc.",
+  "price": 38.7,
+  "changesPercentage": -0.1,
+  "hype_score": 48,
+  "pdufa_date": "2026-12-30",
+  "marketCap": 6623000000.0,
+  "cap": "mid",
+  "etype": "PDUFA",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "87/100",
+   "120-day momentum": "-0%",
+   "Below 52-wk high": "-12%",
+   "ATM IV (1yr rank)": "62% (r3)",
+   "Option-implied move": "\u00b144%",
+   "Days to catalyst": "183",
+   "Watch tier": "B",
+   "Event": "PDUFA"
+  }
+ },
+ {
+  "ticker": "GSK",
+  "name": "GSK plc American Depositary Shares (Each repre",
+  "price": 52.42,
+  "changesPercentage": -0.74,
+  "hype_score": 46,
+  "pdufa_date": "2026-12-31",
+  "marketCap": 105615000000.0,
+  "cap": "large",
+  "etype": "AdCom",
+  "breakdown": {
+   "Approval odds (Hist LOA)": "89/100",
+   "120-day momentum": "-10%",
+   "Below 52-wk high": "-14%",
+   "ATM IV (1yr rank)": "26% (r32)",
+   "Option-implied move": "\u00b118%",
+   "Days to catalyst": "184",
+   "Watch tier": "B",
+   "Event": "AdCom"
+  }
+ }
+];</script>
+<script>
+const App={
+  THRESHOLD:75, ENDPOINTS:['/api/data','./data.json'], data:[], timer:null,
+  prefs:JSON.parse(localStorage.getItem('pb_prefs')||'{}'),
+  async init(){
+    this.restore();
+    document.getElementById('q').addEventListener('input',()=>this.render());
+    document.getElementById('sort').addEventListener('change',()=>{this.save();this.render();});
+    document.getElementById('mins').addEventListener('input',e=>{document.getElementById('minsv').textContent=e.target.value;this.save();this.render();});
+    this.seg('capf');this.seg('evf');
+    document.getElementById('auto').addEventListener('change',e=>{this.prefs.auto=e.target.checked;this.save();this.autoloop();});
+    document.getElementById('thr').textContent=this.THRESHOLD;
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')this.hide();});
+    await this.load(); this.autoloop();
+  },
+  seg(id){document.querySelectorAll('#'+id+' button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    this.prefs[id]=b.dataset.c??b.dataset.e;this.save();this.render();});},
+  restore(){const p=this.prefs;
+    if(p.q)document.getElementById('q').value=p.q; if(p.sort)document.getElementById('sort').value=p.sort;
+    if(p.mins){document.getElementById('mins').value=p.mins;document.getElementById('minsv').textContent=p.mins;}
+    if(p.auto)document.getElementById('auto').checked=true;
+    ['capf','evf'].forEach(id=>{const v=p[id];if(v!=null)document.querySelectorAll('#'+id+' button').forEach(b=>{const bv=b.dataset.c??b.dataset.e;b.classList.toggle('on',bv===v);});});},
+  save(){this.prefs.q=document.getElementById('q').value;this.prefs.sort=document.getElementById('sort').value;this.prefs.mins=document.getElementById('mins').value;localStorage.setItem('pb_prefs',JSON.stringify(this.prefs));},
+  skeleton(){document.getElementById('list').innerHTML=Array(6).fill('<div class="skel"></div>').join('');},
+  async load(){
+    this.skeleton(); document.getElementById('conn').textContent='Loading…'; document.getElementById('dot').className='dot';
+    for(const url of this.ENDPOINTS){
+      try{const r=await fetch(url,{cache:'no-store'}); if(!r.ok)continue; const j=await r.json();
+        this.data=(Array.isArray(j)?j:(j.results||j.data||[])).map(this.normalize).filter(x=>x);
+        if(this.data.length){document.getElementById('dot').className='dot ok';document.getElementById('conn').textContent='Live ('+url.replace('./','')+')';
+          document.getElementById('upd').textContent=new Date().toLocaleTimeString();this.render();return;}
+      }catch(e){}
+    }
+    if(window.__FALLBACK_DATA__&&window.__FALLBACK_DATA__.length){
+      this.data=window.__FALLBACK_DATA__.map(this.normalize).filter(x=>x);
+      document.getElementById('dot').className='dot';document.getElementById('conn').textContent='Snapshot (offline)';
+      document.getElementById('upd').textContent='static 2026-06-30';this.render();return;
+    }
+    document.getElementById('dot').className='dot err';document.getElementById('conn').textContent='No feed';
+    document.getElementById('list').innerHTML='<div class="empty">Could not load the data feed.<br>Wire the site to <kbd>/api/data</kbd> or drop a <kbd>data.json</kbd> alongside this page.</div>';
+  },
+  refresh(){this.load();},
+  autoloop(){clearInterval(this.timer);if(document.getElementById('auto').checked)this.timer=setInterval(()=>this.load(),300000);},
+  normalize(d){
+    if(!d||!d.ticker)return null;
+    const days=d.pdufa_date?Math.ceil((new Date(d.pdufa_date)-new Date())/864e5):null;
+    let hs=d.hype_score;
+    if(hs==null){ // fallback compute if feed lacks a score
+      const loa=+(d.loa||d.hist_loa||60), mom=Math.max(0,Math.min(100,50+(+(d.chg120||0))/2)), prox=days!=null?Math.max(0,Math.min(100,100-(days-30)/1.6)):50;
+      hs=Math.round(.35*loa+.35*mom+.30*prox);
+    }
+    return {ticker:d.ticker,name:(d.name||d.drug||d.ticker),price:d.price??null,chg:d.changesPercentage??d.chg1d??null,
+      hype_score:Math.round(hs),pdufa_date:d.pdufa_date,marketCap:d.marketCap??(d.mktcap_m?d.mktcap_m*1e6:null),
+      cap:d.cap||'',etype:d.etype||'PDUFA',days,breakdown:d.breakdown||{}};
+  },
+  filtered(){
+    const q=document.getElementById('q').value.toLowerCase(), cap=this.prefs.capf||'', ev=this.prefs.evf||'', mn=+document.getElementById('mins').value;
+    let a=this.data.filter(s=>s.hype_score>=mn&&(!cap||s.cap===cap)&&(!ev||s.etype===ev)&&(!q||(s.ticker+' '+s.name).toLowerCase().includes(q)));
+    const k=document.getElementById('sort').value;
+    a.sort((x,y)=> k==='days'?(x.days??1e9)-(y.days??1e9): k==='mom'?(y.breakdown['120-day momentum']||'').localeCompare(x.breakdown['120-day momentum']||''): k==='off'? this.offv(x)-this.offv(y): y.hype_score-x.hype_score);
+    return a;
+  },
+  offv(s){const v=s.breakdown['Below 52-wk high'];return v?parseFloat(v):0;},
+  col(sc){return sc>75?['#f87171','neg']:sc>60?['#facc15','']:['#34d399','pos'];},
+  capChip(c){const m={nano:'#f59e0b',micro:'#60a5fa',small:'#a78bfa',mid:'#9ca3af',large:'#6b7280'};const x=m[c]||'#6b7280';return c?'<span class="chip" style="background:'+x+'22;color:'+x+';border:1px solid '+x+'55">'+c.toUpperCase()+'</span>':'';},
+  render(){
+    const rows=this.filtered(), list=document.getElementById('list'), al=document.getElementById('alerts');
+    document.getElementById('cnt').innerHTML='<b>'+this.data.length+'</b> catalysts';
+    document.getElementById('wsub').textContent=rows.length+' shown · ranked by momentum';
+    list.innerHTML=rows.length?'':'<div class="empty">No catalysts match your filters.</div>';
+    rows.forEach(s=>list.appendChild(this.cardEl(s,false)));
+    const alerts=this.data.filter(s=>s.hype_score>=this.THRESHOLD).sort((a,b)=>b.hype_score-a.hype_score);
+    al.innerHTML=alerts.length?'':'<div class="empty">No scores ≥ '+this.THRESHOLD+' right now.</div>';
+    alerts.forEach(s=>al.appendChild(this.cardEl(s,true)));
+  },
+  cardEl(s,alert){
+    const [hex,chc]=this.col(s.hype_score), el=document.createElement('div');
+    el.className='card'+(alert?' alert':''); el.onclick=()=>this.show(s);
+    const chg=s.chg==null?'—':(s.chg>=0?'+':'')+s.chg.toFixed(2)+'%';
+    if(alert){el.innerHTML='<div class="top"><span class="tk pos">'+s.ticker+'</span>'+this.capChip(s.cap)+'</div><div class="nm">'+s.name+'</div><div class="px" style="text-align:left;margin-top:4px">Score '+s.hype_score+'</div><div class="due">'+s.etype+' in '+(s.days??'?')+'d</div>';return el;}
+    el.innerHTML='<div class="top"><div><span class="tk">'+s.ticker+'</span> '+this.capChip(s.cap)+' <span class="chip" style="background:#37415199;color:#cbd5e1">'+s.etype+'</span><div class="nm">'+s.name+'</div></div>'+
+      '<div><div class="px">'+(s.price!=null?'$'+s.price.toFixed(2):'—')+'</div><div class="'+(s.chg>=0?'pos':'neg')+'" style="text-align:right;font-size:12.5px">'+chg+'</div></div></div>'+
+      '<div class="barwrap"><div class="barrow"><span>Momentum Score</span><span class="'+chc+'" style="font-weight:700">'+s.hype_score+'</span></div><div class="barbg"><div class="bar" style="width:'+s.hype_score+'%;background:'+hex+'"></div></div></div>'+
+      '<div class="due">'+s.etype+' in '+(s.days??'?')+' days · '+(s.pdufa_date||'')+'</div>';
+    return el;
+  },
+  show(s){const [hex,chc]=this.col(s.hype_score);
+    const drv=Object.entries(s.breakdown).map(([k,v])=>'<div class="drv"><span>'+k+'</span><span style="color:#fff;font-weight:600">'+v+'</span></div>').join('')||'<div class="empty">No driver detail.</div>';
+    const chg=s.chg==null?'—':(s.chg>=0?'+':'')+s.chg.toFixed(2)+'%';
+    document.getElementById('mbox').innerHTML='<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px"><div><h2 style="font-size:22px">'+s.ticker+' '+this.capChip(s.cap)+'</h2><div class="nm" style="max-width:none">'+s.name+'</div><div style="margin-top:4px">'+(s.price!=null?'$'+s.price.toFixed(2):'—')+' <span class="'+(s.chg>=0?'pos':'neg')+'">('+chg+')</span></div></div><button onclick="App.hide()" style="background:none;border:none;color:var(--mut);font-size:26px">×</button></div>'+
+      '<div class="mgrid"><div class="mcell"><div style="color:var(--mut);font-size:12px">Momentum Score</div><div style="font-size:26px;font-weight:800;color:'+hex+'">'+s.hype_score+'</div><div style="font-size:12px;color:var(--mut)">'+s.etype+': '+(s.pdufa_date||'—')+' ('+(s.days??'?')+'d)</div></div>'+
+      '<div class="mcell"><div style="color:var(--mut);font-size:12px">Market Cap</div><div style="font-size:20px;font-weight:800">'+(s.marketCap?'$'+(s.marketCap/1e9).toFixed(2)+'B':'—')+'</div></div></div>'+
+      '<div class="mcell"><div style="font-weight:700;margin-bottom:6px">Score Drivers (real signals)</div>'+drv+'</div>'+
+      '<div style="font-size:11px;color:var(--dim);margin-top:12px">Informational only — not investment advice. The runup is the trade; exit by T-1.</div>';
+    document.getElementById('modal').classList.add('show');
+  },
+  hide(){document.getElementById('modal').classList.remove('show');}
+};
+document.addEventListener('DOMContentLoaded',()=>App.init());
+</script></body></html>

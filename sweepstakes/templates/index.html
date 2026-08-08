@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SweepRunner</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--surface:#12121a;--card:#1a1a26;--border:#2a2a3a;
+  --accent:#f0c040;--accent2:#e05a20;--green:#3de08a;--red:#e04040;
+  --blue:#4090f0;--purple:#9060f0;--muted:#5a5a7a;--text:#e8e8f0;--subtext:#9090b0;
+  --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;--display:'Bebas Neue',sans-serif;
+  --r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;overflow-x:hidden;}
+.shell{display:flex;height:100vh;overflow:hidden;}
+.sidebar{width:230px;min-width:230px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;}
+.logo{padding:24px 20px 18px;border-bottom:1px solid var(--border);}
+.logo h1{font-family:var(--display);font-size:26px;letter-spacing:2px;color:var(--accent);line-height:1.1;}
+.logo span{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1px;}
+.nav{flex:1;padding:12px 0;overflow-y:auto;}
+.nav-section{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1px;padding:12px 20px 4px;text-transform:uppercase;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;color:var(--subtext);font-size:13px;font-weight:500;border-left:2px solid transparent;transition:all .15s;position:relative;}
+.nav-item:hover{color:var(--text);background:rgba(255,255,255,.03);}
+.nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(240,192,64,.06);}
+.nav-item .icon{font-size:15px;width:18px;text-align:center;}
+.nav-badge{position:absolute;right:14px;background:var(--accent);color:#000;font-family:var(--mono);font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;}
+.nav-badge.red{background:var(--red);color:#fff;}
+.nav-badge.green{background:var(--green);color:#000;}
+.sidebar-stats{padding:12px 16px;border-top:1px solid var(--border);}
+.ss{font-family:var(--mono);font-size:10px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:5px;}
+.ss span{color:var(--text);}
+.main{flex:1;overflow-y:auto;display:flex;flex-direction:column;}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.topbar-title{font-family:var(--display);font-size:20px;letter-spacing:1px;}
+.topbar-actions{display:flex;gap:8px;align-items:center;}
+.btn{padding:7px 14px;border:none;border-radius:var(--r);font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer;transition:all .15s;letter-spacing:.3px;}
+.btn-primary{background:var(--accent);color:#000;}.btn-primary:hover{background:#ffd860;}
+.btn-danger{background:var(--red);color:#fff;}.btn-danger:hover{opacity:.85;}
+.btn-ghost{background:var(--border);color:var(--text);}.btn-ghost:hover{background:#3a3a50;}
+.btn-run{background:var(--green);color:#000;font-weight:600;}.btn-run:hover{background:#5af0a0;}
+.btn-run:disabled{background:var(--muted);color:var(--bg);cursor:not-allowed;}
+.btn-blue{background:var(--blue);color:#fff;}.btn-blue:hover{opacity:.85;}
+.btn-purple{background:var(--purple);color:#fff;}.btn-purple:hover{opacity:.85;}
+.btn-sm{padding:5px 10px;font-size:11px;}
+.content{padding:20px 24px;flex:1;}
+.panel{display:none;}.panel.active{display:block;}
+
+/* Opportunity banner */
+.opp-banner{background:linear-gradient(135deg,rgba(240,192,64,.15),rgba(224,90,32,.1));border:1px solid rgba(240,192,64,.4);border-radius:var(--r);padding:12px 16px;margin-bottom:18px;display:none;align-items:center;gap:12px;}
+.opp-banner.show{display:flex;}
+.opp-star{font-size:24px;}
+.opp-text{flex:1;}
+.opp-text strong{color:var(--accent);font-size:14px;}
+.opp-text p{font-size:12px;color:var(--subtext);margin-top:2px;}
+
+/* Stats row */
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px;}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;}
+.stat-label{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.stat-value{font-family:var(--display);font-size:32px;color:var(--text);line-height:1;}
+.stat-value.green{color:var(--green);}.stat-value.yellow{color:var(--accent);}.stat-value.blue{color:var(--blue);}.stat-value.red{color:var(--red);}
+
+/* Table */
+.table-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:18px;}
+.table-header{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.table-title{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+.sort-bar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.sort-btn{padding:4px 10px;background:var(--border);border:none;border-radius:3px;font-family:var(--mono);font-size:9px;color:var(--muted);cursor:pointer;letter-spacing:.5px;text-transform:uppercase;}
+.sort-btn.active{background:rgba(240,192,64,.2);color:var(--accent);}
+table{width:100%;border-collapse:collapse;}
+th{font-family:var(--mono);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:9px 14px;text-align:left;border-bottom:1px solid var(--border);background:var(--surface);}
+td{padding:10px 14px;font-size:12px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,.02);}
+.badge{display:inline-block;padding:2px 7px;border-radius:3px;font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.3px;}
+.bg{background:rgba(61,224,138,.15);color:var(--green);}
+.by{background:rgba(240,192,64,.15);color:var(--accent);}
+.br{background:rgba(224,64,64,.15);color:var(--red);}
+.bb{background:rgba(64,144,240,.15);color:var(--blue);}
+.bp{background:rgba(144,96,240,.15);color:var(--purple);}
+.bm{background:rgba(90,90,122,.25);color:var(--muted);}
+.bo{background:rgba(224,90,32,.15);color:var(--accent2);}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:5px;}
+.dot-g{background:var(--green);box-shadow:0 0 5px var(--green);}
+.dot-r{background:var(--red);}
+.dot-y{background:var(--accent);}
+.dot-m{background:var(--muted);}
+.actions{display:flex;gap:5px;}
+.empty{text-align:center;padding:50px 20px;color:var(--muted);font-size:12px;}
+.empty-icon{font-size:36px;margin-bottom:10px;opacity:.35;}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:8px;width:500px;max-width:95vw;padding:26px;max-height:90vh;overflow-y:auto;}
+.modal h2{font-family:var(--display);font-size:22px;color:var(--text);margin-bottom:18px;letter-spacing:1px;}
+.form-group{margin-bottom:12px;}
+.form-label{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px;display:block;}
+.form-input{width:100%;padding:8px 11px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .15s;}
+.form-input:focus{border-color:var(--accent);}
+select.form-input{cursor:pointer;}
+textarea.form-input{resize:vertical;min-height:60px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px;}
+
+/* Running bar */
+.running-bar{background:rgba(61,224,138,.1);border:1px solid rgba(61,224,138,.3);border-radius:var(--r);padding:9px 14px;margin-bottom:14px;font-family:var(--mono);font-size:11px;color:var(--green);display:none;align-items:center;gap:10px;}
+.running-bar.show{display:flex;}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
+
+/* Verify banner */
+.verify-banner{display:none;position:fixed;bottom:20px;right:20px;background:var(--card);border:2px solid var(--accent);border-radius:8px;padding:16px 20px;box-shadow:0 4px 20px rgba(0,0,0,.5);z-index:1000;min-width:380px;}
+.verify-banner.show{display:block;}
+.verify-banner-title{font-family:var(--display);font-size:18px;color:var(--accent);letter-spacing:1px;margin-bottom:4px;}
+.verify-banner-name{font-size:13px;color:var(--text);margin-bottom:14px;font-weight:500;}
+.verify-banner-msg{font-size:11px;color:var(--subtext);margin-bottom:12px;}
+.verify-actions{display:flex;gap:8px;}
+.verify-actions .btn{flex:1;}
+
+/* Lottery panel */
+.lottery-tabs{display:flex;gap:2px;margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:0;}
+.ltab{padding:8px 20px;font-family:var(--mono);font-size:11px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;letter-spacing:.5px;text-transform:uppercase;}
+.ltab.active{color:var(--accent);border-bottom-color:var(--accent);}
+.lottery-pane{display:none;}.lottery-pane.active{display:block;}
+
+/* EV bar */
+.ev-bar-wrap{width:80px;height:8px;background:var(--border);border-radius:4px;overflow:hidden;}
+.ev-bar{height:100%;border-radius:4px;background:var(--green);}
+.ev-bar.yellow{background:var(--accent);}
+.ev-bar.red{background:var(--red);}
+
+/* Discover card */
+.disc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.disc-info{}
+.disc-name{font-weight:500;font-size:13px;margin-bottom:3px;}
+.disc-meta{font-family:var(--mono);font-size:10px;color:var(--subtext);}
+.disc-prize{font-family:var(--display);font-size:28px;color:var(--accent);min-width:80px;text-align:right;}
+.disc-actions{display:flex;flex-direction:column;gap:5px;min-width:80px;}
+
+/* Win card */
+.win-card{background:var(--card);border:1px solid rgba(240,192,64,.3);border-radius:var(--r);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.win-value{font-family:var(--display);font-size:30px;color:var(--accent);}
+
+/* Log */
+.log-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;height:340px;overflow-y:auto;font-family:var(--mono);font-size:11px;}
+.log-line{display:flex;gap:10px;margin-bottom:3px;}
+.log-time{color:var(--muted);min-width:52px;}
+
+/* Alert chips */
+.alert-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.chip{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;}
+.chip.warn{border-color:rgba(224,64,64,.4);background:rgba(224,64,64,.08);color:var(--red);}
+.chip.info{border-color:rgba(64,144,240,.4);background:rgba(64,144,240,.08);color:var(--blue);}
+
+.scrollbar::-webkit-scrollbar{width:4px;}
+.scrollbar::-webkit-scrollbar-track{background:transparent;}
+.scrollbar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="logo">
+    <h1>SWEEP<br>RUNNER</h1>
+    <span>ALL-IN-ONE SUITE</span>
+  </div>
+  <div class="nav scrollbar">
+    <div class="nav-section">Main</div>
+    <div class="nav-item active" onclick="show('dashboard')"><span class="icon">⬡</span>Dashboard</div>
+    <div class="nav-section">Sweepstakes</div>
+    <div class="nav-item" onclick="show('sweepstakes')"><span class="icon">☰</span>My List</div>
+    <div class="nav-item" onclick="show('discover');loadDiscovered()"><span class="icon">🔍</span>Discover<span class="nav-badge" id="nb-disc" style="display:none">0</span></div>
+    <div class="nav-item" onclick="show('history')"><span class="icon">◷</span>History</div>
+    <div class="nav-item" onclick="show('wins')"><span class="icon">★</span>Wins</div>
+    <div class="nav-section">Lottery</div>
+    <div class="nav-item" onclick="show('lottery');loadLottery()"><span class="icon">🎰</span>Oregon Lottery<span class="nav-badge green" id="nb-lottery" style="display:none">0⭐</span></div>
+    <div class="nav-section">System</div>
+    <div class="nav-item" onclick="show('tools')"><span class="icon">⚙</span>Tools</div>
+    <div class="nav-item" onclick="show('log')"><span class="icon">≡</span>Live Log</div>
+  </div>
+  <div class="sidebar-stats">
+    <div class="ss">Active <span id="ss-active">—</span></div>
+    <div class="ss">Today  <span id="ss-today">—</span></div>
+    <div class="ss">Total  <span id="ss-total">—</span></div>
+    <div class="ss">Wins   <span id="ss-wins">—</span></div>
+  </div>
+</nav>
+
+<!-- Main -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title" id="topbar-title">DASHBOARD</div>
+    <div class="topbar-actions">
+      <div id="status-ind" style="font-family:var(--mono);font-size:10px;color:var(--muted)">IDLE</div>
+      <button class="btn btn-run" id="run-btn" onclick="runAll()">▶ RUN DUE</button>
+      <button class="btn btn-primary" onclick="openAddModal()">+ Add</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="running-bar" id="running-bar"><div class="pulse"></div><span id="running-label">Running...</span></div>
+
+    <!-- DASHBOARD -->
+    <div class="panel active" id="panel-dashboard">
+      <div class="opp-banner" id="opp-banner">
+        <div class="opp-star" id="opp-star">🌟</div>
+        <div class="opp-text">
+          <strong id="opp-title">Opportunity Alert</strong>
+          <p id="opp-desc"></p>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="show('lottery');loadLottery()">View →</button>
+      </div>
+      <div class="alert-chips" id="alert-chips"></div>
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-label">Active</div><div class="stat-value blue" id="d-active">—</div></div>
+        <div class="stat-card"><div class="stat-label">Today</div><div class="stat-value yellow" id="d-today">—</div></div>
+        <div class="stat-card"><div class="stat-label">Total Entries</div><div class="stat-value" id="d-total">—</div></div>
+        <div class="stat-card"><div class="stat-label">Wins</div><div class="stat-value green" id="d-wins">—</div></div>
+        <div class="stat-card"><div class="stat-label">Win Value</div><div class="stat-value yellow" id="d-winval">—</div></div>
+      </div>
+      <div class="table-card">
+        <div class="table-header"><span class="table-title">Due Now</span></div>
+        <table><thead><tr><th>Name</th><th>Prize</th><th>Freq</th><th>Entries</th><th>Action</th></tr></thead>
+        <tbody id="due-tbody"><tr><td colspan="5"><div class="empty">Loading...</div></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- MY LIST -->
+    <div class="panel" id="panel-sweepstakes">
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-title">All Sweepstakes</span>
+          <div class="sort-bar">
+            <span style="font-family:var(--mono);font-size:9px;color:var(--muted)">SORT:</span>
+            <button class="sort-btn active" onclick="loadSweepstakes('created','active',this)">RECENT</button>
+            <button class="sort-btn" onclick="loadSweepstakes('prize','active',this)">PRIZE ↓</button>
+            <button class="sort-btn" onclick="loadSweepstakes('ends','active',this)">ENDS SOON</button>
+            <button class="sort-btn" onclick="loadSweepstakes('name','active',this)">A–Z</button>
+            <span style="font-family:var(--mono);font-size:9px;color:var(--muted);margin-left:6px">SHOW:</span>
+            <button class="sort-btn active" onclick="loadSweepstakes(currentSort,'active',null,this)">ACTIVE</button>
+            <button class="sort-btn" onclick="loadSweepstakes(currentSort,'all',null,this)">ALL</button>
+            <button class="sort-btn" onclick="runValidation()">🔗 VALIDATE</button>
+          </div>
+        </div>
+        <table><thead><tr><th></th><th>Name</th><th>Prize</th><th>Freq</th><th>Category</th><th>Ends</th><th>Next Entry</th><th>Count</th><th>Actions</th></tr></thead>
+        <tbody id="all-tbody"><tr><td colspan="9"><div class="empty">Loading...</div></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- DISCOVER -->
+    <div class="panel" id="panel-discover">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div>
+          <div style="font-family:var(--display);font-size:20px;letter-spacing:1px">DISCOVER</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px">Auto-found sweepstakes pending your review</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="sort-btn active" onclick="loadDiscovered('prize',this)" style="padding:6px 12px">PRIZE ↓</button>
+          <button class="sort-btn" onclick="loadDiscovered('recent',this)" style="padding:6px 12px">RECENT</button>
+          <button class="btn btn-ghost btn-sm" onclick="cleanupDiscovered()">🧹 Clean Up</button>
+          <button class="btn btn-purple btn-sm" onclick="runDiscovery()">🔍 Find New</button>
+        </div>
+      </div>
+      <div id="disc-container"><div class="empty"><div class="empty-icon">🔍</div>Run discovery to find new sweepstakes.</div></div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="panel" id="panel-history">
+      <div class="table-card">
+        <div class="table-header"><span class="table-title">Entry History</span></div>
+        <table><thead><tr><th>Date/Time</th><th>Sweepstakes</th><th>Frequency</th><th>Status</th></tr></thead>
+        <tbody id="hist-tbody"><tr><td colspan="4"><div class="empty">Loading...</div></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- WINS -->
+    <div class="panel" id="panel-wins">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div style="font-family:var(--display);font-size:20px;letter-spacing:1px">WIN LEDGER</div>
+        <button class="btn btn-primary btn-sm" onclick="openWinModal()">+ Log Win</button>
+      </div>
+      <div id="wins-container"><div class="empty"><div class="empty-icon">★</div>No wins yet. Good luck!</div></div>
+    </div>
+
+    <!-- LOTTERY -->
+    <div class="panel" id="panel-lottery">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+        <div style="font-family:var(--display);font-size:20px;letter-spacing:1px">OREGON LOTTERY</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <span id="lottery-updated" style="font-family:var(--mono);font-size:10px;color:var(--muted)"></span>
+          <button class="btn btn-primary btn-sm" onclick="refreshLottery()">↻ Refresh</button>
+        </div>
+      </div>
+      <div class="lottery-tabs">
+        <div class="ltab active" onclick="lotteryTab('scratch',this)">SCRATCH TICKETS</div>
+        <div class="ltab" onclick="lotteryTab('draw',this)">DRAW GAMES</div>
+        <div class="ltab" onclick="lotteryTab('opps',this)">TOP OPPORTUNITIES</div>
+      </div>
+      <div class="lottery-pane active" id="lp-scratch">
+        <div class="table-card">
+          <div class="table-header">
+            <span class="table-title">Scratch Tickets — Best ROI</span>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted)">Sorted by EV per dollar spent</span>
+          </div>
+          <table><thead><tr><th></th><th>Game</th><th>Price</th><th>Top Prize</th><th>Remaining</th><th>EV/Dollar</th><th>ROI Visual</th></tr></thead>
+          <tbody id="scratch-tbody"><tr><td colspan="7"><div class="empty">Loading lottery data...</div></td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="lottery-pane" id="lp-draw">
+        <div class="table-card">
+          <div class="table-header"><span class="table-title">Draw Games</span></div>
+          <table><thead><tr><th></th><th>Game</th><th>Jackpot</th><th>Ticket Price</th><th>Odds (1 in)</th><th>EV/Dollar</th><th>After Tax EV</th></tr></thead>
+          <tbody id="draw-tbody"><tr><td colspan="7"><div class="empty">Loading...</div></td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="lottery-pane" id="lp-opps">
+        <div id="opps-container"><div class="empty"><div class="empty-icon">🎰</div>No opportunities loaded yet.</div></div>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="panel" id="panel-tools">
+      <div style="font-family:var(--display);font-size:20px;letter-spacing:1px;margin-bottom:18px">TOOLS</div>
+
+      <!-- Quick Fill -->
+      <div class="table-card" style="padding:18px 20px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">⚡ Quick Fill (ad-hoc URL)</div>
+        <div style="font-size:12px;color:var(--subtext);margin-bottom:14px">Paste any sweepstakes URL — SweepRunner will open it and auto-fill, without adding to your saved list. Use this for one-offs you don't want to track.</div>
+        <div style="display:flex;gap:8px">
+          <input class="form-input" id="quick-url" placeholder="https://..." style="flex:1">
+          <button class="btn btn-run" onclick="quickFill()">▶ Fill Now</button>
+        </div>
+      </div>
+
+      <!-- Bookmarklet -->
+      <div class="table-card" style="padding:18px 20px;margin-top:14px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">📌 Browser Bookmarklet</div>
+        <div style="font-size:12px;color:var(--subtext);margin-bottom:14px">For when you've already opened a sweepstakes page in your browser manually. Drag the button below to your bookmarks bar, then click it on any sweepstakes form to instantly fill it. Works in any browser. Requires SweepRunner to be running.</div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <a id="bookmarklet-link" href="#" style="display:inline-block;background:var(--accent);color:#000;padding:10px 18px;border-radius:var(--r);text-decoration:none;font-weight:600;font-size:14px;cursor:grab" title="Drag me to your bookmarks bar">📋 SweepFill</a>
+          <div style="font-size:11px;color:var(--muted);font-family:var(--mono)">← drag to bookmarks bar</div>
+        </div>
+        <div style="background:var(--surface);border-radius:var(--r);padding:10px 12px;margin-top:14px;font-family:var(--mono);font-size:10px;color:var(--subtext);line-height:1.6">
+          <strong style="color:var(--accent)">How it works:</strong><br>
+          1. Drag the SweepFill button above to your browser's bookmarks bar<br>
+          2. Browse to any sweepstakes page in any browser<br>
+          3. Click the SweepFill bookmark — form fills instantly<br>
+          4. Solve any CAPTCHA and submit manually
+        </div>
+      </div>
+
+      <!-- Profile preview -->
+      <div class="table-card" style="padding:18px 20px;margin-top:14px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">📇 Your Profile</div>
+        <div id="profile-display" style="font-family:var(--mono);font-size:11px;color:var(--subtext);line-height:1.8">Loading...</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:10px;font-family:var(--mono)">Edit in config.json to change. Restart SweepRunner after edits.</div>
+      </div>
+    </div>
+
+    <!-- LOG -->
+    <div class="panel" id="panel-log">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase">Live Automation Log</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" onclick="runDiscovery()">🔍 Discover</button>
+          <button class="btn btn-ghost btn-sm" onclick="runValidation()">🔗 Validate</button>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('log-box').innerHTML=''">Clear</button>
+        </div>
+      </div>
+      <div class="log-box scrollbar" id="log-box"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Add/Edit Modal -->
+<div class="modal-overlay" id="modal-add">
+  <div class="modal">
+    <h2 id="modal-title">ADD SWEEPSTAKES</h2>
+    <input type="hidden" id="edit-id">
+    <div class="form-group"><label class="form-label">Name</label><input class="form-input" id="f-name" placeholder="Sweepstakes name"></div>
+    <div class="form-group"><label class="form-label">URL</label><input class="form-input" id="f-url" placeholder="https://..."></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Frequency</label>
+        <select class="form-input" id="f-freq"><option value="once">Once</option><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select>
+      </div>
+      <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="f-cat" placeholder="Cash, Travel, Home..."></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Prize Value ($)</label><input class="form-input" id="f-prize" type="number" placeholder="0"></div>
+      <div class="form-group"><label class="form-label">End Date</label><input class="form-input" id="f-end" type="date"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Notes</label><textarea class="form-input" id="f-notes" placeholder="Any notes..."></textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-add')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveSweepstake()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Win Modal -->
+<div class="modal-overlay" id="modal-win">
+  <div class="modal">
+    <h2>LOG A WIN 🎉</h2>
+    <div class="form-group"><label class="form-label">Sweepstakes</label><select class="form-input" id="w-sweep"></select></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Prize</label><input class="form-input" id="w-prize" placeholder="e.g. $500 Amazon gift card"></div>
+      <div class="form-group"><label class="form-label">Value ($)</label><input class="form-input" id="w-val" type="number" placeholder="0"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Notes</label><textarea class="form-input" id="w-notes" placeholder="Details..."></textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-win')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveWin()">Log Win</button>
+    </div>
+  </div>
+</div>
+
+<!-- Verify Banner -->
+<div class="verify-banner" id="verify-banner">
+  <div class="verify-banner-title">⏸ VERIFY ENTRY</div>
+  <div class="verify-banner-name" id="verify-name">—</div>
+  <div class="verify-banner-msg">Check the browser window — did the entry submit successfully?</div>
+  <div class="verify-actions">
+    <button class="btn btn-run btn-sm" onclick="verifyEntry('success')">✓ Yes</button>
+    <button class="btn btn-danger btn-sm" onclick="verifyEntry('error')">✗ Failed</button>
+    <button class="btn btn-ghost btn-sm" onclick="verifyEntry('manual')">⏭ Skip</button>
+  </div>
+</div>
+
+<script>
+let sweepData=[], currentSort='created', currentFilter='active', lotteryData={}, activePanel='dashboard';
+
+const panels=['dashboard','sweepstakes','discover','history','wins','lottery','tools','log'];
+function show(name){
+  panels.forEach(p=>{
+    document.getElementById('panel-'+p).classList.toggle('active',p===name);
+  });
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const idx=['dashboard','sweepstakes','discover','history','wins','lottery','tools','log'].indexOf(name);
+  document.querySelectorAll('.nav-item')[idx]?.classList.add('active');
+  document.getElementById('topbar-title').textContent=name.toUpperCase().replace('-',' ');
+  activePanel=name;
+  if(name==='history')loadHistory();
+  if(name==='wins')loadWins();
+  if(name==='log')loadLog();
+  if(name==='tools'){setupBookmarklet();loadProfile();}
+}
+
+// ── Status & Stats ─────────────────────────────────────────────────────────
+async function loadStatus(){
+  const r=await fetch('/api/status'); const d=await r.json(); const s=d.stats;
+  document.getElementById('d-active').textContent=s.active_sweepstakes;
+  document.getElementById('d-today').textContent=s.entries_today;
+  document.getElementById('d-total').textContent=s.total_entries;
+  document.getElementById('d-wins').textContent=s.wins;
+  document.getElementById('d-winval').textContent=s.win_value?'$'+Number(s.win_value).toLocaleString():'$0';
+  document.getElementById('ss-active').textContent=s.active_sweepstakes;
+  document.getElementById('ss-today').textContent=s.entries_today;
+  document.getElementById('ss-total').textContent=s.total_entries;
+  document.getElementById('ss-wins').textContent=s.wins;
+
+  // Alert chips
+  const chips=document.getElementById('alert-chips'); chips.innerHTML='';
+  if(s.dead_urls>0) chips.innerHTML+=`<div class="chip warn">⚠ ${s.dead_urls} dead URL${s.dead_urls>1?'s':''}</div>`;
+  if(s.pending_discovery>0){
+    chips.innerHTML+=`<div class="chip info">🔍 ${s.pending_discovery} new sweepstakes to review</div>`;
+    const nb=document.getElementById('nb-disc'); nb.textContent=s.pending_discovery; nb.style.display='';
+  } else { document.getElementById('nb-disc').style.display='none'; }
+
+  // Opportunity banner
+  const opps=d.opportunity_count||{};
+  const banner=document.getElementById('opp-banner');
+  if(opps.count>0){
+    banner.classList.add('show');
+    document.getElementById('opp-star').textContent=opps.superstars>0?'🌟':'⭐';
+    document.getElementById('opp-title').textContent=`${opps.count} Lottery Opportunit${opps.count===1?'y':'ies'} Today`;
+    document.getElementById('opp-desc').textContent=opps.superstars>0?`${opps.superstars} exceptional opportunity${opps.superstars>1?'ies':''} — check the lottery panel!`:'Good odds spotted in Oregon Lottery today.';
+    const nb2=document.getElementById('nb-lottery'); nb2.textContent=opps.count+'⭐'; nb2.style.display='';
+  } else {
+    banner.classList.remove('show');
+    document.getElementById('nb-lottery').style.display='none';
+  }
+
+  // Verify banner
+  const vb = document.getElementById('verify-banner');
+  if(d.verify){
+    document.getElementById('verify-name').textContent = d.verify.name;
+    vb.classList.add('show');
+  } else {
+    vb.classList.remove('show');
+  }
+
+  // Running
+  const bar=document.getElementById('running-bar'), btn=document.getElementById('run-btn'), ind=document.getElementById('status-ind');
+  if(d.running){ bar.classList.add('show'); document.getElementById('running-label').textContent=d.current?`Entering: ${d.current}`:'Running...'; btn.disabled=true; ind.textContent='● RUNNING'; ind.style.color='var(--green)'; }
+  else { bar.classList.remove('show'); btn.disabled=false; ind.textContent='IDLE'; ind.style.color='var(--muted)'; }
+}
+
+// ── Sweepstakes ─────────────────────────────────────────────────────────────
+const freqBadge=f=>({'once':'<span class="badge bo">ONCE</span>','daily':'<span class="badge bg">DAILY</span>','weekly':'<span class="badge bb">WEEKLY</span>','monthly':'<span class="badge by">MONTHLY</span>'}[f]||`<span class="badge bm">${f.toUpperCase()}</span>`);
+
+async function loadSweepstakes(sort,filter,sortBtn,filterBtn){
+  if(sort)currentSort=sort; if(filter)currentFilter=filter;
+  if(sortBtn){ document.querySelectorAll('.sort-btn').forEach(b=>{if(['RECENT','PRIZE ↓','ENDS SOON','A–Z'].includes(b.textContent))b.classList.remove('active')}); sortBtn.classList.add('active'); }
+  if(filterBtn){ document.querySelectorAll('.sort-btn').forEach(b=>{if(['ACTIVE','ALL'].includes(b.textContent))b.classList.remove('active')}); filterBtn.classList.add('active'); }
+  const r=await fetch(`/api/sweepstakes?sort=${currentSort}&filter=${currentFilter}`);
+  sweepData=await r.json();
+  renderDue(); renderAll();
+}
+
+function renderDue(){
+  const due=sweepData.filter(s=>s.eligible&&s.active);
+  const tb=document.getElementById('due-tbody');
+  if(!due.length){ tb.innerHTML='<tr><td colspan="5"><div class="empty"><div class="empty-icon">✓</div>All caught up — nothing due.</div></td></tr>'; return; }
+  tb.innerHTML=due.map(s=>`<tr>
+    <td style="font-weight:500">${s.star||''} ${s.name}</td>
+    <td style="font-family:var(--mono);font-size:11px">${s.prize_value?'$'+Number(s.prize_value).toLocaleString():s.prize_text||'—'}</td>
+    <td>${freqBadge(s.frequency)}</td>
+    <td style="font-family:var(--mono);font-size:11px">${s.entry_count}</td>
+    <td><button class="btn btn-run btn-sm" onclick="runSingle(${s.id})">▶ Enter</button></td>
+  </tr>`).join('');
+}
+
+function renderAll(){
+  const tb=document.getElementById('all-tbody');
+  if(!sweepData.length){ tb.innerHTML='<tr><td colspan="9"><div class="empty"><div class="empty-icon">☰</div>No sweepstakes yet.</div></td></tr>'; return; }
+  tb.innerHTML=sweepData.map(s=>{
+    const alive=s.url_alive!==0;
+    const dotClass=!s.active?'dot-m':(!alive?'dot-r':(s.eligible?'dot-g':'dot-y'));
+    const dotTitle=!s.active?'Paused':(!alive?'Dead URL':(s.eligible?'Ready':'Waiting'));
+    return `<tr>
+      <td><span class="dot ${dotClass}" title="${dotTitle}"></span></td>
+      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500" title="${s.name}">${s.star||''} ${s.name}</td>
+      <td style="font-family:var(--mono);font-size:11px">${s.prize_value?'$'+Number(s.prize_value).toLocaleString():s.prize_text||'—'}</td>
+      <td>${freqBadge(s.frequency)}</td>
+      <td style="font-size:11px;color:var(--subtext)">${s.category||'—'}</td>
+      <td style="font-family:var(--mono);font-size:11px">${s.end_date||'—'}</td>
+      <td style="font-family:var(--mono);font-size:11px">${s.next_eligible}</td>
+      <td style="font-family:var(--mono);font-size:11px">${s.entry_count}</td>
+      <td><div class="actions">
+        ${s.eligible&&s.active?`<button class="btn btn-run btn-sm" onclick="runSingle(${s.id})">▶</button>`:''}
+        <button class="btn btn-ghost btn-sm" onclick="openEditModal(${s.id})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteSweepstake(${s.id})">✕</button>
+      </div></td>
+    </tr>`;
+  }).join('');
+}
+
+async function runAll(){ await fetch('/api/run',{method:'POST'}); show('log'); setTimeout(()=>{loadStatus();loadSweepstakes();},1200); }
+async function runSingle(id){ await fetch(`/api/run/single/${id}`,{method:'POST'}); show('log'); setTimeout(()=>{loadStatus();loadSweepstakes();},1500); }
+async function verifyEntry(status){
+  await fetch(`/api/verify/${status}`,{method:'POST'});
+  document.getElementById('verify-banner').classList.remove('show');
+  loadStatus();
+}
+
+// ── Tools: Quick Fill + Bookmarklet ──────────────────────────────────────
+async function quickFill(){
+  const url=document.getElementById('quick-url').value.trim();
+  if(!url||!url.startsWith('http')){alert('Enter a valid http(s) URL');return;}
+  const r=await fetch('/api/run_adhoc',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:url,name:'Quick Fill: '+url.substring(0,60)})});
+  const d=await r.json();
+  if(d.ok){document.getElementById('quick-url').value='';show('log');}
+  else alert(d.msg||'Failed to start');
+}
+
+const BOOKMARKLET_JS = `(async()=>{try{const P=await(await fetch('http://localhost:5050/api/profile')).json(),p=P.profile;const C=await(await fetch('http://localhost:5050/api/generate_comment?title='+encodeURIComponent(document.title))).json(),c=C.comment||"I'd love to win!";const m={first:p.first_name,fname:p.first_name,firstname:p.first_name,given:p.first_name,last:p.last_name,lname:p.last_name,lastname:p.last_name,surname:p.last_name,fullname:p.full_name,name:p.full_name,email:p.email,phone:p.phone,telephone:p.phone,mobile:p.phone,cell:p.phone,address:p.address1,address1:p.address1,street:p.address1,city:p.city,state:p.state,zip:p.zip,postal:p.zip,zipcode:p.zip,dob:p.dob,birthdate:p.dob,birthday:p.dob,country:p.country};const fire=(el,v)=>{el.focus();el.value=v;el.dispatchEvent(new Event('input',{bubbles:!0}));el.dispatchEvent(new Event('change',{bubbles:!0}));el.blur()};let n=0;document.querySelectorAll('input:not([type=hidden]):not([type=submit]):not([type=button]):not([type=checkbox]):not([type=radio])').forEach(i=>{const k=[i.id,i.name,i.placeholder,i.getAttribute('aria-label')||''].filter(Boolean).join(' ').toLowerCase();for(const[K,V]of Object.entries(m))if(k.includes(K)){fire(i,V);n++;break}});const cr=/comment|message|feedback|why|opinion|review|thoughts|story|reason|tellus|essay|response/;document.querySelectorAll('textarea').forEach(t=>{const k=[t.id,t.name,t.placeholder].filter(Boolean).join(' ').toLowerCase();if(cr.test(k)||k.trim()===''){fire(t,c);n++}});document.querySelectorAll('select').forEach(s=>{const k=((s.id||'')+' '+(s.name||'')).toLowerCase();let T=null;if(k.includes('state'))T={v:p.state,t:p.state_full};else if(k.includes('gender')||k.includes('sex'))T={v:'male',t:'Male'};else if(k.includes('country'))T={v:p.country,t:p.country_full};if(T){const o=Array.from(s.options).find(o=>o.value.toLowerCase()===T.v.toLowerCase()||o.text.toLowerCase()===T.t.toLowerCase());if(o){s.value=o.value;s.dispatchEvent(new Event('change',{bubbles:!0}));n++}}});const tt=document.createElement('div');tt.style.cssText='position:fixed;top:20px;right:20px;background:#1a1a26;color:#f0c040;padding:14px 20px;border-radius:8px;font-family:system-ui;font-size:14px;z-index:2147483647;box-shadow:0 4px 24px rgba(0,0,0,.6);border:2px solid #f0c040';tt.innerHTML='🎰 SweepFill: filled <b>'+n+'</b> field'+(n===1?'':'s');document.body.appendChild(tt);setTimeout(()=>tt.remove(),4000)}catch(e){alert('SweepFill failed: '+e.message+'\\nMake sure SweepRunner is running at localhost:5050')}})();`;
+
+function setupBookmarklet(){
+  const link=document.getElementById('bookmarklet-link');
+  if(link) link.href='javascript:'+encodeURIComponent(BOOKMARKLET_JS);
+}
+
+async function loadProfile(){
+  try{
+    const r=await fetch('/api/profile'); const {profile:p}=await r.json();
+    document.getElementById('profile-display').innerHTML=
+      `<div><span style="color:var(--muted)">Name:</span> ${p.full_name}</div>`+
+      `<div><span style="color:var(--muted)">Email:</span> ${p.email}</div>`+
+      `<div><span style="color:var(--muted)">Phone:</span> ${p.phone_formatted}</div>`+
+      `<div><span style="color:var(--muted)">DOB:</span> ${p.dob}</div>`+
+      `<div><span style="color:var(--muted)">Address:</span> ${p.address1}, ${p.city}, ${p.state} ${p.zip}</div>`+
+      `<div><span style="color:var(--muted)">Gender:</span> ${p.gender}</div>`;
+  }catch(e){}
+}
+async function deleteSweepstake(id){ if(!confirm('Remove this sweepstakes?'))return; await fetch(`/api/sweepstakes/${id}`,{method:'DELETE'}); loadSweepstakes(); }
+
+function openAddModal(){ document.getElementById('modal-title').textContent='ADD SWEEPSTAKES'; document.getElementById('edit-id').value=''; ['f-name','f-url','f-cat','f-notes'].forEach(id=>document.getElementById(id).value=''); document.getElementById('f-freq').value='once'; document.getElementById('f-prize').value=''; document.getElementById('f-end').value=''; document.getElementById('modal-add').classList.add('open'); }
+function openEditModal(id){ const s=sweepData.find(x=>x.id===id); if(!s)return; document.getElementById('modal-title').textContent='EDIT SWEEPSTAKES'; document.getElementById('edit-id').value=id; document.getElementById('f-name').value=s.name; document.getElementById('f-url').value=s.url; document.getElementById('f-freq').value=s.frequency; document.getElementById('f-cat').value=s.category||''; document.getElementById('f-notes').value=s.notes||''; document.getElementById('f-prize').value=s.prize_value||''; document.getElementById('f-end').value=s.end_date||''; document.getElementById('modal-add').classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+async function saveSweepstake(){
+  const id=document.getElementById('edit-id').value;
+  const body={name:document.getElementById('f-name').value.trim(),url:document.getElementById('f-url').value.trim(),frequency:document.getElementById('f-freq').value,category:document.getElementById('f-cat').value.trim()||'General',notes:document.getElementById('f-notes').value.trim(),prize_value:parseFloat(document.getElementById('f-prize').value)||0,end_date:document.getElementById('f-end').value};
+  if(!body.name||!body.url){alert('Name and URL required.');return;}
+  if(id) await fetch(`/api/sweepstakes/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  else   await fetch('/api/sweepstakes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  closeModal('modal-add'); loadSweepstakes();
+}
+
+// ── Discovery ──────────────────────────────────────────────────────────────
+async function loadDiscovered(sort='prize',btn=null){
+  if(btn){ document.querySelectorAll('#panel-discover .sort-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+  const r=await fetch(`/api/discovered?sort=${sort}`); const items=await r.json();
+  const c=document.getElementById('disc-container');
+  if(!items.length){ c.innerHTML='<div class="empty"><div class="empty-icon">🔍</div>No pending discoveries. Click "Find New" to search.</div>'; return; }
+  c.innerHTML=items.map(item=>`
+    <div class="disc-card" id="disc-${item.id}">
+      <div class="disc-info" style="flex:1">
+        <div class="disc-name">${item.name}</div>
+        <div class="disc-meta">${freqBadge(item.frequency)} ${item.category} · ${item.source} · ${item.end_date?'Ends '+item.end_date:'No end date'}</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:4px;word-break:break-all">${item.url.substring(0,70)}${item.url.length>70?'...':''}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        <div class="disc-prize">${item.prize_value?'$'+Number(item.prize_value).toLocaleString():item.prize_text||'?'}</div>
+        <div class="disc-actions">
+          <button class="btn btn-primary btn-sm" onclick="addDiscovered(${item.id})">+ Add</button>
+          <button class="btn btn-ghost btn-sm" onclick="dismissDiscovered(${item.id})">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function addDiscovered(id){ await fetch(`/api/discovered/${id}/add`,{method:'POST'}); document.getElementById('disc-'+id)?.remove(); loadStatus(); }
+async function dismissDiscovered(id){ await fetch(`/api/discovered/${id}/dismiss`,{method:'POST'}); document.getElementById('disc-'+id)?.remove(); }
+async function runDiscovery(){ await fetch('/api/discover/run',{method:'POST'}); show('log'); }
+async function runValidation(){ await fetch('/api/validate/run',{method:'POST'}); show('log'); }
+async function cleanupDiscovered(){
+  if(!confirm('Clean up expired and dead URLs from the discovery queue? This will check each URL.'))return;
+  await fetch('/api/discovered/cleanup',{method:'POST'});
+  show('log');
+  setTimeout(()=>{show('discover');loadDiscovered();}, 8000);
+}
+
+// ── History ─────────────────────────────────────────────────────────────────
+async function loadHistory(){
+  const r=await fetch('/api/entries'); const entries=await r.json();
+  const tb=document.getElementById('hist-tbody');
+  if(!entries.length){ tb.innerHTML='<tr><td colspan="4"><div class="empty"><div class="empty-icon">◷</div>No entries yet.</div></td></tr>'; return; }
+  const sb=s=>({'success':'<span class="badge bg">SUCCESS</span>','error':'<span class="badge br">ERROR</span>','captcha_timeout':'<span class="badge by">CAPTCHA TIMEOUT</span>','manual':'<span class="badge bb">MANUAL</span>','pending':'<span class="badge bm">PENDING</span>'}[s]||`<span class="badge bm">${s.toUpperCase()}</span>`);
+  tb.innerHTML=entries.map(e=>`<tr><td style="font-family:var(--mono);font-size:11px;color:var(--subtext)">${new Date(e.entered_at).toLocaleString()}</td><td style="font-weight:500">${e.sweepstake_name}</td><td>${freqBadge(e.frequency)}</td><td>${sb(e.status)}</td></tr>`).join('');
+}
+
+// ── Wins ────────────────────────────────────────────────────────────────────
+async function loadWins(){
+  const r=await fetch('/api/wins'); const wins=await r.json();
+  const c=document.getElementById('wins-container');
+  if(!wins.length){ c.innerHTML='<div class="empty"><div class="empty-icon">★</div>No wins yet!</div>'; return; }
+  c.innerHTML=wins.map(w=>`<div class="win-card"><div><div style="font-weight:500;font-size:13px">${w.sweepstake_name}</div><div style="font-family:var(--mono);font-size:11px;color:var(--subtext);margin-top:3px">${w.prize||'—'} · ${new Date(w.won_at).toLocaleDateString()}</div>${w.notes?`<div style="font-size:11px;color:var(--muted);margin-top:3px">${w.notes}</div>`:''}</div>${w.value?`<div class="win-value">$${Number(w.value).toLocaleString()}</div>`:''}</div>`).join('');
+}
+
+async function openWinModal(){
+  const r=await fetch('/api/sweepstakes'); const all=await r.json();
+  document.getElementById('w-sweep').innerHTML=all.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
+  ['w-prize','w-val','w-notes'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('modal-win').classList.add('open');
+}
+async function saveWin(){
+  const body={sweepstake_id:parseInt(document.getElementById('w-sweep').value),prize:document.getElementById('w-prize').value.trim(),value:parseFloat(document.getElementById('w-val').value)||0,notes:document.getElementById('w-notes').value.trim()};
+  await fetch('/api/wins',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  closeModal('modal-win'); loadWins();
+}
+
+// ── Lottery ─────────────────────────────────────────────────────────────────
+function lotteryTab(tab,el){ document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.lottery-pane').forEach(p=>p.classList.remove('active')); document.getElementById('lp-'+tab).classList.add('active'); }
+
+async function loadLottery(){
+  const r=await fetch('/api/lottery'); lotteryData=await r.json();
+  renderScratch(); renderDraw(); renderOpps();
+  if(lotteryData.fetched) document.getElementById('lottery-updated').textContent='Updated '+new Date(lotteryData.fetched).toLocaleTimeString();
+}
+
+async function refreshLottery(){ await fetch('/api/lottery/refresh',{method:'POST'}); document.getElementById('lottery-updated').textContent='Refreshing...'; setTimeout(loadLottery,8000); }
+
+function evBar(ev){ const pct=Math.min(ev*100,100); const cls=ev>=0.65?'green':(ev>=0.35?'yellow':'red'); return `<div class="ev-bar-wrap"><div class="ev-bar ${cls}" style="width:${pct}%"></div></div>`; }
+
+function renderScratch(){
+  const tb=document.getElementById('scratch-tbody'); const games=lotteryData.scratch||[];
+  if(!games.length){ tb.innerHTML='<tr><td colspan="7"><div class="empty"><div class="empty-icon">🎟</div>No scratch ticket data. Click Refresh.</div></td></tr>'; return; }
+  tb.innerHTML=games.map(g=>`<tr>
+    <td style="font-size:16px">${g.star||''}</td>
+    <td style="font-weight:500">${g.name}</td>
+    <td style="font-family:var(--mono);font-size:11px">$${g.price?.toFixed(0)||1}</td>
+    <td style="font-family:var(--mono);font-size:11px">${g.top_prize?'$'+Number(g.top_prize).toLocaleString():'—'}</td>
+    <td style="font-family:var(--mono);font-size:11px">${g.remaining_top?.toLocaleString()||'?'}</td>
+    <td style="font-family:var(--mono);font-size:11px">${g.ev_per_dollar?(g.ev_per_dollar*100).toFixed(1)+'¢':'—'}</td>
+    <td>${evBar(g.ev_per_dollar||0)}</td>
+  </tr>`).join('');
+}
+
+function renderDraw(){
+  const tb=document.getElementById('draw-tbody'); const games=lotteryData.draw||[];
+  if(!games.length){ tb.innerHTML='<tr><td colspan="7"><div class="empty"><div class="empty-icon">🎱</div>No draw game data.</div></td></tr>'; return; }
+  tb.innerHTML=games.map(g=>`<tr>
+    <td style="font-size:16px">${g.star||''}</td>
+    <td style="font-weight:500">${g.name}</td>
+    <td style="font-family:var(--mono);font-size:12px;color:var(--accent)">${g.jackpot?'$'+Number(g.jackpot/1e6).toFixed(0)+'M':'—'}</td>
+    <td style="font-family:var(--mono);font-size:11px">$${g.price?.toFixed(2)||'2.00'}</td>
+    <td style="font-family:var(--mono);font-size:11px">${g.odds?Number(g.odds).toLocaleString():'—'}</td>
+    <td style="font-family:var(--mono);font-size:11px">${g.ev_per_dollar?(g.ev_per_dollar*100).toFixed(4)+'¢':'—'}</td>
+    <td>${evBar(Math.min(g.ev_per_dollar||0, 1))}</td>
+  </tr>`).join('');
+}
+
+function renderOpps(){
+  const opps=lotteryData.opportunities||[];
+  const c=document.getElementById('opps-container');
+  if(!opps.length){ c.innerHTML='<div class="empty"><div class="empty-icon">🎰</div>No standout opportunities today.</div>'; return; }
+  c.innerHTML=opps.map((o,i)=>`
+    <div class="disc-card" style="${i===0?'border-color:rgba(240,192,64,.4)':''}">
+      <div style="font-size:28px">${o.star||'•'}</div>
+      <div style="flex:1">
+        <div class="disc-name">${o.name}</div>
+        <div class="disc-meta"><span class="badge bb">${o.category}</span> ${o.summary}</div>
+      </div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--muted)">#${i+1} TODAY</div>
+    </div>`).join('');
+}
+
+// ── Log ─────────────────────────────────────────────────────────────────────
+async function loadLog(){
+  const r=await fetch('/api/log'); const lines=await r.json();
+  const box=document.getElementById('log-box');
+  if(!lines.length){ box.innerHTML='<span style="color:var(--muted)">No activity yet.</span>'; return; }
+  box.innerHTML=lines.map(l=>`<div class="log-line"><span class="log-time">${l.time}</span><span>${l.msg}</span></div>`).join('');
+  box.scrollTop=box.scrollHeight;
+}
+
+// ── Modal close on overlay click ─────────────────────────────────────────────
+document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===e.currentTarget)o.classList.remove('open');}));
+
+// ── Init & polling ───────────────────────────────────────────────────────────
+async function init(){ await loadStatus(); await loadSweepstakes(); }
+init();
+setInterval(()=>{
+  loadStatus();
+  if(activePanel==='sweepstakes'||activePanel==='dashboard')loadSweepstakes();
+  if(activePanel==='log')loadLog();
+  if(activePanel==='history')loadHistory();
+},4000);
+</script>
+</body>
+</html>
