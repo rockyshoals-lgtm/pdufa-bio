@@ -139,10 +139,39 @@ def load_slate():
     # caught by our SEC decided-sweep). Without this grace window such a catalyst vanishes silently
     # the morning after its date -- dropped from Upcoming, not yet in Decided. It shows as "awaiting".
     grace = (TODAY - dt.timedelta(days=GRACE_DAYS)).isoformat()
-    decided_keys = {(t, d) for t, d, _ in load_decisions()}
+
+    # Resolve a slate row against the archive by TICKER and a date window, not by exact date.
+    #
+    # This was keyed on (ticker, date), matching the slate's PDUFA GOAL date against the archive's
+    # ACTUAL decision date. Those are only the same when the FDA acts precisely on its goal date.
+    # Replimune's goal was 2026-08-02 and the approval came 2026-08-06, so the keys never matched:
+    # REPL appeared under "Next FDA decisions" as "0 due" AND under "Recently decided" as approved,
+    # on the same screen. Moderna was excluded correctly only by the accident of the FDA acting on
+    # the exact day.
+    #
+    # The asymmetry is the same one the calendar marker needs. An APPROVAL ends the application, so
+    # it resolves a goal date whenever it lands, before or after. A CRL is why a later goal date
+    # exists at all, because the company resubmits and the FDA starts a new clock, so a CRL only
+    # resolves a goal date it is close to. Treating them alike would delete a live, pending catalyst
+    # from the board on the strength of last cycle's rejection.
+    decisions = load_decisions()
+
+    def resolved(tk, gdate):
+        g = dt.date.fromisoformat(gdate)
+        for t, d, outcome in decisions:
+            if t != tk:
+                continue
+            gap = (dt.date.fromisoformat(d) - g).days
+            if outcome == "crl":
+                if abs(gap) <= 14:                 # this cycle's rejection
+                    return True
+            elif gap >= -270:                      # an approval, whenever it landed
+                return True
+        return False
+
     cats = [c for c in slate["catalysts"] if c.get("ticker") and c.get("date")
             and str(c["date"])[:10] >= grace
-            and (c["ticker"].upper(), str(c["date"])[:10]) not in decided_keys]
+            and not resolved(c["ticker"].upper(), str(c["date"])[:10])]
     # collapse accidental duplicates on (ticker, date); keep the richest drug name so the board
     # never shows the same catalyst twice even if the slate has a stray dupe
     best = {}
