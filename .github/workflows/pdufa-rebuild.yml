@@ -271,6 +271,11 @@ jobs:
       - name: "Freshness stamp (dated from real content changes, crawler-visible)"
         run: python build_freshness_stamp.py
 
+      # Same date, in the form search engines actually read to print a timestamp beside a result.
+      # Also after the sitemap, and also stripped from the content hash, for the same reason.
+      - name: "dateModified in schema + og/article modified-time"
+        run: python build_date_modified.py
+
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         run: |
           set -e

@@ -94,6 +94,13 @@ BOILER = [
     # about the subject. Counting them would mark all 850 pages as changed on any sweep.
     re.compile(r"<!--FRESH:BEGIN-->.*?<!--FRESH:END-->", re.S),
     re.compile(r"<!--TICKERIDX:BEGIN-->.*?<!--TICKERIDX:END-->", re.S),
+    # The modification date itself, in both the meta block and the JSON-LD. This one is not
+    # optional: the date is DERIVED from this hash, so if it also fed back into it, every build
+    # would see a new hash, advance the date, rewrite it, and the date would climb every night
+    # while nothing real changed. That is the same runaway the nav sweep and the freshness stamp
+    # each caused once.
+    re.compile(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", re.S),
+    re.compile(r'"dateModified"\s*:\s*"[^"]*",?'),
     re.compile(r'<style id="(navcanon|navpolish|typesys)">.*?</style>', re.S),
     re.compile(r"<nav[^>]*>.*?</nav>", re.S),
     re.compile(r'<div class="nav">.*?</div>', re.S),
