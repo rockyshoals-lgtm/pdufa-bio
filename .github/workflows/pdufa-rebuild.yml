@@ -246,6 +246,11 @@ jobs:
       - name: "Answer-first lede above every hub table"
         run: python build_hub_lede.py
 
+      # Bing flagged both of these on /sls. Runs before the final sitemap because titles and
+      # descriptions are real page content, so a change to them should advance lastmod.
+      - name: "Fit titles and meta descriptions to what a search result shows"
+        run: python fix_meta_lengths.py
+
       - name: Normalise navigation (one nav, site-wide)
         run: python rebuild_nav.py
 
