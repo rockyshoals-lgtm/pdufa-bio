@@ -34,15 +34,9 @@ td.y{color:var(--ink);font-weight:700;white-space:nowrap}
 <main class="wrap">
 <div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Run-up by year</div>
 <div class="fresh">Updated Aug 6, 2026 &middot; 1,832 decisions</div>
-<h1>PDUFA run-up <span class="g">by year</span>: 2020 to 2026</h1><!--FRESH:BEGIN--><div data-fresh style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut2);margin:0 0 10px"><span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#46d17f"></span><span data-fresh-rel style="color:#eef4fc">rebuilt daily</span><span style="color:var(--mut2)">·</span><span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> <a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span></div><script>
+<h1>PDUFA run-up <span class="g">by year</span>: 2020 to 2026</h1><!--FRESH:BEGIN--><div data-fresh style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut2);margin:0 0 10px"><span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#46d17f"></span><span>Updated <time datetime="2026-08-06" style="color:#eef4fc">August 6, 2026</time></span><span style="color:var(--mut2)">·</span><span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> <a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span></div><script>
 (function(){var e=document.querySelector('[data-fresh]');if(!e)return;
 fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
-var t=Date.parse(j.built);if(isNaN(t))return;
-var s=Math.max(0,(Date.now()-t)/1000),v;
-if(s<5400)v=Math.max(1,Math.round(s/3600))+' hour'+(Math.round(s/3600)===1?'':'s')+' ago';
-else if(s<172800)v=Math.round(s/3600)+' hours ago';
-else v=Math.round(s/86400)+' days ago';
-var n=e.querySelector('[data-fresh-rel]');if(n)n.textContent='updated '+v;
 var d=e.querySelector('[data-fresh-next]');
 if(d&&j.next_days!=null)d.textContent=j.next_days===0?'today':(j.next_days===1?'tomorrow':'in '+j.next_days+' days');
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}

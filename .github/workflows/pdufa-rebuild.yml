@@ -243,8 +243,8 @@ jobs:
       - name: "Answers: FAQ + FAQPage schema on every ticker hub"
         run: python build_ticker_faq.py
 
-      - name: "Freshness stamp (constant markup + build-info.json)"
-        run: python build_freshness_stamp.py
+      - name: "Answer-first lede above every hub table"
+        run: python build_hub_lede.py
 
       - name: Normalise navigation (one nav, site-wide)
         run: python rebuild_nav.py
@@ -263,6 +263,13 @@ jobs:
       # gained real content, and those pages only belong in the sitemap once that has happened.
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
         run: python build_sitemap.py
+
+      # Must follow build_sitemap.py, not precede it. The stamp prints each page's real
+      # content-change date and build_sitemap.py is what computes that; running it first would
+      # stamp the previous build's answer. Safe to run after the sitemap is written because the
+      # stamp is stripped from the content hash, so it cannot alter the lastmod we just published.
+      - name: "Freshness stamp (dated from real content changes, crawler-visible)"
+        run: python build_freshness_stamp.py
 
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         run: |
@@ -351,3 +358,10 @@ jobs:
         run: |
           sleep 60
           python ping_search_engines.py
+
+      # Bing is where we actually rank, and GSC cannot see it. Advisory: no key, no failure.
+      - name: "Bing rank snapshot (advisory)"
+        continue-on-error: true
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: python bing_rank_report.py

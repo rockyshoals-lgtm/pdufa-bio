@@ -30,6 +30,10 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WF_DIR = os.path.join(HERE, ".github", "workflows")
 
 KNOWN_SECRETS = {"POLYGON_API_KEY", "FMP_API_KEY", "SEC_USER_AGENT",
+                 # Bing is the engine we actually rank on and the one GSC cannot see. The reporter
+                 # exits 0 when this is unset, so an unconfigured key degrades to no data rather
+                 # than a failed build.
+                 "BING_WEBMASTER_API_KEY",
                  "GSC_SERVICE_ACCOUNT_JSON", "GITHUB_TOKEN"}
 
 

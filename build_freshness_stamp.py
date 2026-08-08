@@ -51,12 +51,6 @@ SKIP = re.compile(r"(_bak|_xbak|/_|\\_|app\.html|holding\.html|preview\.html|pin
 SCRIPT = """<script>
 (function(){var e=document.querySelector('[data-fresh]');if(!e)return;
 fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
-var t=Date.parse(j.built);if(isNaN(t))return;
-var s=Math.max(0,(Date.now()-t)/1000),v;
-if(s<5400)v=Math.max(1,Math.round(s/3600))+' hour'+(Math.round(s/3600)===1?'':'s')+' ago';
-else if(s<172800)v=Math.round(s/3600)+' hours ago';
-else v=Math.round(s/86400)+' days ago';
-var n=e.querySelector('[data-fresh-rel]');if(n)n.textContent='updated '+v;
 var d=e.querySelector('[data-fresh-next]');
 if(d&&j.next_days!=null)d.textContent=j.next_days===0?'today':(j.next_days===1?'tomorrow':'in '+j.next_days+' days');
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
@@ -92,14 +86,55 @@ def next_decision():
     return best[0], best[1], (best[0] - today).days
 
 
-def block():
-    """Constant markup. Nothing here dates, so the page bytes never change between builds."""
+LASTMOD_STATE = os.path.join(HERE, "_sitemap_lastmod.json")
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+_STATE = None
+
+
+def content_dates():
+    """page -> the date its CONTENT last changed, as computed by build_sitemap.py.
+
+    Not the build time. A page rebuilt today whose data has not moved since Tuesday should say
+    Tuesday, and a stamp that says otherwise is a false claim about the one thing this site sells.
+    Using the same state file the sitemap uses also means the visible date and the <lastmod> we
+    hand Google can never disagree.
+    """
+    global _STATE
+    if _STATE is None:
+        try:
+            _STATE = {k: v.get("date") for k, v in
+                      json.load(open(LASTMOD_STATE, encoding="utf-8")).items()}
+        except Exception:
+            _STATE = {}
+    return _STATE
+
+
+def human(iso):
+    y, m, d = int(iso[:4]), int(iso[5:7]), int(iso[8:10])
+    return f"{MONTHS[m - 1]} {d}, {y}"
+
+
+def block(date_iso):
+    """Per-page markup. The date is baked because a crawler has to see it.
+
+    The earlier version rendered the time client-side, which was fine for humans and useless for
+    the search engine we are actually winning on: Bing shows recency in the result, and the site
+    that just took #1 leads with an hour stamp while ours showed nothing at all. A crawler does not
+    run our fetch().
+
+    Baking it is only safe because the date comes from the content-change state rather than the
+    clock, so an unchanged page emits identical bytes on every build. That is what keeps this from
+    reintroducing the churn that broke lastmod twice already.
+    """
+    when = (f'Updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>'
+            if date_iso else '<span style="color:#eef4fc">Rebuilt daily</span>')
     return (
         f'{B}<div data-fresh style="display:flex;flex-wrap:wrap;gap:6px;'
         f'align-items:center;font-size:12.5px;color:var(--mut2);margin:0 0 10px">'
         f'<span style="display:inline-flex;width:7px;height:7px;border-radius:50%;'
         f'background:#46d17f"></span>'
-        f'<span data-fresh-rel style="color:#eef4fc">rebuilt daily</span>'
+        f'<span>{when}</span>'
         f'<span style="color:var(--mut2)">·</span>'
         f'<span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> '
         f'<a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span>'
@@ -112,7 +147,7 @@ def main():
 
     now_iso = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     nxt = next_decision()
-    blk = block()
+    dates = content_dates()
 
     # The ONE file that changes each build. Everything dynamic lives here.
     info = {"built": now_iso,
@@ -128,6 +163,8 @@ def main():
     for p in sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True)):
         if SKIP.search(p):
             continue
+        rel = os.path.relpath(p, SITE).replace("\\", "/")
+        blk = block(dates.get("pdufa_site_src/" + rel))
         doc = open(p, encoding="utf-8", errors="replace").read()
         if B in doc:
             doc = doc.split(B, 1)[0] + blk + doc.split(E, 1)[1]
