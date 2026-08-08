@@ -83,7 +83,7 @@ var d=e.querySelector('[data-fresh-next]');
 if(d&&j.next_days!=null)d.textContent=j.next_days===0?'today':(j.next_days===1?'tomorrow':'in '+j.next_days+' days');
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
-</script><!--FRESH:END--><!--SEARCH:BEGIN--><div class="pdsearch" style="margin:14px 0 18px;position:relative">
+</script><!--FRESH:END--><!--LEDE:BEGIN--><p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#cfe0f5;max-width:76ch">pdufa.bio tracks 52 upcoming FDA decision dates and 299 expected clinical trial readouts, alongside 452 decisions already made: 334 approvals and 118 Complete Response Letters. Every date links the FDA notice or company filing it came from, and each past decision shows the share-price reaction we measured on the day.</p><!--LEDE:END--><!--SEARCH:BEGIN--><div class="pdsearch" style="margin:14px 0 18px;position:relative">
 <label for="pdq" style="position:absolute;left:-9999px">Search catalysts by ticker, drug or condition</label>
 <input id="pdq" type="search" autocomplete="off" spellcheck="false"
  placeholder="Search a ticker, drug or condition. Try MRNA, or obesity"

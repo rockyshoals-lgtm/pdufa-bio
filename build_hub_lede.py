@@ -152,6 +152,44 @@ def sentence(path, rows):
     return None
 
 
+def homepage_sentence():
+    """The one page that is not a table, and the one most likely to be ranking.
+
+    Its h1 is a slogan and the next thing on the page is a search box, so there was no extractable
+    fact anywhere near the top of the most important URL we own.
+
+    The counts here are read from the sibling pages rather than recomputed, for the same reason the
+    other ledes count their own rows: /calendar, /decisions and /readouts each publish a number, and
+    the homepage must not be able to state a different one. Deriving all four from the same rows
+    makes disagreement impossible rather than merely unlikely.
+    """
+    def rows_of(rel):
+        f = os.path.join(SITE, rel, "index.html")
+        if not os.path.exists(f):
+            return []
+        doc = open(f, encoding="utf-8", errors="replace").read()
+        return parse(re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S))
+
+    cal, dec, rd = rows_of("calendar"), rows_of("decisions"), rows_of("readouts")
+    if not (cal and dec):
+        return None
+
+    today = dt.date.today().isoformat()
+    ahead = sum(1 for r in cal if not (r["approved"] or r["crl"])
+                and (not r["iso"] or r["iso"] >= today))
+    ap = sum(1 for r in dec if r["approved"])
+    crl = sum(1 for r in dec if r["crl"])
+
+    s = f"pdufa.bio tracks {ahead} upcoming FDA decision dates"
+    if rd:
+        s += f" and {len(rd)} expected clinical trial readouts"
+    s += (f", alongside {len(dec)} decisions already made: {ap} approvals and {crl} Complete "
+          f"Response Letters. ")
+    s += ("Every date links the FDA notice or company filing it came from, and each past decision "
+          "shows the share-price reaction we measured on the day.")
+    return s
+
+
 TARGETS = ["calendar", "decisions", "decisions/approvals", "decisions/crl", "readouts", "adcomm"]
 
 
@@ -201,7 +239,26 @@ def main():
         print(f"  /{rel:<20} {len(rows):>4} rows counted")
         print(f"       {s[:150]}")
 
-    print(f"\nlede on {done} hub page(s), {skipped} skipped"
+    # The homepage last, so it reads the numbers the other pages just published.
+    hp = os.path.join(SITE, "index.html")
+    s = homepage_sentence()
+    if s and os.path.exists(hp):
+        doc = open(hp, encoding="utf-8", errors="replace").read()
+        block = (f'{B}<p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#cfe0f5;'
+                 f'max-width:76ch">{html.escape(s)}</p>{E}')
+        if B in doc:
+            doc = doc.split(B, 1)[0] + block + doc.split(E, 1)[1]
+        else:
+            anchor = "<!--FRESH:END-->" if "<!--FRESH:END-->" in doc else "</h1>"
+            i = doc.index(anchor) + len(anchor)
+            doc = doc[:i] + block + doc[i:]
+        if not a.dry_run:
+            open(hp, "w", encoding="utf-8").write(doc)
+        done += 1
+        print(f"  /{'':<20} homepage")
+        print(f"       {s[:150]}")
+
+    print(f"\nlede on {done} page(s), {skipped} skipped"
           + (" [dry run]" if a.dry_run else ""))
 
 

@@ -40,6 +40,45 @@ def main():
         body = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
         rows = len(re.findall(r'<a class="row"[^>]*>', body))
 
+        # The homepage is a summary, not a table, so its figures come from the sibling pages.
+        # Check them against those pages rather than against its own 7 board tiles: the failure
+        # that matters is the homepage advertising a number /calendar contradicts.
+        if rel == "/.":
+            ok = True
+            for pat, src, pred in (
+                (r"([\d,]+) upcoming FDA decision dates", "calendar", "ahead"),
+                (r"([\d,]+) expected clinical trial readouts", "readouts", "all"),
+                (r"([\d,]+) decisions already made", "decisions", "all"),
+            ):
+                mm = re.search(pat, lede)
+                if not mm:
+                    continue
+                f = os.path.join(SITE, src, "index.html")
+                if not os.path.exists(f):
+                    continue
+                sib = open(f, encoding="utf-8", errors="replace").read()
+                sib = re.sub(re.escape(B) + ".*?" + re.escape(E), "", sib, flags=re.S)
+                frags = re.findall(r'<a class="row"[^>]*>(.*?)</a>', sib, re.S)
+                if pred == "ahead":
+                    import datetime as _dt
+                    today_ = _dt.date.today().isoformat()
+                    n = 0
+                    for fr in frags:
+                        s_ = html.unescape(re.sub(r"<[^>]+>", " ", fr)).lower()
+                        if "approved" in s_ or "crl" in s_ or "complete response" in s_:
+                            continue
+                        d_ = re.search(r"\d{4}-\d{2}-\d{2}", s_)
+                        if not d_ or d_.group(0) >= today_:
+                            n += 1
+                else:
+                    n = len(frags)
+                if int(mm.group(1).replace(",", "")) != n:
+                    bad.append((rel, f"homepage says {mm.group(1)} for /{src}, that page has {n}"))
+                    ok = False
+            if ok:
+                pass
+            continue
+
         m = re.search(r"This page lists ([\d,]+)", lede)
         if not m:
             bad.append((rel, "lede does not state a count in the expected form")); continue
