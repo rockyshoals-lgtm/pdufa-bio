@@ -317,10 +317,25 @@ def main():
             md2 = re.match(r"^/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$",
                            "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/"))
             nt = decision_title(md2.group(1), md2.group(2)) if md2 else None
+
+            # A ticker title carrying legal boilerplate is broken regardless of length. TAK's read
+            # "Takeda Pharmaceutical Company Limited American Depositary Shar | pdufa.bio" -- cut
+            # mid-word at 74 characters, under the threshold, so nothing touched it. A visibly
+            # truncated word on a public page is a defect, not a length preference, so these are
+            # rebuilt from the short company name even though they are short enough to pass.
+            mt2 = re.match(r"^/ticker/([A-Z]{1,6})$",
+                           "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/"))
+            if not nt and mt2 and re.search(r"American Depositary|\(each representing|Shar \|", cur_t):
+                tk2 = mt2.group(1)
+                co2 = short_company(name_of.get(tk2, ""), tk2)
+                nt = f"{co2} ({tk2}) FDA Catalysts | pdufa.bio"
+
             if not nt and len(cur_t) > TITLE_HARD:
                 suffix = " | pdufa.bio"
                 body = cur_t[:-len(suffix)] if cur_t.endswith(suffix) else cur_t
-                nt = trim(body, TITLE_HARD - len(suffix) - 2) + suffix
+                # trim() ends a description with a full stop, which is right for prose and
+                # wrong inside a title: "...REGAL 80th Event. | pdufa.bio" reads like a typo.
+                nt = trim(body, TITLE_HARD - len(suffix) - 2).rstrip(".") + suffix
             if nt and nt != cur_t:
                 esc = html.escape(nt, quote=False)
                 doc = T_RE.sub(lambda m: m.group(1) + esc + m.group(3), doc, count=1)
