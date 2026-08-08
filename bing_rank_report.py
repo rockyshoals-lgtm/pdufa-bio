@@ -86,6 +86,35 @@ def main():
         print(f"  Bing API unreachable ({type(e).__name__}). No data pulled.")
         return 0
 
+    if not queries:
+        # Empty is ambiguous and the two causes need opposite responses, so ask which it is.
+        # GetUserSites returns the properties this key can actually see. If ours is not among them,
+        # the siteUrl string is wrong (http vs https, www vs apex, trailing slash) and no amount of
+        # waiting will fix it. If it IS among them, there is simply no data yet: Bing typically
+        # needs a day or two after verification before query stats appear.
+        try:
+            sites = call("GetUserSites", key, a.site) or []
+            urls = [s.get("Url") for s in sites if s.get("Url")]
+        except Exception:
+            urls = None
+
+        print("  Bing returned 0 queries.")
+        if urls is None:
+            print("    Could not list verified sites, so the cause is undetermined.")
+        elif not urls:
+            print("    This key sees NO verified properties. Finish site verification first.")
+        elif a.site in urls:
+            print(f"    {a.site} IS verified, so this is simply no data yet. Bing usually needs a")
+            print( "    day or two after verification before query stats appear. Nothing to fix;")
+            print( "    the next scheduled run will pick them up.")
+        else:
+            print(f"    {a.site} is NOT among the verified properties, so the siteUrl does not")
+            print( "    match and stats will always come back empty. Verified properties are:")
+            for u in urls:
+                print(f"      {u}")
+            print( "    Re-run with --site set to one of those exactly.")
+        return 0
+
     rows = []
     for q in queries:
         rows.append({
