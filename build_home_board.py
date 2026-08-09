@@ -156,22 +156,48 @@ def load_slate():
     # from the board on the strength of last cycle's rejection.
     decisions = load_decisions()
 
-    def resolved(tk, gdate):
+    def tokens(name):
+        """Identity tokens of a drug name: lowercased runs of 4+ alphanumerics.
+
+        'Oveporexton (TAK-861-2001)' and 'ORZEYFUL (oveporexton)' share {oveporexton} -> same
+        drug. 'MK-6240' and 'Camzyos (mavacamten)' share nothing -> different drugs."""
+        return {w for w in re.findall(r"[a-z0-9]{4,}", str(name or "").lower())}
+
+    def resolved(tk, gdate, gdrug):
+        """Is this upcoming catalyst already decided?
+
+        The original rule resolved by TICKER alone: any approval within 270 days killed every
+        upcoming catalyst the company had. For serial filers that deleted live events -- LNTH's
+        Aug 13 MK-6240 PDUFA vanished because Lantheus had a March approval of a DIFFERENT drug,
+        and BMY's iberdomide vanished behind Camzyos. The 270-day reach exists for one real case:
+        the same drug approved ahead of its goal date (TAK's oveporexton, approved Aug 5 against a
+        Sep 30 goal), so the reach stays but now requires the DRUG to match. Without names to
+        compare on either side, only a tight window resolves -- deleting a live catalyst is the
+        worse failure, and the decided-sweep will catch a true resolution within a day anyway.
+        """
         g = dt.date.fromisoformat(gdate)
-        for t, d, outcome in decisions:
+        gtok = tokens(gdrug)
+        for t, d, outcome, ddrug in decisions:
             if t != tk:
                 continue
             gap = (dt.date.fromisoformat(d) - g).days
+            dtok = tokens(ddrug)
+            same = bool(gtok & dtok)
+            known = bool(gtok) and bool(dtok)
             if outcome == "crl":
-                if abs(gap) <= 14:                 # this cycle's rejection
+                if abs(gap) <= 14 and (same or not known):
                     return True
-            elif gap >= -270:                      # an approval, whenever it landed
-                return True
+            else:
+                if same and gap >= -270:           # same drug approved, even well ahead of goal
+                    return True
+                if not known and abs(gap) <= 7:    # nameless: only a same-event date slip
+                    return True
         return False
 
     cats = [c for c in slate["catalysts"] if c.get("ticker") and c.get("date")
             and str(c["date"])[:10] >= grace
-            and not resolved(c["ticker"].upper(), str(c["date"])[:10])]
+            and not resolved(c["ticker"].upper(), str(c["date"])[:10],
+                             c.get("drug") or c.get("drug_name") or "")]
     # collapse accidental duplicates on (ticker, date); keep the richest drug name so the board
     # never shows the same catalyst twice even if the slate has a stray dupe
     best = {}
@@ -192,18 +218,21 @@ def load_decisions():
         if (tk, date) in seen:
             continue
         seen.add((tk, date))
-        tail = html[m.end():m.end() + 160].lower()
-        outcome = "crl" if ("crl" in tail or "complete response" in tail) else "ap"
-        out.append((tk, date, outcome))
+        tail = html[m.end():m.end() + 200]
+        low = tail.lower()
+        outcome = "crl" if ("crl" in low or "complete response" in low) else "ap"
+        # The drug text after the outcome marker, for identity matching in resolved().
+        dm = re.search(r"(?:Approved|CRL)\s*:?\s*(.{0,90})", re.sub(r"<[^>]+>", " ", tail))
+        out.append((tk, date, outcome, dm.group(1) if dm else ""))
     out.sort(key=lambda r: r[1], reverse=True)
     # collapse the same decision double-listed on both its real date and its PDUFA goal date
     # (e.g. UNCY 06-29 & 06-30): same ticker within a week -> keep only the newest
     dedup = []
-    for tk, date, outcome in out:
+    for tk, date, outcome, drug in out:
         if any(t == tk and abs((dt.date.fromisoformat(date) - dt.date.fromisoformat(d)).days) <= 7
-               for t, d, _ in dedup):
+               for t, d, _, _ in dedup):
             continue
-        dedup.append((tk, date, outcome))
+        dedup.append((tk, date, outcome, drug))
     return dedup
 
 
@@ -243,7 +272,7 @@ def render_upcoming(cats, key):
 
 def render_decided(decs, key):
     cards = []
-    for tk, date, outcome in decs:
+    for tk, date, outcome, _drug in decs:
         cls = "dec ap" if outcome == "ap" else "dec cr"   # CSS styles CRL cards via .dec.cr
         icon = "✓" if outcome == "ap" else "✕"
         word = "Approved" if outcome == "ap" else "CRL"
