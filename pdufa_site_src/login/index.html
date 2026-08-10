@@ -50,17 +50,12 @@ if(d&&n!=null)d.textContent=n<=0?'today':(n===1?'tomorrow':'in '+n+' days');
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
 </script><!--FRESH:END-->
-<div class="sub">Enter the email you subscribed with. We&rsquo;ll send you a one-time sign-in link, no password to remember or leak.</div>
+<div class="sub"></div>
 <div class="card" style="max-width:460px;margin:16px 0">
-  <form id="f" onsubmit="return false">
-    <input id="em" type="email" required placeholder="you@company.com" autocomplete="email"
-      style="width:100%;box-sizing:border-box;background:#081426;border:1px solid #294d80;border-radius:10px;padding:13px 14px;color:#eef4fc;font-size:15px;outline:none">
-    <button id="go" class="btn p" style="margin-top:10px;width:100%;border:0;cursor:pointer">Email me a sign-in link</button>
-  </form>
+  <!--LOGIN-PARKED: form removed 2026-08-10 until email delivery exists; restore from git when communication is set up--><div style="background:#081426;border:1px solid #294d80;border-radius:10px;padding:14px;color:#9db3d4;font-size:14px;line-height:1.6">Sign-in is temporarily unavailable while we finish setting up email delivery. If you already have an API key from checkout, it continues to work unchanged.</div>
   <div id="msg" style="margin-top:12px;font-size:13.5px;color:#9db3d4"></div>
 </div>
-<div class="sub" style="font-size:13px">Don&rsquo;t have a subscription yet? <a href="/pricing" style="color:#f0c86a">See pricing &rarr;</a><br>
-Trouble signing in? Email <a href="mailto:support@pdufa.bio" style="color:#f0c86a">support@pdufa.bio</a>.</div>
+<div class="sub" style="font-size:13px">Don&rsquo;t have a subscription yet? <a href="/pricing" style="color:#f0c86a">See pricing &rarr;</a><br></div>
 <script>
 var q=new URLSearchParams(location.search),M=document.getElementById('msg');
 if(q.get('e')==='expired')M.innerHTML='<span style="color:#ff7a72">That link expired or was already used. Request a new one.</span>';
