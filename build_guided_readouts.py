@@ -50,6 +50,18 @@ def main():
 
     src = open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
     arr, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
+    # Confirmed outcomes: a guided row whose result is in shows "Reported <date>" linking the
+    # company release, instead of sitting in the list as if still ahead.
+    try:
+        _conf = {c.get("id"): c for c in json.load(
+            open(os.path.join(HERE, "readout_reported_manual.json"), encoding="utf-8")
+        ).get("reported", [])}
+    except Exception:
+        _conf = {}
+    for r in arr:
+        c = _conf.get(r.get("id"))
+        if c:
+            r["_reported"] = c
     today = dt.date.today().isoformat()
     rows = [r for r in arr
             if r.get("type") == "Readout" and r.get("st") == "Guided" and (r.get("d") or "") >= today]
@@ -67,8 +79,20 @@ def main():
                   f' {esc(d.get("guided_filed") or "")}</a>') if url.startswith("http") else "&mdash;"
         ev = ('<span class="pill" style="background:rgba(240,200,106,.12);color:#f0c86a;'
               'border:1px solid #6b5a2f">event-driven</span>') if d.get("event_driven") else ""
+        rep = r.get("_reported")
+        date_cell = esc(label(r["d"], r.get("dp")))
+        if rep:
+            oc = str(rep.get("outcome", "")).lower()
+            col = "#46d17f" if oc == "positive" else "#ff7a72" if oc == "negative" else "#9db3d4"
+            mv = rep.get("day_move_pct")
+            mvtxt = (f' {"+" if (mv or 0) >= 0 else ""}{mv:.1f}% day-of' if mv is not None else "")
+            date_cell = (f'<span style="color:{col};font-weight:700">&#10003; Reported '
+                         f'{esc(rep.get("reported_date", ""))}</span>'
+                         f'<div style="font-size:11px;color:{col}">{esc(oc)}{mvtxt} &middot; '
+                         f'<a href="{esc(rep.get("source_url") or "#")}" rel="nofollow" '
+                         f'style="color:{col}">company release</a></div>')
         trs.append(
-            f'<tr><td class="dt">{esc(label(r["d"], r.get("dp")))}</td>'
+            f'<tr><td class="dt">{date_cell}</td>'
             f'<td class="tk"><a href="/ticker/{esc(r["t"])}">{esc(r["t"])}</a></td>'
             f'<td>{esc(prog)} {ev}</td>'
             f'<td class="co">{esc((r.get("company") or "")[:38])}</td>'

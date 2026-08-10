@@ -1,0 +1,19 @@
+{
+ "_comment": "Human-confirmed readout outcomes. This is the store the review sweep was designed around: build_readout_results.py renders these as precise day-of reactions (upgrading the auto-logged window move), build_guided_readouts.py marks the guided row Reported, and build_drug_pages.py stops listing the event as upcoming. Every entry needs a primary source URL; prices are Polygon adjusted closes. Facts only.",
+ "reported": [
+  {
+   "id": "readout_abcl_2026-09-30",
+   "t": "ABCL",
+   "drug": "ABCL635",
+   "reported_date": "2026-08-10",
+   "outcome": "positive",
+   "summary": "Phase 2 in moderate-to-severe vasomotor symptoms (menopause) met the primary endpoint: mean reduction of 8.8 moderate/severe hot flashes/day at Week 4 vs 3.5 on placebo (placebo-adjusted -5.3, statistically significant), n=92; severity -1.4 vs -0.3; no elevated liver enzymes or bilirubin reported in the treated arm.",
+   "source_url": "https://www.businesswire.com/news/home/20260810931321/en/AbCellera-Announces-Positive-Top-Line-Phase-2-Clinical-Trial-Results-for-ABCL635-Demonstrating-Significant-Reduction-in-Frequency-and-Severity-of-Vasomotor-Symptoms-and-a-Favorable-Tolerability-Profile",
+   "prior_close": 6.93,
+   "day_close": 9.95,
+   "day_move_pct": 43.5,
+   "guided_window": "Q3 2026",
+   "note": "Reported early in the company-guided Q3 2026 window."
+  }
+ ]
+}

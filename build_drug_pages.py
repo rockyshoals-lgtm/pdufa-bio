@@ -272,6 +272,15 @@ def main():
                           "url": f"/fda-decision/{slug_}"})
     print(f"archive source: {len(arch_rows)} decided rows with a parseable drug name")
 
+    # Confirmed readout outcomes: an event with a reported result must not be presented as an
+    # upcoming catalyst on its drug page, and its row should link the company release.
+    try:
+        confirmed = {c.get("id"): c for c in json.load(
+            open(os.path.join(HERE, "readout_reported_manual.json"), encoding="utf-8")
+        ).get("reported", [])}
+    except Exception:
+        confirmed = {}
+
     drugs = {}
     rejected = []
     for r in rows + arch_rows:
@@ -327,6 +336,20 @@ def main():
             if outcome and outcome not in ("decided",):
                 n_dec += 1
             when = pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day
+            conf = confirmed.get(r.get("id"))
+            if conf:
+                oc = str(conf.get("outcome", "")).lower()
+                ocol = "ok" if oc == "positive" else "bad"
+                when = pretty(conf.get("reported_date", day))
+                badge = (f' <span class="{ocol}">&#10003; data reported'
+                         + (f' &middot; {"+" if (conf.get("day_move_pct") or 0) >= 0 else ""}'
+                            f'{conf["day_move_pct"]:.1f}%' if conf.get("day_move_pct") is not None
+                            else "") + "</span>")
+                events.append(
+                    f'<a class="row" href="{esc(conf.get("source_url") or "#")}" rel="nofollow">'
+                    f'<span class="t">{esc(typ)} &middot; {esc(when)}{badge}</span>'
+                    f'<span class="d">{esc(tk)}</span></a>')
+                continue
             badge = (f' <span class="ok">&#10003; Approved</span>' if outcome == "Approved"
                      else f' <span class="bad">CRL</span>' if outcome == "CRL" else "")
             href = (f"/fda-decision/{tk}-{day}" if outcome in ("Approved", "CRL")
@@ -340,7 +363,8 @@ def main():
 
         # answer-first lede, from the same rows the table shows
         up = [r for r in rs if (r.get("d") or "") >= today
-              and str(r.get("st") or "").lower() != "decided"]
+              and str(r.get("st") or "").lower() != "decided"
+              and r.get("id") not in confirmed]
         lede = f"{name} "
         if comps:
             lede += f"is a {esc(', '.join(comps[:2]))} program"
@@ -393,9 +417,17 @@ def main():
                   f"{'on' if (n0.get('dp') or 'day') == 'day' else 'in'} "
                   f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
         else:
-            a1 = (f"No upcoming catalyst is on our calendar for {name}; "
-                  f"{n_dec if n_dec else 'no'} FDA decision"
-                  f"{'s are' if n_dec != 1 else ' is'} on record below.")
+            just = [confirmed[r["id"]] for r in rs if r.get("id") in confirmed]
+            if just:
+                j = max(just, key=lambda c: c.get("reported_date") or "")
+                a1 = (f"{name}'s most recent tracked catalyst has already reported: "
+                      f"{j.get('outcome', 'results')} data on {pretty(j['reported_date'])}, "
+                      f"per the company's own release (linked in the history below). No further "
+                      f"catalyst is on our calendar yet.")
+            else:
+                a1 = (f"No upcoming catalyst is on our calendar for {name}; "
+                      f"{n_dec if n_dec else 'no'} FDA decision"
+                      f"{'s are' if n_dec != 1 else ' is'} on record below.")
         dec_rows = [r for r in rs if arch.get((str(r.get('t') or '').upper(), r.get('d') or ''))
                     in ("Approved", "CRL")]
         q2 = f"What happened at {name}'s most recent FDA decision?"

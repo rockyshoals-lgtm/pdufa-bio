@@ -101,7 +101,8 @@ def load_past_readouts():
         ym = (r.get("dm") or str(r.get("d") or "")[:7])
         if not re.match(r'^\d{4}-\d{2}$', ym) or ym >= cur:
             continue  # only fully-elapsed month windows
-        out.append({"t": r["t"], "ym": ym, "name": r.get("name") or r["t"], "url": r.get("url") or ""})
+        out.append({"id": r.get("id"), "t": r["t"], "ym": ym,
+                    "name": r.get("name") or r["t"], "url": r.get("url") or ""})
     out.sort(key=lambda x: x["ym"], reverse=True)
     return out
 
@@ -130,7 +131,44 @@ def esc(s):
     return str(s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+MANUAL = os.path.join(HERE, "readout_reported_manual.json")
+
+
+def load_confirmed():
+    """Human-confirmed outcomes with a primary source -- the upgrade path this module's docstring
+    promised ('a confirmed exact date + outcome later upgrades an entry') but which never had a
+    store until ABCL635 reported early inside its guided Q3 window and needed one."""
+    try:
+        return json.load(open(MANUAL, encoding="utf-8")).get("reported", [])
+    except Exception:
+        return []
+
+
 def build_section(readouts, key, limit):
+    confirmed = load_confirmed()
+    conf_ids = {c.get("id") for c in confirmed}
+    # A confirmed entry replaces its own auto-logged window move; showing both would double-count.
+    readouts = [r for r in readouts if r.get("id") not in conf_ids]
+
+    crows = []
+    for c in confirmed:
+        mv = c.get("day_move_pct")
+        col = "#46d17f" if (mv or 0) >= 0 else "#ff7a72"
+        oc = str(c.get("outcome", "")).lower()
+        badge = ("&#10003; positive" if oc == "positive"
+                 else "&#10007; negative" if oc == "negative" else esc(oc))
+        d = c.get("reported_date", "")
+        crows.append(
+            f'<a class="row" href="{esc(c.get("source_url") or "#")}" rel="nofollow" '
+            f'style="display:flex;align-items:center;gap:12px;border-left:3px solid {col};'
+            f'padding-left:9px">'
+            f'<div style="min-width:150px"><div class="t">{esc(c.get("t",""))} &middot; '
+            f'{esc(d)} <span style="color:{col};font-weight:700">{badge}</span></div>'
+            f'<div class="d">{esc(c.get("drug",""))[:34]} &middot; day-of close reaction, '
+            f'confirmed against the company release</div></div>'
+            f'<div style="margin-left:auto;font-weight:800;color:{col}">'
+            f'{"+" if (mv or 0) >= 0 else ""}{mv:.1f}%</div></a>')
+
     rows = []
     for r in readouts[:limit]:
         s, e = window_bounds(r["ym"])
@@ -146,9 +184,18 @@ def build_section(readouts, key, limit):
             f'<a class="row" href="{href}" rel="nofollow" style="display:flex;align-items:center;gap:12px">'
             f'<div style="min-width:150px"><div class="t">{esc(r["t"])} &middot; {win}</div>'
             f'<div class="d">{esc(r["name"])[:60]}</div></div>{svg}{mv}</a>')
-    if not rows:
+    if not rows and not crows:
         return ""
-    return ('<div id="readout-results">'
+    conf_html = ""
+    if crows:
+        conf_html = ('<div class="mhead" style="color:#46d17f">Reported &amp; confirmed: day-of '
+                     'stock reaction</div>'
+                     '<div class="note" style="margin:-2px 0 8px">Outcome and date confirmed '
+                     'against the company\'s own release (linked per row); reaction is the '
+                     'Polygon-adjusted close vs the prior close. Facts only, not investment '
+                     'advice.</div>'
+                     f'<div class="grid">{"".join(crows)}</div>')
+    return ('<div id="readout-results">' + conf_html +
             '<div class="mhead" style="color:#46d17f">Recently reported: stock move over the estimated readout window</div>'
             '<div class="note" style="margin:-2px 0 8px">Auto-logged: each stock\'s price move across its '
             'estimated readout window (Polygon daily closes). These are estimated month windows, so the exact '
