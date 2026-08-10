@@ -451,6 +451,266 @@
    "source": "/feed",
    "destination": "/developers",
    "permanent": true
+  },
+  {
+   "source": "/drug/aflibercept",
+   "destination": "/drug/eylea-hd",
+   "permanent": true
+  },
+  {
+   "source": "/drug/aminolevulinic-acid-hydrochloride",
+   "destination": "/drug/ameluz",
+   "permanent": true
+  },
+  {
+   "source": "/drug/anifrolumab-fnia",
+   "destination": "/drug/saphnelo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/arimoclomol",
+   "destination": "/drug/miplyffa",
+   "permanent": true
+  },
+  {
+   "source": "/drug/baxdrostat",
+   "destination": "/drug/baxfendy",
+   "permanent": true
+  },
+  {
+   "source": "/drug/bevacizumab-vikg",
+   "destination": "/drug/lytenava",
+   "permanent": true
+  },
+  {
+   "source": "/drug/capivasertib",
+   "destination": "/drug/truqap",
+   "permanent": true
+  },
+  {
+   "source": "/drug/denosumab-adet",
+   "destination": "/drug/ponlimsi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/deucravacitinib",
+   "destination": "/drug/sotyktu",
+   "permanent": true
+  },
+  {
+   "source": "/drug/dexmedetomidine-sublingual-film",
+   "destination": "/drug/igalmi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/dupilumab",
+   "destination": "/drug/dupixent",
+   "permanent": true
+  },
+  {
+   "source": "/drug/durvalumab",
+   "destination": "/drug/imfinzi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/encorafenib",
+   "destination": "/drug/braftovi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/enlicitide-decanoate",
+   "destination": "/drug/lipfendra",
+   "permanent": true
+  },
+  {
+   "source": "/drug/exagamglogene-autotemcel",
+   "destination": "/drug/casgevy",
+   "permanent": true
+  },
+  {
+   "source": "/drug/finerenone",
+   "destination": "/drug/kerendia",
+   "permanent": true
+  },
+  {
+   "source": "/drug/gadoquatrane",
+   "destination": "/drug/ambelvist",
+   "permanent": true
+  },
+  {
+   "source": "/drug/guselkumab",
+   "destination": "/drug/tremfya",
+   "permanent": true
+  },
+  {
+   "source": "/drug/icotrokinra",
+   "destination": "/drug/icotyde",
+   "permanent": true
+  },
+  {
+   "source": "/drug/insulin-icodec-abae",
+   "destination": "/drug/awiqli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lebrikizumab-lbkz",
+   "destination": "/drug/ebglyss",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lecanemab-irmb",
+   "destination": "/drug/leqembi-iqlik",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lenacapavir",
+   "destination": "/drug/yeztugo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lunsotogene-parvec-cwha",
+   "destination": "/drug/otarmeni",
+   "permanent": true
+  },
+  {
+   "source": "/drug/marnetegragene-autotemcel",
+   "destination": "/drug/kresladi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/marstacimab",
+   "destination": "/drug/hympavzi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/mavacamten",
+   "destination": "/drug/camzyos",
+   "permanent": true
+  },
+  {
+   "source": "/drug/milsaperidone",
+   "destination": "/drug/bysanti",
+   "permanent": true
+  },
+  {
+   "source": "/drug/molgramostim-inhalation",
+   "destination": "/drug/molbreevi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/navepegritide",
+   "destination": "/drug/yuviwel",
+   "permanent": true
+  },
+  {
+   "source": "/drug/orforglipron",
+   "destination": "/drug/foundayo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/pegvaliase-pqpz",
+   "destination": "/drug/palynziq",
+   "permanent": true
+  },
+  {
+   "source": "/drug/pitolisant",
+   "destination": "/drug/wakix",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ravulizumab",
+   "destination": "/drug/ultomiris",
+   "permanent": true
+  },
+  {
+   "source": "/drug/retifanlimab-dlwr",
+   "destination": "/drug/zynyz",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ribitol",
+   "destination": "/drug/bbp-418",
+   "permanent": true
+  },
+  {
+   "source": "/drug/risankizumab-rzaa",
+   "destination": "/drug/skyrizi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/roflumilast",
+   "destination": "/drug/zoryve",
+   "permanent": true
+  },
+  {
+   "source": "/drug/sacituzumab-govitecan-hziy",
+   "destination": "/drug/trodelvy",
+   "permanent": true
+  },
+  {
+   "source": "/drug/secukinumab",
+   "destination": "/drug/cosentyx",
+   "permanent": true
+  },
+  {
+   "source": "/drug/somapacitan",
+   "destination": "/drug/sogroya",
+   "permanent": true
+  },
+  {
+   "source": "/drug/sparsentan",
+   "destination": "/drug/filspari",
+   "permanent": true
+  },
+  {
+   "source": "/drug/taletrectinib",
+   "destination": "/drug/ibtrozi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tambiciclib",
+   "destination": "/drug/sls009",
+   "permanent": true
+  },
+  {
+   "source": "/drug/teclistamab-cqyv",
+   "destination": "/drug/tecvayli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/trastuzumab-deruxtecan",
+   "destination": "/drug/enhertu",
+   "permanent": true
+  },
+  {
+   "source": "/drug/veligrotug-vvze",
+   "destination": "/drug/lumvoa",
+   "permanent": true
+  },
+  {
+   "source": "/drug/vepdegestrant",
+   "destination": "/drug/veppanu",
+   "permanent": true
+  },
+  {
+   "source": "/drug/vusolimogene-oderparepvec",
+   "destination": "/drug/rp1",
+   "permanent": true
+  },
+  {
+   "source": "/drug/vusolimogene-oderparepvec-wtpg",
+   "destination": "/drug/tudriqev",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zanidatamab-hrii",
+   "destination": "/drug/ziihera",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zopapogene-imadenovec-drba",
+   "destination": "/drug/papzimeos",
+   "permanent": true
   }
  ],
  "headers": [

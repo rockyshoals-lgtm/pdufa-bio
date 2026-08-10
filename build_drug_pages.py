@@ -63,7 +63,13 @@ TRIAL_WORDS = {"level", "regal", "hope", "reset", "glow", "vanquish", "luminous"
 # pass checked only the first word and published /drug/american-society, /drug/eur-society,
 # /drug/european-society and /drug/society-for -- four conference fragments wearing drug URLs.
 ORG_WORDS = {"society", "congress", "association", "academy", "college", "meeting", "symposium",
-             "conference", "annual", "committee"}
+             "conference", "annual", "committee", "convergence", "sessions"}
+
+# Conference acronyms reject a MULTI-WORD name ("ACR Convergence", "AASLD The Liver Meeting") but
+# never a hyphenated code: ACR-368 is a real Acrivon drug candidate, so the check requires a space.
+# Both /drug/aasld-the and /drug/acr-convergence shipped before this existed.
+CONF_ACRONYMS = {"aasld", "acr", "asco", "esmo", "aacr", "ash", "aan", "eha", "sitc", "easd",
+                 "ada", "acc", "ers", "sno", "ectrims", "aha", "asn", "aua", "ata", "scai"}
 
 # Hard rejections: strings that are trial names, dosing protocols or sentence fragments.
 JUNK = re.compile(
@@ -105,6 +111,11 @@ def clean_name(raw, rescue=True):
     drug because its row carried a broken tail.
     """
     s = re.sub(r"\s+", " ", str(raw or "")).strip(" -:\u2013")
+    # Pronunciation guides ride along in caps parens with no digits: "MIPLYFFA (MY-PLY-FAH)
+    # (arimoclomol)". Removing them BEFORE the core match lets the core keep the paren that
+    # matters -- the generic name -- instead of spending its one parenthetical on the sound-out.
+    s = re.sub(r"\(\s*[A-Z][A-Z' -]{2,}\s*\)", " ", s)
+    s = re.sub(r"\s+", " ", s).strip(" -:\u2013")
     prev = None
     while s != prev:
         prev = s
@@ -125,6 +136,8 @@ def clean_name(raw, rescue=True):
     if first in TRIAL_WORDS or s.lower() in TRIAL_WORDS:
         return paren_rescue(raw) if rescue else None
     if words & ORG_WORDS:
+        return paren_rescue(raw) if rescue else None
+    if first in CONF_ACRONYMS and " " in s:
         return paren_rescue(raw) if rescue else None
     if s.isdigit() or len(re.sub(r"[^A-Za-z0-9]", "", s)) < 3:
         return None
@@ -221,9 +234,47 @@ def main():
                        else "CRL" if re.search(r"\bcrl\b|complete response", txt, re.I) else "")
             arch.setdefault((tk, day), outcome)
 
+    # SECOND SOURCE: the decision pages themselves. The dataset only carries live catalysts, so a
+    # drug whose story is finished -- MIPLYFFA, one of exactly three queries with a documented
+    # 100%-CTR click -- had no page because its only rows are in the archive. Each decision page's
+    # title carries the full drug string ("MIPLYFFA (MY-PLY-FAH) (arimoclomol)") where the archive
+    # row truncates it, so the titles are the source. A synthesized row points at the decision
+    # page, which carries the outcome, the chart and the provenance: nothing new is claimed.
+    T1 = re.compile(r"^([A-Z]{1,6}) FDA Decision ([^:]+): (Approved|Complete Response Letter)"
+                    r"\s*-\s*(.+?)\s*\|", re.I)
+    T2 = re.compile(r"^([A-Z]{1,6}) FDA Decision \(([^)]+)\):\s*(.+?):\s*"
+                    r"(Approved|Complete Response Letter|CRL)\s*\|", re.I)
+    arch_rows = []
+    for dp_ in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
+        slug_ = os.path.basename(os.path.dirname(dp_))
+        md_ = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug_)
+        if not md_:
+            continue
+        doc_ = open(dp_, encoding="utf-8", errors="replace").read()
+        tm_ = re.search(r"<title[^>]*>(.*?)</title>", doc_, re.S)
+        if not tm_:
+            continue
+        ttl_ = html.unescape(re.sub(r"\s+", " ", tm_.group(1))).strip()
+        m1, m2 = T1.match(ttl_), T2.match(ttl_)
+        drug_ = m1.group(4) if m1 else (m2.group(3) if m2 else "")
+        if not drug_:
+            continue
+        # The title may carry a shortened form ("MIPLYFFA (MY-PLY-FAH)") while the page body holds
+        # the full one with the generic name ("MIPLYFFA (MY-PLY-FAH) (arimoclomol)"). The generic
+        # is what people search, so if the body extends the title's drug with a lowercase
+        # parenthetical, take the extended form.
+        ext_ = re.search(re.escape(drug_) + r"\s*\(([a-z][a-z0-9 -]{4,40})\)",
+                         html.unescape(doc_))
+        if ext_:
+            drug_ = f"{drug_} ({ext_.group(1)})"
+        arch_rows.append({"t": md_.group(1), "d": md_.group(2), "dp": "day", "type": "PDUFA",
+                          "st": "Decided", "name": drug_,
+                          "url": f"/fda-decision/{slug_}"})
+    print(f"archive source: {len(arch_rows)} decided rows with a parseable drug name")
+
     drugs = {}
     rejected = []
-    for r in rows:
+    for r in rows + arch_rows:
         name = clean_name(r.get("name"))
         if not name:
             if str(r.get("name") or "").strip():
@@ -311,9 +362,74 @@ def main():
             f'<a class="lit" href="/ticker/{esc(t)}">{esc(t)} catalyst hub</a>' for t in tks
             if os.path.isdir(os.path.join(SITE, "ticker", t)))
 
+        # ABOUT: only fields we actually hold. The audit's ask was 400-600 words; the ceiling on
+        # honest length is the data, so every sentence below is a held fact and none is filler.
+        about = []
+        if inds:
+            about.append(f"Indication{'s' if len(inds) > 1 else ''} under review: "
+                         + "; ".join(esc(i) for i in inds[:3]) + ".")
+        if comps:
+            about.append(f"Sponsor: {esc(', '.join(comps[:2]))}"
+                         + (f" ({esc(', '.join(tks))})" if tks else "") + ".")
+        caps = sorted({str(r.get("cap") or "") for r in rs if r.get("cap")})
+        if caps:
+            about.append(f"Market-cap tier at the time we tracked it: {esc(caps[0])}.")
+        n_up = len(up)
+        about.append(
+            f"We track {len(events)} catalyst event{'s' if len(events) != 1 else ''} for this "
+            f"program: {n_up} upcoming and {len(events) - n_up} in the record. A PDUFA date is "
+            f"the FDA's target date to complete review of a marketing application; a readout is "
+            f"the sponsor's expected date for clinical trial results. "
+            f'<a class="lit" href="/learn/what-is-a-pdufa-date">What a PDUFA date is</a> &middot; '
+            f'<a class="lit" href="/learn/why-cross-trial-comparisons-mislead">why we do not '
+            f"compare trial results across drugs</a>.")
+
+        # FAQ: two questions, answered from the same rows the table shows, emitted as FAQPage
+        # schema because drug-name queries are exactly where the AI-citation baseline (8) grows.
+        q1 = f"When is {name}'s next FDA decision or readout?"
+        if up:
+            n0 = up[0]
+            a1 = (f"The next tracked catalyst for {name} is a {n0.get('type', 'catalyst')} "
+                  f"{'on' if (n0.get('dp') or 'day') == 'day' else 'in'} "
+                  f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
+        else:
+            a1 = (f"No upcoming catalyst is on our calendar for {name}; "
+                  f"{n_dec if n_dec else 'no'} FDA decision"
+                  f"{'s are' if n_dec != 1 else ' is'} on record below.")
+        dec_rows = [r for r in rs if arch.get((str(r.get('t') or '').upper(), r.get('d') or ''))
+                    in ("Approved", "CRL")]
+        q2 = f"What happened at {name}'s most recent FDA decision?"
+        if dec_rows:
+            last = max(dec_rows, key=lambda r: r.get("d") or "")
+            oc = arch.get((str(last.get('t') or '').upper(), last['d']))
+            a2 = (f"On {pretty(last['d'])} the FDA "
+                  + ("approved the application" if oc == "Approved"
+                     else "issued a Complete Response Letter") +
+                  f". The decision page carries the source document and the measured share-price "
+                  f"reaction.")
+        else:
+            a2 = f"No FDA decision for {name} is in our archive yet."
+        faq_html = ("<h2>Questions</h2>"
+                    + f"<h3 style='font-size:15px;margin:14px 0 4px'>{esc(q1)}</h3>"
+                    + f"<p style='color:var(--mut2)'>{a1}</p>"
+                    + f"<h3 style='font-size:15px;margin:14px 0 4px'>{esc(q2)}</h3>"
+                    + f"<p style='color:var(--mut2)'>{a2}</p>")
+        faq_ld = ('<script type="application/ld+json">' + json.dumps(
+            {"@context": "https://schema.org", "@type": "FAQPage",
+             "url": f"{BASE}/drug/{slug}",
+             "mainEntity": [
+                 {"@type": "Question", "name": q1, "acceptedAnswer":
+                     {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a1)}},
+                 {"@type": "Question", "name": q2, "acceptedAnswer":
+                     {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a2)}}]},
+            separators=(",", ":")) + "</script>")
+
         body = (f'<p style="color:var(--mut2);max-width:72ch">{lede}</p>'
                 + (f"<p>{hubs}</p>" if hubs else "")
-                + "<h2>Catalyst history</h2>" + "".join(events))
+                + "<h2>About this program</h2>"
+                + f'<p style="max-width:72ch">{" ".join(about)}</p>'
+                + "<h2>Catalyst history</h2>" + "".join(events)
+                + faq_html + faq_ld)
 
         title = f"{name}: FDA Decision Dates &amp; Catalyst History | pdufa.bio"
         if len(html.unescape(title)) > 100:
@@ -350,6 +466,31 @@ def main():
         body=f'<p style="color:var(--mut2);max-width:72ch">{esc(idx_lede)}</p>' + items)
     if not a.dry_run:
         open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(idx)
+
+    # ALIAS REDIRECTS: people search the generic name ("arimoclomol"), the page lives under the
+    # brand ("miplyffa"). A 301 is honest routing, not a claim, and it consolidates authority on
+    # one URL instead of splitting it. Managed as a deterministic block: every /drug/* redirect in
+    # vercel.json is replaced wholesale by this computed, sorted set, so reruns cannot accumulate
+    # strays and a drug that vanishes takes its alias with it.
+    aliases = {}
+    for slug, d in sorted(drugs.items()):
+        m = re.search(r"\(([a-z][a-z0-9 -]{5,40})\)", d["name"])
+        if not m:
+            continue
+        gslug = slugify(m.group(1))
+        if gslug and gslug != slug and gslug not in drugs:
+            aliases.setdefault(gslug, slug)
+    vj = os.path.join(SITE, "vercel.json")
+    if os.path.exists(vj) and not a.dry_run:
+        cfg = json.load(open(vj, encoding="utf-8"))
+        rd = [r for r in cfg.get("redirects", [])
+              if not str(r.get("source", "")).startswith("/drug/")]
+        for g, s in sorted(aliases.items()):
+            rd.append({"source": f"/drug/{g}", "destination": f"/drug/{s}", "permanent": True})
+        cfg["redirects"] = rd
+        json.dump(cfg, open(vj, "w", encoding="utf-8"), indent=1)
+    print(f"generic-name aliases: {len(aliases)} redirect(s) (e.g. "
+          + ", ".join(f"/drug/{g}->{s}" for g, s in list(sorted(aliases.items()))[:3]) + ")")
 
     print(f"drug pages written: {written} (+ index)")
     print(f"rejected as not-a-drug-name: {len(rejected)}")
