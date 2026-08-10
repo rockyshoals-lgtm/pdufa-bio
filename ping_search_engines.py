@@ -61,8 +61,12 @@ def changed_urls(since_days=2):
         return [], None
     newest = max(d for _, d in entries)
     cutoff = (dt.date.today() - dt.timedelta(days=since_days)).isoformat()
-    urls = [u for u, d in entries if d >= cutoff]
-    return urls, newest
+    # Newest change first, and at equal dates the shallower URL first, so when a downstream cap
+    # (IndexNow's 10k, SubmitUrlBatch's 80) truncates the list, what survives is today's changes
+    # and the hub pages rather than an alphabetical run of ticker pages.
+    picked = sorted(((u, d) for u, d in entries if d >= cutoff),
+                    key=lambda x: (x[1], -x[0].count("/")), reverse=True)
+    return [u for u, _ in picked], newest
 
 
 def post_indexnow(key, urls, dry):
@@ -73,11 +77,16 @@ def post_indexnow(key, urls, dry):
         print(f"  [dry-run] would POST {len(urls[:MAX_URLS])} URL(s) to IndexNow")
         return
     try:
-        req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
-                                     headers=UA, method="POST")
-        r = urllib.request.urlopen(req, timeout=25)
-        print(f"  IndexNow: HTTP {r.status} for {len(urls[:MAX_URLS])} URL(s) "
-              f"(Bing, Yandex, Seznam, Naver)")
+        # Two endpoints on purpose. api.indexnow.org fans out to every participating engine, but
+        # Bing Webmaster Tools' IndexNow panel showed ZERO submissions attributed to the property
+        # despite weeks of HTTP 200s from the shared endpoint (key file verified live and
+        # matching). Bing's own ingest endpoint is the one its console credits, so it gets a
+        # direct copy. Duplicate notification is explicitly harmless under the protocol.
+        for ep, label in (("https://api.indexnow.org/indexnow", "IndexNow (all engines)"),
+                          ("https://www.bing.com/indexnow", "IndexNow (Bing direct)")):
+            req = urllib.request.Request(ep, data=body, headers=UA, method="POST")
+            r = urllib.request.urlopen(req, timeout=25)
+            print(f"  {label}: HTTP {r.status} for {len(urls[:MAX_URLS])} URL(s)")
     except urllib.error.HTTPError as e:
         detail = {403: "key file not reachable yet -- it deploys with this commit, so the first "
                        "run after a fresh key can fail; the next run succeeds",
@@ -85,6 +94,45 @@ def post_indexnow(key, urls, dry):
         print(f"  IndexNow: HTTP {e.code} ({detail})")
     except Exception as e:
         print(f"  IndexNow: {type(e).__name__}: {e}")
+
+
+def submit_bing_batch(urls, dry):
+    """SubmitUrlBatch on the JSON protocol -- the quota-backed channel with real attribution.
+
+    BWT showed 12 of ~100 daily submissions used while 418 pages sit unfetched on Google and Bing
+    delivers 10x Google's impressions. This uses the rest of that quota on whatever actually
+    changed today. JSON protocol deliberately: Microsoft's own protocol table lists JSON as a
+    SUPPORTED protocol alongside the retiring SOAP/POX -- the Aug 31 retirement banner does not
+    apply to this endpoint (learn.microsoft.com/bingwebmaster/api-protocols).
+
+    Capped at 80 to leave headroom for manual submissions from the console. No key -> says so and
+    moves on; a missing secret must never fail the build.
+    """
+    key = os.environ.get("BING_WEBMASTER_API_KEY", "").strip()
+    if not key:
+        print("  Bing SubmitUrlBatch: no BING_WEBMASTER_API_KEY in env; skipped.")
+        return
+    batch = urls[:80]
+    if not batch:
+        print("  Bing SubmitUrlBatch: nothing changed; nothing to submit.")
+        return
+    body = json.dumps({"siteUrl": "https://www.pdufa.bio/", "urlList": batch}).encode()
+    if dry:
+        print(f"  [dry-run] would SubmitUrlBatch {len(batch)} URL(s) to Bing")
+        return
+    try:
+        req = urllib.request.Request(
+            "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=" + key,
+            data=body, headers={**UA, "Content-Type": "application/json; charset=utf-8"},
+            method="POST")
+        r = urllib.request.urlopen(req, timeout=45)
+        print(f"  Bing SubmitUrlBatch: HTTP {r.status} for {len(batch)} URL(s) "
+              f"(quota-backed, console-attributed)")
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode("utf-8", "replace")[:160]
+        print(f"  Bing SubmitUrlBatch: HTTP {e.code} -- {detail}")
+    except Exception as e:
+        print(f"  Bing SubmitUrlBatch: {type(e).__name__}: {e}")
 
 
 def submit_gsc(dry):
@@ -173,6 +221,7 @@ def main():
 
     if urls:
         post_indexnow(key, urls, a.dry_run)
+        submit_bing_batch(urls, a.dry_run)
     else:
         print("  nothing changed recently; no submission")
     submit_gsc(a.dry_run)

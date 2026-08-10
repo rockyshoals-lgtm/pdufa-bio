@@ -34,6 +34,13 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HISTORY = os.path.join(HERE, "_bing_rank_history.json")
+# THE AUG 31 RETIREMENT BANNER DOES NOT APPLY TO THIS ENDPOINT. BWT displays "Legacy SOAP and POX
+# APIs will be retired on August 31, 2026" and a red-team audit flagged this file as dated
+# breakage. Checked against Microsoft's own protocol table
+# (learn.microsoft.com/bingwebmaster/api-protocols): SOAP and POX retire; JSON/HTTP -- this exact
+# ssl.bing.com/webmaster/api.svc/json/METHOD format -- is the SUPPORTED protocol they migrate you
+# to, same key, same quotas. No migration needed here; do not "fix" this on the strength of the
+# banner alone.
 BASE = "https://ssl.bing.com/webmaster/api.svc/json"
 # Trailing slash is REQUIRED and is not cosmetic. Bing matches siteUrl against the verified
 # property string exactly: "https://www.pdufa.bio" returns an empty result set with HTTP 200 and no

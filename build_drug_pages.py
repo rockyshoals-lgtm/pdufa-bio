@@ -59,6 +59,12 @@ DESCRIPTOR = re.compile(
 TRIAL_WORDS = {"level", "regal", "hope", "reset", "glow", "vanquish", "luminous", "clinical",
                "combined", "interim", "topline", "open-label", "pivotal", "registrational"}
 
+# Organisation vocabulary ANYWHERE in the name means this is a conference, not a drug. The first
+# pass checked only the first word and published /drug/american-society, /drug/eur-society,
+# /drug/european-society and /drug/society-for -- four conference fragments wearing drug URLs.
+ORG_WORDS = {"society", "congress", "association", "academy", "college", "meeting", "symposium",
+             "conference", "annual", "committee"}
+
 # Hard rejections: strings that are trial names, dosing protocols or sentence fragments.
 JUNK = re.compile(
     r"\breadout\b|\btopline\b|\bstimulation\b|\bday\s*\(|\bSD\)|μg|\bmg\b|\blow dose\b"
@@ -69,7 +75,25 @@ CORE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9'\u2019./-]*(?:\s+[A-Za-z0-9][A-Za-z0
                   r"(\s*\([^()]{2,45}\))?")
 
 
-def clean_name(raw):
+def paren_rescue(raw):
+    """The drug hiding inside a rejected string's parenthetical, if there is one.
+
+    'REGAL Phase 3 (galinpepimut-S) topline, event-driven' is a trial description and is rightly
+    rejected -- but galinpepimut-S is SELLAS's lead program and deserves its page. When the outer
+    string fails validation, each parenthetical is tried as a candidate in its own right (once,
+    no recursion), accepting only content with lowercase letters, so acronyms like (CTGTAC) or
+    (HOPE-2) are not promoted into drugs.
+    """
+    for inner in re.findall(r"\(([^()]{3,45})\)", str(raw or "")):
+        if not re.search(r"[a-z]", inner):
+            continue
+        got = clean_name(inner, rescue=False)
+        if got:
+            return got
+    return None
+
+
+def clean_name(raw, rescue=True):
     """The drug's CORE name, or None if this string does not confidently name a drug.
 
     Core means "Brand (generic)" or just the name -- one or two words plus an optional
@@ -96,15 +120,18 @@ def clean_name(raw):
     if inner and inner.isupper() and len(inner) >= 4 and "-" not in inner:
         paren = ""
     s = (m.group(1) + paren).strip()
+    words = {w.lower() for w in re.findall(r"[A-Za-z][A-Za-z-]*", s)}
     first = re.split(r"[\s(-]", s, maxsplit=1)[0].lower()
     if first in TRIAL_WORDS or s.lower() in TRIAL_WORDS:
-        return None
+        return paren_rescue(raw) if rescue else None
+    if words & ORG_WORDS:
+        return paren_rescue(raw) if rescue else None
     if s.isdigit() or len(re.sub(r"[^A-Za-z0-9]", "", s)) < 3:
         return None
     if not (2 <= len(s) <= 70):
         return None
     if JUNK.search(s):
-        return None
+        return paren_rescue(raw) if rescue else None
     if s.count("(") != s.count(")"):
         return None
     # Articles and prepositions as the first WORD mean a sentence fragment, but the boundary must

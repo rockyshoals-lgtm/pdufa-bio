@@ -369,10 +369,13 @@ jobs:
       # bing.com/ping returns 410, both verified live. IndexNow is the only working push channel
       # (Bing/Yandex/Seznam/Naver); Google's supported route is the Search Console API, which needs
       # the GSC_SERVICE_ACCOUNT_JSON secret. Without it this step says so rather than pretending.
-      - name: Ping search engines (IndexNow + Search Console)
+      - name: Ping search engines (IndexNow + Bing SubmitUrlBatch + Search Console)
         continue-on-error: true
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          # SubmitUrlBatch: the quota-backed Bing channel (~100/day, we were using 12). Same key
+          # as the rank reporter; the JSON protocol it uses survives the Aug 31 SOAP/POX cut.
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
         run: |
           sleep 60
           python ping_search_engines.py

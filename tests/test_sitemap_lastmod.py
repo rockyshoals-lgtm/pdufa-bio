@@ -46,7 +46,9 @@ def main():
     xml = open(SITEMAP, encoding="utf-8", errors="replace").read()
     dates = re.findall(r"<lastmod>([^<]+)</lastmod>", xml)
     n_loc = xml.count("<loc>")
-    today = dt.date.today().isoformat()
+    # UTC, matching build_sitemap.py's clock. With a local date this failed every evening after
+    # 00:00 UTC, calling the builder's correct Aug-10 stamps 'future' on local Aug 9.
+    today = dt.datetime.now(dt.timezone.utc).date().isoformat()
 
     if not dates:
         print("FAIL: sitemap has no <lastmod> at all")
