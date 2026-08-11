@@ -254,6 +254,11 @@ jobs:
       - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
         run: python build_pdufa_ticker_index.py
 
+      # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
+      # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
+      - name: "BreadcrumbList on every indexable page"
+        run: python build_breadcrumbs.py
+
       - name: "Noindex empty calendar months (both directions)"
         run: python noindex_empty_months.py
 
