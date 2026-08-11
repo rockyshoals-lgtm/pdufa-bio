@@ -248,6 +248,12 @@ jobs:
       - name: "Drug pages (/drug/{name}) from dataset + decisions archive"
         run: python build_drug_pages.py
 
+      # Red team 2026-08-11: /pdufa/LNTH redirected to June's CRL for a different molecule at T-2
+      # before the Aug 13 MK-6240 PDUFA. Bare-ticker redirects go stale the day a decided ticker
+      # gets a new catalyst, so this rule runs daily: drop the redirect, serve an event index.
+      - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
+        run: python build_pdufa_ticker_index.py
+
       - name: "Noindex empty calendar months (both directions)"
         run: python noindex_empty_months.py
 

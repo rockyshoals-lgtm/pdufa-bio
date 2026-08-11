@@ -233,11 +233,6 @@
    "permanent": true
   },
   {
-   "source": "/pdufa/AZN",
-   "destination": "/fda-decision/AZN-2026-06-12",
-   "permanent": true
-  },
-  {
    "source": "/pdufa/AZN-truqap",
    "destination": "/fda-decision/AZN-2026-06-12",
    "permanent": true
@@ -248,11 +243,6 @@
    "permanent": true
   },
   {
-   "source": "/pdufa/GSK",
-   "destination": "/fda-decision/GSK-2026-06-17",
-   "permanent": true
-  },
-  {
    "source": "/pdufa/GSK-tebipenem-hbr",
    "destination": "/fda-decision/GSK-2026-06-17",
    "permanent": true
@@ -260,11 +250,6 @@
   {
    "source": "/pdufa/GSK-tebipenem-pivoxil",
    "destination": "/fda-decision/GSK-2026-06-17",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/IONS",
-   "destination": "/fda-decision/IONS-2026-06-24",
    "permanent": true
   },
   {
@@ -303,16 +288,6 @@
    "permanent": true
   },
   {
-   "source": "/pdufa/ARQT",
-   "destination": "/fda-decision/ARQT-2026-06-30",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/LNTH",
-   "destination": "/fda-decision/LNTH-2026-06-26",
-   "permanent": true
-  },
-  {
    "source": "/pdufa/LNTH-lnth-2501",
    "destination": "/fda-decision/LNTH-2026-06-26",
    "permanent": true
@@ -320,11 +295,6 @@
   {
    "source": "/pdufa/UNCY",
    "destination": "/fda-decision/UNCY-2026-06-30",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/NVO",
-   "destination": "/fda-decision/NVO-2026-03-03",
    "permanent": true
   },
   {
@@ -354,11 +324,6 @@
   },
   {
    "source": "/pdufa/EVAX",
-   "destination": "/calendar",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/MIRM",
    "destination": "/calendar",
    "permanent": true
   },
@@ -605,6 +570,11 @@
   {
    "source": "/drug/orforglipron",
    "destination": "/drug/foundayo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/pariglasgene-brecaparvovec",
+   "destination": "/drug/dtx401",
    "permanent": true
   },
   {

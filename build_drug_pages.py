@@ -115,6 +115,13 @@ def clean_name(raw, rescue=True):
     # (arimoclomol)". Removing them BEFORE the core match lets the core keep the paren that
     # matters -- the generic name -- instead of spending its one parenthetical on the sound-out.
     s = re.sub(r"\(\s*[A-Z][A-Z' -]{2,}\s*\)", " ", s)
+    # Modality descriptions ride BETWEEN the code name and the generic: "DTX401 AAV gene therapy
+    # (pariglasgene brecaparvovec)". CORE's two words would take "DTX401 AAV" and never reach the
+    # parenthetical, publishing /drug/dtx401-aav while /drug/dtx401 and the generic 404 (red team
+    # 2026-08-10/11, Ultragenyx PDUFA T-12). The modality is a category, not a name -- remove it so
+    # the core becomes "DTX401 (pariglasgene brecaparvovec)". Never matches inside a word.
+    s = re.sub(r"\s+(?:AAV|rAAV\w*|lentiviral|mRNA|siRNA)?\s*\b(?:gene|cell)[ -]therapy\b", " ", s,
+               flags=re.I)
     s = re.sub(r"\s+", " ", s).strip(" -:\u2013")
     prev = None
     while s != prev:
