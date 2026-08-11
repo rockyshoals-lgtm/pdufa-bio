@@ -353,8 +353,16 @@ jobs:
           # committed stats file stayed on 1,827, so a fresh checkout failed its own guard while CI
           # went on passing, because CI regenerates the study before the guard runs. It also meant
           # the study never actually persisted its growth: every run redid the same work.
-          git add pdufa_site_src/api/data.js pdufa_site_src/api/v1/dataset.mjs pdufa_site_src/index.html pdufa_site_src/calendar pdufa_site_src/readouts/index.html pdufa_site_src/decisions/index.html pdufa_site_src/adcomm/index.html pdufa_site_src/sitemap.xml pdufa_site_src/ticker pdufa_site_src/sls pdufa_site_src/research pdufa_site_src/conferences pdufa_site_src/tickers pdufa_site_src/calendar.ics pdufa_site_src/search-index.json
+          # The WHOLE site tree, not an allowlist. The old explicit list predated /drug (393
+          # pages), /learn, /fda-decision, build-info.json, vercel.json and the readout-results
+          # store -- CI regenerated all of them every morning and then silently threw the result
+          # away because git add never mentioned them, leaving live pages stale until the next
+          # manual push. An allowlist of generated surfaces has to be updated every time a
+          # surface is born, and it wasn't. Backups are excluded explicitly instead.
+          git add pdufa_site_src
+          git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json
+          git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then

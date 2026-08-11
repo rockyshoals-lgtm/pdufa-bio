@@ -102,3 +102,6 @@ conf_study/si_panel_*.csv.gz
 orats_backtest_cache/
 backtest_progress/
 *.tar.gz
+# board/page backups written by builders; never content
+pdufa_site_src/**/*.bak*
+pdufa_site_src/*.bak*
