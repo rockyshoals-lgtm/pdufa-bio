@@ -1,0 +1,3875 @@
+{
+ "as_of": "2026-08-12",
+ "results": {
+  "AAPG-2025-12-09": {
+   "ticker": "AAPG",
+   "date": "2025-12-09",
+   "asset": "Olverembatinib - (POLARIS-1)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ABBV-2025-02-07": {
+   "ticker": "ABBV",
+   "date": "2025-02-07",
+   "asset": "EMBLAVEO (aztreonam and avibactam)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EMBLAVEO",
+    "appl_no": "NDA217906",
+    "approval_date": "2025-02-07",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217906",
+    "source_label": "Drugs@FDA, application NDA217906, action date 2025-02-07"
+   }
+  },
+  "ABBV-2025-04-02": {
+   "ticker": "ABBV",
+   "date": "2025-04-02",
+   "asset": "Vanrafia (atrasentan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Vanrafia",
+    "appl_no": "NDA219208",
+    "approval_date": "2025-04-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219208",
+    "source_label": "Drugs@FDA, application NDA219208, action date 2025-04-02"
+   }
+  },
+  "ABBV-2025-04-29": {
+   "ticker": "ABBV",
+   "date": "2025-04-29",
+   "asset": "Upadacitinib (RINVOQ)  - (SELECT-GCA)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Upadacitinib",
+    "appl_no": "NDA211675",
+    "approval_date": "2025-04-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211675",
+    "source_label": "Drugs@FDA, application NDA211675, action date 2025-04-28"
+   }
+  },
+  "ABBV-2025-05-14": {
+   "ticker": "ABBV",
+   "date": "2025-05-14",
+   "asset": "EMRELIS (Telisotuzumab vedotin (Teliso-V)) - (LUMINOSITY)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EMRELIS",
+    "appl_no": "BLA761384",
+    "approval_date": "2025-05-14",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761384",
+    "source_label": "Drugs@FDA, application BLA761384, action date 2025-05-14"
+   }
+  },
+  "ABBV-2025-06-11": {
+   "ticker": "ABBV",
+   "date": "2025-06-11",
+   "asset": "MAVYRET (glecaprevir/pibrentasvir)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "MAVYRET",
+    "appl_no": "NDA215110",
+    "approval_date": "2025-06-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215110",
+    "source_label": "Drugs@FDA, application NDA215110, action date 2025-06-10"
+   }
+  },
+  "ABBV-2025-06-30": {
+   "ticker": "ABBV",
+   "date": "2025-06-30",
+   "asset": "JUV\u00c9DERM - (SKINVIVE) (injectable HA)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ABBV-2025-10-13": {
+   "ticker": "ABBV",
+   "date": "2025-10-13",
+   "asset": "RINVOQ (upadacitinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "RINVOQ",
+    "appl_no": "NDA211675",
+    "approval_date": "2025-10-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211675",
+    "source_label": "Drugs@FDA, application NDA211675, action date 2025-10-10"
+   }
+  },
+  "ABBV-2025-11-18": {
+   "ticker": "ABBV",
+   "date": "2025-11-18",
+   "asset": "EPKINLY (epcoritamab-bysp) in Combination with Rituximab and Lenalidomide",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EPKINLY",
+    "appl_no": "BLA761324",
+    "approval_date": "2025-11-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761324",
+    "source_label": "Drugs@FDA, application BLA761324, action date 2025-11-18"
+   }
+  },
+  "ABBV-2026-02-20": {
+   "ticker": "ABBV",
+   "date": "2026-02-20",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-02-26",
+    "accession": "0001104659-26-020643",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1551152/000110465926020643/tm266774d4_ex1-1.htm",
+    "source_label": "SEC filing 0001104659-26-020643 of 2026-02-26 containing 'approval of'"
+   }
+  },
+  "ABEO-2025-04-29": {
+   "ticker": "ABEO",
+   "date": "2025-04-29",
+   "asset": "ZEVASKYN (prademagene zamikeracel)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2025-04-29",
+    "accession": "0001641172-25-006548",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/318306/000164117225006548/ex99-1.htm",
+    "source_label": "SEC filing 0001641172-25-006548 of 2025-04-29 containing 'FDA approval'"
+   }
+  },
+  "ABEO-2025-07-11": {
+   "ticker": "ABEO",
+   "date": "2025-07-11",
+   "asset": "UX111 - (ABO-102)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ACAD-2025-12-12": {
+   "ticker": "ACAD",
+   "date": "2025-12-12",
+   "asset": "DAYBUE STIX (trofinetide)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "DAYBUE STIX",
+    "appl_no": "NDA219884",
+    "approval_date": "2025-12-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219884",
+    "source_label": "Drugs@FDA, application NDA219884, action date 2025-12-11"
+   }
+  },
+  "ADCT-2025-06-12": {
+   "ticker": "ADCT",
+   "date": "2025-06-12",
+   "asset": "ZYNLONTA (Loncastuximab Tesirine-Ipyl) - (LOTIS-7)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AGIO-2025-11-03": {
+   "ticker": "AGIO",
+   "date": "2025-11-03",
+   "asset": "Kygevvi (doxecitine and doxribtimine)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Kygevvi",
+    "appl_no": "NDA219792",
+    "approval_date": "2025-11-03",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219792",
+    "source_label": "Drugs@FDA, application NDA219792, action date 2025-11-03"
+   }
+  },
+  "AGIO-2025-12-23": {
+   "ticker": "AGIO",
+   "date": "2025-12-23",
+   "asset": "AQVESME (mitapivat)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "AQVESME",
+    "appl_no": "NDA216196",
+    "approval_date": "2025-12-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216196",
+    "source_label": "Drugs@FDA, application NDA216196, action date 2025-12-23"
+   }
+  },
+  "ALC-2025-05-28": {
+   "ticker": "ALC",
+   "date": "2025-05-28",
+   "asset": "TRYPTYR (acoltremon ophthalmic solution) 0.003%",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TRYPTYR",
+    "appl_no": "NDA217370",
+    "approval_date": "2025-05-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217370",
+    "source_label": "Drugs@FDA, application NDA217370, action date 2025-05-28"
+   }
+  },
+  "ALNY-2025-03-20": {
+   "ticker": "ALNY",
+   "date": "2025-03-20",
+   "asset": "AMVUTTRA (vutrisiran)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "AMVUTTRA",
+    "appl_no": "NDA215515",
+    "approval_date": "2025-03-20",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215515",
+    "source_label": "Drugs@FDA, application NDA215515, action date 2025-03-20"
+   }
+  },
+  "ALNY-2025-03-28": {
+   "ticker": "ALNY",
+   "date": "2025-03-28",
+   "asset": "Qfitlia (fitusiran) - (ATLAS)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Qfitlia",
+    "appl_no": "NDA219019",
+    "approval_date": "2025-03-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219019",
+    "source_label": "Drugs@FDA, application NDA219019, action date 2025-03-28"
+   }
+  },
+  "ALPMY-2025-02-13": {
+   "ticker": "ALPMY",
+   "date": "2025-02-13",
+   "asset": "IZERVAY (avacincaptad pegol intravitreal solution)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "IZERVAY",
+    "appl_no": "NDA217225",
+    "approval_date": "2025-02-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217225",
+    "source_label": "Drugs@FDA, application NDA217225, action date 2025-02-12"
+   }
+  },
+  "ALPMY-2025-11-21": {
+   "ticker": "ALPMY",
+   "date": "2025-11-21",
+   "asset": "PADCEV (enfortumab vedotin) + KEYTRUDA (pembrolizumab) - (EV-303 / KEYNOTE-905)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "PADCEV",
+    "appl_no": "BLA761137",
+    "approval_date": "2025-11-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761137",
+    "source_label": "Drugs@FDA, application BLA761137, action date 2025-11-21"
+   }
+  },
+  "ALPMY-2025-12-17": {
+   "ticker": "ALPMY",
+   "date": "2025-12-17",
+   "asset": "KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ALVO-2025-05-05": {
+   "ticker": "ALVO",
+   "date": "2025-05-05",
+   "asset": "SELARSDI (ustekinumab-aekn) injection - (STELARA biosimilar)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SELARSDI",
+    "appl_no": "BLA761343",
+    "approval_date": "2025-04-30",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761343",
+    "source_label": "Drugs@FDA, application BLA761343, action date 2025-04-30"
+   }
+  },
+  "ALXO-2025-04-25": {
+   "ticker": "ALXO",
+   "date": "2025-04-25",
+   "asset": "ALX148 (evorpacept) + rituximab and lenalidomide",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ALXO-2025-12-08": {
+   "ticker": "ALXO",
+   "date": "2025-12-08",
+   "asset": "ALX148 (evorpacept) + rituximab and lenalidomide",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AMGN-2025-01-17": {
+   "ticker": "AMGN",
+   "date": "2025-01-17",
+   "asset": "LUMAKRAS (Sotorasib)  + Vectibix (panitumumab) - (CodeBreaK 300)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "LUMAKRAS",
+    "appl_no": "NDA214665",
+    "approval_date": "2025-01-16",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214665",
+    "source_label": "Drugs@FDA, application NDA214665, action date 2025-01-16"
+   }
+  },
+  "AMGN-2025-04-03": {
+   "ticker": "AMGN",
+   "date": "2025-04-03",
+   "asset": "UPLIZNA (INEBILIZUMAB-CDON)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "UPLIZNA",
+    "appl_no": "BLA761142",
+    "approval_date": "2025-04-03",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761142",
+    "source_label": "Drugs@FDA, application BLA761142, action date 2025-04-03"
+   }
+  },
+  "AMGN-2025-10-17": {
+   "ticker": "AMGN",
+   "date": "2025-10-17",
+   "asset": "TEZSPIRE (tezepelumab-ekko)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TEZSPIRE",
+    "appl_no": "BLA761224",
+    "approval_date": "2025-10-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761224",
+    "source_label": "Drugs@FDA, application BLA761224, action date 2025-10-17"
+   }
+  },
+  "AMGN-2025-11-19": {
+   "ticker": "AMGN",
+   "date": "2025-11-19",
+   "asset": "Tarlatamab (AMG 757) - (DeLLphi-304)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Tarlatamab",
+    "appl_no": "BLA761344",
+    "approval_date": "2025-11-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761344",
+    "source_label": "Drugs@FDA, application BLA761344, action date 2025-11-19"
+   }
+  },
+  "AMGN-2025-12-11": {
+   "ticker": "AMGN",
+   "date": "2025-12-11",
+   "asset": "UPLIZNA (Inebilizumab) - (MINT)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "UPLIZNA",
+    "appl_no": "BLA761142",
+    "approval_date": "2025-12-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761142",
+    "source_label": "Drugs@FDA, application BLA761142, action date 2025-12-11"
+   }
+  },
+  "AMPH-2025-08-11": {
+   "ticker": "AMPH",
+   "date": "2025-08-11",
+   "asset": "Iron Sucrose Injection",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Iron",
+    "appl_no": "ANDA212340",
+    "approval_date": "2025-08-08",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=212340",
+    "source_label": "Drugs@FDA, application ANDA212340, action date 2025-08-08"
+   }
+  },
+  "AMPH-2025-12-15": {
+   "ticker": "AMPH",
+   "date": "2025-12-15",
+   "asset": "Teriparatide injection, USP 560 mcg/2.24mL (250 mcg/mL) (FORTEO bioequivalent)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Teriparatide",
+    "appl_no": "ANDA213641",
+    "approval_date": "2025-12-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213641",
+    "source_label": "Drugs@FDA, application ANDA213641, action date 2025-12-12"
+   }
+  },
+  "AMRN-2025-12-02": {
+   "ticker": "AMRN",
+   "date": "2025-12-02",
+   "asset": "Albuterol sulfate inhalation (PROAIR HFA generic)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Albuterol sulfate inhalation",
+    "appl_no": "ANDA211600",
+    "approval_date": "2025-12-01",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211600",
+    "source_label": "Drugs@FDA, application ANDA211600, action date 2025-12-01"
+   }
+  },
+  "AMRX-2025-01-23": {
+   "ticker": "AMRX",
+   "date": "2025-01-23",
+   "asset": "Everolimus",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Everolimus",
+    "appl_no": "ANDA217640",
+    "approval_date": "2025-01-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217640",
+    "source_label": "Drugs@FDA, application ANDA217640, action date 2025-01-28"
+   }
+  },
+  "AMRX-2025-05-15": {
+   "ticker": "AMRX",
+   "date": "2025-05-15",
+   "asset": "Brekiya (dihydroergotamine mesylate) injection",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Brekiya",
+    "appl_no": "NDA215400",
+    "approval_date": "2025-05-14",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215400",
+    "source_label": "Drugs@FDA, application NDA215400, action date 2025-05-14"
+   }
+  },
+  "AMRX-2025-06-12": {
+   "ticker": "AMRX",
+   "date": "2025-06-12",
+   "asset": "Prednisolone Acetate Ophthalmic Suspension",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AMRX-2025-09-04": {
+   "ticker": "AMRX",
+   "date": "2025-09-04",
+   "asset": "Risperidone Extended-Release",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Risperidone",
+    "appl_no": "ANDA077953",
+    "approval_date": "2025-09-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=077953",
+    "source_label": "Drugs@FDA, application ANDA077953, action date 2025-09-11"
+   }
+  },
+  "AMRX-2025-09-11": {
+   "ticker": "AMRX",
+   "date": "2025-09-11",
+   "asset": "Sodium oxybate oral solution 500 mg/mL",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Sodium",
+    "appl_no": "ANDA078215",
+    "approval_date": "2025-09-09",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=078215",
+    "source_label": "Drugs@FDA, application ANDA078215, action date 2025-09-09"
+   }
+  },
+  "AMRX-2025-09-23": {
+   "ticker": "AMRX",
+   "date": "2025-09-23",
+   "asset": "Bimatoprost ophthalmic solution (Lumigan generic)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Bimatoprost",
+    "appl_no": "ANDA217289",
+    "approval_date": "2025-09-22",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217289",
+    "source_label": "Drugs@FDA, application ANDA217289, action date 2025-09-22"
+   }
+  },
+  "AMRX-2025-10-29": {
+   "ticker": "AMRX",
+   "date": "2025-10-29",
+   "asset": "Beclomethasone Dipropionate HFA Inhalation Aerosol",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AMRX-2025-11-13": {
+   "ticker": "AMRX",
+   "date": "2025-11-13",
+   "asset": "Iohexol injection (300 mg Iodine/mL)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Iohexol",
+    "appl_no": "ANDA217737",
+    "approval_date": "2025-11-13",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217737",
+    "source_label": "Drugs@FDA, application ANDA217737, action date 2025-11-13"
+   }
+  },
+  "AMRX-2025-12-01": {
+   "ticker": "AMRX",
+   "date": "2025-12-01",
+   "asset": "RESTASIS (Cyclosporine Ophthalmic Emulsion)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AMRX-2025-12-22": {
+   "ticker": "AMRX",
+   "date": "2025-12-22",
+   "asset": "Oziltus (denosumab-mobz)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Oziltus",
+    "appl_no": "BLA761457",
+    "approval_date": "2025-12-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761457",
+    "source_label": "Drugs@FDA, application BLA761457, action date 2025-12-19"
+   }
+  },
+  "ANIK-2025-07-30": {
+   "ticker": "ANIK",
+   "date": "2025-07-30",
+   "asset": "HYALOFAST - (FastTRACK)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ANIP-2025-01-02": {
+   "ticker": "ANIP",
+   "date": "2025-01-02",
+   "asset": "Prucalopride Tablets - (Motegrity generic)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Prucalopride",
+    "appl_no": "ANDA218492",
+    "approval_date": "2024-12-26",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218492",
+    "source_label": "Drugs@FDA, application ANDA218492, action date 2024-12-26"
+   }
+  },
+  "ANIP-2025-03-14": {
+   "ticker": "ANIP",
+   "date": "2025-03-14",
+   "asset": "ILUVIEN (fluocinolone acetonide intravitreal implant)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ILUVIEN",
+    "appl_no": "NDA201923",
+    "approval_date": "2025-03-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=201923",
+    "source_label": "Drugs@FDA, application NDA201923, action date 2025-03-12"
+   }
+  },
+  "ANTE-2025-04-23": {
+   "ticker": "ANTE",
+   "date": "2025-04-23",
+   "asset": "penpulimab-kcqx (penpulimab-kcqx)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "penpulimab",
+    "appl_no": "BLA761258",
+    "approval_date": "2025-04-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761258",
+    "source_label": "Drugs@FDA, application BLA761258, action date 2025-04-23"
+   }
+  },
+  "APLS-2025-07-28": {
+   "ticker": "APLS",
+   "date": "2025-07-28",
+   "asset": "EMPAVELI (pegcetacoplan) - (VALIANT)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EMPAVELI",
+    "appl_no": "NDA215014",
+    "approval_date": "2025-07-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215014",
+    "source_label": "Drugs@FDA, application NDA215014, action date 2025-07-28"
+   }
+  },
+  "APTO-2025-02-20": {
+   "ticker": "APTO",
+   "date": "2025-02-20",
+   "asset": "Tuspetinib (TUS) in combination therapy with azacitidine (AZA) and venetoclax (VEN) - (TUSCANY)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ARGX-2025-04-10": {
+   "ticker": "ARGX",
+   "date": "2025-04-10",
+   "asset": "VYVGART Hytrulo (efgartigimod)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "VYVGART Hytrulo",
+    "appl_no": "BLA761304",
+    "approval_date": "2025-04-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761304",
+    "source_label": "Drugs@FDA, application BLA761304, action date 2025-04-10"
+   }
+  },
+  "ARQT-2025-05-22": {
+   "ticker": "ARQT",
+   "date": "2025-05-22",
+   "asset": "ZORYVE (roflumilast)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ZORYVE",
+    "appl_no": "NDA217242",
+    "approval_date": "2025-05-22",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217242",
+    "source_label": "Drugs@FDA, application NDA217242, action date 2025-05-22"
+   }
+  },
+  "ARQT-2025-10-06": {
+   "ticker": "ARQT",
+   "date": "2025-10-06",
+   "asset": "ZORYVE (roflumilast) Cream 0.05%",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ZORYVE",
+    "appl_no": "NDA215985",
+    "approval_date": "2025-10-04",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215985",
+    "source_label": "Drugs@FDA, application NDA215985, action date 2025-10-04"
+   }
+  },
+  "ARWR-2025-11-18": {
+   "ticker": "ARWR",
+   "date": "2025-11-18",
+   "asset": "REDEMPLO (plozasiran)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "REDEMPLO",
+    "appl_no": "NDA219947",
+    "approval_date": "2025-11-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219947",
+    "source_label": "Drugs@FDA, application NDA219947, action date 2025-11-18"
+   }
+  },
+  "ASND-2025-07-28": {
+   "ticker": "ASND",
+   "date": "2025-07-28",
+   "asset": "SKYTROFA (lonapegsomatropin-tcgd (ransCon hGH)) -  (foresiGHt)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SKYTROFA",
+    "appl_no": "BLA761177",
+    "approval_date": "2025-07-25",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761177",
+    "source_label": "Drugs@FDA, application BLA761177, action date 2025-07-25"
+   }
+  },
+  "ASND-2026-02-28": {
+   "ticker": "ASND",
+   "date": "2026-02-28",
+   "asset": "TransCon CNP (navepegritide)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "navepegritide",
+    "appl_no": "NDA219164",
+    "approval_date": "2026-02-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219164",
+    "source_label": "Drugs@FDA, application NDA219164, action date 2026-02-27"
+   }
+  },
+  "AURA-2025-03-24": {
+   "ticker": "AURA",
+   "date": "2025-03-24",
+   "asset": "Belzupacap sarotalocan (AU-011)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AUTL-2025-12-08": {
+   "ticker": "AUTL",
+   "date": "2025-12-08",
+   "asset": "Obe-cel - (CATULUS)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AVBP-2025-06-23": {
+   "ticker": "AVBP",
+   "date": "2025-06-23",
+   "asset": "Firmonertinib monotherapy - (FURTHER)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AXGN-2025-12-04": {
+   "ticker": "AXGN",
+   "date": "2025-12-04",
+   "asset": "Avance Nerve Graf - (RECON)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2025-12-04",
+    "accession": "0000805928-25-000140",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/805928/000080592825000140/axgn-20251203.htm",
+    "source_label": "SEC filing 0000805928-25-000140 of 2025-12-04 containing 'FDA approval'"
+   }
+  },
+  "AXSM-2025-01-30": {
+   "ticker": "AXSM",
+   "date": "2025-01-30",
+   "asset": "SYMBRAVO (meloxicam and rizatriptan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SYMBRAVO",
+    "appl_no": "NDA215431",
+    "approval_date": "2025-01-30",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215431",
+    "source_label": "Drugs@FDA, application NDA215431, action date 2025-01-30"
+   }
+  },
+  "AXSM-2025-06-09": {
+   "ticker": "AXSM",
+   "date": "2025-06-09",
+   "asset": "Esreboxetine (AXS-14) - (FORWARD)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AZN-2025-01-17": {
+   "ticker": "AZN",
+   "date": "2025-01-17",
+   "asset": "Datopotamab Deruxtecan - (TROPION-Breast01)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Datopotamab Deruxtecan",
+    "appl_no": "BLA761394",
+    "approval_date": "2025-01-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761394",
+    "source_label": "Drugs@FDA, application BLA761394, action date 2025-01-17"
+   }
+  },
+  "AZN-2025-01-27": {
+   "ticker": "AZN",
+   "date": "2025-01-27",
+   "asset": "Enhertu - (DESTINY-Breast06)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Enhertu",
+    "appl_no": "BLA761139",
+    "approval_date": "2025-01-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761139",
+    "source_label": "Drugs@FDA, application BLA761139, action date 2025-01-27"
+   }
+  },
+  "AZN-2025-03-31": {
+   "ticker": "AZN",
+   "date": "2025-03-31",
+   "asset": "IMFINZI (durvalumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "IMFINZI",
+    "appl_no": "BLA761069",
+    "approval_date": "2025-03-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069",
+    "source_label": "Drugs@FDA, application BLA761069, action date 2025-03-28"
+   }
+  },
+  "AZN-2025-06-23": {
+   "ticker": "AZN",
+   "date": "2025-06-23",
+   "asset": "DATROWAY (datopotamab deruxtecan-dlnk)- (TROPION-Lung01)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "DATROWAY",
+    "appl_no": "BLA761464",
+    "approval_date": "2025-06-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761464",
+    "source_label": "Drugs@FDA, application BLA761464, action date 2025-06-23"
+   }
+  },
+  "AZN-2025-10-17": {
+   "ticker": "AZN",
+   "date": "2025-10-17",
+   "asset": "TEZSPIRE (tezepelumab-ekko)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TEZSPIRE",
+    "appl_no": "BLA761224",
+    "approval_date": "2025-10-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761224",
+    "source_label": "Drugs@FDA, application BLA761224, action date 2025-10-17"
+   }
+  },
+  "AZN-2025-11-20": {
+   "ticker": "AZN",
+   "date": "2025-11-20",
+   "asset": "Koselugo (selumetinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Koselugo",
+    "appl_no": "NDA213756",
+    "approval_date": "2025-11-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213756",
+    "source_label": "Drugs@FDA, application NDA213756, action date 2025-11-19"
+   }
+  },
+  "AZN-2025-11-25": {
+   "ticker": "AZN",
+   "date": "2025-11-25",
+   "asset": "Imfinzi (durvalumab) and FLOT Chemotherapy - (MATTERHORN)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Imfinzi",
+    "appl_no": "BLA761069",
+    "approval_date": "2025-11-25",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069",
+    "source_label": "Drugs@FDA, application BLA761069, action date 2025-11-25"
+   }
+  },
+  "AZN-2025-12-15": {
+   "ticker": "AZN",
+   "date": "2025-12-15",
+   "asset": "Enhertu (trastuzumab deruxtecan) with pertuzumab - (DESTINY-Breast09)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Enhertu",
+    "appl_no": "BLA761139",
+    "approval_date": "2025-12-15",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761139",
+    "source_label": "Drugs@FDA, application BLA761139, action date 2025-12-15"
+   }
+  },
+  "AZN-2026-02-20": {
+   "ticker": "AZN",
+   "date": "2026-02-20",
+   "asset": "",
+   "claimed": "approval",
+   "status": "conflicting_evidence_needs_human_review",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-02-24",
+    "accession": "0001104659-26-019110",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000110465926019110/tm261135d3_ex99-1.pdf",
+    "source_label": "SEC filing 0001104659-26-019110 of 2026-02-24 containing 'complete response letter'"
+   }
+  },
+  "BAYRY-2025-10-24": {
+   "ticker": "BAYRY",
+   "date": "2025-10-24",
+   "asset": "Lynkuet (elinzanetant)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Lynkuet",
+    "appl_no": "NDA219469",
+    "approval_date": "2025-10-24",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219469",
+    "source_label": "Drugs@FDA, application NDA219469, action date 2025-10-24"
+   }
+  },
+  "BAYRY-2025-11-20": {
+   "ticker": "BAYRY",
+   "date": "2025-11-20",
+   "asset": "HYRNUO (sevabertinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "HYRNUO",
+    "appl_no": "NDA219972",
+    "approval_date": "2025-11-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219972",
+    "source_label": "Drugs@FDA, application NDA219972, action date 2025-11-19"
+   }
+  },
+  "BCAB-2025-11-07": {
+   "ticker": "BCAB",
+   "date": "2025-11-07",
+   "asset": "Mecbotamab Vedotin (BA3011)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-11-21",
+    "accession": "0001193125-25-290474",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1826892/000119312525290474/bcab-ex10_1.htm",
+    "source_label": "SEC filing 0001193125-25-290474 of 2025-11-21 containing 'approval of'"
+   }
+  },
+  "BCRX-2025-12-12": {
+   "ticker": "BCRX",
+   "date": "2025-12-12",
+   "asset": "ORLADEYO (berotralstat)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ORLADEYO",
+    "appl_no": "NDA219776",
+    "approval_date": "2025-12-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219776",
+    "source_label": "Drugs@FDA, application NDA219776, action date 2025-12-11"
+   }
+  },
+  "BCTX-2025-05-23": {
+   "ticker": "BCTX",
+   "date": "2025-05-23",
+   "asset": "Bria-IMT - (BRIA-ABC)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BHVN-2025-11-04": {
+   "ticker": "BHVN",
+   "date": "2025-11-04",
+   "asset": "Troriluzole (BHV4157-206-RWE)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BIIB-2025-01-26": {
+   "ticker": "BIIB",
+   "date": "2025-01-26",
+   "asset": "LEQEMBI (lecanemab-irmb)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "LEQEMBI",
+    "appl_no": "BLA761269",
+    "approval_date": "2025-01-24",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761269",
+    "source_label": "Drugs@FDA, application BLA761269, action date 2025-01-24"
+   }
+  },
+  "BIIB-2025-08-29": {
+   "ticker": "BIIB",
+   "date": "2025-08-29",
+   "asset": "LEQEMBI IQLIK (lecanemab-irmb) - (Maintenance Dosing)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "LEQEMBI IQLIK",
+    "appl_no": "BLA761375",
+    "approval_date": "2025-08-29",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761375",
+    "source_label": "Drugs@FDA, application BLA761375, action date 2025-08-29"
+   }
+  },
+  "BIIB-2025-09-23": {
+   "ticker": "BIIB",
+   "date": "2025-09-23",
+   "asset": "SPINRAZA (Nusinersen) - (DEVOTE)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BMY-2025-04-08": {
+   "ticker": "BMY",
+   "date": "2025-04-08",
+   "asset": "Opdivo (nivolumab) plus Yervoy - (CheckMate -8HW)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Opdivo",
+    "appl_no": "BLA125554",
+    "approval_date": "2025-04-08",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125554",
+    "source_label": "Drugs@FDA, application BLA125554, action date 2025-04-08"
+   }
+  },
+  "BMY-2025-04-11": {
+   "ticker": "BMY",
+   "date": "2025-04-11",
+   "asset": "Opdivo (nivolumab) plus Yervoy (ipilimumab) - (CheckMate -9DW)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Opdivo",
+    "appl_no": "BLA125554",
+    "approval_date": "2025-04-08",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125554",
+    "source_label": "Drugs@FDA, application BLA125554, action date 2025-04-08"
+   }
+  },
+  "BMY-2025-05-23": {
+   "ticker": "BMY",
+   "date": "2025-05-23",
+   "asset": "Iberdomide in Combination with Dexamethasone - (CC-220-MM-001)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BMY-2025-06-12": {
+   "ticker": "BMY",
+   "date": "2025-06-12",
+   "asset": "Iberdomide in Combination with Dexamethasone - (CC-220-MM-001)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BMY-2025-06-27": {
+   "ticker": "BMY",
+   "date": "2025-06-27",
+   "asset": "Breyanzi\u00ae (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BMY-2025-12-04": {
+   "ticker": "BMY",
+   "date": "2025-12-04",
+   "asset": "Breyanzi (lisocabtagene maraleucel)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BNTX-2025-08-27": {
+   "ticker": "BNTX",
+   "date": "2025-08-27",
+   "asset": "COMIRNATY LP.8.1",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2025-08-27",
+    "accession": "0001776985-25-000053",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1776985/000177698525000053/form6-klp81xadaptedfdaappr.htm",
+    "source_label": "SEC filing 0001776985-25-000053 of 2025-08-27 containing 'FDA approval'"
+   }
+  },
+  "CASI-2025-12-07": {
+   "ticker": "CASI",
+   "date": "2025-12-07",
+   "asset": "CID-103",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CGEM-2025-10-13": {
+   "ticker": "CGEM",
+   "date": "2025-10-13",
+   "asset": "Zipalertinib - (REZILIENT2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CGON-2025-03-24": {
+   "ticker": "CGON",
+   "date": "2025-03-24",
+   "asset": "Cretostimogene - (BOND-003)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CHRS-2025-01-22": {
+   "ticker": "CHRS",
+   "date": "2025-01-22",
+   "asset": "Casdozokitug/toripalimab/bevacizumab",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CING-2025-05-14": {
+   "ticker": "CING",
+   "date": "2025-05-14",
+   "asset": "CTx-1301 (fixed dose, pediatric study)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CLDI-2025-04-28": {
+   "ticker": "CLDI",
+   "date": "2025-04-28",
+   "asset": "CLD-400 - (RTNova)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CLDX-2025-11-06": {
+   "ticker": "CLDX",
+   "date": "2025-11-06",
+   "asset": "Barzolvolimab - (CindU)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CLLS-2025-02-14": {
+   "ticker": "CLLS",
+   "date": "2025-02-14",
+   "asset": "ALLO-501/501A + ALLO-647 - (ALPHA2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CLLS-2025-12-07": {
+   "ticker": "CLLS",
+   "date": "2025-12-07",
+   "asset": "UCART20x22 - (NatHaLi-01)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CMND-2025-07-03": {
+   "ticker": "CMND",
+   "date": "2025-07-03",
+   "asset": "CMND-100",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CMPX-2025-04-01": {
+   "ticker": "CMPX",
+   "date": "2025-04-01",
+   "asset": "CTX-009 (DLL4 X VEGF-A bispecific) - (COMPANION-002)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CNTA-2025-03-24": {
+   "ticker": "CNTA",
+   "date": "2025-03-24",
+   "asset": "SerpinPC - (PRESent-3)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "COCP-2025-12-18": {
+   "ticker": "COCP",
+   "date": "2025-12-18",
+   "asset": "CDI-988",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CRNX-2025-09-25": {
+   "ticker": "CRNX",
+   "date": "2025-09-25",
+   "asset": "PALSONIFY (paltusotine)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "PALSONIFY",
+    "appl_no": "NDA219070",
+    "approval_date": "2025-09-25",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219070",
+    "source_label": "Drugs@FDA, application NDA219070, action date 2025-09-25"
+   }
+  },
+  "CRSP-2025-12-22": {
+   "ticker": "CRSP",
+   "date": "2025-12-22",
+   "asset": "Zugocabtagene geleucel (zugo-cel; formerly CTX112)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CSLLY-2025-06-17": {
+   "ticker": "CSLLY",
+   "date": "2025-06-17",
+   "asset": "Garadacimab (CSL312)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Garadacimab",
+    "appl_no": "BLA761367",
+    "approval_date": "2025-06-16",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761367",
+    "source_label": "Drugs@FDA, application BLA761367, action date 2025-06-16"
+   }
+  },
+  "CUE-2025-07-16": {
+   "ticker": "CUE",
+   "date": "2025-07-16",
+   "asset": "CUE-101",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CYTK-2025-12-19": {
+   "ticker": "CYTK",
+   "date": "2025-12-19",
+   "asset": "MYQORZO (Aficamten (CK-274)) - (SEQUOIA-HCM)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "MYQORZO",
+    "appl_no": "NDA219083",
+    "approval_date": "2025-12-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219083",
+    "source_label": "Drugs@FDA, application NDA219083, action date 2025-12-19"
+   }
+  },
+  "DSNKY-2025-01-27": {
+   "ticker": "DSNKY",
+   "date": "2025-01-27",
+   "asset": "Enhertu - (DESTINY-Breast06)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Enhertu",
+    "appl_no": "BLA761139",
+    "approval_date": "2025-01-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761139",
+    "source_label": "Drugs@FDA, application BLA761139, action date 2025-01-27"
+   }
+  },
+  "DSNKY-2025-06-23": {
+   "ticker": "DSNKY",
+   "date": "2025-06-23",
+   "asset": "Datopotamab deruxtecan - (TROPION-Lung05)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "DSNKY-2025-12-15": {
+   "ticker": "DSNKY",
+   "date": "2025-12-15",
+   "asset": "Enhertu (trastuzumab deruxtecan) with pertuzumab - (DESTINY-Breast09)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Enhertu",
+    "appl_no": "BLA761139",
+    "approval_date": "2025-12-15",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761139",
+    "source_label": "Drugs@FDA, application BLA761139, action date 2025-12-15"
+   }
+  },
+  "EBS-2026-01-14": {
+   "ticker": "EBS",
+   "date": "2026-01-14",
+   "asset": "OTC NARCAN Nasal Spray w/ carrying case",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ENTA-2025-06-11": {
+   "ticker": "ENTA",
+   "date": "2025-06-11",
+   "asset": "MAVYRET (glecaprevir/pibrentasvir)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "MAVYRET",
+    "appl_no": "NDA215110",
+    "approval_date": "2025-06-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215110",
+    "source_label": "Drugs@FDA, application NDA215110, action date 2025-06-10"
+   }
+  },
+  "EQ-2025-04-24": {
+   "ticker": "EQ",
+   "date": "2025-04-24",
+   "asset": "Itolizumab - (EQUATOR)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ETON-2025-05-29": {
+   "ticker": "ETON",
+   "date": "2025-05-29",
+   "asset": "KHINDIVI  (ET-400 ( hydrocortisone bioequivalence))",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "KHINDIVI",
+    "appl_no": "NDA218980",
+    "approval_date": "2025-05-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218980",
+    "source_label": "Drugs@FDA, application NDA218980, action date 2025-05-28"
+   }
+  },
+  "ETON-2026-02-25": {
+   "ticker": "ETON",
+   "date": "2026-02-25",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-02-25",
+    "accession": "0001437749-26-005537",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926005537/ex_923604.htm",
+    "source_label": "SEC filing 0001437749-26-005537 of 2026-02-25 containing 'FDA approval'"
+   }
+  },
+  "EXEL-2025-03-26": {
+   "ticker": "EXEL",
+   "date": "2025-03-26",
+   "asset": "CABOMETYX (cabozantinib) - (CABINET)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "CABOMETYX",
+    "appl_no": "NDA208692",
+    "approval_date": "2025-03-26",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208692",
+    "source_label": "Drugs@FDA, application NDA208692, action date 2025-03-26"
+   }
+  },
+  "EXEL-2025-07-02": {
+   "ticker": "EXEL",
+   "date": "2025-07-02",
+   "asset": "Zegfrovy (sunvozertinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Zegfrovy",
+    "appl_no": "NDA219839",
+    "approval_date": "2025-07-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219839",
+    "source_label": "Drugs@FDA, application NDA219839, action date 2025-07-02"
+   }
+  },
+  "FBIO-2026-01-13": {
+   "ticker": "FBIO",
+   "date": "2026-01-13",
+   "asset": "ZYCUBO (copper histidinate)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ZYCUBO",
+    "appl_no": "NDA211241",
+    "approval_date": "2026-01-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211241",
+    "source_label": "Drugs@FDA, application NDA211241, action date 2026-01-12"
+   }
+  },
+  "GHRS-2025-06-20": {
+   "ticker": "GHRS",
+   "date": "2025-06-20",
+   "asset": "GH001-TRD-201",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GILD-2025-06-18": {
+   "ticker": "GILD",
+   "date": "2025-06-18",
+   "asset": "Yeztugo (Lenacapavir)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Yeztugo",
+    "appl_no": "NDA220018",
+    "approval_date": "2025-06-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220018",
+    "source_label": "Drugs@FDA, application NDA220018, action date 2025-06-18"
+   }
+  },
+  "GILD-2025-12-16": {
+   "ticker": "GILD",
+   "date": "2025-12-16",
+   "asset": "Exdensur (depemokimab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Exdensur",
+    "appl_no": "BLA761458",
+    "approval_date": "2025-12-16",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761458",
+    "source_label": "Drugs@FDA, application BLA761458, action date 2025-12-16"
+   }
+  },
+  "GKOS-2025-10-20": {
+   "ticker": "GKOS",
+   "date": "2025-10-20",
+   "asset": "Epioxa (Epi-on)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Epioxa",
+    "appl_no": "NDA219910",
+    "approval_date": "2025-10-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219910",
+    "source_label": "Drugs@FDA, application NDA219910, action date 2025-10-17"
+   }
+  },
+  "GKOS-2026-01-28": {
+   "ticker": "GKOS",
+   "date": "2026-01-28",
+   "asset": "iDose TR",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "iDose TR",
+    "appl_no": "NDA218010",
+    "approval_date": "2026-01-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218010",
+    "source_label": "Drugs@FDA, application NDA218010, action date 2026-01-27"
+   }
+  },
+  "GLPG-2025-06-19": {
+   "ticker": "GLPG",
+   "date": "2025-06-19",
+   "asset": "GLPG5101 - (ATALANTA-1)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GLPG-2025-12-07": {
+   "ticker": "GLPG",
+   "date": "2025-12-07",
+   "asset": "GLPG5101 - (ATALANTA-1)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GLSI-2025-03-17": {
+   "ticker": "GLSI",
+   "date": "2025-03-17",
+   "asset": "GP2 (GLSI-100)  - (FLAMINGO-01)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GLSI-2026-01-22": {
+   "ticker": "GLSI",
+   "date": "2026-01-22",
+   "asset": "GP2 (GLSI-100)  - (FLAMINGO-01)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GMAB-2025-06-02": {
+   "ticker": "GMAB",
+   "date": "2025-06-02",
+   "asset": "Rinatabart sesutecan (Rina-S) - (RAINFOL)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GMAB-2025-06-15": {
+   "ticker": "GMAB",
+   "date": "2025-06-15",
+   "asset": "EPCORE (Epcoritamab) - (EPCORE  NHL-2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GMAB-2025-09-12": {
+   "ticker": "GMAB",
+   "date": "2025-09-12",
+   "asset": "Epcoritamab-bysp - (EPCORE CLL-1 )",
+   "claimed": "crl",
+   "status": "conflicting_evidence_needs_human_review",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Epcoritamab",
+    "appl_no": "BLA761324",
+    "approval_date": "2025-09-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761324",
+    "source_label": "Drugs@FDA, application BLA761324, action date 2025-09-11"
+   }
+  },
+  "GMAB-2025-11-18": {
+   "ticker": "GMAB",
+   "date": "2025-11-18",
+   "asset": "EPKINLY (epcoritamab-bysp) in Combination with Rituximab and Lenalidomide",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EPKINLY",
+    "appl_no": "BLA761324",
+    "approval_date": "2025-11-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761324",
+    "source_label": "Drugs@FDA, application BLA761324, action date 2025-11-18"
+   }
+  },
+  "GSK-2025-02-17": {
+   "ticker": "GSK",
+   "date": "2025-02-17",
+   "asset": "MenABCWY",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GSK-2025-03-25": {
+   "ticker": "GSK",
+   "date": "2025-03-25",
+   "asset": "Blujepa (Gepotidacin) - (EAGLE 2/3)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Blujepa",
+    "appl_no": "NDA218230",
+    "approval_date": "2025-03-25",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218230",
+    "source_label": "Drugs@FDA, application NDA218230, action date 2025-03-25"
+   }
+  },
+  "GSK-2025-05-22": {
+   "ticker": "GSK",
+   "date": "2025-05-22",
+   "asset": "Nucala (mepolizumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Nucala",
+    "appl_no": "BLA125526",
+    "approval_date": "2025-05-22",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125526",
+    "source_label": "Drugs@FDA, application BLA125526, action date 2025-05-22"
+   }
+  },
+  "GSK-2025-06-24": {
+   "ticker": "GSK",
+   "date": "2025-06-24",
+   "asset": "Benlysta (belimumab) Autoinjector",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Benlysta",
+    "appl_no": "BLA125370",
+    "approval_date": "2025-06-20",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125370",
+    "source_label": "Drugs@FDA, application BLA125370, action date 2025-06-20"
+   }
+  },
+  "GSK-2025-07-17": {
+   "ticker": "GSK",
+   "date": "2025-07-17",
+   "asset": "Shingrix (prefilled syringe)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2025-07-17",
+    "accession": "0001654954-25-008162",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425008162/a3837r.htm",
+    "source_label": "SEC filing 0001654954-25-008162 of 2025-07-17 containing 'FDA approval'"
+   }
+  },
+  "GSK-2025-10-23": {
+   "ticker": "GSK",
+   "date": "2025-10-23",
+   "asset": "Blenrep",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Blenrep",
+    "appl_no": "BLA761440",
+    "approval_date": "2025-10-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761440",
+    "source_label": "Drugs@FDA, application BLA761440, action date 2025-10-23"
+   }
+  },
+  "GSK-2025-12-11": {
+   "ticker": "GSK",
+   "date": "2025-12-11",
+   "asset": "Blujepa (gepotidacin)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Blujepa",
+    "appl_no": "NDA218230",
+    "approval_date": "2025-12-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218230",
+    "source_label": "Drugs@FDA, application NDA218230, action date 2025-12-11"
+   }
+  },
+  "HALO-2025-04-10": {
+   "ticker": "HALO",
+   "date": "2025-04-10",
+   "asset": "VYVGART Hytrulo (efgartigimod)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "VYVGART Hytrulo",
+    "appl_no": "BLA761304",
+    "approval_date": "2025-04-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761304",
+    "source_label": "Drugs@FDA, application BLA761304, action date 2025-04-10"
+   }
+  },
+  "HOTH-2025-06-16": {
+   "ticker": "HOTH",
+   "date": "2025-06-16",
+   "asset": "Andembry (garadacimab-gxii)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Andembry",
+    "appl_no": "BLA761367",
+    "approval_date": "2025-06-16",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761367",
+    "source_label": "Drugs@FDA, application BLA761367, action date 2025-06-16"
+   }
+  },
+  "HRMY-2025-02-19": {
+   "ticker": "HRMY",
+   "date": "2025-02-19",
+   "asset": "WAKIX (pitolisant) - (INTUNE)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IBRX-2025-02-19": {
+   "ticker": "IBRX",
+   "date": "2025-02-19",
+   "asset": "ANKTIVA",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2025-03-03",
+    "accession": "0001326110-25-000031",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000031/ibrx-202533x8kexhibit991.htm",
+    "source_label": "SEC filing 0001326110-25-000031 of 2025-03-03 containing 'FDA approval'"
+   }
+  },
+  "IBRX-2025-08-13": {
+   "ticker": "IBRX",
+   "date": "2025-08-13",
+   "asset": "CD19 CAR-NK cell therapy  with rituximab - (QUILT-106)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IBRX-2025-11-05": {
+   "ticker": "IBRX",
+   "date": "2025-11-05",
+   "asset": "t-haNK (N-803 ANKTIVA) in combination with rituximab - (QUILT.106)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IMMX-2025-06-03": {
+   "ticker": "IMMX",
+   "date": "2025-06-03",
+   "asset": "NXC-201 (HBI10101) - (NEXICART-2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IMMX-2025-12-07": {
+   "ticker": "IMMX",
+   "date": "2025-12-07",
+   "asset": "NXC-201 (HBI10101) - (NEXICART-2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "INBX-2025-01-21": {
+   "ticker": "INBX",
+   "date": "2025-01-21",
+   "asset": "ozekibart (INBRX-109) in combination with FOLFIRI",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "INCY-2025-01-16": {
+   "ticker": "INCY",
+   "date": "2025-01-16",
+   "asset": "Niktimvo (axatilimab-csfr)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "INCY-2025-05-15": {
+   "ticker": "INCY",
+   "date": "2025-05-15",
+   "asset": "Zynyz (retifanlimab-dlwr)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Zynyz",
+    "appl_no": "BLA761334",
+    "approval_date": "2025-05-15",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761334",
+    "source_label": "Drugs@FDA, application BLA761334, action date 2025-05-15"
+   }
+  },
+  "INCY-2025-06-15": {
+   "ticker": "INCY",
+   "date": "2025-06-15",
+   "asset": "INCA033989",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "INCY-2025-06-18": {
+   "ticker": "INCY",
+   "date": "2025-06-18",
+   "asset": "MONJUVI (tafasitamab) with REVLIMID (lenalidomide) and RITUXAN (rituximab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "MONJUVI",
+    "appl_no": "BLA761163",
+    "approval_date": "2025-06-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761163",
+    "source_label": "Drugs@FDA, application BLA761163, action date 2025-06-18"
+   }
+  },
+  "INCY-2025-09-19": {
+   "ticker": "INCY",
+   "date": "2025-09-19",
+   "asset": "Opzelura (Ruxolitinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Opzelura",
+    "appl_no": "NDA215309",
+    "approval_date": "2025-09-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215309",
+    "source_label": "Drugs@FDA, application NDA215309, action date 2025-09-18"
+   }
+  },
+  "INDV-2025-02-24": {
+   "ticker": "INDV",
+   "date": "2025-02-24",
+   "asset": "SUBLOCADE (buprenorphine extended-release)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SUBLOCADE",
+    "appl_no": "NDA209819",
+    "approval_date": "2025-02-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=209819",
+    "source_label": "Drugs@FDA, application NDA209819, action date 2025-02-21"
+   }
+  },
+  "INSM-2025-08-12": {
+   "ticker": "INSM",
+   "date": "2025-08-12",
+   "asset": "BRINSUPRI (Brensocatib) - (ASPEN)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "BRINSUPRI",
+    "appl_no": "NDA217673",
+    "approval_date": "2025-08-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217673",
+    "source_label": "Drugs@FDA, application NDA217673, action date 2025-08-12"
+   }
+  },
+  "INTE-2025-03-28": {
+   "ticker": "INTE",
+   "date": "2025-03-28",
+   "asset": "Qfitlia (fitusiran)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Qfitlia",
+    "appl_no": "NDA219019",
+    "approval_date": "2025-03-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219019",
+    "source_label": "Drugs@FDA, application NDA219019, action date 2025-03-28"
+   }
+  },
+  "INTS-2025-06-30": {
+   "ticker": "INTS",
+   "date": "2025-06-30",
+   "asset": "INT230-6",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "INVA-2025-12-15": {
+   "ticker": "INVA",
+   "date": "2025-12-15",
+   "asset": "NUZOLVENCE (zoliflodacin)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "NUZOLVENCE",
+    "appl_no": "NDA219491",
+    "approval_date": "2025-12-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219491",
+    "source_label": "Drugs@FDA, application NDA219491, action date 2025-12-12"
+   }
+  },
+  "INVA-2026-02-17": {
+   "ticker": "INVA",
+   "date": "2026-02-17",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-02-25",
+    "accession": "0001193125-26-071974",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1080014/000119312526071974/d23292dex991.htm",
+    "source_label": "SEC filing 0001193125-26-071974 of 2026-02-25 containing 'FDA approval'"
+   }
+  },
+  "IONI-2025-08-21": {
+   "ticker": "IONI",
+   "date": "2025-08-21",
+   "asset": "Dawnzera (donidalorsen)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Dawnzera",
+    "appl_no": "NDA219407",
+    "approval_date": "2025-08-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219407",
+    "source_label": "Drugs@FDA, application NDA219407, action date 2025-08-21"
+   }
+  },
+  "IONS-2025-08-21": {
+   "ticker": "IONS",
+   "date": "2025-08-21",
+   "asset": "DAWNZERA  (Donidalorsen)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "DAWNZERA",
+    "appl_no": "NDA219407",
+    "approval_date": "2025-08-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219407",
+    "source_label": "Drugs@FDA, application NDA219407, action date 2025-08-21"
+   }
+  },
+  "IONS-2025-09-23": {
+   "ticker": "IONS",
+   "date": "2025-09-23",
+   "asset": "SPINRAZA (Nusinersen) - (DEVOTE)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IPSEY-2025-03-26": {
+   "ticker": "IPSEY",
+   "date": "2025-03-26",
+   "asset": "CABOMETYX (cabozantinib) - (CABINET)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "CABOMETYX",
+    "appl_no": "NDA208692",
+    "approval_date": "2025-03-26",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208692",
+    "source_label": "Drugs@FDA, application NDA208692, action date 2025-03-26"
+   }
+  },
+  "IRON-2025-01-21": {
+   "ticker": "IRON",
+   "date": "2025-01-21",
+   "asset": "Bitopertin - (APOLLO)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-01-21",
+    "accession": "0001193125-25-009095",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525009095/d858127dex991.htm",
+    "source_label": "SEC filing 0001193125-25-009095 of 2025-01-21 containing 'approval of'"
+   }
+  },
+  "IRWD-2025-04-14": {
+   "ticker": "IRWD",
+   "date": "2025-04-14",
+   "asset": "Apraglutide - (STARS)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-04-14",
+    "accession": "0001104659-25-034381",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925034381/tm2512215d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-25-034381 of 2025-04-14 containing 'approval of'"
+   }
+  },
+  "JANX-2025-12-01": {
+   "ticker": "JANX",
+   "date": "2025-12-01",
+   "asset": "PSMA-TRACTr (JANX007) - (ENGAGER-PSMA-01)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JAZZ-2025-08-06": {
+   "ticker": "JAZZ",
+   "date": "2025-08-06",
+   "asset": "Dordaviprone (ONC201) - (ACTION)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Dordaviprone",
+    "appl_no": "NDA219876",
+    "approval_date": "2025-08-06",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219876",
+    "source_label": "Drugs@FDA, application NDA219876, action date 2025-08-06"
+   }
+  },
+  "JAZZ-2025-10-02": {
+   "ticker": "JAZZ",
+   "date": "2025-10-02",
+   "asset": "Zepzelca (lurbinectedin) and Atezolizumab (Tecentriq)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Zepzelca",
+    "appl_no": "NDA213702",
+    "approval_date": "2025-10-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213702",
+    "source_label": "Drugs@FDA, application NDA213702, action date 2025-10-02"
+   }
+  },
+  "JNJ-2025-01-21": {
+   "ticker": "JNJ",
+   "date": "2025-01-21",
+   "asset": "SPRAVATO (esketamine) monotherapy",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SPRAVATO",
+    "appl_no": "NDA211243",
+    "approval_date": "2025-01-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211243",
+    "source_label": "Drugs@FDA, application NDA211243, action date 2025-01-17"
+   }
+  },
+  "JNJ-2025-03-20": {
+   "ticker": "JNJ",
+   "date": "2025-03-20",
+   "asset": "TREMFYA (guselkumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TREMFYA",
+    "appl_no": "BLA761061",
+    "approval_date": "2025-03-25",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761061",
+    "source_label": "Drugs@FDA, application BLA761061, action date 2025-03-25"
+   }
+  },
+  "JNJ-2025-04-24": {
+   "ticker": "JNJ",
+   "date": "2025-04-24",
+   "asset": "INLEXZO (gemcitabine intravesical system)  (TAR-200) - (SunRISe-1)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JNJ-2025-04-30": {
+   "ticker": "JNJ",
+   "date": "2025-04-30",
+   "asset": "IMAAVY (Nipocalimab) - (Vivacity-MG3)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "IMAAVY",
+    "appl_no": "BLA761430",
+    "approval_date": "2025-04-29",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761430",
+    "source_label": "Drugs@FDA, application BLA761430, action date 2025-04-29"
+   }
+  },
+  "JNJ-2025-06-13": {
+   "ticker": "JNJ",
+   "date": "2025-06-13",
+   "asset": "JNJ-4496",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JNJ-2025-09-09": {
+   "ticker": "JNJ",
+   "date": "2025-09-09",
+   "asset": "INLEXZO (gemcitabine intravesical system)  (TAR-200) - (SunRISe-1)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "INLEXZO",
+    "appl_no": "NDA219683",
+    "approval_date": "2025-09-09",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219683",
+    "source_label": "Drugs@FDA, application NDA219683, action date 2025-09-09"
+   }
+  },
+  "JNJ-2025-09-19": {
+   "ticker": "JNJ",
+   "date": "2025-09-19",
+   "asset": "TREMFYA (guselkumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TREMFYA",
+    "appl_no": "BLA761061",
+    "approval_date": "2025-09-26",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761061",
+    "source_label": "Drugs@FDA, application BLA761061, action date 2025-09-26"
+   }
+  },
+  "JNJ-2025-09-29": {
+   "ticker": "JNJ",
+   "date": "2025-09-29",
+   "asset": "TREMFYA (guselkumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TREMFYA",
+    "appl_no": "BLA761061",
+    "approval_date": "2025-09-26",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761061",
+    "source_label": "Drugs@FDA, application BLA761061, action date 2025-09-26"
+   }
+  },
+  "JNJ-2025-11-06": {
+   "ticker": "JNJ",
+   "date": "2025-11-06",
+   "asset": "CAPLYTA (lumateperone) - (Study 502)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "CAPLYTA",
+    "appl_no": "NDA209500",
+    "approval_date": "2025-11-05",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=209500",
+    "source_label": "Drugs@FDA, application NDA209500, action date 2025-11-05"
+   }
+  },
+  "JNJ-2025-11-07": {
+   "ticker": "JNJ",
+   "date": "2025-11-07",
+   "asset": "DARZALEX FASPRO",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "DARZALEX FASPRO",
+    "appl_no": "BLA761145",
+    "approval_date": "2025-11-06",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761145",
+    "source_label": "Drugs@FDA, application BLA761145, action date 2025-11-06"
+   }
+  },
+  "JNJ-2025-12-15": {
+   "ticker": "JNJ",
+   "date": "2025-12-15",
+   "asset": "AKEEGA (niraparib and abiraterone acetate dual-action tablet) plus prednisone",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "AKEEGA",
+    "appl_no": "NDA216793",
+    "approval_date": "2025-12-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216793",
+    "source_label": "Drugs@FDA, application NDA216793, action date 2025-12-12"
+   }
+  },
+  "JNJ-2025-12-18": {
+   "ticker": "JNJ",
+   "date": "2025-12-18",
+   "asset": "RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "RYBREVANT FASPRO",
+    "appl_no": "BLA761433",
+    "approval_date": "2025-12-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761433",
+    "source_label": "Drugs@FDA, application BLA761433, action date 2025-12-17"
+   }
+  },
+  "JNJ-2026-01-27": {
+   "ticker": "JNJ",
+   "date": "2026-01-27",
+   "asset": "DARZALEX FASPRO (daratumumab and hyaluronidase-fihj) in combination with bortezomib, lenalidomide and dexamethasone (D-VRd) - (CEPHEUS)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "DARZALEX FASPRO",
+    "appl_no": "BLA761145",
+    "approval_date": "2026-01-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761145",
+    "source_label": "Drugs@FDA, application BLA761145, action date 2026-01-27"
+   }
+  },
+  "JNJ-2026-02-17": {
+   "ticker": "JNJ",
+   "date": "2026-02-17",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JSPR-2025-06-16": {
+   "ticker": "JSPR",
+   "date": "2025-06-16",
+   "asset": "Subcutaneous briquilimab - (SPOTLIGHT)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "KALV-2025-07-07": {
+   "ticker": "KALV",
+   "date": "2025-07-07",
+   "asset": "EKTERLY (sebetralstat)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EKTERLY",
+    "appl_no": "NDA219301",
+    "approval_date": "2025-07-03",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219301",
+    "source_label": "Drugs@FDA, application NDA219301, action date 2025-07-03"
+   }
+  },
+  "KRYS-2025-09-15": {
+   "ticker": "KRYS",
+   "date": "2025-09-15",
+   "asset": "VYJUVEK (beremagene geperpavec-svdt)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "KURA-2025-11-13": {
+   "ticker": "KURA",
+   "date": "2025-11-13",
+   "asset": "KOMZIFTI (ziftomenib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "KOMZIFTI",
+    "appl_no": "NDA220305",
+    "approval_date": "2025-11-13",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220305",
+    "source_label": "Drugs@FDA, application NDA220305, action date 2025-11-13"
+   }
+  },
+  "KZIA-2025-01-02": {
+   "ticker": "KZIA",
+   "date": "2025-01-02",
+   "asset": "Paxalisib (GDC-0084) - (GBM AGILE)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-01-13",
+    "accession": "0001193125-25-005004",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1075880/000119312525005004/d868096dex41.htm",
+    "source_label": "SEC filing 0001193125-25-005004 of 2025-01-13 containing 'approval of'"
+   }
+  },
+  "KZIA-2025-11-18": {
+   "ticker": "KZIA",
+   "date": "2025-11-18",
+   "asset": "Paxalisib",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LENZ-2025-07-31": {
+   "ticker": "LENZ",
+   "date": "2025-07-31",
+   "asset": "VIZZ (aceclidine ophthalmic solution)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "VIZZ",
+    "appl_no": "NDA218585",
+    "approval_date": "2025-07-31",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218585",
+    "source_label": "Drugs@FDA, application NDA218585, action date 2025-07-31"
+   }
+  },
+  "LEXX-2025-01-15": {
+   "ticker": "LEXX",
+   "date": "2025-01-15",
+   "asset": "DehydraTECH-liraglutide - (GLP-1-H25-5). (Pilot Study #5)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-01-15",
+    "accession": "0001640334-25-000087",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1348362/000164033425000087/lxrp_8k.htm",
+    "source_label": "SEC filing 0001640334-25-000087 of 2025-01-15 containing 'approval of'"
+   }
+  },
+  "LGND-2025-08-27": {
+   "ticker": "LGND",
+   "date": "2025-08-27",
+   "asset": "FILSPARI (sparsentan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "FILSPARI",
+    "appl_no": "NDA216403",
+    "approval_date": "2025-08-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216403",
+    "source_label": "Drugs@FDA, application NDA216403, action date 2025-08-27"
+   }
+  },
+  "LLY-2025-01-15": {
+   "ticker": "LLY",
+   "date": "2025-01-15",
+   "asset": "Omvoh (mirikizumab-mrkz)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Omvoh",
+    "appl_no": "BLA761279",
+    "approval_date": "2025-01-15",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761279",
+    "source_label": "Drugs@FDA, application BLA761279, action date 2025-01-15"
+   }
+  },
+  "LLY-2025-09-25": {
+   "ticker": "LLY",
+   "date": "2025-09-25",
+   "asset": "Inluriyo (imlunestrant)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Inluriyo",
+    "appl_no": "NDA218881",
+    "approval_date": "2025-09-25",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218881",
+    "source_label": "Drugs@FDA, application NDA218881, action date 2025-09-25"
+   }
+  },
+  "LLY-2025-10-27": {
+   "ticker": "LLY",
+   "date": "2025-10-27",
+   "asset": "Omvoh (Mirikizumab) - (LUCENT 1)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Omvoh",
+    "appl_no": "BLA761279",
+    "approval_date": "2025-10-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761279",
+    "source_label": "Drugs@FDA, application BLA761279, action date 2025-10-23"
+   }
+  },
+  "LLY-2025-12-03": {
+   "ticker": "LLY",
+   "date": "2025-12-03",
+   "asset": "Jaypirca (pirtobrutinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Jaypirca",
+    "appl_no": "NDA216059",
+    "approval_date": "2025-12-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216059",
+    "source_label": "Drugs@FDA, application NDA216059, action date 2025-12-02"
+   }
+  },
+  "LQDA-2025-05-23": {
+   "ticker": "LQDA",
+   "date": "2025-05-23",
+   "asset": "YUTREPIA (treprostinil)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "YUTREPIA",
+    "appl_no": "NDA213005",
+    "approval_date": "2025-05-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213005",
+    "source_label": "Drugs@FDA, application NDA213005, action date 2025-05-23"
+   }
+  },
+  "LTRN-2025-06-16": {
+   "ticker": "LTRN",
+   "date": "2025-06-16",
+   "asset": "LP-300 - (Harmonic)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LYEL-2025-06-17": {
+   "ticker": "LYEL",
+   "date": "2025-06-17",
+   "asset": "LYL314 (IMPT-314)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LYEL-2025-12-08": {
+   "ticker": "LYEL",
+   "date": "2025-12-08",
+   "asset": "LYL314 (IMPT-314)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MIRM-2025-02-24": {
+   "ticker": "MIRM",
+   "date": "2025-02-24",
+   "asset": "CTEXLI (chenodiol)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "CTEXLI",
+    "appl_no": "NDA219488",
+    "approval_date": "2025-02-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219488",
+    "source_label": "Drugs@FDA, application NDA219488, action date 2025-02-21"
+   }
+  },
+  "MIRM-2025-04-14": {
+   "ticker": "MIRM",
+   "date": "2025-04-14",
+   "asset": "LIVMARLI (maralixibat) (tablet formulation)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "LIVMARLI",
+    "appl_no": "NDA219485",
+    "approval_date": "2025-04-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219485",
+    "source_label": "Drugs@FDA, application NDA219485, action date 2025-04-10"
+   }
+  },
+  "MIST-2025-12-15": {
+   "ticker": "MIST",
+   "date": "2025-12-15",
+   "asset": "CARDAMYST (etripamil)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "CARDAMYST",
+    "appl_no": "NDA218571",
+    "approval_date": "2025-12-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218571",
+    "source_label": "Drugs@FDA, application NDA218571, action date 2025-12-12"
+   }
+  },
+  "MRK-2025-05-14": {
+   "ticker": "MRK",
+   "date": "2025-05-14",
+   "asset": "WELIREG (belzutifan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "WELIREG",
+    "appl_no": "NDA215383",
+    "approval_date": "2025-05-14",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215383",
+    "source_label": "Drugs@FDA, application NDA215383, action date 2025-05-14"
+   }
+  },
+  "MRK-2025-06-09": {
+   "ticker": "MRK",
+   "date": "2025-06-09",
+   "asset": "ENFLONSIA (Clesrovimab) (MK-1654-004) - (CLEVER)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRK-2025-06-13": {
+   "ticker": "MRK",
+   "date": "2025-06-13",
+   "asset": "KEYTRUDA (pembrolizumab) - (KEYNOTE-689)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "KEYTRUDA",
+    "appl_no": "BLA125514",
+    "approval_date": "2025-06-06",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514",
+    "source_label": "Drugs@FDA, application BLA125514, action date 2025-06-06"
+   }
+  },
+  "MRK-2025-09-19": {
+   "ticker": "MRK",
+   "date": "2025-09-19",
+   "asset": "KEYTRUDA QLEX (pembrolizumab and berahyaluronidase alfa-pmph)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "KEYTRUDA QLEX",
+    "appl_no": "BLA761467",
+    "approval_date": "2025-09-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467",
+    "source_label": "Drugs@FDA, application BLA761467, action date 2025-09-19"
+   }
+  },
+  "MRK-2025-10-27": {
+   "ticker": "MRK",
+   "date": "2025-10-27",
+   "asset": "WINREVAIR (sotatercept-csrk) - (ZENITH)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "WINREVAIR",
+    "appl_no": "BLA761363",
+    "approval_date": "2025-10-24",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761363",
+    "source_label": "Drugs@FDA, application BLA761363, action date 2025-10-24"
+   }
+  },
+  "MRK-2025-11-21": {
+   "ticker": "MRK",
+   "date": "2025-11-21",
+   "asset": "PADCEV (enfortumab vedotin) + KEYTRUDA (pembrolizumab) - (EV-303 / KEYNOTE-905)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "PADCEV",
+    "appl_no": "BLA761137",
+    "approval_date": "2025-11-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761137",
+    "source_label": "Drugs@FDA, application BLA761137, action date 2025-11-21"
+   }
+  },
+  "MRK-2025-12-17": {
+   "ticker": "MRK",
+   "date": "2025-12-17",
+   "asset": "KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRK-2026-02-20": {
+   "ticker": "MRK",
+   "date": "2026-02-20",
+   "asset": "KEYTRUDA + chemo \u00b1 bevacizumab (ovarian)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "KEYTRUDA",
+    "appl_no": "BLA125514",
+    "approval_date": "2026-02-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514",
+    "source_label": "Drugs@FDA, application BLA125514, action date 2026-02-10"
+   }
+  },
+  "MRKR-2025-08-26": {
+   "ticker": "MRKR",
+   "date": "2025-08-26",
+   "asset": "Neldaleucel (MT-601) - (APOLLO)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRNA-2025-05-31": {
+   "ticker": "MRNA",
+   "date": "2025-05-31",
+   "asset": "mRNA-1283 - (NEXTCove)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRNA-2025-06-12": {
+   "ticker": "MRNA",
+   "date": "2025-06-12",
+   "asset": "mRESVIA (mRNA-1345)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRNA-2025-08-27": {
+   "ticker": "MRNA",
+   "date": "2025-08-27",
+   "asset": "Spikevax and mNEXSPIKE - (LP.8.1 variant)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "NRIX-2025-06-12": {
+   "ticker": "NRIX",
+   "date": "2025-06-12",
+   "asset": "Bexobrutideg (NX-5948)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "NRIX-2025-12-08": {
+   "ticker": "NRIX",
+   "date": "2025-12-08",
+   "asset": "NX-5948-301",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "NUVB-2025-06-11": {
+   "ticker": "NUVB",
+   "date": "2025-06-11",
+   "asset": "IBTROZI (taletrectinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "IBTROZI",
+    "appl_no": "NDA219713",
+    "approval_date": "2025-06-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219713",
+    "source_label": "Drugs@FDA, application NDA219713, action date 2025-06-11"
+   }
+  },
+  "NVAX-2025-05-19": {
+   "ticker": "NVAX",
+   "date": "2025-05-19",
+   "asset": "NUVAXOVID",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-05-19",
+    "accession": "0001104659-25-050226",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925050226/tm2515521d1_8k.htm",
+    "source_label": "SEC filing 0001104659-25-050226 of 2025-05-19 containing 'approval of'"
+   }
+  },
+  "NVAX-2025-08-27": {
+   "ticker": "NVAX",
+   "date": "2025-08-27",
+   "asset": "Nuvaxovid - (2025-2026 Formula)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-08-27",
+    "accession": "0001104659-25-084049",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925084049/tm2524511d2_8k.htm",
+    "source_label": "SEC filing 0001104659-25-084049 of 2025-08-27 containing 'approval of'"
+   }
+  },
+  "NVO-2025-01-28": {
+   "ticker": "NVO",
+   "date": "2025-01-28",
+   "asset": "Semaglutide - (FLOW)",
+   "claimed": "approval",
+   "status": "conflicting_evidence_needs_human_review",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-02-05",
+    "accession": "0001628280-25-003924",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000162828025003924/caq42024.htm",
+    "source_label": "SEC filing 0001628280-25-003924 of 2025-02-05 containing 'complete response letter'"
+   }
+  },
+  "NVO-2025-08-15": {
+   "ticker": "NVO",
+   "date": "2025-08-15",
+   "asset": "Wegovy (semaglutide) injection - (ESSENCE)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Wegovy",
+    "appl_no": "NDA215256",
+    "approval_date": "2025-08-15",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215256",
+    "source_label": "Drugs@FDA, application NDA215256, action date 2025-08-15"
+   }
+  },
+  "NVO-2025-10-15": {
+   "ticker": "NVO",
+   "date": "2025-10-15",
+   "asset": "Rybelsus (oral semaglutide)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Rybelsus",
+    "appl_no": "NDA213051",
+    "approval_date": "2025-10-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213051",
+    "source_label": "Drugs@FDA, application NDA213051, action date 2025-10-17"
+   }
+  },
+  "NVO-2025-12-22": {
+   "ticker": "NVO",
+   "date": "2025-12-22",
+   "asset": "Wegovy pill (once-daily oral semaglutide 25 mg)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Wegovy",
+    "appl_no": "NDA218316",
+    "approval_date": "2025-12-22",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218316",
+    "source_label": "Drugs@FDA, application NDA218316, action date 2025-12-22"
+   }
+  },
+  "NVS-2025-01-29": {
+   "ticker": "NVS",
+   "date": "2025-01-29",
+   "asset": "Farabursen (RGLS8429) (MAD)",
+   "claimed": "approval",
+   "status": "conflicting_evidence_needs_human_review",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-01-31",
+    "accession": "0001370368-25-000008",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1114448/000137036825000008/a250131-99_1.pdf",
+    "source_label": "SEC filing 0001370368-25-000008 of 2025-01-31 containing 'complete response letter'"
+   }
+  },
+  "NVS-2025-03-20": {
+   "ticker": "NVS",
+   "date": "2025-03-20",
+   "asset": "Fabhalta (iptacopan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Fabhalta",
+    "appl_no": "NDA218276",
+    "approval_date": "2025-03-20",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218276",
+    "source_label": "Drugs@FDA, application NDA218276, action date 2025-03-20"
+   }
+  },
+  "NVS-2025-03-28": {
+   "ticker": "NVS",
+   "date": "2025-03-28",
+   "asset": "Pluvicto (lutetium (177Lu) vipivotide tetraxetan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Pluvicto",
+    "appl_no": "NDA215833",
+    "approval_date": "2025-03-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215833",
+    "source_label": "Drugs@FDA, application NDA215833, action date 2025-03-28"
+   }
+  },
+  "NVS-2025-04-03": {
+   "ticker": "NVS",
+   "date": "2025-04-03",
+   "asset": "Vanrafia (atrasentan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Vanrafia",
+    "appl_no": "NDA219208",
+    "approval_date": "2025-04-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219208",
+    "source_label": "Drugs@FDA, application NDA219208, action date 2025-04-02"
+   }
+  },
+  "NVS-2025-06-18": {
+   "ticker": "NVS",
+   "date": "2025-06-18",
+   "asset": "MONJUVI (tafasitamab) with REVLIMID (lenalidomide) and RITUXAN (rituximab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "MONJUVI",
+    "appl_no": "BLA761163",
+    "approval_date": "2025-06-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761163",
+    "source_label": "Drugs@FDA, application BLA761163, action date 2025-06-18"
+   }
+  },
+  "NVS-2025-09-30": {
+   "ticker": "NVS",
+   "date": "2025-09-30",
+   "asset": "Rhapsido (Remibrutinib )(LOU064) - (REMIX-1)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Rhapsido",
+    "appl_no": "NDA218436",
+    "approval_date": "2025-09-30",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218436",
+    "source_label": "Drugs@FDA, application NDA218436, action date 2025-09-30"
+   }
+  },
+  "NVS-2025-11-24": {
+   "ticker": "NVS",
+   "date": "2025-11-24",
+   "asset": "Itvisma (onasemnogene abeparvovec-brve)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2025-11-25",
+    "accession": "0001171843-25-007547",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1114448/000117184325007547/f6k_112425.htm",
+    "source_label": "SEC filing 0001171843-25-007547 of 2025-11-25 containing 'FDA approval'"
+   }
+  },
+  "OGEN-2025-05-13": {
+   "ticker": "OGEN",
+   "date": "2025-05-13",
+   "asset": "ONP-002",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "OGN-2025-11-17": {
+   "ticker": "OGN",
+   "date": "2025-11-17",
+   "asset": "POHERDY (pertuzumab-dpzb) - (PERJETA (pertuzumab) Biosimilar)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "POHERDY",
+    "appl_no": "BLA761450",
+    "approval_date": "2025-11-13",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761450",
+    "source_label": "Drugs@FDA, application BLA761450, action date 2025-11-13"
+   }
+  },
+  "OMER-2025-12-24": {
+   "ticker": "OMER",
+   "date": "2025-12-24",
+   "asset": "YARTEMLEA (Narsoplimab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "YARTEMLEA",
+    "appl_no": "BLA761152",
+    "approval_date": "2025-12-23",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761152",
+    "source_label": "Drugs@FDA, application BLA761152, action date 2025-12-23"
+   }
+  },
+  "ONC-2025-12-08": {
+   "ticker": "ONC",
+   "date": "2025-12-08",
+   "asset": "Sonrotoclax",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ONCY-2025-10-28": {
+   "ticker": "ONCY",
+   "date": "2025-10-28",
+   "asset": "Pelareorep and mFOLFIRINOX with and without atezolizumab - (GOBLET)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "OTLK-2025-12-31": {
+   "ticker": "OTLK",
+   "date": "2025-12-31",
+   "asset": "LYTENAVA (bevacizumab-vikg) / ONS-5010 - (NORSE EIGHT)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-01-02",
+    "accession": "0001104659-26-000066",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-26-000066 of 2026-01-02 containing 'complete response letter'"
+   }
+  },
+  "PBM-2025-12-19": {
+   "ticker": "PBM",
+   "date": "2025-12-19",
+   "asset": "Psilocybin (NPX5)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PFE-2025-02-12": {
+   "ticker": "PFE",
+   "date": "2025-02-12",
+   "asset": "ADCETRIS (brentuximab vedotin) with lenalidomide and rituximab - (ECHELON-3)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ADCETRIS",
+    "appl_no": "BLA125388",
+    "approval_date": "2025-02-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125388",
+    "source_label": "Drugs@FDA, application BLA125388, action date 2025-02-11"
+   }
+  },
+  "PFE-2025-08-27": {
+   "ticker": "PFE",
+   "date": "2025-08-27",
+   "asset": "COMIRNATY LP.8.1",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PFE-2025-11-21": {
+   "ticker": "PFE",
+   "date": "2025-11-21",
+   "asset": "PADCEV (enfortumab vedotin) + KEYTRUDA (pembrolizumab) - (EV-303 / KEYNOTE-905)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "PADCEV",
+    "appl_no": "BLA761137",
+    "approval_date": "2025-11-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761137",
+    "source_label": "Drugs@FDA, application BLA761137, action date 2025-11-21"
+   }
+  },
+  "PFE-2025-12-17": {
+   "ticker": "PFE",
+   "date": "2025-12-17",
+   "asset": "KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PGEN-2025-08-15": {
+   "ticker": "PGEN",
+   "date": "2025-08-15",
+   "asset": "PAPZIMEOS (zopapogene imadenovec-drba)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-08-18",
+    "accession": "0001104659-25-079497",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1356090/000110465925079497/tm2523710d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-25-079497 of 2025-08-18 containing 'approval of'"
+   }
+  },
+  "PHIO-2025-03-10": {
+   "ticker": "PHIO",
+   "date": "2025-03-10",
+   "asset": "PH-762",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PHIO-2025-05-07": {
+   "ticker": "PHIO",
+   "date": "2025-05-07",
+   "asset": "PH-762",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PHRRF-2025-08-11": {
+   "ticker": "PHRRF",
+   "date": "2025-08-11",
+   "asset": "KETARX (ketamine)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ketamine",
+    "appl_no": "ANDA217858",
+    "approval_date": "2025-08-07",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217858",
+    "source_label": "Drugs@FDA, application ANDA217858, action date 2025-08-07"
+   }
+  },
+  "PLRX-2025-12-04": {
+   "ticker": "PLRX",
+   "date": "2025-12-04",
+   "asset": "PLN-101095",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PRTA-2025-08-27": {
+   "ticker": "PRTA",
+   "date": "2025-08-27",
+   "asset": "PRX012 - (ASCENT)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PRTC-2025-12-05": {
+   "ticker": "PRTC",
+   "date": "2025-12-05",
+   "asset": "LYT-200",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PTCT-2025-07-28": {
+   "ticker": "PTCT",
+   "date": "2025-07-28",
+   "asset": "SEPHIENCE (Sepiapterin  (PTC923)) - (APHENITY)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SEPHIENCE",
+    "appl_no": "NDA219666",
+    "approval_date": "2025-07-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219666",
+    "source_label": "Drugs@FDA, application NDA219666, action date 2025-07-28"
+   }
+  },
+  "PTCT-2025-08-19": {
+   "ticker": "PTCT",
+   "date": "2025-08-19",
+   "asset": "Vatiquinone - (MOVE-FA)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RARE-2025-07-11": {
+   "ticker": "RARE",
+   "date": "2025-07-11",
+   "asset": "UX111 - (ABO-102)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-07-11",
+    "accession": "0000950170-25-095334",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025095334/rare-20250711.htm",
+    "source_label": "SEC filing 0000950170-25-095334 of 2025-07-11 containing 'complete response letter'"
+   }
+  },
+  "REGN-2025-04-18": {
+   "ticker": "REGN",
+   "date": "2025-04-18",
+   "asset": "Dupixent (dupilumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Dupixent",
+    "appl_no": "BLA761055",
+    "approval_date": "2025-04-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761055",
+    "source_label": "Drugs@FDA, application BLA761055, action date 2025-04-17"
+   }
+  },
+  "REGN-2025-04-20": {
+   "ticker": "REGN",
+   "date": "2025-04-20",
+   "asset": "EYLEA HD (24-week dosing)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-04-29",
+    "accession": "0001804220-25-000020",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000180422025000020/exhibit991q12025.htm",
+    "source_label": "SEC filing 0001804220-25-000020 of 2025-04-29 containing 'complete response letter'"
+   }
+  },
+  "REGN-2025-05-23": {
+   "ticker": "REGN",
+   "date": "2025-05-23",
+   "asset": "Linvoseltamab +  carfilzomib - (LINKER-MM2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "REGN-2025-06-02": {
+   "ticker": "REGN",
+   "date": "2025-06-02",
+   "asset": "DUPIXENT (dupilumab)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "REGN-2025-07-02": {
+   "ticker": "REGN",
+   "date": "2025-07-02",
+   "asset": "Lynozyfic (linvoseltamab-gcpt)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Lynozyfic",
+    "appl_no": "BLA761400",
+    "approval_date": "2025-07-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761400",
+    "source_label": "Drugs@FDA, application BLA761400, action date 2025-07-02"
+   }
+  },
+  "REGN-2025-07-30": {
+   "ticker": "REGN",
+   "date": "2025-07-30",
+   "asset": "Odronextamab",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "REGN-2025-10-08": {
+   "ticker": "REGN",
+   "date": "2025-10-08",
+   "asset": "Libtayo (cemiplimab-rwlc)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Libtayo",
+    "appl_no": "BLA761097",
+    "approval_date": "2025-10-08",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761097",
+    "source_label": "Drugs@FDA, application BLA761097, action date 2025-10-08"
+   }
+  },
+  "REGN-2025-10-17": {
+   "ticker": "REGN",
+   "date": "2025-10-17",
+   "asset": "Solnerstotug (formerly SNS-101) with Libtayo - (VISTA)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-10-28",
+    "accession": "0000872589-25-000026",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258925000026/exhibit991q32025.htm",
+    "source_label": "SEC filing 0000872589-25-000026 of 2025-10-28 containing 'complete response letter'"
+   }
+  },
+  "REGN-2025-11-19": {
+   "ticker": "REGN",
+   "date": "2025-11-19",
+   "asset": "EYLEA HD (aflibercept) Injection 8 mg - (QUASAR)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EYLEA HD",
+    "appl_no": "BLA761355",
+    "approval_date": "2025-11-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761355",
+    "source_label": "Drugs@FDA, application BLA761355, action date 2025-11-19"
+   }
+  },
+  "REGN-2026-02-24": {
+   "ticker": "REGN",
+   "date": "2026-02-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RHHBY-2025-02-04": {
+   "ticker": "RHHBY",
+   "date": "2025-02-04",
+   "asset": "Susvimo (ranibizumab injection) 100 mg/mL - (Pagoda and Pavilion)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Susvimo",
+    "appl_no": "BLA761197",
+    "approval_date": "2025-02-03",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761197",
+    "source_label": "Drugs@FDA, application BLA761197, action date 2025-02-03"
+   }
+  },
+  "RHHBY-2025-02-12": {
+   "ticker": "RHHBY",
+   "date": "2025-02-12",
+   "asset": "EVRYSDI (risdiplam) 5mg",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "EVRYSDI",
+    "appl_no": "NDA213535",
+    "approval_date": "2025-02-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213535",
+    "source_label": "Drugs@FDA, application NDA213535, action date 2025-02-11"
+   }
+  },
+  "RHHBY-2025-03-03": {
+   "ticker": "RHHBY",
+   "date": "2025-03-03",
+   "asset": "TNKase (tenecteplase)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "TNKase",
+    "appl_no": "BLA103909",
+    "approval_date": "2025-02-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=103909",
+    "source_label": "Drugs@FDA, application BLA103909, action date 2025-02-28"
+   }
+  },
+  "RHHBY-2025-05-22": {
+   "ticker": "RHHBY",
+   "date": "2025-05-22",
+   "asset": "Susvimo",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Susvimo",
+    "appl_no": "BLA761197",
+    "approval_date": "2025-05-21",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761197",
+    "source_label": "Drugs@FDA, application BLA761197, action date 2025-05-21"
+   }
+  },
+  "RHHBY-2025-07-18": {
+   "ticker": "RHHBY",
+   "date": "2025-07-18",
+   "asset": "Columvi + GemOx - (STARGLO)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RHHBY-2025-10-02": {
+   "ticker": "RHHBY",
+   "date": "2025-10-02",
+   "asset": "Zepzelca (lurbinectedin) and Atezolizumab (Tecentriq)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Zepzelca",
+    "appl_no": "NDA213702",
+    "approval_date": "2025-10-02",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213702",
+    "source_label": "Drugs@FDA, application NDA213702, action date 2025-10-02"
+   }
+  },
+  "RHHBY-2025-10-20": {
+   "ticker": "RHHBY",
+   "date": "2025-10-20",
+   "asset": "Gazyva/Gazyvaro",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RHHBY-2025-11-25": {
+   "ticker": "RHHBY",
+   "date": "2025-11-25",
+   "asset": "SRP-9001-103 - (ENDEAVOR)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RHHBY-2025-12-22": {
+   "ticker": "RHHBY",
+   "date": "2025-12-22",
+   "asset": "Lunsumio VELO (mosunetuzumab-axgb)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Lunsumio VELO",
+    "appl_no": "BLA761263",
+    "approval_date": "2025-12-19",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761263",
+    "source_label": "Drugs@FDA, application BLA761263, action date 2025-12-19"
+   }
+  },
+  "RNAZ-2025-02-06": {
+   "ticker": "RNAZ",
+   "date": "2025-02-06",
+   "asset": "TTX-MC138 - (PRE-I-SPY)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-02-04",
+    "accession": "0001104659-25-009122",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925009122/tm255410d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-25-009122 of 2025-02-04 containing 'approval of'"
+   }
+  },
+  "RNAZ-2025-03-13": {
+   "ticker": "RNAZ",
+   "date": "2025-03-13",
+   "asset": "TTX-MC138 - (PRE-I-SPY)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-03-25",
+    "accession": "0001104659-25-027565",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925027565/tm2510166d1_ex4-1.htm",
+    "source_label": "SEC filing 0001104659-25-027565 of 2025-03-25 containing 'approval of'"
+   }
+  },
+  "RPRX-2025-11-07": {
+   "ticker": "RPRX",
+   "date": "2025-11-07",
+   "asset": "Aficamten (CK-274) - (MAPLE-HCM)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "SLNO-2025-03-26": {
+   "ticker": "SLNO",
+   "date": "2025-03-26",
+   "asset": "VYKAT XR (diazoxide choline) extended-release tablets",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "VYKAT XR",
+    "appl_no": "NDA216665",
+    "approval_date": "2025-03-26",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216665",
+    "source_label": "Drugs@FDA, application NDA216665, action date 2025-03-26"
+   }
+  },
+  "SNDX-2025-01-16": {
+   "ticker": "SNDX",
+   "date": "2025-01-16",
+   "asset": "Niktimvo (axatilimab-csfr)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "SNDX-2025-10-24": {
+   "ticker": "SNDX",
+   "date": "2025-10-24",
+   "asset": "Revuforj (revumenib)  - (AUGMENT-101)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Revuforj",
+    "appl_no": "NDA218944",
+    "approval_date": "2025-10-24",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218944",
+    "source_label": "Drugs@FDA, application NDA218944, action date 2025-10-24"
+   }
+  },
+  "SNY-2025-03-28": {
+   "ticker": "SNY",
+   "date": "2025-03-28",
+   "asset": "Qfitlia (fitusiran) - (ATLAS)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Qfitlia",
+    "appl_no": "NDA219019",
+    "approval_date": "2025-03-28",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219019",
+    "source_label": "Drugs@FDA, application NDA219019, action date 2025-03-28"
+   }
+  },
+  "SNY-2025-04-18": {
+   "ticker": "SNY",
+   "date": "2025-04-18",
+   "asset": "Dupixent (dupilumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Dupixent",
+    "appl_no": "BLA761055",
+    "approval_date": "2025-04-17",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761055",
+    "source_label": "Drugs@FDA, application BLA761055, action date 2025-04-17"
+   }
+  },
+  "SNY-2025-06-02": {
+   "ticker": "SNY",
+   "date": "2025-06-02",
+   "asset": "DUPIXENT (dupilumab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-06-06",
+    "accession": "0001193125-25-136654",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312525136654/d81295dex993.htm",
+    "source_label": "SEC filing 0001193125-25-136654 of 2025-06-06 containing 'approval of'"
+   }
+  },
+  "SNY-2025-08-29": {
+   "ticker": "SNY",
+   "date": "2025-08-29",
+   "asset": "Wayrilz (rilzabrutinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Wayrilz",
+    "appl_no": "NDA219685",
+    "approval_date": "2025-08-29",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219685",
+    "source_label": "Drugs@FDA, application NDA219685, action date 2025-08-29"
+   }
+  },
+  "SNY-2025-12-28": {
+   "ticker": "SNY",
+   "date": "2025-12-28",
+   "asset": "Tolebrutinib",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-12-29",
+    "accession": "0001193125-25-332163",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312525332163/d65502dex991.htm",
+    "source_label": "SEC filing 0001193125-25-332163 of 2025-12-29 containing 'complete response letter'"
+   }
+  },
+  "SNY-2026-02-24": {
+   "ticker": "SNY",
+   "date": "2026-02-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-03-03",
+    "accession": "0001193125-26-086540",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526086540/d28705dex991.htm",
+    "source_label": "SEC filing 0001193125-26-086540 of 2026-03-03 containing 'FDA approval'"
+   }
+  },
+  "SPRY-2025-03-05": {
+   "ticker": "SPRY",
+   "date": "2025-03-05",
+   "asset": "Neffy 1 mg (epinephrine nasal spray)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Neffy",
+    "appl_no": "NDA214697",
+    "approval_date": "2025-03-05",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214697",
+    "source_label": "Drugs@FDA, application NDA214697, action date 2025-03-05"
+   }
+  },
+  "SRPT-2025-11-25": {
+   "ticker": "SRPT",
+   "date": "2025-11-25",
+   "asset": "SRP-9001-103 - (ENDEAVOR)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "SRRK-2025-09-23": {
+   "ticker": "SRRK",
+   "date": "2025-09-23",
+   "asset": "Apitegromab - (SAPPHIRE)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-09-23",
+    "accession": "0001104659-25-092317",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465925092317/tm2526733d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-25-092317 of 2025-09-23 containing 'complete response letter'"
+   }
+  },
+  "SUPN-2025-02-04": {
+   "ticker": "SUPN",
+   "date": "2025-02-04",
+   "asset": "ONAPGO (apomorphine hydrochloride) injection (SPN-830)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ONAPGO",
+    "appl_no": "NDA214056",
+    "approval_date": "2025-02-03",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214056",
+    "source_label": "Drugs@FDA, application NDA214056, action date 2025-02-03"
+   }
+  },
+  "SWTX-2025-02-11": {
+   "ticker": "SWTX",
+   "date": "2025-02-11",
+   "asset": "GOMEKLI (mirdametinib) - (ReNeu)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "GOMEKLI",
+    "appl_no": "NDA219379",
+    "approval_date": "2025-02-11",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219379",
+    "source_label": "Drugs@FDA, application NDA219379, action date 2025-02-11"
+   }
+  },
+  "TAK-2025-06-30": {
+   "ticker": "TAK",
+   "date": "2025-06-30",
+   "asset": "GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 \u00b5g/mL 10% solution]",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-07-01",
+    "accession": "0001395064-25-000107",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1395064/000139506425000107/form6k_070125.htm",
+    "source_label": "SEC filing 0001395064-25-000107 of 2025-07-01 containing 'approval of'"
+   }
+  },
+  "TAK-2025-09-05": {
+   "ticker": "TAK",
+   "date": "2025-09-05",
+   "asset": "VONVENDI [von Willebrand factor (Recombinant)]",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "TARA-2025-04-26": {
+   "ticker": "TARA",
+   "date": "2025-04-26",
+   "asset": "TARA-002 - (ADVANCED-2)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "TARA-2025-11-19": {
+   "ticker": "TARA",
+   "date": "2025-11-19",
+   "asset": "TARA-002 - (STARBORN-1)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "TEVA-2025-05-05": {
+   "ticker": "TEVA",
+   "date": "2025-05-05",
+   "asset": "SELARSDI (ustekinumab-aekn) injection - (STELARA biosimilar)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "SELARSDI",
+    "appl_no": "BLA761343",
+    "approval_date": "2025-04-30",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761343",
+    "source_label": "Drugs@FDA, application BLA761343, action date 2025-04-30"
+   }
+  },
+  "TEVA-2025-08-06": {
+   "ticker": "TEVA",
+   "date": "2025-08-06",
+   "asset": "AJOVY (fremanezumab-vfrm)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "AJOVY",
+    "appl_no": "BLA761089",
+    "approval_date": "2025-08-05",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761089",
+    "source_label": "Drugs@FDA, application BLA761089, action date 2025-08-05"
+   }
+  },
+  "TEVA-2025-08-28": {
+   "ticker": "TEVA",
+   "date": "2025-08-28",
+   "asset": "Generic Saxenda (liraglutide injection)",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "TEVA-2025-10-10": {
+   "ticker": "TEVA",
+   "date": "2025-10-10",
+   "asset": "UZEDY(R) (risperidone) Extended-Release Injectable Suspension",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "UZEDY",
+    "appl_no": "NDA213586",
+    "approval_date": "2025-10-10",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213586",
+    "source_label": "Drugs@FDA, application NDA213586, action date 2025-10-10"
+   }
+  },
+  "TLX-2025-03-21": {
+   "ticker": "TLX",
+   "date": "2025-03-21",
+   "asset": "Gozellix (TLX007-CDx)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Gozellix",
+    "appl_no": "NDA219592",
+    "approval_date": "2025-03-20",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219592",
+    "source_label": "Drugs@FDA, application NDA219592, action date 2025-03-20"
+   }
+  },
+  "TLX-2025-04-28": {
+   "ticker": "TLX",
+   "date": "2025-04-28",
+   "asset": "TLX101-CDx",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-04-29",
+    "accession": "0002007191-25-000049",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000049/pixpr.htm",
+    "source_label": "SEC filing 0002007191-25-000049 of 2025-04-29 containing 'complete response letter'"
+   }
+  },
+  "TNXP-2025-08-15": {
+   "ticker": "TNXP",
+   "date": "2025-08-15",
+   "asset": "Tonmya (TNX-102 SL) - (RELIEF/RESILIENT)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Tonmya",
+    "appl_no": "NDA219428",
+    "approval_date": "2025-08-15",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219428",
+    "source_label": "Drugs@FDA, application NDA219428, action date 2025-08-15"
+   }
+  },
+  "TURN-2025-02-14": {
+   "ticker": "TURN",
+   "date": "2025-02-14",
+   "asset": "Romvimza (vimseltinib)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Romvimza",
+    "appl_no": "NDA219304",
+    "approval_date": "2025-02-14",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219304",
+    "source_label": "Drugs@FDA, application NDA219304, action date 2025-02-14"
+   }
+  },
+  "TVTX-2025-08-27": {
+   "ticker": "TVTX",
+   "date": "2025-08-27",
+   "asset": "FILSPARI (sparsentan)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "FILSPARI",
+    "appl_no": "NDA216403",
+    "approval_date": "2025-08-27",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216403",
+    "source_label": "Drugs@FDA, application NDA216403, action date 2025-08-27"
+   }
+  },
+  "URGN-2025-06-12": {
+   "ticker": "URGN",
+   "date": "2025-06-12",
+   "asset": "ZUSDURI (VesiGel UGN-102 (mitomycin)) - (ENVISION)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "ZUSDURI",
+    "appl_no": "NDA215793",
+    "approval_date": "2025-06-12",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215793",
+    "source_label": "Drugs@FDA, application NDA215793, action date 2025-06-12"
+   }
+  },
+  "VALN-2025-08-25": {
+   "ticker": "VALN",
+   "date": "2025-08-25",
+   "asset": "IXCHIQ",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "VNDA-2025-12-30": {
+   "ticker": "VNDA",
+   "date": "2025-12-30",
+   "asset": "NEREUS (tradipitant)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "NEREUS",
+    "appl_no": "NDA220152",
+    "approval_date": "2025-12-30",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220152",
+    "source_label": "Drugs@FDA, application NDA220152, action date 2025-12-30"
+   }
+  },
+  "VNDA-2026-02-21": {
+   "ticker": "VNDA",
+   "date": "2026-02-21",
+   "asset": "Bysanti (milsaperidone)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Bysanti",
+    "appl_no": "NDA220358",
+    "approval_date": "2026-02-20",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220358",
+    "source_label": "Drugs@FDA, application NDA220358, action date 2026-02-20"
+   }
+  },
+  "VRTX-2025-01-30": {
+   "ticker": "VRTX",
+   "date": "2025-01-30",
+   "asset": "Suzetrigine (VX-548)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Suzetrigine",
+    "appl_no": "NDA219209",
+    "approval_date": "2025-01-30",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219209",
+    "source_label": "Drugs@FDA, application NDA219209, action date 2025-01-30"
+   }
+  },
+  "VSTM-2025-05-08": {
+   "ticker": "VSTM",
+   "date": "2025-05-08",
+   "asset": "AVMAPKI FAKZYNJA CO-PACK",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "AVMAPKI FAKZYNJA CO",
+    "appl_no": "NDA219616",
+    "approval_date": "2025-05-08",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219616",
+    "source_label": "Drugs@FDA, application NDA219616, action date 2025-05-08"
+   }
+  },
+  "WVE-2025-03-26": {
+   "ticker": "WVE",
+   "date": "2025-03-26",
+   "asset": "WVE-N531 - (FORWARD-53)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-03-26",
+    "accession": "0001193125-25-063184",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1631574/000119312525063184/d918658dex991.htm",
+    "source_label": "SEC filing 0001193125-25-063184 of 2025-03-26 containing 'approval of'"
+   }
+  },
+  "XERS-2025-03-17": {
+   "ticker": "XERS",
+   "date": "2025-03-17",
+   "asset": "Gvoke VialDx",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Gvoke VialDx",
+    "appl_no": "NDA212097",
+    "approval_date": "2025-03-14",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=212097",
+    "source_label": "Drugs@FDA, application NDA212097, action date 2025-03-14"
+   }
+  },
+  "XNCR-2025-06-18": {
+   "ticker": "XNCR",
+   "date": "2025-06-18",
+   "asset": "MONJUVI (tafasitamab) with REVLIMID (lenalidomide) and RITUXAN (rituximab)",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "MONJUVI",
+    "appl_no": "BLA761163",
+    "approval_date": "2025-06-18",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761163",
+    "source_label": "Drugs@FDA, application BLA761163, action date 2025-06-18"
+   }
+  },
+  "XRTX-2025-04-30": {
+   "ticker": "XRTX",
+   "date": "2025-04-30",
+   "asset": "XRx-026",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2025-04-30",
+    "accession": "0001171843-25-002624",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1729214/000117184325002624/exh_991.htm",
+    "source_label": "SEC filing 0001171843-25-002624 of 2025-04-30 containing 'approval of'"
+   }
+  },
+  "ZLAB-2025-07-30": {
+   "ticker": "ZLAB",
+   "date": "2025-07-30",
+   "asset": "Odronextamab",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  }
+ }
+}
