@@ -60,9 +60,12 @@ def main():
         if not os.path.exists(p):
             continue
         doc = open(p, encoding="utf-8", errors="replace").read()
-        if "price-only" not in doc and "outcome unverified" not in doc:
+        low = doc.lower()
+        if "price-only" not in low and "outcome unverified" not in low:
             skipped += 1
             continue                       # already upgraded on a previous run
+            # (case-insensitive: the pretty-format titles say 'Price-only' with a capital P,
+            # and the case-sensitive first version of this check skipped exactly those pages)
         ev = r["evidence"]
         if not ev or not ev.get("source_url"):
             continue
@@ -76,10 +79,23 @@ def main():
         indic = re.sub(r"\s+", " ", str(row.get("indication") or "")).strip()
 
         o = doc
-        # titles
+        # titles -- TWO formats exist: the relabel-era ISO form ('2025-12-09: outcome
+        # unverified') and the original pretty form ('Feb 7, 2025: Approved - Price-only'),
+        # which the relabel script's regex never matched and so kept its tier suffix. Both
+        # must end up as a plain outcome title, or the provenance count keeps reading the
+        # page as price-inferred off its own <title>.
         doc = doc.replace(": outcome unverified |", f": {outcome} |")
         doc = re.sub(r'(content="[A-Z]+ FDA Decision \d{4}-\d{2}-\d{2}): outcome unverified',
                      rf"\1: {outcome}", doc)
+        doc = doc.replace(" - Price-only |", " |")
+        doc = doc.replace(" - Price-only&quot;", "&quot;")
+        doc = re.sub(r"( content=\"[^\"]{0,120}) - Price-only([\"|])", r"\1\2", doc)
+        # pretty-format meta descriptions carry their own 'Approved. Price-only.' sentence
+        src_word = ("Verified against Drugs@FDA." if ev["kind"] == "approval"
+                    else "Verified against the company's SEC filing.")
+        doc = doc.replace(": Approved. Price-only.", f": Approved. {src_word}")
+        doc = doc.replace(": CRL. Price-only.", f": CRL. {src_word}")
+        doc = re.sub(r"\bPrice-only\.", src_word, doc)
         # h1
         doc = re.sub(r'<span class="g"[^>]*>outcome unverified</span>',
                      f'<span class="g">{outcome}</span>', doc)

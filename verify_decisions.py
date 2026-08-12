@@ -175,15 +175,28 @@ def main():
     targets = []
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         doc = open(p, encoding="utf-8", errors="replace").read()
-        if "price-only" not in doc:
-            continue
         slug = os.path.basename(os.path.dirname(p))
         m = re.match(r"([A-Z]+)-(\d{4}-\d{2}-\d{2})$", slug)
         if not m:
             continue
-        claimed = ("approval" if "consistent with approval" in doc
-                   else "crl" if "consistent with a CRL" in doc else "unknown")
-        targets.append((slug, m.group(1), m.group(2), claimed))
+        if "price-only" in doc:
+            claimed = ("approval" if "consistent with approval" in doc
+                       else "crl" if "consistent with a CRL" in doc else "unknown")
+            targets.append((slug, m.group(1), m.group(2), claimed))
+            continue
+        # second backlog (2026-08-12): older pages that ASSERT an outcome in their title but
+        # link no external document at all -- asserted, source unshown. Same verification.
+        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', doc)
+               if "pdufa.bio" not in u]
+        if not ext:
+            t = re.search(r"<span>Outcome</span><b[^>]*>([^<]+)</b>", doc)
+            if t:
+                oc = t.group(1).strip().lower()
+                claimed = ("approval" if "approv" in oc
+                           else "crl" if "crl" in oc or "complete response" in oc
+                           else "unknown")
+                if claimed != "unknown":
+                    targets.append((slug, m.group(1), m.group(2), claimed))
     if a.only:
         targets = [t for t in targets if t[0] == a.only]
     if a.limit:

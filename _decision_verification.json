@@ -3870,6 +3870,1346 @@
    "claimed": "crl",
    "status": "unverified",
    "evidence": null
+  },
+  "ALVO-2025-11-02": {
+   "ticker": "ALVO",
+   "date": "2025-11-02",
+   "asset": "AVT05 (biosimilar to golimumab)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-11-03",
+    "accession": "0001171843-25-006876",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1898416/000117184325006876/f6k_110325.htm",
+    "source_label": "SEC filing 0001171843-25-006876 of 2025-11-03 containing 'complete response letter'"
+   }
+  },
+  "AQST-2026-02-02": {
+   "ticker": "AQST",
+   "date": "2026-02-02",
+   "asset": "Anaphylm  (dibutepinephrine) - (103)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-02-02",
+    "accession": "0001398733-26-000005",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000005/q12026-crlmeetingsupplem.htm",
+    "source_label": "SEC filing 0001398733-26-000005 of 2026-02-02 containing 'complete response letter'"
+   }
+  },
+  "ATRA-2026-01-12": {
+   "ticker": "ATRA",
+   "date": "2026-01-12",
+   "asset": "EBVALLO (Tabelecleucel (ATA 129)) - (ALLELE)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-01-12",
+    "accession": "0001193125-26-010342",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1604464/000119312526010342/d34257dex991.htm",
+    "source_label": "SEC filing 0001193125-26-010342 of 2026-01-12 containing 'complete response letter'"
+   }
+  },
+  "CORT-2025-12-31": {
+   "ticker": "CORT",
+   "date": "2025-12-31",
+   "asset": "Relacorilant - (GRACE)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-12-31",
+    "accession": "0001193125-25-338184",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000119312525338184/d50993dex991.htm",
+    "source_label": "SEC filing 0001193125-25-338184 of 2025-12-31 containing 'complete response letter'"
+   }
+  },
+  "CYTK-2025-11-07": {
+   "ticker": "CYTK",
+   "date": "2025-11-07",
+   "asset": "Aficamten (CK-274) - (MAPLE-HCM)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "FBIO-2025-10-01": {
+   "ticker": "FBIO",
+   "date": "2025-10-01",
+   "asset": "ZYCUBO (copper histidinate)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2025-10-01",
+    "accession": "0001104659-25-095366",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1429260/000110465925095366/fbio-20251001x8k.htm",
+    "source_label": "SEC filing 0001104659-25-095366 of 2025-10-01 containing 'complete response letter'"
+   }
+  },
+  "IRON-2026-02-15": {
+   "ticker": "IRON",
+   "date": "2026-02-15",
+   "asset": "Bitopertin (EPP)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-02-13",
+    "accession": "0001193125-26-051504",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526051504/iron-20260213.htm",
+    "source_label": "SEC filing 0001193125-26-051504 of 2026-02-13 containing 'complete response letter'"
+   }
+  },
+  "PHIO-2025-07-28": {
+   "ticker": "PHIO",
+   "date": "2025-07-28",
+   "asset": "PH-762",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RGNX-2026-02-08": {
+   "ticker": "RGNX",
+   "date": "2026-02-08",
+   "asset": "RGX-121 (clemidsogene lanparvovec)",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-02-10",
+    "accession": "0001193125-26-043342",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526043342/rgnx-ex99_1.htm",
+    "source_label": "SEC filing 0001193125-26-043342 of 2026-02-10 containing 'complete response letter'"
+   }
+  },
+  "URGN-2025-04-27": {
+   "ticker": "URGN",
+   "date": "2025-04-27",
+   "asset": "UGN-102 - (OPTIMA II)",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ABBV-2026-04-23": {
+   "ticker": "ABBV",
+   "date": "2026-04-23",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-04-29",
+    "accession": "0001551152-26-000013",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000013/abbv-20260331xexhibit991.htm",
+    "source_label": "SEC filing 0001551152-26-000013 of 2026-04-29 containing 'complete response letter'"
+   }
+  },
+  "ABBV-2026-05-27": {
+   "ticker": "ABBV",
+   "date": "2026-05-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ABBV-2026-06-16": {
+   "ticker": "ABBV",
+   "date": "2026-06-16",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ABBV-2026-06-26": {
+   "ticker": "ABBV",
+   "date": "2026-06-26",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ACHV-2026-06-20": {
+   "ticker": "ACHV",
+   "date": "2026-06-20",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ACHV-2026-06-22": {
+   "ticker": "ACHV",
+   "date": "2026-06-22",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ADMA-2026-05-04": {
+   "ticker": "ADMA",
+   "date": "2026-05-04",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-05-04",
+    "accession": "0001140361-26-018667",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1368514/000114036126018667/ef20072196_ex99-1.htm",
+    "source_label": "SEC filing 0001140361-26-018667 of 2026-05-04 containing 'FDA approval'"
+   }
+  },
+  "ALDX-2026-03-17": {
+   "ticker": "ALDX",
+   "date": "2026-03-17",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-03-17",
+    "accession": "0001193125-26-109511",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1341235/000119312526109511/aldx-20260317.htm",
+    "source_label": "SEC filing 0001193125-26-109511 of 2026-03-17 containing 'complete response letter'"
+   }
+  },
+  "AMPH-2026-02-24": {
+   "ticker": "AMPH",
+   "date": "2026-02-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-03-06",
+    "accession": "0001297184-26-000015",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297184/000129718426000015/amph-20260303xex10d1.htm",
+    "source_label": "SEC filing 0001297184-26-000015 of 2026-03-06 containing 'approval of'"
+   }
+  },
+  "AMRX-2026-06-04": {
+   "ticker": "AMRX",
+   "date": "2026-06-04",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ANIP-2026-04-08": {
+   "ticker": "ANIP",
+   "date": "2026-04-08",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ARGX-2026-05-08": {
+   "ticker": "ARGX",
+   "date": "2026-05-08",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-05-11",
+    "accession": "0001104659-26-058143",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1697862/000110465926058143/tm2614130d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-26-058143 of 2026-05-11 containing 'FDA approval'"
+   }
+  },
+  "ARQT-2026-06-29": {
+   "ticker": "ARQT",
+   "date": "2026-06-29",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ARQT-2026-06-30": {
+   "ticker": "ARQT",
+   "date": "2026-06-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ARVN-2026-05-01": {
+   "ticker": "ARVN",
+   "date": "2026-05-01",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-05-01",
+    "accession": "0001628280-26-029210",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1655759/000162828026029210/fdaapprovalpressrelease_.htm",
+    "source_label": "SEC filing 0001628280-26-029210 of 2026-05-01 containing 'FDA approval'"
+   }
+  },
+  "ASND-2026-02-27": {
+   "ticker": "ASND",
+   "date": "2026-02-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-03-02",
+    "accession": "0001193125-26-084021",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1612042/000119312526084021/d116890d6k.htm",
+    "source_label": "SEC filing 0001193125-26-084021 of 2026-03-02 containing 'approval of'"
+   }
+  },
+  "AXSM-2026-04-30": {
+   "ticker": "AXSM",
+   "date": "2026-04-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-04-30",
+    "accession": "0001193125-26-197857",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526197857/axsm-ex99_1.htm",
+    "source_label": "SEC filing 0001193125-26-197857 of 2026-04-30 containing 'FDA approval'"
+   }
+  },
+  "AZN-2026-04-27": {
+   "ticker": "AZN",
+   "date": "2026-04-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-04-28",
+    "accession": "0001654954-26-003979",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
+    "source_label": "SEC filing 0001654954-26-003979 of 2026-04-28 containing 'FDA approval'"
+   }
+  },
+  "AZN-2026-04-28": {
+   "ticker": "AZN",
+   "date": "2026-04-28",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-04-28",
+    "accession": "0001654954-26-003979",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
+    "source_label": "SEC filing 0001654954-26-003979 of 2026-04-28 containing 'FDA approval'"
+   }
+  },
+  "AZN-2026-05-15": {
+   "ticker": "AZN",
+   "date": "2026-05-15",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-05-26",
+    "accession": "0001654954-26-005309",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+    "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'"
+   }
+  },
+  "AZN-2026-05-18": {
+   "ticker": "AZN",
+   "date": "2026-05-18",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-05-26",
+    "accession": "0001654954-26-005309",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+    "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'"
+   }
+  },
+  "AZN-2026-05-22": {
+   "ticker": "AZN",
+   "date": "2026-05-22",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-05-26",
+    "accession": "0001654954-26-005309",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+    "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'"
+   }
+  },
+  "AZN-2026-05-28": {
+   "ticker": "AZN",
+   "date": "2026-05-28",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "AZN-2026-06-12": {
+   "ticker": "AZN",
+   "date": "2026-06-12",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-06-15",
+    "accession": "0001654954-26-005964",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005964/a1987i.htm",
+    "source_label": "SEC filing 0001654954-26-005964 of 2026-06-15 containing 'approval of'"
+   }
+  },
+  "AZN-2026-06-30": {
+   "ticker": "AZN",
+   "date": "2026-06-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-06-29",
+    "accession": "0001654954-26-006251",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426006251/a1370k.htm",
+    "source_label": "SEC filing 0001654954-26-006251 of 2026-06-29 containing 'approval of'"
+   }
+  },
+  "BAYRY-2026-06-15": {
+   "ticker": "BAYRY",
+   "date": "2026-06-15",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BIIB-2026-03-30": {
+   "ticker": "BIIB",
+   "date": "2026-03-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-03-31",
+    "accession": "0001193125-26-134889",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/875045/000119312526134889/d14986dex992.htm",
+    "source_label": "SEC filing 0001193125-26-134889 of 2026-03-31 containing 'FDA approval'"
+   }
+  },
+  "BMRN-2026-02-27": {
+   "ticker": "BMRN",
+   "date": "2026-02-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BMY-2026-03-06": {
+   "ticker": "BMY",
+   "date": "2026-03-06",
+   "asset": "Deucravacitinib (Sotyktu) sNDA PsA",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Deucravacitinib",
+    "appl_no": "NDA214958",
+    "approval_date": "2026-03-06",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=214958",
+    "source_label": "Drugs@FDA, application NDA214958, action date 2026-03-06"
+   }
+  },
+  "BMY-2026-03-20": {
+   "ticker": "BMY",
+   "date": "2026-03-20",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "BMY-2026-06-01": {
+   "ticker": "BMY",
+   "date": "2026-06-01",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "CING-2026-06-02": {
+   "ticker": "CING",
+   "date": "2026-06-02",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-06-02",
+    "accession": "0001493152-26-026760",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1862150/000149315226026760/ex99-1.htm",
+    "source_label": "SEC filing 0001493152-26-026760 of 2026-06-02 containing 'complete response letter'"
+   }
+  },
+  "DNLI-2026-03-25": {
+   "ticker": "DNLI",
+   "date": "2026-03-25",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-03-25",
+    "accession": "0001714899-26-000030",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1714899/000171489926000030/ex9912026pressrelease32526.htm",
+    "source_label": "SEC filing 0001714899-26-000030 of 2026-03-25 containing 'FDA approval'"
+   }
+  },
+  "EBS-2026-02-13": {
+   "ticker": "EBS",
+   "date": "2026-02-13",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GILD-2026-02-06": {
+   "ticker": "GILD",
+   "date": "2026-02-06",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GILD-2026-05-26": {
+   "ticker": "GILD",
+   "date": "2026-05-26",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GILD-2026-06-24": {
+   "ticker": "GILD",
+   "date": "2026-06-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "GRCE-2026-04-23": {
+   "ticker": "GRCE",
+   "date": "2026-04-23",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-04-23",
+    "accession": "0001140361-26-016324",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126016324/ef20070593_ex99-1.htm",
+    "source_label": "SEC filing 0001140361-26-016324 of 2026-04-23 containing 'complete response letter'"
+   }
+  },
+  "GSK-2026-03-13": {
+   "ticker": "GSK",
+   "date": "2026-03-13",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-03-19",
+    "accession": "0001654954-26-002482",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
+    "source_label": "SEC filing 0001654954-26-002482 of 2026-03-19 containing 'approval of'"
+   }
+  },
+  "GSK-2026-03-19": {
+   "ticker": "GSK",
+   "date": "2026-03-19",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-03-19",
+    "accession": "0001654954-26-002482",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
+    "source_label": "SEC filing 0001654954-26-002482 of 2026-03-19 containing 'approval of'"
+   }
+  },
+  "GSK-2026-06-17": {
+   "ticker": "GSK",
+   "date": "2026-06-17",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-17",
+    "accession": "0001654954-26-006036",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
+    "source_label": "SEC filing 0001654954-26-006036 of 2026-06-17 containing 'FDA approval'"
+   }
+  },
+  "GSK-2026-06-18": {
+   "ticker": "GSK",
+   "date": "2026-06-18",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-17",
+    "accession": "0001654954-26-006036",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
+    "source_label": "SEC filing 0001654954-26-006036 of 2026-06-17 containing 'FDA approval'"
+   }
+  },
+  "HALO-2026-03-05": {
+   "ticker": "HALO",
+   "date": "2026-03-05",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "HRMY-2026-02-17": {
+   "ticker": "HRMY",
+   "date": "2026-02-17",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-02-24",
+    "accession": "0001104659-26-018858",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926018858/hrmy-20260224xex99d1.htm",
+    "source_label": "SEC filing 0001104659-26-018858 of 2026-02-24 containing 'FDA approval'"
+   }
+  },
+  "INCY-2026-04-08": {
+   "ticker": "INCY",
+   "date": "2026-04-08",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "INCY-2026-05-01": {
+   "ticker": "INCY",
+   "date": "2026-05-01",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IONS-2026-03-30": {
+   "ticker": "IONS",
+   "date": "2026-03-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "IONS-2026-06-24": {
+   "ticker": "IONS",
+   "date": "2026-06-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-06-24",
+    "accession": "0001140361-26-026232",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126026232/ef20076807_ex99-1.htm",
+    "source_label": "SEC filing 0001140361-26-026232 of 2026-06-24 containing 'approval of'"
+   }
+  },
+  "IRON-2026-02-13": {
+   "ticker": "IRON",
+   "date": "2026-02-13",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-02-13",
+    "accession": "0001193125-26-051504",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526051504/iron-20260213.htm",
+    "source_label": "SEC filing 0001193125-26-051504 of 2026-02-13 containing 'complete response letter'"
+   }
+  },
+  "IRWD-2026-05-27": {
+   "ticker": "IRWD",
+   "date": "2026-05-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JAGX-2026-04-29": {
+   "ticker": "JAGX",
+   "date": "2026-04-29",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-04-27",
+    "accession": "0001193125-26-179391",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526179391/d109088dex991.htm",
+    "source_label": "SEC filing 0001193125-26-179391 of 2026-04-27 containing 'approval of'"
+   }
+  },
+  "JNJ-2026-03-05": {
+   "ticker": "JNJ",
+   "date": "2026-03-05",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JNJ-2026-03-18": {
+   "ticker": "JNJ",
+   "date": "2026-03-18",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "JNJ-2026-05-29": {
+   "ticker": "JNJ",
+   "date": "2026-05-29",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LGND-2026-04-13": {
+   "ticker": "LGND",
+   "date": "2026-04-13",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-04-27",
+    "accession": "0001193125-26-179529",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/886163/000119312526179529/d143046d8k.htm",
+    "source_label": "SEC filing 0001193125-26-179529 of 2026-04-27 containing 'approval of'"
+   }
+  },
+  "LGND-2026-06-08": {
+   "ticker": "LGND",
+   "date": "2026-06-08",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-06-09",
+    "accession": "0000886163-26-000038",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/886163/000088616326000038/lgnd-20260605.htm",
+    "source_label": "SEC filing 0000886163-26-000038 of 2026-06-09 containing 'approval of'"
+   }
+  },
+  "LLY-2026-04-01": {
+   "ticker": "LLY",
+   "date": "2026-04-01",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LLY-2026-06-09": {
+   "ticker": "LLY",
+   "date": "2026-06-09",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LNTH-2026-03-06": {
+   "ticker": "LNTH",
+   "date": "2026-03-06",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LNTH-2026-06-26": {
+   "ticker": "LNTH",
+   "date": "2026-06-26",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "LNTH-2026-06-29": {
+   "ticker": "LNTH",
+   "date": "2026-06-29",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MGNX-2026-04-08": {
+   "ticker": "MGNX",
+   "date": "2026-04-08",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MNKD-2026-05-29": {
+   "ticker": "MNKD",
+   "date": "2026-05-29",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-05-28",
+    "accession": "0001193125-26-243074",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/899460/000119312526243074/mnkd-20260527.htm",
+    "source_label": "SEC filing 0001193125-26-243074 of 2026-05-28 containing 'approval of'"
+   }
+  },
+  "MRK-2026-02-11": {
+   "ticker": "MRK",
+   "date": "2026-02-11",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRK-2026-04-21": {
+   "ticker": "MRK",
+   "date": "2026-04-21",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-04-30",
+    "accession": "0001104659-26-052081",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926052081/tm2612241d1_ex99-1.htm",
+    "source_label": "SEC filing 0001104659-26-052081 of 2026-04-30 containing 'FDA approval'"
+   }
+  },
+  "MRK-2026-06-12": {
+   "ticker": "MRK",
+   "date": "2026-06-12",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRK-2026-06-18": {
+   "ticker": "MRK",
+   "date": "2026-06-18",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "MRK-2026-06-24": {
+   "ticker": "MRK",
+   "date": "2026-06-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "NVCR-2026-02-12": {
+   "ticker": "NVCR",
+   "date": "2026-02-12",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-02-11",
+    "accession": "0001645113-26-000010",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000010/paxfdadecisionpr.htm",
+    "source_label": "SEC filing 0001645113-26-000010 of 2026-02-11 containing 'FDA approval'"
+   }
+  },
+  "NVO-2026-03-03": {
+   "ticker": "NVO",
+   "date": "2026-03-03",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "NVO-2026-03-19": {
+   "ticker": "NVO",
+   "date": "2026-03-19",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-03-20",
+    "accession": "0001171843-26-001813",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001813/f6k_031926.htm",
+    "source_label": "SEC filing 0001171843-26-001813 of 2026-03-20 containing 'FDA approval'"
+   }
+  },
+  "NVO-2026-03-26": {
+   "ticker": "NVO",
+   "date": "2026-03-26",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-03-26",
+    "accession": "0001171843-26-001932",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001932/f6k_032626.htm",
+    "source_label": "SEC filing 0001171843-26-001932 of 2026-03-26 containing 'approval of'"
+   }
+  },
+  "NVS-2026-03-13": {
+   "ticker": "NVS",
+   "date": "2026-03-13",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ONC-2026-05-13": {
+   "ticker": "ONC",
+   "date": "2026-05-13",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-05-15",
+    "accession": "0001651308-26-000012",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1651308/000165130826000012/a20260515formxsonroapprova.htm",
+    "source_label": "SEC filing 0001651308-26-000012 of 2026-05-15 containing 'FDA approval'"
+   }
+  },
+  "OTLK-2026-03-05": {
+   "ticker": "OTLK",
+   "date": "2026-03-05",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-03-05",
+    "accession": "0001104659-26-024189",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926024189/tm268164d1_8k.htm",
+    "source_label": "SEC filing 0001104659-26-024189 of 2026-03-05 containing 'complete response letter'"
+   }
+  },
+  "OTLK-2026-04-07": {
+   "ticker": "OTLK",
+   "date": "2026-04-07",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-04-07",
+    "accession": "0001104659-26-040387",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926040387/tm2611268d1_8k.htm",
+    "source_label": "SEC filing 0001104659-26-040387 of 2026-04-07 containing 'complete response letter'"
+   }
+  },
+  "PFE-2026-02-24": {
+   "ticker": "PFE",
+   "date": "2026-02-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PFE-2026-05-01": {
+   "ticker": "PFE",
+   "date": "2026-05-01",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PFE-2026-06-08": {
+   "ticker": "PFE",
+   "date": "2026-06-08",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PFE-2026-06-24": {
+   "ticker": "PFE",
+   "date": "2026-06-24",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PGEN-2026-05-27": {
+   "ticker": "PGEN",
+   "date": "2026-05-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "PTGX-2026-03-18": {
+   "ticker": "PTGX",
+   "date": "2026-03-18",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RCKT-2026-03-27": {
+   "ticker": "RCKT",
+   "date": "2026-03-27",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-03-27",
+    "accession": "0001140361-26-011573",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1281895/000114036126011573/ef20069038_ex99-1.htm",
+    "source_label": "SEC filing 0001140361-26-011573 of 2026-03-27 containing 'FDA approval'"
+   }
+  },
+  "REGN-2026-04-02": {
+   "ticker": "REGN",
+   "date": "2026-04-02",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "REGN-2026-04-22": {
+   "ticker": "REGN",
+   "date": "2026-04-22",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-04-29",
+    "accession": "0000872589-26-000014",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000014/exhibit991q12026.htm",
+    "source_label": "SEC filing 0000872589-26-000014 of 2026-04-29 containing 'FDA approval'"
+   }
+  },
+  "REGN-2026-04-23": {
+   "ticker": "REGN",
+   "date": "2026-04-23",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-04-29",
+    "accession": "0000872589-26-000014",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000014/exhibit991q12026.htm",
+    "source_label": "SEC filing 0000872589-26-000014 of 2026-04-29 containing 'FDA approval'"
+   }
+  },
+  "REPL-2026-04-10": {
+   "ticker": "REPL",
+   "date": "2026-04-10",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-04-13",
+    "accession": "0001104659-26-042141",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926042141/tm2611633d1_8k.htm",
+    "source_label": "SEC filing 0001104659-26-042141 of 2026-04-13 containing 'complete response letter'"
+   }
+  },
+  "RGNX-2026-02-09": {
+   "ticker": "RGNX",
+   "date": "2026-02-09",
+   "asset": "",
+   "claimed": "crl",
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "complete response letter",
+    "filing_date": "2026-02-10",
+    "accession": "0001193125-26-043342",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526043342/rgnx-ex99_1.htm",
+    "source_label": "SEC filing 0001193125-26-043342 of 2026-02-10 containing 'complete response letter'"
+   }
+  },
+  "RHHBY-2026-02-20": {
+   "ticker": "RHHBY",
+   "date": "2026-02-20",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "RYTM-2026-03-20": {
+   "ticker": "RYTM",
+   "date": "2026-03-20",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-03-20",
+    "accession": "0001628280-26-019995",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1649904/000162828026019995/ex992ahoapprovaldeckfina.htm",
+    "source_label": "SEC filing 0001628280-26-019995 of 2026-03-20 containing 'FDA approval'"
+   }
+  },
+  "SNY-2026-04-22": {
+   "ticker": "SNY",
+   "date": "2026-04-22",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "approval of",
+    "filing_date": "2026-04-27",
+    "accession": "0001193125-26-180848",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526180848/d137048dex992.htm",
+    "source_label": "SEC filing 0001193125-26-180848 of 2026-04-27 containing 'approval of'"
+   }
+  },
+  "SPRO-2026-06-17": {
+   "ticker": "SPRO",
+   "date": "2026-06-17",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-22",
+    "accession": "0001193125-26-277506",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
+    "source_label": "SEC filing 0001193125-26-277506 of 2026-06-22 containing 'FDA approval'"
+   }
+  },
+  "SPRO-2026-06-18": {
+   "ticker": "SPRO",
+   "date": "2026-06-18",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-22",
+    "accession": "0001193125-26-277506",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
+    "source_label": "SEC filing 0001193125-26-277506 of 2026-06-22 containing 'FDA approval'"
+   }
+  },
+  "SPRY-2026-05-15": {
+   "ticker": "SPRY",
+   "date": "2026-05-15",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-05-15",
+    "accession": "0001193125-26-225055",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1671858/000119312526225055/spry-ex99_2.htm",
+    "source_label": "SEC filing 0001193125-26-225055 of 2026-05-15 containing 'FDA approval'"
+   }
+  },
+  "TEVA-2026-03-30": {
+   "ticker": "TEVA",
+   "date": "2026-03-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "TVTX-2026-04-13": {
+   "ticker": "TVTX",
+   "date": "2026-04-13",
+   "asset": "Sparsentan (Filspari) sNDA FSGS",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "approval",
+    "matched_name": "Sparsentan",
+    "appl_no": "NDA216403",
+    "approval_date": "2026-04-13",
+    "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216403",
+    "source_label": "Drugs@FDA, application NDA216403, action date 2026-04-13"
+   }
+  },
+  "UNCY-2026-06-29": {
+   "ticker": "UNCY",
+   "date": "2026-06-29",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "UNCY-2026-06-30": {
+   "ticker": "UNCY",
+   "date": "2026-06-30",
+   "asset": "",
+   "claimed": "crl",
+   "status": "unverified",
+   "evidence": null
+  },
+  "VERA-2026-07-07": {
+   "ticker": "VERA",
+   "date": "2026-07-07",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "VNDA-2026-02-20": {
+   "ticker": "VNDA",
+   "date": "2026-02-20",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-02-23",
+    "accession": "0001628280-26-010376",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026010376/vnda8-k2232026exhibit991.htm",
+    "source_label": "SEC filing 0001628280-26-010376 of 2026-02-23 containing 'FDA approval'"
+   }
+  },
+  "VRDN-2026-06-26": {
+   "ticker": "VRDN",
+   "date": "2026-06-26",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-29",
+    "accession": "0001193125-26-286273",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
+    "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   }
+  },
+  "VRDN-2026-06-29": {
+   "ticker": "VRDN",
+   "date": "2026-06-29",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-29",
+    "accession": "0001193125-26-286273",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
+    "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   }
+  },
+  "VRDN-2026-06-30": {
+   "ticker": "VRDN",
+   "date": "2026-06-30",
+   "asset": "",
+   "claimed": "approval",
+   "status": "verified_approved",
+   "evidence": {
+    "kind": "filing",
+    "phrase": "FDA approval",
+    "filing_date": "2026-06-29",
+    "accession": "0001193125-26-286273",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
+    "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   }
+  },
+  "XOMA-2026-06-08": {
+   "ticker": "XOMA",
+   "date": "2026-06-08",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
+  },
+  "ZVRA-2026-06-08": {
+   "ticker": "ZVRA",
+   "date": "2026-06-08",
+   "asset": "",
+   "claimed": "approval",
+   "status": "unverified",
+   "evidence": null
   }
  }
 }
