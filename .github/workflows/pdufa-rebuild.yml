@@ -105,6 +105,22 @@ jobs:
       - name: "Publish the honest sourced / inferred / unsourced split"
         run: python refresh_provenance_counts.py
 
+      # Owner decision 2026-08-12: outcomes are never price-inferred as fact. New decisions get
+      # source-checked daily while their 8-K/Drugs@FDA record is days old -- so they enter the
+      # archive sourced, not guessed. Recent-window only; the deep backlog was swept by hand.
+      - name: "Verify recent decisions against primary sources (Drugs@FDA + EDGAR)"
+        continue-on-error: true
+        run: python verify_decisions.py --recent-days 45
+
+      - name: "Upgrade newly sourced decision pages + listing rows"
+        run: python upgrade_verified_decisions.py
+
+      - name: "Insert source rows on asserted-but-unsourced pages"
+        run: python add_source_to_unsourced.py
+
+      - name: "Provenance counts again, after verification"
+        run: python refresh_provenance_counts.py
+
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_api_from_pages.py
 
@@ -381,6 +397,7 @@ jobs:
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
+          git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then

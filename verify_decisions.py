@@ -166,6 +166,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="")
+    ap.add_argument("--recent-days", type=int, default=0,
+                    help="only events decided within N days of today -- the daily CI mode. "
+                         "New decisions get source-checked while their 8-K is days old, and "
+                         "recent unverified ones are retried as filings land; the deep "
+                         "backlog is left to deliberate full runs.")
     a = ap.parse_args()
 
     with open(ODIN_CSV, encoding="utf-8", errors="replace") as f:
@@ -199,6 +204,22 @@ def main():
                     targets.append((slug, m.group(1), m.group(2), claimed))
     if a.only:
         targets = [t for t in targets if t[0] == a.only]
+    if a.recent_days:
+        cutoff = (dt.date.today() - dt.timedelta(days=a.recent_days)).isoformat()
+        targets = [t for t in targets if t[2] >= cutoff]
+        print(f"recent mode: {len(targets)} event(s) since {cutoff}")
+        # bust cached EMPTY EDGAR answers for the window: an 8-K that landed yesterday must be
+        # seen today, and a cached miss would hide it forever
+        purge = [u for u, resp in CACHE.items()
+                 if "efts.sec.gov" in u and f"startdt={cutoff[:4]}" <= u
+                 and re.search(r"startdt=(\d{4}-\d{2}-\d{2})", u)
+                 and re.search(r"startdt=(\d{4}-\d{2}-\d{2})", u).group(1) >= cutoff
+                 and not ((resp.get("hits") or {}).get("hits")
+                          if isinstance(resp, dict) else None)]
+        for u in purge:
+            del CACHE[u]
+        if purge:
+            print(f"recent mode: {len(purge)} cached empty EDGAR response(s) purged for retry")
     if a.limit:
         targets = targets[:a.limit]
 
