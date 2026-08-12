@@ -161,6 +161,40 @@ def main():
         else:
             upgraded += 1
 
+    # /decisions listing rows: verified entries said 'Approved: price-only'. That text is both
+    # user-facing AND the source fix_meta_lengths derives decision titles from -- which is how
+    # 'Price-only' kept resurrecting in titles after every pipeline run. The row now names the
+    # drug instead, which is what a reader scanning the archive actually wants.
+    lp = os.path.join(SITE, "decisions", "index.html")
+    if os.path.exists(lp):
+        ld = open(lp, encoding="utf-8", errors="replace").read()
+        o = ld
+        for slug, r in res.items():
+            if r["status"] not in ("verified_approved", "verified_crl"):
+                continue
+            row = odin.get((r["ticker"], r["date"]), {})
+            asset = re.sub(r"\s+", " ", str(row.get("asset") or "")).strip()
+            label = esc(re.split(r"\s*[(-]", asset)[0].strip()[:40]) if asset \
+                else "primary-sourced"
+            ld = ld.replace(
+                f'href="/fda-decision/{slug}"><div class="t">{r["ticker"]} &middot; '
+                f'{r["date"]} <span class="ok">&#10003;</span></div><div class="d">'
+                f'<span class="ok">Approved</span>: price-only</div>',
+                f'href="/fda-decision/{slug}"><div class="t">{r["ticker"]} &middot; '
+                f'{r["date"]} <span class="ok">&#10003;</span></div><div class="d">'
+                f'<span class="ok">Approved</span>: {label}</div>')
+            # rows are stored unescaped in the file; handle the literal form too.
+            # Approved rows use class "ok"; CRL rows use class "no" (checked in the file,
+            # after guessing "bad" left the 7 CRL rows tagged and their titles regressing).
+            for oc_html, oc_ok in (("Approved", "ok"), ("CRL", "no")):
+                ld = re.sub(
+                    rf'(href="/fda-decision/{slug}">.{{0,160}}?<span class="{oc_ok}">'
+                    rf'{oc_html}</span>): price-only</div>',
+                    rf"\1: {label}</div>", ld)
+        if ld != o and not a.dry_run:
+            open(lp, "w", encoding="utf-8").write(ld)
+            print("  /decisions listing rows: price-only tags replaced with drug names")
+
     print(f"\nupgraded: {upgraded}; corrected contradictions: {contradictions}; "
           f"already done: {skipped}")
     return 0
