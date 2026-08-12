@@ -310,10 +310,19 @@ def main():
             d["name"] = name
         d["rows"].append(r)
 
-    # regenerate from scratch: a vanished drug must lose its page
+    # regenerate from scratch: a vanished drug must lose its page.
+    # Windows quirk (2026-08-12): synced folders set the ReadOnly attribute on directories, and
+    # os.rmdir then fails with Access Denied. The onexc handler clears the attribute and retries,
+    # so a local run behaves like the Linux CI run instead of dying on the first flagged dir.
     if not a.dry_run:
         if os.path.isdir(OUT):
-            shutil.rmtree(OUT)
+            def _unlock(fn, path, _exc):
+                os.chmod(path, 0o777)
+                fn(path)
+            try:
+                shutil.rmtree(OUT, onexc=_unlock)          # Python >= 3.12
+            except TypeError:
+                shutil.rmtree(OUT, onerror=lambda f, p, e: (_unlock(f, p, e)))
         os.makedirs(OUT, exist_ok=True)
 
     today = dt.datetime.now(dt.timezone.utc).date().isoformat()
@@ -448,19 +457,45 @@ def main():
                   f"reaction.")
         else:
             a2 = f"No FDA decision for {name} is in our archive yet."
-        faq_html = ("<h2>Questions</h2>"
-                    + f"<h3 style='font-size:15px;margin:14px 0 4px'>{esc(q1)}</h3>"
-                    + f"<p style='color:var(--mut2)'>{a1}</p>"
-                    + f"<h3 style='font-size:15px;margin:14px 0 4px'>{esc(q2)}</h3>"
-                    + f"<p style='color:var(--mut2)'>{a2}</p>")
+        # 2026-08-12 audit: 2 Q&A per page = ~620 answerable queries across the index; 5-6 makes
+        # it 1,800+ with zero new pages. Each extra question exists ONLY when we hold the fact --
+        # a skipped question is honest, an empty answer is not.
+        qa = [(q1, a1), (q2, a2)]
+        if inds:
+            qa.append((f"What is {name} used for?",
+                       f"In our records {name} is under review or in development for "
+                       + "; ".join(inds[:2]) + "."))
+        if comps:
+            qa.append((f"Who makes {name}?",
+                       f"{', '.join(comps[:2])}"
+                       + (f" ({', '.join(tks)})" if tks else "") + "."))
+        if dec_rows:
+            appr = [r for r in dec_rows
+                    if arch.get((str(r.get('t') or '').upper(), r['d'])) == "Approved"]
+            if appr:
+                ad = max(appr, key=lambda r: r.get("d") or "")
+                a5 = (f"Yes. The FDA approved an application for {name} on "
+                      f"{pretty(ad['d'])}; the decision page linked above carries the source.")
+            else:
+                cd = max(dec_rows, key=lambda r: r.get("d") or "")
+                a5 = (f"Not in our records. The FDA issued a Complete Response Letter on "
+                      f"{pretty(cd['d'])}"
+                      + (f"; the next tracked catalyst is "
+                         f"{pretty(up[0]['d'], up[0].get('dp') or 'day')}." if up else "."))
+            qa.append((f"Has {name} been approved by the FDA?", a5))
+        qa.append(("Where does this data come from?",
+                   "FDA announcements, sponsor press releases and SEC filings; every date on "
+                   "this page links its source."))
+        faq_html = "<h2>Questions</h2>" + "".join(
+            f"<h3 style='font-size:15px;margin:14px 0 4px'>{esc(q)}</h3>"
+            f"<p style='color:var(--mut2)'>{esc(a)}</p>" for q, a in qa)
         faq_ld = ('<script type="application/ld+json">' + json.dumps(
             {"@context": "https://schema.org", "@type": "FAQPage",
              "url": f"{BASE}/drug/{slug}",
              "mainEntity": [
-                 {"@type": "Question", "name": q1, "acceptedAnswer":
-                     {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a1)}},
-                 {"@type": "Question", "name": q2, "acceptedAnswer":
-                     {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a2)}}]},
+                 {"@type": "Question", "name": q, "acceptedAnswer":
+                     {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}}
+                 for q, a in qa]},
             separators=(",", ":")) + "</script>")
 
         body = (f'<p style="color:var(--mut2);max-width:72ch">{lede}</p>'

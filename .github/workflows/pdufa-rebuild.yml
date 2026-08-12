@@ -265,6 +265,13 @@ jobs:
       - name: "Answer-first lede above every hub table"
         run: python build_hub_lede.py
 
+      # 2026-08-12 audit: FAQPage is the unit AI answers cite (rusfertide with FAQ: 16.67% share;
+      # calendar at #1 without: zero). Runs AFTER the lede so the calendar FAQ parses the lede's
+      # own numbers and the page can never disagree with itself. Also bakes the daily countdown
+      # that lets calendar+decisions dateModified move honestly, and Dataset schema.
+      - name: "FAQPage on every hub + honest countdown + Dataset schema"
+        run: python build_hub_faq.py
+
       # Bing flagged both of these on /sls. Runs before the final sitemap because titles and
       # descriptions are real page content, so a change to them should advance lastmod.
       - name: "Fit titles and meta descriptions to what a search result shows"

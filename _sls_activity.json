@@ -423,18 +423,56 @@
    "material": false,
    "quotes": [],
    "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-08-11",
+   "form": "8-K",
+   "accession": "0001390478-26-000013",
+   "title": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-20260811.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "filing",
+   "date": "2026-08-11",
+   "form": "10-Q",
+   "accession": "0001390478-26-000012",
+   "title": "10-Q",
+   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000012/sls-20260630.htm",
+   "material": true,
+   "quotes": [],
+   "excerpt": ""
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-08-11",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences Reports Second Quarter 2026 Financial Results and Provides Corporate Update",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-Reports-Second-Quarter-2026-Financial-Results-and-Provides-Corporate-Update/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences Reports Second Quarter 2026 Financial Results and Provides Corporate Update, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us Pipeline Galinpepimut-S (GPS) SLS009 --> Indic",
+   "quotes": [
+    {
+     "speaker": "Angelos Stergiou",
+     "role": "President and Chief Executive Officer",
+     "quote": "The second quarter was an important period of execution for SELLAS as we continued to advance both of our lead clinical programs, GPS and SLS009,"
+    }
+   ]
   }
  ],
- "cursor": "2026-08-07",
+ "cursor": "2026-08-11",
  "price": {
-  "as_of": "2026-08-07",
-  "close": 12.01,
-  "prev_close": 11.7,
-  "change_pct": 2.65,
-  "volume": 5124094,
-  "rel_volume": 0.78,
+  "as_of": "2026-08-12",
+  "close": 11.825,
+  "prev_close": 11.05,
+  "change_pct": 7.01,
+  "volume": 5589913,
+  "rel_volume": 0.87,
   "low_52w": 1.39,
   "high_52w": 15.45
  },
- "last_run": "2026-08-07"
+ "last_run": "2026-08-12"
 }
