@@ -117,13 +117,19 @@ def main():
 
     # /calendar -- numbers parsed from its own lede so page and FAQ cannot disagree
     _, cal = read("calendar")
+    caltxt = re.sub(r"<[^>]+>", " ", cal or "")
     m = re.search(r"lists\s+([\d,]+)\s+FDA decision dates.*?([\d,]+)\s+are still ahead",
-                  re.sub(r"<[^>]+>", " ", cal or ""), re.S)
+                  caltxt, re.S)
+    # the WINDOW must ride with the number (red team 2026-08-12: the FAQ said '67 on the 2026
+    # calendar' while the lede said 'covering June 2026 to December 2026' -- half a year
+    # silently became a full year, in the exact sentence offered to AI engines to repeat)
+    w = re.search(r"covering\s+([A-Z][a-z]+ \d{4})\s+to\s+([A-Z][a-z]+ \d{4})", caltxt)
+    window = f", covering {w.group(1)} to {w.group(2)}," if w else ""
     qa = []
     if m:
         qa.append(("How many FDA decisions are scheduled in 2026?",
-                   f"{m.group(1)} FDA decision dates are on the 2026 calendar; {m.group(2)} "
-                   f"are still ahead as of {tstr}.", ""))
+                   f"{m.group(1)} FDA decision dates are on this calendar{window} and "
+                   f"{m.group(2)} are still ahead as of {tstr}.", ""))
     if nxt:
         qa.append(("When is the next FDA decision?", nxt, ""))
     qa += [("How often is this calendar updated?",

@@ -86,7 +86,13 @@ jobs:
       # is marked in the same run. REPL had a confirmed date, an adcomm page and a slate row, and
       # appeared on no calendar page at all; 42 dated PDUFAs were missing the same way.
       - name: Add any dated PDUFA missing from the calendar
-        run: python ensure_calendar_rows.py
+        run: |
+          # Red team 2026-08-12: PRAX's row showed Sep 27 six weeks after the FDA moved it to
+          # Dec 27, and the same page's heatmap already knew. Reconcile runs FIRST so a
+          # cross-month move deletes the stale row, then ensure re-inserts it in the right
+          # month within the same run.
+          python reconcile_calendar_table.py
+          python ensure_calendar_rows.py
 
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py

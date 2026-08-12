@@ -1,0 +1,42 @@
+{
+ "note": "Calendar rows whose event the dataset does not hold, found 2026-08-12, awaiting human verification. Each entry is tolerated by test_calendar_matches_dataset.py until resolved: either the dataset re-adds the event (it lost PFE Padcev Aug 17, externally confirmed real) or the row is removed as stale. Shrink this list; never grow it silently.",
+ "flags": [
+  {
+   "ticker": "MRK",
+   "date": "2026-09-21",
+   "row_drug": "WINREVAIR (sotatercept-csrk)",
+   "reason": "page row exists, dataset has no MRK event at this date"
+  },
+  {
+   "ticker": "NVO",
+   "date": "2026-09-30",
+   "row_drug": "unknown",
+   "reason": "page row exists, dataset has no NVO event at this date"
+  },
+  {
+   "ticker": "AZN",
+   "date": "2026-09-30",
+   "row_drug": "datopotamab deruxtecan (shares token with MRK I-DXd)",
+   "reason": "ambiguous cross-ticker token match only"
+  },
+  {
+   "ticker": "RHHBY",
+   "date": "2026-10-09",
+   "row_drug": "unknown",
+   "reason": "ambiguous match only"
+  },
+  {
+   "ticker": "VTRS",
+   "date": "2026-12-27",
+   "row_drug": "unknown",
+   "reason": "dataset has VTRS only at 2026-10-17 (MR-141)"
+  }
+ ],
+ "resolved": [
+  {
+   "ticker": "PFE",
+   "date": "2026-08-17",
+   "resolution": "decided EARLY: approved 2026-07-10 (regardless-of-cisplatin sBLA, FDA notice); stale row removed 2026-08-12"
+  }
+ ]
+}
