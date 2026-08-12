@@ -39,9 +39,10 @@ QA = [
      "Act, the 1992 law that set the system up."),
     ("What actually happens on the day?",
      "One of two things. The FDA approves the drug, or it sends the company a Complete Response "
-     "Letter, usually shortened to CRL, which is a rejection that lists what would need to be fixed. "
-     "A CRL is not always permanent: companies often fix the problem and reapply. The FDA can also "
-     "decide early, or miss its own deadline entirely, and it does not have to explain a delay."),
+     "Letter, usually shortened to CRL, which says the FDA will not approve the application in "
+     "its current form and lists what would need to be fixed. A CRL is not final: companies "
+     "often fix the problem and reapply. The FDA can also decide early, or miss its own deadline "
+     "entirely, and it does not have to explain a delay."),
     ("Does the stock usually move before or after the decision?",
      "Measured across {n:,} decisions since {y}, most of the movement happens in the months before "
      "the date rather than on it. The median stock rose {peak:.1f}% at its best point in the 120 "
@@ -93,8 +94,9 @@ def build(stats):
         f'<h2 style="font-size:17px;margin:0 0 7px">New here? Start with this.</h2>'
         f'<p style="font-size:15px;line-height:1.75;color:#dce7f7;margin:0 0 4px">'
         f'A <b style="color:#eef4fc">PDUFA date</b> is the deadline the FDA sets for itself to '
-        f'decide whether to approve a new medicine. On that day the drug is either approved or sent '
-        f'back with a rejection letter. This site tracks every one of those deadlines, what the '
+        f'decide whether to approve a new medicine. On that day the drug is either approved or '
+        f'sent back with a letter saying what must be fixed before it can be. This site tracks '
+        f'every one of those deadlines, what the '
         f'stock did on the way in, and what the FDA actually decided.</p>'
         f'<div style="margin-top:6px">{items}</div>'
         f'<p style="font-size:11.5px;color:var(--mut2);margin:12px 0 0;line-height:1.6">'
