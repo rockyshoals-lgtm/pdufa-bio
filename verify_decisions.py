@@ -173,9 +173,7 @@ def main():
                          "backlog is left to deliberate full runs.")
     a = ap.parse_args()
 
-    with open(ODIN_CSV, encoding="utf-8", errors="replace") as f:
-        odin = {(str(r["ticker"]).upper(), str(r["catalyst_date"])[:10]): r
-                for r in csv.DictReader(f)}
+    odin = _load_join(ODIN_CSV, HERE)
 
     targets = []
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
@@ -269,6 +267,23 @@ def main():
     print("\nsummary:", dict(c))
     return 0
 
+
+
+
+def _load_join(path_full, here):
+    """(ticker, date) -> row with asset/indication. Full ODIN csv on the workstation, the
+    committed slim extract in CI, empty if neither -- never a crash (2026-08-14: four daily
+    rebuilds died on the missing workstation-only csv)."""
+    import csv as _csv, os as _os
+    slim = _os.path.join(here, "_decisions_join_slim.csv")
+    src = path_full if _os.path.exists(path_full) else (slim if _os.path.exists(slim) else None)
+    if src is None:
+        print("  [warn] no drug-name join available (neither ODIN csv nor slim extract); "
+              "name-based matching disabled this run")
+        return {}
+    with open(src, encoding="utf-8", errors="replace") as f:
+        return {(str(r["ticker"]).upper(), str(r["catalyst_date"])[:10]): r
+                for r in _csv.DictReader(f)}
 
 if __name__ == "__main__":
     sys.exit(main())
