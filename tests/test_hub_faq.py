@@ -69,6 +69,24 @@ def main():
             bad.append(f"/{rel}: no live countdown token in the FAQ -- the honest daily-change "
                        f"mechanism is gone and dateModified will go stale")
 
+    # decisions FAQ sourcing counts must equal the page's own provenance bars (red team
+    # 2026-08-12g: body said 285 sourced while the FAQ schema still told AI engines 150 --
+    # 'the page learned something the schema didn't'). Independent re-parse of both.
+    dtxt = re.sub(r"<[^>]+>", " ", docs.get("decisions", ""))
+    bars = re.search(r"([\d,]+)\s+link a primary source.*?([\d,]+)\s+read from the price "
+                     r"reaction.*?([\d,]+)\s+asserted, no source", dtxt, re.S)
+    faqn = re.search(r"([\d,]+) of ([\d,]+) FDA decisions in this archive link to a primary "
+                     r"source\. ([\d,]+) are inferred[^.]*and ([\d,]+) carry no source", dtxt)
+    if bars and faqn:
+        if (bars.group(1) != faqn.group(1) or bars.group(2) != faqn.group(3)
+                or bars.group(3) != faqn.group(4)):
+            bad.append(f"/decisions: FAQ says {faqn.group(1)}/{faqn.group(3)}/{faqn.group(4)} "
+                       f"but the provenance bars say {bars.group(1)}/{bars.group(2)}/"
+                       f"{bars.group(3)} -- the schema is citing the site down again")
+    elif bars and not faqn:
+        bad.append("/decisions: provenance bars present but the FAQ sourcing sentence is "
+                   "missing or in an old format -- run build_hub_faq.py")
+
     for rel in ("research", "developers"):
         d = docs.get(rel) or open(os.path.join(SITE, rel, "index.html"),
                                   encoding="utf-8", errors="replace").read()

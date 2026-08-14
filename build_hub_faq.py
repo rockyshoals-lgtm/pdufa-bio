@@ -141,22 +141,32 @@ def main():
             ' <a href="/learn/what-is-a-pdufa-date" style="opacity:.9">What a PDUFA date is</a>.')]
     ok &= inject("calendar", qa, a.dry_run)
 
-    # /decisions -- published counts + the quotable refusal
+    # /decisions -- published counts + the quotable refusal. Parsed from the page's OWN
+    # three-way provenance bars. Red team 2026-08-12g: the body was updated to 285/109/63
+    # while this FAQ still said 150/307 -- 'the page learned something the schema didn't',
+    # actively citing ourselves down to AI engines. Reading the bars means the two can never
+    # disagree again.
     _, dec = read("decisions")
     dtxt = re.sub(r"<[^>]+>", " ", dec or "")
-    total = re.search(r"([\d,]+)\s+records", dtxt)
-    unver = re.search(r"([\d,]+)\s+unverified", dtxt)
+    srcd = re.search(r"([\d,]+)\s+link a primary source", dtxt)
+    infd = re.search(r"([\d,]+)\s+read from the price reaction", dtxt)
+    unsrc = re.search(r"([\d,]+)\s+asserted, no source", dtxt)
     first = re.search(r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', dec or "")
     qa = []
-    if total and unver:
-        t = int(total.group(1).replace(",", "")); u = int(unver.group(1).replace(",", ""))
+    if srcd and infd and unsrc:
+        s_ = int(srcd.group(1).replace(",", ""))
+        i_ = int(infd.group(1).replace(",", ""))
+        u_ = int(unsrc.group(1).replace(",", ""))
+        t = s_ + i_ + u_
         qa.append(("How many FDA decisions are in this archive?",
-                   f"{t} records: {t - u} verified against primary sources and {u} inferred "
-                   f"from the share-price reaction and marked unverified.", ""))
+                   f"{s_} of {t} FDA decisions in this archive link to a primary source. "
+                   f"{i_} are inferred from the share-price reaction and {u_} carry no "
+                   f"source; all three states are labelled on every row.", ""))
         qa.append(("What share of FDA decisions are approvals?",
-                   f"We do not publish an overall approval rate. {u} of the {t} records are "
-                   f"price-inferred, and a rate computed over unverified outcomes would be "
-                   f"false precision; outcome counts are shown for verified records only.", ""))
+                   f"We do not publish an overall approval rate. {i_ + u_} of the {t} records "
+                   f"are price-inferred or unsourced, and a rate computed over unverified "
+                   f"outcomes would be false precision; outcome counts are shown for sourced "
+                   f"records only.", ""))
     if first:
         qa.append(("What was the most recent FDA decision?",
                    f"{first.group(1)} on {pretty(first.group(2))}; its decision page carries "

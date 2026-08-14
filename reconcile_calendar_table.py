@@ -139,6 +139,51 @@ def reconcile(path, events, dry):
 
     doc = ROW.sub(fix, doc)
 
+    # MAIN PAGE ONLY (2026-08-13): INSERT dataset events that have no row at all. Found live:
+    # the MRK/RHHBY/VTRS catalysts verified real and re-added to the dataset appeared on month
+    # pages (ensure_calendar_rows) and the board, but the MAIN calendar table -- the flagship
+    # surface -- gains rows from nothing. Same row markup; date order; upcoming only.
+    if not month_scoped:
+        # PRESENCE is markup-agnostic (2026-08-13, second attempt): row markup varies across
+        # builder generations -- decorated .t divs escape the strict ROW regex, and the first
+        # insert pass duplicated LNTH/JAZZ/RARE rows it claimed were absent. An event is
+        # present if its ticker and date co-occur within 60 chars anywhere in the BODY (JSON-LD
+        # stripped -- schema mirrors rows, it does not prove one). Inserts also respect the
+        # page's own date scope: this table covers a stated window, and dumping 2027 events
+        # into it re-titles the flagship page.
+        body = re.sub(r"<script.*?</script>", " ", doc, flags=re.S)
+        row_dates = re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", body)
+        max_d = max(row_dates) if row_dates else "9999"
+        for ev in sorted(events, key=lambda e: e["d"]):
+            if ev["d"] > max_d:
+                continue                     # outside the page's stated window
+            if re.search(rf"\b{ev['t']}\b[^<>]{{0,60}}{ev['d']}"
+                         rf"|{ev['d']}[^<>]{{0,60}}\b{ev['t']}\b", body):
+                continue                     # already on the page, whatever the markup
+            if any((ev["toks"] & toks(seg)) for seg in
+                   re.findall(rf"{ev['d']}</div><div class=\"d\">(.{{0,90}}?)</div>", body)):
+                continue                     # dual-ticker row already covers this event
+            href = f"/pdufa/{ev['t']}"
+            row_html = (f'<a class="row" href="{href}"><div class="t">{ev["t"]} &middot; '
+                        f'{ev["d"]}</div><div class="d">{ev["name"][:70]}</div></a>')
+            # insert before the first row with a later date, else after the last row
+            anchor = None
+            for mrow in ROW.finditer(doc):
+                if mrow.group(3) > ev["d"]:
+                    anchor = mrow.start()
+                    break
+            if anchor is not None:
+                doc = doc[:anchor] + row_html + doc[anchor:]
+            else:
+                last = None
+                for mrow in ROW.finditer(doc):
+                    last = mrow
+                if last is None:
+                    continue
+                doc = doc[:last.end()] + row_html + doc[last.end():]
+            moved.append(f"{ev['t']} {ev['d']} INSERTED (dataset event had no row)")
+            body = re.sub(r"<script.*?</script>", " ", doc, flags=re.S)
+
     # re-sort rows inside each list container so a moved date sits in order
     def sort_container(m):
         blocks = ROW.findall(m.group(0))
