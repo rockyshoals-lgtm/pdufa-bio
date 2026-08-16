@@ -1,0 +1,2211 @@
+ticker,catalyst_date,asset,indication
+TVTX,2026-04-13,Sparsentan (Filspari) sNDA FSGS,Focal segmental glomerulosclerosis (FSGS)
+ORCA,2026-04-06,Orca-T,AML/ALL/MDS (allogeneic HSCT)
+DNLI,2026-04-05,Tividenofusp alfa (TAK-611/DNL310),Hunter syndrome (MPS II)
+RCKT,2026-03-28,Kresladi (marnetegragene autotemcel),Leukocyte adhesion deficiency type I (LAD-I)
+ALDX,2026-03-16,Reproxalap (DED - 4th submission),Dry eye disease
+BMY,2026-03-06,Deucravacitinib (Sotyktu) sNDA PsA,Psoriatic arthritis
+ASND,2026-02-28,TransCon CNP (navepegritide),Achondroplasia
+VNDA,2026-02-21,Bysanti (milsaperidone),Bipolar I disorder / Schizophrenia
+MRK,2026-02-20,KEYTRUDA + chemo ± bevacizumab (ovarian),Platinum-resistant ovarian cancer
+IRON,2026-02-15,Bitopertin (EPP),Erythropoietic protoporphyria (EPP)
+RGNX,2026-02-08,RGX-121 (clemidsogene lanparvovec),Hunter syndrome (MPS II)
+AQST,2026-02-02,Anaphylm  (dibutepinephrine) - (103),Anaphylaxis
+PHAR,2026-02-01,Leniolisib - (pediactric),Activated phosphoinositide 3-kinase delta syndrome (APDS)
+GKOS,2026-01-28,iDose TR,Glaucoma
+JNJ,2026-01-27,"DARZALEX FASPRO (daratumumab and hyaluronidase-fihj) in combination with bortezomib, lenalidomide and dexamethasone (D-VRd) - (CEPHEUS)",Newly diagnosed multiple myeloma (NDMM)
+GLSI,2026-01-22,GP2 (GLSI-100)  - (FLAMINGO-01),HER2 positive breast cancer
+IBRX,2026-01-16,CD19 CAR-NK cell therapy  with rituximab - (QUILT-106),Late-stage Waldenstrom macroglobulinemia (WM)
+EBS,2026-01-14,OTC NARCAN Nasal Spray w/ carrying case,Opioid overdose
+FBIO,2026-01-13,ZYCUBO (copper histidinate),Menkes disease
+ATRA,2026-01-12,EBVALLO (Tabelecleucel (ATA 129)) - (ALLELE),Epstein-Barr virus post-transplant lymphoproliferative disease (EBV-PTLD) after solid organ transplant (SOT)
+CORT,2025-12-31,Relacorilant - (GRACE),Hypercortisolism (Cushing's Syndrome)
+BIOH,2025-12-31,Troriluzole (troriluzole),Spinocerebellar ataxia
+OTLK,2025-12-31,LYTENAVA (bevacizumab-vikg) / ONS-5010 - (NORSE EIGHT),Wet age-related macular degeneration (wet AMD)
+CORC,2025-12-30,Relacorilant (relacorilant),Cushing's syndrome
+VNDA,2025-12-30,NEREUS (tradipitant),Motion sickness
+SNY,2025-12-28,Tolebrutinib,Multiple sclerosis (nrSPMS)
+OMER,2025-12-24,YARTEMLEA (Narsoplimab),Hematopoietic stem cell-associated TMA (HSCT-TMA)
+AGIO,2025-12-23,AQVESME (mitapivat),Thalassemia
+AKCE,2025-12-23,Yartemlea (narsoplimab-wuug),HSCT-associated thrombotic microangiopathy
+CRSP,2025-12-22,Zugocabtagene geleucel (zugo-cel; formerly CTX112),Systemic lupus erythematosus (SLE)
+AMRX,2025-12-22,Boncresa (denosumab-mobz),Osteoporosis-related conditions
+RHHBY,2025-12-22,Lunsumio VELO (mosunetuzumab-axgb),Follicular Lymphoma
+AMRX,2025-12-22,Oziltus (denosumab-mobz),Osteoporosis-related conditions
+NVO,2025-12-22,Wegovy pill (once-daily oral semaglutide 25 mg),"Reduce excess body weight, maintain weight reduction long term, reduce the risk of major adverse cardiovascular events"
+PBM,2025-12-19,Psilocybin (NPX5),Adjustment Disorder due to a recent cancer diagnosis
+CYTO,2025-12-19,Myqorzo (aficamten),Obstructive hypertrophic cardiomyopathy
+CYTK,2025-12-19,MYQORZO (Aficamten (CK-274)) - (SEQUOIA-HCM),Hypertrophic cardiomyopathy (HCM)
+JNJ,2025-12-18,RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj),Advanced EGFR-mutated Non-Small Cell Lung Cancer
+COCP,2025-12-18,CDI-988,Norovirus
+ALPMY,2025-12-17,KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304),Muscle-invasive bladder cancer (MIBC)
+MRK,2025-12-17,KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304),Muscle-invasive bladder cancer (MIBC)
+PFE,2025-12-17,KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304),Muscle-invasive bladder cancer (MIBC)
+GILD,2025-12-16,Exdensur (depemokimab),Severe asthma
+AMPH,2025-12-15,"Teriparatide injection, USP 560 mcg/2.24mL (250 mcg/mL) (FORTEO bioequivalent)",Osteoporosis
+INVA,2025-12-15,NUZOLVENCE (zoliflodacin),Uncomplicated gonorrhea
+AZN,2025-12-15,Enhertu (trastuzumab deruxtecan) with pertuzumab - (DESTINY-Breast09),Early HER2+ Metastatic Breast Cancer
+JNJ,2025-12-15,AKEEGA (niraparib and abiraterone acetate dual-action tablet) plus prednisone,BRCA2-mutated metastatic castration-sensitive prostate cancer (mCSPC)
+MIST,2025-12-15,CARDAMYST (etripamil),Paroxysmal supraventricular tachycardia (PSVT)
+DSNKY,2025-12-15,Enhertu (trastuzumab deruxtecan) with pertuzumab - (DESTINY-Breast09),Early HER2+ Metastatic Breast Cancer
+WOCK,2025-12-12,Nuzolvence (zoliflodacin),Uncomplicated urogenital gonorrhea
+ELI ,2025-12-12,Lerochol (lerodalcibep-liga),Hypercholesterolemia (familial)
+MILE,2025-12-12,Cardamyst (etripamil),Paroxysmal supraventricular tachycardia
+BCRX,2025-12-12,ORLADEYO (berotralstat),Pediatric patients with hereditary angioedema (HAE)
+ACAD,2025-12-12,DAYBUE STIX (trofinetide),Rett Syndrome
+GSK,2025-12-11,Blujepa (gepotidacin),Uncomplicated urogenital gonorrhoea in patients 12 years of age and older
+AMGN,2025-12-11,UPLIZNA (Inebilizumab) - (MINT),Myasthenia gravis
+AAPG,2025-12-09,Olverembatinib - (POLARIS-1),Acute lymphoblastic leukemia (ALL)
+LYEL,2025-12-08,LYL314 (IMPT-314),Large B-cell lymphoma
+ONC,2025-12-08,Sonrotoclax,R/R MCL
+AUTL,2025-12-08,Obe-cel - (CATULUS),pediatric relapsed or refractory (r/r) B-ALL
+ALXO,2025-12-08,ALX148 (evorpacept) + rituximab and lenalidomide,Non-Hodgkin lymphoma (NHL)
+NRIX,2025-12-08,NX-5948-301,B-cell malignancies / graft-versus-host disease
+GLPG,2025-12-07,GLPG5101 - (ATALANTA-1),Relapsed/refractory Non-Hodgkin Lymphoma (rrNHL)
+CASI,2025-12-07,CID-103,Immune Thrombocytopenia (ITP)
+IMMX,2025-12-07,NXC-201 (HBI10101) - (NEXICART-2),Relapsed/refractory AL Amyloidosis
+CLLS,2025-12-07,UCART20x22 - (NatHaLi-01),Non-Hodgkin Lymphoma
+PRTC,2025-12-05,LYT-200,Relapsed/refractory AML and MDS
+PLRX,2025-12-04,PLN-101095,Solid Tumors
+BMY,2025-12-04,Breyanzi (lisocabtagene maraleucel),Relapsed or refractory marginal zone lymphoma (MZL)
+AXGN,2025-12-04,Avance Nerve Graf - (RECON),Severed peripheral nerves
+LLY,2025-12-03,Jaypirca (pirtobrutinib),Relapsed or refractory CLL/SLL
+AMRN,2025-12-02,Albuterol sulfate inhalation (PROAIR HFA generic),Bronchospasm related to exercise-induced or reversible obstructive airway disease
+JANX,2025-12-01,PSMA-TRACTr (JANX007) - (ENGAGER-PSMA-01),Metastatic castration-resistant prostate cancer (mCPRC)
+AMRX,2025-12-01,RESTASIS (Cyclosporine Ophthalmic Emulsion),Ocular inflammation associated with dry eye syndrome
+AZN,2025-11-25,Imfinzi (durvalumab) and FLOT Chemotherapy - (MATTERHORN),Resectable Gastric and Gastroesophageal Junction Cancer
+SRPT,2025-11-25,SRP-9001-103 - (ENDEAVOR),Duchenne muscular dystrophy (DMD)
+RHHBY,2025-11-25,SRP-9001-103 - (ENDEAVOR),Duchenne muscular dystrophy (DMD)
+OTSU,2025-11-25,Voyxact (sibeprenlimab-szsi),Primary IgA nephropathy
+NVS,2025-11-24,Itvisma (onasemnogene abeparvovec-brve),Spinal muscular atrophy (SMA)
+PFE,2025-11-21,PADCEV (enfortumab vedotin) + KEYTRUDA (pembrolizumab) - (EV-303 / KEYNOTE-905),Muscle-invasive bladder cancer (MIBC)
+ALPMY,2025-11-21,PADCEV (enfortumab vedotin) + KEYTRUDA (pembrolizumab) - (EV-303 / KEYNOTE-905),Muscle-invasive bladder cancer (MIBC)
+MRK,2025-11-21,PADCEV (enfortumab vedotin) + KEYTRUDA (pembrolizumab) - (EV-303 / KEYNOTE-905),Muscle-invasive bladder cancer (MIBC)
+AZN,2025-11-20,Koselugo (selumetinib),Neurofibromatosis Type 1-Plexiform Neurofibromas (NF1-PN) in Adults
+BAYRY,2025-11-20,HYRNUO (sevabertinib),HER2-Mutated Locally Advanced or Metastatic Non-Squamous Non-Small Cell Lung Cancer
+REGN,2025-11-19,EYLEA HD (aflibercept) Injection 8 mg - (QUASAR),Retinal Vein Occlusion
+TARA,2025-11-19,TARA-002 - (STARBORN-1),Pediatric patients with lymphatic malformations (LMs)
+BAYE,2025-11-19,Hyrnuo (sevabertinib),Non-squamous NSCLC (HER2 mutations)
+AMGN,2025-11-19,Tarlatamab (AMG 757) - (DeLLphi-304),Small cell lung cancer (SCLC)
+ABBV,2025-11-18,EPKINLY (epcoritamab-bysp) in Combination with Rituximab and Lenalidomide,Follicular lymphoma (FL)
+GMAB,2025-11-18,EPKINLY (epcoritamab-bysp) in Combination with Rituximab and Lenalidomide,Follicular lymphoma (FL)
+KZIA,2025-11-18,Paxalisib,Triple-Negative Breast Cancer (TNBC)
+ARWR,2025-11-18,REDEMPLO (plozasiran),"Familial chylomicronemia syndrome (FCS), Hypertriglyceridemia"
+OGN,2025-11-17,POHERDY (pertuzumab-dpzb) - (PERJETA (pertuzumab) Biosimilar),HER2-positive breast cancers
+KURA,2025-11-13,KOMZIFTI (ziftomenib),Relapsed or Refractory NPM1-Mutated Acute Myeloid Leukemia (AML)
+AMRX,2025-11-13,Iohexol injection (300 mg Iodine/mL),Contrast agent
+ENGN,2025-11-11,Detalimogene voraplasmid (EG-70) - (LEGEND),BCG-unresponsive non-muscle invasive bladder cancer (NMIBC)
+BCAB,2025-11-07,Mecbotamab Vedotin (BA3011),Solid Tumors
+JNJ,2025-11-07,DARZALEX FASPRO,High-risk smoldering multiple myeloma (HR-SMM)
+RPRX,2025-11-07,Aficamten (CK-274) - (MAPLE-HCM),Obstructive hypertrophic cardiomyopathy (HCM)
+CYTK,2025-11-07,Aficamten (CK-274) - (MAPLE-HCM),Obstructive hypertrophic cardiomyopathy (HCM)
+CLDX,2025-11-06,Barzolvolimab - (CindU),"Chronic inducible urticaria (CIndU), cold urticaria (ColdU) and symptomatic dermographism (SD), Chronic Spontaneous Urticaria (CSU)"
+JNJ,2025-11-06,CAPLYTA (lumateperone) - (Study 502),Major depressive disorder (MDD)
+IBRX,2025-11-05,t-haNK (N-803 ANKTIVA) in combination with rituximab - (QUILT.106),Non-Hodgkin's lymphoma (NHL)
+BHVN,2025-11-04,Troriluzole (BHV4157-206-RWE),Spinocerebellar Ataxia
+ESLA,2025-11-03,EB103 (CD19) - (STARLIGHT-1),"Diffuse large B cell lymphoma (DLBCL), Follicular Lymphoma (FL), and other types of B-cell Lymphoma"
+AGIO,2025-11-03,Kygevvi (doxecitine and doxribtimine),Thymidine kinase 2 deficiency
+ALVO,2025-11-02,AVT05 (biosimilar to golimumab),Rheumatoid Arthritis
+AMRX,2025-10-29,Beclomethasone Dipropionate HFA Inhalation Aerosol,Asthma
+ONCY,2025-10-28,Pelareorep and mFOLFIRINOX with and without atezolizumab - (GOBLET),Colorectal and advanced anal cancers
+LLY,2025-10-27,Omvoh (Mirikizumab) - (LUCENT 1),Ulcerative Colitis
+MRK,2025-10-27,WINREVAIR (sotatercept-csrk) - (ZENITH),"Pulmonary arterial hypertension (PAH, WHO* Group 1)"
+BAYRY,2025-10-24,Lynkuet (elinzanetant),Moderate to severe hot flashes due to menopause
+SNDX,2025-10-24,Revuforj (revumenib)  - (AUGMENT-101),Relapsed/refractory (R/R) acute leukemias
+GSK,2025-10-23,Blenrep,Multiple myeloma
+RHHBY,2025-10-20,Gazyva/Gazyvaro,Lupus Nephritis
+GKOS,2025-10-20,Epioxa (Epi-on),Progressive keratoconus
+SNSE,2025-10-17,Solnerstotug (formerly SNS-101) with Libtayo - (VISTA),One microsatellite stable (MSS) endometrial cancer
+REGN,2025-10-17,Solnerstotug (formerly SNS-101) with Libtayo - (VISTA),One microsatellite stable (MSS) endometrial cancer
+AMGN,2025-10-17,TEZSPIRE (tezepelumab-ekko),Chronic Rhinosinusitis with Nasal Polyps (CRwNP)
+AZN,2025-10-17,TEZSPIRE (tezepelumab-ekko),Chronic Rhinosinusitis with Nasal Polyps (CRwNP)
+NVO,2025-10-15,Rybelsus (oral semaglutide),Major adverse cardiovascular events in adults with type 2 diabetes and cardiovascular disease (CVD) and/or chronic kidney disease (CKD)
+ABBV,2025-10-13,RINVOQ (upadacitinib),Adults with moderately to severely active ulcerative colitis (UC) and moderately to severely active Crohn's disease (CD)
+CGEM,2025-10-13,Zipalertinib - (REZILIENT2),Locally advanced/metastatic NSCLC
+TEVA,2025-10-10,UZEDY(R) (risperidone) Extended-Release Injectable Suspension,Bipolar I Disorder
+REGN,2025-10-08,Libtayo (cemiplimab-rwlc),High-risk cutaneous squamous cell carcinoma (CSCC) after surgery
+IDIO,2025-10-07,Jascayd (nerandomilast),Idiopathic pulmonary fibrosis
+ARQT,2025-10-06,ZORYVE (roflumilast) Cream 0.05%,Atopic Dermatitis - ages of 2-5 years old
+RHHBY,2025-10-02,Zepzelca (lurbinectedin) and Atezolizumab (Tecentriq),"First-line, Small Cell Lung Cancer (SCLC)"
+JAZZ,2025-10-02,Zepzelca (lurbinectedin) and Atezolizumab (Tecentriq),"First-line, Small Cell Lung Cancer (SCLC)"
+FBIO,2025-10-01,ZYCUBO (copper histidinate),Menkes disease
+NVS,2025-09-30,Rhapsido (Remibrutinib )(LOU064) - (REMIX-1),Chronic spontaneous urticaria (CSU)
+JNJ,2025-09-29,TREMFYA (guselkumab),Severe plaque psoriasis (PsO)
+CRNX,2025-09-25,PALSONIFY (paltusotine),Acromegaly
+LLY,2025-09-25,Inluriyo (imlunestrant),"ER+, HER2-, ESR1-mutated advanced or metastatic breast cancer"
+IONS,2025-09-23,SPINRAZA (Nusinersen) - (DEVOTE),Spinal muscular atrophy (SMA)
+SRRK,2025-09-23,Apitegromab - (SAPPHIRE),Type 2 and Type 3 Spinal Muscular Atrophy (SMA)
+AMRX,2025-09-23,Bimatoprost ophthalmic solution (Lumigan generic),Open angle glaucoma or ocular hypertension
+BIIB,2025-09-23,SPINRAZA (Nusinersen) - (DEVOTE),Spinal muscular atrophy (SMA)
+JNJ,2025-09-19,TREMFYA (guselkumab),Ulcerative Colitis Subcutaneous Induction (ASTRO) Crohn's Disease Subcutaneous Induction
+MRK,2025-09-19,KEYTRUDA QLEX (pembrolizumab and berahyaluronidase alfa-pmph),Solid tumors
+STEA,2025-09-19,Forzinity (elamipretide),Barth syndrome muscle weakness
+INCY,2025-09-19,Opzelura (Ruxolitinib),Atopic dermatitis (AD) in children (age ≥2 to <12 years)
+KRYS,2025-09-15,VYJUVEK (beremagene geperpavec-svdt),Epidermolysis Bullosa
+GMAB,2025-09-12,Epcoritamab-bysp - (EPCORE CLL-1 ),"Richter transformation (RT), chronic lymphocytic leukemia (CLL)"
+AMRX,2025-09-11,Sodium oxybate oral solution 500 mg/mL,Cataplexy or excessive daytime sleepiness
+JNJ,2025-09-09,INLEXZO (gemcitabine intravesical system)  (TAR-200) - (SunRISe-1),"Bacillus Calmette-Guérin (BCG)-unresponsive, high-risk non-muscle-invasive bladder cancer (HR-NMIBC)"
+TAK,2025-09-05,VONVENDI [von Willebrand factor (Recombinant)],Adults with  Type 1 and 2 von Willebrand Disease (VWD)
+AMRX,2025-09-04,Risperidone Extended-Release,Schizophrenia
+BIIB,2025-08-29,LEQEMBI IQLIK (lecanemab-irmb) - (Maintenance Dosing),Early Alzheimer's Disease
+SNY,2025-08-29,Wayrilz (rilzabrutinib),Immune thrombocytopenic purpura (ITP)
+TEVA,2025-08-28,Generic Saxenda (liraglutide injection),Weight Loss
+OTLK,2025-08-28,LYTENAVA (bevacizumab-vikg) / ONS-5010 - (NORSE EIGHT),Wet age-related macular degeneration (wet AMD)
+PFE,2025-08-27,COMIRNATY LP.8.1,High risk for severe outcomes from COVID-19
+PRTA,2025-08-27,PRX012 - (ASCENT),Alzheimer's Disease
+NVAX,2025-08-27,Nuvaxovid - (2025-2026 Formula),COVID-19 Vaccine
+TVTX,2025-08-27,FILSPARI (sparsentan),IgA nephropathy (IgAN)
+MRNA,2025-08-27,Spikevax and mNEXSPIKE - (LP.8.1 variant),COVID-19
+BNTX,2025-08-27,COMIRNATY LP.8.1,High risk for severe outcomes from COVID-19
+LGND,2025-08-27,FILSPARI (sparsentan),IgA nephropathy (IgAN)
+MRKR,2025-08-26,Neldaleucel (MT-601) - (APOLLO),Lymphoma who have failed or are ineligible to receive anti-CD19 CAR T cell treatment
+VALN,2025-08-25,IXCHIQ,Chikungunya Vaccine
+IONI,2025-08-21,Dawnzera (donidalorsen),Hereditary angioedema prophylaxis
+IONS,2025-08-21,DAWNZERA  (Donidalorsen),Hereditary Angioedema (HAE)
+PTCT,2025-08-19,Vatiquinone - (MOVE-FA),Friedreich ataxia
+TNXP,2025-08-15,Tonmya (TNX-102 SL) - (RELIEF/RESILIENT),Fibromyalgia
+NVO,2025-08-15,Wegovy (semaglutide) injection - (ESSENCE),Metabolic dysfunction-associated steatohepatitis (MASH)
+PGEN,2025-08-15,PAPZIMEOS (zopapogene imadenovec-drba),Recurrent Respiratory Papillomatosis (RRP)
+IBRX,2025-08-13,CD19 CAR-NK cell therapy  with rituximab - (QUILT-106),Late-stage Waldenstrom macroglobulinemia (WM)
+INSM,2025-08-12,BRINSUPRI (Brensocatib) - (ASPEN),Non-Cystic Fibrosis Bronchiectasis (NCFBE)
+PHRRF,2025-08-11,KETARX (ketamine),Surgical pain management
+AMPH,2025-08-11,Iron Sucrose Injection,Iron deficiency anemia (IDA) in patients with chronic kidney disease (CKD)
+ZAI ,2025-08-08,Hernexeos (zongertinib),Unresectable/metastatic NSCLC (HER2)
+JAZZ,2025-08-06,Dordaviprone (ONC201) - (ACTION),H3 K27M-mutant diffuse midline glioma
+CMRX,2025-08-06,Dordaviprone (ONC201) - (ACTION),H3 K27M-mutant diffuse midline glioma
+TEVA,2025-08-06,AJOVY (fremanezumab-vfrm),Episodic migraine in children and adolescent patients aged 6-17 years who weigh 45 kilograms (99 pounds) or more
+AYAL,2025-08-06,Modeyso (dordaviprone),Diffuse midline glioma (H3 K27M)
+OCUP,2025-07-31,Vizz (aceclidine),Presbyopia
+LENZ,2025-07-31,VIZZ (aceclidine ophthalmic solution),Presbyopia
+REGN,2025-07-30,Odronextamab,Relapsed/refractory (R/R) follicular lymphoma (FL) or R/R diffuse large B-cell lymphoma (DLBCL)
+ZLAB,2025-07-30,Odronextamab,Relapsed/refractory (R/R) follicular lymphoma (FL) or R/R diffuse large B-cell lymphoma (DLBCL)
+ANIK,2025-07-30,HYALOFAST - (FastTRACK),Cartilage defects of the knee
+PHIO,2025-07-28,PH-762,Cutaneous Squamous Cell Carcinoma
+APLS,2025-07-28,EMPAVELI (pegcetacoplan) - (VALIANT),C3G and IC-MPGN
+PTCT,2025-07-28,SEPHIENCE (Sepiapterin  (PTC923)) - (APHENITY),Phenylketonuria (PKU)
+ASND,2025-07-28,SKYTROFA (lonapegsomatropin-tcgd (ransCon hGH)) -  (foresiGHt),Growth Hormone Deficiency - adults
+ELI ,2025-07-23,Anzupgo (delgocitinib),Moderate-to-severe chronic hand eczema
+REPL,2025-07-22,RP1 (vusolimogene oderparepvec) and OPDIVO (nivolumab) - (IGNYTE-3),Non-melanoma (NMSC) / Non-small cell lung cancer (NSCLC)
+RHHBY,2025-07-18,Columvi + GemOx - (STARGLO),2L+ Diffuse Large B-Cell Lymphoma (DLBCL)
+GSK,2025-07-17,Shingrix (prefilled syringe),Shingles (herpes zoster)
+CUE,2025-07-16,CUE-101,HPV+ head and neck squamous cell carcinoma (HNSCC)
+RARE,2025-07-11,UX111 - (ABO-102),Sanfilippo syndrome type A (MPS IIIA)
+ABEO,2025-07-11,UX111 - (ABO-102),Sanfilippo syndrome type A (MPS IIIA)
+CAPR,2025-07-11,Deramiocel (CAP-1002) - (HOPE-2),Duchenne Muscular Dystrophy (DMD)
+KALV,2025-07-07,EKTERLY (sebetralstat),Hereditary Angioedema (HAE)
+JSPR,2025-07-07,Subcutaneous briquilimab - (BEACON),Chronic Spontaneous Urticaria (CSU)
+TAKE,2025-07-03,Ekterly (sebetralstat),Hereditary angioedema acute attacks
+CMND,2025-07-03,CMND-100,Alcohol use disorder (AUD)
+EXEL,2025-07-02,Zegfrovy (sunvozertinib),NSCLC (EGFR exon 20 insertions)
+REGN,2025-07-02,Lynozyfic (linvoseltamab-gcpt),Multiple myeloma
+INTS,2025-06-30,INT230-6,Malignant Peripheral Nerve Sheath Tumor (MPNST)
+TAK,2025-06-30,GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 µg/mL 10% solution],Low immunoglobulin A (IgA)
+ABBV,2025-06-30,JUVÉDERM - (SKINVIVE) (injectable HA),facial skin smoothness of the cheeks in adults over the age of 21.
+UNCY,2025-06-30,Oxylanthanum Carbonate (OLC),Kidney disease
+BMY,2025-06-27,Breyanzi® (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy),Large B-cell lymphoma (LBCL)
+GSK,2025-06-24,Benlysta (belimumab) Autoinjector,Active lupus nephritis in children
+DSNKY,2025-06-23,Datopotamab deruxtecan - (TROPION-Lung05),EGFR non-small cell lung cancer (NSCLC)
+AZN,2025-06-23,Datopotamab deruxtecan - (TROPION-Lung05),EGFR non-small cell lung cancer (NSCLC)
+AZN,2025-06-23,DATROWAY (datopotamab deruxtecan-dlnk)- (TROPION-Lung01),Non-small cell lung cancer (NSCLC)
+AVBP,2025-06-23,Firmonertinib monotherapy - (FURTHER),Non-small cell lung cancer (NSCLC) harboring EGFR PACC mutations
+GHRS,2025-06-20,GH001-TRD-201,Treatment-Resistant Depression (TRD)
+GLPG,2025-06-19,GLPG5101 - (ATALANTA-1),Relapsed/refractory Non-Hodgkin Lymphoma (rrNHL)
+GILD,2025-06-18,Yeztugo (Lenacapavir),HIV PrEP – Pre-exposure prophylaxis
+NVS,2025-06-18,MONJUVI (tafasitamab) with REVLIMID (lenalidomide) and RITUXAN (rituximab),Follicular lymphoma (FL) / marginal zone lymphoma (MZL)
+XNCR,2025-06-18,MONJUVI (tafasitamab) with REVLIMID (lenalidomide) and RITUXAN (rituximab),Follicular lymphoma (FL) / marginal zone lymphoma (MZL)
+INCY,2025-06-18,MONJUVI (tafasitamab) with REVLIMID (lenalidomide) and RITUXAN (rituximab),Follicular lymphoma (FL) / marginal zone lymphoma (MZL)
+LYEL,2025-06-17,LYL314 (IMPT-314),Large B-cell lymphoma
+CSLLY,2025-06-17,Garadacimab (CSL312),Hereditary angioedema (HAE)
+JSPR,2025-06-16,Subcutaneous briquilimab - (SPOTLIGHT),Chronic inducible urticaria (CIndU)
+LTRN,2025-06-16,LP-300 - (Harmonic),Non-small cell lung cancer (NSCLC)
+HOTH,2025-06-16,Andembry (garadacimab-gxii),Hereditary angioedema prophylaxis
+GMAB,2025-06-15,EPCORE (Epcoritamab) - (EPCORE  NHL-2),Non-Hodgkin lymphoma (NHL)
+INCY,2025-06-15,INCA033989,Myelofibrosis (MF)
+MRK,2025-06-13,KEYTRUDA (pembrolizumab) - (KEYNOTE-689),Head and Neck Squamous Cell Carcinoma
+JNJ,2025-06-13,JNJ-4496,R/R diffuse large B-cell lymphoma (DLBCL)
+ADCT,2025-06-12,ZYNLONTA (Loncastuximab Tesirine-Ipyl) - (LOTIS-7),B-cell non-Hodgkin lymphoma
+NRIX,2025-06-12,Bexobrutideg (NX-5948),Relapsed/Refractory Waldenstrom's Macroglobulinemia
+BMY,2025-06-12,Iberdomide in Combination with Dexamethasone - (CC-220-MM-001),Relapsed/Refractory Multiple Myeloma (RRMM)
+URGN,2025-06-12,ZUSDURI (VesiGel UGN-102 (mitomycin)) - (ENVISION),Low grade non-muscle invasive bladder cancer (LG-NMIBC)
+MRNA,2025-06-12,mRESVIA (mRNA-1345),Respiratory Syncytial Virus (RSV)
+AMRX,2025-06-12,Prednisolone Acetate Ophthalmic Suspension,Steroid-responsive ocular inflammation
+NUVB,2025-06-11,IBTROZI (taletrectinib),ROS1+ Non–Small Cell Lung Cancer
+ABBV,2025-06-11,MAVYRET (glecaprevir/pibrentasvir),Adults and pediatric patients 3 years and older with acute or chronic hepatitis C virus (HCV)
+ENTA,2025-06-11,MAVYRET (glecaprevir/pibrentasvir),Adults and pediatric patients 3 years and older with acute or chronic hepatitis C virus (HCV)
+AXSM,2025-06-09,Esreboxetine (AXS-14) - (FORWARD),Fibromyalgia
+MRK,2025-06-09,ENFLONSIA (Clesrovimab) (MK-1654-004) - (CLEVER),Respiratory syncytial virus (RSV) infants
+IMMX,2025-06-03,NXC-201 (HBI10101) - (NEXICART-2),Relapsed/refractory AL Amyloidosis
+TRAW,2025-06-03,Rigosertib,Recessive Dystrophic Epidermolysis Bullosa-Associated Squamous Cell Carcinoma
+ONTX,2025-06-03,Rigosertib,Recessive Dystrophic Epidermolysis Bullosa-Associated Squamous Cell Carcinoma
+GMAB,2025-06-02,Rinatabart sesutecan (Rina-S) - (RAINFOL),"Ovarian cancer, Endometrial Cancers, Solid tumors"
+SNY,2025-06-02,DUPIXENT (dupilumab),Bullous pemphigoid (BP)
+REGN,2025-06-02,DUPIXENT (dupilumab),Bullous pemphigoid (BP)
+MRNA,2025-05-31,mRNA-1283 - (NEXTCove),COVID-19
+ETON,2025-05-29,KHINDIVI  (ET-400 ( hydrocortisone bioequivalence)),Oral hydrocortisone
+ALDE,2025-05-28,Tryptyr (acoltremon),Dry eye disease signs and symptoms
+ALC,2025-05-28,TRYPTYR (acoltremon ophthalmic solution) 0.003%,Dry eye disease (DED)
+SVRA,2025-05-27,MOLBREEVI (Molgradex) - (IMPALA-2),Autoimmune pulmonary alveolar proteinosis (aPAP)
+BMY,2025-05-23,Iberdomide in Combination with Dexamethasone - (CC-220-MM-001),Relapsed/Refractory Multiple Myeloma (RRMM)
+REGN,2025-05-23,Linvoseltamab +  carfilzomib - (LINKER-MM2),Relapsed/refractory multiple myeloma (RRMM)
+LQDA,2025-05-23,YUTREPIA (treprostinil),Pulmonary arterial hypertension (PAH)
+BCTX,2025-05-23,Bria-IMT - (BRIA-ABC),Advanced breast cancer
+GSK,2025-05-22,Nucala (mepolizumab),Chronic obstructive pulmonary disease (COPD)
+ARQT,2025-05-22,ZORYVE (roflumilast),Scalp psoriasis
+RHHBY,2025-05-22,Susvimo,Diabetic Retinopathy
+NVAX,2025-05-19,NUVAXOVID,Covid-19
+INCY,2025-05-15,Zynyz (retifanlimab-dlwr),Advanced Anal Cancer Patients
+AMRX,2025-05-15,Brekiya (dihydroergotamine mesylate) injection,Migraine with or without aura and cluster headache in adults
+CING,2025-05-14,"CTx-1301 (fixed dose, pediatric study)",ADHD
+ABBV,2025-05-14,EMRELIS (Telisotuzumab vedotin (Teliso-V)) - (LUMINOSITY),Nonsquamous non-small cell lung cancer (NSCLC)
+MRK,2025-05-14,WELIREG (belzutifan),Advanced Pheochromocytoma and Paraganglioma (PPGL)
+OGEN,2025-05-13,ONP-002,Moderate-to-severe concussion in the acute through subacute phases
+VSTM,2025-05-08,AVMAPKI FAKZYNJA CO-PACK,Recurrent low-grade serous ovarian cancer (LGSOC)
+PHIO,2025-05-07,PH-762,Cutaneous Squamous Cell Carcinoma
+ALVO,2025-05-05,SELARSDI (ustekinumab-aekn) injection - (STELARA biosimilar),Adults and pediatric psoriatic arthritis and plaque psoriasis
+TEVA,2025-05-05,SELARSDI (ustekinumab-aekn) injection - (STELARA biosimilar),Adults and pediatric psoriatic arthritis and plaque psoriasis
+JNJ,2025-04-30,IMAAVY (Nipocalimab) - (Vivacity-MG3),Generalized myasthenia gravis (gMG)
+XRTX,2025-04-30,XRx-026,Gout
+ABBV,2025-04-29,Upadacitinib (RINVOQ)  - (SELECT-GCA),Giant cell arteritis (GCA)
+MOME,2025-04-29,Imaavy (nipocalimab-aahu),Generalized myasthenia gravis
+ABEO,2025-04-29,ZEVASKYN (prademagene zamikeracel),Recessive dystrophic epidermolysis bullosa (RDEB)
+CLDI,2025-04-28,CLD-400 - (RTNova),Metastatic Solid Tumors & Lung cancer
+TLX,2025-04-28,TLX101-CDx,Progressive or recurrent glioma
+URGN,2025-04-27,UGN-102 - (OPTIMA II),Non-Muscle-Invasive Bladder Cancer
+TARA,2025-04-26,TARA-002 - (ADVANCED-2),High-grade non-muscle invasive bladder cancer (NMIBC) patients with Bacillus Calmette-Guérin (BCG)-naïve and BCG-unresponsive carcinoma in situ (CIS)
+ALXO,2025-04-25,ALX148 (evorpacept) + rituximab and lenalidomide,Non-Hodgkin lymphoma (NHL)
+EQ,2025-04-24,Itolizumab - (EQUATOR),1st line Acute graft-versus-host disease (aGVHD)
+JNJ,2025-04-24,INLEXZO (gemcitabine intravesical system)  (TAR-200) - (SunRISe-1),"Bacillus Calmette-Guérin (BCG)-unresponsive, high-risk non-muscle-invasive bladder cancer (HR-NMIBC)"
+ANTE,2025-04-23,penpulimab-kcqx (penpulimab-kcqx),Nasopharyngeal carcinoma (recurrent/metastatic)
+REGN,2025-04-20,EYLEA HD (24-week dosing),Wet age-related macular degeneration (wAMD)
+SNY,2025-04-18,Dupixent (dupilumab),Chronic spontaneous urticaria (CSU)
+REGN,2025-04-18,Dupixent (dupilumab),Chronic spontaneous urticaria (CSU)
+MIRM,2025-04-14,LIVMARLI (maralixibat) (tablet formulation),Alagille syndrome (ALGS) and Progressive Familial Intrahepatic Cholestasis (PFIC)
+IRWD,2025-04-14,Apraglutide - (STARS),Short Bowel Syndrome with Intestinal Failure (SBS-IF)
+BMY,2025-04-11,Opdivo (nivolumab) plus Yervoy (ipilimumab) - (CheckMate -9DW),Hepatocellular carcinoma (HCC)
+HALO,2025-04-10,VYVGART Hytrulo (efgartigimod),"Generalized myasthenia gravis (gMG), chronic inflammatory demyelinating polyneuropathy (CIDP)"
+ARGX,2025-04-10,VYVGART Hytrulo (efgartigimod),"Generalized myasthenia gravis (gMG), chronic inflammatory demyelinating polyneuropathy (CIDP)"
+BMY,2025-04-08,Opdivo (nivolumab) plus Yervoy - (CheckMate -8HW),Microsatellite Instability–High or Mismatch Repair Deficient Metastatic Colorectal Cancer
+NVS,2025-04-03,Vanrafia (atrasentan),Proteinuria reduction in primary IgA nephropathy (IgAN)
+AMGN,2025-04-03,UPLIZNA (INEBILIZUMAB-CDON),Immunoglobulin G4-related disease (IgG4-RD)
+ALDX,2025-04-03,Reproxalap (ADX-102) - (TRANQUILITY),Dry eye disease
+ABBV,2025-04-02,Vanrafia (atrasentan),Primary IgA nephropathy
+CMPX,2025-04-01,CTX-009 (DLL4 X VEGF-A bispecific) - (COMPANION-002),Biliary tract cancer (BTC)
+AZN,2025-03-31,IMFINZI (durvalumab),Muscle-invasive bladder cancer (MIBC)
+NVS,2025-03-28,Pluvicto (lutetium (177Lu) vipivotide tetraxetan),Metastatic castration-resistant prostate cancer (mCRPC)
+MIST,2025-03-28,CARDAMYST (etripamil),Paroxysmal supraventricular tachycardia (PSVT)
+SNY,2025-03-28,Qfitlia (fitusiran) - (ATLAS),Hemophilia A/B
+INTE,2025-03-28,Qfitlia (fitusiran),Hemophilia A or B bleeding prevention
+ALNY,2025-03-28,Qfitlia (fitusiran) - (ATLAS),Hemophilia A/B
+EQ,2025-03-27,Itolizumab - (EQUATOR),1st line Acute graft-versus-host disease (aGVHD)
+EXEL,2025-03-26,CABOMETYX (cabozantinib) - (CABINET),Advanced Neuroendocrine Tumors
+IPSEY,2025-03-26,CABOMETYX (cabozantinib) - (CABINET),Advanced Neuroendocrine Tumors
+WVE,2025-03-26,WVE-N531 - (FORWARD-53),Duchenne muscular dystrophy (DMD) in boys
+SLNO,2025-03-26,VYKAT XR (diazoxide choline) extended-release tablets,Prader-Willi syndrome (PWS)
+GSK,2025-03-25,Blujepa (Gepotidacin) - (EAGLE 2/3),Uncomplicated urinary tract infection (uUTI)
+CNTA,2025-03-24,SerpinPC - (PRESent-3),Hemophilia B
+AURA,2025-03-24,Belzupacap sarotalocan (AU-011),Non-muscular invasive bladder cancer (NMIBC)
+CGON,2025-03-24,Cretostimogene - (BOND-003),BCG-unresponsive Non-Muscle Invasive Bladder Cancer (NMIBC) with Carcinoma in Situ
+TLX,2025-03-21,Gozellix (TLX007-CDx),PSMA-PET imaging agent for prostate cancer
+JNJ,2025-03-20,TREMFYA (guselkumab),Moderately to severely active Crohn's disease
+ALNY,2025-03-20,AMVUTTRA (vutrisiran),ATTR Amyloidosis with Cardiomyopathy (ATTR-CM)
+NVS,2025-03-20,Fabhalta (iptacopan),C3 glomerulopathy (C3G)
+GLSI,2025-03-17,GP2 (GLSI-100)  - (FLAMINGO-01),HER2 positive breast cancer
+XERS,2025-03-17,Gvoke VialDx,Diagnostic aid for gastrointestinal tract in adult patients
+ANIP,2025-03-14,ILUVIEN (fluocinolone acetonide intravitreal implant),Chronic non-infectious uveitis affecting the posterior segment of the eye (NIU-PS) in addition to diabetic macular edema (DME)
+RNAZ,2025-03-13,TTX-MC138 - (PRE-I-SPY),Metastatic solid tumors
+PHIO,2025-03-10,PH-762,Cutaneous Squamous Cell Carcinoma
+SPRY,2025-03-05,Neffy 1 mg (epinephrine nasal spray),Anaphylaxis
+RHHBY,2025-03-03,TNKase (tenecteplase),Acute ischemic stroke (AIS) in adults
+INDV,2025-02-24,SUBLOCADE (buprenorphine extended-release),Moderate to severe opioid use disorder (OUD)
+MIRM,2025-02-24,CTEXLI (chenodiol),Cerebrotendinous xanthomatosis (CTX)
+SLS,2025-02-20,SLS009 (tambiciclib) with zanubrutinib,relapsed/refractory Diffuse Large B-Cell Lymphoma (r/r DLBCL)
+APTO,2025-02-20,Tuspetinib (TUS) in combination therapy with azacitidine (AZA) and venetoclax (VEN) - (TUSCANY),Newly diagnosed with acute myeloid leukemia (AML)
+HRMY,2025-02-19,WAKIX (pitolisant) - (INTUNE),Idiopathic Hypersomnia (IH)
+IBRX,2025-02-19,ANKTIVA,BCG-Unresponsive Non-Muscle Invasive Bladder Cancer
+GSK,2025-02-17,MenABCWY,"Meningitis, meningococcal disease caused by serogroups A, B, C, W and Y"
+TURN,2025-02-14,Romvimza (vimseltinib),Symptomatic tenosynovial giant cell tumor
+CLLS,2025-02-14,ALLO-501/501A + ALLO-647 - (ALPHA2),Large B-cell lymphoma
+ALLO,2025-02-14,ALLO-501/501A + ALLO-647 - (ALPHA2),Large B-cell lymphoma
+ALPMY,2025-02-13,IZERVAY (avacincaptad pegol intravitreal solution),Geographic atrophy (GA) secondary to age-related macular degeneration (AMD)
+RHHBY,2025-02-12,EVRYSDI (risdiplam) 5mg,Spinal muscular atrophy (SMA)
+PFE,2025-02-12,ADCETRIS (brentuximab vedotin) with lenalidomide and rituximab - (ECHELON-3),Relapsed/refractory diffuse large B-cell lymphoma (DLBCL)
+SWTX,2025-02-11,GOMEKLI (mirdametinib) - (ReNeu),Neurofibromas
+ABBV,2025-02-07,EMBLAVEO (aztreonam and avibactam),Complicated Intra-abdominal Infection and Hosptial Acquired Pneumonia
+RNAZ,2025-02-06,TTX-MC138 - (PRE-I-SPY),Metastatic solid tumors
+SUPN,2025-02-04,ONAPGO (apomorphine hydrochloride) injection (SPN-830),Motor fluctuations in Parkinson’s disease (PD)
+RHHBY,2025-02-04,Susvimo (ranibizumab injection) 100 mg/mL - (Pagoda and Pavilion),Diabetic macular edema (DME) and diabetic retinopathy (DR)
+ADLO,2025-01-30,Journavx (suzetrigine),Moderate to severe acute pain
+AXSM,2025-01-30,SYMBRAVO (meloxicam and rizatriptan),Migraine
+VRTX,2025-01-30,Suzetrigine (VX-548),Acute Pain following bunionectomy or abdominoplasty surgery
+NVS,2025-01-29,Farabursen (RGLS8429) (MAD),Autosomal Dominant Polycystic Kidney Disease (ADPKD)
+NVO,2025-01-28,Semaglutide - (FLOW),Renal impairment in people with type 2 diabetes and chronic kidney disease (CKD)
+AZN,2025-01-27,Enhertu - (DESTINY-Breast06),"HR-positive, HER2-low (IHC 1+ or 2+/ISH-) metastatic breast cancer"
+DSNKY,2025-01-27,Enhertu - (DESTINY-Breast06),"HR-positive, HER2-low (IHC 1+ or 2+/ISH-) metastatic breast cancer"
+BIIB,2025-01-26,LEQEMBI (lecanemab-irmb),IV Maintenance Dosing for Alzheimer’s disease
+AMRX,2025-01-23,Rifaximin 550 mg oral tablets,Irritable bowel syndrome with diarrhea (IBS-D) in adults
+AMRX,2025-01-23,Memantine/donepezil 14-10 mg and 28-10 mg extended-release capsules,Moderate to severe dementia of the Alzheimer's type
+AMRX,2025-01-23,Everolimus,Tuberous Sclerosis Complex (TSC)-Associated Subependymal Giant Cell Astrocytoma (SEGA)
+LSTA,2025-01-22,LSTA1 in combination with gemcitabine and nab-paclitaxel - (ASCEND),1L metastatic pancreatic ductal adenocarcinoma
+CHRS,2025-01-22,Casdozokitug/toripalimab/bevacizumab,Unresectable locally advanced or metastatic hepatocellular carcinoma (HCC)
+MEDA,2025-01-21,Grafapex (treosulfan),AML/MDS preparation for HSCT
+IRON,2025-01-21,Bitopertin - (APOLLO),Erythropoietic Protoporphyria (EPP)
+JNJ,2025-01-21,SPRAVATO (esketamine) monotherapy,Treatment Resistant Depression (TRD4005)
+INBX,2025-01-21,ozekibart (INBRX-109) in combination with FOLFIRI,"Advanced or metastatic, unresectable colorectal adenocarcinoma (CRC), Chondrosarcoma"
+DAII,2025-01-17,Datroway (datopotamab deruxtecan-dlnk),HR+/HER2- metastatic breast cancer
+AZN,2025-01-17,"Calquence (acalabrutinib) with chemoimmunotherapy, bendamustine and rituximab - (ECHO)",Mantle cell lymphoma (MCL)
+AZN,2025-01-17,Datopotamab Deruxtecan - (TROPION-Breast01),"HR Positive, HER2 Negative Breast Cancer"
+AMGN,2025-01-17,LUMAKRAS (Sotorasib)  + Vectibix (panitumumab) - (CodeBreaK 300),"KRAS G12C-mutated solid tumors, CRC"
+ATRA,2025-01-16,Tabelecleucel (tab-cel),Epstein-Barr Virus Positive Post-Transplant Lymphoproliferative Disease
+SNDX,2025-01-16,Niktimvo (axatilimab-csfr),Chronic Graft versus host disease (cGvHD)
+INCY,2025-01-16,Niktimvo (axatilimab-csfr),Chronic Graft versus host disease (cGvHD)
+LLY,2025-01-15,Omvoh (mirikizumab-mrkz),Inflammatory bowel disease (IBD)
+LEXX,2025-01-15,DehydraTECH-liraglutide - (GLP-1-H25-5). (Pilot Study #5),Obesity
+PHIO,2025-01-13,PH-762,Cutaneous Squamous Cell Carcinoma
+JSPR,2025-01-08,Subcutaneous briquilimab - (BEACON),Chronic Spontaneous Urticaria (CSU)
+ANIP,2025-01-02,Prucalopride Tablets - (Motegrity generic),(RLD) Motegrity Biosimilar
+KZIA,2025-01-02,Paxalisib (GDC-0084) - (GBM AGILE),Glioblastoma multiforme
+BGNE,2024-12-27,TEVIMBRA (tislelizumab-jsgr) - (RATIONALE 305),Gastric or gastroesophageal junction (G/GEJ) adenocarcinoma
+ONC,2024-12-27,TEVIMBRA (tislelizumab-jsgr) - (RATIONALE 305),Gastric or gastroesophageal junction (G/GEJ) adenocarcinoma
+ZLDPF,2024-12-23,Glepaglutideb - (EASE 1),Short bowel syndrome (SBS)
+VRTX,2024-12-20,ALYFTREK (vanzacaftor/tezacaftor/deutivacaftor),Cystic fibrosis (CF) ages 6 years and older
+LLY,2024-12-20,Zepbound  (Tirzepatide) - (SURMOUNT-OSA),Obstructive Sleep Apnea (OSA)
+PFE,2024-12-20,BRAFTOVI,BRAF V600E-Mutant Metastatic Colorectal Cancer
+HUMA,2024-12-20,SYMVESS (acellular tissue engineered vessel-tyod),Extremity Vascular Trauma
+NBIX,2024-12-20,CRENESSITY (Crinecerfont) - (oral solution formulation),Classic congenital adrenal hyperplasia (CAH)
+LXRX,2024-12-20,Zynquista (sotagliflozin),Type 1 Diabetes  and chronic kidney disease (CKD)
+RYTM,2024-12-20,IMCIVREE (setmelanotide),"Obesity due to biallelic POMC, PCSK1, LEPR deficiency, or BBS (ages 2-6 years old)"
+PLUR,2024-12-19,RYONCIL (remestemcel-L),"Pediatric participants with acute graft versus host disease (aGVHD), following allogeneic hematopoietic stem cell transplant (HSCT)"
+MRKR,2024-12-19,Neldaleucel (MT-601) - (APOLLO),Lymphoma who have failed or are ineligible to receive anti-CD19 CAR T cell treatment
+NBIX,2024-12-19,"CRENESSITY  (Crinecerfont) - (CAHtalyst, capsule formulation)",Congenital Adrenal Hyperplasia (CAH)
+MESO,2024-12-19,RYONCIL (remestemcel-L),"Pediatric participants with acute graft versus host disease (aGVHD), following allogeneic hematopoietic stem cell transplant (HSCT)"
+IONS,2024-12-19,TRYNGOLZA (olezarsen),Familial Chylomicronemia Syndrome (FCS)
+SNY,2024-12-17,MenQuadfi,Meningococcal disease
+IMMX,2024-12-17,NXC-201 (HBI10101) - (NEXICART-1),relapsed/refractory multiple myeloma and relapsed/refractory AL amyloidosis
+ROIV,2024-12-16,Tapinarof Cream 1%,Atopic dermatitis (AD)
+OGN,2024-12-16,Tapinarof Cream 1%,Atopic dermatitis (AD)
+FBIO,2024-12-13,UNLOXCYT (cosibelimab-ipdl),Cutaneous squamous cell carcinoma (CSCC)
+CKPT,2024-12-13,UNLOXCYT (cosibelimab-ipdl),Cutaneous squamous cell carcinoma (CSCC)
+CADL,2024-12-11,CAN-2409 (aglatimagene besadenovec) combined with Valacyclovir,Prostate cancer
+PRLD,2024-12-11,PRT2527,Solid tumors and hematological malignancies
+IMMX,2024-12-10,NXC-201 (HBI10101) - (NEXICART-2),Relapsed/refractory AL Amyloidosis
+QURE,2024-12-10,AMT-130,Huntington's disease
+NKTR,2024-12-09,NKTR-255 with BAVENCIO (avelumab) - (JAVELIN),Locally advanced or metastatic urothelial carcinoma (UC)
+PRTC,2024-12-09,LYT-200,Relapsed/refractory AML and MDS
+LYEL,2024-12-09,LYL314 (IMPT-314),Large B-cell lymphoma
+GMAB,2024-12-09,EPCORE (Epcoritamab) - (EPCORE  NHL-2),Non-Hodgkin lymphoma (NHL)
+CPIX,2024-12-09,Acetadote (N-acetylcysteine for injection) (IV),Prevent or lessen liver injury after  toxic quantities of acetaminophen.
+MRK,2024-12-09,NKTR-255 with BAVENCIO (avelumab) - (JAVELIN),Locally advanced or metastatic urothelial carcinoma (UC)
+AFMD,2024-12-08,AFM13 + AlloNK (AB-101) - (LuminICE-203),"Classical Hodgkin Lymphoma (cHL), relapsed/refractory CD30-positive lymphoma"
+PSTX,2024-12-07,P-BCMA-101 - (PRIME),Multiple myeloma
+URGN,2024-12-05,ZUSDURI (VesiGel UGN-102 (mitomycin)) - (ENVISION),Low grade non-muscle invasive bladder cancer (LG-NMIBC)
+MRUS,2024-12-05,BIZENGRI (zenocutuzumab-zbco),Solid tumors - NRG1+ NSCLC and PDAC cancer
+AZN,2024-12-05,IMFINZI (Durvalumab) - (ADRIATIC),Small cell lung cancer (SCLC) limited disease
+GMAB,2024-12-05,BIZENGRI (zenocutuzumab-zbco),Solid tumors - NRG1+ NSCLC and PDAC cancer
+MRUS,2024-12-02,Petosemtamab (MCLA-158),"Recurrent/metastatic (r/m) head and neck squamous cell carcinoma (HNSCC), Solid Tumors"
+GMAB,2024-12-02,Petosemtamab (MCLA-158),"Recurrent/metastatic (r/m) head and neck squamous cell carcinoma (HNSCC), Solid Tumors"
+APLT,2024-11-27,Govorestat (AT-007) - (ACTION-Galactosemia kids),Galactosemia
+BBIO,2024-11-22,Attruby (Acoramidis) - (ATTRibute-CM),Amyloid cardiomyopathy (ATTR-CM)
+AZN,2024-11-22,Attruby (Acoramidis) - (ATTRibute-CM),Amyloid cardiomyopathy (ATTR-CM)
+ZYME,2024-11-21,Ziihera (zanidatamab-hrii),HER2-amplified biliary tract cancers
+ONC,2024-11-21,Ziihera (zanidatamab-hrii),HER2-amplified biliary tract cancers
+BGNE,2024-11-21,Ziihera (zanidatamab-hrii),HER2-amplified biliary tract cancers
+JAZZ,2024-11-21,Ziihera (zanidatamab-hrii),HER2-amplified biliary tract cancers
+PYXS,2024-11-20,PYX-201-101 - (MICVO),Solid tumors
+RXRX,2024-11-20,REC-4881,AXIN1 or APC Mutant Cancers
+PHRRF,2024-11-19,KETARX (ketamine),Surgical pain management
+FATE,2024-11-18,FT522,Lupus
+SNDX,2024-11-15,Revuforj (revumenib),Adult and pediatric relapsed or refractory (R/R) KMT2A-rearranged (KMT2Ar) acute leukemia
+ADIL,2024-11-14,AD04 - (ONWARD),Alcohol use disorder
+GSK,2024-11-13,Lete-cel - (IGNYTE-ESO),Sarcoma
+PTCT,2024-11-13,Upstaza (PTC-AADC),AADC deficiency
+CLPT,2024-11-13,Upstaza (PTC-AADC),AADC deficiency
+ADAP,2024-11-13,Lete-cel - (IGNYTE-ESO),Sarcoma
+AIMD,2024-11-11,VELDONA,Sjögren's syndrome
+PHIO,2024-11-09,PH-762,Cutaneous Squamous Cell Carcinoma
+AUTL,2024-11-08,AUCATZYL (obecabtagene autoleucel)  - (FELIX),B-Cell Acute Lymphoblastic Leukemia
+IOVA,2024-11-08,LN-145 and KEYTRUDA (pembrolizumab) - (IOV-COM-202),Solid Tumors
+FBIO,2024-11-04,"Emrosi (Minocycline Hydrochloride ER Capsules, 40 mg) (DFD-29) - (MVOR-2)",Papulopustular Rosacea
+DERM,2024-11-04,"Emrosi (Minocycline Hydrochloride ER Capsules, 40 mg) (DFD-29) - (MVOR-2)",Papulopustular Rosacea
+NVS,2024-10-29,Scemblix - (ASC4FIRST),1L Chronic myeloid leukemia (CML)
+MIRA,2024-10-28,Ketamir-2 (Topical),"Neuropathic pain and chemo-induced depression, as well as neuropathic pain and PTSD"
+ANIP,2024-10-25,"Estradiol Gel, 0.06% - (generic version of EstroGel Gel, 0.06%)",Hot flashes and to treat moderate to severe menopausal changes
+ITRM,2024-10-25,ORLYNVAH (Oral Sulopenem),Uncomplicated urinary tract infections (uUTI)
+EXAI,2024-10-24,EXS73565 (‘565),Haematological cancers
+RXRX,2024-10-24,EXS73565 (‘565),Haematological cancers
+RNAZ,2024-10-23,TTX-MC138 - (PRE-I-SPY),Metastatic solid tumors
+PHRRF,2024-10-23,KETARX (ketamine),Surgical pain management
+TEVA,2024-10-22,SELARSDI (ustekinumab-aekn) 130 mg/26 mL - (STELARA Biosimilar),Crohn's disease
+PFE,2024-10-22,ABRYSVO - (MONeT),Respiratory syncytial virus (RSV)-associated lower respiratory tract disease (LRTD)
+ALVO,2024-10-22,SELARSDI (ustekinumab-aekn) 130 mg/26 mL - (STELARA Biosimilar),Crohn's disease
+MIRA,2024-10-21,Ketamir-2 (Topical),"Neuropathic pain and chemo-induced depression, as well as neuropathic pain and PTSD"
+AMRX,2024-10-21,Pyridostigmine Bromide Extended-Release (PB ER) Tablets USP 105 mg,Lethal effects of soman nerve agent poisoning
+ABBV,2024-10-21,BOTOX (OnabotulinumtoxinA),Platysma prominence associated with platysma muscle activity (M21-310)
+OCGN,2024-10-21,OCU410ST - (GARDian3),"Stargardt, Retinitis Pigmentosa 19 (RP19), and Cone-rod dystrophy 3 (CORD3) diseases"
+ALPMY,2024-10-18,Zolbetuximab,HER2-negative gastric or gastroesophageal junction (GEJ) adenocarcinoma whose tumors are CLDN18.2-positive
+ALPMY,2024-10-18,VYLOY (zolbetuximab-clzb),Advanced Gastric and GEJ Cancer
+PFE,2024-10-18,VYLOY (zolbetuximab-clzb),Advanced Gastric and GEJ Cancer
+AURA,2024-10-17,Belzupacap sarotalocan (AU-011),Non-muscular invasive bladder cancer (NMIBC)
+ALKS,2024-10-17,LUMRYZ (sodium oxybate) Extended-Release Oral Suspension (CIII),Pediatric narcolepsy
+AVDL,2024-10-17,LUMRYZ (sodium oxybate) Extended-Release Oral Suspension (CIII),Pediatric narcolepsy
+ABBV,2024-10-17,VYALEV (foscarbidopa and foslevodopa),Parkinson's disease
+ZLAB,2024-10-15,Optune Lua is (Tumor Treating Fields (TTFields)) - (LUNAR),Non-small cell lung cancer (NSCLC)
+NVCR,2024-10-15,Optune Lua is (Tumor Treating Fields (TTFields)) - (LUNAR),Non-small cell lung cancer (NSCLC)
+GNPX,2024-10-15,REQORSA Immunogene Therapy (quratusugene ozeplasmid) - (Acclaim-3),Extensive-stage small cell lung cancer (ES-SCLC)
+CMND,2024-10-14,CMND-100,Alcohol use disorder (AUD)
+PFE,2024-10-11,Hympavzi (marstacimab-hncq),Hemophilia A or B
+RHHBY,2024-10-10,Itovebi (inavolisib) with palbociclib (Ibrance) and fulvestrant,"HER2-negative, endocrine-resistant, locally advanced or metastatic breast cancer"
+JNJ,2024-10-10,TREMFYA (Guselkumab) - (QUASAR),Crohn's disease
+NVS,2024-10-10,TREMFYA (Guselkumab) - (QUASAR),Crohn's disease
+ZLDPF,2024-10-09,Dasiglucagon - (17103),"Congenital hyperinsulinism (CHI), (Pediatric)"
+TEVA,2024-10-08,Prolia (denosumab) biosimilar - (TVB-009P),Osteoporosis
+BFRI,2024-10-07,Ameluz (aminolevulinic acid HCI) Topical Gel - (3 tubes),Actinic keratosis (AK)
+BMY,2024-10-04,Neoadjuvant Opdivo (nivolumab) and Chemotherapy,Stage IIA to IIIB non-small cell lung cancer (NSCLC)
+BMY,2024-10-03,Opdivo (nivolumab) - (CheckMate -77T),Non-metastatic non-small cell lung cancer
+RPTX,2024-09-30,Camonsertib (RP-3500)/ RG6526)- (ATTACC),Solid Tumors
+ELVN,2024-09-28,ELVN-001 - (ENABLE),Chronic Myeloid Leukemia (CML)
+LNTH,2024-09-27,flurpiridaz F 18,Coronary artery disease (CAD)
+GEHC,2024-09-27,flurpiridaz F 18,Coronary artery disease (CAD)
+PRTC,2024-09-27,"COBENFY (KarXT, xanomeline and trospium chloride)",Schizophrenia
+REGN,2024-09-27,Dupixent (dupilumab) - (NOTUS),Chronic obstructive pulmonary disease (COPD)
+BMY,2024-09-27,"COBENFY (KarXT, xanomeline and trospium chloride)",Schizophrenia
+JNJ,2024-09-27,TALVEY (talquetamab-tgvs) with DARZALEX FASPRO (daratumumab and hyaluronidase-fihj) and pomalidomide - (TRIMM-2),Multiple Myeloma
+ESLA,2024-09-27,EB103 (CD19) - (STARLIGHT-1),"Diffuse large B cell lymphoma (DLBCL), Follicular Lymphoma (FL), and other types of B-cell Lymphoma"
+ENGN,2024-09-26,Detalimogene voraplasmid (EG-70) - (LEGEND),BCG-unresponsive non-muscle invasive bladder cancer (NMIBC)
+AZN,2024-09-26,TAGRISSO (osimertinib) - (LAURA),"Unresectable, Stage III epidermal growth factor receptor-mutated (EGFRm) non-small cell lung cancer (NSCLC)"
+ANIP,2024-09-26,"Ketoconazole Shampoo, 2%",Fungus
+CLDX,2024-09-25,Barzolvolimab (CDX-0159),Chronic spontaneous urticaria (CSU)
+HRTX,2024-09-25,ZYNRELEF (bupivacaine and meloxicam) extended-release solution,Pain relief following surgery
+CAPR,2024-09-24,CAP-1002 - (HOPE-3),Duchenne Muscular Dystrophy (DMD)
+SNY,2024-09-20,"SARCLISA (isatuximab) with bortezomib, lenalidomide and dexamethasone (VRd)",Transplant-ineligible newly diagnosed multiple myeloma (NDMM)
+JNJ,2024-09-20,Amivantamab and Lazertinib - (MARIPOSA),GFR-Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer
+AZN,2024-09-20,"FLUMIST QUADRIVALENT (Influenza Vaccine Live, Intranasal)","Influenza Vaccine Live, Intranasal"
+VNDA,2024-09-19,Tradipitant - (VP-VLY-686-3303),Gastroparesis
+JNJ,2024-09-19,RYBREVANT (amivantamab-vmjw),Second-line EGFR-mutated advanced lung cancer
+AZN,2024-09-18,FASENRA (benralizumab) - (MANDARA),Eosinophilic granulomatosis with polyangiitis (EGPA)
+NVS,2024-09-17,Kisqali (ribociclib) - (NATALEE),Adjuvant breast cancer
+JNJ,2024-09-16,TAR-200 with Cetrelimab - (SunRISe-4),High-Risk Non-Muscle Invasive Bladder Cancer (NMIBC)
+LLY,2024-09-15,177Lu-PNT2002 - (SPLASH),Metastatic Castration-Resistant Prostate Cancer
+LNTH,2024-09-15,177Lu-PNT2002 - (SPLASH),Metastatic Castration-Resistant Prostate Cancer
+REGN,2024-09-13,Dupixent (dupilumab),Chronic rhinosinusitis with nasal polyposis (CRSwNP) in adolescents aged 12 to 17 years
+RHHBY,2024-09-13,Ocrevus Zunovo,Multiple sclerosis (MS) or primary progressive MS
+LLY,2024-09-13,EBGLYSS (lebrikizumab-lbkz),Atopic Dermatitis
+HALO,2024-09-13,Ocrevus Zunovo,Multiple sclerosis (MS) or primary progressive MS
+HALO,2024-09-12,Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) with ENHANZE,"Lung, liver, skin and soft tissue cancer"
+RHHBY,2024-09-12,Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) with ENHANZE,"Lung, liver, skin and soft tissue cancer"
+NVS,2024-09-11,TREMFYA (Guselkumab),Ulcerative colitis
+JNJ,2024-09-11,TREMFYA (Guselkumab),Ulcerative colitis
+IPHA,2024-09-09,Monalizuma - (NeoCOAST-2),Early-stage non-small cell lung cancer (NSCLC)
+ACTU,2024-09-09,Elraglusib (9-ING-41) - (Actuate-1902),Ewing Sarcoma (Pediatric)
+LGND,2024-09-05,FILSPARI (sparsentan),IgA nephropathy (IgAN)
+TVTX,2024-09-05,FILSPARI (sparsentan),IgA nephropathy (IgAN)
+EBS,2024-08-30,ACAM2000,Smallpox and Mpox (Vaccinia) Vaccine
+SCLX,2024-08-29,GLOPERBA (colchicine),Acute and chronic pain
+ENSC,2024-08-27,PF614-MPAR-102 - (MPAR),Overdose Protection
+VCEL,2024-08-26,MACI Arthro,Arthroscopic Administration
+PFE,2024-08-22,COMIRNATY,Omicron KP.2-adapted COVID-19 Vaccine
+BNTX,2024-08-22,COMIRNATY,Omicron KP.2-adapted COVID-19 Vaccine
+MRNA,2024-08-22,Spikevax (2024-2025 formula),COVID-19 Vaccine
+WHWK,2024-08-20,FYARRO - (PRECISION 1),Solid tumors
+JNJ,2024-08-20,RYBREVANT (amivantamab-vmjw)  plus LAZCLUZE - (MARIPOSA),1L locally advanced or metastatic non-small cell lung cancer (NSCLC)
+REGN,2024-08-20,Lynozyfic (linvoseltamab-gcpt),Multiple myeloma
+AMRX,2024-08-20,Propofol emulsion (Diprivan generic),Anesthetic and sedation
+LQDA,2024-08-19,YUTREPIA,Interstitial lung disease (PH-ILD)
+AZN,2024-08-16,IMFINZI (durvalumab),Non-Small Cell Lung Cancer (before and after surgery)
+MDWD,2024-08-15,NexoBrid (CIDS),Severe burns - pediatric
+VCEL,2024-08-15,NexoBrid (CIDS),Severe burns - pediatric
+INCY,2024-08-14,Niktimvo (axatilimab-csfr),Chronic Graft versus host disease (cGvHD)
+GILD,2024-08-14,Livdelzi (Seladelpar),Primary biliary cholangitis (PBC)
+SNDX,2024-08-14,Niktimvo (axatilimab-csfr),Chronic Graft versus host disease (cGvHD)
+VIRX,2024-08-14,Nanatinostat - (NAVAL-1),Epstein Barr Virus-associated cancers
+ASND,2024-08-12,YORVIPATH (Palopegteriparatide),Hypoparathyroidism
+NVS,2024-08-12,Enzeevu (aflibercept-abzv),Neovascular age-related macular degeneration (nAMD)
+LYKOS,2024-08-11,Midomafetamine (MDMA),Post-traumatic stress disorder (PTSD)
+SPRY,2024-08-09,Neffy (epinephrine nasal spray),Allergic reactions (type I) including anaphylaxis
+CTXR,2024-08-08,LYMPHIR (denileukin diftitox-cxdl),CTCL non-Hodgkin lymphoma
+NVS,2024-08-08,Fabhalta (iptacopan),IgA nephropathy (IgAN)
+AMRX,2024-08-07,CREXONT (Carbidopa and Levodopa),Parkinson's disease
+AGIO,2024-08-07,VORANIGO (vorasidenib),Grade 2 IDH-mutant Glioma
+PSTX,2024-08-04,P-BCMA-101 - (PRIME),Multiple myeloma
+ADAP,2024-08-01,TECELRA (afamitresgene autoleucel),Unresectable or metastatic synovial sarcoma
+GSK,2024-08-01,Jemperli (dostarlimab-gxly) plus chemotherapy,Primary advanced or recurrent endometrial cancer
+JNJ,2024-07-31,DARZALEX FASPRO (daratumumab and hyaluronidase-fihj),Frontline multiple myeloma transplant eligible
+ACOG,2024-07-29,ZUNVEYL (benzgalantamine),Mild-to-moderate Alzheimer's disease
+AMRX,2024-07-29,Potassium Phosphates in 0.9% Injection IV RTU bags,Hyperphosphatemia
+CLDX,2024-07-29,Barzolvolimab - (CindU),"Chronic inducible urticaria (CIndU), cold urticaria (ColdU) and symptomatic dermographism (SD), Chronic Spontaneous Urticaria (CSU)"
+MIRM,2024-07-25,LIVMARLI (maralixibat),Progressive Familial Intrahepatic Cholestasis (PFIC)
+BMRN,2024-07-24,BRINEURA (cerliponase alfa) - (Study 190-203),CLN2 Batten Disease Children of All Ages
+PHAT,2024-07-18,VOQUEZNA (vonoprazan) - (PHALCON-NERD-301),Heartburn associated with Non-Erosive gastroesophageal reflux disease (GERD)
+AGEN,2024-07-18,Botensilimab plus balstilimab - (BATTMAN),Relapsed/refractory microsatellite stable colorectal cancer with no active liver metastases (r/r MSS CRC NLM)
+SNY,2024-07-18,iluzanebart  (VGL101) - (IGNITE),Adult-onset leukoencephalopathy with axonal spheroids and pigmented glia (ALSP)
+VIGL,2024-07-18,iluzanebart  (VGL101) - (IGNITE),Adult-onset leukoencephalopathy with axonal spheroids and pigmented glia (ALSP)
+ANVS,2024-07-16,Buntanetap (ANVS401),Alzheimer’s disease (AD)
+ANIP,2024-07-15,L-Glutamine Oral Powder (Endari),Biosimilar
+NVO,2024-07-11,Insulin icodec,"Diabetes mellitus, Type 1 diabetes"
+CRGX,2024-07-10,Firicabtagene autoleucel (firi-cel) - (FIRCE-1),Relapsed or refractory (R/R) large B-cell lymphoma (LBCL)
+ARQT,2024-07-09,"ZORYVE (roflumilast) cream, 0.15%",Atopic dermatitis
+SXTP,2024-07-09,ARAKODA (tafenoquine),Babesiosis
+RHHBY,2024-07-08,Susvimo (ranibizumab injection),Neovascular Age-Related Macular Degeneration
+IDYA,2024-07-08,IDE397 and Trodelvy,Solid Tumors
+RHHBY,2024-07-05,Vabysmo Prefilled Syringe (PFS),"Wet, or neovascular, age-related macular degeneration (AMD), diabetic macular edema (DME) and macular edema following retinal vein occlusion (RVO)"
+ANIP,2024-07-02,"Naproxen Delayed-Release Tablets, USP.",Pain
+LLY,2024-07-02,Kisunla (donanemab-azbt),Early symptomatic Alzheimer's disease (AD)
+RCKT,2024-06-28,KRESLADI (marnetegragene autotemcel),Leukocyte Adhesion Deficiency-I (LAD-I)
+GMAB,2024-06-27,EPKINLY (epcoritamab-bysp),Follicular lymphoma (FL)
+MRK,2024-06-27,MK-1022 (patritumab deruxtecan) - (HERTHENA-Lung02),EGFR-mutated locally advanced or metastatic non-small cell lung cancer (NSCLC)
+DSNKY,2024-06-27,MK-1022 (patritumab deruxtecan) - (HERTHENA-Lung02),EGFR-mutated locally advanced or metastatic non-small cell lung cancer (NSCLC)
+ABBV,2024-06-27,EPKINLY (epcoritamab-bysp),Follicular lymphoma (FL)
+LGND,2024-06-26,Ohtuvayre (ensifentrine),Chronic obstructive pulmonary disease (COPD)
+MRK,2024-06-26,Ohtuvayre (ensifentrine),Chronic obstructive pulmonary disease (COPD)
+ABBV,2024-06-25,VYALEV (foscarbidopa and foslevodopa),Parkinson's disease
+SGMO,2024-06-24,Civaparvovec (ST-920) - (STAAR),Fabry disease
+NNVC,2024-06-24,NV-387,"Influenza A viruses, Bird Flu H5N1"
+HRMY,2024-06-24,WAKIX (pitolisant),Excessive daytime sleepiness (EDS) or cataplexy in pediatric patients 6 years of age and older with narcolepsy
+SRPT,2024-06-21,ELEVIDYS (SRP-9001-301) - (EMBARK),Duchenne muscular dystrophy
+BMY,2024-06-21,KRAZATI (adagrasib) - (KRYSTAL-1),Non-Small Cell Lung Cancer / Colorectal Cancer
+ARGX,2024-06-21,VYVGART Efgartigimod (ARGX-113) and Enhanze - (ADHERE),Chronic inflammatory demyelinating polyneuropathy
+RHHBY,2024-06-21,ELEVIDYS (SRP-9001-301) - (EMBARK),Duchenne muscular dystrophy
+VSTM,2024-06-19,GFH375/VS-7375,Cancer KRAS G12D
+ABBV,2024-06-18,SKYRIZI (risankizumab) - (COMMAND),Ulcerative Colitis
+MRK,2024-06-18,CAPVAXIVE (Pneumococcal 21-valent Conjugate Vaccine),Pneumococcal conjugate vaccine
+LGND,2024-06-18,CAPVAXIVE (Pneumococcal 21-valent Conjugate Vaccine),Pneumococcal conjugate vaccine
+EVAX,2024-06-17,EVX-01 + KEYTRUDA (pembrolizumab) / OPDIVO (nivolumab),Metastatic Melanoma
+AZN,2024-06-17,Imfinzi (durvalumab) in combination with carboplatin and paclitaxel,Endometrial cancer (EC)
+MRK,2024-06-17,EVX-01 + KEYTRUDA (pembrolizumab) / OPDIVO (nivolumab),Metastatic Melanoma
+MRK,2024-06-17,KEYTRUDA (pembrolizumab) Plus Carboplatin and Paclitaxel,Endometrial carcinoma
+KYMR,2024-06-14,KT-333 - (STAT3),Peripheral T-cell Lymphoma (PTCL)
+AUTL,2024-06-14,AUCATZYL (obecabtagene autoleucel)  - (FELIX),B-Cell Acute Lymphoblastic Leukemia
+GLPG,2024-06-14,GLPG5101 - (ATALANTA-1),Relapsed/refractory Non-Hodgkin Lymphoma (rrNHL)
+AMGN,2024-06-14,BLINCYTO,CD19-positive Philadelphia chromosome-negative B-cell precursor acute lymphoblastic leukemia (B-ALL)
+BMY,2024-06-14,Augtyro (repotrectinib),Solid tumors that have a neurotrophic tyrosine receptor kinase (NTRK) for adults and pediatric patients 12+
+HCM,2024-06-14,HMPL-760,Bruton's Tyrosine Kinase (BTK) Relapsed/Refractory (R/R) Lymphomas
+AZN,2024-06-12,Farxiga,Paediatric type-2 diabetes
+AFMD,2024-06-12,AFM13 + AlloNK (AB-101) - (LuminICE-203),"Classical Hodgkin Lymphoma (cHL), relapsed/refractory CD30-positive lymphoma"
+REGN,2024-06-11,Kevzara (sarilumab),Polyarticular juvenile idiopathic arthritis
+SNY,2024-06-11,Kevzara (sarilumab),Polyarticular juvenile idiopathic arthritis
+IPSEY,2024-06-10,Iqirvo (elafibranor) - (ELATIVE),Primary biliary cholangitis (PBC)
+GNFT,2024-06-10,Iqirvo (elafibranor) - (ELATIVE),Primary biliary cholangitis (PBC)
+CANF,2024-06-10,Namodenoson - (CF102-222PC),Pancreatic Cancer
+MRNA,2024-06-07,SPIKEVAX (mRNA-1273),COVID-19 vaccine
+GSK,2024-06-07,Arexvy (50-59 at increased risk),"Respiratory syncytial virus (RSV) disease, Vaccine"
+GERN,2024-06-06,RYTELO (imetelstat) - (IMerge),Myelodysplastic syndromes with transfusion-dependent (TD) anemia
+AZN,2024-06-03,ENHERTU,Multiple HER2-expressing advanced solid tumors
+DSNKY,2024-06-03,ENHERTU,Multiple HER2-expressing advanced solid tumors
+GMAB,2024-06-02,MCLA-145 with Keytruda (pembrolizumab),Solid tumors
+MRUS,2024-06-02,MCLA-145 with Keytruda (pembrolizumab),Solid tumors
+GMAB,2024-06-02,MCLA-145 with Keytruda (pembrolizumab),Solid tumors
+MRUS,2024-06-02,MCLA-145 with Keytruda (pembrolizumab),Solid tumors
+VNDA,2024-05-31,PONVORY  - (Ponesimod),Relapsing multiple sclerosis
+MRNA,2024-05-31,mRESVIA (mRNA-1345) - (ConquerRSV),Respiratory syncytial virus (RSV) vaccine
+CPRX,2024-05-30,FIRDAPSE (amifampridine),Lambert Eaton myasthenic syndrome (LEMS)
+BMY,2024-05-30,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND NHL 001),Mantle cell lymphoma (MCL)
+ASND,2024-05-30,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND NHL 001),Mantle cell lymphoma (MCL)
+TEVA,2024-05-29,"AUSTEDO XR tablets (30, 36, 42, 48 mg/day)",Tardive dyskinesia (TD) and Huntington's disease (HD) chorea control
+APRE,2024-05-28,ATRN-119 - (ABOYA-119),Solid tumors
+VSTM,2024-05-24,AVMAPKI FAKZYNJA CO-PACK,Recurrent low-grade serous ovarian cancer (LGSOC)
+CMPX,2024-05-23,CTX-471 (CD137 agonist),Solid tumors
+IOVA,2024-05-23,LN-145 - (IOV-COM-202),Non-small cell lung cancer (NSCLC)
+HOOK,2024-05-23,Eseba-vec (formerly HB-200) in combination with KEYTRUDA (pembrolizumab),Head and neck squamous cell carcinoma (HNSCC)
+GMAB,2024-05-23,MCLA-145 with Keytruda (pembrolizumab),Solid tumors
+MRUS,2024-05-23,MCLA-145 with Keytruda (pembrolizumab),Solid tumors
+AMPH,2024-05-22,Albuterol Sulfate Inhalation Aerosol (AMP-008),Bronchospasm
+ONVO,2024-05-21,FXR314 with Tofacitinib,Inflammatory Bowel Disease
+AMGN,2024-05-17,IMDELLTRA (tarlatamab-dlle),Extensive-stage small cell lung cancer (ES-SCLC)
+BMY,2024-05-16,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),Follicular lymphoma
+ASND,2024-05-16,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),Follicular lymphoma
+BCAB,2024-05-15,Ozuriftamab Vedotin (BA3021),"Solid Tumors, Non-small cell lung cancer (NSCLC), recurrent or metastatic squamous cell carcinoma of the head and neck (R/M SCCHN)"
+IMMP,2024-05-15,Eftilagimod Alpha with weekly paclitaxel  - (AIPAC-003),Metastatic breast cancer (MBC)
+DVAX,2024-05-14,HEPLISAV-B,End Stage Renal Disease on Dialysis undergoing hemodialysis
+KYMR,2024-05-14,KT-333,Cutaneous T-cell lymphoma (CTCL)
+IKT,2024-05-09,IkT-001Pro,Pulmonary Arterial Hypertension (PAH)
+NNVC,2024-05-06,NV-387,"Influenza A viruses, Bird Flu H5N1"
+CGON,2024-05-03,Cretostimogene - (BOND-003),BCG-unresponsive Non-Muscle Invasive Bladder Cancer (NMIBC) with Carcinoma in Situ
+NBIX,2024-04-30,INGREZZA SPRINKLE (valbenazine) Capsules,Tardive dyskinesia (TD)
+AUPH,2024-04-30,LUPKYNIS (Voclosporin) - (updated label),Lupus Nephritis
+AQST,2024-04-29,Libervant (diazepam) - (pediatric),Acute treatment seizure activity
+XFOR,2024-04-29,XOLREMDI (mavorixafor),WHIM syndrome
+GMAB,2024-04-29,TIVDAK (tisotumab vedotin-tftv),Cervical Cancer with disease progression on or after first-line therapy
+PFE,2024-04-29,TIVDAK (tisotumab vedotin-tftv),Cervical Cancer with disease progression on or after first-line therapy
+PFE,2024-04-26,BEQVEZ (fidanacogene elaparvovec-dzkt),Hemophilia B
+GILD,2024-04-26,Biktarvy,HIV
+AMRX,2024-04-24,Naloxone hydrochloride nasal spray - (generic Narcan),Opioid overdose
+NVS,2024-04-23,LUTATHERA (lutetium Lu 177) - (NETTER-P),Gastroenteropancreatic neuroendocrine tumors (GEP-NETs)
+DAWN,2024-04-23,OJEMDA (tovorafenib),Low-grade Glioma
+ABEO,2024-04-22,ZEVASKYN (prademagene zamikeracel),Recessive dystrophic epidermolysis bullosa (RDEB)
+IBRX,2024-04-22,ANKTIVA,BCG-Unresponsive Non-Muscle Invasive Bladder Cancer
+PHRRF,2024-04-18,KETARX (ketamine),Surgical pain management
+TAK,2024-04-18,ENTYVIO (vedolizumab),Crohn's Disease
+RHHBY,2024-04-18,Alecensa(alectinib),Non-small cell lung cancer (NSCLC)
+ALVO,2024-04-16,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),moderate to severe plaque psoriasis and for active psoriatic arthritis in adults and pediatric patients 6 years and older.
+LEXX,2024-04-16,DehydraTECH-GLP-1 - (GLP-1-H24-2),"Healthy volunteers, Diabetes-related control, weight loss"
+TEVA,2024-04-16,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),moderate to severe plaque psoriasis and for active psoriatic arthritis in adults and pediatric patients 6 years and older.
+VIRX,2024-04-15,Nanatinostat - (NAVAL-1),Epstein Barr Virus-associated cancers
+AZN,2024-04-11,FASENRA (benralizumab) - (TATE),Eosinophilic asthma  aged 6 to 11 with an eosinophilic phenotype
+LLY,2024-04-09,(Z)-endoxifen with abemaciclib (VERZENIO) - (EVANGELINE),Pre-menopausal women w/ early-stage estrogen receptor positive and Human Epidermal Growth Factor Receptor 2 negative breast cancer
+ATOS,2024-04-09,(Z)-endoxifen with abemaciclib (VERZENIO) - (EVANGELINE),Pre-menopausal women w/ early-stage estrogen receptor positive and Human Epidermal Growth Factor Receptor 2 negative breast cancer
+PFE,2024-04-08,DOVATO (Dolutegravir and lamivudine) - (DANCE),HIV-1 infection in adolescents 12 years + and weighing at least 25 kg with no antiretroviral (ARV) treatment history
+SUPN,2024-04-08,ONAPGO (apomorphine hydrochloride) injection (SPN-830),Motor fluctuations in Parkinson’s disease (PD)
+REPL,2024-04-07,RP1 (vusolimogene oderparepvec) - (ARTACUS),Liver and kidney transplant recipients with recurrent Cutaneous squamous cell carcinoma
+LEGN,2024-04-05,CARVYKTI (ciltacabtagene autoleucel) - (CARTITUDE-4),Multiple Myeloma
+TARA,2024-04-05,TARA-002 - (ADVANCED-1),Non-muscle invasive bladder cancer (NMIBC)
+BMY,2024-04-05,Abecma (idecabtagene vicleucel; ide-cel),Multiple Myeloma
+TSVT,2024-04-05,Abecma (idecabtagene vicleucel; ide-cel),Multiple Myeloma
+IGXT,2024-04-05,Buprenorphine Buccal Film - (Belbuca Biosimilar),Pain
+JNJ,2024-04-05,CARVYKTI (ciltacabtagene autoleucel) - (CARTITUDE-4),Multiple Myeloma
+OCGN,2024-04-05,OCU410 - (ArMaDa),Geographic Atrophy (GA)
+GOVX,2024-04-04,GEO-CM04S1- (COH04S1),COVID-19 in immunocompromised patients
+SPRY,2024-04-03,Neffy (epinephrine nasal spray),Allergic reactions (type I) including anaphylaxis
+VNDA,2024-04-02,FANAPT (iloperidone),Bipolar Disorder
+LQDA,2024-04-01,YUTREPIA,Interstitial lung disease (PH-ILD)
+AZN,2024-04-01,VOYDEYA (danicopan) add-on to SoC with ULTOMIRIS (ravulizumab-cwvz) or SOLIRIS (eculizumab)- (ALPHA),Paroxysmal nocturnal hemoglobinuria (PNH) and atypical Hemolytic Uremic Syndrome (aHUS)
+CSLLY,2024-03-27,Vafseo (vadadustat),Anemia due to Chronic Kidney Disease in Adult Patients on Dialysis
+AKBA,2024-03-27,Vafseo (vadadustat),Anemia due to Chronic Kidney Disease in Adult Patients on Dialysis
+PRAX,2024-03-26,PRAX-628,Photo-Paroxysmal Response (PPR)
+CERS,2024-03-26,INTERCEPT,Platelets
+MRK,2024-03-26,WINREVAIR (sotatercept-csrk),Pulmonary arterial hypertension (PAH)
+AMRX,2024-03-25,ciprofloxacin and dexamethasone otic suspension,"Acute Otitis Externa (AOE) in pediatric (age 6 months and older), adult, and elderly patients due to staphylococcus aureus and pseudomonas aeruginosa."
+AZN,2024-03-25,ULTOMIRIS (ravulizumab-cwvz),Neuromyelitis Optica Spectrum Disorder (NMOSD)
+AZN,2024-03-25,ULTOMIRIS (ravulizumab-cwvz) - (CHAMPION-NMOSD),Neuromyelitis optica spectrum disorder (NMOSD)
+REGN,2024-03-25,Odronextamab - (OLYMPIA),Non-Hodgkin Lymphoma (NHL)
+ZLAB,2024-03-25,Odronextamab,Relapsed/refractory (R/R) follicular lymphoma (FL) or R/R diffuse large B-cell lymphoma (DLBCL)
+ZLAB,2024-03-25,Odronextamab - (OLYMPIA),Non-Hodgkin Lymphoma (NHL)
+REGN,2024-03-25,Odronextamab,Relapsed/refractory (R/R) follicular lymphoma (FL) or R/R diffuse large B-cell lymphoma (DLBCL)
+MBRX,2024-03-25,"Annamycin (MB-106) in combination with Cytarabine - (Ara-C, MIRACLE)",Acute Myeloid Leukemia (AML)
+ESPR,2024-03-22,NEXLETOL (bempedoic acid)  - (CLEAR Outcomes),Cardiovascular Diseases
+ABBV,2024-03-22,ELAHERE (mirvetuximab soravtansine-gynx),Platinum-Resistant Ovarian Cancer
+SMMT,2024-03-22,ivonescimab (AK112-202),Patients with Advanced Non-Small Cell Lung Cancer (NSCLC) and Brain Metastases
+IVVD,2024-03-22,PEMGARDA  (VYD222 (pemivibart)) - (CANOPY),COVID-19 Prevention
+ABBV,2024-03-22,Mirvetuximab - (MIRASOL),Cancer - ovarian cancer and relapsed endometrial cancer
+JNJ,2024-03-19,EDURANT (rilpivirine),HIV in pediatric patients (2-12 years)
+TAK,2024-03-19,ICLUSIG (ponatinib) - (PhALLCON),Philadelphia chromosome-positive acute lymphoblastic leukemia (Ph+ ALL)
+OPTN,2024-03-15,XHANCE,Chronic sinusitis
+BGNE,2024-03-14,Tislelizumab-jsgr (Tevimbra),Esophageal squamous cell carcinoma (ESCC)
+ONC,2024-03-14,Tislelizumab-jsgr (Tevimbra),Esophageal squamous cell carcinoma (ESCC)
+BMY,2024-03-14,Breyanzi (lisocabtagene maraleucel),Relapsed or Refractory Chronic Lymphocytic Leukemia (CLL) or Small Lymphocytic Lymphoma (SLL)
+BGNE,2024-03-14,TEVIMBRA,Esophageal Squamous Cell Carcinoma (ESCC)
+ONC,2024-03-14,TEVIMBRA,Esophageal Squamous Cell Carcinoma (ESCC)
+MDGL,2024-03-14,Rezdiffra (resmetirom),Non-alcoholic steatohepatitis (NASH) with liver fibrosis (also known as MASH)
+MIRM,2024-03-13,LIVMARLI (maralixibat),Progressive Familial Intrahepatic Cholestasis (PFIC)
+KANT,2024-03-12,KVA12123 with KEYTRUDA (pembrolizumab) - (VISTA-101),Solid tumors
+VTRS,2024-03-11,Glatiramer (GA Depot),Primary Progressive Multiple Sclerosis (PPMS)
+NVO,2024-03-08,Wegovy (Semaglutide),Cardiovascular risk reduction in adults with obesity
+FBIO,2024-03-07,MB-101 - (City of Hope),High-Grade Glioma
+BMY,2024-03-07,Opdivo (nivolumab) plus Yervoy (ipilimumab),Urothelial carcinoma
+MBIO,2024-03-07,MB-101 - (City of Hope),High-Grade Glioma
+VNDA,2024-03-06,HETLIOZ (tasimelteon),Insomnia
+CASI,2024-03-05,BI-1206 with rituximab - (China trial),Non-Hodgkin's Lymphoma (NHL)
+NVS,2024-03-05,Wyost (denosumab-bddz) and Jubbonti (denosumab-bddz) interchangeable,multiple myeloma and in patients with bone metastases from solid tumors
+IMMP,2024-03-05,Eftilagimod Alpha with weekly paclitaxel  - (AIPAC-003),Metastatic breast cancer (MBC)
+LNTH,2024-03-04,DEFINITY (Perflutren Lipid Microsphere),Ultrasound enhancing agent for use in pediatric patients with suboptimal echocardiograms
+JNJ,2024-03-01,RYBREVANT (amivantamab) - (PAPILLON),Non-small cell lung cancer
+KANT,2024-02-29,KVA12123 with KEYTRUDA (pembrolizumab) - (VISTA-101),Solid tumors
+CMPX,2024-02-28,CTX-8371,Solid Tumors
+NERV,2024-02-27,Roluperidone (MIN-101),Schizophrenia
+ONC,2024-02-26,BRUKINSA (zanubrutinib) + Obinutuzumab - (ROSEWOOD),Follicular Non-Hodgkin Lymphoma
+BGNE,2024-02-26,BRUKINSA (zanubrutinib) + Obinutuzumab - (ROSEWOOD),Follicular Non-Hodgkin Lymphoma
+GILD,2024-02-26,Biktarvy,HIV
+TEVA,2024-02-23,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+ALVO,2024-02-23,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+CMND,2024-02-23,CMND-100,Alcohol use disorder (AUD)
+JNJ,2024-02-20,TECVAYLI (teclistamab),Relapsed or refractory (R/R) multiple myeloma.
+AZN,2024-02-17,TAGRISSO (Osimertinib) - (FLAURA2),Non-small cell lung cancer (NSCLC)
+RHHBY,2024-02-16,XOLAIR (omalizumab) - (OUtMATCH),Food allergy
+IOVA,2024-02-16,AMTAGVI (Lifileucel (LN-144)) - (TILVANCE-301),Refractory metastatic melanoma
+ONCY,2024-02-15,Pelareorep and mFOLFIRINOX with and without atezolizumab - (GOBLET),Colorectal and advanced anal cancers
+IPSEY,2024-02-13,Onivyde (NALIRIFOX),Pancreatic cancer
+MACK,2024-02-13,Onivyde (NALIRIFOX),Pancreatic cancer
+TAK,2024-02-13,Eohilia (formerly TAK-721),Eosinophilic esophagitis
+SGMO,2024-02-12,Civaparvovec (ST-920) - (STAAR),Fabry disease
+TAK,2024-02-12,EOHILIA (budesonide oral suspension),People 11 years and older with eosinophilic esophagitis (EoE)
+AIMD,2024-02-05,VELDONA,Mild COVID-19
+TAK,2024-01-29,GAMMAGARD LIQUID [Immune Globulin Infusion (Human) 10% solution],Adults with chronic inflammatory demyelinating polyneuropathy (CIDP)
+SNY,2024-01-25,Dupixent (dupilumab),Eosinophilic esophagitis (EoE) in 1-11 year olds
+REGN,2024-01-25,Dupixent (dupilumab),Eosinophilic esophagitis (EoE) in 1-11 year olds
+HRTX,2024-01-23,ZYNRELEF (bupivacaine and meloxicam) extended-release,Soft tissue and orthopedic surgical procedures
+AIM,2024-01-22,Ampligen (rintatolimod) with Imfinzi (durvalumab) - (DURIPANC),Pancreatic Cancer
+AZN,2024-01-22,Ampligen (rintatolimod) with Imfinzi (durvalumab) - (DURIPANC),Pancreatic Cancer
+ALVO,2024-01-19,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),moderate to severe plaque psoriasis and for active psoriatic arthritis in adults and pediatric patients 6 years and older.
+TEVA,2024-01-19,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),moderate to severe plaque psoriasis and for active psoriatic arthritis in adults and pediatric patients 6 years and older.
+ALVO,2024-01-19,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+TEVA,2024-01-19,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+CHRS,2024-01-18,Casdozokitug (casdozo),Non-small cell lung cancer (NSCLC)
+IXHL,2024-01-17,IHL-42X - (RePOSA),Obstructive  sleep apnea (OSA)
+ANIP,2024-01-16,Indomethacin Oral Suspension - (Indocin generic),"Rheumatoid arthritis, ankylosing spondylitis, osteoarthritis, acute gouty arthritis, bursitis, and tendinitis"
+HALO,2024-01-16,HYQVIA (Immune Globulin Infusion 10% with Recombinant Human Hyaluronidase),Chronic inflammatory demyelinating polyradiculoneuropathy (CIDP)
+CRSP,2024-01-16,CASGEVY (exagamglogene autotemcel [exa-cel],Beta-thalassemia
+VRTX,2024-01-16,CASGEVY (exagamglogene autotemcel [exa-cel],Beta-thalassemia
+TAK,2024-01-16,HYQVIA (Immune Globulin Infusion 10% with Recombinant Human Hyaluronidase),Chronic inflammatory demyelinating polyradiculoneuropathy (CIDP)
+MRK,2024-01-12,KEYTRUDA  with external beam radiotherapy (EBRT) plus concurrent chemotherapy - (KEYNOTE-A18),Cervical cancer
+ALPMY,2024-01-09,Zolbetuximab,HER2-negative gastric or gastroesophageal junction (GEJ) adenocarcinoma whose tumors are CLDN18.2-positive
+NOVN,2024-01-05,ZELSUVMI (berdazimer topical gel),Molluscum Contagiosum
+LGND,2024-01-05,ZELSUVMI (berdazimer topical gel),Molluscum Contagiosum
+PTHS,2024-01-05,ZELSUVMI (berdazimer topical gel),Molluscum Contagiosum
+CHRS,2023-12-26,UDENYCA ONBODY,Cancer
+SXTP,2023-12-26,ARAKODA (tafenoquine),Babesiosis
+AMGN,2023-12-26,LUMAKRAS (Sotorasib) - (CodeBreaK 200),Non-small cell lung cancer (NSCLC)
+MIST,2023-12-26,CARDAMYST (etripamil),Paroxysmal supraventricular tachycardia (PSVT)
+IONS,2023-12-22,WAINUA (eplontersen),ATTR Amyloidosis
+IONS,2023-12-22,WAINUA (eplontersen),Hereditary ATTR Amyloidosis (hATTR)
+AZN,2023-12-22,WAINUA (eplontersen),ATTR Amyloidosis
+ONC,2023-12-22,BRUKINSA (zanubrutinib),Refractory chronic lymphocytic leukemia (CLL)
+BGNE,2023-12-22,BRUKINSA (zanubrutinib),Refractory chronic lymphocytic leukemia (CLL)
+AZN,2023-12-22,WAINUA (eplontersen),Hereditary ATTR Amyloidosis (hATTR)
+CLNN,2023-12-21,CNM-Au8 - (HEALEY ALS),Amyotrophic Lateral Sclerosis (ALS)
+CLNN,2023-12-21,CNM-Au8 - (RESCUE-ALS),Amyotrophic Lateral Sclerosis
+MRK,2023-12-20,Gefapixant,Chronic cough
+CALT,2023-12-20,TARPEYO (budesonide),IgA Nephropathy
+PCSA,2023-12-19,NGC-Capecitabine (PCS6422),Gastrointestinal Cancer
+FBIO,2023-12-18,UNLOXCYT (cosibelimab-ipdl),Cutaneous squamous cell carcinoma (CSCC)
+PBLA,2023-12-18,Eflornithine,High-risk neuroblastoma
+CKPT,2023-12-18,UNLOXCYT (cosibelimab-ipdl),Cutaneous squamous cell carcinoma (CSCC)
+ARQT,2023-12-15,ZORYVE (roflumilast),Seborrheic dermatitis
+ALPMY,2023-12-15,PADCEV (enfortumab vedotin-ejfv) in combination with KEYTRUDA (pembrolizumab) versus chemotherapy - (EV-302 /KEYNOTE-A39),Untreated locally advanced or metastatic urothelial cancer (la/mUC)
+MRK,2023-12-15,PADCEV (enfortumab vedotin-ejfv) in combination with KEYTRUDA (pembrolizumab) versus chemotherapy - (EV-302 /KEYNOTE-A39),Untreated locally advanced or metastatic urothelial cancer (la/mUC)
+PFE,2023-12-15,PADCEV (enfortumab vedotin-ejfv) in combination with KEYTRUDA (pembrolizumab) versus chemotherapy - (EV-302 /KEYNOTE-A39),Untreated locally advanced or metastatic urothelial cancer (la/mUC)
+GKOS,2023-12-14,iDose TR,Glaucoma
+MRK,2023-12-14,WELIREG (belzutifan),Advanced Renal Cell Carcinoma (RCC)
+STTK,2023-12-13,SL-172154 + Azacitidine (AZA),Acute Myeloid Leukemia (AML) and Higher-Risk Myelodysplastic Syndromes/Neoplasms (HR-MDS)
+ESPR,2023-12-13,NEXLETOL/NEXLIZET,Primary hyperlipidemia
+JNJ,2023-12-12,CARVYKTI (ciltacabtagene autoleucel) - (CARTITUDE-4),Multiple Myeloma
+LEGN,2023-12-12,CARVYKTI (ciltacabtagene autoleucel) - (CARTITUDE-4),Multiple Myeloma
+CRIS,2023-12-12,CA-4948 - (TakeAim Lymphoma),Relapsed or Refractory Non-Hodgkin Lymphoma
+MRKR,2023-12-11,Neldaleucel (MT-601) - (APOLLO),Lymphoma who have failed or are ineligible to receive anti-CD19 CAR T cell treatment
+ADCT,2023-12-11,ZYNLONTA (loncastuximab tesirine-lpyl) with rituximab (Lonca-R) - (LOTIS-9),High-Risk Relapsed/Refractory Follicular Lymphoma
+MBIO,2023-12-11,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+AFMD,2023-12-11,AFM24-102 and TECENTRIQ (atezolizumab),"EGFR Expressing Solid Tumors, Non-small cell lung cancer, and Gastric/gastroesophageal junction (GEJ) cancer"
+NRIX,2023-12-11,NX-2127,"B-cell malignancies, chronic lymphocytic leukemia (CLL)"
+AFMD,2023-12-11,AFM13 + AlloNK (AB-101) - (LuminICE-203),"Classical Hodgkin Lymphoma (cHL), relapsed/refractory CD30-positive lymphoma"
+AZN,2023-12-11,GC012F,Relapsed/refractory multiple myeloma (RRMM)
+FBIO,2023-12-11,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+BMEA,2023-12-10,Icovamenib (BMF-219) - (COVALENT-101),Acute myeloid leukemia (AML) / acute lymphocytic leukemia (ALL) / Diffuse large B-cell lymphoma (DLBCL) / Multiple myeloma (MM)
+MOLN,2023-12-10,MP0533,Acute myeloid leukemia (AML)
+ASND,2023-12-10,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),Follicular lymphoma
+BMY,2023-12-10,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),Follicular lymphoma
+ACET,2023-12-10,ADI-001,Non-Hodgkin’s lymphoma
+GLPG,2023-12-09,GLPG5101 - (ATALANTA-1),Relapsed/refractory Non-Hodgkin Lymphoma (rrNHL)
+IPSC,2023-12-09,CNTY-101 - (ELiPSE-1),Lymphoma or Indolent Lymphoma
+CRVS,2023-12-09,Soquelitinib  - (CPI-818),Peripheral T-cell lymphoma (PTCL)
+IPHA,2023-12-09,Lacutamab (IPH4102) - (TELLOMAK 3),"Mycosis Fungoides, Sézary Syndrome"
+GLPG,2023-12-09,GLPG5201 - (EUPLAGIA-1),"B-cell malignancies, Chronic Lymphocytic Leukemia (CLL) and Small Lymphocytic Lymphoma (SLL)"
+ALPMY,2023-12-08,CRESEMBA (isavuconazonium sulfate),Invasive Aspergillosis and Invasive Mucormycosis in Children
+VRTX,2023-12-08,Casgevy (Exagamglogene autotemcel (exa-cel)),Sickle cell disease
+CRSP,2023-12-08,Casgevy (Exagamglogene autotemcel (exa-cel)),Sickle cell disease
+BLUE,2023-12-08,LYFGENIA (lovotibeglogene autotemcel),Sickle cell disease
+VNDA,2023-12-07,PONVORY  - (Ponesimod),Relapsing multiple sclerosis
+PRTC,2023-12-07,LYT-200,"Solid tumors, urothelial and head and neck cancers, acute myeloid leukemia (AML)"
+NVS,2023-12-06,Fabhalta (iptacopan),Paroxysmal nocturnal hemoglobinuria (PNH)
+SNY,2023-12-06,Beyfortus (Nirsevimab) - (MEDLEY),Respiratory Syncytial Virus
+ALLR,2023-12-05,Stenoparib,Advanced ovarian cancer (AOC)
+REPL,2023-12-05,RP1 (vusolimogene oderparepvec) and OPDIVO (nivolumab) - (IGNYTE-3),Non-melanoma (NMSC) / Non-small cell lung cancer (NSCLC)
+OLMA,2023-12-05,Palazestrant (OP-1250) and ribociclib - (OPERA-02),Breast Cancer
+TVTX,2023-12-04,Sparsentan - (DUPLEX),Focal segmental glomerulosclerosis (FSGS)
+ATRA,2023-11-30,Tabelecleucel (tab-cel),Epstein-Barr Virus Positive Post-Transplant Lymphoproliferative Disease
+SWTX,2023-11-27,OGSIVEO (Nirogacestat) - (DeFi),Desmoid tumors
+ALDX,2023-11-27,Reproxalap (ADX-102) - (TRANQUILITY),Dry eye disease
+AZN,2023-11-17,Truqap (capivasertib) plus Faslodex,HR-positive breast cancer
+MRK,2023-11-17,KEYTRUDA (pembrolizumab) combined with chemotherapy,Advanced unresectable or metastatic gastric (GEJ) adenocarcinoma
+TEVA,2023-11-17,Forteo (teriparatide injection),Osteoporosis
+ALPMY,2023-11-16,XTANDI (enzalutamide),Nonmetastatic Prostate Cancer (nmCSPC)
+PFE,2023-11-16,XTANDI (enzalutamide),Nonmetastatic Prostate Cancer (nmCSPC)
+BMY,2023-11-15,Augtyro (repotrectinib),Non-small-cell lung cancer (NSCLC) and solid tumors
+ZLAB,2023-11-15,Augtyro (repotrectinib),Non-small-cell lung cancer (NSCLC) and solid tumors
+CRMD,2023-11-15,DEFENCATH (Neutrolin),Hemodialysis patients with central venous catheters
+ALZN,2023-11-13,AL001,Post-traumatic stress disorder (PTSD)
+PCRX,2023-11-10,EXPAREL,Nerve blocker in lower extremity surgeries
+VALN,2023-11-10,IXCHIQ,Chikungunya Vaccine
+ONCY,2023-11-09,Pelareorep and mFOLFIRINOX with and without atezolizumab - (GOBLET),Colorectal and advanced anal cancers
+SLS,2023-11-09,Tambiciclib (SLS009) (GFH009) with venetoclax,"Hematologic malignancies, acute myeloid leukemia (AML), chronic lymphocytic leukemia (CLL), small lymphocytic lymphoma (SLL) and lymphoma"
+TAK,2023-11-09,"ADZYNMA (ADAMTS13, recombinant-krhn)",Congenital thrombotic thrombocytopenic purpura (cTTP)
+HCM,2023-11-08,FRUZAQLA (fruquintinib),Colorectal cancer
+TAK,2023-11-08,FRUZAQLA (fruquintinib),Colorectal cancer
+AURA,2023-11-06,Belzupacap sarotalocan (AU-011),Non-muscular invasive bladder cancer (NMIBC)
+OTLK,2023-11-02,LYTENAVA (bevacizumab-vikg) / ONS-5010 - (NORSE EIGHT),Wet age-related macular degeneration (wet AMD)
+LLY,2023-11-02,EBGLYSS (lebrikizumab-lbkz),Atopic Dermatitis
+IPSC,2023-11-02,CNTY-101 - (ELiPSE-1),Lymphoma or Indolent Lymphoma
+PHAT,2023-11-01,VOQUEZNA (Vonoprazan) - (PHALCON-EE),Erosive esophagitis / Gastroesophageal reflux disease (GERD)
+MRK,2023-11-01,KEYTRUDA with chemotherapy (gemcitabine and cisplatin - (KEYNOTE-966),Biliary Tract Cancer
+NVS,2023-10-31,COSENTYX (secukinumab),Hidradenitis Suppurativa (HS)
+PHAT,2023-10-30,VOQUEZNA,H. pylori
+CHRS,2023-10-30,LOQTORZI (toripalimab-tpzi) with cisplatin and gemcitabine,1L Metastatic Nasopharyngeal Carcinoma
+CHRS,2023-10-27,LOQTORZI (toripalimab-tpzi) in combination with cisplatin and gemcitabine,Nasopharyngeal carcinoma (NPC)
+RHHBY,2023-10-27,Vabysmo (faricimab-svoa),Macular edema due to RVO
+ABOS,2023-10-27,Sabirnetug (ACU193) - (INTERCEPT-AD),Alzheimer’s disease (AD)
+EWTX,2023-10-26,AGAMREE (vamorolone),Duchenne Muscular Dystrophy (DMD)
+CPRX,2023-10-26,AGAMREE (vamorolone),Duchenne Muscular Dystrophy (DMD)
+AZN,2023-10-23,Datopotamab Deruxtecan Plus Durvalumab - (BEGONIA),Untreated advanced or metastatic triple negative breast cancer (TNBC)
+BMRN,2023-10-23,VOXZOGO (Vosoritide),Children under age 5 with Achondroplasia
+ORIC,2023-10-23,Enozertinib (ORIC-114),"Tumors - EGFR/HER2 Exon 20 Inhibitor, 1L NSCLC"
+BGNE,2023-10-22,Tislelizumab (tis) With or Without Ociperlimab (oci) - (AdvanTIG-202),Cervical Cancer (CC)
+ONC,2023-10-22,Tislelizumab (tis) With or Without Ociperlimab (oci) - (AdvanTIG-202),Cervical Cancer (CC)
+RVMD,2023-10-22,Daraxonrasib (RMC-6236),Advanced Solid Tumors
+AZN,2023-10-20,Roxadustat - (MATTERHORN),Anaemia of myelodysplastic syndromes (MDS)
+PFE,2023-10-20,PENBRAYA (MenABCWY),"Meningococcal Vaccine, Adolescents"
+FGEN,2023-10-20,Roxadustat - (MATTERHORN),Anaemia of myelodysplastic syndromes (MDS)
+BHC,2023-10-20,CABTREO,Acne vulgaris
+REGN,2023-10-20,Dupixent (dupilumab),Chronic spontaneous urticaria (CSU)
+SNY,2023-10-20,Dupixent (dupilumab),Chronic spontaneous urticaria (CSU)
+KURA,2023-10-17,Tipifarnib - (AIM-HN/SEQ-HN),Head and neck squamous cell carcinomas (HNSCC)
+ARDX,2023-10-17,XPHOZAH (tenapanor),Serum phosphorus - chronic kidney disease (CKD) on dialysis
+BMY,2023-10-16,OPDIVO (nivolumab) - (Checkmate-76k),Stage IIB or IIC melanoma
+SLS,2023-10-16,Tambiciclib (SLS009) (GFH009) with venetoclax,"Hematologic malignancies, acute myeloid leukemia (AML), chronic lymphocytic leukemia (CLL), small lymphocytic lymphoma (SLL) and lymphoma"
+MRK,2023-10-16,KEYTRUDA (pembrolizumab) - (KEYNOTE-671),"Resectable stage II, IIIA or IIIB non-small cell lung cancer (NSCLC)"
+OMER,2023-10-16,Narsoplimab - (ARTEMIS-IGAN),IgA nephropathy
+MRK,2023-10-16,KEYTRUDA (pembrolizumab) in combination with chemotherapy,"Resectable Stage II, IIIA or IIIB Non-Small Cell Lung Cancer (NSCLC)"
+PFE,2023-10-13,VELSIPITY (etrasimod),Ulcerative colitis
+PFE,2023-10-12,BRAFTOVI (Encorafenib) + MEKTOVI (​binimetinib),BRAFV600E-mutant metastatic non-small cell lung cancer (NSCLC)
+ALVO,2023-10-12,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),moderate to severe plaque psoriasis and for active psoriatic arthritis in adults and pediatric patients 6 years and older.
+TEVA,2023-10-12,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),moderate to severe plaque psoriasis and for active psoriatic arthritis in adults and pediatric patients 6 years and older.
+BFRI,2023-10-10,Ameluz (aminolevulinic acid hydrochloride) - (New formula),Actinic keratosis (AK)
+IMMX,2023-10-10,NXC-201 (HBI10101) - (NEXICART-1),relapsed/refractory multiple myeloma and relapsed/refractory AL amyloidosis
+INO,2023-10-10,INO-3107,HPV 6 and HPV 11-associated Recurrent respiratory papillomatosis
+ALNY,2023-10-09,ONPATTRO (patisiran) - (APOLLO-B),Wild-type ATTR amyloidosis patients with cardiomyopathy
+ARQT,2023-10-06,ZORYVE (roflumilast) cream,Plaque psoriasis in children
+NBTX,2023-10-04,NBTXR3 - (Study 102),Head and Neck Cancer
+VIRX,2023-10-04,Nanatinostat - (NAVAL-1),Epstein Barr Virus-associated cancers
+IPSEY,2023-10-03,Liquid botulinum toxin type A (QM-1114),Glabellar and lateral canthal lines
+IMMX,2023-10-03,NXC-201 (HBI10101) - (NEXICART-1),relapsed/refractory multiple myeloma and relapsed/refractory AL amyloidosis
+NVAX,2023-10-03,NVX-CoV2601 (Adjuvanted 2023-2024 Formula),Covid-19
+PDSB,2023-10-03,PDS0101 + KEYTRUDA (pembrolizumab) - (VERSATILE-002),HPV16-positive first-line recurrent and/or metastatic head and neck squamous cell cancer with low PD-L1 expression (CPS 1-19)
+LLY,2023-10-02,Lebrikizumab - (ADhere),Moderate-to-severe atopic dermatitis (AD)
+APLS,2023-10-02,EMPAVELI (pegcetacoplan) injector,Paroxysmal Nocturnal Hemoglobinuria (PNH)
+ANIP,2023-10-02,Cortrophin Gel,"Acute exacerbations of multiple sclerosis, rheumatoid arthritis, systemic lupus erythematous and ulcerative colitis"
+BIIB,2023-09-29,TOFIDENCE (tocilizumab-bavi) - (ACTEMRA biosimilar),Rheumatoid arthritis (RA)
+FOLD,2023-09-28,Pombiliti (cipaglucosidase alfa-atga) + Opfolda (miglustat),Pompe Disease
+VTRS,2023-09-27,RYZUMVI,Mydriasis (RM)
+IRD,2023-09-27,RYZUMVI,Mydriasis (RM)
+TAK,2023-09-27,ENTYVIO (vedolizumab),Ulcerative Colitis
+LQDA,2023-09-25,YUTREPIA,Interstitial lung disease (PH-ILD)
+CHRS,2023-09-25,UDENYCA ONBODY,Cancer
+ADTX,2023-09-25,LIKMEZ (ATI-1501) - (liquid oral reformulation),Parasitic and anaerobic bacterial infections
+APLIF,2023-09-25,LIKMEZ (ATI-1501) - (liquid oral reformulation),Parasitic and anaerobic bacterial infections
+LLY,2023-09-22,Jardiance (empagliflozin) - (EMPA-KIDNEY),Chronic kidney disease (CKD)
+SPRY,2023-09-20,Neffy (epinephrine nasal spray),Allergic reactions (type I) including anaphylaxis
+IGXT,2023-09-19,Buprenorphine Buccal Film - (Belbuca Biosimilar),Pain
+RDHL,2023-09-18,TALICIA (RHB-105),H. pylori
+CPIX,2023-09-18,TALICIA (RHB-105),H. pylori
+GSK,2023-09-15,Ojjaara (momelotinib),Myelofibrosis
+IOBT,2023-09-12,IO102-IO103 with pembrolizumab - (basket trial),Metastatic solid tumors
+ANIP,2023-09-12,Estradiol Tablets USP - (Estrace generic),Menopause symptoms
+AZN,2023-09-12,IMFINZI (durvalumab),Non-Small Cell Lung Cancer (before and after surgery)
+MRK,2023-09-12,IO102-IO103 with pembrolizumab - (basket trial),Metastatic solid tumors
+MRKR,2023-09-11,Neldaleucel (MT-601) - (APOLLO),Lymphoma who have failed or are ineligible to receive anti-CD19 CAR T cell treatment
+PFE,2023-09-11,"Comirnaty (BNT162b2, XBB.1.5, BA.2.86 (Pirola), and EG.5.1 (Eris))",COVID-19 Vaccine (Omicron Booster)
+MRNA,2023-09-11,"mRNA-1273.222 - (including EG.5, FL.1.5.1, and BA.2.86)",Covid-19 Omicron Booster
+BLRX,2023-09-11,APHEXDA (motixafortide) in combination with filgrastim (G-CSF),Stem-cell mobilization for autologous transplantation
+BNTX,2023-09-11,"Comirnaty (BNT162b2, XBB.1.5, BA.2.86 (Pirola), and EG.5.1 (Eris))",COVID-19 Vaccine (Omicron Booster)
+AIM,2023-09-11,Ampligen and celecoxib with or without Intron A,Early-stage triple negative breast cancer
+AZN,2023-09-10,GC012F,Relapsed/refractory multiple myeloma (RRMM)
+AMRX,2023-09-06,Calcium gluconate in sodium chloride injection,Acute symptomatic hypocalcemia in pediatric and adult patients
+AZN,2023-09-06,ULTOMIRIS (ravulizumab-cwvz),Neuromyelitis Optica Spectrum Disorder (NMOSD)
+AMRX,2023-09-06,Lisdexamfetamine Dimesylate  (Vyvanse generic),Attention Deficit Hyperactivity Disorder (ADHD)
+IGMS,2023-09-05,Fostroxacitabine Bralpamide (MIV-818) with Lenvima or with Keytruda,Hepatocellular carcinoma (HCC)
+VTRS,2023-09-05,Abacavir (ABC)/Dolutegravir (DTG)/Lamivudine (3TC),Children Living with HIV
+OTLK,2023-08-30,LYTENAVA (bevacizumab-vikg) / ONS-5010 - (NORSE EIGHT),Wet age-related macular degeneration (wet AMD)
+ANIP,2023-08-28,Estradiol Gel,Severe vasomotor symptoms (hot flashes and night sweats) due to menopause
+MRK,2023-08-28,Reblozyl (luspatercept-aamt),"First-line, lower-risk Myelodysplastic syndromes (MDS)"
+BMY,2023-08-28,Reblozyl (luspatercept-aamt),"First-line, lower-risk Myelodysplastic syndromes (MDS)"
+NVS,2023-08-25,Tyruko (natalizumab-sztn) biosimilar,Multiple sclerosis (MS)
+GILD,2023-08-24,Veklury (remdesivir),"COVID-19 in people with mild, moderate and severe hepatic impairment"
+PFE,2023-08-21,ABRYSVO - (RSVpreF),Respiratory Syncytial Virus (RSV) in infants
+REGN,2023-08-18,EYLEA HD (aflibercept 8 mg),"Wet age-related macular degeneration (wAMD), diabetic macular edema (DME) and diabetic retinopathy (DR)"
+REGN,2023-08-18,Veopoz (pozelimab-bbfg),Chaple
+NBIX,2023-08-18,INGREZZA (valbenazine),Huntington's disease
+IPSEY,2023-08-16,Sohonos (palovarotene),Fibrodysplasia ossificans progressiva (FOP)
+FBIO,2023-08-16,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+MBIO,2023-08-16,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+ADPT,2023-08-14,ELREXFIO (elranatamab-bcmm),Multiple Myeloma
+DCTH,2023-08-14,HEPZATO (Melphalan/HDS) - (FOCUS),Liver-dominant ocular melanoma
+PFE,2023-08-14,ELREXFIO (elranatamab-bcmm),Multiple Myeloma
+JNJ,2023-08-11,AKEEGA (niraparib and abiraterone acetate),BRCA-positive mCRPC
+JNJ,2023-08-10,TALVEY (talquetamab-tgvs),Multiple myeloma
+GRTX,2023-08-09,Avasopasem (GC4419) - (ROMAN),Severe Oral Mucositis (SOM)
+VIRX,2023-08-08,Nana-val (VT3996-201),Epstein-Barr Virus Associated Lymphoma
+BIIB,2023-08-04,Zuranolone (SAGE-217),Postpartum Depression
+SAGE,2023-08-04,Zuranolone (SAGE-217),Postpartum Depression
+ALPMY,2023-08-04,IZERVAY (avacincaptad pegol intravitreal solution),Geographic atrophy (GA) secondary to age-related macular degeneration (AMD)
+BIIB,2023-08-04,Zuranolone (SAGE-217),Major depressive disorder (MDD)
+SAGE,2023-08-04,Zuranolone (SAGE-217),Major depressive disorder (MDD)
+SUPN,2023-08-04,Zuranolone (SAGE-217),Postpartum Depression
+MRK,2023-08-03,ERVEBO (V920),Ebola
+MESO,2023-08-03,Remestemcel-L (MSC-100-IV),Steroid-refractory acute graft versus host disease (aGVHD) in children
+LUMO,2023-08-03,ERVEBO (V920),Ebola
+ANAB,2023-07-31,JEMPERLI (Dostarlimab) - (RUBY),Endometrial Cancer
+GSK,2023-07-31,JEMPERLI (Dostarlimab) - (RUBY),Endometrial Cancer
+CTXR,2023-07-29,LYMPHIR (denileukin diftitox-cxdl),CTCL non-Hodgkin lymphoma
+URGN,2023-07-27,ZUSDURI (VesiGel UGN-102 (mitomycin)) - (ENVISION),Low grade non-muscle invasive bladder cancer (LG-NMIBC)
+LIAN,2023-07-25,XDEMVY,Demodex Blepharitis
+TARS,2023-07-25,XDEMVY,Demodex Blepharitis
+BMEA,2023-07-24,Icovamenib (BMF-219) - (COVALENT-101),Acute myeloid leukemia (AML) / acute lymphocytic leukemia (ALL) / Diffuse large B-cell lymphoma (DLBCL) / Multiple myeloma (MM)
+VRCA,2023-07-21,YCANTH (cantharidin),Molluscum contagiosum
+EBS,2023-07-21,CYFENDUS (AV7909),Anthrax Vaccine
+APVO,2023-07-18,APVO436,Acute myeloid leukemia (AML) and myelodysplastic syndromes (MDS)
+LGND,2023-07-18,APVO436,Acute myeloid leukemia (AML) and myelodysplastic syndromes (MDS)
+AZN,2023-07-17,Beyfortus (Nirsevimab),Respiratory syncytial virus
+GILD,2023-07-14,Veklury (remdesivir),Covid-19
+CRBU,2023-07-13,CB-010 - (ANTLER),B-Cell Non-Hodgkin Lymphoma
+CVM,2023-07-11,Multikine - (IT-MATTERS),Head and Neck cancer
+BIIB,2023-07-06,LEQEMBI (lecanemab),Mild cognitive impairment (MCI) due to Alzheimer's disease (AD)
+AMRX,2023-07-03,CREXONT (Carbidopa and Levodopa),Parkinson's disease
+BMRN,2023-06-29,Valoctocogene roxaparvovec (BMN 270),Hemophilia A
+BLCO,2023-06-29,MIEBO (perfluorohexyloctane ophthalmic solution),Dry Eye Disease Associated With Meibomian Gland Dysfunction
+BHC,2023-06-29,MIEBO (perfluorohexyloctane ophthalmic solution),Dry Eye Disease Associated With Meibomian Gland Dysfunction
+ETON,2023-06-28,Dehydrated alcohol injection (DS-100),Methanol poisoning
+OPK,2023-06-28,Somatrogon (hGH-CTP),Children - growth hormone deficiency
+BIIB,2023-06-28,SKYCLARYS (omaveloxolone),Friedreich’s ataxia (FA)
+ALVO,2023-06-28,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+PFE,2023-06-28,Somatrogon (hGH-CTP),Children - growth hormone deficiency
+TEVA,2023-06-28,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+REGN,2023-06-27,EYLEA HD (aflibercept 8 mg),"Wet age-related macular degeneration (wAMD), diabetic macular edema (DME) and diabetic retinopathy (DR)"
+DRMA,2023-06-27,Xyngari(TM) (DMT310) - (STAR-1),Moderate-to-severe acne
+NKTX,2023-06-27,NKX101,Acute myeloid leukemia / myelodysplastic syndromes
+ACET,2023-06-26,ADI-001,Non-Hodgkin’s lymphoma
+PFE,2023-06-23,LITFULO (ritlecitinib),Alopecia areata
+SRPT,2023-06-22,ELEVIDYS (delandistrogene moxeparvovec-rokl),Duchenne Muscular Dystrophy
+RHHBY,2023-06-22,ELEVIDYS (delandistrogene moxeparvovec-rokl),Duchenne Muscular Dystrophy
+ALDX,2023-06-21,ADX-2191 - (GUARD),Proliferative vitreoretinopathy (PVR)
+LLY,2023-06-21,Jardiance (empagliflozin) - (DINAMO),Pediatric type 2 diabetes
+SPRC,2023-06-21,SCI-110,Tourette Syndrome
+AMGN,2023-06-21,BLINCYTO (blinatumomab),B-Cell Acute Lymphoblastic Leukemia (B-All)
+ARGX,2023-06-20,VYVGART Hytrulo (efgartigimod),Generalized Myasthenia Gravis (gMG)
+PFE,2023-06-20,TALZENNA (talazoparib) and XTANDI (enzalutamide) - (TALAPRO-2),Metastatic Castration-Sensitive Prostate Cancer (mCSPC)
+ZLAB,2023-06-20,VYVGART Hytrulo (efgartigimod),Generalized Myasthenia Gravis (gMG)
+HALO,2023-06-20,VYVGART Hytrulo (efgartigimod),Generalized Myasthenia Gravis (gMG)
+MRK,2023-06-20,KEYTRUDA (pembrolizumab) combined with chemotherapy - (KEYNOTE-585),Locally advanced resectable gastric and gastroesophageal junction (GEJ) adenocarcinoma
+ASND,2023-06-17,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),Follicular lymphoma
+BMY,2023-06-17,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),Follicular lymphoma
+ASND,2023-06-17,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND NHL 001),Mantle cell lymphoma (MCL)
+BMY,2023-06-17,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND NHL 001),Mantle cell lymphoma (MCL)
+BMY,2023-06-16,CAMZYOS  (Mavacamten) - (VALOR-HCM),Symptomatic Obstructive Hypertrophic Cardiomyopathy (HCM)
+LIAN,2023-06-16,CAMZYOS  (Mavacamten) - (VALOR-HCM),Symptomatic Obstructive Hypertrophic Cardiomyopathy (HCM)
+RHHBY,2023-06-16,Columvi (glofitamab-gxbm),B-Cell Non-Hodgkin's Lymphoma
+ALLO,2023-06-15,ALLO-501/501A + ALLO-647 - (ALPHA2),Large B-cell lymphoma
+MBIO,2023-06-15,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+CLLS,2023-06-15,ALLO-501/501A + ALLO-647 - (ALPHA2),Large B-cell lymphoma
+FBIO,2023-06-15,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+NRIX,2023-06-14,NX-2127,"B-cell malignancies, chronic lymphocytic leukemia (CLL)"
+HOTH,2023-06-14,HT-001 - (CLEER-001),EGFRI-induced skin toxicity
+EGRX,2023-06-14,CAL02,Severe Community-Acquired Bacterial Pneumonia (SCABP)
+AMRX,2023-06-14,PEMRYDI RTU (Injectable),Metastatic non-squamous non-small cell lung cancer
+IPSEY,2023-06-13,BYLVAY (odevixibat),Alagille syndrome (ALGS)
+IRWD,2023-06-12,LINZESS (linaclotide),Functional Constipation in pediatric patients aged 6-17
+ABBV,2023-06-12,LINZESS (linaclotide),Functional Constipation in pediatric patients aged 6-17
+CLDX,2023-06-10,Barzolvolimab - (CindU),"Chronic inducible urticaria (CIndU), cold urticaria (ColdU) and symptomatic dermographism (SD), Chronic Spontaneous Urticaria (CSU)"
+NKTX,2023-06-10,NKX019,B-cell malignancies
+AZN,2023-06-10,FasTCAR-T GC012F,Diffuse large B-cell lymphoma (DLBCL)
+CLDX,2023-06-10,Barzolvolimab (CDX-0159),Chronic spontaneous urticaria (CSU)
+AZN,2023-06-10,GC012F,Relapsed/refractory multiple myeloma (RRMM)
+ADCT,2023-06-09,Loncastuximab tesirine - (LOTIS-2),Diffuse Large B-Cell Lymphoma
+GLPG,2023-06-09,GLPG5201 - (EUPLAGIA-1),"B-cell malignancies, Chronic Lymphocytic Leukemia (CLL) and Small Lymphocytic Lymphoma (SLL)"
+BIIB,2023-06-09,LEQEMBI (lecanemab),Mild cognitive impairment (MCI) due to Alzheimer's disease (AD)
+BGNE,2023-06-09,Sonrotoclax (BGB-11417),Chronic lymphocytic leukemia/small lymphocytic leukemia
+ONC,2023-06-09,Sonrotoclax (BGB-11417),Chronic lymphocytic leukemia/small lymphocytic leukemia
+AZN,2023-06-08,Beyfortus (Nirsevimab),Respiratory syncytial virus
+MRK,2023-06-05,PREVYMIS (Letermovir),Prophylaxis of cytomegalovirus (CMV) disease in adult kidney transplant recipients at high risk (D+/R-)
+BPMC,2023-06-05,BLU-451 - (CONCERTO),EGFR exon 20 insertion-positive NSCLC
+RCUS,2023-06-05,Domvanalimab (AB154) + Zimberelimab (AB122) - (ARC-7),Non-small cell lung cancer (NSCLC)
+GILD,2023-06-05,Domvanalimab (AB154) + Zimberelimab (AB122) - (ARC-7),Non-small cell lung cancer (NSCLC)
+ABBV,2023-06-04,Mirvetuximab - (MIRASOL),Cancer - ovarian cancer and relapsed endometrial cancer
+BNTX,2023-06-02,BNT316/ONC-392 (gotistobart) - (PRESERVE-003),"Cancer, PD-(L)1-resistant non-small cell lung cancer"
+PFE,2023-06-01,ABRYSVO (RSVpreF),Respiratory syncytial virus (RSV) vaccine
+MRK,2023-06-01,LYNPARZA (olaparib) - (PROpel),Castration-resistant prostate cancer -first line
+AZN,2023-06-01,LYNPARZA (olaparib) - (PROpel),Castration-resistant prostate cancer -first line
+EGRX,2023-05-31,Landiolol,Supraventricular tachycardia (SVT) - atrial fibrillation and atrial flutter
+LXRX,2023-05-26,INPEFA (sotagliflozin),Heart failure
+BTAI,2023-05-25,BXCL501 - (SERENITY III),Agitation associated with bipolar I or II disorder or schizophrenia
+PFE,2023-05-25,PAXLOVID (ritonavir) - (EPIC-HR),Oral Protease Inhibitor for COVID-19
+REPL,2023-05-25,RP1 (vusolimogene oderparepvec) and OPDIVO (nivolumab) - (IGNYTE-3),Non-melanoma (NMSC) / Non-small cell lung cancer (NSCLC)
+REGN,2023-05-25,Libtayo (cemiplimab) combined with Fianlimab,Melanoma
+GOVX,2023-05-24,GEO-CM04S1- (COH04S1),COVID-19 in immunocompromised patients
+INVA,2023-05-24,XACDURO (sulbactam for injection; durlobactam for injection),Hospital-acquired bacterial pneumonia and ventilator-associated bacterial pneumonia (HABP/VABP) caused by susceptible isolates of Acinetobacter baumannii-calcoaceticus complex (Acinetobacter)
+ZLAB,2023-05-24,XACDURO (sulbactam for injection; durlobactam for injection),Hospital-acquired bacterial pneumonia and ventilator-associated bacterial pneumonia (HABP/VABP) caused by susceptible isolates of Acinetobacter baumannii-calcoaceticus complex (Acinetobacter)
+INDV,2023-05-23,OPVEE (nalmefene),Opioid Overdose
+OPNT,2023-05-23,OPVEE (nalmefene),Opioid Overdose
+ABBV,2023-05-22,Epcoritamab,B-cell Lymphoma (DLBCL)
+BPMC,2023-05-22,AYVAKIT (avapritinib),Non-advanced systemic mastocytosis (SM)
+GMAB,2023-05-22,Epcoritamab,B-cell Lymphoma (DLBCL)
+ADPT,2023-05-19,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+KRYS,2023-05-19,VYJUVEK (beremagene geperpavec-svdt),Epidermolysis Bullosa
+GMAB,2023-05-19,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+ABBV,2023-05-19,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+IMMX,2023-05-19,NXC-201 (HBI10101) - (NEXICART-1),relapsed/refractory multiple myeloma and relapsed/refractory AL amyloidosis
+ABBV,2023-05-18,RINVOQ (upadacitinib),Crohn's disease (induction/maintenance)
+PFE,2023-05-18,ABRYSVO - (RSVpreF),Respiratory Syncytial Virus (RSV) in infants
+ANIP,2023-05-15,Alendronate Sodium Oral Solution (RLD Fosamax generic),Osteoporosis
+SRPT,2023-05-15,ELEVIDYS (delandistrogene moxeparvovec-rokl),Duchenne Muscular Dystrophy
+RHHBY,2023-05-15,ELEVIDYS (delandistrogene moxeparvovec-rokl),Duchenne Muscular Dystrophy
+ANIP,2023-05-15,Methsuximide Capsules USP (Celontin generics),Absence seizures that are refractory to other drugs
+ABBV,2023-05-15,JUVÉDERM - (SKINVIVE) (injectable HA),Botox in the cheeks
+CPIX,2023-05-15,Caldolor,Pain and fever in patients three months to six months of age
+IBRX,2023-05-11,ANKTIVA,BCG-Unresponsive Non-Muscle Invasive Bladder Cancer
+PLX,2023-05-10,Pegunigalsidase alfa  (PRX-102),Fabry disease
+AZN,2023-05-09,FARXIGA (Dapagliflozin),"Risk of cardiovascular (CV) death, hospitalization for heart failure (hHF) and urgent heart failure (HF)"
+NVO,2023-05-04,Concizumab - (Explorer 7),Hemophilia A
+NVO,2023-05-04,Concizumab,Hemophilia A and B
+AGEN,2023-05-03,AREXVY,RSV vaccine
+GSK,2023-05-03,AREXVY,RSV vaccine
+VRTX,2023-05-03,KALYDECO (ivacaftor),Children with cystic fibrosis (CF) ages 1 month to less than four months old
+ALKS,2023-05-01,LUMRYZ™ (sodium oxybate),Excessive daytime sleepiness and cataplexy in patients suffering from narcolepsy
+AVDL,2023-05-01,LUMRYZ™ (sodium oxybate),Excessive daytime sleepiness and cataplexy in patients suffering from narcolepsy
+NVO,2023-04-28,Somapacitan (NN8640),Growth Hormone Deficiency (GHD)
+TEVA,2023-04-28,UZEDY (risperidone),Schizophrenia
+AZN,2023-04-28,LYNPARZA (olaparib) - (PROpel),Castration-resistant prostate cancer -first line
+MRK,2023-04-28,LYNPARZA (olaparib) - (PROpel),Castration-resistant prostate cancer -first line
+IGXT,2023-04-27,Buprenorphine Buccal Film - (Belbuca Biosimilar),Pain
+PFE,2023-04-27,20vPnC,Pneumococcal Disease
+MCRB,2023-04-26,Vowst (SER-109),Recurrent C. Difficile infection
+IONS,2023-04-25,QALSODY (Tofersen),Amyotrophic lateral sclerosis (SOD1-ALS)
+BIIB,2023-04-25,QALSODY (Tofersen),Amyotrophic lateral sclerosis (SOD1-ALS)
+QTRX,2023-04-25,Tofersen,Superoxide dismutase 1 amyotrophic lateral sclerosis (SOD1-ALS)
+NKTX,2023-04-25,NKX101,Acute myeloid leukemia / myelodysplastic syndromes
+ANIP,2023-04-24,Nitrofurantoin Oral Suspension USP - (Furadantin generic),Urinary tract infections
+RHHBY,2023-04-19,Polivy (polatuzumab vedotin) - (POLARIX),Diffuse Large B-Cell Lymphoma
+ABBV,2023-04-18,QULIPTA (atogepant),Preventive treatment of migraine
+PFE,2023-04-17,Tisotumab vedotin - (innovaTV 207),Squamous cell carcinoma of the head and neck (SCCHN)
+GMAB,2023-04-17,Tisotumab vedotin - (innovaTV 207),Squamous cell carcinoma of the head and neck (SCCHN)
+IGXT,2023-04-17,RIZAFILM VersaFilm,Acute migraine
+GMDA,2023-04-17,Omisirge (omidubicel-onlv),Hematologic Malignancies
+INVA,2023-04-17,XACDURO (sulbactam for injection; durlobactam for injection),Hospital-acquired bacterial pneumonia and ventilator-associated bacterial pneumonia (HABP/VABP) caused by susceptible isolates of Acinetobacter baumannii-calcoaceticus complex (Acinetobacter)
+ZLAB,2023-04-17,XACDURO (sulbactam for injection; durlobactam for injection),Hospital-acquired bacterial pneumonia and ventilator-associated bacterial pneumonia (HABP/VABP) caused by susceptible isolates of Acinetobacter baumannii-calcoaceticus complex (Acinetobacter)
+AFMD,2023-04-16,Acimtamig (AFM13) - (REDIRECT),CD30-positive peripheral T cell lymphoma (PTCL)
+TEVA,2023-04-13,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+ALVO,2023-04-13,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+LLY,2023-04-13,Omvoh (Mirikizumab) - (LUCENT 1),Ulcerative Colitis
+TAK,2023-04-11,HYQVIA,Primary immunodeficiency (PI) in children 2-16 years old
+JNJ,2023-04-03,Erleada (apalutamide),"Tablet reduction, non-metastatic castration-resistant prostate cancer (nmCRPC)"
+PFE,2023-04-03,PADCEV (enfortumab vedotin) and KEYTRUDA (pembrolizumab) - (EV-103),Urothelial cancer
+EBS,2023-03-29,OTC NARCAN (naloxone HCl),Opioid overdose
+MRK,2023-03-29,KEYTRUDA (pembrolizumab) injection,adult and pediatric patients with unresectable or metastatic microsatellite instability-high (MSI-H) or mismatch repair deficient (dMMR) solid tumors
+AGEN,2023-03-27,Botensilimab plus balstilimab - (BATTMAN),Relapsed/refractory microsatellite stable colorectal cancer with no active liver metastases (r/r MSS CRC NLM)
+PHAR,2023-03-24,Leniolisib,Activated phosphoinositide 3-kinase delta syndrome (APDS)
+INCY,2023-03-23,QD Ruxolitinib XR,Myelofibrosis
+INCY,2023-03-22,Zynyz (retifanlimab),Merkel cell carcinoma (MCC)
+REGN,2023-03-22,Evkeeza (evinacumab),Homozygous familial hypercholesterolemia (HoFH) in children
+MRK,2023-03-22,REZZAYO (rezafungin injection),Candidemia
+IONS,2023-03-22,QALSODY (Tofersen),Amyotrophic lateral sclerosis (SOD1-ALS)
+ABBV,2023-03-22,VYALEV (foscarbidopa and foslevodopa),Parkinson's disease
+BIIB,2023-03-22,QALSODY (Tofersen),Amyotrophic lateral sclerosis (SOD1-ALS)
+NVS,2023-03-21,Hyrimoz (adalimumab-adaz) - (Humira biosimilar),"Rheumatoid arthritis, juvenile idiopathic arthritis, psoriatic arthritis, ankylosing spondylitis, Crohn’s disease, ulcerative colitis, and plaque psoriasis"
+NVS,2023-03-17,Tafinlar (dabrafenib) + Mekinist (trametinib),Pediatric BRAF V600E low-grade glioma
+PFE,2023-03-16,PAXLOVID (ritonavir) - (EPIC-HR),Oral Protease Inhibitor for COVID-19
+ACAD,2023-03-10,DAYBUE (trofinetide),Rett Syndrome
+RHHBY,2023-03-10,Polivy (polatuzumab vedotin-piiq) in combination with Rituxan,Diffuse Large B-Cell Lymphoma
+PFE,2023-03-10,Intranasal zavegepant,Migraine
+AMPH,2023-03-07,Naloxone Intranasal,Opioid overdose
+CHRS,2023-03-06,CHS-1701,Pegfilgrastim biosimilar
+MRK,2023-03-06,MMRV Family Vaccines (Intramuscular Administration),"Measles, Mumps, and Rubella Virus Vaccine Live"
+LLY,2023-03-03,Verzenio (abemaciclib),"HR+, HER2-, Node-Positive, High Risk Early Breast Cancer"
+AMGN,2023-02-28,Omecamtiv mecarbil,Heart failure with reduced ejection fraction (HFrEF)
+CYTK,2023-02-28,Omecamtiv mecarbil,Heart failure with reduced ejection fraction (HFrEF)
+REGN,2023-02-28,Kevzara (sarilumab),Polymyalgia rheumatica (PMR)
+BIIB,2023-02-28,SKYCLARYS (omaveloxolone),Friedreich’s ataxia (FA)
+CLRB,2023-02-28,CLR 131 - (CLOVER-1),Various lymphoma
+SNY,2023-02-23,Altuviiio (Efanesoctocog alfa) - (XTEND-1),Hemophilia A
+TVTX,2023-02-17,FILSPARI (sparsentan),IgA nephropathy
+APLS,2023-02-17,SYFOVRE (pegcetacoplan injection),Geographic atrophy (GA)
+TEVA,2023-02-17,AUSTEDO XR (deutetrabenazine),Tardive dyskinesia (TD)
+BCYC,2023-02-14,Bicycle Toxin Conjugates zelenectide pevedotin (BT8009) - (Duravelo-2),Solid tumors
+DCTH,2023-02-14,HEPZATO (Melphalan/HDS) - (FOCUS),Liver-dominant ocular melanoma
+IMVIQ,2023-02-13,Maveropepimut-S (DPX-Survivac) and KEYTRUDA (pembrolizumab) - (VITALIZE),Diffuse Large B Cell Lymphoma (DLBCL)
+PFE,2023-02-10,CIBINQO (abrocitinib),Atopic dermatitis in adolescents
+GSK,2023-02-10,JEMPERLI (Dostarlimab),dMMR endometrial cancer
+ANAB,2023-02-10,JEMPERLI (Dostarlimab),dMMR endometrial cancer
+GLPG,2023-02-09,GLPG5201 - (EUPLAGIA-1),"B-cell malignancies, Chronic Lymphocytic Leukemia (CLL) and Small Lymphocytic Lymphoma (SLL)"
+REGN,2023-02-08,EYLEA (aflibercept) Injection,Retinopathy of Prematurity (ROP)
+ONTX,2023-02-07,Rigosertib,Recessive Dystrophic Epidermolysis Bullosa-Associated Squamous Cell Carcinoma
+RHHBY,2023-02-07,Crovalimab - (COMMODORE 1 + 2),Paroxysmal nocturnal hemoglobinuria (PNH)
+TRAW,2023-02-07,Rigosertib,Recessive Dystrophic Epidermolysis Bullosa-Associated Squamous Cell Carcinoma
+TAK,2023-02-03,"TAKHZYRO (lanadelumab) - (SHP643-301, SPRING)",Hereditary angioedema (HAE) attacks in patients 2 to <6 yrs
+GILD,2023-02-03,TRODELVY (sacituzumab govitecan),HR+/HER2- metastatic breast cancer
+GSK,2023-02-01,DUVROQ (Daprodustat),Anaemia in chronic kidney disease for patients on dialysis
+CNTX,2023-01-31,ORSERDU (elacestrant),"ER+, HER2-, ESR1-mutated Breast Cancer"
+LLY,2023-01-27,Jaypirca (pirtobrutinib),Relapsed/refractory chronic lymphocytic leukemia
+MRK,2023-01-27,KEYTRUDA (Pembrolizumab),"Stage IB, II or IIIA non-small cell lung cancer (NSCLC)"
+LLY,2023-01-27,Pirtobrutinib (LOXO-305),Mantle cell lymphoma (MCL)
+BMY,2023-01-26,Liso-cel (JCAR017) - (TRANSCEND CLL-004),Chronic Lymphocytic Leukemia (CLL)
+PGEN,2023-01-24,PAPZIMEOS (zopapogene imadenovec-drba),Recurrent Respiratory Papillomatosis (RRP)
+LLY,2023-01-20,Kisunla (donanemab-azbt),Early symptomatic Alzheimer's disease (AD)
+BGNE,2023-01-19,BRUKINSA (zanubrutinib),First-line chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)
+MRK,2023-01-19,TUKYSA (tucatinib),HER2 amplified metastatic colorectal cancer
+PFE,2023-01-19,TUKYSA (tucatinib),HER2 amplified metastatic colorectal cancer
+ONC,2023-01-19,BRUKINSA (zanubrutinib),First-line chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)
+IMMX,2023-01-06,NXC-201 (HBI10101) - (NEXICART-1),relapsed/refractory multiple myeloma and relapsed/refractory AL amyloidosis
+RLFTF,2022-12-23,ACER-001,Urea cycle disorder (UCD)
+RHHBY,2022-12-23,Lunsumio (mosunetuzumab-axgb),Follicular lymphoma
+ZVRA,2022-12-23,ACER-001,Urea cycle disorder (UCD)
+ALVO,2022-12-20,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+TEVA,2022-12-20,SIMLANDI (adalimumab-ryvk) - (Humira biosimilar),Inflammatory diseases
+ANIP,2022-12-20,Levocarnitine Tablets USP,Carnitine supplement
+ABBV,2022-12-19,VRAYLAR (cariprazine),Major depressive disorder (MDD)
+IMVIQ,2022-12-15,Maveropepimut-S (DPX-Survivac) and KEYTRUDA (pembrolizumab) - (VITALIZE),Diffuse Large B Cell Lymphoma (DLBCL)
+IMMX,2022-12-14,NXC-201 (HBI10101) - (NEXICART-1),relapsed/refractory multiple myeloma and relapsed/refractory AL amyloidosis
+ADMA,2022-12-13,ASCENIV (RI-002),Primary Immune Deficiency Diseases
+CYTK,2022-12-13,Omecamtiv mecarbil,Heart failure with reduced ejection fraction (HFrEF)
+ZLAB,2022-12-13,KRAZATI (adagrasib),Non-small cell lung cancer (NSCLC) with a KRASG12C Mutation
+BMY,2022-12-13,KRAZATI (adagrasib),Non-small cell lung cancer (NSCLC) with a KRASG12C Mutation
+AMGN,2022-12-13,Omecamtiv mecarbil,Heart failure with reduced ejection fraction (HFrEF)
+ADMA,2022-12-13,BIVIGAM,Primary humoral immunodeficiency
+GLPG,2022-12-13,GLPG5101 - (ATALANTA-1),Relapsed/refractory Non-Hodgkin Lymphoma (rrNHL)
+ZLAB,2022-12-12,Odronextamab - (OLYMPIA),Non-Hodgkin Lymphoma (NHL)
+REGN,2022-12-12,Odronextamab - (OLYMPIA),Non-Hodgkin Lymphoma (NHL)
+IPHA,2022-12-12,Lacutamab (IPH4102) - (TELLOMAK 3),"Mycosis Fungoides, Sézary Syndrome"
+AFMD,2022-12-12,Acimtamig (AFM13) - (REDIRECT),CD30-positive peripheral T cell lymphoma (PTCL)
+XNCR,2022-12-12,Plamotamab (XmAb13676),"Chronic Lymphocytic Leukemia, Small Lymphocytic Lymphoma, DLBCL"
+RHHBY,2022-12-12,Cevostamab - (CAMMA 1),Relapsed/Refractory Multiple Myeloma (RRMM)
+RHHBY,2022-12-12,Cevostamab (FcRH5xCD3) - (GO39775),Relapsed/Refractory Multiple Myeloma (RRMM)
+MRK,2022-12-12,Pembrolizumab + chemotherapy,Newly Diagnosed Classical Hodgkin Lymphoma (cHL)
+GMAB,2022-12-12,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+ADPT,2022-12-12,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+BMY,2022-12-12,Mezigdomide (CC-92480) in combination with Dexamethasone - (CC-92480-MM-001),Relapsed/Refractory Multiple Myeloma (RRMM)
+ABBV,2022-12-12,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+ACET,2022-12-10,ADI-001,Non-Hodgkin’s lymphoma
+SYRS,2022-12-10,Tamibarotene (SY-1425) with VENCLEXTA (venetoclax) and VIDAZA (azacitidine) - (SELECT-AML-1),Acute myeloid leukemia (AML)
+AZN,2022-12-10,FasTCAR-T GC012F,Diffuse large B-cell lymphoma (DLBCL)
+BNTX,2022-12-08,Bivalent BNT162b2,Omicron BA.4/BA.5-adapted bivalent COVID-19 vaccine
+MRNA,2022-12-08,"mRNA-1273.222 - (including EG.5, FL.1.5.1, and BA.2.86)",Covid-19 Omicron Booster
+PFE,2022-12-08,Bivalent BNT162b2,Omicron BA.4/BA.5-adapted bivalent COVID-19 vaccine
+REPL,2022-12-07,RP1 (vusolimogene oderparepvec) and OPDIVO (nivolumab) - (IGNYTE-3),Non-melanoma (NMSC) / Non-small cell lung cancer (NSCLC)
+CLDX,2022-12-06,Barzolvolimab (CDX-0159),Chronic spontaneous urticaria (CSU)
+NKTX,2022-12-05,NKX019,B-cell malignancies
+YMAB,2022-12-01,Omburtamab,CNS/Leptomeningeal Metastases from Neuroblastoma
+RIGL,2022-12-01,REZLIDHIA (olutasidenib),Acute myeloid leukemia
+NVO,2022-12-01,REZLIDHIA (olutasidenib),Acute myeloid leukemia
+SCYX,2022-12-01,BREXAFEMME (ibrexafungerp) - (CANDLE),"Recurrent Vulvovaginal candidiasis (rVVC), Vaginal yeast infections"
+QURE,2022-11-22,HEMGENIX (Etranacogene dezaparvovec),Hemophilia B
+JAZZ,2022-11-18,Rylaze (asparaginase erwinia chrysanthemi (recombinant)-rywn) - (Monday/Wednesday/Friday dosing),Acute lymphoblastic leukemia (ALL) and lymphoblastic lymphoma (LBL)
+LITS,2022-11-17,Zandelisib - (MIRAGE),"Indolent B-cell Non-Hodgkin's Lymphoma (iB-NHL) without small lymphocytic lymphoma (SLL), lymphoplasmacytic lymphoma (LPL), and Waldenström's macroglobulinemia (WM)"
+MEIP,2022-11-17,Zandelisib - (MIRAGE),"Indolent B-cell Non-Hodgkin's Lymphoma (iB-NHL) without small lymphocytic lymphoma (SLL), lymphoplasmacytic lymphoma (LPL), and Waldenström's macroglobulinemia (WM)"
+CADL,2022-11-17,linoserpaturev (CAN-3110),Glioma
+SNY,2022-11-17,TZIELD (teplizumab-mzwv),Type 1 diabetes
+ABBV,2022-11-14,ELAHERE (mirvetuximab soravtansine-gynx),Platinum-Resistant Ovarian Cancer
+PDSB,2022-11-14,PDS0101 and chemoradiotherapy - (IMMUNOCERV),Cervical cancer
+AZN,2022-11-11,IMFINZI (Durvalumab) + tremelimumab,Non-small cell lung cancer (NSCLC)
+PFE,2022-11-10,ADCETRIS (brentuximab vedotin),Previously untreated high risk classical Hodgkin lymphoma (cHL)
+ADAP,2022-11-08,ADP-A2M4CD8 - (SURPASS),Urothelial Cancer
+PDSB,2022-11-07,PDS0101 and chemoradiotherapy - (IMMUNOCERV),Cervical cancer
+AFMD,2022-11-03,AFM13 + NK cells (AFM13-104),CD30-positive lymphomas
+GILD,2022-11-02,Vemlidy (tenofovir alafenamide),Hepatitis B virus (HBV) infection in pediatric patients 12 years of age and older
+AMRX,2022-11-02,Leuprolide Acetate Injection,Advanced prostatic cancer
+REGN,2022-10-27,DUPIXENT (dupilumab) - (PRIME2),Prurigo nodularis (PN)
+GILD,2022-10-27,Hepcludex (Bulevirtide) - (MYR301),Hepatitis delta virus (HDV)
+SNY,2022-10-27,DUPIXENT (dupilumab) - (PRIME2),Prurigo nodularis (PN)
+JNJ,2022-10-26,TECVAYLI (teclistamab),Relapsed or refractory (R/R) multiple myeloma.
+NRIX,2022-10-26,NX-2127,"B-cell malignancies, chronic lymphocytic leukemia (CLL)"
+AZN,2022-10-24,IMFINZI (Durvalumab) + tremelimumab  - (HIMALAYA),Hepatocellular carcinoma (HCC)
+ABBV,2022-10-21,RINVOQ (upadacitinib) - (SELECT-AXIS 2),Non-radiographic axial spondyloarthritis
+NVAX,2022-10-19,NVX-CoV2373 - (PREVENT-19),COVID-19 vaccine (booster)
+GSK,2022-10-17,Menveo (Meningococcal Oligosaccharide Diptheria CRM197 Conjugate Vaccine),Meningococcal disease
+CVM,2022-10-17,Multikine - (IT-MATTERS),Head and Neck cancer
+BNTX,2022-10-12,Bivalent BNT162b2,Omicron BA.4/BA.5-adapted bivalent COVID-19 vaccine
+PFE,2022-10-12,Bivalent BNT162b2,Omicron BA.4/BA.5-adapted bivalent COVID-19 vaccine
+MRNA,2022-10-12,"mRNA-1273.222 - (including EG.5, FL.1.5.1, and BA.2.86)",Covid-19 Omicron Booster
+SUPN,2022-10-10,ONAPGO (apomorphine hydrochloride) injection (SPN-830),Motor fluctuations in Parkinson’s disease (PD)
+PLUR,2022-10-07,NurOwn,Amytrophic lateral sclerosis (ALS)
+BCLI,2022-10-07,NurOwn,Amytrophic lateral sclerosis (ALS)
+AMLX,2022-09-29,RELYVRIO (sodium phenylbutyrate and taurursodiol),Amyotrophic lateral sclerosis (ALS)
+CPRX,2022-09-29,FIRDAPSE,Pediatric Lambert-Eaton myasthenic syndrome (LEMS)
+REGN,2022-09-28,DUPIXENT (dupilumab) - (PRIME),Prurigo nodularis (PN)
+SNY,2022-09-28,DUPIXENT (dupilumab) - (PRIME),Prurigo nodularis (PN)
+IPHA,2022-09-23,Lacutamab (IPH4102) - (TELLOMAK 3),"Mycosis Fungoides, Sézary Syndrome"
+LLY,2022-09-21,RETEVMO (Selpercatinib),Treatment-naïve RET fusion-positive non-small cell lung cancer (NSCLC)
+LLY,2022-09-21,RETEVMO (Selpercatinib),RET Fusion-Positive Solid Tumors
+FENC,2022-09-20,Pedmark (sodium thiosulfate),"Ototoxicity in non-metastatic, solid tumors"
+BLUE,2022-09-17,SKYSONA (elivaldogene autotemcel),Cerebral Adrenoleukodystrophy (CALD)
+HRTX,2022-09-16,APONVIE (aprepitant),Postoperative nausea and vomiting (PONV)
+TRAW,2022-09-12,Rigosertib and OPDIVO (Nivolumab),KRAS+ Non-Small Cell Lung Cancer
+ONTX,2022-09-12,Rigosertib and OPDIVO (Nivolumab),KRAS+ Non-Small Cell Lung Cancer
+BMY,2022-09-10,Sotyktu  (Deucravacitinib) - (POETYK PSO-2),Plaque psoriasis
+ASRT,2022-09-09,ROLVEDON (eflapegrastim-xnst),Neutropenia
+SPPI,2022-09-09,ROLVEDON (eflapegrastim-xnst),Neutropenia
+BCYC,2022-09-06,BT5528 and OPDIVO (nivolumab),Solid tumors
+VRTX,2022-09-02,ORKAMBI (lumacaftor/ivacaftor),Cystic fibrosis (CF) in patients aged 12 to <24 months
+BNTX,2022-08-31,"Comirnaty (BNT162b2, XBB.1.5, BA.2.86 (Pirola), and EG.5.1 (Eris))",COVID-19 Vaccine (Omicron Booster)
+MRNA,2022-08-31,"mRNA-1273.222 - (including EG.5, FL.1.5.1, and BA.2.86)",Covid-19 Omicron Booster
+ABBV,2022-08-31,Pivekimab (IMGN632) - (CADENZA),"Relapse/Refractory AML, ALL, BPDCN"
+PFE,2022-08-31,"Comirnaty (BNT162b2, XBB.1.5, BA.2.86 (Pirola), and EG.5.1 (Eris))",COVID-19 Vaccine (Omicron Booster)
+AQST,2022-08-31,Libervant (diazepam),Epileptic seizures
+INCY,2022-08-26,Pemazyre (pemigatinib),Myeloid/lymphoid neoplasms (MLNs) with FGFR1 rearrangement
+JNJ,2022-08-24,IMBRUVICA (ibrutinib),Pediatric Chronic Graft-Versus-Host Disease
+NVAX,2022-08-19,NVX-CoV2373 - (PREVENT-19),COVID-19 vaccine (booster)
+AXSM,2022-08-19,AUVELITY,Major Depressive Disorder
+BLUE,2022-08-17,Zynteglo,β-Thalassemia
+AZN,2022-08-12,ENHERTU (fam-trastuzumab deruxtecan-nxki),Non-small Cell Lung Cancer (NSCLC)
+RHHBY,2022-08-11,Xofluza (baloxavir marboxil),Influenza in patients 5 years and older
+ACAD,2022-08-05,NUPLAZID (pimavanserin),Alzheimer’s disease psychosis (ADP)
+PFE,2022-08-05,MYFEMBREE (Relugolix),Endometriosis-associated pain
+AZN,2022-08-05,ENHERTU (trastuzumab deruxtecan),HER low breast cancer
+AZN,2022-08-05,CALQUENCE (acalabrutinib),"Chronic Lymphocytic Leukemia (CLL), small lymphocytic lymphoma (SLL) and refractory mantle cell lymphoma (MCL)"
+PDSB,2022-08-04,PDS0101 + KEYTRUDA (pembrolizumab) - (VERSATILE-002),HPV16-positive first-line recurrent and/or metastatic head and neck squamous cell cancer with low PD-L1 expression (CPS 1-19)
+ABBV,2022-08-03,JUVÉDERM VOLUX XC,Jawline definition
+CHRS,2022-08-02,CIMERLI (ranibizumab-ranq) - (Lucentis Biosimilar),"Wet age-related macular degeneration (wAMD), among others"
+JNJ,2022-08-01,STELARA (ustekinumab),Psoriatic Arthritis in Pediatric Patients
+GSK,2022-07-27,Benlysta (Belimumab),Pediatric Lupus Nephritis
+AVDL,2022-07-19,LUMRYZ™ (sodium oxybate),Excessive daytime sleepiness and cataplexy in patients suffering from narcolepsy
+INCY,2022-07-19,Ruxolitinib Cream (Opzelura),Vitiligo
+ALKS,2022-07-19,LUMRYZ™ (sodium oxybate),Excessive daytime sleepiness and cataplexy in patients suffering from narcolepsy
+ETON,2022-07-18,ZONISADE (Zonisamide Oral Suspension),Epilepsy
+NVAX,2022-07-13,NVX-CoV2373,COVID-19 vaccine
+AMGN,2022-07-08,Krystexxa (pegloticase injection) with Methotrexate,Uncontrolled Gout
+AZN,2022-06-30,IMFINZI (durvalumab),Non-Small Cell Lung Cancer (before and after surgery)
+CLDX,2022-06-30,Barzolvolimab (CDX-0159),Chronic spontaneous urticaria (CSU)
+SPRO,2022-06-27,Tebipenem HBr (SPR994) - (ADAPT-PO),Complicated urinary tract infections (cUTI)
+BMY,2022-06-24,Breyanzi (lisocabtagene maraleucel),Large B-cell lymphoma (LBCL)
+MRK,2022-06-22,VAXNEUVANCE (V114-029)  - (PNEU-PED),Pneumococcal Vaccine in children
+NVS,2022-06-22,Tafinlar (dabrafenib) + Mekinist (trametinib),Solid tumors in adult and pediatric patients
+ANIP,2022-06-22,Clorazepate Dipotassium Tablets,Tranxene generic
+ZVRA,2022-06-21,ACER-001,Urea cycle disorder (UCD)
+RLFTF,2022-06-21,ACER-001,Urea cycle disorder (UCD)
+ABBV,2022-06-17,SKYRIZI (risankizumab),Crohn’s Disease
+PFE,2022-06-17,Comirnaty (BNT162b2),COVID-19 vaccine
+BNTX,2022-06-17,Comirnaty (BNT162b2),COVID-19 vaccine
+RYTM,2022-06-16,IMCIVREE (setmelanotide),Alstrom Syndrome
+RYTM,2022-06-16,IMCIVREE (setmelanotide),Bardet-Biedl Syndrome
+ALNY,2022-06-14,AMVUTTRA (vutrisiran),Hereditary transthyretin-mediated (hATTR) amyloidosis
+INCY,2022-06-14,OLUMIANT (baricitinib),Alopecia Areata
+LLY,2022-06-14,OLUMIANT (baricitinib),Alopecia Areata
+LLY,2022-06-13,OLUMIANT (baricitinib),Alopecia Areata
+INCY,2022-06-13,OLUMIANT (baricitinib),Alopecia Areata
+ABBV,2022-06-11,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+GMAB,2022-06-11,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+ADPT,2022-06-11,EPKINLY (epcoritamab-bysp),Relapsed or Refractory Diffuse Large B-Cell Lymphoma (DLBCL)
+CRBU,2022-06-10,CB-010 - (ANTLER),B-Cell Non-Hodgkin Lymphoma
+REGN,2022-06-07,DUPIXENT (dupilumab),Atopic dermatitis in 6 months - 5 year-olds
+IBRX,2022-06-06,ANKTIVA,BCG-Unresponsive Non-Muscle Invasive Bladder Cancer
+GSK,2022-06-06,PRIORIX,"Measles, mumps and rubella (MMR)"
+AMGN,2022-06-06,RIABNI (rituximab-arrx) with methotrexate - (Rituxan biosimilar),Rheumatoid arthritis (RA)
+MEIP,2022-06-04,Zandelisib (ME-401) - (TIDAL),Relapsed/refractory Follicular Lymphoma (FL) Non Hodgkin Lymphoma
+LITS,2022-06-04,Zandelisib (ME-401) - (TIDAL),Relapsed/refractory Follicular Lymphoma (FL) Non Hodgkin Lymphoma
+PTCT,2022-05-31,Evrysdi (risdiplam),Spinal Muscular Atrophy (SMA) in babies
+RHHBY,2022-05-31,Evrysdi (risdiplam),Spinal Muscular Atrophy (SMA) in babies
+BMY,2022-05-27,OPDIVO (nivolumab) + YERVOY (ipilimumab) - (CM-648),Esophageal squamous cell carcinoma (ESCC)
+AMRX,2022-05-27,FYLNETRA (pegfilgrastim-pbbk),Neulasta biosimilar
+ETON,2022-05-27,ET-105 (Lamotrigine for Oral Suspension),"Lennox-Gastaut syndrome, epilepsy"
+ACET,2022-05-26,ADI-001,Non-Hodgkin’s lymphoma
+LLY,2022-05-26,RETEVMO (Selpercatinib),RET Fusion-Positive Solid Tumors
+PDSB,2022-05-26,PDS0101 + KEYTRUDA (pembrolizumab) - (VERSATILE-002),HPV16-positive first-line recurrent and/or metastatic head and neck squamous cell cancer with low PD-L1 expression (CPS 1-19)
+IOVA,2022-05-26,AMTAGVI (Lifileucel (LN-144)) - (TILVANCE-301),Refractory metastatic melanoma
+RHHBY,2022-05-26,Columvi (glofitamab-gxbm),B-Cell Non-Hodgkin's Lymphoma
+AMPH,2022-05-24,Regadenoson (Lexiscan bioequivalent),Radionuclide myocardial perfusion imaging (MPI)
+ROIV,2022-05-24,VTAMA (tapinarof),Plaque psoriasis
+MNKD,2022-05-24,TYVASO (treprostinil) DPI,Pulmonary arterial hypertension and pulmonary hypertension associated with interstitial lung disease (PH-ILD)
+UTHR,2022-05-24,TYVASO (treprostinil) DPI,Pulmonary arterial hypertension and pulmonary hypertension associated with interstitial lung disease (PH-ILD)
+VRCA,2022-05-24,YCANTH (cantharidin),Molluscum contagiosum
+SNY,2022-05-20,DUPIXENT (dupilumab),Eosinophilic esophagitis (EoE)
+REGN,2022-05-20,DUPIXENT (dupilumab),Eosinophilic esophagitis (EoE)
+SIGA,2022-05-19,TPOXX (tecovirimat) - (IV),Smallpox
+RARE,2022-05-19,DTX301 - (Enh3ance),Ornithine Transcarbamylase (OTC) Deficiency
+LLY,2022-05-13,Mounjaro (tirzepatide),Type 2 Diabetes
+URGN,2022-05-13,UGN-102 - (OPTIMA II),Non-Muscle-Invasive Bladder Cancer
+AZN,2022-05-12,GC012F,Relapsed/refractory multiple myeloma (RRMM)
+AUTL,2022-05-12,AUTO1/22 - (CARPALL),Pediatric Acute lymphoblastic leukemia (ALL)
+INCY,2022-05-11,OLUMIANT (baricitinib),COVID-19
+INO,2022-05-10,VGX-3100 - (REVEAL-2),Cervical high-grade squamous intraepithelial lesions (HSIL)
+AZN,2022-05-05,ENHERTU (trastuzumab deruxtecan),Second line HER2+ breast cancer
+PHAT,2022-05-03,VOQUEZNA,H. pylori
+AXSM,2022-05-02,SYMBRAVO (meloxicam and rizatriptan),Migraine
+CHRS,2022-05-02,LOQTORZI (toripalimab-tpzi) in combination with cisplatin and gemcitabine,Nasopharyngeal carcinoma (NPC)
+GILD,2022-04-30,"YESCARTA (Axicabtagene Ciloleucel),  KTE-C19 and utomilumab - (ZUMA-7)",Refractory Large B-cell Lymphoma
+ABBV,2022-04-29,RINVOQ (upadacitinib),Active Ankylosing Spondylitis
+BMY,2022-04-28,Camzyos (mavacamten),Hypertrophic cardiomyopathy (HCM)
+AZN,2022-04-28,ULTOMIRIS (ravulizumab-cwvz),Anti-acetylcholine receptor (AChR) antibody-positive generalized myasthenia gravis (gMG)
+LIAN,2022-04-28,Camzyos (mavacamten),Hypertrophic cardiomyopathy (HCM)
+EQ,2022-04-25,Itolizumab (EQ001) - (EQUATE),Acute graft-versus-host disease
+TEVA,2022-04-19,UZEDY (risperidone),Schizophrenia
+AMRX,2022-04-13,ALYMSYS (bevacizumab-maly),Avastin biosimilar
+BMY,2022-04-12,Augtyro (repotrectinib),Non-small-cell lung cancer (NSCLC) and solid tumors
+ZLAB,2022-04-12,Augtyro (repotrectinib),Non-small-cell lung cancer (NSCLC) and solid tumors
+ETON,2022-04-11,Cysteine Hydrochloride Injection - (Bioequivalent of Elcys),Nutritional requirements for patients with liver disease
+AFMD,2022-04-11,AFM13 + NK cells (AFM13-104),CD30-positive lymphomas
+BCYC,2022-04-11,Bicycle Toxin Conjugates zelenectide pevedotin (BT8009) - (Duravelo-2),Solid tumors
+BMY,2022-04-11,OPDIVO (Nivolumab) and YERVOY (ipilimumab) - (CheckMate 816),Non-Small Cell Lung Cancer (NSCLC)
+BTAI,2022-04-06,IGALMI (dexmedetomidine),Agitation associated with schizophrenia and bipolar disorders
+NVS,2022-04-06,Vijoice (alpelisib),PIK3CA-Related Overgrowth Spectrum (PROS)
+GILD,2022-04-01,YESCARTA,Refractory diffuse large B-cell lymphoma (DLBCL)
+CSLLY,2022-03-30,Vafseo (vadadustat),Anemia due to Chronic Kidney Disease in Adult Patients on Dialysis
+AKBA,2022-03-30,Vafseo (vadadustat),Anemia due to Chronic Kidney Disease in Adult Patients on Dialysis
+REPL,2022-03-30,RP1 (vusolimogene oderparepvec) - (ARTACUS),Liver and kidney transplant recipients with recurrent Cutaneous squamous cell carcinoma
+PFE,2022-03-29,"Cabenuva (cabotegravir, rilpivirine)",HIV for adolescents 12 years and older
+BNTX,2022-03-29,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+GSK,2022-03-29,"Cabenuva (cabotegravir, rilpivirine)",HIV for adolescents 12 years and older
+LPCN,2022-03-29,TLANDO (testosterone undecanoate),Testosterone replacement therapy (TRT)
+HALO,2022-03-29,TLANDO (testosterone undecanoate),Testosterone replacement therapy (TRT)
+PFE,2022-03-29,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+NVO,2022-03-28,OZEMPIC (semaglutide),Type 2 Diabetes
+LLY,2022-03-24,Tyvyt (sintilimab) and ALIMTA (pemetrexed),Nonsquamous NSCLC
+NVS,2022-03-23,177Lu-PSMA-617,Metastatic castration-resistant prostate cancer (mCRPC)
+EQ,2022-03-23,Itolizumab (EQ001) - (EQUATE),Acute graft-versus-host disease
+MRK,2022-03-21,KEYTRUDA (pembrolizumab),MSI-H/dMMR Advanced Endometrial Carcinoma
+MRNS,2022-03-18,ZTALMY (ganaxolone),CDKL5 Deficiency Disorder (CDD)
+BMY,2022-03-18,Opdualag (nivolumab and relatlimab-rmbw),Melanoma
+ABBV,2022-03-16,RINVOQ (Upadacitinib),Ulcerative Colitis
+VTRS,2022-03-15,Breyna (Symbicort generic),Asthma or chronic obstructive pulmonary disease (COPD)
+AZN,2022-03-14,FASENRA (Benralizumab) - (OSTRO),Chronic rhinosinusitis with nasal polyps (CRSwNP)
+AZN,2022-03-11,LYNPARZA (olaparib),BRCAm HER2-negative breast cancer
+MRK,2022-03-11,LYNPARZA (olaparib),BRCAm HER2-negative breast cancer
+AIM,2022-03-09,"Ampligen, cisplatin and KEYTRUDA (pembrolizumab)",Ovarian cancer
+BMY,2022-03-04,Opdivo (nivolumab) plus Chemotherapy,Non-small cell lung cancer (NSCLC)
+IBRX,2022-03-02,Anktiva (N-803) and Cytokine-enriched natural killer (m-ceNK) cells,Acute myeloid leukemia (AML)
+GILD,2022-03-01,Lenacapavir,HIV
+LEGN,2022-02-28,CARVYKTI (ciltacabtagene autoleucel),Multiple myeloma
+BIIB,2022-02-25,Bardoxolone methyl,Alport Syndrome
+LLY,2022-02-24,JARDIANCE (empagliflozin),Heart failure with preserved Ejection Fraction (HFpEF)
+MNKKQ,2022-02-22,Terlipressin,Hepatorenal syndrome (HRS) Type 1
+AGIO,2022-02-17,Mitapivat (AG-348),Pyruvate kinase deficiency
+ATXI,2022-02-15,Intravenous (IV) tramadol,Postoperative pain following bunionectomy surgery
+FBIO,2022-02-15,Intravenous (IV) tramadol,Postoperative pain following bunionectomy surgery
+LLY,2022-02-11,Bebtelovimab (LY-CoV1404) and Sotrovimab (VIR-7831 / GSK4182136) - (BLAZE-4),COVID-19 antibody
+GSK,2022-02-11,Bebtelovimab (LY-CoV1404) and Sotrovimab (VIR-7831 / GSK4182136) - (BLAZE-4),COVID-19 antibody
+VIR,2022-02-11,Bebtelovimab (LY-CoV1404) and Sotrovimab (VIR-7831 / GSK4182136) - (BLAZE-4),COVID-19 antibody
+VTRS,2022-02-03,Cyclosporine Ophthalmic Emulsion (generic restasis),Dry eye disease
+PFE,2022-02-01,Cabenuva (cabotegravir + rilpivirine),HIV
+GSK,2022-02-01,Cabenuva (cabotegravir + rilpivirine),HIV
+MRNA,2022-01-31,SPIKEVAX (mRNA-1273),COVID-19 vaccine
+RHHBY,2022-01-31,Vabysmo (faricimab-svoa),Wet age-related macular degeneration (nAMD) and diabetic macular edema (DME)
+TAK,2022-01-31,VONVENDI,Type 3 von Willebrand Disease (VWD)
+RHHBY,2022-01-28,Faricimab (RG7716),Diabetic Macular Edema
+IMCR,2022-01-26,KIMMTRAK (tebentafusp-tebn),Uveal melanoma
+MRK,2022-01-24,Gefapixant,Chronic cough
+ONC,2022-01-22,DKN-01 and Tislelizumab - (DisTinGuish),Gastric / Gastroesophageal Junction Cancer
+BGNE,2022-01-22,DKN-01 and Tislelizumab - (DisTinGuish),Gastric / Gastroesophageal Junction Cancer
+ABBV,2022-01-21,SKYRIZI (risankizumab),Psoriatic Arthritis
+GILD,2022-01-21,VEKLURY (remdesivir),COVID-19 Coronavirus
+PFE,2022-01-21,Somatrogon (hGH-CTP),Children - growth hormone deficiency
+OPK,2022-01-21,Somatrogon (hGH-CTP),Children - growth hormone deficiency
+ABBV,2022-01-14,RINVOQ (Upadacitinib),Atopic dermatitis
+ABBV,2022-01-14,RINVOQ (Upadacitinib),Atopic Dermatitis
+PFE,2022-01-14,CIBINQO (abrocitinib),Atopic Dermatitis
+CRIS,2022-01-06,CA-4948 - (Take Aim Leukemia),Acute Myeloid Leukemia / Myelodysplastic Syndromes (MDS)
+BCYC,2022-01-05,Bicycle Toxin Conjugates zelenectide pevedotin (BT8009) - (Duravelo-2),Solid tumors
+PFE,2022-01-03,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+BNTX,2022-01-03,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+FATE,2021-12-31,FT596,"B-Cell Chronic Lymphoma, chronic lymphocytic leukemia"
+XERS,2021-12-30,RECORLEV (levoketoconazole),Endogenous Cushing’s syndrome
+ALNY,2021-12-22,Leqvio (inclisiran),Hypercholesterolemia
+NVS,2021-12-22,Leqvio (inclisiran),Hypercholesterolemia
+PFE,2021-12-22,PAXLOVID (ritonavir) - (EPIC-HR),Oral Protease Inhibitor for COVID-19
+TAK,2021-12-21,Eohilia (formerly TAK-721),Eosinophilic esophagitis
+PFE,2021-12-21,Apretude,HIV
+GSK,2021-12-21,Apretude,HIV
+JAGX,2021-12-21,Canalevia-CA1,Chemotherapy-induced diarrhea (CID) in dogs
+ANIP,2021-12-21,Rifabutin Capsules,Mycobacterium avium complex
+CHRS,2021-12-20,YUSIMRY (adalimumab-aqvh),Psoriasis
+CANF,2021-12-20,Namodenoson (CF102),"Advanced liver cancer, hepatocellular carcinoma"
+ACAD,2021-12-20,NUPLAZID (pimavanserin),Alzheimer’s disease psychosis (ADP)
+JNJ,2021-12-20,CAPLYTA  (Lumateperone),Bipolar depression
+AMGN,2021-12-20,OTEZLA (apremilast),Plaque psoriasis
+AMGN,2021-12-17,Tezspire (tezepelumab-ekko),Asthma
+PFE,2021-12-17,OXBRYTA (Voxelotor),Sickle cell disease - children age 4-11
+ZLAB,2021-12-17,VYVGART (efgartigimod alfa-fcab),Myasthenia gravis (MG)
+AZN,2021-12-17,Tezspire (tezepelumab-ekko),Asthma
+ARGX,2021-12-17,VYVGART (efgartigimod alfa-fcab),Myasthenia gravis (MG)
+CALT,2021-12-15,TARPEYO (budesonide),IgA nephropathy
+EGRX,2021-12-15,Vasopressin,Increase blood pressure in adults
+ABBV,2021-12-15,RINVOQ (Upadacitinib),Psoriatic arthritis
+BMY,2021-12-15,ORENCIA (abatacept),Graft Versus Host Disease (aGvHD)
+SNY,2021-12-15,VAT0002 (booster),COVID-19 vaccine
+RHHBY,2021-12-15,Polivy (polatuzumab vedotin) - (POLARIX),Diffuse Large B-Cell Lymphoma
+GSK,2021-12-15,VAT0002 (booster),COVID-19 vaccine
+PFE,2021-12-14,XELJANZ (tofacitinib),Ankylosing spondylitis
+VERU,2021-12-13,ENTADFI (tadalafil and finasteride combo),Benign prostatic hyperplasia (BPH)
+ALLO,2021-12-13,ALLO-501 - (ALPHA),Non-Hodgkin lymphoma (NHL)
+MBIO,2021-12-13,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+FBIO,2021-12-13,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+EQ,2021-12-13,Itolizumab (EQ001) - (EQUATE),Acute graft-versus-host disease
+CLLS,2021-12-13,ALLO-715 - (UNIVERSAL),Multiple myeloma
+NKTR,2021-12-13,Bempegaldesleukin (NKTR-214) and KEYTRUDA (pembrolizumab) - (PROPEL),1L Non-small cell lung cancer (NSCLC)
+BMY,2021-12-13,CELMoD (CC-92480) in combination with Dexamethasone and Bortezomib,Relapsed/Refractory Multiple Myeloma (RRMM)
+ALLO,2021-12-13,ALLO-715 - (UNIVERSAL),Multiple myeloma
+GILD,2021-12-13,YESCARTA (Axicabtagene ciloleucel) - (ZUMA-12),Diffuse Large B-Cell Lymphoma (DLBCL)
+APTO,2021-12-13,Tuspetinib - (APTIVATE),Acute myeloid leukemia (AML)
+ONC,2021-12-12,BRUKINSA (zanubrutinib),First-line chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)
+LLY,2021-12-12,Pirtobrutinib (LOXO-305),Mantle cell lymphoma (MCL)
+BGNE,2021-12-12,BRUKINSA (zanubrutinib),First-line chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)
+RHHBY,2021-12-11,Lunsumio (mosunetuzumab-axgb),Follicular lymphoma
+RHHBY,2021-12-11,Glofitamab (Glofit) + Polatuzumab Vedotin (Pola) - (NP39488),Diffuse Large B-Cell Lymphoma (DLBCL)
+SQZ,2021-12-09,SQZ-PBMC-HPV-101,Solid Tumors
+AFMD,2021-12-09,AFM13 + NK cells (AFM13-104),CD30-positive lymphomas
+IPHA,2021-12-09,Monalizumab in combination with cetuximab + durvalumab,Squamous Cell Carcinoma of the Head and Neck (SCCHN)
+AZN,2021-12-08,Evusheld (AZD7442) - (PROVENT),COVID-19
+DARE,2021-12-07,DARE-BV1,Bacterial Vaginosis
+ABCL,2021-12-03,Bamlanivimab and Etesevimab,COVID-19 Anti-body
+LLY,2021-12-03,Bamlanivimab and Etesevimab,COVID-19 Anti-body
+MRK,2021-12-03,KEYTRUDA (pembrolizumab) - (KEYNOTE-716),IIB or IIC Melanoma
+HALO,2021-12-01,KYPROLIS (carfilzomib) with DARZALEX FASPRO (daratumumab and hyaluronidase-fihj) and dexamethasone,Multiple Myeloma
+AMGN,2021-12-01,KYPROLIS (carfilzomib) with DARZALEX FASPRO (daratumumab and hyaluronidase-fihj) and dexamethasone,Multiple Myeloma
+VBIV,2021-12-01,PreHevbrio,Hepatitis B vaccine
+BYSI,2021-12-01,Plinabulin + G-CSF Combination - (PROTECTIVE 2),Chemotherapy-induced neutropenia (CIN)
+LITS,2021-11-30,Zandelisib (ME-401) - (TIDAL),Relapsed/refractory Follicular Lymphoma (FL) Non Hodgkin Lymphoma
+MEIP,2021-11-30,Zandelisib (ME-401) - (TIDAL),Relapsed/refractory Follicular Lymphoma (FL) Non Hodgkin Lymphoma
+MREO,2021-11-30,Etigilimab in combination with Nivolumab - (ACTIVATE),Solid tumors
+FENC,2021-11-29,Pedmark (sodium thiosulfate),"Ototoxicity in non-metastatic, solid tumors"
+TAK,2021-11-23,TAK-620 (maribavir),Cytomegalovirus (CMV)
+WHWK,2021-11-23,FYARRO,PEComa
+AFMD,2021-11-22,AFM13 + NK cells (AFM13-104),CD30-positive lymphomas
+BNTX,2021-11-19,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+BMRN,2021-11-19,VOXZOGO (Vosoritide),Achondroplasia
+PFE,2021-11-19,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+MRK,2021-11-18,KEYTRUDA (pembrolizumab),Renal cell carcinoma (RCC)
+NXTC,2021-11-13,NC318,Solid tumors
+XNCR,2021-11-12,Vudalimab (XmAb717),"Solid tumors, prostate cancer"
+IOVA,2021-11-12,LN-145 - (IOV-COM-202),Non-small cell lung cancer (NSCLC)
+LQDA,2021-11-08,YUTREPIA (treprostinil),Pulmonary arterial hypertension
+ETON,2021-11-08,EPRONTIA (topiramate) - Oral Solution,Seizures/migraine
+CASI,2021-11-05,BI-1206  in combination with rituximab,Non-Hodgkin's Lymphoma
+ANIP,2021-11-01,Cortrophin Gel,"Acute exacerbations of multiple sclerosis, rheumatoid arthritis, systemic lupus erythematous and ulcerative colitis"
+BNTX,2021-10-29,Comirnaty (BNT162b2),COVID-19 vaccine
+ABBV,2021-10-29,VUITY,Presbyopia
+PFE,2021-10-29,Comirnaty (BNT162b2),COVID-19 vaccine
+CLSD,2021-10-25,XIPERE (Suprachoroidal CLS-TA),Macular edema associated with uveitis
+BHC,2021-10-25,XIPERE (Suprachoroidal CLS-TA),Macular edema associated with uveitis
+RHHBY,2021-10-22,Susvimo (ranibizumab injection),Neovascular Age-Related Macular Degeneration
+SNY,2021-10-20,DUPIXENT (dupilumab),Asthma - 6-11 year-olds
+MRNA,2021-10-20,SPIKEVAX (mRNA-1273),COVID-19 vaccine
+REGN,2021-10-20,DUPIXENT (dupilumab),Asthma - 6-11 year-olds
+JNJ,2021-10-20,JNJ-78436735 (Ad26.COV2-S) -  (ENSEMBLE-2),COVID-19 vaccine - two-dose regimen
+IBRX,2021-10-19,ANKTIVA,BCG-Unresponsive Non-Muscle Invasive Bladder Cancer
+VTRS,2021-10-18,TYRVAYA (varenicline solution),Dry eye disease
+ADMP,2021-10-18,ZIMHI (naloxone HCI Injection),Opioid overdose
+OYST,2021-10-18,TYRVAYA (varenicline solution),Dry eye disease
+OMER,2021-10-18,YARTEMLEA (Narsoplimab),Hematopoietic stem cell-associated TMA (HSCT-TMA)
+GILD,2021-10-18,Biktarvy,HIV
+UTHR,2021-10-15,TYVASO (treprostinil) DPI,Pulmonary arterial hypertension and pulmonary hypertension associated with interstitial lung disease (PH-ILD)
+MNKD,2021-10-15,TYVASO (treprostinil) DPI,Pulmonary arterial hypertension and pulmonary hypertension associated with interstitial lung disease (PH-ILD)
+RHHBY,2021-10-15,TECENTRIQ (atezolizumab),Non-Small Cell Lung Cancer
+MRK,2021-10-13,KEYTRUDA (pembrolizumab) + chemo with or without bevacizumab,Cervical Cancer
+LLY,2021-10-13,VERZENIO (Abemaciclib),HR+ / HER2- breast cancer
+CRSP,2021-10-12,CTX110 - (CARBON),CD19+ B-cell malignancies
+OCUL,2021-10-11,DEXTENZA,Allergic conjunctivitis
+AMGN,2021-10-08,TAVNEOS (avacopan),Associated vasculitis (AAV)
+URGN,2021-10-05,ZUSDURI (VesiGel UGN-102 (mitomycin)) - (ENVISION),Low grade non-muscle invasive bladder cancer (LG-NMIBC)
+GILD,2021-10-01,TECARTUS (brexucabtagene autoleucel),Adult patients with r/r ALL - cancer
+MIRM,2021-09-29,LIVMARLI (Maralixibat),Alagille Syndrome (ALGS)
+PFE,2021-09-28,ERBITUX (cetuximab injection) + BRAFTOVI (encorafenib),Metastatic colorectal cancer
+ABBV,2021-09-28,QULIPTA (Atogepant),Chronic migraine
+LLY,2021-09-28,ERBITUX (cetuximab injection) + BRAFTOVI (encorafenib),Metastatic colorectal cancer
+CADL,2021-09-25,linoserpaturev (CAN-3110),Glioma
+AMGN,2021-09-24,REPATHA (evolocumab),Cardiovascular disease
+PFE,2021-09-22,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+INCY,2021-09-22,JAKAFI (Ruxolitinib),Steroid-refractory chronic GVHD (Graft versus host disease)
+BNTX,2021-09-22,Comirnaty (BNT162b2),COVID-19 Vaccine (Booster)
+INCY,2021-09-21,Opzelura (Ruxolitinib),Atopic dermatitis
+TGTX,2021-09-20,Ublituximab (TG-1101) + UKONIQ (umbralisib) + VENCLEXTA (venetoclax) - (ULTRA-V),Chronic Lymphocytic Leukemia
+GMAB,2021-09-20,TIVDAK (tisotumab vedotin),Cervical Cancer
+BIIB,2021-09-20,BYOOVIZ,Biosimilar (ranibizumab)
+PFE,2021-09-20,TIVDAK (tisotumab vedotin),Cervical Cancer
+EXEL,2021-09-20,CABOMETYX (Cabozantinib) - (COSMIC-311),Thyroid Carcinoma
+TAK,2021-09-20,CABOMETYX (Cabozantinib) - (COSMIC-311),Thyroid Carcinoma
+VRCA,2021-09-20,YCANTH (cantharidin),Molluscum contagiosum
+AZN,2021-09-18,ENHERTU (trastuzumab deruxtecan) - (DESTINY-Lung01),Non-squamous non-small cell lung cancer (NSCLC)
+EXEL,2021-09-17,CABOMETYX (Cabozantinib) - (COSMIC-311),Thyroid Carcinoma
+ADAP,2021-09-17,Gavo-cel (TC-210),Mesothelin-positive solid tumors
+TAK,2021-09-17,CABOMETYX (Cabozantinib) - (COSMIC-311),Thyroid Carcinoma
+BMY,2021-09-17,Gavo-cel (TC-210),Mesothelin-positive solid tumors
+AZN,2021-09-17,ENHERTU (trastuzumab deruxtecan) - (DESTINY-Gastric01/02),Gastric cancer
+AGEN,2021-09-17,Balstilimab (anti-PD-1) and Zalifrelimab - AGEN1884 (anti-CTLA-4),Soft Tissue Sarcoma
+ABCL,2021-09-16,Bamlanivimab and Etesevimab,COVID-19 Anti-body
+LLY,2021-09-16,Bamlanivimab and Etesevimab,COVID-19 Anti-body
+MGNX,2021-09-16,MARGENZA (margetuximab) and MGA012 (MAHOGANY),Gastric cancer
+BGNE,2021-09-15,BRUKINSA (zanubrutinib),Marginal Zone Lymphoma
+TAK,2021-09-15,EXKIVITY (Mobocertinib),Non-small cell lung cancer (NSCLC)
+ONC,2021-09-15,BRUKINSA (zanubrutinib),Marginal Zone Lymphoma
+TGTX,2021-09-13,Ublituximab (TG-1101) + UKONIQ (umbralisib) + VENCLEXTA (venetoclax) - (ULTRA-V),Chronic Lymphocytic Leukemia
+IBRX,2021-09-13,ANKTIVA,BCG-Unresponsive Non-Muscle Invasive Bladder Cancer
+DAWN,2021-09-10,Upifitamab Rilsodotin (XMT-1536) - (UPLIFT),"Ovarian Cancer, Non Small Cell Lung Cancer"
+ADAP,2021-09-05,AFP (ADP-A2AFP),Hepatocellular carcinoma
+IMPL,2021-09-03,TRUDHESA (Dihydroergotamine),Migraine
+BGNE,2021-09-01,BRUKINSA (zanubrutinib),Waldenström’s macroglobulinemia
+ONC,2021-09-01,BRUKINSA (zanubrutinib),Waldenström’s macroglobulinemia
+MRK,2021-08-31,KEYTRUDA (pembrolizumab) - KN-361,Bladder cancer
+ASND,2021-08-25,SKYTROFA,Growth hormone deficiency in children
+XERS,2021-08-23,Gvoke Kit,Hypoglycemia
+PFE,2021-08-23,Comirnaty (BNT162b2),COVID-19 vaccine
+BNTX,2021-08-23,Comirnaty (BNT162b2),COVID-19 vaccine
+TVRD,2021-08-23,KORSUVA (CR845/difelikefalin) injection,Chronic kidney disease (CKD) on hemodialysis (HD) with Moderate-to Severe Pruritus
+BMY,2021-08-20,OPDIVO (nivolumab),Urothelial Carcinoma
+FATE,2021-08-19,FT516,Acute Myelogenous Leukemia / B-cell Lymphoma
+LLY,2021-08-18,JARDIANCE (empagliflozin),Heart failure with reduced ejection fraction
+GSK,2021-08-17,JEMPERLI (Dostarlimab),Mismatch repair deficient (dMMR) solid tumors
+ANAB,2021-08-17,JEMPERLI (Dostarlimab),Mismatch repair deficient (dMMR) solid tumors
+MRK,2021-08-13,WELIREG (Belzutifan),Von Hippel-Lindau Syndrome
+PFE,2021-08-13,TicoVac,Tick-borne encephalitis (TBE) vaccine
+CARM,2021-08-13,Vicineum,Non-muscle invasive bladder cancer (NMIBC)
+JAZZ,2021-08-12,XYWAV,Idiopathic Hypersomnia
+AZN,2021-08-11,Roxadustat,Anaemia in Chronic Kidney Disease
+MRK,2021-08-11,KEYTRUDA (pembrolizumab)and LENVIMA (lenvatinib),Renal Cell Carcinoma
+FGEN,2021-08-11,Roxadustat,Anaemia in Chronic Kidney Disease
+SNY,2021-08-06,Nexviazyme (avalglucosidase alfa),Pompe disease
+ASRT,2021-08-06,ROLVEDON (eflapegrastim-xnst),Neutropenia
+SPPI,2021-08-06,ROLVEDON (eflapegrastim-xnst),Neutropenia
+AZN,2021-08-02,SAPHNELO (Anifrolumab),Lupus
+JNJ,2021-07-31,UPTRAVI (selexipag),Pediatric pulmonary arterial hypertension (PAH)
+ARDX,2021-07-29,XPHOZAH (tenapanor),Serum phosphorus - chronic kidney disease (CKD) on dialysis
+GSK,2021-07-29,NUCALA (Mepolizumab),Chronic rhinosinusitis with nasal polyps
+ABBV,2021-07-29,BOTOX,Upper Limb Spasticity
+SLGL,2021-07-27,Twyneo,Acne
+MRK,2021-07-27,KEYTRUDA (pembrolizumab) - (KEYNOTE-522),Triple negative breast cancer (TNBC)
+ITRM,2021-07-26,ORLYNVAH (Oral Sulopenem),Uncomplicated urinary tract infections (uUTI)
+AZN,2021-07-23,BYDUREON BCise,Type 2 diabetes (Pediatric)
+INCY,2021-07-23,Zynyz (retifanlimab-dlwr),Advanced Anal Cancer Patients
+ABBV,2021-07-23,DALVANCE (dalbavancin),Acute bacterial skin and skin structure infections (ABSSSI) - pediatric
+MRK,2021-07-22,KEYTRUDA (pembrolizumab) and LENVIMA (lenvatinib),Endometrial Cancer
+IPSEY,2021-07-20,BYLVAY (odevixibat),Progressive familial intrahepatic cholestasis (PFIC)
+LGND,2021-07-16,VAXNEUVANCE,Pneumococcal disease
+MRK,2021-07-16,VAXNEUVANCE,Pneumococcal disease
+AZN,2021-07-15,Roxadustat,Anaemia in Chronic Kidney Disease
+FGEN,2021-07-15,Roxadustat,Anaemia in Chronic Kidney Disease
+HALO,2021-07-12,DARZALEX (Daratumumab) in combination with Pomalyst (pomalidomide) and dexamethasone,Multiple myeloma
+JNJ,2021-07-12,DARZALEX (Daratumumab) in combination with Pomalyst (pomalidomide) and dexamethasone,Multiple myeloma
+PFE,2021-07-09,PADCEV (enfortumab vedotin) - EV-301,Urothelial cancer
+EVAX,2021-07-08,EVX-01 + KEYTRUDA (pembrolizumab) / OPDIVO (nivolumab),Metastatic Melanoma
+MRK,2021-07-08,EVX-01 + KEYTRUDA (pembrolizumab) / OPDIVO (nivolumab),Metastatic Melanoma
+SNY,2021-07-06,TZIELD (teplizumab-mzwv),Type 1 diabetes
+MRK,2021-07-06,KEYTRUDA (pembrolizumab),Cutaneous squamous cell carcinoma (cSCC)
+JAZZ,2021-06-30,RYLAZE (JZP458),Acute lymphoblastic leukemia (ALL)
+LGND,2021-06-30,RYLAZE (JZP458),Acute lymphoblastic leukemia (ALL)
+VCEL,2021-06-29,NexoBrid,Severe burns
+MDWD,2021-06-29,NexoBrid,Severe burns
+IPHA,2021-06-22,Lacutamab (IPH4102) - (TELLOMAK 3),"Mycosis Fungoides, Sézary Syndrome"
+ADCT,2021-06-22,Camidanlumab tesirine - (Cami),Hodgkin lymphoma (HL)
+XOMA,2021-06-18,MIPLYFFA (MY-PLY-FAH) (arimoclomol),Niemann-Pick disease Type C (NPC)
+ZVRA,2021-06-18,MIPLYFFA (MY-PLY-FAH) (arimoclomol),Niemann-Pick disease Type C (NPC)
+BPMC,2021-06-16,AYVAKIT (avapritinib),Advanced Systemic mastocytosis (SM)
+ETON,2021-06-15,REZIPRES (ephedrine hydrochloride injection),Injectable hospital product
+MNKKQ,2021-06-15,StrataGraft,Deep partial thickness severe burns - skin defects
+FBIO,2021-06-14,Intravenous (IV) tramadol,Postoperative pain following bunionectomy surgery
+ATXI,2021-06-14,Intravenous (IV) tramadol,Postoperative pain following bunionectomy surgery
+FBIO,2021-06-11,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+MBIO,2021-06-11,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+VRTX,2021-06-09,TRIKAFTA (elexacaftor/tezacaftor/ivacaftor and ivacaftor),Children (6-11 years old) who have at least one F508del mutation in the cystic fibrosis transmembrane conductance regulator (CFTR) gene or a mutation in the CFTR gene that is responsive
+PFE,2021-06-08,PREVNAR 20,Pneumococcal conjugate vaccine (18 yrs +)
+AZN,2021-06-07,ULTOMIRIS (ravulizumab-cwvz),Paroxysmal Nocturnal Hemoglobinuria (PNH) - children
+BIIB,2021-06-07,ADUHELM (Aducanumab),Alzheimer’s disease
+CLRB,2021-06-04,CLR 131 - (CLOVER-1),Various lymphoma
+DTIL,2021-06-04,Azercabtagene zapreleucel (azer-cel; PBCAR0191),Relapsed or refractory B-cell precursor acute lymphoblastic leukemia and R/R non-hodgkin lymphoma
+CMRX,2021-06-04,TEMBEXA (brincidofovir),Smallpox
+SCYX,2021-06-02,BREXAFEMME (ibrexafungerp),Vulvovaginal candidiasis (VVC)
+ALKS,2021-06-01,LYBALVI (olanzapine/samidorphan),"Schizophrenia, bipolar"
+BBIO,2021-06-01,TRUSELTIQ (Infigratinib),Cholangiocarcinoma
+LIAN,2021-06-01,TRUSELTIQ (Infigratinib),Cholangiocarcinoma
+ETON,2021-05-28,Dehydrated alcohol injection (DS-100),Methanol poisoning
+ETON,2021-05-28,ZONISADE (Zonisamide Oral Suspension),Epilepsy
+AMGN,2021-05-28,LUMAKRAS (Sotorasib),Non-small cell lung cancer (NSCLC)
+BHVN,2021-05-27,NURTEC ODT (Rimegepant),Migraine - preventative
+LNTH,2021-05-27,PYLARIFY (piflufolastat F 18),Prostate cancer
+PFE,2021-05-27,NURTEC ODT (Rimegepant),Migraine - preventative
+BMY,2021-05-27,ZEPOSIA (ozanimod),Ulcerative Colitis
+GSK,2021-05-26,Sotrovimab (VIR-7831 / GSK4182136) - (COMET-ICE),COVID-19 antibody
+VIR,2021-05-26,Sotrovimab (VIR-7831 / GSK4182136) - (COMET-ICE),COVID-19 antibody
+PFE,2021-05-26,"MYFEMBREE (Relugolix, estradiol, norethindrone acetate)",Uterine fibroids
+XNCR,2021-05-26,Sotrovimab (VIR-7831 / GSK4182136) - (COMET-ICE),COVID-19 antibody
+BMY,2021-05-20,OPDIVO (nivolumab),Esophageal or Gastroesophageal Junction Cancer
+APLS,2021-05-14,EMPAVELI (pegcetacoplan),Paroxysmal Nocturnal Hemoglobinuria (PNH)
+HRTX,2021-05-13,ZYNRELEF (HTX-011),Post operative pain
+AMGN,2021-05-06,TAVNEOS (avacopan),Associated vasculitis (AAV)
+MRK,2021-05-05,KEYTRUDA (pembrolizumab) and HERCEPTIN (Trastuzumab),Gastric or Gastroesophageal Junction Adenocarcinoma
+AZN,2021-04-30,FARXIGA (Dapagliflozin),Chronic Kidney Disease
+PLX,2021-04-28,Pegunigalsidase alfa  (PRX-102),Fabry disease
+ADCT,2021-04-23,ZYNLONTA (Loncastuximab Tesirine),Diffuse Large B-Cell Lymphoma
+ANAB,2021-04-22,JEMPERLI (Dostarlimab),dMMR endometrial cancer
+GSK,2021-04-22,JEMPERLI (Dostarlimab),dMMR endometrial cancer
+BMY,2021-04-16,OPDIVO (nivolumab),Gastric cancer
+GILD,2021-04-13,TRODELVY (sacituzumab govitecan),Urothelial Cancer
+BMY,2021-04-10,OPDIVO (Nivolumab) and YERVOY (ipilimumab) - (CheckMate 816),Non-Small Cell Lung Cancer (NSCLC)
+AFMD,2021-04-09,AFM13 + NK cells (AFM13-104),CD30-positive lymphomas
+BPTH,2021-04-05,Prexigebersen + DACOGEN (decitabine) + VENCLEXTA (venetoclax),Acute myeloid leukemia (AML) and myelodysplastic syndrome (MDS)
+ACAD,2021-04-05,NUPLAZID (pimavanserin),Alzheimer’s disease psychosis (ADP)
+SUPN,2021-04-02,QELBREE - viloxazine extended-release,ADHD
+UTHR,2021-04-01,TYVASO (treprostinil),Pulmonary hypertension associated with interstitial lung disease (PH-ILD) (WHO Group 3)
+REGN,2021-04-01,PRALUENT (alirocumab),Homozygous familial hypercholesterolemia (HoFH)
+SNY,2021-03-31,SARCLISA (isatuximab),Refractory Multiple Myeloma
+JAZZ,2021-03-30,VYXEOS (daunorubicin and cytarabine),Acute myeloid leukemia
+MRK,2021-03-29,KEYTRUDA (pembrolizumab) - (KEYNOTE-522),Triple negative breast cancer (TNBC)
+BLUE,2021-03-26,ABECMA (idecabtagene vicleucel),Relapsed/refractory multiple myeloma
+BMY,2021-03-26,ABECMA (idecabtagene vicleucel),Relapsed/refractory multiple myeloma
+MRK,2021-03-23,KEYTRUDA (pembrolizumab) + chemo,Esophageal Cancer
+PCRX,2021-03-22,EXPAREL - pediatric patients,Postoperative Pain Management
+ZLDPF,2021-03-22,Dasiglucagon,Severe hypoglycemia in diabetes
+KNSA,2021-03-18,ARCALYST (rilonacept),Pericarditis
+GILD,2021-03-05,YESCARTA - Axicabtagene ciloleucel - (ZUMA-5),Indolent B-Cell Non-Hodgkin Lymphoma
+RHHBY,2021-03-04,ACTEMRA (tocilizumab),Systemic sclerosis-associated interstitial lung disease (SSc-ILD)
+PFE,2021-03-03,LORBRENA (lorlatinib),Anaplastic lymphoma kinase (ALK)-positive non-small cell lung cancer (NSCLC)
+SCYX,2021-03-02,SCY-078 (oral) - (CARES),Candida Auris
+ZVRA,2021-03-02,AZSTARYS,ADHD
+MRK,2021-03-01,KEYTRUDA (pembrolizumab),Small cell lung cancer (SCLC)
+CRMD,2021-03-01,DEFENCATH (Neutrolin),Hemodialysis patients with central venous catheters
+ATNXQ,2021-03-01,Oraxol (Oral Paclitaxel),Metastatic breast cancer
+JNJ,2021-02-27,JNJ-78436735 (Ad26.COV2-S) -  (ENSEMBLE),COVID-19 vaccine (single dose)
+BBIO,2021-02-26,Fosdenopterin (BBP-870/ORGN001),Molybdenum cofactor deficiency type A
+SRPT,2021-02-25,AMONDYS 45 (casimersen),Duchenne muscular dystrophy
+REGN,2021-02-22,LIBTAYO (cemiplimab),Non-small cell lung cancer (NSCLC)
+SNY,2021-02-22,LIBTAYO (cemiplimab),Non-small cell lung cancer (NSCLC)
+PFE,2021-02-12,PANZYGA,Chronic Inflammatory Demyelinating Polyneuropathy (CIDP)
+REGN,2021-02-11,EVKEEZA (evinacumab),Homozygous familial hypercholesterolemia (HoFH)
+ABBV,2021-02-10,BOTOX,Neurogenic Detrusor Overactivity
+SNY,2021-02-09,LIBTAYO (cemiplimab),Basal cell carcinoma (BCC)
+REGN,2021-02-09,LIBTAYO (cemiplimab),Basal cell carcinoma (BCC)
+TGTX,2021-02-05,UKONIQ (umbralisib),Follicular lymphoma (FL)
+TGTX,2021-02-05,UKONIQ (umbralisib),Marginal zone lymphoma (MZL)
+BMY,2021-02-05,BREYANZI (lisocabtagene maraleucel),Relapsed or refractory (R/R) large B-cell lymphoma
+BHC,2021-02-02,POSIMIR,Post-operative pain relief
+AMGN,2021-02-02,NPLATE (Romiplostim),Hematopoietic Syndrome of Acute Radiation Syndrome
+AUPH,2021-01-22,LUPKYNIS (Voclosporin),Lupus
+BMY,2021-01-22,CABOMETYX (cabozantinib) with OPDIVO (nivolumab) and YERVOY (ipilimumab) - (CheckMate 9ER),First-line renal cell carcinoma
+EXEL,2021-01-22,CABOMETYX (cabozantinib) with OPDIVO (nivolumab) and YERVOY (ipilimumab) - (CheckMate 9ER),First-line renal cell carcinoma
+PFE,2021-01-21,JULUCA (dolutegravir and rilpivirine),HIV
+GSK,2021-01-21,JULUCA (dolutegravir and rilpivirine),HIV
+MRK,2021-01-20,VERQUVO (vericiguat),Heart Failure
+AZN,2021-01-18,ENHERTU (trastuzumab deruxtecan) - (DESTINY-Gastric01/02),Gastric cancer
+JNJ,2021-01-15,DARZALEX (Daratumumab) using ENHANZE,Amyloidosis
+HALO,2021-01-15,DARZALEX (Daratumumab) using ENHANZE,Amyloidosis
+GMAB,2021-01-15,DARZALEX (Daratumumab) using ENHANZE,Amyloidosis
+PFE,2021-01-14,XALKORI (crizotinib),ALK-positive Anaplastic Large Cell Lymphoma
+VRTX,2020-12-21,TRIKAFTA (elexacaftor/tezacaftor/ivacaftor and ivacaftor),Cystic fibrosis
+AZN,2020-12-21,TAGRISSO (Osimertinib) - (ADAURA),Non-small Cell Lung Carcinoma
+ALNY,2020-12-18,Leqvio (inclisiran),Hypercholesterolemia
+MRNA,2020-12-18,SPIKEVAX (mRNA-1273),COVID-19 vaccine
+KPTI,2020-12-18,XPOVIO (selinexor),Multiple myeloma
+NVS,2020-12-18,Leqvio (inclisiran),Hypercholesterolemia
+TAK,2020-12-18,ICLUSIG (ponatinib),Chronic Myeloid Leukemia
+AMGN,2020-12-17,RIABNI (rituximab-arrx),RITUXAN biosimilar - non-Hodgkin lymphoma
+GSK,2020-12-17,BENLYSTA  (belimumab),Lupus Nephritis
+ZLAB,2020-12-16,MARGENZA (margetuximab),Metastatic breast cancer
+MGNX,2020-12-16,MARGENZA (margetuximab),Metastatic breast cancer
+ATNXQ,2020-12-15,Tirbanibulin ointment,Actinic keratosis
+BNTX,2020-12-11,Comirnaty (BNT162b2),COVID-19 vaccine
+PFE,2020-12-11,Comirnaty (BNT162b2),COVID-19 vaccine
+PFE,2020-12-10,Comirnaty (BNT162b2),COVID-19 vaccine
+BNTX,2020-12-10,Comirnaty (BNT162b2),COVID-19 vaccine
+ATNXQ,2020-12-09,Oraxol (Oral Paclitaxel),Angiosarcoma
+PBYI,2020-12-09,NERLYNX (Neratinib) - (SUMMIT),Metastatic triple negative breast cancer with a HER2 mutation
+RCUS,2020-12-09,Etrumadenant + eganelisib (IPI-549) - (ARC-2),Triple negative breast cancer (TNBC) and ovarian cancer
+INFI,2020-12-09,Etrumadenant + eganelisib (IPI-549) - (ARC-2),Triple negative breast cancer (TNBC) and ovarian cancer
+LPCN,2020-12-08,TLANDO (LPCN 1021),Men with low testosterone (Low T)
+FBIO,2020-12-07,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+MBIO,2020-12-07,MB-106,B-cell Non-Hodgkin Lymphoma & Chronic Lymphocytic Leukemia (CLL)
+BGNE,2020-12-06,BRUKINSA (zanubrutinib),Marginal Zone Lymphoma
+ONC,2020-12-06,BRUKINSA (zanubrutinib),Marginal Zone Lymphoma
+GILD,2020-12-06,YESCARTA (Axicabtagene ciloleucel) - (ZUMA-12),Diffuse Large B-Cell Lymphoma (DLBCL)
+FATE,2020-12-04,FT596 With Rituximab,Non Hodgkin Lymphoma
+BCRX,2020-12-03,ORLADEYO (Berotralstat),Reduce or eliminate attacks in HAE patients
+VNDA,2020-12-01,HETLIOZ (tasimelteon),Smith-Magenis Syndrome
+RHHBY,2020-12-01,XOLAIR (omalizumab),Chronic rhinosinusitis with nasal polyps (CRSwNP)
+BPMC,2020-12-01,GAVRETO (Pralsetinib),RET-mutant medullary thyroid cancer
+RYTM,2020-11-27,Setmelanotide,POMC deficiency obesity / Leptin Receptor Deficiency Obesity
+LQDA,2020-11-25,YUTREPIA (treprostinil),Pulmonary arterial hypertension
+YMAB,2020-11-25,DANYELZA (Naxitamab),Neuroblastoma
+ALNY,2020-11-24,OXLUMO (lumasiran),Primary Hyperoxaluria Type 1 (PH1)
+VTRS,2020-11-23,TIVICAY (dolutegravir),Pediatric Formulation of Dolutegravir (DTG)
+RHHBY,2020-11-23,XOFLUZA (baloxavir marboxil),Acute uncomplicated influenza (12 years and older)
+REGN,2020-11-21,Ronapreve (REGEN-COV 2066),COVID-19 (Anti-viral antibody)
+RHHBY,2020-11-21,Ronapreve (REGEN-COV 2066),COVID-19 (Anti-viral antibody)
+EIGR,2020-11-20,ZOKINVY (Lonafarnib),Hutchinson-Gilford Progeria Syndrome (HGPS)
+INCY,2020-11-19,OLUMIANT (baricitinib),COVID-19
+ALKS,2020-11-17,LYBALVI (olanzapine/samidorphan),"Schizophrenia, bipolar"
+ADMP,2020-11-16,ZIMHI (naloxone HCI Injection),Opioid overdose
+SNY,2020-11-13,Sutimlimab (BIVV009) - Cardinal,Cold agglutinin disease
+MRK,2020-11-13,KEYTRUDA (pembrolizumab),Triple negative breast cancer (TNBC)
+ETON,2020-11-12,Cysteine Inj (DS-300),Nutritional deficiencies
+LLY,2020-11-09,BamlanivimabLY-CoV555,COVID-19 Antibody
+ABCL,2020-11-09,BamlanivimabLY-CoV555,COVID-19 Antibody
+SUPN,2020-11-09,QELBREE - viloxazine extended-release,ADHD
+AZN,2020-11-06,BRILINTA (ticagrelor) - (THALES),Acute ischaemic stroke
+KALA,2020-10-27,EYSUVIS (KPI‑121) 0.25%,Dry eye disease
+GILD,2020-10-22,VEKLURY (remdesivir),COVID-19 Coronavirus
+ABBV,2020-10-16,VENCLEXTA (venetoclax) - (VIALE-A),Acute Myeloid Leukemia (AML)
+RHHBY,2020-10-16,VENCLEXTA (venetoclax) - (VIALE-A),Acute Myeloid Leukemia (AML)
+MRK,2020-10-15,KEYTRUDA (pembrolizumab),Classical Hodgkin lymphoma
+REGN,2020-10-14,INMAZEB (atoltivimab),Ebola
+HRMY,2020-10-14,WAKIX (pitolisant),Adult cataplexy
+ATXI,2020-10-12,Intravenous (IV) tramadol,Postoperative pain following bunionectomy surgery
+FBIO,2020-10-12,Intravenous (IV) tramadol,Postoperative pain following bunionectomy surgery
+BMY,2020-10-02,OPDIVO (nivolumab) + YERVOY (ipilimumab),Mesothelioma
+MESO,2020-10-01,Remestemcel-L (MSC-100-IV),Steroid-refractory acute graft versus host disease (aGVHD) in children
+ETON,2020-09-29,Alkindi Sprinkle,Pediatric adrenal insufficiency (AI)
+PFE,2020-09-28,XELJANZ (tofacitinib),Juvenile idiopathic arthritis (JIA)
+BHC,2020-09-25,Novothyrox (EM-100),Allergic conjunctivitis
+ETON,2020-09-25,Novothyrox (EM-100),Allergic conjunctivitis
+AQST,2020-09-25,Libervant (diazepam),Epileptic seizures
+GSK,2020-09-25,NUCALA (Mepolizumab),Severe hypereosinophilic syndrome (HES)
+BMY,2020-09-18,Sitravatinib and OPDIVO (nivolumab),Urothelial Carcinoma (Bladder)
+MNKKQ,2020-09-14,Terlipressin,Hepatorenal syndrome (HRS) Type 1
+GSK,2020-09-09,TRELEGY ELLIPTA,Asthma
+TBPH,2020-09-09,TRELEGY ELLIPTA,Asthma
+INVA,2020-09-09,TRELEGY ELLIPTA,Asthma
+BPMC,2020-09-04,GAVRETO (Pralsetinib),RET-fusion non-small cell lung cancer (NSCLC)
+BMY,2020-09-01,CC-486-AML-001,AML Maintenance
+TCDA,2020-08-24,TRC 101,Chronic kidney disease
+JNJ,2020-08-20,DARZALEX (Daratumumab) and KYPROLIS (carfilzomib),Multiple Myeloma
+GMAB,2020-08-20,ARZERRA (ofatumumab),Relapsing multiple sclerosis
+NVS,2020-08-20,ARZERRA (ofatumumab),Relapsing multiple sclerosis
+GMAB,2020-08-20,DARZALEX (Daratumumab) and KYPROLIS (carfilzomib),Multiple Myeloma
+BMRN,2020-08-19,Valoctocogene roxaparvovec (BMN 270),Hemophilia A
+GLPG,2020-08-18,Filgotinib - (FINCH 4),Rheumatoid arthritis (RA)
+GILD,2020-08-18,Filgotinib - (FINCH 4),Rheumatoid arthritis (RA)
+VTRS,2020-08-17,Dimethyl fumarate (generic),Multiple sclerosis - Tecfidera generic
+RHHBY,2020-08-14,ENSPRYNG (satralizumab),Neuromyelitis optica spectrum disorder (NMOSD)
+MESO,2020-08-13,Remestemcel-L (MSC-100-IV),Steroid-refractory acute graft versus host disease (aGVHD) in children
+FENC,2020-08-11,Pedmark (sodium thiosulfate),"Ototoxicity in non-metastatic, solid tumors"
+EGRX,2020-08-10,RYANODEX (dantrolene sodium),Exertional heat stroke (EHS)
+RHHBY,2020-08-07,EVRYSDI (risdiplam),Spinal Muscular Atrophy (SMA) Type 1
+PTCT,2020-08-07,EVRYSDI (risdiplam),Spinal Muscular Atrophy (SMA) Type 1
+TRVN,2020-08-07,OLINVYK (oliceridine),Moderate to severe acute pain
+PFE,2020-08-06,DOVATO (Dolutegravir + lamivudine) - (DOLCE),HIV
+GSK,2020-08-06,DOVATO (Dolutegravir + lamivudine) - (DOLCE),HIV
+PFE,2020-08-05,BLENREP (belantamab mafodotin),Multiple myeloma
+GSK,2020-08-05,BLENREP (belantamab mafodotin),Multiple myeloma
+DBVT,2020-08-04,Viaskin Peanut - (PEOPLE),Peanut allergy - ages 4 to 11 years
+JAZZ,2020-08-03,EPIDIOLEX (cannabidiol),Tuberous Sclerosis Complex
+JNJ,2020-08-03,SPRAVATO (esketamine),Major depressive disorder (MDD)
+NVS,2020-07-31,MONJUVI (tafasitamab),Relapsed or refractory diffuse large B cell lymphoma
+XNCR,2020-07-31,MONJUVI (tafasitamab),Relapsed or refractory diffuse large B cell lymphoma
+INCY,2020-07-31,MONJUVI (tafasitamab),Relapsed or refractory diffuse large B cell lymphoma
+RHHBY,2020-07-30,CABOMETYX (Cabozantinib) + TECENTRIQ (atezolizumab) and Zelboraf (vemurafenib) - (IMspire150),BRAF V600 mutation-positive metastatic or unresectable locally advanced melanoma
+EXEL,2020-07-30,CABOMETYX (Cabozantinib) + TECENTRIQ (atezolizumab) and Zelboraf (vemurafenib) - (IMspire150),BRAF V600 mutation-positive metastatic or unresectable locally advanced melanoma
+AZN,2020-07-24,BREZTRI AEROSPHERE (budesonide/glycopyrrolate/formoterol fumarate),Chronic obstructive pulmonary disease (COPD)
+GILD,2020-07-24,TECARTUS (brexucabtagene autoleucel) - (ZUMA-2),Relapsed or Refractory Mantle Cell Lymphoma (r/r MCL) - cancer
+JAZZ,2020-07-22,XYWAV,Cataplexy and Excessive Daytime Sleepiness in Narcolepsy
+JNJ,2020-07-14,TREMFYA (Guselkumab),Psoriatic Arthritis
+NVS,2020-07-14,TREMFYA (Guselkumab),Psoriatic Arthritis
+VRCA,2020-07-13,YCANTH (cantharidin),Molluscum contagiosum
+VTRS,2020-07-09,Hulio (adalimumab-fkjp),Humira biosimilar
+MRK,2020-07-08,KEYTRUDA (pembrolizumab) and LENVIMA (lenvatinib),Hepatocellular Carcinoma
+ENDP,2020-07-06,QWO (collagenase clostridium histolyticum-aaes),Edematous fibrosclerotic panniculopathy (“cellulite”)
+PFE,2020-07-02,RUKOBIA (Fostemsavir),HIV
+GSK,2020-07-02,RUKOBIA (Fostemsavir),HIV
+RARE,2020-06-30,DOJOLVI (triheptanoin),Long-Chain Fatty Acid Oxidation Disorders (LC-FAOD)
+PFE,2020-06-30,BAVENCIO (avelumab),Bladder cancer
+HALO,2020-06-29,Subcutaneous PERJETA (Pertuzumab) and (HERCEPTIN) Trastuzumab,HER2-positive early breast cancer
+MRK,2020-06-29,KEYTRUDA (pembrolizumab),Colorectal cancer (CRC)
+HRTX,2020-06-29,ZYNRELEF (HTX-011),Post operative pain
+RHHBY,2020-06-29,Subcutaneous PERJETA (Pertuzumab) and (HERCEPTIN) Trastuzumab,HER2-positive early breast cancer
+MOLN,2020-06-26,ABICIPAR,Age-related macular degeneration (AMD)
+ABBV,2020-06-26,ABICIPAR,Age-related macular degeneration (AMD)
+MRK,2020-06-24,KEYTRUDA (pembrolizumab),Cutaneous squamous cell carcinoma (cSCC)
+KPTI,2020-06-22,XPOVIO (selinexor),Diffuse Large B-Cell Lymphoma (DLBCL)
+EVOK,2020-06-19,GIMOTI (metoclopramide),Diabetic gastroparesis
+EPZM,2020-06-18,TAZVERIK (Tazemetostat),Follicular lymphoma
+RARE,2020-06-18,CRYSVITA (burosumab),Tumor-induced osteomalacia (TIO)
+MRK,2020-06-17,KEYTRUDA (pembrolizumab),Solid tumors - TMB-H ≥10 mutations/megabase
+NVS,2020-06-16,COSENTYX (secukinumab) - PREVENT,Non-radiographic axial spondyloarthritis
+LLY,2020-06-15,LYUMJEV (ultra rapid insulin),Diabetes
+JAZZ,2020-06-15,ZEPZELCA (lurbinectedin),Small cell lung cancer (SCLC)
+ABBV,2020-06-15,JUVÉDERM VOLUMA,Augmentation of the chin region
+BGNE,2020-06-12,BRUKINSA (zanubrutinib),Waldenström’s macroglobulinemia
+ONC,2020-06-12,BRUKINSA (zanubrutinib),Waldenström’s macroglobulinemia
+MRK,2020-06-12,GARDASIL 9,Prevention HPV-Related Head and Neck Cancers
+AMGN,2020-06-11,UPLIZNA (Inebilizumab),Neuromyelitis Optica Spectrum Disorder
+MRK,2020-06-04,"RECARBRIO (imipenem, cilastatin, and relebactam)",Hospital-Acquired and Ventilator-Associated Bacterial Pneumonia (HABP/VABP)
+LLY,2020-06-01,TALTZ (ixekizumab),Non-radiographic axial spondyloarthritis
+AZN,2020-06-01,BRILINTA (ticagrelor) - (THEMIS),Type 2 Diabetes / coronary artery disease (CAD)
+ABBV,2020-05-29,ORILISSA (Elagolix),Uterine Fibroids
+RHHBY,2020-05-29,TECENTRIQ (atezolizumab) + AVASTIN (Bevacizumab) - IMbrave 150,Hepatocellular carcinoma
+VYNE,2020-05-29,ZILXI (FMX103),Papulopustular rosacea
+ATNXQ,2020-05-29,Oraxol (Oral Paclitaxel),Angiosarcoma
+LLY,2020-05-29,CYRAMZA (ramucirumab),Non-small cell lung cancer
+NBIX,2020-05-29,ORILISSA (Elagolix),Uterine Fibroids
+LLY,2020-05-28,TAUVID (flortaucipir F 18 injection),Patients evaluated for Alzheimer's Disease
+IOVA,2020-05-27,AMTAGVI (Lifileucel (LN-144)) - (TILVANCE-301),Refractory metastatic melanoma
+SNY,2020-05-26,DUPIXENT (dupilumab),Atopic dermatitis 6-11 year-olds
+REGN,2020-05-26,DUPIXENT (dupilumab),Atopic dermatitis 6-11 year-olds
+BMY,2020-05-26,OPDIVO (nivolumab) and YERVOY (ipilimumab),First-line Non-small cell lung cancer (NSCLC)
+EVFM,2020-05-22,PHEXXI (Amphora),contraceptive vaginal gel
+TAK,2020-05-22,ALUNBRIG (brigatinib),ALK+ Metastatic Non-Small Cell Lung Cancer
+AQST,2020-05-21,APL-130277,Parkinson’s Disease with motor fluctuations
+AZN,2020-05-19,LYNPARZA (olaparib),Castration-Resistant Prostate Cancer
+MRK,2020-05-19,LYNPARZA (olaparib),Castration-Resistant Prostate Cancer
+RHHBY,2020-05-18,TECENTRIQ (atezolizumab) - IMpower110,Non-small cell lung cancer (NSCLC)
+BMY,2020-05-15,OPDIVO (nivolumab) + YERVOY (ipilimumab),First-line Non-small cell lung cancer (NSCLC)
+DCPH,2020-05-15,QINLOCK (ripretinib),Gastrointestinal Stromal Tumors (GIST) - fourth-line
+BPMC,2020-05-15,AYVAKIT (avapritinib),Fourth-line GIST
+BMY,2020-05-15,POMALYST (pomalidomide),Kaposi’s sarcoma
+AZN,2020-05-08,LYNPARZA (olaparib) + AVASTIN (bevacizumab) - PAOLA-1,First-line ovarian cancer
+LLY,2020-05-08,RETEVMO (Selpercatinib),"Non-small cell lung cancer, medullary thyroid cancer and thyroid cancer."
+MRK,2020-05-08,LYNPARZA (olaparib) + AVASTIN (bevacizumab) - PAOLA-1,First-line ovarian cancer
+NVS,2020-05-06,TABRECTA (capmatinib),Non-small cell lung cancer
+INCY,2020-05-06,TABRECTA (capmatinib),Non-small cell lung cancer
+AZN,2020-05-05,FARXIGA (Dapagliflozin),Heart failure
+JNJ,2020-05-01,DARZALEX (Daratumumab) using ENHANZE,Multiple myeloma
+GMAB,2020-05-01,DARZALEX (Daratumumab) using ENHANZE,Multiple myeloma
+HALO,2020-05-01,DARZALEX (Daratumumab) using ENHANZE,Multiple myeloma
+AMGN,2020-04-30,OTEZLA,Scalp Psoriasis
+ANIP,2020-04-29,Cortrophin Gel,"Acute exacerbations of multiple sclerosis, rheumatoid arthritis, systemic lupus erythematous and ulcerative colitis"
+GSK,2020-04-29,ZEJULA (Niraparib),Ovarian cancer
+ZLAB,2020-04-29,ZEJULA (Niraparib),Ovarian cancer
+UTHR,2020-04-28,Trevyent,Pulmonary Arterial Hypertension (PAH)
+NBIX,2020-04-27,Opicapone,Parkinson's disease
+SNY,2020-04-24,MenQuadfi,Meningococcal meningitis
+GILD,2020-04-22,TRODELVY (sacituzumab govitecan),Triple-negative breast cancer
+JNJ,2020-04-21,IMBRUVICA (ibrutinib) and RITUXAN (rituximab),Chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL).
+ABBV,2020-04-21,IMBRUVICA (ibrutinib) and RITUXAN (rituximab),Chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL).
+PFE,2020-04-17,TUKYSA (Tucatinib) and HERCEPTIN (Trastuzumab) and XELODA (capecitabine),HER2+ Metastatic Breast Cancer (MBC)
+INCY,2020-04-17,PEMAZYRE (pemigatinib),Cholangiocarcinoma
+URGN,2020-04-15,Jelmyto (MitoGel),Urothelial Carcinoma
+MRK,2020-04-13,KOSELUGO (selumetinib),Neurofibromatosis type 1 plexiform neurofibromas
+AZN,2020-04-13,KOSELUGO (selumetinib),Neurofibromatosis type 1 plexiform neurofibromas
+PFE,2020-04-08,BRAFTOVI (Encorafenib),BRAF-Mutant Colorectal Cancer
+MRK,2020-04-03,REBLOZYL (Luspatercept),Myelodysplastic syndromes (MDS) cancer
+BMY,2020-04-03,REBLOZYL (Luspatercept),Myelodysplastic syndromes (MDS) cancer
+LLY,2020-03-30,TALTZ (ixekizumab),Pediatric Patients with Moderate to Severe Plaque Psoriasis
+AZN,2020-03-30,IMFINZI (Durvalumab) + tremelimumab (CASPIAN),Small cell lung cancer (SCLC)
+RMTI,2020-03-27,IV Triferic,Anemia
+IGXT,2020-03-27,RIZAPORT (RHB-103),Migraine
+BMY,2020-03-25,ZEPOSIA (Ozanimod),Relapsing Multiple Sclerosis
+LLY,2020-03-20,JARDIANCE (empagliflozin),Type 1 Diabetes
+GILD,2020-03-19,EPCLUSA (sofosbuvir /velpatasvir),Hepatitis C
+ETON,2020-03-18,ET-105 (Lamotrigine for Oral Suspension),"Lennox-Gastaut syndrome, epilepsy"
+BMY,2020-03-11,OPDIVO (nivolumab) and YERVOY (ipilimumab),Previously Treated Hepatocellular Carcinoma
+SNY,2020-03-02,Isatuximab,Refractory Multiple Myeloma
+BHVN,2020-02-27,NURTEC ODT (rimegepant),Acute treatment of migraine
+PFE,2020-02-27,NURTEC ODT (rimegepant),Acute treatment of migraine
+EGRX,2020-02-26,Barhemsys (amisulpride),Postoperative nausea and vomiting (PONV)
+PBYI,2020-02-26,NERLYNX (neratinib) - NALA,Third-line HER2-positive metastatic breast cancer
+ESPR,2020-02-26,NEXLETOL (bempedoic acid) / Ezetimibe,Hypercholesterolemia
+LLY,2020-02-21,TRULICITY (dulaglutide) - REWIND CV outcomes,Type 2 diabetes
+ESPR,2020-02-21,NEXLETOL (bempedoic acid),Hypercholesterolemia
+MRK,2020-01-27,DIFICID (fidaxomicin),Clostridium difficile infections (CDI)
+LLY,2020-01-27,"TRIJARDY XR (Empagliflozin, linagliptin and metformin)",Type 2 Diabetes
+EPZM,2020-01-23,TAZVERIK (Tazemetostat),Epithelioid Sarcoma
+AMGN,2020-01-21,TEPEZZA (Teprotumumab),Thyroid Eye Disease (TED)
+BPMC,2020-01-09,AYVAKIT (avapritinib),PDGFRA exon 18 mutant Gastrointestinal stromal tumors (GIST)
+MRK,2020-01-08,KEYTRUDA (pembrolizumab),NMIBC Bladder cancer
+,2019-12-26,Cefazolin for Injection USP,See CRL text
+,2019-12-23,Ubrelvy,
+,2019-12-20,TissueBlue,
+,2019-12-20,Dayvigo,
+,2019-12-20,Enhertu,
+,2019-12-20,Caplyta,
+,2019-12-20,Sesquient (fosphenytoin sodium) injection,See CRL text
+,2019-12-19,Unknown,See CRL text
+,2019-12-19,Prescribing Information (SRPI) - a checklist of important fo,See CRL text
+,2019-12-18,Padcev,
+,2019-12-17,MLNO0002 SC,See CRL text
+,2019-12-12,Vyondys 53,
+,2019-11-25,Oxbryta,
+,2019-11-22,Naloxone hydrochloride injection,See CRL text
+,2019-11-21,Xcopri,
+,2019-11-20,Cyclophosphamide Injection,See CRL text
+,2019-11-20,Givlaari,
+,2019-11-15,Adakveo,
+,2019-11-14,Brukinsa,
+,2019-11-14,Fetroja,
+,2019-11-08,Reblozyl,
+,2019-11-07,ExEm Foam,
+,2019-11-04,Romidepsin Injection solution,See CRL text
+,2019-10-21,Trikafta,
+,2019-10-18,XIPERE,See CRL text
+,2019-10-11,Reyvow,
+,2019-10-10,[drug marketed without a proprietary name],
+,2019-10-08,Scenesse,
+,2019-10-07,Beovu,
+,2019-10-04,Aklief,
+,2019-10-01,Cyclophosphamide Injection,See CRL text
+,2019-09-30,"Breztri Aerosphere (budesonide, glycopyrrolate and",See CRL text
+,2019-09-24,TX01,See CRL text
+,2019-09-12,Ibsrela,
+,2019-08-28,Unknown,See CRL text
+,2019-08-27,Nourianz,
+,2019-08-21,[drug marketed without a proprietary name],
+,2019-08-19,Vyondys 53 (golodirsen) injection,See CRL text
+,2019-08-19,Xenleta,
+,2019-08-16,Rinvoq,
+,2019-08-16,Inrebic,
+,2019-08-15,Rozlytrek,
+,2019-08-14,[drug marketed without a proprietary name],
+,2019-08-14,Wakix,
+,2019-08-14,Wakix (pitolisant) 4,See CRL text
+,2019-08-07,Eysuvis (loteprednol etabonate ophthalmic suspension),See CRL text
+,2019-08-06,"Mylan Laboratories Limited, India",See CRL text
+,2019-08-02,Turalio,
+,2019-07-30,Nubeqa,
+,2019-07-25,Accrufer,
+,2019-07-19,Unknown,See CRL text
+,2019-07-18,"Ingenus Pharmaceuticals, LLC",See CRL text
+,2019-07-16,Recarbrio,
+,2019-07-03,Xpovio,
+,2019-06-21,Vyleesi,
+,2019-06-20,Unknown,See CRL text
+,2019-06-19,Unknown,See CRL text
+,2019-06-11,Theragrastim,See CRL text
+,2019-06-10,Polivy,
+,2019-06-06,Injection,See CRL text
+,2019-05-24,Piqray,
+,2019-05-03,Dr,See CRL text
+,2019-05-03,Vyndaqel,
+,2019-05-02,"Barhemsys (amisulpride) injection, for intravenous use",See CRL text
+,2019-04-30,Unknown,See CRL text
+,2019-04-23,Skyrizi,
+,2019-04-12,Balversa,
+,2019-04-09,Evenity,
+,2019-04-01,Gimoti (metoclopramide nasal spray),See CRL text
+,2019-03-29,Unknown,See CRL text
+,2019-03-28,Avaclyr,See CRL text
+,2019-03-28,Prescribing Information,See CRL text
+,2019-03-27,Acetaminophen Injection in the PAB Container,See CRL text
+,2019-03-26,Mayzent,
+,2019-03-22,Sesquient (fosphenytoin sodium) injection,See CRL text
+,2019-03-22,Meloxicam Injection,See CRL text
+,2019-03-20,Sunosi,
+,2019-03-19,Zulresso,
+,2019-02-13,Egaten,
+,2019-02-06,Cablivi,
+,2019-02-01,Jeuveau,
+,2019-01-29,Kynmobi (apomorphine) sublingual film 10 mg,See CRL text
+,2019-01-23,Unknown,See CRL text
+,2019-01-17,Unknown,See CRL text
+,2019-01-15,Cyclophosphamide Solution,See CRL text
+,2018-12-21,Ultomiris,
+,2018-12-21,Elzonris,
+,2018-12-21,BRIXADI (buprenorphine) extended-release injection for subcu,See CRL text
+,2018-12-20,Asparlas,
+,2018-12-14,Motegrity,
+,2018-12-12,"Epinephrine Injection USP,",See CRL text
+,2018-11-30,Unknown,See CRL text
+,2018-11-28,Firdapse,
+,2018-11-28,Xospata,
+,2018-11-26,Vitrakvi,
+,2018-11-21,Daurismo,
+,2018-11-20,Prescribing Information and Pregnancy and Lactation Labeling,See CRL text
+,2018-11-20,Gamifant,
+,2018-11-16,Aemcolo,
+,2018-11-09,Yupelri,
+,2018-11-09,Acetaminophen Injection,See CRL text
+,2018-11-02,Study 3001,See CRL text
+,2018-11-02,Lorbrena,
+,2018-10-24,Xofluza,
+,2018-10-19,Cefazolin for Injection USP,See CRL text
+,2018-10-16,Talzenna,
+,2018-10-05,Barhemsys (amisulpride) injection,See CRL text
+,2018-10-05,Revcovi,
+,2018-10-05,Tegsedi,
+,2018-10-02,Nuzyra,
+,2018-10-01,Seysara,
+,2018-09-28,Libtayo,
+,2018-09-27,Vizimpro,
+,2018-09-27,Emgality,
+,2018-09-24,Copiktra,
+,2018-09-14,Ajovy,
+,2018-09-13,Lumoxiti,
+,2018-09-12,"Macleods Pharmaceuticals Limited, India",See CRL text
+,2018-08-30,Pifeltro,
+,2018-08-27,Xerava,
+,2018-08-24,Welchol (colesevelam) chewable bar,See CRL text
+,2018-08-23,Takhzyro,
+,2018-08-22,Oxervate,
+,2018-08-20,Diacomit,
+,2018-08-10,Onpattro,
+,2018-08-10,Galafold,
+,2018-08-10,Annovera,
+,2018-08-08,Poteligeo,
+,2018-07-31,Mulpleta,
+,2018-07-27,Omegaven,
+,2018-07-25,Dyanavel XR (amphetamine) extended-release tablets 5 mg,See CRL text
+,2018-07-24,Dr,See CRL text
+,2018-07-23,Orilissa,
+,2018-07-20,Cocaine Hydrochloride Topical Solution,See CRL text
+,2018-07-20,Krintafel,
+,2018-07-20,Tibsovo,
+,2018-07-13,Tpoxx,
+,2018-06-27,Mektovi,
+,2018-06-27,Braftovi,
+,2018-06-26,Unknown,See CRL text
+,2018-06-25,Zemdri,
+,2018-06-25,Epidiolex,
+,2018-06-25,Prescribing,See CRL text
+,2018-06-15,Prescribing Information and Pregnancy and Lactation Labeling,See CRL text
+,2018-06-15,Unknown,See CRL text
+,2018-06-13,[drug marketed without a proprietary name],
+,2018-06-11,Unknown,See CRL text
+,2018-05-31,Olumiant,
+,2018-05-25,Kanjinti (ABP 980),See CRL text
+,2018-05-24,Palynziq,
+,2018-05-23,ANJESO (meloxicam) injection,See CRL text
+,2018-05-21,Doptelet,
+,2018-05-18,Lokelma,
+,2018-05-17,Aimovig,
+,2018-05-17,Unknown,See CRL text
+,2018-05-16,Lucemyra,
+,2018-05-15,Unknown,See CRL text
+,2018-05-10,Theragrastim,See CRL text
+,2018-04-26,Cyclophosphamide Solution,See CRL text
+,2018-04-20,Trazimera,See CRL text
+,2018-04-19,Akynzeo,
+,2018-04-17,Crysvita,
+,2018-04-17,Tavalisse,
+,2018-03-30,CT-P6,See CRL text
+,2018-03-23,SB4,See CRL text
+,2018-03-22,Unknown,See CRL text
+,2018-03-20,Ilumya,
+,2018-03-19,Daptomycin for Injection,See CRL text
+,2018-03-13,"Macleods Pharmaceuticals Limited, India",See CRL text
+,2018-03-06,Trogarzo,
+,2018-02-28,CT-P10,See CRL text
+,2018-02-22,Bortezomib for Injection,See CRL text
+,2018-02-14,Erleada,
+,2018-02-12,Symdeko,
+,2018-02-07,Biktarvy,
+,2018-01-26,Lutathera,
+,2018-01-19,BRIXADI (buprenorphine extended-release) injection for subcu,See CRL text
+,2017-12-22,"AFT Pharmaceuticals, Ltd",See CRL text
+,2017-12-21,Unknown,See CRL text
+,2017-12-21,Giapreza,
+,2017-12-20,Macrilen,
+,2017-12-19,Steglatro,
+,2017-12-18,Rhopressa,
+,2017-12-11,Xepi,
+,2017-12-06,Injection,See CRL text
+,2017-12-05,Ozempic,
+,2017-11-16,Hemlibra,
+,2017-11-15,Mepsevii,
+,2017-11-14,Fasenra,
+,2017-11-08,Prevymis,
+,2017-11-03,Bortezomib for Injection,See CRL text
+,2017-11-02,Vyzulta,
+,2017-10-31,Calquence,
+,2017-10-26,Fulvestrant Injection,See CRL text
+,2017-10-20,Unknown,See CRL text
+,2017-10-11,DSUVIA (sufentanil sublingual tablet),See CRL text
+,2017-09-28,Acetaminophen Injection in the PAB Container,See CRL text
+,2017-09-28,Verzenio,
+,2017-09-26,Prescribing,See CRL text
+,2017-09-15,Solosec,
+,2017-09-14,Aliqopa,
+,2017-09-01,Unknown,See CRL text
+,2017-08-29,Vabomere,
+,2017-08-29,[drug marketed without a proprietary name],
+,2017-08-28,Unknown,See CRL text
+,2017-08-17,Besponsa,
+,2017-08-03,Mavyret,
+,2017-08-01,Idhifa,
+,2017-07-28,Jornay PM (methylphenidate hydrochloride) Modified,See CRL text
+,2017-07-18,Vosevi,
+,2017-07-17,Nerlynx,
+,2017-07-13,Unknown,See CRL text
+,2017-07-13,Tremfya,
+,2017-07-10,DEXTENZA (dexamethasone ophthalmic insert),See CRL text
+,2017-06-23,Bevyxxa,
+,2017-06-19,Baxdela,
+,2017-06-09,CHS-1701,See CRL text
+,2017-06-02,"Romidepsin Injection, solution",See CRL text
+,2017-06-02,Implantable System for Remodulin (treprostinil),See CRL text
+,2017-05-23,Sun Pharmaceutical Industries Limited,See CRL text
+,2017-05-22,Kevzara,
+,2017-05-05,Unknown,See CRL text
+,2017-05-05,Radicava,
+,2017-05-01,Imfinzi,
+,2017-04-28,Tymlos,
+,2017-04-28,Rydapt,
+,2017-04-28,Alunbrig,
+,2017-04-27,Brineura,
+,2017-04-26,Bortezomib for Injection,See CRL text
+,2017-04-11,Ingrezza,
+,2017-04-03,Austedo,
+,2017-03-28,Dupixent,
+,2017-03-28,Ocrevus,
+,2017-03-27,Zejula,
+,2017-03-24,Unknown,See CRL text
+,2017-03-23,Bavencio,
+,2017-03-23,Symproic,
+,2017-03-22,Elepsia XR (levetiracetam) extended-release tablets,See CRL text
+,2017-03-21,Xadago,
+,2017-03-13,Kisqali,
+,2017-02-28,Xermelo,
+,2017-02-17,Naloxone Nasal Spray,See CRL text
+,2017-02-15,Siliq,
+,2017-02-09,Emflaza,
+,2017-02-07,Parsabiv,
+,2017-02-01,Injection,See CRL text
+,2017-01-19,Trulance,
+,2017-01-11,Ozobax (baclofen oral solution) is,See CRL text
+,2016-12-23,Spinraza,
+,2016-12-23,Primatene Mist (epinephrine inhalation aerosol),See CRL text
+,2016-12-19,Xelpros,See CRL text
+,2016-12-19,Rubraca,
+,2016-12-14,Eucrisa,
+,2016-11-23,Unknown,See CRL text
+,2016-11-15,Acetaminophen Injection,See CRL text
+,2016-10-21,Zinplava,
+,2016-10-19,Lartruvo,
+,2016-10-07,Unknown,See CRL text
+,2016-09-30,Prescribing,See CRL text
+,2016-09-19,Exondys 51,
+,2016-09-15,Medical Research,See CRL text
+,2016-08-30,Xeglyze (abametapir) Lotion,See CRL text
+,2016-07-27,Adlyxin,
+,2016-07-21,Prescribing,See CRL text
+,2016-07-11,Xiidra,
+,2016-06-28,Epclusa,
+,2016-06-24,Avaclyr (acyclovir ophthalmic ointment) 3,See CRL text
+,2016-06-24,LA-EP2006,See CRL text
+,2016-06-22,Sun Pharma Global FZE,See CRL text
+,2016-06-01,Romidepsin Injection,See CRL text
+,2016-06-01,Netspot,
+,2016-05-27,Zinbryta,
+,2016-05-27,Ocaliva,
+,2016-05-27,Axumin,
+,2016-05-18,Tecentriq,
+,2016-05-10,ZTlido (lidocaine patch 1,See CRL text
+,2016-05-06,Unknown,See CRL text
+,2016-05-04,EH15031 shows slower reconstitution time relative to previou,See CRL text
+,2016-04-29,Nuplazid,
+,2016-04-28,Amphora (lactic acid 1,See CRL text
+,2016-04-15,"Chiasma, Inc",See CRL text
+,2016-04-11,Venclexta,
+,2016-03-30,Defitelio,
+,2016-03-23,Cinqair,
+,2016-03-22,Taltz,
+,2016-03-18,Anthim,
+,2016-03-10,Injection,See CRL text
+,2016-02-18,Briviact,
+,2016-01-28,Zepatier,
+,2015-12-22,Zurampic,
+,2015-12-21,Uptravi,
+,2015-12-15,Bridion,
+,2015-12-11,Alecensa,
+,2015-12-09,"Ablysinol (Dehydrated Alcohol Injection, USP)",See CRL text
+,2015-12-08,Kanuma,
+,2015-11-30,Empliciti,
+,2015-11-24,Portrazza,
+,2015-11-24,Sun Pharmaceutical Industries Limited,See CRL text
+,2015-11-20,Ninlaro,
+,2015-11-16,Darzalex,
+,2015-11-13,Tagrisso,
+,2015-11-10,Cotellic,
+,2015-11-05,Genvoya,
+,2015-11-04,Nucala,
+,2015-10-23,Yondelis,
+,2015-10-23,Strensiq,
+,2015-10-21,Veltassa,
+,2015-10-16,Praxbind,
+,2015-10-05,Aristada,
+,2015-09-25,Tresiba,
+,2015-09-23,Elepsia XR (levetiracetam) extended-release tablets,See CRL text
+,2015-09-22,Lonsurf,
+,2015-09-17,Vraylar,
+,2015-09-04,Xuriden,
+,2015-09-01,Varubi,
+,2015-08-27,Repatha (evolocumab),See CRL text
+,2015-08-27,Repatha,
+,2015-08-18,Addyi,
+,2015-07-30,Xelpros (latanoprost ophthalmic emulsion) 0,See CRL text
+,2015-07-24,Odomzo,
+,2015-07-24,Praluent,
+,2015-07-24,Daklinza,
+,2015-07-10,Rexulti,
+,2015-07-07,Entresto,
+,2015-07-02,Orkambi,
+,2015-06-22,Kengreal,
+,2015-05-29,"GP Pharm, S",See CRL text
+,2015-05-27,Viberzi,
+,2015-04-29,Kybella,
+,2015-04-15,Corlanor,
+,2015-03-17,Cholbam,
+,2015-03-10,Unituxin,
+,2015-03-06,Cresemba,
+,2015-02-27,Unknown,See CRL text
+,2015-02-27,Acetaminophen,See CRL text
+,2015-02-25,Avycaz,
+,2015-02-23,Farydak,
+,2015-02-13,Lenvima,
+,2015-02-03,Ibrance,
+,2015-01-30,Nocdurna,See CRL text
+,2015-01-23,Natpara,
+,2015-01-21,Cosentyx,
+,2015-01-08,Savaysa,

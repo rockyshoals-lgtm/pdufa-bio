@@ -157,6 +157,14 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
+    if not os.path.exists(CSVP):
+        # 2026-08-16: .gitignore's blanket *.csv silently swallowed the dataset from the
+        # commit and BOTH Aug-16 CI runs died here, taking the whole daily rebuild with them
+        # -- the second time a workstation-only file has done this. A missing dataset must
+        # never cost the site its daily refresh: the pages simply keep their last build.
+        print(f"  [warn] {os.path.basename(CSVP)} not present -- patent-cliff pages keep "
+              f"their previous build this run")
+        return 0
     rows = sorted(csv.DictReader(open(CSVP, encoding="utf-8-sig")), key=lambda r: r["loe"])
     upcoming = [r for r in rows if r["loe"] >= TODAY]
     years = collections.Counter(r["loe"][:4] for r in rows)
