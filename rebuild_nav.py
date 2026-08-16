@@ -40,11 +40,19 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 B, E = "<!--NAVC:BEGIN-->", "<!--NAVC:END-->"
 
-PRIMARY = [("/calendar", "Calendar"), ("/decisions", "Decisions"), ("/readouts", "Readouts"),
-           ("/runup-by-year", "Run-up"), ("/tickers", "Stocks")]
-MORE = [("/drug", "Drug Index"), ("/conferences", "Conferences"), ("/adcomm", "Advisory Committees"),
-        ("/screener", "Screener"), ("/research", "Research"), ("/developers", "API"),
-        ("/sls", "SLS tracker"), ("/account", "Account")]
+# Nav regroup (red team 2026-08-12g section 5.1): 14 flat items stopped being navigation.
+# Three top-level anchors + two grouped dropdowns + Pro. SLS is a campaign, not a section --
+# it lives on the homepage, not in permanent nav. Glossary/Learn/Methodology were live pages
+# with ZERO inbound nav links ('three explainer surfaces, all orphaned') -- now under Research.
+PRIMARY = [("/calendar", "Calendar"), ("/decisions", "Decisions"), ("/readouts", "Readouts")]
+GROUPS = [
+    ("Explore", [("/drug", "Drug Index"), ("/tickers", "Stocks"), ("/screener", "Screener"),
+                 ("/conferences", "Conferences"), ("/adcomm", "Advisory Committees")]),
+    ("Research", [("/research", "Studies"), ("/runup-by-year", "Run-up by Year"),
+                  ("/learn/what-is-a-pdufa-date", "Learn"), ("/glossary", "Glossary"),
+                  ("/methodology", "Methodology"), ("/developers", "API"),
+                  ("/account", "Account")]),
+]
 PRO = ("/pricing", "Pro")
 
 # Pages that are deliberately not part of the public site.
@@ -69,11 +77,13 @@ CSS = (f'<style id="{CSS_ID}">.navdd{{position:relative;display:inline-flex;alig
 
 def nav_inner():
     a = "".join(f'<a href="{u}">{t}</a>' for u, t in PRIMARY)
-    m = "".join(f'<a href="{u}">{t}</a>' for u, t in MORE)
-    return (B + a +
-            '<div class="navdd"><button class="navddb" aria-haspopup="true" '
-            'aria-expanded="false" onclick="this.parentNode.classList.toggle(\'open\')">'
-            'More</button><div class="navddm">' + m + '</div></div>'
+    dds = ""
+    for label, items in GROUPS:
+        m = "".join(f'<a href="{u}">{t}</a>' for u, t in items)
+        dds += ('<div class="navdd"><button class="navddb" aria-haspopup="true" '
+                'aria-expanded="false" onclick="this.parentNode.classList.toggle(\'open\')">'
+                f'{label}</button><div class="navddm">{m}</div></div>')
+    return (B + a + dds +
             f'<a class="pro" href="{PRO[0]}" style="color:var(--gold)">{PRO[1]}</a>' + E)
 
 
@@ -119,7 +129,8 @@ def main():
           f"{untouched} with no nav to rebuild, {skipped} skipped"
           + (" [dry run]" if a.dry_run else ""))
     print(f"     primary: {' · '.join(t for _, t in PRIMARY)} · More · {PRO[1]}")
-    print(f"     under More: {', '.join(t for _, t in MORE)}")
+    for label, items in GROUPS:
+        print(f"     under {label}: {', '.join(t for _, t in items)}")
 
 
 if __name__ == "__main__":
