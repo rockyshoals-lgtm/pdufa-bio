@@ -133,6 +133,12 @@ jobs:
       - name: "Per-decision FAQ on sourced pages"
         run: python build_decision_faq.py
 
+      # Red team 2026-08-12e: 427 Orange Book cliffs, 97% ATC-classified, their own classifier
+      # red-teamed before delivery. ~37 pages + /drug modules; the disclosure sentence is
+      # non-negotiable on every page and guard 41's LOE rule enforces it.
+      - name: "Patent cliff pages + /drug patent modules"
+        run: python build_patent_cliff.py
+
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_api_from_pages.py
 

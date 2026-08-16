@@ -1071,8 +1071,8 @@
 },
 "pdufa_site_src/drug/everolimus/index.html": {
 "date": "2026-08-16",
-"hash": "40a974e9a233b9a7",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "9e87d3535950389c",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/evo756/index.html": {
 "date": "2026-08-16",
@@ -1126,8 +1126,8 @@
 },
 "pdufa_site_src/drug/filspari/index.html": {
 "date": "2026-08-16",
-"hash": "abd227608c9f67dc",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "7710d7232e7db72f",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/foundayo/index.html": {
 "date": "2026-08-16",
@@ -1281,8 +1281,8 @@
 },
 "pdufa_site_src/drug/idose-tr/index.html": {
 "date": "2026-08-16",
-"hash": "ccbab1aa40ad2e24",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "83fbfad37b3b35d7",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/idsa-shea-hivma-idweek/index.html": {
 "date": "2026-08-16",
@@ -1311,8 +1311,8 @@
 },
 "pdufa_site_src/drug/iluvien/index.html": {
 "date": "2026-08-16",
-"hash": "bc08e02846f9a778",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "2ec87d48c811491e",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/im1305/index.html": {
 "date": "2026-08-16",
@@ -1796,8 +1796,8 @@
 },
 "pdufa_site_src/drug/neratinib/index.html": {
 "date": "2026-08-16",
-"hash": "cb6b4c2d6a94512e",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "ca8837ce88b244f8",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/nereus/index.html": {
 "date": "2026-08-16",
@@ -2360,8 +2360,8 @@
 },
 "pdufa_site_src/drug/sotagliflozin/index.html": {
 "date": "2026-08-16",
-"hash": "d58edcd0edb058be",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "2eb77c5b307e3c10",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/sotyktu/index.html": {
 "date": "2026-08-16",
@@ -2865,8 +2865,8 @@
 },
 "pdufa_site_src/drug/yutiq/index.html": {
 "date": "2026-08-16",
-"hash": "c842df2074d61ca6",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "128117edf7f8e35d",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/yutrepia/index.html": {
 "date": "2026-08-16",
@@ -2950,8 +2950,8 @@
 },
 "pdufa_site_src/drug/zusduri/index.html": {
 "date": "2026-08-16",
-"hash": "e2a8cbf680b9acfc",
-"ts": "2026-08-16T00:28:06+00:00"
+"hash": "81390212c31ef1dd",
+"ts": "2026-08-16T00:40:09+00:00"
 },
 "pdufa_site_src/drug/zycubo/index.html": {
 "date": "2026-08-16",
@@ -4695,6 +4695,241 @@
 "pdufa_site_src/methodology/index.html": {
 "date": "2026-08-02",
 "hash": "f2728165ad243bef"
+},
+"pdufa_site_src/patent-cliff/2026/index.html": {
+"date": "2026-08-16",
+"hash": "66d6a6dbda8afeca",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/2027/index.html": {
+"date": "2026-08-16",
+"hash": "6f24738a1492a80b",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/2028/index.html": {
+"date": "2026-08-16",
+"hash": "2b46d6ea9492073c",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/2029/index.html": {
+"date": "2026-08-16",
+"hash": "fdc67653b1eeb47f",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/2030/index.html": {
+"date": "2026-08-16",
+"hash": "4184c23d2d70ac9b",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/2031/index.html": {
+"date": "2026-08-16",
+"hash": "0fd759ecef428a9f",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/blood/index.html": {
+"date": "2026-08-16",
+"hash": "8986e19afd5aab77",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/cancer/index.html": {
+"date": "2026-08-16",
+"hash": "55e809ecf47ff708",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/cardiovascular/index.html": {
+"date": "2026-08-16",
+"hash": "677fa3de97ad8fde",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/company/abbvie-inc/index.html": {
+"date": "2026-08-15",
+"hash": "7cc1cc833e4b70d2"
+},
+"pdufa_site_src/patent-cliff/company/abbvie/index.html": {
+"date": "2026-08-15",
+"hash": "7b51f9c7a1f8863c"
+},
+"pdufa_site_src/patent-cliff/company/actelion-pharmaceuticals-us-inc/index.html": {
+"date": "2026-08-15",
+"hash": "f73645cb2b86d779"
+},
+"pdufa_site_src/patent-cliff/company/actelion-pharmaceuticals-us/index.html": {
+"date": "2026-08-15",
+"hash": "ca81d765d4abcf72"
+},
+"pdufa_site_src/patent-cliff/company/astrazeneca-ab/index.html": {
+"date": "2026-08-15",
+"hash": "2a1382c1fc0a30a1"
+},
+"pdufa_site_src/patent-cliff/company/azurity-pharmaceuticals-inc/index.html": {
+"date": "2026-08-15",
+"hash": "2bae746c13a1eb3a"
+},
+"pdufa_site_src/patent-cliff/company/azurity-pharmaceuticals/index.html": {
+"date": "2026-08-15",
+"hash": "8e49a9735782965a"
+},
+"pdufa_site_src/patent-cliff/company/bayer-healthcare-pharmaceuticals-inc/index.html": {
+"date": "2026-08-15",
+"hash": "8a9a2536c97105c3"
+},
+"pdufa_site_src/patent-cliff/company/bayer-healthcare-pharmaceuticals/index.html": {
+"date": "2026-08-15",
+"hash": "9479798424ef24b5"
+},
+"pdufa_site_src/patent-cliff/company/boehringer-ingelheim-pharmaceuticals-inc/index.html": {
+"date": "2026-08-15",
+"hash": "5681ed490ff191c4"
+},
+"pdufa_site_src/patent-cliff/company/boehringer-ingelheim-pharmaceuticals/index.html": {
+"date": "2026-08-15",
+"hash": "014a6397ecc07b25"
+},
+"pdufa_site_src/patent-cliff/company/cubist-pharmaceuticals/index.html": {
+"date": "2026-08-15",
+"hash": "1bfa4085f93442d0"
+},
+"pdufa_site_src/patent-cliff/company/gilead-sciences/index.html": {
+"date": "2026-08-15",
+"hash": "1c17411a82e58900"
+},
+"pdufa_site_src/patent-cliff/company/haleon-us-holdings-llc/index.html": {
+"date": "2026-08-15",
+"hash": "1c9cb297210bd965"
+},
+"pdufa_site_src/patent-cliff/company/haleon-us-holdings/index.html": {
+"date": "2026-08-15",
+"hash": "a8f7048d33d9b4f0"
+},
+"pdufa_site_src/patent-cliff/company/harrow-eye-llc/index.html": {
+"date": "2026-08-15",
+"hash": "dfd79cdfd543903b"
+},
+"pdufa_site_src/patent-cliff/company/harrow-eye/index.html": {
+"date": "2026-08-15",
+"hash": "c7c153742a664e32"
+},
+"pdufa_site_src/patent-cliff/company/merck-sharp-and-dohme-llc-a-sub-of-merck-and-co-in/index.html": {
+"date": "2026-08-15",
+"hash": "df7ef7f8c1ea71c9"
+},
+"pdufa_site_src/patent-cliff/company/merck-sharp-and-dohme/index.html": {
+"date": "2026-08-15",
+"hash": "e5804d2776db67ea"
+},
+"pdufa_site_src/patent-cliff/company/novartis-pharmaceuticals-corp/index.html": {
+"date": "2026-08-15",
+"hash": "627c4114204c5ffb"
+},
+"pdufa_site_src/patent-cliff/company/novartis-pharmaceuticals/index.html": {
+"date": "2026-08-15",
+"hash": "3fd1ca27251e8258"
+},
+"pdufa_site_src/patent-cliff/company/pf-prism-cv/index.html": {
+"date": "2026-08-15",
+"hash": "c06c2db402dc63cf"
+},
+"pdufa_site_src/patent-cliff/company/pfizer-inc/index.html": {
+"date": "2026-08-15",
+"hash": "426124f7e1c25094"
+},
+"pdufa_site_src/patent-cliff/company/pfizer/index.html": {
+"date": "2026-08-15",
+"hash": "a120050c56274e01"
+},
+"pdufa_site_src/patent-cliff/company/salix-pharmaceuticals-inc/index.html": {
+"date": "2026-08-15",
+"hash": "53162061a5f8885b"
+},
+"pdufa_site_src/patent-cliff/company/salix-pharmaceuticals/index.html": {
+"date": "2026-08-15",
+"hash": "3690cb1a75b6311a"
+},
+"pdufa_site_src/patent-cliff/company/takeda-pharmaceuticals-usa-inc/index.html": {
+"date": "2026-08-15",
+"hash": "1e4ce258c9dea02f"
+},
+"pdufa_site_src/patent-cliff/company/takeda-pharmaceuticals-usa/index.html": {
+"date": "2026-08-15",
+"hash": "432afee72064a952"
+},
+"pdufa_site_src/patent-cliff/company/teva-branded-pharmaceutical-products-r-and-d/index.html": {
+"date": "2026-08-16",
+"hash": "fb96bdcf33611047",
+"ts": "2026-08-16T00:41:19+00:00"
+},
+"pdufa_site_src/patent-cliff/company/viiv-healthcare-co/index.html": {
+"date": "2026-08-15",
+"hash": "de12966665ccda17"
+},
+"pdufa_site_src/patent-cliff/company/viiv-healthcare/index.html": {
+"date": "2026-08-15",
+"hash": "e36fb1b12860018e"
+},
+"pdufa_site_src/patent-cliff/dermatology/index.html": {
+"date": "2026-08-16",
+"hash": "0ddd99c691f028ac",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/diabetes/index.html": {
+"date": "2026-08-16",
+"hash": "3a2d30c576e8d969",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/eye-ear/index.html": {
+"date": "2026-08-16",
+"hash": "d2079b8fe13a28b8",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/genitourinary-hormones/index.html": {
+"date": "2026-08-16",
+"hash": "219883e224a52684",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/index.html": {
+"date": "2026-08-16",
+"hash": "8a8e19c183de5b03",
+"ts": "2026-08-16T00:40:09+00:00"
+},
+"pdufa_site_src/patent-cliff/infectious-disease/index.html": {
+"date": "2026-08-16",
+"hash": "22d588060e3b1ba8",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/metabolism-digestive/index.html": {
+"date": "2026-08-16",
+"hash": "77bc94794771017b",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/musculoskeletal/index.html": {
+"date": "2026-08-16",
+"hash": "e28fc717213132cd",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/neurology-psychiatry/index.html": {
+"date": "2026-08-16",
+"hash": "77c2c3c89e87adb6",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/pain/index.html": {
+"date": "2026-08-16",
+"hash": "8f2b4ae2d5f88bca",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/psychiatry/index.html": {
+"date": "2026-08-16",
+"hash": "edb83c7a1206ea2a",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/respiratory/index.html": {
+"date": "2026-08-16",
+"hash": "3924d1d17b251889",
+"ts": "2026-08-16T00:40:13+00:00"
+},
+"pdufa_site_src/patent-cliff/various/index.html": {
+"date": "2026-08-16",
+"hash": "01e61eb6b0fe5753",
+"ts": "2026-08-16T00:40:13+00:00"
 },
 "pdufa_site_src/pdufa/ABBV-rinvoq/index.html": {
 "date": "2026-08-07",

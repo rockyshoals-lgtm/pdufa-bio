@@ -44,7 +44,8 @@ B, E = "<!--NAVC:BEGIN-->", "<!--NAVC:END-->"
 # Three top-level anchors + two grouped dropdowns + Pro. SLS is a campaign, not a section --
 # it lives on the homepage, not in permanent nav. Glossary/Learn/Methodology were live pages
 # with ZERO inbound nav links ('three explainer surfaces, all orphaned') -- now under Research.
-PRIMARY = [("/calendar", "Calendar"), ("/decisions", "Decisions"), ("/readouts", "Readouts")]
+PRIMARY = [("/calendar", "Calendar"), ("/decisions", "Decisions"), ("/readouts", "Readouts"),
+           ("/patent-cliff", "Patents")]
 GROUPS = [
     ("Explore", [("/drug", "Drug Index"), ("/tickers", "Stocks"), ("/screener", "Screener"),
                  ("/conferences", "Conferences"), ("/adcomm", "Advisory Committees")]),
