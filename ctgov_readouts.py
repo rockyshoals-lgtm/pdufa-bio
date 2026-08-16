@@ -154,9 +154,13 @@ def parse_pcd(s):
 
 def watchlist_tickers():
     tks = set()
-    # 1. everything already in readout_forward.csv
-    p = os.path.join(HERE, "readout_forward.csv")
-    if os.path.exists(p):
+    # 1. everything already in readout_forward.csv -- FRESHEST of {base, _new}: the scan falls
+    #    back to a _new sibling when Excel holds the base file open, and reading the stale base
+    #    here would quietly feed yesterday's tickers into today's CT.gov pass.
+    cands = [c for c in (os.path.join(HERE, "readout_forward.csv"),
+                         os.path.join(HERE, "readout_forward_new.csv")) if os.path.exists(c)]
+    if cands:
+        p = max(cands, key=os.path.getmtime)
         for r in csv.DictReader(open(p, encoding="utf-8-sig")):
             if r.get("ticker"):
                 tks.add(r["ticker"].upper())
@@ -167,6 +171,35 @@ def watchlist_tickers():
             t = ln.strip().upper()
             if t and not t.startswith("#"):
                 tks.add(t)
+    # 3. BPC's forward-dated phase names (2026-08-13): the 2026-08-13 comparison showed BPC
+    #    listing 298 forward phase-readout names of which the EDGAR pass covered 112 -- the
+    #    45-day filing window STRUCTURALLY misses anyone who guided earlier (the SLS gap, at
+    #    scale). The freshest fda_*.xlsx in bpc_data closes it: every forward-dated Phase row's
+    #    ticker joins the CT.gov pass, so the trials get OUR dating and confidence tags rather
+    #    than trusting BPC's quarter-bucket dates.
+    try:
+        import glob as _g
+        from openpyxl import load_workbook
+        xs = sorted(_g.glob(os.path.join(HERE, "bpc_data", "fda_*.xlsx")))
+        if xs:
+            ws = load_workbook(xs[-1], read_only=True).worksheets[0]
+            hdr = None
+            today = dt.date.today().isoformat()
+            n0 = len(tks)
+            for row in ws.iter_rows(values_only=True):
+                if hdr is None:
+                    hdr = [str(x or "") for x in row]
+                    continue
+                d = dict(zip(hdr, row))
+                stage = str(d.get("Stage") or "")
+                cd = str(d.get("Catalyst Date") or "")[:10]
+                tkr = str(d.get("Ticker") or "").strip().upper()
+                if stage.lower().startswith("phase") and cd >= today and tkr.isalpha():
+                    tks.add(tkr)
+            print(f"  watchlist: +{len(tks) - n0} forward phase names from "
+                  f"{os.path.basename(xs[-1])}")
+    except Exception as e:
+        print(f"  [warn] BPC watchlist merge skipped: {e}")
     return sorted(tks)
 
 
@@ -192,6 +225,15 @@ def main():
             status = stat.get("overallStatus", "")
             if status in ("WITHDRAWN", "TERMINATED", "SUSPENDED"):
                 continue
+            # 2026-08-13 (owner spec: not enrollment, not closed -- company-guided readouts):
+            #   COMPLETED        = the trial CLOSED; its data locked whenever it locked, and the
+            #                      PCD tells you nothing about when the company will TALK. 7 of
+            #                      115 rows in the fresh run were closed trials wearing dates.
+            #   NOT_YET_RECRUITING = no patients yet; its PCD is pure fiction.
+            # RECRUITING / ENROLLING_BY_INVITATION survive but are marked LOW confidence below:
+            # their PCD moves with enrollment, which is exactly the artifact to distrust.
+            if status in ("COMPLETED", "NOT_YET_RECRUITING"):
+                continue
             # VERIFY the lead sponsor is really this company and not an academic center that
             # happens to share a word (the Tarsus University false-match).
             lead = (ps.get("sponsorCollaboratorsModule", {}) or {}).get("leadSponsor", {}) \
@@ -213,6 +255,10 @@ def main():
                 "nct": ps.get("identificationModule", {}).get("nctId", ""),
                 "title": (ps.get("identificationModule", {}).get("briefTitle", "") or "")[:70],
                 "days_to_pcd": (pcd - today).days,
+                # ACTIVE_NOT_RECRUITING = fully enrolled, PCD is a data-lock estimate: MED.
+                # Still-enrolling statuses: the PCD moves with enrollment: LOW. Nothing from
+                # CT.gov is HIGH -- only the company's own guidance is.
+                "pcd_conf": ("MED" if status == "ACTIVE_NOT_RECRUITING" else "LOW"),
             }
             # keep the SOONEST forward-or-recently-overdue trial per ticker
             if best is None or abs(rec["days_to_pcd"]) < abs(best["days_to_pcd"]):
@@ -229,8 +275,8 @@ def main():
     # PermissionError when ctgov_readouts.csv was open in Excel / locked by OneDrive. Write to a
     # tmp, atomic-replace with retries, and if still locked fall back to a sibling file rather
     # than losing 90 seconds of work. Same pattern smart_money_enrich already uses.
-    cols = ["ticker", "pcd", "pcd_type", "days_to_pcd", "phase", "status", "nct", "company",
-            "title"]
+    cols = ["ticker", "pcd", "pcd_type", "pcd_conf", "days_to_pcd", "phase", "status", "nct",
+            "company", "title"]
     tmp = dst + ".tmp"
     with open(tmp, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols)

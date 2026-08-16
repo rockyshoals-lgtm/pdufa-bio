@@ -260,7 +260,12 @@ jobs:
         run: python conference_presenter_miner.py --days 240
 
       - name: "Conferences: rebuild the calendar and presenter lists"
-        run: python build_conferences.py
+        run: |
+          python build_conferences.py
+          # Red team 2026-08-16 2.2: /api/v1/conferences served 14 stale meetings while the
+          # page showed 41 -- and /llms.txt points AI crawlers at the API. One selection,
+          # two surfaces: the sync derives the API rows from the same gated presenter set.
+          python sync_conferences_to_api.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
         run: python build_explainer.py

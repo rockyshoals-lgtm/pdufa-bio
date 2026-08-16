@@ -45,6 +45,17 @@ import argparse
 import collections
 import csv
 import datetime as dt
+import sys as _sys
+
+# 2026-08-13: this was the ONE script in the readout chain without the UTF-8 stdout guard, and
+# it died printing a fire emoji to a cp1252 console AFTER a complete 3-minute EDGAR walk --
+# killing the whole downstream chain (ctgov -> smart money -> merge) with it. A scanner must
+# never lose its work to a console codepage.
+try:
+    _sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    _sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 import json
 import os
 import re
@@ -150,7 +161,29 @@ FISCAL_RX = re.compile(
     r"year end(ed|ing)|fiscal year|fiscal 20\d\d|accounting polic|financial statements|"
     r"balance sheet|net proceeds|the offering\b|registered direct|underwritten|"
     r"securities purchase|shelf registration|private placement|per share\b|gross proceeds|"
-    r"quarterly report|annual report|10-Q|10-K|form 20-F|dividend", re.I)
+    r"quarterly report|annual report|10-Q|10-K|form 20-F|dividend|"
+    # 2026-08-13 (fresh-run audit): PROK's window came from 'reported financial results for the
+    # second quarter ended June 30, 2026' -- the earnings dateline, not a readout. The period
+    # phrasings below are how every earnings PR names its quarter.
+    r"quarter ended|three months ended|six months ended|nine months ended|"
+    r"financial results", re.I)
+
+# MILESTONE -- the date is real but the EVENT is wrong (2026-08-13 fresh-run audit: 24 of 180
+# rows). 'Announced the initiation of' (VALN), 'enrollment completed in 1Q' (SION via BPC),
+# 'dosing was completed' (NGNE) are trial-OPERATIONS milestones; the owner's spec is explicit:
+# company-guided PHASE READOUT dates, not enrollment, not initiation. A window whose clause is
+# about operations is rejected UNLESS the same clause also promises data/results/topline (TRAX:
+# 'Cohort 2 enrolling; top-line Cohort 1 data reaffirmed for Q4 2026' keeps its window -- the
+# data promise is there). Preclinical language is rejected outright: a preclinical result is
+# not a phase readout (AZTR, PRQR).
+MILESTONE_RX = re.compile(
+    r"\benrol(?:l|lment|ment)\w*|first patient|last patient|patient dosed|"
+    r"dosing (?:was |has been |is )?complet|initiat(?:e|ed|ion) of|site activation|"
+    r"IND (?:filing|submission|clearance|application)|CTA (?:filing|submission)|"
+    r"first (?:subject|participant)|study start", re.I)
+DATA_PROMISE_RX = re.compile(
+    r"\b(?:topline|top-line|data|results?|readout|analysis)\b", re.I)
+PRECLIN_RX = re.compile(r"\bpre[-\s]?clinical|in vitro|in vivo\b|animal (?:model|stud)", re.I)
 
 # ---------------------------------------------------------------------------------------------
 # THE DATELINE BUG — measured on the 2026-07-17 run, 16 of 40 windows (40%) were WRONG.
@@ -388,6 +421,20 @@ def results_now(txt):
     dose-limiting, generally well tolerated) -> 2 categories -> caught."""
     hits = []
     mv = _RES_VERB.search(txt)
+    # 2026-08-13 (earnings-season flood): 'reported financial results for the second quarter'
+    # satisfies 'reported ... results' and flagged 72 of 180 rows -- every Q2 earnings 8-K --
+    # as reporting clinical data. A verb hit whose matched span is about FINANCIAL results is
+    # not a readout; keep scanning for a later, genuinely clinical announce-verb.
+    # The exclusion reads the span PLUS 40 trailing chars: 'announced its results from the six
+    # months ended June 30' puts the giveaway AFTER the noun. 'quarter' not 'quarterly' --
+    # 'Reports Record Second Quarter 2026 Results' slipped the first patch. 'previously
+    # reported' is a company re-citing old data, not reporting new.
+    _FINSPAN = re.compile(r"financial|quarter|operating|fiscal|earnings|months ended|"
+                          r"full[- ]year|half[- ]year|previously", re.I)
+    # 12-char look-BEHIND as well: CABA's 'previously reported Phase 1/2 data' put the
+    # giveaway before the verb, outside a span-only check.
+    while mv and _FINSPAN.search(txt[max(0, mv.start() - 12):mv.end() + 40]):
+        mv = _RES_VERB.search(txt, mv.end())
     if mv:
         hits.append(("verb", mv))
     # efficacy and endpoint require a SPECIFIC NUMBER or an explicit endpoint claim (p-value, ORR%,
@@ -446,16 +493,33 @@ def fetch_date(h, agent, filed=None):
     cands = []
     for m in NEAR.finditer(txt):
         w = txt[max(0, m.start() - 260):m.end() + 260]
+        # REJECTION checks run on a PADDED slice: the 260-char boundary cut 'quarter ended'
+        # into 'rter ended' on PROK's earnings PR, and the fiscal regex sailed right past it
+        # (2026-08-13). The candidate window itself stays 260; only the guards see wider.
+        wchk = txt[max(0, m.start() - 300):m.end() + 300]
         # RULE 3 — no forward verb, no guidance. "Reports Positive Results July 15, 2026" is a
         # PAST readout with a dateline next to it, which is exactly what fooled the old code.
-        if not FWD_NEAR.search(w):
+        if not FWD_NEAR.search(wchk):
             continue
         # RULE 5 (2026-07-18) — FISCAL / OFFERING context. "results...for the year ending Dec 31"
         # is a financial statement, not a clinical readout; the whole point of broadening NEAR to
         # catch "results" is that this guard catches the financial ones it lets in. GLMD's
         # "December 31, 2026" and HELP's offering "Q4 2026" both die here.
-        if FISCAL_RX.search(w):
+        if FISCAL_RX.search(wchk):
             continue
+        # RULE 6 (2026-08-13) — OPERATIONS MILESTONE / PRECLINICAL context. The owner's spec:
+        # company-guided PHASE READOUT dates, not enrollment, not initiation. An enrollment or
+        # initiation clause only survives if it ALSO promises data in the same breath; a
+        # preclinical clause never does (a preclinical result is not a phase readout).
+        if PRECLIN_RX.search(wchk):
+            continue
+        if MILESTONE_RX.search(wchk):
+            # the tight clause around the DATE, not the whole 520-char window: TRAX's
+            # 'Cohort 2 enrolling ... top-line Cohort 1 data reaffirmed for Q4 2026' must
+            # keep its window, VALN's pure 'initiation of' clause must not
+            tight = w[max(0, len(w)//2 - 130):len(w)//2 + 130]
+            if not DATA_PROMISE_RX.search(tight):
+                continue
         ctx = w[:220].strip()
 
         # A vague period IS the answer. Real guidance says "2H 2026", never "July 15, 2026".
@@ -657,7 +721,20 @@ def main():
     rows = sorted(best.values(),
                   key=lambda v: (v.get("just_reported") == "YES", v["filed"]), reverse=True)
     out = os.path.join(HERE, a.out)
-    with open(out, "w", newline="", encoding="utf-8") as f:
+    # LOCK-RESISTANT WRITE (2026-08-13): the .bat's final step OPENS these CSVs in Excel, so the
+    # very next run finds its own output locked and dies with PermissionError -- a full 3-minute
+    # EDGAR walk thrown away because a viewer window was left open. Same pattern as
+    # ctgov_readouts/smart_money: fall back to a _new.csv sibling; readout_merge.load() already
+    # picks whichever of {base, _new} is fresher, so nothing downstream goes stale.
+    try:
+        f = open(out, "w", newline="", encoding="utf-8")
+    except PermissionError:
+        alt = os.path.splitext(out)[0] + "_new.csv"
+        print(f"  [warn] {os.path.basename(out)} is locked (open in Excel?) -- "
+              f"writing {os.path.basename(alt)} instead")
+        out = alt
+        f = open(out, "w", newline="", encoding="utf-8")
+    with f:
         w = csv.writer(f)
         w.writerow(["ticker", "kind", "just_reported", "result_hit", "filed", "form", "company",
                     "n_filings", "phrases", "window", "context", "cik", "accession", "document",
@@ -673,7 +750,8 @@ def main():
     jr_rows = [v for v in rows if v.get("just_reported") == "YES"]
     if jr_rows:
         print("\n" + "=" * 92)
-        print("  🔥 JUST REPORTED — this filing is REPORTING DATA (the morning gapper). KLRS lesson.")
+        print("  !! JUST REPORTED -- this filing is REPORTING DATA (the morning gapper). "
+              "KLRS lesson.")
         print("=" * 92)
         print(f"  {'tkr':<7} {'filed':<11} {'form':<5} {'next window':<14} what it reported")
         for v in jr_rows[:20]:

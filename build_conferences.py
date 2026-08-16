@@ -57,6 +57,68 @@ def pretty(start, end):
     return f"{a.strftime('%b')} {a.day} to {b.strftime('%b')} {b.day}, {a.year}"
 
 
+_PAST_GOV = re.compile(r"\b(?:we|company|[A-Z][a-z]+)\s+(?:recently\s+)?presented\b|"
+                       r"\bwas presented\b|\bwere presented\b|"
+                       r"\brecently (?:presented|featured)\b|\bpreviously presented\b")
+_MONTHS = ("january february march april may june july august september october november "
+           "december").split()
+
+
+def _history_row_ok(r, dated):
+    """The edition gate, applied to the CURATED history file (red team 2026-08-16 section 3):
+    the mined-file gate held, but two wrong-edition rows shipped from this third source --
+    BOLT's '40th Annual Meeting' (the 2025 edition, from a 2025 filing) published under SITC
+    2026, and IMNM's already-delivered 2025 poster under ENA 2026. Same bug, ungated file.
+
+    Rules, in order: a past-tense governor rejects (IMNM's 'Immunome presented'); the
+    edition's own year in the snippet passes; month-only anchoring passes ONLY if the source
+    was filed in the edition's own year (BOLT's November-2025 filing cannot anchor a November
+    2026 edition). A row with no snippet at all passes -- it predates evidence capture and
+    the render window is its only dating, as before."""
+    snip = (r.get("snippet") or r.get("matched_sentence") or "").strip()
+    if not snip:
+        return True
+    if _PAST_GOV.search(snip):
+        return False
+    ed_year = str(r.get(dated) or "")[:4]
+    try:
+        month_name = _MONTHS[int(str(r.get(dated))[5:7]) - 1]
+    except Exception:
+        month_name = ""
+    # The year must sit NEAR the conference clause, not anywhere in the snippet: BOLT's
+    # snippet says 'data in the third quarter of 2026' (a readout guide) and then 'In
+    # November at the 40th Annual Meeting' (the 2025 SITC) -- whole-snippet year matching
+    # passed the wrong clause on the readout's year. Anchor on the conference code, else the
+    # edition's month, and judge only that window.
+    low = snip.lower()
+    code = (r.get("conference") or "").lower()
+    i = low.find(code) if code else -1
+    if i < 0 and month_name:
+        i = low.find(month_name)
+    if i >= 0:
+        # clip the back side at the sentence boundary: BOLT's snippet reads '...data in the
+        # third quarter of 2026. o In November at the 40th Annual Meeting...' and a flat
+        # 140-char window pulled the readout clause's 2026 into the SITC clause's judgement
+        back = snip.rfind(".", max(0, i - 140), i)
+        start = back + 1 if back >= 0 else max(0, i - 140)
+        win = snip[start:i + 160]
+    else:
+        win = snip
+    years = set(re.findall(r"\b(20\d{2})\b", win))
+    # An EXPLICIT edition mention in the window wins outright (MOLN: 'ESMO 2026 in October'
+    # amid 2027/2028 milestone years elsewhere -- the row the red team confirmed true).
+    if ed_year in years:
+        return True
+    if years - {ed_year}:
+        return False
+    if not (month_name and re.search(rf"\b{month_name}\b", win, re.I)):
+        return False
+    # month-only anchoring: only a filing from the edition's own year can mean that edition
+    fm = re.search(r"\d{10}(2\d)\d{6}", str(r.get("source_url") or ""))
+    filed_year = ("20" + fm.group(1)) if fm else ""
+    return filed_year == ed_year
+
+
 def load_presenters():
     """conference code -> [rows], from both sourced presenter files.
 
@@ -76,7 +138,7 @@ def load_presenters():
     out = {}
     verified = os.path.join(HERE, "catalysts_out",
                             "conference_presenters_VERIFIED_2026-08-12.csv")
-    for path, dated, gate in ((PRES, "catalyst_date", False),
+    for path, dated, gate in ((PRES, "catalyst_date", "history"),
                               (verified, "conf_start", False),
                               (MINED, "conf_start", True)):
         if not os.path.exists(path):
@@ -85,7 +147,9 @@ def load_presenters():
             code = (r.get("conference") or "").strip()
             if not code:
                 continue
-            if gate and (r.get("confidence") or "").strip().lower() != "high":
+            if gate is True and (r.get("confidence") or "").strip().lower() != "high":
+                continue
+            if gate == "history" and not _history_row_ok(r, dated):
                 continue
             # Normalise the schemas onto the fields the renderer uses.
             r.setdefault("catalyst_date", r.get(dated) or "")

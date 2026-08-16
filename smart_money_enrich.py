@@ -213,7 +213,18 @@ def composite(row):
 
 
 def main():
-    path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "readout_forward.csv")
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+    else:
+        # FRESHEST of {base, _new} (2026-08-13): when Excel holds readout_forward.csv open, the
+        # scan writes readout_forward_new.csv instead -- enriching the stale base would put
+        # yesterday's tickers under today's timestamps.
+        cands = [c for c in (os.path.join(HERE, "readout_forward.csv"),
+                             os.path.join(HERE, "readout_forward_new.csv"))
+                 if os.path.exists(c)]
+        path = max(cands, key=os.path.getmtime) if cands else \
+            os.path.join(HERE, "readout_forward.csv")
+        print(f"[smart_money] enriching {os.path.basename(path)}")
     if not os.path.exists(path):
         print(f"[smart_money] {path} not found."); return
     rows = list(csv.DictReader(open(path, encoding="utf-8-sig")))

@@ -105,23 +105,30 @@ def main():
         except ValueError:
             cdays = None
 
-        # BEST date: prefer the specific CT.gov date; fall back to the EDGAR window.
-        if cpcd:
-            best_date, date_src, days = cpcd, "CTGOV", cdays
-        elif ew:
-            best_date, date_src, days = ew, "EDGAR", None
-            es = edgar_window_start(ew)
-            if es:
-                days = (es - today).days
+        # BEST date (FLIPPED 2026-08-13, owner spec): the COMPANY'S OWN GUIDANCE is the product;
+        # CT.gov's primary-completion date is an enrollment-driven estimate that tells you when
+        # data LOCKS, not when the company TALKS. So EDGAR guidance leads whenever it exists,
+        # and the PCD rides alongside as corroboration. CT.gov leads only when the company has
+        # said nothing -- and then the row says so via guided=NO and the pcd_conf tag, so a
+        # LOW-confidence still-enrolling PCD can never impersonate guidance.
+        pcd_conf = (c.get("pcd_conf") or "").strip()
+        if ew:
+            best_date, date_src, days = ew, "GUIDED", None
+            es0 = edgar_window_start(ew)
+            if es0:
+                days = (es0 - today).days
+        elif cpcd:
+            best_date, date_src, days = cpcd, f"CTGOV-{pcd_conf or 'EST'}", cdays
         else:
             best_date, date_src, days = "", "", None
+        guided = "YES" if ew else "NO"
 
         # THE KLRS LESSON — did the EDGAR filing REPORT data (not just guide to it)? If so it
         # out-ranks every future date: that name gapped this morning. (Column absent on pre-fix
         # CSVs -> treated as no.)
         just_reported = (e.get("just_reported") or "").strip().upper() == "YES"
         result_hit = (e.get("result_hit") or "").strip()
-        imm = "🔥 JUST REPORTED (data out)" if just_reported else imminence(days)
+        imm = "!! JUST REPORTED (data out)" if just_reported else imminence(days)
 
         # confidence: in BOTH sources = highest
         conf = "BOTH" if (t in fwd and t in ctg and (ew or cpcd)) else \
@@ -143,6 +150,8 @@ def main():
             "ticker": t,
             "best_date": best_date,
             "date_source": date_src,
+            "guided": guided,
+            "pcd_conf": pcd_conf,
             "days_to": days if days is not None else "",
             "imminence": imm,
             "just_reported": "YES" if just_reported else "",
@@ -162,7 +171,7 @@ def main():
 
     # peak at NOW, decay both ways; stale/undated at the bottom. Within a bucket, closest to
     # today (smallest |days|) first.
-    order = {"🔥 JUST REPORTED (data out)": -1, "DATA PENDING NOW": 0, "IMMINENT (<=3wk)": 1,
+    order = {"!! JUST REPORTED (data out)": -1, "DATA PENDING NOW": 0, "IMMINENT (<=3wk)": 1,
              "SOON (<=60d)": 2, "RECENTLY LOCKED (PR may be out)": 3, "NEAR (<=120d)": 4,
              "LATER": 5, "STALE (likely reported)": 6, "UNDATED": 7}
 
@@ -173,9 +182,9 @@ def main():
     rows.sort(key=sortkey)
 
     dst = os.path.join(HERE, "readout_calendar.csv")
-    cols = ["ticker", "best_date", "date_source", "days_to", "imminence", "just_reported",
-            "result_hit", "confidence", "edgar_window", "ctgov_pcd", "phase", "status", "nct",
-            "disagree", "company"] + SM_COLS
+    cols = ["ticker", "best_date", "date_source", "guided", "pcd_conf", "days_to", "imminence",
+            "just_reported", "result_hit", "confidence", "edgar_window", "ctgov_pcd", "phase",
+            "status", "nct", "disagree", "company"] + SM_COLS
     # lock-resistant write (Documents is OneDrive-synced)
     import time as _t
     tmp = dst + ".tmp"
