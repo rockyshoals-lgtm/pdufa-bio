@@ -49,6 +49,15 @@ export function shape(e, tier) {
   const base = CORE(e);
   const d = e._d || {};
   for (const k of CORE_EXTRA) base[k] = (k in d) ? d[k] : null;   // free — it's on the public page
+  /* Conference rows carry presenters in _d (sync_conferences_to_api.py). Observed live 2026-08-16:
+     the dataset had 8 conferences with presenter entries and this whitelist silently dropped every
+     one -- the API said "presenters: none" while /conferences printed them. Same 2026-07-11 rule
+     applies: rendered on a public page -> free in the API. */
+  if (e.type === 'Conference') {
+    base.end_date = d.end || null;
+    base.presenters = d.presenters || [];
+    base.presenter_note = d.presenter_note || null;
+  }
   /* days_to_decision is BAKED into dataset.mjs when that file is generated, and freezes there.
      On 2026-07-22 every record still carried the value computed on 07-11 — e.g. CORT (PDUFA
      2026-03-25) reported -108 when the true figure was -119. Consumers of the public API were

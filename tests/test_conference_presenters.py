@@ -81,8 +81,26 @@ def main():
         print("   demote its confidence; the page must never claim an edition the filing")
         print("   does not.")
         return 1
+    # API passthrough (observed live 2026-08-16): dataset.mjs carried 8 conferences with presenter
+    # entries while /api/v1/conferences served none of them -- shape()'s whitelist in _lib.mjs
+    # silently dropped the field. Presenters render on the public /conferences page, so by the
+    # site's own 2026-07-11 rule they are free in the API. This proves the passthrough exists AND
+    # that the dataset actually carries presenter rows for it to pass through.
+    lib = open(os.path.join(HERE, "pdufa_site_src", "api", "v1", "_lib.mjs"),
+               encoding="utf-8", errors="replace").read()
+    if "base.presenters" not in lib:
+        print("FAIL: _lib.mjs shape() no longer passes presenters through -- the API will")
+        print("   say 'no presenters' while /conferences prints them (the 2026-08-16 defect).")
+        return 1
+    ds = open(os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs"),
+              encoding="utf-8", errors="replace").read()
+    if checked and '"presenters": [' not in ds.replace("\x00", ""):
+        print("FAIL: presenter rows publish on the page but dataset.mjs carries none --")
+        print("   sync_conferences_to_api.py did not run after build_conferences.py.")
+        return 1
+
     print(f"  PASS: {checked} publishable presenter row(s) all name their own edition in "
-          f"their own sentence")
+          f"their own sentence; API passthrough intact")
     return 0
 
 
