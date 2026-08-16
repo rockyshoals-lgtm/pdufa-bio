@@ -36,18 +36,66 @@ import readout_miner as RM                                              # noqa: 
 DATA = os.path.join(HERE, "conferences.json")
 OUT = os.path.join(HERE, "catalysts_out", "conference_presenters_mined.csv")
 COLS = ["ticker", "cik", "company", "conference", "conf_start", "drug", "pres_type",
+        "edition_year", "confidence", "form",
         "filing_url", "accession", "filed", "matched_sentence", "retrieved_at"]
 
 # The sentence must say the company is presenting, not merely attending.
 PRESENT = re.compile(r"\b(present(?:s|ed|ing|ation[s]?)?|report(?:s|ed|ing)?|showcase[sd]?|"
                      r"share[sd]?|unveil(?:s|ed)?|feature[sd]?)\b", re.I)
-ORAL = re.compile(r"\b(late[- ]break\w*|oral presentation|plenary|proffered paper)\b", re.I)
-POSTER = re.compile(r"\bposter\b", re.I)
+# FORWARD COMMITMENT (red team 2026-08-12c, section 3.5 rule 2): of 102 mined rows, fewer than
+# 10% were about an UPCOMING conference -- 10-K Business sections recite years of history in
+# the same 'presented at X' phrasing. A row is only high-confidence when the clause COMMITS:
+FORWARD = re.compile(r"\bwill (?:be )?(?:present|report|shar|featur|highlight|unveil)\w*|"
+                     r"\bto be presented\b|\bexpect\w* to (?:be )?present\w*|"
+                     r"\bplans? to present\b|\bselected for\b|\baccepted for\b|"
+                     r"\babstract accepted\b|\blook forward to (?:present|report|shar)\w*|"
+                     r"\bwill be (?:shared|highlighted)\b", re.I)
+# PAST-TENSE GOVERNORS (rule 3): 'we presented', 'was presented', 'recently featured' -- the
+# company is citing history, not committing to an edition.
+PAST_GOV = re.compile(r"\b(?:we|company)\s+(?:recently\s+)?present\w*|\bwas presented\b|"
+                      r"\bwere presented\b|\brecently (?:presented|featured)\b|"
+                      r"\bpreviously presented\b", re.I)
+# rule 8: 'plenary poster' was tagged oral because ORAL matched 'plenary'; 'oral session'
+# was missed entirely. POSTER now wins over plenary; ORAL covers sessions.
+ORAL = re.compile(r"\b(late[- ]break\w*|oral (?:presentation|session)|proffered paper)\b", re.I)
+POSTER = re.compile(r"\b(?:plenary )?poster\b", re.I)
 # Signals the sentence is about clinical data rather than a fireside chat.
 DATA_WORD = re.compile(r"\b(data|results|analys[ie]s|findings|abstract[s]?|efficacy|safety|"
                        r"phase\s*(?:1|2|3|i{1,3})\b|interim|topline|cohort)\b", re.I)
 NOISE = re.compile(r"\b(investor day|fireside|non[- ]deal|roadshow|corporate update call|"
                    r"webcast of|attend)\b", re.I)
+MONTHS_RX = ("january|february|march|april|may|june|july|august|september|october|"
+             "november|december")
+
+
+def edition_ok(sentence, conf_code, conf_name, conf_start):
+    """Rule 1, the Bug-B killer: the sentence must mean THIS edition. Within +/-200 chars of
+    the conference mention, require the edition's own year, or an in-window month with no
+    conflicting year; reject on any OTHER 4-digit year near the mention. ZYME's 'ASCO GI data
+    presented January 8, 2026' was filed under ASCO GI 2027 by the name-only matcher."""
+    year = str(conf_start)[:4]
+    low = sentence.lower()
+    i = low.find(conf_code.lower())
+    if i < 0:
+        i = low.find(conf_name.lower()[:22])
+    if i < 0:
+        return False
+    win = sentence[max(0, i - 200):i + 200]
+    years = set(re.findall(r"\b(20\d{2})\b", win))
+    if years - {year}:
+        return False                      # a conflicting year near the mention: wrong edition
+    if year in years:
+        return True
+    # no year at all: accept only an in-window month mention (same-year phrasing like
+    # 'at CTAD in November')
+    try:
+        import datetime as _dt
+        sm = _dt.date.fromisoformat(str(conf_start)).month
+        month_name = ("january february march april may june july august september october "
+                      "november december").split()[sm - 1]
+        return bool(re.search(rf"\b{month_name}\b", win, re.I))
+    except Exception:
+        return False
 
 
 def sentences(text):
@@ -98,6 +146,7 @@ def mine(conf, days, verbose=True):
         if not text:
             continue
 
+        form = (src.get("root_forms") or [src.get("form", "")])[0]
         for s in sentences(text):
             if code.lower() not in s.lower() and name.lower()[:22] not in s.lower():
                 continue
@@ -105,6 +154,24 @@ def mine(conf, days, verbose=True):
                 continue
             if len(s) > 700:
                 continue
+            # 3.5 rules 1-4: edition anchoring, forward commitment, past-tense rejection,
+            # verb proximity. Confidence is computed, and build_conferences publishes only
+            # 'high' -- the raw file stays append-only evidence either way.
+            if PAST_GOV.search(s):
+                continue
+            fwd = FORWARD.search(s)
+            # rule 4 (the LYEL 'fair presentation' lesson): the committing verb must sit near
+            # the conference name, not anywhere in a long sentence
+            near_verb = False
+            if fwd:
+                ci = s.lower().find(code.lower())
+                if ci < 0:
+                    ci = s.lower().find(name.lower()[:22])
+                near_verb = ci >= 0 and abs(fwd.start() - ci) <= 180
+            ed_ok = edition_ok(s, code, name, conf["start"])
+            confidence = ("high" if (fwd and near_verb and ed_ok
+                                     and form not in ("10-K", "10-Q", "20-F"))
+                          else "low")
             # extract_program returns (name, kind), not a string. Taking it whole wrote the literal
             # text "(None, None)" into the drug column, which would have shipped as a drug name.
             drug = ""
@@ -115,13 +182,18 @@ def mine(conf, days, verbose=True):
                 drug = got or ""
             except Exception:
                 drug = ""
-            ptype = ("oral/late-breaker" if ORAL.search(s)
-                     else "poster" if POSTER.search(s) else "presentation")
+            # rule 8: poster wins over plenary (ENTX's 'plenary poster' is a poster)
+            ptype = ("poster" if POSTER.search(s)
+                     else "oral/late-breaker" if ORAL.search(s) else "presentation")
             company = (src.get("display_names") or [""])[0]
             tick = ""
             m = RM.TICK.search(company)
             if m:
                 tick = m.group(1)
+            # rule 6: no ticker, no row -- 14 of 102 rows had none and cannot be traded,
+            # linked, or deduped reliably
+            if not tick:
+                continue
             # One row per company per conference. A company that files three 8-Ks mentioning ESMO
             # is presenting at ESMO once, and listing it three times would overstate the programme.
             ident = (tick or re.sub(r"\s*\(.*", "", company).lower())
@@ -132,6 +204,8 @@ def mine(conf, days, verbose=True):
                 "ticker": tick, "cik": cik, "company": re.sub(r"\s*\(.*", "", company),
                 "conference": code, "conf_start": conf["start"], "drug": drug,
                 "pres_type": ptype,
+                "edition_year": str(conf["start"])[:4], "confidence": confidence,
+                "form": form,
                 "filing_url": f"https://www.sec.gov/Archives/edgar/data/{cik}/"
                               f"{adsh.replace('-', '')}/{fname}",
                 "accession": adsh, "filed": (src.get("file_date") or ""),

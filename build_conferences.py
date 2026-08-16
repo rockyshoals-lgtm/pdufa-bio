@@ -65,15 +65,29 @@ def load_presenters():
     publishing a programme, and is the only reason this page can name anyone at all before abstract
     titles drop.
     """
+    # THE GATE (red team 2026-08-12c section 3): of 102 raw mined rows, fewer than 10% were
+    # about an upcoming conference -- 10-Ks recite history, and the name-only matcher filed
+    # January-2026 data under 2027 editions. Publishing the raw file would put ~93 false
+    # statements on pages titled 'Biotech Presenters'. So: the hand-verified file publishes
+    # as-is (each row carries a reviewer note), and MINED rows publish ONLY with
+    # confidence == 'high' (edition-anchored + forward-committed + verb-proximate + event
+    # filing + ticker, per the 3.5 spec now implemented in the miner). Legacy mined rows have
+    # no confidence column and are therefore excluded by construction.
     out = {}
-    for path, dated in ((PRES, "catalyst_date"), (MINED, "conf_start")):
+    verified = os.path.join(HERE, "catalysts_out",
+                            "conference_presenters_VERIFIED_2026-08-12.csv")
+    for path, dated, gate in ((PRES, "catalyst_date", False),
+                              (verified, "conf_start", False),
+                              (MINED, "conf_start", True)):
         if not os.path.exists(path):
             continue
         for r in csv.DictReader(open(path, encoding="utf-8-sig", errors="replace")):
             code = (r.get("conference") or "").strip()
             if not code:
                 continue
-            # Normalise the two schemas onto the fields the renderer uses.
+            if gate and (r.get("confidence") or "").strip().lower() != "high":
+                continue
+            # Normalise the schemas onto the fields the renderer uses.
             r.setdefault("catalyst_date", r.get(dated) or "")
             if not r.get("catalyst_date"):
                 r["catalyst_date"] = r.get(dated) or ""
@@ -216,6 +230,15 @@ def main():
     doc = doc.replace(
         "dates, location, therapeutic focus, and the small/mid-cap names presenting",
         "dates, location, therapeutic focus, and any presenting companies we can source")
+    # The audit's honest-and-quotable sentence (2026-08-12c section 3.7): say where the
+    # presenter list comes from and what it is not. Idempotent via the marker.
+    DISC = ('<!--PRESDISC--><p style="font-size:12.5px;opacity:.75;max-width:74ch">'
+            'The presenter list is built from companies\' own SEC filings and press releases, '
+            'each row linking the document it came from. It is not the organiser\'s programme: '
+            'abstract titles are embargoed until close to most meetings, so absence here is '
+            'not absence of presentations.</p>')
+    if "PRESDISC" not in doc:
+        doc = doc.replace(BEGIN, DISC + BEGIN, 1)
 
     if not a.dry_run:
         open(OUT, "w", encoding="utf-8").write(doc)
