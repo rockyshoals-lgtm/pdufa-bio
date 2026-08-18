@@ -59,11 +59,18 @@ if not defined PY ( echo [ERROR] Python not found on PATH. & pause & exit /b 1 )
 REM SEC REQUIRES an identifying User-Agent. Anonymous scrapers are blocked outright.
 set "SEC_USER_AGENT=David Moody rockyshoals@gmail.com"
 
-REM 45 days. Long enough to catch guidance filed before a readout; short enough that the
-REM window it promised is probably still open. Raise to 90 on a Monday if you want more.
-set "DAYS=45"
+REM WIDENED 2026-08-18 (the AMLX lesson): 45d missed AMLX entirely -- its LUCIDITY guidance
+REM was in filings older than the window, and it ran +10 percent on the topline TODAY.
+REM   DAYS 45->90    catches guidance filed up to a quarter ago (windows still mostly open)
+REM   FETCH 60->140  the 8/18 run had 196 hits and only fetched 80 docs for windows
+REM   DEEP 120       NEW: armed READOUT/PDUFA names still missing a window get their latest
+REM                  10-K/10-Q/8-Ks pulled straight from the submissions API (no lookback
+REM                  limit) and mined with the same extractor. This is the pass that would
+REM                  have dated AMLX. Adds ~3-6 min; worth every second.
+set "DAYS=90"
 set "STEP=7"
-set "FETCH=60"
+set "FETCH=140"
+set "DEEP=120"
 
 if not exist "logs" mkdir "logs"
 for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /value 2^>nul') do set "DT=%%I"
@@ -78,7 +85,7 @@ echo =====================================================
 echo.
 
 "%PY%" -u readout_scan.py --days %DAYS% --step %STEP% --dates --max-fetch %FETCH% ^
-   --out readout_forward.csv 2>&1
+   --deep %DEEP% --out readout_forward.csv 2>&1
 if errorlevel 1 (
   echo.
   echo [ERROR] scan failed - see above. readout_forward.csv left as it was.

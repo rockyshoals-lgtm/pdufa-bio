@@ -638,6 +638,10 @@ def main():
     ap.add_argument("--past", action="store_true", help="also walk PAST-tense phrases")
     ap.add_argument("--dates", action="store_true", help="fetch docs to extract the window (slow)")
     ap.add_argument("--max-fetch", type=int, default=60)
+    ap.add_argument("--deep", type=int, default=0,
+                    help="AMLX lesson (2026-08-18): for up to N ARMED watchlist names still "
+                         "missing a window, fetch their latest 10-K/10-Q/8-Ks directly from the "
+                         "submissions API (no FTS lookback limit) and run the same extractor")
     ap.add_argument("--out", default="readout_forward.csv")
     a = ap.parse_args()
     agent = ua()
@@ -716,6 +720,80 @@ def main():
         v["n_filings"] = counts.get(tk, 1)
         if tk in jr_any and v.get("just_reported") != "YES":
             v["just_reported"], v["result_hit"] = "YES", jr_any[tk]
+
+    # ---- DEEP PASS (2026-08-18 — the AMLX lesson) --------------------------------------------
+    # AMLX ran +10% on its LUCIDITY Phase 3 topline today and this scanner had ZERO rows for it.
+    # Why: the guidance was given in filings OLDER than the --days FTS window, while the armed
+    # watchlist (pdufa.bio) knew the NAME but carried no DATE. Each source had half the answer.
+    # This pass closes the gap: for armed READOUT/PDUFA tickers still missing a window, pull the
+    # company's latest 10-K/20-F + 10-Q/6-Ks + recent 8-Ks straight from the submissions API —
+    # which has NO lookback limit — and run the same hardened extractor over them. Pipeline
+    # guidance lives in the last annual/quarterly even when no recent 8-K repeats it.
+    if a.deep:
+        _mspath = os.path.join(HERE, "Momentum Scanner")
+        try:
+            _aw = json.load(open(os.path.join(_mspath, "armed_watchlist.json"),
+                                 encoding="utf-8", errors="replace")).get("armed") or {}
+            _cm = {v.upper(): k for k, v in
+                   json.load(open(os.path.join(_mspath, "_DATA",
+                                               "sec_cik_tickers.json"))).items()}
+        except Exception as ex:
+            print(f"  [deep] skipped — {ex}")
+            _aw, _cm = {}, {}
+        have = {t for t, v in best.items() if (v.get("window") or "").strip()}
+        targets = [t for t, meta in _aw.items()
+                   if isinstance(meta, dict) and meta.get("lane") in ("READOUT", "PDUFA")
+                   and t not in have and t.upper() in _cm][:a.deep]
+        print(f"\n  DEEP PASS — {len(targets)} armed names without a window; "
+              f"latest 10-K/10-Q/8-Ks each (submissions API, no lookback limit)")
+        got = 0
+        for i, t in enumerate(targets):
+            cik = int(_cm[t.upper()])
+            try:
+                raw = _get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json", agent)
+                sub = json.loads(raw) if raw else None
+            except Exception:
+                sub = None
+            if not sub:
+                continue
+            rec = (sub.get("filings") or {}).get("recent") or {}
+            forms = rec.get("form") or []
+            docs, k10, q10, k8 = [], 0, 0, 0
+            for j, fm in enumerate(forms):
+                take = False
+                if fm in ("10-K", "20-F") and k10 < 1:
+                    k10 += 1; take = True
+                elif fm in ("10-Q", "6-K") and q10 < 1:
+                    q10 += 1; take = True
+                elif fm == "8-K" and k8 < 2:
+                    k8 += 1; take = True
+                if take and rec.get("primaryDocument", [None]*len(forms))[j]:
+                    docs.append({"cik": str(cik), "accn": rec["accessionNumber"][j],
+                                 "doc": rec["primaryDocument"][j],
+                                 "filed": rec["filingDate"][j], "form": fm})
+                if len(docs) >= 4:
+                    break
+            for h in docs:
+                try:
+                    d, ctx, _jr, _rh = fetch_date(h, agent, filed=h["filed"])
+                except Exception:
+                    d = None
+                time.sleep(0.11)
+                if d:
+                    meta = _aw.get(t) or {}
+                    v = best.get(t) or {"ticker": t, "kind": "DEEP", "phrases": {"deep-pass"},
+                                        "company": str(meta.get("detail", ""))[:60],
+                                        "sics": [], "cik": str(cik)}
+                    v.update({"window": d, "context": (ctx or "")[:180], "filed": h["filed"],
+                              "form": h["form"], "accn": h["accn"], "doc": h["doc"]})
+                    v.setdefault("just_reported", "")
+                    v.setdefault("result_hit", "")
+                    best[t] = v
+                    got += 1
+                    break
+            if (i + 1) % 10 == 0:
+                print(f"    {i+1}/{len(targets)}  (+{got} windows so far)")
+        print(f"  DEEP PASS recovered {got} windows for armed names the FTS walk could not see")
     # JUST REPORTED names float to the top — a filing reporting data TODAY is the morning gapper,
     # the single most actionable row. Then by filing date.
     rows = sorted(best.values(),
@@ -734,17 +812,30 @@ def main():
               f"writing {os.path.basename(alt)} instead")
         out = alt
         f = open(out, "w", newline="", encoding="utf-8")
+    # window_alt (2026-08-18): the armed watchlist's own date/lane for the same ticker, so the
+    # two sources are FUSED in one row instead of living in separate files. A blank window with
+    # a populated window_alt says "pdufa.bio knows the event; EDGAR has not dated it" — and the
+    # reverse says the filing has guidance pdufa.bio lacks.
+    try:
+        _awm = json.load(open(os.path.join(HERE, "Momentum Scanner", "armed_watchlist.json"),
+                              encoding="utf-8", errors="replace")).get("armed") or {}
+    except Exception:
+        _awm = {}
     with f:
         w = csv.writer(f)
         w.writerow(["ticker", "kind", "just_reported", "result_hit", "filed", "form", "company",
-                    "n_filings", "phrases", "window", "context", "cik", "accession", "document",
-                    "url"])
+                    "n_filings", "phrases", "window", "window_alt", "armed_lane", "context",
+                    "cik", "accession", "document", "url"])
         for v in rows:
             cik = str(int(v["cik"]))
+            _m = _awm.get(v["ticker"]) or {}
             w.writerow([v["ticker"], v["kind"], v.get("just_reported", ""),
                         v.get("result_hit", ""), v["filed"], v["form"], v["company"],
                         v.get("n_filings", 1), " | ".join(sorted(v["phrases"])),
-                        v.get("window", ""), v.get("context", ""), cik, v["accn"], v["doc"],
+                        v.get("window", ""),
+                        (_m.get("when") or "") if isinstance(_m, dict) else "",
+                        (_m.get("lane") or "") if isinstance(_m, dict) else "",
+                        v.get("context", ""), cik, v["accn"], v["doc"],
                         f"{ARCHIVES}/{cik}/{v['accn'].replace('-','')}/{v['doc']}"])
 
     jr_rows = [v for v in rows if v.get("just_reported") == "YES"]
