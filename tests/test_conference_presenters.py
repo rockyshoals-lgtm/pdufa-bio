@@ -94,7 +94,9 @@ def main():
         return 1
     ds = open(os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs"),
               encoding="utf-8", errors="replace").read()
-    if checked and '"presenters": [' not in ds.replace("\x00", ""):
+    # whitespace-agnostic: dataset.mjs is serialized by more than one writer (sync uses
+    # indent, add_missing_fda_events re-dumps compact) -- match the KEY, not the formatting
+    if checked and re.search(r'"presenters"\s*:\s*\[', ds.replace("\x00", "")) is None:
         print("FAIL: presenter rows publish on the page but dataset.mjs carries none --")
         print("   sync_conferences_to_api.py did not run after build_conferences.py.")
         return 1
