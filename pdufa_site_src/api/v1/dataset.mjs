@@ -2105,7 +2105,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -2272,7 +2272,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -2331,7 +2331,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -3064,7 +3064,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -3131,7 +3131,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -3174,7 +3174,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -4071,7 +4071,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -4092,7 +4092,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -4113,7 +4113,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -4505,6 +4505,24 @@ export default [
   "dm": "2026-10"
  },
  {
+  "id": "pdufa_rhhby_2026-10-15",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-10-15",
+  "dp": "day",
+  "name": "Enspryng (satralizumab) - (thyroid eye disease)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/RHHBY",
+  "ua": "2026-08-18T18:14:59Z",
+  "_d": {
+   "indication": "Thyroid eye disease (TED)",
+   "source_note": "Added 2026-08-13; sBLA priority review, decision by 2026-10-15 per Genentech release 2026-06-29. Found during flag verification; was on neither surface."
+  }
+ },
+ {
   "id": "readout_rytm_2026-10-15",
   "t": "RYTM",
   "company": "",
@@ -4610,21 +4628,23 @@ export default [
   "dm": "2026-10"
  },
  {
-  "id": "pdufa_rhhby_2026-10-15",
-  "t": "RHHBY",
-  "company": "Roche Holding AG",
-  "d": "2026-10-15",
+  "id": "pdufa_ird_2026-10-17",
+  "t": "IRD",
+  "company": "Opus Genetics, Inc.",
+  "d": "2026-10-17",
   "dp": "day",
-  "name": "Enspryng (satralizumab) - (thyroid eye disease)",
+  "name": "Phentolamine ophthalmic solution 0.75%",
   "type": "PDUFA",
-  "ta": "",
-  "cap": "Large",
+  "ta": "Ophthalmology",
+  "cap": "",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
-  "ua": "2026-08-18T18:14:59Z",
+  "url": "https://www.biospace.com/press-releases/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+  "ua": "2026-08-18T18:22:05Z",
   "_d": {
-   "indication": "Thyroid eye disease (TED)",
-   "source_note": "Added 2026-08-13; sBLA priority review, decision by 2026-10-15 per Genentech release 2026-06-29. Found during flag verification; was on neither surface."
+   "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
+   "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
+   "indication": "Presbyopia (sNDA)",
+   "market_cap_usd": null
   }
  },
  {
@@ -4633,7 +4653,7 @@ export default [
   "company": "Viatris Inc",
   "d": "2026-10-17",
   "dp": "day",
-  "name": "MR-141",
+  "name": "MR-141 (phentolamine ophthalmic solution 0.75%)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
@@ -4677,7 +4697,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -4698,7 +4718,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -4719,7 +4739,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -4740,7 +4760,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -4925,7 +4945,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -4946,7 +4966,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -4967,7 +4987,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -4988,7 +5008,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -5009,7 +5029,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -5030,7 +5050,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -5141,7 +5161,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -5362,6 +5382,27 @@ export default [
   "dm": "2026-11"
  },
  {
+  "id": "pdufa_nvcr_2026-11-15",
+  "t": "NVCR",
+  "company": "NovoCure Limited",
+  "d": "2026-11-15",
+  "dp": "quarter",
+  "name": "TTFields therapy (Optune) - brain metastases from NSCLC",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Upcoming",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001645113/000164511326000043/nvcr-20260331xpr.htm",
+  "ua": "2026-08-18T18:22:05Z",
+  "_d": {
+   "review": "PMA under FDA review; company guides decision in Q4 2026",
+   "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
+   "indication": "Brain metastases from non-small cell lung cancer (PMA, Breakthrough Device)",
+   "market_cap_usd": null
+  },
+  "dm": "2026-11"
+ },
+ {
   "id": "readout_onc_2026-11-15",
   "t": "ONC",
   "company": "",
@@ -5520,7 +5561,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -5549,7 +5590,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -5853,7 +5894,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -5874,7 +5915,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -5895,7 +5936,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -5954,7 +5995,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -5975,7 +6016,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -6861,6 +6902,26 @@ export default [
     "t7": -0.33,
     "t1": 0.0
    }
+  }
+ },
+ {
+  "id": "pdufa_gild_2026-12-23",
+  "t": "GILD",
+  "company": "Gilead Sciences, Inc.",
+  "d": "2026-12-23",
+  "dp": "day",
+  "name": "Anito-cel (anitocabtagene autoleucel)",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Upcoming",
+  "url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
+  "ua": "2026-08-18T18:22:05Z",
+  "_d": {
+   "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
+   "note": "PDUFA action date stated by the sponsor",
+   "indication": "Relapsed or refractory multiple myeloma (fourth-line), BCMA CAR-T",
+   "market_cap_usd": null
   }
  },
  {
@@ -8079,7 +8140,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -8143,7 +8204,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -8207,7 +8268,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -8612,7 +8673,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -8768,7 +8829,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -8789,7 +8850,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -9162,7 +9223,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -9183,7 +9244,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -9223,7 +9284,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -9370,7 +9431,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -9391,7 +9452,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -9412,7 +9473,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -9728,7 +9789,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -9749,7 +9810,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-18T18:16:01Z",
+  "ua": "2026-08-18T18:22:14Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
