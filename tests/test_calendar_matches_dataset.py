@@ -23,8 +23,11 @@ except Exception:
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
 TODAY = dt.datetime.now(dt.timezone.utc).date().isoformat()
-ROW = re.compile(r'<a class="row" href="/pdufa/[^"]+">'
-                 r'<div class="t">([A-Z]+) (?:&middot;|·) (\d{4}-\d{2}-\d{2})</div>', re.S)
+# LOOSENED 2026-08-18: was anchored on href="/pdufa/..." -- the HOOK/CRBP/NCNA fossil rows carry
+# href="#" and were structurally INVISIBLE to this guard. Any row anchor now counts, and the
+# drug text is captured for the token-overlap check.
+ROW = re.compile(r'<a class="row"[^>]*>\s*<div class="t">([A-Z]{1,6}) (?:&middot;|·) '
+                 r'(\d{4}-\d{2}-\d{2}).*?<div class="d">(.*?)</div>', re.S)
 
 
 def main():
@@ -33,9 +36,18 @@ def main():
     rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
     have = {(str(r.get("t", "")).upper(), str(r.get("d", ""))) for r in rows
             if r.get("type") == "PDUFA"}
-    # dual-ticker rows: the page may key an event by its partner ticker (ABEO row for the RARE
-    # event), so any same-DATE event also counts as existence
-    dates = {str(r.get("d", "")) for r in rows if r.get("type") == "PDUFA"}
+    # Dual-ticker rows: the page may key an event by its partner ticker (RPRX row for the NUVL
+    # event). TIGHTENED 2026-08-18: the allowance was "any same-DATE event counts" -- and three
+    # fossil rows (HOOK/CRBP/NCNA, all fake 'Pembrolizumab combination' text, dead # links, in
+    # NO data source since the initial site commit) rode through on BMY's real 2026-08-17 event,
+    # then killed the CI run when their date passed with no outcome. A partner row must now share
+    # a drug TOKEN with the same-date event it claims to be, so unrelated tickers can't hitchhike.
+    date_names = {}
+    for r in rows:
+        if r.get("type") == "PDUFA":
+            date_names.setdefault(str(r.get("d", "")), set()).update(
+                w for w in re.findall(r"[a-z]{4,}", str(r.get("name", "")).lower())
+                if w not in ("with", "combination", "priority", "review", "oncology"))
 
     known = {(f["ticker"], f["date"]) for f in json.load(
         open(os.path.join(HERE, "_calendar_flags_known.json"), encoding="utf-8"))["flags"]}
@@ -49,16 +61,20 @@ def main():
             continue
         doc = open(p, encoding="utf-8", errors="replace").read()
         rel = "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/")
-        for tk, d in ROW.findall(doc):
+        for tk, d, drugtxt in ROW.findall(doc):
             if d < TODAY:
                 continue
             checked += 1
             if (tk, d) in have or (tk, d) in known:
                 continue
-            if d in dates:
-                continue          # same-date event exists under a partner ticker
-            bad.append(f"{rel}: {tk} {d} -- row exists, dataset has no such event; either "
-                       f"the dataset lost it (it lost PFE Padcev once) or the row is stale")
+            # partner-ticker allowance, token-gated: the row's own drug text must share a token
+            # with a same-date dataset event (RPRX's row names zidesamtinib -> matches NUVL's).
+            toks = set(re.findall(r"[a-z]{4,}", re.sub(r"<[^>]+>", " ", drugtxt).lower()))
+            if toks & date_names.get(d, set()):
+                continue
+            bad.append(f"{rel}: {tk} {d} -- row exists, dataset has no such event and its text "
+                       f"shares no drug token with any same-date event; either the dataset lost "
+                       f"it (it lost PFE Padcev once) or the row is fake (HOOK/CRBP/NCNA were)")
 
     # COUNT RECONCILIATION (red team 2026-08-16 section 2.1, third audit on the same defect,
     # gap widening 3->5): the page's upcoming count and the API's upcoming count must be equal

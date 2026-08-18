@@ -60,7 +60,14 @@ var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.ne
 
 
 def next_decision():
-    """(date, ticker, days) for the nearest day-precision PDUFA still ahead."""
+    """(date, ticker, days) for the nearest day-precision PDUFA still LIVE.
+
+    2026-08-18: BMY's goal date passed yesterday with no FDA action yet -- the board rightly
+    kept it as the first tile (Awaiting; the agency can act any moment), but this function
+    skipped anything past-dated, so build-info said next=CAPR 08-22 while the board led with
+    BMY 08-17 and the board guard failed on the mismatch. An Awaiting event IS the next
+    expected decision. Recently past-dated undecided events (<=7 days; older ones are stale
+    limbo, not imminent) now count, and the badge renders 'today' for them."""
     if not os.path.exists(DATASET):
         return None
     m = re.search(r"export default (\[.*\])",
@@ -78,7 +85,7 @@ def next_decision():
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", d):
             continue
         dd = dt.date.fromisoformat(d)
-        if dd < today:
+        if dd < today - dt.timedelta(days=7):
             continue
         if best is None or dd < best[0]:
             best = (dd, (r.get("t") or "").upper())
