@@ -63,6 +63,48 @@ def poly_daily(key, t, start, end):
     return []
 
 
+def poly_daily_dated(key, t, start, end):
+    """(iso_date, close) pairs. The AMLX lesson (2026-08-18): a readout confirmed the morning it
+    prints has NO final close yet -- the manual entry can't carry day_close at write time. So the
+    renderer self-heals: when prices are absent it fetches them at build time, and until the day's
+    bar exists it renders 'close pending' instead of inventing a number. Polygon daily bar
+    timestamps are UTC ms at the ET-midnight bar start, so the UTC calendar date IS the trading
+    date (see RULE 1 -- timezone traps)."""
+    if not key:
+        return []
+    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
+           f"?adjusted=true&sort=asc&limit=50&apiKey={key}")
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=25) as r:
+                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
+                return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(),
+                         x["c"]) for x in rows if x.get("c") is not None]
+        except urllib.error.HTTPError as e:
+            if e.code in (429,) or e.code >= 500:
+                time.sleep(2 ** attempt); continue
+            return []
+        except Exception:
+            time.sleep(1)
+    return []
+
+
+def _day_bar_final(iso_day):
+    """Is the daily bar for iso_day a FINISHED bar? True once ET is past the 16:00 close (16:10
+    for settlement slack) or the day has passed in ET. zoneinfo first; DST-approximate fallback
+    if the IANA db is missing on Windows."""
+    try:
+        from zoneinfo import ZoneInfo
+        now_et = dt.datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        u = dt.datetime.now(dt.timezone.utc)
+        now_et = u - dt.timedelta(hours=4 if 3 <= u.month <= 11 else 5)
+    if iso_day < now_et.date().isoformat():
+        return True
+    return iso_day == now_et.date().isoformat() and \
+        (now_et.hour, now_et.minute) >= (16, 10)
+
+
 def label_is_past(label):
     """True if a section label ('June 2026', 'Q2 2026 (est.)', 'H1 2026 (est.)') is fully in the past."""
     s = label.replace("(est.)", "").strip()
@@ -153,21 +195,46 @@ def build_section(readouts, key, limit):
     crows = []
     for c in confirmed:
         mv = c.get("day_move_pct")
-        col = "#46d17f" if (mv or 0) >= 0 else "#ff7a72"
+        d = str(c.get("reported_date") or "")
+        if mv is None and d:
+            # self-healing: entry written before the close (or without prices) -- compute from
+            # Polygon at build time; render honestly as pending until the day's bar exists.
+            pc, dc = c.get("prior_close"), c.get("day_close")
+            if key:
+                start = (dt.date.fromisoformat(d) - dt.timedelta(days=9)).isoformat()
+                bars = poly_daily_dated(key, c.get("t", ""), start, d)
+                pcs = [cl for bd, cl in bars if bd < d]
+                dcs = [cl for bd, cl in bars if bd == d]
+                if pcs:
+                    pc = pcs[-1]
+                # Polygon returns TODAY'S IN-PROGRESS bar while the market is open -- on first
+                # run this rendered an intraday +55.2% for AMLX under a label that says "close
+                # reaction". Only accept the reported-day bar as final once the ET clock is past
+                # the close (or the day is over). RULE 1: this machine is Pacific; decide in ET.
+                if dcs and _day_bar_final(d):
+                    dc = dcs[-1]
+            if pc and dc:
+                mv = (dc / pc - 1) * 100.0
         oc = str(c.get("outcome", "")).lower()
+        col = ("#46d17f" if (mv if mv is not None else (1 if oc == "positive" else -1)) >= 0
+               else "#ff7a72")
         badge = ("&#10003; positive" if oc == "positive"
                  else "&#10007; negative" if oc == "negative" else esc(oc))
-        d = c.get("reported_date", "")
+        if mv is None:
+            tail = ('<div style="margin-left:auto;color:#7c93b6;font-size:12px">close pending</div>')
+            sub = "reported today; day-of close is logged after the market close"
+        else:
+            tail = (f'<div style="margin-left:auto;font-weight:800;color:{col}">'
+                    f'{"+" if mv >= 0 else ""}{mv:.1f}%</div>')
+            sub = "day-of close reaction, confirmed against the company release"
         crows.append(
             f'<a class="row" href="{esc(c.get("source_url") or "#")}" rel="nofollow" '
             f'style="display:flex;align-items:center;gap:12px;border-left:3px solid {col};'
             f'padding-left:9px">'
             f'<div style="min-width:150px"><div class="t">{esc(c.get("t",""))} &middot; '
             f'{esc(d)} <span style="color:{col};font-weight:700">{badge}</span></div>'
-            f'<div class="d">{esc(c.get("drug",""))[:34]} &middot; day-of close reaction, '
-            f'confirmed against the company release</div></div>'
-            f'<div style="margin-left:auto;font-weight:800;color:{col}">'
-            f'{"+" if (mv or 0) >= 0 else ""}{mv:.1f}%</div></a>')
+            f'<div class="d">{esc(c.get("drug",""))[:34]} &middot; {sub}</div></div>'
+            f'{tail}</a>')
 
     rows = []
     for r in readouts[:limit]:

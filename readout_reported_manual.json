@@ -2,6 +2,17 @@
  "_comment": "Human-confirmed readout outcomes. This is the store the review sweep was designed around: build_readout_results.py renders these as precise day-of reactions (upgrading the auto-logged window move), build_guided_readouts.py marks the guided row Reported, and build_drug_pages.py stops listing the event as upcoming. Every entry needs a primary source URL; prices are Polygon adjusted closes. Facts only.",
  "reported": [
   {
+   "id": "readout_amlx_2026-08-18",
+   "t": "AMLX",
+   "drug": "Avexitide (Ph3 LUCIDITY, PBH)",
+   "reported_date": "2026-08-18",
+   "outcome": "positive",
+   "summary": "Phase 3 LUCIDITY in post-bariatric hypoglycemia (n=78, RYGB) met the FDA-agreed primary endpoint: 55% reduction in the composite rate of Level 2 and Level 3 hypoglycemic events vs placebo (p=0.000003). All secondary endpoints met (Level 2 by SMBG, Level 2 by CGM, Level 3 events). No serious adverse events related to treatment; most common AEs diarrhea and injection-site reactions. NDA planned by end of 2026; avexitide holds Breakthrough Therapy and Orphan Drug designations.",
+   "source_url": "https://www.businesswire.com/news/home/20260817275387/en/Amylyx-Pharmaceuticals-Announces-Positive-Topline-Results-from-Phase-3-LUCIDITY-Clinical-Trial-of-Avexitide-in-Post-Bariatric-Hypoglycemia",
+   "guided_window": "NCT06747468 PCD est. 2026-03; reported 2026-08-18",
+   "note": "Miner postmortem: EDGAR pass never saw it (guidance predates the 45-day scan window); CT.gov pass excluded NCT06747468 because its estimated PCD (2026-03) was ~140 days overdue, outside the 120-day OVERDUE_DAYS window -- widened to 180 same day. Prices deliberately absent at write time (market open); build self-heals from Polygon."
+  },
+  {
    "id": "readout_abcl_2026-09-30",
    "t": "ABCL",
    "drug": "ABCL635",
