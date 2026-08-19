@@ -98,17 +98,56 @@ def main():
                    f"current form. A CRL is not final; the primary source is linked on this "
                    f"page.")
 
+        # Console read 2026-08-18c item 8: 1 -> 3 questions per sourced page, each answered ONLY
+        # from facts the page already renders (company row, measured T-120 run-up). A page
+        # missing the fact skips the question -- 334 questions became ~1,000 with zero new claims.
+        # Two page generations, two kv vocabularies: newer pages carry Company + '120-day
+        # run-up'; older ones carry Indication + 'Decision-day move' (the actual reaction --
+        # the better fact). Ask only what the page itself renders.
+        qa = [(q, ans)]
+        cm = re.search(r"<span>Company</span><b>([^<]+)</b>", doc)
+        im = re.search(r"<span>Indication</span><b>([^<]+)</b>", doc)
+        if cm:
+            comp = html.unescape(cm.group(1)).strip()
+            qa.append((f"Which company is behind {drug}?",
+                       f"{drug} is a {comp} ({tk}) program. The FDA decision came on "
+                       f"{pretty(date)}; the company's own announcement is linked on this "
+                       f"page."))
+        elif im:
+            ind = html.unescape(im.group(1)).strip()
+            oc_txt = ("approved the application" if outcome == "Approved"
+                      else "declined to approve the application in its current form")
+            qa.append((f"What was {drug} under FDA review for?",
+                       f"The application covered {ind}. The FDA {oc_txt} on {pretty(date)}."))
+        mm = re.search(r"<span>Decision-day move</span><b>([^<]+)</b>", doc)
+        rm = re.search(r"<span>120-day run-up[^<]*</span><b>([^<]+)</b>", doc)
+        if mm:
+            mv = html.unescape(mm.group(1)).strip()
+            qa.append((f"How did {tk} stock react to the FDA decision?",
+                       f"On the decision day {tk} moved {mv}. That is the recorded reaction "
+                       f"to this specific event -- historical measurement, not a prediction, "
+                       f"and not investment advice."))
+        elif rm:
+            runup = html.unescape(rm.group(1)).strip()
+            qa.append((f"How did {tk} stock trade into the FDA decision?",
+                       f"Measured over the 120 trading days before the decision (T-120 to "
+                       f"T-1), {tk} moved {runup}. That is the recorded price path into this "
+                       f"specific event -- historical measurement, not a prediction, and not "
+                       f"investment advice."))
+
+        cards = "".join(
+            f'<h3 style="font-size:14.5px;margin:10px 0 3px">{html.escape(qq)}</h3>'
+            f'<p style="margin:0;font-size:14px;line-height:1.6;opacity:.85">'
+            f'{html.escape(aa)}</p>' for qq, aa in qa)
         blk = (B + '<section style="max-width:820px;margin:24px auto 0">'
-               f'<h2 style="font-size:17px;margin:0 0 4px">Question</h2>'
-               f'<h3 style="font-size:14.5px;margin:10px 0 3px">{html.escape(q)}</h3>'
-               f'<p style="margin:0;font-size:14px;line-height:1.6;opacity:.85">'
-               f'{html.escape(ans)}</p></section>'
+               f'<h2 style="font-size:17px;margin:0 0 4px">'
+               f'Question{"s" if len(qa) > 1 else ""}</h2>{cards}</section>'
                '<script type="application/ld+json">'
                + json.dumps({"@context": "https://schema.org", "@type": "FAQPage",
                              "url": f"{BASE}/fda-decision/{slug}",
-                             "mainEntity": [{"@type": "Question", "name": q,
-                                             "acceptedAnswer": {"@type": "Answer",
-                                                                "text": ans}}]},
+                             "mainEntity": [{"@type": "Question", "name": qq,
+                                             "acceptedAnswer": {"@type": "Answer", "text": aa}}
+                                            for qq, aa in qa]},
                             separators=(",", ":")) + "</script>" + E)
         if B in doc:
             doc2 = re.sub(re.escape(B) + ".*?" + re.escape(E), lambda _: blk, doc, flags=re.S)
