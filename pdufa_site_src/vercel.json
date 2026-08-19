@@ -448,6 +448,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/anitocabtagene-autoleucel",
+   "destination": "/drug/anito-cel",
+   "permanent": true
+  },
+  {
    "source": "/drug/apomorphine-hydrochloride",
    "destination": "/drug/onapgo",
    "permanent": true

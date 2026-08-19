@@ -1,0 +1,36 @@
+{
+ "_comment": "Curated under-review drug rows for build_drug_pages.py -- programs with a live FDA application but NO publicly disclosed action date, so no dataset event row can honestly carry them (a dataset row needs a date; inventing one violates the precision rules). Audit 2026-08-18c: AI grounding queries cite us for these drugs ('pdufa date for daraonrasib in usa' -- 14 citations, 47 Bing impressions, no page). The truthful answer to that query is 'the FDA accepted the application on X; no action date has been made public' -- and that answer is this file. Every row carries its primary source. when_text is rendered where a date would be; st 'Under review' marks the row live-but-undated.",
+ "rows": [
+  {
+   "t": "RVMD",
+   "company": "Revolution Medicines, Inc.",
+   "d": "",
+   "dp": "day",
+   "when_text": "NDA accepted 2026-07-22; action date not public",
+   "type": "PDUFA",
+   "st": "Under review",
+   "name": "Daraxonrasib (RMC-6236)",
+   "url": "https://ir.revmed.com/news-releases/news-release-details/revolution-medicines-new-drug-application-daraxonrasib-accepted",
+   "_d": {
+    "indication": "Previously treated metastatic pancreatic ductal adenocarcinoma (PDAC)",
+    "review": "NDA accepted for review 2026-07-22 on the Phase 3 RASolute 302 trial (all primary and key secondary endpoints met, incl. overall survival). Breakthrough Therapy and Orphan Drug designations; selected for the FDA Commissioner's National Priority Voucher pilot. No PDUFA goal date has been publicly disclosed.",
+    "aliases": ["daraonrasib"]
+   }
+  },
+  {
+   "t": "AZN",
+   "company": "AstraZeneca PLC",
+   "d": "",
+   "dp": "day",
+   "when_text": "PDUFA date extended 2026-05-27; new action date not public",
+   "type": "PDUFA",
+   "st": "Under review",
+   "name": "Camizestrant",
+   "url": "https://www.astrazeneca.com/media-centre/press-releases/2026/us-fda-decision-date-camizestrant-extended.html",
+   "_d": {
+    "indication": "1st-line HR-positive, HER2-negative advanced breast cancer with an emergent ESR1 mutation, in combination with a CDK4/6 inhibitor (SERENA-6)",
+    "review": "NDA accepted July 2025 on the Phase 3 SERENA-6 trial; Breakthrough Therapy Designation May 2025. The Oncologic Drugs Advisory Committee voted 3-6 against on 2026-04-30; the FDA extended the PDUFA date (announced 2026-05-27) to review additional ctDNA-clearance analyses. The new action date has not been publicly disclosed."
+   }
+  }
+ ]
+}

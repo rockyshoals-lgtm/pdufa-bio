@@ -2,6 +2,28 @@
  "_comment": "Human-confirmed readout outcomes. This is the store the review sweep was designed around: build_readout_results.py renders these as precise day-of reactions (upgrading the auto-logged window move), build_guided_readouts.py marks the guided row Reported, and build_drug_pages.py stops listing the event as upcoming. Every entry needs a primary source URL; prices are Polygon adjusted closes. Facts only.",
  "reported": [
   {
+   "id": "readout_mrk_2026-08-19",
+   "t": "MRK",
+   "drug": "Intismeran autogene + Keytruda",
+   "reported_date": "2026-08-19",
+   "outcome": "positive",
+   "summary": "Phase 3 INTerpath-001 (n=1,137): intismeran autogene (V940/mRNA-4157) + Keytruda met the primary endpoint of recurrence-free survival AND the key secondary of distant metastasis-free survival vs Keytruda alone in completely resected stage IIB-IV cutaneous melanoma; statistically significant and clinically meaningful on both, no new safety signals. First positive Phase 3 readout for an individualized neoantigen therapy and for an mRNA-based cancer therapy. OS follow-up continues.",
+   "source_url": "https://www.merck.com/news/merck-and-moderna-announce-phase-3-interpath-001-trial-of-intismeran-autogene-plus-keytruda-met-endpoints-of-recurrence-free-survival-rfs-and-distant-metastasis-free-survival-dmfs-in-patient/",
+   "guided_window": "INTerpath-001 topline",
+   "note": "Dual-listed event: Merck co-develops with Moderna (see MRNA row, same source)."
+  },
+  {
+   "id": "readout_mrna_2026-08-19",
+   "t": "MRNA",
+   "drug": "Intismeran autogene + Keytruda",
+   "reported_date": "2026-08-19",
+   "outcome": "positive",
+   "summary": "Phase 3 INTerpath-001 (n=1,137): intismeran autogene (V940/mRNA-4157) + Keytruda met the primary endpoint of recurrence-free survival AND the key secondary of distant metastasis-free survival vs Keytruda alone in completely resected stage IIB-IV cutaneous melanoma; statistically significant and clinically meaningful on both, no new safety signals. First positive Phase 3 readout for an individualized neoantigen therapy and for an mRNA-based cancer therapy. OS follow-up continues.",
+   "source_url": "https://www.merck.com/news/merck-and-moderna-announce-phase-3-interpath-001-trial-of-intismeran-autogene-plus-keytruda-met-endpoints-of-recurrence-free-survival-rfs-and-distant-metastasis-free-survival-dmfs-in-patient/",
+   "guided_window": "INTerpath-001 topline",
+   "note": "Dual-listed event: Moderna co-develops V940/mRNA-4157 with Merck (see MRK row, same source)."
+  },
+  {
    "id": "readout_amlx_2026-08-18",
    "t": "AMLX",
    "drug": "Avexitide (Ph3 LUCIDITY, PBH)",

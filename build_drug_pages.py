@@ -279,6 +279,20 @@ def main():
                           "url": f"/fda-decision/{slug_}"})
     print(f"archive source: {len(arch_rows)} decided rows with a parseable drug name")
 
+    # THIRD SOURCE (audit 2026-08-18c): curated under-review rows. AI grounding queries cite us
+    # for drugs with a live FDA application but NO public action date ("pdufa date for
+    # daraonrasib" -- 14 citations, 47 impressions, no page). No dataset row can honestly carry
+    # them: a row needs a date and inventing one breaks the precision rules. These rows render
+    # when_text where a date would be, and the honest answer -- "accepted on X, date not
+    # public" -- IS the page. Every row carries its primary source.
+    manual_rows = []
+    try:
+        manual_rows = json.load(open(os.path.join(HERE, "_drug_pages_manual.json"),
+                                     encoding="utf-8")).get("rows", [])
+        print(f"manual source: {len(manual_rows)} under-review row(s)")
+    except Exception:
+        pass
+
     # Confirmed readout outcomes: an event with a reported result must not be presented as an
     # upcoming catalyst on its drug page, and its row should link the company release.
     try:
@@ -290,7 +304,7 @@ def main():
 
     drugs = {}
     rejected = []
-    for r in rows + arch_rows:
+    for r in rows + arch_rows + manual_rows:
         name = clean_name(r.get("name"))
         if not name:
             if str(r.get("name") or "").strip():
@@ -351,7 +365,8 @@ def main():
                 outcome = "decided"
             if outcome and outcome not in ("decided",):
                 n_dec += 1
-            when = pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day
+            when = (r.get("when_text")
+                    or (pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day))
             conf = confirmed.get(r.get("id"))
             if conf:
                 oc = str(conf.get("outcome", "")).lower()
@@ -378,7 +393,8 @@ def main():
             continue
 
         # answer-first lede, from the same rows the table shows
-        up = [r for r in rs if (r.get("d") or "") >= today
+        up = [r for r in rs if ((r.get("d") or "") >= today or
+                                str(r.get("st") or "").lower() == "under review")
               and str(r.get("st") or "").lower() != "decided"
               and r.get("id") not in confirmed]
         lede = f"{name} "
@@ -391,9 +407,13 @@ def main():
             lede += f"is in development for {esc(inds[0])}. "
         if up:
             n = up[0]
-            lede += (f"Its next catalyst is a {esc(str(n.get('type') or 'catalyst'))} "
-                     f"{'on' if (n.get('dp') or 'day') == 'day' else 'in'} "
-                     f"{esc(pretty(n['d'], n.get('dp') or 'day'))}. ")
+            if str(n.get("st") or "").lower() == "under review":
+                lede += ("It is under FDA review; the agency's action date has not been "
+                         "publicly disclosed. ")
+            else:
+                lede += (f"Its next catalyst is a {esc(str(n.get('type') or 'catalyst'))} "
+                         f"{'on' if (n.get('dp') or 'day') == 'day' else 'in'} "
+                         f"{esc(pretty(n['d'], n.get('dp') or 'day'))}. ")
         if n_dec:
             lede += f"{n_dec} FDA decision{'s' if n_dec != 1 else ''} on record below. "
         lede += "Every date links its source."
@@ -411,6 +431,10 @@ def main():
         if comps:
             about.append(f"Sponsor: {esc(', '.join(comps[:2]))}"
                          + (f" ({esc(', '.join(tks))})" if tks else "") + ".")
+        revs = [str((r.get("_d") or {}).get("review") or "") for r in rs
+                if (r.get("_d") or {}).get("review")]
+        if revs:
+            about.append(f"Review status: {esc(revs[-1])}")
         caps = sorted({str(r.get("cap") or "") for r in rs if r.get("cap")})
         if caps:
             about.append(f"Market-cap tier at the time we tracked it: {esc(caps[0])}.")
@@ -429,9 +453,16 @@ def main():
         q1 = f"When is {name}'s next FDA decision or readout?"
         if up:
             n0 = up[0]
-            a1 = (f"The next tracked catalyst for {name} is a {n0.get('type', 'catalyst')} "
-                  f"{'on' if (n0.get('dp') or 'day') == 'day' else 'in'} "
-                  f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
+            if str(n0.get("st") or "").lower() == "under review":
+                a1 = (f"{name} is under FDA review, but no action date has been publicly "
+                      f"disclosed"
+                      + (f" ({n0['when_text']})" if n0.get("when_text") else "")
+                      + ". The review status row below links the sponsor's own announcement; "
+                        "this page updates when a date becomes public.")
+            else:
+                a1 = (f"The next tracked catalyst for {name} is a {n0.get('type', 'catalyst')} "
+                      f"{'on' if (n0.get('dp') or 'day') == 'day' else 'in'} "
+                      f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
         else:
             just = [confirmed[r["id"]] for r in rs if r.get("id") in confirmed]
             if just:
