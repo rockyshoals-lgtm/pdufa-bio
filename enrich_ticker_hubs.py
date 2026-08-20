@@ -133,12 +133,23 @@ def main():
             t = re.sub(r"<title>.*?</title>", lambda m: _title, t, count=1, flags=re.S)
             t = re.sub(r'(<meta property="og:title" content=")[^"]*(")',
                        lambda m: m.group(1) + title.replace('"', "").replace("&", "&amp;") + m.group(2), t)
-            desc = (f"{company} ({tk}) FDA catalyst hub: PDUFA dates, advisory committee meetings "
-                    f"and clinical readouts we track"
-                    + (f" for {', '.join(drugs[:3])}" if drugs else "")
-                    + (f" in {inds[0]}" if inds else "")
-                    + f". {len(df['verified'])} verified FDA decision(s) on file. "
-                      f"Facts and dates only; verify against primary filings.")
+            # 2026-08-20: this string was unbounded and broke THREE CI runs -- long drug names +
+            # a long indication pushed /ticker/IRD to 249 chars and test_meta_lengths (max 160)
+            # went red for two days. Degrade gracefully: full form, then drop the indication,
+            # then fewer drugs, then a word-boundary cut. Never emit >158.
+            tail = (f". {len(df['verified'])} verified FDA decision(s) on file. "
+                    f"Facts and dates only; verify against primary filings.")
+            head = (f"{company} ({tk}) FDA catalyst hub: PDUFA dates, advisory committee "
+                    f"meetings and clinical readouts we track")
+            desc = ""
+            for nd, use_ind in ((3, True), (3, False), (1, False), (0, False)):
+                cand = (head + (f" for {', '.join(drugs[:nd])}" if drugs[:nd] else "")
+                        + (f" in {inds[0]}" if use_ind and inds else "") + tail)
+                if len(cand) <= 158:
+                    desc = cand
+                    break
+            if not desc:
+                desc = (head + tail)[:158].rsplit(" ", 1)[0].rstrip(",;:") + "."
             t = re.sub(r'(<meta name="description" content=")[^"]*(")',
                        lambda m: m.group(1) + desc.replace('"', "") + m.group(2), t, count=1)
             t = re.sub(r'(<meta property="og:description" content=")[^"]*(")',

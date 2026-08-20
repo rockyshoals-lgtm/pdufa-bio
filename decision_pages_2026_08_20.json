@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "RARE",
+  "date": "2026-08-19",
+  "outcome": "Approved",
+  "drug": "GENGLYCOS (pariglasgene brecaparvovec-opnr, DTX401)",
+  "indication": "Glycogen storage disease type Ia (GSDIa) in adult and pediatric patients eight years of age and older",
+  "company": "Ultragenyx Pharmaceutical Inc.",
+  "cap": "Mid",
+  "headline": "GENGLYCOS (pariglasgene brecaparvovec-opnr), an AAV8 gene therapy for glycogen storage disease type Ia, granted accelerated approval on August 19, 2026 - four days ahead of its August 23 PDUFA goal date.",
+  "pdufa_note": "The PDUFA target action date was August 23, 2026; the FDA granted accelerated approval on August 19 and Ultragenyx announced it after the market close that day. GENGLYCOS is the first FDA-approved treatment designed to treat the underlying cause of GSDIa, and Ultragenyx's first approved gene therapy. It is a single intravenous AAV8 gene therapy delivering G6Pase expression under the native promoter; patients in clinical studies reduced their reliance on round-the-clock cornstarch dosing. As a condition of accelerated approval, Ultragenyx will provide two years of safety and efficacy data from open-label commercial treatment of 50 patients and 20 control patients. The BLA held Priority Review, and the approval earned Ultragenyx a rare pediatric disease Priority Review Voucher.",
+  "source": "https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-announces-us-fda-approval-genglycostm-gene-therapy",
+  "source_label": "Ultragenyx press release, August 19, 2026"
+ }
+]

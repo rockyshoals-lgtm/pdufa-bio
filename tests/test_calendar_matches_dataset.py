@@ -61,8 +61,14 @@ def main():
             continue
         doc = open(p, encoding="utf-8", errors="replace").read()
         rel = "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/")
-        for tk, d, drugtxt in ROW.findall(doc):
+        for m in ROW.finditer(doc):
+            tk, d, drugtxt = m.group(1), m.group(2), m.group(3)
             if d < TODAY:
+                continue
+            # A decided row may be FUTURE-dated (RARE approved Aug 19 against an Aug 23 goal
+            # date -- the row keeps the goal date, wears the checkmark and links the decision
+            # page). Its dataset event is Decided, so the upcoming census must skip it.
+            if 'data-dec="1"' in doc[max(0, m.start() - 40):m.start() + 40]:
                 continue
             checked += 1
             if (tk, d) in have or (tk, d) in known:
@@ -124,8 +130,12 @@ def main():
     page_rows = []
     for m in re.finditer(r"\b([A-Z]{1,6}) (?:&middot;|·) (\d{4}-\d{2}-\d{2})", body):
         if m.group(2) >= TODAY:
-            page_rows.append((m.group(1), m.group(2),
-                              toks(body[m.end():m.end() + 110])))
+            trail = body[m.end():m.end() + 110]
+            # future-dated but already DECIDED (RARE approved 4 days before its goal date):
+            # the row wears the checkmark/outcome and its dataset event is no longer upcoming.
+            if re.search(r"&#10003;|✓|\bApproved\b|\bCRL\b|Complete Response", trail):
+                continue
+            page_rows.append((m.group(1), m.group(2), toks(trail)))
     n_flag = 0
     unmatched_page = []
     for tk, d, tt in page_rows:

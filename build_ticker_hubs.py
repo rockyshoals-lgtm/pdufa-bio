@@ -118,6 +118,8 @@ def render(tk, fwd, past, name, slugs):
     desc = (f'{tk}{" (" + esc(company) + ")" if company else ""} FDA catalyst hub: '
             f'{n_up} upcoming PDUFA/decision page(s) and {n_past} past FDA decision(s) with dates '
             f'and outcomes. Facts only — verify against primary filings.')
+    if len(desc) > 158:      # long company names blow the 160 cap (the /ticker/IRD CI red)
+        desc = desc[:158].rsplit(' ', 1)[0].rstrip(',;:') + '.'
     url = f'https://www.pdufa.bio/ticker/{tk}'
 
     out = [f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
@@ -236,7 +238,13 @@ def main():
     P = os.path.join(SITE, 'sitemap.xml'); s = open(P, encoding='utf-8').read()
     import shutil; shutil.copy2(P, P + '.bak_' + TODAY + '_hubs')
     added = 0
-    anchor = re.search(r'<url><loc>https://www\.pdufa\.bio/[^<]*</loc>.*?</url>\n', s, re.S)
+    anchor = re.search(r'<url><loc>https://www\.pdufa\.bio/[^<]*</loc>.*?</url>\n?', s, re.S)
+    if anchor is None:
+        # build_sitemap.py owns the sitemap now and reformats it; this legacy insert step just
+        # crashed on the new format (2026-08-20). The hubs are already written; build_sitemap
+        # picks them up on its own pass.
+        print('sitemap: anchor not found (build_sitemap.py owns the file now); skipped')
+        return
     ins = anchor.end()
     block = ''
     for tk in tickers:
