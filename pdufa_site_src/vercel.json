@@ -823,6 +823,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/pariglasgene-brecaparvovec-opnr",
+   "destination": "/drug/genglycos",
+   "permanent": true
+  },
+  {
    "source": "/drug/pegcetacoplan",
    "destination": "/drug/empaveli",
    "permanent": true
