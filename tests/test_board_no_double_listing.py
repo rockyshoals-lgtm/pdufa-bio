@@ -41,6 +41,30 @@ def tickers_in(segment):
     return out
 
 
+STOPW = {"approved", "combination", "injection", "tablets", "therapy", "priority", "review",
+         "solution", "capsules", "cream", "gene", "decision", "pdufa", "readout",
+         # inline-SVG attribute words leak into the tile text and are not drug names
+         "points", "polyline", "stroke", "width", "fill", "viewbox", "class", "style",
+         "height", "circle", "svgcolor", "middot", "color", "https"}
+
+
+def catalysts_in(segment):
+    """[(ticker, drug tokens)] per tile.
+
+    2026-08-22: comparing TICKERS alone is too coarse for a multi-catalyst sponsor. Ultragenyx
+    is legitimately decided on GENGLYCOS (Aug 19) and pending on UX111 (Sep 19) at the same
+    moment -- one company, two applications, both statements true. The invariant is per
+    CATALYST: the same DRUG must not be both pending and decided.
+    """
+    out = []
+    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"|'
+                         r'href="/fda-decision/([A-Z]{1,6})-\d{4}-\d{2}-\d{2}"', segment):
+        tk = m.group(1) or m.group(2)
+        tail = re.sub(r"<[^>]+>", " ", segment[m.end():m.end() + 220]).lower()
+        out.append((tk, {w for w in re.findall(r"[a-z]{5,}", tail) if w not in STOPW}))
+    return out
+
+
 def main():
     if not os.path.exists(HOME):
         print("FAIL: homepage not found")
@@ -57,20 +81,25 @@ def main():
     upcoming = html[i_up:i_dec] if i_up < i_dec else html[i_up:]
     decided = html[i_dec:i_up] if i_dec < i_up else html[i_dec:i_dec + 20000]
 
-    up, dec = tickers_in(upcoming), tickers_in(decided)
-    both = sorted(up & dec)
+    up, dec = catalysts_in(upcoming), catalysts_in(decided)
+    # Same ticker AND an overlapping drug name = the same application in both sections.
+    both = sorted({f"{tk} ({', '.join(sorted(ut & dt_)[:2])})"
+                   for tk, ut in up for tk2, dt_ in dec
+                   if tk == tk2 and (ut & dt_)})
 
     print(f"homepage board: {len(up)} upcoming, {len(dec)} recently decided")
 
     ok = True
     if both:
         ok = False
-        print(f"\nFAIL: {len(both)} ticker(s) listed as BOTH pending and decided: {', '.join(both)}")
+        print(f"\nFAIL: {len(both)} catalyst(s) listed as BOTH pending and decided: "
+              f"{', '.join(both)}")
         print("   The board excludes decided catalysts by matching the slate's goal date against "
               "the archive's decision date. They differ whenever the FDA acts early or late, which "
               "is exactly when the row matters. Match by ticker over a window instead.")
     else:
-        print("  PASS: no ticker appears in both sections")
+        print("  PASS: no catalyst appears in both sections "
+              "(a sponsor may be pending on one drug and decided on another)")
 
     # A countdown that has gone negative means a past-dated catalyst is still being presented as
     # forthcoming, which is the same failure one step earlier.

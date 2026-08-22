@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "NUVL",
+  "date": "2026-07-22",
+  "outcome": "Approved",
+  "drug": "JIDEYTRO (zidesamtinib)",
+  "indication": "Locally advanced or metastatic ROS1-positive non-small cell lung cancer in adults who have received at least one prior ROS1 tyrosine kinase inhibitor",
+  "company": "Nuvalent, Inc.",
+  "cap": "Mid",
+  "headline": "JIDEYTRO (zidesamtinib), a ROS1-selective TKI, approved on July 22, 2026 for previously treated ROS1-positive NSCLC - 58 days ahead of its September 18 PDUFA goal date.",
+  "pdufa_note": "The PDUFA target action date was September 18, 2026; the FDA approved zidesamtinib on July 22, nearly two months early. Efficacy came from ARROS-1, a multicenter, single-arm, open-label, multi-cohort trial in 117 patients: 59 who had received one prior ROS1 TKI and 58 who had received two or more, including lorlatinib, repotrectinib and/or taletrectinib. Zidesamtinib held Breakthrough Therapy and Orphan Drug designations. Nuvalent is partnered with GSK, which announced the approval alongside the FDA notice.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-zidesamtinib-ros1-positive-non-small-cell-lung-cancer",
+  "source_label": "FDA approval notice, July 22, 2026"
+ }
+]

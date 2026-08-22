@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "BMY",
+  "date": "2026-08-13",
+  "outcome": "Approved",
+  "drug": "ZENBEXUS (iberdomide) with daratumumab and hyaluronidase-fihj and dexamethasone",
+  "indication": "Multiple myeloma in adults who have received at least one prior line of therapy including a proteasome inhibitor and an immunomodulatory agent",
+  "company": "Bristol-Myers Squibb Company",
+  "cap": "Large",
+  "headline": "ZENBEXUS (iberdomide), the first FDA-approved CELMoD (cereblon E3 ligase modulator), granted accelerated approval on August 13, 2026 in combination with daratumumab and hyaluronidase-fihj and dexamethasone - four days ahead of its August 17 PDUFA goal date.",
+  "pdufa_note": "The PDUFA target action date was August 17, 2026; the FDA granted accelerated approval on August 13. Efficacy came from the Phase 3 EXCALIBER-RRMM trial (NCT04975997, 939 patients randomized): the MRD-negative complete response rate at any time was 41% with iberdomide plus daratumumab/hyaluronidase and dexamethasone versus 21% for the daratumumab/bortezomib/dexamethasone comparator (p<0.0001) in the 420-patient primary efficacy population. Progression-free survival remains under evaluation as the confirmatory clinical-benefit endpoint. The label carries a boxed warning for embryo-fetal toxicity and serious venous and arterial thromboembolism, with warnings for neutropenia, infections and second primary malignancies; the drug is available only through the ZENBEXUS REMS. The application held priority review plus breakthrough therapy and orphan drug designations, and was reviewed under Project Orbis with Swissmedic.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-iberdomide-daratumumab-and-hyaluronidase-fihj-and-dexamethasone",
+  "source_label": "FDA approval notice, August 13, 2026"
+ }
+]
