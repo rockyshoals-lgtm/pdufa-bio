@@ -363,6 +363,15 @@ jobs:
       - name: FDA reconciliation (advisory) — approvals not in our archive
         run: python tests/test_fda_reconcile.py --days 30 | tee reconcile.txt
 
+      # Vendor cross-check. BPC's feed is capped at 10 forward rows on this key, so it can only
+      # answer "does BPC disagree with us on an imminent event" -- which is the question worth
+      # asking daily. Advisory: never blocks, and SKIPs cleanly when the key is absent.
+      - name: BPC vendor cross-check (advisory) — date conflicts on imminent catalysts
+        if: ${{ always() }}
+        env:
+          BPC_API_KEY: ${{ secrets.BPC_API_KEY }}
+        run: python bpc_compare.py | tee bpc.txt || true
+
       - name: Detect resolved PDUFAs (advisory) — pending catalysts whose date has passed
         if: ${{ always() }}
         env:
@@ -393,6 +402,8 @@ jobs:
               echo "(The pipeline never auto-publishes an outcome — that step needs judgment.)"
               echo; echo "## FDA reconciliation — approvals possibly not in our archive"
               echo '```'; cat reconcile.txt; echo '```'
+              echo; echo "## BPC vendor cross-check — imminent catalysts"
+              echo '```'; cat bpc.txt 2>/dev/null || echo "(not run)"; echo '```'
               echo; echo "## Resolved-PDUFA scan — pending catalysts that may have decided"
               echo '```'; cat decided.txt; echo '```'
               echo; echo "## AdComm meetings past-date with no published vote result"
