@@ -34,7 +34,11 @@ KNOWN_SECRETS = {"POLYGON_API_KEY", "FMP_API_KEY", "SEC_USER_AGENT",
                  # exits 0 when this is unset, so an unconfigured key degrades to no data rather
                  # than a failed build.
                  "BING_WEBMASTER_API_KEY",
-                 "GSC_SERVICE_ACCOUNT_JSON", "GITHUB_TOKEN"}
+                 "GSC_SERVICE_ACCOUNT_JSON", "GITHUB_TOKEN",
+                 # Vendor cross-check (bpc_compare.py). Advisory only: the script SKIPs with
+                 # exit 0 when the key is unset, so an unconfigured secret degrades to "no
+                 # vendor comparison this run" rather than a broken build.
+                 "BPC_API_KEY"}
 
 
 def main():

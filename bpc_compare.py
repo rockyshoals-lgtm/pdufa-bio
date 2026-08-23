@@ -167,6 +167,33 @@ def main():
     show("BPC LISTS, WE HAVE NO MATCH (candidate gaps)", missing,
          lambda r: f"  {str(r['nct'] or '')[:12]}")
 
+    # ---- conference cross-check (advisory only, by decision 2026-08-22) --------------------
+    # BPC tracks conference presentations as catalysts; we publish a presenter ONLY when the
+    # company's own SEC filing or release commits to that edition. So their rows are a QA
+    # yardstick for our gate, never a publishing source: a name here is a LEAD to go and find
+    # the filing for, and nothing is ever written from vendor data.
+    conf_rows = [b for b in rows
+                 if "conference" in str(b.get("next_catalyst_label") or "").lower()]
+    if conf_rows:
+        try:
+            import build_conferences as BC
+            pres = BC.load_presenters()
+            ours_pres = {str(p.get("ticker", "")).upper()
+                         for lst in pres.values() for p in lst}
+        except Exception:
+            ours_pres = set()
+        gaps = [b for b in conf_rows
+                if str(b.get("company_ticker", "")).upper() not in ours_pres]
+        print(f"\nCONFERENCE CROSS-CHECK: BPC lists {len(conf_rows)} presentation(s); "
+              f"{len(gaps)} name a company our presenter gate does not carry")
+        for b in gaps:
+            note = re.sub(r"\s+", " ", str(b.get("note") or ""))[:110]
+            print(f"   {str(b.get('company_ticker','')).upper():<6} "
+                  f"{b.get('catalyst_date')}  {str(b.get('drug_name'))[:24]:<24} {note}")
+        if gaps:
+            print("   LEADS ONLY -- confirm each against the company's own filing before it")
+            print("   publishes. We do not publish presenters on vendor say-so.")
+
     if conflict:
         print("\n  Conflicts matter most: our dates carry a source_url, BPC's do not. Check the")
         print("  company release / SEC filing / FDA notice and fix whichever side is wrong.")
