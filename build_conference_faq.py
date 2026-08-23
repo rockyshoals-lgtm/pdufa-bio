@@ -102,6 +102,29 @@ def main():
                   "rumours don't qualify. The conferences page updates as filings land.")
         qa.append((f"Which biotech companies are presenting at {code} {year}?", a2))
 
+        # Answered from OUR study rather than in general terms: "how do stocks trade into X" is
+        # the question this page exists to answer, and we have measured it. Only asked when the
+        # study holds that conference's own cohort -- a general answer dressed as a specific one
+        # is the kind of thing the whole provenance discipline exists to prevent.
+        try:
+            S = json.load(open(os.path.join(HERE, "_conference_runup_stats.json"),
+                               encoding="utf-8"))
+            cs = S["by_conference"].get(code)
+        except Exception:
+            cs = None
+        if cs and "runup_10d" in cs and "post_5d" in cs:
+            r10, p5 = cs["runup_10d"], cs["post_5d"]
+            ed = cs.get("event_day", {}).get("median")
+            qa.append((
+                f"How do biotech stocks typically trade around {code}?",
+                f"In our study of {r10['n']} {code} presentations (2017-2026), the median stock "
+                f"moved {r10['median']:+.2f}% over the 10 trading days before the presentation "
+                f"({r10['pct_up']:.0f}% of them rose)"
+                + (f", {ed:+.2f}% on the day itself" if ed is not None else "")
+                + f", and {p5['median']:+.2f}% over the 5 trading days after. The pattern across "
+                  f"the whole study is a drift up into these meetings and down out of them, "
+                  f"strongest in the smallest companies. That is a historical distribution for a "
+                  f"cohort, not a prediction for any one company, and not investment advice."))
         qa.append((
             "Why do medical conference dates matter for biotech stocks?",
             "Trial results are often presented first at medical meetings, so a company's "

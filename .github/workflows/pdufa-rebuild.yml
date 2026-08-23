@@ -265,7 +265,11 @@ jobs:
           # Red team 2026-08-16 2.2: /api/v1/conferences served 14 stale meetings while the
           # page showed 41 -- and /llms.txt points AI crawlers at the API. One selection,
           # two surfaces: the sync derives the API rows from the same gated presenter set.
+          python migrate_mined_presenters.py
+          python rescore_mined_presenters.py
           python sync_conferences_to_api.py
+          python build_conference_runup_stats.py
+          python build_conference_runup_module.py
           python build_conference_faq.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)

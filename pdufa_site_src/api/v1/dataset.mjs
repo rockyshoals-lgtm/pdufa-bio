@@ -2109,7 +2109,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -2283,7 +2283,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -2342,7 +2342,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -3077,7 +3077,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -3144,7 +3144,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -3163,6 +3163,13 @@ export default [
      "drug": "CNTY-813",
      "pres_type": "presentation",
      "source_url": "https://www.sec.gov/Archives/edgar/data/1850119/000110465926094533/tm2622911d1_ex99-1.htm"
+    },
+    {
+     "ticker": "KLRA",
+     "company": "Kailera Therapeutics, Inc.",
+     "drug": "ribupatide",
+     "pres_type": "oral/late-breaker",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/2096997/000119312526346919/ck0002096997-ex99_1.htm"
     },
     {
      "ticker": "SANA",
@@ -3187,7 +3194,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -4086,7 +4093,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -4107,7 +4114,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -4128,7 +4135,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -4712,7 +4719,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -4733,7 +4740,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -4754,7 +4761,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -4775,7 +4782,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -4960,7 +4967,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -4981,7 +4988,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5002,7 +5009,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5023,7 +5030,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -5044,7 +5051,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -5065,7 +5072,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -5176,7 +5183,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -5576,7 +5583,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -5605,7 +5612,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -5909,7 +5916,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -5930,7 +5937,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -5951,7 +5958,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -6010,7 +6017,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -6031,7 +6038,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -8155,7 +8162,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -8219,7 +8226,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -8283,7 +8290,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -8688,7 +8695,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -8844,7 +8851,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -8865,7 +8872,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -9238,7 +9245,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -9259,7 +9266,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -9299,7 +9306,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -9446,7 +9453,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -9467,7 +9474,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -9488,7 +9495,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -9804,7 +9811,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -9825,7 +9832,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-08-23T00:24:15Z",
+  "ua": "2026-08-23T04:20:02Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

@@ -68,7 +68,7 @@ MONTHS_RX = ("january|february|march|april|may|june|july|august|september|octobe
              "november|december")
 
 
-def edition_ok(sentence, conf_code, conf_name, conf_start):
+def edition_ok(sentence, conf_code, conf_name, conf_start, filed=""):
     """Rule 1, the Bug-B killer: the sentence must mean THIS edition. Within +/-200 chars of
     the conference mention, require the edition's own year, or an in-window month with no
     conflicting year; reject on any OTHER 4-digit year near the mention. ZYME's 'ASCO GI data
@@ -86,14 +86,24 @@ def edition_ok(sentence, conf_code, conf_name, conf_start):
         return False                      # a conflicting year near the mention: wrong edition
     if year in years:
         return True
-    # no year at all: accept only an in-window month mention (same-year phrasing like
-    # 'at CTAD in November')
+    # No year at all: an in-window month mention only, and ONLY when the filing itself is from
+    # the edition's year.
+    #
+    # 2026-08-22 -- without the filing-year test this published two false rows. Amgen's Q3 2025
+    # earnings release said "presented at the American Heart Association Scientific Sessions
+    # (AHA) on November 8th" and Autolus's December 2025 release said "to be presented at the ASH
+    # Annual Meeting in December". Both name the right MONTH for their own year's meeting, and
+    # both were attached to the 2026 edition -- announcing next year's presentations from last
+    # year's filings. A company writing an unqualified month means the edition it is living in,
+    # which is the one its filing was written in.
     try:
         import datetime as _dt
         sm = _dt.date.fromisoformat(str(conf_start)).month
         month_name = ("january february march april may june july august september october "
                       "november december").split()[sm - 1]
-        return bool(re.search(rf"\b{month_name}\b", win, re.I))
+        if not re.search(rf"\b{month_name}\b", win, re.I):
+            return False
+        return str(filed)[:4] == year
     except Exception:
         return False
 
@@ -168,7 +178,7 @@ def mine(conf, days, verbose=True):
                 if ci < 0:
                     ci = s.lower().find(name.lower()[:22])
                 near_verb = ci >= 0 and abs(fwd.start() - ci) <= 180
-            ed_ok = edition_ok(s, code, name, conf["start"])
+            ed_ok = edition_ok(s, code, name, conf["start"], src.get("file_date") or "")
             confidence = ("high" if (fwd and near_verb and ed_ok
                                      and form not in ("10-K", "10-Q", "20-F"))
                           else "low")
@@ -248,6 +258,22 @@ def main():
             return
         new_file = not os.path.exists(OUT)
         os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
+        # HEADER DRIFT GUARD (2026-08-22). COLS grew -- edition_year, confidence and form were
+        # inserted at index 7 for the edition gate -- while the file on disk kept its original
+        # 12-column header. Appending 15 values under a 12-name header wrote every new row
+        # misaligned: read back, `confidence` was absent, and build_conferences publishes a mined
+        # row only when confidence == "high". 145 rows mined, none publishable, and nothing
+        # anywhere reported a problem. Refuse to append into a mismatched header instead.
+        if not new_file:
+            with open(OUT, encoding="utf-8-sig", newline="") as f:
+                have = next(csv.reader(f), [])
+            if have and have != COLS:
+                print(f"  REFUSING TO APPEND: {os.path.basename(OUT)} has a {len(have)}-column "
+                      f"header but this miner writes {len(COLS)}. Appending would misalign every "
+                      f"row and silently unpublish it. Run: python migrate_mined_presenters.py")
+                raise SystemExit(2)
+
         with open(OUT, "a", encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, fieldnames=COLS)
             if new_file:
