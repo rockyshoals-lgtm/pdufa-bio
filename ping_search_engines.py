@@ -207,7 +207,14 @@ def main():
     a = ap.parse_args()
 
     urls, newest = changed_urls()
-    today = dt.date.today().isoformat()
+    # RULE 1, the timezone trap. The sitemap's lastmod values are stamped in UTC by
+    # build_sitemap/build_date_modified, so the "is this in the future" test has to be made in
+    # UTC too. Comparing a UTC date against this machine's LOCAL date (Pacific) made the check
+    # cry wolf every evening after 5pm PT, when UTC has already rolled over: on 2026-08-22 at
+    # 21:23 PT it warned that a lastmod of 2026-08-23 was "tomorrow" when it was simply today in
+    # the zone that wrote it. CI never saw it (12:00 and 21:00 UTC land at 05:00 and 14:00 PT,
+    # same calendar day), which is exactly how a warning like this survives unnoticed.
+    today = dt.datetime.now(dt.timezone.utc).date().isoformat()
     print(f"sitemap newest lastmod {newest} (today {today}); {len(urls)} URL(s) changed recently")
     if newest and newest > today:
         print(f"  WARNING: lastmod {newest} is in the future. A sitemap that claims tomorrow's date "
