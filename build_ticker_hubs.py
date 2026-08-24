@@ -100,6 +100,26 @@ def load_data():
         if cm:
             name[m.group(1)] = html.unescape(cm.group(1)).strip()
 
+    # Clinical readouts from the dataset (the slate is PDUFA-only).
+    readouts = collections.defaultdict(list)
+    dsp = os.path.join(SITE, 'api', 'v1', 'dataset.mjs')
+    if os.path.exists(dsp):
+        dsrc = open(dsp, encoding='utf-8', errors='replace').read().replace('\x00', '')
+        drows, _ = json.JSONDecoder().raw_decode(dsrc[dsrc.find('['):])
+        for r in drows:
+            if r.get('type') != 'Readout':
+                continue
+            tkr = str(r.get('t') or '').upper()
+            if not tkr:
+                continue
+            readouts[tkr].append(dict(date=str(r.get('d') or ''), drug=r.get('name'),
+                                      outcome=(r.get('_d') or {}).get('readout_outcome') or r.get('oc'), url=r.get('url'),
+                                      precision=r.get('dp') or 'day',
+                                      status=r.get('st')))
+            nm = r.get('company')
+            if nm and len(str(nm)) > len(name.get(tkr, '')):
+                name[tkr] = str(nm)
+
     # /pdufa/{slug} detail pages that exist, grouped by ticker
     slugs = collections.defaultdict(list)
     for d in sorted(os.listdir(os.path.join(SITE, 'pdufa'))):
@@ -107,10 +127,10 @@ def load_data():
             mm = re.match(r'([A-Z]{2,6})(?:-.*)?$', d)
             if mm:
                 slugs[mm.group(1)].append(d)
-    return fwd, past, name, slugs
+    return fwd, past, name, slugs, readouts
 
 
-def render(tk, fwd, past, name, slugs):
+def render(tk, fwd, past, name, slugs, readouts):
     company = name.get(tk, '')
     disp = f'{tk} — {esc(company)}' if company else tk
     n_up, n_past = len(fwd.get(tk, [])), len(past.get(tk, []))
@@ -190,6 +210,26 @@ def render(tk, fwd, past, name, slugs):
                        f'<span class="t">{pretty(p["date"])}{badge}</span>'
                        f'<span class="d">{lab}</span></a>')
 
+    # Clinical readouts. The hub has always SAID it covers "PDUFA dates, advisory committee
+    # meetings and clinical readouts", but it was built only from the PDUFA slate and the
+    # decisions archive, so a company whose catalyst is a readout had no hub at all: AMLX posted
+    # a positive Phase 3 on 2026-08-18 (published to /readouts at +63.8%) and /ticker/AMLX was a
+    # 404 for six days. Readouts come from the dataset, and a reported one carries its outcome.
+    rh = sorted(readouts.get(tk, []), key=lambda x: x['date'], reverse=True)
+    if rh:
+        out.append(f'<h2>Clinical readouts ({len(rh)})</h2>')
+        for r in rh:
+            oc = str(r.get('outcome') or '')
+            badge = (f'<span class="badge app">✓ {esc(oc)}</span>' if oc.lower().startswith('pos')
+                     else (f'<span class="badge crl">✕ {esc(oc)}</span>'
+                           if oc.lower().startswith('neg') else ''))
+            when = pretty(r['date']) if r.get('precision') == 'day' else r['date'][:7]
+            href = r.get('url') or '/readouts'
+            ext = ' rel="nofollow"' if str(href).startswith('http') else ''
+            out.append(f'<a class="row" href="{esc(href)}"{ext}>'
+                       f'<span class="t">{when}{badge}</span>'
+                       f'<span class="d">{esc(r.get("drug") or "Clinical readout")}</span></a>')
+
     out.append('<div style="margin:16px 0">'
                '<a class="chip" href="/calendar">Full PDUFA calendar →</a>'
                '<a class="chip" href="/decisions">All FDA decisions →</a>'
@@ -206,8 +246,8 @@ def render(tk, fwd, past, name, slugs):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--dry-run', action='store_true')
     a = ap.parse_args()
-    fwd, past, name, slugs = load_data()
-    tickers = sorted(set(fwd) | set(past))
+    fwd, past, name, slugs, readouts = load_data()
+    tickers = sorted(set(fwd) | set(past) | set(readouts))
     print(f'{len(tickers)} ticker hubs to build '
           f'({sum(1 for t in tickers if slugs.get(t) and past.get(t))} with both, '
           f'{sum(1 for t in tickers if slugs.get(t) and not past.get(t))} upcoming-only, '
@@ -215,7 +255,7 @@ def main():
 
     built, links, deadlinks = 0, 0, 0
     for tk in tickers:
-        h = render(tk, fwd, past, name, slugs)
+        h = render(tk, fwd, past, name, slugs, readouts)
         links += len(re.findall(r'href="/(?:pdufa|fda-decision)/', h))
         if a.dry_run:
             continue

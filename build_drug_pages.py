@@ -435,6 +435,18 @@ def main():
                 if (r.get("_d") or {}).get("review")]
         if revs:
             about.append(f"Review status: {esc(revs[-1])}")
+        # COMMON MISSPELLING (2026-08-24). "daraonrasib" -- the x dropped -- drives 47 Bing
+        # impressions at position 7.26 with zero clicks and 14 AI citations at 8.43% share, and
+        # the string appeared NOWHERE on the page that should own it, so neither an engine nor a
+        # reader could confirm they had landed in the right place. Stated as a variant spelling of
+        # one molecule, which is what it is; a separate page under the misspelling would be a thin
+        # duplicate.
+        alt = next((str((r.get("_d") or {}).get("also_searched") or "") for r in rs
+                    if (r.get("_d") or {}).get("also_searched")), "")
+        if alt:
+            note = next((str((r.get("_d") or {}).get("also_searched_note") or "") for r in rs
+                         if (r.get("_d") or {}).get("also_searched_note")), "")
+            about.append(f"Also searched as <b>{esc(alt)}</b>. {esc(note)}")
         caps = sorted({str(r.get("cap") or "") for r in rs if r.get("cap")})
         if caps:
             about.append(f"Market-cap tier at the time we tracked it: {esc(caps[0])}.")

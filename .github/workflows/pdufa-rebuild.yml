@@ -271,6 +271,8 @@ jobs:
           python build_conference_runup_stats.py
           python build_conference_runup_module.py
           python build_conference_faq.py
+          python build_early_decisions.py
+          python add_amlx_avexitide.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
         run: python build_explainer.py

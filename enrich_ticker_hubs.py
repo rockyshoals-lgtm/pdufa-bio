@@ -180,7 +180,15 @@ def main():
                           + json.dumps(org, separators=(",", ":")) + "</script></head>", 1)
 
         # ---- 4. thin / unverified-only hubs should not be offered to search -----------------
-        substantive = bool(df["verified"]) or bool(upcoming)
+        # A REPORTED, SOURCED READOUT counts as a verified catalyst (2026-08-24). The test was
+        # "a verified FDA decision or an upcoming PDUFA", which noindexed AMLX -- a company whose
+        # Phase 3 read out positive on 2026-08-18, is published on /readouts with the company's
+        # own release and a measured +63.8% day-of move. That is checked against a filing; it is
+        # simply not a DECISION. The rule is meant to exclude pages with nothing verified on
+        # them, not pages whose verified thing happens to be a readout.
+        has_reported_readout = bool(re.search(
+            r'<h2>Clinical readouts \(\d+\)</h2>.*?class="badge (?:app|crl)"', t, re.S))
+        substantive = bool(df["verified"]) or bool(upcoming) or has_reported_readout
         if not substantive:
             t = re.sub(r'(<meta name="robots" content=")[^"]*(")', r"\1noindex,follow\2", t, count=1)
             if "nothing we have verified" not in t:

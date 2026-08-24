@@ -104,9 +104,28 @@ def main():
         if str(hit.get("st", "")).lower() == "decided":
             continue                       # a decided date is history, not a schedule
 
-        out = doc
+        # PROTECT HISTORICAL BLOCKS (2026-08-24). A blanket replace rewrote the date inside the
+        # extension notice too, so /pdufa/CAPR-deramiocel ended up reading "the FDA moved this
+        # target action date FROM November 22, 2026 TO November 22, 2026" -- a self-contradiction
+        # on a live page, caught by the red team the same day. Some dates on a page are DELIBERATE
+        # HISTORY: the date an event moved away from is the whole point of saying it moved. Blocks
+        # between these markers state the past on purpose and are never rewritten.
+        HIST = [("<!--EXTN:BEGIN-->", "<!--EXTN:END-->")]
+        frozen, work = [], doc
+        for bmark, emark in HIST:
+            while True:
+                i, j = work.find(bmark), work.find(emark)
+                if i < 0 or j < 0 or j < i:
+                    break
+                j += len(emark)
+                frozen.append(work[i:j])
+                work = work[:i] + f"\x00HIST{len(frozen) - 1}\x00" + work[j:]
+
+        out = work
         for old_form, new_form in zip(forms(stated), forms(new)):
             out = out.replace(old_form, new_form)
+        for k, blk in enumerate(frozen):
+            out = out.replace(f"\x00HIST{k}\x00", blk)
         if out == doc:
             continue
         changed += 1
