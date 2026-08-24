@@ -301,6 +301,14 @@ jobs:
       - name: "/pdufa/{TICKER}-{drug}: every upcoming event gets its page"
         run: python build_pdufa_event_pages.py
 
+      # PDUFA dates move. build_pdufa_event_pages never overwrites an existing page (the
+      # hand-grown ones carry story cards worth keeping), so a moved date used to leave the page
+      # announcing a date the FDA had replaced -- title, facts and Event schema all stale. CAPR's
+      # Aug 22 -> Nov 22 extension exposed it. This rewrites just the date, and skips any page
+      # whose ticker has more than one live event rather than guess.
+      - name: "Event pages follow a moved PDUFA date"
+        run: python refresh_moved_pdufa_pages.py
+
       - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
         run: python build_pdufa_ticker_index.py
 
