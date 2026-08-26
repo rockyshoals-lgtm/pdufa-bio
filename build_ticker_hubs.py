@@ -120,6 +120,28 @@ def load_data():
             if nm and len(str(nm)) > len(name.get(tkr, '')):
                 name[tkr] = str(nm)
 
+    # An event the FDA has already acted on is not an "upcoming FDA catalyst". The slate in
+    # data.js is the raw forward list and is NOT pruned when a decision lands -- the homepage
+    # board resolves that separately, so a builder reading the slate straight will keep
+    # advertising approved drugs as pending. On 2026-08-26 nine hubs did exactly that, BMY's
+    # iberdomide and TAK's oveporexton among them, weeks after those approvals were published
+    # on this same site. Resolve against dataset.mjs, which carries the decided status, and
+    # let the decision-history section below pick the event up from the archive instead.
+    if os.path.exists(dsp):
+        done = set()
+        for r in drows:
+            if r.get('type') == 'PDUFA' and str(r.get('st') or '').lower() == 'decided':
+                for dt in (r.get('d'), r.get('dcd')):
+                    if dt:
+                        done.add((str(r.get('t') or '').upper(), str(dt)))
+        moved = 0
+        for tkr in list(fwd):
+            keep = [e for e in fwd[tkr] if (tkr, str(e.get('date'))) not in done]
+            moved += len(fwd[tkr]) - len(keep)
+            fwd[tkr] = keep
+        if moved:
+            print(f'  dropped {moved} already-decided event(s) from the upcoming lists')
+
     # /pdufa/{slug} detail pages that exist, grouped by ticker
     slugs = collections.defaultdict(list)
     for d in sorted(os.listdir(os.path.join(SITE, 'pdufa'))):

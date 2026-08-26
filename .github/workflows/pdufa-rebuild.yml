@@ -215,6 +215,14 @@ jobs:
       - name: Surface company-guided readouts at the top of /readouts
         run: python build_guided_readouts.py
 
+      # The hubs were built by hand and only ENRICHED here, so they froze: enrichment cannot
+      # remove a row the builder put there. By 2026-08-26 nine hubs still listed approved
+      # drugs under "Upcoming FDA catalysts", JAZZ/ZYME's Ziihera among them. Build then
+      # enrich, in that order -- the builder overwrites the page, so everything downstream of
+      # it has to run after. test_ticker_hub_not_stale.py fails if this step goes missing.
+      - name: Rebuild the ticker hubs (decided events must leave the upcoming lists)
+        run: python build_ticker_hubs.py
+
       - name: Entity-enrich the ticker hubs
         run: python enrich_ticker_hubs.py
 
