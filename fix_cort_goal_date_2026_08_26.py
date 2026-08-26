@@ -56,18 +56,30 @@ def fix_goal_date():
     for rel in ("api/data.js", "api/v1/dataset.mjs"):
         p = os.path.join(SITE, rel)
         doc = io.open(p, encoding="utf-8").read()
-        # Anchor on the event id so nothing else with these dates can be touched.
-        pat = re.compile(r'("id":"pdufa_cort_2026-03-25","t":"CORT".{0,120}?"d":")'
-                         + WRONG + r'(")')
+        # Anchor on the event id so nothing else with these dates can be touched. dataset.mjs
+        # is minified locally but pretty-printed by the daily refresh, so every separator has
+        # to tolerate whitespace -- a minified-only pattern silently matched nothing against
+        # CI's file and the "still wrong" check below then read that as clean.
+        S = r"\s*"
+        ident = re.compile(r'"id"' + S + ":" + S + r'"pdufa_cort_2026-03-25"')
+        pat = re.compile(r'("id"' + S + ":" + S + r'"pdufa_cort_2026-03-25".{0,400}?"d"'
+                         + S + ":" + S + r'")' + WRONG + r'(")', re.S)
         new, n = pat.subn(r"\g<1>" + RIGHT + r"\g<2>", doc)
         if n:
             io.open(p, "w", encoding="utf-8").write(new)
             doc = new
             hits += n
+        present = bool(ident.search(doc))
         stale = len(pat.findall(doc))
-        print(f"  {rel}: {n} corrected, {stale} still wrong")
+        print(f"  {rel}: event {'present' if present else 'absent'}, "
+              f"{n} corrected, {stale} still wrong")
         if stale:
             return -1
+    # "Nothing found" is not "nothing wrong". If no surface carried the event, the patch did
+    # nothing and saying OK would be a false pass.
+    if hits == 0:
+        print("  !! the event was not found on any surface -- nothing was corrected")
+        return -1
     return hits
 
 

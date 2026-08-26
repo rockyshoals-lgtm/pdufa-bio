@@ -3,7 +3,7 @@ export default [
   "id": "pdufa_cort_2026-03-25",
   "t": "CORT",
   "company": "CORCEPT THERAPEUTICS INC",
-  "d": "2026-03-25",
+  "d": "2026-07-11",
   "dp": "day",
   "name": "Relacorilant + nab-paclitaxel - (ROSELLA)",
   "type": "PDUFA",
