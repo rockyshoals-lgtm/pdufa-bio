@@ -60,7 +60,7 @@ export function shape(e, tier) {
   }
   /* days_to_decision is BAKED into dataset.mjs when that file is generated, and freezes there.
      On 2026-07-22 every record still carried the value computed on 07-11 — e.g. CORT (PDUFA
-     2026-03-25) reported -108 when the true figure was -119. Consumers of the public API were
+     2026-07-11, decided 2026-03-25) reported -108 when the true figure was -119. Consumers of the public API were
      being served an 11-day-stale countdown with no signal that it was stale.
      Recompute per request from the event date. Both sides normalised to UTC midnight so the
      difference is an exact whole-day count and cannot drift with the hour of the request.

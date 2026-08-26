@@ -45,9 +45,14 @@ def main():
                 review += 1
                 print(f"  ?? human review: {slug} (asserted vs evidence conflict)")
             continue
-        # evidence must AGREE with what the page asserts
-        asserted = re.search(r"<span>Outcome</span><b[^>]*>([^<]+)</b>", doc)
-        oc = (asserted.group(1).strip().lower() if asserted else "")
+        # evidence must AGREE with what the page asserts. The outcome is wrapped in badge
+        # spans (<b><span class="badge crl">CRL</span>...</b>), so a [^<]+ read returns the
+        # empty string and every such page looks like a disagreement. Seven pages that
+        # plainly said CRL, and whose evidence said CRL, were reported for human review on
+        # every build for that reason alone. Read through the tags, then strip them.
+        asserted = re.search(r"<span>Outcome</span><b[^>]*>(.*?)</b></div>", doc, re.S)
+        oc = (re.sub(r"<[^>]+>", " ", asserted.group(1)).strip().lower()
+              if asserted else "")
         agrees = (("approv" in oc and r["status"] == "verified_approved")
                   or (("crl" in oc or "complete response" in oc)
                       and r["status"] == "verified_crl"))
@@ -60,8 +65,11 @@ def main():
                f'<a href="{html.escape(ev["source_url"], quote=True)}" '
                f'rel="nofollow noopener">{html.escape(ev["source_label"][:80])}</a>'
                f'</b></div>')
-        doc2 = re.sub(r'(<span>Outcome</span><b[^>]*>[^<]+</b></div>)', r"\1" + row,
-                      doc, count=1)
+        doc2 = re.sub(r'(<span>Outcome</span><b[^>]*>.*?</b></div>)', r"\1" + row,
+                      doc, count=1, flags=re.S)      # same tag-tolerance as the read above
+        if doc2 == doc:
+            print(f"  !! {slug}: agreed, but the source row would not insert -- "
+                  f"the Outcome block did not match; not silently skipping")
         if doc2 != doc:
             if not a.dry_run:
                 open(p, "w", encoding="utf-8").write(doc2)

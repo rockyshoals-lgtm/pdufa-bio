@@ -1,5 +1,4 @@
 {
- "unsourced": 116,
- "note": "high-water mark; this number may only decrease",
- "recalibrated": "2026-08-09: the recorded 111 never matched its own commit. Re-measuring the guard's exact logic against the baseline commit (a5b9dc2) gives 116, and the set of unsourced slugs there is IDENTICAL to today's -- zero added, zero removed. The 111 was captured from the working tree mid-commit, before that audit finished touching decision pages. No page lost a source; the meter was wrong. Ratchet resumes from the true count."
+ "unsourced": 46,
+ "note": "high-water mark; this number may only decrease"
 }
