@@ -43,6 +43,40 @@ def pretty(iso):
     return f"{MON[m - 1]} {d}, {y}"
 
 
+def collect_all(year):
+    """Every `year` Decided row carrying both dates, sourced or not, with the reason if not.
+
+    Needed for the exclusion disclosure: a page that filters has to be able to say what the
+    filter removed and which way it points.
+    """
+    src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
+               errors="replace").read().replace("\x00", "")
+    rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
+    out = []
+    for r in rows:
+        if r.get("type") != "PDUFA" or str(r.get("st", "")).lower() != "decided":
+            continue
+        goal, actual = str(r.get("d") or ""), str(r.get("dcd") or "")
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", goal) or \
+           not re.match(r"^\d{4}-\d{2}-\d{2}$", actual) or not actual.startswith(str(year)):
+            continue
+        tk = str(r.get("t") or "").upper()
+        page = os.path.join(SITE, "fda-decision", f"{tk}-{actual}", "index.html")
+        sourced, why = os.path.exists(page), "no decision page published"
+        if sourced:
+            doc = open(page, encoding="utf-8", errors="replace").read()
+            low = doc.lower()
+            if "price-only" in low or "outcome unverified" in low:
+                sourced, why = False, "outcome not verified against a filing"
+            elif not re.search(r'href="https?://(?!www\.pdufa\.bio)', doc):
+                sourced, why = False, "no primary source linked"
+        out.append({"ticker": tk, "goal": goal, "actual": actual, "sourced": sourced,
+                    "why": "" if sourced else why,
+                    "delta": (dt.date.fromisoformat(actual)
+                              - dt.date.fromisoformat(goal)).days})
+    return out
+
+
 def collect(year):
     """Sourced decisions in `year` that state BOTH a goal date and an actual action date."""
     src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
@@ -123,8 +157,50 @@ def main():
     if enough:
         ds = sorted(r["delta"] for r in rec)
         m = ds[len(ds) // 2] if len(ds) % 2 else (ds[len(ds) // 2 - 1] + ds[len(ds) // 2]) / 2
-        med = (f" The median decision landed <b>{abs(m):.0f} day"
+        # print 2.5, not 2: an even-sized sample has a fractional median and rounding it down
+        # overstates precision in the flattering direction
+        mtxt = f"{abs(m):.1f}".rstrip("0").rstrip(".")
+        med = (f" The median decision landed <b>{mtxt} day"
                f"{'s' if abs(m) != 1 else ''} {'before' if m < 0 else 'after'}</b> the goal date.")
+
+    # ---- EXCLUSION DISCLOSURE ------------------------------------------------------------
+    # Red team 2026-08-26: the inclusion rule is not independent of the thing being measured.
+    # Excluding decisions we could not source removed six 2026 records, none of them early, and
+    # moved the "before" share from 13/24 to 13/18. Their proposed sentence was that all six
+    # "landed on the goal date" -- but checking the data first shows that is not quite true, and
+    # the truth matters: EVERY unsourced decided row in the archive carries an action date equal
+    # to its goal date (6 of 6), while sourced rows differ 14 times in 18. That is the signature
+    # of a PLACEHOLDER, not of measurement. So the six cannot be counted as on-time either;
+    # their action date was simply never confirmed. Neither 13/18 nor 13/24 is a clean estimate,
+    # and the page says so rather than quietly picking the flattering one.
+    allrows = collect_all(a.year)
+    ex = [r for r in allrows if not r["sourced"]]
+    ex_eq = [r for r in ex if r["delta"] == 0]
+    ex_early = [r for r in ex if r["delta"] < 0]
+    disclosure = ""
+    if ex:
+        names = ", ".join(sorted(r["ticker"] for r in ex))
+        disclosure = (
+            f'<h2>What this sample can and cannot tell you</h2>'
+            f'<div class="note" style="font-size:13.5px;color:#9db3d4;line-height:1.7">'
+            f'<b style="color:#f0c86a">The inclusion rule is not independent of the answer.</b> '
+            f'{len(ex)} further {a.year} decision{"s" if len(ex) != 1 else ""} '
+            f'({esc(names)}) are recorded as decided but are left out above because we have not '
+            f'checked them against a primary source. An early or unexpected decision tends to '
+            f'produce a company press release, and a press release is what gives us a source to '
+            f'check, so the decisions we can verify may skew early. Counting the excluded '
+            f'{len(ex)} at face value would put the "before" count at '
+            f'{len(early) + len(ex_early)} of {len(rec) + len(ex)} rather than {len(early)} of '
+            f'{len(rec)}.'
+            + (f' <b>But that comparison would be misleading too:</b> all {len(ex_eq)} of those '
+               f'records carry an action date identical to their goal date, and in this archive '
+               f'<em>every</em> unverified decision does, while verified ones differ most of the '
+               f'time. That is a placeholder standing in for a date we never confirmed, not '
+               f'evidence the FDA acted on the day. Those decisions can be counted neither as '
+               f'early nor as on time.' if len(ex_eq) == len(ex) else "")
+            + f' The honest summary: among {a.year} decisions we have actually verified, most '
+              f'came before the goal date; for the rest we do not know, and we would rather say '
+              f'so than publish a number that reads better than the evidence.</div>')
 
     title = (f"Does the FDA decide on the PDUFA date? {a.year} decisions, "
              f"goal date vs actual | pdufa.bio")
@@ -160,7 +236,7 @@ def main():
         f'<div style="color:#9db3d4;font-size:14px;margin-top:6px">{ans}</div></div>'
         for q, ans in qa)
 
-    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/research/fda-decision-timing"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/research/fda-decision-timing"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Decision timing</div><h1>Does the FDA decide on the PDUFA date?</h1><div class="sub">{headline}{med}</div><h2>Every {a.year} sourced decision, goal date vs actual</h2>{rows}<div class="note" style="margin-top:10px"><b>What is counted:</b> {a.year} decisions where this archive holds the PDUFA goal date, the actual FDA action date, and a primary source we link on the decision page. Decisions inferred from share-price behaviour are excluded. We do not compute a rate across earlier years: our coverage of them is far thinner, so such a number would describe our own collection rather than the FDA's behaviour.</div><h2>Questions</h2>{faq}<p class="note">Historical record of specific decisions, each linked to its source. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
+    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/research/fda-decision-timing"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/research/fda-decision-timing"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Decision timing</div><h1>Does the FDA decide on the PDUFA date?</h1><div class="sub">{headline}{med}</div><h2>Every {a.year} sourced decision, goal date vs actual</h2>{rows}<div class="note" style="margin-top:10px"><b>What is counted:</b> {a.year} decisions where this archive holds the PDUFA goal date, the actual FDA action date, and a primary source we link on the decision page. Decisions inferred from share-price behaviour are excluded. We do not compute a rate across earlier years: our coverage of them is far thinner, so such a number would describe our own collection rather than the FDA's behaviour.</div>{disclosure}<h2>Questions</h2>{faq}<p class="note">Historical record of specific decisions, each linked to its source. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
 
     if a.dry_run:
         print("DRY RUN -- not written")

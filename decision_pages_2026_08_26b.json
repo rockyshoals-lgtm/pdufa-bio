@@ -1,0 +1,28 @@
+[
+ {
+  "ticker": "JAZZ",
+  "date": "2026-08-25",
+  "outcome": "Approved",
+  "drug": "Ziihera (zanidatamab-hrii)",
+  "indication": "First-line HER2-positive unresectable locally advanced or metastatic gastric, gastro-oesophageal junction and gastro-oesophageal adenocarcinoma, with and without tislelizumab plus chemotherapy",
+  "company": "Jazz Pharmaceuticals plc",
+  "cap": "Mid",
+  "headline": "Ziihera (zanidatamab-hrii) approved on August 25, 2026 - its PDUFA goal date - for first-line HER2-positive advanced gastro-oesophageal adenocarcinoma, with and without tislelizumab plus chemotherapy.",
+  "pdufa_note": "The PDUFA target action date was August 25, 2026 and the FDA approved the supplemental BLA that day. The approval covers all HER2-positive patients (IHC 3+ and IHC 2+/ISH+) regardless of PD-L1 status. It rests on the Phase 3 HERIZON-GEA-01 trial, published in the New England Journal of Medicine and first presented at ASCO GI 2026: both Ziihera-containing combinations improved progression-free survival in the overall HER2-positive population, reducing the risk of progression or death by 35%, with median PFS of 12.4 months against 8.1 months for trastuzumab plus chemotherapy. This is zanidatamab's second FDA approval in under two years. Zanidatamab is partnered: Jazz holds the US application, and Zymeworks (ZYME) is entitled to a $250 million milestone payment on this approval.",
+  "source": "https://investor.jazzpharma.com/news-releases/news-release-details/us-fda-approves-ziiherar-zanidatamab-hrii-and-without",
+  "source_label": "Jazz Pharmaceuticals press release, August 25, 2026"
+ },
+ {
+  "ticker": "ZYME",
+  "date": "2026-08-25",
+  "outcome": "Approved",
+  "drug": "Ziihera (zanidatamab-hrii)",
+  "indication": "First-line HER2-positive unresectable locally advanced or metastatic gastric, gastro-oesophageal junction and gastro-oesophageal adenocarcinoma (partnered with Jazz Pharmaceuticals)",
+  "company": "Zymeworks Inc.",
+  "cap": "Small",
+  "headline": "Ziihera (zanidatamab-hrii), partnered to Jazz, approved on August 25, 2026 for first-line HER2-positive advanced gastro-oesophageal adenocarcinoma - triggering a $250 million milestone to Zymeworks.",
+  "pdufa_note": "The PDUFA target action date was August 25, 2026 and the FDA approved the supplemental BLA that day. Zanidatamab originated at Zymeworks and is partnered to Jazz Pharmaceuticals, which holds the US application; this listing exists because the approval is material to Zymeworks, which is entitled to a $250 million milestone payment on it. The approval covers all HER2-positive patients (IHC 3+ and IHC 2+/ISH+) regardless of PD-L1 status, based on the Phase 3 HERIZON-GEA-01 trial: median progression-free survival of 12.4 months against 8.1 months for trastuzumab plus chemotherapy, a 35% reduction in the risk of progression or death.",
+  "source": "https://www.globenewswire.com/news-release/2026/08/25/3350636/0/en/u-s-fda-approves-ziihera-zanidatamab-hrii-with-and-without-tislelizumab-plus-chemotherapy-in-first-line-her2-advanced-gastroesophageal-adenocarcinoma.html",
+  "source_label": "Jazz Pharmaceuticals / Zymeworks announcement, August 25, 2026"
+ }
+]

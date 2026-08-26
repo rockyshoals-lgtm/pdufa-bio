@@ -1,0 +1,54 @@
+[
+ {
+  "ticker": "ACHV",
+  "date": "2026-06-22",
+  "outcome": "Complete Response Letter",
+  "drug": "Cytisinicline",
+  "indication": "Nicotine dependence / smoking cessation in adults",
+  "company": "Achieve Life Sciences, Inc.",
+  "cap": "Micro",
+  "headline": "Cytisinicline received a Complete Response Letter on June 22, 2026 over third-party manufacturing observations and incomplete labeling - the FDA identified no deficiencies in clinical efficacy or safety.",
+  "pdufa_note": "The PDUFA target action date was June 20, 2026; Achieve announced the Complete Response Letter on June 22. The FDA cited outstanding manufacturing observations from a cGMP inspection of a third-party facility, and final product labeling that was not completed by the action date. The agency identified no deficiencies relating to the clinical efficacy or safety of cytisinicline. Achieve has said it intends to resubmit the NDA in the fourth quarter of 2026 naming Adare Pharma Solutions as its primary manufacturing partner. A Complete Response Letter is not a final rejection: it sets out what must be resolved before the application can be approved.",
+  "source": "https://ir.achievelifesciences.com/news-events/press-releases/detail/264/achieve-life-sciences-receives-complete-response-letter-from-fda-for-cytisinicline-nda",
+  "source_label": "Achieve Life Sciences press release, June 22, 2026"
+ },
+ {
+  "ticker": "ARQT",
+  "date": "2026-06-29",
+  "outcome": "Approved",
+  "drug": "ZORYVE (roflumilast) cream 0.3%",
+  "indication": "Plaque psoriasis in children as young as age 2 (supplemental NDA)",
+  "company": "Arcutis Biotherapeutics, Inc.",
+  "cap": "Small",
+  "headline": "ZORYVE (roflumilast) cream 0.3% approved on June 29, 2026, extending its plaque psoriasis indication down to children age 2.",
+  "pdufa_note": "The PDUFA target action date was June 29, 2026 and the FDA approved the supplemental NDA that day, expanding the ZORYVE cream 0.3% plaque psoriasis indication to children as young as two years old. This is a separate application from ZORYVE cream 0.05%, which carries its own later action date.",
+  "source": "https://www.globenewswire.com/news-release/2026/06/29/3319348/0/en/fda-approves-arcutis-zoryve-roflumilast-cream-0-3-for-the-treatment-of-plaque-psoriasis-in-children-as-young-as-age-2.html",
+  "source_label": "Arcutis press release, June 29, 2026"
+ },
+ {
+  "ticker": "LNTH",
+  "date": "2026-06-26",
+  "outcome": "Complete Response Letter",
+  "drug": "LNTH-2501 (gallium Ga 68 edotreotide)",
+  "indication": "PET imaging of somatostatin receptor-positive neuroendocrine tumours",
+  "company": "Lantheus Holdings, Inc.",
+  "cap": "Mid",
+  "headline": "LNTH-2501 (Ga 68 edotreotide) received a Complete Response Letter announced June 26, 2026 - three days before its June 29 goal date - over unresolved third-party manufacturing facility conditions.",
+  "pdufa_note": "The PDUFA target action date was June 29, 2026; Lantheus announced the Complete Response Letter on June 26, three days earlier. The FDA said it could not approve the application by the action date because of unresolved manufacturing-related conditions at a third-party facility responsible for drug product manufacturing. The agency raised no concerns about the clinical data, safety or efficacy of the imaging agent. A Complete Response Letter is not a final rejection: it sets out what must be resolved before approval.",
+  "source": "https://investor.lantheus.com/news-releases/news-release-details/lantheus-receives-complete-response-letter-fda-lnth-2501-ga-68",
+  "source_label": "Lantheus press release, June 26, 2026"
+ },
+ {
+  "ticker": "UNCY",
+  "date": "2026-06-30",
+  "outcome": "Complete Response Letter",
+  "drug": "Oxylanthanum carbonate (OLC)",
+  "indication": "Hyperphosphataemia in patients with chronic kidney disease on dialysis",
+  "company": "Unicycive Therapeutics, Inc.",
+  "cap": "Nano",
+  "headline": "Oxylanthanum carbonate received a second Complete Response Letter, announced June 30, 2026, on the same third-party manufacturing deficiencies cited in its June 2025 letter.",
+  "pdufa_note": "The PDUFA target action date was June 29, 2026; Unicycive announced the Complete Response Letter on June 30. The letter rests on the same third-party manufacturing deficiencies identified in the previous CRL of June 2025, and the company has said the FDA had not yet inspected that vendor as part of the resubmitted NDA's review. The FDA raised no concerns about clinical efficacy or safety and requested no additional data. A Complete Response Letter is not a final rejection: it sets out what must be resolved before approval.",
+  "source": "https://ir.unicycive.com/news/detail/123/unicycive-therapeutics-receives-complete-response-letter",
+  "source_label": "Unicycive Therapeutics press release, June 30, 2026"
+ }
+]
