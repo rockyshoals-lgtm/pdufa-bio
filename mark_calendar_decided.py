@@ -81,6 +81,20 @@ def load_decisions():
 EARLY_WINDOW = 270
 
 
+def _load_partner_links():
+    """{(ticker, calendar date): decision slug} that a human checked against a primary source."""
+    try:
+        import json
+        d = json.load(open(os.path.join(HERE, "_calendar_partner_links.json"),
+                           encoding="utf-8"))
+        return {(x["ticker"], x["date"]): x["decision"] for x in d.get("links", [])}
+    except Exception:
+        return {}
+
+
+PARTNER = _load_partner_links()
+
+
 def strengths(s):
     """Dose strengths stated in a drug string: '0.05%', '150 mg', or a bare decimal.
 
@@ -203,6 +217,14 @@ def mark_page(path, by_tk, dry):
     def reval(m):
         attrs, tk, caldate, span, dtext = m.groups()
         body_now = strip_marker(dtext)
+        # A HUMAN-VERIFIED partner link outranks the automatic rule. Cross-ticker matching is
+        # refused automatically for good reason, but re-validation would then revert a link a
+        # person checked against the primary source, every run, forever. Reviewed entries live
+        # in _calendar_partner_links.json with their reviewer and source.
+        if (tk, caldate) in PARTNER:
+            want = PARTNER[(tk, caldate)]
+            if f'href="/fda-decision/{want}"' in attrs:
+                return m.group(0)
         hit = match_decision(by_tk, tk, caldate, body_now)
         cur = re.search(r'href="/fda-decision/[A-Z]{1,6}-(\d{4}-\d{2}-\d{2})"', attrs)
         if hit and cur and cur.group(1) == hit[0]:

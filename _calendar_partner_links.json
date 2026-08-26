@@ -1,0 +1,19 @@
+{
+ "_comment": "HUMAN-VERIFIED partner links for dual-listed events. mark_calendar_decided refuses to match a decision across tickers automatically, and correctly so: a previewed attempt produced eight matches and every one was wrong (MRK's ifinatamab deruxtecan matched AZN's datopotamab deruxtecan on the shared payload suffix). But a partner row for an event we have verified by hand should not sit pending forever, and the re-validation pass would otherwise revert the link on the next run. Entries here are honoured by re-validation. Every entry names its reviewer and the source that was checked; this list may be added to only after reading the primary source.",
+ "links": [
+  {
+   "ticker": "RPRX",
+   "date": "2026-08-25",
+   "decision": "JAZZ-2026-08-25",
+   "reviewer": "cowork 2026-08-26",
+   "note": "Royalty Pharma's listing of the same Ziihera (zanidatamab-hrii) sBLA that Jazz holds. FDA approved it on the 2026-08-25 goal date; verified against Jazz Pharmaceuticals' own release of that date."
+  },
+  {
+   "ticker": "RPRX",
+   "date": "2026-09-18",
+   "decision": "NUVL-2026-07-22",
+   "reviewer": "cowork 2026-08-22",
+   "note": "Royalty Pharma's listing of Nuvalent's zidesamtinib event. FDA approved it 2026-07-22, 58 days before the 2026-09-18 goal date; verified against the FDA's own approval notice."
+  }
+ ]
+}
