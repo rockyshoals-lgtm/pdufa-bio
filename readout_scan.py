@@ -270,6 +270,90 @@ def date_precision(d, text=""):
     return "day" if specific else "quarter"
 
 
+# ---------------------------------------------------------------------------
+# WINDOW PRECISION  (restored 2026-08-29 -- this shipped 8/22 and was lost when the
+# file was rolled back on 8/24. Four downstream consumers read window_precision;
+# nothing was writing it, so readout_gold_dates.py had to guess from string shape
+# and dumped 143 windows into an ungradeable "OTHER" bucket.)
+#
+# Two jobs, in order:
+#   _norm_period  canonicalize the prose a company actually files. Companies write
+#                 "the fourth quarter of 2026", "2H26", "mid-2026" -- a bare
+#                 ^Q[1-4] 20\d\d$ regex sees none of those.
+#   _precision    grade the canonical form: DAY | MONTH | QUARTER | HALF | YEAR
+#
+# The rule the whole readout calendar rests on: a bucket is NEVER rendered as a day.
+# "Q4 2026" stored as 2026-12-31 is the same class of error as the dateline bug.
+_MON = ("january february march april may june july august september october "
+        "november december").split()
+_ORD2Q = {"first": 1, "1st": 1, "second": 2, "2nd": 2, "third": 3, "3rd": 3,
+          "fourth": 4, "4th": 4}
+
+
+def _norm_period(w):
+    """Canonicalize a filed window string. Returns '' when nothing period-shaped is found."""
+    t = re.sub(r"\s+", " ", (w or "").strip().lower().replace("–", "-"))
+    if not t:
+        return ""
+    yr = re.search(r"\b(20\d\d)\b", t)
+    y = yr.group(1) if yr else ""
+    # "fourth quarter of 2026" / "4th quarter 2026" / "Q4 2026" / "4Q26" / "4Q:26"
+    m = re.search(r"\b(first|second|third|fourth|1st|2nd|3rd|4th)\b[\s-]*quarter", t)
+    if m:
+        return f"Q{_ORD2Q[m.group(1)]} {y}".strip() if y else ""
+    m = re.search(r"\bq([1-4])\b|\b([1-4])q\b", t)
+    if m and y:
+        return f"Q{m.group(1) or m.group(2)} {y}"
+    # halves: "second half of 2026", "2H26", "1H 2026"
+    m = re.search(r"\b(first|second|1st|2nd)\b[\s-]*half", t)
+    if m and y:
+        return f"{1 if m.group(1) in ('first', '1st') else 2}H {y}"
+    m = re.search(r"\b([12])h[\s-]?(20)?(\d\d)\b", t)
+    if m:
+        return f"{m.group(1)}H {y or '20' + m.group(3)}"
+    if re.search(r"\bmid[\s-]?(year|20\d\d)", t) and y:
+        return f"MID {y}"
+    # month, with or without a day: "September 2026", "on September 30, 2026"
+    m = re.search(r"\b(" + "|".join(_MON) + r")\w*\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(20\d\d)", t)
+    if m:
+        return (f"{m.group(1).capitalize()} {int(m.group(2))}, {m.group(3)}")
+    m = re.search(r"\b(" + "|".join(_MON) + r")\w*\.?\s+(20\d\d)", t)
+    if m:
+        return f"{m.group(1).capitalize()} {m.group(2)}"
+    if re.match(r"^\s*20\d\d\s*$", t):
+        return t.strip()
+    return ""
+
+
+def _precision(w):
+    """DAY | MONTH | QUARTER | HALF | YEAR | '' for a (canonicalized) window string.
+
+    DAY is deliberately hard to earn: it needs an explicit day number, and it is
+    demoted to MONTH when that day is a quarter-end bucket rendering (Mar 31,
+    Jun 30, Aug 31, Sep 30, Dec 31) unless date_precision() says the surrounding
+    prose really named the day.
+    """
+    c = _norm_period(w) or (w or "").strip()
+    if not c:
+        return ""
+    if re.match(r"^Q[1-4]\s+20\d\d$", c, re.I):
+        return "QUARTER"
+    if re.match(r"^([12]H|MID)\s+20\d\d$", c, re.I):
+        return "HALF"
+    m = re.match(r"^([A-Z][a-z]+)\s+(\d{1,2}),\s*(20\d\d)$", c)
+    if m:
+        try:
+            d = datetime.datetime.strptime(c.replace(",", ""), "%B %d %Y").date()
+        except ValueError:
+            return "MONTH"
+        return "DAY" if date_precision(d, w) == "day" else "MONTH"
+    if re.match(r"^[A-Z][a-z]+\s+20\d\d$", c):
+        return "MONTH"
+    if re.match(r"^20\d\d$", c):
+        return "YEAR"
+    return ""
+
+
 def ua():
     u = os.environ.get("SEC_USER_AGENT", "").strip()
     if not u:
@@ -823,20 +907,30 @@ def main():
         _awm = {}
     with f:
         w = csv.writer(f)
+        # window_norm / window_precision (restored 2026-08-29): the canonical form and the
+        # honesty grade. Downstream (readout_gold_dates.py, readout_merge.py, pdufa.bio)
+        # must never render a QUARTER/HALF/YEAR row as a calendar day.
         w.writerow(["ticker", "kind", "just_reported", "result_hit", "filed", "form", "company",
-                    "n_filings", "phrases", "window", "window_alt", "armed_lane", "context",
+                    "n_filings", "phrases", "window", "window_norm", "window_precision",
+                    "window_alt", "window_alt_precision", "armed_lane", "context",
                     "cik", "accession", "document", "url"])
+        _pc = collections.Counter()
         for v in rows:
             cik = str(int(v["cik"]))
             _m = _awm.get(v["ticker"]) or {}
+            _win = v.get("window", "")
+            _alt = (_m.get("when") or "") if isinstance(_m, dict) else ""
+            _prec = _precision(_win)
+            _pc[_prec or "(none)"] += 1
             w.writerow([v["ticker"], v["kind"], v.get("just_reported", ""),
                         v.get("result_hit", ""), v["filed"], v["form"], v["company"],
                         v.get("n_filings", 1), " | ".join(sorted(v["phrases"])),
-                        v.get("window", ""),
-                        (_m.get("when") or "") if isinstance(_m, dict) else "",
+                        _win, _norm_period(_win), _prec,
+                        _alt, _precision(_alt),
                         (_m.get("lane") or "") if isinstance(_m, dict) else "",
                         v.get("context", ""), cik, v["accn"], v["doc"],
                         f"{ARCHIVES}/{cik}/{v['accn'].replace('-','')}/{v['doc']}"])
+    print(f"  window precision: " + "  ".join(f"{k}={n}" for k, n in _pc.most_common()))
 
     jr_rows = [v for v in rows if v.get("just_reported") == "YES"]
     if jr_rows:
