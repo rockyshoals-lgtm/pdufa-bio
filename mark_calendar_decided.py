@@ -78,7 +78,14 @@ def load_decisions():
 # approved 108 days before its PDUFA date, Arvinas's vepdegestrant 35 days before. With only the
 # symmetric 14-day window, both sat on the calendar as pending months after they had resolved, and
 # no check anywhere noticed, because "no match" and "nothing to do" produced identical output.
-EARLY_WINDOW = 270
+# 270 -> 180 (2026-08-29). At 270, the new CORT "Relacorilant - (GRACE resubmission)" row
+# (Cushing's, PDUFA 2026-12-17) was marked Approved from the March ROSELLA approval
+# (ovarian cancer) 267 days earlier -- same molecule, different application, and the trial
+# rule cannot save it because archive listing text carries no trial name. A PDUFA review
+# runs 6-10 months, so an approval more than ~6 months before a goal date belongs to a
+# previous cycle by construction. Observed TRUE early gaps top out at 108 days (CORT
+# ROSELLA itself); the false ones start at 267. Same bound the slate sweep adopted today.
+EARLY_WINDOW = 180
 
 
 def _load_partner_links():
@@ -105,6 +112,25 @@ def strengths(s):
     txt = str(s or "")
     return (set(re.findall(r"(\d+(?:\.\d+)?)\s*(?:%|mg|mcg|ug|g/|units)", txt, re.I))
             | set(re.findall(r"\b(\d+\.\d+)\b", txt)))
+
+
+def trials(s):
+    """Pivotal-trial names stated in a drug string: the (GRACE) / (ROSELLA) parentheticals.
+
+    Same shape as the strengths rule, for the same reason. One molecule can carry several
+    applications distinguished only by their trial: on 2026-08-29 the new CORT row
+    "Relacorilant - (GRACE resubmission)" (Cushing's, PDUFA 2026-12-17) was marked Approved
+    and linked to the March ROSELLA approval (ovarian cancer) because "relacorilant" matched
+    and nothing looked at the trial names. Rule fires only when BOTH sides state a trial --
+    a side with no parenthetical stays matchable, so the zidesamtinib forward-marking case
+    is untouched. All-caps tokens >=4 chars inside parentheses, code-number suffixes kept.
+    """
+    out = set()
+    for grp in re.findall(r"\(([^)]{3,40})\)", str(s or "")):
+        for w in re.findall(r"\b([A-Z][A-Z0-9-]{3,})\b", grp):
+            if not re.fullmatch(r"[A-Z]{1,3}-?\d+", w):   # skip bare code names (CAP-1002)
+                out.add(w.rstrip("-0123456789"))
+    return out - {"THE", "WITH", "PLUS"}
 
 
 def match_decision(by_tk, tk, caldate, caldate_desc=""):
@@ -188,7 +214,10 @@ def match_decision(by_tk, tk, caldate, caldate_desc=""):
         # the products are different, which is exactly why the later date exists. When both sides
         # state a strength and the strengths disagree, they are not the same application.
         rs, ds_ = strengths(caldate_desc), strengths(drugtext)
-        name_match = bool(row_toks & toks(drugtext)) and not (rs and ds_ and not (rs & ds_))
+        rt, dt_ = trials(caldate_desc), trials(drugtext)
+        name_match = (bool(row_toks & toks(drugtext))
+                      and not (rs and ds_ and not (rs & ds_))     # strengths disagree
+                      and not (rt and dt_ and not (rt & dt_)))    # trials disagree (GRACE!=ROSELLA)
         early_ok = (-EARLY_WINDOW <= signed <= 0 and outcome != "crl"
                     and (is_past or name_match))
         # ...and, when it is a FAR carry-forward, the multi-product rule above.
