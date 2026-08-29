@@ -61,6 +61,58 @@ def load_csv(p):
 GOLD, rows_out = [], []
 import glob
 xs = sorted(glob.glob(os.path.join(HERE, "bpc_data", "fda_*.xlsx")))
+
+
+def _bpc_rows(path):
+    from openpyxl import load_workbook as _lw
+    ws = _lw(path, read_only=True).worksheets[0]
+    hdr, out = None, []
+    for r in ws.iter_rows(values_only=True):
+        if hdr is None:
+            hdr = [str(x or "").strip() for x in r]
+            continue
+        out.append(dict(zip(hdr, r)))
+    return out
+
+
+# DATE DRIFT (added 2026-08-29, from the fresh-BPC compare): when the vendor MOVES a future
+# date on a name we may have preloaded, nothing said so — CAPR's PDUFA went 8/22 -> 11/22 and
+# XENE was pulled FORWARD to 9/7 between exports. A pulled-forward date is the dangerous kind:
+# the catalyst arrives EARLIER than the calendar we shipped. Diff the two newest exports,
+# print the moves, and persist readout_date_drift.csv so the site/builder can flag them.
+if len(xs) >= 2:
+    _k = lambda d: (str(d.get("Ticker") or "").strip().upper(),
+                    re.sub(r"[^a-z0-9]", "", str(d.get("Drug") or "").lower())[:20])
+    _prev = {_k(d): d for d in _bpc_rows(xs[-2])}
+    _drift = []
+    for d in _bpc_rows(xs[-1]):
+        o = _prev.get(_k(d))
+        if not o:
+            continue
+        dn, do = ds(d.get("Catalyst Date")), ds(o.get("Catalyst Date"))
+        if dn != do and dn >= TODAY.isoformat() and re.match(r"^\d{4}-\d{2}-\d{2}$", dn):
+            _drift.append({"ticker": _k(d)[0], "drug": str(d.get("Drug") or "")[:40],
+                           "old_date": do, "new_date": dn,
+                           "moved": "EARLIER" if dn < do else "LATER",
+                           "event": str(d.get("Stage") or "")[:20],
+                           "old_file": os.path.basename(xs[-2]),
+                           "new_file": os.path.basename(xs[-1])})
+    if _drift:
+        _dd = os.path.join(HERE, "readout_date_drift.csv")
+        try:
+            with open(_dd, "w", newline="", encoding="utf-8") as _f:
+                _w = csv.DictWriter(_f, fieldnames=list(_drift[0]))
+                _w.writeheader()
+                _w.writerows(_drift)
+        except PermissionError:
+            pass
+        print(f"\n  !! DATE DRIFT between {os.path.basename(xs[-2])} and "
+              f"{os.path.basename(xs[-1])} — {len(_drift)} future dates moved:")
+        for d in sorted(_drift, key=lambda x: x["new_date"]):
+            tag = " <-- PULLED FORWARD" if d["moved"] == "EARLIER" else ""
+            print(f"     {d['ticker']:<7}{d['old_date']} -> {d['new_date']}  "
+                  f"{d['event']:<18}{d['drug'][:30]}{tag}")
+        print()
 if xs:
     from openpyxl import load_workbook
     ws = load_workbook(xs[-1], read_only=True).worksheets[0]

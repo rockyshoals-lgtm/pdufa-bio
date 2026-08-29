@@ -94,6 +94,25 @@ ALIASES = {
     "eortc-nci-aacr molecular targets and cancer therapeutics symposium": "ENA",
     "eortc-nci-aacr": "ENA",
     "molecular targets and cancer therapeutics": "ENA",
+    # 2026-08-29 gap fill, from the fresh-BPC compare (_bpc_compare_0829.py). ESC and EASD
+    # had OBSERVED 2026 dates in the registry but ZERO aliases -- the extractor could not
+    # even NAME them, which is how we missed AZN/IONS/ALNY/BAYRY/EWTX presenting at ESC the
+    # very weekend it was running. The rest are congresses BPC dates that the registry
+    # lacked. No bare ambiguous short aliases ("esc" is escape, "ers" is common prose) --
+    # full names or clearly-scoped forms only.
+    "european society of cardiology": "ESC",
+    "esc congress": "ESC",
+    "european association for the study of diabetes": "EASD",
+    "easd annual meeting": "EASD", "easd": "EASD",
+    "european academy of dermatology and venereology": "EADV",
+    "eadv congress": "EADV", "eadv": "EADV",
+    "euretina congress": "EURETINA", "euretina": "EURETINA",
+    "american society for bone and mineral research": "ASBMR",
+    "asbmr annual meeting": "ASBMR", "asbmr": "ASBMR",
+    "retina society scientific meeting": "RETSOC",
+    "annual retina society": "RETSOC", "retina society": "RETSOC",
+    "ers international congress": "ERS", "ers congress": "ERS",
+    "iaslc world conference on lung cancer": "WCLC",
 }
 _ALIAS_ORDER = sorted(ALIASES, key=len, reverse=True)   # longest first — "asco gi" before "asco"
 

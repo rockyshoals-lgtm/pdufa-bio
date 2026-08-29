@@ -106,3 +106,7 @@ backtest_progress/
 # board/page backups written by builders; never content
 pdufa_site_src/**/*.bak*
 pdufa_site_src/*.bak*
+
+odin_cowork_dropbox/*.zip
+odin_cowork_dropbox/unapproved_CRLs (1)/
+odin_cowork_dropbox/approved_CRLs (2)/
