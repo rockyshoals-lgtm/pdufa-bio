@@ -223,6 +223,14 @@ jobs:
       - name: Rebuild the ticker hubs (decided events must leave the upcoming lists)
         run: python build_ticker_hubs.py
 
+      # Third instance of the build-once-never-rebuild class (ticker hubs 08-26, calendar
+      # month pages before that). /condition/* was built once from a June CSV and froze;
+      # by late August it presented past events as upcoming and carried wrong-drug labels
+      # (ACHV "custirsen"). This builder reads dataset.mjs, the living source, and touches
+      # only condition/*. test_condition_pages_current.py fails if this step goes missing.
+      - name: Rebuild the condition pages from the living dataset
+        run: python build_condition_pages.py
+
       - name: Entity-enrich the ticker hubs
         run: python enrich_ticker_hubs.py
 
