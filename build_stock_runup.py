@@ -81,8 +81,17 @@ def load_key():
 
 
 def bars(ticker, key, cache):
+    # A cache hit must still be CURRENT. The original unconditional return meant a series
+    # fetched once was served forever: on 2026-08-29, 58 of 60 tickers ended at 2026-08-03,
+    # so every hub's "run-up so far" figure was 26 days stale under a same-day freshness
+    # stamp. Refresh when the newest cached close is more than 4 calendar days old (covers
+    # weekends + a holiday); a failed refresh falls back to the stale series rather than
+    # nothing, and says so.
     if ticker in cache:
-        return cache[ticker]
+        got = cache[ticker]
+        newest = got[-1][0] if got else ""
+        if newest >= (dt.date.today() - dt.timedelta(days=4)).isoformat():
+            return got
     start = (dt.date.today() - dt.timedelta(days=400)).isoformat()
     u = (f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start}/"
          f"{dt.date.today().isoformat()}?adjusted=true&sort=asc&limit=50000&apiKey={key}")
@@ -92,6 +101,11 @@ def bars(ticker, key, cache):
         res = []
     out = [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(), x["c"])
            for x in res]
+    if not out and cache.get(ticker):
+        # A failed refresh must not replace a stale-but-real series with nothing.
+        print(f"  {ticker}: price refresh failed; serving cached series "
+              f"(ends {cache[ticker][-1][0]})")
+        return cache[ticker]
     cache[ticker] = out
     return out
 

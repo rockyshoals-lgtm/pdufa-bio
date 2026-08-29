@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "GILD",
+  "date": "2026-08-27",
+  "outcome": "Approved",
+  "drug": "Bixlenvo (bictegravir 75 mg / lenacapavir 50 mg)",
+  "indication": "HIV-1 in virologically suppressed adults, once-daily single-tablet regimen for those on complex regimens",
+  "company": "Gilead Sciences, Inc.",
+  "cap": "Large",
+  "headline": "Bixlenvo (bictegravir/lenacapavir) approved on August 27, 2026 - its PDUFA goal date - as a once-daily single-tablet HIV regimen for virologically suppressed adults on complex regimens.",
+  "pdufa_note": "The PDUFA target action date was August 27, 2026 and the FDA approved the NDA that day, under Priority Review. Bixlenvo combines bictegravir 75 mg with lenacapavir 50 mg as the smallest once-daily single-tablet regimen for HIV, and is the first single-tablet option for virologically suppressed adults who cannot take currently available single-tablet regimens. The approval rests on the Phase 3 ARTISTRY-1 (NCT05502341) and ARTISTRY-2 (NCT06333808) trials, first presented at CROI 2026: both showed comparable maintenance of virologic suppression at Week 48 against continuing the prior regimen, with no new safety signals. This is lenacapavir's third FDA-approved use after Sunlenca and Yeztugo.",
+  "source": "https://www.gilead.com/news/news-details/2026/u-s--fda-approves-gileads-bixlenvo-a-new-once-daily-single-tablet-option-for-virologically-suppressed-adults-with-hiv-including-those-on-complex-regimens",
+  "source_label": "Gilead Sciences press release, August 27, 2026"
+ }
+]
