@@ -1,0 +1,16 @@
+{
+ "_directive": "DO NOT CHANGE THE NAVIGATION UNTIL 1 JANUARY 2027. Red team 2026-08-29e, Part 0. FDA Tracker holds Bing #1 for 'pdufa calendar' with a nine-link sitelink block; we are #2 with none. Bing awards sitelinks for a stable, shallow, clearly-labelled hub structure observed consistently over months, and every nav edit resets that clock. Frozen: the bar, its labels, its order, its groupings, and the URLs behind them. Not frozen: page content, titles, meta descriptions, schema, internal links inside pages. This file is the frozen reference; tests/test_nav_frozen.py enforces it and self-expires on the date below.",
+ "frozen_on": "2026-08-29",
+ "frozen_until": "2027-01-01",
+ "primary": [["/calendar", "Calendar"], ["/decisions", "Decisions"],
+             ["/readouts", "Readouts"], ["/patent-cliff", "Patents"]],
+ "groups": [
+  ["Explore", [["/drug", "Drug Index"], ["/tickers", "Stocks"], ["/screener", "Screener"],
+               ["/conferences", "Conferences"], ["/adcomm", "Advisory Committees"]]],
+  ["Research", [["/research", "Studies"], ["/runup-by-year", "Run-up by Year"],
+                ["/learn/what-is-a-pdufa-date", "Learn"], ["/glossary", "Glossary"],
+                ["/methodology", "Methodology"], ["/developers", "API"],
+                ["/account", "Account"]]]
+ ],
+ "pro": ["/pricing", "Pro"]
+}

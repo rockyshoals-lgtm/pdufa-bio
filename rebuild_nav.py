@@ -44,6 +44,13 @@ B, E = "<!--NAVC:BEGIN-->", "<!--NAVC:END-->"
 # Three top-level anchors + two grouped dropdowns + Pro. SLS is a campaign, not a section --
 # it lives on the homepage, not in permanent nav. Glossary/Learn/Methodology were live pages
 # with ZERO inbound nav links ('three explainer surfaces, all orphaned') -- now under Research.
+#
+# *** NAV FREEZE UNTIL 2027-01-01 (red team 2026-08-29e, Part 0) ***
+# Do not rename, reorder, add, remove or regroup ANYTHING below. Bing awards the sitelink
+# block -- the one visible gap to the #1 result for "pdufa calendar" -- for a nav observed
+# STABLE over months, and every edit restarts that clock. The frozen reference lives in
+# _nav_frozen_until_2027.json and tests/test_nav_frozen.py fails the build on any change;
+# if David explicitly lifts the freeze, update the frozen file in the same commit.
 PRIMARY = [("/calendar", "Calendar"), ("/decisions", "Decisions"), ("/readouts", "Readouts"),
            ("/patent-cliff", "Patents")]
 GROUPS = [
