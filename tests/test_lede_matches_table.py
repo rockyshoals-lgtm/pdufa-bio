@@ -75,6 +75,18 @@ def main():
                 if int(mm.group(1).replace(",", "")) != n:
                     bad.append((rel, f"homepage says {mm.group(1)} for /{src}, that page has {n}"))
                     ok = False
+            # The stat tiles under the CTA were static HTML until 2026-08-29, when the
+            # same screen said 52 in the lede and 72 in the tile, with "decided in 2026"
+            # off by 11. build_hub_lede now writes the tiles from the lede's own numbers;
+            # this holds them together, so drift on either side fails the build.
+            full = open(os.path.join(SITE, "index.html"), encoding="utf-8",
+                        errors="replace").read()
+            tile = re.search(r'<span class="stat gld"><b>([\d,]+)</b><span>upcoming', full)
+            said = re.search(r"([\d,]+) upcoming FDA decision dates", lede)
+            if tile and said and tile.group(1).replace(",", "") != \
+                    said.group(1).replace(",", ""):
+                bad.append((rel, f"stat tile says {tile.group(1)} upcoming, the lede on "
+                                 f"the same page says {said.group(1)}"))
             if ok:
                 pass
             continue

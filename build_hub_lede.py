@@ -24,7 +24,7 @@ ranks becomes a page that embarrasses us.
 
     python build_hub_lede.py [--dry-run]
 """
-import argparse, datetime as dt, html, os, re, sys
+import argparse, datetime as dt, html, json, os, re, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -172,7 +172,7 @@ def homepage_sentence():
 
     cal, dec, rd = rows_of("calendar"), rows_of("decisions"), rows_of("readouts")
     if not (cal and dec):
-        return None
+        return None, None, None
 
     today = dt.date.today().isoformat()
     ahead = sum(1 for r in cal if not (r["approved"] or r["crl"])
@@ -187,7 +187,8 @@ def homepage_sentence():
           f"Response Letters. ")
     s += ("Every date links the FDA notice or company filing it came from, and each past decision "
           "shows the share-price reaction we measured on the day.")
-    return s
+    dec_2026 = sum(1 for r in dec if str(r.get("iso") or "").startswith("2026"))
+    return s, ahead, dec_2026
 
 
 TARGETS = ["calendar", "decisions", "decisions/approvals", "decisions/crl", "readouts", "adcomm"]
@@ -255,7 +256,7 @@ def main():
 
     # The homepage last, so it reads the numbers the other pages just published.
     hp = os.path.join(SITE, "index.html")
-    s = homepage_sentence()
+    s, ahead, dec_2026 = homepage_sentence()
     if s and os.path.exists(hp):
         doc = open(hp, encoding="utf-8", errors="replace").read()
         block = (f'{B}<p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#cfe0f5;'
@@ -266,10 +267,41 @@ def main():
             anchor = "<!--FRESH:END-->" if "<!--FRESH:END-->" in doc else "</h1>"
             i = doc.index(anchor) + len(anchor)
             doc = doc[:i] + block + doc[i:]
+
+        # The stat tiles under the CTA were STATIC HTML -- set once by hand and never
+        # rebuilt, so on 2026-08-29 the same screen said "52 upcoming FDA decision dates"
+        # in this lede and "72 upcoming PDUFAs" in the tile below it, with "128 decided
+        # in 2026" against an archive holding 139 (David caught the LNTH symptom of this
+        # page's staleness the same day). The tiles now take the SAME numbers this
+        # sentence just published; if the tile markup ever changes shape, the subs match
+        # nothing and the tiles keep their old values -- so report that loudly instead
+        # of silently succeeding.
+        n_tiles = 0
+        doc, n = re.subn(r'(<span class="stat gld"><b>)[\d,]+(</b><span>upcoming)',
+                         rf"\g<1>{ahead}\g<2>", doc, count=1)
+        n_tiles += n
+        doc, n = re.subn(r'(<span class="stat grn"><b>)[\d,]+(</b><span>decided in 2026)',
+                         rf"\g<1>{dec_2026}\g<2>", doc, count=1)
+        n_tiles += n
+        try:
+            n_study = json.load(open(os.path.join(os.path.dirname(SITE),
+                                                  "runup_study_stats.json"),
+                                     encoding="utf-8"))["n_events"]
+            doc, n = re.subn(r'(<span class="stat"><b>)[\d,]+(</b><span>events in the ru)',
+                             rf"\g<1>{n_study:,}\g<2>", doc, count=1)
+            n_tiles += n
+        except Exception as e:
+            # A swallowed exception here already cost one silent miss (json unimported,
+            # NameError eaten, tile reported as a markup mismatch). Never mute it again.
+            print(f"  !! study tile: {e}")
+        if n_tiles < 3:
+            print(f"  !! homepage stat tiles: only {n_tiles}/3 matched the expected "
+                  f"markup -- the unmatched ones are still showing their OLD numbers")
+
         if not a.dry_run:
             open(hp, "w", encoding="utf-8").write(doc)
         done += 1
-        print(f"  /{'':<20} homepage")
+        print(f"  /{'':<20} homepage (stat tiles: {n_tiles}/3 refreshed)")
         print(f"       {s[:150]}")
 
     print(f"\nlede on {done} page(s), {skipped} skipped"
