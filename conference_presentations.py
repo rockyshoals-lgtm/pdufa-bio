@@ -106,10 +106,17 @@ PRES_PATTERNS = [
 ]
 
 # The filing must actually be about presenting — not merely mention a conference in passing.
+# 2026-08-29: added the NOUN form. "ABC announces poster presentations at ASH 2026" carries no
+# present-verb at all — "presentations" is a noun and \b keeps `presents?` from matching inside
+# it. That shape is one of the two most common presenter-PR headlines, and this regex silently
+# dropped every one of them. Guarded to presentation(s) NEAR a preposition/qualifier so a lone
+# "the presentation discussed..." in an unrelated deck does not qualify.
 PRESENT_VERB = re.compile(
     r'\b(?:to\s+present|will\s+present|presents?|presented|presenting|showcase|'
     r'featured?\s+in|selected\s+for\s+(?:oral|poster|presentation)|'
-    r'accepted\s+for\s+(?:oral|poster|presentation)|abstracts?\s+accepted)\b', re.I)
+    r'accepted\s+for\s+(?:oral|poster|presentation)|abstracts?\s+accepted|'
+    r'(?:oral|poster|late[-\s]breaking|data|encore)\s+presentations?\b|'
+    r'presentations?\s+(?:at|of|during))\b', re.I)
 
 # SEC full-text phrases. Anchor on the CONFERENCE NAME, not on "to present at" —
 # the generic verb pulls in every investor-conference 8-K on EDGAR (Liberty Media, Labcorp,
@@ -211,7 +218,13 @@ def detect_pres_type(text):
 FUTURE_CUE = re.compile(
     r"\b(will\s+(?:be\s+)?present\w*|to\s+be\s+presented|to\s+present|plans?\s+to\s+present|"
     r"accepted\s+for\s+(?:oral\s+|poster\s+|late-breaking\s+)?present\w*|scheduled\s+to\s+present|"
-    r"will\s+(?:feature|report|showcase)|upcoming\b|forthcoming\b)", re.I)
+    r"will\s+(?:feature|report|showcase)|upcoming\b|forthcoming\b|"
+    # 2026-08-29: present-tense "announces ... presentations" IS the forward commitment in PR
+    # convention — "ABC announces poster presentations at ASH 2026" is the standard headline
+    # for a presentation that has not happened yet. The past form stays a PAST_CUE: a company
+    # recapping says "announced ... were presented" / "presented at". Kept tight (announces,
+    # not announced; up to 3 qualifier words) so recap decks do not slip through.
+    r"announces\s+(?:its\s+)?(?:[\w-]+\s+){0,3}presentations?\b)", re.I)
 PAST_CUE = re.compile(
     r"\b(presented|were\s+presented|was\s+presented|reported|featured|highlighted|showcased|"
     r"presentation\s+of\s+(?:the\s+)?(?:data|results))\b", re.I)
