@@ -142,6 +142,28 @@ def load_data():
         if moved:
             print(f'  dropped {moved} already-decided event(s) from the upcoming lists')
 
+    # Conference presentations by ticker (08-29 ranking map, lever "rescue the conference
+    # pages"): the 4 /conference/* pages earning impressions sat at position ~7.9 with 0%
+    # CTR and NOTHING on the site linked them from the companies actually presenting. The
+    # dataset's conference rows carry presenter tickers, so each hub can link its own
+    # company's presentations -- a real fact, not link filler.
+    confs = collections.defaultdict(list)
+    if os.path.exists(dsp):
+        for r in drows:
+            if r.get('type') != 'Conference':
+                continue
+            cslug = str(r.get('t') or '').upper()
+            if not cslug or not os.path.exists(os.path.join(SITE, 'conference', cslug,
+                                                            'index.html')):
+                continue
+            for pres in ((r.get('_d') or {}).get('presenters') or []):
+                ptk = str(pres.get('ticker') or '').upper()
+                if ptk:
+                    confs[ptk].append(dict(conf=cslug, name=str(r.get('name') or cslug),
+                                           date=str(r.get('d') or ''),
+                                           drug=str(pres.get('drug') or ''),
+                                           ptype=str(pres.get('pres_type') or '')))
+
     # /pdufa/{slug} detail pages that exist, grouped by ticker
     slugs = collections.defaultdict(list)
     for d in sorted(os.listdir(os.path.join(SITE, 'pdufa'))):
@@ -149,10 +171,10 @@ def load_data():
             mm = re.match(r'([A-Z]{2,6})(?:-.*)?$', d)
             if mm:
                 slugs[mm.group(1)].append(d)
-    return fwd, past, name, slugs, readouts
+    return fwd, past, name, slugs, readouts, confs
 
 
-def render(tk, fwd, past, name, slugs, readouts):
+def render(tk, fwd, past, name, slugs, readouts, confs):
     company = name.get(tk, '')
     disp = f'{tk} — {esc(company)}' if company else tk
     n_up, n_past = len(fwd.get(tk, [])), len(past.get(tk, []))
@@ -252,6 +274,16 @@ def render(tk, fwd, past, name, slugs, readouts):
                        f'<span class="t">{when}{badge}</span>'
                        f'<span class="d">{esc(r.get("drug") or "Clinical readout")}</span></a>')
 
+    ch = sorted(confs.get(tk, []), key=lambda x: x['date'])
+    if ch:
+        out.append(f'<h2>Conference presentations ({len(ch)})</h2>')
+        for c in ch:
+            pt = f" ({esc(c['ptype'])})" if c.get('ptype') else ''
+            out.append(f'<a class="row" href="/conference/{esc(c["conf"])}">'
+                       f'<span class="t">{pretty(c["date"])}</span>'
+                       f'<span class="d">{esc(c.get("drug") or "Presentation")} at '
+                       f'{esc(c["name"])}{pt}</span></a>')
+
     out.append('<div style="margin:16px 0">'
                '<a class="chip" href="/calendar">Full PDUFA calendar →</a>'
                '<a class="chip" href="/decisions">All FDA decisions →</a>'
@@ -268,7 +300,7 @@ def render(tk, fwd, past, name, slugs, readouts):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--dry-run', action='store_true')
     a = ap.parse_args()
-    fwd, past, name, slugs, readouts = load_data()
+    fwd, past, name, slugs, readouts, confs = load_data()
     tickers = sorted(set(fwd) | set(past) | set(readouts))
     print(f'{len(tickers)} ticker hubs to build '
           f'({sum(1 for t in tickers if slugs.get(t) and past.get(t))} with both, '
@@ -277,7 +309,7 @@ def main():
 
     built, links, deadlinks = 0, 0, 0
     for tk in tickers:
-        h = render(tk, fwd, past, name, slugs, readouts)
+        h = render(tk, fwd, past, name, slugs, readouts, confs)
         links += len(re.findall(r'href="/(?:pdufa|fda-decision)/', h))
         if a.dry_run:
             continue

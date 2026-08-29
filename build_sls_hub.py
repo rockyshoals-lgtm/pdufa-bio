@@ -204,8 +204,8 @@ def main():
             f'SELLAS investor newsroom. Last collected {PXDATE}.</div>')
 
     html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="index,follow,max-image-preview:large">
-<title>SLS (SELLAS Life Sciences) Tracker, REGAL 80th Event, the Change-of-Control Amendment, and the Facts | pdufa.bio</title>
-<meta name="description" content="The canonical SELLAS Life Sciences (NASDAQ: SLS) tracker: live REGAL 80th-event status (78 of 80 as of May 11, 2026), exactly what the June 24 2026 executive change-of-control amendment says, whether such amendments have historically preceded buyouts, and every dated catalyst with its measured stock reaction. Primary sources only.">
+<title>SLS (SELLAS Life Sciences) Tracker: REGAL Status &amp; Every Catalyst | pdufa.bio</title>
+<meta name="description" content="SELLAS Life Sciences (NASDAQ: SLS) tracker, updated daily: REGAL 80th-event status, the executive change-of-control amendment in the company's own words, and every dated catalyst with its measured stock reaction. Primary sources only.">
 <link rel="canonical" href="https://www.pdufa.bio/sls"><meta name="theme-color" content="#060b14">
 <meta property="og:type" content="article"><meta property="og:title" content="SLS Tracker: REGAL 80th event + the change-of-control amendment, in facts"><meta property="og:url" content="https://www.pdufa.bio/sls">
 <style>*{{box-sizing:border-box;-webkit-tap-highlight-color:transparent}}

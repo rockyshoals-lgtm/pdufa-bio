@@ -269,17 +269,41 @@ def main():
         if rd:
             body.append(f'<h2>Trial readouts ({len(rd)})</h2><div class="grid">'
                         + "".join(rowhtml(r) for r in rd) + '</div>')
+        body.append('<p><a href="/calendar">Every upcoming FDA decision date, all '
+                    'therapeutic areas, on the 2026 PDUFA calendar</a> &middot; '
+                    '<a href="/condition">all conditions</a></p>')
         body.append(f'<div class="callout">We don\'t show an approval percentage for these '
                     f'{esc(label.lower())} catalysts: '
                     f'<a href="/why-no-approval-probability">here\'s why</a>.</div>')
+        # 08-29 ranking map, lever 6: 2 questions was the floor, not the ceiling. Each extra
+        # question exists only when we hold the fact -- computed from the same rows the page
+        # shows, so the answers cannot drift from the tables above them.
         qa = [("What upcoming FDA catalysts are there in " + label + "?",
                f"pdufa.bio tracks {len(ev)} upcoming {label} catalysts ({len(pd)} PDUFA "
                f"decisions, {len(rd)} trial readouts), each with a date and a "
-               f"primary-source link."),
-              ("Does pdufa.bio predict whether these will be approved?",
-               "No. We do not publish per-drug approval probabilities; we show verified "
-               "facts, primary-source links, and historical base rates so you can judge "
-               "for yourself.")]
+               f"primary-source link.")]
+        if pd:
+            n0 = pd[0]
+            qa.append((f"What is the next {label} FDA decision?",
+                       f"The next tracked PDUFA date in {noun} is {n0['tk']}'s "
+                       f"{n0['drug']}" + (f" for {n0['ind']}" if n0["ind"] else "")
+                       + f", with an FDA goal date of {n0['date']}."))
+            if len(pd) > 1:
+                qa.append((f"Which {label.lower()} drugs have upcoming PDUFA dates?",
+                           "; ".join(f"{e['drug']} ({e['tk']}, {e['date']})"
+                                     for e in pd[:6])
+                           + (f" and {len(pd) - 6} more" if len(pd) > 6 else "")
+                           + ". Each links its source on this page."))
+        if rd:
+            qa.append((f"What {label.lower()} clinical trial readouts are expected?",
+                       f"We track {len(rd)} upcoming {noun} readouts; the nearest is "
+                       f"{rd[0]['tk']}'s {rd[0]['drug']} around {rd[0]['date']}. Readout "
+                       f"dates are estimates from trial registries and company guidance, "
+                       f"and they shift."))
+        qa.append(("Does pdufa.bio predict whether these will be approved?",
+                   "No. We do not publish per-drug approval probabilities; we show verified "
+                   "facts, primary-source links, and historical base rates so you can judge "
+                   "for yourself."))
         if not ev:
             body = body[:1] + [
                 f'<h1>Upcoming <span class="g">{esc(label)}</span> FDA decisions &amp; readouts</h1>',
@@ -297,6 +321,30 @@ def main():
             shell(title, desc, canonical, "".join(body), faq_jsonld(qa) + itemld))
         built += 1
         print(f"  /condition/{slug}: {len(pd)} PDUFA + {len(rd)} readouts")
+
+    # /condition hub. The nine pages had no parent -- /condition returned 404, so nothing
+    # bound the family together and each page's only inbound links were its siblings' chips
+    # (08-29 ranking map, lever 6).
+    counts = {}
+    for key, (label, slug, _n) in COND.items():
+        counts[slug] = (label, sum(1 for e in events if e["ta"] == key))
+    hub_rows = "".join(
+        f'<a class="row" href="/condition/{s}"><div class="t">{esc(l)}</div>'
+        f'<div class="d">{c} upcoming catalyst{"s" if c != 1 else ""} tracked</div></a>'
+        for s, (l, c) in sorted(counts.items(), key=lambda x: -x[1][1]))
+    hub_body = ('<div class="bc"><a href="/">Home</a> &rsaquo; Conditions</div>'
+                '<h1>FDA decisions &amp; readouts <span class="g">by condition</span></h1>'
+                '<div class="sub">Upcoming PDUFA dates and clinical-trial readouts grouped '
+                'by therapeutic area, each event linked to its primary source.</div>'
+                f'<div class="grid">{hub_rows}</div>'
+                '<p><a href="/calendar">Every upcoming FDA decision date, all therapeutic '
+                'areas, on the 2026 PDUFA calendar</a></p>')
+    io.open(os.path.join(SITE, "condition", "index.html"), "w", encoding="utf-8").write(
+        shell("FDA Decisions & Trial Readouts by Condition (2026) | pdufa.bio",
+              "Upcoming FDA PDUFA decisions and clinical-trial readouts grouped by "
+              "therapeutic area: oncology, CNS, immunology, rare disease and more.",
+              "https://www.pdufa.bio/condition", hub_body))
+    print("  /condition hub written")
     print(f"condition pages rebuilt from dataset.mjs: {built}")
     return 0
 

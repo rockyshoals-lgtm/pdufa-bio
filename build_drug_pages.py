@@ -324,6 +324,31 @@ def main():
             d["name"] = name
         d["rows"].append(r)
 
+    # GENERIC <-> BRAND ALIAS JOIN (2026-08-29). Keying on the brand token splits
+    # "Ziihera (zanidatamab-hrii)" and "Zanidatamab" into separate pages, and the generic
+    # page then sees none of the brand page's events. /drug/zanidatamab -- holder of the
+    # only 100%-share AI grounding query on the property -- said "no FDA decisions are on
+    # record" while the FDA had approved zanidatamab twice under Ziihera. That sentence was
+    # false on its face. Where a brand page's parenthetical is the generic name of another
+    # page (with or without the FDA's 4-letter suffix, -hrii and the like), the generic
+    # page inherits the brand page's rows and states the marketing name. Events render with
+    # their own links, so nothing is claimed twice.
+    for slug in list(drugs):
+        m = re.search(r"\(([a-z][a-z0-9-]{4,40})\)\s*$", drugs[slug]["name"])
+        if not m:
+            continue
+        gen = slugify(re.sub(r"-[a-z]{4}$", "", m.group(1)))
+        if gen and gen != slug and gen in drugs:
+            g = drugs[gen]
+            have = {(str(r.get("t") or ""), str(r.get("d") or "")) for r in g["rows"]}
+            extra = [r for r in drugs[slug]["rows"]
+                     if (str(r.get("t") or ""), str(r.get("d") or "")) not in have]
+            if extra:
+                g["rows"].extend(extra)
+                g["marketed_as"] = (drugs[slug]["name"], slug)
+                print(f"  alias join: /drug/{gen} inherits {len(extra)} event(s) from "
+                      f"/drug/{slug} ({drugs[slug]['name']})")
+
     # regenerate from scratch: a vanished drug must lose its page.
     # Windows quirk (2026-08-12): synced folders set the ReadOnly attribute on directories, and
     # os.rmdir then fails with Access Denied. The onexc handler clears the attribute and retries,
@@ -397,6 +422,11 @@ def main():
                                 str(r.get("st") or "").lower() == "under review")
               and str(r.get("st") or "").lower() != "decided"
               and r.get("id") not in confirmed]
+        _dec = sorted(((r.get("d"), arch.get((str(r.get("t") or "").upper(), r.get("d") or "")))
+                       for r in rs
+                       if arch.get((str(r.get("t") or "").upper(), r.get("d") or ""))
+                       in ("Approved", "CRL")), key=lambda x: x[0] or "")
+        dec0 = _dec[-1] if _dec else None      # (date, outcome) of the latest real decision
         lede = f"{name} "
         if comps:
             lede += f"is a {esc(', '.join(comps[:2]))} program"
@@ -405,15 +435,29 @@ def main():
             lede += ". "
         elif inds:
             lede += f"is in development for {esc(inds[0])}. "
+        # THE ANSWER SENTENCE (2026-08-29 console read). Nine of sixteen AI grounding queries
+        # are literally "{drug} pdufa date", and the pages answering them never contained
+        # that phrase -- the lede said "its next catalyst is a PDUFA on ...", which a reader
+        # parses and an extractor may not. The one page at 100% citation share resolves the
+        # query in one clause. So: when the fact is a PDUFA date, say "PDUFA date", with the
+        # date in the same sentence. Same fact, extractable phrasing.
         if up:
             n = up[0]
             if str(n.get("st") or "").lower() == "under review":
                 lede += ("It is under FDA review; the agency's action date has not been "
                          "publicly disclosed. ")
+            elif str(n.get("type") or "").upper() == "PDUFA":
+                lede += (f"Its PDUFA date is "
+                         f"<b>{esc(pretty(n['d'], n.get('dp') or 'day'))}</b>, the FDA's "
+                         f"goal date to complete review of the application. ")
             else:
                 lede += (f"Its next catalyst is a {esc(str(n.get('type') or 'catalyst'))} "
                          f"{'on' if (n.get('dp') or 'day') == 'day' else 'in'} "
                          f"{esc(pretty(n['d'], n.get('dp') or 'day'))}. ")
+        elif dec0 is not None:
+            # No upcoming event: lead with the decision itself, dated, in one sentence.
+            lede += (f"The FDA {'approved it' if dec0[1] == 'Approved' else 'issued a Complete Response Letter'} "
+                     f"on <b>{esc(pretty(dec0[0]))}</b>. ")
         if n_dec:
             lede += f"{n_dec} FDA decision{'s' if n_dec != 1 else ''} on record below. "
         lede += "Every date links its source."
@@ -425,6 +469,11 @@ def main():
         # ABOUT: only fields we actually hold. The audit's ask was 400-600 words; the ceiling on
         # honest length is the data, so every sentence below is a held fact and none is filler.
         about = []
+        if d.get("marketed_as"):
+            bn, bslug = d["marketed_as"]
+            about.append(f'{name} is marketed as <a class="lit" href="/drug/{esc(bslug)}">'
+                         f"{esc(bn)}</a>; the events below include those tracked under the "
+                         f"brand name.")
         if inds:
             about.append(f"Indication{'s' if len(inds) > 1 else ''} under review: "
                          + "; ".join(esc(i) for i in inds[:3]) + ".")
@@ -471,6 +520,10 @@ def main():
                       + (f" ({n0['when_text']})" if n0.get("when_text") else "")
                       + ". The review status row below links the sponsor's own announcement; "
                         "this page updates when a date becomes public.")
+            elif str(n0.get("type") or "").upper() == "PDUFA":
+                a1 = (f"{name}'s PDUFA date is {pretty(n0['d'], n0.get('dp') or 'day')}. "
+                      f"That is the FDA's goal date to complete review of the application; "
+                      f"the agency can act earlier or extend it.")
             else:
                 a1 = (f"The next tracked catalyst for {name} is a {n0.get('type', 'catalyst')} "
                       f"{'on' if (n0.get('dp') or 'day') == 'day' else 'in'} "
@@ -541,8 +594,15 @@ def main():
                  for q, a in qa]},
             separators=(",", ":")) + "</script>")
 
+        # /calendar carries 47% of Bing impressions at position 5.04 and the 08-29 ranking
+        # map's finding is that almost nothing links it with descriptive anchor text -- the
+        # nav word "Calendar" is boilerplate. One dated, descriptive anchor from every drug
+        # page is the cheapest honest signal we can send it.
+        cal_link = ('<p><a class="lit" href="/calendar">All upcoming FDA decision dates on '
+                    'the 2026 PDUFA calendar</a></p>')
         body = (f'<p style="color:var(--mut2);max-width:72ch">{lede}</p>'
                 + (f"<p>{hubs}</p>" if hubs else "")
+                + cal_link
                 + "<h2>About this program</h2>"
                 + f'<p style="max-width:72ch">{" ".join(about)}</p>'
                 + "<h2>Catalyst history</h2>" + "".join(events)

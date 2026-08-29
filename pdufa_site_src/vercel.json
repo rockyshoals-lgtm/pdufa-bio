@@ -48,6 +48,11 @@
    "permanent": true
   },
   {
+   "source": "/pdufa-dates",
+   "destination": "/calendar",
+   "permanent": true
+  },
+  {
    "source": "/pdufa-dates-2026",
    "destination": "/calendar",
    "permanent": true
