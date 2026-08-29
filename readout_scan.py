@@ -265,7 +265,11 @@ def date_precision(d, text=""):
         return "quarter"
     # Otherwise a genuine specific day near a quarter end says the time-of-day, an ordinal, or
     # anchors to a dated conference/PDUFA.
-    specific = re.search(r"\b" + str(d.day) + r"(st|nd|rd|th)?\b.{0,20}(20\d\d|am|pm|\bet\b)", t) or \
+    # 2026-08-29 FIX: `20\d\d` was in this alternation, which made the check vacuous --
+    # EVERY date is followed by its own year, so "on September 30, 2026" and even
+    # "December 31, 2026" scored as specific days. That is exactly the bucket-as-day error
+    # this function exists to catch. Real specificity is a TIME OF DAY or a named event.
+    specific = re.search(r"\b" + str(d.day) + r"(st|nd|rd|th)?\b.{0,20}(am|pm|\bet\b|\best\b|\bedt\b)", t) or \
         re.search(r"\b(pdufa|conference|present\w*|easd|esmo|aacr|ash|asco|jpm)\b", t)
     return "day" if specific else "quarter"
 
@@ -286,6 +290,10 @@ def date_precision(d, text=""):
 # "Q4 2026" stored as 2026-12-31 is the same class of error as the dateline bug.
 _MON = ("january february march april may june july august september october "
         "november december").split()
+# Companies abbreviate. "Sept. 2026" and "Oct 2026" are month-precision windows that a
+# full-name-only alternation drops on the floor.
+_MON_RX = ("jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec")
+_AB2MON = {m[:3]: m for m in _MON}
 _ORD2Q = {"first": 1, "1st": 1, "second": 2, "2nd": 2, "third": 3, "3rd": 3,
           "fourth": 4, "4th": 4}
 
@@ -313,13 +321,18 @@ def _norm_period(w):
         return f"{m.group(1)}H {y or '20' + m.group(3)}"
     if re.search(r"\bmid[\s-]?(year|20\d\d)", t) and y:
         return f"MID {y}"
+    # "early 2026" / "late-2027" -- 15 of last night's 194 windows. A company that says
+    # "early 2026" is making a half-year claim, so grade it as one rather than dropping it.
+    m = re.search(r"\b(early|late)[\s-]?(20\d\d)\b", t)
+    if m:
+        return f"{'1H' if m.group(1) == 'early' else '2H'} {m.group(2)}"
     # month, with or without a day: "September 2026", "on September 30, 2026"
-    m = re.search(r"\b(" + "|".join(_MON) + r")\w*\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(20\d\d)", t)
+    m = re.search(r"\b(" + _MON_RX + r")[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(20\d\d)", t)
     if m:
-        return (f"{m.group(1).capitalize()} {int(m.group(2))}, {m.group(3)}")
-    m = re.search(r"\b(" + "|".join(_MON) + r")\w*\.?\s+(20\d\d)", t)
+        return f"{_AB2MON[m.group(1)].capitalize()} {int(m.group(2))}, {m.group(3)}"
+    m = re.search(r"\b(" + _MON_RX + r")[a-z]*\.?\s+(20\d\d)", t)
     if m:
-        return f"{m.group(1).capitalize()} {m.group(2)}"
+        return f"{_AB2MON[m.group(1)].capitalize()} {m.group(2)}"
     if re.match(r"^\s*20\d\d\s*$", t):
         return t.strip()
     return ""
@@ -343,7 +356,7 @@ def _precision(w):
     m = re.match(r"^([A-Z][a-z]+)\s+(\d{1,2}),\s*(20\d\d)$", c)
     if m:
         try:
-            d = datetime.datetime.strptime(c.replace(",", ""), "%B %d %Y").date()
+            d = dt.datetime.strptime(c.replace(",", ""), "%B %d %Y").date()
         except ValueError:
             return "MONTH"
         return "DAY" if date_precision(d, w) == "day" else "MONTH"

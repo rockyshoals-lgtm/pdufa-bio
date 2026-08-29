@@ -26,6 +26,7 @@ Honest limits: CT.gov primary completion dates are ESTIMATES and slip constantly
 flag is shown). "Data locks Dec 30" is not "the stock moves Dec 30" — the PR can come weeks
 after the lock, or the date can move. Verify against IR. Not investment advice.
 """
+import collections
 import csv
 import datetime as dt
 import json
@@ -135,8 +136,41 @@ def ctgov_studies(sponsor):
         return []
 
 
+def _pcd_precision(raw):
+    """DAY | MONTH | YEAR — how specific is the primary completion date REALLY?
+
+    Restored 2026-08-29. Two separate ways a bucket ends up looking like a day:
+
+      1. CT.gov itself only carries "2026-12" for most trials, and parse_pcd() below
+         expands that to 2026-12-31. WE manufacture that day. It is not in the registry.
+      2. Even full YYYY-MM-DD entries cluster on the 1st, the 15th and month ends --
+         the sponsor typed a bucket into a date field. 190 of 219 PCDs in the
+         2026-08-28 run (87%) had one of those three shapes.
+
+    So precision is read off the RAW string, before parse_pcd touches it, and a
+    full date is still demoted when it lands on a placeholder day.
+    """
+    s = (raw or "").strip()
+    if not s:
+        return ""
+    p = s.split("-")
+    if len(p) == 1:
+        return "YEAR"
+    if len(p) == 2:
+        return "MONTH"
+    try:
+        d = dt.date(int(p[0]), int(p[1]), int(p[2]))
+    except Exception:
+        return ""
+    last = (dt.date(d.year + (d.month == 12), d.month % 12 + 1, 1) - dt.timedelta(days=1)).day
+    return "MONTH" if d.day in (1, 15, last) else "DAY"
+
+
 def parse_pcd(s):
-    """'2026-12-30' or '2026-12' -> date (end-of-month if no day)."""
+    """'2026-12-30' or '2026-12' -> date (end-of-month if no day).
+
+    NB: the month-only expansion here is why _pcd_precision() must read the RAW string.
+    """
     if not s:
         return None
     p = s.split("-")
@@ -240,7 +274,8 @@ def main():
                 .get("name", "")
             if not _sponsor_ok(lead, company):
                 continue
-            pcd = parse_pcd((stat.get("primaryCompletionDateStruct", {}) or {}).get("date", ""))
+            _raw_pcd = (stat.get("primaryCompletionDateStruct", {}) or {}).get("date", "")
+            pcd = parse_pcd(_raw_pcd)
             if not pcd or not (lo <= pcd <= hi):
                 continue
             phases = ",".join(ps.get("designModule", {}).get("phases", []) or [])
@@ -259,6 +294,13 @@ def main():
                 # Still-enrolling statuses: the PCD moves with enrollment: LOW. Nothing from
                 # CT.gov is HIGH -- only the company's own guidance is.
                 "pcd_conf": ("MED" if status == "ACTIVE_NOT_RECRUITING" else "LOW"),
+                # pcd_precision (restored 2026-08-29): CT.gov stores a bucket as a day.
+                # 190 of last night's 219 PCDs (87%) sat on the 1st, the 15th or a month
+                # end -- that is the registry's placeholder convention, not a data lock on
+                # that date. Only the other 13% are genuine days. Downstream must render a
+                # MONTH row as "September 2026", never as "September 30".
+                "pcd_precision": _pcd_precision(_raw_pcd),
+                "raw_pcd": _raw_pcd,
             }
             # keep the SOONEST forward-or-recently-overdue trial per ticker
             if best is None or abs(rec["days_to_pcd"]) < abs(best["days_to_pcd"]):
@@ -275,7 +317,8 @@ def main():
     # PermissionError when ctgov_readouts.csv was open in Excel / locked by OneDrive. Write to a
     # tmp, atomic-replace with retries, and if still locked fall back to a sibling file rather
     # than losing 90 seconds of work. Same pattern smart_money_enrich already uses.
-    cols = ["ticker", "pcd", "pcd_type", "pcd_conf", "days_to_pcd", "phase", "status", "nct",
+    cols = ["ticker", "pcd", "raw_pcd", "pcd_precision", "pcd_type", "pcd_conf",
+            "days_to_pcd", "phase", "status", "nct",
             "company", "title"]
     tmp = dst + ".tmp"
     with open(tmp, "w", newline="", encoding="utf-8") as f:
@@ -295,6 +338,10 @@ def main():
         os.replace(tmp, dst)
         print(f"  [ctgov] ctgov_readouts.csv was LOCKED (close it) -> wrote "
               f"{os.path.basename(dst)} instead. Data is safe.")
+
+    _pp = collections.Counter(r.get("pcd_precision") or "(none)" for r in out)
+    print(f"  pcd precision: " + "  ".join(f"{k}={n}" for k, n in _pp.most_common())
+          + f"   <- only DAY is a real calendar date; MONTH/YEAR are buckets")
 
     print("\n" + "=" * 90)
     print(f"  {len(out)} tickers with a specific-dated trial readout -> ctgov_readouts.csv")

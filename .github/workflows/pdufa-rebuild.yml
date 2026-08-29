@@ -97,6 +97,16 @@ jobs:
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
+      # The homepage's live board is driven by the SLATE in api/data.js, and decided events
+      # are supposed to leave it via this sweep -- which had not run since it was written:
+      # not in the workflow, demanded a crawl CSV that stopped existing, and its parser was
+      # broken by strip_dashes.py. Eight approved drugs sat on the forward slate; a reader
+      # caught MK-6240 shown "due today" 16 days after approval. Exact (ticker,date) join
+      # against dataset.mjs first, bounded text-matching only for rows the dataset lacks.
+      # test_slate_no_decided.py fails if this step goes missing.
+      - name: Sweep decided events off the homepage slate
+        run: python pdufa_site_src/build_slate_from_crawl.py --sweep-only
+
       # Comparator arms captured as the sponsor's own drug. BMY's title read "Bevacizumab", a
       # Roche product, because the CT.gov ingest took whichever intervention it saw first.
       - name: "Data quality: resolve comparator names against the trial record"

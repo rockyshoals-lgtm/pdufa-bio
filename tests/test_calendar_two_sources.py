@@ -46,7 +46,13 @@ def main():
     src2 = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                 errors="replace").read().replace("\x00", "")
     ds, _ = json.JSONDecoder().raw_decode(src2[src2.find("["):])
-    events = [r for r in ds if r.get("type") == "PDUFA" and str(r.get("d", "")) >= TODAY]
+    # "Forward" means the FDA has yet to act, not merely that the goal date is ahead. An
+    # early approval leaves a decided event with a future goal date (NUVL approved 07-22
+    # against a 09-18 goal; TAK 08-05 against 09-30), and the slate rightly drops those --
+    # the 2026-08-29 slate sweep did exactly that and this guard, filtering on date alone,
+    # demanded the page keep advertising two approved drugs as pending.
+    events = [r for r in ds if r.get("type") == "PDUFA" and str(r.get("d", "")) >= TODAY
+              and str(r.get("st", "")).lower() != "decided"]
     have = {(str(r.get("t", "")).upper(), str(r.get("d", ""))) for r in events}
     by_date = {}
     for r in events:

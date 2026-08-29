@@ -83,7 +83,17 @@ def load_decided(site_dir):
                 r'<a class="row" href="/fda-decision/([A-Z]+)-(\d{4}-\d{2}-\d{2})"[^>]*>(.*?)</a>', h, re.S):
             txt = _html.unescape(re.sub('<[^>]+>', ' ', body))
             outc = 'Approved' if 'Approved' in txt else ('CRL' if 'CRL' in txt else '?')
-            drug = txt.split('\u2014', 1)[1].strip() if '\u2014' in txt else ''
+            # The drug used to follow an em dash -- until strip_dashes.py, the site's own
+            # house-style pass, removed em dashes from the listing rows. From then on this
+            # split produced '' for EVERY archive row, norm_drug('') filtered every entry
+            # out, and the decided-sweep silently matched nothing: by 2026-08-29 eight
+            # approved drugs sat on the forward slate, one shown "due today" on the live
+            # homepage 16 days after approval. Rows now read "Approved: {drug}" /
+            # "CRL: {drug}"; accept that first and keep the dash as legacy fallback.
+            dm = re.search(r'(?:Approved|CRL|Complete Response Letter)\s*[:\u2014]\s*(.+)$',
+                           txt.strip())
+            drug = (dm.group(1) if dm
+                    else (txt.split('\u2014', 1)[1] if '\u2014' in txt else '')).strip()
             dec.setdefault((tk, norm_drug(drug)), []).append((d, outc))
     return dec
 
@@ -144,14 +154,22 @@ def already_decided(cat, dec):
         Class 1 PDUFA of 2026-07-29. Treating the old CRL as terminal would have deleted a live
         catalyst 14 days before its decision.
         """
+        try:
+            gap = (datetime.date.fromisoformat(fd) - datetime.date.fromisoformat(d)).days
+        except Exception:
+            return False
         if o == 'Approved':
-            return True
+            # Terminal only for THE SAME APPLICATION. "An approval is terminal" with no time
+            # bound matched WINREVAIR's 2025 label approval against its pending 2026 sBLA --
+            # and likewise Optune, anito-cel, IBTROZI's sNDA and Anktiva: five live catalysts
+            # the first repaired sweep would have deleted (caught on dry-run review,
+            # 2026-08-29). An approval belongs to this event only if it landed within the
+            # same review cycle: observed true gaps run 0..108 days early (CORT's 108 is the
+            # record) and up to 4 days late (REPL); false ones start at 276. Bound at
+            # -14..180 and a prior-generation approval of the same brand stops counting.
+            return -14 <= gap <= 180
         if o == 'CRL':
-            try:
-                gap = (datetime.date.fromisoformat(fd) - datetime.date.fromisoformat(d)).days
-            except Exception:
-                return False
-            return gap <= 45      # same review cycle, not a resubmission
+            return 0 <= gap <= 45      # same review cycle, not a resubmission
         return False
 
     hits = []
@@ -159,9 +177,20 @@ def already_decided(cat, dec):
         if dtk != tk or not ddrug:
             continue
         sim = difflib.SequenceMatcher(None, fdrug, ddrug).ratio()
-        shared = {w for w in set(fdrug.split()) & set(ddrug.split()) if len(w) > 5}
-        if sim > 0.55 or shared:
-            prior = [(d, o) for d, o in events if d <= fd and terminal(d, o)]
+        fset, dset = set(fdrug.split()), set(ddrug.split())
+        shared = {w for w in fset & dset if len(w) > 5}
+        # ONE shared token is not evidence when the molecule ships in several products:
+        # "Yeztugo (lenacapavir) once-weekly oral" shares only 'lenacapavir' with the
+        # Bixlenvo (bictegravir/lenacapavir) approval, and the old any-shared-token rule
+        # swept that live 2027 catalyst on the strength of it (caught on dry-run review,
+        # 2026-08-29). Demand sim, two shared tokens, or full token containment -- the
+        # containment arm is what lets "MK-6240" match "TAUKLARIFY ... MK-6240" even though
+        # its tokens are too short for `shared`.
+        contained = bool(fset) and bool(dset) and (fset <= dset or dset <= fset)
+        if sim > 0.55 or len(shared) >= 2 or contained:
+            # not `d <= fd`: an approval can land days AFTER the goal date (REPL, +4) and
+            # still end the event -- terminal() owns the window in both directions.
+            prior = [(d, o) for d, o in events if terminal(d, o)]
             if prior:
                 hits.append((ddrug, sim, sorted(prior)[-1]))
     if not hits:
@@ -181,10 +210,20 @@ def main():
     ap.add_argument("--csv", default=os.path.join(HERE, "..", "catalysts_out", "catalysts_public.csv"))
     ap.add_argument("--api", default=os.path.join(HERE, "api", "data.js"))
     ap.add_argument("--dry-run", action="store_true")
+    # The decided-sweep (step 3b) was written after CORT sat "pending" on the public calendar
+    # for four months post-approval -- and then never ran again, because this script demands a
+    # crawl CSV that stopped being produced and was never added to the workflow. By 2026-08-29
+    # the slate carried EIGHT decided events, and the homepage's live board showed LNTH's
+    # MK-6240 as "due today" sixteen days after the FDA approved it (David caught it on the
+    # live site). --sweep-only runs ONLY the sweep against the current slate: no crawl needed,
+    # nothing added, nothing refreshed -- decided events leave, that is all.
+    ap.add_argument("--sweep-only", action="store_true",
+                    help="skip the crawl merge; only sweep decided events off the slate")
     a = ap.parse_args()
     today = datetime.date.today(); today_iso = today.isoformat()
 
-    if not os.path.exists(a.csv): sys.exit(f"crawl CSV not found: {a.csv} (run the crawler first)")
+    if not a.sweep_only and not os.path.exists(a.csv):
+        sys.exit(f"crawl CSV not found: {a.csv} (run the crawler first, or use --sweep-only)")
     if not os.path.exists(a.api): sys.exit(f"api/data.js not found: {a.api}")
 
     # 1) current SLATE out of api/data.js
@@ -195,7 +234,7 @@ def main():
     existing = {(c["ticker"], c["date"]): c for c in slate["catalysts"]}
 
     # 2) fresh forward PDUFAs from the crawl
-    rows = list(csv.DictReader(open(a.csv, encoding="utf-8")))
+    rows = [] if a.sweep_only else list(csv.DictReader(open(a.csv, encoding="utf-8")))
     fresh = [crawl_to_cat(r, today) for r in rows if is_forward_pdufa(r, today_iso)]
     # de-dupe crawl by (ticker,date), keep the richest (has drug+indication)
     fresh_by_key = {}
@@ -235,9 +274,25 @@ def main():
     #
     # That is how CORT/relacorilant sat on the public calendar as "pending" for ~4 months after
     # the FDA approved it on 2026-03-25, and how CELC showed as pending the day after approval.
+    # 3a) EXACT sweep first, from the dataset. dataset.mjs records each PDUFA's status and
+    # decision date under the same (ticker, goal date) key the slate uses, so for events it
+    # knows, no text matching is needed at all -- and no text matcher can beat an identity
+    # join. The fuzzy sweep below then only handles rows the dataset has no record of.
+    exact = {}
+    dsp = os.path.join(HERE, "api", "v1", "dataset.mjs")
+    if os.path.exists(dsp):
+        dsrc = open(dsp, encoding="utf-8", errors="replace").read().replace("\x00", "")
+        try:
+            drows = json.loads(dsrc[dsrc.index("["):dsrc.rindex("]") + 1])
+            exact = {(r.get("t"), r.get("d")): (r.get("dcd") or r.get("d"), r.get("oc") or "Decided")
+                     for r in drows if r.get("type") == "PDUFA"
+                     and str(r.get("st", "")).lower() == "decided"}
+        except Exception as e:
+            print(f"  WARN: dataset.mjs unreadable for the exact sweep ({e}); "
+                  f"falling back to text matching alone")
     swept = []
     for k in list(existing.keys()):
-        hit = already_decided(existing[k], DECIDED)
+        hit = exact.get(k) or already_decided(existing[k], DECIDED)
         if hit:
             swept.append((k, hit))
             existing.pop(k)
