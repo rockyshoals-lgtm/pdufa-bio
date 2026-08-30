@@ -1,5 +1,5 @@
 {
- "published_at": "2026-08-29T17:08:21-07:00",
+ "published_at": "2026-08-29T17:16:25-07:00",
  "note": "written by publish_to_dropbox.py as the final step of READOUT_RESEARCH.bat; timestamps are LOCAL PACIFIC (machine time). Read README_LATEST.md first.",
  "files": {
   "readout_gold_dates.csv": {
@@ -20,9 +20,9 @@
   },
   "readout_forward.csv": {
    "status": "ok",
-   "modified": "2026-08-29T14:01:22",
+   "modified": "2026-08-29T17:16:14",
    "rows": 279,
-   "WARNING": "no readout_forward.ok stamp \u2014 cannot verify the scan completed"
+   "scan_completed_at": "2026-08-29T17:16:14-07:00 rows=279"
   },
   "ctgov_readouts.csv": {
    "status": "ok",
