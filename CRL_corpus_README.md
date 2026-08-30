@@ -2,7 +2,7 @@
 
 **Source:** openFDA "Complete Response Letters" transparency dataset
 `https://download.open.fda.gov/transparency/crl/transparency-crl-0001-of-0001.json.zip`
-**Snapshot:** 2026-06-22 · **Records:** 439 (426 true COMPLETE RESPONSE letters + a few tentative/provisional/RTF)
+**Snapshot:** 2026-08-29 (CRL_corpus_openFDA_2026-08-29.json; the 06-22 file is kept as history) · **Records:** 458 (309 Approved / 149 Unapproved; 83 multi-CRL applications; 2026 letters 32, newest 2026-08-07). NOTE 2026-08-29: this API corpus SUPERSEDES _crl_letter_index.json (the PDF-scrape index) as a data source -- the PDFs stay only as a local text cache. (426 true COMPLETE RESPONSE letters + a few tentative/provisional/RTF)
 
 ## Files
 - `CRL_corpus_openFDA_2026-06-22.json` — raw openFDA dump (full redacted letter **text** for every CRL).

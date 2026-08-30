@@ -175,6 +175,66 @@ def main():
         qa.append(("When is the next FDA decision?", nxt, ""))
     ok &= inject("decisions", qa, a.dry_run)
 
+    # /decisions/crl + /decisions/approvals (red team 2026-08-29j: both sat at Q=0 while
+    # every other hub carries a FAQ). Counts come from the FDA's own published CRL corpus
+    # (openFDA transparency dataset, refreshed 2026-08-29) plus each page's own rows.
+    # THE RULE FROM THE CORPUS README, NON-NEGOTIABLE: publish the counts, NEVER a rate.
+    # 309 of 458 letters belong to later-approved applications *by construction* -- the
+    # FDA's first transparency batches were letters for products it had since approved,
+    # and the 2024-2026 letters are mostly still-pending resubmissions. A "% approved
+    # after CRL" from this file would be the decision-timing selection bias all over again.
+    crl_counts = None
+    try:
+        _cp = os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
+        _cd = json.load(open(_cp, encoding="utf-8"))
+        _recs = (_cd.get("results") if isinstance(_cd, dict) else _cd) or []
+        _ap = sum(1 for r in _recs if r.get("approval_status") == "Approved")
+        _apps = {}
+        for r in _recs:
+            k = json.dumps(r.get("application_number"))
+            _apps[k] = _apps.get(k, 0) + 1
+        crl_counts = (len(_recs), _ap, sum(1 for v in _apps.values() if v > 1))
+    except Exception as e:
+        print(f"  !! CRL corpus unreadable ({e}); corpus questions skipped, page "
+              f"questions still injected")
+    crl_qa = [
+        ("What is a Complete Response Letter?",
+         "A Complete Response Letter (CRL) is the FDA telling a company its application "
+         "cannot be approved in its present form and what must be resolved first. It is "
+         "not a final rejection: companies routinely address the deficiencies and "
+         "resubmit.", "")]
+    if crl_counts:
+        n_all, n_ap, n_multi = crl_counts
+        crl_qa.append(("How many Complete Response Letters has the FDA published?",
+                       f"The FDA's transparency dataset holds {n_all} Complete Response "
+                       f"Letters, from 2002 through 2026, published as the agency's own "
+                       f"redacted letters.", ""))
+        crl_qa.append(("Do drugs get approved after a Complete Response Letter?",
+                       f"Many do: {n_ap} of the {n_all} published letters belong to "
+                       f"applications the FDA later approved. That count is not an "
+                       f"approval rate -- the FDA's first transparency releases were "
+                       f"letters for products it had since approved, and most recent "
+                       f"letters belong to resubmissions still under way, so the "
+                       f"published set over-represents happy endings by construction.",
+                       ""))
+        crl_qa.append(("Can a drug receive more than one Complete Response Letter?",
+                       f"Yes. {n_multi} applications in the FDA's published set received "
+                       f"more than one letter across successive review cycles.", ""))
+    ok &= inject("decisions/crl", crl_qa, a.dry_run)
+    ok &= inject("decisions/approvals", [
+        ("Are these FDA approvals verified?",
+         "Each row links its decision page, which states whether the outcome was read "
+         "from a primary document or inferred from the share-price reaction; the two "
+         "are never mixed in one count.", ""),
+        ("Does an FDA approval mean the drug is on the market?",
+         "Not immediately. Approval authorises marketing; launch timing is the "
+         "company's, and some approved drugs launch months later or carry post-approval "
+         "requirements.", ""),
+        ("Do approvals ever follow a Complete Response Letter?",
+         "Yes, routinely: a CRL sets out deficiencies, the company resubmits, and the "
+         "FDA sets a new action date. The CRL archive on this site lists the published "
+         "letters and what happened next.", "")], a.dry_run)
+
     # /readouts
     n_ro = sum(1 for r in rows if r.get("type") == "Readout"
                and str(r.get("d", "")) >= today.isoformat()
