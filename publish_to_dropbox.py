@@ -58,6 +58,30 @@ for f in FILES:
             pass
     man["files"][f] = info
 
+# STALENESS CHECK (2026-08-29): a crashed forward scan can hide behind the smart-money
+# enricher, which rewrites readout_forward.csv and refreshes its mtime (this exact sequence
+# happened on the 13:50 run — deep pass died silently at 60/120, chain shipped stale rows).
+# readout_scan.py only writes readout_forward.ok on a COMPLETED scan; if that stamp is
+# meaningfully older than the csv's mtime, the csv was rewritten by something that is NOT
+# the scanner and the scan itself likely died. Flag it where the builder will see it.
+try:
+    _ok = io.open(os.path.join(HERE, "readout_forward.ok"), encoding="utf-8").read().strip()
+    _ok_t = datetime.datetime.fromisoformat(_ok.split()[0])
+    _csv_t = datetime.datetime.fromtimestamp(
+        os.path.getmtime(os.path.join(HERE, "readout_forward.csv"))).astimezone()
+    lag_min = (_csv_t - _ok_t).total_seconds() / 60
+    fwd = man["files"].get("readout_forward.csv", {})
+    fwd["scan_completed_at"] = _ok
+    if lag_min > 30:
+        fwd["WARNING"] = (f"csv rewritten {lag_min:.0f} min AFTER the last completed scan — "
+                          "the forward scan likely DIED this run; rows may be stale")
+        print(f"[publish] !! {fwd['WARNING']}")
+except FileNotFoundError:
+    man["files"].setdefault("readout_forward.csv", {})["WARNING"] = \
+        "no readout_forward.ok stamp — cannot verify the scan completed"
+except Exception:
+    pass
+
 json.dump(man, io.open(os.path.join(DST, "manifest.json"), "w", encoding="utf-8"), indent=1)
 ok = sum(1 for v in man["files"].values() if v.get("status") == "ok")
 print(f"[publish] {ok}/{len(FILES)} files -> odin_cowork_dropbox\\latest\\  "

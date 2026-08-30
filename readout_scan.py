@@ -569,12 +569,23 @@ def fetch_date(h, agent, filed=None):
     raw = _get(url, agent)
     if not raw:
         return None, None, False, ""
+    # SIZE CAP (2026-08-29): inline-XBRL 10-K/20-F primary docs can exceed 100MB. Whole-doc
+    # re.sub + finditer over that killed the interpreter OUTRIGHT on the 13:50 deep pass —
+    # no traceback, no except clause fires, the chain sailed on with a stale CSV. The FTS
+    # path never hit this (8-K/6-Ks are small); the deep pass fetches annual reports. The
+    # prose we mine (pipeline guidance, Item 1/1A) lives in the front of even a giant filing,
+    # so cap raw at 4MB pre-decode and stripped text at 1.5MB. A guidance sentence buried
+    # past megabyte 4 of an annual report is a miss we accept; a dead interpreter is not.
+    if len(raw) > 4_000_000:
+        raw = raw[:4_000_000]
     try:
         txt = raw.decode("utf-8", "replace")
     except Exception:
         return None, None, False, ""
     txt = re.sub(r"<[^>]+>", " ", txt)
     txt = re.sub(r"\s+", " ", txt)
+    if len(txt) > 1_500_000:
+        txt = txt[:1_500_000]
 
     # THE KLRS LESSON — is this filing reporting data NOW? Runs on the same fetched text, so it
     # costs nothing extra. A filing can report Phase 1 data AND guide to Phase 2; we want both.
@@ -969,6 +980,16 @@ def main():
         print("  (none in this window)")
     print(f"\n  {len(fw)} forward, {len(rows)-len(fw)} past-tense")
     print(f"  -> {out}")
+    # SUCCESS STAMP (2026-08-29): the 13:50 deep-pass crash proved a dead scan can hide —
+    # the chain kept going, smart_money re-enriched the STALE csv and refreshed its mtime,
+    # and nothing downstream could tell. This stamp is only written on a COMPLETED scan;
+    # publish_to_dropbox.py compares it against the csv and flags staleness in the manifest.
+    try:
+        with open(os.path.join(HERE, "readout_forward.ok"), "w", encoding="utf-8") as _okf:
+            _okf.write(dt.datetime.now().astimezone().isoformat(timespec="seconds")
+                       + f" rows={len(rows)}\n")
+    except Exception:
+        pass
     print("\n  NOT investment advice. A company saying 'we expect topline in 2H' is a PLAN.")
     print("  Verify against IR/SEC before acting. Readout dates slip constantly.")
 
