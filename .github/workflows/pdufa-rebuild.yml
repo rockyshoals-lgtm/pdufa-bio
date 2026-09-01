@@ -241,6 +241,13 @@ jobs:
       - name: Rebuild the condition pages from the living dataset
         run: python build_condition_pages.py
 
+      # Red team 2026-09-01, Part 4: "fda approvals today pdufa" converts at 13.33% CTR on
+      # Bing web and holds 28.57% AI-citation share -- demand proven on two surfaces before
+      # any page existed. /today is occupied by the legacy noindexed app rewrite, so the
+      # page lives at /fda-decisions-today. Date-driven, so it genuinely changes daily.
+      - name: Rebuild /fda-decisions-today (the "what did the FDA decide today" page)
+        run: python build_today_page.py
+
       - name: Entity-enrich the ticker hubs
         run: python enrich_ticker_hubs.py
 
