@@ -152,6 +152,13 @@ jobs:
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_decisions_listing.py && python sync_api_from_pages.py
 
+      # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
+      # came BEFORE the goal date; everything upstream depends on our own crawl hearing
+      # the news. This asks FDA's Drugs@FDA feed directly for every armed event and
+      # BLOCKS the run on an unreviewed approval -- a lead to verify, never auto-publish.
+      - name: Early-approval watch against FDA's own feed
+        run: python watch_fda_approvals.py
+
       - name: Repair Event schema (location + datetime/TZ startDate)
         run: python fix_event_schema.py
 

@@ -46,8 +46,39 @@ def published_decisions():
             oc = "Withdrawn"
         else:
             oc = "Approved"
-        out.setdefault((tk, date), oc)
+        # drug text from the listing row ("Approved: {drug}" / "CRL: {drug}") -- the
+        # evidence a wide-window match needs. Empty when the row states none.
+        dm = re.search(r'(?:Approved|CRL)</span>:\s*([^<]{3,80})', html[m.end():m.end() + 260])
+        out.setdefault((tk, date), (oc, (dm.group(1).strip() if dm else "")))
     return out
+
+
+def _toks(s):
+    return {w for w in re.findall(r"[a-z0-9]{4,}", str(s or "").lower())
+            if w not in ("with", "combination", "priority", "review")}
+
+
+def _lead_match(row_name, page_drug):
+    """Wide-window evidence: the LEAD (brand/first) drug token of one side must appear
+    in the other side's tokens. A single shared molecule token is NOT enough -- the
+    Aug 27 'Bixlenvo (bictegravir/lenacapavir)' approval shares 'lenacapavir' with the
+    2027 'Yeztugo (lenacapavir) once-weekly' row and they are different products; lead
+    tokens ('bixlenvo' vs 'yeztugo') tell them apart. Additionally, if BOTH sides name
+    a trial in parentheses and the trials differ, reject (relacorilant GRACE != ROSELLA).
+    """
+    rt, pt = _toks(row_name), _toks(page_drug)
+    if not rt or not pt:
+        return False
+    rl = re.findall(r"[A-Za-z][A-Za-z0-9]{3,}", str(row_name or ""))
+    pl = re.findall(r"[A-Za-z][A-Za-z0-9]{3,}", str(page_drug or ""))
+    lead_ok = bool(rl and rl[0].lower() in pt) or bool(pl and pl[0].lower() in rt)
+    if not lead_ok:
+        return False
+    tr_r = set(re.findall(r"\(([A-Z][A-Za-z]*[-_ ]?\d+[A-Za-z0-9-]*)\)", str(row_name or "")))
+    tr_p = set(re.findall(r"\(([A-Z][A-Za-z]*[-_ ]?\d+[A-Za-z0-9-]*)\)", str(page_drug or "")))
+    if tr_r and tr_p and not (tr_r & tr_p):
+        return False
+    return True
 
 
 VOTE = re.compile(r'(\d+)\s*(?:for|yes)\b.{0,24}?(\d+)\s*(?:against|no)\b', re.I | re.S)
@@ -86,16 +117,33 @@ def main():
     for r in arr:
         tk, d, typ = r.get("t"), str(r.get("d") or "")[:10], r.get("type")
         if typ == "PDUFA":
-            # match the published decision for this ticker within 14 days of the listed PDUFA date
+            # Match the published decision for this ticker. Two tiers:
+            #   |gap| <= 14: ticker + proximity is evidence enough (unchanged behavior).
+            #   wide window: the FDA decides EARLY as the norm (2026 sourced: 16 of 28
+            #     before the goal date; REGN -12 barely fit the old 14-day cap, AZN -18,
+            #     TAK -56, NUVL -58, CORT -108 never could). Approvals accepted
+            #     -180..+45 days of goal, CRLs -14..+45 -- the same-review-cycle bounds
+            #     mark_calendar_decided already uses -- but ONLY with a shared drug
+            #     token, because ticker+date alone re-creates the relacorilant trap
+            #     (same molecule, different application, 267 days apart).
             hit = None
-            for (dtk, ddate), oc in decs.items():
+            rtoks = _toks(r.get("name"))
+            for (dtk, ddate), (oc, ddrug) in decs.items():
                 if dtk != tk:
                     continue
                 try:
-                    gap = abs((dt.date.fromisoformat(ddate) - dt.date.fromisoformat(d)).days)
+                    sgap = (dt.date.fromisoformat(ddate) - dt.date.fromisoformat(d)).days
                 except Exception:
                     continue
-                if gap <= 14 and (hit is None or gap < hit[0]):
+                gap = abs(sgap)
+                if gap <= 14:
+                    pass
+                elif (-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45) \
+                        and _lead_match(r.get("name"), ddrug):
+                    pass
+                else:
+                    continue
+                if hit is None or gap < hit[0]:
                     hit = (gap, ddate, oc)
             if hit and (r.get("st") != "Decided" or r.get("oc") != hit[2] or r.get("dcd") != hit[1]):
                 changes.append(f"PDUFA {tk} {d}: st={r.get('st')}->Decided oc={r.get('oc')}->{hit[2]} dcd->{hit[1]}")
