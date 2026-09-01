@@ -142,8 +142,11 @@ def main():
         if (tk, d) in known:
             n_flag += 1
             continue
-        hit = next((c for c in clusters if c["d"] == d
-                    and (tk in c["tickers"] or (c["toks"] & tt))), None)
+        # ticker match FIRST, token overlap only as fallback: the 110-char trail can
+        # bleed into the NEXT row's href (the ROIV row's trail carried /pdufa/NVO-mim8,
+        # crediting ROIV's Brepocitinib row to the NVO cluster and orphaning PFE/ROIV).
+        hit = (next((c for c in clusters if c["d"] == d and tk in c["tickers"]), None)
+               or next((c for c in clusters if c["d"] == d and (c["toks"] & tt)), None))
         if hit is None:
             unmatched_page.append(f"{tk} {d}")
         else:

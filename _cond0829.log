@@ -1,0 +1,45 @@
+=== finishing passes over the rebuilt condition pages ===
+breadcrumbs/WebSite added: 9; already carried one: 1598; noindex skipped: 234
+nav: 9 page(s) updated, 9 given the dropdown CSS, 6 with no nav to rebuild, 208 skipped
+     primary: Calendar · Decisions · Readouts · Patents · More · Pro
+     under Explore: Drug Index, Stocks, Screener, Conferences, Advisory Committees
+     under Research: Studies, Run-up by Year, Learn, Glossary, Methodology, API, Account
+scanned 1,854 files; changed 0
+total dash replacements: 0  (0 distinct contexts)
+full review -> dash_sweep_review.txt
+scanned 1,849 html files; rewrote 11 footers (0 inserted on pages that had none)
+
+AFFILIATION SENTENCES PRESERVED:
+   1825  Not affiliated with or endorsed by the FDA.
+      5  Not affiliated with or endorsed by the FDA or any medical society.
+      2  Not affiliated with or endorsed by the FDA, SELLAS Life Sciences, or any company mentioned.
+      1  Not affiliated with AASLD or its organizer.
+      1  Not affiliated with ACR or its organizer.
+      1  Not affiliated with AES or its organizer.
+      1  Not affiliated with ASH or its organizer.
+      1  Not affiliated with ASN or its organizer.
+      1  Not affiliated with CTAD or its organizer.
+      1  Not affiliated with EASD or its organizer.
+      1  Not affiliated with ECTRIMS or its organizer.
+      1  Not affiliated with ESC or its organizer.
+      1  Not affiliated with ESMO or its organizer.
+      1  Not affiliated with IDWeek or its organizer.
+      1  Not affiliated with SABCS or its organizer.
+      1  Not affiliated with SITC or its organizer.
+      1  Not affiliated with WCLC or its organizer.
+      1  Not affiliated with any conference organizer.
+      1  Not affiliated with or endorsed by the FDA or FINRA.
+      1  Not affiliated with or endorsed by the FDA, Viking Therapeutics, or any company mentioned.
+
+PAGE-SPECIFIC TEXT PRESERVED (0 distinct):
+descriptions rewritten/trimmed: 1
+titles shortened (only those over 100 chars): 0
+sitemap: 1401 URLs before -> 1401 after   (newest lastmod 2026-08-29)
+    other            671
+    /fda-decision    335
+    /ticker          237
+    /pdufa           139
+    /calendar        12
+    /research        7
+wrote sitemap.xml (205624 bytes)
+lastmod state: 1,431 pages tracked, 249 with a content change today

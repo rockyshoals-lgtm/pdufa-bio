@@ -150,7 +150,7 @@ jobs:
         run: python build_patent_cliff.py
 
       - name: Sync the v1 API to the published pages (kills API/page drift)
-        run: python sync_api_from_pages.py
+        run: python sync_decisions_listing.py && python sync_api_from_pages.py
 
       - name: Repair Event schema (location + datetime/TZ startDate)
         run: python fix_event_schema.py
@@ -343,6 +343,13 @@ jobs:
       # whose ticker has more than one live event rather than guess.
       - name: "Event pages follow a moved PDUFA date"
         run: python refresh_moved_pdufa_pages.py
+
+      # Re-audit 2026-09-01b root cause: per-event pages are write-once by design (they
+      # carry hand-grown content), so nothing told /pdufa/REGN-garetosmab its event had
+      # been APPROVED -- 25 days stale on a 33%-CTR page. Moves are handled above;
+      # outcomes here; both marker-based so the hand-grown content survives.
+      - name: Decided banners on per-event PDUFA pages
+        run: python mark_event_pages_decided.py
 
       - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
         run: python build_pdufa_ticker_index.py

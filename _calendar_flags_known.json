@@ -1,13 +1,6 @@
 {
  "note": "Calendar rows whose event the dataset does not hold, found 2026-08-12, awaiting human verification. Each entry is tolerated by test_calendar_matches_dataset.py until resolved: either the dataset re-adds the event (it lost PFE Padcev Aug 17, externally confirmed real) or the row is removed as stale. Shrink this list; never grow it silently.",
- "flags": [
-  {
-   "ticker": "NVO",
-   "date": "2026-09-30",
-   "row_drug": "unknown",
-   "reason": "page row exists, dataset has no NVO event at this date"
-  }
- ],
+ "flags": [],
  "resolved": [
   {
    "ticker": "PFE",
@@ -33,6 +26,11 @@
    "ticker": "VTRS",
    "date": "2026-12-27",
    "resolution": "VERIFIED REAL, dataset had lost it; re-added 2026-08-13 with sponsor/FDA source in _d.source_note"
+  },
+  {
+   "ticker": "NVO",
+   "date": "2026-09-30",
+   "resolution": "VERIFIED REAL (Mim8/denecimig BLA submitted Sep 2025, still under review per ISTH Jul 2026 investigational framing); dataset row restored 2026-09-01 via add_nvo_mim8.py"
   }
  ]
 }

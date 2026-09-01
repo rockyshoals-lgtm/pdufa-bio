@@ -1,0 +1,35 @@
+C:\Users\dcmoo\Documents\Python\9realms\conference_presenter_miner.py:213: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "retrieved_at": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z"})
+  ESC         2026-08-28    5 matched,   4 new
+  ERS         2026-09-05    5 matched,   5 new
+  WCLC        2026-09-12    1 matched,   1 new
+  ASTRO       2026-09-26    1 matched,   1 new
+  EASD        2026-09-28    5 matched,   3 new
+  WMS         2026-09-29    0 matched,   0 new
+  ACG         2026-10-09    0 matched,   0 new
+  AAO         2026-10-09    0 matched,   0 new
+  ASBMR       2026-10-09    2 matched,   1 new
+  ECTRIMS     2026-10-21    0 matched,   0 new
+  ASN         2026-10-21    7 matched,   6 new
+  IDWeek      2026-10-21    0 matched,   0 new
+  ESMO        2026-10-23   11 matched,   6 new
+  SITC        2026-11-04   15 matched,  12 new
+  AASLD       2026-11-05    6 matched,   4 new
+  AHA         2026-11-06    9 matched,   6 new
+  ACR         2026-11-06    6 matched,   4 new
+  SNO         2026-11-12    0 matched,   0 new
+  ACAAI       2026-11-12    1 matched,   1 new
+  ObesityWeek 2026-11-14    0 matched,   0 new
+  CTAD        2026-11-16    1 matched,   0 new
+  ENA         2026-11-18    3 matched,   0 new
+  ESMO Asia   2026-12-04    2 matched,   1 new
+  AES         2026-12-04    1 matched,   1 new
+  SABCS       2026-12-08    6 matched,   5 new
+  ASH         2026-12-12   10 matched,   6 new
+  ESMO IO     2026-12-14    0 matched,   0 new
+  ASCO GI     2027-01-21    2 matched,   0 new
+  WORLD       2027-01-31    0 matched,   0 new
+  ASCO GU     2027-02-11    1 matched,   0 new
+
+67 new presenter row(s) across 30 conference(s) -> catalysts_out\conference_presenters_mined.csv
+DONE 

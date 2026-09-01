@@ -34,7 +34,12 @@
   },
   {
    "source": "/today.html",
-   "destination": "/today",
+   "destination": "/fda-decisions-today",
+   "permanent": true
+  },
+  {
+   "source": "/today",
+   "destination": "/fda-decisions-today",
    "permanent": true
   },
   {

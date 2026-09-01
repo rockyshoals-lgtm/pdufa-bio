@@ -1,0 +1,7 @@
+============================================================================================
+  FORWARD READOUT SCAN — last 45d in 7d slices
+============================================================================================
+  29 FORWARD phrases (a readout is COMING — this is the tradeable set)
+  excluded on purpose: ['will host a conference call', 'conference call to discuss']  (45% of corpus, ~0 signal)
+
+    expects to report topline      +  13
