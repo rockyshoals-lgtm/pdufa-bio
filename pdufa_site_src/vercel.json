@@ -678,6 +678,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/garetosmab-grts",
+   "destination": "/drug/pasatru",
+   "permanent": true
+  },
+  {
    "source": "/drug/gemcitabine-intravesical-system",
    "destination": "/drug/inlexzo",
    "permanent": true
