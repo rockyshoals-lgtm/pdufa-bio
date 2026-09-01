@@ -558,6 +558,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/denecimig",
+   "destination": "/drug/mim8",
+   "permanent": true
+  },
+  {
    "source": "/drug/denosumab-adet",
    "destination": "/drug/ponlimsi",
    "permanent": true
