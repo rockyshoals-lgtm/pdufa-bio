@@ -31,17 +31,15 @@ the design:
 - Guard **`test_event_pages_decided.py`** (proven by planting: stripped REGN's banner,
   build fails) — a decided event with a pending-looking event page now blocks CI.
 
-## 3. Timing page: the honest number is **n=27 WITH REGN**, not 28
+## 3. Timing page: **n=28**, but with different membership than the commit claimed
 
-You flagged "still n=27 despite the commit claiming 28." Both numbers were wrong in
-different ways. The old 27 contained a retired duplicate (AZN's 06-30 goal-date shadow
-counted at +0d). This build: REGN in at **−12d**, duplicate out → 27. Membership changed,
-count coincidentally didn't. `/research/fda-decision-timing` now lists REGN explicitly.
-
-**Open (task #32):** AZN Truqap's real decision (Jun 12 vs goal Jun 30, −18d) is NOT yet
-counted — the dataset row still carries the duplicate's date, and the 06-12 page doesn't
-state which Truqap application it is. Verifying against the SEC 8-K before flipping the
-row; if it verifies, n → 28 honestly.
+You flagged "still n=27 despite the commit claiming 28." The old 27 contained a retired
+duplicate — AZN's 06-30 goal-date shadow counted at **+0d** when the real decision came
+**−18d early**. This build fixes both ends: REGN in at **−12d**, the AZN duplicate
+replaced by the verified real row at **−18d** (FDA approved capivasertib + abiraterone
+on 2026-06-12 per FDA.gov's own approval notice, based on CAPItello-281 — the exact
+application our row tracks, verified 09-01 before publishing). Now **16 early, 9 on the
+goal date, 3 after** — early-decision evidence got stronger, honestly.
 
 ## 4. Found while fixing: the site's best page had no data behind it
 
