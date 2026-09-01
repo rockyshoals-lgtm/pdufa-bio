@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "REGN",
+  "date": "2026-08-19",
+  "outcome": "Approved",
+  "drug": "Pasatru (garetosmab-grts)",
+  "indication": "Fibrodysplasia ossificans progressiva (FOP) in adults - reduction of new heterotopic ossification lesions and clinician-assessed flare-ups",
+  "company": "Regeneron Pharmaceuticals, Inc.",
+  "cap": "Large",
+  "headline": "Pasatru (garetosmab-grts) approved on August 19, 2026 - twelve days before its August 31 PDUFA goal date - as the first treatment for fibrodysplasia ossificans progressiva.",
+  "pdufa_note": "The PDUFA target action date was August 31, 2026; the FDA approved the BLA on August 19, twelve days early, under Priority Review. Pasatru is a fully human monoclonal antibody blocking Activin A, and the first and only FDA-approved treatment shown in a placebo-controlled trial to reduce both new heterotopic ossification lesions and clinician-assessed flare-ups in adults with FOP, an ultra-rare genetic disorder affecting roughly 900 diagnosed people worldwide. Approval rests on the Phase 3 OPTIMA trial: a 90% reduction in new HO lesions at 56 weeks at the 10 mg/kg dose (94% at 3 mg/kg) versus placebo by CT scan, with an 88% reduction in clinician-assessed flare-ups at the higher dose. Garetosmab previously held Fast Track and Orphan Drug designations. An EMA submission is under review.",
+  "source": "https://investor.regeneron.com/news-releases/news-release-details/pasatrutm-garetosmab-grts-first-and-only-fda-approved-treatment",
+  "source_label": "Regeneron press release, August 19, 2026"
+ }
+]
