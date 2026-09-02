@@ -34,18 +34,35 @@ def test_decided_event_pages_carry_banner():
     bad = []
     for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
-        m = re.match(r"([A-Z]{1,6})-(.+)$", slug)
+        m = re.match(r"([A-Z]{1,6})(?:-(.+))?$", slug)
         if not m:
             continue
-        tk, drug_part = m.group(1), m.group(2).replace("-", " ")
+        tk, drug_part = m.group(1), (m.group(2) or "").replace("-", " ")
         tk_cands = [r for r in decided if str(r.get("t", "")).upper() == tk]
-        cands = [r for r in tk_cands if toks(drug_part) & toks(r.get("name"))]
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        if not cands and tk_cands:
-            tm = re.search(r"<title[^>]*>[A-Z]{1,6} PDUFA date:\s*(.+?),\s*[A-Z][a-z]{2}",
-                           doc)
-            if tm:
-                cands = [r for r in tk_cands if toks(tm.group(1)) & toks(r.get("name"))]
+        if drug_part:
+            cands = [r for r in tk_cands if toks(drug_part) & toks(r.get("name"))]
+            if not cands and tk_cands:
+                tm = re.search(r"<title[^>]*>[A-Z]{1,6} PDUFA(?: date)?:"
+                               r"\s*(.+?)(?:,\s*[A-Z][a-z]{2}| \|)", doc)
+                if tm:
+                    cands = [r for r in tk_cands
+                             if toks(tm.group(1)) & toks(r.get("name"))]
+        else:
+            # Bare-ticker event pages -- the six the 2026-09-02 audit caught pending on
+            # approved drugs (/pdufa/JAZZ et al). The first version of THIS TEST skipped
+            # them, so the injector's blind spot and the guard's blind spot coincided
+            # and the planted failure passed. Same double-anchored matcher as the
+            # injector: page's stated target date must equal the event goal AND title
+            # drug tokens must intersect the event name.
+            gm = re.search(r"target date for [A-Z]{1,6} [^<]{0,200}?is "
+                           r"(\d{4}-\d{2}-\d{2})", doc)
+            tm = re.search(r"<title[^>]*>[A-Z]{1,6} PDUFA(?: date)?:"
+                           r"\s*(.+?)(?:,\s*[A-Z][a-z]{2}| \|)", doc)
+            cands = []
+            if gm and tm:
+                cands = [r for r in tk_cands if str(r.get("d"))[:10] == gm.group(1)
+                         and toks(tm.group(1)) & toks(r.get("name"))]
         if len(cands) != 1:
             continue          # no match or ambiguous -- the injector skips these too
         if "<!--DECBAN:BEGIN-->" not in doc:

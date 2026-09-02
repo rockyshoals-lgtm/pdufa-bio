@@ -67,20 +67,36 @@ def main():
         if not m:
             continue
         tk, drug_part = m.group(1), (m.group(2) or "").replace("-", " ")
-        if not drug_part:
-            continue          # bare-ticker pages are owned by build_pdufa_ticker_index
         tk_cands = [r for r in decided if str(r.get("t", "")).upper() == tk]
-        dtoks = toks(drug_part)
-        cands = [r for r in tk_cands if dtoks & toks(r.get("name"))]
-        if not cands and tk_cands:
-            # Alias gap: slug carries the generic (florquinitau), the dataset the code
-            # name (MK-6240). The page TITLE is machine-written from the dataset name at
-            # creation, so match event-name tokens against it instead.
-            doc0 = io.open(p, encoding="utf-8", errors="replace").read()
-            tm = re.search(r"<title[^>]*>[A-Z]{1,6} PDUFA date:\s*(.+?),\s*[A-Z][a-z]{2}",
+        if not tk_cands:
+            continue
+        doc0 = io.open(p, encoding="utf-8", errors="replace").read()
+        if drug_part:
+            dtoks = toks(drug_part)
+            cands = [r for r in tk_cands if dtoks & toks(r.get("name"))]
+            if not cands:
+                # Alias gap: slug carries the generic (florquinitau), the dataset the
+                # code name (MK-6240). The page TITLE is machine-written from the
+                # dataset name at creation, so match event-name tokens against it.
+                tm = re.search(r"<title[^>]*>[A-Z]{1,6} PDUFA date:\s*(.+?),"
+                               r"\s*[A-Z][a-z]{2}", doc0)
+                ttoks = toks(tm.group(1)) if tm else set()
+                cands = [r for r in tk_cands if ttoks & toks(r.get("name"))]
+        else:
+            # Bare-ticker event pages (re-audit 2026-09-02: /pdufa/JAZZ said "target
+            # 2026-08-25" for a drug approved ON that date, 8 days on). These carry the
+            # same machine-written title plus an explicit target date, so the match is
+            # DOUBLE-anchored: the event's goal date must equal the page's stated
+            # target AND the title drug tokens must intersect the event name.
+            gm = re.search(r"target date for [A-Z]{1,6} [^<]{0,200}?is (\d{4}-\d{2}-\d{2})",
                            doc0)
-            ttoks = toks(tm.group(1)) if tm else set()
-            cands = [r for r in tk_cands if ttoks & toks(r.get("name"))]
+            tm = re.search(r"<title[^>]*>[A-Z]{1,6} PDUFA(?: date)?:\s*(.+?)(?:,\s*[A-Z][a-z]{2}| \|)",
+                           doc0)
+            if not (gm and tm):
+                continue
+            ttoks = toks(tm.group(1))
+            cands = [r for r in tk_cands if str(r.get("d"))[:10] == gm.group(1)
+                     and ttoks & toks(r.get("name"))]
         if not cands:
             continue
         if len(cands) > 1:
