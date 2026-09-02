@@ -1,4 +1,5 @@
 {
  "unsourced": 46,
- "note": "high-water mark; this number may only decrease"
+ "note": "high-water mark; this number may only decrease",
+ "recalibrated": "2026-09-02: a buggy snippet rewrite briefly wrote the literal string 'price-only' into 3 descriptions (CYTK/PHIO/URGN), which made the guard classify them as price-inferred and record a false floor of 43. The pages were reverted the same day; no page gained or lost a source. HEAD's committed baseline is 46 and the set of unsourced slugs is unchanged. Ratchet resumes from the true count."
 }

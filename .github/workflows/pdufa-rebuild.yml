@@ -152,6 +152,21 @@ jobs:
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_decisions_listing.py && python sync_api_from_pages.py
 
+      # SEO audit 2026-09-02b: position 3.70 with 0 clicks is a snippet problem, not a
+      # ranking problem. Titles/descriptions must ANSWER ("GENGLYCOS was approved on
+      # August 19, 2026, 4 days before its goal date"), not name the page. Runs daily so
+      # newly published decision pages conform without duplicating format logic in the
+      # page generator.
+      - name: Decision-page snippets in answer format
+        run: python rewrite_decision_snippets.py
+
+      # SEO audit 2026-09-02b breadth lever: grounding queries plateaued at 18 because
+      # entity markup was absent. Drug JSON-LD + alternateName lets an engine resolve
+      # daraxonrasib = RMC-6236 or zanidatamab = Ziihera FROM OUR MARKUP and cite us for
+      # either surface form. Runs after the drug-page build; test_drug_schema.py holds it.
+      - name: Drug schema + alternateName on drug pages
+        run: python add_drug_schema.py && python link_pdufa_explainer.py
+
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
       # came BEFORE the goal date; everything upstream depends on our own crawl hearing
       # the news. This asks FDA's Drugs@FDA feed directly for every armed event and
