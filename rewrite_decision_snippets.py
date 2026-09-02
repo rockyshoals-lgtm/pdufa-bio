@@ -115,14 +115,19 @@ def main():
             skipped += 1
             continue
         oc, drug = page_facts(doc)
-        if oc and not drug:
+        # Provenance labels are NOT drug names -- 24 pages briefly read "Primary-sourced
+        # was approved on..." because the label sat where the drug belongs in old titles.
+        JUNK = {"price-only", "source-verified", "primary-sourced", "unverified", ""}
+        if drug.lower() in JUNK:
             drug = listing_drug.get(slug, "")
-            if drug.lower() in ("price-only", "source-verified", "unverified"):
-                drug = ""
-        if not oc or not drug:
+        if drug.lower() in JUNK:
+            drug = ""
+        if not oc:
             print(f"  SKIP {slug}: unparseable title, not rewriting blind")
             skipped += 1
             continue
+        if not drug:
+            drug = "the application under review"   # answers without inventing a name
         company = company_of(doc, tk)
 
         goal = goals.get((tk, dcd))
@@ -145,14 +150,17 @@ def main():
             word_t, verb = f"Withdrawn {pretty(dcd, short=True)}", "was withdrawn on"
         # title budget 100 chars (test_meta_lengths.py); the drug name gives way at a
         # word boundary, WITHOUT an ellipsis (". w" reads as a mangled sentence stop)
-        suffix = f" {word_t} | {tk} FDA Decision | pdufa.bio"
-        room = 100 - len(suffix)
-        dshort = drug
-        if len(dshort) > room:
-            dshort = dshort[:room].rsplit(" ", 1)[0].rstrip(" ,(-/")
-            while dshort.count("(") > dshort.count(")"):   # never leave "(vusolimogene"
-                dshort = dshort[:dshort.rindex("(")].rstrip(" ,(-/")
-        title = f"{dshort}{suffix}"
+        if drug == "the application under review":
+            title = f"{tk} FDA Decision: {word_t} | pdufa.bio"
+        else:
+            suffix = f" {word_t} | {tk} FDA Decision | pdufa.bio"
+            room = 100 - len(suffix)
+            dshort = drug
+            if len(dshort) > room:
+                dshort = dshort[:room].rsplit(" ", 1)[0].rstrip(" ,(-/")
+                while dshort.count("(") > dshort.count(")"):   # never "(vusolimogene"
+                    dshort = dshort[:dshort.rindex("(")].rstrip(" ,(-/")
+            title = f"{dshort}{suffix}"
 
         if delta is None or delta == 0:
             when = f"{pretty(dcd)}" + (" (its PDUFA goal date)" if delta == 0 else "")
