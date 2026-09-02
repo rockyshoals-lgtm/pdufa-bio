@@ -160,12 +160,6 @@ jobs:
       - name: Decision-page snippets in answer format
         run: python rewrite_decision_snippets.py
 
-      # SEO audit 2026-09-02b breadth lever: grounding queries plateaued at 18 because
-      # entity markup was absent. Drug JSON-LD + alternateName lets an engine resolve
-      # daraxonrasib = RMC-6236 or zanidatamab = Ziihera FROM OUR MARKUP and cite us for
-      # either surface form. Runs after the drug-page build; test_drug_schema.py holds it.
-      - name: Drug schema + alternateName on drug pages
-        run: python add_drug_schema.py && python link_pdufa_explainer.py
 
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
       # came BEFORE the goal date; everything upstream depends on our own crawl hearing
@@ -348,6 +342,14 @@ jobs:
       # had no page. This is the surface for the queries we can prove convert.
       - name: "Drug pages (/drug/{name}) from dataset + decisions archive"
         run: python build_drug_pages.py
+
+      # SEO audit 2026-09-02b breadth lever: Drug JSON-LD + alternateName lets an engine
+      # resolve daraxonrasib = RMC-6236 or zanidatamab = Ziihera from OUR markup and cite
+      # us for either surface form. MUST run after build_drug_pages -- a regenerated page
+      # is born without the marker, and the first placement (before the build) would have
+      # shipped schema-less pages daily. test_drug_schema.py asserts the result.
+      - name: Drug schema + alternateName + explainer links on drug pages
+        run: python add_drug_schema.py && python link_pdufa_explainer.py
 
       # Red team 2026-08-11: /pdufa/LNTH redirected to June's CRL for a different molecule at T-2
       # before the Aug 13 MK-6240 PDUFA. Bare-ticker redirects go stale the day a decided ticker

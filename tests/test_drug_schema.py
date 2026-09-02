@@ -37,7 +37,9 @@ def test_drug_pages_carry_drug_schema():
             continue
         if ld.get("@type") != "Drug" or not str(ld.get("name", "")).strip():
             bad.append(f"/drug/{slug}: JSON-LD missing @type Drug or name")
-    assert checked > 400, f"only {checked} drug pages checked -- glob broken?"
+    # Floor calibrated to CI, where a thin-page pass noindexes ~229 of the 554 drug
+    # pages (local working trees see more indexable pages than a fresh CI build).
+    assert checked > 250, f"only {checked} drug pages checked -- glob broken?"
     assert not bad, ("drug pages without valid Drug schema -- run add_drug_schema.py:"
                      "\n  " + "\n  ".join(bad[:10])
                      + (f"\n  ... and {len(bad) - 10} more" if len(bad) > 10 else ""))
