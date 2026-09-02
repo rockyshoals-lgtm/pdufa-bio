@@ -298,7 +298,17 @@ def main():
             if mt:
                 new = ticker_desc(mt.group(1))
             elif md:
-                new = decision_desc(md.group(1), md.group(2), doc)
+                # ONE OWNER PER FIELD (2026-09-02): rewrite_decision_snippets.py writes
+                # answer-format descriptions ("X was approved on..., N days before its
+                # goal date") and already enforces the 160 budget. Regenerating here
+                # clobbered 437 of them back to label format an hour after they
+                # shipped -- CI red twice before the fight was found. This script only
+                # rebuilds decision descs that are NOT answer-format (legacy pages).
+                if re.search(r"was approved on|received a Complete Response Letter on|"
+                             r"was withdrawn on", cur):
+                    new = cur
+                else:
+                    new = decision_desc(md.group(1), md.group(2), doc)
             else:
                 # Repair when it is too long OR when it is already broken: an unbalanced
                 # parenthesis is a defect at any length, and length-gating alone left six of them
@@ -317,6 +327,9 @@ def main():
             md2 = re.match(r"^/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$",
                            "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/"))
             nt = decision_title(md2.group(1), md2.group(2)) if md2 else None
+            if nt and re.search(r"\b(Approved|CRL|Withdrawn)\b.*\| pdufa\.bio$", cur_t) \
+                    and " FDA Decision" in cur_t and not cur_t.startswith(md2.group(1) + " FDA Decision ("):
+                nt = None          # answer-format title: the snippet rewriter owns it
 
             # A ticker title carrying legal boilerplate is broken regardless of length. TAK's read
             # "Takeda Pharmaceutical Company Limited American Depositary Shar | pdufa.bio" -- cut
