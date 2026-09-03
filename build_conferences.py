@@ -45,6 +45,11 @@ BEGIN, END = "<!--CONFLIST:BEGIN-->", "<!--CONFLIST:END-->"
 LOOKBACK_DAYS = 150
 
 
+def _hub_exists(tk):
+    return bool(tk) and os.path.exists(os.path.join(SITE, "ticker", str(tk),
+                                                    "index.html"))
+
+
 def esc(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -198,11 +203,15 @@ def render(data, by_code, today):
 
         if pres:
             body = ('<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:9px">' + "".join(
-                f'<a href="/ticker/{esc(r["ticker"])}" style="display:inline-flex;gap:6px;'
+                (f'<a href="/ticker/{esc(r["ticker"])}"' if _hub_exists(r["ticker"])
+                 else '<span') +          # guard 58: a presenter with no hub gets a
+                                          # chip, not a link to a 404 (CRVO/ENTX/...)
+                f' style="display:inline-flex;gap:6px;'
                 f'align-items:baseline;padding:5px 9px;border:1px solid var(--line);'
                 f'border-radius:8px;text-decoration:none;font-size:12.5px">'
                 f'<b class="lit" style="color:#f0c86a">{esc(r["ticker"] or (r.get("company") or "")[:14])}</b>'
-                f'<span style="color:var(--mut2)">{esc((r.get("drug") or r.get("pres_type") or "")[:34])}</span></a>'
+                f'<span style="color:var(--mut2)">{esc((r.get("drug") or r.get("pres_type") or "")[:34])}</span>'
+                + ('</a>' if _hub_exists(r["ticker"]) else '</span>')
                 for r in pres[:24]) + '</div>'
                 f'<div style="font-size:11.5px;color:var(--mut2);margin-top:7px">'
                 f'{len(pres)} company presentation(s) we can source to a filing or company release. '

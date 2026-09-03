@@ -87,8 +87,24 @@ def facts(doc, slug):
     return ld
 
 
+def fda_brands():
+    """Brand names from FDA's Drugs@FDA feed (fetch_fda_brands.py), keyed by lead
+    generic. Final audit 09-02 §4: 'we hold MIMRYLO's brand name and throw it away' --
+    the brand is in the same payload as the approval date the watcher acts on."""
+    p = os.path.join(HERE, "_fda_brand_names.json")
+    if not os.path.exists(p):
+        return {}
+    try:
+        c = json.load(io.open(p, encoding="utf-8"))
+        return {k.lower(): v.get("brands") or [] for k, v in c.items()}
+    except Exception as e:
+        print(f"  WARN: brand cache unreadable ({e})")
+        return {}
+
+
 def main():
     syn = chembl_synonyms()
+    brands = fda_brands()
     changed = skipped = 0
     for p in sorted(glob.glob(os.path.join(SITE, "drug", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
@@ -96,10 +112,17 @@ def main():
         if "noindex" in doc[:2000]:
             continue
         ld = facts(doc, slug)
-        if ld and syn.get(slug):
+        if ld:
             have = {a.lower() for a in ld.get("alternateName", [])}
             have.add(str(ld.get("name", "")).lower())
-            extra = [s for s in syn[slug] if s.lower() not in have]
+            # FDA brand names FIRST (Mimrylo before PTG-300): the brand is what people
+            # actually search once a drug is approved
+            merged = (list(brands.get(str(ld.get("name", "")).lower(), []))
+                      + list(syn.get(slug) or []))
+            extra = []
+            for s in merged:
+                if s.lower() not in have and s.lower() not in {x.lower() for x in extra}:
+                    extra.append(s)
             if extra:
                 ld["alternateName"] = (ld.get("alternateName", []) + extra)[:10]
         if not ld or not ld.get("name"):

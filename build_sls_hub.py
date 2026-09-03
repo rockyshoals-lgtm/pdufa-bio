@@ -272,7 +272,7 @@ forecasts, price targets, or recommendations anywhere on this page.</p>
 <div class="grid4">
   <div class="stat"><div class="note">REGAL events (deaths)</div><div class="big">78 / 80</div><div class="note">as of May 11, 2026 &middot; {DAYS_SINCE}d ago</div></div>
   <div class="stat"><div class="note">80th event announced?</div><div class="big" style="color:var(--gold)">Not yet</div><div class="note">company says it will announce it</div></div>
-  <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$107.1M</div><div class="note">Mar 31, 2026 (+$7.5M warrants)</div></div>
+  <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$138.3M</div><div class="note">Jun 30, 2026 (Aug 11 8-K; was $71.8M at YE2025)</div></div>
   <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}{px_chg}</div><div class="note">52w ${lo52:.2f} to ${hi52:.2f} &middot; {lastd}{px_vol}</div></div>
 </div>
 
@@ -432,11 +432,11 @@ without weighting. Neither column is a recommendation.</p>
 <div class="fact">The <b>IDMC recommended continuation without modification</b> in August 2025, with no safety concerns identified.</div>
 <div class="fact"><b>Event accrual has run slower than projected</b>, which the company attributes to survival times appearing longer than expected (pooled, blinded).</div>
 <div class="fact"><b>FDA and EMA orphan drug designation</b> for GPS in AML, plus <b>FDA Fast Track</b> in AML.</div>
-<div class="fact"><b>$107.1M cash</b> at Mar 31, 2026 plus $7.5M of Q2 warrant proceeds; total liabilities $6.8M; no debt disclosed.</div>
+<div class="fact"><b>$138.3M cash</b> at Jun 30, 2026 (Aug 11 8-K), up from $71.8M at year-end 2025; no debt disclosed.</div>
 <div class="fact">A <b>$150M ATM is established and entirely unused</b>; the company states it has not sold any shares through it.</div>
 <div class="fact">Q1 2026 R&amp;D rose to $5.1M from $3.2M, attributed partly to <b>preparation for a potential BLA</b> for GPS following the final analysis.</div>
 <div class="fact">SLS009 at ASH 2025: <b>46% ORR</b> across cohorts, 58% in patients with one prior line, median OS 8.9 months in the least pre-treated cohort vs a stated ~2.5-month historical benchmark.</div>
-<div class="fact">A second, independent catalyst: 80-patient <b>Phase 2 of SLS009 in first-line AML, topline expected Q4 2026</b>.</div>
+<div class="fact">A second, independent catalyst: <b>Phase 2 of SLS009 in newly diagnosed first-line AML, topline expected Q4 2026</b> (28 patients enrolled per the Aug 11, 2026 8-K).</div>
 </div>
 <div class="card bear"><h3>Cited by the bear case</h3>
 <div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025; as of {VERIFIED_TXT} it is unannounced, {DAYS_SINCE} days past the 78-event as-of date and beyond all three windows implied by the company's own disclosed pace.</div>
@@ -462,14 +462,17 @@ without weighting. Neither column is a recommendation.</p>
 <div class="kv"><span>Final-analysis trigger</span><b>80 events (deaths), pooled across arms</b></div>
 <div class="kv"><span>Events disclosed</span><b>60 (Dec 2024) &rarr; 72 (Dec 26, 2025) &rarr; 78 (May 11, 2026)</b></div>
 <div class="kv"><span>Second asset</span><b>SLS009 (tambiciclib): selective CDK9 inhibitor</b></div>
-<div class="kv"><span>SLS009 next catalyst</span><b>Phase 2 first-line AML, 80 patients: topline expected Q4 2026</b></div>
+<div class="kv"><span>SLS009 next catalyst</span><b>Phase 2 first-line AML topline expected Q4 2026 (28 enrolled, Aug 11 8-K)</b></div>
+<div class="kv"><span>SLS009 conference</span><b>Three PRECLINICAL posters (PDAC, with Univ. of Wisconsin) at the AACR Conference on Pancreatic Cancer, Sep 25 to 28, 2026, San Diego. Preclinical data, not a clinical readout; the clinical-readout conference statistics on this site do not apply to it.</b></div>
 </div>
 
 <h2>Primary sources</h2>
 <ul>
 <li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_8k.htm">SEC Form 8-K, filed June 24, 2026 (Item 5.02(e))</a>: the executive change-of-control amendments, in full.</li>
 <li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-1.htm">Exhibit 10.1</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-2.htm">Exhibit 10.2</a>: the underlying agreements.</li>
-<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC 8-K Exhibit 99.1: Q1 2026 results (May 12, 2026)</a>: 78 events as of May 11; 80th-event trigger sequence; $107.1M cash.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm">SEC 8-K Exhibit 99.1: Q2 2026 results (Aug 11, 2026)</a>: Q4 2026 topline guidance re-confirmed for SLS009 Phase 2 (28 enrolled) and REGAL final analysis following the 80th event; $138.3M cash at Jun 30.</li>
+<li><a href="https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html">SELLAS: SLS009 preclinical PDAC posters at the AACR Conference on Pancreatic Cancer (Sep 2, 2026)</a></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC 8-K Exhibit 99.1: Q1 2026 results (May 12, 2026)</a>: 78 events as of May 11; 80th-event trigger sequence.</li>
 <li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Provides-Update-on-Pivotal-Phase-3-REGAL-Trial-of-Galinpepimut-S-GPS-in-Acute-Myeloid-Leukemia-AML/default.aspx">SELLAS: REGAL update (Dec 29, 2025)</a>: 72 events as of Dec 26, 2025; no statistical penalty.</li>
 <li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Announces-Independent-Data-Monitoring-Committee-Periodic-Review-and-Positive-Recommendation-to-Continue-Pivotal-Phase-3-REGAL-Trial-of-GPS-in-AML-Without-Modification/default.aspx">SELLAS: IDMC periodic review (Aug 7, 2025)</a></li>
 <li><a href="https://clinicaltrials.gov/study/NCT04229979">ClinicalTrials.gov: REGAL (NCT04229979)</a></li>

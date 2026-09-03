@@ -359,7 +359,9 @@ jobs:
         # drugs added since yesterday, so the network cost is seconds. The audit's
         # correction (09-02c): alternateName breadth is a DATA step -- ChEMBL's
         # molecule_synonyms, same-molecule-verified -- not more schema work.
-        run: python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
+        # fetch_fda_brands: final audit 09-02 §4 -- the brand (MIMRYLO) is in the same
+        # FDA payload as the approval date; every approval self-populates its brand.
+        run: python fetch_fda_brands.py && python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
 
       # Red team 2026-08-11: /pdufa/LNTH redirected to June's CRL for a different molecule at T-2
       # before the Aug 13 MK-6240 PDUFA. Bare-ticker redirects go stale the day a decided ticker

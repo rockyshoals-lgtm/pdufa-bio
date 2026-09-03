@@ -265,6 +265,20 @@ def main():
         m1, m2 = T1.match(ttl_), T2.match(ttl_)
         drug_ = m1.group(4) if m1 else (m2.group(3) if m2 else "")
         if not drug_:
+            # ANSWER-FORMAT titles (rewrite_decision_snippets.py, 2026-09-02):
+            # "{drug} Approved Aug 19, 2026, 4 Days Early | RARE FDA Decision | pdufa.bio".
+            # When T1/T2 stopped matching, THIS SOURCE COLLAPSED SILENTLY and the daily
+            # rebuild deleted 229 brand-name drug pages (bixlenvo, zusduri, arexvy...)
+            # because a drug that vanishes from the data loses its page BY DESIGN. The
+            # prune was correct; the parser was blind. Never let a title-format change
+            # starve this source again without test_corpus_floor.py catching it.
+            m3 = re.match(r"^(.+?)\s+(?:Approved|CRL|Withdrawn)\b.*\|\s*[A-Z]{1,6} "
+                          r"FDA Decision\s*\|", ttl_)
+            drug_ = m3.group(1).strip() if m3 else ""
+            if drug_.lower() in ("price-only", "source-verified", "primary-sourced",
+                                 "the application under review"):
+                drug_ = ""
+        if not drug_:
             continue
         # The title may carry a shortened form ("MIPLYFFA (MY-PLY-FAH)") while the page body holds
         # the full one with the generic name ("MIPLYFFA (MY-PLY-FAH) (arimoclomol)"). The generic

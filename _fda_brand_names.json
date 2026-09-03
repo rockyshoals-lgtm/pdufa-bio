@@ -1,0 +1,93 @@
+{
+ "tebipenem": {
+  "brands": [],
+  "ticker": "GSK",
+  "decided": "2026-06-17"
+ },
+ "olezarsen": {
+  "brands": [
+   "Tryngolza"
+  ],
+  "ticker": "IONS",
+  "decided": "2026-06-24"
+ },
+ "veligrotug": {
+  "brands": [
+   "Lumvoa"
+  ],
+  "ticker": "VRDN",
+  "decided": "2026-06-26"
+ },
+ "atacicept": {
+  "brands": [
+   "Trutakna"
+  ],
+  "ticker": "VERA",
+  "decided": "2026-07-07"
+ },
+ "lipfendra": {
+  "brands": [],
+  "ticker": "MRK",
+  "decided": "2026-07-16"
+ },
+ "gedatolisib": {
+  "brands": [],
+  "ticker": "CELC",
+  "decided": "2026-07-14"
+ },
+ "centanafadine": {
+  "brands": [],
+  "ticker": "OTSKY",
+  "decided": "2026-07-24"
+ },
+ "iberdomide": {
+  "brands": [
+   "Zenbexus"
+  ],
+  "ticker": "BMY",
+  "decided": "2026-08-13"
+ },
+ "bictegravir": {
+  "brands": [
+   "Biktarvy",
+   "Bixlenvo"
+  ],
+  "ticker": "GILD",
+  "decided": "2026-08-27"
+ },
+ "garetosmab": {
+  "brands": [
+   "Pasatru"
+  ],
+  "ticker": "REGN",
+  "decided": "2026-08-19"
+ },
+ "zidesamtinib": {
+  "brands": [
+   "Jideytro"
+  ],
+  "ticker": "NUVL",
+  "decided": "2026-07-22"
+ },
+ "oveporexton": {
+  "brands": [],
+  "ticker": "TAK",
+  "decided": "2026-08-05"
+ },
+ "bevacizumab": {
+  "brands": [
+   "Zirabev",
+   "Avastin",
+   "Jobevne"
+  ],
+  "ticker": "OTLK",
+  "decided": "2026-07-24"
+ },
+ "rusfertide": {
+  "brands": [
+   "Mimrylo"
+  ],
+  "ticker": "PTGX",
+  "decided": "2026-08-28"
+ }
+}

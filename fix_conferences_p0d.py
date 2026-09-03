@@ -124,10 +124,18 @@ def main(dry):
 
         # publish the announced upcoming presenters, else keep the honest placeholder
         if n_up:
+            def _hub(t):
+                import os as _os
+                return _os.path.exists(_os.path.join(SITE, "ticker", str(t),
+                                                     "index.html"))
             cards = ''.join(
-                f'<a class="card" href="/ticker/{t}" style="display:block;text-decoration:none">'
-                f'<b style="color:#e3ba5e">{t}</b><div style="font-size:12.5px;color:#a7bcd9">'
-                f'Presenting at {code} 2026: announced</div></a>' for t in f['upcoming_tickers'])
+                # guard 58: a presenter with no ticker hub gets a card, not a 404 link
+                (f'<a class="card" href="/ticker/{t}" style="display:block;text-decoration:none">'
+                 if _hub(t) else
+                 '<span class="card" style="display:block">')
+                + f'<b style="color:#e3ba5e">{t}</b><div style="font-size:12.5px;color:#a7bcd9">'
+                + f'Presenting at {code} 2026: announced</div>'
+                + ('</a>' if _hub(t) else '</span>') for t in f['upcoming_tickers'])
             h = re.sub(r'<h2>Biotech presenters</h2><div class="grid">.*?</div></div>',
                        f'<h2>Biotech presenters</h2><div class="grid">{cards}</div>', h, count=1, flags=re.S)
 
