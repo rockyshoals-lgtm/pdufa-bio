@@ -428,6 +428,11 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/TAK-rusfertide",
+   "destination": "/pdufa/PTGX-rusfertide",
+   "permanent": true
+  },
+  {
    "source": "/drug/aminolevulinic-acid-hydrochloride",
    "destination": "/drug/ameluz",
    "permanent": true
@@ -525,11 +530,6 @@
   {
    "source": "/drug/zanidatamab-hrii",
    "destination": "/drug/ziihera",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/TAK-rusfertide",
-   "destination": "/pdufa/PTGX-rusfertide",
    "permanent": true
   }
  ],
