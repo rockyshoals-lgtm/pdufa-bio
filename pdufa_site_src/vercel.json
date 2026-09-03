@@ -433,6 +433,16 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/REPL",
+   "destination": "/fda-decision/REPL-2026-08-06",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/TENX",
+   "destination": "/ticker/TENX",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -828,6 +838,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/oral-levosimendan",
+   "destination": "/drug/tnx-103",
+   "permanent": true
+  },
+  {
    "source": "/drug/oral-semaglutide",
    "destination": "/drug/rybelsus",
    "permanent": true
@@ -1075,16 +1090,6 @@
   {
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/REPL",
-   "destination": "/fda-decision/REPL-2026-08-06",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/TENX",
-   "destination": "/ticker/TENX",
    "permanent": true
   }
  ],
