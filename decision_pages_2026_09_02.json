@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "PTGX",
+  "date": "2026-08-28",
+  "outcome": "Approved",
+  "drug": "MIMRYLO (rusfertide)",
+  "indication": "Erythrocytosis in adults with polycythemia vera (PV)",
+  "company": "Protagonist Therapeutics, Inc.",
+  "cap": "Mid",
+  "headline": "MIMRYLO (rusfertide) approved on August 28, 2026 - 33 days before its September 30 PDUFA goal date - as the first hepcidin mimetic for polycythemia vera.",
+  "pdufa_note": "The PDUFA target action date was September 30, 2026; the FDA approved the NDA on August 28, 33 days early, under Priority Review. MIMRYLO is a first-in-class hepcidin mimetic, administered once weekly by subcutaneous injection, that regulates iron distribution to control hematocrit in adults with polycythemia vera. Approval rests on the Phase 3 VERIFY study (NCT05210790, 293 patients): 76.9% of MIMRYLO patients achieved a clinical response during weeks 20-32, with reduced phlebotomy burden and improved fatigue versus placebo on top of standard of care. The most common adverse reactions were injection site reactions (56%) and anemia (16%). Protagonist discovered rusfertide and led development through Phase 3; Takeda holds exclusive global development and commercialization rights. FDA announced the approval as the first drug of its kind for this rare blood disorder.",
+  "source": "https://www.takeda.com/newsroom/newsreleases/2026/fda-approval-mimrylo/",
+  "source_label": "Takeda press release, August 28, 2026 (with FDA press announcement)"
+ }
+]

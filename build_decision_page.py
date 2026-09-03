@@ -125,9 +125,13 @@ def build(e, px, write=True):
     head = tpl[:tpl.index('<div class="bc">')]          # chrome/CSS only -- carries no data
     tail = tpl[tpl.index('<div class="legal">'):]
 
-    head = head.replace(
-        '<title>VERA FDA Decision (Jul 7, 2026): Atacicept - (ORIGIN 3): Approved | pdufa.bio</title>',
-        f'<title>{tk} FDA Decision ({pretty(d)}): {e["drug"]}: {otxt} | pdufa.bio</title>')
+    # REGEX, not a literal of the template's original title: the VERA template's title
+    # is rewritten daily to answer format (rewrite_decision_snippets.py), so a literal
+    # replace silently keeps VERA's title on the new page -- PTGX-2026-08-28 shipped
+    # titled "Trutakna (atacicept) Approved Jul 7, 2026" before this line changed.
+    head = re.sub(r"<title>.*?</title>",
+                  f'<title>{tk} FDA Decision ({pretty(d)}): {e["drug"]}: {otxt} | pdufa.bio</title>',
+                  head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*"',
                   f'<meta name="description" content="{tk} ({e["company"]}) FDA decision on {pretty(d)} '
                   f'for {e["drug"]}: {otxt}. See the 120-trading-day run-up into the decision, '

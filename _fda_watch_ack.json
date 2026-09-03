@@ -1,0 +1,10 @@
+{
+ "note": "Reviewed early-approval watcher hits that are NOT our tracked event. Shrink this list; never grow it silently.",
+ "acks": [
+  {
+   "ticker": "GILD",
+   "ap_date": "2026-08-27",
+   "reason": "Bixlenvo (bictegravir/lenacapavir) approval, already published as GILD-2026-08-27. Shared-ingredient hit on the SEPARATE once-weekly oral Yeztugo application (goal 2027-02-02), which remains pending; no approval news for that application as of 2026-09-02."
+  }
+ ]
+}
