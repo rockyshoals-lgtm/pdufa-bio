@@ -1,0 +1,5 @@
+  2026-09-02: 20 reporters, 20 new logged
+
+  dataset now: 1257 reporter-days · base run-rate 25% · modest-gap setup 38/149 (25%) · +20 this run
+  Educational only. Not investment advice.
+DONE_MARKER 

@@ -526,6 +526,29 @@
    "source": "/drug/zanidatamab-hrii",
    "destination": "/drug/ziihera",
    "permanent": true
+<<<<<<< HEAD
+=======
+  },
+  {
+   "source": "/drug/ziftomenib",
+   "destination": "/drug/komzifti",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zoliflodacin",
+   "destination": "/drug/nuzolvence",
+   "permanent": true
+  },
+  {
+   "source": "/drug/zopapogene-imadenovec-drba",
+   "destination": "/drug/papzimeos",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/TAK-rusfertide",
+   "destination": "/pdufa/PTGX-rusfertide",
+   "permanent": true
+>>>>>>> 54a5df127 (Audit 09-02c actioned: ChEMBL synonyms -> alternateName on 259 drugs (same-molecule verified), LLY-(LLY) snippet fix (187 pages), 11 CRL pages cite FDA's own letters (floor-guarded), TAK-rusfertide founding-commit artifact retired)
   }
  ],
  "headers": [

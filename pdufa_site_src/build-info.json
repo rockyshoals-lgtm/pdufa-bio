@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
  "built": "2026-09-02T22:56:49+00:00",
+=======
+ "built": "2026-09-03T00:53:59+00:00",
+>>>>>>> 54a5df127 (Audit 09-02c actioned: ChEMBL synonyms -> alternateName on 259 drugs (same-molecule verified), LLY-(LLY) snippet fix (187 pages), 11 CRL pages cite FDA's own letters (floor-guarded), TAK-rusfertide founding-commit artifact retired)
  "next_date": "2026-09-11",
  "next_ticker": "TLX",
  "next_days": 9

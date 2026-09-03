@@ -160,6 +160,12 @@ jobs:
       - name: Decision-page snippets in answer format
         run: python rewrite_decision_snippets.py
 
+      # Audit 09-02c item 3: we hold 458 FDA CRLs and cited zero. Each CRL decision page
+      # now links the FDA-hosted letter PDF when date (letter <= page date <= +4d) and
+      # company both match -- a wrong primary source is worse than none, so ambiguity skips.
+      - name: FDA CRL letters onto CRL decision pages
+        run: python link_crl_letters.py
+
 
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
       # came BEFORE the goal date; everything upstream depends on our own crawl hearing
@@ -349,7 +355,11 @@ jobs:
       # is born without the marker, and the first placement (before the build) would have
       # shipped schema-less pages daily. test_drug_schema.py asserts the result.
       - name: Drug schema + alternateName + explainer links on drug pages
-        run: python add_drug_schema.py && python link_pdufa_explainer.py
+        # fetch_chembl_synonyms is incremental (cache-first): a normal day fetches only
+        # drugs added since yesterday, so the network cost is seconds. The audit's
+        # correction (09-02c): alternateName breadth is a DATA step -- ChEMBL's
+        # molecule_synonyms, same-molecule-verified -- not more schema work.
+        run: python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
 
       # Red team 2026-08-11: /pdufa/LNTH redirected to June's CRL for a different molecule at T-2
       # before the Aug 13 MK-6240 PDUFA. Bare-ticker redirects go stale the day a decided ticker

@@ -35,6 +35,25 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 B, E = "<!--DRUGLD:BEGIN-->", "<!--DRUGLD:END-->"
 
 
+def chembl_synonyms():
+    """Verified same-molecule aliases from ChEMBL (fetch_chembl_synonyms.py).
+
+    Audit 09-02c's correction: we held aliases for only 4% of drugs, so alternateName
+    was sparse BY DATA, not by implementation. ChEMBL's molecule_synonyms -- research
+    codes, INNs, trade names -- close that gap; the fetcher only caches synonyms whose
+    top hit is provably the same molecule.
+    """
+    p = os.path.join(HERE, "chembl_synonyms_cache.json")
+    if not os.path.exists(p):
+        return {}
+    try:
+        c = json.load(io.open(p, encoding="utf-8"))
+        return {slug: v.get("synonyms") or [] for slug, v in c.items()}
+    except Exception as e:
+        print(f"  WARN: synonyms cache unreadable ({e})")
+        return {}
+
+
 def facts(doc, slug):
     h = re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
     if not h:
@@ -69,6 +88,7 @@ def facts(doc, slug):
 
 
 def main():
+    syn = chembl_synonyms()
     changed = skipped = 0
     for p in sorted(glob.glob(os.path.join(SITE, "drug", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
@@ -76,6 +96,12 @@ def main():
         if "noindex" in doc[:2000]:
             continue
         ld = facts(doc, slug)
+        if ld and syn.get(slug):
+            have = {a.lower() for a in ld.get("alternateName", [])}
+            have.add(str(ld.get("name", "")).lower())
+            extra = [s for s in syn[slug] if s.lower() not in have]
+            if extra:
+                ld["alternateName"] = (ld.get("alternateName", []) + extra)[:10]
         if not ld or not ld.get("name"):
             print(f"  SKIP /drug/{slug}: no readable h1 name")
             skipped += 1

@@ -170,7 +170,11 @@ def main():
             when = f"{pretty(dcd)}, {delta} days after its {pretty(goal)} PDUFA goal date"
         # 160-char budget (test_meta_lengths.py): the answer sentence is non-negotiable,
         # the tail and the long-form names give way in order.
-        core = f"{company} ({tk}): {drug} {verb} {when}."
+        # Older archive records lack a company name and fall back to the ticker --
+        # "LLY (LLY):" shipped on ~25% of the first rewrite (audit 09-02c). When the
+        # company IS the ticker, say it once.
+        who = f"{company} ({tk})" if company != tk else tk
+        core = f"{who}: {drug} {verb} {when}."
         for tail in (" Decision source document and the 120-trading-day run-up "
                      "into the date.", " Source and run-up included.", ""):
             desc = core + tail
