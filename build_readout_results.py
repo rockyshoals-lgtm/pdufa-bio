@@ -140,7 +140,16 @@ def load_past_readouts():
     for r in arr:
         if r.get("type") != "Readout" or not r.get("t"):
             continue
-        ym = (r.get("dm") or str(r.get("d") or "")[:7])
+        # THE EVENT DATE IS TRUTH, never the legacy dm month (audit 09-04: TYRA's row
+        # was corrected to 2027 but a fossil dm=2026-08 kept rendering "Aug 2026" with
+        # a -8% move -- a measured market reaction attached to an event that has not
+        # happened). And a Reported row belongs in the confirmed section with its
+        # outcome in words, never as an anonymous window move.
+        if str(r.get("st", "")) == "Reported":
+            continue
+        ym = str(r.get("d") or "")[:7]
+        if not re.match(r'^\d{4}-\d{2}$', ym):
+            ym = str(r.get("dm") or "")
         if not re.match(r'^\d{4}-\d{2}$', ym) or ym >= cur:
             continue  # only fully-elapsed month windows
         out.append({"id": r.get("id"), "t": r["t"], "ym": ym,

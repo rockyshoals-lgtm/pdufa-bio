@@ -47,6 +47,28 @@
    "day_move_pct": 43.5,
    "guided_window": "Q3 2026",
    "note": "Reported early in the company-guided Q3 2026 window."
+  },
+  {
+   "id": "readout_tenx_2026-08-31",
+   "t": "TENX",
+   "drug": "TNX-103 (oral levosimendan), Ph3 LEVEL",
+   "reported_date": "2026-08-10",
+   "outcome": "primary endpoint not met",
+   "summary": "Phase 3 LEVEL (NCT05983250) in PH-HFpEF did not meet its primary endpoint: patients walked 3.5 metres further than placebo in six minutes at Week 12 (p=0.63), a difference small enough to be chance; the key secondary (KCCQ-TSS, 0.1 points) was also not met. A prespecified subgroup with baseline 6MWD under 333 m improved 26.3 m (nominal p=0.0112) and NT-proBNP fell 49% versus placebo (nominal p<0.0001), but the company states: 'Nominal p-values are not adjusted for multiplicity and these analyses do not establish efficacy.' Tenax intends to request a Type C meeting with FDA. Full results were a Late-Breaking Clinical Science presentation at ESC Congress 2026 (Munich). LEVEL-2, a separate Phase 3 of the same drug, continues enrolling into 2027.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/08/10/3341675/12401/en/tenax-therapeutics-announces-topline-results-from-phase-3-level-clinical-trial-of-tnx-103-in-patients-with-ph-hfpef.html",
+   "guided_window": "guided Aug 2026 (month)",
+   "note": "Caught 24 days late by the 09-02e audit; the CT.gov readout watcher now flags the primary-completion-ACTUAL signature this row showed."
+  },
+  {
+   "id": "readout_mplt_2026-08-31",
+   "t": "MPLT",
+   "drug": "ML-007C-MA, Ph2 ZEPHYR (schizophrenia)",
+   "reported_date": "2026-07-27",
+   "outcome": "positive",
+   "summary": "Phase 2 ZEPHYR met its primary endpoint: statistically significant improvement in PANSS total score versus placebo at Week 5 on the 210/3 mg BID dose in acute schizophrenia. Generally well tolerated; no serious or drug-related severe adverse events reported.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/07/27/3333379/0/en/MapLight-Therapeutics-Announces-Positive-Topline-Results-from-Phase-2-ZEPHYR-Trial-of-ML-007C-MA-in-Schizophrenia.html",
+   "guided_window": "guided Aug 2026 (month)",
+   "note": "Caught 38 days late by the 09-02e audit."
   }
  ]
 }
