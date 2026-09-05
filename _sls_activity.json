@@ -461,18 +461,39 @@
      "quote": "The second quarter was an important period of execution for SELLAS as we continued to advance both of our lead clinical programs, GPS and SLS009,"
     }
    ]
+  },
+  {
+   "kind": "press_release",
+   "date": "2026-09-02",
+   "form": "IR press release",
+   "title": "SELLAS Life Sciences to Present Preclinical Data on SLS009 in Pancreatic Ductal Adenocarcinoma at the 2026 AACR Conference on Pancreatic Cancer",
+   "url": "https://ir.sellaslifesciences.com/news/News-Details/2026/SELLAS-Life-Sciences-to-Present-Preclinical-Data-on-SLS009-in-Pancreatic-Ductal-Adenocarcinoma-at-the-2026-AACR-Conference-on-Pancreatic-Cancer/default.aspx",
+   "material": true,
+   "excerpt": "SELLAS Life Sciences to Present Preclinical Data on SLS009 in Pancreatic Ductal Adenocarcinoma at the 2026 AACR Conference on Pancreatic Cancer, Sellas Life Sciences Skip to main content Skip to main content Company Management Team Board of Directors Scientific Advisory Board Partnerships Contact Us",
+   "quotes": [
+    {
+     "speaker": "Angelos Stergiou",
+     "role": "President and Chief Executive Officer",
+     "quote": "Pancreatic cancer remains one of the most difficult solid tumors to treat, with a significant need for new therapeutic approaches,"
+    },
+    {
+     "speaker": "Assistant Professor",
+     "role": "",
+     "quote": "These studies are designed to deepen our understanding of the mechanistic and translational rationale for CDK9 inhibition in pancreatic cancer. The presentations will explore the potential for SLS009 to create synthetic lethal interactions through rational combinations with BET- and KRAS-directed approaches, as well as its potential to exploit MYC-associated vulnerabilities. We look forward to sha..."
+    }
+   ]
   }
  ],
- "cursor": "2026-08-11",
+ "cursor": "2026-09-02",
  "price": {
-  "as_of": "2026-08-28",
-  "close": 13.21,
-  "prev_close": 15.21,
-  "change_pct": -13.15,
-  "volume": 9825411,
-  "rel_volume": 1.45,
+  "as_of": "2026-09-04",
+  "close": 13.86,
+  "prev_close": 13.7,
+  "change_pct": 1.17,
+  "volume": 4526880,
+  "rel_volume": 0.63,
   "low_52w": 1.39,
   "high_52w": 15.46
  },
- "last_run": "2026-08-29"
+ "last_run": "2026-09-04"
 }

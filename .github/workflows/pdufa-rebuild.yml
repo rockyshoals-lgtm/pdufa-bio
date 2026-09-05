@@ -166,6 +166,12 @@ jobs:
       - name: FDA CRL letters onto CRL decision pages
         run: python link_crl_letters.py
 
+      # /crl hub -- asked in three audits: the full released-CRL corpus, by year, each
+      # letter linking FDA's own PDF; counts never rates. Runs after the letter linker
+      # so decision-page cross-links are current.
+      - name: CRL corpus hub (/crl)
+        run: python build_crl_hub.py
+
 
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
       # came BEFORE the goal date; everything upstream depends on our own crawl hearing
@@ -476,6 +482,16 @@ jobs:
         if: ${{ always() }}
         run: python check_readouts_reported.py > readouts.txt 2>&1 || true; cat readouts.txt
 
+      # Audit 09-02e: "we pointed the watcher at half the calendar." This asks
+      # ClinicalTrials.gov about every pending readout with an nct_id -- TERMINATED /
+      # COMPLETED / results-posted / primary-completion-ACTUAL are leads. ADVISORY (not
+      # blocking) because its first run surfaced a 20-lead backlog that must be
+      # verified against sponsor releases, not bulk-acked; guard 59 stays blocking for
+      # company-Guided rows. Promote to blocking once the backlog clears.
+      - name: Readout registry watch vs ClinicalTrials.gov (advisory)
+        if: ${{ always() }}
+        run: python watch_readouts.py --dry-run > readouts_watch.txt 2>&1 || true; cat readouts_watch.txt
+
       - name: Open ONE review issue if anything needs primary-source verification
         if: ${{ always() }}
         env:
@@ -486,6 +502,7 @@ jobs:
           grep -q "ALREADY DECIDED" decided.txt && NEED=1
           grep -q "ADCOM NEEDS RESULT" adcom.txt && NEED=1
           grep -q "READOUT NEEDS VERIFICATION" readouts.txt && NEED=1
+          grep -q "READOUT WATCH:" readouts_watch.txt 2>/dev/null && NEED=1
           if [ "$NEED" = "1" ]; then
             {
               echo "The server-side rebuild found item(s) needing primary-source verification before publishing."
@@ -500,6 +517,8 @@ jobs:
               echo '```'; cat adcom.txt; echo '```'
               echo; echo "## Readouts whose window closed last month (confirm exact date + outcome to upgrade)"
               echo '```'; cat readouts.txt; echo '```'
+              echo; echo "## Registry watch — ClinicalTrials.gov contradicts a pending readout (TERMINATED / COMPLETED / results posted)"
+              echo '```'; cat readouts_watch.txt 2>/dev/null || echo "(not run)"; echo '```'
             } > issue.md
             gh issue create --title "pdufa.bio review: verify + publish ($(date -u +%F))" \
               --body-file issue.md --label "reconciliation" || echo "issue create skipped"
