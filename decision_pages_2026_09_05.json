@@ -1,0 +1,54 @@
+[
+  {
+    "ticker": "RVMD",
+    "date": "2026-08-26",
+    "outcome": "Approved",
+    "drug": "Rasonque (daraxonrasib)",
+    "indication": "Metastatic pancreatic adenocarcinoma after at least one prior systemic therapy, or in patients not candidates for multiagent systemic therapy",
+    "company": "Revolution Medicines, Inc.",
+    "cap": "Large",
+    "headline": "Rasonque (daraxonrasib), a first-in-class RAS inhibitor, approved for previously treated metastatic pancreatic adenocarcinoma (Aug 26 2026).",
+    "pdufa_note": "Per the FDA's own announcement, the approval came 6.5 months before the user fee deadline, which places the goal date around mid-March 2027; no day-precision PDUFA date was ever publicly disclosed, so this application was never a dated event on our calendar. The application carried Breakthrough Therapy, Orphan Drug and Priority Review designations and was reviewed under the Commissioner's National Priority Voucher pilot. In the randomized trial, median overall survival was 13.2 months versus 6.7 months for standard chemotherapy.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-class-targeted-therapy-metastatic-pancreatic-cancer",
+    "source_label": "FDA press announcement, August 26, 2026"
+  },
+  {
+    "ticker": "IONS",
+    "date": "2026-09-03",
+    "outcome": "Approved",
+    "drug": "Zanvastro (zilganersen)",
+    "indication": "Alexander disease in pediatric and adult patients",
+    "company": "Ionis Pharmaceuticals, Inc.",
+    "cap": "Mid",
+    "headline": "Zanvastro (zilganersen) approved as the first treatment for Alexander disease, in pediatric and adult patients (Sep 3 2026).",
+    "pdufa_note": "The PDUFA goal date was September 22, 2026. The FDA approved on September 3, 2026, 19 days early. Zanvastro is an antisense oligonucleotide given by intrathecal injection every three months, and the first FDA-approved treatment for Alexander disease. The application carried Orphan Drug, Fast Track, Breakthrough Therapy and Rare Pediatric Disease designations, the last conferring a priority review voucher.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-alexander-disease",
+    "source_label": "FDA press announcement, September 3, 2026"
+  },
+  {
+    "ticker": "ROIV",
+    "date": "2026-08-27",
+    "outcome": "Approved",
+    "drug": "LISRAYA (brepocitinib)",
+    "indication": "Dermatomyositis in adults",
+    "company": "Roivant Sciences Ltd. (Priovant Therapeutics)",
+    "cap": "Large",
+    "headline": "LISRAYA (brepocitinib), a first-in-class oral TYK2/JAK1 inhibitor from Priovant (a Roivant company), approved for adults with dermatomyositis (Aug 27 2026).",
+    "pdufa_note": "The PDUFA goal date was September 30, 2026, under Priority Review granted at the March 2026 NDA acceptance. The FDA approved on August 27, 2026, 34 days early. LISRAYA is the first targeted oral therapy approved for dermatomyositis, supported by the Phase 3 VALOR study of 241 adults. Priovant Therapeutics is a Roivant subsidiary in which Pfizer holds a stake; Pfizer originated brepocitinib.",
+    "source": "https://investor.roivant.com/news-releases/news-release-details/roivant-announces-fda-approval-lisrayatm-brepocitinib-adults",
+    "source_label": "Roivant investor release, August 27, 2026"
+  },
+  {
+    "ticker": "PFE",
+    "date": "2026-08-27",
+    "outcome": "Approved",
+    "drug": "LISRAYA (brepocitinib)",
+    "indication": "Dermatomyositis in adults",
+    "company": "Pfizer Inc. (partner; sponsor Priovant Therapeutics)",
+    "cap": "Large",
+    "headline": "LISRAYA (brepocitinib), the Pfizer-originated TYK2/JAK1 inhibitor developed by Priovant, approved for adults with dermatomyositis (Aug 27 2026).",
+    "pdufa_note": "The PDUFA goal date was September 30, 2026, under Priority Review granted at the March 2026 NDA acceptance. The FDA approved on August 27, 2026, 34 days early. The sponsor is Priovant Therapeutics, a Roivant subsidiary; Pfizer originated brepocitinib and holds a stake in Priovant, which is why this event is tracked on both tickers. Supported by the Phase 3 VALOR study of 241 adults.",
+    "source": "https://investor.roivant.com/news-releases/news-release-details/roivant-announces-fda-approval-lisrayatm-brepocitinib-adults",
+    "source_label": "Roivant investor release, August 27, 2026"
+  }
+]

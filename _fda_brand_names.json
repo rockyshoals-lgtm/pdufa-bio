@@ -89,5 +89,34 @@
   ],
   "ticker": "PTGX",
   "decided": "2026-08-28"
+ },
+ "camizestrant": {
+  "brands": [
+   "ETCAMAH"
+  ],
+  "ticker": "AZN",
+  "source": "fda.gov press announcement 2026-09-04 (manual seed; openFDA lag ~9d)",
+  "fetched": "2026-09-05"
+ },
+ "daraxonrasib": {
+  "brands": [
+   "RASONQUE"
+  ],
+  "source": "primary source verified 2026-09-05 (manual seed; openFDA lag)",
+  "fetched": "2026-09-05"
+ },
+ "zilganersen": {
+  "brands": [
+   "ZANVASTRO"
+  ],
+  "source": "primary source verified 2026-09-05 (manual seed; openFDA lag)",
+  "fetched": "2026-09-05"
+ },
+ "brepocitinib": {
+  "brands": [
+   "LISRAYA"
+  ],
+  "source": "primary source verified 2026-09-05 (manual seed; openFDA lag)",
+  "fetched": "2026-09-05"
  }
 }

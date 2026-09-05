@@ -1,0 +1,35 @@
+{
+ "_comment": "Hand-verified FDA approvals for drugs we hold a /drug page on. Every entry was checked against a primary FDA or sponsor source at write time. The guard (tests/test_drug_pages_state_approvals.py) asserts each drug's RENDERED page states the approval and carries no pending-state phrasing -- because the render is what AI systems ground on, and camizestrant's page taught Copilot 'pending' for a day after fda.gov said approved (audit 2026-09-05b). Grow this at verify-time, one entry per verified approval on a tracked drug page.",
+ "approvals": [
+  {
+   "slug": "camizestrant",
+   "date": "2026-09-04",
+   "brand": "Etcamah",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-new-breast-cancer-treatment"
+  },
+  {
+   "slug": "rusfertide",
+   "date": "2026-08-28",
+   "brand": "MIMRYLO",
+   "source": "https://ir.protagonist-inc.com/news-releases/news-release-details/protagonist-announces-fda-approval-mimrylotm-rusfertide-first"
+  },
+  {
+   "slug": "daraxonrasib",
+   "date": "2026-08-26",
+   "brand": "Rasonque",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-class-targeted-therapy-metastatic-pancreatic-cancer"
+  },
+  {
+   "slug": "zilganersen",
+   "date": "2026-09-03",
+   "brand": "Zanvastro",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-alexander-disease"
+  },
+  {
+   "slug": "brepocitinib",
+   "date": "2026-08-27",
+   "brand": "LISRAYA",
+   "source": "https://investor.roivant.com/news-releases/news-release-details/roivant-announces-fda-approval-lisrayatm-brepocitinib-adults"
+  }
+ ]
+}

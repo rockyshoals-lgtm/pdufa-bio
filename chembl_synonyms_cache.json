@@ -3744,5 +3744,66 @@
    "MGA012",
    "Retifanlimab"
   ]
+ },
+ "al001-phase": {
+  "name": "AL001 Phase",
+  "synonyms": []
+ },
+ "anaphylm": {
+  "name": "Anaphylm",
+  "synonyms": []
+ },
+ "avt05": {
+  "name": "AVT05",
+  "synonyms": []
+ },
+ "ebvallo": {
+  "name": "EBVALLO",
+  "synonyms": [
+   "ATA-129",
+   "ATA129",
+   "EBV-CTL",
+   "Tabelecleucel"
+  ]
+ },
+ "etcamah": {
+  "name": "Etcamah",
+  "synonyms": []
+ },
+ "kyv-101-kysa-1": {
+  "name": "KYV-101 KYSA-1",
+  "synonyms": []
+ },
+ "mimrylo": {
+  "name": "MIMRYLO",
+  "synonyms": []
+ },
+ "ml-007c-ma-phase": {
+  "name": "ML-007C-MA Phase",
+  "synonyms": []
+ },
+ "rgx": {
+  "name": "RGX",
+  "synonyms": []
+ },
+ "surf303-phase": {
+  "name": "SURF303 Phase",
+  "synonyms": []
+ },
+ "tnx-103": {
+  "name": "TNX-103",
+  "synonyms": []
+ },
+ "lisraya": {
+  "name": "LISRAYA",
+  "synonyms": []
+ },
+ "rasonque": {
+  "name": "Rasonque",
+  "synonyms": []
+ },
+ "zanvastro": {
+  "name": "Zanvastro",
+  "synonyms": []
  }
 }

@@ -97,6 +97,17 @@ jobs:
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
+      # Audit 2026-09-05b section 3: AI answer boxes quote sentences, not tables. This
+      # keeps the /calendar explainer block's numbers (early/on/late split) computed
+      # from the same collect() the timing page uses, fresh every build.
+      - name: Calendar explainer block (the sentence supply, idempotent)
+        run: python inject_calendar_explainer.py
+
+      # The month's decisions as dated sentences (Pharmacy Times' shape, our data,
+      # rebuilt daily so it is never frozen at publication).
+      - name: /fda-this-month monthly decisions page
+        run: python build_monthly_decisions.py
+
       # The homepage's live board is driven by the SLATE in api/data.js, and decided events
       # are supposed to leave it via this sweep -- which had not run since it was written:
       # not in the workflow, demanded a crawl CSV that stopped existing, and its parser was
@@ -179,6 +190,15 @@ jobs:
       # BLOCKS the run on an unreviewed approval -- a lead to verify, never auto-publish.
       - name: Early-approval watch against FDA's own feed
         run: python watch_fda_approvals.py
+
+      # Audit 2026-09-05b P0: camizestrant was approved with NO dated event to watch --
+      # its PDUFA date was extended and never re-disclosed, so the event watcher had
+      # nothing to key on. This one keys on the DRUG-PAGE corpus (FDA press RSS item
+      # bodies + oncology approval notifications + one openFDA recent-AP range query)
+      # and BLOCKS on an unreviewed lead. First sweep caught daraxonrasib, zilganersen
+      # and brepocitinib -- three approvals the event path had missed or not yet seen.
+      - name: Drug-page approval watch (every /drug page, not just dated events)
+        run: python watch_drug_approvals.py
 
       - name: Repair Event schema (location + datetime/TZ startDate)
         run: python fix_event_schema.py

@@ -1,0 +1,22 @@
+{
+ "acks": [
+  {
+   "slug": "tislelizumab",
+   "source": "openfda:20260825",
+   "reason": "Efficacy supplement (SUPPL-18) on marketed TEVIMBRA; our page tracks the TAK Dec 2027 readout, not this sBLA. Verified non-event for our tracked catalysts.",
+   "acked": "2026-09-05"
+  },
+  {
+   "slug": "tirzepatide",
+   "source": "openfda:20260826",
+   "reason": "Efficacy supplement (SUPPL-41) on marketed tirzepatide; our page tracks the LLY Oct 2027 readout, not this sBLA. Verified non-event for our tracked catalysts.",
+   "acked": "2026-09-05"
+  },
+  {
+   "slug": "tirzepatide",
+   "source": "openfda:20260827",
+   "reason": "Efficacy supplement (SUPPL-44) on marketed tirzepatide; same reasoning as SUPPL-41.",
+   "acked": "2026-09-05"
+  }
+ ]
+}

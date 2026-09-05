@@ -1,0 +1,15 @@
+[
+  {
+    "ticker": "AZN",
+    "date": "2026-09-04",
+    "outcome": "Approved",
+    "drug": "Etcamah (camizestrant)",
+    "indication": "HR-positive, HER2-negative locally advanced or metastatic breast cancer with an ESR1 mutation detected during aromatase inhibitor and CDK4/6 inhibitor therapy",
+    "company": "AstraZeneca PLC",
+    "cap": "Large",
+    "headline": "Etcamah (camizestrant), in combination with a CDK4/6 inhibitor, granted accelerated approval for HR-positive, HER2-negative advanced breast cancer with an ESR1 mutation detected in blood during endocrine therapy (Sep 4 2026).",
+    "pdufa_note": "This application had no publicly disclosed goal date at the time of approval. The NDA was accepted in July 2025 on the Phase 3 SERENA-6 trial; the Oncologic Drugs Advisory Committee voted 3-6 against on April 30, 2026; and the FDA extended the PDUFA goal date (announced May 27, 2026) without the new date ever being made public. The FDA granted accelerated approval on September 4, 2026. Per the FDA's announcement, this is the first approval of a cancer therapy guided by detection of a resistance mutation in circulating tumor DNA before imaging shows disease progression; confirmatory studies are required, the Guardant360 CDx assay was authorized as a companion diagnostic, and the label carries a boxed warning for irregular heart rhythm with certain co-administered medications.",
+    "source": "https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-new-breast-cancer-treatment",
+    "source_label": "FDA press announcement, September 4, 2026"
+  }
+]
