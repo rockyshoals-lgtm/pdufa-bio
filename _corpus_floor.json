@@ -1,7 +1,7 @@
 {
  "note": "high-water page counts per type; a build below 95% of a floor fails. Lower a floor BY HAND with a reason when a shrink is deliberate.",
  "floors": {
-  "drug": 557,
+  "drug": 561,
   "pdufa": 139,
   "fda-decision": 457,
   "conference": 14,
