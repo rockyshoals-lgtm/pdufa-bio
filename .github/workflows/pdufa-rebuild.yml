@@ -108,6 +108,19 @@ jobs:
       - name: /fda-this-month monthly decisions page
         run: python build_monthly_decisions.py
 
+      # Audit 09-05c order 3: implied-vs-actual. The ORATS chain archive (3.7 GB)
+      # lives on the local disk only, so build_implied_moves.py runs LOCALLY and
+      # commits implied_moves.json; CI just renders from it. If the JSON is absent
+      # these steps no-op rather than fail.
+      - name: Implied-vs-actual research page + positioning blocks
+        run: |
+          if [ -f implied_moves.json ]; then
+            python build_implied_page.py
+            python inject_positioning_blocks.py
+          else
+            echo "implied_moves.json absent -- skipping (computed locally)"
+          fi
+
       # The homepage's live board is driven by the SLATE in api/data.js, and decided events
       # are supposed to leave it via this sweep -- which had not run since it was written:
       # not in the workflow, demanded a crawl CSV that stopped existing, and its parser was

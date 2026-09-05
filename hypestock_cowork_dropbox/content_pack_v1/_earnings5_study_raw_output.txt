@@ -1,0 +1,50 @@
+  release-time DB: 921 tickers with a confident BMO/AMC pattern
+  reaction-day identification vs labeled subset (|gap|>=3): 52/60 agree = 87%
+
+==================================================================================================
+  837 earnings events 2026-08-08..2026-08-28 with tradeable bars (price>=$1, dv>=$2M, |gap|<=60)
+==================================================================================================
+  sides: {'UNK': 746, 'BMO': 59, 'AMC': 32}   (UNK = FMP did not carry a release time; kept separate, never guessed)
+
+  Q1 — HOW MANY EARNINGS PRODUCE A +5%-FROM-OPEN MOVE? (on the reaction day)
+                     n   hi>=+5%    rate  closed green  o2c>=+5%
+  ALL              837       348   41.6%         50.1%     20.4%
+  reacted D0       375       158   42.1%         53.6%     19.7%
+  reacted D+1      462       190   41.1%         47.2%     21.0%
+
+  Q2 — THE ROCKETS: does a big gap CONTINUE after the open? (all measured open->)
+  D0 reaction = BMO-style (gap at its own open); D+1 = AMC-style (AH pop -> next open)
+  --- ALL reactions
+  band                      n  o2h>=+5%  o2h>=+2%   green  medo2c faded<-3%
+  gap >= +10 (rocket)     103     58.3%     82.5%   51.5%    0.2%     39.8%
+  gap +5..10               86     37.2%     65.1%   47.7%   -0.4%     31.4%
+  gap +2..5               119     34.5%     61.3%   41.2%   -1.2%     34.5%
+  flat -2..+2             218     25.7%     54.1%   51.4%    0.1%     14.7%
+  gap <= -5 (dump)        205     59.0%     82.4%   53.2%    0.5%     32.7%
+  --- D0 (BMO-style)
+  band                      n  o2h>=+5%  o2h>=+2%   green  medo2c faded<-3%
+  gap >= +10 (rocket)      47     57.4%     78.7%   61.7%    1.7%     27.7%
+  gap +5..10               47     34.0%     63.8%   51.1%    0.2%     31.9%
+  gap +2..5                51     27.5%     62.7%   45.1%   -0.8%     27.5%
+  flat -2..+2              88     29.5%     55.7%   58.0%    0.5%     12.5%
+  gap <= -5 (dump)        100     60.0%     84.0%   54.0%    0.6%     33.0%
+  --- D+1 (AH-pop style)
+  band                      n  o2h>=+5%  o2h>=+2%   green  medo2c faded<-3%
+  gap >= +10 (rocket)      56     58.9%     85.7%   42.9%   -2.6%     50.0%
+  gap +5..10               39     41.0%     66.7%   43.6%   -0.6%     30.8%
+  gap +2..5                68     39.7%     60.3%   38.2%   -1.5%     39.7%
+  flat -2..+2             130     23.1%     53.1%   46.9%   -0.2%     16.2%
+  gap <= -5 (dump)        105     58.1%     81.0%   52.4%    0.3%     32.4%
+
+  Q3 — DAY 2: after a big day-1 earnings move, what happens next session?
+  day-1 outcome                 n d2 gap>0 d2 o2h>=+5% d2 green med d2 o2c
+  day-1 o2h >= +10            151    47.7%       37.1%    41.1%      -1.7%
+  day-1 o2h +5..10            197    45.7%       21.3%    41.6%      -0.9%
+  day-1 CLOSED +5% (o2c)      171    46.8%       32.7%    43.3%      -1.1%
+  day-1 closed RED after gap>=+5   95    51.6%       32.6%    41.1%      -1.0%
+  everyone else               488    49.0%       19.1%    43.9%      -0.4%
+
+  rockets (gap>=+10, n=103) vs rest: +5%-from-open 58.3% vs 39.2%  p=2.46e-04
+
+  Informational only — not investment advice. Daily bars; intraday path not modeled.
+ALLDONE 

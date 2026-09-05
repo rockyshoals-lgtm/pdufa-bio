@@ -37,14 +37,18 @@ SEP = r'(?:&middot;|·|&#183;)'
 # CNS". Those rows were invisible to this script (2026-08-22), so a dual-listed event stayed
 # pending after it decided. Capture the whole label, look the decision up under the FIRST ticker
 # (the one whose decision page exists), and write the label back unchanged.
-TKLABEL = r'([A-Z]{1,6}(?:\s*/\s*[A-Z]{1,6})?)'
+# 2026-09-05c: the partner group must REPEAT -- "JAZZ / ONC / ZYME" is a TRIPLE label, and with
+# `?` instead of `*` that row was invisible to this script for two audits while its decision
+# pages (JAZZ-2026-08-25, ZYME-2026-08-25) sat published. Same bug, one label wider.
+TKLABEL = r'([A-Z]{1,6}(?:\s*/\s*[A-Z]{1,6})*)'
 ROW = re.compile(
     r'<a class="row"([^>]*)>\s*<div class="t">' + TKLABEL + r'\s*' + SEP +
     r'\s*(\d{4}-\d{2}-\d{2})</div>'
     r'<div class="d">(.*?)</div>\s*</a>', re.S)
 # ALREADY-MARKED rows: div.t carries the outcome span after the date, so ROW cannot match them.
+# (Widened to TKLABEL 2026-09-05c so marked multi-ticker rows re-validate too.)
 MARKED = re.compile(
-    r'<a class="row"([^>]*data-dec[^>]*)>\s*<div class="t">([A-Z]{1,6})\s*' + SEP +
+    r'<a class="row"([^>]*data-dec[^>]*)>\s*<div class="t">' + TKLABEL + r'\s*' + SEP +
     r'\s*(\d{4}-\d{2}-\d{2})\s*(<span[^>]*>[^<]*</span>)</div>'
     r'<div class="d">(.*?)</div>\s*</a>', re.S)
 
@@ -244,7 +248,8 @@ def mark_page(path, by_tk, dry):
     # ROW cannot see marked rows (their div.t carries the outcome span), so marked rows need their
     # own pattern. A mark the CURRENT rule would not produce is relinked or returned to pending.
     def reval(m):
-        attrs, tk, caldate, span, dtext = m.groups()
+        attrs, label, caldate, span, dtext = m.groups()
+        tk = label.split("/")[0].strip()          # multi labels resolve on the first ticker
         body_now = strip_marker(dtext)
         # A HUMAN-VERIFIED partner link outranks the automatic rule. Cross-ticker matching is
         # refused automatically for good reason, but re-validation would then revert a link a
@@ -262,7 +267,7 @@ def mark_page(path, by_tk, dry):
             reverted[0] += 1
             print(f"  REVERTED {tk} {caldate}: decision link {cur.group(1) if cur else '?'} no "
                   f"longer validates under the multi-product rule -- row returned to pending")
-            return (f'<a class="row" href="/pdufa/{tk}"><div class="t">{tk} &middot; {caldate}'
+            return (f'<a class="row" href="/pdufa/{tk}"><div class="t">{label} &middot; {caldate}'
                     f'</div><div class="d">{body_now}</div></a>')
         decdate, outcome, dec_tk = hit
         col = GREEN if outcome == "ap" else RED
@@ -271,7 +276,7 @@ def mark_page(path, by_tk, dry):
         reverted[0] += 1
         print(f"  RELINKED {tk} {caldate}: {cur.group(1) if cur else '?'} -> {decdate}")
         return (f'<a class="row" data-dec="1" href="/fda-decision/{dec_tk}-{decdate}">'
-                f'<div class="t">{tk} &middot; {caldate} '
+                f'<div class="t">{label} &middot; {caldate} '
                 f'<span style="color:{col};font-weight:700">{icon}</span></div>'
                 f'<div class="d"><span style="color:{col};font-weight:700">{word}</span>: '
                 f'{body_now}</div></a>')
@@ -301,12 +306,80 @@ def mark_page(path, by_tk, dry):
     return changed[0]
 
 
+MONTHS = ["", "January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+
+
+def restore_missing(path, by_tk, dry):
+    """Inject a marked row for any archive decision inside the page's month window that
+    has NO row at all -- marked, pending, or under a partner label.
+
+    Audit 09-05c, two audits running: MNKD (approved 07-24) and REPL (approved 08-06)
+    were absent from /calendar entirely. Their rows were swept off the forward slate
+    when the events decided, and whatever rebuild happened next regenerated the page
+    without them -- marked rows survive only if the mark lands BEFORE the row
+    disappears. This closes the race: a decision in the archive, dated inside a month
+    heading this page carries, either has a row or gets one.
+
+    Conservative by construction: only the archive (published, sourced decision pages)
+    can inject; the injected row IS the marked form linking that decision page; a
+    ticker with any existing row within EARLY_WINDOW of the decision is skipped (the
+    normal marking pass owns those, including partner-label and goal-date rows like
+    PTGX's 09-30 row carrying the 08-28 approval)."""
+    html = open(path, encoding="utf-8", errors="replace").read()
+    heads = {mm.group(1): mm for mm in
+             re.finditer(r'<div class="mhead">([A-Za-z]+ \d{4})</div>', html)}
+    if not heads:
+        return 0
+    # every (ticker, ~date) the page already covers, from hrefs and row labels
+    have_slugs = set(re.findall(r'href="/fda-decision/([A-Z]{1,6}-\d{4}-\d{2}-\d{2})"', html))
+    row_dates = {}
+    for label, d in re.findall(r'<div class="t">' + TKLABEL + r'\s*(?:&middot;|·|&#183;)\s*'
+                               r'(\d{4}-\d{2}-\d{2})', html):
+        for tk in [x.strip() for x in label.split("/")]:
+            row_dates.setdefault(tk, []).append(d)
+    added = 0
+    for tk, decs in sorted(by_tk.items()):
+        for date, outcome, drug in decs:
+            mon = f"{MONTHS[int(date[5:7])]} {date[:4]}"
+            if mon not in heads:
+                continue                      # outside this page's window
+            if f"{tk}-{date}" in have_slugs:
+                continue                      # already linked somewhere on the page
+            dd = dt.date.fromisoformat(date)
+            near = any(abs((dt.date.fromisoformat(x) - dd).days) <= EARLY_WINDOW
+                       for x in row_dates.get(tk, []))
+            if near:
+                continue                      # an existing row owns this decision
+            col = GREEN if outcome == "ap" else RED
+            icon = "✓" if outcome == "ap" else "✗"
+            word = "Approved" if outcome == "ap" else "CRL"
+            body = re.sub(r"\s+", " ", drug).strip()[:110] or word
+            row = (f'<a class="row" data-dec="1" href="/fda-decision/{tk}-{date}">'
+                   f'<div class="t">{tk} &middot; {date} '
+                   f'<span style="color:{col};font-weight:700">{icon}</span></div>'
+                   f'<div class="d"><span style="color:{col};font-weight:700">{word}'
+                   f'</span>: {body}</div></a>')
+            anchor = heads[mon].group(0) + '<div class="grid">'
+            if anchor in html:
+                html = html.replace(anchor, anchor + row, 1)
+                added += 1
+                print(f"  RESTORED {tk} {date} ({word}) into '{mon}' -- decision was "
+                      f"absent from the page entirely")
+                have_slugs.add(f"{tk}-{date}")
+                row_dates.setdefault(tk, []).append(date)
+    if added and not dry:
+        open(path, "w", encoding="utf-8").write(html)
+    return added
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     by_tk = load_decisions()
     pages = sorted(glob.glob(os.path.join(SITE, "calendar", "**", "index.html"), recursive=True))
+    restore_missing(os.path.join(SITE, "calendar", "index.html"), by_tk, a.dry_run)
     total = 0
     for p in pages:
         n = mark_page(p, by_tk, a.dry_run)
