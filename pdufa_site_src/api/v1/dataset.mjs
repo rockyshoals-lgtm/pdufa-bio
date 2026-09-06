@@ -2153,7 +2153,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -2221,7 +2221,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -2306,7 +2306,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/TLX",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT07100730",
@@ -2344,7 +2344,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -2950,7 +2950,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/RARE",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT03517085",
@@ -2988,7 +2988,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/MRK",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "indication": "Recently diagnosed pulmonary arterial hypertension (label update)",
    "source_note": "Re-added 2026-08-13 after dataset loss; HYPERION sBLA priority review, PDUFA 2026-09-21 per Merck release.",
@@ -3047,7 +3047,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -3065,6 +3065,47 @@ export default [
   }
  },
  {
+  "id": "pdufa_incy_2026-09-26",
+  "t": "INCY",
+  "company": "INCYTE CORP",
+  "d": "2026-09-26",
+  "dp": "day",
+  "name": "zilurgisertib",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/INCY",
+  "ua": "2026-09-06T22:18:50Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": 25691939305.5,
+   "cash_runway_months": null,
+   "days_to_decision": 78,
+   "runup_summary": null
+  }
+ },
+ {
+  "id": "pdufa_mirm_2026-09-26",
+  "t": "MIRM",
+  "company": "Mirum Pharmaceuticals, Inc.",
+  "d": "2026-09-26",
+  "dp": "day",
+  "name": "zilurgisertib",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm",
+  "ua": "2026-09-06T22:18:50Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": 6153005804.3
+  }
+ },
+ {
   "id": "conf_astro_2026-09-26",
   "t": "ASTRO",
   "company": "ASTRO Annual Meeting",
@@ -3076,7 +3117,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -3101,47 +3142,6 @@ export default [
   }
  },
  {
-  "id": "pdufa_incy_2026-09-26",
-  "t": "INCY",
-  "company": "INCYTE CORP",
-  "d": "2026-09-26",
-  "dp": "day",
-  "name": "zilurgisertib",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/INCY",
-  "ua": "2026-09-06T15:01:30Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 25691939305.5,
-   "cash_runway_months": null,
-   "days_to_decision": 78,
-   "runup_summary": null
-  }
- },
- {
-  "id": "pdufa_mirm_2026-09-26",
-  "t": "MIRM",
-  "company": "Mirum Pharmaceuticals, Inc.",
-  "d": "2026-09-26",
-  "dp": "day",
-  "name": "zilurgisertib",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Mid",
-  "st": "Upcoming",
-  "url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm",
-  "ua": "2026-09-06T15:01:30Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 6153005804.3
-  }
- },
- {
   "id": "pdufa_bfri_2026-09-28",
   "t": "BFRI",
   "company": "Biofrontera Inc.",
@@ -3153,7 +3153,7 @@ export default [
   "cap": "Nano",
   "st": "Upcoming",
   "url": "/pdufa/BFRI",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT02144077",
@@ -3191,7 +3191,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -3241,7 +3241,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -3661,7 +3661,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-mim8",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "indication": "Hemophilia A prophylaxis, with or without inhibitors",
    "bla_submitted": "2025-09",
@@ -3945,14 +3945,14 @@ export default [
   "name": "Apitegromab - (SAPPHIRE)",
   "type": "PDUFA",
   "ta": "CNS/Neurology",
-  "cap": "",
+  "cap": "Mid",
   "st": "Upcoming",
   "url": "https://investors.scholarrock.com/news-releases/news-release-details/scholar-rock-announces-fda-review-apitegromab-biologics-license",
-  "ua": "2026-09-06T15:27:57Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Spinal muscular atrophy (SMA), children and adults (BLA)",
-   "market_cap_usd": null,
+   "market_cap_usd": 6738379653.059999,
    "bla": "BLA (apitegromab), submitted March 2026",
    "review": "BLA submitted March 2026 after the September 23, 2025 Complete Response Letter on the first application. On August 7, 2026 the company disclosed that the FDA classified the April 2026 inspection of Catalent Indiana LLC (a fill-finish site named in the BLA) as Official Action Indicated; on August 21, 2026 it said Catalent Indiana had been removed from the BLA and that it continues to expect a decision by the September 30, 2026 goal date. Fast Track, Orphan Drug and Rare Pediatric Disease designations per the sponsor.",
    "sponsor_caveat": "Scholar Rock will continue to collaborate closely with the FDA and under their guidance, will remove Catalent Indiana from the apitegromab BLA. FDA review of the apitegromab BLA will progress solely with the second fill-finish facility.",
@@ -4190,24 +4190,21 @@ export default [
   "dm": "2026-09"
  },
  {
-  "id": "conf_aao_2026-10-09",
-  "t": "AAO",
-  "company": "American Academy of Ophthalmology Annual Meeting",
+  "id": "pdufa_rhhby_2026-10-09",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
   "d": "2026-10-09",
   "dp": "day",
-  "name": "American Academy of Ophthalmology Annual Meeting",
-  "type": "Conference",
-  "ta": "Ophthalmology and ocular gene therapy",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "name": "Tecentriq (atezolizumab) adjuvant - (stage III colon)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/RHHBY",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
-   "end": "2026-10-12",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+   "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
+   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10."
   }
  },
  {
@@ -4222,9 +4219,30 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-14",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_aao_2026-10-09",
+  "t": "AAO",
+  "company": "American Academy of Ophthalmology Annual Meeting",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "American Academy of Ophthalmology Annual Meeting",
+  "type": "Conference",
+  "ta": "Ophthalmology and ocular gene therapy",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2026-10-12",
    "location": "",
    "organiser_url": "",
    "presenters": [],
@@ -4243,7 +4261,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -4261,24 +4279,6 @@ export default [
   }
  },
  {
-  "id": "pdufa_rhhby_2026-10-09",
-  "t": "RHHBY",
-  "company": "Roche Holding AG",
-  "d": "2026-10-09",
-  "dp": "day",
-  "name": "Tecentriq (atezolizumab) adjuvant - (stage III colon)",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
-  "ua": "2026-09-06T15:01:30Z",
-  "_d": {
-   "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
-   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10."
-  }
- },
- {
   "id": "pdufa_mrk_2026-10-10",
   "t": "MRK",
   "company": "Merck",
@@ -4290,7 +4290,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/MRK",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04700124",
@@ -4664,7 +4664,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "indication": "Thyroid eye disease (TED)",
    "source_note": "Added 2026-08-13; sBLA priority review, decision by 2026-10-15 per Genentech release 2026-06-29. Found during flag verification; was on neither surface."
@@ -4787,7 +4787,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "https://www.biospace.com/press-releases/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
    "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
@@ -4807,7 +4807,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05139121",
@@ -4834,27 +4834,6 @@ export default [
   }
  },
  {
-  "id": "conf_asn_2026-10-21",
-  "t": "ASN",
-  "company": "ASN Kidney Week",
-  "d": "2026-10-21",
-  "dp": "day",
-  "name": "ASN Kidney Week",
-  "type": "Conference",
-  "ta": "Nephrology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
-  "_d": {
-   "end": "2026-10-25",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "conf_ectrims_2026-10-21",
   "t": "ECTRIMS",
   "company": "Joint ACTRIMS-ECTRIMS Meeting",
@@ -4866,7 +4845,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -4884,6 +4863,27 @@ export default [
   }
  },
  {
+  "id": "conf_asn_2026-10-21",
+  "t": "ASN",
+  "company": "ASN Kidney Week",
+  "d": "2026-10-21",
+  "dp": "day",
+  "name": "ASN Kidney Week",
+  "type": "Conference",
+  "ta": "Nephrology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2026-10-25",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "conf_idweek_2026-10-21",
   "t": "IDWeek",
   "company": "IDSA/SHEA/HIVMA IDWeek",
@@ -4895,7 +4895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -4916,7 +4916,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -5043,7 +5043,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/PHAR",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "APDS",
@@ -5073,7 +5073,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06059846",
@@ -5111,7 +5111,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/INO",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Recurrent respiratory papillomatosis (RRP) BLA",
@@ -5141,7 +5141,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -5171,7 +5171,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -5192,7 +5192,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5210,27 +5210,6 @@ export default [
   }
  },
  {
-  "id": "conf_acr_2026-11-06",
-  "t": "ACR",
-  "company": "ACR Convergence",
-  "d": "2026-11-06",
-  "dp": "day",
-  "name": "ACR Convergence",
-  "type": "Conference",
-  "ta": "Rheumatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
-  "_d": {
-   "end": "2026-11-11",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "conf_aha_2026-11-06",
   "t": "AHA",
   "company": "American Heart Association Scientific Sessions",
@@ -5242,7 +5221,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5252,20 +5231,20 @@ export default [
   }
  },
  {
-  "id": "conf_acaai_2026-11-12",
-  "t": "ACAAI",
-  "company": "American College of Allergy, Asthma and Immunology",
-  "d": "2026-11-12",
+  "id": "conf_acr_2026-11-06",
+  "t": "ACR",
+  "company": "ACR Convergence",
+  "d": "2026-11-06",
   "dp": "day",
-  "name": "American College of Allergy, Asthma and Immunology",
+  "name": "ACR Convergence",
   "type": "Conference",
-  "ta": "Allergy and immunology",
+  "ta": "Rheumatology",
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
-   "end": "2026-11-16",
+   "end": "2026-11-11",
    "location": "",
    "organiser_url": "",
    "presenters": [],
@@ -5284,9 +5263,30 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-15",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_acaai_2026-11-12",
+  "t": "ACAAI",
+  "company": "American College of Allergy, Asthma and Immunology",
+  "d": "2026-11-12",
+  "dp": "day",
+  "name": "American College of Allergy, Asthma and Immunology",
+  "type": "Conference",
+  "ta": "Allergy and immunology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2026-11-16",
    "location": "",
    "organiser_url": "",
    "presenters": [],
@@ -5305,7 +5305,7 @@ export default [
   "cap": "Nano",
   "st": "Upcoming",
   "url": "/pdufa/BTAI",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
@@ -5335,12 +5335,42 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/CYTK",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Non-obstructive hypertrophic cardiomyopathy",
    "market_cap_usd": 10109782956.96,
    "cash_runway_months": 18.8,
+   "days_to_decision": 127,
+   "cohort_move_median_pct": 0.0,
+   "cohort_move_p25_pct": -0.93,
+   "cohort_move_p75_pct": 1.03,
+   "cohort_n": 790,
+   "runup_summary": {
+    "t30": 0.38,
+    "t7": -0.01,
+    "t1": 0.0
+   }
+  }
+ },
+ {
+  "id": "pdufa_smmt_2026-11-14",
+  "t": "SMMT",
+  "company": "Summit Therapeutics Inc.",
+  "d": "2026-11-14",
+  "dp": "day",
+  "name": "Ivonescimab",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/SMMT",
+  "ua": "2026-09-06T22:18:50Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": 14044381743.210001,
+   "cash_runway_months": 19.0,
    "days_to_decision": 127,
    "cohort_move_median_pct": 0.0,
    "cohort_move_p25_pct": -0.93,
@@ -5365,43 +5395,13 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "pdufa_smmt_2026-11-14",
-  "t": "SMMT",
-  "company": "Summit Therapeutics Inc.",
-  "d": "2026-11-14",
-  "dp": "day",
-  "name": "Ivonescimab",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/SMMT",
-  "ua": "2026-09-06T15:01:30Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 14044381743.210001,
-   "cash_runway_months": 19.0,
-   "days_to_decision": 127,
-   "cohort_move_median_pct": 0.0,
-   "cohort_move_p25_pct": -0.93,
-   "cohort_move_p75_pct": 1.03,
-   "cohort_n": 790,
-   "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
-   }
   }
  },
  {
@@ -5627,7 +5627,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "https://www.sec.gov/Archives/edgar/data/0001645113/000164511326000043/nvcr-20260331xpr.htm",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
@@ -5795,7 +5795,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -5824,7 +5824,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -5845,7 +5845,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -5890,7 +5890,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
@@ -5920,7 +5920,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -5993,7 +5993,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BAYRY",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "HER2-mutant NSCLC, 1L (sBLA, Priority Review)",
@@ -6023,7 +6023,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -6053,7 +6053,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG)",
@@ -6083,7 +6083,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -6113,7 +6113,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -6143,7 +6143,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -6162,27 +6162,6 @@ export default [
   }
  },
  {
-  "id": "conf_aes_2026-12-04",
-  "t": "AES",
-  "company": "American Epilepsy Society Annual Meeting",
-  "d": "2026-12-04",
-  "dp": "day",
-  "name": "American Epilepsy Society Annual Meeting",
-  "type": "Conference",
-  "ta": "Epilepsy",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
-  "_d": {
-   "end": "2026-12-08",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "conf_esmo asia_2026-12-04",
   "t": "ESMO Asia",
   "company": "ESMO Asia Congress",
@@ -6194,9 +6173,30 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-12-06",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_aes_2026-12-04",
+  "t": "AES",
+  "company": "American Epilepsy Society Annual Meeting",
+  "d": "2026-12-04",
+  "dp": "day",
+  "name": "American Epilepsy Society Annual Meeting",
+  "type": "Conference",
+  "ta": "Epilepsy",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2026-12-08",
    "location": "",
    "organiser_url": "",
    "presenters": [],
@@ -6215,7 +6215,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -6233,27 +6233,6 @@ export default [
   }
  },
  {
-  "id": "conf_ash_2026-12-12",
-  "t": "ASH",
-  "company": "American Society of Hematology Annual Meeting",
-  "d": "2026-12-12",
-  "dp": "day",
-  "name": "American Society of Hematology Annual Meeting",
-  "type": "Conference",
-  "ta": "Haematology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
-  "_d": {
-   "end": "2026-12-15",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "pdufa_vnda_2026-12-12",
   "t": "VNDA",
   "company": "Vanda Pharmaceuticals Inc.",
@@ -6265,7 +6244,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/VNDA",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -6284,6 +6263,27 @@ export default [
   }
  },
  {
+  "id": "conf_ash_2026-12-12",
+  "t": "ASH",
+  "company": "American Society of Hematology Annual Meeting",
+  "d": "2026-12-12",
+  "dp": "day",
+  "name": "American Society of Hematology Annual Meeting",
+  "type": "Conference",
+  "ta": "Haematology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2026-12-15",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "conf_esmo io_2026-12-14",
   "t": "ESMO IO",
   "company": "ESMO Immuno-Oncology and Advanced Therapies Congress",
@@ -6295,7 +6295,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -7135,7 +7135,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "https://clinicaltrials.gov/study/NCT06108219",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": "NCT06108219",
    "indication": null,
@@ -7157,7 +7157,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -7187,7 +7187,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/MLYS",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -7217,7 +7217,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -7237,7 +7237,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -7280,7 +7280,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
@@ -7299,7 +7299,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -7329,7 +7329,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/ABBV",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Early Parkinson's disease",
@@ -7413,7 +7413,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/AZN",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -7451,7 +7451,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BAYRY",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Type 1 diabetes + CKD (FINE-ONE, sNDA)",
@@ -7823,7 +7823,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Obesity / weight management",
@@ -8152,7 +8152,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/NUVB",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "ROS1-positive non-small cell lung cancer",
@@ -8182,7 +8182,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/IBRX",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "BCG-unresponsive papillary NMIBC",
@@ -8443,7 +8443,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -8464,7 +8464,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -8507,7 +8507,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -8528,7 +8528,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -8571,7 +8571,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -8677,7 +8677,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -8715,7 +8715,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Non Small Cell Lung Cancer",
@@ -8976,7 +8976,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -9132,7 +9132,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -9153,7 +9153,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -9174,7 +9174,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Head and Neck Squamous Cell Carcinoma (HNSCC)",
@@ -9477,7 +9477,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -9496,27 +9496,6 @@ export default [
   }
  },
  {
-  "id": "conf_aan_2027-05-01",
-  "t": "AAN",
-  "company": "American Academy of Neurology Annual Meeting",
-  "d": "2027-05-01",
-  "dp": "day",
-  "name": "American Academy of Neurology Annual Meeting",
-  "type": "Conference",
-  "ta": "Neurology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
-  "_d": {
-   "end": "2027-05-05",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "pdufa_axsm_2027-05-01",
   "t": "AXSM",
   "company": "Axsome Therapeutics, Inc.",
@@ -9528,11 +9507,32 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": 10826067464.24
+  }
+ },
+ {
+  "id": "conf_aan_2027-05-01",
+  "t": "AAN",
+  "company": "American Academy of Neurology Annual Meeting",
+  "d": "2027-05-01",
+  "dp": "day",
+  "name": "American Academy of Neurology Annual Meeting",
+  "type": "Conference",
+  "ta": "Neurology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2027-05-05",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -9547,7 +9547,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -9568,7 +9568,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
-  "ua": "2026-09-06T15:01:30Z",
+  "ua": "2026-09-06T22:18:50Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -9587,7 +9587,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -9616,27 +9616,6 @@ export default [
    "source": "trial-estimate (not company-confirmed)"
   },
   "dm": "2027-05"
- },
- {
-  "id": "conf_ddw_2027-05-15",
-  "t": "DDW",
-  "company": "Digestive Disease Week",
-  "d": "2027-05-15",
-  "dp": "day",
-  "name": "Digestive Disease Week",
-  "type": "Conference",
-  "ta": "GI and hepatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
-  "_d": {
-   "end": "2027-05-18",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "readout_fdmt_2027-05-15",
@@ -9744,6 +9723,27 @@ export default [
   "dm": "2027-05"
  },
  {
+  "id": "conf_ddw_2027-05-15",
+  "t": "DDW",
+  "company": "Digestive Disease Week",
+  "d": "2027-05-15",
+  "dp": "day",
+  "name": "Digestive Disease Week",
+  "type": "Conference",
+  "ta": "GI and hepatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-09-06T22:21:38Z",
+  "_d": {
+   "end": "2027-05-18",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "conf_asco_2027-06-04",
   "t": "ASCO",
   "company": "ASCO Annual Meeting",
@@ -9755,7 +9755,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -9776,7 +9776,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -10092,7 +10092,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -10113,7 +10113,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-06T15:03:22Z",
+  "ua": "2026-09-06T22:21:38Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
