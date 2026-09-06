@@ -48,6 +48,18 @@ def test_decided_event_pages_carry_banner():
                 if tm:
                     cands = [r for r in tk_cands
                              if toks(tm.group(1)) & toks(r.get("name"))]
+            # Same molecule, different application (2026-09-06): /pdufa/CORT-relacorilant
+            # is the Dec 17 GRACE event; the March 25 ROSELLA approval shares the token
+            # and must not be demanded on it. Same rule as the injector: a candidate whose
+            # goal date is not the page's stated target (within 14 days) is a different
+            # application.
+            import datetime as dt
+            tg = re.search(r'<div class="kv"><span>FDA PDUFA target date</span>'
+                           r'<b>(\d{4}-\d{2}-\d{2})</b>', doc)
+            if tg and cands:
+                td = dt.date.fromisoformat(tg.group(1))
+                cands = [r for r in cands if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d")))
+                         and abs((dt.date.fromisoformat(str(r["d"])) - td).days) <= 14]
         else:
             # Bare-ticker event pages -- the six the 2026-09-02 audit caught pending on
             # approved drugs (/pdufa/JAZZ et al). The first version of THIS TEST skipped

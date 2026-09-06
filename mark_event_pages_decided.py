@@ -204,7 +204,20 @@ def main():
                 cands = [{"t": tk, "name": g, "oc": "Approved" if o == "ap" else "CRL",
                           "dcd": d, "d": None, "_archive": True}
                          for d, o, g in archive.get(tk, []) if d == want]
+            # a bannered page whose banner names a DIFFERENT application's decision (the
+            # CORT-relacorilant case: page target 12-17, banner goal 07-11) loses the banner
+            tgt = re.search(r'<div class="kv"><span>FDA PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})</b>', doc0)
+            if tgt and cands and not cands[0].get("_archive"):
+                td = dt.date.fromisoformat(tgt.group(1))
+                cands = [r for r in cands if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d")))
+                         and abs((dt.date.fromisoformat(str(r["d"])) - td).days) <= 14]
             if not cands:
+                if E in doc0:
+                    new = doc0.split(B, 1)[0] + doc0.split(E, 1)[1]
+                    io.open(p, "w", encoding="utf-8").write(new)
+                    changed += 1
+                    print(f"  REMOVED banner on /pdufa/{slug}: decision {want} does not belong "
+                          f"to this page's application (target {tgt.group(1) if tgt else '?'})")
                 continue
         elif drug_part:
             dtoks = toks(drug_part)
@@ -217,6 +230,17 @@ def main():
                                r"\s*[A-Z][a-z]{2}", doc0)
                 ttoks = toks(tm.group(1)) if tm else set()
                 cands = [r for r in tk_cands if ttoks & toks(r.get("name"))]
+            # SAME MOLECULE, DIFFERENT APPLICATION (2026-09-06): /pdufa/CORT-relacorilant is
+            # the Dec 17, 2026 GRACE (Cushing's) event, and a token match on "relacorilant"
+            # gave it the March 25 ROSELLA (ovarian) approval banner. The page states its
+            # own target date; a dataset candidate whose goal date is not that date (within
+            # WINDOW) is a different application. Moved dates are already re-stamped by
+            # refresh_moved_pdufa_pages before this runs, so the page's date is current.
+            tgt = re.search(r'<div class="kv"><span>FDA PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})</b>', doc0)
+            if tgt and cands:
+                td = dt.date.fromisoformat(tgt.group(1))
+                cands = [r for r in cands if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d")))
+                         and abs((dt.date.fromisoformat(str(r["d"])) - td).days) <= 14]
             if not cands:
                 # Archive fallback (2026-09-06): the dataset never held this event.
                 cands = archive_candidates(archive, tk, drug_part, doc0)

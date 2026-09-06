@@ -158,11 +158,19 @@ def main():
         p = os.path.join(SITE, "pdufa", t, "index.html")
 
         if os.path.exists(p):
-            h1 = re.search(r"<h1[^>]*>(.*?)</h1>",
-                           open(p, encoding="utf-8", errors="replace").read(), re.S)
+            existing = open(p, encoding="utf-8", errors="replace").read()
+            h1 = re.search(r"<h1[^>]*>(.*?)</h1>", existing, re.S)
             h1t = html.unescape(re.sub(r"<[^>]+>", " ", h1.group(1))).lower() if h1 else ""
             h1toks = set(re.findall(r"[a-z0-9]+(?:-[a-z0-9]+)*", h1t))
-            if toks & h1toks:
+            # Audit 2026-09-05 (0800 slot) P1-5: /pdufa/CORT said "Decided: Approved March
+            # 25, 2026 ... no longer an upcoming decision" and, lower down, "1 business days
+            # to decision ... FDA decision expected July 11, 2026" -- the ROSELLA page kept
+            # by the token rule because the NEW catalyst (GRACE, Cushing's, Dec 17) is the
+            # same molecule. A page that declares itself decided is not the live event page,
+            # whatever its headline names; it is regenerated as the index.
+            self_decided = ("no longer an upcoming decision" in existing
+                            or "<!--DECBAN:BEGIN-->" in existing)
+            if toks & h1toks and not self_decided:
                 kept_pages += 1
                 continue          # live event page already about a currently-upcoming drug
 
