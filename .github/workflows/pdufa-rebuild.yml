@@ -615,7 +615,27 @@ jobs:
             echo "no data changes this run — nothing to deploy"
           else
             git commit -m "chore: daily data refresh $(date -u +%F)"
-            git push
+            # PUSH RACE (twice on 2026-09-05/06): a builder commit landing while this run
+            # was working made the final push non-fast-forward, and a run whose guards had
+            # ALL PASSED was recorded as a failed build. The work was fine; only the push
+            # lost a race. Rebase onto whatever arrived and retry, up to three times; the
+            # rebase is safe because this step commits generated output, and a genuine
+            # conflict still fails loudly rather than being forced.
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push; then pushed=1; break; fi
+              echo "push rejected (attempt $attempt) -- fetching and rebasing onto origin/main"
+              git fetch origin main || true
+              if ! git rebase origin/main; then
+                git rebase --abort || true
+                echo "::error::rebase onto origin/main conflicted -- not forcing; resolve by hand"
+                exit 1
+              fi
+            done
+            if [ "$pushed" != "1" ]; then
+              echo "::error::push still rejected after 3 attempts"
+              exit 1
+            fi
           fi
 
       # Tell the search engines, AFTER Vercel has had a moment to build the pushed commit.
