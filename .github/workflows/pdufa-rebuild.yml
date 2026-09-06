@@ -432,6 +432,21 @@ jobs:
       - name: Decided banners on per-event PDUFA pages
         run: python mark_event_pages_decided.py
 
+      # Audit 09-06 NEW-2: an application whose goal date passed with no public decision
+      # (NRXP's KETAFREE ANDA) has no banner to carry, so it says the date passed instead.
+      # test_no_past_target_pending_pages.py fails if either treatment goes missing.
+      - name: Goal-date-passed statements (no decision to name)
+        run: python mark_goal_date_passed.py
+
+      # Audit 09-06 ORDER 2 residual: the sponsor's own caveat, verbatim, on the page that
+      # ranks for the drug (Scholar Rock's Catalent Indiana / second fill-finish statement).
+      - name: Sponsor caveats rendered on event pages
+        run: python inject_sponsor_caveat.py
+
+      # Asked in four audits: every goal date we have seen move, with its announcement.
+      - name: /pdufa-date-changes
+        run: python build_date_changes.py
+
       - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
         run: python build_pdufa_ticker_index.py
 
@@ -445,6 +460,13 @@ jobs:
 
       - name: "Answer-first lede above every hub table"
         run: python build_hub_lede.py
+
+      # Audit 2026-09-06 (0840) NEW-1: the /calendar ItemList was pre-rendered and owned by no
+      # step -- 54 Events vs 48 ahead rows, 16 decided drugs still EventScheduled to Google/Bing.
+      # Derived from the page's own ahead rows, after the lede, so the two counts are one count.
+      # test_calendar_itemlist_matches_rows.py fails if this step goes missing.
+      - name: "/calendar JSON-LD ItemList = the visible still-ahead rows"
+        run: python sync_calendar_itemlist.py
 
       # 2026-08-12 audit: FAQPage is the unit AI answers cite (rusfertide with FAQ: 16.67% share;
       # calendar at #1 without: zero). Runs AFTER the lede so the calendar FAQ parses the lede's

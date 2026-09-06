@@ -35,6 +35,21 @@
     "also_searched": "Etcamah",
     "also_searched_note": "Etcamah is the FDA-approved brand name for camizestrant (approved September 4, 2026)."
    }
+  },
+  {
+   "t": "BAYRY",
+   "company": "Bayer AG",
+   "d": "",
+   "dp": "undisclosed",
+   "when_text": "NDA accepted with Priority Review 2026-05-19; goal date not disclosed",
+   "type": "PDUFA",
+   "st": "Under review",
+   "name": "Asundexian",
+   "url": "https://www.bayer.com/en/us/news-stories/asundexian-in-patients-after-a-non-cardioembolic-ischemic-stroke",
+   "_d": {
+    "indication": "Prevention of secondary stroke in patients after a non-cardioembolic ischemic stroke or transient ischemic attack (OCEANIC-STROKE)",
+    "review": "Bayer announced on May 19, 2026 that the FDA accepted the New Drug Application for asundexian, an oral Factor XIa inhibitor, and granted Priority Review. The application rests on the Phase 3 OCEANIC-STROKE trial, which met its primary efficacy outcome (time to first ischemic stroke) and its primary safety outcome (time to ISTH major bleeding); results were presented at the International Stroke Conference 2026 and published in the New England Journal of Medicine. Asundexian received Fast Track designation in 2023. Bayer has not publicly disclosed the PDUFA goal date, so no date is stated here."
+   }
   }
  ]
 }

@@ -1,0 +1,19 @@
+{
+  "_comment": "Hand-verified {event-page slug -> decision page slug} for /pdufa/* pages the automatic rules in mark_event_pages_decided.py REFUSE, and should refuse. Two shapes only: (a) several decisions by the same sponsor match the slug's drug token, so the automatic rule cannot choose (a wrong banner is worse than none); (b) the decision lives under a PARTNER's ticker, and cross-ticker matching was tried in August 2026 and rejected because it matched on shared vocabulary. Every entry names the primary source a human checked. Audit 2026-09-06 NEW-2.",
+  "links": [
+    {
+      "slug": "MRK-keytruda",
+      "decision": "MRK-2026-07-10",
+      "reviewer": "builder 2026-09-06",
+      "why": "Three MRK archive decisions carry the KEYTRUDA token; this page is the KEYTRUDA plus Padcev (enfortumab vedotin-ejfv) muscle-invasive bladder cancer application (KEYNOTE-B15/EV-304), goal date 2026-08-17, approved 2026-07-10. The partner page /pdufa/PFE-keytruda already carries the same decision.",
+      "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/pembrolizumab-keytruda-and-enfortumab-vedotin-ejfv-padcev-muscle-invasive-bladder-cancer"
+    },
+    {
+      "slug": "ONC",
+      "decision": "JAZZ-2026-08-25",
+      "reviewer": "builder 2026-09-06",
+      "why": "Ziihera (zanidatamab-hrii) first-line HER2-positive gastroesophageal adenocarcinoma is a partner-held application; the decision page is filed under the JAZZ ticker (the JAZZ / ONC / ZYME calendar row links it). Zymeworks and Jazz co-develop; the ONC event page had no decision under its own ticker and so was never told.",
+      "source": "https://www.pdufa.bio/fda-decision/JAZZ-2026-08-25"
+    }
+  ]
+}

@@ -173,6 +173,20 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only):
     return doc
 
 
+def load_hand_links():
+    """{event-page slug: decision slug} a human verified. Audit 2026-09-06 NEW-2: two shapes
+    the automatic rules refuse and should keep refusing -- several same-sponsor decisions
+    matching one drug token (MRK-keytruda), and a decision filed under a partner's ticker
+    (ONC's Ziihera, decided under JAZZ). Cross-ticker matching was tried in August and
+    rejected for matching on shared vocabulary; a reviewed entry is the safe path."""
+    try:
+        d = json.load(io.open(os.path.join(HERE, "_event_page_decisions.json"),
+                              encoding="utf-8"))
+        return {x["slug"]: x["decision"] for x in d.get("links", [])}
+    except Exception:
+        return {}
+
+
 def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                   errors="replace").read().replace("\x00", "")
@@ -180,6 +194,7 @@ def main():
     decided = [r for r in rows if r.get("type") == "PDUFA"
                and str(r.get("st", "")).lower() == "decided" and r.get("dcd")]
     archive = load_archive()
+    hand = load_hand_links()
 
     changed = skipped = 0
     for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
@@ -189,15 +204,35 @@ def main():
             continue
         tk, drug_part = m.group(1), (m.group(2) or "").replace("-", " ")
         tk_cands = [r for r in decided if str(r.get("t", "")).upper() == tk]
-        if not tk_cands and tk not in archive:
+        if not tk_cands and tk not in archive and slug not in hand:
             continue
         doc0 = io.open(p, encoding="utf-8", errors="replace").read()
         # Already bannered: the page has named its decision. Re-validate THAT decision only
         # (dataset first, archive second) so a re-run is idempotent -- the rewrites below
         # change the title and remove the target-date fact the first-pass matching reads.
-        bm = re.search(re.escape(B) + r'.*?href="/fda-decision/' + tk + r'-(\d{4}-\d{2}-\d{2})"',
-                       doc0, re.S)
-        if bm:
+        # A HAND-VERIFIED link outranks every automatic rule below (and outranks the
+        # re-validation pass, which would otherwise strip it every run).
+        if slug in hand:
+            hm = re.match(r"^([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", hand[slug])
+            if hm:
+                dtk, ddate = hm.group(1), hm.group(2)
+                a_hit = next((x for x in archive.get(dtk, []) if x[0] == ddate), None)
+                d_hit = next((r for r in decided if str(r.get("t", "")).upper() == dtk
+                              and str(r.get("dcd")) == ddate), None)
+                if a_hit or d_hit:
+                    nm = (d_hit.get("name") if d_hit else a_hit[2])
+                    oc_h = (str(d_hit.get("oc")) if d_hit
+                            else ("Approved" if a_hit[1] == "ap" else "CRL"))
+                    cands = [{"t": dtk, "name": nm, "oc": oc_h, "dcd": ddate,
+                              "d": (d_hit.get("d") if d_hit else None),
+                              "_archive": not bool(d_hit), "_hand": True}]
+                else:
+                    print(f"  SKIP /pdufa/{slug}: hand link {hand[slug]} not found in the "
+                          f"dataset or the archive")
+                    skipped += 1
+                    continue
+        elif (bm := re.search(re.escape(B) + r'.*?href="/fda-decision/' + tk +
+                              r'-(\d{4}-\d{2}-\d{2})"', doc0, re.S)):
             want = bm.group(1)
             cands = [r for r in tk_cands if str(r.get("dcd")) == want]
             if not cands:
@@ -262,6 +297,23 @@ def main():
             ttoks = toks(tm.group(1))
             cands = [r for r in tk_cands if str(r.get("d"))[:10] == gm.group(1)
                      and ttoks & toks(r.get("name"))]
+            if not cands:
+                # ARCHIVE FALLBACK FOR BARE-TICKER PAGES (audit 2026-09-06 NEW-2).
+                # The fallback added for drug-slug pages was never wired here, so
+                # /pdufa/BIIB sat 55 days past its 2026-08-24 target saying LEQEMBI IQLIK
+                # "is under FDA review" while /fda-decision/BIIB-2026-07-13 was published.
+                # Same discipline as the slug branch: the archive decision must name this
+                # page's drug (title tokens) and fall inside the early window before the
+                # page's own stated target, and a CRL never carries forward.
+                td = dt.date.fromisoformat(gm.group(1))
+                cands = [{"t": tk, "name": g, "oc": "Approved", "dcd": d, "d": None,
+                          "_archive": True}
+                         for d, o, g in archive.get(tk, [])
+                         if o != "crl" and ttoks & toks(g)
+                         and -ARCHIVE_EARLY_WINDOW <= (dt.date.fromisoformat(d) - td).days <= 14]
+                if len(cands) == 1:
+                    print(f"  /pdufa/{slug}: bare-ticker page resolved from the decisions "
+                          f"archive ({cands[0]['dcd']})")
         if not cands:
             continue
         if len(cands) > 1:
@@ -284,8 +336,11 @@ def main():
         ok = oc == "Approved"
         col = "#46d17f" if ok else "#ff8f6b"
         word = "Approved" if ok else ("Complete Response Letter" if oc == "CRL" else oc)
-        dec_url = f"/fda-decision/{tk}-{dcd}"
-        has_dec_page = os.path.exists(os.path.join(SITE, "fda-decision", f"{tk}-{dcd}",
+        # The decision may be filed under a PARTNER's ticker (ONC's Ziihera lives at
+        # /fda-decision/JAZZ-2026-08-25), so link the deciding ticker, not the page's.
+        dtk = str(r.get("t") or tk).upper()
+        dec_url = f"/fda-decision/{dtk}-{dcd}"
+        has_dec_page = os.path.exists(os.path.join(SITE, "fda-decision", f"{dtk}-{dcd}",
                                                    "index.html"))
         link = (f' <a href="{dec_url}" style="color:#9ec5ff">Decision page with the '
                 f'source and measured reaction</a>.' if has_dec_page else "")

@@ -20,7 +20,7 @@ Two things make it honest rather than decorative:
 
     python build_freshness_stamp.py [--dry-run]
 """
-import argparse, datetime as dt, glob, json, os, re, sys
+import argparse, datetime as dt, glob, json, os, re, subprocess, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -163,7 +163,24 @@ def main():
     dates = content_dates()
 
     # The ONE file that changes each build. Everything dynamic lives here.
+    #
+    # `commit` added 2026-09-06 (auditor ORDER 6): `built` is the local GENERATION time, so
+    # two deploys from one generated tree carry the same stamp and the auditor's step 3
+    # ("built older than the ack means the deploy did not land") could not discriminate
+    # them -- a check that cannot fail. The commit SHA can: it changes exactly when the
+    # deployed tree changes. HEAD at generation time is what ships, since this step runs
+    # before the CI commit and that commit's parent is HEAD here; `commit_at_build` names
+    # it honestly rather than pretending to be the published SHA.
+    commit = None
+    try:
+        commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=HERE,
+                                capture_output=True, text=True, timeout=15,
+                                check=False).stdout.strip() or None
+    except Exception:
+        commit = None
     info = {"built": now_iso,
+            "commit": commit,
+            "commit_at_build": commit,
             "next_date": nxt[0].isoformat() if nxt else None,
             "next_ticker": nxt[1] if nxt else None,
             "next_days": nxt[2] if nxt else None}

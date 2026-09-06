@@ -1,0 +1,14 @@
+{
+  "_comment": "Applications whose FDA goal date has passed with no public decision. Hand-verified: each entry was checked against the sponsor's own releases and the FDA's surfaces at write time, and carries the primary source the note comes from. Saying 'the FDA has not decided' is a claim, so it is sourced like every other claim here. Remove an entry once a decision is published; the decided-banner injector then owns the page. Audit 2026-09-06 NEW-2.",
+  "passed": [
+    {
+      "slug": "NRXP",
+      "goal_date": "2026-07-29",
+      "application_type": "ANDA",
+      "status_note": "KETAFREE is an abbreviated new drug application, so its target is a GDUFA goal date rather than a PDUFA date. On August 7, 2026 NRx said the FDA had completed first-cycle review with no major deficiencies related to the drug product, its ingredients, proposed labeling or manufacturing, and that one remaining item, classified by the FDA as a major deficiency, concerns manufacturer certification of the vial's luer lock container closure; the company said it is providing that attestation.",
+      "source": "https://ir.nrxpharma.com/news-releases/news-release-details/fda-completes-first-cycle-review-preservative-free-ketamine-anda",
+      "source_label": "NRx Pharmaceuticals release, August 7, 2026",
+      "reviewer": "builder 2026-09-06"
+    }
+  ]
+}

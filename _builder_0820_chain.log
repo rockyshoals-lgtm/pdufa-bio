@@ -1,0 +1,63 @@
+START Sun 09/06/2026  8:36:58.10 
+===== inject_calendar_explainer.py   8:36:58.10 
+calendar explainer: unchanged
+----- exit 0 
+===== build_monthly_decisions.py   8:36:58.10 
+wrote /fda-this-month (September 2026: 2 decided, 8 ahead, 0 coarse; October 2026 preview: 8)
+----- exit 0 
+===== pdufa_site_src/build_slate_from_crawl.py --sweep-only   8:36:58.10 
+SLATE merge: 53 kept/curated  +  0 NEW from crawl  =  53 total forward catalysts  (refreshed market fields on 0)
+  OUT (decided outcomes) preserved: in api (untouched)
+
+wrote C:\Users\dcmoo\Documents\Python\9realms\pdufa_site_src\api\data.js  (backup: data.js.bak_2026-09-06)
+----- exit 0 
+===== fix_decisions_order.py   8:36:58.10 
+no year headers found; nothing to do
+----- exit 0 
+===== sync_decisions_listing.py   8:36:58.10 
+listing sync: 0 row(s) added; year counts recomputed from rows
+----- exit 0 
+===== sync_api_from_pages.py   8:36:58.10 
+decisions archive: 462 published | adcomm pages with a vote: 2
+API already mirrors the pages -- no changes.
+----- exit 0 
+===== rewrite_decision_snippets.py   8:36:58.10 
+decision snippets: 0 page(s) rewritten to answer format, 112 skipped; 32 goal dates available for delta clauses
+----- exit 0 
+===== build_crl_hub.py   8:36:58.10 
+/crl: 444 letters across 22 years; 11 letter(s) cross-linked to our decision pages
+----- exit 0 
+===== watch_fda_approvals.py   8:36:58.10 
+early-approval watch: 52 armed events checked against FDA's feed, 0 unreviewed approvals (3 previously reviewed)
+----- exit 0 
+===== watch_drug_approvals.py   8:36:58.10 
+drug-page watch: 392 drug pages (255 already record an approval), 13 press items scanned, 0 unreviewed leads (3 previously reviewed)
+----- exit 0 
+===== fix_event_schema.py   8:36:58.10 
+date sources: 318 urls, 377 name keys
+calendar/index.html    +location(dated)   0  +startDate&location   0  +datetime/TZ   0  unmatched(left)   0  NUL_stripped     0
+readouts/index.html    +location(dated)   0  +startDate&location   0  +datetime/TZ   0  unmatched(left)   0  NUL_stripped     0
+adcomm/index.html      +location(dated)   0  +startDate&location   0  +datetime/TZ   0  unmatched(left)   0  NUL_stripped     0
+----- exit 0 
+===== build_sitemap.py   8:36:58.10 
+sitemap: 1425 URLs before -> 1425 after   (newest lastmod 2026-09-06)
+    other            687
+    /fda-decision    343
+    /ticker          236
+    /pdufa           139
+    /calendar        12
+    /research        8
+wrote sitemap.xml (209145 bytes)
+lastmod state: 1,546 pages tracked, 930 with a content change today
+----- exit 0 
+===== build_calendar_feed.py   8:36:58.10 
+C:\Users\dcmoo\Documents\Python\9realms\build_calendar_feed.py:129: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  stamp = dt.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+calendar feed: 456 event(s) kept, 0 skipped (undated or older than 120d)
+   day       131   (single day)
+   month     265   (spans the month)
+   quarter    59   (spans the quarter)
+wrote pdufa_site_src\calendar.ics (243,360 bytes)
+  subscribe box on /calendar: 131 exact-date, 324 windowed
+----- exit 0 
+===== build_readout_results.py   8:36:58.10 

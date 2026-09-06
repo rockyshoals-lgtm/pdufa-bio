@@ -46,9 +46,15 @@ def load_rows():
 
 def ev_sentence(r, decided=False):
     tk = str(r.get("t") or "").upper()
+    # A partner-held application is one FDA decision listed under two tickers. Counting it
+    # twice made /fda-this-month read "8 remain" against /calendar's 7 (audit 09-06 NEW-3,
+    # zilurgisertib: Incyte filed the NDA, Mirum in-licensed worldwide rights in May 2026).
+    partners = r.get("_partners") or []
+    tk_label = " / ".join([tk] + [p for p in partners if p != tk])
     name = str(r.get("name") or "the application").strip()
     company = str(r.get("company") or "").strip()
-    who = f"{esc(name)}" + (f" ({esc(company)}, {esc(tk)})" if company else f" ({esc(tk)})")
+    who = (f"{esc(name)}"
+           + (f" ({esc(company)}, {esc(tk_label)})" if company else f" ({esc(tk_label)})"))
     ind = str((r.get("_d") or {}).get("indication") or "").strip()
     ind_txt = f" in {esc(ind)}" if ind else ""
     d = str(r.get("d") or "")
@@ -61,6 +67,12 @@ def ev_sentence(r, decided=False):
         if re.match(r"^\d{4}-\d{2}-\d{2}$", dcd):
             dd = dt.date.fromisoformat(dcd)
             when = f"On {MONTHS[dd.month]} {dd.day}"
+            # OBS-1: a row counted in this month by its GOAL date may have been decided in
+            # an earlier month, which is the normal case (the FDA is not obliged to use its
+            # full clock). Say why it is here rather than leaving two dates unexplained.
+            if d and dcd < d:
+                when = (f"Ahead of its {MONTHS[day.month]} {day.day} goal date, on "
+                        f"{MONTHS[dd.month]} {dd.day}")
         else:
             when = f"By its {MONTHS[day.month]} {day.day} goal date"
         if oc.lower() == "approved":
@@ -77,17 +89,46 @@ def ev_sentence(r, decided=False):
             f"date; the agency can act earlier or extend it.</p>")
 
 
+def merge_partners(rows):
+    """One application listed under several tickers is ONE decision. Group on (goal date,
+    normalized drug name); the first ticker keeps the row and the rest become _partners.
+
+    Audit 09-06 NEW-3/OBS-1: without this, PFE+ROIV (brepocitinib) and INCY+MIRM
+    (zilurgisertib) each counted twice here while /calendar rendered them as one row, so
+    the two pages disagreed on every September number. Same convention as the calendar's
+    multi-ticker label ("JAZZ / ONC / ZYME")."""
+    def key(r):
+        nm = re.sub(r"[^a-z0-9]+", " ", str(r.get("name") or "").lower())
+        nm = re.split(r"\s*\(", nm)[0].strip()
+        return (str(r.get("d") or ""), nm[:28])
+    seen, out = {}, []
+    for r in rows:
+        k = key(r)
+        if k in seen and k[1]:
+            seen[k].setdefault("_partners", []).append(str(r.get("t") or "").upper())
+            continue
+        c = dict(r)
+        seen[k] = c
+        out.append(c)
+    return out
+
+
 def month_events(rows, y, m):
+    """Membership is by GOAL DATE, the same rule /calendar uses (audit 09-06 OBS-1).
+
+    /fda-this-month used to count a decision in the month it was ANNOUNCED, so September
+    read 10/2/8 while /calendar read 13/6/7 for the same month -- both defensible, two
+    pages disagreeing. A decision that came early still belongs to the month of its goal
+    date; the sentence says it was decided ahead of that date. Archive-only decisions have
+    no goal date and are keyed by their decision date, exactly as the calendar restores them."""
     pre = f"{y}-{m:02d}"
     day_up, coarse, decided = [], [], []
-    for r in rows:
-        if r.get("type") != "PDUFA":
-            continue
+    for r in merge_partners([x for x in rows if x.get("type") == "PDUFA"]):
         d = str(r.get("d") or "")
         st = str(r.get("st") or "").lower()
         dcd = str(r.get("dcd") or "")[:10]
         if st == "decided":
-            key = dcd if re.match(r"^\d{4}-\d{2}", dcd) else d
+            key = d if d.startswith(pre) else (dcd if re.match(r"^\d{4}-\d{2}", dcd) else "")
             if key.startswith(pre):
                 decided.append(r)
             continue

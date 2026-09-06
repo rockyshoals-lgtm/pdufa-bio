@@ -1,44 +1,44 @@
 {
- "published_at": "2026-08-29T17:16:25-07:00",
+ "published_at": "2026-09-06T12:12:32-07:00",
  "note": "written by publish_to_dropbox.py as the final step of READOUT_RESEARCH.bat; timestamps are LOCAL PACIFIC (machine time). Read README_LATEST.md first.",
  "files": {
   "readout_gold_dates.csv": {
    "status": "ok",
-   "modified": "2026-08-29T14:01:22",
-   "rows": 535,
+   "modified": "2026-09-06T12:12:32",
+   "rows": 522,
    "confidence": {
-    "SOFT": 432,
-    "FIRM": 6,
-    "GOLD": 97
+    "SOFT": 426,
+    "FIRM": 7,
+    "GOLD": 89
    },
-   "conflicts_for_review": 10
+   "conflicts_for_review": 20
   },
   "readout_calendar.csv": {
    "status": "ok",
-   "modified": "2026-08-29T14:01:22",
-   "rows": 327
+   "modified": "2026-09-06T12:12:31",
+   "rows": 326
   },
   "readout_forward.csv": {
    "status": "ok",
-   "modified": "2026-08-29T17:16:14",
-   "rows": 279,
-   "scan_completed_at": "2026-08-29T17:16:14-07:00 rows=279"
+   "modified": "2026-09-06T12:12:31",
+   "rows": 280,
+   "scan_completed_at": "2026-09-06T12:08:10-07:00 rows=280"
   },
   "ctgov_readouts.csv": {
    "status": "ok",
-   "modified": "2026-08-29T13:59:07",
-   "rows": 219
+   "modified": "2026-09-06T12:10:11",
+   "rows": 218
   },
   "conference_presenters.csv": {
    "status": "ok",
-   "modified": "2026-08-29T14:01:21",
-   "rows": 11
+   "modified": "2026-09-06T12:12:30",
+   "rows": 10
   },
   "readout_date_drift.csv": {
    "status": "ok",
-   "modified": "2026-08-29T14:01:22",
-   "rows": 13,
-   "pulled_earlier": 10
+   "modified": "2026-09-06T12:12:31",
+   "rows": 12,
+   "pulled_earlier": 9
   },
   "conf_registry.json": {
    "status": "ok",
