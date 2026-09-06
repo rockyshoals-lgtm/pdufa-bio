@@ -35,6 +35,11 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Audit 09-05 (0800 slot) P2-7: every date a page prints is the EASTERN calendar date of
+# the build, from one shared function (site_dates.py), never the runner's UTC clock.
+import sys as _sys; _sys.path.insert(0, HERE)
+from site_dates import eastern_today as _eastern_today
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUT = os.path.join(SITE, "drug")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
@@ -386,7 +391,7 @@ def main():
                 shutil.rmtree(OUT, onerror=lambda f, p, e: (_unlock(f, p, e)))
         os.makedirs(OUT, exist_ok=True)
 
-    today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    today = _eastern_today().isoformat()
     written = 0
     index_items = []
 

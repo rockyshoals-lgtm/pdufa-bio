@@ -1292,7 +1292,8 @@ export default [
    "accession": "0001193125-26-224067",
    "guidance_text": "autism spectrum disorder, with topline results expected by mid-August 2026 &#x2022; Enrollment ongoing in ML-007C-MA&#x2019;s Phase 2 VISTA trial in Alzheimer&#x2019;s disease psychosis, with topline results expected in the second half of 2027 &#x2022; Ended the quarter with $395.2 million in cash, ",
    "review": "Phase 2 ZEPHYR met its primary endpoint: statistically significant improvement in PANSS total score versus placebo at Week 5 on the 210/3 mg BID dose in acute schizophrenia. Generally well tolerated; no serious or drug-related severe adverse events reported."
-  }
+  },
+  "oc": "Met primary endpoint"
  },
  {
   "id": "adcomm_capr_2026-07-29",
@@ -1495,7 +1496,8 @@ export default [
    "accession": "0001193125-26-327455",
    "guidance_text": "available, in short-term money market investment instruments and high quality corporate and government bonds. We completed randomization in the LEVEL trial at the end of the first quarter of 2026 and expect to report topline data in August 2026. We began our LEVEL-2 trial in December 2025 and are cu",
    "review": "Phase 3 LEVEL did not meet its primary endpoint: patients walked 3.5 metres further than placebo at Week 12 (p=0.63), a difference small enough to be chance; the key secondary (KCCQ-TSS) was also not met. A prespecified subgroup with baseline 6MWD under 333 m improved 26.3 m (nominal p=0.0112) and NT-proBNP fell 49% versus placebo (nominal p<0.0001), but the company states: 'Nominal p-values are not adjusted for multiplicity and these analyses do not establish efficacy.' Tenax intends to request a Type C meeting with FDA. Full results were a Late-Breaking Clinical Science presentation at ESC Congress 2026 (Munich, Aug 28-31). Note: LEVEL-2 is a separate, still-running Phase 3 of the same drug (enrollment completing end of 2027) -- this row previously mis-named the trial."
-  }
+  },
+  "oc": "Did not meet primary endpoint"
  },
  {
   "id": "pdufa_lnth_2026-08-13",
@@ -1788,7 +1790,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "review": "KYSA-1 (NCT05938725) was TERMINATED; ClinicalTrials.gov records the reason as 'Study discontinued due to sponsor decision' (status verified 2026). The related KYSA-3 lupus nephritis trial (NCT06342960) is also terminated for the same stated reason. No topline readout will occur from this trial; primary completion is recorded as ACTUAL 2026-05-29."
   },
-  "dm": "2026-08"
+  "dm": "2026-08",
+  "oc": "Trial terminated; no readout"
  },
  {
   "id": "readout_mane_2026-08-15",
@@ -1960,7 +1963,8 @@ export default [
    "readout_outcome": "Positive",
    "reported_date": "2026-08-18"
   },
-  "ua": "2026-08-24T17:10:15Z"
+  "ua": "2026-08-24T17:10:15Z",
+  "oc": "Met primary endpoint"
  },
  {
   "id": "pdufa_rare_2026-08-23",

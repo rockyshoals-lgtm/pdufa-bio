@@ -28,6 +28,11 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Audit 09-05 (0800 slot) P2-7: every date a page prints is the EASTERN calendar date of
+# the build, from one shared function (site_dates.py), never the runner's UTC clock.
+import sys as _sys; _sys.path.insert(0, HERE)
+from site_dates import eastern_today as _eastern_today
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 B, E = "<!--FRESH:BEGIN-->", "<!--FRESH:END-->"
@@ -74,7 +79,7 @@ def next_decision():
                   open(DATASET, encoding="utf-8", errors="replace").read(), re.S)
     if not m:
         return None
-    today = dt.date.today()
+    today = _eastern_today()
     best = None
     for r in json.loads(m.group(1)):
         if r.get("type") != "PDUFA" or r.get("dp") != "day":

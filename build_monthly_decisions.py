@@ -23,6 +23,11 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Audit 09-05 (0800 slot) P2-7: every date a page prints is the EASTERN calendar date of
+# the build, from one shared function (site_dates.py), never the runner's UTC clock.
+import sys as _sys; _sys.path.insert(0, HERE)
+from site_dates import eastern_today as _eastern_today
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUT = os.path.join(SITE, "fda-this-month")
 MONTHS = ["", "January", "February", "March", "April", "May", "June", "July",
@@ -128,7 +133,7 @@ def archive_only_decisions(y, m, have):
 
 def main():
     rows = load_rows()
-    today = dt.date.today()
+    today = _eastern_today()
     y, m = today.year, today.month
     ny, nm = (y, m + 1) if m < 12 else (y + 1, 1)
     mon = f"{MONTHS[m]} {y}"

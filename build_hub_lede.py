@@ -32,6 +32,11 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Audit 09-05 (0800 slot) P2-7: every date a page prints is the EASTERN calendar date of
+# the build, from one shared function (site_dates.py), never the runner's UTC clock.
+import sys as _sys; _sys.path.insert(0, HERE)
+from site_dates import eastern_today as _eastern_today
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 B, E = "<!--LEDE:BEGIN-->", "<!--LEDE:END-->"
 
@@ -93,7 +98,7 @@ def sentence(path, rows):
         # "Still ahead" has to mean still ahead. A row whose date has passed with no outcome
         # published is waiting on the FDA, not upcoming, and lumping the two together would put a
         # false statement in the one sentence written to be quoted.
-        today = dt.date.today().isoformat()
+        today = _eastern_today().isoformat()
         decided = ap + crl
         rest = [r for r in rows if not (r["approved"] or r["crl"])]
         upcoming = sum(1 for r in rest if not r["iso"] or r["iso"] >= today)
@@ -174,7 +179,7 @@ def homepage_sentence():
     if not (cal and dec):
         return None, None, None
 
-    today = dt.date.today().isoformat()
+    today = _eastern_today().isoformat()
     ahead = sum(1 for r in cal if not (r["approved"] or r["crl"])
                 and (not r["iso"] or r["iso"] >= today))
     ap = sum(1 for r in dec if r["approved"])

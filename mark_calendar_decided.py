@@ -379,10 +379,13 @@ def restore_missing(path, by_tk, dry):
                f'<span style="color:{col};font-weight:700">{icon}</span></div>'
                f'<div class="d"><span style="color:{col};font-weight:700">{word}'
                f'</span>: {body}</div></a>')
-        anchor = heads[mon].group(0) + '<div class="grid">'
-        if anchor not in html:
+        # the heading may carry the per-month sentence block (inject_calendar_explainer)
+        # between itself and the grid; the row goes at the top of the grid either way
+        am = re.search(re.escape(heads[mon].group(0))
+                       + r'(?:<!--MSENT:BEGIN-->[\s\S]*?<!--MSENT:END-->)?<div class="grid">', html)
+        if not am:
             return None
-        return html.replace(anchor, anchor + row, 1), word
+        return html[:am.end()] + row + html[am.end():], word
 
     added = 0
     for tk, decs in sorted(by_tk.items()):

@@ -31,6 +31,11 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Audit 09-05 (0800 slot) P2-7: every date a page prints is the EASTERN calendar date of
+# the build, from one shared function (site_dates.py), never the runner's UTC clock.
+import sys as _sys; _sys.path.insert(0, HERE)
+from site_dates import eastern_today as _eastern_today
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 BASE = "https://www.pdufa.bio"
 B, E = "<!--HUBFAQ:BEGIN-->", "<!--HUBFAQ:END-->"
@@ -96,7 +101,7 @@ def inject(rel, qa, dry):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
-    today = dt.datetime.now(dt.timezone.utc).date()
+    today = _eastern_today()
     tstr = pretty(today.isoformat())
     rows = load_rows()
 

@@ -286,6 +286,12 @@ jobs:
       - name: Surface company-guided readouts at the top of /readouts
         run: python build_guided_readouts.py
 
+      # Audit 09-05 (0800 slot) P2-8: API `outcome` null on every Reported readout while the
+      # pages stated the result. Derived from the row's own verified review sentence, house
+      # vocabulary only ("met" / "did not meet its primary endpoint").
+      - name: "API outcome on Reported readouts (from the verified review text)"
+        run: python sync_readout_outcomes.py
+
       # The hubs were built by hand and only ENRICHED here, so they froze: enrichment cannot
       # remove a row the builder put there. By 2026-08-26 nine hubs still listed approved
       # drugs under "Upcoming FDA catalysts", JAZZ/ZYME's Ziihera among them. Build then

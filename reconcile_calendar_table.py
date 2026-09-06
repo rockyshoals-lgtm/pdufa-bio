@@ -98,7 +98,8 @@ def match(events, tk, date, row_toks):
 
 MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August",
                "September", "October", "November", "December"]
-GRID = re.compile(r'(<div class="mhead">([A-Za-z]+ \d{4})</div><div class="grid">)'
+GRID = re.compile(r'(<div class="mhead">([A-Za-z]+ \d{4})</div>'
+                  r'(?:<!--MSENT:BEGIN-->[\s\S]*?<!--MSENT:END-->)?<div class="grid">)'
                   r'((?:\s*<a class="row".*?</a>)*)', re.S)
 ANCHOR = re.compile(r'<a class="row".*?</a>', re.S)
 

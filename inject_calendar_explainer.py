@@ -62,8 +62,10 @@ def timing_split():
 def main():
     t = io.open(PAGE, encoding="utf-8", errors="replace").read()
     n, early, on, late, biggest = timing_split()
-    today = dt.date.today()
-    stamp = f'{["","January","February","March","April","May","June","July","August","September","October","November","December"][today.month]} {today.day}, {today.year}'
+    # Eastern calendar date of the build (audit 09-05 P2-7), from the one shared function.
+    sys.path.insert(0, HERE)
+    from site_dates import eastern_stamp
+    stamp = eastern_stamp()
 
     p4 = ""
     if n:
@@ -75,6 +77,48 @@ def main():
                    f"({esc(biggest[1])}, {pretty(biggest[2])}).")
         p4 += (' Full record: <a class="lit" href="/research/fda-decision-timing">'
                "FDA decision timing</a>.</p>")
+
+    # Audit 09-05 (0800 slot) ORDER 6: the page's decided census and the API's differ
+    # because the archive holds sourced decisions (sNDA/BLA supplements, partner listings)
+    # that were never dated forward events in the API dataset. Say so, with the number.
+    try:
+        ds = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
+                     errors="replace").read().replace("\x00", "")
+        arr, _ = json.JSONDecoder().raw_decode(ds[ds.find("["):])
+        api_by_date = {}
+        for r in arr:
+            if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() == "decided":
+                api_by_date.setdefault(str(r.get("dcd")), set()).add(str(r.get("t")).upper())
+        # a partner-labelled row (GSK / SPRO) is covered by EITHER ticker's API row
+        page_dec, archive_only = set(), []
+        for tk, dcd, label in re.findall(
+                r'<a class="row"[^>]*href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"[^>]*>'
+                r'\s*<div class="t">([A-Z /]+)', t):
+            if (tk, dcd) in page_dec:
+                continue
+            page_dec.add((tk, dcd))
+            labels = {x.strip() for x in label.split("/")} | {tk}
+            if not (labels & api_by_date.get(dcd, set())):
+                archive_only.append((tk, dcd))
+        heads_ = re.findall(r'<div class="mhead">([A-Za-z]+) (\d{4})</div>', t)
+        api_window = 0
+        if heads_:
+            mnum = {m: i for i, m in enumerate(
+                ["January", "February", "March", "April", "May", "June", "July", "August",
+                 "September", "October", "November", "December"], 1)}
+            lo = f"{heads_[0][1]}-{mnum[heads_[0][0]]:02d}-01"
+            hi = f"{heads_[-1][1]}-{mnum[heads_[-1][0]]:02d}-31"
+            api_window = sum(1 for r in arr if r.get("type") == "PDUFA"
+                             and str(r.get("st", "")).lower() == "decided"
+                             and lo <= str(r.get("d", "")) <= hi)
+        if page_dec:
+            p4 += (f"<p>{len(archive_only)} of the {len(page_dec)} decided rows on this page "
+                   f"are archive decision records with no row in the API dataset; the API's "
+                   f"{api_window} Decided rows in this window cover the other "
+                   f"{len(page_dec) - len(archive_only)}, counting a partner-held application "
+                   f"once per listed ticker. Each archive row links its own sourced decision page.</p>")
+    except Exception as e:      # the sentence is a courtesy; the page must still build
+        print(f"calendar explainer: census sentence skipped ({e})")
 
     block = (
         "<!--EXPLAINER:BEGIN-->"
@@ -109,6 +153,30 @@ def main():
             print("calendar explainer: LEDE:END marker missing, nothing written")
             return 1
         t2 = t.replace(anchor, anchor + block, 1)
+
+    # Audit 09-05 (0800 slot) ORDER 9 / 7b: one dated sentence under each month heading,
+    # the quotable unit an answer box lifts. Counted from the rows actually rendered in
+    # that month's grid (after mark_calendar_decided), so the sentence cannot disagree
+    # with the list beneath it. Marker-bounded, idempotent; restore_missing() tolerates
+    # the block between the heading and the grid.
+    t2 = re.sub(r"<!--MSENT:BEGIN-->[\s\S]*?<!--MSENT:END-->", "", t2)
+    parts = re.split(r'(<div class="mhead">[A-Za-z]+ \d{4}</div>)', t2)
+    for k in range(1, len(parts), 2):
+        mon = re.search(r">([A-Za-z]+ \d{4})<", parts[k]).group(1)
+        grid = parts[k + 1]
+        rows = re.findall(r'<a class="row"[^>]*>\s*<div class="t">(.*?)</div>', grid, re.S)
+        cnt = len(rows)
+        est = sum(1 for r in rows if "(est.)" in r)
+        dec = len(re.findall(r'<a class="row"[^>]*href="/fda-decision/', grid))
+        if not cnt:
+            continue
+        s = (f"{cnt} FDA goal date{'s' if cnt != 1 else ''} in {mon}"
+             + (f", {est} of them dated only to the quarter" if est else "")
+             + (f"; {dec} already decided" if dec else "")
+             + f", each row linking its source, updated {stamp}.")
+        parts[k + 1] = ('<!--MSENT:BEGIN--><p class="msent" style="margin:2px 0 8px;color:var(--mut2);'
+                        f'font-size:13px">{esc(s)}</p><!--MSENT:END-->' + grid)
+    t2 = "".join(parts)
     if t2 != t:
         io.open(PAGE, "w", encoding="utf-8").write(t2)
         print(f"calendar explainer: written (n={n}, early={early}, on={on}, "
