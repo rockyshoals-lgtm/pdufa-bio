@@ -96,6 +96,51 @@ def match(events, tk, date, row_toks):
     return best[1]
 
 
+MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August",
+               "September", "October", "November", "December"]
+GRID = re.compile(r'(<div class="mhead">([A-Za-z]+ \d{4})</div><div class="grid">)'
+                  r'((?:\s*<a class="row".*?</a>)*)', re.S)
+ANCHOR = re.compile(r'<a class="row".*?</a>', re.S)
+
+
+def row_month(row):
+    """'September 2026' for a dated row, the quarter's last month for a 'Qn YYYY (est.)'
+    row, None when the row states neither (left where it is)."""
+    m = re.search(r'<div class="t">[^<]*?(\d{4})-(\d{2})-\d{2}', row)
+    if m:
+        return f"{MONTH_NAMES[int(m.group(2)) - 1]} {m.group(1)}", m.group(0)[-10:]
+    q = re.search(r'<div class="t">[^<]*?Q([1-4]) (\d{4}) \(est\.\)', row)
+    if q:
+        return f"{MONTH_NAMES[int(q.group(1)) * 3 - 1]} {q.group(2)}", f"{q.group(2)}-{int(q.group(1)) * 3:02d}-99"
+    return None, None
+
+
+def rehome_rows(doc):
+    grids = list(GRID.finditer(doc))
+    if not grids:
+        return doc, []
+    heads = [g.group(2) for g in grids]
+    buckets = {h: [] for h in heads}
+    notes = []
+    for g in grids:
+        for row in ANCHOR.findall(g.group(3)):
+            mon, key = row_month(row)
+            target = mon if mon in buckets else g.group(2)
+            if target != g.group(2):
+                tk = re.search(r'<div class="t">([^<]*?)\s*(?:&middot;|·)', row)
+                notes.append(f"{(tk.group(1).strip() if tk else '?')} {key}: re-homed "
+                             f"'{g.group(2)}' -> '{target}'")
+            buckets[target].append((key or "9999", row))
+    out, last = [], 0
+    for g in grids:
+        rows = [r for _k, r in sorted(buckets[g.group(2)], key=lambda x: x[0])]
+        out.append(doc[last:g.start(3)])
+        out.append("".join(rows))
+        last = g.end(3)
+    out.append(doc[last:])
+    return "".join(out), notes
+
+
 def reconcile(path, events, dry):
     doc = open(path, encoding="utf-8", errors="replace").read()
     orig = doc
@@ -200,6 +245,18 @@ def reconcile(path, events, dry):
 
     doc = re.sub(r'<div class="list">(?:\s*<a class="row" href="/pdufa/.*?</a>)+',
                  sort_container, doc, flags=re.S)
+
+    # MAIN PAGE: every row lives under the month heading its date belongs to (2026-09-06).
+    # The insert above anchors "before the first later-dated row", and on the flagship
+    # page the rows sit in per-month <div class="grid"> blocks -- so an event inserted
+    # when no later row existed in its own month landed at the TOP of the next month's
+    # grid, and the next insert anchored on it. Found on 2026-09-06: eleven Oct-Dec rows
+    # (RHHBY 10-15 ... PRAX 12-27) under the "September 2026" heading, two July rows under
+    # August, one under September. Quarter-only rows ("Q4 2026 (est.)") belong to the
+    # quarter's last month. Rows are re-homed and date-sorted inside each grid.
+    if not month_scoped:
+        doc, rehomed = rehome_rows(doc)
+        moved.extend(rehomed)
 
     if doc != orig and not dry:
         open(path, "w", encoding="utf-8").write(doc)

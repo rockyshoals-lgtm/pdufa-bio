@@ -347,9 +347,17 @@ def main():
     # page (with or without the FDA's 4-letter suffix, -hrii and the like), the generic
     # page inherits the brand page's rows and states the marketing name. Events render with
     # their own links, so nothing is claimed twice.
+    # Audit 2026-09-05 (0800 slot) P1-4: "MOLBREEVI (molgramostim inhalation)" split from
+    # "Molgramostim" because the parenthetical carries a dosage-form word after the
+    # generic. /drug/molgramostim -- the INN a reader searches -- said "0 upcoming" while
+    # the Nov 22, 2026 PDUFA sat on /drug/molbreevi. A trailing dosage-form word (from a
+    # fixed list, never a free token) is stripped before the generic is compared.
+    FORM_WORDS = {"inhalation", "injection", "injectable", "tablets", "tablet", "capsules",
+                  "capsule", "oral", "solution", "cream", "gel", "ointment", "topical",
+                  "subcutaneous", "intravenous", "nasal", "spray", "powder", "suspension"}
     for slug in list(drugs):
-        m = re.search(r"\(([a-z][a-z0-9-]{4,40})\)\s*$", drugs[slug]["name"])
-        if not m:
+        m = re.search(r"\(([a-z][a-z0-9-]{4,40})((?:\s+[a-z-]+){0,2})\)\s*$", drugs[slug]["name"])
+        if not m or any(w not in FORM_WORDS for w in m.group(2).split()):
             continue
         gen = slugify(re.sub(r"-[a-z]{4}$", "", m.group(1)))
         if gen and gen != slug and gen in drugs:

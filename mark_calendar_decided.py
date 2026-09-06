@@ -333,11 +333,57 @@ def restore_missing(path, by_tk, dry):
         return 0
     # every (ticker, ~date) the page already covers, from hrefs and row labels
     have_slugs = set(re.findall(r'href="/fda-decision/([A-Z]{1,6}-\d{4}-\d{2}-\d{2})"', html))
-    row_dates = {}
-    for label, d in re.findall(r'<div class="t">' + TKLABEL + r'\s*(?:&middot;|·|&#183;)\s*'
-                               r'(\d{4}-\d{2}-\d{2})', html):
+    # Audit 2026-09-05 (0800 slot) P0-1, root cause: the "near" test below used to skip a
+    # decision whenever the ticker had ANY row within EARLY_WINDOW -- so AZN's Truqap row
+    # (06-30, already marked to a different decision) and its Ultomiris row (12-31, a
+    # different application that the marking rule would never map to camizestrant) together
+    # silently suppressed AZN-2026-09-04, and the calendar kept counting camizestrant "ahead"
+    # two days after the FDA approved it. A row OWNS a decision only if (a) it is already
+    # marked with that decision's slug, or (b) it is pending and match_decision would mark it
+    # with that decision on this run. Anything else is not an owner, and a sponsor's second
+    # (or ninth) decision is injected like its first.
+    rows = []      # (ticker, row_date, marked_slug_or_None, description_text)
+    for m in re.finditer(r'<a class="row"([^>]*)>\s*<div class="t">' + TKLABEL +
+                         r'\s*(?:&middot;|·|&#183;)\s*(\d{4}-\d{2}-\d{2})'
+                         r'(?:\s*(?:&middot;|·|&#183;))?(?:\s*<span[^>]*>[^<]*</span>)?'     # both marked forms
+                         r'\s*</div>\s*<div class="d">(.*?)</div>', html, re.S):
+        attrs, label, d, desc = m.groups()
+        sm = re.search(r'href="/fda-decision/([A-Z]{1,6}-\d{4}-\d{2}-\d{2})"', attrs)
         for tk in [x.strip() for x in label.split("/")]:
-            row_dates.setdefault(tk, []).append(d)
+            rows.append((tk, d, sm.group(1) if sm else None, strip_marker(desc)))
+
+    def owned(tk, date):
+        dd = dt.date.fromisoformat(date)
+        for rtk, rd, slug, desc in rows:
+            if rtk != tk or abs((dt.date.fromisoformat(rd) - dd).days) > EARLY_WINDOW:
+                continue
+            if slug == f"{tk}-{date}":
+                return True
+            # a partner-labelled row (JAZZ / ONC / ZYME) marked to a sibling's decision on
+            # the SAME date is that decision: one application, several listings
+            if slug is not None and slug.endswith(f"-{date}"):
+                return True
+            if slug is None:
+                hit = match_decision(by_tk, tk, rd, desc)
+                if hit and hit[0] == date:
+                    return True               # the marking pass will mark that row
+        return False
+
+    def inject(tk, date, outcome, drug, mon, row_date, slug_date):
+        col = GREEN if outcome == "ap" else RED
+        icon = "✓" if outcome == "ap" else "✗"
+        word = "Approved" if outcome == "ap" else "CRL"
+        body = re.sub(r"\s+", " ", drug).strip()[:110] or word
+        row = (f'<a class="row" data-dec="1" href="/fda-decision/{tk}-{slug_date}">'
+               f'<div class="t">{tk} &middot; {row_date} '
+               f'<span style="color:{col};font-weight:700">{icon}</span></div>'
+               f'<div class="d"><span style="color:{col};font-weight:700">{word}'
+               f'</span>: {body}</div></a>')
+        anchor = heads[mon].group(0) + '<div class="grid">'
+        if anchor not in html:
+            return None
+        return html.replace(anchor, anchor + row, 1), word
+
     added = 0
     for tk, decs in sorted(by_tk.items()):
         for date, outcome, drug in decs:
@@ -346,31 +392,81 @@ def restore_missing(path, by_tk, dry):
                 continue                      # outside this page's window
             if f"{tk}-{date}" in have_slugs:
                 continue                      # already linked somewhere on the page
-            dd = dt.date.fromisoformat(date)
-            near = any(abs((dt.date.fromisoformat(x) - dd).days) <= EARLY_WINDOW
-                       for x in row_dates.get(tk, []))
-            if near:
+            if owned(tk, date):
                 continue                      # an existing row owns this decision
-            col = GREEN if outcome == "ap" else RED
-            icon = "✓" if outcome == "ap" else "✗"
-            word = "Approved" if outcome == "ap" else "CRL"
-            body = re.sub(r"\s+", " ", drug).strip()[:110] or word
-            row = (f'<a class="row" data-dec="1" href="/fda-decision/{tk}-{date}">'
-                   f'<div class="t">{tk} &middot; {date} '
-                   f'<span style="color:{col};font-weight:700">{icon}</span></div>'
-                   f'<div class="d"><span style="color:{col};font-weight:700">{word}'
-                   f'</span>: {body}</div></a>')
-            anchor = heads[mon].group(0) + '<div class="grid">'
-            if anchor in html:
-                html = html.replace(anchor, anchor + row, 1)
+            # One application, two listings, two archive pages (GILD-2026-06-24 and
+            # MRK-2026-06-24 are both Trodelvy): a row restored this run for the SAME date
+            # naming the same drug takes this ticker into its label instead of a twin row.
+            dtoks = {w for w in re.findall(r"[a-z]{5,}", drug.lower())}
+            twin = next((r for r in rows if r[1] == date and r[2] and r[2] != f"{tk}-{date}"
+                         and r[2].endswith(f"-{date}") and dtoks & {w for w in re.findall(r"[a-z]{5,}", r[3].lower())}
+                         and f'href="/fda-decision/{r[2]}"' in html), None)
+            if twin:
+                old_label = f'<div class="t">{twin[0]} &middot; {date} '
+                if old_label in html:
+                    html = html.replace(old_label, f'<div class="t">{twin[0]} / {tk} &middot; {date} ', 1)
+                    print(f"  LABELLED {tk} onto the {twin[0]} {date} row (same drug, same date)")
+                    have_slugs.add(f"{tk}-{date}")
+                    rows.append((tk, date, twin[2], twin[3]))
+                    continue
+            res = inject(tk, date, outcome, drug, mon, date, date)
+            if res:
+                html, word = res
                 added += 1
                 print(f"  RESTORED {tk} {date} ({word}) into '{mon}' -- decision was "
                       f"absent from the page entirely")
                 have_slugs.add(f"{tk}-{date}")
-                row_dates.setdefault(tk, []).append(date)
+                rows.append((tk, date, f"{tk}-{date}", drug))
+
+    # Audit 2026-09-05 (0800 slot) P1-5: a dataset PDUFA that DECIDED EARLY, before this
+    # page's first month (CORT ROSELLA: goal 07-11, approved 03-25), had no row -- the
+    # decision month is outside the window, the goal month is inside it, and nothing
+    # injected on the goal date. Those rows are injected at the GOAL date, marked, linking
+    # the decision page, so the month the reader was told to expect it shows what happened.
+    for r in load_dataset_decided():
+        tk, goal, dcd = r["t"], r["d"], r["dcd"]
+        mon = f"{MONTHS[int(goal[5:7])]} {goal[:4]}"
+        if mon not in heads or f"{tk}-{dcd}" in have_slugs:
+            continue
+        gd = dt.date.fromisoformat(goal)
+        if any(rtk == tk and (abs((dt.date.fromisoformat(rd) - gd).days) <= WINDOW
+                              or (s and s.endswith(f"-{dcd}")))
+               for rtk, rd, s, _d in rows):
+            continue                          # a row near that goal date exists; marking owns it
+        outcome = "crl" if str(r.get("oc", "")).upper() == "CRL" else "ap"
+        res = inject(tk, dcd, outcome, r["name"], mon, goal, dcd)
+        if res:
+            html, word = res
+            added += 1
+            print(f"  RESTORED {tk} goal {goal} -> decided {dcd} ({word}) into '{mon}' -- "
+                  f"early decision outside the window, goal date inside it")
+            have_slugs.add(f"{tk}-{dcd}")
+            rows.append((tk, goal, f"{tk}-{dcd}", r["name"]))
     if added and not dry:
         open(path, "w", encoding="utf-8").write(html)
     return added
+
+
+def load_dataset_decided():
+    """Decided day-precision PDUFAs from the API dataset, with goal date d and decision dcd,
+    only where the decision page exists (the injected row must link something real)."""
+    import json
+    try:
+        src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
+                   errors="replace").read().replace("\x00", "")
+        arr, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
+    except Exception:
+        return []
+    out = []
+    for r in arr:
+        if (r.get("type") == "PDUFA" and str(r.get("st", "")).lower() == "decided"
+                and r.get("dp") == "day" and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d", "")))
+                and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("dcd", "")))
+                and os.path.exists(os.path.join(SITE, "fda-decision",
+                                                f"{str(r.get('t')).upper()}-{r['dcd']}", "index.html"))):
+            out.append({"t": str(r["t"]).upper(), "d": r["d"], "dcd": r["dcd"],
+                        "oc": r.get("oc") or "", "name": str(r.get("name") or "")})
+    return out
 
 
 def main():
