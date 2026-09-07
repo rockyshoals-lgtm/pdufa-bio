@@ -1,17 +1,17 @@
 {
- "published_at": "2026-09-06T20:40:38-07:00",
+ "published_at": "2026-09-06T20:53:51-07:00",
  "note": "written by publish_to_dropbox.py as the final step of READOUT_RESEARCH.bat; timestamps are LOCAL PACIFIC (machine time). Read README_LATEST.md first.",
  "files": {
   "readout_gold_dates.csv": {
    "status": "ok",
-   "modified": "2026-09-06T20:40:14",
-   "rows": 522,
+   "modified": "2026-09-06T20:53:50",
+   "rows": 530,
    "confidence": {
-    "SOFT": 426,
+    "SOFT": 424,
     "FIRM": 7,
-    "GOLD": 89
+    "GOLD": 99
    },
-   "conflicts_for_review": 20
+   "conflicts_for_review": 22
   },
   "readout_calendar.csv": {
    "status": "ok",
@@ -31,14 +31,14 @@
   },
   "conference_presenters.csv": {
    "status": "ok",
-   "modified": "2026-09-06T15:15:14",
-   "rows": 10
+   "modified": "2026-09-06T20:53:49",
+   "rows": 19
   },
   "readout_date_drift.csv": {
    "status": "ok",
-   "modified": "2026-09-06T20:40:14",
-   "rows": 12,
-   "pulled_earlier": 9
+   "modified": "2026-09-06T20:53:50",
+   "rows": 17,
+   "pulled_earlier": 11
   },
   "conf_registry.json": {
    "status": "ok",
