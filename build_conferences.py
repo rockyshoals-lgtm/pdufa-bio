@@ -161,6 +161,11 @@ def load_presenters():
             if not r.get("catalyst_date"):
                 r["catalyst_date"] = r.get(dated) or ""
             r["source_url"] = r.get("source_url") or r.get("filing_url") or ""
+            # TIER (red team 2026-09-06d item 4): only human-verified rows -- the curated
+            # history file and the VERIFIED file -- render AS PRESENTERS. A mined row, even
+            # at confidence 'high', is a filing that MENTIONS the meeting; it renders under
+            # its own heading with the matched sentence visible, never as "presenting".
+            r["_tier"] = "mined" if gate is True else "verified"
             out.setdefault(code.upper(), []).append(r)
     return out
 
@@ -197,9 +202,24 @@ def render(data, by_code, today):
     n_pres = 0
     cards = []
     for c in confs:
-        pres = presenters_for(c, by_code)
+        allrows = presenters_for(c, by_code)
+        pres = [r for r in allrows if r.get("_tier") != "mined"]
+        unreviewed = [r for r in allrows if r.get("_tier") == "mined"]
         n_pres += len(pres)
         days = (dt.date.fromisoformat(c["start"]) - dt.date.fromisoformat(today)).days
+
+        unrev_html = ""
+        if unreviewed:
+            unrev_html = (
+                '<div style="font-size:12px;color:var(--mut2);margin-top:9px;line-height:1.6">'
+                '<b>Filings that mention this meeting (unreviewed)</b>: '
+                + " &middot; ".join(
+                    f'{esc(r.get("ticker") or (r.get("company") or "")[:18])}: '
+                    f'&ldquo;{esc(re.sub(r"&#x?[0-9a-fA-F]+;|&#160;", " ", (r.get("matched_sentence") or r.get("snippet") or "")).strip()[:140])}&rdquo;'
+                    + (f' <a href="{esc(r["source_url"])}" rel="nofollow">source</a>' if r.get("source_url") else "")
+                    for r in unreviewed[:6])
+                + ". A filing mentioning the meeting is not a confirmed presentation; these rows "
+                  "are not counted above.</div>")
 
         if pres:
             body = ('<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:9px">' + "".join(
@@ -235,7 +255,7 @@ def render(data, by_code, today):
             f'<div style="font-size:12.5px;color:var(--mut2);margin-top:3px">'
             f'{esc(c["city"])} · {esc(c["focus"])} · '
             f'<a href="{esc(c["source"])}" rel="nofollow noopener">official site</a></div>'
-            f'{body}</div>')
+            f'{body}{unrev_html}</div>')
 
     una = "".join(
         f'<li><b>{esc(u["code"])}</b> {esc(u["name"])}. {esc(u["why"])} '

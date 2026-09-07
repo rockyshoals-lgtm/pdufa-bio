@@ -370,6 +370,13 @@ jobs:
           python sync_conferences_to_api.py
           python build_conference_runup_stats.py
           python build_conference_runup_module.py
+          # Red team 2026-09-06d Layer 1: the overall 1,425-presentation finding as one
+          # sourced sentence on every /conference page + the /conferences lede; the study
+          # page's anchor caveat, distribution table and CC BY 4.0 CSV; and the /research
+          # cards synced to the studies they link. One facts module, no typed numbers.
+          python inject_conference_runup_sentence.py
+          python augment_conference_study.py
+          python sync_research_cards.py
           python build_conference_faq.py
           python build_early_decisions.py
           python add_amlx_avexitide.py

@@ -60,6 +60,32 @@ for junk in ("ANE", "PRE-RELEA"):
     if n:
         bad(f'{n} rows carry the junk label "{junk}"')
 
+# 5) conferences.json hygiene (red team 2026-09-06d item 8): sorted by start date, the
+#    verification stamp not stale (a dates file nobody has re-checked in 60 days is a
+#    dates file that has drifted), and AACR-PANC's city a city, not a city plus a venue.
+import json as _json, datetime as _dt, os as _os
+_cj = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                    "conferences.json")
+try:
+    _c = _json.load(open(_cj, encoding="utf-8"))
+    _confs = _c.get("conferences", [])
+    _keys = [(x.get("start", ""), x.get("code", "")) for x in _confs]
+    if _keys != sorted(_keys):
+        bad("conferences.json is not sorted by (start, code)")
+    _stamp = _c.get("_verified_on", "")
+    try:
+        _age = (_dt.date.today() - _dt.date.fromisoformat(_stamp)).days
+        if _age > 60:
+            bad(f"conferences.json _verified_on is {_age} days old ({_stamp}); re-verify and bump")
+    except ValueError:
+        bad(f"conferences.json _verified_on is not an ISO date: {_stamp!r}")
+    for x in _confs:
+        if "(" in str(x.get("city", "")):
+            bad(f"conferences.json {x.get('code')}: city carries a venue in parentheses "
+                f"({x.get('city')!r}); put the venue in its own field")
+except FileNotFoundError:
+    bad("conferences.json missing")
+
 if fail:
     print(f"\n{fail} conference-feed integrity failure(s). DO NOT PUBLISH.")
     sys.exit(1)

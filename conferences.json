@@ -1,6 +1,6 @@
 {
  "_note": "Every row verified against the organiser's own site. Dates that an organiser has not published are absent rather than estimated: a conference calendar that guesses is worse than one with a gap. JPM 2027 is deliberately omitted, see _unannounced.",
- "_verified_on": "2026-08-03",
+ "_verified_on": "2026-09-06",
  "_unannounced": [
   {
    "code": "JPM",
@@ -38,6 +38,16 @@
    "source": "https://wclc2026.iaslc.org/"
   },
   {
+   "code": "AACR-PANC",
+   "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+   "start": "2026-09-25",
+   "end": "2026-09-28",
+   "city": "San Diego, CA",
+   "focus": "Oncology - Pancreatic",
+   "source": "https://www.aacr.org/meeting/aacr-conference-on-pancreatic-cancer/",
+   "venue": "Hilton San Diego Bayfront"
+  },
+  {
    "code": "ASTRO",
    "name": "ASTRO Annual Meeting",
    "start": "2026-09-26",
@@ -65,15 +75,6 @@
    "source": "https://www.wms2026.com/"
   },
   {
-   "code": "ACG",
-   "name": "American College of Gastroenterology Annual Meeting",
-   "start": "2026-10-09",
-   "end": "2026-10-14",
-   "city": "Nashville, US",
-   "focus": "Gastroenterology",
-   "source": "https://acgmeetings.gi.org/"
-  },
-  {
    "code": "AAO",
    "name": "American Academy of Ophthalmology Annual Meeting",
    "start": "2026-10-09",
@@ -81,6 +82,15 @@
    "city": "New Orleans, US",
    "focus": "Ophthalmology and ocular gene therapy",
    "source": "https://www.aao.org/annual-meeting"
+  },
+  {
+   "code": "ACG",
+   "name": "American College of Gastroenterology Annual Meeting",
+   "start": "2026-10-09",
+   "end": "2026-10-14",
+   "city": "Nashville, US",
+   "focus": "Gastroenterology",
+   "source": "https://acgmeetings.gi.org/"
   },
   {
    "code": "ASBMR",
@@ -92,15 +102,6 @@
    "source": "https://meeting.asbmr.org/Attend/Attend-ASBMR-2026"
   },
   {
-   "code": "ECTRIMS",
-   "name": "Joint ACTRIMS-ECTRIMS Meeting",
-   "start": "2026-10-21",
-   "end": "2026-10-23",
-   "city": "Toronto, CA",
-   "focus": "Multiple sclerosis",
-   "source": "https://www.ectrims.eu/"
-  },
-  {
    "code": "ASN",
    "name": "ASN Kidney Week",
    "start": "2026-10-21",
@@ -108,6 +109,15 @@
    "city": "Denver, US",
    "focus": "Nephrology",
    "source": "https://www.asn-online.org/education/kidneyweek/"
+  },
+  {
+   "code": "ECTRIMS",
+   "name": "Joint ACTRIMS-ECTRIMS Meeting",
+   "start": "2026-10-21",
+   "end": "2026-10-23",
+   "city": "Toronto, CA",
+   "focus": "Multiple sclerosis",
+   "source": "https://www.ectrims.eu/"
   },
   {
    "code": "IDWeek",
@@ -146,15 +156,6 @@
    "source": "https://www.aasld.org/the-liver-meeting"
   },
   {
-   "code": "AHA",
-   "name": "American Heart Association Scientific Sessions",
-   "start": "2026-11-06",
-   "end": "2026-11-09",
-   "city": "Chicago, US",
-   "focus": "Cardiovascular",
-   "source": "https://professional.heart.org/en/meetings/scientific-sessions"
-  },
-  {
    "code": "ACR",
    "name": "ACR Convergence",
    "start": "2026-11-06",
@@ -164,13 +165,13 @@
    "source": "https://www.rheumatology.org/annual-meeting"
   },
   {
-   "code": "SNO",
-   "name": "Society for Neuro-Oncology Annual Meeting",
-   "start": "2026-11-12",
-   "end": "2026-11-15",
-   "city": "Philadelphia, US",
-   "focus": "Neuro-oncology",
-   "source": "https://sno2026.oa-event.com/about-the-meeting"
+   "code": "AHA",
+   "name": "American Heart Association Scientific Sessions",
+   "start": "2026-11-06",
+   "end": "2026-11-09",
+   "city": "Chicago, US",
+   "focus": "Cardiovascular",
+   "source": "https://professional.heart.org/en/meetings/scientific-sessions"
   },
   {
    "code": "ACAAI",
@@ -180,6 +181,15 @@
    "city": "Phoenix, US",
    "focus": "Allergy and immunology",
    "source": "https://annualmeeting.acaai.org/2026/attendee_information.cfm"
+  },
+  {
+   "code": "SNO",
+   "name": "Society for Neuro-Oncology Annual Meeting",
+   "start": "2026-11-12",
+   "end": "2026-11-15",
+   "city": "Philadelphia, US",
+   "focus": "Neuro-oncology",
+   "source": "https://sno2026.oa-event.com/about-the-meeting"
   },
   {
    "code": "ObesityWeek",
@@ -209,15 +219,6 @@
    "source": "https://event.eortc.org/ena2026/"
   },
   {
-   "code": "ESMO Asia",
-   "name": "ESMO Asia Congress",
-   "start": "2026-12-04",
-   "end": "2026-12-06",
-   "city": "Singapore, SG",
-   "focus": "Oncology, Asia-Pacific",
-   "source": "https://www.esmo.org/meeting-calendar/esmo-asia-congress-2026"
-  },
-  {
    "code": "AES",
    "name": "American Epilepsy Society Annual Meeting",
    "start": "2026-12-04",
@@ -225,6 +226,15 @@
    "city": "Denver, US",
    "focus": "Epilepsy",
    "source": "https://www.aesnet.org/annual-meeting"
+  },
+  {
+   "code": "ESMO Asia",
+   "name": "ESMO Asia Congress",
+   "start": "2026-12-04",
+   "end": "2026-12-06",
+   "city": "Singapore, SG",
+   "focus": "Oncology, Asia-Pacific",
+   "source": "https://www.esmo.org/meeting-calendar/esmo-asia-congress-2026"
   },
   {
    "code": "SABCS",
@@ -378,15 +388,6 @@
    "city": "Washington DC, US",
    "focus": "Diabetes",
    "source": "https://professional.diabetes.org/scientific-sessions"
-  },
-  {
-   "code": "AACR-PANC",
-   "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
-   "start": "2026-09-25",
-   "end": "2026-09-28",
-   "city": "San Diego, CA (Hilton San Diego Bayfront)",
-   "focus": "Oncology - Pancreatic",
-   "source": "https://www.aacr.org/meeting/aacr-conference-on-pancreatic-cancer/"
   }
  ]
 }
