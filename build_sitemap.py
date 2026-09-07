@@ -50,7 +50,13 @@ SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired pat
 # build using a local date produced pages whose ts (04:10 UTC on the 8th) sat in the "future"
 # relative to their own date (the 7th, local). One clock for the whole pipeline removes a class of
 # bug that only ever shows up in the evening.
-TODAY = dt.datetime.now(dt.timezone.utc).date().isoformat()
+# Audit 2026-09-07 C2: the first build to straddle UTC midnight (03:47Z = 23:47 ET Sept 6)
+# printed "Updated September 7" from this UTC date while /calendar's lede said September 6 from
+# site_dates. The site declares Eastern (CLAUDE.md rule 1), so the content-change DATE is the
+# Eastern date, from site_dates like every other stamper; the paired ts is written in Eastern
+# with its offset so ts[:10] == date and the consistency repair below never fires on it.
+from site_dates import eastern_today as _eastern_today, _ET as _EASTERN
+TODAY = _eastern_today().isoformat()
 _GIT_DATES = None
 _STATE = None
 STATE_F = os.path.join(HERE, "_sitemap_lastmod.json")
@@ -161,7 +167,7 @@ def last_changed(rel, full, html):
         # The exact moment we noticed it. Recorded ONLY here, at the instant the hash moves, which
         # is what makes a precise timestamp safe: an unchanged page keeps the timestamp it already
         # had, so nothing churns and no page ever claims to be fresher than it is.
-        ts = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
+        ts = dt.datetime.now(dt.timezone.utc).astimezone(_EASTERN).replace(microsecond=0).isoformat()
     else:
         d = (git_dates().get(key)
              or dt.datetime.fromtimestamp(os.path.getmtime(full)).strftime("%Y-%m-%d"))

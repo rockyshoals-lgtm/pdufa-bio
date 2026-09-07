@@ -163,7 +163,11 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only):
     doc = re.sub(r'"startDate":"\d{4}-\d{2}-\d{2}","endDate":"\d{4}-\d{2}-\d{2}"',
                  f'"startDate":"{dcd}","endDate":"{dcd}"', doc)
     # 6. title / og:title / WebPage name / descriptions (one string, several carriers)
-    tm = re.search(r"<title>([A-Z]{1,6} PDUFA date: (.+?), ([A-Z][a-z]{2} \d{1,2},? \d{4})) \| pdufa\.bio</title>", doc)
+    # Audit 2026-09-07 C4: the " | pdufa.bio" suffix is optional. fix_meta_lengths.py strips it
+    # on the same run, so a page decided on a later day than its title was fitted (GILD
+    # bictegravir/lenacapavir, RARE DTX401) never matched here and kept "PDUFA date:" over an
+    # Approved body. test_no_past_target_pending_pages.py now fails that shape.
+    tm = re.search(r"<title>([A-Z]{1,6} PDUFA date: (.+?), ([A-Z][a-z]{2} \d{1,2},? \d{4}))(?: \| pdufa\.bio)?</title>", doc)
     if tm:
         old_title, tdrug = tm.group(1), tm.group(2)
         new_title = f"{tk} FDA decision: {tdrug}, {word} {P}"

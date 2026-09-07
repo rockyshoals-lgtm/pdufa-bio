@@ -5,10 +5,14 @@
       "slug": "NRXP",
       "goal_date": "2026-07-29",
       "application_type": "ANDA",
-      "status_note": "KETAFREE is an abbreviated new drug application, so its target is a GDUFA goal date rather than a PDUFA date. On August 7, 2026 NRx said the FDA had completed first-cycle review with no major deficiencies related to the drug product, its ingredients, proposed labeling or manufacturing, and that one remaining item, classified by the FDA as a major deficiency, concerns manufacturer certification of the vial's luer lock container closure; the company said it is providing that attestation.",
-      "source": "https://ir.nrxpharma.com/news-releases/news-release-details/fda-completes-first-cycle-review-preservative-free-ketamine-anda",
-      "source_label": "NRx Pharmaceuticals release, August 7, 2026",
-      "reviewer": "builder 2026-09-06"
+      "status_note": "KETAFREE is an abbreviated new drug application, so its target is a GDUFA goal date rather than a PDUFA date. Per NRx's Q2 2026 Form 10-Q and its August 17, 2026 release, on July 30, 2026 the FDA notified the company that its first-round review identified no major deficiencies relating to the drug components of the product but a major deficiency relating to the container closure system; the company said it has provided the manufacturer's attestation on the vial's Luer-lock tip. A first-cycle deficiency letter is not an approval.",
+      "source": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001719406&type=10-Q&dateb=&owner=include&count=10",
+      "source_label": "NRx Pharmaceuticals Q2 2026 Form 10-Q (SEC EDGAR)",
+      "reviewer": "builder 2026-09-07 (after auditor 09-06c)",
+      "first_cycle_date": "2026-07-30",
+      "first_cycle_text": "the FDA completed its first-cycle review, identifying no major deficiencies relating to the drug components and one major deficiency relating to the container closure system (the vial's Luer-lock tip); NRx says it has submitted the requested manufacturer's attestation and targets approval in 2026.",
+      "source_2": "https://ir.nrxpharma.com/news-releases/news-release-details/fda-completes-first-cycle-review-preservative-free-ketamine-anda",
+      "source_2_label": "NRx release on the first-cycle review"
     }
   ]
 }

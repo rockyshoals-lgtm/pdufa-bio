@@ -71,6 +71,34 @@ def test_no_past_target_pending_pages():
                      + "\n  ".join(bad))
 
 
+# Audit 2026-09-07 C4: two pages carried an Approved banner in the body under a <title> that
+# still said "PDUFA date: ..., Aug 27 2026". The title is what the search result shows, so a
+# pending-tense title over a decided body is the same defect one layer up.
+DECIDED_BODY = re.compile(r"<!--DECBAN:BEGIN-->|<!--DECIDED:BEGIN-->")
+PENDING_TITLE = re.compile(r"<title>[A-Z]{1,6} PDUFA date:[^<]*</title>", re.I)
+DECIDED_MARK = re.compile(r"Approved|Complete Response", re.I)
+
+
+def test_no_pending_title_over_decided_body():
+    bad = []
+    for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
+        slug = os.path.basename(os.path.dirname(p))
+        doc = io.open(p, encoding="utf-8", errors="replace").read()
+        mk = DECIDED_BODY.search(doc)
+        if not mk:
+            continue
+        # the banner's own words, not the whole page: a page may mention "Approved" in prose
+        banner = doc[mk.end(): mk.end() + 600]
+        if not DECIDED_MARK.search(banner):
+            continue
+        tm = PENDING_TITLE.search(doc)
+        if tm:
+            bad.append(f"/pdufa/{slug}: {tm.group(0)} over a decided banner")
+    assert not bad, ("decided page(s) still titled as pending (the C4 class):\n  "
+                     + "\n  ".join(bad))
+
+
 if __name__ == "__main__":
     test_no_past_target_pending_pages()
+    test_no_pending_title_over_decided_body()
     print("OK")

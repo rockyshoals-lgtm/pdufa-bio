@@ -24,7 +24,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 CSVF = os.path.join(HERE, "pdufa_runup_bifrost_v2.csv")
 PAGE = os.path.join(SITE, "runup-by-year", "index.html")
-TODAY = dt.date.today()
+# Audit 2026-09-07 C2: was dt.date.today() (UTC on the runner, local here) -- printed "Sep 7"
+# on a build stamped Sept 6 Eastern everywhere else. One clock: site_dates.
+from site_dates import eastern_today as _eastern_today
+TODAY = _eastern_today()
 
 
 def fnum(r, k):

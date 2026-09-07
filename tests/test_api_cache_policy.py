@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""The v1 API's edge cache policy cannot hand a reader a day-old payload.
+
+Audit 2026-09-07 C1 (P1): the first API request of the auditor's run returned as_of two days
+old with no SRRK row -- served from stale-while-revalidate=86400 on the deployed function.
+The site's product is the date, so the bound is: fresh <= 300 s, stale-while-revalidate
+<= 300 s, stale-if-error <= 3600 s, on every Cache-Control the API sets (Vercel honours
+CDN-Cache-Control / Vercel-CDN-Cache-Control over Cache-Control at the edge, so all three
+carriers are read).
+
+Proved 0 -> 1 -> 0 on 2026-09-07 by planting stale-while-revalidate=86400 in _lib.mjs.
+"""
+import glob
+import io
+import os
+import re
+
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+API = os.path.join(HERE, "pdufa_site_src", "api", "v1")
+LIMITS = {"s-maxage": 300, "stale-while-revalidate": 300, "stale-if-error": 3600}
+DIRECTIVE = re.compile(r"(s-maxage|stale-while-revalidate|stale-if-error)\s*=\s*(\d+)")
+
+
+def test_api_cache_policy():
+    bad, seen = [], 0
+    for p in sorted(glob.glob(os.path.join(API, "*.mjs"))):
+        # strip block and line comments: the policy that ships is the one in code
+        src = re.sub(r"/\*.*?\*/", "", io.open(p, encoding="utf-8", errors="replace").read(),
+                     flags=re.S)
+        for line in src.splitlines():
+            code = line.split("//", 1)[0]
+            for d, v in DIRECTIVE.findall(code):
+                seen += 1
+                if int(v) > LIMITS[d]:
+                    bad.append(f"{os.path.basename(p)}: {d}={v} > {LIMITS[d]}  in: {code.strip()}")
+    assert seen > 0, "no cache directive found under api/v1 -- guard cannot see"
+    assert not bad, "API cache policy allows a stale payload:\n  " + "\n  ".join(bad)
+
+
+if __name__ == "__main__":
+    test_api_cache_policy()
+    print("OK")

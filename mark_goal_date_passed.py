@@ -30,6 +30,8 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from site_dates import eastern_today as _eastern_today   # noqa: E402  (one clock: Eastern)
 SITE = os.path.join(HERE, "pdufa_site_src")
 LEDGER = os.path.join(HERE, "_goal_date_passed.json")
 B, E = "<!--PASSED:BEGIN-->", "<!--PASSED:END-->"
@@ -48,7 +50,7 @@ def main():
     except Exception:
         print("goal-date-passed: no ledger, nothing to do")
         return 0
-    today = dt.date.today()
+    today = _eastern_today()
     n = 0
     for e in entries:
         slug = e["slug"]
@@ -64,15 +66,40 @@ def main():
         note = _html.escape(str(e.get("status_note", "")))
         src = str(e.get("source", ""))
         lbl = _html.escape(str(e.get("source_label", "the sponsor's release")))
+        # Audit 2026-09-07 C3 (after 09-06c): "passed with no public decision" was not what
+        # the sponsor filed. When the ledger carries a first-cycle action (an FDA letter the
+        # sponsor disclosed in a filing after the goal date), the page states THAT action,
+        # dated, and says only that no approval has been published -- never "no decision".
+        fc_date = e.get("first_cycle_date")
+        fc_text = _html.escape(str(e.get("first_cycle_text", "")))
+        if fc_date and fc_text:
+            headline = "First-cycle review completed"
+            lead = (f"the FDA goal date for this {app} was <b>{pretty(goal)}</b>; on "
+                    f"<b>{pretty(fc_date)}</b> {fc_text} No approval has been published as of "
+                    f"{pretty(today.isoformat())}. ")
+            story = (f" was under FDA review with a goal date of {pretty(goal)}; on "
+                     f"{pretty(fc_date)} {fc_text} It is intended")
+            faq = (f"candidate whose FDA goal date was {pretty(goal)}; on {pretty(fc_date)} "
+                   f"{fc_text} It is intended")
+        else:
+            headline = "Goal date passed"
+            lead = (f"the FDA goal date for this {app} was <b>{pretty(goal)}</b> and no "
+                    f"decision has been disclosed as of {pretty(today.isoformat())}. ")
+            story = (f" was under FDA review, with a goal date of {pretty(goal)} that has "
+                     f"passed with no public decision,")
+            faq = (f"candidate whose FDA goal date of {pretty(goal)} passed with no "
+                   f"public decision,")
         block = (
             f'{B}<div style="background:#0c1d38;border:1px solid #f0c86a;'
             f'border-radius:10px;padding:11px 14px;margin:10px 0 14px;font-size:14.5px">'
-            f'<b style="color:#f0c86a">Goal date passed</b> &middot; the FDA goal date for '
-            f'this {app} was <b>{pretty(goal)}</b> and no decision has been disclosed as of '
-            f'{pretty(today.isoformat())}. '
+            f'<b style="color:#f0c86a">{headline}</b> &middot; ' + lead
             + (f"{note} " if note else "")
-            + (f'<a href="{_html.escape(src)}" rel="nofollow" style="color:#9ec5ff">{lbl}</a>.'
+            + (f'<a href="{_html.escape(src)}" rel="nofollow" style="color:#9ec5ff">{lbl}</a>'
                if src else "")
+            + (f'; <a href="{_html.escape(str(e["source_2"]))}" rel="nofollow" '
+               f'style="color:#9ec5ff">{_html.escape(str(e.get("source_2_label", "sponsor release")))}</a>'
+               if e.get("source_2") else "")
+            + ("." if src else "")
             + f"</div>{E}")
         if B in doc:
             new = doc.split(B, 1)[0] + block + doc.split(E, 1)[1]
@@ -86,15 +113,16 @@ def main():
         # The pending-tense template phrases are now false: the review window this page
         # describes has closed without a public decision. Restate, do not delete -- the
         # application IS still pending, but the page must say the date passed.
-        new = new.replace(" is under FDA review to treat",
-                          f" was under FDA review, with a goal date of {pretty(goal)} that has "
-                          f"passed with no public decision, to treat")
-        new = new.replace(" is under FDA review for",
-                          f" was under FDA review, with a goal date of {pretty(goal)} that has "
-                          f"passed with no public decision, for")
-        new = new.replace("candidate under FDA review for",
-                          f"candidate whose FDA goal date of {pretty(goal)} passed with no "
-                          f"public decision, for")
+        old_story = (f" was under FDA review, with a goal date of {pretty(goal)} that has "
+                     f"passed with no public decision,")
+        old_faq = f"candidate whose FDA goal date of {pretty(goal)} passed with no public decision,"
+        for tail in (" to treat", " for"):
+            new = new.replace(" is under FDA review" + tail, story + tail)
+            if old_story != story:            # re-render: retire the earlier wording
+                new = new.replace(old_story + tail, story + tail)
+        new = new.replace("candidate under FDA review for", faq + " for")
+        if old_faq != faq:
+            new = new.replace(old_faq + " for", faq + " for")
         # An ANDA carries a GDUFA goal date, not a PDUFA date. Saying "PDUFA date" of an
         # ANDA is wrong by statute, and this site's whole product is dates being right.
         if str(e.get("application_type", "")).upper().startswith("ANDA"):

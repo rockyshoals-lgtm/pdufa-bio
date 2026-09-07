@@ -154,7 +154,14 @@ export async function meter(req, tier, key, cost) {
 export function head(res, { rid, tier, m, cost, etag }) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'x-api-key,content-type,if-none-match');
-  const CC = 's-maxage=1800, stale-while-revalidate=86400, stale-if-error=604800';
+  /* Audit 2026-09-07 C1 (P1): the first request of the auditor's run got a payload with
+     as_of two days old and no SRRK row, 66 s before the same URL served the current one.
+     The old policy (s-maxage 1800 / SWR 86400 / SIE 604800) let the edge hand out an answer
+     up to 24.5 h old while it revalidated. For a site whose product is the date, a stale
+     answer is a wrong answer. Now: 5 min fresh, at most 5 more minutes stale while the
+     edge refetches, and an hour of stale-on-origin-error rather than a week (auditor 08:40:
+     SIE <= 3600). Worst case a reader can now see is a 10-minute-old payload. */
+  const CC = 's-maxage=300, stale-while-revalidate=300, stale-if-error=3600';
   res.setHeader('Cache-Control', CC);
   res.setHeader('CDN-Cache-Control', CC);            // survives Vercel's client-header rewrite
   res.setHeader('Vercel-CDN-Cache-Control', CC);     // edge keeps serving on origin failure

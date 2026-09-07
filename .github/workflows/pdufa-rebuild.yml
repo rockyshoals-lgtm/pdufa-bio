@@ -445,17 +445,20 @@ jobs:
       - name: Goal-date-passed statements (no decision to name)
         run: python mark_goal_date_passed.py
 
-      # Audit 09-06 ORDER 2 residual: the sponsor's own caveat, verbatim, on the page that
-      # ranks for the drug (Scholar Rock's Catalent Indiana / second fill-finish statement).
-      - name: Sponsor caveats rendered on event pages
-        run: python inject_sponsor_caveat.py
-
       # Asked in four audits: every goal date we have seen move, with its announcement.
       - name: /pdufa-date-changes
         run: python build_date_changes.py
 
       - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
         run: python build_pdufa_ticker_index.py
+
+      # Audit 09-06 ORDER 2 residual: the sponsor's own caveat, verbatim, on the page that
+      # ranks for the drug (Scholar Rock's Catalent Indiana / second fill-finish statement).
+      # Audit 09-07 item 5: MUST run after build_pdufa_ticker_index.py -- that step rewrites
+      # /pdufa/{TICKER} from a bare shell, so a caveat injected before it was wiped every
+      # run (the 08:00 audit found /pdufa/SRRK without it while the slug page carried it).
+      - name: Sponsor caveats rendered on event pages
+        run: python inject_sponsor_caveat.py
 
       # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.

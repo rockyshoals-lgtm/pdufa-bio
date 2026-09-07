@@ -70,8 +70,13 @@ def main():
             if B in doc:
                 new = doc.split(B, 1)[0] + block + doc.split(E, 1)[1]
             else:
+                # Audit 2026-09-07 item 5 root cause: /pdufa/{TICKER} index pages are
+                # regenerated from a bare shell by build_pdufa_ticker_index.py, which in CI
+                # ran AFTER this step (wiping the block) and leaves neither anchor above
+                # until the freshness stamp runs later still. </h1> is on every page.
                 anchor = ('<h2 id="the-story">' if '<h2 id="the-story">' in doc
-                          else ("<!--FRESH:END-->" if "<!--FRESH:END-->" in doc else None))
+                          else "<!--FRESH:END-->" if "<!--FRESH:END-->" in doc
+                          else "</h1>" if "</h1>" in doc else None)
                 if not anchor:
                     continue
                 new = (doc.replace(anchor, block + anchor, 1)
