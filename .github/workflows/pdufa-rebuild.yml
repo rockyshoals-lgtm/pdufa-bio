@@ -42,7 +42,10 @@ jobs:
         # google-api-python-client + google-auth are only used by ping_search_engines.py to call
         # Search Console sitemaps.submit. Harmless if the GSC_SERVICE_ACCOUNT_JSON secret is not
         # set yet: that step reports itself unconfigured and the run continues.
-        run: pip install --quiet requests pandas openpyxl python-dateutil
+        # pillow: build_favicon.py (a42ec7940, 2026-09-06 20:55 PT) draws the PNG/ICO natively
+        # with PIL; the first CI run after it (34142696590) died at that step with
+        # ModuleNotFoundError and deployed nothing.
+        run: pip install --quiet requests pandas openpyxl python-dateutil pillow
              google-api-python-client google-auth
 
       - name: Refresh prices / market caps (Polygon, forward catalysts only)
