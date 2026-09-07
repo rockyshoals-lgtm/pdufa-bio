@@ -176,7 +176,14 @@ for r in load_csv("conference_presenters.csv"):
 F = load_csv("readout_forward.csv")
 G = load_csv("ctgov_readouts.csv")
 for r in F:
-    tk, w = r.get("ticker"), (r.get("window") or "").strip()
+    tk = r.get("ticker")
+    # 2026-09-06: use the CANONICAL window, not the raw prose. readout_scan.py already
+    # emits window_norm ("fourth quarter of 2026" -> "Q4 2026") but this pass was reading
+    # the raw `window` column, so 183 of 522 gold rows (35%) carried un-parseable prose in
+    # the date field — and the SAME bucket appeared twice under different spellings
+    # ("fourth quarter of 2026" x26 AND "Q4 2026" x12), which double-counts a bucket and
+    # makes the file unusable as a calendar feed. Fall back to raw only when norm is blank.
+    w = (r.get("window_norm") or "").strip() or (r.get("window") or "").strip()
     if not tk or not w:
         continue
     p = (r.get("window_precision") or "").strip()
