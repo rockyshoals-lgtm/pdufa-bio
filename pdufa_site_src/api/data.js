@@ -65,8 +65,12 @@ const cats=SLATE.catalysts.map(({loa,pop,...c})=>({...c,t_minus:tmin(c.date)}));
   }
   const _pro=_isPro(req); const _out=(PRO_GATING && !_pro)?cats.map(_freeView):cats;
   res.setHeader('Vary', PRO_GATING ? 'Cookie, Origin' : 'Origin');
-  if(PRO_GATING){ res.setHeader('Cache-Control', _pro?'private, no-store':'public, s-maxage=16000, stale-while-revalidate=86400'); }
-  else { res.setHeader('Cache-Control','s-maxage=16000, stale-while-revalidate=86400'); }
+  // Audit 2026-09-07 P2: one policy for every feed (same numbers as api/v1/_lib.mjs; guarded
+  // by tests/test_api_cache_policy.py). Vercel rewrites the client-facing Cache-Control to a
+  // bare 'public', so the CDN carriers are set too -- those are what the edge honours.
+  const CC='public, max-age=0, s-maxage=300, stale-while-revalidate=300, stale-if-error=3600';
+  const _cc=(PRO_GATING && _pro)?'private, no-store':CC;
+  res.setHeader('Cache-Control',_cc); res.setHeader('CDN-Cache-Control',_cc); res.setHeader('Vercel-CDN-Cache-Control',_cc);
   res.setHeader('Content-Type','application/json');
   res.setHeader('Access-Control-Allow-Origin','https://www.pdufa.bio');
   res.status(200).json({as_of:today.toISOString().slice(0,10),refreshed_utc:today.toISOString().slice(0,16).replace('T',' ')+' UTC',source:'FDA \u00b7 SEC/EDGAR \u00b7 ClinicalTrials.gov \u2014 primary filings',hist:HIST,catalysts:(typeof _out!=="undefined"?_out:cats),pro:(typeof _pro!=="undefined"?_pro:false),pro_gating:PRO_GATING});

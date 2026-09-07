@@ -1155,10 +1155,6 @@
    "source": "/api/data",
    "headers": [
     {
-     "key": "Cache-Control",
-     "value": "s-maxage=16000, stale-while-revalidate=86400"
-    },
-    {
      "key": "X-Robots-Tag",
      "value": "noindex"
     }

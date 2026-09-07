@@ -112,3 +112,6 @@ odin_cowork_dropbox/unapproved_CRLs (1)/
 odin_cowork_dropbox/approved_CRLs (2)/
 # published dataset downloads are site content, not scratch (red team 09-06d item 3; the 3rd *.csv incident)
 !pdufa_site_src/research/conference-runup/conference-runup-study.csv
+
+# builder scheduled-slot scratch logs (never committed)
+_builder_*.log

@@ -173,7 +173,9 @@ def main():
     # it honestly rather than pretending to be the published SHA.
     commit = None
     try:
-        commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=HERE,
+        # --short=9: a bare --short picks 7 on CI's shallow clone and 9 on the full local
+        # repo (auditor 09-07: "pick one length").
+        commit = subprocess.run(["git", "rev-parse", "--short=9", "HEAD"], cwd=HERE,
                                 capture_output=True, text=True, timeout=15,
                                 check=False).stdout.strip() or None
     except Exception:
