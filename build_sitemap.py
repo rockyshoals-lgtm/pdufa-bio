@@ -110,6 +110,10 @@ BOILER = [
     re.compile(r'<div class="nav">.*?</div>', re.S),
     re.compile(r'<div class="legal".*?</div>', re.S),
     re.compile(r"<footer.*?</footer>", re.S),
+    # Favicon / touch-icon links (2026-09-06): normalize_icons.py rewrote them on all 1,881
+    # pages in one sweep and the sitemap claimed 100% of URLs changed that day -- the third
+    # arrival of the same runaway by a third route. An icon link is chrome, not content.
+    re.compile(r'<link rel="(?:icon|apple-touch-icon|shortcut icon)"[^>]*>'),
 ]
 
 

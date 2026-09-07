@@ -490,6 +490,14 @@ jobs:
       - name: Normalise navigation (one nav, site-wide)
         run: python rebuild_nav.py
 
+      # Favicon (2026-09-06): the calendar-with-check mark, SVG + PNG/ICO fallbacks drawn
+      # natively, and one canonical icon link set on every page (fourteen builders each
+      # wrote their own; this pass makes a favicon change a one-file change).
+      - name: Favicon assets + canonical icon links
+        run: |
+          python build_favicon.py
+          python normalize_icons.py
+
       - name: Normalise copy (remove em dashes used as punctuation)
         run: python strip_dashes.py
 

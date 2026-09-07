@@ -187,6 +187,26 @@ def main():
     chg = px.get("change_pct")
     px_chg = (f" <span style=\"font-size:15px;color:{'#46d17f' if chg >= 0 else '#ff8f6b'}\">"
               f"{chg:+.1f}%</span>") if chg is not None else ""
+    # Trailing-year move, COMPUTED from the same closes the chart draws (the old page carried
+    # a hand-typed "503%" that aged a little every day). Year-ago close = the first close on or
+    # after today-365d.
+    yr_ago = [c for d, c in rows if d >= (TODAY - dt.timedelta(days=365)).isoformat()]
+    yr_pct = ((last / yr_ago[0]) - 1) * 100 if (yr_ago and yr_ago[0]) else None
+    yr_txt = (f"having risen roughly {yr_pct:,.0f}% over the trailing year" if yr_pct is not None and yr_pct >= 0
+              else f"having fallen roughly {abs(yr_pct):,.0f}% over the trailing year" if yr_pct is not None
+              else "")
+    # Market value at the last close on the last SOURCED share count (Q2 10-Q cover, Jun 30,
+    # 2026: 201,918,874 shares). Stated as such: the count is a quarter-end fact, the price is
+    # today's, and the product is arithmetic, not a data-vendor field.
+    SHARES_OUT = 201_918_874
+    SHARES_ASOF = "Jun 30, 2026"
+    mcap = last * SHARES_OUT if last else 0
+    chart_from = rows[0][0][:7] if rows else ""
+    chart_to = rows[-1][0][:7] if rows else ""
+    MON = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    def _my(ym):
+        return f"{MON[int(ym[5:7])]} {ym[:4]}" if ym else ""
+    chart_span = f"{_my(chart_from)} to {_my(chart_to)}"
     px_vol = ""
     if px.get("volume"):
         rv = px.get("rel_volume")
@@ -272,12 +292,18 @@ forecasts, price targets, or recommendations anywhere on this page.</p>
 <div class="grid4">
   <div class="stat"><div class="note">REGAL events (deaths)</div><div class="big">78 / 80</div><div class="note">as of May 11, 2026 &middot; {DAYS_SINCE}d ago</div></div>
   <div class="stat"><div class="note">80th event announced?</div><div class="big" style="color:var(--gold)">Not yet</div><div class="note">company says it will announce it</div></div>
-  <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$138.3M</div><div class="note">Jun 30, 2026 (Aug 11 8-K; was $71.8M at YE2025)</div></div>
-  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}{px_chg}</div><div class="note">52w ${lo52:.2f} to ${hi52:.2f} &middot; {lastd}{px_vol}</div></div>
+  <div class="stat"><div class="note">Cash &amp; equivalents</div><div class="big">$138.3M</div><div class="note">Jun 30, 2026 (Q2 10-Q; was $71.8M at YE2025) &middot; $150M ATM unused</div></div>
+  <div class="stat"><div class="note">Last close</div><div class="big">${last:.2f}{px_chg}</div><div class="note">52w closes ${lo52:.2f} to ${hi52:.2f} &middot; {lastd}{px_vol}</div></div>
+</div>
+<div class="grid4">
+  <div class="stat"><div class="note">Market value at last close</div><div class="big">${mcap/1e9:.2f}B</div><div class="note">{SHARES_OUT:,} shares (10-Q cover, {SHARES_ASOF}) &times; ${last:.2f}</div></div>
+  <div class="stat"><div class="note">Q2 2026 net loss</div><div class="big">$9.6M</div><div class="note">vs $6.6M in Q2 2025 &middot; R&amp;D $6.3M (BLA prep)</div></div>
+  <div class="stat"><div class="note">Next dated catalyst</div><div class="big" style="font-size:20px">SLS009 Ph2 topline</div><div class="note">Q4 2026 guidance (28 enrolled, Aug 11 8-K)</div></div>
+  <div class="stat"><div class="note">Arbitration vs 3D Medicines</div><div class="big" style="font-size:20px;color:#ff8f6b">Claims dismissed</div><div class="note">Jul 24, 2026 &middot; ~$1.0M costs to SELLAS &middot; licence continues</div></div>
 </div>
 
 <div class="card">{ch}
-<div class="note" style="margin-top:9px">SLS daily closes, Oct 2024 to Aug 2026 (Polygon, split-adjusted). Gold markers = REGAL
+<div class="note" style="margin-top:9px">SLS daily closes, {chart_span} (Polygon, split-adjusted). Gold markers = REGAL
 milestone disclosures. Green marker = the June 24 2026 executive change-of-control amendment. Hover any marker for the date and close.</div></div>
 
 {act_block}
@@ -432,9 +458,11 @@ without weighting. Neither column is a recommendation.</p>
 <div class="fact">The <b>IDMC recommended continuation without modification</b> in August 2025, with no safety concerns identified.</div>
 <div class="fact"><b>Event accrual has run slower than projected</b>, which the company attributes to survival times appearing longer than expected (pooled, blinded).</div>
 <div class="fact"><b>FDA and EMA orphan drug designation</b> for GPS in AML, plus <b>FDA Fast Track</b> in AML.</div>
-<div class="fact"><b>$138.3M cash</b> at Jun 30, 2026 (Aug 11 8-K), up from $71.8M at year-end 2025; no debt disclosed.</div>
-<div class="fact">A <b>$150M ATM is established and entirely unused</b>; the company states it has not sold any shares through it.</div>
-<div class="fact">Q1 2026 R&amp;D rose to $5.1M from $3.2M, attributed partly to <b>preparation for a potential BLA</b> for GPS following the final analysis.</div>
+<div class="fact"><b>$138.3M cash</b> at Jun 30, 2026 (Q2 10-Q), up from $71.8M at year-end 2025; no debt disclosed. The 10-Q states cash is expected to fund planned operations <b>for at least the next twelve months</b> from its issuance.</div>
+<div class="fact"><b>The cash came from warrant holders, not a new offering</b>: $82.9M received in H1 2026 from the exercise of 48.8M warrants at a weighted-average $1.70 per share (Q2 10-Q). Only 9.7M warrants remained outstanding at Jun 30.</div>
+<div class="fact">A <b>$150M ATM is established and entirely unused</b>; the Q2 10-Q states the company has not sold any shares through it to date.</div>
+<div class="fact">Q2 2026 R&amp;D rose to $6.3M from $3.9M ($11.4M vs $7.1M for the half), attributed primarily to manufacturing, regulatory consulting and trial costs in <b>preparation for a potential BLA</b> for GPS following the final analysis.</div>
+<div class="fact"><b>The Greater China licence survives the arbitration.</b> Per the Jul 27, 2026 8-K, 3D Medicines said it will continue developing GPS in its territory under the exclusive licence, under which <b>$191.5M in potential future milestone payments</b> remained as of Mar 31, 2026.</div>
 <div class="fact">SLS009 at ASH 2025: <b>46% ORR</b> across cohorts, 58% in patients with one prior line, median OS 8.9 months in the least pre-treated cohort vs a stated ~2.5-month historical benchmark.</div>
 <div class="fact">A second, independent catalyst: <b>Phase 2 of SLS009 in newly diagnosed first-line AML, topline expected Q4 2026</b> (28 patients enrolled per the Aug 11, 2026 8-K).</div>
 </div>
@@ -442,13 +470,14 @@ without weighting. Neither column is a recommendation.</p>
 <div class="fact"><b>The timeline has slipped repeatedly.</b> The 80th event was expected before year-end 2025; as of {VERIFIED_TXT} it is unannounced, {DAYS_SINCE} days past the 78-event as-of date and beyond all three windows implied by the company's own disclosed pace.</div>
 <div class="fact"><b>Blinded pooled counts cannot distinguish the arms.</b> Longer pooled survival could reflect the control arm, the GPS arm, or both; SELLAS is blinded and cannot say.</div>
 <div class="fact"><b>REGAL is open-label</b>, a 1:1 randomized comparison against investigator's choice, not a blinded placebo-controlled design.</div>
-<div class="fact"><b>Share count roughly doubled year over year</b>: weighted-average shares 87.8M (Q1 2025) to 172.5M (Q1 2026); shares outstanding 153.1M to 181.3M between Dec 31, 2025 and Mar 31, 2026.</div>
-<div class="fact">The <b>unused $150M ATM</b> represents authorized future dilution on top of that increase.</div>
-<div class="fact"><b>Losses are widening</b>: net loss $8.4M in Q1 2026 vs $5.8M in Q1 2025; accumulated deficit $283.4M.</div>
+<div class="fact"><b>Share count roughly doubled year over year</b>: weighted-average shares 98.6M (Q2 2025) to 189.2M (Q2 2026); shares outstanding 153.1M at Dec 31, 2025 to <b>201.9M at Jun 30, 2026</b>, mostly from warrant exercises (Q2 10-Q).</div>
+<div class="fact">The <b>unused $150M ATM</b> represents authorized future dilution on top of that increase, and 35.3M further shares are reserved for warrants, options, RSUs and plan issuance.</div>
+<div class="fact"><b>Losses are widening</b>: net loss $9.6M in Q2 2026 vs $6.6M in Q2 2025 ($18.0M vs $12.4M for the half); accumulated deficit $293.0M at Jun 30, 2026.</div>
+<div class="fact"><b>The 3D Medicines arbitration was lost.</b> On Jul 24, 2026 the sole HKIAC arbitrator dismissed SELLAS's claims (which sought, among other things, $13.0M of disputed milestone payments) and allocated roughly $1.0M of 3D Medicines' legal and administrative costs to SELLAS, taken as a Q2 charge (Jul 27, 2026 8-K; Q2 10-Q note 5).</div>
 <div class="fact"><b>The interim analysis was a continuation decision, not a success declaration</b>: it permitted the trial to continue; it did not establish the primary endpoint will be met.</div>
 <div class="fact"><b>Positive REGAL headlines have historically been sold</b> (see the reaction record above).</div>
 <div class="fact"><b>Part of the mid-2026 move was not clinical</b>, coverage attributed the June 25 surge substantially to the change-of-control amendment being read as merger preparation, and to retail/WallStreetBets momentum.</div>
-<div class="fact"><b>Expectations are elevated</b>: the stock closed at ${last:.2f} on {lastd} against a 52-week range of ${lo52:.2f}: ${hi52:.2f}, having risen roughly 503% over the trailing year.</div>
+<div class="fact"><b>Expectations are elevated</b>: the stock closed at ${last:.2f} on {lastd} against a 52-week range of ${lo52:.2f}: ${hi52:.2f}, {yr_txt}.</div>
 </div>
 </div>
 
@@ -471,6 +500,8 @@ without weighting. Neither column is a recommendation.</p>
 <li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_8k.htm">SEC Form 8-K, filed June 24, 2026 (Item 5.02(e))</a>: the executive change-of-control amendments, in full.</li>
 <li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-1.htm">Exhibit 10.1</a> &middot; <a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926077556/tm2618927d1_ex10-2.htm">Exhibit 10.2</a>: the underlying agreements.</li>
 <li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm">SEC 8-K Exhibit 99.1: Q2 2026 results (Aug 11, 2026)</a>: Q4 2026 topline guidance re-confirmed for SLS009 Phase 2 (28 enrolled) and REGAL final analysis following the 80th event; $138.3M cash at Jun 30.</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000012/sls-20260630.htm">SEC Form 10-Q for the quarter ended June 30, 2026 (filed Aug 11, 2026)</a>: 201,918,874 shares outstanding; $82.9M from 48.8M warrant exercises in H1; 2026 ATM unused; twelve-month funding statement; accumulated deficit $293.0M; arbitration note (note 5).</li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000110465926087110/tm2621415d1_8k.htm">SEC Form 8-K, filed July 27, 2026 (Items 2.02, 8.01)</a>: the HKIAC arbitrator's July 24 decision dismissing SELLAS's claims against 3D Medicines, ~$1.0M of costs allocated to SELLAS, and 3D Medicines' statement that GPS development in Greater China continues under the licence ($191.5M potential milestones remaining as of Mar 31, 2026).</li>
 <li><a href="https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html">SELLAS: SLS009 preclinical PDAC posters at the AACR Conference on Pancreatic Cancer (Sep 2, 2026)</a></li>
 <li><a href="https://www.sec.gov/Archives/edgar/data/1390478/000139047826000009/sls-202605128xkexhibit991.htm">SEC 8-K Exhibit 99.1: Q1 2026 results (May 12, 2026)</a>: 78 events as of May 11; 80th-event trigger sequence.</li>
 <li><a href="https://ir.sellaslifesciences.com/news/News-Details/2025/SELLAS-Life-Sciences-Provides-Update-on-Pivotal-Phase-3-REGAL-Trial-of-Galinpepimut-S-GPS-in-Acute-Myeloid-Leukemia-AML/default.aspx">SELLAS: REGAL update (Dec 29, 2025)</a>: 72 events as of Dec 26, 2025; no statistical penalty.</li>
