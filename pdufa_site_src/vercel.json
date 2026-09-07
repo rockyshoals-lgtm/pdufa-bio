@@ -1091,6 +1091,11 @@
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
    "permanent": true
+  },
+  {
+   "source": "/research/conference-runups",
+   "destination": "/research/conference-runup",
+   "permanent": true
   }
  ],
  "headers": [
