@@ -29,3 +29,7 @@ Nothing from `conference_torque.html` crosses to the site: no windows, no torque
 
 ## Queued / deferred (with why)
 Item 7 dual anchor (data collection). Item 6 (internal). The 90.2% readout-signal sentence (your call on publishing). The 13F / Form 4 / shares-outstanding blocks from 09-05c remain behind these.
+
+## Follow-through, ~22:40 PT
+First live check found the CSV 0 bytes and the plural slug 404. Two causes, both mine: the CSV was swallowed by the repo's `*.csv` ignore rule (the third *.csv incident; a path negation now pins it) and the `vercel.json` redirect was reverted by my own mid-rebase `checkout origin/main -- pdufa_site_src` (a hand edit inside the site tree that no generator re-applies). Both restored and live: CSV 200, 116,509 bytes; `/research/conference-runups` -> 308 to the singular (Vercel emits 308 for permanent). Also for the record: I triggered CI before a push that was then rejected -- cancelled that run, rebased, pushed, and let the push-deploy carry it. Order is push first, always.
+
