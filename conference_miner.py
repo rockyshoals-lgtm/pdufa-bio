@@ -75,6 +75,19 @@ PRESENT_PHRASES = [
     "to present data",
     "poster presentations at",
     "upcoming medical conferences",
+    # 2026-09-06 — mined from filings BPC had and we missed. Each phrase below is the
+    # LITERAL wording in a real 8-K we failed to surface, not a guess:
+    #   NKTR 8-K 2026-08-13: "Upcoming Data Presentations at the 2026 European Academy
+    #                         of Dermatology and Venereology Congress"
+    #   SANA 8-K 2026-08-10: "Announced upcoming symposium presentation highlighting
+    #                         UP421 clinical data at the European Association..."
+    "upcoming data presentations",
+    "data presentations at the",
+    "symposium presentation",
+    "upcoming presentations",
+    "presentations at the 2026",
+    "will be featured at",
+    "to be featured at",
 ]
 
 TAG_RX = re.compile(r"<[^>]+>")
@@ -100,7 +113,11 @@ def main():
     ap.add_argument("--days", type=int, default=60,
                     help="lookback window (presentation PRs land 2-8 weeks ahead)")
     ap.add_argument("--step", type=int, default=7)
-    ap.add_argument("--max-fetch", type=int, default=120,
+    # 2026-09-06: was 120 against 232 candidates — we were throwing away 48% of what the
+    # FTS walk found, and the priority sort only guaranteed armed/bio-SIC went first, so
+    # a legitimate presenter outside the armed list (NKTR at EADV) fell off the end.
+    # At ~0.11s/fetch, 260 costs ~30s more. Cheap insurance against a silent miss.
+    ap.add_argument("--max-fetch", type=int, default=260,
                     help="doc fetch cap; bio-SIC + armed names are fetched first")
     ap.add_argument("--out", default="conference_presenters.csv")
     a = ap.parse_args()
