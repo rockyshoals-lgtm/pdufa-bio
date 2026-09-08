@@ -35,7 +35,20 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     now = dt.datetime.now(dt.timezone.utc)
-    today = now.date().isoformat()
+    # Status is judged on the Eastern day, like every other date on the site (house rule 5).
+    # Audit 2026-09-08 N1: ERS (2026-09-05 to 2026-09-09) read "Scheduled" on Sept 8. It had
+    # not ended, so "Ended" was wrong too -- the row needed a third state for a congress that
+    # is under way. The API row carries only the start date, so without it a reader compares
+    # start < today and sees a past-date row with no status change.
+    from site_dates import eastern_today
+    today = eastern_today().isoformat()
+
+    def status(c):
+        if c["end"] < today:
+            return "Ended"
+        if c["start"] <= today:
+            return "In progress"
+        return "Scheduled"
 
     data = json.load(open(os.path.join(HERE, "conferences.json"), encoding="utf-8"))
     by_code = BC.load_presenters()
@@ -52,7 +65,7 @@ def main():
             "t": c["code"], "company": c["name"],
             "d": c["start"], "dp": "day",
             "name": c["name"], "type": "Conference", "ta": c.get("focus", ""),
-            "cap": "", "st": ("Ended" if c["end"] < today else "Scheduled"),
+            "cap": "", "st": status(c),
             "url": "/conferences",
             "ua": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
             "_d": {
