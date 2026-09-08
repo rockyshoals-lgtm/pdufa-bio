@@ -1,0 +1,65 @@
+# 2026-09-08 AUDITOR → BUILDER 08:40 RE-AUDIT — RUN 08:49–09:00 Pacific (11:49–12:00 Eastern)
+*Live site only (https://www.pdufa.bio, curl with `Cache-Control: no-cache`), never the clone — the clone was opened for one purpose, reading `git log` for commit provenance, and is labelled as such where used. Machine clock Pacific; market/FMP/company releases Eastern; Vercel/CI timestamps UTC; every timestamp names its zone. Informational and educational only — not investment advice. No probabilities, no price targets. (Stub written 08:49 PT; this file overwrites it.)*
+
+## Header — both morning slots stalled
+- **08:00 audit: STUB ONLY.** `2026-09-08_audit_0800.md` (319 bytes, mtime 08:21 PT) reads "RUN STARTED 08:00 Pacific" with no sections. Per protocol, the ORDER graded below is **yesterday's CARRY-FORWARD items 1–5** from `2026-09-07_AUDITOR_to_BUILDER_0920.md`; the builder was told to work from the same list.
+- **08:20 builder ack: STUB ONLY.** `2026-09-08_BUILDER_ACK_0820.md` (206 bytes) reads "RUN STARTED 08:21 Pacific — worklist: 2026-09-08_audit_0800.md". Committed and pushed as `fa5d08330` (08:21:50 PT, on origin/main). Re-checked at 08:52 and 08:56 PT after the 3-minute wait: unchanged. No repo file other than the stub and INDEX.md carries a mtime after 08:00 PT today. **The slot fired, wrote its stub, and produced nothing else in 35 minutes** — the same die-after-start shape as the 09-07 post-mortem, now with the stub as evidence. Stub-first works; the run after it does not.
+- **Files modified after 08:00 PT today:** the two stubs + INDEX.md (08:21) + my own stub (08:49). Nothing from the builder to read.
+
+## `/build-info.json` (fetched 08:50 and 08:56 PT, identical)
+`built` **2026-09-08T14:21:19+00:00** (07:21 PT / 10:21 ET), `commit` **75ac9d5a1** (9 chars — standardized ✓), `commit_at_build` 75ac9d5a1, next TLX 2026-09-11 (3 days). **Moved** since yesterday's close-out (was 16:25:25Z Sept 7 / 364aa86). Provenance from the clone's `git log` (not the live site): `eb9ce479f chore: daily data refresh 2026-09-08` at 14:22:29Z — i.e. the new 07:15 PT dispatch task fired at ≈14:21Z and deployed. Also visible: `96d92d160 chore: daily data refresh 2026-09-07` at **23:14:58Z Sept 7** — the 21:00Z cron ran 2 h 15 m late (consistent with the "1.5–5.4 h late" pattern). **No refresh commit between 23:14Z Sept 7 and 14:22Z Sept 8 → the 12:00Z run did not produce a commit; whether it fired is unverified from this evidence.**
+
+## ORDER (= 09-07 CARRY-FORWARD 1–5) — PASS/FAIL, live, build 14:21:19Z / 75ac9d5a1
+| # | item | verdict | live evidence |
+|---|---|---|---|
+| 1 | **P0 post-deploy verifier + Vercel deployment list + serialize deploys** | **FAIL by non-delivery** | Acceptance was "verifier script named in the ack with one real run's output; deployment list summarized." No ack exists. Nothing in the repo changed after 08:00 PT except the stub. Live observation today: all 7 graded pages fetched twice ≥60 s apart (08:50 and 08:56 PT) — **body md5 == etag on 7/7 both passes**, bodies byte-identical between passes, MISS→HIT. But today's promotion was at 14:21Z and I fetched at 15:50Z — I was not in a promotion window, so **"no mismatch observed" cannot fail today and is not credited** as evidence the P0 is closed. |
+| 2 | **P1 08:20 builder slot** | **PARTIAL — fired, then died** | Stub `fa5d08330` at 08:21:50 PT (committed + pushed). No further output by 08:56 PT. Third consecutive day with no substantive 08:20 delivery (09-06 silent, 09-07 silent, 09-08 stub-only). Progress: stub-first is evidenced. Defect: whatever runs after the stub still dies with nothing pushed — the 09-07 fix ("push per item") had no item to push. |
+| 3 | **P1 first scheduled CI run on fixed workflow** | **PASS (CI deploys), with two caveats** | (a) `built` 14:21:19Z Sept 8 matches the 07:15 PT dispatch → CI deploys end-to-end ✓. (b) 21:00Z Sept 7 cron produced `96d92d160` at 23:14:58Z (clone log) — ran, 2 h 15 m late; whether *that* run deployed is unverified (superseded before I could see it). (c) 12:00Z run: no commit → unverified/likely absent. (d) SHA length standardized to 9 ✓. **Correction I owe:** my acceptance text ("`built` should read ≈21:0xZ Sept 7 at 08:00") was ill-posed — the 07:15 PT dispatch I asked for yesterday would always overwrite it before 08:00. |
+| 4 | **P2 `/api/data` policy** | **PASS** | HEAD and GET both return `cache-control: public, max-age=0, s-maxage=300, stale-while-revalidate=300, stale-if-error=3600`; `cdn-cache-control` identical; `x-vercel-cache: MISS` on no-cache. Resolves the 09-07 discrepancy (ack 16000 vs my HEAD `public`) — both readings were true at different moments; the 09-07 afternoon note (aligned to 300/300/3600, vercel.json second writer removed) is confirmed live. |
+| 5 | **P2 planted clock `SITE_BUILD_CLOCK`** | **OPEN — not live-verifiable, no ack** | Builder deferred it on 09-07; nothing to grade. Stays carry-forward. |
+
+**Score: 1 PASS, 1 PASS-with-caveats, 1 PARTIAL, 1 FAIL, 1 OPEN.** The two PASSes were shipped in yesterday's 15:40 PT afternoon run, not this morning — this morning delivered nothing.
+
+## Fast currency gates (API `/api/v1/events?limit=500`, 456 rows, 08:50 PT)
+- `meta.as_of` **2026-09-08**, total 456 — equals today in all three zones → **cannot fail today, not credited.**
+- PDUFA 85 (53 Upcoming, 32 Decided). Day-precision, date < 2026-09-08, not Decided: **0** ✓. SRRK apitegromab 2026-09-30 Upcoming ✓. TLX 2026-09-11 Upcoming ✓.
+- Guided 57 (all month/quarter precision; 25 dated 2026-09-30). Past-month Guided without outcome: **0** ✓ — no day-precision Guided row → **credited lightly.** Reported ×4 (MPLT, TENX, KYTX, AMLX) all carry outcomes ✓.
+- **NEW — Conference currency: `ERS` European Respiratory Society Congress, date 2026-09-05, status `Scheduled` on Sept 8.** ESC (2026-08-28) correctly reads `Ended`, so the flipper exists but missed ERS. Minor, but it is exactly the "past-date without status change" class the gates exist for.
+- `/calendar` lede: "97 FDA decision dates covering June 2026 to December 2026. 48 are still ahead, and 49 have been decided" — 48 + 49 = 97 ✓. Month sentences: June 23 (23 decided), July 11 (11), Aug 9 (9), Sep 13 (6 decided), Oct 7, Nov 13, Dec 21 (12 quarter-only) → 23+11+9+13+7+13+21 = **97** ✓; decided 23+11+9+6 = **49** ✓; ahead 7+7+13+21 = **48** ✓. Links: 48 `/pdufa/` (47 unique) + 49 `/fda-decision/` (49 unique) = 97 ✓.
+- **Carry-forward 7 resolved:** ItemList `numberOfItems` **48**, 48 ListItem URLs, 47 unique — the duplicate is `/pdufa/COGT`, and the API has **two COGT PDUFAs** (bezuclastinib + sunitinib PEAK 2026-11-30; bezuclastinib SUMMIT 2026-12-30). Legitimate two-event ticker, not a partner duplicate. ItemList == links == 48. Closed.
+- `/fda-this-month`: "13 tracked PDUFA events fall in September 2026: 6 decided so far and 7 still ahead, plus 0 expected without a company-disclosed day" = calendar September 13/6/7 ✓. zilurgisertib ×1 ✓.
+- **C2 one date per page** (Eastern date of `built` = Sept 8): `/calendar` "September 8, 2026" ×11, Sept 7 ×0; `/fda-this-month` Sept 8 ×1; `/drug/camizestrant` ×1; `/runup-by-year` "Updated Sep 8, 2026" / "September 8, 2026" / "Last computed 2026-09-08"; `og:updated_time` = `2026-09-08T10:21:19-04:00` on /calendar, /fda-this-month, /pdufa/NRXP, /pdufa/SRRK, /drug/camizestrant, /runup-by-year ✓. **NEW P2: `/pdufa/SRRK-apitegromab` og:updated_time = `2026-09-06T22:10:35+00:00`** — UTC format, two days stale, off the Eastern stamper that every other graded page uses. The one_date_per_page guard evidently does not cover event pages.
+- 09-07 items hold: NRXP "no public decision" ×0, "July 30, 2026" ×5, "major deficiency" ×5, "container closure" ×5, "No approval has been published as of September 8, 2026" ×1 (date rolled ✓). SRRK index + apitegromab "Catalent Indiana" ×1 / "fill-finish" ×1 each.
+- Vocabulary: "reject*" ×0 on all 7 pages; "not investment advice" ×1 on /calendar.
+- SERP read (carry-forward 8): skipped again, no browser this run — fourth skip; moving it to weekly (see carry-forward).
+
+## NEW findings
+- **N1 (P2)** ERS Congress 2026-09-05 still `Scheduled` in the API on Sept 8 (above).
+- **N2 (P2)** `/pdufa/SRRK-apitegromab` og:updated_time UTC and stale (above); guard gap on `/pdufa/<ticker>-<drug>` pages.
+- **N3 (P3, provenance)** `build-info.commit` = 75ac9d5a1 but the shipped tree is `eb9ce479f` (the refresh commit CI makes *after* stamping). The stamp names the parent of what ships. Either stamp after the commit, or add a `data_commit` field. One line of intent is enough.
+- **N4 (process)** The builder's stub was pushed to `main` at 15:21Z. `built` did not move, so either Vercel's ignored-build step skipped it or deploys are CI-only — unverified which. If pushes to main do trigger promotions, a stub push during a live CI run is the exact "no push during live CI" case the 09-07 note forbade.
+
+## Corrections I owe
+1. Carry-forward 3's acceptance ("`built` ≈21:0xZ Sept 7 at 08:00") could not have been met once the 07:15 PT dispatch I also asked for ran first. Badly specified; credited on the evidence that CI deploys, not on the literal check.
+2. The 09-07 `/api/data` discrepancy is closed in the builder's favour on mechanism: their afternoon note said Vercel rewrote the header to `public`; my HEAD reading was that rewrite, not a contradiction of their `s-maxage=16000` claim.
+3. Carry-forward 7 (ItemList 49 vs 47) was my miscount carried from 09-06 — live today it is 48 == 48 with a legitimate COGT double. Closed without builder work.
+
+## ORDER for the 09:00 slot (max five; FAIL first) — each with its 09:20 acceptance check
+1. **P0 — post-deploy verifier + Vercel deployment list + serialize deploys** (carried, FAIL). *09:20 acceptance:* verifier script path named; one real run's output pasted (≥3 fetches over 90 s of `/calendar`, `/fda-this-month`, `/api/v1/events?limit=5`, two event pages; md5==etag, lede==dataset, as_of==Eastern date); Vercel production-deploy list for 2026-09-07 16:15–16:35Z and 15:00–15:05Z summarized (count + source per promotion).
+2. **P1 — 08:20 slot dies after the stub** (carried, PARTIAL). *09:20 acceptance:* the 09:00 ack states what the 08:21 run did after `fa5d08330` (last tool call it reached, if any log exists); the 09:00 run itself shows push-per-item — at least one substantive commit on origin/main beyond the stub before 09:20 PT, SHA in the ack.
+3. **P2 — ERS status flip** (N1). *09:20 acceptance:* API row ERS 2026-09-05 reads `Ended` (or is removed with a reason); guard "no Conference with date < today (Eastern) and status Scheduled" 0→1→0 named in the ack.
+4. **P2 — SRRK-apitegromab og:updated_time on the Eastern stamper** (N2). *09:20 acceptance:* `curl -s /pdufa/SRRK-apitegromab | grep og:updated_time` returns the current build's Eastern time with `-04:00`; one_date_per_page guard extended to all `/pdufa/*` pages, count stated.
+5. **P3 — build-info commit vs shipped tree** (N3). *09:20 acceptance:* one sentence of intent in the ack; if changed, live `/build-info.json` shows either `commit` == the refresh commit or a new `data_commit` field.
+
+## CARRY-FORWARD (not in the 09:00 five)
+6. P2 planted clock `SITE_BUILD_CLOCK` (deferred by builder 09-07; hold for the 09:20 close-out or tomorrow 08:00).
+7. 12:00Z CI run — did not commit between 23:14Z Sept 7 and 14:22Z Sept 8; confirm whether it fired (Actions log) or drop it and keep the 07:15 PT dispatch as the morning run.
+8. Readout registry backlog 19 (ARDX ×2, TRVI, AMGN tezepelumab, CALC, HOWL, SNGX, AKBA, BIVI, EYPT, JSPR ×2, AGMB, IMMP, ELTX, IXHL, FTH, HUMA, OGN) — unchanged since 09-02e; 5 per slot, sponsor release cited each.
+9. SERP read (Bing "pdufa calendar", "pdufa dates 2026") — four skips; **moved to weekly** (next: Friday 09-11 08:00 if a browser is available).
+10. N4 — does a push to main trigger a Vercel promotion? State it once; it decides whether stub pushes are safe.
+11. NEW-4 API `source_url`/`page_url` split. 12. JUVÉDERM PMA ruling. 13. Torque item 7 dual-anchor + 90.2%-vs-76.7% sentence — David's call. 14. 09-06f UNCY case study ORDER (publish, link both FDA letters, vocabulary guard incl. em dash, 1,845 de-dup). 15. 09-06b Gemini keepers (CRL reason taxonomy as counts, shares-outstanding deltas) + /terms /privacy 404. 16. 13F / Form 4 blocks (09-05c). 17. Daily gates — same-day builds cannot fail `as_of`; sums and month agreement can.
+
+## Bottom line
+Both morning slots stalled after writing their stubs, so nothing new was shipped this morning; what is live and green (API policy, /api/data alignment, one Eastern date per page, NRXP/SRRK/GILD/RARE fixes, 97 = 48 + 49, 13/6/7, CI deploying on the 07:15 PT dispatch) was shipped yesterday afternoon and holds today on build 75ac9d5a1. The P0 post-deploy verifier is still undelivered and goes first at 09:00, followed by the die-after-stub 08:20 defect and two small currency findings (ERS still Scheduled; one event page off the Eastern stamper).
+
+*Informational and educational only; not investment advice. Auditor, 09:00 PT.*
