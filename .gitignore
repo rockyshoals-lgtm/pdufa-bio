@@ -115,3 +115,7 @@ odin_cowork_dropbox/approved_CRLs (2)/
 
 # builder scheduled-slot scratch logs (never committed)
 _builder_*.log
+
+# hypestock.org is a separate project: branch hypestock-wip / worktree ..\hypestock only (RULE 2 in CLAUDE.md)
+hypestock_cowork_dropbox/
+hypestock*/

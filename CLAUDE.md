@@ -24,6 +24,17 @@ History: the Pacific/Eastern mixup corrupted FOUR studies before being proven on
 When a timing result looks impossible — a board "3 hours late," an entry "before the open" —
 check the timezone FIRST, before any other hypothesis.
 
+## RULE 2 — hypestock.org IS A SEPARATE PROJECT (David, 2026-09-07)
+
+`main` of this folder is the **public** repo `rockyshoals-lgtm/pdufa-bio`; every push from `main`
+deploys pdufa.bio, and the pdufa builder pushes from `main` every morning. hypestock.org work
+(the "Momentum radar" session is its builder) lives ONLY on branch `hypestock-wip`, checked out
+at `C:\Users\dcmoo\Documents\Python\hypestock`. Never commit hypestock work on `main`; never
+push `hypestock-wip` to `origin`. On 09-07 four hypestock commits landed on `main` and were
+moved to the branch (see `hypestock_cowork_dropbox/_READ_ME_FIRST_this_is_your_branch.md`).
+Changes to pdufa.bio pipeline scripts (conference_miner, readout_gold_dates, ...) go to the
+pdufa builder as a note in `odin_cowork_dropbox/`, not as commits.
+
 ## Standing rules (from the trading sessions)
 
 - **Never give investment advice.** Information only; David makes every trading decision.
