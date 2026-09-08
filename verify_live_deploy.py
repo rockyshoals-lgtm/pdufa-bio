@@ -58,9 +58,13 @@ def main():
                 print(f"[{stamp}] {path}: FETCH ERROR {e}")
                 continue
             md5 = hashlib.md5(body).hexdigest()
-            etag = (h.get("etag") or "").strip('"').replace("W/", "")
+            etag = (h.get("etag") or "").replace("W/", "").strip('"')
             cache = h.get("x-vercel-cache", "?")
-            ok_etag = (etag == md5) if etag else True
+            # Static files: Vercel's ETag is the body md5. /api/* is a function response whose
+            # ETag is not a body hash (observed 2026-09-08: "d43bc993bfc..." vs md5 a2940748ce89),
+            # so only body stability across passes is asserted there.
+            static = not path.startswith("/api/")
+            ok_etag = (etag == md5) if (etag and static) else True
             same = first.setdefault(path, md5) == md5
             note = []
             if not ok_etag:
