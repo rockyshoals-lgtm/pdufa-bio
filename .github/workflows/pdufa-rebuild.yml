@@ -701,15 +701,30 @@ jobs:
             # own cache key, which is the opposite of the 09-07/09-08 stale bodies, so this is a
             # candidate remedy: cheap, harmless, and it stays UNPROVEN in writing until the
             # verifier below catches a real mismatch that a purge demonstrably clears.
-            npx --yes vercel@latest cache purge --type cdn --yes \
-              --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" \
-              && echo "CDN purge requested for project $VERCEL_PROJECT_ID" \
-              || echo "::warning::vercel cache purge failed"
+            #
+            # Run 34321787738 (2026-09-09) failed here with "Not able to load user because of
+            # unexpected error: User not found. (404)" -- that is the token failing to identify
+            # an account, BEFORE any project or scope resolution, so it is the token itself and
+            # not the org/project IDs. Probe whoami first so the log says which of the two it is
+            # rather than leaving the next reader to guess.
+            if npx --yes vercel@latest whoami --token "$VERCEL_TOKEN" > /tmp/who 2>&1; then
+              echo "vercel token identifies: $(cat /tmp/who | tail -1)"
+              npx --yes vercel@latest cache purge --type cdn --yes \
+                --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" \
+                && echo "CDN purge requested for project $VERCEL_PROJECT_ID" \
+                || echo "::warning::token is valid but the purge itself failed -- scope/project"
+            else
+              echo "::warning::VERCEL_TOKEN does not authenticate ($(tail -1 /tmp/who)). The IDs are fine; re-create the token at vercel.com/account/tokens and update the secret."
+            fi
           fi
 
       - name: Post-deploy verifier (live, 3 passes, md5==ETag, stable bodies, as_of, sums)
         if: env.PUSHED == '1'
-        run: python verify_live_deploy.py --passes 3 --gap 30 --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)"
+        # --compare-repo is safe HERE and only here: this runner's working tree is the artifact
+        # it just pushed and Vercel deployed, so a live page whose dateModified differs from the
+        # file on disk is the edge serving a body we did not deploy -- the 09-07 finding, caught
+        # automatically. It is off by default everywhere else (see the note in the script).
+        run: python verify_live_deploy.py --passes 3 --gap 30 --compare-repo --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)"
 
       # Tell the search engines, AFTER Vercel has had a moment to build the pushed commit.
       # Note: the classic sitemap ping is gone. google.com/ping returns 404 "deprecated" and
