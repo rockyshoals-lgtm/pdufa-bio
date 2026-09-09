@@ -60,6 +60,28 @@ def load_events():
     return by
 
 
+def word_trim(s, limit):
+    """Cut `s` to at most `limit` chars on a WORD boundary, leaving no dangling bracket.
+
+    Audit 2026-09-09 item 2. A character cut reads as a typo in a search result
+    ("BRAFTOVI (encorafenib) in co"), and the title is the one line a searcher judges us on.
+    Short enough already is returned untouched, so this is a no-op on the common case."""
+    s = (s or "").strip()
+    if len(s) <= limit:
+        return s
+    cut = s[:limit].rsplit(" ", 1)[0]
+    if cut.count("(") > cut.count(")"):
+        cut = cut[:cut.rfind("(")]
+    # a trailing function word reads as a truncation too ("...(encorafenib) in"), so drop it
+    while True:
+        head, _, last = cut.rstrip(" ,;:-(").rpartition(" ")
+        if head and last.lower() in ("in", "and", "for", "with", "plus", "of", "the", "a", "to"):
+            cut = head
+            continue
+        break
+    return cut.rstrip(" ,;:-(")
+
+
 def decision_facts():
     """{ticker: {'verified': [...], 'inferred': [...], 'drugs': set, 'inds': set}} from the pages
     themselves, which is the only place the sourced/inferred distinction actually lives."""
@@ -145,11 +167,23 @@ def main():
             base = f"{company} ({tk}) FDA Catalysts"
             title = base
             for n in (2, 1):
-                cand = base + ": " + ", ".join(d[:28] for d in drugs[:n]) if drugs[:n] else base
+                # Audit 09-09 item 2: the mid-word title came from THIS truncation, not the
+                # 62-char cap below -- d[:28] cut "BRAFTOVI (encorafenib) in combination..."
+                # to "...in co". Drug names are cut on a word boundary, brackets balanced.
+                cand = base + ": " + ", ".join(word_trim(d, 28) for d in drugs[:n]) \
+                    if drugs[:n] else base
                 if len(cand) <= 62:
                     title = cand
                     break
-            title = title[:62].rstrip(" ,:-") + " | pdufa.bio"
+            # Audit 09-09 item 2: a hard [:62] cut ships mid-word titles -- /ticker/PFE read
+            # "...BRAFTOVI (encorafenib) in co | pdufa.bio". The cut is a length rule, so it
+            # takes whole words: drop back to the last space, then strip the punctuation and
+            # any orphaned opening bracket the drop leaves behind.
+            if len(title) > 62:
+                title = title[:62].rsplit(" ", 1)[0]
+                if title.count("(") > title.count(")"):
+                    title = title[:title.rfind("(")]
+            title = title.rstrip(" ,:-(") + " | pdufa.bio"
             # lambda, not a template string: a company name containing a backslash would
             # otherwise be parsed as a regex escape and blow up the run.
             _title = "<title>" + title.replace("&", "&amp;") + "</title>"

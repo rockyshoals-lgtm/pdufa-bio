@@ -12,6 +12,7 @@ build time, never typed. Marker-bounded (CRUNALL / CONFLEDE), idempotent.
 Vocabulary: measurement only. The anchor caveat and "not a forecast" travel in the block.
 """
 import glob
+import html
 import io
 import os
 import re
@@ -73,6 +74,20 @@ def main():
         else:
             anchor = "<!--PRESDISC-->"
             new = doc.replace(anchor, lede + anchor, 1) if anchor in doc else doc
+        # Audit 2026-09-09 item 4: the finding was in the lede and absent from the snippet, so
+        # the one line a searcher reads on the results page still sold a conference list while
+        # the page underneath said the run-up is not reliable. Same numbers, same owner, same
+        # build. Kept under 158 to stay inside test_meta_lengths.
+        desc = (f"Every major 2026 medical conference where biotech companies present clinical "
+                f"data. Across {f['n']:,} presentations we find no reliable pre-conference "
+                f"run-up.")
+        if len(desc) <= 158:
+            new = re.sub(r'(<meta name="description" content=")[^"]*(")',
+                         lambda m: m.group(1) + html.escape(desc, quote=True) + m.group(2),
+                         new, count=1)
+            new = re.sub(r'(<meta property="og:description" content=")[^"]*(")',
+                         lambda m: m.group(1) + html.escape(desc, quote=True) + m.group(2),
+                         new, count=1)
         if new != doc:
             io.open(hp, "w", encoding="utf-8").write(new)
             n += 1

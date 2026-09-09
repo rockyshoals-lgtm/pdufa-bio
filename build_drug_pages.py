@@ -668,8 +668,20 @@ def main():
         # impressions at position 4.62 and zero clicks because the description said "FDA
         # catalyst dates and outcomes" while the body said "approved ... as Etcamah". When the
         # latest real decision is on record, the description states it: outcome, date, brand.
+        # PRIORITY (audit 09-09 item 3, corrected after the first run): a PENDING FDA decision
+        # outranks history. /drug/apitegromab led with "Complete Response Letter on September 23,
+        # 2025" while a September 30, 2026 PDUFA date sat on the same page -- and the query is
+        # "apitegromab pdufa date". So: live PDUFA date first, then the decision on record, then
+        # any other upcoming catalyst.
+        up_pdufa = next((r for r in up
+                         if str(r.get("type") or "").upper() == "PDUFA"
+                         and str(r.get("st") or "").lower() != "under review"), None)
         brand_desc = ""
-        if dec0 is not None and dec0[1] == "Approved":
+        if up_pdufa is not None:
+            when = (full_date(up_pdufa["d"]) if (up_pdufa.get("dp") or "day") == "day"
+                    else pretty(up_pdufa["d"], up_pdufa.get("dp") or "day"))
+            brand_desc = f"{name}: FDA PDUFA date {when}."
+        elif dec0 is not None and dec0[1] == "Approved":
             bl = (brands.get(slug) or {}).get("brands") or []
             bn = next((b for b in bl if b), "")
             bn = bn[:1].upper() + bn[1:].lower() if bn.isupper() else bn
@@ -677,6 +689,19 @@ def main():
                           + (f" as {bn}" if bn and bn.lower() != name.lower() else "") + ".")
         elif dec0 is not None and dec0[1] == "CRL":
             brand_desc = f"{name}: FDA issued a Complete Response Letter on {full_date(dec0[0])}."
+        elif up:
+            # Audit 2026-09-09 item 3: the same argument for the OTHER half of the corpus. A
+            # drug still under review has one fact a searcher wants, and it was not in the
+            # snippet either. A quarter-only estimate is stated as the quarter, never promoted
+            # to a date we do not have.
+            n0 = up[0]
+            if str(n0.get("st") or "").lower() == "under review":
+                brand_desc = (f"{name}: under FDA review; no action date has been publicly "
+                              f"disclosed.")
+            else:
+                brand_desc = (f"{name}: next tracked catalyst is a "
+                              f"{str(n0.get('type') or 'catalyst')} "
+                              f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
         desc = brand_desc or f"{name}: FDA catalyst dates and outcomes."
         for extra in ((f" For {', '.join(comps[:1]).rstrip('.')}." if comps else ""),
                       (" Full catalyst history, every date sourced." if brand_desc

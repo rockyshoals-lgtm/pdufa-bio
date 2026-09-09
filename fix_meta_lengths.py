@@ -225,7 +225,43 @@ def main():
                 out += s
         return out.strip()
 
-    def ticker_desc(tk):
+    def ticker_desc(tk, doc=""):
+        """The snippet for /ticker/{TK}, read from the page it describes.
+
+        Audit 2026-09-09 item 1. This function is the LAST writer of the ticker description, so
+        it silently overwrote what enrich_ticker_hubs.py had put there, and it rebuilt the text
+        from its own dataset-derived company map. Two visible defects on /ticker/PFE: the
+        description said "Roivant/Priovant" while the title and H1 (fixed 09-08 by majority
+        vote) said "Pfizer Inc.", and it promised "Next: Readout Oct 2026 for Palbociclib" over
+        a page whose own summary reads "no upcoming catalyst on file". It also counted decisions
+        from dataset rows (1) while the page counted rendered rows (10).
+
+        One owner per field cuts the other way here: rather than teach a fourth writer how to
+        resolve a company name and a catalyst count, read both off the rendered page. The hub
+        writes `<div class="sub">{company} - {upcoming} - {N} past FDA decisions</div>` and an
+        `<h1>`; those are what a reader sees, so a description built from them cannot contradict
+        the page. When the markers are missing the old dataset path still runs, so a hub that
+        has not been rebuilt yet is described rather than skipped.
+        """
+        sub = re.search(r'<div class="sub">(.*?)</div>', doc, re.S)
+        h1 = re.search(r"<h1>(.*?)<span", doc, re.S)
+        if sub:
+            # the separator ships as a literal middot on rebuilt hubs and as the entity on
+            # older ones; split on both or the state clauses are silently dropped
+            bits = [html.unescape(re.sub(r"<[^>]+>", "", b)).strip()
+                    for b in re.split(r"&middot;|·", sub.group(1))]
+            co = (html.unescape(re.sub(r"<[^>]+>", "", h1.group(1))).strip() if h1
+                  else bits[0]) or short_company(name_of.get(tk, ""), tk)
+            state = [b for b in bits[1:] if b]
+            # sentence-case the first letter only: .capitalize() lowercases the rest and
+            # shipped "10 past fda decisions"
+            def _cap(s):
+                return s[:1].upper() + s[1:] if s else s
+            nxt = f" {_cap(state[0])}." if state else ""
+            hist = f" {_cap(state[1])}." if len(state) > 1 else ""
+            return fit([f"{co} ({tk}) FDA catalyst hub.", nxt, hist,
+                        " Source document and measured run-up on every one."])
+
         co = short_company(name_of.get(tk, ""), tk)
         up = sorted([r for r in by_tk.get(tk, [])
                      if (r.get("d") or "") >= today
@@ -296,7 +332,7 @@ def main():
             # corrected again: the first pass produced several that fit but read badly, and the
             # gate then locked them in.
             if mt:
-                new = ticker_desc(mt.group(1))
+                new = ticker_desc(mt.group(1), doc)
             elif md:
                 # ONE OWNER PER FIELD (2026-09-02): rewrite_decision_snippets.py writes
                 # answer-format descriptions ("X was approved on..., N days before its
