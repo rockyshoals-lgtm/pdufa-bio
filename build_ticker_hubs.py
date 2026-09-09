@@ -67,14 +67,21 @@ def load_data():
     slate, _ = json.JSONDecoder().raw_decode(src[i + len('const SLATE='):])
     fwd = collections.defaultdict(list)
     name = {}
+    # Audit 09-08c item 8 root cause: /ticker/PFE was titled "Roivant/Priovant (PFE)" -- the
+    # partner half of the LISRAYA row carries the partner's company name under Pfizer's
+    # ticker, and "longest name wins" let that one row out-vote ten Pfizer decision pages.
+    # The query "pfizer pfe pdufa dates" sat at position 3.23 with 0 clicks under that
+    # title. Now every source votes (slate rows, dataset readout rows, decision pages) and
+    # the majority company names the hub; ties go to the longer, more formal name.
+    votes = collections.defaultdict(collections.Counter)
     for c in slate['catalysts']:
         tk = c.get('ticker')
         if not tk:
             continue
         fwd[tk].append(dict(date=c.get('date'), drug=c.get('drug'), indication=c.get('indication')))
         nm = c.get('name')
-        if nm and nm not in ('', tk) and len(nm) > len(name.get(tk, '')):
-            name[tk] = nm
+        if nm and nm not in ('', tk):
+            votes[tk][str(nm).strip()] += 1
 
     arch = open(os.path.join(SITE, 'decisions', 'index.html'), encoding='utf-8').read()
     past = collections.defaultdict(list)
@@ -88,17 +95,20 @@ def load_data():
             lab = ''   # placeholder archive row -> no fake drug label; the page says 'FDA decision'
         past[tk].append(dict(date=d, outcome=outc, label=lab))
 
-    # company name also from decision pages (covers past-only tickers with no slate row)
+    # company name also from decision pages: every decision page is one vote (this is what
+    # covers past-only tickers with no slate row, and what outvotes a stray partner row)
     for d in os.listdir(os.path.join(SITE, 'fda-decision')):
         m = re.match(r'([A-Z]{2,6})-\d{4}-\d{2}-\d{2}$', d)
-        if not m or m.group(1) in name:
+        if not m:
             continue
         p = os.path.join(SITE, 'fda-decision', d, 'index.html')
         if not os.path.exists(p):
             continue
         cm = re.search(r'<span>Company</span><b>([^<]+)</b>', open(p, encoding='utf-8', errors='replace').read())
         if cm:
-            name[m.group(1)] = html.unescape(cm.group(1)).strip()
+            nm = html.unescape(cm.group(1)).strip()
+            if nm and nm != m.group(1):
+                votes[m.group(1)][nm] += 1
 
     # Clinical readouts from the dataset (the slate is PDUFA-only).
     readouts = collections.defaultdict(list)
@@ -117,8 +127,13 @@ def load_data():
                                       precision=r.get('dp') or 'day',
                                       status=r.get('st')))
             nm = r.get('company')
-            if nm and len(str(nm)) > len(name.get(tkr, '')):
-                name[tkr] = str(nm)
+            if nm and str(nm).strip() not in ('', tkr):
+                votes[tkr][str(nm).strip()] += 1
+    # Resolve: most votes wins; ties to the longer (more formal) name. A partner's name
+    # under this ticker is a single vote against the company's own decision record.
+    for tk, ctr in votes.items():
+        top = max(ctr.items(), key=lambda kv: (kv[1], len(kv[0])))
+        name[tk] = top[0]
 
     # An event the FDA has already acted on is not an "upcoming FDA catalyst". The slate in
     # data.js is the raw forward list and is NOT pruned when a decision lands -- the homepage

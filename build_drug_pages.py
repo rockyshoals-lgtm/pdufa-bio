@@ -172,6 +172,20 @@ def slugify(name):
     return s[:60].rstrip("-")
 
 
+FULL_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
+               "September", "October", "November", "December"]
+
+
+def full_date(iso):
+    """'2026-09-04' -> 'September 4, 2026' (the snippet reads as prose; the body's short form
+    stays as is)."""
+    try:
+        y, m, d = (int(x) for x in str(iso)[:10].split("-"))
+        return f"{FULL_MONTHS[m - 1]} {d}, {y}"
+    except Exception:
+        return str(iso)
+
+
 def pretty(d, dp="day"):
     y, m, day = int(d[:4]), int(d[5:7]), int(d[8:10])
     if dp == "day":
@@ -659,10 +673,10 @@ def main():
             bl = (brands.get(slug) or {}).get("brands") or []
             bn = next((b for b in bl if b), "")
             bn = bn[:1].upper() + bn[1:].lower() if bn.isupper() else bn
-            brand_desc = (f"{name}: FDA approved on {pretty(dec0[0])}"
+            brand_desc = (f"{name}: FDA approved on {full_date(dec0[0])}"
                           + (f" as {bn}" if bn and bn.lower() != name.lower() else "") + ".")
         elif dec0 is not None and dec0[1] == "CRL":
-            brand_desc = f"{name}: FDA issued a Complete Response Letter on {pretty(dec0[0])}."
+            brand_desc = f"{name}: FDA issued a Complete Response Letter on {full_date(dec0[0])}."
         desc = brand_desc or f"{name}: FDA catalyst dates and outcomes."
         for extra in ((f" For {', '.join(comps[:1]).rstrip('.')}." if comps else ""),
                       (" Full catalyst history, every date sourced." if brand_desc

@@ -74,6 +74,12 @@ def decision_facts():
         t = open(p, encoding="utf-8", errors="replace").read()
         rec = out[tk]
         (rec["inferred"] if "price-only" in t else rec["verified"]).append(d)
+        cm = re.search(r"<span>Company</span><b>([^<]{2,120})</b>", t)
+        if cm:
+            # "Pfizer Inc. (partner; sponsor Priovant Therapeutics)" -> "Pfizer Inc."
+            nm = re.sub(r"\s*\((?:partner|licens|sponsor)[^)]*\)\s*$", "", cm.group(1)).strip()
+            if nm:
+                rec.setdefault("companies", collections.Counter())[nm] += 1
         if "price-only" not in t:
             dm = re.search(r"<span>Drug / candidate</span><b>([^<]{2,90})</b>", t)
             im = re.search(r"<span>Indication</span><b>([^<]{2,90})</b>", t)
@@ -102,8 +108,25 @@ def main():
         evs = events.get(tk, [])
         df = dfacts.get(tk, {"verified": [], "inferred": [], "drugs": set(), "inds": set()})
 
+        # Audit 09-08c item 8 root cause: /ticker/PFE was titled "Roivant/Priovant (PFE)".
+        # The first event under PFE is the partner half of the LISRAYA row and carries the
+        # partner's company; "first non-empty wins" put a partner's name on Pfizer's page,
+        # and "pfizer pfe pdufa dates" sat at position 3.23 with 0 clicks under it. Now
+        # every source votes -- event rows and decision pages -- and the majority names the
+        # hub (ties to the longer name); SEC's ticker file is the fallback, as before.
+        cvotes = collections.Counter()
+        for e in evs:
+            nm = (e.get("company") or "").strip()
+            if nm:
+                cvotes[nm] += 1
+        cvotes.update(df.get("companies") or {})
+        # ADR boilerplate ("GSK plc American Depositary Shares (Each ...)") is a listing
+        # description, not a company name; it never gets a vote.
+        cvotes = collections.Counter({k: v for k, v in cvotes.items()
+                                      if not re.search(r"depositary|each representing|\(each\b",
+                                                       k, re.I)})
         company = pretty_company(
-            next((e.get("company") for e in evs if (e.get("company") or "").strip()), "")
+            (max(cvotes.items(), key=lambda kv: (kv[1], len(kv[0])))[0] if cvotes else "")
             or tmap.get(tk, ""))
         # names arrive as "mRNA-1010 - (P304)" or "Deramiocel (CAP-1002) - (HOPE-2)": drop the
         # trial/programme parenthetical and any punctuation it leaves behind.

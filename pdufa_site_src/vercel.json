@@ -1101,6 +1101,1671 @@
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
    "permanent": true
+  },
+  {
+   "source": "/company/4d-molecular",
+   "destination": "/ticker/FDMT",
+   "permanent": true
+  },
+  {
+   "source": "/company/aardvark",
+   "destination": "/ticker/AARD",
+   "permanent": true
+  },
+  {
+   "source": "/company/abbvie",
+   "destination": "/ticker/ABBV",
+   "permanent": true
+  },
+  {
+   "source": "/company/abcellera-biologics",
+   "destination": "/ticker/ABCL",
+   "permanent": true
+  },
+  {
+   "source": "/company/abeona",
+   "destination": "/ticker/ABEO",
+   "permanent": true
+  },
+  {
+   "source": "/company/acadia",
+   "destination": "/ticker/ACAD",
+   "permanent": true
+  },
+  {
+   "source": "/company/achieve-life",
+   "destination": "/ticker/ACHV",
+   "permanent": true
+  },
+  {
+   "source": "/company/aclaris",
+   "destination": "/ticker/ACRS",
+   "permanent": true
+  },
+  {
+   "source": "/company/actuate",
+   "destination": "/ticker/ACTU",
+   "permanent": true
+  },
+  {
+   "source": "/company/acumen",
+   "destination": "/ticker/ABOS",
+   "permanent": true
+  },
+  {
+   "source": "/company/adagene",
+   "destination": "/ticker/ADAG",
+   "permanent": true
+  },
+  {
+   "source": "/company/adc",
+   "destination": "/ticker/ADCT",
+   "permanent": true
+  },
+  {
+   "source": "/company/adma-biologics",
+   "destination": "/ticker/ADMA",
+   "permanent": true
+  },
+  {
+   "source": "/company/agenus",
+   "destination": "/ticker/AGEN",
+   "permanent": true
+  },
+  {
+   "source": "/company/agios",
+   "destination": "/ticker/AGIO",
+   "permanent": true
+  },
+  {
+   "source": "/company/agomab",
+   "destination": "/ticker/AGMB",
+   "permanent": true
+  },
+  {
+   "source": "/company/aim-immunotech",
+   "destination": "/ticker/AIM",
+   "permanent": true
+  },
+  {
+   "source": "/company/akebia",
+   "destination": "/ticker/AKBA",
+   "permanent": true
+  },
+  {
+   "source": "/company/aktis-oncology",
+   "destination": "/ticker/AKTS",
+   "permanent": true
+  },
+  {
+   "source": "/company/alcon",
+   "destination": "/ticker/ALC",
+   "permanent": true
+  },
+  {
+   "source": "/company/aldeyra",
+   "destination": "/ticker/ALDX",
+   "permanent": true
+  },
+  {
+   "source": "/company/alector",
+   "destination": "/ticker/ALEC",
+   "permanent": true
+  },
+  {
+   "source": "/company/allogene",
+   "destination": "/ticker/ALLO",
+   "permanent": true
+  },
+  {
+   "source": "/company/alnylam",
+   "destination": "/ticker/ALNY",
+   "permanent": true
+  },
+  {
+   "source": "/company/alumis",
+   "destination": "/ticker/ALMS",
+   "permanent": true
+  },
+  {
+   "source": "/company/alvotech",
+   "destination": "/ticker/ALVO",
+   "permanent": true
+  },
+  {
+   "source": "/company/alx-oncology",
+   "destination": "/ticker/ALXO",
+   "permanent": true
+  },
+  {
+   "source": "/company/alzamend-neuro",
+   "destination": "/ticker/ALZN",
+   "permanent": true
+  },
+  {
+   "source": "/company/amarin-uk",
+   "destination": "/ticker/AMRN",
+   "permanent": true
+  },
+  {
+   "source": "/company/amgen",
+   "destination": "/ticker/AMGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/amneal",
+   "destination": "/ticker/AMRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/amphastar",
+   "destination": "/ticker/AMPH",
+   "permanent": true
+  },
+  {
+   "source": "/company/amylyx",
+   "destination": "/ticker/AMLX",
+   "permanent": true
+  },
+  {
+   "source": "/company/anaptysbio",
+   "destination": "/ticker/ANAB",
+   "permanent": true
+  },
+  {
+   "source": "/company/ani",
+   "destination": "/ticker/ANIP",
+   "permanent": true
+  },
+  {
+   "source": "/company/anika",
+   "destination": "/ticker/ANIK",
+   "permanent": true
+  },
+  {
+   "source": "/company/annexon",
+   "destination": "/ticker/ANNX",
+   "permanent": true
+  },
+  {
+   "source": "/company/annovis-bio",
+   "destination": "/ticker/ANVS",
+   "permanent": true
+  },
+  {
+   "source": "/company/apogee",
+   "destination": "/ticker/APGE",
+   "permanent": true
+  },
+  {
+   "source": "/company/apollomics",
+   "destination": "/ticker/APLM",
+   "permanent": true
+  },
+  {
+   "source": "/company/aquestive",
+   "destination": "/ticker/AQST",
+   "permanent": true
+  },
+  {
+   "source": "/company/arcus",
+   "destination": "/ticker/RCUS",
+   "permanent": true
+  },
+  {
+   "source": "/company/arcutis",
+   "destination": "/ticker/ARQT",
+   "permanent": true
+  },
+  {
+   "source": "/company/ardelyx",
+   "destination": "/ticker/ARDX",
+   "permanent": true
+  },
+  {
+   "source": "/company/argenx",
+   "destination": "/ticker/ARGX",
+   "permanent": true
+  },
+  {
+   "source": "/company/arrivent",
+   "destination": "/ticker/AVBP",
+   "permanent": true
+  },
+  {
+   "source": "/company/arrowhead",
+   "destination": "/ticker/ARWR",
+   "permanent": true
+  },
+  {
+   "source": "/company/ars",
+   "destination": "/ticker/SPRY",
+   "permanent": true
+  },
+  {
+   "source": "/company/artiva",
+   "destination": "/ticker/ARTV",
+   "permanent": true
+  },
+  {
+   "source": "/company/arvinas",
+   "destination": "/ticker/ARVN",
+   "permanent": true
+  },
+  {
+   "source": "/company/ascendis",
+   "destination": "/ticker/ASND",
+   "permanent": true
+  },
+  {
+   "source": "/company/ascentage-international",
+   "destination": "/ticker/AAPG",
+   "permanent": true
+  },
+  {
+   "source": "/company/astrazeneca",
+   "destination": "/ticker/AZN",
+   "permanent": true
+  },
+  {
+   "source": "/company/ataibeckley",
+   "destination": "/ticker/ATAI",
+   "permanent": true
+  },
+  {
+   "source": "/company/atara",
+   "destination": "/ticker/ATRA",
+   "permanent": true
+  },
+  {
+   "source": "/company/atea",
+   "destination": "/ticker/AVIR",
+   "permanent": true
+  },
+  {
+   "source": "/company/atossa",
+   "destination": "/ticker/ATOS",
+   "permanent": true
+  },
+  {
+   "source": "/company/aura",
+   "destination": "/ticker/AURA",
+   "permanent": true
+  },
+  {
+   "source": "/company/autolus",
+   "destination": "/ticker/AUTL",
+   "permanent": true
+  },
+  {
+   "source": "/company/avalyn",
+   "destination": "/ticker/AVLN",
+   "permanent": true
+  },
+  {
+   "source": "/company/axogen",
+   "destination": "/ticker/AXGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/axsome",
+   "destination": "/ticker/AXSM",
+   "permanent": true
+  },
+  {
+   "source": "/company/bayer",
+   "destination": "/ticker/BAYRY",
+   "permanent": true
+  },
+  {
+   "source": "/company/beam",
+   "destination": "/ticker/BEAM",
+   "permanent": true
+  },
+  {
+   "source": "/company/belite-bio",
+   "destination": "/ticker/BLTE",
+   "permanent": true
+  },
+  {
+   "source": "/company/beone",
+   "destination": "/ticker/ONC",
+   "permanent": true
+  },
+  {
+   "source": "/company/beyondspring",
+   "destination": "/ticker/BYSI",
+   "permanent": true
+  },
+  {
+   "source": "/company/bioatla",
+   "destination": "/ticker/BCAB",
+   "permanent": true
+  },
+  {
+   "source": "/company/biocardia",
+   "destination": "/ticker/BCDA",
+   "permanent": true
+  },
+  {
+   "source": "/company/biocryst",
+   "destination": "/ticker/BCRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/biofrontera",
+   "destination": "/ticker/BFRI",
+   "permanent": true
+  },
+  {
+   "source": "/company/biogen",
+   "destination": "/ticker/BIIB",
+   "permanent": true
+  },
+  {
+   "source": "/company/biohaven",
+   "destination": "/ticker/BHVN",
+   "permanent": true
+  },
+  {
+   "source": "/company/biomarin",
+   "destination": "/ticker/BMRN",
+   "permanent": true
+  },
+  {
+   "source": "/company/biomea-fusion",
+   "destination": "/ticker/BMEA",
+   "permanent": true
+  },
+  {
+   "source": "/company/biontech",
+   "destination": "/ticker/BNTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/biostem-technologies",
+   "destination": "/ticker/BSEM",
+   "permanent": true
+  },
+  {
+   "source": "/company/biovie",
+   "destination": "/ticker/BIVI",
+   "permanent": true
+  },
+  {
+   "source": "/company/bioxcel",
+   "destination": "/ticker/BTAI",
+   "permanent": true
+  },
+  {
+   "source": "/company/bolt",
+   "destination": "/ticker/BOLT",
+   "permanent": true
+  },
+  {
+   "source": "/company/briacell",
+   "destination": "/ticker/BCTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/bridgebio",
+   "destination": "/ticker/BBIO",
+   "permanent": true
+  },
+  {
+   "source": "/company/bristol-myers-squibb",
+   "destination": "/ticker/BMY",
+   "permanent": true
+  },
+  {
+   "source": "/company/calcimedica",
+   "destination": "/ticker/CALC",
+   "permanent": true
+  },
+  {
+   "source": "/company/calidi",
+   "destination": "/ticker/CLDI",
+   "permanent": true
+  },
+  {
+   "source": "/company/can-fite",
+   "destination": "/ticker/CANF",
+   "permanent": true
+  },
+  {
+   "source": "/company/candel",
+   "destination": "/ticker/CADL",
+   "permanent": true
+  },
+  {
+   "source": "/company/capricor",
+   "destination": "/ticker/CAPR",
+   "permanent": true
+  },
+  {
+   "source": "/company/cardiff-oncology",
+   "destination": "/ticker/CRDF",
+   "permanent": true
+  },
+  {
+   "source": "/company/cartesian",
+   "destination": "/ticker/RNAC",
+   "permanent": true
+  },
+  {
+   "source": "/company/castle",
+   "destination": "/ticker/CSTL",
+   "permanent": true
+  },
+  {
+   "source": "/company/celcuity",
+   "destination": "/ticker/CELC",
+   "permanent": true
+  },
+  {
+   "source": "/company/celldex",
+   "destination": "/ticker/CLDX",
+   "permanent": true
+  },
+  {
+   "source": "/company/cellectar",
+   "destination": "/ticker/CLRB",
+   "permanent": true
+  },
+  {
+   "source": "/company/cellectis",
+   "destination": "/ticker/CLLS",
+   "permanent": true
+  },
+  {
+   "source": "/company/century",
+   "destination": "/ticker/IPSC",
+   "permanent": true
+  },
+  {
+   "source": "/company/cerus",
+   "destination": "/ticker/CERS",
+   "permanent": true
+  },
+  {
+   "source": "/company/cg-oncology",
+   "destination": "/ticker/CGON",
+   "permanent": true
+  },
+  {
+   "source": "/company/cingulate",
+   "destination": "/ticker/CING",
+   "permanent": true
+  },
+  {
+   "source": "/company/clearmind-medicine",
+   "destination": "/ticker/CMND",
+   "permanent": true
+  },
+  {
+   "source": "/company/cocrystal",
+   "destination": "/ticker/COCP",
+   "permanent": true
+  },
+  {
+   "source": "/company/cogent",
+   "destination": "/ticker/COGT",
+   "permanent": true
+  },
+  {
+   "source": "/company/cognition",
+   "destination": "/ticker/CGTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/coherus-oncology",
+   "destination": "/ticker/CHRS",
+   "permanent": true
+  },
+  {
+   "source": "/company/compass",
+   "destination": "/ticker/CMPX",
+   "permanent": true
+  },
+  {
+   "source": "/company/compass-pathways",
+   "destination": "/ticker/CMPS",
+   "permanent": true
+  },
+  {
+   "source": "/company/corbus",
+   "destination": "/ticker/CRBP",
+   "permanent": true
+  },
+  {
+   "source": "/company/corcept",
+   "destination": "/ticker/CORT",
+   "permanent": true
+  },
+  {
+   "source": "/company/crinetics",
+   "destination": "/ticker/CRNX",
+   "permanent": true
+  },
+  {
+   "source": "/company/crispr",
+   "destination": "/ticker/CRSP",
+   "permanent": true
+  },
+  {
+   "source": "/company/csl",
+   "destination": "/ticker/CSLLY",
+   "permanent": true
+  },
+  {
+   "source": "/company/cue",
+   "destination": "/ticker/CUE",
+   "permanent": true
+  },
+  {
+   "source": "/company/cullinan",
+   "destination": "/ticker/CGEM",
+   "permanent": true
+  },
+  {
+   "source": "/company/curis",
+   "destination": "/ticker/CRIS",
+   "permanent": true
+  },
+  {
+   "source": "/company/cybin",
+   "destination": "/ticker/HELP",
+   "permanent": true
+  },
+  {
+   "source": "/company/cytokinetics",
+   "destination": "/ticker/CYTK",
+   "permanent": true
+  },
+  {
+   "source": "/company/definium",
+   "destination": "/ticker/DFTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/denali",
+   "destination": "/ticker/DNLI",
+   "permanent": true
+  },
+  {
+   "source": "/company/disc-medicine",
+   "destination": "/ticker/IRON",
+   "permanent": true
+  },
+  {
+   "source": "/company/dogwood",
+   "destination": "/ticker/DWTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/edgewise",
+   "destination": "/ticker/EWTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/eli-lilly-and",
+   "destination": "/ticker/LLY",
+   "permanent": true
+  },
+  {
+   "source": "/company/elicio",
+   "destination": "/ticker/ELTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/emergent-biosolutions",
+   "destination": "/ticker/EBS",
+   "permanent": true
+  },
+  {
+   "source": "/company/enanta",
+   "destination": "/ticker/ENTA",
+   "permanent": true
+  },
+  {
+   "source": "/company/engene",
+   "destination": "/ticker/ENGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/enliven",
+   "destination": "/ticker/ELVN",
+   "permanent": true
+  },
+  {
+   "source": "/company/equillium",
+   "destination": "/ticker/EQ",
+   "permanent": true
+  },
+  {
+   "source": "/company/erasca",
+   "destination": "/ticker/ERAS",
+   "permanent": true
+  },
+  {
+   "source": "/company/estrella-immunopharma",
+   "destination": "/ticker/ESLA",
+   "permanent": true
+  },
+  {
+   "source": "/company/eton",
+   "destination": "/ticker/ETON",
+   "permanent": true
+  },
+  {
+   "source": "/company/evommune",
+   "destination": "/ticker/EVMN",
+   "permanent": true
+  },
+  {
+   "source": "/company/exelixis",
+   "destination": "/ticker/EXEL",
+   "permanent": true
+  },
+  {
+   "source": "/company/eyepoint",
+   "destination": "/ticker/EYPT",
+   "permanent": true
+  },
+  {
+   "source": "/company/faeth",
+   "destination": "/ticker/FTH",
+   "permanent": true
+  },
+  {
+   "source": "/company/first-tracks",
+   "destination": "/ticker/TRAX",
+   "permanent": true
+  },
+  {
+   "source": "/company/fortress-biotech",
+   "destination": "/ticker/FBIO",
+   "permanent": true
+  },
+  {
+   "source": "/company/fractyl-health",
+   "destination": "/ticker/GUTS",
+   "permanent": true
+  },
+  {
+   "source": "/company/genmab",
+   "destination": "/ticker/GMAB",
+   "permanent": true
+  },
+  {
+   "source": "/company/gh-research",
+   "destination": "/ticker/GHRS",
+   "permanent": true
+  },
+  {
+   "source": "/company/gilead",
+   "destination": "/ticker/GILD",
+   "permanent": true
+  },
+  {
+   "source": "/company/glaukos",
+   "destination": "/ticker/GKOS",
+   "permanent": true
+  },
+  {
+   "source": "/company/gossamer-bio",
+   "destination": "/ticker/GOSS",
+   "permanent": true
+  },
+  {
+   "source": "/company/grace",
+   "destination": "/ticker/GRCE",
+   "permanent": true
+  },
+  {
+   "source": "/company/greenwich-lifesciences",
+   "destination": "/ticker/GLSI",
+   "permanent": true
+  },
+  {
+   "source": "/company/grifols",
+   "destination": "/ticker/GRFS",
+   "permanent": true
+  },
+  {
+   "source": "/company/gsk",
+   "destination": "/ticker/GSK",
+   "permanent": true
+  },
+  {
+   "source": "/company/halozyme",
+   "destination": "/ticker/HALO",
+   "permanent": true
+  },
+  {
+   "source": "/company/harmony",
+   "destination": "/ticker/HRMY",
+   "permanent": true
+  },
+  {
+   "source": "/company/humacyte",
+   "destination": "/ticker/HUMA",
+   "permanent": true
+  },
+  {
+   "source": "/company/i-on-digital",
+   "destination": "/ticker/IONI",
+   "permanent": true
+  },
+  {
+   "source": "/company/ideaya",
+   "destination": "/ticker/IDYA",
+   "permanent": true
+  },
+  {
+   "source": "/company/illumina",
+   "destination": "/ticker/ILMN",
+   "permanent": true
+  },
+  {
+   "source": "/company/immix",
+   "destination": "/ticker/IMMX",
+   "permanent": true
+  },
+  {
+   "source": "/company/immunic",
+   "destination": "/ticker/IMUX",
+   "permanent": true
+  },
+  {
+   "source": "/company/immunitybio",
+   "destination": "/ticker/IBRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/immunovant",
+   "destination": "/ticker/IMVT",
+   "permanent": true
+  },
+  {
+   "source": "/company/immutep",
+   "destination": "/ticker/IMMP",
+   "permanent": true
+  },
+  {
+   "source": "/company/incannex-healthcare",
+   "destination": "/ticker/IXHL",
+   "permanent": true
+  },
+  {
+   "source": "/company/incyte",
+   "destination": "/ticker/INCY",
+   "permanent": true
+  },
+  {
+   "source": "/company/indaptus",
+   "destination": "/ticker/INDP",
+   "permanent": true
+  },
+  {
+   "source": "/company/indivior",
+   "destination": "/ticker/INDV",
+   "permanent": true
+  },
+  {
+   "source": "/company/inhibrx",
+   "destination": "/ticker/INBX",
+   "permanent": true
+  },
+  {
+   "source": "/company/innate",
+   "destination": "/ticker/IPHA",
+   "permanent": true
+  },
+  {
+   "source": "/company/innoviva",
+   "destination": "/ticker/INVA",
+   "permanent": true
+  },
+  {
+   "source": "/company/inovio",
+   "destination": "/ticker/INO",
+   "permanent": true
+  },
+  {
+   "source": "/company/insmed",
+   "destination": "/ticker/INSM",
+   "permanent": true
+  },
+  {
+   "source": "/company/intensity",
+   "destination": "/ticker/INTS",
+   "permanent": true
+  },
+  {
+   "source": "/company/inventiva",
+   "destination": "/ticker/IVA",
+   "permanent": true
+  },
+  {
+   "source": "/company/invivyd",
+   "destination": "/ticker/IVVD",
+   "permanent": true
+  },
+  {
+   "source": "/company/ionis",
+   "destination": "/ticker/IONS",
+   "permanent": true
+  },
+  {
+   "source": "/company/iovance",
+   "destination": "/ticker/IOVA",
+   "permanent": true
+  },
+  {
+   "source": "/company/ironwood",
+   "destination": "/ticker/IRWD",
+   "permanent": true
+  },
+  {
+   "source": "/company/jaguar-health",
+   "destination": "/ticker/JAGX",
+   "permanent": true
+  },
+  {
+   "source": "/company/janux",
+   "destination": "/ticker/JANX",
+   "permanent": true
+  },
+  {
+   "source": "/company/jasper",
+   "destination": "/ticker/JSPR",
+   "permanent": true
+  },
+  {
+   "source": "/company/jazz",
+   "destination": "/ticker/JAZZ",
+   "permanent": true
+  },
+  {
+   "source": "/company/johnson-johnson",
+   "destination": "/ticker/JNJ",
+   "permanent": true
+  },
+  {
+   "source": "/company/kalaris",
+   "destination": "/ticker/KLRS",
+   "permanent": true
+  },
+  {
+   "source": "/company/karyopharm",
+   "destination": "/ticker/KPTI",
+   "permanent": true
+  },
+  {
+   "source": "/company/kazia",
+   "destination": "/ticker/KZIA",
+   "permanent": true
+  },
+  {
+   "source": "/company/kodiak",
+   "destination": "/ticker/KOD",
+   "permanent": true
+  },
+  {
+   "source": "/company/krystal-biotech",
+   "destination": "/ticker/KRYS",
+   "permanent": true
+  },
+  {
+   "source": "/company/kura-oncology",
+   "destination": "/ticker/KURA",
+   "permanent": true
+  },
+  {
+   "source": "/company/kymera",
+   "destination": "/ticker/KYMR",
+   "permanent": true
+  },
+  {
+   "source": "/company/kyntra-bio",
+   "destination": "/ticker/KYNB",
+   "permanent": true
+  },
+  {
+   "source": "/company/kyverna",
+   "destination": "/ticker/KYTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/lantern",
+   "destination": "/ticker/LTRN",
+   "permanent": true
+  },
+  {
+   "source": "/company/lantheus",
+   "destination": "/ticker/LNTH",
+   "permanent": true
+  },
+  {
+   "source": "/company/legend-biotech",
+   "destination": "/ticker/LEGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/lenz",
+   "destination": "/ticker/LENZ",
+   "permanent": true
+  },
+  {
+   "source": "/company/leonabio",
+   "destination": "/ticker/LONA",
+   "permanent": true
+  },
+  {
+   "source": "/company/lexaria-bioscience",
+   "destination": "/ticker/LEXX",
+   "permanent": true
+  },
+  {
+   "source": "/company/lexeo",
+   "destination": "/ticker/LXEO",
+   "permanent": true
+  },
+  {
+   "source": "/company/lexicon",
+   "destination": "/ticker/LXRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/ligand-incorporated",
+   "destination": "/ticker/LGND",
+   "permanent": true
+  },
+  {
+   "source": "/company/liquidia",
+   "destination": "/ticker/LQDA",
+   "permanent": true
+  },
+  {
+   "source": "/company/lisata",
+   "destination": "/ticker/LSTA",
+   "permanent": true
+  },
+  {
+   "source": "/company/lyell-immunopharma",
+   "destination": "/ticker/LYEL",
+   "permanent": true
+  },
+  {
+   "source": "/company/macrogenics",
+   "destination": "/ticker/MGNX",
+   "permanent": true
+  },
+  {
+   "source": "/company/madrigal",
+   "destination": "/ticker/MDGL",
+   "permanent": true
+  },
+  {
+   "source": "/company/maia-biotechnology",
+   "destination": "/ticker/MAIA",
+   "permanent": true
+  },
+  {
+   "source": "/company/mannkind",
+   "destination": "/ticker/MNKD",
+   "permanent": true
+  },
+  {
+   "source": "/company/maplight",
+   "destination": "/ticker/MPLT",
+   "permanent": true
+  },
+  {
+   "source": "/company/marker",
+   "destination": "/ticker/MRKR",
+   "permanent": true
+  },
+  {
+   "source": "/company/mbx",
+   "destination": "/ticker/MBX",
+   "permanent": true
+  },
+  {
+   "source": "/company/medicinova",
+   "destination": "/ticker/MNOV",
+   "permanent": true
+  },
+  {
+   "source": "/company/merck",
+   "destination": "/ticker/MRK",
+   "permanent": true
+  },
+  {
+   "source": "/company/mesoblast",
+   "destination": "/ticker/MESO",
+   "permanent": true
+  },
+  {
+   "source": "/company/metavia",
+   "destination": "/ticker/MTVA",
+   "permanent": true
+  },
+  {
+   "source": "/company/milestone",
+   "destination": "/ticker/MIST",
+   "permanent": true
+  },
+  {
+   "source": "/company/mineralys",
+   "destination": "/ticker/MLYS",
+   "permanent": true
+  },
+  {
+   "source": "/company/mirum",
+   "destination": "/ticker/MIRM",
+   "permanent": true
+  },
+  {
+   "source": "/company/moderna",
+   "destination": "/ticker/MRNA",
+   "permanent": true
+  },
+  {
+   "source": "/company/moleculin-biotech",
+   "destination": "/ticker/MBRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/moonlake-immunotherapeutics",
+   "destination": "/ticker/MLTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/myriad-genetics",
+   "destination": "/ticker/MYGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/nanobiotix",
+   "destination": "/ticker/NBTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/neumora",
+   "destination": "/ticker/NMRA",
+   "permanent": true
+  },
+  {
+   "source": "/company/novartis",
+   "destination": "/ticker/NVS",
+   "permanent": true
+  },
+  {
+   "source": "/company/novavax",
+   "destination": "/ticker/NVAX",
+   "permanent": true
+  },
+  {
+   "source": "/company/novo-nordisk",
+   "destination": "/ticker/NVO",
+   "permanent": true
+  },
+  {
+   "source": "/company/novocure",
+   "destination": "/ticker/NVCR",
+   "permanent": true
+  },
+  {
+   "source": "/company/nurix",
+   "destination": "/ticker/NRIX",
+   "permanent": true
+  },
+  {
+   "source": "/company/nuvalent",
+   "destination": "/ticker/NUVL",
+   "permanent": true
+  },
+  {
+   "source": "/company/nuvation-bio",
+   "destination": "/ticker/NUVB",
+   "permanent": true
+  },
+  {
+   "source": "/company/ocugen",
+   "destination": "/ticker/OCGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/ocular-therapeutix",
+   "destination": "/ticker/OCUL",
+   "permanent": true
+  },
+  {
+   "source": "/company/olema",
+   "destination": "/ticker/OLMA",
+   "permanent": true
+  },
+  {
+   "source": "/company/omeros",
+   "destination": "/ticker/OMER",
+   "permanent": true
+  },
+  {
+   "source": "/company/oncolytics-biotech",
+   "destination": "/ticker/ONCY",
+   "permanent": true
+  },
+  {
+   "source": "/company/opus-genetics",
+   "destination": "/ticker/IRD",
+   "permanent": true
+  },
+  {
+   "source": "/company/oragenics",
+   "destination": "/ticker/OGEN",
+   "permanent": true
+  },
+  {
+   "source": "/company/organon",
+   "destination": "/ticker/OGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/otsuka",
+   "destination": "/ticker/OTSKY",
+   "permanent": true
+  },
+  {
+   "source": "/company/outlook",
+   "destination": "/ticker/OTLK",
+   "permanent": true
+  },
+  {
+   "source": "/company/pfizer",
+   "destination": "/ticker/PFE",
+   "permanent": true
+  },
+  {
+   "source": "/company/pharming",
+   "destination": "/ticker/PHAR",
+   "permanent": true
+  },
+  {
+   "source": "/company/pharvaris",
+   "destination": "/ticker/PHVS",
+   "permanent": true
+  },
+  {
+   "source": "/company/phathom",
+   "destination": "/ticker/PHAT",
+   "permanent": true
+  },
+  {
+   "source": "/company/phio",
+   "destination": "/ticker/PHIO",
+   "permanent": true
+  },
+  {
+   "source": "/company/pliant",
+   "destination": "/ticker/PLRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/praxis-precision",
+   "destination": "/ticker/PRAX",
+   "permanent": true
+  },
+  {
+   "source": "/company/precigen",
+   "destination": "/ticker/PGEN",
+   "permanent": true
+  },
+  {
+   "source": "/company/prokidney",
+   "destination": "/ticker/PROK",
+   "permanent": true
+  },
+  {
+   "source": "/company/promis-neurosciences",
+   "destination": "/ticker/PMN",
+   "permanent": true
+  },
+  {
+   "source": "/company/protagonist",
+   "destination": "/ticker/PTGX",
+   "permanent": true
+  },
+  {
+   "source": "/company/protara",
+   "destination": "/ticker/TARA",
+   "permanent": true
+  },
+  {
+   "source": "/company/prothena-public",
+   "destination": "/ticker/PRTA",
+   "permanent": true
+  },
+  {
+   "source": "/company/psyence-biomedical",
+   "destination": "/ticker/PBM",
+   "permanent": true
+  },
+  {
+   "source": "/company/ptc",
+   "destination": "/ticker/PTCT",
+   "permanent": true
+  },
+  {
+   "source": "/company/puma-biotechnology",
+   "destination": "/ticker/PBYI",
+   "permanent": true
+  },
+  {
+   "source": "/company/purple-biotech",
+   "destination": "/ticker/PPBT",
+   "permanent": true
+  },
+  {
+   "source": "/company/quince",
+   "destination": "/ticker/QNCX",
+   "permanent": true
+  },
+  {
+   "source": "/company/rapport",
+   "destination": "/ticker/RAPP",
+   "permanent": true
+  },
+  {
+   "source": "/company/regeneron",
+   "destination": "/ticker/REGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/regenxbio",
+   "destination": "/ticker/RGNX",
+   "permanent": true
+  },
+  {
+   "source": "/company/replimune",
+   "destination": "/ticker/REPL",
+   "permanent": true
+  },
+  {
+   "source": "/company/revolution",
+   "destination": "/ticker/RVMD",
+   "permanent": true
+  },
+  {
+   "source": "/company/rhythm",
+   "destination": "/ticker/RYTM",
+   "permanent": true
+  },
+  {
+   "source": "/company/roche",
+   "destination": "/ticker/RHHBY",
+   "permanent": true
+  },
+  {
+   "source": "/company/rocket",
+   "destination": "/ticker/RCKT",
+   "permanent": true
+  },
+  {
+   "source": "/company/roivant",
+   "destination": "/ticker/ROIV",
+   "permanent": true
+  },
+  {
+   "source": "/company/royalty",
+   "destination": "/ticker/RPRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/sanofi",
+   "destination": "/ticker/SNY",
+   "permanent": true
+  },
+  {
+   "source": "/company/sarepta",
+   "destination": "/ticker/SRPT",
+   "permanent": true
+  },
+  {
+   "source": "/company/satellos-bioscience",
+   "destination": "/ticker/MSLE",
+   "permanent": true
+  },
+  {
+   "source": "/company/savara",
+   "destination": "/ticker/SVRA",
+   "permanent": true
+  },
+  {
+   "source": "/company/scholar-rock",
+   "destination": "/ticker/SRRK",
+   "permanent": true
+  },
+  {
+   "source": "/company/scynexis",
+   "destination": "/ticker/SCYX",
+   "permanent": true
+  },
+  {
+   "source": "/company/sellas-life",
+   "destination": "/ticker/SLS",
+   "permanent": true
+  },
+  {
+   "source": "/company/shattuck-labs",
+   "destination": "/ticker/STTK",
+   "permanent": true
+  },
+  {
+   "source": "/company/siga-technologies",
+   "destination": "/ticker/SIGA",
+   "permanent": true
+  },
+  {
+   "source": "/company/silence",
+   "destination": "/ticker/SLN",
+   "permanent": true
+  },
+  {
+   "source": "/company/sionna",
+   "destination": "/ticker/SION",
+   "permanent": true
+  },
+  {
+   "source": "/company/skye-bioscience",
+   "destination": "/ticker/SKYE",
+   "permanent": true
+  },
+  {
+   "source": "/company/sol-gel-technologies",
+   "destination": "/ticker/SLGL",
+   "permanent": true
+  },
+  {
+   "source": "/company/solid",
+   "destination": "/ticker/SLDB",
+   "permanent": true
+  },
+  {
+   "source": "/company/soligenix",
+   "destination": "/ticker/SNGX",
+   "permanent": true
+  },
+  {
+   "source": "/company/spero",
+   "destination": "/ticker/SPRO",
+   "permanent": true
+  },
+  {
+   "source": "/company/spyre",
+   "destination": "/ticker/SYRE",
+   "permanent": true
+  },
+  {
+   "source": "/company/structure",
+   "destination": "/ticker/GPCR",
+   "permanent": true
+  },
+  {
+   "source": "/company/summit",
+   "destination": "/ticker/SMMT",
+   "permanent": true
+  },
+  {
+   "source": "/company/supernus",
+   "destination": "/ticker/SUPN",
+   "permanent": true
+  },
+  {
+   "source": "/company/syndax",
+   "destination": "/ticker/SNDX",
+   "permanent": true
+  },
+  {
+   "source": "/company/takeda",
+   "destination": "/ticker/TAK",
+   "permanent": true
+  },
+  {
+   "source": "/company/tango",
+   "destination": "/ticker/TNGX",
+   "permanent": true
+  },
+  {
+   "source": "/company/tarsus",
+   "destination": "/ticker/TARS",
+   "permanent": true
+  },
+  {
+   "source": "/company/taysha-gene-therapies",
+   "destination": "/ticker/TSHA",
+   "permanent": true
+  },
+  {
+   "source": "/company/tectonic-therapeutic",
+   "destination": "/ticker/TECX",
+   "permanent": true
+  },
+  {
+   "source": "/company/telix",
+   "destination": "/ticker/TLX",
+   "permanent": true
+  },
+  {
+   "source": "/company/tenax",
+   "destination": "/ticker/TENX",
+   "permanent": true
+  },
+  {
+   "source": "/company/teva-industries-a",
+   "destination": "/ticker/TEVA",
+   "permanent": true
+  },
+  {
+   "source": "/company/thermo-fisher-scientific",
+   "destination": "/ticker/TMO",
+   "permanent": true
+  },
+  {
+   "source": "/company/tonix",
+   "destination": "/ticker/TNXP",
+   "permanent": true
+  },
+  {
+   "source": "/company/transcode",
+   "destination": "/ticker/RNAZ",
+   "permanent": true
+  },
+  {
+   "source": "/company/travere",
+   "destination": "/ticker/TVTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/traws",
+   "destination": "/ticker/TRAW",
+   "permanent": true
+  },
+  {
+   "source": "/company/trevi",
+   "destination": "/ticker/TRVI",
+   "permanent": true
+  },
+  {
+   "source": "/company/trisalus-life",
+   "destination": "/ticker/TLSI",
+   "permanent": true
+  },
+  {
+   "source": "/company/turn",
+   "destination": "/ticker/TTRX",
+   "permanent": true
+  },
+  {
+   "source": "/company/tyra",
+   "destination": "/ticker/TYRA",
+   "permanent": true
+  },
+  {
+   "source": "/company/ultragenyx",
+   "destination": "/ticker/RARE",
+   "permanent": true
+  },
+  {
+   "source": "/company/unicycive",
+   "destination": "/ticker/UNCY",
+   "permanent": true
+  },
+  {
+   "source": "/company/upstream-bio",
+   "destination": "/ticker/UPB",
+   "permanent": true
+  },
+  {
+   "source": "/company/urogen",
+   "destination": "/ticker/URGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/valneva",
+   "destination": "/ticker/VALN",
+   "permanent": true
+  },
+  {
+   "source": "/company/vanda",
+   "destination": "/ticker/VNDA",
+   "permanent": true
+  },
+  {
+   "source": "/company/vaxart",
+   "destination": "/ticker/VXRT",
+   "permanent": true
+  },
+  {
+   "source": "/company/vaxcyte",
+   "destination": "/ticker/PCVX",
+   "permanent": true
+  },
+  {
+   "source": "/company/vera",
+   "destination": "/ticker/VERA",
+   "permanent": true
+  },
+  {
+   "source": "/company/veradermics",
+   "destination": "/ticker/MANE",
+   "permanent": true
+  },
+  {
+   "source": "/company/verastem",
+   "destination": "/ticker/VSTM",
+   "permanent": true
+  },
+  {
+   "source": "/company/vertex",
+   "destination": "/ticker/VRTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/viatris",
+   "destination": "/ticker/VTRS",
+   "permanent": true
+  },
+  {
+   "source": "/company/viking",
+   "destination": "/ticker/VKTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/vir-biotechnology",
+   "destination": "/ticker/VIR",
+   "permanent": true
+  },
+  {
+   "source": "/company/viridian",
+   "destination": "/ticker/VRDN",
+   "permanent": true
+  },
+  {
+   "source": "/company/vistagen",
+   "destination": "/ticker/VTGN",
+   "permanent": true
+  },
+  {
+   "source": "/company/voyager",
+   "destination": "/ticker/VYGR",
+   "permanent": true
+  },
+  {
+   "source": "/company/wave-life",
+   "destination": "/ticker/WVE",
+   "permanent": true
+  },
+  {
+   "source": "/company/werewolf",
+   "destination": "/ticker/HOWL",
+   "permanent": true
+  },
+  {
+   "source": "/company/whitehawk",
+   "destination": "/ticker/WHWK",
+   "permanent": true
+  },
+  {
+   "source": "/company/xencor",
+   "destination": "/ticker/XNCR",
+   "permanent": true
+  },
+  {
+   "source": "/company/xenon",
+   "destination": "/ticker/XENE",
+   "permanent": true
+  },
+  {
+   "source": "/company/xeris",
+   "destination": "/ticker/XERS",
+   "permanent": true
+  },
+  {
+   "source": "/company/xoma-royalty",
+   "destination": "/ticker/XOMA",
+   "permanent": true
+  },
+  {
+   "source": "/company/xortx",
+   "destination": "/ticker/XRTX",
+   "permanent": true
+  },
+  {
+   "source": "/company/zai-lab",
+   "destination": "/ticker/ZLAB",
+   "permanent": true
+  },
+  {
+   "source": "/company/zenas",
+   "destination": "/ticker/ZBIO",
+   "permanent": true
+  },
+  {
+   "source": "/company/zevra",
+   "destination": "/ticker/ZVRA",
+   "permanent": true
+  },
+  {
+   "source": "/company/zura-bio",
+   "destination": "/ticker/ZURA",
+   "permanent": true
+  },
+  {
+   "source": "/company/zymeworks",
+   "destination": "/ticker/ZYME",
+   "permanent": true
   }
  ],
  "headers": [
