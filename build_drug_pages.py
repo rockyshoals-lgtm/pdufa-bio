@@ -321,6 +321,15 @@ def main():
     except Exception:
         confirmed = {}
 
+    # FDA brand names (fetch_fda_brands.py cache, keyed by slug): the approval snippet names
+    # the brand a reader will search next ("Etcamah"), the same value add_drug_schema puts in
+    # alternateName. Read-only here; that script owns the cache.
+    try:
+        brands = json.load(open(os.path.join(HERE, "_fda_brand_names.json"), encoding="utf-8"))
+        brands = brands if isinstance(brands, dict) else {}
+    except Exception:
+        brands = {}
+
     drugs = {}
     rejected = []
     for r in rows + arch_rows + manual_rows:
@@ -641,9 +650,23 @@ def main():
         # Clause-fitting, not slicing: desc[:158] cut two long drug names mid-word on the first
         # run ("...links its primary sourc"), which is the exact defect test_meta_lengths exists
         # to block. Clauses are dropped whole, never cut.
-        desc = f"{name}: FDA catalyst dates and outcomes."
-        for extra in ((f" For {', '.join(comps[:1])}." if comps else ""),
-                      " Every date and decision links its primary source.",
+        # Audit 2026-09-08c item 1: the description IS the snippet. Camizestrant earned 29 Bing
+        # impressions at position 4.62 and zero clicks because the description said "FDA
+        # catalyst dates and outcomes" while the body said "approved ... as Etcamah". When the
+        # latest real decision is on record, the description states it: outcome, date, brand.
+        brand_desc = ""
+        if dec0 is not None and dec0[1] == "Approved":
+            bl = (brands.get(slug) or {}).get("brands") or []
+            bn = next((b for b in bl if b), "")
+            bn = bn[:1].upper() + bn[1:].lower() if bn.isupper() else bn
+            brand_desc = (f"{name}: FDA approved on {pretty(dec0[0])}"
+                          + (f" as {bn}" if bn and bn.lower() != name.lower() else "") + ".")
+        elif dec0 is not None and dec0[1] == "CRL":
+            brand_desc = f"{name}: FDA issued a Complete Response Letter on {pretty(dec0[0])}."
+        desc = brand_desc or f"{name}: FDA catalyst dates and outcomes."
+        for extra in ((f" For {', '.join(comps[:1]).rstrip('.')}." if comps else ""),
+                      (" Full catalyst history, every date sourced." if brand_desc
+                       else " Every date and decision links its primary source."),
                       " Facts only."):
             if extra and len(desc) + len(extra) <= 158:
                 desc += extra

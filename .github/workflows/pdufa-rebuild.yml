@@ -16,6 +16,9 @@ name: pdufa daily rebuild
 
 on:
   schedule:
+    # GitHub runs these 1.5 to 5.4 h late (measured 09-04..09-08: the 12:00Z cron started
+    # 14:42Z..17:22Z). Two earlier crons so a same-day build still lands before 08:00 PT.
+    - cron: '0 10 * * *'      # 10:00 UTC = 03:00 PT (lands ~05:00-08:00 PT in practice)
     - cron: '0 12 * * *'      # 12:00 UTC = 05:00 PT
     - cron: '0 21 * * *'      # 21:00 UTC = 14:00 PT (midday refresh)
   workflow_dispatch: {}         # manual "Run workflow" button in the Actions tab
@@ -105,6 +108,11 @@ jobs:
       # from the same collect() the timing page uses, fresh every build.
       - name: Calendar explainer block (the sentence supply, idempotent)
         run: python inject_calendar_explainer.py
+
+      # Audit 09-08c item 2: the explainer's snippet said "15 of 26 early" while /calendar
+      # said 32/20. Same collect(), written to the hand-made learn page every build.
+      - name: /learn/what-is-a-pdufa-date timing numbers from the same collect()
+        run: python sync_learn_timing.py
 
       # The month's decisions as dated sentences (Pharmacy Times' shape, our data,
       # rebuilt daily so it is never frozen at publication).
@@ -657,7 +665,36 @@ jobs:
               echo "::error::push still rejected after 3 attempts"
               exit 1
             fi
+            echo "PUSHED=1" >> "$GITHUB_ENV"
           fi
+
+      # Audit 2026-09-07 P0 / 09-08c item 3. Vercel's CDN served bodies from superseded
+      # deployments under the new build's ETag for about a minute after a promotion
+      # (09-07 16:30Z), and a two-day-old /calendar two hours after a deploy (09-08 11:24 PT).
+      # Two answers, in order: purge the CDN cache once the new deployment is live (needs a
+      # VERCEL_TOKEN secret; the step says so and skips when it is absent), then verify the
+      # live site the way the auditor does -- three passes, body md5 == ETag, bodies stable,
+      # as_of == Eastern date, calendar sums -- and fail the run loudly if any pass fails.
+      - name: Wait for Vercel to promote the pushed commit, then purge the CDN cache
+        if: env.PUSHED == '1'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          want=$(git rev-parse --short=9 HEAD~1)   # the stamp names the tree it built
+          for i in $(seq 1 24); do
+            got=$(curl -s -H 'Cache-Control: no-cache' https://www.pdufa.bio/build-info.json | python -c 'import json,sys; print(json.load(sys.stdin).get("commit",""))' 2>/dev/null || true)
+            [ "$got" = "$want" ] && { echo "live build-info commit $got after $((i*10)) s"; break; }
+            sleep 10
+          done
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::warning::VERCEL_TOKEN secret not set -- CDN purge skipped (add a Vercel token as VERCEL_TOKEN to enable)"
+          else
+            cd pdufa_site_src && npx --yes vercel@latest cache purge --type cdn --yes --token "$VERCEL_TOKEN" --scope team_HLoQLqGljk4BGwM2Recpsid5 || echo "::warning::vercel cache purge failed"
+          fi
+
+      - name: Post-deploy verifier (live, 3 passes, md5==ETag, stable bodies, as_of, sums)
+        if: env.PUSHED == '1'
+        run: python verify_live_deploy.py --passes 3 --gap 30 --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)"
 
       # Tell the search engines, AFTER Vercel has had a moment to build the pushed commit.
       # Note: the classic sitemap ping is gone. google.com/ping returns 404 "deprecated" and

@@ -98,6 +98,11 @@
    "permanent": true
   },
   {
+   "source": "/odin-track-record",
+   "destination": "/why-no-approval-probability",
+   "permanent": true
+  },
+  {
    "source": "/score",
    "destination": "/why-no-approval-probability",
    "permanent": true

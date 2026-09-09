@@ -59,6 +59,45 @@ def timing_split():
     return len(rows), early, on, late, biggest
 
 
+CAP_RANK = {"Large": 0, "Mid": 1, "Small": 2, "Micro": 3, "Nano": 4}
+ROW_RE = re.compile(r'<a class="row"(?![^>]*data-dec)[^>]*href="(/pdufa/[^"]+)"[^>]*>\s*'
+                    r'<div class="t">(.*?)</div>\s*<div class="d">(.*?)</div>', re.S)
+
+
+def load_caps():
+    """(ticker, iso date) -> cap tier, from the dataset the grid was rendered from."""
+    p = os.path.join(SITE, "api", "v1", "dataset.mjs")
+    try:
+        src = io.open(p, encoding="utf-8", errors="replace").read()
+        rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:
+        return {}
+    return {(str(r.get("t") or "").upper(), str(r.get("d") or "")): str(r.get("cap") or "")
+            for r in rows if r.get("t") and r.get("d")}
+
+
+def month_names(grid, cap_of, limit=5):
+    """Up to `limit` upcoming programs in this month's grid as 'Drug (TICKER, Month D)',
+    ordered by sponsor cap tier then date. Decided rows (data-dec) are excluded: the
+    sentence is about what is still due. Quarter-only dates are skipped: naming a drug
+    with a day it does not have would be a precision claim the source never made."""
+    out = []
+    for href, t, d in ROW_RE.findall(grid):
+        t_txt = html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
+        m = re.match(r"([A-Z]{1,6}(?:\s*/\s*[A-Z]{1,6})*)\s*[·]\s*(\d{4}-\d{2}-\d{2})", t_txt)
+        if not m or "(est.)" in t_txt:
+            continue
+        tk, iso = m.group(1).split("/")[0].strip(), m.group(2)
+        drug = html.unescape(re.sub(r"<[^>]+>", "", d)).strip()
+        drug = re.split(r"\s*(?::|\s-\s\(|\s\()", drug, 1)[0].strip().rstrip("…").strip()
+        if not drug or len(drug) < 3:
+            continue
+        rank = CAP_RANK.get(cap_of.get((tk, iso), ""), 9)
+        out.append((rank, iso, f"{drug} ({m.group(1).replace(' ', '')}, {pretty(iso)})"))
+    out.sort()
+    return [x[2] for x in out[:limit]]
+
+
 def main():
     t = io.open(PAGE, encoding="utf-8", errors="replace").read()
     n, early, on, late, biggest = timing_split()
@@ -160,6 +199,7 @@ def main():
     # with the list beneath it. Marker-bounded, idempotent; restore_missing() tolerates
     # the block between the heading and the grid.
     t2 = re.sub(r"<!--MSENT:BEGIN-->[\s\S]*?<!--MSENT:END-->", "", t2)
+    cap_of = load_caps()
     parts = re.split(r'(<div class="mhead">[A-Za-z]+ \d{4}</div>)', t2)
     for k in range(1, len(parts), 2):
         mon = re.search(r">([A-Za-z]+ \d{4})<", parts[k]).group(1)
@@ -174,6 +214,14 @@ def main():
              + (f", {est} of them dated only to the quarter" if est else "")
              + (f"; {dec} already decided" if dec else "")
              + f", each row linking its source, updated {stamp}.")
+        # Audit 09-08c item 6: the answer box quotes sentences that NAME drugs with dates
+        # (medswitcher: "Survodutide, Retatrutide, ..."); ours only counted them. Name the
+        # month's upcoming programs, largest sponsors first (cap tier from the dataset,
+        # then date), from the same rows the grid shows -- never from anywhere else.
+        names = month_names(grid, cap_of)
+        if names:
+            s += (f" In {mon.split()[0]} the FDA is due to decide on "
+                  + ", ".join(names[:-1]) + (" and " if len(names) > 1 else "") + names[-1] + ".")
         parts[k + 1] = ('<!--MSENT:BEGIN--><p class="msent" style="margin:2px 0 8px;color:var(--mut2);'
                         f'font-size:13px">{esc(s)}</p><!--MSENT:END-->' + grid)
     t2 = "".join(parts)

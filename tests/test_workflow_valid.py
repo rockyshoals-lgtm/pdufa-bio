@@ -38,7 +38,12 @@ KNOWN_SECRETS = {"POLYGON_API_KEY", "FMP_API_KEY", "SEC_USER_AGENT",
                  # Vendor cross-check (bpc_compare.py). Advisory only: the script SKIPs with
                  # exit 0 when the key is unset, so an unconfigured secret degrades to "no
                  # vendor comparison this run" rather than a broken build.
-                 "BPC_API_KEY"}
+                 "BPC_API_KEY",
+                 # Audit 09-08c item 3: CDN purge after deploy (Vercel CLI). The step warns and
+                 # skips when unset, so the build never depends on it. NOT YET CREATED as of
+                 # 2026-09-08: David creates the Vercel token and adds it under exactly this
+                 # name; until then the purge is a warning line in the run log.
+                 "VERCEL_TOKEN"}
 
 
 def main():

@@ -71,3 +71,36 @@ if __name__ == "__main__":
     test_confirmed_approvals_render_as_approved()
     test_ledger_dates_are_real_and_past()
     print("OK")
+
+
+# Audit 2026-09-08c item 1: the description is the SERP snippet. /drug/camizestrant, our top
+# AI entity, drew 29 Bing impressions at position 4.62 and zero clicks while its description
+# read "FDA catalyst dates and outcomes" over a body that said "approved ... as Etcamah".
+# Contract: a drug page whose latest real decision is an approval (the "&#10003; Approved"
+# badge on its most recent decision row) must state that approval in its meta description.
+DESC = re.compile(r'<meta name="description" content="([^"]*)"')
+GENERIC = "FDA catalyst dates and outcomes"
+ROW = re.compile(r'<a class="row" href="/fda-decision/[A-Z]{1,6}-(\d{4}-\d{2}-\d{2})"[^>]*>'
+                 r'(.*?)</a>', re.S)
+
+
+def test_approved_drug_pages_state_approval_in_description():
+    import glob
+    bad, seen = [], 0
+    for p in sorted(glob.glob(os.path.join(SITE, "drug", "*", "index.html"))):
+        t = io.open(p, encoding="utf-8", errors="replace").read()
+        rows = ROW.findall(t)
+        if not rows:
+            continue
+        last_date, last_frag = max(rows, key=lambda x: x[0])
+        if "Approved" not in last_frag:
+            continue
+        seen += 1
+        m = DESC.search(t)
+        desc = m.group(1) if m else ""
+        if GENERIC in desc or not re.search(r"approved", desc, re.I):
+            bad.append(f"/drug/{os.path.basename(os.path.dirname(p))}: latest decision "
+                       f"{last_date} Approved but description reads {desc[:90]!r}")
+    assert seen > 0, "no approved drug page found -- guard cannot see"
+    assert not bad, ("approved drug page(s) whose snippet never says so (the camizestrant "
+                     "29-impressions-0-clicks class):\n  " + "\n  ".join(bad))
