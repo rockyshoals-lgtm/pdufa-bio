@@ -175,6 +175,20 @@ def ta_for(indic):
     return "Other"
 
 
+# Products reviewed for a DIAGNOSTIC use. A therapy verb on one of these is a factual error
+# about what the product is, not a wording preference. Matched on the drug label or the
+# indication text, both of which we write ourselves; the phrases are the ones our own
+# indication field uses for imaging and in-vitro diagnostics.
+DIAGNOSTIC_CUE = re.compile(
+    r"\b(?:PET imaging|imaging agent|radiodiagnostic|diagnostic agent|"
+    r"to characteris[ez]e|characteris[ez]ation of|companion diagnostic|"
+    r"-CDx\b|-Px\b|contrast agent)\b", re.I)
+
+
+def is_diagnostic(drug_label, indication):
+    return bool(DIAGNOSTIC_CUE.search(f"{drug_label} {indication}"))
+
+
 def humanize_indication(name, base, indic):
     if name in PLAIN_INDICATION:
         return PLAIN_INDICATION[name], True
@@ -193,7 +207,15 @@ def build_story(name, base, ph_drug, ph_date, ph_company, ph_indic, ph_tier,
     lead, curated = humanize_indication(name, base, ph_indic)
     drug_label = ph_drug or (cat_row.get("drug") if cat_row else "") or "This candidate"
     if lead:
-        s1 = "<b>" + esc(drug_label) + "</b> is under FDA review to treat " + esc(lead) + "."
+        # Audit 2026-09-09b item 2: "to treat" was hard-coded for every application, so
+        # /pdufa/TLX told readers a PET imaging agent treats glioma two days before its
+        # decision. TLX101-Px (Pixclara, floretyrosine F 18) is a diagnostic submitted for
+        # the CHARACTERISATION of recurrent glioma versus treatment-related change; the
+        # therapeutic TLX101 is a different programme, which is how the two got conflated.
+        # A diagnostic is reviewed FOR a use, never TO TREAT one.
+        verb = "is under FDA review for" if is_diagnostic(drug_label, lead) \
+            else "is under FDA review to treat"
+        s1 = "<b>" + esc(drug_label) + "</b> " + verb + " " + esc(lead) + "."
     else:
         s1 = "<b>" + esc(drug_label) + "</b> is under FDA review by " + esc(ph_company) + "."
 

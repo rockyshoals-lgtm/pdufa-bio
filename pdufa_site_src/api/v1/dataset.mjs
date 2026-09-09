@@ -2,7 +2,7 @@ export default [
  {
   "id": "readout_agio_2026-06-15",
   "t": "AGIO",
-  "company": "",
+  "company": "Agios Pharmaceuticals",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Mitapivat",
@@ -23,7 +23,7 @@ export default [
  {
   "id": "readout_ardx_2026-06-15",
   "t": "ARDX",
-  "company": "",
+  "company": "Ardelyx, Inc.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Tenapanor",
@@ -44,7 +44,7 @@ export default [
  {
   "id": "readout_bmy_2026-06-15",
   "t": "BMY",
-  "company": "",
+  "company": "Bristol-Myers Squibb Company",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Nivolumab",
@@ -65,7 +65,7 @@ export default [
  {
   "id": "readout_celc_2026-06-15",
   "t": "CELC",
-  "company": "",
+  "company": "Celcuity Inc.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Gedatolisib",
@@ -86,7 +86,7 @@ export default [
  {
   "id": "readout_clls_2026-06-15",
   "t": "CLLS",
-  "company": "",
+  "company": "Cellectis S.A.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "UCART22",
@@ -107,7 +107,7 @@ export default [
  {
   "id": "readout_cmps_2026-06-15",
   "t": "CMPS",
-  "company": "",
+  "company": "COMPASS Pathways plc",
   "d": "2026-06-15",
   "dp": "month",
   "name": "COMP360 psilocybin",
@@ -128,7 +128,7 @@ export default [
  {
   "id": "readout_jazz_2026-06-15",
   "t": "JAZZ",
-  "company": "",
+  "company": "Jazz Pharmaceuticals plc",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Zanidatamab",
@@ -149,7 +149,7 @@ export default [
  {
   "id": "readout_legn_2026-06-15",
   "t": "LEGN",
-  "company": "",
+  "company": "Legend Biotech Corp",
   "d": "2026-06-15",
   "dp": "month",
   "name": "LCAR-B38M CAR-T Cell",
@@ -170,7 +170,7 @@ export default [
  {
   "id": "readout_olma_2026-06-15",
   "t": "OLMA",
-  "company": "",
+  "company": "Olema Pharmaceuticals, Inc.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Palazestrant",
@@ -191,7 +191,7 @@ export default [
  {
   "id": "readout_ptct_2026-06-15",
   "t": "PTCT",
-  "company": "",
+  "company": "Ptc Therapeutics, Inc.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "PTC923",
@@ -212,7 +212,7 @@ export default [
  {
   "id": "readout_tlx_2026-06-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2026-06-15",
   "dp": "month",
   "name": "177Lu-TLX591",
@@ -233,7 +233,7 @@ export default [
  {
   "id": "readout_trvi_2026-06-15",
   "t": "TRVI",
-  "company": "",
+  "company": "Trevi Therapeutics, Inc.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "Nalbuphine ER Tablets",
@@ -254,7 +254,7 @@ export default [
  {
   "id": "readout_wve_2026-06-15",
   "t": "WVE",
-  "company": "",
+  "company": "Wave Life Sciences, Inc.",
   "d": "2026-06-15",
   "dp": "month",
   "name": "WVE-210201",
@@ -275,7 +275,7 @@ export default [
  {
   "id": "pdufa_gsk_2026-06-18",
   "t": "GSK",
-  "company": "GSK plc American Depositary Shares (Each representing two)",
+  "company": "GSK plc",
   "d": "2026-06-18",
   "dp": "day",
   "name": "Tebipenem HBr (SPR994) - (PIVOT-PO)",
@@ -515,7 +515,7 @@ export default [
  {
   "id": "pdufa_azn_2026-06-30",
   "t": "AZN",
-  "company": "AstraZeneca PLC",
+  "company": "AstraZeneca/Alexion",
   "d": "2026-06-30",
   "dp": "day",
   "name": "Truqap - (CAPItello-281)",
@@ -667,7 +667,7 @@ export default [
  {
   "id": "pdufa_cort_2026-03-25",
   "t": "CORT",
-  "company": "CORCEPT THERAPEUTICS INC",
+  "company": "Corcept Therapeutics Inc",
   "d": "2026-07-11",
   "dp": "day",
   "name": "Relacorilant + nab-paclitaxel - (ROSELLA)",
@@ -699,7 +699,7 @@ export default [
  {
   "id": "readout_akba_2026-07-15",
   "t": "AKBA",
-  "company": "",
+  "company": "Akebia Therapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Vadadustat",
@@ -720,7 +720,7 @@ export default [
  {
   "id": "readout_amgn_2026-07-15",
   "t": "AMGN",
-  "company": "",
+  "company": "Amgen Inc",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Tezepelumab",
@@ -741,7 +741,7 @@ export default [
  {
   "id": "readout_anip_2026-07-15",
   "t": "ANIP",
-  "company": "",
+  "company": "Ani Pharmaceuticals Inc",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Yutiq",
@@ -762,7 +762,7 @@ export default [
  {
   "id": "readout_ardx_2026-07-15",
   "t": "ARDX",
-  "company": "",
+  "company": "Ardelyx, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Tenapanor",
@@ -783,7 +783,7 @@ export default [
  {
   "id": "readout_axsm_2026-07-15",
   "t": "AXSM",
-  "company": "",
+  "company": "Axsome Therapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "AXS-14",
@@ -804,7 +804,7 @@ export default [
  {
   "id": "readout_calc_2026-07-15",
   "t": "CALC",
-  "company": "",
+  "company": "CalciMedica, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "CM4620",
@@ -825,7 +825,7 @@ export default [
  {
   "id": "readout_cers_2026-07-15",
   "t": "CERS",
-  "company": "",
+  "company": "Cerus Corp",
   "d": "2026-07-15",
   "dp": "month",
   "name": "S-303 Treated Red Blood Cells",
@@ -846,7 +846,7 @@ export default [
  {
   "id": "readout_crdf_2026-07-15",
   "t": "CRDF",
-  "company": "",
+  "company": "Cardiff Oncology, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Onvansertib",
@@ -867,7 +867,7 @@ export default [
  {
   "id": "readout_dwtx_2026-07-15",
   "t": "DWTX",
-  "company": "",
+  "company": "Dogwood Therapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Halneuron",
@@ -888,7 +888,7 @@ export default [
  {
   "id": "readout_elvn_2026-07-15",
   "t": "ELVN",
-  "company": "",
+  "company": "Enliven Therapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "ELVN-002",
@@ -909,7 +909,7 @@ export default [
  {
   "id": "readout_exel_2026-07-15",
   "t": "EXEL",
-  "company": "",
+  "company": "Exelixis",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Cabozantinib",
@@ -930,7 +930,7 @@ export default [
  {
   "id": "readout_howl_2026-07-15",
   "t": "HOWL",
-  "company": "",
+  "company": "Werewolf Therapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "WTX-330",
@@ -951,7 +951,7 @@ export default [
  {
   "id": "readout_ilmn_2026-07-15",
   "t": "ILMN",
-  "company": "",
+  "company": "Illumina, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "18F-MFBG",
@@ -972,7 +972,7 @@ export default [
  {
   "id": "readout_iova_2026-07-15",
   "t": "IOVA",
-  "company": "",
+  "company": "Iovance Biotherapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Lifileucel plus Pembrolizumab",
@@ -993,7 +993,7 @@ export default [
  {
   "id": "readout_jazz_2026-07-15",
   "t": "JAZZ",
-  "company": "",
+  "company": "Jazz Pharmaceuticals plc",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Lurbinectedin",
@@ -1014,7 +1014,7 @@ export default [
  {
   "id": "readout_ltrn_2026-07-15",
   "t": "LTRN",
-  "company": "",
+  "company": "Lantern Pharma Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Tavocept(BNP7787) in combination with cisplatin ",
@@ -1035,7 +1035,7 @@ export default [
  {
   "id": "readout_lxrx_2026-07-15",
   "t": "LXRX",
-  "company": "",
+  "company": "Lexicon Pharmaceuticals, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Sotagliflozin",
@@ -1056,7 +1056,7 @@ export default [
  {
   "id": "readout_rare_2026-07-15",
   "t": "RARE",
-  "company": "",
+  "company": "Ultragenyx Pharmaceutical Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "GTX-102",
@@ -1077,7 +1077,7 @@ export default [
  {
   "id": "readout_sion_2026-07-15",
   "t": "SION",
-  "company": "",
+  "company": "Sionna Therapeutics, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "SION-719",
@@ -1098,7 +1098,7 @@ export default [
  {
   "id": "readout_smmt_2026-07-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -1119,7 +1119,7 @@ export default [
  {
   "id": "readout_sngx_2026-07-15",
   "t": "SNGX",
-  "company": "",
+  "company": "Soligenix, Inc.",
   "d": "2026-07-15",
   "dp": "month",
   "name": "Hypericin",
@@ -1140,7 +1140,7 @@ export default [
  {
   "id": "pdufa_mrk_2026-07-16",
   "t": "MRK",
-  "company": "Merck & Co.",
+  "company": "Merck & Co., Inc.",
   "d": "2026-07-16",
   "dp": "day",
   "name": "Lipfendra (enlicitide decanoate)",
@@ -1218,7 +1218,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1298,10 +1298,10 @@ export default [
  {
   "id": "adcomm_capr_2026-07-29",
   "t": "CAPR",
-  "company": "",
+  "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -1350,10 +1350,10 @@ export default [
  {
   "id": "adcomm_repl_2026-07-30",
   "t": "REPL",
-  "company": "",
+  "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -1474,7 +1474,7 @@ export default [
  {
   "id": "readout_tenx_2026-08-31",
   "t": "TENX",
-  "company": "TENAX THERAPEUTICS, INC.",
+  "company": "Tenax Therapeutics, Inc.",
   "d": "2026-08-10",
   "dp": "day",
   "name": "TNX-103 (oral levosimendan) Phase 3 LEVEL topline",
@@ -1502,7 +1502,7 @@ export default [
  {
   "id": "pdufa_lnth_2026-08-13",
   "t": "LNTH",
-  "company": "Lantheus",
+  "company": "Lantheus Holdings Inc.",
   "d": "2026-08-13",
   "dp": "day",
   "name": "MK-6240",
@@ -1542,7 +1542,7 @@ export default [
  {
   "id": "readout_acrs_2026-08-15",
   "t": "ACRS",
-  "company": "",
+  "company": "Aclaris Therapeutics, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "A-101",
@@ -1563,7 +1563,7 @@ export default [
  {
   "id": "readout_akba_2026-08-15",
   "t": "AKBA",
-  "company": "",
+  "company": "Akebia Therapeutics, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Vadadustat",
@@ -1584,7 +1584,7 @@ export default [
  {
   "id": "readout_bivi_2026-08-15",
   "t": "BIVI",
-  "company": "",
+  "company": "Biovie Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "NE3107",
@@ -1605,7 +1605,7 @@ export default [
  {
   "id": "readout_bmrn_2026-08-15",
   "t": "BMRN",
-  "company": "",
+  "company": "Biomarin Pharmaceutical Inc",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Vosoritide",
@@ -1626,7 +1626,7 @@ export default [
  {
   "id": "readout_clrb_2026-08-15",
   "t": "CLRB",
-  "company": "",
+  "company": "Cellectar Biosciences, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "NOV-002",
@@ -1647,7 +1647,7 @@ export default [
  {
   "id": "readout_eypt_2026-08-15",
   "t": "EYPT",
-  "company": "",
+  "company": "EyePoint, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "EYP-1901",
@@ -1668,7 +1668,7 @@ export default [
  {
   "id": "readout_grfs_2026-08-15",
   "t": "GRFS",
-  "company": "",
+  "company": "Grifols SA",
   "d": "2026-08-15",
   "dp": "month",
   "name": "ALPHA-1 MP",
@@ -1689,7 +1689,7 @@ export default [
  {
   "id": "readout_incy_2026-08-15",
   "t": "INCY",
-  "company": "",
+  "company": "Incyte Corp",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Ruxolitinib",
@@ -1710,7 +1710,7 @@ export default [
  {
   "id": "readout_ivvd_2026-08-15",
   "t": "IVVD",
-  "company": "",
+  "company": "Invivyd, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "VYD2311",
@@ -1731,7 +1731,7 @@ export default [
  {
   "id": "readout_jspr_2026-08-15",
   "t": "JSPR",
-  "company": "",
+  "company": "Jasper Therapeutics, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Briquilimab",
@@ -1752,7 +1752,7 @@ export default [
  {
   "id": "readout_kpti_2026-08-15",
   "t": "KPTI",
-  "company": "",
+  "company": "Karyopharm Therapeutics Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Selinexor",
@@ -1773,7 +1773,7 @@ export default [
  {
   "id": "readout_kytx_2026-08-15",
   "t": "KYTX",
-  "company": "",
+  "company": "Kyverna Therapeutics, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "KYV-101 KYSA-1 Phase 1 (lupus nephritis) - trial terminated",
@@ -1796,7 +1796,7 @@ export default [
  {
   "id": "readout_mane_2026-08-15",
   "t": "MANE",
-  "company": "",
+  "company": "Veradermics, Inc",
   "d": "2026-08-15",
   "dp": "month",
   "name": "VDPHL01",
@@ -1817,7 +1817,7 @@ export default [
  {
   "id": "readout_mrk_2026-08-15",
   "t": "MRK",
-  "company": "",
+  "company": "Merck & Co., Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Ensifentrine",
@@ -1838,7 +1838,7 @@ export default [
  {
   "id": "readout_nvo_2026-08-15",
   "t": "NVO",
-  "company": "",
+  "company": "Novo Nordisk A/S",
   "d": "2026-08-15",
   "dp": "month",
   "name": "Semaglutide",
@@ -1859,7 +1859,7 @@ export default [
  {
   "id": "readout_tmo_2026-08-15",
   "t": "TMO",
-  "company": "",
+  "company": "Thermo Fisher Scientific Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "MK-7240",
@@ -1880,7 +1880,7 @@ export default [
  {
   "id": "readout_vstm_2026-08-15",
   "t": "VSTM",
-  "company": "",
+  "company": "Verastem, Inc.",
   "d": "2026-08-15",
   "dp": "month",
   "name": "avutometinib",
@@ -2099,7 +2099,7 @@ export default [
  {
   "id": "pdufa_gild_2026-08-27",
   "t": "GILD",
-  "company": "Gilead Sciences Inc.",
+  "company": "Gilead Sciences, Inc.",
   "d": "2026-08-27",
   "dp": "day",
   "name": "Bictegravir and Lenacapavir - (ARTISTRY-2)",
@@ -2300,7 +2300,7 @@ export default [
   "company": "Telix Pharmaceuticals Limited",
   "d": "2026-09-11",
   "dp": "day",
-  "name": "TLX101-Px",
+  "name": "TLX101-Px (Pixclara)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Mid",
@@ -2317,7 +2317,11 @@ export default [
     "updated": "2026-04-16",
     "slip": null
    },
-   "indication": "Recurrent or progressive glioma (brain cancer)",
+   "indication": "PET imaging to characterise recurrent or progressive glioma from treatment-related changes",
+   "modality": "diagnostic",
+   "source": "Telix release 2026-04-10 (NDA acceptance) and 2026-03-16 (resubmission)",
+   "source_url": "https://telixpharma.com/news-views/fda-accepts-nda-for-tlx101-px-pixclara/",
+   "review": "Telix resubmitted the NDA on March 16, 2026 after the FDA's earlier Complete Response Letter; the FDA accepted the resubmission on April 10, 2026 and set a goal date of September 11, 2026. TLX101-Px (Pixclara, floretyrosine F 18) is a PET imaging agent submitted for the characterisation of recurrent or progressive glioma from treatment-related changes in adult and paediatric patients. It is a diagnostic, not a therapy; the therapeutic candidate TLX101 is a separate programme.",
    "market_cap_usd": 4070615842.1200004,
    "cash_runway_months": null,
    "days_to_decision": 63,
@@ -2392,7 +2396,7 @@ export default [
  {
   "id": "readout_agmb_2026-09-15",
   "t": "AGMB",
-  "company": "",
+  "company": "Agomab Therapeutics NV",
   "d": "2026-09-15",
   "dp": "month",
   "name": "AGMB-129",
@@ -2413,7 +2417,7 @@ export default [
  {
   "id": "readout_alec_2026-09-15",
   "t": "ALEC",
-  "company": "",
+  "company": "Alector, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "AL001",
@@ -2434,7 +2438,7 @@ export default [
  {
   "id": "readout_apge_2026-09-15",
   "t": "APGE",
-  "company": "",
+  "company": "Apogee Therapeutics, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "APG777",
@@ -2455,7 +2459,7 @@ export default [
  {
   "id": "readout_ardx_2026-09-15",
   "t": "ARDX",
-  "company": "",
+  "company": "Ardelyx, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Tenapanor",
@@ -2476,7 +2480,7 @@ export default [
  {
   "id": "readout_arqt_2026-09-15",
   "t": "ARQT",
-  "company": "",
+  "company": "Arcutis Biotherapeutics Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Topical Roflumilast",
@@ -2497,7 +2501,7 @@ export default [
  {
   "id": "readout_arvn_2026-09-15",
   "t": "ARVN",
-  "company": "",
+  "company": "Arvinas, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "ARV-471",
@@ -2518,7 +2522,7 @@ export default [
  {
   "id": "readout_avir_2026-09-15",
   "t": "AVIR",
-  "company": "",
+  "company": "Atea Pharmaceuticals, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Bemnifosbuvir-Ruzasvir",
@@ -2539,7 +2543,7 @@ export default [
  {
   "id": "readout_bhvn_2026-09-15",
   "t": "BHVN",
-  "company": "",
+  "company": "Biohaven Ltd.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Taldefgrobep Alfa",
@@ -2560,7 +2564,7 @@ export default [
  {
   "id": "readout_biib_2026-09-15",
   "t": "BIIB",
-  "company": "",
+  "company": "Biogen Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Litifilimab",
@@ -2581,7 +2585,7 @@ export default [
  {
   "id": "readout_cccc_2026-09-15",
   "t": "CCCC",
-  "company": "",
+  "company": "C4 Therapeutics, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Cemsidomide",
@@ -2602,7 +2606,7 @@ export default [
  {
   "id": "readout_cgem_2026-09-15",
   "t": "CGEM",
-  "company": "",
+  "company": "Cullinan Therapeutics, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "CLN-081",
@@ -2623,7 +2627,7 @@ export default [
  {
   "id": "readout_exel_2026-09-15",
   "t": "EXEL",
-  "company": "",
+  "company": "Exelixis",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Cabozantinib",
@@ -2644,7 +2648,7 @@ export default [
  {
   "id": "readout_gild_2026-09-15",
   "t": "GILD",
-  "company": "",
+  "company": "Gilead Sciences, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Sacituzumab Govitecan",
@@ -2665,7 +2669,7 @@ export default [
  {
   "id": "readout_ibrx_2026-09-15",
   "t": "IBRX",
-  "company": "",
+  "company": "ImmunityBio, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "ALT-803",
@@ -2686,7 +2690,7 @@ export default [
  {
   "id": "readout_ilmn_2026-09-15",
   "t": "ILMN",
-  "company": "",
+  "company": "Illumina, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "18F-MFBG",
@@ -2707,7 +2711,7 @@ export default [
  {
   "id": "readout_immp_2026-09-15",
   "t": "IMMP",
-  "company": "",
+  "company": "IMMUTEP Ltd",
   "d": "2026-09-15",
   "dp": "month",
   "name": "eftilagimod alfa",
@@ -2728,7 +2732,7 @@ export default [
  {
   "id": "readout_kpti_2026-09-15",
   "t": "KPTI",
-  "company": "",
+  "company": "Karyopharm Therapeutics Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Selinexor",
@@ -2749,7 +2753,7 @@ export default [
  {
   "id": "readout_mltx_2026-09-15",
   "t": "MLTX",
-  "company": "",
+  "company": "MoonLake Immunotherapeutics",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Sonelokimab",
@@ -2770,7 +2774,7 @@ export default [
  {
   "id": "readout_mrk_2026-09-15",
   "t": "MRK",
-  "company": "",
+  "company": "Merck & Co., Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Pembrolizumab",
@@ -2791,7 +2795,7 @@ export default [
  {
   "id": "readout_sln_2026-09-15",
   "t": "SLN",
-  "company": "",
+  "company": "Silence Therapeutics plc",
   "d": "2026-09-15",
   "dp": "month",
   "name": "SLN124",
@@ -2812,7 +2816,7 @@ export default [
  {
   "id": "readout_supn_2026-09-15",
   "t": "SUPN",
-  "company": "",
+  "company": "Supernus Pharmaceuticals, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "SPN-812",
@@ -2833,7 +2837,7 @@ export default [
  {
   "id": "readout_vera_2026-09-15",
   "t": "VERA",
-  "company": "",
+  "company": "Vera Therapeutics Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "Atacicept",
@@ -2854,7 +2858,7 @@ export default [
  {
   "id": "readout_vnda_2026-09-15",
   "t": "VNDA",
-  "company": "",
+  "company": "Vanda Pharmaceuticals Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "VSJ-110",
@@ -2875,7 +2879,7 @@ export default [
  {
   "id": "readout_wve_2026-09-15",
   "t": "WVE",
-  "company": "",
+  "company": "Wave Life Sciences, Inc.",
   "d": "2026-09-15",
   "dp": "month",
   "name": "WVE-210201",
@@ -2991,14 +2995,17 @@ export default [
   "ua": "2026-09-09T16:01:45Z",
   "_d": {
    "indication": "Recently diagnosed pulmonary arterial hypertension (label update)",
-   "source_note": "Re-added 2026-08-13 after dataset loss; HYPERION sBLA priority review, PDUFA 2026-09-21 per Merck release.",
+   "source_note": "Merck 10-Q for Q2 2026 (filed 2026-08-07): \"Winrevair ... is under review by the FDA in connection with a proposed update to the U.S. product label based on the results of the Phase 3 HYPERION trial. The FDA set a PDUFA date of September 21, 2026.\" The same date appears in Merck's 8-K of 2026-02-03: \"In February 2026, FDA accepted a new sBLA for WINREVAIR ... FDA set PDUFA date of September 21, 2026.\" Verified 2026-09-09 against EDGAR full-text search after the audit could not source the row.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000031015826000212/mrk-20260630.htm",
+   "source_url_2": "https://www.sec.gov/Archives/edgar/data/310158/000110465926009495/tm264564d1_ex99-1.htm",
+   "source": "Merck 10-Q (Q2 2026) and 8-K (2026-02-03)",
    "market_cap_usd": 366276301377.48004
   }
  },
  {
   "id": "pdufa_ions_2026-09-22",
   "t": "IONS",
-  "company": "Ionis",
+  "company": "Ionis Pharmaceuticals Inc.",
   "d": "2026-09-22",
   "dp": "day",
   "name": "Zilganersen (ION373)",
@@ -3067,7 +3074,7 @@ export default [
  {
   "id": "pdufa_incy_2026-09-26",
   "t": "INCY",
-  "company": "INCYTE CORP",
+  "company": "Incyte Corp",
   "d": "2026-09-26",
   "dp": "day",
   "name": "zilurgisertib",
@@ -3307,7 +3314,7 @@ export default [
  {
   "id": "readout_alms_2026-09-30",
   "t": "ALMS",
-  "company": "ALUMIS INC.",
+  "company": "Alumis Inc.",
   "d": "2026-09-30",
   "dp": "quarter",
   "name": "anifrolumab readout",
@@ -3601,7 +3608,7 @@ export default [
  {
   "id": "readout_mnkd_2026-09-30",
   "t": "MNKD",
-  "company": "MANNKIND CORP",
+  "company": "MannKind Corporation",
   "d": "2026-09-30",
   "dp": "quarter",
   "name": "MNKD-201 readout",
@@ -3786,7 +3793,7 @@ export default [
  {
   "id": "readout_ppbt_2026-09-30",
   "t": "PPBT",
-  "company": "PURPLE BIOTECH LTD.",
+  "company": "Purple Biotech Ltd.",
   "d": "2026-09-30",
   "dp": "quarter",
   "name": "IM1305 readout",
@@ -3912,7 +3919,7 @@ export default [
  {
   "id": "readout_scyx_2026-09-30",
   "t": "SCYX",
-  "company": "SCYNEXIS INC",
+  "company": "Scynexis Inc",
   "d": "2026-09-30",
   "dp": "quarter",
   "name": "SCY-247 readout",
@@ -4018,7 +4025,7 @@ export default [
  {
   "id": "pdufa_tak_2026-09-30",
   "t": "TAK",
-  "company": "Takeda Pharmaceutical Company Limited American Depositary Shares (each representing 1/2 of a share of)",
+  "company": "Takeda Pharmaceutical Co Ltd",
   "d": "2026-09-30",
   "dp": "day",
   "name": "Oveporexton (TAK-861-2001)",
@@ -4281,7 +4288,7 @@ export default [
  {
   "id": "pdufa_mrk_2026-10-10",
   "t": "MRK",
-  "company": "Merck",
+  "company": "Merck & Co., Inc.",
   "d": "2026-10-10",
   "dp": "day",
   "name": "Ifinatamab deruxtecan (I-DXd)",
@@ -4319,7 +4326,7 @@ export default [
  {
   "id": "readout_abos_2026-10-15",
   "t": "ABOS",
-  "company": "",
+  "company": "Acumen Pharmaceuticals, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "sabirnetug",
@@ -4340,7 +4347,7 @@ export default [
  {
   "id": "readout_annx_2026-10-15",
   "t": "ANNX",
-  "company": "",
+  "company": "Annexon, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Tanruprubart",
@@ -4361,7 +4368,7 @@ export default [
  {
   "id": "readout_biib_2026-10-15",
   "t": "BIIB",
-  "company": "",
+  "company": "Biogen Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Litifilimab",
@@ -4382,7 +4389,7 @@ export default [
  {
   "id": "readout_cldx_2026-10-15",
   "t": "CLDX",
-  "company": "",
+  "company": "Celldex Therapeutics, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Barzolvolimab",
@@ -4403,7 +4410,7 @@ export default [
  {
   "id": "readout_cslly_2026-10-15",
   "t": "CSLLY",
-  "company": "",
+  "company": "Csl Ltd",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Recombinant Single-Chain Factor Viii",
@@ -4424,7 +4431,7 @@ export default [
  {
   "id": "readout_eypt_2026-10-15",
   "t": "EYPT",
-  "company": "",
+  "company": "EyePoint, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "EYP-1901",
@@ -4445,7 +4452,7 @@ export default [
  {
   "id": "readout_huma_2026-10-15",
   "t": "HUMA",
-  "company": "",
+  "company": "Humacyte, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Human Acellular Vessel",
@@ -4466,7 +4473,7 @@ export default [
  {
   "id": "readout_immp_2026-10-15",
   "t": "IMMP",
-  "company": "",
+  "company": "IMMUTEP Ltd",
   "d": "2026-10-15",
   "dp": "month",
   "name": "eftilagimod alfa",
@@ -4487,7 +4494,7 @@ export default [
  {
   "id": "readout_imvt_2026-10-15",
   "t": "IMVT",
-  "company": "",
+  "company": "Immunovant, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "IMVT-1402",
@@ -4508,7 +4515,7 @@ export default [
  {
   "id": "readout_inbx_2026-10-15",
   "t": "INBX",
-  "company": "",
+  "company": "Inhibrx Biosciences, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "INBRX-106",
@@ -4529,7 +4536,7 @@ export default [
  {
   "id": "readout_incy_2026-10-15",
   "t": "INCY",
-  "company": "",
+  "company": "Incyte Corp",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Povorcitinib",
@@ -4550,7 +4557,7 @@ export default [
  {
   "id": "readout_jspr_2026-10-15",
   "t": "JSPR",
-  "company": "",
+  "company": "Jasper Therapeutics, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Briquilimab",
@@ -4571,7 +4578,7 @@ export default [
  {
   "id": "readout_mrk_2026-10-15",
   "t": "MRK",
-  "company": "",
+  "company": "Merck & Co., Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Pembrolizumab",
@@ -4592,10 +4599,10 @@ export default [
  {
   "id": "readout_ogn_2026-10-15",
   "t": "OGN",
-  "company": "",
+  "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -4613,7 +4620,7 @@ export default [
  {
   "id": "readout_pfe_2026-10-15",
   "t": "PFE",
-  "company": "",
+  "company": "Roivant/Priovant",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Palbociclib",
@@ -4634,7 +4641,7 @@ export default [
  {
   "id": "readout_rcus_2026-10-15",
   "t": "RCUS",
-  "company": "",
+  "company": "Arcus Biosciences, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Zimberelimab",
@@ -4673,7 +4680,7 @@ export default [
  {
   "id": "readout_rytm_2026-10-15",
   "t": "RYTM",
-  "company": "",
+  "company": "Rhythm Pharmaceuticals, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Setmelanotide",
@@ -4694,7 +4701,7 @@ export default [
  {
   "id": "readout_sldb_2026-10-15",
   "t": "SLDB",
-  "company": "",
+  "company": "Solid Biosciences Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "SGT-003",
@@ -4715,7 +4722,7 @@ export default [
  {
   "id": "readout_sny_2026-10-15",
   "t": "SNY",
-  "company": "",
+  "company": "Sanofi",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Venglustat",
@@ -4736,7 +4743,7 @@ export default [
  {
   "id": "readout_srpt_2026-10-15",
   "t": "SRPT",
-  "company": "",
+  "company": "Sarepta Therapeutics, Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Eteplirsen",
@@ -4757,7 +4764,7 @@ export default [
  {
   "id": "readout_vtrs_2026-10-15",
   "t": "VTRS",
-  "company": "",
+  "company": "Viatris Inc.",
   "d": "2026-10-15",
   "dp": "month",
   "name": "Cenerimod",
@@ -4798,7 +4805,7 @@ export default [
  {
   "id": "pdufa_vtrs_2026-10-17",
   "t": "VTRS",
-  "company": "Viatris Inc",
+  "company": "Viatris Inc.",
   "d": "2026-10-17",
   "dp": "day",
   "name": "MR-141 (phentolamine ophthalmic solution 0.75%)",
@@ -5326,7 +5333,7 @@ export default [
  {
   "id": "pdufa_cytk_2026-11-14",
   "t": "CYTK",
-  "company": "CYTOKINETICS INC",
+  "company": "Cytokinetics Inc",
   "d": "2026-11-14",
   "dp": "day",
   "name": "Aficamten - (MAPLE-HCM)",
@@ -5407,7 +5414,7 @@ export default [
  {
   "id": "readout_apge_2026-11-15",
   "t": "APGE",
-  "company": "",
+  "company": "Apogee Therapeutics, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "APG777",
@@ -5428,7 +5435,7 @@ export default [
  {
   "id": "readout_atos_2026-11-15",
   "t": "ATOS",
-  "company": "",
+  "company": "Atossa Therapeutics, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Z-Endoxifen",
@@ -5449,7 +5456,7 @@ export default [
  {
   "id": "readout_bysi_2026-11-15",
   "t": "BYSI",
-  "company": "",
+  "company": "BeyondSpring Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Plinabulin",
@@ -5471,7 +5478,7 @@ export default [
  {
   "id": "readout_cgem_2026-11-15",
   "t": "CGEM",
-  "company": "",
+  "company": "Cullinan Therapeutics, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "CLN-081",
@@ -5492,7 +5499,7 @@ export default [
  {
   "id": "readout_crdf_2026-11-15",
   "t": "CRDF",
-  "company": "",
+  "company": "Cardiff Oncology, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Onvansertib",
@@ -5513,7 +5520,7 @@ export default [
  {
   "id": "readout_eltx_2026-11-15",
   "t": "ELTX",
-  "company": "",
+  "company": "Elicio Therapeutics, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "ELI-002 7P",
@@ -5534,7 +5541,7 @@ export default [
  {
   "id": "readout_eras_2026-11-15",
   "t": "ERAS",
-  "company": "",
+  "company": "Erasca, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Naporafenib",
@@ -5555,7 +5562,7 @@ export default [
  {
   "id": "readout_gild_2026-11-15",
   "t": "GILD",
-  "company": "",
+  "company": "Gilead Sciences, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Sacituzumab Govitecan",
@@ -5576,7 +5583,7 @@ export default [
  {
   "id": "readout_imux_2026-11-15",
   "t": "IMUX",
-  "company": "",
+  "company": "Immunic, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "IMU-838 tablets",
@@ -5597,7 +5604,7 @@ export default [
  {
   "id": "readout_iova_2026-11-15",
   "t": "IOVA",
-  "company": "",
+  "company": "Iovance Biotherapeutics, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Lifileucel plus Pembrolizumab",
@@ -5639,7 +5646,7 @@ export default [
  {
   "id": "readout_onc_2026-11-15",
   "t": "ONC",
-  "company": "",
+  "company": "BeOne Medicines Ltd.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "BGB-11417",
@@ -5660,7 +5667,7 @@ export default [
  {
   "id": "readout_phar_2026-11-15",
   "t": "PHAR",
-  "company": "",
+  "company": "Pharming Group N.V.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Leniolisib",
@@ -5681,7 +5688,7 @@ export default [
  {
   "id": "readout_sny_2026-11-15",
   "t": "SNY",
-  "company": "",
+  "company": "Sanofi",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Rilzabrutinib",
@@ -5702,7 +5709,7 @@ export default [
  {
   "id": "readout_tlx_2026-11-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2026-11-15",
   "dp": "month",
   "name": "177Lu-TLX591",
@@ -5723,7 +5730,7 @@ export default [
  {
   "id": "readout_vir_2026-11-15",
   "t": "VIR",
-  "company": "",
+  "company": "Vir Biotechnology, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Bulevirtide",
@@ -5744,7 +5751,7 @@ export default [
  {
   "id": "readout_vxrt_2026-11-15",
   "t": "VXRT",
-  "company": "",
+  "company": "Vaxart, Inc.",
   "d": "2026-11-15",
   "dp": "month",
   "name": "VXA-COV2-3.3",
@@ -5765,7 +5772,7 @@ export default [
  {
   "id": "readout_zura_2026-11-15",
   "t": "ZURA",
-  "company": "",
+  "company": "Zura Bio Ltd",
   "d": "2026-11-15",
   "dp": "month",
   "name": "Tibulizumab",
@@ -5911,7 +5918,7 @@ export default [
  {
   "id": "pdufa_bbio_2026-11-27",
   "t": "BBIO",
-  "company": "BridgeBio Pharma",
+  "company": "BridgeBio Pharma, Inc.",
   "d": "2026-11-27",
   "dp": "day",
   "name": "BBP-418 (ribitol) - (FORTIFY)",
@@ -5941,7 +5948,7 @@ export default [
  {
   "id": "pdufa_nuvl_2026-11-27",
   "t": "NUVL",
-  "company": "Nuvalent",
+  "company": "Nuvalent Inc.",
   "d": "2026-11-27",
   "dp": "day",
   "name": "Neladalkib (NVL-655) - (ALKOVE-1)",
@@ -6044,7 +6051,7 @@ export default [
  {
   "id": "pdufa_regn_2026-11-30",
   "t": "REGN",
-  "company": "Regeneron",
+  "company": "Regeneron Pharmaceuticals Inc.",
   "d": "2026-11-30",
   "dp": "day",
   "name": "Cemdisiran + pozelimab (C5 combo) - (NIMBLE)",
@@ -6074,7 +6081,7 @@ export default [
  {
   "id": "pdufa_rhhby_2026-11-30",
   "t": "RHHBY",
-  "company": "Roche/Genentech",
+  "company": "Roche Holding AG",
   "d": "2026-11-30",
   "dp": "day",
   "name": "Giredestrant (lidERA)",
@@ -6307,7 +6314,7 @@ export default [
  {
   "id": "readout_actu_2026-12-15",
   "t": "ACTU",
-  "company": "",
+  "company": "Actuate Therapeutics, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Losartan",
@@ -6328,7 +6335,7 @@ export default [
  {
   "id": "readout_adct_2026-12-15",
   "t": "ADCT",
-  "company": "",
+  "company": "ADC Therapeutics SA",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Loncastuximab Tesirine",
@@ -6349,7 +6356,7 @@ export default [
  {
   "id": "readout_agen_2026-12-15",
   "t": "AGEN",
-  "company": "",
+  "company": "Agenus Inc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Balstilimab",
@@ -6370,7 +6377,7 @@ export default [
  {
   "id": "readout_apge_2026-12-15",
   "t": "APGE",
-  "company": "",
+  "company": "Apogee Therapeutics, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "APG777",
@@ -6391,7 +6398,7 @@ export default [
  {
   "id": "readout_arvn_2026-12-15",
   "t": "ARVN",
-  "company": "",
+  "company": "Arvinas, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "ARV-471",
@@ -6412,7 +6419,7 @@ export default [
  {
   "id": "readout_avir_2026-12-15",
   "t": "AVIR",
-  "company": "",
+  "company": "Atea Pharmaceuticals, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Bemnifosbuvir-Ruzasvir",
@@ -6433,7 +6440,7 @@ export default [
  {
   "id": "readout_bcda_2026-12-15",
   "t": "BCDA",
-  "company": "",
+  "company": "BioCardia, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Autologous cell therapy",
@@ -6454,7 +6461,7 @@ export default [
  {
   "id": "readout_beam_2026-12-15",
   "t": "BEAM",
-  "company": "",
+  "company": "Beam Therapeutics Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "BEAM-302",
@@ -6475,7 +6482,7 @@ export default [
  {
   "id": "readout_biib_2026-12-15",
   "t": "BIIB",
-  "company": "",
+  "company": "Biogen Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Felzartamab",
@@ -6496,7 +6503,7 @@ export default [
  {
   "id": "readout_bmy_2026-12-15",
   "t": "BMY",
-  "company": "",
+  "company": "Bristol-Myers Squibb Company",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Nivolumab",
@@ -6538,7 +6545,7 @@ export default [
  {
   "id": "readout_cort_2026-12-15",
   "t": "CORT",
-  "company": "",
+  "company": "Corcept Therapeutics Inc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Relacorilant",
@@ -6559,7 +6566,7 @@ export default [
  {
   "id": "readout_crdf_2026-12-15",
   "t": "CRDF",
-  "company": "",
+  "company": "Cardiff Oncology, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Onvansertib",
@@ -6580,7 +6587,7 @@ export default [
  {
   "id": "readout_exel_2026-12-15",
   "t": "EXEL",
-  "company": "",
+  "company": "Exelixis",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Cabozantinib",
@@ -6601,7 +6608,7 @@ export default [
  {
   "id": "readout_goss_2026-12-15",
   "t": "GOSS",
-  "company": "",
+  "company": "Gossamer Bio, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Seralutinib",
@@ -6622,7 +6629,7 @@ export default [
  {
   "id": "readout_ino_2026-12-15",
   "t": "INO",
-  "company": "",
+  "company": "Inovio Pharmaceuticals",
   "d": "2026-12-15",
   "dp": "month",
   "name": "VGX-3100",
@@ -6643,7 +6650,7 @@ export default [
  {
   "id": "readout_insm_2026-12-15",
   "t": "INSM",
-  "company": "",
+  "company": "INSMED Inc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Treprostinil Palmitil Inhalation Powder",
@@ -6664,7 +6671,7 @@ export default [
  {
   "id": "readout_ions_2026-12-15",
   "t": "IONS",
-  "company": "",
+  "company": "Ionis Pharmaceuticals Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Donidalorsen",
@@ -6685,7 +6692,7 @@ export default [
  {
   "id": "readout_ixhl_2026-12-15",
   "t": "IXHL",
-  "company": "",
+  "company": "Incannex Healthcare Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "IHL-42X Low Dose",
@@ -6706,7 +6713,7 @@ export default [
  {
   "id": "readout_jazz_2026-12-15",
   "t": "JAZZ",
-  "company": "",
+  "company": "Jazz Pharmaceuticals plc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "CPX-351",
@@ -6727,7 +6734,7 @@ export default [
  {
   "id": "readout_kpti_2026-12-15",
   "t": "KPTI",
-  "company": "",
+  "company": "Karyopharm Therapeutics Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Selinexor",
@@ -6748,7 +6755,7 @@ export default [
  {
   "id": "readout_lxeo_2026-12-15",
   "t": "LXEO",
-  "company": "",
+  "company": "Lexeo Therapeutics, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "LX1001",
@@ -6769,7 +6776,7 @@ export default [
  {
   "id": "readout_mane_2026-12-15",
   "t": "MANE",
-  "company": "",
+  "company": "Veradermics, Inc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "VDPHL01",
@@ -6790,7 +6797,7 @@ export default [
  {
   "id": "readout_mdgl_2026-12-15",
   "t": "MDGL",
-  "company": "",
+  "company": "Madrigal Pharmaceuticals, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Resmetirom",
@@ -6811,7 +6818,7 @@ export default [
  {
   "id": "readout_mnov_2026-12-15",
   "t": "MNOV",
-  "company": "",
+  "company": "Medicinova Inc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "MN-166",
@@ -6832,7 +6839,7 @@ export default [
  {
   "id": "readout_mrk_2026-12-15",
   "t": "MRK",
-  "company": "",
+  "company": "Merck & Co., Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Pembrolizumab",
@@ -6853,7 +6860,7 @@ export default [
  {
   "id": "readout_nvo_2026-12-15",
   "t": "NVO",
-  "company": "",
+  "company": "Novo Nordisk A/S",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Semaglutide",
@@ -6874,7 +6881,7 @@ export default [
  {
   "id": "readout_onc_2026-12-15",
   "t": "ONC",
-  "company": "",
+  "company": "BeOne Medicines Ltd.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Zanubrutinib",
@@ -6895,7 +6902,7 @@ export default [
  {
   "id": "readout_pbyi_2026-12-15",
   "t": "PBYI",
-  "company": "",
+  "company": "Puma Biotechnology, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "neratinib",
@@ -6916,7 +6923,7 @@ export default [
  {
   "id": "readout_pfe_2026-12-15",
   "t": "PFE",
-  "company": "",
+  "company": "Roivant/Priovant",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Elranatamab",
@@ -6937,7 +6944,7 @@ export default [
  {
   "id": "readout_phat_2026-12-15",
   "t": "PHAT",
-  "company": "",
+  "company": "Phathom Pharmaceuticals, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Vonoprazan",
@@ -6958,7 +6965,7 @@ export default [
  {
   "id": "readout_rnac_2026-12-15",
   "t": "RNAC",
-  "company": "",
+  "company": "Cartesian Therapeutics, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Decartes-08",
@@ -6979,7 +6986,7 @@ export default [
  {
   "id": "readout_smmt_2026-12-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -7000,7 +7007,7 @@ export default [
  {
   "id": "readout_sny_2026-12-15",
   "t": "SNY",
-  "company": "",
+  "company": "Sanofi",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Rilzabrutinib",
@@ -7021,7 +7028,7 @@ export default [
  {
   "id": "readout_supn_2026-12-15",
   "t": "SUPN",
-  "company": "",
+  "company": "Supernus Pharmaceuticals, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "BIS-001",
@@ -7042,7 +7049,7 @@ export default [
  {
   "id": "readout_traw_2026-12-15",
   "t": "TRAW",
-  "company": "",
+  "company": "Traws Pharma, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "rigosertib",
@@ -7063,7 +7070,7 @@ export default [
  {
   "id": "readout_vir_2026-12-15",
   "t": "VIR",
-  "company": "",
+  "company": "Vir Biotechnology, Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "Tobevibart",
@@ -7084,7 +7091,7 @@ export default [
  {
   "id": "readout_vnda_2026-12-15",
   "t": "VNDA",
-  "company": "",
+  "company": "Vanda Pharmaceuticals Inc.",
   "d": "2026-12-15",
   "dp": "month",
   "name": "VQW-765",
@@ -7105,7 +7112,7 @@ export default [
  {
   "id": "readout_xncr_2026-12-15",
   "t": "XNCR",
-  "company": "",
+  "company": "Xencor Inc",
   "d": "2026-12-15",
   "dp": "month",
   "name": "XMAB20717",
@@ -7126,7 +7133,7 @@ export default [
  {
   "id": "readout_cort_2026-09-15",
   "t": "CORT",
-  "company": "",
+  "company": "Corcept Therapeutics Inc",
   "d": "2026-12-17",
   "dp": "day",
   "name": "Relacorilant - (GRACE resubmission)",
@@ -7148,7 +7155,7 @@ export default [
  {
   "id": "pdufa_rhhby_2026-12-18",
   "t": "RHHBY",
-  "company": "Roche/Genentech",
+  "company": "Roche Holding AG",
   "d": "2026-12-18",
   "dp": "day",
   "name": "Giredestrant (+ everolimus)",
@@ -7350,7 +7357,7 @@ export default [
  {
   "id": "readout_alny_2026-12-31",
   "t": "ALNY",
-  "company": "ALNYLAM PHARMACEUTICALS, INC.",
+  "company": "Alnylam Pharmaceuticals, Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
   "name": "elebsiran readout",
@@ -7550,7 +7557,7 @@ export default [
  {
   "id": "readout_cris_2026-12-31",
   "t": "CRIS",
-  "company": "CURIS INC",
+  "company": "Curis Inc",
   "d": "2026-12-31",
   "dp": "month",
   "name": "NCT07271667 readout",
@@ -7577,7 +7584,7 @@ export default [
  {
   "id": "readout_enta_2026-12-31",
   "t": "ENTA",
-  "company": "ENANTA PHARMACEUTICALS INC",
+  "company": "Enanta Pharmaceuticals Inc",
   "d": "2026-12-31",
   "dp": "quarter",
   "name": "EDP-978 readout",
@@ -7628,7 +7635,7 @@ export default [
  {
   "id": "readout_guts_2026-12-31",
   "t": "GUTS",
-  "company": "FRACTYL HEALTH, INC.",
+  "company": "Fractyl Health, Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
   "name": "Clinical readout",
@@ -7652,7 +7659,7 @@ export default [
  {
   "id": "readout_help_2026-12-31",
   "t": "HELP",
-  "company": "CYBIN INC.",
+  "company": "Cybin Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
   "name": "HLP003 readout",
@@ -7706,7 +7713,7 @@ export default [
  {
   "id": "readout_kynb_2026-12-31",
   "t": "KYNB",
-  "company": "KYNTRA BIO, INC.",
+  "company": "Kyntra Bio, Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
   "name": "FG-3246 readout",
@@ -7814,7 +7821,7 @@ export default [
  {
   "id": "pdufa_nvo_2026-12-31",
   "t": "NVO",
-  "company": "Novo Nordisk",
+  "company": "Novo Nordisk A/S",
   "d": "2026-12-31",
   "dp": "day",
   "name": "CagriSema (AM833)",
@@ -8203,7 +8210,7 @@ export default [
  {
   "id": "readout_aplm_2027-01-15",
   "t": "APLM",
-  "company": "",
+  "company": "Apollomics Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Uproleselan",
@@ -8224,7 +8231,7 @@ export default [
  {
   "id": "readout_bmy_2027-01-15",
   "t": "BMY",
-  "company": "",
+  "company": "Bristol-Myers Squibb Company",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Nivolumab",
@@ -8245,7 +8252,7 @@ export default [
  {
   "id": "readout_cadl_2027-01-15",
   "t": "CADL",
-  "company": "",
+  "company": "Candel Therapeutics, Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Aglatimagene Besadenovec",
@@ -8266,7 +8273,7 @@ export default [
  {
   "id": "readout_elvn_2027-01-15",
   "t": "ELVN",
-  "company": "",
+  "company": "Enliven Therapeutics, Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "ELVN-002",
@@ -8287,7 +8294,7 @@ export default [
  {
   "id": "readout_exel_2027-01-15",
   "t": "EXEL",
-  "company": "",
+  "company": "Exelixis",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Cabozantinib",
@@ -8308,7 +8315,7 @@ export default [
  {
   "id": "readout_gild_2027-01-15",
   "t": "GILD",
-  "company": "",
+  "company": "Gilead Sciences, Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "MK-3475",
@@ -8329,7 +8336,7 @@ export default [
  {
   "id": "readout_idya_2027-01-15",
   "t": "IDYA",
-  "company": "",
+  "company": "IDEAYA Biosciences, Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Darovasertib",
@@ -8350,7 +8357,7 @@ export default [
  {
   "id": "readout_nuvl_2027-01-15",
   "t": "NUVL",
-  "company": "",
+  "company": "Nuvalent Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Neladalkib",
@@ -8371,7 +8378,7 @@ export default [
  {
   "id": "readout_rare_2027-01-15",
   "t": "RARE",
-  "company": "",
+  "company": "Ultragenyx Pharmaceutical Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Setrusumab",
@@ -8392,7 +8399,7 @@ export default [
  {
   "id": "readout_regn_2027-01-15",
   "t": "REGN",
-  "company": "",
+  "company": "Regeneron Pharmaceuticals Inc.",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Odronextamab",
@@ -8413,7 +8420,7 @@ export default [
  {
   "id": "readout_siga_2027-01-15",
   "t": "SIGA",
-  "company": "",
+  "company": "Siga Technologies Inc",
   "d": "2027-01-15",
   "dp": "month",
   "name": "Tecovirimat Oral Capsule",
@@ -8455,7 +8462,7 @@ export default [
  {
   "id": "pdufa_prax_2027-01-29",
   "t": "PRAX",
-  "company": "Praxis Precision Medicines",
+  "company": "Praxis Precision Medicines Inc.",
   "d": "2027-01-29",
   "dp": "day",
   "name": "ulixacaltamide",
@@ -8519,7 +8526,7 @@ export default [
  {
   "id": "pdufa_gild_2027-02-02",
   "t": "GILD",
-  "company": "Gilead Sciences",
+  "company": "Gilead Sciences, Inc.",
   "d": "2027-02-02",
   "dp": "day",
   "name": "Yeztugo (lenacapavir) once-weekly oral",
@@ -8583,7 +8590,7 @@ export default [
  {
   "id": "readout_azn_2027-02-15",
   "t": "AZN",
-  "company": "",
+  "company": "AstraZeneca/Alexion",
   "d": "2027-02-15",
   "dp": "month",
   "name": "R-Chop",
@@ -8604,7 +8611,7 @@ export default [
  {
   "id": "readout_kytx_2027-02-15",
   "t": "KYTX",
-  "company": "",
+  "company": "Kyverna Therapeutics, Inc.",
   "d": "2027-02-15",
   "dp": "month",
   "name": "KYV-101",
@@ -8626,7 +8633,7 @@ export default [
  {
   "id": "readout_mltx_2027-02-15",
   "t": "MLTX",
-  "company": "",
+  "company": "MoonLake Immunotherapeutics",
   "d": "2027-02-15",
   "dp": "month",
   "name": "Sonelokimab",
@@ -8647,7 +8654,7 @@ export default [
  {
   "id": "readout_mrk_2027-02-15",
   "t": "MRK",
-  "company": "",
+  "company": "Merck & Co., Inc.",
   "d": "2027-02-15",
   "dp": "month",
   "name": "Pembrolizumab",
@@ -8668,7 +8675,7 @@ export default [
  {
   "id": "pdufa_arqt_2027-02-23",
   "t": "ARQT",
-  "company": "Arcutis",
+  "company": "Arcutis Biotherapeutics Inc.",
   "d": "2027-02-23",
   "dp": "day",
   "name": "ZORYVE (roflumilast) cream 0.05%",
@@ -8736,7 +8743,7 @@ export default [
  {
   "id": "readout_agio_2027-03-15",
   "t": "AGIO",
-  "company": "",
+  "company": "Agios Pharmaceuticals",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Mitapivat",
@@ -8757,7 +8764,7 @@ export default [
  {
   "id": "readout_cldx_2027-03-15",
   "t": "CLDX",
-  "company": "",
+  "company": "Celldex Therapeutics, Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Barzolvolimab",
@@ -8778,7 +8785,7 @@ export default [
  {
   "id": "readout_cogt_2027-03-15",
   "t": "COGT",
-  "company": "",
+  "company": "Cogent Biosciences",
   "d": "2027-03-15",
   "dp": "month",
   "name": "CGT9486",
@@ -8799,7 +8806,7 @@ export default [
  {
   "id": "readout_dnli_2027-03-15",
   "t": "DNLI",
-  "company": "",
+  "company": "Denali Therapeutics Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "BIIB122",
@@ -8820,7 +8827,7 @@ export default [
  {
   "id": "readout_gild_2027-03-15",
   "t": "GILD",
-  "company": "",
+  "company": "Gilead Sciences, Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Sacituzumab Govitecan",
@@ -8841,7 +8848,7 @@ export default [
  {
   "id": "readout_ions_2027-03-15",
   "t": "IONS",
-  "company": "",
+  "company": "Ionis Pharmaceuticals Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Olezarsen",
@@ -8862,7 +8869,7 @@ export default [
  {
   "id": "readout_ipha_2027-03-15",
   "t": "IPHA",
-  "company": "",
+  "company": "Innate Pharma SA",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Monalizumab",
@@ -8883,7 +8890,7 @@ export default [
  {
   "id": "readout_mdgl_2027-03-15",
   "t": "MDGL",
-  "company": "",
+  "company": "Madrigal Pharmaceuticals, Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Resmetirom",
@@ -8904,7 +8911,7 @@ export default [
  {
   "id": "readout_nuvb_2027-03-15",
   "t": "NUVB",
-  "company": "",
+  "company": "Nuvation Bio Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "safusidenib",
@@ -8925,7 +8932,7 @@ export default [
  {
   "id": "readout_onc_2027-03-15",
   "t": "ONC",
-  "company": "",
+  "company": "BeOne Medicines Ltd.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "Zanubrutinib",
@@ -8946,7 +8953,7 @@ export default [
  {
   "id": "readout_tsha_2027-03-15",
   "t": "TSHA",
-  "company": "",
+  "company": "Taysha Gene Therapies, Inc.",
   "d": "2027-03-15",
   "dp": "month",
   "name": "TSHA-101",
@@ -9069,7 +9076,7 @@ export default [
  {
   "id": "readout_ocul_2027-03-31",
   "t": "OCUL",
-  "company": "OCULAR THERAPEUTIX, INC",
+  "company": "Ocular Therapeutix, Inc",
   "d": "2027-03-31",
   "dp": "quarter",
   "name": "HELIOS-3 readout",
@@ -9195,7 +9202,7 @@ export default [
  {
   "id": "readout_aim_2027-04-15",
   "t": "AIM",
-  "company": "",
+  "company": "AIM ImmunoTech Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Ampligen",
@@ -9216,7 +9223,7 @@ export default [
  {
   "id": "readout_cgtx_2027-04-15",
   "t": "CGTX",
-  "company": "",
+  "company": "Cognition Therapeutics Inc",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Dextromethorphan-Bupropion",
@@ -9237,7 +9244,7 @@ export default [
  {
   "id": "readout_cldx_2027-04-15",
   "t": "CLDX",
-  "company": "",
+  "company": "Celldex Therapeutics, Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Barzolvolimab",
@@ -9258,7 +9265,7 @@ export default [
  {
   "id": "readout_idya_2027-04-15",
   "t": "IDYA",
-  "company": "",
+  "company": "IDEAYA Biosciences, Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Darovasertib",
@@ -9279,7 +9286,7 @@ export default [
  {
   "id": "readout_iova_2027-04-15",
   "t": "IOVA",
-  "company": "",
+  "company": "Iovance Biotherapeutics, Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Lifileucel plus Pembrolizumab",
@@ -9300,7 +9307,7 @@ export default [
  {
   "id": "readout_kpti_2027-04-15",
   "t": "KPTI",
-  "company": "",
+  "company": "Karyopharm Therapeutics Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Selinexor",
@@ -9321,7 +9328,7 @@ export default [
  {
   "id": "readout_kytx_2027-04-15",
   "t": "KYTX",
-  "company": "",
+  "company": "Kyverna Therapeutics, Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "KYV-101",
@@ -9342,7 +9349,7 @@ export default [
  {
   "id": "readout_mnov_2027-04-15",
   "t": "MNOV",
-  "company": "",
+  "company": "Medicinova Inc",
   "d": "2027-04-15",
   "dp": "month",
   "name": "MN-166",
@@ -9363,7 +9370,7 @@ export default [
  {
   "id": "readout_nbtx_2027-04-15",
   "t": "NBTX",
-  "company": "",
+  "company": "Nanobiotix S.A.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "NBTXR3",
@@ -9384,7 +9391,7 @@ export default [
  {
   "id": "readout_nvs_2027-04-15",
   "t": "NVS",
-  "company": "",
+  "company": "Novartis Ag",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Iptacopan",
@@ -9405,7 +9412,7 @@ export default [
  {
   "id": "readout_regn_2027-04-15",
   "t": "REGN",
-  "company": "",
+  "company": "Regeneron Pharmaceuticals Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Cemiplimab",
@@ -9426,7 +9433,7 @@ export default [
  {
   "id": "readout_smmt_2027-04-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2027-04-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -9447,7 +9454,7 @@ export default [
  {
   "id": "readout_tlx_2027-04-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2027-04-15",
   "dp": "month",
   "name": "177Lu-TLX591",
@@ -9599,7 +9606,7 @@ export default [
  {
   "id": "readout_biib_2027-05-15",
   "t": "BIIB",
-  "company": "",
+  "company": "Biogen Inc.",
   "d": "2027-05-15",
   "dp": "month",
   "name": "Felzartamab",
@@ -9620,7 +9627,7 @@ export default [
  {
   "id": "readout_fdmt_2027-05-15",
   "t": "FDMT",
-  "company": "",
+  "company": "4D Molecular Therapeutics, Inc.",
   "d": "2027-05-15",
   "dp": "month",
   "name": "4D-150 IVT",
@@ -9641,7 +9648,7 @@ export default [
  {
   "id": "readout_mbx_2027-05-15",
   "t": "MBX",
-  "company": "",
+  "company": "MBX Biosciences, Inc.",
   "d": "2027-05-15",
   "dp": "month",
   "name": "MBX 2109",
@@ -9662,7 +9669,7 @@ export default [
  {
   "id": "readout_regn_2027-05-15",
   "t": "REGN",
-  "company": "",
+  "company": "Regeneron Pharmaceuticals Inc.",
   "d": "2027-05-15",
   "dp": "month",
   "name": "Cemiplimab",
@@ -9683,7 +9690,7 @@ export default [
  {
   "id": "readout_tngx_2027-05-15",
   "t": "TNGX",
-  "company": "",
+  "company": "Tango Therapeutics, Inc.",
   "d": "2027-05-15",
   "dp": "month",
   "name": "S095035",
@@ -9704,7 +9711,7 @@ export default [
  {
   "id": "readout_vygr_2027-05-15",
   "t": "VYGR",
-  "company": "",
+  "company": "Voyager Therapeutics, Inc.",
   "d": "2027-05-15",
   "dp": "month",
   "name": "VY7523",
@@ -9788,7 +9795,7 @@ export default [
  {
   "id": "readout_avln_2027-06-15",
   "t": "AVLN",
-  "company": "",
+  "company": "Avalyn Pharma Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "AP01",
@@ -9809,7 +9816,7 @@ export default [
  {
   "id": "readout_blte_2027-06-15",
   "t": "BLTE",
-  "company": "",
+  "company": "Belite Bio, Inc",
   "d": "2027-06-15",
   "dp": "month",
   "name": "Tinlarebant",
@@ -9830,7 +9837,7 @@ export default [
  {
   "id": "readout_fdmt_2027-06-15",
   "t": "FDMT",
-  "company": "",
+  "company": "4D Molecular Therapeutics, Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "4D-150 IVT",
@@ -9851,7 +9858,7 @@ export default [
  {
   "id": "readout_fth_2027-06-15",
   "t": "FTH",
-  "company": "",
+  "company": "Faeth Therapeutics, Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "SNS-101",
@@ -9872,7 +9879,7 @@ export default [
  {
   "id": "readout_immp_2027-06-15",
   "t": "IMMP",
-  "company": "",
+  "company": "IMMUTEP Ltd",
   "d": "2027-06-15",
   "dp": "month",
   "name": "eftilagimod alfa",
@@ -9893,7 +9900,7 @@ export default [
  {
   "id": "readout_indp_2027-06-15",
   "t": "INDP",
-  "company": "",
+  "company": "Indaptus Therapeutics, Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "Decoy20",
@@ -9914,7 +9921,7 @@ export default [
  {
   "id": "readout_ions_2027-06-15",
   "t": "IONS",
-  "company": "",
+  "company": "Ionis Pharmaceuticals Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "Olezarsen",
@@ -9935,7 +9942,7 @@ export default [
  {
   "id": "readout_jazz_2027-06-15",
   "t": "JAZZ",
-  "company": "",
+  "company": "Jazz Pharmaceuticals plc",
   "d": "2027-06-15",
   "dp": "month",
   "name": "CPX-351",
@@ -9956,7 +9963,7 @@ export default [
  {
   "id": "readout_kymr_2027-06-15",
   "t": "KYMR",
-  "company": "",
+  "company": "Kymera Therapeutics, Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "KT-621",
@@ -9977,7 +9984,7 @@ export default [
  {
   "id": "readout_kytx_2027-06-15",
   "t": "KYTX",
-  "company": "",
+  "company": "Kyverna Therapeutics, Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "KYV101",
@@ -9999,7 +10006,7 @@ export default [
  {
   "id": "readout_lnth_2027-06-15",
   "t": "LNTH",
-  "company": "",
+  "company": "Lantheus Holdings Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "PI-2620",
@@ -10020,7 +10027,7 @@ export default [
  {
   "id": "readout_nvs_2027-06-15",
   "t": "NVS",
-  "company": "",
+  "company": "Novartis Ag",
   "d": "2027-06-15",
   "dp": "month",
   "name": "Remibrutinib",
@@ -10041,7 +10048,7 @@ export default [
  {
   "id": "readout_smmt_2027-06-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2027-06-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -10062,7 +10069,7 @@ export default [
  {
   "id": "readout_svra_2027-06-15",
   "t": "SVRA",
-  "company": "",
+  "company": "Savara",
   "d": "2027-06-15",
   "dp": "month",
   "name": "Molgramostim",
@@ -10125,7 +10132,7 @@ export default [
  {
   "id": "readout_prok_2027-06-30",
   "t": "PROK",
-  "company": "PROKIDNEY CORP.",
+  "company": "Prokidney Corp.",
   "d": "2027-06-30",
   "dp": "quarter",
   "name": "REGEN-006 readout",
@@ -10152,7 +10159,7 @@ export default [
  {
   "id": "readout_amgn_2027-07-15",
   "t": "AMGN",
-  "company": "",
+  "company": "Amgen Inc",
   "d": "2027-07-15",
   "dp": "month",
   "name": "ABP 938",
@@ -10173,7 +10180,7 @@ export default [
  {
   "id": "readout_btai_2027-07-15",
   "t": "BTAI",
-  "company": "",
+  "company": "BioXcel Therapeutics",
   "d": "2027-07-15",
   "dp": "month",
   "name": "Sublingual film containing dexmedetomidine",
@@ -10194,7 +10201,7 @@ export default [
  {
   "id": "readout_meso_2027-07-15",
   "t": "MESO",
-  "company": "",
+  "company": "Mesoblast Ltd",
   "d": "2027-07-15",
   "dp": "month",
   "name": "Rexlemestrocel-L",
@@ -10215,7 +10222,7 @@ export default [
  {
   "id": "readout_oncy_2027-07-15",
   "t": "ONCY",
-  "company": "",
+  "company": "Oncolytics Biotech Inc",
   "d": "2027-07-15",
   "dp": "month",
   "name": "REOLYSIN",
@@ -10236,7 +10243,7 @@ export default [
  {
   "id": "readout_tlx_2027-07-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2027-07-15",
   "dp": "month",
   "name": "177Lu-TLX591",
@@ -10257,7 +10264,7 @@ export default [
  {
   "id": "readout_vktx_2027-07-15",
   "t": "VKTX",
-  "company": "",
+  "company": "Viking Therapeutics, Inc.",
   "d": "2027-07-15",
   "dp": "month",
   "name": "VK2735",
@@ -10278,7 +10285,7 @@ export default [
  {
   "id": "readout_artv_2027-08-15",
   "t": "ARTV",
-  "company": "",
+  "company": "Artiva Biotherapeutics, Inc.",
   "d": "2027-08-15",
   "dp": "month",
   "name": "AB-101",
@@ -10299,7 +10306,7 @@ export default [
  {
   "id": "readout_asnd_2027-08-15",
   "t": "ASND",
-  "company": "",
+  "company": "Ascendis Pharma A/S",
   "d": "2027-08-15",
   "dp": "month",
   "name": "TransCon CNP",
@@ -10320,7 +10327,7 @@ export default [
  {
   "id": "readout_ions_2027-08-15",
   "t": "IONS",
-  "company": "",
+  "company": "Ionis Pharmaceuticals Inc.",
   "d": "2027-08-15",
   "dp": "month",
   "name": "ION582",
@@ -10341,7 +10348,7 @@ export default [
  {
   "id": "readout_nvcr_2027-08-15",
   "t": "NVCR",
-  "company": "",
+  "company": "NovoCure Limited",
   "d": "2027-08-15",
   "dp": "month",
   "name": "Temozolomide",
@@ -10362,7 +10369,7 @@ export default [
  {
   "id": "readout_rare_2027-08-15",
   "t": "RARE",
-  "company": "",
+  "company": "Ultragenyx Pharmaceutical Inc.",
   "d": "2027-08-15",
   "dp": "month",
   "name": "Triheptanoin",
@@ -10383,7 +10390,7 @@ export default [
  {
   "id": "readout_smmt_2027-08-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2027-08-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -10404,7 +10411,7 @@ export default [
  {
   "id": "readout_tlx_2027-08-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2027-08-15",
   "dp": "month",
   "name": "177Lu-TLX591",
@@ -10425,7 +10432,7 @@ export default [
  {
   "id": "readout_agen_2027-09-15",
   "t": "AGEN",
-  "company": "",
+  "company": "Agenus Inc",
   "d": "2027-09-15",
   "dp": "month",
   "name": "Botensilimab",
@@ -10446,7 +10453,7 @@ export default [
  {
   "id": "readout_bhvn_2027-09-15",
   "t": "BHVN",
-  "company": "",
+  "company": "Biohaven Ltd.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "BHV-1300",
@@ -10467,7 +10474,7 @@ export default [
  {
   "id": "readout_chrs_2027-09-15",
   "t": "CHRS",
-  "company": "",
+  "company": "Coherus Oncology, Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "CHS-1420",
@@ -10509,7 +10516,7 @@ export default [
  {
   "id": "readout_cstl_2027-09-15",
   "t": "CSTL",
-  "company": "",
+  "company": "Castle Biosciences Inc",
   "d": "2027-09-15",
   "dp": "month",
   "name": "FCX-007",
@@ -10530,7 +10537,7 @@ export default [
  {
   "id": "readout_huma_2027-09-15",
   "t": "HUMA",
-  "company": "",
+  "company": "Humacyte, Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "Human Acellular Vessel",
@@ -10551,7 +10558,7 @@ export default [
  {
   "id": "readout_imvt_2027-09-15",
   "t": "IMVT",
-  "company": "",
+  "company": "Immunovant, Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "IMVT-1402",
@@ -10572,7 +10579,7 @@ export default [
  {
   "id": "readout_incy_2027-09-15",
   "t": "INCY",
-  "company": "",
+  "company": "Incyte Corp",
   "d": "2027-09-15",
   "dp": "month",
   "name": "Corticosteroids",
@@ -10593,7 +10600,7 @@ export default [
  {
   "id": "readout_iva_2027-09-15",
   "t": "IVA",
-  "company": "",
+  "company": "Inventiva S.A.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "IVA337",
@@ -10614,7 +10621,7 @@ export default [
  {
   "id": "readout_maia_2027-09-15",
   "t": "MAIA",
-  "company": "",
+  "company": "MAIA Biotechnology, Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "6-Thio-2'-Deoxyguanosine",
@@ -10635,7 +10642,7 @@ export default [
  {
   "id": "readout_smmt_2027-09-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -10656,7 +10663,7 @@ export default [
  {
   "id": "readout_tlsi_2027-09-15",
   "t": "TLSI",
-  "company": "",
+  "company": "TriSalus Life Sciences, Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "SD-101",
@@ -10677,7 +10684,7 @@ export default [
  {
   "id": "readout_upb_2027-09-15",
   "t": "UPB",
-  "company": "",
+  "company": "Upstream Bio, Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "Verekitug",
@@ -10698,7 +10705,7 @@ export default [
  {
   "id": "readout_vnda_2027-09-15",
   "t": "VNDA",
-  "company": "",
+  "company": "Vanda Pharmaceuticals Inc.",
   "d": "2027-09-15",
   "dp": "month",
   "name": "Tradipitant",
@@ -10719,7 +10726,7 @@ export default [
  {
   "id": "readout_lly_2027-10-15",
   "t": "LLY",
-  "company": "",
+  "company": "ELI LILLY & Co",
   "d": "2027-10-15",
   "dp": "month",
   "name": "Tirzepatide",
@@ -10740,7 +10747,7 @@ export default [
  {
   "id": "readout_mrk_2027-10-15",
   "t": "MRK",
-  "company": "",
+  "company": "Merck & Co., Inc.",
   "d": "2027-10-15",
   "dp": "month",
   "name": "MK-8527",
@@ -10761,10 +10768,10 @@ export default [
  {
   "id": "readout_ogn_2027-10-15",
   "t": "OGN",
-  "company": "",
+  "company": "Organon & Co.",
   "d": "2027-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -10782,7 +10789,7 @@ export default [
  {
   "id": "readout_onc_2027-10-15",
   "t": "ONC",
-  "company": "",
+  "company": "BeOne Medicines Ltd.",
   "d": "2027-10-15",
   "dp": "month",
   "name": "Zanubrutinib",
@@ -10803,7 +10810,7 @@ export default [
  {
   "id": "readout_tars_2027-10-15",
   "t": "TARS",
-  "company": "",
+  "company": "Tarsus Pharmaceuticals, Inc.",
   "d": "2027-10-15",
   "dp": "month",
   "name": "TP-03",
@@ -10824,7 +10831,7 @@ export default [
  {
   "id": "readout_tlx_2027-10-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2027-10-15",
   "dp": "month",
   "name": "177Lu-TLX591",
@@ -10845,7 +10852,7 @@ export default [
  {
   "id": "readout_arvn_2027-11-15",
   "t": "ARVN",
-  "company": "",
+  "company": "Arvinas, Inc.",
   "d": "2027-11-15",
   "dp": "month",
   "name": "ARV-471",
@@ -10866,7 +10873,7 @@ export default [
  {
   "id": "readout_crnx_2027-11-15",
   "t": "CRNX",
-  "company": "",
+  "company": "Crinetics Pharmaceuticals, Inc.",
   "d": "2027-11-15",
   "dp": "month",
   "name": "Atumelnant",
@@ -10887,7 +10894,7 @@ export default [
  {
   "id": "readout_mygn_2027-11-15",
   "t": "MYGN",
-  "company": "",
+  "company": "Myriad Genetics Inc",
   "d": "2027-11-15",
   "dp": "month",
   "name": "Niraparib",
@@ -10908,7 +10915,7 @@ export default [
  {
   "id": "readout_onc_2027-11-15",
   "t": "ONC",
-  "company": "",
+  "company": "BeOne Medicines Ltd.",
   "d": "2027-11-15",
   "dp": "month",
   "name": "BGB-3111",
@@ -10929,7 +10936,7 @@ export default [
  {
   "id": "readout_regn_2027-11-15",
   "t": "REGN",
-  "company": "",
+  "company": "Regeneron Pharmaceuticals Inc.",
   "d": "2027-11-15",
   "dp": "month",
   "name": "Cemdisiran",
@@ -10950,7 +10957,7 @@ export default [
  {
   "id": "readout_vera_2027-11-15",
   "t": "VERA",
-  "company": "",
+  "company": "Vera Therapeutics Inc.",
   "d": "2027-11-15",
   "dp": "month",
   "name": "Atacicept",
@@ -10971,7 +10978,7 @@ export default [
  {
   "id": "readout_adag_2027-12-15",
   "t": "ADAG",
-  "company": "",
+  "company": "Adagene Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "ADG106",
@@ -10992,7 +10999,7 @@ export default [
  {
   "id": "readout_anvs_2027-12-15",
   "t": "ANVS",
-  "company": "",
+  "company": "Annovis Bio, Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "buntanetap/posiphen",
@@ -11013,7 +11020,7 @@ export default [
  {
   "id": "readout_goss_2027-12-15",
   "t": "GOSS",
-  "company": "",
+  "company": "Gossamer Bio, Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "Seralutinib",
@@ -11034,7 +11041,7 @@ export default [
  {
   "id": "readout_ints_2027-12-15",
   "t": "INTS",
-  "company": "",
+  "company": "Intensity Therapeutics, Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "INT230-6",
@@ -11055,7 +11062,7 @@ export default [
  {
   "id": "readout_legn_2027-12-15",
   "t": "LEGN",
-  "company": "",
+  "company": "Legend Biotech Corp",
   "d": "2027-12-15",
   "dp": "month",
   "name": "LCAR-B38M CAR-T Cell",
@@ -11076,7 +11083,7 @@ export default [
  {
   "id": "readout_lly_2027-12-15",
   "t": "LLY",
-  "company": "",
+  "company": "ELI LILLY & Co",
   "d": "2027-12-15",
   "dp": "month",
   "name": "Mirikizumab",
@@ -11097,7 +11104,7 @@ export default [
  {
   "id": "readout_nuvl_2027-12-15",
   "t": "NUVL",
-  "company": "",
+  "company": "Nuvalent Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "Neladalkib",
@@ -11118,7 +11125,7 @@ export default [
  {
   "id": "readout_otlk_2027-12-15",
   "t": "OTLK",
-  "company": "",
+  "company": "Outlook Therapeutics, Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "bevacizumab",
@@ -11139,7 +11146,7 @@ export default [
  {
   "id": "readout_rare_2027-12-15",
   "t": "RARE",
-  "company": "",
+  "company": "Ultragenyx Pharmaceutical Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "Triheptanoin",
@@ -11160,7 +11167,7 @@ export default [
  {
   "id": "readout_smmt_2027-12-15",
   "t": "SMMT",
-  "company": "",
+  "company": "Summit Therapeutics Inc.",
   "d": "2027-12-15",
   "dp": "month",
   "name": "Ivonescimab",
@@ -11181,7 +11188,7 @@ export default [
  {
   "id": "readout_tak_2027-12-15",
   "t": "TAK",
-  "company": "",
+  "company": "Takeda Pharmaceutical Co Ltd",
   "d": "2027-12-15",
   "dp": "month",
   "name": "Tislelizumab",
@@ -11202,7 +11209,7 @@ export default [
  {
   "id": "readout_tlx_2027-12-15",
   "t": "TLX",
-  "company": "",
+  "company": "Telix Pharmaceuticals Limited",
   "d": "2027-12-15",
   "dp": "month",
   "name": "177Lu-TLX591",

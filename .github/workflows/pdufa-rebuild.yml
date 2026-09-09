@@ -460,6 +460,14 @@ jobs:
       - name: /pdufa-date-changes
         run: python build_date_changes.py
 
+      # Audit 09-09b item 2: a PET imaging agent was described as a treatment two days before
+      # its decision. The story generator skips pages that already carry a block and the event
+      # builder never overwrites an existing page, so a generator-only fix would have corrected
+      # nothing that is already published. The dataset decides what is a diagnostic; this
+      # renders that decision onto the pages already out there. Idempotent.
+      - name: Diagnostics are never described as treatments
+        run: python fix_diagnostic_event_pages.py
+
       - name: "/pdufa/{TICKER}: live catalysts never resolve to decided events"
         run: python build_pdufa_ticker_index.py
 
