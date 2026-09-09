@@ -40,9 +40,10 @@ KNOWN_SECRETS = {"POLYGON_API_KEY", "FMP_API_KEY", "SEC_USER_AGENT",
                  # vendor comparison this run" rather than a broken build.
                  "BPC_API_KEY",
                  # Audit 09-08c item 3: CDN purge after deploy (Vercel CLI). The step warns and
-                 # skips when unset, so the build never depends on it. NOT YET CREATED as of
-                 # 2026-09-08: David creates the Vercel token and adds it under exactly this
-                 # name; until then the purge is a warning line in the run log.
+                 # skips when unset, so the build never depends on it. Created by David
+                 # 2026-09-08 evening. The org/project IDs the CLI needs alongside it are
+                 # literals in the step's env (auditor 09-08e: .gitignore hides .vercel from
+                 # the Actions checkout, and identifiers are not credentials).
                  "VERCEL_TOKEN"}
 
 

@@ -679,6 +679,14 @@ jobs:
         if: env.PUSHED == '1'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          # Auditor 09-08e: `.gitignore:51` is `.vercel`, so pdufa_site_src/.vercel/project.json
+          # exists only on David's machine -- the Actions checkout has no linked project and
+          # `vercel cache purge` cannot resolve one from a token alone. These two are the
+          # contents of that file. They are identifiers, not credentials (the org ID was
+          # already in this workflow as --scope), so they are literals rather than secrets:
+          # a secret that is not secret only makes the failure harder to read.
+          VERCEL_ORG_ID: team_HLoQLqGljk4BGwM2Recpsid5
+          VERCEL_PROJECT_ID: prj_WCjOKqJUA7h44mL3MRtudIB22Frz
         run: |
           want=$(git rev-parse --short=9 HEAD~1)   # the stamp names the tree it built
           for i in $(seq 1 24); do
@@ -689,7 +697,14 @@ jobs:
           if [ -z "$VERCEL_TOKEN" ]; then
             echo "::warning::VERCEL_TOKEN secret not set -- CDN purge skipped (add a Vercel token as VERCEL_TOKEN to enable)"
           else
-            cd pdufa_site_src && npx --yes vercel@latest cache purge --type cdn --yes --token "$VERCEL_TOKEN" --scope team_HLoQLqGljk4BGwM2Recpsid5 || echo "::warning::vercel cache purge failed"
+            # Not proven to fix anything yet. Vercel's own docs say each deployment carries its
+            # own cache key, which is the opposite of the 09-07/09-08 stale bodies, so this is a
+            # candidate remedy: cheap, harmless, and it stays UNPROVEN in writing until the
+            # verifier below catches a real mismatch that a purge demonstrably clears.
+            npx --yes vercel@latest cache purge --type cdn --yes \
+              --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" \
+              && echo "CDN purge requested for project $VERCEL_PROJECT_ID" \
+              || echo "::warning::vercel cache purge failed"
           fi
 
       - name: Post-deploy verifier (live, 3 passes, md5==ETag, stable bodies, as_of, sums)
