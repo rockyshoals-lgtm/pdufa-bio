@@ -25,12 +25,20 @@ export async function resolveTier(req) {
 
 /* ---------------- fields ---------------- */
 const CORE = e => ({
-  id: e.id, ticker: e.t, company: e.company || null, date: e.d || null,
-  // `date` is a SORTABLE value. When date_precision is 'month' it is the month MIDPOINT
-  // (the 15th), not an announced day -- readout windows are ClinicalTrials.gov primary-completion
-  // ESTIMATES and they shift. Use `date_month` for display; never render `date` as a hard day
-  // unless date_precision === 'day'. The API must not claim more precision than the page.
-  date_precision: e.dp || null, date_month: e.dm || null, name: e.name, type: e.type,
+  id: e.id, ticker: e.t, company: e.company || null,
+  /* `date` IS A DAY OR IT IS NULL (2026-09-09, audit 09-09b item 3, approved by David).
+     It used to carry a month MIDPOINT when date_precision was not 'day', with a comment here
+     telling consumers not to read it as a day. 263 of 456 rows served "the 15th" and 62 more
+     served the 30th/31st -- 71% of the public dataset carrying a day no sponsor ever gave, in
+     the endpoint /developers advertises. A comment in our source is not a control on someone
+     else's parser, and an AI summarising this feed reads 2026-06-15 and repeats it.
+     A field that means two things means neither, so `date` now means one: an announced day.
+     Month and quarter rows carry their real granularity in `date_month` and nothing else.
+     BREAKING for consumers who sorted on `date`; sort on `date_month` then `date`. */
+  date: (e.dp === 'day' ? (e.d || null) : null),
+  date_precision: e.dp || null,
+  date_month: e.dm || (e.d ? String(e.d).slice(0, 7) : null),
+  name: e.name, type: e.type,
   therapeutic_area: e.ta || null, market_cap_tier: e.cap || null,
   status: e.st || null,
   url: String(e.url).startsWith('http') ? e.url : 'https://www.pdufa.bio' + e.url,
@@ -71,6 +79,11 @@ export function shape(e, tier) {
     const n = new Date();
     const t0 = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
     base.days_to_decision = Number.isNaN(v) ? null : Math.round((v - t0) / 864e5);
+  } else {
+    /* No announced day, so no countdown. Counting to a month midpoint we invented would be
+       the same fabrication one field over, and `date_month` already tells a consumer the
+       granularity we actually have. */
+    base.days_to_decision = null;
   }
   /* A Decided record must state its OUTCOME and be internally consistent. Decision capture flips
      status->Decided but leaves the PDUFA goal date in `date` and a stale positive days_to_decision
