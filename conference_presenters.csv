@@ -1,0 +1,17 @@
+ticker,conference,catalyst_date,date_precision,date_basis,pres_type,abstract,days_to,filed,form,company,phrases,url
+CADL,ASTRO,2026-09-26,day,observed,unspecified,,17,2026-08-13,8-K,"Candel Therapeutics, Inc.",oral presentation at,https://www.sec.gov/Archives/edgar/data/1841387/000119312526347957/cadl-ex99_1.htm
+IPSC,EASD,2026-09-28,day,observed,oral,,19,2026-08-12,8-K,"Century Therapeutics, Inc.",oral presentation at,https://www.sec.gov/Archives/edgar/data/1850119/000110465926094533/tm2622911d1_ex99-1.htm
+KLRA,EASD,2026-09-28,day,observed,oral,,19,2026-08-12,8-K,"Kailera Therapeutics, Inc.",to be presented at,https://www.sec.gov/Archives/edgar/data/2096997/000119312526346919/ck0002096997-ex99_1.htm
+SANA,EASD,2026-09-28,day,observed,unspecified,,19,2026-08-10,8-K,"Sana Biotechnology, Inc.",symposium presentation | will be presented at,https://www.sec.gov/Archives/edgar/data/1770121/000119312526342371/sana-ex99_1.htm
+CANF,ESMO,2026-10-23,day,observed,poster,,44,2026-09-08,6-K,Can-Fite BioPharma Ltd.,poster presentation at,https://www.sec.gov/Archives/edgar/data/1536196/000121390026097856/ea030436701ex99-3.htm
+EIKN,ESMO,2026-10-23,day,observed,unspecified,,44,2026-08-13,8-K,"Eikon Therapeutics, Inc.",accepted for presentation | presentations at the | will be presented at,https://www.sec.gov/Archives/edgar/data/1861123/000119312526349154/eikn-ex99_1.htm
+GENB,ESMO,2026-10-23,day,observed,poster,,44,2026-08-06,8-K,"Generate Biomedicines, Inc.",poster presentation at,https://www.sec.gov/Archives/edgar/data/2100782/000119312526336462/ck0002100782-ex99_1.htm
+MGNX,ESMO,2026-10-23,day,observed,poster,,44,2026-07-23,8-K,MACROGENICS INC,poster presentation at,https://www.sec.gov/Archives/edgar/data/1125345/000112534526000050/exhibit991_clinicalupdatem.htm
+MOLN,ESMO,2026-10-23,day,observed,poster,,44,2026-07-20,6-K,MOLECULAR PARTNERS AG,accepted for presentation | to be presented at,https://www.sec.gov/Archives/edgar/data/1745114/000117184326004758/exh_991.htm
+NVCT,ESMO,2026-10-23,day,observed,oral,,44,2026-08-04,8-K,"Nuvectis Pharma, Inc.",will be presented at,https://www.sec.gov/Archives/edgar/data/1875558/000110465926090094/tm2622125d1_ex99-1.htm
+ORIC,ESMO,2026-10-23,day,observed,unspecified,,44,2026-08-03,8-K,"Oric Pharmaceuticals, Inc.",to be presented at,https://www.sec.gov/Archives/edgar/data/1796280/000119312526330568/oric-ex99_1.htm
+PBLS,ESMO,2026-10-23,day,observed,oral,,44,2026-08-13,8-K,"Parabilis Medicines, Inc.",abstract accepted | oral presentation at,https://www.sec.gov/Archives/edgar/data/1657677/000119312526347869/ck0001657677-ex99_1.htm
+TNGX,ESMO,2026-10-23,day,observed,unspecified,,44,2026-08-11,8-K,"Tango Therapeutics, Inc.",to be presented at,https://www.sec.gov/Archives/edgar/data/1819133/000119312526343434/tngx-ex99_1.htm
+ZLAB,ESMO,2026-10-23,day,observed,unspecified,,44,2026-08-06,8-K,Zai Lab Ltd,to be presented at,https://www.sec.gov/Archives/edgar/data/1704292/000162828026053791/zlab-202686x8kex991.htm
+ANL,SITC,2026-11-04,day,observed,unspecified,,56,2026-08-14,6-K,Adlai Nortye Ltd.,to be presented at,https://www.sec.gov/Archives/edgar/data/1944552/000121390026089447/ea0301517-6k_adlai.htm
+CRVO,CTAD,2026-11-16,day,observed,unspecified,,68,2026-08-10,8-K,CervoMed Inc.,to be presented at | will be presented at,https://www.sec.gov/Archives/edgar/data/1053691/000143774926026771/ex_1002031.htm
