@@ -57,6 +57,8 @@ def collect_all(year):
         if r.get("type") != "PDUFA" or str(r.get("st", "")).lower() != "decided":
             continue
         goal, actual = str(r.get("d") or ""), str(r.get("dcd") or "")
+        if r.get("dp") != "day":
+            continue                       # see collect(): precision, not format
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", goal) or \
            not re.match(r"^\d{4}-\d{2}-\d{2}$", actual) or not actual.startswith(str(year)):
             continue
@@ -87,6 +89,16 @@ def collect(year):
         if r.get("type") != "PDUFA" or str(r.get("st", "")).lower() != "decided":
             continue
         goal, actual = str(r.get("d") or ""), str(r.get("dcd") or "")
+        # PRECISION, not format (2026-09-10). This tested only that the goal date LOOKED like a
+        # day, so a goal we manufactured by rounding a sponsor's "third quarter of calendar year
+        # 2026" up to 2026-09-30 passed cleanly. Four such rows (PFE/ROIV brepocitinib, TAK
+        # oveporexton, PTGX rusfertide) were the four largest "early" margins on this page
+        # (-34, -33, -34, -56 days) and moved the median from -1.0 to -2.5 days. A quarter-end
+        # placeholder is the LAST day of the stated quarter, so any real action inside that
+        # quarter scores as early, by the maximum possible margin, in the flattering direction.
+        # Only a sponsor-announced DAY can measure earliness against a day.
+        if r.get("dp") != "day":
+            continue
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", goal) or \
            not re.match(r"^\d{4}-\d{2}-\d{2}$", actual):
             continue
@@ -150,7 +162,7 @@ def main():
     else:
         headline = (f"This archive currently holds <b>{n}</b> {a.year} decision"
                     f"{'s' if n != 1 else ''} whose outcome and dates are both backed by a "
-                    f"primary source &mdash; too few to quote a rate from, so they are listed "
+                    f"primary source; too few to quote a rate from, so they are listed "
                     f"individually below rather than turned into a percentage.")
 
     med = ""
@@ -215,7 +227,7 @@ def main():
            f"date by which the FDA aims to complete its review, not a fixed announcement date."),
           ("Can the FDA approve a drug early?",
            "Yes. The PDUFA date is a target for completing the review, so the agency can act "
-           "sooner, and in this archive several 2026 decisions did &mdash; the earliest by "
+           "sooner, and in this archive several 2026 decisions did: the earliest by "
            f"{abs(min(r['delta'] for r in rec))} days. It can also extend the date, usually when "
            "the company submits a major amendment that needs more review time."),
           ("Which decisions does this page count?",

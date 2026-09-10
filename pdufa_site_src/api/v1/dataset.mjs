@@ -517,7 +517,7 @@ export default [
   "t": "AZN",
   "company": "AstraZeneca/Alexion",
   "d": "2026-06-30",
-  "dp": "day",
+  "dp": "month",
   "name": "Truqap - (CAPItello-281)",
   "type": "PDUFA",
   "ta": "",
@@ -547,10 +547,12 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
+   },
+   "date_note": "No AstraZeneca filing states a PDUFA goal date for Truqap (capivasertib) in this indication. AstraZeneca names capivasertib in many 6-K/20-F filings but as portfolio narrative; it does not publish goal dates. The June 30 day is unsourced and is withdrawn. The month is retained only because our own sourced decision page places the FDA action in June 2026 -- it is NOT independently sourced to a goal-date statement."
   },
   "oc": "Approved",
-  "dcd": "2026-06-12"
+  "dcd": "2026-06-12",
+  "dm": "2026-06"
  },
  {
   "id": "pdufa_ions_2026-06-30",
@@ -587,7 +589,10 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
+   },
+   "source": "Ionis 8-K 2026-04-29 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126017637/ef20071749_ex99-1.htm",
+   "review": "Ionis states the FDA accepted the sNDA for olezarsen in severe hypertriglyceridemia under Priority Review with a PDUFA target action date of June 30, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-06-24"
@@ -619,7 +624,10 @@ export default [
     "t30": 0.36,
     "t7": 0.08,
     "t1": 0.0
-   }
+   },
+   "source": "Viridian 8-K 2026-05-05 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526205010/d149508dex991.htm",
+   "review": "Viridian states a PDUFA target action date of June 30, 2026 for veligrotug in thyroid eye disease, with the company describing itself as launch-ready."
   },
   "oc": "Approved",
   "dcd": "2026-06-26"
@@ -1218,7 +1226,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1301,7 +1309,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -1353,7 +1361,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3077,7 +3085,7 @@ export default [
   "company": "Incyte Corp",
   "d": "2026-09-26",
   "dp": "day",
-  "name": "zilurgisertib",
+  "name": "Zilurgisertib (licensed to Mirum; MIRM holds the NDA)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
@@ -3086,11 +3094,15 @@ export default [
   "ua": "2026-09-10T15:55:58Z",
   "_d": {
    "nct_id": null,
-   "indication": null,
+   "indication": "Fibrodysplasia ossificans progressiva (FOP)",
    "market_cap_usd": 25541942973.460003,
    "cash_runway_months": null,
    "days_to_decision": 78,
-   "runup_summary": null
+   "runup_summary": null,
+   "source": "Mirum 8-K 2026-05-06 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm",
+   "review": "Incyte discovered zilurgisertib and licensed it to Mirum for development and commercialization globally. The NDA is Mirum's and the September 26, 2026 PDUFA date is Mirum's; this row tracks Incyte's economic exposure to that decision, not an Incyte application.",
+   "applicant": "Mirum Pharmaceuticals, Inc. (MIRM)"
   }
  },
  {
@@ -3108,8 +3120,11 @@ export default [
   "ua": "2026-09-10T15:55:58Z",
   "_d": {
    "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 6382835554.9
+   "indication": "Fibrodysplasia ossificans progressiva (FOP)",
+   "market_cap_usd": 6382835554.9,
+   "source": "Mirum 8-K 2026-05-06 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm",
+   "review": "The FDA accepted the NDA for zilurgisertib in FOP under Priority Review with a PDUFA date of September 26, 2026. Mirum licensed zilurgisertib from Incyte for development and commercialization globally."
   }
  },
  {
@@ -3363,7 +3378,8 @@ export default [
    "accession": "0001214659-26-008832",
    "guidance_text": "e effects across all brain regions whereas AL001 showed minimal glutamate effect in most brain regions, which may suggest better long-term tolerability. Full pharmacokinetics and pharmacodynamic&#160;results are expected in August 2026. &#160; In March 2026, we announced the initiation of the Phase ",
    "review": "Company guidance: Phase II bipolar disorder topline in Q3 2026. (A separate AL001 study, the 'Lithium in Brain' bioequivalence trial, already reported in March 2026.)"
-  }
+  },
+  "dm": "2026-09"
  },
  {
   "id": "readout_bolt_2026-09-30",
@@ -3660,8 +3676,8 @@ export default [
   "id": "pdufa_nvo_mim8_2026-09-30",
   "t": "NVO",
   "company": "Novo Nordisk A/S",
-  "d": "2026-09-30",
-  "dp": "day",
+  "d": "2026-12-31",
+  "dp": "year",
   "name": "Mim8 (denecimig)",
   "type": "PDUFA",
   "ta": "Hematology",
@@ -3674,7 +3690,8 @@ export default [
    "bla_submitted": "2025-09",
    "bla_source": "https://www.prnewswire.com/news-releases/novo-nordisk-submits-biologics-license-application-bla-to-fda-for-mim8-an-investigational-prophylaxis-treatment-for-people-living-with-hemophilia-a-with-or-without-inhibitors-302568838.html",
    "date_provenance": "goal date as published on /calendar and /pdufa/NVO-mim8 since 2026-08-07; dataset row restored 2026-09-01 after it was found missing",
-   "market_cap_usd": 196907303525.44
+   "market_cap_usd": 196907303525.44,
+   "date_note": "Novo Nordisk names denecimig (Mim8) in five 2026 filings and never states a day, month or quarter for the US decision. The 6-K of 2026-08-04 lists \"Denecimig US EU decision\" among R&D milestones and the Q4 6-K says only that the company looks forward this year to decisions \"such as Mim8\". The YEAR is the sourced granularity, so the row moves to year precision on the year-end sentinel (the TYRA convention). Day withdrawn 2026-09-10."
   }
  },
  {
@@ -3709,7 +3726,7 @@ export default [
   "t": "PFE",
   "company": "Roivant/Priovant",
   "d": "2026-09-30",
-  "dp": "day",
+  "dp": "quarter",
   "name": "Brepocitinib (VALOR)",
   "type": "PDUFA",
   "ta": "",
@@ -3731,10 +3748,14 @@ export default [
    "market_cap_usd": 162155713607.05,
    "cash_runway_months": null,
    "days_to_decision": 82,
-   "runup_summary": null
+   "runup_summary": null,
+   "source": "Priovant/Roivant 8-K 2026-03-03 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126007447/ef20066998_ex99-1.htm",
+   "date_note": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision."
   },
   "oc": "Approved",
-  "dcd": "2026-08-27"
+  "dcd": "2026-08-27",
+  "dm": "2026-09"
  },
  {
   "id": "readout_phvs_2026-09-30",
@@ -3822,7 +3843,7 @@ export default [
   "t": "PTGX",
   "company": "Protagonist Therapeutics Inc.",
   "d": "2026-09-30",
-  "dp": "day",
+  "dp": "quarter",
   "name": "Rusfertide - (REVIVE)",
   "type": "PDUFA",
   "ta": "",
@@ -3852,17 +3873,21 @@ export default [
     "t30": 2.19,
     "t7": -0.33,
     "t1": 0.0
-   }
+   },
+   "source": "Takeda/Protagonist 6-K 2026-03-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000007/form6k_030226.htm",
+   "date_note": "Takeda and Protagonist state \"Prescription Drug User Fee Act (PDUFA) Target Action Date is in the Third Quarter of this Calendar Year\" for rusfertide in polycythemia vera. The sponsor gave a QUARTER. Day withdrawn 2026-09-10."
   },
   "oc": "Approved",
-  "dcd": "2026-08-28"
+  "dcd": "2026-08-28",
+  "dm": "2026-09"
  },
  {
   "id": "pdufa_roiv_2026-09-30",
   "t": "ROIV",
   "company": "Roivant Sciences Ltd.",
   "d": "2026-09-30",
-  "dp": "day",
+  "dp": "quarter",
   "name": "Brepocitinib - (VALOR)",
   "type": "PDUFA",
   "ta": "",
@@ -3884,10 +3909,14 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
+   },
+   "source": "Priovant/Roivant 8-K 2026-03-03 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126007447/ef20066998_ex99-1.htm",
+   "date_note": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision."
   },
   "oc": "Approved",
-  "dcd": "2026-08-27"
+  "dcd": "2026-08-27",
+  "dm": "2026-09"
  },
  {
   "id": "readout_roiv_2026-09-30",
@@ -3961,11 +3990,12 @@ export default [
    "indication": "Spinal muscular atrophy (SMA), children and adults (BLA)",
    "market_cap_usd": 6651912102.84,
    "bla": "BLA (apitegromab), submitted March 2026",
-   "review": "BLA submitted March 2026 after the September 23, 2025 Complete Response Letter on the first application. On August 7, 2026 the company disclosed that the FDA classified the April 2026 inspection of Catalent Indiana LLC (a fill-finish site named in the BLA) as Official Action Indicated; on August 21, 2026 it said Catalent Indiana had been removed from the BLA and that it continues to expect a decision by the September 30, 2026 goal date. Fast Track, Orphan Drug and Rare Pediatric Disease designations per the sponsor.",
+   "review": "Scholar Rock resubmitted the apitegromab BLA on March 31, 2026 after a September 2025 CRL tied to a third-party fill-finish facility, not to the drug. The FDA accepted the resubmission with a September 30, 2026 PDUFA action date, and the company notes approval may be granted at any time up to it.",
    "sponsor_caveat": "Scholar Rock will continue to collaborate closely with the FDA and under their guidance, will remove Catalent Indiana from the apitegromab BLA. FDA review of the apitegromab BLA will progress solely with the second fill-finish facility.",
-   "source": "company press release (Business Wire), Aug 7 and Aug 21, 2026",
+   "source": "Scholar Rock 8-K 2026-05-07 (EX-99.1)",
    "source_url_2": "https://www.businesswire.com/news/home/20260821050366/en/Scholar-Rock-Provides-Update-on-Global-Apitegromab-Regulatory-Progress-Across-U.S.-Europe-and-Japan",
-   "prior_decision": "/fda-decision/SRRK-2025-09-23"
+   "prior_decision": "/fda-decision/SRRK-2025-09-23",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465926056655/srrk-20260507xex99d1.htm"
   }
  },
  {
@@ -4027,7 +4057,7 @@ export default [
   "t": "TAK",
   "company": "Takeda Pharmaceutical Co Ltd",
   "d": "2026-09-30",
-  "dp": "day",
+  "dp": "quarter",
   "name": "Oveporexton (TAK-861-2001)",
   "type": "PDUFA",
   "ta": "",
@@ -4057,10 +4087,14 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
+   },
+   "source": "Takeda 6-K 2026-02-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000005/form6k_021026.htm",
+   "date_note": "Takeda states \"The Prescription Drug User Fee Act (PDUFA) Target Action Date is the Third Quarter of this Calendar Year\" for oveporexton in narcolepsy type 1. The sponsor gave a QUARTER. Day withdrawn 2026-09-10; quarter is the sourced precision."
   },
   "oc": "Approved",
-  "dcd": "2026-08-05"
+  "dcd": "2026-08-05",
+  "dm": "2026-09"
  },
  {
   "id": "readout_tecx_2026-09-30",
@@ -4602,7 +4636,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -6135,7 +6169,10 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
+   },
+   "source": "Vertex 8-K 2026-08-03 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+   "review": "The FDA accepted the BLA for accelerated approval of povetacicept in IgA nephropathy and assigned a PDUFA target action date of November 30, 2026, per Vertex's own quarterly release; the submission is supported by a pre-specified Week 36 interim analysis of the Phase 3 RAINIER trial."
   }
  },
  {
@@ -7329,7 +7366,7 @@ export default [
   "t": "ABBV",
   "company": "AbbVie",
   "d": "2026-12-31",
-  "dp": "day",
+  "dp": "month",
   "name": "Tavapadon (TEMPO)",
   "type": "PDUFA",
   "ta": "",
@@ -7351,8 +7388,10 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
-  }
+   },
+   "date_note": "EDGAR full-text: \"tavapadon\" + \"target action date\" returns 0 filings; AbbVie names tavapadon in 8-K/10-K but never states an FDA goal date. Day withdrawn 2026-09-10; month retained."
+  },
+  "dm": "2026-12"
  },
  {
   "id": "readout_alny_2026-12-31",
@@ -7413,7 +7452,7 @@ export default [
   "t": "AZN",
   "company": "AstraZeneca/Alexion",
   "d": "2026-12-31",
-  "dp": "day",
+  "dp": "month",
   "name": "Ultomiris (ravulizumab)",
   "type": "PDUFA",
   "ta": "",
@@ -7443,15 +7482,17 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
-  }
+   },
+   "date_note": "No AstraZeneca filing states a goal date for Ultomiris in IgA nephropathy (searched Ultomiris/ravulizumab + IgA nephropathy + PDUFA; hits are third parties and pre-2022 Alexion). AstraZeneca files 6-K/20-F, so EDGAR would show one. Day withdrawn 2026-09-10; month retained."
+  },
+  "dm": "2026-12"
  },
  {
   "id": "pdufa_bayry_2026-12-31",
   "t": "BAYRY",
   "company": "Bayer",
   "d": "2026-12-31",
-  "dp": "day",
+  "dp": "month",
   "name": "KERENDIA (finerenone)",
   "type": "PDUFA",
   "ta": "",
@@ -7473,8 +7514,10 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
-  }
+   },
+   "date_note": "Bayer is not an SEC registrant, so EDGAR cannot confirm or deny this date; no Bayer release has been read for it either. Day withdrawn 2026-09-10 for want of any source; month retained."
+  },
+  "dm": "2026-12"
  },
  {
   "id": "readout_bmea_2026-12-31",
@@ -7823,7 +7866,7 @@ export default [
   "t": "NVO",
   "company": "Novo Nordisk A/S",
   "d": "2026-12-31",
-  "dp": "day",
+  "dp": "month",
   "name": "CagriSema (AM833)",
   "type": "PDUFA",
   "ta": "",
@@ -7845,8 +7888,10 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
-  }
+   },
+   "date_note": "EDGAR full-text: \"CagriSema\" + \"target action date\" returns 0 filings; Novo Nordisk's 6-Ks name the NDA but state no goal date. Day withdrawn 2026-09-10; month retained."
+  },
+  "dm": "2026-12"
  },
  {
   "id": "readout_pcvx_2026-12-31",
@@ -10771,7 +10816,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2027-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",

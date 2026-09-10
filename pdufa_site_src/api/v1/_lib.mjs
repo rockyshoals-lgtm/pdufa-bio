@@ -37,7 +37,13 @@ const CORE = e => ({
      BREAKING for consumers who sorted on `date`; sort on `date_month` then `date`. */
   date: (e.dp === 'day' ? (e.d || null) : null),
   date_precision: e.dp || null,
-  date_month: e.dm || (e.d ? String(e.d).slice(0, 7) : null),
+  /* Same rule one level coarser (2026-09-10). A YEAR-precision row carries a year-end sentinel
+     in `d` (2027-12-31 for TYRA, 2026-12-31 for NVO denecimig), and deriving date_month from it
+     published "2027-12" -- December asserted from a row whose sponsor said only "2027". The
+     fallback is fine for month and quarter rows, where d's month IS the real month; it is a
+     fabrication for year rows, so they get null and `date_precision: "year"` is the whole
+     answer. */
+  date_month: e.dm || (e.dp === 'year' ? null : (e.d ? String(e.d).slice(0, 7) : null)),
   name: e.name, type: e.type,
   therapeutic_area: e.ta || null, market_cap_tier: e.cap || null,
   status: e.st || null,

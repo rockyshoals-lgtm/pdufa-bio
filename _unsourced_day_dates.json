@@ -1,0 +1,72 @@
+{
+ "note": "Rows whose published day was withdrawn for want of a sponsor source. A day may return ONLY with _d.source_url pointing at a filing or company release that states it. tests/test_no_unsourced_day_dates.py enforces this.",
+ "withdrawn_on": "2026-09-10",
+ "rows": [
+  {
+   "ticker": "ABBV",
+   "was_date": "2026-12-31",
+   "month_kept": "2026-12",
+   "why": "EDGAR full-text: \"tavapadon\" + \"target action date\" returns 0 filings; AbbVie names tavapadon in 8-K/10-K but never states an FDA goal date. Day withdrawn 2026-09-10; month retained."
+  },
+  {
+   "ticker": "AZN",
+   "was_date": "2026-06-30",
+   "month_kept": "2026-06",
+   "new_precision": "month",
+   "why": "No AstraZeneca filing states a PDUFA goal date for Truqap (capivasertib) in this indication. AstraZeneca names capivasertib in many 6-K/20-F filings but as portfolio narrative; it does not publish goal dates. The June 30 day is unsourced and is withdrawn. The month is retained only because our own sourced decision page places the FDA action in June 2026 -- it is NOT independently sourced to a goal-date statement."
+  },
+  {
+   "ticker": "AZN",
+   "was_date": "2026-12-31",
+   "month_kept": "2026-12",
+   "why": "No AstraZeneca filing states a goal date for Ultomiris in IgA nephropathy (searched Ultomiris/ravulizumab + IgA nephropathy + PDUFA; hits are third parties and pre-2022 Alexion). AstraZeneca files 6-K/20-F, so EDGAR would show one. Day withdrawn 2026-09-10; month retained."
+  },
+  {
+   "ticker": "BAYRY",
+   "was_date": "2026-12-31",
+   "month_kept": "2026-12",
+   "why": "Bayer is not an SEC registrant, so EDGAR cannot confirm or deny this date; no Bayer release has been read for it either. Day withdrawn 2026-09-10 for want of any source; month retained."
+  },
+  {
+   "ticker": "NVO",
+   "was_date": "2026-09-30",
+   "month_kept": null,
+   "new_precision": "year",
+   "why": "Novo Nordisk names denecimig (Mim8) in five 2026 filings and never states a day, month or quarter for the US decision. The 6-K of 2026-08-04 lists \"Denecimig US EU decision\" among R&D milestones and the Q4 6-K says only that the company looks forward this year to decisions \"such as Mim8\". The YEAR is the sourced granularity, so the row moves to year precision on the year-end sentinel (the TYRA convention). Day withdrawn 2026-09-10."
+  },
+  {
+   "ticker": "NVO",
+   "was_date": "2026-12-31",
+   "month_kept": "2026-12",
+   "why": "EDGAR full-text: \"CagriSema\" + \"target action date\" returns 0 filings; Novo Nordisk's 6-Ks name the NDA but state no goal date. Day withdrawn 2026-09-10; month retained."
+  },
+  {
+   "ticker": "PFE",
+   "was_date": "2026-09-30",
+   "month_kept": "2026-09",
+   "new_precision": "quarter",
+   "why": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision."
+  },
+  {
+   "ticker": "PTGX",
+   "was_date": "2026-09-30",
+   "month_kept": "2026-09",
+   "new_precision": "quarter",
+   "why": "Takeda and Protagonist state \"Prescription Drug User Fee Act (PDUFA) Target Action Date is in the Third Quarter of this Calendar Year\" for rusfertide in polycythemia vera. The sponsor gave a QUARTER. Day withdrawn 2026-09-10."
+  },
+  {
+   "ticker": "ROIV",
+   "was_date": "2026-09-30",
+   "month_kept": "2026-09",
+   "new_precision": "quarter",
+   "why": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision."
+  },
+  {
+   "ticker": "TAK",
+   "was_date": "2026-09-30",
+   "month_kept": "2026-09",
+   "new_precision": "quarter",
+   "why": "Takeda states \"The Prescription Drug User Fee Act (PDUFA) Target Action Date is the Third Quarter of this Calendar Year\" for oveporexton in narcolepsy type 1. The sponsor gave a QUARTER. Day withdrawn 2026-09-10; quarter is the sourced precision."
+  }
+ ]
+}

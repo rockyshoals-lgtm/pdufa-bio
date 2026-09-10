@@ -29,6 +29,41 @@ TODAY = dt.datetime.now(dt.timezone.utc).date().isoformat()
 ROW = re.compile(r'<a class="row"[^>]*>\s*<div class="t">([A-Z]{1,6}) (?:&middot;|·) '
                  r'(\d{4}-\d{2}-\d{2}).*?<div class="d">(.*?)</div>', re.S)
 
+# WINDOWED ROWS, added 2026-09-10. Ten PDUFA rows lost day precision that day (sponsors had
+# stated a quarter, or nothing) and their calendar rows were relabelled "Q3 2026" / "Dec 2026".
+# ROW above only matches YYYY-MM-DD, so every one of them would have become structurally
+# invisible to this guard -- the exact condition that let the HOOK/CRBP/NCNA fossil rows survive
+# until their date passed. A windowed row is still a claim on the calendar, so it is still
+# census'd: it must correspond to a dataset PDUFA for that ticker whose own precision is not
+# "day" and whose window label matches.
+WROW = re.compile(r'<a class="row"[^>]*>\s*<div class="t">([A-Z]{1,6}) (?:&middot;|·) '
+                  r'(Q[1-4] \d{4}|[A-Z][a-z]{2} \d{4})[^<]*</div>'
+                  r'.*?<div class="d">(.*?)</div>', re.S)
+MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def window_labels(r):
+    """Labels a non-day dataset row may honestly wear on the calendar.
+
+    TWO CONVENTIONS EXIST, which is what this check found on its first run. The calendar was
+    already rendering month-precision rows as "Q4 2026 (est.)" (NVO CagriSema, ABBV, RHHBY, NVS,
+    AZN, BAYRY), and the 2026-09-10 relabeller emitted "Dec 2026" for the same class of row. Both
+    are TRUE of a 2026-12 row -- a month sits inside its quarter -- so both are accepted here
+    rather than failing eleven correct pre-existing rows. Normalising the site on one convention
+    is worth doing, but it is a copy decision, not a correctness one, and it does not belong in a
+    guard that exists to catch fabricated dates.
+    """
+    dm = str(r.get("dm") or str(r.get("d") or "")[:7])
+    if len(dm) < 7:
+        return set()
+    q = f"Q{(int(dm[5:7]) - 1) // 3 + 1} {dm[:4]}"
+    if r.get("dp") == "quarter":
+        return {q}
+    if r.get("dp") == "month":
+        return {f"{MON3[int(dm[5:7]) - 1]} {dm[:4]}", q}
+    return set()
+
 
 def main():
     src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"),
@@ -51,6 +86,17 @@ def main():
 
     known = {(f["ticker"], f["date"]) for f in json.load(
         open(os.path.join(HERE, "_calendar_flags_known.json"), encoding="utf-8"))["flags"]}
+
+    # A RATCHET, not an amnesty (2026-09-10). Seven windowed rows have no dataset event behind
+    # them and no sourced goal date -- see _calendar_unbacked_q4_rows.json for the evidence on
+    # each. They are listed rather than silently passed: every run prints them, and the count may
+    # only go DOWN. Adding an eighth fails this guard.
+    global UNBACKED, unbacked_seen
+    _ub = json.load(open(os.path.join(HERE, "_calendar_unbacked_q4_rows.json"),
+                         encoding="utf-8"))
+    UNBACKED = {(r["ticker"], r["window"]) for r in _ub["rows"]}
+    UNBACKED_N = len(_ub["rows"])
+    unbacked_seen = set()
 
     bad = []
     pages = [os.path.join(SITE, "calendar", "index.html")] + \
@@ -81,6 +127,45 @@ def main():
             bad.append(f"{rel}: {tk} {d} -- row exists, dataset has no such event and its text "
                        f"shares no drug token with any same-date event; either the dataset lost "
                        f"it (it lost PFE Padcev once) or the row is fake (HOOK/CRBP/NCNA were)")
+
+        # windowed rows are census'd too -- see WROW
+        for m in WROW.finditer(doc):
+            tk, lab, drugtxt = m.group(1), m.group(2), m.group(3)
+            rtoks = set(re.findall(r"[a-z][a-z0-9]{3,}",
+                                   re.sub(r"<[^>]+>", " ", drugtxt).lower()))
+            ok = False
+            for r in rows:
+                if r.get("type") != "PDUFA" or str(r.get("t", "")).upper() != tk:
+                    continue
+                if r.get("dp") == "day":
+                    continue
+                if lab not in window_labels(r):
+                    continue
+                ntoks = set(re.findall(r"[a-z][a-z0-9]{3,}", str(r.get("name", "")).lower()))
+                if not rtoks or not ntoks or (rtoks & ntoks):
+                    ok = True
+                    break
+            if not ok and (tk, lab) not in known:
+                if (tk, lab) in UNBACKED:
+                    unbacked_seen.add((tk, lab, rel))
+                    continue
+                bad.append(f"{rel}: {tk} {lab} -- windowed row with no matching non-day dataset "
+                           f"PDUFA for that ticker and window. A row that shows a window instead "
+                           f"of a day is still a published claim; it must trace to a dataset row "
+                           f"whose precision actually is that window.")
+
+    # THE RATCHET REPORT. Printed every run so the backlog is never invisible, and enforced so it
+    # can only shrink. These are published claims with no dataset event and no sourced goal date.
+    if unbacked_seen:
+        print(f"\n  {UNBACKED_N} KNOWN-UNBACKED windowed row(s) awaiting a primary-source pass "
+              f"(_calendar_unbacked_q4_rows.json, recorded 2026-09-10):")
+        for tk, lab, rel in sorted(unbacked_seen):
+            print(f"     {rel}: {tk} {lab}")
+        print("     Each has a /pdufa page asserting 2026-12-31 with no sponsor goal-date "
+              "source. Source them, re-date them, or withdraw them -- do not add an eighth.")
+    if len(UNBACKED) > UNBACKED_N:
+        bad.append(f"the unbacked-row list grew to {len(UNBACKED)} (was {UNBACKED_N}); it is a "
+                   f"ratchet for an existing backlog, not a place to park new unsourced rows")
 
     # COUNT RECONCILIATION (red team 2026-08-16 section 2.1, third audit on the same defect,
     # gap widening 3->5): the page's upcoming count and the API's upcoming count must be equal
