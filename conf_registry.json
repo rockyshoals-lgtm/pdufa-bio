@@ -53,9 +53,23 @@
  "AAO": {
   "dates": {
    "2022": "2022-10-03",
-   "2023": "2023-11-07"
+   "2023": "2023-11-07",
+   "2026": "2026-10-09",
+   "2027": "2027-11-12"
   },
-  "doy": 293
+  "doy": 316,
+  "sources": {
+   "2026": {
+    "states": "AAO 2026, Oct. 9-12 - New Orleans, Ernest N. Morial Convention Center",
+    "url": "https://www.aao.org/annual-meeting/past-and-future-meetings",
+    "verified_on": "2026-09-09"
+   },
+   "2027": {
+    "states": "AAO 2027, Nov. 12-15 - Las Vegas, Venetian Expo & Hotel",
+    "url": "https://www.aao.org/annual-meeting/past-and-future-meetings",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "AASLD": {
   "dates": {
@@ -74,18 +88,46 @@
   "dates": {
    "2023": "2023-11-10",
    "2024": "2024-10-24",
-   "2025": "2025-11-06"
+   "2025": "2025-11-06",
+   "2026": "2026-11-12",
+   "2027": "2027-11-11",
+   "2028": "2028-11-02"
   },
-  "doy": 310
+  "doy": 307,
+  "sources": {
+   "2026": {
+    "states": "ACAAI 2026 Annual Scientific Meeting, Phoenix AZ, November 12-16, 2026",
+    "url": "https://annualmeeting.acaai.org/2026/meeting_info.cfm",
+    "verified_on": "2026-09-09"
+   },
+   "2027": {
+    "states": "Future Meeting Dates: November 11-15, 2027, Nashville, Tennessee",
+    "url": "https://annualmeeting.acaai.org/2026/future_meeting_dates.cfm",
+    "verified_on": "2026-09-09"
+   },
+   "2028": {
+    "states": "Future Meeting Dates: November 2-6, 2028, Seattle, Washington",
+    "url": "https://annualmeeting.acaai.org/2026/future_meeting_dates.cfm",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "ACC": {
   "dates": {
    "2022": "2022-04-02",
    "2023": "2023-03-04",
    "2024": "2024-04-07",
-   "2025": "2025-03-31"
+   "2025": "2025-03-31",
+   "2027": "2027-04-10"
   },
-  "doy": 91
+  "doy": 100,
+  "sources": {
+   "2027": {
+    "states": "ACC.27 Together With WCC, April 10-12, 2027, Houston TX",
+    "url": "https://accscientificsession.acc.org/Information-Pages/Future-Meetings",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "ACNP": {
   "dates": {
@@ -111,9 +153,17 @@
   "dates": {
    "2022": "2022-06-04",
    "2023": "2023-06-24",
-   "2025": "2025-06-23"
+   "2025": "2025-06-23",
+   "2027": "2027-06-18"
   },
-  "doy": 174
+  "doy": 169,
+  "sources": {
+   "2027": {
+    "states": "86th Scientific Sessions, June 18-21, 2027, Washington DC",
+    "url": "https://professional.diabetes.org/scientific-sessions",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "ADPD": {
   "dates": {
@@ -168,9 +218,17 @@
    "2023": "2023-06-05",
    "2024": "2024-05-23",
    "2025": "2025-06-02",
-   "2026": "2026-06-02"
+   "2026": "2026-06-02",
+   "2027": "2027-06-04"
   },
-  "doy": 153
+  "doy": 155,
+  "sources": {
+   "2027": {
+    "states": "2027 ASCO Annual Meeting, June 4-8, 2027, McCormick Place, Chicago IL",
+    "url": "https://www.asco.org/annual-meeting/dates-know",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "ASCO-GI": {
   "dates": {
@@ -187,9 +245,17 @@
   "dates": {
    "2020": "2020-02-15",
    "2024": "2024-01-25",
-   "2025": "2025-02-14"
+   "2025": "2025-02-14",
+   "2027": "2027-02-11"
   },
-  "doy": 45
+  "doy": 42,
+  "sources": {
+   "2027": {
+    "states": "ASCO Genitourinary Cancers Symposium, February 11-13, 2027, Moscone West, San Francisco CA",
+    "url": "https://www.asco.org/gu/dates-know",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "ASCRS": {
   "dates": {
@@ -335,9 +401,17 @@
    "2019": "2019-10-29",
    "2021": "2021-10-07",
    "2023": "2023-10-12",
-   "2025": "2025-10-24"
+   "2025": "2025-10-24",
+   "2026": "2026-11-18"
   },
-  "doy": 290
+  "doy": 322,
+  "sources": {
+   "2026": {
+    "states": "38th EORTC-NCI-AACR Symposium on Molecular Targets and Cancer Therapeutics, Barcelona, November 18-20, 2026",
+    "url": "https://event.eortc.org/ena2026/",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "ENDO": {
   "dates": {
@@ -423,8 +497,29 @@
   "doy": 76
  },
  "OBESITYWEEK": {
-  "dates": {},
-  "doy": 310
+  "dates": {
+   "2026": "2026-11-14",
+   "2027": "2027-11-08",
+   "2028": "2028-11-12"
+  },
+  "doy": 317,
+  "sources": {
+   "2026": {
+    "states": "ObesityWeek 2026 Washington DC, live sessions Saturday-Tuesday, November 14-17",
+    "url": "https://obesityweek.org/attend/future-dates/",
+    "verified_on": "2026-09-09"
+   },
+   "2027": {
+    "states": "ObesityWeek 2027 Grand Rapids MI, live sessions Monday-Thursday, November 8-11",
+    "url": "https://obesityweek.org/attend/future-dates/",
+    "verified_on": "2026-09-09"
+   },
+   "2028": {
+    "states": "ObesityWeek 2028 Cleveland OH, live sessions Sunday-Wednesday, November 12-15",
+    "url": "https://obesityweek.org/attend/future-dates/",
+    "verified_on": "2026-09-09"
+   }
+  }
  },
  "RETSOC": {
   "dates": {

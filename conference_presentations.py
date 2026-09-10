@@ -113,6 +113,26 @@ ALIASES = {
     "annual retina society": "RETSOC", "retina society": "RETSOC",
     "ers international congress": "ERS", "ers congress": "ERS",
     "iaslc world conference on lung cancer": "WCLC",
+    # 2026-09-09 gap fill, same class as the 08-29 one above and found the same way: of 55
+    # registry congresses, seven had NO alias at all, and four of those (AES, ASCRS, IDWEEK,
+    # SGO) already carried an OBSERVED 2026 date. We could date them and could not name them,
+    # so a filing announcing a presentation at any of them was fetched and then dropped.
+    # Long forms only, per the rule above: "aes", "mda" and "sgo" are all common strings in
+    # biotech prose ("MDA" is malondialdehyde), so none of them gets a bare alias.
+    "americas committee for treatment and research in multiple sclerosis": "ACTRIMS",
+    "actrims forum": "ACTRIMS", "actrims": "ACTRIMS",
+    "american epilepsy society": "AES", "aes annual meeting": "AES",
+    "american society of retina specialists": "ASRS", "asrs annual meeting": "ASRS",
+    "idweek": "IDWEEK",
+    "muscular dystrophy association clinical": "MDA",
+    "mda clinical & scientific conference": "MDA",
+    "mda clinical and scientific conference": "MDA",
+    "society of gynecologic oncology": "SGO", "sgo annual meeting": "SGO",
+    # ASCRS deliberately absent: the initialism is shared by the American Society of Cataract
+    # and Refractive Surgery and the American Society of Colon and Rectal Surgeons, which meet
+    # in different months. The registry's doy (100, mid-April) fits the former, but "fits" is
+    # not "verified", and mapping a filing to the wrong congress would put a company on the
+    # wrong date. Left unaliased until someone confirms which meeting the row describes.
 }
 _ALIAS_ORDER = sorted(ALIASES, key=len, reverse=True)   # longest first — "asco gi" before "asco"
 
