@@ -120,6 +120,22 @@ def main():
             ok_etag = (etag == md5) if (etag and static) else True
             same = first.setdefault(path, md5) == md5
             note = []
+            # Audit 2026-09-10 item 2. The reported /calendar-vs-/calendar/ split turned out
+            # to be our service worker in the auditor's browser, not the deployment -- but the
+            # server-side version of that fault (a leftover flat file shadowing a directory
+            # index) is real, cheap to check, and would look identical from outside. One extra
+            # fetch per static page: the two forms must be the same bytes.
+            if static and not path.endswith("/") and "." not in path.rsplit("/", 1)[-1]:
+                try:
+                    alt_body, _ = fetch(path + "/")
+                    alt = hashlib.md5(alt_body).hexdigest()
+                    if alt != md5:
+                        note.append("SLASH FORM DIFFERS")
+                        fails.append(f"{path} pass{p+1}: '{path}' md5 {md5[:12]} != "
+                                     f"'{path}/' md5 {alt[:12]} -- one URL is serving a "
+                                     f"different artifact than the other")
+                except Exception as e:  # noqa: BLE001
+                    note.append(f"slash-form fetch error {e}")
             if not ok_etag:
                 note.append(f"ETAG MISMATCH etag={etag[:12]}")
                 fails.append(f"{path} pass{p+1}: md5 {md5[:12]} != etag {etag[:12]}")
