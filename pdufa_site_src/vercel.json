@@ -2153,6 +2153,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/apitegromab-mstn",
+   "destination": "/drug/isembyld",
+   "permanent": true
+  },
+  {
    "source": "/drug/apomorphine-hydrochloride",
    "destination": "/drug/onapgo",
    "permanent": true
@@ -2645,6 +2650,11 @@
   {
    "source": "/drug/selumetinib",
    "destination": "/drug/koselugo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/sevabertinib",
+   "destination": "/drug/hyrnuo",
    "permanent": true
   },
   {

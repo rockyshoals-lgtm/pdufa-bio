@@ -1,8 +1,8 @@
 {
- "built": "2026-09-11T16:01:51+00:00",
- "commit": "faf9af5a3",
- "commit_at_build": "faf9af5a3",
+ "built": "2026-09-14T15:48:12+00:00",
+ "commit": "ffec2b49b",
+ "commit_at_build": "ffec2b49b",
  "next_date": "2026-09-11",
  "next_ticker": "TLX",
- "next_days": 0
+ "next_days": -3
 }

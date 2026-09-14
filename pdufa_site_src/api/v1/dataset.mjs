@@ -13,7 +13,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07055243",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07055243",
+   "nct_id": {
+    "nct": "NCT07055243",
+    "status": "recruiting",
+    "pcd": "2026-06-30",
+    "pcd_type": "estimated",
+    "updated": "2025-07-03",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -34,7 +41,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06810167",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06810167",
+   "nct_id": {
+    "nct": "NCT06810167",
+    "status": "active_not_recruiting",
+    "pcd": "2026-06-15",
+    "pcd_type": "actual",
+    "updated": "2026-08-19",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -97,7 +111,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04150497",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04150497",
+   "nct_id": {
+    "nct": "NCT04150497",
+    "status": "recruiting",
+    "pcd": "2026-06-30",
+    "pcd_type": "estimated",
+    "updated": "2025-09-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -108,7 +129,7 @@ export default [
   "id": "readout_cmps_2026-06-15",
   "t": "CMPS",
   "company": "COMPASS Pathways plc",
-  "d": "2026-06-15",
+  "d": "2028-06-15",
   "dp": "month",
   "name": "COMP360 psilocybin",
   "type": "Readout",
@@ -118,12 +139,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06247839",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06247839",
+   "nct_id": {
+    "nct": "NCT06247839",
+    "status": "recruiting",
+    "pcd": "2028-06-30",
+    "pcd_type": "estimated",
+    "updated": "2026-08-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-06"
+  "dm": "2028-06"
  },
  {
   "id": "readout_jazz_2026-06-15",
@@ -160,7 +188,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06395870",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06395870",
+   "nct_id": {
+    "nct": "NCT06395870",
+    "status": "recruiting",
+    "pcd": "2026-06-30",
+    "pcd_type": "estimated",
+    "updated": "2024-11-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -171,7 +206,7 @@ export default [
   "id": "readout_olma_2026-06-15",
   "t": "OLMA",
   "company": "Olema Pharmaceuticals, Inc.",
-  "d": "2026-06-15",
+  "d": "2026-10-15",
   "dp": "month",
   "name": "Palazestrant",
   "type": "Readout",
@@ -181,18 +216,25 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06016738",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06016738",
+   "nct_id": {
+    "nct": "NCT06016738",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-31",
+    "pcd_type": "estimated",
+    "updated": "2026-08-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-06"
+  "dm": "2026-10"
  },
  {
   "id": "readout_ptct_2026-06-15",
   "t": "PTCT",
   "company": "Ptc Therapeutics, Inc.",
-  "d": "2026-06-15",
+  "d": "2026-07-15",
   "dp": "month",
   "name": "PTC923",
   "type": "Readout",
@@ -202,12 +244,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05166161",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05166161",
+   "nct_id": {
+    "nct": "NCT05166161",
+    "status": "completed",
+    "pcd": "2026-07-21",
+    "pcd_type": "actual",
+    "updated": "2026-09-04",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-06"
+  "dm": "2026-07"
  },
  {
   "id": "readout_tlx_2026-06-15",
@@ -244,7 +293,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07036029",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07036029",
+   "nct_id": {
+    "nct": "NCT07036029",
+    "status": "completed",
+    "pcd": "2026-06-30",
+    "pcd_type": "actual",
+    "updated": "2026-07-31",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -265,7 +321,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04906460",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04906460",
+   "nct_id": {
+    "nct": "NCT04906460",
+    "status": "recruiting",
+    "pcd": "2026-06-27",
+    "pcd_type": "estimated",
+    "updated": "2025-12-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -708,7 +771,7 @@ export default [
   "id": "readout_akba_2026-07-15",
   "t": "AKBA",
   "company": "Akebia Therapeutics, Inc.",
-  "d": "2026-07-15",
+  "d": "2031-05-15",
   "dp": "month",
   "name": "Vadadustat",
   "type": "Readout",
@@ -718,12 +781,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07086755",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07086755",
+   "nct_id": {
+    "nct": "NCT07086755",
+    "status": "recruiting",
+    "pcd": "2031-05-31",
+    "pcd_type": "estimated",
+    "updated": "2026-08-06",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-07"
+  "dm": "2031-05"
  },
  {
   "id": "readout_amgn_2026-07-15",
@@ -739,7 +809,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05583227",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05583227",
+   "nct_id": {
+    "nct": "NCT05583227",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07-14",
+    "pcd_type": "actual",
+    "updated": "2026-07-29",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -760,7 +837,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05486468",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05486468",
+   "nct_id": {
+    "nct": "NCT05486468",
+    "status": "recruiting",
+    "pcd": "2026-07",
+    "pcd_type": "estimated",
+    "updated": "2025-08-06",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -781,7 +865,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06553547",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06553547",
+   "nct_id": {
+    "nct": "NCT06553547",
+    "status": "completed",
+    "pcd": "2026-07-07",
+    "pcd_type": "actual",
+    "updated": "2026-08-17",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -802,7 +893,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07523048",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07523048",
+   "nct_id": {
+    "nct": "NCT07523048",
+    "status": "recruiting",
+    "pcd": "2026-07",
+    "pcd_type": "estimated",
+    "updated": "2026-04-05",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -813,7 +911,7 @@ export default [
   "id": "readout_calc_2026-07-15",
   "t": "CALC",
   "company": "CalciMedica, Inc.",
-  "d": "2026-07-15",
+  "d": "2026-04-15",
   "dp": "month",
   "name": "CM4620",
   "type": "Readout",
@@ -823,12 +921,20 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06374797",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06374797",
+   "nct_id": {
+    "nct": "NCT06374797",
+    "status": "terminated",
+    "pcd": "2026-04-06",
+    "pcd_type": "actual",
+    "updated": "2026-08-27",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-09-14, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
-  "dm": "2026-07"
+  "dm": "2026-04"
  },
  {
   "id": "readout_cers_2026-07-15",
@@ -844,7 +950,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03037164",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03037164",
+   "nct_id": {
+    "nct": "NCT03037164",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07-31",
+    "pcd_type": "estimated",
+    "updated": "2026-03-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -865,7 +978,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06736717",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06736717",
+   "nct_id": {
+    "nct": "NCT06736717",
+    "status": "recruiting",
+    "pcd": "2026-07",
+    "pcd_type": "estimated",
+    "updated": "2025-02-03",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -886,7 +1006,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06848348",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06848348",
+   "nct_id": {
+    "nct": "NCT06848348",
+    "status": "recruiting",
+    "pcd": "2026-07",
+    "pcd_type": "estimated",
+    "updated": "2026-05-27",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -907,7 +1034,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05650879",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05650879",
+   "nct_id": {
+    "nct": "NCT05650879",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07",
+    "pcd_type": "estimated",
+    "updated": "2025-07-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -939,7 +1073,7 @@ export default [
   "id": "readout_howl_2026-07-15",
   "t": "HOWL",
   "company": "Werewolf Therapeutics, Inc.",
-  "d": "2026-07-15",
+  "d": "2026-04-15",
   "dp": "month",
   "name": "WTX-330",
   "type": "Readout",
@@ -949,12 +1083,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05479812",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05479812",
+   "nct_id": {
+    "nct": "NCT05479812",
+    "status": "completed",
+    "pcd": "2026-04-22",
+    "pcd_type": "actual",
+    "updated": "2026-08-24",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-07"
+  "dm": "2026-04"
  },
  {
   "id": "readout_ilmn_2026-07-15",
@@ -970,7 +1111,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04724369",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04724369",
+   "nct_id": {
+    "nct": "NCT04724369",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07-30",
+    "pcd_type": "estimated",
+    "updated": "2026-06-30",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -991,7 +1139,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06566092",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06566092",
+   "nct_id": {
+    "nct": "NCT06566092",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07",
+    "pcd_type": "estimated",
+    "updated": "2026-03-31",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1033,7 +1188,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05933265",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05933265",
+   "nct_id": {
+    "nct": "NCT05933265",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07-28",
+    "pcd_type": "estimated",
+    "updated": "2026-04-28",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1044,7 +1206,7 @@ export default [
   "id": "readout_lxrx_2026-07-15",
   "t": "LXRX",
   "company": "Lexicon Pharmaceuticals, Inc.",
-  "d": "2026-07-15",
+  "d": "2027-01-15",
   "dp": "month",
   "name": "Sotagliflozin",
   "type": "Readout",
@@ -1054,12 +1216,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06481891",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06481891",
+   "nct_id": {
+    "nct": "NCT06481891",
+    "status": "active_not_recruiting",
+    "pcd": "2027-01",
+    "pcd_type": "estimated",
+    "updated": "2026-08-24",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-07"
+  "dm": "2027-01"
  },
  {
   "id": "readout_rare_2026-07-15",
@@ -1086,7 +1255,7 @@ export default [
   "id": "readout_sion_2026-07-15",
   "t": "SION",
   "company": "Sionna Therapeutics, Inc.",
-  "d": "2026-07-15",
+  "d": "2026-06-15",
   "dp": "month",
   "name": "SION-719",
   "type": "Readout",
@@ -1096,12 +1265,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07108153",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07108153",
+   "nct_id": {
+    "nct": "NCT07108153",
+    "status": "completed",
+    "pcd": "2026-06-25",
+    "pcd_type": "actual",
+    "updated": "2026-09-08",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-07"
+  "dm": "2026-06"
  },
  {
   "id": "readout_smmt_2026-07-15",
@@ -1128,7 +1304,7 @@ export default [
   "id": "readout_sngx_2026-07-15",
   "t": "SNGX",
   "company": "Soligenix, Inc.",
-  "d": "2026-07-15",
+  "d": "2026-05-15",
   "dp": "month",
   "name": "Hypericin",
   "type": "Readout",
@@ -1138,12 +1314,20 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06470451",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06470451",
+   "nct_id": {
+    "nct": "NCT06470451",
+    "status": "terminated",
+    "pcd": "2026-05-22",
+    "pcd_type": "actual",
+    "updated": "2026-07-09",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-09-14, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
-  "dm": "2026-07"
+  "dm": "2026-05"
  },
  {
   "id": "pdufa_mrk_2026-07-16",
@@ -1226,7 +1410,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1309,7 +1493,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -1361,7 +1545,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -1561,7 +1745,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07011706",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07011706",
+   "nct_id": {
+    "nct": "NCT07011706",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08",
+    "pcd_type": "estimated",
+    "updated": "2026-03-24",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1582,7 +1773,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06901505",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06901505",
+   "nct_id": {
+    "nct": "NCT06901505",
+    "status": "completed",
+    "pcd": "2026-08-12",
+    "pcd_type": "actual",
+    "updated": "2026-09-03",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1603,7 +1801,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06847191",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06847191",
+   "nct_id": {
+    "nct": "NCT06847191",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08-06",
+    "pcd_type": "actual",
+    "updated": "2026-08-22",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1624,7 +1829,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06455059",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06455059",
+   "nct_id": {
+    "nct": "NCT06455059",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08-01",
+    "pcd_type": "estimated",
+    "updated": "2026-01-15",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1645,7 +1857,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03478462",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03478462",
+   "nct_id": {
+    "nct": "NCT03478462",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08-25",
+    "pcd_type": "estimated",
+    "updated": "2026-03-16",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1656,7 +1875,7 @@ export default [
   "id": "readout_eypt_2026-08-15",
   "t": "EYPT",
   "company": "EyePoint, Inc.",
-  "d": "2026-08-15",
+  "d": "2026-07-15",
   "dp": "month",
   "name": "EYP-1901",
   "type": "Readout",
@@ -1666,12 +1885,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06668064",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06668064",
+   "nct_id": {
+    "nct": "NCT06668064",
+    "status": "active_not_recruiting",
+    "pcd": "2026-07-13",
+    "pcd_type": "actual",
+    "updated": "2026-09-02",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-08"
+  "dm": "2026-07"
  },
  {
   "id": "readout_grfs_2026-08-15",
@@ -1687,7 +1913,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT01983241",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT01983241",
+   "nct_id": {
+    "nct": "NCT01983241",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08",
+    "pcd_type": "estimated",
+    "updated": "2026-06-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1698,7 +1931,7 @@ export default [
   "id": "readout_incy_2026-08-15",
   "t": "INCY",
   "company": "Incyte Corp",
-  "d": "2026-08-15",
+  "d": "2028-06-15",
   "dp": "month",
   "name": "Ruxolitinib",
   "type": "Readout",
@@ -1708,12 +1941,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06548360",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06548360",
+   "nct_id": {
+    "nct": "NCT06548360",
+    "status": "recruiting",
+    "pcd": "2028-06-05",
+    "pcd_type": "estimated",
+    "updated": "2026-09-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-08"
+  "dm": "2028-06"
  },
  {
   "id": "readout_ivvd_2026-08-15",
@@ -1729,7 +1969,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07298434",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07298434",
+   "nct_id": {
+    "nct": "NCT07298434",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08",
+    "pcd_type": "estimated",
+    "updated": "2026-06-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1740,7 +1987,7 @@ export default [
   "id": "readout_jspr_2026-08-15",
   "t": "JSPR",
   "company": "Jasper Therapeutics, Inc.",
-  "d": "2026-08-15",
+  "d": "2026-07-15",
   "dp": "month",
   "name": "Briquilimab",
   "type": "Readout",
@@ -1750,12 +1997,20 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06736262",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06736262",
+   "nct_id": {
+    "nct": "NCT06736262",
+    "status": "terminated",
+    "pcd": "2026-07-21",
+    "pcd_type": "actual",
+    "updated": "2026-08-04",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-09-14, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
-  "dm": "2026-08"
+  "dm": "2026-07"
  },
  {
   "id": "readout_kpti_2026-08-15",
@@ -1771,7 +2026,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05611931",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05611931",
+   "nct_id": {
+    "nct": "NCT05611931",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08",
+    "pcd_type": "estimated",
+    "updated": "2026-08-26",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1815,7 +2077,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06527365",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06527365",
+   "nct_id": {
+    "nct": "NCT06527365",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08",
+    "pcd_type": "estimated",
+    "updated": "2025-11-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1878,7 +2147,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06052059",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06052059",
+   "nct_id": {
+    "nct": "NCT06052059",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08-01",
+    "pcd_type": "estimated",
+    "updated": "2026-03-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -1899,7 +2175,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05669482",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05669482",
+   "nct_id": {
+    "nct": "NCT05669482",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08-31",
+    "pcd_type": "estimated",
+    "updated": "2025-08-29",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2161,7 +2444,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -2229,7 +2512,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -2354,9 +2637,9 @@ export default [
   "type": "Conference",
   "ta": "Oncology, lung",
   "cap": "",
-  "st": "Scheduled",
+  "st": "In progress",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -2405,7 +2688,7 @@ export default [
   "id": "readout_agmb_2026-09-15",
   "t": "AGMB",
   "company": "Agomab Therapeutics NV",
-  "d": "2026-09-15",
+  "d": "2026-06-15",
   "dp": "month",
   "name": "AGMB-129",
   "type": "Readout",
@@ -2415,12 +2698,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05843578",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05843578",
+   "nct_id": {
+    "nct": "NCT05843578",
+    "status": "completed",
+    "pcd": "2026-06-20",
+    "pcd_type": "actual",
+    "updated": "2026-07-08",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-09"
+  "dm": "2026-06"
  },
  {
   "id": "readout_alec_2026-09-15",
@@ -2436,7 +2726,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06079190",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06079190",
+   "nct_id": {
+    "nct": "NCT06079190",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-30",
+    "pcd_type": "estimated",
+    "updated": "2025-11-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2457,7 +2754,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06920901",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06920901",
+   "nct_id": {
+    "nct": "NCT06920901",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2026-02-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2478,7 +2782,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05643534",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05643534",
+   "nct_id": {
+    "nct": "NCT05643534",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-01",
+    "pcd_type": "estimated",
+    "updated": "2026-06-02",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2510,7 +2821,7 @@ export default [
   "id": "readout_arvn_2026-09-15",
   "t": "ARVN",
   "company": "Arvinas, Inc.",
-  "d": "2026-09-15",
+  "d": "2027-03-15",
   "dp": "month",
   "name": "ARV-471",
   "type": "Readout",
@@ -2520,12 +2831,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05548127",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05548127",
+   "nct_id": {
+    "nct": "NCT05548127",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03-24",
+    "pcd_type": "estimated",
+    "updated": "2026-08-31",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-09"
+  "dm": "2027-03"
  },
  {
   "id": "readout_avir_2026-09-15",
@@ -2541,7 +2859,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06868264",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06868264",
+   "nct_id": {
+    "nct": "NCT06868264",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2025-12-03",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2562,7 +2887,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07281495",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07281495",
+   "nct_id": {
+    "nct": "NCT07281495",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2026-03-19",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2604,7 +2936,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04756726",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04756726",
+   "nct_id": {
+    "nct": "NCT04756726",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-30",
+    "pcd_type": "estimated",
+    "updated": "2026-03-24",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2625,7 +2964,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06381141",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06381141",
+   "nct_id": {
+    "nct": "NCT06381141",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2025-09-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2688,7 +3034,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT02138734",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT02138734",
+   "nct_id": {
+    "nct": "NCT02138734",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-30",
+    "pcd_type": "estimated",
+    "updated": "2026-03-26",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2699,7 +3052,7 @@ export default [
   "id": "readout_ilmn_2026-09-15",
   "t": "ILMN",
   "company": "Illumina, Inc.",
-  "d": "2026-09-15",
+  "d": "2026-10-15",
   "dp": "month",
   "name": "18F-MFBG",
   "type": "Readout",
@@ -2709,12 +3062,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07176286",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07176286",
+   "nct_id": {
+    "nct": "NCT07176286",
+    "status": "recruiting",
+    "pcd": "2026-10-30",
+    "pcd_type": "estimated",
+    "updated": "2026-06-29",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-09"
+  "dm": "2026-10"
  },
  {
   "id": "readout_immp_2026-09-15",
@@ -2730,7 +3090,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03252938",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03252938",
+   "nct_id": {
+    "nct": "NCT03252938",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-30",
+    "pcd_type": "estimated",
+    "updated": "2026-02-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2751,7 +3118,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04562870",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04562870",
+   "nct_id": {
+    "nct": "NCT04562870",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2026-06-30",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2772,7 +3146,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06768671",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06768671",
+   "nct_id": {
+    "nct": "NCT06768671",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-28",
+    "pcd_type": "estimated",
+    "updated": "2026-05-01",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2814,7 +3195,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05499013",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05499013",
+   "nct_id": {
+    "nct": "NCT05499013",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2025-12-17",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2835,7 +3223,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT02736656",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT02736656",
+   "nct_id": {
+    "nct": "NCT02736656",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2026-07-13",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -2898,7 +3293,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06405633",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06405633",
+   "nct_id": {
+    "nct": "NCT06405633",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09",
+    "pcd_type": "estimated",
+    "updated": "2026-04-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -3062,7 +3464,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -3139,7 +3541,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -3169,11 +3571,11 @@ export default [
   "company": "Biofrontera Inc.",
   "d": "2026-09-28",
   "dp": "day",
-  "name": "Ameluz (aminolevulinic acid hydrochloride) topical gel in combination with the RhodoLED red-light lamp series",
+  "name": "Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light - sBCC",
   "type": "PDUFA",
   "ta": "",
   "cap": "Nano",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/BFRI",
   "ua": "2026-09-11T15:58:54Z",
   "_d": {
@@ -3186,7 +3588,7 @@ export default [
     "updated": "2022-11-03",
     "slip": null
    },
-   "indication": "Basal cell carcinoma",
+   "indication": "Superficial basal cell carcinoma (sBCC), photodynamic therapy with the RhodoLED lamp series",
    "market_cap_usd": 21684444.14,
    "cash_runway_months": 8.1,
    "days_to_decision": 80,
@@ -3198,8 +3600,16 @@ export default [
     "t30": 0.0,
     "t7": -1.05,
     "t1": 0.0
-   }
-  }
+   },
+   "source": "Biofrontera 8-K 2026-09-14 (EX-99.1); FDA action date from openFDA NDA208081 SUPPL-40 (AP 2026-09-09)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm",
+   "review": "The FDA approved Ameluz photodynamic therapy with red light for superficial basal cell carcinoma, making it the first photodynamic therapy approved in the United States to treat a skin cancer. The FDA's action date is September 9, 2026 (openFDA records the efficacy supplement as approved that day), 19 days before the September 28 goal date Biofrontera had stated, but Biofrontera did not announce it until September 14 -- so any share-price move dates from the announcement, not from the FDA's action.",
+   "goal_source": "Biofrontera 8-K 2026-05-14 (EX-99.1)",
+   "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1858685/000149315226022875/ex99-1.htm",
+   "announced": "2026-09-14"
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-09"
  },
  {
   "id": "conf_easd_2026-09-28",
@@ -3213,7 +3623,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -3263,7 +3673,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -3684,7 +4094,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -3705,7 +4115,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -3726,7 +4136,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -3755,7 +4165,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -3776,7 +4186,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -3805,7 +4215,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -3826,7 +4236,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -3953,7 +4363,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -3974,7 +4384,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -4003,7 +4413,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -4024,7 +4434,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -4045,7 +4455,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -4066,7 +4476,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -4087,7 +4497,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -4108,7 +4518,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -4137,7 +4547,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -4158,7 +4568,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -4179,7 +4589,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -4200,7 +4610,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -4229,7 +4639,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -4250,7 +4660,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -4565,25 +4975,27 @@ export default [
   "company": "Scholar Rock Holding Corporation",
   "d": "2026-09-30",
   "dp": "day",
-  "name": "Apitegromab - (SAPPHIRE)",
+  "name": "ISEMBYLD (apitegromab-mstn) - (SAPPHIRE)",
   "type": "PDUFA",
   "ta": "CNS/Neurology",
   "cap": "Mid",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "https://investors.scholarrock.com/news-releases/news-release-details/scholar-rock-announces-fda-review-apitegromab-biologics-license",
   "ua": "2026-09-11T15:58:54Z",
   "_d": {
    "nct_id": null,
-   "indication": "Spinal muscular atrophy (SMA), children and adults (BLA)",
+   "indication": "Spinal muscular atrophy (SMA), adults and children 2 years and older already on an SMN2-targeted treatment",
    "market_cap_usd": 6779786648.940001,
    "bla": "BLA (apitegromab), submitted March 2026",
-   "review": "Scholar Rock resubmitted the apitegromab BLA on March 31, 2026 after a September 2025 CRL tied to a third-party fill-finish facility, not to the drug. The FDA accepted the resubmission with a September 30, 2026 PDUFA action date, and the company notes approval may be granted at any time up to it.",
+   "review": "The FDA approved ISEMBYLD (apitegromab-mstn) on September 11, 2026, 19 days before the September 30 goal date Scholar Rock had stated. It is the first muscle-targeted treatment for SMA, approved for adults and children 2 years and older who are already receiving an SMN2-targeted therapy. The BLA had been resubmitted on March 31, 2026 after a September 2025 CRL tied to a third-party fill-finish facility rather than to the drug itself.",
    "sponsor_caveat": "Scholar Rock will continue to collaborate closely with the FDA and under their guidance, will remove Catalent Indiana from the apitegromab BLA. FDA review of the apitegromab BLA will progress solely with the second fill-finish facility.",
-   "source": "Scholar Rock 8-K 2026-05-07 (EX-99.1)",
+   "source": "Scholar Rock 8-K 2026-09-14 (EX-99.1)",
    "source_url_2": "https://www.businesswire.com/news/home/20260821050366/en/Scholar-Rock-Provides-Update-on-Global-Apitegromab-Regulatory-Progress-Across-U.S.-Europe-and-Japan",
    "prior_decision": "/fda-decision/SRRK-2025-09-23",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465926056655/srrk-20260507xex99d1.htm"
-  }
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-1.htm"
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-11"
  },
  {
   "id": "readout_sttk_2026-09-30",
@@ -4887,7 +5299,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06335173",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06335173",
+   "nct_id": {
+    "nct": "NCT06335173",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2025-10-23",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -4908,7 +5327,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06510816",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06510816",
+   "nct_id": {
+    "nct": "NCT06510816",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-31",
+    "pcd_type": "estimated",
+    "updated": "2026-04-28",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -4950,7 +5376,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06455202",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06455202",
+   "nct_id": {
+    "nct": "NCT06455202",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2026-03-24",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -4971,7 +5404,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06738485",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06738485",
+   "nct_id": {
+    "nct": "NCT06738485",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-26",
+    "pcd_type": "estimated",
+    "updated": "2026-04-22",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -4992,7 +5432,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06683742",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06683742",
+   "nct_id": {
+    "nct": "NCT06683742",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2026-09-02",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5003,7 +5450,7 @@ export default [
   "id": "readout_huma_2026-10-15",
   "t": "HUMA",
   "company": "Humacyte, Inc.",
-  "d": "2026-10-15",
+  "d": "2027-06-15",
   "dp": "month",
   "name": "Human Acellular Vessel",
   "type": "Readout",
@@ -5013,18 +5460,25 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05908084",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05908084",
+   "nct_id": {
+    "nct": "NCT05908084",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06",
+    "pcd_type": "estimated",
+    "updated": "2026-06-23",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-10"
+  "dm": "2027-06"
  },
  {
   "id": "readout_immp_2026-10-15",
   "t": "IMMP",
   "company": "IMMUTEP Ltd",
-  "d": "2026-10-15",
+  "d": "2026-04-15",
   "dp": "month",
   "name": "eftilagimod alfa",
   "type": "Readout",
@@ -5034,12 +5488,20 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05747794",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05747794",
+   "nct_id": {
+    "nct": "NCT05747794",
+    "status": "terminated",
+    "pcd": "2026-04-30",
+    "pcd_type": "actual",
+    "updated": "2026-07-29",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-09-14, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
-  "dm": "2026-10"
+  "dm": "2026-04"
  },
  {
   "id": "readout_imvt_2026-10-15",
@@ -5055,7 +5517,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06980805",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06980805",
+   "nct_id": {
+    "nct": "NCT06980805",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2026-08-27",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5066,7 +5535,7 @@ export default [
   "id": "readout_inbx_2026-10-15",
   "t": "INBX",
   "company": "Inhibrx Biosciences, Inc.",
-  "d": "2026-10-15",
+  "d": "2033-07-15",
   "dp": "month",
   "name": "INBRX-106",
   "type": "Readout",
@@ -5076,12 +5545,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04198766",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04198766",
+   "nct_id": {
+    "nct": "NCT04198766",
+    "status": "recruiting",
+    "pcd": "2033-07",
+    "pcd_type": "estimated",
+    "updated": "2026-07-28",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-10"
+  "dm": "2033-07"
  },
  {
   "id": "readout_incy_2026-10-15",
@@ -5097,7 +5573,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06516952",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06516952",
+   "nct_id": {
+    "nct": "NCT06516952",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-19",
+    "pcd_type": "estimated",
+    "updated": "2026-05-27",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5108,7 +5591,7 @@ export default [
   "id": "readout_jspr_2026-10-15",
   "t": "JSPR",
   "company": "Jasper Therapeutics, Inc.",
-  "d": "2026-10-15",
+  "d": "2026-07-15",
   "dp": "month",
   "name": "Briquilimab",
   "type": "Readout",
@@ -5118,12 +5601,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06162728",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06162728",
+   "nct_id": {
+    "nct": "NCT06162728",
+    "status": "completed",
+    "pcd": "2026-07-08",
+    "pcd_type": "actual",
+    "updated": "2026-08-04",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-10"
+  "dm": "2026-07"
  },
  {
   "id": "readout_mrk_2026-10-15",
@@ -5152,7 +5642,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -5160,7 +5650,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05172726",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05172726",
+   "nct_id": {
+    "nct": "NCT05172726",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2026-04-16",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5202,7 +5699,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04791839",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04791839",
+   "nct_id": {
+    "nct": "NCT04791839",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-31",
+    "pcd_type": "estimated",
+    "updated": "2026-06-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5241,7 +5745,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06772597",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06772597",
+   "nct_id": {
+    "nct": "NCT06772597",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-31",
+    "pcd_type": "estimated",
+    "updated": "2026-02-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5262,7 +5773,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03368742",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03368742",
+   "nct_id": {
+    "nct": "NCT03368742",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-15",
+    "pcd_type": "estimated",
+    "updated": "2026-08-07",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5283,7 +5801,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT02843035",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT02843035",
+   "nct_id": {
+    "nct": "NCT02843035",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-30",
+    "pcd_type": "estimated",
+    "updated": "2026-07-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5304,7 +5829,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03992430",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03992430",
+   "nct_id": {
+    "nct": "NCT03992430",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-31",
+    "pcd_type": "estimated",
+    "updated": "2026-02-25",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5396,16 +5928,16 @@ export default [
   "company": "Pharming Group N.V.",
   "d": "2026-10-24",
   "dp": "day",
-  "name": "Leniolisib",
+  "name": "Joenja (leniolisib) - paediatric APDS",
   "type": "PDUFA",
   "ta": "",
   "cap": "Small",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/PHAR",
   "ua": "2026-09-11T15:58:54Z",
   "_d": {
    "nct_id": null,
-   "indication": "APDS",
+   "indication": "Activated PI3K-delta syndrome (APDS) in children (resubmission covering patients weighing 27 kg or more)",
    "market_cap_usd": 764757629.8199999,
    "cash_runway_months": null,
    "days_to_decision": 106,
@@ -5417,8 +5949,15 @@ export default [
     "t30": 0.36,
     "t7": 0.08,
     "t1": 0.0
-   }
-  }
+   },
+   "source": "Pharming 6-K 2026-09-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1828316/000182831626000037/fdaapprovespharmingsjoenja.htm",
+   "review": "The FDA approved Joenja (leniolisib) for children with APDS on September 11, 2026, 43 days before the October 24 goal date Pharming had stated. The application was a resubmission adding data the FDA had requested on analytical methods for production batch testing, and covers paediatric patients weighing 27 kg or more; Pharming has said a separate sNDA for lower doses in patients under 27 kg is planned.",
+   "goal_source": "Pharming 6-K 2026-06-04",
+   "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1828316/000182831626000031/pharmingannouncesusfdaacce.htm"
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-11"
  },
  {
   "id": "pdufa_gsk_2026-10-26",
@@ -5622,7 +6161,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06395948",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06395948",
+   "nct_id": {
+    "nct": "NCT06395948",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2026-09-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5643,7 +6189,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05607004",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05607004",
+   "nct_id": {
+    "nct": "NCT05607004",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2026-07-06",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5664,7 +6217,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05130827",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05130827",
+   "nct_id": {
+    "nct": "NCT05130827",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2025-12-23",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5686,7 +6246,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05879744",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05879744",
+   "nct_id": {
+    "nct": "NCT05879744",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2024-04-30",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5707,7 +6274,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06106308",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06106308",
+   "nct_id": {
+    "nct": "NCT06106308",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2026-06-15",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5718,7 +6292,7 @@ export default [
   "id": "readout_eltx_2026-11-15",
   "t": "ELTX",
   "company": "Elicio Therapeutics, Inc.",
-  "d": "2026-11-15",
+  "d": "2026-04-15",
   "dp": "month",
   "name": "ELI-002 7P",
   "type": "Readout",
@@ -5728,12 +6302,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05726864",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05726864",
+   "nct_id": {
+    "nct": "NCT05726864",
+    "status": "active_not_recruiting",
+    "pcd": "2026-04-20",
+    "pcd_type": "actual",
+    "updated": "2026-07-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-11"
+  "dm": "2026-04"
  },
  {
   "id": "readout_eras_2026-11-15",
@@ -5749,7 +6330,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04866134",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04866134",
+   "nct_id": {
+    "nct": "NCT04866134",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11-01",
+    "pcd_type": "estimated",
+    "updated": "2026-06-17",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5791,7 +6379,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05134441",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05134441",
+   "nct_id": {
+    "nct": "NCT05134441",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2026-02-20",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5802,7 +6397,7 @@ export default [
   "id": "readout_iova_2026-11-15",
   "t": "IOVA",
   "company": "Iovance Biotherapeutics, Inc.",
-  "d": "2026-11-15",
+  "d": "2027-11-15",
   "dp": "month",
   "name": "Lifileucel plus Pembrolizumab",
   "type": "Readout",
@@ -5812,12 +6407,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05640193",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05640193",
+   "nct_id": {
+    "nct": "NCT05640193",
+    "status": "active_not_recruiting",
+    "pcd": "2027-11",
+    "pcd_type": "estimated",
+    "updated": "2026-09-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-11"
+  "dm": "2027-11"
  },
  {
   "id": "pdufa_nvcr_2026-11-15",
@@ -5896,7 +6498,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07216079",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07216079",
+   "nct_id": {
+    "nct": "NCT07216079",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11-30",
+    "pcd_type": "estimated",
+    "updated": "2025-11-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5938,7 +6547,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07142811",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07142811",
+   "nct_id": {
+    "nct": "NCT07142811",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2026-01-15",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -5949,7 +6565,7 @@ export default [
   "id": "readout_vxrt_2026-11-15",
   "t": "VXRT",
   "company": "Vaxart, Inc.",
-  "d": "2026-11-15",
+  "d": "2027-05-15",
   "dp": "month",
   "name": "VXA-COV2-3.3",
   "type": "Readout",
@@ -5959,12 +6575,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06672055",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06672055",
+   "nct_id": {
+    "nct": "NCT06672055",
+    "status": "active_not_recruiting",
+    "pcd": "2027-05",
+    "pcd_type": "estimated",
+    "updated": "2026-06-22",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-11"
+  "dm": "2027-05"
  },
  {
   "id": "readout_zura_2026-11-15",
@@ -5980,7 +6603,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06993610",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06993610",
+   "nct_id": {
+    "nct": "NCT06993610",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11",
+    "pcd_type": "estimated",
+    "updated": "2026-06-26",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6140,17 +6770,17 @@ export default [
   "t": "BAYRY",
   "company": "Bayer",
   "d": "2026-11-30",
-  "dp": "day",
-  "name": "Sevabertinib (BAY 2927088)",
+  "dp": "month",
+  "name": "HYRNUO (sevabertinib) - HER2-mutant NSCLC",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/BAYRY",
   "ua": "2026-09-11T15:58:54Z",
   "_d": {
    "nct_id": null,
-   "indication": "HER2-mutant NSCLC, 1L (sBLA, Priority Review)",
+   "indication": "Locally advanced or metastatic non-squamous NSCLC with HER2 (ERBB2) tyrosine kinase domain activating mutations (accelerated approval)",
    "market_cap_usd": 56744810240.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
@@ -6162,8 +6792,15 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
-  }
+   },
+   "source": "FDA approval letter, NDA 219972/S-001 (2026-09-09)",
+   "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf",
+   "review": "The FDA granted accelerated approval to HYRNUO (sevabertinib) on September 9, 2026 for adults with locally advanced or metastatic non-squamous NSCLC whose tumours carry HER2 (ERBB2) tyrosine kinase domain activating mutations, as detected by an FDA-authorised test. Sevabertinib's original NDA was approved on November 19, 2025, so this decision expands an already-marketed drug rather than introducing a new one. We do not state how early the decision was, because the goal date we had carried was never sourced.",
+   "date_note": "Our published goal date of November 30, 2026 was never sourced. No Bayer filing or release states it, and Bayer is not an SEC registrant so EDGAR cannot confirm one; the only EDGAR hits for sevabertinib plus 'target action date' belong to Nuvalent discussing a competitor. The FDA's letter shows the sNDA was received March 16, 2026, which under priority review lands in September rather than November. Day withdrawn 2026-09-14; the decision itself is sourced to the FDA's own approval letter."
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-09",
+  "dm": "2026-11"
  },
  {
   "id": "pdufa_cogt_2026-11-30",
@@ -6362,7 +6999,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05077800",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05077800",
+   "nct_id": {
+    "nct": "NCT05077800",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-31",
+    "pcd_type": "estimated",
+    "updated": "2026-09-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6383,7 +7027,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05971251",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05971251",
+   "nct_id": {
+    "nct": "NCT05971251",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-31",
+    "pcd_type": "estimated",
+    "updated": "2025-09-25",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6404,7 +7055,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05205330",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05205330",
+   "nct_id": {
+    "nct": "NCT05205330",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2025-10-28",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6415,7 +7073,7 @@ export default [
   "id": "readout_apge_2026-12-15",
   "t": "APGE",
   "company": "Apogee Therapeutics, Inc.",
-  "d": "2026-12-15",
+  "d": "2026-08-15",
   "dp": "month",
   "name": "APG777",
   "type": "Readout",
@@ -6425,12 +7083,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07027527",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07027527",
+   "nct_id": {
+    "nct": "NCT07027527",
+    "status": "active_not_recruiting",
+    "pcd": "2026-08-29",
+    "pcd_type": "actual",
+    "updated": "2026-09-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-12"
+  "dm": "2026-08"
  },
  {
   "id": "readout_arvn_2026-12-15",
@@ -6446,7 +7111,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05909397",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05909397",
+   "nct_id": {
+    "nct": "NCT05909397",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-30",
+    "pcd_type": "estimated",
+    "updated": "2026-02-06",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6467,7 +7139,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07037277",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07037277",
+   "nct_id": {
+    "nct": "NCT07037277",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-06-26",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6488,7 +7167,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05925608",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05925608",
+   "nct_id": {
+    "nct": "NCT05925608",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2025-12-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6509,7 +7195,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05885464",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05885464",
+   "nct_id": {
+    "nct": "NCT05885464",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2025-01-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6572,7 +7265,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06752668",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06752668",
+   "nct_id": {
+    "nct": "NCT06752668",
+    "status": "recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-04-22",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6593,7 +7293,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03604198",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03604198",
+   "nct_id": {
+    "nct": "NCT03604198",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-08-21",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6614,7 +7321,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05383196",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05383196",
+   "nct_id": {
+    "nct": "NCT05383196",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-15",
+    "pcd_type": "estimated",
+    "updated": "2026-02-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6656,7 +7370,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06274801",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06274801",
+   "nct_id": {
+    "nct": "NCT06274801",
+    "status": "recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-07-28",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6698,7 +7419,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05649748",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05649748",
+   "nct_id": {
+    "nct": "NCT05649748",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-31",
+    "pcd_type": "estimated",
+    "updated": "2026-08-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6730,7 +7458,7 @@ export default [
   "id": "readout_ixhl_2026-12-15",
   "t": "IXHL",
   "company": "Incannex Healthcare Inc.",
-  "d": "2026-12-15",
+  "d": "2025-05-15",
   "dp": "month",
   "name": "IHL-42X Low Dose",
   "type": "Readout",
@@ -6740,12 +7468,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06146101",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06146101",
+   "nct_id": {
+    "nct": "NCT06146101",
+    "status": "completed",
+    "pcd": "2025-05-20",
+    "pcd_type": "actual",
+    "updated": "2026-07-23",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-12"
+  "dm": "2025-05"
  },
  {
   "id": "readout_jazz_2026-12-15",
@@ -6782,7 +7517,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04442022",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04442022",
+   "nct_id": {
+    "nct": "NCT04442022",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-06-30",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6803,7 +7545,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06109181",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06109181",
+   "nct_id": {
+    "nct": "NCT06109181",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2025-11-07",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6824,7 +7573,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06972264",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06972264",
+   "nct_id": {
+    "nct": "NCT06972264",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-02-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6845,7 +7601,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05500222",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05500222",
+   "nct_id": {
+    "nct": "NCT05500222",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-07-06",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6866,7 +7629,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05464784",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05464784",
+   "nct_id": {
+    "nct": "NCT05464784",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-31",
+    "pcd_type": "estimated",
+    "updated": "2026-02-03",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6950,7 +7720,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03377387",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03377387",
+   "nct_id": {
+    "nct": "NCT03377387",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-04-13",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -6982,7 +7759,7 @@ export default [
   "id": "readout_phat_2026-12-15",
   "t": "PHAT",
   "company": "Phathom Pharmaceuticals, Inc.",
-  "d": "2026-12-15",
+  "d": "2026-10-15",
   "dp": "month",
   "name": "Vonoprazan",
   "type": "Readout",
@@ -6992,12 +7769,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06851559",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06851559",
+   "nct_id": {
+    "nct": "NCT06851559",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2026-06-25",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2026-12"
+  "dm": "2026-10"
  },
  {
   "id": "readout_rnac_2026-12-15",
@@ -7013,7 +7797,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06038474",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06038474",
+   "nct_id": {
+    "nct": "NCT06038474",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-01",
+    "pcd_type": "estimated",
+    "updated": "2026-03-23",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -7055,7 +7846,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06500702",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06500702",
+   "nct_id": {
+    "nct": "NCT06500702",
+    "status": "recruiting",
+    "pcd": "2026-12-23",
+    "pcd_type": "estimated",
+    "updated": "2026-07-16",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -7076,7 +7874,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03474770",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03474770",
+   "nct_id": {
+    "nct": "NCT03474770",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-30",
+    "pcd_type": "estimated",
+    "updated": "2022-08-29",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -7097,7 +7902,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07371650",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07371650",
+   "nct_id": {
+    "nct": "NCT07371650",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12",
+    "pcd_type": "estimated",
+    "updated": "2026-03-26",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -7118,7 +7930,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06903338",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06903338",
+   "nct_id": {
+    "nct": "NCT06903338",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-31",
+    "pcd_type": "estimated",
+    "updated": "2026-04-07",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -7160,7 +7979,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05297903",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05297903",
+   "nct_id": {
+    "nct": "NCT05297903",
+    "status": "active_not_recruiting",
+    "pcd": "2026-12-02",
+    "pcd_type": "estimated",
+    "updated": "2025-09-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -7611,7 +8437,14 @@ export default [
   "url": "https://www.sec.gov/Archives/edgar/data/0001108205/000110820526000061/cris-20260331.htm",
   "ua": "2026-08-03T20:23:53Z",
   "_d": {
-   "nct_id": "NCT07271667",
+   "nct_id": {
+    "nct": "NCT07271667",
+    "status": "recruiting",
+    "pcd": "2027-11",
+    "pcd_type": "estimated",
+    "updated": "2026-06-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "company guidance (SEC filing)",
@@ -8042,7 +8875,14 @@ export default [
   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm",
   "ua": "2026-08-03T20:23:53Z",
   "_d": {
-   "nct_id": "NCT04588922",
+   "nct_id": {
+    "nct": "NCT04588922",
+    "status": "recruiting",
+    "pcd": "2026-12-30",
+    "pcd_type": "estimated",
+    "updated": "2026-09-02",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "company guidance (SEC filing)",
@@ -8070,7 +8910,14 @@ export default [
   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm",
   "ua": "2026-08-03T20:24:22Z",
   "_d": {
-   "nct_id": "NCT04229979",
+   "nct_id": {
+    "nct": "NCT04229979",
+    "status": "active_not_recruiting",
+    "pcd": "2025-12",
+    "pcd_type": "estimated",
+    "updated": "2025-09-26",
+    "ongoing": true
+   },
    "indication": "Acute myeloid leukemia, maintenance in second complete remission (CR2)",
    "market_cap_usd": null,
    "source": "company guidance (SEC filing)",
@@ -8266,7 +9113,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04743505",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04743505",
+   "nct_id": {
+    "nct": "NCT04743505",
+    "status": "active_not_recruiting",
+    "pcd": "2027-01-31",
+    "pcd_type": "estimated",
+    "updated": "2026-01-16",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8308,7 +9162,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03152318",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03152318",
+   "nct_id": {
+    "nct": "NCT03152318",
+    "status": "active_not_recruiting",
+    "pcd": "2027-01",
+    "pcd_type": "estimated",
+    "updated": "2026-03-02",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8329,7 +9190,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06328738",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06328738",
+   "nct_id": {
+    "nct": "NCT06328738",
+    "status": "active_not_recruiting",
+    "pcd": "2027-01",
+    "pcd_type": "estimated",
+    "updated": "2025-11-17",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8392,7 +9260,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05987332",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05987332",
+   "nct_id": {
+    "nct": "NCT05987332",
+    "status": "active_not_recruiting",
+    "pcd": "2027-01-15",
+    "pcd_type": "estimated",
+    "updated": "2026-02-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8476,7 +9351,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04957485",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04957485",
+   "nct_id": {
+    "nct": "NCT04957485",
+    "status": "active_not_recruiting",
+    "pcd": "2027-01-01",
+    "pcd_type": "estimated",
+    "updated": "2026-09-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8495,7 +9377,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -8559,7 +9441,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -8623,7 +9505,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -8667,7 +9549,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06152172",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06152172",
+   "nct_id": {
+    "nct": "NCT06152172",
+    "status": "active_not_recruiting",
+    "pcd": "2027-02",
+    "pcd_type": "estimated",
+    "updated": "2026-02-16",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8689,7 +9578,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06641076",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06641076",
+   "nct_id": {
+    "nct": "NCT06641076",
+    "status": "active_not_recruiting",
+    "pcd": "2027-02-04",
+    "pcd_type": "estimated",
+    "updated": "2026-08-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8799,7 +9695,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04278781",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04278781",
+   "nct_id": {
+    "nct": "NCT04278781",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03",
+    "pcd_type": "estimated",
+    "updated": "2026-04-20",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8820,7 +9723,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03688178",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03688178",
+   "nct_id": {
+    "nct": "NCT03688178",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03-31",
+    "pcd_type": "estimated",
+    "updated": "2026-05-20",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8862,7 +9772,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06602193",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06602193",
+   "nct_id": {
+    "nct": "NCT06602193",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03",
+    "pcd_type": "estimated",
+    "updated": "2026-05-26",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8925,7 +9842,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05143970",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05143970",
+   "nct_id": {
+    "nct": "NCT05143970",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03",
+    "pcd_type": "estimated",
+    "updated": "2026-06-17",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8946,7 +9870,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04951219",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04951219",
+   "nct_id": {
+    "nct": "NCT04951219",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03",
+    "pcd_type": "estimated",
+    "updated": "2026-05-22",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -8967,7 +9898,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06334432",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06334432",
+   "nct_id": {
+    "nct": "NCT06334432",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03",
+    "pcd_type": "estimated",
+    "updated": "2026-01-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9009,7 +9947,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04798235",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04798235",
+   "nct_id": {
+    "nct": "NCT04798235",
+    "status": "active_not_recruiting",
+    "pcd": "2027-03-12",
+    "pcd_type": "estimated",
+    "updated": "2023-05-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9028,7 +9973,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -9184,7 +10129,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -9205,7 +10150,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -9258,7 +10203,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03899987",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03899987",
+   "nct_id": {
+    "nct": "NCT03899987",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04-30",
+    "pcd_type": "estimated",
+    "updated": "2026-06-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9269,7 +10221,7 @@ export default [
   "id": "readout_cgtx_2027-04-15",
   "t": "CGTX",
   "company": "Cognition Therapeutics Inc",
-  "d": "2027-04-15",
+  "d": "2027-05-15",
   "dp": "month",
   "name": "Dextromethorphan-Bupropion",
   "type": "Readout",
@@ -9279,12 +10231,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05531656",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05531656",
+   "nct_id": {
+    "nct": "NCT05531656",
+    "status": "active_not_recruiting",
+    "pcd": "2027-05-31",
+    "pcd_type": "estimated",
+    "updated": "2026-08-06",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2027-04"
+  "dm": "2027-05"
  },
  {
   "id": "readout_cldx_2027-04-15",
@@ -9300,7 +10259,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05349890",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05349890",
+   "nct_id": {
+    "nct": "NCT05349890",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04-15",
+    "pcd_type": "estimated",
+    "updated": "2026-04-21",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9321,7 +10287,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05907954",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05907954",
+   "nct_id": {
+    "nct": "NCT05907954",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04-30",
+    "pcd_type": "estimated",
+    "updated": "2026-03-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9342,7 +10315,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03449108",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03449108",
+   "nct_id": {
+    "nct": "NCT03449108",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04-30",
+    "pcd_type": "estimated",
+    "updated": "2026-05-19",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9363,7 +10343,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT02343042",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT02343042",
+   "nct_id": {
+    "nct": "NCT02343042",
+    "status": "recruiting",
+    "pcd": "2027-04",
+    "pcd_type": "estimated",
+    "updated": "2026-07-14",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9384,7 +10371,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06384976",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06384976",
+   "nct_id": {
+    "nct": "NCT06384976",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04",
+    "pcd_type": "estimated",
+    "updated": "2025-01-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9405,7 +10399,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04057898",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04057898",
+   "nct_id": {
+    "nct": "NCT04057898",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04",
+    "pcd_type": "estimated",
+    "updated": "2026-03-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9426,7 +10427,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03589339",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03589339",
+   "nct_id": {
+    "nct": "NCT03589339",
+    "status": "active_not_recruiting",
+    "pcd": "2027-04-30",
+    "pcd_type": "estimated",
+    "updated": "2025-10-23",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9578,7 +10586,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -9599,7 +10607,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -9639,7 +10647,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -9683,7 +10691,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04483440",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04483440",
+   "nct_id": {
+    "nct": "NCT04483440",
+    "status": "active_not_recruiting",
+    "pcd": "2027-05-26",
+    "pcd_type": "estimated",
+    "updated": "2025-05-20",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9704,7 +10719,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06531941",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06531941",
+   "nct_id": {
+    "nct": "NCT06531941",
+    "status": "active_not_recruiting",
+    "pcd": "2027-05-27",
+    "pcd_type": "estimated",
+    "updated": "2025-10-24",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9746,7 +10768,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06188702",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06188702",
+   "nct_id": {
+    "nct": "NCT06188702",
+    "status": "active_not_recruiting",
+    "pcd": "2027-05-01",
+    "pcd_type": "estimated",
+    "updated": "2026-08-21",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9767,7 +10796,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06874621",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06874621",
+   "nct_id": {
+    "nct": "NCT06874621",
+    "status": "active_not_recruiting",
+    "pcd": "2027-05",
+    "pcd_type": "estimated",
+    "updated": "2025-11-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9786,7 +10822,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -9807,7 +10843,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -9828,7 +10864,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -9851,7 +10887,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06329401",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06329401",
+   "nct_id": {
+    "nct": "NCT06329401",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06",
+    "pcd_type": "estimated",
+    "updated": "2026-07-01",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9872,7 +10915,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05949593",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05949593",
+   "nct_id": {
+    "nct": "NCT05949593",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06-30",
+    "pcd_type": "estimated",
+    "updated": "2026-01-05",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9893,7 +10943,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06864988",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06864988",
+   "nct_id": {
+    "nct": "NCT06864988",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06",
+    "pcd_type": "estimated",
+    "updated": "2026-05-28",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9904,7 +10961,7 @@ export default [
   "id": "readout_fth_2027-06-15",
   "t": "FTH",
   "company": "Faeth Therapeutics, Inc.",
-  "d": "2027-06-15",
+  "d": "2026-06-15",
   "dp": "month",
   "name": "SNS-101",
   "type": "Readout",
@@ -9914,12 +10971,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05864144",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05864144",
+   "nct_id": {
+    "nct": "NCT05864144",
+    "status": "completed",
+    "pcd": "2026-06-02",
+    "pcd_type": "actual",
+    "updated": "2026-08-31",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2027-06"
+  "dm": "2026-06"
  },
  {
   "id": "readout_immp_2027-06-15",
@@ -9935,7 +10999,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06726265",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06726265",
+   "nct_id": {
+    "nct": "NCT06726265",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06",
+    "pcd_type": "estimated",
+    "updated": "2026-03-17",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -9956,7 +11027,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05651022",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05651022",
+   "nct_id": {
+    "nct": "NCT05651022",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06-30",
+    "pcd_type": "estimated",
+    "updated": "2026-01-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10019,7 +11097,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07217015",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07217015",
+   "nct_id": {
+    "nct": "NCT07217015",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06",
+    "pcd_type": "estimated",
+    "updated": "2026-06-29",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10040,7 +11125,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06475495",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06475495",
+   "nct_id": {
+    "nct": "NCT06475495",
+    "status": "active_not_recruiting",
+    "pcd": "2027-06",
+    "pcd_type": "estimated",
+    "updated": "2026-03-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10144,7 +11236,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -10165,7 +11257,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-11T16:01:43Z",
+  "ua": "2026-09-14T15:32:17Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -10215,7 +11307,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07614776",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07614776",
+   "nct_id": {
+    "nct": "NCT07614776",
+    "status": "recruiting",
+    "pcd": "2027-07-31",
+    "pcd_type": "estimated",
+    "updated": "2026-09-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10257,7 +11356,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06325566",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06325566",
+   "nct_id": {
+    "nct": "NCT06325566",
+    "status": "active_not_recruiting",
+    "pcd": "2027-07",
+    "pcd_type": "estimated",
+    "updated": "2026-06-15",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10278,7 +11384,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07280377",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07280377",
+   "nct_id": {
+    "nct": "NCT07280377",
+    "status": "active_not_recruiting",
+    "pcd": "2027-07-30",
+    "pcd_type": "estimated",
+    "updated": "2026-05-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10320,7 +11433,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07104500",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07104500",
+   "nct_id": {
+    "nct": "NCT07104500",
+    "status": "active_not_recruiting",
+    "pcd": "2027-07-01",
+    "pcd_type": "estimated",
+    "updated": "2025-11-20",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10341,7 +11461,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06265220",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06265220",
+   "nct_id": {
+    "nct": "NCT06265220",
+    "status": "active_not_recruiting",
+    "pcd": "2027-08",
+    "pcd_type": "estimated",
+    "updated": "2025-12-03",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10362,7 +11489,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05081609",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05081609",
+   "nct_id": {
+    "nct": "NCT05081609",
+    "status": "active_not_recruiting",
+    "pcd": "2027-08",
+    "pcd_type": "estimated",
+    "updated": "2026-09-10",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10404,7 +11538,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05764954",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05764954",
+   "nct_id": {
+    "nct": "NCT05764954",
+    "status": "active_not_recruiting",
+    "pcd": "2027-08",
+    "pcd_type": "estimated",
+    "updated": "2026-05-27",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10488,7 +11629,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05608044",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05608044",
+   "nct_id": {
+    "nct": "NCT05608044",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2025-09-02",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10509,7 +11657,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06980649",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06980649",
+   "nct_id": {
+    "nct": "NCT06980649",
+    "status": "recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2026-07-29",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10530,7 +11685,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06679985",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06679985",
+   "nct_id": {
+    "nct": "NCT06679985",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2026-07-14",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10551,7 +11713,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07598708",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07598708",
+   "nct_id": {
+    "nct": "NCT07598708",
+    "status": "recruiting",
+    "pcd": "2027-09-30",
+    "pcd_type": "estimated",
+    "updated": "2026-09-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10572,7 +11741,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06892639",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06892639",
+   "nct_id": {
+    "nct": "NCT06892639",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2026-03-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10583,7 +11759,7 @@ export default [
   "id": "readout_huma_2027-09-15",
   "t": "HUMA",
   "company": "Humacyte, Inc.",
-  "d": "2027-09-15",
+  "d": "2023-09-15",
   "dp": "month",
   "name": "Human Acellular Vessel",
   "type": "Readout",
@@ -10593,12 +11769,20 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT03005418",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT03005418",
+   "nct_id": {
+    "nct": "NCT03005418",
+    "status": "completed",
+    "pcd": "2023-09-19",
+    "pcd_type": "actual",
+    "updated": "2026-07-01",
+    "ongoing": false,
+    "results_posted": "2025-03-12"
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2027-09"
+  "dm": "2023-09"
  },
  {
   "id": "readout_imvt_2027-09-15",
@@ -10614,7 +11798,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06754462",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06754462",
+   "nct_id": {
+    "nct": "NCT06754462",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2026-04-21",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10635,7 +11826,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06585774",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06585774",
+   "nct_id": {
+    "nct": "NCT06585774",
+    "status": "recruiting",
+    "pcd": "2027-09-28",
+    "pcd_type": "estimated",
+    "updated": "2026-08-04",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10656,7 +11854,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04849728",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04849728",
+   "nct_id": {
+    "nct": "NCT04849728",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09-30",
+    "pcd_type": "estimated",
+    "updated": "2026-07-01",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10677,7 +11882,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05208944",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05208944",
+   "nct_id": {
+    "nct": "NCT05208944",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09-30",
+    "pcd_type": "estimated",
+    "updated": "2026-05-11",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10719,7 +11931,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05607953",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05607953",
+   "nct_id": {
+    "nct": "NCT05607953",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2025-07-01",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10740,7 +11959,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06966479",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06966479",
+   "nct_id": {
+    "nct": "NCT06966479",
+    "status": "active_not_recruiting",
+    "pcd": "2027-09",
+    "pcd_type": "estimated",
+    "updated": "2026-05-12",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10814,9 +12040,9 @@ export default [
   "id": "readout_ogn_2027-10-15",
   "t": "OGN",
   "company": "Organon & Co.",
-  "d": "2027-10-15",
+  "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -10824,12 +12050,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05504720",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05504720",
+   "nct_id": {
+    "nct": "NCT05504720",
+    "status": "completed",
+    "pcd": "2026-07-15",
+    "pcd_type": "actual",
+    "updated": "2026-08-06",
+    "ongoing": false
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2027-10"
+  "dm": "2026-07"
  },
  {
   "id": "readout_onc_2027-10-15",
@@ -10866,7 +12099,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07562087",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07562087",
+   "nct_id": {
+    "nct": "NCT07562087",
+    "status": "active_not_recruiting",
+    "pcd": "2027-10",
+    "pcd_type": "estimated",
+    "updated": "2026-07-08",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -10898,7 +12138,7 @@ export default [
   "id": "readout_arvn_2027-11-15",
   "t": "ARVN",
   "company": "Arvinas, Inc.",
-  "d": "2027-11-15",
+  "d": "2026-11-15",
   "dp": "month",
   "name": "ARV-471",
   "type": "Readout",
@@ -10908,18 +12148,25 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT07023731",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT07023731",
+   "nct_id": {
+    "nct": "NCT07023731",
+    "status": "active_not_recruiting",
+    "pcd": "2026-11-30",
+    "pcd_type": "estimated",
+    "updated": "2026-08-18",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2027-11"
+  "dm": "2026-11"
  },
  {
   "id": "readout_crnx_2027-11-15",
   "t": "CRNX",
   "company": "Crinetics Pharmaceuticals, Inc.",
-  "d": "2027-11-15",
+  "d": "2029-07-15",
   "dp": "month",
   "name": "Atumelnant",
   "type": "Readout",
@@ -10929,12 +12176,19 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06712823",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06712823",
+   "nct_id": {
+    "nct": "NCT06712823",
+    "status": "recruiting",
+    "pcd": "2029-07",
+    "pcd_type": "estimated",
+    "updated": "2026-06-24",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
   },
-  "dm": "2027-11"
+  "dm": "2029-07"
  },
  {
   "id": "readout_mygn_2027-11-15",
@@ -10950,7 +12204,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05642780",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05642780",
+   "nct_id": {
+    "nct": "NCT05642780",
+    "status": "active_not_recruiting",
+    "pcd": "2027-11-30",
+    "pcd_type": "estimated",
+    "updated": "2025-10-09",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -11034,7 +12295,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05275777",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05275777",
+   "nct_id": {
+    "nct": "NCT05275777",
+    "status": "active_not_recruiting",
+    "pcd": "2027-12",
+    "pcd_type": "estimated",
+    "updated": "2025-07-22",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -11055,7 +12323,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06709014",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06709014",
+   "nct_id": {
+    "nct": "NCT06709014",
+    "status": "active_not_recruiting",
+    "pcd": "2027-12",
+    "pcd_type": "estimated",
+    "updated": "2026-05-14",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -11076,7 +12351,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT04816604",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT04816604",
+   "nct_id": {
+    "nct": "NCT04816604",
+    "status": "active_not_recruiting",
+    "pcd": "2027-12",
+    "pcd_type": "estimated",
+    "updated": "2026-07-23",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -11097,7 +12379,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT06263231",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT06263231",
+   "nct_id": {
+    "nct": "NCT06263231",
+    "status": "recruiting",
+    "pcd": "2027-12",
+    "pcd_type": "estimated",
+    "updated": "2026-08-07",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -11118,7 +12407,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05539430",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05539430",
+   "nct_id": {
+    "nct": "NCT05539430",
+    "status": "active_not_recruiting",
+    "pcd": "2027-12",
+    "pcd_type": "estimated",
+    "updated": "2026-08-31",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"
@@ -11181,7 +12477,14 @@ export default [
   "url": "https://clinicaltrials.gov/study/NCT05112861",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
-   "nct_id": "NCT05112861",
+   "nct_id": {
+    "nct": "NCT05112861",
+    "status": "active_not_recruiting",
+    "pcd": "2027-12",
+    "pcd_type": "estimated",
+    "updated": "2026-04-21",
+    "ongoing": true
+   },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)"

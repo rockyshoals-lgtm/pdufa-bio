@@ -1,0 +1,54 @@
+[
+ {
+  "ticker": "SRRK",
+  "date": "2026-09-11",
+  "outcome": "Approved",
+  "drug": "ISEMBYLD (apitegromab-mstn)",
+  "indication": "Spinal muscular atrophy (SMA)",
+  "company": "Scholar Rock Holding Corporation",
+  "cap": "Mid",
+  "headline": "ISEMBYLD (apitegromab-mstn) approved as the first muscle-targeted treatment for spinal muscular atrophy, for adults and children 2 years and older already receiving an SMN2-targeted therapy (Sep 11 2026).",
+  "pdufa_note": "The PDUFA goal date was September 30, 2026 and the FDA approved on September 11, 19 days early. That goal date came from Scholar Rock's own 8-K of May 7, 2026, which is why the gap is quoted here as a measurement rather than an impression. The BLA was a resubmission: the FDA issued a Complete Response Letter on September 22, 2025 over observations at a third-party fill-finish facility, not over apitegromab's efficacy or safety, and Scholar Rock resubmitted on March 31, 2026 with two fill-finish facilities included.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-1.htm",
+  "source_label": "Scholar Rock 8-K (EX-99.1), September 14, 2026"
+ },
+ {
+  "ticker": "PHAR",
+  "date": "2026-09-11",
+  "outcome": "Approved",
+  "drug": "Joenja (leniolisib)",
+  "indication": "Activated PI3K-delta syndrome (APDS) in children",
+  "company": "Pharming Group N.V.",
+  "cap": "Small",
+  "headline": "Joenja (leniolisib) approved as the first treatment for children with activated PI3K-delta syndrome in the United States (Sep 11 2026).",
+  "pdufa_note": "The PDUFA goal date was October 24, 2026 and the FDA approved on September 11, 43 days early. Pharming stated that goal date in its 6-K of June 4, 2026. The application was a resubmission that added data the FDA had requested on analytical methods used for production batch testing, and it covers paediatric patients weighing 27 kg or more; Pharming has said a separate sNDA for lower doses in patients under 27 kg is planned.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1828316/000182831626000037/fdaapprovespharmingsjoenja.htm",
+  "source_label": "Pharming Group 6-K, September 11, 2026"
+ },
+ {
+  "ticker": "BFRI",
+  "date": "2026-09-09",
+  "outcome": "Approved",
+  "drug": "Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light",
+  "indication": "Superficial basal cell carcinoma",
+  "company": "Biofrontera Inc.",
+  "cap": "Nano",
+  "headline": "Ameluz photodynamic therapy with red light approved for superficial basal cell carcinoma, the first photodynamic therapy approved in the United States to treat a skin cancer (FDA action Sep 9 2026; announced Sep 14).",
+  "pdufa_note": "Two dates matter here and they are five days apart. The FDA's action date is September 9, 2026 &mdash; openFDA records NDA 208081 supplement 40 as approved that day &mdash; and the PDUFA goal date was September 28, 2026, which Biofrontera stated in its 8-K of May 14, 2026. So the FDA acted 19 days early. But Biofrontera did not announce the approval until September 14, so no share-price movement before that date can be read as a reaction to it.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm",
+  "source_label": "Biofrontera 8-K (EX-99.1), September 14, 2026"
+ },
+ {
+  "ticker": "BAYRY",
+  "date": "2026-09-09",
+  "outcome": "Approved",
+  "drug": "HYRNUO (sevabertinib)",
+  "indication": "HER2-mutant non-small cell lung cancer",
+  "company": "Bayer",
+  "cap": "Large",
+  "headline": "HYRNUO (sevabertinib) granted accelerated approval for locally advanced or metastatic non-squamous NSCLC with HER2 (ERBB2) tyrosine kinase domain activating mutations (Sep 9 2026).",
+  "pdufa_note": "This page states no earliness figure, deliberately. We had carried a goal date of November 30, 2026 for this application and it was never sourced: no Bayer filing or release states it, and Bayer is not an SEC registrant, so there is no filing to check. The FDA's own approval letter for NDA 219972/S-001 shows the supplemental application was received on March 16, 2026, which under priority review points to September rather than November. What is certain is the FDA's action: accelerated approval effective September 9, 2026. Sevabertinib's original NDA was approved on November 19, 2025, so this decision expands the label of a drug already on the market.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf",
+  "source_label": "FDA approval letter, NDA 219972/S-001, September 9, 2026"
+ }
+]

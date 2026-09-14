@@ -13,6 +13,24 @@
       "first_cycle_text": "the FDA completed its first-cycle review, identifying no major deficiencies relating to the drug components and one major deficiency relating to the container closure system (the vial's Luer-lock tip); NRx says it has submitted the requested manufacturer's attestation and targets approval in 2026.",
       "source_2": "https://ir.nrxpharma.com/news-releases/news-release-details/fda-completes-first-cycle-review-preservative-free-ketamine-anda",
       "source_2_label": "NRx release on the first-cycle review"
+    },
+    {
+      "slug": "TLX",
+      "goal_date": "2026-09-11",
+      "application_type": "NDA (resubmission)",
+      "status_note": "Telix's half-year report of August 20, 2026 states that the resubmitted NDA for Pixclara was accepted by the FDA with a PDUFA goal date of September 11, 2026. As of September 14, 2026 no later Telix filing announces a decision either way, and the FDA's drug approval database holds no record for the product. The goal date has passed and no decision has been disclosed.",
+      "source": "https://www.sec.gov/Archives/edgar/data/2007191/000162828026058126/announcement.htm",
+      "source_label": "Telix Pharmaceuticals 6-K, half-year report, August 20, 2026",
+      "reviewer": "builder 2026-09-14 (currency pass after three days of red CI)"
+    },
+    {
+      "slug": "TLX-tlx101-px",
+      "goal_date": "2026-09-11",
+      "application_type": "NDA (resubmission)",
+      "status_note": "Telix's half-year report of August 20, 2026 states that the resubmitted NDA for Pixclara was accepted by the FDA with a PDUFA goal date of September 11, 2026. As of September 14, 2026 no later Telix filing announces a decision either way, and the FDA's drug approval database holds no record for the product. The goal date has passed and no decision has been disclosed.",
+      "source": "https://www.sec.gov/Archives/edgar/data/2007191/000162828026058126/announcement.htm",
+      "source_label": "Telix Pharmaceuticals 6-K, half-year report, August 20, 2026",
+      "reviewer": "builder 2026-09-14 (currency pass after three days of red CI)"
     }
   ]
 }
