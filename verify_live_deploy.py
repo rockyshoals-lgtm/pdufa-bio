@@ -160,13 +160,27 @@ def main():
                     fails.append(f"api as_of {meta.get('as_of')} != Eastern today {today_et}")
                     note.append("AS_OF NOT TODAY")
             elif path == "/calendar":
-                m = re.search(r"(\d+) FDA decision dates.*?(\d+) are still ahead, and (\d+) have been decided",
-                              text, re.S)
+                # THREE buckets, not two (fixed 2026-09-14). This asserted ahead + decided ==
+                # total and failed the run the first day the third bucket was non-zero: TLX's
+                # goal date passed on 2026-09-11 with no decision disclosed, so the lede
+                # correctly read "96 ... 42 are still ahead, and 53 have been decided ... 1
+                # passed its target date without a published decision" and this check called
+                # 42+53!=96 a defect. build_hub_lede has always been able to emit that third
+                # sentence; the verifier simply never knew about it. A row waiting on the FDA
+                # past its goal date is neither ahead nor decided, and the page is right to say
+                # so -- so count it.
+                m = re.search(r"(\d+) FDA decision dates.*?(\d+) are still ahead, and (\d+) "
+                              r"have been decided", text, re.S)
                 if m:
                     tot, ahead, dec = (int(x) for x in m.groups())
-                    note.append(f"lede {tot}={ahead}+{dec}")
-                    if ahead + dec != tot:
-                        fails.append(f"calendar lede {ahead}+{dec}!={tot}")
+                    aw = re.search(r"(\d+) (?:passed its|have passed their) target date "
+                                   r"without a published decision", text)
+                    awaiting = int(aw.group(1)) if aw else 0
+                    note.append(f"lede {tot}={ahead}+{dec}"
+                                + (f"+{awaiting}aw" if awaiting else ""))
+                    if ahead + dec + awaiting != tot:
+                        fails.append(f"calendar lede {ahead}+{dec}"
+                                     + (f"+{awaiting}" if awaiting else "") + f"!={tot}")
                 else:
                     fails.append("calendar lede not found")
                     note.append("LEDE MISSING")
