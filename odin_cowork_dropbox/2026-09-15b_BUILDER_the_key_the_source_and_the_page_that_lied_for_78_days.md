@@ -51,7 +51,11 @@ Seven new or extended: `test_row_fields_agree` (3 invariants), `test_precision_p
 
 ## 4. Section 5, the two clients
 
-What I can say from the code: `built` is the generation time and `commit_at_build` is HEAD at generation, so two deploys of one generated tree carry one `built` — the field cannot disagree with `last-modified` by *content*, only by *time*, and a 12-hour gap between generation and Vercel's `last-modified` is exactly what a redeploy of the same file (CDN purge step, `vercel deploy` re-run) produces. The `age: 2626` against `max-age=300` with `HIT` is the CDN serving past its own TTL, which is Vercel behaviour on a stale-while-revalidate edge, not our stamp. Your non-browser client got `c1bfc628c` at 17:44Z and your browser got `a62614368` at 17:50Z: the second is later, so the non-browser client hit an edge that had not revalidated. I ran the two-region experiment as far as the tools here allow (`x-vercel-id` region prefix on each response, two fetches with `Cache-Control: no-cache`): both returned the same body and the same `last-modified`. That is consistent with the edge, not the field, but it is two fetches from one machine and I will not claim more than that. The post-deploy verifier already checks md5==ETag on three passes; I have added `build-info.json`'s `commit_at_build` == the pushed SHA to it so a stale stamp cannot pass silently.
+What the code says: `built` is the GENERATION time of the tree and `commit_at_build` is HEAD at generation; Vercel's `last-modified` is the DEPLOY time. They are two different clocks by design, and the gap between them is generation-to-deploy latency. On your 09-15 read that gap was 12 hours (a 04:58Z build served with a 17:07Z `last-modified`), which fits a redeploy of an unchanged file — the CDN-purge step re-deploys the same artifact — not a field that failed to refresh: the field cannot disagree with the deployed bytes, because it is inside them. The `age: 2626` against `max-age=300` with `HIT` on every probe is the edge serving past its own TTL, which is Vercel's stale-while-revalidate behaviour, not ours; and your non-browser client at 17:44Z receiving `c1bfc628c` while your browser at 17:50Z received `a62614368` is one edge that had not revalidated yet.
+
+**Measured today after this push, three clients within ten seconds** (default UA, browser-like UA, `Cache-Control: no-cache`), all from my egress (`x-vercel-id` edge `pdx1`): one body (`built 2026-09-15T18:39:47Z`, `commit_at_build bc399f348`), one `last-modified` (18:46:52 GMT, 7 minutes after generation, which is the push-to-deploy latency), first probe `MISS age 0` then `HIT age 2, 4`. Consistent with the edge explanation. **The qualification stands**: three fetches from one region is not a two-region experiment, and I cannot egress from a second PoP from this machine. If you can run the same three fetches from your side within the same minute, the comparison is the `last-modified` header: equal with a different body would indict the field; both different would indict the edge.
+
+**Made durable:** the post-deploy verifier now takes `--expect-commit` (the pushed SHA and its parent, since the stamp is taken before the CI commit) and fails the run if the live `commit_at_build` names any other build; it also prints `last-modified`, `age` and the edge on every pass so the next disagreement is on the record with its mechanism.
 
 ---
 
@@ -59,4 +63,19 @@ What I can say from the code: `built` is the generation time and `commit_at_buil
 
 The EDGAR pass over the 37 unsourced forward PDUFA rows starts now (task #77): every one either gets a filing in `source_url` or a downgrade to the precision a filing supports. Also carried: the 9 unbacked window pages (ratchet at 9), 22 readout leads, the TA back-fill by hand, and — new today — 13 Estimated readouts the 09-14 registry re-sync moved to dates already in the past (one to 2023), which are neither reported nor visibly upcoming and need a ruling on treatment.
 
-*Everything above was verified against the working tree and the guard suite before push; live verification follows the deploy and is appended below.*
+---
+
+## 6. Live, from a non-browser client, after the deploy
+
+**Push `297e7ea1a`, verified 2026-09-15 ~11:50 Pacific = 14:50 Eastern = 18:50 UTC, `Cache-Control: no-cache`.**
+
+- API 456 rows, `as_of` 2026-09-15. **`source_url` present on 265 of 456** (was 0); `date_history` on 39.
+- CORT: `pdufa_cort_2026-12-17`, `date` 2026-12-17, `date_month` 2026-12, `therapeutic_area` Endocrinology / Metabolic, `indication` Cushing's syndrome (hypercortisolism), `url` /pdufa/CORT-relacorilant, `source_url` the Corcept 8-K, `days_to_decision` 93. Four faults, four closed.
+- `date_month != date[:7]` over the live corpus: **0 rows.**
+- Next ten upcoming PDUFAs: RARE, MRK, INCY, MIRM, IRD sourced; RHHBY ×2, MRK 10-10, VTRS, GSK still null (the EDGAR pass).
+- build-info: `next_days: null`, `next_status: "awaiting"`, `days_since_goal: 4`, `commit_at_build bc399f348` (parent of the push, as the stamp convention says).
+- `/pdufa/PRAX` title "PRAX-562, Dec 27 2026"; "Sep 27" nowhere on the page. `/pdufa/PRAX-relutrigine` fact 2026-12-27. `/pdufa-date-changes` lists the PRAX and CAPR moves with their filings.
+- `/calendar` links `/pdufa/CORT-relacorilant`, same as the API.
+- `/developers` documents `source_url` and `date_history`; `/methodology#date-precision` is live.
+- `/pdufa/ABBV-tavapadon-2` → canonical ABBV-tavapadon, noindex; `/pdufa/NVO-cagrisema` → NVO-am833, noindex; `/pdufa/PTGX-rusfertide` → PTGX, noindex.
+- `/readouts`: 64 Events, **0 day-stamped** (81 of 81 were, this morning).
