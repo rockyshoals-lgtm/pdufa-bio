@@ -96,6 +96,43 @@ def main():
             if not a.dry_run:
                 io.open(p, "w", encoding="utf-8").write(doc)
 
+    # --- the /pdufa EVENT page for the same rows ------------------------------------------
+    # mark_event_pages_decided is marker-bounded and had already written the goal-date facts
+    # before the gate existed, so re-running it skips these pages: /pdufa/BAYRY-sevabertinib
+    # went on stating "The FDA goal date for this application was 2026-11-30" as a key fact and
+    # in its FAQ, and linking "All November 2026 PDUFA dates", for a goal date we withdrew.
+    MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
+              "September", "October", "November", "December"]
+    for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
+        slug = os.path.basename(os.path.dirname(p))
+        tk = slug.split("-")[0].upper()
+        rowset = [r for k, r in blocked.items() if k[0] == tk]
+        if not rowset:
+            continue
+        row = rowset[0]
+        goal = str(row.get("d") or "")
+        if not goal:
+            continue
+        doc = io.open(p, encoding="utf-8", errors="replace").read()
+        orig = doc
+        doc = doc.replace(
+            f'<div class="kv"><span>FDA goal date</span><b>{goal}</b></div>', "")
+        doc = doc.replace(
+            f" The FDA goal date for this application was {goal}.",
+            " We do not state a goal date for this application: the date we had carried was "
+            "never sourced to a filing or company release.")
+        mon = MONTHS[int(goal[5:7]) - 1] if len(goal) >= 7 else ""
+        if mon:
+            # the link wraps its text in <b>: <a class="cta" href="..."><b>All November 2026
+            # PDUFA dates &rarr;</b></a>
+            doc = re.sub(r'<a[^>]*href="/calendar/\d{4}/' + mon.lower()
+                         + r'"[^>]*>.*?</a>', "", doc, flags=re.S)
+        if doc != orig:
+            n += 1
+            print(f"  /pdufa/{slug}: withdrew the goal-date facts and the month link")
+            if not a.dry_run:
+                io.open(p, "w", encoding="utf-8").write(doc)
+
     # NVCR: a quarter-precision row rendered as a month. Its own note says "company guides
     # decision in Q4 2026 ... date is the quarter midpoint", so "November 2026" over-claims.
     q = os.path.join(SITE, "pdufa", "NVCR-ttfields-therapy", "index.html")
