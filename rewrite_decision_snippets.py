@@ -28,6 +28,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from site_windows import earliness_allowed  # noqa: E402
+
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:
@@ -84,9 +87,15 @@ def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                   errors="replace").read().replace("\x00", "")
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    # Audit 09-14 P0-C: only a goal that is day-precision AND sourced may produce a delta
+    # clause. "82 Days Early" shipped in the <title> of /fda-decision/BAYRY-2026-09-09 against a
+    # November 30 goal the same page said was never sourced -- the second-largest early margin
+    # on the site, manufactured by rounding. One owner decides (site_windows.earliness_allowed),
+    # the same one build_early_decisions and mark_event_pages_decided use.
     goals = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): str(r.get("d"))[:10]
              for r in rows if r.get("type") == "PDUFA"
-             and str(r.get("st", "")).lower() == "decided" and r.get("dcd") and r.get("d")}
+             and str(r.get("st", "")).lower() == "decided" and r.get("dcd") and r.get("d")
+             and earliness_allowed(r)}
 
     # listing rows as a drug-name fallback for drug-less titles ("AQST FDA Decision
     # 2026-02-02: CRL") -- the /decisions row states "CRL: Anaphylm" for the same slug

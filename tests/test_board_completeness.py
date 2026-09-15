@@ -96,7 +96,19 @@ def main():
             bi_bad.append(f"build-info next_date {nd} is after the first tile {first_tile}")
         if nd and bi.get("next_days") is not None:
             real = (dt.date.fromisoformat(nd) - TODAY).days
-            if abs(real - bi["next_days"]) > 1:
+            # AWAITING (audit 09-14 P0-D): a goal date that has passed with no decision stays
+            # the next expected event -- the FDA can act any day, which is the 08-18 BMY
+            # reasoning -- but we must not publish a NEGATIVE countdown, so next_days is
+            # clamped to 0 and next_status says why. Checking the clamp against the raw date
+            # arithmetic would fail on exactly the rows the clamp exists for.
+            if bi.get("next_status") == "awaiting":
+                if real > 0:
+                    bi_bad.append(f"next_status=awaiting but {nd} is still {real} days in the "
+                                  f"future; awaiting means the date has passed")
+                elif bi["next_days"] != 0:
+                    bi_bad.append(f"next_status=awaiting but next_days={bi['next_days']}; "
+                                  f"an awaiting event counts down to 0, never below")
+            elif abs(real - bi["next_days"]) > 1:
                 bi_bad.append(f"next_days={bi['next_days']} but {nd} is {real} days away")
     except Exception:
         pass

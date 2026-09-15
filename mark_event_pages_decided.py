@@ -29,6 +29,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from site_windows import earliness_allowed, window_label  # noqa: E402
+
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:
@@ -116,7 +119,7 @@ def archive_candidates(archive, tk, drug_part, doc0):
     return out
 
 
-def decided_language(doc, tk, drug, word, dcd, goal, archive_only):
+def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=True):
     """Rewrite the machine-written PENDING phrasing on an event page whose event has decided.
 
     The banner alone left every decided page still saying "is under FDA review", "FDA PDUFA
@@ -131,10 +134,20 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only):
                   f"received a Complete Response Letter from the FDA on {P} for")
     verb_faq = (f"drug, approved by the FDA on {P} for" if ok else
                 f"candidate that received a Complete Response Letter from the FDA on {P} for")
+    # Audit 09-14 P0-C. `goal_sourced` is False when the goal date we carried was never traced
+    # to a filing (BAYRY's November 30) or is only a window. Stating it as "the FDA goal date"
+    # would republish, as a key fact and in the FAQ, the very number the page elsewhere says we
+    # cannot support -- so say what we actually know instead.
+    show_goal = bool(goal) and not archive_only and goal_sourced
     goal_kv = (f'<div class="kv"><span>FDA goal date</span><b>{goal}</b></div>'
-               if goal and not archive_only else "")
-    goal_sent = (f" The FDA goal date for this application was {goal}." if goal and not archive_only
-                 else " pdufa.bio does not hold a sponsor-disclosed goal date for this application.")
+               if show_goal else "")
+    if show_goal:
+        goal_sent = f" The FDA goal date for this application was {goal}."
+    elif goal and not archive_only:
+        goal_sent = (" We do not state a goal date for this application: the date we had "
+                     "carried was never sourced to a filing or company release.")
+    else:
+        goal_sent = " pdufa.bio does not hold a sponsor-disclosed goal date for this application."
 
     # 1. story line
     doc = doc.replace(" is under FDA review to treat", f" {verb_story}")
@@ -333,6 +346,12 @@ def main():
             delta = (dt.date.fromisoformat(dcd) - dt.date.fromisoformat(goal)).days
         except Exception:
             delta = None
+        # Audit 09-14 P0-C: an earliness figure needs a goal that is BOTH day-precision and
+        # sourced. BAYRY's banner read "82 days before its November 30, 2026 goal date" on a
+        # page whose own FAQ said that goal was never sourced. One owner decides, in
+        # site_windows.earliness_allowed, so the renderers cannot disagree with the statistic.
+        if not earliness_allowed(r):
+            delta = None
         timing = ("" if delta is None else
                   " on its goal date" if delta == 0 else
                   f", {-delta} days before its {pretty(goal)} goal date" if delta < 0 else
@@ -370,7 +389,8 @@ def main():
         # from the h1's highlighted span, which is what the page itself calls the drug.
         hm = re.search(r'<h1>[A-Z]{1,6} PDUFA Date: <span class="g">(.+?)</span></h1>', new)
         page_drug = _html.unescape(hm.group(1)) if hm else str(r.get("name") or "")
-        new = decided_language(new, tk, page_drug, word, dcd, goal, archive_only)
+        new = decided_language(new, tk, page_drug, word, dcd, goal, archive_only,
+                               goal_sourced=earliness_allowed(r))
         if new != doc:
             io.open(p, "w", encoding="utf-8").write(new)
             changed += 1

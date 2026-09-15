@@ -195,6 +195,20 @@ jobs:
       - name: Decision-page snippets in answer format
         run: python rewrite_decision_snippets.py
 
+      # Audit 09-14 P0-C. The generators are gated on site_windows.earliness_allowed, but the
+      # earliness figure also lives in hand-written prose they do not own: "The FDA approved on
+      # August 27, 2026, 34 days early." Those four margins were removed from the timing
+      # statistic on 09-10 for being measured against a manufactured quarter-end, and stayed on
+      # the decision pages for four days.
+      - name: "Strip earliness claims measured against a withdrawn goal date"
+        run: python fix_unsourced_earliness_prose.py
+
+      # A page can disagree with ITSELF: rewrite_decision_snippets fixed BAYRY's <title> while
+      # the WebPage JSON-LD node in the same file kept the old one, complete with "82 Days
+      # Early". Structured data is what an AI answer reads first.
+      - name: "Schema name follows the page title"
+        run: python sync_jsonld_name_to_title.py
+
       # Audit 09-02c item 3: we hold 458 FDA CRLs and cited zero. Each CRL decision page
       # now links the FDA-hosted letter PDF when date (letter <= page date <= +4d) and
       # company both match -- a wrong primary source is worse than none, so ambiguity skips.
@@ -212,8 +226,35 @@ jobs:
       # came BEFORE the goal date; everything upstream depends on our own crawl hearing
       # the news. This asks FDA's Drugs@FDA feed directly for every armed event and
       # BLOCKS the run on an unreviewed approval -- a lead to verify, never auto-publish.
+      # AUDIT 09-14 ITEM 6, and the auditor's answer to my own question was yes: open the
+      # review issue BEFORE exiting 1. This step blocked seven consecutive runs from
+      # 2026-09-11 22:54 over two genuine unreviewed approvals -- it was right to -- but the
+      # only signal was a red tick in the Actions tab. The issue-creating step lives near the
+      # END of the workflow and depends on files that later steps produce, so when this step
+      # failed early that step failed too and nothing was ever raised. Three days of
+      # site-wide staleness came out of one correct refusal that nobody heard.
+      # Now: run, capture, RAISE, then fail.
       - name: Early-approval watch against FDA's own feed
-        run: python watch_fda_approvals.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          python watch_fda_approvals.py > fda_watch.txt 2>&1
+          rc=$?
+          cat fda_watch.txt
+          if [ "$rc" != "0" ]; then
+            {
+              echo "**The rebuild is BLOCKED.** \`watch_fda_approvals.py\` found FDA-feed approval(s) on armed events that nobody has reviewed yet."
+              echo
+              echo "This is the guard working as designed: an approval is a LEAD, and the pipeline never auto-publishes an outcome. But until someone verifies these against the sponsor's filing and publishes (or acks them in \`_fda_watch_ack.json\` with a reason), **no rebuild commits and the site goes stale**."
+              echo
+              echo '```'; cat fda_watch.txt; echo '```'
+            } > fda_issue.md
+            gh issue create \
+              --title "BLOCKING: unreviewed FDA approval(s) on armed events ($(date -u +%F))" \
+              --body-file fda_issue.md --label "reconciliation" || echo "issue create skipped"
+          fi
+          exit $rc
 
       # Audit 2026-09-05b P0: camizestrant was approved with NO dated event to watch --
       # its PDUFA date was extended and never re-disclosed, so the event watcher had
@@ -443,12 +484,30 @@ jobs:
       - name: "Event pages follow a moved PDUFA date"
         run: python refresh_moved_pdufa_pages.py
 
+      # Audit 09-14 item 5: one owner formats a window (site_windows.window_label), so the
+      # calendar cannot render "Dec 2026" on the month page and "Q4 2026 (est.)" on /calendar
+      # for the same four events, which is what it was doing.
+      - name: "One window label across every calendar surface"
+        run: python normalize_calendar_windows.py
+
       # Re-audit 2026-09-01b root cause: per-event pages are write-once by design (they
       # carry hand-grown content), so nothing told /pdufa/REGN-garetosmab its event had
       # been APPROVED -- 25 days stale on a 33%-CTR page. Moves are handled above;
       # outcomes here; both marker-based so the hand-grown content survives.
       - name: Decided banners on per-event PDUFA pages
         run: python mark_event_pages_decided.py
+
+      # Audit 09-14 ORDER 2. refresh_moved_pdufa_pages handles a day moving to another DAY; it
+      # has no concept of a day being WITHDRAWN to a window, so when twelve year-end rows lost a
+      # manufactured day on 09-10 the calendar was corrected and every event page kept
+      # "Dec 31 2026" in its <title>, meta description, FAQ answer and Event schema.
+      #
+      # MUST RUN AFTER the decided banners, not before. Run first, it rewrote two pages to
+      # "date not sourced" that were in fact DECIDED -- /pdufa/GILD-trodelvy (approved
+      # 2026-06-24) and /pdufa/RHHBY-lunsumio-polivy (approved 2025-12-22) -- burying a stale
+      # decided event under a tidier-looking window. It now skips any page carrying a decision.
+      - name: "Event pages follow a WITHDRAWN day (day -> window, or 'not sourced')"
+        run: python fix_event_page_windows.py
 
       # Audit 09-06 NEW-2: an application whose goal date passed with no public decision
       # (NRXP's KETAFREE ANDA) has no banner to carry, so it says the date passed instead.
@@ -595,11 +654,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Every grep is now tolerant of a MISSING file. When an earlier step failed, the
+          # steps that write these files are skipped, `grep` on a nonexistent path returns
+          # non-zero, and under `bash -e` this step died too -- so on 2026-09-11..14 the one
+          # step whose job is to tell a human went down with the failure it was meant to
+          # report. `always()` only guarantees the step runs, not that it survives.
+          set +e
           NEED=0
-          grep -q "NOT IN ARCHIVE" reconcile.txt && NEED=1
-          grep -q "ALREADY DECIDED" decided.txt && NEED=1
-          grep -q "ADCOM NEEDS RESULT" adcom.txt && NEED=1
-          grep -q "READOUT NEEDS VERIFICATION" readouts.txt && NEED=1
+          grep -q "NOT IN ARCHIVE" reconcile.txt 2>/dev/null && NEED=1
+          grep -q "ALREADY DECIDED" decided.txt 2>/dev/null && NEED=1
+          grep -q "ADCOM NEEDS RESULT" adcom.txt 2>/dev/null && NEED=1
+          grep -q "READOUT NEEDS VERIFICATION" readouts.txt 2>/dev/null && NEED=1
           grep -q "READOUT WATCH:" readouts_watch.txt 2>/dev/null && NEED=1
           if [ "$NEED" = "1" ]; then
             {

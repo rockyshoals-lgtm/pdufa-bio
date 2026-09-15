@@ -44,7 +44,9 @@ h1{font-size:30px;line-height:1.14;font-weight:800;letter-spacing:-.6px;margin:6
 fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
-if(d&&n!=null)d.textContent=n<=0?'today':(n===1?'tomorrow':'in '+n+' days');
+/* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
+   Audit 09-14 P0-D: build-info published next_days:-3 for TLX. Say 'awaiting' instead. */
+if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?'awaiting a decision':(n===0?'today':(n===1?'tomorrow':'in '+n+' days'));
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
 </script><!--FRESH:END-->

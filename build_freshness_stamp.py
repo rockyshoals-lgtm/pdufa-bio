@@ -58,7 +58,9 @@ SCRIPT = """<script>
 fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
-if(d&&n!=null)d.textContent=n<=0?'today':(n===1?'tomorrow':'in '+n+' days');
+/* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
+   Audit 09-14 P0-D: build-info published next_days:-3 for TLX. Say 'awaiting' instead. */
+if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?'awaiting a decision':(n===0?'today':(n===1?'tomorrow':'in '+n+' days'));
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
 </script>"""
@@ -180,16 +182,25 @@ def main():
                                 check=False).stdout.strip() or None
     except Exception:
         commit = None
+    # Audit 09-14 P0-D. next_decision() deliberately keeps a recently past-dated undecided event
+    # as "next" -- that reasoning is from the 08-18 BMY incident and it is right, because the FDA
+    # can act on it any day. What was wrong is what we PUBLISHED about it: build-info.json said
+    # next_days:-3, a negative countdown, in a file consumers and AI engines read directly. The
+    # event stays; the countdown becomes a status. next_days is never negative now.
+    awaiting = bool(nxt and nxt[2] < 0)
     info = {"built": now_iso,
             "commit": commit,
             "commit_at_build": commit,
             "next_date": nxt[0].isoformat() if nxt else None,
             "next_ticker": nxt[1] if nxt else None,
-            "next_days": nxt[2] if nxt else None}
+            "next_days": (max(0, nxt[2]) if nxt else None),
+            "next_status": ("awaiting" if awaiting else "upcoming") if nxt else None}
     if not a.dry_run:
         json.dump(info, open(os.path.join(SITE, "build-info.json"), "w", encoding="utf-8"), indent=1)
     if nxt:
-        print(f"next FDA decision: {nxt[1]} on {nxt[0]} ({nxt[2]} days)")
+        print(f"next FDA decision: {nxt[1]} on {nxt[0]} "
+              + (f"(goal date passed {-nxt[2]} days ago; awaiting)" if awaiting
+                 else f"({nxt[2]} days)"))
 
     done = 0
     for p in sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True)):

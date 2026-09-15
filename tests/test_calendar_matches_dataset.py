@@ -95,7 +95,12 @@ def main():
     _ub = json.load(open(os.path.join(HERE, "_calendar_unbacked_q4_rows.json"),
                          encoding="utf-8"))
     UNBACKED = {(r["ticker"], r["window"]) for r in _ub["rows"]}
-    UNBACKED_N = len(_ub["rows"])
+    # THE RATCHET COMPARES AGAINST A STORED BASELINE, not against the list's own length.
+    # The 09-10 version read `if len(UNBACKED) > UNBACKED_N` with UNBACKED_N = len(_ub["rows"]),
+    # i.e. a set built from that list compared to the same list -- it could only ever fire on a
+    # duplicate entry, so the ratchet never ratcheted. Found 2026-09-14 while acting on the
+    # audit. A guard that cannot fail is not a guard.
+    UNBACKED_N = int(_ub.get("baseline_count", len(_ub["rows"])))
     unbacked_seen = set()
 
     bad = []
@@ -163,9 +168,11 @@ def main():
             print(f"     {rel}: {tk} {lab}")
         print("     Each has a /pdufa page asserting 2026-12-31 with no sponsor goal-date "
               "source. Source them, re-date them, or withdraw them -- do not add an eighth.")
-    if len(UNBACKED) > UNBACKED_N:
-        bad.append(f"the unbacked-row list grew to {len(UNBACKED)} (was {UNBACKED_N}); it is a "
-                   f"ratchet for an existing backlog, not a place to park new unsourced rows")
+    if len(_ub["rows"]) > UNBACKED_N:
+        bad.append(f"the unbacked list holds {len(_ub['rows'])} rows against a baseline of "
+                   f"{UNBACKED_N}; it is a ratchet for an existing backlog, not a place to park "
+                   f"new unsourced rows. Source or withdraw one before adding another, and only "
+                   f"lower baseline_count -- never raise it to make a failure go away.")
 
     # COUNT RECONCILIATION (red team 2026-08-16 section 2.1, third audit on the same defect,
     # gap widening 3->5): the page's upcoming count and the API's upcoming count must be equal

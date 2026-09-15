@@ -18,7 +18,9 @@ h2{font-size:17px;margin:24px 0 6px}.legal{border-top:1px solid var(--line);marg
 fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
-if(d&&n!=null)d.textContent=n<=0?'today':(n===1?'tomorrow':'in '+n+' days');
+/* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
+   Audit 09-14 P0-D: build-info published next_days:-3 for TLX. Say 'awaiting' instead. */
+if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?'awaiting a decision':(n===0?'today':(n===1?'tomorrow':'in '+n+' days'));
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
 </script><!--FRESH:END--><!--CRLSRC:BEGIN--><div style="background:#0c1d38;border:1px solid #2a496f;border-radius:10px;padding:11px 14px;margin:10px 0 14px;font-size:14px"><b style="color:#e3ba5e">The FDA's own letter</b> &middot; <a href="https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf" rel="noopener">Complete Response Letter, BL 125840 (PDF)</a>, dated February 9, 2026, released under FDA's CRL transparency program.</div><!--CRLSRC:END-->
