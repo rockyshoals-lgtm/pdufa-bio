@@ -338,6 +338,20 @@ jobs:
       - name: Surface company-guided readouts at the top of /readouts
         run: python build_guided_readouts.py
 
+      # Audit 09-14 ORDER 7, promoted to the highest-return content item on the list. The two
+      # readout grounding queries went 28 -> 77 citations at 66.38% share and 75 -> 102 at
+      # 32.59%, both rising in share as well as volume, both answered off the generic hub with
+      # no dedicated page. Rebuilt EVERY run, because /condition/* was built once and never
+      # rebuilt and two months later was calling ACHV's cytisinicline PDUFA "custirsen".
+      - name: "/readouts/oncology and /readouts/rare-disease"
+        run: python build_readout_ta_hubs.py
+
+      # Audit 09-14 ORDER 7b: five H2 sections on /learn/what-is-a-pdufa-date, aimed at the
+      # definitional scaffolding an answer box assembles, and no trade framing on a page whose
+      # job is the definition. Marker-bounded; leaves the citable timing sentence alone.
+      - name: "/learn/what-is-a-pdufa-date: five-section structure"
+        run: python build_learn_pdufa_structure.py
+
       # Audit 09-05 (0800 slot) P2-8: API `outcome` null on every Reported readout while the
       # pages stated the result. Derived from the row's own verified review sentence, house
       # vocabulary only ("met" / "did not meet its primary endpoint").
