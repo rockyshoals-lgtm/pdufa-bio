@@ -202,12 +202,24 @@ def main():
                 continue
             ep = os.path.join(OUTDIR, name, "index.html")
             try:
-                if tok and tok in open(ep, encoding="utf-8", errors="replace").read().lower() \
-                        .replace("-", ""):
-                    covered = True
-                    break
+                body = open(ep, encoding="utf-8", errors="replace").read()
             except OSError:
                 continue
+            low = body.lower().replace("-", "")
+            if not (tok and tok in low):
+                continue
+            # 2026-09-15: a page that merely MENTIONS the drug does not cover the event. PRAX's
+            # relutrigine page names ulixacaltamide in its prose and COGT's SUMMIT page names
+            # the PEAK combination, so neither second event ever got a page and the dataset sent
+            # both to a page stating the other event's date. Covered means: the drug is in the
+            # page's <title>, or the page states THIS row's date.
+            ti = re.search(r"<title>(.*?)</title>", body, re.S)
+            in_title = bool(ti and tok in ti.group(1).lower().replace("-", ""))
+            states = re.search(r"PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})", body) or \
+                     re.search(r'"startDate":"(\d{4}-\d{2}-\d{2})', body)
+            if in_title or (states and states.group(1) == d):
+                covered = True
+                break
         if covered:
             continue
         out = os.path.join(OUTDIR, slug)

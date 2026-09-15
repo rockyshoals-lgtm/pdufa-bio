@@ -186,15 +186,20 @@ def main():
     # as "next" -- that reasoning is from the 08-18 BMY incident and it is right, because the FDA
     # can act on it any day. What was wrong is what we PUBLISHED about it: build-info.json said
     # next_days:-3, a negative countdown, in a file consumers and AI engines read directly. The
-    # event stays; the countdown becomes a status. next_days is never negative now.
+    # event stays; the countdown becomes a status.
+    # Audit 09-15 ORDER 5: the first fix clamped it to 0, and 0 reads as "today" -- a second
+    # false countdown one field over. A countdown to a date that has passed has no value, so
+    # next_days is NULL when next_status is "awaiting"; the page script derives its own display
+    # from next_date and never needed next_days. `days_since_goal` says how long it has waited.
     awaiting = bool(nxt and nxt[2] < 0)
     info = {"built": now_iso,
             "commit": commit,
             "commit_at_build": commit,
             "next_date": nxt[0].isoformat() if nxt else None,
             "next_ticker": nxt[1] if nxt else None,
-            "next_days": (max(0, nxt[2]) if nxt else None),
-            "next_status": ("awaiting" if awaiting else "upcoming") if nxt else None}
+            "next_days": (None if awaiting else nxt[2]) if nxt else None,
+            "next_status": ("awaiting" if awaiting else "upcoming") if nxt else None,
+            "days_since_goal": (-nxt[2] if awaiting else None) if nxt else None}
     if not a.dry_run:
         json.dump(info, open(os.path.join(SITE, "build-info.json"), "w", encoding="utf-8"), indent=1)
     if nxt:

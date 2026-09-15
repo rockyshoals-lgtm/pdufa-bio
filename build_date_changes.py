@@ -51,10 +51,20 @@ def main():
         d = r.get("_d") or {}
         prior = str(d.get("prior_pdufa_date") or "")[:10]
         now = str(r.get("d") or "")[:10]
+        url = str(d.get("date_provenance") or d.get("source_url_2") or r.get("url") or "")
+        # 2026-09-15: `date_history` (audit 09-15 ORDER 2/4) is the row-level record of every
+        # date a row has held. A SOURCED entry (it carries the announcing document's url) on a
+        # day-precision PDUFA row is a goal-date change this archive recorded, whether or not the
+        # ingest script also set prior_pdufa_date.
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", prior) and r.get("type") == "PDUFA" \
+                and r.get("dp") == "day":
+            hist = [h for h in (d.get("date_history") or []) if isinstance(h, dict)]
+            if len(hist) >= 2 and hist[-1].get("url") and hist[-1].get("date") == now:
+                prior = str(hist[0].get("date") or "")[:10]
+                url = str(hist[-1]["url"])
         if not (re.match(r"^\d{4}-\d{2}-\d{2}$", prior) and
                 re.match(r"^\d{4}-\d{2}-\d{2}$", now) and prior != now):
             continue
-        url = str(d.get("date_provenance") or d.get("source_url_2") or r.get("url") or "")
         changes.append({
             "t": str(r.get("t") or "").upper(),
             "name": str(r.get("name") or ""),

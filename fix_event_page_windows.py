@@ -153,6 +153,31 @@ def main():
             continue
         m = re.search(r'FDA PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})</b>', doc)
         if not m:
+            # 2026-09-15: a page already windowed by an EARLIER pass keeps that pass's label in
+            # its title when the row's precision later changes (NVCR: month -> quarter left
+            # "November 2026" in <title> beside a "Q4 2026" fact). If the fact is a window
+            # label and the row now has a different one, every rendering moves with it.
+            w = re.search(r'FDA PDUFA target date</span><b>((?:Q[1-4] \d{4})|(?:[A-Z][a-z]{2,8} \d{4})|(?:\d{4}))</b>', doc)
+            row = match_row(slug, rows) if w else None
+            if row is not None and str(row.get("dp") or "day") != "day":
+                new = window_label(row)
+                ti = re.search(r"<title>(.*?)</title>", doc, re.S)
+                tl = re.search(r'((?:Q[1-4] \d{4})|(?:[A-Z][a-z]{2,8} \d{4}))', ti.group(1)) if ti else None
+                labels = {w.group(1)} | ({tl.group(1)} if tl else set())
+                d2 = doc
+                for old in sorted(labels - {new}):
+                    d2 = d2.replace(old, new)
+                    long_old = {"Jan": "January", "Feb": "February", "Mar": "March", "Apr": "April",
+                                "Jun": "June", "Jul": "July", "Aug": "August", "Sep": "September",
+                                "Oct": "October", "Nov": "November", "Dec": "December"}.get(old[:3])
+                    if long_old:
+                        d2 = d2.replace(f"{long_old} {old[-4:]}", new)
+                if d2 != doc:
+                    changed += 1
+                    print(f"  /pdufa/{slug}: window label {sorted(labels - {new})} -> {new} "
+                          f"(row precision {row.get('dp')})")
+                    if not a.dry_run:
+                        io.open(p, "w", encoding="utf-8").write(d2)
             continue
         iso = m.group(1)
         row = match_row(slug, rows)

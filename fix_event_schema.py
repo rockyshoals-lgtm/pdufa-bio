@@ -59,8 +59,26 @@ def dt_tz(d):
     return f"{d}T00:00:00{_et_offset(d)}"
 
 
+def _sd_for(d, prec):
+    """The startDate a row of this precision may honestly carry, or None.
+
+    Audit 09-15 (found while working ORDER 1): /readouts JSON-LD carried
+    startDate "2026-09-15T00:00:00-04:00" for a ClinicalTrials.gov MONTH estimate -- the retired
+    15th, in structured data, on the one hub the 09-14 fix did not cover. The date this script
+    looks up must be published at the precision the source holds: a day as a day, a month as
+    "YYYY-MM" (ISO 8601 reduced precision, valid schema.org Date), and a quarter/half/year not at
+    all -- the object is demoted to WebPage rather than given a day nobody stated."""
+    d = str(d or "")[:10]
+    if prec == "day" and re.match(r"^\d{4}-\d{2}-\d{2}$", d):
+        return dt_tz(d)
+    if prec == "month" and re.match(r"^\d{4}-\d{2}", d):
+        return d[:7]
+    return None
+
+
 def load_dates():
-    """Return (url2date, name2date, tickeridx). Dates are the same values the pages already display."""
+    """Return (url2date, name2date, tickeridx). Values are (date, precision) -- the same date the
+    pages display, with the precision the source holds."""
     url2d, name2d, tickeridx = {}, {}, {}
     # dataset.mjs
     try:
@@ -70,11 +88,12 @@ def load_dates():
             d = r.get("d")
             if not d:
                 continue
+            v = (d, r.get("dp") or "day")
             if r.get("url"):
-                url2d.setdefault(r["url"], d)
+                url2d.setdefault(r["url"], v)
             nm = norm(str(r.get("t", "")) + str(r.get("name", "")))
             if nm:
-                name2d.setdefault(nm, d)
+                name2d.setdefault(nm, v)
     except Exception as e:
         print("  (dataset.mjs parse skipped:", e, ")")
     # catalysts_public.csv (the fuller source the pages were built from)
@@ -83,13 +102,14 @@ def load_dates():
             d = (r.get("catalyst_date") or "").strip()
             if not d:
                 continue
+            v = (d, (r.get("date_precision") or "").strip() or "unknown")
             u = (r.get("source_url") or "").strip()
             if u:
-                url2d.setdefault(u, d)
+                url2d.setdefault(u, v)
             tk, drug = norm(r.get("ticker", "")), norm(r.get("drug", ""))
             if tk:
-                name2d.setdefault(tk + drug, d)
-                tickeridx.setdefault(tk, []).append((drug, d))
+                name2d.setdefault(tk + drug, v)
+                tickeridx.setdefault(tk, []).append((drug, v))
     return url2d, name2d, tickeridx
 
 
@@ -134,14 +154,16 @@ def fix_page(path, url2d, name2d, tickeridx, dry):
         body, name, url = m.group(1), m.group(2), m.group(3)
         if '"location"' in body:
             return m.group(0)
-        d = lookup(url, name, url2d, name2d, tickeridx)
-        if not d:
-            # No honest date available -> demote from Event to WebPage so it's not an INVALID Event
-            # (a plain page link, valid schema, just not rich-result eligible). Never fabricate a date.
+        v = lookup(url, name, url2d, name2d, tickeridx)
+        sd = _sd_for(*v) if v else None
+        if not sd:
+            # No honest date available at a publishable precision -> demote from Event to WebPage so
+            # it's not an INVALID Event (a plain page link, valid schema, just not rich-result
+            # eligible). Never fabricate a date, and never a day for a quarter.
             stats["unmatched"] += 1
             return '{"@type":"WebPage",' + body + '}'
         stats["dated"] += 1
-        return '{"@type":"Event",' + body + f',"startDate":"{dt_tz(d)}",{MODE},{STAT},{loc(url)}}}'
+        return '{"@type":"Event",' + body + f',"startDate":"{sd}",{MODE},{STAT},{loc(url)}}}'
 
     html = EV_DATED.sub(dated, html)
     html = EV_BARE.sub(bare, html)
@@ -173,7 +195,41 @@ def fix_page(path, url2d, name2d, tickeridx, dry):
         return obj[:-1] + f',{MODE},{STAT},{loc(u.group(1))}}}'
 
     html = re.sub(r'\{"@type":"Event"(?:[^{}]|\{[^{}]*\})*\}', _add_loc, html)
-    if (stats["loc_only"] or stats["dated"] or stats["tz_only"] or nul) and not dry:
+
+    # Precision repair (audit 09-15). Earlier runs stamped a DAY startDate on Events whose source
+    # row holds only a month or a quarter (/readouts: 2026-09-15 for a September registry
+    # estimate). For every Event we can match to a row, the startDate is re-derived at the row's
+    # precision: month -> "YYYY-MM"; quarter/half/year -> demoted to WebPage. Day rows untouched.
+    stats["precision"] = 0
+
+    def _fix_prec(mm):
+        obj = mm.group(0)
+        u = re.search(r'"url":"([^"]+)"', obj)
+        sd = re.search(r'"startDate":"([^"]+)"', obj)
+        if not u or not sd:
+            return obj
+        nm = re.search(r'"name":"((?:[^"\\]|\\.)*)"', obj)
+        v = lookup(u.group(1), nm.group(1) if nm else "", url2d, name2d, tickeridx)
+        if not v and path.replace("\\", "/").endswith("readouts/index.html"):
+            # An Event on /readouts that no row in the dataset or the crawl backs is structured
+            # data for a readout we no longer publish (17 such on 2026-09-15, every one stamped
+            # the 15th). It is demoted; it cannot be dated because nothing dates it.
+            want = None
+        elif not v or v[1] == "day" or v[1] == "unknown":
+            return obj
+        else:
+            want = _sd_for(*v)
+        if want is None:
+            stats["precision"] += 1
+            body = re.sub(r',?"(startDate|eventAttendanceMode|eventStatus|location)":(?:"[^"]*"|\{[^{}]*\})', "", obj)
+            return body.replace('{"@type":"Event"', '{"@type":"WebPage"', 1)
+        if sd.group(1) != want:
+            stats["precision"] += 1
+            return obj.replace(sd.group(0), f'"startDate":"{want}"')
+        return obj
+
+    html = re.sub(r'\{"@type":"Event"(?:[^{}]|\{[^{}]*\})*\}', _fix_prec, html)
+    if (stats["loc_only"] or stats["dated"] or stats["tz_only"] or stats["precision"] or nul) and not dry:
         open(path, "w", encoding="utf-8").write(html)
     return stats, nul
 
@@ -191,7 +247,8 @@ def main():
         s, nul = fix_page(p, url2d, name2d, tickeridx, a.dry_run)
         print(f"{'DRY ' if a.dry_run else ''}{page:22s} +location(dated){s['loc_only']:4d}  "
               f"+startDate&location{s['dated']:4d}  +datetime/TZ{s['tz_only']:4d}  "
-              f"unmatched(left){s['unmatched']:4d}  NUL_stripped{nul:6d}")
+              f"unmatched(left){s['unmatched']:4d}  precision-repaired{s['precision']:4d}  "
+              f"NUL_stripped{nul:6d}")
 
 
 if __name__ == "__main__":

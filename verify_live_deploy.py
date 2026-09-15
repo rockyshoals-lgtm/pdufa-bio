@@ -75,6 +75,10 @@ def main():
     ap.add_argument("--passes", type=int, default=3)
     ap.add_argument("--gap", type=int, default=45)
     ap.add_argument("--min-built", default=None)
+    ap.add_argument("--expect-commit", default=None,
+                    help="comma list of short SHAs the live build-info commit_at_build may name "
+                         "(CI: the pushed commit and its parent, since the stamp is taken before "
+                         "the CI commit)")
     ap.add_argument("--compare-repo", action="store_true",
                     help="Grade each live page's dateModified against this checkout's copy. "
                          "ONLY valid where the working tree is the deployed artifact (the CI "
@@ -150,6 +154,17 @@ def main():
                 info = json.loads(text)
                 built, live_commit = info.get("built", ""), str(info.get("commit", ""))
                 note.append(f"built={built}")
+                # Audit 09-15 section 5: the stamp must name the build that produced the served
+                # bytes, and the edge must agree with itself. Record what a second client sees.
+                note.append(f"last-modified={h.get('last-modified', '?')} age={h.get('age', '?')} "
+                            f"edge={str(h.get('x-vercel-id', '?')).split('::')[0]}")
+                if a.expect_commit:
+                    want = {c.strip() for c in a.expect_commit.split(",") if c.strip()}
+                    cab = str(info.get("commit_at_build") or live_commit)
+                    if cab not in want:
+                        fails.append(f"build-info commit_at_build {cab} is not the pushed build "
+                                     f"({sorted(want)}); the edge is serving a stale stamp")
+                        note.append("STALE STAMP")
                 if a.min_built and built < a.min_built:
                     fails.append(f"build-info built {built} < {a.min_built}")
                     note.append("OLDER THAN MIN")

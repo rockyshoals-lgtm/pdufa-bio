@@ -208,6 +208,13 @@ def main():
         doc = open(p, encoding="utf-8", errors="replace").read()
         if NOINDEX.search(doc[:4000]):
             skipped += 1
+            # 2026-09-15: a page that BECAME noindex (canonicalised duplicates) still carried the
+            # DMOD block written while it was indexable -- a dateModified for a URL that is no
+            # longer the page's canonical. Strip our own block and the modified-time metas.
+            stripped = re.sub(re.escape(B) + r".*?" + re.escape(E), "", doc, flags=re.S)
+            stripped = re.sub(r'<meta property="(?:article|og):modified_time" content="[^"]*">', "", stripped)
+            if stripped != doc:
+                open(p, "w", encoding="utf-8").write(stripped)
             continue
         original = doc
         marker_payload = []

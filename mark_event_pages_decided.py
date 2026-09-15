@@ -155,8 +155,11 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     # 2. sub line under the h1
     doc = re.sub(r'<div class="sub">FDA decision \(PDUFA\) target <b>[^<]{6,24}</b>',
                  f'<div class="sub">FDA decision <b>{_html.escape(word)} {P}</b>', doc)
-    # 3. key facts
-    doc = re.sub(r'<div class="kv"><span>FDA PDUFA target date</span><b>\d{4}-\d{2}-\d{2}</b></div>',
+    # 3. key facts. 2026-09-15: the fact may hold a WINDOW LABEL or "Date not sourced" rather
+    # than an ISO day -- fix_event_page_windows.py rewrote GILD-trodelvy and
+    # RHHBY-lunsumio-polivy that way before the decided-skip existed, and the banner then
+    # sat over a page still in the pending tense. Any fact value is replaced by the decision.
+    doc = re.sub(r'<div class="kv"><span>FDA PDUFA target date</span><b>[^<]{4,24}</b></div>',
                  f'<div class="kv"><span>FDA decision</span><b>{_html.escape(word)} {P}</b></div>'
                  + goal_kv, doc)
     # 4. FAQ question + answer (HTML and JSON-LD carry the same strings)
@@ -165,6 +168,12 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     # "vs." -- both sides are lazy, anchored on the fixed template words around them
     doc = re.sub(r"The FDA PDUFA target date for " + re.escape(tk) + r" \((.*?)\) is \d{4}-\d{2}-\d{2} "
                  r"for (.*?)\. Dates are company/FDA-sourced and can slip\. Verify against primary filings\.",
+                 lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} on "
+                            f"{P}: {word}.{goal_sent} Verify against the linked primary source."),
+                 doc)
+    # the windowed / unsourced FAQ shapes fix_event_page_windows.py writes
+    doc = re.sub(r"The FDA PDUFA target date for " + re.escape(tk) + r" \((.*?)\) (?:is expected in [^.]{4,24} for|is not sourced for|"
+                 r"has not been sourced\. We hold no filing or release stating a date for) (.*?)\. (?:[^<\"]*?)Verify against primary filings\.",
                  lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} on "
                             f"{P}: {word}.{goal_sent} Verify against the linked primary source."),
                  doc)
@@ -181,11 +190,17 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     # bictegravir/lenacapavir, RARE DTX401) never matched here and kept "PDUFA date:" over an
     # Approved body. test_no_past_target_pending_pages.py now fails that shape.
     tm = re.search(r"<title>([A-Z]{1,6} PDUFA date: (.+?), ([A-Z][a-z]{2} \d{1,2},? \d{4}))(?: \| pdufa\.bio)?</title>", doc)
+    if not tm:
+        # 2026-09-15: a title fix_event_page_windows.py already stripped the date from
+        # ("GILD PDUFA date: Trodelvy | pdufa.bio") or fitted with a window label
+        tm = re.search(r"<title>([A-Z]{1,6} PDUFA date: (.+?)(?:, (?:Q[1-4] \d{4}|[A-Z][a-z]{2,8} \d{4}))?)(?: \| pdufa\.bio)?</title>", doc)
     if tm:
         old_title, tdrug = tm.group(1), tm.group(2)
         new_title = f"{tk} FDA decision: {tdrug}, {word} {P}"
         doc = doc.replace(old_title, new_title)
         doc = re.sub(r"(&#x27;s|'s) FDA PDUFA date is [A-Z][a-z]{2} \d{1,2},? \d{4} for " + re.escape(tdrug),
+                     rf"\1 {tdrug} was {'approved by the FDA' if ok else 'issued a Complete Response Letter by the FDA'} on {P}", doc)
+        doc = re.sub(r"(&#x27;s|'s) FDA PDUFA (?:decision is expected in [^ ]{2,3} ?\d{4}|date is not sourced) for " + re.escape(tdrug),
                      rf"\1 {tdrug} was {'approved by the FDA' if ok else 'issued a Complete Response Letter by the FDA'} on {P}", doc)
     return doc
 

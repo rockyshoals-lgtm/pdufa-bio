@@ -92,6 +92,25 @@ def main():
             hits = [c for c in live if stoks & toks(c.get("name"))]
         else:
             hits = live                      # bare /pdufa/{TICKER}: only safe if it is unique
+        if len(hits) > 1:
+            # 2026-09-15: /pdufa/PRAX said September 27 for 78 days after the FDA moved
+            # relutrigine to December 27, because PRAX has two live events and this branch
+            # skipped. Two further discriminators, each unambiguous on its own:
+            #   (a) the row whose date_history records the date the page STATES -- the page is
+            #       stale at exactly the date the row moved away from;
+            #   (b) the row whose name shares a token with the page's own "Drug / candidate"
+            #       fact or <h1>, the ticker token removed.
+            byhist = [c for c in hits if any(isinstance(h, dict) and h.get("date") == stated
+                                             for h in (c.get("_d") or {}).get("date_history") or [])]
+            if len(byhist) == 1:
+                hits = byhist
+            else:
+                own = re.search(r"Drug / candidate</span><b>([^<]+)</b>", doc) or \
+                      re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
+                ptoks = toks(re.sub(r"<[^>]+>", " ", own.group(1))) - {tk.lower()} if own else set()
+                bydrug = [c for c in hits if ptoks & (toks(c.get("name")) - {tk.lower()})]
+                if len(bydrug) == 1:
+                    hits = bydrug
         if len(hits) != 1:
             if len(hits) > 1:
                 print(f"  SKIP /pdufa/{slug}: {len(hits)} live events match; a wrong rewrite is "
@@ -103,6 +122,10 @@ def main():
             continue
         if str(hit.get("st", "")).lower() == "decided":
             continue                       # a decided date is history, not a schedule
+        if str(hit.get("dp") or "day") != "day":
+            # a month/quarter/year row holds a SENTINEL in d; writing it onto a page would
+            # publish a day nobody stated. fix_event_page_windows.py owns those pages.
+            continue
 
         # PROTECT HISTORICAL BLOCKS (2026-08-24). A blanket replace rewrote the date inside the
         # extension notice too, so /pdufa/CAPR-deramiocel ended up reading "the FDA moved this

@@ -603,6 +603,12 @@ jobs:
         continue-on-error: true
         run: python audit_currency.py
 
+      # Audit 09-15 ORDER 7: known duplicate /pdufa pages canonicalise to their primary and go
+      # noindex BEFORE the sitemap is built, so build_sitemap.py's noindex filter drops them.
+      # tests/test_duplicate_event_pages_canonical.py fails if this step goes missing.
+      - name: "Canonicalise duplicate event pages (noindex twins, rewrite links)"
+        run: python canonicalise_duplicate_event_pages.py
+
       # Rebuilt again here, after the normalisers: build_stock_runup lifts the noindex on hubs that
       # gained real content, and those pages only belong in the sitemap once that has happened.
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
@@ -811,7 +817,9 @@ jobs:
         # it just pushed and Vercel deployed, so a live page whose dateModified differs from the
         # file on disk is the edge serving a body we did not deploy -- the 09-07 finding, caught
         # automatically. It is off by default everywhere else (see the note in the script).
-        run: python verify_live_deploy.py --passes 3 --gap 30 --compare-repo --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)"
+        # --expect-commit (audit 09-15 s.5): the live stamp must name this build. The stamp is
+        # taken before the CI commit, so its commit_at_build is the pushed commit's parent.
+        run: python verify_live_deploy.py --passes 3 --gap 30 --compare-repo --min-built "$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%S+00:00)" --expect-commit "$(git rev-parse --short=9 HEAD),$(git rev-parse --short=9 HEAD~1)"
 
       # Tell the search engines, AFTER Vercel has had a moment to build the pushed commit.
       # Note: the classic sitemap ping is gone. google.com/ping returns 404 "deprecated" and

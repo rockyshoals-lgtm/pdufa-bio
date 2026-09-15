@@ -445,7 +445,90 @@ def merge(records):
     df=df.sort_values("confidence",ascending=False)
     agg=df.groupby("k").agg(sources=("source",lambda s:";".join(sorted(set(s.dropna())))),
                             urls=("source_url",lambda s:";".join(sorted(set(x for x in s if x))))).reset_index()
-    return df.drop_duplicates("k").merge(agg,on="k").drop(columns="k").sort_values(["catalyst_date","catalyst_type"])
+    out=df.drop_duplicates("k").merge(agg,on="k").drop(columns="k").sort_values(["catalyst_date","catalyst_type"])
+    return resolve_date_precision(out)
+
+
+# ----------------------------------------------------------------- precision provenance
+# Audit 09-15 ORDER 6. The 09-10 P0 (nine quarter-end PDUFA "days", four of them sponsor-stated
+# QUARTERS) and the 09-14 P0 (a Q3 statement overriding a September 26 day) share one cause: the
+# pipeline had no rule for which of two statements about the same event's date wins. This is it.
+#
+#   1. The most recent DAY-precision statement wins. A sponsor that said "September 26" in May
+#      and "November 22" in August moved the date; the later day is the date, the earlier is
+#      history (the site records it in date_history).
+#   2. A quarter, half, month or year is NEVER rounded to a day. Coarse statements keep their
+#      window label ("2026-Q3") or a month-end sentinel AND their precision; precision "day" is
+#      only ever attached to a stated calendar day. `norm_any` guarantees it for mined text;
+#      this function refuses to let a seed or curated row claim otherwise.
+#   3. A LATER coarse statement does not override an EARLIER day. "Third quarter of 2026" in an
+#      August 10-Q after "September 26, 2026" in a May 8-K is the same date at lower resolution,
+#      not a move. When the day falls inside the coarse window the coarse row is dropped as
+#      redundant. When it falls OUTSIDE the window the two statements conflict; both are kept
+#      and the coarse row is flagged data_flags="window-conflict" so a person resolves it
+#      against the filings rather than a sort order deciding.
+_PREC_RANK={"day":4,"month":3,"quarter":2,"half":1,"year":0}
+
+def _date_window(label, precision):
+    """(start, end) calendar window a label covers, or None."""
+    s=str(label or "")
+    try:
+        if precision=="day" and re.match(r'^\d{4}-\d{2}-\d{2}$', s):
+            d=date.fromisoformat(s); return d,d
+        m=re.match(r'^(\d{4})-Q([1-4])$', s)
+        if m:
+            y,q=int(m.group(1)),int(m.group(2)); a=date(y,3*q-2,1)
+            b=(date(y+1,1,1) if q==4 else date(y,3*q+1,1))-timedelta(days=1); return a,b
+        m=re.match(r'^(\d{4})-H([12])$', s)
+        if m:
+            y,h=int(m.group(1)),int(m.group(2))
+            return (date(y,1,1),date(y,6,30)) if h==1 else (date(y,7,1),date(y,12,31))
+        m=re.match(r'^(\d{4})-(\d{2})(?:-\d{2})?$', s)
+        if m and precision=="month":
+            y,mo=int(m.group(1)),int(m.group(2)); a=date(y,mo,1)
+            b=(date(y+1,1,1) if mo==12 else date(y,mo+1,1))-timedelta(days=1); return a,b
+        m=re.match(r'^(\d{4})(?:-\d{2}-\d{2})?$', s)
+        if m and precision in ("year","quarter","half"):
+            # a coarse row carrying a sentinel day: the year is all we can trust
+            y=int(m.group(1)); return date(y,1,1),date(y,12,31)
+    except Exception:
+        return None
+    return None
+
+def resolve_date_precision(df):
+    if df is None or len(df)==0: return df
+    df=df.copy()
+    if "data_flags" not in df.columns: df["data_flags"]=""
+    df["data_flags"]=df["data_flags"].fillna("").astype(str)
+    # rule 2: a "day" that is not a calendar day is a coarse label mislabelled; demote it
+    bad=df["date_precision"].eq("day") & ~df["catalyst_date"].astype(str).str.match(r'^\d{4}-\d{2}-\d{2}$')
+    if bad.any():
+        df.loc[bad,"date_precision"]=df.loc[bad,"catalyst_date"].astype(str).map(
+            lambda s:"quarter" if "-Q" in s else "half" if "-H" in s else "year")
+    drop=set(); n_conf=0
+    groups=df.groupby([df["ticker"].fillna(""), df["catalyst_type"].fillna(""),
+                       df["drug"].map(_drug_root).fillna("")], sort=False)
+    for _,g in groups:
+        if len(g)<2: continue
+        days=g[g["date_precision"].eq("day")]
+        if len(days)==0: continue
+        # rule 1: the most recent day-precision statement is THE date
+        best=days.sort_values(["retrieved_at","confidence"],ascending=False).iloc[0]
+        win=_date_window(best["catalyst_date"],"day")
+        if not win: continue
+        for i,r in g.iterrows():
+            if i==best.name or r["date_precision"]=="day": continue
+            w=_date_window(r["catalyst_date"],r["date_precision"])
+            if w and w[0]<=win[0]<=w[1]:
+                drop.add(i)                                   # rule 3: redundant restatement
+            else:
+                n_conf+=1                                     # rule 3: genuine conflict, keep + flag
+                df.at[i,"data_flags"]=(df.at[i,"data_flags"]+";" if df.at[i,"data_flags"] else "")+ \
+                    f"window-conflict:day={best['catalyst_date']}"
+    if drop or n_conf:
+        print(f"  [precision] {len(drop)} coarse restatement(s) dropped behind a stated day; "
+              f"{n_conf} window-conflict(s) flagged for review")
+    return df.drop(index=list(drop))
 
 _COLIST_STOP={'oral','tablet','capsule','solution','injection','cream','inhalation','autoinjector','combination','with','plus','and','the','for','low','dose','high'}
 def _drug_root(name):

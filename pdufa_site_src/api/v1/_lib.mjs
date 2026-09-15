@@ -56,7 +56,14 @@ const CORE = e => ({
 // Pro sells what we do NOT publish as data: the per-event daily run-up series (/api/v1/runup),
 // bulk export, .ics feeds, webhooks, and 100k/mo quota.
 const CORE_EXTRA = ['nct_id','indication','market_cap_usd','cash_runway_months','days_to_decision',
-  'cohort_move_median_pct','cohort_move_p25_pct','cohort_move_p75_pct','cohort_n','runup_summary'];
+  'cohort_move_median_pct','cohort_move_p25_pct','cohort_move_p75_pct','cohort_n','runup_summary',
+  /* Audit 09-15 ORDER 4: the provenance the site stands on, in the feed. `source` names the
+     filing ("Corcept 8-K 2026-07-29 (EX-99.1)"), `source_url` is the primary document, and
+     `date_history` records every date a row has held and why it moved (an FDA extension, a
+     registry estimate that slid, a day withdrawn as unsourced). A day-precision row with a null
+     source_url is one we could not settle in a filing; the field says so instead of the row
+     implying otherwise. 0 of 456 rows exposed any of this before today. */
+  'source','source_url','date_history'];
 const DEPTH_KEYS = [];
 
 export function shape(e, tier) {

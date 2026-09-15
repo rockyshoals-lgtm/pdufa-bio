@@ -23,7 +23,11 @@ Four invariants:
      "day"; the label it renders must equal site_windows.window_label for that row.
   3. EARLINESS -- no page may render "N days early" for a row where site_windows.earliness_allowed
      is False.
-  4. NEXT POINTER -- build-info.json must never publish a negative next_days.
+  4. NEXT POINTER -- build-info.json must never publish a negative next_days, and none at all
+     when next_status is "awaiting" (09-15: a clamp to 0 read as "today").
+  5. READOUT SCHEMA -- no Event in /readouts JSON-LD carries a day-precision startDate unless the
+     row it is matched to holds a day. Found 09-15: all 81 Events said the 15th; 64 were month
+     estimates and 17 were readouts no longer published anywhere.
 
     python tests/test_cross_surface_values.py
 """
@@ -166,7 +170,37 @@ def main():
         if isinstance(nd, int) and nd < 0:
             print(f"  FAIL build-info.json publishes next_days={nd}. A decision cannot be a "
                   f"negative number of days away. A past-dated undecided event is 'awaiting': "
-                  f"keep it as next, set next_status and clamp next_days to 0.")
+                  f"keep it as next, set next_status and null next_days.")
+            fail += 1
+        # Audit 09-15 ORDER 5: clamping to 0 published "today" for a goal date three days gone.
+        # An awaiting event has NO countdown; the field must be null, not 0.
+        if j.get("next_status") == "awaiting" and nd is not None:
+            print(f"  FAIL build-info.json says next_status=awaiting but next_days={nd}. A "
+                  f"countdown to a date that has passed has no value; publish null.")
+            fail += 1
+        if j.get("next_status") == "upcoming" and (not isinstance(nd, int) or nd < 0):
+            print(f"  FAIL build-info.json says next_status=upcoming but next_days={nd!r}.")
+            fail += 1
+
+    # ---- 5. /readouts JSON-LD: a day-stamped Event must be backed by a day-precision row ----
+    rp = os.path.join(SITE, "readouts", "index.html")
+    n_ev = 0
+    if os.path.exists(rp):
+        day_urls = {str(r.get("url")) for r in rows if r.get("dp") == "day"}
+        day_ncts = {m for u in day_urls for m in re.findall(r"NCT\d{8}", u)}
+        for ev in re.findall(r'\{"@type":"Event"(?:[^{}]|\{[^{}]*\})*\}', raw(rp)):
+            n_ev += 1
+            sd = re.search(r'"startDate":"(\d{4}-\d{2}-\d{2})', ev)
+            if not sd:
+                continue
+            u = re.search(r'"url":"([^"]+)"', ev)
+            url = u.group(1) if u else ""
+            nct = re.findall(r"NCT\d{8}", url)
+            if url in day_urls or (nct and nct[0] in day_ncts):
+                continue
+            print(f"  FAIL /readouts JSON-LD Event {ev[:90]}... carries day startDate {sd.group(1)} "
+                  f"but no day-precision row backs it. A month estimate is published as YYYY-MM; "
+                  f"an unbacked Event is demoted (fix_event_schema.py).")
             fail += 1
 
     if fail:
@@ -175,7 +209,7 @@ def main():
         return 1
     print(f"OK -- timing statistic agrees on {len(seen)} surface(s) {sorted(set(seen.values()))}; "
           f"no event page states a day the dataset withdrew; no unsourced earliness rendered; "
-          f"next_days not negative.")
+          f"next_days honest; {n_ev} /readouts Events carry no unbacked day.")
     return 0
 
 

@@ -23,7 +23,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07055243"
   },
   "dm": "2026-06"
  },
@@ -51,7 +52,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06810167"
   },
   "dm": "2026-06"
  },
@@ -121,7 +123,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04150497"
   },
   "dm": "2026-06"
  },
@@ -1344,7 +1347,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-06-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2028-06-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06247839"
   },
   "dm": "2028-06"
  },
@@ -1393,7 +1408,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06395870"
   },
   "dm": "2026-06"
  },
@@ -1421,7 +1437,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-06-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06016738"
   },
   "dm": "2026-10"
  },
@@ -1449,7 +1477,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-06-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05166161"
   },
   "dm": "2026-07"
  },
@@ -1498,7 +1538,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07036029"
   },
   "dm": "2026-06"
  },
@@ -1526,7 +1567,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04906460"
   },
   "dm": "2026-06"
  },
@@ -1957,7 +1999,18 @@ export default [
     "t30": 0.38,
     "t7": -0.01,
     "t1": 0.0
-   }
+   },
+   "date_history": [
+    {
+     "date": "2026-03-25",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-11",
+     "changed": "2026-03-25",
+     "why": "This id was keyed on the FDA ACTION date (March 25, 2026) rather than the goal date (July 11, 2026). The row is decided and the key is stable; the discrepancy is naming, not a date move."
+    }
+   ]
   },
   "oc": "Approved",
   "dcd": "2026-03-25"
@@ -1986,7 +2039,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-07-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2031-05-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT07086755"
   },
   "dm": "2031-05"
  },
@@ -2014,7 +2079,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05583227"
   },
   "dm": "2026-07"
  },
@@ -2042,7 +2108,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05486468"
   },
   "dm": "2026-07"
  },
@@ -2070,7 +2137,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06553547"
   },
   "dm": "2026-07"
  },
@@ -2098,7 +2166,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07523048"
   },
   "dm": "2026-07"
  },
@@ -2127,7 +2196,19 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-09-14, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-09-14, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "date_history": [
+    {
+     "date": "2026-07-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-04-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06374797"
   },
   "dm": "2026-04"
  },
@@ -2155,7 +2236,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03037164"
   },
   "dm": "2026-07"
  },
@@ -2183,7 +2265,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06736717"
   },
   "dm": "2026-07"
  },
@@ -2211,7 +2294,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06848348"
   },
   "dm": "2026-07"
  },
@@ -2239,7 +2323,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05650879"
   },
   "dm": "2026-07"
  },
@@ -2288,7 +2373,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-07-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-04-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05479812"
   },
   "dm": "2026-04"
  },
@@ -2316,7 +2413,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04724369"
   },
   "dm": "2026-07"
  },
@@ -2344,7 +2442,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06566092"
   },
   "dm": "2026-07"
  },
@@ -2393,7 +2492,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05933265"
   },
   "dm": "2026-07"
  },
@@ -2421,7 +2521,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-07-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-01-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06481891"
   },
   "dm": "2027-01"
  },
@@ -2470,7 +2582,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-07-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-06-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT07108153"
   },
   "dm": "2026-06"
  },
@@ -2520,7 +2644,19 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-09-14, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-09-14, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "date_history": [
+    {
+     "date": "2026-07-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-05-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06470451"
   },
   "dm": "2026-05"
  },
@@ -2542,7 +2678,9 @@ export default [
   "_d": {
    "nct_id": "NCT05952856",
    "indication": "Hypercholesterolemia incl. HeFH (LDL-C lowering)",
-   "market_cap_usd": null
+   "market_cap_usd": null,
+   "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-oral-pcsk9-inhibitor-lower-ldl-cholesterol-adults-high-cholesterol",
+   "source": "FDA announcement"
   }
  },
  {
@@ -2605,7 +2743,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2678,7 +2816,19 @@ export default [
    "program": "ML-007C",
    "accession": "0001193125-26-224067",
    "guidance_text": "autism spectrum disorder, with topline results expected by mid-August 2026 &#x2022; Enrollment ongoing in ML-007C-MA&#x2019;s Phase 2 VISTA trial in Alzheimer&#x2019;s disease psychosis, with topline results expected in the second half of 2027 &#x2022; Ended the quarter with $395.2 million in cash, ",
-   "review": "Phase 2 ZEPHYR met its primary endpoint: statistically significant improvement in PANSS total score versus placebo at Week 5 on the 210/3 mg BID dose in acute schizophrenia. Generally well tolerated; no serious or drug-related severe adverse events reported."
+   "review": "Phase 2 ZEPHYR met its primary endpoint: statistically significant improvement in PANSS total score versus placebo at Week 5 on the 210/3 mg BID dose in acute schizophrenia. Generally well tolerated; no serious or drug-related severe adverse events reported.",
+   "date_history": [
+    {
+     "date": "2026-08-31",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-27",
+     "changed": "2026-08-03",
+     "why": "The row was keyed on the guided window's sentinel; the result was reported on 2026-07-27, and a reported row carries the day it was reported."
+    }
+   ],
+   "source_url": "https://www.globenewswire.com/news-release/2026/07/27/3333379/0/en/MapLight-Therapeutics-Announces-Positive-Topline-Results-from-Phase-2-ZEPHYR-Trial-of-ML-007C-MA-in-Schizophrenia.html"
   },
   "oc": "Met primary endpoint"
  },
@@ -2688,7 +2838,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2740,7 +2890,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -2882,7 +3032,19 @@ export default [
    "program": "LEVEL-2",
    "accession": "0001193125-26-327455",
    "guidance_text": "available, in short-term money market investment instruments and high quality corporate and government bonds. We completed randomization in the LEVEL trial at the end of the first quarter of 2026 and expect to report topline data in August 2026. We began our LEVEL-2 trial in December 2025 and are cu",
-   "review": "Phase 3 LEVEL did not meet its primary endpoint: patients walked 3.5 metres further than placebo at Week 12 (p=0.63), a difference small enough to be chance; the key secondary (KCCQ-TSS) was also not met. A prespecified subgroup with baseline 6MWD under 333 m improved 26.3 m (nominal p=0.0112) and NT-proBNP fell 49% versus placebo (nominal p<0.0001), but the company states: 'Nominal p-values are not adjusted for multiplicity and these analyses do not establish efficacy.' Tenax intends to request a Type C meeting with FDA. Full results were a Late-Breaking Clinical Science presentation at ESC Congress 2026 (Munich, Aug 28-31). Note: LEVEL-2 is a separate, still-running Phase 3 of the same drug (enrollment completing end of 2027) -- this row previously mis-named the trial."
+   "review": "Phase 3 LEVEL did not meet its primary endpoint: patients walked 3.5 metres further than placebo at Week 12 (p=0.63), a difference small enough to be chance; the key secondary (KCCQ-TSS) was also not met. A prespecified subgroup with baseline 6MWD under 333 m improved 26.3 m (nominal p=0.0112) and NT-proBNP fell 49% versus placebo (nominal p<0.0001), but the company states: 'Nominal p-values are not adjusted for multiplicity and these analyses do not establish efficacy.' Tenax intends to request a Type C meeting with FDA. Full results were a Late-Breaking Clinical Science presentation at ESC Congress 2026 (Munich, Aug 28-31). Note: LEVEL-2 is a separate, still-running Phase 3 of the same drug (enrollment completing end of 2027) -- this row previously mis-named the trial.",
+   "date_history": [
+    {
+     "date": "2026-08-31",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-08-10",
+     "changed": "2026-08-03",
+     "why": "The row was keyed on the guided window's sentinel; the result was reported on 2026-08-10, and a reported row carries the day it was reported."
+    }
+   ],
+   "source_url": "https://www.globenewswire.com/news-release/2026/08/10/3341675/12401/en/tenax-therapeutics-announces-topline-results-from-phase-3-level-clinical-trial-of-tnx-103-in-patients-with-ph-hfpef.html"
   },
   "oc": "Did not meet primary endpoint"
  },
@@ -2950,7 +3112,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07011706"
   },
   "dm": "2026-08"
  },
@@ -2978,7 +3141,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06901505"
   },
   "dm": "2026-08"
  },
@@ -3006,7 +3170,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06847191"
   },
   "dm": "2026-08"
  },
@@ -3034,7 +3199,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06455059"
   },
   "dm": "2026-08"
  },
@@ -3062,7 +3228,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03478462"
   },
   "dm": "2026-08"
  },
@@ -3090,7 +3257,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-08-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06668064"
   },
   "dm": "2026-07"
  },
@@ -3118,7 +3297,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT01983241"
   },
   "dm": "2026-08"
  },
@@ -3146,7 +3326,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-08-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2028-06-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06548360"
   },
   "dm": "2028-06"
  },
@@ -3174,7 +3366,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07298434"
   },
   "dm": "2026-08"
  },
@@ -3203,7 +3396,19 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-09-14, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-09-14, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "date_history": [
+    {
+     "date": "2026-08-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06736262"
   },
   "dm": "2026-07"
  },
@@ -3231,7 +3436,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05611931"
   },
   "dm": "2026-08"
  },
@@ -3253,7 +3459,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "review": "KYSA-1 (NCT05938725) was TERMINATED; ClinicalTrials.gov records the reason as 'Study discontinued due to sponsor decision' (status verified 2026). The related KYSA-3 lupus nephritis trial (NCT06342960) is also terminated for the same stated reason. No topline readout will occur from this trial; primary completion is recorded as ACTUAL 2026-05-29."
+   "review": "KYSA-1 (NCT05938725) was TERMINATED; ClinicalTrials.gov records the reason as 'Study discontinued due to sponsor decision' (status verified 2026). The related KYSA-3 lupus nephritis trial (NCT06342960) is also terminated for the same stated reason. No topline readout will occur from this trial; primary completion is recorded as ACTUAL 2026-05-29.",
+   "source_url": "https://clinicaltrials.gov/study/NCT05938725"
   },
   "dm": "2026-08",
   "oc": "Trial terminated; no readout"
@@ -3282,7 +3489,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06527365"
   },
   "dm": "2026-08"
  },
@@ -3352,7 +3560,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06052059"
   },
   "dm": "2026-08"
  },
@@ -3380,7 +3589,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05669482"
   },
   "dm": "2026-08"
  },
@@ -3447,7 +3657,9 @@ export default [
    "review": "Phase 3 LUCIDITY (n=78) met the FDA-agreed primary endpoint: a 55% reduction in the composite rate of Level 2 and Level 3 hypoglycaemic events versus placebo (p=0.000003), with all secondary endpoints met and no treatment-related serious adverse events. Avexitide holds Breakthrough Therapy and Orphan Drug designations. Amylyx has said it plans to submit an NDA to the FDA by the end of 2026; no action date exists yet, because no application has been filed.",
    "market_cap_usd": null,
    "readout_outcome": "Positive",
-   "reported_date": "2026-08-18"
+   "reported_date": "2026-08-18",
+   "source_url": "https://www.businesswire.com/news/home/20260817275387/en/Amylyx-Pharmaceuticals-Announces-Positive-Topline-Results-from-Phase-3-LUCIDITY-Clinical-Trial-of-Avexitide-in-Post-Bariatric-Hypoglycemia",
+   "source": "company press release"
   },
   "ua": "2026-08-24T17:10:15Z",
   "oc": "Met primary endpoint"
@@ -3725,7 +3937,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-09-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-06-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05843578"
   },
   "dm": "2026-06"
  },
@@ -3753,7 +3977,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06079190"
   },
   "dm": "2026-09"
  },
@@ -3781,7 +4006,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06920901"
   },
   "dm": "2026-09"
  },
@@ -3809,7 +4035,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05643534"
   },
   "dm": "2026-09"
  },
@@ -3858,7 +4085,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-09-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-03-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05548127"
   },
   "dm": "2027-03"
  },
@@ -3886,7 +4125,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06868264"
   },
   "dm": "2026-09"
  },
@@ -3914,7 +4154,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07281495"
   },
   "dm": "2026-09"
  },
@@ -3963,7 +4204,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04756726"
   },
   "dm": "2026-09"
  },
@@ -3991,7 +4233,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06381141"
   },
   "dm": "2026-09"
  },
@@ -4061,7 +4304,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT02138734"
   },
   "dm": "2026-09"
  },
@@ -4089,7 +4333,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-09-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT07176286"
   },
   "dm": "2026-10"
  },
@@ -4117,7 +4373,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03252938"
   },
   "dm": "2026-09"
  },
@@ -4145,7 +4402,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04562870"
   },
   "dm": "2026-09"
  },
@@ -4173,7 +4431,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06768671"
   },
   "dm": "2026-09"
  },
@@ -4222,7 +4481,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05499013"
   },
   "dm": "2026-09"
  },
@@ -4250,7 +4510,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT02736656"
   },
   "dm": "2026-09"
  },
@@ -4320,7 +4581,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06405633"
   },
   "dm": "2026-09"
  },
@@ -4380,7 +4642,7 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/RARE",
+  "url": "/pdufa/ABEO",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -4404,7 +4666,11 @@ export default [
     "t30": 2.19,
     "t7": -0.33,
     "t1": 0.0
-   }
+   },
+   "source": "Ultragenyx 8-K 2026-04-02 (Item 8.01)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm",
+   "source_quote": "The FDA set a Prescription Drug User Fee Act (PDUFA) action date of September 19, 2026.",
+   "precision_note": "Ultragenyx's 8-K of 2026-02-03 stated only 'a PDUFA date expected in the third quarter of 2026'; the 8-K of 2026-04-02 states the day. The day-precision statement wins and the quarter is never rounded to a day."
   }
  },
  {
@@ -4418,7 +4684,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/MRK",
+  "url": "/pdufa/MRK-winrevair",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "indication": "Recently diagnosed pulmonary arterial hypertension (label update)",
@@ -4506,7 +4772,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm",
+  "url": "/pdufa/MIRM-zilurgisertib",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -4586,7 +4852,8 @@ export default [
    "guided_filed": "2026-02-12",
    "program": "ARD-101",
    "accession": "0001193125-26-047757",
-   "guidance_text": "d patient-focused group of individuals at such a defining inflection point,&#x201d; said Mr. Li. &#x201c;The opportunity to help advance the company&#x2019;s lead asset, ARD-101, with topline Phase 3 data expected in the third quarter of 2026, and to expand the company&#x2019;s portfolio is energizi"
+   "guidance_text": "d patient-focused group of individuals at such a defining inflection point,&#x201d; said Mr. Li. &#x201c;The opportunity to help advance the company&#x2019;s lead asset, ARD-101, with topline Phase 3 data expected in the third quarter of 2026, and to expand the company&#x2019;s portfolio is energizi",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001774857/000119312526047757/ck0001774857-ex99_2.htm"
   },
   "dm": "2026-09"
  },
@@ -4613,7 +4880,8 @@ export default [
    "guided_filed": "2026-05-11",
    "program": "ABCL635",
    "accession": "0001703057-26-000027",
-   "guidance_text": "y data readout for ABCL635 and set up for additional three INDs in 2027 Nominate at least 1 additional development candidate for IND-enabling activities 2026 PRIORITIES ABCL635 Phase 2 clinical trial topline readout in Q3 2026 ABCL575 Phase 1 clinical trial topline readout in Q4 2026 ABCL688 progres"
+   "guidance_text": "y data readout for ABCL635 and set up for additional three INDs in 2027 Nominate at least 1 additional development candidate for IND-enabling activities 2026 PRIORITIES ABCL635 Phase 2 clinical trial topline readout in Q3 2026 ABCL575 Phase 1 clinical trial topline readout in Q4 2026 ABCL688 progres",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001703057/000170305726000027/a2026q1fybusinessupdatem.htm"
   },
   "dm": "2026-09"
  },
@@ -4640,7 +4908,8 @@ export default [
    "guided_filed": "2026-06-29",
    "program": "anifrolumab",
    "accession": "0001104659-26-078507",
-   "guidance_text": "h 2 PsO data shows robust inhibition of Type I IFN gene signature Type I IFN is a key disease driver in SLE Approved SLE therapy (anifrolumab) validates IFN pathway targeting 26 LUMUS Phase 2b Trial: Topline Results Expected Q3 2026 Designed for high probability of clinical success and speed to mark"
+   "guidance_text": "h 2 PsO data shows robust inhibition of Type I IFN gene signature Type I IFN is a key disease driver in SLE Approved SLE therapy (anifrolumab) validates IFN pathway targeting 26 LUMUS Phase 2b Trial: Topline Results Expected Q3 2026 Designed for high probability of clinical success and speed to mark",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001847367/000110465926078507/tm2619143d1_ex99-1.htm"
   },
   "dm": "2026-09"
  },
@@ -4668,7 +4937,19 @@ export default [
    "program": "AL001",
    "accession": "0001214659-26-008832",
    "guidance_text": "e effects across all brain regions whereas AL001 showed minimal glutamate effect in most brain regions, which may suggest better long-term tolerability. Full pharmacokinetics and pharmacodynamic&#160;results are expected in August 2026. &#160; In March 2026, we announced the initiation of the Phase ",
-   "review": "Company guidance: Phase II bipolar disorder topline in Q3 2026. (A separate AL001 study, the 'Lithium in Brain' bioequivalence trial, already reported in March 2026.)"
+   "review": "Company guidance: Phase II bipolar disorder topline in Q3 2026. (A separate AL001 study, the 'Lithium in Brain' bioequivalence trial, already reported in March 2026.)",
+   "date_history": [
+    {
+     "date": "2026-08-31",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-30",
+     "changed": "2026-08-03",
+     "why": "Company guidance moved the window; the row was keyed on the earlier window's sentinel and now holds the sentinel of the window the company guides."
+    }
+   ],
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001677077/000121465926008832/az72426110k.htm"
   },
   "dm": "2026-09"
  },
@@ -4695,7 +4976,8 @@ export default [
    "guided_filed": "2026-03-12",
    "program": "BDC-4182",
    "accession": "0001193125-26-104102",
-   "guidance_text": "rter and Full-Year 2025 Financial Results and Provides Business Update &#160; &#x2022; First-in-class immune-stimulating antibody conjugate BDC-4182 in Phase 1 dose escalation study, initial clinical data expected in 3Q 2026 &#x2022; Cash balance of $31.8 million as of December 31, 2025 anticipated "
+   "guidance_text": "rter and Full-Year 2025 Financial Results and Provides Business Update &#160; &#x2022; First-in-class immune-stimulating antibody conjugate BDC-4182 in Phase 1 dose escalation study, initial clinical data expected in 3Q 2026 &#x2022; Cash balance of $31.8 million as of December 31, 2025 anticipated ",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001641281/000119312526104102/bolt-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -4746,7 +5028,8 @@ export default [
    "guided_filed": "2026-06-24",
    "program": "DT120",
    "accession": "0001104659-26-077349",
-   "guidance_text": "ODT 100 &#181;g, DT120 ODT 50 &#181;g or placebo. The primary endpoint for each trial is the change from baseline in HAM-A score at Week 12 between DT120 ODT 100 &#181;g and placebo. We anticipate a topline readout (Part&#160;A results) for Voyage in early third quarter 2026 and a topline readout (P"
+   "guidance_text": "ODT 100 &#181;g, DT120 ODT 50 &#181;g or placebo. The primary endpoint for each trial is the change from baseline in HAM-A score at Week 12 between DT120 ODT 100 &#181;g and placebo. We anticipate a topline readout (Part&#160;A results) for Voyage in early third quarter 2026 and a topline readout (P",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001813814/000110465926077349/tm2618395-2_424b5.htm"
   },
   "dm": "2026-09"
  },
@@ -4773,7 +5056,8 @@ export default [
    "guided_filed": "2026-06-29",
    "program": "EVO756",
    "accession": "0001193125-26-286918",
-   "guidance_text": "rial results in this indication, we continue to believe that modulation of MRGPRX2 represents a new potential therapeutic option to reduce inflammation and provide rapid relief of symptoms. We remain on track to report top-line Phase 2b data for EVO756 in atopic dermatitis (AD) in the third quarter "
+   "guidance_text": "rial results in this indication, we continue to believe that modulation of MRGPRX2 represents a new potential therapeutic option to reduce inflammation and provide rapid relief of symptoms. We remain on track to report top-line Phase 2b data for EVO756 in atopic dermatitis (AD) in the third quarter ",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002044725/000119312526286918/evmn-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -4800,7 +5084,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "ACCG-2671",
    "accession": "0001104659-26-057226",
-   "guidance_text": "t the 44-week time point and potentially comparable efficacy to injectable GLP1-RAs &nbsp; Data from ACCESS OLE expected in Q3 2026; Data from the&#8239;Body Composition and Type 2 Diabetes / Obesity data expected in Q4 2026 &nbsp; Positive end-of-Phase 2 feedback received from FDA; aleniglipron Pha"
+   "guidance_text": "t the 44-week time point and potentially comparable efficacy to injectable GLP1-RAs &nbsp; Data from ACCESS OLE expected in Q3 2026; Data from the&#8239;Body Composition and Type 2 Diabetes / Obesity data expected in Q4 2026 &nbsp; Positive end-of-Phase 2 feedback received from FDA; aleniglipron Pha",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001888886/000110465926057226/tm2613721d1_ex99-1.htm"
   },
   "dm": "2026-09"
  },
@@ -4827,7 +5112,8 @@ export default [
    "guided_filed": "2026-03-30",
    "program": "NXC-201",
    "accession": "0001493152-26-013663",
-   "guidance_text": "Immix Biopharma, Inc., a Delaware corporation (the &#8220;Company&#8221;), issued a press release announcing that the enrollment for its NEXICART-2 clinical trial of NXC-201 is complete, with topline results expected in Q3 2026. A copy of the press release is furnished as Exhibit 99.1 to this Curren"
+   "guidance_text": "Immix Biopharma, Inc., a Delaware corporation (the &#8220;Company&#8221;), issued a press release announcing that the enrollment for its NEXICART-2 clinical trial of NXC-201 is complete, with topline results expected in Q3 2026. A copy of the press release is furnished as Exhibit 99.1 to this Curren",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001873835/000149315226013663/form8-k.htm"
   },
   "dm": "2026-09"
  },
@@ -4854,7 +5140,8 @@ export default [
    "guided_filed": "2026-07-30",
    "program": "DISC-3405",
    "accession": "0001193125-26-325031",
-   "guidance_text": "n anemia of myelofibrosis and the HELIOS open-label extension trial of bitopertin in EPP &#x2022; Completed enrollment for RESTORE-PV Phase 2 study of DISC-3405 in polycythemia vera (PV) with initial data expected in Q3 2026 and progressing Phase 1b study of DISC-3405 in sickle cell disease (SCD) wi"
+   "guidance_text": "n anemia of myelofibrosis and the HELIOS open-label extension trial of bitopertin in EPP &#x2022; Completed enrollment for RESTORE-PV Phase 2 study of DISC-3405 in polycythemia vera (PV) with initial data expected in Q3 2026 and progressing Phase 1b study of DISC-3405 in sickle cell disease (SCD) wi",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001816736/000119312526325031/iron-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -4881,7 +5168,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "KSI-501",
    "accession": "0001193125-26-211811",
-   "guidance_text": "omer) has a BLA-ready profile in diabetic retinopathy, retinal vein occlusion and wet AMD, and, together with KSI-501, is being explored in the BLA-facing Phase 3 DAYBREAK wet AMD study, with topline data expected in 3Q 2026. Zenkuda and KSI-501 target the $15 billion anti-VEGF market across retinal"
+   "guidance_text": "omer) has a BLA-ready profile in diabetic retinopathy, retinal vein occlusion and wet AMD, and, together with KSI-501, is being explored in the BLA-facing Phase 3 DAYBREAK wet AMD study, with topline data expected in 3Q 2026. Zenkuda and KSI-501 target the $15 billion anti-VEGF market across retinal",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001468748/000119312526211811/kod-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -4908,7 +5196,8 @@ export default [
    "guided_filed": "2026-07-31",
    "program": "Annamycin",
    "accession": "0001437749-26-025167",
-   "guidance_text": "4 of 90 subjects, and additional subjects continue to be identified by site investigators. The Company expects to treat the 90th subject in September 2026, with unblinding of the comprehensive Part A data anticipated in the December 2026 to February 2027 timeframe. The trial continues with no eviden"
+   "guidance_text": "4 of 90 subjects, and additional subjects continue to be identified by site investigators. The Company expects to treat the 90th subject in September 2026, with unblinding of the comprehensive Part A data anticipated in the December 2026 to February 2027 timeframe. The trial continues with no eviden",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001659617/000143774926025167/ex_995334.htm"
   },
   "dm": "2026-09"
  },
@@ -4935,7 +5224,8 @@ export default [
    "guided_filed": "2026-05-06",
    "program": "MNKD-201",
    "accession": "0001193125-26-208910",
-   "guidance_text": "b DPI (MNKD-201) &#x2022; Completed enrollment of Cohort 1 in Phase 1b (INFLO-1) study with no discontinuations or serious adverse events in patients with idiopathic pulmonary fibrosis (IPF); topline data expected in Q3 2026 &#x2022; Anticipate Phase 2 clinical trial (INFLO-2) in IPF with first pati"
+   "guidance_text": "b DPI (MNKD-201) &#x2022; Completed enrollment of Cohort 1 in Phase 1b (INFLO-1) study with no discontinuations or serious adverse events in patients with idiopathic pulmonary fibrosis (IPF); topline data expected in Q3 2026 &#x2022; Anticipate Phase 2 clinical trial (INFLO-2) in IPF with first pati",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000899460/000119312526208910/mnkd-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -4982,7 +5272,18 @@ export default [
    "bla_source": "https://www.prnewswire.com/news-releases/novo-nordisk-submits-biologics-license-application-bla-to-fda-for-mim8-an-investigational-prophylaxis-treatment-for-people-living-with-hemophilia-a-with-or-without-inhibitors-302568838.html",
    "date_provenance": "goal date as published on /calendar and /pdufa/NVO-mim8 since 2026-08-07; dataset row restored 2026-09-01 after it was found missing",
    "market_cap_usd": 190323105090.68,
-   "date_note": "Novo Nordisk names denecimig (Mim8) in five 2026 filings and never states a day, month or quarter for the US decision. The 6-K of 2026-08-04 lists \"Denecimig US EU decision\" among R&D milestones and the Q4 6-K says only that the company looks forward this year to decisions \"such as Mim8\". The YEAR is the sourced granularity, so the row moves to year precision on the year-end sentinel (the TYRA convention). Day withdrawn 2026-09-10."
+   "date_note": "Novo Nordisk names denecimig (Mim8) in five 2026 filings and never states a day, month or quarter for the US decision. The 6-K of 2026-08-04 lists \"Denecimig US EU decision\" among R&D milestones and the Q4 6-K says only that the company looks forward this year to decisions \"such as Mim8\". The YEAR is the sourced granularity, so the row moves to year precision on the year-end sentinel (the TYRA convention). Day withdrawn 2026-09-10.",
+   "date_history": [
+    {
+     "date": "2026-09-30",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-12-31",
+     "changed": "2026-09-10",
+     "why": "The September 30 day was withdrawn as unsourced -- no Novo Nordisk filing states a day, month or quarter -- and the row moved to year precision on the year-end sentinel."
+    }
+   ]
   }
  },
  {
@@ -5008,7 +5309,8 @@ export default [
    "guided_filed": "2026-05-04",
    "program": "OCU400",
    "accession": "0001104659-26-054866",
-   "guidance_text": "erability profile with no new treatment-related serious adverse events or adverse events of interest emerged. We expect to begin a rolling BLA submission in the third quarter of 2026. Topline Phase 3 data expected in the first quarter of 2027, advancing OCU400 towards potential approval in 2027 as a"
+   "guidance_text": "erability profile with no new treatment-related serious adverse events or adverse events of interest emerged. We expect to begin a rolling BLA submission in the third quarter of 2026. Topline Phase 3 data expected in the first quarter of 2027, advancing OCU400 towards potential approval in 2027 as a",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001372299/000110465926054866/tm2613474d1_ex99-1.htm"
   },
   "dm": "2026-09"
  },
@@ -5071,7 +5373,8 @@ export default [
    "guided_filed": "2026-06-11",
    "program": "deucrictibant",
    "accession": "0001193125-26-266666",
-   "guidance_text": "ase capsule as an on-demand treatment of HAE attacks, and a global pivotal Phase 3 study of deucrictibant extended-release tablet for the prevention of HAE attacks (CHAPTER-3) is ongoing with topline data anticipated in the third quarter of 2026. In addition, CREAATE is an ongoing Phase 3 study of d"
+   "guidance_text": "ase capsule as an on-demand treatment of HAE attacks, and a global pivotal Phase 3 study of deucrictibant extended-release tablet for the prevention of HAE attacks (CHAPTER-3) is ongoing with topline data anticipated in the third quarter of 2026. In addition, CREAATE is an ongoing Phase 3 study of d",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001830487/000119312526266666/phvs-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -5098,7 +5401,8 @@ export default [
    "guided_filed": "2026-05-12",
    "program": "PMN310",
    "accession": "0001104659-26-058967",
-   "guidance_text": "&#160; &#9679; Interim Data Readout: Blinded interim analysis of PRECISE-AD safety and biomarker data anticipated early Q3 2026. &#9679; Top-line Results: Presentation of 12-month unblinded top-line data anticipated in early 2027. Key Pipeline Programs &#8203; &#9679; Development of subcutaneous for"
+   "guidance_text": "&#160; &#9679; Interim Data Readout: Blinded interim analysis of PRECISE-AD safety and biomarker data anticipated early Q3 2026. &#9679; Top-line Results: Presentation of 12-month unblinded top-line data anticipated in early 2027. Key Pipeline Programs &#8203; &#9679; Development of subcutaneous for",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001374339/000110465926058967/pmn-20260512xex99d1.htm"
   },
   "dm": "2026-09"
  },
@@ -5125,7 +5429,8 @@ export default [
    "guided_filed": "2026-03-19",
    "program": "IM1305",
    "accession": "0001213900-26-031366",
-   "guidance_text": "2026 , Ph 1 Initiation in 2027 IM1305 Capped - CD3xTROP2xNKG2A Solid Tumors CLINICAL ASSETS &#8212; Partnership Opportunities CM24 CEACAM1 mAb Pancreatic Partnering NT219 IRS1/2 + STAT3 Head and Neck Data Expected in 2026 A pipeline dedicated to advancing oncology therapies &nbsp; &nbsp; | 7 Q 3 202"
+   "guidance_text": "2026 , Ph 1 Initiation in 2027 IM1305 Capped - CD3xTROP2xNKG2A Solid Tumors CLINICAL ASSETS &#8212; Partnership Opportunities CM24 CEACAM1 mAb Pancreatic Partnering NT219 IRS1/2 + STAT3 Head and Neck Data Expected in 2026 A pipeline dedicated to advancing oncology therapies &nbsp; &nbsp; | 7 Q 3 202",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001614744/000121390026031366/ea028235901ex99-1.htm"
   },
   "dm": "2026-09"
  },
@@ -5232,7 +5537,8 @@ export default [
    "guided_filed": "2026-05-20",
    "program": "brepocitinib",
    "accession": "0001635088-26-000061",
-   "guidance_text": "brepocitinib in DM expected by the end of September 2026. &#8226; Completed enrollment in the ongoing Phase 3 CLARITY study of brepocitinib in non-infectious uveitis ( &#8220; NIU &#8221; ); topline data expected in the second half of calendar year 2026. &#8226; Announced positive results in the Pha"
+   "guidance_text": "brepocitinib in DM expected by the end of September 2026. &#8226; Completed enrollment in the ongoing Phase 3 CLARITY study of brepocitinib in non-infectious uveitis ( &#8220; NIU &#8221; ); topline data expected in the second half of calendar year 2026. &#8226; Announced positive results in the Pha",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001635088/000163508826000061/roiv-20260331.htm"
   },
   "dm": "2026-09"
  },
@@ -5259,7 +5565,8 @@ export default [
    "guided_filed": "2026-05-11",
    "program": "SCY-247",
    "accession": "0001178253-26-000011",
-   "guidance_text": "in the low-to-mid-single digits for the commercialization of BREXAFEMME by GSK. The Company&#x2019;s second-generation antifungal, SCY-247, is currently in a Phase 1 trial of the IV formulation, with data expected in Q3 2026. SCY-247 has received QIDP, Fast Track and Orphan Drug designation from the"
+   "guidance_text": "in the low-to-mid-single digits for the commercialization of BREXAFEMME by GSK. The Company&#x2019;s second-generation antifungal, SCY-247, is currently in a Phase 1 trial of the IV formulation, with data expected in Q3 2026. SCY-247 has received QIDP, Fast Track and Orphan Drug designation from the",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001178253/000117825326000011/scyx-ex10_1.htm"
   },
   "dm": "2026-09"
  },
@@ -5314,7 +5621,8 @@ export default [
    "guided_filed": "2026-06-09",
    "program": "SL-846",
    "accession": "0001193125-26-263831",
-   "guidance_text": "erization of SL-846 versus controls will be provided at an upcoming medical meeting Conclusions SL-325 Has the Profile of a Winning Antibody Phase 2 Initiation in CD Expected in Q3 2026 12W Induction Data Expected in 1H 2028 SL-846 is a Potentially First-In-Class DR3 x IL-23R Bispecific Antibody NHP"
+   "guidance_text": "erization of SL-846 versus controls will be provided at an upcoming medical meeting Conclusions SL-325 Has the Profile of a Winning Antibody Phase 2 Initiation in CD Expected in Q3 2026 12W Induction Data Expected in 1H 2028 SL-846 is a Potentially First-In-Class DR3 x IL-23R Bispecific Antibody NHP",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001680367/000119312526263831/d120796dex993.htm"
   },
   "dm": "2026-09"
  },
@@ -5341,7 +5649,8 @@ export default [
    "guided_filed": "2026-05-05",
    "program": "SPY001",
    "accession": "0001636282-26-000051",
-   "guidance_text": "rt A of the Phase 2 SKYLINE trial of SPY001, demonstrating best-in-class efficacy potential and a safety profile consistent with the &#945;4&#946;7 class Announced over-enrollment and acceleration of topline readout to the third quarter of 2026 of the rheumatoid arthritis (&#8220;RA&#8221;) sub-stud"
+   "guidance_text": "rt A of the Phase 2 SKYLINE trial of SPY001, demonstrating best-in-class efficacy potential and a safety profile consistent with the &#945;4&#946;7 class Announced over-enrollment and acceleration of topline readout to the third quarter of 2026 of the rheumatoid arthritis (&#8220;RA&#8221;) sub-stud",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001636282/000163628226000051/spyre-20260331xexx991.htm"
   },
   "dm": "2026-09"
  },
@@ -5412,7 +5721,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "TX2100",
    "accession": "0001193125-26-212069",
-   "guidance_text": "market execution, further strengthening the Company&#x2019;s board. &#160; Upcoming Milestones &#x2022; TX2100 Phase 1a Results Expected in 3Q 2026 with Phase 2 Planned in Early 2027: The Company now expects to report topline results from the ongoing Phase 1a trial of TX2100 in healthy volunteers by"
+   "guidance_text": "market execution, further strengthening the Company&#x2019;s board. &#160; Upcoming Milestones &#x2022; TX2100 Phase 1a Results Expected in 3Q 2026 with Phase 2 Planned in Early 2027: The Company now expects to report topline results from the ongoing Phase 1a trial of TX2100 in healthy volunteers by",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001681087/000119312526212069/tecx-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -5465,7 +5775,8 @@ export default [
    "guided_filed": "2026-06-15",
    "program": "fasedienol",
    "accession": "0001628280-26-043232",
-   "guidance_text": "ase 3 trial of fasedienol for the acute treatment of social anxiety disorder&#59; topline results expected this month Completed randomized portion of fasedienol Phase 2 repeat dose study&#59; topline results expected in third quarter 2026 Achieved minimum ICH E1 safety exposure recommendations acros"
+   "guidance_text": "ase 3 trial of fasedienol for the acute treatment of social anxiety disorder&#59; topline results expected this month Completed randomized portion of fasedienol Phase 2 repeat dose study&#59; topline results expected in third quarter 2026 Achieved minimum ICH E1 safety exposure recommendations acros",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001411685/000162828026043232/vtgn-20260615xex991.htm"
   },
   "dm": "2026-09"
  },
@@ -5492,7 +5803,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "HWK-007",
    "accession": "0001193125-26-210615",
-   "guidance_text": "n small-cell lung cancer and neuroendocrine tumors; Phase 1 recruitment planned to start in Q3 2026. &#160; &#x2022; HWK-007 and HWK-016 &#x2013; ongoing recruitment into Phase 1 trials, with initial results expected in 1H 2027. &#160; About Whitehawk Therapeutics Whitehawk Therapeutics is a clinica"
+   "guidance_text": "n small-cell lung cancer and neuroendocrine tumors; Phase 1 recruitment planned to start in Q3 2026. &#160; &#x2022; HWK-007 and HWK-016 &#x2013; ongoing recruitment into Phase 1 trials, with initial results expected in 1H 2027. &#160; About Whitehawk Therapeutics Whitehawk Therapeutics is a clinica",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001422142/000119312526210615/whwk-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -5519,7 +5831,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "XEN1701",
    "accession": "0001193125-26-211843",
-   "guidance_text": "OS in March and anticipate NDA submission in Q3 2026 &#x2022; Five additional Phase 3 studies of azetukalner continue to enroll in epilepsy and depression indications with Phase 3 X-NOVA2 MDD topline data expected in H1 2027 &#x2022; Phase 1 studies of novel Na V 1.7 (XEN1701) and K V 7 (XEN1120) ca"
+   "guidance_text": "OS in March and anticipate NDA submission in Q3 2026 &#x2022; Five additional Phase 3 studies of azetukalner continue to enroll in epilepsy and depression indications with Phase 3 X-NOVA2 MDD topline data expected in H1 2027 &#x2022; Phase 1 studies of novel Na V 1.7 (XEN1701) and K V 7 (XEN1120) ca",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001582313/000119312526211843/xene-ex99_1.htm"
   },
   "dm": "2026-09"
  },
@@ -5534,7 +5847,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
+  "url": "/pdufa/RHHBY-tecentriq",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
@@ -5552,7 +5865,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/MRK",
+  "url": "/pdufa/MRK-ifinatamab-deruxtecan",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -5603,7 +5916,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06335173"
   },
   "dm": "2026-10"
  },
@@ -5631,7 +5945,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06510816"
   },
   "dm": "2026-10"
  },
@@ -5680,7 +5995,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06455202"
   },
   "dm": "2026-10"
  },
@@ -5708,7 +6024,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06738485"
   },
   "dm": "2026-10"
  },
@@ -5736,7 +6053,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06683742"
   },
   "dm": "2026-10"
  },
@@ -5764,7 +6082,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-06-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05908084"
   },
   "dm": "2027-06"
  },
@@ -5793,7 +6123,19 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-09-14, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-09-14, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-04-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05747794"
   },
   "dm": "2026-04"
  },
@@ -5821,7 +6163,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06980805"
   },
   "dm": "2026-10"
  },
@@ -5849,7 +6192,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2033-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT04198766"
   },
   "dm": "2033-07"
  },
@@ -5877,7 +6232,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06516952"
   },
   "dm": "2026-10"
  },
@@ -5905,7 +6261,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06162728"
   },
   "dm": "2026-07"
  },
@@ -5936,7 +6304,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -5954,7 +6322,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05172726"
   },
   "dm": "2026-10"
  },
@@ -6003,7 +6372,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04791839"
   },
   "dm": "2026-10"
  },
@@ -6018,7 +6388,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
+  "url": "/pdufa/RHHBY-enspryng",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "indication": "Thyroid eye disease (TED)",
@@ -6049,7 +6419,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06772597"
   },
   "dm": "2026-10"
  },
@@ -6077,7 +6448,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03368742"
   },
   "dm": "2026-10"
  },
@@ -6105,7 +6477,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT02843035"
   },
   "dm": "2026-10"
  },
@@ -6133,7 +6506,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03992430"
   },
   "dm": "2026-10"
  },
@@ -6169,13 +6543,15 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "https://www.biospace.com/press-releases/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+  "url": "/pdufa/VTRS-mr-141",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
    "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
    "indication": "Presbyopia (sNDA)",
-   "market_cap_usd": 502502770.92
+   "market_cap_usd": 502502770.92,
+   "source_url": "https://www.biospace.com/press-releases/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+   "source": "company press release"
   }
  },
  {
@@ -6189,7 +6565,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/VTRS",
+  "url": "/pdufa/VTRS-mr-141",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -6465,7 +6841,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06395948"
   },
   "dm": "2026-11"
  },
@@ -6493,7 +6870,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05607004"
   },
   "dm": "2026-11"
  },
@@ -6521,7 +6899,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05130827"
   },
   "dm": "2026-11",
   "_sponsor_note": "Trial lead sponsor is Memorial Sloan Kettering Cancer Center"
@@ -6550,7 +6929,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05879744"
   },
   "dm": "2026-11"
  },
@@ -6578,7 +6958,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06106308"
   },
   "dm": "2026-11"
  },
@@ -6606,7 +6987,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-11-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-04-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05726864"
   },
   "dm": "2026-04"
  },
@@ -6634,7 +7027,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04866134"
   },
   "dm": "2026-11"
  },
@@ -6683,7 +7077,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05134441"
   },
   "dm": "2026-11"
  },
@@ -6711,7 +7106,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-11-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-11-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05640193"
   },
   "dm": "2027-11"
  },
@@ -6726,13 +7133,15 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "https://www.sec.gov/Archives/edgar/data/0001645113/000164511326000043/nvcr-20260331xpr.htm",
+  "url": "/pdufa/NVCR-ttfields-therapy",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
    "indication": "Brain metastases from non-small cell lung cancer (PMA, Breakthrough Device)",
-   "market_cap_usd": 1806074978.3999999
+   "market_cap_usd": 1806074978.3999999,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001645113/000164511326000043/nvcr-20260331xpr.htm",
+   "source": "company filing (SEC)"
   },
   "dm": "2026-11"
  },
@@ -6802,7 +7211,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07216079"
   },
   "dm": "2026-11"
  },
@@ -6851,7 +7261,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07142811"
   },
   "dm": "2026-11"
  },
@@ -6879,7 +7290,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-11-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-05-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06672055"
   },
   "dm": "2027-05"
  },
@@ -6907,7 +7330,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06993610"
   },
   "dm": "2026-11"
  },
@@ -6922,7 +7346,7 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html",
+  "url": "/pdufa/CAPR",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -6953,7 +7377,22 @@ export default [
     "t1": 0.0
    },
    "review": "PDUFA target action date extended from August 22, 2026 to November 22, 2026. Capricor submitted a BLA amendment after the July 2026 advisory committee meeting containing 24-month open-label extension data from the pivotal Phase 3 HOPE-3 study and additional robustness analyses, in support of a refined proposed indication focused on upper limb function (the HOPE-3 primary endpoint). CBER accepted it, classified it a major amendment, and added three months to review it. The application remains under review: this is an extension, not a Complete Response Letter.",
-   "prior_pdufa_date": "2026-08-22"
+   "prior_pdufa_date": "2026-08-22",
+   "date_history": [
+    {
+     "date": "2026-08-22",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-11-22",
+     "changed": "2026-08-24",
+     "why": "The FDA extended the goal date from August 22 to November 22, 2026 after Capricor's BLA amendment; Capricor announced the extension on August 24, 2026 and /pdufa-date-changes records it.",
+     "url": "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
+    }
+   ],
+   "source_url": "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html",
+   "source": "company press release",
+   "date_provenance": "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
   }
  },
  {
@@ -7027,7 +7466,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/NUVL",
+  "url": "/pdufa/NUVL-neladalkib",
   "ua": "2026-08-28T21:46:08Z",
   "_d": {
    "nct_id": {
@@ -7107,7 +7546,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/COGT",
+  "url": "/pdufa/COGT-bezuclastinib",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -7167,7 +7606,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
+  "url": "/pdufa/RHHBY-giredestrant",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -7303,7 +7742,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05077800"
   },
   "dm": "2026-12"
  },
@@ -7331,7 +7771,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05971251"
   },
   "dm": "2026-12"
  },
@@ -7359,7 +7800,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05205330"
   },
   "dm": "2026-12"
  },
@@ -7387,7 +7829,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-08-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT07027527"
   },
   "dm": "2026-08"
  },
@@ -7415,7 +7869,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05909397"
   },
   "dm": "2026-12"
  },
@@ -7443,7 +7898,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07037277"
   },
   "dm": "2026-12"
  },
@@ -7471,7 +7927,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05925608"
   },
   "dm": "2026-12"
  },
@@ -7499,7 +7956,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05885464"
   },
   "dm": "2026-12"
  },
@@ -7569,7 +8027,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06752668"
   },
   "dm": "2026-12"
  },
@@ -7597,7 +8056,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03604198"
   },
   "dm": "2026-12"
  },
@@ -7625,7 +8085,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05383196"
   },
   "dm": "2026-12"
  },
@@ -7674,7 +8135,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06274801"
   },
   "dm": "2026-12"
  },
@@ -7723,7 +8185,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05649748"
   },
   "dm": "2026-12"
  },
@@ -7772,7 +8235,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2025-05-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06146101"
   },
   "dm": "2025-05"
  },
@@ -7821,7 +8296,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04442022"
   },
   "dm": "2026-12"
  },
@@ -7849,7 +8325,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06109181"
   },
   "dm": "2026-12"
  },
@@ -7877,7 +8354,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06972264"
   },
   "dm": "2026-12"
  },
@@ -7905,7 +8383,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05500222"
   },
   "dm": "2026-12"
  },
@@ -7933,7 +8412,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05464784"
   },
   "dm": "2026-12"
  },
@@ -8024,7 +8504,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03377387"
   },
   "dm": "2026-12"
  },
@@ -8073,7 +8554,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06851559"
   },
   "dm": "2026-10"
  },
@@ -8101,7 +8594,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06038474"
   },
   "dm": "2026-12"
  },
@@ -8150,7 +8644,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06500702"
   },
   "dm": "2026-12"
  },
@@ -8178,7 +8673,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03474770"
   },
   "dm": "2026-12"
  },
@@ -8206,7 +8702,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07371650"
   },
   "dm": "2026-12"
  },
@@ -8234,7 +8731,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06903338"
   },
   "dm": "2026-12"
  },
@@ -8283,31 +8781,35 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05297903"
   },
   "dm": "2026-12"
  },
  {
-  "id": "readout_cort_2026-09-15",
+  "id": "pdufa_cort_2026-12-17",
   "t": "CORT",
   "company": "Corcept Therapeutics Inc",
   "d": "2026-12-17",
   "dp": "day",
   "name": "Relacorilant - (GRACE resubmission)",
   "type": "PDUFA",
-  "ta": "Infectious",
+  "ta": "Endocrinology / Metabolic",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "https://clinicaltrials.gov/study/NCT06108219",
+  "url": "/pdufa/CORT-relacorilant",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
-   "nct_id": "NCT06108219",
-   "indication": null,
+   "nct_id": {
+    "nct": "NCT06108219"
+   },
+   "indication": "Cushing's syndrome (hypercortisolism)",
    "market_cap_usd": 12192418197.630001,
-   "source": "trial-estimate (not company-confirmed)",
-   "review": "NDA resubmitted 2026-06-17 for Cushing's syndrome after the December 2025 CRL; FDA assigned a PDUFA date of December 17, 2026. Source: Corcept announcement, June 17, 2026."
+   "source": "Corcept 8-K 2026-07-29 (EX-99.1)",
+   "review": "Corcept resubmitted the NDA for relacorilant in Cushing's syndrome in June 2026, after a December 2025 CRL, and states a PDUFA date of December 17, 2026 in its second-quarter release.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026050607/cort072926ex991pressrelease.htm"
   },
-  "dm": "2026-09"
+  "dm": "2026-12"
  },
  {
   "id": "pdufa_rhhby_2026-12-18",
@@ -8320,7 +8822,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
+  "url": "/pdufa/RHHBY-giredestrant-in-combinatio",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -8380,13 +8882,15 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
+  "url": "/pdufa/GILD-anito-cel",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
    "indication": "Relapsed or refractory multiple myeloma (fourth-line), BCMA CAR-T",
-   "market_cap_usd": 178206354876.6
+   "market_cap_usd": 178206354876.6,
+   "source_url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
+   "source": "company press release"
   }
  },
  {
@@ -8400,7 +8904,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/PRAX",
+  "url": "/pdufa/PRAX-relutrigine",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -8429,7 +8933,24 @@ export default [
     "t30": 2.19,
     "t7": -0.33,
     "t1": 0.0
-   }
+   },
+   "source": "Praxis 8-K 2026-06-29 (extension); 8-K 2026-08-06 EX-99.1 (restated)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
+   "prior_pdufa_date": "2026-09-27",
+   "date_provenance": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
+   "date_history": [
+    {
+     "date": "2026-09-27",
+     "note": "original PDUFA target action date"
+    },
+    {
+     "date": "2026-12-27",
+     "changed": "2026-06-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
+     "why": "The FDA extended the review period by three months after Praxis submitted additional sensitivity analyses the agency deemed a major amendment; Praxis 8-K of June 29, 2026 states the new PDUFA target action date of December 27, 2026."
+    }
+   ],
+   "review": "NDA for SCN2A and SCN8A developmental and epileptic encephalopathies. Review extended by three months (major amendment) to December 27, 2026; mid-cycle meeting complete with no major safety or efficacy concerns identified to date and no advisory committee planned (Praxis, August 6, 2026)."
   }
  },
  {
@@ -8443,7 +8964,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/VTRS",
+  "url": "/pdufa/VTRS-mr-107a-02",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
@@ -8492,7 +9013,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/ABBV",
+  "url": "/pdufa/ABBV-tavapadon",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -8536,7 +9057,8 @@ export default [
    "guided_filed": "2026-02-12",
    "program": "elebsiran",
    "accession": "0001628280-26-007497",
-   "guidance_text": "bination with tobevibart in multiple clinical trials as part of its ongoing ECLIPSE registrational program, including the ECLIPSE 1 Phase 3 clinical trial in CHD, which is fully enrolled with topline data expected in the fourth quarter of 2026, the ECLIPSE 2 Phase 3 clinical trial, which is evaluati"
+   "guidance_text": "bination with tobevibart in multiple clinical trials as part of its ongoing ECLIPSE registrational program, including the ECLIPSE 1 Phase 3 clinical trial in CHD, which is fully enrolled with topline data expected in the fourth quarter of 2026, the ECLIPSE 2 Phase 3 clinical trial, which is evaluati",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001178670/000162828026007497/alny-20251231.htm"
   },
   "dm": "2026-12"
  },
@@ -8563,7 +9085,8 @@ export default [
    "guided_filed": "2026-05-12",
    "program": "VLS-01",
    "accession": "0001140361-26-020708",
-   "guidance_text": "(two &#8209; dose induction + SSRIs) cohort initial data on track for Q4 2026. VLS-01: dimethyltryptamine (DMT) buccal film for TRD &#8226; Elumina Phase 2 study progressing as planned, with topline results anticipated in Q4 2026 EMP-01: Oral R-enantiomer of 3,4-methylenedioxy-methamphetamine (R-MDM"
+   "guidance_text": "(two &#8209; dose induction + SSRIs) cohort initial data on track for Q4 2026. VLS-01: dimethyltryptamine (DMT) buccal film for TRD &#8226; Elumina Phase 2 study progressing as planned, with topline results anticipated in Q4 2026 EMP-01: Oral R-enantiomer of 3,4-methylenedioxy-methamphetamine (R-MDM",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002081043/000114036126020708/ef20072731_ex99-1.htm"
   },
   "dm": "2026-12"
  },
@@ -8578,7 +9101,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/AZN",
+  "url": "/pdufa/AZN-ultomiris",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -8618,7 +9141,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/BAYRY",
+  "url": "/pdufa/BAYRY-kerendia",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -8662,7 +9185,8 @@ export default [
    "guided_filed": "2026-05-11",
    "program": "BMF-650",
    "accession": "0001193125-26-217037",
-   "guidance_text": "ction &#x2022; First patients dosed in the Phase II COVALENT-211 and COVALENT-212 clinical trials of icovamenib in type 2 diabetes (&#x201c;T2D&#x201d;); both trials are on track with topline 26-week data expected in the fourth quarter of 2026 &#x2022; The Phase I GLP-131 (BMF-650) obesity clinical "
+   "guidance_text": "ction &#x2022; First patients dosed in the Phase II COVALENT-211 and COVALENT-212 clinical trials of icovamenib in type 2 diabetes (&#x201c;T2D&#x201d;); both trials are on track with topline 26-week data expected in the fourth quarter of 2026 &#x2022; The Phase I GLP-131 (BMF-650) obesity clinical ",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001840439/000119312526217037/bmea-ex99_1.htm"
   },
   "dm": "2026-12"
  },
@@ -8713,7 +9237,8 @@ export default [
    "guided_filed": "2026-05-05",
    "program": "CTX-10726",
    "accession": "0001171843-26-003005",
-   "guidance_text": "SCO 2026. Additional data from the cohort expansions are expected in the fourth quarter of 2026.&#160; CTX-10726 (PD-1 x VEGF-A bispecific antibody) The Phase 1 study has been initiated with clinical data expected in the fourth quarter of 2026. The Phase 1 multiple ascending dose-escalation study wi"
+   "guidance_text": "SCO 2026. Additional data from the cohort expansions are expected in the fourth quarter of 2026.&#160; CTX-10726 (PD-1 x VEGF-A bispecific antibody) The Phase 1 study has been initiated with clinical data expected in the fourth quarter of 2026. The Phase 1 multiple ascending dose-escalation study wi",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001738021/000117184326003005/exh_991.htm"
   },
   "dm": "2026-12"
  },
@@ -8747,7 +9272,8 @@ export default [
    "guided_filed": "2026-05-13",
    "program": "NCT07271667",
    "accession": "0001108205-26-000061",
-   "guidance_text": "rtib in combination with zanubrutinib in frontline CLL (CA-4948-203, NCT07271667), also known as the TakeAim CLL study. We expect to announce the dosing of our fifth patient by mid-2026, with initial data expected in December 2026. TakeAim Lymphoma Emavusertib is currently undergoing testing in comb"
+   "guidance_text": "rtib in combination with zanubrutinib in frontline CLL (CA-4948-203, NCT07271667), also known as the TakeAim CLL study. We expect to announce the dosing of our fifth patient by mid-2026, with initial data expected in December 2026. TakeAim Lymphoma Emavusertib is currently undergoing testing in comb",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001108205/000110820526000061/cris-20260331.htm"
   },
   "dm": "2026-12"
  },
@@ -8774,7 +9300,8 @@ export default [
    "guided_filed": "2026-07-02",
    "program": "EDP-978",
    "accession": "0001193125-26-294828",
-   "guidance_text": "ng serum tryptase, of EDP-978. The trial includes a single ascending dose (SAD) phase, with a two-part food-effect cohort, and a multiple ascending dose (MAD) phase with a 14-day treatment period. We expect to report topline data from this trial in the fourth quarter of 2026. &nbsp; S-2 Table of Con"
+   "guidance_text": "ng serum tryptase, of EDP-978. The trial includes a single ascending dose (SAD) phase, with a two-part food-effect cohort, and a multiple ascending dose (MAD) phase with a 14-day treatment period. We expect to report topline data from this trial in the fourth quarter of 2026. &nbsp; S-2 Table of Con",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001177648/000119312526294828/d17914d424b5.htm"
   },
   "dm": "2026-12"
  },
@@ -8849,7 +9376,8 @@ export default [
    "guided_filed": "2026-08-03",
    "program": "HLP003",
    "accession": "0001062993-26-003976",
-   "guidance_text": "Mr. Halstead's appointment comes as Helus Pharma advances HLP003 through late-stage clinical development and prepares for potential commercialization. Enrollment is complete in APPROACH, with topline data expected in Q4 2026, while enrollment continues in EMBRACE, the second pivotal study in the Pha"
+   "guidance_text": "Mr. Halstead's appointment comes as Helus Pharma advances HLP003 through late-stage clinical development and prepares for potential commercialization. Enrollment is complete in APPROACH, with topline data expected in Q4 2026, while enrollment continues in EMBRACE, the second pivotal study in the Pha",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001833141/000106299326003976/exhibit99-1.htm"
   },
   "dm": "2026-12"
  },
@@ -8876,7 +9404,8 @@ export default [
    "guided_filed": "2026-06-08",
    "program": "CNTY-813",
    "accession": "0001104659-26-071383",
-   "guidance_text": "ical manufacturing process has been established demonstrating consistent endocrine purity and optimal islet cell content &nbsp; &middot; CNTY-813 IND submission on track for 4Q 2026; initial clinical data expected in 2H 2027 &nbsp; PHILADELPHIA, June&nbsp;8, 2026 - Century Therapeutics,&nbsp;Inc. (&"
+   "guidance_text": "ical manufacturing process has been established demonstrating consistent endocrine purity and optimal islet cell content &nbsp; &middot; CNTY-813 IND submission on track for 4Q 2026; initial clinical data expected in 2H 2027 &nbsp; PHILADELPHIA, June&nbsp;8, 2026 - Century Therapeutics,&nbsp;Inc. (&",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001850119/000110465926071383/tm2617028d1_ex99-1.htm"
   },
   "dm": "2026-12"
  },
@@ -8903,7 +9432,8 @@ export default [
    "guided_filed": "2026-05-12",
    "program": "FG-3246",
    "accession": "0001193125-26-219374",
-   "guidance_text": "ed ADC drugs. We are actively enrolling our Phase 2 monotherapy dose optimization study of FG-3246 for the treatment of patients with mCRPC in the post-ARPI and pre-chemotherapy setting, with interim results expected in the fourth quarter of 2026. The trial is also assessing the diagnostic and predi"
+   "guidance_text": "ed ADC drugs. We are actively enrolling our Phase 2 monotherapy dose optimization study of FG-3246 for the treatment of patients with mCRPC in the post-ARPI and pre-chemotherapy setting, with interim results expected in the fourth quarter of 2026. The trial is also assessing the diagnostic and predi",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000921299/000119312526219374/kynb-20260331.htm"
   },
   "dm": "2026-12"
  },
@@ -8930,7 +9460,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "ATH-1105",
    "accession": "0001193125-26-211867",
-   "guidance_text": "ations &#160; Expects to Complete Enrollment of Phase 3 Clinical Trial of Lasofoxifene in treatment-resistant ER-positive, HER2-negative, ESR1-mutated Metastatic Breast Cancer in 4Q 2026 with Topline Data Anticipated in 2H 2027 &#160; On-track to Initiate Phase 2 Proof-of-Concept Study of ATH-1105 i"
+   "guidance_text": "ations &#160; Expects to Complete Enrollment of Phase 3 Clinical Trial of Lasofoxifene in treatment-resistant ER-positive, HER2-negative, ESR1-mutated Metastatic Breast Cancer in 4Q 2026 with Topline Data Anticipated in 2H 2027 &#160; On-track to Initiate Phase 2 Proof-of-Concept Study of ATH-1105 i",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001620463/000119312526211867/lona-ex99_1.htm"
   },
   "dm": "2026-12"
  },
@@ -8957,7 +9488,8 @@ export default [
    "guided_filed": "2026-05-06",
    "program": "AZURE-1",
    "accession": "0001759425-26-000036",
-   "guidance_text": "n a late-breaking poster presentation at the EASL Congress on May 27 starting at 8&#58;30 a.m. CEST. &#8226; Completed enrollment in brelovitug AZURE-1 and AZURE-4 Phase 3 studies in HDV&#59; topline results expected in H2 2026. &#8226; Completed enrollment in LIVMARLI (maralixibat) EXPAND Phase 3 s"
+   "guidance_text": "n a late-breaking poster presentation at the EASL Congress on May 27 starting at 8&#58;30 a.m. CEST. &#8226; Completed enrollment in brelovitug AZURE-1 and AZURE-4 Phase 3 studies in HDV&#59; topline results expected in H2 2026. &#8226; Completed enrollment in LIVMARLI (maralixibat) EXPAND Phase 3 s",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001759425/000175942526000036/mirm-20260506xexx991.htm"
   },
   "dm": "2026-12"
  },
@@ -8984,7 +9516,8 @@ export default [
    "guided_filed": "2026-04-10",
    "program": "DA-1726",
    "accession": "0001104659-26-041784",
-   "guidance_text": "d to reach higher therapeutic doses with improved tolerability, which could represent a meaningful advantage compared to currently marketed therapies that require longer, more gradual titration. With data expected in the fourth quarter of 2026, we are focused on further demonstrating DA-1726&#8217;s"
+   "guidance_text": "d to reach higher therapeutic doses with improved tolerability, which could represent a meaningful advantage compared to currently marketed therapies that require longer, more gradual titration. With data expected in the fourth quarter of 2026, we are focused on further demonstrating DA-1726&#8217;s",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001638287/000110465926041784/mtva-20260410xex99d1.htm"
   },
   "dm": "2026-12"
  },
@@ -8999,7 +9532,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/NVO",
+  "url": "/pdufa/NVO-am833",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
@@ -9043,7 +9576,8 @@ export default [
    "guided_filed": "2026-05-06",
    "program": "OPUS-1",
    "accession": "0001649094-26-000015",
-   "guidance_text": "for the Prevention of Invasive Pneumococcal Disease and Pneumonia in Adults Topline Safety, Tolerability and Immunogenicity Data from OPUS-1 Expected in Fourth Quarter of 2026&#59; OPUS-2 and OPUS-3 Results Expected in First Half of 2027 Enrollment Completed for VAX-31 Infant Phase 2 Dose-Finding St"
+   "guidance_text": "for the Prevention of Invasive Pneumococcal Disease and Pneumonia in Adults Topline Safety, Tolerability and Immunogenicity Data from OPUS-1 Expected in Fourth Quarter of 2026&#59; OPUS-2 and OPUS-3 Results Expected in First Half of 2027 Enrollment Completed for VAX-31 Infant Phase 2 Dose-Finding St",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001649094/000164909426000015/pcvx-20260506xexx991.htm"
   },
   "dm": "2026-12"
  },
@@ -9070,7 +9604,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "RAP-219",
    "accession": "0001193125-26-210324",
-   "guidance_text": "rial of RAP-219 in PGTCS in the first half of 2027, expanding its epilepsy franchise into the most common type of generalized seizure. Additional Pipeline Updates &#x2022; Bipolar Mania Phase 2 Trial Topline Results Expected Ahead of Plan. Enrollment in the Phase 2 trial is progressing well and topl"
+   "guidance_text": "rial of RAP-219 in PGTCS in the first half of 2027, expanding its epilepsy franchise into the most common type of generalized seizure. Additional Pipeline Updates &#x2022; Bipolar Mania Phase 2 Trial Topline Results Expected Ahead of Plan. Enrollment in the Phase 2 trial is progressing well and topl",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002012593/000119312526210324/rapp-ex99_1.htm"
   },
   "dm": "2026-12"
  },
@@ -9097,7 +9632,8 @@ export default [
    "guided_filed": "2026-06-29",
    "program": "RGX-314",
    "accession": "0001193125-26-286825",
-   "guidance_text": "tential of an in-office gene therapy approach. &#160; &#160; Five-year long-term follow-up data from the Phase I/IIa study of subretinal sura-vec for wet AMD will also be presented at ASRS. REGENXBIO expects to announce topline data with AbbVie from the ATMOSPHERE &#174; and ASCENT &#174; pivotal tr"
+   "guidance_text": "tential of an in-office gene therapy approach. &#160; &#160; Five-year long-term follow-up data from the Phase I/IIa study of subretinal sura-vec for wet AMD will also be presented at ASRS. REGENXBIO expects to announce topline data with AbbVie from the ATMOSPHERE &#174; and ASCENT &#174; pivotal tr",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001590877/000119312526286825/rgnx-ex99_1.htm"
   },
   "dm": "2026-12"
  },
@@ -9124,7 +9660,8 @@ export default [
    "guided_filed": "2026-05-11",
    "program": "nimacimab",
    "accession": "0001628280-26-033417",
-   "guidance_text": "eriod, to generate preliminary monotherapy safety, PK, and exploratory efficacy data. Within each dose cohort, 8 participants will be randomized in a 3:1 ratio to nimacimab (n=6) or placebo (n=2). We expect to report topline data from the expansion study in the fourth quarter of 2026. We believe mul"
+   "guidance_text": "eriod, to generate preliminary monotherapy safety, PK, and exploratory efficacy data. Within each dose cohort, 8 participants will be randomized in a 3:1 ratio to nimacimab (n=6) or placebo (n=2). We expect to report topline data from the expansion study in the fourth quarter of 2026. We believe mul",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001516551/000162828026033417/skye-20260331.htm"
   },
   "dm": "2026-12"
  },
@@ -9151,7 +9688,8 @@ export default [
    "guided_filed": "2026-05-28",
    "program": "SGT-610",
    "accession": "0001178913-26-002963",
-   "guidance_text": "fundamentally reshapes the long-term opportunity for SGT-610. We now have both the capital and intellectual property runway to pursue the prevention of new BCCs in Gorlin syndrome, for which top-line results are expected in the fourth quarter of 2026. We continue to be excited about the potential of"
+   "guidance_text": "fundamentally reshapes the long-term opportunity for SGT-610. We now have both the capital and intellectual property runway to pursue the prevention of new BCCs in Gorlin syndrome, for which top-line results are expected in the fourth quarter of 2026. We continue to be excited about the potential of",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001684693/000117891326002963/exhibit_99-1.htm"
   },
   "dm": "2026-12"
  },
@@ -9186,7 +9724,8 @@ export default [
    "program": "SLS009",
    "accession": "0001390478-26-000009",
    "guidance_text": "trial in newly diagnosed AML patients, including those who become refractory early to AZA&#47;VEN treatment identified through extensive transcriptomics, genomics, and proteomics models. The topline data are expected in Q4 2026. Additional information about the trial can be found at clinicaltrials.g",
-   "source_note": "Aug 11, 2026 8-K Ex 99.1: 28 patients enrolled in Phase 2 of SLS009 in newly diagnosed first-line AML; topline data expected in Q4 2026."
+   "source_note": "Aug 11, 2026 8-K Ex 99.1: 28 patients enrolled in Phase 2 of SLS009 in newly diagnosed first-line AML; topline data expected in Q4 2026.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm"
   },
   "dm": "2026-12"
  },
@@ -9221,7 +9760,8 @@ export default [
    "program": "galinpepimut-S (GPS)",
    "event_driven": true,
    "guidance_text": "REGAL is event-driven: the final analysis triggers at the 80th event, not on a calendar date. 78 events had occurred as of May 11 2026 and the company guides topline to Q4 2026, contingent on the 80th event being reached. Full tracker at /sls.",
-   "source_note": "Aug 11, 2026 8-K Ex 99.1: final analysis of Phase 3 REGAL to be conducted following the 80th event (78 of 80 as of May 11); event-driven, announcement when the 80th event occurs."
+   "source_note": "Aug 11, 2026 8-K Ex 99.1: final analysis of Phase 3 REGAL to be conducted following the 80th event (78 of 80 as of May 11); event-driven, announcement when the 80th event occurs.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm"
   },
   "dm": "2026-12"
  },
@@ -9248,7 +9788,8 @@ export default [
    "guided_filed": "2026-07-14",
    "program": "SNDX-62122",
    "accession": "0001193125-26-302608",
-   "guidance_text": "the development of SNDX-62122 to be informed and de-risked by a Phase 1/2 proof-of-principal trial of revumenib in MF that is expected to initiate in the fourth quarter of 2026 with initial clinical data expected in the second half of 2027. Ongoing late-stage trials of Revuforj &#174; (revumenib) an"
+   "guidance_text": "the development of SNDX-62122 to be informed and de-risked by a Phase 1/2 proof-of-principal trial of revumenib in MF that is expected to initiate in the fourth quarter of 2026 with initial clinical data expected in the second half of 2027. Ongoing late-stage trials of Revuforj &#174; (revumenib) an",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001395937/000119312526302608/sndx-ex99_1.htm"
   },
   "dm": "2026-12"
  },
@@ -9275,7 +9816,8 @@ export default [
    "guided_filed": "2026-05-14",
    "program": "ANB033",
    "accession": "0001193125-26-224124",
-   "guidance_text": "uten-challenge study to assess the prevention of mucosal damage through six weeks &#x25aa; Cohort 2 (n=30) is a study to assess the possibility of mucosal healing through 12 weeks o Top-line Phase 1b data anticipated in Q4 2026 &#x2022; Phase 1b trial in eosinophilic esophagitis ongoing o 50-patient"
+   "guidance_text": "uten-challenge study to assess the prevention of mucosal damage through six weeks &#x25aa; Cohort 2 (n=30) is a study to assess the possibility of mucosal healing through 12 weeks o Top-line Phase 1b data anticipated in Q4 2026 &#x2022; Phase 1b trial in eosinophilic esophagitis ongoing o 50-patient",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002091349/000119312526224124/trax-ex99_1.htm"
   },
   "dm": "2026-12"
  },
@@ -9302,7 +9844,8 @@ export default [
    "guided_filed": "2026-07-28",
    "program": "GX-03",
    "accession": "0001213900-26-081996",
-   "guidance_text": "PHASE 3 Upcoming Milestones1 GX-03 IL-36&#945;, IL-36&#947;, IL-31 and IL-4 inhibitor Non-systemic and non-steroid potentially best-in-class topical Moderate-to-Severe Atopic Dermatitis (AD) Q4 2026: Topline Readout Q4 2026: FDA Type B Meeting Mid-2027: Phase 3 initiation Onychomycosis (Toenail Fung"
+   "guidance_text": "PHASE 3 Upcoming Milestones1 GX-03 IL-36&#945;, IL-36&#947;, IL-31 and IL-4 inhibitor Non-systemic and non-steroid potentially best-in-class topical Moderate-to-Severe Atopic Dermatitis (AD) Q4 2026: Topline Readout Q4 2026: FDA Type B Meeting Mid-2027: Phase 3 initiation Onychomycosis (Toenail Fung",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002023016/000121390026081996/ea029941301ex99-1.htm"
   },
   "dm": "2026-12"
  },
@@ -9329,7 +9872,8 @@ export default [
    "guided_filed": "2026-05-13",
    "program": "ZB021",
    "accession": "0001104659-26-059700",
-   "guidance_text": "xtension period which will further build upon the largest body of clinical data reported for IgG4-RD patients to date. A randomized Phase 2 trial for Systemic Lupus Erythematosus is ongoing and Zenas expects to report topline results, including biomarker data from this trial in the fourth quarter of"
+   "guidance_text": "xtension period which will further build upon the largest body of clinical data reported for IgG4-RD patients to date. A randomized Phase 2 trial for Systemic Lupus Erythematosus is ongoing and Zenas expects to report topline results, including biomarker data from this trial in the fourth quarter of",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001953926/000110465926059700/tm2614295d1_ex99-1.htm"
   },
   "dm": "2026-12"
  },
@@ -9417,7 +9961,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04743505"
   },
   "dm": "2027-01"
  },
@@ -9466,7 +10011,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03152318"
   },
   "dm": "2027-01"
  },
@@ -9494,7 +10040,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06328738"
   },
   "dm": "2027-01"
  },
@@ -9564,7 +10111,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05987332"
   },
   "dm": "2027-01"
  },
@@ -9655,7 +10203,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04957485"
   },
   "dm": "2027-01"
  },
@@ -9670,7 +10219,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/PRAX",
+  "url": "/pdufa/PRAX-ulixacaltamide",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -9687,7 +10236,7 @@ export default [
      "on": "2026-01-27"
     }
    },
-   "indication": null,
+   "indication": "Essential tremor",
    "market_cap_usd": 9341469585.039999,
    "cash_runway_months": 33.4,
    "days_to_decision": 203,
@@ -9699,7 +10248,10 @@ export default [
     "t30": 2.19,
     "t7": -0.33,
     "t1": 0.0
-   }
+   },
+   "source": "Praxis 8-K 2026-08-06 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000082/praxisq22026pr.htm",
+   "review": "NDA for essential tremor; Breakthrough Therapy designation December 2025. PDUFA date January 29, 2027; mid-cycle meeting complete with no major safety or efficacy concerns identified to date and no advisory committee planned (Praxis, August 6, 2026)."
   }
  },
  {
@@ -9713,7 +10265,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/GILD",
+  "url": "/pdufa/GILD-yeztugo",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": {
@@ -9790,7 +10342,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06152172"
   },
   "dm": "2027-02",
   "_sponsor_note": "Trial lead sponsor is David Porter"
@@ -9819,7 +10372,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06641076"
   },
   "dm": "2027-02"
  },
@@ -9936,7 +10490,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04278781"
   },
   "dm": "2027-03"
  },
@@ -9964,7 +10519,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03688178"
   },
   "dm": "2027-03"
  },
@@ -10013,7 +10569,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06602193"
   },
   "dm": "2027-03"
  },
@@ -10083,7 +10640,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05143970"
   },
   "dm": "2027-03"
  },
@@ -10111,7 +10669,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04951219"
   },
   "dm": "2027-03"
  },
@@ -10139,7 +10698,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06334432"
   },
   "dm": "2027-03"
  },
@@ -10188,7 +10748,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04798235"
   },
   "dm": "2027-03"
  },
@@ -10215,7 +10776,8 @@ export default [
    "guided_filed": "2026-05-11",
    "program": "AKY-1189",
    "accession": "0001193125-26-216716",
-   "guidance_text": "onjugate platform to the clinic in the last twelve months. In parallel, we continue to enroll patients in our ongoing Phase 1b trial of AKY-1189 targeting Nectin-4 expressing tumors, with preliminary data expected in the first quarter of 2027. We remain focused on generating clinical data intended t"
+   "guidance_text": "onjugate platform to the clinic in the last twelve months. In parallel, we continue to enroll patients in our ongoing Phase 1b trial of AKY-1189 targeting Nectin-4 expressing tumors, with preliminary data expected in the first quarter of 2027. We remain focused on generating clinical data intended t",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002035832/000119312526216716/ck0002035832-ex99_1.htm"
   },
   "dm": "2027-03"
  },
@@ -10242,7 +10804,8 @@ export default [
    "guided_filed": "2026-05-12",
    "program": "CRB-701",
    "accession": "0001193125-26-219707",
-   "guidance_text": "a will include clinical response durability as well as HNSCC patient subgroup analysis. We expect to initiate a registrational study for CRB-701 in second-line HNSCC this summer. In addition, we also anticipate reporting data with CRB-701 in combination with Keytruda&#174; in first-line HNSCC patien"
+   "guidance_text": "a will include clinical response durability as well as HNSCC patient subgroup analysis. We expect to initiate a registrational study for CRB-701 in second-line HNSCC this summer. In addition, we also anticipate reporting data with CRB-701 in combination with Keytruda&#174; in first-line HNSCC patien",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001595097/000119312526219707/crbp-20260331.htm"
   },
   "dm": "2027-03"
  },
@@ -10269,7 +10832,8 @@ export default [
    "guided_filed": "2026-05-07",
    "program": "NMRA-511",
    "accession": "0001193125-26-210310",
-   "guidance_text": "511 in the second half of 2026 and to initiate a Phase 2 study with NMRA-511 in Alzheimer's disease agitation in the first quarter of 2027. &#160; NMRA-898 (M4 Positive Allosteric Modulator): Phase 1 Data Expected in Second Half of 2026 Neumora is conducting a MAD study with NMRA-898 in healthy volu"
+   "guidance_text": "511 in the second half of 2026 and to initiate a Phase 2 study with NMRA-511 in Alzheimer's disease agitation in the first quarter of 2027. &#160; NMRA-898 (M4 Positive Allosteric Modulator): Phase 1 Data Expected in Second Half of 2026 Neumora is conducting a MAD study with NMRA-898 in healthy volu",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001885522/000119312526210310/nmra-ex99_1.htm"
   },
   "dm": "2027-03"
  },
@@ -10296,7 +10860,8 @@ export default [
    "guided_filed": "2026-05-05",
    "program": "HELIOS-3",
    "accession": "0001104659-26-055256",
-   "guidance_text": "t candidates will continue to increase significantly for the remainder of 2026 and beyond as we prepare for the planned NDA submission for AXPAXLI for wet AMD, progress the SOL-R trial toward topline data expected in the first quarter of 2027, enroll additional patients in the SOL-X and HELIOS-3 tri"
+   "guidance_text": "t candidates will continue to increase significantly for the remainder of 2026 and beyond as we prepare for the planned NDA submission for AXPAXLI for wet AMD, progress the SOL-R trial toward topline data expected in the first quarter of 2027, enroll additional patients in the SOL-X and HELIOS-3 tri",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001393434/000110465926055256/ocul-20260331x10q.htm"
   },
   "dm": "2027-03"
  },
@@ -10323,7 +10888,8 @@ export default [
    "guided_filed": "2026-07-30",
    "program": "LAM-001",
    "accession": "0001193125-26-324786",
-   "guidance_text": "olled with preliminary data projected to become available in the first quarter of 2027. We expect to initiate a Phase 2 trial to evaluate the use of LAM-001 as a treatment for SAPH in late 2026, with data expected in the fourth quarter of 2028. LAM-001 has been granted Orphan Drug Designation in the"
+   "guidance_text": "olled with preliminary data projected to become available in the first quarter of 2027. We expect to initiate a Phase 2 trial to evaluate the use of LAM-001 as a treatment for SAPH in late 2026, with data expected in the fourth quarter of 2028. LAM-001 has been granted Orphan Drug Designation in the",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001662774/000119312526324786/d163930dex994.htm"
   },
   "dm": "2027-03"
  },
@@ -10381,7 +10947,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03899987"
   },
   "dm": "2027-04"
  },
@@ -10409,7 +10976,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2027-04-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-05-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05531656"
   },
   "dm": "2027-05"
  },
@@ -10437,7 +11016,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05349890"
   },
   "dm": "2027-04"
  },
@@ -10465,7 +11045,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05907954"
   },
   "dm": "2027-04"
  },
@@ -10493,7 +11074,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03449108"
   },
   "dm": "2027-04"
  },
@@ -10521,7 +11103,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT02343042"
   },
   "dm": "2027-04"
  },
@@ -10549,7 +11132,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06384976"
   },
   "dm": "2027-04"
  },
@@ -10577,7 +11161,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04057898"
   },
   "dm": "2027-04"
  },
@@ -10605,7 +11190,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03589339"
   },
   "dm": "2027-04"
  },
@@ -10734,12 +11320,14 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
+  "url": "/pdufa/AXSM-axs-12",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 11563065573.5
+   "market_cap_usd": 11563065573.5,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
+   "source": "company filing (SEC)"
   }
  },
  {
@@ -10753,12 +11341,14 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
+  "url": "/pdufa/BBIO-encaleret",
   "ua": "2026-09-14T23:38:27Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 14161512702.68
+   "market_cap_usd": 14161512702.68,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
+   "source": "company filing (SEC)"
   }
  },
  {
@@ -10806,7 +11396,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04483440"
   },
   "dm": "2027-05"
  },
@@ -10834,7 +11425,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06531941"
   },
   "dm": "2027-05"
  },
@@ -10883,7 +11475,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06188702"
   },
   "dm": "2027-05"
  },
@@ -10911,7 +11504,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06874621"
   },
   "dm": "2027-05"
  },
@@ -10939,7 +11533,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06329401"
   },
   "dm": "2027-06"
  },
@@ -10967,7 +11562,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05949593"
   },
   "dm": "2027-06"
  },
@@ -10995,7 +11591,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06864988"
   },
   "dm": "2027-06"
  },
@@ -11023,7 +11620,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2027-06-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-06-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05864144"
   },
   "dm": "2026-06"
  },
@@ -11051,7 +11660,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06726265"
   },
   "dm": "2027-06"
  },
@@ -11079,7 +11689,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05651022"
   },
   "dm": "2027-06"
  },
@@ -11149,7 +11760,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07217015"
   },
   "dm": "2027-06"
  },
@@ -11177,7 +11789,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06475495"
   },
   "dm": "2027-06",
   "_sponsor_note": "Trial lead sponsor is Charite University, Berlin, Germany"
@@ -11289,7 +11902,8 @@ export default [
    "guided_filed": "2026-05-15",
    "program": "REGEN-006",
    "accession": "0001193125-26-225848",
-   "guidance_text": "ed approval Trial designed to support both accelerated and confirmatory approval Phase 3 REGEN-006 (PROACT 1) Enrollment completion for accelerated approval efficacy analysis expected mid&#x2011;2026 Topline readout anticipated in Q2 2027 for accelerated approval Mechanism of action studies ongoing "
+   "guidance_text": "ed approval Trial designed to support both accelerated and confirmatory approval Phase 3 REGEN-006 (PROACT 1) Enrollment completion for accelerated approval efficacy analysis expected mid&#x2011;2026 Topline readout anticipated in Q2 2027 for accelerated approval Mechanism of action studies ongoing ",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001850270/000119312526225848/prok-ex99_2.htm"
   },
   "dm": "2027-06"
  },
@@ -11317,7 +11931,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07614776"
   },
   "dm": "2027-07"
  },
@@ -11366,7 +11981,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06325566"
   },
   "dm": "2027-07"
  },
@@ -11394,7 +12010,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07280377"
   },
   "dm": "2027-07"
  },
@@ -11443,7 +12060,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07104500"
   },
   "dm": "2027-07"
  },
@@ -11471,7 +12089,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06265220"
   },
   "dm": "2027-08"
  },
@@ -11499,7 +12118,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05081609"
   },
   "dm": "2027-08"
  },
@@ -11548,7 +12168,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05764954"
   },
   "dm": "2027-08"
  },
@@ -11639,7 +12260,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05608044"
   },
   "dm": "2027-09"
  },
@@ -11667,7 +12289,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06980649"
   },
   "dm": "2027-09"
  },
@@ -11695,7 +12318,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06679985"
   },
   "dm": "2027-09"
  },
@@ -11723,7 +12347,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07598708"
   },
   "dm": "2027-09"
  },
@@ -11751,7 +12376,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06892639"
   },
   "dm": "2027-09"
  },
@@ -11780,7 +12406,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2027-09-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2023-09-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT03005418"
   },
   "dm": "2023-09"
  },
@@ -11808,7 +12446,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06754462"
   },
   "dm": "2027-09"
  },
@@ -11836,7 +12475,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06585774"
   },
   "dm": "2027-09"
  },
@@ -11864,7 +12504,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04849728"
   },
   "dm": "2027-09"
  },
@@ -11892,7 +12533,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05208944"
   },
   "dm": "2027-09"
  },
@@ -11941,7 +12583,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05607953"
   },
   "dm": "2027-09"
  },
@@ -11969,7 +12612,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06966479"
   },
   "dm": "2027-09"
  },
@@ -12042,7 +12686,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -12060,7 +12704,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2027-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT05504720"
   },
   "dm": "2026-07"
  },
@@ -12109,7 +12765,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT07562087"
   },
   "dm": "2027-10"
  },
@@ -12158,7 +12815,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2027-11-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-11-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT07023731"
   },
   "dm": "2026-11"
  },
@@ -12186,7 +12855,19 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "date_history": [
+    {
+     "date": "2027-11-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2029-07-15",
+     "changed": "2026-07-11",
+     "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "source_url": "https://clinicaltrials.gov/study/NCT06712823"
   },
   "dm": "2029-07"
  },
@@ -12214,7 +12895,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05642780"
   },
   "dm": "2027-11"
  },
@@ -12305,7 +12987,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05275777"
   },
   "dm": "2027-12"
  },
@@ -12333,7 +13016,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06709014"
   },
   "dm": "2027-12"
  },
@@ -12361,7 +13045,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04816604"
   },
   "dm": "2027-12"
  },
@@ -12389,7 +13074,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06263231"
   },
   "dm": "2027-12"
  },
@@ -12417,7 +13103,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05539430"
   },
   "dm": "2027-12"
  },
@@ -12487,7 +13174,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT05112861"
   },
   "dm": "2027-12"
  },
@@ -12598,7 +13286,8 @@ export default [
    "guided_filed": "2026-07-17",
    "program": "TH103",
    "accession": "0001193125-26-306737",
-   "guidance_text": "g up to 5.0mg Cash runway expected to fund company into Q4 2027 TH103 Clinical Development Program &amp; Anticipated Milestones &#160; Enrollment continues in Phase 1b/2 MAD study &#8211; preliminary data expected in 1H 2027 Pending the results from the Phase 1b/2 trial, potential Phase 3 trial init"
+   "guidance_text": "g up to 5.0mg Cash runway expected to fund company into Q4 2027 TH103 Clinical Development Program &amp; Anticipated Milestones &#160; Enrollment continues in Phase 1b/2 MAD study &#8211; preliminary data expected in 1H 2027 Pending the results from the Phase 1b/2 trial, potential Phase 3 trial init",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001754068/000119312526306737/d125006dex992.htm"
   },
   "dm": "2027-12"
  },
@@ -12626,7 +13315,19 @@ export default [
    "program": "SURF303",
    "accession": "0001193125-26-220638",
    "guidance_text": "Advanced &#x201c; dabogratinib 3x3 &#x201d; strategy to pursue 3 late-stage clinical studies in LG-UTUC, IR NMIBC and ACH - &#160; - First LG-UTUC patient dosed with dabogratinib in SURF303; initial results expected in 2027 - &#160; - Initial Ph2 data readout from SURF302 expected in August 2026 (n&",
-   "review": "Phase 2a/b in low-grade upper tract urothelial carcinoma; first patient dosed. Company guides initial results in 2027."
+   "review": "Phase 2a/b in low-grade upper tract urothelial carcinoma; first patient dosed. Company guides initial results in 2027.",
+   "date_history": [
+    {
+     "date": "2026-08-31",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2027-12-31",
+     "changed": "2026-08-03",
+     "why": "Tyra's second-quarter 2026 release guides SURF303 initial results in 2027; the row was keyed on an August 31 sentinel and now sits at year precision on the 2027 sentinel."
+    }
+   ],
+   "source_url": "https://ir.tyra.bio/news-releases/news-release-details/tyra-biosciences-reports-second-quarter-2026-financial-results"
   }
  }
 ];

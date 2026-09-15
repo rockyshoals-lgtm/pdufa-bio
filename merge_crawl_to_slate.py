@@ -78,6 +78,20 @@ def decided_dates():
         arch = open(DECISIONS, encoding="utf-8").read()
         for t, d in re.findall(r"/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})", arch):
             idx.setdefault(t.upper(), []).append(d)
+    # 2026-09-15: the GOAL date of a decided row too, not only the decision date. NUVL's
+    # zidesamtinib was approved 07-22 against a 09-18 goal; the crawl re-surfaced "NUVL
+    # 2026-09-18" (mis-attributed to neladalkib) and it passed as AUTO-SAFE because 09-18 is 58
+    # days from 07-22. The goal date is the date a filing repeats, so it is the date to block on.
+    try:
+        dtxt = open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
+        arr, _ = json.JSONDecoder().raw_decode(dtxt[dtxt.find("["):])
+        for r in arr:
+            if r.get("type") == "PDUFA" and r.get("st") == "Decided":
+                for d in (r.get("d"), r.get("dcd")):
+                    if d:
+                        idx.setdefault(str(r.get("t", "")).upper(), []).append(str(d)[:10])
+    except Exception:
+        pass
     return idx
 
 
@@ -99,6 +113,14 @@ def risk_flags(c, have, decided, url_owners):
         f.append("fan-out(shared-source-across-tickers)")
     if not c["drug"]:
         f.append("blank-drug")
+    # Audit 09-15 ORDER 6: only a stated calendar day may be published at day precision, and a
+    # row that does not know its own precision is never auto-published.
+    if c["dp"] == "unknown":
+        f.append("no-date-precision")
+    elif c["dp"] != "day":
+        f.append(f"coarse-precision({c['dp']}):publish-as-window-not-day")
+    if c["dp"] == "day" and c["date"][8:10] in ("30", "31") and c.get("conf", 0) < 0.95:
+        f.append("day-on-month-end:confirm-it-is-a-stated-day")
     return f
 
 
@@ -123,7 +145,10 @@ def read_crawl_candidates(min_conf):
         drug = "" if is_junk(r.get("drug")) else (r.get("drug") or "").strip()
         cand = {"ticker": tk, "date": date, "company": (r.get("company") or "").strip(),
                 "drug": drug, "indication": (r.get("indication") or "").strip(),
-                "dp": (r.get("date_precision") or "day").strip() or "day",
+                # Audit 09-15 ORDER 6: a blank precision is UNKNOWN, never "day". A row that
+                # cannot say what its date means is held for review (risk_flags), not
+                # published as a calendar day.
+                "dp": (r.get("date_precision") or "").strip() or "unknown",
                 "url": (r.get("source_url") or "").strip(), "conf": conf}
         k = (tk, date)
         # dedupe: prefer non-blank drug, then higher confidence
