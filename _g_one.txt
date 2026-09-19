@@ -1,0 +1,3 @@
+.github\workflows\pdufa-rebuild.yml: parses OK, 102 step(s)
+
+  PASS: workflows parse and every step is runnable

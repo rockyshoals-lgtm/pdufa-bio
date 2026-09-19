@@ -1,0 +1,43 @@
+Audit 09-10b: source the real quarter-end dates, withdraw the manufactured ones
+
+ORDER items 1-3, each quote read first-hand in the filing named:
+
+* VRTX povetacicept 2026-11-30 sourced to Vertex 8-K 2026-08-03 (acc
+  0000875320-26-000256): "assigned a PDUFA target action date of November 30, 2026".
+* MIRM/INCY zilurgisertib 2026-09-26 sourced to Mirum 8-K 2026-05-06 (acc
+  0001759425-26-000036); FOP indication filled on both rows; the INCY row and its
+  calendar rows relabelled so they stop implying Incyte holds the application. Mirum
+  is the applicant, Incyte the licensor.
+* The four unsourced 2026-12-31 PDUFA days downgraded to month precision.
+
+EXTENDING THE GUARD TO EVERY QUARTER END FOUND NINE MORE, and reading the filings split
+them three ways, which is why "month-end" is not itself the test:
+
+  real, now sourced, day KEPT -- IONS olezarsen (Jun 30), VRDN veligrotug (Jun 30),
+    SRRK apitegromab (Sep 30, a resubmission clock stated four times over)
+  sponsor said a QUARTER, we published its last day -- PFE + ROIV brepocitinib, TAK
+    oveporexton, PTGX rusfertide -> dp "quarter"
+  no sponsor statement at any granularity -- AZN Truqap -> month, NVO denecimig -> year
+
+IT HAD REACHED A PUBLISHED STATISTIC. /research/fda-decision-timing gated on the goal
+date's FORMAT, not its precision, so a manufactured 2026-09-30 passed cleanly. Those four
+quarter placeholders were its four largest "early" margins (-34, -33, -34, -56 days) and
+moved the median from -1.0 to -2.5 days. A quarter-end placeholder is the LAST day of the
+stated quarter, so it can only ever bias in the flattering direction. collect() and the
+audit path now gate on dp == "day".
+
+Also:
+* _lib.mjs no longer derives date_month from a year row's year-end sentinel (it was
+  publishing "2027-12" for a row whose sponsor said only "2027").
+* Calendar rows relabelled to the window they can source ("Q3 2026", "Dec 2026"); the
+  year-precision row came off the month pages, which cannot hold it honestly.
+* test_calendar_matches_dataset now censuses WINDOWED rows. Its ROW regex only matched
+  YYYY-MM-DD, so every relabelled row would have gone structurally invisible -- the exact
+  condition that let the HOOK/CRBP/NCNA fossil rows survive. Doing that surfaced SEVEN
+  pre-existing "Q4 2026" rows with no dataset event and no sourced goal date, each with a
+  /pdufa page asserting 2026-12-31; they are recorded with evidence in
+  _calendar_unbacked_q4_rows.json as a RATCHET (printed every run, count may only fall).
+  So the real population of the year-end placeholder defect is eleven, not four.
+
+New guard tests/test_no_unsourced_day_dates.py, four invariants, proven 0 -> 1 -> 0 on
+each independently. 80 guards pass.

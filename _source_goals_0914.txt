@@ -1,0 +1,34 @@
+
+==============================================================================
+=== PHAR: looking for a filing that states 'October 24, 2026'
+  "leniolisib" "target action date": total=4
+    6-K 2025-10-01 Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+    6-K 2026-06-04 Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+    6-K 2025-11-06 Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+    6-K 2026-07-30 Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+
+    *** MATCH 6-K 2026-06-04 Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+    https://www.sec.gov/Archives/edgar/data/1828316/000182831626000031/pharmingannouncesusfdaacce.htm
+      ...ients weighing 27 kg or more, who represent a meaningful proportion of the identified pediatric patient population. The resubmission includes additional data requested by the FDA on analytical methods used for production batch testing. The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of October 24, 2026. A separate sNDA seeking approval for lower doses for patients weighing less than 27 kg is planned for this summer. Fabrice Chouraqui, Chief Executive Officer of Pharming, commented We are pleased that the FDA has accepted our resubmission, bringing us one step closer to potentially making Joenja available to younger patients living with...
+      ...sing for pediatric patients weighing 27 kg or more, who represent a meaningful proportion of the identified pediatric patient population. The resubmission includes additional data requested by the FDA on analytical methods used for production batch testing. The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of October 24, 2026. A separate sNDA seeking approval for lower doses for patients weighing less than 27 kg is planned for this summer. Fabrice Chouraqui, Chief Executive Officer of Pharming, commented We are pleased that the FDA has accepted our resubmission, bringing us one step closer to potentially making Joenja available to younger patients living wit
+      ...aily dosing for pediatric patients weighing 27 kg or more, who represent a meaningful proportion of the identified pediatric patient population. The resubmission includes additional data requested by the FDA on analytical methods used for production batch testing. The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of October 24, 2026. A separate sNDA seeking approval for lower doses for patients weighing less than 27 kg is planned for this summer. Fabrice Chouraqui, Chief Executive Officer of Pharming, commented We are pleased that the FDA has accepted our resubmission, bringing us one step closer to potentially making Joenja available to younger patients liv
+
+==============================================================================
+=== BFRI: looking for a filing that states 'September 28, 2026'
+  "Ameluz" "target action date": total=2
+    8-K 2024-02-05 Biofrontera Inc.  (BFRI, BFRIW)  (CIK 0001858685)
+    8-K 2026-05-14 Biofrontera Inc.  (BFRI, BFRIW)  (CIK 0001858685)
+
+    *** MATCH 8-K 2026-05-14 Biofrontera Inc.  (BFRI, BFRIW)  (CIK 0001858685)
+    https://www.sec.gov/Archives/edgar/data/1858685/000149315226022875/ex99-1.htm
+      ...red to $1.8 million in Q1 2025. Recent Operational Highlights Announced FDA&rsquo;s completion of its filing review and filing acceptance of the Company&rsquo;s supplemental New Drug Application (sNDA) for Ameluz &reg; PDT for the treatment of superficial basal cell carcinoma (sBCC), with a PDUFA target action date of September 28, 2026. Announced positive and statistically significant top-line results from its Phase 3 clinical trial evaluating Ameluz &reg; PDT for the treatment of mild to moderate actinic keratoses (AKs) on the extremities, neck, and trunk, meeting the primary endpoint. Announced database lock of Phase 1 pharmacokinetics study required for FDA filing o...
+      ...March 31, 2026, compared to $1.8 million in Q1 2025. Recent Operational Highlights Announced FDA&rsquo;s completion of its filing review and filing acceptance of the Company&rsquo;s supplemental New Drug Application (sNDA) for Ameluz &reg; PDT for the treatment of superficial basal cell carcinoma (sBCC), with a PDUFA target action date of September 28, 2026. Announced positive and statistically significant top-line results from its Phase 3 clinical trial evaluating Ameluz &reg; PDT for the treatment of mild to moderate actinic keratoses (AKs) on the extremities, neck, and trunk, meeting the primary endpoint. Announced database lock of Phase 1 pharmacokinetics study required for FDA filing
+      ...as of March 31, 2026, compared to $1.8 million in Q1 2025. Recent Operational Highlights Announced FDA&rsquo;s completion of its filing review and filing acceptance of the Company&rsquo;s supplemental New Drug Application (sNDA) for Ameluz &reg; PDT for the treatment of superficial basal cell carcinoma (sBCC), with a PDUFA target action date of September 28, 2026. Announced positive and statistically significant top-line results from its Phase 3 clinical trial evaluating Ameluz &reg; PDT for the treatment of mild to moderate actinic keratoses (AKs) on the extremities, neck, and trunk, meeting the primary endpoint. Announced database lock of Phase 1 pharmacokinetics study required for FDA 
+
+==============================================================================
+=== BAYRY: looking for a filing that states 'November 30, 2026'
+  "sevabertinib" "target action date": total=2
+    10-K 2026-02-26 Nuvalent, Inc.  (NUVL)  (CIK 0001861560)
+    10-Q 2026-05-07 Nuvalent, Inc.  (NUVL)  (CIK 0001861560)
+  "sevabertinib" "PDUFA": total=0
+  NO filing found stating November 30, 2026

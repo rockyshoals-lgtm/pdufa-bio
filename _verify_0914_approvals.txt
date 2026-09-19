@@ -1,0 +1,89 @@
+
+==============================================================================
+=== SRRK  listed 2026-09-30  (apitegromab)
+  OUR DATASET ROWS:
+    PDUFA      d=2026-09-30 dp=day st=Upcoming oc=None dcd=None | Apitegromab - (SAPPHIRE)
+  SPONSOR FILINGS (Aug 1 - Sep 14 2026):
+
+    8-K 2026-09-14  Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196)
+    https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-1.htm
+      ...EX-99.1 2 tm2625362d1_ex99-1.htm EXHIBIT 99.1 Exhibit 99.1 Scholar Rock Announces FDA Approval of ISEMBYLD&trade; (apitegromab-mstn), the First and Only Muscle-Targeted Treatment for Children and Adults with Spinal Muscular Atrophy (SMA) September 11, 2026 &middot; ISEMBYLD is approved for use in all adults and children &ge;2 years of age with SMA who are currently receiving a survival motor neuron 2 (SMN2)-targeted treatment &middot; ISEMBYLD recommended dose of 10 mg/kg showed a robust, clinically meaningful 2.2-point improvement in motor function as measured by the gold-standard Hammersmith Functional Motor Scale-Expanded (HFM
+      ...EX-99.1 2 tm2625362d1_ex99-1.htm EXHIBIT 99.1 Exhibit 99.1 Scholar Rock Announces FDA Approval of ISEMBYLD&trade; (apitegromab-mstn), the First and Only Muscle-Targeted Treatment for Children and Adults with Spinal Muscular Atrophy (SMA) September 11, 2026 &middot; ISEMBYLD is approved for use in all adults and children &ge;2 years of age with SMA who are currently receiving a survival motor neuron 2 (SMN2)-targeted treatment &middot; ISEMBYLD recommended dose of 10 mg/kg showed a robust, clinically meaningful 2.2-point improvement in motor function as measured by the gold-standard Hammersmith Functional Motor Scale-Expanded (HFM
+
+    8-K 2026-09-14  Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196)
+    https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-2.htm
+      ...EX-99.2 3 tm2625362d1_ex99-2.htm EXHIBIT 99.2 Exhibit 99.2 ISEMBYLD (apitegromab-mstn) FDA Approval Conference Call September 14, 2026 2026 Scholar Rock, Inc. All rights reserved. 2 Forward-Looking Statements Various statements in this presentation concerning the future expectations, plans and prospects of Scholar Rock Holding Corporation and Scholar Rock, Inc. (collectively, Scholar Rock ), including without limitation, Scholar Rock s expectations regarding the U.S. commercial launch of ISEM...
+      ...EX-99.2 3 tm2625362d1_ex99-2.htm EXHIBIT 99.2 Exhibit 99.2 ISEMBYLD (apitegromab-mstn) FDA Approval Conference Call September 14, 2026 2026 Scholar Rock, Inc. All rights reserved. 2 Forward-Looking Statements Various statements in this presentation concerning the future expectations, plans and prospects of Scholar Rock Holding Corporation and Scholar Rock, Inc. (collectively, Scholar Rock ), including without limitation, Scholar Rock s expectations regarding the U.S. commercial launch of ISEM...
+
+==============================================================================
+=== PHAR  listed 2026-10-24  (leniolisib)
+  OUR DATASET ROWS:
+    PDUFA      d=2026-10-24 dp=day st=Upcoming oc=None dcd=None | Leniolisib
+    Readout    d=2026-11-15 dp=month st=Estimated oc=None dcd=None | Leniolisib
+  SPONSOR FILINGS (Aug 1 - Sep 14 2026):
+
+    6-K 2026-09-11  Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+    https://www.sec.gov/Archives/edgar/data/1828316/000182831626000037/fdaapprovespharmingsjoenja.htm
+      ...6-K 1 fdaapprovespharmingsjoenja.htm 6-K Document UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 6-K REPORT OF FOREIGN PRIVATE ISSUER PURSUANT TO RULE 13a-16 OR 15d-16 UNDER THE SECURITIES EXCHANGE ACT OF 1934 For the Month of September 2026 Commission File Number 001-39822 Pharming Group N.V. (Exact Name of Registrant as Specified in Its C...
+      ...6-K 1 fdaapprovespharmingsjoenja.htm 6-K Document UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 6-K REPORT OF FOREIGN PRIVATE ISSUER PURSUANT TO RULE 13a-16 OR 15d-16 UNDER THE SECURITIES EXCHANGE ACT OF 1934 For the Month of September 2026 Commission File Number 001-39822 Pharming Group N.V. (Exact Name of Registrant as Specified in Its C...
+
+    6-K 2026-08-13  Pharming Group N.V.  (PHAR)  (CIK 0001828316)
+    https://www.sec.gov/Archives/edgar/data/1828316/000182831626000035/pharmingannouncescommercia.htm
+      ...e had limited treatment options beyond supportive care, this launch represents meaningful progress in addressing a significant unmet need. We are grateful to OrphanPacific for its partnership and close collaboration in helping make this treatment available. The launch of Joenja in Japan follows its approval by Japan s Ministry of Health, Labour and Welfare (MHLW) in March of this year as the first treatment specifically for APDS. Under an agreement with Pharming, OrphanPacific, Inc. serves as the Marketing Authorization Holder for Joenja in Japan and in collaboration with Pharming, is responsible for supply and distribution of th
+      ...is submitting the Form 6-K in paper as permitted by Regulation S-T Rule 101(b)(7) Furnished as Exhibit 99.1 to this Report on Form 6-K is a press release of Pharming Group N.V., or the Company, dated August 13, 2026. EXHIBIT INDEX Exhibit No. Description 99.1 Pharming announces commercial launch of Joenja (leniolisib) in Japan for adult and pediatric patients with APDS aged 4 and older SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized. Pharming Group N.V. By s Fabrice Chouraqui Name Fabr
+
+==============================================================================
+=== BFRI  listed 2026-09-28  (Ameluz)
+  OUR DATASET ROWS:
+    PDUFA      d=2026-09-28 dp=day st=Upcoming oc=None dcd=None | Ameluz (aminolevulinic acid hydrochloride) topic
+  SPONSOR FILINGS (Aug 1 - Sep 14 2026):
+
+    8-K 2026-09-14  Biofrontera Inc.  (BFRI, BFRIW)  (CIK 0001858685)
+    https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm
+      ...EX-99.1 2 ex99-1.htm EX-99.1 Exhibit 99.1 Biofrontera Announces FDA Approval of Ameluz &reg; Red Light PDT for the Treatment of Superficial Basal Cell Carcinoma Ameluz used in conjunction with the RhodoLED lamp becomes the first and only photodynamic therapy approved in the United States to treat a skin cancer, creating an additional growth opportunity for Biofrontera&rsquo;s photodynamic therapy platform WOBURN, Mass., September 14, 2026 &mdash; Biofrontera Inc. (NASDAQ: BFRI) (&ldquo;Biofrontera&rdquo; or the &ldquo;Company&rdquo;), a biopharmaceutical company specializing in the development and commercialization of photodynam.
+      ...EX-99.1 2 ex99-1.htm EX-99.1 Exhibit 99.1 Biofrontera Announces FDA Approval of Ameluz &reg; Red Light PDT for the Treatment of Superficial Basal Cell Carcinoma Ameluz used in conjunction with the RhodoLED lamp becomes the first and only photodynamic therapy approved in the United States to treat a skin cancer, creating an additional growth opportunity for Biofrontera&rsquo;s photodynamic therapy platform WOBURN, Mass., September 14, 2026 &mdash; Biofrontera Inc. (NASDAQ: BFRI) (&ldquo;Biofrontera&rdquo; or the &ldquo;Company&rdquo;), a biopharmaceutical company specializing in the development and commercialization of...
+
+    10-Q 2026-08-13  Biofrontera Inc.  (BFRI, BFRIW)  (CIK 0001858685)
+    https://www.sec.gov/Archives/edgar/data/1858685/000149315226037834/form10-q.htm
+      ...ued and unpaid PIK interest. The remaining unconverted portion of the Notes outstanding as of June 30, 2026, is detailed in Note 12. Debt Convertible Notes Payable . 15. Equity Incentive Plans and Share-Based Payments 2021 Omnibus Incentive Plan In July 2021, the Board adopted, and our stockholders approved, the 2021 Plan, under which the maximum contractual term for stock options is 10 years. In June 2026, our stockholders approved the amendment and restatement of the 2021 Plan, including to increase the total number of shares of common stock authorized from 3,750,000 to 8,750,000 . As of June 30, 2026, there were 5,178,852 shar
+      ..., our, or Biofrontera ), is a United States-based biopharmaceutical company engaging in the development, manufacturing, and commercialization of pharmaceutical products for the treatment of dermatological conditions with a focus on photodynamic therapy ( PDT ). The Company s products, which include Ameluz as well as the BF-RhodoLED and RhodoLED XL lamp series (together, the RhodoLED Lamps ), are used for the treatment of actinic keratosis ( AK ), a common skin condition characterized by the growth of pre-cancerous skin lesions (or AKs ). With our national commercial team, we generate revenue by selling our products directly to de
+
+==============================================================================
+=== GILD  listed 2027-02-02  (?)
+  OUR DATASET ROWS:
+    PDUFA      d=2026-08-27 dp=day st=Decided oc=Approved dcd=2026-08-27 | Bictegravir and Lenacapavir - (ARTISTRY-2)
+    Readout    d=2026-09-15 dp=month st=Estimated oc=None dcd=None | Sacituzumab Govitecan
+    Readout    d=2026-11-15 dp=month st=Estimated oc=None dcd=None | Sacituzumab Govitecan
+    PDUFA      d=2026-12-23 dp=day st=Upcoming oc=None dcd=None | Anito-cel (anitocabtagene autoleucel)
+    Readout    d=2027-01-15 dp=month st=Estimated oc=None dcd=None | MK-3475
+    PDUFA      d=2027-02-02 dp=day st=Upcoming oc=None dcd=None | Yeztugo (lenacapavir) once-weekly oral
+    Readout    d=2027-03-15 dp=month st=Estimated oc=None dcd=None | Sacituzumab Govitecan
+  SPONSOR FILINGS (Aug 1 - Sep 14 2026):
+
+    8-K 2026-08-04  GILEAD SCIENCES, INC.  (GILD)  (CIK 0000882095)
+    https://www.sec.gov/Archives/edgar/data/882095/000088209526000028/exhibit991earningspressrel.htm
+      ...s grew 12%, reflecting continued strength in treatment and the rapid expansion of our PrEP business, supporting an increase in our base business revenue expectations for 2026, said Daniel O Day, Gilead s Chairman and Chief Executive Officer. We also made significant clinical progress with three FDA approvals and three positive Phase 3 updates. We look forward to delivering on our many opportunities in the second half of the year including another two potential launches in oncology and HIV. Second Quarter 2026 Financial Results Total second quarter 2026 revenues increased 10% to $7.8 billion compared to the same period in 2025, pr
+      ...her sales of HIV products, Trodelvy and Livdelzi, partially offset by lower sales of Cell Therapy and HCV products. HIV product sales increased 12% to $5.7 billion in the second quarter 2026 compared to the same period in 2025, primarily driven by higher average realized price and demand. Biktarvy (bictegravir 50mg emtricitabine ( FTC ) 200mg tenofovir alafenamide ( TAF ) 25mg) sales increased 7% to $3.8 billion in the second quarter 2026 compared to the same period in 2025, primarily driven by higher average realized price, favorable inventory dynamics and higher demand. Descovy (FTC 200mg TAF 25mg) sales increased 48% to $967 m
+
+    10-Q 2026-08-06  GILEAD SCIENCES, INC.  (GILD)  (CIK 0000882095)
+    https://www.sec.gov/Archives/edgar/data/882095/000088209526000031/gild-20260630.htm
+      ...ction with our first quarter 2021 acquisition of MYR GmbH ( MYR ), we were subject to a contingent consideration payment of up to 300 million, subject to customary adjustments, which we revalued each reporting period using probability-weighted scenarios for U.S. Food and Drug Administration ( FDA ) approval of bulevirtide. In May 2026, FDA granted accelerated approval of Hepcludex (bulevirtide), and we subsequently paid a majority of the contingent consideration, which was reflected in financing activities in our Condensed Consolidated Statements of Cash Flows, with the remaining amount expected to be paid during the third quarte
+      ...February 2, 2027. Received FDA accelerated approval for Hepcludex for the treatment chronic hepatitis delta virus ( HDV ) infection in adults without cirrhosis or with compensated cirrhosis, which is now the first and only FDA-approved treatment for HDV in the U.S. Announced FDA accepted an NDA for bictegravir and lenacapavir for virologically suppressed people with HIV under priority review, with a PDUFA target action date of August 27, 2026. Oncology Received a positive opinion from the European Medicines Agency s Committee for Medicinal Products for Human Use for Trodelvy in combination with Keytruda (pembrolizumab) for the tr
+
+==============================================================================
+=== ARQT  listed 2027-02-23  (?)
+  OUR DATASET ROWS:
+    PDUFA      d=2026-06-29 dp=day st=Decided oc=Approved dcd=2026-06-29 | ZORYVE (roflumilast) Cream 0.3%
+    Readout    d=2026-09-15 dp=month st=Estimated oc=None dcd=None | Topical Roflumilast
+    PDUFA      d=2027-02-23 dp=day st=Upcoming oc=None dcd=None | ZORYVE (roflumilast) cream 0.05%
+  SPONSOR FILINGS (Aug 1 - Sep 14 2026):
+
+    8-K 2026-08-05  Arcutis Biotherapeutics, Inc.  (ARQT)  (CIK 0001787306)
+    https://www.sec.gov/Archives/edgar/data/1787306/000178730626000049/pressreleaseex991q22026.htm
+      ...s Update Continued strong ZORYVE (roflumilast) net product revenue growth, with Q2 revenues of $129.9 million, +59% versus Q2 of 2025, and +23% versus Q1 of 2026, driven primarily by strong demand growth Company raising 2026 full-year net product sales guidance to $525 million $540 million Received approval to expand the indication for ZORYVE cream 0.3% for the topical treatment of plaque psoriasis to children down to the age of 2, the seventh FDA approval in four years FDA accepted sNDA for ZORYVE cream 0.05% to expand indication to include infants with mild to moderate atopic dermatitis aged 3 to 24 months and set target action
+      ...EX-99.1 2 pressreleaseex991q22026.htm EX-99.1 Document Arcutis Announces Second Quarter 2026 Financial Results and Provides Business Update Continued strong ZORYVE (roflumilast) net product revenue growth, with Q2 revenues of $129.9 million, +59% versus Q2 of 2025, and +23% versus Q1 of 2026, driven primarily by strong demand growth Company raising 2026 full-year net product sales guidance to $525 million $540 million Received approval to expand the indication for ZORYVE cream 0.3% for the topical treatment of plaque psoriasis to children down to the age of 2, the...
+
+    10-Q 2026-08-05  Arcutis Biotherapeutics, Inc.  (ARQT)  (CIK 0001787306)
+    https://www.sec.gov/Archives/edgar/data/1787306/000178730626000051/arqt-20260630.htm
+      ...s. Forward-looking statements contained in this Quarterly Report on Form 10-Q include, but are not limited to statements regarding our future results of operations and financial position, industry and business trends, stock compensation, business strategy, plans, market growth, commercialization of approved products, and our objectives for future operations. The forward-looking statements in this Quarterly Report on Form 10-Q are only predictions. We have based these forward-looking statements largely on our current expectations and projections about future events and financial trends that we believe may affect our business, fina
+      ...-30 0001787306 us-gaap:AdditionalPaidInCapitalMember 2025-06-30 0001787306 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2025-06-30 0001787306 us-gaap:RetainedEarningsMember 2025-06-30 0001787306 2025-06-30 0001787306 us-gaap:SecuredDebtMember arqt:LoanAgreementMember 2026-06-30 0001787306 arqt:ZORYVECream0.3Member 2026-04-01 2026-06-30 0001787306 arqt:ZORYVECream0.3Member 2025-04-01 2025-06-30 0001787306 arqt:ZORYVECream0.3Member 2026-01-01 2026-06-30 0001787306 arqt:ZORYVECream0.3Member 2025-01-01 2025-06-30 0001787306 arqt:ZORYVEFoamMember 2026-04-01 2026-06-30 0001787306 arqt:ZORYVEFoamMember 2025-04-01 2025-06-30 0001787

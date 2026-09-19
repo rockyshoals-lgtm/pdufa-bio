@@ -1,0 +1,41 @@
+=== VRTX povetacicept: the 2026-08-03 8-K, matched by accession
+  https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm
+   ...EX-99.1 2 ex-991_q22026.htm EX-99.1 Document Vertex Reports Second Quarter 2026 Financial Results Total revenue of $3.33 billion, a 12% increase compared to second quarter 2025 Raising full-year revenue guidance to $13.1 billion to $13.2 billion Continued progress across research and development pipeline povetacicept PDUFA date November 30th Entered into agreement to acquire Crinetics Pharmaceuticals, with closing anticipated in the third quarter of 2026 BOSTON -- Vertex Pharmaceuticals Incorporated (Nasdaq VRTX) today reported consolidated financial results for the second quarter e...
+   ...as pipeline-in-a-product potential and represents a potentially best-in-class approach to control B cell activity in IgAN, primary membranous nephropathy (pMN), and generalized myasthenia gravis (gMG). The U.S. FDA accepted the BLA submission for accelerated approval of povetacicept for adults with IgAN and assigned a PDUFA target action date of November 30, 2026. The submission is 5 supported by positive data from a pre-specified Week 36 interim analysis of the ongoing Phase 3 RAINIER trial of povetacicept in IgAN. If approved, povetacicept will become the first commercialized therapy in Vertex s emerging nephr...
+   ...ential and represents a potentially best-in-class approach to control B cell activity in IgAN, primary membranous nephropathy (pMN), and generalized myasthenia gravis (gMG). The U.S. FDA accepted the BLA submission for accelerated approval of povetacicept for adults with IgAN and assigned a PDUFA target action date of November 30, 2026. The submission is 5 supported by positive data from a pre-specified Week 36 interim analysis of the ongoing Phase 3 RAINIER trial of povetacicept in IgAN. If approved, povetacicept will become the first commercialized therapy in Vertex s emerging nephrology...
+
+=== AZN Ultomiris IgA nephropathy, narrowed
+  "Ultomiris" "IgA nephropathy" "PDUFA": total=16
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866', '8-K', '2021-04-30', '0000899866-21-000037:earningsreleaseq12021.htm')
+    ('Biohaven Ltd.  (BHVN)  (CIK 0001935979)', '8-K', '2025-06-04', '0001935979-25-000058:biohaveninvestorpresenta.htm')
+    ('OMEROS CORP  (OMER)  (CIK 0001285819)', '10-K', '2021-03-01', '0001558370-21-002177:omer-20201231x10k.htm')
+    ('Travere Therapeutics, Inc.  (TVTX)  (CIK 00014', '10-K', '2026-02-19', '0001438533-26-000014:tvtx-20251231.htm')
+    ('BIOCRYST PHARMACEUTICALS INC  (BCRX)  (CIK 000', '10-K', '2022-02-28', '0001171843-22-001460:bcrx20211231_10k.htm')
+    ('Vor Biopharma Inc.  (VOR)  (CIK 0001817229)', '10-K', '2026-03-30', '0001193125-26-130451:vor-20251231.htm')
+    ('Travere Therapeutics, Inc.  (TVTX)  (CIK 00014', '10-K', '2025-02-21', '0001438533-25-000010:tvtx-20241231.htm')
+    ('Vor Biopharma Inc.  (VOR)  (CIK 0001817229)', '10-Q', '2025-08-12', '0000950170-25-107276:vor-20250630.htm')
+  "ravulizumab" "IgA nephropathy" "PDUFA": total=21
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866', '8-K', '2021-04-30', '0000899866-21-000037:earningsreleaseq12021.htm')
+    ('OMEROS CORP  (OMER)  (CIK 0001285819)', '10-K', '2021-03-01', '0001558370-21-002177:omer-20201231x10k.htm')
+    ('CATALYST BIOSCIENCES, INC.  (GYRE)  (CIK 00011', '10-K', '2021-03-04', '0001564590-21-010823:cbio-10k_20201231.htm')
+    ('Apellis Pharmaceuticals, Inc.  (APLS)  (CIK 00', '10-K', '2023-02-21', '0000950170-23-003438:apls-20221231.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 000087', '10-Q', '2024-11-06', '0000874015-24-000232:form10q.htm')
+    ('OMEROS CORP  (OMER)  (CIK 0001285819)', '10-K', '2025-03-31', '0001437749-25-010216:omer20241231_10k.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 000087', '10-Q', '2024-08-01', '0000874015-24-000187:form10q.htm')
+    ('CATALYST BIOSCIENCES, INC.  (GYRE)  (CIK 00011', '10-K', '2022-03-31', '0001564590-22-012877:cbio-10k_20211231.htm')
+
+=== ABBV tavapadon / NVO CagriSema: any filing naming an acceptance at all
+  "tavapadon" "New Drug Application": total=26
+    ('Cerevel Therapeutics Holdings, Inc.  (CIK 0001', '8-K', '2021-08-11', '0000950170-21-001224:cere-20210811ex99_1.htm')
+    ('AbbVie Inc.  (ABBV)  (CIK 0001551152)', '8-K', '2025-01-31', '0001551152-25-000011:abbv-20241231xexhibit991.htm')
+    ('AbbVie Inc.  (ABBV)  (CIK 0001551152)', '8-K', '2025-10-31', '0001551152-25-000047:abbv-20250930xexhibit991.htm')
+    ('Cerevel Therapeutics Holdings, Inc.  (CIK 0001', '10-K', '2022-03-01', '0000950170-22-002516:cere-20211231.htm')
+    ('Cerevel Therapeutics Holdings, Inc.  (CIK 0001', '10-K', '2021-03-24', '0001564590-21-015106:cere-10k_20201231.htm')
+  "CagriSema" "New Drug Application": total=33
+    ('NOVO NORDISK A S  (NVO, NONOF)  (CIK 000035327', '6-K', '2026-02-03', '0000353278-26-000006:caq42025.htm')
+    ('NOVO NORDISK A S  (NVO, NONOF)  (CIK 000035327', '6-K', '2026-05-06', '0000353278-26-000018:caq12026.htm')
+    ('NOVO NORDISK A S  (NVO, NONOF)  (CIK 000035327', '6-K', '2025-02-05', '0001628280-25-003924:caq42024.htm')
+    ('NOVO NORDISK A S  (NVO, NONOF)  (CIK 000035327', '6-K', '2025-05-07', '0001628280-25-022877:caq12025.htm')
+    ('NOVO NORDISK A S  (NVO, NONOF)  (CIK 000035327', '6-K', '2024-01-31', '0001628280-24-002639:caq42023.htm')
+  "tavapadon" "target action date": total=0
+  "CagriSema" "target action date": total=0

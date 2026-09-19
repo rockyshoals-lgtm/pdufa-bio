@@ -1,0 +1,55 @@
+Audit 09-14: one owner per cross-surface value, and the guard that enforces it
+
+The auditor's headline is right and item 5 is worth more than 1-4 combined: four defects, one
+cause -- a value corrected in the dataset reaching one renderer and not the others.
+
+P0-A  ALREADY FIXED before I touched it. A later CI run (build 2bd94fe79, 23:39Z) rebuilt
+      /research/fda-decision-timing; all three surfaces read 30/18/9/3 and the median is 1.5
+      days before, exactly as predicted. The audit read the 17:51Z build.
+P0-B  CONFIRMED and fixed. 12 event pages kept "Dec 31 2026" in title, meta, FAQ and Event
+      schema. It was actually 16: ABBV-tavapadon-2 and NVO-cagrisema are DUPLICATE indexable
+      pages for events already listed, NVO-mim8 is the year-precision row, and MRK-trodelvy
+      publishes the same partnered event as GILD-trodelvy under a second ticker.
+P0-C  CONFIRMED and fixed -- and it was 1 of 5. PFE, ROIV, PTGX and IONS carried the same
+      unsourced earliness in prose. Those four margins were removed from the timing statistic
+      on 09-10 for being measured against a manufactured quarter-end and stayed on the decision
+      pages for four days.
+P0-D  CONFIRMED and fixed. next_days is clamped at 0 with a new next_status; the event stays
+      "next" (the 08-18 BMY reasoning is right -- the FDA can act any day) but we no longer
+      publish a negative countdown, and the badge says "awaiting a decision" rather than
+      "today", which a 3-day-past goal date is not.
+
+ITEM 5, the structural fix. New site_windows.py is the single owner of how a non-day date is
+written and of whether an earliness figure may render at all; window_label, window_span and
+earliness_allowed are imported by every renderer that used to decide for itself. New
+tests/test_cross_surface_values.py asserts four invariants ON RENDERED OUTPUT, proven 0 -> 1 -> 0
+each. It found the four extra earliness pages and a fifth convention ("November 2026 (window)"
+on NVCR, whose own note says the sponsor guided Q4) within a minute of existing.
+
+The calendar was doing it to ITSELF: the same four events rendered "Dec 2026" on the December
+page and "Q4 2026 (est.)" on /calendar. normalize_calendar_windows.py ends that. A page was
+doing it to itself too -- rewrite_decision_snippets fixed BAYRY's <title> while the WebPage
+JSON-LD in the same file kept "82 Days Early", which is the copy an AI answer reads first;
+sync_jsonld_name_to_title.py makes schema follow title everywhere.
+
+ITEM 6, escalation, answer yes. The watcher now opens the blocking issue BEFORE it exits 1. The
+issue-creating step lived at the end of the workflow and depended on files later steps produce,
+so when the watcher failed early that step failed too and nothing was ever raised -- three days
+of staleness from one correct refusal nobody heard. Its greps are also tolerant of missing files
+now, so the step that exists to tell a human cannot die of the failure it is reporting.
+
+THREE MISTAKES OF MINE, all caught by guards before publishing:
+  * My first earliness rule also required _d.source_url. 25 of 30 day-precision decided rows
+    lack that field only because it has not been back-filled, so the rule would have stripped
+    the figure from nearly the whole archive while the statistic still counted all 30 -- a NEW
+    contradiction created while fixing one. Precision alone is the rule, because an unsourceable
+    day was already downgraded on 09-10.
+  * fix_event_page_windows ran before the decided-marker step and rewrote two DECIDED pages to
+    "date not sourced": GILD-trodelvy (approved 2026-06-24) and RHHBY-lunsumio-polivy (approved
+    2025-12-22) were publishing a Dec 31 2026 PDUFA date for drugs approved months earlier.
+    Ordering fixed and the script now skips any page carrying a decision.
+  * My 09-10 ratchet was a no-op: `len(set) > len(list)` over the same file could never fire.
+    It compares against a stored baseline now, raised 7 -> 9 for the two pages a calendar-based
+    census structurally could not see.
+
+82 guards pass.

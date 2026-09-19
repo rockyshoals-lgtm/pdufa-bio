@@ -1,0 +1,41 @@
+09-18 currency pass: today's approval, a retraction, and 954 pages with a dead nav link
+
+DATA
+- LLY: the FDA approved imlunestrant (Inluriyo) with abemaciclib (Verzenio) TODAY, 2026-09-18
+  (EMBER-3), read from FDA's own notification before writing. Decision page, /decisions,
+  /drug/inluriyo, /fda-this-month and the calendar all carry it. We never tracked a goal date
+  for it, so the row is marked goal_unsourced and stays out of the timing statistic.
+- Re-applied the 09-15 batch the fast-forward reverted: EDGAR source pass (22 rows), Roche x4
+  plus GSK bepirovirsen, REGN and NUVL sources, and the NUVL to GSK acquisition across every
+  surface. Upcoming PDUFA rows carrying source_url: 15 of 49 to 44 of 49; the five left are the
+  known unbacked set (ABBV, AZN, BAYRY, NVO x2).
+
+RETRACTION
+- I raised an alarm that all 9 "landed on the goal date" rows had goal == decision date and
+  were probably an encoding artefact. That was WRONG for 7 of them: ARQT, VERA, MRNA, LNTH,
+  JAZZ, ZYME and GILD each state that exact day in the sponsor's own filing, now quoted on the
+  row with its URL.
+- 2 were real defects. Merck never published a goal date for Lipfendra (a CNPV voucher review)
+  and Otsuka publishes nothing searchable for centanafadine. Both keep their approval and are
+  marked goal_unsourced. build_early_decisions.py now gates on goal provenance, not precision
+  alone. The published statistic moves from 30/18/9/3 to 28/18/7/3, median 1.5 to 2.5 days
+  before, restated on all three surfaces.
+
+DEAD LINKS (nothing in the suite had ever looked)
+- The nav's "Pro" entry pointed at /pricing on 954 pages; that page has never existed in this
+  repository's history. It now points at /developers#tiers, where the tier table actually is.
+  No price invented and none removed: a real /pricing page is David's call. The nav freeze file
+  records the change and the reason.
+- 108 pages linked /pdufa/* pages that were never built, and 7 dataset rows did the same. All
+  move to the ticker hub, which exists and carries those events.
+- /decisions/approvals linked 5 decision pages that do not exist and showed the GOAL date for
+  each instead of the action date (AZN Truqap, GSK and SPRO Utebzi, VRDN Lumvoa twice: one
+  approval, two rows). Links and visible dates corrected, duplicate row removed.
+
+GUARDS (91 pass, 0 fail)
+- tests/test_no_dead_internal_links.py: every internal href on 1,404 indexable pages resolves
+  to a built page.
+- tests/test_drug_page_decision_count.py: one decision, one row, and the stated count equals
+  the number of distinct decisions. Six pages were double-counting; /drug/zanidatamab, which
+  holds the only 100 percent citation-share grounding query on the property, said "4 FDA
+  decisions on record" over 2 links.

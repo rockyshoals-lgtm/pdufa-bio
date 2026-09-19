@@ -1,0 +1,57 @@
+build-info: {
+ "built": "2026-09-15T03:22:21+00:00",
+ "commit": "e1c0ecc6d",
+ "commit_at_build": "e1c0ecc6d",
+ "next_date": "2026-09-11",
+ "next_ticker": "TLX",
+ "next_days": 0,
+ "next_status": "awaiting"
+}
+
+==============================================================================
+P0-A  the timing statistic on three surfaces
+
+  /research/fda-decision-timing  md5=8bf9e02529c2
+    Of the 30 2026 FDA decisions in this archive whose outcome and dates we have checked against a primary source, 18 came before the PDUFA goal date, 9 landed on it, and 3 came after
+    median: median decision landed 1
+
+  /calendar  md5=7ce8b1c40842
+    Of the 30 FDA decisions in 2026 on this site with both a sourced goal date and a sourced action date, 18 came before the goal date, 9 landed on it, and 3 came after
+    median: median peak gain from 120 trading days out was 17
+
+  /learn/what-is-a-pdufa-date  md5=96cac1ec7d91
+    30 sourced 2026 decisions in our decision-timing study , 18 came before the goal date, 9 landed on it and 3 came after it
+
+==============================================================================
+P0-B  twelve event pages that should no longer carry a day
+  /pdufa/ABBV-tavapadon                 day=1   q4=0   | ABBV PDUFA date: Tavapadon, Dec 2026 | pdufa.bio
+  /pdufa/NVO-am833                      day=1   q4=0   | NVO PDUFA date: CagriSema, Dec 2026 | pdufa.bio
+  /pdufa/AZN-ultomiris                  day=1   q4=0   | AZN PDUFA date: Ultomiris, Dec 2026 | pdufa.bio
+  /pdufa/BAYRY-kerendia                 day=1   q4=0   | BAYRY PDUFA date: KERENDIA, Dec 2026 | pdufa.bio
+  /pdufa/ABBV-rinvoq                    day=0   q4=0   | ABBV PDUFA date: RINVOQ | pdufa.bio
+  /pdufa/RHHBY-lunsumio-polivy          day=0   q4=0   | RHHBY PDUFA date: Lunsumio + Polivy
+  /pdufa/RHHBY-gazyva                   day=0   q4=0   | RHHBY PDUFA date: Gazyva | pdufa.bio
+  /pdufa/NVS                            day=0   q4=0   | NVS PDUFA date: 177Lu | pdufa.bio
+  /pdufa/LLY                            day=0   q4=0   | LLY PDUFA date: Tirzepatide | pdufa.bio
+  /pdufa/PFE-tukysa-trastuzumab-and     day=0   q4=0   | PFE PDUFA: TUKYSA, trastuzumab, and pertuzumab
+  /pdufa/AZN-gefurulimab                day=0   q4=0   | AZN PDUFA date: Gefurulimab | pdufa.bio
+  /pdufa/GILD-trodelvy                  day=0   q4=0   | GILD PDUFA date: Trodelvy | pdufa.bio
+
+==============================================================================
+P0-C  BAYRY earliness against a withdrawn goal date
+
+  /fda-decision/BAYRY-2026-09-09  md5=84a411f35aa5
+    title : HYRNUO (sevabertinib) Approved Sep 9, 2026 | BAYRY FDA Decision | pdufa.bio
+    goal date[^.]{0,60}          -> goal date that has PASSED with no decision is not "today" and not a n
+
+  /pdufa/BAYRY-sevabertinib  md5=20c2c2f1d4a0
+    title : BAYRY FDA decision: Sevabertinib, Approved September 9, 2026 | pdufa.bio
+    goal date[^.]{0,60}          -> goal date for this application was 2026-11-30
+    November 2026 PDUFA          -> November 2026 PDUFA
+
+==============================================================================
+P0-D  build-info next pointer
+  next_ticker: TLX
+  next_date: 2026-09-11
+  next_days: 0
+  built: 2026-09-15T03:22:21+00:00

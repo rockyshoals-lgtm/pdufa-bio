@@ -1,0 +1,65 @@
+=== EDGAR: Telix filings naming Pixclara / TLX101
+
+-- "Pixclara": total=25
+   6-K 2026-04-10  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-02-19  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-08-20  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   -> https://www.sec.gov/Archives/edgar/data/2007191/000162828026058126/presentation.htm
+      ...tions vary country to country. Refer to your local approved label or regulatory authority status for full information. No other Telix drug or device has received marketing authorization in any jurisdiction. Any other Telix drug or device that is discussed in this presentation, including Zircaix and Pixclara, is investigational or under development and not approved by any regulatory authority. The efficacy or safety profile of any unapproved drug or device has not been determined by any regulatory authority. In addition, Zircaix and Pixclara brand names and launch are subject to final regulatory approval. All trademarks and trade names referenced in this presentation are the property of Te
+      ...and results of Telix s preclinical and clinical trials, and Telix s research and development programs; Telix s ability to advance product candidates into, enroll and successfully complete, clinical studies, including multi-national clinical trials; the timing or likelihood of regulatory filings and approvals for Telix s product candidates, manufacturing activities and product marketing activities; Telix s sales, marketing and distribution and manufacturing capabilities and strategies; the commercialization of Telix s product candidates, if or when they have been approved; Telix s ability to obtain an adequate supply of raw materials at reasonable costs for its products and product candida
+      ...py;2026 Telix Pharmaceuticals Limited. All rights reserved. 3 Forward looking statement CEO remarks Dr. Christian Behrenbruch Managing Director and Group CEO Delivering against our 2026 strategic priorities 5 Continue commercial growth Secured Prescription Drug User Fee Act date for Pixclara&reg;1, September 11, 20262 Pixlumi&reg;1 Marketing Authorization Application accepted for review in Europe3 Advancing Phase 3 therapeutics programs: TLX591-Tx ProstACT Global: FDA alignment on safety and Part 2 Protocol in mCRPC4 TLX101-Tx IPAX BrIGHT5: dosing patients with recurrent glioblastoma TLX250-Tx LUTEON: dosing patients with advanced ccRCC6 TLX090-Tx7 SOLACE: dosing patients BiPASS 8 nearing
+   6-K 2026-04-10  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-03-16  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2025-01-13  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-07-21  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-04-14  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+
+-- "TLX101": total=ERR HTTP Error 500: Internal Server Error
+
+-- "Telix" "Complete Response": total=23
+   6-K 2025-04-29  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2025-12-22  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2025-08-28  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-03-16  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-08-20  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   -> https://www.sec.gov/Archives/edgar/data/2007191/000162828026058126/announcement.htm
+      ...Illuccix Japan Phase 3 registrational study enrollment completion6. New drug application (NDA) for Illuccix accepted and under review by the Chinese National Medical Products Administration (NMPA) Center for Drug Evaluation (CDE)7. TLX101-Px, (floretyrosine F 18) for glioma (brain cancer) imaging: Pixclara&reg;8 has been granted a PDUFA9 goal date by the FDA of September 11, 202610. Pixlumi&reg;8 Marketing Authorization Application (MAA) in Europe validated and accepted for review11. Pixclara8 Phase 3 Investigational New Drug (IND) application successfully cleared by FDA to explore indication expansion to brain metastases diagnosis. TLX250-Px, Zircaix&reg;8 (zirconium-89 (89Zr) girentuxim
+      ...(zirconium-89 (89Zr) girentuximab senvedoxam) for kidney cancer imaging: Telix continues to make good progress toward near-term resubmission of its U.S. Biologics License Application (BLA). The Company has been granted an extension of the BLA resubmission deadline, following receipt of a corrected Complete Response Letter (CRL)12. Telix continues to work closely with the FDA to ensure the resubmission package comprehensively addresses all outstanding CRL items. Telix Therapeutics: Investment delivering significant advances across a number of key late-stage development programs Of the R D investment, US$68 million was invested in the therapeutics pipeline. Milestones include: TLX591-Tx (lu
+      ...n6. New drug application (NDA) for Illuccix accepted and under review by the Chinese National Medical Products Administration (NMPA) Center for Drug Evaluation (CDE)7. TLX101-Px, (floretyrosine F 18) for glioma (brain cancer) imaging: Pixclara&reg;8 has been granted a PDUFA9 goal date by the FDA of September 11, 202610. Pixlumi&reg;8 Marketing Authorization Application (MAA) in Europe validated and accepted for review11. Pixclara8 Phase 3 Investigational New Drug (IND) application successfully cleared by FDA to explore indication expansion to brain metastases diagnosis. TLX250-Px, Zircaix&reg;8 (zirconium-89 (89Zr) girentuximab senvedoxam) for kidney cancer imaging: Telix continues to mak
+   6-K 2026-04-14  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-02-19  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-08-20  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   -> https://www.sec.gov/Archives/edgar/data/2007191/000162828026058126/a20260820telixhy26append.htm
+      ...idney cancer1. TLX101-Tx (131I-iodofalan), a therapeutic small molecule being evaluated in the Phase 2/3 IPAX BrIGHT trial for the treatment of patients with glioblastoma (brain cancer)2. TLX591-Px/TLX007-Px (68Ga-PSMA-11) for prostate cancer imaging in the pre-biopsy setting (BiPASS )3. TLX101-Px (Pixclara&reg;4, floretyrosine F 18) for glioma (brain cancer) imaging. TLX250-Px (Zircaix&reg;4, zirconium-89 (89Zr) girentuximab senvedoxam) for kidney cancer imaging. In April 2026, Telix refinanced its existing Convertible Bonds due in 2029 on improved terms, lowering the cost of funding and extending its financial flexibility. This transaction was undertaken ahead of maturity and the new Co
+      ...maceuticals Limited and its controlled entities, which has been reviewed by PricewaterhouseCoopers (PwC). The Independent auditor s review report provided by PwC is included in the Interim financial report. The Appendix 4D and Interim financial report for the half-year ended June 30, 2026 have been approved for release by the Board of Directors. Shomalin Naidoo Company Secretary (Interim) August 20, 2026 2 Telix Pharmaceuticals Limited ACN 616 620 369 Interim Report June 30, 2026 Lodged with the ASX under Listing Rule 4.2A Directors' report 3 Auditor s independence declaration 21 Interim financial report 22 Directors declaration 42 Independent auditor's review report 43 Glossary of terms 
+      ...50473. 14 Telix media release January 20, 2026. Build the next generation of radio- pharmaceuticals Grow our industry- leading Precision Medicine business TLX101-Px, (floretyrosine F 18) for glioma (brain cancer) imaging: Resubmitted NDA accepted by U.S. FDA for Pixclara1 with a PDUFA2 goal date of September 11, 20263. Marketing Authorization Application (MAA) for Pixlumi&reg;1 in Europe validated and accepted for review4. Investigational New Drug (IND) application successfully cleared, with Study May Proceed notification received from FDA for Phase 3 registrational study for indication expansion for the diagnosis of brain metastases. Zircaix1 (TLX250-Px, zirconium-89 (89Zr) girentuximab 
+
+-- "Telix" "approval": total=78
+   6-K 2025-04-22  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   20-F 2026-02-20  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-02-19  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-08-20  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   20-F 2025-02-24  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-02-19  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2026-07-21  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+   6-K 2025-04-17  Telix Pharmaceuticals Ltd  (TLX, TLPPF)  (CIK 0002007191
+
+
+=== openFDA: any approval record for the drug
+
+-- openfda.generic_name:"paraiodobenzyl+guanidine"
+   none / HTTP Error 404: Not Found
+
+-- openfda.brand_name:"PIXCLARA"
+   none / HTTP Error 404: Not Found
+
+-- openfda.generic_name:"iopofosine"
+   none / HTTP Error 404: Not Found
+
+-- sponsor_name:"TELIX"
+   app=NDA214032 sponsor=TELIX
+     product ILLUCCIX
+     ORIG-1 AP 20211217
+     SUPPL-1 AP 20230315
+     SUPPL-14 AP 20250911
+     SUPPL-18 AP 20251205

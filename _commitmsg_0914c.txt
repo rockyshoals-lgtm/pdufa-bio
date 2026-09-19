@@ -1,0 +1,43 @@
+Audit 09-14 items 7, 7b and 9: the readout hubs, the /learn restructure, and a dropbox that cannot lose an entry
+
+ITEM 9 first, because it is a coordination-integrity failure and it was mine. The auditor wrote
+their INDEX entry, verified it, and watched it vanish inside the hour under my rewrite from a
+copy held before theirs landed. It was worse than either of us knew: the directory held 146
+notes and INDEX.md listed 90. FIFTY-SIX were missing, including both builder notes from that
+same day, because nothing had ever compared the index to the directory and every hand-rewrite
+was a chance to drop a line.
+
+INDEX.md is now GENERATED from the directory by build_dropbox_index.py. Each party writes only
+its own dated note -- a file nobody else touches -- so there is nothing shared left to collide
+over. All 43 previously hand-written summaries were preserved verbatim, zero lost, 102 recovered.
+tests/test_dropbox_index_complete.py asserts the index equals what the directory implies, proven
+0 -> 1 -> 0.
+
+ITEM 7, promoted by the auditor to the highest-return item on the list and by some distance.
+/readouts/oncology (37 rows) and /readouts/rare-disease (8) now exist, each with an n, a coverage
+sentence, per-row sources and a link from /readouts. The evidence: those two grounding queries
+went 28 -> 77 citations at 66.38% share and 75 -> 102 at 32.59%, both rising in SHARE as well as
+volume, both previously answered off a generic hub.
+
+Selection is on the row's own `ta` field, never guessed from a drug name -- that is the custirsen
+failure and it is not worth repeating for a bigger row count. Which means the pages under-count,
+so they say so: 157 of the 269 forward readouts we track (58%) carry no therapeutic area or are
+tagged only "Other", and both pages state that in the body and in the FAQ answer. "37 oncology
+readouts" without that line reads as a census of the field and is not one. No approval odds, no
+probability, no ranking -- the queries invite all three.
+
+Guarded (tests/test_readout_ta_hubs.py): both pages exist, the row count equals the dataset's own
+count for that area, nothing past-dated sits on a page headed "upcoming", and the coverage
+sentence is present. /condition/* was built once, never rebuilt, and two months later was calling
+ACHV's cytisinicline PDUFA "custirsen"; these rebuild every run.
+
+ITEM 7b, share defence. /learn/what-is-a-pdufa-date restructured into the five H2 sections from
+09-10b item 4: what it is; why they exist (the 1992 Act); how the review timeline works; what the
+FDA can do on the date; why the date matters. The old "What happens to the stock?" section is
+gone -- there is a separate page for that question and this one is a definition. Marker-bounded
+and idempotent, and it deliberately does not touch the lede: that carries the citable timing
+sentence which sync_learn_timing owns and test_cross_surface_values compares across three
+surfaces. Regenerating the whole page would have put that sentence under two owners, which is the
+defect this entire week was about.
+
+84 guards pass.

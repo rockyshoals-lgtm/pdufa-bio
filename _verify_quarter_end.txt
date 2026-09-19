@@ -1,0 +1,172 @@
+
+==============================================================================
+=== AZN 2026-06-30 Truqap
+  "capivasertib" "target action date": total=0
+  "capivasertib" "PDUFA": total=29
+    ('ASTRAZENECA PLC  (AZN)  (CIK 0000901832)', '6-K', '2026-05-27', '0001654954-26-005381:a7798f.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2022-01-18', '0001654954-22-000559:a6391y.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2023-02-09', '0001654954-23-001503:a3767p.htm')
+    ('Sensei Biotherapeutics, Inc.  (SNSE)  (CIK 0001829', '10-K/A', '2026-06-02', '0001193125-26-252637:d130328d10ka.htm')
+    ('OnKure Therapeutics, Inc.  (OKUR)  (CIK 0001637715', '10-K', '2026-03-12', '0001193125-26-104147:okur-20251231.htm')
+    ('OnKure Therapeutics, Inc.  (OKUR)  (CIK 0001637715', '10-K', '2025-03-10', '0000950170-25-036252:okur-20241231.htm')
+  "Truqap" "target action date": total=0
+  "Truqap" "PDUFA": total=12
+    ('ASTRAZENECA PLC  (AZN)  (CIK 0000901832)', '6-K', '2026-05-27', '0001654954-26-005381:a7798f.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2024-02-08', '0001654954-24-001467:a4081c.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2025-02-06', '0001654954-25-001189:a1107w.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2024-04-25', '0001654954-24-004975:a9413l.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2024-07-25', '0001104659-24-082531:azn-20240630x6k.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2024-11-12', '0001654954-24-014089:a7967l.htm')
+  -> top hit (ASTRAZENECA PLC  (AZN)  (CIK 0000901832)): https://www.sec.gov/Archives/edgar/data/1654954/000165495426005381/a7798f.htm
+     FETCH ERROR HTTP Error 404: Not Found
+
+==============================================================================
+=== IONS 2026-06-30 Olezarsen
+  "olezarsen" "target action date": total=3
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2025-11-10', '0001140361-25-041225:ef20058520_8k.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2026-04-29', '0001140361-26-017637:ef20071749_ex99-1.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2026-07-29', '0001140361-26-029960:ef20078953_ex99-1.htm')
+  "olezarsen" "PDUFA": total=41
+    ('Theratechnologies Inc.  (THTX)  (CIK 0001512717)', '6-K', '2024-12-04', '0001193125-24-270493:d840349dex991.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2025-02-19', '0001140361-25-005080:ef20043828_ex99-1.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2024-11-06', '0001140361-24-045370:ef20038192_ex99-1.htm')
+    ('Theratechnologies Inc.  (THTX)  (CIK 0001512717)', '6-K', '2024-12-12', '0001193125-24-276589:d816031dex991.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2024-08-01', '0001140361-24-035233:ef20033414_ex99-1.htm')
+    ('IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015', '8-K', '2025-11-10', '0001140361-25-041225:ef20058520_8k.htm')
+  -> top hit (IONIS PHARMACEUTICALS INC  (IONS)  (CIK 0000874015): https://www.sec.gov/Archives/edgar/data/1140361/000114036125041225/ef20058520_8k.htm
+     FETCH ERROR HTTP Error 404: Not Found
+
+==============================================================================
+=== VRDN 2026-06-30 Veligrotug
+  "veligrotug" "target action date": total=8
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-05-05', '0001193125-26-205010:d149508dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-05-05', '0001193125-26-205099:d20977dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-02-26', '0001193125-26-073391:d105707dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-03-30', '0001193125-26-130433:d27955dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-03-30', '0001193125-26-130433:d27955dex992.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-05-05', '0001193125-26-205099:d20977dex992.htm')
+  "veligrotug" "PDUFA": total=14
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-03-30', '0001193125-26-130433:d27955dex992.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-05-05', '0001193125-26-205010:d149508dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-05-05', '0001193125-26-205099:d20977dex992.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-02-26', '0001193125-26-073391:d105707dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-05-05', '0001193125-26-205099:d20977dex991.htm')
+    ('Viridian Therapeutics, Inc.\\DE  (VRDN)  (CIK 00015', '8-K', '2026-03-30', '0001193125-26-130433:d27955dex991.htm')
+  -> top hit (Viridian Therapeutics, Inc.\DE  (VRDN)  (CIK 00015): https://www.sec.gov/Archives/edgar/data/1193125/000119312526205010/d149508dex991.htm
+     FETCH ERROR HTTP Error 404: Not Found
+
+==============================================================================
+=== NVO 2026-09-30 Mim8 denecimig
+  "denecimig" "target action date": total=1
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2025-11-06', '0001434265-25-000092:genmabinterimreportq32025.htm')
+  "denecimig" "PDUFA": total=1
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2025-11-06', '0001434265-25-000092:genmabinterimreportq32025.htm')
+  "Mim8" "target action date": total=3
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2025-11-06', '0001434265-25-000092:genmabinterimreportq32025.htm')
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2023-02-22', '0001558370-23-001700:gmab-20221231xex99d1a.htm')
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2023-02-22', '0001558370-23-001700:gmab-20221231xex99d1.htm')
+  "Mim8" "PDUFA": total=5
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2025-11-06', '0001434265-25-000092:genmabinterimreportq32025.htm')
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2023-02-22', '0001558370-23-001700:gmab-20221231xex99d1a.htm')
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2023-02-22', '0001558370-23-001700:gmab-20221231xex99d1.htm')
+    ('CATALYST BIOSCIENCES, INC.  (GYRE)  (CIK 000112410', '10-K', '2020-02-20', '0001564590-20-005546:cbio-10k_20191231.htm')
+    ('GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)', '6-K', '2020-02-19', '0001558370-20-000965:ex-99d1.htm')
+  -> top hit (GENMAB A/S  (GMAB, GNMSF)  (CIK 0001434265)): https://www.sec.gov/Archives/edgar/data/1434265/000143426525000092/genmabinterimreportq32025.htm
+     ...ritamab in combination with R 2 for the treatment of adult patients with relapsed or refractory FL, following at least one prior systemic therapy. The sBLA submission was based on data from the first interim analysis of the Phase 3 EPCORE FL-1 (NCT05409066) trial. Under the PDUFA, the FDA has set a target action date of November 30, 2025. If approved, epcoritamab plus R 2 would be the first bispecific antibody combination regimen available in the U.S. as a second-line treatment option for patients with relapsed refractory FL. August In a second pre-planned interim analysi...
+     ...genmab.com Andrew Carlsen, Vice President, Head of Investor Relations T +45 3377 9558 E acn genmab.com *ORR overall response rate PFS progression-free survival sBLA supplemental Biologics License Application FDA U.S. Food and Drug Administration R 2 rituximab and lenalidomide FL follicular lymphoma PDUFA Prescription Drug User Fee Act BTD Breakthrough Therapy Designation Genmab A S Carl Jacobsens Vej 30 2500 Valby, Denmark Tel +45 7020 2728 www.genmab.com Company Announcement no. 48 Page 2 43 CVR no. 2102 3884 Interim Report for the Nine Months of 2025 CONTEN...
+
+==============================================================================
+=== PFE 2026-09-30 Brepocitinib
+  "brepocitinib" "target action date": total=6
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-03-03', '0001140361-26-007447:ef20066998_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-04-02', '0001140361-26-012885:ef20069685_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-05-20', '0001635088-26-000060:q4fy2025roivantearningsrel.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-11-12', '0001140361-24-046015:ef20038392_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '10-K', '2026-05-20', '0001635088-26-000061:roiv-20260331.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '10-Q', '2024-11-12', '0001140361-24-046019:ef20034554_10q.htm')
+  "brepocitinib" "PDUFA": total=16
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-05-30', '0001140361-24-027986:ef20030255_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-03-03', '0001140361-26-007447:ef20066998_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-09-18', '0001140361-24-041344:ef20036017_ex99-2.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-04-02', '0001140361-26-012885:ef20069685_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-08-08', '0001140361-24-036281:ef20033756_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '10-K', '2026-05-20', '0001635088-26-000061:roiv-20260331.htm')
+  -> top hit (Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)): https://www.sec.gov/Archives/edgar/data/1140361/000114036126007447/ef20066998_ex99-1.htm
+     FETCH ERROR HTTP Error 404: Not Found
+
+==============================================================================
+=== PTGX 2026-09-30 Rusfertide
+  "rusfertide" "target action date": total=4
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-03-02', '0001395064-26-000007:form6k_030226.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '8-K', '2026-05-05', '0001104659-26-055629:tm2613550d1_ex99-1.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '10-Q', '2026-08-05', '0001104659-26-091123:ptgx-20260630x10q.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '10-Q', '2026-05-05', '0001104659-26-055661:ptgx-20260331x10q.htm')
+  "rusfertide" "PDUFA": total=14
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-03-02', '0001395064-26-000007:form6k_030226.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '8-K', '2026-08-05', '0001104659-26-091099:tm2622272d1_ex99-2.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '8-K', '2026-08-05', '0001104659-26-091099:tm2622272d1_ex99-1.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '8-K', '2026-05-05', '0001104659-26-055629:tm2613550d1_ex99-1.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '10-K', '2024-02-27', '0001558370-24-001850:ptgx-20231231x10k.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 000137', '10-K', '2023-03-15', '0001558370-23-003906:ptgx-20221231x10k.htm')
+  -> top hit (TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0): https://www.sec.gov/Archives/edgar/data/1395064/000139506426000007/form6k_030226.htm
+     ...with Polycythemia Vera in a Pivotal Study Submission Primarily Based on Phase 3 VERIFY Study, in Which Rusfertide Plus Standard of Care More Than Doubled Clinical Response Rates, as Well as Four-Year Efficacy and Safety Data from Phase 2 REVIVE THRIVE Studies Prescription Drug User Fee Act (PDUFA) Target Action Date is in the Third Quarter of this Calendar Year OSAKA, Japan, CAMBRIDGE, Massachusetts and NEWARK, California, March 2, 2026 Takeda (TSE 4502 NYSE TAK) and Protagonist Therapeutics, Inc. ( Protagonist ) (NASDAQ PTGX) today announced that the U.S. Food and Drug...
+     ...atients with Polycythemia Vera in a Pivotal Study Submission Primarily Based on Phase 3 VERIFY Study, in Which Rusfertide Plus Standard of Care More Than Doubled Clinical Response Rates, as Well as Four-Year Efficacy and Safety Data from Phase 2 REVIVE THRIVE Studies Prescription Drug User Fee Act (PDUFA) Target Action Date is in the Third Quarter of this Calendar Year OSAKA, Japan, CAMBRIDGE, Massachusetts and NEWARK, California, March 2, 2026 Takeda (TSE 4502 NYSE TAK) and Protagonist Therapeutics, Inc. ( Protagonist ) (NASDAQ PTGX) today announced that the...
+
+==============================================================================
+=== ROIV 2026-09-30 Brepocitinib
+  "brepocitinib" "target action date": total=6
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-03-03', '0001140361-26-007447:ef20066998_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-04-02', '0001140361-26-012885:ef20069685_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-05-20', '0001635088-26-000060:q4fy2025roivantearningsrel.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-11-12', '0001140361-24-046015:ef20038392_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '10-K', '2026-05-20', '0001635088-26-000061:roiv-20260331.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '10-Q', '2024-11-12', '0001140361-24-046019:ef20034554_10q.htm')
+  "brepocitinib" "PDUFA": total=16
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-05-30', '0001140361-24-027986:ef20030255_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-03-03', '0001140361-26-007447:ef20066998_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-09-18', '0001140361-24-041344:ef20036017_ex99-2.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2026-04-02', '0001140361-26-012885:ef20069685_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '8-K', '2024-08-08', '0001140361-24-036281:ef20033756_ex99-1.htm')
+    ('Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)', '10-K', '2026-05-20', '0001635088-26-000061:roiv-20260331.htm')
+  -> top hit (Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)): https://www.sec.gov/Archives/edgar/data/1140361/000114036126007447/ef20066998_ex99-1.htm
+     FETCH ERROR HTTP Error 404: Not Found
+
+==============================================================================
+=== SRRK 2026-09-30 Apitegromab
+  "apitegromab" "target action date": total=6
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2025-08-06', '0001558370-25-010399:srrk-20250806xex99d2.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2025-08-06', '0001558370-25-010399:srrk-20250806xex99d1.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2025-05-14', '0001558370-25-007650:srrk-20250514xex99d1.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '10-Q', '2025-08-06', '0001558370-25-010400:srrk-20250630x10q.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '10-Q', '2025-05-14', '0001558370-25-007655:srrk-20250331x10q.htm')
+    ('Dyne Therapeutics, Inc.  (DYN)  (CIK 0001818794)', '10-Q', '2026-07-29', '0001193125-26-323639:dyn-20260630.htm')
+  "apitegromab" "PDUFA": total=30
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2025-08-06', '0001558370-25-010399:srrk-20250806xex99d1.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2026-05-07', '0001104659-26-056655:srrk-20260507xex99d2.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2026-05-07', '0001104659-26-056655:srrk-20260507xex99d1.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2026-08-06', '0001193125-26-336715:srrk-ex99_1.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2026-03-31', '0001104659-26-037350:tm2610664d1_ex99-1.htm')
+    ('Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196', '8-K', '2025-05-14', '0001558370-25-007650:srrk-20250514xex99d1.htm')
+  -> top hit (Scholar Rock Holding Corp  (SRRK)  (CIK 0001727196): https://www.sec.gov/Archives/edgar/data/1558370/000155837025010399/srrk-20250806xex99d2.htm
+     FETCH ERROR HTTP Error 404: Not Found
+
+==============================================================================
+=== TAK 2026-09-30 Oveporexton
+  "oveporexton" "target action date": total=1
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-02-10', '0001395064-26-000005:form6k_021026.htm')
+  "oveporexton" "PDUFA": total=3
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-02-10', '0001395064-26-000005:form6k_021026.htm')
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-05-26', '0001395064-26-000162:noticeofconvocationofthe.htm')
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '20-F', '2026-06-17', '0001395064-26-000177:tak-20260331.htm')
+  "TAK-861" "target action date": total=1
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-02-10', '0001395064-26-000005:form6k_021026.htm')
+  "TAK-861" "PDUFA": total=11
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2026-02-10', '0001395064-26-000005:form6k_021026.htm')
+    ('Harmony Biosciences Holdings, Inc.  (HRMY)  (CIK 0', '8-K', '2025-01-13', '0001558370-25-000157:hrmy-20250113xex99d2.htm')
+    ('Harmony Biosciences Holdings, Inc.  (HRMY)  (CIK 0', '8-K', '2026-08-04', '0001104659-26-090086:hrmy-20260804xex99d2.htm')
+    ('Harmony Biosciences Holdings, Inc.  (HRMY)  (CIK 0', '8-K', '2024-10-01', '0001558370-24-013103:hrmy-20241001xex99d1.htm')
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2023-08-01', '0001395064-23-000121:form6k_080123.htm')
+    ('TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0', '6-K', '2023-10-30', '0001395064-23-000138:form6k_103023.htm')
+  -> top hit (TAKEDA PHARMACEUTICAL CO LTD  (TAK, TKPHF)  (CIK 0): https://www.sec.gov/Archives/edgar/data/1395064/000139506426000005/form6k_021026.htm
+     ...ptance is a Milestone for People Living with Narcolepsy Type 1 Who Need New and Different Treatment Options - Oveporexton is an Orexin Agonist Designed to Restore Orexin Signaling and Address the Underlying Orexin Deficiency that Causes Narcolepsy Type 1 - The Prescription Drug User Fee Act (PDUFA) Target Action Date is the Third Quarter of this Calendar Year OSAKA, Japan and CAMBRIDGE, Massachusetts, February 10, 2026 Takeda (TSE 4502 NYSE TAK) today announced that the U.S. Food and Drug Administration (FDA) accepted its New Drug Application (NDA) and granted Priority Re...
+     ...DA Acceptance is a Milestone for People Living with Narcolepsy Type 1 Who Need New and Different Treatment Options - Oveporexton is an Orexin Agonist Designed to Restore Orexin Signaling and Address the Underlying Orexin Deficiency that Causes Narcolepsy Type 1 - The Prescription Drug User Fee Act (PDUFA) Target Action Date is the Third Quarter of this Calendar Year OSAKA, Japan and CAMBRIDGE, Massachusetts, February 10, 2026 Takeda (TSE 4502 NYSE TAK) today announced that the U.S. Food and Drug Administration (FDA) accepted its New Drug Application (NDA) and...

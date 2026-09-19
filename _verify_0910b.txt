@@ -1,0 +1,60 @@
+=== ITEM 2: VRTX povetacicept, Vertex 8-K 2026-08-03, acc 0000875320-26-000256
+  FTS total=14
+    ('VERTEX PHARMACEUTICALS INC / MA  (VRTX)  (CIK 000087', '8-K', '2024-08-01', '0000875320-24-000193:ex-991_q22024.htm')
+    ('VERTEX PHARMACEUTICALS INC / MA  (VRTX)  (CIK 000087', '8-K', '2024-11-04', '0000875320-24-000221:ex-991_q32024.htm')
+    ('VERTEX PHARMACEUTICALS INC / MA  (VRTX)  (CIK 000087', '8-K', '2026-08-03', '0000875320-26-000256:ex-991_q22026.htm')
+    ('Zai Lab Ltd  (ZLAB)  (CIK 0001704292)', '8-K', '2026-02-26', '0001704292-26-000014:zlab-20260226x8kex991.htm')
+    ('VERTEX PHARMACEUTICALS INC / MA  (VRTX)  (CIK 000087', '10-Q', '2024-08-02', '0000875320-24-000198:vrtx-20240630.htm')
+    ('VERTEX PHARMACEUTICALS INC / MA  (VRTX)  (CIK 000087', '10-Q', '2024-11-05', '0000875320-24-000223:vrtx-20240930.htm')
+    ('Zai Lab Ltd  (ZLAB)  (CIK 0001704292)', '8-K', '2026-08-06', '0001628280-26-053791:zlab-202686x8kex991.htm')
+    ('VERTEX PHARMACEUTICALS INC / MA  (VRTX)  (CIK 000087', '10-Q', '2026-08-04', '0000875320-26-000259:vrtx-20260630.htm')
+  -> https://www.sec.gov/Archives/edgar/data/875320/000087532024000193/ex-991_q22024.htm
+     ...EX-99.1 2 ex-991_q22024.htm EX-99.1 Document Vertex Reports Second Quarter 2024 Financial Results Product revenue of $2.65 billion, a 6% increase compared to Q2 2023 Company raises full year product revenue guidance to $10.65 to $10.85 billion FDA accepted NDA for vanzacaftor triple in CF with Priority Review and PDUFA target action date of January 2, 2025 additionally, MAA submissions validated in EU and U.K. FDA accepted NDA for suzetrigine (VX-548) for moderate-to-severe acute pain with Priority Review and PDUFA target action date of January 30, 2025...
+
+=== ITEM 3: MIRM zilurgisertib, Mirum 8-K 2026-08-05, acc 0001759425-26-000044
+  FTS total=12
+    ('Mirum Pharmaceuticals, Inc.  (MIRM)  (CIK 0001759425', '8-K', '2026-05-06', '0001759425-26-000036:mirm-20260506xexx991.htm')
+    ('Mirum Pharmaceuticals, Inc.  (MIRM)  (CIK 0001759425', '8-K', '2026-08-05', '0001759425-26-000044:mirm-20260805xexx991.htm')
+    ('INCYTE CORP  (INCY)  (CIK 0000879169)', '8-K', '2023-02-07', '0000879169-23-000005:incy-q42022xexx991.htm')
+    ('INCYTE CORP  (INCY)  (CIK 0000879169)', '8-K', '2025-07-29', '0000879169-25-000100:incy-q22025xexx991.htm')
+    ('INCYTE CORP  (INCY)  (CIK 0000879169)', '10-K', '2024-02-13', '0000879169-24-000045:incy-20231231.htm')
+    ('INCYTE CORP  (INCY)  (CIK 0000879169)', '10-Q', '2025-07-29', '0000879169-25-000103:incy-20250630.htm')
+    ('INCYTE CORP  (INCY)  (CIK 0000879169)', '10-K', '2026-02-10', '0000879169-26-000010:incy-20251231.htm')
+    ('INCYTE CORP  (INCY)  (CIK 0000879169)', '10-K', '2025-02-10', '0001628280-25-004633:incy-20241231.htm')
+  -> https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm
+     ...es of $159.9 million 2026 net product sales guidance increased to $660 to $680 million Volixibat VISTAS Phase 2b study met primary endpoint Brelovitug Phase 2b portion of AZURE-1 study met primary endpoint In-licensed exclusive worldwide rights to zilurgisertib (ALK2 inhibitor) for FOP FDA Priority Review granted with September 26, 2026 PDUFA date Conference call to provide business updates today, May 6 at 1 30 p.m. PT 4 30 p.m. ET FOSTER CITY, Calif. May 6, 2026 - Mirum Pharmaceuticals, Inc. (Nasdaq MIRM), a leading rare disease company, today reporte...
+     ...xcellent start, driven by strong commercial momentum, the recent VISTAS and AZURE-1 topline results, disciplined clinical execution, and continued expansion of our pipeline, said Chris Peetz, Chief Executive Officer of Mirum. We also announced today the in-license of zilurgisertib, a once-daily oral ALK2 inhibitor for fibrodysplasia ossificans progressiva from Incyte. Zilurgisertib has completed a pivotal study for FOP and its NDA has been accepted, creating the potential for an additional product launch for our rare genetic disease team later this...
+     ...typically occurring in early childhood. Zilurgisertib was evaluated in the PROGRESS pivotal Phase 2 study, which formed the basis of a new drug application (NDA). The FDA has accepted the NDA for zilurgisertib in FOP under Priority Review with a Prescription Drug User Fee Act (PDUFA) date of September 26, 2026. Mirum licensed zilurgisertib from Incyte for development and commercialization globally. About MRM-3379 MRM-3379 is an in-licensed investigational oral therapy being evaluated for the treatment of Fragile X syndrome (FXS). It is a selective phospho...
+
+=== ITEM 1: the December 31 rows
+
+  ABBV tavapadon: FTS total=2
+    ('Cerevel Therapeutics Holdings, Inc.  (CIK 0001805387', '10-K', '2024-02-27', '0000950170-24-021078:cere-20231231.htm')
+    ('Coya Therapeutics, Inc.  (COYA)  (CIK 0001835022)', '10-K', '2026-03-16', '0001193125-26-107281:coya-20251231.htm')
+
+  NVO CagriSema: FTS total=5
+    ('Metsera, Inc.  (MTSR)  (CIK 0002040807)', '10-K', '2025-03-26', '0000950170-25-044778:mtsr-20241231.htm')
+    ('Protagonist Therapeutics, Inc  (PTGX)  (CIK 00013771', '10-K', '2026-02-25', '0001104659-26-019696:ptgx-20251231x10k.htm')
+    ('Vivani Medical, Inc.  (VANI)  (CIK 0001266806)', '10-K', '2024-03-26', '0001753926-24-000616:g084109_10k.htm')
+    ('Vivani Medical, Inc.  (VANI)  (CIK 0001266806)', '10-K', '2025-03-31', '0001753926-25-000527:vani-20241231.htm')
+    ('Vivani Medical, Inc.  (VANI)  (CIK 0001266806)', '10-K', '2026-03-26', '0001753926-26-000548:vani-20251231.htm')
+
+  AZN Ultomiris IgAN: FTS total=75
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866)', '8-K', '2019-04-25', '0000899866-19-000059:ex99104252019.htm')
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866)', '8-K', '2019-07-24', '0000899866-19-000085:ex99107242019.htm')
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866)', '8-K', '2021-04-30', '0000899866-21-000037:earningsreleaseq12021.htm')
+    ('CHIASMA, INC  (CIK 0001339469)', '8-K', '2020-01-10', '0001193125-20-005017:d816683dex992.htm')
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866)', '8-K', '2018-10-24', '0000899866-18-000128:ex991_10242018.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2023-02-09', '0001654954-23-001503:a3767p.htm')
+    ('ASTRAZENECA PLC  (AZN, AZNCF)  (CIK 0000901832)', '6-K', '2024-04-25', '0001654954-24-004975:a9413l.htm')
+    ('ALEXION PHARMACEUTICALS, INC.  (CIK 0000899866)', '10-Q', '2019-07-24', '0000899866-19-000087:alxn630201910q.htm')
+
+  BAYRY finerenone: FTS total=12
+    ('REATA PHARMACEUTICALS INC  (CIK 0001358762)', '10-K', '2023-02-24', '0000950170-23-004236:reta-20221231.htm')
+    ('REATA PHARMACEUTICALS INC  (CIK 0001358762)', '10-K', '2022-02-28', '0001564590-22-007338:reta-10k_20211231.htm')
+    ('Cyclerion Therapeutics, Inc.  (CYCN)  (CIK 000175523', '10-K', '2020-03-12', '0001104659-20-032554:tm206168d1_10k.htm')
+    ('PROKIDNEY CORP.  (PROK)  (CIK 0001850270)', '10-K', '2026-03-18', '0001193125-26-113881:prok-20251231.htm')
+    ('EXELIXIS, INC.  (EXEL)  (CIK 0000939767)', '10-K', '2019-02-22', '0000939767-19-000042:exel2018123110-k.htm')
+    ('PROKIDNEY CORP.  (PROK)  (CIK 0001850270)', '10-K', '2024-03-22', '0000950170-24-034946:prok-20231231.htm')
+    ('PROKIDNEY CORP.  (PROK)  (CIK 0001850270)', '10-K', '2023-03-28', '0000950170-23-010324:prok-20221231.htm')
+    ('PROKIDNEY CORP.  (PROK)  (CIK 0001850270)', '10-K', '2025-03-17', '0000950170-25-040483:prok-20241231.htm')

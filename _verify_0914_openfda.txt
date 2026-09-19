@@ -1,0 +1,25 @@
+
+=== BFRI Ameluz
+  https://api.fda.gov/drug/drugsfda.json?search=openfda.brand_name:"AMELUZ"&limit=5
+  NDA208081  BIOFRONTERA
+      SUPPL-40 status=AP date=20260909 class=EFFICACY | Efficacy
+
+=== BFRI aminolevulinic
+  https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:"aminolevulinic+acid"&limit=5
+  NDA208630  NXDC
+  NDA020965  SUN PHARM INDS INC
+  NDA208081  BIOFRONTERA
+      SUPPL-40 status=AP date=20260909 class=EFFICACY | Efficacy
+
+=== SRRK apitegromab
+  https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:"apitegromab"&limit=5
+  ERROR HTTP Error 404: Not Found
+
+=== BAYRY sevabertinib
+  https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:"sevabertinib"&limit=5
+  NDA219972  BAYER HEALTHCARE
+      SUPPL-1 status=AP date=20260909 class=EFFICACY | Efficacy
+
+=== PHAR leniolisib
+  https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:"leniolisib"&limit=5
+  NDA217759  PHARMING

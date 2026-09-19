@@ -1,0 +1,22 @@
+checking 52 forward PDUFAs across 42 tickers against company PRs...
+
+*** 5 forward PDUFA(s) look ALREADY DECIDED — verify, then add to the decisions archive so the sweep removes them ***
+
+  BFRI   listed 2026-09-28  ->  Approved announced 2026-09-14
+         "Biofrontera Announces FDA Approval of Ameluz® Red Light PDT for the Treatment of Superficial Basal Cell "
+         https://www.globenewswire.com/news-release/2026/09/14/3361199/0/en/biofrontera-announces-fda-approval-of
+  SRRK   listed 2026-09-30  ->  Approved announced 2026-09-11
+         "Scholar Rock Announces FDA Approval of ISEMBYLD™ (apitegromab-mstn), the First and Only Muscle-Targeted "
+         https://www.businesswire.com/news/home/20260911564629/en/Scholar-Rock-Announces-FDA-Approval-of-ISEMBYLD
+  PHAR   listed 2026-10-24  ->  Approved announced 2026-09-11
+         "FDA approves Pharming's Joenja® as first treatment for children with APDS in the U.S."
+         https://www.globenewswire.com/news-release/2026/09/11/3360484/0/en/fda-approves-pharming-s-joenja-as-fir
+  GILD   listed 2027-02-02  ->  Approved announced 2026-08-27
+         "U.S. FDA Approves Gilead's Bixlenvo™, a New Once-Daily Single Tablet Option for Virologically Suppressed"
+         https://www.businesswire.com/news/home/20260817093045/en/U.S.-FDA-Approves-Gilead%E2%80%99s-Bixlenvo%E2%
+  ARQT   listed 2027-02-23  ->  Approved announced 2026-06-29
+         "FDA Approves Arcutis' ZORYVE® (roflumilast) Cream 0.3% for the Treatment of Plaque Psoriasis in Children"
+         https://www.globenewswire.com/news-release/2026/06/29/3319348/0/en/FDA-Approves-Arcutis-ZORYVE-roflumila
+
+Nothing was changed. Verify each against the company IR/8-K, add a row to
+pdufa_site_src/decisions/index.html, then re-run build_slate_from_crawl.py.

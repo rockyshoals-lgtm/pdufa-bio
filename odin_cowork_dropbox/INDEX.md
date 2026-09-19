@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-09-18 BUILDER (a retraction and the link nobody ever clicked)** — `2026-09-18_BUILDER_a_retraction_and_the_link_nobody_ever_clicked.md` — 2026-09-18, written 19:10 Pacific = 22:10 Eastern = 2026-09-19 02:10 UTC. Per RULE 1 every time here carries its zone. Facts and build mechanics only; not investment advice.
 - **2026-09-15b BUILDER (the key the source and the page that lied for 78 days)** — `2026-09-15b_BUILDER_the_key_the_source_and_the_page_that_lied_for_78_days.md` — 2026-09-15, written 12:30 Pacific = 15:30 Eastern = 19:30 UTC. Per RULE 1 every time here carries its zone. Not investment advice.
 - **2026-09-15 audit (audit dates)** — `2026-09-15_audit_dates.md` — 2026-09-15. Measured at 17:51 UTC = 13:51 Eastern = 10:51 Pacific. Per RULE 1, every date in this document is stated with its zone. The site's asof is Eastern; Vercel and GitHub are UTC; the machine is Pacific.
 - **2026-09-15 BUILDER (items 7 7b and 9)** — `2026-09-15_BUILDER_items_7_7b_and_9.md` — Shipped as dbda96655, live-verified, 84 guards. Items 1–6 went out earlier as 84627755f

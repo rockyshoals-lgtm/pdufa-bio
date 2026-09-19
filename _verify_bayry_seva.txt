@@ -1,0 +1,22 @@
+
+=== openfda.generic_name:"sevabertinib"
+  https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:"sevabertinib"&limit=5
+  app=NDA219972  sponsor=BAYER HEALTHCARE
+    product: HYRNUO / [{'name': 'SEVABERTINIB', 'strength': '10MG'}]
+    ORIG-1 status=AP date=20251119 class=TYPE 1 (Type 1 - New Molecular Entity)
+        doc Label 20251120 http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219972s000lblCorrected.pdf
+        doc Letter 20251121 https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219972Orig1s000correctedltr.pdf
+    SUPPL-1 status=AP date=20260909 class=EFFICACY (Efficacy)
+        doc Label 20260910 https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219972s001lbl.pdf
+        doc Letter 20260910 https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf
+
+=== application_number:"NDA219972"
+  https://api.fda.gov/drug/drugsfda.json?search=application_number:"NDA219972"&limit=5
+  app=NDA219972  sponsor=BAYER HEALTHCARE
+    product: HYRNUO / [{'name': 'SEVABERTINIB', 'strength': '10MG'}]
+    ORIG-1 status=AP date=20251119 class=TYPE 1 (Type 1 - New Molecular Entity)
+        doc Label 20251120 http://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219972s000lblCorrected.pdf
+        doc Letter 20251121 https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219972Orig1s000correctedltr.pdf
+    SUPPL-1 status=AP date=20260909 class=EFFICACY (Efficacy)
+        doc Label 20260910 https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/219972s001lbl.pdf
+        doc Letter 20260910 https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf

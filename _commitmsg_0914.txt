@@ -1,0 +1,46 @@
+Currency pass: 4 FDA decisions published, readout windows re-synced, CI unblocked
+
+WHY THE SITE WENT STALE. CI failed seven runs in a row from 2026-09-11 22:54, every one stuck
+on the same SHA, so nothing rebuilt for three days. The failure was not a bug. The
+early-approval watcher found FDA approvals on armed events and exits 1 by design so a human
+verifies before anything is published. It was doing its job; nobody came. Everything below is
+what had piled up behind it.
+
+DECISIONS (each read first-hand in the filing or FDA document named):
+* SRRK apitegromab -> ISEMBYLD, SMA, approved 2026-09-11 (Scholar Rock 8-K 2026-09-14). Goal
+  was 2026-09-30 and IS sourced, so this is a real 19-days-early measurement.
+* PHAR leniolisib -> Joenja, paediatric APDS, approved 2026-09-11 (Pharming 6-K 2026-09-11).
+  Goal 2026-10-24 sourced to Pharming's 6-K of 2026-06-04: 43 days early.
+* BFRI Ameluz PDT -> superficial basal cell carcinoma. FDA acted 2026-09-09 (openFDA NDA208081
+  SUPPL-40); Biofrontera did not announce until 2026-09-14. Both dates are on the page, because
+  no share-price move before the 14th can be a reaction to it. Goal 2026-09-28 sourced.
+* BAYRY sevabertinib -> HYRNUO, HER2-mutant NSCLC, accelerated approval 2026-09-09, read in the
+  FDA's own letter for NDA 219972/S-001. Its goal date was NEVER sourced -- no Bayer filing
+  states 2026-11-30 and Bayer is not an SEC registrant -- so the day is withdrawn and the page
+  states no earliness figure. Same rule as the 09-10 pass: no sourced goal, no earliness claim.
+
+NOT decisions, acked with reasons: GILD 2027-02-02 (once-weekly oral Yeztugo; the Aug 27
+Bixlenvo approval is already published) and ARQT 2027-02-23 (ZORYVE 0.05% for infants; the Jun
+29 approval was 0.3% paediatric psoriasis). The matcher reaches across a ticker's applications.
+
+READOUTS. 50 rows sat past their date. 33 Estimated windows were re-synced to
+ClinicalTrials.gov, whose primary-completion date IS what /readouts says these dates are; 22 are
+now ACTUAL rather than estimated; 4 terminated or withdrawn trials are annotated. One row had
+been advertising a 2027 readout for a trial whose primary completion was 2023. NO OUTCOME WAS
+SET anywhere: a registry status of COMPLETED means the trial finished, not that the sponsor said
+what happened, and those 22 remain leads for the company's own release.
+
+I got this wrong first: the script also rewrote company-GUIDED dates, replacing SELLAS's own
+REGAL guidance with a registry number. test_guided_readouts_current caught it. Reverted from
+HEAD and the script is now gated on st == "Estimated".
+
+TLX. The PDUFA goal date for TLX101-Px (Pixclara) passed on 2026-09-11 with no decision
+disclosed. /api/v1 already relabels such a row "Awaiting"; the calendar did not, so the site's
+busiest page showed it exactly like a live date. New mark_calendar_awaiting.py and guard
+test_awaiting_marked_on_calendar.py (proven 0 -> 1 -> 0), plus a sourced goal-date-passed block
+on both TLX event pages, backed by Telix's 6-K of 2026-08-20.
+
+Also rolled: WCLC to "In progress" (Sep 12-15) -- the conference drift on task 67 recurred only
+because CI was red; SLS collector and prices, 8 and 10 days stale for the same reason.
+
+81 guards pass.
