@@ -59,9 +59,20 @@ What the code says: `built` is the GENERATION time of the tree and `commit_at_bu
 
 ---
 
-## 5. Carried, and what is next
+## 5. The source pass over every unsourced forward PDUFA (task #77, first half)
 
-The EDGAR pass over the 37 unsourced forward PDUFA rows starts now (task #77): every one either gets a filing in `source_url` or a downgrade to the precision a filing supports. Also carried: the 9 unbacked window pages (ratchet at 9), 22 readout leads, the TA back-fill by hand, and — new today — 13 Estimated readouts the 09-14 registry re-sync moved to dates already in the past (one to 2023), which are neither reported nor visibly upcoming and need a ruling on treatment.
+`edgar_source_pass.py`: for each of the 34 upcoming rows still without `source_url` after the ORDER, search EDGAR full-text for the row's date phrase with "PDUFA", **restricted to the sponsor's own filings** (a first dry run matched Nuvalent's November 27 to BridgeBio's 8-K and Roche's November 30 to Cogent's — same date, other company — so the filer must now be the sponsor or the row's CIK), fetch the document, and write `source_url` only when the date sits within 400 characters of "PDUFA"/"target action date" in the text. 22 rows sourced that way, each with the quote on the row. The rest by hand, each document read before writing:
+
+- **Roche ×4** (not an SEC registrant): Genentech press releases state every one — Tecentriq adjuvant dMMR/MSI-H colon "by October 9, 2026" (2026-06-10), Enspryng TED "by October 15, 2026" (2026-06-29), giredestrant adjuvant "by November 30, 2026" (2026-06-01), giredestrant + everolimus "by December 18, 2026" (2026-02-19).
+- **GSK bepirovirsen**: Ionis, the licensor, 8-K 2026-07-29: "PDUFA target action date of October 26, 2026".
+- **REGN cemdisiran — a precision defect, caught.** Regeneron's 8-K of 2026-07-30 states "a target action date in **November 2026**", a month. The row carried **November 30 at day precision**: a month-end sentinel of exactly the class the 09-10 P0 found, and one the quarter-end guard does not cover because it is a month-end, not a quarter-end. Downgraded to month, recorded in `date_history`, calendar and page windowed to "Nov 2026". The accepted NDA is cemdisiran monotherapy for gMG; the row had named the cemdisiran + pozelimab combination and is renamed.
+- **NUVL neladalkib — the sponsor no longer exists as a ticker.** GSK completed its acquisition of Nuvalent in July 2026 (tender at $124.00 per share from June 24; Nuvalent 8-K 2026-07-15, merger completion). The site carried NUVL as a live Mid-cap sponsor with a price frozen at $123.96 — the tender price. The row, the slate, the calendar row, the event page and `/ticker/NUVL` now say GSK (formerly Nuvalent, NUVL) with the 8-K linked. The PDUFA date itself is sourced to Royalty Pharma's 8-K of 2026-08-05, which quotes Nuvalent's May 2026 acceptance announcement ("Priority Review with a PDUFA date of November 27, 2026"); Nuvalent's own May release is not retrievable from EDGAR full-text under any phrasing I tried, and the company will not file again.
+
+**Live count after this batch: upcoming PDUFA rows with `source_url` 43 of 48.** The five still null are the ones no filing supports even at month precision — ABBV tavapadon, AZN Ultomiris, BAYRY Kerendia, NVO CagriSema (the 09-10 "month kept" four, publicly listed as unbacked and ratcheted) and NVO Mim8 (year). These are the auditor's item 8 carry, and the honest end state for them is a further downgrade or a withdrawal, which I would rather have ruled on than do unilaterally.
+
+## 6. Carried
+
+The 9 unbacked window pages (ratchet holding), 22 readout leads, the TA back-fill by hand, the openFDA pass over the 36 Decided rows (second half of #77, next), and — new today — 13 Estimated readouts the 09-14 registry re-sync moved to dates already in the past (one to 2023), which are neither reported nor visibly upcoming and need a ruling on treatment.
 
 ---
 

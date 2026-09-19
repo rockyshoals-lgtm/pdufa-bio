@@ -61,7 +61,7 @@ GROUPS = [
                   ("/methodology", "Methodology"), ("/developers", "API"),
                   ("/account", "Account")]),
 ]
-PRO = ("/pricing", "Pro")
+PRO = ("/developers#tiers", "Pro")
 
 # Pages that are deliberately not part of the public site.
 SKIP = re.compile(r"(_bak|_xbak|/_|\\_|app\.html|holding\.html|preview\.html|ping\.html"

@@ -428,6 +428,7 @@ def main():
 
         events = []
         n_dec = 0
+        seen_decision = set()
         for r in rs:
             day = r.get("d") or ""
             dp = r.get("dp") or "day"
@@ -438,8 +439,8 @@ def main():
             decided = str(r.get("st") or "").lower() == "decided"
             if decided and not outcome:
                 outcome = "decided"
-            if outcome and outcome not in ("decided",):
-                n_dec += 1
+            # n_dec is incremented AFTER the duplicate check below, not here: counting at this
+            # point counted the same decision once per source feeding this page.
             when = (r.get("when_text")
                     or (pretty(day, dp) if re.match(r"^\d{4}-\d{2}-\d{2}$", day) else day))
             conf = confirmed.get(r.get("id"))
@@ -460,6 +461,18 @@ def main():
                      else f' <span class="bad">CRL</span>' if outcome == "CRL" else "")
             href = (f"/fda-decision/{tk}-{day}" if outcome in ("Approved", "CRL")
                     else str(r.get("url") or f"/ticker/{tk}"))
+            # ONE DECISION, ONE ROW (2026-09-18). This page is fed by the dataset AND by the
+            # decisions archive. When a decided row's goal date equals its action date the two
+            # sources produce the same (ticker, day) event, and it was rendered twice: six pages
+            # listed a decision twice and then counted it twice, so /drug/zanidatamab said "4 FDA
+            # decisions on record" over two links and /drug/lipfendra said 2 over one. The count
+            # is the sentence an answer engine quotes, so it has to be the number of distinct
+            # decisions.
+            if outcome in ("Approved", "CRL"):
+                if href in seen_decision:
+                    continue
+                seen_decision.add(href)
+                n_dec += 1
             events.append(
                 f'<a class="row" href="{esc(href)}"><span class="t">{esc(typ)} &middot; '
                 f'{esc(when)}{badge}</span><span class="d">{esc(tk)}</span></a>')

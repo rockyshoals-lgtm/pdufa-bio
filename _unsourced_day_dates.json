@@ -74,6 +74,13 @@
    "month_kept": "2026-09",
    "new_precision": "quarter",
    "why": "Takeda states \"The Prescription Drug User Fee Act (PDUFA) Target Action Date is the Third Quarter of this Calendar Year\" for oveporexton in narcolepsy type 1. The sponsor gave a QUARTER. Day withdrawn 2026-09-10; quarter is the sourced precision."
+  },
+  {
+   "ticker": "REGN",
+   "was_date": "2026-11-30",
+   "month_kept": "2026-11",
+   "new_precision": "month",
+   "why": "Regeneron 8-K 2026-07-30 states the cemdisiran (gMG) target action date as November 2026, a month. The November 30 day was a month-end sentinel no filing states. Day withdrawn 2026-09-15; month sourced."
   }
  ]
 }

@@ -99,6 +99,17 @@ def collect(year):
         # Only a sponsor-announced DAY can measure earliness against a day.
         if r.get("dp") != "day":
             continue
+        # PROVENANCE OF THE GOAL, not just of the decision (2026-09-18). Precision alone still
+        # let through a row whose "goal date" was the ACTION date copied over: every one of the
+        # nine rows in the "landed on the goal date" bucket had goal == actual. Seven of those
+        # nine turned out to be real -- the sponsor stated that exact day and the FDA acted on it,
+        # verified in each company's own filing -- but two did not. Merck never published a goal
+        # date for Lipfendra (a CNPV-voucher review), and Otsuka publishes nothing searchable for
+        # centanafadine. A margin of zero measured against a date we invented is not a measurement
+        # of FDA punctuality, so a row that says its goal is unsourced leaves the statistic while
+        # keeping its approval.
+        if (r.get("_d") or {}).get("goal_unsourced"):
+            continue
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", goal) or \
            not re.match(r"^\d{4}-\d{2}-\d{2}$", actual):
             continue

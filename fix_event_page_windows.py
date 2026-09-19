@@ -122,8 +122,29 @@ def rewrite_jsonld(doc, iso, label, span, drop_event, faq_old, faq_new):
     return LD.sub(one, doc)
 
 
+MON3 = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
 def pretty_of(iso):
-    return {"2026-12-31": "Dec 31 2026"}.get(iso, iso)
+    """The no-comma form the older template writes ("Dec 31 2026")."""
+    try:
+        y, m, d = int(iso[:4]), int(iso[5:7]), int(iso[8:10])
+        return f"{MON3[m]} {d} {y}"
+    except Exception:
+        return iso
+
+
+def pretty_forms(iso):
+    """Every rendering of a day the event templates emit. 2026-09-15: REGN-cemdisiran kept
+    "Nov 30, 2026" in its title, metas and sub line after the fact was windowed, because only
+    the Dec 31 comma form was covered. Any day, both forms, plus the long-month form."""
+    try:
+        y, m, d = int(iso[:4]), int(iso[5:7]), int(iso[8:10])
+    except Exception:
+        return [iso]
+    full = ["", "January", "February", "March", "April", "May", "June", "July", "August",
+            "September", "October", "November", "December"][m]
+    return [f"{MON3[m]} {d} {y}", f"{MON3[m]} {d}, {y}", f"{full} {d}, {y}", f"{full} {d} {y}"]
 
 
 def main():
@@ -165,6 +186,12 @@ def main():
                 tl = re.search(r'((?:Q[1-4] \d{4})|(?:[A-Z][a-z]{2,8} \d{4}))', ti.group(1)) if ti else None
                 labels = {w.group(1)} | ({tl.group(1)} if tl else set())
                 d2 = doc
+                # the sentinel day in any rendering (REGN-cemdisiran: fact windowed, title and
+                # metas still "Nov 30, 2026")
+                for pf in pretty_forms(str(row.get("d") or "")):
+                    d2 = d2.replace(f", {pf}", f", {new}").replace(f"target <b>{pf}</b>", f"target <b>{new}</b>") \
+                           .replace(f"target is {pf} for", f"decision is expected in {new} for") \
+                           .replace(f"date is {pf} for", f"decision is expected in {new} for")
                 for old in sorted(labels - {new}):
                     d2 = d2.replace(old, new)
                     long_old = {"Jan": "January", "Feb": "February", "Mar": "March", "Apr": "April",
@@ -193,34 +220,24 @@ def main():
         pretty = pretty_of(iso)
         orig = doc
 
+        forms = pretty_forms(iso)
         # --- titles / og / twitter -------------------------------------------------
         for sep in ("|", '"', "<"):
-            if backed:
-                doc = doc.replace(f", {pretty} {sep}", f", {label} {sep}")
-                doc = doc.replace(f", {pretty}{sep}", f", {label}{sep}")
-                doc = doc.replace(f", Dec 31, 2026 {sep}", f", {label} {sep}")
-            else:
-                doc = doc.replace(f", {pretty} {sep}", f" {sep}")
-                doc = doc.replace(f", {pretty}{sep}", f"{sep}")
-                doc = doc.replace(f", Dec 31, 2026 {sep}", f" {sep}")
+            for pf in forms:
+                if backed:
+                    doc = doc.replace(f", {pf} {sep}", f", {label} {sep}")
+                    doc = doc.replace(f", {pf}{sep}", f", {label}{sep}")
+                else:
+                    doc = doc.replace(f", {pf} {sep}", f" {sep}")
+                    doc = doc.replace(f", {pf}{sep}", f"{sep}")
 
         # --- meta descriptions -----------------------------------------------------
-        doc = doc.replace(
-            f"FDA PDUFA date is {pretty} for",
-            f"FDA PDUFA decision is expected in {label} for" if backed
-            else "FDA PDUFA date is not sourced for")
-        doc = doc.replace(
-            f"FDA PDUFA date is {iso} for",
-            f"FDA PDUFA decision is expected in {label} for" if backed
-            else "FDA PDUFA date is not sourced for")
-        # NVO-cagrisema (an older template) writes "target is Dec 31, 2026 for" and a
-        # comma-form body date. Cover both rather than leaving three live occurrences.
-        for variant in (f"FDA PDUFA target is {pretty} for",
-                        "FDA PDUFA target is Dec 31, 2026 for"):
-            doc = doc.replace(
-                variant,
-                f"FDA PDUFA decision is expected in {label} for" if backed
-                else "FDA PDUFA date is not sourced for")
+        for pf in forms + [iso]:
+            for variant in (f"FDA PDUFA date is {pf} for", f"FDA PDUFA target is {pf} for"):
+                doc = doc.replace(
+                    variant,
+                    f"FDA PDUFA decision is expected in {label} for" if backed
+                    else "FDA PDUFA date is not sourced for")
         if not backed or not (row.get("_d") or {}).get("source_url"):
             doc = doc.replace(", and the primary source.", ".")
             doc = doc.replace(" and the primary source.", ".")
@@ -229,8 +246,8 @@ def main():
         doc = doc.replace(f'<span>FDA PDUFA target date</span><b>{iso}</b>',
                           f'<span>FDA PDUFA target date</span><b>{label}</b>')
         doc = doc.replace(f'target <b>{iso}</b>', f'target <b>{label}</b>')
-        doc = doc.replace(f'target <b>{pretty}</b>', f'target <b>{label}</b>')
-        doc = doc.replace('target <b>Dec 31, 2026</b>', f'target <b>{label}</b>')
+        for pf in forms:
+            doc = doc.replace(f'target <b>{pf}</b>', f'target <b>{label}</b>')
 
         # --- FAQ answer, identical string in the rendered card and the JSON-LD ------
         faq_old = f"is {iso} for"

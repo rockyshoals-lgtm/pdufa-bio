@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "LLY",
+  "date": "2026-09-18",
+  "outcome": "Approved",
+  "drug": "Inluriyo (imlunestrant) with Verzenio (abemaciclib)",
+  "indication": "ER-positive, HER2-negative, ESR1-mutated advanced or metastatic breast cancer",
+  "company": "Eli Lilly and Company",
+  "cap": "Large",
+  "headline": "Inluriyo (imlunestrant) approved in combination with Verzenio (abemaciclib) for ER-positive, HER2-negative, ESR1-mutated advanced or metastatic breast cancer (Sep 18 2026).",
+  "pdufa_note": "We do not state a goal date for this application. Lilly published no PDUFA target action date for the supplement, and this archive carried no row for it before the approval, so the only date we can source is the FDA's action date of September 18, 2026. For that reason the decision is excluded from our decision-timing statistic, which measures FDA action against a sponsor-stated goal date. Inluriyo was first approved on September 25, 2025 as monotherapy under NDA 218881; this is a label expansion resting on the Phase 3 EMBER-3 trial.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-imlunestrant-combination-abemaciclib-er-positive-her2-negative-esr1-mutated-advanced-or",
+  "source_label": "FDA approval notification, September 18, 2026 (CDER)"
+ }
+]

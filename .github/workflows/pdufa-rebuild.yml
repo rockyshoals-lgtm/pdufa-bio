@@ -609,6 +609,13 @@ jobs:
       - name: "Canonicalise duplicate event pages (noindex twins, rewrite links)"
         run: python canonicalise_duplicate_event_pages.py
 
+      # 2026-09-18: the nav's "Pro" entry pointed at /pricing on 954 pages and that page has
+      # never existed, and 108 more pages linked /pdufa/* pages that were never built. Repair
+      # runs before the sitemap so nothing dead is submitted.
+      # tests/test_no_dead_internal_links.py fails if this step goes missing.
+      - name: "Repair dead internal links (nav Pro target, unbuilt event pages)"
+        run: python fix_dead_internal_links.py
+
       # Rebuilt again here, after the normalisers: build_stock_runup lifts the noindex on hubs that
       # gained real content, and those pages only belong in the sitemap once that has happened.
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
