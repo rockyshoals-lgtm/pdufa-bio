@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
 """CI guard: no published page links a site-internal URL that does not exist.
 
-Found 2026-09-18 by walking the rendered site: the navigation's "Pro" entry pointed at /pricing
-on 954 pages and `pdufa_site_src/pricing/index.html` has never existed in this repository. A dead
-link in the site-wide nav is on every page a reader or a crawler ever sees, and nothing in the
-suite looked. Five dataset rows also pointed at /pdufa/{TICKER} pages that were never built
-(CELC, VERA), so their event links 404ed too.
+Found 2026-09-18 by walking the rendered site: five dataset rows pointed at /pdufa/{TICKER} pages
+that were never built (CELC, VERA), and 108 pages cross-linked /pdufa/{TICKER}-{slug} pages that
+were never built either.
 
-Checks every internal href on every indexable page against the built tree. Anchors and query
-strings are stripped; files with an extension (/api/..., /favicon.svg) are checked as files.
+RETRACTION 2026-09-19. The first version of this guard also declared the nav's /pricing link dead
+on 954 pages, and the fixer moved it to /developers#tiers. /pricing was live the whole time:
+`pdufa_site_src/vercel.json` rewrites it to /pricing.html. The guard knew only `<path>/index.html`
+and never read the routing table, so it produced a false positive that a fixer then "repaired"
+sitewide -- a nav-freeze violation on a false premise. Resolution now goes through
+`site_routes.resolves`, which honours the static tree, vercel.json rewrites AND redirects.
+
+Checks every internal href on every indexable page. Anchors and query strings are stripped;
+files with an extension (/api/..., /favicon.svg) are checked as files.
 
     python tests/test_no_dead_internal_links.py
 """
@@ -19,22 +24,17 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, HERE)
+from site_routes import resolves  # noqa: E402  (static tree + vercel.json rewrites/redirects)
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 LEDGER = os.path.join(HERE, "_dead_link_allowlist.json")
 SKIP_DIR = re.compile(r"[\\/]_[a-z]+bak|[\\/]_pdufa_")
 
 
 def exists(path):
-    """Is this site-relative path servable?"""
-    rel = path.strip("/")
-    if not rel:
-        return True
-    p = os.path.join(SITE, rel.replace("/", os.sep))
-    if os.path.isfile(p):
-        return True
-    if os.path.isfile(os.path.join(p, "index.html")):
-        return True
-    return False
+    """Is this site-relative path servable? (delegates to site_routes; kept for callers)"""
+    return resolves(path)
 
 
 def main():

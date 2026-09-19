@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Two dead internal-link classes, found 2026-09-18 by walking every rendered page.
+"""Dead internal-link repairs, found 2026-09-18 by walking every rendered page.
 
-1. THE NAV'S "Pro" LINK HAS ALWAYS 404ed. Every page carries nav entry ("/pricing", "Pro") and
-   `pdufa_site_src/pricing/index.html` has never existed in this repository's history -- 954
-   pages link it. The tier comparison it promises does exist, on /developers under the heading
-   "Tiers", so the link points there. No price is invented: /developers describes what Free and
-   Pro include and nothing here changes that.
+1. RETRACTED 2026-09-19, AND REVERSED HERE. The 09-18 version of this script said the nav's
+   "Pro" link (/pricing) "has always 404ed" because `pdufa_site_src/pricing/index.html` does not
+   exist, and moved the link to /developers#tiers on 954 pages (1,878 after the next nav
+   rebuild). That was wrong: `pdufa_site_src/vercel.json` rewrites /pricing to /pricing.html, the
+   page is live, indexable, and carries the $10/mo and $100/yr tiers. The resolver only knew
+   `<path>/index.html`. Step 1 now puts the nav back exactly as it was frozen on 2026-08-29:
+   PRO = ("/pricing", "Pro") in rebuild_nav.py and on every rendered page's `class="pro"` anchor.
 
 2. FIVE DATASET ROWS POINT AT A /pdufa/{TICKER} PAGE THAT DOES NOT EXIST (CELC x2, VERA x3), and
    a sixth -- the LLY imlunestrant approval added today -- pointed at /pdufa/LLY, which exists but
@@ -27,18 +29,16 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from site_routes import resolves  # noqa: E402  (static tree + vercel.json rewrites/redirects)
+
 SITE = os.path.join(HERE, "pdufa_site_src")
-PRO_OLD, PRO_NEW = "/pricing", "/developers#tiers"
+PRO_OLD, PRO_NEW = "/developers#tiers", "/pricing"      # 09-19: reversed, see docstring
+PRO_ANCHOR = re.compile(r'(<a class="pro" href=")' + re.escape(PRO_OLD) + '(")')
 # The LLY row is named explicitly because its target EXISTS but is the wrong event: /pdufa/LLY is
 # the tirzepatide window page. Every other repair is derived, not listed: any row whose url does
 # not resolve moves to that ticker's hub.
 ROW_FIX = {"pdufa_lly_2026-09-18": "/ticker/LLY"}
-
-
-def resolves(rel):
-    rel = rel.strip("/")
-    return bool(rel) and (os.path.isfile(os.path.join(SITE, rel, "index.html"))
-                          or os.path.isfile(os.path.join(SITE, rel)))
 
 
 def main():
@@ -49,19 +49,19 @@ def main():
     # 1. the generator first, so the next rebuild does not undo this
     nav = os.path.join(HERE, "rebuild_nav.py")
     t = io.open(nav, encoding="utf-8").read()
-    t2 = t.replace('PRO = ("/pricing", "Pro")', f'PRO = ("{PRO_NEW}", "Pro")')
+    t2 = t.replace(f'PRO = ("{PRO_OLD}", "Pro")', f'PRO = ("{PRO_NEW}", "Pro")')
     if t2 != t and not a.dry_run:
         io.open(nav, "w", encoding="utf-8").write(t2)
     print("rebuild_nav.py PRO target:", "updated" if t2 != t else "already correct")
 
-    # 2. every rendered page
+    # 2. every rendered page -- the nav's class="pro" anchor only, never a body link
     n = 0
     for root, dirs, files in os.walk(SITE):
         if "index.html" not in files:
             continue
         p = os.path.join(root, "index.html")
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        new = doc.replace(f'href="{PRO_OLD}"', f'href="{PRO_NEW}"')
+        new = PRO_ANCHOR.sub(rf"\g<1>{PRO_NEW}\g<2>", doc)
         if new != doc:
             n += 1
             if not a.dry_run:

@@ -1,0 +1,28 @@
+09-19b RETRACTION: /pricing was never dead. Frozen nav restored on 1,678 pages; the guard now reads the routing table
+
+WHAT I GOT WRONG ON 09-18
+- I said "/pricing has never existed in this repository" and moved the nav's Pro link to
+  /developers#tiers on 954 pages (1,678 after the next nav rebuild), plus 204 body links
+  ("See pricing", "subscribe", footer "Pricing") swept up by a blanket href replace. That
+  violated the nav freeze (2026-08-29, until 2027-01-01) on a false premise.
+- /pricing is live: pdufa_site_src/vercel.json rewrites it to pricing.html (and redirects
+  /pricing.html and /pricing-elite to it). The page is indexable, states $10/mo and $100/yr,
+  and says Pro is not on sale yet -- consistent with /developers. The 09-18 guard resolved only
+  <path>/index.html and never read the routing table, so it produced a false positive that a
+  fixer then "repaired" sitewide. The 09-18 commit even edited pricing.html's own nav.
+
+FIX
+- site_routes.py: one resolver for guards and fixers -- static tree + vercel.json rewrites +
+  redirects (literal sources only; wildcard-served URLs still need the allowlist).
+- tests/test_no_dead_internal_links.py and fix_dead_internal_links.py use it; the fixer's
+  step 1 is reversed and now restores PRO=("/pricing","Pro") in rebuild_nav.py and on every
+  page's class="pro" anchor. Every href="/developers#tiers" on the site (none existed before
+  09-18) is back to /pricing. _nav_frozen_until_2027.json pro entry restored; revert recorded.
+- CI workflow comment corrected.
+
+LIVE-VERIFIED 00106da20 + CI 993ea9028 (RARE/TLX decided in API and calendar, both decision
+pages 200, timing 30/19/7/4 on all three surfaces, build-info next = MRK 09-21). Guards 91/91.
+The autonomous run at 21:14Z went green and pushed -- the first since the two failures.
+
+FOUND, NOT FIXED (task #82): the run-up study size is stated as 1,849 (home), 1,827
+(/decisions, /pricing), 1,786 (/developers) and 1,888 (/fda-approval-rate). Needs one owner.

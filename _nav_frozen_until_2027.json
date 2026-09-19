@@ -81,7 +81,7 @@
   ]
  ],
  "pro": [
-  "/developers#tiers",
+  "/pricing",
   "Pro"
  ],
  "changes": [
@@ -89,6 +89,11 @@
    "date": "2026-09-18",
    "what": "PRO target /pricing -> /developers#tiers",
    "why": "pdufa_site_src/pricing/index.html has never existed in this repository; the nav Pro link 404ed on 954 pages. The tier comparison it promises is on /developers under the heading Tiers. No price was invented and none was removed; building a real /pricing page is a commercial decision for David."
+  },
+  {
+   "date": "2026-09-19",
+   "what": "PRO target /developers#tiers -> /pricing (REVERT of the 2026-09-18 change)",
+   "why": "The 09-18 change was made on a false premise. /pricing has been live throughout: pdufa_site_src/vercel.json rewrites /pricing to /pricing.html (and redirects /pricing.html and /pricing-elite to it). The dead-link guard resolved only <path>/index.html and never read the routing table. The nav is restored exactly as frozen on 2026-08-29; the guard and fixer now resolve through site_routes.py."
   }
  ]
 }
