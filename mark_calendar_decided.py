@@ -41,9 +41,15 @@ SEP = r'(?:&middot;|·|&#183;)'
 # `?` instead of `*` that row was invisible to this script for two audits while its decision
 # pages (JAZZ-2026-08-25, ZYME-2026-08-25) sat published. Same bug, one label wider.
 TKLABEL = r'([A-Z]{1,6}(?:\s*/\s*[A-Z]{1,6})*)'
+# 2026-09-19: a row that mark_calendar_awaiting.py badged ("TLX · 2026-09-11 <span
+# class="awaiting">Awaiting</span>") stopped matching here, so a PDUFA that decided AFTER its
+# goal date could never be marked -- Pixclara sat "Awaiting" on /calendar and the September page
+# with its decision page published and the API saying Decided. The badge is optional in the
+# match and dropped on rewrite (repl rebuilds the row from its parts).
+AWAIT_BADGE = r'(?:\s*<span class="awaiting"[^>]*>Awaiting</span>)?'
 ROW = re.compile(
-    r'<a class="row"([^>]*)>\s*<div class="t">' + TKLABEL + r'\s*' + SEP +
-    r'\s*(\d{4}-\d{2}-\d{2})</div>'
+    r'<a class="row"((?:(?!data-dec)[^>])*)>\s*<div class="t">' + TKLABEL + r'\s*' + SEP +
+    r'\s*(\d{4}-\d{2}-\d{2})' + AWAIT_BADGE + r'\s*</div>'
     r'<div class="d">(.*?)</div>\s*</a>', re.S)
 # ALREADY-MARKED rows: div.t carries the outcome span after the date, so ROW cannot match them.
 # (Widened to TKLABEL 2026-09-05c so marked multi-ticker rows re-validate too.)

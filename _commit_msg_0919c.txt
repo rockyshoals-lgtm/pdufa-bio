@@ -1,0 +1,23 @@
+09-19c: Pixclara was still "Awaiting" on the calendar; month-page ItemLists were frozen since pass 14; builder note
+
+FOUND BY THE LIVE VERIFIER after 850d5d1b4
+- /calendar and /calendar/2026/september rendered "TLX · 2026-09-11 Awaiting" while the API said
+  Decided and the decision page was live. mark_calendar_awaiting.py badges a past-goal row;
+  mark_calendar_decided.py's ROW pattern did not allow the badge, so once a row went Awaiting
+  it could never be marked decided -- every after-the-goal-date approval would hit this. ROW
+  now accepts the badge and drops it on rewrite. The calendar's September sentence no longer
+  says the FDA is "due to decide on ... TLX101-Px".
+- NEW GUARD tests/test_decided_rows_marked_on_calendar.py: mirror of the 09-14 Awaiting guard.
+  A dataset row that is Decided with an outcome must link its /fda-decision/ page on every
+  calendar page and must not say Awaiting. Proven 0 -> planted TLX shape -> 1 -> healed -> 0.
+- Month pages' JSON-LD ItemList ("<Month> 2026 FDA PDUFA dates") was written ONCE by
+  seo_pass14_fixups.py and never updated: June/July/August listed decided events as scheduled,
+  September listed three decided (TLX, NUVL, RARE) and omitted the two ahead, November 3 of 13,
+  August numberOfItems 6 vs 4 items. sync_calendar_itemlist.py now owns the month pages too:
+  same "ahead" definition and Event items as /calendar, one list per page, removed on months
+  with nothing ahead. tests/test_calendar_itemlist_matches_rows.py extends to month pages
+  (proven against the pass-14 shape).
+
+BUILDER NOTE odin_cowork_dropbox/2026-09-19_BUILDER_two_approvals_the_site_missed_and_a_page_
+I_said_did_not_exist.md (retraction of the 09-18 /pricing claim, the CI cause, both approvals,
+the three watcher passes, the calendar marker bug, task #82). INDEX regenerated.

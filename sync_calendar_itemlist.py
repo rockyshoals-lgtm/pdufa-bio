@@ -127,6 +127,48 @@ def main():
           f"(as of {today} Eastern){' [dry run]' if a.dry_run else ''}")
     for href, ticker, desc, iso, qq in rows:
         print(f"    {ticker:<6} {iso or ('Q%d %s' % qq):<10} {href}")
+    sync_month_pages(today, a.dry_run)
+
+
+# 2026-09-19: the month pages (/calendar/2026/september ...) carried an ItemList named
+# "<Month> <Year> FDA PDUFA dates" written ONCE by seo_pass14_fixups.py ("if ItemList not in
+# page") and never touched again. By 09-19 June/July/August listed decided events as scheduled,
+# September listed three decided events (TLX, NUVL, RARE) and omitted the two still ahead,
+# November listed 3 of 13, and August's numberOfItems (6) did not even match its own list (4).
+# Same owner, same definition of "ahead", same Event items as /calendar, every run.
+# Inside a @graph the object carries no "@context" (pass-14 shape); standalone it does.
+MONTH_IL = re.compile(r',?\{(?:"@context":\s*"https://schema\.org",\s*)?"@type":\s*"ItemList",\s*'
+                      r'"name":\s*"([A-Z][a-z]+ 20\d\d) FDA PDUFA dates".*?"itemListElement":\s*\[[^\]]*\]\}', re.S)
+MONTH_IL_BLOCK = re.compile(r'<script type="application/ld\+json">\{"@context":\s*"https://schema\.org",\s*'
+                            r'"@type":\s*"ItemList",\s*"name":\s*"[A-Z][a-z]+ 20\d\d FDA PDUFA dates".*?</script>', re.S)
+
+
+def sync_month_pages(today, dry):
+    import glob
+    root = os.path.dirname(PAGE)
+    for p in sorted(glob.glob(os.path.join(root, "20[0-9][0-9]", "*", "index.html"))):
+        doc = open(p, encoding="utf-8", errors="replace").read()
+        mm = re.search(r"[\\/](20\d\d)[\\/]([a-z]+)[\\/]index\.html$", p)
+        label = f"{mm.group(2).capitalize()} {mm.group(1)}"
+        rows = ahead_rows(doc, today)
+        items = build_items(rows)
+        il = {"@context": "https://schema.org", "@type": "ItemList",
+              "name": f"{label} FDA PDUFA dates", "numberOfItems": len(items),
+              "itemListElement": items}
+        obj = json.dumps(il, ensure_ascii=False)
+        gobj = json.dumps({k: v for k, v in il.items() if k != "@context"}, ensure_ascii=False)
+        new = MONTH_IL_BLOCK.sub("", doc)                  # one list per page: drop any standalone copy
+        if MONTH_IL.search(new):                           # object inside a @graph (pass-14 shape)
+            new = MONTH_IL.sub(lambda m: (("," if m.group(0).startswith(",") else "") + gobj) if items else "", new, count=1)
+            new = new.replace('"@graph":[,', '"@graph":[')   # removed the first object of a graph
+        elif items:
+            i = new.find("</head>")
+            new = new[:i] + '<script type="application/ld+json">' + obj + '</script>' + new[i:]
+        if new != doc:
+            if not dry:
+                open(p, "w", encoding="utf-8").write(new)
+            print(f"  {os.path.relpath(p, os.path.dirname(root))}: month ItemList -> {len(items)} ahead"
+                  + (" (removed: none ahead)" if not items else ""))
 
 
 if __name__ == "__main__":

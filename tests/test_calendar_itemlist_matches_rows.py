@@ -67,6 +67,45 @@ def test_calendar_itemlist_matches_rows():
         assert ev.get("eventStatus", "").endswith("EventScheduled")
 
 
+def test_month_itemlists_match_rows():
+    """2026-09-19: the month pages carried an ItemList '<Month> <Year> FDA PDUFA dates' written
+    once by seo_pass14_fixups.py and never updated -- June/July/August listed decided events as
+    scheduled, September listed three decided (TLX, NUVL, RARE) and omitted the two ahead,
+    August's numberOfItems (6) did not match its own 4 items. sync_calendar_itemlist.py owns
+    them now; this asserts the render, same definition of 'ahead' as /calendar."""
+    import glob
+    today = eastern_today().isoformat()
+    pages = sorted(glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "*", "index.html")))
+    assert pages, "no month pages"
+    problems = []
+    for p in pages:
+        doc = io.open(p, encoding="utf-8", errors="replace").read()
+        rel = "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/")
+        rows = _ahead_hrefs(doc, today)
+        found = re.findall(r'\{(?:"@context":\s*"https://schema\.org",\s*)?"@type":\s*"ItemList",\s*'
+                           r'"name":\s*"[A-Z][a-z]+ 20\d\d FDA PDUFA dates".*?"itemListElement":\s*\[[^\]]*\]\}',
+                           doc, re.S)
+        if len(found) > 1:
+            problems.append(f"{rel}: {len(found)} month ItemLists on one page"); continue
+        if not found:
+            if rows:
+                problems.append(f"{rel}: {len(rows)} ahead rows but no month ItemList")
+            continue
+        il = json.loads(found[0])
+        items = il["itemListElement"]
+        if any("item" not in it for it in items):
+            problems.append(f"{rel}: pass-14 url-only ItemList shape (never regenerated); run sync_calendar_itemlist.py")
+            continue
+        urls = [re.sub(r"^https://www\.pdufa\.bio", "", it["item"]["url"]) for it in items]
+        if il.get("numberOfItems") != len(items):
+            problems.append(f"{rel}: numberOfItems {il.get('numberOfItems')} != {len(items)} items")
+        extra, missing = sorted(set(urls) - set(rows)), sorted(set(rows) - set(urls))
+        if extra or missing:
+            problems.append(f"{rel}: ItemList != ahead rows; extra={extra} missing={missing}")
+    assert not problems, "month ItemLists out of step with their rows:\n  " + "\n  ".join(problems)
+
+
 if __name__ == "__main__":
     test_calendar_itemlist_matches_rows()
+    test_month_itemlists_match_rows()
     print("OK")
