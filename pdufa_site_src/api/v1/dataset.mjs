@@ -3005,13 +3005,13 @@ export default [
   "company": "Telix Pharmaceuticals Limited",
   "d": "2026-09-11",
   "dp": "day",
-  "name": "TLX101-Px (Pixclara)",
+  "name": "Pixclara (floretyrosine F 18; TLX101-Px)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Mid",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/TLX",
-  "ua": "2026-09-11T15:58:54Z",
+  "ua": "2026-09-19T21:01:55Z",
   "_d": {
    "nct_id": {
     "nct": "NCT07100730",
@@ -3026,7 +3026,7 @@ export default [
    "modality": "diagnostic",
    "source": "Telix release 2026-04-10 (NDA acceptance) and 2026-03-16 (resubmission)",
    "source_url": "https://telixpharma.com/news-views/fda-accepts-nda-for-tlx101-px-pixclara/",
-   "review": "Telix resubmitted the NDA on March 16, 2026 after the FDA's earlier Complete Response Letter; the FDA accepted the resubmission on April 10, 2026 and set a goal date of September 11, 2026. TLX101-Px (Pixclara, floretyrosine F 18) is a PET imaging agent submitted for the characterisation of recurrent or progressive glioma from treatment-related changes in adult and paediatric patients. It is a diagnostic, not a therapy; the therapeutic candidate TLX101 is a separate programme.",
+   "review": "NDA approved (announced September 14, 2026; goal date September 11) after a March 16, 2026 resubmission following an earlier Complete Response Letter. Pixclara is the first FDA-approved FET-PET imaging agent for glioma, indicated to help differentiate recurrent or progressive glioma from treatment-related change in adults and pediatric patients.",
    "market_cap_usd": 4043433098.6,
    "cash_runway_months": null,
    "days_to_decision": 63,
@@ -3038,8 +3038,15 @@ export default [
     "t30": 2.19,
     "t7": -0.33,
     "t1": 0.0
-   }
-  }
+   },
+   "brand": "Pixclara",
+   "decision_source": "Telix 6-K 2026-09-14 (EX-99.1, ASX announcement)",
+   "decision_source_url": "https://www.sec.gov/Archives/edgar/data/2007191/000162828026061892/pixclaraapprovalvfinal.htm",
+   "decision_quote": "Telix Pharmaceuticals Limited (ASX: TLX, NASDAQ: TLX) today announces that the United States (U.S.) Food and Drug Administration (FDA) has approved its New Drug Application (NDA) for Pixclara (floretyrosine F 18 or 18F-FET)",
+   "decision_date_note": "2026-09-14 is the date of Telix's announcement, which says the FDA 'has approved' without stating the action day; Drugs@FDA holds no Pixclara record yet. The margin against the September 11 goal date will be corrected from the FDA letter if it is dated earlier."
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-14"
  },
  {
   "id": "conf_wclc_2026-09-12",
@@ -3728,13 +3735,13 @@ export default [
   "company": "Ultragenyx Pharmaceutical Inc.",
   "d": "2026-09-19",
   "dp": "day",
-  "name": "UX111 - (ABO-102)",
+  "name": "FAYUVI (rebisufligene etisparvovec-hopf; UX111 / ABO-102)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Small",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/ABEO",
-  "ua": "2026-09-18T22:55:57Z",
+  "ua": "2026-09-19T20:53:10Z",
   "_d": {
    "nct_id": {
     "nct": "NCT03517085",
@@ -3761,8 +3768,16 @@ export default [
    "source": "Ultragenyx 8-K 2026-04-02 (Item 8.01)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm",
    "source_quote": "The FDA set a Prescription Drug User Fee Act (PDUFA) action date of September 19, 2026.",
-   "precision_note": "Ultragenyx's 8-K of 2026-02-03 stated only 'a PDUFA date expected in the third quarter of 2026'; the 8-K of 2026-04-02 states the day. The day-precision statement wins and the quarter is never rounded to a day."
-  }
+   "precision_note": "Ultragenyx's 8-K of 2026-02-03 stated only 'a PDUFA date expected in the third quarter of 2026'; the 8-K of 2026-04-02 states the day. The day-precision statement wins and the quarter is never rounded to a day.",
+   "brand": "FAYUVI",
+   "decision_source": "Ultragenyx 8-K 2026-09-17 (Item 8.01); FDA press release 2026-09-17",
+   "decision_source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000151567326000006/rare-20260917.htm",
+   "decision_source_url_2": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapy-pediatric-patients-sanfilippo-syndrome-type",
+   "decision_quote": "On September 17, 2026, Ultragenyx Pharmaceutical Inc. announced that the U.S. Food and Drug Administration granted standard full approval of FAYUVI (rebisufligene etisparvovec-hopf), also known as UX111, for the treatment of pediatric patients with mucopolysaccharidosis type IIIA (MPS IIIA, Sanfilippo syndrome Type A).",
+   "review": "Standard full approval on September 17, 2026, two days before the September 19 PDUFA goal date; the first FDA-approved treatment for Sanfilippo syndrome type A and Ultragenyx's second gene therapy approval. A Priority Review Voucher was awarded. UX111 (ABO-102) was licensed from Abeona Therapeutics (ABEO)."
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-17"
  },
  {
   "id": "pdufa_mrk_2026-09-21",

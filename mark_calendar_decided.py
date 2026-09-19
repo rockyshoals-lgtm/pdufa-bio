@@ -259,7 +259,11 @@ def mark_page(path, by_tk, dry):
             want = PARTNER[(tk, caldate)]
             if f'href="/fda-decision/{want}"' in attrs:
                 return m.group(0)
-        hit = match_decision(by_tk, tk, caldate, body_now)
+        hit = None
+        for cand in [x.strip() for x in label.split("/")]:   # any ticker in the label
+            hit = match_decision(by_tk, cand, caldate, body_now)
+            if hit:
+                break
         cur = re.search(r'href="/fda-decision/[A-Z]{1,6}-(\d{4}-\d{2}-\d{2})"', attrs)
         if hit and cur and cur.group(1) == hit[0]:
             return m.group(0)                                   # still correct
@@ -285,8 +289,15 @@ def mark_page(path, by_tk, dry):
 
     def repl(m):
         attrs, label, caldate, dtext = m.group(1), m.group(2), m.group(3), m.group(4)
-        tk = label.split("/")[0].strip()          # dual labels resolve on the first ticker
-        hit = match_decision(by_tk, tk, caldate, strip_marker(dtext))
+        # 2026-09-19: "ABEO / RARE" resolved on ABEO alone, and the decision (FAYUVI, published
+        # under the APPLICANT, RARE) sat unmarked while the row said pending. Every ticker in the
+        # label is tried; the first with a validating decision wins, and the label is kept.
+        hit, tk = None, label.split("/")[0].strip()
+        for cand in [x.strip() for x in label.split("/")]:
+            hit = match_decision(by_tk, cand, caldate, strip_marker(dtext))
+            if hit:
+                tk = cand
+                break
         if not hit:
             return m.group(0)
         decdate, outcome, dec_tk = hit

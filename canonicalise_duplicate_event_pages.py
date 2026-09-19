@@ -40,7 +40,10 @@ DUPES = {"ABBV-tavapadon-2": "ABBV-tavapadon", "NVO-cagrisema": "NVO-am833",
          "ZYME-ziihera": "ZYME",
          # a truncated-slug twin of the same decision (the title census missed it because the
          # truncation reached the title too)
-         "GILD-bictegravir-and": "GILD-bictegravir-and-lenacapavi"}
+         "GILD-bictegravir-and": "GILD-bictegravir-and-lenacapavi",
+         # 2026-09-19: surfaced by the title census the day Pixclara decided; the bare page
+         # carries 30 inbound links, the drug-slug twin none
+         "TLX-tlx101-px": "TLX"}
 SKIP = re.compile(r"[\\/]_pdufa_(x?bak\d*|bak\d*)[\\/]|[\\/]_[a-z]+bak")
 
 

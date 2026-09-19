@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "RARE",
+  "date": "2026-09-17",
+  "outcome": "Approved",
+  "drug": "FAYUVI (rebisufligene etisparvovec-hopf; UX111)",
+  "indication": "Mucopolysaccharidosis type IIIA (Sanfilippo syndrome type A), pediatric patients",
+  "company": "Ultragenyx Pharmaceutical Inc.",
+  "cap": "Mid",
+  "headline": "FAYUVI (rebisufligene etisparvovec-hopf, UX111) approved as the first treatment for pediatric patients with Sanfilippo syndrome type A, a standard full approval with a Priority Review Voucher (Sep 17 2026).",
+  "pdufa_note": "The PDUFA action date was September 19, 2026 and the FDA approved on September 17, two days early. That goal date came from Ultragenyx's own 8-K of April 2, 2026 (\"The FDA set a Prescription Drug User Fee Act (PDUFA) action date of September 19, 2026\"), which is why the margin is quoted as a measurement. The BLA was a resubmission after an earlier Complete Response Letter; UX111 was licensed from Abeona Therapeutics.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1515673/000151567326000006/rare-20260917.htm",
+  "source_label": "Ultragenyx 8-K, September 17, 2026 (Item 8.01)",
+  "source_2": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapy-pediatric-patients-sanfilippo-syndrome-type",
+  "source_2_label": "FDA press release, September 17, 2026"
+ }
+]

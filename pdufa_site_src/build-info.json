@@ -1,10 +1,10 @@
 {
- "built": "2026-09-19T01:31:29+00:00",
- "commit": "a462ed3f9",
- "commit_at_build": "a462ed3f9",
- "next_date": "2026-09-11",
- "next_ticker": "TLX",
- "next_days": null,
- "next_status": "awaiting",
- "days_since_goal": 7
+ "built": "2026-09-19T21:03:39+00:00",
+ "commit": "bf619086d",
+ "commit_at_build": "bf619086d",
+ "next_date": "2026-09-21",
+ "next_ticker": "MRK",
+ "next_days": 2,
+ "next_status": "upcoming",
+ "days_since_goal": null
 }

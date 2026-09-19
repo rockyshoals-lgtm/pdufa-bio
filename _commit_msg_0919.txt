@@ -1,0 +1,42 @@
+09-19: two approvals the site missed, the guard that blocked the morning, and three watcher passes
+
+WHY THIS MORNING'S RUNS FAILED (both, 13:37Z and 15:28Z; nothing pushed)
+- test_board_completeness: build-info promoted RARE as "next" while the homepage board kept
+  TLX first. build_freshness_stamp.next_decision() had a 7-day cutoff on awaiting events and
+  TLX's goal date was 8 days gone; the board has no cutoff. One rule now on both surfaces: an
+  undecided day-precision PDUFA is "next" until it is decided.
+
+TWO APPROVALS PUBLISHED, both read from the primary document before writing
+- RARE: FDA approved FAYUVI (rebisufligene etisparvovec-hopf, UX111) on 2026-09-17, two days
+  before the September 19 goal (FDA press release 09-17; Ultragenyx 8-K 09-17 Item 8.01,
+  "standard full approval ... Priority Review Voucher"). The site said "decides tomorrow".
+- TLX: Telix announced FDA approval of Pixclara (floretyrosine F 18, TLX101-Px) in a 6-K on
+  2026-09-14 (EX-99.1, ASX announcement). The site said "awaiting" for five days. The decision
+  date recorded is the announcement date, 3 days after the September 11 goal, and the row says
+  the FDA's own action day is not yet in Drugs@FDA and the margin will follow the letter.
+- Timing statistic 28/18/7/3 -> 30/19/7/4 (FAYUVI early, Pixclara late), restated on all three
+  surfaces.
+
+WHY THE WATCHER MISSED BOTH, AND THREE PASSES NOW
+- It queried Drugs@FDA, which is CDER-only and lags: a CBER gene therapy announced under a
+  brand assigned at approval, and a diagnostic imaging agent with no FDA press release and a
+  newsroom that 403s scripts, were both structurally invisible.
+- Pass 2: FDA press-release feed matched on SPONSOR and INDICATION (one long disease word is
+  enough for a lead: "sanfilippo" alone identifies the event).
+- Pass 3: the sponsor's own 8-K/6-K in EDGAR full-text, last 14 days, filer must be the sponsor,
+  and the document must contain a SENTENCE stating the FDA approved the drug -- "potential
+  approval" in a pipeline deck is not a lead (first version flagged three of those).
+- Proved by re-arming RARE and TLX on a copy: press pass catches FAYUVI, EDGAR pass catches both.
+  Real run: 40 armed events, 0 leads.
+
+ALSO
+- /pdufa/RPRX said zidesamtinib was "under FDA review" 59 days after its approval; RPRX holds a
+  royalty and the decision lives under NUVL. Hand-linked (shape b), bannered.
+- mark_calendar_decided resolved multi-ticker labels on the FIRST ticker only, so "ABEO / RARE"
+  never found the decision filed under RARE. Every ticker in the label is tried now.
+- /pdufa/TLX-tlx101-px became an indexable twin of /pdufa/TLX the moment it decided; the
+  title-census guard caught it on the first run and it is canonicalised (11 known twins).
+- 11 untracked "index (1).html" copies in /drug (filesystem artefact, 13:54 today) removed;
+  sls collector run (was 5 days stale).
+
+91 guards pass, 0 fail.

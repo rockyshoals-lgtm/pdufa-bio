@@ -92,8 +92,14 @@ def next_decision():
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", d):
             continue
         dd = dt.date.fromisoformat(d)
-        if dd < today - dt.timedelta(days=7):
-            continue
+        # 2026-09-19: the 7-day cutoff that used to sit here split this file from the homepage
+        # board on day 8 of TLX's wait. The board keeps an undecided past-dated event as its
+        # first tile until the FDA acts (the auditor's own framing on 09-14: "an Awaiting event
+        # genuinely is the next expected decision because the FDA can act any day"); build-info
+        # silently promoted RARE, and test_board_completeness blocked the whole morning's run.
+        # Same rule on both surfaces now: an undecided day-precision PDUFA is live until it is
+        # decided, however long it has waited. next_status says "awaiting" and days_since_goal
+        # says how long; a stale limbo is visible, not hidden.
         if best is None or dd < best[0]:
             best = (dd, (r.get("t") or "").upper())
     if not best:
