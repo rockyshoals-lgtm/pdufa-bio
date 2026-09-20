@@ -40,6 +40,8 @@ except Exception:
 SITE = "pdufa_site_src"
 WHY = ("We do not state how early it was: the goal date we hold for this application is not a "
        "sourced calendar day, and an unsourced goal cannot measure earliness.")
+WHY_ACTION = ("We do not state how early or late it was: the date held is the day the sponsor announced "
+              "the approval, and the announcement does not state the day the FDA acted.")
 
 
 def main():
@@ -56,6 +58,12 @@ def main():
             continue
         if not earliness_allowed(r):
             blocked[(str(r.get("t") or "").upper(), str(r.get("dcd") or "")[:10])] = r
+    # Audit 09-20 P0-A: two reasons a margin is refused, two different repairs. When the GOAL
+    # is the unsourced side (window / goal_unsourced) the goal-date facts are withdrawn below.
+    # When the ACTION date is the unsourced side (decision_date_unsourced -- TLX: the sponsor's
+    # announcement day), the goal date is sourced and STAYS; only the margin goes.
+    action_only = {k for k, r in blocked.items() if (r.get("_d") or {}).get("decision_date_unsourced")
+                   and not (r.get("_d") or {}).get("goal_unsourced") and str(r.get("dp") or "day") == "day"}
 
     n = 0
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
@@ -66,6 +74,17 @@ def main():
         row = blocked[(m.group(1), m.group(2))]
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         orig = doc
+        if (m.group(1), m.group(2)) in action_only:
+            # margin clauses only, both directions; the goal date sentence is left intact
+            doc = re.sub(r",\s*\d+\s+days?\s+(?:early|late|after the goal|before the goal)\.", ". " + WHY_ACTION, doc)
+            doc = re.sub(r",\s*\d+\s+days?\s+(?:early|late)(?=[,;])", "", doc)
+            doc = re.sub(r",\s*\d+\s+days?\s+(?:after|before) its [^.]{0,60}goal date", "", doc)
+            if doc != orig:
+                n += 1
+                print(f"  /fda-decision/{slug}: margin withdrawn (announcement date, action day unknown)")
+                if not a.dry_run:
+                    io.open(p, "w", encoding="utf-8").write(doc)
+            continue
 
         # The prose is hand-written and says this four different ways. Cover the CLAUSE
         # generally rather than chasing each sentence:
@@ -106,7 +125,7 @@ def main():
     for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
         tk = slug.split("-")[0].upper()
-        rowset = [r for k, r in blocked.items() if k[0] == tk]
+        rowset = [r for k, r in blocked.items() if k[0] == tk and k not in action_only]
         if not rowset:
             continue
         row = rowset[0]

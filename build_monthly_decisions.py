@@ -27,6 +27,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # the build, from one shared function (site_dates.py), never the runner's UTC clock.
 import sys as _sys; _sys.path.insert(0, HERE)
 from site_dates import eastern_today as _eastern_today
+from site_windows import is_day, window_label_long   # one owner for how a non-day date is written
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUT = os.path.join(SITE, "fda-this-month")
@@ -60,6 +61,13 @@ def ev_sentence(r, decided=False):
     d = str(r.get("d") or "")
     day = dt.date.fromisoformat(d)
     href = str(r.get("url") or f"/ticker/{tk}")
+    # Audit 09-20 P0-B: the dataset keeps a coarse row's `d` as the END of its window (the API
+    # nulls `date` unless precision is day). This renderer read `d` as a goal DAY and wrote
+    # "Ahead of its September 30 goal date" for TAK, PFE, PTGX (sponsor-stated Q3) and
+    # "November 30" for BAYRY (withdrawn 09-14, no Bayer filing states it). A window is a span,
+    # not a point: site_windows owns the label, and no earliness is ever stated against it.
+    coarse = not is_day(r)
+    win = window_label_long(r) if coarse else ""
     if decided:
         oc = str(r.get("oc") or "").strip()
         dcd = str(r.get("dcd") or "")[:10]
@@ -67,14 +75,22 @@ def ev_sentence(r, decided=False):
         if re.match(r"^\d{4}-\d{2}-\d{2}$", dcd):
             dd = dt.date.fromisoformat(dcd)
             when = f"On {MONTHS[dd.month]} {dd.day}"
+            if (r.get("_d") or {}).get("decision_date_unsourced"):
+                # Audit 09-20 P0-A: an announcement day is not an FDA action day.
+                when = (f"As announced by the sponsor on {MONTHS[dd.month]} {dd.day} (the filing "
+                        f"does not state the day the agency acted)")
+            elif coarse:
+                when = (f"On {MONTHS[dd.month]} {dd.day}, within the window the sponsor had "
+                        f"given ({win}; no goal day was published)")
             # OBS-1: a row counted in this month by its GOAL date may have been decided in
             # an earlier month, which is the normal case (the FDA is not obliged to use its
             # full clock). Say why it is here rather than leaving two dates unexplained.
-            if d and dcd < d:
+            elif d and dcd < d:
                 when = (f"Ahead of its {MONTHS[day.month]} {day.day} goal date, on "
                         f"{MONTHS[dd.month]} {dd.day}")
         else:
-            when = f"By its {MONTHS[day.month]} {day.day} goal date"
+            when = (f"Within the window the sponsor gave ({win})" if coarse
+                    else f"By its {MONTHS[day.month]} {day.day} goal date")
         if oc.lower() == "approved":
             verb = "approved"
         elif oc.upper() == "CRL":
@@ -98,8 +114,12 @@ def merge_partners(rows):
     the two pages disagreed on every September number. Same convention as the calendar's
     multi-ticker label ("JAZZ / ONC / ZYME")."""
     def key(r):
-        nm = re.sub(r"[^a-z0-9]+", " ", str(r.get("name") or "").lower())
-        nm = re.split(r"\s*\(", nm)[0].strip()
+        # Audit 09-20 item 4: the parenthesis was being stripped BEFORE the split on it, so
+        # "Zilurgisertib (licensed to Mirum; MIRM holds the NDA)" and "zilurgisertib" never
+        # merged and the lede counted three dates for two decisions. Split first, then
+        # normalise, then take the first token: the molecule.
+        nm = re.split(r"\s*[\(\-:]", str(r.get("name") or "").lower())[0]
+        nm = re.sub(r"[^a-z0-9]+", " ", nm).strip()
         return (str(r.get("d") or ""), nm[:28])
     seen, out = {}, []
     for r in rows:
@@ -188,8 +208,13 @@ def main():
     up2, coarse2, _ = month_events(rows, ny, nm)
 
     ahead = [r for r in up if str(r.get("d")) >= today.isoformat()]
-    intro = (f"{len(ahead)} FDA decision date{'s' if len(ahead) != 1 else ''} "
-             f"remain{'s' if len(ahead) == 1 else ''} on the {mon} calendar, and "
+    # Audit 09-20 item 4: count DATES and DECISIONS, never rows. `ahead` is already one row per
+    # decision (merge_partners); the number of distinct days can be smaller still.
+    n_dates = len({str(r.get("d")) for r in ahead})
+    n_dec = len(ahead)
+    remain = (f"{n_dates} FDA decision date{'s' if n_dates != 1 else ''}"
+              + (f" (covering {n_dec} decisions)" if n_dec != n_dates else ""))
+    intro = (f"{remain} remain{'s' if n_dates == 1 else ''} on the {mon} calendar, and "
              f"{len(dec)} {mon} decision{'s have' if len(dec) != 1 else ' has'} already "
              f"been made. Every date below comes from a company filing or FDA notice "
              f"and links its event record. The FDA publishes no forward calendar of "
@@ -217,7 +242,7 @@ def main():
                          f'<a class="lit" href="/calendar">full calendar</a>.</p>')
 
     title = f"What the FDA Decides in {mon}: PDUFA Dates in Plain Language | pdufa.bio"
-    desc = (f"{len(ahead)} FDA decision dates remain in {mon}, with {len(dec)} already "
+    desc = (f"{remain} remain{'s' if n_dates == 1 else ''} in {mon}, with {len(dec)} already "
             f"decided. Each date as a sentence, sourced and linked. Updated daily.")
     if len(desc) > 158:
         desc = desc[:158].rsplit(" ", 1)[0].rstrip(",;:") + "."

@@ -60,6 +60,17 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     fallback = listing_drugs()
+    # Audit 09-20 P0-A: rows whose decision date is the sponsor's ANNOUNCEMENT day (the filing
+    # does not state when the FDA acted) must not be answered "The FDA approved ... on <date>".
+    announced = set()
+    try:
+        srcd = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
+                    errors="replace").read().replace("\x00", "")
+        rows_d, _ = json.JSONDecoder().raw_decode(srcd[srcd.find("["):])
+        announced = {(str(r.get("t") or "").upper(), str(r.get("dcd") or "")[:10])
+                     for r in rows_d if (r.get("_d") or {}).get("decision_date_unsourced")}
+    except Exception:
+        pass
 
     added = kept = skipped = 0
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
@@ -89,7 +100,11 @@ def main():
         drug = re.sub(r"\s+", " ", drug)[:70]
 
         q = f"Was {drug} approved by the FDA?"
-        if outcome == "Approved":
+        if outcome == "Approved" and (tk, date) in announced:
+            ans = (f"Yes. The sponsor announced on {pretty(date)} that the FDA had approved the "
+                   f"application for {drug}; the announcement does not state the day the FDA "
+                   f"acted. The primary source is linked on this page.")
+        elif outcome == "Approved":
             ans = (f"Yes. The FDA approved the application for {drug} on {pretty(date)}. "
                    f"The primary source is linked on this page.")
         else:
@@ -110,9 +125,11 @@ def main():
         if cm:
             comp = html.unescape(cm.group(1)).strip()
             qa.append((f"Which company is behind {drug}?",
-                       f"{drug} is a {comp} ({tk}) program. The FDA decision came on "
-                       f"{pretty(date)}; the company's own announcement is linked on this "
-                       f"page."))
+                       f"{drug} is a {comp} ({tk}) program. "
+                       + (f"The company announced the FDA decision on {pretty(date)}; "
+                          if (tk, date) in announced else
+                          f"The FDA decision came on {pretty(date)}; ")
+                       + "the company's own announcement is linked on this page."))
         elif im:
             ind = html.unescape(im.group(1)).strip()
             oc_txt = ("approved the application" if outcome == "Approved"

@@ -205,6 +205,37 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     return doc
 
 
+def announcement_wording(doc, dcd):
+    """Audit 09-20 P0-A: the date held is the sponsor's announcement day, not the FDA's action
+    day. Every template phrase that asserts the FDA acted ON that day is restated; the outcome
+    is unchanged. Idempotent: each replacement matches only the asserting form."""
+    P = pretty(dcd)
+    rep = [(f"was approved by the FDA on {P}", f"had its FDA approval announced by the sponsor on {P} (the filing does not state the day the FDA acted)"),
+           (f"drug, approved by the FDA on {P} for", f"drug whose FDA approval the sponsor announced on {P} (FDA action day not stated), for"),
+           (f"approved by the FDA on {P} for", f"whose FDA approval the sponsor announced on {P} (FDA action day not stated), for"),
+           (f"FDA decision <b>Approved {P}</b>", f"FDA decision <b>Approved (announced {P})</b>"),
+           (f"FDA decision</span><b>Approved {P}</b>", f"FDA decision</span><b>Approved (announced {P})</b>"),
+           (f"on {P}: Approved.", f"on {P}: Approved (the sponsor's announcement date; the filing does not state the day the FDA acted)."),
+           (f", Approved {P}", f", Approval announced {P}"),
+           (f"FDA decision: Approved on {P}. Facts only", f"FDA decision: Approval announced by the sponsor on {P}. Facts only")]
+    for a, b in rep:
+        doc = doc.replace(a, b)
+    # the meta description must stay under the 158-char budget or fix_meta_lengths trims it
+    # mid-clause ("... (Recurrent or)."); say it compactly there
+    def _desc(m):
+        cur = _html.unescape(m.group(2))
+        mm = re.match(r"^([A-Z]{1,6})'s (.+?) had its FDA approval announced by the sponsor on "
+                      r"([A-Z][a-z]+ \d{1,2}, \d{4}) \(the filing does not state the day the FDA acted\)", cur)
+        if not mm:
+            return m.group(0)
+        new = (f"{mm.group(1)}'s {mm.group(2)}: FDA approval announced by the sponsor on {mm.group(3)}; "
+               f"the FDA action day is not stated, so no goal-date margin is published.")
+        return m.group(1) + _html.escape(new, quote=True) + m.group(3)
+    doc = re.sub(r'(<meta name="description" content=")([^"]*)(")', _desc, doc, count=1)
+    doc = re.sub(r'(<meta property="og:description" content=")([^"]*)(")', _desc, doc, count=1)
+    return doc
+
+
 def load_hand_links():
     """{event-page slug: decision slug} a human verified. Audit 2026-09-06 NEW-2: two shapes
     the automatic rules refuse and should keep refusing -- several same-sponsor decisions
@@ -404,8 +435,16 @@ def main():
         # from the h1's highlighted span, which is what the page itself calls the drug.
         hm = re.search(r'<h1>[A-Z]{1,6} PDUFA Date: <span class="g">(.+?)</span></h1>', new)
         page_drug = _html.unescape(hm.group(1)) if hm else str(r.get("name") or "")
+        # 2026-09-20: goal_sourced is about the GOAL's provenance only. earliness_allowed now
+        # also refuses a row whose ACTION date is an announcement day (TLX), and that row's goal
+        # (September 11, sourced) must stay on the page; only the margin and the "approved on"
+        # tense change. announcement_wording() rewrites those phrases, idempotently, every run.
+        _d = (r.get("_d") or {})
+        goal_ok = str(r.get("dp") or "day") == "day" and not _d.get("goal_unsourced")
         new = decided_language(new, tk, page_drug, word, dcd, goal, archive_only,
-                               goal_sourced=earliness_allowed(r))
+                               goal_sourced=goal_ok)
+        if _d.get("decision_date_unsourced"):
+            new = announcement_wording(new, dcd)
         if new != doc:
             io.open(p, "w", encoding="utf-8").write(new)
             changed += 1

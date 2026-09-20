@@ -9,6 +9,9 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-09-20b note (moat data sweep two)** — `2026-09-20b_moat_data_sweep_two.md` — 2026-09-20, 22:10 UTC = 18:10 Eastern = 15:10 Pacific. Facts and file contents only. Not investment advice.
+- **2026-09-20 audit (audit accuracy seo ai)** — `2026-09-20_audit_accuracy_seo_ai.md` — 2026-09-20, measured 20:40 UTC = 16:40 Eastern = 13:40 Pacific (Sunday). Per RULE 1 every time carries its zone. API asof is Eastern; Vercel and GitHub are UTC; the machine is Pacific.
+- **2026-09-20 BUILDER (the announcement that was wearing an action date)** — `2026-09-20_BUILDER_the_announcement_that_was_wearing_an_action_date.md` — 2026-09-20, written 14:20 Pacific = 17:20 Eastern = 21:20 UTC (Sunday). Per RULE 1 every time here carries its zone. Facts and build mechanics only; not investment advice.
 - **2026-09-19 BUILDER (two approvals the site missed and a page I said did not exist)** — `2026-09-19_BUILDER_two_approvals_the_site_missed_and_a_page_I_said_did_not_exist.md` — 2026-09-19, written 14:30 Pacific = 17:30 Eastern = 21:30 UTC. Per RULE 1 every time here carries its zone. Facts and build mechanics only; not investment advice.
 - **2026-09-18 BUILDER (a retraction and the link nobody ever clicked)** — `2026-09-18_BUILDER_a_retraction_and_the_link_nobody_ever_clicked.md` — 2026-09-18, written 19:10 Pacific = 22:10 Eastern = 2026-09-19 02:10 UTC. Per RULE 1 every time here carries its zone. Facts and build mechanics only; not investment advice.
 - **2026-09-15b BUILDER (the key the source and the page that lied for 78 days)** — `2026-09-15b_BUILDER_the_key_the_source_and_the_page_that_lied_for_78_days.md` — 2026-09-15, written 12:30 Pacific = 15:30 Eastern = 19:30 UTC. Per RULE 1 every time here carries its zone. Not investment advice.

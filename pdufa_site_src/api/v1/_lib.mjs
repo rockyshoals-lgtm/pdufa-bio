@@ -63,7 +63,12 @@ const CORE_EXTRA = ['nct_id','indication','market_cap_usd','cash_runway_months',
      registry estimate that slid, a day withdrawn as unsourced). A day-precision row with a null
      source_url is one we could not settle in a filing; the field says so instead of the row
      implying otherwise. 0 of 456 rows exposed any of this before today. */
-  'source','source_url','date_history'];
+  'source','source_url','date_history',
+  /* Audit 09-20 ORDER 1: provenance of the DECISION date, not only of the goal date. A margin
+     is the difference of two dates; decision_date_note says when the date held is the sponsor's
+     announcement day rather than the FDA's action day, decision_date_unsourced is the flag the
+     timing statistic and every renderer gate on, goal_unsourced is its mirror (09-18). */
+  'decision_source','decision_source_url','decision_date_note','decision_date_unsourced','goal_unsourced'];
 const DEPTH_KEYS = [];
 
 export function shape(e, tier) {

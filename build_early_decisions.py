@@ -29,6 +29,8 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
+from site_windows import earliness_allowed  # noqa: E402  -- the one owner of "may we measure"
 OUT = os.path.join(SITE, "research", "fda-decision-timing")
 MON = ["January", "February", "March", "April", "May", "June", "July", "August",
        "September", "October", "November", "December"]
@@ -79,6 +81,30 @@ def collect_all(year):
     return out
 
 
+def provenance_exclusions(year):
+    """[(ticker, why)] for day-precision decided rows in `year` with a sourced outcome that the
+    one-owner gate (site_windows.earliness_allowed) keeps out because a DATE has no provenance."""
+    src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
+               errors="replace").read().replace("\x00", "")
+    rows, _ = json.JSONDecoder().raw_decode(src[src.find("[") :])
+    out = []
+    for r in rows:
+        if r.get("type") != "PDUFA" or str(r.get("st", "")).lower() != "decided":
+            continue
+        if r.get("dp") != "day" or not str(r.get("dcd") or "").startswith(str(year)):
+            continue
+        if earliness_allowed(r):
+            continue
+        d = r.get("_d") or {}
+        tk = str(r.get("t") or "").upper()
+        if d.get("decision_date_unsourced"):
+            out.append((tk, "the date held is the sponsor's announcement day; the filing does "
+                            "not state the day the FDA acted"))
+        elif d.get("goal_unsourced"):
+            out.append((tk, "no sponsor filing states a goal date"))
+    return sorted(set(out))
+
+
 def collect(year):
     """Sourced decisions in `year` that state BOTH a goal date and an actual action date."""
     src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
@@ -108,7 +134,10 @@ def collect(year):
         # centanafadine. A margin of zero measured against a date we invented is not a measurement
         # of FDA punctuality, so a row that says its goal is unsourced leaves the statistic while
         # keeping its approval.
-        if (r.get("_d") or {}).get("goal_unsourced"):
+        # 2026-09-20: one owner. site_windows.earliness_allowed carries the precision gate above,
+        # the goal-provenance gate (goal_unsourced) and the action-date-provenance gate
+        # (decision_date_unsourced -- TLX Pixclara: an announcement day is not an FDA action day).
+        if not earliness_allowed(r):
             continue
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", goal) or \
            not re.match(r"^\d{4}-\d{2}-\d{2}$", actual):
@@ -200,10 +229,23 @@ def main():
     ex = [r for r in allrows if not r["sourced"]]
     ex_eq = [r for r in ex if r["delta"] == 0]
     ex_early = [r for r in ex if r["delta"] < 0]
+    # 2026-09-20 (audit P0-A): rows left out because one of the two DATES has no provenance,
+    # named on the page with the reason, so the exclusion is visible where the number is.
+    prov_ex = provenance_exclusions(a.year)
     disclosure = ""
+    if prov_ex:
+        items = "; ".join(f"<b>{esc(t)}</b> ({esc(why)})" for t, why in prov_ex)
+        disclosure += (
+            f'<h2>Left out because a date has no document behind it</h2>'
+            f'<div class="note" style="font-size:13.5px;color:#9db3d4;line-height:1.7">'
+            f'{len(prov_ex)} {a.year} decision{"s" if len(prov_ex) != 1 else ""} with a sourced '
+            f'outcome {"are" if len(prov_ex) != 1 else "is"} not counted above: {items}. A margin '
+            f'is the difference of two dates, and both have to come from a document that states '
+            f'them. These rows keep their approval and their decision page; they re-enter the '
+            f'statistic if the missing date is documented.</div>')
     if ex:
         names = ", ".join(sorted(r["ticker"] for r in ex))
-        disclosure = (
+        disclosure += (
             f'<h2>What this sample can and cannot tell you</h2>'
             f'<div class="note" style="font-size:13.5px;color:#9db3d4;line-height:1.7">'
             f'<b style="color:#f0c86a">The inclusion rule is not independent of the answer.</b> '

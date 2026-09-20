@@ -1,0 +1,50 @@
+Audit 09-20 ORDER 1-4: TLX out of the timing statistic, no goal day from a coarse row, request-time countdown, decisions not rows; ABEO banner; sync-artefact guard
+
+1. P0-A (TLX). site_windows.earliness_allowed is the ONE owner of "may we measure a margin":
+   precision + goal_unsourced (09-18) + decision_date_unsourced (new). build_early_decisions
+   used to carry its own goal_unsourced check; it now calls the owner. TLX row flagged
+   decision_date_unsourced (the 6-K states no FDA action day). Statistic 30 -> 29 (19/7/3)
+   on all three surfaces; the study page names the four provenance exclusions with reasons.
+   Decision page title "Pixclara Approval Announced Sep 14, 2026" (was "... 3 Days Late");
+   meta/FAQ/body say announced, action day not stated; /pdufa/TLX keeps its SOURCED goal date
+   and loses only the margin; /fda-this-month says "As announced by the sponsor on ...".
+   API CORE_EXTRA +decision_source, decision_source_url, decision_date_note,
+   decision_date_unsourced, goal_unsourced (documented on /developers).
+   Guards: cross-surface earliness check now catches LATE margins too, and asserts the study
+   page lists no gated row. fix_unsourced_earliness_prose strips margins both ways and
+   distinguishes "goal unsourced" (withdraw goal facts) from "action date unsourced" (keep goal,
+   drop margin). fix_meta_lengths recognises the announced answer format so it no longer
+   regenerates it.
+   Found underneath: /pdufa/TLX carried "Goal date passed - no decision disclosed as of
+   September 20" above "Approved September 14" for six days. mark_goal_date_passed now retires
+   any ledger entry whose row is Decided (banner stripped, tense restored, entry dropped).
+
+2. P0-B. build_monthly_decisions read a coarse row's `d` (the window END) as a goal day and wrote
+   "Ahead of its September 30 goal date" for TAK/PFE/ROIV/PTGX (sponsor-stated Q3) and
+   "November 30" for BAYRY (withdrawn). It now renders the window via site_windows and states no
+   earliness against it. NEW GUARD tests/test_no_goal_day_from_coarse_row.py, proven against
+   the committed page: 5 FAIL -> 0.
+
+3. P0-C. /build-info.json is served by api/build-info.mjs (vercel.json rewrite): next_days,
+   days_since_goal, next_status recomputed from the Eastern date at request time; edge cache
+   <= 10 min and expires at Eastern midnight; as_of_eastern + served_at in the body. The static
+   file stays for the guards (api/_build-info.json is the function's input; /build-info.json
+   excluded from deploy).
+
+4. merge_partners stripped the parenthesis before splitting on it, so INCY/MIRM zilurgisertib
+   never merged; the lede/meta counted 3 dates for 2 decisions. Split first; lede and meta count
+   dates and, when different, decisions: "2 FDA decision dates remain in September 2026".
+
+ALSO
+- /pdufa/ABEO (partner ticker for FAYUVI): goal date passed on 09-19, decision filed under RARE,
+  guard test_no_past_target_pending_pages began failing this morning. Hand-linked ABEO ->
+  RARE-2026-09-17; page says Approved 2026-09-17, 2 days early.
+- SYNC CLIENT IN THE BUILD TREE: at 14:01:03 Pacific 260 "index (1).html" copies appeared and
+  133 tracked pages were deleted mid-rebuild (GoogleDriveFS running). Restored from git, copies
+  removed, three " (1)" copies of source files removed, five stale empty page dirs removed.
+  NEW GUARD tests/test_no_sync_artefacts.py refuses to publish a tree with " (N)" duplicates or
+  empty page directories.
+- Builder note 2026-09-20_BUILDER_the_announcement_that_was_wearing_an_action_date.md; INDEX
+  regenerated (includes the two 09-20 audits).
+
+Guards 94/94.

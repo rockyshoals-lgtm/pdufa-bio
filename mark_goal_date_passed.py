@@ -52,9 +52,45 @@ def main():
         return 0
     today = _eastern_today()
     n = 0
+    # Audit 09-20 (found while working P0-A): the docstring said "when a decision is later
+    # published ... the ledger entry is removed" and nothing ever removed it. /pdufa/TLX carried
+    # "Goal date passed - no decision has been disclosed as of September 20, 2026" six days after
+    # Pixclara's approval was published on the same page. A ledger entry whose dataset row is
+    # Decided is retired here: block stripped, pending-tense phrases restored, entry dropped.
+    decided = set()
+    try:
+        src_ds = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
+                         errors="replace").read().replace("\x00", "")
+        rows_ds, _ = json.JSONDecoder().raw_decode(src_ds[src_ds.find("["):])
+        for r in rows_ds:
+            if r.get("type") == "PDUFA" and str(r.get("st") or "").lower() == "decided":
+                decided.add((str(r.get("t") or "").upper(), str(r.get("d") or "")[:10]))
+    except Exception:
+        pass
+    keep = []
     for e in entries:
         slug = e["slug"]
         p = os.path.join(SITE, "pdufa", slug, "index.html")
+        tk = slug.split("-")[0].upper()
+        if (tk, str(e.get("goal_date") or "")[:10]) in decided:
+            if os.path.isfile(p):
+                doc = io.open(p, encoding="utf-8", errors="replace").read()
+                new = doc
+                if B in new:
+                    new = new.split(B, 1)[0] + new.split(E, 1)[1]
+                g = pretty(e["goal_date"])
+                for tail in (" to treat", " for"):
+                    new = new.replace(f" was under FDA review, with a goal date of {g} that has "
+                                      f"passed with no public decision,{tail}", " is under FDA review" + tail)
+                new = new.replace(f"candidate whose FDA goal date of {g} passed with no public decision, for",
+                                  "candidate under FDA review for")
+                if new != doc:
+                    io.open(p, "w", encoding="utf-8").write(new)
+                    n += 1
+            print(f"  /pdufa/{slug}: RETIRED -- the dataset row is Decided; passed-banner removed, "
+                  f"ledger entry dropped")
+            continue
+        keep.append(e)
         if not os.path.isfile(p):
             print(f"  SKIP /pdufa/{slug}: page missing")
             continue
@@ -140,7 +176,12 @@ def main():
             n += 1
             print(f"  /pdufa/{slug}: goal date {goal} passed, stated (application "
                   f"type {app})")
-    print(f"goal-date-passed: {n} page(s) updated from {len(entries)} ledger entr(ies)")
+    if len(keep) != len(entries):
+        led = json.load(io.open(LEDGER, encoding="utf-8"))
+        led["passed"] = keep
+        io.open(LEDGER, "w", encoding="utf-8").write(json.dumps(led, indent=1, ensure_ascii=False) + "\n")
+    print(f"goal-date-passed: {n} page(s) updated from {len(entries)} ledger entr(ies)"
+          + (f", {len(entries) - len(keep)} retired (decided)" if len(keep) != len(entries) else ""))
     return 0
 
 

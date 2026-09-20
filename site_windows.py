@@ -125,15 +125,37 @@ def earliness_allowed(row):
     DOWNGRADED them: a goal we cannot trace to a filing stops being `dp: "day"` and becomes a
     month, quarter or year. So `dp == "day"` is exactly the statement "we stand behind this day",
     and it is the same gate build_early_decisions.collect() uses. One rule, one meaning.
+
+    TWO MORE GATES, BOTH PROVENANCE (2026-09-18 and 2026-09-20). A margin is a difference of
+    two dates, and either side can be the one we do not actually hold:
+      _d.goal_unsourced            the goal date was never sponsor-stated (MRK Lipfendra, OTSKY
+                                   centanafadine: the action date had been copied into the goal
+                                   field). Excluded from the statistic on 09-18; now excluded
+                                   from every renderer by the same function.
+      _d.decision_date_unsourced   the DECISION date is the sponsor's announcement day and the
+                                   document does not state when the FDA acted (TLX Pixclara,
+                                   audit 09-20 P0-A: goal Friday 09-11, announcement Monday
+                                   09-14 -- the most common approval pattern there is, and a
+                                   "+3 days late" measured against it is not a measurement).
+    build_early_decisions.collect() had grown its own goal_unsourced check while this function
+    did not have one; that is two owners. This is the only one now.
     """
-    return is_day(row)
+    d = row.get("_d") or {}
+    return is_day(row) and not d.get("goal_unsourced") and not d.get("decision_date_unsourced")
 
 
 def earliness_refusal(row):
     """The sentence a page uses instead of a number, saying why."""
+    d = row.get("_d") or {}
     if not is_day(row):
         return ("We do not state how early this decision was: the goal date we hold for it is "
                 "a window, not a day, so there is no day to measure against.")
+    if d.get("decision_date_unsourced"):
+        return ("We do not state how early or late this decision was: the date we hold is the "
+                "day the sponsor announced the approval, and its announcement does not state "
+                "the day the FDA acted. A margin needs both days from a document that states "
+                "them; it will be published if the FDA's letter or Drugs@FDA supplies the action "
+                "date.")
     return ("We do not state how early this decision was: the goal date we had carried for it "
             "was never sourced to a filing or company release, and an unsourced goal cannot "
             "measure earliness.")

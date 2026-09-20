@@ -392,7 +392,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/BMY",
+  "url": "/ticker/BMY",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -503,7 +503,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/JAZZ",
+  "url": "/ticker/JAZZ",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -593,7 +593,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -837,7 +837,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Decided",
-  "url": "/pdufa/LNTH",
+  "url": "/ticker/LNTH",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": {
@@ -917,7 +917,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Decided",
-  "url": "/pdufa/AZN",
+  "url": "/ticker/AZN",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": {
@@ -959,7 +959,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Decided",
-  "url": "/pdufa/IONS",
+  "url": "/ticker/IONS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": {
@@ -1358,7 +1358,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/EXEL",
+  "url": "/ticker/EXEL",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -1477,7 +1477,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/JAZZ",
+  "url": "/ticker/JAZZ",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -1603,7 +1603,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -1709,7 +1709,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -1804,7 +1804,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1901,7 +1901,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -1953,7 +1953,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -2042,7 +2042,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Decided",
-  "url": "/pdufa/MRNA",
+  "url": "/ticker/MRNA",
   "ua": "2026-08-07T04:03:42Z",
   "_d": {
    "nct_id": {
@@ -2127,7 +2127,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Decided",
-  "url": "/pdufa/LNTH",
+  "url": "/ticker/LNTH",
   "ua": "2026-08-14T19:37:12Z",
   "_d": {
    "nct_id": {
@@ -2597,7 +2597,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Decided",
-  "url": "/pdufa/BMY",
+  "url": "/ticker/BMY",
   "ua": "2026-08-17T21:18:14Z",
   "_d": {
    "nct_id": {
@@ -2707,7 +2707,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Decided",
-  "url": "/pdufa/JAZZ",
+  "url": "/ticker/JAZZ",
   "ua": "2026-08-25T21:19:31Z",
   "_d": {
    "nct_id": {
@@ -2757,7 +2757,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Decided",
-  "url": "/pdufa/ZYME",
+  "url": "/ticker/ZYME",
   "ua": "2026-08-25T21:19:31Z",
   "_d": {
    "nct_id": {
@@ -3010,8 +3010,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Decided",
-  "url": "/pdufa/TLX",
-  "ua": "2026-09-19T21:01:55Z",
+  "url": "/ticker/TLX",
+  "ua": "2026-09-20T21:00:09Z",
   "_d": {
    "nct_id": {
     "nct": "NCT07100730",
@@ -3043,7 +3043,8 @@ export default [
    "decision_source": "Telix 6-K 2026-09-14 (EX-99.1, ASX announcement)",
    "decision_source_url": "https://www.sec.gov/Archives/edgar/data/2007191/000162828026061892/pixclaraapprovalvfinal.htm",
    "decision_quote": "Telix Pharmaceuticals Limited (ASX: TLX, NASDAQ: TLX) today announces that the United States (U.S.) Food and Drug Administration (FDA) has approved its New Drug Application (NDA) for Pixclara (floretyrosine F 18 or 18F-FET)",
-   "decision_date_note": "2026-09-14 is the date of Telix's announcement, which says the FDA 'has approved' without stating the action day; Drugs@FDA holds no Pixclara record yet. The margin against the September 11 goal date will be corrected from the FDA letter if it is dated earlier."
+   "decision_date_note": "2026-09-14 is the date of Telix's announcement (6-K EX-99.1), which says the FDA 'has approved' without stating the action day; Drugs@FDA holds no Pixclara record yet. No margin against the September 11 goal date is published until the FDA letter or Drugs@FDA supplies the action date.",
+   "decision_date_unsourced": true
   },
   "oc": "Approved",
   "dcd": "2026-09-14"
@@ -3361,7 +3362,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/EXEL",
+  "url": "/ticker/EXEL",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -3740,7 +3741,7 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Decided",
-  "url": "/pdufa/ABEO",
+  "url": "/ticker/RARE",
   "ua": "2026-09-19T20:53:10Z",
   "_d": {
    "nct_id": {
@@ -3790,7 +3791,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/MRK-winrevair",
+  "url": "/ticker/MRK",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "indication": "Recently diagnosed pulmonary arterial hypertension (label update)",
@@ -3812,7 +3813,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Decided",
-  "url": "/pdufa/IONS",
+  "url": "/ticker/IONS",
   "ua": "2026-09-05T20:39:06Z",
   "_d": {
    "nct_id": {
@@ -3907,7 +3908,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/MIRM-zilurgisertib",
+  "url": "/ticker/MIRM",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -3965,7 +3966,7 @@ export default [
   "ta": "",
   "cap": "Nano",
   "st": "Decided",
-  "url": "/pdufa/BFRI",
+  "url": "/ticker/BFRI",
   "ua": "2026-09-11T15:58:54Z",
   "_d": {
    "nct_id": {
@@ -4118,7 +4119,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Decided",
-  "url": "/pdufa/PTGX",
+  "url": "/ticker/PTGX",
   "ua": "2026-09-03T01:06:24Z",
   "_d": {
    "nct_id": {
@@ -5056,7 +5057,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY-tecentriq",
+  "url": "/ticker/RHHBY",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
@@ -5148,7 +5149,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/MRK-ifinatamab-deruxtecan",
+  "url": "/ticker/MRK",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -5189,7 +5190,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY-enspryng",
+  "url": "/ticker/RHHBY",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "indication": "Thyroid eye disease (TED)",
@@ -5490,7 +5491,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -5791,7 +5792,7 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/VTRS-mr-141",
+  "url": "/ticker/IRD",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
@@ -5813,7 +5814,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/VTRS-mr-141",
+  "url": "/ticker/VTRS",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -6130,7 +6131,7 @@ export default [
   "ta": "",
   "cap": "Micro",
   "st": "Upcoming",
-  "url": "/pdufa/INO",
+  "url": "/ticker/INO",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -6396,7 +6397,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -6450,7 +6451,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/NVCR-ttfields-therapy",
+  "url": "/ticker/NVCR",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
@@ -6738,7 +6739,7 @@ export default [
   "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/ONC",
+  "url": "/ticker/ONC",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -6809,7 +6810,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -7064,7 +7065,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/NUVL-neladalkib",
+  "url": "/ticker/GSK",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -7118,7 +7119,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Decided",
-  "url": "/pdufa/BAYRY",
+  "url": "/ticker/BAYRY",
   "ua": "2026-09-11T15:58:54Z",
   "_d": {
    "nct_id": null,
@@ -7155,7 +7156,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/COGT-bezuclastinib",
+  "url": "/ticker/COGT",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -7235,7 +7236,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY-giredestrant",
+  "url": "/ticker/RHHBY",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -7268,7 +7269,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/VRTX",
+  "url": "/ticker/VRTX",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -7301,7 +7302,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/EXEL",
+  "url": "/ticker/EXEL",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -7704,7 +7705,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/BMY",
+  "url": "/ticker/BMY",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -7812,7 +7813,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/EXEL",
+  "url": "/ticker/EXEL",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -7862,7 +7863,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/INO",
+  "url": "/ticker/INO",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -7912,7 +7913,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/IONS",
+  "url": "/ticker/IONS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -7933,7 +7934,7 @@ export default [
   "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/JAZZ",
+  "url": "/ticker/JAZZ",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -8141,7 +8142,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/ONC",
+  "url": "/ticker/ONC",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -8241,7 +8242,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -8428,7 +8429,7 @@ export default [
   "ta": "Endocrinology / Metabolic",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/CORT-relacorilant",
+  "url": "/ticker/CORT",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -8453,7 +8454,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/RHHBY-giredestrant-in-combinatio",
+  "url": "/ticker/RHHBY",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -8486,7 +8487,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/MLYS",
+  "url": "/ticker/MLYS",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -8519,7 +8520,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/GILD-anito-cel",
+  "url": "/ticker/GILD",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
@@ -8541,7 +8542,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/PRAX-relutrigine",
+  "url": "/ticker/PRAX",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -8623,7 +8624,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/COGT",
+  "url": "/ticker/COGT",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -8688,7 +8689,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/AZN-ultomiris",
+  "url": "/ticker/AZN",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -8728,7 +8729,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/BAYRY-kerendia",
+  "url": "/ticker/BAYRY",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -8760,7 +8761,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/NVO-am833",
+  "url": "/ticker/NVO",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -9659,7 +9660,7 @@ export default [
   "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/BMY",
+  "url": "/ticker/BMY",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -9738,7 +9739,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/EXEL",
+  "url": "/ticker/EXEL",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -9962,7 +9963,7 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/PRAX-ulixacaltamide",
+  "url": "/ticker/PRAX",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -10029,7 +10030,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/GILD-yeztugo",
+  "url": "/ticker/GILD",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": {
@@ -10096,7 +10097,7 @@ export default [
   "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/AZN",
+  "url": "/ticker/AZN",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -10369,7 +10370,7 @@ export default [
   "ta": "Infectious",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/COGT",
+  "url": "/ticker/COGT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -10440,7 +10441,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/IONS",
+  "url": "/ticker/IONS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -10548,7 +10549,7 @@ export default [
   "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/ONC",
+  "url": "/ticker/ONC",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11066,7 +11067,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/NVS",
+  "url": "/ticker/NVS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11108,7 +11109,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11129,7 +11130,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11183,7 +11184,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/AXSM-axs-12",
+  "url": "/ticker/AXSM",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -11246,7 +11247,7 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/BBIO-encaleret",
+  "url": "/ticker/BBIO",
   "ua": "2026-09-19T22:35:31Z",
   "_d": {
    "nct_id": null,
@@ -11774,7 +11775,7 @@ export default [
   "ta": "Rare disease",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/IONS",
+  "url": "/ticker/IONS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11795,7 +11796,7 @@ export default [
   "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/JAZZ",
+  "url": "/ticker/JAZZ",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11875,7 +11876,7 @@ export default [
   "ta": "CNS",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/LNTH",
+  "url": "/ticker/LNTH",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11896,7 +11897,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/NVS",
+  "url": "/ticker/NVS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -11917,7 +11918,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12137,7 +12138,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12245,7 +12246,7 @@ export default [
   "ta": "Rare disease",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/IONS",
+  "url": "/ticker/IONS",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12316,7 +12317,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12337,7 +12338,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12619,7 +12620,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12719,7 +12720,7 @@ export default [
   "ta": "Metabolic",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/LLY",
+  "url": "/ticker/LLY",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12761,7 +12762,7 @@ export default [
   "ta": "Nephrology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/ONC",
+  "url": "/ticker/ONC",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12811,7 +12812,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -12901,7 +12902,7 @@ export default [
   "ta": "Other",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/ONC",
+  "url": "/ticker/ONC",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -13109,7 +13110,7 @@ export default [
   "ta": "Immunology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/LLY",
+  "url": "/ticker/LLY",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -13201,7 +13202,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/SMMT",
+  "url": "/ticker/SMMT",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
@@ -13243,7 +13244,7 @@ export default [
   "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
-  "url": "/pdufa/TLX",
+  "url": "/ticker/TLX",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,

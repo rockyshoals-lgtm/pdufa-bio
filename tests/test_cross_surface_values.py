@@ -143,12 +143,24 @@ def main():
         if allowed.get(key, True):
             continue
         doc = text(p)
-        hit = re.search(r"\b\d+\s+[Dd]ays?\s+[Ee]arly\b|\b\d+\s+days before its\b", doc)
+        # Audit 09-20 P0-A: the 09-14 check looked only for EARLY margins; TLX Pixclara shipped
+        # "3 Days Late" in its <title> against an announcement date. A margin is a margin.
+        hit = re.search(r"\b\d+\s+[Dd]ays?\s+([Ee]arly|[Ll]ate)\b|\b\d+\s+days (before|after) (its|the)\b", doc)
         if hit:
-            print(f"  FAIL /fda-decision/{slug}: renders {hit.group(0)!r}, but this row's goal "
-                  f"date is not a sourced day. An unsourced goal rounded to a late date "
-                  f"manufactures the largest possible earliness. Run rewrite_decision_snippets.py.")
+            print(f"  FAIL /fda-decision/{slug}: renders {hit.group(0)!r}, but one of this row's "
+                  f"two dates has no document behind it (goal not a sourced day, goal_unsourced, "
+                  f"or decision_date_unsourced). Run rewrite_decision_snippets.py and "
+                  f"fix_unsourced_earliness_prose.py.")
             fail += 1
+    # the timing statistic itself must not list a gated row
+    tp = os.path.join(SITE, "research", "fda-decision-timing", "index.html")
+    if os.path.exists(tp):
+        doc = io.open(tp, encoding="utf-8", errors="replace").read()
+        for (tk, dcd), ok in allowed.items():
+            if not ok and re.search(rf'href="/fda-decision/{tk}-{dcd}"', doc):
+                print(f"  FAIL /research/fda-decision-timing lists {tk}-{dcd}, a row whose goal or "
+                      f"action date has no document behind it. Run build_early_decisions.py.")
+                fail += 1
     for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
         tk = slug.split("-")[0].upper()

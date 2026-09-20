@@ -340,8 +340,10 @@ def main():
                 # clobbered 437 of them back to label format an hour after they
                 # shipped -- CI red twice before the fight was found. This script only
                 # rebuilds decision descs that are NOT answer-format (legacy pages).
+                # 2026-09-20: "approval was announced by the sponsor on" is the answer format for
+                # a row whose decision date is an announcement day (decision_date_unsourced).
                 if re.search(r"was approved on|received a Complete Response Letter on|"
-                             r"was withdrawn on", cur):
+                             r"was withdrawn on|approval was announced by the sponsor on", cur):
                     new = cur
                 else:
                     new = decision_desc(md.group(1), md.group(2), doc)
@@ -363,7 +365,7 @@ def main():
             md2 = re.match(r"^/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$",
                            "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/"))
             nt = decision_title(md2.group(1), md2.group(2)) if md2 else None
-            if nt and re.search(r"\b(Approved|CRL|Withdrawn)\b.*\| pdufa\.bio$", cur_t) \
+            if nt and re.search(r"\b(Approved|Approval Announced|CRL|Withdrawn)\b.*\| pdufa\.bio$", cur_t) \
                     and " FDA Decision" in cur_t and not cur_t.startswith(md2.group(1) + " FDA Decision ("):
                 nt = None          # answer-format title: the snippet rewriter owns it
 

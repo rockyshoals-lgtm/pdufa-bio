@@ -5,3 +5,6 @@ _*bak*
 *.preprogate
 *xbak*
 _pdufa_xbak
+
+# 2026-09-20 P0-C: /build-info.json is served by api/build-info.mjs (request-time countdown); the static copy is the guards' input only
+/build-info.json

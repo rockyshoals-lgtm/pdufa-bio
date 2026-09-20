@@ -96,6 +96,12 @@ def main():
              for r in rows if r.get("type") == "PDUFA"
              and str(r.get("st", "")).lower() == "decided" and r.get("dcd") and r.get("d")
              and earliness_allowed(r)}
+    # Audit 09-20 P0-A: a row whose decision date is the sponsor's ANNOUNCEMENT day (the
+    # filing does not state when the FDA acted) must not be titled "Approved Sep 14, 2026,
+    # 3 Days Late" -- the snippet is the string an answer engine lifts. Say "announced".
+    announced = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10])
+                 for r in rows if r.get("type") == "PDUFA"
+                 and (r.get("_d") or {}).get("decision_date_unsourced")}
 
     # listing rows as a drug-name fallback for drug-less titles ("AQST FDA Decision
     # 2026-02-02: CRL") -- the /decisions row states "CRL: Anaphylm" for the same slug
@@ -148,7 +154,10 @@ def main():
                                           # re-enter as fake sentence stops
         while drug.count("(") > drug.count(")"):   # nor an earlier mid-paren cut
             drug = drug[:drug.rindex("(")].rstrip(" ,(-/")
-        if oc == "Approved":
+        if oc == "Approved" and (tk, dcd) in announced:
+            word_t, verb = (f"Approval Announced {pretty(dcd, short=True)}",
+                            "approval was announced by the sponsor on")
+        elif oc == "Approved":
             tdelta = (f", {-delta} Days Early" if delta and delta < 0 else
                       f", {delta} Days Late" if delta and delta > 0 else "")
             word_t, verb = f"Approved {pretty(dcd, short=True)}{tdelta}", "was approved on"
@@ -171,7 +180,11 @@ def main():
                     dshort = dshort[:dshort.rindex("(")].rstrip(" ,(-/")
             title = f"{dshort}{suffix}"
 
-        if delta is None or delta == 0:
+        if (tk, dcd) in announced:
+            # fits fix_meta_lengths' 158-char budget with a 40-char drug name; over budget that
+            # step regenerates the whole snippet in its own shape and the caveat is lost
+            when = f"{pretty(dcd)}; the FDA action day is not stated, so no goal-date margin is published"
+        elif delta is None or delta == 0:
             when = f"{pretty(dcd)}" + (" (its PDUFA goal date)" if delta == 0 else "")
         elif delta < 0:
             when = f"{pretty(dcd)}, {-delta} days before its {pretty(goal)} PDUFA goal date"
@@ -193,6 +206,8 @@ def main():
             core = f"{tk}: {drug} {verb} {when}."          # drop the long company name
             desc = core if len(core) <= 160 else \
                 f"{tk}: {dshort} {verb} {when}."           # then the long drug name
+        if len(desc) > 158 and (tk, dcd) in announced:     # the caveat must survive fix_meta_lengths
+            desc = f"{tk}: {drug.split(' (')[0]} {verb} {when}."
 
         new = re.sub(r"<title[^>]*>.*?</title>",
                      f"<title>{_html.escape(title)}</title>", doc, count=1, flags=re.S)

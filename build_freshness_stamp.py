@@ -198,16 +198,25 @@ def main():
     # next_days is NULL when next_status is "awaiting"; the page script derives its own display
     # from next_date and never needed next_days. `days_since_goal` says how long it has waited.
     awaiting = bool(nxt and nxt[2] < 0)
+    # Audit 09-20 P0-C: next_days was computed ONCE at build (about 20:26 Eastern) and served
+    # unchanged for the next ~24h, so it read one day high for almost the whole of every day.
+    # The static file now carries the Eastern date the count was true for (`as_of_eastern`);
+    # /build-info.json is served by api/build-info.mjs, which recomputes next_days,
+    # days_since_goal and next_status from the Eastern date AT REQUEST TIME. This file is the
+    # function's input (api/_build-info.json) and the guards' input (build-info.json, not
+    # deployed -- see .vercelignore); it is never what a consumer reads.
     info = {"built": now_iso,
             "commit": commit,
             "commit_at_build": commit,
+            "as_of_eastern": _eastern_today().isoformat(),
             "next_date": nxt[0].isoformat() if nxt else None,
             "next_ticker": nxt[1] if nxt else None,
             "next_days": (None if awaiting else nxt[2]) if nxt else None,
             "next_status": ("awaiting" if awaiting else "upcoming") if nxt else None,
             "days_since_goal": (-nxt[2] if awaiting else None) if nxt else None}
     if not a.dry_run:
-        json.dump(info, open(os.path.join(SITE, "build-info.json"), "w", encoding="utf-8"), indent=1)
+        for out in (os.path.join(SITE, "build-info.json"), os.path.join(SITE, "api", "_build-info.json")):
+            json.dump(info, open(out, "w", encoding="utf-8"), indent=1)
     if nxt:
         print(f"next FDA decision: {nxt[1]} on {nxt[0]} "
               + (f"(goal date passed {-nxt[2]} days ago; awaiting)" if awaiting
