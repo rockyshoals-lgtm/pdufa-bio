@@ -1,0 +1,11 @@
+@echo off
+cd /d C:\Users\dcmoo\Documents\Python\9realms
+set PYTHONIOENCODING=utf-8
+set PY=C:\Python314\python.exe
+del /q _chain_0919.log 2>nul
+for %%s in (sync_runup_study_size.py build_home_board.py mark_calendar_decided.py mark_calendar_awaiting.py build_early_decisions.py sync_learn_timing.py inject_calendar_explainer.py build_monthly_decisions.py sync_decisions_listing.py sync_api_from_pages.py refresh_provenance_counts.py build_decision_faq.py rewrite_decision_snippets.py fix_unsourced_earliness_prose.py sync_jsonld_name_to_title.py build_drug_pages.py add_drug_schema.py build_ticker_hubs.py enrich_ticker_hubs.py build_condition_pages.py build_today_page.py build_pdufa_event_pages.py refresh_moved_pdufa_pages.py normalize_calendar_windows.py mark_event_pages_decided.py fix_event_page_windows.py mark_goal_date_passed.py fix_calendar_windowed_rows.py canonicalise_duplicate_event_pages.py fix_dead_internal_links.py build_calendar_feed.py sync_calendar_itemlist.py build_hub_lede.py build_hub_faq.py build_breadcrumbs.py strip_dashes.py fix_meta_lengths.py rebuild_nav.py apply_legal_footer.py build_sitemap.py build_freshness_stamp.py build_date_modified.py) do (
+  echo == %%s >> _chain_0919.log
+  %PY% -X utf8 %%s >> _chain_0919.log 2>&1
+  if errorlevel 1 echo    ^^^ EXIT %%s nonzero >> _chain_0919.log
+)
+echo CHAIN DONE >> _chain_0919.log

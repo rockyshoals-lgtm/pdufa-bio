@@ -80,6 +80,12 @@ jobs:
       - name: "Run-up study: refresh cohort figures quoted on every decision page"
         run: python refresh_cohort_figures.py
 
+      # 2026-09-19 (task #82): the study's SIZE was typed by hand on /decisions, /pricing,
+      # /developers, /vktx and /fda-approval-rate (1,827 / 1,786 / 1,888 while the study held
+      # 1,852). One owner now; tests/test_runup_study_size_one_owner.py asserts the render.
+      - name: "Run-up study: one size everywhere prose states it (from runup_study_stats.json)"
+        run: python sync_runup_study_size.py
+
       - name: "Run-up study: rebuild /runup-by-year from the master dataset"
         run: python build_runup_by_year.py
 

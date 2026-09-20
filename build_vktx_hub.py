@@ -27,6 +27,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 OUT = os.path.join(SITE, "vktx")
 TODAY = dt.date.today()
+# 2026-09-19 (task #82): the run-up study size was a typed literal here ("1,827") while the study
+# held 1,852. runup_study_stats.json is the one owner of that number; sync_runup_study_size.py
+# and its guard hold every other prose surface to the same value.
+RUNUP_N = f"{int(json.load(open(os.path.join(HERE, 'runup_study_stats.json'), encoding='utf-8'))['n_events']):,}"
 
 # Every row: (date, what happened, source URL). Nothing here is inferred.
 EVENTS = [
@@ -192,7 +196,7 @@ succeed, or a view on whether the oral data was good. Those are the four things 
 for this ticker are mostly made of, and they are the four things we have no defensible basis for.
 What we will do is state the guided timing at the precision the company used, log every filing, and
 measure the reaction after the fact. For how comparable events have behaved historically, see the
-<a href="/runup-by-year">run-up study</a> (1,827 FDA decisions) and the
+<a href="/runup-by-year">run-up study</a> ({RUNUP_N} FDA decisions) and the
 <a href="/research/readout-reaction">readout-reaction study</a> (1,752 clinical readouts).</p>
 
 <div class="legal"><a href="/about" style="color:#8aa0bf">About</a> &middot; <a href="/corrections" style="color:#8aa0bf">Corrections</a> &middot; <a href="/methodology" style="color:#8aa0bf">Methodology</a><br><br>

@@ -80,3 +80,27 @@ Chasing that into the September page's structured data: the month pages' JSON-LD
 - Carried: 9 unbacked window pages (ratchet 9; the 5 unsourced upcoming rows ABBV / AZN / BAYRY / NVO×2 await your downgrade-or-withdraw ruling); 22 readout leads (#52); `/calendar/2025` unmarked rows; TA back-fill.
 
 *Live verification: `_verify_live_0919.py`, run against production from a non-browser client after each deploy. Commits `00106da20`, `993ea9028` (CI), `850d5d1b4`.*
+
+---
+
+## 7. Appended 17:25 Pacific = 20:25 Eastern = 2026-09-20 00:25 UTC -- task #82 done: one size for the run-up study
+
+David: *"fix runup study size across the website to where it's accurate."*
+
+**The accurate number** is whatever `runup_study_stats.json` says, because `runup_study_stats.py` rebuilds it from `pdufa_runup_bifrost_v2.csv` on every CI run: today **1,852 PDUFA decisions** (2020-01-08 to 2026-09-18), 1,321 approvals / 531 CRLs = **71.3%**, and **1,781** of them (96.2%) carry the full daily T-120 → T+5 price path. The home board and `/runup-by-year` already read it. Five other surfaces had the number typed in by hand in July and never touched again:
+
+| surface | said | now | which statistic |
+|---|---|---|---|
+| `/decisions` | 1,827 decisions, 70.9% approved | 1,852, 71.3% | n_events, approval_rate |
+| `/pricing` | "the 1,827-event T-120→T+5 daily data" | 1,781-event | t120_coverage_n (Pro's export is the per-event daily path; only events with a path count) |
+| `/developers` | "price path for 1,786 FDA decisions" | 1,781 | t120_coverage_n |
+| `/vktx` | run-up study (1,827) -- a literal in `build_vktx_hub.py` | 1,852, read from the stats file | n_events |
+| `/fda-approval-rate` | "first-cycle approval rate 73.5%, n=1,888" | "approval rate, all review cycles 71.3%, n=1,852" | approval_rate, n_events |
+
+**The approval-rate page needed more than a number swap.** The run-up dataset has no review-cycle column, so a *first-cycle* rate cannot be computed from it, and I could not reproduce 73.5% / 1,888 from any file in the repository. The block now says what the figure is -- approvals ÷ (approvals + CRLs) across all review cycles -- and the comparison to FDA's first-cycle reports is restated honestly: a resubmission after a CRL is approved far more often than a first submission, so an all-cycle rate is the *flattering* one, and ours is still below the FDA's. The same page's "ran about 70-74% in 2024-26" was also wrong (2026 is at 85.3% so far, n=156) and is now generated from `by_year`: "74.8% in 2024, 70.0% in 2025 and 85.3% in 2026 so far".
+
+**Owner and guard.** `sync_runup_study_size.py` (new CI step, right after the stats refresh) rewrites those anchors from the stats file, idempotently. `tests/test_runup_study_size_one_owner.py` asserts the render on the seven anchored surfaces **and** does a census: any thousands-count within 80 characters of "run-up study" / "run-up dataset" / "T-120→T+5" on any indexable page must be 1,852 or 1,781 (the conference run-up study, 1,425 presentations, is excluded by name). Proven 0 → planted 1,827 on `/decisions` → 1 → sync heals → 0.
+
+**Found by the census, fixed:** two stale copies of the homepage were publicly served with `robots index,follow` -- `/index_redesign.html` and `/_home_pdufa_backup.html` still said "73 upcoming PDUFAs · 10 decided in 2026 · 1,754 events in the run-up study". Every builder already skipped them; Vercel did not. Moved out of `pdufa_site_src` into `_site_attic/` (not deployed); they 404 now. The other top-level `.html` files are either redirected (`/today`, `/app`), `noindex` placeholders ("locked"), or served on purpose (`/pricing`, `/surges`, `/runup`); `/holding.html` and `/ping.html` are index-eligible utility pages with no data on them -- left alone, noted.
+
+Not touched, on purpose: `/corrections` "n=1,792" is the record of a past correction and stays as written; `/research/readout-reaction` is the readout study (1,752), a different dataset with its own owner.

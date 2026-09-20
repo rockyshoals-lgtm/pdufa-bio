@@ -1,0 +1,26 @@
+09-19d (task #82): one size for the run-up study everywhere prose states it; two stale homepage copies taken off the air
+
+The study's size lives in runup_study_stats.json (rebuilt from pdufa_runup_bifrost_v2.csv every
+CI run): 1,852 PDUFA decisions 2020-01-08..2026-09-18, 71.3% approved, 1,781 with the full daily
+T-120->T+5 path. Home and /runup-by-year already read it. Five surfaces had the number typed by
+hand in July and never moved:
+  /decisions          1,827 / 70.9%  -> 1,852 / 71.3%           (n_events, approval_rate)
+  /pricing            1,827-event    -> 1,781-event             (t120_coverage_n: Pro's export is the per-event path)
+  /developers         1,786          -> 1,781                   (t120_coverage_n)
+  /vktx               1,827 literal in build_vktx_hub.py -> read from the stats file
+  /fda-approval-rate  "first-cycle approval rate 73.5%, n=1,888" -> "approval rate, all review
+                      cycles 71.3%, n=1,852". The dataset carries no review-cycle flag, so no
+                      first-cycle rate can be computed from it and 73.5%/1,888 had no reproducible
+                      source. The FDA comparison is restated honestly (an all-cycle rate is the
+                      flattering one; ours is still lower). "ran about 70-74% in 2024-26" was also
+                      wrong (2026: 85.3% so far) and is now generated from by_year.
+
+- sync_runup_study_size.py: the owner; new CI step after refresh_cohort_figures; idempotent.
+- tests/test_runup_study_size_one_owner.py: seven anchored surfaces + a census (any thousands
+  count within 80 chars of "run-up study"/"run-up dataset"/"T-120->T+5" on any indexable page
+  must be 1,852 or 1,781; the conference run-up study is excluded by name). Proven 0 -> planted
+  1,827 on /decisions -> 1 -> sync heals -> 0.
+- The census found /index_redesign.html and /_home_pdufa_backup.html served live with
+  robots index,follow, still saying "73 upcoming PDUFAs, 10 decided in 2026, 1,754 events".
+  Every builder already skipped them; Vercel did not. Moved to _site_attic/ (not deployed).
+- Builder note section 7 appended; INDEX regenerated.
