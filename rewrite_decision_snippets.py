@@ -102,6 +102,11 @@ def main():
     announced = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10])
                  for r in rows if r.get("type") == "PDUFA"
                  and (r.get("_d") or {}).get("decision_date_unsourced")}
+    # 2026-09-20 (moat audit item 2): where the FDA's own letter is held, its date is the action
+    # date and the page's date is the announcement day. Title and answer carry the FDA date.
+    fda_dates = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): str((r.get("_d") or {}).get("fda_action_date"))
+                 for r in rows if r.get("type") == "PDUFA" and (r.get("_d") or {}).get("fda_action_date")
+                 and str((r.get("_d") or {}).get("fda_action_date")) != str(r.get("dcd", ""))[:10]}
 
     # listing rows as a drug-name fallback for drug-less titles ("AQST FDA Decision
     # 2026-02-02: CRL") -- the /decisions row states "CRL: Anaphylm" for the same slug
@@ -161,6 +166,9 @@ def main():
             tdelta = (f", {-delta} Days Early" if delta and delta < 0 else
                       f", {delta} Days Late" if delta and delta > 0 else "")
             word_t, verb = f"Approved {pretty(dcd, short=True)}{tdelta}", "was approved on"
+        elif oc == "CRL" and (tk, dcd) in fda_dates:
+            word_t, verb = (f"CRL {pretty(fda_dates[(tk, dcd)], short=True)}",
+                            "received a Complete Response Letter dated")
         elif oc == "CRL":
             word_t, verb = (f"CRL {pretty(dcd, short=True)}",
                             "received a Complete Response Letter on")
@@ -180,7 +188,13 @@ def main():
                     dshort = dshort[:dshort.rindex("(")].rstrip(" ,(-/")
             title = f"{dshort}{suffix}"
 
-        if (tk, dcd) in announced:
+        if (tk, dcd) in fda_dates:
+            fd = fda_dates[(tk, dcd)]
+            fdelta = (dt.date.fromisoformat(fd) - dt.date.fromisoformat(goal)).days if goal else None
+            when = (f"{pretty(fd)} (announced {pretty(dcd)})"
+                    + (", its PDUFA goal date" if fdelta == 0 else
+                       f", {fdelta:+d} days from its {pretty(goal)} PDUFA goal date" if fdelta is not None else ""))
+        elif (tk, dcd) in announced:
             # fits fix_meta_lengths' 158-char budget with a 40-char drug name; over budget that
             # step regenerates the whole snippet in its own shape and the caveat is lost
             when = f"{pretty(dcd)}; the FDA action day is not stated, so no goal-date margin is published"

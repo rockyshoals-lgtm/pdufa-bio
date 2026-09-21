@@ -190,7 +190,8 @@ def main():
     # after CRL" from this file would be the decision-timing selection bias all over again.
     crl_counts = None
     try:
-        _cp = os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
+        from capture_crl_corpus import newest_corpus as _nc
+        _cp = _nc() or os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
         _cd = json.load(open(_cp, encoding="utf-8"))
         _recs = (_cd.get("results") if isinstance(_cd, dict) else _cd) or []
         _ap = sum(1 for r in _recs if r.get("approval_status") == "Approved")

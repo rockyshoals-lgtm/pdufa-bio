@@ -154,9 +154,18 @@ def collect(year):
             continue                       # price-inferred: excluded by the inclusion rule
         if not re.search(r'href="https?://(?!www\.pdufa\.bio)', doc):
             continue                       # no primary source linked
-        delta = (dt.date.fromisoformat(actual) - dt.date.fromisoformat(goal)).days
+        # 2026-09-20 (moat audit item 2, and the mirror of P0-A): where we hold the FDA's own
+        # letter, the letter states the ACTION date and that is what a margin measures. ACHV's
+        # CRL is dated Friday June 20 (its goal day); the company announced it Monday June 22.
+        # UNCY's is dated June 29 (its goal day); announced June 30. Both had been counted as
+        # "late" against announcement days. The page slug keeps the announcement day (it is the
+        # page's id); the statistic uses the FDA's date and the row carries both.
+        fda_date = str((r.get("_d") or {}).get("fda_action_date") or "")
+        measured = fda_date if re.match(r"^\d{4}-\d{2}-\d{2}$", fda_date) else actual
+        delta = (dt.date.fromisoformat(measured) - dt.date.fromisoformat(goal)).days
         out.append({"ticker": tk, "drug": r.get("name") or "", "goal": goal,
-                    "actual": actual, "delta": delta, "outcome": r.get("oc") or "",
+                    "actual": measured, "announced": actual if measured != actual else None,
+                    "delta": delta, "outcome": r.get("oc") or "",
                     "slug": f"{tk}-{actual}"})
     out.sort(key=lambda x: x["delta"])
     return out
@@ -190,8 +199,9 @@ def main():
         f'border-radius:10px;padding:11px 13px;margin:8px 0;color:#eef4fc">'
         f'<span><b>{esc(r["ticker"])}</b> &middot; {esc(str(r["drug"])[:38])}</span>'
         f'<span style="color:#9db3d4">goal {esc(pretty(r["goal"]))} &rarr; '
-        f'<b style="color:#eef4fc">{esc(pretty(r["actual"]))}</b> '
-        f'<b style="color:{"#46d17f" if r["delta"] < 0 else "#9db3d4"}">'
+        f'<b style="color:#eef4fc">{esc(pretty(r["actual"]))}</b>'
+        + (f' <span style="font-size:12px">(FDA letter date; announced {esc(pretty(r["announced"]))})</span>' if r.get("announced") else "")
+        + f' <b style="color:{"#46d17f" if r["delta"] < 0 else "#9db3d4"}">'
         f'{r["delta"]:+d} days</b></span></a>' for r in rec)
 
     if enough:

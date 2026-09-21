@@ -10,6 +10,7 @@
 
 
 - **2026-09-20b note (moat data sweep two)** — `2026-09-20b_moat_data_sweep_two.md` — 2026-09-20, 22:10 UTC = 18:10 Eastern = 15:10 Pacific. Facts and file contents only. Not investment advice.
+- **2026-09-20b BUILDER (the count is real the rate is a release policy)** — `2026-09-20b_BUILDER_the_count_is_real_the_rate_is_a_release_policy.md` — 2026-09-20, written 19:15 Pacific = 22:15 Eastern = 2026-09-21 02:15 UTC. Per RULE 1 every time here carries its zone. Facts and file contents only; not investment advice.
 - **2026-09-20 audit (audit accuracy seo ai)** — `2026-09-20_audit_accuracy_seo_ai.md` — 2026-09-20, measured 20:40 UTC = 16:40 Eastern = 13:40 Pacific (Sunday). Per RULE 1 every time carries its zone. API asof is Eastern; Vercel and GitHub are UTC; the machine is Pacific.
 - **2026-09-20 BUILDER (the announcement that was wearing an action date)** — `2026-09-20_BUILDER_the_announcement_that_was_wearing_an_action_date.md` — 2026-09-20, written 14:20 Pacific = 17:20 Eastern = 21:20 UTC (Sunday). Per RULE 1 every time here carries its zone. Facts and build mechanics only; not investment advice.
 - **2026-09-19 BUILDER (two approvals the site missed and a page I said did not exist)** — `2026-09-19_BUILDER_two_approvals_the_site_missed_and_a_page_I_said_did_not_exist.md` — 2026-09-19, written 14:30 Pacific = 17:30 Eastern = 21:30 UTC. Per RULE 1 every time here carries its zone. Facts and build mechanics only; not investment advice.

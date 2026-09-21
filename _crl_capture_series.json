@@ -1,0 +1,29 @@
+{
+ "_what": "One row per check of openFDA transparency/crl: the FDA's CRL release as a time series. total/approved/unapproved are openFDA's own counts (approval_status). A snapshot file is written only when the release changed. The first two rows are the hand-made snapshots that predate capture_crl_corpus.py.",
+ "rows": [
+  {
+   "checked": "2026-06-22",
+   "last_updated": "2026-06-22",
+   "total": 439,
+   "approved": 309,
+   "unapproved": 130,
+   "snapshot": "CRL_corpus_openFDA_2026-06-22.json"
+  },
+  {
+   "checked": "2026-08-29",
+   "last_updated": "2026-08-26",
+   "total": 458,
+   "approved": 309,
+   "unapproved": 149,
+   "snapshot": "CRL_corpus_openFDA_2026-08-29.json"
+  },
+  {
+   "checked": "2026-09-20",
+   "last_updated": "2026-08-13",
+   "total": 458,
+   "approved": 309,
+   "unapproved": 149,
+   "snapshot": null
+  }
+ ]
+}

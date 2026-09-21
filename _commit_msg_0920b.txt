@@ -1,0 +1,33 @@
+Moat audit 09-20b items 1-3: /crl reconciled to the corpus with the since-approved count and the by-year shape; CRL capture as a series; four letters read against the PDF; two "late" decisions were announcement lag
+
+1. /crl: 458 records -> 455 listed (13 odd-named FDA files the filter dropped, now URL-encoded;
+   2 verbatim duplicates; 1 under review for release). New block: what a CRL is, 309 of 458
+   letters went to applications the FDA has since approved (openFDA approval_status; the FDA's
+   own release wording "associated with since-approved applications"), by-year split showing
+   the release policy (2023 and earlier: approved-only; 2025+: unapproved-only), and why no
+   rate is computed from it. openFDA's field yaml does not document approval_status; the live
+   count endpoint was read (309/149). Guard tests/test_crl_hub_counts.py (title, block, table
+   totals == corpus; no percentage rate). Proven 444-page FAIL -> OK.
+3. capture_crl_corpus.py in CI: pages transparency/crl, writes a dated snapshot only when the
+   record set changed (openFDA last_updated is not monotonic), appends _crl_capture_series.json
+   every run; series seeded from the two hand-made snapshots (439 -> 458) and rendered on /crl.
+   Builders and the guard read newest_corpus() instead of a hard-coded file name.
+2. _crl_letter_findings.json: ACHV (NDA 218995, 2026-06-20), UNCY x2 (NDA 218607, 2025-06-27
+   and 2026-06-29), CORT relacorilant (NDA 219398, corrected letter 2026-01-28, action date
+   stated as 2025-12-30) -- page 1 rendered from the FDA PDF, rest pdftotext; deficiency section
+   headings + summaries rendered on the decision pages by link_crl_letters, and "What the FDA
+   said the last time" on /pdufa/CORT and /pdufa/CORT-relacorilant (the Dec 17 resubmission).
+   link_crl_letters had matched ZERO letters since 09-02 (company parsed from a description
+   the snippet rewriter had shortened to "ACHV: ..."); the dataset row owns the company now.
+   Nine pages link their letter; cards carry the LETTER's date (the old card printed the page
+   date on the FDA's letter). Matched rows get _d.fda_action_date + decision_source(_url).
+   FOUND: ACHV's letter is dated its goal day (Jun 20; announced Jun 22) and UNCY's its goal
+   day (Jun 29; announced Jun 30). Timing statistic 29: 19/7/3 -> 19/9/1 on all three
+   surfaces; study rows show "FDA letter date; announced ..."; snippets "CRL Jun 20, 2026",
+   "received a Complete Response Letter dated June 20, 2026 (announced June 22, 2026), its PDUFA
+   goal date". fda_action_date in the API CORE_EXTRA, documented on /developers.
+   fix_meta_lengths and test_decision_snippets recognise the two new answer shapes.
+
+Builder note 2026-09-20b_BUILDER_the_count_is_real_the_rate_is_a_release_policy.md; INDEX.
+Sync artefacts (60 "index (1).html" during the evening rebuild, one " (1)" copy of the chain
+.bat) removed before the guards.

@@ -218,6 +218,12 @@ jobs:
       # Audit 09-02c item 3: we hold 458 FDA CRLs and cited zero. Each CRL decision page
       # now links the FDA-hosted letter PDF when date (letter <= page date <= +4d) and
       # company both match -- a wrong primary source is worse than none, so ambiguity skips.
+      # Moat audit 09-20b item 3: the FDA's CRL release as a time series. Pages openFDA
+      # transparency/crl (5 requests), writes a dated snapshot ONLY when the record set changed,
+      # and appends one row to _crl_capture_series.json every run. Network failure = no-op.
+      - name: "CRL corpus: dated capture of the FDA release (openFDA transparency/crl)"
+        run: python capture_crl_corpus.py || true
+
       - name: FDA CRL letters onto CRL decision pages
         run: python link_crl_letters.py
 

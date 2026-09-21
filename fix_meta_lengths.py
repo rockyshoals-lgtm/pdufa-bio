@@ -343,7 +343,8 @@ def main():
                 # 2026-09-20: "approval was announced by the sponsor on" is the answer format for
                 # a row whose decision date is an announcement day (decision_date_unsourced).
                 if re.search(r"was approved on|received a Complete Response Letter on|"
-                             r"was withdrawn on|approval was announced by the sponsor on", cur):
+                             r"was withdrawn on|approval was announced by the sponsor on|"
+                             r"received a Complete Response Letter dated", cur):
                     new = cur
                 else:
                     new = decision_desc(md.group(1), md.group(2), doc)

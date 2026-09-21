@@ -21,6 +21,7 @@ import json
 import os
 import re
 import sys
+from urllib.parse import quote as _urlq
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -29,7 +30,9 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
-CORPUS = os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
+sys.path.insert(0, HERE)
+from capture_crl_corpus import newest_corpus  # noqa: E402  (the newest dated snapshot on disk)
+CORPUS = newest_corpus() or os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
 BASE = "https://www.pdufa.bio"
 MON = ["", "January", "February", "March", "April", "May", "June", "July", "August",
        "September", "October", "November", "December"]
@@ -42,12 +45,27 @@ def esc(s):
 def main():
     raw = json.load(io.open(CORPUS, encoding="utf-8"))
     recs = raw if isinstance(raw, list) else raw.get("records") or raw.get("results")
-    rows = []
+    rows, seen, no_file, dupes = [], set(), 0, 0
+    n_records = len(recs)
+    n_approved = sum(1 for r in recs if str(r.get("approval_status") or "").strip() == "Approved")
+    n_unapproved = sum(1 for r in recs if str(r.get("approval_status") or "").strip() == "Unapproved")
+    last_updated = str((raw.get("meta") or {}).get("last_updated") or "") if isinstance(raw, dict) else ""
     for r in recs:
         m = re.match(r"(\d{2})/(\d{2})/(\d{4})", str(r.get("letter_date") or ""))
         fn = str(r.get("file_name") or "").strip()
-        if not m or not re.match(r"^[\w.\-]+\.pdf$", fn):
+        # Audit 09-20b: the old filter (\w.- only) silently dropped 13 letters whose FDA file
+        # names carry spaces or commas ("Pages from 214835Orig1s000_ORIGINAL_APPROVAL_PACKAGE.pdf",
+        # "215973,215974Orig1s000OtherActionLtrs.pdf"); all resolve on FDA's server once
+        # URL-encoded (HEAD 200, checked 2026-09-20). One record ("Under Review for Release")
+        # has no file yet and is counted, not listed.
+        if not m or not fn.lower().endswith(".pdf"):
+            no_file += 1
             continue
+        key = (fn, m.group(0))
+        if key in seen:
+            dupes += 1          # FDA's release repeats two records verbatim
+            continue
+        seen.add(key)
         apps = r.get("application_number")
         rows.append({
             "iso": f"{m.group(3)}-{m.group(1)}-{m.group(2)}",
@@ -55,7 +73,7 @@ def main():
             "company": str(r.get("company_name") or "").strip(),
             "app": ", ".join(apps) if isinstance(apps, list) else str(apps or ""),
             "status": str(r.get("approval_status") or "").strip(),
-            "url": f"https://download.open.fda.gov/crl/{fn}",
+            "url": "https://download.open.fda.gov/crl/" + _urlq(fn),
         })
     rows.sort(key=lambda x: x["iso"], reverse=True)
     by_year = collections.OrderedDict()
@@ -76,28 +94,39 @@ def main():
     n = len(rows)
     n24 = sum(1 for r in rows if r["year"] >= "2024")
     today = dt.date.today()
-    title = (f"FDA Complete Response Letters: {n} Released CRLs, Searchable by Year "
+    title = (f"FDA Complete Response Letters: {n_records} Released CRLs, Searchable by Year "
              f"| pdufa.bio")
-    desc = (f"{n} FDA Complete Response Letters from the agency's transparency "
-            f"program, by year, each linking the original PDF on FDA's servers. "
-            f"{n24} are from 2024 or later.")
+    desc = (f"{n_records} FDA Complete Response Letters (openFDA), by year, each linking the "
+            f"FDA's PDF. {n_approved} went to applications since approved, and why that is not "
+            f"an approval rate.")
+    # by-year split of openFDA's approval_status -- the shape that shows the release policy
+    split = collections.OrderedDict()
+    for r in sorted(rows, key=lambda x: x["year"], reverse=True):
+        d_ = split.setdefault(r["year"], {"Approved": 0, "Unapproved": 0})
+        if r["status"] in d_:
+            d_[r["status"]] += 1
 
     qa = [
         ("What is a Complete Response Letter?",
          "A Complete Response Letter (CRL) is the FDA's formal notice that it will not "
          "approve a drug application in its current form. It lists the deficiencies "
-         "the sponsor must address; it is not a permanent rejection, and many drugs "
-         "are approved after resubmission."),
+         "the sponsor must address; it is not a permanent rejection. Of the "
+         f"{n_records} letters the FDA has released, {n_approved} were issued to "
+         "applications the FDA has since approved."),
         ("How many FDA Complete Response Letters are published here?",
-         f"{n} letters, released by the FDA under its CRL transparency program and "
-         f"hosted on FDA's own servers. {n24} were issued in 2024 or later; the rest "
-         f"go back as far as 2002."),
-        ("Why does this page not show an approval rate after a CRL?",
-         "Because this corpus cannot answer that question honestly. Letters for "
-         "pre-2024 applications were released because those drugs were LATER APPROVED, "
-         "so nearly all of them precede an approval by construction. Letters from 2024 "
-         "onward are too recent for many outcomes to exist yet. Counts are stated; "
-         "rates from this data would mislead in both directions."),
+         f"{n_records} records in the FDA's release (openFDA transparency/crl, last updated "
+         f"{last_updated}): {n} distinct letters with a hosted PDF are listed, {dupes} "
+         f"record{'s' if dupes != 1 else ''} repeat{'s' if dupes == 1 else ''} another verbatim and "
+         f"{no_file} {'is' if no_file == 1 else 'are'} still marked under review for release. "
+         f"{n24} of the listed letters were issued in 2024 or later; the rest go back to 2002."),
+        ("How many CRLs are later approved?",
+         f"This corpus cannot say. openFDA labels {n_approved} of the {n_records} released "
+         f"letters as belonging to applications the FDA has since approved and {n_unapproved} "
+         f"as not approved, but the split follows the FDA's release policy, not the odds: the "
+         f"agency released archived letters only for applications it had approved, then every "
+         f"letter from 2024 on. Nearly every letter dated 2023 or earlier is on an approved "
+         f"application and nearly every letter from 2025 on is not. Counts are stated here; a "
+         f"rate from this data would measure what the FDA chose to publish."),
     ]
     faq_ld = ('<script type="application/ld+json">' + json.dumps(
         {"@context": "https://schema.org", "@type": "FAQPage", "url": f"{BASE}/crl",
@@ -131,16 +160,75 @@ def main():
             f'<a href="/" style="color:#94a9c9">Home</a> &rsaquo; '
             f'<a href="/decisions" style="color:#94a9c9">Decisions</a> &rsaquo; '
             f'CRL letters</div>'
-            f'<h1>FDA Complete Response Letters: <span class="g">{n} released '
+            f'<h1>FDA Complete Response Letters: <span class="g">{n_records} released '
             f'CRLs</span></h1>'
             f'<div class="sub">The FDA releases Complete Response Letters under its '
-            f'CRL transparency program. This page lists all {n} released letters, '
-            f'newest first, each linking the original PDF on FDA&#x27;s servers. '
-            f'{n24} letters are from 2024 or later; the archive reaches back to 2002. '
+            f'CRL transparency program, published through openFDA. This page lists every '
+            f'released letter with a hosted file ({n} distinct letters from {n_records} '
+            f'records), newest first, each linking the original PDF on FDA&#x27;s servers. '
+            f'{n24} listed letters are from 2024 or later; the archive reaches back to 2002. '
             f'Where a letter matches a decision this site tracked, the decision page '
             f'(with the run-up chart and outcome) is linked beside it. This page '
-            f'states counts, never approval rates; the FAQ below explains why a rate '
-            f'from this data would mislead.</div>']
+            f'states counts, never approval rates; the section below explains why a rate '
+            f'from this data would mislead.</div>'
+            f'<h2>What the FDA has released, and what it does and does not show</h2>'
+            f'<div class="sub" style="max-width:82ch">A complete response letter is the FDA&#x27;s '
+            f'formal notice, at the end of a review cycle, that it will not approve an application '
+            f'in its current form. The letter lists the deficiencies. It is not a permanent '
+            f'rejection: the sponsor can resubmit, and the same application is often approved on '
+            f'a later cycle.<br><br>'
+            f'<b style="color:#f2f6fc">{n_records} records</b> in the FDA&#x27;s release '
+            f'(<a href="https://api.fda.gov/transparency/crl.json?count=approval_status" '
+            f'rel="noopener">openFDA transparency/crl</a>, last updated {esc(last_updated)}). '
+            f'openFDA labels <b style="color:#f2f6fc">{n_approved}</b> of them as letters to '
+            f'applications the FDA has since approved and <b style="color:#f2f6fc">'
+            f'{n_unapproved}</b> as letters to applications not approved as of the release. '
+            f'The FDA described its first batch (July 10, 2025) as decision letters '
+            f'&ldquo;associated with since-approved applications&rdquo;; later batches added '
+            f'letters for applications still unapproved.<br><br>'
+            f'<b style="color:#e3ba5e">Read the split by year before drawing anything from it.</b> '
+            f'Nearly every letter dated 2023 or earlier is on a since-approved application, and '
+            f'nearly every letter from 2025 on is not. That is the shape of a release policy '
+            f'(archived letters for approved applications first, then everything from 2024 '
+            f'onward), not the shape of the odds. The corpus shows that an application which '
+            f'receives a CRL can be approved later, {n_approved} times over; it cannot say how '
+            f'often that happens, and this site does not compute a rate from it.</div>'
+            + '<table style="max-width:520px"><tr><th>Letter year</th><th>Since approved</th>'
+              '<th>Not approved</th><th>Total</th></tr>'
+            + "".join(f'<tr><td class="dt">{yr}</td><td>{v["Approved"]}</td><td>{v["Unapproved"]}</td>'
+                      f'<td>{v["Approved"] + v["Unapproved"]}</td></tr>' for yr, v in split.items())
+            + f'<tr><td class="dt">All</td><td>{sum(v["Approved"] for v in split.values())}</td>'
+              f'<td>{sum(v["Unapproved"] for v in split.values())}</td><td>{n}</td></tr></table>'
+            + f'<div style="font-size:12px;color:#94a9c9;margin:6px 0 10px">Counts of listed letters by '
+              f'openFDA&#x27;s approval_status field; the {no_file} record without a hosted file and '
+              f'the {dupes} duplicate record{"s" if dupes != 1 else ""} are not in the table.</div>']
+
+    # the release as a series (capture_crl_corpus.py): one row per capture that changed the set
+    try:
+        ser = json.load(io.open(os.path.join(HERE, "_crl_capture_series.json"), encoding="utf-8")).get("rows") or []
+    except Exception:
+        ser = []
+    seen_tot, series_rows = None, []
+    for r_ in ser:
+        if (r_.get("total"), r_.get("approved"), r_.get("unapproved")) != seen_tot:
+            series_rows.append(r_); seen_tot = (r_.get("total"), r_.get("approved"), r_.get("unapproved"))
+    last_check = ser[-1]["checked"] if ser else ""
+    if series_rows:
+        body.append('<h2>The release over time</h2>'
+                    '<div class="sub">The FDA adds letters to the release in batches. Each row is a '
+                    'dated capture of openFDA transparency/crl on which the record set differed from '
+                    f'the previous capture; last checked {esc(last_check)}.</div>'
+                    '<table style="max-width:560px"><tr><th>Captured</th><th>Records</th>'
+                    '<th>Since approved</th><th>Not approved</th><th>Added since prior</th></tr>')
+        prev = None
+        for r_ in series_rows:
+            delta = "" if prev is None else f"+{int(r_['total']) - int(prev)}"
+            body.append(f'<tr><td class="dt">{esc(r_["checked"])}</td><td>{r_["total"]}</td>'
+                        f'<td>{r_.get("approved") if r_.get("approved") is not None else "&mdash;"}</td>'
+                        f'<td>{r_.get("unapproved") if r_.get("unapproved") is not None else "&mdash;"}</td>'
+                        f'<td>{delta}</td></tr>')
+            prev = r_["total"]
+        body.append('</table>')
 
     for yr, yrows in by_year.items():
         body.append(f'<h2>{yr} &middot; {len(yrows)} letter'
@@ -184,8 +272,9 @@ def main():
     out = os.path.join(SITE, "crl", "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     io.open(out, "w", encoding="utf-8").write(doc)
-    print(f"/crl: {n} letters across {len(by_year)} years; {len(ours)} letter(s) "
-          f"cross-linked to our decision pages")
+    print(f"/crl: {n_records} records -> {n} listed letters ({dupes} duplicate, {no_file} without a file) "
+          f"across {len(by_year)} years; approved {n_approved} / unapproved {n_unapproved}; "
+          f"{len(ours)} letter(s) cross-linked to our decision pages")
     return 0
 
 

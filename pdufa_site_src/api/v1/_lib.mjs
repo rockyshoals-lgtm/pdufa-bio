@@ -68,7 +68,9 @@ const CORE_EXTRA = ['nct_id','indication','market_cap_usd','cash_runway_months',
      is the difference of two dates; decision_date_note says when the date held is the sponsor's
      announcement day rather than the FDA's action day, decision_date_unsourced is the flag the
      timing statistic and every renderer gate on, goal_unsourced is its mirror (09-18). */
-  'decision_source','decision_source_url','decision_date_note','decision_date_unsourced','goal_unsourced'];
+  'decision_source','decision_source_url','decision_date_note','decision_date_unsourced','goal_unsourced',
+  /* 09-20b: the FDA's own action date where its released letter states it (CRLs). */
+  'fda_action_date'];
 const DEPTH_KEYS = [];
 
 export function shape(e, tier) {

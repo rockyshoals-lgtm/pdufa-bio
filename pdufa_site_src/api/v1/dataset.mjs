@@ -753,7 +753,7 @@ export default [
   "cap": "Small",
   "st": "Decided",
   "url": "/ticker/ACHV",
-  "ua": "2026-07-11T15:23:27Z",
+  "ua": "2026-09-21T02:00:16Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05206370",
@@ -776,7 +776,11 @@ export default [
     "t30": 0.36,
     "t7": 0.08,
     "t1": 0.0
-   }
+   },
+   "fda_action_date": "2026-06-20",
+   "decision_source": "FDA Complete Response Letter, NDA 218995, dated June 20, 2026 (openFDA transparency/crl)",
+   "decision_source_url": "https://download.open.fda.gov/crl/CRL_NDA218995_20260620_Redacted.pdf",
+   "decision_date_note": "2026-06-22 is the company's announcement date; the FDA's letter is dated 2026-06-20."
   },
   "oc": "CRL",
   "dcd": "2026-06-22"
@@ -878,7 +882,7 @@ export default [
   "cap": "Micro",
   "st": "Decided",
   "url": "/ticker/UNCY",
-  "ua": "2026-07-11T15:23:27Z",
+  "ua": "2026-09-21T02:00:16Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06218290",
@@ -901,7 +905,11 @@ export default [
     "t30": -0.13,
     "t7": -0.05,
     "t1": 0.0
-   }
+   },
+   "fda_action_date": "2026-06-29",
+   "decision_source": "FDA Complete Response Letter, NDA 218607, dated June 29, 2026 (openFDA transparency/crl)",
+   "decision_source_url": "https://download.open.fda.gov/crl/CRL_NDA218607_20260629.pdf",
+   "decision_date_note": "2026-06-30 is the company's announcement date; the FDA's letter is dated 2026-06-29."
   },
   "oc": "CRL",
   "dcd": "2026-06-30"

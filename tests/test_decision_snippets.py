@@ -18,8 +18,11 @@ import re
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
 
-ANSWER = re.compile(r"was approved on|received a Complete Response Letter on|"
-                    r"was withdrawn on")
+# 2026-09-20: two more answer shapes -- an approval known only from the sponsor's announcement
+# ("approval was announced by the sponsor on", TLX) and a CRL dated by the FDA's own released
+# letter ("received a Complete Response Letter dated", ACHV/UNCY). Both answer; neither labels.
+ANSWER = re.compile(r"was approved on|received a Complete Response Letter (?:on|dated)|"
+                    r"was withdrawn on|approval was announced by the sponsor on")
 
 
 def test_decision_descriptions_answer():

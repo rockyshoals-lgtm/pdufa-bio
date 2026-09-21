@@ -1,0 +1,107 @@
+{
+ "_what": "Hand-verified readings of FDA Complete Response Letters, each checked against the FDA-hosted PDF (rendered page images and pdftotext), never pasted from openFDA's OCR text. `deficiencies` are the letter's own section headings under which it states why it cannot approve, in the letter's order; `not_approvability` are comments the letter itself labels as not approvability issues; `fda_action_date` is the date the letter states as the action date (the letter's signature date unless the letter says otherwise). Rendered on the decision page by link_crl_letters.py; the timing statistic uses fda_action_date where present (an announcement day is not an action day, audit 09-20 P0-A).",
+ "letters": [
+  {
+   "file_name": "CRL_NDA218995_20260620_Redacted.pdf",
+   "application": "NDA 218995",
+   "company": "Achieve Life Sciences, Inc.",
+   "drug": "cytisinicline",
+   "letter_date": "2026-06-20",
+   "fda_action_date": "2026-06-20",
+   "reference_id": "5819419",
+   "pages": [
+    "ACHV-2026-06-22"
+   ],
+   "verified": "2026-09-20, page 1 rendered from the PDF; pages 2-7 pdftotext",
+   "deficiencies": [
+    {
+     "heading": "Facility inspections",
+     "summary": "Following a CGMP inspection of a facility listed in the application (name redacted), FDA conveyed deficiencies to the facility; the facility's satisfactory responses to its Form 483, and possibly re-inspection and a pre-approval inspection, are required before the application can be approved."
+    },
+    {
+     "heading": "Prescribing information",
+     "summary": "Submit draft labeling responsive to FDA's electronic communication of June 4, 2026, as part of the resubmission."
+    }
+   ],
+   "not_approvability": [
+    {
+     "heading": "Clinical pharmacology",
+     "summary": "The proposed dosing regimen in end-stage renal disease is not adequately supported by the available pharmacokinetic data; FDA asks for modelling across a range of dialysis scenarios. The letter labels this a comment, not an approvability issue."
+    }
+   ],
+   "note": "The letter names no clinical efficacy or safety deficiency. Postmarketing studies on pregnancy and lactation exposure would be required if the application is approved."
+  },
+  {
+   "file_name": "CRL_NDA218607_20250627.pdf",
+   "application": "NDA 218607",
+   "company": "Unicycive Therapeutics Inc.",
+   "drug": "oxylanthanum carbonate",
+   "letter_date": "2025-06-27",
+   "fda_action_date": "2025-06-27",
+   "reference_id": "5616346",
+   "pages": [
+    "UNCY-2025-06-30"
+   ],
+   "verified": "2026-09-20, page 1 rendered from the PDF; pages 2-5 pdftotext",
+   "deficiencies": [
+    {
+     "heading": "Facility inspections",
+     "summary": "Following a CGMP inspection and pre-approval inspection of a facility listed in the submission (name redacted), FDA conveyed deficiencies to the facility; satisfactory responses to the Form 483, and possibly CGMP re-inspection and an additional pre-approval inspection, are required before the application can be approved."
+    }
+   ],
+   "not_approvability": [],
+   "note": "Labeling comment reserved until the application is otherwise adequate. The letter names no clinical efficacy or safety deficiency."
+  },
+  {
+   "file_name": "CRL_NDA218607_20260629.pdf",
+   "application": "NDA 218607",
+   "company": "Unicycive Therapeutics Inc.",
+   "drug": "oxylanthanum carbonate",
+   "letter_date": "2026-06-29",
+   "fda_action_date": "2026-06-29",
+   "reference_id": "5825414",
+   "pages": [
+    "UNCY-2026-06-30"
+   ],
+   "verified": "2026-09-20, page 1 rendered from the PDF; pages 2-5 pdftotext",
+   "deficiencies": [
+    {
+     "heading": "Facility inspections",
+     "summary": "Following a CGMP inspection of a facility listed in the application (name redacted), FDA conveyed deficiencies to the facility; satisfactory responses to the Form 483 are required, FDA may need to conduct a pre-approval inspection, and satisfactory outcomes of both the pre-approval and CGMP surveillance inspections are needed before approval."
+    }
+   ],
+   "not_approvability": [],
+   "note": "This is the second letter on the same NDA: it acknowledges the December 29, 2025 resubmission that answered the June 27, 2025 letter. Labeling and carton comments reserved until the application is otherwise adequate; the proposed proprietary name was found conditionally acceptable on March 25, 2026. The letter names no clinical efficacy or safety deficiency."
+  },
+  {
+   "file_name": "CRL_NDA219398_20260128.pdf",
+   "application": "NDA 219398",
+   "company": "Corcept Therapeutics",
+   "drug": "relacorilant",
+   "letter_date": "2026-01-28",
+   "fda_action_date": "2025-12-30",
+   "reference_id": "5735859",
+   "pages": [
+    "CORT-2025-12-31"
+   ],
+   "event_pages": [
+    "CORT",
+    "CORT-relacorilant"
+   ],
+   "verified": "2026-09-20, page 1 rendered from the PDF; pages 2-8 pdftotext",
+   "letter_type_note": "Corrected complete response letter dated January 28, 2026. It states that the original letter of December 30, 2025 'contained no errors' and that 'the effective action date will remain December 30, 2025'.",
+   "deficiencies": [
+    {
+     "heading": "Clinical and statistical: substantial evidence of effectiveness",
+     "summary": "The two phase 3 trials do not demonstrate effectiveness for the proposed indication. CORT125134-455 met its primary endpoint but in a highly enriched population: of 102 subjects with baseline hypertension, 40 (39%) discontinued during the open-label phase and only 46 (45%) entered the randomized-withdrawal phase, so the observed effect 'likely overestimates the treatment effect'. CORT125134-456 did not meet its primary endpoint (between-arm difference in 24-hour systolic blood pressure -0.85 mmHg, 95% CI -6.7 to 4.9, p = 0.77); a post-hoc subgroup analysis was not pre-specified, was small, had substantial missing data, and did not reach nominal significance under FDA's own imputation. FDA states it had told the sponsor at pre-submission meetings to expect significant review issues."
+    },
+    {
+     "heading": "Benefit-risk assessment: drug-induced liver injury",
+     "summary": "With effectiveness not demonstrated, no final benefit-risk assessment could be made. FDA's safety review concluded relacorilant is associated with drug-induced liver injury: four cases assessed as probable DILI, one with an ALT of 1,952 U/L (more than 50 times the upper limit of normal), with no alternative etiology identified."
+    }
+   ],
+   "not_approvability": [],
+   "note": "The application under review is Corcept's resubmission of this NDA, with a PDUFA goal date of December 17, 2026. The letter is the FDA's statement of what the resubmission has to answer."
+  }
+ ]
+}
