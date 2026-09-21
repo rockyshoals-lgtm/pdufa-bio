@@ -375,6 +375,11 @@ def main():
                                            "presentations and advisory committee meetings, "
                                            "rebuilt daily, each record with its canonical "
                                            "page URL.",
+                            # GSC 2026-09-20 "Missing field license" (Dataset enhancement report):
+                            # the page itself says "Attribution + link-back required", which is
+                            # CC BY 4.0, the licence every research dataset already declares.
+                            "license": "https://creativecommons.org/licenses/by/4.0/",
+                            "isAccessibleForFree": True,
                             "creator": {"@type": "Organization", "name": "pdufa.bio",
                                         "url": BASE + "/"},
                             "distribution": [{"@type": "DataDownload",
