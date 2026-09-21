@@ -1,11 +1,11 @@
 {
- "built": "2026-09-21T02:22:19+00:00",
- "commit": "a25196f8a",
- "commit_at_build": "a25196f8a",
- "as_of_eastern": "2026-09-20",
+ "built": "2026-09-21T16:10:26+00:00",
+ "commit": "ed8924a3e",
+ "commit_at_build": "ed8924a3e",
+ "as_of_eastern": "2026-09-21",
  "next_date": "2026-09-21",
  "next_ticker": "MRK",
- "next_days": 1,
+ "next_days": 0,
  "next_status": "upcoming",
  "days_since_goal": null
 }
