@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "BAYRY",
+  "date": "2026-09-16",
+  "outcome": "Approved",
+  "drug": "KERENDIA (finerenone), T1D-CKD",
+  "indication": "Chronic kidney disease associated with type 1 diabetes: new indication to reduce urinary albumin-to-creatinine ratio (FINE-ONE)",
+  "company": "Bayer AG",
+  "cap": "Large",
+  "headline": "KERENDIA (finerenone) approved for a third U.S. indication, chronic kidney disease associated with type 1 diabetes, on September 16, 2026 (FDA letter); Bayer announced it on September 17.",
+  "pdufa_note": "Bayer never published a PDUFA goal date for this supplemental application: its May 21, 2026 release states FDA acceptance and Priority Review only. The FDA's approval letter for NDA 215341/S-011 is dated September 16, 2026 (Drugs@FDA), which is the decision date; Bayer's release is dated September 17. Because no sponsor-stated goal date exists, no early/late margin is published for this decision. The sNDA was submitted March 16, 2026 and is based on the Phase III FINE-ONE study (242 adults; 25% reduction in UACR versus placebo over six months).",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215341Orig1s011ltr.pdf",
+  "source_label": "FDA approval letter, NDA 215341/S-011, September 16, 2026"
+ }
+]

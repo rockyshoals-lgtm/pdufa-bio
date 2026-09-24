@@ -35,6 +35,8 @@ for p in ("/fda-decision/ABBV-2026-04-23", "/patent-cliff/2027", "/pdufa/BIIB", 
 _, d = get("/pdufa/BIIB"); chk("/pdufa/BIIB: no 'See the.' tail", "See the.\"" not in d and "See the.&quot;" not in d)
 st, d = get("/fda-decision/NUVB-2026-09-16"); chk("NUVB decision page: 110 Days Early + FDA letter", st == 200 and "110 Days Early" in d and "219713Orig1s004ltr.pdf" in d, f"status {st}")
 _, d = get("/calendar/2027/january"); chk("/calendar/2027/january: NUVB row marked", "/fda-decision/NUVB-2026-09-16" in d)
+st, d = get("/fda-decision/BAYRY-2026-09-16"); chk("BAYRY Kerendia page: no margin, FDA letter", st == 200 and "215341Orig1s011ltr.pdf" in d and not re.search(r"\d+ Days? (Early|Late)", d), f"status {st}")
+_, d = get("/drug/kerendia"); chk("/drug/kerendia states approval 09-16", "approved on September 16, 2026" in d)
 _, d = get("/llms.txt")
 chk("llms.txt: n=1,852 / 71.3% / 1,752 / 20-9-2 of 31 / 458-309", all(s in d for s in ("n=1,852", "71.3%", "n=1,752", "**31**", "**20**", "**9**", "**2**", "**458**", "**309**")))
 chk("llms.txt: no stale 1,792 / 73.5%", "1,792" not in d and "73.5%" not in d)

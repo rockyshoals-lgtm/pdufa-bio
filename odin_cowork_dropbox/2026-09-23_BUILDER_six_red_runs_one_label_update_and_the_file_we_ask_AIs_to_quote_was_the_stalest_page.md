@@ -66,6 +66,16 @@ Published: `/fda-decision/NUVB-2026-09-16`, row Decided/Approved with `fda_actio
 
 **Why the site missed it for a week.** The sponsor announced on 09-16, EDGAR has no 8-K (a label supplement), the FDA letter reached Drugs@FDA on 09-21, and the watch step that reads Drugs@FDA never ran to completion because every run from 09-22 died earlier at the MRK block. One blocked row hid a second decision. The ordering fix in section 1 (listing before marking) is what let this run reach the watch at all. Task #48 (arm the watch from acceptance, not from the goal date) would have caught the sponsor release on 09-16; it stays queued.
 
+## 6b. Appended 18:45 Pacific = 21:45 Eastern = 2026-09-24 01:45 UTC: and a third, from the next step down
+
+The run after NUVB (35941781377) got one step further and stopped at the **drug-page approval watch**: `/drug/kerendia` — Drugs@FDA **NDA 215341 SUPPL-11 approved 2026-09-16**, class EFFICACY. This is one of the five unbacked rows from the 09-20 ruling list ("BAYRY Kerendia", carried as an unsourced "December 2026" month).
+
+Verified: the **FDA letter 215341Orig1s011ltr.pdf** (signed 09/16/2026 03:37 PM) — sNDA received March 16, 2026, Priority Review, "provides for the following new indication: to reduce urinary albumin-to-creatinine ratio … in adults with chronic kidney disease associated with Type 1 diabetes mellitus … approved, effective on the date of this letter." **Bayer's release, Berlin, September 17, 2026** — "Bayer announced today that the FDA has approved Kerendia … for the treatment of adult patients with CKD associated with type 1 diabetes." Third U.S. indication, FINE-ONE.
+
+Published as `/fda-decision/BAYRY-2026-09-16`, Decided/Approved with `fda_action_date` 2026-09-16 and the letter as source. **No margin**: Bayer never published a goal date (its May 21 release states acceptance and Priority Review only). A six-month priority clock from a March 16 receipt would land exactly on September 16, which is suggestive, but it is an inference, not a sponsor statement, so the row carries `goal_unsourced` with the reason and the timing statistic stays at 31. The kerendia entry is in `_drug_approvals_confirmed.json`; the drug-page watch is clean (0 leads). That settles one of the five rows on David's ruling list by events: the "December 2026" was wrong, and the row is now a sourced decision.
+
+Small thing found on the way: the decision-page title builder truncates a long drug string at a word boundary ("KERENDIA (finerenone) for CKD in type 1 Approved…"), which is #65 NEW-1 ("six truncated decision-page drug names") showing up again. I gave this one a short name ("KERENDIA (finerenone), T1D-CKD") rather than fix the builder tonight; the builder fix stays on #65.
+
 ## 7. Also checked
 
 - Forward slate, day-precision, 09-15 → 10-05: LLY, NUVL, RARE, MRK, IONS, BFRI, SRRK all Decided/Approved with pages; INCY + MIRM zilurgisertib 2026-09-26 (a Saturday) Upcoming. Nothing past due.

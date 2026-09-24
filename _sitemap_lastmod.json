@@ -76,8 +76,8 @@
 },
 "pdufa_site_src/calendar/index.html": {
 "date": "2026-09-23",
-"hash": "83ab5103a4a79894",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "39f99357715286cb",
+"ts": "2026-09-23T21:17:06-04:00"
 },
 "pdufa_site_src/clinical-trial-success-rates/index.html": {
 "date": "2026-08-15",
@@ -110,8 +110,8 @@
 },
 "pdufa_site_src/condition/index.html": {
 "date": "2026-09-23",
-"hash": "410b58ee8fa18135",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "474eb8fea17ad517",
+"ts": "2026-09-23T21:17:06-04:00"
 },
 "pdufa_site_src/condition/infectious-disease/index.html": {
 "date": "2026-09-23",
@@ -120,8 +120,8 @@
 },
 "pdufa_site_src/condition/obesity-metabolic/index.html": {
 "date": "2026-09-23",
-"hash": "7e934ff7838b161d",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "7feba4cab1c231c5",
+"ts": "2026-09-23T21:17:06-04:00"
 },
 "pdufa_site_src/condition/ophthalmology/index.html": {
 "date": "2026-09-23",
@@ -234,8 +234,8 @@
 },
 "pdufa_site_src/decisions/index.html": {
 "date": "2026-09-23",
-"hash": "a92a80828e3b5d9d",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "a7786f6034917e77",
+"ts": "2026-09-23T21:17:06-04:00"
 },
 "pdufa_site_src/developers/index.html": {
 "date": "2026-09-23",
@@ -1413,8 +1413,8 @@
 },
 "pdufa_site_src/drug/index.html": {
 "date": "2026-09-23",
-"hash": "eccd54716e4d3774",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "71069baced26355e",
+"ts": "2026-09-23T21:17:06-04:00"
 },
 "pdufa_site_src/drug/inlexzo/index.html": {
 "date": "2026-09-23",
@@ -1523,8 +1523,8 @@
 },
 "pdufa_site_src/drug/kerendia/index.html": {
 "date": "2026-09-23",
-"hash": "2a01ba246ad50537",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "948ff6abd4498e26",
+"ts": "2026-09-23T21:17:06-04:00"
 },
 "pdufa_site_src/drug/ketarx/index.html": {
 "date": "2026-09-23",
@@ -3524,6 +3524,11 @@
 "hash": "8b393e64f81cb618",
 "ts": "2026-09-23T20:54:14-04:00"
 },
+"pdufa_site_src/fda-decision/BAYRY-2026-09-16/index.html": {
+"date": "2026-09-23",
+"hash": "2626f2c548e3141a",
+"ts": "2026-09-23T21:23:32-04:00"
+},
 "pdufa_site_src/fda-decision/BCAB-2025-11-07/index.html": {
 "date": "2026-09-14",
 "hash": "64b3baa3d2455f27",
@@ -4237,7 +4242,8 @@
 },
 "pdufa_site_src/fda-decision/NUVB-2026-09-16/index.html": {
 "date": "2026-09-23",
-"hash": "21fa6a53da8ddd16"
+"hash": "4b8a3f580658c795",
+"ts": "2026-09-23T21:17:27-04:00"
 },
 "pdufa_site_src/fda-decision/NUVL-2026-07-22/index.html": {
 "date": "2026-09-23",
@@ -4857,13 +4863,13 @@
 },
 "pdufa_site_src/fda-decisions-today/index.html": {
 "date": "2026-09-23",
-"hash": "710854f399718601",
-"ts": "2026-09-23T21:08:44-04:00"
+"hash": "acceb53e1761730d",
+"ts": "2026-09-23T21:23:32-04:00"
 },
 "pdufa_site_src/fda-this-month/index.html": {
 "date": "2026-09-23",
-"hash": "1bbcdf1db4223627",
-"ts": "2026-09-23T21:08:44-04:00"
+"hash": "79d05fcccdce7346",
+"ts": "2026-09-23T21:23:32-04:00"
 },
 "pdufa_site_src/glossary/index.html": {
 "date": "2026-09-23",
@@ -4872,8 +4878,8 @@
 },
 "pdufa_site_src/index.html": {
 "date": "2026-09-23",
-"hash": "0a7ff79e64726f5b",
-"ts": "2026-09-23T21:08:27-04:00"
+"hash": "cbac1c7518b76b61",
+"ts": "2026-09-23T21:20:27-04:00"
 },
 "pdufa_site_src/learn/accelerated-approval-explained/index.html": {
 "date": "2026-08-15",
@@ -5212,9 +5218,9 @@
 "ts": "2026-09-18T21:27:22-04:00"
 },
 "pdufa_site_src/pdufa/BAYRY-kerendia/index.html": {
-"date": "2026-09-18",
-"hash": "c6fe926c0b4f47ad",
-"ts": "2026-09-18T21:27:22-04:00"
+"date": "2026-09-23",
+"hash": "4bff425cbf2c594e",
+"ts": "2026-09-23T21:17:27-04:00"
 },
 "pdufa_site_src/pdufa/BAYRY-sevabertinib/index.html": {
 "date": "2026-09-15",
@@ -6300,8 +6306,8 @@
 },
 "pdufa_site_src/ticker/BAYRY/index.html": {
 "date": "2026-09-23",
-"hash": "18ea2cebf3ee2b0e",
-"ts": "2026-09-23T20:54:14-04:00"
+"hash": "ebc02caf937398e2",
+"ts": "2026-09-23T21:17:27-04:00"
 },
 "pdufa_site_src/ticker/BBIO/index.html": {
 "date": "2026-09-23",

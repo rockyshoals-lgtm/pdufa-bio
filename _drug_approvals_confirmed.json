@@ -30,6 +30,13 @@
    "date": "2026-08-27",
    "brand": "LISRAYA",
    "source": "https://investor.roivant.com/news-releases/news-release-details/roivant-announces-fda-approval-lisrayatm-brepocitinib-adults"
+  },
+  {
+   "slug": "kerendia",
+   "date": "2026-09-16",
+   "brand": "KERENDIA",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215341Orig1s011ltr.pdf",
+   "note": "sNDA S-011, CKD associated with type 1 diabetes; Bayer release 2026-09-17"
   }
  ]
 }
