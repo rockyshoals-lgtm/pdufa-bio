@@ -2866,7 +2866,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -2934,7 +2934,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -3069,7 +3069,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -3870,7 +3870,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -3899,7 +3899,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/INCY",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Fibrodysplasia ossificans progressiva (FOP)",
@@ -3925,7 +3925,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/ticker/MIRM",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Fibrodysplasia ossificans progressiva (FOP)",
@@ -3947,7 +3947,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -4029,7 +4029,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -4079,7 +4079,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5074,7 +5074,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/RHHBY",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
    "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
@@ -5095,7 +5095,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5116,7 +5116,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -5137,7 +5137,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5166,7 +5166,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/MRK",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04700124",
@@ -5207,7 +5207,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/RHHBY",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "indication": "Thyroid eye disease (TED)",
    "source_note": "Added 2026-08-13; sBLA priority review, decision by 2026-10-15 per Genentech release 2026-06-29. Found during flag verification; was on neither surface.",
@@ -5809,7 +5809,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/ticker/IRD",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
    "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
@@ -5831,7 +5831,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/VTRS",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05139121",
@@ -5872,7 +5872,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -5893,7 +5893,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -5922,7 +5922,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -5943,7 +5943,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -6107,7 +6107,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06059846",
@@ -6148,7 +6148,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/ticker/INO",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Recurrent respiratory papillomatosis (RRP) BLA",
@@ -6181,7 +6181,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AGIO",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -6214,7 +6214,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -6235,7 +6235,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -6264,7 +6264,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -6285,7 +6285,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -6306,7 +6306,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -6327,7 +6327,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -6348,7 +6348,7 @@ export default [
   "cap": "Nano",
   "st": "Upcoming",
   "url": "/pdufa/BTAI",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
@@ -6381,7 +6381,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CYTK",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Non-obstructive hypertrophic cardiomyopathy",
@@ -6414,7 +6414,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/SMMT",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -6447,7 +6447,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -6468,7 +6468,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/ticker/NVCR",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
@@ -6906,7 +6906,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -6935,7 +6935,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -6956,7 +6956,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -7016,7 +7016,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
@@ -7049,7 +7049,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -7082,7 +7082,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/GSK",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -7173,7 +7173,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/ticker/COGT",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -7206,7 +7206,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
@@ -7253,7 +7253,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/RHHBY",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -7286,7 +7286,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/VRTX",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -7319,7 +7319,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/EXEL",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -7352,7 +7352,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -7373,7 +7373,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -7394,7 +7394,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -7423,7 +7423,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/VNDA",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -7456,7 +7456,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -7477,7 +7477,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -8446,7 +8446,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/CORT",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -8471,7 +8471,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/RHHBY",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -8504,7 +8504,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/ticker/MLYS",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -8537,7 +8537,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/GILD",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -8559,7 +8559,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/ticker/PRAX",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -8619,7 +8619,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
@@ -8641,7 +8641,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/ticker/COGT",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -8674,7 +8674,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/ABBV-tavapadon",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Early Parkinson's disease",
@@ -8706,7 +8706,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/AZN",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -8789,7 +8789,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/NVO",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Obesity / weight management",
@@ -8821,7 +8821,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-mim8",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "indication": "Hemophilia A prophylaxis, with or without inhibitors",
    "bla_submitted": "2025-09",
@@ -9635,7 +9635,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/IBRX",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "BCG-unresponsive papillary NMIBC",
@@ -9979,7 +9979,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -10000,7 +10000,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/ticker/PRAX",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10046,7 +10046,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -10067,7 +10067,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/GILD",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -10113,7 +10113,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -10235,7 +10235,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -10276,7 +10276,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Non Small Cell Lung Cancer",
@@ -10636,7 +10636,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -10797,7 +10797,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -10818,7 +10818,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -10839,7 +10839,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Head and Neck Squamous Cell Carcinoma (HNSCC)",
@@ -11188,7 +11188,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -11221,7 +11221,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/AXSM",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -11242,7 +11242,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -11263,7 +11263,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -11284,7 +11284,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/ticker/BBIO",
-  "ua": "2026-09-24T14:33:52Z",
+  "ua": "2026-09-24T16:37:22Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -11305,7 +11305,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -11564,7 +11564,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -11585,7 +11585,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -11606,7 +11606,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -11997,7 +11997,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -12018,7 +12018,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-24T14:35:34Z",
+  "ua": "2026-09-24T16:39:05Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
