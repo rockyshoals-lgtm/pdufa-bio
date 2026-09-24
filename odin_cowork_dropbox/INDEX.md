@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-09-23 BUILDER (six red runs one label update and the file we ask AIs to quote was the)** — `2026-09-23_BUILDER_six_red_runs_one_label_update_and_the_file_we_ask_AIs_to_quote_was_the_stalest_page.md` — 2026-09-23, written 18:00 Pacific = 21:00 Eastern = 2026-09-24 01:00 UTC. Per RULE 1 every time here carries its zone. Facts and file contents only; not investment advice.
 - **2026-09-20b note (moat data sweep two)** — `2026-09-20b_moat_data_sweep_two.md` — 2026-09-20, 22:10 UTC = 18:10 Eastern = 15:10 Pacific. Facts and file contents only. Not investment advice.
 - **2026-09-20b BUILDER (the count is real the rate is a release policy)** — `2026-09-20b_BUILDER_the_count_is_real_the_rate_is_a_release_policy.md` — 2026-09-20, written 19:15 Pacific = 22:15 Eastern = 2026-09-21 02:15 UTC. Per RULE 1 every time here carries its zone. Facts and file contents only; not investment advice.
 - **2026-09-20 audit (audit accuracy seo ai)** — `2026-09-20_audit_accuracy_seo_ai.md` — 2026-09-20, measured 20:40 UTC = 16:40 Eastern = 13:40 Pacific (Sunday). Per RULE 1 every time carries its zone. API asof is Eastern; Vercel and GitHub are UTC; the machine is Pacific.

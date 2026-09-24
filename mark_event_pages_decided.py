@@ -44,6 +44,13 @@ MON = ["", "January", "February", "March", "April", "May", "June", "July", "Augu
        "September", "October", "November", "December"]
 
 
+
+def _dw(n, title=False):
+    """'day' for |n| == 1, else 'days' (2026-09-23: MRK's +1 shipped as "1 Days Late" in a
+    <title> and "1 days after its" in the meta description; GSK/SPRO/VTRS had "1 Days Early")."""
+    w = "day" if abs(int(n)) == 1 else "days"
+    return w.title() if title else w
+
 def pretty(iso):
     try:
         d = dt.date.fromisoformat(str(iso)[:10])
@@ -400,8 +407,8 @@ def main():
             delta = None
         timing = ("" if delta is None else
                   " on its goal date" if delta == 0 else
-                  f", {-delta} days before its {pretty(goal)} goal date" if delta < 0 else
-                  f", {delta} days after its {pretty(goal)} goal date")
+                  f", {-delta} {_dw(-delta)} before its {pretty(goal)} goal date" if delta < 0 else
+                  f", {delta} {_dw(delta)} after its {pretty(goal)} goal date")
         ok = oc == "Approved"
         col = "#46d17f" if ok else "#ff8f6b"
         word = "Approved" if ok else ("Complete Response Letter" if oc == "CRL" else oc)

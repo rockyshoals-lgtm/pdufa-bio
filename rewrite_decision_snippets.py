@@ -44,6 +44,13 @@ MON3 = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"
         "Nov", "Dec"]
 
 
+
+def _dw(n, title=False):
+    """'day' for |n| == 1, else 'days' (2026-09-23: MRK's +1 shipped as "1 Days Late" in a
+    <title> and "1 days after its" in the meta description; GSK/SPRO/VTRS had "1 Days Early")."""
+    w = "day" if abs(int(n)) == 1 else "days"
+    return w.title() if title else w
+
 def pretty(iso, short=False):
     d = dt.date.fromisoformat(str(iso)[:10])
     return f"{(MON3 if short else MON)[d.month]} {d.day}, {d.year}"
@@ -163,8 +170,8 @@ def main():
             word_t, verb = (f"Approval Announced {pretty(dcd, short=True)}",
                             "approval was announced by the sponsor on")
         elif oc == "Approved":
-            tdelta = (f", {-delta} Days Early" if delta and delta < 0 else
-                      f", {delta} Days Late" if delta and delta > 0 else "")
+            tdelta = (f", {-delta} {_dw(-delta, True)} Early" if delta and delta < 0 else
+                      f", {delta} {_dw(delta, True)} Late" if delta and delta > 0 else "")
             word_t, verb = f"Approved {pretty(dcd, short=True)}{tdelta}", "was approved on"
         elif oc == "CRL" and (tk, dcd) in fda_dates:
             word_t, verb = (f"CRL {pretty(fda_dates[(tk, dcd)], short=True)}",
@@ -201,9 +208,9 @@ def main():
         elif delta is None or delta == 0:
             when = f"{pretty(dcd)}" + (" (its PDUFA goal date)" if delta == 0 else "")
         elif delta < 0:
-            when = f"{pretty(dcd)}, {-delta} days before its {pretty(goal)} PDUFA goal date"
+            when = f"{pretty(dcd)}, {-delta} {_dw(-delta)} before its {pretty(goal)} PDUFA goal date"
         else:
-            when = f"{pretty(dcd)}, {delta} days after its {pretty(goal)} PDUFA goal date"
+            when = f"{pretty(dcd)}, {delta} {_dw(delta)} after its {pretty(goal)} PDUFA goal date"
         # 160-char budget (test_meta_lengths.py): the answer sentence is non-negotiable,
         # the tail and the long-form names give way in order.
         # Older archive records lack a company name and fall back to the ticker --

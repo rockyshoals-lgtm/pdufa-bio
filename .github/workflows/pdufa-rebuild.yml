@@ -106,6 +106,13 @@ jobs:
           python reconcile_calendar_table.py
           python ensure_calendar_rows.py
 
+      # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its
+      # decisions from /decisions; a decision page built since the last run had no listing row
+      # until sync_decisions_listing ran further down, so the calendar row stayed unmarked for
+      # one whole run (MRK 2026-09-21 blocked six scheduled runs). Idempotent; runs again below.
+      - name: Decision pages -> /decisions listing (so marking sees new decisions this run)
+        run: python sync_decisions_listing.py
+
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
         run: python mark_calendar_decided.py
 
@@ -568,6 +575,18 @@ jobs:
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
       - name: "BreadcrumbList on every indexable page"
         run: python build_breadcrumbs.py
+
+      # SEO audit 2026-09-23: 168 indexable pages had no og:title and most lacked
+      # og:description/og:site_name. Fills only what is missing; owners keep their strings.
+      # tests/test_og_tags.py fails if this step goes missing.
+      - name: "Open Graph / Twitter card on every indexable page"
+        run: python add_og_tags.py
+
+      # /llms.txt is the file we point AI assistants at; it was hand-written and three
+      # numbers stale (n=1,792 vs 1,852; 73.5% vs 71.3%; 1,756 vs 1,752 readouts). Rendered
+      # from the owners now; tests/test_llms_txt_current.py fails if it drifts.
+      - name: "/llms.txt from the numbers' owners"
+        run: python build_llms_txt.py
 
       - name: "Noindex empty calendar months (both directions)"
         run: python noindex_empty_months.py

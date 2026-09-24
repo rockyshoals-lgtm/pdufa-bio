@@ -36,6 +36,13 @@ MON = ["January", "February", "March", "April", "May", "June", "July", "August",
        "September", "October", "November", "December"]
 
 
+
+def _dw(n, title=False):
+    """'day' for |n| == 1, else 'days' (2026-09-23: MRK's +1 shipped as "1 Days Late" in a
+    <title> and "1 days after its" in the meta description; GSK/SPRO/VTRS had "1 Days Early")."""
+    w = "day" if abs(int(n)) == 1 else "days"
+    return w.title() if title else w
+
 def esc(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -202,7 +209,7 @@ def main():
         f'<b style="color:#eef4fc">{esc(pretty(r["actual"]))}</b>'
         + (f' <span style="font-size:12px">(FDA letter date; announced {esc(pretty(r["announced"]))})</span>' if r.get("announced") else "")
         + f' <b style="color:{"#46d17f" if r["delta"] < 0 else "#9db3d4"}">'
-        f'{r["delta"]:+d} days</b></span></a>' for r in rec)
+        f'{r["delta"]:+d} {_dw(r["delta"])}</b></span></a>' for r in rec)
 
     if enough:
         headline = (f"Of the <b>{n}</b> {a.year} FDA decisions in this archive whose outcome and "

@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "MRK",
+  "date": "2026-09-22",
+  "outcome": "Approved",
+  "drug": "WINREVAIR (sotatercept-csrk) - HYPERION label update",
+  "indication": "Pulmonary arterial hypertension (WHO Group 1): label updated with HYPERION data in adults newly diagnosed within 12 months",
+  "company": "Merck & Co., Inc.",
+  "cap": "Large",
+  "headline": "WINREVAIR (sotatercept-csrk) label update approved: HYPERION trial data in adults newly diagnosed with PAH added to the U.S. label (announced Sep 22 2026).",
+  "pdufa_note": "The PDUFA goal date was September 21, 2026, sourced to Merck's Q2 2026 10-Q and its 8-K of February 3, 2026. Merck's release of September 22 calls it \"today's approval\", so the decision is recorded one day after the goal date; the FDA's supplement action letter is not yet in Drugs@FDA and the margin will be corrected if the letter is dated earlier. This is a supplemental application: the approved indication is unchanged and the label gains HYPERION efficacy and safety data plus additional hypersensitivity language.",
+  "source": "https://www.merck.com/news/u-s-fda-approves-update-to-the-label-for-winrevair-sotatercept-csrk-to-include-data-from-the-phase-3-hyperion-trial-evaluating-adults-recently-diagnosed-with-pulmonary-arterial-hypertensio/",
+  "source_label": "Merck news release, September 22, 2026"
+ }
+]

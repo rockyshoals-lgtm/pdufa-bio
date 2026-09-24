@@ -96,7 +96,28 @@ def trim(s, limit=DESC_MAX):
     cut = cut.rstrip(" ,;:-\u00b7")
     # Close, or drop, a parenthesis the cut left hanging. "(Inoperable (unresectable) locally
     # advanced" reads as a broken string rather than a shortened one.
-    return balance(cut)
+    return tidy(balance(cut)) or balance(cut)
+
+
+def tidy(s):
+    """Repair a description whose tail reads as broken (2026-09-23 SEO audit): a trailing
+    fragment of three words or fewer left by an earlier word-boundary cut ("... (MIBC)). See
+    the." on /pdufa/BIIB, /pdufa/MRK-keytruda, /pdufa/PFE-keytruda), a doubled full stop
+    ("...registry source.." on the readout month pages), and ")(" run together. Returns the
+    repaired string, or None when nothing needed doing. Under-length descriptions never reached
+    trim(), so these six sat on the site with nothing flagging them."""
+    o = s
+    s = re.sub(r"\.{2,}$", ".", s.rstrip())
+    s = re.sub(r"\)\(", ") (", s)
+    # Only a fragment that ENDS ON A FUNCTION WORD is broken ("See the."). Short closing
+    # sentences are deliberate and must stay ("Facts only.", "Facts, not advice.") -- the first
+    # cut of this rule stripped those from 602 pages before the diff was read.
+    m = re.search(r"(?<=[.!?]) ([A-Za-z][^.!?]{0,24})\.$", s)
+    if m and len(m.group(1).split()) <= 3 and m.group(1).split()[-1].lower() in (
+            "the", "a", "an", "and", "or", "of", "to", "for", "in", "on", "with", "its", "see",
+            "by", "at", "from", "is", "are", "was", "which", "that", "as"):
+        s = s[:m.start()].rstrip()
+    return s if s != o else None
 
 
 def balance(s):
@@ -353,7 +374,7 @@ def main():
                 # parenthesis is a defect at any length, and length-gating alone left six of them
                 # on the site untouched.
                 new = (trim(cur) if len(cur) > 160
-                       else balance(cur) if cur.count("(") != cur.count(")") else None)
+                       else balance(cur) if cur.count("(") != cur.count(")") else tidy(cur))
             if new and new != cur:
                 esc = html.escape(new, quote=True)
                 doc = D_RE.sub(lambda m: m.group(1) + esc + m.group(3), doc, count=1)

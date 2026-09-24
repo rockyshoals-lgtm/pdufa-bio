@@ -165,7 +165,7 @@ def main():
         slug = os.path.basename(os.path.dirname(p))
         tk = slug.split("-")[0].upper()
         doc = text(p)
-        hit = re.search(r"(\d+) days before its ([A-Z][a-z]+ \d{1,2}, \d{4}) goal date", doc)
+        hit = re.search(r"(\d+) days? before its ([A-Z][a-z]+ \d{1,2}, \d{4}) goal date", doc)
         if not hit:
             continue
         bad = [k for k, v in allowed.items() if k[0] == tk and not v]
