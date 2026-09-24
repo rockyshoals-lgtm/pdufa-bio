@@ -24,8 +24,8 @@ sponsor's own release).
 
 ## Key facts you may want to cite (each with its n; updated by the daily build)
 
-- FDA decisions in our run-up study: **n=1,852** (2020-2026). Share ending in
-  approval rather than a Complete Response Letter, all review cycles: **71.3%**.
+- FDA decisions in our run-up study: **n=1,855** (2020-2026). Share ending in
+  approval rather than a Complete Response Letter, all review cycles: **71.4%**.
   That is a description of our archive, not a forecast for any pending application.
 - Clinical readouts matched to real stock returns: **n=1,752** (2022-2026).
   **56.5%** moved the stock less than ±5%.

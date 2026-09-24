@@ -1,34 +1,34 @@
 {
- "n_events": 1852,
+ "n_events": 1855,
  "date_min": "2020-01-08",
- "date_max": "2026-09-18",
- "n_approval": 1321,
+ "date_max": "2026-09-22",
+ "n_approval": 1324,
  "n_crl": 531,
- "approval_rate": 71.3,
- "t120_coverage_n": 1781,
+ "approval_rate": 71.4,
+ "t120_coverage_n": 1784,
  "t120_coverage_pct": 96.2,
- "T-120_T-1_median_pct": 2.12,
- "T-120_T-1_mean_pct": 7.34,
- "T-120_T-7_median_pct": 2.48,
- "T-120_T-7_mean_pct": 7.16,
- "T-120_T-3_median_pct": 2.8,
- "T-120_T-3_mean_pct": 7.49,
- "T-120_peak_median_pct": 17.91,
- "T-120_peak_mean_pct": 34.67,
- "runup_30d_median": 0.58,
- "runup_21d_median": 0.41,
+ "T-120_T-1_median_pct": 2.16,
+ "T-120_T-1_mean_pct": 7.38,
+ "T-120_T-7_median_pct": 2.51,
+ "T-120_T-7_mean_pct": 7.21,
+ "T-120_T-3_median_pct": 2.84,
+ "T-120_T-3_mean_pct": 7.54,
+ "T-120_peak_median_pct": 17.94,
+ "T-120_peak_mean_pct": 34.69,
+ "runup_30d_median": 0.59,
+ "runup_21d_median": 0.4,
  "runup_14d_median": 0.15,
- "runup_7d_median": -0.02,
+ "runup_7d_median": -0.03,
  "runup_5d_median": 0.0,
  "runup_3d_median": 0.0,
  "post_1d_median": -0.02,
- "post_1d_median_approval": 0.14,
+ "post_1d_median_approval": 0.13,
  "post_1d_median_crl": -0.92,
  "post_2d_median": 0.07,
  "post_2d_median_approval": 0.47,
  "post_2d_median_crl": -1.71,
- "post_5d_median": -0.14,
- "post_5d_median_approval": 0.42,
+ "post_5d_median": -0.13,
+ "post_5d_median_approval": 0.43,
  "post_5d_median_crl": -2.5,
  "cohort_abs_move": {
   "Nano (<$50M)": {
@@ -44,12 +44,12 @@
    "n": 280
   },
   "Mid ($2B-$10B)": {
-   "median_abs_pct": 2.16,
-   "n": 233
+   "median_abs_pct": 2.14,
+   "n": 234
   },
   "Large (>$10B)": {
    "median_abs_pct": 0.98,
-   "n": 834
+   "n": 835
   }
  },
  "by_year": {
@@ -108,13 +108,13 @@
    "approval_rate": 70.0
   },
   "2026": {
-   "n": 156,
-   "t120_median_pct": 11.91,
-   "t120_peak_median_pct": 30.0,
-   "t120_n": 156,
-   "runup_30d_median": 2.31,
+   "n": 159,
+   "t120_median_pct": 12.17,
+   "t120_peak_median_pct": 30.56,
+   "t120_n": 159,
+   "runup_30d_median": 2.59,
    "post_1d_median": 0.19,
-   "approval_rate": 85.3
+   "approval_rate": 85.5
   }
  }
 }
