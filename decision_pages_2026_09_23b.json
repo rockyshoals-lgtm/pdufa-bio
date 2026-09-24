@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "NUVB",
+  "date": "2026-09-16",
+  "outcome": "Approved",
+  "drug": "IBTROZI (taletrectinib) - sNDA S-004 label update",
+  "indication": "ROS1-positive non-small cell lung cancer: label updated with longer-term TRUST-I / TRUST-II response and duration-of-response data",
+  "company": "Nuvation Bio Inc.",
+  "cap": "Small",
+  "headline": "IBTROZI (taletrectinib) sNDA approved: TRUST-I / TRUST-II longer follow-up (TKI-naive median duration of response 49.7 months) added to the U.S. label on September 16, 2026, 110 days before the January 4, 2027 goal date.",
+  "pdufa_note": "The PDUFA goal date was January 4, 2027, sourced to Nuvation Bio's 8-K of August 6, 2026. The FDA's approval letter for NDA 219713/S-004 is dated September 16, 2026 (Drugs@FDA), and Nuvation's release carries the same date, so the FDA action day is documented: 110 days early. This is a supplemental application: the approved indication and the safety sections of the label are unchanged; the label gains updated response-rate and duration-of-response data from an August 2025 data cutoff. The supplement was submitted March 4, 2026 and also fulfils a postmarketing commitment from the June 11, 2025 approval.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219713Orig1s004ltr.pdf",
+  "source_label": "FDA approval letter, NDA 219713/S-004, September 16, 2026"
+ }
+]

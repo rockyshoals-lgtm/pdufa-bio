@@ -55,7 +55,18 @@ New **`build_llms_txt.py`** renders it from the owners: run-up n and approval sh
 
 **For a ruling — the 454 long titles.** Decision-page titles are `"{drug} Approved {date}, N Days Early | {TICKER} FDA Decision | pdufa.bio"` (73–90 chars); condition, adcomm and conference pages run similar. Google truncates around 60 characters; Bing shows more; the answer engines read the whole string. The current shape front-loads the drug and outcome, so what gets truncated is the "| TICKER FDA Decision | pdufa.bio" tail, which is the least valuable part. I would leave them, or at most drop the " | pdufa.bio" suffix on decision pages (saves 12 chars). Not doing that without a word, because `fix_meta_lengths` and the snippet guard both know the current shape.
 
-## 6. Also checked
+## 6. Appended 18:20 Pacific = 21:20 Eastern = 2026-09-24 01:20 UTC: the first green-path run surfaced a second approval the site had missed for a week
+
+With the MRK block cleared, the dispatched run (35941216525) got past calendar marking and stopped at the **early-approval watch**: Drugs@FDA shows **NDA 219713 SUPPL-4 approved 2026-09-16** (class EFFICACY) for IBTROZI (taletrectinib), whose sNDA sits on our calendar at **2027-01-04**. Verified against two primary documents before publishing:
+
+- **FDA approval letter 219713Orig1s004ltr.pdf** (posted to Drugs@FDA 09-21, signed 09/16/2026 01:15 PM): the sNDA "dated and received March 4, 2026 … provides for updated response rates and duration of response data for patients in the TRUST-I and TRUST-II studies … approved, effective on the date of this letter." March 4, 2026 + a 10-month standard clock = January 4, 2027, i.e. our row's goal date, which the 8-K of 08-06 describes in the same words ("updated efficacy data in TKI-naïve and TKI-pretreated advanced ROS1+ NSCLC, target action date January 4, 2027"). Same application.
+- **Nuvation Bio release, dateline New York, Sept. 16, 2026**: "today announced that the FDA has approved a supplemental New Drug Application (sNDA) for IBTROZI … Approval comes four months ahead of PDUFA date." FDA action day and announcement day coincide, so the margin is measurable.
+
+Published: `/fda-decision/NUVB-2026-09-16`, row Decided/Approved with `fda_action_date` 2026-09-16 and the letter as `decision_source_url`; **−110 days**, now the largest early margin in the 2026 set (CORT ROSELLA was −108). Timing statistic is now **31: 20 early / 9 on the day / 2 late** (section 1's "30: 19/9/2" was true for the first push of the evening; this second push supersedes it, and /llms.txt re-rendered itself to the new split). Label update only (indication and safety sections unchanged); the page says so.
+
+**Why the site missed it for a week.** The sponsor announced on 09-16, EDGAR has no 8-K (a label supplement), the FDA letter reached Drugs@FDA on 09-21, and the watch step that reads Drugs@FDA never ran to completion because every run from 09-22 died earlier at the MRK block. One blocked row hid a second decision. The ordering fix in section 1 (listing before marking) is what let this run reach the watch at all. Task #48 (arm the watch from acceptance, not from the goal date) would have caught the sponsor release on 09-16; it stays queued.
+
+## 7. Also checked
 
 - Forward slate, day-precision, 09-15 → 10-05: LLY, NUVL, RARE, MRK, IONS, BFRI, SRRK all Decided/Approved with pages; INCY + MIRM zilurgisertib 2026-09-26 (a Saturday) Upcoming. Nothing past due.
 - Sync-client artefacts: none.

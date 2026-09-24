@@ -9580,9 +9580,9 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Mid",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/NUVB",
-  "ua": "2026-09-21T23:44:39Z",
+  "ua": "2026-09-24T01:07:40Z",
   "_d": {
    "nct_id": null,
    "indication": "ROS1-positive non-small cell lung cancer",
@@ -9600,8 +9600,17 @@ export default [
    },
    "source": "Nuvation Bio Inc. 8-K 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1811063/000119312526336751/d261840dex991.htm",
-   "source_quote": "t the U.S. Food and Drug Administration (FDA) accepted a supplemental New Drug Application (sNDA) for IBTROZI with updated efficacy data in TKI-na ve and TKI-pretreated advanced ROS1+ NSCLC, with a target action date of January 4, 2027. The submission includes an additional 10 months of data from the pivotal TRUST-I and TRUST-II studies as of an August"
-  }
+   "source_quote": "t the U.S. Food and Drug Administration (FDA) accepted a supplemental New Drug Application (sNDA) for IBTROZI with updated efficacy data in TKI-na ve and TKI-pretreated advanced ROS1+ NSCLC, with a target action date of January 4, 2027. The submission includes an additional 10 months of data from the pivotal TRUST-I and TRUST-II studies as of an August",
+   "brand": "IBTROZI",
+   "fda_action_date": "2026-09-16",
+   "decision_source": "FDA approval letter NDA 219713/S-004 dated September 16, 2026 (Drugs@FDA)",
+   "decision_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219713Orig1s004ltr.pdf",
+   "decision_quote": "This Prior Approval sNDA provides for updated response rates and duration of response data for patients in the TRUST-I and TRUST-II studies. ... It is approved, effective on the date of this letter.",
+   "announcement_url": "https://www.prnewswire.com/news-releases/nuvation-bio-announces-fda-approval-of-supplemental-new-drug-application-for-ibtrozi-taletrectinib-with-updated-duration-of-response-in-tki-naive-advanced-ros1-positive-non-small-cell-lung-cancer-302881232.html",
+   "review": "Supplemental NDA (S-004, submitted March 4, 2026) approved September 16, 2026, 110 days before the January 4, 2027 goal date. Label update only: the TRUST-I TKI-naive median duration of response (49.7 months) and longer follow-up from TRUST-I and TRUST-II enter the label; the indication and the safety sections are unchanged."
+  },
+  "oc": "Approved",
+  "dcd": "2026-09-16"
  },
  {
   "id": "pdufa_ibrx_2027-01-06",

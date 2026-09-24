@@ -33,8 +33,8 @@ sponsor's own release).
   event to the last close before it: **-0.03%**. The "conference run-up" retail
   investors remember is largely a **2020 artifact** (median +17.3% that year; negative
   in 2022, 2023 and 2024). Nano-cap presenters are the weakest cohort, not the strongest.
-- FDA decision timing, 2026, sourced decisions only: of **30** decisions with both a
-  documented goal date and a documented action date, **19** came before the goal
+- FDA decision timing, 2026, sourced decisions only: of **31** decisions with both a
+  documented goal date and a documented action date, **20** came before the goal
   date, **9** on it and **2** after. (/research/fda-decision-timing)
 - Released FDA Complete Response Letters (openFDA): **458** letters, of which
   **309** went to applications the FDA has since approved. That ratio reflects
