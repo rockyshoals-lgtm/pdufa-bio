@@ -38,7 +38,7 @@ _, d = get("/calendar/2027/january"); chk("/calendar/2027/january: NUVB row mark
 st, d = get("/fda-decision/BAYRY-2026-09-16"); chk("BAYRY Kerendia page: no margin, FDA letter", st == 200 and "215341Orig1s011ltr.pdf" in d and not re.search(r"\d+ Days? (Early|Late)", d), f"status {st}")
 _, d = get("/drug/kerendia"); chk("/drug/kerendia states approval 09-16", "approved on September 16, 2026" in d)
 _, d = get("/llms.txt")
-chk("llms.txt: n=1,852 / 71.3% / 1,752 / 20-9-2 of 31 / 458-309", all(s in d for s in ("n=1,852", "71.3%", "n=1,752", "**31**", "**20**", "**9**", "**2**", "**458**", "**309**")))
+import sys as _s; _s.path.insert(0, "."); import build_llms_txt as _B; chk("llms.txt == owners render (n/rate/timing/CRL from their files)", d.strip() == _B.render(_B.facts()).strip())
 chk("llms.txt: no stale 1,792 / 73.5%", "1,792" not in d and "73.5%" not in d)
 _, d = get("/sitemap.xml"); chk("sitemap has MRK-2026-09-22 and /ticker/ADCT", "/fda-decision/MRK-2026-09-22" in d and "/ticker/ADCT" in d)
 st, _ = get("/_index_current_backup.html"); chk("backup homepage gone (404)", st == 404, f"status {st}")
