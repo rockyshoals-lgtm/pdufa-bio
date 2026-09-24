@@ -83,7 +83,7 @@ def main():
         f'<div class="row"><div class="t"><b>{esc(c["t"])}</b> &middot; '
         f'{esc(c["name"][:64])}</div><div class="d">Goal date moved from '
         f'<b>{esc(pretty(c["prior"]))}</b> to <b>{esc(pretty(c["now"]))}</b>, '
-        f'{abs(c["days"])} days {"later" if c["days"] > 0 else "earlier"}'
+        f'{abs(c["days"])} day{"" if abs(c["days"]) == 1 else "s"} {"later" if c["days"] > 0 else "earlier"}'
         + (f', announced by {esc(c["company"])}' if c["company"] else "")
         + (f'. <a class="lit" href="{esc(c["url"])}" rel="nofollow">Source</a>.'
            if c["url"] else ".")

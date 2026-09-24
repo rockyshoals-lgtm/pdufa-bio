@@ -76,6 +76,10 @@ Published as `/fda-decision/BAYRY-2026-09-16`, Decided/Approved with `fda_action
 
 Small thing found on the way: the decision-page title builder truncates a long drug string at a word boundary ("KERENDIA (finerenone) for CKD in type 1 Approved…"), which is #65 NEW-1 ("six truncated decision-page drug names") showing up again. I gave this one a short name ("KERENDIA (finerenone), T1D-CKD") rather than fix the builder tonight; the builder fix stays on #65.
 
+## 6c. Appended 19:00 Pacific = 22:00 Eastern = 2026-09-24 02:00 UTC: the new guard earned its keep on its first CI run
+
+Run 35942884384 (after Kerendia) got through both watches and stopped in the guard suite: `tests/test_no_one_days.py` — `/conferences: "Sep 25 to 28, 2026 · in 1 days"`. CI builds that countdown from the Eastern date (09-24 → 1 day; my local build had said "in 2 days" and passed). Real defect, same family as section 2, in `build_conferences.py`; also fixed the same shape in `build_freshness_stamp.py` ("(1 days)") and `build_date_changes.py` ("1 days later") before they surfaced. Now "today" / "tomorrow" / "in N days".
+
 ## 7. Also checked
 
 - Forward slate, day-precision, 09-15 → 10-05: LLY, NUVL, RARE, MRK, IONS, BFRI, SRRK all Decided/Approved with pages; INCY + MIRM zilurgisertib 2026-09-26 (a Saturday) Upcoming. Nothing past due.

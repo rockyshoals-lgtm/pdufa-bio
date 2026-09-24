@@ -219,8 +219,8 @@ def main():
             json.dump(info, open(out, "w", encoding="utf-8"), indent=1)
     if nxt:
         print(f"next FDA decision: {nxt[1]} on {nxt[0]} "
-              + (f"(goal date passed {-nxt[2]} days ago; awaiting)" if awaiting
-                 else f"({nxt[2]} days)"))
+              + (f"(goal date passed {-nxt[2]} day{'' if -nxt[2] == 1 else 's'} ago; awaiting)" if awaiting
+                 else f"({nxt[2]} day{'' if nxt[2] == 1 else 's'})"))
 
     done = 0
     for p in sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True)):

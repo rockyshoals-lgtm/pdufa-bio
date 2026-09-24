@@ -251,7 +251,7 @@ def render(data, by_code, today):
             f'<span style="color:#dce7f7;font-size:14px">{esc(c["name"])}</span></div>'
             f'<div class="lit" style="font-size:12.5px;color:var(--mut2)">'
             f'{esc(pretty(c["start"], c["end"]))}'
-            + (f' · in {days} days' if 0 <= days <= 120 else '') + '</div></div>'
+            + ((' · today' if days == 0 else ' · tomorrow' if days == 1 else f' · in {days} days') if 0 <= days <= 120 else '') + '</div></div>'
             f'<div style="font-size:12.5px;color:var(--mut2);margin-top:3px">'
             f'{esc(c["city"])} · {esc(c["focus"])} · '
             f'<a href="{esc(c["source"])}" rel="nofollow noopener">official site</a></div>'
