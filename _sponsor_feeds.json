@@ -1,8 +1,10 @@
 {
  "ABBV": {
   "checked": "2026-09-27",
-  "company": "AbbVie",
-  "feeds": []
+  "feeds": [
+   "https://news.abbvie.com/index.php?s=2429&pagetemplate=rss"
+  ],
+  "how": "hand-verified 2026-09-27 (audit 09-27 item 3): feed parses and carries current releases"
  },
  "AGIO": {
   "checked": "2026-09-27",
@@ -77,8 +79,10 @@
  },
  "GSK": {
   "checked": "2026-09-27",
-  "company": "GSK plc",
-  "feeds": []
+  "feeds": [
+   "https://www.gsk.com/en-gb/media/rss/"
+  ],
+  "how": "hand-verified 2026-09-27 (audit 09-27 item 3): feed parses and carries current releases"
  },
  "IBRX": {
   "checked": "2026-09-27",
@@ -99,8 +103,10 @@
  },
  "IRD": {
   "checked": "2026-09-27",
-  "company": "Opus Genetics, Inc.",
-  "feeds": []
+  "feeds": [
+   "https://ir.opusgtx.com/press-releases/rss"
+  ],
+  "how": "hand-verified 2026-09-27 (audit 09-27 item 3): feed parses and carries current releases"
  },
  "MLYS": {
   "checked": "2026-09-27",
@@ -110,7 +116,8 @@
  "MRK": {
   "checked": "2026-09-27",
   "company": "Merck & Co., Inc.",
-  "feeds": []
+  "feeds": [],
+  "note": "2026-09-27: no public news-release RSS found (merck.com refuses non-browser clients; Genentech's feed carries stories, not press releases; roche.com lists none). Covered by the FDA feeds and EDGAR passes only."
  },
  "NVCR": {
   "checked": "2026-09-27",
@@ -140,7 +147,8 @@
  "RHHBY": {
   "checked": "2026-09-27",
   "company": "Roche Holding AG",
-  "feeds": []
+  "feeds": [],
+  "note": "2026-09-27: no public news-release RSS found (merck.com refuses non-browser clients; Genentech's feed carries stories, not press releases; roche.com lists none). Covered by the FDA feeds and EDGAR passes only."
  },
  "SMMT": {
   "checked": "2026-09-27",
@@ -164,7 +172,9 @@
  },
  "VTRS": {
   "checked": "2026-09-27",
-  "company": "Viatris Inc.",
-  "feeds": []
+  "feeds": [
+   "https://newsroom.viatris.com/press-releases?pagetemplate=rss"
+  ],
+  "how": "hand-verified 2026-09-27 (audit 09-27 item 3): feed parses and carries current releases"
  }
 }

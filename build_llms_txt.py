@@ -124,6 +124,7 @@ sponsor's own release).
 - /fda-this-month - what the FDA decided and has still to decide this month, as sentences
 - /decisions - archive of past approvals and CRLs, source-linked
 - /crl - every released FDA Complete Response Letter, by year, linking the FDA's PDF
+- /fda-approval-letters - the FDA's own record (approval letter, notice or CRL) behind every decision we date
 - /pdufa-date-changes - PDUFA dates the FDA or sponsor moved, with before and after
 - /adcomm - advisory committee meetings and outcomes
 - /readouts - clinical trial readouts, by month

@@ -233,6 +233,10 @@ jobs:
       - name: "Decision pages cite the FDA record of the action date"
         run: python inject_fda_action_record.py
 
+      # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
+      - name: "/fda-approval-letters hub"
+        run: python build_fda_letters_hub.py
+
       # Audit 09-02c item 3: we hold 458 FDA CRLs and cited zero. Each CRL decision page
       # now links the FDA-hosted letter PDF when date (letter <= page date <= +4d) and
       # company both match -- a wrong primary source is worse than none, so ambiguity skips.
@@ -301,6 +305,24 @@ jobs:
       # first public in the sponsor's own release, days before any FDA feed or 8-K the other
       # passes read. Reads every armed sponsor's own news-release RSS; a lead BLOCKS like the
       # FDA watch (verify, publish or ack in _newswire_ack.json). Raise the issue, then fail.
+      # Audit 2026-09-27 item 1: the FDA's own CDER "What's New: Drugs" feed. Atebrioz was posted
+      # there at 2:46 PM ET on 09-25, four hours before the sponsor release, on a page type the
+      # press-announcements pass never reads. Lead = BLOCK (verify, publish, or ack); an FDA 401 is
+      # reported as BLIND, never as a lead. Raise the issue, then fail.
+      - name: FDA "What's New - Drugs" feed watch (armed PDUFAs)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          python watch_fda_drugs_feed.py > fdafeed_watch.txt 2>&1
+          rc=$?
+          cat fdafeed_watch.txt
+          if [ "$rc" != "0" ]; then
+            { echo "**The rebuild is BLOCKED.** \`watch_fda_drugs_feed.py\`: the FDA posted a decision on an armed event."; echo; echo '```'; cat fdafeed_watch.txt; echo '```'; } > fdafeed_issue.md
+            gh issue create --title "BLOCKING: FDA-posted decision on an armed event ($(date -u +%F))" --body-file fdafeed_issue.md || echo "issue create skipped"
+          fi
+          exit $rc
+
       - name: Sponsor news-feed watch (armed PDUFAs)
         env:
           GH_TOKEN: ${{ github.token }}

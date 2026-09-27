@@ -22,7 +22,7 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 # ("approval was announced by the sponsor on", TLX) and a CRL dated by the FDA's own released
 # letter ("received a Complete Response Letter dated", ACHV/UNCY). Both answer; neither labels.
 ANSWER = re.compile(r"was approved on|received a Complete Response Letter (?:on|dated)|"
-                    r"was withdrawn on|approval was announced by the sponsor on")
+                    r"was withdrawn on|approval was announced by the sponsor on|FDA announced its approval of")
 
 
 def test_decision_descriptions_answer():

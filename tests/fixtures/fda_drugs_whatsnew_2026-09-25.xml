@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Excerpt of https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml as read
+     2026-09-27 (US government work, public domain). Kept as the replay fixture for
+     tests/test_fda_drugs_feed_replay.py: the Atebrioz item was posted at 14:46:15 EDT on 09-25,
+     four hours before the sponsors' 7:00 PM release. -->
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base="http://www.fda.gov/">
+  <channel>
+    <title>What's New: Drugs RSS Feed</title>
+    <link>http://www.fda.gov/</link>
+<item>
+  <title>Notable Approvals | Drugs</title>
+  <link>http://www.fda.gov/drugs/news-events-human-drugs/notable-approvals-drugs</link>
+  <description>News about human drug-related approvals</description>
+  <pubDate>Fri, 25 Sep 2026 14:48:03 EDT</pubDate>
+</item>
+<item>
+  <title>FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva</title>
+  <link>http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-third-treatment-fibrodysplasia-ossificans-progressiva</link>
+  <description>FDA has approved Atebrioz (zilurgisertib) tablets to reduce the volume of total new heterotopic ossification in adults and pediatric patients 12 years and older with fibrodysplasia ossificans progressiva (FOP). </description>
+  <pubDate>Fri, 25 Sep 2026 14:46:15 EDT</pubDate>
+</item>
+<item>
+  <title>FDA Approves Drug to Treat Idiopathic Nephrotic Syndrome in Patients 2 Years and Older</title>
+  <link>http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-drug-treat-idiopathic-nephrotic-syndrome-patients-2-years-and-older</link>
+  <description>FDA has approved Gazyva (obinutuzumab) injection to reduce the risk of relapse in adult and pediatric patients 2 years of age and older with frequently relapsing or steroid-dependent, childhood-onset, idiopathic nephrotic syndrome who are in remission. </description>
+  <pubDate>Fri, 25 Sep 2026 13:51:03 EDT</pubDate>
+</item>
+<item>
+  <title>October 30, 2026: Dermatologic and Ophthalmic Drugs Advisory Committee Meeting Announcement - 10/30/2026</title>
+  <link>http://www.fda.gov/advisory-committees/advisory-committee-calendar/october-30-2026-dermatologic-and-ophthalmic-drugs-advisory-committee-meeting-announcement-10302026</link>
+  <description>October 30, 2026: Dermatologic and Ophthalmic Drugs Advisory Committee Meeting Announcement</description>
+  <pubDate>Fri, 25 Sep 2026 09:58:37 EDT</pubDate>
+</item>
+  </channel>
+</rss>

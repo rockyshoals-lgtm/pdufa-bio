@@ -1643,7 +1643,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -1850,7 +1850,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1953,7 +1953,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2008,7 +2008,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -4012,7 +4012,10 @@ export default [
    "decision_quote": "The U.S. Food and Drug Administration (FDA) has approved Atebrioz (zilurgisertib) tablets to reduce the volume of total new heterotopic ossification ... in adults and pediatric patients 12 years and older with fibrodysplasia ossificans progressiva (FOP).",
    "decision_date_unsourced": true,
    "decision_date_note": "The FDA's notice was published September 25, 2026 and says the FDA \"has approved\" Atebrioz, so the approval came no later than September 25, before the Saturday September 26 goal date. Neither it nor the Mirum/Incyte release states the action day and Drugs@FDA has no record yet, so no margin is published until the approval letter posts.",
-   "licensing_note": "Incyte developed zilurgisertib and licensed it to Mirum, which holds the NDA."
+   "licensing_note": "Incyte developed zilurgisertib and licensed it to Mirum, which holds the NDA.",
+   "indication_short": "fibrodysplasia ossificans progressiva (ages 12+)",
+   "fda_framing": "the third FOP treatment",
+   "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva"
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
@@ -4043,7 +4046,10 @@ export default [
    "announcement_url": "https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva",
    "decision_quote": "The U.S. Food and Drug Administration (FDA) has approved Atebrioz (zilurgisertib) tablets to reduce the volume of total new heterotopic ossification ... in adults and pediatric patients 12 years and older with fibrodysplasia ossificans progressiva (FOP).",
    "decision_date_unsourced": true,
-   "decision_date_note": "The FDA's notice was published September 25, 2026 and says the FDA \"has approved\" Atebrioz, so the approval came no later than September 25, before the Saturday September 26 goal date. Neither it nor the Mirum/Incyte release states the action day and Drugs@FDA has no record yet, so no margin is published until the approval letter posts."
+   "decision_date_note": "The FDA's notice was published September 25, 2026 and says the FDA \"has approved\" Atebrioz, so the approval came no later than September 25, before the Saturday September 26 goal date. Neither it nor the Mirum/Incyte release states the action day and Drugs@FDA has no record yet, so no margin is published until the approval letter posts.",
+   "indication_short": "fibrodysplasia ossificans progressiva (ages 12+)",
+   "fda_framing": "the third FOP treatment",
+   "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva"
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
@@ -5617,7 +5623,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",

@@ -244,7 +244,7 @@ def main():
         f'a decision a day or more after the FDA acted, the row shows both dates. '
         + "; ".join(f'<b>{esc(r["ticker"])}</b> <a href="{esc(r["fda_url"])}" rel="noopener">'
                     f'{esc(r["fda_record"] or "FDA record")}</a>' for r in rec if r.get("fda_url"))
-        + '.</div>')
+        + '. The full list, with every letter: <a href="/fda-approval-letters">FDA approval letters</a>.</div>')
     if enough:
         headline = (f"Of the <b>{n}</b> {a.year} FDA decisions in this archive whose outcome and "
                     f"dates we have checked against a primary source, <b>{len(early)}</b> came "

@@ -247,9 +247,16 @@ def render(data, by_code, today):
             f'margin:0 0 11px;background:var(--card)">'
             f'<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;'
             f'justify-content:space-between">'
-            f'<div><b class="lit" style="color:#eef4fc;font-size:15px">{esc(c["code"])}</b> '
-            f'<span style="color:#dce7f7;font-size:14px">{esc(c["name"])}</span></div>'
-            f'<div class="lit" style="font-size:12.5px;color:var(--mut2)">'
+            # 2026-09-27: the per-conference pages (/conference/AASLD, /conference/SABCS ...) had NO
+            # internal link at all, so "aasld 2026 dates" (Bing, position 8.8) could only land on
+            # this hub. Link the card to its page when the page exists.
+            + (f'<div><a href="/conference/{esc(c["code"])}" style="text-decoration:none">'
+               f'<b class="lit" style="color:#eef4fc;font-size:15px">{esc(c["code"])}</b> '
+               f'<span style="color:#dce7f7;font-size:14px">{esc(c["name"])} {esc(str(c["start"])[:4])}</span></a></div>'
+               if os.path.exists(os.path.join(SITE, "conference", c["code"], "index.html")) else
+               f'<div><b class="lit" style="color:#eef4fc;font-size:15px">{esc(c["code"])}</b> '
+               f'<span style="color:#dce7f7;font-size:14px">{esc(c["name"])}</span></div>')
+            + f'<div class="lit" style="font-size:12.5px;color:var(--mut2)">'
             f'{esc(pretty(c["start"], c["end"]))}'
             + ((' · today' if days == 0 else ' · tomorrow' if days == 1 else f' · in {days} days') if 0 <= days <= 120 else '') + '</div></div>'
             f'<div style="font-size:12.5px;color:var(--mut2);margin-top:3px">'

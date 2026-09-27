@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-09-27 audit (audit seo currency)** — `2026-09-27_audit_seo_currency.md` — 2026-09-27, measured 20:05 UTC = 16:05 Eastern (Sunday). Per RULE 1 every time carries its zone.
+- **2026-09-27 BUILDER (the FDA feed is first and now we read it)** — `2026-09-27_BUILDER_the_FDA_feed_is_first_and_now_we_read_it.md` — 2026-09-27, written ~14:30 Pacific = 17:30 Eastern = 21:30 UTC. Per RULE 1 every time carries its zone. Facts and file contents only; not investment advice.
 - **2026-09-26 audit (audit currency seo moat)** — `2026-09-26_audit_currency_seo_moat.md` — 2026-09-26, measured 19:20 UTC = 15:20 Eastern = 12:20 Pacific (Saturday). Per RULE 1 every time carries its zone.
 - **2026-09-26 BUILDER (the FDA dates every row and the statistic is 29 not 32)** — `2026-09-26_BUILDER_the_FDA_dates_every_row_and_the_statistic_is_29_not_32.md` — 2026-09-26, written ~22:00 Pacific = 2026-09-27 01:00 Eastern = 05:00 UTC. Per RULE 1 every time carries its zone. Facts and file contents only; not investment advice.
 - **2026-09-23 BUILDER (six red runs one label update and the file we ask AIs to quote was the)** — `2026-09-23_BUILDER_six_red_runs_one_label_update_and_the_file_we_ask_AIs_to_quote_was_the_stalest_page.md` — 2026-09-23, written 18:00 Pacific = 21:00 Eastern = 2026-09-24 01:00 UTC. Per RULE 1 every time here carries its zone. Facts and file contents only; not investment advice.

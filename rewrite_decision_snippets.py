@@ -72,7 +72,7 @@ def page_facts(doc):
           # already-rewritten format: "{drug} Approved {date}... | TK FDA Decision |"
           # 2026-09-26: "Approval Announced" titles were unparseable, so a row whose action date
           # later arrived from Drugs@FDA (TLX Pixclara) kept its "announced" title forever.
-          or re.match(r"^(.+?)\s+(?:Approved|Approval Announced|CRL|Withdrawn)\b.*\|\s*[A-Z]{1,6} FDA "
+          or re.match(r"^(.+?)\s+(?:FDA Approval Announced|Approved|Approval Announced|CRL|Withdrawn)\b.*\|\s*[A-Z]{1,6} FDA "
                       r"Decision\s*\|", ttl))
     return oc, (dm.group(1).strip() if dm else "")
 
@@ -111,6 +111,13 @@ def main():
     announced = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10])
                  for r in rows if r.get("type") == "PDUFA"
                  and (r.get("_d") or {}).get("decision_date_unsourced")}
+    # Audit 2026-09-27 item 2: when the source is the FDA's OWN notice (Atebrioz: CDER, 2:46 PM ET
+    # 09-25), "announced by the sponsor" understated what we know and spent the lifted sentence on
+    # our method. Those rows lead with the FDA's fact; the margin caveat stays in the body.
+    fda_notice = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): (r.get("_d") or {})
+                  for r in rows if r.get("type") == "PDUFA"
+                  and (r.get("_d") or {}).get("decision_date_unsourced")
+                  and re.match(r"https://(www\.)?fda\.gov/", str((r.get("_d") or {}).get("decision_source_url") or ""))}
     # 2026-09-20 (moat audit item 2): where the FDA's own letter is held, its date is the action
     # date and the page's date is the announcement day. Title and answer carry the FDA date.
     fda_dates = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): str((r.get("_d") or {}).get("fda_action_date"))
@@ -164,11 +171,15 @@ def main():
         if goal:
             delta = (dt.date.fromisoformat(dcd) - dt.date.fromisoformat(goal)).days
 
+        drug = re.sub(r"(\s+FDA)+$", "", drug)   # a title this script once wrote as "... FDA FDA Approval"
         drug = drug.rstrip(". ")          # an earlier ellipsis truncation must not
                                           # re-enter as fake sentence stops
         while drug.count("(") > drug.count(")"):   # nor an earlier mid-paren cut
             drug = drug[:drug.rindex("(")].rstrip(" ,(-/")
-        if oc == "Approved" and (tk, dcd) in announced:
+        if oc == "Approved" and (tk, dcd) in fda_notice:
+            word_t, verb = (f"FDA Approval Announced {pretty(dcd, short=True)}",
+                            "FDA announced its approval of")
+        elif oc == "Approved" and (tk, dcd) in announced:
             word_t, verb = (f"Approval Announced {pretty(dcd, short=True)}",
                             "approval was announced by the sponsor on")
         elif oc == "Approved" and (tk, dcd) in fda_dates:
@@ -229,17 +240,35 @@ def main():
         # "LLY (LLY):" shipped on ~25% of the first rewrite (audit 09-02c). When the
         # company IS the ticker, say it once.
         who = f"{company} ({tk})" if company != tk else tk
-        core = f"{who}: {drug} {verb} {when}."
+        if (tk, dcd) in fda_notice:
+            fd_ = fda_notice[(tk, dcd)]
+            ind = fd_.get("indication_short") or ""
+            frame = fd_.get("fda_framing") or ""
+            desc = None
+            for cand in (f"On {pretty(dcd, short=True)}, the FDA announced its approval of {drug}"
+                         f"{' for ' + ind if ind else ''}{', ' + frame if frame else ''}, per the FDA's notice.",
+                         f"On {pretty(dcd, short=True)}, the FDA announced its approval of {drug}"
+                         f"{' for ' + ind if ind else ''}{', ' + frame if frame else ''}.",
+                         f"On {pretty(dcd)}, the FDA announced its approval of {drug}, per the FDA's notice."):
+                if len(cand) <= 158:
+                    desc = cand
+                    break
+            desc = desc or f"On {pretty(dcd, short=True)}, the FDA announced its approval of {drug.split(' (')[0]}."
+            core = None
+        else:
+            core = f"{who}: {drug} {verb} {when}."
         for tail in (" Decision source document and the 120-trading-day run-up "
                      "into the date.", " Source and run-up included.", ""):
+            if core is None:
+                break
             desc = core + tail
             if len(desc) <= 160:
                 break
-        if len(desc) > 160:
+        if core is not None and len(desc) > 160:
             core = f"{tk}: {drug} {verb} {when}."          # drop the long company name
             desc = core if len(core) <= 160 else \
                 f"{tk}: {dshort} {verb} {when}."           # then the long drug name
-        if len(desc) > 158 and (tk, dcd) in announced:     # the caveat must survive fix_meta_lengths
+        if core is not None and len(desc) > 158 and (tk, dcd) in announced and (tk, dcd) not in fda_notice:
             desc = f"{tk}: {drug.split(' (')[0]} {verb} {when}."
 
         new = re.sub(r"<title[^>]*>.*?</title>",
