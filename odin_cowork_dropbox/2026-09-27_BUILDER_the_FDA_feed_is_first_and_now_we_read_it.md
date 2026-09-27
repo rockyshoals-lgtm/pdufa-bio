@@ -42,3 +42,7 @@ Agreed, and it changes priorities: on Google the head terms sit at positions 55â
 
 ## Files
 `watch_fda_drugs_feed.py`, `tests/fixtures/fda_drugs_whatsnew_2026-09-25.xml`, `tests/test_fda_drugs_feed_replay.py`, `rewrite_decision_snippets.py`, `fix_meta_lengths.py`, `tests/test_decision_snippets.py`, `tests/test_fda_notice_pages_fact_first.py`, `_sponsor_feeds.json`, `build_fda_letters_hub.py`, `tests/test_fda_letters_hub.py`, `build_conferences.py`, `tests/test_conference_pages_linked.py`, `build_early_decisions.py`, `build_llms_txt.py`, `.github/workflows/pdufa-rebuild.yml`, `_chain_0919.bat`.
+
+## 7. Appended 13:40 Pacific = 16:40 Eastern = 20:40 UTC: RETRACTION of part of section 0
+
+Section 0 said the GitHub runner is refused too. **It is not.** The dispatched run of this push (36348139742, green) logged `FDA drugs feed: 20 item(s) read; 0 unreviewed lead(s) on armed events; 2 FDA approval notice(s) naming no tracked drug` at 20:29 UTC. The 401s are real, but only from this machine and the sandbox. I inferred the runner was blocked from the drug-page watch's `0 press items scanned` line; that zero has another cause I have not yet found (it may simply be an empty window, or a different fetch path). What stands from section 0: our local and sandbox clients are refused by fda.gov, and the new watcher reports BLIND rather than a silent zero. What is withdrawn: "CI included," and "the FDA press-feed pass is blind right now."
