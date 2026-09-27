@@ -1,0 +1,28 @@
+[
+ {
+  "outcome": "Approved",
+  "date": "2026-09-25",
+  "indication": "Fibrodysplasia ossificans progressiva (FOP), adults and pediatric patients 12 years and older: reduces the volume of total new heterotopic ossification",
+  "headline": "Atebrioz (zilurgisertib) approved for fibrodysplasia ossificans progressiva in patients 12 and older: the FDA's notice was published September 25, 2026, the day before the Saturday September 26 PDUFA goal date.",
+  "pdufa_note": "The PDUFA goal date was Saturday, September 26, 2026, sourced to Mirum's 8-K of May 6, 2026. The FDA published its notice of the approval on Friday, September 25, 2026 (CDER News & Events, 2:46 PM ET); Mirum and Incyte announced it at 7:00 PM ET the same day. Neither document states the day the FDA acted and Drugs@FDA has not yet posted the approval letter, so the approval is recorded as no later than September 25 and no early/late margin is published until the letter posts. Atebrioz is a once-daily 100 mg oral ALK2 inhibitor, approved with Fast Track, Priority Review and Orphan Drug designations. The FDA issued a Rare Pediatric Disease Priority Review Voucher to Incyte. Incyte developed zilurgisertib and licensed it to Mirum for worldwide development and commercialization; an EU marketing authorization application is under review. Efficacy (PROGRESS Cohort 1, 63 patients): mean total new heterotopic ossification volume fell 3.2 cm3 on Atebrioz and rose 24.6 cm3 on placebo at week 24.",
+  "source": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-third-treatment-fibrodysplasia-ossificans-progressiva",
+  "source_label": "FDA notice, FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva, September 25, 2026",
+  "ticker": "MIRM",
+  "drug": "Atebrioz (zilurgisertib)",
+  "company": "Mirum Pharmaceuticals, Inc.",
+  "cap": "Mid"
+ },
+ {
+  "outcome": "Approved",
+  "date": "2026-09-25",
+  "indication": "Fibrodysplasia ossificans progressiva (FOP), adults and pediatric patients 12 years and older: reduces the volume of total new heterotopic ossification",
+  "headline": "Atebrioz (zilurgisertib) approved for fibrodysplasia ossificans progressiva in patients 12 and older: the FDA's notice was published September 25, 2026, the day before the Saturday September 26 PDUFA goal date.",
+  "pdufa_note": "The PDUFA goal date was Saturday, September 26, 2026, sourced to Mirum's 8-K of May 6, 2026. The FDA published its notice of the approval on Friday, September 25, 2026 (CDER News & Events, 2:46 PM ET); Mirum and Incyte announced it at 7:00 PM ET the same day. Neither document states the day the FDA acted and Drugs@FDA has not yet posted the approval letter, so the approval is recorded as no later than September 25 and no early/late margin is published until the letter posts. Atebrioz is a once-daily 100 mg oral ALK2 inhibitor, approved with Fast Track, Priority Review and Orphan Drug designations. The FDA issued a Rare Pediatric Disease Priority Review Voucher to Incyte. Incyte developed zilurgisertib and licensed it to Mirum for worldwide development and commercialization; an EU marketing authorization application is under review. Efficacy (PROGRESS Cohort 1, 63 patients): mean total new heterotopic ossification volume fell 3.2 cm3 on Atebrioz and rose 24.6 cm3 on placebo at week 24.",
+  "source": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-third-treatment-fibrodysplasia-ossificans-progressiva",
+  "source_label": "FDA notice, FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva, September 25, 2026",
+  "ticker": "INCY",
+  "drug": "Atebrioz (zilurgisertib)",
+  "company": "Incyte Corp",
+  "cap": "Large"
+ }
+]

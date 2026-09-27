@@ -62,7 +62,7 @@ def page_facts(doc):
     if not tm:
         return None, None
     ttl = _html.unescape(re.sub(r"\s+", " ", tm.group(1))).strip()
-    oc = ("Approved" if re.search(r"\bApproved\b", ttl)
+    oc = ("Approved" if re.search(r"\bApproved\b|\bApproval Announced\b", ttl)
           else "CRL" if re.search(r"CRL|Complete Response", ttl, re.I)
           else "Withdrawn" if re.search(r"\bWithdrawn\b", ttl, re.I) else None)
     dm = (re.match(r"^[A-Z]{1,6} FDA Decision [^:]+:\s*(?:Approved|Complete Response "
@@ -70,7 +70,9 @@ def page_facts(doc):
           or re.match(r"^[A-Z]{1,6} FDA Decision \([^)]+\):\s*(.+?):\s*(?:Approved|"
                       r"Complete Response Letter|CRL|Withdrawn)\s*\|", ttl, re.I)
           # already-rewritten format: "{drug} Approved {date}... | TK FDA Decision |"
-          or re.match(r"^(.+?)\s+(?:Approved|CRL|Withdrawn)\b.*\|\s*[A-Z]{1,6} FDA "
+          # 2026-09-26: "Approval Announced" titles were unparseable, so a row whose action date
+          # later arrived from Drugs@FDA (TLX Pixclara) kept its "announced" title forever.
+          or re.match(r"^(.+?)\s+(?:Approved|Approval Announced|CRL|Withdrawn)\b.*\|\s*[A-Z]{1,6} FDA "
                       r"Decision\s*\|", ttl))
     return oc, (dm.group(1).strip() if dm else "")
 
@@ -169,6 +171,15 @@ def main():
         if oc == "Approved" and (tk, dcd) in announced:
             word_t, verb = (f"Approval Announced {pretty(dcd, short=True)}",
                             "approval was announced by the sponsor on")
+        elif oc == "Approved" and (tk, dcd) in fda_dates:
+            # 2026-09-26: the FDA's own record dates the approval (Drugs@FDA / letter); the page
+            # slug keeps the announcement day. MRK WINREVAIR: announced Sep 22, FDA acted Sep 21.
+            fd = fda_dates[(tk, dcd)]
+            fdl = (dt.date.fromisoformat(fd) - dt.date.fromisoformat(goal)).days if goal else None
+            tdelta = (f", {-fdl} {_dw(-fdl, True)} Early" if fdl and fdl < 0 else
+                      f", {fdl} {_dw(fdl, True)} Late" if fdl and fdl > 0 else
+                      ", On Goal Date" if fdl == 0 else "")
+            word_t, verb = f"Approved {pretty(fd, short=True)}{tdelta}", "was approved on"
         elif oc == "Approved":
             tdelta = (f", {-delta} {_dw(-delta, True)} Early" if delta and delta < 0 else
                       f", {delta} {_dw(delta, True)} Late" if delta and delta > 0 else "")
@@ -200,7 +211,8 @@ def main():
             fdelta = (dt.date.fromisoformat(fd) - dt.date.fromisoformat(goal)).days if goal else None
             when = (f"{pretty(fd)} (announced {pretty(dcd)})"
                     + (", its PDUFA goal date" if fdelta == 0 else
-                       f", {fdelta:+d} days from its {pretty(goal)} PDUFA goal date" if fdelta is not None else ""))
+                       f", {-fdelta} {_dw(fdelta)} before its {pretty(goal)} PDUFA goal date" if fdelta is not None and fdelta < 0 else
+                       f", {fdelta} {_dw(fdelta)} after its {pretty(goal)} PDUFA goal date" if fdelta is not None else ""))
         elif (tk, dcd) in announced:
             # fits fix_meta_lengths' 158-char budget with a 40-char drug name; over budget that
             # step regenerates the whole snippet in its own shape and the caveat is lost

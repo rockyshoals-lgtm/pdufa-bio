@@ -2768,6 +2768,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/zilurgisertib",
+   "destination": "/drug/atebrioz",
+   "permanent": true
+  },
+  {
    "source": "/drug/zoliflodacin",
    "destination": "/drug/nuzolvence",
    "permanent": true

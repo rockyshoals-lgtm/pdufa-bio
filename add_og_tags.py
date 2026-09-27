@@ -77,8 +77,13 @@ def process(path, dry):
     if not add:
         return 0
     block = "".join(add)
-    # after the description meta when there is one, else after <title>
-    anchor = desc.end() if desc else title.end()
+    # after the description meta TAG when there is one, else after </title>. 2026-09-26: this was
+    # desc.end() -- the end of the regex match, which stops at the closing QUOTE, not at the '>'.
+    # The block went inside the description tag on 1,055 pages ('content="..."<meta ...>'), so
+    # parsers read the first inserted tag as junk attributes of the description meta. Found by
+    # the audit of 09-26's follow-up; repaired by repair_meta_nesting.py; guarded by
+    # tests/test_no_nested_head_tags.py.
+    anchor = (head.index(">", desc.end()) + 1) if desc else title.end()
     doc = doc[:anchor] + block + doc[anchor:]
     if not dry:
         io.open(path, "w", encoding="utf-8", newline="").write(doc)

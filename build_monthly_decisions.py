@@ -71,6 +71,12 @@ def ev_sentence(r, decided=False):
     if decided:
         oc = str(r.get("oc") or "").strip()
         dcd = str(r.get("dcd") or "")[:10]
+        page_dcd = dcd                     # the decision page's slug keeps the announcement day
+        # 2026-09-26: the FDA's own action date (Drugs@FDA / letter) where held, not the day the
+        # sponsor announced it (MRK WINREVAIR: FDA Sep 21, Merck's release Sep 22).
+        _fd = str((r.get("_d") or {}).get("fda_action_date") or "")
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", _fd) and not (r.get("_d") or {}).get("decision_date_unsourced"):
+            dcd = _fd
         when = ""
         if re.match(r"^\d{4}-\d{2}-\d{2}$", dcd):
             dd = dt.date.fromisoformat(dcd)
@@ -97,7 +103,7 @@ def ev_sentence(r, decided=False):
             verb = "issued a Complete Response Letter for"
         else:
             verb = "acted on"
-        link = f"/fda-decision/{tk}-{dcd or d}"
+        link = f"/fda-decision/{tk}-{(page_dcd if decided else '') or dcd or d}"
         return (f'<p>{when}, the FDA {verb} <a class="lit" href="{esc(link)}">{who}</a>'
                 f"{ind_txt}.</p>")
     return (f'<p><b>{MONTHS[day.month]} {day.day}</b>: the FDA is due to decide on '

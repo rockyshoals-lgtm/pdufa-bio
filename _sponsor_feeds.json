@@ -1,0 +1,170 @@
+{
+ "ABBV": {
+  "checked": "2026-09-27",
+  "company": "AbbVie",
+  "feeds": []
+ },
+ "AGIO": {
+  "checked": "2026-09-27",
+  "company": "Agios Pharmaceuticals",
+  "feeds": []
+ },
+ "ARQT": {
+  "checked": "2026-09-27",
+  "company": "Arcutis Biotherapeutics Inc.",
+  "feeds": []
+ },
+ "AXSM": {
+  "checked": "2026-09-27",
+  "company": "Axsome Therapeutics, Inc.",
+  "feeds": []
+ },
+ "AZN": {
+  "checked": "2026-09-27",
+  "company": "AstraZeneca/Alexion",
+  "feeds": []
+ },
+ "BBIO": {
+  "checked": "2026-09-27",
+  "company": "BridgeBio Pharma, Inc.",
+  "feeds": [
+   "https://investor.bridgebio.com/rss/pressrelease.aspx"
+  ]
+ },
+ "BTAI": {
+  "checked": "2026-09-27",
+  "company": "BioXcel Therapeutics",
+  "feeds": []
+ },
+ "CAPR": {
+  "checked": "2026-09-27",
+  "company": "Capricor Therapeutics Inc.",
+  "feeds": []
+ },
+ "CGEM": {
+  "checked": "2026-09-27",
+  "company": "Cullinan Therapeutics, Inc.",
+  "feeds": []
+ },
+ "COGT": {
+  "checked": "2026-09-27",
+  "company": "Cogent Biosciences",
+  "feeds": []
+ },
+ "CORT": {
+  "checked": "2026-09-27",
+  "company": "Corcept Therapeutics Inc",
+  "feeds": []
+ },
+ "CYTK": {
+  "checked": "2026-09-27",
+  "company": "Cytokinetics Inc",
+  "feeds": [
+   "https://ir.cytokinetics.com/rss/pressrelease.aspx"
+  ]
+ },
+ "EXEL": {
+  "checked": "2026-09-27",
+  "company": "Exelixis",
+  "feeds": []
+ },
+ "GILD": {
+  "checked": "2026-09-27",
+  "company": "Gilead Sciences, Inc.",
+  "feeds": [
+   "https://investors.gilead.com/rss/pressrelease.aspx"
+  ]
+ },
+ "GSK": {
+  "checked": "2026-09-27",
+  "company": "GSK plc",
+  "feeds": []
+ },
+ "IBRX": {
+  "checked": "2026-09-27",
+  "company": "ImmunityBio, Inc.",
+  "feeds": []
+ },
+ "INBX": {
+  "checked": "2026-09-27",
+  "company": "Inhibrx Biosciences, Inc.",
+  "feeds": []
+ },
+ "INO": {
+  "checked": "2026-09-27",
+  "company": "Inovio Pharmaceuticals",
+  "feeds": [
+   "https://ir.inovio.com/rss/pressrelease.aspx"
+  ]
+ },
+ "IRD": {
+  "checked": "2026-09-27",
+  "company": "Opus Genetics, Inc.",
+  "feeds": []
+ },
+ "MLYS": {
+  "checked": "2026-09-27",
+  "company": "Mineralys Therapeutics, Inc.",
+  "feeds": []
+ },
+ "MRK": {
+  "checked": "2026-09-27",
+  "company": "Merck & Co., Inc.",
+  "feeds": []
+ },
+ "NVCR": {
+  "checked": "2026-09-27",
+  "company": "NovoCure Limited",
+  "feeds": []
+ },
+ "NVO": {
+  "checked": "2026-09-27",
+  "company": "Novo Nordisk A/S",
+  "feeds": []
+ },
+ "PHVS": {
+  "checked": "2026-09-27",
+  "company": "Pharvaris N.V.",
+  "feeds": []
+ },
+ "PRAX": {
+  "checked": "2026-09-27",
+  "company": "Praxis Precision Medicines Inc.",
+  "feeds": []
+ },
+ "REGN": {
+  "checked": "2026-09-27",
+  "company": "Regeneron Pharmaceuticals Inc.",
+  "feeds": []
+ },
+ "RHHBY": {
+  "checked": "2026-09-27",
+  "company": "Roche Holding AG",
+  "feeds": []
+ },
+ "SMMT": {
+  "checked": "2026-09-27",
+  "company": "Summit Therapeutics Inc.",
+  "feeds": []
+ },
+ "SVRA": {
+  "checked": "2026-09-27",
+  "company": "Savara",
+  "feeds": []
+ },
+ "VNDA": {
+  "checked": "2026-09-27",
+  "company": "Vanda Pharmaceuticals Inc.",
+  "feeds": []
+ },
+ "VRTX": {
+  "checked": "2026-09-27",
+  "company": "Vertex",
+  "feeds": []
+ },
+ "VTRS": {
+  "checked": "2026-09-27",
+  "company": "Viatris Inc.",
+  "feeds": []
+ }
+}

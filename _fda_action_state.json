@@ -1,0 +1,256 @@
+{
+ "pdufa_arqt_2026-06-29": {
+  "checked": "2026-09-27",
+  "date": "2026-06-29",
+  "label": "NDA 215985 S-015",
+  "result": "found"
+ },
+ "pdufa_azn_2026-06-30": {
+  "checked": "2026-09-27",
+  "date": "2026-06-12",
+  "label": "NDA 218197 S-004",
+  "result": "found"
+ },
+ "pdufa_bayry_2026-11-30": {
+  "checked": "2026-09-27",
+  "date": "2026-09-09",
+  "label": "NDA 219972 S-001",
+  "result": "found"
+ },
+ "pdufa_bayry_2026-12-31": {
+  "checked": "2026-09-27",
+  "date": "2026-09-16",
+  "label": "NDA 215341 S-011",
+  "result": "found"
+ },
+ "pdufa_bfri_2026-09-28": {
+  "checked": "2026-09-27",
+  "date": "2026-09-09",
+  "label": "NDA 208081 S-040",
+  "result": "found"
+ },
+ "pdufa_bmy_2026-08-17": {
+  "checked": "2026-09-27",
+  "date": "2026-08-13",
+  "label": "NDA 221075 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_celc_2026-07-17": {
+  "checked": "2026-09-27",
+  "date": "2026-07-14",
+  "label": "NDA 219908 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_cort_2026-03-25": {
+  "checked": "2026-09-27",
+  "date": "2026-03-25",
+  "label": "NDA 220641 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_gild_2026-08-27": {
+  "checked": "2026-09-27",
+  "date": "2026-08-27",
+  "label": "NDA 221443 S-001",
+  "result": "found"
+ },
+ "pdufa_gsk_2026-06-18": {
+  "checked": "2026-09-27",
+  "date": "2026-06-17",
+  "label": "NDA 215960 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_incy_2026-09-26": {
+  "checked": "2026-09-27",
+  "result": "none",
+  "terms": [
+   "ATEBRIOZ",
+   "ZILURGISERTIB"
+  ]
+ },
+ "pdufa_ions_2026-06-30": {
+  "checked": "2026-09-27",
+  "date": "2026-06-24",
+  "label": "NDA 218614 S-004",
+  "result": "found"
+ },
+ "pdufa_ions_2026-09-22": {
+  "checked": "2026-09-27",
+  "date": "2026-09-03",
+  "label": "NDA 220210 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_jazz_2026-08-25": {
+  "checked": "2026-09-27",
+  "date": "2026-08-25",
+  "label": "BLA 761416 S-003",
+  "result": "found"
+ },
+ "pdufa_lly_2026-09-18": {
+  "checked": "2026-09-27",
+  "date": "2026-09-18",
+  "label": "NDA 218881 S-001",
+  "result": "found"
+ },
+ "pdufa_lnth_2026-06-29": {
+  "checked": "2026-09-27",
+  "result": "crl-no-letter"
+ },
+ "pdufa_lnth_2026-08-13": {
+  "checked": "2026-09-27",
+  "date": "2026-08-13",
+  "result": "manual"
+ },
+ "pdufa_mirm_2026-09-26": {
+  "checked": "2026-09-27",
+  "result": "none",
+  "terms": [
+   "ATEBRIOZ",
+   "ZILURGISERTIB"
+  ]
+ },
+ "pdufa_mnkd_2026-07-26": {
+  "checked": "2026-09-27",
+  "date": "2026-07-23",
+  "label": "NDA 209988 S-007",
+  "result": "found"
+ },
+ "pdufa_mrk_2026-07-16": {
+  "checked": "2026-09-27",
+  "date": "2026-07-15",
+  "label": "NDA 220848 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_mrk_2026-09-21": {
+  "checked": "2026-09-27",
+  "date": "2026-09-21",
+  "label": "BLA 761363 S-017",
+  "result": "found"
+ },
+ "pdufa_mrna_2026-08-05": {
+  "checked": "2026-09-27",
+  "date": "2026-08-05",
+  "result": "manual"
+ },
+ "pdufa_nuvb_2027-01-04": {
+  "checked": "2026-09-27",
+  "date": "2026-09-16",
+  "label": "NDA 219713 S-004",
+  "result": "found"
+ },
+ "pdufa_nuvl_2026-09-18": {
+  "checked": "2026-09-27",
+  "date": "2026-07-22",
+  "label": "NDA 220185 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_otlk_2026-07-29": {
+  "checked": "2026-09-27",
+  "date": "2026-07-24",
+  "result": "manual"
+ },
+ "pdufa_otsky_2026-07-24": {
+  "checked": "2026-09-27",
+  "date": "2026-07-24",
+  "label": "NDA 218145 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_pfe_2026-09-30": {
+  "checked": "2026-09-27",
+  "date": "2026-08-27",
+  "label": "NDA 220106 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_phar_2026-10-24": {
+  "checked": "2026-09-27",
+  "date": "2026-09-11",
+  "label": "NDA 217759 S-006",
+  "result": "found"
+ },
+ "pdufa_phar_2027-01-30": {
+  "checked": "2026-09-27",
+  "date": "2026-09-11",
+  "label": "NDA 217759 S-006",
+  "result": "found"
+ },
+ "pdufa_ptgx_2026-09-30": {
+  "checked": "2026-09-27",
+  "date": "2026-08-28",
+  "label": "NDA 220605 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_rare_2026-08-23": {
+  "checked": "2026-09-27",
+  "date": "2026-08-19",
+  "result": "manual"
+ },
+ "pdufa_rare_2026-09-19": {
+  "checked": "2026-09-27",
+  "date": "2026-09-17",
+  "result": "manual"
+ },
+ "pdufa_regn_2026-08-31": {
+  "checked": "2026-09-27",
+  "date": "2026-08-19",
+  "label": "BLA 761508 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_repl_2026-08-02": {
+  "checked": "2026-09-27",
+  "date": "2026-08-06",
+  "result": "manual"
+ },
+ "pdufa_roiv_2026-09-30": {
+  "checked": "2026-09-27",
+  "date": "2026-08-27",
+  "label": "NDA 220106 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_spro_2026-06-18": {
+  "checked": "2026-09-27",
+  "date": "2026-06-17",
+  "label": "NDA 215960 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_srrk_2026-09-30": {
+  "checked": "2026-09-27",
+  "date": "2026-09-11",
+  "label": "BLA 761463 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_tak_2026-09-30": {
+  "checked": "2026-09-27",
+  "date": "2026-08-05",
+  "label": "NDA 220860 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_tlx_2026-09-11": {
+  "checked": "2026-09-27",
+  "date": "2026-09-11",
+  "label": "NDA 218592 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_vera_2026-07-07": {
+  "checked": "2026-09-27",
+  "date": "2026-07-07",
+  "label": "BLA 761486 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_vrdn_2026-06-30": {
+  "checked": "2026-09-27",
+  "date": "2026-06-26",
+  "label": "BLA 761530 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_vtrs_2026-07-30": {
+  "checked": "2026-09-27",
+  "date": "2026-07-28",
+  "label": "NDA 219990 ORIG-1",
+  "result": "found"
+ },
+ "pdufa_zyme_2026-08-25": {
+  "checked": "2026-09-27",
+  "date": "2026-08-25",
+  "label": "BLA 761416 S-003",
+  "result": "found"
+ }
+}

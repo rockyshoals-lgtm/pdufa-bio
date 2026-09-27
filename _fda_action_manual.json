@@ -1,0 +1,20 @@
+{
+ "_what": "FDA action dates for approvals Drugs@FDA does not carry (CBER biologics: gene therapies, vaccines, oncolytic viruses) or that sync_fda_action_dates.py cannot match by name. Each entry was read from the FDA's own document at write time; 'url' is that document. Applied by sync_fda_action_dates.py exactly like a Drugs@FDA match.",
+ "records": {
+  "pdufa_repl_2026-08-02": {"date": "2026-08-06", "label": "CBER accelerated approval notice", "how": "the FDA's approval notice", "verified": "2026-09-26",
+   "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-vusolimogene-oderparepvec-wtpg-combination-nivolumab-melanoma",
+   "quote": "On August 6, 2026, the Food and Drug Administration granted accelerated approval to vusolimogene oderparepvec-wtpg (Tudriqev, Replimune, Inc.)"},
+  "pdufa_rare_2026-08-23": {"date": "2026-08-19", "label": "CBER approval letter (GENGLYCOS)", "how": "the FDA's approval letter", "verified": "2026-09-26",
+   "url": "https://www.fda.gov/media/194371/download", "quote": "August 19, 2026 Approval Letter - GENGLYCOS"},
+  "pdufa_rare_2026-09-19": {"date": "2026-09-17", "label": "CBER approval letter (FAYUVI)", "how": "the FDA's approval letter", "verified": "2026-09-26",
+   "url": "https://www.fda.gov/media/194921/download", "quote": "September 17, 2026 Approval Letter -FAYUVI"},
+  "pdufa_mrna_2026-08-05": {"date": "2026-08-05", "label": "CBER approval letter (MFLUSIVA, BLA 125869)", "how": "the FDA's approval letter", "verified": "2026-09-26",
+   "url": "https://www.fda.gov/media/194121/download", "quote": "August 5, 2026 Approval Letter - MFLUSIVA"},
+  "pdufa_lnth_2026-08-13": {"date": "2026-08-13", "label": "NDA 220496 ORIG-1", "how": "Drugs@FDA", "verified": "2026-09-26",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220496Orig1s000ltr.pdf",
+   "quote": "TAUKLARIFY, CERVEAU LANTHEUS, AP 2026-08-13; letter signed 08/13/2026 03:40 PM (row name MK-6240 carries no brand to match on)"},
+  "pdufa_otlk_2026-07-29": {"date": "2026-07-24", "label": "BLA 761320 ORIG-1", "how": "Drugs@FDA", "verified": "2026-09-26",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761320Orig1s000ltr.pdf",
+   "quote": "LYTENAVA (bevacizumab-vikg), OUTLOOK THERAPEUTICS, AP 2026-07-24 (bevacizumab alone is too generic a term to match on)"}
+ }
+}

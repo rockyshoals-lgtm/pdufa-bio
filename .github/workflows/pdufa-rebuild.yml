@@ -200,6 +200,14 @@ jobs:
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_decisions_listing.py && python sync_api_from_pages.py
 
+      # Audit 2026-09-26 items 3-5: every decided approval's ACTION date from the FDA's own record
+      # (Drugs@FDA submission status date + approval letter; CBER letters/notices hand-verified in
+      # _fda_action_manual.json; released CRLs). Re-checks rows excluded for an announcement-only
+      # date on EVERY run and re-admits them when the record appears (TLX sat excluded 11 days
+      # after Drugs@FDA had it). Network failure = no change, never a wrong date.
+      - name: "FDA action dates from Drugs@FDA / FDA letters (re-checks excluded rows)"
+        run: python sync_fda_action_dates.py
+
       # SEO audit 2026-09-02b: position 3.70 with 0 clicks is a snippet problem, not a
       # ranking problem. Titles/descriptions must ANSWER ("GENGLYCOS was approved on
       # August 19, 2026, 4 days before its goal date"), not name the page. Runs daily so
@@ -221,6 +229,9 @@ jobs:
       # Early". Structured data is what an AI answer reads first.
       - name: "Schema name follows the page title"
         run: python sync_jsonld_name_to_title.py
+
+      - name: "Decision pages cite the FDA record of the action date"
+        run: python inject_fda_action_record.py
 
       # Audit 09-02c item 3: we hold 458 FDA CRLs and cited zero. Each CRL decision page
       # now links the FDA-hosted letter PDF when date (letter <= page date <= +4d) and
@@ -271,7 +282,9 @@ jobs:
             } > fda_issue.md
             gh issue create \
               --title "BLOCKING: unreviewed FDA approval(s) on armed events ($(date -u +%F))" \
-              --body-file fda_issue.md --label "reconciliation" || echo "issue create skipped"
+              --body-file fda_issue.md --label "reconciliation" \
+              || gh issue create --title "BLOCKING: unreviewed FDA approval(s) on armed events ($(date -u +%F))" --body-file fda_issue.md \
+              || echo "issue create skipped"
           fi
           exit $rc
 
@@ -283,6 +296,24 @@ jobs:
       # and brepocitinib -- three approvals the event path had missed or not yet seen.
       - name: Drug-page approval watch (every /drug page, not just dated events)
         run: python watch_drug_approvals.py
+
+      # Audit 2026-09-26 item 6 (task #48): the fourth pass. TLX, NUVB and Atebrioz were each
+      # first public in the sponsor's own release, days before any FDA feed or 8-K the other
+      # passes read. Reads every armed sponsor's own news-release RSS; a lead BLOCKS like the
+      # FDA watch (verify, publish or ack in _newswire_ack.json). Raise the issue, then fail.
+      - name: Sponsor news-feed watch (armed PDUFAs)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          python watch_sponsor_newswire.py --discover > newswire_watch.txt 2>&1
+          rc=$?
+          cat newswire_watch.txt
+          if [ "$rc" != "0" ]; then
+            { echo "**The rebuild is BLOCKED.** \`watch_sponsor_newswire.py\` found a sponsor release announcing an FDA decision on an armed event."; echo; echo '```'; cat newswire_watch.txt; echo '```'; } > newswire_issue.md
+            gh issue create --title "BLOCKING: sponsor-announced FDA decision on an armed event ($(date -u +%F))" --body-file newswire_issue.md || echo "issue create skipped"
+          fi
+          exit $rc
 
       - name: Repair Event schema (location + datetime/TZ startDate)
         run: python fix_event_schema.py

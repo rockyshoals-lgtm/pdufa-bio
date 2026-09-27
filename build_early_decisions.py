@@ -170,10 +170,29 @@ def collect(year):
         fda_date = str((r.get("_d") or {}).get("fda_action_date") or "")
         measured = fda_date if re.match(r"^\d{4}-\d{2}-\d{2}$", fda_date) else actual
         delta = (dt.date.fromisoformat(measured) - dt.date.fromisoformat(goal)).days
+        dd = r.get("_d") or {}
         out.append({"ticker": tk, "drug": r.get("name") or "", "goal": goal,
                     "actual": measured, "announced": actual if measured != actual else None,
                     "delta": delta, "outcome": r.get("oc") or "",
-                    "slug": f"{tk}-{actual}"})
+                    "slug": f"{tk}-{actual}",
+                    "fda_url": dd.get("fda_action_source_url") or "",
+                    "fda_record": dd.get("fda_action_record") or "",
+                    # one FDA action = one observation (see below)
+                    "key": dd.get("fda_action_record") and (dd.get("fda_action_record"), measured)
+                           or (goal, measured, re.sub(r"[^a-z]", "", str(r.get("name") or "").lower())[:12])})
+    # ONE FDA ACTION, ONE OBSERVATION (2026-09-26). Co-listed partner rows -- GSK and SPRO for
+    # tebipenem, JAZZ and ZYME for Ziihera -- are one application and one FDA action each, and
+    # were counted twice. Now that every row carries the FDA record it rests on (NDA 215960 ORIG-1
+    # for both tebipenem rows), duplicates are merged on it; rows without a record merge on
+    # goal + action date + drug. The merged row lists both tickers.
+    merged = {}
+    for x in out:
+        k = x["key"]
+        if k in merged:
+            merged[k]["ticker"] = "/".join(sorted(set(merged[k]["ticker"].split("/") + [x["ticker"]])))
+            continue
+        merged[k] = x
+    out = list(merged.values())
     out.sort(key=lambda x: x["delta"])
     return out
 
@@ -207,10 +226,25 @@ def main():
         f'<span><b>{esc(r["ticker"])}</b> &middot; {esc(str(r["drug"])[:38])}</span>'
         f'<span style="color:#9db3d4">goal {esc(pretty(r["goal"]))} &rarr; '
         f'<b style="color:#eef4fc">{esc(pretty(r["actual"]))}</b>'
-        + (f' <span style="font-size:12px">(FDA letter date; announced {esc(pretty(r["announced"]))})</span>' if r.get("announced") else "")
+        + (f' <span style="font-size:12px">(FDA action date; announced {esc(pretty(r["announced"]))})</span>' if r.get("announced") else "")
         + f' <b style="color:{"#46d17f" if r["delta"] < 0 else "#9db3d4"}">'
         f'{r["delta"]:+d} {_dw(r["delta"])}</b></span></a>' for r in rec)
 
+    # 2026-09-26 (audit item 4): every action date is the FDA's own, and the page shows where each
+    # one comes from -- Drugs@FDA (submission status date + approval letter), the FDA's approval
+    # letter or notice for CBER products, or the FDA's released Complete Response Letter. A press
+    # release date never measures a margin here (tests/test_timing_action_dates_fda.py).
+    n_fda = sum(1 for r in rec if "fda.gov" in (r.get("fda_url") or ""))
+    records = (
+        f'<h2>Where each action date comes from</h2><div class="note" style="font-size:13.5px;'
+        f'color:#9db3d4;line-height:1.8">{n_fda} of {n} action dates on this page are taken from the '
+        f'FDA\'s own record, not from a company announcement: Drugs@FDA (the submission\'s approval '
+        f'date and the FDA\'s approval letter), the FDA\'s approval letter or notice for biologics '
+        f'reviewed by CBER, or the Complete Response Letter the FDA released. Where a company announced '
+        f'a decision a day or more after the FDA acted, the row shows both dates. '
+        + "; ".join(f'<b>{esc(r["ticker"])}</b> <a href="{esc(r["fda_url"])}" rel="noopener">'
+                    f'{esc(r["fda_record"] or "FDA record")}</a>' for r in rec if r.get("fda_url"))
+        + '.</div>')
     if enough:
         headline = (f"Of the <b>{n}</b> {a.year} FDA decisions in this archive whose outcome and "
                     f"dates we have checked against a primary source, <b>{len(early)}</b> came "
@@ -318,7 +352,7 @@ def main():
         f'<div style="color:#9db3d4;font-size:14px;margin-top:6px">{ans}</div></div>'
         for q, ans in qa)
 
-    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/research/fda-decision-timing"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/research/fda-decision-timing"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Decision timing</div><h1>Does the FDA decide on the PDUFA date?</h1><div class="sub">{headline}{med}</div><h2>Every {a.year} sourced decision, goal date vs actual</h2>{rows}<div class="note" style="margin-top:10px"><b>What is counted:</b> {a.year} decisions where this archive holds the PDUFA goal date, the actual FDA action date, and a primary source we link on the decision page. Decisions inferred from share-price behaviour are excluded. We do not compute a rate across earlier years: our coverage of them is far thinner, so such a number would describe our own collection rather than the FDA's behaviour.</div>{disclosure}<h2>Questions</h2>{faq}<p class="note">Historical record of specific decisions, each linked to its source. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
+    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/research/fda-decision-timing"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/research/fda-decision-timing"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Decision timing</div><h1>Does the FDA decide on the PDUFA date?</h1><div class="sub">{headline}{med}</div><h2>Every {a.year} sourced decision, goal date vs actual</h2>{rows}{records}<div class="note" style="margin-top:10px"><b>What is counted:</b> {a.year} decisions where this archive holds the PDUFA goal date, the actual FDA action date, and a primary source we link on the decision page. Decisions inferred from share-price behaviour are excluded. We do not compute a rate across earlier years: our coverage of them is far thinner, so such a number would describe our own collection rather than the FDA's behaviour.</div>{disclosure}<h2>Questions</h2>{faq}<p class="note">Historical record of specific decisions, each linked to its source. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
 
     if a.dry_run:
         print("DRY RUN -- not written")

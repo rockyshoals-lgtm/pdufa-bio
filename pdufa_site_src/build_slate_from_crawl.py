@@ -120,6 +120,35 @@ def norm_drug(s):
             'subcutaneous','intravenous','autoinjector','prefilled','syringe','suspension'}
     return ' '.join(w for w in s.split() if w not in stop)[:60]
 
+def _goals():
+    """{TICKER: {goal dates}} of every PDUFA row in the API dataset."""
+    try:
+        src = open(os.path.join(HERE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+        rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d") or "")):
+            out.setdefault(str(r.get("t") or "").upper(), set()).add(str(r["d"]))
+    return out
+
+
+_GOALS = _goals()
+
+
+def _owned_elsewhere(tk, d, fd):
+    """ONE DECISION, ONE EVENT (2026-09-26): Pharming's 2026-09-11 Joenja approval (goal 2026-10-24)
+    swept the new lower-dose sNDA (goal 2027-01-30, accepted 2026-09-25) off the forward calendar,
+    141 days inside the 180-day window. A decision belongs to the same-ticker goal date nearest it."""
+    try:
+        dd, f = datetime.date.fromisoformat(d), datetime.date.fromisoformat(fd)
+    except Exception:
+        return False
+    mine = abs((dd - f).days)
+    return any(abs((dd - datetime.date.fromisoformat(g)).days) < mine for g in _GOALS.get(str(tk).upper(), ()) if g != fd)
+
+
 def already_decided(cat, dec):
     """The decision for THIS event if it already happened, else None.
 
@@ -157,6 +186,8 @@ def already_decided(cat, dec):
         try:
             gap = (datetime.date.fromisoformat(fd) - datetime.date.fromisoformat(d)).days
         except Exception:
+            return False
+        if o == 'Approved' and _owned_elsewhere(tk, d, fd):
             return False
         if o == 'Approved':
             # Terminal only for THE SAME APPLICATION. "An approval is terminal" with no time

@@ -31,6 +31,21 @@ def test_no_upcoming_row_has_a_published_decision():
     decs = sap.published_decisions()
     assert len(decs) > 400, f"decisions archive parse broken ({len(decs)} rows)"
 
+    # ONE DECISION, ONE ROW (2026-09-26, same rule as sync_api_from_pages): a decision belongs to
+    # the same-ticker PDUFA whose goal is nearest it, so Pharming's 2026-09-11 approval (goal
+    # 2026-10-24) does not make the new lower-dose sNDA (goal 2027-01-30) "decided".
+    goals = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and str(r.get("d") or "")[:10]:
+            goals.setdefault(str(r.get("t", "")).upper(), set()).add(str(r.get("d"))[:10])
+
+    def owned_elsewhere(tk, ddate, d):
+        try:
+            dd = dt.date.fromisoformat(ddate); mine = abs((dd - dt.date.fromisoformat(d)).days)
+            return any(abs((dd - dt.date.fromisoformat(g)).days) < mine for g in goals.get(tk, ()) if g != d)
+        except Exception:
+            return False
+
     bad = []
     for r in rows:
         if r.get("type") != "PDUFA" or str(r.get("st", "")).lower() == "decided":
@@ -39,7 +54,7 @@ def test_no_upcoming_row_has_a_published_decision():
         if not d:
             continue
         for (dtk, ddate), (oc, ddrug) in decs.items():
-            if dtk != tk:
+            if dtk != tk or owned_elsewhere(tk, ddate, d):
                 continue
             try:
                 sgap = (dt.date.fromisoformat(ddate) - dt.date.fromisoformat(d)).days

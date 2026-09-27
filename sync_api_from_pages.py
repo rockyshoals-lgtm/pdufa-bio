@@ -114,6 +114,29 @@ def main():
     decs, adcs = published_decisions(), published_adcomms()
     changes = []
 
+    # ONE DECISION, ONE ROW PER TICKER (2026-09-26). Pharming's new lower-dose Joenja sNDA (goal
+    # 2027-01-30, accepted 2026-09-25) was marked "Approved 2026-09-11" within minutes of being
+    # added: the wide early window plus a shared drug token ("Joenja") carried the September 11
+    # approval -- which belongs to the 2026-10-24 row -- onto it as well. A decision now goes only
+    # to the same-ticker row whose goal date is closest to it; co-listed partners (other tickers)
+    # are unaffected.
+    claim = {}
+    for r in arr:
+        if r.get("type") != "PDUFA":
+            continue
+        tk, d = r.get("t"), str(r.get("d") or "")[:10]
+        for (dtk, ddate), (oc, ddrug) in decs.items():
+            if dtk != tk:
+                continue
+            try:
+                sgap = (dt.date.fromisoformat(ddate) - dt.date.fromisoformat(d)).days
+            except Exception:
+                continue
+            ok = abs(sgap) <= 14 or ((-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45)
+                                     and _lead_match(r.get("name"), ddrug))
+            if ok and (((dtk, ddate) not in claim) or abs(sgap) < claim[(dtk, ddate)][0]):
+                claim[(dtk, ddate)] = (abs(sgap), r.get("id"))
+
     for r in arr:
         tk, d, typ = r.get("t"), str(r.get("d") or "")[:10], r.get("type")
         if typ == "PDUFA":
@@ -136,6 +159,8 @@ def main():
                 except Exception:
                     continue
                 gap = abs(sgap)
+                if claim.get((dtk, ddate), (0, r.get("id")))[1] != r.get("id"):
+                    continue                        # another row of this ticker owns it
                 if gap <= 14:
                     pass
                 elif (-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45) \

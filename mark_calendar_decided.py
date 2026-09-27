@@ -98,6 +98,37 @@ def load_decisions():
 EARLY_WINDOW = 180
 
 
+def _load_goals():
+    """{TICKER: {goal dates}} of every PDUFA row in the dataset (decided or not)."""
+    import json
+    try:
+        src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+        rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d") or "")):
+            out.setdefault(str(r.get("t") or "").upper(), set()).add(str(r["d"]))
+    return out
+
+
+# ONE DECISION, ONE ROW (2026-09-26): a decision belongs to the same-ticker PDUFA whose goal date is
+# closest to it. Pharming's new lower-dose Joenja row (goal 2027-01-30, accepted 2026-09-25) was
+# marked "Approved" from the 2026-09-11 approval of the 2026-10-24 application -- same brand, so
+# the name rule could not tell them apart; the goal-date proximity can.
+GOALS = _load_goals()
+
+
+def _owned_elsewhere(tk, ddate, caldate):
+    try:
+        dd, cd = dt.date.fromisoformat(ddate), dt.date.fromisoformat(caldate)
+    except Exception:
+        return False
+    mine = abs((dd - cd).days)
+    return any(abs((dd - dt.date.fromisoformat(g)).days) < mine for g in GOALS.get(tk, ()) if g != caldate)
+
+
 def _load_partner_links():
     """{(ticker, calendar date): decision slug} that a human checked against a primary source."""
     try:
@@ -199,6 +230,8 @@ def match_decision(by_tk, tk, caldate, caldate_desc=""):
     for date, outcome, drugtext, dec_tk in candidates:
         signed = (dt.date.fromisoformat(date) - cd).days      # negative = decided early
         gap = abs(signed)
+        if gap > WINDOW and _owned_elsewhere(tk, date, caldate):
+            continue                     # another row of this ticker is closer to this decision
 
         near = gap <= WINDOW
         # An EARLY decision may only be carried forward when it ENDED the application.

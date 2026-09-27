@@ -98,6 +98,35 @@ def load_archive():
     return by_tk
 
 
+def _goals():
+    try:
+        src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+        rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d") or "")):
+            out.setdefault(str(r.get("t") or "").upper(), set()).add(str(r["d"]))
+    return out
+
+
+_GOALS = _goals()
+
+
+def _owned_elsewhere(tk, ddate, target):
+    """ONE DECISION, ONE EVENT (2026-09-26): /pdufa/PHAR-joenja (the new lower-dose sNDA, target
+    2027-01-30) was bannered "Approved 2026-09-11" from the archive -- the approval of the
+    2026-10-24 application. A decision belongs to the same-ticker goal date nearest it."""
+    try:
+        dd = dt.date.fromisoformat(str(ddate)); td = target if isinstance(target, dt.date) else dt.date.fromisoformat(str(target))
+    except Exception:
+        return False
+    mine = abs((dd - td).days)
+    return any(abs((dd - dt.date.fromisoformat(g)).days) < mine for g in _GOALS.get(str(tk).upper(), ())
+               if g != td.isoformat())
+
+
 def archive_candidates(archive, tk, drug_part, doc0):
     """Decisions in the archive that name this slug's drug, dated on or before today and no
     earlier than ARCHIVE_EARLY_WINDOW days before the page's stated target (if it states one).
@@ -118,6 +147,8 @@ def archive_candidates(archive, tk, drug_part, doc0):
         if dd > today or outcome == "crl":
             continue
         if goal is not None and not (-ARCHIVE_EARLY_WINDOW <= (dd - goal).days <= 14):
+            continue
+        if goal is not None and _owned_elsewhere(tk, date, goal):
             continue
         if not ((dtoks | ttoks) & toks(drug)):
             continue
@@ -380,7 +411,8 @@ def main():
                           "_archive": True}
                          for d, o, g in archive.get(tk, [])
                          if o != "crl" and ttoks & toks(g)
-                         and -ARCHIVE_EARLY_WINDOW <= (dt.date.fromisoformat(d) - td).days <= 14]
+                         and -ARCHIVE_EARLY_WINDOW <= (dt.date.fromisoformat(d) - td).days <= 14
+                         and not _owned_elsewhere(tk, d, td)]
                 if len(cands) == 1:
                     print(f"  /pdufa/{slug}: bare-ticker page resolved from the decisions "
                           f"archive ({cands[0]['dcd']})")
@@ -395,8 +427,13 @@ def main():
         oc = str(r.get("oc") or "Decided")
         archive_only = bool(r.get("_archive"))
         dcd, goal = str(r.get("dcd")), (str(r.get("d")) if r.get("d") else "")
+        # 2026-09-26: the FDA's own action date (Drugs@FDA / letter) when held; dcd is the day
+        # the sponsor announced it (MRK WINREVAIR: FDA Sep 21, Merck's release Sep 22).
+        acted = str((r.get("_d") or {}).get("fda_action_date") or dcd)
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", acted):
+            acted = dcd
         try:
-            delta = (dt.date.fromisoformat(dcd) - dt.date.fromisoformat(goal)).days
+            delta = (dt.date.fromisoformat(acted) - dt.date.fromisoformat(goal)).days
         except Exception:
             delta = None
         # Audit 09-14 P0-C: an earliness figure needs a goal that is BOTH day-precision and
@@ -424,7 +461,9 @@ def main():
                   f'border-radius:10px;padding:11px 14px;margin:10px 0 14px;'
                   f'font-size:14.5px"><b style="color:{col}">{"&#10003;" if ok else "&#10007;"} '
                   f'{_html.escape(word)}</b> &middot; the FDA decided this application on '
-                  f'<b>{pretty(dcd)}</b>{_html.escape(timing)}.{link}</div>{E}')
+                  f'<b>{pretty(acted)}</b>'
+                  + (f' (FDA record; announced {pretty(dcd)})' if acted != dcd else '')
+                  + f'{_html.escape(timing)}.{link}</div>{E}')
 
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         if B in doc:
@@ -450,6 +489,8 @@ def main():
         goal_ok = str(r.get("dp") or "day") == "day" and not _d.get("goal_unsourced")
         new = decided_language(new, tk, page_drug, word, dcd, goal, archive_only,
                                goal_sourced=goal_ok)
+        if acted != dcd:
+            new = new.replace(f"approved by the FDA on {pretty(dcd)}", f"approved by the FDA on {pretty(acted)}")
         if _d.get("decision_date_unsourced"):
             new = announcement_wording(new, dcd)
         if new != doc:

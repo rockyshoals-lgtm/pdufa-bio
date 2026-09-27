@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "TLX",
+  "date": "2026-09-14",
+  "outcome": "Approved",
+  "drug": "Pixclara (floretyrosine F 18; TLX101-Px)",
+  "indication": "FET-PET imaging of glioma: differentiating recurrent or progressive glioma from treatment-related change, adults and pediatric patients",
+  "company": "Telix Pharmaceuticals Limited",
+  "cap": "Mid",
+  "headline": "Pixclara (floretyrosine F 18, TLX101-Px) approved September 11, 2026, its PDUFA goal date (FDA letter), as the first FDA-approved FET-PET imaging drug for glioma; Telix announced it on September 14.",
+  "pdufa_note": "The PDUFA goal date was September 11, 2026, sourced to Telix's NDA-acceptance release of April 10, 2026. The FDA's approval letter for NDA 218592 is signed September 11, 2026 (Drugs@FDA, letter posted September 15), so the FDA acted on the goal date; Telix announced the approval on Monday, September 14. Between September 20 and 26 this page left the decision out of the timing statistic because the announcement did not state the action day; it was re-admitted when the letter was found. The NDA was a March 16, 2026 resubmission after an earlier Complete Response Letter.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218592Orig1s000ltr.pdf",
+  "source_label": "FDA approval letter, NDA 218592, September 11, 2026 (announced in Telix's 6-K of September 14)"
+ }
+]
