@@ -1,5 +1,17 @@
 import DATA from './dataset.mjs';
 import crypto from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+/* Audit 2026-10-03 Tier 1.4: meta.as_of is the REQUEST date (it advanced every day while the
+   build was stalled from 09-27 to 10-03, so a consumer could not tell the data was six days old).
+   meta.data_built_at is when the dataset was last rebuilt, from the same build-info the site's
+   freshness stamps read. */
+let DATA_BUILT_AT = null;
+try {
+  const bi = JSON.parse(readFileSync(new URL('../_build-info.json', import.meta.url), 'utf8'));
+  DATA_BUILT_AT = bi.data_built_at || bi.built || null;
+} catch (e) { DATA_BUILT_AT = null; }
+export { DATA_BUILT_AT };
 
 /* ---------------- tiers ---------------- */
 export const TIERS = {
@@ -21,6 +33,27 @@ export async function resolveTier(req) {
   const t = await tierFromStore(key);
   if (t) return { tier: t, key };
   return { tier: null, key };            // key supplied but unknown -> 401
+}
+
+/* ---------------- request-time status (audit 2026-10-03, Tier 1.5) ----------------
+   Time-derived statuses were baked into dataset.mjs at build time. When the build stalled from
+   09-27 to 10-03, AACR Pancreatic and ASTRO kept saying "In progress" after they ended and EASD
+   and WMS said "Scheduled" while they ran. A status that is a pure function of today's date is
+   computed per request from the Eastern calendar day (RULE 1), never read from the build. */
+export function easternToday() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+}
+export function liveStatus(e, today = easternToday()) {
+  if (!e || !e.d) return null;
+  const st = String(e.st || '');
+  if (e.type === 'Conference') {
+    const start = String(e.d).slice(0, 10), end = String((e._d && e._d.end) || e.d).slice(0, 10);
+    if (!/^\d{4}-\d\d-\d\d$/.test(start)) return st || null;
+    return end < today ? 'Ended' : (start <= today ? 'In progress' : 'Scheduled');
+  }
+  if (e.type === 'PDUFA' && st.toLowerCase() === 'upcoming' && e.dp === 'day'
+      && String(e.d).slice(0, 10) < today) return 'Awaiting';
+  return st || null;
 }
 
 /* ---------------- fields ---------------- */
@@ -96,8 +129,10 @@ export function shape(e, tier) {
   if (base.date) {
     const p = String(base.date).split('-');
     const v = Date.UTC(+p[0], +(p[1] || 1) - 1, +(p[2] || 1));
-    const n = new Date();
-    const t0 = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
+    /* RULE 1 (2026-10-03): the day is the EASTERN calendar day, not UTC. From 20:00 ET (EDT)
+       the UTC date is already tomorrow and the countdown read one day short. */
+    const et = easternToday().split('-');
+    const t0 = Date.UTC(+et[0], +et[1] - 1, +et[2]);
     base.days_to_decision = Number.isNaN(v) ? null : Math.round((v - t0) / 864e5);
   } else {
     /* No announced day, so no countdown. Counting to a month midpoint we invented would be
@@ -119,6 +154,8 @@ export function shape(e, tier) {
              && base.days_to_decision != null && base.days_to_decision < 0) {
     base.status = 'Awaiting';
   }
+  const live = liveStatus(e);
+  if (live && base.status !== 'Decided') base.status = live;
   if (!(TIERS[tier] && TIERS[tier].depth)) {
     base._pro = 'Per-event run-up series, bulk export and .ics feeds are Pro: https://www.pdufa.bio/pricing';
   }
@@ -231,7 +268,7 @@ export function quota402(res, m, rid, data) {
       ],
       retry_after: 1800, request_id: rid,
     },
-    meta: { served_from: 'stale_cache', as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }) },
+    meta: { served_from: 'stale_cache', as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }), data_built_at: DATA_BUILT_AT },
     data: data || [],
   });
 }
@@ -270,7 +307,7 @@ export async function serve(req, res, type) {
   if (q.ticker) { const set = String(q.ticker).toLowerCase().split(',').map(s=>s.trim()); rows = rows.filter(e => set.includes(String(e.t).toLowerCase())); }
   if (q.type)   rows = rows.filter(e => String(e.type).toLowerCase() === String(q.type).toLowerCase());
   if (q.ta)     rows = rows.filter(e => String(e.ta || '').toLowerCase() === String(q.ta).toLowerCase());
-  if (q.status) rows = rows.filter(e => String(e.st || '').toLowerCase() === String(q.status).toLowerCase());
+  if (q.status) { const td = easternToday(); rows = rows.filter(e => String(liveStatus(e, td) || '').toLowerCase() === String(q.status).toLowerCase()); }
   if (q.from)   rows = rows.filter(e => (e.d || '') >= q.from);
   if (q.to)     rows = rows.filter(e => (e.d || '') <= q.to);
   if (q.q)      { const s = String(q.q).toLowerCase(); rows = rows.filter(e => (e.t+' '+e.name+' '+(e.company||'')).toLowerCase().includes(s)); }
@@ -289,7 +326,7 @@ export async function serve(req, res, type) {
     meta: {
       source: 'pdufa.bio', license: 'Attribution + link-back required. Facts and historical statistics only — not investment advice.',
       tier: tier, quota_state: m.state, total, limit, offset, returned: data.length,
-      as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }), request_id: rid,
+      as_of: new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }), data_built_at: DATA_BUILT_AT, request_id: rid,
       ...(TIERS[tier].depth ? {} : { pro_features: ['runup_series','export','calendar.ics','webhooks'], upgrade: 'https://www.pdufa.bio/pricing?ref=api_meta' }),
     },
     data,

@@ -149,7 +149,15 @@ def build(e, px, write=True):
     body.append(f'<p class="sub">{e["headline"]}</p>')
     body.append(f'<h2>Run-up into the decision (T-120 → T+5)</h2>{chart}<div class="note">{note}</div>')
     body.append('<h2>Key facts</h2><div class="card">')
-    body.append(f'<div class="kv"><span>FDA decision date</span><b>{d}</b></div>')
+    fad = e.get('fda_action_date')
+    if fad and fad != d:
+        # 2026-10-03: the FDA's letter date and the first public day differ (JUVMO: letter
+        # Sep 25, AbbVie release Sep 28). The page is keyed on the public day; the FDA's own
+        # date is the decision date and is shown as such.
+        body.append(f'<div class="kv"><span>FDA decision date</span><b>{fad}</b></div>')
+        body.append(f'<div class="kv"><span>Announced</span><b>{d}</b></div>')
+    else:
+        body.append(f'<div class="kv"><span>FDA decision date</span><b>{d}</b></div>')
     body.append(f'<div class="kv"><span>Outcome</span><b style="color:{ocol}">{otxt}</b></div>')
     body.append(f'<div class="kv"><span>Drug / candidate</span><b>{e["drug"]}</b></div>')
     body.append(f'<div class="kv"><span>Indication</span><b>{e["indication"]}</b></div>')

@@ -1,11 +1,14 @@
 {
- "built": "2026-09-27T23:32:47+00:00",
- "commit": "9fa6bc890",
- "commit_at_build": "9fa6bc890",
- "as_of_eastern": "2026-09-27",
+ "built": "2026-10-03T19:24:09+00:00",
+ "data_built_at": "2026-10-03T19:24:09+00:00",
+ "commit": "898686a9d",
+ "commit_at_build": "898686a9d",
+ "as_of_eastern": "2026-10-03",
  "next_date": "2026-10-09",
  "next_ticker": "RHHBY",
- "next_days": 12,
+ "next_days": 6,
  "next_status": "upcoming",
- "days_since_goal": null
+ "days_since_goal": null,
+ "held_since": null,
+ "held_leads": []
 }

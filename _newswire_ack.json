@@ -1,0 +1,9 @@
+{
+ "note": "Reviewed sponsor news-feed hits. Key row_id|link. A published decision also disarms its row, so its key is listed only for the record.",
+ "acked": [
+  "pdufa_abbv_2026-12-31|https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease"
+ ],
+ "reasons": {
+  "pdufa_abbv_2026-12-31|https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease": "REAL: published 2026-10-03 as /fda-decision/ABBV-2026-09-28 (FDA letter NDA 220415, 2026-09-25)."
+ }
+}

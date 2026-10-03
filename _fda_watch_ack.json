@@ -15,6 +15,16 @@
    "ticker": "PHAR",
    "ap_date": "2026-09-11",
    "reason": "Joenja (leniolisib) paediatric sNDA S-006 (children 4-11 weighing 27 kg or more), already published as PHAR-2026-09-11 against the 2026-10-24 goal. The hit is against the SEPARATE lower-dose sNDA (children from 13 kg, goal 2027-01-30), accepted per Pharming's 6-K of 2026-09-25 -- two weeks AFTER this approval, so it cannot be its decision. Reviewed 2026-09-26."
+  },
+  {
+   "ticker": "AGIO",
+   "ap_date": "2026-09-28",
+   "reason": "Drugs@FDA NDA 216196 SUPPL-7 (PYRUKYND), approved 2026-09-28, class MANUF (CMC): a manufacturing supplement, not a decision on the RISE UP efficacy filing (goal 2026-11-01), which remains pending. Verified on openFDA 2026-10-03 (audit 10-03 Tier 0)."
+  },
+  {
+   "ticker": "RHHBY",
+   "ap_date": "2026-09-21",
+   "reason": "Drugs@FDA ANDA 220597 ORIG-1, NOVITIUM PHARMA, generic EVEROLIMUS, approved 2026-09-21: a third-party generic of the combination partner, not Roche's giredestrant + everolimus NDA (goal 2026-12-18), which remains pending. Verified on openFDA 2026-10-03 (audit 10-03 Tier 0)."
   }
  ]
 }

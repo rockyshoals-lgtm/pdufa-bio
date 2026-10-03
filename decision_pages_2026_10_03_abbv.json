@@ -1,0 +1,16 @@
+[
+ {
+  "ticker": "ABBV",
+  "date": "2026-09-28",
+  "fda_action_date": "2026-09-25",
+  "outcome": "Approved",
+  "drug": "JUVMO (tavapadon)",
+  "indication": "Parkinson's disease in adults (once daily, with or without levodopa)",
+  "company": "AbbVie",
+  "cap": "Large",
+  "headline": "JUVMO (tavapadon) was approved by the FDA on September 25, 2026 for Parkinson's disease in adults (NDA 220415). AbbVie announced the approval on September 28, 2026 and describes JUVMO as the first selective D1/D5 receptor agonist approved for adults with Parkinson's disease.",
+  "pdufa_note": "The FDA's approval letter for NDA 220415 is dated September 25, 2026 (Drugs@FDA). AbbVie announced the approval in a release on Monday, September 28, 2026, and expects JUVMO to be available in the U.S. in October 2026. AbbVie never published a PDUFA goal date for tavapadon, so no early or late margin is computed for this decision. JUVMO is taken once daily with or without levodopa; the approval is supported by the Phase 3 TEMPO program (TEMPO-1, TEMPO-2 and TEMPO-3, with the TEMPO-4 open-label extension).",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220415Orig1s000ltr.pdf",
+  "source_label": "FDA approval letter, NDA 220415, September 25, 2026"
+ }
+]

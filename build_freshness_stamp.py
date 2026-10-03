@@ -61,6 +61,10 @@ var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYe
 /* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
    Audit 09-14 P0-D: build-info published next_days:-3 for TLX. Say 'awaiting' instead. */
 if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?'awaiting a decision':(n===0?'today':(n===1?'tomorrow':'in '+n+' days'));
+/* Audit 2026-10-03 Tier 1.4: the stamp also says when the DATA was last rebuilt, read from
+   build-info's data_built_at (the same value the API serves as meta.data_built_at). On 10-03 the
+   stamps sat on 09-27 for six days with nothing on the page to say the build had stopped. */
+var b=e.querySelector('[data-fresh-built]');var w=j.data_built_at||j.built;if(b&&w){var x=new Date(w);if(!isNaN(x)){b.textContent='data rebuilt '+x.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' ET';b.setAttribute('title',w);}}
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
 </script>"""
@@ -159,6 +163,7 @@ def block(date_iso):
         f'<span style="color:var(--mut2)">·</span>'
         f'<span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> '
         f'<a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span>'
+        f'<span data-fresh-built style="color:var(--mut2)"></span>'
         f'</div>{SCRIPT}{E}')
 
 
@@ -206,6 +211,7 @@ def main():
     # function's input (api/_build-info.json) and the guards' input (build-info.json, not
     # deployed -- see .vercelignore); it is never what a consumer reads.
     info = {"built": now_iso,
+            "data_built_at": now_iso,
             "commit": commit,
             "commit_at_build": commit,
             "as_of_eastern": _eastern_today().isoformat(),

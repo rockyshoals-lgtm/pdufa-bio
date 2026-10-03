@@ -507,14 +507,14 @@
  ],
  "cursor": "2026-09-25",
  "price": {
-  "as_of": "2026-09-25",
-  "close": 11.61,
-  "prev_close": 11.98,
-  "change_pct": -3.09,
-  "volume": 4452916,
-  "rel_volume": 0.62,
+  "as_of": "2026-10-02",
+  "close": 11.74,
+  "prev_close": 11.33,
+  "change_pct": 3.62,
+  "volume": 3846017,
+  "rel_volume": 0.6,
   "low_52w": 1.39,
   "high_52w": 15.46
  },
- "last_run": "2026-09-26"
+ "last_run": "2026-10-03"
 }

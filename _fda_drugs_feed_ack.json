@@ -1,0 +1,9 @@
+{
+ "note": "Reviewed FDA 'What's New: Drugs' feed hits that are NOT a decision on the armed event. Each key is row_id|link; reasons below. Shrink this list; never grow it silently.",
+ "acked": [
+  "pdufa_rhhby_2026-10-15|http://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-mct8-deficiency"
+ ],
+ "reasons": {
+  "pdufa_rhhby_2026-10-15|http://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-mct8-deficiency": "FDA notice 'FDA Approves First Treatment for MCT8 Deficiency' matched Enspryng (thyroid eye disease) on the lone word 'thyroid'. Not a satralizumab decision. Audit 10-03 Tier 0; matcher rule 1.3(d) now forbids lone organ-word matches."
+ }
+}

@@ -112,6 +112,7 @@ def main():
         for r, term, it, key in leads:
             print(f"   {r['t']} {str(r.get('name'))[:50]} (goal {r['d']}): \"{it['title'][:100]}\" "
                   f"[{term}] {it['link']}\n      ack key: {key}")
+            W._emit_lead("fda_drugs_feed", r["id"], key, f"{it['date']} \"{it['title'][:160]}\" [{term}] {it['link']}")
         print("   Each is a LEAD: read the FDA notice, publish the decision page (the FDA notice is the "
               "primary source), or ack in _fda_drugs_feed_ack.json with a reason.")
         return 1

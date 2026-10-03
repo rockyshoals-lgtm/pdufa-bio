@@ -58,6 +58,21 @@ STOP = {"TABLETS", "TABLET", "INJECTION", "CAPSULES", "ORAL", "SNDA", "SBLA", "N
         "FOR", "THE", "PLUS", "LOWER", "DOSES", "DOSE", "PHASE", "TRIAL", "STUDY", "THERAPY", "LABEL",
         "UPDATE", "RESUBMISSION", "PEDIATRIC", "PAEDIATRIC", "ADULTS", "CHILDREN", "COMBINATION"}
 
+# Rule 1.3(d): a lone organ/tissue word is never a match term.
+ORGAN_WORDS = {"thyroid", "liver", "hepatic", "kidney", "renal", "heart", "cardiac", "lung", "lungs",
+               "pulmonary", "brain", "cerebral", "skin", "dermal", "bone", "bones", "blood", "ocular",
+               "retina", "retinal", "breast", "prostate", "bladder", "colon", "colorectal", "gastric",
+               "stomach", "pancreas", "pancreatic", "ovarian", "uterine", "cervical", "spinal", "nerve",
+               "muscle", "joint", "joints", "airway", "bowel", "intestinal", "adrenal", "pituitary",
+               "immune", "vascular", "arterial", "venous", "neural", "plasma", "marrow"}
+
+
+try:  # audit 2026-10-03 Tier 1.1: leads are also written for quarantine_leads.py (held row, not held site)
+    from quarantine_leads import emit as _emit_lead
+except Exception:  # noqa: BLE001
+    def _emit_lead(*_a, **_k):
+        return None
+
 
 def eastern_today():
     try:
@@ -79,8 +94,19 @@ def terms_for(r):
     name = str(r.get("name") or "")
     add(re.split(r"[(;,]| - ", name)[0])
     for inner in re.findall(r"\(([^)]*)\)", name):
+        inner = inner.strip()
+        # Rule 1.3(c), audit 2026-10-03: a combination partner ("+ everolimus") is not ours.
+        if re.match(r"(\+|plus\b|with\b|and\b|in combination\b|combined\b)", inner, re.I):
+            continue
+        # Rule 1.3(d): a multi-word parenthetical is an indication or trial phrase ("thyroid eye
+        # disease", "RISE UP"). It matches only as the WHOLE phrase, never word by word: the lone
+        # word "thyroid" tied the FDA's MCT8-deficiency notice to Enspryng on 2026-09-29.
+        if len(re.findall(r"[A-Za-z0-9]+", inner)) > 1:
+            if len(inner) >= 8 and inner.lower() not in (x.lower() for x in out):
+                out.append(inner)
+            continue
         add(inner)
-    return out[:6]
+    return [t for t in out if t.lower() not in ORGAN_WORDS][:6]
 
 
 def armed_rows(rows, today):
@@ -239,8 +265,9 @@ def main():
                   f"[matched '{term}'] {it['link']}")
         print("\n   Each is a LEAD, not a fact: verify against the release and the FDA, publish the decision "
               "page, and ack non-events in _newswire_ack.json (key printed below).")
-        for *_x, key in leads:
+        for r, term, it, key in leads:
             print(f"   ack key: {key}")
+            _emit_lead("sponsor_feed", r["id"], key, f"{it['date']} \"{it['title'][:160]}\" [{term}] {it['link']}")
         return 1
     return 0
 

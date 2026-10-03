@@ -45,6 +45,13 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+try:  # audit 2026-10-03 Tier 1.1: leads are also written for quarantine_leads.py (held row, not held site)
+    from quarantine_leads import emit as _emit_lead
+except Exception:  # noqa: BLE001
+    def _emit_lead(*_a, **_k):
+        return None
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 ACK = os.path.join(HERE, "_drug_watch_ack.json")
 RSS = "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml"
@@ -58,6 +65,10 @@ UA = {"User-Agent": "pdufa.bio watcher (contact: site operator)"}
 # same stoplist the event watcher proved on WINREVAIR's LABELING supplement.
 SKIP_CLASS = ("LABELING", "MANUFACTURING (CMC)", "MANUF (CMC)", "MANUFACTURING",
               "REMS", "PACKAGE CHANGE")
+# Audit 2026-10-03 Tier 2.5: "0 press items scanned" was a zero with no reason. Each pass now
+# records what it actually read in _watch_health.json and the summary line says which pass was
+# blind, so a zero means "nothing new" and never "could not read".
+HEALTH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_watch_health.json")
 # Generic-looking tokens that are common English or dosage words -- never match keys.
 # The first sweep (2026-09-05) proved which ones flood: 'therapy'/'disease'/'muscle'
 # etc. matched every press item, via junk slugs like /drug/ttfields-therapy and
@@ -148,6 +159,8 @@ def main():
     rss = fetch(RSS)
     items = re.findall(r"<item>(.*?)</item>", rss, re.S)
     n_items = 0
+    n_window = 0
+    n_body_fail = 0
     for it in items:
         mlink = re.search(r"<link>\s*([^<\s]+)\s*</link>", it)
         mdate = re.search(r"<pubDate>([^<]+)</pubDate>", it)
@@ -160,7 +173,10 @@ def main():
                 when = ""
         if not mlink or (when and when < floor_iso):
             continue
+        n_window += 1
         body = fetch(mlink.group(1))
+        if not body:
+            n_body_fail += 1
         if body:
             n_items += 1
             scan_text_for_drugs(body, universe, resolved,
@@ -197,6 +213,7 @@ def main():
             continue
         for tok in toks:
             tok2slug.setdefault(tok.upper(), slug)
+    openfda_ok = False
     for skip in range(0, 1000, 100):
         q = (f"submissions.submission_status:AP+AND+"
              f"submissions.submission_status_date:[{f8}+TO+{t8}]")
@@ -205,9 +222,13 @@ def main():
             break
         try:
             results = json.loads(page).get("results", [])
+            openfda_ok = True
         except Exception:
             break
         for res in results:
+            # Rule 1.3(a), audit 2026-10-03: a generic (ANDA) is never the decision on a program.
+            if str(res.get("application_number", "")).upper().startswith("ANDA"):
+                continue
             names = set()
             for pr in res.get("products", []) or []:
                 for ai in pr.get("active_ingredients", []) or []:
@@ -222,7 +243,7 @@ def main():
             for s in res.get("submissions", []) or []:
                 if s.get("submission_status") != "AP":
                     continue
-                if str(s.get("submission_class_code", "")).upper() in SKIP_CLASS:
+                if any(k in str(s.get("submission_class_code", "")).upper() for k in SKIP_CLASS):
                     continue
                 sd = str(s.get("submission_status_date", ""))
                 if not (re.match(r"^\d{8}$", sd) and f8 <= sd <= t8):
@@ -239,6 +260,28 @@ def main():
             break
         time.sleep(0.3)
 
+    # per-pass health (Tier 2.5)
+    passes = {"fda_press_rss": {"read": bool(items), "items": len(items), "in_window": n_window,
+                                "bodies_read": n_items, "bodies_failed": n_body_fail},
+              "fda_oncology_notifications": {"read": bool(onc)},
+              "openfda_recent_ap": {"read": openfda_ok}}
+    try:
+        health = json.load(io.open(HEALTH, encoding="utf-8")) if os.path.exists(HEALTH) else {}
+        for k, v in passes.items():
+            ent = health.setdefault("drug_watch_" + k, {})
+            ent["last_attempt"] = today.isoformat()
+            ent.update({kk: vv for kk, vv in v.items() if kk != "read"})
+            if v["read"]:
+                ent["last_ok"] = today.isoformat()
+        io.open(HEALTH, "w", encoding="utf-8", newline="\n").write(json.dumps(health, indent=1, sort_keys=True) + "\n")
+    except Exception as e:  # noqa: BLE001
+        print(f"   (health file not written: {e})")
+    blind = [k for k, v in passes.items() if not v["read"]]
+    print(f"drug-page watch passes: press RSS {len(items)} item(s), {n_window} in the {LOOKBACK_DAYS}-day "
+          f"window, {n_items} bodies read, {n_body_fail} body fetch(es) failed; oncology page "
+          f"{'read' if onc else 'BLIND'}; openFDA {'read' if openfda_ok else 'BLIND'}"
+          + (f"  -- BLIND: {', '.join(blind)}" if blind else ""))
+
     new = [(sl, src, why) for sl, src, why in leads if (sl, src) not in acks]
     known = len(leads) - len(new)
     if new:
@@ -246,6 +289,7 @@ def main():
               f"drug pages that do not yet record an approval:")
         for sl, src, why in new:
             print(f"   /drug/{sl}  [{src}]  {why}")
+            _emit_lead("drug_pages", "drug:" + sl, f"{sl}|{src}", f"/drug/{sl} {src} {why}")
         print("\n   Each is a LEAD, not a fact: verify against the sponsor/FDA "
               "release, publish the decision page, add the verified entry to "
               "_drug_approvals_confirmed.json, and ack non-events in "

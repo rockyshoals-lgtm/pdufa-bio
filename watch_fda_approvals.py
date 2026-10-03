@@ -41,10 +41,25 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+try:  # audit 2026-10-03 Tier 1.1: leads are also written for quarantine_leads.py (held row, not held site)
+    from quarantine_leads import emit as _emit_lead
+except Exception:  # noqa: BLE001
+    def _emit_lead(*_a, **_k):
+        return None
+
 SITE = os.path.join(HERE, "pdufa_site_src")
 ACK = os.path.join(HERE, "_fda_watch_ack.json")
 API = "https://api.fda.gov/drug/drugsfda.json"
 LOOKBACK_DAYS = 60
+# Rule 1.3(d), audit 2026-10-03: a lone organ/tissue word is never a disease match ("thyroid"
+# matched an MCT8-deficiency notice to Enspryng's thyroid eye disease filing).
+ORGAN_WORDS = {"thyroid", "liver", "hepatic", "kidney", "renal", "heart", "cardiac", "lung", "lungs",
+               "pulmonary", "brain", "cerebral", "skin", "dermal", "bone", "bones", "blood", "ocular",
+               "retina", "retinal", "breast", "prostate", "bladder", "colon", "colorectal", "gastric",
+               "stomach", "pancreas", "pancreatic", "ovarian", "uterine", "cervical", "spinal", "nerve",
+               "muscle", "joint", "joints", "airway", "bowel", "intestinal", "adrenal", "pituitary",
+               "immune", "vascular", "arterial", "venous", "neural", "plasma", "marrow"}
 
 
 def search_terms(name):
@@ -57,6 +72,11 @@ def search_terms(name):
             "tablet", "tablets", "capsule", "capsules", "solution", "release",
             "weekly", "monthly", "intravenous", "topical", "inhaled", "prefilled"}
     for par in re.findall(r"\(([^)]+)\)", s):
+        # Rule 1.3(c), audit 2026-10-03: on a combination row match the INVESTIGATIONAL drug
+        # only. "Giredestrant (+ everolimus)" queried everolimus and raised Novitium's generic
+        # everolimus ANDA (approved 2026-09-21) as a lead on Roche's giredestrant NDA.
+        if re.match(r"\s*(\+|plus\b|with\b|and\b|in combination\b|combined\b)", par, re.I):
+            continue
         for w in re.findall(r"[A-Za-z][a-z]{5,}", par):   # generic-looking, lowercase-ish
             if w.lower() not in STOP:   # dosage-form words query the wrong universe:
                 out.append(w)           # 'sublingual' hit an unrelated dexmedetomidine
@@ -64,6 +84,25 @@ def search_terms(name):
     if lead and lead.group(0) not in out:
         out.append(lead.group(0))
     return out[:2]
+
+
+# Rule 1.3(b), audit 2026-10-03: supplement classes that are never the decision on an efficacy
+# filing. openFDA spells them "MANUF (CMC)" and "LABELING" -- the 09-01 list said
+# "MANUFACTURING (CMC)", which openFDA never emits, so AGIO's PYRUKYND SUPPL-7 (MANUF (CMC),
+# approved 2026-09-28) walked straight through and blocked CI. Matched by substring now.
+NON_DECISION_CLASS = ("LABEL", "MANUF", "CMC", "REMS", "PACKAG", "BIOEQUIV")
+
+
+def is_decision_submission(app_number, sub):
+    """True when an openFDA submission can be the decision on an armed (NDA/BLA, efficacy) event.
+    Rule 1.3(a): an ANDA (a generic) never matches an NDA/BLA event. Rule 1.3(b): administrative
+    supplement classes never match. Unknown classes stay IN (fail loud, not silent)."""
+    if str(app_number or "").upper().startswith("ANDA"):
+        return False
+    if sub.get("submission_status") != "AP":
+        return False
+    cls = str(sub.get("submission_class_code", "")).upper()
+    return not any(k in cls for k in NON_DECISION_CLASS)
 
 
 def query(term):
@@ -105,7 +144,7 @@ def main():
         for term in search_terms(name):
             for res in query(term):
                 for s in res.get("submissions", []) or []:
-                    if s.get("submission_status") != "AP":
+                    if not is_decision_submission(res.get("application_number"), s):
                         continue
                     # Administrative supplements are not decisions on our tracked
                     # applications: WINREVAIR's SUPPL-13 AP 2026-08-12 was LABELING
@@ -113,9 +152,6 @@ def main():
                     # A PDUFA event resolves as an ORIG or an EFFICACY/TYPE-coded
                     # supplement; unknown class codes stay IN (fail loud, not silent).
                     cls = str(s.get("submission_class_code", "")).upper()
-                    if cls in ("LABELING", "MANUFACTURING (CMC)", "MANUFACTURING",
-                               "REMS", "PACKAGE CHANGE"):
-                        continue
                     sd = str(s.get("submission_status_date", ""))
                     if not (sd >= floor and re.match(r"^\d{8}$", sd)):
                         continue
@@ -126,6 +162,9 @@ def main():
                     if key in acks:
                         known += 1
                         continue
+                    _emit_lead("drugs_at_fda", r["id"], f"{tk}|{ad.isoformat()}",
+                               f"AP {ad.isoformat()} on '{term}' ({res.get('application_number')} "
+                               f"{s.get('submission_type')}-{s.get('submission_number')}, class {cls or 'unstated'})")
                     new_hits.append(
                         f"{tk} {str(name)[:40]} (goal {goal}): FDA feed shows AP "
                         f"{ad.isoformat()} on '{term}' "
@@ -142,7 +181,7 @@ def main():
     # each armed event the press feed is scanned for the company's name or two indication
     # tokens; a hit is a lead with the same verify-then-publish rule as the first pass.
     STOPW = {"with", "type", "syndrome", "disease", "patients", "adult", "adults", "pediatric",
-             "advanced", "metastatic", "cancer", "treatment", "therapy", "chronic", "first"}
+             "advanced", "metastatic", "cancer", "treatment", "therapy", "chronic", "first"} | ORGAN_WORDS
 
     def itoks(s):
         return {w for w in re.findall(r"[a-z][a-z0-9]{4,}", str(s or "").lower()) if w not in STOPW}
@@ -185,6 +224,7 @@ def main():
                 if key in acks or (tk, "press") in acks:
                     known += 1
                     continue
+                _emit_lead("fda_press", r["id"], "press:" + link, f"{pdate} '{title}' {link}")
                 new_hits.append(f"{tk} {str(name)[:40]} (goal {goal}): FDA press release {pdate} "
                                 f"'{title}' matches {'sponsor ' + ','.join(hit_c) if hit_c else 'indication ' + ','.join(hit_i)} "
                                 f"-- {link} -- VERIFY, then publish")
@@ -251,6 +291,7 @@ def main():
                              body, re.I)
             if not said:
                 continue
+            _emit_lead("edgar", r["id"], "edgar:" + url, f"{form} filed {fdate} states an approval of '{term}' {url}")
             new_hits.append(f"{tk} {str(name)[:40]} (goal {goal}): sponsor {form} filed {fdate} "
                             f"states an FDA approval of '{term}' -- {url} -- VERIFY, then publish")
         time.sleep(0.4)

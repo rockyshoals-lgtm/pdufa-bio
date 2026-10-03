@@ -1643,7 +1643,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -1850,7 +1850,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1953,7 +1953,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2008,7 +2008,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -2940,7 +2940,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3011,7 +3011,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -3148,7 +3148,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -3962,9 +3962,9 @@ export default [
   "type": "Conference",
   "ta": "Oncology - Pancreatic",
   "cap": "",
-  "st": "In progress",
+  "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -4010,12 +4010,14 @@ export default [
    "decision_source_url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-third-treatment-fibrodysplasia-ossificans-progressiva",
    "announcement_url": "https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva",
    "decision_quote": "The U.S. Food and Drug Administration (FDA) has approved Atebrioz (zilurgisertib) tablets to reduce the volume of total new heterotopic ossification ... in adults and pediatric patients 12 years and older with fibrodysplasia ossificans progressiva (FOP).",
-   "decision_date_unsourced": true,
-   "decision_date_note": "The FDA's notice was published September 25, 2026 and says the FDA \"has approved\" Atebrioz, so the approval came no later than September 25, before the Saturday September 26 goal date. Neither it nor the Mirum/Incyte release states the action day and Drugs@FDA has no record yet, so no margin is published until the approval letter posts.",
+   "decision_date_note": "The FDA's action date, September 25, 2026, is from Drugs@FDA (NDA 221198 ORIG-1). 2026-09-25 is the day the sponsor announced it.",
    "licensing_note": "Incyte developed zilurgisertib and licensed it to Mirum, which holds the NDA.",
    "indication_short": "fibrodysplasia ossificans progressiva (ages 12+)",
    "fda_framing": "the third FOP treatment",
-   "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva"
+   "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva",
+   "fda_action_date": "2026-09-25",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf",
+   "fda_action_record": "NDA 221198 ORIG-1"
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
@@ -4045,11 +4047,13 @@ export default [
    "decision_source_url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-third-treatment-fibrodysplasia-ossificans-progressiva",
    "announcement_url": "https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva",
    "decision_quote": "The U.S. Food and Drug Administration (FDA) has approved Atebrioz (zilurgisertib) tablets to reduce the volume of total new heterotopic ossification ... in adults and pediatric patients 12 years and older with fibrodysplasia ossificans progressiva (FOP).",
-   "decision_date_unsourced": true,
-   "decision_date_note": "The FDA's notice was published September 25, 2026 and says the FDA \"has approved\" Atebrioz, so the approval came no later than September 25, before the Saturday September 26 goal date. Neither it nor the Mirum/Incyte release states the action day and Drugs@FDA has no record yet, so no margin is published until the approval letter posts.",
+   "decision_date_note": "The FDA's action date, September 25, 2026, is from Drugs@FDA (NDA 221198 ORIG-1). 2026-09-25 is the day the sponsor announced it.",
    "indication_short": "fibrodysplasia ossificans progressiva (ages 12+)",
    "fda_framing": "the third FOP treatment",
-   "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva"
+   "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva",
+   "fda_action_date": "2026-09-25",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf",
+   "fda_action_record": "NDA 221198 ORIG-1"
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
@@ -4064,9 +4068,9 @@ export default [
   "type": "Conference",
   "ta": "Radiation oncology",
   "cap": "",
-  "st": "In progress",
+  "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -4149,9 +4153,9 @@ export default [
   "type": "Conference",
   "ta": "Diabetes and metabolic",
   "cap": "",
-  "st": "Scheduled",
+  "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -4199,9 +4203,9 @@ export default [
   "type": "Conference",
   "ta": "Neuromuscular, including DMD and SMA",
   "cap": "",
-  "st": "Scheduled",
+  "st": "In progress",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5232,7 +5236,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5253,7 +5257,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -5274,7 +5278,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5623,7 +5627,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -6009,7 +6013,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -6030,7 +6034,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -6059,7 +6063,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -6080,7 +6084,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -6354,7 +6358,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -6375,7 +6379,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -6404,7 +6408,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -6425,7 +6429,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -6446,7 +6450,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -6467,7 +6471,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -6587,7 +6591,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -7046,7 +7050,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -7075,7 +7079,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -7495,7 +7499,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -7516,7 +7520,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -7537,7 +7541,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -7599,7 +7603,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -7620,7 +7624,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -8811,16 +8815,16 @@ export default [
   "company": "AbbVie",
   "d": "2026-12-31",
   "dp": "month",
-  "name": "Tavapadon (TEMPO)",
+  "name": "JUVMO (tavapadon)",
   "type": "PDUFA",
-  "ta": "",
+  "ta": "Neurology",
   "cap": "Large",
-  "st": "Upcoming",
+  "st": "Decided",
   "url": "/pdufa/ABBV-tavapadon",
-  "ua": "2026-09-27T23:30:58Z",
+  "ua": "2026-10-03T19:04:04Z",
   "_d": {
    "nct_id": null,
-   "indication": "Early Parkinson's disease",
+   "indication": "Parkinson's disease in adults (once daily, with or without levodopa)",
    "market_cap_usd": 467119783116.89996,
    "cash_runway_months": null,
    "days_to_decision": 174,
@@ -8833,9 +8837,25 @@ export default [
     "t7": -0.01,
     "t1": 0.0
    },
-   "date_note": "EDGAR full-text: \"tavapadon\" + \"target action date\" returns 0 filings; AbbVie names tavapadon in 8-K/10-K but never states an FDA goal date. Day withdrawn 2026-09-10; month retained."
+   "date_note": "EDGAR full-text: \"tavapadon\" + \"target action date\" returns 0 filings; AbbVie names tavapadon in 8-K/10-K but never states an FDA goal date. Day withdrawn 2026-09-10; month retained.",
+   "brand": "JUVMO",
+   "inn": "tavapadon",
+   "indication_short": "Parkinson's disease in adults",
+   "decision_source": "FDA approval letter, NDA 220415, September 25, 2026 (Drugs@FDA)",
+   "decision_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220415Orig1s000ltr.pdf",
+   "announcement_url": "https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease",
+   "announcement_date": "2026-09-28",
+   "decision_quote": "the U.S. Food and Drug Administration (FDA) has approved JUVMO (tavapadon) tablets as the first and only selective D1/D5 receptor agonist for the treatment of adults with Parkinson's disease",
+   "fda_action_date": "2026-09-25",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220415Orig1s000ltr.pdf",
+   "fda_action_record": "NDA 220415 ORIG-1",
+   "goal_unsourced": true,
+   "goal_note": "AbbVie never published a PDUFA goal date for tavapadon: EDGAR full-text search for \"tavapadon\" with \"target action date\" returns no filings, and the day we once carried was withdrawn on 2026-09-10. The approval is sourced to the FDA's letter; no early/late margin is computed.",
+   "review": "NDA 220415, approved September 25, 2026 (FDA letter); AbbVie announced it September 28, 2026. AbbVie describes JUVMO as the first selective D1/D5 receptor agonist approved for adults with Parkinson's disease, taken once daily with or without levodopa, and expects U.S. availability in October 2026. Supported by the Phase 3 TEMPO program (TEMPO-1, -2 and -3, with the TEMPO-4 open-label extension)."
   },
-  "dm": "2026-12"
+  "dm": "2026-12",
+  "oc": "Approved",
+  "dcd": "2026-09-28"
  },
  {
   "id": "readout_alny_2026-12-31",
@@ -10126,7 +10146,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -10219,7 +10239,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -10286,7 +10306,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -10809,7 +10829,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -10970,7 +10990,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -10991,7 +11011,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -11415,7 +11435,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -11436,7 +11456,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -11478,7 +11498,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -11737,7 +11757,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -11758,7 +11778,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -11779,7 +11799,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -12170,7 +12190,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -12191,7 +12211,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-09-27T23:32:28Z",
+  "ua": "2026-10-03T19:23:17Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

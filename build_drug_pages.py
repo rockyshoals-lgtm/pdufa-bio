@@ -344,6 +344,11 @@ def main():
     except Exception:
         brands = {}
 
+    FAD = {}
+    for _r in rows:
+        _fa = (_r.get("_d") or {}).get("fda_action_date")
+        if _fa and _r.get("dcd") and str(_r.get("oc") or "") == "Approved":
+            FAD[(str(_r.get("t") or "").upper(), _r["dcd"])] = _fa
     drugs = {}
     rejected = []
     for r in rows + arch_rows + manual_rows:
@@ -359,7 +364,24 @@ def main():
         slug = slugify(re.split(r"\s*\(", name)[0])
         if not slug:
             continue
+        # BRAND ASSIGNED AT APPROVAL (audit 2026-10-03, Tier 2.3). When "Tavapadon (TEMPO)" became
+        # "JUVMO (tavapadon)" the key moved to the brand, /drug/tavapadon was deleted and a new
+        # /drug/juvmo appeared -- the indexed URL a searcher of the INN lands on vanished the same
+        # day the drug was approved. A published drug URL never moves because a brand was
+        # assigned: when the brand has no page yet and the generic in the parenthetical does, the
+        # row stays on the generic page, which states the brand (alternateName + "marketed as").
+        mg = re.search(r"\(([a-z][a-z0-9-]{4,40})\)\s*$", name)
+        brand_alias = None
+        if mg:
+            gslug0 = slugify(re.sub(r"-[a-z]{4}$", "", mg.group(1)))
+            if (gslug0 and gslug0 != slug
+                    and not os.path.isfile(os.path.join(SITE, "drug", slug, "index.html"))
+                    and os.path.isfile(os.path.join(SITE, "drug", gslug0, "index.html"))):
+                brand_alias = re.split(r"\s*\(", name)[0].strip()
+                slug = gslug0
         d = drugs.setdefault(slug, {"name": name, "rows": []})
+        if brand_alias:
+            d["brand_alias"] = brand_alias
         cur_has = "(" in d["name"] and re.search(r"\([^)]*[a-z]", d["name"])
         new_has = "(" in name and re.search(r"\([^)]*[a-z]", name)
         if (new_has and not cur_has) or (bool(new_has) == bool(cur_has) and len(name) > len(d["name"])):
@@ -485,7 +507,11 @@ def main():
                                 str(r.get("st") or "").lower() == "under review")
               and str(r.get("st") or "").lower() != "decided"
               and r.get("id") not in confirmed]
-        _dec = sorted(((r.get("d"), arch.get((str(r.get("t") or "").upper(), r.get("d") or "")))
+        # Audit 2026-10-03 (Tier 2.1/3.1): an approval is dated by the FDA's action date where the
+        # FDA's own record states it (JUVMO: letter 2026-09-25, AbbVie release 09-28). The row is
+        # keyed on the first public day; the page states the FDA's date.
+        _dec = sorted(((FAD.get((str(r.get("t") or "").upper(), r.get("d") or ""), r.get("d")),
+                        arch.get((str(r.get("t") or "").upper(), r.get("d") or "")))
                        for r in rs
                        if arch.get((str(r.get("t") or "").upper(), r.get("d") or ""))
                        in ("Approved", "CRL")), key=lambda x: x[0] or "")
@@ -532,6 +558,9 @@ def main():
         # ABOUT: only fields we actually hold. The audit's ask was 400-600 words; the ceiling on
         # honest length is the data, so every sentence below is a held fact and none is filler.
         about = []
+        if d.get("brand_alias") and not d.get("marketed_as"):
+            about.append(f"{esc(d['brand_alias'])} is the brand name of {esc(slug)} "
+                         f"(the name it carries since FDA approval); this page tracks both names.")
         if d.get("marketed_as"):
             bn, bslug = d["marketed_as"]
             about.append(f'{name} is marketed as <a class="lit" href="/drug/{esc(bslug)}">'

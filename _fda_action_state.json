@@ -60,12 +60,10 @@
   "result": "found"
  },
  "pdufa_incy_2026-09-26": {
-  "checked": "2026-09-27",
-  "result": "none",
-  "terms": [
-   "ATEBRIOZ",
-   "ZILURGISERTIB"
-  ]
+  "checked": "2026-10-03",
+  "date": "2026-09-25",
+  "label": "NDA 221198 ORIG-1",
+  "result": "found"
  },
  "pdufa_ions_2026-06-30": {
   "checked": "2026-09-27",
@@ -92,7 +90,7 @@
   "result": "found"
  },
  "pdufa_lnth_2026-06-29": {
-  "checked": "2026-09-27",
+  "checked": "2026-10-03",
   "result": "crl-no-letter"
  },
  "pdufa_lnth_2026-08-13": {
@@ -101,12 +99,10 @@
   "result": "manual"
  },
  "pdufa_mirm_2026-09-26": {
-  "checked": "2026-09-27",
-  "result": "none",
-  "terms": [
-   "ATEBRIOZ",
-   "ZILURGISERTIB"
-  ]
+  "checked": "2026-10-03",
+  "date": "2026-09-25",
+  "label": "NDA 221198 ORIG-1",
+  "result": "found"
  },
  "pdufa_mnkd_2026-07-26": {
   "checked": "2026-09-27",
