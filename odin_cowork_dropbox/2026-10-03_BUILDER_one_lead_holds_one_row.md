@@ -152,3 +152,27 @@ Changed:
 - `_fda_watch_ack.json`, `_drug_approvals_confirmed.json`.
 
 Local guards: **115 pass, 0 fail.**
+
+## 6. Appended ~12:55 Pacific = 15:55 Eastern = 19:55 UTC: green, live, issues closed, and one more fix
+
+**CI is green.** Dispatched run 37148030700 started 19:28:45 UTC and completed with `success`, the first green run since 2026-09-27. The commit was 580b20c73. The watcher lines from that run:
+
+- `early-approval watch: 37 armed events ... 0 unreviewed approvals (5 previously reviewed)`
+- `FDA drugs feed: 20 item(s) read; 0 unreviewed lead(s)`
+- `sponsor-feed watch: 32 armed sponsor(s); 7 with a news feed (7 read this run)`
+- `quarantine: 0 leads this run; nothing held`
+
+**2.5 is now answered by the new line.** The run printed `drug-page watch passes: press RSS 0 item(s) ... oncology page BLIND; openFDA read -- BLIND: fda_press_rss, fda_oncology_notifications`. So "0 press items scanned" meant "could not read", not "nothing new": the drug-page watch's two fda.gov passes are blind on the runner. In the same run, the FDA drugs-feed pass read 20 items from fda.gov using a different User-Agent. My **hypothesis, not proven**, is that fda.gov refuses the anonymous UA. The drug-page watch now uses the UA that works, and the next run's line will confirm or refute it.
+
+**Issues #2 to #18 are closed**, each with a one-line reason:
+
+- #2, #3, #5, #6: REAL, JUVMO, published;
+- #4: FALSE, MCT8 notice matched on "thyroid";
+- #7 to #18: FALSE, AGIO CMC supplement and/or Novitium's generic everolimus ANDA.
+
+**The live check found one fail, which is fixed in this commit.** `_verify_live_1003.py` on 4da0c4fa1 passed 15 of 16 items. The one fail was `/pdufa/ABBV-tavapadon`: its title read "Tavapadon, Approved September 28, 2026" (AbbVie's release day) over a banner that correctly said "the FDA decided this application on September 25, 2026 (FDA record; announced September 28, 2026)". The title also lacked the brand.
+
+- **Fix:** `mark_event_pages_decided.py` now writes the FDA's action date into the title, sub line and key fact wherever the row has one, and adds the brand to the title and h1 in the same run. It now reads "ABBV FDA decision: JUVMO (Tavapadon), Approved September 25, 2026".
+- **Guard:** `tests/test_event_page_fda_date_brand.py`. Proof on the rendered page: the pre-fix page gave 2 failures, then 0 after the fix; the old title planted back gave FAIL; restored gave 0.
+
+Local guards now **116 pass, 0 fail**. The final live result is in the next commit's verifier run (`_verify_live_1003.py`).

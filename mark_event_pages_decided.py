@@ -491,6 +491,19 @@ def main():
                                goal_sourced=goal_ok)
         if acted != dcd:
             new = new.replace(f"approved by the FDA on {pretty(dcd)}", f"approved by the FDA on {pretty(acted)}")
+            # Audit 2026-10-03 (Tier 0 acceptance, 2.3, 3.1): the title, sub line and key fact said
+            # "Approved September 28" (AbbVie's release day) over a banner giving the FDA's
+            # September 25. Where the FDA record dates the action, every "Approved {day}" carrier
+            # on the event page states the FDA's day.
+            for a_, b_ in ((f", {word} {pretty(dcd)}", f", {word} {pretty(acted)}"),
+                           (f"<b>{word} {pretty(dcd)}</b>", f"<b>{word} {pretty(acted)}</b>"),
+                           (f"FDA decision: {word} on {pretty(dcd)}.", f"FDA decision: {word} on {pretty(acted)}.")):
+                new = new.replace(a_, b_)
+        # 2.3: the brand assigned at approval appears in the event page's title and h1 the same run.
+        brand = str(_d.get("brand") or "").strip()
+        if brand and word == "Approved" and brand.lower() not in page_drug.lower():
+            for pre in (f"{tk} FDA decision: {page_drug},", f'<span class="g">{page_drug}</span></h1>'):
+                new = new.replace(pre, pre.replace(page_drug, f"{brand} ({page_drug})", 1))
         if _d.get("decision_date_unsourced"):
             new = announcement_wording(new, dcd)
         if new != doc:

@@ -60,7 +60,10 @@ ONC = ("https://www.fda.gov/drugs/resources-information-approved-drugs/"
 API = "https://api.fda.gov/drug/drugsfda.json"
 LOOKBACK_DAYS = 21          # RSS/oncology page scan window
 OPENFDA_LOOKBACK = 45       # openFDA feed lag is ~9 days; 45 gives slack
-UA = {"User-Agent": "pdufa.bio watcher (contact: site operator)"}
+# 2026-10-03 (Tier 2.5): CI run 37148030700 read 0 items from the FDA press RSS and the oncology page
+# with this UA, while watch_fda_drugs_feed.py read 20 items from fda.gov in the same run with the
+# UA below. Hypothesis, not proven: fda.gov refuses the anonymous UA. Same UA as the working pass.
+UA = {"User-Agent": "pdufa.bio watcher rockyshoals@gmail.com"}
 # Supplement classes that are not decisions on a program's pending application --
 # same stoplist the event watcher proved on WINREVAIR's LABELING supplement.
 SKIP_CLASS = ("LABELING", "MANUFACTURING (CMC)", "MANUF (CMC)", "MANUFACTURING",
