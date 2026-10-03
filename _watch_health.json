@@ -1,13 +1,15 @@
 {
  "drug_watch_fda_oncology_notifications": {
-  "last_attempt": "2026-10-03"
+  "last_attempt": "2026-10-03",
+  "last_ok": "2026-10-03"
  },
  "drug_watch_fda_press_rss": {
   "bodies_failed": 0,
-  "bodies_read": 0,
-  "in_window": 0,
-  "items": 0,
-  "last_attempt": "2026-10-03"
+  "bodies_read": 9,
+  "in_window": 9,
+  "items": 20,
+  "last_attempt": "2026-10-03",
+  "last_ok": "2026-10-03"
  },
  "drug_watch_openfda_recent_ap": {
   "last_attempt": "2026-10-03",
