@@ -152,3 +152,29 @@ Changed:
 - `link_crl_letters.py`, `build_crl_hub.py`
 - `api/v1/_lib.mjs`
 - the workflow and the chain.
+
+## Live, appended ~16:35 Pacific = 19:35 Eastern = 23:35 UTC
+
+- **CI:** run 37159945005, triggered from my push 766b3735e, completed `success`. It is the third green run of the day.
+- **What the run read:**
+  - EDGAR poll: 16 of 17 sponsors read;
+  - Novel Drug Approvals list: 45;
+  - archive FDA dates: 46;
+  - CRL headings: 365 letters;
+  - exclusivity: 858;
+  - quarantine: nothing held.
+- **Live check:** `_verify_live_1003b.py` against the live commit 766b3735e passes **15 of 15**:
+  - JUVMO lede with the FDA date and "the 43rd novel drug approval of 2026";
+  - Gazyva page;
+  - Ipratropium title whole;
+  - /fda-this-month and /fda-approval-letters day by day (81 actions);
+  - /decisions linking the hub;
+  - AASLD lede;
+  - 13F block on RVMD;
+  - /adcomm history;
+  - /patent-cliff/exclusivity;
+  - /crl sections;
+  - API readout statuses (25 completed per registry, 5 terminated per registry, 74 window passed);
+  - October calendar: Tecentriq pending;
+  - Gazyva lupus page unbannered;
+  - ARQT-zoryve pending for 2027-02-23.
