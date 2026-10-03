@@ -176,3 +176,17 @@ Local guards: **115 pass, 0 fail.**
 - **Guard:** `tests/test_event_page_fda_date_brand.py`. Proof on the rendered page: the pre-fix page gave 2 failures, then 0 after the fix; the old title planted back gave FAIL; restored gave 0.
 
 Local guards now **116 pass, 0 fail**. The final live result is in the next commit's verifier run (`_verify_live_1003.py`).
+
+## 7. Appended ~13:20 Pacific = 16:20 Eastern = 20:20 UTC: live ALL PASS, and the 2.5 hypothesis is confirmed
+
+- **Run 37148737049** (commit ce5799c42) completed `success`, the second green run in a row.
+- **`_verify_live_1003.py` passes all 16 checks** on ce5799c42:
+  - build-info built today, with `data_built_at`, `held_since` null and `held_leads` [];
+  - `/pdufa/ABBV-tavapadon` reads Approved, JUVMO;
+  - `/fda-decision/ABBV-2026-09-28` is fact-first and cites the NDA 220415 letter;
+  - the API row is Decided / Approved with `fda_action_date` 2026-09-25 and `meta.data_built_at`;
+  - AACR-PANC, ASTRO and EASD are Ended and WMS is In progress;
+  - `/fda-approval-letters` lists NDA 220415;
+  - the home and /calendar stamps read `data_built_at`;
+  - `/drug/tavapadon` is live and names JUVMO.
+- **2.5 hypothesis confirmed.** With the User-Agent changed, the same run printed `drug-page watch passes: press RSS 20 item(s), 9 in the 21-day window, 9 bodies read, 0 body fetch(es) failed; oncology page read; openFDA read`. The "0 press items scanned" line was fda.gov refusing that pass's anonymous User-Agent on the runner. It was not an empty window.
