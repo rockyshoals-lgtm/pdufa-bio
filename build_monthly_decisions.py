@@ -198,6 +198,41 @@ def archive_only_decisions(y, m, have):
     return out
 
 
+def fda_days(rows, today, span=45):
+    """Audit 2026-10-03 item 3.1: what the FDA approved, per day, by the FDA's OWN action date (API rows'
+    fda_action_date, and archive pages dated by Drugs@FDA), over the last `span` days. Co-listed partner
+    rows are one FDA action (same record + date). JUVMO sits under September 25 (the letter), not 28."""
+    from drug_names import clean_drug_name
+    acts = {}
+    for r in rows:
+        d = r.get("_d") or {}
+        fd = str(d.get("fda_action_date") or "")
+        if r.get("type") != "PDUFA" or str(r.get("oc") or "") != "Approved" or not re.match(r"^\d{4}-\d{2}-\d{2}$", fd):
+            continue
+        if d.get("decision_date_unsourced"):
+            continue
+        k = (d.get("fda_action_record") or d.get("fda_action_source_url") or r.get("id"), fd)
+        e = acts.setdefault(k, {"date": fd, "name": clean_drug_name(r.get("name")), "tks": [],
+                                "page": f"/fda-decision/{str(r.get('t')).upper()}-{r.get('dcd')}",
+                                "rec": d.get("fda_action_record") or "", "url": d.get("fda_action_source_url") or ""})
+        e["tks"].append(str(r.get("t") or "").upper())
+    ap = os.path.join(HERE, "_fda_action_archive.json")
+    for slug, e0 in (json.load(io.open(ap, encoding="utf-8")) if os.path.exists(ap) else {}).items():
+        mm = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug)
+        if not (mm and e0.get("date")) or not os.path.exists(os.path.join(SITE, "fda-decision", slug, "index.html")):
+            continue
+        k = (e0.get("record") or e0.get("source_url"), e0["date"])
+        e = acts.setdefault(k, {"date": e0["date"], "name": clean_drug_name(e0.get("name")), "tks": [],
+                                "page": f"/fda-decision/{slug}", "rec": e0.get("record") or "", "url": e0.get("source_url") or ""})
+        if mm.group(1) not in e["tks"]:
+            e["tks"].append(mm.group(1))
+    out = {}
+    for e in acts.values():
+        if 0 <= (today - dt.date.fromisoformat(e["date"])).days <= span:
+            out.setdefault(e["date"], []).append(e)
+    return out
+
+
 def main():
     rows = load_rows()
     today = _eastern_today()
@@ -247,6 +282,21 @@ def main():
             nxt_html += (f'<p>Plus {len(up2) - 10} more on the '
                          f'<a class="lit" href="/calendar">full calendar</a>.</p>')
 
+    fdd = fda_days(rows, today)
+    fda_html = ""
+    if fdd:
+        lines = []
+        for day_ in sorted(fdd, reverse=True):
+            dd = dt.date.fromisoformat(day_)
+            its = "; ".join(f'<a class="lit" href="{esc(e["page"])}">{esc(e["name"])}</a> ({esc("/".join(e["tks"]))}'
+                            + (f', <a href="{esc(e["url"])}" rel="noopener">{esc(e["rec"])}</a>' if e["url"] and e["rec"] else "")
+                            + ")" for e in fdd[day_])
+            lines.append(f'<p id="fda-{day_}"><b>{MONTHS[dd.month]} {dd.day}, {dd.year}</b>: the FDA approved {its}.</p>')
+        fda_html = ("<h2>What the FDA approved, by FDA action date (last 45 days)</h2>"
+                    "<p class=\"note\">Dated by the FDA's own record (the approval letter or Drugs@FDA), not the "
+                    "company's announcement. Every letter: <a href=\"/fda-approval-letters\">FDA approval letters</a>.</p>"
+                    + "".join(lines))
+
     title = f"What the FDA Decides in {mon}: PDUFA Dates in Plain Language | pdufa.bio"
     desc = (f"{remain} remain{'s' if n_dates == 1 else ''} in {mon}, with {len(dec)} already "
             f"decided. Each date as a sentence, sourced and linked. Updated daily.")
@@ -274,7 +324,7 @@ def main():
         f'<div style="color:#9db3d4;font-size:14px;margin-top:6px">{ans}</div></div>'
         for q, ans in qa)
 
-    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/fda-this-month"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/fda-this-month"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}p{{max-width:76ch}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; What the FDA decides in {esc(mon)}</div><h1>What the FDA decides in {esc(mon)}</h1><div class="sub">{intro}</div><h2>Decided so far in {esc(mon)}</h2>{dec_html}<h2>Still ahead in {esc(mon)}</h2>{up_html}{coarse_html}{nxt_html}<h2>Questions</h2>{faq}<p class="note">Dates and outcomes only, each linked to its record; see the <a href="/calendar">full calendar</a> and <a href="/learn/what-is-a-pdufa-date">what a PDUFA date is</a>. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; {y} pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
+    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/fda-this-month"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/fda-this-month"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}p{{max-width:76ch}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; What the FDA decides in {esc(mon)}</div><h1>What the FDA decides in {esc(mon)}</h1><div class="sub">{intro}</div><h2>Decided so far in {esc(mon)}</h2>{dec_html}<h2>Still ahead in {esc(mon)}</h2>{up_html}{coarse_html}{nxt_html}{fda_html}<h2>Questions</h2>{faq}<p class="note">Dates and outcomes only, each linked to its record; see the <a href="/calendar">full calendar</a> and <a href="/learn/what-is-a-pdufa-date">what a PDUFA date is</a>. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; {y} pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
 
     os.makedirs(OUT, exist_ok=True)
     io.open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(page)

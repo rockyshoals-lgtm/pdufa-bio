@@ -66,6 +66,7 @@ def retired_slugs():
 
 
 def main():
+    sys.path.insert(0, HERE)
     doc = io.open(LISTING, encoding="utf-8", errors="replace").read()
     have = set(re.findall(r'href="/fda-decision/([A-Z]{1,6}-\d{4}-\d{2}-\d{2})"', doc))
     retired = retired_slugs()
@@ -86,6 +87,10 @@ def main():
         if not m or slug in have or slug in retired:
             continue
         oc, drug = page_facts(p)
+        _kv = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", io.open(p, encoding="utf-8", errors="replace").read())
+        if _kv:
+            from drug_names import clean_drug_name as _cdn
+            drug = _cdn(_html.unescape(_kv.group(1))) or drug
         if not oc:
             print(f"  !! {slug}: page has no readable outcome; NOT inserting a row blind")
             continue
@@ -108,6 +113,30 @@ def main():
         have.add(slug)
         added += 1
         print(f"  + {slug}: {word}" + (f" ({drug[:40]})" if drug else ""))
+
+    # 4.7 (#65, audit 2026-10-03): a row's drug text written from a cut archive name
+    # ("PAPZIMEOS (zopapogene imadenov") is replaced by the page's own "Drug / candidate" fact,
+    # cleaned by drug_names.py. Rows whose text is already whole are left alone.
+    import sys as _sys
+    _sys.path.insert(0, HERE)
+    from drug_names import clean_drug_name, looks_cut_name
+
+    def fix_row(m):
+        slug, cls, word, text = m.group(1), m.group(2), m.group(3), _html.unescape(m.group(4))
+        pp = os.path.join(SITE, "fda-decision", slug, "index.html")
+        kv = None
+        if os.path.exists(pp):
+            kv = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", io.open(pp, encoding="utf-8", errors="replace").read())
+        full = _html.unescape(kv.group(1)) if kv else ""
+        # cut = the archive's widths, an open parenthesis, or a strict prefix of the page's own
+        # name that stops mid-word ("TRUQAP (capivasertib) in combi")
+        midword = bool(full) and full.startswith(text) and len(full) > len(text) and full[len(text)].isalnum()
+        if not (looks_cut_name(text) or text.count("(") != text.count(")") or midword):
+            return m.group(0)
+        new = clean_drug_name(full or text)
+        return m.group(0).replace(m.group(4), _html.escape(new, quote=False)) if new else m.group(0)
+    doc = re.sub(r'href="/fda-decision/([A-Z]{1,6}-\d{4}-\d{2}-\d{2})">.{0,200}?<span class="(ok|bad)">(Approved|CRL)</span>: ([^<]{2,80})</div>',
+                 fix_row, doc, flags=re.S)
 
     # year counts recomputed from the rows actually present -- a hand-bumped count and a
     # regenerated listing had already disagreed twice.

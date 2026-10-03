@@ -53,6 +53,26 @@ export function liveStatus(e, today = easternToday()) {
   }
   if (e.type === 'PDUFA' && st.toLowerCase() === 'upcoming' && e.dp === 'day'
       && String(e.d).slice(0, 10) < today) return 'Awaiting';
+  /* Audit 2026-10-03 item 4.6 (the 13 -- now 103 -- forward readouts whose window has passed): a readout
+     still marked Estimated/Guided after its whole window has ended is neither reported nor upcoming.
+     It is served as "Window passed" (no result in our record), computed from the date, never baked.
+     A month window ends with its month (`dm`); a coarser window's `d` is already its end. */
+  if (e.type === 'Readout' && (st === 'Estimated' || st === 'Guided')) {
+    /* Ruling 2026-10-03 (readout leads #52): what ClinicalTrials.gov itself states, recorded on the row
+       by apply_readout_registry_signals.py; never an inferred outcome. A sponsor result (Reported) wins. */
+    const reg = e._d && e._d.registry;
+    if (reg) {
+      const os_ = String(reg.overall_status || '');
+      if (os_ === 'TERMINATED') return 'Terminated per registry';
+      if (os_ === 'WITHDRAWN') return 'Withdrawn per registry';
+      if (os_ === 'SUSPENDED') return 'Suspended per registry';
+      if (os_ === 'COMPLETED' || (reg.primary_completion_type === 'ACTUAL'
+          && String(reg.primary_completion || '9999').slice(0, 10) <= today)) return 'Completed per registry';
+    }
+    const ended = e.dp === 'month' ? (String(e.dm || e.d).slice(0, 7) < today.slice(0, 7))
+                                   : (String(e.d).slice(0, 10) < today);
+    if (ended) return 'Window passed';
+  }
   return st || null;
 }
 
@@ -103,7 +123,10 @@ const CORE_EXTRA = ['nct_id','indication','market_cap_usd','cash_runway_months',
      timing statistic and every renderer gate on, goal_unsourced is its mirror (09-18). */
   'decision_source','decision_source_url','decision_date_note','decision_date_unsourced','goal_unsourced',
   /* 09-20b: the FDA's own action date where its released letter states it (CRLs). */
-  'fda_action_date'];
+  'fda_action_date',
+  /* 2026-10-03: the registry's own status on a readout row (ruling for leads #52) and the basis of a
+     hand-assigned therapeutic area (item 3.3), so a consumer can see why a status or tag is what it is. */
+  'registry','ta_basis'];
 const DEPTH_KEYS = [];
 
 export function shape(e, tier) {

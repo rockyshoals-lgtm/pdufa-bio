@@ -347,6 +347,14 @@ def main():
                 td = dt.date.fromisoformat(tgt.group(1))
                 cands = [r for r in cands if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d")))
                          and abs((dt.date.fromisoformat(str(r["d"])) - td).days) <= 14]
+            # 2026-10-03: the same-brand-different-indication rule on re-validation too. /pdufa/ARQT-zoryve
+            # (the infant atopic-dermatitis sNDA, pending) carried the 2026-06-29 plaque-psoriasis approval.
+            pim2 = (re.search(r"under FDA review for ([^.\"<]{4,120})", doc0)
+                    or re.search(r"approved by the FDA on [A-Z][a-z]+ \d{1,2}, \d{4} (?:for|to treat) ([^.\"<]{4,120})", doc0))
+            if pim2 and cands:
+                _pt = toks(pim2.group(1)) - {"with", "from", "years", "older", "patients", "adults", "children", "disease"}
+                cands = [r for r in cands if not (_pt and toks(((r.get("_d") or {}).get("indication") or ""))
+                                                  and not (_pt & toks(((r.get("_d") or {}).get("indication") or ""))))]
             if not cands:
                 if E in doc0:
                     new = doc0.split(B, 1)[0] + doc0.split(E, 1)[1]
@@ -377,9 +385,34 @@ def main():
                 td = dt.date.fromisoformat(tgt.group(1))
                 cands = [r for r in cands if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d")))
                          and abs((dt.date.fromisoformat(str(r["d"])) - td).days) <= 14]
+            # SAME BRAND, DIFFERENT INDICATION (2026-10-03): /pdufa/RHHBY-gazyva is the pending Gazyva
+            # lupus application; a token match on "gazyva" gave it the 2026-09-25 idiopathic nephrotic
+            # syndrome approval banner. Where the page states its indication and the decided row states
+            # one, and they share no disease word, it is a different application.
+            pim = re.search(r"under FDA review for ([^.\"<]{4,120})", doc0)
+            if pim and cands:
+                ptoks = toks(pim.group(1))
+                kept = []
+                for r in cands:
+                    rtoks = toks((r.get("_d") or {}).get("indication") or "")
+                    if ptoks and rtoks and not (ptoks & rtoks):
+                        print(f"  SKIP /pdufa/{slug}: {r.get('name')} decided for "
+                              f"{((r.get('_d') or {}).get('indication') or '')[:50]!r}, page is for {pim.group(1)[:50]!r}")
+                        continue
+                    kept.append(r)
+                cands = kept
             if not cands:
                 # Archive fallback (2026-09-06): the dataset never held this event.
                 cands = archive_candidates(archive, tk, drug_part, doc0)
+                # the same indication rule for an archive decision that has a dataset row (Gazyva INS)
+                if pim and cands:
+                    ptoks = toks(pim.group(1))
+                    def _ind_ok(c):
+                        rr = next((x for x in decided if str(x.get("t", "")).upper() == tk
+                                   and str(x.get("dcd")) == str(c.get("dcd"))), None)
+                        rt = toks(((rr or {}).get("_d") or {}).get("indication") or "")
+                        return not (ptoks and rt and not (ptoks & rt))
+                    cands = [c for c in cands if _ind_ok(c)]
                 if cands and len(cands) == 1:
                     print(f"  /pdufa/{slug}: no dataset row; resolved from the decisions "
                           f"archive ({cands[0]['dcd']})")

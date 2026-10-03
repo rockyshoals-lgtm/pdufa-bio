@@ -30,6 +30,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_windows import earliness_allowed  # noqa: E402
+from drug_names import clean_drug_name  # noqa: E402
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -124,6 +125,14 @@ def main():
                  for r in rows if r.get("type") == "PDUFA" and (r.get("_d") or {}).get("fda_action_date")
                  and str((r.get("_d") or {}).get("fda_action_date")) != str(r.get("dcd", ""))[:10]}
 
+    # 2026-10-03: archive pages dated by Drugs@FDA (sync_archive_fda_dates.py) carry the FDA date too
+    _ap = os.path.join(HERE, "_fda_action_archive.json")
+    for _slug, _e in (json.load(io.open(_ap, encoding="utf-8")) if os.path.exists(_ap) else {}).items():
+        _m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", _slug)
+        if _m and _e.get("date") and _e["date"] != _m.group(2) and (_m.group(1), _m.group(2)) not in fda_dates:
+            fda_dates[(_m.group(1), _m.group(2))] = _e["date"]
+    names = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): r.get("name")
+             for r in rows if r.get("type") == "PDUFA" and r.get("dcd") and r.get("name")}
     # listing rows as a drug-name fallback for drug-less titles ("AQST FDA Decision
     # 2026-02-02: CRL") -- the /decisions row states "CRL: Anaphylm" for the same slug
     listing = io.open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8",
@@ -162,6 +171,14 @@ def main():
             print(f"  SKIP {slug}: unparseable title, not rewriting blind")
             skipped += 1
             continue
+        # 4.7 (#65): the drug name comes from the page's own "Drug / candidate" fact (or the API
+        # row), cleaned by drug_names.py -- NEVER from this script's previous <title>, which it had
+        # cut to fit and then re-read as the name ("Ipratropium Bromide HFA Inhala", ten pages).
+        kvm = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", doc)
+        rown = names.get((tk, dcd))
+        src_name = rown or (_html.unescape(kvm.group(1)) if kvm else "")
+        if src_name and src_name.lower() not in JUNK:
+            drug = clean_drug_name(src_name) or drug
         if not drug:
             drug = "the application under review"   # answers without inventing a name
         company = company_of(doc, tk)

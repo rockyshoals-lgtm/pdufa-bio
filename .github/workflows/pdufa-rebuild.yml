@@ -114,7 +114,7 @@ jobs:
         run: python sync_decisions_listing.py
 
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
-        run: python mark_calendar_decided.py
+        run: python mark_calendar_decided.py && python sync_api_urls_to_calendar.py
 
       # Audit 2026-09-05b section 3: AI answer boxes quote sentences, not tables. This
       # keeps the /calendar explainer block's numbers (early/on/late split) computed
@@ -197,6 +197,12 @@ jobs:
       - name: "Patent cliff pages + /drug patent modules"
         run: python build_patent_cliff.py
 
+      # Audit 2026-10-03 item 4.3: the Orange Book's exclusivity.txt as its own, earlier cliff.
+      - name: "Orange Book refresh (weekly) + /patent-cliff/exclusivity"
+        run: |
+          python fetch_orange_book.py || true
+          python build_exclusivity_cliff.py
+
       - name: Sync the v1 API to the published pages (kills API/page drift)
         run: python sync_decisions_listing.py && python sync_api_from_pages.py
 
@@ -230,8 +236,22 @@ jobs:
       - name: "Schema name follows the page title"
         run: python sync_jsonld_name_to_title.py
 
+      # Audit 2026-10-03 items 2.1 / 2.2 / 4.7: the FDA's Novel Drug Approvals list and Drugs@FDA dates
+      # for archive decision pages (both advisory reads: a failed read keeps the cache), then the FDA
+      # record block, then one fact-first sentence under every APPROVED banner.
+      - name: "FDA Novel Drug Approvals 2026 list (cached; never counted by us)"
+        continue-on-error: true
+        run: python sync_novel_approvals.py
+
+      - name: "Drugs@FDA action dates for archive decision pages (unambiguous matches only)"
+        continue-on-error: true
+        run: python sync_archive_fda_dates.py
+
       - name: "Decision pages cite the FDA record of the action date"
         run: python inject_fda_action_record.py
+
+      - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
+        run: python build_decision_lede.py
 
       # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
       - name: "/fda-approval-letters hub"
@@ -245,6 +265,14 @@ jobs:
       # and appends one row to _crl_capture_series.json every run. Network failure = no-op.
       - name: "CRL corpus: dated capture of the FDA release (openFDA transparency/crl)"
         run: python capture_crl_corpus.py || true
+
+      # Audit 2026-10-03 item 4.5: each new letter's section headings from its PDF text layer (never the OCR
+      # field). Incremental; a letter is read once and cached in _crl_headings.json.
+      - name: "CRL section headings from the letters' PDFs (new letters only)"
+        continue-on-error: true
+        run: |
+          sudo apt-get install -y -qq poppler-utils > /dev/null 2>&1 || true
+          python extract_crl_headings.py --limit 40
 
       - name: FDA CRL letters onto CRL decision pages
         run: python link_crl_letters.py
@@ -284,7 +312,8 @@ jobs:
         run: |
           set +e
           rm -f "$WATCH_LEADS_JSONL"
-          for w in "watch_fda_approvals.py" "watch_drug_approvals.py" "watch_fda_drugs_feed.py" "watch_sponsor_newswire.py --discover"; do
+          # audit 10-03 item 2.4: watch_edgar_8k.py polls each armed SEC-registrant sponsor's own 8-K/6-K
+          for w in "watch_fda_approvals.py" "watch_drug_approvals.py" "watch_fda_drugs_feed.py" "watch_sponsor_newswire.py --discover" "watch_edgar_8k.py"; do
             echo "== $w"
             before=$(cat "$WATCH_LEADS_JSONL" 2>/dev/null | wc -l)
             python $w
@@ -384,6 +413,15 @@ jobs:
       # 32.59%, both rising in share as well as volume, both answered off the generic hub with
       # no dedicated page. Rebuilt EVERY run, because /condition/* was built once and never
       # rebuilt and two months later was calling ACHV's cytisinicline PDUFA "custirsen".
+      - name: "Readout therapeutic areas from the hand file (audit 10-03 item 3.3; never by name match)"
+        run: python apply_readout_ta_manual.py
+
+      # Ruling 2026-10-03 for readout leads #52 (item 4.6): the registry's own status recorded on the row and
+      # served as "... per registry"; NCT-mismatch rows excluded. Advisory read of ClinicalTrials.gov.
+      - name: "Readout rows carry the registry's own status (ruling for leads #52)"
+        continue-on-error: true
+        run: python apply_readout_registry_signals.py
+
       - name: "/readouts/oncology and /readouts/rare-disease"
         run: python build_readout_ta_hubs.py
 
@@ -485,6 +523,8 @@ jobs:
           python augment_conference_study.py
           python sync_research_cards.py
           python build_conference_faq.py
+          # audit 2026-10-03 item 3.4: one fact-first sentence (dates + city) under every /conference h1
+          python inject_conference_lede.py
           python build_early_decisions.py
           python add_amlx_avexitide.py
 
@@ -521,6 +561,21 @@ jobs:
         # fetch_fda_brands: final audit 09-02 §4 -- the brand (MIMRYLO) is in the same
         # FDA payload as the approval date; every approval self-populates its brand.
         run: python fetch_fda_brands.py && python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
+
+      # Audit 2026-10-03 item 4.1: ten specialist funds' latest 13F-HR read from EDGAR (CIK verified
+      # against the filer name; the old checkpoint file had three wrong CIKs and is not used), then one
+      # facts-only paragraph per held ticker on decision and drug pages. A failed read keeps the cache.
+      # Audit 2026-10-03 item 4.2: /adcomm gains the 2020-2026 meeting calendar from Federal Register notices
+      # (notices only; no votes, no company or drug). A failed FR read renders from the committed cache.
+      - name: "AdComm history from Federal Register notices"
+        run: python build_adcomm_history.py
+
+      - name: "13F: specialist funds' latest filings from EDGAR"
+        continue-on-error: true
+        run: python sync_13f_specialists.py
+
+      - name: "13F block on decision and drug pages"
+        run: python inject_13f_block.py
 
       # Red team 2026-08-11: /pdufa/LNTH redirected to June's CRL for a different molecule at T-2
       # before the Aug 13 MK-6240 PDUFA. Bare-ticker redirects go stale the day a decided ticker
@@ -795,7 +850,7 @@ jobs:
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json
-          git add _held_state.json _watch_health.json 2>/dev/null || true
+          git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true

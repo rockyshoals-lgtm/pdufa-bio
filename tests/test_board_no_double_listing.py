@@ -61,7 +61,9 @@ def catalysts_in(segment):
                          r'href="/fda-decision/([A-Z]{1,6})-\d{4}-\d{2}-\d{2}"', segment):
         tk = m.group(1) or m.group(2)
         tail = re.sub(r"<[^>]+>", " ", segment[m.end():m.end() + 220]).lower()
-        out.append((tk, {w for w in re.findall(r"[a-z]{5,}", tail) if w not in STOPW}))
+        # the ticker itself is not a drug token: "rhhby" made Gazyva (decided) and Tecentriq (pending)
+        # look like one catalyst on 2026-10-03
+        out.append((tk, {w for w in re.findall(r"[a-z]{5,}", tail) if w not in STOPW and w != tk.lower()}))
     return out
 
 

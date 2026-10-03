@@ -75,6 +75,14 @@ def test_decided_event_pages_carry_banner():
             if gm and tm:
                 cands = [r for r in tk_cands if str(r.get("d"))[:10] == gm.group(1)
                          and toks(tm.group(1)) & toks(r.get("name"))]
+        # Same brand, different indication (2026-10-03, Gazyva INS vs the lupus page): the
+        # injector's rule -- a page whose own indication shares no word with the decided row's
+        # indication is a different application and must NOT carry its banner.
+        pim = re.search(r"under FDA review for ([^.\"<]{4,120})", doc)
+        if pim and cands:
+            pt = toks(pim.group(1))
+            cands = [r for r in cands if not (pt and toks((r.get("_d") or {}).get("indication"))
+                                              and not (pt & toks((r.get("_d") or {}).get("indication"))))]
         if len(cands) != 1:
             continue          # no match or ambiguous -- the injector skips these too
         if "<!--DECBAN:BEGIN-->" not in doc:

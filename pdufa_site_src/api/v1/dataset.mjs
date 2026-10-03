@@ -7,7 +7,7 @@ export default [
   "dp": "month",
   "name": "Human Acellular Vessel",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Cardiovascular",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT03005418",
@@ -36,7 +36,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT03005418"
+   "source_url": "https://clinicaltrials.gov/study/NCT03005418",
+   "ta_basis": "ClinicalTrials.gov conditions: Trauma, Vascular System Injury",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2023-09-19",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": "2025-03-12",
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT03005418"
+   }
   },
   "dm": "2023-09"
  },
@@ -48,7 +57,7 @@ export default [
   "dp": "month",
   "name": "IHL-42X Low Dose",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06146101",
@@ -76,7 +85,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06146101"
+   "source_url": "https://clinicaltrials.gov/study/NCT06146101",
+   "ta_basis": "ClinicalTrials.gov conditions: Obstructive Sleep Apnea",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2025-05-20",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06146101"
+   }
   },
   "dm": "2025-05"
  },
@@ -117,7 +135,15 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06374797"
+   "source_url": "https://clinicaltrials.gov/study/NCT06374797",
+   "registry": {
+    "overall_status": "TERMINATED",
+    "primary_completion": "2026-04-06",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06374797"
+   }
   },
   "dm": "2026-04"
  },
@@ -129,7 +155,7 @@ export default [
   "dp": "month",
   "name": "ELI-002 7P",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05726864",
@@ -157,7 +183,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05726864"
+   "source_url": "https://clinicaltrials.gov/study/NCT05726864",
+   "ta_basis": "ClinicalTrials.gov conditions: Pancreatic Ductal Adenocarcinoma, Colorectal Cancer, KRAS G12D, KRAS G12R, KRAS G12V, KRAS G12A",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-04-20",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05726864"
+   }
   },
   "dm": "2026-04"
  },
@@ -209,7 +244,7 @@ export default [
   "dp": "month",
   "name": "eftilagimod alfa",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05747794",
@@ -238,7 +273,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05747794"
+   "source_url": "https://clinicaltrials.gov/study/NCT05747794",
+   "ta_basis": "ClinicalTrials.gov conditions: Breast Carcinoma",
+   "registry": {
+    "overall_status": "TERMINATED",
+    "primary_completion": "2026-04-30",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05747794"
+   }
   },
   "dm": "2026-04"
  },
@@ -250,7 +294,7 @@ export default [
   "dp": "month",
   "name": "Hypericin",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06470451",
@@ -279,7 +323,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06470451"
+   "source_url": "https://clinicaltrials.gov/study/NCT06470451",
+   "ta_basis": "ClinicalTrials.gov conditions: CTCL/ Mycosis Fungoides, CTCL, Mycosis Fungoides, Cutaneous T Cell Lymphoma",
+   "registry": {
+    "overall_status": "TERMINATED",
+    "primary_completion": "2026-05-22",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06470451"
+   }
   },
   "dm": "2026-05"
  },
@@ -291,7 +344,7 @@ export default [
   "dp": "month",
   "name": "Mitapivat",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT07055243",
@@ -308,7 +361,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07055243"
+   "source_url": "https://clinicaltrials.gov/study/NCT07055243",
+   "ta_basis": "ClinicalTrials.gov conditions: Anemia"
   },
   "dm": "2026-06"
  },
@@ -348,7 +402,15 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05843578"
+   "source_url": "https://clinicaltrials.gov/study/NCT05843578",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-06-20",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05843578"
+   }
   },
   "dm": "2026-06"
  },
@@ -360,7 +422,7 @@ export default [
   "dp": "month",
   "name": "Tenapanor",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Gastroenterology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06810167",
@@ -377,7 +439,16 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06810167"
+   "source_url": "https://clinicaltrials.gov/study/NCT06810167",
+   "ta_basis": "ClinicalTrials.gov conditions: Cystic Fibrosis, Constipation",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-06-15",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06810167"
+   }
   },
   "dm": "2026-06"
  },
@@ -460,7 +531,7 @@ export default [
   "dp": "month",
   "name": "SNS-101",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05864144",
@@ -488,7 +559,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05864144"
+   "source_url": "https://clinicaltrials.gov/study/NCT05864144",
+   "ta_basis": "ClinicalTrials.gov conditions: Solid Tumor, Adult, Advanced Solid Tumor, Head and Neck Cancer, Breast Cancer, Colon Cancer, Pancreatic Cancer",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-06-02",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05864144"
+   }
   },
   "dm": "2026-06"
  },
@@ -550,7 +630,7 @@ export default [
   "dp": "month",
   "name": "SION-719",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT07108153",
@@ -578,7 +658,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT07108153"
+   "source_url": "https://clinicaltrials.gov/study/NCT07108153",
+   "ta_basis": "ClinicalTrials.gov conditions: Cystic Fibrosis (CF)",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-06-25",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT07108153"
+   }
   },
   "dm": "2026-06"
  },
@@ -611,7 +700,7 @@ export default [
   "dp": "month",
   "name": "Nalbuphine ER Tablets",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT07036029",
@@ -628,7 +717,16 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07036029"
+   "source_url": "https://clinicaltrials.gov/study/NCT07036029",
+   "ta_basis": "ClinicalTrials.gov conditions: Idiopathic Pulmonary Fibrosis",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-06-30",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT07036029"
+   }
   },
   "dm": "2026-06"
  },
@@ -1163,7 +1261,7 @@ export default [
   "dp": "month",
   "name": "Tezepelumab",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Gastroenterology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05583227",
@@ -1180,7 +1278,16 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05583227"
+   "source_url": "https://clinicaltrials.gov/study/NCT05583227",
+   "ta_basis": "ClinicalTrials.gov conditions: Eosinophilic Esophagitis",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-07-14",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05583227"
+   }
   },
   "dm": "2026-07"
  },
@@ -1192,7 +1299,7 @@ export default [
   "dp": "month",
   "name": "Yutiq",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Ophthalmology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05486468",
@@ -1209,7 +1316,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05486468"
+   "source_url": "https://clinicaltrials.gov/study/NCT05486468",
+   "ta_basis": "ClinicalTrials.gov conditions: Uveitis, Uveitis, Posterior, Uveitis, Anterior, Uveitis, Intermediate"
   },
   "dm": "2026-07"
  },
@@ -1238,7 +1346,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06553547"
+   "source_url": "https://clinicaltrials.gov/study/NCT06553547",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-07-07",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06553547"
+   }
   },
   "dm": "2026-07"
  },
@@ -1279,7 +1395,7 @@ export default [
   "dp": "month",
   "name": "S-303 Treated Red Blood Cells",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT03037164",
@@ -1296,7 +1412,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03037164"
+   "source_url": "https://clinicaltrials.gov/study/NCT03037164",
+   "ta_basis": "ClinicalTrials.gov conditions: Anemia"
   },
   "dm": "2026-07"
  },
@@ -1325,7 +1442,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06736717"
+   "source_url": "https://clinicaltrials.gov/study/NCT06736717",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-07-16",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06736717"
+   }
   },
   "dm": "2026-07"
  },
@@ -1444,7 +1569,15 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06668064"
+   "source_url": "https://clinicaltrials.gov/study/NCT06668064",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-07-13",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06668064"
+   }
   },
   "dm": "2026-07"
  },
@@ -1473,7 +1606,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04724369"
+   "source_url": "https://clinicaltrials.gov/study/NCT04724369",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-07-30",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT04724369"
+   }
   },
   "dm": "2026-07"
  },
@@ -1535,7 +1676,7 @@ export default [
   "dp": "month",
   "name": "Briquilimab",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Immunology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06736262",
@@ -1564,7 +1705,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06736262"
+   "source_url": "https://clinicaltrials.gov/study/NCT06736262",
+   "ta_basis": "ClinicalTrials.gov conditions: Urticaria Chronic",
+   "registry": {
+    "overall_status": "TERMINATED",
+    "primary_completion": "2026-07-21",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06736262"
+   }
   },
   "dm": "2026-07"
  },
@@ -1576,7 +1726,7 @@ export default [
   "dp": "month",
   "name": "Briquilimab",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Immunology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06162728",
@@ -1604,7 +1754,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06162728"
+   "source_url": "https://clinicaltrials.gov/study/NCT06162728",
+   "ta_basis": "ClinicalTrials.gov conditions: Chronic Spontaneous Urticaria",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-07-08",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06162728"
+   }
   },
   "dm": "2026-07"
  },
@@ -1643,7 +1802,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -1685,7 +1844,7 @@ export default [
   "dp": "month",
   "name": "PTC923",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Metabolic",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05166161",
@@ -1713,7 +1872,16 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05166161"
+   "source_url": "https://clinicaltrials.gov/study/NCT05166161",
+   "ta_basis": "ClinicalTrials.gov conditions: Phenylketonuria",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-07-21",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05166161"
+   }
   },
   "dm": "2026-07"
  },
@@ -1850,7 +2018,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -1953,7 +2121,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2008,7 +2176,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -2253,7 +2421,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07011706"
+   "source_url": "https://clinicaltrials.gov/study/NCT07011706",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-09-21",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT07011706"
+   }
   },
   "dm": "2026-08"
  },
@@ -2282,7 +2458,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06901505"
+   "source_url": "https://clinicaltrials.gov/study/NCT06901505",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-08-12",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06901505"
+   }
   },
   "dm": "2026-08"
  },
@@ -2322,7 +2506,15 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT07027527"
+   "source_url": "https://clinicaltrials.gov/study/NCT07027527",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-08-29",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT07027527"
+   }
   },
   "dm": "2026-08"
  },
@@ -2334,7 +2526,7 @@ export default [
   "dp": "month",
   "name": "NE3107",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06847191",
@@ -2351,7 +2543,16 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06847191"
+   "source_url": "https://clinicaltrials.gov/study/NCT06847191",
+   "ta_basis": "ClinicalTrials.gov conditions: Long COVID",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-08-06",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06847191"
+   }
   },
   "dm": "2026-08"
  },
@@ -2363,7 +2564,7 @@ export default [
   "dp": "month",
   "name": "Vosoritide",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Rare disease",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06455059",
@@ -2380,7 +2581,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06455059"
+   "source_url": "https://clinicaltrials.gov/study/NCT06455059",
+   "ta_basis": "ClinicalTrials.gov conditions: Hypochondroplasia"
   },
   "dm": "2026-08"
  },
@@ -2421,7 +2623,7 @@ export default [
   "dp": "month",
   "name": "ALPHA-1 MP",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT01983241",
@@ -2438,7 +2640,16 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT01983241"
+   "source_url": "https://clinicaltrials.gov/study/NCT01983241",
+   "ta_basis": "ClinicalTrials.gov conditions: Pulmonary Emphysema in Alpha-1 PI Deficiency",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-07-07",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT01983241"
+   }
   },
   "dm": "2026-08"
  },
@@ -2450,7 +2661,7 @@ export default [
   "dp": "month",
   "name": "VYD2311",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Infectious",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT07298434",
@@ -2467,7 +2678,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07298434"
+   "source_url": "https://clinicaltrials.gov/study/NCT07298434",
+   "ta_basis": "ClinicalTrials.gov conditions: COVID-19"
   },
   "dm": "2026-08"
  },
@@ -2496,7 +2708,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05611931"
+   "source_url": "https://clinicaltrials.gov/study/NCT05611931",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-05-22",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05611931"
+   }
   },
   "dm": "2026-08"
  },
@@ -2532,7 +2752,7 @@ export default [
   "dp": "month",
   "name": "VDPHL01",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06527365",
@@ -2549,7 +2769,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06527365"
+   "source_url": "https://clinicaltrials.gov/study/NCT06527365",
+   "ta_basis": "ClinicalTrials.gov conditions: Androgenetic Alopecia, AGA, Male Pattern Baldness"
   },
   "dm": "2026-08"
  },
@@ -2620,7 +2841,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06052059"
+   "source_url": "https://clinicaltrials.gov/study/NCT06052059",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-08-12",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06052059"
+   }
   },
   "dm": "2026-08"
  },
@@ -2632,7 +2861,7 @@ export default [
   "dp": "month",
   "name": "avutometinib",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05669482",
@@ -2649,7 +2878,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05669482"
+   "source_url": "https://clinicaltrials.gov/study/NCT05669482",
+   "ta_basis": "ClinicalTrials.gov conditions: KRAS Activating Mutation, Metastatic Cancer, Pancreas Cancer, Neoplasms Pancreatic, Malignant Neoplasm of Pancreas"
   },
   "dm": "2026-08"
  },
@@ -3218,7 +3448,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06079190"
+   "source_url": "https://clinicaltrials.gov/study/NCT06079190",
+   "registry": {
+    "overall_status": "TERMINATED",
+    "primary_completion": "2026-05-14",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06079190"
+   }
   },
   "dm": "2026-09"
  },
@@ -3230,7 +3468,7 @@ export default [
   "dp": "month",
   "name": "APG777",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06920901",
@@ -3247,7 +3485,16 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06920901"
+   "source_url": "https://clinicaltrials.gov/study/NCT06920901",
+   "ta_basis": "ClinicalTrials.gov conditions: Asthma",
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-09-17",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06920901"
+   }
   },
   "dm": "2026-09"
  },
@@ -3276,7 +3523,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05643534"
+   "source_url": "https://clinicaltrials.gov/study/NCT05643534",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-08-20",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05643534"
+   }
   },
   "dm": "2026-09"
  },
@@ -3517,7 +3772,7 @@ export default [
   "dp": "month",
   "name": "eftilagimod alfa",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT03252938",
@@ -3534,7 +3789,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03252938"
+   "source_url": "https://clinicaltrials.gov/study/NCT03252938",
+   "ta_basis": "ClinicalTrials.gov conditions: Solid Tumors, Peritoneal Carcinomatosis, NSCLC Adenocarcinoma, Urothelial Carcinoma"
   },
   "dm": "2026-09"
  },
@@ -3575,7 +3831,7 @@ export default [
   "dp": "month",
   "name": "Sonelokimab",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06768671",
@@ -3592,7 +3848,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06768671"
+   "source_url": "https://clinicaltrials.gov/study/NCT06768671",
+   "ta_basis": "ClinicalTrials.gov conditions: Hidradenitis Suppurativa"
   },
   "dm": "2026-09"
  },
@@ -3625,7 +3882,7 @@ export default [
   "dp": "month",
   "name": "SLN124",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05499013",
@@ -3642,7 +3899,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05499013"
+   "source_url": "https://clinicaltrials.gov/study/NCT05499013",
+   "ta_basis": "ClinicalTrials.gov conditions: Polycythemia Vera"
   },
   "dm": "2026-09"
  },
@@ -3654,7 +3912,7 @@ export default [
   "dp": "month",
   "name": "SPN-812",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT02736656",
@@ -3671,7 +3929,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT02736656"
+   "source_url": "https://clinicaltrials.gov/study/NCT02736656",
+   "ta_basis": "ClinicalTrials.gov conditions: Attention-Deficit/Hyperactivity Disorder"
   },
   "dm": "2026-09"
  },
@@ -3982,6 +4241,78 @@ export default [
   }
  },
  {
+  "id": "pdufa_rhhby_2026-09-25",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-09-25",
+  "dp": "day",
+  "name": "Gazyva (obinutuzumab) - idiopathic nephrotic syndrome",
+  "type": "PDUFA",
+  "ta": "Nephrology",
+  "cap": "Large",
+  "st": "Decided",
+  "url": "/fda-decision/RHHBY-2026-09-25",
+  "ua": "2026-10-03T21:57:11Z",
+  "oc": "Approved",
+  "dcd": "2026-09-25",
+  "_d": {
+   "nct_id": "NCT05627557",
+   "brand": "Gazyva",
+   "inn": "obinutuzumab",
+   "indication": "Frequently relapsing or steroid-dependent, childhood-onset idiopathic nephrotic syndrome in patients 2 years and older who are in remission (reduce the risk of relapse)",
+   "indication_short": "idiopathic nephrotic syndrome (ages 2+)",
+   "source": "FDA notice 2026-09-25 (CDER News & Events for Human Drugs)",
+   "source_url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-drug-treat-idiopathic-nephrotic-syndrome-patients-2-years-and-older",
+   "decision_source": "FDA approval letter, BLA 125486 supplement 043, September 25, 2026 (Drugs@FDA)",
+   "decision_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s043ltr.pdf",
+   "announcement_url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-drug-treat-idiopathic-nephrotic-syndrome-patients-2-years-and-older",
+   "fda_notice_title": "FDA Approves Drug to Treat Idiopathic Nephrotic Syndrome in Patients 2 Years and Older",
+   "decision_quote": "FDA has approved Gazyva (obinutuzumab) injection to reduce the risk of relapse in adult and pediatric patients 2 years of age and older with frequently relapsing or steroid-dependent, childhood-onset, idiopathic nephrotic syndrome who are in remission.",
+   "fda_action_date": "2026-09-25",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s043ltr.pdf",
+   "fda_action_record": "BLA 125486 SUPPL-43",
+   "goal_unsourced": true,
+   "goal_note": "pdufa.bio holds no goal date for this supplemental BLA: Roche is not an SEC registrant and we hold no release stating one. The approval is sourced to the FDA's letter and notice; no early/late margin is computed.",
+   "review": "Supplemental BLA (efficacy) approved September 25, 2026 with Breakthrough Therapy, Orphan Drug and Priority Review designations (FDA notice). Phase 3 INShore (NCT05627557), 85 patients aged 2 and older, Gazyva versus mycophenolate mofetil. Gazyva was previously approved for certain cancers and for adults with active lupus nephritis."
+  }
+ },
+ {
+  "id": "conf_astro_2026-09-26",
+  "t": "ASTRO",
+  "company": "ASTRO Annual Meeting",
+  "d": "2026-09-26",
+  "dp": "day",
+  "name": "ASTRO Annual Meeting",
+  "type": "Conference",
+  "ta": "Radiation oncology",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-03T19:42:14Z",
+  "_d": {
+   "end": "2026-09-30",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "CADL",
+     "company": "Candel Therapeutics, Inc.",
+     "drug": "Aglatimagene besadenovec (CAN-2409)",
+     "pres_type": "poster",
+     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
+    },
+    {
+     "ticker": "NVCR",
+     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
+     "drug": "",
+     "pres_type": "unspecified",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_incy_2026-09-26",
   "t": "INCY",
   "company": "Incyte Corp",
@@ -4057,42 +4388,6 @@ export default [
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
- },
- {
-  "id": "conf_astro_2026-09-26",
-  "t": "ASTRO",
-  "company": "ASTRO Annual Meeting",
-  "d": "2026-09-26",
-  "dp": "day",
-  "name": "ASTRO Annual Meeting",
-  "type": "Conference",
-  "ta": "Radiation oncology",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-03T19:42:14Z",
-  "_d": {
-   "end": "2026-09-30",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "CADL",
-     "company": "Candel Therapeutics, Inc.",
-     "drug": "Aglatimagene besadenovec (CAN-2409)",
-     "pres_type": "poster",
-     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
-    },
-    {
-     "ticker": "NVCR",
-     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
-     "drug": "",
-     "pres_type": "unspecified",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "pdufa_bfri_2026-09-28",
@@ -4278,7 +4573,7 @@ export default [
   "dp": "quarter",
   "name": "anifrolumab readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Immunology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001847367/000110465926078507/tm2619143d1_ex99-1.htm",
@@ -4294,7 +4589,8 @@ export default [
    "program": "anifrolumab",
    "accession": "0001104659-26-078507",
    "guidance_text": "h 2 PsO data shows robust inhibition of Type I IFN gene signature Type I IFN is a key disease driver in SLE Approved SLE therapy (anifrolumab) validates IFN pathway targeting 26 LUMUS Phase 2b Trial: Topline Results Expected Q3 2026 Designed for high probability of clinical success and speed to mark",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001847367/000110465926078507/tm2619143d1_ex99-1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001847367/000110465926078507/tm2619143d1_ex99-1.htm",
+   "ta_basis": "Sponsor SEC filing: LUMUS Phase 2b trial in SLE (systemic lupus erythematosus)"
   },
   "dm": "2026-09"
  },
@@ -4306,7 +4602,7 @@ export default [
   "dp": "quarter",
   "name": "AL001 Phase II topline (bipolar disorder)",
   "type": "Readout",
-  "ta": "",
+  "ta": "CNS",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001677077/000121465926008832/az72426110k.htm",
@@ -4334,7 +4630,8 @@ export default [
      "why": "Company guidance moved the window; the row was keyed on the earlier window's sentinel and now holds the sentinel of the window the company guides."
     }
    ],
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001677077/000121465926008832/az72426110k.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001677077/000121465926008832/az72426110k.htm",
+   "ta_basis": "Sponsor SEC filing: Phase II bipolar disorder topline"
   },
   "dm": "2026-09"
  },
@@ -4398,7 +4695,7 @@ export default [
   "dp": "quarter",
   "name": "DT120 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "CNS",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001813814/000110465926077349/tm2618395-2_424b5.htm",
@@ -4414,7 +4711,8 @@ export default [
    "program": "DT120",
    "accession": "0001104659-26-077349",
    "guidance_text": "ODT 100 &#181;g, DT120 ODT 50 &#181;g or placebo. The primary endpoint for each trial is the change from baseline in HAM-A score at Week 12 between DT120 ODT 100 &#181;g and placebo. We anticipate a topline readout (Part&#160;A results) for Voyage in early third quarter 2026 and a topline readout (P",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001813814/000110465926077349/tm2618395-2_424b5.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001813814/000110465926077349/tm2618395-2_424b5.htm",
+   "ta_basis": "Sponsor SEC filing: primary endpoint ... change from baseline in HAM-A score (Hamilton Anxiety Rating Scale)"
   },
   "dm": "2026-09"
  },
@@ -4510,7 +4808,7 @@ export default [
   "dp": "quarter",
   "name": "DISC-3405 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Hematology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001816736/000119312526325031/iron-ex99_1.htm",
@@ -4526,7 +4824,8 @@ export default [
    "program": "DISC-3405",
    "accession": "0001193125-26-325031",
    "guidance_text": "n anemia of myelofibrosis and the HELIOS open-label extension trial of bitopertin in EPP &#x2022; Completed enrollment for RESTORE-PV Phase 2 study of DISC-3405 in polycythemia vera (PV) with initial data expected in Q3 2026 and progressing Phase 1b study of DISC-3405 in sickle cell disease (SCD) wi",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001816736/000119312526325031/iron-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001816736/000119312526325031/iron-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: RESTORE-PV Phase 2 study of DISC-3405 in polycythemia vera (PV)"
   },
   "dm": "2026-09"
  },
@@ -4538,7 +4837,7 @@ export default [
   "dp": "quarter",
   "name": "KSI-501 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Ophthalmology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001468748/000119312526211811/kod-ex99_1.htm",
@@ -4554,7 +4853,8 @@ export default [
    "program": "KSI-501",
    "accession": "0001193125-26-211811",
    "guidance_text": "omer) has a BLA-ready profile in diabetic retinopathy, retinal vein occlusion and wet AMD, and, together with KSI-501, is being explored in the BLA-facing Phase 3 DAYBREAK wet AMD study, with topline data expected in 3Q 2026. Zenkuda and KSI-501 target the $15 billion anti-VEGF market across retinal",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001468748/000119312526211811/kod-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001468748/000119312526211811/kod-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: KSI-501 ... DAYBREAK wet AMD study"
   },
   "dm": "2026-09"
  },
@@ -4594,7 +4894,7 @@ export default [
   "dp": "quarter",
   "name": "MNKD-201 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0000899460/000119312526208910/mnkd-ex99_1.htm",
@@ -4610,7 +4910,8 @@ export default [
    "program": "MNKD-201",
    "accession": "0001193125-26-208910",
    "guidance_text": "b DPI (MNKD-201) &#x2022; Completed enrollment of Cohort 1 in Phase 1b (INFLO-1) study with no discontinuations or serious adverse events in patients with idiopathic pulmonary fibrosis (IPF); topline data expected in Q3 2026 &#x2022; Anticipate Phase 2 clinical trial (INFLO-2) in IPF with first pati",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0000899460/000119312526208910/mnkd-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000899460/000119312526208910/mnkd-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: MNKD-201 ... patients with idiopathic pulmonary fibrosis (IPF)"
   },
   "dm": "2026-09"
  },
@@ -4713,7 +5014,7 @@ export default [
   "dp": "quarter",
   "name": "deucrictibant readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Rare disease",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001830487/000119312526266666/phvs-ex99_1.htm",
@@ -4729,7 +5030,8 @@ export default [
    "program": "deucrictibant",
    "accession": "0001193125-26-266666",
    "guidance_text": "ase capsule as an on-demand treatment of HAE attacks, and a global pivotal Phase 3 study of deucrictibant extended-release tablet for the prevention of HAE attacks (CHAPTER-3) is ongoing with topline data anticipated in the third quarter of 2026. In addition, CREAATE is an ongoing Phase 3 study of d",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001830487/000119312526266666/phvs-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001830487/000119312526266666/phvs-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: deucrictibant ... prevention of HAE attacks (hereditary angioedema)"
   },
   "dm": "2026-09"
  },
@@ -4769,7 +5071,7 @@ export default [
   "dp": "quarter",
   "name": "IM1305 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001614744/000121390026031366/ea028235901ex99-1.htm",
@@ -4785,7 +5087,8 @@ export default [
    "program": "IM1305",
    "accession": "0001213900-26-031366",
    "guidance_text": "2026 , Ph 1 Initiation in 2027 IM1305 Capped - CD3xTROP2xNKG2A Solid Tumors CLINICAL ASSETS &#8212; Partnership Opportunities CM24 CEACAM1 mAb Pancreatic Partnering NT219 IRS1/2 + STAT3 Head and Neck Data Expected in 2026 A pipeline dedicated to advancing oncology therapies &nbsp; &nbsp; | 7 Q 3 202",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001614744/000121390026031366/ea028235901ex99-1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001614744/000121390026031366/ea028235901ex99-1.htm",
+   "ta_basis": "Sponsor SEC filing: IM1305 ... CD3xTROP2xNKG2A Solid Tumors"
   },
   "dm": "2026-09"
  },
@@ -4883,7 +5186,7 @@ export default [
   "dp": "month",
   "name": "brepocitinib readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Immunology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001635088/000163508826000061/roiv-20260331.htm",
@@ -4899,7 +5202,8 @@ export default [
    "program": "brepocitinib",
    "accession": "0001635088-26-000061",
    "guidance_text": "brepocitinib in DM expected by the end of September 2026. &#8226; Completed enrollment in the ongoing Phase 3 CLARITY study of brepocitinib in non-infectious uveitis ( &#8220; NIU &#8221; ); topline data expected in the second half of calendar year 2026. &#8226; Announced positive results in the Pha",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001635088/000163508826000061/roiv-20260331.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001635088/000163508826000061/roiv-20260331.htm",
+   "ta_basis": "Sponsor SEC filing: brepocitinib in DM (dermatomyositis) expected by the end of September 2026"
   },
   "dm": "2026-09"
  },
@@ -4911,7 +5215,7 @@ export default [
   "dp": "quarter",
   "name": "SCY-247 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Infectious",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001178253/000117825326000011/scyx-ex10_1.htm",
@@ -4927,7 +5231,8 @@ export default [
    "program": "SCY-247",
    "accession": "0001178253-26-000011",
    "guidance_text": "in the low-to-mid-single digits for the commercialization of BREXAFEMME by GSK. The Company&#x2019;s second-generation antifungal, SCY-247, is currently in a Phase 1 trial of the IV formulation, with data expected in Q3 2026. SCY-247 has received QIDP, Fast Track and Orphan Drug designation from the",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001178253/000117825326000011/scyx-ex10_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001178253/000117825326000011/scyx-ex10_1.htm",
+   "ta_basis": "Sponsor SEC filing: second-generation antifungal, SCY-247"
   },
   "dm": "2026-09"
  },
@@ -5127,7 +5432,7 @@ export default [
   "dp": "quarter",
   "name": "fasedienol readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "CNS",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001411685/000162828026043232/vtgn-20260615xex991.htm",
@@ -5143,7 +5448,8 @@ export default [
    "program": "fasedienol",
    "accession": "0001628280-26-043232",
    "guidance_text": "ase 3 trial of fasedienol for the acute treatment of social anxiety disorder&#59; topline results expected this month Completed randomized portion of fasedienol Phase 2 repeat dose study&#59; topline results expected in third quarter 2026 Achieved minimum ICH E1 safety exposure recommendations acros",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001411685/000162828026043232/vtgn-20260615xex991.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001411685/000162828026043232/vtgn-20260615xex991.htm",
+   "ta_basis": "Sponsor SEC filing: fasedienol for the acute treatment of social anxiety disorder"
   },
   "dm": "2026-09"
  },
@@ -5202,27 +5508,6 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001582313/000119312526211843/xene-ex99_1.htm"
   },
   "dm": "2026-09"
- },
- {
-  "id": "pdufa_rhhby_2026-10-09",
-  "t": "RHHBY",
-  "company": "Roche Holding AG",
-  "d": "2026-10-09",
-  "dp": "day",
-  "name": "Tecentriq (atezolizumab) adjuvant - (stage III colon)",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Large",
-  "st": "Upcoming",
-  "url": "/ticker/RHHBY",
-  "ua": "2026-10-03T19:40:48Z",
-  "_d": {
-   "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
-   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
-   "source": "Genentech press release 2026-06-10",
-   "source_url": "https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech",
-   "source_quote": "The FDA has granted Priority Review and is expected to make a decision on the approval by October 9, 2026."
-  }
  },
  {
   "id": "conf_aao_2026-10-09",
@@ -5293,6 +5578,27 @@ export default [
     }
    ],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_rhhby_2026-10-09",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "Tecentriq (atezolizumab) adjuvant - (stage III colon)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/RHHBY",
+  "ua": "2026-10-03T19:40:48Z",
+  "_d": {
+   "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
+   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
+   "source": "Genentech press release 2026-06-10",
+   "source_url": "https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech",
+   "source_quote": "The FDA has granted Priority Review and is expected to make a decision on the approval by October 9, 2026."
   }
  },
  {
@@ -5423,7 +5729,7 @@ export default [
   "dp": "month",
   "name": "Barzolvolimab",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Immunology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06455202",
@@ -5440,7 +5746,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06455202"
+   "source_url": "https://clinicaltrials.gov/study/NCT06455202",
+   "ta_basis": "ClinicalTrials.gov conditions: Chronic Spontaneous Urticaria"
   },
   "dm": "2026-10"
  },
@@ -5452,7 +5759,7 @@ export default [
   "dp": "month",
   "name": "Recombinant Single-Chain Factor Viii",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06738485",
@@ -5469,7 +5776,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06738485"
+   "source_url": "https://clinicaltrials.gov/study/NCT06738485",
+   "ta_basis": "ClinicalTrials.gov conditions: Congenital Hemophilia A"
   },
   "dm": "2026-10"
  },
@@ -5579,7 +5887,7 @@ export default [
   "dp": "month",
   "name": "Povorcitinib",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06516952",
@@ -5596,7 +5904,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06516952"
+   "source_url": "https://clinicaltrials.gov/study/NCT06516952",
+   "ta_basis": "ClinicalTrials.gov conditions: Prurigo Nodularis"
   },
   "dm": "2026-10"
  },
@@ -5627,7 +5936,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -5719,7 +6028,7 @@ export default [
   "dp": "month",
   "name": "Vonoprazan",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Gastroenterology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06851559",
@@ -5747,7 +6056,8 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06851559"
+   "source_url": "https://clinicaltrials.gov/study/NCT06851559",
+   "ta_basis": "ClinicalTrials.gov conditions: Eosinophilic Esophagitis"
   },
   "dm": "2026-10"
  },
@@ -5867,7 +6177,7 @@ export default [
   "dp": "month",
   "name": "Venglustat",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Rare disease",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT02843035",
@@ -5884,7 +6194,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT02843035"
+   "source_url": "https://clinicaltrials.gov/study/NCT02843035",
+   "ta_basis": "ClinicalTrials.gov conditions: Gaucher Disease Type 1, Gaucher Disease Type 3"
   },
   "dm": "2026-10"
  },
@@ -6547,6 +6858,27 @@ export default [
   }
  },
  {
+  "id": "conf_obesityweek_2026-11-14",
+  "t": "ObesityWeek",
+  "company": "ObesityWeek, The Obesity Society",
+  "d": "2026-11-14",
+  "dp": "day",
+  "name": "ObesityWeek, The Obesity Society",
+  "type": "Conference",
+  "ta": "Obesity and metabolic",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-03T19:42:14Z",
+  "_d": {
+   "end": "2026-11-17",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_smmt_2026-11-14",
   "t": "SMMT",
   "company": "Summit Therapeutics Inc.",
@@ -6577,27 +6909,6 @@ export default [
    "source": "Summit Therapeutics Inc. 8-K 2026-01-29",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000006/a2026_prx0129xfdablaacce.htm",
    "source_quote": "ion (BLA) Seeking Approval for Ivonescimab in Combination with Chemotherapy in Treatment of Patients with EGFRm NSCLC Post-TKI Therapy BLA Filing Based on HARMONi Global Phase III Study Results PDUFA Goal Action Date of November 14, 2026 Significant Unmet Need Remains; Over 14,000 U.S. Patients Eligible for Treatment Each Year in This Setting Miami, Flori"
-  }
- },
- {
-  "id": "conf_obesityweek_2026-11-14",
-  "t": "ObesityWeek",
-  "company": "ObesityWeek, The Obesity Society",
-  "d": "2026-11-14",
-  "dp": "day",
-  "name": "ObesityWeek, The Obesity Society",
-  "type": "Conference",
-  "ta": "Obesity and metabolic",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-03T19:42:14Z",
-  "_d": {
-   "end": "2026-11-17",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -6677,7 +6988,7 @@ export default [
   "dp": "month",
   "name": "Z-Endoxifen",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05607004",
@@ -6694,7 +7005,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05607004"
+   "source_url": "https://clinicaltrials.gov/study/NCT05607004",
+   "ta_basis": "ClinicalTrials.gov conditions: Breast Neoplasms, Invasive Breast Cancer, Estrogen-receptor-positive Breast Cancer, HER2-negative Breast Cancer"
   },
   "dm": "2026-11"
  },
@@ -6844,7 +7156,7 @@ export default [
   "dp": "month",
   "name": "IMU-838 tablets",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05134441",
@@ -6861,7 +7173,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05134441"
+   "source_url": "https://clinicaltrials.gov/study/NCT05134441",
+   "ta_basis": "ClinicalTrials.gov conditions: Multiple Sclerosis"
   },
   "dm": "2026-11"
  },
@@ -6938,7 +7251,7 @@ export default [
   "dp": "month",
   "name": "Rilzabrutinib",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hematology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT07216079",
@@ -6955,7 +7268,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07216079"
+   "source_url": "https://clinicaltrials.gov/study/NCT07216079",
+   "ta_basis": "ClinicalTrials.gov conditions: Immune Thrombocytopenia"
   },
   "dm": "2026-11"
  },
@@ -7017,7 +7331,7 @@ export default [
   "dp": "month",
   "name": "Tibulizumab",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06993610",
@@ -7034,7 +7348,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06993610"
+   "source_url": "https://clinicaltrials.gov/study/NCT06993610",
+   "ta_basis": "ClinicalTrials.gov conditions: Hidradenitis Suppurativa (HS)"
   },
   "dm": "2026-11"
  },
@@ -7559,6 +7874,27 @@ export default [
   }
  },
  {
+  "id": "conf_ash_2026-12-12",
+  "t": "ASH",
+  "company": "American Society of Hematology Annual Meeting",
+  "d": "2026-12-12",
+  "dp": "day",
+  "name": "American Society of Hematology Annual Meeting",
+  "type": "Conference",
+  "ta": "Haematology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-03T19:42:14Z",
+  "_d": {
+   "end": "2026-12-15",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_vnda_2026-12-12",
   "t": "VNDA",
   "company": "Vanda Pharmaceuticals Inc.",
@@ -7592,27 +7928,6 @@ export default [
   }
  },
  {
-  "id": "conf_ash_2026-12-12",
-  "t": "ASH",
-  "company": "American Society of Hematology Annual Meeting",
-  "d": "2026-12-12",
-  "dp": "day",
-  "name": "American Society of Hematology Annual Meeting",
-  "type": "Conference",
-  "ta": "Haematology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-03T19:42:14Z",
-  "_d": {
-   "end": "2026-12-15",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "conf_esmo io_2026-12-14",
   "t": "ESMO IO",
   "company": "ESMO Immuno-Oncology and Advanced Therapies Congress",
@@ -7641,7 +7956,7 @@ export default [
   "dp": "month",
   "name": "Losartan",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05077800",
@@ -7658,7 +7973,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05077800"
+   "source_url": "https://clinicaltrials.gov/study/NCT05077800",
+   "ta_basis": "ClinicalTrials.gov conditions: Pancreatic Adenocarcinoma, Pancreatic Adenocarcinoma Metastatic"
   },
   "dm": "2026-12"
  },
@@ -7886,7 +8202,7 @@ export default [
   "dp": "month",
   "name": "cleminorexton",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06752668",
@@ -7903,7 +8219,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06752668"
+   "source_url": "https://clinicaltrials.gov/study/NCT06752668",
+   "ta_basis": "ClinicalTrials.gov conditions: Narcolepsy Type 1, Narcolepsy Type 2, Idiopathic Hypersomnia"
   },
   "dm": "2026-12"
  },
@@ -8173,7 +8490,7 @@ export default [
   "dp": "month",
   "name": "VDPHL01",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06972264",
@@ -8190,7 +8507,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06972264"
+   "source_url": "https://clinicaltrials.gov/study/NCT06972264",
+   "ta_basis": "ClinicalTrials.gov conditions: Androgenetic Alopecia, AGA, Male Pattern Baldness"
   },
   "dm": "2026-12"
  },
@@ -8202,7 +8520,7 @@ export default [
   "dp": "month",
   "name": "Resmetirom",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hepatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05500222",
@@ -8219,7 +8537,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05500222"
+   "source_url": "https://clinicaltrials.gov/study/NCT05500222",
+   "ta_basis": "ClinicalTrials.gov conditions: NASH, Cirrhosis, Liver"
   },
   "dm": "2026-12"
  },
@@ -8423,7 +8742,7 @@ export default [
   "dp": "month",
   "name": "Rilzabrutinib",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Nephrology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06500702",
@@ -8440,7 +8759,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06500702"
+   "source_url": "https://clinicaltrials.gov/study/NCT06500702",
+   "ta_basis": "ClinicalTrials.gov conditions: Focal Segmental Glomerulosclerosis, Glomerulonephritis Minimal Lesion"
   },
   "dm": "2026-12"
  },
@@ -8452,7 +8772,7 @@ export default [
   "dp": "month",
   "name": "BIS-001",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT03474770",
@@ -8469,7 +8789,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03474770"
+   "source_url": "https://clinicaltrials.gov/study/NCT03474770",
+   "ta_basis": "ClinicalTrials.gov conditions: Focal Impaired Awareness Seizures"
   },
   "dm": "2026-12"
  },
@@ -8577,7 +8898,15 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05297903"
+   "source_url": "https://clinicaltrials.gov/study/NCT05297903",
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-07-13",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT05297903"
+   }
   },
   "dm": "2026-12"
  },
@@ -8865,7 +9194,7 @@ export default [
   "dp": "quarter",
   "name": "elebsiran readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Infectious",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001178670/000162828026007497/alny-20251231.htm",
@@ -8881,7 +9210,8 @@ export default [
    "program": "elebsiran",
    "accession": "0001628280-26-007497",
    "guidance_text": "bination with tobevibart in multiple clinical trials as part of its ongoing ECLIPSE registrational program, including the ECLIPSE 1 Phase 3 clinical trial in CHD, which is fully enrolled with topline data expected in the fourth quarter of 2026, the ECLIPSE 2 Phase 3 clinical trial, which is evaluati",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001178670/000162828026007497/alny-20251231.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001178670/000162828026007497/alny-20251231.htm",
+   "ta_basis": "Sponsor SEC filing: ECLIPSE 1 Phase 3 clinical trial in CHD (chronic hepatitis delta)"
   },
   "dm": "2026-12"
  },
@@ -8893,7 +9223,7 @@ export default [
   "dp": "quarter",
   "name": "VLS-01 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "CNS",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0002081043/000114036126020708/ef20072731_ex99-1.htm",
@@ -8909,7 +9239,8 @@ export default [
    "program": "VLS-01",
    "accession": "0001140361-26-020708",
    "guidance_text": "(two &#8209; dose induction + SSRIs) cohort initial data on track for Q4 2026. VLS-01: dimethyltryptamine (DMT) buccal film for TRD &#8226; Elumina Phase 2 study progressing as planned, with topline results anticipated in Q4 2026 EMP-01: Oral R-enantiomer of 3,4-methylenedioxy-methamphetamine (R-MDM",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0002081043/000114036126020708/ef20072731_ex99-1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002081043/000114036126020708/ef20072731_ex99-1.htm",
+   "ta_basis": "Sponsor SEC filing: VLS-01: DMT buccal film for TRD (treatment-resistant depression)"
   },
   "dm": "2026-12"
  },
@@ -9086,7 +9417,7 @@ export default [
   "dp": "month",
   "name": "NCT07271667 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001108205/000110820526000061/cris-20260331.htm",
@@ -9109,7 +9440,8 @@ export default [
    "program": "NCT07271667",
    "accession": "0001108205-26-000061",
    "guidance_text": "rtib in combination with zanubrutinib in frontline CLL (CA-4948-203, NCT07271667), also known as the TakeAim CLL study. We expect to announce the dosing of our fifth patient by mid-2026, with initial data expected in December 2026. TakeAim Lymphoma Emavusertib is currently undergoing testing in comb",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001108205/000110820526000061/cris-20260331.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001108205/000110820526000061/cris-20260331.htm",
+   "ta_basis": "ClinicalTrials.gov conditions: Chronic Lymphocytic Leukemia, B-cell Malignancies"
   },
   "dm": "2026-12"
  },
@@ -9253,7 +9585,7 @@ export default [
   "dp": "quarter",
   "name": "FG-3246 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0000921299/000119312526219374/kynb-20260331.htm",
@@ -9269,7 +9601,8 @@ export default [
    "program": "FG-3246",
    "accession": "0001193125-26-219374",
    "guidance_text": "ed ADC drugs. We are actively enrolling our Phase 2 monotherapy dose optimization study of FG-3246 for the treatment of patients with mCRPC in the post-ARPI and pre-chemotherapy setting, with interim results expected in the fourth quarter of 2026. The trial is also assessing the diagnostic and predi",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0000921299/000119312526219374/kynb-20260331.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000921299/000119312526219374/kynb-20260331.htm",
+   "ta_basis": "Sponsor SEC filing: FG-3246 for the treatment of patients with mCRPC"
   },
   "dm": "2026-12"
  },
@@ -9309,7 +9642,7 @@ export default [
   "dp": "quarter",
   "name": "AZURE-1 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Infectious",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001759425/000175942526000036/mirm-20260506xexx991.htm",
@@ -9325,7 +9658,8 @@ export default [
    "program": "AZURE-1",
    "accession": "0001759425-26-000036",
    "guidance_text": "n a late-breaking poster presentation at the EASL Congress on May 27 starting at 8&#58;30 a.m. CEST. &#8226; Completed enrollment in brelovitug AZURE-1 and AZURE-4 Phase 3 studies in HDV&#59; topline results expected in H2 2026. &#8226; Completed enrollment in LIVMARLI (maralixibat) EXPAND Phase 3 s",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001759425/000175942526000036/mirm-20260506xexx991.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001759425/000175942526000036/mirm-20260506xexx991.htm",
+   "ta_basis": "Sponsor SEC filing: brelovitug AZURE-1 and AZURE-4 Phase 3 studies in HDV"
   },
   "dm": "2026-12"
  },
@@ -9430,7 +9764,7 @@ export default [
   "dp": "quarter",
   "name": "OPUS-1 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Infectious",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001649094/000164909426000015/pcvx-20260506xexx991.htm",
@@ -9446,7 +9780,8 @@ export default [
    "program": "OPUS-1",
    "accession": "0001649094-26-000015",
    "guidance_text": "for the Prevention of Invasive Pneumococcal Disease and Pneumonia in Adults Topline Safety, Tolerability and Immunogenicity Data from OPUS-1 Expected in Fourth Quarter of 2026&#59; OPUS-2 and OPUS-3 Results Expected in First Half of 2027 Enrollment Completed for VAX-31 Infant Phase 2 Dose-Finding St",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001649094/000164909426000015/pcvx-20260506xexx991.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001649094/000164909426000015/pcvx-20260506xexx991.htm",
+   "ta_basis": "Sponsor SEC filing: Prevention of Invasive Pneumococcal Disease and Pneumonia in Adults ... OPUS-1"
   },
   "dm": "2026-12"
  },
@@ -9458,7 +9793,7 @@ export default [
   "dp": "quarter",
   "name": "RAP-219 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "CNS",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0002012593/000119312526210324/rapp-ex99_1.htm",
@@ -9474,7 +9809,8 @@ export default [
    "program": "RAP-219",
    "accession": "0001193125-26-210324",
    "guidance_text": "rial of RAP-219 in PGTCS in the first half of 2027, expanding its epilepsy franchise into the most common type of generalized seizure. Additional Pipeline Updates &#x2022; Bipolar Mania Phase 2 Trial Topline Results Expected Ahead of Plan. Enrollment in the Phase 2 trial is progressing well and topl",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0002012593/000119312526210324/rapp-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002012593/000119312526210324/rapp-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: RAP-219 ... epilepsy franchise; Bipolar Mania Phase 2 Trial"
   },
   "dm": "2026-12"
  },
@@ -9486,7 +9822,7 @@ export default [
   "dp": "quarter",
   "name": "RGX-314 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Ophthalmology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001590877/000119312526286825/rgnx-ex99_1.htm",
@@ -9502,7 +9838,8 @@ export default [
    "program": "RGX-314",
    "accession": "0001193125-26-286825",
    "guidance_text": "tential of an in-office gene therapy approach. &#160; &#160; Five-year long-term follow-up data from the Phase I/IIa study of subretinal sura-vec for wet AMD will also be presented at ASRS. REGENXBIO expects to announce topline data with AbbVie from the ATMOSPHERE &#174; and ASCENT &#174; pivotal tr",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001590877/000119312526286825/rgnx-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001590877/000119312526286825/rgnx-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: sura-vec (RGX-314) for wet AMD"
   },
   "dm": "2026-12"
  },
@@ -9542,7 +9879,7 @@ export default [
   "dp": "quarter",
   "name": "SGT-610 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001684693/000117891326002963/exhibit_99-1.htm",
@@ -9558,7 +9895,8 @@ export default [
    "program": "SGT-610",
    "accession": "0001178913-26-002963",
    "guidance_text": "fundamentally reshapes the long-term opportunity for SGT-610. We now have both the capital and intellectual property runway to pursue the prevention of new BCCs in Gorlin syndrome, for which top-line results are expected in the fourth quarter of 2026. We continue to be excited about the potential of",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001684693/000117891326002963/exhibit_99-1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001684693/000117891326002963/exhibit_99-1.htm",
+   "ta_basis": "Sponsor SEC filing: SGT-610 ... prevention of new BCCs (basal cell carcinomas) in Gorlin syndrome"
   },
   "dm": "2026-12"
  },
@@ -9570,7 +9908,7 @@ export default [
   "dp": "quarter",
   "name": "SLS009 (tambiciclib) Phase 2 AML readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm",
@@ -9594,7 +9932,8 @@ export default [
    "accession": "0001390478-26-000009",
    "guidance_text": "trial in newly diagnosed AML patients, including those who become refractory early to AZA&#47;VEN treatment identified through extensive transcriptomics, genomics, and proteomics models. The topline data are expected in Q4 2026. Additional information about the trial can be found at clinicaltrials.g",
    "source_note": "Aug 11, 2026 8-K Ex 99.1: 28 patients enrolled in Phase 2 of SLS009 in newly diagnosed first-line AML; topline data expected in Q4 2026.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibit991.htm",
+   "ta_basis": "ClinicalTrials.gov conditions: Hematologic Malignancies"
   },
   "dm": "2026-12"
  },
@@ -9670,7 +10009,7 @@ export default [
   "dp": "quarter",
   "name": "ANB033 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Gastroenterology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0002091349/000119312526224124/trax-ex99_1.htm",
@@ -9686,7 +10025,8 @@ export default [
    "program": "ANB033",
    "accession": "0001193125-26-224124",
    "guidance_text": "uten-challenge study to assess the prevention of mucosal damage through six weeks &#x25aa; Cohort 2 (n=30) is a study to assess the possibility of mucosal healing through 12 weeks o Top-line Phase 1b data anticipated in Q4 2026 &#x2022; Phase 1b trial in eosinophilic esophagitis ongoing o 50-patient",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0002091349/000119312526224124/trax-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002091349/000119312526224124/trax-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: ANB033 gluten-challenge study ... prevention of mucosal damage (celiac disease setting)"
   },
   "dm": "2026-12"
  },
@@ -9698,7 +10038,7 @@ export default [
   "dp": "quarter",
   "name": "GX-03 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0002023016/000121390026081996/ea029941301ex99-1.htm",
@@ -9714,7 +10054,8 @@ export default [
    "program": "GX-03",
    "accession": "0001213900-26-081996",
    "guidance_text": "PHASE 3 Upcoming Milestones1 GX-03 IL-36&#945;, IL-36&#947;, IL-31 and IL-4 inhibitor Non-systemic and non-steroid potentially best-in-class topical Moderate-to-Severe Atopic Dermatitis (AD) Q4 2026: Topline Readout Q4 2026: FDA Type B Meeting Mid-2027: Phase 3 initiation Onychomycosis (Toenail Fung",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0002023016/000121390026081996/ea029941301ex99-1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002023016/000121390026081996/ea029941301ex99-1.htm",
+   "ta_basis": "Sponsor SEC filing: GX-03 ... topical ... Moderate-to-Severe Atopic Dermatitis (AD) Q4 2026: Topline Readout"
   },
   "dm": "2026-12"
  },
@@ -10113,7 +10454,7 @@ export default [
   "dp": "month",
   "name": "Tecovirimat Oral Capsule",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Infectious",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT04957485",
@@ -10130,7 +10471,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04957485"
+   "source_url": "https://clinicaltrials.gov/study/NCT04957485",
+   "ta_basis": "ClinicalTrials.gov conditions: Smallpox"
   },
   "dm": "2027-01"
  },
@@ -10344,7 +10686,7 @@ export default [
   "dp": "month",
   "name": "KYV-101",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Immunology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06152172",
@@ -10361,7 +10703,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06152172"
+   "source_url": "https://clinicaltrials.gov/study/NCT06152172",
+   "ta_basis": "ClinicalTrials.gov conditions: Idiopathic Inflammatory Myopathies, Diffuse Cutaneous Systemic Sclerosis, SLE Nephritis, ANCA Associated Vasculitis"
   },
   "dm": "2027-02",
   "_sponsor_note": "Trial lead sponsor is David Porter"
@@ -10717,7 +11060,7 @@ export default [
   "dp": "month",
   "name": "Resmetirom",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Hepatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT04951219",
@@ -10734,7 +11077,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04951219"
+   "source_url": "https://clinicaltrials.gov/study/NCT04951219",
+   "ta_basis": "ClinicalTrials.gov conditions: Non-Alcoholic Fatty Liver Disease"
   },
   "dm": "2027-03"
  },
@@ -10796,7 +11140,7 @@ export default [
   "dp": "month",
   "name": "TSHA-101",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Rare disease",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT04798235",
@@ -10813,7 +11157,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04798235"
+   "source_url": "https://clinicaltrials.gov/study/NCT04798235",
+   "ta_basis": "ClinicalTrials.gov conditions: Infantile GM2 Gangliosidosis (Disorder)"
   },
   "dm": "2027-03"
  },
@@ -10846,7 +11191,7 @@ export default [
   "dp": "quarter",
   "name": "AKY-1189 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0002035832/000119312526216716/ck0002035832-ex99_1.htm",
@@ -10862,7 +11207,8 @@ export default [
    "program": "AKY-1189",
    "accession": "0001193125-26-216716",
    "guidance_text": "onjugate platform to the clinic in the last twelve months. In parallel, we continue to enroll patients in our ongoing Phase 1b trial of AKY-1189 targeting Nectin-4 expressing tumors, with preliminary data expected in the first quarter of 2027. We remain focused on generating clinical data intended t",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0002035832/000119312526216716/ck0002035832-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0002035832/000119312526216716/ck0002035832-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: Phase 1b trial of AKY-1189 targeting Nectin-4 expressing tumors"
   },
   "dm": "2027-03"
  },
@@ -10874,7 +11220,7 @@ export default [
   "dp": "quarter",
   "name": "CRB-701 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001595097/000119312526219707/crbp-20260331.htm",
@@ -10890,7 +11236,8 @@ export default [
    "program": "CRB-701",
    "accession": "0001193125-26-219707",
    "guidance_text": "a will include clinical response durability as well as HNSCC patient subgroup analysis. We expect to initiate a registrational study for CRB-701 in second-line HNSCC this summer. In addition, we also anticipate reporting data with CRB-701 in combination with Keytruda&#174; in first-line HNSCC patien",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001595097/000119312526219707/crbp-20260331.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001595097/000119312526219707/crbp-20260331.htm",
+   "ta_basis": "Sponsor SEC filing: CRB-701 ... HNSCC (head and neck squamous cell carcinoma)"
   },
   "dm": "2027-03"
  },
@@ -10902,7 +11249,7 @@ export default [
   "dp": "quarter",
   "name": "NMRA-511 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "CNS",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001885522/000119312526210310/nmra-ex99_1.htm",
@@ -10918,7 +11265,8 @@ export default [
    "program": "NMRA-511",
    "accession": "0001193125-26-210310",
    "guidance_text": "511 in the second half of 2026 and to initiate a Phase 2 study with NMRA-511 in Alzheimer's disease agitation in the first quarter of 2027. &#160; NMRA-898 (M4 Positive Allosteric Modulator): Phase 1 Data Expected in Second Half of 2026 Neumora is conducting a MAD study with NMRA-898 in healthy volu",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001885522/000119312526210310/nmra-ex99_1.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001885522/000119312526210310/nmra-ex99_1.htm",
+   "ta_basis": "Sponsor SEC filing: Phase 2 study with NMRA-511 in Alzheimer's disease agitation"
   },
   "dm": "2027-03"
  },
@@ -10958,7 +11306,7 @@ export default [
   "dp": "quarter",
   "name": "LAM-001 readout",
   "type": "Readout",
-  "ta": "",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Guided",
   "url": "https://www.sec.gov/Archives/edgar/data/0001662774/000119312526324786/d163930dex994.htm",
@@ -10974,7 +11322,8 @@ export default [
    "program": "LAM-001",
    "accession": "0001193125-26-324786",
    "guidance_text": "olled with preliminary data projected to become available in the first quarter of 2027. We expect to initiate a Phase 2 trial to evaluate the use of LAM-001 as a treatment for SAPH in late 2026, with data expected in the fourth quarter of 2028. LAM-001 has been granted Orphan Drug Designation in the",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/0001662774/000119312526324786/d163930dex994.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001662774/000119312526324786/d163930dex994.htm",
+   "ta_basis": "Sponsor SEC filing: LAM-001 as a treatment for SAPH (sarcoidosis-associated pulmonary hypertension)"
   },
   "dm": "2027-03"
  },
@@ -11061,7 +11410,7 @@ export default [
   "dp": "month",
   "name": "Ampligen",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT03899987",
@@ -11078,7 +11427,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03899987"
+   "source_url": "https://clinicaltrials.gov/study/NCT03899987",
+   "ta_basis": "ClinicalTrials.gov conditions: Prostate Adenocarcinoma, Stage I Prostate Cancer AJCC v8, Stage II Prostate Cancer AJCC v8, Stage IIA Prostate Cancer AJCC v8, Stage IIB Prostate Cancer AJCC v8, Stage IIC Prostate Cancer AJCC v8"
   },
   "dm": "2027-04"
  },
@@ -11206,7 +11556,7 @@ export default [
   "dp": "month",
   "name": "KYV-101",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06384976",
@@ -11223,7 +11573,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06384976"
+   "source_url": "https://clinicaltrials.gov/study/NCT06384976",
+   "ta_basis": "ClinicalTrials.gov conditions: Multiple Sclerosis, Primary Progressive, Multiple Sclerosis, Secondary Progressive, Multiple Sclerosis, MS"
   },
   "dm": "2027-04"
  },
@@ -11235,7 +11586,7 @@ export default [
   "dp": "month",
   "name": "MN-166",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT04057898",
@@ -11252,7 +11603,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04057898"
+   "source_url": "https://clinicaltrials.gov/study/NCT04057898",
+   "ta_basis": "ClinicalTrials.gov conditions: Amyotrophic Lateral Sclerosis"
   },
   "dm": "2027-04"
  },
@@ -11264,7 +11616,7 @@ export default [
   "dp": "month",
   "name": "NBTXR3",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT03589339",
@@ -11281,7 +11633,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03589339"
+   "source_url": "https://clinicaltrials.gov/study/NCT03589339",
+   "ta_basis": "ClinicalTrials.gov conditions: Radiotherapy, Immunotherapy, Microsatellite Instability-High Solid Malignant Tumour, Metastasis From Malignant Tumor of Liver, Squamous Cell Carcinoma of Head and Neck, Metastasis From Malignant Tumor of Cervix"
   },
   "dm": "2027-04"
  },
@@ -11403,27 +11756,6 @@ export default [
   }
  },
  {
-  "id": "pdufa_axsm_2027-05-01",
-  "t": "AXSM",
-  "company": "Axsome Therapeutics, Inc.",
-  "d": "2027-05-01",
-  "dp": "day",
-  "name": "AXS-12",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Mid",
-  "st": "Upcoming",
-  "url": "/ticker/AXSM",
-  "ua": "2026-10-03T19:40:48Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 9389261626.5,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
-   "source": "company filing (SEC)"
-  }
- },
- {
   "id": "conf_aan_2027-05-01",
   "t": "AAN",
   "company": "American Academy of Neurology Annual Meeting",
@@ -11442,6 +11774,27 @@ export default [
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_axsm_2027-05-01",
+  "t": "AXSM",
+  "company": "Axsome Therapeutics, Inc.",
+  "d": "2027-05-01",
+  "dp": "day",
+  "name": "AXS-12",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "url": "/ticker/AXSM",
+  "ua": "2026-10-03T19:40:48Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": 9389261626.5,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
+   "source": "company filing (SEC)"
   }
  },
  {
@@ -11569,6 +11922,27 @@ export default [
   "dm": "2027-05"
  },
  {
+  "id": "conf_ddw_2027-05-15",
+  "t": "DDW",
+  "company": "Digestive Disease Week",
+  "d": "2027-05-15",
+  "dp": "day",
+  "name": "Digestive Disease Week",
+  "type": "Conference",
+  "ta": "GI and hepatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-03T19:42:14Z",
+  "_d": {
+   "end": "2027-05-18",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "readout_fdmt_2027-05-15",
   "t": "FDMT",
   "company": "4D Molecular Therapeutics, Inc.",
@@ -11605,7 +11979,7 @@ export default [
   "dp": "month",
   "name": "MBX 2109",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Endocrinology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06531941",
@@ -11622,7 +11996,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06531941"
+   "source_url": "https://clinicaltrials.gov/study/NCT06531941",
+   "ta_basis": "ClinicalTrials.gov conditions: Hypoparathyroidism"
   },
   "dm": "2027-05"
  },
@@ -11655,7 +12030,7 @@ export default [
   "dp": "month",
   "name": "S095035",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06188702",
@@ -11672,7 +12047,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06188702"
+   "source_url": "https://clinicaltrials.gov/study/NCT06188702",
+   "ta_basis": "ClinicalTrials.gov conditions: MTAP-deleted Solid Tumors"
   },
   "dm": "2027-05"
  },
@@ -11684,7 +12060,7 @@ export default [
   "dp": "month",
   "name": "VXA-COV2-3.3",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Infectious",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06672055",
@@ -11712,7 +12088,8 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06672055"
+   "source_url": "https://clinicaltrials.gov/study/NCT06672055",
+   "ta_basis": "ClinicalTrials.gov conditions: SARS-CoV2, COVID-19"
   },
   "dm": "2027-05"
  },
@@ -11744,27 +12121,6 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06874621"
   },
   "dm": "2027-05"
- },
- {
-  "id": "conf_ddw_2027-05-15",
-  "t": "DDW",
-  "company": "Digestive Disease Week",
-  "d": "2027-05-15",
-  "dp": "day",
-  "name": "Digestive Disease Week",
-  "type": "Conference",
-  "ta": "GI and hepatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-03T19:42:14Z",
-  "_d": {
-   "end": "2027-05-18",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "conf_asco_2027-06-04",
@@ -11816,7 +12172,7 @@ export default [
   "dp": "month",
   "name": "AP01",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06329401",
@@ -11833,7 +12189,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06329401"
+   "source_url": "https://clinicaltrials.gov/study/NCT06329401",
+   "ta_basis": "ClinicalTrials.gov conditions: Pulmonary Fibrosis, Progressive Pulmonary Fibrosis, Pulmonary Fibrosis Secondary to Systemic Sclerosis, Pulmonary Fibrosis, Interstitial Lung Disease, Interstitial Lung Disease, Interstitial Lung Disease Due to Connective Tissue Disease (Disorder)"
   },
   "dm": "2027-06"
  },
@@ -11845,7 +12202,7 @@ export default [
   "dp": "month",
   "name": "Tinlarebant",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Ophthalmology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05949593",
@@ -11862,7 +12219,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05949593"
+   "source_url": "https://clinicaltrials.gov/study/NCT05949593",
+   "ta_basis": "ClinicalTrials.gov conditions: Geographic Atrophy"
   },
   "dm": "2027-06"
  },
@@ -11903,7 +12261,7 @@ export default [
   "dp": "month",
   "name": "Human Acellular Vessel",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Nephrology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05908084",
@@ -11931,7 +12289,8 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT05908084"
+   "source_url": "https://clinicaltrials.gov/study/NCT05908084",
+   "ta_basis": "ClinicalTrials.gov conditions: End Stage Renal Disease (ESRD)"
   },
   "dm": "2027-06"
  },
@@ -11972,7 +12331,7 @@ export default [
   "dp": "month",
   "name": "Decoy20",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05651022",
@@ -11989,7 +12348,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05651022"
+   "source_url": "https://clinicaltrials.gov/study/NCT05651022",
+   "ta_basis": "ClinicalTrials.gov conditions: Solid Tumor, Adult, HCC - Hepatocellular Carcinoma, CRC (Colorectal Cancer), Pancreatic Adenocarcinoma, NSCLC Non-small Cell Lung Cancer, Squamous Cell Cancer of the Head and Neck"
   },
   "dm": "2027-06"
  },
@@ -12306,7 +12666,7 @@ export default [
   "dp": "month",
   "name": "Rexlemestrocel-L",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Musculoskeletal",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06325566",
@@ -12323,7 +12683,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06325566"
+   "source_url": "https://clinicaltrials.gov/study/NCT06325566",
+   "ta_basis": "ClinicalTrials.gov conditions: Degenerative Disc Disease"
   },
   "dm": "2027-07"
  },
@@ -12443,7 +12804,7 @@ export default [
   "dp": "month",
   "name": "TransCon CNP",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05081609",
@@ -12460,7 +12821,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05081609"
+   "source_url": "https://clinicaltrials.gov/study/NCT05081609",
+   "ta_basis": "ClinicalTrials.gov conditions: Advanced Solid Tumor, Locally Advanced Solid Tumor, Metastatic Solid Tumor, Platinum-resistant Ovarian Cancer, Post Anti-PD-1 Melanoma, 2L+ Cervical Cancer"
   },
   "dm": "2027-08"
  },
@@ -12614,7 +12976,7 @@ export default [
   "dp": "month",
   "name": "BHV-1300",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Endocrinology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06980649",
@@ -12631,7 +12993,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06980649"
+   "source_url": "https://clinicaltrials.gov/study/NCT06980649",
+   "ta_basis": "ClinicalTrials.gov conditions: Graves Disease"
   },
   "dm": "2027-09"
  },
@@ -12672,7 +13035,7 @@ export default [
   "dp": "month",
   "name": "cleminorexton",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "CNS",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT07598708",
@@ -12689,7 +13052,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT07598708"
+   "source_url": "https://clinicaltrials.gov/study/NCT07598708",
+   "ta_basis": "ClinicalTrials.gov conditions: Narcolepsy Type 1, Narcolepsy Type 2"
   },
   "dm": "2027-09"
  },
@@ -12701,7 +13065,7 @@ export default [
   "dp": "month",
   "name": "FCX-007",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Rare disease",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06892639",
@@ -12718,7 +13082,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06892639"
+   "source_url": "https://clinicaltrials.gov/study/NCT06892639",
+   "ta_basis": "ClinicalTrials.gov conditions: Dystrophic Epidermolysis Bullosa"
   },
   "dm": "2027-09"
  },
@@ -12759,7 +13124,7 @@ export default [
   "dp": "month",
   "name": "Corticosteroids",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Immunology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06585774",
@@ -12776,7 +13141,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06585774"
+   "source_url": "https://clinicaltrials.gov/study/NCT06585774",
+   "ta_basis": "ClinicalTrials.gov conditions: Chronic Graft-versus-host-disease"
   },
   "dm": "2027-09"
  },
@@ -12817,7 +13183,7 @@ export default [
   "dp": "month",
   "name": "6-Thio-2'-Deoxyguanosine",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05208944",
@@ -12834,7 +13200,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05208944"
+   "source_url": "https://clinicaltrials.gov/study/NCT05208944",
+   "ta_basis": "ClinicalTrials.gov conditions: Carcinoma, Non-Small-Cell Lung"
   },
   "dm": "2027-09"
  },
@@ -12867,7 +13234,7 @@ export default [
   "dp": "month",
   "name": "SD-101",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT05607953",
@@ -12884,7 +13251,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT05607953"
+   "source_url": "https://clinicaltrials.gov/study/NCT05607953",
+   "ta_basis": "ClinicalTrials.gov conditions: Locally Advanced Pancreatic Adenocarcinoma"
   },
   "dm": "2027-09"
  },
@@ -12896,7 +13264,7 @@ export default [
   "dp": "month",
   "name": "Verekitug",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Respiratory",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06966479",
@@ -12913,7 +13281,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06966479"
+   "source_url": "https://clinicaltrials.gov/study/NCT06966479",
+   "ta_basis": "ClinicalTrials.gov conditions: Severe Asthma"
   },
   "dm": "2027-09"
  },
@@ -13278,7 +13647,7 @@ export default [
   "dp": "month",
   "name": "INT230-6",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06263231",
@@ -13295,7 +13664,8 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06263231"
+   "source_url": "https://clinicaltrials.gov/study/NCT06263231",
+   "ta_basis": "ClinicalTrials.gov conditions: Sarcoma,Soft Tissue"
   },
   "dm": "2027-12"
  },
@@ -13519,7 +13889,7 @@ export default [
   "dp": "year",
   "name": "SURF303 Phase 2a/b initial results (LG-UTUC)",
   "type": "Readout",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "",
   "st": "Guided",
   "url": "https://ir.tyra.bio/news-releases/news-release-details/tyra-biosciences-reports-second-quarter-2026-financial-results",
@@ -13547,7 +13917,8 @@ export default [
      "why": "Tyra's second-quarter 2026 release guides SURF303 initial results in 2027; the row was keyed on an August 31 sentinel and now sits at year precision on the 2027 sentinel."
     }
    ],
-   "source_url": "https://ir.tyra.bio/news-releases/news-release-details/tyra-biosciences-reports-second-quarter-2026-financial-results"
+   "source_url": "https://ir.tyra.bio/news-releases/news-release-details/tyra-biosciences-reports-second-quarter-2026-financial-results",
+   "ta_basis": "Sponsor SEC filing: SURF303 Phase 2a/b in low-grade upper tract urothelial carcinoma"
   }
  },
  {
@@ -13598,7 +13969,7 @@ export default [
   "dp": "month",
   "name": "Ruxolitinib",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Dermatology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06548360",
@@ -13626,7 +13997,8 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06548360"
+   "source_url": "https://clinicaltrials.gov/study/NCT06548360",
+   "ta_basis": "ClinicalTrials.gov conditions: NonSegmental Vitiligo"
   },
   "dm": "2028-06"
  },
@@ -13638,7 +14010,7 @@ export default [
   "dp": "month",
   "name": "Atumelnant",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Endocrinology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06712823",
@@ -13666,7 +14038,8 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06712823"
+   "source_url": "https://clinicaltrials.gov/study/NCT06712823",
+   "ta_basis": "ClinicalTrials.gov conditions: Congenital Adrenal Hyperplasia, Classic Congenital Adrenal Hyperplasia"
   },
   "dm": "2029-07"
  },
@@ -13718,7 +14091,7 @@ export default [
   "dp": "month",
   "name": "INBRX-106",
   "type": "Readout",
-  "ta": "Other",
+  "ta": "Oncology",
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT04198766",
@@ -13746,7 +14119,8 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT04198766"
+   "source_url": "https://clinicaltrials.gov/study/NCT04198766",
+   "ta_basis": "ClinicalTrials.gov conditions: Solid Tumor, Non-Small Cell Lung Cancer, Head and Neck Cancer, Melanoma, Gastric Cancer, Renal Cell Carcinoma"
   },
   "dm": "2033-07"
  }

@@ -51,6 +51,8 @@ def kind_of(url, rec):
 
 
 def main():
+    sys.path.insert(0, HERE)
+    from drug_names import clean_drug_name as _cdn
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
     by_action = {}
@@ -66,17 +68,44 @@ def main():
         has_page = os.path.exists(os.path.join(SITE, "fda-decision", f"{tk}-{dcd}", "index.html"))
         ent = by_action.setdefault(key, {"date": fd, "url": url, "record": d.get("fda_action_record") or "",
                                          "kind": kind_of(url, d.get("fda_action_record")),
-                                         "drug": d.get("brand") and str(r.get("name") or "") or str(r.get("name") or ""),
+                                         "drug": _cdn(str(r.get("name") or "")),
                                          "company": str(r.get("company") or ""), "tickers": [], "pages": [],
                                          "announced": dcd if dcd and dcd != fd else "", "oc": r.get("oc")})
         ent["tickers"].append(tk)
         if has_page:
             ent["pages"].append((tk, page))
+    # Audit 2026-10-03 (2.1 / 3.1): archive decision pages with no API row, dated by Drugs@FDA through
+    # sync_archive_fda_dates.py (one unambiguous decision-class approval 0-4 days before the
+    # announcement). Same key (record, date), so a record already held through a row is not repeated.
+    sys.path.insert(0, HERE)
+    from drug_names import clean_drug_name
+    arch_p = os.path.join(HERE, "_fda_action_archive.json")
+    arch = json.load(io.open(arch_p, encoding="utf-8")) if os.path.exists(arch_p) else {}
+    for slug, e in sorted(arch.items()):
+        m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug)
+        if not (m and e.get("date") and e.get("source_url")):
+            continue
+        tk, dcd = m.group(1), m.group(2)
+        pth = os.path.join(SITE, "fda-decision", slug, "index.html")
+        if not os.path.exists(pth):
+            continue
+        pdoc = io.open(pth, encoding="utf-8", errors="replace").read()
+        cm = re.search(r"<span>Company</span><b>(.*?)</b>", pdoc)
+        key = (e.get("record") or e["source_url"], e["date"])
+        ent = by_action.setdefault(key, {"date": e["date"], "url": e["source_url"], "record": e.get("record") or "",
+                                         "kind": "Approval letter" if e.get("letter") else "Drugs@FDA record",
+                                         "drug": clean_drug_name(e.get("name") or ""),
+                                         "company": html.unescape(cm.group(1)) if cm else "", "tickers": [], "pages": [],
+                                         "announced": dcd if dcd != e["date"] else "", "oc": "Approved"})
+        if tk not in ent["tickers"]:
+            ent["tickers"].append(tk)
+            ent["pages"].append((tk, f"/fda-decision/{slug}"))
     acts = sorted(by_action.values(), key=lambda e: e["date"], reverse=True)
     n = len(acts)
     n_ap = sum(1 for e in acts if e["kind"] == "Approval letter")
     n_no = sum(1 for e in acts if e["kind"] == "FDA approval notice")
     n_crl = sum(1 for e in acts if e["kind"] == "Complete Response Letter")
+    n_rec = sum(1 for e in acts if e["kind"] == "Drugs@FDA record")
     n_later = sum(1 for e in acts if e["announced"])
     title = f"FDA Approval Letters: {n} FDA Decisions, Each Linked to the FDA's Own Record | pdufa.bio"
     desc = (f"{n} FDA decisions tracked by pdufa.bio, each dated by the FDA's own record: {n_ap} approval "
@@ -128,9 +157,29 @@ def main():
             f'<div class="sub">Every FDA decision this site dates is dated from the FDA&#x27;s record of the action, not '
             f'from the company&#x27;s press release: the approval letter in Drugs@FDA ({n_ap}), the FDA&#x27;s approval '
             f'notice or letter for biologics reviewed by CBER ({n_no}), or the Complete Response Letter the FDA released '
-            f'({n_crl}). {n_later} of the {n} were announced by the company on a later day than the FDA acted; those rows '
+            f'({n_crl}), or, for decisions in our archive without an API row, the Drugs@FDA approval record ({n_rec}). '
+            f'{n_later} of the {n} were announced by the company on a later day than the FDA acted; those rows '
             f'show both dates. Newest first. This is the evidence behind the '
             f'<a href="/research/fda-decision-timing">decision-timing study</a>.</div>']
+    # 3.1 (audit 2026-10-03): "what did the FDA approve on {date}" is a live grounding query (60 citations
+    # on 09-28). The last 60 days, one line per FDA action DAY, by the FDA's date, not the announcement.
+    today_ = dt.date.today()
+    days = {}
+    for e in acts:
+        if e["oc"] == "Approved" and (today_ - dt.date.fromisoformat(e["date"])).days <= 60:
+            days.setdefault(e["date"], []).append(e)
+    if days:
+        body.append('<h2>What the FDA approved, day by day (last 60 days, by FDA action date)</h2>')
+        for day_ in sorted(days, reverse=True):
+            items = []
+            for e in days[day_]:
+                lab = esc(e["drug"][:60]) + f' ({esc("/".join(sorted(set(e["tickers"]))))})'
+                if e["pages"]:
+                    lab = f'<a href="{esc(e["pages"][0][1])}">{lab}</a>'
+                items.append(f'{lab}, <a href="{esc(e["url"])}" rel="noopener">{esc(e["record"] or e["kind"])}</a>'
+                             + (f', announced {pretty(e["announced"], short=True)}' if e["announced"] else ""))
+            body.append(f'<p id="d-{day_}"><b style="color:#f2f6fc">{pretty(day_)}</b>: the FDA approved '
+                        + "; ".join(items) + ".</p>")
     years = {}
     for e in acts:
         years.setdefault(e["date"][:4], []).append(e)

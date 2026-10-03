@@ -1,0 +1,689 @@
+{
+ "_note": "Hand-assigned therapeutic areas for forward readouts (audit 2026-10-03 item 3.3). Each tag was read by hand from the trial's own ClinicalTrials.gov conditions (only where the registry record names the row's drug) or from the sponsor's SEC filing sentence that names the asset with its indication. Never from the drug name. Rows whose attached NCT record is a different drug are left untagged and listed under nct_mismatch.",
+ "tags": {
+  "readout_huma_2027-09-15": {
+   "ta": "Cardiovascular",
+   "basis": "ClinicalTrials.gov conditions: Trauma, Vascular System Injury",
+   "source": "https://clinicaltrials.gov/study/NCT03005418",
+   "trial_title": "Humacyte Acellular Tissue Engineered Vessel (ATEV) in Patients With Vascular Trauma"
+  },
+  "readout_ixhl_2026-12-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Obstructive Sleep Apnea",
+   "source": "https://clinicaltrials.gov/study/NCT06146101",
+   "trial_title": "RePOSA-Revealing the Efficacy of IHL-42X Use in Patients With OSA"
+  },
+  "readout_eltx_2026-11-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Pancreatic Ductal Adenocarcinoma, Colorectal Cancer, KRAS G12D, KRAS G12R, KRAS G12V, KRAS G12A",
+   "source": "https://clinicaltrials.gov/study/NCT05726864",
+   "trial_title": "A Study of ELI-002 7P in Subjects With KRAS/NRAS Mutated Solid Tumors"
+  },
+  "readout_immp_2026-10-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Breast Carcinoma",
+   "source": "https://clinicaltrials.gov/study/NCT05747794",
+   "trial_title": "Study in Metastatic Breast Cancer Patients Receiving Eftilagimod Alpha or Placebo in Combination With Paclitaxel Chemotherapy"
+  },
+  "readout_sngx_2026-07-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: CTCL/ Mycosis Fungoides, CTCL, Mycosis Fungoides, Cutaneous T Cell Lymphoma",
+   "source": "https://clinicaltrials.gov/study/NCT06470451",
+   "trial_title": "Confirmatory Study of Topical HyBryte™ vs. Placebo for the Treatment of CTCL"
+  },
+  "readout_agio_2026-06-15": {
+   "ta": "Hematology",
+   "basis": "ClinicalTrials.gov conditions: Anemia",
+   "source": "https://clinicaltrials.gov/study/NCT07055243",
+   "trial_title": "To Assess Safety of Mitapivat and Provide Proof of Concept of the Efficacy of the Drug in Patients With RBC Membranopathies or CDAII."
+  },
+  "readout_ardx_2026-06-15": {
+   "ta": "Gastroenterology",
+   "basis": "ClinicalTrials.gov conditions: Cystic Fibrosis, Constipation",
+   "source": "https://clinicaltrials.gov/study/NCT06810167",
+   "trial_title": "Assessing Tenapanor as a Treatment of CF-related Constipation."
+  },
+  "readout_fth_2027-06-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Solid Tumor, Adult, Advanced Solid Tumor, Head and Neck Cancer, Breast Cancer, Colon Cancer, Pancreatic Cancer",
+   "source": "https://clinicaltrials.gov/study/NCT05864144",
+   "trial_title": "A Study of SNS-101 (Anti VISTA) Monotherapy and in Combination With Cemiplimab in Patients With Advanced Solid Tumors"
+  },
+  "readout_sion_2026-07-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Cystic Fibrosis (CF)",
+   "source": "https://clinicaltrials.gov/study/NCT07108153",
+   "trial_title": "Proof-of-concept Study to Evaluate the Safety, Tolerability, Pharmacodynamics, and Pharmacokinetics of SION-719 When Added to Trikafta"
+  },
+  "readout_trvi_2026-06-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Idiopathic Pulmonary Fibrosis",
+   "source": "https://clinicaltrials.gov/study/NCT07036029",
+   "trial_title": "NAL ER IPF Respiratory Function and Safety Study"
+  },
+  "readout_amgn_2026-07-15": {
+   "ta": "Gastroenterology",
+   "basis": "ClinicalTrials.gov conditions: Eosinophilic Esophagitis",
+   "source": "https://clinicaltrials.gov/study/NCT05583227",
+   "trial_title": "Efficacy and Safety of Tezepelumab in Patients With Eosinophilic Esophagitis"
+  },
+  "readout_anip_2026-07-15": {
+   "ta": "Ophthalmology",
+   "basis": "ClinicalTrials.gov conditions: Uveitis, Uveitis, Posterior, Uveitis, Anterior, Uveitis, Intermediate",
+   "source": "https://clinicaltrials.gov/study/NCT05486468",
+   "trial_title": "The Use of Two YUTIQ Versus Sham for Treatment of Chronic Non Infectious Intraocular Inflammation Affecting the Posterior Segment"
+  },
+  "readout_cers_2026-07-15": {
+   "ta": "Hematology",
+   "basis": "ClinicalTrials.gov conditions: Anemia",
+   "source": "https://clinicaltrials.gov/study/NCT03037164",
+   "trial_title": "INTERCEPT Blood System for RBCs Study in Regions at Potential Risk for Zika Virus Transfusion-Transmitted Infections"
+  },
+  "readout_jspr_2026-08-15": {
+   "ta": "Immunology",
+   "basis": "ClinicalTrials.gov conditions: Urticaria Chronic",
+   "source": "https://clinicaltrials.gov/study/NCT06736262",
+   "trial_title": "A Phase 2, Open-Label, Extension Study to Evaluate Long Term Safety and Clinical Activity of Briquilimab in Participants From Jasper-Sponsored Chronic Urticaria"
+  },
+  "readout_jspr_2026-10-15": {
+   "ta": "Immunology",
+   "basis": "ClinicalTrials.gov conditions: Chronic Spontaneous Urticaria",
+   "source": "https://clinicaltrials.gov/study/NCT06162728",
+   "trial_title": "Dose Escalation Trial Of Safety, Pharmacokinetic/Pharmacodynamic And Preliminary Clinical Activity of Briquilimab In Adult Patients With Chronic Spontaneous Urt"
+  },
+  "readout_ptct_2026-06-15": {
+   "ta": "Metabolic",
+   "basis": "ClinicalTrials.gov conditions: Phenylketonuria",
+   "source": "https://clinicaltrials.gov/study/NCT05166161",
+   "trial_title": "A Long-Term Safety Study of PTC923 in Participants With Phenylketonuria"
+  },
+  "readout_bivi_2026-08-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Long COVID",
+   "source": "https://clinicaltrials.gov/study/NCT06847191",
+   "trial_title": "NE3107 in Adults With Neurological Symptoms of Long COVID"
+  },
+  "readout_bmrn_2026-08-15": {
+   "ta": "Rare disease",
+   "basis": "ClinicalTrials.gov conditions: Hypochondroplasia",
+   "source": "https://clinicaltrials.gov/study/NCT06455059",
+   "trial_title": "Interventional Study of Vosoritide for the Treatment of Children With Hypochondroplasia"
+  },
+  "readout_grfs_2026-08-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Pulmonary Emphysema in Alpha-1 PI Deficiency",
+   "source": "https://clinicaltrials.gov/study/NCT01983241",
+   "trial_title": "Efficacy and Safety of Alpha1-Proteinase Inhibitor (Human), Modified Process (Alpha-1 MP) in Subjects With Pulmonary Emphysema Due to Alpha1 Antitrypsin Deficie"
+  },
+  "readout_ivvd_2026-08-15": {
+   "ta": "Infectious",
+   "basis": "ClinicalTrials.gov conditions: COVID-19",
+   "source": "https://clinicaltrials.gov/study/NCT07298434",
+   "trial_title": "Study of VYD2311 for the Prevention of COVID-19"
+  },
+  "readout_mane_2026-08-15": {
+   "ta": "Dermatology",
+   "basis": "ClinicalTrials.gov conditions: Androgenetic Alopecia, AGA, Male Pattern Baldness",
+   "source": "https://clinicaltrials.gov/study/NCT06527365",
+   "trial_title": "Safety and Efficacy of VDPHL01 in Males and Females With AGA"
+  },
+  "readout_vstm_2026-08-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: KRAS Activating Mutation, Metastatic Cancer, Pancreas Cancer, Neoplasms Pancreatic, Malignant Neoplasm of Pancreas",
+   "source": "https://clinicaltrials.gov/study/NCT05669482",
+   "trial_title": "Study of Avutometinib (VS-6766) +Defactinib With Gemcitabine and Nab-paclitaxel in Patients With Pancreatic Cancer"
+  },
+  "readout_apge_2026-09-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Asthma",
+   "source": "https://clinicaltrials.gov/study/NCT06920901",
+   "trial_title": "A Study to Evaluate the Safety, Tolerability, Pharmacokinetics (PK), and Immunogenicity of APG777 in Adults With Asthma"
+  },
+  "readout_immp_2026-09-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Solid Tumors, Peritoneal Carcinomatosis, NSCLC Adenocarcinoma, Urothelial Carcinoma",
+   "source": "https://clinicaltrials.gov/study/NCT03252938",
+   "trial_title": "Feasibility and Safety of IMP321 (Eftilagimod Alpha) for Advanced Stage Solid Tumors"
+  },
+  "readout_mltx_2026-09-15": {
+   "ta": "Dermatology",
+   "basis": "ClinicalTrials.gov conditions: Hidradenitis Suppurativa",
+   "source": "https://clinicaltrials.gov/study/NCT06768671",
+   "trial_title": "An Open-label, Single-arm Study to Evaluate Pharmacokinetics and Safety of Subcutaneous Sonelokimab in Adolescents With Moderate to Severe Hidradenitis Suppurat"
+  },
+  "readout_sln_2026-09-15": {
+   "ta": "Hematology",
+   "basis": "ClinicalTrials.gov conditions: Polycythemia Vera",
+   "source": "https://clinicaltrials.gov/study/NCT05499013",
+   "trial_title": "Study to Assess SLN124 in Patients With Polycythemia Vera"
+  },
+  "readout_supn_2026-09-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Attention-Deficit/Hyperactivity Disorder",
+   "source": "https://clinicaltrials.gov/study/NCT02736656",
+   "trial_title": "Open-label Study to Evaluate Long-term Safety and Efficacy of SPN-812 (Viloxazine Extended-release Capsule)"
+  },
+  "readout_cldx_2026-10-15": {
+   "ta": "Immunology",
+   "basis": "ClinicalTrials.gov conditions: Chronic Spontaneous Urticaria",
+   "source": "https://clinicaltrials.gov/study/NCT06455202",
+   "trial_title": "A Phase 3 Study of Barzolvolimab in Participants With Chronic Spontaneous Urticaria (CSU)"
+  },
+  "readout_cslly_2026-10-15": {
+   "ta": "Hematology",
+   "basis": "ClinicalTrials.gov conditions: Congenital Hemophilia A",
+   "source": "https://clinicaltrials.gov/study/NCT06738485",
+   "trial_title": "Recombinant Single-chain Factor VIII (rVIII-SingleChain) in Chinese Participants With Hemophilia A Previously Treated With FVIII Products"
+  },
+  "readout_incy_2026-10-15": {
+   "ta": "Dermatology",
+   "basis": "ClinicalTrials.gov conditions: Prurigo Nodularis",
+   "source": "https://clinicaltrials.gov/study/NCT06516952",
+   "trial_title": "A Study to Evaluate the Efficacy and Safety Study of Povorcitinib in Participants With Prurigo Nodularis (STOP-PN1)"
+  },
+  "readout_phat_2026-12-15": {
+   "ta": "Gastroenterology",
+   "basis": "ClinicalTrials.gov conditions: Eosinophilic Esophagitis",
+   "source": "https://clinicaltrials.gov/study/NCT06851559",
+   "trial_title": "A Study in Adult Participants With EoE to Evaluate Vonoprazan 20 mg Compared to Placebo After 12 Weeks and to Evaluate Vonoprazan 20 mg Up to 24 Weeks"
+  },
+  "readout_sny_2026-10-15": {
+   "ta": "Rare disease",
+   "basis": "ClinicalTrials.gov conditions: Gaucher Disease Type 1, Gaucher Disease Type 3",
+   "source": "https://clinicaltrials.gov/study/NCT02843035",
+   "trial_title": "Venglustat in Combination With Cerezyme in Adult Patients With Gaucher Disease Type 3 With Venglustat Monotherapy Extension"
+  },
+  "readout_atos_2026-11-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Breast Neoplasms, Invasive Breast Cancer, Estrogen-receptor-positive Breast Cancer, HER2-negative Breast Cancer",
+   "source": "https://clinicaltrials.gov/study/NCT05607004",
+   "trial_title": "(Z)-Endoxifen for the Treatment of Premenopausal Women With ER+/HER2- Breast Cancer"
+  },
+  "readout_imux_2026-11-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Multiple Sclerosis",
+   "source": "https://clinicaltrials.gov/study/NCT05134441",
+   "trial_title": "Study to Evaluate the Efficacy, Safety, and Tolerability of IMU-838 in Patients With Relapsing Multiple Sclerosis"
+  },
+  "readout_sny_2026-11-15": {
+   "ta": "Hematology",
+   "basis": "ClinicalTrials.gov conditions: Immune Thrombocytopenia",
+   "source": "https://clinicaltrials.gov/study/NCT07216079",
+   "trial_title": "Rilzabrutinib for the Adult Participants With Chronic ITP Who Have Completed Phase 3 Study in Japan"
+  },
+  "readout_zura_2026-11-15": {
+   "ta": "Dermatology",
+   "basis": "ClinicalTrials.gov conditions: Hidradenitis Suppurativa (HS)",
+   "source": "https://clinicaltrials.gov/study/NCT06993610",
+   "trial_title": "Tibulizumab Skin Healing and Inflammation Evaluation for Lasting Defense"
+  },
+  "readout_actu_2026-12-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Pancreatic Adenocarcinoma, Pancreatic Adenocarcinoma Metastatic",
+   "source": "https://clinicaltrials.gov/study/NCT05077800",
+   "trial_title": "FOLFIRINOX + Elraglusib + Losartan In Pancreatic Cancer"
+  },
+  "readout_cnta_2026-12-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Narcolepsy Type 1, Narcolepsy Type 2, Idiopathic Hypersomnia",
+   "source": "https://clinicaltrials.gov/study/NCT06752668",
+   "trial_title": "A Study of ORX750 in Participants With Narcolepsy and Idiopathic Hypersomnia"
+  },
+  "readout_mane_2026-12-15": {
+   "ta": "Dermatology",
+   "basis": "ClinicalTrials.gov conditions: Androgenetic Alopecia, AGA, Male Pattern Baldness",
+   "source": "https://clinicaltrials.gov/study/NCT06972264",
+   "trial_title": "Safety and Efficacy of VDPHL01 in Males With AGA"
+  },
+  "readout_mdgl_2026-12-15": {
+   "ta": "Hepatology",
+   "basis": "ClinicalTrials.gov conditions: NASH, Cirrhosis, Liver",
+   "source": "https://clinicaltrials.gov/study/NCT05500222",
+   "trial_title": "A Phase 3 Study to Evaluate the Effect of Resmetirom on Clinical Outcomes in Patients With Well-compensated NASH Cirrhosis (MAESTRO-NASH-OUTCOMES)"
+  },
+  "readout_sny_2026-12-15": {
+   "ta": "Nephrology",
+   "basis": "ClinicalTrials.gov conditions: Focal Segmental Glomerulosclerosis, Glomerulonephritis Minimal Lesion",
+   "source": "https://clinicaltrials.gov/study/NCT06500702",
+   "trial_title": "A Study to Evaluate the Efficacy and Safety of Frexalimab, Brivekimig, or Rilzabrutinib in Participants Aged 16 to 75 Years With Primary Focal Segmental Glomeru"
+  },
+  "readout_supn_2026-12-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Focal Impaired Awareness Seizures",
+   "source": "https://clinicaltrials.gov/study/NCT03474770",
+   "trial_title": "BIS-001-ER for the Treatment of Adult Focal Impaired Awareness Seizures"
+  },
+  "readout_cris_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Chronic Lymphocytic Leukemia, B-cell Malignancies",
+   "source": "https://clinicaltrials.gov/study/NCT07271667",
+   "trial_title": "A Study of Emavusertib + An Approved Bruton Tyrosine Kinase Inhibitor (BTKi) in Participants With Chronic Lymphocytic Leukemia (CLL) and Other B-cell Malignanci"
+  },
+  "readout_sls_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Hematologic Malignancies",
+   "source": "https://clinicaltrials.gov/study/NCT04588922",
+   "trial_title": "Study of SLS009 (Formerly GFH009) a Potent Highly Selective CDK9 Inhibitor in Patients With Hematologic Malignancies and High-Risk Newly Diagnosed AML"
+  },
+  "readout_siga_2027-01-15": {
+   "ta": "Infectious",
+   "basis": "ClinicalTrials.gov conditions: Smallpox",
+   "source": "https://clinicaltrials.gov/study/NCT04957485",
+   "trial_title": "Study to Assess the Safety and Immunogenicity of TPOXX® When Administered Orally for 28 Days With JYNNEOS"
+  },
+  "readout_kytx_2027-02-15": {
+   "ta": "Immunology",
+   "basis": "ClinicalTrials.gov conditions: Idiopathic Inflammatory Myopathies, Diffuse Cutaneous Systemic Sclerosis, SLE Nephritis, ANCA Associated Vasculitis",
+   "source": "https://clinicaltrials.gov/study/NCT06152172",
+   "trial_title": "CARTIMMUNE: Study of Patients With Autoimmune Diseases Receiving KYV-101"
+  },
+  "readout_mdgl_2027-03-15": {
+   "ta": "Hepatology",
+   "basis": "ClinicalTrials.gov conditions: Non-Alcoholic Fatty Liver Disease",
+   "source": "https://clinicaltrials.gov/study/NCT04951219",
+   "trial_title": "A Phase 3 Study to Evaluate Safety and Biomarkers of Resmetirom (MGL-3196) in Patients With Non-alcoholic Fatty Liver Disease (NAFLD), MAESTRO-NAFLD-Open-Label-"
+  },
+  "readout_tsha_2027-03-15": {
+   "ta": "Rare disease",
+   "basis": "ClinicalTrials.gov conditions: Infantile GM2 Gangliosidosis (Disorder)",
+   "source": "https://clinicaltrials.gov/study/NCT04798235",
+   "trial_title": "First-in-Human Study of TSHA-101 Gene Therapy for Treatment of Infantile Onset GM2 Gangliosidosis"
+  },
+  "readout_aim_2027-04-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Prostate Adenocarcinoma, Stage I Prostate Cancer AJCC v8, Stage II Prostate Cancer AJCC v8, Stage IIA Prostate Cancer AJCC v8, Stage IIB Prostate Cancer AJCC v8, Stage IIC Prostate Cancer AJCC v8",
+   "source": "https://clinicaltrials.gov/study/NCT03899987",
+   "trial_title": "Aspirin and Rintatolimod With or Without Interferon-alpha 2b in Treating Patients With Prostate Cancer Before Surgery"
+  },
+  "readout_kytx_2027-04-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Multiple Sclerosis, Primary Progressive, Multiple Sclerosis, Secondary Progressive, Multiple Sclerosis, MS",
+   "source": "https://clinicaltrials.gov/study/NCT06384976",
+   "trial_title": "KYSA-7: A Study of Anti-CD19 CAR T-Cell Therapy, in Subjects With Refractory Primary and Secondary Progressive Multiple Sclerosis"
+  },
+  "readout_mnov_2027-04-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Amyotrophic Lateral Sclerosis",
+   "source": "https://clinicaltrials.gov/study/NCT04057898",
+   "trial_title": "Evaluation of MN-166 (Ibudilast) for 12 Months Followed by an Open-label Extension for 6 Months in Patients With ALS"
+  },
+  "readout_nbtx_2027-04-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Radiotherapy, Immunotherapy, Microsatellite Instability-High Solid Malignant Tumour, Metastasis From Malignant Tumor of Liver, Squamous Cell Carcinoma of Head and Neck, Metastasis From Malignant Tumor of Cervix",
+   "source": "https://clinicaltrials.gov/study/NCT03589339",
+   "trial_title": "NBTXR3 Activated by Radiotherapy for Patients With Advanced Cancers Treated With An Anti-PD-1 Therapy"
+  },
+  "readout_mbx_2027-05-15": {
+   "ta": "Endocrinology",
+   "basis": "ClinicalTrials.gov conditions: Hypoparathyroidism",
+   "source": "https://clinicaltrials.gov/study/NCT06531941",
+   "trial_title": "Extension Study to Evaluate the Long-Term Safety and Tolerability of MBX 2109 in Patients With Hypoparathyroidism"
+  },
+  "readout_tngx_2027-05-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: MTAP-deleted Solid Tumors",
+   "source": "https://clinicaltrials.gov/study/NCT06188702",
+   "trial_title": "S095035 as a Single Agent and in Combination in Adult Participants With Advanced or Metastatic Solid Tumors With Deletion of MTAP"
+  },
+  "readout_vxrt_2026-11-15": {
+   "ta": "Infectious",
+   "basis": "ClinicalTrials.gov conditions: SARS-CoV2, COVID-19",
+   "source": "https://clinicaltrials.gov/study/NCT06672055",
+   "trial_title": "A Study to Evaluate VXA-CoV2-3.3 COVID-19 Vaccine Against Currently Approved/Authorized mRNA COVID-19 Injectable Booster Vaccine in Adults Previously Immunized "
+  },
+  "readout_avln_2027-06-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Pulmonary Fibrosis, Progressive Pulmonary Fibrosis, Pulmonary Fibrosis Secondary to Systemic Sclerosis, Pulmonary Fibrosis, Interstitial Lung Disease, Interstitial Lung Disease, Interstitial Lung Disease Due to Connective Tissue Disease (Disorder)",
+   "source": "https://clinicaltrials.gov/study/NCT06329401",
+   "trial_title": "A Study Evaluating the Safety and Efficacy of Inhaled AP01 in Participants With Progressive Pulmonary Fibrosis"
+  },
+  "readout_blte_2027-06-15": {
+   "ta": "Ophthalmology",
+   "basis": "ClinicalTrials.gov conditions: Geographic Atrophy",
+   "source": "https://clinicaltrials.gov/study/NCT05949593",
+   "trial_title": "Phase 3, Randomized, Placebo-Controlled Study of Tinlarebant to Explore Safety and Efficacy in Geographic Atrophy"
+  },
+  "readout_huma_2026-10-15": {
+   "ta": "Nephrology",
+   "basis": "ClinicalTrials.gov conditions: End Stage Renal Disease (ESRD)",
+   "source": "https://clinicaltrials.gov/study/NCT05908084",
+   "trial_title": "To Compare the Efficacy and Safety of the ATEV With AVF in Female Patients With End-Stage Renal Disease Requiring Hemodialysis"
+  },
+  "readout_indp_2027-06-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Solid Tumor, Adult, HCC - Hepatocellular Carcinoma, CRC (Colorectal Cancer), Pancreatic Adenocarcinoma, NSCLC Non-small Cell Lung Cancer, Squamous Cell Cancer of the Head and Neck",
+   "source": "https://clinicaltrials.gov/study/NCT05651022",
+   "trial_title": "Study of DECOY20 With or Without Tislelizumab in Patients With Advanced Solid Tumors"
+  },
+  "readout_meso_2027-07-15": {
+   "ta": "Musculoskeletal",
+   "basis": "ClinicalTrials.gov conditions: Degenerative Disc Disease",
+   "source": "https://clinicaltrials.gov/study/NCT06325566",
+   "trial_title": "Efficacy and Safety of Rexlemestrocel-L Combined With HA* in Participants With Moderate to Severe Chronic Low Back Pain"
+  },
+  "readout_asnd_2027-08-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Advanced Solid Tumor, Locally Advanced Solid Tumor, Metastatic Solid Tumor, Platinum-resistant Ovarian Cancer, Post Anti-PD-1 Melanoma, 2L+ Cervical Cancer",
+   "source": "https://clinicaltrials.gov/study/NCT05081609",
+   "trial_title": "A Study to Investigate Safety and Tolerability of TransCon IL-2 β/γ Alone or in Combination With Pembrolizumab and/or TransCon TLR7/8 Agonist or Other Anticance"
+  },
+  "readout_bhvn_2027-09-15": {
+   "ta": "Endocrinology",
+   "basis": "ClinicalTrials.gov conditions: Graves Disease",
+   "source": "https://clinicaltrials.gov/study/NCT06980649",
+   "trial_title": "Study of BHV-1300 in Graves' Disease"
+  },
+  "readout_cnta_2027-09-15": {
+   "ta": "CNS",
+   "basis": "ClinicalTrials.gov conditions: Narcolepsy Type 1, Narcolepsy Type 2",
+   "source": "https://clinicaltrials.gov/study/NCT07598708",
+   "trial_title": "A Study to Investigate the Effects of Cleminorexton Compared With Placebo in the Treatment of Participants With Central Disorders of Hypersomnolence"
+  },
+  "readout_cstl_2027-09-15": {
+   "ta": "Rare disease",
+   "basis": "ClinicalTrials.gov conditions: Dystrophic Epidermolysis Bullosa",
+   "source": "https://clinicaltrials.gov/study/NCT06892639",
+   "trial_title": "Evaluation of D-Fi for the Treatment of Wounds Due to DEB"
+  },
+  "readout_incy_2027-09-15": {
+   "ta": "Immunology",
+   "basis": "ClinicalTrials.gov conditions: Chronic Graft-versus-host-disease",
+   "source": "https://clinicaltrials.gov/study/NCT06585774",
+   "trial_title": "A Study to Evaluate Axatilimab and Corticosteroids as Initial Treatment for Chronic Graft-Versus-Host Disease"
+  },
+  "readout_maia_2027-09-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Carcinoma, Non-Small-Cell Lung",
+   "source": "https://clinicaltrials.gov/study/NCT05208944",
+   "trial_title": "THIO Sequenced With Cemiplimab in Advanced NSCLC"
+  },
+  "readout_tlsi_2027-09-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Locally Advanced Pancreatic Adenocarcinoma",
+   "source": "https://clinicaltrials.gov/study/NCT05607953",
+   "trial_title": "Pressure Enabled Intrapancreatic Delivery of SD-101 With Checkpoint Blockade for Locally Advanced Pancreatic Adenocarcinoma"
+  },
+  "readout_upb_2027-09-15": {
+   "ta": "Respiratory",
+   "basis": "ClinicalTrials.gov conditions: Severe Asthma",
+   "source": "https://clinicaltrials.gov/study/NCT06966479",
+   "trial_title": "A Long-Term Safety and Efficacy Study of Verekitug (UPB-101) in Adult Participants With Severe Asthma (VALOUR)"
+  },
+  "readout_ints_2027-12-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Sarcoma,Soft Tissue",
+   "source": "https://clinicaltrials.gov/study/NCT06263231",
+   "trial_title": "A Study to Investigate Efficacy & Safety of Intratumoral INT230-6 Compared to US Standard of Care in Adults With Soft Tissue Sarcomas (INVINCIBLE-3)"
+  },
+  "readout_incy_2026-08-15": {
+   "ta": "Dermatology",
+   "basis": "ClinicalTrials.gov conditions: NonSegmental Vitiligo",
+   "source": "https://clinicaltrials.gov/study/NCT06548360",
+   "trial_title": "A Study to Evaluate the Safety and Efficacy of Ruxolitinib Cream in Pediatric Participants With Nonsegmental Vitiligo"
+  },
+  "readout_crnx_2027-11-15": {
+   "ta": "Endocrinology",
+   "basis": "ClinicalTrials.gov conditions: Congenital Adrenal Hyperplasia, Classic Congenital Adrenal Hyperplasia",
+   "source": "https://clinicaltrials.gov/study/NCT06712823",
+   "trial_title": "An Extension Study to Evaluate Safety and Efficacy of Atumelnant in Participants With Congenital Adrenal Hyperplasia"
+  },
+  "readout_inbx_2026-10-15": {
+   "ta": "Oncology",
+   "basis": "ClinicalTrials.gov conditions: Solid Tumor, Non-Small Cell Lung Cancer, Head and Neck Cancer, Melanoma, Gastric Cancer, Renal Cell Carcinoma",
+   "source": "https://clinicaltrials.gov/study/NCT04198766",
+   "trial_title": "Study of INBRX-106 and INBRX-106 in Combination With Pembrolizumab (Keytruda®) in Subjects With Locally Advanced or Metastatic Solid Tumors (Hexavalent OX40 Ago"
+  },
+  "readout_alzn_2026-08-31": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: Phase II bipolar disorder topline",
+   "source": "SEC accession 0001214659-26-008832"
+  },
+  "readout_dftx_2026-09-30": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: primary endpoint ... change from baseline in HAM-A score (Hamilton Anxiety Rating Scale)",
+   "source": "SEC accession 0001104659-26-077349"
+  },
+  "readout_iron_2026-09-30": {
+   "ta": "Hematology",
+   "basis": "Sponsor SEC filing: RESTORE-PV Phase 2 study of DISC-3405 in polycythemia vera (PV)",
+   "source": "SEC accession 0001193125-26-325031"
+  },
+  "readout_kod_2026-09-30": {
+   "ta": "Ophthalmology",
+   "basis": "Sponsor SEC filing: KSI-501 ... DAYBREAK wet AMD study",
+   "source": "SEC accession 0001193125-26-211811"
+  },
+  "readout_mnkd_2026-09-30": {
+   "ta": "Respiratory",
+   "basis": "Sponsor SEC filing: MNKD-201 ... patients with idiopathic pulmonary fibrosis (IPF)",
+   "source": "SEC accession 0001193125-26-208910"
+  },
+  "readout_phvs_2026-09-30": {
+   "ta": "Rare disease",
+   "basis": "Sponsor SEC filing: deucrictibant ... prevention of HAE attacks (hereditary angioedema)",
+   "source": "SEC accession 0001193125-26-266666"
+  },
+  "readout_ppbt_2026-09-30": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: IM1305 ... CD3xTROP2xNKG2A Solid Tumors",
+   "source": "SEC accession 0001213900-26-031366"
+  },
+  "readout_roiv_2026-09-30": {
+   "ta": "Immunology",
+   "basis": "Sponsor SEC filing: brepocitinib in DM (dermatomyositis) expected by the end of September 2026",
+   "source": "SEC accession 0001635088-26-000061"
+  },
+  "readout_scyx_2026-09-30": {
+   "ta": "Infectious",
+   "basis": "Sponsor SEC filing: second-generation antifungal, SCY-247",
+   "source": "SEC accession 0001178253-26-000011"
+  },
+  "readout_vtgn_2026-09-30": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: fasedienol for the acute treatment of social anxiety disorder",
+   "source": "SEC accession 0001628280-26-043232"
+  },
+  "readout_alms_2026-09-30": {
+   "ta": "Immunology",
+   "basis": "Sponsor SEC filing: LUMUS Phase 2b trial in SLE (systemic lupus erythematosus)",
+   "source": "SEC accession 0001104659-26-078507"
+  },
+  "readout_alny_2026-12-31": {
+   "ta": "Infectious",
+   "basis": "Sponsor SEC filing: ECLIPSE 1 Phase 3 clinical trial in CHD (chronic hepatitis delta)",
+   "source": "SEC accession 0001628280-26-007497"
+  },
+  "readout_atai_2026-12-31": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: VLS-01: DMT buccal film for TRD (treatment-resistant depression)",
+   "source": "SEC accession 0001140361-26-020708"
+  },
+  "readout_kynb_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: FG-3246 for the treatment of patients with mCRPC",
+   "source": "SEC accession 0001193125-26-219374"
+  },
+  "readout_mirm_2026-12-31": {
+   "ta": "Infectious",
+   "basis": "Sponsor SEC filing: brelovitug AZURE-1 and AZURE-4 Phase 3 studies in HDV",
+   "source": "SEC accession 0001759425-26-000036"
+  },
+  "readout_pcvx_2026-12-31": {
+   "ta": "Infectious",
+   "basis": "Sponsor SEC filing: Prevention of Invasive Pneumococcal Disease and Pneumonia in Adults ... OPUS-1",
+   "source": "SEC accession 0001649094-26-000015"
+  },
+  "readout_rapp_2026-12-31": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: RAP-219 ... epilepsy franchise; Bipolar Mania Phase 2 Trial",
+   "source": "SEC accession 0001193125-26-210324"
+  },
+  "readout_rgnx_2026-12-31": {
+   "ta": "Ophthalmology",
+   "basis": "Sponsor SEC filing: sura-vec (RGX-314) for wet AMD",
+   "source": "SEC accession 0001193125-26-286825"
+  },
+  "readout_slgl_2026-12-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: SGT-610 ... prevention of new BCCs (basal cell carcinomas) in Gorlin syndrome",
+   "source": "SEC accession 0001178913-26-002963"
+  },
+  "readout_trax_2026-12-31": {
+   "ta": "Gastroenterology",
+   "basis": "Sponsor SEC filing: ANB033 gluten-challenge study ... prevention of mucosal damage (celiac disease setting)",
+   "source": "SEC accession 0001193125-26-224124"
+  },
+  "readout_ttrx_2026-12-31": {
+   "ta": "Dermatology",
+   "basis": "Sponsor SEC filing: GX-03 ... topical ... Moderate-to-Severe Atopic Dermatitis (AD) Q4 2026: Topline Readout",
+   "source": "SEC accession 0001213900-26-081996"
+  },
+  "readout_akts_2027-03-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: Phase 1b trial of AKY-1189 targeting Nectin-4 expressing tumors",
+   "source": "SEC accession 0001193125-26-216716"
+  },
+  "readout_crbp_2027-03-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: CRB-701 ... HNSCC (head and neck squamous cell carcinoma)",
+   "source": "SEC accession 0001193125-26-219707"
+  },
+  "readout_nmra_2027-03-31": {
+   "ta": "CNS",
+   "basis": "Sponsor SEC filing: Phase 2 study with NMRA-511 in Alzheimer's disease agitation",
+   "source": "SEC accession 0001193125-26-210310"
+  },
+  "readout_qncx_2027-03-31": {
+   "ta": "Respiratory",
+   "basis": "Sponsor SEC filing: LAM-001 as a treatment for SAPH (sarcoidosis-associated pulmonary hypertension)",
+   "source": "SEC accession 0001193125-26-324786"
+  },
+  "readout_tyra_2026-08-31": {
+   "ta": "Oncology",
+   "basis": "Sponsor SEC filing: SURF303 Phase 2a/b in low-grade upper tract urothelial carcinoma",
+   "source": "SEC accession 0001193125-26-220638"
+  }
+ },
+ "nct_mismatch": [
+  {
+   "id": "readout_howl_2026-07-15",
+   "row_drug": "WTX-330",
+   "nct": "NCT05479812",
+   "registry_title": "Dose Escalation and Expansion Study of WTX-124 as Monotherapy and in Combination With Pembrolizumab (Pembro) in Patients With Selected Advan"
+  },
+  {
+   "id": "readout_ltrn_2026-07-15",
+   "row_drug": "Tavocept(BNP7787) in combination with cisplatin ",
+   "nct": "NCT05933265",
+   "registry_title": "Study of LP-184 in Patients With Advanced Solid Tumors"
+  },
+  {
+   "id": "readout_ogn_2027-10-15",
+   "row_drug": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+   "nct": "NCT05504720",
+   "registry_title": "Evaluating Pembrolizumab, Trastuzumab and FLOT as Perioperative Treatment of HER2-positive, Localized Esophagogastric Adenocarcinoma"
+  },
+  {
+   "id": "readout_clrb_2026-08-15",
+   "row_drug": "NOV-002",
+   "nct": "NCT03478462",
+   "registry_title": "Dose Escalation Study of CLR 131 in Pediatric Relapsed/Refractory Malignant Tumors Including Neuroblastoma and Sarcomas"
+  },
+  {
+   "id": "readout_wve_2026-09-15",
+   "row_drug": "WVE-210201",
+   "nct": "NCT06405633",
+   "registry_title": "A Phase 1b/2a, Open-label Single Ascending Doses and Multiple Ascending Doses Study in Participants With Pi*ZZ AATD"
+  },
+  {
+   "id": "readout_annx_2026-10-15",
+   "row_drug": "Tanruprubart",
+   "nct": "NCT06510816",
+   "registry_title": "A Study Investigating the Efficacy and Safety of Intravitreal (IVT) Injections of Vonaprument (Formerly ANX007) in Participants With Dry Age"
+  },
+  {
+   "id": "readout_arvn_2027-11-15",
+   "row_drug": "ARV-471",
+   "nct": "NCT07023731",
+   "registry_title": "A Study to Evaluate ARV-806 in Adults With Advanced Cancer That Has the KRAS G12D Mutation"
+  },
+  {
+   "id": "readout_cgem_2026-11-15",
+   "row_drug": "CLN-081",
+   "nct": "NCT05879744",
+   "registry_title": "A Study of CLN-978 in Patients With Relapsed or Refractory (R/R) B Cell Non-Hodgkin Lymphoma (B-NHL)"
+  },
+  {
+   "id": "readout_eras_2026-11-15",
+   "row_drug": "Naporafenib",
+   "nct": "NCT04866134",
+   "registry_title": "A Study of ERAS-007 as Monotherapy or in Combination With ERAS-601 in Patients With Advanced or Metastatic Solid Tumors"
+  },
+  {
+   "id": "readout_cadl_2027-01-15",
+   "row_drug": "Aglatimagene Besadenovec",
+   "nct": "NCT03152318",
+   "registry_title": "A Study of the Treatment of Recurrent Malignant Glioma With rQNestin34.5v.2"
+  },
+  {
+   "id": "readout_agio_2027-03-15",
+   "row_drug": "Mitapivat",
+   "nct": "NCT04278781",
+   "registry_title": "AG-120 in People With IDH1 Mutant Chondrosarcoma"
+  },
+  {
+   "id": "readout_cldx_2027-03-15",
+   "row_drug": "Barzolvolimab",
+   "nct": "NCT03688178",
+   "registry_title": "DC Migration Study to Evaluate TReg Depletion In GBM Patients With and Without Varlilumab"
+  },
+  {
+   "id": "readout_cldx_2027-04-15",
+   "row_drug": "Barzolvolimab",
+   "nct": "NCT05349890",
+   "registry_title": "Personalized TCR-T: Study of Adoptively Transferred T-cell Receptor Gene-engineered T Cells (TCR-T)"
+  },
+  {
+   "id": "readout_nuvb_2027-03-15",
+   "row_drug": "safusidenib",
+   "nct": "NCT06334432",
+   "registry_title": "Safety and Efficacy Study of NUV-1511 in Adult Patients With Advanced Solid Tumors"
+  },
+  {
+   "id": "readout_iova_2026-07-15",
+   "row_drug": "Lifileucel plus Pembrolizumab",
+   "nct": "NCT06566092",
+   "registry_title": "Study of Autologous Tumor-Infiltrating Lymphocytes in Pediatric, Adolescent, and Young Adult Participants"
+  },
+  {
+   "id": "readout_iova_2027-04-15",
+   "row_drug": "Lifileucel plus Pembrolizumab",
+   "nct": "NCT03449108",
+   "registry_title": "LN-145 or LN-145-S1 in Treating Patients With Relapsed or Refractory Ovarian Cancer, Triple Negative Breast Cancer (TNBC), Anaplastic Thyroi"
+  },
+  {
+   "id": "readout_fdmt_2027-05-15",
+   "row_drug": "4D-150 IVT",
+   "nct": "NCT04483440",
+   "registry_title": "Dose Escalation Study of Intravitreal 4D-110 in Patients With Choroideremia"
+  },
+  {
+   "id": "readout_nvcr_2027-08-15",
+   "row_drug": "Temozolomide",
+   "nct": "NCT05764954",
+   "registry_title": "A Study of Tumor-Treating Fields (TTFields) in People With Lung Adenocarcinoma"
+  },
+  {
+   "id": "readout_tars_2027-10-15",
+   "row_drug": "TP-03",
+   "nct": "NCT07562087",
+   "registry_title": "A Study to Evaluate Safety and Efficacy of TP-05 in Healthy Participants With Tick Exposure"
+  },
+  {
+   "id": "readout_mygn_2027-11-15",
+   "row_drug": "Niraparib",
+   "nct": "NCT05642780",
+   "registry_title": "SKB264 in Combination With Pembrolizumab in Subjects With Selected Solid Tumors"
+  }
+ ]
+}

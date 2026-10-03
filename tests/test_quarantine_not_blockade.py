@@ -37,7 +37,7 @@ def main():
     st = steps(wf)
     names = [n for n, _ in st]
     for n, body in st:
-        if re.search(r"\bwatch_(fda_approvals|drug_approvals|fda_drugs_feed|sponsor_newswire)\.py", body):
+        if re.search(r"\bwatch_(fda_approvals|drug_approvals|fda_drugs_feed|sponsor_newswire|edgar_8k)\.py", body):
             if "WATCH_LEADS_JSONL" not in body:
                 fails.append(f"workflow step '{n}' runs a watcher without WATCH_LEADS_JSONL (a lead would fail the job)")
             if re.search(r"exit \$rc", body):

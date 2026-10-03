@@ -35,6 +35,13 @@ def main():
             for r in rows if r.get("type") == "PDUFA" and (r.get("_d") or {}).get("fda_action_source_url")
             and (r.get("_d") or {}).get("fda_action_date")
             and re.match(r"https://(www\.)?[a-z.]*fda\.gov/", (r.get("_d") or {}).get("fda_action_source_url"))}
+    # 2026-10-03: archive decision pages dated by Drugs@FDA (sync_archive_fda_dates.py) are FDA actions too
+    have = {(str(r.get("t") or "").upper(), str(r.get("dcd") or "")) for r in rows}
+    ap = os.path.join(HERE, "_fda_action_archive.json")
+    for slug, e in (json.load(io.open(ap, encoding="utf-8")) if os.path.exists(ap) else {}).items():
+        mm = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug)
+        if mm and e.get("date") and e.get("source_url") and os.path.exists(os.path.join(SITE, "fda-decision", slug, "index.html")):
+            acts.add((e.get("record") or e["source_url"], e["date"]))
     fails = []
     if stated != len(trs):
         fails.append(f"h1 states {stated}, table lists {len(trs)}")

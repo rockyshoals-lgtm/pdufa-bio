@@ -1,0 +1,205 @@
+{
+ "acks": [
+  {
+   "id": "readout_huma_2027-09-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2023-09-19); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ixhl_2026-12-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2025-05-20); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_calc_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (TERMINATED, primary completion ACTUAL 2026-04-06); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_eltx_2026-11-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-04-20); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_howl_2026-07-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05479812 is a different trial ('Dose Escalation and Expansion Study of WTX-124 as Monotherapy and in Combination With Pemb'), not WTX-330; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_immp_2026-10-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (TERMINATED, primary completion ACTUAL 2026-04-30); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_sngx_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (TERMINATED, primary completion ACTUAL 2026-05-22); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_agmb_2026-09-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-06-20); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ardx_2026-06-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-06-15); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_fth_2027-06-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-06-02); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_sion_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-06-25); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_trvi_2026-06-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-06-30); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_amgn_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-07-14); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ardx_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-07-07); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_crdf_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-07-16); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_eypt_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-07-13); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ilmn_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-07-30); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_iova_2026-07-15",
+   "reason": "Ruling 2026-10-03: the row's NCT06566092 is a different trial ('Study of Autologous Tumor-Infiltrating Lymphocytes in Pediatric, Adolescent, and Young Adu'), not Lifileucel plus Pembrolizumab; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_jspr_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (TERMINATED, primary completion ACTUAL 2026-07-21); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_jspr_2026-10-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-07-08); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ltrn_2026-07-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05933265 is a different trial ('Study of LP-184 in Patients With Advanced Solid Tumors'), not Tavocept(BNP7787) in combination with cisplatin ; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_ogn_2027-10-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05504720 is a different trial ('Evaluating Pembrolizumab, Trastuzumab and FLOT as Perioperative Treatment of HER2-positive'), not 150μg CFA (Elonva®) at stimulation day (SD) 1 an; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_ptct_2026-06-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-07-21); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_acrs_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-09-21); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_akba_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-08-12); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_apge_2026-12-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-08-29); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_bivi_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-08-06); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_clrb_2026-08-15",
+   "reason": "Ruling 2026-10-03: the row's NCT03478462 is a different trial ('Dose Escalation Study of CLR 131 in Pediatric Relapsed/Refractory Malignant Tumors Includi'), not NOV-002; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_grfs_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-07-07); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_kpti_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-05-22); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_tmo_2026-08-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-08-12); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_alec_2026-09-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (TERMINATED, primary completion ACTUAL 2026-05-14); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_apge_2026-09-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-09-17); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ardx_2026-09-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-08-20); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_wve_2026-09-15",
+   "reason": "Ruling 2026-10-03: the row's NCT06405633 is a different trial ('A Phase 1b/2a, Open-label Single Ascending Doses and Multiple Ascending Doses Study in Par'), not WVE-210201; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_annx_2026-10-15",
+   "reason": "Ruling 2026-10-03: the row's NCT06510816 is a different trial ('A Study Investigating the Efficacy and Safety of Intravitreal (IVT) Injections of Vonaprum'), not Tanruprubart; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_arvn_2027-11-15",
+   "reason": "Ruling 2026-10-03: the row's NCT07023731 is a different trial ('A Study to Evaluate ARV-806 in Adults With Advanced Cancer That Has the KRAS G12D Mutation'), not ARV-471; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_cgem_2026-11-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05879744 is a different trial ('A Study of CLN-978 in Patients With Relapsed or Refractory (R/R) B Cell Non-Hodgkin Lympho'), not CLN-081; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_eras_2026-11-15",
+   "reason": "Ruling 2026-10-03: the row's NCT04866134 is a different trial ('A Study of ERAS-007 as Monotherapy or in Combination With ERAS-601 in Patients With Advanc'), not Naporafenib; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_xncr_2026-12-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-07-13); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_cadl_2027-01-15",
+   "reason": "Ruling 2026-10-03: the row's NCT03152318 is a different trial ('A Study of the Treatment of Recurrent Malignant Glioma With rQNestin34.5v.2'), not Aglatimagene Besadenovec; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_agio_2027-03-15",
+   "reason": "Ruling 2026-10-03: the row's NCT04278781 is a different trial ('AG-120 in People With IDH1 Mutant Chondrosarcoma'), not Mitapivat; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_cldx_2027-03-15",
+   "reason": "Ruling 2026-10-03: the row's NCT03688178 is a different trial ('DC Migration Study to Evaluate TReg Depletion In GBM Patients With and Without Varlilumab'), not Barzolvolimab; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_nuvb_2027-03-15",
+   "reason": "Ruling 2026-10-03: the row's NCT06334432 is a different trial ('Safety and Efficacy Study of NUV-1511 in Adult Patients With Advanced Solid Tumors'), not safusidenib; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_cldx_2027-04-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05349890 is a different trial ('Personalized TCR-T: Study of Adoptively Transferred T-cell Receptor Gene-engineered T Cell'), not Barzolvolimab; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_iova_2027-04-15",
+   "reason": "Ruling 2026-10-03: the row's NCT03449108 is a different trial ('LN-145 or LN-145-S1 in Treating Patients With Relapsed or Refractory Ovarian Cancer, Tripl'), not Lifileucel plus Pembrolizumab; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_fdmt_2027-05-15",
+   "reason": "Ruling 2026-10-03: the row's NCT04483440 is a different trial ('Dose Escalation Study of Intravitreal 4D-110 in Patients With Choroideremia'), not 4D-150 IVT; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_nvcr_2027-08-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05764954 is a different trial ('A Study of Tumor-Treating Fields (TTFields) in People With Lung Adenocarcinoma'), not Temozolomide; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_tars_2027-10-15",
+   "reason": "Ruling 2026-10-03: the row's NCT07562087 is a different trial ('A Study to Evaluate Safety and Efficacy of TP-05 in Healthy Participants With Tick Exposur'), not TP-03; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_mygn_2027-11-15",
+   "reason": "Ruling 2026-10-03: the row's NCT05642780 is a different trial ('SKB264 in Combination With Pembrolizumab in Subjects With Selected Solid Tumors'), not Niraparib; registry signals on it are not facts about this row. NCT needs a hand fix."
+  }
+ ],
+ "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."
+}

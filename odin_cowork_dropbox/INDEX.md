@@ -9,8 +9,10 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-03b BUILDER (tiers 2 3 4)** — `2026-10-03b_BUILDER_tiers_2_3_4.md` — 2026-10-03, written ~16:00 Pacific = 19:00 Eastern = 23:00 UTC. RULE 1: every time below carries its zone. Facts and file contents only; not investment advice.
 - **2026-10-03b BUILDER (ORDER consolidated)** — `2026-10-03b_BUILDER_ORDER_consolidated.md` — Auditor, 2026-10-03, 19:00 UTC = 15:00 Eastern. Per RULE 1 every time carries its zone.
 - **2026-10-03 audit (audit why the site stopped)** — `2026-10-03_audit_why_the_site_stopped.md` — 2026-10-03, measured 18:11 UTC = 14:11 Eastern (Saturday). Per RULE 1 every time carries its zone.
+- **2026-10-03 note (RESEARCH where the accurate dates actually live)** — `2026-10-03_RESEARCH_where_the_accurate_dates_actually_live.md` — Classification: RESEARCH + BUILD DIRECTION. From the trading-side research assistant.
 - **2026-10-03 BUILDER (one lead holds one row)** — `2026-10-03_BUILDER_one_lead_holds_one_row.md` — 2026-10-03, written ~12:30 Pacific = 15:30 Eastern = 19:30 UTC. RULE 1: every time below carries its zone. Facts and file contents only; not investment advice.
 - **2026-09-27 audit (audit seo currency)** — `2026-09-27_audit_seo_currency.md` — 2026-09-27, measured 20:05 UTC = 16:05 Eastern (Sunday). Per RULE 1 every time carries its zone.
 - **2026-09-27 BUILDER (the FDA feed is first and now we read it)** — `2026-09-27_BUILDER_the_FDA_feed_is_first_and_now_we_read_it.md` — 2026-09-27, written ~14:30 Pacific = 17:30 Eastern = 21:30 UTC. Per RULE 1 every time carries its zone. Facts and file contents only; not investment advice.

@@ -2223,11 +2223,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/capivasertib",
-   "destination": "/drug/truqap",
-   "permanent": true
-  },
-  {
    "source": "/drug/cemiplimab-rwlc",
    "destination": "/drug/libtayo",
    "permanent": true
@@ -2383,11 +2378,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/garetosmab-grts",
-   "destination": "/drug/pasatru",
-   "permanent": true
-  },
-  {
    "source": "/drug/gemcitabine-intravesical-system",
    "destination": "/drug/inlexzo",
    "permanent": true
@@ -2513,6 +2503,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/obinutuzumab",
+   "destination": "/drug/gazyva",
+   "permanent": true
+  },
+  {
    "source": "/drug/onasemnogene-abeparvovec-brve",
    "destination": "/drug/itvisma",
    "permanent": true
@@ -2540,11 +2535,6 @@
   {
    "source": "/drug/pariglasgene-brecaparvovec",
    "destination": "/drug/dtx401",
-   "permanent": true
-  },
-  {
-   "source": "/drug/pariglasgene-brecaparvovec-opnr",
-   "destination": "/drug/genglycos",
    "permanent": true
   },
   {
@@ -2725,11 +2715,6 @@
   {
    "source": "/drug/ustekinumab-aekn",
    "destination": "/drug/selarsdi",
-   "permanent": true
-  },
-  {
-   "source": "/drug/veligrotug-vvze",
-   "destination": "/drug/lumvoa",
    "permanent": true
   },
   {

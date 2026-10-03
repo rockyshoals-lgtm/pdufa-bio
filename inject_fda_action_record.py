@@ -48,6 +48,19 @@ def main():
     a = ap.parse_args()
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    # Audit 2026-10-03 (2.1): archive decision pages with no API row, dated by Drugs@FDA through
+    # sync_archive_fda_dates.py (one unambiguous decision-class approval 0-4 days before the
+    # announcement), carry the same block. Shaped as pseudo-rows so one renderer serves both.
+    arch_p = os.path.join(HERE, "_fda_action_archive.json")
+    arch = json.load(io.open(arch_p, encoding="utf-8")) if os.path.exists(arch_p) else {}
+    have = {(str(r.get("t") or "").upper(), str(r.get("dcd") or "")) for r in rows}
+    for slug, ent in sorted(arch.items()):
+        m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug)
+        if not (m and ent.get("date") and (m.group(1), m.group(2)) not in have):
+            continue
+        rows.append({"t": m.group(1), "dcd": m.group(2), "oc": "Approved",
+                     "_d": {"fda_action_source_url": ent.get("source_url"), "fda_action_date": ent["date"],
+                            "fda_action_record": ent.get("record")}})
     n = skipped = 0
     for r in rows:
         d = r.get("_d") or {}
@@ -69,7 +82,8 @@ def main():
                  f'<b>FDA record of the action:</b> the FDA {verb} on <b>{pretty(fd)}</b>, per '
                  f'<a href="{html.escape(url, quote=True)}" rel="noopener" style="color:#e3ba5e">'
                  f'{html.escape(rec)} ({kind})</a>.{ann} Action dates on pdufa.bio come from the '
-                 f'FDA\'s own record, not the press release.</p>{E}')
+                 f'FDA\'s own record, not the press release. Every FDA action we hold, by FDA date: '
+                 f'<a href="/fda-approval-letters" style="color:#e3ba5e">FDA approval letters</a>.</p>{E}')
         if B in doc:
             new = doc.split(B, 1)[0] + block + doc.split(E, 1)[1]
         else:

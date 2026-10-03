@@ -11,20 +11,21 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:readout_agio_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~AGIO Readout: Mitapivat
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T07055243 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hem
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT07055243 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/AGIO
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_agmb_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~AGMB Readout: AGMB-129
@@ -38,20 +39,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ardx_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~ARDX Readout: Tenapanor
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06810167 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Gas
+ troenterology. Status: Estimated. Primary source: https://clinicaltrials.g
+ ov/study/NCT06810167 Source: pdufa.bio. Informational only\, not investmen
+ t advice.
 URL:https://www.pdufa.bio/ticker/ARDX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bmy_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~BMY Readout: Nivolumab
@@ -64,7 +66,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_celc_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~CELC Readout: Gedatolisib
@@ -77,7 +79,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_clls_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~CLLS Readout: UCART22
@@ -91,20 +93,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_fth_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~FTH Readout: SNS-101
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05864144 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05864144 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/FTH
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_jazz_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~JAZZ Readout: Zanidatamab
@@ -117,7 +120,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_legn_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~LEGN Readout: LCAR-B38M CAR-T Cell
@@ -131,20 +134,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sion_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~SION Readout: SION-719
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T07108153 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Res
+ piratory. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT07108153 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/SION
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -157,20 +161,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_trvi_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~TRVI Readout: Nalbuphine ER Tablets
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T07036029 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Res
+ piratory. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT07036029 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/TRVI
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_wve_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~WVE Readout: WVE-210201
@@ -184,7 +189,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_gsk_2026-06-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260618
 DTEND;VALUE=DATE:20260619
 SUMMARY:GSK PDUFA: Tebipenem HBr (SPR994) - (PIVOT-PO)
@@ -198,7 +203,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_spro_2026-06-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260618
 DTEND;VALUE=DATE:20260619
 SUMMARY:SPRO PDUFA: Tebipenem HBr (SPR994) - (PIVOT-PO)
@@ -212,7 +217,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_achv_2026-06-20@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260620
 DTEND;VALUE=DATE:20260621
 SUMMARY:ACHV PDUFA: Cytisinicline - (ORCA-3)
@@ -226,7 +231,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_arqt_2026-06-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260629
 DTEND;VALUE=DATE:20260630
 SUMMARY:ARQT PDUFA: ZORYVE (roflumilast) Cream 0.3%
@@ -240,7 +245,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_lnth_2026-06-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260629
 DTEND;VALUE=DATE:20260630
 SUMMARY:LNTH PDUFA: LNTH-2501 (Gallium-68 edotreotide)
@@ -254,7 +259,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_uncy_2026-06-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260629
 DTEND;VALUE=DATE:20260630
 SUMMARY:UNCY PDUFA: Oxylanthanum Carbonate (OLC)
@@ -268,7 +273,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_azn_2026-06-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260701
 SUMMARY:~AZN PDUFA: Truqap - (CAPItello-281)
@@ -283,7 +288,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_ions_2026-06-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260630
 DTEND;VALUE=DATE:20260701
 SUMMARY:IONS PDUFA: Olezarsen - (CORE)
@@ -297,7 +302,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_vrdn_2026-06-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260630
 DTEND;VALUE=DATE:20260701
 SUMMARY:VRDN PDUFA: Veligrotug (VRDN-001) - (THRIVE-2)
@@ -311,7 +316,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_vera_2026-07-07@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260707
 DTEND;VALUE=DATE:20260708
 SUMMARY:VERA PDUFA: Atacicept - (ORIGIN 3)
@@ -325,7 +330,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_cort_2026-03-25@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260711
 DTEND;VALUE=DATE:20260712
 SUMMARY:CORT PDUFA: Relacorilant + nab-paclitaxel - (ROSELLA)
@@ -339,33 +344,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_amgn_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~AMGN Readout: Tezepelumab
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05583227 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Gas
+ troenterology. Status: Estimated. Primary source: https://clinicaltrials.g
+ ov/study/NCT05583227 Source: pdufa.bio. Informational only\, not investmen
+ t advice.
 URL:https://www.pdufa.bio/ticker/AMGN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_anip_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~ANIP Readout: Yutiq
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05486468 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Oph
+ thalmology. Status: Estimated. Primary source: https://clinicaltrials.gov/
+ study/NCT05486468 Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/ANIP
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ardx_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~ARDX Readout: Tenapanor
@@ -379,7 +386,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_axsm_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~AXSM Readout: AXS-14
@@ -392,20 +399,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cers_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~CERS Readout: S-303 Treated Red Blood Cells
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T03037164 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hem
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT03037164 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/CERS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_crdf_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~CRDF Readout: Onvansertib
@@ -419,7 +427,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_dwtx_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~DWTX Readout: Halneuron
@@ -432,7 +440,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_elvn_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~ELVN Readout: ELVN-002
@@ -446,7 +454,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_exel_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~EXEL Readout: Cabozantinib
@@ -459,7 +467,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_eypt_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~EYPT Readout: EYP-1901
@@ -473,7 +481,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ilmn_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~ILMN Readout: 18F-MFBG
@@ -486,7 +494,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_iova_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~IOVA Readout: Lifileucel plus Pembrolizumab
@@ -499,7 +507,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_jazz_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~JAZZ Readout: Lurbinectedin
@@ -512,33 +520,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_jspr_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~JSPR Readout: Briquilimab
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06736262 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Imm
+ unology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06736262 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/JSPR
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_jspr_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~JSPR Readout: Briquilimab
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06162728 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Imm
+ unology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06162728 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/JSPR
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ltrn_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~LTRN Readout: Tavocept(BNP7787) in combination with cisplatin
@@ -551,7 +561,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ogn_2027-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~OGN Readout: 150μg CFA (Elonva®) at stimulation day (SD) 1 an
@@ -564,20 +574,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ptct_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~PTCT Readout: PTC923
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05166161 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Met
+ abolic. Status: Estimated. Primary source: https://clinicaltrials.gov/stud
+ y/NCT05166161 Source: pdufa.bio. Informational only\, not investment advic
+ e.
 URL:https://www.pdufa.bio/ticker/PTCT
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rare_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~RARE Readout: GTX-102
@@ -590,7 +601,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20260801
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -603,7 +614,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_mrk_2026-07-16@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260716
 DTEND;VALUE=DATE:20260717
 SUMMARY:MRK PDUFA: Lipfendra (enlicitide decanoate)
@@ -619,7 +630,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_celc_2026-07-17@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260717
 DTEND;VALUE=DATE:20260718
 SUMMARY:CELC PDUFA: Gedatolisib with Fulvestrant - (VIKTORIA-1)
@@ -633,7 +644,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_otsky_2026-07-24@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260724
 DTEND;VALUE=DATE:20260725
 SUMMARY:OTSKY PDUFA: Centanafadine
@@ -647,7 +658,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_mnkd_2026-07-26@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260726
 DTEND;VALUE=DATE:20260727
 SUMMARY:MNKD PDUFA: FUROSCIX ReadyFlow Autoinjector (SCP-111)
@@ -661,7 +672,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mplt_2026-08-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260727
 DTEND;VALUE=DATE:20260728
 SUMMARY:MPLT Readout: ML-007C-MA Phase 2 ZEPHYR topline (schizophrenia)
@@ -675,7 +686,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:adcomm_capr_2026-07-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260729
 DTEND;VALUE=DATE:20260730
 SUMMARY:CAPR AdComm: Deramiocel (CTGTAC) — DMD
@@ -686,7 +697,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_otlk_2026-07-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260729
 DTEND;VALUE=DATE:20260730
 SUMMARY:OTLK PDUFA: bevacizumab
@@ -700,7 +711,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:adcomm_repl_2026-07-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260730
 DTEND;VALUE=DATE:20260731
 SUMMARY:REPL AdComm: RP1 (CTGTAC) — Melanoma
@@ -711,7 +722,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_vtrs_2026-07-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260730
 DTEND;VALUE=DATE:20260731
 SUMMARY:VTRS PDUFA: MR-100A-01(Low dose estrogen weekly patch (150 mcg nore
@@ -726,7 +737,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_repl_2026-08-02@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260802
 DTEND;VALUE=DATE:20260803
 SUMMARY:REPL PDUFA: TUDRIQEV (vusolimogene oderparepvec-wtpg) plus nivoluma
@@ -741,7 +752,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_mrna_2026-08-05@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260805
 DTEND;VALUE=DATE:20260806
 SUMMARY:MRNA PDUFA: MFLUSIVA (Influenza Vaccine\, mRNA / mRNA-1010)
@@ -755,7 +766,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tenx_2026-08-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260810
 DTEND;VALUE=DATE:20260811
 SUMMARY:TENX Readout: TNX-103 (oral levosimendan) Phase 3 LEVEL topline
@@ -769,7 +780,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_lnth_2026-08-13@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260813
 DTEND;VALUE=DATE:20260814
 SUMMARY:LNTH PDUFA: MK-6240
@@ -783,7 +794,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_acrs_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~ACRS Readout: A-101
@@ -797,7 +808,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_akba_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~AKBA Readout: Vadadustat
@@ -811,7 +822,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_apge_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~APGE Readout: APG777
@@ -825,33 +836,34 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bivi_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~BIVI Readout: NE3107
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06847191 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 6847191 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/BIVI
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bmrn_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~BMRN Readout: Vosoritide
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06455059 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Rar
+ e disease. Status: Estimated. Primary source: https://clinicaltrials.gov/s
+ tudy/NCT06455059 Source: pdufa.bio. Informational only\, not investment ad
+ vice.
 URL:https://www.pdufa.bio/ticker/BMRN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_clrb_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~CLRB Readout: NOV-002
@@ -864,33 +876,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_grfs_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~GRFS Readout: ALPHA-1 MP
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T01983241 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Res
+ piratory. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT01983241 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/GRFS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ivvd_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~IVVD Readout: VYD2311
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T07298434 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Inf
+ ectious. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT07298434 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/IVVD
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kpti_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~KPTI Readout: Selinexor
@@ -904,7 +918,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kytx_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~KYTX Readout: KYV-101 KYSA-1 Phase 1 (lupus nephritis) - trial ter
@@ -919,20 +933,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mane_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~MANE Readout: VDPHL01
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06527365 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Der
+ matology. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06527365 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/MANE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mrk_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~MRK Readout: Ensifentrine
@@ -945,7 +960,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nvo_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~NVO Readout: Semaglutide
@@ -958,7 +973,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tmo_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~TMO Readout: MK-7240
@@ -972,20 +987,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vstm_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260801
 DTEND;VALUE=DATE:20260901
 SUMMARY:~VSTM Readout: avutometinib
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05669482 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05669482 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/VSTM
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_bmy_2026-08-17@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260817
 DTEND;VALUE=DATE:20260818
 SUMMARY:BMY PDUFA: iberdomide\, daratumumab\, and dexamethasone vs. daratum
@@ -1000,7 +1016,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_amlx_2026-08-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260818
 DTEND;VALUE=DATE:20260819
 SUMMARY:AMLX Readout: Avexitide
@@ -1015,7 +1031,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_rare_2026-08-23@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260823
 DTEND;VALUE=DATE:20260824
 SUMMARY:RARE PDUFA: DTX401 AAV gene therapy (pariglasgene brecaparvovec)
@@ -1029,7 +1045,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_jazz_2026-08-25@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260825
 DTEND;VALUE=DATE:20260826
 SUMMARY:JAZZ PDUFA: Ziihera (zanidatamab-hrii) - (HERIZON-GEA-01)
@@ -1043,7 +1059,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_zyme_2026-08-25@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260825
 DTEND;VALUE=DATE:20260826
 SUMMARY:ZYME PDUFA: Ziihera (zanidatamab-hrii) - (HERIZON-GEA-01)
@@ -1057,7 +1073,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_gild_2026-08-27@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260827
 DTEND;VALUE=DATE:20260828
 SUMMARY:GILD PDUFA: Bictegravir and Lenacapavir - (ARTISTRY-2)
@@ -1071,7 +1087,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_esc_2026-08-28@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260828
 DTEND;VALUE=DATE:20260829
 SUMMARY:ESC Conference: European Society of Cardiology Congress
@@ -1082,7 +1098,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_regn_2026-08-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260901
 SUMMARY:REGN PDUFA: Garetosmab - (OPTIMA)
@@ -1096,7 +1112,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_ers_2026-09-05@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260905
 DTEND;VALUE=DATE:20260906
 SUMMARY:ERS Conference: European Respiratory Society Congress
@@ -1107,7 +1123,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_tlx_2026-09-11@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260912
 SUMMARY:TLX PDUFA: Pixclara (floretyrosine F 18\; TLX101-Px)
@@ -1121,7 +1137,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_wclc_2026-09-12@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260913
 SUMMARY:WCLC Conference: IASLC World Conference on Lung Cancer
@@ -1132,7 +1148,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_alec_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ALEC Readout: AL001
@@ -1145,20 +1161,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_apge_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~APGE Readout: APG777
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06920901 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Res
+ piratory. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06920901 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/APGE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ardx_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ARDX Readout: Tenapanor
@@ -1172,7 +1189,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_arqt_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ARQT Readout: Topical Roflumilast
@@ -1185,7 +1202,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_avir_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~AVIR Readout: Bemnifosbuvir-Ruzasvir
@@ -1199,7 +1216,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bhvn_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~BHVN Readout: Taldefgrobep Alfa
@@ -1213,7 +1230,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_biib_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~BIIB Readout: Litifilimab
@@ -1226,7 +1243,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cccc_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~CCCC Readout: Cemsidomide
@@ -1240,7 +1257,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cgem_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~CGEM Readout: CLN-081
@@ -1254,7 +1271,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_exel_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~EXEL Readout: Cabozantinib
@@ -1267,7 +1284,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_gild_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~GILD Readout: Sacituzumab Govitecan
@@ -1280,7 +1297,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ibrx_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~IBRX Readout: ALT-803
@@ -1294,20 +1311,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_immp_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~IMMP Readout: eftilagimod alfa
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T03252938 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT03252938 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/IMMP
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kpti_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~KPTI Readout: Selinexor
@@ -1321,20 +1339,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mltx_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~MLTX Readout: Sonelokimab
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06768671 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Der
+ matology. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06768671 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/MLTX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mrk_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~MRK Readout: Pembrolizumab
@@ -1347,33 +1366,34 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sln_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~SLN Readout: SLN124
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05499013 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hem
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT05499013 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/SLN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_supn_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~SUPN Readout: SPN-812
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T02736656 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 2736656 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/SUPN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vera_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~VERA Readout: Atacicept
@@ -1386,7 +1406,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vnda_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~VNDA Readout: VSJ-110
@@ -1399,7 +1419,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_wve_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~WVE Readout: WVE-210201
@@ -1412,7 +1432,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_lly_2026-09-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260919
 SUMMARY:LLY PDUFA: Inluriyo (imlunestrant) + Verzenio (abemaciclib) - (EMBE
@@ -1427,7 +1447,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_nuvl_2026-09-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260919
 SUMMARY:NUVL PDUFA: Zidesamtinib (NVL-520) - (ARROS-1)
@@ -1441,7 +1461,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_rare_2026-09-19@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:RARE PDUFA: FAYUVI (rebisufligene etisparvovec-hopf\; UX111 / ABO-1
@@ -1456,7 +1476,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_mrk_2026-09-21@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260921
 DTEND;VALUE=DATE:20260922
 SUMMARY:MRK PDUFA: WINREVAIR (sotatercept-csrk) - (HYPERION)
@@ -1470,7 +1490,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_ions_2026-09-22@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260922
 DTEND;VALUE=DATE:20260923
 SUMMARY:IONS PDUFA: Zilganersen (ION373)
@@ -1484,7 +1504,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_aacr-panc_2026-09-25@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260925
 DTEND;VALUE=DATE:20260926
 SUMMARY:AACR-PANC Conference: AACR Conference on Pancreatic Cancer: New Fro
@@ -1495,8 +1515,33 @@ URL:https://www.pdufa.bio/conferences
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:pdufa_rhhby_2026-09-25@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:RHHBY PDUFA: Gazyva (obinutuzumab) - idiopathic nephrotic syndrome
+DESCRIPTION:Confirmed date. Area: Nephrology. Status: Decided. Outcome: App
+ roved. Across 1\,858 FDA decisions since 2020\, the median peak run-up fro
+ m T-120 was 18.0% and the median move from T-120 to the day before the dec
+ ision was 2.2%. Past behaviour\, not a forecast. Source: pdufa.bio. Inform
+ ational only\, not investment advice.
+URL:https://www.pdufa.bio/fda-decision/RHHBY-2026-09-25
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:conf_astro_2026-09-26@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:ASTRO Conference: ASTRO Annual Meeting
+DESCRIPTION:Confirmed date. Area: Radiation oncology. Status: Ended. Source
+ : pdufa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:pdufa_incy_2026-09-26@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260926
 DTEND;VALUE=DATE:20260927
 SUMMARY:INCY PDUFA: Atebrioz (zilurgisertib)
@@ -1510,7 +1555,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_mirm_2026-09-26@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260926
 DTEND;VALUE=DATE:20260927
 SUMMARY:MIRM PDUFA: Atebrioz (zilurgisertib)
@@ -1523,19 +1568,8 @@ URL:https://www.pdufa.bio/ticker/MIRM
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:conf_astro_2026-09-26@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20260926
-DTEND;VALUE=DATE:20260927
-SUMMARY:ASTRO Conference: ASTRO Annual Meeting
-DESCRIPTION:Confirmed date. Area: Radiation oncology. Status: Ended. Source
- : pdufa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:pdufa_bfri_2026-09-28@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
 SUMMARY:BFRI PDUFA: Ameluz (aminolevulinic acid hydrochloride) with RhodoLE
@@ -1550,7 +1584,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_easd_2026-09-28@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
 SUMMARY:EASD Conference: European Association for the Study of Diabetes
@@ -1561,7 +1595,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_wms_2026-09-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260929
 DTEND;VALUE=DATE:20260930
 SUMMARY:WMS Conference: World Muscle Society Congress
@@ -1573,7 +1607,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_aard_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~AARD Readout: ARD-101 readout
@@ -1586,7 +1620,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_abcl_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ABCL Readout: ABCL635 readout
@@ -1599,33 +1633,34 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_alms_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ALMS Readout: anifrolumab readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001847367/000110465926078507/tm2619143d1_ex99-1
- .htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Immunology. Status: Guided. Primary sour
+ ce: https://www.sec.gov/Archives/edgar/data/0001847367/000110465926078507/
+ tm2619143d1_ex99-1.htm Source: pdufa.bio. Informational only\, not investm
+ ent advice.
 URL:https://www.pdufa.bio/ticker/ALMS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_alzn_2026-08-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ALZN Readout: AL001 Phase II topline (bipolar disorder)
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001677077/000121465926008832/az72426110k.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: CNS. Status: Guided. Primary source: htt
+ ps://www.sec.gov/Archives/edgar/data/0001677077/000121465926008832/az72426
+ 110k.htm Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/ALZN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bolt_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~BOLT Readout: BDC-4182 readout
@@ -1638,7 +1673,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bsem_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~BSEM Readout: Clinical readout
@@ -1650,20 +1685,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_dftx_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~DFTX Readout: DT120 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001813814/000110465926077349/tm2618395-2_424b5.
- htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: CNS. Status: Guided. Primary source: htt
+ ps://www.sec.gov/Archives/edgar/data/0001813814/000110465926077349/tm26183
+ 95-2_424b5.htm Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/DFTX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_evmn_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~EVMN Readout: EVO756 readout
@@ -1676,7 +1712,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_gpcr_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~GPCR Readout: ACCG-2671 readout
@@ -1689,7 +1725,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_immx_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~IMMX Readout: NXC-201 readout
@@ -1702,33 +1738,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_iron_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~IRON Readout: DISC-3405 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001816736/000119312526325031/iron-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Hematology. Status: Guided. Primary sour
+ ce: https://www.sec.gov/Archives/edgar/data/0001816736/000119312526325031/
+ iron-ex99_1.htm Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/IRON
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kod_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~KOD Readout: KSI-501 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001468748/000119312526211811/kod-ex99_1.htm Sou
- rce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Ophthalmology. Status: Guided. Primary s
+ ource: https://www.sec.gov/Archives/edgar/data/0001468748/0001193125262118
+ 11/kod-ex99_1.htm Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/KOD
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mbrx_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~MBRX Readout: Annamycin readout
@@ -1742,20 +1780,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mnkd_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~MNKD Readout: MNKD-201 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0000899460/000119312526208910/mnkd-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Respiratory. Status: Guided. Primary sou
+ rce: https://www.sec.gov/Archives/edgar/data/0000899460/000119312526208910
+ /mnkd-ex99_1.htm Source: pdufa.bio. Informational only\, not investment ad
+ vice.
 URL:https://www.pdufa.bio/ticker/MNKD
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_msle_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~MSLE Readout: Clinical readout
@@ -1767,7 +1806,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ocgn_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~OCGN Readout: OCU400 readout
@@ -1780,7 +1819,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_pfe_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~PFE PDUFA: Brepocitinib (VALOR)
@@ -1795,20 +1834,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_phvs_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~PHVS Readout: deucrictibant readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001830487/000119312526266666/phvs-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Rare disease. Status: Guided. Primary so
+ urce: https://www.sec.gov/Archives/edgar/data/0001830487/00011931252626666
+ 6/phvs-ex99_1.htm Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/PHVS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_pmn_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~PMN Readout: PMN310 readout
@@ -1821,20 +1861,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ppbt_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~PPBT Readout: IM1305 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001614744/000121390026031366/ea028235901ex99-1.
- htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Oncology. Status: Guided. Primary source
+ : https://www.sec.gov/Archives/edgar/data/0001614744/000121390026031366/ea
+ 028235901ex99-1.htm Source: pdufa.bio. Informational only\, not investment
+  advice.
 URL:https://www.pdufa.bio/ticker/PPBT
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_ptgx_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~PTGX PDUFA: Rusfertide - (REVIVE)
@@ -1849,7 +1890,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_roiv_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ROIV PDUFA: Brepocitinib - (VALOR)
@@ -1864,34 +1905,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_roiv_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20261001
 SUMMARY:~ROIV Readout: brepocitinib readout
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Status: G
- uided. Primary source: https://www.sec.gov/Archives/edgar/data/0001635088/
- 000163508826000061/roiv-20260331.htm Source: pdufa.bio. Informational only
- \, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Imm
+ unology. Status: Guided. Primary source: https://www.sec.gov/Archives/edga
+ r/data/0001635088/000163508826000061/roiv-20260331.htm Source: pdufa.bio. 
+ Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/ROIV
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_scyx_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~SCYX Readout: SCY-247 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001178253/000117825326000011/scyx-ex10_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Infectious. Status: Guided. Primary sour
+ ce: https://www.sec.gov/Archives/edgar/data/0001178253/000117825326000011/
+ scyx-ex10_1.htm Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/SCYX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_srrk_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:SRRK PDUFA: ISEMBYLD (apitegromab-mstn) - (SAPPHIRE)
@@ -1907,7 +1949,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sttk_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~STTK Readout: SL-846 readout
@@ -1920,7 +1962,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_syre_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~SYRE Readout: SPY001 readout
@@ -1933,7 +1975,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_tak_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~TAK PDUFA: Oveporexton (TAK-861-2001)
@@ -1948,7 +1990,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tecx_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~TECX Readout: TX2100 readout
@@ -1961,7 +2003,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vktx_vanquish2_2026q3@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~VKTX Readout: VANQUISH-2 Phase 3 (VK2735) topline
@@ -1973,20 +2015,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vtgn_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~VTGN Readout: fasedienol readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001411685/000162828026043232/vtgn-20260615xex99
- 1.htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: CNS. Status: Guided. Primary source: htt
+ ps://www.sec.gov/Archives/edgar/data/0001411685/000162828026043232/vtgn-20
+ 260615xex991.htm Source: pdufa.bio. Informational only\, not investment ad
+ vice.
 URL:https://www.pdufa.bio/ticker/VTGN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_whwk_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~WHWK Readout: HWK-007 readout
@@ -1999,7 +2042,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_xene_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20260701
 DTEND;VALUE=DATE:20261001
 SUMMARY:~XENE Readout: XEN1701 readout
@@ -2011,8 +2054,42 @@ URL:https://www.pdufa.bio/ticker/XENE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:conf_aao_2026-10-09@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:AAO Conference: American Academy of Ophthalmology Annual Meeting
+DESCRIPTION:Confirmed date. Area: Ophthalmology and ocular gene therapy. St
+ atus: Scheduled. Source: pdufa.bio. Informational only\, not investment ad
+ vice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:conf_acg_2026-10-09@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:ACG Conference: American College of Gastroenterology Annual Meeting
+DESCRIPTION:Confirmed date. Area: Gastroenterology. Status: Scheduled. Sour
+ ce: pdufa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:conf_asbmr_2026-10-09@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:ASBMR Conference: American Society for Bone and Mineral Research
+DESCRIPTION:Confirmed date. Area: Bone and mineral. Status: Scheduled. Sour
+ ce: pdufa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:pdufa_rhhby_2026-10-09@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261010
 SUMMARY:RHHBY PDUFA: Tecentriq (atezolizumab) adjuvant - (stage III colon)
@@ -2025,42 +2102,8 @@ URL:https://www.pdufa.bio/ticker/RHHBY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:conf_aao_2026-10-09@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261010
-SUMMARY:AAO Conference: American Academy of Ophthalmology Annual Meeting
-DESCRIPTION:Confirmed date. Area: Ophthalmology and ocular gene therapy. St
- atus: Scheduled. Source: pdufa.bio. Informational only\, not investment ad
- vice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:conf_acg_2026-10-09@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261010
-SUMMARY:ACG Conference: American College of Gastroenterology Annual Meeting
-DESCRIPTION:Confirmed date. Area: Gastroenterology. Status: Scheduled. Sour
- ce: pdufa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:conf_asbmr_2026-10-09@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261010
-SUMMARY:ASBMR Conference: American Society for Bone and Mineral Research
-DESCRIPTION:Confirmed date. Area: Bone and mineral. Status: Scheduled. Sour
- ce: pdufa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:pdufa_mrk_2026-10-10@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261010
 DTEND;VALUE=DATE:20261011
 SUMMARY:MRK PDUFA: Ifinatamab deruxtecan (I-DXd)
@@ -2074,7 +2117,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_abos_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~ABOS Readout: sabirnetug
@@ -2087,7 +2130,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_annx_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~ANNX Readout: Tanruprubart
@@ -2100,7 +2143,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_biib_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~BIIB Readout: Litifilimab
@@ -2113,33 +2156,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cldx_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~CLDX Readout: Barzolvolimab
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06455202 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Imm
+ unology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06455202 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/CLDX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cslly_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~CSLLY Readout: Recombinant Single-Chain Factor Viii
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06738485 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hem
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06738485 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/CSLLY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_eypt_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~EYPT Readout: EYP-1901
@@ -2153,7 +2198,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ilmn_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~ILMN Readout: 18F-MFBG
@@ -2166,7 +2211,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_imvt_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~IMVT Readout: IMVT-1402
@@ -2180,20 +2225,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_incy_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~INCY Readout: Povorcitinib
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06516952 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Der
+ matology. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06516952 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/INCY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mrk_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~MRK Readout: Pembrolizumab
@@ -2206,7 +2252,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ogn_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~OGN Readout: 150μg CFA (Elonva®) at stimulation day (SD) 1 an
@@ -2220,7 +2266,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_olma_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~OLMA Readout: Palazestrant
@@ -2234,7 +2280,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_pfe_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~PFE Readout: Palbociclib
@@ -2247,20 +2293,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_phat_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~PHAT Readout: Vonoprazan
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06851559 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Gas
+ troenterology. Status: Estimated. Primary source: https://clinicaltrials.g
+ ov/study/NCT06851559 Source: pdufa.bio. Informational only\, not investmen
+ t advice.
 URL:https://www.pdufa.bio/ticker/PHAT
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rcus_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~RCUS Readout: Zimberelimab
@@ -2274,7 +2321,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_rhhby_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
 SUMMARY:RHHBY PDUFA: Enspryng (satralizumab) - (thyroid eye disease)
@@ -2288,7 +2335,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rytm_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~RYTM Readout: Setmelanotide
@@ -2302,7 +2349,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sldb_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~SLDB Readout: SGT-003
@@ -2316,20 +2363,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sny_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~SNY Readout: Venglustat
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T02843035 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Rar
+ e disease. Status: Estimated. Primary source: https://clinicaltrials.gov/s
+ tudy/NCT02843035 Source: pdufa.bio. Informational only\, not investment ad
+ vice.
 URL:https://www.pdufa.bio/ticker/SNY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_srpt_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~SRPT Readout: Eteplirsen
@@ -2343,7 +2391,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vtrs_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261101
 SUMMARY:~VTRS Readout: Cenerimod
@@ -2356,7 +2404,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_ird_2026-10-17@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 SUMMARY:IRD PDUFA: Phentolamine ophthalmic solution 0.75%
@@ -2370,7 +2418,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_vtrs_2026-10-17@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 SUMMARY:VTRS PDUFA: MR-141 (phentolamine ophthalmic solution 0.75%)
@@ -2384,7 +2432,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_asn_2026-10-21@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:ASN Conference: ASN Kidney Week
@@ -2395,7 +2443,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_ectrims_2026-10-21@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:ECTRIMS Conference: Joint ACTRIMS-ECTRIMS Meeting
@@ -2406,7 +2454,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_idweek_2026-10-21@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
 SUMMARY:IDWeek Conference: IDSA/SHEA/HIVMA IDWeek
@@ -2417,7 +2465,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_esmo_2026-10-23@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:ESMO Conference: European Society for Medical Oncology Congress
@@ -2428,7 +2476,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_phar_2026-10-24@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261025
 SUMMARY:PHAR PDUFA: Joenja (leniolisib) - paediatric APDS
@@ -2442,7 +2490,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_gsk_2026-10-26@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
 SUMMARY:GSK PDUFA: Bepirovirsen - (B-Well)
@@ -2456,7 +2504,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_ino_2026-10-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261031
 SUMMARY:INO PDUFA: INO-3107 DNA immunotherapy
@@ -2470,7 +2518,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_agio_2026-11-01@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261102
 SUMMARY:AGIO PDUFA: Mitapivat (PYRUKYND) - (RISE UP)
@@ -2484,7 +2532,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_sitc_2026-11-04@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261104
 DTEND;VALUE=DATE:20261105
 SUMMARY:SITC Conference: Society for Immunotherapy of Cancer
@@ -2495,7 +2543,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_aasld_2026-11-05@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:AASLD Conference: AASLD The Liver Meeting
@@ -2506,7 +2554,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_acr_2026-11-06@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:ACR Conference: ACR Convergence
@@ -2517,7 +2565,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_aha_2026-11-06@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:AHA Conference: American Heart Association Scientific Sessions
@@ -2528,7 +2576,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_acaai_2026-11-12@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:ACAAI Conference: American College of Allergy\, Asthma and Immunolo
@@ -2540,7 +2588,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_sno_2026-11-12@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:SNO Conference: Society for Neuro-Oncology Annual Meeting
@@ -2551,7 +2599,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_btai_2026-11-14@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:BTAI PDUFA: IGALMI (dexmedetomidine sublingual film) - (SERENITY At
@@ -2566,7 +2614,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_cytk_2026-11-14@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:CYTK PDUFA: Aficamten - (MAPLE-HCM)
@@ -2579,8 +2627,19 @@ URL:https://www.pdufa.bio/pdufa/CYTK
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:conf_obesityweek_2026-11-14@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:ObesityWeek Conference: ObesityWeek\, The Obesity Society
+DESCRIPTION:Confirmed date. Area: Obesity and metabolic. Status: Scheduled.
+  Source: pdufa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:pdufa_smmt_2026-11-14@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:SMMT PDUFA: Ivonescimab
@@ -2593,19 +2652,8 @@ URL:https://www.pdufa.bio/ticker/SMMT
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:conf_obesityweek_2026-11-14@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261115
-SUMMARY:ObesityWeek Conference: ObesityWeek\, The Obesity Society
-DESCRIPTION:Confirmed date. Area: Obesity and metabolic. Status: Scheduled.
-  Source: pdufa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:readout_apge_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~APGE Readout: APG777
@@ -2619,7 +2667,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_arvn_2027-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~ARVN Readout: ARV-471
@@ -2632,20 +2680,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_atos_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~ATOS Readout: Z-Endoxifen
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05607004 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05607004 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/ATOS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bysi_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~BYSI Readout: Plinabulin
@@ -2659,7 +2708,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cgem_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~CGEM Readout: CLN-081
@@ -2672,7 +2721,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_crdf_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~CRDF Readout: Onvansertib
@@ -2686,7 +2735,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_eras_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~ERAS Readout: Naporafenib
@@ -2699,7 +2748,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_gild_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~GILD Readout: Sacituzumab Govitecan
@@ -2712,20 +2761,20 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_imux_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~IMUX Readout: IMU-838 tablets
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05134441 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 5134441 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/IMUX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_nvcr_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~NVCR PDUFA: TTFields therapy (Optune) - brain metastases from NSCL
@@ -2741,7 +2790,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_onc_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~ONC Readout: BGB-11417
@@ -2754,7 +2803,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_phar_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~PHAR Readout: Leniolisib
@@ -2767,20 +2816,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sny_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~SNY Readout: Rilzabrutinib
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T07216079 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hem
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT07216079 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/SNY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -2793,7 +2843,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vir_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~VIR Readout: Bulevirtide
@@ -2807,20 +2857,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_zura_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~ZURA Readout: Tibulizumab
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06993610 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Der
+ matology. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06993610 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/ZURA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_ctad_2026-11-16@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:CTAD Conference: Clinical Trials on Alzheimer's Disease
@@ -2831,7 +2882,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_ena_2026-11-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 SUMMARY:ENA Conference: EORTC-NCI-AACR Symposium on Molecular Targets
@@ -2842,7 +2893,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_capr_2026-08-22@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261122
 DTEND;VALUE=DATE:20261123
 SUMMARY:CAPR PDUFA: Deramiocel (CAP-1002) - (HOPE-3)
@@ -2856,7 +2907,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_svra_2026-11-22@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261122
 DTEND;VALUE=DATE:20261123
 SUMMARY:SVRA PDUFA: MOLBREEVI (molgramostim inhalation) - (IMPALA-2)
@@ -2870,7 +2921,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_bbio_2026-11-27@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:BBIO PDUFA: BBP-418 (ribitol) - (FORTIFY)
@@ -2884,7 +2935,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_nuvl_2026-11-27@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:GSK PDUFA: Neladalkib (NVL-655) - (ALKOVE-1)
@@ -2898,7 +2949,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_bayry_2026-11-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~BAYRY PDUFA: HYRNUO (sevabertinib) - HER2-mutant NSCLC
@@ -2913,7 +2964,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_cogt_2026-11-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:COGT PDUFA: Bezuclastinib + sunitinib - (PEAK)
@@ -2927,7 +2978,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_regn_2026-11-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261101
 DTEND;VALUE=DATE:20261201
 SUMMARY:~REGN PDUFA: Cemdisiran (C5 RNAi) - (NIMBLE)
@@ -2942,7 +2993,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_rhhby_2026-11-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:RHHBY PDUFA: Giredestrant (lidERA)
@@ -2956,7 +3007,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_vrtx_2026-11-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:VRTX PDUFA: Povetacicept (ALPN-303)
@@ -2970,7 +3021,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_exel_2026-12-03@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
 SUMMARY:EXEL PDUFA: Zanzalintinib (XL092) + atezolizumab - (STELLAR-303)
@@ -2984,7 +3035,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_aes_2026-12-04@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261204
 DTEND;VALUE=DATE:20261205
 SUMMARY:AES Conference: American Epilepsy Society Annual Meeting
@@ -2995,7 +3046,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_esmo asia_2026-12-04@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261204
 DTEND;VALUE=DATE:20261205
 SUMMARY:ESMO Asia Conference: ESMO Asia Congress
@@ -3006,7 +3057,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_sabcs_2026-12-08@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:SABCS Conference: San Antonio Breast Cancer Symposium
@@ -3016,8 +3067,19 @@ URL:https://www.pdufa.bio/conferences
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:conf_ash_2026-12-12@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:ASH Conference: American Society of Hematology Annual Meeting
+DESCRIPTION:Confirmed date. Area: Haematology. Status: Scheduled. Source: p
+ dufa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:pdufa_vnda_2026-12-12@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:VNDA PDUFA: Imsidolimab
@@ -3030,19 +3092,8 @@ URL:https://www.pdufa.bio/pdufa/VNDA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:conf_ash_2026-12-12@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20261212
-DTEND;VALUE=DATE:20261213
-SUMMARY:ASH Conference: American Society of Hematology Annual Meeting
-DESCRIPTION:Confirmed date. Area: Haematology. Status: Scheduled. Source: p
- dufa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:conf_esmo io_2026-12-14@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 SUMMARY:ESMO IO Conference: ESMO Immuno-Oncology and Advanced Therapies Con
@@ -3055,20 +3106,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_actu_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ACTU Readout: Losartan
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05077800 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05077800 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/ACTU
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_adct_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ADCT Readout: Loncastuximab Tesirine
@@ -3082,7 +3134,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_agen_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~AGEN Readout: Balstilimab
@@ -3096,7 +3148,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_arvn_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ARVN Readout: ARV-471
@@ -3110,7 +3162,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_avir_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~AVIR Readout: Bemnifosbuvir-Ruzasvir
@@ -3124,7 +3176,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bcda_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~BCDA Readout: Autologous cell therapy
@@ -3138,7 +3190,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_beam_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~BEAM Readout: BEAM-302
@@ -3152,7 +3204,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_biib_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~BIIB Readout: Felzartamab
@@ -3165,7 +3217,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bmy_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~BMY Readout: Nivolumab
@@ -3178,20 +3230,20 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cnta_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~CNTA Readout: cleminorexton
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06752668 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 6752668 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/CNTA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cort_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~CORT Readout: Relacorilant
@@ -3205,7 +3257,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_crdf_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~CRDF Readout: Onvansertib
@@ -3219,7 +3271,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_exel_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~EXEL Readout: Cabozantinib
@@ -3232,7 +3284,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_goss_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~GOSS Readout: Seralutinib
@@ -3246,7 +3298,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ino_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~INO Readout: VGX-3100
@@ -3259,7 +3311,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_insm_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~INSM Readout: Treprostinil Palmitil Inhalation Powder
@@ -3273,7 +3325,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ions_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~IONS Readout: Donidalorsen
@@ -3286,7 +3338,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_jazz_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~JAZZ Readout: CPX-351
@@ -3299,7 +3351,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kpti_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~KPTI Readout: Selinexor
@@ -3313,7 +3365,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_lxeo_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~LXEO Readout: LX1001
@@ -3327,33 +3379,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mane_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~MANE Readout: VDPHL01
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06972264 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Der
+ matology. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06972264 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/MANE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mdgl_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~MDGL Readout: Resmetirom
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05500222 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hep
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT05500222 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/MDGL
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mnov_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~MNOV Readout: MN-166
@@ -3367,7 +3421,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mrk_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~MRK Readout: Pembrolizumab
@@ -3380,7 +3434,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nvo_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~NVO Readout: Semaglutide
@@ -3393,7 +3447,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_onc_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ONC Readout: Zanubrutinib
@@ -3406,7 +3460,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_pbyi_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~PBYI Readout: neratinib
@@ -3420,7 +3474,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_pfe_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~PFE Readout: Elranatamab
@@ -3433,7 +3487,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rnac_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~RNAC Readout: Decartes-08
@@ -3447,7 +3501,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -3460,33 +3514,34 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sny_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SNY Readout: Rilzabrutinib
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06500702 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Nep
+ hrology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06500702 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/SNY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_supn_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SUPN Readout: BIS-001
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T03474770 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 3474770 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/SUPN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_traw_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~TRAW Readout: rigosertib
@@ -3500,7 +3555,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vir_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~VIR Readout: Tobevibart
@@ -3514,7 +3569,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vnda_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~VNDA Readout: VQW-765
@@ -3527,7 +3582,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_xncr_2026-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~XNCR Readout: XMAB20717
@@ -3541,7 +3596,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_cort_2026-12-17@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
 SUMMARY:CORT PDUFA: Relacorilant - (GRACE resubmission)
@@ -3555,7 +3610,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_rhhby_2026-12-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:RHHBY PDUFA: Giredestrant (+ everolimus)
@@ -3569,7 +3624,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_mlys_2026-12-22@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261222
 DTEND;VALUE=DATE:20261223
 SUMMARY:MLYS PDUFA: lorundrostat Dose 1
@@ -3583,7 +3638,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_gild_2026-12-23@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261223
 DTEND;VALUE=DATE:20261224
 SUMMARY:GILD PDUFA: Anito-cel (anitocabtagene autoleucel)
@@ -3597,7 +3652,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_prax_2026-12-27@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261227
 DTEND;VALUE=DATE:20261228
 SUMMARY:PRAX PDUFA: Relutrigine (PRAX-562) - (EMBOLD)
@@ -3611,7 +3666,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_vtrs_2026-12-27@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261227
 DTEND;VALUE=DATE:20261228
 SUMMARY:VTRS PDUFA: MR-107A-02 (fast-acting meloxicam)
@@ -3625,7 +3680,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_cogt_2026-12-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261230
 DTEND;VALUE=DATE:20261231
 SUMMARY:COGT PDUFA: Bezuclastinib (CGT9486) - (SUMMIT)
@@ -3639,7 +3694,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_abbv_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ABBV PDUFA: JUVMO (tavapadon)
@@ -3654,33 +3709,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_alny_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ALNY Readout: elebsiran readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001178670/000162828026007497/alny-20251231.htm 
- Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Infectious. Status: Guided. Primary sour
+ ce: https://www.sec.gov/Archives/edgar/data/0001178670/000162828026007497/
+ alny-20251231.htm Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/ALNY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_atai_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ATAI Readout: VLS-01 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0002081043/000114036126020708/ef20072731_ex99-1.
- htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: CNS. Status: Guided. Primary source: htt
+ ps://www.sec.gov/Archives/edgar/data/0002081043/000114036126020708/ef20072
+ 731_ex99-1.htm Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/ATAI
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_azn_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~AZN PDUFA: Ultomiris (ravulizumab)
@@ -3695,7 +3752,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_bayry_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~BAYRY PDUFA: KERENDIA (finerenone)\, T1D-CKD
@@ -3710,7 +3767,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bmea_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~BMEA Readout: BMF-650 readout
@@ -3723,7 +3780,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_canf_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~CANF Readout: Clinical readout
@@ -3735,7 +3792,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cmpx_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~CMPX Readout: CTX-10726 readout
@@ -3748,21 +3805,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cris_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~CRIS Readout: NCT07271667 readout
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Status: G
- uided. Primary source: https://www.sec.gov/Archives/edgar/data/0001108205/
- 000110820526000061/cris-20260331.htm Source: pdufa.bio. Informational only
- \, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Guided. Primary source: https://www.sec.gov/Archives/edgar/
+ data/0001108205/000110820526000061/cris-20260331.htm Source: pdufa.bio. In
+ formational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/CRIS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_enta_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ENTA Readout: EDP-978 readout
@@ -3775,7 +3832,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ewtx_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~EWTX Readout: Clinical readout
@@ -3787,7 +3844,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_guts_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~GUTS Readout: Clinical readout
@@ -3799,7 +3856,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_help_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~HELP Readout: HLP003 readout
@@ -3812,7 +3869,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ipsc_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~IPSC Readout: CNTY-813 readout
@@ -3825,20 +3882,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kynb_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~KYNB Readout: FG-3246 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0000921299/000119312526219374/kynb-20260331.htm 
- Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Oncology. Status: Guided. Primary source
+ : https://www.sec.gov/Archives/edgar/data/0000921299/000119312526219374/ky
+ nb-20260331.htm Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/KYNB
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_lona_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~LONA Readout: ATH-1105 readout
@@ -3851,20 +3909,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mirm_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~MIRM Readout: AZURE-1 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001759425/000175942526000036/mirm-20260506xexx9
- 91.htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Infectious. Status: Guided. Primary sour
+ ce: https://www.sec.gov/Archives/edgar/data/0001759425/000175942526000036/
+ mirm-20260506xexx991.htm Source: pdufa.bio. Informational only\, not inves
+ tment advice.
 URL:https://www.pdufa.bio/ticker/MIRM
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mtva_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~MTVA Readout: DA-1726 readout
@@ -3877,7 +3936,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_nvo_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20270101
 SUMMARY:~NVO PDUFA: CagriSema (AM833)
@@ -3892,7 +3951,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_nvo_mim8_2026-09-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:~NVO PDUFA: Mim8 (denecimig)
@@ -3906,46 +3965,48 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_pcvx_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~PCVX Readout: OPUS-1 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001649094/000164909426000015/pcvx-20260506xexx9
- 91.htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Infectious. Status: Guided. Primary sour
+ ce: https://www.sec.gov/Archives/edgar/data/0001649094/000164909426000015/
+ pcvx-20260506xexx991.htm Source: pdufa.bio. Informational only\, not inves
+ tment advice.
 URL:https://www.pdufa.bio/ticker/PCVX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rapp_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~RAPP Readout: RAP-219 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0002012593/000119312526210324/rapp-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: CNS. Status: Guided. Primary source: htt
+ ps://www.sec.gov/Archives/edgar/data/0002012593/000119312526210324/rapp-ex
+ 99_1.htm Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/RAPP
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rgnx_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~RGNX Readout: RGX-314 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001590877/000119312526286825/rgnx-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Ophthalmology. Status: Guided. Primary s
+ ource: https://www.sec.gov/Archives/edgar/data/0001590877/0001193125262868
+ 25/rgnx-ex99_1.htm Source: pdufa.bio. Informational only\, not investment 
+ advice.
 URL:https://www.pdufa.bio/ticker/RGNX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_skye_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SKYE Readout: nimacimab readout
@@ -3958,33 +4019,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_slgl_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SLGL Readout: SGT-610 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001684693/000117891326002963/exhibit_99-1.htm S
- ource: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Oncology. Status: Guided. Primary source
+ : https://www.sec.gov/Archives/edgar/data/0001684693/000117891326002963/ex
+ hibit_99-1.htm Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/SLGL
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sls_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SLS Readout: SLS009 (tambiciclib) Phase 2 AML readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/1390478/000139047826000013/sls-202608118xkexhibi
- t991.htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Oncology. Status: Guided. Primary source
+ : https://www.sec.gov/Archives/edgar/data/1390478/000139047826000013/sls-2
+ 02608118xkexhibit991.htm Source: pdufa.bio. Informational only\, not inves
+ tment advice.
 URL:https://www.pdufa.bio/ticker/SLS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sls_regal_2026q4@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SLS Readout: REGAL Phase 3 (galinpepimut-S) topline\, event-driven
@@ -3998,7 +4061,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_sndx_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~SNDX Readout: SNDX-62122 readout
@@ -4011,33 +4074,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_trax_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~TRAX Readout: ANB033 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0002091349/000119312526224124/trax-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Gastroenterology. Status: Guided. Primar
+ y source: https://www.sec.gov/Archives/edgar/data/0002091349/0001193125262
+ 24124/trax-ex99_1.htm Source: pdufa.bio. Informational only\, not investme
+ nt advice.
 URL:https://www.pdufa.bio/ticker/TRAX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ttrx_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~TTRX Readout: GX-03 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0002023016/000121390026081996/ea029941301ex99-1.
- htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Dermatology. Status: Guided. Primary sou
+ rce: https://www.sec.gov/Archives/edgar/data/0002023016/000121390026081996
+ /ea029941301ex99-1.htm Source: pdufa.bio. Informational only\, not investm
+ ent advice.
 URL:https://www.pdufa.bio/ticker/TTRX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_zbio_2026-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20270101
 SUMMARY:~ZBIO Readout: ZB021 readout
@@ -4050,7 +4115,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_nuvb_2027-01-04@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270104
 DTEND;VALUE=DATE:20270105
 SUMMARY:NUVB PDUFA: IBTROZI (taletrectinib) sNDA
@@ -4064,7 +4129,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_ibrx_2027-01-06@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 SUMMARY:IBRX PDUFA: ANKTIVA (N-803) + BCG
@@ -4078,7 +4143,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_aplm_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~APLM Readout: Uproleselan
@@ -4092,7 +4157,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bmy_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~BMY Readout: Nivolumab
@@ -4105,7 +4170,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cadl_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~CADL Readout: Aglatimagene Besadenovec
@@ -4118,7 +4183,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_elvn_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~ELVN Readout: ELVN-002
@@ -4132,7 +4197,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_exel_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~EXEL Readout: Cabozantinib
@@ -4145,7 +4210,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_gild_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~GILD Readout: MK-3475
@@ -4158,7 +4223,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_idya_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~IDYA Readout: Darovasertib
@@ -4172,7 +4237,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_lxrx_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~LXRX Readout: Sotagliflozin
@@ -4186,7 +4251,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nuvl_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~NUVL Readout: Neladalkib
@@ -4199,7 +4264,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rare_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~RARE Readout: Setrusumab
@@ -4212,7 +4277,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_regn_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~REGN Readout: Odronextamab
@@ -4225,20 +4290,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_siga_2027-01-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270201
 SUMMARY:~SIGA Readout: Tecovirimat Oral Capsule
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T04957485 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Inf
+ ectious. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT04957485 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/SIGA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_asco gi_2027-01-21@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270121
 DTEND;VALUE=DATE:20270122
 SUMMARY:ASCO GI Conference: ASCO Gastrointestinal Cancers Symposium
@@ -4249,7 +4315,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_prax_2027-01-29@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270129
 DTEND;VALUE=DATE:20270130
 SUMMARY:PRAX PDUFA: ulixacaltamide
@@ -4263,7 +4329,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_phar_2027-01-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270130
 DTEND;VALUE=DATE:20270131
 SUMMARY:PHAR PDUFA: Joenja (leniolisib) lower doses - APDS\, ages 4+ from 1
@@ -4278,7 +4344,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_world_2027-01-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270131
 DTEND;VALUE=DATE:20270201
 SUMMARY:WORLD Conference: WORLDSymposium Annual Research Meeting
@@ -4290,7 +4356,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_gild_2027-02-02@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270202
 DTEND;VALUE=DATE:20270203
 SUMMARY:GILD PDUFA: Yeztugo (lenacapavir) once-weekly oral
@@ -4304,7 +4370,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_asco gu_2027-02-11@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270211
 DTEND;VALUE=DATE:20270212
 SUMMARY:ASCO GU Conference: ASCO Genitourinary Cancers Symposium
@@ -4315,7 +4381,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_azn_2027-02-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270301
 SUMMARY:~AZN Readout: R-Chop
@@ -4328,20 +4394,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kytx_2027-02-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270301
 SUMMARY:~KYTX Readout: KYV-101
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06152172 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Imm
+ unology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06152172 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/KYTX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mltx_2027-02-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270301
 SUMMARY:~MLTX Readout: Sonelokimab
@@ -4355,7 +4422,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mrk_2027-02-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270301
 SUMMARY:~MRK Readout: Pembrolizumab
@@ -4368,7 +4435,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_arqt_2027-02-23@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270223
 DTEND;VALUE=DATE:20270224
 SUMMARY:ARQT PDUFA: ZORYVE (roflumilast) cream 0.05%
@@ -4382,7 +4449,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_cgem_2027-02-27@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270227
 DTEND;VALUE=DATE:20270228
 SUMMARY:CGEM PDUFA: CLN-081
@@ -4396,7 +4463,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_agio_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~AGIO Readout: Mitapivat
@@ -4409,7 +4476,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_arvn_2026-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~ARVN Readout: ARV-471
@@ -4423,7 +4490,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cldx_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~CLDX Readout: Barzolvolimab
@@ -4436,7 +4503,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cogt_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~COGT Readout: CGT9486
@@ -4449,7 +4516,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_dnli_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~DNLI Readout: BIIB122
@@ -4462,7 +4529,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_gild_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~GILD Readout: Sacituzumab Govitecan
@@ -4475,7 +4542,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ions_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~IONS Readout: Olezarsen
@@ -4488,7 +4555,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ipha_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~IPHA Readout: Monalizumab
@@ -4502,20 +4569,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mdgl_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~MDGL Readout: Resmetirom
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T04951219 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Hep
+ atology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT04951219 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/MDGL
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nuvb_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~NUVB Readout: safusidenib
@@ -4528,7 +4596,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_onc_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~ONC Readout: Zanubrutinib
@@ -4541,20 +4609,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tsha_2027-03-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270401
 SUMMARY:~TSHA Readout: TSHA-101
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T04798235 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Rar
+ e disease. Status: Estimated. Primary source: https://clinicaltrials.gov/s
+ tudy/NCT04798235 Source: pdufa.bio. Informational only\, not investment ad
+ vice.
 URL:https://www.pdufa.bio/ticker/TSHA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_aad_2027-03-19@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270319
 DTEND;VALUE=DATE:20270320
 SUMMARY:AAD Conference: American Academy of Dermatology Annual Meeting
@@ -4565,46 +4634,48 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_akts_2027-03-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270401
 SUMMARY:~AKTS Readout: AKY-1189 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0002035832/000119312526216716/ck0002035832-ex99_
- 1.htm Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Oncology. Status: Guided. Primary source
+ : https://www.sec.gov/Archives/edgar/data/0002035832/000119312526216716/ck
+ 0002035832-ex99_1.htm Source: pdufa.bio. Informational only\, not investme
+ nt advice.
 URL:https://www.pdufa.bio/ticker/AKTS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_crbp_2027-03-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270401
 SUMMARY:~CRBP Readout: CRB-701 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001595097/000119312526219707/crbp-20260331.htm 
- Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Oncology. Status: Guided. Primary source
+ : https://www.sec.gov/Archives/edgar/data/0001595097/000119312526219707/cr
+ bp-20260331.htm Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/CRBP
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nmra_2027-03-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270401
 SUMMARY:~NMRA Readout: NMRA-511 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001885522/000119312526210310/nmra-ex99_1.htm So
- urce: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: CNS. Status: Guided. Primary source: htt
+ ps://www.sec.gov/Archives/edgar/data/0001885522/000119312526210310/nmra-ex
+ 99_1.htm Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/NMRA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ocul_2027-03-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270401
 SUMMARY:~OCUL Readout: HELIOS-3 readout
@@ -4617,20 +4688,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_qncx_2027-03-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270401
 SUMMARY:~QNCX Readout: LAM-001 readout
 DESCRIPTION:Guidance is to the quarter only\; this entry spans the quarter 
- rather than claiming a day. Status: Guided. Primary source: https://www.se
- c.gov/Archives/edgar/data/0001662774/000119312526324786/d163930dex994.htm 
- Source: pdufa.bio. Informational only\, not investment advice.
+ rather than claiming a day. Area: Respiratory. Status: Guided. Primary sou
+ rce: https://www.sec.gov/Archives/edgar/data/0001662774/000119312526324786
+ /d163930dex994.htm Source: pdufa.bio. Informational only\, not investment 
+ advice.
 URL:https://www.pdufa.bio/ticker/QNCX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_aacr_2027-04-02@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270402
 DTEND;VALUE=DATE:20270403
 SUMMARY:AACR Conference: AACR Annual Meeting
@@ -4641,7 +4713,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_acc_2027-04-10@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270410
 DTEND;VALUE=DATE:20270411
 SUMMARY:ACC Conference: American College of Cardiology Scientific Session
@@ -4652,7 +4724,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_inbx_2027-04-14@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270414
 DTEND;VALUE=DATE:20270415
 SUMMARY:INBX PDUFA: INBRX-106
@@ -4666,20 +4738,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_aim_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~AIM Readout: Ampligen
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T03899987 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT03899987 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/AIM
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cldx_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~CLDX Readout: Barzolvolimab
@@ -4692,7 +4765,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_idya_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~IDYA Readout: Darovasertib
@@ -4706,7 +4779,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_iova_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~IOVA Readout: Lifileucel plus Pembrolizumab
@@ -4719,7 +4792,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kpti_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~KPTI Readout: Selinexor
@@ -4733,46 +4806,47 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kytx_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~KYTX Readout: KYV-101
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06384976 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 6384976 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/KYTX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mnov_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~MNOV Readout: MN-166
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T04057898 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 4057898 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/MNOV
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nbtx_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~NBTX Readout: NBTXR3
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T03589339 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT03589339 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/NBTX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nvs_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~NVS Readout: Iptacopan
@@ -4785,7 +4859,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_regn_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~REGN Readout: Cemiplimab
@@ -4798,7 +4872,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -4811,7 +4885,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270501
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -4824,7 +4898,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_phvs_2027-04-23@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270423
 DTEND;VALUE=DATE:20270424
 SUMMARY:PHVS PDUFA: Deucrictibant IR - (RAPIDe-3)
@@ -4837,8 +4911,19 @@ URL:https://www.pdufa.bio/pdufa/PHVS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:conf_aan_2027-05-01@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:AAN Conference: American Academy of Neurology Annual Meeting
+DESCRIPTION:Confirmed date. Area: Neurology. Status: Scheduled. Source: pdu
+ fa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:pdufa_axsm_2027-05-01@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270502
 SUMMARY:AXSM PDUFA: AXS-12
@@ -4851,19 +4936,8 @@ URL:https://www.pdufa.bio/ticker/AXSM
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:conf_aan_2027-05-01@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20270501
-DTEND;VALUE=DATE:20270502
-SUMMARY:AAN Conference: American Academy of Neurology Annual Meeting
-DESCRIPTION:Confirmed date. Area: Neurology. Status: Scheduled. Source: pdu
- fa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:conf_asgct_2027-05-03@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270503
 DTEND;VALUE=DATE:20270504
 SUMMARY:ASGCT Conference: American Society of Gene and Cell Therapy Annual 
@@ -4875,7 +4949,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:pdufa_bbio_2027-05-08@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270508
 DTEND;VALUE=DATE:20270509
 SUMMARY:BBIO PDUFA: Encaleret
@@ -4889,7 +4963,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_ats_2027-05-14@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270514
 DTEND;VALUE=DATE:20270515
 SUMMARY:ATS Conference: American Thoracic Society International Conference
@@ -4900,7 +4974,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_biib_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~BIIB Readout: Felzartamab
@@ -4913,7 +4987,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cgtx_2027-04-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~CGTX Readout: Dextromethorphan-Bupropion
@@ -4925,8 +4999,19 @@ URL:https://www.pdufa.bio/ticker/CGTX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:conf_ddw_2027-05-15@pdufa.bio
+DTSTAMP:20261003T224626Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:DDW Conference: Digestive Disease Week
+DESCRIPTION:Confirmed date. Area: GI and hepatology. Status: Scheduled. Sou
+ rce: pdufa.bio. Informational only\, not investment advice.
+URL:https://www.pdufa.bio/conferences
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:readout_fdmt_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~FDMT Readout: 4D-150 IVT
@@ -4939,20 +5024,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mbx_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~MBX Readout: MBX 2109
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06531941 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: End
+ ocrinology. Status: Estimated. Primary source: https://clinicaltrials.gov/
+ study/NCT06531941 Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/MBX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_regn_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~REGN Readout: Cemiplimab
@@ -4965,33 +5051,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tngx_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~TNGX Readout: S095035
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06188702 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT06188702 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/TNGX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vxrt_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~VXRT Readout: VXA-COV2-3.3
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06672055 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Inf
+ ectious. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06672055 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/VXRT
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vygr_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270501
 DTEND;VALUE=DATE:20270601
 SUMMARY:~VYGR Readout: VY7523
@@ -5003,19 +5091,8 @@ URL:https://www.pdufa.bio/ticker/VYGR
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:conf_ddw_2027-05-15@pdufa.bio
-DTSTAMP:20261003T194206Z
-DTSTART;VALUE=DATE:20270515
-DTEND;VALUE=DATE:20270516
-SUMMARY:DDW Conference: Digestive Disease Week
-DESCRIPTION:Confirmed date. Area: GI and hepatology. Status: Scheduled. Sou
- rce: pdufa.bio. Informational only\, not investment advice.
-URL:https://www.pdufa.bio/conferences
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:conf_asco_2027-06-04@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270604
 DTEND;VALUE=DATE:20270605
 SUMMARY:ASCO Conference: ASCO Annual Meeting
@@ -5026,7 +5103,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_eha_2027-06-10@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270610
 DTEND;VALUE=DATE:20270611
 SUMMARY:EHA Conference: European Hematology Association Congress
@@ -5037,33 +5114,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_avln_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~AVLN Readout: AP01
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06329401 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Res
+ piratory. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06329401 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/AVLN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_blte_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~BLTE Readout: Tinlarebant
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05949593 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Oph
+ thalmology. Status: Estimated. Primary source: https://clinicaltrials.gov/
+ study/NCT05949593 Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/BLTE
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_fdmt_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~FDMT Readout: 4D-150 IVT
@@ -5077,20 +5156,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_huma_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~HUMA Readout: Human Acellular Vessel
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05908084 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Nep
+ hrology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT05908084 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/HUMA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_immp_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~IMMP Readout: eftilagimod alfa
@@ -5104,20 +5184,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_indp_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~INDP Readout: Decoy20
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05651022 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05651022 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/INDP
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ions_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~IONS Readout: Olezarsen
@@ -5130,7 +5211,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_jazz_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~JAZZ Readout: CPX-351
@@ -5143,7 +5224,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kymr_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~KYMR Readout: KT-621
@@ -5157,7 +5238,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_kytx_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~KYTX Readout: KYV101
@@ -5171,7 +5252,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_lnth_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~LNTH Readout: PI-2620
@@ -5184,7 +5265,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nvs_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~NVS Readout: Remibrutinib
@@ -5197,7 +5278,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -5210,7 +5291,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_svra_2027-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270601
 DTEND;VALUE=DATE:20270701
 SUMMARY:~SVRA Readout: Molgramostim
@@ -5223,7 +5304,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_easl_2027-06-16@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270616
 DTEND;VALUE=DATE:20270617
 SUMMARY:EASL Conference: EASL Congress\, International Liver Congress
@@ -5234,7 +5315,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:conf_ada_2027-06-18@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270618
 DTEND;VALUE=DATE:20270619
 SUMMARY:ADA Conference: American Diabetes Association Scientific Sessions
@@ -5245,7 +5326,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_prok_2027-06-30@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270701
 SUMMARY:~PROK Readout: REGEN-006 readout
@@ -5258,7 +5339,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_amgn_2027-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270801
 SUMMARY:~AMGN Readout: ABP 938
@@ -5272,7 +5353,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_btai_2027-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270801
 SUMMARY:~BTAI Readout: Sublingual film containing dexmedetomidine
@@ -5285,20 +5366,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_meso_2027-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270801
 SUMMARY:~MESO Readout: Rexlemestrocel-L
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06325566 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Mus
+ culoskeletal. Status: Estimated. Primary source: https://clinicaltrials.go
+ v/study/NCT06325566 Source: pdufa.bio. Informational only\, not investment
+  advice.
 URL:https://www.pdufa.bio/ticker/MESO
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_oncy_2027-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270801
 SUMMARY:~ONCY Readout: REOLYSIN
@@ -5312,7 +5394,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2027-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270801
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -5325,7 +5407,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vktx_2027-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270801
 SUMMARY:~VKTX Readout: VK2735
@@ -5339,7 +5421,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_artv_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~ARTV Readout: AB-101
@@ -5353,20 +5435,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_asnd_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~ASND Readout: TransCon CNP
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05081609 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05081609 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/ASND
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ions_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~IONS Readout: ION582
@@ -5379,7 +5462,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nvcr_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~NVCR Readout: Temozolomide
@@ -5392,7 +5475,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rare_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~RARE Readout: Triheptanoin
@@ -5405,7 +5488,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -5418,7 +5501,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2027-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270801
 DTEND;VALUE=DATE:20270901
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -5431,7 +5514,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_agen_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~AGEN Readout: Botensilimab
@@ -5445,20 +5528,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_bhvn_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~BHVN Readout: BHV-1300
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06980649 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: End
+ ocrinology. Status: Estimated. Primary source: https://clinicaltrials.gov/
+ study/NCT06980649 Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/BHVN
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_chrs_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~CHRS Readout: CHS-1420
@@ -5472,33 +5556,34 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cnta_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~CNTA Readout: cleminorexton
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T07598708 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: CNS
+ . Status: Estimated. Primary source: https://clinicaltrials.gov/study/NCT0
+ 7598708 Source: pdufa.bio. Informational only\, not investment advice.
 URL:https://www.pdufa.bio/ticker/CNTA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cstl_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~CSTL Readout: FCX-007
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06892639 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Rar
+ e disease. Status: Estimated. Primary source: https://clinicaltrials.gov/s
+ tudy/NCT06892639 Source: pdufa.bio. Informational only\, not investment ad
+ vice.
 URL:https://www.pdufa.bio/ticker/CSTL
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_imvt_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~IMVT Readout: IMVT-1402
@@ -5512,20 +5597,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_incy_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~INCY Readout: Corticosteroids
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06585774 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Imm
+ unology. Status: Estimated. Primary source: https://clinicaltrials.gov/stu
+ dy/NCT06585774 Source: pdufa.bio. Informational only\, not investment advi
+ ce.
 URL:https://www.pdufa.bio/ticker/INCY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_iva_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~IVA Readout: IVA337
@@ -5539,20 +5625,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_maia_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~MAIA Readout: 6-Thio-2'-Deoxyguanosine
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05208944 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05208944 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/MAIA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -5565,33 +5652,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlsi_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~TLSI Readout: SD-101
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T05607953 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT05607953 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/TLSI
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_upb_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~UPB Readout: Verekitug
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06966479 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Res
+ piratory. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06966479 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/UPB
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vnda_2027-09-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20271001
 SUMMARY:~VNDA Readout: Tradipitant
@@ -5604,7 +5693,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_lly_2027-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271101
 SUMMARY:~LLY Readout: Tirzepatide
@@ -5617,7 +5706,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mrk_2027-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271101
 SUMMARY:~MRK Readout: MK-8527
@@ -5630,7 +5719,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_onc_2027-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271101
 SUMMARY:~ONC Readout: Zanubrutinib
@@ -5643,7 +5732,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tars_2027-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271101
 SUMMARY:~TARS Readout: TP-03
@@ -5656,7 +5745,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2027-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271101
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -5669,7 +5758,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_iova_2026-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271101
 DTEND;VALUE=DATE:20271201
 SUMMARY:~IOVA Readout: Lifileucel plus Pembrolizumab
@@ -5683,7 +5772,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_mygn_2027-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271101
 DTEND;VALUE=DATE:20271201
 SUMMARY:~MYGN Readout: Niraparib
@@ -5696,7 +5785,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_onc_2027-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271101
 DTEND;VALUE=DATE:20271201
 SUMMARY:~ONC Readout: BGB-3111
@@ -5709,7 +5798,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_regn_2027-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271101
 DTEND;VALUE=DATE:20271201
 SUMMARY:~REGN Readout: Cemdisiran
@@ -5722,7 +5811,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_vera_2027-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271101
 DTEND;VALUE=DATE:20271201
 SUMMARY:~VERA Readout: Atacicept
@@ -5735,7 +5824,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_adag_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~ADAG Readout: ADG106
@@ -5749,7 +5838,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_anvs_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~ANVS Readout: buntanetap/posiphen
@@ -5762,7 +5851,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_goss_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~GOSS Readout: Seralutinib
@@ -5776,20 +5865,21 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_ints_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~INTS Readout: INT230-6
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06263231 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT06263231 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/INTS
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_legn_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~LEGN Readout: LCAR-B38M CAR-T Cell
@@ -5803,7 +5893,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_lly_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~LLY Readout: Mirikizumab
@@ -5816,7 +5906,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_nuvl_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~NUVL Readout: Neladalkib
@@ -5829,7 +5919,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_otlk_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~OTLK Readout: bevacizumab
@@ -5843,7 +5933,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_rare_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~RARE Readout: Triheptanoin
@@ -5856,7 +5946,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_smmt_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~SMMT Readout: Ivonescimab
@@ -5869,7 +5959,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tak_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~TAK Readout: Tislelizumab
@@ -5882,7 +5972,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tlx_2027-12-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271201
 DTEND;VALUE=DATE:20280101
 SUMMARY:~TLX Readout: 177Lu-TLX591
@@ -5895,7 +5985,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_klrs_2027-12-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20280101
 SUMMARY:~KLRS Readout: TH103 readout
@@ -5908,20 +5998,20 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_tyra_2026-08-31@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20271231
 DTEND;VALUE=DATE:20280101
 SUMMARY:~TYRA Readout: SURF303 Phase 2a/b initial results (LG-UTUC)
-DESCRIPTION:Status: Guided. Primary source: https://ir.tyra.bio/news-releas
- es/news-release-details/tyra-biosciences-reports-second-quarter-2026-finan
- cial-results Source: pdufa.bio. Informational only\, not investment advice
- .
+DESCRIPTION:Area: Oncology. Status: Guided. Primary source: https://ir.tyra
+ .bio/news-releases/news-release-details/tyra-biosciences-reports-second-qu
+ arter-2026-financial-results Source: pdufa.bio. Informational only\, not i
+ nvestment advice.
 URL:https://www.pdufa.bio/ticker/TYRA
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_cmps_2026-06-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20280601
 DTEND;VALUE=DATE:20280701
 SUMMARY:~CMPS Readout: COMP360 psilocybin
@@ -5934,33 +6024,35 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_incy_2026-08-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20280601
 DTEND;VALUE=DATE:20280701
 SUMMARY:~INCY Readout: Ruxolitinib
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06548360 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Der
+ matology. Status: Estimated. Primary source: https://clinicaltrials.gov/st
+ udy/NCT06548360 Source: pdufa.bio. Informational only\, not investment adv
+ ice.
 URL:https://www.pdufa.bio/ticker/INCY
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_crnx_2027-11-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20290701
 DTEND;VALUE=DATE:20290801
 SUMMARY:~CRNX Readout: Atumelnant
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T06712823 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: End
+ ocrinology. Status: Estimated. Primary source: https://clinicaltrials.gov/
+ study/NCT06712823 Source: pdufa.bio. Informational only\, not investment a
+ dvice.
 URL:https://www.pdufa.bio/ticker/CRNX
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_akba_2026-07-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20310501
 DTEND;VALUE=DATE:20310601
 SUMMARY:~AKBA Readout: Vadadustat
@@ -5974,14 +6066,15 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:readout_inbx_2026-10-15@pdufa.bio
-DTSTAMP:20261003T194206Z
+DTSTAMP:20261003T224626Z
 DTSTART;VALUE=DATE:20330701
 DTEND;VALUE=DATE:20330801
 SUMMARY:~INBX Readout: INBRX-106
 DESCRIPTION:Company guidance or FDA action window is known to the month onl
- y\; this entry spans the whole month rather than claiming a day. Area: Oth
- er. Status: Estimated. Primary source: https://clinicaltrials.gov/study/NC
- T04198766 Source: pdufa.bio. Informational only\, not investment advice.
+ y\; this entry spans the whole month rather than claiming a day. Area: Onc
+ ology. Status: Estimated. Primary source: https://clinicaltrials.gov/study
+ /NCT04198766 Source: pdufa.bio. Informational only\, not investment advice
+ .
 URL:https://www.pdufa.bio/ticker/INBX
 TRANSP:TRANSPARENT
 END:VEVENT

@@ -230,11 +230,26 @@ def main():
             prev = r_["total"]
         body.append('</table>')
 
+    # audit 2026-10-03 item 4.5: each letter's deficiency sections, its own headings read from the PDF
+    try:
+        sys.path.insert(0, HERE)
+        from extract_crl_headings import substantive_sections, OUT as _HP
+        _hc = json.load(io.open(_HP, encoding="utf-8")) if os.path.exists(_HP) else {}
+    except Exception:
+        substantive_sections, _hc = None, {}
+    from urllib.parse import unquote as _uq
+
+    def _secs(url):
+        if not substantive_sections:
+            return []
+        v = substantive_sections(_uq(url.rsplit("/", 1)[1]), _hc)
+        return v if v else (["no text layer (scanned PDF)"] if v is None and _uq(url.rsplit("/", 1)[1]) in _hc else [])
+
     for yr, yrows in by_year.items():
         body.append(f'<h2>{yr} &middot; {len(yrows)} letter'
                     f'{"s" if len(yrows) != 1 else ""}</h2>'
                     '<table><tr><th>Date</th><th>Company</th><th>Application</th>'
-                    '<th>Letter</th><th>On this site</th></tr>')
+                    '<th>Letter</th><th>Sections addressed (from the PDF)</th><th>On this site</th></tr>')
         for r in yrows:
             d = dt.date.fromisoformat(r["iso"])
             our = ours.get(r["url"].rsplit("/", 1)[1])
@@ -242,6 +257,7 @@ def main():
                 f'<tr><td class="dt">{MON[d.month][:3]} {d.day}, {d.year}</td>'
                 f'<td>{esc(r["company"][:44])}</td><td>{esc(r["app"][:28])}</td>'
                 f'<td><a href="{esc(r["url"])}" rel="noopener">letter (PDF)</a></td>'
+                f'<td style="font-size:12.5px">{esc("; ".join(_secs(r["url"]))) or "&middot;"}</td>'
                 f'<td>' + (f'<a href="{our}">decision page</a>' if our else "&mdash;")
                 + '</td></tr>')
         body.append("</table>")

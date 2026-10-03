@@ -230,7 +230,11 @@ def match_decision(by_tk, tk, caldate, caldate_desc=""):
     for date, outcome, drugtext, dec_tk in candidates:
         signed = (dt.date.fromisoformat(date) - cd).days      # negative = decided early
         gap = abs(signed)
-        if gap > WINDOW and _owned_elsewhere(tk, date, caldate):
+        # 2026-10-03: also inside the near WINDOW. Roche's Gazyva approval (09-25, its own row) sat
+        # 14 days from the Tecentriq goal (10-09) and was published on the October calendar as
+        # "Tecentriq: Approved". One decision, one row: a decision whose own goal row is closer
+        # belongs there, near or far.
+        if _owned_elsewhere(tk, date, caldate):
             continue                     # another row of this ticker is closer to this decision
 
         near = gap <= WINDOW

@@ -1,0 +1,903 @@
+{
+ "ABBV-2026-05-27": {
+  "checked": "2026-10-03",
+  "name": "LINZESS (Iinaclotide)",
+  "reason": "one decision-class approval (NDA202811 SUPPL-23) but dated 2026-05-21, outside 0-4 days before 2026-05-27",
+  "terms": [
+   "LINZESS",
+   "Iinaclotide"
+  ]
+ },
+ "ABBV-2026-06-16": {
+  "checked": "2026-10-03",
+  "name": "JUVÉDERM - (SKINVIVE) (injectable HA)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "injectable"
+  ]
+ },
+ "ABBV-2026-06-26": {
+  "checked": "2026-10-03",
+  "name": "SKYRIZI (risankizumab-rzaa)",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "SKYRIZI",
+   "risankizumab-rzaa"
+  ]
+ },
+ "ADMA-2026-05-04": {
+  "checked": "2026-10-03",
+  "name": "ASCENIV (RI-002)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "ASCENIV"
+  ]
+ },
+ "AMPH-2026-02-24": {
+  "checked": "2026-10-03",
+  "name": "Ipratropium Bromide HFA Inhalation Aerosol 1",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Ipratropium"
+  ]
+ },
+ "AMRX-2026-06-04": {
+  "checked": "2026-10-03",
+  "name": "Romidepsin injection solution, 27.5 mg/5.5 m",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Romidepsin"
+  ]
+ },
+ "ANIP-2026-04-08": {
+  "checked": "2026-10-03",
+  "name": "Isosorbide Mononitrate Tablet USP (generic o",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Isosorbide"
+  ]
+ },
+ "ARGX-2026-05-08": {
+  "checked": "2026-10-03",
+  "name": "VYVGART - (ADAPT SERON)",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "VYVGART"
+  ]
+ },
+ "ARVN-2026-05-01": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-05-01",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219835Orig1s000ltr.pdf",
+  "name": "VEPPANU (vepdegestrant) - (VERITAC-2)",
+  "record": "NDA 219835 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219835Orig1s000ltr.pdf",
+  "terms": [
+   "VEPPANU",
+   "vepdegestrant"
+  ]
+ },
+ "ASND-2026-02-27": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-02-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219164Orig1s000ltr.pdf",
+  "name": "YUVIWEL (navepegritide)",
+  "record": "NDA 219164 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219164Orig1s000ltr.pdf",
+  "terms": [
+   "YUVIWEL",
+   "navepegritide"
+  ]
+ },
+ "AXSM-2026-04-30": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-30",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215430Orig1s009, s018correctedltr.pdf",
+  "name": "AUVELITY (dextromethorphan HBr and bupropion",
+  "record": "NDA 215430 SUPPL-18",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215430Orig1s009, s018correctedltr.pdf",
+  "terms": [
+   "AUVELITY"
+  ]
+ },
+ "AZN-2026-04-27": {
+  "checked": "2026-10-03",
+  "class": "TYPE 5",
+  "date": "2026-04-24",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761451Orig1s000ltr.pdf",
+  "name": "SAPHNELO (anifrolumab-fnia)",
+  "record": "BLA 761451 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761451Orig1s000ltr.pdf",
+  "terms": [
+   "SAPHNELO",
+   "anifrolumab-fnia"
+  ]
+ },
+ "AZN-2026-04-28": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212122Orig1s009ltr.pdf",
+  "name": "BREZTRI AEROSPHERE (budesonide/glycopyrrolat",
+  "record": "NDA 212122 SUPPL-9",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212122Orig1s009ltr.pdf",
+  "terms": [
+   "BREZTRI"
+  ]
+ },
+ "AZN-2026-05-15": {
+  "checked": "2026-10-03",
+  "name": "ENHERTU (trastuzumab deruxtecan) - (DESTINY-",
+  "reason": "3 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "ENHERTU",
+   "trastuzumab"
+  ]
+ },
+ "AZN-2026-05-18": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-05-15",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219878Orig1s000ltr.pdf",
+  "name": "BAXFENDY (baxdrostat)",
+  "record": "NDA 219878 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219878Orig1s000ltr.pdf",
+  "terms": [
+   "BAXFENDY",
+   "baxdrostat"
+  ]
+ },
+ "AZN-2026-05-22": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-05-22",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf",
+  "name": "Datopotamab Deruxtecan (Dato-DXd) - (TROPION",
+  "record": "BLA 761394 SUPPL-3",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf",
+  "terms": [
+   "Datopotamab",
+   "Dato-"
+  ]
+ },
+ "AZN-2026-05-28": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-05-28",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s053ltr.pdf",
+  "name": "Imfinzi (durvalumab)",
+  "record": "BLA 761069 SUPPL-53",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s053ltr.pdf",
+  "terms": [
+   "Imfinzi",
+   "durvalumab"
+  ]
+ },
+ "AZN-2026-09-04": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-09-04",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220359Orig1s000ltr.pdf",
+  "name": "Etcamah (camizestrant)",
+  "record": "NDA 220359 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220359Orig1s000ltr.pdf",
+  "terms": [
+   "Etcamah",
+   "camizestrant"
+  ]
+ },
+ "BAYRY-2026-06-15": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-06-12",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219627Origs1s000correctedltr.pdf",
+  "name": "AMBELVIST (gadoquatrane)",
+  "record": "NDA 219627 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219627Origs1s000correctedltr.pdf",
+  "terms": [
+   "AMBELVIST",
+   "gadoquatrane"
+  ]
+ },
+ "BIIB-2026-03-30": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209531Orig1s016ltr.pdf",
+  "name": "SPINRAZA (Nusinersen) - (DEVOTE)",
+  "record": "NDA 209531 SUPPL-16",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209531Orig1s016ltr.pdf",
+  "terms": [
+   "SPINRAZA",
+   "Nusinersen"
+  ]
+ },
+ "BIIB-2026-07-13": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-07-13",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761375Orig1s001ltr.pdf",
+  "name": "LEQEMBI IQLIK (lecanemab-irmb) (at-home injection)",
+  "record": "BLA 761375 SUPPL-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761375Orig1s001ltr.pdf",
+  "terms": [
+   "LEQEMBI",
+   "lecanemab-irmb"
+  ]
+ },
+ "BMRN-2026-02-27": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-02-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761079Orig1s031correctedltr.pdf",
+  "name": "PALYNZIQ (pegvaliase-pqpz) - (PEGASUS)",
+  "record": "BLA 761079 SUPPL-31",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761079Orig1s031correctedltr.pdf",
+  "terms": [
+   "PALYNZIQ",
+   "pegvaliase-pqpz"
+  ]
+ },
+ "BMY-2026-03-06": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-06",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214958Orig1s002ltr.pdf",
+  "name": "Sotyktu (deucravacitinib) - (POETYK PsA-1)",
+  "record": "NDA 214958 SUPPL-2",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214958Orig1s002ltr.pdf",
+  "terms": [
+   "Sotyktu",
+   "deucravacitinib"
+  ]
+ },
+ "BMY-2026-03-20": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-20",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125554Orig1s135ltr.pdf",
+  "name": "Opdivo in combination with AVD",
+  "record": "BLA 125554 SUPPL-135",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125554Orig1s135ltr.pdf",
+  "terms": [
+   "Opdivo"
+  ]
+ },
+ "BMY-2026-06-01": {
+  "checked": "2026-10-03",
+  "name": "Camzyos (mavacamten) - (SCOUT-HCM)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Camzyos",
+   "mavacamten"
+  ]
+ },
+ "CRSP-2026-07-01": {
+  "checked": "2026-10-03",
+  "name": "Casgevy (exagamglogene autotemcel)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Casgevy",
+   "exagamglogene"
+  ]
+ },
+ "DNLI-2026-03-25": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-03-24",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761485Orig1s000correctedltr.pdf",
+  "name": "AVLAYAH (Tividenofusp alfa) - (COMPASS)",
+  "record": "BLA 761485 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761485Orig1s000correctedltr.pdf",
+  "terms": [
+   "AVLAYAH",
+   "Tividenofusp"
+  ]
+ },
+ "EBS-2026-02-13": {
+  "checked": "2026-10-03",
+  "name": "OTC NARCAN Nasal Spray w/ carrying case",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": []
+ },
+ "GILD-2026-02-06": {
+  "checked": "2026-10-03",
+  "name": "YESCARTA - Axicabtagene ciloleucel - (ZUMA-5",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "YESCARTA"
+  ]
+ },
+ "GILD-2026-05-26": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-05-22",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761468Orig1s000ltr.pdf",
+  "name": "Hepcludex (Bulevirtide) - (MYR301)",
+  "record": "BLA 761468 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761468Orig1s000ltr.pdf",
+  "terms": [
+   "Hepcludex",
+   "Bulevirtide"
+  ]
+ },
+ "GILD-2026-06-24": {
+  "checked": "2026-10-03",
+  "name": "Trodelvy (sacituzumab govitecan-hziy) plus K",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "Trodelvy",
+   "sacituzumab"
+  ]
+ },
+ "GSK-2026-03-13": {
+  "checked": "2026-10-03",
+  "name": "Arexvy",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Arexvy"
+  ]
+ },
+ "GSK-2026-03-19": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-03-17",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220295Orig1s000ltr.pdf",
+  "name": "Linerixibat - (GLISTEN)",
+  "record": "NDA 220295 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220295Orig1s000ltr.pdf",
+  "terms": [
+   "Linerixibat"
+  ]
+ },
+ "HALO-2026-03-05": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-05",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761291Orig1s018ltr.pdf",
+  "name": "TECVAYLI (teclistamab-cqyv) and DARZALEX FAS",
+  "record": "BLA 761291 SUPPL-18",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761291Orig1s018ltr.pdf",
+  "terms": [
+   "TECVAYLI",
+   "teclistamab-cqyv"
+  ]
+ },
+ "HRMY-2026-02-17": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-02-13",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211150Orig1s006ltr.pdf",
+  "name": "WAKIX (pitolisant)",
+  "record": "NDA 211150 SUPPL-6",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211150Orig1s006ltr.pdf",
+  "terms": [
+   "WAKIX",
+   "pitolisant"
+  ]
+ },
+ "INCY-2026-05-01": {
+  "checked": "2026-10-03",
+  "class": "TYPE 5",
+  "date": "2026-05-01",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217180Orig1s000ltr.pdf",
+  "name": "Jakafi XR (ruxolitinib)",
+  "record": "NDA 217180 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217180Orig1s000ltr.pdf",
+  "terms": [
+   "Jakafi",
+   "ruxolitinib"
+  ]
+ },
+ "IONS-2026-03-30": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209531Orig1s016ltr.pdf",
+  "name": "SPINRAZA (Nusinersen) - (DEVOTE)",
+  "record": "NDA 209531 SUPPL-16",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209531Orig1s016ltr.pdf",
+  "terms": [
+   "SPINRAZA",
+   "Nusinersen"
+  ]
+ },
+ "IRWD-2026-05-27": {
+  "checked": "2026-10-03",
+  "name": "LINZESS (Iinaclotide)",
+  "reason": "one decision-class approval (NDA202811 SUPPL-23) but dated 2026-05-21, outside 0-4 days before 2026-05-27",
+  "terms": [
+   "LINZESS",
+   "Iinaclotide"
+  ]
+ },
+ "JAGX-2026-04-29": {
+  "checked": "2026-10-03",
+  "name": "Canalevia-CA1",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Canalevia-CA1"
+  ]
+ },
+ "JNJ-2026-03-05": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-05",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761291Orig1s018ltr.pdf",
+  "name": "TECVAYLI (teclistamab-cqyv) and DARZALEX FAS",
+  "record": "BLA 761291 SUPPL-18",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761291Orig1s018ltr.pdf",
+  "terms": [
+   "TECVAYLI",
+   "teclistamab-cqyv"
+  ]
+ },
+ "JNJ-2026-03-18": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-03-17",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220149Orig1s000ltr.pdf",
+  "name": "ICOTYDE (icotrokinra)",
+  "record": "NDA 220149 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220149Orig1s000ltr.pdf",
+  "terms": [
+   "ICOTYDE",
+   "icotrokinra"
+  ]
+ },
+ "JNJ-2026-05-29": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-05-28",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761061Orig1s034ltr.pdf",
+  "name": "TREMFYA (guselkumab)",
+  "record": "BLA 761061 SUPPL-34",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761061Orig1s034ltr.pdf",
+  "terms": [
+   "TREMFYA",
+   "guselkumab"
+  ]
+ },
+ "LGND-2026-04-13": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-13",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216403Orig1s006ltr.pdf",
+  "name": "FILSPARI (sparsentan)",
+  "record": "NDA 216403 SUPPL-6",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216403Orig1s006ltr.pdf",
+  "terms": [
+   "FILSPARI",
+   "sparsentan"
+  ]
+ },
+ "LGND-2026-06-08": {
+  "checked": "2026-10-03",
+  "name": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "MIPLYFFA",
+   "arimoclomol"
+  ]
+ },
+ "LLY-2026-04-01": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-04-01",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220934Orig1s000ltr.pdf",
+  "name": "Foundayo (orforglipron) - (ATTAIN-1)",
+  "record": "NDA 220934 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220934Orig1s000ltr.pdf",
+  "terms": [
+   "Foundayo",
+   "orforglipron"
+  ]
+ },
+ "LLY-2026-06-09": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-06-09",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761306Orig1s006ltr.pdf",
+  "name": "EBGLYSS (lebrikizumab-lbkz) - (ADjoin)",
+  "record": "BLA 761306 SUPPL-6",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761306Orig1s006ltr.pdf",
+  "terms": [
+   "EBGLYSS",
+   "lebrikizumab-lbkz"
+  ]
+ },
+ "LNTH-2026-03-06": {
+  "checked": "2026-10-03",
+  "class": "TYPE 5",
+  "date": "2026-03-06",
+  "letter": null,
+  "name": "PYLARIFY TruVu (piflufolastat F 18) Injectio",
+  "record": "NDA 220089 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220089",
+  "terms": [
+   "PYLARIFY",
+   "piflufolastat"
+  ]
+ },
+ "MNKD-2026-05-29": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-05-29",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022472Orig1s029ltr..pdf",
+  "name": "Afrezza (Technosphere Insulin) - (INHALE-1)",
+  "record": "BLA 022472 SUPPL-29",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/022472Orig1s029ltr..pdf",
+  "terms": [
+   "Afrezza",
+   "Technosphere"
+  ]
+ },
+ "MRK-2026-02-11": {
+  "checked": "2026-10-03",
+  "name": "KEYTRUDA and KEYTRUDA QLEX",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "KEYTRUDA"
+  ]
+ },
+ "MRK-2026-04-21": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1/4",
+  "date": "2026-04-20",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216964Orig1s000ltr.pdf",
+  "name": "IDVYNSO (doravirine/islatravir)",
+  "record": "NDA 216964 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216964Orig1s000ltr.pdf",
+  "terms": [
+   "IDVYNSO",
+   "doravirine"
+  ]
+ },
+ "MRK-2026-06-12": {
+  "checked": "2026-10-03",
+  "name": "KEYTRUDA (pembrolizumab) and KEYTRUDA QLEX (",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "KEYTRUDA",
+   "pembrolizumab"
+  ]
+ },
+ "MRK-2026-06-18": {
+  "checked": "2026-10-03",
+  "name": "CAPVAXIVE (Pneumococcal 21-valent Conjugate ",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "CAPVAXIVE"
+  ]
+ },
+ "MRK-2026-06-24": {
+  "checked": "2026-10-03",
+  "name": "Trodelvy (sacituzumab govitecan-hziy) plus K",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "Trodelvy",
+   "sacituzumab"
+  ]
+ },
+ "MRK-2026-07-10": {
+  "checked": "2026-10-03",
+  "name": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+  "reason": "4 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "KEYTRUDA",
+   "pembrolizumab"
+  ]
+ },
+ "NVCR-2026-02-12": {
+  "checked": "2026-10-03",
+  "name": "Optune Pax",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Optune"
+  ]
+ },
+ "NVO-2026-03-03": {
+  "checked": "2026-10-03",
+  "name": "Sogroya (somapacitan) - (REAL8)",
+  "reason": "3 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "Sogroya",
+   "somapacitan"
+  ]
+ },
+ "NVO-2026-03-19": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-19",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215256Orig1s029;218316Orig1s005ltr.pdf",
+  "name": "Wegovy HD",
+  "record": "NDA 215256 SUPPL-29",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215256Orig1s029;218316Orig1s005ltr.pdf",
+  "terms": [
+   "Wegovy"
+  ]
+ },
+ "NVO-2026-03-26": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-03-26",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761326Orig2s000ltr.pdf",
+  "name": "Awiqli (insulin icodec-abae) injection 700 u",
+  "record": "BLA 761326 ORIG-2",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761326Orig2s000ltr.pdf",
+  "terms": [
+   "Awiqli",
+   "insulin"
+  ]
+ },
+ "NVS-2026-03-13": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-12",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s091;761349Orig1s010ltr.pdf",
+  "name": "COSENTYX (secukinumab)- (SUNSHINE)",
+  "record": "BLA 125504 SUPPL-91",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s091;761349Orig1s010ltr.pdf",
+  "terms": [
+   "COSENTYX",
+   "secukinumab"
+  ]
+ },
+ "ONC-2026-05-13": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-05-13",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220711Orig1s000ltr.pdf",
+  "name": "BEQALZI (Sonrotoclax)",
+  "record": "NDA 220711 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220711Orig1s000ltr.pdf",
+  "terms": [
+   "BEQALZI",
+   "Sonrotoclax"
+  ]
+ },
+ "PFE-2026-02-24": {
+  "checked": "2026-10-03",
+  "name": "BRAFTOVI (encorafenib) in combination with c",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "BRAFTOVI",
+   "encorafenib"
+  ]
+ },
+ "PFE-2026-05-01": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-05-01",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219835Orig1s000ltr.pdf",
+  "name": "VEPPANU (vepdegestrant) - (VERITAC-2)",
+  "record": "NDA 219835 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219835Orig1s000ltr.pdf",
+  "terms": [
+   "VEPPANU",
+   "vepdegestrant"
+  ]
+ },
+ "PFE-2026-06-08": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-06-05",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761369Orig1s003ltr.pdf",
+  "name": "HYMPAVZI (marstacimab)",
+  "record": "BLA 761369 SUPPL-3",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761369Orig1s003ltr.pdf",
+  "terms": [
+   "HYMPAVZI",
+   "marstacimab"
+  ]
+ },
+ "PFE-2026-06-24": {
+  "checked": "2026-10-03",
+  "name": "IBRANCE (palbociclib) in combination with tr",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "IBRANCE",
+   "palbociclib"
+  ]
+ },
+ "PFE-2026-07-10": {
+  "checked": "2026-10-03",
+  "name": "KEYTRUDA (pembrolizumab) plus Padcev (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304)",
+  "reason": "4 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "KEYTRUDA",
+   "pembrolizumab"
+  ]
+ },
+ "PGEN-2026-05-27": {
+  "checked": "2026-10-03",
+  "name": "PAPZIMEOS (zopapogene imadenovec-drba)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "PAPZIMEOS",
+   "zopapogene"
+  ]
+ },
+ "PTGX-2026-03-18": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-03-17",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220149Orig1s000ltr.pdf",
+  "name": "ICOTYDE (icotrokinra)",
+  "record": "NDA 220149 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220149Orig1s000ltr.pdf",
+  "terms": [
+   "ICOTYDE",
+   "icotrokinra"
+  ]
+ },
+ "RCKT-2026-03-27": {
+  "checked": "2026-10-03",
+  "name": "KRESLADI (marnetegragene autotemcel)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "KRESLADI",
+   "marnetegragene"
+  ]
+ },
+ "REGN-2026-04-02": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-02",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761355Orig1s005ltr.pdf",
+  "name": "EYLEA HD (aflibercept) - (PHOTON ext)",
+  "record": "BLA 761355 SUPPL-5",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761355Orig1s005ltr.pdf",
+  "terms": [
+   "EYLEA",
+   "aflibercept"
+  ]
+ },
+ "REGN-2026-04-22": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-22",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s074ltr.pdf",
+  "name": "DUPIXENT (dupilumab) - (LIBERTY-CUPID)",
+  "record": "BLA 761055 SUPPL-74",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s074ltr.pdf",
+  "terms": [
+   "DUPIXENT",
+   "dupilumab"
+  ]
+ },
+ "REGN-2026-04-23": {
+  "checked": "2026-10-03",
+  "name": "Otarmeni (lunsotogene parvec-cwha)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Otarmeni",
+   "lunsotogene"
+  ]
+ },
+ "RHHBY-2026-02-20": {
+  "checked": "2026-10-03",
+  "name": "CALQUENCE plus venetoclax",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "CALQUENCE"
+  ]
+ },
+ "RVMD-2026-08-26": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-08-26",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220910Orig1s000ltr.pdf",
+  "name": "Rasonque (daraxonrasib)",
+  "record": "NDA 220910 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220910Orig1s000ltr.pdf",
+  "terms": [
+   "Rasonque",
+   "daraxonrasib"
+  ]
+ },
+ "RYTM-2026-03-20": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-03-19",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213793Orig1s009ltr.pdf",
+  "name": "IMCIVREE (setmelanotide)",
+  "record": "NDA 213793 SUPPL-9",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213793Orig1s009ltr.pdf",
+  "terms": [
+   "IMCIVREE",
+   "setmelanotide"
+  ]
+ },
+ "SNY-2026-04-22": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-22",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s074ltr.pdf",
+  "name": "DUPIXENT (dupilumab) - (LIBERTY-CUPID)",
+  "record": "BLA 761055 SUPPL-74",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s074ltr.pdf",
+  "terms": [
+   "DUPIXENT",
+   "dupilumab"
+  ]
+ },
+ "SPRY-2026-05-15": {
+  "checked": "2026-10-03",
+  "name": "Neffy 1 mg (epinephrine nasal spray)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Neffy",
+   "epinephrine"
+  ]
+ },
+ "TEVA-2026-03-30": {
+  "checked": "2026-10-03",
+  "class": "TYPE 5",
+  "date": "2026-03-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761385Orig1s000ltr.pdf",
+  "name": "PONLIMSI (denosumab-adet) (biosimilar to Pro",
+  "record": "BLA 761385 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761385Orig1s000ltr.pdf",
+  "terms": [
+   "PONLIMSI",
+   "denosumab-adet"
+  ]
+ },
+ "TVTX-2026-04-13": {
+  "checked": "2026-10-03",
+  "class": "EFFICACY",
+  "date": "2026-04-13",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216403Orig1s006ltr.pdf",
+  "name": "FILSPARI (sparsentan)",
+  "record": "NDA 216403 SUPPL-6",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216403Orig1s006ltr.pdf",
+  "terms": [
+   "FILSPARI",
+   "sparsentan"
+  ]
+ },
+ "VNDA-2026-02-20": {
+  "checked": "2026-10-03",
+  "class": "TYPE 1",
+  "date": "2026-02-20",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220358Orig1s000ltr.pdf",
+  "name": "Bysanti (milsaperidone)",
+  "record": "NDA 220358 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220358Orig1s000ltr.pdf",
+  "terms": [
+   "Bysanti",
+   "milsaperidone"
+  ]
+ },
+ "VRTX-2026-07-01": {
+  "checked": "2026-10-03",
+  "name": "Casgevy (exagamglogene autotemcel)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Casgevy",
+   "exagamglogene"
+  ]
+ },
+ "XOMA-2026-06-08": {
+  "checked": "2026-10-03",
+  "name": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "MIPLYFFA",
+   "arimoclomol"
+  ]
+ },
+ "ZVRA-2026-06-08": {
+  "checked": "2026-10-03",
+  "name": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "MIPLYFFA",
+   "arimoclomol"
+  ]
+ }
+}

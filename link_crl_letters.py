@@ -142,6 +142,17 @@ def main():
                 f'&middot; <a href="{url}" rel="noopener">Complete Response Letter, '
                 f'{_html.escape(app)} (PDF)</a>, {dated}, released under FDA\'s CRL '
                 f'transparency program.{_html.escape(ann)}')
+        secs = None
+        try:
+            from extract_crl_headings import substantive_sections
+            secs = substantive_sections(fn)
+        except Exception:
+            secs = None
+        if not f.get("deficiencies") and secs:
+            # audit 2026-10-03 item 4.5: the letter's own section headings, from the PDF text layer
+            card += (' <div style="margin-top:8px"><b style="color:#f2f6fc">Sections the letter addresses</b> '
+                     '(its own headings, read from the PDF&#x27;s text layer; labeling and administrative '
+                     'sections omitted): ' + "; ".join(_html.escape(x) for x in secs) + '.</div>')
         if f.get("deficiencies"):
             card += ('<div style="margin-top:8px"><b style="color:#f2f6fc">What the letter says has to be '
                      'fixed</b> (the letter\'s own section headings; read against the PDF, not '

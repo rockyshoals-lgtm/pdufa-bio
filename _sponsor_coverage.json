@@ -1,0 +1,202 @@
+{
+ "as_of": "2026-10-03",
+ "horizon_days": 60,
+ "sponsors": {
+  "AGIO": {
+   "company": "Agios Pharmaceuticals",
+   "goals": [
+    "2026-11-01"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1439222
+  },
+  "BBIO": {
+   "company": "BridgeBio Pharma, Inc.",
+   "goals": [
+    "2026-11-27"
+   ],
+   "channels": [
+    "sponsor_feed",
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1743881
+  },
+  "BTAI": {
+   "company": "BioXcel Therapeutics",
+   "goals": [
+    "2026-11-14"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1720893
+  },
+  "CAPR": {
+   "company": "Capricor Therapeutics Inc.",
+   "goals": [
+    "2026-11-22"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1133869
+  },
+  "COGT": {
+   "company": "Cogent Biosciences",
+   "goals": [
+    "2026-11-30"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1622229
+  },
+  "CYTK": {
+   "company": "Cytokinetics Inc",
+   "goals": [
+    "2026-11-14"
+   ],
+   "channels": [
+    "sponsor_feed",
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1061983
+  },
+  "GSK": {
+   "company": "GSK plc",
+   "goals": [
+    "2026-10-26",
+    "2026-11-27"
+   ],
+   "channels": [
+    "sponsor_feed",
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1131399
+  },
+  "INO": {
+   "company": "Inovio Pharmaceuticals",
+   "goals": [
+    "2026-10-30"
+   ],
+   "channels": [
+    "sponsor_feed",
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1055726
+  },
+  "IRD": {
+   "company": "Opus Genetics, Inc.",
+   "goals": [
+    "2026-10-17"
+   ],
+   "channels": [
+    "sponsor_feed",
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1228627
+  },
+  "MRK": {
+   "company": "Merck & Co., Inc.",
+   "goals": [
+    "2026-10-10"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 310158
+  },
+  "NVCR": {
+   "company": "NovoCure Limited",
+   "goals": [
+    "2026-11-15"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1645113
+  },
+  "REGN": {
+   "company": "Regeneron Pharmaceuticals Inc.",
+   "goals": [
+    "2026-11-30"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 872589
+  },
+  "RHHBY": {
+   "company": "Roche Holding AG",
+   "goals": [
+    "2026-10-09",
+    "2026-10-15",
+    "2026-11-30"
+   ],
+   "channels": [
+    "fda_feeds"
+   ],
+   "cik": null,
+   "reason_no_own_channel": "Roche Holding AG is not an SEC registrant (OTC ADR, no 8-K/6-K) and publishes no news-release RSS; its U.S. decisions are covered by the FDA's What's New: Drugs feed (watch_fda_drugs_feed.py) and Drugs@FDA (watch_fda_approvals.py)."
+  },
+  "SMMT": {
+   "company": "Summit Therapeutics Inc.",
+   "goals": [
+    "2026-11-14"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1599298
+  },
+  "SVRA": {
+   "company": "Savara",
+   "goals": [
+    "2026-11-22"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1160308
+  },
+  "VRTX": {
+   "company": "Vertex",
+   "goals": [
+    "2026-11-30"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 875320
+  },
+  "VTRS": {
+   "company": "Viatris Inc.",
+   "goals": [
+    "2026-10-17"
+   ],
+   "channels": [
+    "sponsor_feed",
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1792044
+  }
+ }
+}

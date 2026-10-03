@@ -1,0 +1,324 @@
+{
+ "source": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+ "year": 2026,
+ "read_at": "2026-10-03",
+ "fda_content_current_as_of": "2026-09-28",
+ "note": "CDER's Novel Drug Approvals list. CBER-regulated products are not on it.",
+ "rows": [
+  {
+   "n": 1,
+   "brand": "Zycubo",
+   "ingredient": "copper histidinate",
+   "date": "2026-01-12",
+   "use": "To treat Menkes disease"
+  },
+  {
+   "n": 2,
+   "brand": "Adquey",
+   "ingredient": "difamilast",
+   "date": "2026-02-12",
+   "use": "To treat mild to moderate atopic dermatitis"
+  },
+  {
+   "n": 3,
+   "brand": "Bysanti",
+   "ingredient": "milsaperidone",
+   "date": "2026-02-20",
+   "use": "To treat schizophrenia and to treat manic or mixed episodes associated with bipolar I disorder"
+  },
+  {
+   "n": 4,
+   "brand": "Loargys",
+   "ingredient": "pegzilarginase-nbln",
+   "date": "2026-02-23",
+   "use": "To treat hyperarginemia in adults and pediatric patients two years and older with Arginase 1 Deficiency, in conjunction with dietary protein restriction"
+  },
+  {
+   "n": 5,
+   "brand": "Yuviwel",
+   "ingredient": "navepegritide",
+   "date": "2026-02-27",
+   "use": "To increase linear growth in pediatric patients 2 years and older with achondroplasia with open epiphyses"
+  },
+  {
+   "n": 6,
+   "brand": "Lynavoy",
+   "ingredient": "linerixibat",
+   "date": "2026-03-17",
+   "use": "To treat cholestatic pruritus associated with primary biliary cholangitis"
+  },
+  {
+   "n": 7,
+   "brand": "Icotyde",
+   "ingredient": "icotrokinra",
+   "date": "2026-03-17",
+   "use": "To treat moderate-to-severe plaque psoriasis in patients 12 years and older who weigh at least 40 kg and who are candidates for systemic therapy or phototherapy"
+  },
+  {
+   "n": 8,
+   "brand": "Avlayah",
+   "ingredient": "tividenofusp alfa-eknm",
+   "date": "2026-03-24",
+   "use": "To treat certain individuals with Hunter syndrome (Mucopolysaccharidosis type II or MPS II)"
+  },
+  {
+   "n": 9,
+   "brand": "Lifyorli",
+   "ingredient": "relacorilant",
+   "date": "2026-03-25",
+   "use": "To treat platinum-resistant epithelial ovarian, fallopian tube, or primary peritoneal cancer after one to three prior systemic treatment regimens, at least one of which included bevacizumab"
+  },
+  {
+   "n": 10,
+   "brand": "Awiqli",
+   "ingredient": "insulin icodec-abae",
+   "date": "2026-03-26",
+   "use": "To improve glycemic control in adults with type 2 diabetes mellitus"
+  },
+  {
+   "n": 11,
+   "brand": "Foundayo",
+   "ingredient": "orforglipron",
+   "date": "2026-04-01",
+   "use": "To reduce excess body weight and maintain weight reduction long term in adults with obesity or adults with overweight in the presence of at least one weight-related comorbid condition, in combination with a reduced-calorie diet and increased physical activity"
+  },
+  {
+   "n": 12,
+   "brand": "Idvynso",
+   "ingredient": "doravirine and islatravir",
+   "date": "2026-04-20",
+   "use": "To treat HIV-1 infection (as a complete regimen) in adults to replace the current antiretroviral regimen in those who are virologically-suppressed on a stable antiretroviral regimen with no history of virologic treatment failure and no known substitutions associated with resistance to doravirine"
+  },
+  {
+   "n": 13,
+   "brand": "Veppanu",
+   "ingredient": "vepdegestrant",
+   "date": "2026-05-01",
+   "use": "To treat estrogen receptor-positive, human epidermal growth factor receptor 2-negative, ESR1-mutated advanced or metastatic breast cancer with disease progression following at least one line of endocrine therapy"
+  },
+  {
+   "n": 14,
+   "brand": "Beqalzi",
+   "ingredient": "sonrotoclax",
+   "date": "2026-05-13",
+   "use": "To treat adults with relapsed or refractory mantle cell lymphoma after at least two lines of systemic therapy, including a Bruton’s tyrosine kinase inhibitor"
+  },
+  {
+   "n": 15,
+   "brand": "Baxfendy",
+   "ingredient": "baxdrostat",
+   "date": "2026-05-15",
+   "use": "To treat hypertension in combination with other antihypertensive drugs"
+  },
+  {
+   "n": 16,
+   "brand": "Hepcludex",
+   "ingredient": "bulevirtide-gmod",
+   "date": "2026-05-22",
+   "use": "To treat chronic hepatitis delta virus infection in adults without cirrhosis or with compensated cirrhosis"
+  },
+  {
+   "n": 17,
+   "brand": "Decnupaz",
+   "ingredient": "pivekimab sunirine-pvzy",
+   "date": "2026-05-27",
+   "use": "To treat adults with blastic plasmacytoid dendritic cell neoplasm"
+  },
+  {
+   "n": 18,
+   "brand": "Zaynich",
+   "ingredient": "cefepime and zidebactam",
+   "date": "2026-05-29",
+   "use": "To treat complicated urinary tract infections, including pyelonephritis, caused by designated susceptible microorganisms"
+  },
+  {
+   "n": 19,
+   "brand": "Xocova",
+   "ingredient": "ensitrelvir",
+   "date": "2026-05-29",
+   "use": "To use as post-exposure prophylaxis of coronavirus disease 2019 (COVID-19) following contact with an individual who has COVID-19"
+  },
+  {
+   "n": 20,
+   "brand": "Cypsedo",
+   "ingredient": "cipepofol",
+   "date": "2026-05-29",
+   "use": "To induce general anesthesia in adults undergoing surgery"
+  },
+  {
+   "n": 21,
+   "brand": "Ambelvist",
+   "ingredient": "gadoquatrane",
+   "date": "2026-06-12",
+   "use": "To detect and visualize lesions with abnormal vascularity, in conjunction with MRI"
+  },
+  {
+   "n": 22,
+   "brand": "Utebzi",
+   "ingredient": "tebipenem pivoxil",
+   "date": "2026-06-17",
+   "use": "To treat complicated urinary tract infections, including pyelonephritis, caused by several susceptible microorganisms in adults who have limited or no alternative oral treatment options"
+  },
+  {
+   "n": 23,
+   "brand": "Lumvoa",
+   "ingredient": "veligrotug-vvze",
+   "date": "2026-06-26",
+   "use": "To treat thyroid eye disease"
+  },
+  {
+   "n": 24,
+   "brand": "Trutakna",
+   "ingredient": "atacicept-vymj",
+   "date": "2026-07-07",
+   "use": "To reduce proteinuria in adults with primary immunoglobulin A nephropathy at risk for disease progression"
+  },
+  {
+   "n": 25,
+   "brand": "Revtorpyk",
+   "ingredient": "gedatolisib",
+   "date": "2026-07-14",
+   "use": "In combination with fulvestran, to treat hormone receptor-positive, human epidermal growth factor receptor 2-negative, locally advanced or metastatic breast cancer without a PIK3CA mutation detected following progression on or after treatment with at least one line of endocrine therapy in the metastatic setting"
+  },
+  {
+   "n": 26,
+   "brand": "Lipfendra",
+   "ingredient": "enlicitide decanoate",
+   "date": "2026-07-15",
+   "use": "To reduce low-density lipoprotein cholesterol"
+  },
+  {
+   "n": 27,
+   "brand": "Jideytro",
+   "ingredient": "zidesamtinib",
+   "date": "2026-07-22",
+   "use": "To treat adults with locally advanced or metastatic ROS1-positive non-small cell lung cancer after receiving a ROS1 kinase inhibitor"
+  },
+  {
+   "n": 28,
+   "brand": "Lytenava",
+   "ingredient": "bevacizumab-vikg",
+   "date": "2026-07-24",
+   "use": "To treat patients with neovascular (wet) age-related macular degeneration"
+  },
+  {
+   "n": 29,
+   "brand": "Simtriyo",
+   "ingredient": "centanafadine",
+   "date": "2026-07-24",
+   "use": "To treat attention-deficit hyperactivity disorder"
+  },
+  {
+   "n": 30,
+   "brand": "Orzeyful",
+   "ingredient": "oveporexton",
+   "date": "2026-08-05",
+   "use": "To treat narcolepsy type 1"
+  },
+  {
+   "n": 31,
+   "brand": "Tauklarify",
+   "ingredient": "florquinitau F 18",
+   "date": "2026-08-13",
+   "use": "To be used for positron emission tomography of the brain in adults with cognitive impairment who are being evaluated for Alzheimer disease to identify patients with tau neurofibrillary tangle pathology"
+  },
+  {
+   "n": 32,
+   "brand": "Zenbexus",
+   "ingredient": "iberdomide",
+   "date": "2026-08-13",
+   "use": "To be used in combination with daratumumab and hyaluronidase-fihj and dexamethasone for adults with multiple myeloma who have received at least one prior line of therapy, including a proteasome inhibitor and an immunomodulatory agent"
+  },
+  {
+   "n": 33,
+   "brand": "Pasatru",
+   "ingredient": "garetosmab-grts",
+   "date": "2026-08-19",
+   "use": "To reduce new heterotopic ossification and clinician-assessed disease flare-ups in adults with fibrodysplasia ossificans progressiva"
+  },
+  {
+   "n": 34,
+   "brand": "Rasonque",
+   "ingredient": "daraxonrasib",
+   "date": "2026-08-26",
+   "use": "To treat metastatic pancreatic cancer"
+  },
+  {
+   "n": 35,
+   "brand": "Lisraya",
+   "ingredient": "brepocitinib",
+   "date": "2026-08-27",
+   "use": "To treat dermatomyositis in adults"
+  },
+  {
+   "n": 36,
+   "brand": "Mimrylo",
+   "ingredient": "rusfertide",
+   "date": "2026-08-28",
+   "use": "To treat erythrocytosis in adults with polycythemia vera"
+  },
+  {
+   "n": 37,
+   "brand": "Zanvastro",
+   "ingredient": "zilganersen",
+   "date": "2026-09-03",
+   "use": "To treat Alexander disease in pediatric and adult patients"
+  },
+  {
+   "n": 38,
+   "brand": "Etcamah",
+   "ingredient": "camizestrant",
+   "date": "2026-09-04",
+   "use": "To treat hormone receptor-positive, human epidermal growth factor receptor 2-negative, locally advanced or metastatic breast cancer upon detection of ESR1 mutation during aromatase inhibitor and CDK4/6 inhibitor therapy"
+  },
+  {
+   "n": 39,
+   "brand": "Isembyld",
+   "ingredient": "apitegromab-mstn",
+   "date": "2026-09-11",
+   "use": "To treat spinal muscular atrophy in adults and pediatric patients 2 years of age and older who are currently receiving an SMN2-targeted treatment"
+  },
+  {
+   "n": 40,
+   "brand": "Pixclara",
+   "ingredient": "floretyrosine F 18",
+   "date": "2026-09-11",
+   "use": "To use with positron emission tomography to differentiate recurrent or progressive glioma from treatment-related change in conjunction with other diagnostic evaluations"
+  },
+  {
+   "n": 41,
+   "brand": "Onswik",
+   "ingredient": "insulin efsitora alfa-gobe",
+   "date": "2026-09-23",
+   "use": "To improve glycemic control in adults with type 2 diabetes mellitus, as an adjunct to diet and exercise"
+  },
+  {
+   "n": 42,
+   "brand": "Lyrfigtu",
+   "ingredient": "lirafugratinib",
+   "date": "2026-09-23",
+   "use": "To adults with previously treated unresectable, locally advanced or metastatic cholangiocarcinoma harboring a fibroblast growth factor receptor 2 gene fusion or other rearrangement"
+  },
+  {
+   "n": 43,
+   "brand": "Juvmo",
+   "ingredient": "tavapadon",
+   "date": "2026-09-25",
+   "use": "To treat Parkinson’s disease in adults"
+  },
+  {
+   "n": 44,
+   "brand": "Atebrioz",
+   "ingredient": "zilurgisertib",
+   "date": "2026-09-25",
+   "use": "To reduce the volume of total new heterotopic ossification in adults and pediatric patients 12 years and older with fibrodysplasia ossificans progressiva"
+  },
+  {
+   "n": 45,
+   "brand": "Emcitate",
+   "ingredient": "tiratricol",
+   "date": "2026-09-28",
+   "use": "To treat peripheral thyrotoxicosis in patients with MCT8 deficiency"
+  }
+ ]
+}

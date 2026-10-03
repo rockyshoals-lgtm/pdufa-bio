@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "RHHBY",
+  "date": "2026-09-25",
+  "outcome": "Approved",
+  "drug": "Gazyva (obinutuzumab)",
+  "indication": "Frequently relapsing or steroid-dependent, childhood-onset idiopathic nephrotic syndrome in patients 2 years and older who are in remission (reduce the risk of relapse)",
+  "company": "Roche Holding AG",
+  "cap": "Large",
+  "headline": "BLA 125486, supplement 043: Gazyva is approved to reduce the risk of relapse in adult and pediatric patients 2 years and older with frequently relapsing or steroid-dependent, childhood-onset idiopathic nephrotic syndrome who are in remission (FDA notice of September 25, 2026).",
+  "pdufa_note": "The FDA's approval letter for BLA 125486 supplement 043 is dated September 25, 2026 (Drugs@FDA), and the FDA published its notice of the approval the same day (CDER News & Events, 1:51 PM ET). The approval carried Breakthrough Therapy, Orphan Drug and Priority Review designations. It is based on the Phase 3 INShore trial (NCT05627557) in 85 patients aged 2 and older, comparing Gazyva with mycophenolate mofetil. pdufa.bio holds no goal date for this supplement, so no early or late margin is computed. Gazyva was previously approved for certain cancers and for adults with active lupus nephritis.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s043ltr.pdf",
+  "source_label": "FDA approval letter, BLA 125486 S-043, September 25, 2026"
+ }
+]

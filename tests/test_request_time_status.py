@@ -27,8 +27,8 @@ const m = await import('file:///%s');
 const out = [];
 for (const today of ['2026-09-27', '2026-10-03', '2026-10-15', '2027-01-04']) {
   for (const e of m.DATA) {
-    if (!['Conference', 'PDUFA'].includes(e.type)) continue;
-    out.push([today, e.id, e.type, e.st, e.dp, e.d, (e._d && e._d.end) || null, m.liveStatus(e, today)]);
+    if (!['Conference', 'PDUFA', 'Readout'].includes(e.type)) continue;
+    out.push([today, e.id, e.type, e.st, e.dp, e.d, (e._d && e._d.end) || e.dm || null, m.liveStatus(e, today), (e._d && e._d.registry) || null]);
   }
 }
 const src = (await import('node:fs')).readFileSync(new URL('file:///%s'), 'utf8');
@@ -38,12 +38,22 @@ console.log(JSON.stringify({ rows: out,
 """ % (LIB, LIB)
 
 
-def expected(typ, st, dp, d, end, today):
+def expected(typ, st, dp, d, end, today, reg=None):
     if typ == "Conference":
         end = (end or d)[:10]
         return "Ended" if end < today else ("In progress" if d[:10] <= today else "Scheduled")
-    if st == "Upcoming" and dp == "day" and d[:10] < today:
+    if typ == "PDUFA" and st == "Upcoming" and dp == "day" and d[:10] < today:
         return "Awaiting"
+    if typ == "Readout" and st in ("Estimated", "Guided"):
+        if reg:
+            os_ = reg.get("overall_status") or ""
+            if os_ in ("TERMINATED", "WITHDRAWN", "SUSPENDED"):
+                return os_.title() + " per registry"
+            if os_ == "COMPLETED" or (reg.get("primary_completion_type") == "ACTUAL"
+                                      and str(reg.get("primary_completion") or "9999")[:10] <= today):
+                return "Completed per registry"
+        ended = ((end or d)[:7] < today[:7]) if dp == "month" else (d[:10] < today)
+        return "Window passed" if ended else st
     return st
 
 
@@ -62,8 +72,8 @@ def main():
         fails.append("shape() does not apply liveStatus(e): the baked status is served")
     if not j["filter_uses_live"]:
         fails.append("?status= filters on the baked status, not the request-time one")
-    for today, rid, typ, st, dp, d, end, got in j["rows"]:
-        want = expected(typ, st, dp, d, end, today)
+    for today, rid, typ, st, dp, d, end, got, reg in j["rows"]:
+        want = expected(typ, st, dp, d, end, today, reg)
         if got != want:
             fails.append(f"{today} {rid}: served {got!r}, dates say {want!r} (baked {st!r})")
     if fails:
@@ -72,7 +82,7 @@ def main():
             print("   " + f)
         return 1
     n = len({x[1] for x in j['rows']})
-    print(f"OK -- {n} Conference/PDUFA rows x 4 Eastern dates: statuses follow the date, not the build.")
+    print(f"OK -- {n} Conference/PDUFA/Readout rows x 4 Eastern dates: statuses follow the date, not the build.")
     return 0
 
 
