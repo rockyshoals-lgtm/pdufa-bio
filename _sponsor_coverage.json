@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-03",
+ "as_of": "2026-10-04",
  "horizon_days": 60,
  "sponsors": {
   "AGIO": {
@@ -69,6 +69,17 @@
     "fda_feeds"
    ],
    "cik": 1061983
+  },
+  "EXEL": {
+   "company": "Exelixis",
+   "goals": [
+    "2026-12-03"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 939767
   },
   "GSK": {
    "company": "GSK plc",
