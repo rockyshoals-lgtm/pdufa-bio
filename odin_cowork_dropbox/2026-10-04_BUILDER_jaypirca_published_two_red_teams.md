@@ -50,3 +50,20 @@ Local guards: **131 pass, 0 fail** (`_guards_0915.log`, 10:27 Pacific), after a 
 - Jaypirca's alternate names RXC-005 and LY3527727 come from an unsourced alias list. They are harmless but unverified; drop them or source them.
 - `/drug/jaypirca` lists only the approvals pdufa.bio tracks (Dec 3, 2025 and Oct 2, 2026). The 2023 accelerated approvals are not rows. The caveat now says so.
 - Drugs@FDA still shows the Dec 3, 2025 supplement (SUPPL-5) as 12/02/2025 against the FDA notice's Dec 3. This is pre-existing and was not touched; a ruling is needed on which date to carry.
+
+## 6. Live verification (appended ~10:45 Pacific = 13:45 Eastern; CI times UTC)
+
+Commit `661de762c`, CI run 37220670604 **green** (guards passed in CI), build-info `built 2026-10-04T17:32:32Z`, `commit 661de762c`.
+
+| Check (live, cache-busted) | Result |
+|---|---|
+| `/fda-decision/LLY-2026-10-02` | 200; title, description, canonical and h1 as in section 1 |
+| BreadcrumbList | Home > FDA Decisions > "Jaypirca (pirtobrutinib) FDA approval for first-line CLL/SLL: Oct 2, 2026" (own page, no stray space) |
+| FAQPage | 7 questions. Q1 answer: "The FDA approved ... on October 2, 2026, per the FDA's own record." |
+| covalent-BTKi qualifier present; em/en dashes; "rejection" | yes; none; none |
+| `/drug/jaypirca` | "FDA decision · Dec 3, 2025", "FDA action · Oct 2, 2026"; About text lower-case with approval day and caveat |
+| `/fda-this-month`, `/fda-approval-letters`, `/calendar`, `/fda-decisions-today`, `/decisions` | 200, each links LLY-2026-10-02 |
+| `/api/v1/pdufa?ticker=LLY` | row present, Decided, url to the page |
+| Search pings | IndexNow (all engines) HTTP 200 and IndexNow Bing direct HTTP 200 for 1,273 URLs; Google Search Console sitemap accepted. **Bing SubmitUrlBatch HTTP 400: daily quota** (20 left, 80 submitted). IndexNow is Bing's primary path, so the page has reached Bing; the batch retries on the next run. |
+
+Note for the next pass: the API row still carries `"type":"PDUFA"` for a `goal_unsourced` decided row, the same as JUVMO, Gazyva and the others. The drug pages no longer say this; the API field was not changed, because consumers filter on it. Ruling needed.
