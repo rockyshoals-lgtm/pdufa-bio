@@ -57,6 +57,8 @@ def ev_sentence(r, decided=False):
     who = (f"{esc(name)}"
            + (f" ({esc(company)}, {esc(tk_label)})" if company else f" ({esc(tk_label)})"))
     ind = str((r.get("_d") or {}).get("indication") or "").strip()
+    if ind[:1].isupper() and ind[1:2].islower():
+        ind = ind[0].lower() + ind[1:]          # "in adult patients", not "in Adult patients" (red team 10-04)
     ind_txt = f" in {esc(ind)}" if ind else ""
     d = str(r.get("d") or "")
     day = dt.date.fromisoformat(d)
@@ -293,7 +295,7 @@ def main():
                             + ")" for e in fdd[day_])
             lines.append(f'<p id="fda-{day_}"><b>{MONTHS[dd.month]} {dd.day}, {dd.year}</b>: the FDA approved {its}.</p>')
         fda_html = ("<h2>What the FDA approved, by FDA action date (last 45 days)</h2>"
-                    "<p class=\"note\">Dated by the FDA's own record (the approval letter or Drugs@FDA), not the "
+                    "<p class=\"note\">Dated by the FDA's own record (the approval letter, Drugs@FDA or the FDA's approval notice), not the "
                     "company's announcement. Every letter: <a href=\"/fda-approval-letters\">FDA approval letters</a>.</p>"
                     + "".join(lines))
 

@@ -363,7 +363,7 @@ def main():
                 # rebuilds decision descs that are NOT answer-format (legacy pages).
                 # 2026-09-20: "approval was announced by the sponsor on" is the answer format for
                 # a row whose decision date is an announcement day (decision_date_unsourced).
-                if re.search(r"was approved on|received a Complete Response Letter on|"
+                if re.search(r"was approved on|was approved by the FDA on|received a Complete Response Letter on|"
                              r"was withdrawn on|approval was announced by the sponsor on|FDA announced its approval of|"
                              r"received a Complete Response Letter dated", cur):
                     new = cur

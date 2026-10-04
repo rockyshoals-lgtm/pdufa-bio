@@ -49,6 +49,7 @@ def leaf_name(doc, fallback):
     if m:
         t = html.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))
         t = re.sub(r"\s+", " ", t).strip()
+        t = re.sub(r"\s+([:,.;])", r"\1", t)        # "...CLL/SLL : Oct 2" left by a removed span
         if 2 <= len(t) <= 110:
             return t
     return fallback
@@ -68,6 +69,8 @@ def crumb_for(rel, doc):
         target = "/".join(segs[:i + 1])
         if not last and os.path.exists(os.path.join(SITE, target, "index.html")):
             entry["item"] = f"{BASE}/{target}"
+        elif not last and target == "fda-decision":
+            entry["item"] = f"{BASE}/decisions"          # the decisions archive is the section's hub
         elif last:
             entry["item"] = f"{BASE}/{target}"
         items.append(entry)
@@ -111,6 +114,27 @@ def main():
             continue
 
         if "BreadcrumbList" in doc:
+            # 2026-10-04 red team: 29 decision pages built from the VERA template carried VERA's own
+            # BreadcrumbList ("VERA FDA decision : Jul 7, 2026", item /fda-decision/VERA-2026-07-07).
+            # A marker block whose last item is not THIS page is replaced, never kept.
+            own = f"{BASE}/" + "/".join(rel.split("/")[:-1])
+            bm = re.search(r"<!--BC:BEGIN-->.*?<!--BC:END-->", doc, re.S)
+            if bm and '"BreadcrumbList"' in bm.group(0):
+                items = re.findall(r'"item":"([^"]+)"', bm.group(0))
+                names = re.findall(r'"name":"((?:[^"\\]|\\.)*)"', bm.group(0))
+                want = crumb_for(rel, doc)
+                want_name = want["itemListElement"][-1]["name"] if want else None
+                if items and (items[-1] != own or (want_name and names and json.loads('"' + names[-1] + '"') != want_name)
+                              or (want and json.dumps(want, separators=(",", ":")) not in bm.group(0))):
+                    crumb = crumb_for(rel, doc)
+                    if crumb is not None:
+                        block = ('<!--BC:BEGIN--><script type="application/ld+json">'
+                                 + json.dumps(crumb, separators=(",", ":")) + "</script><!--BC:END-->")
+                        if not a.dry_run:
+                            open(p, "w", encoding="utf-8").write(doc[:bm.start()] + block + doc[bm.end():])
+                        added += 1
+                        print(f"  replaced a foreign breadcrumb on /{rel[:-11]} (was {items[-1]})")
+                        continue
             kept += 1
             continue
         crumb = crumb_for(rel, doc)

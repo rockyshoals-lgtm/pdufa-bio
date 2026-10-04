@@ -43,6 +43,12 @@
    "date": "2026-09-25",
    "brand": "JUVMO",
    "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220415Orig1s000ltr.pdf"
+  },
+  {
+   "slug": "jaypirca",
+   "date": "2026-10-02",
+   "brand": "Jaypirca",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic"
   }
  ]
 }

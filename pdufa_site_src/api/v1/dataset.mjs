@@ -1802,7 +1802,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2018,7 +2018,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2121,7 +2121,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2176,7 +2176,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -4212,6 +4212,35 @@ export default [
   "dcd": "2026-09-03"
  },
  {
+  "id": "conf_aacr-panc_2026-09-25",
+  "t": "AACR-PANC",
+  "company": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "d": "2026-09-25",
+  "dp": "day",
+  "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "type": "Conference",
+  "ta": "Oncology - Pancreatic",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-04T16:34:52Z",
+  "_d": {
+   "end": "2026-09-28",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "SLS",
+     "company": "SELLAS Life Sciences Group, Inc.",
+     "drug": "SLS009 (tambiciclib) - PRECLINICAL posters, PDAC",
+     "pres_type": "poster x3 (preclinical)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_rhhby_2026-09-25",
   "t": "RHHBY",
   "company": "Roche Holding AG",
@@ -4248,29 +4277,36 @@ export default [
   }
  },
  {
-  "id": "conf_aacr-panc_2026-09-25",
-  "t": "AACR-PANC",
-  "company": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
-  "d": "2026-09-25",
+  "id": "conf_astro_2026-09-26",
+  "t": "ASTRO",
+  "company": "ASTRO Annual Meeting",
+  "d": "2026-09-26",
   "dp": "day",
-  "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "name": "ASTRO Annual Meeting",
   "type": "Conference",
-  "ta": "Oncology - Pancreatic",
+  "ta": "Radiation oncology",
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
   "ua": "2026-10-04T16:34:52Z",
   "_d": {
-   "end": "2026-09-28",
+   "end": "2026-09-30",
    "location": "",
    "organiser_url": "",
    "presenters": [
     {
-     "ticker": "SLS",
-     "company": "SELLAS Life Sciences Group, Inc.",
-     "drug": "SLS009 (tambiciclib) - PRECLINICAL posters, PDAC",
-     "pres_type": "poster x3 (preclinical)",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html"
+     "ticker": "CADL",
+     "company": "Candel Therapeutics, Inc.",
+     "drug": "Aglatimagene besadenovec (CAN-2409)",
+     "pres_type": "poster",
+     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
+    },
+    {
+     "ticker": "NVCR",
+     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
+     "drug": "",
+     "pres_type": "unspecified",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
     }
    ],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
@@ -4352,42 +4388,6 @@ export default [
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
- },
- {
-  "id": "conf_astro_2026-09-26",
-  "t": "ASTRO",
-  "company": "ASTRO Annual Meeting",
-  "d": "2026-09-26",
-  "dp": "day",
-  "name": "ASTRO Annual Meeting",
-  "type": "Conference",
-  "ta": "Radiation oncology",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-04T16:34:52Z",
-  "_d": {
-   "end": "2026-09-30",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "CADL",
-     "company": "Candel Therapeutics, Inc.",
-     "drug": "Aglatimagene besadenovec (CAN-2409)",
-     "pres_type": "poster",
-     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
-    },
-    {
-     "ticker": "NVCR",
-     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
-     "drug": "",
-     "pres_type": "unspecified",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "pdufa_bfri_2026-09-28",
@@ -5510,24 +5510,41 @@ export default [
   "dm": "2026-09"
  },
  {
-  "id": "pdufa_rhhby_2026-10-09",
-  "t": "RHHBY",
-  "company": "Roche Holding AG",
-  "d": "2026-10-09",
+  "id": "pdufa_lly_2026-10-02",
+  "t": "LLY",
+  "company": "ELI LILLY & Co",
+  "d": "2026-10-02",
   "dp": "day",
-  "name": "Tecentriq (atezolizumab) adjuvant - (stage III colon)",
+  "name": "Jaypirca (pirtobrutinib) - previously untreated CLL/SLL",
   "type": "PDUFA",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/RHHBY",
-  "ua": "2026-10-04T16:32:07Z",
+  "st": "Decided",
+  "url": "/fda-decision/LLY-2026-10-02",
+  "ua": "2026-10-04T16:39:20Z",
+  "oc": "Approved",
+  "dcd": "2026-10-02",
   "_d": {
-   "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
-   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
-   "source": "Genentech press release 2026-06-10",
-   "source_url": "https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech",
-   "source_quote": "The FDA has granted Priority Review and is expected to make a decision on the approval by October 9, 2026."
+   "nct_id": "NCT05023980",
+   "brand": "Jaypirca",
+   "inn": "pirtobrutinib",
+   "indication": "Adult patients with previously untreated chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL) with no known 17p deletion",
+   "indication_short": "adults with previously untreated chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL) with no known 17p deletion",
+   "title_indication": "First-Line CLL/SLL",
+   "seo_desc": "Jaypirca (pirtobrutinib) was approved by the FDA on October 2, 2026 for previously untreated CLL/SLL with no known 17p deletion, based on BRUIN CLL-313.",
+   "source": "FDA approval notification 2026-10-02 (Oncology/Hematologic Malignancies)",
+   "source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic",
+   "decision_source": "FDA approval notification, October 2, 2026",
+   "decision_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic",
+   "announcement_url": "https://lilly.mediaroom.com/2026-10-02-Lillys-Jaypirca-pirtobrutinib-,-the-first-and-only-approved-non-covalent-BTK-inhibitor,-receives-expanded-indication-from-U-S-FDA-for-certain-patients-with-previously-untreated-CLL-SLL",
+   "decision_quote": "On October 2, 2026, the Food and Drug Administration approved pirtobrutinib (Jaypirca, Eli Lilly and Company) for adult patients with previously untreated chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL) with no known 17p deletion.",
+   "fda_action_date": "2026-10-02",
+   "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic",
+   "fda_action_record": "FDA approval notification, NDA 216059",
+   "goal_unsourced": true,
+   "goal_note": "In June 2026 Lilly said a U.S. decision on its CLL submission (BRUIN CLL-313 and CLL-314) was expected in the second half of 2026; pdufa.bio holds no goal day, so no early or late margin is computed.",
+   "review": "Supplemental NDA 216059 for first-line use. BRUIN CLL-313 (NCT05023980): 282 previously untreated patients without 17p deletion, randomized 1:1 to pirtobrutinib or bendamustine plus rituximab; IRC-assessed PFS hazard ratio 0.20 (95% CI 0.11 to 0.37), median PFS not estimable vs 33.5 months at a median follow-up of 28 months; OS immature. 200 mg orally once daily. Orphan drug designation (FDA notification).",
+   "goal_source_url": "https://lilly.mediaroom.com/2026-06-26-Lillys-Jaypirca-pirtobrutinib-recommended-by-CHMP-for-approval-in-the-European-Union-for-adults-with-chronic-lymphocytic-leukemia-CLL-across-all-lines-of-therapy"
   }
  },
  {
@@ -5599,6 +5616,27 @@ export default [
     }
    ],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_rhhby_2026-10-09",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "Tecentriq (atezolizumab) adjuvant - (stage III colon)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/RHHBY",
+  "ua": "2026-10-04T16:32:07Z",
+  "_d": {
+   "indication": "Adjuvant stage III dMMR/MSI-H colon cancer",
+   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
+   "source": "Genentech press release 2026-06-10",
+   "source_url": "https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech",
+   "source_quote": "The FDA has granted Priority Review and is expected to make a decision on the approval by October 9, 2026."
   }
  },
  {
@@ -5936,7 +5974,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -6858,6 +6896,27 @@ export default [
   }
  },
  {
+  "id": "conf_obesityweek_2026-11-14",
+  "t": "ObesityWeek",
+  "company": "ObesityWeek, The Obesity Society",
+  "d": "2026-11-14",
+  "dp": "day",
+  "name": "ObesityWeek, The Obesity Society",
+  "type": "Conference",
+  "ta": "Obesity and metabolic",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-04T16:34:52Z",
+  "_d": {
+   "end": "2026-11-17",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_smmt_2026-11-14",
   "t": "SMMT",
   "company": "Summit Therapeutics Inc.",
@@ -6888,27 +6947,6 @@ export default [
    "source": "Summit Therapeutics Inc. 8-K 2026-01-29",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000006/a2026_prx0129xfdablaacce.htm",
    "source_quote": "ion (BLA) Seeking Approval for Ivonescimab in Combination with Chemotherapy in Treatment of Patients with EGFRm NSCLC Post-TKI Therapy BLA Filing Based on HARMONi Global Phase III Study Results PDUFA Goal Action Date of November 14, 2026 Significant Unmet Need Remains; Over 14,000 U.S. Patients Eligible for Treatment Each Year in This Setting Miami, Flori"
-  }
- },
- {
-  "id": "conf_obesityweek_2026-11-14",
-  "t": "ObesityWeek",
-  "company": "ObesityWeek, The Obesity Society",
-  "d": "2026-11-14",
-  "dp": "day",
-  "name": "ObesityWeek, The Obesity Society",
-  "type": "Conference",
-  "ta": "Obesity and metabolic",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-04T16:34:52Z",
-  "_d": {
-   "end": "2026-11-17",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -7874,6 +7912,27 @@ export default [
   }
  },
  {
+  "id": "conf_ash_2026-12-12",
+  "t": "ASH",
+  "company": "American Society of Hematology Annual Meeting",
+  "d": "2026-12-12",
+  "dp": "day",
+  "name": "American Society of Hematology Annual Meeting",
+  "type": "Conference",
+  "ta": "Haematology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-04T16:34:52Z",
+  "_d": {
+   "end": "2026-12-15",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_vnda_2026-12-12",
   "t": "VNDA",
   "company": "Vanda Pharmaceuticals Inc.",
@@ -7904,27 +7963,6 @@ export default [
    "source": "Vanda Pharmaceuticals Inc. 8-K 2026-08-05",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026053308/vnda8-k852026exhibit991.htm",
    "source_quote": "done) received FDA approval for bipolar I disorder and schizophrenia in Q1 2026 commercial launch expected in second half of 2026 Quimilza TM (imsidolimab) BLA for GPP under review by the FDA PDUFA target action date of December 12, 2026 NEREUS for prevention of vomiting induced by motion became commercially available in Q2 2026 Results for three Phase II"
-  }
- },
- {
-  "id": "conf_ash_2026-12-12",
-  "t": "ASH",
-  "company": "American Society of Hematology Annual Meeting",
-  "d": "2026-12-12",
-  "dp": "day",
-  "name": "American Society of Hematology Annual Meeting",
-  "type": "Conference",
-  "ta": "Haematology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-04T16:34:52Z",
-  "_d": {
-   "end": "2026-12-15",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -11756,27 +11794,6 @@ export default [
   }
  },
  {
-  "id": "pdufa_axsm_2027-05-01",
-  "t": "AXSM",
-  "company": "Axsome Therapeutics, Inc.",
-  "d": "2027-05-01",
-  "dp": "day",
-  "name": "AXS-12",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Mid",
-  "st": "Upcoming",
-  "url": "/ticker/AXSM",
-  "ua": "2026-10-04T16:32:07Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 9389261626.5,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
-   "source": "company filing (SEC)"
-  }
- },
- {
   "id": "conf_aan_2027-05-01",
   "t": "AAN",
   "company": "American Academy of Neurology Annual Meeting",
@@ -11795,6 +11812,27 @@ export default [
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_axsm_2027-05-01",
+  "t": "AXSM",
+  "company": "Axsome Therapeutics, Inc.",
+  "d": "2027-05-01",
+  "dp": "day",
+  "name": "AXS-12",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "url": "/ticker/AXSM",
+  "ua": "2026-10-04T16:32:07Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": 9389261626.5,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
+   "source": "company filing (SEC)"
   }
  },
  {
@@ -11920,6 +11958,27 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05531656"
   },
   "dm": "2027-05"
+ },
+ {
+  "id": "conf_ddw_2027-05-15",
+  "t": "DDW",
+  "company": "Digestive Disease Week",
+  "d": "2027-05-15",
+  "dp": "day",
+  "name": "Digestive Disease Week",
+  "type": "Conference",
+  "ta": "GI and hepatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-04T16:34:52Z",
+  "_d": {
+   "end": "2027-05-18",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
  },
  {
   "id": "readout_fdmt_2027-05-15",
@@ -12100,27 +12159,6 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06874621"
   },
   "dm": "2027-05"
- },
- {
-  "id": "conf_ddw_2027-05-15",
-  "t": "DDW",
-  "company": "Digestive Disease Week",
-  "d": "2027-05-15",
-  "dp": "day",
-  "name": "Digestive Disease Week",
-  "type": "Conference",
-  "ta": "GI and hepatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-04T16:34:52Z",
-  "_d": {
-   "end": "2027-05-18",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "conf_asco_2027-06-04",

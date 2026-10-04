@@ -123,6 +123,12 @@ def build(e, px, write=True):
 
     tpl = open(os.path.join(SITE, 'fda-decision', 'VERA-2026-07-07', 'index.html'), encoding='utf-8').read()
     head = tpl[:tpl.index('<div class="bc">')]          # chrome/CSS only -- carries no data
+    # ...except the injected blocks that DO carry the template's data: its BreadcrumbList (29 pages
+    # shipped "VERA FDA decision : Jul 7, 2026" as their breadcrumb, red team 2026-10-04), its
+    # dateModified/WebPage node and its FAQ. The build steps regenerate them for this page.
+    for _b, _e in (("<!--BC:BEGIN-->", "<!--BC:END-->"), ("<!--DMOD:BEGIN-->", "<!--DMOD:END-->"),
+                   ("<!--DFAQ:BEGIN-->", "<!--DFAQ:END-->")):
+        head = re.sub(re.escape(_b) + r".*?" + re.escape(_e), "", head, flags=re.S)
     tail = tpl[tpl.index('<div class="legal">'):]
 
     # REGEX, not a literal of the template's original title: the VERA template's title
@@ -144,10 +150,15 @@ def build(e, px, write=True):
     body = [head]
     body.append(f'<div class="bc"><a href="/">Home</a> &rsaquo; <a href="/decisions">Decisions</a> '
                 f'&rsaquo; {tk} {d}</div>')
-    body.append(f'<h1>{tk} <span class="g">FDA decision</span>: {pretty(d)}</h1>')
+    if e.get('h1'):
+        # 2026-10-04 (SEO red team): the drug name in the h1 where the event JSON gives one
+        body.append(f'<h1>{e["h1"]}</h1>')
+    else:
+        body.append(f'<h1>{tk} <span class="g">FDA decision</span>: {pretty(d)}</h1>')
     body.append(ban)
     body.append(f'<p class="sub">{e["headline"]}</p>')
-    body.append(f'<h2>Run-up into the decision (T-120 → T+5)</h2>{chart}<div class="note">{note}</div>')
+    _post = max(0, len(prices) - 1 - piv)
+    body.append(f'<h2>Run-up into the decision (T-120 → T+{min(_post, POST)})</h2>{chart}<div class="note">{note}</div>')
     body.append('<h2>Key facts</h2><div class="card">')
     fad = e.get('fda_action_date')
     if fad and fad != d:

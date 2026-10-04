@@ -131,6 +131,11 @@ def main():
         _m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", _slug)
         if _m and _e.get("date") and _e["date"] != _m.group(2) and (_m.group(1), _m.group(2)) not in fda_dates:
             fda_dates[(_m.group(1), _m.group(2))] = _e["date"]
+    # 2026-10-04: a hand-written indication for the <title> and a hand-written answer description, for a
+    # row whose search intent is the indication ("jaypirca first-line cll"). Only rows that set them.
+    seo = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): (r.get("_d") or {})
+           for r in rows if r.get("type") == "PDUFA" and r.get("dcd")
+           and ((r.get("_d") or {}).get("title_indication") or (r.get("_d") or {}).get("seo_desc"))}
     names = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): r.get("name")
              for r in rows if r.get("type") == "PDUFA" and r.get("dcd") and r.get("name")}
     # listing rows as a drug-name fallback for drug-less titles ("AQST FDA Decision
@@ -234,6 +239,11 @@ def main():
                     dshort = dshort[:dshort.rindex("(")].rstrip(" ,(-/")
             title = f"{dshort}{suffix}"
 
+        _seo = seo.get((tk, dcd)) or {}
+        if _seo.get("title_indication") and drug != "the application under review":
+            t2 = f"{dshort} {word_t} for {_seo['title_indication']} | {tk} FDA Decision | pdufa.bio"
+            if len(t2) <= 100:
+                title = t2
         if (tk, dcd) in fda_dates:
             fd = fda_dates[(tk, dcd)]
             fdelta = (dt.date.fromisoformat(fd) - dt.date.fromisoformat(goal)).days if goal else None
@@ -288,6 +298,8 @@ def main():
         if core is not None and len(desc) > 158 and (tk, dcd) in announced and (tk, dcd) not in fda_notice:
             desc = f"{tk}: {drug.split(' (')[0]} {verb} {when}."
 
+        if _seo.get("seo_desc") and len(_seo["seo_desc"]) <= 158:
+            desc = _seo["seo_desc"]
         new = re.sub(r"<title[^>]*>.*?</title>",
                      f"<title>{_html.escape(title)}</title>", doc, count=1, flags=re.S)
         new = re.sub(r'(<meta name="description" content=")[^"]*(")',

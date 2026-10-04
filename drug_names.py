@@ -52,7 +52,7 @@ def clean_drug_name(raw):
     # trial / program suffix " - (TEMPO)", "- (SUNSHINE)", " - (DESTINY-" (complete or cut)
     s = re.sub(r"\s*-\s*\(\s*[A-Za-z0-9][^()]*\)?\s*$", "", s).strip()
     # an indication suffix " - idiopathic nephrotic syndrome" (lower-case) is not part of the name
-    s = re.sub(r"\s+-\s+[a-z][a-z ,'-]{6,}$", "", s).strip()
+    s = re.sub(r"\s+-\s+[a-z][A-Za-z0-9 ,'/-]{6,}$", "", s).strip()   # "- previously untreated CLL/SLL"
     if cut:
         if not _balanced(s):
             s = s[:s.rindex("(")].rstrip(" ,(-/")

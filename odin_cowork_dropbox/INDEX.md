@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-04 audit (audit currency UX SEO redteam)** — `2026-10-04_audit_currency_UX_SEO_redteam.md` — 2026-10-04, measured 16:42 to 17:40 UTC = 12:42 to 13:40 Eastern (Sunday). Per RULE 1 every time carries its zone.
+- **2026-10-04 BUILDER (jaypirca published two red teams)** — `2026-10-04_BUILDER_jaypirca_published_two_red_teams.md` — 2026-10-04, written ~10:35 Pacific = 13:35 Eastern (Sunday). RULE 1: times carry their zone.
 - **2026-10-03b BUILDER (tiers 2 3 4)** — `2026-10-03b_BUILDER_tiers_2_3_4.md` — 2026-10-03, written ~16:00 Pacific = 19:00 Eastern = 23:00 UTC. RULE 1: every time below carries its zone. Facts and file contents only; not investment advice.
 - **2026-10-03b BUILDER (ORDER consolidated)** — `2026-10-03b_BUILDER_ORDER_consolidated.md` — Auditor, 2026-10-03, 19:00 UTC = 15:00 Eastern. Per RULE 1 every time carries its zone.
 - **2026-10-03 audit (audit why the site stopped)** — `2026-10-03_audit_why_the_site_stopped.md` — 2026-10-03, measured 18:11 UTC = 14:11 Eastern (Saturday). Per RULE 1 every time carries its zone.

@@ -37,6 +37,15 @@ MON = ["", "January", "February", "March", "April", "May", "June", "July", "Augu
        "September", "October", "November", "December"]
 
 
+def _cdn(n):
+    """2026-10-04 red team: names were cut at 40-80 characters ("Jaypirca (pirtobrutinib) - previously un").
+    One owner (drug_names.py) shortens to a complete unit instead."""
+    import sys as _s
+    _s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from drug_names import clean_drug_name
+    return clean_drug_name(str(n or "")) or str(n or "")
+
+
 def esc(s):
     return html.escape(str(s or "").strip())
 
@@ -77,7 +86,7 @@ def main():
         return (f'<a class="row" href="/fda-decision/{tk}-{d}">'
                 f'<div class="t">{tk} &middot; {pretty(d)} '
                 f'<span style="color:{col};font-weight:700">{icon} {esc(oc)}</span></div>'
-                f'<div class="d">{esc(str(r.get("name"))[:80])}</div></a>')
+                f'<div class="d">{esc(_cdn(r.get("name")))}</div></a>')
 
     def up_row(r):
         tk, d = esc(r.get("t")), str(r.get("d"))
@@ -86,7 +95,7 @@ def main():
         return (f'<a class="row" href="/pdufa/{tk}">'
                 f'<div class="t">{tk} &middot; {pretty(d)} <span style="color:#e3ba5e">'
                 f'{when}</span></div>'
-                f'<div class="d">{esc(str(r.get("name"))[:80])}</div></a>')
+                f'<div class="d">{esc(_cdn(r.get("name")))}</div></a>')
 
     if dec_today:
         lede = (f"The FDA decided {len(dec_today)} tracked application"
@@ -97,7 +106,7 @@ def main():
         newest = dec[0] if dec else None
         lede = (f"No FDA decision on a tracked application has been published today, "
                 f"{pretty(tiso)}. The most recent was "
-                + (f"{newest.get('t')}'s {str(newest.get('name'))[:40]} "
+                + (f"{newest.get('t')}'s {_cdn(newest.get('name'))} "
                    f"({newest.get('oc')}) on {pretty(newest.get('dcd'))}. " if newest else "")
                 + "Decisions from the past week and the next scheduled dates are below.")
 
@@ -106,7 +115,7 @@ def main():
            lede),
           ("When is the next FDA decision?",
            (f"The next scheduled PDUFA date is {nxt.get('t')}'s "
-            f"{str(nxt.get('name'))[:50]} on {pretty(nxt.get('d'))}."
+            f"{_cdn(nxt.get('name'))} on {pretty(nxt.get('d'))}."
             if nxt else "No day-precision PDUFA date is currently scheduled.")
            + " The FDA can act before a goal date; in this archive's sourced 2026 "
              "decisions, more came early than late."),

@@ -74,9 +74,18 @@ def internal_url(r):
 
 def row_html(r):
     t = (r.get("t") or "").upper()
-    drug = (r.get("name") or "").strip()
+    import sys as _s
+    _s.path.insert(0, HERE if "HERE" in globals() else os.path.dirname(os.path.abspath(__file__)))
+    from drug_names import clean_drug_name
+    drug = clean_drug_name((r.get("name") or "").strip()) or (r.get("name") or "").strip()
     ta = (r.get("ta") or "").strip()
     desc = f"{drug}: {ta}" if ta and ta.lower() not in drug.lower() else drug
+    # 2026-10-04 red team: a row whose only date is the FDA's ACTION date (no goal date on record, e.g.
+    # Jaypirca 2026-10-02, Gazyva 2026-09-25) sat on a page headed "PDUFA target dates are FDA-set goal
+    # dates". Say what the date is.
+    dd = r.get("_d") or {}
+    if dd.get("goal_unsourced") and str(r.get("dcd") or "")[:10] == str(r.get("d") or "")[:10]:
+        desc += " (FDA action date; no goal date on record)"
     return (f'<a class="row" href="{esc(internal_url(r))}">'
             f'<div class="t">{esc(t)} &middot; {esc(r["d"])}</div>'
             f'<div class="d">{esc(desc[:150])}</div></a>')

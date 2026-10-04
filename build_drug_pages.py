@@ -307,7 +307,9 @@ def main():
                          html.unescape(doc_))
         if ext_:
             drug_ = f"{drug_} ({ext_.group(1)})"
-        arch_rows.append({"t": md_.group(1), "d": md_.group(2), "dp": "day", "type": "PDUFA",
+        # type "FDA decision", not "PDUFA" (red team 2026-10-04): an archive page carries the
+        # decision day; whether that day was also the goal date is not established by the archive.
+        arch_rows.append({"t": md_.group(1), "d": md_.group(2), "dp": "day", "type": "FDA decision",
                           "st": "Decided", "name": drug_,
                           "url": f"/fda-decision/{slug_}"})
     print(f"archive source: {len(arch_rows)} decided rows with a parseable drug name")
@@ -447,6 +449,26 @@ def main():
         comps = sorted({r.get("company") for r in rs if r.get("company")})
         inds = sorted({(r.get("_d") or {}).get("indication") for r in rs
                        if (r.get("_d") or {}).get("indication")})
+        # 2026-10-04 red team (/drug/jaypirca): an indication the FDA has APPROVED was listed as
+        # "Indication under review" and answered "under review or in development". Split them.
+        ap_inds = sorted({(r.get("_d") or {}).get("indication") for r in rs
+                          if (r.get("_d") or {}).get("indication") and str(r.get("st")) == "Decided"
+                          and str(r.get("oc")) == "Approved"})
+        # 2026-10-04 red team #2: "Approved indication in our records: Adult patients with..." read
+        # as the drug's ONLY approved use (Jaypirca has four). Name the approval day of each one
+        # and lower-case the leading word so it reads as a clause.
+        _ap_day = {}
+        for r in rs:
+            _i = (r.get("_d") or {}).get("indication")
+            if _i in ap_inds:
+                _ap_day[_i] = ((r.get("_d") or {}).get("fda_action_date") or r.get("dcd") or r.get("d") or "")
+        def _ap_txt(i):
+            t = i[:1].lower() + i[1:] if i[:2] != i[:2].upper() else i
+            dd = _ap_day.get(i, "")
+            return t + (f" (approved {pretty(dd, 'day')})" if re.match(r"^\d{4}-\d{2}-\d{2}$", dd) else "")
+        pend_inds = [i for i in inds if i not in ap_inds and not any(
+            (r.get("_d") or {}).get("indication") == i and str(r.get("st")) == "Decided" for r in rs)]
+        _art = lambda w: "an" if str(w)[:1].lower() in "aeiou" else "a"  # noqa: E731
 
         events = []
         n_dec = 0
@@ -456,6 +478,10 @@ def main():
             dp = r.get("dp") or "day"
             typ = str(r.get("type") or "catalyst")
             typ = typ.upper() if typ.lower() == "pdufa" else typ
+            # 2026-10-04 red team #2: a decided row with no sourced goal date is dated by the FDA
+            # ACTION, not a PDUFA goal; labelling it "PDUFA" told readers the action day was a goal.
+            if typ == "PDUFA" and (r.get("_d") or {}).get("goal_unsourced"):
+                typ = "FDA action"
             tk = str(r.get("t") or "").upper()
             outcome = arch.get((tk, day), "")
             decided = str(r.get("st") or "").lower() == "decided"
@@ -518,9 +544,10 @@ def main():
         dec0 = _dec[-1] if _dec else None      # (date, outcome) of the latest real decision
         lede = f"{name} "
         if comps:
-            lede += f"is a {esc(', '.join(comps[:2]))} program"
+            lede += f"is {_art(comps[0])} {esc(', '.join(comps[:2]))} program"
             if inds:
-                lede += f" in {esc(inds[0])}"
+                _i0 = (pend_inds or ap_inds or inds)[0]
+                lede += f" in {esc(_i0[:1].lower() + _i0[1:] if _i0[:2] != _i0[:2].upper() else _i0)}"
             lede += ". "
         elif inds:
             lede += f"is in development for {esc(inds[0])}. "
@@ -566,16 +593,23 @@ def main():
             about.append(f'{name} is marketed as <a class="lit" href="/drug/{esc(bslug)}">'
                          f"{esc(bn)}</a>; the events below include those tracked under the "
                          f"brand name.")
-        if inds:
-            about.append(f"Indication{'s' if len(inds) > 1 else ''} under review: "
-                         + "; ".join(esc(i) for i in inds[:3]) + ".")
+        if ap_inds:
+            about.append(f"FDA approval{'s' if len(ap_inds) > 1 else ''} tracked on pdufa.bio: "
+                         + "; ".join(esc(_ap_txt(i)) for i in ap_inds[:3])
+                         + ". Earlier approvals may not be listed here; the FDA label is the full record.")
+        if pend_inds:
+            about.append(f"Indication{'s' if len(pend_inds) > 1 else ''} under review: "
+                         + "; ".join(esc(i) for i in pend_inds[:3]) + ".")
         if comps:
             about.append(f"Sponsor: {esc(', '.join(comps[:2]))}"
                          + (f" ({esc(', '.join(tks))})" if tks else "") + ".")
-        revs = [str((r.get("_d") or {}).get("review") or "") for r in rs
+        revs = [(str((r.get("_d") or {}).get("review") or ""), r) for r in rs
                 if (r.get("_d") or {}).get("review")]
         if revs:
-            about.append(f"Review status: {esc(revs[-1])}")
+            _rv, _rr = revs[-1]
+            _lab = ("Approval record" if str(_rr.get("st")) == "Decided" and str(_rr.get("oc")) == "Approved"
+                    else "Decision record" if str(_rr.get("st")) == "Decided" else "Review status")
+            about.append(f"{_lab}: {esc(_rv)}")
         # COMMON MISSPELLING (2026-08-24). "daraonrasib" -- the x dropped -- drives 47 Bing
         # impressions at position 7.26 with zero clicks and 14 AI citations at 8.43% share, and
         # the string appeared NOWHERE on the page that should own it, so neither an engine nor a
@@ -649,10 +683,16 @@ def main():
         # it 1,800+ with zero new pages. Each extra question exists ONLY when we hold the fact --
         # a skipped question is honest, an empty answer is not.
         qa = [(q1, a1), (q2, a2)]
-        if inds:
+        if ap_inds or pend_inds:
+            _parts = []
+            if ap_inds:
+                _parts.append(f"FDA-approved for " + "; ".join(_ap_txt(i) for i in ap_inds[:2]))
+            if pend_inds:
+                _parts.append(f"under review or in development for " + "; ".join(pend_inds[:2]))
             qa.append((f"What is {name} used for?",
-                       f"In our records {name} is under review or in development for "
-                       + "; ".join(inds[:2]) + "."))
+                       f"In our records {name} is " + ", and ".join(_parts) + "."
+                       + (" Other approved uses may not be tracked here; the FDA label is the full record."
+                          if ap_inds else "")))
         if comps:
             qa.append((f"Who makes {name}?",
                        f"{', '.join(comps[:2])}"
@@ -746,7 +786,7 @@ def main():
                               f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
         desc = brand_desc or f"{name}: FDA catalyst dates and outcomes."
         for extra in ((f" For {', '.join(comps[:1]).rstrip('.')}." if comps else ""),
-                      (" Full catalyst history, every date sourced." if brand_desc
+                      (" Catalyst history we track, every date sourced." if brand_desc
                        else " Every date and decision links its primary source."),
                       " Facts only."):
             if extra and len(desc) + len(extra) <= 158:

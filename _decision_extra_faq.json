@@ -1,0 +1,21 @@
+{
+ "_note": "Hand-written Q&As appended to a decision page's FAQ (build_decision_faq.py). Every answer states only what the cited FDA document states; no prediction, no advice. Keyed by decision-page slug.",
+ "LLY-2026-10-02": [
+  [
+   "When did the FDA approve Jaypirca for first-line CLL?",
+   "The FDA approved pirtobrutinib (Jaypirca, Eli Lilly and Company) on October 2, 2026 for adult patients with previously untreated chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL) with no known 17p deletion, per the FDA's approval notification of that date."
+  ],
+  [
+   "When was Jaypirca first approved?",
+   "The FDA first approved Jaypirca on January 27, 2023, under accelerated approval for relapsed or refractory mantle cell lymphoma after at least two lines of systemic therapy including a BTK inhibitor. It added CLL/SLL after at least two prior lines of therapy including a BTK inhibitor and a BCL-2 inhibitor on December 1, 2023 (accelerated approval), granted traditional approval for adults with relapsed or refractory CLL/SLL previously treated with a covalent BTK inhibitor on December 3, 2025, and approved first-line use in CLL/SLL with no known 17p deletion on October 2, 2026."
+  ],
+  [
+   "What trial supported the Jaypirca first-line CLL approval?",
+   "BRUIN CLL-313 (NCT05023980), a randomized, open-label, active-controlled trial in 282 patients with previously untreated CLL or SLL without deletion of chromosome 17p, comparing pirtobrutinib with bendamustine plus a rituximab product. Progression-free survival assessed by an independent review committee had a hazard ratio of 0.20 (95% CI 0.11 to 0.37; p<0.0001), per the FDA."
+  ],
+  [
+   "What is the approved Jaypirca dose for CLL?",
+   "The FDA's notification gives the recommended pirtobrutinib dose as 200 mg orally once daily until disease progression or unacceptable toxicity. The FDA says full prescribing information will be posted on Drugs@FDA; Lilly's announcement links the current prescribing information."
+  ]
+ ]
+}

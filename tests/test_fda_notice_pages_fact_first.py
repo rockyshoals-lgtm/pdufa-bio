@@ -25,7 +25,7 @@ import sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
-FACT = re.compile(r"the FDA announced its approval of|FDA announced its approval of|was approved on|"
+FACT = re.compile(r"the FDA announced its approval of|FDA announced its approval of|was approved on|was approved by the FDA on|"
                   r"received a Complete Response Letter", re.I)
 
 
