@@ -1,5 +1,5 @@
 {
- "read_at": "2026-10-04",
+ "read_at": "2026-10-05",
  "note": "Latest 13F-HR per fund from EDGAR, CIK checked against the EDGAR filer name. Long equity positions at quarter end only; 13F filings are due 45 days after the quarter and show no shorts or current positions.",
  "funds": {
   "Baker Bros. Advisors": {

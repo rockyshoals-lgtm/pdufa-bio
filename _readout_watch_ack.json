@@ -199,6 +199,10 @@
   {
    "id": "readout_mygn_2027-11-15",
    "reason": "Ruling 2026-10-03: the row's NCT05642780 is a different trial ('SKB264 in Combination With Pembrolizumab in Subjects With Selected Solid Tumors'), not Niraparib; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_anip_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-03-31); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."
