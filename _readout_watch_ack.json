@@ -203,6 +203,10 @@
   {
    "id": "readout_anip_2026-07-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-03-31); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_cers_2026-07-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-04-29); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."

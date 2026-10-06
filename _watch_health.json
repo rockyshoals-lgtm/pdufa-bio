@@ -17,9 +17,9 @@
  },
  "edgar_8k": {
   "blind": [],
-  "filings_read": 4,
-  "last_attempt": "2026-10-05",
-  "last_ok": "2026-10-05",
+  "filings_read": 6,
+  "last_attempt": "2026-10-06",
+  "last_ok": "2026-10-06",
   "sponsors_read": 17
  },
  "fda_drugs_whatsnew": {
