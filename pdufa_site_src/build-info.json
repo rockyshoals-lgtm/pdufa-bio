@@ -1,14 +1,20 @@
 {
- "built": "2026-10-08T17:11:11+00:00",
- "data_built_at": "2026-10-08T17:11:11+00:00",
- "commit": "4ffe8e371",
- "commit_at_build": "4ffe8e371",
+ "built": "2026-10-08T18:35:11+00:00",
+ "data_built_at": "2026-10-08T18:35:11+00:00",
+ "commit": "e255eab64",
+ "commit_at_build": "e255eab64",
  "as_of_eastern": "2026-10-08",
  "next_date": "2026-10-09",
  "next_ticker": "RHHBY",
  "next_days": 1,
  "next_status": "upcoming",
  "days_since_goal": null,
- "held_since": null,
- "held_leads": []
+ "held_since": "2026-10-08T18:33:04Z",
+ "held_leads": [
+  {
+   "row_id": "drug:tecentriq",
+   "source": "drug_pages",
+   "first_seen": "2026-10-08T18:33:04Z"
+  }
+ ]
 }

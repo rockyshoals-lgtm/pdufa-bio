@@ -1,8 +1,18 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-10-08T18:33:04Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
- "issued_keys": [],
+ "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:tecentriq",
+   "key": "tecentriq|fda-oncology-notifications",
+   "text": "/drug/tecentriq fda-oncology-notifications 'tecentriq' appears with approval language",
+   "first_seen": "2026-10-08T18:33:04Z"
+  }
+ ],
+ "issued_keys": [
+  "drug_pages|tecentriq|fda-oncology-notifications"
+ ],
  "last_clear_run": null
 }
