@@ -37,7 +37,7 @@ sponsor's own release).
   documented goal date and a documented action date, **19** came before the goal
   date, **10** on it and **1** after. (/research/fda-decision-timing)
 - Released FDA Complete Response Letters (openFDA): **458** letters, of which
-  **None** went to applications the FDA has since approved. That ratio reflects
+  **309** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)
 
 ## Free API (no key required)
