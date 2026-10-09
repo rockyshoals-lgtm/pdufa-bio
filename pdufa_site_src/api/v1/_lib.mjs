@@ -177,7 +177,7 @@ export function shape(e, tier) {
      is not "Upcoming" -- surface it as "Awaiting" (e.g. OTSKY centanafadine). */
   base.outcome = e.oc || null;              // "Approved" | "CRL" | "Withdrawn"
   base.decision_date = e.dcd || null;       // actual FDA action date (may differ from the goal date)
-  if (base.status === 'Decided') {
+  if (base.status === 'Decided' || base.status === 'Withdrawn') {   // 2026-10-09: withdrawn has no countdown
     base.days_to_decision = null;
   } else if (String(base.status).toLowerCase() === 'upcoming'
              && base.days_to_decision != null && base.days_to_decision < 0) {
