@@ -17,7 +17,9 @@ export default async (req,res)=>{
   for(const e of rows){
     const d=e.d.replace(/-/g,'');
     L.push('BEGIN:VEVENT',`UID:${e.id}@pdufa.bio`,`DTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z`,
-      `DTSTART;VALUE=DATE:${d}`,`SUMMARY:${esc(e.t+' — '+e.type+': '+e.name)}`,
+      `DTSTART;VALUE=DATE:${d}`,`SUMMARY:${esc(String(e.st||'').toLowerCase()==='withdrawn'
+        ? e.t+' — '+e.type+' WITHDRAWN '+((e._d&&e._d.withdrawn_date)||'')+' (no FDA decision): '+e.name
+        : e.t+' — '+e.type+': '+e.name)}`,
       `DESCRIPTION:${esc((e.ta||'')+' · pdufa.bio — facts, not investment advice.')}`,
       `URL:${String(e.url).startsWith('http')?e.url:'https://www.pdufa.bio'+e.url}`,'END:VEVENT');
   }

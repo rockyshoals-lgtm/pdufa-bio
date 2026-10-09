@@ -52,7 +52,7 @@ def main():
     # the 2026-08-29 slate sweep did exactly that and this guard, filtering on date alone,
     # demanded the page keep advertising two approved drugs as pending.
     events = [r for r in ds if r.get("type") == "PDUFA" and str(r.get("d", "")) >= TODAY
-              and str(r.get("st", "")).lower() != "decided"]
+              and str(r.get("st", "")).lower() not in ("decided", "withdrawn")]   # withdrawn leaves the slate (10-09)
     have = {(str(r.get("t", "")).upper(), str(r.get("d", ""))) for r in events}
     by_date = {}
     for r in events:

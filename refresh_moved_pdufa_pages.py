@@ -85,7 +85,7 @@ def main():
         # contain "lenacapavir", /pdufa/PFE-keytruda matched brepocitinib, and PRAX's
         # ulixacaltamide page matched relutrigine. Rewriting a date from a mismatch would move
         # the wrong event's date onto a live page -- the exact failure this file exists to undo.
-        live = [c for c in cands if str(c.get("st", "")).lower() != "decided"]
+        live = [c for c in cands if str(c.get("st", "")).lower() not in ("decided", "withdrawn")]
         # 2026-09-26: a page stating a DECIDED event's goal or decision date is that event's
         # history, not a stale schedule. /pdufa/PHAR (the 2026-10-24 application, approved
         # 2026-09-11) was re-dated to 2027-01-30 because the new lower-dose sNDA became the

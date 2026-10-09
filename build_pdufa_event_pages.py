@@ -180,7 +180,7 @@ def main():
     existing = {n.lower() for n in os.listdir(OUTDIR)} if os.path.isdir(OUTDIR) else set()
     written, skipped = 0, []
     for r in rows:
-        if r.get("type") != "PDUFA" or str(r.get("st") or "").lower() == "decided":
+        if r.get("type") != "PDUFA" or str(r.get("st") or "").lower() in ("decided", "withdrawn"):
             continue
         d = str(r.get("d") or "")
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", d) or d < today:

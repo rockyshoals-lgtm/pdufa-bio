@@ -153,6 +153,11 @@ def main():
         # Say the uncertainty in the title, because most calendar apps show only the title.
         prefix = "" if dp == "day" else "~"
         summary = f"{prefix}{tick} {typ}: {name}".strip()
+        # 2026-10-09 (audit P0): a withdrawn application keeps its goal-date entry, but the title
+        # says it will not be decided -- most calendar apps show only the title.
+        if str(e.get("st") or "").lower() == "withdrawn":
+            wd = str((e.get("_d") or {}).get("withdrawn_date") or "")[:10]
+            summary = f"{tick} {typ} WITHDRAWN{(' ' + wd) if wd else ''} (no FDA decision): {name}".strip()
 
         desc = [PRECISION_NOTE.get(dp, "")]
         if e.get("ta"):

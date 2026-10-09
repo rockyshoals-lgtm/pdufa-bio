@@ -467,7 +467,8 @@ def main():
             dd = _ap_day.get(i, "")
             return t + (f" (approved {pretty(dd, 'day')})" if re.match(r"^\d{4}-\d{2}-\d{2}$", dd) else "")
         pend_inds = [i for i in inds if i not in ap_inds and not any(
-            (r.get("_d") or {}).get("indication") == i and str(r.get("st")) == "Decided" for r in rs)]
+            (r.get("_d") or {}).get("indication") == i and str(r.get("st")) in ("Decided", "Withdrawn")
+            for r in rs)]
         _art = lambda w: "an" if str(w)[:1].lower() in "aeiou" else "a"  # noqa: E731
 
         events = []
@@ -490,6 +491,16 @@ def main():
             _dcd = str(r.get("dcd") or "")[:10]
             if (str(r.get("st") or "").lower() == "decided" and _dcd and _dcd != day
                     and (tk, _dcd) in arch):
+                continue
+            # 2026-10-09 (audit P0): a WITHDRAWN application is dated by its withdrawal, labelled as
+            # such, and links its event page; it is not a PDUFA date that is still ahead.
+            if str(r.get("st") or "").lower() == "withdrawn":
+                _w = str((r.get("_d") or {}).get("withdrawn_date") or "")[:10]
+                _wt = pretty(_w, "day") if re.match(r"^\d{4}-\d{2}-\d{2}$", _w) else "date not sourced"
+                events.append(f'<a class="row" href="{esc(str(r.get("url") or f"/pdufa/{tk}"))}">'
+                              f'<span class="t">Application withdrawn &middot; {esc(_wt)} '
+                              f'<span class="bad">Withdrawn before its {esc(pretty(day, dp))} goal date</span></span>'
+                              f'<span class="d">{esc(tk)}</span></a>')
                 continue
             outcome = arch.get((tk, day), "")
             decided = str(r.get("st") or "").lower() == "decided"
@@ -539,7 +550,7 @@ def main():
         # answer-first lede, from the same rows the table shows
         up = [r for r in rs if ((r.get("d") or "") >= today or
                                 str(r.get("st") or "").lower() == "under review")
-              and str(r.get("st") or "").lower() != "decided"
+              and str(r.get("st") or "").lower() not in ("decided", "withdrawn")
               and r.get("id") not in confirmed]
         # Audit 2026-10-03 (Tier 2.1/3.1): an approval is dated by the FDA's action date where the
         # FDA's own record states it (JUVMO: letter 2026-09-25, AbbVie release 09-28). The row is

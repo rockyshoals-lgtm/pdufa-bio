@@ -62,7 +62,7 @@ def load_events():
     for r in rows:
         if (r.get("type") == "PDUFA" and r.get("dp") == "day"
                 and re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d", "")))
-                and str(r.get("st", "")).lower() != "decided"):
+                and str(r.get("st", "")).lower() not in ("decided", "withdrawn")):
             out.append({"t": str(r.get("t", "")).upper(), "d": r["d"],
                         "name": re.sub(r"\s+", " ", str(r.get("name") or "")).strip(),
                         "toks": toks(r.get("name"))})

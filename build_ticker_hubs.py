@@ -145,7 +145,7 @@ def load_data():
     if os.path.exists(dsp):
         done = set()
         for r in drows:
-            if r.get('type') == 'PDUFA' and str(r.get('st') or '').lower() == 'decided':
+            if r.get('type') == 'PDUFA' and str(r.get('st') or '').lower() in ('decided', 'withdrawn'):
                 for dt in (r.get('d'), r.get('dcd')):
                     if dt:
                         done.add((str(r.get('t') or '').upper(), str(dt)))

@@ -315,9 +315,13 @@ def main():
         dsrc = open(dsp, encoding="utf-8", errors="replace").read().replace("\x00", "")
         try:
             drows = json.loads(dsrc[dsrc.index("["):dsrc.rindex("]") + 1])
-            exact = {(r.get("t"), r.get("d")): (r.get("dcd") or r.get("d"), r.get("oc") or "Decided")
+            # 2026-10-09: a WITHDRAWN application leaves the slate too (MRK I-DXd sat on the
+            # homepage as "next FDA decision" 13 days after Merck withdrew the BLA).
+            exact = {(r.get("t"), r.get("d")): ((r.get("dcd") or r.get("d"), r.get("oc") or "Decided")
+                                                if str(r.get("st", "")).lower() == "decided" else
+                                                ((r.get("_d") or {}).get("withdrawn_date") or r.get("d"), "Withdrawn"))
                      for r in drows if r.get("type") == "PDUFA"
-                     and str(r.get("st", "")).lower() == "decided"}
+                     and str(r.get("st", "")).lower() in ("decided", "withdrawn")}
         except Exception as e:
             print(f"  WARN: dataset.mjs unreadable for the exact sweep ({e}); "
                   f"falling back to text matching alone")

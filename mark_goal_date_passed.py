@@ -63,7 +63,7 @@ def main():
                          errors="replace").read().replace("\x00", "")
         rows_ds, _ = json.JSONDecoder().raw_decode(src_ds[src_ds.find("["):])
         for r in rows_ds:
-            if r.get("type") == "PDUFA" and str(r.get("st") or "").lower() == "decided":
+            if r.get("type") == "PDUFA" and str(r.get("st") or "").lower() in ("decided", "withdrawn"):
                 decided.add((str(r.get("t") or "").upper(), str(r.get("d") or "")[:10]))
     except Exception:
         pass

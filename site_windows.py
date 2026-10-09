@@ -159,3 +159,18 @@ def earliness_refusal(row):
     return ("We do not state how early this decision was: the goal date we had carried for it "
             "was never sourced to a filing or company release, and an unsourced goal cannot "
             "measure earliness.")
+
+
+# 2026-10-09 (audit P0, MRK I-DXd): a PDUFA row leaves every "pending / next / still ahead" surface
+# when the FDA has decided it OR the sponsor has withdrawn the application. Withdrawn is not a
+# decision: it has no outcome, no decision date, and never enters the timing statistic.
+CLOSED_STATES = ("decided", "withdrawn")
+
+
+def is_withdrawn(row):
+    return str((row or {}).get("st") or "").lower() == "withdrawn"
+
+
+def is_closed(row):
+    """True when the row is no longer pending: decided by the FDA or withdrawn by the sponsor."""
+    return str((row or {}).get("st") or "").lower() in CLOSED_STATES

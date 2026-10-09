@@ -185,7 +185,7 @@ def load_events():
     for r in rows:
         typ, st = r.get("type"), str(r.get("st") or "")
         if typ == "PDUFA":
-            if st.lower() == "decided":       # the FDA already acted; never "upcoming"
+            if st.lower() in ("decided", "withdrawn"):   # the FDA acted, or the sponsor withdrew; never "upcoming"
                 continue
             cat = "drug"
         elif typ == "Readout":

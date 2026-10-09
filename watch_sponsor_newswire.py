@@ -52,6 +52,33 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; pdufa.bio builder; +https://www.pd
 DECISION = re.compile(r"\b(FDA|Food and Drug Administration)\b.{0,160}?\b(approv\w*|complete response|CRL|"
                       r"accelerated approval|clearance)\b|\b(approv\w*|complete response letter)\b.{0,160}?"
                       r"\b(FDA|Food and Drug Administration)\b", re.I | re.S)
+# Audit 2026-10-08 P0: the watchers heard only approvals and CRLs. Merck withdrew the I-DXd BLA on
+# 2026-09-25 and nothing listened for the word; the homepage named an Oct 10 decision for 13 days.
+# The other ways a goal date stops being the date: a WITHDRAWAL, a goal-date EXTENSION (incl. a major
+# amendment), and a REFUSAL TO FILE. Each is a lead on its own row, quarantined like an approval.
+OTHER_OUTCOME = re.compile(
+    r"\b(withdr[ae]w\w*|voluntarily withdr\w*)\b"
+    r"|\b(PDUFA|goal|action|target)\b[^.]{0,80}?\b(extend\w*|extension|delay\w*|postpone\w*)\b"
+    r"|\b(extend\w*|extension)\b[^.]{0,80}?\b(PDUFA|goal date|action date|review period|review)\b"
+    r"|\bmajor amendment\b|\brefus\w* to file\b|\bRTF letter\b", re.I | re.S)
+APP_WORD = re.compile(r"\b(BLA|NDA|sNDA|sBLA|MAA|application|Biologics License|New Drug|PDUFA|FDA)\b", re.I)
+
+
+def outcome_kind(title):
+    """'withdrawal' / 'extension' / 'refuse to file' when a headline reports one, else None."""
+    if not APP_WORD.search(title):
+        return None
+    m = OTHER_OUTCOME.search(title)
+    if not m:
+        return None
+    t = m.group(0).lower()
+    if "withdr" in t:
+        return "withdrawal"
+    if "refus" in t or "rtf" in t:
+        return "refuse to file"
+    return "extension"
+
+
 RSS_PATHS = ("/rss/news-releases.xml", "/news-releases/rss", "/rss/news-releases", "/rss/pressrelease.aspx",
              "/news-releases/feed", "/feed/PressRelease.svc/GetPressReleaseList?format=rss")
 STOP = {"TABLETS", "TABLET", "INJECTION", "CAPSULES", "ORAL", "SNDA", "SBLA", "NDA", "BLA", "WITH", "AND",
@@ -125,7 +152,9 @@ def match(item_text, rows_for_ticker):
     # The DECISION must be in the headline (sponsors headline an approval or a CRL); body text of
     # acceptance and readout releases routinely says "if approved" / "potential approval".
     title = item_text.split("\n", 1)[0]
-    if not DECISION.search(title) or re.search(r"\b(if approved|potential(ly)? approv\w*|seek\w* approval|"
+    if outcome_kind(title):
+        pass    # a withdrawal / extension / RTF headline is a lead whatever else it says
+    elif not DECISION.search(title) or re.search(r"\b(if approved|potential(ly)? approv\w*|seek\w* approval|"
                                                r"accept(s|ed|ance)|submi(ts|tted|ssion))\b", title, re.I) \
             and not re.search(r"\b(approves|approved|approval of|grants?|complete response)\b", title, re.I):
         return []
@@ -166,6 +195,39 @@ def parse_items(xml):
             when = None
         items.append({"title": tag("title"), "desc": tag("description") or tag("summary"), "link": link.strip(),
                       "date": when})
+    return items
+
+
+# Audit 2026-10-08 item 2: the two largest-cap sponsors publish no press-release RSS. Their newsroom
+# LISTINGS are plain HTML that answers our own User-Agent (checked 2026-10-09 from the builder machine):
+# merck.com/media/news/ (date + headline per item) and gene.com/media/press-releases (a table with
+# data-date). A feed entry "html:<url>" is read with the matching listing parser below.
+LISTING_PARSERS = {
+    "www.merck.com": re.compile(
+        r'<div class="d8-result-item-date"><a href="([^"]+)"><p>([A-Z][a-z]+ \d{1,2}, \d{4})</p></a></div>\s*'
+        r'<div class="d8-result-item-headline"><a href="[^"]+"><p>(.*?)</p>', re.S),
+    "www.gene.com": re.compile(
+        r'<td class="date" data-date="(\d{4}-\d{2}-\d{2})[^"]*">.*?</td>\s*<td class="title">\s*'
+        r'<a href="([^"]+)">(.*?)</a>', re.S),
+}
+
+
+def parse_listing(url, doc):
+    host = re.match(r"https?://([^/]+)", url).group(1)
+    rx = LISTING_PARSERS.get(host)
+    items = []
+    for m in (rx.finditer(doc or "") if rx else ()):
+        if host == "www.merck.com":
+            link, ds, title = m.group(1), m.group(2), m.group(3)
+            try:
+                when = dt.datetime.strptime(ds, "%B %d, %Y").date()
+            except ValueError:
+                when = None
+        else:
+            ds, link, title = m.group(1), m.group(2), m.group(3)
+            when = dt.date.fromisoformat(ds)
+        items.append({"title": html.unescape(re.sub(r"<[^>]+>", " ", title)).strip(), "desc": "",
+                      "link": link, "date": when})
     return items
 
 
@@ -243,12 +305,17 @@ def main():
             continue
         covered.append(tk)
         for u in urls:
-            xml = fetch(u)
+            listing = u.startswith("html:")
+            xml = fetch(u[5:] if listing else u)
             if not xml:
                 print(f"  {tk}: feed unreachable this run ({u})")
                 continue
+            its = parse_listing(u[5:], xml) if listing else parse_items(xml)
+            if listing and not its:
+                print(f"  {tk}: listing read but no items parsed ({u}) -- markup changed?")
+                continue
             read_ok += 1
-            for it in parse_items(xml):
+            for it in its:
                 if it["date"] and it["date"] < since:
                     continue
                 for r, term in match(it["title"] + " \n " + it["desc"], rs):
@@ -267,7 +334,8 @@ def main():
               "page, and ack non-events in _newswire_ack.json (key printed below).")
         for r, term, it, key in leads:
             print(f"   ack key: {key}")
-            _emit_lead("sponsor_feed", r["id"], key, f"{it['date']} \"{it['title'][:160]}\" [{term}] {it['link']}")
+            kind = outcome_kind(it["title"]) or "decision"
+            _emit_lead("sponsor_feed", r["id"], key, f"[{kind}] {it['date']} \"{it['title'][:160]}\" [{term}] {it['link']}")
         return 1
     return 0
 

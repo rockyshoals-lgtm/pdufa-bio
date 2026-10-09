@@ -43,7 +43,7 @@ export default [
     "primary_completion": "2023-09-19",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": "2025-03-12",
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT03005418"
    }
   },
@@ -92,7 +92,7 @@ export default [
     "primary_completion": "2025-05-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06146101"
    }
   },
@@ -141,7 +141,7 @@ export default [
     "primary_completion": "2026-04-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06374797"
    }
   },
@@ -190,7 +190,7 @@ export default [
     "primary_completion": "2026-04-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05726864"
    }
   },
@@ -280,7 +280,7 @@ export default [
     "primary_completion": "2026-04-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05747794"
    }
   },
@@ -330,7 +330,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06470451"
    }
   },
@@ -408,7 +408,7 @@ export default [
     "primary_completion": "2026-06-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05843578"
    }
   },
@@ -446,7 +446,7 @@ export default [
     "primary_completion": "2026-06-15",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06810167"
    }
   },
@@ -566,7 +566,7 @@ export default [
     "primary_completion": "2026-06-02",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05864144"
    }
   },
@@ -665,7 +665,7 @@ export default [
     "primary_completion": "2026-06-25",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT07108153"
    }
   },
@@ -724,7 +724,7 @@ export default [
     "primary_completion": "2026-06-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT07036029"
    }
   },
@@ -1285,7 +1285,7 @@ export default [
     "primary_completion": "2026-07-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05583227"
    }
   },
@@ -1323,7 +1323,7 @@ export default [
     "primary_completion": "2026-03-31",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05486468"
    }
   },
@@ -1360,7 +1360,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06553547"
    }
   },
@@ -1427,7 +1427,7 @@ export default [
     "primary_completion": "2026-04-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT03037164"
    }
   },
@@ -1464,7 +1464,7 @@ export default [
     "primary_completion": "2026-07-16",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06736717"
    }
   },
@@ -1591,7 +1591,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06668064"
    }
   },
@@ -1628,7 +1628,7 @@ export default [
     "primary_completion": "2026-07-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT04724369"
    }
   },
@@ -1728,7 +1728,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06736262"
    }
   },
@@ -1777,7 +1777,7 @@ export default [
     "primary_completion": "2026-07-08",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06162728"
    }
   },
@@ -1818,7 +1818,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -1895,7 +1895,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05166161"
    }
   },
@@ -2034,7 +2034,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2137,7 +2137,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2192,7 +2192,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -2443,7 +2443,7 @@ export default [
     "primary_completion": "2026-09-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT07011706"
    }
   },
@@ -2480,7 +2480,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06901505"
    }
   },
@@ -2528,7 +2528,7 @@ export default [
     "primary_completion": "2026-08-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT07027527"
    }
   },
@@ -2566,7 +2566,7 @@ export default [
     "primary_completion": "2026-08-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06847191"
    }
   },
@@ -2663,7 +2663,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT01983241"
    }
   },
@@ -2730,7 +2730,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05611931"
    }
   },
@@ -2863,7 +2863,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06052059"
    }
   },
@@ -3470,7 +3470,7 @@ export default [
     "primary_completion": "2026-05-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06079190"
    }
   },
@@ -3508,7 +3508,7 @@ export default [
     "primary_completion": "2026-09-17",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT06920901"
    }
   },
@@ -3545,7 +3545,7 @@ export default [
     "primary_completion": "2026-08-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05643534"
    }
   },
@@ -5596,7 +5596,9 @@ export default [
    "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer",
    "fda_action_record": "FDA approval notification (sBLA; letter not yet on Drugs@FDA)",
    "decision_date_note": "The FDA's notification is dated October 8, 2026 and states the approval was made that day. The goal date, October 9, 2026, is from Genentech's release of June 10, 2026.",
-   "review": "Supplemental BLA, Priority Review, reviewed under Project Orbis. ATOMIC/ML39057 (NCT02912559): 711 adults and one pediatric patient with resected Stage III dMMR colon cancer, randomized 1:1 to atezolizumab plus mFOLFOX6 for 12 cycles then atezolizumab for 6 months, or mFOLFOX6 alone; investigator-assessed DFS hazard ratio 0.50 (95% CI 0.35 to 0.73; p 0.0001), median DFS not reached in either arm. Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) approved for the same use in patients 12 and older weighing at least 40 kg (FDA notification)."
+   "review": "Supplemental BLA, Priority Review, reviewed under Project Orbis. ATOMIC/ML39057 (NCT02912559): 711 adults and one pediatric patient with resected Stage III dMMR colon cancer, randomized 1:1 to atezolizumab plus mFOLFOX6 for 12 cycles then atezolizumab for 6 months, or mFOLFOX6 alone; investigator-assessed DFS hazard ratio 0.50 (95% CI 0.35 to 0.73; p 0.0001), median DFS not reached in either arm. Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) approved for the same use in patients 12 and older weighing at least 40 kg (FDA notification).",
+   "announcement_url": "https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com",
+   "announcement": "Genentech press release, October 8, 2026"
   },
   "oc": "Approved",
   "dcd": "2026-10-08"
@@ -5680,11 +5682,11 @@ export default [
   "dp": "day",
   "name": "Ifinatamab deruxtecan (I-DXd)",
   "type": "PDUFA",
-  "ta": "",
+  "ta": "Oncology",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/ticker/MRK",
-  "ua": "2026-10-09T01:51:59Z",
+  "st": "Withdrawn",
+  "url": "/pdufa/MRK-ifinatamab-deruxtecan",
+  "ua": "2026-10-09T04:30:00Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04700124",
@@ -5698,7 +5700,6 @@ export default [
    "indication": "Extensive-stage small cell lung cancer",
    "market_cap_usd": 352287438190.01996,
    "cash_runway_months": null,
-   "days_to_decision": 92,
    "cohort_move_median_pct": 0.0,
    "cohort_move_p25_pct": -0.93,
    "cohort_move_p75_pct": 1.03,
@@ -5710,7 +5711,14 @@ export default [
    },
    "source": "Merck & Co., Inc. 10-Q 2026-05-04",
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000162828026029802/mrk-20260331.htm",
-   "source_quote": "th previously treated extensive-stage - 38 - small cell lung cancer who experienced disease progression on or after platinum-based chemotherapy. The FDA set a Prescription Drug User Fee Act (PDUFA) target action date of October 10, 2026. The biologics license application (BLA) is based on results from the Phase 2 IDeate-Lung01 trial. I-DXd is being devel"
+   "source_quote": "th previously treated extensive-stage - 38 - small cell lung cancer who experienced disease progression on or after platinum-based chemotherapy. The FDA set a Prescription Drug User Fee Act (PDUFA) target action date of October 10, 2026. The biologics license application (BLA) is based on results from the Phase 2 IDeate-Lung01 trial. I-DXd is being devel",
+   "withdrawn_date": "2026-09-25",
+   "withdrawn_by": "Merck and Daiichi Sankyo",
+   "withdrawn_source": "Merck and Daiichi Sankyo release, September 25, 2026",
+   "withdrawn_source_url": "https://www.merck.com/news/ifinatamab-deruxtecan-biologics-license-application-for-certain-patients-with-previously-treated-extensive-stage-small-cell-lung-cancer-voluntarily-withdrawn/",
+   "withdrawn_quote": "The decision to withdraw the BLA is based on discussions with the U.S. Food and Drug Administration (FDA) that data supporting the application, including from the IDeate-Lung01 Phase 2 trial, do not satisfy requirements needed to support an accelerated approval for the proposed indication.",
+   "withdrawn_note": "Merck and Daiichi Sankyo voluntarily withdrew the BLA (accelerated approval, ES-SCLC after platinum-based chemotherapy) on September 25, 2026, fifteen days before its October 10, 2026 goal date. No FDA decision was issued. Enrollment continues in the IDeate-Lung02 Phase 3 trial.",
+   "trial": "IDeate-Lung01 (NCT05280470)"
   }
  },
  {
@@ -6007,7 +6015,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -8975,7 +8983,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT05297903"
    }
   },
@@ -13712,7 +13720,7 @@ export default [
     "primary_completion": "2026-09-09",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-09",
+    "checked": "2026-10-08",
     "source_url": "https://clinicaltrials.gov/study/NCT04816604"
    }
   },

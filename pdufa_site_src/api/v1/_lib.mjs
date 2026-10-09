@@ -122,6 +122,9 @@ const CORE_EXTRA = ['nct_id','indication','market_cap_usd','cash_runway_months',
      announcement day rather than the FDA's action day, decision_date_unsourced is the flag the
      timing statistic and every renderer gate on, goal_unsourced is its mirror (09-18). */
   'decision_source','decision_source_url','decision_date_note','decision_date_unsourced','goal_unsourced',
+  /* 2026-10-09 (audit P0, MRK I-DXd): status "Withdrawn" -- the sponsor withdrew the application
+     before the FDA acted. No decision, no outcome; dated and sourced like one. */
+  'withdrawn_date','withdrawn_source','withdrawn_source_url','withdrawn_quote',
   /* 09-20b: the FDA's own action date where its released letter states it (CRLs). */
   'fda_action_date',
   /* 2026-10-03: the registry's own status on a readout row (ruling for leads #52) and the basis of a

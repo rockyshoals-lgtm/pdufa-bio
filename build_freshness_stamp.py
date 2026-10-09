@@ -90,7 +90,7 @@ def next_decision():
     for r in json.loads(m.group(1)):
         if r.get("type") != "PDUFA" or r.get("dp") != "day":
             continue
-        if str(r.get("st") or "").lower() == "decided":
+        if str(r.get("st") or "").lower() in ("decided", "withdrawn"):   # withdrawn: no decision is coming
             continue
         d = str(r.get("d") or "")
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", d):

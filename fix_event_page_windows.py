@@ -62,7 +62,7 @@ def match_row(slug, rows):
     st = toks(part.replace("-", " "))
     cands = [r for r in rows if str(r.get("t") or "").upper() == tk
              and r.get("type") == "PDUFA"
-             and str(r.get("st") or "").lower() != "decided"]
+             and str(r.get("st") or "").lower() not in ("decided", "withdrawn")]
     hits = [c for c in cands if (not st) or (st & toks(c.get("name")))]
     return hits[0] if len(hits) == 1 else None
 

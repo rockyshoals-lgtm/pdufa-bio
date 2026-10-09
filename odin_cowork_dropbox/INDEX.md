@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-09 BUILDER (mrk withdrawn P0)** — `2026-10-09_BUILDER_mrk_withdrawn_P0.md` — 2026-10-09, written ~23:30 Pacific on 10-08 = 02:30 Eastern on 10-09. CI times UTC. RULE 1.
+- **2026-10-08 audit (audit the next decision was withdrawn 13 days ago)** — `2026-10-08_audit_the_next_decision_was_withdrawn_13_days_ago.md` — 2026-10-08, measured 23:06 to 23:25 Eastern = 2026-10-09 03:06 to 03:25 UTC (Thursday night). Per RULE 1 every time carries its zone.
 - **2026-10-08 BUILDER (tecentriq held leads published)** — `2026-10-08_BUILDER_tecentriq_held_leads_published.md` — 2026-10-08, written ~18:50 Pacific = 21:50 Eastern (Thursday). CI and quarantine times are UTC. RULE 1.
 - **2026-10-06 audit (audit)** — `2026-10-06_audit.md` — 2026-10-06, measured 21:54 to 22:20 Eastern = 2026-10-07 01:54 to 02:20 UTC (Tuesday night). Per RULE 1 every time carries its zone.
 - **2026-10-04 audit (audit currency UX SEO redteam)** — `2026-10-04_audit_currency_UX_SEO_redteam.md` — 2026-10-04, measured 16:42 to 17:40 UTC = 12:42 to 13:40 Eastern (Sunday). Per RULE 1 every time carries its zone.

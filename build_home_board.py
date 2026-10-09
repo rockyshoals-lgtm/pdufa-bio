@@ -298,7 +298,7 @@ def freshness_label():
         return None, None
     tISO = TODAY.isoformat(); counts = {}
     for r in arr:
-        if r.get("type") != "PDUFA" or r.get("st") == "Decided":
+        if r.get("type") != "PDUFA" or r.get("st") in ("Decided", "Withdrawn"):
             continue
         ua = str(r.get("ua") or "")[:10]; d = str(r.get("d") or "")[:10]
         if not ua or d < tISO:

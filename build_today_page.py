@@ -74,7 +74,7 @@ def main():
     recent = dec[:8]
 
     up = [r for r in rows if r.get("type") == "PDUFA"
-          and str(r.get("st", "")).lower() != "decided"
+          and str(r.get("st", "")).lower() not in ("decided", "withdrawn")
           and r.get("dp") == "day" and str(r.get("d", "")) >= tiso]
     up.sort(key=lambda r: str(r.get("d")))
     up_next = up[:8]

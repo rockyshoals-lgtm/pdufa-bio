@@ -108,7 +108,7 @@ def main():
     # the one countdown sentence, shared by /calendar and /decisions: changes daily, honestly
     up = sorted((r for r in rows if r.get("type") == "PDUFA"
                  and str(r.get("d", "")) >= today.isoformat()
-                 and str(r.get("st", "")).lower() != "decided"), key=lambda r: r["d"])
+                 and str(r.get("st", "")).lower() not in ("decided", "withdrawn")), key=lambda r: r["d"])
     nxt = ""
     if up:
         n = up[0]
@@ -244,7 +244,7 @@ def main():
     # /readouts
     n_ro = sum(1 for r in rows if r.get("type") == "Readout"
                and str(r.get("d", "")) >= today.isoformat()
-               and str(r.get("st", "")).lower() != "decided")
+               and str(r.get("st", "")).lower() not in ("decided", "withdrawn"))
     ok &= inject("readouts", [
         ("How many clinical trial readouts are tracked?",
          f"{n_ro} expected readouts are on the calendar as of {tstr}, each with its "

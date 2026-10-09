@@ -114,10 +114,12 @@
   "feeds": []
  },
  "MRK": {
-  "checked": "2026-09-27",
+  "checked": "2026-10-09",
   "company": "Merck & Co., Inc.",
-  "feeds": [],
-  "note": "2026-09-27: no public news-release RSS found (merck.com refuses non-browser clients; Genentech's feed carries stories, not press releases; roche.com lists none). Covered by the FDA feeds and EDGAR passes only."
+  "feeds": [
+   "html:https://www.merck.com/media/news/"
+  ],
+  "note": "2026-10-09 (audit 10-08 item 2): tried with the watcher UA from the builder machine: merck.com/feed/ and /media/news/feed/ return an empty RSS shell (0 items); /news/feed/ 404; wp-json/wp/v2/posts returns []; the HTML listing merck.com/media/news/ returns 200 with dated headlines (it carried the 2026-09-25 I-DXd withdrawal). Read as html: listing. 2026-09-27 note superseded."
  },
  "NVCR": {
   "checked": "2026-09-27",
@@ -145,10 +147,12 @@
   "feeds": []
  },
  "RHHBY": {
-  "checked": "2026-09-27",
+  "checked": "2026-10-09",
   "company": "Roche Holding AG",
-  "feeds": [],
-  "note": "2026-09-27: no public news-release RSS found (merck.com refuses non-browser clients; Genentech's feed carries stories, not press releases; roche.com lists none). Covered by the FDA feeds and EDGAR passes only."
+  "feeds": [
+   "html:https://www.gene.com/media/press-releases"
+  ],
+  "note": "2026-10-09 (audit 10-08 item 2): gene.com/rss/press-releases.xml 404; the HTML listing gene.com/media/press-releases returns 200 to the watcher UA with a dated table (it carried the 2026-10-08 Tecentriq approval). Read as html: listing. Roche Holding press releases (roche.com) not covered."
  },
  "SMMT": {
   "checked": "2026-09-27",

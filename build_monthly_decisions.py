@@ -155,6 +155,8 @@ def month_events(rows, y, m):
         d = str(r.get("d") or "")
         st = str(r.get("st") or "").lower()
         dcd = str(r.get("dcd") or "")[:10]
+        if st == "withdrawn":       # 2026-10-09: no decision is coming; rendered in its own section
+            continue
         if st == "decided":
             key = d if d.startswith(pre) else (dcd if re.match(r"^\d{4}-\d{2}", dcd) else "")
             if key.startswith(pre):
@@ -267,6 +269,28 @@ def main():
         f"<p>No {mon} decision is in the record yet.</p>"
     up_html = "".join(ev_sentence(r) for r in ahead) or \
         (f"<p>No day-precision PDUFA date remains on the {mon} calendar.</p>")
+    # 2026-10-09 (audit P0, MRK I-DXd): an application the sponsor WITHDREW is neither still ahead
+    # nor decided. It gets its own dated, sourced line and never enters a count above.
+    def _long(iso):
+        dd = dt.date.fromisoformat(iso)
+        return f"{MONTHS[dd.month]} {dd.day}, {dd.year}"
+    wd = []
+    for r in rows:
+        if r.get("type") != "PDUFA" or str(r.get("st") or "").lower() != "withdrawn":
+            continue
+        x = r.get("_d") or {}
+        wdd, gd = str(x.get("withdrawn_date") or "")[:10], str(r.get("d") or "")[:10]
+        if not (gd.startswith(f"{y}-{m:02d}") or wdd.startswith(f"{y}-{m:02d}")):
+            continue
+        if not (re.match(r"^\d{4}-\d{2}-\d{2}$", wdd) and re.match(r"^\d{4}-\d{2}-\d{2}$", gd)):
+            continue
+        src = x.get("withdrawn_source_url") or ""
+        wd.append(f'<p><a class="lit" href="{esc(str(r.get("url") or "/calendar"))}">{esc(str(r.get("name") or ""))}</a> '
+                  f'({esc(str(r.get("t") or "").upper())}): the application was withdrawn by the sponsor on '
+                  f'{_long(wdd)}, before its {_long(gd)} goal date. No FDA decision was issued'
+                  + (f' (<a href="{esc(src)}" rel="noopener">sponsor release</a>)' if src else "") + ".</p>")
+    if wd:
+        up_html += f"<h2>Withdrawn before a decision</h2>{''.join(wd)}"
     coarse_html = ""
     if coarse:
         names = "; ".join(

@@ -54,7 +54,7 @@ def main():
     rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
     nonday = [r for r in rows if r.get("type") == "PDUFA"
               and str(r.get("dp") or "day") != "day"
-              and str(r.get("st") or "").lower() != "decided"]
+              and str(r.get("st") or "").lower() not in ("decided", "withdrawn")]
 
     pages = [os.path.join(SITE, "calendar", "index.html")] + \
         sorted(glob.glob(os.path.join(SITE, "calendar", "*", "*", "index.html")))

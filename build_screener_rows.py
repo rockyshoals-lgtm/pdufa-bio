@@ -54,11 +54,11 @@ def main():
         return os.path.exists(os.path.join(SITE, "pdufa", t, "index.html"))
 
     fwd = [r for r in arr
-           if str(r.get("d") or "")[:10] >= TODAY.isoformat() and r.get("st") != "Decided"
+           if str(r.get("d") or "")[:10] >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
            and r.get("t") in known]
     fwd.sort(key=lambda r: (str(r.get("d") or "9999"), str(r.get("t"))))
     dropped = sum(1 for r in arr
-                  if str(r.get("d") or "")[:10] >= TODAY.isoformat() and r.get("st") != "Decided"
+                  if str(r.get("d") or "")[:10] >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
                   and r.get("t") and r.get("t") not in known)
     fwd = fwd[:a.rows]
 

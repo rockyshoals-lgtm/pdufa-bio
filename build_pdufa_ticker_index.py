@@ -123,7 +123,7 @@ def main():
             continue
         t = str(r["t"]).upper()
         all_by.setdefault(t, []).append(r)
-        if str(r.get("st", "")).lower() != "decided" and str(r.get("d", "")) >= TODAY:
+        if str(r.get("st", "")).lower() not in ("decided", "withdrawn") and str(r.get("d", "")) >= TODAY:
             up_by.setdefault(t, []).append(r)
 
     # 1. redirect hygiene
@@ -145,10 +145,24 @@ def main():
             "capsules", "injection", "oral", "dose", "low", "high", "weekly", "daily", "patch",
             "gel", "solution", "spray", "extended", "release", "acid", "sodium", "hydrochloride"}
     written = kept_pages = 0
+    # 2026-10-09 (audit P0, MRK I-DXd): a ticker whose only upcoming event was WITHDRAWN dropped out
+    # of up_by, so its generated index page was never rewritten and kept "1 upcoming ... Oct 10".
+    # A generated index (h1 "{T} FDA decision dates") is now rebuilt for every ticker with a PDUFA
+    # row, upcoming or not; withdrawn applications get their own dated section.
+    wd_by = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and r.get("t") and str(r.get("st", "")).lower() == "withdrawn":
+            wd_by.setdefault(str(r["t"]).upper(), []).append(r)
+    for t in all_by:
+        if t in up_by:
+            continue
+        pp = os.path.join(SITE, "pdufa", t, "index.html")
+        if os.path.exists(pp) and f"<h1>{t} FDA decision dates</h1>" in open(pp, encoding="utf-8", errors="replace").read():
+            up_by[t] = []
     for t, ups in sorted(up_by.items()):
         ups.sort(key=lambda r: r["d"])
-        nearest = ups[0]
-        drug0 = str(nearest.get("name") or "")
+        nearest = ups[0] if ups else None
+        drug0 = str(nearest.get("name") or "") if nearest else ""
         # any name token of ANY upcoming drug counts: pages may use an alias the dataset
         # doesn't lead with (EXEL: page 'XL092', dataset 'Zanzalintinib (XL092)')
         toks = {w for r in ups
@@ -157,7 +171,7 @@ def main():
                 if len(w) >= 3 and w not in STOP and not w.isdigit()}
         p = os.path.join(SITE, "pdufa", t, "index.html")
 
-        if os.path.exists(p):
+        if os.path.exists(p) and ups:
             existing = open(p, encoding="utf-8", errors="replace").read()
             h1 = re.search(r"<h1[^>]*>(.*?)</h1>", existing, re.S)
             h1t = html.unescape(re.sub(r"<[^>]+>", " ", h1.group(1))).lower() if h1 else ""
@@ -190,29 +204,45 @@ def main():
             + f'</span><span class="d">{esc(drug)[:70]}</span></a>'
             for d, oc, drug in sorted(arch.get(t, []), reverse=True))
 
-        lede = (f"{t} has {len(ups)} upcoming FDA decision date"
-                f"{'s' if len(ups) != 1 else ''}; the nearest is "
-                f"{esc(pretty(nearest['d'], nearest.get('dp') or 'day'))} for "
-                f"{esc(drug0[:60])}."
-                + (f" {len(arch.get(t, []))} past decision"
-                   f"{'s are' if len(arch.get(t, [])) != 1 else ' is'} on record below, each on "
-                   f"its own page." if arch.get(t) else "")
-                + " One event, one page: past decisions never share a URL with a live catalyst.")
+        wds = sorted(wd_by.get(t, []), key=lambda r: str((r.get("_d") or {}).get("withdrawn_date") or ""), reverse=True)
+        wd_html = "".join(
+            f'<a class="row" href="{esc(str(r.get("url") or "/calendar"))}"><span class="t">'
+            f'{esc(pretty(str((r.get("_d") or {}).get("withdrawn_date"))[:10]))} <span class="bad">Withdrawn</span></span>'
+            f'<span class="d">{esc(str(r.get("name") or ""))[:70]}, before its {esc(pretty(r["d"]))} goal date</span></a>'
+            for r in wds if re.match(r"^\d{4}-\d{2}-\d{2}$", str((r.get("_d") or {}).get("withdrawn_date") or "")[:10]))
+        if ups:
+            lede = (f"{t} has {len(ups)} upcoming FDA decision date"
+                    f"{'s' if len(ups) != 1 else ''}; the nearest is "
+                    f"{esc(pretty(nearest['d'], nearest.get('dp') or 'day'))} for "
+                    f"{esc(drug0[:60])}.")
+        else:
+            lede = f"{t} has no FDA decision date ahead on the pdufa.bio calendar."
+        if wds:
+            lede += (f" {len(wds)} application{'s were' if len(wds) != 1 else ' was'} withdrawn by the sponsor "
+                     f"before a decision; {'they are' if len(wds) != 1 else 'it is'} listed below.")
+        lede += ((f" {len(arch.get(t, []))} past decision"
+                  f"{'s are' if len(arch.get(t, [])) != 1 else ' is'} on record below, each on "
+                  f"its own page." if arch.get(t) else "")
+                 + " One event, one page: past decisions never share a URL with a live catalyst.")
         body = (f'<p style="color:var(--mut2);max-width:74ch">{lede}</p>'
                 f'<p><a class="lit" href="/ticker/{t}">{t} catalyst hub</a> &middot; '
                 f'<a class="lit" href="/calendar">full calendar</a></p>'
-                "<h2>Upcoming</h2>" + "".join(evs)
+                + ("<h2>Upcoming</h2>" + "".join(evs) if evs else "")
+                + ("<h2>Withdrawn before a decision</h2>" + wd_html if wd_html else "")
                 + ("<h2>Decided</h2>" + hist if hist else ""))
         page = SHELL.format(
-            title=f"{t} PDUFA Dates: {esc(drug0[:40])} &amp; History | pdufa.bio",
-            desc=esc(f"{t}'s FDA decision dates: {pretty(nearest['d'], nearest.get('dp') or 'day')}"
-                     f" for {drug0[:50]}, plus every past decision with its outcome."[:158]),
+            title=(f"{t} PDUFA Dates: {esc(drug0[:40])} &amp; History | pdufa.bio" if ups
+                   else f"{t} FDA Decision History and PDUFA Dates | pdufa.bio"),
+            desc=esc((f"{t}'s FDA decision dates: {pretty(nearest['d'], nearest.get('dp') or 'day')}"
+                      f" for {drug0[:50]}, plus every past decision with its outcome." if ups else
+                      f"{t} has no FDA decision date ahead. Every past {t} FDA decision with its outcome"
+                      + (", and applications withdrawn before a decision." if wds else "."))[:158]),
             canon=f"{BASE}/pdufa/{t}", h1=f"{t} FDA decision dates", body=body)
         if not a.dry_run:
             os.makedirs(os.path.dirname(p), exist_ok=True)
             open(p, "w", encoding="utf-8").write(page)
         written += 1
-        print(f"  index -> /pdufa/{t}  (nearest: {nearest['d']} {drug0[:40]})")
+        print(f"  index -> /pdufa/{t}  (nearest: {nearest['d'] if nearest else 'none'} {drug0[:40]})")
 
     print(f"indexes written: {written}; healthy event pages left alone: {kept_pages}")
     return 0

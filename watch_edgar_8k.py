@@ -83,7 +83,12 @@ def sentences(text):
 def leads_in(text, rows):
     out = []
     for s in sentences(text):
-        if len(s) > 600 or not FDA.search(s) or not DECIDE.search(s) or NOT.search(s):
+        if len(s) > 600:
+            continue
+        # 2026-10-09 (audit P0): a withdrawal / goal-date extension / refuse-to-file sentence is a lead
+        # too (W.outcome_kind needs an application word and the outcome phrase in the same sentence).
+        other = W.outcome_kind(s) if FDA.search(s) or re.search(r"\b(BLA|NDA|PDUFA)\b", s) else None
+        if not other and (not FDA.search(s) or not DECIDE.search(s) or NOT.search(s)):
             continue
         for r in rows:
             for t in W.terms_for(r):

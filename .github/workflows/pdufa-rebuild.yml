@@ -648,6 +648,13 @@ jobs:
       - name: Sponsor caveats rendered on event pages
         run: python inject_sponsor_caveat.py
 
+      # Audit 2026-10-08 P0: MRK's I-DXd BLA was withdrawn 2026-09-25 and the event page, the
+      # calendar row and the homepage kept naming an Oct 10 decision for 13 days. A Withdrawn row
+      # (dataset st) gets a dated, sourced event page and a marked calendar row; every pending
+      # selector treats it as closed. test_no_withdrawn_upcoming.py fails if this step goes missing.
+      - name: "Withdrawn applications: event page + calendar row (never 'upcoming')"
+        run: python build_withdrawn_pages.py
+
       # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
       - name: "BreadcrumbList on every indexable page"
