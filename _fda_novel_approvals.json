@@ -2,7 +2,7 @@
  "source": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
  "year": 2026,
  "read_at": "2026-10-09",
- "fda_content_current_as_of": "2026-09-28",
+ "fda_content_current_as_of": "2026-10-09",
  "note": "CDER's Novel Drug Approvals list. CBER-regulated products are not on it.",
  "rows": [
   {
@@ -319,6 +319,13 @@
    "ingredient": "tiratricol",
    "date": "2026-09-28",
    "use": "To treat peripheral thyrotoxicosis in patients with MCT8 deficiency"
+  },
+  {
+   "n": 46,
+   "brand": "Hovilpri",
+   "ingredient": "pritelivir",
+   "date": "2026-10-09",
+   "use": "To treat adults with weakened immune systems who have mucocutaneous lesions caused by herpes simplex virus infection and have not responded to other therapies"
   }
  ]
 }

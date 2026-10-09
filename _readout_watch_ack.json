@@ -211,6 +211,10 @@
   {
    "id": "readout_goss_2027-12-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (TERMINATED, primary completion ACTUAL 2026-09-09); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_mltx_2027-02-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-05-28); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."
