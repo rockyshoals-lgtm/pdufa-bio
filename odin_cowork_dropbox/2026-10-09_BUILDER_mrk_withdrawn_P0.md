@@ -143,3 +143,21 @@ Commit `c3eb05f23`, CI run 37894041908, green.
 * It now checks a window around every mention instead of splitting sentences. "Merck & Co., Inc." had split the FAQ sentence.
 * Added vocabulary: "due to decide", "expected to decide", "decision is expected", "days to decision".
 * Proved on the live pages: 0 on the local rebuild → **planted the live `/ticker/MRK` and `/calendar` HTML: FAIL 2** → reverted: 0.
+
+## Final live state (appended ~00:20 Pacific = 03:20 Eastern, 10-09; CI times UTC)
+
+Commits `3ac4cb98e` (CI run 37895173662 **green**) and `8bc3dc07bf` (API-only, Vercel deploy).
+
+**Live** (`cache-busted` reads):
+* build-info: commit 3ac4cb98e, next **RHHBY 2026-10-15**, `held_since` null.
+* API `pdufa_mrk_2026-10-10`: `status: "Withdrawn"`, `withdrawn_date: "2026-09-25"`, `decision_date: null`, `days_to_decision: null`.
+  * The per-request countdown in `_lib.mjs` had overridden the first null. Withdrawn is now handled where Decided is.
+* Homepage board: no I-DXd.
+* The pending-language window check (the guard's logic) passes on 12 pages:
+  * `/`, `/calendar`, `/calendar/2026/october`, `/fda-this-month`, `/fda-decisions-today`, `/decisions`;
+  * `/pdufa/MRK`, `/ticker/MRK`, `/drug/ifinatamab-deruxtecan`, `/pdufa/MRK-ifinatamab-deruxtecan`;
+  * `/condition/cancer`, `/screener`.
+
+**Sponsor feeds in CI:** "31 armed sponsor(s); 8 with a news feed (8 read this run)", none unreachable. The gene.com HTML listing is readable from the GitHub runner. Merck's listing is read only while MRK has an armed row; it has none now, so the runner's access to merck.com is not yet proven.
+
+**Rebase note:** this push conflicted with CI's 10-09 daily refresh on about 230 generated pages (ticker hubs, /sls, the MRK event page). I took the upstream copies; CI regenerated them from the patched builders.
