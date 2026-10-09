@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-08 BUILDER (tecentriq held leads published)** — `2026-10-08_BUILDER_tecentriq_held_leads_published.md` — 2026-10-08, written ~18:50 Pacific = 21:50 Eastern (Thursday). CI and quarantine times are UTC. RULE 1.
+- **2026-10-06 audit (audit)** — `2026-10-06_audit.md` — 2026-10-06, measured 21:54 to 22:20 Eastern = 2026-10-07 01:54 to 02:20 UTC (Tuesday night). Per RULE 1 every time carries its zone.
 - **2026-10-04 audit (audit currency UX SEO redteam)** — `2026-10-04_audit_currency_UX_SEO_redteam.md` — 2026-10-04, measured 16:42 to 17:40 UTC = 12:42 to 13:40 Eastern (Sunday). Per RULE 1 every time carries its zone.
 - **2026-10-04 BUILDER (jaypirca published two red teams)** — `2026-10-04_BUILDER_jaypirca_published_two_red_teams.md` — 2026-10-04, written ~10:35 Pacific = 13:35 Eastern (Sunday). RULE 1: times carry their zone.
 - **2026-10-03b BUILDER (tiers 2 3 4)** — `2026-10-03b_BUILDER_tiers_2_3_4.md` — 2026-10-03, written ~16:00 Pacific = 19:00 Eastern = 23:00 UTC. RULE 1: every time below carries its zone. Facts and file contents only; not investment advice.

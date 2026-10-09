@@ -483,6 +483,14 @@ def main():
             if typ == "PDUFA" and (r.get("_d") or {}).get("goal_unsourced"):
                 typ = "FDA action"
             tk = str(r.get("t") or "").upper()
+            # ONE DECISION, ONE ROW (2026-10-08): a decided row whose action day differs from its goal
+            # day (Atebrioz 09-25 vs 09-26, Tecentriq 10-08 vs 10-09) was listed twice, once as the
+            # archive's dated decision and once as a bare "PDUFA" goal row with no outcome. The
+            # archive row carries the decision; the goal date is stated on the decision page.
+            _dcd = str(r.get("dcd") or "")[:10]
+            if (str(r.get("st") or "").lower() == "decided" and _dcd and _dcd != day
+                    and (tk, _dcd) in arch):
+                continue
             outcome = arch.get((tk, day), "")
             decided = str(r.get("st") or "").lower() == "decided"
             if decided and not outcome:

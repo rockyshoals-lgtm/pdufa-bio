@@ -49,6 +49,12 @@
    "date": "2026-10-02",
    "brand": "Jaypirca",
    "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic"
+  },
+  {
+   "slug": "tecentriq",
+   "date": "2026-10-08",
+   "brand": "Tecentriq",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer"
   }
  ]
 }

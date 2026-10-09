@@ -31,6 +31,7 @@ Four invariants:
 
     python tests/test_cross_surface_values.py
 """
+import datetime as dt
 import glob
 import io
 import json
@@ -129,6 +130,10 @@ def main():
             fail += 1
 
     # ---- 3. no earliness figure without a sourced day-precision goal ----
+    by_goal = {(str(r.get("t") or "").upper(), str(r.get("d") or "")[:10]): r for r in rows
+               if r.get("type") == "PDUFA" and str(r.get("st") or "").lower() == "decided"}
+    by_dcd = {(str(r.get("t") or "").upper(), str(r.get("dcd") or "")[:10]): r for r in rows
+              if r.get("type") == "PDUFA" and str(r.get("st") or "").lower() == "decided"}
     allowed = {}
     for r in rows:
         if r.get("type") == "PDUFA" and str(r.get("st") or "").lower() == "decided":
@@ -168,7 +173,20 @@ def main():
         hit = re.search(r"(\d+) days? before its ([A-Z][a-z]+ \d{1,2}, \d{4}) goal date", doc)
         if not hit:
             continue
-        bad = [k for k, v in allowed.items() if k[0] == tk and not v]
+        # 2026-10-08: judged per ROW, not per ticker. /pdufa/RHHBY-tecentriq ("1 day before its
+        # October 9, 2026 goal date", both dates sourced) failed because a different RHHBY row
+        # (Gazyva, goal_unsourced) was gated. The row is the one whose goal day the page names.
+        try:
+            gday = dt.datetime.strptime(hit.group(2), "%B %d, %Y").date().isoformat()
+        except ValueError:
+            gday = ""
+        # A hub may carry another sponsor's decision (/pdufa/ABEO -> RARE UX111, /pdufa/RPRX -> NUVL
+        # zidesamtinib): judge the decision the page LINKS to, then fall back to the slug's ticker.
+        lk = re.search(r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', raw(p))
+        row = (by_dcd.get((lk.group(1), lk.group(2))) if lk else None) or by_goal.get((tk, gday))
+        if row is not None and str(row.get("d") or "")[:10] != gday:
+            row = None   # the page names a goal day the row does not hold
+        bad = row is None or not earliness_allowed(row)
         if bad:
             print(f"  FAIL /pdufa/{slug}: renders '{hit.group(0)}' for a ticker whose decided "
                   f"row has no sourced day-precision goal. Run mark_event_pages_decided.py.")

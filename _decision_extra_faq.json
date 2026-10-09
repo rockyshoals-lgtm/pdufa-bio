@@ -17,5 +17,23 @@
    "What is the approved Jaypirca dose for CLL?",
    "The FDA's notification gives the recommended pirtobrutinib dose as 200 mg orally once daily until disease progression or unacceptable toxicity. The FDA says full prescribing information will be posted on Drugs@FDA; Lilly's announcement links the current prescribing information."
   ]
+ ],
+ "RHHBY-2026-10-08": [
+  [
+   "When did the FDA approve Tecentriq for Stage III colon cancer?",
+   "The FDA approved atezolizumab (Tecentriq, Genentech) on October 8, 2026, in combination with a fluoropyrimidine and oxaliplatin, for the adjuvant treatment of adult and pediatric patients two years of age and older with Stage III mismatch repair deficient (dMMR) colon cancer, per the FDA's approval notification of that date. Genentech had given October 9, 2026 as the goal date, so the action came one day early."
+  ],
+  [
+   "What trial supported the Tecentriq colon cancer approval?",
+   "ATOMIC/ML39057 (NCT02912559), a randomized, open-label, active-controlled trial in 711 adults and one pediatric patient with resected Stage III dMMR colon cancer, comparing atezolizumab plus mFOLFOX6 then atezolizumab alone with mFOLFOX6 alone. The disease-free survival hazard ratio was 0.50 (95% CI 0.35 to 0.73; p 0.0001), per the FDA."
+  ],
+  [
+   "Was Tecentriq Hybreza also approved for colon cancer?",
+   "Yes. The same FDA notification approved atezolizumab and hyaluronidase-tqjs (Tecentriq Hybreza) with a fluoropyrimidine and oxaliplatin for the adjuvant treatment of patients 12 years and older who weigh 40 kg or more with Stage III dMMR colon cancer."
+  ],
+  [
+   "What is the recommended Tecentriq dose for Stage III colon cancer?",
+   "For adults the FDA gives 840 mg every two weeks, 1200 mg every three weeks or 1680 mg every four weeks intravenously with chemotherapy for six months, then atezolizumab alone for six months or until disease recurrence or unacceptable toxicity. The FDA says full prescribing information will be posted on Drugs@FDA."
+  ]
  ]
 }

@@ -1,0 +1,16 @@
+[
+ {
+  "ticker": "RHHBY",
+  "date": "2026-10-08",
+  "outcome": "Approved",
+  "drug": "Tecentriq (atezolizumab)",
+  "indication": "In combination with a fluoropyrimidine and oxaliplatin, adjuvant treatment of adult and pediatric patients two years of age and older with Stage III mismatch repair deficient (dMMR) colon cancer",
+  "company": "Genentech, a Roche company",
+  "cap": "Large",
+  "headline": "The FDA also approved Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs), given under the skin, for the same use in patients 12 and older who weigh at least 40 kg. Recommended adult intravenous dose: 840 mg every two weeks, 1200 mg every three weeks or 1680 mg every four weeks with chemotherapy for six months, then atezolizumab alone for six months or until recurrence or unacceptable toxicity (FDA).",
+  "pdufa_note": "The FDA's approval notification is dated October 8, 2026 and states the approval was made that day. The goal date was October 9, 2026: Genentech said on June 10, 2026 that the FDA \"is expected to make a decision on the approval by October 9, 2026\" (<a href=\"https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech\" rel=\"noopener\" style=\"color:#e3ba5e\">Genentech, June 10, 2026</a>). Both dates come from documents that state them, so the action came one day before the goal date. The approval is based on ATOMIC/ML39057 (NCT02912559), a multicenter, randomized, open-label, active-controlled trial in 711 adults and one pediatric patient with Stage III dMMR colon cancer after complete resection, comparing atezolizumab plus mFOLFOX6 (oxaliplatin, leucovorin and fluorouracil) for 12 cycles followed by atezolizumab for six months with mFOLFOX6 alone for 12 cycles. Per the FDA, the hazard ratio for investigator-assessed disease-free survival was 0.50 (95% CI 0.35 to 0.73; p 0.0001); median disease-free survival was not reached in either arm. The applications had priority review and were reviewed under Project Orbis with Australia's TGA, Health Canada, Israel's Ministry of Health and Swissmedic, whose reviews are ongoing. The FDA says full prescribing information will be posted on Drugs@FDA; the approval letter had not been posted there when this page was published.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer",
+  "source_label": "FDA approval notification, atezolizumab with chemotherapy for Stage III dMMR colon cancer, October 8, 2026",
+  "h1": "Tecentriq (atezolizumab) <span class=\"g\">FDA approval for Stage III dMMR colon cancer</span>: Oct 8, 2026"
+ }
+]
