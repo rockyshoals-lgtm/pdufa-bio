@@ -116,3 +116,30 @@ The event page copy is not yet written.
 * Order items 3, 4, 6 and 7: the UX order (stylesheet first), the weekly decisions page, the rulings, and the NOINDEX list.
 * Item 5: the copy on `/pdufa/RHHBY-enspryng`.
 * This was the P0 pass.
+
+## Live check after the first push, and three leaks fixed (appended ~23:55 Pacific = 02:55 Eastern)
+
+Commit `c3eb05f23`, CI run 37894041908, green.
+
+**Live and correct:**
+* build-info: next RHHBY 2026-10-15, `held_since` null.
+* API: `status: "Withdrawn"`.
+* Event page: withdrawn title and lede, no Event schema.
+* Homepage board: no I-DXd.
+* `/fda-this-month`: the withdrawn section.
+* `/drug/ifinatamab-deruxtecan`: "Application withdrawn".
+
+**Still wrong live, and my guard missed two of the three. Retracting the "0" it reported:**
+1. **`/calendar` month sentence:** "In October the FDA is due to decide on Ifinatamab deruxtecan (MRK, Oct 10)".
+   * Cause: in CI, `inject_calendar_explainer` runs at the "mark decided" step, long before `build_withdrawn_pages`, so the row was not yet marked.
+   * Fix: `build_withdrawn_pages.py` now also runs immediately after `mark_calendar_decided` (CI and local).
+2. **`/ticker/MRK` FAQ:** "The next catalyst for Merck & Co., Inc. is Ifinatamab deruxtecan (I-DXd) (PDUFA)".
+   * Cause: `build_ticker_faq.py` (CI only) filtered `not in ("decided",)`, a form my search missed.
+   * Fix: patched to also exclude withdrawn.
+3. **API `days_to_decision: 1`:** a CI enrichment step re-stamps it.
+   * Fix: `_lib.mjs` serves `days_to_decision: null` for any Withdrawn or Decided row.
+
+**Guard tightened:**
+* It now checks a window around every mention instead of splitting sentences. "Merck & Co., Inc." had split the FAQ sentence.
+* Added vocabulary: "due to decide", "expected to decide", "decision is expected", "days to decision".
+* Proved on the live pages: 0 on the local rebuild → **planted the live `/ticker/MRK` and `/calendar` HTML: FAIL 2** → reverted: 0.

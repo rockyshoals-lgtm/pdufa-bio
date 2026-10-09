@@ -114,7 +114,7 @@ jobs:
         run: python sync_decisions_listing.py
 
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
-        run: python mark_calendar_decided.py && python sync_api_urls_to_calendar.py
+        run: python mark_calendar_decided.py && python sync_api_urls_to_calendar.py && python build_withdrawn_pages.py
 
       # Audit 2026-09-05b section 3: AI answer boxes quote sentences, not tables. This
       # keeps the /calendar explainer block's numbers (early/on/late split) computed

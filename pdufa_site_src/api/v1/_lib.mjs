@@ -136,6 +136,9 @@ export function shape(e, tier) {
   const base = CORE(e);
   const d = e._d || {};
   for (const k of CORE_EXTRA) base[k] = (k in d) ? d[k] : null;   // free — it's on the public page
+  /* 2026-10-09: a withdrawn or decided application has no decision ahead; an enrichment step
+     re-stamped days_to_decision:1 on the withdrawn MRK row. A closed row never carries a countdown. */
+  if (/^(withdrawn|decided)$/i.test(String(e.st || ''))) base.days_to_decision = null;
   /* Conference rows carry presenters in _d (sync_conferences_to_api.py). Observed live 2026-08-16:
      the dataset had 8 conferences with presenter entries and this whitelist silently dropped every
      one -- the API said "presenters: none" while /conferences printed them. Same 2026-07-11 rule

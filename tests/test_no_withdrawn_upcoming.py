@@ -31,7 +31,8 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
 ISO = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 PENDING = re.compile(r"\bupcoming\b|\bnearest\b|next catalyst|under FDA review|PDUFA date is|"
-                     r"goal date to complete|is scheduled|still ahead", re.I)
+                     r"goal date to complete|is scheduled|still ahead|due to decide|expected to decide|"
+                     r"decision is expected|days? to decision", re.I)
 
 
 def text(doc):
@@ -108,11 +109,15 @@ def main():
             t = page_text[p]
             if tok not in t.lower():
                 continue
-            for sent in re.split(r"(?<=[.?!])\s+", t):
-                if tok in sent.lower() and PENDING.search(sent) and not re.search(
-                        r"\bno (upcoming|longer)\b|\bnot (upcoming|pending)\b|withdr", sent, re.I):
+            # a window around every mention, not a sentence split: "Merck & Co., Inc." split the
+            # /ticker/MRK FAQ sentence in two and hid "The next catalyst ... is Ifinatamab" (10-09)
+            low = t.lower()
+            for mm in re.finditer(re.escape(tok), low):
+                win = t[max(0, mm.start() - 160):mm.end() + 120]
+                if PENDING.search(win) and not re.search(
+                        r"\bno (upcoming|longer)\b|\bnot (upcoming|pending)\b|withdr", win, re.I):
                     fails.append(f"{rid}: /{os.path.relpath(os.path.dirname(p), SITE).replace(os.sep, '/')} "
-                                 f"says {sent.strip()[:160]!r}")
+                                 f"says {win.strip()[:200]!r}")
                     break
     if fails:
         print(f"FAIL: {len(fails)} withdrawn-application problem(s). A withdrawn application is not a "

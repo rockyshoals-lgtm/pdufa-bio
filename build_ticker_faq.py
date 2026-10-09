@@ -77,7 +77,7 @@ def faqs(tk, company, rows, decisions, runup, cohort):
 
     # 1. The timing question. This is the query.
     upcoming = sorted([r for r in rows if (r.get("d") or "") >= today
-                       and str(r.get("st") or "").lower() not in ("decided",)],
+                       and str(r.get("st") or "").lower() not in ("decided", "withdrawn")],
                       key=lambda r: r["d"])
     if upcoming:
         n = upcoming[0]
