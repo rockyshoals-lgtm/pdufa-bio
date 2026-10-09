@@ -43,3 +43,19 @@ Both point at the same real event, so this was a publish, not an ack.
 2. **`test_cross_surface_values.py` section 3 judged margins per TICKER, not per row.** It failed `/pdufa/RHHBY-tecentriq` (both dates sourced) because a different RHHBY row, Gazyva (goal_unsourced), was gated.
    * It now judges the decision the page links to, falling back to the slug ticker plus the goal day the page names. That also correctly handles hubs carrying another sponsor's decision: `/pdufa/ABEO` → RARE UX111, `/pdufa/RPRX` → NUVL zidesamtinib.
    * Proof: OK before; a planted Gazyva-linked margin failed it; OK again after reverting.
+
+## Live (appended ~19:15 Pacific = 22:15 Eastern; CI times UTC)
+
+Commit `64c4368df`, CI run 37871795515 **green**.
+
+* In CI, the watchers found **0 unreviewed leads** on both the drug-page watch and the FDA drugs feed.
+* `/build-info.json` (built 2026-10-09T01:55:34Z): **`held_since` null, `held_leads` []**. The quarantine is lifted.
+* The next decision on the calendar is MRK, 2026-10-10.
+
+Live checks:
+
+* `/fda-decision/RHHBY-2026-10-08` returns 200 with the title and description as above. It now reads "Genentech, a Roche company", with no doubled parentheses.
+* `/drug/tecentriq`: one row, "FDA decision · Oct 8, 2026 ✓ Approved". `/drug/atebrioz` also has one row per decision now.
+* `/pdufa/RHHBY-tecentriq` reads "decided this application on October 8, 2026, 1 day before its October 9, 2026 goal date".
+* `/calendar`, `/fda-this-month`, `/fda-decisions-today` and `/decisions` each link the page.
+* The API row is Decided, with its url pointing to the decision page.
