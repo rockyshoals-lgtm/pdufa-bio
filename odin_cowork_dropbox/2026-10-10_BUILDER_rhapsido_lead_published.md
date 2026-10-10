@@ -36,3 +36,7 @@
 ## Watcher note
 
 The drug-page watcher reported `oncology page BLIND` this run, meaning the FDA oncology notifications page was unreadable from the builder machine. The other passes read. If CI also reports it blind, that is a separate issue.
+
+## Live (appended ~09:55 Pacific = 12:55 Eastern)
+
+Commit `e26ec6022`, CI run 38067250961 green. build-info built 2026-10-10T16:23:52Z: `held_since` null, `held_leads` []. `/fda-decision/NVS-2026-10-06` live; `/drug/remibrutinib` reads 'FDA action · Oct 6, 2026 ✓ Approved'; linked from /fda-this-month, /decisions, /fda-approval-letters. Issues #22 and #23 closed with this record.
