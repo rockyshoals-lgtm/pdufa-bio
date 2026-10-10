@@ -1818,7 +1818,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2034,7 +2034,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2137,7 +2137,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2192,7 +2192,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -4228,6 +4228,35 @@ export default [
   "dcd": "2026-09-03"
  },
  {
+  "id": "conf_aacr-panc_2026-09-25",
+  "t": "AACR-PANC",
+  "company": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "d": "2026-09-25",
+  "dp": "day",
+  "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "type": "Conference",
+  "ta": "Oncology - Pancreatic",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-10T00:29:05Z",
+  "_d": {
+   "end": "2026-09-28",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "SLS",
+     "company": "SELLAS Life Sciences Group, Inc.",
+     "drug": "SLS009 (tambiciclib) - PRECLINICAL posters, PDAC",
+     "pres_type": "poster x3 (preclinical)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_rhhby_2026-09-25",
   "t": "RHHBY",
   "company": "Roche Holding AG",
@@ -4264,29 +4293,36 @@ export default [
   }
  },
  {
-  "id": "conf_aacr-panc_2026-09-25",
-  "t": "AACR-PANC",
-  "company": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
-  "d": "2026-09-25",
+  "id": "conf_astro_2026-09-26",
+  "t": "ASTRO",
+  "company": "ASTRO Annual Meeting",
+  "d": "2026-09-26",
   "dp": "day",
-  "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "name": "ASTRO Annual Meeting",
   "type": "Conference",
-  "ta": "Oncology - Pancreatic",
+  "ta": "Radiation oncology",
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
   "ua": "2026-10-10T00:29:05Z",
   "_d": {
-   "end": "2026-09-28",
+   "end": "2026-09-30",
    "location": "",
    "organiser_url": "",
    "presenters": [
     {
-     "ticker": "SLS",
-     "company": "SELLAS Life Sciences Group, Inc.",
-     "drug": "SLS009 (tambiciclib) - PRECLINICAL posters, PDAC",
-     "pres_type": "poster x3 (preclinical)",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html"
+     "ticker": "CADL",
+     "company": "Candel Therapeutics, Inc.",
+     "drug": "Aglatimagene besadenovec (CAN-2409)",
+     "pres_type": "poster",
+     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
+    },
+    {
+     "ticker": "NVCR",
+     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
+     "drug": "",
+     "pres_type": "unspecified",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
     }
    ],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
@@ -4368,42 +4404,6 @@ export default [
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
- },
- {
-  "id": "conf_astro_2026-09-26",
-  "t": "ASTRO",
-  "company": "ASTRO Annual Meeting",
-  "d": "2026-09-26",
-  "dp": "day",
-  "name": "ASTRO Annual Meeting",
-  "type": "Conference",
-  "ta": "Radiation oncology",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-10T00:29:05Z",
-  "_d": {
-   "end": "2026-09-30",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "CADL",
-     "company": "Candel Therapeutics, Inc.",
-     "drug": "Aglatimagene besadenovec (CAN-2409)",
-     "pres_type": "poster",
-     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
-    },
-    {
-     "ticker": "NVCR",
-     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
-     "drug": "",
-     "pres_type": "unspecified",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "pdufa_bfri_2026-09-28",
@@ -5564,44 +5564,42 @@ export default [
   }
  },
  {
-  "id": "pdufa_rhhby_2026-10-09",
-  "t": "RHHBY",
-  "company": "Roche Holding AG",
-  "d": "2026-10-09",
+  "id": "pdufa_nvs_2026-10-06",
+  "t": "NVS",
+  "company": "Novartis Ag",
+  "d": "2026-10-06",
   "dp": "day",
-  "name": "Tecentriq (atezolizumab) - adjuvant Stage III dMMR colon cancer",
+  "name": "Rhapsido (remibrutinib) - symptomatic dermographism",
   "type": "PDUFA",
-  "ta": "Oncology",
+  "ta": "Immunology",
   "cap": "Large",
   "st": "Decided",
-  "url": "/fda-decision/RHHBY-2026-10-08",
-  "ua": "2026-10-09T01:30:48Z",
-  "_d": {
-   "indication": "In combination with a fluoropyrimidine and oxaliplatin, adjuvant treatment of adult and pediatric patients two years of age and older with Stage III mismatch repair deficient (dMMR) colon cancer",
-   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
-   "source": "Genentech press release 2026-06-10",
-   "source_url": "https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech",
-   "source_quote": "The FDA has granted Priority Review and is expected to make a decision on the approval by October 9, 2026.",
-   "nct_id": "NCT02912559",
-   "brand": "Tecentriq",
-   "inn": "atezolizumab",
-   "indication_short": "adjuvant treatment of Stage III mismatch repair deficient (dMMR) colon cancer, with chemotherapy",
-   "title_indication": "dMMR Colon Cancer",
-   "seo_desc": "Tecentriq (atezolizumab) was approved by the FDA on October 8, 2026 with chemotherapy as adjuvant treatment for Stage III dMMR colon cancer, based on ATOMIC.",
-   "decision_source": "FDA approval notification, October 8, 2026 (Oncology/Hematologic Malignancies)",
-   "decision_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer",
-   "fda_notice_title": "FDA approves atezolizumab in combination with chemotherapy for Stage III mismatch repair deficient colon cancer",
-   "decision_quote": "On October 8, 2026, the Food and Drug Administration approved atezolizumab (Tecentriq, Genentech, Inc.) in combination with a fluoropyrimidine and oxaliplatin for the adjuvant treatment of adult and pediatric patients two years of age and older with Stage III mismatch repair deficient (dMMR) colon cancer.",
-   "fda_action_date": "2026-10-08",
-   "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer",
-   "fda_action_record": "FDA approval notification (sBLA; letter not yet on Drugs@FDA)",
-   "decision_date_note": "The FDA's notification is dated October 8, 2026 and states the approval was made that day. The goal date, October 9, 2026, is from Genentech's release of June 10, 2026.",
-   "review": "Supplemental BLA, Priority Review, reviewed under Project Orbis. ATOMIC/ML39057 (NCT02912559): 711 adults and one pediatric patient with resected Stage III dMMR colon cancer, randomized 1:1 to atezolizumab plus mFOLFOX6 for 12 cycles then atezolizumab for 6 months, or mFOLFOX6 alone; investigator-assessed DFS hazard ratio 0.50 (95% CI 0.35 to 0.73; p 0.0001), median DFS not reached in either arm. Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) approved for the same use in patients 12 and older weighing at least 40 kg (FDA notification).",
-   "announcement_url": "https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com",
-   "announcement": "Genentech press release, October 8, 2026"
-  },
+  "url": "/fda-decision/NVS-2026-10-06",
+  "ua": "2026-10-10T16:13:22Z",
   "oc": "Approved",
-  "dcd": "2026-10-08"
+  "dcd": "2026-10-06",
+  "_d": {
+   "brand": "Rhapsido",
+   "inn": "remibrutinib",
+   "indication": "Adults with symptomatic dermographism (SD) inadequately controlled by H1 antihistamines",
+   "indication_short": "adults with symptomatic dermographism inadequately controlled by H1 antihistamines",
+   "title_indication": "Dermographism",
+   "seo_desc": "Rhapsido (remibrutinib) was approved by the FDA on October 6, 2026 for adults with symptomatic dermographism not controlled by H1 antihistamines.",
+   "source": "Drugs@FDA (openFDA), NDA 218436 SUPPL-1, approved 2026-10-06",
+   "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218436",
+   "decision_source": "FDA record: Drugs@FDA NDA 218436, supplement 1 (efficacy), action date October 6, 2026",
+   "decision_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218436",
+   "announcement_url": "https://www.novartis.com/us-en/news/media-releases/novartis-rhapsido-remibrutinib-receives-fda-approval-first-treatment-symptomatic-dermographism-sd-expanding-its-use-beyond-chronic-spontaneous-urticaria-csu",
+   "announcement": "Novartis media release, October 7, 2026",
+   "decision_quote": "Novartis announced today that the U.S. Food and Drug Administration (FDA) approved Rhapsido (remibrutinib) ... as the first treatment for adults with symptomatic dermographism (SD) inadequately controlled by H1 antihistamines.",
+   "fda_action_date": "2026-10-06",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218436",
+   "fda_action_record": "NDA 218436 S-001 (openFDA AP 2026-10-06; letter listed, not yet posted)",
+   "decision_date_note": "The FDA's action date, October 6, 2026, is from the FDA's Drugs@FDA data (openFDA). Novartis announced the approval on October 7, 2026.",
+   "goal_unsourced": true,
+   "goal_note": "pdufa.bio holds no goal date for this supplemental NDA; no early or late margin is computed.",
+   "review": "Efficacy supplement to NDA 218436 (Rhapsido, first approved September 30, 2025 for chronic spontaneous urticaria). Approval based on the symptomatic dermographism cohort of the Phase III RemIND trial: complete response at Week 12 in 29.3% of patients on Rhapsido versus 14.0% on placebo (p=0.0229), per Novartis."
+  }
  },
  {
   "id": "conf_aao_2026-10-09",
@@ -5673,6 +5671,46 @@ export default [
    ],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
+ },
+ {
+  "id": "pdufa_rhhby_2026-10-09",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "Tecentriq (atezolizumab) - adjuvant Stage III dMMR colon cancer",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "Large",
+  "st": "Decided",
+  "url": "/fda-decision/RHHBY-2026-10-08",
+  "ua": "2026-10-09T01:30:48Z",
+  "_d": {
+   "indication": "In combination with a fluoropyrimidine and oxaliplatin, adjuvant treatment of adult and pediatric patients two years of age and older with Stage III mismatch repair deficient (dMMR) colon cancer",
+   "source_note": "Re-added 2026-08-13 after dataset loss; sBLA priority review, decision by 2026-10-09 per Genentech release 2026-06-10.",
+   "source": "Genentech press release 2026-06-10",
+   "source_url": "https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech",
+   "source_quote": "The FDA has granted Priority Review and is expected to make a decision on the approval by October 9, 2026.",
+   "nct_id": "NCT02912559",
+   "brand": "Tecentriq",
+   "inn": "atezolizumab",
+   "indication_short": "adjuvant treatment of Stage III mismatch repair deficient (dMMR) colon cancer, with chemotherapy",
+   "title_indication": "dMMR Colon Cancer",
+   "seo_desc": "Tecentriq (atezolizumab) was approved by the FDA on October 8, 2026 with chemotherapy as adjuvant treatment for Stage III dMMR colon cancer, based on ATOMIC.",
+   "decision_source": "FDA approval notification, October 8, 2026 (Oncology/Hematologic Malignancies)",
+   "decision_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer",
+   "fda_notice_title": "FDA approves atezolizumab in combination with chemotherapy for Stage III mismatch repair deficient colon cancer",
+   "decision_quote": "On October 8, 2026, the Food and Drug Administration approved atezolizumab (Tecentriq, Genentech, Inc.) in combination with a fluoropyrimidine and oxaliplatin for the adjuvant treatment of adult and pediatric patients two years of age and older with Stage III mismatch repair deficient (dMMR) colon cancer.",
+   "fda_action_date": "2026-10-08",
+   "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer",
+   "fda_action_record": "FDA approval notification (sBLA; letter not yet on Drugs@FDA)",
+   "decision_date_note": "The FDA's notification is dated October 8, 2026 and states the approval was made that day. The goal date, October 9, 2026, is from Genentech's release of June 10, 2026.",
+   "review": "Supplemental BLA, Priority Review, reviewed under Project Orbis. ATOMIC/ML39057 (NCT02912559): 711 adults and one pediatric patient with resected Stage III dMMR colon cancer, randomized 1:1 to atezolizumab plus mFOLFOX6 for 12 cycles then atezolizumab for 6 months, or mFOLFOX6 alone; investigator-assessed DFS hazard ratio 0.50 (95% CI 0.35 to 0.73; p 0.0001), median DFS not reached in either arm. Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) approved for the same use in patients 12 and older weighing at least 40 kg (FDA notification).",
+   "announcement_url": "https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com",
+   "announcement": "Genentech press release, October 8, 2026"
+  },
+  "oc": "Approved",
+  "dcd": "2026-10-08"
  },
  {
   "id": "pdufa_mrk_2026-10-10",
@@ -6015,7 +6053,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -6937,6 +6975,27 @@ export default [
   }
  },
  {
+  "id": "conf_obesityweek_2026-11-14",
+  "t": "ObesityWeek",
+  "company": "ObesityWeek, The Obesity Society",
+  "d": "2026-11-14",
+  "dp": "day",
+  "name": "ObesityWeek, The Obesity Society",
+  "type": "Conference",
+  "ta": "Obesity and metabolic",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-10T00:29:05Z",
+  "_d": {
+   "end": "2026-11-17",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_smmt_2026-11-14",
   "t": "SMMT",
   "company": "Summit Therapeutics Inc.",
@@ -6967,27 +7026,6 @@ export default [
    "source": "Summit Therapeutics Inc. 8-K 2026-01-29",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000006/a2026_prx0129xfdablaacce.htm",
    "source_quote": "ion (BLA) Seeking Approval for Ivonescimab in Combination with Chemotherapy in Treatment of Patients with EGFRm NSCLC Post-TKI Therapy BLA Filing Based on HARMONi Global Phase III Study Results PDUFA Goal Action Date of November 14, 2026 Significant Unmet Need Remains; Over 14,000 U.S. Patients Eligible for Treatment Each Year in This Setting Miami, Flori"
-  }
- },
- {
-  "id": "conf_obesityweek_2026-11-14",
-  "t": "ObesityWeek",
-  "company": "ObesityWeek, The Obesity Society",
-  "d": "2026-11-14",
-  "dp": "day",
-  "name": "ObesityWeek, The Obesity Society",
-  "type": "Conference",
-  "ta": "Obesity and metabolic",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-10T00:29:05Z",
-  "_d": {
-   "end": "2026-11-17",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -7953,6 +7991,27 @@ export default [
   }
  },
  {
+  "id": "conf_ash_2026-12-12",
+  "t": "ASH",
+  "company": "American Society of Hematology Annual Meeting",
+  "d": "2026-12-12",
+  "dp": "day",
+  "name": "American Society of Hematology Annual Meeting",
+  "type": "Conference",
+  "ta": "Haematology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-10T00:29:05Z",
+  "_d": {
+   "end": "2026-12-15",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_vnda_2026-12-12",
   "t": "VNDA",
   "company": "Vanda Pharmaceuticals Inc.",
@@ -7983,27 +8042,6 @@ export default [
    "source": "Vanda Pharmaceuticals Inc. 8-K 2026-08-05",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026053308/vnda8-k852026exhibit991.htm",
    "source_quote": "done) received FDA approval for bipolar I disorder and schizophrenia in Q1 2026 commercial launch expected in second half of 2026 Quimilza TM (imsidolimab) BLA for GPP under review by the FDA PDUFA target action date of December 12, 2026 NEREUS for prevention of vomiting induced by motion became commercially available in Q2 2026 Results for three Phase II"
-  }
- },
- {
-  "id": "conf_ash_2026-12-12",
-  "t": "ASH",
-  "company": "American Society of Hematology Annual Meeting",
-  "d": "2026-12-12",
-  "dp": "day",
-  "name": "American Society of Hematology Annual Meeting",
-  "type": "Conference",
-  "ta": "Haematology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-10T00:29:05Z",
-  "_d": {
-   "end": "2026-12-15",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -11843,27 +11881,6 @@ export default [
   }
  },
  {
-  "id": "pdufa_axsm_2027-05-01",
-  "t": "AXSM",
-  "company": "Axsome Therapeutics, Inc.",
-  "d": "2027-05-01",
-  "dp": "day",
-  "name": "AXS-12",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Mid",
-  "st": "Upcoming",
-  "url": "/ticker/AXSM",
-  "ua": "2026-10-10T00:24:02Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": 8908929525.44,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
-   "source": "company filing (SEC)"
-  }
- },
- {
   "id": "conf_aan_2027-05-01",
   "t": "AAN",
   "company": "American Academy of Neurology Annual Meeting",
@@ -11882,6 +11899,27 @@ export default [
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_axsm_2027-05-01",
+  "t": "AXSM",
+  "company": "Axsome Therapeutics, Inc.",
+  "d": "2027-05-01",
+  "dp": "day",
+  "name": "AXS-12",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "url": "/ticker/AXSM",
+  "ua": "2026-10-10T00:24:02Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": 8908929525.44,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
+   "source": "company filing (SEC)"
   }
  },
  {
@@ -12007,6 +12045,27 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05531656"
   },
   "dm": "2027-05"
+ },
+ {
+  "id": "conf_ddw_2027-05-15",
+  "t": "DDW",
+  "company": "Digestive Disease Week",
+  "d": "2027-05-15",
+  "dp": "day",
+  "name": "Digestive Disease Week",
+  "type": "Conference",
+  "ta": "GI and hepatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conferences",
+  "ua": "2026-10-10T00:29:05Z",
+  "_d": {
+   "end": "2027-05-18",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
  },
  {
   "id": "readout_fdmt_2027-05-15",
@@ -12187,27 +12246,6 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06874621"
   },
   "dm": "2027-05"
- },
- {
-  "id": "conf_ddw_2027-05-15",
-  "t": "DDW",
-  "company": "Digestive Disease Week",
-  "d": "2027-05-15",
-  "dp": "day",
-  "name": "Digestive Disease Week",
-  "type": "Conference",
-  "ta": "GI and hepatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conferences",
-  "ua": "2026-10-10T00:29:05Z",
-  "_d": {
-   "end": "2027-05-18",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "conf_asco_2027-06-04",

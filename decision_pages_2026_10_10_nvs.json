@@ -1,0 +1,16 @@
+[
+ {
+  "ticker": "NVS",
+  "date": "2026-10-06",
+  "outcome": "Approved",
+  "drug": "Rhapsido (remibrutinib)",
+  "indication": "Adults with symptomatic dermographism (SD) inadequately controlled by H1 antihistamines",
+  "company": "Novartis",
+  "cap": "Large",
+  "headline": "Novartis says Rhapsido is the first treatment approved for symptomatic dermographism, the most common form of chronic inducible urticaria. Rhapsido was first approved on September 30, 2025 for chronic spontaneous urticaria in adults not controlled by H1 antihistamines.",
+  "pdufa_note": "The FDA's Drugs@FDA data record this efficacy supplement (NDA 218436, supplement 1) as approved on October 6, 2026. Novartis announced the approval on October 7, 2026 (<a href=\"https://www.novartis.com/us-en/news/media-releases/novartis-rhapsido-remibrutinib-receives-fda-approval-first-treatment-symptomatic-dermographism-sd-expanding-its-use-beyond-chronic-spontaneous-urticaria-csu\" rel=\"noopener\" style=\"color:#e3ba5e\">Novartis release</a>). Per Novartis, the approval is based on the symptomatic dermographism cohort of the Phase III RemIND trial in patients who remained symptomatic on second-generation H1 antihistamines: at Week 12, 29.3% of patients on Rhapsido achieved a complete response from hives versus 14.0% on placebo (p=0.0229), with responses seen as early as Week 2. Novartis lists the most common adverse events (3% or more) as nasopharyngitis, bleeding, headache, nausea and abdominal pain. pdufa.bio holds no goal date for this supplement, so no early or late margin is computed. The FDA's approval letter is listed in Drugs@FDA data but had not been posted when this page was published.",
+  "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218436",
+  "source_label": "Drugs@FDA, NDA 218436 (Rhapsido), supplement 1 approved October 6, 2026",
+  "h1": "Rhapsido (remibrutinib) <span class=\"g\">FDA approval for symptomatic dermographism</span>: Oct 6, 2026"
+ }
+]

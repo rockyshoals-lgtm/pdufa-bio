@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-10 audit (audit dates align two rows share a page one approval held)** — `2026-10-10_audit_dates_align_two_rows_share_a_page_one_approval_held.md` — 2026-10-10, measured 12:16 to 12:30 Eastern = 16:16 to 16:30 UTC (Saturday). Per RULE 1 every time carries its zone.
+- **2026-10-10 BUILDER (rhapsido lead published)** — `2026-10-10_BUILDER_rhapsido_lead_published.md` — 2026-10-10, written ~09:25 Pacific = 12:25 Eastern (Saturday). Quarantine and CI times are UTC. RULE 1.
 - **2026-10-09 BUILDER (mrk withdrawn P0)** — `2026-10-09_BUILDER_mrk_withdrawn_P0.md` — 2026-10-09, written ~23:30 Pacific on 10-08 = 02:30 Eastern on 10-09. CI times UTC. RULE 1.
 - **2026-10-08 audit (audit the next decision was withdrawn 13 days ago)** — `2026-10-08_audit_the_next_decision_was_withdrawn_13_days_ago.md` — 2026-10-08, measured 23:06 to 23:25 Eastern = 2026-10-09 03:06 to 03:25 UTC (Thursday night). Per RULE 1 every time carries its zone.
 - **2026-10-08 BUILDER (tecentriq held leads published)** — `2026-10-08_BUILDER_tecentriq_held_leads_published.md` — 2026-10-08, written ~18:50 Pacific = 21:50 Eastern (Thursday). CI and quarantine times are UTC. RULE 1.
