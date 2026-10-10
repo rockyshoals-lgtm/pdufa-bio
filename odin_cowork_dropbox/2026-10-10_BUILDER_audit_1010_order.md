@@ -53,3 +53,18 @@ Published before this order arrived (`e26ec6022`, note of 10-10 09:25). One corr
 * **`/fda-approval-decisions-this-week`** (`build_weekly_decisions.py`, daily in CI and the chain). Title "FDA approval decisions this week: Oct 5 to Oct 11, 2026"; sections Decided this week (dated by the FDA's action day, announcement day shown where it differs), Withdrawn this week, Still ahead this week, Goal date passed, Next week; FAQPage. Linked from `/fda-decisions-today` and `/fda-this-month`. This week: 2 decided (Tecentriq Oct 8, Rhapsido Oct 6), 0 ahead, next week 3.
 * **NOINDEX, listed and each intended** (252 files): 119 `/fda-decision/` pages that are price-inferred records with no primary source (noindex lifts when `upgrade_verified_decisions.py` finds the source); 124 `/ticker/` hubs that are thin (no verified catalyst), set by `enrich_ticker_hubs.py`; 11 `/pdufa/` twins canonicalised to their primary by `canonicalise_duplicate_event_pages.py`; 8 legacy flat files (`app.html`, `calendar.html`, `capr.html`, `policy.html`, `preview.html`, `product.html`, `runup.html`, `today.html`). None is a page we want ranked.
 * **Rulings still carried for David:** `goal_date_held:false` on goal_unsourced rows; the Jaypirca SUPPL-5 letter date (Drugs@FDA 12/02/2025 vs the notice's Dec 3); the RXC-005 / LY3527727 aliases on /drug/jaypirca; SMTP secrets; Google Drive exclusion; sources for AZN Ultomiris, NVO CagriSema, NVO Mim8.
+
+## Live (appended ~11:05 Pacific = 14:05 Eastern; CI times UTC)
+
+Commit `e62560970`, CI run 38072885662 **green** (guards passed in CI); build-info built 2026-10-10T17:51:07Z, next RHHBY 2026-10-15, `held_since` null. The push rebased over CI's 10-10 daily refresh (970 generated-file conflicts, mine taken; CI regenerated them).
+
+Acceptance, read live and cache-busted:
+* **Item 1:** published 09:55; watcher pass and guard in this commit.
+* **Item 2:** `/pdufa/RHHBY-giredestrant-evera` 200, title "... Giredestrant (evERA, with everolimus), Dec 18, 2026", sibling line names lidERA Nov 30; `/pdufa/COGT-bezuclastinib-summit` 200, "Bezuclastinib, Dec 30, 2026", sibling line names PEAK Nov 30; the cut slug 308s to the new one. Guard: 40 of 40 pending rows.
+* **Item 3:** API `pdufa_rhhby_2026-10-15` url ends `/pdufa/RHHBY-enspryng`; the calendar row links the same page.
+* **Item 4:** Enspryng description and SatraGO sentence live; Event `startDate` 2026-10-15; `article:modified_time` 2026-10-10T13:25:56-04:00 (the content changed today). Pages still on the 09-02 stamp: 20 (26 before; the six that changed today moved). Those pages' content did not change; see section 4.
+* **Item 5:** API `pdufa_nuvl_2026-11-27`: `date` null, `date_precision` month, `date_month` 2026-11; calendar row "GSK · Nov 2026" → `/pdufa/GSK-neladalkib`; page title "Neladalkib, Nov 2026".
+* **Item 6:** `/patent-cliff/exclusivity` carries `.top`, `.brand`, `.nav a`; `/adcomm` title "187 Federal Register Notices, 2 Votes"; RVMD decision page carries the headed 13F table; strip reads "Page updated October 10, 2026 · ... · Data as of ..."; JUVMO caption "Announced 9/28/26 (FDA action 9/25/26)".
+* **Item 7:** `/fda-approval-decisions-this-week` 200, "FDA approval decisions this week: Oct 5 to Oct 11, 2026".
+
+**Guards this pass (all proved 0 → planted 1 → 0 on rendered output, or on the real defect → 0):** test_drug_watch_hears_sponsor_newsrooms, test_event_page_titles_carry_date, test_header_styled, test_adcomm_counts_agree, test_13f_rows_common_stock, test_letters_hub_count_one_owner, test_chart_caption_fda_date. Local guards 139 pass, 1 fail (SLS collector, which runs in CI).
