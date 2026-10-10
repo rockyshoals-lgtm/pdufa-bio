@@ -216,6 +216,31 @@ def parse_listing(url, doc):
     host = re.match(r"https?://([^/]+)", url).group(1)
     rx = LISTING_PARSERS.get(host)
     items = []
+    # 2026-10-10 (audit item 1, remibrutinib latency): novartis.com publishes no RSS, but its news
+    # archive embeds a schema.org ItemList of NewsArticle (name, url, datePublished). Any host whose
+    # listing carries that JSON-LD is read the same way.
+    if rx is None:
+        for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', doc or "", re.S):
+            try:
+                j = json.loads(m.group(1))
+            except ValueError:
+                continue
+            nodes = j if isinstance(j, list) else [j]
+            nodes = [n2 for n in nodes for n2 in ((n.get("@graph") or [n]) if isinstance(n, dict) else [])]
+            for node in nodes:
+                lst = (node.get("mainEntity") or {}) if isinstance(node, dict) else {}
+                for el in (lst.get("itemListElement") or []) if isinstance(lst, dict) else []:
+                    it = el.get("item") or el
+                    if not isinstance(it, dict) or it.get("@type") not in ("NewsArticle", "Article"):
+                        continue
+                    dp = str(it.get("datePublished") or "")[:10]
+                    try:
+                        when = dt.date.fromisoformat(dp)
+                    except ValueError:
+                        when = None
+                    items.append({"title": html.unescape(str(it.get("headline") or it.get("name") or "")).strip(),
+                                  "desc": "", "link": str(it.get("url") or ""), "date": when})
+        return items
     for m in (rx.finditer(doc or "") if rx else ()):
         if host == "www.merck.com":
             link, ds, title = m.group(1), m.group(2), m.group(3)

@@ -81,6 +81,13 @@
    "month_kept": "2026-11",
    "new_precision": "month",
    "why": "Regeneron 8-K 2026-07-30 states the cemdisiran (gMG) target action date as November 2026, a month. The November 30 day was a month-end sentinel no filing states. Day withdrawn 2026-09-15; month sourced."
+  },
+  {
+   "ticker": "GSK",
+   "was_date": "2026-11-27",
+   "month_kept": "2026-11",
+   "new_precision": "month",
+   "why": "GSK plc 6-K 2026-07-28 (Q2 2026 results) states the neladalkib PDUFA date as 'anticipated in November 2026', a month. The November 27 day came from a Royalty Pharma 8-K quoting Nuvalent's May 2026 announcement; Nuvalent was acquired by GSK in July 2026 and no primary source of the sponsor of record states the day. Day withdrawn 2026-10-10 (audit ruling); month sourced."
   }
  ]
 }

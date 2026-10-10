@@ -1,0 +1,38 @@
+{
+ "_note": "Hand-written, source-quoted facts for upcoming event pages (enrich_event_pages.py). Keyed by dataset row id. 'description' replaces the meta/og description (must be 158 characters or fewer, fact-first, no ticker possessive). 'sentence' is rendered in a TRIAL block and must quote only what source_url states. No predictions, no advice, no em dashes.",
+ "pdufa_rhhby_2026-10-15": {
+  "description": "Enspryng (satralizumab) sBLA for thyroid eye disease: FDA goal date October 15, 2026 under Priority Review, per Genentech's June 29, 2026 release.",
+  "sentence": "The sBLA is supported by SatraGO-1 and SatraGO-2. Per Genentech, in SatraGO-2 53% of patients on Enspryng achieved a proptosis response at week 24 versus 23% on placebo, meeting statistical significance; in SatraGO-1 the figures were 49% versus 31%, which did not meet statistical significance.",
+  "source_label": "Genentech, June 29, 2026",
+  "source_url": "https://www.gene.com/media/press-releases/15118/2026-06-29/fda-grants-priority-review-to-genentechs",
+  "checked": "2026-10-10"
+ },
+ "pdufa_rhhby_2026-12-18": {
+  "description": "Roche's giredestrant plus everolimus NDA (evERA) for ESR1-mutated advanced breast cancer has an FDA goal date of December 18, 2026, per Genentech.",
+  "sentence": "Genentech said on February 19, 2026 that the FDA accepted the NDA for giredestrant in combination with everolimus and is expected to make a decision on the approval by December 18, 2026. A separate NDA for giredestrant alone in early breast cancer (lidERA) has a November 30, 2026 goal date.",
+  "source_label": "Genentech, February 19, 2026",
+  "source_url": "https://www.gene.com/media/press-releases/15100/2026-02-19/fda-accepts-new-drug-application-for-gen",
+  "checked": "2026-10-10"
+ },
+ "pdufa_rhhby_2026-11-30": {
+  "description": "Roche's giredestrant NDA for adjuvant early breast cancer (lidERA) has an FDA goal date of November 30, 2026, per Genentech's June 1, 2026 release.",
+  "sentence": "Genentech said on June 1, 2026 that the FDA accepted the NDA for giredestrant in early breast cancer (lidERA) and is expected to make a decision on the approval by November 30, 2026. A separate NDA for giredestrant with everolimus in advanced breast cancer (evERA) has a December 18, 2026 goal date.",
+  "source_label": "Genentech, June 1, 2026",
+  "source_url": "https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen",
+  "checked": "2026-10-10"
+ },
+ "pdufa_cogt_2026-12-30": {
+  "description": "Cogent's bezuclastinib NDA for nonadvanced systemic mastocytosis (SUMMIT) has an FDA goal date of December 30, 2026, per Cogent's August 10, 2026 8-K.",
+  "sentence": "Per Cogent's August 10, 2026 8-K, the PDUFA date for bezuclastinib in nonadvanced systemic mastocytosis (the SUMMIT application) is December 30, 2026, and the PDUFA date for bezuclastinib in GIST (PEAK) is November 30, 2026.",
+  "source_label": "Cogent Biosciences 8-K, August 10, 2026",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
+  "checked": "2026-10-10"
+ },
+ "pdufa_cogt_2026-11-30": {
+  "description": "Cogent's bezuclastinib application in GIST (PEAK) has an FDA goal date of November 30, 2026, per Cogent's August 10, 2026 8-K.",
+  "sentence": "Per Cogent's August 10, 2026 8-K, the PDUFA date for bezuclastinib in GIST (the PEAK application) is November 30, 2026, and the PDUFA date for bezuclastinib in nonadvanced systemic mastocytosis (SUMMIT) is December 30, 2026.",
+  "source_label": "Cogent Biosciences 8-K, August 10, 2026",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
+  "checked": "2026-10-10"
+ }
+}

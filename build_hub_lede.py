@@ -24,7 +24,7 @@ ranks becomes a page that embarrasses us.
 
     python build_hub_lede.py [--dry-run]
 """
-import argparse, datetime as dt, html, json, os, re, sys
+import argparse, datetime as dt, html, io, json, os, re, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -147,10 +147,22 @@ def sentence(path, rows):
 
     if path == "adcomm":
         voted = sum(1 for r in rows if "voted" in r["text"].lower())
-        s = (f"This page lists {n} FDA advisory committee meetings"
-             + (f" covering {when}" if when else "") + ". ")
-        if voted:
-            s += f"{voted} have taken a vote, and the vote count is shown. "
+        # Audit 2026-10-04 UX P1: the page said "2 meetings" above a list of 187. One count, from the
+        # history builder's own output (_adcomm_counts.json, written by build_adcomm_history.py).
+        cp = os.path.join(HERE, "_adcomm_counts.json")
+        counts = json.load(io.open(cp, encoding="utf-8")) if os.path.exists(cp) else {}
+        if counts.get("notices"):
+            # the leading figure is what test_lede_matches_table recounts against the page's rows: the
+            # vote cards. The notice count follows in the same sentence.
+            s = (f"This page lists {n} FDA advisory committee meeting{'s' if n != 1 else ''} with a hand-sourced "
+                 f"vote{(' (' + when + ')') if when else ''}, and every one of the {counts['notices']} drug and biologic "
+                 f"advisory committee meetings the FDA announced in the Federal Register since January 2020, each "
+                 f"linked to its notice. ")
+        else:
+            s = (f"This page lists {n} FDA advisory committee meetings"
+                 + (f" covering {when}" if when else "") + ". ")
+            if voted:
+                s += f"{voted} have taken a vote, and the vote count is shown. "
         s += ("An advisory committee vote is a recommendation to the FDA, which is not bound by it "
               "and has gone against it before.")
         return s

@@ -207,6 +207,33 @@ def main():
             scan_text_for_drugs(" ".join(recent_chunks), universe, resolved,
                                 "fda-oncology-notifications", leads, seen)
 
+    # 2b. Sponsor newsrooms (audit 2026-10-10 item 1): the Rhapsido SD approval reached the site 2.5
+    #     days after Novartis announced it, because the only pass that could hear it was openFDA (the
+    #     FDA issued no notice; watch_sponsor_newswire only arms rows with a pending PDUFA date, and
+    #     this supplement had none). Every feed in _sponsor_feeds.json is read here for ANY sponsor,
+    #     armed or not, and headlines are scanned for tracked drug names with approval language.
+    try:
+        import watch_sponsor_newswire as W
+        feeds = json.load(io.open(W.FEEDS, encoding="utf-8")) if os.path.exists(W.FEEDS) else {}
+        n_sp_feeds = n_sp_items = 0
+        for tk, ent in sorted(feeds.items()):
+            for u in (ent or {}).get("feeds") or []:
+                listing = u.startswith("html:")
+                doc = W.fetch(u[5:] if listing else u)
+                if not doc:
+                    continue
+                its = W.parse_listing(u[5:], doc) if listing else W.parse_items(doc)
+                n_sp_feeds += 1
+                for it in its:
+                    if it["date"] and it["date"].isoformat() < floor_iso:
+                        continue
+                    n_sp_items += 1
+                    scan_text_for_drugs(it["title"] + " " + it["desc"], universe, resolved,
+                                        f"sponsor:{tk}:{(it['date'] or today).isoformat()}", leads, seen)
+        print(f"drug-page watch: sponsor newsrooms read {n_sp_feeds}, {n_sp_items} item(s) in window")
+    except Exception as e:  # noqa: BLE001 -- a newsroom pass must never block the others
+        print(f"drug-page watch: sponsor newsroom pass skipped ({e})")
+
     # 3. openFDA recent-AP range query: one paged query, matched client-side.
     f8 = (today - dt.timedelta(days=OPENFDA_LOOKBACK)).strftime("%Y%m%d")
     t8 = today.strftime("%Y%m%d")

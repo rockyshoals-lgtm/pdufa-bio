@@ -142,19 +142,62 @@ def main():
                         f'rel="noopener">FR {html.escape(m["doc"])}</a>, published {m["pub"]}</td></tr>')
         rows.append("</table>")
     n_all = len(meetings)
+    # Audit 2026-10-04 UX P1: join each hand-sourced vote (the "Meetings & results" cards) to its FR notice
+    # row, both ways, so the two July CTGTAC meetings are not listed twice unjoined.
+    p = os.path.join(SITE, "adcomm", "index.html")
+    doc = io.open(p, encoding="utf-8", errors="replace").read()
+    voted = re.findall(r'<a class="row" href="/adcomm/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', doc)
+    by_day = {}
+    for tk, dday in voted:
+        by_day.setdefault(dday, []).append(tk)
+    joined = {}
+    for m in meetings:
+        for dday in m["dates"]:
+            if dday in by_day and "Cellular" in m["committee"] and dday[:7] == "2026-07":
+                joined[dday] = m
+    rows2 = []
+    for row in rows:
+        mm = re.search(r'FR ([0-9]{4}-[0-9]+)</a>', row)
+        if mm:
+            for dday, m in joined.items():
+                if m["doc"] == mm.group(1):
+                    tks = ", ".join(f'<a href="/adcomm/{tk}-{dday}">{tk}</a>' for tk in by_day[dday])
+                    row = row.replace("</td></tr>", f' &middot; vote recorded above: {tks}</td></tr>', 1)
+        rows2.append(row)
+    rows = rows2
+    for dday, m in joined.items():
+        for tk in by_day[dday]:
+            pat = re.compile(r'(<a class="row" href="/adcomm/' + tk + '-' + dday + r'".*?</b>)(<!--FRJ-->.*?<!--/FRJ-->)?(</span></span></a>)', re.S)
+            fr = (f'<!--FRJ--> &middot; <a href="{html.escape(m["url"], quote=True)}" rel="noopener" '
+                  f'style="color:#9ec5ff">FR {html.escape(m["doc"])}</a><!--/FRJ-->')
+            doc = pat.sub(lambda x: x.group(1) + fr + x.group(3), doc, count=1)
+    n_voted = len(voted)
     sec = (f'{B}<h2>FDA advisory committee meetings, 2020 to 2026: {n_all} Federal Register notices</h2>'
            f'<p class="sub">Every drug and biologic advisory committee meeting the FDA announced in the Federal '
            f'Register since January 2020, with the meeting date the notice states. Notices only: which product a '
            f'meeting reviewed, and any vote, are on the FDA&#x27;s meeting page and are not restated here; votes we '
            f'cite are sourced by hand in the table above. Medical-device panels are not listed. Cancelled and '
            f'postponed meetings are marked.</p>' + "".join(rows) + E)
-    p = os.path.join(SITE, "adcomm", "index.html")
-    doc = io.open(p, encoding="utf-8", errors="replace").read()
     new = re.sub(re.escape(B) + r".*?" + re.escape(E), "", doc, flags=re.S)
-    i = new.find('<h2>Questions</h2>')
+    # above the FAQ (its <h2> carries a style attribute; the bare-tag search fell through to the footer)
+    # ... and OUTSIDE the FAQ's own marker block, which build_hub_faq rewrites whole every run.
+    i = new.find("<!--HUBFAQ:BEGIN-->")
     if i < 0:
-        i = new.find('<div class="legal"')
+        mq = re.search(r"<h2[^>]*>Questions</h2>", new)
+        i = mq.start() if mq else new.find('<div class="legal"')
     new = new[:i] + sec + new[i:]
+    # the page is a historical record now: title and description say what it holds (one owner for the counts)
+    title = f"FDA Advisory Committee Meetings 2020-2026: {n_all} Federal Register Notices, {n_voted} Votes | pdufa.bio"
+    desc = (f"All {n_all} FDA drug and biologic advisory committee meetings announced in the Federal Register since "
+            f"2020, each notice linked; {n_voted} with a hand-sourced vote.")
+    new = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)}</title>", new, count=1, flags=re.S)
+    for pat_ in (r'(<meta name="description" content=")[^"]*(")', r'(<meta property="og:description" content=")[^"]*(")',
+                 r'(<meta name="twitter:description" content=")[^"]*(")'):
+        new = re.sub(pat_, lambda x: x.group(1) + html.escape(desc, quote=True) + x.group(2), new, count=1)
+    for pat_ in (r'(<meta property="og:title" content=")[^"]*(")', r'(<meta name="twitter:title" content=")[^"]*(")'):
+        new = re.sub(pat_, lambda x: x.group(1) + html.escape(title, quote=True) + x.group(2), new, count=1)
+    io.open(os.path.join(HERE, "_adcomm_counts.json"), "w", encoding="utf-8", newline="\n").write(
+        json.dumps({"notices": n_all, "voted": n_voted}) + "\n")
     if new != doc:
         io.open(p, "w", encoding="utf-8", newline="").write(new)
     print(f"/adcomm history: {n_all} meeting notice(s) rendered ({sum(1 for m in meetings if m['in_seed_csv'])} "

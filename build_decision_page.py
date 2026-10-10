@@ -73,7 +73,7 @@ def window(px, tk, ddate):
     return [p for _, p in w], [d for d, _ in w], idx - lo
 
 
-def svg(prices, dates, piv, ddate, outcome):
+def svg(prices, dates, piv, ddate, outcome, fda_date=None):
     n = len(prices)
     lo, hi = min(prices), max(prices)
     rng = (hi - lo) or 1.0
@@ -92,7 +92,7 @@ def svg(prices, dates, piv, ddate, outcome):
     o.append(f'<line x1="{xp:.1f}" y1="{Y0:.0f}" x2="{xp:.1f}" y2="{Y1:.0f}" stroke="#e3ba5e" '
              f'stroke-width="1" stroke-dasharray="3 3" opacity="0.85"/>')
     o.append(f'<text x="{xp-69.9:.1f}" y="177" fill="#e3ba5e" font-size="10" font-family="system-ui" '
-             f'text-anchor="end">PDUFA {mdy(ddate)}</text>')
+             f'text-anchor="end">{"announced" if (fda_date and fda_date != ddate) else "PDUFA"} {mdy(ddate)}</text>')
     pts = " ".join(f'{X(i):.1f},{Y(p):.1f}' for i, p in enumerate(prices))
     o.append(f'<polyline points="{pts}" fill="none" stroke="#7aa8ff" stroke-width="1.6"/>')
     o.append(f'<circle cx="{X(hi_i):.1f}" cy="{Y(pre_p[hi_i]):.1f}" r="2.6" fill="#5fd07a"/>'
@@ -103,9 +103,14 @@ def svg(prices, dates, piv, ddate, outcome):
              f'font-family="system-ui" text-anchor="middle">${pre_p[lo_i]:g}</text>')
     o.append(f'<text x="14" y="164" fill="#94a9c9" font-size="10" font-family="system-ui">{mdy(dates[0])}</text>')
     o.append('</svg>')
+    # audit 2026-10-04 P2: the chart is keyed on the day the price could react (the announcement); when
+    # the FDA's own action day differs, the caption says both and never calls the announcement day the
+    # decision.
+    when = (f'Announced {mdy(ddate)} (FDA action {mdy(fda_date)}).' if (fda_date and fda_date != ddate)
+            else f'FDA decision {mdy(ddate)}.')
     note = (f'Daily close, T-120 ({mdy(dates[0])}) through T+{len(prices)-1-piv}. '
             f'Run-up high ${pre_p[hi_i]:g} on {mdy(pre_d[hi_i])}, low ${pre_p[lo_i]:g} on '
-            f'{mdy(pre_d[lo_i])} (T-120 to T-1). FDA decision {mdy(ddate)}. '
+            f'{mdy(pre_d[lo_i])} (T-120 to T-1). {when} '
             f'Historical price action, not a forecast.')
     runup = (pre_p[-1] / pre_p[0] - 1) * 100
     return "".join(o), note, runup
@@ -114,7 +119,7 @@ def svg(prices, dates, piv, ddate, outcome):
 def build(e, px, write=True):
     tk, d = e['ticker'], e['date']
     prices, dates, piv = window(px, tk, d)
-    chart, note, runup = svg(prices, dates, piv, d, e['outcome'])
+    chart, note, runup = svg(prices, dates, piv, d, e['outcome'], e.get('fda_action_date'))
     appr = e['outcome'] == 'Approved'
     ban = ('<div class="ban ap">✓ APPROVED</div>' if appr
            else '<div class="ban cr">✕ COMPLETE RESPONSE LETTER</div>')

@@ -104,6 +104,7 @@ jobs:
           # cross-month move deletes the stale row, then ensure re-inserts it in the right
           # month within the same run.
           python reconcile_calendar_table.py
+          python sync_event_urls.py
           python ensure_calendar_rows.py
 
       # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its
@@ -460,6 +461,11 @@ jobs:
       - name: Rebuild /fda-decisions-today (the "what did the FDA decide today" page)
         run: python build_today_page.py
 
+      # Audit 10-08 item 4 / 10-10 item 7: "fda approval decision biotech" (250 impressions, 0 clicks) wants the
+      # week's decided and pending rows, dated, under a title that names the week. Rebuilt daily.
+      - name: Rebuild /fda-approval-decisions-this-week
+        run: python build_weekly_decisions.py
+
       - name: Entity-enrich the ticker hubs
         run: python enrich_ticker_hubs.py
 
@@ -577,6 +583,11 @@ jobs:
       - name: "13F block on decision and drug pages"
         run: python inject_13f_block.py
 
+      # Audit 2026-10-04 P2: a run-up caption never calls the announcement day the FDA decision when the
+      # FDA acted on another day. Repairs pages already published; the generator writes new ones right.
+      - name: Chart captions name the FDA action day where it differs from the announcement
+        run: python fix_chart_captions.py
+
       # Red team 2026-08-11: /pdufa/LNTH redirected to June's CRL for a different molecule at T-2
       # before the Aug 13 MK-6240 PDUFA. Bare-ticker redirects go stale the day a decided ticker
       # gets a new catalyst, so this rule runs daily: drop the redirect, serve an event index.
@@ -585,6 +596,13 @@ jobs:
       # pages. Write any missing upcoming-event page; never touches existing ones.
       - name: "/pdufa/{TICKER}-{drug}: every upcoming event gets its page"
         run: python build_pdufa_event_pages.py
+
+      # Audit 2026-10-10 items 2-4: one generator for what every pending event page must carry -- an
+      # Event schema at the row's date, a link to a sibling application of the same drug, and the
+      # hand-sourced trial sentence/description from _event_trial_facts.json. Then the row's url and
+      # its calendar row follow event_pages.resolve() (the page that states the row's date).
+      - name: "Pending event pages: Event schema, sibling links, trial facts; urls follow the page"
+        run: python enrich_event_pages.py && python sync_event_urls.py
 
       # PDUFA dates move. build_pdufa_event_pages never overwrites an existing page (the
       # hand-grown ones carry story cards worth keeping), so a moved date used to leave the page

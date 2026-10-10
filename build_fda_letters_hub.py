@@ -136,7 +136,9 @@ def main():
          "license": "https://creativecommons.org/licenses/by/4.0/",
          "creator": {"@type": "Organization", "name": "pdufa.bio", "url": BASE},
          "isBasedOn": ["https://open.fda.gov/apis/drug/drugsfda/", "https://www.accessdata.fda.gov/scripts/cder/daf/"],
-         "variableMeasured": ["FDA action date", "application and supplement", "sponsor announcement date"]},
+         "variableMeasured": ["FDA action date", "application and supplement", "sponsor announcement date"],
+         # audit 2026-10-04 item 5: the count has ONE owner (n); the schema states it too
+         "size": {"@type": "QuantitativeValue", "value": n, "unitText": "FDA actions"}},
         separators=(",", ":")) + "</script>")
 
     CSS = ("*{box-sizing:border-box}body{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,"

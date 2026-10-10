@@ -16,9 +16,13 @@
    +'@keyframes pdSkel{0%{background-position:-360px 0}100%{background-position:360px 0}}'
    +'.pd-skel{background:#0e1c33;background-image:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(157,179,212,.10) 50%,rgba(255,255,255,0) 100%);background-size:360px 100%;background-repeat:no-repeat;animation:pdSkel 1.1s infinite linear;border-radius:8px}'
    +'.pd-empty{padding:34px 18px;text-align:center;color:#9db3d4;border:1px dashed #294d80;border-radius:14px;background:rgba(14,28,51,.4)}.pd-empty b{color:#eef4fc;display:block;font-family:"Space Grotesk",sans-serif;font-size:15px;margin-bottom:4px}'
-   +'@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}';
+   +'@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}'
+   /* audit 2026-10-04 P2: on a phone the pill covered the primary-source link and table headers. Below 480px it is a
+      44px icon that hides on scroll-down and returns on scroll-up; the keyboard hint is a desktop affordance. */
+   +'@media (max-width:480px){#cmdkBtn{right:12px;bottom:12px;padding:0;width:44px;height:44px;justify-content:center;border-radius:50%}#cmdkBtn span,#cmdkBtn kbd{display:none}#cmdkBtn:before{content:"";width:16px;height:16px;border:2px solid #9db3d4;border-radius:50%;box-shadow:5px 5px 0 -3px #9db3d4}#cmdkBtn.hide{transform:translateY(80px);opacity:0;pointer-events:none}}';
   var s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
-  var btn=document.createElement('div');btn.id='cmdkBtn';btn.innerHTML='<span>Search</span> <kbd>⌘K</kbd>';document.body.appendChild(btn);
+  var btn=document.createElement('div');btn.id='cmdkBtn';btn.setAttribute('role','button');btn.setAttribute('aria-label','Search');btn.innerHTML='<span>Search</span> <kbd>⌘K</kbd>';document.body.appendChild(btn);
+  (function(){var last=window.pageYOffset||0,t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var y=window.pageYOffset||0;if(window.innerWidth<=480){if(y>last+8&&y>120)btn.classList.add('hide');else if(y<last-8)btn.classList.remove('hide');}last=y;},60);},{passive:true});})();
   var o=document.createElement('div');o.id='cmdkO';o.innerHTML='<div id="cmdkB"><input id="cmdkI" placeholder="Search any ticker, drug, or catalyst…" autocomplete="off" spellcheck="false"><div id="cmdkR"></div></div>';document.body.appendChild(o);
   var inp=o.querySelector('#cmdkI'),res=o.querySelector('#cmdkR'),DATA=null,sel=0,rows=[];
   function esc(x){return (x||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}

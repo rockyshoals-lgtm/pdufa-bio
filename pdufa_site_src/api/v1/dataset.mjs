@@ -1818,7 +1818,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2034,7 +2034,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2137,7 +2137,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2192,7 +2192,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3186,7 +3186,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3257,7 +3257,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -3394,7 +3394,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4275,7 +4275,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -4381,7 +4381,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -4466,7 +4466,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -4516,7 +4516,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5653,7 +5653,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5674,7 +5674,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -5695,7 +5695,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6053,7 +6053,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -6218,8 +6218,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/RHHBY",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/RHHBY-enspryng",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "indication": "Thyroid eye disease (TED)",
    "source_note": "Added 2026-08-13; sBLA priority review, decision by 2026-10-15 per Genentech release 2026-06-29. Found during flag verification; was on neither surface.",
@@ -6377,8 +6377,8 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/ticker/IRD",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/IRD-phentolamine-ophthalmic",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
    "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
@@ -6399,8 +6399,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/VTRS",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/IRD-phentolamine-ophthalmic",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05139121",
@@ -6441,7 +6441,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -6462,7 +6462,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -6491,7 +6491,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -6512,7 +6512,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -6678,8 +6678,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/GSK",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/GSK-bepirovirsen",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06059846",
@@ -6719,8 +6719,8 @@ export default [
   "ta": "",
   "cap": "Micro",
   "st": "Upcoming",
-  "url": "/ticker/INO",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/INO-ino-3107-dna",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Recurrent respiratory papillomatosis (RRP) BLA",
@@ -6752,8 +6752,8 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/AGIO",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/AGIO-mitapivat",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -6786,7 +6786,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -6807,7 +6807,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -6836,7 +6836,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -6857,7 +6857,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -6878,7 +6878,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -6899,7 +6899,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -6919,8 +6919,8 @@ export default [
   "ta": "",
   "cap": "Nano",
   "st": "Upcoming",
-  "url": "/pdufa/BTAI",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/BTAI-igalmi",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
@@ -6952,8 +6952,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/CYTK",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/CYTK-aficamten",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Non-obstructive hypertrophic cardiomyopathy",
@@ -6985,8 +6985,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/SMMT",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/SMMT-ivonescimab",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -7019,7 +7019,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -7306,8 +7306,8 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/ticker/NVCR",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/NVCR-ttfields-therapy",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
@@ -7482,7 +7482,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -7511,7 +7511,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -7531,8 +7531,8 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/CAPR",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/CAPR-deramiocel",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -7591,8 +7591,8 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/SVRA",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/SVRA-molbreevi",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
@@ -7624,8 +7624,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/BBIO",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/BBIO-bbp-418",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -7650,15 +7650,15 @@ export default [
   "id": "pdufa_nuvl_2026-11-27",
   "t": "GSK",
   "company": "GSK plc",
-  "d": "2026-11-27",
-  "dp": "day",
+  "d": "2026-11-30",
+  "dp": "month",
   "name": "Neladalkib (NVL-655) - (ALKOVE-1)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/GSK",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/GSK-neladalkib",
+  "ua": "2026-10-10T17:00:00Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -7677,7 +7677,6 @@ export default [
    "indication": "TKI-pretreated ALK-positive NSCLC",
    "market_cap_usd": 93163461403.5,
    "cash_runway_months": 49.4,
-   "days_to_decision": 140,
    "cohort_move_median_pct": -0.01,
    "cohort_move_p25_pct": -2.05,
    "cohort_move_p75_pct": 2.51,
@@ -7695,10 +7694,28 @@ export default [
     "source_url": "https://www.sec.gov/Archives/edgar/data/1861560/000119312526304126/d52896d8k.htm",
     "note": "Nuvalent 8-K 2026-07-15 (merger completion); tender offer commenced 2026-06-24 at $124.00 per share. NUVL no longer trades."
    },
-   "source": "Royalty Pharma 8-K 2026-08-05 (EX-99.1), quoting Nuvalent's May 2026 NDA-acceptance announcement",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1802768/000180276826000014/rprx-20260630rpplcpressxre.htm",
-   "source_quote": "In May 2026, Nuvalent announced the FDA accepted its NDA for neladalkib for filing and granted the application Priority Review with a Prescription Drug User Fee Act (PDUFA) date of November 27, 2026."
-  }
+   "source": "GSK plc 6-K 2026-07-28 (Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006949/a1493o.htm",
+   "source_quote": "Neladalkib is an investigational ALK tyrosine kinase inhibitor (TKI) currently under review with the US FDA for use by patients with TKI pre-treated ALK-positive NSCLC, with PDUFA date anticipated in November 2026.",
+   "date_history": [
+    {
+     "date": "2026-11-27",
+     "precision": "day",
+     "source": "Royalty Pharma 8-K 2026-08-05 (EX-99.1), quoting Nuvalent's May 2026 NDA-acceptance announcement",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1802768/000180276826000014/rprx-20260630rpplcpressxre.htm",
+     "note": "day the row carried when created, from a Royalty Pharma 8-K quoting Nuvalent's May 2026 announcement"
+    },
+    {
+     "date": "2026-11",
+     "precision": "month",
+     "changed": "2026-10-10",
+     "why": "Nuvalent was acquired by GSK (July 2026). GSK's Q2 2026 results 6-K, the sponsor's own current statement, gives only 'PDUFA date anticipated in November 2026'; no primary source states the 27th. Audit 2026-10-10 ruling: month precision, GSK 6-K as source."
+    }
+   ],
+   "source_note": "Former day 2026-11-27 (Royalty Pharma 8-K quoting Nuvalent) retired 2026-10-10; see date_history.",
+   "date_note": "Day 2026-11-27 withdrawn 2026-10-10: no primary source of the sponsor of record (GSK) states it; GSK's 6-K gives November 2026."
+  },
+  "dm": "2026-11"
  },
  {
   "id": "pdufa_bayry_2026-11-30",
@@ -7751,8 +7768,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/ticker/COGT",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/COGT-bezuclastinib",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -7770,7 +7787,8 @@ export default [
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
-   "source_quote": "K2 V617F myeloproliferative neoplasm propagating cells and induce molecular remission with improved hematologic tolerability. Anticipated Upcoming Milestones Potential FDA approval of bezuclastinib in GIST PDUFA date of November 30, 2026 Potential FDA approval of bezuclastinib in NonAdvSM PDUFA date of December 30, 2026 Submit Investigational New Drug (IN"
+   "source_quote": "K2 V617F myeloproliferative neoplasm propagating cells and induce molecular remission with improved hematologic tolerability. Anticipated Upcoming Milestones Potential FDA approval of bezuclastinib in GIST PDUFA date of November 30, 2026 Potential FDA approval of bezuclastinib in NonAdvSM PDUFA date of December 30, 2026 Submit Investigational New Drug (IN",
+   "trial": "PEAK"
   }
  },
  {
@@ -7784,8 +7802,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/REGN",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/REGN-cemdisiran",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
@@ -7831,8 +7849,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/RHHBY",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/RHHBY-giredestrant",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -7850,7 +7868,8 @@ export default [
    },
    "source": "Genentech press release 2026-06-01",
    "source_url": "https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen",
-   "source_quote": "The FDA is expected to make a decision on the approval by November 30, 2026."
+   "source_quote": "The FDA is expected to make a decision on the approval by November 30, 2026.",
+   "trial": "lidERA"
   }
  },
  {
@@ -7864,8 +7883,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/VRTX",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/VRTX-povetacicept",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -7897,8 +7916,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/EXEL",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/EXEL-zanzalintinib",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -7931,7 +7950,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -7952,7 +7971,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -7973,7 +7992,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -8001,8 +8020,8 @@ export default [
   "ta": "",
   "cap": "Micro",
   "st": "Upcoming",
-  "url": "/pdufa/VNDA",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/VNDA-imsidolimab",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -8035,7 +8054,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -8056,7 +8075,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -9038,8 +9057,8 @@ export default [
   "ta": "Endocrinology / Metabolic",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/CORT",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/CORT-relacorilant",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -9063,8 +9082,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/RHHBY",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/RHHBY-giredestrant-evera",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -9082,7 +9101,9 @@ export default [
    },
    "source": "Genentech press release 2026-02-19",
    "source_url": "https://www.gene.com/media/press-releases/15100/2026-02-19/fda-accepts-new-drug-application-for-gen",
-   "source_quote": "The FDA is expected to make a decision on the approval by December 18, 2026."
+   "source_quote": "The FDA is expected to make a decision on the approval by December 18, 2026.",
+   "event_slug": "RHHBY-giredestrant-evera",
+   "trial": "evERA"
   }
  },
  {
@@ -9096,8 +9117,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/ticker/MLYS",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/MLYS-lorundrostat",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -9129,8 +9150,8 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/GILD",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/GILD-anito-cel",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -9151,8 +9172,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/ticker/PRAX",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/PRAX-relutrigine",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -9212,7 +9233,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-10-10T17:02:28Z",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
@@ -9233,8 +9254,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/ticker/COGT",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/COGT-bezuclastinib-summit",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -9252,7 +9273,9 @@ export default [
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
-   "source_quote": "n with improved hematologic tolerability. Anticipated Upcoming Milestones Potential FDA approval of bezuclastinib in GIST PDUFA date of November 30, 2026 Potential FDA approval of bezuclastinib in NonAdvSM PDUFA date of December 30, 2026 Submit Investigational New Drug (IND) applications for CGT1815, Cogent s novel, selective pan-KRAS(ON) inhibitor, and C"
+   "source_quote": "n with improved hematologic tolerability. Anticipated Upcoming Milestones Potential FDA approval of bezuclastinib in GIST PDUFA date of November 30, 2026 Potential FDA approval of bezuclastinib in NonAdvSM PDUFA date of December 30, 2026 Submit Investigational New Drug (IND) applications for CGT1815, Cogent s novel, selective pan-KRAS(ON) inhibitor, and C",
+   "trial": "SUMMIT",
+   "event_slug": "COGT-bezuclastinib-summit"
   }
  },
  {
@@ -9372,8 +9395,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/AZN",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/AZN-ultomiris",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -9819,8 +9842,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/NVO",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/NVO-am833",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Obesity / weight management",
@@ -9852,7 +9875,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-mim8",
-  "ua": "2026-10-10T17:02:28Z",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "indication": "Hemophilia A prophylaxis, with or without inhibitors",
    "bla_submitted": "2025-09",
@@ -10259,8 +10282,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/pdufa/IBRX",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/IBRX-anktiva",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "BCG-unresponsive papillary NMIBC",
@@ -10605,7 +10628,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -10625,8 +10648,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/ticker/PRAX",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/PRAX-ulixacaltamide",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10674,7 +10697,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-10-10T17:02:28Z",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -10698,7 +10721,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -10718,8 +10741,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/GILD",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/GILD-yeztugo",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -10765,7 +10788,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -10895,8 +10918,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/ARQT",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/ARQT-zoryve",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -10936,8 +10959,8 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/CGEM",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/CGEM-cln-081",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Non Small Cell Lung Cancer",
@@ -11299,7 +11322,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -11464,7 +11487,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -11485,7 +11508,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -11505,8 +11528,8 @@ export default [
   "ta": "",
   "cap": "Small",
   "st": "Upcoming",
-  "url": "/pdufa/INBX",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/INBX-inbrx-106",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Head and Neck Squamous Cell Carcinoma (HNSCC)",
@@ -11858,8 +11881,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/pdufa/PHVS",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/PHVS-deucrictibant-ir",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -11891,8 +11914,8 @@ export default [
   "ta": "",
   "cap": "Mid",
   "st": "Upcoming",
-  "url": "/ticker/AXSM",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/AXSM-axs-12",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -11913,7 +11936,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -11934,7 +11957,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -11954,8 +11977,8 @@ export default [
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
-  "url": "/ticker/BBIO",
-  "ua": "2026-10-10T17:02:28Z",
+  "url": "/pdufa/BBIO-encaleret",
+  "ua": "2026-10-10T16:20:43Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -11976,7 +11999,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -12238,7 +12261,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -12259,7 +12282,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -12280,7 +12303,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -12675,7 +12698,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -12696,7 +12719,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conferences",
-  "ua": "2026-10-10T17:05:54Z",
+  "ua": "2026-10-10T16:23:20Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

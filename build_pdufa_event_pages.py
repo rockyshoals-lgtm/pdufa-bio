@@ -191,13 +191,44 @@ def main():
             continue
         tk = str(r.get("t", "")).upper()
         slug = f"{tk}-{slugify(drug.split('(')[0].strip())}"
-        if not slug.split("-", 1)[1:] or slug.lower() in existing:
+        if not slug.split("-", 1)[1:]:
+            continue
+        # 2026-10-10 (audit item 2): a drug with TWO pending applications got one page -- the slug
+        # collision test fired before the "covered" check below, so giredestrant evERA (Dec 18) and
+        # bezuclastinib SUMMIT (Dec 30) never got pages and the calendar sent readers to the sibling's
+        # Nov 30 page. A hand-assigned _d.event_slug wins; otherwise, when {TK}-{drug} exists but does
+        # not state THIS row's date, the slug gains the trial (or the name's parenthetical).
+        import event_pages as EP
+        es = (r.get("_d") or {}).get("event_slug")
+        if es:
+            slug = str(es)
+        elif slug.lower() in existing:
+            title, doc = EP.page_title(slug)
+            if EP.page_carries_date(r, doc, title):
+                continue
+            # Disambiguate only for a TRUE sibling (another pending row of this ticker naming this
+            # drug). A lone row whose page states an old date is fix_event_page_windows' job, not a
+            # second page (neladalkib, day -> month on 10-10, must not spawn GSK-neladalkib-alkove-1).
+            tok_ = EP.drug_token(r)
+            if not any(x is not r and str(x.get("t") or "").upper() == tk and EP.drug_token(x) == tok_
+                       for x in EP.pending_rows(rows, today)):
+                continue
+            trial = (r.get("_d") or {}).get("trial") or ""
+            if not trial:
+                m_ = re.search(r"\(([^()]{2,30})\)\s*$", str(r.get("name") or ""))
+                trial = m_.group(1) if m_ else ""
+            trial = re.sub(r"^\+\s*", "", trial)        # "(+ everolimus)" -> "everolimus"
+            if not trial:
+                continue
+            slug = f"{slug}-{slugify(trial)}"
+        if slug.lower() in existing:
             continue
         # brand/generic duplicate check: an existing page for this ticker that already NAMES this
         # drug covers the event even under a different slug (BAYRY-hyrnuo covers sevabertinib).
+        # A hand-assigned or disambiguated slug is by definition NOT covered by the sibling's page.
         tok = re.sub(r"[^a-z0-9]", "", drug.split("(")[0].strip().lower())[:10]
         covered = False
-        for name in list(existing):
+        for name in (list(existing) if slug == f"{tk}-{slugify(drug.split('(')[0].strip())}" else []):
             if not name.startswith(tk.lower() + "-"):
                 continue
             ep = os.path.join(OUTDIR, name, "index.html")

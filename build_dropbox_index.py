@@ -98,7 +98,8 @@ def main():
                 known[m.group("file")] = m.group("summary").rstrip()
                 order_label[m.group("file")] = m.group("label")
 
-    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(DROP, "*.md"))
+    # a Word lock file ("~$...md") appears while a note is open in Word; it is not a note (10-10)
+    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(DROP, "*.md")) if not os.path.basename(p).startswith("~$")
                    if os.path.basename(p) != "INDEX.md")
 
     missing = [f for f in files if f not in known]

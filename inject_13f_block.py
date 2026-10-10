@@ -43,7 +43,41 @@ def money(v):
     return f"${v:,.0f}"
 
 
+COMMON = re.compile(r"\b(COM|COMMON|ORD|ORDINARY|ADR|ADS|CL ?A|CLASS A|SHS|STK)\b")
+NOT_COMMON = re.compile(r"\b(NOTE|NT|WARRANT|WT|DEBT|CONV|PFD|PREF|UNIT|RT|RIGHT)\b")
+
+
+def is_common_shares(h):
+    """Only a row typed SH with a common-stock class is ever rendered as shares (audit 2026-10-04 UX P1)."""
+    cls = str(h.get("title_of_class") or "").upper()
+    return str(h.get("type") or "").upper() == "SH" and bool(COMMON.search(cls)) and not NOT_COMMON.search(cls)
+
+
 def para(tk, holds):
+    """A headed table: fund / shares / value, the filing linked per row, the caveat beneath."""
+    holds = sorted((h for h in holds if is_common_shares(h)), key=lambda h: -h["shares"])
+    if not holds:
+        return ""
+    periods = sorted({h["period"] for h in holds})
+    per = " / ".join(pretty(p) for p in periods)
+    rows = "".join(
+        f'<tr><td style="padding:5px 4px"><a href="{html.escape(h["url"], quote=True)}" rel="noopener" style="color:#e3ba5e">'
+        f'{html.escape(h["fund"])}</a></td><td style="padding:5px 4px;text-align:right">{h["shares"]:,}</td>'
+        f'<td style="padding:5px 4px;text-align:right">{money(h["value_usd"])}</td>'
+        f'<td style="padding:5px 4px;color:#94a9c9">filed {pretty(h["filed"])}</td></tr>' for h in holds)
+    return (f'<h2 style="font-size:16px;margin:22px 0 6px">Specialist biotech funds holding {html.escape(tk)}, 13F for the '
+            f'quarter ended {html.escape(per)}</h2>'
+            f'<table style="width:100%;border-collapse:collapse;font-size:13.5px"><tr>'
+            f'<th style="text-align:left;color:#e3ba5e;font-size:12px;padding:4px">Fund</th>'
+            f'<th style="text-align:right;color:#e3ba5e;font-size:12px;padding:4px">Shares</th>'
+            f'<th style="text-align:right;color:#e3ba5e;font-size:12px;padding:4px">Value at quarter end</th>'
+            f'<th style="text-align:left;color:#e3ba5e;font-size:12px;padding:4px">Filing</th></tr>{rows}</table>'
+            f'<p class="sub" style="font-size:12.5px;margin:6px 0 0">13F reports list long positions in common stock at quarter '
+            f'end, are due 45 days later, and show no short positions or later trades. Notes, warrants and other '
+            f'instruments are not counted as shares.</p>')
+
+
+def para_legacy(tk, holds):
     holds = sorted(holds, key=lambda h: -h["shares"])
     periods = sorted({h["period"] for h in holds})
     filed = sorted({h["filed"] for h in holds})
@@ -78,10 +112,12 @@ def main():
             for t in re.findall(r'href="/ticker/([A-Z]{1,6})"', new):
                 if t not in tks:
                     tks.append(t)
-        paras = [para(t, bt[t]) for t in tks[:4] if bt.get(t)]
+        paras = [x for x in (para(t, bt[t]) for t in tks[:4] if bt.get(t)) if x]
         if paras:
             blk = B + "".join(paras) + E
-            i = next((new.index(x) for x in ("<!--DFAQ:BEGIN-->", '<div class="legal"', "<footer") if x in new), None)
+            # above the FAQ, under its own heading (audit 2026-10-04: it sat as a paragraph under the footer line)
+            i = next((new.index(x) for x in ("<!--DFAQ:BEGIN-->", "<!--HUBFAQ:BEGIN-->", '<h2>Questions</h2>',
+                                             '<div class="legal"', "<footer") if x in new), None)
             if i is not None:
                 new = new[:i] + blk + new[i:]
                 nb += 1

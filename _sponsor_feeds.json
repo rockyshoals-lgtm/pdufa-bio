@@ -131,6 +131,14 @@
   "company": "Novo Nordisk A/S",
   "feeds": []
  },
+ "NVS": {
+  "checked": "2026-10-10",
+  "company": "Novartis Ag",
+  "feeds": [
+   "html:https://www.novartis.com/us-en/news/news-archive"
+  ],
+  "note": "2026-10-10 (audit 10-10 item 1): no RSS (rss/news.xml, /rss, media-releases/rss all 404); the US news archive embeds a schema.org ItemList of NewsArticle with datePublished and url, read as an html: listing. It carried the 10-07 Rhapsido SD approval (datePublished 2026-10-08T00:35Z)."
+ },
  "PHVS": {
   "checked": "2026-09-27",
   "company": "Pharvaris N.V.",

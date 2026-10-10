@@ -58,6 +58,32 @@ def pretty(iso):
         return str(iso or "")
 
 
+# shell shared with build_weekly_decisions.py (hoisted 2026-10-10)
+CSS = ("*{box-sizing:border-box}body{margin:0;background:#02060d;color:#f2f6fc;"
+       "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,"
+       "Arial,sans-serif;line-height:1.55}a{color:#6fb6ff;text-decoration:none}"
+       "a:hover{text-decoration:underline}.wrap{max-width:820px;margin:0 auto;"
+       "padding:22px 18px 60px}.top{display:flex;align-items:center;"
+       "justify-content:space-between;border-bottom:1px solid #1a3358;"
+       "padding-bottom:12px}.brand{font-size:19px;font-weight:800}"
+       ".brand b{color:#e3ba5e}.nav a{color:#a7bcd9;font-size:13px;margin-left:14px}"
+       "h1{font-size:27px;line-height:1.18;margin:10px 0 6px}h1 .g{color:#e3ba5e}"
+       "h2{font-size:18px;color:#e3ba5e;margin:26px 0 8px}"
+       ".sub{color:#a7bcd9;font-size:15px;margin:6px 0 14px}"
+       ".grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}"
+       "@media(max-width:560px){.grid{grid-template-columns:1fr}}"
+       ".row{display:block;background:#0c1d38;border:1px solid #1a3358;"
+       "border-radius:10px;padding:11px 13px;color:#f2f6fc}"
+       ".row:hover{border-color:#2a496f;text-decoration:none}.row .t{font-weight:800}"
+       ".row .d{font-size:12.5px;color:#a7bcd9}"
+       "footer{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;"
+       "font-size:11.5px;color:#94a9c9;line-height:1.6}footer b{color:#a7bcd9}")
+
+NAV = ('<div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a>'
+       '<div class="nav"><!--NAVC:BEGIN--><!--NAVC:END--></div></div>')
+
+
+
 def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                   errors="replace").read().replace("\x00", "")
@@ -130,29 +156,6 @@ def main():
                          "acceptedAnswer": {"@type": "Answer", "text": a}}
                         for q, a in qa]}, separators=(",", ":")) + "</script>")
 
-    CSS = ("*{box-sizing:border-box}body{margin:0;background:#02060d;color:#f2f6fc;"
-           "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,"
-           "Arial,sans-serif;line-height:1.55}a{color:#6fb6ff;text-decoration:none}"
-           "a:hover{text-decoration:underline}.wrap{max-width:820px;margin:0 auto;"
-           "padding:22px 18px 60px}.top{display:flex;align-items:center;"
-           "justify-content:space-between;border-bottom:1px solid #1a3358;"
-           "padding-bottom:12px}.brand{font-size:19px;font-weight:800}"
-           ".brand b{color:#e3ba5e}.nav a{color:#a7bcd9;font-size:13px;margin-left:14px}"
-           "h1{font-size:27px;line-height:1.18;margin:10px 0 6px}h1 .g{color:#e3ba5e}"
-           "h2{font-size:18px;color:#e3ba5e;margin:26px 0 8px}"
-           ".sub{color:#a7bcd9;font-size:15px;margin:6px 0 14px}"
-           ".grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}"
-           "@media(max-width:560px){.grid{grid-template-columns:1fr}}"
-           ".row{display:block;background:#0c1d38;border:1px solid #1a3358;"
-           "border-radius:10px;padding:11px 13px;color:#f2f6fc}"
-           ".row:hover{border-color:#2a496f;text-decoration:none}.row .t{font-weight:800}"
-           ".row .d{font-size:12.5px;color:#a7bcd9}"
-           "footer{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;"
-           "font-size:11.5px;color:#94a9c9;line-height:1.6}footer b{color:#a7bcd9}")
-
-    NAV = ('<div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a>'
-           '<div class="nav"><!--NAVC:BEGIN--><!--NAVC:END--></div></div>')
-
     title = "FDA Decisions Today: PDUFA Approvals & CRLs, Updated Daily | pdufa.bio"
     desc = (f"What the FDA decided today and this week, with primary sources, plus the "
             f"next scheduled PDUFA dates. Updated daily; as of {pretty(tiso)}.")
@@ -195,6 +198,9 @@ def main():
            f'<style>{CSS}</style></head><body><div class="wrap">{NAV}'
            + "".join(body) + "</div></body></html>")
 
+    doc = doc.replace("</div></body></html>",
+                      '<p class="sub">Week view: <a href="/fda-approval-decisions-this-week">FDA approval decisions this week</a>, '
+                      'decided and pending, dated. Month view: <a href="/fda-this-month">this month</a>.</p></div></body></html>', 1)
     out = os.path.join(SITE, "fda-decisions-today", "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     io.open(out, "w", encoding="utf-8").write(doc)

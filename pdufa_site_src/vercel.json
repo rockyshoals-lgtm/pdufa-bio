@@ -23,6 +23,11 @@
  ],
  "redirects": [
   {
+   "source": "/pdufa/RHHBY-giredestrant-in-combinatio",
+   "destination": "/pdufa/RHHBY-giredestrant-evera",
+   "permanent": true
+  },
+  {
    "source": "/api/data.js",
    "destination": "/api/data",
    "permanent": true

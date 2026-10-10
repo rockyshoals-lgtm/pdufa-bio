@@ -109,10 +109,17 @@ def main():
                 return m.group(1).strip() if m else ""
             if tag("putCall"):
                 continue
-            if tag("sshPrnamtType").upper() not in ("SH", ""):
+            # Audit 2026-10-04 UX P1 (13F): only SHARES of COMMON stock are ever reported as shares. Baker
+            # Bros' table carries a Celcuity convertible note (PRN) and a Surrozen warrant; both must be
+            # refused here AND at render time (inject_13f_block) AND by the guard, so the type and class
+            # travel with the row.
+            typ = tag("sshPrnamtType").upper()
+            cls = tag("titleOfClass").upper()
+            if typ != "SH" or not re.search(r"\b(COM|COMMON|ORD|ORDINARY|ADR|ADS|CL ?A|CLASS A|SHS|STK)\b", cls) \
+                    or re.search(r"\b(NOTE|NT|WARRANT|WT|DEBT|CONV|PFD|PREF|UNIT|RT|RIGHT)\b", cls):
                 continue
             cus = tag("cusip").upper()
-            h = hold.setdefault(cus, {"issuer": tag("nameOfIssuer"), "shares": 0, "value": 0})
+            h = hold.setdefault(cus, {"issuer": tag("nameOfIssuer"), "shares": 0, "value": 0, "type": typ, "title_of_class": cls})
             h["shares"] += int(float(tag("sshPrnamt") or 0))
             h["value"] += int(float(tag("value") or 0))
         url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace('-', '')}/{acc}-index.htm"
@@ -127,6 +134,7 @@ def main():
                 unmapped += 1
                 continue
             by_ticker.setdefault(sym, []).append({"fund": label, "shares": h["shares"], "value_usd": h["value"],
+                                                  "type": h.get("type"), "title_of_class": h.get("title_of_class"),
                                                   "period": period, "filed": filed, "url": url,
                                                   "issuer": h["issuer"], "cusip": cus})
         # one line per fund per ticker: if two CUSIPs still map to one ticker, keep the common stock

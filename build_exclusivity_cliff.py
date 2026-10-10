@@ -25,6 +25,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from site_dates import eastern_today  # noqa: E402
+from site_style import HUB_STYLE, FONTS_LINK  # noqa: E402
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 OB = os.path.join(HERE, "_orange_book")
@@ -121,10 +122,8 @@ def main():
     doc = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,'
            f'initial-scale=1"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}">'
            f'<link rel="canonical" href="{BASE}/patent-cliff/exclusivity"><meta name="robots" content="index,follow">'
-           f'<style>body{{margin:0;background:#0b1017;color:#dfe9f7;font:15px/1.6 -apple-system,Segoe UI,Roboto,sans-serif}}'
-           f'.wrap{{max-width:1000px;margin:0 auto;padding:22px 18px 60px}}a{{color:#6fb6ff}}h1{{font-size:26px}}'
-           f'h2{{color:#e8b44c;font-size:18px;margin-top:26px}}th{{color:#e8b44c;font-size:12px;border-bottom:1px solid #294d80;padding:6px 4px}}'
-           f'td{{border-bottom:1px solid #14263f;color:#a7bcd9}}</style></head><body><div class="wrap">'
+           # audit 2026-10-04 UX P0: the stub stylesheet left the header unstyled on a phone. One owner now.
+           f'{FONTS_LINK}<style>{HUB_STYLE}</style></head><body><div class="wrap">'
            f'<div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><!--NAVC:BEGIN--><!--NAVC:END--></div></div>'
            f'<div style="font-size:12px;color:#94a9c9;margin:14px 0 4px"><a href="/">Home</a> &rsaquo; '
            f'<a href="/patent-cliff">Patent cliff</a> &rsaquo; Exclusivity</div>' + "".join(body) +

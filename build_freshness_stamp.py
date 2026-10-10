@@ -64,7 +64,7 @@ if(d&&n!=null)d.textContent=(j.next_status==='awaiting'||n<0)?'awaiting a decisi
 /* Audit 2026-10-03 Tier 1.4: the stamp also says when the DATA was last rebuilt, read from
    build-info's data_built_at (the same value the API serves as meta.data_built_at). On 10-03 the
    stamps sat on 09-27 for six days with nothing on the page to say the build had stopped. */
-var b=e.querySelector('[data-fresh-built]');var w=j.data_built_at||j.built;if(b&&w){var x=new Date(w);if(!isNaN(x)){b.textContent='data rebuilt '+x.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' ET';b.setAttribute('title',w);}}
+var b=e.querySelector('[data-fresh-built]');var w=j.data_built_at||j.built;if(b&&w){var x=new Date(w);if(!isNaN(x)){b.textContent='Data as of '+x.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' ET';b.setAttribute('title',w);}}
 var k=e.querySelector('[data-fresh-tk]');if(k&&j.next_ticker){k.textContent=j.next_ticker;k.setAttribute('href','/ticker/'+j.next_ticker)}
 }).catch(function(){});})();
 </script>"""
@@ -152,7 +152,9 @@ def block(date_iso):
     clock, so an unchanged page emits identical bytes on every build. That is what keeps this from
     reintroducing the churn that broke lastmod twice already.
     """
-    when = (f'Updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>'
+    # audit 2026-10-04 P2: three dates read as one. "Page updated" is this page's content-change day;
+    # "Data as of" (filled at request time) is when the dataset was rebuilt. Named, not guessed.
+    when = (f'Page updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>'
             if date_iso else '<span style="color:#eef4fc">Rebuilt daily</span>')
     return (
         f'{B}<div data-fresh style="display:flex;flex-wrap:wrap;gap:6px;'
@@ -163,7 +165,7 @@ def block(date_iso):
         f'<span style="color:var(--mut2)">·</span>'
         f'<span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> '
         f'<a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span>'
-        f'<span data-fresh-built style="color:var(--mut2)"></span>'
+        f'<span style="color:var(--mut2)">·</span><span data-fresh-built style="color:var(--mut2)" title="when the dataset was last rebuilt (Eastern)">Data as of the last rebuild</span>'
         f'</div>{SCRIPT}{E}')
 
 

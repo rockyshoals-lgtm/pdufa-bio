@@ -23,7 +23,7 @@ Idempotent via HUBFAQ markers; runs daily after build_hub_lede.
 
     python build_hub_faq.py [--dry-run]
 """
-import argparse, datetime as dt, html, json, os, re, sys
+import argparse, datetime as dt, html, io, json, os, re, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -317,8 +317,12 @@ def main():
         ("Is the FDA bound by the vote?",
          "No. The vote is advisory; the FDA usually follows it but is free not to.", ""),
         ("How many meetings are on record here?",
-         f"{n_ac} advisory committee meetings are documented with their votes and outcomes as "
-         f"of {tstr}.", "")], a.dry_run)
+         (lambda c: (f"{c['notices']} FDA advisory committee meetings announced in the Federal Register since "
+                     f"January 2020 are listed, each linked to its notice; {n_ac} of them are documented with "
+                     f"their votes and outcomes as of {tstr}.") if c.get("notices") else
+                    f"{n_ac} advisory committee meetings are documented with their votes and outcomes as of {tstr}.")(
+             json.load(io.open(os.path.join(HERE, "_adcomm_counts.json"), encoding="utf-8"))
+             if os.path.exists(os.path.join(HERE, "_adcomm_counts.json")) else {}), "")], a.dry_run)
 
     # /developers
     ok &= inject("developers", [
