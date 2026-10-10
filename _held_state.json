@@ -1,9 +1,18 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-10-10T00:27:35Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:remibrutinib",
+   "key": "remibrutinib|openfda:20261006",
+   "text": "/drug/remibrutinib openfda:20261006 AP 20261006 (SUPPL-1, class EFFICACY)",
+   "first_seen": "2026-10-10T00:27:35Z"
+  }
+ ],
  "issued_keys": [
+  "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications"
  ],
  "last_clear_run": "2026-10-09T01:53:37Z"
