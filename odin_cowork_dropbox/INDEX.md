@@ -9,6 +9,9 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-11 audit (audit readout miner redteam dates SEO)** — `2026-10-11_audit_readout_miner_redteam_dates_SEO.md` — 2026-10-11, measured 14:49 to 15:00 Eastern = 18:49 to 19:00 UTC (Sunday). Miner output timestamp 2026-10-11T15:34:51Z = 08:34 Pacific = 11:34 Eastern. Per RULE 1 every time carries its zone.
+- **2026-10-11 note (REDTEAM miner NEW 2026-10-11 ORDER)** — `2026-10-11_REDTEAM_miner_NEW_2026-10-11_ORDER.md` — 2026-10-11, measured ~10:30 to 12:40 Pacific = 13:30 to 15:40 Eastern (Sunday). RULE 1.
+- **2026-10-11 audit (AUDIT seo bing ai citations)** — `2026-10-11_AUDIT_seo_bing_ai_citations.md` — Measured ~12:45 to 14:10 Pacific = 15:45 to 17:10 Eastern (Sunday). RULE 1.
 - **2026-10-10 audit (audit dates align two rows share a page one approval held)** — `2026-10-10_audit_dates_align_two_rows_share_a_page_one_approval_held.md` — 2026-10-10, measured 12:16 to 12:30 Eastern = 16:16 to 16:30 UTC (Saturday). Per RULE 1 every time carries its zone.
 - **2026-10-10 BUILDER (rhapsido lead published)** — `2026-10-10_BUILDER_rhapsido_lead_published.md` — 2026-10-10, written ~09:25 Pacific = 12:25 Eastern (Saturday). Quarantine and CI times are UTC. RULE 1.
 - **2026-10-10 BUILDER (audit 1010 order)** — `2026-10-10_BUILDER_audit_1010_order.md` — 2026-10-10, written ~10:30 Pacific = 13:30 Eastern (Saturday). CI times UTC. RULE 1.
