@@ -65,8 +65,13 @@ def main():
 
     done = 0
     for p in sorted(glob.glob(os.path.join(SITE, "conference", "*", "index.html"))):
-        code = os.path.basename(os.path.dirname(p)).upper()
-        own = by_conf.get(code)
+        slug = os.path.basename(os.path.dirname(p))
+        key = slug.upper().replace("-", " ")                    # stats are keyed by upper-cased code
+        own = by_conf.get(key)
+        # display the organiser's own casing (ESMO Asia, ObesityWeek), read from the page's h1
+        _doc = io.open(p, encoding="utf-8", errors="replace").read()
+        _m = re.search(r'<div class="bc">.*?&rsaquo;\s*([^<]+)</div>', _doc, re.S)
+        code = (_m.group(1).strip() if _m else slug.replace("-", " "))
         src = own or overall
         scope = (f"{code} presentations" if own else "all tracked conference presentations")
         n = src.get("runup_10d", {}).get("n") or src.get("runup_30d", {}).get("n") or 0

@@ -61,16 +61,26 @@ export function liveStatus(e, today = easternToday()) {
     /* Ruling 2026-10-03 (readout leads #52): what ClinicalTrials.gov itself states, recorded on the row
        by apply_readout_registry_signals.py; never an inferred outcome. A sponsor result (Reported) wins. */
     const reg = e._d && e._d.registry;
+    /* Audit 2026-10-11 section 2c: a passed window says what we found and when we looked
+       (resolve_past_readouts.py). A sponsor's own results release is the strongest fact and is served
+       first, dated; "No topline as of {date}" replaces a bare "Window passed" once a check has run. */
+    const res = e._d && e._d.resolution;
+    if (res && res.state === 'sponsor_release' && res.date) return 'Sponsor release ' + String(res.date).slice(0, 10);
     if (reg) {
       const os_ = String(reg.overall_status || '');
       if (os_ === 'TERMINATED') return 'Terminated per registry';
       if (os_ === 'WITHDRAWN') return 'Withdrawn per registry';
       if (os_ === 'SUSPENDED') return 'Suspended per registry';
       if (os_ === 'COMPLETED' || (reg.primary_completion_type === 'ACTUAL'
-          && String(reg.primary_completion || '9999').slice(0, 10) <= today)) return 'Completed per registry';
+          && String(reg.primary_completion || '9999').slice(0, 10) <= today)) {
+        if (res && res.state === 'no_topline' && res.checked) return 'Completed per registry, no topline as of ' + String(res.checked).slice(0, 10);
+        return 'Completed per registry';
+      }
     }
     const ended = e.dp === 'month' ? (String(e.dm || e.d).slice(0, 7) < today.slice(0, 7))
                                    : (String(e.d).slice(0, 10) < today);
+    if (ended && res && res.state === 'no_topline' && res.checked) return 'No topline as of ' + String(res.checked).slice(0, 10);
+    if (ended && res && res.state === 'results_posted_registry' && res.date) return 'Results posted on ClinicalTrials.gov ' + String(res.date).slice(0, 10);
     if (ended) return 'Window passed';
   }
   return st || null;
@@ -124,7 +134,7 @@ const CORE_EXTRA = ['nct_id','indication','market_cap_usd','cash_runway_months',
   'decision_source','decision_source_url','decision_date_note','decision_date_unsourced','goal_unsourced',
   /* 2026-10-09 (audit P0, MRK I-DXd): status "Withdrawn" -- the sponsor withdrew the application
      before the FDA acted. No decision, no outcome; dated and sourced like one. */
-  'withdrawn_date','withdrawn_source','withdrawn_source_url','withdrawn_quote',
+  'withdrawn_date','withdrawn_source','withdrawn_source_url','withdrawn_quote','resolution',
   /* 09-20b: the FDA's own action date where its released letter states it (CRLs). */
   'fda_action_date',
   /* 2026-10-03: the registry's own status on a readout row (ruling for leads #52) and the basis of a

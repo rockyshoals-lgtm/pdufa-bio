@@ -21,6 +21,11 @@ on:
     - cron: '0 10 * * *'      # 10:00 UTC = 03:00 PT (lands ~05:00-08:00 PT in practice)
     - cron: '0 12 * * *'      # 12:00 UTC = 05:00 PT
     - cron: '0 21 * * *'      # 21:00 UTC = 14:00 PT (midday refresh)
+    # Audit 2026-10-11 order 6, Enspryng decision day (goal 2026-10-15): hourly 13:00-23:00 UTC on
+    # Oct 15 so the FDA press RSS / gene.com listing / openFDA watchers raise the lead within the hour
+    # of the record rather than at the next daily slot. GitHub's queue lag still applies; a manual
+    # dispatch the moment the release is seen remains the fastest path. Remove after 2026-10-16.
+    - cron: '0 13-23 15 10 *'
   workflow_dispatch: {}         # manual "Run workflow" button in the Actions tab
 
 concurrency:
@@ -359,6 +364,29 @@ jobs:
       - name: "Calendar: rebuild the free subscribable .ics feed"
         run: python build_calendar_feed.py
 
+      # Ruling 2026-10-03 for readout leads #52 (item 4.6): the registry's own status recorded on the row and
+      # served as "... per registry"; NCT-mismatch rows excluded. Advisory read of ClinicalTrials.gov.
+      # Audit 2026-10-11 live P1: 12 Estimated rows had drifted from the registry (MBX May 2027 vs May 2028;
+      # GOSS Dec 2027 vs a trial terminated Sep 2026) because this re-sync was never in the daily job. An
+      # Estimated row's date IS the registry window; this keeps it equal to its own definition, with a
+      # date_history entry per move. Guard: tests/test_readout_registry_synced.py.
+      - name: "Readout rows follow the registry's primary-completion window (Estimated rows only)"
+        continue-on-error: true
+        run: python refresh_readout_registry.py
+
+      - name: "Readout rows carry the registry's own status (ruling for leads #52)"
+        continue-on-error: true
+        run: python apply_readout_registry_signals.py
+
+      # Audit 2026-10-11 section 2c: every passed readout window states what we found (sponsor release,
+      # terminated, or "no topline as of {date}") before /readouts renders it. Needs FMP for the sponsor
+      # press-release search; without the key it records registry facts only and claims nothing else.
+      - name: "Readouts: resolve passed windows (sponsor release / no topline as of / terminated)"
+        continue-on-error: true
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python resolve_past_readouts.py
+
       - name: Refresh /readouts (drop past months + auto-log readout window moves)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
@@ -416,12 +444,6 @@ jobs:
       # rebuilt and two months later was calling ACHV's cytisinicline PDUFA "custirsen".
       - name: "Readout therapeutic areas from the hand file (audit 10-03 item 3.3; never by name match)"
         run: python apply_readout_ta_manual.py
-
-      # Ruling 2026-10-03 for readout leads #52 (item 4.6): the registry's own status recorded on the row and
-      # served as "... per registry"; NCT-mismatch rows excluded. Advisory read of ClinicalTrials.gov.
-      - name: "Readout rows carry the registry's own status (ruling for leads #52)"
-        continue-on-error: true
-        run: python apply_readout_registry_signals.py
 
       - name: "/readouts/oncology and /readouts/rare-disease"
         run: python build_readout_ta_hubs.py
@@ -509,6 +531,11 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python conference_presenter_miner.py --days 240
+
+      # Audit 2026-10-11 order 4: one organiser-dated page per meeting, title carrying dates and city,
+      # presenters sourced per row; runs before the hub so the hub links every page that exists.
+      - name: "Conferences: one page per meeting (organiser-dated, presenters sourced)"
+        run: python build_conference_pages.py
 
       - name: "Conferences: rebuild the calendar and presenter lists"
         run: |
@@ -773,6 +800,10 @@ jobs:
         run: python quarantine_leads.py apply
 
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
+        env:
+          # tests/test_readouts_passed_windows_resolved.py is strict about unchecked passed windows only
+          # where the sponsor-release search could have run (key present).
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: |
           set -e
           for t in tests/test_*.py; do

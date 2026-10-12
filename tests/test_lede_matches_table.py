@@ -26,6 +26,34 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 B, E = "<!--LEDE:BEGIN-->", "<!--LEDE:END-->"
 
 
+_ABBR = {m: i + 1 for i, m in enumerate("jan feb mar apr may jun jul aug sep oct nov dec".split())}
+
+
+def _row_month(t):
+    m = re.search(r"(\d{4})-(\d{2})-(\d{2})", t)
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    m = re.search(r"\b([A-Za-z]{3})[a-z]*\.?\s+(?:\d{1,2},\s*)?(\d{4})", t)
+    if m and m.group(1).lower() in _ABBR:
+        return int(m.group(2)), _ABBR[m.group(1).lower()]
+    return None
+
+
+def _readouts_ahead(frags):
+    """Rows whose window has not passed: dated at or after the current Eastern month, or undated."""
+    sys.path.insert(0, HERE)
+    from site_dates import eastern_today
+    td = eastern_today()
+    cur = (td.year, td.month)
+    n = 0
+    for fr in frags:
+        t = html.unescape(re.sub(r"<[^>]+>", " ", fr))
+        d = _row_month(t)
+        if not d or d >= cur:
+            n += 1
+    return n
+
+
 def main():
     bad = []
     checked = 0
@@ -70,6 +98,10 @@ def main():
                         d_ = re.search(r"\d{4}-\d{2}-\d{2}", s_)
                         if not d_ or d_.group(0) >= today_:
                             n += 1
+                elif src == "readouts":
+                    # audit 2026-10-11: "expected" readouts are the windows not yet passed; a passed
+                    # window is listed on /readouts with what we found, and counted separately there
+                    n = _readouts_ahead(frags)
                 else:
                     n = len(frags)
                 if int(mm.group(1).replace(",", "")) != n:
@@ -98,6 +130,16 @@ def main():
 
         if claimed == 0:
             bad.append((rel, "lede claims 0 -- the row parse is broken")); continue
+        if rel == "/readouts":
+            # two-part lede: "{A} expected ... A further {B} readouts whose window has already passed"
+            m2 = re.search(r"A further ([\d,]+) readouts whose window has already passed", lede)
+            past_claim = int(m2.group(1).replace(",", "")) if m2 else 0
+            frags = re.findall(r'<a class="row"[^>]*>(.*?)</a>', body, re.S)
+            n_ahead = _readouts_ahead(frags)
+            if claimed != n_ahead or claimed + past_claim != rows:
+                bad.append((rel, f"lede says {claimed} expected + {past_claim} passed, page has "
+                                 f"{n_ahead} not-yet-passed of {rows} rows")); continue
+            continue
         if claimed != rows:
             bad.append((rel, f"lede says {claimed}, page has {rows} rows")); continue
 

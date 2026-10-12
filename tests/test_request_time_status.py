@@ -28,7 +28,7 @@ const out = [];
 for (const today of ['2026-09-27', '2026-10-03', '2026-10-15', '2027-01-04']) {
   for (const e of m.DATA) {
     if (!['Conference', 'PDUFA', 'Readout'].includes(e.type)) continue;
-    out.push([today, e.id, e.type, e.st, e.dp, e.d, (e._d && e._d.end) || e.dm || null, m.liveStatus(e, today), (e._d && e._d.registry) || null]);
+    out.push([today, e.id, e.type, e.st, e.dp, e.d, (e._d && e._d.end) || e.dm || null, m.liveStatus(e, today), (e._d && e._d.registry) || null, (e._d && e._d.resolution) || null]);
   }
 }
 const src = (await import('node:fs')).readFileSync(new URL('file:///%s'), 'utf8');
@@ -38,21 +38,31 @@ console.log(JSON.stringify({ rows: out,
 """ % (LIB, LIB)
 
 
-def expected(typ, st, dp, d, end, today, reg=None):
+def expected(typ, st, dp, d, end, today, reg=None, res=None):
     if typ == "Conference":
         end = (end or d)[:10]
         return "Ended" if end < today else ("In progress" if d[:10] <= today else "Scheduled")
     if typ == "PDUFA" and st == "Upcoming" and dp == "day" and d[:10] < today:
         return "Awaiting"
     if typ == "Readout" and st in ("Estimated", "Guided"):
+        # audit 2026-10-11 section 2c: a passed window states what we found (resolve_past_readouts.py)
+        res = res or {}
+        if res.get("state") == "sponsor_release" and res.get("date"):
+            return "Sponsor release " + str(res["date"])[:10]
+        ended = ((end or d)[:7] < today[:7]) if dp == "month" else (d[:10] < today)
         if reg:
             os_ = reg.get("overall_status") or ""
             if os_ in ("TERMINATED", "WITHDRAWN", "SUSPENDED"):
                 return os_.title() + " per registry"
             if os_ == "COMPLETED" or (reg.get("primary_completion_type") == "ACTUAL"
                                       and str(reg.get("primary_completion") or "9999")[:10] <= today):
+                if res.get("state") == "no_topline" and res.get("checked"):
+                    return "Completed per registry, no topline as of " + str(res["checked"])[:10]
                 return "Completed per registry"
-        ended = ((end or d)[:7] < today[:7]) if dp == "month" else (d[:10] < today)
+        if ended and res.get("state") == "no_topline" and res.get("checked"):
+            return "No topline as of " + str(res["checked"])[:10]
+        if ended and res.get("state") == "results_posted_registry" and res.get("date"):
+            return "Results posted on ClinicalTrials.gov " + str(res["date"])[:10]
         return "Window passed" if ended else st
     return st
 
@@ -72,8 +82,8 @@ def main():
         fails.append("shape() does not apply liveStatus(e): the baked status is served")
     if not j["filter_uses_live"]:
         fails.append("?status= filters on the baked status, not the request-time one")
-    for today, rid, typ, st, dp, d, end, got, reg in j["rows"]:
-        want = expected(typ, st, dp, d, end, today, reg)
+    for today, rid, typ, st, dp, d, end, got, reg, res in j["rows"]:
+        want = expected(typ, st, dp, d, end, today, reg, res)
         if got != want:
             fails.append(f"{today} {rid}: served {got!r}, dates say {want!r} (baked {st!r})")
     if fails:

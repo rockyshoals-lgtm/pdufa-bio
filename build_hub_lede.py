@@ -139,11 +139,24 @@ def sentence(path, rows):
                   "submitted, and it does not by itself mean the drug is rejected for good.")
 
     if path == "readouts":
-        return (f"This page lists {n} expected clinical trial readouts"
-                + (f" covering {when}" if when else "") + ". "
-                + "These dates come from company guidance and ClinicalTrials.gov, so most are known "
-                  "only to a month or a quarter, and we publish them at that precision rather than "
-                  "guessing a day.")
+        # Audit 2026-10-11 section 2c: on October 11 the lede said "covering July 2026". The rows the
+        # page carries for windows that have already passed (the results block) are not "expected";
+        # the lede names the current month as its start and counts the past-window rows on their own.
+        td = _eastern_today()
+        cur = (td.year, td.month)
+        # an undated window ("Q4 2026 (est.)", "H1 2027 (est.)") is forward by construction
+        ahead = [r for r in rows if not r["date"] or r["date"] >= cur]
+        past = [r for r in rows if r["date"] and r["date"] < cur]
+        when_ahead = span([r["date"] for r in ahead if r["date"]])
+        s = (f"This page lists {len(ahead)} expected clinical trial readouts"
+             + (f" covering {when_ahead}" if when_ahead else "") + ". ")
+        if past:
+            s += (f"A further {len(past)} readouts whose window has already passed are listed below "
+                  f"with what we found: the sponsor's release where one exists, otherwise the date we "
+                  f"last checked. ")
+        return s + ("These dates come from company guidance and ClinicalTrials.gov, so most are known "
+                    "only to a month or a quarter, and we publish them at that precision rather than "
+                    "guessing a day.")
 
     if path == "adcomm":
         voted = sum(1 for r in rows if "voted" in r["text"].lower())
@@ -199,7 +212,10 @@ def homepage_sentence():
 
     s = f"pdufa.bio tracks {ahead} upcoming FDA decision dates"
     if rd:
-        s += f" and {len(rd)} expected clinical trial readouts"
+        # the same "expected" set /readouts' own lede counts: windows not yet passed (audit 2026-10-11)
+        cur_ = (_eastern_today().year, _eastern_today().month)
+        rd_ahead = [r for r in rd if not r["date"] or r["date"] >= cur_]
+        s += f" and {len(rd_ahead)} expected clinical trial readouts"
     s += (f", alongside {len(dec)} decisions already made: {ap} approvals and {crl} Complete "
           f"Response Letters. ")
     s += ("Every date links the FDA notice or company filing it came from, and each past decision "
@@ -249,6 +265,17 @@ def main():
         if rel in titles:
             doc = re.sub(r"(<title[^>]*>).*?(</title>)",
                          lambda m: m.group(1) + titles[rel] + m.group(2), doc, count=1, flags=re.S)
+        if rel == "readouts":
+            # Audit 2026-10-11 section 1: the live description ended "...Estimated primary-completion
+            # windows from." (a pre-fix trim). Bing shows descriptions verbatim; this one is a sentence,
+            # under 158 characters, and names the current month so it cannot read as stale.
+            td = _eastern_today()
+            desc = (f"Clinical trial readouts from {MONTHS[td.month - 1]} {td.year}: drug, company, indication "
+                    f"and source. Windows are company guidance or ClinicalTrials.gov estimates. Not advice.")
+            doc = re.sub(r'(<meta name="description" content=")[^"]*(")',
+                         lambda m: m.group(1) + html.escape(desc, quote=True) + m.group(2), doc, count=1)
+            doc = re.sub(r'(<meta property="og:description" content=")[^"]*(")',
+                         lambda m: m.group(1) + html.escape(desc, quote=True) + m.group(2), doc, count=1)
         block = (f'{B}<p style="margin:0 0 14px;font-size:14.5px;line-height:1.75;color:#cfe0f5;'
                  f'max-width:74ch">{html.escape(s)}</p>{E}')
 

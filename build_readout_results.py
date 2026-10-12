@@ -152,8 +152,10 @@ def load_past_readouts():
             ym = str(r.get("dm") or "")
         if not re.match(r'^\d{4}-\d{2}$', ym) or ym >= cur:
             continue  # only fully-elapsed month windows
+        d = r.get("_d") or {}
         out.append({"id": r.get("id"), "t": r["t"], "ym": ym,
-                    "name": r.get("name") or r["t"], "url": r.get("url") or ""})
+                    "name": r.get("name") or r["t"], "url": r.get("url") or "",
+                    "resolution": d.get("resolution") or {}, "registry": d.get("registry") or {}})
     out.sort(key=lambda x: x["ym"], reverse=True)
     return out
 
@@ -256,10 +258,26 @@ def build_section(readouts, key, limit):
             col = "#46d17f" if move >= 0 else "#ff7a72"
             mv = f'<div style="margin-left:auto;font-weight:800;color:{col}">{"+" if move>=0 else ""}{move:.0f}%</div>'
         href = esc(r["url"] or "#")
+        # Audit 2026-10-11 section 2c: each passed window states what we found and when we looked.
+        res, reg = r.get("resolution") or {}, r.get("registry") or {}
+        ros = str(reg.get("overall_status") or "").upper()
+        if res.get("state") == "sponsor_release" and res.get("date"):
+            found = (f'<span style="color:#46d17f">Sponsor release {esc(str(res["date"])[:10])}</span>')
+            href = esc(res.get("url") or r["url"] or "#")
+        elif ros in ("TERMINATED", "WITHDRAWN", "SUSPENDED"):
+            found = f'<span style="color:#ff7a72">{ros.title()} per ClinicalTrials.gov</span>'
+        elif res.get("state") == "no_topline" and res.get("checked"):
+            found = (f'<span style="color:#a7bcd9">No topline found as of {esc(str(res["checked"])[:10])}</span>')
+        elif res.get("state") == "results_posted_registry" and res.get("date"):
+            found = f'<span style="color:#a7bcd9">Results posted on ClinicalTrials.gov {esc(str(res["date"])[:10])}</span>'
+        elif ros == "COMPLETED":
+            found = '<span style="color:#a7bcd9">Trial completed per ClinicalTrials.gov; no sponsor result on record</span>'
+        else:
+            found = '<span style="color:#7c93b6">Window passed; not yet checked</span>'
         rows.append(
             f'<a class="row" href="{href}" rel="nofollow" style="display:flex;align-items:center;gap:12px">'
             f'<div style="min-width:150px"><div class="t">{esc(r["t"])} &middot; {win}</div>'
-            f'<div class="d">{esc(r["name"])[:60]}</div></div>{svg}{mv}</a>')
+            f'<div class="d">{esc(r["name"])[:60]} &middot; {found}</div></div>{svg}{mv}</a>')
     if not rows and not crows:
         return ""
     conf_html = ""
@@ -272,11 +290,12 @@ def build_section(readouts, key, limit):
                      'advice.</div>'
                      f'<div class="grid">{"".join(crows)}</div>')
     return ('<div id="readout-results">' + conf_html +
-            '<div class="mhead" style="color:#46d17f">Recently reported: stock move over the estimated readout window</div>'
-            '<div class="note" style="margin:-2px 0 8px">Auto-logged: each stock\'s price move across its '
-            'estimated readout window (Polygon daily closes). These are estimated month windows, so the exact '
-            'announcement date and clinical outcome are not yet verified: this shows the market\'s move '
-            'over the window, not a statement about trial success. '
+            '<div class="mhead" style="color:#46d17f">Readout windows that have passed: what we found, and the stock move over the window</div>'
+            '<div class="note" style="margin:-2px 0 8px">Each row states what we found for that readout: the '
+            'sponsor\'s own results release where one exists (linked), the registry\'s status where the trial '
+            'was terminated, or the date we last checked the sponsor\'s releases and ClinicalTrials.gov and '
+            'found no topline. The figure is the stock\'s move across the estimated window (Polygon daily '
+            'closes), not a statement about trial success. '
             '<a href="/methodology" style="color:#e3ba5e">Methodology</a>.</div>'
             f'<div class="grid">{"".join(rows)}</div></div><!--/readout-results-->')
 
@@ -294,7 +313,7 @@ def inject(html, section):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--limit", type=int, default=40); a = ap.parse_args()
+    ap.add_argument("--limit", type=int, default=160); a = ap.parse_args()
     html = open(PAGE, encoding="utf-8", errors="replace").read().replace("\x00", "")
     html, dropped = prune(html)
     key = load_key()

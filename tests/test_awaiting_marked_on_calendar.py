@@ -44,7 +44,7 @@ def main():
     awaiting = {(str(r.get("t") or "").upper(), str(r.get("d") or ""))
                 for r in rows
                 if r.get("type") == "PDUFA" and r.get("dp") == "day"
-                and str(r.get("st") or "") != "Decided"
+                and str(r.get("st") or "").lower() not in ("decided", "withdrawn")   # closed states (audit 2026-10-11)
                 and str(r.get("d") or "") and str(r.get("d") or "") < TODAY}
 
     fail = 0

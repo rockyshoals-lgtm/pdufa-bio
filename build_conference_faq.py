@@ -70,12 +70,13 @@ def main():
 
     done = 0
     for p in sorted(glob.glob(os.path.join(SITE, "conference", "*", "index.html"))):
-        code = os.path.basename(os.path.dirname(p)).upper()
+        code = os.path.basename(os.path.dirname(p)).upper().replace("-", " ")   # slug -> code ('ESMO-Asia' -> 'ESMO ASIA')
         editions = sorted(by_code.get(code, []), key=lambda c: str(c.get("start", "")))
         nxt = next((c for c in editions if str(c.get("start", "")) >= today),
                    editions[-1] if editions else None)
         if not nxt:
             continue
+        code = nxt.get("code") or code          # the organiser's casing (ObesityWeek, IDWeek, ESMO Asia)
         name = nxt.get("name") or code
         year = str(nxt.get("start", ""))[:4]
 

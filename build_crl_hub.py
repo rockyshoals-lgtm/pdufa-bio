@@ -94,11 +94,14 @@ def main():
     n = len(rows)
     n24 = sum(1 for r in rows if r["year"] >= "2024")
     today = dt.date.today()
-    title = (f"FDA Complete Response Letters: {n_records} Released CRLs, Searchable by Year "
+    # Audit 2026-10-11 section 4b item 6: the grounding query is "fda complete response letter
+    # database" (36 citations, 15.79% share); the phrase now sits in the title, the h1 and the first
+    # sentence, with the count and the FDA release-policy caveat.
+    title = (f"FDA Complete Response Letter Database: {n_records} Released CRLs by Year "
              f"| pdufa.bio")
-    desc = (f"{n_records} FDA Complete Response Letters (openFDA), by year, each linking the "
-            f"FDA's PDF. {n_approved} went to applications since approved, and why that is not "
-            f"an approval rate.")
+    desc = (f"FDA complete response letter database: {n_records} CRLs the FDA has released "
+            f"(openFDA), by year, each linking the FDA's PDF. {n_approved} went to applications "
+            f"since approved; why that is not an approval rate.")
     # by-year split of openFDA's approval_status -- the shape that shows the release policy
     split = collections.OrderedDict()
     for r in sorted(rows, key=lambda x: x["year"], reverse=True):
@@ -160,10 +163,11 @@ def main():
             f'<a href="/" style="color:#94a9c9">Home</a> &rsaquo; '
             f'<a href="/decisions" style="color:#94a9c9">Decisions</a> &rsaquo; '
             f'CRL letters</div>'
-            f'<h1>FDA Complete Response Letters: <span class="g">{n_records} released '
+            f'<h1>FDA complete response letter database: <span class="g">{n_records} released '
             f'CRLs</span></h1>'
-            f'<div class="sub">The FDA releases Complete Response Letters under its '
-            f'CRL transparency program, published through openFDA. This page lists every '
+            f'<div class="sub">This is a database of the {n_records} complete response letters the FDA '
+            f'has released under its CRL transparency program, published through openFDA; the FDA '
+            f'releases letters selectively, so the set is not every CRL ever issued. This page lists every '
             f'released letter with a hosted file ({n} distinct letters from {n_records} '
             f'records), newest first, each linking the original PDF on FDA&#x27;s servers. '
             f'{n24} listed letters are from 2024 or later; the archive reaches back to 2002. '

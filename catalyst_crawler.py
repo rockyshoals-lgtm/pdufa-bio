@@ -100,7 +100,7 @@ def safe_to_csv(df, path):
 # ----------------------------------------------------------------- date parsing
 MONTH=r'(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
 DAY=rf'{MONTH}\s+\d{{1,2}},?\s+20\d{{2}}'
-QH=r'(?:(?:first|second|third|fourth|1st|2nd|3rd|4th|Q[1-4])\s+(?:quarter\s+)?(?:of\s+)?20\d{2}|(?:first|second)\s+half\s+(?:of\s+)?20\d{2}|[12]H[\s\-]?20\d{2}|(?:year[- ]end|end of|by the end of|mid[- ])\s*20\d{2})'
+QH=r'(?:(?:first|second|third|fourth|1st|2nd|3rd|4th|Q[1-4])\s+(?:quarter\s+)?(?:of\s+)?20\d{2}|(?:first|second)\s+half\s+(?:of\s+)?20\d{2}|[12]H[\s\-]?20\d{2}|H[12][\s\-]?20\d{2}|(?:year[- ]end|end of|by the end of|mid[- ])\s*20\d{2})'
 re_day=re.compile(DAY)
 
 def norm_any(s):
@@ -112,13 +112,18 @@ def norm_any(s):
     yr=re.search(r'20\d{2}', s); 
     if not yr: return None,None
     y=yr.group(0)
+    # Red team 2026-10-11 (daily/NEW_2026-10-11.csv): HALF before QUARTER. "second half of 2027" used
+    # to fall into the `second` -> Q2 branch first, so KZIA, BIOA and ANL filings that say 2027-H2
+    # were emitted as 2027-Q2. And "mid-2026" was mapped to H2: Q32 Bio said "mid-2026" and reported
+    # on July 13, which is not H2 by any reading a reader would accept; "mid" is YEAR precision.
+    # "year-end" is Q4 ("at year-end"); "by the end of" / "end of" is the whole year.
+    if re.search(r'(second\s+half|\b2H|\bH2\b)', s, re.I): return f"{y}-H2","half"
+    if re.search(r'(first\s+half|\b1H|\bH1\b)', s, re.I): return f"{y}-H1","half"
     if re.search(r'(second|2nd|Q2)', s, re.I): return f"{y}-Q2","quarter"
     if re.search(r'(third|3rd|Q3)', s, re.I): return f"{y}-Q3","quarter"
     if re.search(r'(fourth|4th|Q4)', s, re.I): return f"{y}-Q4","quarter"
-    if re.search(r'(first|1st|Q1)', s, re.I) and 'half' not in s.lower(): return f"{y}-Q1","quarter"
-    if re.search(r'(second\s+half|2H)', s, re.I): return f"{y}-H2","half"
-    if re.search(r'(first\s+half|1H)', s, re.I): return f"{y}-H1","half"
-    if re.search(r'(year[- ]end|end of|mid)', s, re.I): return f"{y}-H2","half"
+    if re.search(r'(first|1st|Q1)', s, re.I): return f"{y}-Q1","quarter"
+    if re.search(r'year[- ]end', s, re.I): return f"{y}-Q4","quarter"
     return f"{y}","year"
 
 def is_upcoming(label, precision):

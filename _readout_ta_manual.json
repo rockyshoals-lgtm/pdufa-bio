@@ -562,6 +562,71 @@
    "ta": "Oncology",
    "basis": "Sponsor SEC filing: SURF303 Phase 2a/b in low-grade upper tract urothelial carcinoma",
    "source": "SEC accession 0001193125-26-220638"
+  },
+  "readout_anl_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "SEC filing sentence (Adlai Nortye EX-99.1 2026-09-08): AN4035 CEACAM5 ADC, Phase Ia in CEACAM5-enriched RAS-addicted solid tumors",
+   "source": "https://www.sec.gov/Archives/edgar/data/1944552/000121390026097850/ea030480101ex99-1.htm"
+  },
+  "readout_bioa_2027-12-31": {
+   "ta": "Ophthalmology",
+   "basis": "SEC filing sentence (BioAge 8-K 2026-10-02): BGE-102 QUELL-DME Phase 2 in diabetic macular edema",
+   "source": "https://www.sec.gov/Archives/edgar/data/1709941/000119312526412300/bioa-20261002.htm"
+  },
+  "readout_dyn_2027-03-31": {
+   "ta": "Rare disease",
+   "basis": "SEC filing sentence (Dyne 8-K 2026-09-29): z-basivarsen ACHIEVE registrational expansion cohort in myotonic dystrophy type 1",
+   "source": "https://www.sec.gov/Archives/edgar/data/1818794/000181879426000009/dyn-20260929.htm"
+  },
+  "readout_eypt_2027-12-31": {
+   "ta": "Ophthalmology",
+   "basis": "SEC filing sentence (EyePoint EX-99.1 2026-08-17): DURAVYU COMO and CAPRI Phase 3 in diabetic macular edema",
+   "source": "https://www.sec.gov/Archives/edgar/data/1314102/000119312526353308/eypt-ex99_1.htm"
+  },
+  "readout_gpcr_2027-12-31": {
+   "ta": "Metabolic",
+   "basis": "SEC filing sentence (Structure EX-99.1 2026-09-08): ACCG-2671 Phase 1/2a MAD portion in obesity",
+   "source": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm"
+  },
+  "readout_ima_2027-12-31": {
+   "ta": "Dermatology",
+   "basis": "SEC filing sentence (ImageneBio EX-99.1 2026-08-05): olevaprubart ADAPTIVE Phase 2b in moderate-to-severe atopic dermatitis",
+   "source": "https://www.sec.gov/Archives/edgar/data/1835579/000119312526333912/d166048dex991.htm"
+  },
+  "readout_ird_2027-06-30": {
+   "ta": "Ophthalmology",
+   "basis": "SEC filing sentence (Opus Genetics EX-99.1 2026-09-09): OPGx-BEST1 BIRD-1 Phase 1/2 in BEST1-related retinal disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/1228627/000114036126035979/ef20081753_ex99-1.htm"
+  },
+  "readout_ivevf_2026-12-31": {
+   "ta": "Hepatology",
+   "basis": "SEC filing sentence (Inventiva EX-99.2 2026-09-28): lanifibranor NATiV3 Phase 3 in non-cirrhotic MASH",
+   "source": "https://www.sec.gov/Archives/edgar/data/1756594/000110465926111143/iva-ex99d2.htm"
+  },
+  "readout_krro_2027-12-31": {
+   "ta": "Rare disease",
+   "basis": "SEC filing sentence (Korro EX-99.1 2026-10-05): KRRO-121 ANCHOR Phase 1/2 in urea cycle disorders, interim readout",
+   "source": "https://www.sec.gov/Archives/edgar/data/1703647/000119312526414118/krro-ex99_1.htm"
+  },
+  "readout_kzia_2027-12-31": {
+   "ta": "Oncology",
+   "basis": "SEC filing sentence (Kazia EX-99.2 2026-08-31): paxalisib Stage IV triple-negative breast cancer data readout",
+   "source": "https://www.sec.gov/Archives/edgar/data/1075880/000121390026095310/ea030382001ex99-2.htm"
+  },
+  "readout_lsta_2027-12-31": {
+   "ta": "Endocrinology",
+   "basis": "SEC filing sentence (Lisata EX-99.2 2026-09-17): MAR002 Phase 2 in acromegaly",
+   "source": "https://www.sec.gov/Archives/edgar/data/320017/000114036126036866/ef20082158_ex99-2.htm"
+  },
+  "readout_pcvx_2027-12-31": {
+   "ta": "Infectious",
+   "basis": "SEC filing sentence (Vaxcyte EX-99.2 2026-10-05): VAX-31 OPUS-2 and OPUS-3 Phase 3, adult pneumococcal vaccination",
+   "source": "https://www.sec.gov/Archives/edgar/data/1649094/000119312526413168/d21202dex992.htm"
+  },
+  "readout_trxb_2027-12-31": {
+   "ta": "Dermatology",
+   "basis": "SEC filing sentence (TRex Bio S-1 2026-09-18): TRB-061 Phase 1b in moderate-to-severe atopic dermatitis",
+   "source": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526395671/ck0002139097-20260918.htm"
   }
  },
  "nct_mismatch": [

@@ -71,9 +71,22 @@ def main():
     i, j = src.index("["), src.rindex("]") + 1
     rows = json.loads(src[i:j])
 
+    # Audit 2026-10-11 (red team of the 10-11 miner run, live P1): 15 Estimated rows had drifted from the
+    # registry (ANNX said Oct 2026 for a readout the registry moved to Jul 2027) because this script was
+    # never in the daily chain. It now runs before apply_readout_registry_signals.py, writes a
+    # date_history entry for every move, and skips rows whose NCT is a different drug's trial
+    # (_readout_ta_manual.json "nct_mismatch"), exactly as the signals step does.
+    mism = set()
+    try:
+        man = json.load(io.open(os.path.join(HERE, "_readout_ta_manual.json"), encoding="utf-8"))
+        mism = {m["id"] for m in man.get("nct_mismatch", [])}
+    except Exception:  # noqa: BLE001
+        pass
     todo = []
     for r in rows:
         if r.get("type") != "Readout":
+            continue
+        if r.get("id") in mism:          # the attached NCT is a different drug's trial
             continue
         # ESTIMATED ONLY. The first run of this script moved company-GUIDED rows too, and
         # test_guided_readouts_current caught it: SLS's REGAL Phase 3 topline is guided by
@@ -121,6 +134,16 @@ def main():
             # keep `d` as the month-midpoint sentinel the rest of the pipeline expects
             r["d"] = f"{pcm}-15"
             r["dp"] = "month"
+            r["ua"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            hist = dd.get("date_history") or []
+            if not hist:
+                hist.append({"date": str(r.get("id") or "")[-10:], "note": "date the row was keyed on when created"})
+            hist.append({"date": r["d"], "changed": TODAY,
+                         "why": (f"ClinicalTrials.gov's primary-completion date for {nct} is now {pcd} "
+                                 f"({info['pcd_type'].lower()}; registry status {blk['status']}, record updated "
+                                 f"{info['updated']}); the row's window moved from {cur} to {pcm} on {TODAY}. "
+                                 "/readouts defines an estimated date as that registry window, so the row follows it.")})
+            dd["date_history"] = hist
             moved += 1
             print(f"  [{n}/{len(todo)}] {r.get('t'):<6} {nct}  window {cur} -> {pcm}"
                   f"  ({info['pcd_type'].lower()}, registry {blk['status']})")

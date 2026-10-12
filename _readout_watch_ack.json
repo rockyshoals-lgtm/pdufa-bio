@@ -215,6 +215,66 @@
   {
    "id": "readout_mltx_2027-02-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-05-28); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_aard_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_bolt_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_mnkd_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_ocgn_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_pmn_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_ppbt_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_scyx_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_sttk_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_whwk_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_xene_2026-09-30",
+   "reason": "2026-10-11: no results exhibit in the sponsor's 8-K/6-K filings 2026-07-01 to 2026-10-11 (EDGAR full text); served 'No topline as of 2026-10-11' and re-checked daily by resolve_past_readouts.py."
+  },
+  {
+   "id": "readout_alzn_2026-08-31",
+   "reason": "2026-10-11: the only Q3 exhibit (2026-09-29 EX-99.1) is an MGH 7T lithium PK-imaging results poster from a Phase 1/2A study, not the Phase II bipolar topline this row guides; no Phase II results exhibit through 2026-10-11. Needs a human reading of the row's program."
+  },
+  {
+   "id": "readout_roiv_2026-09-30",
+   "reason": "2026-10-11: brepocitinib was approved as LISRAYA on 2026-08-27 (ROIV 8-K EX-99.1 2026-08-27); no brepocitinib readout exhibit in Q3. The row's guided program needs a human reading."
+  },
+  {
+   "id": "readout_syre_2026-09-30",
+   "reason": "2026-10-11: Spyre's 2026-09-08 release (SPY003 SKYLINE Part A) states proof-of-concept is complete for all three components; SPY001's own Part A date was not in the 2026-07-01 to 10-11 exhibits read. Confirm SPY001's release date before marking Reported."
+  },
+  {
+   "id": "readout_vktx_vanquish2_2026q3",
+   "reason": "2026-10-11: Viking's 2026-09-22 EX-99.1 is the Phase 2 maintenance study of VK2735, not VANQUISH-2; no VANQUISH-2 topline exhibit through 2026-10-11."
+  },
+  {
+   "id": "readout_vtgn_2026-09-30",
+   "reason": "2026-10-11: Vistagen's 2026-09-22 EX-99.1 is preliminary open-label-extension data from PALISADE-4; the pivotal topline this row guides is not in the exhibits through 2026-10-11."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."

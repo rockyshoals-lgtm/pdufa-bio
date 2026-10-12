@@ -45,6 +45,11 @@ BEGIN, END = "<!--CONFLIST:BEGIN-->", "<!--CONFLIST:END-->"
 LOOKBACK_DAYS = 150
 
 
+def conf_slug(code):
+    """URL path for a meeting code: 'ESMO Asia' -> 'ESMO-Asia' (build_conference_pages.py uses the same)."""
+    return re.sub(r"\s+", "-", str(code or "").strip())
+
+
 def _hub_exists(tk):
     return bool(tk) and os.path.exists(os.path.join(SITE, "ticker", str(tk),
                                                     "index.html"))
@@ -141,11 +146,13 @@ def load_presenters():
     # filing + ticker, per the 3.5 spec now implemented in the miner). Legacy mined rows have
     # no confidence column and are therefore excluded by construction.
     out = {}
-    verified = os.path.join(HERE, "catalysts_out",
-                            "conference_presenters_VERIFIED_2026-08-12.csv")
-    for path, dated, gate in ((PRES, "catalyst_date", "history"),
-                              (verified, "conf_start", False),
-                              (MINED, "conf_start", True)):
+    # Every hand-verified file publishes (2026-08-12 red team; 2026-10-11 red team of the phase miner's
+    # conference rows, written by merge_redteam_readouts.py). A new red team adds a file, never edits one.
+    import glob as _glob
+    verified = sorted(_glob.glob(os.path.join(HERE, "catalysts_out", "conference_presenters_VERIFIED_*.csv")))
+    for path, dated, gate in ([(PRES, "catalyst_date", "history")]
+                              + [(v, "conf_start", False) for v in verified]
+                              + [(MINED, "conf_start", True)]):
         if not os.path.exists(path):
             continue
         for r in csv.DictReader(open(path, encoding="utf-8-sig", errors="replace")):
@@ -250,10 +257,10 @@ def render(data, by_code, today):
             # 2026-09-27: the per-conference pages (/conference/AASLD, /conference/SABCS ...) had NO
             # internal link at all, so "aasld 2026 dates" (Bing, position 8.8) could only land on
             # this hub. Link the card to its page when the page exists.
-            + (f'<div><a href="/conference/{esc(c["code"])}" style="text-decoration:none">'
+            + (f'<div><a href="/conference/{esc(conf_slug(c["code"]))}" style="text-decoration:none">'
                f'<b class="lit" style="color:#eef4fc;font-size:15px">{esc(c["code"])}</b> '
                f'<span style="color:#dce7f7;font-size:14px">{esc(c["name"])} {esc(str(c["start"])[:4])}</span></a></div>'
-               if os.path.exists(os.path.join(SITE, "conference", c["code"], "index.html")) else
+               if os.path.exists(os.path.join(SITE, "conference", conf_slug(c["code"]), "index.html")) else
                f'<div><b class="lit" style="color:#eef4fc;font-size:15px">{esc(c["code"])}</b> '
                f'<span style="color:#dce7f7;font-size:14px">{esc(c["name"])}</span></div>')
             + f'<div class="lit" style="font-size:12.5px;color:var(--mut2)">'

@@ -69,6 +69,105 @@
    "source_url": "https://www.globenewswire.com/news-release/2026/07/27/3333379/0/en/MapLight-Therapeutics-Announces-Positive-Topline-Results-from-Phase-2-ZEPHYR-Trial-of-ML-007C-MA-in-Schizophrenia.html",
    "guided_window": "guided Aug 2026 (month)",
    "note": "Caught 38 days late by the 09-02e audit."
+  },
+  {
+   "id": "readout_dftx_2026-09-30",
+   "t": "DFTX",
+   "drug": "DT120",
+   "reported_date": "2026-09-14",
+   "outcome": "positive",
+   "summary": "Definium Therapeutics announced positive topline results from the Phase 3 Panorama study of DT120 ODT in generalized anxiety disorder on September 14, 2026: the study met its primary and all key secondary efficacy endpoints (8-K exhibit 99.1).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1813814/000110465926107275/tm2625365d1_ex99-1.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_evmn_2026-09-30",
+   "t": "EVMN",
+   "drug": "EVO756",
+   "reported_date": "2026-09-09",
+   "outcome": "negative",
+   "summary": "Evommune announced top-line results from the EVO756 Phase 2b trial in moderate-to-severe atopic dermatitis on September 9, 2026: the trial did not meet its primary endpoint (8-K exhibit 99.1).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/2044725/000119312526385430/evmn-ex99_1.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_gpcr_2026-09-30",
+   "t": "GPCR",
+   "drug": "ACCG-2671",
+   "reported_date": "2026-09-08",
+   "outcome": "positive",
+   "summary": "Structure Therapeutics reported clinical data across its oral amylin (ACCG-2671) and GLP-1 programs on September 8, 2026, describing the ACCG-2671 results as positive (8-K exhibit 99.1).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_immx_2026-09-30",
+   "t": "IMMX",
+   "drug": "NXC-201",
+   "reported_date": "2026-09-29",
+   "outcome": "positive",
+   "summary": "Immix Biopharma announced an interim update across all NEXICART-2 patients on September 29, 2026: an 89% complete response rate (8-K exhibit 99.1). Interim data, not a final readout.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1873835/000149315226044761/ex99-1.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_iron_2026-09-30",
+   "t": "IRON",
+   "drug": "DISC-3405",
+   "reported_date": "2026-09-10",
+   "outcome": "reported",
+   "summary": "Disc Medicine presented initial results from the RESTORE-PV Phase 2 trial of DISC-3405 in polycythemia vera at the SOHO Annual Meeting, announced September 10, 2026 (8-K exhibit 99.1). Initial results; outcome not characterised in the headline.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526387351/iron-ex99_1.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_kod_2026-09-30",
+   "t": "KOD",
+   "drug": "KSI-501",
+   "reported_date": "2026-09-28",
+   "outcome": "positive",
+   "summary": "Kodiak Sciences announced on September 28, 2026 that Zenkuda and tabirafusp-ted (KSI-501) met the primary endpoints in the pivotal DAYBREAK trial in wet AMD (8-K exhibit 99.1).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1468748/000119312526403481/d185059dex991.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_phvs_2026-09-30",
+   "t": "PHVS",
+   "drug": "deucrictibant",
+   "reported_date": "2026-09-08",
+   "outcome": "positive",
+   "summary": "Pharvaris announced positive topline data from the CHAPTER-3 pivotal study of deucrictibant XR for prophylaxis of HAE attacks on September 8, 2026: primary endpoint met, 83% attack-rate reduction versus placebo (6-K exhibit 99.1).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1830487/000119312526384339/phvs-ex99_1.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_tecx_2026-09-30",
+   "t": "TECX",
+   "drug": "TX2100",
+   "reported_date": "2026-09-29",
+   "outcome": "positive",
+   "summary": "Tectonic Therapeutic announced favorable Phase 1 safety, tolerability and PK results for TX2100 in hereditary hemorrhagic telangiectasia on September 29, 2026 (8-K exhibit 99.1).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526407823/d20857dex991.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
+  },
+  {
+   "id": "readout_alms_2026-09-30",
+   "t": "ALMS",
+   "drug": "envudeucitinib",
+   "reported_date": "2026-09-01",
+   "outcome": "reported",
+   "summary": "Alumis presented LUMUS Phase 2b topline results for envudeucitinib in moderate-to-severe systemic lupus erythematosus on September 1, 2026 (8-K exhibit 99.2, investor deck); the deck says key insights support a path to Phase 3 and does not state the primary endpoint result in its summary. This row's earlier label 'anifrolumab' was an extraction error.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1847367/000110465926104145/tm2624540d1_ex99-2.htm",
+   "guided_window": "Q3 2026",
+   "note": "red team 2026-10-11, EDGAR exhibit read"
   }
  ]
 }

@@ -112,7 +112,10 @@ def norm(name):
 # Keys are normalised (lowercase, legal suffixes stripped) — see norm().
 PARENT = {
     'glaxosmithkline':'GSK','glaxo smithkline':'GSK','viiv healthcare':'GSK',
-    'hoffmann la roche':'RHHBY','roche':'RHHBY','genentech':'RHHBY','chugai':'RHHBY',
+    'hoffmann la roche':'RHHBY','roche':'RHHBY','genentech':'RHHBY',
+    # Red team 2026-10-11 R4: Chugai is a separately listed company (Roche holds a majority); its
+    # trials are not Roche's readouts. Its US ADR is CHGCY.
+    'chugai':'CHGCY','chugai pharmaceutical':'CHGCY',
     'janssen research development':'JNJ','janssen':'JNJ','janssen biotech':'JNJ',
     'johnson johnson':'JNJ','johnson and johnson':'JNJ',
     'merck sharp dohme':'MRK','msd':'MRK','merck':'MRK',
@@ -181,21 +184,56 @@ def sec_ticker_index():
             idx[n] = v['ticker'].upper()
     return idx
 
+# Red team 2026-10-11 R4: a sponsor-name FRAGMENT is not an identity. "Sun Pharmaceutical
+# Industries, Inc." resolved through an SEC title beginning "Sun " (a different registrant), and 158
+# of 276 mapped tickers failed a sponsor-word-in-registrant-name check. A fuzzy (prefix) hit is now
+# accepted only when every DISTINCTIVE token of the shorter name appears in the longer one and at
+# least one of those tokens is 4+ characters. Generic industry words do not count as evidence.
+_GENERIC_TOK = {
+    'pharmaceuticals', 'pharmaceutical', 'pharma', 'therapeutics', 'therapeutic', 'biosciences',
+    'bioscience', 'bio', 'biotech', 'biotechnology', 'biotherapeutics', 'biopharma', 'biopharmaceuticals',
+    'biopharmaceutical', 'medical', 'medicines', 'medicine', 'sciences', 'science', 'health',
+    'healthcare', 'research', 'development', 'laboratories', 'laboratory', 'labs', 'lab', 'group',
+    'holdings', 'holding', 'international', 'global', 'usa', 'us', 'america', 'american', 'europe',
+    'limited', 'company', 'co', 'corporation', 'corp', 'inc', 'llc', 'ltd', 'plc', 'sa', 'ag', 'nv',
+    'the', 'and', 'of', 'industries', 'products', 'technologies', 'technology', 'systems', 'oncology',
+    'genetics', 'genomics', 'cell', 'gene', 'clinical', 'trust', 'partners', 'capital', 'fund',
+}
+
+def _distinct_tokens(n):
+    return {t for t in str(n or '').split() if t and t not in _GENERIC_TOK}
+
+def fuzzy_name_ok(sponsor_norm, registrant_norm):
+    """True when the registrant can honestly be said to BE the sponsor (or its parent), judged on
+    distinctive tokens only. Exact equality always passes."""
+    a, b = str(sponsor_norm or ''), str(registrant_norm or '')
+    if not a or not b:
+        return False
+    if a == b:
+        return True
+    ta, tb = _distinct_tokens(a), _distinct_tokens(b)
+    short, long_ = (ta, tb) if len(a) <= len(b) else (tb, ta)
+    if not short or not short <= long_:
+        return False
+    return max(len(t) for t in short) >= 4
+
 def resolve_ticker(sponsor, idx):
     n = norm(sponsor)
     if not n: return ''
-    # 1) curated parent/ADR map first — it is authoritative and beats a fuzzy hit
+    # 1) curated parent/ADR map first — it is authoritative and beats a fuzzy hit.
+    #    Longest key first: "merck kgaa" must beat "merck" (MRK) for Merck KGaA / EMD Serono.
     if n in PARENT: return PARENT[n]
-    for k, v in PARENT.items():
+    for k in sorted(PARENT, key=len, reverse=True):
         if n.startswith(k + ' ') or n == k:
-            return v
+            return PARENT[k]
     # 2) exact SEC title match
     if n in idx: return idx[n]
     # a sponsor is often a subsidiary: "Genentech, Inc." under "Roche". Try prefix containment,
-    # longest match first so "bristol myers squibb" beats "bristol".
+    # longest match first so "bristol myers squibb" beats "bristol"; then the distinctive-token test.
     cands = [(k, v) for k, v in idx.items() if k and (n.startswith(k + ' ') or k.startswith(n + ' '))]
-    if cands:
-        return sorted(cands, key=lambda kv: -len(kv[0]))[0][1]
+    for k, v in sorted(cands, key=lambda kv: -len(kv[0])):
+        if fuzzy_name_ok(n, k):
+            return v
     return ''
 
 # ---------------------------------------------------------------- CT.gov (paginated, no caps)
@@ -491,6 +529,98 @@ def trial_name(ctx, date_pos=None):
         return min(after, key=lambda c: c[0])[2]
     return ''            # unlabelled. Better an honest blank than a confident wrong trial.
 
+# ------------------------------------------------------------------------------------------
+# Red team 2026-10-11 R1: every one of the 237 company-guidance rows arrived with an EMPTY drug,
+# phase and indication, and 178 with no trial name. "KPTI, 2026-H2, readout, from an 8-K" cannot
+# go on a page. The program is in the same window as the date; take the NEAREST one, preferring
+# what precedes the date (as trial_name does). A row that names neither a drug nor a trial is
+# rejected to a sidecar, never emitted.
+_INN_SUFFIX = (r'(?:mab|nib|ciclib|lisib|limus|siran|ersen|rsen|cept|parin|platin|taxel|rubicin|'
+               r'tocin|leukin|poetin|pegol|lutide|glutide|gliptin|gliflozin|sartan|statin|prazole|'
+               r'vastatin|afenib|tinib|zumab|ximab|umab|degib|sertib|rafenib|metinib|bulin|zomib|'
+               r'tercept|tinel|parib|vudine|buvir|previr|asvir|navir|tegravir|trelvir|citabine|'
+               r'nidazole|fovir|mivir|stigmine|triptan|setron|lukast|terol|xaban|gatran|relin|'
+               r'pressin|calcet|semide|dipine|olol|pril|azepam|zolam|oxetine|faxine|pramine|'
+               r'apine|idone|peridol|sulide|toin|racetam|gabine|bital|orphan|cel|gene|vec|'
+               r'bart|tide)')
+_DRUG_CODE = re.compile(r'(?<![A-Za-z0-9-])([A-Z]{2,6}[- ]?\d{2,5}[A-Za-z]?(?:-\d{1,3})?)\b')
+_DRUG_INN = re.compile(r'\b([A-Za-z][a-z]{5,}' + _INN_SUFFIX + r')\b')
+_DRUG_STOP_WORDS = {
+    'peptide', 'polypeptide', 'nucleotide', 'oligonucleotide', 'candidate', 'precept', 'concept',
+    'intercept', 'parallel', 'protocol', 'accept', 'except', 'receipt', 'release', 'increase',
+    'decrease', 'disease', 'indicate', 'estimate', 'generate', 'separate', 'operate', 'corporate',
+    'template', 'mandate', 'update', 'cancel', 'excel', 'parcel', 'pathogene', 'hygiene', 'convene',
+    'intervene', 'outside', 'provide', 'decide', 'reside', 'worldwide', 'nationwide', 'guide',
+    'inside', 'beside', 'aside', 'divide', 'collide', 'coincide', 'override', 'subside', 'pesticide',
+    'carcinoma', 'cytokine', 'vaccine', 'medicine', 'baseline', 'pipeline', 'guideline', 'timeline',
+    'online', 'offline', 'routine', 'genuine', 'discipline', 'endocrine', 'creatine', 'deadline',
+    'tumour', 'tumor', 'nicotine', 'protein', 'casein', 'western', 'eastern', 'pattern', 'concern',
+    'govern', 'modern', 'lantern', 'cistern', 'southern', 'northern', 'extern', 'intern', 'stubborn',
+    'reversal', 'universal', 'proposal', 'disposal', 'appraisal', 'arousal', 'rehearsal',
+}
+_DRUG_CODE_STOP = re.compile(r'^(?:NCT|EX|ICD|COVID|SARS|ASCO|ASH|AACR|ESMO|AHA|ACC|ADA|AAN|ACR|'
+                             r'SITC|CTAD|SABCS|AASLD|EASL|ERS|ATS|ISTH|EHA|ESC|ASN|ENA|FDA|EMA|'
+                             r'ISO|GAAP|CUSIP|FORM|ITEM|RULE|SECTION|PHASE|PART|TABLE|NOTE|PAGE|'
+                             r'FY|Q|H|CY|USD|EUR|GBP|IND|NDA|BLA|MAA|PDUFA|ORR|PFS|DFS|CR|PR|'
+                             r'JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|SEPT|OCT|NOV|DEC|WEEK|DAY|MONTH|YEAR)', re.I)
+_PHASE_RX = re.compile(r'\b[Pp]hase\s*([1-3][ab]?(?:\s*/\s*[1-3][ab]?)?|I{1,3}[ab]?(?:/I{1,3}[ab]?)?)\b')
+_INDICATION_RX = [
+    re.compile(r'(?:treatment of|patients with|participants with|adults with|children with|'
+               r'subjects with|individuals with|people with|people living with)\s+'
+               r'([A-Za-z][^,.;:()]{4,80}?)(?=\s*(?:[,.;:(]|\band\b|\bin\b|\bwho\b|\bwith\b|\bat\b|'
+               r'\bfor\b|\bthat\b|\bwhich\b|\bfollowing\b|\bafter\b|\bexpected\b|\banticipated\b|'
+               r'\bis\b|\bare\b|\bby\b|\bon\b|\bwill\b|\bhas\b|\bhave\b|\bremains?\b|\bwas\b|\bwere\b|\d|$))', re.I),
+    re.compile(r'\b(?:in|for)\s+((?:moderate|mild|severe|advanced|metastatic|relapsed|refractory|'
+               r'first-line|second-line|third-line|early|late|chronic|acute|newly diagnosed|'
+               r'treatment-na(?:i|ï)ve|previously treated|locally advanced|unresectable|'
+               r'recurrent|high-risk|low-risk|pediatric|paediatric|adult)[^,.;:()]{3,70}?)'
+               r'(?=\s*(?:[,.;:(]|\band\b|\bin\b|\bwho\b|\bwith\b|\bat\b|\bfor\b|\bthat\b|\bexpected\b|'
+               r'\bis\b|\bare\b|\bby\b|\bon\b|\bwill\b|\bhas\b|\bhave\b|\bremains?\b|\bwas\b|\bwere\b|\d|$))', re.I),
+]
+
+def _nearest(cands, date_pos, reach_before=260, reach_after=80):
+    """cands: (start, end, text). The last candidate before the date within reach wins; a
+    following one is a last resort."""
+    if not cands:
+        return ''
+    if date_pos is None:
+        return cands[0][2]
+    before = [c for c in cands if c[1] <= date_pos and (date_pos - c[1]) <= reach_before]
+    if before:
+        return max(before, key=lambda c: c[1])[2]
+    after = [c for c in cands if c[0] > date_pos and (c[0] - date_pos) <= reach_after]
+    if after:
+        return min(after, key=lambda c: c[0])[2]
+    return ''
+
+def guidance_program(ctx, date_pos=None):
+    """(drug, phase, indication) named in the same window as a guidance date, or '' each."""
+    ctx = ctx or ''
+    cands = []
+    for m in _DRUG_CODE.finditer(ctx):
+        tok = m.group(1)
+        if _DRUG_CODE_STOP.match(tok) or re.search(r'20[0-9]{2}$', tok) or re.search(r'\b(?:19|20)\d\d\b', tok):
+            continue
+        cands.append((m.start(1), m.end(1), tok))
+    for m in _DRUG_INN.finditer(ctx):
+        tok = m.group(1)
+        if tok.lower() in _DRUG_STOP_WORDS or tok[0].isupper() and tok.isupper():
+            continue
+        cands.append((m.start(1), m.end(1), tok))
+    drug = _nearest(sorted(cands), date_pos)
+    ph = _nearest([(m.start(1), m.end(1), m.group(1).replace(' ', '')) for m in _PHASE_RX.finditer(ctx)],
+                  date_pos, reach_before=300, reach_after=120)
+    ind = ''
+    for rx in _INDICATION_RX:
+        ind = _nearest([(m.start(1), m.end(1), re.sub(r'\s+', ' ', m.group(1)).strip())
+                        for m in rx.finditer(ctx)
+                        if len(m.group(1).strip()) >= 5 and not re.search(r'\d', m.group(1))
+                        and m.group(1).strip().lower() not in ('adults', 'patients', 'participants', 'subjects', 'children')],
+                       date_pos, reach_before=320, reach_after=120)
+        if ind:
+            break
+    return drug, ph, ind
+
 # ...and the window must actually be talking about a CLINICAL TRIAL.
 CLINICAL_ANCHOR = re.compile(
     r'(?:phase\s*[123]\b|phase\s*i{1,3}\b|top-?line|read-?out|primary\s+endpoint|pivotal|'
@@ -569,14 +699,31 @@ _PEDI    = re.compile(r'pediatric|paediatric|in children|adolescents?\b', re.I)
 _PEDI_PK = re.compile(r'pharmacokinetic|safety and tolerab|\bPK\b|dose[- ]?finding|'
                       r'to (?:evaluate|assess|characterize) (?:the )?safety', re.I)
 
-def is_catalyst(title):
+# Red team 2026-10-11 R5: generic-equivalence trials (a cream "comparing" itself to a branded
+# reference and vehicle), PK-only and healthy-volunteer titles reach a completion date and are
+# not readouts anyone trades or cites.
+_EQUIVALENCE = re.compile(
+    r'(?:therapeutic equivalen|generic|\bcompar(?:ing|ison of)\b[^.]{0,120}(?:®|™|\(R\)|\(TM\))'
+    r'[^.]{0,120}(?:placebo|vehicle)|pharmacokinetic[- ]only|\bPK\b[^.]{0,30}\bonly\b|'
+    r'in healthy (?:adult |male |female |)(?:volunteers|subjects|participants))', re.I)
+_PHASE1_ONLY = re.compile(r'^(?:PHASE1|EARLY_PHASE1)$', re.I)
+
+def is_catalyst(title, phase='', enrollment=None, sponsor_class='INDUSTRY'):
     """False for studies that reach a completion date but are never a topline stock catalyst:
     PK/plumbing, extension/OLE, first-in-human safety, platform substudies, and PK-only pediatric
     or early-dose studies. Guards protect real efficacy readouts (dose-ranging WITH efficacy, and
-    pediatric EFFICACY, both survive)."""
+    pediatric EFFICACY, both survive). R5 (2026-10-11): a Phase 1-only trial counts only when it
+    is industry-sponsored AND enrols 20 or more (a company guidance match re-admits it upstream)."""
     t = str(title or '')
-    if NON_CATALYST.search(t) or NON_READOUT_TYPE.search(t):
+    if NON_CATALYST.search(t) or NON_READOUT_TYPE.search(t) or _EQUIVALENCE.search(t):
         return False
+    if _PHASE1_ONLY.match(str(phase or '').strip()):
+        try:
+            n = int(enrollment) if enrollment not in (None, '') else 0
+        except Exception:
+            n = 0
+        if str(sponsor_class or '').upper() != 'INDUSTRY' or n < 20:
+            return False
     if _DOSE_EARLY.search(t) and not _EFFICACY.search(t):
         return False
     if _PEDI.search(t) and _PEDI_PK.search(t):
@@ -609,6 +756,23 @@ def period_bounds(iso):
         d0 = dt.date.fromisoformat(str(iso)[:10]); return d0, d0
     except Exception:
         return None, None
+
+
+_CONF_WINDOWS = None
+def conference_window_end(conf, start_iso):
+    """The organiser-verified END day of a meeting from conferences.json, when its code and
+    start day match; '' otherwise. Never projected."""
+    global _CONF_WINDOWS
+    if _CONF_WINDOWS is None:
+        _CONF_WINDOWS = {}
+        try:
+            j = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conferences.json'),
+                               encoding='utf-8'))
+            for r in j.get('conferences', []):
+                _CONF_WINDOWS[(str(r.get('code') or '').upper(), str(r.get('start') or ''))] = str(r.get('end') or '')
+        except Exception:
+            pass
+    return _CONF_WINDOWS.get((str(conf or '').upper(), str(start_iso or '')[:10]), '')
 
 
 def sec_guidance_readouts(ua, since, until, max_docs=1200, workers=8, lookback_days=450):
@@ -664,7 +828,7 @@ def sec_guidance_readouts(ua, since, until, max_docs=1200, workers=8, lookback_d
             filed = dt.date.fromisoformat(m["filed"])
         except Exception:
             filed = None
-        out, subs, seen = [], [], set()
+        out, subs, seen, unnamed = [], [], set(), []
         for rx in LEADS:
             for mt in rx.finditer(txt):
                 raw = mt.group(1)
@@ -704,10 +868,17 @@ def sec_guidance_readouts(ua, since, until, max_docs=1200, workers=8, lookback_d
                 if iso in seen: continue
                 seen.add(iso)
                 _dpos = mt.start(1) - max(0, mt.start(1) - 300)   # date's offset inside ctx
+                _tn = trial_name(ctx, _dpos)
+                _drug, _phase, _ind = guidance_program(ctx, _dpos)
+                # R1 (2026-10-11): no drug AND no trial name = no program = not publishable.
+                if not _drug and not _tn:
+                    unnamed.append(dict(cik=m["cik"], form=m["form"], filed=m["filed"], date=iso,
+                                        source_url=url, window=_re_.sub(r"\s+", " ", ctx)[:400]))
+                    continue
                 row = dict(nct_id="", sponsor="", title=_re_.sub(r"\s+", " ", ctx)[:400],
                     # the readout's identity. Anchored on the DATE's offset inside ctx, so a
                     # paragraph naming three trials attributes the date to the right one.
-                    trial=trial_name(ctx, _dpos),
+                    trial=_tn,
                     # Carry the raw window and the date's position in it, so the end-of-run
                     # self-check can RE-RUN the real attribution instead of pattern-matching
                     # around it. Token-presence checks cannot catch an APGE-class error: that
@@ -715,7 +886,7 @@ def sec_guidance_readouts(ua, since, until, max_docs=1200, workers=8, lookback_d
                     # word AND lacks readout word" test scores it clean while the date is still
                     # attached to the wrong milestone. Only re-deciding can catch a misdecision.
                     _ctx=ctx, _dpos=_dpos,
-                    phase="", status="", pcd=iso, pcd_precision=prec, indication="", drug="",
+                    phase=_phase, status="", pcd=iso, pcd_precision=prec, indication=_ind, drug=_drug,
                     enrollment=None, cik=m["cik"], form=m["form"], filed=m["filed"],
                     catalyst_date=iso, date_precision=prec, date_basis="company_guidance",
                     milestone='readout',      # attribution verified: nearest milestone word wins
@@ -737,14 +908,19 @@ def sec_guidance_readouts(ua, since, until, max_docs=1200, workers=8, lookback_d
                 # threw the other three away. Cap it, don't cripple it.
                 if len(out) >= 6: break
             if out or subs: break
-        return out, subs
+        return out, subs, unnamed
 
-    rows, submissions = [], []
+    rows, submissions, unnamed_all = [], [], []
     with _cf.ThreadPoolExecutor(workers) as ex:
-        for r, s in ex.map(scan, list(docs.items())):
-            rows += r; submissions += s
+        for r, s, u in ex.map(scan, list(docs.items())):
+            rows += r; submissions += s; unnamed_all += u
     print(f"  [fts] {len(docs)} docs scanned -> {len(rows)} guidance dates "
-          f"({len(submissions)} regulatory submissions diverted — not readouts)")
+          f"({len(submissions)} regulatory submissions diverted — not readouts; "
+          f"{len(unnamed_all)} rejected: no drug and no trial named in the window)")
+    if unnamed_all:
+        _uf = f'ro_guidance_unnamed_{dt.datetime.now().strftime("%H%M%S")}.csv'
+        pd.DataFrame(unnamed_all).to_csv(_uf, index=False, quoting=__import__('csv').QUOTE_ALL)
+        print(f'  [fts] unnamed guidance windows written to {_uf} (R1: a date with no program is not a row)')
     if submissions:
         _sf = f'ro_submissions_{dt.datetime.now().strftime("%H%M%S")}.csv'
         pd.DataFrame(submissions).to_csv(_sf, index=False, quoting=__import__('csv').QUOTE_ALL)
@@ -947,7 +1123,11 @@ def enrich_from_filings(d, key, workers=8, results_lookback=170):
         print(f'  [enrich] cannot import ({e}) — skipping filing enrichment')
         return d, 0, 0, 0
 
-    m = (d.date_basis == 'ctgov_pcd') & d.imminence.isin(['IMMINENT', 'NEAR', 'OVERDUE'])
+    # Red team 2026-10-11 (QTTB): a guidance row is ALSO killable. Q32 Bio's filings said "mid-2026"
+    # for SIGNAL-AA Part B and the topline was reported on 2026-07-13; the miner would have listed it
+    # as upcoming because this pass only looked at registry rows. Guidance rows now carry a drug (R1)
+    # and so can be matched against the sponsor's own results headline.
+    m = d.date_basis.isin(['ctgov_pcd', 'company_guidance']) & d.imminence.isin(['IMMINENT', 'NEAR', 'OVERDUE'])
     sub = d[m & d.ticker.astype(str).str.len().gt(0)].copy()
     if not len(sub):
         print('  [enrich] no imminent/near/overdue ctgov rows to enrich')
@@ -1122,15 +1302,20 @@ def conference_readout_dates(tickers, key, when_from, when_to, limit=40, workers
             seen.add(k)
 
             ptype = CP.detect_pres_type(blob) or ''
+            # R1/R6 (2026-10-11): name the program and the meeting's END day (conferences.json,
+            # organiser-verified). The first day is real; the session slot is not known here.
+            _cdrug, _cphase, _cind = guidance_program(blob[:800])
+            _wend = conference_window_end(conf, iso)
             out.append(dict(
                 ticker=tk, nct_id='', sponsor='', title=blob[:400],
+                catalyst_type='ConferencePresentation', window_end=_wend,
                 # trial_name on the FULL blob was the worst offender: _TRIAL_A/_TRIAL_B are
                 # alternation-heavy and were being run over an entire document. Give it the
                 # headline region, which is where the trial is actually named.
-                trial=trial_name(blob[:600]), phase='', status='',
-                pcd=iso, pcd_precision=prec, indication='', drug='', enrollment=None,
+                trial=trial_name(blob[:600]), phase=_cphase, status='',
+                pcd=iso, pcd_precision=prec, indication=_cind, drug=_cdrug, enrollment=None,
                 cik='', form='PR', filed=pub,
-                catalyst_date=iso, date_precision=prec, date_basis='conference_schedule',
+                catalyst_date=iso, date_precision=('window' if _wend else prec), date_basis='conference_schedule',
                 milestone='readout',
                 conference=conf, pres_type=ptype,
                 # a scheduled presentation at a dated meeting. Slightly under a company naming
@@ -1264,7 +1449,8 @@ def main():
         c = pd.DataFrame(rows).drop_duplicates(subset=['nct_id'])
 
         # (i) drop PK/plumbing — not catalysts
-        c['is_catalyst'] = c.title.map(is_catalyst)
+        c['is_catalyst'] = [is_catalyst(t, p, e, a.sponsor_class or 'INDUSTRY')
+                            for t, p, e in zip(c.title, c.phase.fillna(''), c.enrollment)]
         n_pk = int((~c.is_catalyst).sum())
         if not a.keep_pk:
             c = c[c.is_catalyst]
@@ -1290,8 +1476,12 @@ def main():
 
         STAGE_CONF = {'enrollment_closed': 0.60, 'completed_pending': 0.70, 'still_enrolling': 0.20}
         c['catalyst_type']  = 'PhaseReadout'
-        c['catalyst_date']  = c.pcd
-        c['date_precision'] = c.pcd_precision
+        # Red team 2026-10-11 R3: a registry primary-completion date is NOT a readout day, whatever
+        # precision the registry gives it (101 of 102 day-dated rows in the 10-11 run came from an
+        # ESTIMATED completion date). Every ctgov_pcd row is emitted at MONTH precision; the
+        # registry's own day survives in `pcd` for anyone who wants it.
+        c['catalyst_date']  = c.pcd.astype(str).str.slice(0, 7)
+        c['date_precision'] = 'month'
         c['date_basis']     = 'ctgov_pcd'
         c['confidence']     = c.readout_stage.map(STAGE_CONF).fillna(0.40)
         c['milestone']      = 'readout'
@@ -1491,9 +1681,17 @@ def main():
         if not s:
             return None
         p0, p1 = period_bounds(s)
-        # a window's imminence is its NEAR edge (a "2H26" readout could be as soon as July)
-        anchor = p0 or p1
-        return (anchor - TODAY).days if anchor else None
+        # a window's imminence is its NEAR edge (a "2H26" readout could be as soon as July).
+        # Red team 2026-10-11 R2: a window that CONTAINS today is the most imminent kind there is.
+        # The near edge of "2026-H2" is July 1; on October 11 that is -102 days, and 129 of the
+        # 237 guidance rows (every 2026-H2 and 2026-Q4) were tiered PAST and would have been
+        # dropped. Countdown is max(0, near_edge - today) while the FAR edge is still ahead; a
+        # negative number means the whole window has ended.
+        if not p0:
+            return None
+        if p1 and p1 < TODAY:
+            return (p1 - TODAY).days
+        return max(0, (p0 - TODAY).days)
     d['days_to_readout'] = d.apply(_days_to, axis=1)
 
     def _tier(row):
@@ -1501,7 +1699,7 @@ def main():
             return 'OVERDUE'                         # data locked, topline not yet posted
         n = row.get('days_to_readout')
         if n is None:                return 'UNDATED'
-        if n < 0:                    return 'PAST'
+        if n < 0:                    return 'PAST'   # only when the window's FAR edge has passed
         if n <= 45:                  return 'IMMINENT'
         if n <= 90:                  return 'NEAR'
         if n <= 180:                 return 'SCHEDULED'
@@ -1518,7 +1716,7 @@ def main():
     # the calendar. So it runs on ANY run that has an FMP key, not just --pr. Opt out with
     # --no-enrich. It needs ctgov rows (imminence tiers), so it is skipped on --sec-only.
     key = os.environ.get('FMP_API_KEY')
-    if not a.no_enrich and key and (d.date_basis == 'ctgov_pcd').any():
+    if not a.no_enrich and key and d.date_basis.isin(['ctgov_pcd', 'company_guidance']).any():
         print('\n[5] FILING ENRICHMENT — company PRs are where readout dates actually live')
         d, n_kill, n_up, n_flag = enrich_from_filings(d, key)
         # a readout that already happened must come off the forward feed. Keep it in a sidecar
@@ -1554,7 +1752,7 @@ def main():
         d['redistribute'] = True
     d['redistribute'] = d['redistribute'].fillna(True)
 
-    keep = ['ticker','catalyst_type','catalyst_date','date_precision','date_basis','confidence',
+    keep = ['ticker','catalyst_type','catalyst_date','date_precision','window_end','date_basis','confidence',
             'imminence','days_to_readout','redistribute','readout_stage','data_lock_date','milestone',
             'trial','conference','pres_type','phase','status','drug','indication','nct_id','sponsor',
             'enrollment','title','source','source_url','form','filed','note','retrieved_at']

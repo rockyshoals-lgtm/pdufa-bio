@@ -48,17 +48,23 @@ def main():
                   encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
 
-    awaiting = set()
+    awaiting, closed = set(), set()
     for r in rows:
         if r.get("type") != "PDUFA" or r.get("dp") != "day":
             continue
-        if str(r.get("st") or "") in ("Decided",):
-            continue
+        # Audit 2026-10-11: a WITHDRAWN application (MRK I-DXd, BLA withdrawn 2026-09-25) is not awaiting
+        # a decision when its goal date passes; the API never calls a withdrawn row Awaiting and neither
+        # may the calendar. Decided and Withdrawn are both closed states (site_windows.CLOSED_STATES).
+        st_ = str(r.get("st") or "").lower()
         d = str(r.get("d") or "")
+        if st_ in ("decided", "withdrawn"):
+            if d and d < TODAY:
+                closed.add((str(r.get("t") or "").upper(), d))
+            continue
         if d and d < TODAY:
             awaiting.add((str(r.get("t") or "").upper(), d))
 
-    if not awaiting:
+    if not awaiting and not closed:
         print("no past-dated undecided PDUFA rows; nothing to mark")
         return 0
     print("awaiting: " + ", ".join(f"{t} {d}" for t, d in sorted(awaiting)))
@@ -81,6 +87,10 @@ def main():
         doc = ROW.sub(lambda m: (m.group(1) + m.group(4) + " " + BADGE + m.group(5))
                       if ((m.group(2), m.group(3)) in awaiting
                           and "awaiting" not in m.group(4).lower())
+                      else m.group(0), doc)
+        # a closed row (withdrawn after its goal date passed) must not wear the badge
+        doc = ROW.sub(lambda m: (m.group(1) + m.group(4).replace(" " + BADGE, "").replace(BADGE, "") + m.group(5))
+                      if ((m.group(2), m.group(3)) in closed and BADGE in m.group(4))
                       else m.group(0), doc)
         n = doc.count('class="awaiting"') - orig.count('class="awaiting"')
         if doc != orig:

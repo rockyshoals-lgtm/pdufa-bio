@@ -140,6 +140,21 @@ def human(iso):
     return f"{MONTHS[m - 1]} {d}, {y}"
 
 
+def built_eastern_label():
+    """'Oct 11, 2026 5:05 PM ET' for the data rebuild time (this script runs at the end of the chain).
+    Audit 2026-10-11 section 1: the static fallback read "Data as of the last rebuild", a placeholder,
+    not a time; every reader without script (and every AI crawler) saw it. The daily refresh commit
+    already rewrites ~1,180 pages, so baking the real Eastern time costs nothing it was not already
+    costing; the sitemap hash excludes this block, so lastmod is unaffected. RULE 1: Eastern, named."""
+    try:
+        from zoneinfo import ZoneInfo
+        x = dt.datetime.now(dt.timezone.utc).astimezone(ZoneInfo("America/New_York"))
+        h = x.hour % 12 or 12
+        return f"{x.strftime('%b')} {x.day}, {x.year} {h}:{x.minute:02d} {'AM' if x.hour < 12 else 'PM'} ET"
+    except Exception:
+        return _eastern_today().strftime("%b %d, %Y").replace(" 0", " ") + " ET"
+
+
 def block(date_iso):
     """Per-page markup. The date is baked because a crawler has to see it.
 
@@ -165,7 +180,7 @@ def block(date_iso):
         f'<span style="color:var(--mut2)">·</span>'
         f'<span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> '
         f'<a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span>'
-        f'<span style="color:var(--mut2)">·</span><span data-fresh-built style="color:var(--mut2)" title="when the dataset was last rebuilt (Eastern)">Data as of the last rebuild</span>'
+        f'<span style="color:var(--mut2)">·</span><span data-fresh-built style="color:var(--mut2)" title="when the dataset was last rebuilt (Eastern)">Data as of {built_eastern_label()}</span>'
         f'</div>{SCRIPT}{E}')
 
 

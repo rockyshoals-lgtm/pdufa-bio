@@ -66,7 +66,10 @@ def main():
             "d": c["start"], "dp": "day",
             "name": c["name"], "type": "Conference", "ta": c.get("focus", ""),
             "cap": "", "st": status(c),
-            "url": "/conferences",
+            # Audit 2026-10-11 order 4: a meeting with its own page is linked to it, not to the hub.
+            "url": ("/conference/" + BC.conf_slug(c["code"])
+                    if os.path.exists(os.path.join(SITE, "conference", BC.conf_slug(c["code"]), "index.html"))
+                    else "/conferences"),
             "ua": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
             "_d": {
                 "end": c["end"],

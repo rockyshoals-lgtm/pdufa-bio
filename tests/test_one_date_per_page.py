@@ -43,8 +43,16 @@ def to_date(s):
     return dt.date(int(year), mi, int(day)) if mi else None
 
 
+# Audit 2026-10-11 order 5: the freshness strip's "Data as of {Eastern rebuild time}" is baked into the
+# static text (it was a placeholder). It names a DIFFERENT fact from "Page updated {content date}": when
+# the dataset was rebuilt, not when this page's content changed. Two named facts are not two dates for
+# one thing, so that span is excluded here; every other stamp on a page must still agree.
+BUILT_SPAN = re.compile(r'<span data-fresh-built[^>]*>.*?</span>', re.S)
+
+
 def stamps(doc):
     out = set()
+    doc = BUILT_SPAN.sub("", doc)
     for m in STAMP.finditer(doc):
         d = to_date(m.group(1))
         if d:
