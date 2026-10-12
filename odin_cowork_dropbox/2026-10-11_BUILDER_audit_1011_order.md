@@ -88,6 +88,12 @@ Outcome words are the headlines' own; no result is characterised beyond them.
 - 13 new Guided rows tagged with a therapeutic area from the filing sentence (`_readout_ta_manual.json`), keeping forward-readout TA coverage at 73%.
 - `test_one_date_per_page` excludes the `data-fresh-built` span: "Data as of {rebuild time}" and "Page updated {content date}" are two named facts, not two dates for one thing.
 
+## 6c. Live, and one self-inflicted incident
+
+Pushed `c64f7a09d9` 18:08 Pacific = 21:08 Eastern; CI run 38190708977 green; its refresh commit `321d7b822c` ran the sponsor-release search with FMP: on /readouts 79 passed rows read "No topline found as of 2026-10-11", 6 "Sponsor release {date}", 2 still unchecked. That pass exposed a bug in the lede counter (the resolution's own date was read as the row's date, so 79 passed rows were counted as "expected"); fixed in `build_hub_lede.py` and the guard.
+
+**Incident.** The fix commit `2394d10ef9` was made after a `pull --rebase` with autostash; the stash pop left git conflict markers inside `/readouts` and `/` and I committed and pushed them without checking (the lede guard passed because the lede was regenerated against the doubled page). Vercel served the doubled /readouts (630 rows, markers visible) for about four minutes, 18:31 to 18:35 Pacific. Restored CI's pages, regenerated, pushed `4d3e6cfe59`, cancelled the CI run that had started from the bad commit and dispatched a fresh one (38191737944). Live now: 315 rows, 0 markers, lede "206 expected, 109 passed". Rule added for myself: after any autostash pull, `git grep -l "^=======$"` before committing; the commit batch files now do it.
+
 ## 7. One correction to my own 10-11 SEO note
 Action 3 there said 1,299 pages share one build-minute `modified_time`. The mechanism is already content-change based (`build_date_modified.py` reads `_sitemap_lastmod.json`); the shared stamps come from pages whose content did change on 10-10 (normaliser sweeps). The useful action is to stop sweeps rewriting unchanged content, not to change the stamp. Noted, not actioned.
 
