@@ -48,6 +48,7 @@ def _readouts_ahead(frags):
     n = 0
     for fr in frags:
         t = html.unescape(re.sub(r"<[^>]+>", " ", fr))
+        t = re.sub(r"(?:as of|Sponsor release|ClinicalTrials\.gov)\s+\d{4}-\d{2}-\d{2}", "", t, flags=re.I)
         d = _row_month(t)
         if not d or d >= cur:
             n += 1

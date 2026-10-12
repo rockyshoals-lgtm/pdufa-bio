@@ -56,6 +56,38 @@
    "approved": 309,
    "unapproved": 149,
    "snapshot": null
+  },
+  {
+   "checked": "2026-10-04",
+   "last_updated": "2026-08-13",
+   "total": 458,
+   "approved": 309,
+   "unapproved": 149,
+   "snapshot": null
+  },
+  {
+   "checked": "2026-10-08",
+   "last_updated": "2026-08-13",
+   "total": 458,
+   "approved": 309,
+   "unapproved": 149,
+   "snapshot": null
+  },
+  {
+   "checked": "2026-10-10",
+   "last_updated": "2026-08-13",
+   "total": 458,
+   "approved": 309,
+   "unapproved": 149,
+   "snapshot": null
+  },
+  {
+   "checked": "2026-10-11",
+   "last_updated": "2026-08-13",
+   "total": 458,
+   "approved": 309,
+   "unapproved": 149,
+   "snapshot": null
   }
  ]
 }
