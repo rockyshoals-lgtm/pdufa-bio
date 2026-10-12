@@ -28,7 +28,11 @@ import re
 import sys
 
 SITE = "pdufa_site_src"
-TODAY = dt.date.today().isoformat()
+# RULE 1 (2026-10-12): a goal date passes at midnight EASTERN. The runner's clock is UTC, so the
+# 00:00Z schedule called a 10-10 goal date 'passed' at 20:11 ET on 10-10.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from site_dates import eastern_today as _et
+TODAY = _et().isoformat()
 ROW = re.compile(r'<a class="row"[^>]*>\s*<div class="t">([A-Z]{1,6}) (?:&middot;|·) '
                  r'(\d{4}-\d{2}-\d{2})(.*?)</div>', re.S)
 

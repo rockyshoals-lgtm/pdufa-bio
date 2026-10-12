@@ -31,7 +31,11 @@ except Exception:
     pass
 
 SITE = "pdufa_site_src"
-TODAY = dt.date.today().isoformat()
+# RULE 1 (2026-10-12): a goal date passes at midnight EASTERN. The runner's clock is UTC, so the
+# 00:00Z schedule called a 10-10 goal date 'passed' at 20:11 ET on 10-10.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from site_dates import eastern_today as _et
+TODAY = _et().isoformat()
 BADGE = ('<span class="awaiting" style="color:#e3ba5e;font-weight:700" '
          'title="The PDUFA goal date has passed and no decision has been announced">'
          'Awaiting</span>')
