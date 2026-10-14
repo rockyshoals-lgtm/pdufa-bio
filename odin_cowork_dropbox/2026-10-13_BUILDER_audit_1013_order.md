@@ -39,6 +39,14 @@ One page each. `sync_event_urls.py` keeps the partner merge for the shared **cal
 4. After the deploy: David opens Bing Webmaster → URL Inspection → "Request indexing" for `/fda-decision/RHHBY-2026-10-15` (the slug the publisher prints) and `/fda-decisions-today`. The prioritised batch (order 2) submits both automatically in the same run, but the console request is the only path that beats the queue.
 5. Target: decision page live within 60 minutes of the record. Not promised: the record's own timing.
 
+## 6a. Live, and what the first ordered CI run showed
+
+Pushed `8381e5497f` 21:52 Pacific = 00:52 Eastern (Oct 14); CI run 38506884875 green; live at 00:39 Eastern... build `8381e5497`: `/fda-decisions-today` "published today, October 13, 2026" with `as_of_eastern` 2026-10-13; `/pdufa/IRD-phentolamine-ophthalmic` titled "IRD / VTRS PDUFA date: Phentolamine ophthalmic, Oct 17, 2026", `/pdufa/VTRS-mr-141` canonical to it and noindex, both API rows link it.
+
+Two things the CI log taught, one fixed tonight:
+- **Bing SubmitUrlBatch rejected the whole batch**: "Quota remaining for today: 20, Submitted: 80" (HTTP 400). The daily quota is shared across the three scheduled runs and the console, and an over-quota batch is refused entire, so the ordered hubs were not submitted either. `ping_search_engines.py` now submits 40 and, on that error, resubmits exactly the remaining quota (hubs first). Pushed after the run; the 10:00 UTC schedule is its first live test.
+- `lastmod == today` printed 1022 of 1467 tonight: expected, because CI's own 20:08 Eastern run had already re-dated 1,021 pages under the old hash before the fix landed. Tomorrow night's number is the real test of order 3; it should be in the dozens.
+
 ## 7. Order 6, the 131 registry-estimate rows
 Recommendation agreed: do not publish them as calendar rows; they stay in the red-teamed file as a watch list that the already-read-out pass (`resolve_past_readouts.py`) and the registry re-sync can consume. David's ruling stands open.
 

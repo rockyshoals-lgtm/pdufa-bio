@@ -163,27 +163,41 @@ def submit_bing_batch(urls, dry):
     if not key:
         print("  Bing SubmitUrlBatch: no BING_WEBMASTER_API_KEY in env; skipped.")
         return
-    batch = urls[:80]
+    # Audit 2026-10-13 order 2, seen in the first ordered run (38506884875): the daily quota is shared by
+    # the three scheduled runs and the console; a batch larger than what remains is REJECTED whole
+    # ("Quota remaining for today: 20, Submitted: 80"), so the hubs at the front of the list were not
+    # submitted at all. Submit 40 (three runs fit the quota), and on the quota error resubmit exactly
+    # the remaining number, hubs first.
+    batch = urls[:40]
     if not batch:
         print("  Bing SubmitUrlBatch: nothing changed; nothing to submit.")
         return
-    body = json.dumps({"siteUrl": "https://www.pdufa.bio/", "urlList": batch}).encode()
     if dry:
         print(f"  [dry-run] would SubmitUrlBatch {len(batch)} URL(s) to Bing")
         return
-    try:
-        req = urllib.request.Request(
-            "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=" + key,
-            data=body, headers={**UA, "Content-Type": "application/json; charset=utf-8"},
-            method="POST")
-        r = urllib.request.urlopen(req, timeout=45)
-        print(f"  Bing SubmitUrlBatch: HTTP {r.status} for {len(batch)} URL(s) "
-              f"(quota-backed, console-attributed)")
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", "replace")[:160]
-        print(f"  Bing SubmitUrlBatch: HTTP {e.code} -- {detail}")
-    except Exception as e:
-        print(f"  Bing SubmitUrlBatch: {type(e).__name__}: {e}")
+    for attempt in range(2):
+        body = json.dumps({"siteUrl": "https://www.pdufa.bio/", "urlList": batch}).encode()
+        try:
+            req = urllib.request.Request(
+                "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=" + key,
+                data=body, headers={**UA, "Content-Type": "application/json; charset=utf-8"},
+                method="POST")
+            r = urllib.request.urlopen(req, timeout=45)
+            print(f"  Bing SubmitUrlBatch: HTTP {r.status} for {len(batch)} URL(s) "
+                  f"(quota-backed, console-attributed); first: {batch[0]}")
+            return
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "replace")[:160]
+            print(f"  Bing SubmitUrlBatch: HTTP {e.code} -- {detail}")
+            m = re.search(r"Quota remaining for today:\s*(\d+)", detail)
+            if m and attempt == 0 and int(m.group(1)) > 0:
+                batch = batch[:int(m.group(1))]
+                print(f"  Bing SubmitUrlBatch: resubmitting the first {len(batch)} (the remaining quota), hubs first")
+                continue
+            return
+        except Exception as e:
+            print(f"  Bing SubmitUrlBatch: {type(e).__name__}: {e}")
+            return
 
 
 def submit_gsc(dry):
