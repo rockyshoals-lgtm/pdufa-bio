@@ -165,7 +165,8 @@ def main():
             f'<a href="/research/fda-decision-timing">decision-timing study</a>.</div>']
     # 3.1 (audit 2026-10-03): "what did the FDA approve on {date}" is a live grounding query (60 citations
     # on 09-28). The last 60 days, one line per FDA action DAY, by the FDA's date, not the announcement.
-    today_ = dt.date.today()
+    from site_dates import eastern_today as _et   # RULE 1 (audit 2026-10-13)
+    today_ = _et()
     days = {}
     for e in acts:
         if e["oc"] == "Approved" and (today_ - dt.date.fromisoformat(e["date"])).days <= 60:

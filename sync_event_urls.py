@@ -62,6 +62,10 @@ def main():
                 continue
             toks = lambda y: set(re.findall(r"[a-z]{5,}", str(y.get("name") or "").lower()))  # noqa: E731
             if EP.drug_token(x) == EP.drug_token(r) or (toks(x) & toks(r)):
+                # Audit 2026-10-13 order 5: ONE page, named for BOTH tickers (partner_event_pages.py puts
+                # "IRD / VTRS" in the shared page's title and h1 and canonicalises the twin to it), so the
+                # calendar row, both API rows and the guard that requires the page to name the row's
+                # ticker all agree on the alphabetically first page.
                 prim = min(target[r["id"]], target[x["id"]])     # deterministic: the alphabetically first page
                 target[r["id"]] = target[x["id"]] = prim
                 by_label[(tk, d)] = by_label[(xt, d)] = prim

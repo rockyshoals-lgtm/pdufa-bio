@@ -110,7 +110,12 @@ BOILER = [
     # while nothing real changed. That is the same runaway the nav sweep and the freshness stamp
     # each caused once.
     re.compile(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", re.S),
-    re.compile(r'"date(?:Modified|Published)"\s*:\s*"[^"]*",?'),
+    # Audit 2026-10-13 order 3: the stamp key is usually the LAST key in the node, so stripping
+    # `"dateModified":"..."` with only a trailing `,?` left a dangling `,}`; the stripped page then
+    # hashed differently from the same page before the stamp was written, and ~1,000 unchanged pages
+    # advanced their lastmod on 10-11. Strip the preceding comma too, and the og/article metas.
+    re.compile(r',?\s*"date(?:Modified|Published)"\s*:\s*"[^"]*",?'),
+    re.compile(r'<meta property="(?:og:updated_time|article:modified_time)"[^>]*>'),
     re.compile(r'<style id="(navcanon|navpolish|typesys)">.*?</style>', re.S),
     re.compile(r"<nav[^>]*>.*?</nav>", re.S),
     re.compile(r'<div class="nav">.*?</div>', re.S),
@@ -220,6 +225,10 @@ def redirect_sources():
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
+    # Audit 2026-10-13 order 3: a LOCAL chain renders some blocks differently from CI (no Polygon key, for
+    # one), so a local run that persists hashes re-dates those pages and CI re-dates them back the next
+    # night. The local chain writes the sitemap but never the lastmod state; CI is the only writer.
+    ap.add_argument("--no-state", action="store_true", help="write sitemap.xml but leave _sitemap_lastmod.json untouched")
     a = ap.parse_args()
 
     redirected = redirect_sources()
@@ -279,6 +288,11 @@ def main():
     old_n = old.count("<loc>")
     newest = max(urls.values()) if urls else "n/a"
     print(f"sitemap: {old_n} URLs before -> {len(urls)} after   (newest lastmod {newest})")
+    # Audit 2026-10-13 order 3: say, every run, how many pages' lastmod moved to today. A night that
+    # claims a thousand changed is the runaway this file has caught three times; it should be visible
+    # in the CI log the night it happens, not in an audit a week later.
+    n_today = sum(1 for d in urls.values() if d == TODAY)
+    print(f"    lastmod == today ({TODAY}) on {n_today} of {len(urls)} URLs")
     for k, v in sorted(sec.items(), key=lambda kv: -kv[1]):
         print(f"    {k:16s} {v}")
     if a.dry_run:
@@ -288,6 +302,8 @@ def main():
 
     # Committed, so a fresh CI checkout keeps knowing when each page's content last really changed.
     st = load_state()
+    if a.no_state:
+        print("    --no-state: _sitemap_lastmod.json left as committed (CI is its only writer)"); return
     json.dump(st, open(STATE_F, "w", encoding="utf-8"), indent=0, sort_keys=True)
     today_n = sum(1 for v in st.values() if v.get("date") == TODAY)
     print(f"lastmod state: {len(st):,} pages tracked, {today_n:,} with a content change today")

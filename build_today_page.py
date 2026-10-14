@@ -88,7 +88,13 @@ def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                   errors="replace").read().replace("\x00", "")
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
-    today = dt.date.today()
+    # Audit 2026-10-13 P1 (RULE 1): every nightly build lands 20:00-21:30 Eastern, after midnight UTC,
+    # so dt.date.today() on the runner stamped this page one day ahead for four hours every night
+    # ("published today, October 14" served at 22:20 Eastern on October 13). The Eastern calendar day
+    # from site_dates is the only clock a page may call "today".
+    sys.path.insert(0, HERE)
+    from site_dates import eastern_today
+    today = eastern_today()
     tiso = today.isoformat()
 
     dec = [r for r in rows if r.get("type") == "PDUFA"

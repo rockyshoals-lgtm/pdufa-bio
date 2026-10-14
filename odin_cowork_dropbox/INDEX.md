@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-13 audit (audit full currency seo ai)** — `2026-10-13_audit_full_currency_seo_ai.md` — 2026-10-13, measured 22:09 to 22:22 Eastern = 2026-10-14 02:09 to 02:22 UTC (Tuesday night). Per RULE 1 every time carries its zone.
+- **2026-10-13 BUILDER (audit 1013 order)** — `2026-10-13_BUILDER_audit_1013_order.md` — 2026-10-13, work 20:00 to 21:30 Pacific = 23:00 to 00:30 Eastern (Tuesday night into Wednesday). RULE 1.
 - **2026-10-11 audit (audit readout miner redteam dates SEO)** — `2026-10-11_audit_readout_miner_redteam_dates_SEO.md` — 2026-10-11, measured 14:49 to 15:00 Eastern = 18:49 to 19:00 UTC (Sunday). Miner output timestamp 2026-10-11T15:34:51Z = 08:34 Pacific = 11:34 Eastern. Per RULE 1 every time carries its zone.
 - **2026-10-11 note (REDTEAM miner NEW 2026-10-11 ORDER)** — `2026-10-11_REDTEAM_miner_NEW_2026-10-11_ORDER.md` — 2026-10-11, measured ~10:30 to 12:40 Pacific = 13:30 to 15:40 Eastern (Sunday). RULE 1.
 - **2026-10-11 BUILDER (audit 1011 order)** — `2026-10-11_BUILDER_audit_1011_order.md` — 2026-10-11, work 15:10 to 18:40 Pacific = 18:10 to 21:40 Eastern (Sunday). RULE 1.

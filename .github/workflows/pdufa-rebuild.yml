@@ -629,7 +629,7 @@ jobs:
       # hand-sourced trial sentence/description from _event_trial_facts.json. Then the row's url and
       # its calendar row follow event_pages.resolve() (the page that states the row's date).
       - name: "Pending event pages: Event schema, sibling links, trial facts; urls follow the page"
-        run: python enrich_event_pages.py && python sync_event_urls.py
+        run: python enrich_event_pages.py && python partner_event_pages.py && python sync_event_urls.py
 
       # PDUFA dates move. build_pdufa_event_pages never overwrites an existing page (the
       # hand-grown ones carry story cards worth keeping), so a moved date used to leave the page

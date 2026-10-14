@@ -58,6 +58,13 @@ def main():
             else:
                 u = url
         doc = io.open(os.path.join(SITE, u.strip("/").replace("/", os.sep), "index.html"), encoding="utf-8", errors="replace").read()
+        # Audit 2026-10-13 order 5: the page a row links must name the row's own ticker (title or h1), not a
+        # partner's. The VTRS MR-141 row pointed at /pdufa/IRD-phentolamine-ophthalmic while /pdufa/VTRS-mr-141 existed.
+        head = re.search(r"<title>(.*?)</title>", doc, re.S)
+        h1 = re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
+        named = " ".join(x.group(1) for x in (head, h1) if x)
+        if tk and not re.search(r"(?<![A-Z])" + re.escape(tk) + r"(?![A-Z])", named):
+            fails.append(f"{rid}: url {u} names neither the ticker {tk} in its title nor its h1 ({(head.group(1) if head else '')[:60]!r})")
         if str(r.get("dp") or "day") == "day":
             for m in re.finditer(r'"startDate":\s*"(\d{4}-\d{2}-\d{2})', doc):
                 if m.group(1) != d:

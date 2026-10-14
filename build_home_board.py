@@ -27,7 +27,10 @@ API = os.path.join(SITE, "api", "data.js")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 DECISIONS = os.path.join(SITE, "decisions", "index.html")
 MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-TODAY = dt.date.today()
+# RULE 1 (audit 2026-10-13): the build runs after midnight UTC; countdowns and 'today' are Eastern.
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+from site_dates import eastern_today as _eastern_today
+TODAY = _eastern_today()
 GRACE_DAYS = 10   # keep a just-passed, unresolved PDUFA visible this long ("awaiting decision")
 COH = {"Nano": "8.0%", "Micro": "4.6%", "Small": "3.6%", "Mid": "2.2%", "Large": "1.0%", "": "3.6%"}  # median ABS decision-day move, recomputed from the 1,827-event study
 

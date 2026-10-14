@@ -66,7 +66,58 @@ def changed_urls(since_days=2):
     # and the hub pages rather than an alphabetical run of ticker pages.
     picked = sorted(((u, d) for u, d in entries if d >= cutoff),
                     key=lambda x: (x[1], -x[0].count("/")), reverse=True)
-    return [u for u, _ in picked], newest
+    urls = [u for u, _ in picked]
+    # Audit 2026-10-13 order 2: ORDER, not volume. Bing's AI answer for "fda approval decisions this
+    # week" was built from a copy of our daily hubs taken before Oct 8 while the hubs themselves had
+    # been right for five days, because the nightly batch was ~1,300 URLs with the 80-URL Bing
+    # channel taking whichever came first. The daily hubs go first, then the pages whose decision or
+    # status changed (the dataset's most recently updated rows), then everything else. The Bing batch
+    # is the priority list; IndexNow gets the priority list followed by the rest.
+    return prioritise(urls), newest
+
+
+HUBS = ["https://www.pdufa.bio/", "https://www.pdufa.bio/fda-decisions-today",
+        "https://www.pdufa.bio/fda-approval-decisions-this-week", "https://www.pdufa.bio/fda-this-month",
+        "https://www.pdufa.bio/calendar", "https://www.pdufa.bio/decisions", "https://www.pdufa.bio/readouts",
+        "https://www.pdufa.bio/fda-approval-letters", "https://www.pdufa.bio/conferences"]
+
+
+def changed_event_urls(limit=60):
+    """Pages of the dataset rows updated most recently (decision pages, event pages, drug pages of a row
+    whose status or date moved), newest `ua` first. Read from the dataset, not the sitemap."""
+    try:
+        src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+        rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:
+        return []
+    # decisions first (the answer-box rows), then readouts, then conferences; newest update first within each
+    order = {"PDUFA": 0, "AdComm": 1, "Readout": 2, "Conference": 3}
+    def _ts(r):
+        return -int(re.sub(r"\D", "", str(r.get("ua"))[:19]) or 0)
+    rows = sorted((r for r in rows if r.get("ua")), key=lambda r: (order.get(str(r.get("type")), 9), _ts(r)))
+    out = []
+    for r in rows[:limit]:
+        u = str(r.get("url") or "")
+        if u.startswith("/"):
+            u = "https://www.pdufa.bio" + u
+        if u.startswith("https://www.pdufa.bio/") and u not in out:
+            out.append(u)
+        d = r.get("_d") or {}
+        for k in ("decision_page", "event_slug"):
+            v = d.get(k)
+            if isinstance(v, str) and v:
+                full = ("https://www.pdufa.bio" + v) if v.startswith("/") else ("https://www.pdufa.bio/pdufa/" + v)
+                if full not in out:
+                    out.append(full)
+    return out
+
+
+def prioritise(urls):
+    changed = set(urls)
+    first = [u for u in HUBS if u in changed]
+    first += [u for u in changed_event_urls() if u in changed and u not in first]
+    rest = [u for u in urls if u not in first]
+    return first + rest
 
 
 def post_indexnow(key, urls, dry):
@@ -227,6 +278,9 @@ def main():
         print(f"  wrote IndexNow key file -> /{key}.txt (deploys with this commit)")
 
     if urls:
+        print("  submission order, first 20:")
+        for u in urls[:20]:
+            print("    " + u)
         post_indexnow(key, urls, a.dry_run)
         submit_bing_batch(urls, a.dry_run)
     else:
