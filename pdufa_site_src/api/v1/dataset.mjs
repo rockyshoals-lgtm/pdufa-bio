@@ -43,7 +43,7 @@ export default [
     "primary_completion": "2023-09-19",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": "2025-03-12",
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT03005418"
    },
    "resolution": {
@@ -98,7 +98,7 @@ export default [
     "primary_completion": "2025-05-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06146101"
    },
    "resolution": {
@@ -134,7 +134,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-10-13, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-10-14, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -152,7 +152,7 @@ export default [
     "primary_completion": "2026-04-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06374797"
    }
   },
@@ -201,7 +201,7 @@ export default [
     "primary_completion": "2026-04-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05726864"
    },
    "resolution": {
@@ -282,7 +282,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-10-13, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-10-14, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-10-15",
@@ -301,7 +301,7 @@ export default [
     "primary_completion": "2026-04-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05747794"
    }
   },
@@ -332,7 +332,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-10-13, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-10-14, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -351,7 +351,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06470451"
    }
   },
@@ -434,7 +434,7 @@ export default [
     "primary_completion": "2026-06-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05843578"
    },
    "resolution": {
@@ -477,7 +477,7 @@ export default [
     "primary_completion": "2026-06-15",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06810167"
    },
    "resolution": {
@@ -617,7 +617,7 @@ export default [
     "primary_completion": "2026-06-02",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05864144"
    },
    "resolution": {
@@ -731,7 +731,7 @@ export default [
     "primary_completion": "2026-06-25",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT07108153"
    },
    "resolution": {
@@ -800,7 +800,7 @@ export default [
     "primary_completion": "2026-06-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT07036029"
    },
    "resolution": {
@@ -1371,7 +1371,7 @@ export default [
     "primary_completion": "2026-07-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05583227"
    },
    "resolution": {
@@ -1414,7 +1414,7 @@ export default [
     "primary_completion": "2026-03-31",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05486468"
    },
    "date_history": [
@@ -1467,7 +1467,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06553547"
    },
    "resolution": {
@@ -1544,7 +1544,7 @@ export default [
     "primary_completion": "2026-04-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT03037164"
    },
    "date_history": [
@@ -1597,7 +1597,7 @@ export default [
     "primary_completion": "2026-07-16",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06736717"
    },
    "resolution": {
@@ -1620,7 +1620,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -1656,7 +1656,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -1741,7 +1741,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -1798,7 +1798,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -1827,7 +1827,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -1863,7 +1863,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -1913,7 +1913,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -1934,7 +1934,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -1955,7 +1955,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ACG",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -1976,7 +1976,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -2005,7 +2005,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASN",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -2041,7 +2041,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -2098,7 +2098,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -2119,7 +2119,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -2267,7 +2267,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -2303,7 +2303,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -2339,7 +2339,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -2375,7 +2375,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -2396,7 +2396,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -2417,7 +2417,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -2438,7 +2438,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -2467,7 +2467,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -2496,7 +2496,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -2532,7 +2532,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -2553,7 +2553,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -2574,7 +2574,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -2603,7 +2603,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -2624,7 +2624,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -2775,7 +2775,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06668064"
    },
    "resolution": {
@@ -2817,7 +2817,7 @@ export default [
     "primary_completion": "2026-07-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT04724369"
    },
    "resolution": {
@@ -2913,7 +2913,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-10-13, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-10-14, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-08-15",
@@ -2932,7 +2932,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06736262"
    }
   },
@@ -2981,7 +2981,7 @@ export default [
     "primary_completion": "2026-07-08",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06162728"
    },
    "resolution": {
@@ -3114,7 +3114,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05166161"
    },
    "resolution": {
@@ -3677,7 +3677,7 @@ export default [
     "primary_completion": "2026-09-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT07011706"
    },
    "date_history": [
@@ -3730,7 +3730,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06901505"
    },
    "resolution": {
@@ -3783,7 +3783,7 @@ export default [
     "primary_completion": "2026-08-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT07027527"
    },
    "resolution": {
@@ -3826,7 +3826,7 @@ export default [
     "primary_completion": "2026-08-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06847191"
    },
    "resolution": {
@@ -3941,7 +3941,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT01983241"
    },
    "date_history": [
@@ -4032,7 +4032,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05611931"
    },
    "date_history": [
@@ -4196,7 +4196,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06052059"
    },
    "resolution": {
@@ -4635,7 +4635,7 @@ export default [
     "primary_completion": "2026-05-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06079190"
    },
    "date_history": [
@@ -4649,7 +4649,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT06079190 is now 2026-05-14 (actual; registry status terminated, record updated 2026-09-14); the row's window moved from 2026-09 to 2026-05 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-10-13, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-10-14, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-05"
  },
@@ -4685,7 +4685,7 @@ export default [
     "primary_completion": "2026-09-17",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06920901"
    },
    "resolution": {
@@ -4727,7 +4727,7 @@ export default [
     "primary_completion": "2026-08-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05643534"
    },
    "date_history": [
@@ -6154,7 +6154,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -6175,7 +6175,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -6196,7 +6196,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -6217,7 +6217,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -7567,7 +7567,7 @@ export default [
     "primary_completion": "2026-09-11",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06851559"
    },
    "resolution": {
@@ -7619,7 +7619,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-enspryng",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "indication": "Thyroid eye disease (TED)",
    "source_note": "Added 2026-08-13; sBLA priority review, decision by 2026-10-15 per Genentech release 2026-06-29. Found during flag verification; was on neither surface.",
@@ -7778,7 +7778,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/IRD-phentolamine-ophthalmic",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
    "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
@@ -7801,7 +7801,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/IRD-phentolamine-ophthalmic",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05139121",
@@ -7883,7 +7883,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-bepirovirsen",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06059846",
@@ -7924,7 +7924,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/INO-ino-3107-dna",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Recurrent respiratory papillomatosis (RRP) BLA",
@@ -7957,7 +7957,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -7990,7 +7990,7 @@ export default [
   "cap": "Nano",
   "st": "Upcoming",
   "url": "/pdufa/BTAI-igalmi",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
@@ -8023,7 +8023,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CYTK-aficamten",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Non-obstructive hypertrophic cardiomyopathy",
@@ -8056,7 +8056,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/SMMT-ivonescimab",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -8356,7 +8356,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/NVCR-ttfields-therapy",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
@@ -8531,7 +8531,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -8591,7 +8591,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
@@ -8624,7 +8624,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -8657,7 +8657,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -8768,7 +8768,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -8802,7 +8802,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
@@ -8849,7 +8849,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -8883,7 +8883,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -8916,7 +8916,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -8949,7 +8949,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -9926,7 +9926,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT05297903"
    },
    "date_history": [
@@ -9960,7 +9960,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -9985,7 +9985,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant-evera",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -10020,7 +10020,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -10053,7 +10053,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -10075,7 +10075,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10135,7 +10135,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
@@ -10157,7 +10157,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -10298,7 +10298,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/AZN-ultomiris",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -10745,7 +10745,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-am833",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Obesity / weight management",
@@ -10777,7 +10777,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-mim8",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "indication": "Hemophilia A prophylaxis, with or without inhibitors",
    "bla_submitted": "2025-09",
@@ -11197,7 +11197,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/IBRX-anktiva",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "BCG-unresponsive papillary NMIBC",
@@ -11542,7 +11542,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -11590,7 +11590,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -11614,7 +11614,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -11731,7 +11731,7 @@ export default [
     "primary_completion": "2026-05-28",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT06641076"
    },
    "date_history": [
@@ -11789,7 +11789,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -11830,7 +11830,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-cln-081",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Non Small Cell Lung Cancer",
@@ -12336,7 +12336,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12357,7 +12357,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -12378,7 +12378,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-inbrx-106",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Head and Neck Squamous Cell Carcinoma (HNSCC)",
@@ -12731,7 +12731,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -12764,7 +12764,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -12785,7 +12785,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -12806,7 +12806,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -12827,7 +12827,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-10-14T00:03:00Z",
+  "ua": "2026-10-14T03:34:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -12848,7 +12848,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -12959,7 +12959,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -12980,7 +12980,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13001,7 +13001,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13022,7 +13022,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13043,7 +13043,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-14T03:28:59Z",
+  "ua": "2026-10-14T03:38:36Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -14649,7 +14649,7 @@ export default [
     "primary_completion": "2026-09-09",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-13",
+    "checked": "2026-10-14",
     "source_url": "https://clinicaltrials.gov/study/NCT04816604"
    },
    "date_history": [
@@ -14663,7 +14663,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT04816604 is now 2026-09-09 (actual; registry status terminated, record updated 2026-10-02); the row's window moved from 2027-12 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-10-13, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-10-14, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-09"
  },
