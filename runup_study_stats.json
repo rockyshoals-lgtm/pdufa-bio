@@ -1,24 +1,24 @@
 {
- "n_events": 1862,
+ "n_events": 1870,
  "date_min": "2020-01-08",
- "date_max": "2026-10-08",
- "n_approval": 1331,
+ "date_max": "2026-10-14",
+ "n_approval": 1339,
  "n_crl": 531,
- "approval_rate": 71.5,
- "t120_coverage_n": 1791,
+ "approval_rate": 71.6,
+ "t120_coverage_n": 1799,
  "t120_coverage_pct": 96.2,
- "T-120_T-1_median_pct": 2.33,
+ "T-120_T-1_median_pct": 2.34,
  "T-120_T-1_mean_pct": 7.4,
- "T-120_T-7_median_pct": 2.53,
- "T-120_T-7_mean_pct": 7.23,
- "T-120_T-3_median_pct": 2.89,
- "T-120_T-3_mean_pct": 7.56,
- "T-120_peak_median_pct": 17.94,
- "T-120_peak_mean_pct": 34.65,
- "runup_30d_median": 0.56,
- "runup_21d_median": 0.38,
- "runup_14d_median": 0.15,
- "runup_7d_median": -0.03,
+ "T-120_T-7_median_pct": 2.65,
+ "T-120_T-7_mean_pct": 7.26,
+ "T-120_T-3_median_pct": 3.0,
+ "T-120_T-3_mean_pct": 7.55,
+ "T-120_peak_median_pct": 18.04,
+ "T-120_peak_mean_pct": 34.61,
+ "runup_30d_median": 0.54,
+ "runup_21d_median": 0.37,
+ "runup_14d_median": 0.14,
+ "runup_7d_median": -0.04,
  "runup_5d_median": 0.0,
  "runup_3d_median": 0.0,
  "post_1d_median": -0.02,
@@ -28,7 +28,7 @@
  "post_2d_median_approval": 0.47,
  "post_2d_median_crl": -1.71,
  "post_5d_median": -0.14,
- "post_5d_median_approval": 0.42,
+ "post_5d_median_approval": 0.43,
  "post_5d_median_crl": -2.5,
  "cohort_abs_move": {
   "Nano (<$50M)": {
@@ -41,7 +41,7 @@
   },
   "Small ($300M-$2B)": {
    "median_abs_pct": 3.57,
-   "n": 280
+   "n": 281
   },
   "Mid ($2B-$10B)": {
    "median_abs_pct": 2.13,
@@ -49,7 +49,7 @@
   },
   "Large (>$10B)": {
    "median_abs_pct": 0.97,
-   "n": 837
+   "n": 838
   }
  },
  "by_year": {
@@ -108,13 +108,13 @@
    "approval_rate": 70.0
   },
   "2026": {
-   "n": 166,
+   "n": 174,
    "t120_median_pct": 12.08,
-   "t120_peak_median_pct": 30.53,
-   "t120_n": 166,
-   "runup_30d_median": 1.85,
-   "post_1d_median": 0.1,
-   "approval_rate": 86.1
+   "t120_peak_median_pct": 29.09,
+   "t120_n": 174,
+   "runup_30d_median": 1.12,
+   "post_1d_median": 0.14,
+   "approval_rate": 86.8
   }
  }
 }
