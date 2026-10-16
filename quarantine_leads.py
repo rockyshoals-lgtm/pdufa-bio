@@ -159,6 +159,17 @@ def send_email(state, outbox=None):
         except Exception as e:  # noqa: BLE001
             print(f"::warning::escalation email failed: {e}")
     # Fallback: an issue that @-mentions the owner. GitHub emails a mentioned user by default.
+    # 2026-10-15: ONE per held episode. emailed_at lives in _held_state.json, which is only committed when the
+    # run passes; six failing runs on 10-15 each opened a new "ESCALATION" issue (#25 to #30) for the same
+    # episode. GitHub is the record that survives a failed run, so ask it first.
+    try:
+        out = subprocess.run(["gh", "issue", "list", "--state", "open", "--search", f"in:title \"{subj}\"",
+                              "--json", "title"], capture_output=True, text=True, timeout=60).stdout
+        if any(i.get("title") == "ESCALATION: " + subj for i in json.loads(out or "[]")):
+            print("   escalation issue for this held episode already open; not opening another")
+            return "mention-issue (already open)"
+    except Exception:  # noqa: BLE001
+        pass
     try:
         subprocess.run(["gh", "issue", "create", "--title", "ESCALATION: " + subj,
                         "--body", "@rockyshoals-lgtm\n\n" + body], check=True, timeout=60)
@@ -277,6 +288,36 @@ def cmd_apply(a):
                 if not a.dry_run:
                     io.open(p, "w", encoding="utf-8", newline="").write(old)
                 restored.append(os.path.relpath(p, SITE).replace("\\", "/"))
+    # 2026-10-15: a restored page must keep its committed content-change date too. Six scheduled runs on
+    # 10-15 (14:35 to 23:38 UTC) failed test_datemodified_honest while the Anktiva lead was held: build_sitemap
+    # had recorded the freshly built ticker/IBRX page as changed on 10-15, then this step put back the committed
+    # page, whose schema says 10-14. A held row was meant to freeze one row and let the site deploy; it froze
+    # every deploy. Restore the page's _sitemap_lastmod.json entry and its sitemap <lastmod> with it.
+    pages = [r for r in restored if r.endswith(".html")]
+    if pages and not a.dry_run:
+        stf = os.path.join(HERE, "_sitemap_lastmod.json")
+        head_state = _git_show(stf)
+        if head_state and os.path.exists(stf):
+            st, hst = json.load(io.open(stf, encoding="utf-8")), json.loads(head_state)
+            for rel in pages:
+                k = "pdufa_site_src/" + rel
+                if k in hst:
+                    st[k] = hst[k]
+                else:
+                    st.pop(k, None)
+            io.open(stf, "w", encoding="utf-8").write(json.dumps(st, indent=0, sort_keys=True))
+        smf = os.path.join(SITE, "sitemap.xml")
+        head_sm = _git_show(smf)
+        if head_sm and os.path.exists(smf):
+            sm = io.open(smf, encoding="utf-8").read()
+            for rel in pages:
+                url = "https://www.pdufa.bio/" + rel[:-len("index.html")].rstrip("/")
+                pat = re.compile(r"(<loc>" + re.escape(url) + r"</loc>\s*<lastmod>)([^<]+)(</lastmod>)")
+                hm = pat.search(head_sm)
+                if hm:
+                    sm = pat.sub(lambda m: m.group(1) + hm.group(2) + m.group(3), sm, count=1)
+            io.open(smf, "w", encoding="utf-8").write(sm)
+        print(f"   kept the committed content-change date for {len(pages)} restored page(s)")
     print(f"quarantine apply: holding {', '.join(held_ids)} at the last commit; restored {restored or 'nothing (unchanged)'}")
     return 0
 
