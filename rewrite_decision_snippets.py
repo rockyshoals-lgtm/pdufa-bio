@@ -198,6 +198,12 @@ def main():
                                           # re-enter as fake sentence stops
         while drug.count("(") > drug.count(")"):   # nor an earlier mid-paren cut
             drug = drug[:drug.rindex("(")].rstrip(" ,(-/")
+        # nor a name that arrived already cut (old pages read it from a truncated /decisions row):
+        # "GAMMAGARD LIQUID ERC [Immune Globulin In" (2026-10-16)
+        while drug.count("[") > drug.count("]"):
+            drug = drug[:drug.rindex("[")].rstrip(" ,(-/")
+        while re.search(r"\s(?:and|or|to|of|with|for|the|in|plus|a)$", drug, re.I):
+            drug = drug.rsplit(" ", 1)[0].rstrip(" ,(-/")
         if oc == "Approved" and (tk, dcd) in fda_notice:
             word_t, verb = (f"FDA Approval Announced {pretty(dcd, short=True)}",
                             "FDA announced its approval of")
@@ -237,6 +243,14 @@ def main():
                 dshort = dshort[:room].rsplit(" ", 1)[0].rstrip(" ,(-/")
                 while dshort.count("(") > dshort.count(")"):   # never "(vusolimogene"
                     dshort = dshort[:dshort.rindex("(")].rstrip(" ,(-/")
+                # 2026-10-16: "Degevma (denosumab-adet), biosimilar to and Approved Sep 25" -- a cut must not
+                # leave a dangling connector or a trailing clause; fall back to the name before the comma.
+                while dshort.count("[") > dshort.count("]"):     # nor "GAMMAGARD LIQUID ERC [Immune Globulin In"
+                    dshort = dshort[:dshort.rindex("[")].rstrip(" ,(-/")
+                while re.search(r"\s(?:and|or|to|of|with|for|the|in|plus|a)$", dshort, re.I):
+                    dshort = dshort.rsplit(" ", 1)[0].rstrip(" ,(-/")
+                if "," in dshort and len(dshort) < len(drug):
+                    dshort = dshort.split(",", 1)[0].strip()
             title = f"{dshort}{suffix}"
 
         _seo = seo.get((tk, dcd)) or {}

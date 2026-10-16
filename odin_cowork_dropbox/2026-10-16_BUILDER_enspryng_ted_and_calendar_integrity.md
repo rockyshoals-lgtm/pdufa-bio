@@ -80,6 +80,44 @@ The audit counted 11 for November. The grid's 12th is REGN cemdisiran + pozelima
 - `/calendar`: "FDA Calendar 2026: 106 PDUFA Dates, Updated Daily". "PDUFA" moves from first word to fourth; re-read the `pdufa calendar` position as well as `fda calendar 2026` share on the next audit.
 - Weekly page: description and lede now begin "FDA approval decisions for biotech and pharma".
 
+**Shipped:** 2bed50cdb at 07:56 UTC (03:56 Eastern). CI run 38869465648 was green. Live check at 08:02 UTC:
+- `/fda-decision/RHHBY-2026-10-15` returns 200 with the TED title.
+- API row: Decided / Approved / 2026-10-15.
+- The today and weekly pages list it.
+- build-info: `next_ticker` IRD, `held_leads` [].
+- `/calendar`: no Miplyffa rows, the brepocitinib 09-30 row links PFE-2026-08-27, and the October and November sentences read as above.
+
+## 3b. September approvals backfill (audit 2b), second push
+
+Read every Drugs@FDA original and efficacy-supplement approval for 2026-09-01 to 09-30 (openFDA), then each FDA letter and the sponsor release. Four pages, each dated by its letter:
+
+| Page | FDA letter | Sponsor release |
+|---|---|---|
+| `LLY-2026-09-23` Onswik (insulin efsitora alfa-gobe), once-weekly basal insulin, type 2 diabetes | BLA 761408, 09-23 | Lilly 09-24 (QWINT, 4 trials, >3,400 adults) |
+| `MRK-2026-09-24` Welireg + Lenvima, clear cell RCC after PD-1/PD-L1 | NDA 215383 S-013 and NDA 206947 S-035, both 09-24 | Merck/Eisai 09-25 (LITESPARK-011; PFS HR 0.74; OS not significant) |
+| `LLY-2026-09-25` Olumiant, severe alopecia areata age 12+ | NDA 207924 S-009, 09-25 | Lilly 09-25 (BRAVE-AA-PEDS: 42% / 27% vs 5%) |
+| `TEVA-2026-09-25` Degevma (denosumab-adet), **biosimilar to and interchangeable with** Xgeva | BLA 761481 (351(k)), 09-25 | Teva 09-28 |
+
+**Corrections to the audit's list:**
+- **Onswik was already counted.** It is #41 on the FDA's Novel Drug Approvals 2026 list (46 rows, FDA content current as of 10-09), so the novel count was complete. Only the page was missing.
+- **Tagrisso S-035 approves no new use.** It adds FLAURA2 final overall survival to section 14.4, and eosinophilic pneumonia to 6.2 (letter 09-14, with S-036, a myositis warning edit). AstraZeneca issued no release. No decision page: a label-data update is not an FDA decision on an application we would list.
+- **Lenvima S-35 and Welireg S-13 are one approval.** It is the belzutifan + lenvatinib combination, so it gets one page.
+- **Lamlique (Azurity) gets no page.** Azurity is a private sponsor with no ticker, which is the slug key. Garzulys (Emerge) and Bexlutry (Curium) are the same case.
+
+**Two defects found on the way, both fixed:**
+- **`/fda-this-month` was built before the archive learned a new page's FDA date.** The first build after every new decision page therefore failed `test_fda_days_by_action_date` (PFE yesterday, MRK today). `build_monthly_decisions.py` now runs again after `sync_archive_fda_dates.py`, in CI and in the chain.
+- **The title budget cut drug names on a dangling word.** It produced "Degevma (denosumab-adet), biosimilar to and Approved". Two live titles had the same fault:
+  - `BMY-2026-08-13`: "iberdomide, daratumumab, and Approved"
+  - `TAK-2025-06-30`: "GAMMAGARD LIQUID ERC [Immune Globulin In Approved"
+
+  The trimmer now drops trailing connectors, unbalanced brackets and trailing clauses. New guard `test_decision_titles_clean.py` (planted Degevma title fails).
+
+## 3c. Order items 4 to 6
+- **4, the next held lead:** nothing has been held since the 10-15 fix, so nothing to report yet. The real test of "a lead holds only its own row" is the next held lead; its note must record whether that deploy went green while the lead was held. The replay in `test_quarantine_not_blockade.py` covers the mechanism in the meantime.
+- **5, Saturday 10-17, IRD/VTRS phentolamine (MR-141):** same runbook as Enspryng. Watch the gene.com-style listing for Opus Genetics and Viatris, and the FDA feeds, from Friday. On a weekend goal date the action usually lands Friday.
+- **6, carried, unchanged:** `goal_date_held`; Jaypirca SUPPL-5 date; RXC-005 aliases; SMTP; Drive exclusion; AZN Ultomiris / NVO CagriSema / NVO Mim8 sources; the 20 nct-mismatch readouts; the 131 registry rows (audit recommends watch list only); `build_sitemap.py --no-state`. New: CI `SEC_USER_AGENT` empty in the SLS step (section 4).
+- **Still pending on /calendar and worth a human eye:** GILD/MRK Trodelvy (Q4 est.), whose 06-24 decision page has no "Indication" field, so the period matcher would not mark it. Also RHHBY Lunsumio + Polivy, ABBV Rinvoq vitiligo, AZN gefurulimab, NVS Pluvicto and LLY tirzepatide CV (Q4 est.); none matches a decision in the archive.
+
 ## 4. Local guards
 143 pass. Three fail locally, all expected:
 - `test_dropbox_index_complete`: this note, cleared on commit.

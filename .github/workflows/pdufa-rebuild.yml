@@ -258,6 +258,11 @@ jobs:
         continue-on-error: true
         run: python sync_archive_fda_dates.py
 
+      # 2026-10-16: /fda-this-month is built before the archive learns a new page's FDA date, so the first
+      # build after every new decision page left it out (PFE 10-15, MRK 10-16; test_fda_days_by_action_date).
+      - name: "/fda-this-month again, now that the archive holds the FDA dates"
+        run: python build_monthly_decisions.py
+
       - name: "Decision pages cite the FDA record of the action date"
         run: python inject_fda_action_record.py
 

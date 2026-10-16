@@ -2238,6 +2238,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/baricitinib",
+   "destination": "/drug/olumiant",
+   "permanent": true
+  },
+  {
    "source": "/drug/baxdrostat",
    "destination": "/drug/baxfendy",
    "permanent": true
@@ -2304,7 +2309,7 @@
   },
   {
    "source": "/drug/denosumab-adet",
-   "destination": "/drug/ponlimsi",
+   "destination": "/drug/degevma",
    "permanent": true
   },
   {
@@ -2460,6 +2465,11 @@
   {
    "source": "/drug/imlunestrant",
    "destination": "/drug/inluriyo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/insulin-efsitora-alfa-gobe",
+   "destination": "/drug/onswik",
    "permanent": true
   },
   {

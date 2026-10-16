@@ -1,0 +1,62 @@
+[
+ {
+  "ticker": "LLY",
+  "date": "2026-09-23",
+  "fda_action_date": "2026-09-23",
+  "outcome": "Approved",
+  "drug": "Onswik (insulin efsitora alfa-gobe)",
+  "indication": "Adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus; once-weekly basal insulin",
+  "company": "Eli Lilly and Company",
+  "cap": "Large",
+  "headline": "The FDA approved Onswik (insulin efsitora alfa-gobe), Lilly's once-weekly basal insulin for adults with type 2 diabetes, on September 23, 2026 (BLA 761408). Lilly announced the approval on September 24, 2026. It is on the FDA's 2026 Novel Drug Approvals list.",
+  "pdufa_note": "The FDA's approval letter for BLA 761408 is dated September 23, 2026 and states that Onswik is indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761408Orig1s000ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA approval letter</a>); the letter gives the application as received September 23, 2025. Lilly announced the approval on September 24, 2026 (<a href=\"https://investor.lilly.com/news-releases/news-release-details/us-food-and-drug-administration-fda-approves-lillys-onswiktm\" rel=\"noopener\" style=\"color:#e3ba5e\">Lilly release</a>). Per Lilly, the approval rests on the Phase 3 QWINT program, four trials in more than 3,400 adults with type 2 diabetes, in each of which once-weekly Onswik met its primary endpoint of non-inferior A1C reduction versus daily insulin glargine U-100 or insulin degludec U-100. Lilly says Onswik should not be used in type 1 diabetes and that the KwikPen will be available in the U.S. in the coming months in 500 and 1,000 units/mL strengths. pdufa.bio did not hold a goal date for this application, so no early or late margin is computed.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761408Orig1s000ltr.pdf",
+  "source_label": "FDA approval letter, BLA 761408, September 23, 2026",
+  "h1": "Onswik (insulin efsitora alfa) <span class=\"g\">FDA approval for type 2 diabetes, once-weekly insulin</span>: Sep 23, 2026"
+ },
+ {
+  "ticker": "MRK",
+  "date": "2026-09-24",
+  "fda_action_date": "2026-09-24",
+  "outcome": "Approved",
+  "drug": "Welireg (belzutifan) plus Lenvima (lenvatinib)",
+  "indication": "Adults with advanced renal cell carcinoma with a clear cell component following a PD-1 or PD-L1 inhibitor",
+  "company": "Merck & Co. and Eisai",
+  "cap": "Large",
+  "headline": "The FDA approved Welireg (belzutifan) in combination with Lenvima (lenvatinib) for adults with advanced clear cell renal cell carcinoma after a PD-1 or PD-L1 inhibitor on September 24, 2026, through two supplements: Merck's NDA 215383 S-013 and Eisai's NDA 206947 S-035. Merck and Eisai announced it on September 25, 2026.",
+  "pdufa_note": "The FDA's approval letters for Welireg (NDA 215383, supplement 13) and Lenvima (NDA 206947, supplement 35) are both dated September 24, 2026 and add the same indication, based on the Phase 3 LITESPARK-011 trial (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215383Orig1s013ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">Welireg letter</a>; <a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/206947Orig1s035ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">Lenvima letter</a>). Merck and Eisai announced the approval on September 25, 2026 (<a href=\"https://www.merck.com/news/u-s-fda-approves-welireg-belzutifan-plus-lenvima-lenvatinib-for-certain-previously-treated-adult-patients-with-advanced-renal-cell-carcinoma-with-a-clear-cell-component-ccrcc/\" rel=\"noopener\" style=\"color:#e3ba5e\">Merck release</a>). LITESPARK-011 (NCT04586231) randomized 747 patients to belzutifan 120 mg plus lenvatinib 20 mg daily or cabozantinib 60 mg daily. Per the companies, progression-free survival by blinded independent central review improved with the combination (HR 0.74, 95% CI 0.61 to 0.89; p=0.001; median 14.6 vs 10.6 months), objective response rate was 53% vs 40%, and overall survival, the other primary endpoint, did not reach statistical significance at the final analysis. pdufa.bio did not hold a goal date for these supplements, so no early or late margin is computed.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215383Orig1s013ltr.pdf",
+  "source_label": "FDA approval letters, NDA 215383 S-013 and NDA 206947 S-035, September 24, 2026",
+  "h1": "Welireg plus Lenvima <span class=\"g\">FDA approval for previously treated clear cell RCC</span>: Sep 24, 2026"
+ },
+ {
+  "ticker": "LLY",
+  "date": "2026-09-25",
+  "fda_action_date": "2026-09-25",
+  "outcome": "Approved",
+  "drug": "Olumiant (baricitinib)",
+  "indication": "Severe alopecia areata in pediatric patients 12 years of age and older (previously adults only)",
+  "company": "Eli Lilly and Company",
+  "cap": "Large",
+  "headline": "The FDA approved Olumiant (baricitinib) for severe alopecia areata in patients 12 years of age and older on September 25, 2026 (NDA 207924, supplement 9), extending the 2022 adult approval to adolescents. Lilly announced it the same day.",
+  "pdufa_note": "The FDA's approval letter for NDA 207924 supplement 9 is dated September 25, 2026 and provides for the treatment of severe alopecia areata in adults and pediatric patients 12 years of age and older (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207924Orig1s009ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA approval letter</a>). Lilly announced the approval the same day (<a href=\"https://www.prnewswire.com/news-releases/fda-approves-lillys-olumiant-baricitinib-for-pediatric-patients-12-years-of-age-and-older-with-severe-alopecia-areata-302890631.html\" rel=\"noopener\" style=\"color:#e3ba5e\">Lilly release</a>). Per Lilly, the approval rests on 36-week data from the adolescent cohort of the Phase 3 BRAVE-AA-PEDS study (median baseline SALT score 100, complete scalp hair loss): 42% of patients on 4 mg and 27% on 2 mg reached 80% or more scalp hair coverage (SALT 20 or less), compared with 5% on placebo. pdufa.bio did not hold a goal date for this supplement, so no early or late margin is computed.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207924Orig1s009ltr.pdf",
+  "source_label": "FDA approval letter, NDA 207924 supplement 9, September 25, 2026",
+  "h1": "Olumiant (baricitinib) <span class=\"g\">FDA approval for adolescents with severe alopecia areata</span>: Sep 25, 2026"
+ },
+ {
+  "ticker": "TEVA",
+  "date": "2026-09-25",
+  "fda_action_date": "2026-09-25",
+  "outcome": "Approved",
+  "drug": "Degevma (denosumab-adet)",
+  "indication": "Prevention of skeletal-related events in multiple myeloma and bone metastases from solid tumors; giant cell tumor of bone; hypercalcemia of malignancy refractory to bisphosphonate therapy (the Xgeva indications)",
+  "company": "Teva Pharmaceutical Industries",
+  "cap": "Large",
+  "headline": "The FDA approved Degevma (denosumab-adet), Teva's biosimilar to Xgeva (denosumab), on September 25, 2026 (BLA 761481, section 351(k)); the letter licenses it as biosimilar to and interchangeable with Xgeva. Teva announced it on September 28, 2026.",
+  "pdufa_note": "The FDA's approval letter for BLA 761481 is dated September 25, 2026; the application was submitted under section 351(k) of the Public Health Service Act, the biosimilar pathway, and received September 29, 2025, and the letter licenses Degevma as biosimilar to and interchangeable with US-Xgeva (denosumab) 120 mg/1.7 mL (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761481Orig1s000ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA approval letter</a>). Per the letter, Degevma is indicated for prevention of skeletal-related events in patients with multiple myeloma and in patients with bone metastases from solid tumors, for giant cell tumor of bone in adults and skeletally mature adolescents that is unresectable or where surgical resection is likely to result in severe morbidity, and for hypercalcemia of malignancy refractory to bisphosphonate therapy. Teva announced the approval on September 28, 2026 (<a href=\"https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/Teva-Continues-Biosimilar-Momentum-with-U-S--FDA-Approval-of-DEGEVMA-denosumab-adet-a-Biosimilar-to-Xgeva-denosumab/default.aspx\" rel=\"noopener\" style=\"color:#e3ba5e\">Teva release</a>); with Ponlimsi, its Prolia biosimilar approved in March 2026, Teva says it now covers the indications of both denosumab reference products. pdufa.bio did not hold a goal date for this application, so no early or late margin is computed.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761481Orig1s000ltr.pdf",
+  "source_label": "FDA approval letter, BLA 761481, September 25, 2026",
+  "h1": "Degevma (denosumab-adet) <span class=\"g\">FDA approval, interchangeable biosimilar to Xgeva</span>: Sep 25, 2026"
+ }
+]

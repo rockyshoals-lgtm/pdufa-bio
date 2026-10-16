@@ -515,6 +515,28 @@
    "lebrikizumab-lbkz"
   ]
  },
+ "LLY-2026-09-23": {
+  "checked": "2026-10-16",
+  "name": "Onswik (insulin efsitora alfa-gobe)",
+  "reason": "2 decision-class approvals within -20..+3 days: ambiguous, not assigned",
+  "terms": [
+   "Onswik",
+   "insulin"
+  ]
+ },
+ "LLY-2026-09-25": {
+  "checked": "2026-10-16",
+  "class": "EFFICACY",
+  "date": "2026-09-25",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207924Orig1s009ltr.pdf",
+  "name": "Olumiant (baricitinib)",
+  "record": "NDA 207924 SUPPL-9",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207924Orig1s009ltr.pdf",
+  "terms": [
+   "Olumiant",
+   "baricitinib"
+  ]
+ },
  "LNTH-2026-03-06": {
   "checked": "2026-10-03",
   "class": "TYPE 5",
@@ -595,6 +617,19 @@
   "terms": [
    "KEYTRUDA",
    "pembrolizumab"
+  ]
+ },
+ "MRK-2026-09-24": {
+  "checked": "2026-10-16",
+  "class": "EFFICACY",
+  "date": "2026-09-24",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215383Orig1s013ltr.pdf",
+  "name": "Welireg (belzutifan) plus Lenvima (lenvatinib)",
+  "record": "NDA 215383 SUPPL-13",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215383Orig1s013ltr.pdf",
+  "terms": [
+   "Welireg",
+   "belzutifan"
   ]
  },
  "NVCR-2026-02-11": {
@@ -881,6 +916,19 @@
   "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761385Orig1s000ltr.pdf",
   "terms": [
    "PONLIMSI",
+   "denosumab-adet"
+  ]
+ },
+ "TEVA-2026-09-25": {
+  "checked": "2026-10-16",
+  "class": "TYPE 5",
+  "date": "2026-09-25",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761481Orig1s000ltr.pdf",
+  "name": "Degevma (denosumab-adet), biosimilar to and interchangeable with Xgeva",
+  "record": "BLA 761481 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761481Orig1s000ltr.pdf",
+  "terms": [
+   "Degevma",
    "denosumab-adet"
   ]
  },
