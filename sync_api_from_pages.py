@@ -58,6 +58,15 @@ def _toks(s):
             if w not in ("with", "combination", "priority", "review")}
 
 
+def _names_conflict(row_name, page_drug):
+    """2026-10-15: proximity is not evidence when the names contradict. Pfizer's Tukysa approval (2026-10-07)
+    sat 7 days after the brepocitinib goal date (2026-09-30) and, inside the old |gap| <= 14 tier, replaced
+    brepocitinib's real approval date (2026-08-27) on that row. Both sides naming a drug and sharing NO
+    token is a different product, whatever the dates say."""
+    rt, pt = _toks(row_name), _toks(page_drug)
+    return bool(rt and pt and not (rt & pt))
+
+
 def _lead_match(row_name, page_drug):
     """Wide-window evidence: the LEAD (brand/first) drug token of one side must appear
     in the other side's tokens. A single shared molecule token is NOT enough -- the
@@ -132,8 +141,8 @@ def main():
                 sgap = (dt.date.fromisoformat(ddate) - dt.date.fromisoformat(d)).days
             except Exception:
                 continue
-            ok = abs(sgap) <= 14 or ((-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45)
-                                     and _lead_match(r.get("name"), ddrug))
+            ok = (abs(sgap) <= 14 and not _names_conflict(r.get("name"), ddrug)) or (
+                (-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45) and _lead_match(r.get("name"), ddrug))
             if ok and (((dtk, ddate) not in claim) or abs(sgap) < claim[(dtk, ddate)][0]):
                 claim[(dtk, ddate)] = (abs(sgap), r.get("id"))
 
@@ -161,7 +170,7 @@ def main():
                 gap = abs(sgap)
                 if claim.get((dtk, ddate), (0, r.get("id")))[1] != r.get("id"):
                     continue                        # another row of this ticker owns it
-                if gap <= 14:
+                if gap <= 14 and not _names_conflict(r.get("name"), ddrug):
                     pass
                 elif (-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45) \
                         and _lead_match(r.get("name"), ddrug):

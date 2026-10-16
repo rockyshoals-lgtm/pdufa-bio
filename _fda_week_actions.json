@@ -1,0 +1,233 @@
+{
+ "2026-10-05..2026-10-14": {
+  "fetched": "2026-10-14T14:20:51Z",
+  "actions": [
+   {
+    "date": "2026-10-08",
+    "sponsor": "GENENTECH INC",
+    "brand": "TECENTRIQ HYBREZA",
+    "ingredient": "ATEZOLIZUMAB AND HYALURONIDASE-TQJS",
+    "app": "BLA761347",
+    "type": "SUPPL",
+    "number": "11",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761347Orig1s011ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761347"
+   },
+   {
+    "date": "2026-10-07",
+    "sponsor": "SEAGEN",
+    "brand": "TUKYSA",
+    "ingredient": "TUCATINIB",
+    "app": "NDA213411",
+    "type": "SUPPL",
+    "number": "10",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213411Orig1s010ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213411"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "GENENTECH INC",
+    "brand": "TECENTRIQ",
+    "ingredient": "ATEZOLIZUMAB",
+    "app": "BLA761034",
+    "type": "SUPPL",
+    "number": "65",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761034Orig1s065ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761034"
+   },
+   {
+    "date": "2026-10-06",
+    "sponsor": "NOVARTIS",
+    "brand": "RHAPSIDO",
+    "ingredient": "REMIBRUTINIB",
+    "app": "NDA218436",
+    "type": "SUPPL",
+    "number": "1",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218436Orig1s001ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218436"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "TEVA NEUROSCIENCE INC",
+    "brand": "WELTRUZA",
+    "ingredient": "OLANZAPINE",
+    "app": "NDA219007",
+    "type": "ORIG",
+    "number": "1",
+    "class": "Type 5 - New Formulation or New Manufacturer",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219007Orig1s000ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219007"
+   },
+   {
+    "date": "2026-10-09",
+    "sponsor": "AMGEN INC",
+    "brand": "REPATHA",
+    "ingredient": "EVOLOCUMAB",
+    "app": "BLA125522",
+    "type": "SUPPL",
+    "number": "47",
+    "class": "Efficacy",
+    "letter": "",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125522"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "ASTRAZENECA AB",
+    "brand": "BREZTRI AEROSPHERE",
+    "ingredient": "BUDESONIDE, GLYCOPYRROLATE, AND FORMOTEROL FUMARATE",
+    "app": "NDA220290",
+    "type": "ORIG",
+    "number": "1",
+    "class": "Type 5 - New Formulation or New Manufacturer",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220290Orig1s000ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220290"
+   }
+  ]
+ },
+ "2026-10-07..2026-10-14": {
+  "fetched": "2026-10-14T14:21:21Z",
+  "actions": [
+   {
+    "date": "2026-10-08",
+    "sponsor": "GENENTECH INC",
+    "brand": "TECENTRIQ HYBREZA",
+    "ingredient": "ATEZOLIZUMAB AND HYALURONIDASE-TQJS",
+    "app": "BLA761347",
+    "type": "SUPPL",
+    "number": "11",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761347Orig1s011ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761347"
+   },
+   {
+    "date": "2026-10-07",
+    "sponsor": "SEAGEN",
+    "brand": "TUKYSA",
+    "ingredient": "TUCATINIB",
+    "app": "NDA213411",
+    "type": "SUPPL",
+    "number": "10",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213411Orig1s010ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213411"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "GENENTECH INC",
+    "brand": "TECENTRIQ",
+    "ingredient": "ATEZOLIZUMAB",
+    "app": "BLA761034",
+    "type": "SUPPL",
+    "number": "65",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761034Orig1s065ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761034"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "TEVA NEUROSCIENCE INC",
+    "brand": "WELTRUZA",
+    "ingredient": "OLANZAPINE",
+    "app": "NDA219007",
+    "type": "ORIG",
+    "number": "1",
+    "class": "Type 5 - New Formulation or New Manufacturer",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219007Orig1s000ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219007"
+   },
+   {
+    "date": "2026-10-09",
+    "sponsor": "AMGEN INC",
+    "brand": "REPATHA",
+    "ingredient": "EVOLOCUMAB",
+    "app": "BLA125522",
+    "type": "SUPPL",
+    "number": "47",
+    "class": "Efficacy",
+    "letter": "",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125522"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "ASTRAZENECA AB",
+    "brand": "BREZTRI AEROSPHERE",
+    "ingredient": "BUDESONIDE, GLYCOPYRROLATE, AND FORMOTEROL FUMARATE",
+    "app": "NDA220290",
+    "type": "ORIG",
+    "number": "1",
+    "class": "Type 5 - New Formulation or New Manufacturer",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220290Orig1s000ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220290"
+   }
+  ]
+ },
+ "2026-10-08..2026-10-15": {
+  "fetched": "2026-10-16T01:33:13Z",
+  "actions": [
+   {
+    "date": "2026-10-08",
+    "sponsor": "GENENTECH INC",
+    "brand": "TECENTRIQ",
+    "ingredient": "ATEZOLIZUMAB",
+    "app": "BLA761034",
+    "type": "SUPPL",
+    "number": "65",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761034Orig1s065ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761034"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "TEVA NEUROSCIENCE INC",
+    "brand": "WELTRUZA",
+    "ingredient": "OLANZAPINE",
+    "app": "NDA219007",
+    "type": "ORIG",
+    "number": "1",
+    "class": "Type 5 - New Formulation or New Manufacturer",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219007Orig1s000ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219007"
+   },
+   {
+    "date": "2026-10-09",
+    "sponsor": "AMGEN INC",
+    "brand": "REPATHA",
+    "ingredient": "EVOLOCUMAB",
+    "app": "BLA125522",
+    "type": "SUPPL",
+    "number": "47",
+    "class": "Efficacy",
+    "letter": "",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125522"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "ASTRAZENECA AB",
+    "brand": "BREZTRI AEROSPHERE",
+    "ingredient": "BUDESONIDE, GLYCOPYRROLATE, AND FORMOTEROL FUMARATE",
+    "app": "NDA220290",
+    "type": "ORIG",
+    "number": "1",
+    "class": "Type 5 - New Formulation or New Manufacturer",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220290Orig1s000ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220290"
+   },
+   {
+    "date": "2026-10-08",
+    "sponsor": "GENENTECH INC",
+    "brand": "TECENTRIQ HYBREZA",
+    "ingredient": "ATEZOLIZUMAB AND HYALURONIDASE-TQJS",
+    "app": "BLA761347",
+    "type": "SUPPL",
+    "number": "11",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761347Orig1s011ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761347"
+   }
+  ]
+ }
+}

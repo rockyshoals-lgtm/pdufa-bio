@@ -85,14 +85,14 @@
 },
 {
 "ticker": "NVCR",
-"date": "2026-02-12",
+"date": "2026-02-11",
 "outcome": "APPROVAL",
 "drug": "Optune Pax",
 "status": "decided"
 },
 {
 "ticker": "EBS",
-"date": "2026-02-13",
+"date": "2026-02-12",
 "outcome": "APPROVAL",
 "drug": "OTC NARCAN Nasal Spray w/ carrying cas",
 "status": "decided"
@@ -525,13 +525,6 @@
 "status": "decided"
 },
 {
-"ticker": "JAGX",
-"date": "2026-04-29",
-"outcome": "APPROVAL",
-"drug": "Canalevia-CA1",
-"status": "decided"
-},
-{
 "ticker": "AXSM",
 "date": "2026-04-30",
 "outcome": "APPROVAL",
@@ -624,7 +617,7 @@
 },
 {
 "ticker": "SPRY",
-"date": "2026-05-15",
+"date": "2026-03-27",
 "outcome": "APPROVAL",
 "drug": "Neffy 1 mg (epinephrine nasal spray)",
 "status": "decided"
@@ -714,13 +707,6 @@
 "status": "decided"
 },
 {
-"ticker": "PGEN",
-"date": "2026-05-27",
-"outcome": "APPROVAL",
-"drug": "PAPZIMEOS (zopapogene imadenovec-drba)",
-"status": "decided"
-},
-{
 "ticker": "AZN",
 "date": "2026-05-28",
 "outcome": "APPROVAL",
@@ -743,7 +729,7 @@
 },
 {
 "ticker": "BMY",
-"date": "2026-06-01",
+"date": "2026-09-30",
 "outcome": "APPROVAL",
 "drug": "Camzyos (mavacamten) - (SCOUT-HCM)",
 "status": "decided"
@@ -767,27 +753,6 @@
 "date": "2026-06-08",
 "outcome": "APPROVAL",
 "drug": "HYMPAVZI (marstacimab)",
-"status": "decided"
-},
-{
-"ticker": "XOMA",
-"date": "2026-06-08",
-"outcome": "APPROVAL",
-"drug": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
-"status": "decided"
-},
-{
-"ticker": "LGND",
-"date": "2026-06-08",
-"outcome": "APPROVAL",
-"drug": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
-"status": "decided"
-},
-{
-"ticker": "ZVRA",
-"date": "2026-06-08",
-"outcome": "APPROVAL",
-"drug": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
 "status": "decided"
 },
 {
@@ -850,7 +815,7 @@
 "ticker": "ABBV",
 "date": "2026-06-16",
 "outcome": "APPROVAL",
-"drug": "JUV\u00c9DERM - (SKINVIVE) (injectable HA)",
+"drug": "JUVÉDERM - (SKINVIVE) (injectable HA)",
 "status": "decided"
 },
 {

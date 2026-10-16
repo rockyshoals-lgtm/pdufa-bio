@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "IBRX",
+  "date": "2026-10-14",
+  "fda_action_date": "2026-10-14",
+  "outcome": "Approved",
+  "drug": "Anktiva (nogapendekin alfa inbakicept-pmln) + BCG - papillary-only NMIBC",
+  "indication": "With BCG, adults with BCG-unresponsive non-muscle invasive bladder cancer (NMIBC); the indication now includes high-grade papillary-only tumors as well as carcinoma in situ (CIS) with or without papillary tumors",
+  "company": "ImmunityBio",
+  "cap": "Large",
+  "headline": "The FDA approved an expanded indication for Anktiva (nogapendekin alfa inbakicept-pmln) with BCG on October 14, 2026, adding adults with BCG-unresponsive non-muscle invasive bladder cancer with high-grade papillary-only tumors to the existing CIS indication. The goal date was January 6, 2027, so the action came 84 days early. ImmunityBio announced the approval the same day.",
+  "pdufa_note": "The FDA's approval notification is dated October 14, 2026 and states the approval was made that day; it revises the 2024 indication (BCG-unresponsive NMIBC with CIS, with or without papillary tumors) to include patients with high-grade papillary-only tumors (<a href=\"https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA approval notification</a>). The goal date was January 6, 2027: ImmunityBio's 8-K exhibit of August 4, 2026 says the FDA accepted the sBLA \"for ANKTIVA plus BCG in patients with BCG-unresponsive NMIBC with papillary disease without CIS\" and assigned that PDUFA date (<a href=\"https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/ibrx-202684x8kexhibit991.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">ImmunityBio 8-K exhibit, August 4, 2026</a>). Both dates come from documents that state them, so the action came 84 days before the goal date. Per the FDA, efficacy was previously shown in Cohort A of QUILT-3.032 (NCT03022825), 77 patients with BCG-unresponsive NMIBC with CIS: complete response rate 62% (95% CI 51 to 73), with 58% of responders lasting 12 months or more. The FDA extended that result to papillary-only disease on review of the available scientific information, citing the overlapping clinical features of the two tumor types, rather than on a new trial. The FDA also issued a press announcement the same day, calling Anktiva the first FDA-approved treatment specifically for patients with BCG-unresponsive, high-grade papillary-only disease (<a href=\"https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-certain-people-bcg-unresponsive-bladder-cancer\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA press announcement, October 14, 2026</a>). ImmunityBio announced the approval on October 14, 2026 (<a href=\"https://www.sec.gov/Archives/edgar/data/1326110/000119312526421820/d188887dex991.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">8-K exhibit 99.1</a>). The FDA says full prescribing information will be posted on Drugs@FDA; the letter had not been posted there when this page was published.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
+  "source_label": "FDA approval notification, nogapendekin alfa inbakicept-pmln for BCG-unresponsive NMIBC, October 14, 2026",
+  "h1": "Anktiva (nogapendekin alfa) <span class=\"g\">FDA approval for papillary-only NMIBC</span>: Oct 14, 2026"
+ }
+]

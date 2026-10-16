@@ -2123,6 +2123,51 @@
    "permanent": true
   },
   {
+   "source": "/fda-decision/BMY-2026-06-01",
+   "destination": "/fda-decision/BMY-2026-09-30",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SPRY-2026-05-15",
+   "destination": "/fda-decision/SPRY-2026-03-27",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/NVCR-2026-02-12",
+   "destination": "/fda-decision/NVCR-2026-02-11",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/EBS-2026-02-13",
+   "destination": "/fda-decision/EBS-2026-02-12",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/JAGX-2026-04-29",
+   "destination": "/drug/canalevia-ca1",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LGND-2026-06-08",
+   "destination": "/drug/miplyffa",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/XOMA-2026-06-08",
+   "destination": "/drug/miplyffa",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/ZVRA-2026-06-08",
+   "destination": "/drug/miplyffa",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/PGEN-2026-05-27",
+   "destination": "/drug/papzimeos",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2168,11 +2213,6 @@
    "permanent": true
   },
   {
-   "source": "/drug/arimoclomol",
-   "destination": "/drug/miplyffa",
-   "permanent": true
-  },
-  {
    "source": "/drug/atezolizumab",
    "destination": "/drug/tecentriq",
    "permanent": true
@@ -2185,6 +2225,11 @@
   {
    "source": "/drug/avacincaptad-pegol-intravitreal-solution",
    "destination": "/drug/izervay",
+   "permanent": true
+  },
+  {
+   "source": "/drug/axicabtagene-ciloleucel",
+   "destination": "/drug/yescarta",
    "permanent": true
   },
   {
@@ -2338,6 +2383,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/epinephrine-nasal-spray",
+   "destination": "/drug/neffy",
+   "permanent": true
+  },
+  {
    "source": "/drug/esketamine",
    "destination": "/drug/spravato",
    "permanent": true
@@ -2345,6 +2395,11 @@
   {
    "source": "/drug/etripamil",
    "destination": "/drug/cardamyst",
+   "permanent": true
+  },
+  {
+   "source": "/drug/evolocumab",
+   "destination": "/drug/repatha",
    "permanent": true
   },
   {
@@ -2510,6 +2565,11 @@
   {
    "source": "/drug/obinutuzumab",
    "destination": "/drug/gazyva",
+   "permanent": true
+  },
+  {
+   "source": "/drug/olanzapine",
+   "destination": "/drug/weltruza",
    "permanent": true
   },
   {
@@ -2715,6 +2775,11 @@
   {
    "source": "/drug/trofinetide",
    "destination": "/drug/daybue-stix",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tucatinib",
+   "destination": "/drug/tukysa",
    "permanent": true
   },
   {

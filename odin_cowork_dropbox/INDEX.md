@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-15 BUILDER (anktiva and decision corrections)** — `2026-10-15_BUILDER_anktiva_and_decision_corrections.md` — 2026-10-15, work 16:00 to 19:30 Pacific = 19:00 to 22:30 Eastern (Thursday, Enspryng goal day). RULE 1.
 - **2026-10-13 audit (audit full currency seo ai)** — `2026-10-13_audit_full_currency_seo_ai.md` — 2026-10-13, measured 22:09 to 22:22 Eastern = 2026-10-14 02:09 to 02:22 UTC (Tuesday night). Per RULE 1 every time carries its zone.
 - **2026-10-13 BUILDER (audit 1013 order)** — `2026-10-13_BUILDER_audit_1013_order.md` — 2026-10-13, work 20:00 to 21:30 Pacific = 23:00 to 00:30 Eastern (Tuesday night into Wednesday). RULE 1.
 - **2026-10-11 audit (audit readout miner redteam dates SEO)** — `2026-10-11_audit_readout_miner_redteam_dates_SEO.md` — 2026-10-11, measured 14:49 to 15:00 Eastern = 18:49 to 19:00 UTC (Sunday). Miner output timestamp 2026-10-11T15:34:51Z = 08:34 Pacific = 11:34 Eastern. Per RULE 1 every time carries its zone.

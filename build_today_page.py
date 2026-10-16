@@ -84,6 +84,55 @@ NAV = ('<div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a>'
 
 
 
+
+def fda_record_rows(start_iso, end_iso, rows, esc, pretty):
+    """Section HTML listing decision-class Drugs@FDA approvals in the range that no tracked dataset row covers
+    (audit 2026-10-14: an answer to "what did the FDA approve this week" built from us was incomplete). Where
+    pdufa.bio has a decision page for the action (a /fda-decision/{TK}-{date} page within 3 days whose title
+    names the brand) the row links it; otherwise it links the FDA's letter or Drugs@FDA record."""
+    import datetime as _dt
+    import glob as _glob
+    import re as _re
+    import fda_week_actions as F
+    acts, fetched = F.actions(start_iso, end_iso)
+    extra = sorted(F.not_on_calendar(acts, rows), key=lambda x: (x["date"], x["brand"]))
+    if not extra:
+        return "", 0, []
+    site = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pdufa_site_src", "fda-decision")
+    pages = []
+    for p in _glob.glob(os.path.join(site, "*", "index.html")):
+        slug = os.path.basename(os.path.dirname(p))
+        m = _re.match(r"[A-Z]{1,6}-(\d{4}-\d{2}-\d{2})$", slug)
+        if not m:
+            continue
+        try:
+            t = _re.search(r"<title>(.*?)</title>", io.open(p, encoding="utf-8", errors="replace").read(), _re.S)
+        except OSError:
+            continue
+        pages.append((slug, m.group(1), (t.group(1) if t else "").lower()))
+    out = []
+    for x in extra:
+        what = x["brand"] or x["ingredient"] or x["app"]
+        kind = ("new application" if x["type"] == "ORIG" else "new indication (efficacy supplement)")
+        first = (x["brand"] or x["ingredient"]).lower().split()[0] if (x["brand"] or x["ingredient"]) else ""
+        ours = next((s for s, d, t in pages if first and first in t
+                     and abs((_dt.date.fromisoformat(d) - _dt.date.fromisoformat(x["date"])).days) <= 3), None)
+        href = f"/fda-decision/{ours}" if ours else (x["letter"] or x["overview"])
+        rel = "" if ours else ' rel="nofollow noopener"'
+        src_word = "our decision page" if ours else ("FDA approval letter" if x["letter"] else "Drugs@FDA record")
+        out.append(f'<a class="row" href="{esc(href)}"{rel}><div class="t">{esc(pretty(x["date"]))} &middot; '
+                   f'{esc(what)} <span style="color:#46d17f;font-weight:700">&#10003; Approved</span></div>'
+                   f'<div class="d">{esc(x["sponsor"].title())} &middot; {esc(x["app"][:3] + " " + x["app"][3:])}'
+                   f'{(" S-" + x["number"]) if x["type"] == "SUPPL" else ""} &middot; {esc(kind)}'
+                   f'{" &middot; " + esc(x["ingredient"].lower()) if x["ingredient"] and x["brand"] else ""}'
+                   f' &middot; {src_word}</div></a>')
+    note = ('<p class="sub" style="margin:-2px 0 8px">Original NDA/BLA approvals and new-indication supplements recorded in '
+            'Drugs@FDA (openFDA) that are not goal dates on our calendar, by the FDA&#x27;s own action date. openFDA posts '
+            'records a few days after the action, and CBER products (vaccines, cell and gene therapies) are not in '
+            'Drugs@FDA.</p>')
+    return note + '<div class="grid">' + "".join(out) + "</div>", len(extra), extra
+
+
 def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                   errors="replace").read().replace("\x00", "")
@@ -179,6 +228,9 @@ def main():
         if shown:
             body.append(f'<h2>{label} ({len(shown)})</h2><div class="grid">'
                         + "".join(dec_row(r) for r in shown) + "</div>")
+    rec_html, n_rec, _rec = fda_record_rows(week_ago, tiso, rows, esc, pretty)
+    if n_rec:
+        body.append(f'<h2>Other FDA approvals recorded in the past week ({n_rec})</h2>' + rec_html)
     if not dec_week and recent:
         body.append(f'<h2>Most recent decisions</h2><div class="grid">'
                     + "".join(dec_row(r) for r in recent) + "</div>")

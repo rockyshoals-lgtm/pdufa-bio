@@ -33,6 +33,19 @@
    "ASCENIV"
   ]
  },
+ "AMGN-2026-10-09": {
+  "checked": "2026-10-15",
+  "class": "EFFICACY",
+  "date": "2026-10-09",
+  "letter": null,
+  "name": "Repatha (evolocumab) - cardiovascular risk reduction label expansion (VESALIUS-CV)",
+  "record": "BLA 125522 SUPPL-47",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125522",
+  "terms": [
+   "Repatha",
+   "evolocumab"
+  ]
+ },
  "AMPH-2026-02-24": {
   "checked": "2026-10-10",
   "name": "Ipratropium Bromide HFA Inhalation Aerosol 1",
@@ -266,10 +279,14 @@
    "Opdivo"
   ]
  },
- "BMY-2026-06-01": {
-  "checked": "2026-10-10",
-  "name": "Camzyos (mavacamten) - (SCOUT-HCM)",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+ "BMY-2026-09-30": {
+  "checked": "2026-10-15",
+  "class": "EFFICACY",
+  "date": "2026-09-30",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214998Orig1s013ltr.pdf",
+  "name": "Camzyos (mavacamten) - pediatric oHCM (SCOUT-HCM)",
+  "record": "NDA 214998 SUPPL-13",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214998Orig1s013ltr.pdf",
   "terms": [
    "Camzyos",
    "mavacamten"
@@ -297,9 +314,15 @@
    "Tividenofusp"
   ]
  },
- "EBS-2026-02-13": {
-  "checked": "2026-10-10",
-  "name": "OTC NARCAN Nasal Spray w/ carrying case",
+ "EBS-2026-01-14": {
+  "checked": "2026-10-15",
+  "name": "OTC NARCAN Nasal Spray - carrying case",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": []
+ },
+ "EBS-2026-02-12": {
+  "checked": "2026-10-15",
+  "name": "OTC NARCAN Nasal Spray - 6-count and 24-count multipacks",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": []
  },
@@ -414,14 +437,6 @@
    "Iinaclotide"
   ]
  },
- "JAGX-2026-04-29": {
-  "checked": "2026-10-10",
-  "name": "Canalevia-CA1",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
-  "terms": [
-   "Canalevia-CA1"
-  ]
- },
  "JNJ-2026-03-05": {
   "checked": "2026-10-03",
   "class": "EFFICACY",
@@ -472,15 +487,6 @@
   "terms": [
    "FILSPARI",
    "sparsentan"
-  ]
- },
- "LGND-2026-06-08": {
-  "checked": "2026-10-10",
-  "name": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
-  "terms": [
-   "MIPLYFFA",
-   "arimoclomol"
   ]
  },
  "LLY-2026-04-01": {
@@ -591,12 +597,13 @@
    "pembrolizumab"
   ]
  },
- "NVCR-2026-02-12": {
-  "checked": "2026-10-10",
-  "name": "Optune Pax",
+ "NVCR-2026-02-11": {
+  "checked": "2026-10-15",
+  "name": "Optune Pax (Tumor Treating Fields) - locally advanced pancreatic cancer",
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": [
-   "Optune"
+   "Optune",
+   "Tumor"
   ]
  },
  "NVO-2026-03-03": {
@@ -712,13 +719,30 @@
    "pembrolizumab"
   ]
  },
- "PGEN-2026-05-27": {
-  "checked": "2026-10-10",
-  "name": "PAPZIMEOS (zopapogene imadenovec-drba)",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+ "PFE-2026-08-27": {
+  "checked": "2026-10-15",
+  "class": "TYPE 1",
+  "date": "2026-08-27",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220106Orig1s000ltr.pdf",
+  "name": "LISRAYA (brepocitinib)",
+  "record": "NDA 220106 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220106Orig1s000ltr.pdf",
   "terms": [
-   "PAPZIMEOS",
-   "zopapogene"
+   "LISRAYA",
+   "brepocitinib"
+  ]
+ },
+ "PFE-2026-10-07": {
+  "checked": "2026-10-15",
+  "class": "EFFICACY",
+  "date": "2026-10-07",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213411Orig1s010ltr.pdf",
+  "name": "Tukysa (tucatinib) + trastuzumab + pertuzumab - HER2+ metastatic breast cancer maintenance (HER2CLIMB-05)",
+  "record": "NDA 213411 SUPPL-10",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213411Orig1s010ltr.pdf",
+  "terms": [
+   "Tukysa",
+   "tucatinib"
   ]
  },
  "PTGX-2026-03-18": {
@@ -825,12 +849,16 @@
    "dupilumab"
   ]
  },
- "SPRY-2026-05-15": {
-  "checked": "2026-10-10",
-  "name": "Neffy 1 mg (epinephrine nasal spray)",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+ "SPRY-2026-03-27": {
+  "checked": "2026-10-15",
+  "class": "EFFICACY",
+  "date": "2026-03-26",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214697Orig1s002ltr.pdf",
+  "name": "neffy (epinephrine nasal spray) - age limit removed, patients 15 kg and over",
+  "record": "NDA 214697 SUPPL-2",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214697Orig1s002ltr.pdf",
   "terms": [
-   "Neffy",
+   "neffy",
    "epinephrine"
   ]
  },
@@ -845,6 +873,19 @@
   "terms": [
    "PONLIMSI",
    "denosumab-adet"
+  ]
+ },
+ "TEVA-2026-10-08": {
+  "checked": "2026-10-15",
+  "class": "TYPE 5",
+  "date": "2026-10-08",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219007Orig1s000ltr.pdf",
+  "name": "Weltruza (olanzapine) extended-release injectable suspension (TEV-749)",
+  "record": "NDA 219007 ORIG-1",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219007Orig1s000ltr.pdf",
+  "terms": [
+   "Weltruza",
+   "olanzapine"
   ]
  },
  "TVTX-2026-04-13": {
@@ -880,24 +921,6 @@
   "terms": [
    "Casgevy",
    "exagamglogene"
-  ]
- },
- "XOMA-2026-06-08": {
-  "checked": "2026-10-10",
-  "name": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
-  "terms": [
-   "MIPLYFFA",
-   "arimoclomol"
-  ]
- },
- "ZVRA-2026-06-08": {
-  "checked": "2026-10-10",
-  "name": "MIPLYFFA (MY-PLY-FAH) (arimoclomol)",
-  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
-  "terms": [
-   "MIPLYFFA",
-   "arimoclomol"
   ]
  }
 }

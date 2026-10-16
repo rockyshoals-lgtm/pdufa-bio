@@ -1,20 +1,12 @@
 {
- "held_since": "2026-10-14T23:36:17Z",
- "consecutive_held_runs": 1,
+ "held_since": null,
+ "consecutive_held_runs": 0,
  "emailed_at": null,
- "leads": [
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_ibrx_2027-01-06",
-   "key": "pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
-   "text": "2026-10-14 \"FDA approves an expanded indication for nogapendekin alfa inbakicept-pmln for BCG-unresponsive non-muscle invasive bladder cancer\" [ANKTIVA] http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
-   "first_seen": "2026-10-14T23:36:17Z"
-  }
- ],
+ "leads": [],
  "issued_keys": [
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle"
  ],
- "last_clear_run": "2026-10-10T16:22:17Z"
+ "last_clear_run": "2026-10-16T01:15:26Z"
 }
