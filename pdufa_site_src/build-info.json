@@ -1,14 +1,25 @@
 {
- "built": "2026-10-16T14:36:22+00:00",
- "data_built_at": "2026-10-16T14:36:22+00:00",
- "commit": "e7b6cd269",
- "commit_at_build": "e7b6cd269",
+ "built": "2026-10-16T16:20:44+00:00",
+ "data_built_at": "2026-10-16T16:20:44+00:00",
+ "commit": "60d5a86fb",
+ "commit_at_build": "60d5a86fb",
  "as_of_eastern": "2026-10-16",
  "next_date": "2026-10-17",
  "next_ticker": "IRD",
  "next_days": 1,
  "next_status": "upcoming",
  "days_since_goal": null,
- "held_since": null,
- "held_leads": []
+ "held_since": "2026-10-16T16:13:56Z",
+ "held_leads": [
+  {
+   "row_id": "drug:phentolamine-ophthalmic",
+   "source": "drug_pages",
+   "first_seen": "2026-10-16T16:13:56Z"
+  },
+  {
+   "row_id": "pdufa_ird_2026-10-17",
+   "source": "sponsor_feed",
+   "first_seen": "2026-10-16T16:13:56Z"
+  }
+ ]
 }
