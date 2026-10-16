@@ -47,6 +47,14 @@ def main():
             n += 1
             if f != want:
                 fails.append(f"/{rel.replace('/index.html', '')}: says today is {f}; the Eastern build date is {want}")
+    # 2026-10-16: test_lede_matches_table counted /calendar with the runner's UTC date at 21:49 ET and blocked a
+    # correct deploy. ~25 builders/guards still call dt.date.today(); the job must run them on Eastern time.
+    wf = io.open(os.path.join(HERE, ".github", "workflows", "pdufa-rebuild.yml"), encoding="utf-8").read()
+    if os.environ.get("PLANT_NO_TZ") == "1":
+        wf = wf.replace("TZ: America/New_York", "")
+    if not re.search(r"(?m)^  rebuild:\n(?:    .*\n)*?    env:\n(?:      .*\n)*?      TZ: America/New_York\s*$", wf):
+        fails.append(".github/workflows/pdufa-rebuild.yml: the rebuild job does not set env TZ: America/New_York, so "
+                     "every dt.date.today() on the runner is the UTC date (a day ahead from 20:00 ET)")
     if fails:
         print("FAIL: a page calls the wrong calendar day 'today' (RULE 1: Eastern, not the runner's UTC clock):")
         for f in fails:

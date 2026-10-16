@@ -89,8 +89,12 @@ def main():
                 sib = re.sub(re.escape(B) + ".*?" + re.escape(E), "", sib, flags=re.S)
                 frags = re.findall(r'<a class="row"[^>]*>(.*?)</a>', sib, re.S)
                 if pred == "ahead":
-                    import datetime as _dt
-                    today_ = _dt.date.today().isoformat()
+                    # 2026-10-16 01:49 UTC (21:49 ET Oct 15): the runner's UTC date had rolled to Oct 16, so
+                    # this count dropped the Enspryng TED row (goal Oct 15, still today in Eastern) and failed a
+                    # correct homepage (37) against its own miscount (36). Eastern, like the builder.
+                    sys.path.insert(0, HERE)
+                    from site_dates import eastern_today
+                    today_ = eastern_today().isoformat()
                     n = 0
                     for fr in frags:
                         s_ = html.unescape(re.sub(r"<[^>]+>", " ", fr)).lower()

@@ -39,6 +39,11 @@ permissions:
 jobs:
   rebuild:
     runs-on: ubuntu-latest
+    # RULE 1 (2026-10-16): every date the site prints is the EASTERN date. About 25 builders and guards still
+    # call dt.date.today(), which on the runner was UTC, so any run from 20:00 ET (00:00 UTC) on built and
+    # tested against tomorrow. Explicit `date -u` and timezone-aware code are unaffected.
+    env:
+      TZ: America/New_York
     steps:
       - uses: actions/checkout@v5
 
