@@ -810,6 +810,15 @@
    "CALQUENCE"
   ]
  },
+ "RHHBY-2026-10-15": {
+  "checked": "2026-10-16",
+  "name": "Enspryng (satralizumab-mwge)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Enspryng",
+   "satralizumab-mwge"
+  ]
+ },
  "RVMD-2026-08-26": {
   "checked": "2026-10-03",
   "class": "TYPE 1",

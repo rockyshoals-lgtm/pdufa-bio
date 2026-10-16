@@ -242,8 +242,15 @@ def main():
         _seo = seo.get((tk, dcd)) or {}
         if _seo.get("title_indication") and drug != "the application under review":
             t2 = f"{dshort} {word_t} for {_seo['title_indication']} | {tk} FDA Decision | pdufa.bio"
+            # 2026-10-16: "Enspryng (satralizumab) Approval Announced Oct 15, 2026 for Thyroid Eye Disease" is
+            # 105 characters, so the indication (the query: "enspryng fda approval thyroid eye disease") was
+            # silently dropped. The brand without its parenthetical INN keeps the indication; the INN stays in h1.
+            bare = re.sub(r"\s*\([^)]*\)", "", dshort).strip()
+            t3 = f"{bare} {word_t} for {_seo['title_indication']} | {tk} FDA Decision | pdufa.bio"
             if len(t2) <= 100:
                 title = t2
+            elif bare and bare != dshort and len(t3) <= 100:
+                title = t3
         if (tk, dcd) in fda_dates:
             fd = fda_dates[(tk, dcd)]
             fdelta = (dt.date.fromisoformat(fd) - dt.date.fromisoformat(goal)).days if goal else None

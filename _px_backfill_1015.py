@@ -6,12 +6,13 @@ import json
 import os
 import sys
 
+_ARGS = sys.argv[1:]
 sys.argv = [sys.argv[0]]
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import refresh_pxcache as R  # noqa: E402  (loads the env and the FMP key; main() is not run)
 
-TICKERS = ["IBRX", "TEVA", "PFE", "AMGN", "BMY", "SPRY", "NVCR", "EBS", "GILD"]
+TICKERS = _ARGS or ["IBRX", "TEVA", "PFE", "AMGN", "BMY", "SPRY", "NVCR", "EBS", "GILD"]
 cache = json.load(open(R.CACHE))
 for tk in TICKERS:
     rows = R.eod(tk, "2025-07-01")

@@ -90,7 +90,7 @@
   "result": "found"
  },
  "pdufa_lnth_2026-06-29": {
-  "checked": "2026-10-15",
+  "checked": "2026-10-16",
   "result": "crl-no-letter"
  },
  "pdufa_lnth_2026-08-13": {
@@ -194,6 +194,14 @@
   "checked": "2026-09-27",
   "date": "2026-08-06",
   "result": "manual"
+ },
+ "pdufa_rhhby_2026-10-15": {
+  "checked": "2026-10-16",
+  "result": "none",
+  "terms": [
+   "ENSPRYNG",
+   "SATRALIZUMAB"
+  ]
  },
  "pdufa_roiv_2026-09-30": {
   "checked": "2026-09-27",

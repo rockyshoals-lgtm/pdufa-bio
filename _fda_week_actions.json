@@ -229,5 +229,22 @@
     "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761347"
    }
   ]
+ },
+ "2026-10-09..2026-10-16": {
+  "fetched": "2026-10-16T07:40:18Z",
+  "actions": [
+   {
+    "date": "2026-10-09",
+    "sponsor": "AMGEN INC",
+    "brand": "REPATHA",
+    "ingredient": "EVOLOCUMAB",
+    "app": "BLA125522",
+    "type": "SUPPL",
+    "number": "47",
+    "class": "Efficacy",
+    "letter": "",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125522"
+   }
+  ]
  }
 }

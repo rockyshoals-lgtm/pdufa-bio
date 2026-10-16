@@ -1,0 +1,16 @@
+[
+ {
+  "ticker": "RHHBY",
+  "date": "2026-10-15",
+  "outcome": "Approved",
+  "drug": "Enspryng (satralizumab-mwge)",
+  "indication": "Adults with thyroid eye disease (TED)",
+  "company": "Roche Holding AG (Genentech)",
+  "cap": "Large",
+  "headline": "Genentech says Enspryng is the first and only at-home subcutaneous treatment for thyroid eye disease, given every four weeks during maintenance. It is the second indication for Enspryng, an IL-6 receptor inhibitor, after neuromyelitis optica spectrum disorder in 2020.",
+  "pdufa_note": "Genentech announced on October 15, 2026 that the FDA had approved Enspryng for adults with thyroid eye disease (<a href=\"https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first\" rel=\"noopener\" style=\"color:#e3ba5e\">Genentech's announcement</a>). The goal date was October 15, 2026, under priority review (<a href=\"https://www.gene.com/media/press-releases/15118/2026-06-29/fda-grants-priority-review-to-genentechs\" rel=\"noopener\" style=\"color:#e3ba5e\">Genentech, June 29, 2026</a>). The release does not state the day the FDA acted, and the FDA's letter for BLA 761149 had not been posted on Drugs@FDA when this page was published, so pdufa.bio holds no FDA record of the action day yet and computes no early or late margin. The approval rests on the Phase III SatraGO-1 (NCT05987423) and SatraGO-2 (NCT06106828) studies, identically designed and placebo-controlled, 258 patients in 19 countries. Per Genentech, SatraGO-1 did not meet its pre-specified primary endpoint at week 24; SatraGO-2 showed a proptosis response of 52.9% with Enspryng versus 23.4% on placebo and diplopia reduction of 60.7% versus 25.8% in patients with active TED, with consistent results in the overall population. Genentech reported no new safety signals. A further Enspryng decision is pending: MOGAD, with a goal date of January 10, 2027 (<a href=\"/pdufa/RHHBY-enspryng-mogad\" style=\"color:#e3ba5e\">Enspryng MOGAD PDUFA date</a>).",
+  "source": "https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first",
+  "source_label": "Genentech press release, October 15, 2026",
+  "h1": "Enspryng (satralizumab) <span class=\"g\">FDA approval for thyroid eye disease</span>: Oct 15, 2026"
+ }
+]

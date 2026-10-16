@@ -131,13 +131,15 @@ def main():
     span = f"{short(mon)} to {short(sun)}, {sun.year}"
     title = f"FDA approval decisions this week: {span} | pdufa.bio"
     n_dec, n_pend = len(decided), len(pending)
-    desc = (f"FDA decisions on tracked drug applications, week of {span}: {n_dec} decided"
+    # Audit 2026-10-16 3b: "fda approval decision biotech" (477 impressions, 0 clicks) -- the page never said biotech.
+    desc = (f"FDA approval decisions for biotech and pharma, week of {span}: {n_dec} decided"
             + ((" (" + ", ".join(str(r.get("t")) + " " + str(r.get("oc")) for r in decided[:3]) + ")") if decided else "")
             + f", {n_pend} goal date{'s' if n_pend != 1 else ''} still ahead. Dated by FDA record.")
     if len(desc) > 158:
-        desc = (f"FDA decisions on tracked drug applications, week of {span}: {n_dec} decided, "
+        desc = (f"FDA approval decisions for biotech and pharma, week of {span}: {n_dec} decided, "
                 f"{n_pend} goal date{'s' if n_pend != 1 else ''} still ahead. Dated by FDA record.")
-    lede = (f"In the week of {span}, the FDA decided {n_dec} tracked application{'s' if n_dec != 1 else ''}"
+    lede = (f"FDA approval decisions for biotech and pharma this week. In the week of {span}, the FDA decided "
+            f"{n_dec} tracked application{'s' if n_dec != 1 else ''}"
             + ("" if not decided else ": " + "; ".join(
                 f"{r.get('t')} {_cdn(r.get('name'))} ({r.get('oc')}, {pretty(act_day(r))})" for r in decided))
             + f". {n_pend} goal date{'s' if n_pend != 1 else ''} remain{'s' if n_pend == 1 else ''} this week"

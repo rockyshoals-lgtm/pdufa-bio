@@ -174,6 +174,10 @@ def trials(s):
     return out - {"THE", "WITH", "PLUS"}
 
 
+INN_RX = re.compile(r"\b[a-z]{3,}(?:mab|nib|cept|cel|tide|rsen|siran|stat|vir|lisib|ciclib|parib|zomib|degib|"
+                    r"rafenib|platin|taxel|cline|tug|vec|gene)\b")
+
+
 def match_decision(by_tk, tk, caldate, caldate_desc=""):
     """Return (decision_date, outcome) for the decision this calendar row is waiting on.
 
@@ -265,6 +269,18 @@ def match_decision(by_tk, tk, caldate, caldate_desc=""):
         name_match = (bool(row_toks & toks(drugtext))
                       and not (rs and ds_ and not (rs & ds_))     # strengths disagree
                       and not (rt and dt_ and not (rt & dt_)))    # trials disagree (GRACE!=ROSELLA)
+        # 2026-10-16: the NEAR window took any same-ticker decision on proximity alone. Pfizer's Tukysa
+        # approval (10-07) sat 7 days from the brepocitinib goal row (09-30) and the calendar published
+        # "Brepocitinib: Approved" linking the Tukysa page. Names still never have to MATCH (a code vs a
+        # brand), but when the ROW names an INN (an international nonproprietary name: brepocitinib,
+        # olezarsen) that the decision does not mention, and the two share no word, they are different
+        # products. Code-named rows (MR-100A-01, TLX101-Px, UX111) carry no INN and keep matching on
+        # proximity, as before.
+        dtoks = toks(drugtext)
+        row_inns = set(INN_RX.findall(str(caldate_desc or "").lower()))
+        if (near and row_inns and not (row_toks & dtoks)
+                and not any(x in str(drugtext or "").lower() for x in row_inns)):
+            continue
         early_ok = (-EARLY_WINDOW <= signed <= 0 and outcome != "crl"
                     and (is_past or name_match))
         # ...and, when it is a FAR carry-forward, the multi-product rule above.

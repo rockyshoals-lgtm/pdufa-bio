@@ -60,7 +60,9 @@ def timing_split():
 
 
 CAP_RANK = {"Large": 0, "Mid": 1, "Small": 2, "Micro": 3, "Nano": 4}
-ROW_RE = re.compile(r'<a class="row"(?![^>]*data-dec)[^>]*href="(/pdufa/[^"]+)"[^>]*>\s*'
+# /ticker/ too (2026-10-16): quarter-estimate rows link the ticker page, and December's sentence said 15 still
+# ahead with 21 in the grid.
+ROW_RE = re.compile(r'<a class="row"(?![^>]*data-dec)[^>]*href="(/(?:pdufa|ticker)/[^"]+)"[^>]*>\s*'
                     r'<div class="t">(.*?)</div>\s*<div class="d">(.*?)</div>', re.S)
 
 
@@ -76,18 +78,32 @@ def load_caps():
             for r in rows if r.get("t") and r.get("d")}
 
 
-def month_names(grid, cap_of, limit=5):
-    """Up to `limit` upcoming programs in this month's grid as 'Drug (TICKER, Month D)',
-    ordered by sponsor cap tier then date. Decided rows (data-dec) are excluded: the
-    sentence is about what is still due. Quarter-only dates are skipped: naming a drug
-    with a day it does not have would be a precision claim the source never made."""
-    out = []
+def month_pending(grid, cap_of, today, limit=6):
+    """(pending, named) for this month's grid. `pending` counts every row still ahead: not decided
+    (data-dec rows are excluded by ROW_RE), and either quarter-only (est.) or dated today or later.
+    A row whose date has passed undecided is awaiting, not "due", so it is not named or counted here.
+    `named` is 'Drug (TICKER, Mon D)' for the day-dated pending rows, IN DATE ORDER (audit 2026-10-16
+    2a: October read "Oct 15, Oct 26, Oct 17"). When more than `limit` are pending, the largest
+    sponsors are chosen first (cap tier, then date) and the chosen names are then sorted by date; the
+    caller then says "including" and states the count, so the sentence never reads as complete when
+    it is not. Quarter-only rows are never named with a day they do not have."""
+    pend, out = 0, []
     for href, t, d in ROW_RE.findall(grid):
         t_txt = html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
         m = re.match(r"([A-Z]{1,6}(?:\s*/\s*[A-Z]{1,6})*)\s*[·]\s*(\d{4}-\d{2}-\d{2})", t_txt)
-        if not m or "(est.)" in t_txt:
+        if not m:
+            # A month- or quarter-only row ("GSK · Nov 2026") is still ahead and counts, but is never named
+            # with a day. 2026-10-16: November's sentence said 10 still ahead with 12 in the grid.
+            if re.match(r"[A-Z]{1,6}(?:\s*/\s*[A-Z]{1,6})*\s*[·]\s*(?:[A-Z][a-z]{2}|Q\d|H\d) \d{4}", t_txt):
+                pend += 1
             continue
+        est = "(est.)" in t_txt
         tk, iso = m.group(1).split("/")[0].strip(), m.group(2)
+        if not est and iso < today:
+            continue
+        pend += 1
+        if est:
+            continue
         drug = html.unescape(re.sub(r"<[^>]+>", "", d)).strip()
         drug = re.split(r"\s*(?::|\s-\s\(|\s\()", drug, 1)[0].strip().rstrip("…").strip()
         if not drug or len(drug) < 3:
@@ -95,7 +111,8 @@ def month_names(grid, cap_of, limit=5):
         rank = CAP_RANK.get(cap_of.get((tk, iso), ""), 9)
         out.append((rank, iso, f"{drug} ({m.group(1).replace(' ', '')}, {pretty(iso)})"))
     out.sort()
-    return [x[2] for x in out[:limit]]
+    chosen = out if len(out) <= limit else out[:limit - 1]
+    return pend, [x[2] for x in sorted(chosen, key=lambda x: (x[1], x[2]))]
 
 
 def main():
@@ -103,8 +120,9 @@ def main():
     n, early, on, late, biggest = timing_split()
     # Eastern calendar date of the build (audit 09-05 P2-7), from the one shared function.
     sys.path.insert(0, HERE)
-    from site_dates import eastern_stamp
+    from site_dates import eastern_stamp, eastern_today
     stamp = eastern_stamp()
+    today_iso = eastern_today().isoformat()
 
     p4 = ""
     if n:
@@ -218,10 +236,13 @@ def main():
         # (medswitcher: "Survodutide, Retatrutide, ..."); ours only counted them. Name the
         # month's upcoming programs, largest sponsors first (cap tier from the dataset,
         # then date), from the same rows the grid shows -- never from anywhere else.
-        names = month_names(grid, cap_of)
+        pend, names = month_pending(grid, cap_of, today_iso)
         if names:
-            s += (f" In {mon.split()[0]} the FDA is due to decide on "
-                  + ", ".join(names[:-1]) + (" and " if len(names) > 1 else "") + names[-1] + ".")
+            lst = ", ".join(names[:-1]) + (" and " if len(names) > 1 else "") + names[-1]
+            if pend == len(names):
+                s += f" In {mon.split()[0]} the FDA is due to decide on {lst}."
+            else:
+                s += (f" {pend} of them {'are' if pend != 1 else 'is'} still ahead, including {lst}.")
         parts[k + 1] = ('<!--MSENT:BEGIN--><p class="msent" style="margin:2px 0 8px;color:var(--mut2);'
                         f'font-size:13px">{esc(s)}</p><!--MSENT:END-->' + grid)
     t2 = "".join(parts)

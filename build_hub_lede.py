@@ -263,8 +263,10 @@ def main():
         # ranks #3 on Bing with the phrase at the front, so the ranking phrase keeps its position
         # and the count + cadence go after it. The count is the same row count the lede publishes,
         # so title, sentence and table cannot disagree.
+        # Audit 2026-10-16 3c-4: Bing AI share for "fda calendar 2026" slipped five reads running while the title
+        # led "2026 FDA PDUFA Calendar". Lead with the query's own words; "PDUFA" stays in the title.
         titles = {
-            "calendar":  f"2026 FDA PDUFA Calendar: {len(rows)} Dates, Updated Daily | pdufa.bio",
+            "calendar":  f"FDA Calendar 2026: {len(rows)} PDUFA Dates, Updated Daily | pdufa.bio",
             "decisions": f"FDA Decisions Archive: {len(rows)} Tracked, Updated Daily | pdufa.bio",
             "readouts":  f"Clinical Trial Readout Calendar: {len(rows)} Dates | pdufa.bio",
         }
