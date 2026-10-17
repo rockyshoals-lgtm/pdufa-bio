@@ -489,9 +489,17 @@ def main():
             # archive's dated decision and once as a bare "PDUFA" goal row with no outcome. The
             # archive row carries the decision; the goal date is stated on the decision page.
             _dcd = str(r.get("dcd") or "")[:10]
-            if (str(r.get("st") or "").lower() == "decided" and _dcd and _dcd != day
-                    and (tk, _dcd) in arch):
+            _moved = (str(r.get("st") or "").lower() == "decided" and _dcd and _dcd != day
+                      and (tk, _dcd) in arch)
+            # 2026-10-17: skip only if the archive row really is on THIS page. RYZUMVI (IRD, announced 10-16,
+            # goal 10-17) has an "Approval Announced" title the archive source does not parse, so both rows
+            # were skipped, the page had no events, and the rebuild deleted /drug/phentolamine-ophthalmic.
+            if _moved and any(str(x.get("type")) == "FDA decision" and str(x.get("t") or "").upper() == tk
+                              and str(x.get("d") or "") == _dcd for x in rs):
                 continue
+            if _moved:
+                day = _dcd                     # render the decision itself, dated by the decision page
+                typ = "FDA decision"
             # 2026-10-09 (audit P0): a WITHDRAWN application is dated by its withdrawal, labelled as
             # such, and links its event page; it is not a PDUFA date that is still ahead.
             if str(r.get("st") or "").lower() == "withdrawn":

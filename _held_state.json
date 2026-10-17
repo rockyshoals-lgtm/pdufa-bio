@@ -1,23 +1,8 @@
 {
- "held_since": "2026-10-16T16:13:56Z",
- "consecutive_held_runs": 2,
- "emailed_at": "2026-10-16T23:12:00Z",
- "leads": [
-  {
-   "source": "drug_pages",
-   "row_id": "drug:phentolamine-ophthalmic",
-   "key": "phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
-   "text": "/drug/phentolamine-ophthalmic sponsor:IRD:2026-10-16 'ophthalmic' appears with approval language",
-   "first_seen": "2026-10-16T16:13:56Z"
-  },
-  {
-   "source": "sponsor_feed",
-   "row_id": "pdufa_ird_2026-10-17",
-   "key": "pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
-   "text": "[decision] 2026-10-16 \"Opus Genetics Announces FDA Approval of Phentolamine Ophthalmic Solution 0.75% for the Treatment of Presbyopia\" [Phentolamine] https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
-   "first_seen": "2026-10-16T16:13:56Z"
-  }
- ],
+ "held_since": null,
+ "consecutive_held_runs": 0,
+ "emailed_at": null,
+ "leads": [],
  "issued_keys": [
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
   "drug_pages|remibrutinib|openfda:20261006",
@@ -25,6 +10,6 @@
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
- "last_clear_run": "2026-10-16T01:15:26Z",
+ "last_clear_run": "2026-10-17T04:29:51Z",
  "email_status": "mention-issue"
 }

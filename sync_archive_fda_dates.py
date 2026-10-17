@@ -101,7 +101,7 @@ def main():
             t = re.search(r"<title>(.*?)</title>", doc, re.S)
             name = html.unescape(re.split(r"\s+(?:Approved|FDA Approval|Approval Announced)\b", t.group(1))[0]) if t else ""
         pd_ = dt.date.fromisoformat(day)
-        cands = {}
+        cands, by_term = {}, {}
         for term in terms(name):
             for res in query(term):
                 appl = str(res.get("application_number", ""))
@@ -115,8 +115,15 @@ def main():
                     if -20 <= (d - pd_).days <= 3:
                         letter = next((x.get("url") for x in s.get("application_docs", []) or []
                                        if x.get("type") == "Letter"), None)
-                        cands[(appl, s.get("submission_type"), s.get("submission_number"))] = (d, letter, s.get("submission_class_code"))
+                        key = (appl, s.get("submission_type"), s.get("submission_number"))
+                        cands[key] = (d, letter, s.get("submission_class_code"))
+                        by_term.setdefault(term, {})[key] = cands[key]
             time.sleep(0.25)
+        # 2026-10-16: Onswik's INN starts "insulin", which matched two insulin approvals and left the page
+        # "ambiguous" (and off /fda-approval-letters). When the BRAND alone names exactly one, that is the match.
+        tl = terms(name)
+        if len(cands) > 1 and tl and len(by_term.get(tl[0], {})) == 1:
+            cands = dict(by_term[tl[0]])
         rec = {"checked": today.isoformat(), "name": name, "terms": terms(name)}
         if len(cands) == 1:
             (appl, st, sn), (d, letter, cls) = next(iter(cands.items()))

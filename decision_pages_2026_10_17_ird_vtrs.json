@@ -1,0 +1,30 @@
+[
+ {
+  "date": "2026-10-16",
+  "outcome": "Approved",
+  "drug": "RYZUMVI (phentolamine ophthalmic solution) 0.75%",
+  "indication": "Presbyopia in adults",
+  "pdufa_note": "Opus Genetics announced on October 16, 2026 that the FDA had approved its supplemental New Drug Application for phentolamine ophthalmic solution 0.75% for the treatment of presbyopia in adults (<a href=\"https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia\" rel=\"noopener\" style=\"color:#e3ba5e\">Opus Genetics announcement</a>). The goal date was October 17, 2026 (<a href=\"https://ir.opusgtx.com/press-releases/detail/519/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia\" rel=\"noopener\" style=\"color:#e3ba5e\">Opus Genetics, February 25, 2026</a>). The release does not state the day the FDA acted, and the FDA's letter for NDA 217064 had not been posted on Drugs@FDA when this page was published, so pdufa.bio holds no FDA record of the action day yet and computes no early or late margin. The product is already marketed in the U.S. as RYZUMVI for pharmacologically induced mydriasis; this supplement adds presbyopia. Per Opus, the approval rests on the Phase 3 VEGA-2 and VEGA-3 trials, both of which met their primary and all key secondary efficacy endpoints, with no treatment-related serious adverse events reported; the most common ocular adverse reactions in presbyopia were conjunctival hyperemia (21%) and instillation site irritation (16%). Viatris holds exclusive U.S. commercial rights under a global licensing agreement with Opus Genetics, and the approval triggers a milestone payment to Opus.",
+  "source": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+  "source_label": "Opus Genetics press release, October 16, 2026",
+  "headline": "Phentolamine ophthalmic solution 0.75% (RYZUMVI), already approved for reversing pharmacologic pupil dilation, is now approved for presbyopia in adults, an eye drop that narrows the pupil to improve near vision, per Opus Genetics. Viatris commercializes it in the U.S.",
+  "h1": "RYZUMVI (phentolamine) <span class=\"g\">FDA approval for presbyopia</span>: Oct 16, 2026",
+  "ticker": "IRD",
+  "company": "Opus Genetics, Inc.",
+  "cap": "Small"
+ },
+ {
+  "date": "2026-10-16",
+  "outcome": "Approved",
+  "drug": "RYZUMVI (phentolamine ophthalmic solution) 0.75%",
+  "indication": "Presbyopia in adults",
+  "pdufa_note": "Opus Genetics announced on October 16, 2026 that the FDA had approved its supplemental New Drug Application for phentolamine ophthalmic solution 0.75% for the treatment of presbyopia in adults (<a href=\"https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia\" rel=\"noopener\" style=\"color:#e3ba5e\">Opus Genetics announcement</a>). The goal date was October 17, 2026 (<a href=\"https://ir.opusgtx.com/press-releases/detail/519/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia\" rel=\"noopener\" style=\"color:#e3ba5e\">Opus Genetics, February 25, 2026</a>). The release does not state the day the FDA acted, and the FDA's letter for NDA 217064 had not been posted on Drugs@FDA when this page was published, so pdufa.bio holds no FDA record of the action day yet and computes no early or late margin. The product is already marketed in the U.S. as RYZUMVI for pharmacologically induced mydriasis; this supplement adds presbyopia. Per Opus, the approval rests on the Phase 3 VEGA-2 and VEGA-3 trials, both of which met their primary and all key secondary efficacy endpoints, with no treatment-related serious adverse events reported; the most common ocular adverse reactions in presbyopia were conjunctival hyperemia (21%) and instillation site irritation (16%). Viatris holds exclusive U.S. commercial rights under a global licensing agreement with Opus Genetics, and the approval triggers a milestone payment to Opus.",
+  "source": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+  "source_label": "Opus Genetics press release, October 16, 2026",
+  "headline": "Phentolamine ophthalmic solution 0.75% (RYZUMVI), already approved for reversing pharmacologic pupil dilation, is now approved for presbyopia in adults, an eye drop that narrows the pupil to improve near vision, per Opus Genetics. Viatris commercializes it in the U.S.",
+  "h1": "RYZUMVI (phentolamine) <span class=\"g\">FDA approval for presbyopia</span>: Oct 16, 2026",
+  "ticker": "VTRS",
+  "company": "Viatris Inc. (commercial partner of Opus Genetics)",
+  "cap": "Large"
+ }
+]

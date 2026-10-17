@@ -286,6 +286,9 @@ def cmd_apply(a):
             cur = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
             if cur != old:
                 if not a.dry_run:
+                    # 2026-10-17: the rebuild had removed /drug/phentolamine-ophthalmic (a separate bug) and this
+                    # write raised FileNotFoundError, aborting the step. A held page is restored, directory and all.
+                    os.makedirs(os.path.dirname(p), exist_ok=True)
                     io.open(p, "w", encoding="utf-8", newline="").write(old)
                 restored.append(os.path.relpath(p, SITE).replace("\\", "/"))
     # 2026-10-15: a restored page must keep its committed content-change date too. Six scheduled runs on

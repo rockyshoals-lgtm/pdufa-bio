@@ -2144,7 +2144,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2433,7 +2433,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2536,7 +2536,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) — DMD",
+  "name": "Deramiocel (CTGTAC) \u2014 DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2591,7 +2591,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) — Melanoma",
+  "name": "RP1 (CTGTAC) \u2014 Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3072,7 +3072,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-09",
-    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO® (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
+    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO\u00ae (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
     "url": "https://www.prnewswire.com/news-releases/biomarin-announces-positive-results-of-phase-3-voxzogo-vosoritide-study-in-hypochondroplasia-published-in-nejm-evidence-302873026.html",
     "checked": "2026-10-11",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3627,7 +3627,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3739,7 +3739,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4039,7 +4039,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -5146,7 +5146,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5252,7 +5252,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5379,7 +5379,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5509,7 +5509,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6414,7 +6414,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6435,7 +6435,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6456,7 +6456,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6814,7 +6814,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -7085,18 +7085,34 @@ export default [
   "type": "PDUFA",
   "ta": "Ophthalmology",
   "cap": "Small",
-  "st": "Upcoming",
-  "url": "/pdufa/IRD-phentolamine-ophthalmic",
-  "ua": "2026-10-16T14:27:07Z",
+  "st": "Decided",
+  "url": "/fda-decision/IRD-2026-10-16",
+  "ua": "2026-10-17T04:29:51Z",
   "_d": {
-   "review": "sNDA accepted; PDUFA goal date Oct 17, 2026",
+   "review": "Supplemental NDA 217064 (RYZUMVI, approved 2023 for pharmacologically induced mydriasis), presbyopia in adults, supported by the Phase 3 VEGA-2 and VEGA-3 trials, which per Opus met their primary and all key secondary endpoints. Viatris holds exclusive U.S. commercial rights.",
    "note": "slate previously mislabelled this event OPGx-RDH12; corrected",
-   "indication": "Presbyopia (sNDA)",
+   "indication": "Presbyopia in adults (sNDA; RYZUMVI was already approved for pharmacologically induced mydriasis)",
    "market_cap_usd": 336943083.15,
-   "source_url": "https://www.biospace.com/press-releases/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
-   "source": "company press release",
-   "event_slug": "IRD-phentolamine-ophthalmic"
-  }
+   "source_url": "https://ir.opusgtx.com/press-releases/detail/519/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+   "source": "Opus Genetics press release 2026-02-25",
+   "event_slug": "IRD-phentolamine-ophthalmic",
+   "brand": "RYZUMVI",
+   "inn": "phentolamine",
+   "trial": "VEGA-2, VEGA-3",
+   "indication_short": "presbyopia in adults",
+   "title_indication": "Presbyopia",
+   "seo_desc": "Opus Genetics announced on October 16, 2026 that the FDA approved phentolamine ophthalmic solution 0.75% (RYZUMVI) for presbyopia in adults. The goal date was October 17, 2026.",
+   "decision_source": "Opus Genetics press release, October 16, 2026",
+   "decision_source_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+   "announcement_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+   "announcement": "Opus Genetics press release, October 16, 2026",
+   "decision_quote": "Opus Genetics ... today announced that the U.S. Food and Drug Administration (FDA) has approved the Company's supplemental New Drug Application (sNDA) for phentolamine ophthalmic solution 0.75% for the treatment of presbyopia in adults.",
+   "decision_date_unsourced": true,
+   "decision_date_note": "2026-10-16 is the date of Opus Genetics' release, which \"today announced\" that the FDA \"has approved\" the sNDA; it does not state the day the FDA acted, and Drugs@FDA had not posted the supplement letter for NDA 217064 when this was published. No early or late margin against the October 17 goal date is published until an FDA record states the action day.",
+   "source_quote": "The FDA has assigned a PDUFA goal date of October 17, 2026."
+  },
+  "oc": "Approved",
+  "dcd": "2026-10-16"
  },
  {
   "id": "pdufa_vtrs_2026-10-17",
@@ -7106,11 +7122,11 @@ export default [
   "dp": "day",
   "name": "MR-141 (phentolamine ophthalmic solution 0.75%)",
   "type": "PDUFA",
-  "ta": "",
+  "ta": "Ophthalmology",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/IRD-phentolamine-ophthalmic",
-  "ua": "2026-10-16T23:10:02Z",
+  "st": "Decided",
+  "url": "/fda-decision/VTRS-2026-10-16",
+  "ua": "2026-10-17T04:18:58Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05139121",
@@ -7121,7 +7137,7 @@ export default [
     "updated": "2025-01-28",
     "slip": null
    },
-   "indication": null,
+   "indication": "Presbyopia in adults (sNDA; RYZUMVI was already approved for pharmacologically induced mydriasis)",
    "market_cap_usd": 20927325542.079998,
    "cash_runway_months": null,
    "days_to_decision": 99,
@@ -7137,8 +7153,24 @@ export default [
    "source": "Viatris Inc 8-K 2026-02-26",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000010/exhibit991-4q25earningsrel.htm",
    "source_quote": "d Drug Administration (FDA) accepted for review the supplemental New Drug Application (sNDA) for MR-141 (phentolamine ophthalmic solution 0.75%) for the treatment of presbyopia. The FDA has assigned a PDUFA goal date of October 17, 2026. Presbyopia is the age-related progressive loss of the ability to focus on close objects that results in blurred near v",
-   "event_slug": "IRD-phentolamine-ophthalmic"
-  }
+   "event_slug": "IRD-phentolamine-ophthalmic",
+   "brand": "RYZUMVI",
+   "inn": "phentolamine",
+   "trial": "VEGA-2, VEGA-3",
+   "indication_short": "presbyopia in adults",
+   "title_indication": "Presbyopia",
+   "seo_desc": "Opus Genetics announced on October 16, 2026 that the FDA approved phentolamine ophthalmic solution 0.75% (RYZUMVI) for presbyopia in adults. The goal date was October 17, 2026.",
+   "decision_source": "Opus Genetics press release, October 16, 2026",
+   "decision_source_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+   "announcement_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
+   "announcement": "Opus Genetics press release, October 16, 2026",
+   "decision_quote": "Opus Genetics ... today announced that the U.S. Food and Drug Administration (FDA) has approved the Company's supplemental New Drug Application (sNDA) for phentolamine ophthalmic solution 0.75% for the treatment of presbyopia in adults.",
+   "decision_date_unsourced": true,
+   "decision_date_note": "2026-10-16 is the date of Opus Genetics' release, which \"today announced\" that the FDA \"has approved\" the sNDA; it does not state the day the FDA acted, and Drugs@FDA had not posted the supplement letter for NDA 217064 when this was published. No early or late margin against the October 17 goal date is published until an FDA record states the action day.",
+   "review": "Supplemental NDA 217064 (RYZUMVI, approved 2023 for pharmacologically induced mydriasis), presbyopia in adults, supported by the Phase 3 VEGA-2 and VEGA-3 trials, which per Opus met their primary and all key secondary endpoints. Viatris holds exclusive U.S. commercial rights."
+  },
+  "oc": "Approved",
+  "dcd": "2026-10-16"
  },
  {
   "id": "conf_asn_2026-10-21",
@@ -7152,7 +7184,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASN",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7188,7 +7220,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7245,7 +7277,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7266,7 +7298,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7561,7 +7593,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7597,7 +7629,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7633,7 +7665,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7669,7 +7701,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7690,7 +7722,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7711,7 +7743,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -7831,7 +7863,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8342,7 +8374,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8371,7 +8403,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8825,7 +8857,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -8846,7 +8878,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -8867,7 +8899,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -8929,7 +8961,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -8950,7 +8982,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -11572,7 +11604,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11665,7 +11697,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11732,7 +11764,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12229,7 +12261,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12504,7 +12536,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12525,7 +12557,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -12953,7 +12985,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -12974,7 +13006,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13016,7 +13048,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13248,7 +13280,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13269,7 +13301,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13290,7 +13322,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13685,7 +13717,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13706,7 +13738,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-16T23:14:40Z",
+  "ua": "2026-10-17T04:35:14Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

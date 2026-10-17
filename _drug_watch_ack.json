@@ -17,6 +17,12 @@
    "source": "openfda:20260827",
    "reason": "Efficacy supplement (SUPPL-44) on marketed tirzepatide; same reasoning as SUPPL-41.",
    "acked": "2026-09-05"
+  },
+  {
+   "slug": "phentolamine-ophthalmic",
+   "source": "sponsor:IRD:2026-10-16",
+   "reason": "REAL: presbyopia sNDA approved, announced by Opus Genetics 2026-10-16; published as /fda-decision/IRD-2026-10-16 and recorded in _drug_approvals_confirmed.json.",
+   "acked": "2026-10-17"
   }
  ]
 }

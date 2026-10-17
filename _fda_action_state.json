@@ -77,6 +77,15 @@
   "label": "NDA 220210 ORIG-1",
   "result": "found"
  },
+ "pdufa_ird_2026-10-17": {
+  "checked": "2026-10-17",
+  "result": "none",
+  "terms": [
+   "RYZUMVI",
+   "PHENTOLAMINE",
+   "OPHTHALMIC"
+  ]
+ },
  "pdufa_jazz_2026-08-25": {
   "checked": "2026-09-27",
   "date": "2026-08-25",
@@ -90,7 +99,7 @@
   "result": "found"
  },
  "pdufa_lnth_2026-06-29": {
-  "checked": "2026-10-16",
+  "checked": "2026-10-17",
   "result": "crl-no-letter"
  },
  "pdufa_lnth_2026-08-13": {
@@ -196,7 +205,7 @@
   "result": "manual"
  },
  "pdufa_rhhby_2026-10-15": {
-  "checked": "2026-10-16",
+  "checked": "2026-10-17",
   "result": "none",
   "terms": [
    "ENSPRYNG",
@@ -250,6 +259,15 @@
   "date": "2026-07-28",
   "label": "NDA 219990 ORIG-1",
   "result": "found"
+ },
+ "pdufa_vtrs_2026-10-17": {
+  "checked": "2026-10-17",
+  "result": "none",
+  "terms": [
+   "RYZUMVI",
+   "PHENTOLAMINE",
+   "OPHTHALMIC"
+  ]
  },
  "pdufa_zyme_2026-08-25": {
   "checked": "2026-09-27",

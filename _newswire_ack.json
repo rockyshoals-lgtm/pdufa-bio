@@ -3,11 +3,13 @@
  "acked": [
   "pdufa_abbv_2026-12-31|https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease",
   "pdufa_rhhby_2026-10-15|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first",
-  "pdufa_rhhby_2027-01-10|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first"
+  "pdufa_rhhby_2027-01-10|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first",
+  "pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
  "reasons": {
   "pdufa_abbv_2026-12-31|https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease": "REAL: published 2026-10-03 as /fda-decision/ABBV-2026-09-28 (FDA letter NDA 220415, 2026-09-25).",
   "pdufa_rhhby_2026-10-15|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first": "REAL: published 2026-10-16 as /fda-decision/RHHBY-2026-10-15 (announced 2026-10-15; FDA action day not yet on Drugs@FDA).",
-  "pdufa_rhhby_2027-01-10|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first": "Not this row: the release is the TED approval (pdufa_rhhby_2026-10-15); MOGAD goal 2027-01-10 still pending."
+  "pdufa_rhhby_2027-01-10|https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first": "Not this row: the release is the TED approval (pdufa_rhhby_2026-10-15); MOGAD goal 2027-01-10 still pending.",
+  "pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia": "REAL: published 2026-10-17 as /fda-decision/IRD-2026-10-16 and /fda-decision/VTRS-2026-10-16 (announced 2026-10-16; FDA action day not yet on Drugs@FDA)."
  }
 }
