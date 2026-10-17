@@ -51,9 +51,13 @@ def main():
     checked = 0
     for p in glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True):
         rel = "pdufa_site_src/" + os.path.relpath(p, SITE).replace("\\", "/")
-        if rel not in state:
+        # 2026-10-17: a brand-new page is not in the state file until CI writes it, so locally (--no-state) every
+        # new decision page escaped this check and CI was the first to see IRD-2026-10-16 at 173 characters.
+        if rel not in state and "/fda-decision/" not in rel:
             continue
         doc = open(p, encoding="utf-8", errors="replace").read()
+        if rel not in state and re.search(r'<meta name="robots" content="noindex', doc):
+            continue                     # a noindex archive page is out of scope, as it is in the state file
         checked += 1
         short = rel.replace("pdufa_site_src", "")
 

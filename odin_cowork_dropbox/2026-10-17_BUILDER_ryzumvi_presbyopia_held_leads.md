@@ -37,6 +37,11 @@
 - **`quarantine_leads.py apply` crashed with FileNotFoundError** restoring a held page whose directory the rebuild had removed. In CI that would have aborted the step. It now recreates the directory.
 - **Self-correction:** my first draft of the rows' `seo_desc` said "the day before its October 17 goal date", which is a margin taken from an announcement date. It now reads "The goal date was October 17, 2026."
 
+- **CI run 39003475041 (on d04f3e2) blocked the deploy**, correctly: `/fda-decision/IRD-2026-10-16` had a 173-character description (limit 160).
+  - The hand-written `seo_desc` was 177 characters, so it was ignored, and the generic "announced" template overflowed on a 38-character drug name.
+  - `seo_desc` is now 145 characters, and the template has two shorter last-resort forms.
+  - **Why local guards missed it:** `test_meta_lengths.py` only checks pages already in `_sitemap_lastmod.json`. Locally that file is never written (`--no-state`), so every brand-new page escaped until CI. It now also checks every indexable decision page (noindex archive pages stay out of scope). Proved on the real page: clean passes, a planted 173-character description fails, and it passes again after restore.
+
 ## 3. Incident during this work (recorded so it is not repeated)
 1. A `git pull --rebase` autostash conflicted across ~1,700 generated pages. Locally built pages from the interrupted 10-16 run collided with CI's refresh commits.
 2. I stopped the local chain before it built on the conflicted tree.

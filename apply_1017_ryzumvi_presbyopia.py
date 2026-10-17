@@ -60,8 +60,7 @@ for rid, tk in (("pdufa_ird_2026-10-17", "IRD"), ("pdufa_vtrs_2026-10-17", "VTRS
         "indication": "Presbyopia in adults (sNDA; RYZUMVI was already approved for pharmacologically induced mydriasis)",
         "indication_short": "presbyopia in adults",
         "title_indication": "Presbyopia",
-        "seo_desc": ("Opus Genetics announced on October 16, 2026 that the FDA approved phentolamine ophthalmic solution "
-                     "0.75% (RYZUMVI) for presbyopia in adults. The goal date was October 17, 2026."),
+        "seo_desc": "Opus Genetics announced Oct 16, 2026 that the FDA approved RYZUMVI (phentolamine 0.75%) for presbyopia in adults; the goal date was Oct 17, 2026.",
         "decision_source": "Opus Genetics press release, October 16, 2026", "decision_source_url": REL,
         "announcement_url": REL, "announcement": "Opus Genetics press release, October 16, 2026",
         "decision_quote": QUOTE, "decision_date_unsourced": True, "decision_date_note": NOTE,

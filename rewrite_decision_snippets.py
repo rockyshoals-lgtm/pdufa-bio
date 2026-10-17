@@ -318,6 +318,13 @@ def main():
                 f"{tk}: {dshort} {verb} {when}."           # then the long drug name
         if core is not None and len(desc) > 158 and (tk, dcd) in announced and (tk, dcd) not in fda_notice:
             desc = f"{tk}: {drug.split(' (')[0]} {verb} {when}."
+            # 2026-10-17: "Phentolamine ophthalmic solution 0.75%" (38 chars) still came to 173 and CI blocked the
+            # deploy. Same facts, shorter words: the caveat survives, the run-on does not.
+            if len(desc) > 160:
+                desc = (f"{tk}: {drug.split(' (')[0]} approval announced by the sponsor {pretty(dcd)}; "
+                        f"FDA action day not stated, so no goal-date margin.")
+            if len(desc) > 160:
+                desc = f"{tk}: approval announced by the sponsor {pretty(dcd)}; FDA action day not stated, so no margin."
 
         if _seo.get("seo_desc") and len(_seo["seo_desc"]) <= 158:
             desc = _seo["seo_desc"]
