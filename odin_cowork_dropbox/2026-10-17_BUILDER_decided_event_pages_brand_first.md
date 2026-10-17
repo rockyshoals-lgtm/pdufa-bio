@@ -50,6 +50,15 @@ Both descriptions are 154 characters: "Opus Genetics announced Oct 16, 2026 that
 
 `test_decision_titles_clean.py` now also fails when an approved row with a recorded brand has a decision title without it. That covers 16 rows; the planted "MR-141 …" title fails.
 
+**Live check after deploy (bf78014, 23:00 UTC) caught one more:**
+- CI's `fix_meta_lengths.py` regenerated both RYZUMVI decision descriptions to a 106-character label ("Opus Genetics (IRD) FDA decision Oct 16, 2026: Approved. RYZUMVI (phentolamine ophthalmic solution) 0.75%.").
+- Cause: it keeps only descriptions it recognises as answer format, and "… announced Oct 16, 2026 that the FDA approved …" was not one of its patterns.
+- Locally the step had skipped the new page, which is not in the `--no-state` lastmod file. That is the same blind spot as `test_meta_lengths` on 10-17.
+- **Fix:** the pattern now recognises the form. Reproduced on CI's tree: the old code produces the label, the new code keeps the sentence.
+- **Guard:** `test_decision_titles_clean.py` now also requires every row's `seo_desc` (158 characters or fewer) to be its decision page's description. 5 rows are covered, and the planted label fails.
+
+**Also corrected in this push:** an earlier commit (8de058d) was blocked by `test_dropbox_index_complete`. It shipped `INDEX.md` listing the auditor's two 10-17 notes without the notes themselves; bf78014 adds them.
+
 ## 3. Enspryng and RYZUMVI FDA days (audit item 3): ready, nothing to swap yet
 `sync_fda_action_dates.py` runs in every CI build and re-checks all three rows (`_fda_action_state.json` checked 2026-10-17: ENSPRYNG/SATRALIZUMAB, RYZUMVI/PHENTOLAMINE, result none). openFDA `last_updated` is still 2026-10-16.
 

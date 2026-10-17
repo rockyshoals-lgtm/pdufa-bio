@@ -55,12 +55,29 @@ def main():
         nb += 1
         if br.lower() not in tmap[slug].lower():
             fails.append(f"/fda-decision/{slug}: title '{tmap[slug]}' does not name the approved brand {br}")
+    # 2026-10-17: a row's hand-written seo_desc (<= 158 chars) IS the decision page's description. CI's
+    # fix_meta_lengths.py regenerated RYZUMVI's to a label format ("Opus Genetics (IRD) FDA decision Oct 16, 2026:
+    # Approved. RYZUMVI ...") because it did not recognise the sentence; locally the new page was out of its scope.
+    ns = 0
+    for r in rows:
+        sd = str((r.get("_d") or {}).get("seo_desc") or "")
+        slug = f"{str(r.get('t') or '').upper()}-{str(r.get('dcd') or '')[:10]}"
+        p = os.path.join(SITE, "fda-decision", slug, "index.html")
+        if not sd or len(sd) > 158 or not r.get("dcd") or not os.path.exists(p):
+            continue
+        dm = re.search(r'<meta name="description" content="([^"]*)"', io.open(p, encoding="utf-8", errors="replace").read())
+        cur = html.unescape(dm.group(1)) if dm else ""
+        if os.environ.get("PLANT_TITLE") == "seo" and slug == "IRD-2026-10-16":
+            cur = "Opus Genetics (IRD) FDA decision Oct 16, 2026: Approved. RYZUMVI (phentolamine ophthalmic solution) 0.75%."
+        ns += 1
+        if cur != sd:
+            fails.append(f"/fda-decision/{slug}: description '{cur[:80]}' is not the row's seo_desc '{sd[:60]}'")
     if fails:
         print(f"FAIL: {len(fails)} decision title(s) cut on a dangling word or missing the brand:")
         for f in fails:
             print("   " + f)
         return 1
-    print(f"OK -- {n} decision titles end the drug name cleanly; {nb} approved rows with a recorded brand name it in the title.")
+    print(f"OK -- {n} decision titles end the drug name cleanly; {nb} approved rows with a recorded brand name it in the title; {ns} hand-written descriptions intact.")
     return 0
 
 

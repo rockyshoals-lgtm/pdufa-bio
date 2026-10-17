@@ -365,7 +365,11 @@ def main():
                 # a row whose decision date is an announcement day (decision_date_unsourced).
                 if re.search(r"was approved on|was approved by the FDA on|received a Complete Response Letter on|"
                              r"was withdrawn on|approval was announced by the sponsor on|FDA announced its approval of|"
-                             r"received a Complete Response Letter dated", cur):
+                             r"received a Complete Response Letter dated|"
+                             # 2026-10-17: a row's hand-written seo_desc ("Opus Genetics announced Oct 16, 2026 that the
+                             # FDA approved RYZUMVI ...") was regenerated to a label format by CI; it is answer format.
+                             r"announced [A-Z][a-z]{2,8} \d{1,2}, \d{4} that the FDA approved|"
+                             r"announced on [A-Z][a-z]+ \d{1,2}, \d{4} that the FDA approved", cur):
                     new = cur
                 else:
                     new = decision_desc(md.group(1), md.group(2), doc)
