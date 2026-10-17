@@ -246,7 +246,7 @@ def main():
            f'viewport-fit=cover"><title>{esc(title)}</title>'
            f'<meta name="description" content="{esc(desc)}">'
            f'<link rel="canonical" href="{BASE}/fda-decisions-today">'
-           f'<meta name="robots" content="index,follow,max-image-preview:large">'
+           f'<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">'
            f'<meta name="theme-color" content="#02060d">'
            f'<meta property="og:type" content="website">'
            f'<meta property="og:site_name" content="pdufa.bio">'

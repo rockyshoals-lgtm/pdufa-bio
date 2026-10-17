@@ -660,7 +660,7 @@ jobs:
       # been APPROVED -- 25 days stale on a 33%-CTR page. Moves are handled above;
       # outcomes here; both marker-based so the hand-grown content survives.
       - name: Decided banners on per-event PDUFA pages
-        run: python mark_event_pages_decided.py
+        run: python mark_event_pages_decided.py && python fix_decided_event_meta.py
 
       # Audit 09-14 ORDER 2. refresh_moved_pdufa_pages handles a day moving to another DAY; it
       # has no concept of a day being WITHDRAWN to a window, so when twelve year-end rows lost a

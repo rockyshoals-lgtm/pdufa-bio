@@ -9,7 +9,10 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-17b note (BING top recommendations and submissions)** — `2026-10-17b_BING_top_recommendations_and_submissions.md` — 2026-10-17, ~18:15 Eastern = 22:15 UTC (Saturday). Bing Webmaster console times are shown in local (Pacific) time. RULE 1.
+- **2026-10-17 audit (audit decided event pages still say pending)** — `2026-10-17_audit_decided_event_pages_still_say_pending.md` — 2026-10-17, measured 17:45 to 18:05 Eastern = 21:45 to 22:05 UTC (Saturday). Per RULE 1 every time carries its zone.
 - **2026-10-17 BUILDER (ryzumvi presbyopia held leads)** — `2026-10-17_BUILDER_ryzumvi_presbyopia_held_leads.md` — 2026-10-17, work 21:10 to 22:30 Pacific (Oct 16) = 00:10 to 01:30 Eastern = 04:10 to 05:30 UTC (Saturday). RULE 1.
+- **2026-10-17 BUILDER (decided event pages brand first)** — `2026-10-17_BUILDER_decided_event_pages_brand_first.md` — 2026-10-17, work 15:15 to 16:30 Pacific = 18:15 to 19:30 Eastern = 22:15 to 23:30 UTC (Saturday). RULE 1.
 - **2026-10-16 audit (audit enspryng approved site says awaiting)** — `2026-10-16_audit_enspryng_approved_site_says_awaiting.md` — 2026-10-16, measured 01:53 to 02:10 Eastern = 05:53 to 06:10 UTC (Friday, the morning after the goal date). Per RULE 1 every time carries its zone.
 - **2026-10-16 BUILDER (enspryng ted and calendar integrity)** — `2026-10-16_BUILDER_enspryng_ted_and_calendar_integrity.md` — 2026-10-16, work 00:15 to 02:30 Pacific = 03:15 to 05:30 Eastern = 07:15 to 09:30 UTC (Friday). RULE 1.
 - **2026-10-15 BUILDER (anktiva and decision corrections)** — `2026-10-15_BUILDER_anktiva_and_decision_corrections.md` — 2026-10-15, work 16:00 to 19:30 Pacific = 19:00 to 22:30 Eastern (Thursday, Enspryng goal day). RULE 1.

@@ -136,6 +136,11 @@ def main():
     seo = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): (r.get("_d") or {})
            for r in rows if r.get("type") == "PDUFA" and r.get("dcd")
            and ((r.get("_d") or {}).get("title_indication") or (r.get("_d") or {}).get("seo_desc"))}
+    brands = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]):
+              (str((r.get("_d") or {}).get("brand")).strip(),
+               re.sub(r"-[a-z]{4}$", "", str((r.get("_d") or {}).get("inn") or "").strip()))
+              for r in rows if r.get("type") == "PDUFA" and r.get("dcd") and (r.get("_d") or {}).get("brand")
+              and str(r.get("oc") or "") == "Approved"}
     names = {(str(r.get("t", "")).upper(), str(r.get("dcd", ""))[:10]): r.get("name")
              for r in rows if r.get("type") == "PDUFA" and r.get("dcd") and r.get("name")}
     # listing rows as a drug-name fallback for drug-less titles ("AQST FDA Decision
@@ -184,6 +189,12 @@ def main():
         src_name = rown or (_html.unescape(kvm.group(1)) if kvm else "")
         if src_name and src_name.lower() not in JUNK:
             drug = clean_drug_name(src_name) or drug
+        # BRAND FIRST (audit 2026-10-17, 2b): "MR-141 Approval Announced ..." and "Phentolamine ophthalmic solution
+        # Approval Announced ..." hid RYZUMVI, the name people search. When the row records the approved brand, the
+        # title leads with it; a development code never leads once a brand exists. The INN follows in parentheses.
+        _br = brands.get((tk, dcd))
+        if _br and _br[0].lower() not in drug.lower():
+            drug = f"{_br[0]} ({_br[1]})" if _br[1] and _br[1].lower() not in _br[0].lower() else _br[0]
         if not drug:
             drug = "the application under review"   # answers without inventing a name
         company = company_of(doc, tk)

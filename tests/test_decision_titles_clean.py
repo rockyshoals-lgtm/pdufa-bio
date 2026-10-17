@@ -38,12 +38,29 @@ def main():
         n += 1
         if BAD.search(m.group(1)):
             fails.append(f"/fda-decision/{slug}: '{t}'")
+    # 2026-10-17 (audit 2b): brand first. RYZUMVI's pages were titled "Phentolamine ophthalmic solution ..." and
+    # "MR-141 ...", hiding the name people search. An approved row that records its brand must show it in the title.
+    import json
+    src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+    rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    tmap = dict(titles)
+    if os.environ.get("PLANT_TITLE") == "brand":
+        tmap["VTRS-2026-10-16"] = "MR-141 Approval Announced Oct 16, 2026 for Presbyopia | VTRS FDA Decision | pdufa.bio"
+    nb = 0
+    for r in rows:
+        br = str((r.get("_d") or {}).get("brand") or "").strip()
+        slug = f"{str(r.get('t') or '').upper()}-{str(r.get('dcd') or '')[:10]}"
+        if not br or str(r.get("oc")) != "Approved" or slug not in tmap:
+            continue
+        nb += 1
+        if br.lower() not in tmap[slug].lower():
+            fails.append(f"/fda-decision/{slug}: title '{tmap[slug]}' does not name the approved brand {br}")
     if fails:
-        print(f"FAIL: {len(fails)} decision title(s) cut on a dangling word:")
+        print(f"FAIL: {len(fails)} decision title(s) cut on a dangling word or missing the brand:")
         for f in fails:
             print("   " + f)
         return 1
-    print(f"OK -- {n} decision titles end the drug name cleanly.")
+    print(f"OK -- {n} decision titles end the drug name cleanly; {nb} approved rows with a recorded brand name it in the title.")
     return 0
 
 

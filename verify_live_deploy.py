@@ -122,7 +122,19 @@ def main():
             # so only body stability across passes is asserted there.
             static = not path.startswith("/api/")
             ok_etag = (etag == md5) if (etag and static) else True
-            same = first.setdefault(path, md5) == md5
+            # 2026-10-17: /build-info.json is computed per request (api/build-info.mjs) and carries served_at, so
+            # any edge cache MISS returns a new body. Run 39043463353 failed "body differs from pass 1" on a
+            # deploy that was correct (commit and built identical on all three passes). Stability is asserted
+            # on the body without its per-request field; every other field must still match.
+            stable = md5
+            if path.split("?")[0].endswith("build-info.json"):
+                try:
+                    _j = json.loads(body)
+                    _j.pop("served_at", None)
+                    stable = hashlib.md5(json.dumps(_j, sort_keys=True).encode()).hexdigest()
+                except Exception:  # noqa: BLE001
+                    pass
+            same = first.setdefault(path, stable) == stable
             note = []
             # Audit 2026-09-10 item 2. The reported /calendar-vs-/calendar/ split turned out
             # to be our service worker in the auditor's browser, not the deployment -- but the

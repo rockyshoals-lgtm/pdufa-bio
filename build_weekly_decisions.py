@@ -188,7 +188,7 @@ def main():
     doc = (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
            f'<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title>'
            f'<meta name="description" content="{esc(desc)}"><link rel="canonical" href="{BASE}/{PATH}">'
-           f'<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d">'
+           f'<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><meta name="theme-color" content="#02060d">'
            f'<meta property="og:type" content="website"><meta property="og:site_name" content="pdufa.bio">'
            f'<meta property="og:url" content="{BASE}/{PATH}"><meta property="og:title" content="{esc(title)}">'
            f'<meta property="og:description" content="{esc(desc)}">{faq_ld}'

@@ -490,13 +490,18 @@ def main():
                                                    "index.html"))
         link = (f' <a href="{dec_url}" style="color:#9ec5ff">Decision page with the '
                 f'source and measured reaction</a>.' if has_dec_page else "")
+        # 2026-10-17: "the FDA decided this application on October 16" stated an FDA action day for RYZUMVI
+        # and Enspryng, whose only record is the sponsor's announcement. Say what is held.
+        _unsrc = bool((r.get("_d") or {}).get("decision_date_unsourced")) and acted == dcd
+        what = (f' &middot; {"approval" if ok else "the decision"} was announced on <b>{pretty(dcd)}</b>; '
+                f"the FDA's own record of the action day is not yet posted" if _unsrc else
+                f' &middot; the FDA decided this application on <b>{pretty(acted)}</b>'
+                + (f' (FDA record; announced {pretty(dcd)})' if acted != dcd else ''))
         banner = (f'{B}<div style="background:#0c1d38;border:1px solid {col};'
                   f'border-radius:10px;padding:11px 14px;margin:10px 0 14px;'
                   f'font-size:14.5px"><b style="color:{col}">{"&#10003;" if ok else "&#10007;"} '
-                  f'{_html.escape(word)}</b> &middot; the FDA decided this application on '
-                  f'<b>{pretty(acted)}</b>'
-                  + (f' (FDA record; announced {pretty(dcd)})' if acted != dcd else '')
-                  + f'{_html.escape(timing)}.{link}</div>{E}')
+                  f'{_html.escape(word)}</b>{what}'
+                  + f'{"" if _unsrc else _html.escape(timing)}.{link}</div>{E}')
 
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         if B in doc:
