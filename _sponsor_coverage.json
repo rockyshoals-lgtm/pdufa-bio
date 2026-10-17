@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-16",
+ "as_of": "2026-10-17",
  "horizon_days": 60,
  "sponsors": {
   "AGIO": {
@@ -106,18 +106,6 @@
    ],
    "cik": 1055726
   },
-  "IRD": {
-   "company": "Opus Genetics, Inc.",
-   "goals": [
-    "2026-10-17"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1228627
-  },
   "NVCR": {
    "company": "NovoCure Limited",
    "goals": [
@@ -194,18 +182,6 @@
     "fda_feeds"
    ],
    "cik": 875320
-  },
-  "VTRS": {
-   "company": "Viatris Inc.",
-   "goals": [
-    "2026-10-17"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1792044
   }
  }
 }
