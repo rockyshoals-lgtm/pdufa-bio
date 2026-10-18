@@ -78,7 +78,7 @@
   "result": "found"
  },
  "pdufa_ird_2026-10-17": {
-  "checked": "2026-10-17",
+  "checked": "2026-10-18",
   "result": "none",
   "terms": [
    "RYZUMVI",
@@ -99,7 +99,7 @@
   "result": "found"
  },
  "pdufa_lnth_2026-06-29": {
-  "checked": "2026-10-17",
+  "checked": "2026-10-18",
   "result": "crl-no-letter"
  },
  "pdufa_lnth_2026-08-13": {
@@ -205,7 +205,7 @@
   "result": "manual"
  },
  "pdufa_rhhby_2026-10-15": {
-  "checked": "2026-10-17",
+  "checked": "2026-10-18",
   "result": "none",
   "terms": [
    "ENSPRYNG",
@@ -261,7 +261,7 @@
   "result": "found"
  },
  "pdufa_vtrs_2026-10-17": {
-  "checked": "2026-10-17",
+  "checked": "2026-10-18",
   "result": "none",
   "terms": [
    "RYZUMVI",

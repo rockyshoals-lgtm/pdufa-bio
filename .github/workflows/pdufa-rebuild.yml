@@ -38,7 +38,9 @@ permissions:
 
 jobs:
   rebuild:
-    runs-on: ubuntu-latest
+    # 2026-10-18: pinned. GitHub migrates ubuntu-latest to Ubuntu 26 from 2026-10-19; a runner change must not
+    # land on top of a data problem. Move deliberately, with a dispatched run to prove it.
+    runs-on: ubuntu-24.04
     # RULE 1 (2026-10-16): every date the site prints is the EASTERN date. About 25 builders and guards still
     # call dt.date.today(), which on the runner was UTC, so any run from 20:00 ET (00:00 UTC) on built and
     # tested against tomorrow. Explicit `date -u` and timezone-aware code are unaffected.
@@ -266,12 +268,18 @@ jobs:
       - name: "Decision pages cite the FDA record of the action date"
         run: python inject_fda_action_record.py
 
+      - name: "Verified against: three dates, three sources, one line on every decision page"
+        run: python inject_verified_against.py
+
       - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
         run: python build_decision_lede.py
 
       # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
       - name: "/fda-approval-letters hub"
         run: python build_fda_letters_hub.py
+
+      - name: "/corrections from _corrections.json (append-only public record)"
+        run: python build_corrections_page.py
 
       # Audit 09-02c item 3: we hold 458 FDA CRLs and cited zero. Each CRL decision page
       # now links the FDA-hosted letter PDF when date (letter <= page date <= +4d) and
@@ -814,11 +822,15 @@ jobs:
           # tests/test_readouts_passed_windows_resolved.py is strict about unchecked passed windows only
           # where the sponsor-release search could have run (key present).
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-        run: |
-          set -e
-          for t in tests/test_*.py; do
-            echo "::group::$t"; python "$t"; echo "::endgroup::"
-          done
+        # 2026-10-18 (audit P0): both Sunday runs failed a guard silently. run_ci_guards.py runs EVERY guard,
+        # writes _blocked.md on failure, and the next step opens or updates one BLOCKED issue.
+        run: python run_ci_guards.py --report _blocked.md
+
+      - name: "BLOCKED issue: a hard-failed guard opens or updates one issue naming the tests"
+        if: ${{ failure() }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python blocked_issue.py --report _blocked.md || echo "blocked issue step skipped"
 
       - name: FDA reconciliation (advisory) — approvals not in our archive
         run: python tests/test_fda_reconcile.py --days 30 | tee reconcile.txt
@@ -895,6 +907,11 @@ jobs:
           else
             echo "Nothing needs review this run."
           fi
+
+      - name: "BLOCKED issue: every guard passed, so close any open one"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python blocked_issue.py --resolve || echo "resolve skipped"
 
       - name: Commit refreshed data (Vercel auto-deploys this push)
         run: |

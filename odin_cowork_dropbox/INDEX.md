@@ -9,6 +9,8 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-18 audit (audit frozen sunday ledger and moat)** — `2026-10-18_audit_frozen_sunday_ledger_and_moat.md` — 2026-10-18, measured 17:17 to 17:45 Eastern = 21:17 to 21:45 UTC (Sunday). Per RULE 1 every time carries its zone. GitHub run times are UTC.
+- **2026-10-18 BUILDER (sunday freeze blocked issues moat orders)** — `2026-10-18_BUILDER_sunday_freeze_blocked_issues_moat_orders.md` — 2026-10-18, work 15:30 Pacific onward = 18:30 Eastern = 22:30 UTC (Sunday). RULE 1.
 - **2026-10-17b note (BING top recommendations and submissions)** — `2026-10-17b_BING_top_recommendations_and_submissions.md` — 2026-10-17, ~18:15 Eastern = 22:15 UTC (Saturday). Bing Webmaster console times are shown in local (Pacific) time. RULE 1.
 - **2026-10-17 audit (audit decided event pages still say pending)** — `2026-10-17_audit_decided_event_pages_still_say_pending.md` — 2026-10-17, measured 17:45 to 18:05 Eastern = 21:45 to 22:05 UTC (Saturday). Per RULE 1 every time carries its zone.
 - **2026-10-17 BUILDER (ryzumvi presbyopia held leads)** — `2026-10-17_BUILDER_ryzumvi_presbyopia_held_leads.md` — 2026-10-17, work 21:10 to 22:30 Pacific (Oct 16) = 00:10 to 01:30 Eastern = 04:10 to 05:30 UTC (Saturday). RULE 1.

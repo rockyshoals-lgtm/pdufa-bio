@@ -43,7 +43,11 @@ DUPES = {"ABBV-tavapadon-2": "ABBV-tavapadon", "NVO-cagrisema": "NVO-am833",
          "GILD-bictegravir-and": "GILD-bictegravir-and-lenacapavi",
          # 2026-09-19: surfaced by the title census the day Pixclara decided; the bare page
          # carries 30 inbound links, the drug-slug twin none
-         "TLX-tlx101-px": "TLX"}
+         "TLX-tlx101-px": "TLX",
+         # 2026-10-18: the RYZUMVI presbyopia event's two pre-canonical twins. Neither is linked from any page;
+         # neither received the decided banner; both said "under FDA review" the day after the goal passed and
+         # blocked both Sunday deploys (test_no_past_target_pending_pages). The partner page is the one we keep.
+         "IRD": "IRD-phentolamine-ophthalmic", "VTRS-mr-141": "IRD-phentolamine-ophthalmic"}
 SKIP = re.compile(r"[\\/]_pdufa_(x?bak\d*|bak\d*)[\\/]|[\\/]_[a-z]+bak")
 
 
@@ -60,8 +64,41 @@ def main():
         if "<!--DUPLICATE-OF-->" not in t:
             t = t.replace("<h1", f'<p class="sub" style="margin:0 0 8px"><!--DUPLICATE-OF-->This page duplicates '
                                  f'<a href="/pdufa/{prim}">/pdufa/{prim}</a>, which is the page we maintain.</p><h1', 1)
+        # 2026-10-18: a twin must not contradict its primary. /pdufa/IRD still said "under FDA review" after the
+        # primary was bannered Approved, and blocked both Sunday deploys. The primary's decision banner is copied
+        # in (marker-bounded, idempotent), the pending story line rewritten, and the title made decided.
+        pt = io.open(os.path.join(SITE, "pdufa", prim, "index.html"), encoding="utf-8", errors="replace").read()
+        bm = re.search(r"<!--DECBAN:BEGIN-->.*?<!--DECBAN:END-->", pt, re.S)
+        if bm:
+            ban = "<!--DECIDED:BEGIN-->" + bm.group(0) + "<!--DECIDED:END-->"
+            if "<!--DECIDED:BEGIN-->" in t:
+                t = re.sub(r"<!--DECIDED:BEGIN-->.*?<!--DECIDED:END-->", lambda m: ban, t, flags=re.S)
+            else:
+                t = t.replace("</h1>", "</h1>" + ban, 1)
+            word = "Approved" if "Approved</b>" in bm.group(0) else "Complete Response Letter"
+            when = re.search(r"on <b>([^<]+)</b>", bm.group(0))
+            day = when.group(1) if when else ""
+            try:
+                sys.path.insert(0, HERE)
+                import mark_event_pages_decided as _M
+                _tk = re.match(r"([A-Z]{1,6})", dup).group(1)
+                _h = re.search(r'<h1>[A-Z]{1,6} PDUFA Date: <span class="g">(.+?)</span></h1>', t)
+                _drug = _h.group(1) if _h else dup
+                _iso = re.search(r"\d{4}-\d{2}-\d{2}", bm.group(0).replace(day, "")) if day else None
+                import datetime as _dt
+                _dcd = _dt.datetime.strptime(day, "%B %d, %Y").date().isoformat() if day else ""
+                _goal = (re.search(r'<span>FDA PDUFA target date</span><b>(\d{4}-\d{2}-\d{2})</b>', t) or [None, ""])[1]
+                if _dcd:
+                    t = _M.decided_language(t, _tk, _drug, word, _dcd, _goal, False, goal_sourced=bool(_goal))
+            except Exception as _e:  # noqa: BLE001
+                print(f"  (decided_language on /pdufa/{dup} skipped: {_e})")
+            t = re.sub(r"\bis under FDA review\b", f"{'was approved by the FDA' if word == 'Approved' else 'received a Complete Response Letter'}"
+                       + (f" ({'announced' if 'announced on' in bm.group(0) else 'on'} {day})" if day else ""), t)
+            t = re.sub(r"<title>([A-Z]{1,6}(?: / [A-Z]{1,6})?) PDUFA date: (.+?), [A-Z][a-z]{2} \d{1,2},? \d{4}( \| pdufa\.bio)?</title>",
+                       lambda m: f"<title>{m.group(1)} FDA decision: {m.group(2)}, {word}{' ' + day if day else ''}{m.group(3) or ''}</title>", t)
         io.open(p, "w", encoding="utf-8").write(t)
-        print(f"/pdufa/{dup}: canonical -> /pdufa/{prim} ({n1}), robots noindex,follow ({n2})")
+        print(f"/pdufa/{dup}: canonical -> /pdufa/{prim} ({n1}), robots noindex,follow ({n2})"
+              + (", decision copied from primary" if bm else ""))
 
     # internal links: every page except the duplicate itself
     changed = 0

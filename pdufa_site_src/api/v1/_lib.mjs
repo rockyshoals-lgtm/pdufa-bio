@@ -149,6 +149,12 @@ export function shape(e, tier) {
   /* 2026-10-09: a withdrawn or decided application has no decision ahead; an enrichment step
      re-stamped days_to_decision:1 on the withdrawn MRK row. A closed row never carries a countdown. */
   if (/^(withdrawn|decided)$/i.test(String(e.st || ''))) base.days_to_decision = null;
+  /* 2026-10-18 (ruling carried since the 10-06 audit, item 4): goal_date_held tells a consumer whether the
+     row's `date` is a sponsor-disclosed PDUFA goal day it can compute a margin against (true), or an
+     action-only / unsourced / window date it must not (false). Derived, never stored: a PDUFA row at day
+     precision whose goal is not flagged goal_unsourced. Readout and conference rows: null. */
+  base.goal_date_held = (e.type === 'PDUFA')
+    ? (String(e.dp || 'day') === 'day' && !d.goal_unsourced) : null;
   /* Conference rows carry presenters in _d (sync_conferences_to_api.py). Observed live 2026-08-16:
      the dataset had 8 conferences with presenter entries and this whitelist silently dropped every
      one -- the API said "presenters: none" while /conferences printed them. Same 2026-07-11 rule

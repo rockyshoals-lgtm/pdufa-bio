@@ -277,7 +277,36 @@
   ]
  },
  "2026-10-12..2026-10-18": {
-  "fetched": "2026-10-17T22:28:41Z",
+  "fetched": "2026-10-18T22:39:34Z",
+  "actions": [
+   {
+    "date": "2026-10-14",
+    "sponsor": "ALTOR BIOSCIENCE, LLC, AN INDIRECT WHOLLY-OWNED SU",
+    "brand": "ANKTIVA",
+    "ingredient": "nogapendekin alfa inbakicept-pmln",
+    "app": "BLA761336",
+    "type": "SUPPL",
+    "number": "2",
+    "class": "Efficacy",
+    "letter": "",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761336"
+   },
+   {
+    "date": "2026-10-13",
+    "sponsor": "VIFOR FRESENIUS",
+    "brand": "VELPHORO",
+    "ingredient": "FERRIC OXYHYDROXIDE",
+    "app": "NDA205109",
+    "type": "SUPPL",
+    "number": "14",
+    "class": "Efficacy",
+    "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/205109Orig1s014ltr.pdf",
+    "overview": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=205109"
+   }
+  ]
+ },
+ "2026-10-11..2026-10-18": {
+  "fetched": "2026-10-18T22:39:34Z",
   "actions": [
    {
     "date": "2026-10-14",

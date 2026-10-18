@@ -2144,27 +2144,27 @@
   },
   {
    "source": "/fda-decision/JAGX-2026-04-29",
-   "destination": "/drug/canalevia-ca1",
+   "destination": "/ticker/JAGX",
    "permanent": true
   },
   {
    "source": "/fda-decision/LGND-2026-06-08",
-   "destination": "/drug/miplyffa",
+   "destination": "/ticker/LGND",
    "permanent": true
   },
   {
    "source": "/fda-decision/XOMA-2026-06-08",
-   "destination": "/drug/miplyffa",
+   "destination": "/ticker/XOMA",
    "permanent": true
   },
   {
    "source": "/fda-decision/ZVRA-2026-06-08",
-   "destination": "/drug/miplyffa",
+   "destination": "/ticker/ZVRA",
    "permanent": true
   },
   {
    "source": "/fda-decision/PGEN-2026-05-27",
-   "destination": "/drug/papzimeos",
+   "destination": "/ticker/PGEN",
    "permanent": true
   },
   {
@@ -2844,7 +2844,7 @@
   },
   {
    "source": "/drug/zopapogene-imadenovec-drba",
-   "destination": "/drug/papzimeos",
+   "destination": "/ticker/PGEN",
    "permanent": true
   }
  ],

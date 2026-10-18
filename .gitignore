@@ -119,3 +119,7 @@ _builder_*.log
 # hypestock.org is a separate project: branch hypestock-wip / worktree ..\hypestock only (RULE 2 in CLAUDE.md)
 hypestock_cowork_dropbox/
 hypestock*/
+
+# run_ci_guards.py failure report (CI-only, never committed)
+_blocked.md
+_blocked.json

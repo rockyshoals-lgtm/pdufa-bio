@@ -122,7 +122,7 @@ def main():
     events = load_events()
     dfacts = decision_facts()
 
-    changed = noindexed = named = 0
+    changed = noindexed = named = reindexed = 0
     for p in sorted(glob.glob(os.path.join(SITE, "ticker", "*", "index.html"))):
         tk = os.path.basename(os.path.dirname(p))
         t = open(p, encoding="utf-8", errors="replace").read()
@@ -245,7 +245,11 @@ def main():
         # them, not pages whose verified thing happens to be a readout.
         has_reported_readout = bool(re.search(
             r'<h2>Clinical readouts \(\d+\)</h2>.*?class="badge (?:app|crl)"', t, re.S))
-        substantive = bool(df["verified"]) or bool(upcoming) or has_reported_readout
+        # 2026-10-18 (Bing "important pages using meta robots", PBYI and VYGR): a hub whose only row is a
+        # registry-sourced readout (a ClinicalTrials.gov source_url on the row) is not thin; it is sourced. Index
+        # it. Noindex stays for hubs with no sourced row at all.
+        has_sourced_row = any((e.get("_d") or {}).get("source_url") for e in evs)
+        substantive = bool(df["verified"]) or bool(upcoming) or has_reported_readout or has_sourced_row
         if not substantive:
             t = re.sub(r'(<meta name="robots" content=")[^"]*(")', r"\1noindex,follow\2", t, count=1)
             if "nothing we have verified" not in t:
@@ -255,6 +259,11 @@ def main():
                               "behaviour and has not been checked against a filing, so there is "
                               "nothing we have verified to show here yet.</p>", 1)
             noindexed += 1
+        elif re.search(r'<meta name="robots" content="noindex', t):
+            # the reverse was never written: a hub that became substantive stayed noindex for good
+            t = re.sub(r'(<meta name="robots" content=")[^"]*(")', r"\1index,follow,max-image-preview:large\2", t, count=1)
+            t = re.sub(r'<p class="note" style="color:#f0c86a">We do not currently track a confirmed FDA catalyst for .*?nothing we have verified to show here yet\.</p>', "", t, count=1, flags=re.S)
+            reindexed += 1
 
         if t != o:
             changed += 1
@@ -262,7 +271,8 @@ def main():
                 open(p, "w", encoding="utf-8").write(t)
 
     print(f"{'would update' if a.dry_run else 'updated'} {changed} ticker hub(s); "
-          f"{named} now name the company; {noindexed} set noindex (no verified catalyst)")
+          f"{named} now name the company; {noindexed} set noindex (no verified catalyst); "
+          f"{reindexed} re-indexed (now carry a sourced row)")
 
 
 if __name__ == "__main__":
