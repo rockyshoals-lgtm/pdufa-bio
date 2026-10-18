@@ -49,6 +49,10 @@ New `inject_goal_date_moves.py` (CI after `mark_goal_date_passed.py`; chain): fr
 ## 6. Oncology readouts page (order 6), second push
 `/readouts/oncology` is now titled "Oncology Trial Readouts, Next 12 Months: 39 Dated" and its lede states the 12-month count and the next five dated rows. **It does not say "Phase 3".** The rows carry no trial-phase field: 1 of 70 forward oncology rows has a Phase 3 marker anywhere on it, so a Phase 3 title would be an unbacked claim for 69 rows. The lede says so. Phase is a backfill item (registry `phases` is in CT.gov's record; the miner does not keep it yet).
 
+**Live check of the second push (c48e154, 23:24 UTC) caught two defects, fixed in a third push:**
+- The census CSV returned **404 live**: `.gitignore` excludes `*.csv` and the new file was not re-included. The file's own comment calls this the recurring `*.csv` incident; this was the fourth. Re-included.
+- The calendar row tag "goal date moved from …" leaked into the calendar's JSON-LD Event names (the ItemList builder takes the row text). Stripped before the name is taken.
+
 ## Process note: the autostash conflict, twice
 Both times I pulled with uncommitted locally rebuilt pages, CI's refresh commit had touched the same generated files and `git pull --rebase` with autostash left conflict markers in them (the duplicate pages at 22:35 UTC; four hubs at 23:03 UTC). The second time the chain had already started on the marked tree and I stopped it **by PID from the batch's own process tree** (the batch, its console and one child python), not by pattern, per the 10-17 rule. Recovery both times: `git checkout origin/main -- pdufa_site_src`, confirm zero markers, rebuild on the clean base. Standing rule from tonight: pull **before** any local rebuild, never after. `test_no_conflict_markers` caught it locally both times; nothing marked reached a commit.
 

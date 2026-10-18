@@ -123,3 +123,6 @@ hypestock*/
 # run_ci_guards.py failure report (CI-only, never committed)
 _blocked.md
 _blocked.json
+
+# 2026-10-18: the decision-timing census CSV (the 4th *.csv incident: built, linked, 404 live)
+!pdufa_site_src/research/fda-decision-timing/*.csv

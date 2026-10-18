@@ -73,8 +73,10 @@ def ahead_rows(doc, today):
         # "SRRK · 2026-09-30 Apitegromab - (SAPPHIRE)" -> ticker + description
         m = re.match(r"([A-Z][A-Z0-9.\-]*)\s*(?:&middot;|·)\s*(.*)", t)
         ticker = m.group(1) if m else href.group(1).split("/")[2].split("-")[0].upper()
-        desc = text_of(re.search(r'<div class="d">(.*?)</div>', frag, re.S).group(1)) \
-            if re.search(r'<div class="d">', frag) else t
+        # 2026-10-18: the row's "goal date moved from ..." tag (inject_goal_date_moves.py) is row furniture, not
+        # the event's name; strip it before the name is taken.
+        dfrag = re.search(r'<div class="d">(.*?)</div>', frag, re.S)
+        desc = text_of(re.sub(r'<span class="dm">.*?</span></span>', "", dfrag.group(1), flags=re.S)) if dfrag else t
         out.append((href.group(1), ticker, desc, d, qq))
     return out
 
