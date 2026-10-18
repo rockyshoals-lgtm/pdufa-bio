@@ -688,6 +688,9 @@ jobs:
       - name: Goal-date-passed statements (no decision to name)
         run: python mark_goal_date_passed.py
 
+      - name: "Goal date moved: date_history shown on event pages and calendar rows"
+        run: python inject_goal_date_moves.py
+
       # Asked in four audits: every goal date we have seen move, with its announcement.
       - name: /pdufa-date-changes
         run: python build_date_changes.py

@@ -20,7 +20,7 @@ percentage from a handful of events would be theatre.
 
     python build_early_decisions.py [--year 2026] [--min-n 8] [--dry-run]
 """
-import argparse, datetime as dt, glob, html, json, os, re, sys
+import argparse, datetime as dt, glob, html, io, json, os, re, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -341,6 +341,54 @@ def main():
            f"computed across earlier years because our coverage of them is much thinner and a "
            f"rate would measure our collection rather than the FDA.")]
 
+    # ---- 2026-10-18 (audit order 4): the census as a citable CSV, CC BY 4.0 ---------------------------
+    # One row per sourced decision: goal day, FDA action day, announcement day, margin, outcome, and the three
+    # source URLs. Versioned by the observation count ("v32") so a citation names the vintage it quoted.
+    # Goal and announcement sources are read from the dataset row the slug came from.
+    import csv as _csv
+    _src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+    _rows = json.loads(_src[_src.index("["):_src.rindex("]") + 1])
+    _by = {f"{str(x.get('t') or '').upper()}-{str(x.get('dcd') or '')[:10]}": x for x in _rows if x.get("dcd")}
+    ver = f"v{n}"
+    csv_rel = f"fda-decision-timing-{a.year}-{ver}.csv"
+    csv_path = os.path.join(SITE, "research", "fda-decision-timing", csv_rel)
+    with io.open(csv_path, "w", encoding="utf-8", newline="") as fh:
+        w = _csv.writer(fh)
+        w.writerow(["ticker", "drug", "outcome", "goal_date", "fda_action_date", "announcement_date", "margin_days",
+                    "goal_source", "goal_source_url", "fda_record", "fda_record_url", "announcement_source",
+                    "announcement_source_url", "decision_page", "license"])
+        for r_ in sorted(rec, key=lambda x: x["actual"]):
+            rr = _by.get(r_["slug"]) or {}
+            dd_ = rr.get("_d") or {}
+            w.writerow([r_["ticker"], r_["drug"], r_["outcome"], r_["goal"], r_["actual"],
+                        r_["announced"] or r_["actual"], r_["delta"],
+                        dd_.get("source") or "", dd_.get("source_url") or "", r_["fda_record"], r_["fda_url"],
+                        dd_.get("announcement") or dd_.get("decision_source") or "",
+                        dd_.get("announcement_url") or dd_.get("decision_source_url") or "",
+                        "https://www.pdufa.bio/fda-decision/" + r_["slug"], "CC BY 4.0 https://pdufa.bio"])
+    # stale vintages go, so the one link on the page is the one that matches the statistic
+    for old_ in glob.glob(os.path.join(SITE, "research", "fda-decision-timing", f"fda-decision-timing-{a.year}-v*.csv")):
+        if os.path.basename(old_) != csv_rel:
+            os.remove(old_)
+    ds_ld = {"@context": "https://schema.org", "@type": "Dataset",
+             "name": f"FDA decision timing {a.year}: PDUFA goal date vs FDA action date ({ver})",
+             "description": (f"{n} FDA decisions in {a.year} with a sponsor-disclosed PDUFA goal date and an FDA-recorded "
+                             f"action date: goal day, FDA day, announcement day, margin in days, outcome, and the primary "
+                             f"source of each date. {len(early)} early, {n - len(early) - len(late)} on the day, {len(late)} late."),
+             "url": "https://www.pdufa.bio/research/fda-decision-timing", "version": ver,
+             "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": True,
+             "creator": {"@type": "Organization", "name": "pdufa.bio", "url": "https://www.pdufa.bio/"},
+             "temporalCoverage": f"{a.year}-01-01/" + max(x["actual"] for x in rec),
+             "variableMeasured": ["goal_date", "fda_action_date", "announcement_date", "margin_days", "outcome"],
+             "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
+                               "contentUrl": f"https://www.pdufa.bio/research/fda-decision-timing/{csv_rel}"}]}
+    records = records + (
+        f'<div class="note" style="margin:10px 0 0;padding:10px 12px;border:1px solid #1e3a63;border-radius:10px">'
+        f'<b style="color:#e3ba5e">Download the census ({ver}, CSV, CC BY 4.0):</b> '
+        f'<a href="/research/fda-decision-timing/{csv_rel}">{csv_rel}</a>. {n} rows: goal date, FDA action date, '
+        f'announcement date, margin, outcome, and the source URL behind each date. Cite as "pdufa.bio, FDA decision '
+        f'timing {a.year} ({ver}), https://www.pdufa.bio/research/fda-decision-timing". The file is replaced when '
+        f'the census grows; the version in its name is the row count.</div>')
     jsonld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage",
                          "mainEntity": [{"@type": "Question", "name": q,
                                          "acceptedAnswer": {"@type": "Answer",
@@ -352,7 +400,7 @@ def main():
         f'<div style="color:#9db3d4;font-size:14px;margin-top:6px">{ans}</div></div>'
         for q, ans in qa)
 
-    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/research/fda-decision-timing"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/research/fda-decision-timing"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Decision timing</div><h1>Does the FDA decide on the PDUFA date?</h1><div class="sub">{headline}{med}</div><h2>Every {a.year} sourced decision, goal date vs actual</h2>{rows}{records}<div class="note" style="margin-top:10px"><b>What is counted:</b> {a.year} decisions where this archive holds the PDUFA goal date, the actual FDA action date, and a primary source we link on the decision page. Decisions inferred from share-price behaviour are excluded. We do not compute a rate across earlier years: our coverage of them is far thinner, so such a number would describe our own collection rather than the FDA's behaviour.</div>{disclosure}<h2>Questions</h2>{faq}<p class="note">Historical record of specific decisions, each linked to its source. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
+    page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="https://www.pdufa.bio/research/fda-decision-timing"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#02060d"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:type" content="article"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="https://www.pdufa.bio/research/fda-decision-timing"><style>*{{box-sizing:border-box}}body{{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}}a{{color:#6fb6ff;text-decoration:none}}a:hover{{text-decoration:underline}}.wrap{{max-width:820px;margin:0 auto;padding:22px 18px 60px}}.top{{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px}}.brand{{font-size:19px;font-weight:800}}.brand b{{color:#e3ba5e}}.nav a{{color:#a7bcd9;font-size:13px;margin-left:14px}}h1{{font-size:27px;line-height:1.18;margin:10px 0 6px}}h2{{font-size:18px;color:#e3ba5e;margin:26px 0 8px}}.bc{{font-size:12px;color:#94a9c9;margin:16px 0 4px}}.bc a{{color:#94a9c9}}.sub{{color:#a7bcd9;font-size:15px}}.note{{font-size:12px;color:#94a9c9;line-height:1.6}}footer{{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}}footer b{{color:#a7bcd9}}</style><script type="application/ld+json">{jsonld}</script><script type="application/ld+json">{json.dumps(ds_ld, ensure_ascii=False)}</script></head><body><div class="wrap"><div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a><div class="nav"><a href="/calendar">Calendar</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/research">Research</a></div></div><div class="bc"><a href="/">Home</a> &rsaquo; <a href="/research">Research</a> &rsaquo; Decision timing</div><h1>Does the FDA decide on the PDUFA date?</h1><div class="sub">{headline}{med}</div><h2>Every {a.year} sourced decision, goal date vs actual</h2>{rows}{records}<div class="note" style="margin-top:10px"><b>What is counted:</b> {a.year} decisions where this archive holds the PDUFA goal date, the actual FDA action date, and a primary source we link on the decision page. Decisions inferred from share-price behaviour are excluded. We do not compute a rate across earlier years: our coverage of them is far thinner, so such a number would describe our own collection rather than the FDA's behaviour.</div>{disclosure}<h2>Questions</h2>{faq}<p class="note">Historical record of specific decisions, each linked to its source. Not a prediction about any pending application, and not investment advice.</p><footer><b>Not affiliated with or endorsed by the FDA.</b> pdufa.bio is an independent publication with no affiliation with, endorsement by, sponsorship by, or connection to the U.S. Food and Drug Administration. <b>Informational and educational purposes only. Not investment advice.</b> Verify every date and outcome against primary FDA, SEC or company filings.<br><br>&copy; 2026 pdufa.bio. All rights reserved.</footer></div><script src="/cmdk.js" defer></script></body></html>"""
 
     if a.dry_run:
         print("DRY RUN -- not written")

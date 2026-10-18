@@ -57,12 +57,15 @@ HUBS = [
     {
         "slug": "oncology",
         "ta": {"oncology"},
-        "h1": "Upcoming oncology clinical trial readouts",
+        # 2026-10-18 (audit order 6): the grounding query is "major upcoming Phase 3 oncology trial readouts next
+        # 12 months key companies"; the page says "oncology trial readouts, next 12 months" with the count and
+        # the next five dated rows. It does NOT say "Phase 3" in the title: the rows carry no trial phase, so a
+        # Phase 3 claim would be unbacked for 69 of 70 rows (phase is a backfill item).
+        "h1": "Upcoming oncology trial readouts, next 12 months",
         "word": "oncology",
-        "title": "Upcoming Oncology Clinical Trial Readouts ({year}) | pdufa.bio",
-        "desc": ("Upcoming oncology clinical-trial readouts: company, drug, indication and the "
-                 "registered trial for each. Dates are estimated primary-completion windows or "
-                 "company guidance, shown at the precision the source gave."),
+        "title": "Oncology Trial Readouts, Next 12 Months: {n12} Dated | pdufa.bio",
+        "desc": ("Upcoming oncology clinical-trial readouts over the next 12 months: {n12} dated, each with company, "
+                 "drug, indication and the registered trial. Dates are company guidance or registry estimates."),
     },
     {
         "slug": "rare-disease",
@@ -146,6 +149,12 @@ def main():
             span = (f"{MON[int(a_[5:7])]} {a_[:4]}" if a_ == b_ else
                     f"{MON[int(a_[5:7])]} {a_[:4]} to {MON[int(b_[5:7])]} {b_[:4]}")
 
+        # next-12-months count and the next five dated rows, for the lede (audit 2026-10-18 order 6)
+        horizon = (_today() + dt.timedelta(days=365)).isoformat()
+        sel12 = [r for r in sel if str(r.get("d") or "")[:10] <= horizon]
+        n12 = len(sel12)
+        next5 = [r for r in sel12 if str(r.get("dp") or "") in ("day", "month", "quarter")][:5]
+        next5_txt = "; ".join(f"{esc(str(r.get('t')))} {esc(str(r.get('name') or '')[:48])} ({esc(window_label(r))})" for r in next5)
         body_rows = []
         for r in sel:
             href, label = source_for(r)
@@ -213,8 +222,11 @@ def main():
             f'<div class="sub">{n} upcoming {esc(hub["word"])} readout'
             f'{"s" if n != 1 else ""}'
             + (f", {esc(span)}" if span else "")
+            + f"; {n12} of them fall in the next 12 months"
+            + (f". Next dated: {next5_txt}" if next5_txt else "")
             + f". Each row links its own trial record or company release. Dates shown at the "
-              f"precision the source gave.</div>"
+              f"precision the source gave. Trial phase is not yet a field on these rows, so this page does not "
+              f"filter by Phase 3.</div>"
             f'<div class="grid" style="margin-top:12px">{"".join(body_rows)}</div>'
             + counted
             + f'<p class="sub" style="margin-top:16px">See also '
@@ -228,7 +240,7 @@ def main():
             + FOOTER)
 
         url = f"https://www.pdufa.bio/readouts/{hub['slug']}"
-        doc = shell(hub["title"].format(year=year), hub["desc"], url, body, faq_jsonld(faq))
+        doc = shell(hub["title"].format(year=year, n12=n12), hub["desc"].format(year=year, n12=n12), url, body, faq_jsonld(faq))
 
         out = os.path.join(SITE, "readouts", hub["slug"], "index.html")
         print(f"  /readouts/{hub['slug']:<14} n={n:<3} guided={n_guided} est={n_est} "

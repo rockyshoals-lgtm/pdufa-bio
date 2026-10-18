@@ -40,5 +40,17 @@ A hand-written `/corrections` page already existed (14 entries, July to Septembe
 - `enrich_ticker_hubs.py`: a hub with at least one row carrying a `source_url` is not thin. And the reverse case was never written: a hub that became substantive stayed noindex for good. Both fixed; the step prints how many it re-indexed.
 - `goal_date_held` on every PDUFA row in the API, derived at request time: true for a day-precision sponsor-disclosed goal, false for action-only, unsourced or window rows, null on readouts and conferences. Documented on `/developers`. `type` stays "PDUFA".
 
+## 4. Census CSV (order 4), second push
+`build_early_decisions.py` now also writes `/research/fda-decision-timing/fda-decision-timing-2026-v32.csv` (CC BY 4.0): one row per sourced decision with goal day, FDA action day, announcement day, margin, outcome, the three source URLs and the decision page. Versioned by row count; the old vintage is removed when the census grows. The page has a download block with a suggested citation, a schema.org Dataset with `distribution`, and `/llms.txt` cites the file. **Honest gap:** 25 of 32 rows have an empty `goal_source` column, the same 16-row backlog the verified-against line exposes plus rows whose goal source lives only on the decision page. The column is empty rather than invented.
+
+## 5. Goal-date moves inline (order 5), second push
+New `inject_goal_date_moves.py` (CI after `mark_goal_date_passed.py`; chain): from `date_history` alone, a PDUFA row whose goal DAY moved gets "Goal date moved: August 22, 2026 → November 22, 2026 (recorded August 24, 2026). The FDA extended..." on its event page, and "goal date moved from Aug 22, 2026" on its calendar row. Precision downgrades, sentinels and re-keys are not moves. Two rows qualify tonight: CAPR deramiocel (Aug 22 → Nov 22) and PRAX relutrigine (Sep 27 → Dec 27). Guard `test_goal_date_moves_shown.py` (planted removal fails).
+
+## 6. Oncology readouts page (order 6), second push
+`/readouts/oncology` is now titled "Oncology Trial Readouts, Next 12 Months: 39 Dated" and its lede states the 12-month count and the next five dated rows. **It does not say "Phase 3".** The rows carry no trial-phase field: 1 of 70 forward oncology rows has a Phase 3 marker anywhere on it, so a Phase 3 title would be an unbacked claim for 69 rows. The lede says so. Phase is a backfill item (registry `phases` is in CT.gov's record; the miner does not keep it yet).
+
+## Process note: the autostash conflict, twice
+Both times I pulled with uncommitted locally rebuilt pages, CI's refresh commit had touched the same generated files and `git pull --rebase` with autostash left conflict markers in them (the duplicate pages at 22:35 UTC; four hubs at 23:03 UTC). The second time the chain had already started on the marked tree and I stopped it **by PID from the batch's own process tree** (the batch, its console and one child python), not by pattern, per the 10-17 rule. Recovery both times: `git checkout origin/main -- pdufa_site_src`, confirm zero markers, rebuild on the clean base. Standing rule from tonight: pull **before** any local rebuild, never after. `test_no_conflict_markers` caught it locally both times; nothing marked reached a commit.
+
 ## Local guards before push
 149 pass; `test_one_date_per_page` (the `--no-state` stamp) and `test_sls_activity` (local data age) are the known local-only failures. The runner's own `_blocked.md` was what I read to get here, which is the point of it.
