@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-17",
+ "as_of": "2026-10-18",
  "horizon_days": 60,
  "sponsors": {
   "AGIO": {
@@ -57,6 +57,17 @@
     "fda_feeds"
    ],
    "cik": 1622229
+  },
+  "CORT": {
+   "company": "Corcept Therapeutics Inc",
+   "goals": [
+    "2026-12-17"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1088856
   },
   "CYTK": {
    "company": "Cytokinetics Inc",

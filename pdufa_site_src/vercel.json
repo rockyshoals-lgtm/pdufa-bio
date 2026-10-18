@@ -2844,7 +2844,7 @@
   },
   {
    "source": "/drug/zopapogene-imadenovec-drba",
-   "destination": "/ticker/PGEN",
+   "destination": "/drug/papzimeos",
    "permanent": true
   }
  ],
