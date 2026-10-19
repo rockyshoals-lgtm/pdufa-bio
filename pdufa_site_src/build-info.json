@@ -1,14 +1,20 @@
 {
- "built": "2026-10-18T23:54:10+00:00",
- "data_built_at": "2026-10-18T23:54:10+00:00",
- "commit": "9bacc0617",
- "commit_at_build": "9bacc0617",
- "as_of_eastern": "2026-10-18",
+ "built": "2026-10-19T16:50:49+00:00",
+ "data_built_at": "2026-10-19T16:50:49+00:00",
+ "commit": "577cc9d3d",
+ "commit_at_build": "577cc9d3d",
+ "as_of_eastern": "2026-10-19",
  "next_date": "2026-10-26",
  "next_ticker": "GSK",
- "next_days": 8,
+ "next_days": 7,
  "next_status": "upcoming",
  "days_since_goal": null,
- "held_since": null,
- "held_leads": []
+ "held_since": "2026-10-19T16:46:41Z",
+ "held_leads": [
+  {
+   "row_id": "drug:aficamten",
+   "source": "drug_pages",
+   "first_seen": "2026-10-19T16:46:41Z"
+  }
+ ]
 }
