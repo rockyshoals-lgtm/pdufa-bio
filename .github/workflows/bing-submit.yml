@@ -1,0 +1,31 @@
+name: Bing URL submission (on demand)
+
+# 2026-10-18: "request indexing" without the console. Bing's URL Submission API (SubmitUrlBatch) is the same call the
+# Webmaster console's Submit URLs button makes, against the same daily quota, with console attribution. The key is a
+# repository secret, so the request has to run here. Dispatch with a comma-separated list of absolute URLs.
+#   gh workflow run bing-submit.yml --ref main -f urls="https://www.pdufa.bio/fda-decisions-today,https://www.pdufa.bio/calendar"
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Comma-separated absolute URLs on www.pdufa.bio (max 40; Bing rejects a batch larger than the quota left today)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: "SubmitUrlBatch for the given URLs"
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          URLS: ${{ inputs.urls }}
+        run: python ping_search_engines.py --only "$URLS"

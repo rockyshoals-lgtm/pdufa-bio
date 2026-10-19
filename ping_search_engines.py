@@ -269,7 +269,22 @@ def submit_gsc(dry):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
+    # 2026-10-18: --only "url,url" submits exactly these (IndexNow + SubmitUrlBatch), the on-demand "request
+    # indexing" path for bing-submit.yml. Nothing is read from the sitemap in that mode.
+    ap.add_argument("--only", default="")
     a = ap.parse_args()
+
+    if a.only.strip():
+        only = [u.strip() for u in a.only.split(",") if u.strip().startswith("https://www.pdufa.bio/")]
+        bad = [u.strip() for u in a.only.split(",") if u.strip() and not u.strip().startswith("https://www.pdufa.bio/")]
+        if bad:
+            print(f"  ignored {len(bad)} URL(s) not on https://www.pdufa.bio/: {bad[:3]}")
+        print(f"on-demand submission of {len(only)} URL(s):")
+        for u in only:
+            print("    " + u)
+        post_indexnow(indexnow_key(), only, a.dry_run)
+        submit_bing_batch(only, a.dry_run)
+        return 0
 
     urls, newest = changed_urls()
     # RULE 1, the timezone trap. The sitemap's lastmod values are stamped in UTC by
