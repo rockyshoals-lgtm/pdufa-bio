@@ -46,7 +46,13 @@ Both rows release on this run; #35, #36 and #37 are closed with the run URL.
 ## 6. Local state
 The tree had three stale autostashes and 355 modified generated files from 10-18; `git checkout -- .` followed by a fast-forward applied an old autostash and left a conflict in `pdufa_site_src/index.html`. Reset hard to origin/main (e61c19d), my one edit restored from a copy, then the publish and the chain ran on the clean base. The three autostash entries are still in `git stash list`; their content is all committed, so they can be dropped.
 
+## 7. Shipped and verified live
+b29c866, pushed 06:12 UTC Oct 20 (02:12 Eastern, 23:12 Pacific Oct 19); run 39379157258: 152 guards passed, `vercel token identifies: rockyshoals-7744`, `Successfully purged the CDN cache`, verifier PASS on all three passes, quarantine 0 held. Live at 06:30 UTC: `/fda-decision/GSK-2026-10-19` title "Jemperli Approved Oct 19, 2026 for Locally Advanced Rectal Cancer", fact-first lede, Verified-against line with the goal month; `/drug/jemperli` says "FDA approved on October 19, 2026"; `/ticker/GSK` lists the Oct 19 decision; the API row carries `decision_date 2026-10-19`, `date_precision month`, `date_month 2027-02`, `goal_date_held false`. Issues #35, #36, #37 closed with the run URL; no issue is open.
+
+Observed, not changed: the ticker hub's decision-history rows name only the date and outcome ("Oct 19, 2026 ✓ Approved · FDA decision"), not the drug; the same for every row on every hub. A reader on /ticker/GSK cannot tell the Jemperli row from the Blenrep row without clicking. Worth a line each; carried.
+
 ## Carried
+- Ticker hub decision-history rows: name the drug on each row.
 - GSK newsroom listing parser for `_sponsor_feeds.json` (no RSS on gsk.com); same for any sponsor with a month-precision goal and no feed.
 - Jemperli BLA 761174 letter swap when Drugs@FDA posts it; Enspryng 761149; RYZUMVI 217064.
 - David's: SMTP for email alerts; `SEC_USER_AGENT`; 9realms MCP restart; 131 registry rows; Jaypirca SUPPL-5; MR-100A-01 brand; order 9 scope.
