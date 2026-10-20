@@ -6,6 +6,7 @@ Fails when a decided row's /fda-decision/{T}-{dcd} page lacks the VERIFIED block
 action day for a row with none (decision_date_unsourced and no fda_action_date); when it omits the FDA day the
 row holds; when it states a goal date the row cannot source; or when Enspryng's omits either dateline.
 Plant: PLANT_VERIFIED=1 pretends RHHBY-2026-10-15 states "FDA action day October 15, 2026" and must FAIL.
+       PLANT_VERIFIED=2 pretends GSK-2026-10-19's goal month is credited to the FDA notification and must FAIL.
 
     python tests/test_verified_against_line.py
 """
@@ -60,6 +61,20 @@ def main():
             fails.append(f"/fda-decision/{slug}: line states a goal date the row cannot source")
         if goal_ok and not (d.get("source") or d.get("source_url")) and "source not recorded on this row" not in txt:
             fails.append(f"/fda-decision/{slug}: goal date shown as sourced but the row records no source")
+        # 2026-10-19: a month-precision goal may be named as "Goal month {Month} {Year}, no day stated" only when the
+        # row's source is a goal source, not its own decision letter / FDA record (HYRNUO's `source` is the letter).
+        gm = re.search(r"Goal month ([A-Z][a-z]+ \d{4})", txt)
+        if os.environ.get("PLANT_VERIFIED") == "2" and slug == "GSK-2026-10-19":
+            gm = re.search(r"(February 2027)", "February 2027")
+            d = dict(d, source_url=d.get("decision_source_url"))
+        if gm:
+            y, mo = (int(x) for x in str(r.get("d"))[:7].split("-"))
+            if str(r.get("dp")) != "month" or d.get("goal_unsourced"):
+                fails.append(f"/fda-decision/{slug}: line names a goal month but the row's goal is not a sourced month")
+            elif gm.group(1) != f"{MON[mo]} {y}":
+                fails.append(f"/fda-decision/{slug}: goal month {gm.group(1)} is not the row's {MON[mo]} {y}")
+            elif d.get("source_url") and d.get("source_url") in (d.get("decision_source_url"), d.get("fda_action_source_url")):
+                fails.append(f"/fda-decision/{slug}: goal month credited to the decision's own source, not a goal source")
         if f"Announcement {pretty(r['dcd'])}" not in txt:
             fails.append(f"/fda-decision/{slug}: line omits the announcement date {r['dcd']}")
         a2 = d.get("announcement_2") or {}

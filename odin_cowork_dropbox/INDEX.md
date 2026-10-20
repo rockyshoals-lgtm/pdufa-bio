@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-19 BUILDER (currency sweep jemperli larc)** — `2026-10-19_BUILDER_currency_sweep_jemperli_larc.md` — 2026-10-19, work 22:00 Pacific onward = 01:00 Eastern Oct 20 = 05:00 UTC Oct 20. RULE 1.
 - **2026-10-18 audit (audit frozen sunday ledger and moat)** — `2026-10-18_audit_frozen_sunday_ledger_and_moat.md` — 2026-10-18, measured 17:17 to 17:45 Eastern = 21:17 to 21:45 UTC (Sunday). Per RULE 1 every time carries its zone. GitHub run times are UTC.
 - **2026-10-18 BUILDER (sunday freeze blocked issues moat orders)** — `2026-10-18_BUILDER_sunday_freeze_blocked_issues_moat_orders.md` — 2026-10-18, work 15:30 Pacific onward = 18:30 Eastern = 22:30 UTC (Sunday). RULE 1.
 - **2026-10-17b note (BING top recommendations and submissions)** — `2026-10-17b_BING_top_recommendations_and_submissions.md` — 2026-10-17, ~18:15 Eastern = 22:15 UTC (Saturday). Bing Webmaster console times are shown in local (Pacific) time. RULE 1.

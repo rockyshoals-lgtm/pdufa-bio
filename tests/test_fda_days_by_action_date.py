@@ -18,6 +18,8 @@ import sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
+from site_dates import eastern_today  # noqa: E402  (RULE 1: the pages count their 45 days in Eastern; so must this)
 
 
 def day_blocks(doc, prefix):
@@ -27,7 +29,9 @@ def day_blocks(doc, prefix):
 def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
     rows = json.loads(src[src.index("["):src.rindex("]") + 1].replace("\x00", ""))
-    today = dt.date.today()
+    # 2026-10-19 22:50 Pacific: dt.date.today() was Oct 19 here while the pages had been built for Eastern Oct 20,
+    # so the 45-day window reached one day further back than the page's and demanded a Sept 4 entry. Eastern, always.
+    today = eastern_today()
     want = {}
     for r in rows:
         d = r.get("_d") or {}

@@ -85,6 +85,14 @@ def line(r):
         parts.append(f"Goal date {pretty(goal)} ({link(short_source(d.get('source') or 'sponsor filing'), d.get('source_url'))})")
     elif goal and str(r.get("dp") or "day") == "day" and not d.get("goal_unsourced"):
         parts.append(f"Goal date {pretty(goal)} (source not recorded on this row)")
+    elif (goal and str(r.get("dp")) == "month" and not d.get("goal_unsourced") and (d.get("source") or d.get("source_url"))
+          and d.get("source_url") not in (d.get("decision_source_url"), d.get("fda_action_source_url"))
+          and not re.search(r"never sourced|not sourced|no .* states (?:it|a goal)", str(d.get("date_note") or ""), re.I)):
+        # 2026-10-19 (Jemperli LARC): GSK stated the goal as "February 2027". A sourced month is a fact worth
+        # naming; it is still not a day, so no margin is computed anywhere and this line says "month". A row
+        # whose `source` is its own decision letter (HYRNUO: date_note "never sourced") does not qualify.
+        y, m = (int(x) for x in str(goal)[:7].split("-"))
+        parts.append(f"Goal month {MON[m]} {y}, no day stated ({link(short_source(d.get('source') or 'sponsor filing'), d.get('source_url'))})")
     else:
         parts.append("Goal date none sourced")
     return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9">'

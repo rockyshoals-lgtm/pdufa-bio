@@ -60,7 +60,10 @@ def test_no_upcoming_row_has_a_published_decision():
                 sgap = (dt.date.fromisoformat(ddate) - dt.date.fromisoformat(d)).days
             except Exception:
                 continue
-            if abs(sgap) <= 14 or (
+            # 2026-10-19: the sync's near tier also refuses a NAME CONFLICT (brepocitinib/Tukysa, 10-16), and this
+            # guard did not, so GSK's Jemperli approval of Oct 19 flagged GSK's bepirovirsen goal of Oct 26 (7 days
+            # apart, different drugs). One rule, the sync's: proximity without a conflicting name, or a lead match.
+            if (abs(sgap) <= 14 and not sap._names_conflict(r.get("name"), ddrug)) or (
                     (-180 <= sgap <= 45 if oc == "Approved" else -14 <= sgap <= 45)
                     and sap._lead_match(r.get("name"), ddrug)):
                 bad.append(f"{tk} goal {d} ({str(r.get('name'))[:40]}) is Upcoming but "

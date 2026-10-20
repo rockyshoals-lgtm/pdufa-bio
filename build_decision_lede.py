@@ -119,7 +119,12 @@ def main():
         d = r.get("_d") or {}
         kv = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", doc)
         kvi = re.search(r"<span>Indication</span><b>(.*?)</b>", doc)
-        hm = re.search(r'(<div class="ban ap">[^<]*</div>\s*(?:' + re.escape(B) + r'.*?' + re.escape(E) + r'\s*)?)'
+        # 2026-10-19: on a page built today, inject_verified_against.py (which runs first) has already placed its
+        # VERIFIED block between the banner and the headline, and this regex did not allow it, so the brand-new
+        # Jemperli page got no lede and test_decision_lede_fact_first blocked. The block is allowed here and kept
+        # in group 1; the lede goes after it tonight and inject_verified_against re-orders them on its next run.
+        hm = re.search(r'(<div class="ban ap">[^<]*</div>\s*(?:' + re.escape(B) + r'.*?' + re.escape(E) + r'\s*)?'
+                       r'(?:<!--VERIFIED:BEGIN-->.*?<!--VERIFIED:END-->\s*)?)'
                        r'<p class="sub">(.*?)</p>', doc, re.S)
         if not hm:
             stats["skipped"] += 1
@@ -189,8 +194,13 @@ def main():
             if rebuilt != head:
                 newhead = html.escape(rebuilt, quote=False)
                 stats["headline_cleaned"] += 1
-        new = doc[:hm.start()] + re.sub(re.escape(B) + r".*?" + re.escape(E) + r"\s*", "", hm.group(1), flags=re.S) \
-            + block + f'<p class="sub">{newhead}</p>' + doc[hm.end():]
+        g1 = re.sub(re.escape(B) + r".*?" + re.escape(E) + r"\s*", "", hm.group(1), flags=re.S)
+        vi = g1.find("<!--VERIFIED:BEGIN-->")
+        if vi >= 0:        # lede directly under the banner, the Verified-against line after it (its own placement)
+            g1, tail = g1[:vi], g1[vi:]
+        else:
+            tail = ""
+        new = doc[:hm.start()] + g1 + block + tail + f'<p class="sub">{newhead}</p>' + doc[hm.end():]
         if new != doc:
             changed += 1
             if not a.dry_run:

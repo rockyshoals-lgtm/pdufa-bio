@@ -101,5 +101,19 @@
    "What trials supported the presbyopia approval?",
    "The Phase 3 VEGA-2 and VEGA-3 trials, both of which met their primary and all key secondary efficacy endpoints with no treatment-related serious adverse events reported, according to Opus Genetics."
   ]
+ ],
+ "GSK-2026-10-19": [
+  [
+   "Was Jemperli approved for locally advanced rectal cancer?",
+   "Yes. The FDA granted accelerated approval on October 19, 2026 to dostarlimab-gxly (Jemperli) for adults with Stage II/III locally advanced rectal cancer that is mismatch repair deficient or microsatellite instability high, per the FDA's own notification. GSK announced it the same day. Continued approval may depend on a confirmatory trial."
+  ],
+  [
+   "Was the Jemperli rectal cancer decision early?",
+   "The FDA acted on October 19, 2026. GSK's August 24, 2026 release stated the goal date as February 2027, a month rather than a day, so pdufa.bio does not publish an early or late margin for this decision. GSK's release says the approval came ahead of the PDUFA date; the application carried Priority Review and a Commissioner's National Priority Voucher."
+  ],
+  [
+   "What did AZUR-1 show?",
+   "Per the FDA, AZUR-1 (NCT05723562) enrolled 154 previously untreated patients who received dostarlimab alone for nine cycles. Sustained clinical complete response at 12 months was 47% by independent central review in 116 evaluable patients and 68% by investigator assessment in 144; overall response by central review was 79%. With a median follow-up of 26.3 months, no patient with a complete or near-complete response had progressed."
+  ]
  ]
 }

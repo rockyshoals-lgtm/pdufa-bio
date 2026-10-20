@@ -1043,436 +1043,6 @@ export default [
   "dm": "2026-06"
  },
  {
-  "id": "conf_esc_2026-08-28",
-  "t": "ESC",
-  "company": "European Society of Cardiology Congress",
-  "d": "2026-08-28",
-  "dp": "day",
-  "name": "European Society of Cardiology Congress",
-  "type": "Conference",
-  "ta": "Cardiology",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conference/ESC",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-08-31",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "CYTK",
-     "company": "Cytokinetics, Incorporated",
-     "drug": "Aficamten",
-     "pres_type": "late-breaking",
-     "source_url": "https://ir.cytokinetics.com/press-releases/press-release-details/2026/Cytokinetics-Announces-Three-Late-Breaking-Science-Abstracts-at-the-European-Society-of-Cardiology-ESC-Congress-2026/default.aspx"
-    },
-    {
-     "ticker": "IONS",
-     "company": "IONIS PHARMACEUTICALS INC",
-     "drug": "",
-     "pres_type": "presentation",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126028092/ef20077664_8k.htm"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_ers_2026-09-05",
-  "t": "ERS",
-  "company": "European Respiratory Society Congress",
-  "d": "2026-09-05",
-  "dp": "day",
-  "name": "European Respiratory Society Congress",
-  "type": "Conference",
-  "ta": "Respiratory",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-09-09",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "BEAM",
-     "company": "Beam Therapeutics Inc.",
-     "drug": "BEAM-302",
-     "pres_type": "late-breaking oral",
-     "source_url": "https://investors.beamtx.com/news-releases/news-release-details/beam-therapeutics-present-updated-data-phase-12-trial-beam-302/"
-    },
-    {
-     "ticker": "GRI",
-     "company": "GRI Bio, Inc.",
-     "drug": "GRI-0621",
-     "pres_type": "late-breaking presentation",
-     "source_url": "https://www.globenewswire.com/news-release/2026/08/24/3349779/0/en/gri-bio-to-present-late-breaking-phase-2a-gri-0621-data-highlighting-lung-function-anti-fibrotic-biomarkers-and-favorable-tolerability-in-ipf-at-ers-2026.html"
-    },
-    {
-     "ticker": "INSM",
-     "company": "Insmed Incorporated",
-     "drug": "ARIKAYCE, BRINSUPRI (brensocatib), TPIP",
-     "pres_type": "5 abstracts incl. late-breaking Ph3b ENCORE oral",
-     "source_url": "https://www.prnewswire.com/news-releases/insmed-to-present-data-across-its-respiratory-portfolio-including-new-late-breaking-arikayce-amikacin-liposome-inhalation-suspension-results-from-phase-3b-encore-study-at-the-european-respiratory-society-congress-2026-302868119.html"
-    },
-    {
-     "ticker": "KYMR",
-     "company": "Kymera Therapeutics, Inc.",
-     "drug": "KT-621 (oral STAT6 degrader)",
-     "pres_type": "poster x2",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/01/3353950/0/en/kymera-therapeutics-announces-presentations-on-kt-621-a-first-in-class-oral-stat6-degrader-at-the-european-respiratory-society-and-european-academy-of-dermatology-venereology-congr.html"
-    },
-    {
-     "ticker": "LQDA",
-     "company": "Liquidia Corporation",
-     "drug": "YUTREPIA (treprostinil DPI) + L606",
-     "pres_type": "poster x2",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355134/0/en/liquidia-to-present-posters-at-the-european-respiratory-society-ers-2026-congress.html"
-    },
-    {
-     "ticker": "RNTX",
-     "company": "Rein Therapeutics, Inc.",
-     "drug": "LTI-03 (inhaled)",
-     "pres_type": "late-breaking poster",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356530/28652/en/rein-therapeutics-to-present-late-breaking-poster-at-the-european-respiratory-society-ers-2026-congress.html"
-    },
-    {
-     "ticker": "SVRA",
-     "company": "Savara Inc.",
-     "drug": "Molgramostim (MOLBREEVI)",
-     "pres_type": "oral + poster x2 (IMPALA-2)",
-     "source_url": "https://www.businesswire.com/news/home/20260824428528/en"
-    },
-    {
-     "ticker": "TRVI",
-     "company": "Trevi Therapeutics, Inc.",
-     "drug": "Haduvio (nalbuphine ER)",
-     "pres_type": "poster + abstract",
-     "source_url": "https://www.globenewswire.com/news-release/2026/08/26/3351240/0/en/trevi-therapeutics-announces-upcoming-presentations-at-the-european-respiratory-society-ers-congress-2026.html"
-    },
-    {
-     "ticker": "UTHR",
-     "company": "United Therapeutics Corporation",
-     "drug": "Ralinepag, nebulized treprostinil (TETON), Tyvaso",
-     "pres_type": "oral + poster incl. late-breaking",
-     "source_url": "https://ir.unither.com/~/media/Files/U/United-Therapeutics-IR/documents/press-releases/2026/esc-ers-2026-press-release.pdf"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_wclc_2026-09-12",
-  "t": "WCLC",
-  "company": "IASLC World Conference on Lung Cancer",
-  "d": "2026-09-12",
-  "dp": "day",
-  "name": "IASLC World Conference on Lung Cancer",
-  "type": "Conference",
-  "ta": "Oncology, lung",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conference/WCLC",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-09-15",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "ABBV",
-     "company": "AbbVie Inc.",
-     "drug": "ABBV-1480, ABBV-706, telisotuzumab adizutecan",
-     "pres_type": "multiple presentations",
-     "source_url": "https://news.abbvie.com/2026-08-21-AbbVie-to-Present-New-Data-at-WCLC-2026-Showcasing-Innovation-Across-Lung-Cancer-Pipeline"
-    },
-    {
-     "ticker": "BNTX",
-     "company": "BioNTech SE",
-     "drug": "Pumitamig (BNT327) + elfetabart drozuntecan",
-     "pres_type": "late-breaking oral + pipeline presentations",
-     "source_url": "https://www.globenewswire.com/news-release/2026/08/20/3348151/0/en/biontech-highlights-late-stage-lung-cancer-pipeline-momentum-and-first-global-data-for-pumitamig-elfetabart-drozuntecan-novel-novel-combination-at-wclc-2026.html"
-    },
-    {
-     "ticker": "CGEM",
-     "company": "Cullinan Therapeutics, Inc.",
-     "drug": "Zipalertinib (with Taiho Oncology)",
-     "pres_type": "Presidential Symposium oral",
-     "source_url": "https://secure.businesswire.com/news/home/20260819883527/en/Zipalertinib-Plus-Chemotherapy-First-Line-Phase-3-REZILIENT3-Trial-Data-Selected-for-Presidential-Symposium-Presentation-at-the-IASLC-2026-World-Conference-on-Lung-Cancer"
-    },
-    {
-     "ticker": "NUVB",
-     "company": "Nuvation Bio Inc.",
-     "drug": "IBTROZI (taletrectinib)",
-     "pres_type": "data presentations",
-     "source_url": "https://www.prnewswire.com/news-releases/nuvation-bio-to-present-new-subgroup-analyses-of-pivotal-data-for-ibtrozi-taletrectinib-in-advanced-ros1-positive-non-small-cell-lung-cancer-at-wclc-and-esmo-annual-congresses-302841746.html"
-    },
-    {
-     "ticker": "SMMT",
-     "company": "Summit Therapeutics Inc.",
-     "drug": "Ivonescimab",
-     "pres_type": "oral (session OA14)",
-     "source_url": "https://smmttx.com/news/press-releases/news-details/2026/Ivonescimab-Plus-Chemotherapy-Global-Phase-III-HARMONi-Primary-Analysis-Results-Published-in-The-Lancet-Oncology/default.aspx"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_aacr-panc_2026-09-25",
-  "t": "AACR-PANC",
-  "company": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
-  "d": "2026-09-25",
-  "dp": "day",
-  "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
-  "type": "Conference",
-  "ta": "Oncology - Pancreatic",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-09-28",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "SLS",
-     "company": "SELLAS Life Sciences Group, Inc.",
-     "drug": "SLS009 (tambiciclib) - PRECLINICAL posters, PDAC",
-     "pres_type": "poster x3 (preclinical)",
-     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_astro_2026-09-26",
-  "t": "ASTRO",
-  "company": "ASTRO Annual Meeting",
-  "d": "2026-09-26",
-  "dp": "day",
-  "name": "ASTRO Annual Meeting",
-  "type": "Conference",
-  "ta": "Radiation oncology",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-09-30",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "CADL",
-     "company": "Candel Therapeutics, Inc.",
-     "drug": "Aglatimagene besadenovec (CAN-2409)",
-     "pres_type": "poster",
-     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
-    },
-    {
-     "ticker": "NVCR",
-     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
-     "drug": "",
-     "pres_type": "unspecified",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_easd_2026-09-28",
-  "t": "EASD",
-  "company": "European Association for the Study of Diabetes",
-  "d": "2026-09-28",
-  "dp": "day",
-  "name": "European Association for the Study of Diabetes",
-  "type": "Conference",
-  "ta": "Diabetes and metabolic",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conference/EASD",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-10-02",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "IBIO",
-     "company": "iBio, Inc.",
-     "drug": "IBIO-610 (Activin E antibody) - PRECLINICAL",
-     "pres_type": "presentation #759 (preclinical)",
-     "source_url": "https://www.globenewswire.com/news-release/2026/07/01/3320497/0/en/iBio-Reports-Single-Dose-of-IBIO-610-Achieved-Near-Complete-Active-Activin-E-Inhibition-Through-Eight-Weeks-in-Obese-NHP-Study.html"
-    },
-    {
-     "ticker": "IPSC",
-     "company": "Century Therapeutics, Inc.",
-     "drug": "CNTY-813 (iPSC-derived islet replacement) - PRECLINICAL",
-     "pres_type": "oral #225 (preclinical)",
-     "source_url": "https://www.globenewswire.com/news-release/2026/07/09/3324741/0/en/Century-Therapeutics-Selected-for-Oral-Presentations-of-CNTY-813-Preclinical-Data-at-EASD-2026-and-Breakthrough-T1D-Clinical-Research-Congress-2026.html"
-    },
-    {
-     "ticker": "KLRA",
-     "company": "Kailera Therapeutics, Inc.",
-     "drug": "ribupatide",
-     "pres_type": "oral/late-breaker",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/2096997/000119312526346919/ck0002096997-ex99_1.htm"
-    },
-    {
-     "ticker": "SANA",
-     "company": "Sana Biotechnology, Inc.",
-     "drug": "UP421 (hypoimmune allogeneic islet cell therapy)",
-     "pres_type": "symposium presentation",
-     "source_url": "https://www.globenewswire.com/news-release/2026/07/01/3320655/0/en/Sana-Biotechnology-Announces-Symposium-Presentation-at-the-European-Association-for-the-Study-of-Diabetes-EASD-Annual-Meeting-2026.html"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_wms_2026-09-29",
-  "t": "WMS",
-  "company": "World Muscle Society Congress",
-  "d": "2026-09-29",
-  "dp": "day",
-  "name": "World Muscle Society Congress",
-  "type": "Conference",
-  "ta": "Neuromuscular, including DMD and SMA",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conferences",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-10-03",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_aao_2026-10-09",
-  "t": "AAO",
-  "company": "American Academy of Ophthalmology Annual Meeting",
-  "d": "2026-10-09",
-  "dp": "day",
-  "name": "American Academy of Ophthalmology Annual Meeting",
-  "type": "Conference",
-  "ta": "Ophthalmology and ocular gene therapy",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conference/AAO",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-10-12",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_acg_2026-10-09",
-  "t": "ACG",
-  "company": "American College of Gastroenterology Annual Meeting",
-  "d": "2026-10-09",
-  "dp": "day",
-  "name": "American College of Gastroenterology Annual Meeting",
-  "type": "Conference",
-  "ta": "Gastroenterology",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conference/ACG",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-10-14",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_asbmr_2026-10-09",
-  "t": "ASBMR",
-  "company": "American Society for Bone and Mineral Research",
-  "d": "2026-10-09",
-  "dp": "day",
-  "name": "American Society for Bone and Mineral Research",
-  "type": "Conference",
-  "ta": "Bone and mineral",
-  "cap": "",
-  "st": "Ended",
-  "url": "/conference/ASBMR",
-  "ua": "2026-10-20T00:07:58Z",
-  "_d": {
-   "end": "2026-10-12",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [
-    {
-     "ticker": "ENTX",
-     "company": "Entera Bio Ltd.",
-     "drug": "EB613",
-     "pres_type": "oral/late-breaker",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1638097/000117891326003946/exhibit_99-1.htm"
-    }
-   ],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "readout_wve_2026-06-15",
-  "t": "WVE",
-  "company": "Wave Life Sciences, Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "WVE-210201",
-  "type": "Readout",
-  "ta": "Rare disease",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04906460",
-  "ua": "2026-10-19T16:46:58Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04906460",
-    "status": "active_not_recruiting",
-    "pcd": "2026-10",
-    "pcd_type": "estimated",
-    "updated": "2026-10-13",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04906460",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-10-18",
-    "searched": "11 sponsor press releases (FMP) through 2026-10-18"
-   },
-   "date_history": [
-    {
-     "date": "2026-06-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-10-15",
-     "changed": "2026-10-19",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT04906460 is now 2026-10 (estimated; registry status active_not_recruiting, record updated 2026-10-13); the row's window moved from 2026-06 to 2026-10 on 2026-10-19. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ]
-  },
-  "dm": "2026-10"
- },
- {
   "id": "pdufa_gsk_2026-06-18",
   "t": "GSK",
   "company": "GSK plc",
@@ -2540,7 +2110,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2829,7 +2399,7 @@ export default [
   "ua": "2026-07-25T12:00:00Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2932,7 +2502,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) — DMD",
+  "name": "Deramiocel (CTGTAC) \u2014 DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2987,7 +2557,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) — Melanoma",
+  "name": "RP1 (CTGTAC) \u2014 Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3468,7 +3038,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-09",
-    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO® (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
+    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO\u00ae (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
     "url": "https://www.prnewswire.com/news-releases/biomarin-announces-positive-results-of-phase-3-voxzogo-vosoritide-study-in-hypochondroplasia-published-in-nejm-evidence-302873026.html",
     "checked": "2026-10-11",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3602,7 +3172,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-10-18",
-    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 ‘304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
+    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 \u2018304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
     "url": "https://www.businesswire.com/news/home/20261018527252/en/Veradermics-to-Hold-Conference-Call-to-Discuss-Topline-Results-from-Phase-3-%E2%80%98304%E2%80%99-Clinical-Trial-of-VDPHL01-in-Males-with-Mild-to-Moderate-Pattern-Hair-Loss/",
     "checked": "2026-10-18",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -4015,6 +3585,42 @@ export default [
   "dcd": "2026-08-27"
  },
  {
+  "id": "conf_esc_2026-08-28",
+  "t": "ESC",
+  "company": "European Society of Cardiology Congress",
+  "d": "2026-08-28",
+  "dp": "day",
+  "name": "European Society of Cardiology Congress",
+  "type": "Conference",
+  "ta": "Cardiology",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conference/ESC",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-08-31",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "CYTK",
+     "company": "Cytokinetics, Incorporated",
+     "drug": "Aficamten",
+     "pres_type": "late-breaking",
+     "source_url": "https://ir.cytokinetics.com/press-releases/press-release-details/2026/Cytokinetics-Announces-Three-Late-Breaking-Science-Abstracts-at-the-European-Society-of-Cardiology-ESC-Congress-2026/default.aspx"
+    },
+    {
+     "ticker": "IONS",
+     "company": "IONIS PHARMACEUTICALS INC",
+     "drug": "",
+     "pres_type": "presentation",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126028092/ef20077664_8k.htm"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_regn_2026-08-31",
   "t": "REGN",
   "company": "Regeneron Pharmaceuticals Inc.",
@@ -4088,6 +3694,91 @@ export default [
      "why": "The sponsor's SEC exhibit of 2026-09-01 states the readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ]
+  }
+ },
+ {
+  "id": "conf_ers_2026-09-05",
+  "t": "ERS",
+  "company": "European Respiratory Society Congress",
+  "d": "2026-09-05",
+  "dp": "day",
+  "name": "European Respiratory Society Congress",
+  "type": "Conference",
+  "ta": "Respiratory",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-09-09",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "BEAM",
+     "company": "Beam Therapeutics Inc.",
+     "drug": "BEAM-302",
+     "pres_type": "late-breaking oral",
+     "source_url": "https://investors.beamtx.com/news-releases/news-release-details/beam-therapeutics-present-updated-data-phase-12-trial-beam-302/"
+    },
+    {
+     "ticker": "GRI",
+     "company": "GRI Bio, Inc.",
+     "drug": "GRI-0621",
+     "pres_type": "late-breaking presentation",
+     "source_url": "https://www.globenewswire.com/news-release/2026/08/24/3349779/0/en/gri-bio-to-present-late-breaking-phase-2a-gri-0621-data-highlighting-lung-function-anti-fibrotic-biomarkers-and-favorable-tolerability-in-ipf-at-ers-2026.html"
+    },
+    {
+     "ticker": "INSM",
+     "company": "Insmed Incorporated",
+     "drug": "ARIKAYCE, BRINSUPRI (brensocatib), TPIP",
+     "pres_type": "5 abstracts incl. late-breaking Ph3b ENCORE oral",
+     "source_url": "https://www.prnewswire.com/news-releases/insmed-to-present-data-across-its-respiratory-portfolio-including-new-late-breaking-arikayce-amikacin-liposome-inhalation-suspension-results-from-phase-3b-encore-study-at-the-european-respiratory-society-congress-2026-302868119.html"
+    },
+    {
+     "ticker": "KYMR",
+     "company": "Kymera Therapeutics, Inc.",
+     "drug": "KT-621 (oral STAT6 degrader)",
+     "pres_type": "poster x2",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/01/3353950/0/en/kymera-therapeutics-announces-presentations-on-kt-621-a-first-in-class-oral-stat6-degrader-at-the-european-respiratory-society-and-european-academy-of-dermatology-venereology-congr.html"
+    },
+    {
+     "ticker": "LQDA",
+     "company": "Liquidia Corporation",
+     "drug": "YUTREPIA (treprostinil DPI) + L606",
+     "pres_type": "poster x2",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355134/0/en/liquidia-to-present-posters-at-the-european-respiratory-society-ers-2026-congress.html"
+    },
+    {
+     "ticker": "RNTX",
+     "company": "Rein Therapeutics, Inc.",
+     "drug": "LTI-03 (inhaled)",
+     "pres_type": "late-breaking poster",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/04/3356530/28652/en/rein-therapeutics-to-present-late-breaking-poster-at-the-european-respiratory-society-ers-2026-congress.html"
+    },
+    {
+     "ticker": "SVRA",
+     "company": "Savara Inc.",
+     "drug": "Molgramostim (MOLBREEVI)",
+     "pres_type": "oral + poster x2 (IMPALA-2)",
+     "source_url": "https://www.businesswire.com/news/home/20260824428528/en"
+    },
+    {
+     "ticker": "TRVI",
+     "company": "Trevi Therapeutics, Inc.",
+     "drug": "Haduvio (nalbuphine ER)",
+     "pres_type": "poster + abstract",
+     "source_url": "https://www.globenewswire.com/news-release/2026/08/26/3351240/0/en/trevi-therapeutics-announces-upcoming-presentations-at-the-european-respiratory-society-ers-congress-2026.html"
+    },
+    {
+     "ticker": "UTHR",
+     "company": "United Therapeutics Corporation",
+     "drug": "Ralinepag, nebulized treprostinil (TETON), Tyvaso",
+     "pres_type": "oral + poster incl. late-breaking",
+     "source_url": "https://ir.unither.com/~/media/Files/U/United-Therapeutics-IR/documents/press-releases/2026/esc-ers-2026-press-release.pdf"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -4304,6 +3995,63 @@ export default [
   },
   "oc": "Approved",
   "dcd": "2026-09-14"
+ },
+ {
+  "id": "conf_wclc_2026-09-12",
+  "t": "WCLC",
+  "company": "IASLC World Conference on Lung Cancer",
+  "d": "2026-09-12",
+  "dp": "day",
+  "name": "IASLC World Conference on Lung Cancer",
+  "type": "Conference",
+  "ta": "Oncology, lung",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conference/WCLC",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-09-15",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "ABBV",
+     "company": "AbbVie Inc.",
+     "drug": "ABBV-1480, ABBV-706, telisotuzumab adizutecan",
+     "pres_type": "multiple presentations",
+     "source_url": "https://news.abbvie.com/2026-08-21-AbbVie-to-Present-New-Data-at-WCLC-2026-Showcasing-Innovation-Across-Lung-Cancer-Pipeline"
+    },
+    {
+     "ticker": "BNTX",
+     "company": "BioNTech SE",
+     "drug": "Pumitamig (BNT327) + elfetabart drozuntecan",
+     "pres_type": "late-breaking oral + pipeline presentations",
+     "source_url": "https://www.globenewswire.com/news-release/2026/08/20/3348151/0/en/biontech-highlights-late-stage-lung-cancer-pipeline-momentum-and-first-global-data-for-pumitamig-elfetabart-drozuntecan-novel-novel-combination-at-wclc-2026.html"
+    },
+    {
+     "ticker": "CGEM",
+     "company": "Cullinan Therapeutics, Inc.",
+     "drug": "Zipalertinib (with Taiho Oncology)",
+     "pres_type": "Presidential Symposium oral",
+     "source_url": "https://secure.businesswire.com/news/home/20260819883527/en/Zipalertinib-Plus-Chemotherapy-First-Line-Phase-3-REZILIENT3-Trial-Data-Selected-for-Presidential-Symposium-Presentation-at-the-IASLC-2026-World-Conference-on-Lung-Cancer"
+    },
+    {
+     "ticker": "NUVB",
+     "company": "Nuvation Bio Inc.",
+     "drug": "IBTROZI (taletrectinib)",
+     "pres_type": "data presentations",
+     "source_url": "https://www.prnewswire.com/news-releases/nuvation-bio-to-present-new-subgroup-analyses-of-pivotal-data-for-ibtrozi-taletrectinib-in-advanced-ros1-positive-non-small-cell-lung-cancer-at-wclc-and-esmo-annual-congresses-302841746.html"
+    },
+    {
+     "ticker": "SMMT",
+     "company": "Summit Therapeutics Inc.",
+     "drug": "Ivonescimab",
+     "pres_type": "oral (session OA14)",
+     "source_url": "https://smmttx.com/news/press-releases/news-details/2026/Ivonescimab-Plus-Chemotherapy-Global-Phase-III-HARMONi-Primary-Analysis-Results-Published-in-The-Lancet-Oncology/default.aspx"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
  },
  {
   "id": "readout_dftx_2026-09-30",
@@ -5114,6 +4862,60 @@ export default [
   "dm": "2026-09"
  },
  {
+  "id": "readout_zura_2026-11-15",
+  "t": "ZURA",
+  "company": "Zura Bio Ltd",
+  "d": "2026-09-15",
+  "dp": "month",
+  "name": "Tibulizumab",
+  "type": "Readout",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT06993610",
+  "ua": "2026-10-19T16:47:21Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT06993610",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-18",
+    "pcd_type": "actual",
+    "updated": "2026-10-16",
+    "ongoing": true
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06993610",
+   "ta_basis": "ClinicalTrials.gov conditions: Hidradenitis Suppurativa (HS)",
+   "date_history": [
+    {
+     "date": "2026-11-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-15",
+     "changed": "2026-10-19",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06993610 is now 2026-09-18 (actual; registry status active_not_recruiting, record updated 2026-10-16); the row's window moved from 2026-11 to 2026-09 on 2026-10-19. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-09-18",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-19",
+    "source_url": "https://clinicaltrials.gov/study/NCT06993610"
+   },
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-10-19",
+    "searched": "3 sponsor press releases (FMP) through 2026-10-19; ClinicalTrials.gov 2026-10-19"
+   }
+  },
+  "dm": "2026-09"
+ },
+ {
   "id": "pdufa_lly_2026-09-18",
   "t": "LLY",
   "company": "ELI LILLY & Co",
@@ -5356,6 +5158,35 @@ export default [
   }
  },
  {
+  "id": "conf_aacr-panc_2026-09-25",
+  "t": "AACR-PANC",
+  "company": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "d": "2026-09-25",
+  "dp": "day",
+  "name": "AACR Conference on Pancreatic Cancer: New Frontiers in Biology and Therapeutic Development",
+  "type": "Conference",
+  "ta": "Oncology - Pancreatic",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-09-28",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "SLS",
+     "company": "SELLAS Life Sciences Group, Inc.",
+     "drug": "SLS009 (tambiciclib) - PRECLINICAL posters, PDAC",
+     "pres_type": "poster x3 (preclinical)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/09/02/3355136/0/en/sellas-life-sciences-to-present-preclinical-data-on-sls009-in-pancreatic-ductal-adenocarcinoma-at-the-2026-aacr-conference-on-pancreatic-cancer.html"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_incy_2026-09-26",
   "t": "INCY",
   "company": "Incyte Corp",
@@ -5431,6 +5262,42 @@ export default [
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
+ },
+ {
+  "id": "conf_astro_2026-09-26",
+  "t": "ASTRO",
+  "company": "ASTRO Annual Meeting",
+  "d": "2026-09-26",
+  "dp": "day",
+  "name": "ASTRO Annual Meeting",
+  "type": "Conference",
+  "ta": "Radiation oncology",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-09-30",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "CADL",
+     "company": "Candel Therapeutics, Inc.",
+     "drug": "Aglatimagene besadenovec (CAN-2409)",
+     "pres_type": "poster",
+     "source_url": "https://ir.candeltx.com/news-releases/news-release-details/candel-therapeutics-present-extended-data-phase-3-results"
+    },
+    {
+     "ticker": "NVCR",
+     "company": "NovoCure Ltd  (NVCR)  (CIK 0001645113)",
+     "drug": "",
+     "pres_type": "unspecified",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000053/nvcr-20260618.htm"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
  },
  {
   "id": "pdufa_bfri_2026-09-28",
@@ -5524,6 +5391,56 @@ export default [
   "oc": "Met primary endpoint"
  },
  {
+  "id": "conf_easd_2026-09-28",
+  "t": "EASD",
+  "company": "European Association for the Study of Diabetes",
+  "d": "2026-09-28",
+  "dp": "day",
+  "name": "European Association for the Study of Diabetes",
+  "type": "Conference",
+  "ta": "Diabetes and metabolic",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conference/EASD",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-10-02",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "IBIO",
+     "company": "iBio, Inc.",
+     "drug": "IBIO-610 (Activin E antibody) - PRECLINICAL",
+     "pres_type": "presentation #759 (preclinical)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/07/01/3320497/0/en/iBio-Reports-Single-Dose-of-IBIO-610-Achieved-Near-Complete-Active-Activin-E-Inhibition-Through-Eight-Weeks-in-Obese-NHP-Study.html"
+    },
+    {
+     "ticker": "IPSC",
+     "company": "Century Therapeutics, Inc.",
+     "drug": "CNTY-813 (iPSC-derived islet replacement) - PRECLINICAL",
+     "pres_type": "oral #225 (preclinical)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/07/09/3324741/0/en/Century-Therapeutics-Selected-for-Oral-Presentations-of-CNTY-813-Preclinical-Data-at-EASD-2026-and-Breakthrough-T1D-Clinical-Research-Congress-2026.html"
+    },
+    {
+     "ticker": "KLRA",
+     "company": "Kailera Therapeutics, Inc.",
+     "drug": "ribupatide",
+     "pres_type": "oral/late-breaker",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/2096997/000119312526346919/ck0002096997-ex99_1.htm"
+    },
+    {
+     "ticker": "SANA",
+     "company": "Sana Biotechnology, Inc.",
+     "drug": "UP421 (hypoimmune allogeneic islet cell therapy)",
+     "pres_type": "symposium presentation",
+     "source_url": "https://www.globenewswire.com/news-release/2026/07/01/3320655/0/en/Sana-Biotechnology-Announces-Symposium-Presentation-at-the-European-Association-for-the-Study-of-Diabetes-EASD-Annual-Meeting-2026.html"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "readout_immx_2026-09-30",
   "t": "IMMX",
   "company": "Immix Biopharma, Inc.",
@@ -5601,6 +5518,27 @@ export default [
      "why": "The sponsor's SEC exhibit of 2026-09-29 states the readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ]
+  }
+ },
+ {
+  "id": "conf_wms_2026-09-29",
+  "t": "WMS",
+  "company": "World Muscle Society Congress",
+  "d": "2026-09-29",
+  "dp": "day",
+  "name": "World Muscle Society Congress",
+  "type": "Conference",
+  "ta": "Neuromuscular, including DMD and SMA",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conferences",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-10-03",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
   }
  },
  {
@@ -6488,6 +6426,77 @@ export default [
   "dcd": "2026-10-08"
  },
  {
+  "id": "conf_aao_2026-10-09",
+  "t": "AAO",
+  "company": "American Academy of Ophthalmology Annual Meeting",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "American Academy of Ophthalmology Annual Meeting",
+  "type": "Conference",
+  "ta": "Ophthalmology and ocular gene therapy",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conference/AAO",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-10-12",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_acg_2026-10-09",
+  "t": "ACG",
+  "company": "American College of Gastroenterology Annual Meeting",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "American College of Gastroenterology Annual Meeting",
+  "type": "Conference",
+  "ta": "Gastroenterology",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conference/ACG",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-10-14",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_asbmr_2026-10-09",
+  "t": "ASBMR",
+  "company": "American Society for Bone and Mineral Research",
+  "d": "2026-10-09",
+  "dp": "day",
+  "name": "American Society for Bone and Mineral Research",
+  "type": "Conference",
+  "ta": "Bone and mineral",
+  "cap": "",
+  "st": "Ended",
+  "url": "/conference/ASBMR",
+  "ua": "2026-10-20T06:08:17Z",
+  "_d": {
+   "end": "2026-10-12",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [
+    {
+     "ticker": "ENTX",
+     "company": "Entera Bio Ltd.",
+     "drug": "EB613",
+     "pres_type": "oral/late-breaker",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1638097/000117891326003946/exhibit_99-1.htm"
+    }
+   ],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "pdufa_mrk_2026-10-10",
   "t": "MRK",
   "company": "Merck & Co., Inc.",
@@ -6828,7 +6837,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -6888,6 +6897,54 @@ export default [
     }
    ],
    "source_url": "https://clinicaltrials.gov/study/NCT06016738"
+  },
+  "dm": "2026-10"
+ },
+ {
+  "id": "readout_pbyi_2026-12-15",
+  "t": "PBYI",
+  "company": "Puma Biotechnology, Inc.",
+  "d": "2026-10-15",
+  "dp": "month",
+  "name": "neratinib",
+  "type": "Readout",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT03377387",
+  "ua": "2026-10-16T14:29:57Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT03377387",
+    "status": "completed",
+    "pcd": "2026-10-14",
+    "pcd_type": "actual",
+    "updated": "2026-10-15",
+    "ongoing": false
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT03377387",
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-10-16",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT03377387 is now 2026-10-14 (actual; registry status completed, record updated 2026-10-15); the row's window moved from 2026-12 to 2026-10 on 2026-10-16. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-10-14",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-19",
+    "source_url": "https://clinicaltrials.gov/study/NCT03377387"
+   }
   },
   "dm": "2026-10"
  },
@@ -7095,6 +7152,51 @@ export default [
   "dm": "2026-10"
  },
  {
+  "id": "readout_wve_2026-06-15",
+  "t": "WVE",
+  "company": "Wave Life Sciences, Inc.",
+  "d": "2026-10-15",
+  "dp": "month",
+  "name": "WVE-210201",
+  "type": "Readout",
+  "ta": "Rare disease",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT04906460",
+  "ua": "2026-10-19T16:46:58Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT04906460",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10",
+    "pcd_type": "estimated",
+    "updated": "2026-10-13",
+    "ongoing": true
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04906460",
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-10-18",
+    "searched": "11 sponsor press releases (FMP) through 2026-10-18"
+   },
+   "date_history": [
+    {
+     "date": "2026-06-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-10-19",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT04906460 is now 2026-10 (estimated; registry status active_not_recruiting, record updated 2026-10-13); the row's window moved from 2026-06 to 2026-10 on 2026-10-19. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ]
+  },
+  "dm": "2026-10"
+ },
+ {
   "id": "pdufa_ird_2026-10-17",
   "t": "IRD",
   "company": "Opus Genetics, Inc.",
@@ -7203,7 +7305,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASN",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7239,7 +7341,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7296,7 +7398,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7317,7 +7419,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7612,7 +7714,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7648,7 +7750,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7684,7 +7786,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7720,7 +7822,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7741,7 +7843,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7762,7 +7864,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -7882,7 +7984,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8352,60 +8454,6 @@ export default [
   "dm": "2026-11"
  },
  {
-  "id": "readout_zura_2026-11-15",
-  "t": "ZURA",
-  "company": "Zura Bio Ltd",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "Tibulizumab",
-  "type": "Readout",
-  "ta": "Dermatology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06993610",
-  "ua": "2026-10-19T16:47:21Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06993610",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-18",
-    "pcd_type": "actual",
-    "updated": "2026-10-16",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06993610",
-   "ta_basis": "ClinicalTrials.gov conditions: Hidradenitis Suppurativa (HS)",
-   "date_history": [
-    {
-     "date": "2026-11-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-10-19",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06993610 is now 2026-09-18 (actual; registry status active_not_recruiting, record updated 2026-10-16); the row's window moved from 2026-11 to 2026-09 on 2026-10-19. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-18",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-10-19",
-    "source_url": "https://clinicaltrials.gov/study/NCT06993610"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-10-19",
-    "searched": "3 sponsor press releases (FMP) through 2026-10-19; ClinicalTrials.gov 2026-10-19"
-   }
-  },
-  "dm": "2026-09"
- },
- {
   "id": "conf_ctad_2026-11-16",
   "t": "CTAD",
   "company": "Clinical Trials on Alzheimer's Disease",
@@ -8417,7 +8465,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8446,7 +8494,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8900,7 +8948,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -8921,7 +8969,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -8942,7 +8990,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9004,7 +9052,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9025,7 +9073,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -9759,54 +9807,6 @@ export default [
    "source": "trial-estimate (not company-confirmed)"
   },
   "dm": "2026-12"
- },
- {
-  "id": "readout_pbyi_2026-12-15",
-  "t": "PBYI",
-  "company": "Puma Biotechnology, Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "neratinib",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT03377387",
-  "ua": "2026-10-16T14:29:57Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT03377387",
-    "status": "completed",
-    "pcd": "2026-10-14",
-    "pcd_type": "actual",
-    "updated": "2026-10-15",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT03377387",
-   "date_history": [
-    {
-     "date": "2026-12-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-10-15",
-     "changed": "2026-10-16",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT03377387 is now 2026-10-14 (actual; registry status completed, record updated 2026-10-15); the row's window moved from 2026-12 to 2026-10 on 2026-10-16. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-10-14",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-10-19",
-    "source_url": "https://clinicaltrials.gov/study/NCT03377387"
-   }
-  },
-  "dm": "2026-10"
  },
  {
   "id": "readout_pfe_2026-12-15",
@@ -11647,7 +11647,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11740,7 +11740,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11807,7 +11807,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -11962,6 +11962,48 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1789972/000119312526210290/cgem-ex99_1.htm",
    "source_quote": "19 T cell engager, to be presented at the EULAR 2026 Congress in June; multi-dose regimen data in RA expected in Q3 2026 Zipalertinib NDA for relapsed EGFR ex20ins NSCLC accepted by U.S. FDA; PDUFA target action date of February 27, 2027 Cash and investments of $393.3 million as of March 31, 2026; runway into 2029 CAMBRIDGE, Mass. May 7, 2026 (GLOBE NEWSW"
   }
+ },
+ {
+  "id": "pdufa_gsk_2027-02-28",
+  "t": "GSK",
+  "company": "GSK plc",
+  "d": "2027-02-28",
+  "dp": "month",
+  "name": "Jemperli (dostarlimab-gxly) - locally advanced rectal cancer",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "Large",
+  "st": "Decided",
+  "url": "/fda-decision/GSK-2026-10-19",
+  "ua": "2026-10-20T05:38:45Z",
+  "oc": "Approved",
+  "dcd": "2026-10-19",
+  "_d": {
+   "nct_id": "NCT05723562",
+   "trial": "AZUR-1",
+   "brand": "Jemperli",
+   "inn": "dostarlimab-gxly",
+   "indication": "Adults with Stage II/III locally advanced rectal cancer that is microsatellite instability high (MSI-H) or mismatch repair deficient (dMMR), as determined by an FDA-authorized test (accelerated approval)",
+   "indication_short": "dMMR/MSI-H locally advanced rectal cancer",
+   "title_indication": "Locally Advanced Rectal Cancer",
+   "seo_desc": "Jemperli (dostarlimab-gxly) was approved by the FDA on October 19, 2026 (accelerated approval) for dMMR/MSI-H locally advanced rectal cancer, on AZUR-1.",
+   "source": "GSK press release, August 24, 2026 (sBLA accepted for priority review)",
+   "source_url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-accepted-for-priority-review-by-the-us-fda/",
+   "source_quote": "The FDA has assigned a PDUFA action date of February 2027.",
+   "source_note": "GSK stated the goal date to the month only (February 2027), so no early or late margin is computed against the October 19, 2026 action day.",
+   "decision_source": "FDA accelerated approval notification, October 19, 2026 (Resources for Information | Approved Drugs)",
+   "decision_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-dostarlimab-locally-advanced-rectal-cancer",
+   "fda_notice_title": "FDA grants accelerated approval to dostarlimab for locally advanced rectal cancer",
+   "decision_quote": "On October 19, 2026, the Food and Drug Administration granted accelerated approval to dostarlimab (Jemperli, GSK) for adults with Stage II/III locally advanced rectal cancer (LARC) that is microsatellite instability high (MSI-H) or mismatch repair deficient (dMMR), as determined by an FDA-authorized test for solid tumors.",
+   "fda_action_date": "2026-10-19",
+   "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-dostarlimab-locally-advanced-rectal-cancer",
+   "fda_action_record": "FDA accelerated approval notification (sBLA, BLA 761174; letter not yet on Drugs@FDA)",
+   "decision_date_note": "The FDA's notification is dated October 19, 2026 and states the approval was granted that day; GSK's release of the same day says the approval came ahead of the PDUFA date. The goal date is from GSK's August 24, 2026 release and is stated as a month (February 2027), so no margin is published.",
+   "announcement_url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
+   "announcement": "GSK press release (Philadelphia), October 19, 2026",
+   "review": "Supplemental BLA under the accelerated approval pathway, Priority Review, with a Commissioner's National Priority Voucher; Fast Track and Breakthrough Therapy designations. AZUR-1 (NCT05723562): single-arm, open-label, 154 previously untreated patients, dostarlimab 500 mg IV every 3 weeks for nine cycles. Per the FDA, sustained clinical complete response at 12 months (cCR12) per independent central review was 47% (95% CI 27 to 56) in 116 evaluable patients and 68% (95% CI 60 to 76) by investigator in 144; ORR per ICR 79%; with a median follow-up of 26.3 months, no patient with cCR12, cCR or near CR had progressed. Continued approval may be contingent on a confirmatory trial."
+  },
+  "dm": "2027-02"
  },
  {
   "id": "readout_agio_2027-03-15",
@@ -12304,7 +12346,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12579,7 +12621,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12600,7 +12642,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13028,7 +13070,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13049,7 +13091,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13091,7 +13133,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13323,7 +13365,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13344,7 +13386,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13365,7 +13407,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13760,7 +13802,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13781,7 +13823,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-20T00:07:58Z",
+  "ua": "2026-10-20T06:08:17Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

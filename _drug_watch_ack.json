@@ -23,6 +23,12 @@
    "source": "sponsor:IRD:2026-10-16",
    "reason": "REAL: presbyopia sNDA approved, announced by Opus Genetics 2026-10-16; published as /fda-decision/IRD-2026-10-16 and recorded in _drug_approvals_confirmed.json.",
    "acked": "2026-10-17"
+  },
+  {
+   "slug": "aficamten",
+   "source": "sponsor:CYTK:2026-10-19",
+   "reason": "Cytokinetics release of 2026-10-19 is a Health Canada approval of MYQORZO (aficamten), not an FDA action. The FDA sNDA for MAPLE-HCM (pdufa_cytk_2026-11-14) is unchanged.",
+   "acked": "2026-10-20"
   }
  ]
 }

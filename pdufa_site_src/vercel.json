@@ -2343,6 +2343,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/dostarlimab-gxly",
+   "destination": "/drug/jemperli",
+   "permanent": true
+  },
+  {
    "source": "/drug/doxecitine-and-doxribtimine",
    "destination": "/drug/kygevvi",
    "permanent": true

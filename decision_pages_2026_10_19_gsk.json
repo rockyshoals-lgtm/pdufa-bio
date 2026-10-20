@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "GSK",
+  "date": "2026-10-19",
+  "fda_action_date": "2026-10-19",
+  "outcome": "Approved",
+  "drug": "Jemperli (dostarlimab-gxly)",
+  "indication": "Adults with dMMR/MSI-H Stage II/III locally advanced rectal cancer (accelerated approval)",
+  "company": "GSK plc",
+  "cap": "Large",
+  "headline": "The FDA granted accelerated approval to Jemperli as the first immunotherapy for adults with mismatch repair deficient or microsatellite instability high locally advanced rectal cancer, on the single-arm AZUR-1 study. GSK says eligible patients may be able to avoid chemotherapy, radiation and surgery; continued approval may depend on a confirmatory trial.",
+  "pdufa_note": "The FDA's notification states that on October 19, 2026 it granted accelerated approval to dostarlimab (Jemperli, GSK) for adults with Stage II/III locally advanced rectal cancer that is MSI-H or dMMR (<a href=\"https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-dostarlimab-locally-advanced-rectal-cancer\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA, October 19, 2026</a>). GSK announced the approval the same day from Philadelphia (<a href=\"https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK's announcement</a>). The goal date was stated by GSK as February 2027 when the sBLA was accepted for priority review (<a href=\"https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-accepted-for-priority-review-by-the-us-fda/\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK, August 24, 2026</a>); because that goal is a month rather than a day, pdufa.bio publishes no early or late margin, although GSK's release says the approval came ahead of the PDUFA date under Priority Review and a Commissioner's National Priority Voucher. The FDA's letter for BLA 761174 had not been posted on Drugs@FDA when this page was published. Per the FDA, AZUR-1 (NCT05723562) was a single-arm, open-label study of 154 previously untreated patients given dostarlimab 500 mg every three weeks for nine cycles; sustained clinical complete response at 12 months was 47% (95% CI 27 to 56) by independent central review in 116 evaluable patients and 68% (95% CI 60 to 76) by investigator assessment in 144, overall response by central review was 79%, and with a median follow-up of 26.3 months no patient with a complete or near-complete response had progressed. Jemperli holds Fast Track and Breakthrough Therapy designations for this indication.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-dostarlimab-locally-advanced-rectal-cancer",
+  "source_label": "FDA accelerated approval notification, October 19, 2026",
+  "h1": "Jemperli (dostarlimab) <span class=\"g\">FDA accelerated approval for locally advanced rectal cancer</span>: Oct 19, 2026"
+ }
+]

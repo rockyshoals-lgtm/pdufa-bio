@@ -1,23 +1,8 @@
 {
- "held_since": "2026-10-19T16:46:41Z",
- "consecutive_held_runs": 3,
- "emailed_at": "2026-10-19T18:27:13Z",
- "leads": [
-  {
-   "source": "drug_pages",
-   "row_id": "drug:aficamten",
-   "key": "aficamten|sponsor:CYTK:2026-10-19",
-   "text": "/drug/aficamten sponsor:CYTK:2026-10-19 'aficamten' appears with approval language",
-   "first_seen": "2026-10-19T16:46:41Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_ino_2026-10-30",
-   "key": "pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
-   "text": "2026-10-19 \"FDA Approves Immunotherapy That May Allow Certain Patients with Rectal Cancer to Avoid Chemotherapy, Radiation and Surgery\" [immunotherapy] http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
-   "first_seen": "2026-10-19T18:27:13Z"
-  }
- ],
+ "held_since": null,
+ "consecutive_held_runs": 0,
+ "emailed_at": null,
+ "leads": [],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
@@ -27,6 +12,6 @@
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
- "last_clear_run": "2026-10-17T04:29:51Z",
+ "last_clear_run": "2026-10-20T05:38:53Z",
  "email_status": "mention-issue"
 }

@@ -87,6 +87,7 @@ def main():
 
     fails = []
     first = {}
+    changes = {}
     today_et = dt.datetime.now(EASTERN).date().isoformat()
     for p in range(a.passes):
         stamp = dt.datetime.now(EASTERN).strftime("%H:%M:%S ET")
@@ -156,8 +157,23 @@ def main():
                 note.append(f"ETAG MISMATCH etag={etag[:12]}")
                 fails.append(f"{path} pass{p+1}: md5 {md5[:12]} != etag {etag[:12]}")
             if not same:
-                note.append("BODY CHANGED vs pass 1")
-                fails.append(f"{path} pass{p+1}: body differs from pass 1")
+                # 2026-10-19: run 39287871245 failed here on /api/v1/events?limit=5: pass 1 (MISS) and pass 2
+                # (MISS, 32 s later) returned different bodies, then pass 3 equalled pass 2. The deployment of the
+                # commit this job had just pushed went live between the two passes (build-info age reset to 0 on
+                # pass 2), so pass 1 read the outgoing build. One transition that then HOLDS is a deploy landing,
+                # not an unstable edge. So: one change re-baselines and must hold for every later pass; a second
+                # change (flip-flop) or a change on the LAST pass (convergence unverified) still fails.
+                changes[path] = changes.get(path, 0) + 1
+                if changes[path] > 1:
+                    note.append("BODY CHANGED AGAIN (flip-flop)")
+                    fails.append(f"{path} pass{p+1}: body changed a second time; the edge is alternating builds")
+                elif p == a.passes - 1:
+                    note.append("BODY CHANGED on the last pass")
+                    fails.append(f"{path} pass{p+1}: body differs from the earlier passes and no later pass "
+                                 f"confirms it held")
+                else:
+                    note.append(f"BODY CHANGED vs pass {p} (re-baselined; must hold from here)")
+                    first[path] = stable
             text = body.decode("utf-8", "replace")
             dm = DATEMOD.search(text)
             if dm:
