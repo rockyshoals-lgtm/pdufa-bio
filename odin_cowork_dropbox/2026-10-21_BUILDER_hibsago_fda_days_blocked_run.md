@@ -16,5 +16,13 @@ Since b29c866 (Jemperli): 39379157258 (06:13 UTC Oct 20, dispatch) **success**; 
 - `test_learn_timing_matches_calendar`: same 32-vs-34 split as the first.
 - The hand-written sentence on the three pages ("the FDA's letter ... had not been posted on Drugs@FDA ... computes no early or late margin") is replaced by one that cites the letter / Drugs@FDA record and states the margin; the auto FAQ regenerates from the cleared flag; the Verified-against line now names the FDA day with the letter.
 
-## 4. Nothing else missed
+## 4. Shipped and verified live
+ed399dd, pushed 13:00 UTC Oct 21 (09:00 Eastern); run 39601906165 **success**: 152 guards, quarantine 0 held, BLOCKED #43 closed by the run itself (`--resolve`), `vercel token identifies: rockyshoals-7744`, `Successfully purged the CDN cache`, verifier PASS. Live at 13:25 UTC: `/fda-decision/GSK-2026-10-20` "Hibsago Approved Oct 20, 2026, 6 Days Early for Chronic Hepatitis B"; RHHBY-2026-10-15 "Enspryng Approved Oct 15, 2026 for Thyroid Eye Disease" with the letter in the Verified-against line; IRD-2026-10-16 "RYZUMVI Approved Oct 16, 2026, 1 Day Early for Presbyopia" with NDA 217064 S-005; `/drug/bepirovirsen` carries the approval; the API row reads Decided / Approved, decision_date 2026-10-20, fda_action_date 2026-10-20. /calendar, /research/fda-decision-timing and /learn/what-is-a-pdufa-date all state 35: 23 early, 11 on the day, 1 late. Issues #38 to #42 closed with the run URL; no issue is open. Local guards before push: 150 passed, the known local-only pair failed.
+
+## 5. Nothing else missed
 openFDA approvals 10-15 to 10-20: the only decision-class actions on tracked programs are Enspryng S-008 and RYZUMVI S-005 (both above); Keytruda S-191 / Keytruda Qlex S-8, Cosentyx S-013, Zilbrysq S-015, Daybue, Brytly are not calendar rows. FDA press RSS: Hibsago (10-20), a generic patch (10-20), Jemperli (10-19), Anktiva (10-14): all published or out of scope. Oncology notifications page: nothing after Anktiva 10-14 (Jemperli still only on its own notice page). EDGAR 8-K poll and sponsor newsrooms (11 feeds, 58 items) raised nothing beyond the five leads. No Upcoming PDUFA row has a goal on or before October 21.
+
+## Carried
+- Hibsago letter swap when Drugs@FDA posts it (NDA number not yet known); Jemperli BLA 761174 likewise.
+- Enspryng MOGAD (goal 2027-01-10) will keep matching the TED supplement on Drugs@FDA; the ack holds it quiet.
+- From 10-19: GSK newsroom listing parser; ticker-hub decision rows should name the drug; three stale autostashes can be dropped.
