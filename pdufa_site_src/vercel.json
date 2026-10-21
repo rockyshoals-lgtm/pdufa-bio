@@ -2633,6 +2633,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/phentolamine",
+   "destination": "/drug/ryzumvi",
+   "permanent": true
+  },
+  {
    "source": "/drug/pirtobrutinib",
    "destination": "/drug/jaypirca",
    "permanent": true
@@ -2703,7 +2708,7 @@
    "permanent": true
   },
   {
-   "source": "/drug/satralizumab",
+   "source": "/drug/satralizumab-mwge",
    "destination": "/drug/enspryng",
    "permanent": true
   },

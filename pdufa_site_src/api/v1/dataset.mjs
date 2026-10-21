@@ -43,7 +43,7 @@ export default [
     "primary_completion": "2023-09-19",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": "2025-03-12",
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT03005418"
    },
    "resolution": {
@@ -98,7 +98,7 @@ export default [
     "primary_completion": "2025-05-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06146101"
    },
    "resolution": {
@@ -141,7 +141,7 @@ export default [
     "primary_completion": "2026-03-31",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05486468"
    },
    "date_history": [
@@ -188,7 +188,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-10-20, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-10-21, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -206,7 +206,7 @@ export default [
     "primary_completion": "2026-04-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06374797"
    }
   },
@@ -244,7 +244,7 @@ export default [
     "primary_completion": "2026-04-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT03037164"
    },
    "date_history": [
@@ -309,7 +309,7 @@ export default [
     "primary_completion": "2026-04-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05726864"
    },
    "resolution": {
@@ -390,7 +390,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-10-20, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-10-21, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-10-15",
@@ -409,7 +409,7 @@ export default [
     "primary_completion": "2026-04-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05747794"
    }
   },
@@ -446,7 +446,7 @@ export default [
     "primary_completion": "2026-05-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06079190"
    },
    "date_history": [
@@ -460,7 +460,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT06079190 is now 2026-05-14 (actual; registry status terminated, record updated 2026-09-14); the row's window moved from 2026-09 to 2026-05 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-10-20, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-10-21, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-05"
  },
@@ -495,7 +495,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05611931"
    },
    "date_history": [
@@ -548,7 +548,7 @@ export default [
     "primary_completion": "2026-05-28",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06641076"
    },
    "date_history": [
@@ -598,7 +598,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-10-20, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-10-21, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -617,7 +617,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06470451"
    }
   },
@@ -665,7 +665,7 @@ export default [
     "primary_completion": "2026-06-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05843578"
    },
    "resolution": {
@@ -708,7 +708,7 @@ export default [
     "primary_completion": "2026-06-15",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06810167"
    },
    "resolution": {
@@ -848,7 +848,7 @@ export default [
     "primary_completion": "2026-06-02",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05864144"
    },
    "resolution": {
@@ -962,7 +962,7 @@ export default [
     "primary_completion": "2026-06-25",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT07108153"
    },
    "resolution": {
@@ -1031,7 +1031,7 @@ export default [
     "primary_completion": "2026-06-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT07036029"
    },
    "resolution": {
@@ -1568,7 +1568,7 @@ export default [
     "primary_completion": "2026-07-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05583227"
    },
    "resolution": {
@@ -1610,7 +1610,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06553547"
    },
    "resolution": {
@@ -1686,7 +1686,7 @@ export default [
     "primary_completion": "2026-07-16",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06736717"
    },
    "resolution": {
@@ -1799,7 +1799,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06668064"
    },
    "resolution": {
@@ -1842,7 +1842,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT01983241"
    },
    "date_history": [
@@ -1895,7 +1895,7 @@ export default [
     "primary_completion": "2026-07-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT04724369"
    },
    "resolution": {
@@ -1991,7 +1991,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-10-20, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-10-21, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-08-15",
@@ -2010,7 +2010,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06736262"
    }
   },
@@ -2059,7 +2059,7 @@ export default [
     "primary_completion": "2026-07-08",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06162728"
    },
    "resolution": {
@@ -2192,7 +2192,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05166161"
    },
    "resolution": {
@@ -2286,7 +2286,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05297903"
    },
    "date_history": [
@@ -2848,7 +2848,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06901505"
    },
    "resolution": {
@@ -2901,7 +2901,7 @@ export default [
     "primary_completion": "2026-08-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT07027527"
    },
    "resolution": {
@@ -2943,7 +2943,7 @@ export default [
     "primary_completion": "2026-08-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT05643534"
    },
    "date_history": [
@@ -2997,7 +2997,7 @@ export default [
     "primary_completion": "2026-08-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06847191"
    },
    "resolution": {
@@ -3263,7 +3263,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06052059"
    },
    "resolution": {
@@ -3596,7 +3596,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3708,7 +3708,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4008,7 +4008,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4125,7 +4125,7 @@ export default [
     "primary_completion": "2026-09-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT07011706"
    },
    "date_history": [
@@ -4179,7 +4179,7 @@ export default [
     "primary_completion": "2026-09-17",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06920901"
    },
    "resolution": {
@@ -4461,7 +4461,7 @@ export default [
     "primary_completion": "2026-09-09",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT04816604"
    },
    "date_history": [
@@ -4475,7 +4475,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT04816604 is now 2026-09-09 (actual; registry status terminated, record updated 2026-10-02); the row's window moved from 2027-12 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-10-20, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-10-21, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-09"
  },
@@ -4694,7 +4694,7 @@ export default [
     "primary_completion": "2026-09-11",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06851559"
    },
    "resolution": {
@@ -4904,7 +4904,7 @@ export default [
     "primary_completion": "2026-09-18",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT06993610"
    },
    "resolution": {
@@ -5169,7 +5169,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5275,7 +5275,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5402,7 +5402,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5532,7 +5532,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6437,7 +6437,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6458,7 +6458,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6479,7 +6479,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6942,7 +6942,7 @@ export default [
     "primary_completion": "2026-10-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-20",
+    "checked": "2026-10-21",
     "source_url": "https://clinicaltrials.gov/study/NCT03377387"
    }
   },
@@ -7024,20 +7024,22 @@ export default [
    "nct_id": "NCT06106828",
    "indication_short": "adults with thyroid eye disease (TED)",
    "title_indication": "Thyroid Eye Disease",
-   "seo_desc": "Genentech announced on October 15, 2026 that the FDA approved Enspryng (satralizumab-mwge) for adults with thyroid eye disease, the first subcutaneous TED treatment, based on SatraGO-1 and -2.",
+   "seo_desc": "Enspryng (satralizumab-mwge) was approved by the FDA on October 15, 2026 for thyroid eye disease, its goal date, per the FDA letter; based on SatraGO-1 and 2.",
    "decision_source": "Genentech press release, October 15, 2026",
    "decision_source_url": "https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first",
    "announcement_url": "https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first",
    "announcement": "Genentech press release, October 15, 2026",
    "decision_quote": "Genentech, a member of the Roche Group (SIX: RO, ROP; OTCQX: RHHBY), announced today that the U.S. Food and Drug Administration (FDA) has approved Enspryng (satralizumab-mwge) for the treatment of adults with thyroid eye disease (TED)",
-   "decision_date_unsourced": true,
-   "decision_date_note": "2026-10-15 is the dateline of Genentech's release (South San Francisco), which \"announced today\" that the FDA \"has approved\" Enspryng. Roche's own release carries the next day's dateline (Basel, 16 October 2026); both are announcements of the same approval, and neither states the day the FDA acted. Drugs@FDA had not posted the BLA 761149 supplement letter when this was published, so no early or late margin against the October 15 goal date is published until an FDA record states the action day.",
+   "decision_date_note": "The FDA's letter for BLA 761149 supplement 8 is dated October 15, 2026 (Drugs@FDA), the goal date; Genentech announced the approval the same day and Roche's Basel release followed on October 16.",
    "review": "Supplemental BLA 761149, priority review. SatraGO-1 (NCT05987423) and SatraGO-2 (NCT06106828), identically designed Phase III placebo-controlled studies, 258 patients in 19 countries. Per Genentech, SatraGO-1 did not meet its primary endpoint at week 24; SatraGO-2 showed a proptosis response of 52.9% vs 23.4% on placebo and diplopia reduction of 60.7% vs 25.8% in active TED.",
    "announcement_2": {
     "who": "Roche media release, Basel",
     "date": "2026-10-16",
     "url": "https://www.roche.com/media/releases/med-cor-2026-10-16"
-   }
+   },
+   "fda_action_date": "2026-10-15",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761149Orig1s008ltr.pdf",
+   "fda_action_record": "BLA 761149 S-008"
   },
   "oc": "Approved",
   "dcd": "2026-10-15"
@@ -7222,15 +7224,17 @@ export default [
    "trial": "VEGA-2, VEGA-3",
    "indication_short": "presbyopia in adults",
    "title_indication": "Presbyopia",
-   "seo_desc": "Opus Genetics announced Oct 16, 2026 that the FDA approved RYZUMVI (phentolamine 0.75%) for presbyopia, based on VEGA-2 and -3; Viatris holds U.S. rights.",
+   "seo_desc": "RYZUMVI (phentolamine 0.75%) was approved by the FDA on October 16, 2026 for presbyopia, 1 day before its October 17 goal date; Opus Genetics announced it.",
    "decision_source": "Opus Genetics press release, October 16, 2026",
    "decision_source_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
    "announcement_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
    "announcement": "Opus Genetics press release, October 16, 2026",
    "decision_quote": "Opus Genetics ... today announced that the U.S. Food and Drug Administration (FDA) has approved the Company's supplemental New Drug Application (sNDA) for phentolamine ophthalmic solution 0.75% for the treatment of presbyopia in adults.",
-   "decision_date_unsourced": true,
-   "decision_date_note": "2026-10-16 is the date of Opus Genetics' release, which \"today announced\" that the FDA \"has approved\" the sNDA; it does not state the day the FDA acted, and Drugs@FDA had not posted the supplement letter for NDA 217064 when this was published. No early or late margin against the October 17 goal date is published until an FDA record states the action day.",
-   "source_quote": "The FDA has assigned a PDUFA goal date of October 17, 2026."
+   "decision_date_note": "Drugs@FDA records NDA 217064 supplement 5 approved October 16, 2026, one day before the October 17 goal date; Opus Genetics announced it the same day.",
+   "source_quote": "The FDA has assigned a PDUFA goal date of October 17, 2026.",
+   "fda_action_date": "2026-10-16",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217064",
+   "fda_action_record": "NDA 217064 S-005"
   },
   "oc": "Approved",
   "dcd": "2026-10-16"
@@ -7280,15 +7284,17 @@ export default [
    "trial": "VEGA-2, VEGA-3",
    "indication_short": "presbyopia in adults",
    "title_indication": "Presbyopia",
-   "seo_desc": "Opus Genetics announced Oct 16, 2026 that the FDA approved RYZUMVI (phentolamine 0.75%) for presbyopia, based on VEGA-2 and -3; Viatris holds U.S. rights.",
+   "seo_desc": "RYZUMVI (phentolamine 0.75%) was approved by the FDA on October 16, 2026 for presbyopia, 1 day before its October 17 goal date; Viatris holds U.S. rights.",
    "decision_source": "Opus Genetics press release, October 16, 2026",
    "decision_source_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
    "announcement_url": "https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
    "announcement": "Opus Genetics press release, October 16, 2026",
    "decision_quote": "Opus Genetics ... today announced that the U.S. Food and Drug Administration (FDA) has approved the Company's supplemental New Drug Application (sNDA) for phentolamine ophthalmic solution 0.75% for the treatment of presbyopia in adults.",
-   "decision_date_unsourced": true,
-   "decision_date_note": "2026-10-16 is the date of Opus Genetics' release, which \"today announced\" that the FDA \"has approved\" the sNDA; it does not state the day the FDA acted, and Drugs@FDA had not posted the supplement letter for NDA 217064 when this was published. No early or late margin against the October 17 goal date is published until an FDA record states the action day.",
-   "review": "Supplemental NDA 217064 (RYZUMVI, approved 2023 for pharmacologically induced mydriasis), presbyopia in adults, supported by the Phase 3 VEGA-2 and VEGA-3 trials, which per Opus met their primary and all key secondary endpoints. Viatris holds exclusive U.S. commercial rights."
+   "decision_date_note": "Drugs@FDA records NDA 217064 supplement 5 approved October 16, 2026, one day before the October 17 goal date; Opus Genetics announced it the same day.",
+   "review": "Supplemental NDA 217064 (RYZUMVI, approved 2023 for pharmacologically induced mydriasis), presbyopia in adults, supported by the Phase 3 VEGA-2 and VEGA-3 trials, which per Opus met their primary and all key secondary endpoints. Viatris holds exclusive U.S. commercial rights.",
+   "fda_action_date": "2026-10-16",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217064",
+   "fda_action_record": "NDA 217064 S-005"
   },
   "oc": "Approved",
   "dcd": "2026-10-16"
@@ -7303,9 +7309,9 @@ export default [
   "type": "Conference",
   "ta": "Nephrology",
   "cap": "",
-  "st": "Scheduled",
+  "st": "In progress",
   "url": "/conference/ASN",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7339,9 +7345,9 @@ export default [
   "type": "Conference",
   "ta": "Multiple sclerosis",
   "cap": "",
-  "st": "Scheduled",
+  "st": "In progress",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7396,9 +7402,9 @@ export default [
   "type": "Conference",
   "ta": "Infectious disease",
   "cap": "",
-  "st": "Scheduled",
+  "st": "In progress",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7419,7 +7425,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7601,13 +7607,13 @@ export default [
   "company": "GSK plc",
   "d": "2026-10-26",
   "dp": "day",
-  "name": "Bepirovirsen - (B-Well)",
+  "name": "Hibsago (bepirovirsen) - chronic hepatitis B",
   "type": "PDUFA",
-  "ta": "",
+  "ta": "Infectious Disease",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/GSK-bepirovirsen",
-  "ua": "2026-10-20T16:26:50Z",
+  "st": "Decided",
+  "url": "/fda-decision/GSK-2026-10-20",
+  "ua": "2026-10-21T12:33:10Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06059846",
@@ -7618,7 +7624,7 @@ export default [
     "updated": "2026-03-10",
     "slip": null
    },
-   "indication": "Chronic hepatitis B",
+   "indication": "Chronic hepatitis B virus infection, in combination with nucleos(t)ide analogue therapy, in adults without cirrhosis on that therapy for at least 6 months with suppressed HBV DNA and HBsAg of 3,000 IU/mL or less (FDA-authorized test)",
    "market_cap_usd": 99093866688.54001,
    "cash_runway_months": null,
    "days_to_decision": 108,
@@ -7633,8 +7639,27 @@ export default [
    },
    "source": "Ionis (licensor) 8-K 2026-07-29 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm",
-   "source_quote": "Granted Priority Review in the U.S. and PDUFA target action date of October 26, 2026"
-  }
+   "source_quote": "Granted Priority Review in the U.S. and PDUFA target action date of October 26, 2026",
+   "brand": "Hibsago",
+   "inn": "bepirovirsen",
+   "trial": "B-Well 1, B-Well 2",
+   "indication_short": "chronic hepatitis B (adults without cirrhosis, HBsAg 3,000 IU/mL or less)",
+   "title_indication": "Chronic Hepatitis B",
+   "seo_desc": "Hibsago (bepirovirsen) was approved by the FDA on October 20, 2026 for chronic hepatitis B, 6 days before its October 26, 2026 goal date (B-Well trials).",
+   "decision_source": "FDA press announcement, October 20, 2026",
+   "decision_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
+   "fda_notice_title": "FDA Approves First-of-Its-Kind Chronic Hepatitis B Treatment",
+   "decision_quote": "The U.S. Food and Drug Administration today approved Hibsago (bepirovirsen) injection, in combination with existing antiviral therapy, to treat chronic hepatitis B virus (HBV) infection in certain adults without cirrhosis.",
+   "fda_action_date": "2026-10-20",
+   "fda_action_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
+   "fda_action_record": "FDA press announcement, October 20, 2026 (letter not yet on Drugs@FDA)",
+   "decision_date_note": "The FDA's press announcement is dated October 20, 2026 and states the approval was made that day; GSK announced it the same day from Philadelphia. The goal date, October 26, 2026, is from Ionis's 8-K exhibit of July 29, 2026.",
+   "announcement_url": "https://us.gsk.com/en-us/media/press-releases/hibsago-bepirovirsen-approved-in-the-us-for-the-treatment-of-chronic-hepatitis-b-chb/",
+   "announcement": "GSK press release (Philadelphia), October 20, 2026",
+   "review": "Priority Review with Breakthrough Therapy Designation; first FDA-approved antisense oligonucleotide for chronic hepatitis B. Per the FDA, two placebo-controlled trials (B-Well): Hibsago injected subcutaneously for up to 24 weeks alongside existing antiviral therapy; 24% of Hibsago patients met the criteria to stop their existing therapy versus none on placebo, and 19% still had the virus controlled with undetectable HBsAg 24 weeks after stopping all treatment. Boxed warning for serious liver reactions and low platelet counts; warnings for kidney function, vasculitis and injection errors. The FDA also authorized the Roche Elecsys HBsAg II quant II RxDx companion diagnostic."
+  },
+  "oc": "Approved",
+  "dcd": "2026-10-20"
  },
  {
   "id": "pdufa_ino_2026-10-30",
@@ -7714,7 +7739,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7750,7 +7775,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7786,7 +7811,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7822,7 +7847,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7843,7 +7868,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7864,7 +7889,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -7984,7 +8009,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8465,7 +8490,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8494,7 +8519,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8948,7 +8973,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -8969,7 +8994,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -8990,7 +9015,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9052,7 +9077,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9073,7 +9098,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -11647,7 +11672,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11740,7 +11765,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11807,7 +11832,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12346,7 +12371,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12621,7 +12646,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12642,7 +12667,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13070,7 +13095,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13091,7 +13116,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13133,7 +13158,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13365,7 +13390,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13386,7 +13411,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13407,7 +13432,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13802,7 +13827,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13823,7 +13848,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-20T16:31:14Z",
+  "ua": "2026-10-21T12:38:01Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

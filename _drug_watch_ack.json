@@ -29,6 +29,18 @@
    "source": "sponsor:CYTK:2026-10-19",
    "reason": "Cytokinetics release of 2026-10-19 is a Health Canada approval of MYQORZO (aficamten), not an FDA action. The FDA sNDA for MAPLE-HCM (pdufa_cytk_2026-11-14) is unchanged.",
    "acked": "2026-10-20"
+  },
+  {
+   "slug": "bepirovirsen",
+   "source": "fda-press:fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
+   "acked": "2026-10-21",
+   "reason": "REAL: Hibsago approved 2026-10-20; published as /fda-decision/GSK-2026-10-20 and recorded in _drug_approvals_confirmed.json."
+  },
+  {
+   "slug": "bepirovirsen",
+   "source": "sponsor:GSK:2026-10-20",
+   "acked": "2026-10-21",
+   "reason": "REAL: Hibsago approved 2026-10-20; published as /fda-decision/GSK-2026-10-20 and recorded in _drug_approvals_confirmed.json."
   }
  ]
 }

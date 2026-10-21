@@ -63,7 +63,7 @@
  "RHHBY-2026-10-15": [
   [
    "Was Enspryng approved for thyroid eye disease?",
-   "Yes. Genentech announced on October 15, 2026 that the FDA approved Enspryng (satralizumab-mwge) for adults with thyroid eye disease (TED), its goal date. Genentech describes it as the first and only at-home subcutaneous treatment for TED. pdufa.bio holds no FDA record of the action day yet; the FDA's letter had not been posted on Drugs@FDA when this page was published."
+   "Yes. Drugs@FDA records the approval letter for BLA 761149 supplement 8 dated October 15, 2026, the goal date. Genentech announced it the same day and describes Enspryng as the first and only at-home subcutaneous treatment for TED."
   ],
   [
    "What trials supported the Enspryng TED approval?",
@@ -76,10 +76,6 @@
  ],
  "IRD-2026-10-16": [
   [
-   "Was phentolamine eye drop (RYZUMVI) approved for presbyopia?",
-   "Yes. Opus Genetics announced on October 16, 2026 that the FDA approved its supplemental application for phentolamine ophthalmic solution 0.75%, marketed as RYZUMVI, for the treatment of presbyopia in adults. The goal date was October 17, 2026. pdufa.bio holds no FDA record of the action day yet; the FDA's letter had not been posted on Drugs@FDA when this page was published."
-  ],
-  [
    "Who sells RYZUMVI for presbyopia in the U.S.?",
    "Per Opus Genetics, Viatris holds exclusive rights to commercialize phentolamine ophthalmic solution 0.75% in the United States under a global licensing agreement, and the approval triggers a milestone payment to Opus."
   ],
@@ -89,10 +85,6 @@
   ]
  ],
  "VTRS-2026-10-16": [
-  [
-   "Was phentolamine eye drop (RYZUMVI) approved for presbyopia?",
-   "Yes. Opus Genetics announced on October 16, 2026 that the FDA approved its supplemental application for phentolamine ophthalmic solution 0.75%, marketed as RYZUMVI, for the treatment of presbyopia in adults. The goal date was October 17, 2026. pdufa.bio holds no FDA record of the action day yet; the FDA's letter had not been posted on Drugs@FDA when this page was published."
-  ],
   [
    "Who sells RYZUMVI for presbyopia in the U.S.?",
    "Per Opus Genetics, Viatris holds exclusive rights to commercialize phentolamine ophthalmic solution 0.75% in the United States under a global licensing agreement, and the approval triggers a milestone payment to Opus."
@@ -114,6 +106,20 @@
   [
    "What did AZUR-1 show?",
    "Per the FDA, AZUR-1 (NCT05723562) enrolled 154 previously untreated patients who received dostarlimab alone for nine cycles. Sustained clinical complete response at 12 months was 47% by independent central review in 116 evaluable patients and 68% by investigator assessment in 144; overall response by central review was 79%. With a median follow-up of 26.3 months, no patient with a complete or near-complete response had progressed."
+  ]
+ ],
+ "GSK-2026-10-20": [
+  [
+   "Was bepirovirsen approved?",
+   "Yes. The FDA approved Hibsago (bepirovirsen) on October 20, 2026, per the FDA's own press announcement of that day, for chronic hepatitis B in combination with existing antiviral therapy in certain adults without cirrhosis. GSK announced it the same day. It is the first antisense oligonucleotide approved for hepatitis B."
+  ],
+  [
+   "Was the Hibsago decision early?",
+   "Yes, by 6 days. The goal date was October 26, 2026 (Ionis's 8-K of July 29, 2026, under Priority Review) and the FDA's announcement is dated October 20, 2026."
+  ],
+  [
+   "What did the B-Well trials show?",
+   "Per the FDA, across the two placebo-controlled trials 24% of patients on Hibsago met the criteria to stop their existing hepatitis B therapy versus none on placebo, and 19% still had the virus under control with undetectable HBsAg 24 weeks after stopping all treatment. Hibsago carries a boxed warning for serious liver reactions and low platelet counts."
   ]
  ]
 }

@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "GSK",
+  "date": "2026-10-20",
+  "fda_action_date": "2026-10-20",
+  "outcome": "Approved",
+  "drug": "Hibsago (bepirovirsen)",
+  "indication": "Chronic hepatitis B, with existing antiviral therapy, in adults without cirrhosis (HBsAg 3,000 IU/mL or less)",
+  "company": "GSK plc",
+  "cap": "Large",
+  "headline": "The FDA approved Hibsago, the first antisense oligonucleotide for chronic hepatitis B, six days before its goal date. Per the FDA, 19% of treated patients kept the virus controlled with undetectable HBsAg 24 weeks after stopping all treatment; the label carries a boxed warning for serious liver reactions and low platelet counts.",
+  "pdufa_note": "The FDA's press announcement of October 20, 2026 states that the agency approved Hibsago (bepirovirsen) that day, in combination with existing antiviral therapy, for chronic hepatitis B in certain adults without cirrhosis (<a href=\"https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA, October 20, 2026</a>). GSK announced the approval the same day from Philadelphia (<a href=\"https://us.gsk.com/en-us/media/press-releases/hibsago-bepirovirsen-approved-in-the-us-for-the-treatment-of-chronic-hepatitis-b-chb/\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK's announcement</a>). The goal date was October 26, 2026 under Priority Review, per Ionis's 8-K exhibit of July 29, 2026 (<a href=\"https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Ionis 8-K EX-99.1</a>), so the action came 6 days early. The FDA's letter had not been posted on Drugs@FDA when this page was published. Per the FDA, Hibsago is approved for adults without cirrhosis who have taken HBV antiviral therapy for at least six months, have suppressed HBV DNA and have HBsAg of 3,000 IU/mL or less by an FDA-authorized test; it is injected under the skin for up to 24 weeks alongside the existing medicine. Across the two placebo-controlled B-Well trials, 24% of Hibsago patients met the criteria to stop their existing therapy versus none on placebo, and 19% still had the virus under control with undetectable HBsAg 24 weeks after stopping all treatment. The label carries a boxed warning for serious liver reactions and low platelet counts, with warnings for worsening kidney function, vasculitis and injection errors. The FDA also authorized the Roche Elecsys HBsAg II quant II RxDx assay as the companion diagnostic. GSK notes Breakthrough Therapy Designation and the option of self-administration after the first dose. Bepirovirsen was licensed from Ionis.",
+  "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
+  "source_label": "FDA press announcement, October 20, 2026",
+  "h1": "Hibsago (bepirovirsen) <span class=\"g\">FDA approval for chronic hepatitis B</span>: Oct 20, 2026"
+ }
+]

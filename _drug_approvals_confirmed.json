@@ -85,6 +85,12 @@
    "date": "2026-10-19",
    "brand": "Jemperli",
    "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-dostarlimab-locally-advanced-rectal-cancer"
+  },
+  {
+   "slug": "bepirovirsen",
+   "date": "2026-10-20",
+   "brand": "Hibsago",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment"
   }
  ]
 }

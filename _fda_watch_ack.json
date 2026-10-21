@@ -25,6 +25,16 @@
    "ticker": "RHHBY",
    "ap_date": "2026-09-21",
    "reason": "Drugs@FDA ANDA 220597 ORIG-1, NOVITIUM PHARMA, generic EVEROLIMUS, approved 2026-09-21: a third-party generic of the combination partner, not Roche's giredestrant + everolimus NDA (goal 2026-12-18), which remains pending. Verified on openFDA 2026-10-03 (audit 10-03 Tier 0)."
+  },
+  {
+   "ticker": "RHHBY",
+   "ap_date": "2026-10-15",
+   "reason": "Enspryng TED supplement (BLA 761149 S-008), already published as RHHBY-2026-10-15 and now FDA-dated from the letter. The hit was raised against the SEPARATE MOGAD row (goal 2027-01-10), which stays pending."
+  },
+  {
+   "ticker": "GSK",
+   "ap_date": "press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
+   "reason": "REAL: Hibsago (bepirovirsen) approved 2026-10-20, published as /fda-decision/GSK-2026-10-20."
   }
  ]
 }

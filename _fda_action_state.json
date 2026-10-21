@@ -78,13 +78,10 @@
   "result": "found"
  },
  "pdufa_ird_2026-10-17": {
-  "checked": "2026-10-18",
-  "result": "none",
-  "terms": [
-   "RYZUMVI",
-   "PHENTOLAMINE",
-   "OPHTHALMIC"
-  ]
+  "checked": "2026-10-21",
+  "date": "2026-10-16",
+  "label": "NDA 217064 S-005",
+  "result": "found"
  },
  "pdufa_jazz_2026-08-25": {
   "checked": "2026-09-27",
@@ -99,7 +96,7 @@
   "result": "found"
  },
  "pdufa_lnth_2026-06-29": {
-  "checked": "2026-10-18",
+  "checked": "2026-10-21",
   "result": "crl-no-letter"
  },
  "pdufa_lnth_2026-08-13": {
@@ -205,12 +202,10 @@
   "result": "manual"
  },
  "pdufa_rhhby_2026-10-15": {
-  "checked": "2026-10-18",
-  "result": "none",
-  "terms": [
-   "ENSPRYNG",
-   "SATRALIZUMAB"
-  ]
+  "checked": "2026-10-21",
+  "date": "2026-10-15",
+  "label": "BLA 761149 S-008",
+  "result": "found"
  },
  "pdufa_roiv_2026-09-30": {
   "checked": "2026-09-27",
@@ -261,13 +256,10 @@
   "result": "found"
  },
  "pdufa_vtrs_2026-10-17": {
-  "checked": "2026-10-18",
-  "result": "none",
-  "terms": [
-   "RYZUMVI",
-   "PHENTOLAMINE",
-   "OPHTHALMIC"
-  ]
+  "checked": "2026-10-21",
+  "date": "2026-10-16",
+  "label": "NDA 217064 S-005",
+  "result": "found"
  },
  "pdufa_zyme_2026-08-25": {
   "checked": "2026-09-27",
