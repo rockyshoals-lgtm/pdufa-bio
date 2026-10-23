@@ -158,7 +158,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "7 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
+    "searched": "8 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
    }
   },
   "dm": "2026-03"
@@ -315,7 +315,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "4 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
+    "searched": "5 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
    }
   },
   "dm": "2026-04"
@@ -740,7 +740,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "18 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "23 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-06"
@@ -766,7 +766,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "19 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "20 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-06"
@@ -854,7 +854,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "12 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
+    "searched": "13 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
    }
   },
   "dm": "2026-06"
@@ -880,7 +880,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "9 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "10 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-06"
@@ -1935,7 +1935,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "9 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "10 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-07"
@@ -1961,7 +1961,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "9 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "10 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-07"
@@ -3596,7 +3596,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3708,7 +3708,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4008,7 +4008,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -5169,7 +5169,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5275,7 +5275,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5402,7 +5402,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5532,7 +5532,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5648,7 +5648,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "1 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "2 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-09"
@@ -6440,7 +6440,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6461,7 +6461,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6482,7 +6482,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6659,7 +6659,7 @@ export default [
   "id": "readout_cslly_2026-10-15",
   "t": "CSLLY",
   "company": "Csl Ltd",
-  "d": "2026-10-15",
+  "d": "2026-09-15",
   "dp": "month",
   "name": "Recombinant Single-Chain Factor Viii",
   "type": "Readout",
@@ -6667,23 +6667,47 @@ export default [
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06738485",
-  "ua": "2026-07-11T15:23:27Z",
+  "ua": "2026-10-23T14:53:31Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06738485",
-    "status": "active_not_recruiting",
-    "pcd": "2026-10-26",
-    "pcd_type": "estimated",
-    "updated": "2026-04-22",
-    "ongoing": true
+    "status": "completed",
+    "pcd": "2026-09-23",
+    "pcd_type": "actual",
+    "updated": "2026-10-22",
+    "ongoing": false
    },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
    "source_url": "https://clinicaltrials.gov/study/NCT06738485",
-   "ta_basis": "ClinicalTrials.gov conditions: Congenital Hemophilia A"
+   "ta_basis": "ClinicalTrials.gov conditions: Congenital Hemophilia A",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-15",
+     "changed": "2026-10-23",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06738485 is now 2026-09-23 (actual; registry status completed, record updated 2026-10-22); the row's window moved from 2026-10 to 2026-09 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-09-23",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-23",
+    "source_url": "https://clinicaltrials.gov/study/NCT06738485"
+   },
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-10-23",
+    "searched": "4 sponsor press releases (FMP) through 2026-10-23; ClinicalTrials.gov 2026-10-23"
+   }
   },
-  "dm": "2026-10"
+  "dm": "2026-09"
  },
  {
   "id": "readout_eypt_2026-10-15",
@@ -7314,7 +7338,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ASN",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7350,7 +7374,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7407,7 +7431,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7428,7 +7452,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ESMO",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7676,7 +7700,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/INO-ino-3107-dna",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Recurrent respiratory papillomatosis (RRP) BLA",
@@ -7709,7 +7733,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -7742,7 +7766,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7778,7 +7802,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7814,7 +7838,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7850,7 +7874,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7871,7 +7895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7892,7 +7916,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -7946,7 +7970,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CYTK-aficamten",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Non-obstructive hypertrophic cardiomyopathy",
@@ -7979,7 +8003,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/SMMT-ivonescimab",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -8012,7 +8036,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8308,7 +8332,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/NVCR-ttfields-therapy",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
@@ -8493,7 +8517,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8522,7 +8546,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8558,7 +8582,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -8618,7 +8642,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
@@ -8651,7 +8675,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -8724,7 +8748,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -8758,7 +8782,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -8829,7 +8853,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
@@ -8876,7 +8900,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -8910,11 +8934,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
-   "market_cap_usd": 130443664536.59999,
+   "market_cap_usd": 135644682697.07999,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -8943,11 +8967,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
-   "market_cap_usd": 15954663147.880001,
+   "market_cap_usd": 16182622304.52,
    "cash_runway_months": null,
    "days_to_decision": 146,
    "cohort_move_median_pct": 0.0,
@@ -8976,7 +9000,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -8997,7 +9021,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9018,7 +9042,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9047,11 +9071,11 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 252129404.79,
+   "market_cap_usd": 244873882.35,
    "cash_runway_months": 19.2,
    "days_to_decision": 155,
    "cohort_move_median_pct": 0.0,
@@ -9080,7 +9104,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9101,7 +9125,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -10058,7 +10082,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -10083,7 +10107,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant-evera",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -10118,11 +10142,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
-   "market_cap_usd": 1907820578.3,
+   "market_cap_usd": 1898095820.9499998,
    "cash_runway_months": 56.8,
    "days_to_decision": 165,
    "cohort_move_median_pct": -0.01,
@@ -10151,7 +10175,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -10173,7 +10197,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10233,7 +10257,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
@@ -10255,7 +10279,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -10396,7 +10420,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/AZN-ultomiris",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -10873,7 +10897,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-am833",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Obesity / weight management",
@@ -10905,7 +10929,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-mim8",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "indication": "Hemophilia A prophylaxis, with or without inhibitors",
    "bla_submitted": "2025-09",
@@ -11336,7 +11360,7 @@ export default [
   "ta": "Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
@@ -11675,7 +11699,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11696,7 +11720,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -11744,7 +11768,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -11768,7 +11792,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11789,7 +11813,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -11835,7 +11859,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -11929,7 +11953,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -11970,7 +11994,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-cln-081",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Non Small Cell Lung Cancer",
@@ -12375,7 +12399,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12650,7 +12674,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12671,7 +12695,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -12692,7 +12716,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-inbrx-106",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Head and Neck Squamous Cell Carcinoma (HNSCC)",
@@ -13045,7 +13069,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -13078,7 +13102,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -13099,7 +13123,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13120,7 +13144,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13141,7 +13165,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-10-23T08:10:05Z",
+  "ua": "2026-10-23T14:34:35Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -13162,7 +13186,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13357,7 +13381,7 @@ export default [
   "id": "readout_vygr_2027-05-15",
   "t": "VYGR",
   "company": "Voyager Therapeutics, Inc.",
-  "d": "2027-05-15",
+  "d": "2026-10-15",
   "dp": "month",
   "name": "VY7523",
   "type": "Readout",
@@ -13365,22 +13389,41 @@ export default [
   "cap": "",
   "st": "Estimated",
   "url": "https://clinicaltrials.gov/study/NCT06874621",
-  "ua": "2026-07-11T15:23:27Z",
+  "ua": "2026-10-23T14:53:55Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06874621",
     "status": "active_not_recruiting",
-    "pcd": "2027-05",
-    "pcd_type": "estimated",
-    "updated": "2025-11-18",
+    "pcd": "2026-10-13",
+    "pcd_type": "actual",
+    "updated": "2026-10-21",
     "ongoing": true
    },
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06874621"
+   "source_url": "https://clinicaltrials.gov/study/NCT06874621",
+   "date_history": [
+    {
+     "date": "2027-05-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-10-23",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06874621 is now 2026-10-13 (actual; registry status active_not_recruiting, record updated 2026-10-21); the row's window moved from 2027-05 to 2026-10 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-10-13",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-23",
+    "source_url": "https://clinicaltrials.gov/study/NCT06874621"
+   }
   },
-  "dm": "2027-05"
+  "dm": "2026-10"
  },
  {
   "id": "conf_ddw_2027-05-15",
@@ -13394,7 +13437,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13415,7 +13458,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13436,7 +13479,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13831,7 +13874,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13852,7 +13895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-23T08:41:21Z",
+  "ua": "2026-10-23T15:04:09Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
