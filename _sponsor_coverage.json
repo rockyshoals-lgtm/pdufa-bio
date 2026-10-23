@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-22",
+ "as_of": "2026-10-23",
  "horizon_days": 60,
  "sponsors": {
   "AGIO": {
@@ -115,6 +115,17 @@
     "fda_feeds"
    ],
    "cik": 1055726
+  },
+  "MLYS": {
+   "company": "Mineralys Therapeutics, Inc.",
+   "goals": [
+    "2026-12-22"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1933414
   },
   "NVCR": {
    "company": "NovoCure Limited",
