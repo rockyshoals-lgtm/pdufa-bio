@@ -57,7 +57,29 @@ def main():
             print(f"closed #{i['number']}")
         return 0
     if not os.path.exists(a.report):
-        print("no _blocked.md: nothing to report"); return 0
+        # 2026-10-22: three of four runs (39695890711, 39798814880, 39874039652) failed in a BUILD step
+        # (build_sls_deepdive.py: Polygon 429 -> empty closes -> min() of an empty list), before the guards ran. With
+        # no _blocked.md this step printed "nothing to report", the commit and deploy were skipped, and no issue was
+        # opened: a silent freeze, the exact failure 10-18 was meant to end. Any failure now opens the issue, naming
+        # the failed step(s) when the API allows it.
+        run_id = os.environ.get("GITHUB_RUN_ID", "local")
+        repo = os.environ.get("GITHUB_REPOSITORY", "")
+        steps = []
+        try:
+            jobs = json.loads(gh("run", "view", run_id, "--json", "jobs")).get("jobs", [])
+            steps = [s.get("name") for j in jobs for s in j.get("steps", []) if s.get("conclusion") == "failure"]
+        except Exception as e:  # noqa: BLE001
+            steps = [f"(step names unavailable: {str(e)[:120]})"]
+        names = ", ".join(steps) or "a build step"
+        body = (f"# BLOCKED: rebuild run {run_id} failed in a build step, before the guards\n\n"
+                f"Commit `{os.environ.get('GITHUB_SHA', '')[:9]}`. Failed: {names}. The commit and deploy were skipped; "
+                f"live stays on the previous build until a run passes. Run page: "
+                f"https://github.com/{repo}/actions/runs/{run_id}\n")
+        a.report = os.path.join(HERE, "_blocked.md")
+        io.open(a.report, "w", encoding="utf-8").write(body)
+        io.open(os.path.splitext(a.report)[0] + ".json", "w", encoding="utf-8").write(json.dumps(
+            {"failed": [f"step: {s}" for s in steps] or ["build step"], "run_id": run_id,
+             "sha": os.environ.get("GITHUB_SHA", "")[:9]}))
     title, body, meta = compose(a.report)
     if a.dry_run:
         print("TITLE:", title); print(body[:1500]); return 0

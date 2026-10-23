@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-22 BUILDER (runup figures seo audit silent freezes)** — `2026-10-22_BUILDER_runup_figures_seo_audit_silent_freezes.md` — 2026-10-22/23, work 23:30 Pacific Oct 22 onward = 02:30 Eastern Oct 23 = 06:30 UTC. RULE 1.
 - **2026-10-21 BUILDER (hibsago fda days blocked run)** — `2026-10-21_BUILDER_hibsago_fda_days_blocked_run.md` — 2026-10-21, work 05:25 Pacific onward = 08:25 Eastern = 12:25 UTC. RULE 1.
 - **2026-10-19 BUILDER (currency sweep jemperli larc)** — `2026-10-19_BUILDER_currency_sweep_jemperli_larc.md` — 2026-10-19, work 22:00 Pacific onward = 01:00 Eastern Oct 20 = 05:00 UTC Oct 20. RULE 1.
 - **2026-10-18 audit (audit frozen sunday ledger and moat)** — `2026-10-18_audit_frozen_sunday_ledger_and_moat.md` — 2026-10-18, measured 17:17 to 17:45 Eastern = 21:17 to 21:45 UTC (Sunday). Per RULE 1 every time carries its zone. GitHub run times are UTC.

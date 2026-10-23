@@ -32,6 +32,15 @@ PX   = os.path.join(HERE, '_chart_pxcache.json')
 # (Large ±1%, Mid ±2%, Small ±3%, Micro ±7% -- consistent on every existing page.)
 COHORT = {'Large': '±1% median', 'Mid': '±2% median', 'Small': '±3% median',
           'Micro': '±7% median', 'Nano': '±7% median'}
+# 2026-10-22: a new page was born with the old figures until refresh_cohort_figures.py rewrote it on the next CI run.
+# Write the measured values from the start (same format refresh_cohort_figures.py writes).
+try:
+    for _k, _v in (json.load(open(os.path.join(HERE, 'runup_study_stats.json'), encoding='utf-8'))
+                   .get('cohort_abs_move') or {}).items():
+        if _k.split(' ')[0] in COHORT:
+            COHORT[_k.split(' ')[0]] = f"{float(_v['median_abs_pct']):.1f}% median (n={int(_v['n']):,})"
+except Exception:  # noqa: BLE001
+    pass
 
 # chart geometry, matched to the existing pages
 VB_W, VB_H = 640, 190

@@ -108,6 +108,11 @@ def main():
              ("2026-05-12", "78 events disclosed")]
     chart = price_chart(rows, marks) if rows else ""
     closes = [c for d, c in rows]
+    if not closes:
+        # 2026-10-22: Polygon returned nothing (429 right after build_sls_hub.py's own calls) and min([]) crashed the
+        # run. No price data is no reason to rewrite the page: keep the one already built.
+        print("::warning::SLS deep dive: no Polygon closes this run (rate limit or outage); page left unchanged")
+        return
     last = closes[-1] if closes else 0
     lo52 = min(closes[-252:]) if len(closes) > 252 else min(closes)
     hi52 = max(closes[-252:]) if len(closes) > 252 else max(closes)

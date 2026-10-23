@@ -74,6 +74,13 @@ def process(path, dry):
         add.append(f'<meta property="og:description" content="{desc.group(1)}">')
     if not have("twitter:card"):
         add.append('<meta name="twitter:card" content="summary">')
+    # 2026-10-22 (SEO/AI audit): decision, event, drug and research pages carried no og:image, so Bing's link cards,
+    # LinkedIn, Slack and X unfurled them as bare text while the home page and /calendar showed the site card. The
+    # site card (/og.png, the image those two pages already use) is added where a page has none of its own.
+    if not have("og:image"):
+        add.append('<meta property="og:image" content="https://www.pdufa.bio/og.png">')
+    if not have("twitter:image"):
+        add.append('<meta name="twitter:image" content="https://www.pdufa.bio/og.png">')
     if not add:
         return 0
     block = "".join(add)

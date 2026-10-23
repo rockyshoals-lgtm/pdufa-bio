@@ -35,6 +35,7 @@ concurrency:
 permissions:
   contents: write               # commit refreshed data
   issues: write                 # open an issue when reconciliation finds a miss
+  actions: read                 # blocked_issue.py names the failed build step (2026-10-22)
 
 jobs:
   rebuild:
@@ -431,6 +432,9 @@ jobs:
 
       - name: "SLS: rebuild the tracker pages (only if the claim still verifies)"
         if: steps.sls.outcome == 'success'
+        # 2026-10-22: a Polygon 429 here (empty closes) failed three runs and skipped their deploys. The SLS pages are
+        # cosmetic next to the calendar: keep the previous page and deploy everything else.
+        continue-on-error: true
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
@@ -817,6 +821,13 @@ jobs:
       - name: "dateModified in schema + og/article modified-time"
         run: python build_date_modified.py
 
+      # 2026-10-22 (SEO/AI-citation audit): every indexable decision page carries one NewsArticle block with its
+      # first-commit date (Eastern), its content-change date, publisher, the drug and the decision's primary source.
+      # After build_date_modified.py because it reads article:modified_time; the dates are stripped from the content
+      # hash (build_sitemap BOILER), so this cannot move lastmod.
+      - name: "NewsArticle schema on decision pages (datePublished, isBasedOn)"
+        run: python inject_decision_article_schema.py
+
       - name: "Quarantine: hold each lead's own row and pages at the last commit; held_since into build-info"
         run: python quarantine_leads.py apply
 
@@ -935,7 +946,7 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json _decision_published.json
           git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true

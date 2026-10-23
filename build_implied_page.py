@@ -35,6 +35,16 @@ def pretty(iso):
     return f'{["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.month]} {d.day}, {d.year}'
 
 
+def _study_n():
+    """2026-10-22: the sentence said "1073 of the 1796 events in our run-up study" while every other page said 1,879.
+    The denominator is the study's events with a next-day close (deduplicated), not the study's total; name both."""
+    try:
+        s = json.load(io.open(os.path.join(HERE, "runup_study_stats.json"), encoding="utf-8"))
+        return f"; the study holds {int(s['n_events']):,} decisions in all"
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 def main():
     data = json.load(io.open(SRC, encoding="utf-8"))
     agg, events = data["aggregate"], data["events"]
@@ -86,8 +96,8 @@ def main():
            f"realized move arrives after the first close. These are historical "
            f"measurements of this sample, not a property of future decisions."),
           ("Which events are covered?",
-           f"{n} of the {agg['universe_events']} events in our run-up study "
-           f"({agg['coverage_pct']}%) had a usable options chain snapshot in the 30 "
+           f"{n} of the {agg['universe_events']:,} run-up-study events that have a next-day close "
+           f"({agg['coverage_pct']}%{_study_n()}) had a usable options chain snapshot in the 30 "
            f"days before the decision. Coverage requires listed options with real "
            f"quotes, so the computable set skews toward larger, optionable "
            f"companies; the smallest names are underrepresented.")]
@@ -108,7 +118,7 @@ def main():
 <p><b>2. These are measurements of history, published with their distribution.</b> They describe what happened across this sample of decisions. They are not a property of future decisions, not a strategy, and not investment advice; option prices reflect risks (including total loss) this page does not measure.</p>
 
 <h2>By year</h2>
-<table><caption>Median priced move (T-14 ATM straddle) vs median first-close move, FDA decisions with a computable chain, by year. Updated {esc(pretty(agg['as_of']))}.</caption><tr><th>Year</th><th>n</th><th>Median priced</th><th>Median actual (1st close)</th><th>Exceeded priced</th></tr>{years}</table>
+<table><caption>Median priced move (T-14 ATM straddle) vs median first-close move, FDA decisions with a computable chain, by year. Latest decision with a chain snapshot: {esc(pretty(max(e['pdufa'] for e in events)))}; recomputed {esc(pretty(agg['as_of']))}.</caption><tr><th>Year</th><th>n</th><th>Median priced</th><th>Median actual (1st close)</th><th>Exceeded priced</th></tr>{years}</table>
 
 <h2>The largest realized moves, against what was priced</h2>
 <table><caption>Ten largest five-day moves in the sample. "Priced" is the ATM straddle at the snapshot; both actual horizons shown because reactions can build over days.</caption><tr><th>Ticker</th><th>Decision</th><th>Priced (T-14)</th><th>Next close</th><th>5 trading days</th><th>ATM IV</th></tr>{rows}</table>

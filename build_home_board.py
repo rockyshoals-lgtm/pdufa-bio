@@ -32,7 +32,19 @@ import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__
 from site_dates import eastern_today as _eastern_today
 TODAY = _eastern_today()
 GRACE_DAYS = 10   # keep a just-passed, unresolved PDUFA visible this long ("awaiting decision")
-COH = {"Nano": "8.0%", "Micro": "4.6%", "Small": "3.6%", "Mid": "2.2%", "Large": "1.0%", "": "3.6%"}  # median ABS decision-day move, recomputed from the 1,827-event study
+COH = {"Nano": "8.0%", "Micro": "4.6%", "Small": "3.6%", "Mid": "2.2%", "Large": "1.0%", "": "3.6%"}  # 1,827-event vintage
+# 2026-10-22: the chips were typed in at the 1,827-event vintage and never moved; at 1,879 events Mid is 2.1%, not 2.2%.
+# They now come from runup_study_stats.json (cohort_abs_move, median ABS decision-day move by tier) every build. A row
+# with no cap tier keeps the Small figure, as before.
+try:
+    _cs = json.load(open(os.path.join(HERE, "runup_study_stats.json"), encoding="utf-8")).get("cohort_abs_move") or {}
+    for _k, _v in _cs.items():
+        _tier = _k.split(" ")[0]
+        if _tier in COH and _v.get("median_abs_pct") is not None:
+            COH[_tier] = f"{float(_v['median_abs_pct']):.1f}%"
+    COH[""] = COH["Small"]
+except Exception:  # noqa: BLE001  -- a missing stats file keeps the last typed values
+    pass
 
 
 def load_key():

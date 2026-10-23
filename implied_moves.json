@@ -1,9 +1,9 @@
 {
  "aggregate": {
-  "as_of": "2026-09-05",
-  "universe_events": 1796,
+  "as_of": "2026-10-23",
+  "universe_events": 1835,
   "computed": 1073,
-  "coverage_pct": 59.7,
+  "coverage_pct": 58.5,
   "median_priced_pct": 6.7,
   "median_actual_abs_pct": 1.4,
   "median_actual_5d_abs_pct": 3.1,

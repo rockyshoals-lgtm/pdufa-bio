@@ -125,6 +125,10 @@ BOILER = [
     # pages in one sweep and the sitemap claimed 100% of URLs changed that day -- the third
     # arrival of the same runaway by a third route. An icon link is chrome, not content.
     re.compile(r'<link rel="(?:icon|apple-touch-icon|shortcut icon)"[^>]*>'),
+    # 2026-10-22: twitter:image (the site card) was added to ~1,500 pages in one sweep; it is chrome, not content, and
+    # without this line every one of them would claim a content change the day it landed (the fourth route). og:image
+    # is deliberately NOT stripped: ~1,000 pages already carried it, so stripping it would itself move their hash.
+    re.compile(r'<meta name="twitter:image"[^>]*>'),
 ]
 
 
