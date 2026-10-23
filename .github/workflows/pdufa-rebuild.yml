@@ -427,6 +427,7 @@ jobs:
         continue-on-error: true          # a bad day at EDGAR must not block the whole deploy
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}       # price fallback when Polygon's SLS series stalls (2026-10-23)
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python sls_daily.py
 

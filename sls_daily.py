@@ -250,6 +250,29 @@ def price_block():
     }
 
 
+def fmp_price_block():
+    """2026-10-23: Polygon's SLS daily series stalled (last bar 2026-10-09 on the CI key, 2026-09-04 on the local key)
+    while SLS trades normally (FMP quote 2026-10-22: $11.35). FMP's quote is the fallback: last price, previous close,
+    change, volume and 52-week range; it has no 20-day average, so rel_volume is None."""
+    key = os.environ.get("FMP_API_KEY")
+    if not key:
+        return {}
+    raw = get(f"https://financialmodelingprep.com/stable/quote?symbol={TICKER}&apikey={key}", headers=WEB_UA)
+    try:
+        q = (json.loads(raw) or [{}])[0] if raw else {}
+    except Exception:  # noqa: BLE001
+        return {}
+    if not q.get("price") or not q.get("timestamp"):
+        return {}
+    from site_dates import _ET   # RULE 1: FMP's epoch is UTC; the trading day is Eastern
+    day = dt.datetime.fromtimestamp(int(q["timestamp"]), _ET).date().isoformat()
+    return {"as_of": day, "close": round(float(q["price"]), 4),
+            "prev_close": round(float(q.get("previousClose") or 0), 4) or None,
+            "change_pct": round(float(q.get("changePercentage") or 0), 2),
+            "volume": int(q.get("volume") or 0), "rel_volume": None,
+            "low_52w": q.get("yearLow"), "high_52w": q.get("yearHigh"), "source": "FMP quote"}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -268,6 +291,8 @@ def main():
     filings = edgar_filings(since)
     prs = ir_press_releases(since)
     price = price_block()
+    if not price or (dt.date.today() - dt.date.fromisoformat(price["as_of"])).days > 4:
+        price = fmp_price_block() or price
 
     known = {(e.get("kind"), e.get("url")) for e in state["events"]}
     new = [e for e in (filings + prs) if (e.get("kind"), e.get("url")) not in known]
@@ -291,7 +316,10 @@ def main():
         return 0
 
     state["events"] = (state["events"] + new)[-400:]
-    state["price"] = price
+    # 2026-10-23: run 39918716151 got no Polygon bars, wrote price = {} and test_sls_activity blocked the whole deploy
+    # ("price as_of is 999 days old"). A failed fetch never erases the last good price.
+    if price:
+        state["price"] = price
     state["last_run"] = dt.date.today().isoformat()
     if new:
         state["cursor"] = max(e["date"] for e in new)
