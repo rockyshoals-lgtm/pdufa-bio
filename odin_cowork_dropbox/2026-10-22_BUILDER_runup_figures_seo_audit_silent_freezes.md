@@ -28,5 +28,16 @@ Fixed:
 - **No og:image on decision, event, drug and research pages** (Bing link cards, LinkedIn, Slack, X unfurled them as text). `add_og_tags.py` adds the site card (/og.png, as home and /calendar use) where a page has none, plus twitter:image. Lastmod honesty: twitter:image joins build_sitemap's BOILER (it landed on ~1,600 pages at once). og:image is NOT stripped from the hash, because ~1,000 pages already carried it and stripping it would itself move their hashes; instead `_sitemap_lastmod.json` was re-baselined once for the 679 pages whose only difference from HEAD is the card tags (hash recomputed, date kept). The 889 pages that genuinely changed today (369 decision pages with the new schema, event pages with the new figures, the daily ticker-hub churn) keep their new lastmod. Without this, ~97% of URLs would have claimed a change today, one point under test_sitemap_lastmod's 98% runaway alarm and a false signal to Bing.
 Bing, observed: it still shows /calendar as "104 Dates" from Oct 14 (live: 111); the Hibsago and Jemperli pages are not in Bing yet (the GSK and FDA releases rank alone). After this deploy: `bing-submit.yml` with the changed hubs and the new decision pages.
 
+## 2b. Shipped and verified live
+599b78b (run 39918716151, BLOCKED #44 by the SLS price, see above) and 7233f7e (run 39922696204, **success**: 153 guards, quarantine 0 held, closed #44, `vercel token identifies: rockyshoals-7744`, purge ran, verifier PASS). Live, read in Chrome: home chips 4.6 / 2.1 / 8.0 / 2.1 / 1.0%; /pdufa/INO "4.6% median (n=308)"; /pdufa/BTAI "8.0% median (n=117)", no placeholder; /learn on the 1,879-decision study, no 763 cohort; /fda-decision/GSK-2026-10-20 carries its NewsArticle (published 2026-10-21) and og:image. Bing: `bing-submit.yml` run 39927522709, 14 URLs (home, /calendar, today, this week, the four new decision pages, two drug pages, /learn, /fda-approval-rate, two research pages): IndexNow all engines 200, Bing direct 200, SubmitUrlBatch 200. No issue is open.
+
+Observed, not changed: `inject_decision_article_schema.py` reports "369 written" on every run, so an earlier CI step rewrites the decision-page heads each run and the block is re-added. Harmless (identical content; both dates are stripped from the lastmod hash), but worth finding which step drops it.
+
+## Carried
+- /research/pdufa-stock-run-up-by-market-cap: rebuild on today's data needs a decision on its reaction definition (larger of decision-day and next-day move vs the study's next-day move). David's call.
+- Polygon's SLS series stalled on both keys at different dates; the /sls chart caption says "Polygon"; check the plan's coverage.
+- Find the step that strips the NewsArticle block each run.
+- From 10-19/10-21: GSK newsroom parser; ticker-hub decision rows should name the drug; Hibsago letter swap when posted.
+
 ## 3. Currency
 No PDUFA moved: the press-release search across INO (Oct 30), AGIO (Nov 1), BTAI, CYTK, SMMT (Nov 14), NVCR (Nov 15), CAPR, SVRA (Nov 22), PRAX, ARQT since Oct 15 has no extension, withdrawal or action; FDA press RSS since Oct 20 has none; oncology page none. openFDA (updated Oct 22): **Jemperli BLA 761174 S-015 AP Oct 19 is now posted**, so the letter swaps in this run via `sync_fda_action_dates.py`; Hibsago's letter is not yet posted.
