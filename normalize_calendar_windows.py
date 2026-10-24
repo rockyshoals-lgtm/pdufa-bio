@@ -70,15 +70,19 @@ def main():
             if re.match(r"^\d{4}-\d{2}-\d{2}", lab):
                 return m.group(0)                     # a real day; not ours
             rt = toks(re.sub(r"<[^>]+>", " ", drugtxt))
+            # 2026-10-24: the FIRST same-ticker row sharing any token won, so the Gazyva SLE row ("Gazyva: Systemic
+            # Lupus Erythematosus") took the new Gazyva pMN row's "Nov 2026". The row sharing the MOST tokens wins.
+            best, best_n = None, 0
             for r in nonday:
                 if str(r.get("t") or "").upper() != tk:
                     continue
-                if not (rt & toks(r.get("name"))):
-                    continue
-                want = window_label(r)
+                n_ = len(rt & toks(r.get("name")))
+                if n_ > best_n:
+                    best, best_n = r, n_
+            if best is not None:
+                want = window_label(best)
                 if want and want != lab:
                     return head + want + mid + drugtxt + tail
-                return m.group(0)
             return m.group(0)
 
         doc2 = ROW.sub(rep, doc)

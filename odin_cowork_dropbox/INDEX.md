@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-10-24 BUILDER (timing census backfill gazyva)** — `2026-10-24_BUILDER_timing_census_backfill_gazyva.md` — 2026-10-24, work 12:30 Pacific onward = 15:30 Eastern = 19:30 UTC. RULE 1.
 - **2026-10-24 BUILDER (currency bing seo ai audit)** — `2026-10-24_BUILDER_currency_bing_seo_ai_audit.md` — 2026-10-24, work 11:00 Pacific onward = 14:00 Eastern = 18:00 UTC (Saturday). RULE 1.
 - **2026-10-22 BUILDER (runup figures seo audit silent freezes)** — `2026-10-22_BUILDER_runup_figures_seo_audit_silent_freezes.md` — 2026-10-22/23, work 23:30 Pacific Oct 22 onward = 02:30 Eastern Oct 23 = 06:30 UTC. RULE 1.
 - **2026-10-21 BUILDER (hibsago fda days blocked run)** — `2026-10-21_BUILDER_hibsago_fda_days_blocked_run.md` — 2026-10-21, work 05:25 Pacific onward = 08:25 Eastern = 12:25 UTC. RULE 1.

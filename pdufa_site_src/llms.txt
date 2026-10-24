@@ -33,14 +33,14 @@ sponsor's own release).
   event to the last close before it: **-0.03%**. The "conference run-up" retail
   investors remember is largely a **2020 artifact** (median +17.3% that year; negative
   in 2022, 2023 and 2024). Nano-cap presenters are the weakest cohort, not the strongest.
-- FDA decision timing, 2026, sourced decisions only: of **35** decisions with both a
+- FDA decision timing, 2026, sourced decisions only: of **36** decisions with both a
   documented goal date and a documented action date, **23** came before the goal
-  date, **11** on it and **1** after. (/research/fda-decision-timing)
+  date, **12** on it and **1** after. (/research/fda-decision-timing)
   The census is downloadable as CSV under CC BY 4.0, one row per decision with the goal day, FDA action
   day, announcement day, margin and the source URL of each date, versioned by row count:
-  /research/fda-decision-timing/fda-decision-timing-2026-v35.csv (always-current copy:
+  /research/fda-decision-timing/fda-decision-timing-2026-v36.csv (always-current copy:
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
-  Cite as "pdufa.bio, FDA decision timing 2026 (v35)". The counts grow as decisions are added;
+  Cite as "pdufa.bio, FDA decision timing 2026 (v36)". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
 - Released FDA Complete Response Letters (openFDA): **458** letters, of which
   **309** went to applications the FDA has since approved. That ratio reflects

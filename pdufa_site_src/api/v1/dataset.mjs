@@ -1261,7 +1261,8 @@ export default [
    "decision_source": "Lantheus press release 2026-06-26 (GlobeNewswire)",
    "decision_source_url": "https://investor.lantheus.com/news-releases/news-release-details/lantheus-receives-complete-response-letter-fda-lnth-2501-ga-68",
    "decision_date_unsourced": true,
-   "decision_date_note": "2026-06-26 is the date of Lantheus's release, which \"announced today\" that the FDA \"has issued\" a Complete Response Letter; it does not state the day the FDA acted, and the FDA has not released the letter. No margin against the June 29 goal date is published until the letter or another FDA record states the action day."
+   "decision_date_note": "2026-06-26 is the date of Lantheus's release, which \"announced today\" that the FDA \"has issued\" a Complete Response Letter; it does not state the day the FDA acted, and the FDA has not released the letter. No margin against the June 29 goal date is published until the letter or another FDA record states the action day.",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): A CRL: the FDA's letter is not public, so no FDA record states the action day."
   },
   "oc": "CRL",
   "dcd": "2026-06-26"
@@ -1351,7 +1352,8 @@ export default [
    "date_note": "No AstraZeneca filing states a PDUFA goal date for Truqap (capivasertib) in this indication. AstraZeneca names capivasertib in many 6-K/20-F filings but as portfolio narrative; it does not publish goal dates. The June 30 day is unsourced and is withdrawn. The month is retained only because our own sourced decision page places the FDA action in June 2026 -- it is NOT independently sourced to a goal-date statement.",
    "fda_action_date": "2026-06-12",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218197Orig1s004ltr.pdf",
-   "fda_action_record": "NDA 218197 S-004"
+   "fda_action_record": "NDA 218197 S-004",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): AstraZeneca stated no goal date for this sNDA (searched 2026-10-24)."
   },
   "oc": "Approved",
   "dcd": "2026-06-12",
@@ -2333,7 +2335,8 @@ export default [
    "goal_note": "Merck has never published a PDUFA goal date for enlicitide decanoate (Lipfendra). Its Q2 2026 10-Q states only \"In July 2026, the FDA approved Lipfendra tablets\"; the Q1 10-Q covers the EU review and gives no US date; the 8-K of 2026-02-03 records a priority review voucher under the CNPV pilot, which need not carry a conventional PDUFA date. The 2026-07-16 we carried as a goal date is the action date. The approval stands and is sourced to the FDA's own announcement; the goal date is withdrawn as a measurement.",
    "fda_action_date": "2026-07-15",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220848Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220848 ORIG-1"
+   "fda_action_record": "NDA 220848 ORIG-1",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Merck's releases and filings give no goal date for enlicitide (the Sept 21 PDUFA in its Q4 2025 release is WINREVAIR's)."
   }
  },
  {
@@ -2396,7 +2399,7 @@ export default [
   "cap": "Large",
   "st": "Decided",
   "url": "/ticker/OTSKY",
-  "ua": "2026-07-25T12:00:00Z",
+  "ua": "2026-10-24T20:36:26Z",
   "_d": {
    "nct_id": null,
    "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
@@ -2412,11 +2415,13 @@ export default [
     "t7": -0.01,
     "t1": 0.0
    },
-   "goal_unsourced": true,
-   "goal_note": "Otsuka files nothing EDGAR-searchable for centanafadine and openFDA holds no record under that generic name, so no goal date is verifiable from a primary source we can link. The approval stands; the goal date is withdrawn as a measurement.",
+   "goal_note": "Goal date July 24, 2026 from Otsuka America's release of January 27, 2026 (found 2026-10-24); the FDA's letter for NDA 218145 is dated the same day.",
    "fda_action_date": "2026-07-24",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218145Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 218145 ORIG-1"
+   "fda_action_record": "NDA 218145 ORIG-1",
+   "source": "Otsuka America press release 2026-01-27 (NDA accepted, priority review)",
+   "source_url": "https://www.otsuka-us.com/news/otsuka-announces-fda-acceptance-and-priority-review-new-drug-application-centanafadine",
+   "source_quote": "The Prescription Drug User Fee Act (PDUFA) target action date is July 24, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-07-24"
@@ -3596,7 +3601,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3708,7 +3713,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4008,7 +4013,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4374,6 +4379,60 @@ export default [
     "state": "no_topline",
     "checked": "2026-10-24",
     "searched": "12 sponsor press releases (FMP) through 2026-10-24"
+   }
+  },
+  "dm": "2026-09"
+ },
+ {
+  "id": "readout_cslly_2026-10-15",
+  "t": "CSLLY",
+  "company": "Csl Ltd",
+  "d": "2026-09-15",
+  "dp": "month",
+  "name": "Recombinant Single-Chain Factor Viii",
+  "type": "Readout",
+  "ta": "Hematology",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT06738485",
+  "ua": "2026-10-23T14:53:31Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT06738485",
+    "status": "completed",
+    "pcd": "2026-09-23",
+    "pcd_type": "actual",
+    "updated": "2026-10-22",
+    "ongoing": false
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06738485",
+   "ta_basis": "ClinicalTrials.gov conditions: Congenital Hemophilia A",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-15",
+     "changed": "2026-10-23",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06738485 is now 2026-09-23 (actual; registry status completed, record updated 2026-10-22); the row's window moved from 2026-10 to 2026-09 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-09-23",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-24",
+    "source_url": "https://clinicaltrials.gov/study/NCT06738485"
+   },
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-10-24",
+    "searched": "4 sponsor press releases (FMP) through 2026-10-24; ClinicalTrials.gov 2026-10-24"
    }
   },
   "dm": "2026-09"
@@ -4939,7 +4998,8 @@ export default [
    "review": "Label expansion for Inluriyo, originally approved 2025-09-25 as monotherapy (NDA 218881). The combination approval with Verzenio (abemaciclib) rests on the Phase 3 EMBER-3 trial.",
    "fda_action_date": "2026-09-18",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218881Orig1s001ltr.pdf",
-   "fda_action_record": "NDA 218881 S-001"
+   "fda_action_record": "NDA 218881 S-001",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Lilly stated no goal date for the Inluriyo + Verzenio sNDA."
   },
   "oc": "Approved",
   "dcd": "2026-09-18"
@@ -5154,7 +5214,8 @@ export default [
    "fda_action_record": "BLA 125486 SUPPL-43",
    "goal_unsourced": true,
    "goal_note": "pdufa.bio holds no goal date for this supplemental BLA: Roche is not an SEC registrant and we hold no release stating one. The approval is sourced to the FDA's letter and notice; no early/late margin is computed.",
-   "review": "Supplemental BLA (efficacy) approved September 25, 2026 with Breakthrough Therapy, Orphan Drug and Priority Review designations (FDA notice). Phase 3 INShore (NCT05627557), 85 patients aged 2 and older, Gazyva versus mycophenolate mofetil. Gazyva was previously approved for certain cancers and for adults with active lupus nephritis."
+   "review": "Supplemental BLA (efficacy) approved September 25, 2026 with Breakthrough Therapy, Orphan Drug and Priority Review designations (FDA notice). Phase 3 INShore (NCT05627557), 85 patients aged 2 and older, Gazyva versus mycophenolate mofetil. Gazyva was previously approved for certain cancers and for adults with active lupus nephritis.",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Genentech/Roche stated only that priority review was granted (May 2026), no goal date."
   }
  },
  {
@@ -5169,7 +5230,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5275,7 +5336,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5402,7 +5463,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5532,7 +5593,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5801,7 +5862,8 @@ export default [
    "date_note": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision.",
    "fda_action_date": "2026-08-27",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220106Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220106 ORIG-1"
+   "fda_action_record": "NDA 220106 ORIG-1",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Priovant stated the goal only as the third calendar quarter of 2026."
   },
   "oc": "Approved",
   "dcd": "2026-08-27",
@@ -5915,7 +5977,8 @@ export default [
    "date_note": "Takeda and Protagonist state \"Prescription Drug User Fee Act (PDUFA) Target Action Date is in the Third Quarter of this Calendar Year\" for rusfertide in polycythemia vera. The sponsor gave a QUARTER. Day withdrawn 2026-09-10.",
    "fda_action_date": "2026-08-28",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220605Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220605 ORIG-1"
+   "fda_action_record": "NDA 220605 ORIG-1",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Protagonist/Takeda stated the goal only as August 2026 (month), not a day."
   },
   "oc": "Approved",
   "dcd": "2026-08-28",
@@ -5954,7 +6017,8 @@ export default [
    "date_note": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision.",
    "fda_action_date": "2026-08-27",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220106Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220106 ORIG-1"
+   "fda_action_record": "NDA 220106 ORIG-1",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Priovant stated the goal only as the third calendar quarter of 2026."
   },
   "oc": "Approved",
   "dcd": "2026-08-27",
@@ -6169,7 +6233,8 @@ export default [
    "date_note": "Takeda states \"The Prescription Drug User Fee Act (PDUFA) Target Action Date is the Third Quarter of this Calendar Year\" for oveporexton in narcolepsy type 1. The sponsor gave a QUARTER. Day withdrawn 2026-09-10; quarter is the sourced precision.",
    "fda_action_date": "2026-08-05",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220860Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220860 ORIG-1"
+   "fda_action_record": "NDA 220860 ORIG-1",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Takeda stated the goal only as the third calendar quarter of 2026."
   },
   "oc": "Approved",
   "dcd": "2026-08-05",
@@ -6347,7 +6412,8 @@ export default [
    "goal_unsourced": true,
    "goal_note": "In June 2026 Lilly said a U.S. decision on its CLL submission (BRUIN CLL-313 and CLL-314) was expected in the second half of 2026; pdufa.bio holds no goal day, so no early or late margin is computed.",
    "review": "Supplemental NDA 216059 for first-line use. BRUIN CLL-313 (NCT05023980): 282 previously untreated patients without 17p deletion, randomized 1:1 to pirtobrutinib or bendamustine plus rituximab; IRC-assessed PFS hazard ratio 0.20 (95% CI 0.11 to 0.37), median PFS not estimable vs 33.5 months at a median follow-up of 28 months; OS immature. 200 mg orally once daily. Orphan drug designation (FDA notification).",
-   "goal_source_url": "https://lilly.mediaroom.com/2026-06-26-Lillys-Jaypirca-pirtobrutinib-recommended-by-CHMP-for-approval-in-the-European-Union-for-adults-with-chronic-lymphocytic-leukemia-CLL-across-all-lines-of-therapy"
+   "goal_source_url": "https://lilly.mediaroom.com/2026-06-26-Lillys-Jaypirca-pirtobrutinib-recommended-by-CHMP-for-approval-in-the-European-Union-for-adults-with-chronic-lymphocytic-leukemia-CLL-across-all-lines-of-therapy",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Lilly stated no goal date for the first-line CLL/SLL sNDA."
   }
  },
  {
@@ -6385,7 +6451,8 @@ export default [
    "decision_date_note": "The FDA's action date, October 6, 2026, is from the FDA's Drugs@FDA data (openFDA). Novartis announced the approval on October 7, 2026.",
    "goal_unsourced": true,
    "goal_note": "pdufa.bio holds no goal date for this supplemental NDA; no early or late margin is computed.",
-   "review": "Efficacy supplement to NDA 218436 (Rhapsido, first approved September 30, 2025 for chronic spontaneous urticaria). Approval based on the symptomatic dermographism cohort of the Phase III RemIND trial: complete response at Week 12 in 29.3% of patients on Rhapsido versus 14.0% on placebo (p=0.0229), per Novartis."
+   "review": "Efficacy supplement to NDA 218436 (Rhapsido, first approved September 30, 2025 for chronic spontaneous urticaria). Approval based on the symptomatic dermographism cohort of the Phase III RemIND trial: complete response at Week 12 in 29.3% of patients on Rhapsido versus 14.0% on placebo (p=0.0229), per Novartis.",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Novartis stated no goal date for the symptomatic dermographism sNDA."
   }
  },
  {
@@ -6440,7 +6507,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6461,7 +6528,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6482,7 +6549,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6654,60 +6721,6 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Chronic Spontaneous Urticaria"
   },
   "dm": "2026-10"
- },
- {
-  "id": "readout_cslly_2026-10-15",
-  "t": "CSLLY",
-  "company": "Csl Ltd",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "Recombinant Single-Chain Factor Viii",
-  "type": "Readout",
-  "ta": "Hematology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06738485",
-  "ua": "2026-10-23T14:53:31Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06738485",
-    "status": "completed",
-    "pcd": "2026-09-23",
-    "pcd_type": "actual",
-    "updated": "2026-10-22",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06738485",
-   "ta_basis": "ClinicalTrials.gov conditions: Congenital Hemophilia A",
-   "date_history": [
-    {
-     "date": "2026-10-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-10-23",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06738485 is now 2026-09-23 (actual; registry status completed, record updated 2026-10-22); the row's window moved from 2026-10 to 2026-09 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-09-23",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-10-24",
-    "source_url": "https://clinicaltrials.gov/study/NCT06738485"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-10-24",
-    "searched": "4 sponsor press releases (FMP) through 2026-10-24; ClinicalTrials.gov 2026-10-24"
-   }
-  },
-  "dm": "2026-09"
  },
  {
   "id": "readout_eypt_2026-10-15",
@@ -7181,6 +7194,54 @@ export default [
   "dm": "2026-10"
  },
  {
+  "id": "readout_vygr_2027-05-15",
+  "t": "VYGR",
+  "company": "Voyager Therapeutics, Inc.",
+  "d": "2026-10-15",
+  "dp": "month",
+  "name": "VY7523",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT06874621",
+  "ua": "2026-10-23T14:53:55Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT06874621",
+    "status": "active_not_recruiting",
+    "pcd": "2026-10-13",
+    "pcd_type": "actual",
+    "updated": "2026-10-21",
+    "ongoing": true
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06874621",
+   "date_history": [
+    {
+     "date": "2027-05-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-10-15",
+     "changed": "2026-10-23",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06874621 is now 2026-10-13 (actual; registry status active_not_recruiting, record updated 2026-10-21); the row's window moved from 2027-05 to 2026-10 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-10-13",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-10-24",
+    "source_url": "https://clinicaltrials.gov/study/NCT06874621"
+   }
+  },
+  "dm": "2026-10"
+ },
+ {
   "id": "readout_wve_2026-06-15",
   "t": "WVE",
   "company": "Wave Life Sciences, Inc.",
@@ -7338,7 +7399,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ASN",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7374,7 +7435,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7431,7 +7492,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7452,7 +7513,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ESMO",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7766,7 +7827,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7802,7 +7863,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7838,7 +7899,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7874,7 +7935,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7895,7 +7956,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7916,7 +7977,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -8036,7 +8097,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8517,7 +8578,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8546,7 +8607,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8730,7 +8791,8 @@ export default [
    "date_note": "Our published goal date of November 30, 2026 was never sourced. No Bayer filing or release states it, and Bayer is not an SEC registrant so EDGAR cannot confirm one; the only EDGAR hits for sevabertinib plus 'target action date' belong to Nuvalent discussing a competitor. The FDA's letter shows the sNDA was received March 16, 2026, which under priority review lands in September rather than November. Day withdrawn 2026-09-14; the decision itself is sourced to the FDA's own approval letter.",
    "fda_action_date": "2026-09-09",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf",
-   "fda_action_record": "NDA 219972 S-001"
+   "fda_action_record": "NDA 219972 S-001",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Bayer's priority-review release (May 18, 2026) states no goal date."
   },
   "oc": "Approved",
   "dcd": "2026-09-09",
@@ -8923,6 +8985,31 @@ export default [
   }
  },
  {
+  "id": "pdufa_rhhby_2026-11-30_pmn",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-11-30",
+  "dp": "month",
+  "dm": "2026-11",
+  "name": "Gazyva (obinutuzumab) - primary membranous nephropathy (MAJESTY)",
+  "type": "PDUFA",
+  "ta": "Nephrology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-10-24T20:36:26Z",
+  "url": "/pdufa/RHHBY-gazyva-pmn",
+  "_d": {
+   "indication": "Primary membranous nephropathy (pMN) in adults",
+   "brand": "Gazyva",
+   "inn": "obinutuzumab",
+   "source": "Genentech press release 2026-07-14 (priority review)",
+   "source_url": "https://www.gene.com/media/press-releases/15121/2026-07-14/fda-grants-priority-review-to-genentechs",
+   "source_quote": "The FDA has already granted Breakthrough Therapy Designation (BTD) to Gazyva in pMN and is expected to make a decision on approval by November 2026.",
+   "event_slug": "RHHBY-gazyva-pmn",
+   "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day."
+  }
+ },
+ {
   "id": "pdufa_vrtx_2026-11-30",
   "t": "VRTX",
   "company": "Vertex",
@@ -9000,7 +9087,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -9021,7 +9108,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9042,7 +9129,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9104,7 +9191,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9125,7 +9212,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -10344,7 +10431,8 @@ export default [
    "fda_action_record": "NDA 220415 ORIG-1",
    "goal_unsourced": true,
    "goal_note": "AbbVie never published a PDUFA goal date for tavapadon: EDGAR full-text search for \"tavapadon\" with \"target action date\" returns no filings, and the day we once carried was withdrawn on 2026-09-10. The approval is sourced to the FDA's letter; no early/late margin is computed.",
-   "review": "NDA 220415, approved September 25, 2026 (FDA letter); AbbVie announced it September 28, 2026. AbbVie describes JUVMO as the first selective D1/D5 receptor agonist approved for adults with Parkinson's disease, taken once daily with or without levodopa, and expects U.S. availability in October 2026. Supported by the Phase 3 TEMPO program (TEMPO-1, -2 and -3, with the TEMPO-4 open-label extension)."
+   "review": "NDA 220415, approved September 25, 2026 (FDA letter); AbbVie announced it September 28, 2026. AbbVie describes JUVMO as the first selective D1/D5 receptor agonist approved for adults with Parkinson's disease, taken once daily with or without levodopa, and expects U.S. availability in October 2026. Supported by the Phase 3 TEMPO program (TEMPO-1, -2 and -3, with the TEMPO-4 open-label extension).",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): AbbVie stated no goal date for tavapadon."
   },
   "dm": "2026-12",
   "oc": "Approved",
@@ -10487,7 +10575,8 @@ export default [
    "announcement_url": "https://www.bayer.com/media/en-us/us-fda-approves-finerenone-for-new-indication-in-patients-with-chronic-kidney-disease-associated-with-type-1-diabetes/",
    "review": "Supplemental NDA (S-011, submitted March 16, 2026, Priority Review) approved September 16, 2026: a third U.S. indication, CKD associated with type 1 diabetes, based on the Phase III FINE-ONE study. Bayer announced it on September 17, 2026.",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215341Orig1s011ltr.pdf",
-   "fda_action_record": "NDA 215341 S-011"
+   "fda_action_record": "NDA 215341 S-011",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Bayer's priority-review release (May 21, 2026) states no goal date."
   },
   "dm": "2026-12",
   "oc": "Approved",
@@ -11036,6 +11125,31 @@ export default [
    "ta_basis": "Sponsor SEC filing: sura-vec (RGX-314) for wet AMD"
   },
   "dm": "2026-12"
+ },
+ {
+  "id": "pdufa_rhhby_2026-12-31_sle",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2026-12-31",
+  "dp": "month",
+  "dm": "2026-12",
+  "name": "Gazyva (obinutuzumab) - systemic lupus erythematosus (ALLEGORY)",
+  "type": "PDUFA",
+  "ta": "Immunology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-10-24T20:36:26Z",
+  "url": "/pdufa/RHHBY-gazyva",
+  "_d": {
+   "indication": "Systemic lupus erythematosus (SLE)",
+   "brand": "Gazyva",
+   "inn": "obinutuzumab",
+   "source": "Genentech press release 2026-04-20 (sBLA accepted)",
+   "source_url": "https://www.gene.com/media/press-releases/15107/2026-04-20/fda-accepts-application-for-genentechs-g",
+   "source_quote": "The FDA is expected to make a decision on an approval by December 2026.",
+   "event_slug": "RHHBY-gazyva",
+   "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day."
+  }
  },
  {
   "id": "readout_skye_2026-12-31",
@@ -11699,7 +11813,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11792,7 +11906,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11859,7 +11973,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12054,7 +12168,8 @@ export default [
    "announcement_url": "https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/",
    "announcement": "GSK press release (Philadelphia), October 19, 2026",
    "review": "Supplemental BLA under the accelerated approval pathway, Priority Review, with a Commissioner's National Priority Voucher; Fast Track and Breakthrough Therapy designations. AZUR-1 (NCT05723562): single-arm, open-label, 154 previously untreated patients, dostarlimab 500 mg IV every 3 weeks for nine cycles. Per the FDA, sustained clinical complete response at 12 months (cCR12) per independent central review was 47% (95% CI 27 to 56) in 116 evaluable patients and 68% (95% CI 60 to 76) by investigator in 144; ORR per ICR 79%; with a median follow-up of 26.3 months, no patient with cCR12, cCR or near CR had progressed. Continued approval may be contingent on a confirmatory trial.",
-   "fda_action_record_note": "Drugs@FDA (openFDA, updated 2026-10-22) records BLA 761174 supplement 15 approved 2026-10-19, the day the FDA's notification states; no letter PDF is linked yet, so the notification stays the cited source."
+   "fda_action_record_note": "Drugs@FDA (openFDA, updated 2026-10-22) records BLA 761174 supplement 15 approved 2026-10-19, the day the FDA's notification states; no letter PDF is linked yet, so the notification stays the cited source.",
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): GSK stated the goal only as February 2027 (month)."
   },
   "dm": "2027-02"
  },
@@ -12399,7 +12514,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12674,7 +12789,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12695,7 +12810,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13123,7 +13238,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13144,7 +13259,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13186,7 +13301,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13378,54 +13493,6 @@ export default [
   "dm": "2027-05"
  },
  {
-  "id": "readout_vygr_2027-05-15",
-  "t": "VYGR",
-  "company": "Voyager Therapeutics, Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "VY7523",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06874621",
-  "ua": "2026-10-23T14:53:55Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06874621",
-    "status": "active_not_recruiting",
-    "pcd": "2026-10-13",
-    "pcd_type": "actual",
-    "updated": "2026-10-21",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06874621",
-   "date_history": [
-    {
-     "date": "2027-05-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-10-15",
-     "changed": "2026-10-23",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06874621 is now 2026-10-13 (actual; registry status active_not_recruiting, record updated 2026-10-21); the row's window moved from 2027-05 to 2026-10 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-10-13",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-10-24",
-    "source_url": "https://clinicaltrials.gov/study/NCT06874621"
-   }
-  },
-  "dm": "2026-10"
- },
- {
   "id": "conf_ddw_2027-05-15",
   "t": "DDW",
   "company": "Digestive Disease Week",
@@ -13437,7 +13504,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13458,7 +13525,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13479,7 +13546,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13874,7 +13941,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13895,7 +13962,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-24T19:08:20Z",
+  "ua": "2026-10-24T21:09:56Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

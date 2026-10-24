@@ -98,13 +98,25 @@ def provenance_exclusions(year):
     for r in rows:
         if r.get("type") != "PDUFA" or str(r.get("st", "")).lower() != "decided":
             continue
-        if r.get("dp") != "day" or not str(r.get("dcd") or "").startswith(str(year)):
-            continue
-        if earliness_allowed(r):
+        if not str(r.get("dcd") or "").startswith(str(year)):
             continue
         d = r.get("_d") or {}
         tk = str(r.get("t") or "").upper()
-        if d.get("decision_date_unsourced"):
+        # 2026-10-24 (census backfill): rows whose goal is only a month or quarter were silently absent from this
+        # list, and the per-row search result (census_note, written by apply_1024_census_and_gazyva.py) was not shown.
+        # Both are now named, so every decided 2026 application on the calendar is either counted or explained.
+        if r.get("dp") != "day":
+            if d.get("fda_action_date") or d.get("decision_date_unsourced"):
+                why = str(d.get("census_note") or "").split(": ", 1)[-1].rstrip(".") or \
+                    "the sponsor stated the goal only as a month or quarter"
+                out.append((tk, why))
+            continue
+        if earliness_allowed(r):
+            continue
+        if d.get("census_note") and not d.get("decision_date_unsourced"):
+            why = str(d["census_note"]).split(": ", 1)[-1].rstrip(".")
+            out.append((tk, why))
+        elif d.get("decision_date_unsourced"):
             out.append((tk, "the date held is the sponsor's announcement day; the filing does "
                             "not state the day the FDA acted"))
         elif d.get("goal_unsourced"):
@@ -285,6 +297,12 @@ def main():
     prov_ex = provenance_exclusions(a.year)
     disclosure = ""
     if prov_ex:
+        # partner rows of one application (PFE/ROIV brepocitinib) share a reason: one entry, tickers joined
+        _g = {}
+        for t, why in prov_ex:
+            _g.setdefault(why, []).append(t)
+        prov_ex = [("/".join(sorted(set(ts))), why) for why, ts in _g.items()]
+        prov_ex.sort()
         items = "; ".join(f"<b>{esc(t)}</b> ({esc(why)})" for t, why in prov_ex)
         disclosure += (
             f'<h2>Left out because a date has no document behind it</h2>'

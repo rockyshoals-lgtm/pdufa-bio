@@ -228,7 +228,10 @@ def main():
         # A hand-assigned or disambiguated slug is by definition NOT covered by the sibling's page.
         tok = re.sub(r"[^a-z0-9]", "", drug.split("(")[0].strip().lower())[:10]
         covered = False
-        for name in (list(existing) if slug == f"{tk}-{slugify(drug.split('(')[0].strip())}" else []):
+        # 2026-10-24: a hand-assigned event_slug that happens to equal the default slug (RHHBY-gazyva for the SLE row) was
+        # still run through the coverage test and declared covered by the sibling RHHBY-gazyva-pmn page; per the rule
+        # above, a hand-assigned slug is never covered by another page.
+        for name in (list(existing) if (not es and slug == f"{tk}-{slugify(drug.split('(')[0].strip())}") else []):
             if not name.startswith(tk.lower() + "-"):
                 continue
             ep = os.path.join(OUTDIR, name, "index.html")
