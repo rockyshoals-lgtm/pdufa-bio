@@ -2250,7 +2250,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "19 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "20 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-07"
@@ -3596,7 +3596,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3708,7 +3708,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4008,7 +4008,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4425,7 +4425,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-23",
-    "searched": "15 sponsor press releases (FMP) through 2026-10-23"
+    "searched": "16 sponsor press releases (FMP) through 2026-10-23"
    }
   },
   "dm": "2026-09"
@@ -5169,7 +5169,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5275,7 +5275,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5402,7 +5402,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5532,7 +5532,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6440,7 +6440,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6461,7 +6461,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6482,7 +6482,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -7338,7 +7338,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ASN",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7374,7 +7374,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7431,7 +7431,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7452,7 +7452,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ESMO",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7733,11 +7733,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
-   "market_cap_usd": 2219715972.7599998,
+   "market_cap_usd": 2220312991.58,
    "cash_runway_months": 23.2,
    "days_to_decision": 114,
    "cohort_move_median_pct": -0.01,
@@ -7766,7 +7766,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7802,7 +7802,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7838,7 +7838,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7874,7 +7874,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7895,7 +7895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7916,7 +7916,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -8036,7 +8036,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8517,7 +8517,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8546,7 +8546,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8675,7 +8675,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -8748,7 +8748,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -8782,7 +8782,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -8799,7 +8799,7 @@ export default [
     }
    },
    "indication": "TKI-pretreated ALK-positive NSCLC",
-   "market_cap_usd": 101437979588.37001,
+   "market_cap_usd": 102600018461.79001,
    "cash_runway_months": 49.4,
    "cohort_move_median_pct": -0.01,
    "cohort_move_p25_pct": -2.05,
@@ -9000,7 +9000,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -9021,7 +9021,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9042,7 +9042,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9104,7 +9104,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9125,7 +9125,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -10142,7 +10142,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -10175,7 +10175,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -10197,7 +10197,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10214,7 +10214,7 @@ export default [
     }
    },
    "indication": "Developmental epileptic encephalopathies (DEEs)",
-   "market_cap_usd": 7384557626.12,
+   "market_cap_usd": 7229043292.96,
    "cash_runway_months": 33.4,
    "days_to_decision": 170,
    "cohort_move_median_pct": -0.01,
@@ -10279,7 +10279,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -11699,7 +11699,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11720,7 +11720,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -11737,7 +11737,7 @@ export default [
     }
    },
    "indication": "Essential tremor",
-   "market_cap_usd": 7384557626.12,
+   "market_cap_usd": 7229043292.96,
    "cash_runway_months": 33.4,
    "days_to_decision": 203,
    "cohort_move_median_pct": -0.01,
@@ -11792,7 +11792,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11813,7 +11813,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -11859,7 +11859,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12399,7 +12399,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12674,7 +12674,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12695,7 +12695,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13102,7 +13102,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -13123,7 +13123,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13144,7 +13144,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13165,7 +13165,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-10-23T16:35:02Z",
+  "ua": "2026-10-23T23:41:20Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -13186,7 +13186,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13437,7 +13437,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13458,7 +13458,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13479,7 +13479,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13874,7 +13874,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13895,7 +13895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-23T17:03:10Z",
+  "ua": "2026-10-24T00:31:16Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
