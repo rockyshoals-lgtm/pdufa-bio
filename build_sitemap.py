@@ -129,6 +129,9 @@ BOILER = [
     # without this line every one of them would claim a content change the day it landed (the fourth route). og:image
     # is deliberately NOT stripped: ~1,000 pages already carried it, so stripping it would itself move their hash.
     re.compile(r'<meta name="twitter:image"[^>]*>'),
+    # 2026-10-24: the decision pages' NewsArticle block (inject_decision_article_schema.py) restates the title,
+    # description and dates already on the page; a change to how it is derived is not a change to the page.
+    re.compile(r'<script type="application/ld\+json" id="ld-article">.*?</script>', re.S),
 ]
 
 

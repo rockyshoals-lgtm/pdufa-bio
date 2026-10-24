@@ -88,9 +88,11 @@ def main():
         pub = cache.setdefault(slug, today)
         h1 = re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
         title = re.search(r"<title>(.*?)</title>", doc, re.S)
-        headline = html.unescape(re.sub(r"<[^>]+>", "", h1.group(1))).strip() if h1 else ""
-        if not headline and title:
-            headline = html.unescape(title.group(1)).split(" | ")[0].strip()
+        # 2026-10-24: the <title> leads (rewrite_decision_snippets curates it: "Dupixent Approved Apr 18, 2025"); older
+        # pages' h1 reads "REGN FDA Decision Approved · 2025-04-18", which is what the first version put in headline.
+        headline = html.unescape(title.group(1)).split(" | ")[0].strip() if title else ""
+        if not headline and h1:
+            headline = html.unescape(re.sub(r"<[^>]+>", "", h1.group(1))).strip()
         desc = re.search(r'<meta name="description" content="([^"]*)"', doc)
         mod = re.search(r'<meta property="article:modified_time" content="([^"]+)"', doc)
         canon = re.search(r'<link rel="canonical" href="([^"]+)"', doc)
@@ -113,13 +115,18 @@ def main():
                 drug["nonProprietaryName"] = d["inn"]
             art["about"] = drug
         block = B + json.dumps(art, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + E
+        # 2026-10-24: both tags go BEFORE build_date_modified.py's <!--DMOD:BEGIN--> block, never inside it or after it.
+        # The first version put published_time inside DMOD (next to modified_time) and the article block after it;
+        # build_date_modified removes DMOD and re-appends it at </head> every run, so the two steps swapped places and
+        # "369 written" was printed on every CI run.
         new = re.sub(re.escape(B) + r".*?" + re.escape(E), "", doc, flags=re.S)
-        new = new.replace("</head>", block + "</head>", 1)
-        if '<meta property="article:published_time"' not in new and mod:
-            new = new.replace(mod.group(0), f'<meta property="article:published_time" content="{pub}">' + mod.group(0), 1)
-        else:
-            new = re.sub(r'<meta property="article:published_time" content="[^"]*">',
-                         f'<meta property="article:published_time" content="{pub}">', new, count=1)
+        new = re.sub(r'<meta property="article:published_time" content="[^"]*">', "", new)
+        tags = f'<meta property="article:published_time" content="{pub}">' + block
+        anchor = new.find("<!--DMOD:BEGIN-->")
+        if anchor < 0:
+            anchor = new.find("</head>")
+        if anchor >= 0:
+            new = new[:anchor] + tags + new[anchor:]
         n += 1
         if new != doc:
             changed += 1

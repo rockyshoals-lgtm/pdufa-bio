@@ -200,7 +200,9 @@ def main():
             g1, tail = g1[:vi], g1[vi:]
         else:
             tail = ""
-        new = doc[:hm.start()] + g1 + block + tail + f'<p class="sub">{newhead}</p>' + doc[hm.end():]
+        # 2026-10-24: no whitespace between the lede, the Verified line and the headline; inject_verified_against.py writes
+        # them adjacent, and the two steps used to trade a newline every run (pages grew, lastmod moved).
+        new = (doc[:hm.start()] + g1 + (block.rstrip() + tail.strip() if tail else block) + f'<p class="sub">{newhead}</p>' + doc[hm.end():])
         if new != doc:
             changed += 1
             if not a.dry_run:

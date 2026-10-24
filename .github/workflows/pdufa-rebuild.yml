@@ -779,6 +779,12 @@ jobs:
           python build_favicon.py
           python normalize_icons.py
 
+      # 2026-10-24 (Bing audit): month pages state their row count in title and description; the schema name follows.
+      - name: "Calendar month titles carry the row count"
+        run: |
+          python retitle_calendar_months.py
+          python sync_jsonld_name_to_title.py
+
       - name: Normalise copy (remove em dashes used as punctuation)
         run: python strip_dashes.py
 

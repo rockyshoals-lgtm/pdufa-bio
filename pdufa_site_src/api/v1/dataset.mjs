@@ -3596,7 +3596,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3708,7 +3708,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4008,7 +4008,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -5169,7 +5169,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5275,7 +5275,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5402,7 +5402,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5532,7 +5532,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6440,7 +6440,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6461,7 +6461,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6482,7 +6482,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -7338,7 +7338,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ASN",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7374,7 +7374,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7431,7 +7431,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7452,7 +7452,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ESMO",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7678,9 +7678,9 @@ export default [
    "fda_notice_title": "FDA Approves First-of-Its-Kind Chronic Hepatitis B Treatment",
    "decision_quote": "The U.S. Food and Drug Administration today approved Hibsago (bepirovirsen) injection, in combination with existing antiviral therapy, to treat chronic hepatitis B virus (HBV) infection in certain adults without cirrhosis.",
    "fda_action_date": "2026-10-20",
-   "fda_action_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment",
-   "fda_action_record": "FDA press announcement, October 20, 2026 (letter not yet on Drugs@FDA)",
-   "decision_date_note": "The FDA's press announcement is dated October 20, 2026 and states the approval was made that day; GSK announced it the same day from Philadelphia. The goal date, October 26, 2026, is from Ionis's 8-K exhibit of July 29, 2026.",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221276Orig1s000Ltr.pdf",
+   "fda_action_record": "NDA 221276 ORIG-1",
+   "decision_date_note": "The FDA's approval letter for NDA 221276 is dated October 20, 2026 (Drugs@FDA), the day of the FDA's press announcement and GSK's release. The goal date, October 26, 2026, is from Ionis's 8-K exhibit of July 29, 2026.",
    "announcement_url": "https://us.gsk.com/en-us/media/press-releases/hibsago-bepirovirsen-approved-in-the-us-for-the-treatment-of-chronic-hepatitis-b-chb/",
    "announcement": "GSK press release (Philadelphia), October 20, 2026",
    "review": "Priority Review with Breakthrough Therapy Designation; first FDA-approved antisense oligonucleotide for chronic hepatitis B. Per the FDA, two placebo-controlled trials (B-Well): Hibsago injected subcutaneously for up to 24 weeks alongside existing antiviral therapy; 24% of Hibsago patients met the criteria to stop their existing therapy versus none on placebo, and 19% still had the virus controlled with undetectable HBsAg 24 weeks after stopping all treatment. Boxed warning for serious liver reactions and low platelet counts; warnings for kidney function, vasculitis and injection errors. The FDA also authorized the Roche Elecsys HBsAg II quant II RxDx companion diagnostic."
@@ -7766,7 +7766,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7802,7 +7802,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7838,7 +7838,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7874,7 +7874,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7895,7 +7895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7916,7 +7916,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -8036,7 +8036,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8517,7 +8517,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8546,7 +8546,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -9000,7 +9000,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -9021,7 +9021,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9042,7 +9042,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9104,7 +9104,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9125,7 +9125,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -11699,7 +11699,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11792,7 +11792,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11859,7 +11859,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12399,7 +12399,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12674,7 +12674,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12695,7 +12695,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13123,7 +13123,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13144,7 +13144,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13186,7 +13186,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13437,7 +13437,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13458,7 +13458,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13479,7 +13479,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13874,7 +13874,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13895,7 +13895,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-24T15:58:08Z",
+  "ua": "2026-10-24T18:30:55Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",

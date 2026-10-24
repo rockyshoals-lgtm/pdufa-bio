@@ -1,0 +1,28 @@
+# Builder note: currency, Bing, SEO and AI-citation audit of 2026-10-24
+**2026-10-24, work 11:00 Pacific onward = 14:00 Eastern = 18:00 UTC (Saturday).** *RULE 1.*
+*Facts only. Not investment advice.* Responds to "do another currency, bing, seo, ai citation audit."
+
+## 1. Runs and issues
+Every pdufa-rebuild run since 7233f7e passed: 39970740921, 39987910628, 40041022047, 40099571358, 40107173765 (14:34 UTC Oct 23 to 15:29 UTC Oct 24). No issue is open. The 10-22 fixes (SLS price fallback, build-step BLOCKED issues) have held through five scheduled runs.
+
+## 2. Currency
+- **No missed decision.** FDA press RSS: nothing new since the Oct 20 Hibsago item (Oct 22 is a neuroscience program launch). Oncology notifications: nothing after Oct 14. openFDA (last_updated 2026-10-23), NDA/BLA decision-class approvals Oct 20 to 24: only **Hibsago, NDA 221276 ORIG-1, TYPE 1, AP Oct 20, letter posted** (221276Orig1s000Ltr.pdf).
+- **Hibsago now cites the FDA letter**: record "NDA 221276 ORIG-1", source the letter; the page sentence "The FDA's letter had not been posted on Drugs@FDA" replaced. **Jemperli** likewise: Drugs@FDA records BLA 761174 S-015 on Oct 19 (no letter PDF linked yet), sentence replaced. `apply_1024_fda_records.py`.
+- **Upcoming PDUFAs to Dec 15** (16 rows: INO Oct 30, AGIO Nov 1, BTAI/CYTK/SMMT Nov 14, NVCR Q4, CAPR/SVRA Nov 22, BBIO Nov 27, COGT/GSK/REGN/RHHBY/VRTX Nov 30, EXEL Dec 3, VNDA Dec 12): sponsor releases Oct 22 to 24 carry no extension, withdrawal or action. Vertex's Oct 23 RAINIER/NEJM release reaffirms povetacicept's Nov 30 PDUFA; Roche's releases keep giredestrant lidERA at Nov 30 and evERA at Dec 18.
+
+## 3. SEO (live, Chrome, 25 URLs)
+All 200, single h1, self canonicals, index, descriptions 116 to 157, og:image everywhere, every JSON-LD block parses, hubs dateModified Oct 24. /fda-decisions-today and the weekly page are correct for Saturday Oct 24 (Hibsago and Jemperli this week; Calrezdy/Cienby listed as other Drugs@FDA approvals).
+Fixed:
+- **Month calendar pages** were titled "November 2026 FDA PDUFA Calendar" with a generic description, while Bing's competing results lead with a count. New `retitle_calendar_months.py` (CI before strip_dashes, then the schema-name sync; chain): "November 2026 PDUFA Calendar: 13 FDA Decision Dates", with a description that states the count; the count is the rows the page lists.
+- **NewsArticle block, two defects from 10-22.** (a) Its headline came from the h1, which on older pages reads "REGN FDA Decision Approved · 2025-04-18"; it now comes from the curated title ("Dupixent Approved Apr 18, 2025"). (b) "369 written" on every CI run: article:published_time had been placed inside build_date_modified's DMOD block and the article block after it; build_date_modified re-appends DMOD at </head> each run, so the two swapped places nightly. Both now sit before DMOD; proved build_date_modified then the injector: 0 written. The block also joins build_sitemap's BOILER (it restates title, description and dates already on the page); `_sitemap_lastmod.json` was re-baselined for the 211 decision pages whose only difference is the block, so the headline change does not move their lastmod.
+- **A newline runaway on 52 decision pages.** `build_decision_lede.py` and `inject_verified_against.py` traded a newline every run (both printed "52 written" on every CI run); REGN-2026-08-19 had 19 accumulated blank lines after its Verified line, and the whitespace change moved those pages' lastmod daily. Both now write the lede, the Verified line and the headline adjacent and strip trailing whitespace; three alternating runs: 52, then 0, 0.
+
+## 4. Bing and AI citation
+- **Bing's answer engine cites pdufa.bio.** "Hibsago approved 6 days early goal date": pdufa.bio is result 1 and Bing's generated answer quotes our page for the approval day, the goal date and the Ionis 8-K source. "Jemperli rectal cancer FDA approval": result 1. "how often does the FDA approve before the PDUFA date 2026": /research/fda-decision-timing is result 2 and the answer is built on our census, **but quotes the old v32 figures (21 of 32 early, 10 on, 1 late)** although Bing's own copy of the research page (2 days old) says 35. The stale source is /calendar, which Bing has not recrawled since **Oct 14** (snippet still "104 Dates"; live 111) despite IndexNow and SubmitUrlBatch on Oct 23; /calendar/2026/november's copy is from Oct 10.
+- **Old census CSV links were 404.** `build_early_decisions.py` deleted each vintage when the census grew, so the v32 file (cited in llms.txt and our 10-18 note, and the vintage Bing quotes) was gone. Every vintage now stays at its address (v32 restored from fb8a832), and a stable `fda-decision-timing-2026.csv` always holds the latest; the Dataset lists both, the page links the older versions. `/llms.txt` names the stable file and says an older copy quoting a smaller census is superseded.
+- After deploy: resubmit /calendar, the month pages and the timing page.
+
+## Carried
+- Bing's /calendar copy is 10 days old; watch whether the resubmission moves it (the page is 85 KB with a 10 KB ItemList; nothing technical blocks it: 200, self canonical, index, in the sitemap with today's lastmod).
+- /calendar/ (trailing slash) serves 200 with the same body instead of a 301; the canonical covers it, but a redirect would be cleaner (Vercel trailingSlash setting).
+- From earlier notes: market-cap run-up page definition (David), Polygon SLS coverage, GSK newsroom parser, ticker-hub row drug names.

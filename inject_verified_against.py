@@ -117,7 +117,7 @@ def main():
         block = line(r)
         # strip any earlier placement, then insert after the fact-first lede when one is present (the lede must sit
         # directly under the banner for test_decision_lede_fact_first), else directly after the banner.
-        doc0 = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
+        doc0 = re.sub(re.escape(B) + ".*?" + re.escape(E) + r"\s*", "", doc, flags=re.S)   # 2026-10-24: and the whitespace after it (newlines were accumulating, one per run, against build_decision_lede)
         m = re.search(r'<div class="ban (?:ap|cr|wd)[^"]*">.*?</div>\s*(?:<!--FACTLEDE:BEGIN-->.*?<!--FACTLEDE:END-->)?', doc0, re.S)
         if not m:
             continue

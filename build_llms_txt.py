@@ -105,8 +105,10 @@ sponsor's own release).
   date, **{f['t_on']}** on it and **{f['t_late']}** after. (/research/fda-decision-timing)
   The census is downloadable as CSV under CC BY 4.0, one row per decision with the goal day, FDA action
   day, announcement day, margin and the source URL of each date, versioned by row count:
-  /research/fda-decision-timing/fda-decision-timing-2026-v{f['t_n']}.csv. Cite as
-  "pdufa.bio, FDA decision timing 2026 (v{f['t_n']})".
+  /research/fda-decision-timing/fda-decision-timing-2026-v{f['t_n']}.csv (always-current copy:
+  /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
+  Cite as "pdufa.bio, FDA decision timing 2026 (v{f['t_n']})". The counts grow as decisions are added;
+  an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
 - Released FDA Complete Response Letters (openFDA): **{f['crl_total']}** letters, of which
   **{f['crl_approved']}** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)

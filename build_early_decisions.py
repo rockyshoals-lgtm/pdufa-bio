@@ -366,10 +366,15 @@ def main():
                         dd_.get("announcement") or dd_.get("decision_source") or "",
                         dd_.get("announcement_url") or dd_.get("decision_source_url") or "",
                         "https://www.pdufa.bio/fda-decision/" + r_["slug"], "CC BY 4.0 https://pdufa.bio"])
-    # stale vintages go, so the one link on the page is the one that matches the statistic
-    for old_ in glob.glob(os.path.join(SITE, "research", "fda-decision-timing", f"fda-decision-timing-{a.year}-v*.csv")):
-        if os.path.basename(old_) != csv_rel:
-            os.remove(old_)
+    # 2026-10-24 (AI-citation audit): earlier vintages were deleted when the census grew, so a citation of
+    # ".../fda-decision-timing-2026-v32.csv" (the 10-18 file, quoted by Bing's answer engine on 10-24) became a 404.
+    # Every vintage now stays where it was published, and a stable, unversioned alias always holds the latest rows.
+    import shutil as _sh
+    alias_rel = f"fda-decision-timing-{a.year}.csv"
+    _sh.copyfile(csv_path, os.path.join(SITE, "research", "fda-decision-timing", alias_rel))
+    vintages = sorted((os.path.basename(p_) for p_ in glob.glob(os.path.join(
+        SITE, "research", "fda-decision-timing", f"fda-decision-timing-{a.year}-v*.csv"))),
+        key=lambda s: int(re.search(r"-v(\d+)\.csv$", s).group(1)))
     ds_ld = {"@context": "https://schema.org", "@type": "Dataset",
              "name": f"FDA decision timing {a.year}: PDUFA goal date vs FDA action date ({ver})",
              "description": (f"{n} FDA decisions in {a.year} with a sponsor-disclosed PDUFA goal date and an FDA-recorded "
@@ -380,15 +385,22 @@ def main():
              "creator": {"@type": "Organization", "name": "pdufa.bio", "url": "https://www.pdufa.bio/"},
              "temporalCoverage": f"{a.year}-01-01/" + max(x["actual"] for x in rec),
              "variableMeasured": ["goal_date", "fda_action_date", "announcement_date", "margin_days", "outcome"],
-             "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
+             "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "name": f"latest ({ver})",
+                               "contentUrl": f"https://www.pdufa.bio/research/fda-decision-timing/{alias_rel}"},
+                              {"@type": "DataDownload", "encodingFormat": "text/csv", "name": ver,
                                "contentUrl": f"https://www.pdufa.bio/research/fda-decision-timing/{csv_rel}"}]}
+    older = [v_ for v_ in vintages if v_ != csv_rel]
     records = records + (
         f'<div class="note" style="margin:10px 0 0;padding:10px 12px;border:1px solid #1e3a63;border-radius:10px">'
         f'<b style="color:#e3ba5e">Download the census ({ver}, CSV, CC BY 4.0):</b> '
-        f'<a href="/research/fda-decision-timing/{csv_rel}">{csv_rel}</a>. {n} rows: goal date, FDA action date, '
+        f'<a href="/research/fda-decision-timing/{csv_rel}">{csv_rel}</a>, or the always-current '
+        f'<a href="/research/fda-decision-timing/{alias_rel}">{alias_rel}</a>. {n} rows: goal date, FDA action date, '
         f'announcement date, margin, outcome, and the source URL behind each date. Cite as "pdufa.bio, FDA decision '
-        f'timing {a.year} ({ver}), https://www.pdufa.bio/research/fda-decision-timing". The file is replaced when '
-        f'the census grows; the version in its name is the row count.</div>')
+        f'timing {a.year} ({ver}), https://www.pdufa.bio/research/fda-decision-timing". The version in a file\'s name '
+        f'is its row count; every earlier version stays at its own address'
+        + (": " + ", ".join(f'<a href="/research/fda-decision-timing/{v_}">{re.search(r"-(v\d+)\.csv$", v_).group(1)}</a>'
+                           for v_ in older) if older else "")
+        + '.</div>')
     jsonld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage",
                          "mainEntity": [{"@type": "Question", "name": q,
                                          "acceptedAnswer": {"@type": "Answer",
