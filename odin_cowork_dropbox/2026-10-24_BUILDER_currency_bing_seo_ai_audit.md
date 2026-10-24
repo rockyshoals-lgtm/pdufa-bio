@@ -22,7 +22,12 @@ Fixed:
 - **Old census CSV links were 404.** `build_early_decisions.py` deleted each vintage when the census grew, so the v32 file (cited in llms.txt and our 10-18 note, and the vintage Bing quotes) was gone. Every vintage now stays at its address (v32 restored from fb8a832), and a stable `fda-decision-timing-2026.csv` always holds the latest; the Dataset lists both, the page links the older versions. `/llms.txt` names the stable file and says an older copy quoting a smaller census is superseded.
 - After deploy: resubmit /calendar, the month pages and the timing page.
 
+## 5. Shipped and verified live
+6fd9560, run 40121742452 **success**: 153 guards, quarantine 0 held, purge ran, verifier PASS; and the churn is gone: "verified-against line: 0 written", "decision ledes: 0 page(s) updated" (both were 52 every run), "calendar month titles: 0 written" on the second pass; NewsArticle 67 written (pages whose content date moved today, the expected case, not 369). Live: v32 CSV 200 (32 rows), v35 200 (35), stable fda-decision-timing-2026.csv 200 (35); /calendar/2026/november "November 2026 PDUFA Calendar: 13 FDA Decision Dates"; Hibsago cites the NDA 221276 letter with no "not yet posted" text; REGN-2025-04-18's article headline "Dupixent Approved Apr 18, 2025"; llms.txt names the stable CSV. No issue open.
+Bing resubmission (run 40124517096, 10 URLs incl. /calendar, three month pages, the timing page and CSV): IndexNow all engines 200, Bing direct 200; **SubmitUrlBatch 400, daily quota of 100 used** (the nightly CI ping spends it). IndexNow is the channel that went through today.
+
 ## Carried
+- SubmitUrlBatch quota: the nightly ping uses all 100; an on-demand submission late in the day gets nothing. Reserve ~15 for on-demand, or let the nightly ping skip URLs already submitted in the past 7 days.
 - Bing's /calendar copy is 10 days old; watch whether the resubmission moves it (the page is 85 KB with a 10 KB ItemList; nothing technical blocks it: 200, self canonical, index, in the sitemap with today's lastmod).
 - /calendar/ (trailing slash) serves 200 with the same body instead of a 301; the canonical covers it, but a redirect would be cleaner (Vercel trailingSlash setting).
 - From earlier notes: market-cap run-up page definition (David), Polygon SLS coverage, GSK newsroom parser, ticker-hub row drug names.
