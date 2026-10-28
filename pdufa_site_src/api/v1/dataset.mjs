@@ -1576,7 +1576,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "15 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
+    "searched": "16 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
    }
   },
   "dm": "2026-07"
@@ -1694,7 +1694,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
+    "searched": "5 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
    }
   },
   "dm": "2026-07"
@@ -1807,7 +1807,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "39 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
+    "searched": "40 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
    }
   },
   "dm": "2026-07"
@@ -1903,7 +1903,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
+    "searched": "9 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
    }
   },
   "dm": "2026-07"
@@ -2226,7 +2226,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "20 sponsor press releases (FMP) through 2026-10-27"
+    "searched": "22 sponsor press releases (FMP) through 2026-10-27"
    }
   },
   "dm": "2026-07"
@@ -3601,7 +3601,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3713,7 +3713,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4013,7 +4013,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4216,7 +4216,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "8 sponsor press releases (FMP) through 2026-10-27"
+    "searched": "9 sponsor press releases (FMP) through 2026-10-27"
    }
   },
   "dm": "2026-09"
@@ -4969,7 +4969,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-27",
-    "searched": "4 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
+    "searched": "5 sponsor press releases (FMP) through 2026-10-27; ClinicalTrials.gov 2026-10-27"
    }
   },
   "dm": "2026-09"
@@ -5230,7 +5230,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5336,7 +5336,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5463,7 +5463,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5593,7 +5593,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6507,7 +6507,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6528,7 +6528,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6549,7 +6549,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -7399,7 +7399,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7435,7 +7435,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7492,7 +7492,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7513,7 +7513,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ESMO",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7827,7 +7827,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7863,7 +7863,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7899,7 +7899,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7935,7 +7935,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7956,7 +7956,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7977,7 +7977,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -8031,7 +8031,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CYTK-aficamten",
-  "ua": "2026-10-27T17:34:28Z",
+  "ua": "2026-10-28T00:09:51Z",
   "_d": {
    "nct_id": null,
    "indication": "Non-obstructive hypertrophic cardiomyopathy",
@@ -8064,11 +8064,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/SMMT-ivonescimab",
-  "ua": "2026-10-27T17:34:28Z",
+  "ua": "2026-10-28T00:09:51Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 12341186342.94,
+   "market_cap_usd": 11567369229.0,
    "cash_runway_months": 19.0,
    "days_to_decision": 127,
    "cohort_move_median_pct": 0.0,
@@ -8097,7 +8097,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8393,12 +8393,12 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/NVCR-ttfields-therapy",
-  "ua": "2026-10-27T17:34:28Z",
+  "ua": "2026-10-28T00:09:51Z",
   "_d": {
    "review": "PMA under FDA review; company guides decision in Q4 2026",
    "note": "device PMA, not a PDUFA goal date; date is the quarter midpoint, shown at quarter precision",
    "indication": "Brain metastases from non-small cell lung cancer (PMA, Breakthrough Device)",
-   "market_cap_usd": 1758332184.0,
+   "market_cap_usd": 1676820096.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001645113/000164511326000043/nvcr-20260331xpr.htm",
    "source": "company filing (SEC)"
   },
@@ -8578,7 +8578,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8607,7 +8607,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8703,11 +8703,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-10-27T17:34:28Z",
+  "ua": "2026-10-28T00:09:51Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
-   "market_cap_usd": 867041263.3,
+   "market_cap_usd": 928679267.8,
    "cash_runway_months": 22.8,
    "days_to_decision": 135,
    "cohort_move_median_pct": 0.0,
@@ -8736,11 +8736,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-10-27T17:34:28Z",
+  "ua": "2026-10-28T00:09:51Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
-   "market_cap_usd": 13402999874.32,
+   "market_cap_usd": 13322847745.550001,
    "cash_runway_months": 25.4,
    "days_to_decision": 140,
    "cohort_move_median_pct": 0.0,
@@ -9087,7 +9087,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -9108,7 +9108,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9129,7 +9129,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9191,7 +9191,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9212,7 +9212,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -11813,7 +11813,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11906,7 +11906,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -11973,7 +11973,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12514,7 +12514,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12789,7 +12789,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12810,7 +12810,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13238,7 +13238,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13259,7 +13259,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13280,11 +13280,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-10-27T17:34:28Z",
+  "ua": "2026-10-28T00:09:51Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 13402999874.32,
+   "market_cap_usd": 13322847745.550001,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
    "source": "company filing (SEC)"
   }
@@ -13301,7 +13301,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13504,7 +13504,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13525,7 +13525,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13546,7 +13546,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13941,7 +13941,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13962,7 +13962,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-27T18:05:17Z",
+  "ua": "2026-10-28T00:57:23Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
