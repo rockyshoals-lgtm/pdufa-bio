@@ -1,7 +1,7 @@
 {
  "held_since": "2026-10-28T16:43:13Z",
- "consecutive_held_runs": 1,
- "emailed_at": null,
+ "consecutive_held_runs": 2,
+ "emailed_at": "2026-10-28T18:14:42Z",
  "leads": [
   {
    "source": "edgar_8k",
