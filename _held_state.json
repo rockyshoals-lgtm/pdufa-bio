@@ -1,13 +1,22 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-10-28T16:43:13Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "edgar_8k",
+   "row_id": "pdufa_nuvl_2026-11-27",
+   "key": "pdufa_nuvl_2026-11-27|0001654954-26-009181",
+   "text": "6-K 2026-10-28 [Neladalkib] This included acceleration in work on ADCs Ris-Rez and Mo-Rez, progress on velzatinib for GIST and, following the Nuvalent acquisition, on Jideytro (zidesamtinib), approved by the FDA in the quarter,  https://www.sec.gov/Archives/edgar/data/1131399/000165495426009181/a6993a.htm",
+   "first_seen": "2026-10-28T16:43:13Z"
+  }
+ ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
+  "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
