@@ -1,8 +1,15 @@
 {
  "held_since": "2026-10-28T16:43:13Z",
- "consecutive_held_runs": 2,
+ "consecutive_held_runs": 3,
  "emailed_at": "2026-10-28T18:14:42Z",
  "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:ultomiris",
+   "key": "ultomiris|openfda:20261021",
+   "text": "/drug/ultomiris openfda:20261021 AP 20261021 (SUPPL-46, class EFFICACY)",
+   "first_seen": "2026-10-29T01:03:55Z"
+  },
   {
    "source": "edgar_8k",
    "row_id": "pdufa_nuvl_2026-11-27",
@@ -16,6 +23,7 @@
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
+  "drug_pages|ultomiris|openfda:20261021",
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
