@@ -1,6 +1,6 @@
 {
  "held_since": "2026-10-28T16:43:13Z",
- "consecutive_held_runs": 3,
+ "consecutive_held_runs": 4,
  "emailed_at": "2026-10-28T18:14:42Z",
  "leads": [
   {
@@ -16,6 +16,13 @@
    "key": "pdufa_nuvl_2026-11-27|0001654954-26-009181",
    "text": "6-K 2026-10-28 [Neladalkib] This included acceleration in work on ADCs Ris-Rez and Mo-Rez, progress on velzatinib for GIST and, following the Nuvalent acquisition, on Jideytro (zidesamtinib), approved by the FDA in the quarter,  https://www.sec.gov/Archives/edgar/data/1131399/000165495426009181/a6993a.htm",
    "first_seen": "2026-10-28T16:43:13Z"
+  },
+  {
+   "source": "edgar_8k",
+   "row_id": "pdufa_nvcr_2026-11-15",
+   "key": "pdufa_nvcr_2026-11-15|0001645113-26-000081",
+   "text": "8-K 2026-10-29 [Optune] Optune Gio is a wearable, portable, FDA-approved device indicated to treat a type of brain cancer called glioblastoma multiforme (GBM) in adult patients 22 years of age or older. https://www.sec.gov/Archives/edgar/data/1645113/000164511326000081/nvcr-20260930xpr.htm",
+   "first_seen": "2026-10-29T16:41:21Z"
   }
  ],
  "issued_keys": [
@@ -25,6 +32,7 @@
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
+  "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000081",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"

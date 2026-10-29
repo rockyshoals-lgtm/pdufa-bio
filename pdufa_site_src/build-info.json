@@ -1,12 +1,12 @@
 {
- "built": "2026-10-29T01:16:30+00:00",
- "data_built_at": "2026-10-29T01:16:30+00:00",
- "commit": "131d281f7",
- "commit_at_build": "131d281f7",
- "as_of_eastern": "2026-10-28",
+ "built": "2026-10-29T16:54:37+00:00",
+ "data_built_at": "2026-10-29T16:54:37+00:00",
+ "commit": "734d90230",
+ "commit_at_build": "734d90230",
+ "as_of_eastern": "2026-10-29",
  "next_date": "2026-10-30",
  "next_ticker": "INO",
- "next_days": 2,
+ "next_days": 1,
  "next_status": "upcoming",
  "days_since_goal": null,
  "held_since": "2026-10-28T16:43:13Z",
@@ -20,6 +20,11 @@
    "row_id": "pdufa_nuvl_2026-11-27",
    "source": "edgar_8k",
    "first_seen": "2026-10-28T16:43:13Z"
+  },
+  {
+   "row_id": "pdufa_nvcr_2026-11-15",
+   "source": "edgar_8k",
+   "first_seen": "2026-10-29T16:41:21Z"
   }
  ]
 }
