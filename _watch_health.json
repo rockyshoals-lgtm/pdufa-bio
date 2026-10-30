@@ -17,7 +17,7 @@
  },
  "edgar_8k": {
   "blind": [],
-  "filings_read": 12,
+  "filings_read": 16,
   "last_attempt": "2026-10-29",
   "last_ok": "2026-10-29",
   "sponsors_read": 20
