@@ -1,15 +1,8 @@
 {
  "held_since": "2026-10-28T16:43:13Z",
- "consecutive_held_runs": 6,
+ "consecutive_held_runs": 7,
  "emailed_at": "2026-10-28T18:14:42Z",
  "leads": [
-  {
-   "source": "drug_pages",
-   "row_id": "drug:ultomiris",
-   "key": "ultomiris|openfda:20261021",
-   "text": "/drug/ultomiris openfda:20261021 AP 20261021 (SUPPL-46, class EFFICACY)",
-   "first_seen": "2026-10-29T01:03:55Z"
-  },
   {
    "source": "edgar_8k",
    "row_id": "pdufa_nuvl_2026-11-27",
