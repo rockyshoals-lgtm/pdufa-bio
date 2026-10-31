@@ -1,14 +1,49 @@
 {
  "held_since": "2026-10-28T16:43:13Z",
- "consecutive_held_runs": 8,
+ "consecutive_held_runs": 9,
  "emailed_at": "2026-10-28T18:14:42Z",
  "leads": [
+  {
+   "source": "fda_press",
+   "row_id": "pdufa_ino_2026-10-30",
+   "key": "press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+   "text": "Fri, 30 Oct 2026 'FDA Approves First Plasmid DNA-based Immunotherapy for Adults with Recurrent Respiratory Papillomatosis' http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
+   "source": "edgar",
+   "row_id": "pdufa_btai_2026-11-14",
+   "key": "edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
+   "text": "8-K filed 2026-10-30 states an approval of 'dexmedetomidine' https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:european-respiratory",
+   "key": "european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
+   "text": "/drug/european-respiratory fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re 'respiratory' appears with approval language",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:european-respiratory",
+   "key": "european-respiratory|sponsor:INO:2026-10-30",
+   "text": "/drug/european-respiratory sponsor:INO:2026-10-30 'respiratory' appears with approval language",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
   {
    "source": "drug_pages",
    "row_id": "drug:ultomiris",
    "key": "ultomiris|openfda:20261021",
    "text": "/drug/ultomiris openfda:20261021 AP 20261021 (SUPPL-46, class EFFICACY)",
    "first_seen": "2026-10-30T18:05:53Z"
+  },
+  {
+   "source": "sponsor_feed",
+   "row_id": "pdufa_ino_2026-10-30",
+   "key": "pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
+   "text": "[decision] 2026-10-30 \"INOVIO Announces FDA Accelerated Approval of VOCERYQ™, an Immunotherapy to Reduce the Frequency of Surgery in Adults with Recurrent Respiratory Papillomatosis (\" [immunotherapy] https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatos",
+   "first_seen": "2026-10-31T00:50:56Z"
   },
   {
    "source": "edgar_8k",
@@ -27,14 +62,19 @@
  ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
+  "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
+  "drug_pages|european-respiratory|sponsor:INO:2026-10-30",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000081",
+  "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+  "fda_press|press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+  "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
  "last_clear_run": "2026-10-20T05:38:53Z",

@@ -1,8 +1,8 @@
 {
- "built": "2026-10-30T18:18:42+00:00",
- "data_built_at": "2026-10-30T18:18:42+00:00",
- "commit": "c9d9c93b5",
- "commit_at_build": "c9d9c93b5",
+ "built": "2026-10-31T01:06:20+00:00",
+ "data_built_at": "2026-10-31T01:06:20+00:00",
+ "commit": "927b2785f",
+ "commit_at_build": "927b2785f",
  "as_of_eastern": "2026-10-30",
  "next_date": "2026-10-30",
  "next_ticker": "INO",
@@ -12,9 +12,34 @@
  "held_since": "2026-10-28T16:43:13Z",
  "held_leads": [
   {
+   "row_id": "pdufa_ino_2026-10-30",
+   "source": "fda_press",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
+   "row_id": "pdufa_btai_2026-11-14",
+   "source": "edgar",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
+   "row_id": "drug:european-respiratory",
+   "source": "drug_pages",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
+   "row_id": "drug:european-respiratory",
+   "source": "drug_pages",
+   "first_seen": "2026-10-31T00:50:56Z"
+  },
+  {
    "row_id": "drug:ultomiris",
    "source": "drug_pages",
    "first_seen": "2026-10-30T18:05:53Z"
+  },
+  {
+   "row_id": "pdufa_ino_2026-10-30",
+   "source": "sponsor_feed",
+   "first_seen": "2026-10-31T00:50:56Z"
   },
   {
    "row_id": "pdufa_nuvl_2026-11-27",
