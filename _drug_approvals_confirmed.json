@@ -91,6 +91,18 @@
    "date": "2026-10-20",
    "brand": "Hibsago",
    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-its-kind-chronic-hepatitis-b-treatment"
+  },
+  {
+   "slug": "ultomiris",
+   "date": "2026-10-21",
+   "brand": "Ultomiris",
+   "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761108"
+  },
+  {
+   "slug": "voceryq",
+   "date": "2026-10-30",
+   "brand": "Voceryq",
+   "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis"
   }
  ]
 }

@@ -41,6 +41,24 @@
    "source": "sponsor:GSK:2026-10-20",
    "acked": "2026-10-21",
    "reason": "REAL: Hibsago approved 2026-10-20; published as /fda-decision/GSK-2026-10-20 and recorded in _drug_approvals_confirmed.json."
+  },
+  {
+   "slug": "ultomiris",
+   "source": "openfda:20261021",
+   "reason": "REAL: IgAN approval 2026-10-21, published as AZN-2026-10-21.",
+   "acked": "2026-11-01"
+  },
+  {
+   "slug": "european-respiratory",
+   "source": "fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
+   "reason": "Not a drug: conference name; page removed 2026-11-01. The match is INO's Voceryq approval.",
+   "acked": "2026-11-01"
+  },
+  {
+   "slug": "european-respiratory",
+   "source": "sponsor:INO:2026-10-30",
+   "reason": "Not a drug: conference name; page removed 2026-11-01.",
+   "acked": "2026-11-01"
   }
  ]
 }

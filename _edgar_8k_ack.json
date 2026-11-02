@@ -1,0 +1,8 @@
+{
+ "note": "Reviewed EDGAR 8-K/6-K hits. Key row_id|accession. Each with its reason in apply_*.py.",
+ "acked": [
+  "pdufa_nuvl_2026-11-27|0001654954-26-009181",
+  "pdufa_nvcr_2026-11-15|0001645113-26-000081",
+  "pdufa_azn_2026-12-31|0001654954-26-009093"
+ ]
+}

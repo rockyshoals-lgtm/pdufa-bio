@@ -2168,6 +2168,11 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/BTAI-igalmi",
+   "destination": "/pdufa/TEVA-igalmi",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2268,6 +2273,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/bictegravir-and",
+   "destination": "/drug/bictegravir",
+   "permanent": true
+  },
+  {
    "source": "/drug/brentuximab-vedotin",
    "destination": "/drug/adcetris",
    "permanent": true
@@ -2275,6 +2285,11 @@
   {
    "source": "/drug/buprenorphine-extended-release",
    "destination": "/drug/sublocade",
+   "permanent": true
+  },
+  {
+   "source": "/drug/calquence-plus",
+   "destination": "/drug/calquence",
    "permanent": true
   },
   {
@@ -2448,6 +2463,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/gedatolisib-with",
+   "destination": "/drug/gedatolisib",
+   "permanent": true
+  },
+  {
    "source": "/drug/gemcitabine-intravesical-system",
    "destination": "/drug/inlexzo",
    "permanent": true
@@ -2488,6 +2508,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/keytruda-and",
+   "destination": "/drug/keytruda",
+   "permanent": true
+  },
+  {
    "source": "/drug/lebrikizumab-lbkz",
    "destination": "/drug/ebglyss",
    "permanent": true
@@ -2500,6 +2525,11 @@
   {
    "source": "/drug/lenacapavir",
    "destination": "/drug/yeztugo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lifileucel-plus",
+   "destination": "/drug/lifileucel",
    "permanent": true
   },
   {
@@ -2590,6 +2620,11 @@
   {
    "source": "/drug/onasemnogene-abeparvovec-brve",
    "destination": "/drug/itvisma",
+   "permanent": true
+  },
+  {
+   "source": "/drug/opdivo-in",
+   "destination": "/drug/opdivo",
    "permanent": true
   },
   {

@@ -1,0 +1,62 @@
+[
+ {
+  "ticker": "INO",
+  "date": "2026-10-30",
+  "fda_action_date": "2026-10-30",
+  "outcome": "Approved",
+  "drug": "Voceryq (INO-3107)",
+  "indication": "Adults with recurrent respiratory papillomatosis (accelerated approval)",
+  "company": "INOVIO Pharmaceuticals",
+  "cap": "Micro",
+  "headline": "The FDA granted accelerated approval to Voceryq, the first plasmid DNA-based immunotherapy approved in the U.S., to reduce the frequency of surgery in adults with recurrent respiratory papillomatosis. Continued approval depends on confirmatory trials.",
+  "pdufa_note": "The FDA's press announcement of October 30, 2026 states that the agency granted accelerated approval that day to Voceryq (doruxapapogene ralaplasmid and lalikinogene sifuplasmid-gxfd) for adults with recurrent respiratory papillomatosis (RRP) (<a href=\"https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA, October 30, 2026</a>). INOVIO announced it the same day (<a href=\"https://www.prnewswire.com/news-releases/inovio-announces-fda-accelerated-approval-of-voceryq-an-immunotherapy-to-reduce-the-frequency-of-surgery-in-adults-with-recurrent-respiratory-papillomatosis-rrp-302925406.html\" rel=\"noopener\" style=\"color:#e3ba5e\">INOVIO's announcement</a>). The goal date was October 30, 2026 (INOVIO 8-K, May 13, 2026), so the decision came on the goal date. Per the FDA, the accelerated approval rests on a reduction in the frequency of surgical procedures needed to remove papillomas, an intermediate endpoint reasonably likely to predict clinical benefit, and the manufacturer must run post-approval trials to verify it. Voceryq is reviewed by CBER, so it has no Drugs@FDA record; the FDA's announcement is the FDA record of the action day. INOVIO says it expects to make Voceryq available to order in about 60 days, with full commercial launch in the first quarter of 2027.",
+  "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+  "source_label": "FDA press announcement, October 30, 2026",
+  "h1": "Voceryq (INO-3107) <span class=\"g\">FDA approval for recurrent respiratory papillomatosis</span>: Oct 30, 2026"
+ },
+ {
+  "ticker": "AZN",
+  "date": "2026-10-21",
+  "fda_action_date": "2026-10-21",
+  "outcome": "Approved",
+  "drug": "Ultomiris (ravulizumab)",
+  "indication": "Adults with primary IgA nephropathy at risk of disease progression (accelerated approval)",
+  "company": "AstraZeneca (Alexion)",
+  "cap": "Large",
+  "headline": "Ultomiris was approved in the U.S. to reduce proteinuria in adults with primary IgA nephropathy at risk of disease progression, under accelerated approval based on proteinuria reduction in the ongoing Phase III I CAN trial.",
+  "pdufa_note": "Drugs@FDA records BLA 761108 supplement 46 (efficacy) for Ultomiris as approved on October 21, 2026 (<a href=\"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;ApplNo=761108\" rel=\"noopener\" style=\"color:#e3ba5e\">Drugs@FDA</a>). AstraZeneca announced it in a 6-K on October 22, 2026 (<a href=\"https://www.sec.gov/Archives/edgar/data/901832/000165495426009093/a9580z.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">AstraZeneca 6-K</a>): the indication is approved under accelerated approval based on reduction of proteinuria, and it has not been established whether Ultomiris slows kidney function decline. Continued approval may be contingent on the ongoing I CAN Phase III trial, whose primary endpoint is change in eGFR at week 106; the pre-specified interim analysis showed a 43.4% reduction in proteinuria versus placebo at 34 weeks. AstraZeneca stated no goal date for this application, so no early or late margin is published; this calendar had carried it as a December 2026 row with no source.",
+  "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761108",
+  "source_label": "Drugs@FDA, BLA 761108 S-046",
+  "h1": "Ultomiris (ravulizumab) <span class=\"g\">FDA approval for IgA nephropathy</span>: Oct 21, 2026"
+ },
+ {
+  "ticker": "LLY",
+  "date": "2026-08-27",
+  "fda_action_date": "2026-08-27",
+  "outcome": "Approved",
+  "drug": "Mounjaro (tirzepatide)",
+  "indication": "Reduce the risk of major adverse cardiovascular events in adults with type 2 diabetes and established cardiovascular disease (SURPASS-CVOT)",
+  "company": "Eli Lilly",
+  "cap": "Large",
+  "headline": "The FDA approved a new Mounjaro indication to reduce the risk of major adverse cardiovascular events, based on the SURPASS-CVOT trial comparing tirzepatide with dulaglutide.",
+  "pdufa_note": "The FDA's letter for NDA 215866 supplements 44 and 45 is dated August 27, 2026 (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s044,215866Orig1s045ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>). It approves updates to the prescribing information based on trial I8F-MC-GPGN (SURPASS-CVOT), the effect of tirzepatide versus dulaglutide on major adverse cardiovascular events in patients with type 2 diabetes, including a new indication to reduce the risk of major adverse cardiovascular events (cardiovascular death, non-fatal myocardial infarction or non-fatal stroke). Lilly stated no goal date for this supplement, so no early or late margin is published. This calendar carried the application as a pending \"Q4 2026 (est.)\" row with no source until a review on November 1, 2026; it is recorded here from the FDA's own letter.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s044,215866Orig1s045ltr.pdf",
+  "source_label": "FDA approval letter, NDA 215866 S-044/S-045",
+  "h1": "Mounjaro (tirzepatide) <span class=\"g\">FDA approval for cardiovascular risk reduction</span>: Aug 27, 2026"
+ },
+ {
+  "ticker": "NVS",
+  "date": "2026-07-31",
+  "fda_action_date": "2026-07-31",
+  "outcome": "Approved",
+  "drug": "Pluvicto (lutetium Lu 177 vipivotide tetraxetan)",
+  "indication": "With an androgen receptor pathway inhibitor, adults with PSMA-positive metastatic androgen pathway modulation-naive or -sensitive prostate cancer",
+  "company": "Novartis",
+  "cap": "Large",
+  "headline": "The FDA approved Pluvicto in combination with an androgen receptor pathway inhibitor for PSMA-positive metastatic prostate cancer that is androgen pathway modulation-naive or -sensitive, extending its use to an earlier stage of the disease.",
+  "pdufa_note": "Drugs@FDA records NDA 215833 supplement 37 (efficacy) for Pluvicto as approved on July 31, 2026, with the FDA's letter and the revised label posted (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215833Orig1s037ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>, <a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215833s037lbl.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">label</a>). The label's new section 1.1 indicates Pluvicto in combination with androgen receptor pathway inhibitor therapy for adults with PSMA-positive metastatic androgen pathway modulation-naive or -sensitive (mAPMN/S) prostate cancer. Novartis stated no goal date for this supplement, so no early or late margin is published. This calendar carried the application as a pending \"Q4 2026 (est.)\" row with no source until a review on November 1, 2026; it is recorded here from the FDA's own record.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215833Orig1s037ltr.pdf",
+  "source_label": "FDA approval letter, NDA 215833 S-037",
+  "h1": "Pluvicto <span class=\"g\">FDA approval for hormone-sensitive metastatic prostate cancer</span>: Jul 31, 2026"
+ }
+]

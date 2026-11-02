@@ -43,7 +43,7 @@ export default [
     "primary_completion": "2023-09-19",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": "2025-03-12",
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT03005418"
    },
    "resolution": {
@@ -98,7 +98,7 @@ export default [
     "primary_completion": "2025-05-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06146101"
    },
    "resolution": {
@@ -141,7 +141,7 @@ export default [
     "primary_completion": "2026-03-31",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05486468"
    },
    "date_history": [
@@ -188,7 +188,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-10-30, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-11-01, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -206,7 +206,7 @@ export default [
     "primary_completion": "2026-04-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06374797"
    }
   },
@@ -244,7 +244,7 @@ export default [
     "primary_completion": "2026-04-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT03037164"
    },
    "date_history": [
@@ -309,7 +309,7 @@ export default [
     "primary_completion": "2026-04-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05726864"
    },
    "resolution": {
@@ -390,7 +390,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-10-30, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-11-01, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-10-15",
@@ -409,7 +409,7 @@ export default [
     "primary_completion": "2026-04-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05747794"
    }
   },
@@ -446,7 +446,7 @@ export default [
     "primary_completion": "2026-05-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06079190"
    },
    "date_history": [
@@ -460,7 +460,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT06079190 is now 2026-05-14 (actual; registry status terminated, record updated 2026-09-14); the row's window moved from 2026-09 to 2026-05 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-10-30, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-11-01, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-05"
  },
@@ -495,7 +495,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05611931"
    },
    "date_history": [
@@ -548,7 +548,7 @@ export default [
     "primary_completion": "2026-05-28",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06641076"
    },
    "date_history": [
@@ -598,7 +598,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-10-30, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-11-01, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -617,7 +617,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06470451"
    }
   },
@@ -665,7 +665,7 @@ export default [
     "primary_completion": "2026-06-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05843578"
    },
    "resolution": {
@@ -708,13 +708,66 @@ export default [
     "primary_completion": "2026-06-15",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06810167"
    },
    "resolution": {
     "state": "no_topline",
     "checked": "2026-10-30",
     "searched": "60 sponsor press releases (FMP) through 2026-10-30; ClinicalTrials.gov 2026-10-30"
+   }
+  },
+  "dm": "2026-06"
+ },
+ {
+  "id": "readout_avir_2026-09-15",
+  "t": "AVIR",
+  "company": "Atea Pharmaceuticals, Inc.",
+  "d": "2026-06-15",
+  "dp": "month",
+  "name": "Bemnifosbuvir-Ruzasvir",
+  "type": "Readout",
+  "ta": "Infectious",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT06868264",
+  "ua": "2026-10-29T16:41:43Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT06868264",
+    "status": "completed",
+    "pcd": "2026-06-18",
+    "pcd_type": "actual",
+    "updated": "2026-10-27",
+    "ongoing": false
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06868264",
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-10-30",
+    "searched": "3 sponsor press releases (FMP) through 2026-10-30; ClinicalTrials.gov 2026-10-30"
+   },
+   "date_history": [
+    {
+     "date": "2026-09-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-06-15",
+     "changed": "2026-10-29",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06868264 is now 2026-06-18 (actual; registry status completed, record updated 2026-10-27); the row's window moved from 2026-09 to 2026-06 on 2026-10-29. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "COMPLETED",
+    "primary_completion": "2026-06-18",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-11-01",
+    "source_url": "https://clinicaltrials.gov/study/NCT06868264"
    }
   },
   "dm": "2026-06"
@@ -848,7 +901,7 @@ export default [
     "primary_completion": "2026-06-02",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05864144"
    },
    "resolution": {
@@ -962,7 +1015,7 @@ export default [
     "primary_completion": "2026-06-25",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT07108153"
    },
    "resolution": {
@@ -1031,7 +1084,7 @@ export default [
     "primary_completion": "2026-06-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT07036029"
    },
    "resolution": {
@@ -1080,7 +1133,10 @@ export default [
    },
    "fda_action_date": "2026-06-17",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215960Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 215960 ORIG-1"
+   "fda_action_record": "NDA 215960 ORIG-1",
+   "source": "Spero 8-K 2026-05-13 (EX-99.1, reporting GSK's announcement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526221567/d147628dex991.htm",
+   "source_quote": "the U.S. Food and Drug Association (FDA) set the Prescription Drug User Fee Act (PDUFA) date ... as June 18, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-06-17"
@@ -1123,7 +1179,10 @@ export default [
    },
    "fda_action_date": "2026-06-17",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215960Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 215960 ORIG-1"
+   "fda_action_record": "NDA 215960 ORIG-1",
+   "source": "Spero 8-K 2026-05-13 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526221567/d147628dex991.htm",
+   "source_quote": "the U.S. Food and Drug Association (FDA) set the Prescription Drug User Fee Act (PDUFA) date ... as June 18, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-06-17"
@@ -1169,7 +1228,10 @@ export default [
    "decision_source_url": "https://download.open.fda.gov/crl/CRL_NDA218995_20260620_Redacted.pdf",
    "decision_date_note": "2026-06-22 is the company's announcement date; the FDA's letter is dated 2026-06-20.",
    "fda_action_source_url": "https://download.open.fda.gov/crl/CRL_NDA218995_20260620_Redacted.pdf",
-   "fda_action_record": "CRL letter CRL_NDA218995_20260620_Redacted"
+   "fda_action_record": "CRL letter CRL_NDA218995_20260620_Redacted",
+   "source": "Achieve 10-Q 2026-05-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/949858/000119312526218177/achv-20260331.htm",
+   "source_quote": "assigned a Prescription Drug User Fee Act, or PDUFA, targeted action date of June 20, 2026."
   },
   "oc": "CRL",
   "dcd": "2026-06-22"
@@ -1308,7 +1370,10 @@ export default [
    "decision_source_url": "https://download.open.fda.gov/crl/CRL_NDA218607_20260629.pdf",
    "decision_date_note": "2026-06-30 is the company's announcement date; the FDA's letter is dated 2026-06-29.",
    "fda_action_source_url": "https://download.open.fda.gov/crl/CRL_NDA218607_20260629.pdf",
-   "fda_action_record": "CRL letter CRL_NDA218607_20260629"
+   "fda_action_record": "CRL letter CRL_NDA218607_20260629",
+   "source": "Unicycive 8-K 2026-05-12 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1766140/000121390026054736/ea029027701ex99-1.htm",
+   "source_quote": "with a Prescription Drug User Fee Act (PDUFA) target action date of June 29, 2026"
   },
   "oc": "CRL",
   "dcd": "2026-06-30"
@@ -1533,7 +1598,10 @@ export default [
    ],
    "fda_action_date": "2026-03-25",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220641Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220641 ORIG-1"
+   "fda_action_record": "NDA 220641 ORIG-1",
+   "source": "Corcept 8-K 2026-02-24 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026011080/cort022426ex991pressrelease.htm",
+   "source_quote": "has a Prescription Drug User Fee Act (PDUFA) date of July 11, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-03-25"
@@ -1570,7 +1638,7 @@ export default [
     "primary_completion": "2026-07-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05583227"
    },
    "resolution": {
@@ -1612,7 +1680,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06553547"
    },
    "resolution": {
@@ -1688,7 +1756,7 @@ export default [
     "primary_completion": "2026-07-16",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06736717"
    },
    "resolution": {
@@ -1801,7 +1869,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06668064"
    },
    "resolution": {
@@ -1844,7 +1912,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT01983241"
    },
    "date_history": [
@@ -1897,7 +1965,7 @@ export default [
     "primary_completion": "2026-07-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT04724369"
    },
    "resolution": {
@@ -1993,7 +2061,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-10-30, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-11-01, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-08-15",
@@ -2012,7 +2080,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06736262"
    }
   },
@@ -2061,7 +2129,7 @@ export default [
     "primary_completion": "2026-07-08",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06162728"
    },
    "resolution": {
@@ -2194,7 +2262,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05166161"
    },
    "resolution": {
@@ -2288,7 +2356,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05297903"
    },
    "date_history": [
@@ -2382,7 +2450,10 @@ export default [
    },
    "fda_action_date": "2026-07-14",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219908Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 219908 ORIG-1"
+   "fda_action_record": "NDA 219908 ORIG-1",
+   "source": "Celcuity 8-K 2026-06-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1603454/000149315226026761/form8-k.htm",
+   "source_quote": "assigned a Prescription Drug User Fee Act (\"PDUFA\") goal date of July 17, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-07-14"
@@ -2456,7 +2527,10 @@ export default [
    },
    "fda_action_date": "2026-07-23",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209988Orig1s007correctedltr.pdf",
-   "fda_action_record": "NDA 209988 S-007"
+   "fda_action_record": "NDA 209988 S-007",
+   "source": "MannKind 8-K 2026-05-06 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/899460/000119312526208910/mnkd-ex99_1.htm",
+   "source_quote": "Furoscix ReadyFlow Autoinjector PDUFA target action date of July 26, 2026"
   },
   "oc": "Approved",
   "dcd": "2026-07-24"
@@ -2551,7 +2625,10 @@ export default [
    },
    "fda_action_date": "2026-07-24",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761320Orig1s000ltr.pdf",
-   "fda_action_record": "BLA 761320 ORIG-1"
+   "fda_action_record": "BLA 761320 ORIG-1",
+   "source": "Outlook Therapeutics 8-K 2026-06-16 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926074346/tm2618010d1_ex99-1.htm",
+   "source_quote": "The FDA set a Prescription Drug User Fee Act (PDUFA) goal date of July 29, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-07-24"
@@ -2614,7 +2691,10 @@ export default [
    },
    "fda_action_date": "2026-07-28",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219990Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 219990 ORIG-1"
+   "fda_action_record": "NDA 219990 ORIG-1",
+   "source": "Viatris 8-K 2026-02-26 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000010/exhibit991-4q25earningsrel.htm",
+   "source_quote": "the FDA has assigned a PDUFA goal date of July 30, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-07-29"
@@ -2641,7 +2721,10 @@ export default [
    "adcomm": "CTGTAC 2026-07-30, voted 10-3 favorable",
    "fda_action_date": "2026-08-06",
    "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-vusolimogene-oderparepvec-wtpg-combination-nivolumab-melanoma",
-   "fda_action_record": "CBER accelerated approval notice"
+   "fda_action_record": "CBER accelerated approval notice",
+   "source": "Replimune 8-K 2026-07-31 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926088857/tm2621708d1_ex99-1.htm",
+   "source_quote": "The FDA's target action date under the Class 1 resubmission is August 2, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-08-06"
@@ -2853,7 +2936,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06901505"
    },
    "resolution": {
@@ -2906,7 +2989,7 @@ export default [
     "primary_completion": "2026-08-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT07027527"
    },
    "resolution": {
@@ -2948,7 +3031,7 @@ export default [
     "primary_completion": "2026-08-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT05643534"
    },
    "date_history": [
@@ -3002,7 +3085,7 @@ export default [
     "primary_completion": "2026-08-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06847191"
    },
    "resolution": {
@@ -3268,7 +3351,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06052059"
    },
    "resolution": {
@@ -3357,7 +3440,10 @@ export default [
    },
    "fda_action_date": "2026-08-13",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221075Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 221075 ORIG-1"
+   "fda_action_record": "NDA 221075 ORIG-1",
+   "source": "Bristol Myers Squibb 10-Q 2026-07-30",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000020/bmy-20260630.htm",
+   "source_quote": "FDA acceptance of our NDA for iberdomide in RRMM with a PDUFA date of August 17, 2026"
   },
   "oc": "Approved",
   "dcd": "2026-08-13"
@@ -3425,7 +3511,10 @@ export default [
    },
    "fda_action_date": "2026-08-19",
    "fda_action_source_url": "https://www.fda.gov/media/194371/download",
-   "fda_action_record": "CBER approval letter (GENGLYCOS)"
+   "fda_action_record": "CBER approval letter (GENGLYCOS)",
+   "source": "Ultragenyx 8-K 2026-08-04 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000119312526332802/rare-ex99_1.htm",
+   "source_quote": "assigned a Prescription Drug User Fee Act (PDUFA) action date of August 23, 2026."
   },
   "oc": "Approved",
   "dcd": "2026-08-19"
@@ -3601,7 +3690,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3630,14 +3719,14 @@ export default [
   "t": "REGN",
   "company": "Regeneron Pharmaceuticals Inc.",
   "d": "2026-08-31",
-  "dp": "day",
+  "dp": "month",
   "name": "Garetosmab - (OPTIMA)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
   "st": "Decided",
   "url": "/pdufa/REGN",
-  "ua": "2026-09-01T20:44:48Z",
+  "ua": "2026-11-02T01:22:19Z",
   "_d": {
    "nct_id": null,
    "indication": "Fibrodysplasia Ossificans Progressiva (FOP)",
@@ -3655,10 +3744,22 @@ export default [
    },
    "fda_action_date": "2026-08-19",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761508Orig1s000ltr.pdf",
-   "fda_action_record": "BLA 761508 ORIG-1"
+   "fda_action_record": "BLA 761508 ORIG-1",
+   "date_history": [
+    {
+     "date": "2026-08-31",
+     "changed": "2026-11-01",
+     "why": "The day was never sourced: Regeneron's acceptance release (2026-02-19), Q1 8-K and Q2 10-Q all say only 'August 2026'. Month precision; the 'days early' margin is withdrawn."
+    }
+   ],
+   "source": "Regeneron press release 2026-02-19 (BLA accepted, priority review)",
+   "source_url": "https://investor.regeneron.com/news-releases/news-release-details/garetosmab-biologics-license-application-accepted-fda-priority",
+   "source_quote": "The target action date for the FDA decision is August 2026.",
+   "census_note": "Not in the decision-timing census (checked 2026-11-01): Regeneron stated the goal only as August 2026 (month)."
   },
   "oc": "Approved",
-  "dcd": "2026-08-19"
+  "dcd": "2026-08-19",
+  "dm": "2026-08"
  },
  {
   "id": "readout_alms_2026-09-30",
@@ -3713,7 +3814,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4013,7 +4114,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4130,7 +4231,7 @@ export default [
     "primary_completion": "2026-09-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT07011706"
    },
    "date_history": [
@@ -4184,7 +4285,7 @@ export default [
     "primary_completion": "2026-09-17",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06920901"
    },
    "resolution": {
@@ -4220,59 +4321,6 @@ export default [
    }
   },
   "dm": "2026-09"
- },
- {
-  "id": "readout_avir_2026-09-15",
-  "t": "AVIR",
-  "company": "Atea Pharmaceuticals, Inc.",
-  "d": "2026-06-15",
-  "dp": "month",
-  "name": "Bemnifosbuvir-Ruzasvir",
-  "type": "Readout",
-  "ta": "Infectious",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06868264",
-  "ua": "2026-10-29T16:41:43Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06868264",
-    "status": "completed",
-    "pcd": "2026-06-18",
-    "pcd_type": "actual",
-    "updated": "2026-10-27",
-    "ongoing": false
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06868264",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-10-30",
-    "searched": "3 sponsor press releases (FMP) through 2026-10-30; ClinicalTrials.gov 2026-10-30"
-   },
-   "date_history": [
-    {
-     "date": "2026-09-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-06-15",
-     "changed": "2026-10-29",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06868264 is now 2026-06-18 (actual; registry status completed, record updated 2026-10-27); the row's window moved from 2026-09 to 2026-06 on 2026-10-29. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "COMPLETED",
-    "primary_completion": "2026-06-18",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-10-30",
-    "source_url": "https://clinicaltrials.gov/study/NCT06868264"
-   }
-  },
-  "dm": "2026-06"
  },
  {
   "id": "readout_bhvn_2026-09-15",
@@ -4445,7 +4493,7 @@ export default [
     "primary_completion": "2026-09-23",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06738485"
    },
    "resolution": {
@@ -4539,7 +4587,7 @@ export default [
     "primary_completion": "2026-09-09",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT04816604"
    },
    "date_history": [
@@ -4553,7 +4601,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT04816604 is now 2026-09-09 (actual; registry status terminated, record updated 2026-10-02); the row's window moved from 2027-12 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-10-30, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-11-01, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-09"
  },
@@ -4772,7 +4820,7 @@ export default [
     "primary_completion": "2026-09-11",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06851559"
    },
    "resolution": {
@@ -4982,7 +5030,7 @@ export default [
     "primary_completion": "2026-09-18",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06993610"
    },
    "resolution": {
@@ -5066,7 +5114,10 @@ export default [
    },
    "fda_action_date": "2026-07-22",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220185Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220185 ORIG-1"
+   "fda_action_record": "NDA 220185 ORIG-1",
+   "source": "Nuvalent 8-K 2026-05-07 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1861560/000186156026000020/nuvl-ex99_1.htm",
+   "source_quote": "under FDA review with PDUFA target action date of September 18, 2026"
   },
   "oc": "Approved",
   "dcd": "2026-07-22"
@@ -5195,7 +5246,10 @@ export default [
    },
    "fda_action_date": "2026-09-03",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 220210 ORIG-1"
+   "fda_action_record": "NDA 220210 ORIG-1",
+   "source": "Ionis 8-K 2026-07-29 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm",
+   "source_quote": "New Drug Application (NDA) under FDA Priority Review with PDUFA target action date of September 22, 2026"
   },
   "oc": "Approved",
   "dcd": "2026-09-03"
@@ -5249,7 +5303,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5355,7 +5409,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5482,7 +5536,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5612,7 +5666,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6526,7 +6580,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6547,7 +6601,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6568,7 +6622,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -7001,7 +7055,7 @@ export default [
     "primary_completion": "2026-10-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT03377387"
    }
   },
@@ -7254,7 +7308,7 @@ export default [
     "primary_completion": "2026-10-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-10-30",
+    "checked": "2026-11-01",
     "source_url": "https://clinicaltrials.gov/study/NCT06874621"
    }
   },
@@ -7418,7 +7472,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7454,7 +7508,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7511,7 +7565,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7532,7 +7586,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7774,13 +7828,13 @@ export default [
   "company": "Inovio Pharmaceuticals",
   "d": "2026-10-30",
   "dp": "day",
-  "name": "INO-3107 DNA immunotherapy",
+  "name": "VOCERYQ (INO-3107) - recurrent respiratory papillomatosis",
   "type": "PDUFA",
   "ta": "",
   "cap": "Micro",
-  "st": "Upcoming",
-  "url": "/pdufa/INO-ino-3107-dna",
-  "ua": "2026-10-30T17:46:15Z",
+  "st": "Decided",
+  "url": "/fda-decision/INO-2026-10-30",
+  "ua": "2026-11-02T01:54:54Z",
   "_d": {
    "nct_id": null,
    "indication": "Recurrent respiratory papillomatosis (RRP) BLA",
@@ -7798,41 +7852,24 @@ export default [
    },
    "source": "INOVIO PHARMACEUTICALS, INC. 8-K 2026-05-13",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1055726/000105572626000019/ino-33126x8kex991.htm",
-   "source_quote": "Biologics License Application (BLA) for INO-3107 actively being reviewed under the accelerated approval program by the U.S. Food and Drug Administration (FDA) with a target Prescription Drug User Fee Act (PDUFA) date of October 30, 2026 Commercial readiness plans continue to advance in anticipation of a potential commercial launch for INO-3107 as a treat"
-  }
- },
- {
-  "id": "pdufa_agio_2026-11-01",
-  "t": "AGIO",
-  "company": "Agios Pharmaceuticals",
-  "d": "2026-11-01",
-  "dp": "day",
-  "name": "Mitapivat (PYRUKYND) - (RISE UP)",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Mid",
-  "st": "Upcoming",
-  "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-10-30T17:46:15Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "Sickle cell disease (sNDA)",
-   "market_cap_usd": 2222701066.8599997,
-   "cash_runway_months": 23.2,
-   "days_to_decision": 114,
-   "cohort_move_median_pct": -0.01,
-   "cohort_move_p25_pct": -2.05,
-   "cohort_move_p75_pct": 2.51,
-   "cohort_n": 222,
-   "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
-   },
-   "source": "AGIOS PHARMACEUTICALS, INC. 8-K 2026-07-30",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1439222/000143922226000115/agio-73026xfyxex991earning.htm",
-   "source_quote": "f 2025 Strong U.S. commercial launch of AQVESME in thalassemia, with 442 cumulative prescriptions written as of June 30, 2026 sNDA for mitapivat granted FDA Priority Review in sickle cell disease with PDUFA goal date of November 1, 2026 Diversified and expanded late-stage pipeline with licensing of cevidoplenib for immune thrombocytopenia and advancement"
-  }
+   "source_quote": "Biologics License Application (BLA) for INO-3107 actively being reviewed under the accelerated approval program by the U.S. Food and Drug Administration (FDA) with a target Prescription Drug User Fee Act (PDUFA) date of October 30, 2026 Commercial readiness plans continue to advance in anticipation of a potential commercial launch for INO-3107 as a treat",
+   "brand": "Voceryq",
+   "inn": "doruxapapogene ralaplasmid and lalikinogene sifuplasmid-gxfd",
+   "indication_short": "recurrent respiratory papillomatosis (adults)",
+   "title_indication": "Recurrent Respiratory Papillomatosis",
+   "seo_desc": "Voceryq (INO-3107) was approved by the FDA on October 30, 2026 (accelerated approval) for adults with recurrent respiratory papillomatosis, on its goal date.",
+   "decision_source": "FDA press announcement, October 30, 2026",
+   "decision_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+   "fda_action_date": "2026-10-30",
+   "fda_action_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+   "fda_action_record": "FDA press announcement, October 30, 2026 (CBER product; not in Drugs@FDA)",
+   "announcement": "INOVIO press release, October 30, 2026",
+   "announcement_url": "https://www.prnewswire.com/news-releases/inovio-announces-fda-accelerated-approval-of-voceryq-an-immunotherapy-to-reduce-the-frequency-of-surgery-in-adults-with-recurrent-respiratory-papillomatosis-rrp-302925406.html",
+   "decision_quote": "The U.S. Food and Drug Administration today granted accelerated approval for Voceryq (doruxapapogene ralaplasmid and lalikinogene sifuplasmid-gxfd) for treatment of adults with recurrent respiratory papillomatosis (RRP)",
+   "decision_date_note": "The FDA's announcement is dated October 30, 2026 and states the approval was granted that day, the goal date."
+  },
+  "oc": "Approved",
+  "dcd": "2026-10-30"
  },
  {
   "id": "conf_sitc_2026-11-04",
@@ -7846,7 +7883,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7882,7 +7919,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7918,7 +7955,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7954,7 +7991,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7975,7 +8012,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7996,46 +8033,13 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "pdufa_btai_2026-11-14",
-  "t": "BTAI",
-  "company": "BioXcel Therapeutics",
-  "d": "2026-11-14",
-  "dp": "day",
-  "name": "IGALMI (dexmedetomidine sublingual film) - (SERENITY At-Home)",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Nano",
-  "st": "Upcoming",
-  "url": "/pdufa/BTAI-igalmi",
-  "ua": "2026-10-20T00:03:07Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
-   "market_cap_usd": 2313476.3761,
-   "cash_runway_months": 3.6,
-   "days_to_decision": 127,
-   "cohort_move_median_pct": -0.11,
-   "cohort_move_p25_pct": -7.98,
-   "cohort_move_p75_pct": 8.11,
-   "cohort_n": 116,
-   "runup_summary": {
-    "t30": 0.0,
-    "t7": -1.05,
-    "t1": 0.0
-   },
-   "source": "BioXcel Therapeutics, Inc. 8-K 2026-05-15",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1720893/000110465926061773/tm2614679d1_ex99-1.htm",
-   "source_quote": "ccepted the Company s supplemental New Drug Application (sNDA) for IGALMI for at-home use in the acute treatment of agitation associated with bipolar disorders or schizophrenia and assigned a PDUFA target action date of November 14, 2026. The first quarter was marked by tremendous progress, achieving a major regulatory milestone and developing the IGALMI"
   }
  },
  {
@@ -8105,6 +8109,52 @@ export default [
   }
  },
  {
+  "id": "pdufa_btai_2026-11-14",
+  "t": "TEVA",
+  "company": "Teva Pharmaceutical Industries",
+  "d": "2026-11-14",
+  "dp": "day",
+  "name": "IGALMI (dexmedetomidine sublingual film) - (SERENITY At-Home)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/TEVA-igalmi",
+  "ua": "2026-11-02T01:54:37Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
+   "market_cap_usd": 2313476.3761,
+   "cash_runway_months": 3.6,
+   "days_to_decision": 127,
+   "cohort_move_median_pct": -0.11,
+   "cohort_move_p25_pct": -7.98,
+   "cohort_move_p75_pct": 8.11,
+   "cohort_n": 116,
+   "runup_summary": {
+    "t30": 0.0,
+    "t7": -1.05,
+    "t1": 0.0
+   },
+   "source": "BioXcel Therapeutics, Inc. 8-K 2026-05-15",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1720893/000110465926061773/tm2614679d1_ex99-1.htm",
+   "source_quote": "ccepted the Company s supplemental New Drug Application (sNDA) for IGALMI for at-home use in the acute treatment of agitation associated with bipolar disorders or schizophrenia and assigned a PDUFA target action date of November 14, 2026. The first quarter was marked by tremendous progress, achieving a major regulatory milestone and developing the IGALMI",
+   "ticker_history": [
+    {
+     "ticker": "BTAI",
+     "until": "2026-10-26",
+     "why": "BioXcel sold IGALMI, BXCL501 and the pending sNDA to Teva (8-K 2026-10-30, Item 2.01)."
+    }
+   ],
+   "event_slug": "TEVA-igalmi",
+   "sponsor_note": "BioXcel Therapeutics filed for Chapter 11 on August 27, 2026 and completed the sale of IGALMI, BXCL501 and the pending supplemental NDA to Teva on October 26, 2026 (BioXcel 8-K, October 30, 2026). Teva's October 27 release describes BXCL501 as under FDA review. The goal date of November 14, 2026 is BioXcel's (8-K, May 15, 2026); Teva has not restated it.",
+   "sponsor_sources": [
+    "https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_8k.htm",
+    "https://www.globenewswire.com/news-release/2026/10/27/3388911/0/en/teva-acquires-worldwide-rights-to-bxcl501-further-expanding-innovative-neuroscience-pipeline.html"
+   ]
+  }
+ },
+ {
   "id": "conf_obesityweek_2026-11-14",
   "t": "ObesityWeek",
   "company": "ObesityWeek, The Obesity Society",
@@ -8116,7 +8166,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8597,7 +8647,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8626,7 +8676,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -9062,39 +9112,6 @@ export default [
   }
  },
  {
-  "id": "pdufa_exel_2026-12-03",
-  "t": "EXEL",
-  "company": "Exelixis",
-  "d": "2026-12-03",
-  "dp": "day",
-  "name": "Zanzalintinib (XL092) + atezolizumab - (STELLAR-303)",
-  "type": "PDUFA",
-  "ta": "",
-  "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-10-30T17:46:15Z",
-  "_d": {
-   "nct_id": null,
-   "indication": "2L metastatic colorectal cancer",
-   "market_cap_usd": 16422970545.76,
-   "cash_runway_months": null,
-   "days_to_decision": 146,
-   "cohort_move_median_pct": 0.0,
-   "cohort_move_p25_pct": -0.93,
-   "cohort_move_p75_pct": 1.03,
-   "cohort_n": 790,
-   "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
-   },
-   "source": "EXELIXIS, INC. 8-K 2026-05-05",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000058/exel20260331exhibit991.htm",
-   "source_quote": "pplication for zanzalintinib, for its initial potential indication in previously treated metastatic colorectal cancer, was accepted by U.S. regulatory authorities and is under active review, with a target action date of December 3, 2026. We also completed the expansion of our GI Sales team to accelerate cabozantinib s momentum in neuroendocrine tumors an"
-  }
- },
- {
   "id": "conf_aes_2026-12-04",
   "t": "AES",
   "company": "American Epilepsy Society Annual Meeting",
@@ -9106,7 +9123,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -9127,7 +9144,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9148,7 +9165,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9210,7 +9227,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9231,7 +9248,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -10521,13 +10538,13 @@ export default [
   "company": "AstraZeneca/Alexion",
   "d": "2026-12-31",
   "dp": "month",
-  "name": "Ultomiris (ravulizumab)",
+  "name": "Ultomiris (ravulizumab) - IgA nephropathy",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/AZN-ultomiris",
-  "ua": "2026-10-30T17:46:15Z",
+  "st": "Decided",
+  "url": "/fda-decision/AZN-2026-10-21",
+  "ua": "2026-11-02T01:22:19Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04493853",
@@ -10538,7 +10555,7 @@ export default [
     "updated": "2026-05-05",
     "slip": null
    },
-   "indication": "IgA nephropathy (I CAN, sBLA)",
+   "indication": "Primary IgA nephropathy at risk of disease progression (reduce proteinuria; accelerated approval)",
    "market_cap_usd": 270477961404.80002,
    "cash_runway_months": null,
    "days_to_decision": 174,
@@ -10551,9 +10568,25 @@ export default [
     "t7": -0.01,
     "t1": 0.0
    },
-   "date_note": "No AstraZeneca filing states a goal date for Ultomiris in IgA nephropathy (searched Ultomiris/ravulizumab + IgA nephropathy + PDUFA; hits are third parties and pre-2022 Alexion). AstraZeneca files 6-K/20-F, so EDGAR would show one. Day withdrawn 2026-09-10; month retained."
+   "date_note": "No AstraZeneca filing states a goal date for Ultomiris in IgA nephropathy (searched Ultomiris/ravulizumab + IgA nephropathy + PDUFA; hits are third parties and pre-2022 Alexion). AstraZeneca files 6-K/20-F, so EDGAR would show one. Day withdrawn 2026-09-10; month retained.",
+   "brand": "Ultomiris",
+   "inn": "ravulizumab-cwvz",
+   "indication_short": "IgA nephropathy (reduce proteinuria)",
+   "title_indication": "IgA Nephropathy",
+   "seo_desc": "Ultomiris (ravulizumab) was approved by the FDA on October 21, 2026 (accelerated approval) to reduce proteinuria in adults with primary IgA nephropathy, per Drugs@FDA.",
+   "decision_source": "Drugs@FDA, BLA 761108 supplement 46, approved October 21, 2026",
+   "decision_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761108",
+   "fda_action_date": "2026-10-21",
+   "fda_action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761108",
+   "fda_action_record": "BLA 761108 S-046",
+   "announcement": "AstraZeneca 6-K, October 22, 2026",
+   "announcement_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426009093/a9580z.htm",
+   "census_note": "Not in the decision-timing census (checked 2026-11-01): AstraZeneca stated no goal date for this sBLA.",
+   "decision_quote": "Ultomiris (ravulizumab) has been approved in the US to reduce proteinuria in adults with primary immunoglobulin A nephropathy (IgAN) at risk for disease progression."
   },
-  "dm": "2026-12"
+  "dm": "2026-12",
+  "oc": "Approved",
+  "dcd": "2026-10-21"
  },
  {
   "id": "pdufa_bayry_2026-12-31",
@@ -11037,14 +11070,14 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/NVO-mim8",
-  "ua": "2026-10-30T17:46:15Z",
+  "ua": "2026-11-02T01:22:19Z",
   "_d": {
    "indication": "Hemophilia A prophylaxis, with or without inhibitors",
    "bla_submitted": "2025-09",
    "bla_source": "https://www.prnewswire.com/news-releases/novo-nordisk-submits-biologics-license-application-bla-to-fda-for-mim8-an-investigational-prophylaxis-treatment-for-people-living-with-hemophilia-a-with-or-without-inhibitors-302568838.html",
    "date_provenance": "goal date as published on /calendar and /pdufa/NVO-mim8 since 2026-08-07; dataset row restored 2026-09-01 after it was found missing",
    "market_cap_usd": 168885133397.96,
-   "date_note": "Novo Nordisk names denecimig (Mim8) in five 2026 filings and never states a day, month or quarter for the US decision. The 6-K of 2026-08-04 lists \"Denecimig US EU decision\" among R&D milestones and the Q4 6-K says only that the company looks forward this year to decisions \"such as Mim8\". The YEAR is the sourced granularity, so the row moves to year precision on the year-end sentinel (the TYRA convention). Day withdrawn 2026-09-10.",
+   "date_note": "Novo Nordisk's 6-K of October 2, 2026: the FDA's review of the denecimig BLA is still ongoing, extended because of facility remediation; the FDA has not communicated a new timeline and has not identified deficiencies in the clinical efficacy or safety data. No goal day, month or quarter is published, so the row carries the year only.",
    "date_history": [
     {
      "date": "2026-09-30",
@@ -11055,7 +11088,10 @@ export default [
      "changed": "2026-09-10",
      "why": "The September 30 day was withdrawn as unsourced -- no Novo Nordisk filing states a day, month or quarter -- and the row moved to year precision on the year-end sentinel."
     }
-   ]
+   ],
+   "source": "Novo Nordisk 6-K 2026-10-02 (denecimig BLA update)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326006374/f6k_100226.htm",
+   "source_quote": "The FDA has not communicated a new timeline for regulatory action on the BLA"
   }
  },
  {
@@ -11832,7 +11868,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -11925,13 +11961,57 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_agio_2026-11-01",
+  "t": "AGIO",
+  "company": "Agios Pharmaceuticals",
+  "d": "2027-02-01",
+  "dp": "day",
+  "name": "Mitapivat (PYRUKYND) - (RISE UP)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "url": "/pdufa/AGIO-mitapivat",
+  "ua": "2026-11-02T01:22:19Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "Sickle cell disease (sNDA)",
+   "market_cap_usd": 2222701066.8599997,
+   "cash_runway_months": 23.2,
+   "days_to_decision": 114,
+   "cohort_move_median_pct": -0.01,
+   "cohort_move_p25_pct": -2.05,
+   "cohort_move_p75_pct": 2.51,
+   "cohort_n": 222,
+   "runup_summary": {
+    "t30": 2.19,
+    "t7": -0.33,
+    "t1": 0.0
+   },
+   "source": "Agios press release 2026-10-30 (GlobeNewswire)",
+   "source_url": "https://www.globenewswire.com/news-release/2026/10/30/3392151/31990/en/agios-announces-new-pdufa-goal-date-of-february-1-2027-for-mitapivat-sickle-cell-disease-snda-company-is-launch-ready-and-in-labeling-discussions-with-fda.html",
+   "source_quote": "The PDUFA goal date for this sNDA, which was submitted under the FDA's accelerated approval pathway and granted Priority Review, is now February 1, 2027.",
+   "date_history": [
+    {
+     "date": "2026-11-01",
+     "note": "date the row held before this change"
+    },
+    {
+     "date": "2027-02-01",
+     "changed": "2026-11-01",
+     "why": "Major amendment: the FDA extended the goal by three months after Agios's October 19 response on a possible REMS (Agios release 2026-10-30)."
+    }
+   ]
   }
  },
  {
@@ -11981,6 +12061,53 @@ export default [
   }
  },
  {
+  "id": "pdufa_bbio_2027-02-04",
+  "t": "BBIO",
+  "company": "BridgeBio Pharma, Inc.",
+  "d": "2027-02-04",
+  "dp": "day",
+  "name": "Oral infigratinib - achondroplasia in children (PROPEL 3)",
+  "type": "PDUFA",
+  "ta": "Rare Disease",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-02T01:51:05Z",
+  "url": "/pdufa/BBIO-infigratinib",
+  "_d": {
+   "indication": "Children with achondroplasia",
+   "inn": "infigratinib",
+   "trial": "PROPEL 3",
+   "event_slug": "BBIO-infigratinib",
+   "source": "BridgeBio 8-K 2026-10-06 (EX-99.1, NDA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126039334/ef20083591_ex99-1.htm",
+   "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 4, 2027"
+  }
+ },
+ {
+  "id": "pdufa_rhhby_2027-02-09_sunmo",
+  "t": "RHHBY",
+  "company": "Roche Holding AG",
+  "d": "2027-02-09",
+  "dp": "day",
+  "name": "Lunsumio VELO (mosunetuzumab) + Polivy - relapsed/refractory LBCL (SUNMO)",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-02T01:22:19Z",
+  "url": "/pdufa/RHHBY-lunsumio-polivy",
+  "_d": {
+   "indication": "With Polivy (polatuzumab vedotin), relapsed or refractory large B-cell lymphoma after at least one prior line of systemic therapy",
+   "brand": "Lunsumio VELO",
+   "inn": "mosunetuzumab",
+   "trial": "SUNMO",
+   "event_slug": "RHHBY-lunsumio-polivy",
+   "source": "Roche press release 2026-06-18 (sBLA accepted)",
+   "source_url": "https://www.roche.com/media/releases/med-cor-2026-06-18",
+   "source_quote": "The FDA is expected to make a decision on approval by 9 February 2027."
+  }
+ },
+ {
   "id": "conf_asco gu_2027-02-11",
   "t": "ASCO GU",
   "company": "ASCO Genitourinary Cancers Symposium",
@@ -11992,7 +12119,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -12191,6 +12318,50 @@ export default [
    "census_note": "Not in the decision-timing census (checked 2026-10-24): GSK stated the goal only as February 2027 (month)."
   },
   "dm": "2027-02"
+ },
+ {
+  "id": "pdufa_exel_2026-12-03",
+  "t": "EXEL",
+  "company": "Exelixis",
+  "d": "2027-03-03",
+  "dp": "day",
+  "name": "Zanzalintinib (XL092) + atezolizumab - (STELLAR-303)",
+  "type": "PDUFA",
+  "ta": "",
+  "cap": "Large",
+  "st": "Upcoming",
+  "url": "/pdufa/EXEL-zanzalintinib",
+  "ua": "2026-11-02T01:22:19Z",
+  "_d": {
+   "nct_id": null,
+   "indication": "2L metastatic colorectal cancer",
+   "market_cap_usd": 16422970545.76,
+   "cash_runway_months": null,
+   "days_to_decision": 146,
+   "cohort_move_median_pct": 0.0,
+   "cohort_move_p25_pct": -0.93,
+   "cohort_move_p75_pct": 1.03,
+   "cohort_n": 790,
+   "runup_summary": {
+    "t30": 0.38,
+    "t7": -0.01,
+    "t1": 0.0
+   },
+   "source": "Exelixis 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000114/exel20260930exhibit991.htm",
+   "source_quote": "The updated PDUFA target action date is March 3, 2027.",
+   "date_history": [
+    {
+     "date": "2026-12-03",
+     "note": "date the row held before this change"
+    },
+    {
+     "date": "2027-03-03",
+     "changed": "2026-11-01",
+     "why": "Three-month extension after Exelixis submitted updated safety and efficacy data in response to an FDA information request (announced September 2026; Exelixis 8-K 2026-10-29)."
+    }
+   ]
+  }
  },
  {
   "id": "readout_agio_2027-03-15",
@@ -12533,7 +12704,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -12808,7 +12979,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -12829,7 +13000,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13257,7 +13428,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13278,7 +13449,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13320,7 +13491,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13523,7 +13694,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -13544,7 +13715,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13565,7 +13736,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -13960,7 +14131,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -13981,7 +14152,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-10-31T01:05:19Z",
+  "ua": "2026-11-02T02:37:17Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -14079,22 +14250,29 @@ export default [
  },
  {
   "id": "readout_btai_2027-07-15",
-  "t": "BTAI",
-  "company": "BioXcel Therapeutics",
+  "t": "TEVA",
+  "company": "Teva Pharmaceutical Industries",
   "d": "2027-07-15",
   "dp": "month",
   "name": "Sublingual film containing dexmedetomidine",
   "type": "Readout",
   "ta": "CNS",
-  "cap": "",
+  "cap": "Large",
   "st": "Estimated",
-  "url": "/pdufa/BTAI",
+  "url": "/ticker/TEVA",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)"
+   "source": "trial-estimate (not company-confirmed)",
+   "ticker_history": [
+    {
+     "ticker": "BTAI",
+     "until": "2026-10-26",
+     "why": "BXCL501 sold to Teva with IGALMI (BioXcel 8-K 2026-10-30, Item 2.01)."
+    }
+   ]
   },
   "dm": "2027-07"
  },

@@ -92,7 +92,8 @@ def main():
         for tk in str(r.get("t") or "").split("/"):
             cal_tags[(tk.strip().upper(), str(r.get("d") or "")[:10])] = (old, r["id"])
     # calendar rows: a short tag after the drug text of the row keyed (ticker, current date)
-    for cp in [os.path.join(SITE, "calendar", "index.html")] + sorted(glob.glob(os.path.join(SITE, "calendar", "2026", "*", "index.html"))):
+    for cp in [os.path.join(SITE, "calendar", "index.html")] + sorted(glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "*", "index.html"))):
+        # 2026-11-01: was "2026" only, so a goal moved INTO 2027 (AGIO, EXEL) was tagged nowhere.
         doc = io.open(cp, encoding="utf-8", errors="replace").read()
         doc0 = re.sub(r' <span class="dm"><!--DM:[^>]*--><span[^>]*>[^<]*</span></span>', "", doc)
         changed_doc = doc0

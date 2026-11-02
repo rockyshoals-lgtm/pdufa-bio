@@ -25,6 +25,27 @@
    "slug": "ABEO",
    "decision": "RARE-2026-09-17",
    "why": "2026-09-20: ABEO (Abeona) is the partner ticker on the FAYUVI (UX111/ABO-102) row; the decision is filed under the applicant, RARE. Ultragenyx 8-K 2026-09-17 acc 0001515673-26-000006."
+  },
+  {
+   "slug": "MRK-trodelvy",
+   "decision": "GILD-2026-06-24",
+   "reviewer": "builder 2026-11-01",
+   "why": "Partner page of /pdufa/GILD-trodelvy: Trodelvy plus Keytruda, first-line PD-L1+ metastatic TNBC (ASCENT-04), approved 2026-06-24; the decision lives under GILD. Eight MRK archive decisions match the token, so the automatic rule refuses.",
+   "source": "https://www.pdufa.bio/fda-decision/GILD-2026-06-24"
+  },
+  {
+   "slug": "NVS",
+   "decision": "NVS-2026-07-31",
+   "reviewer": "builder 2026-11-01",
+   "why": "Pluvicto in PSMA-positive metastatic hormone-sensitive prostate cancer (PSMAddition, NCT04720157, the trial this page cites): NDA 215833 S-037 approved 2026-07-31 per the FDA letter.",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215833Orig1s037ltr.pdf"
+  },
+  {
+   "slug": "LLY",
+   "decision": "LLY-2026-08-27",
+   "reviewer": "builder 2026-11-01",
+   "why": "Tirzepatide cardiovascular outcomes (SURPASS-CVOT): Mounjaro NDA 215866 S-044/S-045 approved 2026-08-27 per the FDA letter, adding the MACE risk-reduction indication.",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s044,215866Orig1s045ltr.pdf"
   }
  ]
 }

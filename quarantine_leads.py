@@ -185,9 +185,20 @@ def raise_issue(lead):
             f"`{lead['row_id']}`:\n\n```\n{lead['text']}\n```\n\nVerify it against the primary source, then "
             f"publish the decision page or ack it with a reason. ack key: `{lead['key']}`\n\n"
             f"This issue is opened once per lead, not once per run.")
+    title = f"HELD: {lead['row_id']} ({lead['source']}) lead to verify"
+    # 2026-11-01: #55, #56 and #57 are one AZN lead opened three times. issued_keys lives in _held_state.json,
+    # which is committed only when a run passes, so every FAILING run forgot it had already opened the issue
+    # (the same shape as the 10-15 ESCALATION duplicates). GitHub is the record that survives a failed run.
     try:
-        subprocess.run(["gh", "issue", "create", "--title",
-                        f"HELD: {lead['row_id']} ({lead['source']}) lead to verify", "--body", body],
+        out = subprocess.run(["gh", "issue", "list", "--state", "open", "--search", f"in:title \"{title}\"",
+                              "--json", "title,body"], capture_output=True, text=True, timeout=60).stdout
+        if any(i.get("title") == title and lead["key"] in (i.get("body") or "") for i in json.loads(out or "[]")):
+            print(f"   issue for this lead already open; not opening another ({title})")
+            return
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        subprocess.run(["gh", "issue", "create", "--title", title, "--body", body],
                        check=True, timeout=60)
     except Exception as e:  # noqa: BLE001
         print(f"   (issue create skipped: {e})")

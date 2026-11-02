@@ -53,6 +53,14 @@ def main():
         new = sub_meta(new, "property", "og:description", desc)
         new = sub_meta(new, "name", "twitter:title", title)
         new = sub_meta(new, "name", "twitter:description", desc)
+        # Red team 2026-11-01: the visible count chip and the FAQ answer were written once at page creation and
+        # never again -- /calendar/2027/february said "1 PDUFA dates" and "currently tracks 1" over three rows,
+        # while its title said 3. Every number on the page is now the same number.
+        new = re.sub(r'<span class="count">[^<]*</span>',
+                     f'<span class="count">{n} PDUFA date{"s" if n != 1 else ""}</span>', new, count=1)
+        new = re.sub(r"currently tracks \d+ FDA PDUFA decisions? with dates? in",
+                     f"currently tracks {n} FDA PDUFA decision{'s' if n != 1 else ''} with "
+                     f"date{'s' if n != 1 else ''} in", new)
         if new != doc:
             changed += 1
             if not a.dry_run:

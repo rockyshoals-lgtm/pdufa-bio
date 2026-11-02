@@ -35,8 +35,20 @@ def main():
             doc = re.sub(r"<!--DATEMOVE:BEGIN-->.*?<!--DATEMOVE:END-->", "", doc, flags=re.S)
         if "<!--DATEMOVE:BEGIN-->" not in doc or G.pretty(old) not in doc.split("<!--DATEMOVE:BEGIN-->")[-1][:400]:
             fails.append(f"{url}: goal date moved {old} -> {new} but the event page does not say so")
-        if r.get("st") in ("Upcoming", "Awaiting") and f"<!--DM:{r['id']}-->" not in cal:
-            fails.append(f"{r['id']}: /calendar row carries no 'goal date moved' tag")
+        if r.get("st") in ("Upcoming", "Awaiting"):
+            # /calendar's live grid runs through its last month heading; a goal moved beyond it (AGIO and EXEL into
+            # 2027, 2026-11-01) lives on its month page, which must carry the tag instead.
+            d = str(r.get("d") or "")
+            mon = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october",
+                   "november", "december"][int(d[5:7]) - 1] if len(d) >= 7 else ""
+            head = f'<div class="mhead">{mon.capitalize()} {d[:4]}</div>'
+            where, page = "/calendar", cal
+            if head not in cal:
+                mp = os.path.join(SITE, "calendar", d[:4], mon, "index.html")
+                where = f"/calendar/{d[:4]}/{mon}"
+                page = io.open(mp, encoding="utf-8", errors="replace").read() if os.path.exists(mp) else ""
+            if f"<!--DM:{r['id']}-->" not in page:
+                fails.append(f"{r['id']}: {where} row carries no 'goal date moved' tag")
     if fails:
         print(f"FAIL: {len(fails)} goal-date move(s) not shown:")
         for f in fails:

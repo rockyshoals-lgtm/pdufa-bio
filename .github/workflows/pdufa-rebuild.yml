@@ -275,6 +275,10 @@ jobs:
       - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
         run: python build_decision_lede.py
 
+      # Red team 2026-11-01: the h1 carried the announcement day while the title carried the FDA's action day.
+      - name: "Decision page h1 states the FDA action day (announcement day in brackets)"
+        run: python fix_decision_h1_action_date.py
+
       # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
       - name: "/fda-approval-letters hub"
         run: python build_fda_letters_hub.py
@@ -498,6 +502,13 @@ jobs:
       # only condition/*. test_condition_pages_current.py fails if this step goes missing.
       - name: Rebuild the condition pages from the living dataset
         run: python build_condition_pages.py
+
+      # Red team 2026-11-01: /screener drew its table from an inline DATA array unchanged since 2026-07-25
+      # (31 "Upcoming" rows already past). Rewritten from the dataset every run, then the crawlable rows.
+      - name: "/screener data and server-rendered rows from the living dataset"
+        run: |
+          python sync_screener_data.py
+          python build_screener_rows.py
 
       # Red team 2026-09-01, Part 4: "fda approvals today pdufa" converts at 13.33% CTR on
       # Bing web and holds 28.57% AI-citation share -- demand proven on two surfaces before

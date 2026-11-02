@@ -82,6 +82,13 @@ JUNK = re.compile(
     r"|\bhigh dose\b|\bcohort\b|\barm\b|\bweek \d|\bn=\d|\bvs\.?\b|\bplus\b.*\bplus\b", re.I)
 
 
+JUNK_SLUG = re.compile(
+    r"^(?:american|european|eur|world|joint|san-antonio|digestive-disease|iaslc|idsa|obesityweek|"
+    r"corticosteroids?|nct\d+|once-daily|twice-daily|autologous|allogeneic|helios-\d|r-chop|"
+    r"international|annual|global|national)(?:-|$)"
+    r"|-(?:and|in|with|plus|or|for|vs)$")
+
+
 CORE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9'\u2019./-]*(?:\s+[A-Za-z0-9][A-Za-z0-9'\u2019./-]*)?)"
                   r"(\s*\([^()]{2,45}\))?")
 
@@ -143,7 +150,11 @@ def clean_name(raw, rescue=True):
     if inner and inner.isupper() and len(inner) >= 4 and "-" not in inner:
         paren = ""
     s = (m.group(1) + paren).strip()
-    words = {w.lower() for w in re.findall(r"[A-Za-z][A-Za-z-]*", s)}
+    # "CALQUENCE plus venetoclax", "Keytruda and ...", "Opdivo in ...": CORE's two words end on the
+    # connector, which published /drug/calquence-plus and /drug/keytruda-and (red team 2026-11-01).
+    # The drug is the first word; the connector and everything after it is regimen description.
+    s = re.sub(r"^(\S+)\s+(?:plus|and|with|in|or|for|vs\.?)$", r"\1", s, flags=re.I)
+    words ={w.lower() for w in re.findall(r"[A-Za-z][A-Za-z-]*", s)}
     first = re.split(r"[\s(-]", s, maxsplit=1)[0].lower()
     if first in TRIAL_WORDS or s.lower() in TRIAL_WORDS:
         return paren_rescue(raw) if rescue else None
@@ -365,6 +376,12 @@ def main():
         # form both searchers and the FDA use.
         slug = slugify(re.split(r"\s*\(", name)[0])
         if not slug:
+            continue
+        # Red team 2026-11-01: conference names, guideline fragments and trial descriptors were still
+        # reaching /drug as indexable pages (/drug/european-respiratory, /drug/obesityweek,
+        # /drug/keytruda-and, /drug/r-chop ...). A slug matching JUNK_SLUG is never a drug page.
+        if JUNK_SLUG.search(slug):
+            rejected.append(str(r.get("name"))[:60])
             continue
         # BRAND ASSIGNED AT APPROVAL (audit 2026-10-03, Tier 2.3). When "Tavapadon (TEMPO)" became
         # "JUVMO (tavapadon)" the key moved to the brand, /drug/tavapadon was deleted and a new
@@ -855,7 +872,13 @@ def main():
         gslug = slugify(m.group(1))
         if gslug and gslug != slug and gslug not in drugs:
             aliases.setdefault(gslug, slug)
-    vj = os.path.join(SITE, "vercel.json")
+    # Connector-tail slugs retired 2026-11-01 keep their inbound links: 301 to the drug's page.
+    for old in ("calquence-plus", "lifileucel-plus", "keytruda-and", "opdivo-in", "gedatolisib-with",
+                "bictegravir-and"):
+        new = old.rsplit("-", 1)[0]
+        if new in drugs and old not in drugs:
+            aliases.setdefault(old, new)
+    vj =os.path.join(SITE, "vercel.json")
     if os.path.exists(vj) and not a.dry_run:
         cfg = json.load(open(vj, encoding="utf-8"))
         rd = [r for r in cfg.get("redirects", [])

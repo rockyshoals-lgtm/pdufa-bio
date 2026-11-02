@@ -59,7 +59,10 @@ def ev_sentence(r, decided=False):
     ind = str((r.get("_d") or {}).get("indication") or "").strip()
     if ind[:1].isupper() and ind[1:2].islower():
         ind = ind[0].lower() + ind[1:]          # "in adult patients", not "in Adult patients" (red team 10-04)
-    ind_txt = f" in {esc(ind)}" if ind else ""
+    # Red team 2026-11-01: indications that already open with a preposition or regimen word published
+    # "in in combination with..." and "in with BCG..." -- no extra "in" before those.
+    lead = re.match(r"(?i)(in|with|for|as|after|plus|and|to)\b", ind)
+    ind_txt = (f" {esc(ind)}" if lead else f" in {esc(ind)}") if ind else ""
     d = str(r.get("d") or "")
     day = dt.date.fromisoformat(d)
     href = str(r.get("url") or f"/ticker/{tk}")
