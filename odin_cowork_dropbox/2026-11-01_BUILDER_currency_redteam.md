@@ -48,3 +48,8 @@ The local chain's last step `quarantine_leads.py apply` restored INO and BTAI ro
 - `api/data.js` slate labels still contain em dashes (served as API JSON, not page copy). `api/data.js.bak_2026-08-29` is in the deploy tree.
 - REGN Ordspono Feb 2027 lead not verified; not added.
 - Calendar 2025 page: mark_calendar_decided reports its row markup no longer matches (316 rows, no-op). Historical page, no false claims found, but the marker is blind there.
+
+## 5. Outcome (Nov 2, ~04:15 UTC = 23:15 ET Nov 1)
+Run 41382582185: all guards passed, data committed (a237ace). Vercel never deployed a237ace (no deployment created for that push); the note commit 5bd2ca3 triggered the deploy. verify_live_deploy.py: PASS (build fb301731a + a237ace tree). Issues #45-#57 closed with reasons; 0 open. Bing batch of 13 changed URLs submitted (bing-submit run 41387032882, success).
+- /pdufa/NVS's title reads 'NVS FDA decision: 177Lu' (the page's original drug token); accurate but should say Pluvicto.
+
