@@ -38,6 +38,9 @@ Every scheduled rebuild since Oct 31 failed (6 runs, BLOCKED #54): INO's Oct 30 
 - **Duplicate HELD issues**: #55/#56/#57 were one AZN lead opened three times, because `issued_keys` is committed only on a passing run. `quarantine_leads.py raise_issue` now checks GitHub for an open issue with the same title and ack key first (same fix as the 10-15 ESCALATION duplicates).
 - **Held leads #45-#57**: REAL ones published (AZN, INO); non-events acked with reasons (`apply_1101_acks.py`): #45 GSK 6-K mentions zidesamtinib, not neladalkib; #48 NVCR Q3 8-K describes Optune Gio's existing approval; #50 BioXcel asset-purchase exhibit; #51/#52 conference-name drug page.
 
+## 2b. First CI run after the push blocked on one guard
+Run 41379087510 (dispatched ~01:55 UTC Nov 2): 152 passed, 1 failed, `test_runup_study_size_one_owner`. The study grew 1,879 -> 1,883 in CI, and one sentence on /learn/what-happens-to-a-stock-on-a-pdufa-date ("across our 1,879-decision run-up study") never followed: `refresh_cohort_figures.py` matched "across a", but its own replacement writes "across our", so the number froze after its first run. Regex now matches both; re-dispatched (run 41382582185).
+
 ## 3. Builder lesson (local, cost a full chain rerun)
 The local chain's last step `quarantine_leads.py apply` restored INO and BTAI rows (and 9 pages) to HEAD because the local `_held_state.json` still listed the old leads. Clear it first: `quarantine_leads.py collect --leads _empty_leads.jsonl --no-issue`, then run the chain.
 
