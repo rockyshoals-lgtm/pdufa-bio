@@ -155,7 +155,9 @@ if os.path.exists(LEARN):
                        ("Mid", "Mid-cap ($2B: $10B)"), ("Large", "Large-cap (&gt;$10B)")))
     h2 = re.sub(r"(Decision-day move by company size \(history\)</h2><div class='card'>).*?(</div><p class='sub'>)",
                 lambda m: m.group(1) + rows + m.group(2), h2, count=1, flags=re.S)
-    h2 = re.sub(r"across a (?:763-PDUFA cohort \(2024-26\)|[\d,]+-decision run-up study \(\d{4}-\d\d\))",
+    # 2026-11-01: the replacement writes "across our", so matching only "across a" froze the number after its first run
+    # (CI blocked when the study grew 1,879 -> 1,883).
+    h2 = re.sub(r"across (?:a|our) (?:763-PDUFA cohort \(2024-26\)|[\d,]+-decision run-up study \(\d{4}-\d\d\))",
                 f"across our {N_ALL:,}-decision run-up study ({Y0}-{Y1})", h2)
     if h2 != h:
         n_misc += 1
