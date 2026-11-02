@@ -299,6 +299,10 @@
   {
    "id": "readout_avir_2026-09-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-06-18); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_iva_2027-09-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-09-29); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."
