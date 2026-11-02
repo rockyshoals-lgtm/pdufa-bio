@@ -1,18 +1,7 @@
 {
- "as_of": "2026-10-30",
+ "as_of": "2026-11-01",
  "horizon_days": 60,
  "sponsors": {
-  "AGIO": {
-   "company": "Agios Pharmaceuticals",
-   "goals": [
-    "2026-11-01"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1439222
-  },
   "BBIO": {
    "company": "BridgeBio Pharma, Inc.",
    "goals": [
@@ -24,17 +13,6 @@
     "fda_feeds"
    ],
    "cik": 1743881
-  },
-  "BTAI": {
-   "company": "BioXcel Therapeutics",
-   "goals": [
-    "2026-11-14"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1720893
   },
   "CAPR": {
    "company": "Capricor Therapeutics Inc.",
@@ -50,7 +28,8 @@
   "COGT": {
    "company": "Cogent Biosciences",
    "goals": [
-    "2026-11-30"
+    "2026-11-30",
+    "2026-12-30"
    ],
    "channels": [
     "edgar_8k",
@@ -81,17 +60,6 @@
    ],
    "cik": 1061983
   },
-  "EXEL": {
-   "company": "Exelixis",
-   "goals": [
-    "2026-12-03"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 939767
-  },
   "GILD": {
    "company": "Gilead Sciences, Inc.",
    "goals": [
@@ -116,18 +84,6 @@
    ],
    "cik": 1131399
   },
-  "INO": {
-   "company": "Inovio Pharmaceuticals",
-   "goals": [
-    "2026-10-30"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1055726
-  },
   "MLYS": {
    "company": "Mineralys Therapeutics, Inc.",
    "goals": [
@@ -149,6 +105,18 @@
     "fda_feeds"
    ],
    "cik": 1645113
+  },
+  "NVO": {
+   "company": "Novo Nordisk A/S",
+   "goals": [
+    "2026-12-31",
+    "2026-12-31"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 353278
   },
   "PRAX": {
    "company": "Praxis Precision Medicines Inc.",
@@ -177,7 +145,8 @@
    "goals": [
     "2026-11-30",
     "2026-11-30",
-    "2026-12-18"
+    "2026-12-18",
+    "2026-12-31"
    ],
    "channels": [
     "sponsor_feed",
@@ -206,6 +175,17 @@
     "fda_feeds"
    ],
    "cik": 1160308
+  },
+  "TEVA": {
+   "company": "Teva Pharmaceutical Industries",
+   "goals": [
+    "2026-11-14"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 818686
   },
   "VNDA": {
    "company": "Vanda Pharmaceuticals Inc.",
