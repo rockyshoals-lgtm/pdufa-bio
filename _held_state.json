@@ -1,8 +1,16 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-11-03T03:01:27Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "edgar",
+   "row_id": "pdufa_vrtx_2026-11-30",
+   "key": "edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "text": "8-K filed 2026-11-02 states an approval of 'Povetacicept' https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "first_seen": "2026-11-03T03:01:27Z"
+  }
+ ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
@@ -14,6 +22,7 @@
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000081",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
+  "edgar|edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "fda_press|press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
