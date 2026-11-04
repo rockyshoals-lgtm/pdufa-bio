@@ -2180,7 +2180,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2473,7 +2473,7 @@ export default [
   "ua": "2026-10-24T20:36:26Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2581,7 +2581,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) — DMD",
+  "name": "Deramiocel (CTGTAC) \u2014 DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2639,7 +2639,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) — Melanoma",
+  "name": "RP1 (CTGTAC) \u2014 Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3126,7 +3126,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-09",
-    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO® (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
+    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO\u00ae (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
     "url": "https://www.prnewswire.com/news-releases/biomarin-announces-positive-results-of-phase-3-voxzogo-vosoritide-study-in-hypochondroplasia-published-in-nejm-evidence-302873026.html",
     "checked": "2026-10-11",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3260,7 +3260,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-10-18",
-    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 ‘304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
+    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 \u2018304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
     "url": "https://www.businesswire.com/news/home/20261018527252/en/Veradermics-to-Hold-Conference-Call-to-Discuss-Topline-Results-from-Phase-3-%E2%80%98304%E2%80%99-Clinical-Trial-of-VDPHL01-in-Males-with-Mild-to-Moderate-Pattern-Hair-Loss/",
     "checked": "2026-10-18",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3690,7 +3690,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -3814,7 +3814,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -4114,7 +4114,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -4675,6 +4675,59 @@ export default [
   "dm": "2026-09"
  },
  {
+  "id": "readout_iva_2027-09-15",
+  "t": "IVA",
+  "company": "Inventiva S.A.",
+  "d": "2026-09-15",
+  "dp": "month",
+  "name": "IVA337",
+  "type": "Readout",
+  "ta": "Infectious",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT04849728",
+  "ua": "2026-11-02T20:15:29Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT04849728",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-29",
+    "pcd_type": "actual",
+    "updated": "2026-10-29",
+    "ongoing": true
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT04849728",
+   "date_history": [
+    {
+     "date": "2027-09-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-15",
+     "changed": "2026-11-02",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT04849728 is now 2026-09-29 (actual; registry status active_not_recruiting, record updated 2026-10-29); the row's window moved from 2027-09 to 2026-09 on 2026-11-02. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-09-29",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-11-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT04849728"
+   },
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-11-03",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-03; ClinicalTrials.gov 2026-11-03"
+   }
+  },
+  "dm": "2026-09"
+ },
+ {
   "id": "readout_kpti_2026-09-15",
   "t": "KPTI",
   "company": "Karyopharm Therapeutics Inc.",
@@ -4923,6 +4976,59 @@ export default [
     "state": "no_topline",
     "checked": "2026-11-03",
     "searched": "9 sponsor press releases (FMP) through 2026-11-03"
+   }
+  },
+  "dm": "2026-09"
+ },
+ {
+  "id": "readout_vir_2026-12-15",
+  "t": "VIR",
+  "company": "Vir Biotechnology, Inc.",
+  "d": "2026-09-15",
+  "dp": "month",
+  "name": "Tobevibart",
+  "type": "Readout",
+  "ta": "Infectious",
+  "cap": "",
+  "st": "Estimated",
+  "url": "https://clinicaltrials.gov/study/NCT06903338",
+  "ua": "2026-11-03T17:48:06Z",
+  "_d": {
+   "nct_id": {
+    "nct": "NCT06903338",
+    "status": "active_not_recruiting",
+    "pcd": "2026-09-30",
+    "pcd_type": "actual",
+    "updated": "2026-10-30",
+    "ongoing": true
+   },
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "source_url": "https://clinicaltrials.gov/study/NCT06903338",
+   "date_history": [
+    {
+     "date": "2026-12-15",
+     "note": "date the row was keyed on when created"
+    },
+    {
+     "date": "2026-09-15",
+     "changed": "2026-11-03",
+     "why": "ClinicalTrials.gov's primary-completion date for NCT06903338 is now 2026-09-30 (actual; registry status active_not_recruiting, record updated 2026-10-30); the row's window moved from 2026-12 to 2026-09 on 2026-11-03. /readouts defines an estimated date as that registry window, so the row follows it."
+    }
+   ],
+   "registry": {
+    "overall_status": "ACTIVE_NOT_RECRUITING",
+    "primary_completion": "2026-09-30",
+    "primary_completion_type": "ACTUAL",
+    "results_first_submitted": null,
+    "checked": "2026-11-03",
+    "source_url": "https://clinicaltrials.gov/study/NCT06903338"
+   },
+   "resolution": {
+    "state": "no_topline",
+    "checked": "2026-11-03",
+    "searched": "9 sponsor press releases (FMP) through 2026-11-03; ClinicalTrials.gov 2026-11-03"
    }
   },
   "dm": "2026-09"
@@ -5303,7 +5409,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5409,7 +5515,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5536,7 +5642,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5666,7 +5772,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6580,7 +6686,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6601,7 +6707,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6622,7 +6728,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -7004,7 +7110,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -7576,7 +7682,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7612,7 +7718,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7669,7 +7775,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7690,7 +7796,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7987,7 +8093,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SITC",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -8023,7 +8129,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AASLD",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -8059,7 +8165,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACR",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -8095,7 +8201,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AHA",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -8116,7 +8222,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -8137,7 +8243,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -8270,7 +8376,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -8751,7 +8857,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -8780,7 +8886,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -8928,6 +9034,28 @@ export default [
    "source": "BridgeBio Pharma, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm",
    "source_quote": "the benefit of patients and healthcare delivery systems for which heart failure remains a top concern - All three planned NDAs are now submitted to the FDA BBP-418 for LGMD2I R9 was accepted with Priority Review (PDUFA November 27, 2026) encaleret for ADH1 was accepted with Priority Review (PDUFA May 8, 2027), with no advisory committee planned for eithe"
+  }
+ },
+ {
+  "id": "pdufa_pypd_2026-11-28",
+  "t": "PYPD",
+  "company": "PolyPid Ltd.",
+  "d": "2026-11-28",
+  "dp": "day",
+  "name": "D-PLEX100 - prevention of surgical site infections",
+  "type": "PDUFA",
+  "ta": "Infectious Disease",
+  "cap": "Micro",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/PYPD-d-plex100",
+  "_d": {
+   "indication": "Prevention of surgical site infections in patients undergoing abdominal colorectal surgery",
+   "event_slug": "PYPD-d-plex100",
+   "source": "PolyPid 6-K 2026-07-29 (EX-99.1, NDA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm",
+   "source_quote": "The FDA did not identify any filing review issues and set a Prescription Drug User Fee Act (PDUFA) target action date of November 28, 2026",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
   }
  },
  {
@@ -9227,7 +9355,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -9248,7 +9376,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -9269,7 +9397,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -9331,7 +9459,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -9352,7 +9480,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -10246,59 +10374,6 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT07371650"
   },
   "dm": "2026-12"
- },
- {
-  "id": "readout_vir_2026-12-15",
-  "t": "VIR",
-  "company": "Vir Biotechnology, Inc.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "Tobevibart",
-  "type": "Readout",
-  "ta": "Infectious",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06903338",
-  "ua": "2026-11-03T17:48:06Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT06903338",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-30",
-    "pcd_type": "actual",
-    "updated": "2026-10-30",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06903338",
-   "date_history": [
-    {
-     "date": "2026-12-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-11-03",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT06903338 is now 2026-09-30 (actual; registry status active_not_recruiting, record updated 2026-10-30); the row's window moved from 2026-12 to 2026-09 on 2026-11-03. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-30",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-03",
-    "source_url": "https://clinicaltrials.gov/study/NCT06903338"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-03",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-03; ClinicalTrials.gov 2026-11-03"
-   }
-  },
-  "dm": "2026-09"
  },
  {
   "id": "readout_vnda_2026-12-15",
@@ -11985,6 +12060,28 @@ export default [
   "dm": "2027-01"
  },
  {
+  "id": "pdufa_dyn_2027-01-21",
+  "t": "DYN",
+  "company": "Dyne Therapeutics, Inc.",
+  "d": "2027-01-21",
+  "dp": "day",
+  "name": "Z-rostudirsen - Duchenne muscular dystrophy, exon 51",
+  "type": "PDUFA",
+  "ta": "Rare Disease",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/DYN-z-rostudirsen",
+  "_d": {
+   "indication": "Duchenne muscular dystrophy amenable to exon 51 skipping",
+   "event_slug": "DYN-z-rostudirsen",
+   "source": "Dyne 8-K 2026-07-29 (EX-99.1, BLA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526323940/dyn-ex99_1.htm",
+   "source_quote": "Biologics License Application (BLA) for z-rostudirsen in exon 51 DMD accepted for review by FDA; Priority Review granted; PDUFA target action date set for January 21, 2027",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "conf_asco gi_2027-01-21",
   "t": "ASCO GI",
   "company": "ASCO Gastrointestinal Cancers Symposium",
@@ -11996,13 +12093,35 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_insm_2027-01-28",
+  "t": "INSM",
+  "company": "INSMED Inc",
+  "d": "2027-01-28",
+  "dp": "day",
+  "name": "ARIKAYCE (amikacin liposome inhalation suspension) - MAC lung disease (sNDA)",
+  "type": "PDUFA",
+  "ta": "Infectious Disease",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/INSM-arikayce",
+  "_d": {
+   "indication": "MAC lung disease, as part of a combination antibacterial drug regimen",
+   "event_slug": "INSM-arikayce",
+   "source": "Insmed 10-Q 2026-10-29",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1104506/000110450626000047/insm-20260930.htm",
+   "source_quote": "In September 2026, our US supplemental new drug application (sNDA) for ARIKAYCE in patients with MAC lung disease was accepted and granted priority review by the FDA as part of a combination antibacterial drug regimen, with a target action date of January 28, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
   }
  },
  {
@@ -12089,7 +12208,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -12247,13 +12366,35 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_blte_2027-02-12",
+  "t": "BLTE",
+  "company": "Belite Bio, Inc",
+  "d": "2027-02-12",
+  "dp": "day",
+  "name": "Tinlarebant - Stargardt disease type 1",
+  "type": "PDUFA",
+  "ta": "Ophthalmology",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/BLTE-tinlarebant",
+  "_d": {
+   "indication": "Stargardt disease type 1 (STGD1)",
+   "event_slug": "BLTE-tinlarebant",
+   "source": "Belite Bio 6-K 2026-08-11 (EX-99.1, NDA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
+   "source_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA) date of February 12, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
   }
  },
  {
@@ -12404,6 +12545,50 @@ export default [
   }
  },
  {
+  "id": "pdufa_apmd_2027-02-28",
+  "t": "APMD",
+  "company": "Apnimed, Inc.",
+  "d": "2027-02-28",
+  "dp": "day",
+  "name": "AD109 (Oxnimbi) - obstructive sleep apnea",
+  "type": "PDUFA",
+  "ta": "CNS/Neurology",
+  "cap": "Small",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/APMD-ad109",
+  "_d": {
+   "indication": "Obstructive sleep apnea",
+   "event_slug": "APMD-ad109",
+   "source": "Apnimed 8-K 2026-09-08 (EX-99.1, Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1745648/000119312526385355/apmd-ex99_1.htm",
+   "source_quote": "U.S. Food and Drug Administration (FDA) Accepted the NDA for AD109, with a proposed proprietary name Oxnimbi, and assigned a PDUFA target action date of February 28, 2027",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
+  "id": "pdufa_bmrn_2027-02-28",
+  "t": "BMRN",
+  "company": "Biomarin Pharmaceutical Inc",
+  "d": "2027-02-28",
+  "dp": "day",
+  "name": "VOXZOGO (vosoritide) - full approval, children with achondroplasia",
+  "type": "PDUFA",
+  "ta": "Rare Disease",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/BMRN-voxzogo-achondroplasia",
+  "_d": {
+   "indication": "Children with achondroplasia (application for full approval)",
+   "event_slug": "BMRN-voxzogo-achondroplasia",
+   "source": "BioMarin 8-K 2026-11-02 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
+   "source_quote": "BioMarin's application for full approval of VOXZOGO in children with achondroplasia is under review by the FDA, with a PDUFA target action date of February 28, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "pdufa_gsk_2027-02-28",
   "t": "GSK",
   "company": "GSK plc",
@@ -12448,6 +12633,28 @@ export default [
   "dm": "2027-02"
  },
  {
+  "id": "pdufa_pvla_2027-02-28",
+  "t": "PVLA",
+  "company": "Palvella Therapeutics, Inc.",
+  "d": "2027-02-28",
+  "dp": "day",
+  "name": "QTORIN rapamycin - microcystic lymphatic malformations (SELVA)",
+  "type": "PDUFA",
+  "ta": "Rare Disease",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/PVLA-qtorin-rapamycin",
+  "_d": {
+   "indication": "Microcystic lymphatic malformations",
+   "event_slug": "PVLA-qtorin-rapamycin",
+   "source": "Palvella 8-K 2026-10-28 (EX-99.1, NDA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1583648/000119312526435113/pvla-ex99_1.htm",
+   "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 28, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "pdufa_exel_2026-12-03",
   "t": "EXEL",
   "company": "Exelixis",
@@ -12489,6 +12696,50 @@ export default [
      "why": "Three-month extension after Exelixis submitted updated safety and efficacy data in response to an FDA information request (announced September 2026; Exelixis 8-K 2026-10-29)."
     }
    ]
+  }
+ },
+ {
+  "id": "pdufa_ntla_2027-03-10",
+  "t": "NTLA",
+  "company": "Intellia Therapeutics, Inc.",
+  "d": "2027-03-10",
+  "dp": "day",
+  "name": "Lonvoguran ziclumeran (lonvo-z) - hereditary angioedema",
+  "type": "PDUFA",
+  "ta": "Rare Disease",
+  "cap": "Small",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/NTLA-lonvo-z",
+  "_d": {
+   "indication": "Hereditary angioedema",
+   "event_slug": "NTLA-lonvo-z",
+   "source": "Intellia 8-K 2026-09-08 (EX-99.1, BLA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652130/000119312526385194/ntla-ex99_1.htm",
+   "source_quote": "FDA sets Prescription Drug User Fee Act (PDUFA) date of March 10, 2027",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
+  "id": "pdufa_bmy_2027-03-11",
+  "t": "BMY",
+  "company": "Bristol-Myers Squibb Company",
+  "d": "2027-03-11",
+  "dp": "day",
+  "name": "Reblozyl (luspatercept) with a JAK inhibitor - myelofibrosis-associated anemia (INDEPENDENCE)",
+  "type": "PDUFA",
+  "ta": "Hematology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/BMY-reblozyl-mf",
+  "_d": {
+   "indication": "Adults with myelofibrosis-associated anemia receiving red blood cell transfusions, with concomitant JAK inhibitor therapy",
+   "event_slug": "BMY-reblozyl-mf",
+   "source": "Bristol Myers Squibb 8-K 2026-07-30 (EX-99.1, Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
+   "source_quote": "The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
   }
  },
  {
@@ -12821,6 +13072,28 @@ export default [
   "dm": "2027-03"
  },
  {
+  "id": "pdufa_aqst_2027-03-16",
+  "t": "AQST",
+  "company": "Aquestive Therapeutics, Inc.",
+  "d": "2027-03-16",
+  "dp": "day",
+  "name": "Anaphylm (dibutepinephrine) sublingual film - NDA resubmission",
+  "type": "PDUFA",
+  "ta": "Immunology",
+  "cap": "Small",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/AQST-anaphylm",
+  "_d": {
+   "indication": "Anaphylaxis (Class 2 resubmission after the January 30, 2026 CRL)",
+   "event_slug": "AQST-anaphylm",
+   "source": "Aquestive 8-K 2026-10-15 (EX-99.1, resubmission accepted)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000058/a2026-10x19aquestivepduf.htm",
+   "source_quote": "Aquestive Therapeutics Announces FDA Acceptance of Anaphylm NDA Resubmission and PDUFA Goal Date of March 16, 2027",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "conf_aad_2027-03-19",
   "t": "AAD",
   "company": "American Academy of Dermatology Annual Meeting",
@@ -12832,13 +13105,57 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_mrk_2027-03-22",
+  "t": "MRK",
+  "company": "Merck & Co., Inc.",
+  "d": "2027-03-22",
+  "dp": "day",
+  "name": "ENFLONSIA (clesrovimab) - second RSV season (SMART)",
+  "type": "PDUFA",
+  "ta": "Infectious Disease",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/MRK-enflonsia",
+  "_d": {
+   "indication": "RSV lower respiratory tract disease in children under 2 at increased risk, through their second RSV season",
+   "event_slug": "MRK-enflonsia",
+   "source": "Merck 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
+   "source_quote": "U.S. FDA set PDUFA date of March 22, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
+  "id": "pdufa_eton_2027-03-29",
+  "t": "ETON",
+  "company": "Eton Pharmaceuticals, Inc.",
+  "d": "2027-03-29",
+  "dp": "day",
+  "name": "LIBERVANT (diazepam) buccal film - ages 6 to 11 (Type 9 NDA)",
+  "type": "PDUFA",
+  "ta": "CNS/Neurology",
+  "cap": "Small",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/ETON-libervant",
+  "_d": {
+   "indication": "Seizure clusters, expansion to patients ages 6 to 11",
+   "event_slug": "ETON-libervant",
+   "source": "Eton 8-K 2026-10-14 (EX-99.1)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926032600/ex_1025429.htm",
+   "source_quote": "The NDA has a Prescription Drug User Fee Act (PDUFA) target action date of March 29, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
   }
  },
  {
@@ -13096,6 +13413,28 @@ export default [
   "dm": "2027-03"
  },
  {
+  "id": "pdufa_hrmy_2027-04-01",
+  "t": "HRMY",
+  "company": "Harmony Biosciences Holdings, Inc.",
+  "d": "2027-04-01",
+  "dp": "day",
+  "name": "Pitolisant GR (gastro-resistant formulation) - NDA",
+  "type": "PDUFA",
+  "ta": "CNS/Neurology",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/HRMY-pitolisant-gr",
+  "_d": {
+   "indication": "Pitolisant gastro-resistant formulation (NDA accepted July 2026)",
+   "event_slug": "HRMY-pitolisant-gr",
+   "source": "Harmony 8-K 2026-08-04 (EX-99.1, Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926090086/hrmy-20260804xex99d1.htm",
+   "source_quote": "Pitolisant GR NDA Accepted in July; Target PDUFA Date April 1, 2027",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "conf_aacr_2027-04-02",
   "t": "AACR",
   "company": "AACR Annual Meeting",
@@ -13107,7 +13446,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -13128,7 +13467,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -13491,6 +13830,50 @@ export default [
   "dm": "2027-04"
  },
  {
+  "id": "pdufa_jazz_2027-04-16",
+  "t": "JAZZ",
+  "company": "Jazz Pharmaceuticals plc",
+  "d": "2027-04-16",
+  "dp": "day",
+  "name": "Cannabidiol oral capsule formulation (NDA)",
+  "type": "PDUFA",
+  "ta": "CNS/Neurology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/JAZZ-cannabidiol-capsule",
+  "_d": {
+   "indication": "Oral cannabidiol capsule formulation",
+   "event_slug": "JAZZ-cannabidiol-capsule",
+   "source": "Jazz 8-K 2026-11-02 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000056/a3q26earningsrelease.htm",
+   "source_quote": "The PDUFA target action date for our New Drug Application (NDA) for the oral cannabidiol capsule formulation is April 16, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
+  "id": "pdufa_mrk_2027-04-22",
+  "t": "MRK",
+  "company": "Merck & Co., Inc.",
+  "d": "2027-04-22",
+  "dp": "day",
+  "name": "IDVYNSO - treatment-naive HIV-1 (P053) and 96-week data (sNDAs)",
+  "type": "PDUFA",
+  "ta": "Infectious Disease",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/MRK-idvynso",
+  "_d": {
+   "indication": "Adults with HIV-1 infection (treatment-naive; 96-week data in virologically suppressed adults)",
+   "event_slug": "MRK-idvynso",
+   "source": "Merck 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
+   "source_quote": "U.S. FDA set a PDUFA date for both sNDAs of April 22, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "pdufa_phvs_2027-04-23",
   "t": "PHVS",
   "company": "Pharvaris N.V.",
@@ -13524,6 +13907,28 @@ export default [
   }
  },
  {
+  "id": "pdufa_imnm_2027-04-28",
+  "t": "IMNM",
+  "company": "Immunome, Inc.",
+  "d": "2027-04-28",
+  "dp": "day",
+  "name": "Varegacestat - desmoid tumors (RINGSIDE)",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "Mid",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/IMNM-varegacestat",
+  "_d": {
+   "indication": "Adults with desmoid tumors",
+   "event_slug": "IMNM-varegacestat",
+   "source": "Immunome 8-K 2026-08-11 (EX-99.1, Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1472012/000119312526344577/imnm-ex99_1.htm",
+   "source_quote": "Varegacestat PDUFA target action date set for April 28, 2027, following U.S. FDA acceptance of New Drug Application (NDA) for adults with desmoid tumors",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "pdufa_axsm_2027-05-01",
   "t": "AXSM",
   "company": "Axsome Therapeutics, Inc.",
@@ -13545,6 +13950,28 @@ export default [
   }
  },
  {
+  "id": "pdufa_qure_2027-05-01",
+  "t": "QURE",
+  "company": "uniQure N.V.",
+  "d": "2027-05-01",
+  "dp": "day",
+  "name": "Ifezuntirgene inilparvovec (AMT-130) - Huntington's disease",
+  "type": "PDUFA",
+  "ta": "Neurology",
+  "cap": "Small",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/QURE-amt-130",
+  "_d": {
+   "indication": "Huntington's disease (Accelerated Approval pathway; FDA tentatively plans an advisory committee)",
+   "event_slug": "QURE-amt-130",
+   "source": "uniQure 8-K 2026-11-02 (EX-99.1, BLA accepted, priority review)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1590560/000110465926120915/tm2628699d1_ex99-1.htm",
+   "source_quote": "The application has been granted Priority Review with a Prescription Drug User Fee Act (PDUFA) target action date of May 1, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "conf_aan_2027-05-01",
   "t": "AAN",
   "company": "American Academy of Neurology Annual Meeting",
@@ -13556,7 +13983,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -13577,7 +14004,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -13608,6 +14035,28 @@ export default [
   }
  },
  {
+  "id": "pdufa_bmy_2027-05-13",
+  "t": "BMY",
+  "company": "Bristol-Myers Squibb Company",
+  "d": "2027-05-13",
+  "dp": "day",
+  "name": "Mezigdomide + carfilzomib + dexamethasone - RRMM (SUCCESSOR-2)",
+  "type": "PDUFA",
+  "ta": "Hematology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/BMY-mezigdomide",
+  "_d": {
+   "indication": "Relapsed or refractory multiple myeloma",
+   "event_slug": "BMY-mezigdomide",
+   "source": "Bristol Myers Squibb 8-K 2026-07-30 (EX-99.1, Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
+   "source_quote": "The FDA accepted a New Drug Application for mezigdomide in combination with carfilzomib and dexamethasone (MeziKd) in patients with relapsed or refractory multiple myeloma (RRMM), granting a PDUFA date of May 13, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "conf_ats_2027-05-14",
   "t": "ATS",
   "company": "American Thoracic Society International Conference",
@@ -13619,7 +14068,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -13822,13 +14271,57 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
    "organiser_url": "",
    "presenters": [],
    "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "pdufa_zbio_2027-05-27",
+  "t": "ZBIO",
+  "company": "Zenas BioPharma, Inc.",
+  "d": "2027-05-27",
+  "dp": "day",
+  "name": "Obexelimab - IgG4-related disease",
+  "type": "PDUFA",
+  "ta": "Immunology",
+  "cap": "Small",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/ZBIO-obexelimab",
+  "_d": {
+   "indication": "IgG4-related disease",
+   "event_slug": "ZBIO-obexelimab",
+   "source": "Zenas BioPharma 8-K 2026-08-13 (EX-99.1, Q2 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1953926/000110465926095437/tm2622871d1_ex99-1.htm",
+   "source_quote": "Obexelimab BLA submission for the treatment of IgG4-RD accepted by FDA; PDUFA target action date of May 27, 2027",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
+  "id": "pdufa_bmrn_2027-05-30",
+  "t": "BMRN",
+  "company": "Biomarin Pharmaceutical Inc",
+  "d": "2027-05-30",
+  "dp": "day",
+  "name": "VOXZOGO (vosoritide) - hypochondroplasia (sNDA)",
+  "type": "PDUFA",
+  "ta": "Rare Disease",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/BMRN-voxzogo-hypochondroplasia",
+  "_d": {
+   "indication": "Hypochondroplasia",
+   "event_slug": "BMRN-voxzogo-hypochondroplasia",
+   "source": "BioMarin 8-K 2026-11-02 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
+   "source_quote": "Food and Drug Administration (FDA) has set a PDUFA target action date of May 30, 2027 for its supplemental NDA to expand the use of VOXZOGO for the treatment of HCH",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
   }
  },
  {
@@ -13843,7 +14336,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -13864,7 +14357,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -14185,6 +14678,28 @@ export default [
   "dm": "2027-06"
  },
  {
+  "id": "pdufa_mrk_2027-06-15",
+  "t": "MRK",
+  "company": "Merck & Co., Inc.",
+  "d": "2027-06-15",
+  "dp": "day",
+  "name": "Sacituzumab tirumotecan (sac-TMT) - endometrial cancer (TroFuse-005)",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "Large",
+  "st": "Upcoming",
+  "ua": "2026-11-04T04:16:50Z",
+  "url": "/pdufa/MRK-sac-tmt",
+  "_d": {
+   "indication": "Adults with endometrial cancer previously treated with platinum chemotherapy and a PD-1/PD-L1 inhibitor",
+   "event_slug": "MRK-sac-tmt",
+   "source": "Merck 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
+   "source_quote": "U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.",
+   "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement."
+  }
+ },
+ {
   "id": "readout_nvs_2027-06-15",
   "t": "NVS",
   "company": "Novartis Ag",
@@ -14259,7 +14774,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -14280,7 +14795,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-11-04T01:30:51Z",
+  "ua": "2026-11-04T04:37:31Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -14377,34 +14892,6 @@ export default [
   "dm": "2027-07"
  },
  {
-  "id": "readout_btai_2027-07-15",
-  "t": "TEVA",
-  "company": "Teva Pharmaceutical Industries",
-  "d": "2027-07-15",
-  "dp": "month",
-  "name": "Sublingual film containing dexmedetomidine",
-  "type": "Readout",
-  "ta": "CNS",
-  "cap": "Large",
-  "st": "Estimated",
-  "url": "/ticker/TEVA",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "ticker_history": [
-    {
-     "ticker": "BTAI",
-     "until": "2026-10-26",
-     "why": "BXCL501 sold to Teva with IGALMI (BioXcel 8-K 2026-10-30, Item 2.01)."
-    }
-   ]
-  },
-  "dm": "2027-07"
- },
- {
   "id": "readout_meso_2027-07-15",
   "t": "MESO",
   "company": "Mesoblast Ltd",
@@ -14460,6 +14947,34 @@ export default [
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
    "source_url": "https://clinicaltrials.gov/study/NCT07280377"
+  },
+  "dm": "2027-07"
+ },
+ {
+  "id": "readout_btai_2027-07-15",
+  "t": "TEVA",
+  "company": "Teva Pharmaceutical Industries",
+  "d": "2027-07-15",
+  "dp": "month",
+  "name": "Sublingual film containing dexmedetomidine",
+  "type": "Readout",
+  "ta": "CNS",
+  "cap": "Large",
+  "st": "Estimated",
+  "url": "/ticker/TEVA",
+  "ua": "2026-07-11T15:23:27Z",
+  "_d": {
+   "nct_id": null,
+   "indication": null,
+   "market_cap_usd": null,
+   "source": "trial-estimate (not company-confirmed)",
+   "ticker_history": [
+    {
+     "ticker": "BTAI",
+     "until": "2026-10-26",
+     "why": "BXCL501 sold to Teva with IGALMI (BioXcel 8-K 2026-10-30, Item 2.01)."
+    }
+   ]
   },
   "dm": "2027-07"
  },
@@ -14891,59 +15406,6 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Chronic Graft-versus-host-disease"
   },
   "dm": "2027-09"
- },
- {
-  "id": "readout_iva_2027-09-15",
-  "t": "IVA",
-  "company": "Inventiva S.A.",
-  "d": "2026-09-15",
-  "dp": "month",
-  "name": "IVA337",
-  "type": "Readout",
-  "ta": "Infectious",
-  "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT04849728",
-  "ua": "2026-11-02T20:15:29Z",
-  "_d": {
-   "nct_id": {
-    "nct": "NCT04849728",
-    "status": "active_not_recruiting",
-    "pcd": "2026-09-29",
-    "pcd_type": "actual",
-    "updated": "2026-10-29",
-    "ongoing": true
-   },
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT04849728",
-   "date_history": [
-    {
-     "date": "2027-09-15",
-     "note": "date the row was keyed on when created"
-    },
-    {
-     "date": "2026-09-15",
-     "changed": "2026-11-02",
-     "why": "ClinicalTrials.gov's primary-completion date for NCT04849728 is now 2026-09-29 (actual; registry status active_not_recruiting, record updated 2026-10-29); the row's window moved from 2027-09 to 2026-09 on 2026-11-02. /readouts defines an estimated date as that registry window, so the row follows it."
-    }
-   ],
-   "registry": {
-    "overall_status": "ACTIVE_NOT_RECRUITING",
-    "primary_completion": "2026-09-29",
-    "primary_completion_type": "ACTUAL",
-    "results_first_submitted": null,
-    "checked": "2026-11-03",
-    "source_url": "https://clinicaltrials.gov/study/NCT04849728"
-   },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-03",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-03; ClinicalTrials.gov 2026-11-03"
-   }
-  },
-  "dm": "2026-09"
  },
  {
   "id": "readout_maia_2027-09-15",

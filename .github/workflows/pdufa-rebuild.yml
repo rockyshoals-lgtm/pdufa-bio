@@ -80,7 +80,10 @@ jobs:
       - name: "Run-up study: fold in newly decided PDUFAs"
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
-        run: python extend_runup_study.py
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: |
+          python extend_runup_study.py
+          python backfill_runup_mcap_tier.py
 
       - name: "Run-up study: compute T-120 baseline for new events only"
         env:
@@ -91,7 +94,9 @@ jobs:
         run: python runup_study_stats.py
 
       - name: "Run-up study: refresh cohort figures quoted on every decision page"
-        run: python refresh_cohort_figures.py
+        run: |
+          python refresh_cohort_figures.py
+          python build_cap_study_page.py
 
       # 2026-09-19 (task #82): the study's SIZE was typed by hand on /decisions, /pricing,
       # /developers, /vktx and /fda-approval-rate (1,827 / 1,786 / 1,888 while the study held
@@ -118,6 +123,7 @@ jobs:
           # month within the same run.
           python reconcile_calendar_table.py
           python sync_event_urls.py
+          python ensure_calendar_month_pages.py
           python ensure_calendar_rows.py
 
       # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its

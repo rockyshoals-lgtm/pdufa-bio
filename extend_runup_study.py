@@ -86,6 +86,14 @@ def mcap_tier(mcap):
     return "Large (>$10B)"
 
 
+def _fmp_tier(tk, eve):
+    try:
+        from fmp_mcap import mcap_on
+        return mcap_tier(mcap_on(tk, eve))
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -171,7 +179,10 @@ def main():
             "runup_7d": pct(7), "runup_5d": pct(5), "runup_3d": pct(3),
             "post_1d": post(1), "post_2d": post(2), "post_5d": post(5),
             "vol_ratio": vr,
-            "mcap_tier": mcap_tier(((m.get("_d") or {}).get("market_cap_usd")) if isinstance(m.get("_d"), dict) else None),
+            # 2026-11-03: the dataset field almost never exists, so 97 rows shipped untiered and every by-size
+            # figure silently excluded them. FMP's market cap on the eve date is the fallback (fmp_mcap.py).
+            "mcap_tier": mcap_tier(((m.get("_d") or {}).get("market_cap_usd")) if isinstance(m.get("_d"), dict) else None)
+                         or _fmp_tier(tk, dates[eve_i]),
             "cache_key": f"{tk}_{d.replace('-', '')}",
             "T-90_T-7": frac(90, 7), "T-90_T-3": frac(90, 3), "T-90_T-1": frac(90, 1),
             "T-60_T-7": frac(60, 7), "T-60_T-3": frac(60, 3), "T-60_T-1": frac(60, 1),

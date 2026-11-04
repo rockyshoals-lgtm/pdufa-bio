@@ -328,11 +328,6 @@
    "permanent": true
   },
   {
-   "source": "/pdufa/HRMY",
-   "destination": "/calendar",
-   "permanent": true
-  },
-  {
    "source": "/pdufa/BNTX",
    "destination": "/calendar",
    "permanent": true
@@ -2188,6 +2183,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/amikacin-liposome-inhalation-suspension",
+   "destination": "/drug/arikayce",
+   "permanent": true
+  },
+  {
    "source": "/drug/aminolevulinic-acid-hydrochloride",
    "destination": "/drug/ameluz",
    "permanent": true
@@ -2303,6 +2303,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/clesrovimab",
+   "destination": "/drug/enflonsia",
+   "permanent": true
+  },
+  {
    "source": "/drug/copper-histidinate",
    "destination": "/drug/zycubo",
    "permanent": true
@@ -2348,8 +2353,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/diazepam",
+   "destination": "/drug/libervant",
+   "permanent": true
+  },
+  {
    "source": "/drug/diazoxide-choline",
    "destination": "/drug/vykat-xr",
+   "permanent": true
+  },
+  {
+   "source": "/drug/dibutepinephrine",
+   "destination": "/drug/anaphylm",
    "permanent": true
   },
   {
@@ -2463,6 +2478,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/gastro-resistant-formulation",
+   "destination": "/drug/pitolisant-gr",
+   "permanent": true
+  },
+  {
    "source": "/drug/gedatolisib-with",
    "destination": "/drug/gedatolisib",
    "permanent": true
@@ -2538,6 +2558,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/lonvo-z",
+   "destination": "/drug/lonvoguran-ziclumeran",
+   "permanent": true
+  },
+  {
    "source": "/drug/lumateperone",
    "destination": "/drug/caplyta",
    "permanent": true
@@ -2545,6 +2570,11 @@
   {
    "source": "/drug/lunsotogene-parvec-cwha",
    "destination": "/drug/otarmeni",
+   "permanent": true
+  },
+  {
+   "source": "/drug/luspatercept",
+   "destination": "/drug/reblozyl",
    "permanent": true
   },
   {

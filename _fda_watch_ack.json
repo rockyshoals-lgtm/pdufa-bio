@@ -50,6 +50,11 @@
    "ticker": "TEVA",
    "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
    "reason": "Same exhibit as the BTAI ack; the row moved to TEVA on 2026-11-01."
+  },
+  {
+   "ticker": "VRTX",
+   "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "reason": "Vertex Q3 2026 results (8-K 2026-11-02) restate the pending povetacicept PDUFA date of November 30, 2026 ('potential povetacicept approval in IgAN coming later this month'); not an approval."
   }
  ]
 }
