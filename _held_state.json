@@ -1,16 +1,8 @@
 {
- "held_since": "2026-11-04T05:12:47Z",
- "consecutive_held_runs": 1,
+ "held_since": null,
+ "consecutive_held_runs": 0,
  "emailed_at": null,
- "leads": [
-  {
-   "source": "drugs_at_fda",
-   "row_id": "pdufa_mrk_2027-03-22",
-   "key": "MRK|2026-10-14",
-   "text": "AP 2026-10-14 on 'clesrovimab' (BLA761432 SUPPL-3, class EFFICACY)",
-   "first_seen": "2026-11-04T05:12:47Z"
-  }
- ],
+ "leads": [],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
@@ -30,6 +22,6 @@
   "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
- "last_clear_run": "2026-11-04T04:22:17Z",
+ "last_clear_run": "2026-11-04T18:10:55Z",
  "email_status": "mention-issue"
 }
