@@ -43,3 +43,7 @@
 - **/research/pdufa-stock-run-up-by-market-cap** was a frozen September cohort ("763 decisions") with no builder. New `build_cap_study_page.py` recomputes from the run-up study every run: 837 decisions (2024-26); reaction (larger of decision-day/next-day move) Nano 10.1%, Micro 6.7%, Small 5.6%, Mid 3.8%, Large 1.5%; T-120 run-up Nano -9.0%, Micro +18.0%, Small +4.2%, Mid +12.8%, Large +6.5%. Caveat sentences are kept only while the numbers still support them.
 - Timing census, cohort figures, run-up-by-year, implied-vs-actual, CRL/approval-rate pages: rebuilt by the chain from current data.
 - **Not refreshable today**: /research/readout-reaction (fixed 1,752-readout Gungnir set) and /research/short-interest-fda (1,753 decisions; built on one April 2026 short-interest snapshot applied to every year, the lookahead flagged in the April red team). Both need new data, not a rebuild. /research/conference-runup rebuilds nightly; its numbers have not changed since Sept 27.
+
+## 4. Outcome (Nov 4, ~05:50 UTC = 00:50 ET)
+Run 41775108463: all guards passed, data committed, post-deploy verifier passed; new event pages live (e.g. /pdufa/QURE-amt-130, /pdufa/MRK-sac-tmt). Held lead #60 (openFDA AP 2026-10-14 on ENFLONSIA, BLA 761432 S-3) checked against the FDA letter: a safety labeling update (injection-site reaction rates), not the second-season sBLA (PDUFA Mar 22, 2027). Acked with #58; issues #58-#60 closed.
+
