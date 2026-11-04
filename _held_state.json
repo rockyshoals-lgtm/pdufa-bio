@@ -1,8 +1,16 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-11-04T05:12:47Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "drugs_at_fda",
+   "row_id": "pdufa_mrk_2027-03-22",
+   "key": "MRK|2026-10-14",
+   "text": "AP 2026-10-14 on 'clesrovimab' (BLA761432 SUPPL-3, class EFFICACY)",
+   "first_seen": "2026-11-04T05:12:47Z"
+  }
+ ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
@@ -11,6 +19,7 @@
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",
+  "drugs_at_fda|MRK|2026-10-14",
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000081",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
