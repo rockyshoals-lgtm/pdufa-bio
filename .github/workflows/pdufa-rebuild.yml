@@ -125,6 +125,7 @@ jobs:
           python sync_event_urls.py
           python ensure_calendar_month_pages.py
           python ensure_calendar_rows.py
+          python build_calendar_year_hub.py
 
       # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its
       # decisions from /decisions; a decision page built since the last run had no listing row
@@ -669,7 +670,7 @@ jobs:
       # hand-sourced trial sentence/description from _event_trial_facts.json. Then the row's url and
       # its calendar row follow event_pages.resolve() (the page that states the row's date).
       - name: "Pending event pages: Event schema, sibling links, trial facts; urls follow the page"
-        run: python enrich_event_pages.py && python partner_event_pages.py && python sync_event_urls.py
+        run: python enrich_event_pages.py && python partner_event_pages.py && python sync_event_urls.py && python inject_event_page_source.py
 
       # PDUFA dates move. build_pdufa_event_pages never overwrites an existing page (the
       # hand-grown ones carry story cards worth keeping), so a moved date used to leave the page
@@ -786,7 +787,7 @@ jobs:
         run: python fix_meta_lengths.py
 
       - name: Normalise navigation (one nav, site-wide)
-        run: python rebuild_nav.py
+        run: python rebuild_nav.py && python inject_mobile_nav.py
 
       # Favicon (2026-09-06): the calendar-with-check mark, SVG + PNG/ICO fallbacks drawn
       # natively, and one canonical icon link set on every page (fourteen builders each

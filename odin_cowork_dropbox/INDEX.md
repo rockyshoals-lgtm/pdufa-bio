@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-11-05 BUILDER (ux seo aicitation audit)** — `2026-11-05_BUILDER_ux_seo_aicitation_audit.md` — 2026-11-05, work 00:40-03:30 Pacific = 03:40-06:30 Eastern. RULE 1.
 - **2026-11-03 BUILDER (currency studies runups)** — `2026-11-03_BUILDER_currency_studies_runups.md` — 2026-11-03, work 17:00-21:30 Pacific = 20:00-00:30 Eastern. RULE 1.
 - **2026-11-01 BUILDER (currency redteam)** — `2026-11-01_BUILDER_currency_redteam.md` — 2026-11-01, work afternoon/evening Pacific = evening Eastern; pushed after 01:00 UTC Nov 2. RULE 1.
 - **2026-10-24 BUILDER (timing census backfill gazyva)** — `2026-10-24_BUILDER_timing_census_backfill_gazyva.md` — 2026-10-24, work 12:30 Pacific onward = 15:30 Eastern = 19:30 UTC. RULE 1.

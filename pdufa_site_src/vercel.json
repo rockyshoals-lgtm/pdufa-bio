@@ -2168,6 +2168,11 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/INBX-inbrx-106",
+   "destination": "/pdufa/INBX-ozekibart",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2623,6 +2628,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/mitomycin",
+   "destination": "/drug/ugn-103",
+   "permanent": true
+  },
+  {
    "source": "/drug/molgramostim-inhalation",
    "destination": "/drug/molbreevi",
    "permanent": true
@@ -2920,6 +2930,11 @@
   {
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/CGEM-cln-081",
+   "destination": "/pdufa/CGEM-zipalertinib",
    "permanent": true
   }
  ],

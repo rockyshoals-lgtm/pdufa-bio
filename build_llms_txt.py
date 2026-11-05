@@ -127,6 +127,7 @@ sponsor's own release).
 ## Main pages
 
 - /calendar - the 2026 FDA decision calendar, every date linked to its source
+- /calendar/2027 - every 2027 PDUFA goal date already announced, by month, each from the sponsor's own filing
 - /fda-this-month - what the FDA decided and has still to decide this month, as sentences
 - /decisions - archive of past approvals and CRLs, source-linked
 - /crl - every released FDA Complete Response Letter, by year, linking the FDA's PDF

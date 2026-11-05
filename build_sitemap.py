@@ -99,6 +99,9 @@ def git_dates():
 # nav on every page is not one.
 BOILER = [
     re.compile(r"<!--NAVC:BEGIN-->.*?<!--NAVC:END-->", re.S),
+    # 2026-11-05: the mobile menu button and its stylesheet (inject_mobile_nav.py) are nav chrome too.
+    re.compile(r'<button class="pd-burger".*?</button>', re.S),
+    re.compile(r'<style id="navpolish">.*?</style>', re.S),
     # Template furniture added site-wide. The freshness stamp is deliberately constant markup, and
     # the company index is generated from the rows already on the page, so neither is new content
     # about the subject. Counting them would mark all 850 pages as changed on any sweep.

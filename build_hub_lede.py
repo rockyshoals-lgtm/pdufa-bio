@@ -24,7 +24,7 @@ ranks becomes a page that embarrasses us.
 
     python build_hub_lede.py [--dry-run]
 """
-import argparse, datetime as dt, html, io, json, os, re, sys
+import argparse, datetime as dt, glob, html, io, json, os, re, sys
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -217,6 +217,20 @@ def homepage_sentence():
     crl = sum(1 for r in dec if r["crl"])
 
     s = f"pdufa.bio tracks {ahead} upcoming FDA decision dates"
+    # 2026-11-05: /calendar's live grid stops at December 2026, but 40+ sourced goal dates already sit in 2027 on
+    # the year's month pages. "Tracks 25" undersold the dataset by more than half. Count those published rows too
+    # (same rule: read from the pages, never recomputed), naming the window so the 25 still matches /calendar.
+    later = 0
+    last_head = re.findall(r'<div class="mhead">[A-Za-z]+ (\d{4})</div>',
+                           open(os.path.join(SITE, "calendar", "index.html"), encoding="utf-8", errors="replace").read())
+    cal_year = max(last_head) if last_head else today[:4]
+    for p in glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "*", "index.html")):
+        if p.split(os.sep)[-3] <= cal_year:
+            continue
+        later += sum(1 for r in rows_of(os.path.relpath(os.path.dirname(p), SITE).replace(os.sep, "/"))
+                     if not (r["approved"] or r["crl"]) and (not r["iso"] or r["iso"] >= today))
+    if later:
+        s += f" through December {cal_year}, {later} more already set for {int(cal_year) + 1} and later,"
     if rd:
         # the same "expected" set /readouts' own lede counts: windows not yet passed (audit 2026-10-11)
         cur_ = (_eastern_today().year, _eastern_today().month)
