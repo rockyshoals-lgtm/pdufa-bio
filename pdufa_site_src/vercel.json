@@ -2173,6 +2173,11 @@
    "permanent": true
   },
   {
+   "source": "/pdufa/CGEM-cln-081",
+   "destination": "/pdufa/CGEM-zipalertinib",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2930,11 +2935,6 @@
   {
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
-   "permanent": true
-  },
-  {
-   "source": "/pdufa/CGEM-cln-081",
-   "destination": "/pdufa/CGEM-zipalertinib",
    "permanent": true
   }
  ],
