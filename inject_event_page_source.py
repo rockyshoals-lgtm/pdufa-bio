@@ -105,6 +105,11 @@ def main():
                     new = new[:m.end()] + block + new[m.end():]
             new = re.sub(r'<div class="note" style="margin:8px 0">Primary source: <a [^>]*>sponsor announcement</a></div>',
                          "", new)
+        # the Key-facts tier was written once at page creation; CYTK's said Large while the homepage, from the same
+        # row's current market cap, said Mid (2026-11-05). The row's tier is refreshed daily; the page follows it.
+        cap = str(r.get("cap") or "").strip()
+        if cap in ("Nano", "Micro", "Small", "Mid", "Large"):
+            new = re.sub(r"(<span>Market-cap tier</span><b>)[A-Za-z]+(</b>)", rf"\g<1>{cap}\g<2>", new, count=1)
         y, mo = str(r.get("d") or "")[:4], str(r.get("d") or "")[5:7]
         if y > "2026" and mo.isdigit():
             mname = MONTHS[int(mo) - 1]

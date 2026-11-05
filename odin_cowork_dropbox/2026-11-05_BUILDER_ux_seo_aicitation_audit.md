@@ -25,3 +25,7 @@
 ## 5. Not done
 - Bing Webmaster not checked (Chrome extension tab unresponsive this session).
 - Sarepta 2027 dates (above) unverified.
+
+## 6. Outcome (Nov 5, ~10:10 UTC = 05:10 ET)
+Run 42001450923 green incl. post-deploy verifier; /calendar/2027, the CYTK correction, source lines and the mobile menu verified live at 375 px. Follow-up commit: the event pages' Key-facts market-cap tier now follows the row's daily-refreshed tier (CYTK said Large on its page and Mid on the homepage). The Polygon price step now takes ~25 min per run with ~70 forward catalysts at the API's free-tier rate; worth a paid key or batching if runs need to be faster.
+
