@@ -307,6 +307,10 @@
   {
    "id": "readout_vir_2026-12-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-09-30); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_ogn_2026-10-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-10-14); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."
