@@ -1,14 +1,7 @@
 {
  "_note": "Every row verified against the organiser's own site. Dates that an organiser has not published are absent rather than estimated: a conference calendar that guesses is worse than one with a gap. JPM 2027 is deliberately omitted, see _unannounced.",
- "_verified_on": "2026-09-06",
- "_unannounced": [
-  {
-   "code": "JPM",
-   "name": "J.P. Morgan Healthcare Conference 2027",
-   "why": "J.P. Morgan has not published 2027 dates. Third-party sites claim 11 to 14 January 2027; that is unverified and is not published here.",
-   "source": "https://www.jpmorgan.com/about-us/events-conferences/health-care-conference"
-  }
- ],
+ "_verified_on": "2026-11-08",
+ "_unannounced": [],
  "conferences": [
   {
    "code": "ESC",
@@ -262,6 +255,15 @@
    "city": "London, UK",
    "focus": "Immuno-oncology, cell and gene therapy",
    "source": "https://www.esmo.org/meeting-calendar/esmo-immuno-oncology-advanced-therapies-congress-2026"
+  },
+  {
+   "code": "JPM",
+   "name": "J.P. Morgan Healthcare Conference",
+   "start": "2027-01-11",
+   "end": "2027-01-14",
+   "city": "San Francisco, US",
+   "focus": "Healthcare investing (company presentations)",
+   "source": "https://www.jpmorgan.com/about-us/events-conferences/health-care-conference"
   },
   {
    "code": "ASCO GI",

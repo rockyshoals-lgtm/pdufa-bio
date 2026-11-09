@@ -60,6 +60,16 @@
    "ticker": "MRK",
    "ap_date": "2026-10-14",
    "reason": "ENFLONSIA BLA 761432 S-3 (FDA letter 2026-10-14): safety labeling update (injection-site reaction rates), not the second-RSV-season sBLA, whose PDUFA date is March 22, 2027 (Merck 8-K 2026-10-29)."
+  },
+  {
+   "ticker": "COGT",
+   "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
+   "reason": "Q3 2026 results restate the GIST (Nov 30, 2026) and NonAdvSM (Dec 30, 2026) PDUFA dates and add AdvSM (Jun 29, 2027); no approval."
+  },
+  {
+   "ticker": "MLYS",
+   "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/1933414/000193341426000142/mlys2026q38kex991.htm",
+   "reason": "Q3 2026 results restate the Dec 22, 2026 lorundrostat PDUFA date; no approval."
   }
  ]
 }

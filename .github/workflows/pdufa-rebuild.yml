@@ -765,7 +765,7 @@ jobs:
         run: python noindex_empty_months.py
 
       - name: "Answer-first lede above every hub table"
-        run: python build_hub_lede.py
+        run: python build_hub_lede.py && python sync_home_event_schema.py
 
       # Audit 2026-09-06 (0840) NEW-1: the /calendar ItemList was pre-rendered and owned by no
       # step -- 54 Events vs 48 ahead rows, 16 decided drugs still EventScheduled to Google/Bing.
