@@ -1,14 +1,20 @@
 {
- "built": "2026-11-09T04:32:54+00:00",
- "data_built_at": "2026-11-09T04:32:54+00:00",
- "commit": "061bbbfbb",
- "commit_at_build": "061bbbfbb",
- "as_of_eastern": "2026-11-08",
+ "built": "2026-11-09T21:05:54+00:00",
+ "data_built_at": "2026-11-09T21:05:54+00:00",
+ "commit": "02e0f6fea",
+ "commit_at_build": "02e0f6fea",
+ "as_of_eastern": "2026-11-09",
  "next_date": "2026-11-14",
  "next_ticker": "CYTK",
- "next_days": 6,
+ "next_days": 5,
  "next_status": "upcoming",
  "days_since_goal": null,
- "held_since": null,
- "held_leads": []
+ "held_since": "2026-11-09T20:50:43Z",
+ "held_leads": [
+  {
+   "row_id": "pdufa_nvcr_2026-11-15",
+   "source": "edgar_8k",
+   "first_seen": "2026-11-09T20:50:43Z"
+  }
+ ]
 }
