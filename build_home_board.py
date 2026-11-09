@@ -302,6 +302,23 @@ def render_decided(decs, key):
     return "".join(cards)
 
 
+def _ua_eastern_date(ua):
+    """'ua' is a UTC ISO stamp ('2026-11-09T04:05:00Z'). Its first 10 chars are the UTC date, which
+    after 20:00 ET is already tomorrow: on 2026-11-08 at 23:30 ET the badge read 'Data through Nov 9'.
+    The site's calendar date is Eastern (CLAUDE.md rule 1), so convert before taking the date."""
+    s = str(ua or "")
+    if len(s) < 10:
+        return ""
+    try:
+        from site_dates import _ET
+        t = dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=dt.timezone.utc)
+        return t.astimezone(_ET).date().isoformat()
+    except Exception:
+        return s[:10]
+
+
 def freshness_label():
     """Server-side twin of the homepage freshness JS: MODE of updated_at over FORWARD PDUFA rows.
     Bakes 'Data through {date}' into the HTML so a non-JS crawler sees the real currency, not the
@@ -315,7 +332,7 @@ def freshness_label():
     for r in arr:
         if r.get("type") != "PDUFA" or r.get("st") in ("Decided", "Withdrawn"):
             continue
-        ua = str(r.get("ua") or "")[:10]; d = str(r.get("d") or "")[:10]
+        ua = _ua_eastern_date(r.get("ua")); d = str(r.get("d") or "")[:10]
         if not ua or d < tISO:
             continue
         counts[ua] = counts.get(ua, 0) + 1
