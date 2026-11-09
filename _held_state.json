@@ -1,8 +1,15 @@
 {
  "held_since": "2026-11-09T20:50:43Z",
- "consecutive_held_runs": 1,
- "emailed_at": null,
+ "consecutive_held_runs": 2,
+ "emailed_at": "2026-11-09T22:50:50Z",
  "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:asundexian",
+   "key": "asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
+   "text": "/drug/asundexian fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke- 'asundexian' appears with approval language",
+   "first_seen": "2026-11-09T22:50:50Z"
+  },
   {
    "source": "edgar_8k",
    "row_id": "pdufa_nvcr_2026-11-15",
@@ -13,6 +20,7 @@
  ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
+  "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
   "drug_pages|european-respiratory|sponsor:INO:2026-10-30",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
