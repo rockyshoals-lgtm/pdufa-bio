@@ -319,6 +319,14 @@
   {
    "id": "readout_mltx_2026-09-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-09-28); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_eypt_2026-10-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-09-09); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_srpt_2026-10-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-09-07); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."

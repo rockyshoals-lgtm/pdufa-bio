@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-09T20:50:43Z",
- "consecutive_held_runs": 5,
+ "consecutive_held_runs": 6,
  "emailed_at": "2026-11-09T22:50:50Z",
  "leads": [
   {
@@ -9,6 +9,20 @@
    "key": "asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
    "text": "/drug/asundexian fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke- 'asundexian' appears with approval language",
    "first_seen": "2026-11-09T22:50:50Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:enflonsia",
+   "key": "enflonsia|openfda:20261014",
+   "text": "/drug/enflonsia openfda:20261014 AP 20261014 (SUPPL-3, class EFFICACY)",
+   "first_seen": "2026-11-10T17:27:25Z"
+  },
+  {
+   "source": "fda_drugs_feed",
+   "row_id": "pdufa_jazz_2027-04-16",
+   "key": "pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
+   "text": "2026-11-10 \"FDA expands pediatric indication for entrectinib and approves new pellet formulation\" [formulation] http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
+   "first_seen": "2026-11-10T17:27:25Z"
   },
   {
    "source": "edgar_8k",
@@ -21,6 +35,7 @@
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
+  "drug_pages|enflonsia|openfda:20261014",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
   "drug_pages|european-respiratory|sponsor:INO:2026-10-30",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
@@ -36,6 +51,7 @@
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
+  "fda_drugs_feed|pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
   "fda_press|press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
   "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
