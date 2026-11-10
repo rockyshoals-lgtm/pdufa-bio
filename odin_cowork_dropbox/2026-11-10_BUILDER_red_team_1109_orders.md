@@ -115,3 +115,30 @@ Alpaca path dormant until its secrets exist; relabel the two Novo rows "date not
 ## Still David's
 SMTP secrets; `/surges` RULE 2 ruling; VERCEL_TOKEN if still failing; held leads #70-#72; Alpaca keys (optional);
 remove `POLYGON_API_KEY` after 2026-11-17.
+
+## Outcome (appended 2026-11-09 ~23:05 Pacific = 2026-11-10 ~02:05 Eastern)
+- Run 42761187385: **price step 13 seconds in CI** (05:17:44 to 05:17:57 UTC; Polygon took 23 minutes on Nov 6), no
+  PRICES issue; the run then failed two guards (dropbox INDEX listed two uncommitted 11-09 audit notes; the new
+  /decisions/{year} meta descriptions were cut mid-word). BLOCKED #73 opened with "Days since last green deploy:
+  0.1 (run 42746995620, finished 2026-11-09 22:54 ET)" and cc to David: order 2 working as written.
+- Run 42762573262 deployed; its post-deploy verifier failed only because it still read the old /calendar lede wording.
+  `verify_live_deploy.py` now reads the forward-first lede with the same sum rule (live: 24 ahead + 84 decided + 1
+  awaiting = 109).
+- **Run 42764217706 green**: https://github.com/rockyshoals-lgtm/pdufa-bio/actions/runs/42764217706
+- A dispatch at 05:13 UTC was refused by GitHub ("'FMP_API_KEY' is already defined"): my workflow patch had put the
+  key twice in the price step. Fixed; `test_workflow_valid.py` now fails on duplicate YAML keys (PyYAML keeps the last
+  one silently, so the local guard had passed).
+- Live (fetched 01:50 ET): /decisions/2026 and /2025, /decisions/approvals, /decisions/crl, /crl/2026/october and
+  /november, /clinical-trial-success-rates (12,728 transitions), /drug/camizestrant ("Camizestrant FDA Approval:
+  Approved Sep 4, 2026"), /pdufa/NVO-am833 and NVO-mim8 ("FDA goal date: not announced", no Event schema, no
+  "Dec 2026"), /methodology all 200; /sls now reads "SLS daily closes, Oct 2024 to Nov 2026".
+- 15 URLs sent to Bing (bing-submit run 42765669234).
+- **Held leads #70 and #71, checked against primary sources tonight, not yet published:**
+  - #70 NVCR: Novocure 8-K Nov 9, 2026 (EX-99.1): FDA **Not Approvable Letter** on the Optune Mya PMA (brain
+    metastases from NSCLC); "uncertainty around the degree of clinical benefit"; no safety concerns raised. A device
+    PMA letter, not a CRL.
+  - #71 asundexian: FDA press announcement Nov 9, 2026: **Sunharbo (asundexian) 50 mg approved**, first factor XIa
+    inhibitor, with antiplatelet therapy after recent mild-to-moderate non-cardioembolic ischemic stroke or high-risk
+    TIA; Bayer HealthCare; Fast Track and Priority Review. https://www.fda.gov/news-events/press-announcements/fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-certain-adults-high-risk
+  - /drug/asundexian (665 Bing AI citations) is held on its previous build, which says "under FDA review". Both need
+    decision records next; neither row has a sponsor-stated goal day, so no early/late margin.
