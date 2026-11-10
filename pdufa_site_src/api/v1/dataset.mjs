@@ -43,7 +43,7 @@ export default [
     "primary_completion": "2023-09-19",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": "2025-03-12",
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT03005418"
    },
    "resolution": {
@@ -98,13 +98,13 @@ export default [
     "primary_completion": "2025-05-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06146101"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "3 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "3 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2025-05"
@@ -141,7 +141,7 @@ export default [
     "primary_completion": "2026-03-31",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05486468"
    },
    "date_history": [
@@ -157,8 +157,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-03"
@@ -188,7 +188,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-11-09, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06374797 as terminated as of 2026-11-10, with primary completion 2026-04-06 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -206,7 +206,7 @@ export default [
     "primary_completion": "2026-04-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06374797"
    }
   },
@@ -244,7 +244,7 @@ export default [
     "primary_completion": "2026-04-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT03037164"
    },
    "date_history": [
@@ -260,8 +260,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "4 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-04"
@@ -309,13 +309,13 @@ export default [
     "primary_completion": "2026-04-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05726864"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "8 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-04"
@@ -359,8 +359,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05479812",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-04"
@@ -390,7 +390,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-11-09, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT05747794 as terminated as of 2026-11-10, with primary completion 2026-04-30 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-10-15",
@@ -409,7 +409,7 @@ export default [
     "primary_completion": "2026-04-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05747794"
    }
   },
@@ -446,7 +446,7 @@ export default [
     "primary_completion": "2026-05-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06079190"
    },
    "date_history": [
@@ -460,7 +460,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT06079190 is now 2026-05-14 (actual; registry status terminated, record updated 2026-09-14); the row's window moved from 2026-09 to 2026-05 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-11-09, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT06079190 as terminated as of 2026-11-10, with primary completion 2026-05-14 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-05"
  },
@@ -495,7 +495,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05611931"
    },
    "date_history": [
@@ -511,8 +511,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-05"
@@ -548,7 +548,7 @@ export default [
     "primary_completion": "2026-05-28",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06641076"
    },
    "date_history": [
@@ -598,7 +598,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-11-09, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06470451 as terminated as of 2026-11-10, with primary completion 2026-05-22 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-07-15",
@@ -617,7 +617,7 @@ export default [
     "primary_completion": "2026-05-22",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06470451"
    }
   },
@@ -665,13 +665,13 @@ export default [
     "primary_completion": "2026-06-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05843578"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -708,13 +708,13 @@ export default [
     "primary_completion": "2026-06-15",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06810167"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "60 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -747,8 +747,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06868264",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    },
    "date_history": [
     {
@@ -766,7 +766,7 @@ export default [
     "primary_completion": "2026-06-18",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06868264"
    }
   },
@@ -792,8 +792,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "25 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "25 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -818,8 +818,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -836,7 +836,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -872,7 +872,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -957,7 +957,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -1030,8 +1030,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT04150497",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "24 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "24 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    },
    "date_history": [
     {
@@ -1049,7 +1049,7 @@ export default [
     "primary_completion": "2026-09-16",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT04150497"
    }
   },
@@ -1098,13 +1098,13 @@ export default [
     "primary_completion": "2026-06-02",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05864144"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "14 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "14 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -1129,8 +1129,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "12 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -1163,8 +1163,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06395870",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "8 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -1212,13 +1212,13 @@ export default [
     "primary_completion": "2026-06-25",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT07108153"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "40 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "40 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -1243,8 +1243,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -1281,13 +1281,13 @@ export default [
     "primary_completion": "2026-06-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT07036029"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "6 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-06"
@@ -1835,13 +1835,13 @@ export default [
     "primary_completion": "2026-07-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05583227"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "16 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "16 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -1877,13 +1877,13 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06553547"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "60 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -1916,8 +1916,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT07523048",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "8 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -1953,13 +1953,13 @@ export default [
     "primary_completion": "2026-07-16",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06736717"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "6 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -1992,8 +1992,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05650879",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2018,8 +2018,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2066,13 +2066,13 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06668064"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "43 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "43 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2109,7 +2109,7 @@ export default [
     "primary_completion": "2026-07-07",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT01983241"
    },
    "date_history": [
@@ -2125,8 +2125,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "1 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "1 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2162,13 +2162,13 @@ export default [
     "primary_completion": "2026-07-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT04724369"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2201,8 +2201,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06566092",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2227,8 +2227,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "12 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2258,7 +2258,7 @@ export default [
    "indication": null,
    "market_cap_usd": null,
    "source": "trial-estimate (not company-confirmed)",
-   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-11-09, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
+   "registry_note": "ClinicalTrials.gov records NCT06736262 as terminated as of 2026-11-10, with primary completion 2026-07-21 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome.",
    "date_history": [
     {
      "date": "2026-08-15",
@@ -2277,7 +2277,7 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06736262"
    }
   },
@@ -2326,13 +2326,13 @@ export default [
     "primary_completion": "2026-07-08",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06162728"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2365,8 +2365,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05933265",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2377,7 +2377,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2410,8 +2410,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05504720",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2459,13 +2459,13 @@ export default [
     "primary_completion": "2026-07-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05166161"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2490,8 +2490,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "22 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "22 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2516,8 +2516,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "19 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "19 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2553,7 +2553,7 @@ export default [
     "primary_completion": "2026-07-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05297903"
    },
    "date_history": [
@@ -2569,8 +2569,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-07"
@@ -2670,7 +2670,7 @@ export default [
   "ua": "2026-10-24T20:36:26Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2778,7 +2778,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2836,7 +2836,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3133,7 +3133,7 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06901505"
    },
    "resolution": {
@@ -3189,13 +3189,13 @@ export default [
     "primary_completion": "2026-08-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT07027527"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "2 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "2 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3231,7 +3231,7 @@ export default [
     "primary_completion": "2026-08-20",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05643534"
    },
    "date_history": [
@@ -3247,8 +3247,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "60 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3285,13 +3285,13 @@ export default [
     "primary_completion": "2026-08-06",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06847191"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3326,7 +3326,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-09",
-    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO\u00ae (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
+    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO® (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
     "url": "https://www.prnewswire.com/news-releases/biomarin-announces-positive-results-of-phase-3-voxzogo-vosoritide-study-in-hypochondroplasia-published-in-nejm-evidence-302873026.html",
     "checked": "2026-10-11",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3362,8 +3362,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT03478462",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "6 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "6 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3460,7 +3460,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-10-18",
-    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 \u2018304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
+    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 ‘304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
     "url": "https://www.businesswire.com/news/home/20261018527252/en/Veradermics-to-Hold-Conference-Call-to-Discuss-Topline-Results-from-Phase-3-%E2%80%98304%E2%80%99-Clinical-Trial-of-VDPHL01-in-Males-with-Mild-to-Moderate-Pattern-Hair-Loss/",
     "checked": "2026-10-18",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3488,8 +3488,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "29 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "29 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3514,8 +3514,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3551,13 +3551,13 @@ export default [
     "primary_completion": "2026-08-12",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06052059"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "12 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -3591,8 +3591,8 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: KRAS Activating Mutation, Metastatic Cancer, Pancreas Cancer, Neoplasms Pancreatic, Malignant Neoplasm of Pancreas",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "12 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-08"
@@ -4253,7 +4253,7 @@ export default [
     "primary_completion": "2026-09-21",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT07011706"
    },
    "date_history": [
@@ -4269,8 +4269,8 @@ export default [
    ],
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "4 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4307,13 +4307,13 @@ export default [
     "primary_completion": "2026-09-17",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06920901"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "2 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "2 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4338,8 +4338,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4372,8 +4372,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT07281495",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "9 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4398,8 +4398,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "14 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "14 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4432,8 +4432,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT04756726",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4466,8 +4466,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06381141",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "14 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "14 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4515,13 +4515,13 @@ export default [
     "primary_completion": "2026-09-23",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06738485"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "4 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4546,8 +4546,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4572,8 +4572,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "17 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "17 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4609,7 +4609,7 @@ export default [
     "primary_completion": "2026-09-09",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT04816604"
    },
    "date_history": [
@@ -4623,7 +4623,7 @@ export default [
      "why": "ClinicalTrials.gov's primary-completion date for NCT04816604 is now 2026-09-09 (actual; registry status terminated, record updated 2026-10-02); the row's window moved from 2027-12 to 2026-09 on 2026-10-11. /readouts defines an estimated date as that registry window, so the row follows it."
     }
    ],
-   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-11-09, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
+   "registry_note": "ClinicalTrials.gov records NCT04816604 as terminated as of 2026-11-10, with primary completion 2026-09-09 (actual). A terminated or withdrawn trial may never produce the readout this row anticipated. We have not seen a sponsor statement and record no outcome."
   },
   "dm": "2026-09"
  },
@@ -4655,8 +4655,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT02138734",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4690,8 +4690,8 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Solid Tumors, Peritoneal Carcinomatosis, NSCLC Adenocarcinoma, Urothelial Carcinoma",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "3 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "3 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4738,13 +4738,13 @@ export default [
     "primary_completion": "2026-09-29",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT04849728"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4777,8 +4777,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT04562870",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4823,7 +4823,7 @@ export default [
     "primary_completion": "2026-09-28",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06768671"
    }
   },
@@ -4849,8 +4849,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "29 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "29 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4903,13 +4903,13 @@ export default [
     "primary_completion": "2026-09-11",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06851559"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4943,8 +4943,8 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Polycythemia Vera",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -4978,8 +4978,8 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Attention-Deficit/Hyperactivity Disorder",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "9 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5004,8 +5004,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5052,7 +5052,7 @@ export default [
     "primary_completion": "2026-09-30",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06903338"
    },
    "resolution": {
@@ -5086,8 +5086,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5120,8 +5120,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06405633",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5169,13 +5169,13 @@ export default [
     "primary_completion": "2026-09-18",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06993610"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5442,7 +5442,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5548,7 +5548,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5675,7 +5675,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5805,7 +5805,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5841,8 +5841,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001774857/000119312526047757/ck0001774857-ex99_2.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "60 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "60 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5887,8 +5887,8 @@ export default [
    "ta_basis": "Sponsor SEC filing: Phase II bipolar disorder topline",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "2 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "2 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5920,8 +5920,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001641281/000119312526104102/bolt-ex99_1.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -5978,8 +5978,8 @@ export default [
    "ta_basis": "Sponsor SEC filing: MNKD-201 ... patients with idiopathic pulmonary fibrosis (IPF)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "4 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6035,8 +6035,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001372299/000110465926054866/tm2613474d1_ex99-1.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "12 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6108,8 +6108,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001374339/000110465926058967/pmn-20260512xex99d1.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6142,8 +6142,8 @@ export default [
    "ta_basis": "Sponsor SEC filing: IM1305 ... CD3xTROP2xNKG2A Solid Tumors",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "2 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "2 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6301,8 +6301,8 @@ export default [
    "ta_basis": "Sponsor SEC filing: second-generation antifungal, SCY-247",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6365,8 +6365,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001680367/000119312526263831/d120796dex993.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "4 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "4 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6398,8 +6398,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001636282/000163628226000051/spyre-20260331xexx991.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6550,8 +6550,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001422142/000119312526210615/whwk-ex99_1.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6583,8 +6583,8 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/0001582313/000119312526211843/xene-ex99_1.htm",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "16 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "16 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-09"
@@ -6719,7 +6719,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6740,7 +6740,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6761,7 +6761,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6890,8 +6890,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06510816",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "8 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "8 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -6916,8 +6916,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "14 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "14 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -6988,8 +6988,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06683742",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "43 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "43 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7033,8 +7033,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT07176286",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7105,8 +7105,8 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Prurigo Nodularis",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "15 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "15 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7131,8 +7131,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "29 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "29 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7143,7 +7143,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -7165,15 +7165,15 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05172726",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    },
    "registry": {
     "overall_status": "COMPLETED",
     "primary_completion": "2026-10-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT05172726"
    }
   },
@@ -7218,8 +7218,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06016738",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "5 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7266,13 +7266,13 @@ export default [
     "primary_completion": "2026-10-14",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT03377387"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "7 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7297,8 +7297,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "22 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "22 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -7315,7 +7315,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7351,7 +7351,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7408,7 +7408,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7429,7 +7429,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7577,7 +7577,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SITC",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7611,9 +7611,9 @@ export default [
   "type": "Conference",
   "ta": "Hepatology",
   "cap": "",
-  "st": "In progress",
+  "st": "Ended",
   "url": "/conference/AASLD",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7649,7 +7649,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ACR",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7683,9 +7683,9 @@ export default [
   "type": "Conference",
   "ta": "Cardiovascular",
   "cap": "",
-  "st": "In progress",
+  "st": "Ended",
   "url": "/conference/AHA",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7706,7 +7706,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACAAI",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7727,7 +7727,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SNO",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -7748,7 +7748,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -7777,7 +7777,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -7806,7 +7806,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -7842,7 +7842,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -7863,7 +7863,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -7884,7 +7884,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -7913,7 +7913,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -7934,7 +7934,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -7955,7 +7955,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/JPM",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-01-14",
    "location": "",
@@ -7976,7 +7976,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -7997,7 +7997,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -8018,7 +8018,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -8039,7 +8039,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -8060,7 +8060,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -8081,7 +8081,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -8209,8 +8209,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT06772597",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -8244,8 +8244,8 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Gaucher Disease Type 1, Gaucher Disease Type 3",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "15 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "15 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -8278,8 +8278,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT03992430",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "13 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "13 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -8304,8 +8304,8 @@ export default [
    "source": "trial-estimate (not company-confirmed)",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "11 sponsor press releases (FMP) through 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -8352,13 +8352,13 @@ export default [
     "primary_completion": "2026-10-13",
     "primary_completion_type": "ACTUAL",
     "results_first_submitted": null,
-    "checked": "2026-11-09",
+    "checked": "2026-11-10",
     "source_url": "https://clinicaltrials.gov/study/NCT06874621"
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "3 sponsor press releases (FMP) through 2026-11-09; ClinicalTrials.gov 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "3 sponsor press releases (FMP) through 2026-11-10; ClinicalTrials.gov 2026-11-10"
    }
   },
   "dm": "2026-10"
@@ -8391,8 +8391,8 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT04906460",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-09",
-    "searched": "10 sponsor press releases (FMP) through 2026-11-09"
+    "checked": "2026-11-10",
+    "searched": "10 sponsor press releases (FMP) through 2026-11-10"
    },
    "date_history": [
     {
@@ -8670,7 +8670,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CYTK-aficamten",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Obstructive hypertrophic cardiomyopathy (MAPLE-HCM sNDA, aficamten vs metoprolol)",
@@ -8703,7 +8703,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/SMMT-ivonescimab",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -8736,7 +8736,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/TEVA-igalmi",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
@@ -9235,7 +9235,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -9295,7 +9295,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
@@ -9328,7 +9328,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -9360,7 +9360,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Micro",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/PYPD-d-plex100",
   "_d": {
    "indication": "Prevention of surgical site infections in patients undergoing abdominal colorectal surgery",
@@ -9425,7 +9425,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -9459,7 +9459,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -9530,7 +9530,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
@@ -9577,7 +9577,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -9611,7 +9611,7 @@ export default [
   "ta": "Nephrology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/RHHBY-gazyva-pmn",
   "_d": {
    "indication": "Primary membranous nephropathy (pMN) in adults",
@@ -9637,7 +9637,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -9671,7 +9671,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -10611,7 +10611,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -10637,7 +10637,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant-evera",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -10672,7 +10672,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -10705,7 +10705,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -10728,7 +10728,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10774,7 +10774,7 @@ export default [
     }
    ],
    "review": "NDA for SCN2A and SCN8A developmental and epileptic encephalopathies. Review extended by three months (major amendment) to December 27, 2026; mid-cycle meeting complete with no major safety or efficacy concerns identified to date and no advisory committee planned (Praxis, August 6, 2026).",
-   "source_quote": "for its New Drug Application (\u201cNDA\u201d) for relutrigine for the treatment of SCN2A and SCN8A developmental and epileptic encephalopathies (\u201cDEEs\u201d), setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026."
+   "source_quote": "for its New Drug Application (“NDA”) for relutrigine for the treatment of SCN2A and SCN8A developmental and epileptic encephalopathies (“DEEs”), setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026."
   }
  },
  {
@@ -10789,7 +10789,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
@@ -10811,7 +10811,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -11608,7 +11608,7 @@ export default [
   "ta": "Immunology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/RHHBY-gazyva",
   "_d": {
    "indication": "Systemic lupus erythematosus (SLE)",
@@ -11945,7 +11945,7 @@ export default [
   "ta": "Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
@@ -12284,7 +12284,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/DYN-z-rostudirsen",
   "_d": {
    "indication": "Duchenne muscular dystrophy amenable to exon 51 skipping",
@@ -12307,7 +12307,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/INSM-arikayce",
   "_d": {
    "indication": "MAC lung disease, as part of a combination antibacterial drug regimen",
@@ -12331,7 +12331,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -12380,7 +12380,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -12404,7 +12404,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -12448,7 +12448,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -12493,7 +12493,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/BBIO-infigratinib",
   "_d": {
    "indication": "Children with achondroplasia",
@@ -12517,7 +12517,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/VSTM-avmapki-fakzynja-blister-pack",
   "_d": {
    "indication": "New blister-pack presentation of the approved AVMAPKI FAKZYNJA co-pack (priority review)",
@@ -12539,7 +12539,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/RHHBY-lunsumio-polivy",
   "_d": {
    "indication": "With Polivy (polatuzumab vedotin), relapsed or refractory large B-cell lymphoma after at least one prior line of systemic therapy",
@@ -12564,7 +12564,7 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/BLTE-tinlarebant",
   "_d": {
    "indication": "Stargardt disease type 1 (STGD1)",
@@ -12661,7 +12661,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -12702,7 +12702,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-zipalertinib",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Relapsed EGFR exon 20 insertion non-small cell lung cancer",
@@ -12735,7 +12735,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/APMD-ad109",
   "_d": {
    "indication": "Obstructive sleep apnea",
@@ -12758,7 +12758,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/BMRN-voxzogo-achondroplasia",
   "_d": {
    "indication": "Children with achondroplasia (application for full approval)",
@@ -12825,7 +12825,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/PVLA-qtorin-rapamycin",
   "_d": {
    "indication": "Microcystic lymphatic malformations",
@@ -12849,7 +12849,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -12892,7 +12892,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/NTLA-lonvo-z",
   "_d": {
    "indication": "Hereditary angioedema",
@@ -12915,7 +12915,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/BMY-reblozyl-mf",
   "_d": {
    "indication": "Adults with myelofibrosis-associated anemia receiving red blood cell transfusions, with concomitant JAK inhibitor therapy",
@@ -13267,7 +13267,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/AQST-anaphylm",
   "_d": {
    "indication": "Anaphylaxis (Class 2 resubmission after the January 30, 2026 CRL)",
@@ -13290,7 +13290,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/MRK-enflonsia",
   "_d": {
    "indication": "RSV lower respiratory tract disease in children under 2 at increased risk, through their second RSV season",
@@ -13313,7 +13313,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/ETON-libervant",
   "_d": {
    "indication": "Seizure clusters, expansion to patients ages 6 to 11",
@@ -13590,7 +13590,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/HRMY-pitolisant-gr",
   "_d": {
    "indication": "Pitolisant gastro-resistant formulation (NDA accepted July 2026)",
@@ -13614,7 +13614,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-ozekibart",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Unresectable or metastatic conventional chondrosarcoma",
@@ -13968,7 +13968,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/JAZZ-cannabidiol-capsule",
   "_d": {
    "indication": "Oral cannabidiol capsule formulation",
@@ -13991,7 +13991,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/MRK-idvynso",
   "_d": {
    "indication": "Adults with HIV-1 infection (treatment-naive; 96-week data in virologically suppressed adults)",
@@ -14015,7 +14015,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -14047,7 +14047,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/IMNM-varegacestat",
   "_d": {
    "indication": "Adults with desmoid tumors",
@@ -14071,14 +14071,14 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": 7046293723.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
    "source": "company filing (SEC)",
-   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) \u2013 Axsome Therapeutics, Inc."
+   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) – Axsome Therapeutics, Inc."
   }
  },
  {
@@ -14092,7 +14092,7 @@ export default [
   "ta": "Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/QURE-amt-130",
   "_d": {
    "indication": "Huntington's disease (Accelerated Approval pathway; FDA tentatively plans an advisory committee)",
@@ -14116,7 +14116,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -14137,7 +14137,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -14158,7 +14158,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -14179,7 +14179,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/BMY-mezigdomide",
   "_d": {
    "indication": "Relapsed or refractory multiple myeloma",
@@ -14203,7 +14203,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -14406,7 +14406,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -14426,7 +14426,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/ZBIO-obexelimab",
   "_d": {
    "indication": "IgG4-related disease",
@@ -14449,7 +14449,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/BMRN-voxzogo-hypochondroplasia",
   "_d": {
    "indication": "Hypochondroplasia",
@@ -14473,7 +14473,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -14494,7 +14494,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -14514,7 +14514,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/URGN-ugn-103",
   "_d": {
    "indication": "Low-grade intermediate-risk non-muscle invasive bladder cancer (LG-IR-NMIBC)",
@@ -14847,7 +14847,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/MRK-sac-tmt",
   "_d": {
    "indication": "Adults with endometrial cancer previously treated with platinum chemotherapy and a PD-1/PD-L1 inhibitor",
@@ -14934,7 +14934,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -14955,7 +14955,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-11-10T04:45:00Z",
+  "ua": "2026-11-10T05:37:12Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -14975,7 +14975,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-10T04:35:00Z",
+  "ua": "2026-11-10T05:31:05Z",
   "url": "/pdufa/COGT-bezuclastinib-advsm",
   "_d": {
    "indication": "Advanced systemic mastocytosis",
