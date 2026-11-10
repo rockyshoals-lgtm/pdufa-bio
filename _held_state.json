@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-09T20:50:43Z",
- "consecutive_held_runs": 6,
+ "consecutive_held_runs": 7,
  "emailed_at": "2026-11-09T22:50:50Z",
  "leads": [
   {
@@ -16,6 +16,13 @@
    "key": "enflonsia|openfda:20261014",
    "text": "/drug/enflonsia openfda:20261014 AP 20261014 (SUPPL-3, class EFFICACY)",
    "first_seen": "2026-11-10T17:27:25Z"
+  },
+  {
+   "source": "fda_drugs_feed",
+   "row_id": "pdufa_bmy_2027-05-13",
+   "key": "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
+   "text": "2026-11-10 \"FDA grants accelerated approval to Darzalex Faspro for newly diagnosed light chain amyloidosis\" [dexamethasone] http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
+   "first_seen": "2026-11-10T19:26:54Z"
   },
   {
    "source": "fda_drugs_feed",
@@ -49,6 +56,7 @@
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+  "fda_drugs_feed|pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "fda_drugs_feed|pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
