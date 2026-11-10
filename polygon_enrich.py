@@ -34,7 +34,10 @@ SITE = os.path.join(HERE, 'pdufa_site_src')
 DATA_JS = os.path.join(SITE, 'api', 'data.js')
 DATASET = os.path.join(SITE, 'api', 'v1', 'dataset.mjs')
 BASE = 'https://api.polygon.io'
-TODAY = dt.date.today()
+sys.path.insert(0, HERE)
+from site_dates import eastern_today  # noqa: E402
+TODAY = eastern_today()   # RULE 1: was dt.date.today() on a UTC runner, so SLATE.as_of read tomorrow after 20:00 ET
+NO_FEED = os.path.join(HERE, '_price_no_feed.json')   # tickers no feed carries, each with a reason
 NOW_ISO = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
@@ -61,6 +64,31 @@ def cap_tier(mcap):
     if m < 2e9:   return 'Small'
     if m < 10e9:  return 'Mid'
     return 'Large'
+
+
+class Feed:
+    """2026-11-10: FMP via price_source (one batch call for prices and one for market caps; one daily series per
+    ticker for ADV). Polygon is only price_source's fallback for a week. The file keeps its name so the workflow
+    history stays readable; the step is now titled "Refresh prices / market caps (FMP ...)"."""
+
+    def __init__(self, tickers):
+        import price_source as ps
+        self.ps = ps
+        self.q = ps.quotes(tickers)
+        self.m = ps.market_caps(tickers)
+
+    def price_adv(self, t):
+        start = (TODAY - dt.timedelta(days=45)).isoformat()
+        rows = self.ps.daily(t, start, TODAY.isoformat())
+        vols = [v for _, _, v in rows[-20:] if v]
+        adv = round(sum(vols) / len(vols)) if vols else None
+        price = (self.q.get(t) or {}).get("price")
+        if price is None and rows:
+            price = rows[-1][1]
+        return price, adv
+
+    def mcap(self, t):
+        return self.m.get(t)
 
 
 class Poly:
@@ -111,25 +139,39 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--tickers', nargs='+')
+    ap.add_argument('--plant-missing', help='guard self-test: pretend this ticker returned nothing')
     a = ap.parse_args()
-    poly = Poly(load_key())
+    t0 = time.time()
 
     djs = open(DATA_JS, encoding='utf-8').read()
     slate, span = read_slate(djs)
     cats = slate['catalysts']
-    tickers = [c['ticker'] for c in cats if c.get('ticker')]
+    tickers = list(dict.fromkeys(c['ticker'] for c in cats if c.get('ticker')))
     if a.tickers:
         want = {t.upper() for t in a.tickers}
         tickers = [t for t in tickers if t.upper() in want]
+    feed = Feed(tickers)
+    try:
+        no_feed = json.load(open(NO_FEED, encoding='utf-8')).get('tickers', {})
+    except Exception:
+        no_feed = {}
 
-    print(f'Polygon enrich: {len(tickers)} forward catalysts, as of {TODAY}')
+    print(f'Price enrich (FMP): {len(tickers)} forward catalysts, as of {TODAY} (Eastern)')
     fresh = {}
     ok = fail = 0
+    missing = []
     for t in tickers:
-        price, adv = poly.price_adv(t)
-        mc = poly.mcap(t)
+        price, adv = feed.price_adv(t)
+        mc = feed.mcap(t)
+        if a.plant_missing and t.upper() == a.plant_missing.upper():
+            price = mc = None
         if price is None and mc is None:
-            fail += 1; print(f'  {t:6s} no Polygon data — keeping existing'); continue
+            fail += 1
+            if t not in no_feed:
+                missing.append(t)
+            print(f'  {t:6s} no price data from any feed — keeping existing'
+                  + (f' (known: {no_feed[t]})' if t in no_feed else '  <-- NOT on _price_no_feed.json'))
+            continue
         fresh[t] = {'price': price, 'adv': adv, 'mcap': mc}
         ok += 1
         tier = cap_tier(mc)
@@ -171,15 +213,24 @@ def main():
         drecs += 1
     new_dtxt = dtxt[:s] + json.dumps(arr, separators=(',', ':')) + dtxt[e:]
 
+    import price_source as ps
     print(f'\nrefreshed: {ok} tickers ok, {fail} no-data | data.js rows {changed} | '
-          f'dataset.mjs forward PDUFA rows {drecs}')
+          f'dataset.mjs forward PDUFA rows {drecs} | {time.time() - t0:.0f}s | {ps.summary()}')
     if a.dry_run:
-        print('DRY RUN — nothing written'); return
-
-    for path, new in ((DATA_JS, new_djs), (DATASET, new_dtxt)):
-        open(path + '.bak_polygon', 'w', encoding='utf-8').write(open(path, encoding='utf-8').read())
-        open(path, 'w', encoding='utf-8').write(new)
-    print(f'wrote data.js + dataset.mjs (backups: *.bak_polygon). ua stamped {NOW_ISO}')
+        print('DRY RUN — nothing written')
+    else:
+        for path, new in ((DATA_JS, new_djs), (DATASET, new_dtxt)):
+            open(path + '.bak_polygon', 'w', encoding='utf-8').write(open(path, encoding='utf-8').read())
+            open(path, 'w', encoding='utf-8').write(new)
+        print(f'wrote data.js + dataset.mjs (backups: *.bak_polygon). ua stamped {NOW_ISO}')
+    # Guard (audit 2026-11-09 §4c.3): never an empty-close silent skip. Everything that did refresh is written above,
+    # so the site still deploys current prices; the step then fails NAMING the tickers, and the workflow opens one
+    # PRICES issue. A ticker no feed carries goes on _price_no_feed.json with a reason instead.
+    open(os.path.join(HERE, '_price_missing.json'), 'w', encoding='utf-8').write(
+        json.dumps({'as_of': TODAY.isoformat(), 'missing': missing}, indent=1))
+    if missing:
+        print(f'::error::price feed returned nothing for {len(missing)} forward ticker(s): {", ".join(missing)}')
+        sys.exit(3)
 
 
 if __name__ == '__main__':

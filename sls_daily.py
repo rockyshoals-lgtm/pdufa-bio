@@ -220,21 +220,13 @@ def price_block():
                 if line and not line.startswith("#") and "=" in line:
                     k, v = line.split("=", 1)
                     os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-    key = os.environ.get("POLYGON_API_KEY")
-    if not key:
-        return {}
-    end = dt.date.today()
+    import price_source  # 2026-11-10: FMP primary (audit 11-09 §4); was Polygon's free tier
+    from site_dates import eastern_today
+    end = eastern_today()
     start = end - dt.timedelta(days=400)
-    raw = get(f"https://api.polygon.io/v2/aggs/ticker/{TICKER}/range/1/day/"
-              f"{start}/{end}?adjusted=true&sort=asc&limit=50000&apiKey={key}",
-              headers=WEB_UA)
-    if not raw:
+    bars = price_source.daily(TICKER, start.isoformat(), end.isoformat())
+    if len(bars) < 2:
         return {}
-    res = (json.loads(raw) or {}).get("results") or []
-    if len(res) < 2:
-        return {}
-    bars = [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(),
-             x["c"], x.get("v") or 0) for x in res if x.get("c")]
     last, prev = bars[-1], bars[-2]
     vol20 = [b[2] for b in bars[-21:-1] if b[2]]
     closes52 = [b[1] for b in bars if b[0] >= (end - dt.timedelta(days=365)).isoformat()]

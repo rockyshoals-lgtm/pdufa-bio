@@ -171,8 +171,13 @@ def send_email(state, outbox=None):
     except Exception:  # noqa: BLE001
         pass
     try:
+        try:  # audit 2026-11-09 §5 item 2: the live build's age belongs on every escalation
+            from blocked_issue import since_last_deploy
+            age = since_last_deploy()
+        except Exception:  # noqa: BLE001
+            age = "Days since last green deploy: unavailable."
         subprocess.run(["gh", "issue", "create", "--title", "ESCALATION: " + subj,
-                        "--body", "@rockyshoals-lgtm\n\n" + body], check=True, timeout=60)
+                        "--body", f"@rockyshoals-lgtm\n\n**{age}**\n\n" + body], check=True, timeout=60)
         print("::warning::SMTP_HOST/SMTP_USER/SMTP_PASS secrets not set: escalated by @-mention issue instead")
         return "mention-issue"
     except Exception as e:  # noqa: BLE001

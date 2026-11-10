@@ -30,6 +30,11 @@ MON_FULL = ["", "January", "February", "March", "April", "May", "June", "July",
 
 #: what a page says when NO dataset row backs it and no source states a date
 UNSOURCED_LABEL = "Date not sourced"
+NOT_ANNOUNCED_LABEL = "Not announced"   # 2026-11-10: _d.goal_date == "not announced" (sponsor states none; David's ruling on NVO)
+
+
+def _not_announced(row):
+    return str((row.get("_d") or {}).get("goal_date") or "").lower() == "not announced"
 
 
 def _ym(row):
@@ -44,6 +49,8 @@ def _ym(row):
 
 def window_label(row):
     """Short label, e.g. 'Dec 2026' / 'Q4 2026' / '2026' / '2026-11-30'."""
+    if _not_announced(row):
+        return NOT_ANNOUNCED_LABEL
     dp = str(row.get("dp") or "day")
     y, m = _ym(row)
     if dp == "day":
@@ -59,6 +66,8 @@ def window_label(row):
 
 def window_label_long(row):
     """Prose form for body copy, e.g. 'December 2026' / 'the fourth quarter of 2026'."""
+    if _not_announced(row):
+        return "not announced"
     dp = str(row.get("dp") or "day")
     y, m = _ym(row)
     if dp == "day":

@@ -143,6 +143,8 @@ def pending_rows(rows, today_iso=None):
     for r in rows:
         if r.get("type") != "PDUFA" or str(r.get("st") or "").lower() in ("decided", "withdrawn"):
             continue
+        if str((r.get("_d") or {}).get("goal_date") or "").lower() == "not announced":
+            continue   # 2026-11-10: the sponsor states no goal date (NVO Mim8, CagriSema); not a dated pending row
         d = str(r.get("d") or "")[:10]
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", d):
             continue

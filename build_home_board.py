@@ -59,51 +59,15 @@ def load_key():
 
 
 def poly_closes(key, t, days=95):
-    if not key:
-        return []
-    start = (TODAY - dt.timedelta(days=days)).isoformat()
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{TODAY.isoformat()}"
-           f"?adjusted=true&sort=asc&limit=120&apiKey={key}")
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=25) as r:
-                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
-                return [x["c"] for x in rows if x.get("c") is not None]
-        except urllib.error.HTTPError as e:
-            if e.code in (429,) or e.code >= 500:
-                time.sleep(2 ** attempt); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    """Closes ascending. 2026-11-10: price_source (FMP primary, Polygon fallback); the key argument is unused."""
+    return [c for _, c in poly_daily(key, t, days)]
 
 
 def poly_daily(key, t, days=95):
-    """[(iso_date, close)] ascending; [] on any failure / no key. Same source as poly_closes but
-    keeps the date so a decision day can be located and marked on the sparkline."""
-    if not key:
-        return []
-    start = (TODAY - dt.timedelta(days=days)).isoformat()
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{TODAY.isoformat()}"
-           f"?adjusted=true&sort=asc&limit=200&apiKey={key}")
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=25) as r:
-                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
-                out = []
-                for x in rows:
-                    c, ts = x.get("c"), x.get("t")
-                    if c is None or ts is None:
-                        continue
-                    out.append((dt.datetime.fromtimestamp(ts / 1000, dt.timezone.utc).date().isoformat(), c))
-                return out
-        except urllib.error.HTTPError as e:
-            if e.code in (429,) or e.code >= 500:
-                time.sleep(2 ** attempt); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    """[(iso_date, close)] ascending; [] when no feed has the ticker. Keeps the date so a decision day can be
+    located and marked on the sparkline. 2026-11-10: price_source (FMP primary, Polygon fallback)."""
+    import price_source
+    return price_source.closes(t, (TODAY - dt.timedelta(days=days)).isoformat(), TODAY.isoformat())
 
 
 def sparkline_reaction(dated, decision_date):
@@ -387,7 +351,7 @@ def main():
     ap.add_argument("--decided", type=int, default=10)
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
-    key = load_key()
+    key = load_key() or "price_source"   # 2026-11-10: prices come from price_source (FMP); no Polygon key needed
 
     cats = load_slate()[:a.upcoming]
     decs = load_decisions()[:a.decided]

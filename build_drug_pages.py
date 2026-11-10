@@ -615,9 +615,16 @@ def main():
                          f"{'on' if (n.get('dp') or 'day') == 'day' else 'in'} "
                          f"{esc(pretty(n['d'], n.get('dp') or 'day'))}. ")
         elif dec0 is not None:
-            # No upcoming event: lead with the decision itself, dated, in one sentence.
-            lede += (f"The FDA {'approved it' if dec0[1] == 'Approved' else 'issued a Complete Response Letter'} "
-                     f"on <b>{esc(pretty(dec0[0]))}</b>. ")
+            # No upcoming event: the decision IS the first sentence (audit 2026-11-09 §5 item 7: camizestrant and
+            # rusfertide pages still earned 168 Bing AI citations for "{drug} pdufa date" months after the FDA
+            # acted, and opened on the program description). Outcome and FDA day first, then the program.
+            lede = ((f"The FDA approved {name}" if dec0[1] == "Approved"
+                     else f"The FDA issued a Complete Response Letter for {name}")
+                    + f" on <b>{esc(pretty(dec0[0]))}</b>. " + lede.replace(f"{name} ", "It ", 1)
+                    if lede != f"{name} " else
+                    (f"The FDA approved {name}" if dec0[1] == "Approved"
+                     else f"The FDA issued a Complete Response Letter for {name}")
+                    + f" on <b>{esc(pretty(dec0[0]))}</b>. ")
         if n_dec:
             lede += f"{n_dec} FDA decision{'s' if n_dec != 1 else ''} on record below. "
         lede += "Every date links its source."
@@ -785,6 +792,10 @@ def main():
                 + faq_html + faq_ld)
 
         title = f"{name}: FDA Decision Dates &amp; Catalyst History | pdufa.bio"
+        if not up and dec0 is not None:
+            # decided and nothing pending: the title answers "{drug} pdufa date / fda approval" with the outcome
+            title = (f"{name} FDA {'Approval' if dec0[1] == 'Approved' else 'Decision'}: "
+                     f"{'Approved' if dec0[1] == 'Approved' else 'Complete Response Letter'} {pretty(dec0[0])} | pdufa.bio")
         if len(html.unescape(title)) > 100:
             title = f"{name} FDA Catalysts | pdufa.bio"
         # Clause-fitting, not slicing: desc[:158] cut two long drug names mid-word on the first

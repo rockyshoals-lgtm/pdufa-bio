@@ -66,15 +66,11 @@ def load_key():
 
 
 def bars(ticker, key, start="2025-01-01"):
-    u = (f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start}/"
-         f"{dt.date.today().isoformat()}?adjusted=true&sort=asc&limit=50000&apiKey={key}")
-    try:
-        res = json.loads(urllib.request.urlopen(u, timeout=30).read()).get("results") or []
-    except Exception as e:
-        print(f"  {ticker}: price fetch failed ({type(e).__name__}); reactions omitted")
-        return []
-    return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(),
-             x["c"]) for x in res]
+    import price_source  # 2026-11-10: FMP primary, Polygon fallback (audit 11-09 §4)
+    out = price_source.closes(ticker, start)
+    if not out:
+        print(f"  {ticker}: no price series from any feed; reactions omitted")
+    return out
 
 
 def reaction(series, date):
@@ -230,8 +226,6 @@ def main():
     a = ap.parse_args()
 
     key = load_key()
-    if not key:
-        print("note: no POLYGON_API_KEY; pages build without the measured reaction table")
 
     files = sorted(glob.glob(os.path.join(PROFILES, "*.json")))
     if a.ticker:
@@ -256,7 +250,7 @@ def main():
             skipped += 1
             continue
 
-        series = bars(t, key) if key else []
+        series = bars(t, key)   # 2026-11-10: price_source needs no Polygon key
         block = render(p, series)
 
         doc = open(page, encoding="utf-8", errors="replace").read()

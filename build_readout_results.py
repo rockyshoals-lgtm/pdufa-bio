@@ -45,22 +45,8 @@ def load_key():
 
 
 def poly_daily(key, t, start, end):
-    if not key:
-        return []
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-           f"?adjusted=true&sort=asc&limit=200&apiKey={key}")
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=25) as r:
-                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
-                return [x["c"] for x in rows if x.get("c") is not None]
-        except urllib.error.HTTPError as e:
-            if e.code in (429,) or e.code >= 500:
-                time.sleep(2 ** attempt); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    import price_source  # 2026-11-10: FMP primary, Polygon fallback (audit 11-09 §4); key no longer required
+    return [c for _, c in price_source.closes(t, start, end)]
 
 
 def poly_daily_dated(key, t, start, end):
@@ -70,23 +56,8 @@ def poly_daily_dated(key, t, start, end):
     bar exists it renders 'close pending' instead of inventing a number. Polygon daily bar
     timestamps are UTC ms at the ET-midnight bar start, so the UTC calendar date IS the trading
     date (see RULE 1 -- timezone traps)."""
-    if not key:
-        return []
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-           f"?adjusted=true&sort=asc&limit=50&apiKey={key}")
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=25) as r:
-                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
-                return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(),
-                         x["c"]) for x in rows if x.get("c") is not None]
-        except urllib.error.HTTPError as e:
-            if e.code in (429,) or e.code >= 500:
-                time.sleep(2 ** attempt); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    import price_source  # 2026-11-10: FMP primary (dates are Eastern trading dates), Polygon fallback
+    return price_source.closes(t, start, end)
 
 
 def _day_bar_final(iso_day):
@@ -286,7 +257,7 @@ def build_section(readouts, key, limit):
                      'stock reaction</div>'
                      '<div class="note" style="margin:-2px 0 8px">Outcome and date confirmed '
                      'against the company\'s own release (linked per row); reaction is the '
-                     'Polygon-adjusted close vs the prior close. Facts only, not investment '
+                     'split-adjusted close (FMP) vs the prior close. Facts only, not investment '
                      'advice.</div>'
                      f'<div class="grid">{"".join(crows)}</div>')
     return ('<div id="readout-results">' + conf_html +
@@ -316,7 +287,7 @@ def main():
     ap.add_argument("--limit", type=int, default=160); a = ap.parse_args()
     html = open(PAGE, encoding="utf-8", errors="replace").read().replace("\x00", "")
     html, dropped = prune(html)
-    key = load_key()
+    key = load_key() or "price_source"   # 2026-11-10: prices come from price_source (FMP); no Polygon key needed
     readouts = load_past_readouts()
     section = build_section(readouts, key, a.limit)
     html = inject(html, section)

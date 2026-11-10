@@ -10,8 +10,12 @@ name: pdufa daily rebuild
 # reconciliation finds an FDA approval missing from our archive, this opens a GitHub issue so it's caught.
 #
 # REQUIRED repo secrets (Settings -> Secrets and variables -> Actions):
-#   POLYGON_API_KEY   (price/market-cap refresh)
-#   FMP_API_KEY       (optional; only if a step needs it)
+#   FMP_API_KEY       PRICES OF RECORD since 2026-11-10 (price_source.py): daily closes, batch quotes, market caps.
+#                     Paid FMP /stable/ plan on David's account (the plan's per-minute limit is set on that account;
+#                     one run makes ~50 calls for the forward slate plus one per run-up/readout series it extends).
+#   POLYGON_API_KEY   FALLBACK ONLY until 2026-11-17 (PRICE_POLYGON_FALLBACK); then the secret and code are removed.
+#   ALPACA_KEY_ID / ALPACA_SECRET_KEY  optional free fallback (not set yet). price_source.py uses them if both are in the
+#                     env: add the two secrets, then add them to the price step's env block (test_workflow_valid checks).
 # Vercel: connect this repo under the Vercel project -> Git, and set Root Directory = pdufa_site_src.
 
 on:
@@ -64,10 +68,36 @@ jobs:
         run: pip install --quiet requests pandas openpyxl python-dateutil pillow
              google-api-python-client google-auth
 
-      - name: Refresh prices / market caps (Polygon, forward catalysts only)
+      # 2026-11-10 (audit 11-09 §4): FMP via price_source.py, ~20 s (Polygon's free tier took ~25 min and a 429 on
+      # 10-22 froze three runs). Everything that refreshed is written; if any forward ticker not on
+      # _price_no_feed.json got no data, the step fails NAMING it and the next step opens one PRICES issue. The
+      # deploy continues on the kept values (a frozen night costs ~80% of the next day's Bing AI citations).
+      - name: Refresh prices / market caps (FMP, forward catalysts only)
+        id: prices
+        continue-on-error: true
         env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python polygon_enrich.py
+
+      - name: "PRICES issue: a forward ticker got no price data (named)"
+        if: steps.prices.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'EOF'
+          import json, subprocess
+          m = json.load(open('_price_missing.json')).get('missing') or ['(price step failed before naming tickers)']
+          t = 'PRICES: no price data for ' + ', '.join(m)
+          body = ('@rockyshoals-lgtm The price step got nothing from FMP (or its fallbacks) for: ' + ', '.join(m) +
+                  '. Their previous price and market cap were kept and the site deployed. Fix the symbol, or add the '
+                  'ticker to _price_no_feed.json with a reason.')
+          out = subprocess.run(['gh', 'issue', 'list', '--state', 'open', '--search', 'PRICES: in:title', '--json', 'title'],
+                               capture_output=True, text=True).stdout
+          if not any(i['title'] == t for i in json.loads(out or '[]')):
+              subprocess.run(['gh', 'issue', 'create', '--title', t, '--body', body])
+          EOF
 
       # ---------------------------------------------------------------------------------------
       # RUN-UP STUDY. The study is the site's proprietary asset, and every decision published and
@@ -88,6 +118,7 @@ jobs:
       - name: "Run-up study: compute T-120 baseline for new events only"
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python add_t120_baseline.py
 
       - name: "Run-up study: recompute the published statistics (single source of truth)"
@@ -110,6 +141,7 @@ jobs:
       - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_home_board.py
 
       # Reconcile the calendar against the slate BEFORE marking outcomes, so a catalyst added here
@@ -420,6 +452,7 @@ jobs:
       - name: Refresh /readouts (drop past months + auto-log readout window moves)
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_readout_results.py
 
       # /sls asserts that the 80th REGAL event has not been announced. That is a claim of absence,
@@ -450,6 +483,7 @@ jobs:
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: |
           python build_sls_hub.py
           python build_sls_deepdive.py
@@ -466,6 +500,7 @@ jobs:
         continue-on-error: true
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_vktx_hub.py
 
       - name: Surface company-guided readouts at the top of /readouts
@@ -542,6 +577,7 @@ jobs:
         continue-on-error: true
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_retail_pages.py
 
       # Per-stock T-120 figures, measured from that ticker's own daily closes on the same basis as
@@ -550,6 +586,7 @@ jobs:
         continue-on-error: true
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_stock_runup.py
 
       - name: Keep the featured deep dives linked (no orphan pages)
@@ -765,7 +802,7 @@ jobs:
         run: python noindex_empty_months.py
 
       - name: "Answer-first lede above every hub table"
-        run: python build_hub_lede.py && python sync_home_event_schema.py
+        run: python fix_not_announced_pages.py && python build_decision_subhubs.py && python build_crl_months.py && python build_hub_lede.py && python sync_home_event_schema.py
 
       # Audit 2026-09-06 (0840) NEW-1: the /calendar ItemList was pre-rendered and owned by no
       # step -- 54 Events vs 48 ahead rows, 16 decided drugs still EventScheduled to Google/Bing.

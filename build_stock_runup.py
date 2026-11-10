@@ -92,15 +92,15 @@ def bars(ticker, key, cache):
         newest = got[-1][0] if got else ""
         if newest >= (dt.date.today() - dt.timedelta(days=4)).isoformat():
             return got
+    import price_source  # 2026-11-10: FMP primary, Polygon fallback (audit 11-09 §4)
     start = (dt.date.today() - dt.timedelta(days=400)).isoformat()
-    u = (f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start}/"
-         f"{dt.date.today().isoformat()}?adjusted=true&sort=asc&limit=50000&apiKey={key}")
-    try:
-        res = json.loads(urllib.request.urlopen(u, timeout=30).read()).get("results") or []
-    except Exception:
-        res = []
-    out = [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(), x["c"])
-           for x in res]
+    out = [list(x) for x in price_source.closes(ticker, start)]
+    if out and cache.get(ticker):
+        # Recorded closes are the series of record: a close already cached is never rewritten by a new feed;
+        # the feed only adds the days after it (cutover diff 2026-11-10: 87 of 17,349 days differ by >0.5%).
+        rec = {d: c for d, c, *_ in cache[ticker]}
+        out = sorted([[d, rec.get(d, c)] for d, c in out] + [[d, c] for d, c in rec.items()
+                                                            if d not in {x[0] for x in out}])
     if not out and cache.get(ticker):
         # A failed refresh must not replace a stale-but-real series with nothing.
         print(f"  {ticker}: price refresh failed; serving cached series "
@@ -252,7 +252,7 @@ def main():
     ap.add_argument("--limit", type=int)
     a = ap.parse_args()
 
-    key = load_key()
+    key = load_key() or "price_source"   # 2026-11-10: prices come from price_source (FMP); no Polygon key needed
     cohort = json.load(open(STATS, encoding="utf-8")) if os.path.exists(STATS) else {}
     rows = list(csv.DictReader(open(STUDY, encoding="utf-8-sig", errors="replace")))
 

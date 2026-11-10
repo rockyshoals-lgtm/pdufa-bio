@@ -177,7 +177,7 @@ median is several times the large-cap median.</div></div>
 
 <h2>Method &amp; limits</h2>
 <p class="note">Universe: every FDA PDUFA decision we have published in our decision archive with usable daily price
-history, {dmin} to {dmax}. Prices are split-adjusted daily closes (Polygon). Returns are computed in trading days,
+history, {dmin} to {dmax}. Prices are split-adjusted daily closes (Polygon through 2026-11-09, FMP since; checked close by close at the switch). Returns are computed in trading days,
 not calendar days. Outcomes are taken from our published decision archive, each of which is sourced to a primary FDA,
 SEC or company filing.<br><br>
 <b>T-120 coverage.</b> {n120:,} of {len(rows):,} events ({100*n120/len(rows):.1f}%) have a full 120 sessions of prior trading history; the rest are companies that had not been listed long enough, and they are excluded from the T-120 columns rather than measured over a short window. Coverage is 100% for {years[-1]}.<br><br><b>Limits worth stating.</b> Daily closes understate intraday ranges, so every move here is a floor, not a ceiling.

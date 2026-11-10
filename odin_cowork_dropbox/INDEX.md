@@ -9,6 +9,9 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-11-10 BUILDER (red team 1109 orders)** — `2026-11-10_BUILDER_red_team_1109_orders.md` — 2026-11-09 20:00 to 2026-11-10 ~00:30 Pacific = 23:00 Nov 9 to ~03:30 Nov 10 Eastern. RULE 1.
+- **2026-11-09b note (ONE DOCUMENT state bing ai analysis polygon replacement)** — `2026-11-09b_ONE_DOCUMENT_state_bing_ai_analysis_polygon_replacement.md` — 2026-11-09, measured 22:20 to 22:55 Eastern = 2026-11-10 03:20 to 03:55 UTC (Monday night). Bing Webmaster data runs to November 7; the console shows Pacific times. Per RULE 1 every time carries its zone.
+- **2026-11-09 audit (audit state rankings and polygon replacement)** — `2026-11-09_audit_state_rankings_and_polygon_replacement.md` — 2026-11-09, measured 22:20 to 22:40 Eastern = 2026-11-10 03:20 to 03:40 UTC (Monday night). Per RULE 1 every time carries its zone.
 - **2026-11-08 BUILDER (currency dates homepage snippets)** — `2026-11-08_BUILDER_currency_dates_homepage_snippets.md` — 2026-11-08, work 19:15-22:30 Pacific = 22:15-01:30 Eastern. RULE 1.
 - **2026-11-05 BUILDER (ux seo aicitation audit)** — `2026-11-05_BUILDER_ux_seo_aicitation_audit.md` — 2026-11-05, work 00:40-03:30 Pacific = 03:40-06:30 Eastern. RULE 1.
 - **2026-11-03 BUILDER (currency studies runups)** — `2026-11-03_BUILDER_currency_studies_runups.md` — 2026-11-03, work 17:00-21:30 Pacific = 20:00-00:30 Eastern. RULE 1.

@@ -148,6 +148,35 @@ def main():
         if claimed != rows:
             bad.append((rel, f"lede says {claimed}, page has {rows} rows")); continue
 
+        if rel == "/calendar":
+            # Audit 2026-11-09 §5 item 3: the first sentence is the most-quoted on the site. It must open with the
+            # forward count, and that count, the next date and the next-year count must match the grid and the
+            # year pages they summarise.
+            sys.path.insert(0, HERE)
+            from site_dates import eastern_today
+            import build_hub_lede as bhl
+            today_ = eastern_today().isoformat()
+            prow = bhl.parse(body)
+            rest = [r for r in prow if not (r["approved"] or r["crl"])]
+            ahead = [r for r in rest if not r["iso"] or r["iso"] >= today_]
+            first = re.match(r"([\d,]+) FDA PDUFA goal dates? (?:are|is) still ahead in (\d{4})", lede)
+            if ahead and not first:
+                bad.append((rel, "first sentence must open '{n} FDA PDUFA goal dates are still ahead in {year}'"))
+                continue
+            if first and int(first.group(1).replace(",", "")) != len(ahead):
+                bad.append((rel, f"first sentence says {first.group(1)} ahead, the grid has {len(ahead)}")); continue
+            nxt = min((r["iso"] for r in ahead if r["iso"]), default=None)
+            if nxt:
+                y_, m_, d_ = (int(x) for x in nxt.split("-"))
+                want = f"the next on {bhl.MONTHS[m_ - 1]} {d_}, {y_}"
+                if want not in lede:
+                    bad.append((rel, f"first sentence does not name the next date ({want})")); continue
+            lat = re.search(r"and ([\d,]+) more (?:are|is) already set for (\d{4}) and later", lede)
+            n_later, _ = bhl.later_rows(today_)
+            if (int(lat.group(1).replace(",", "")) if lat else 0) != n_later:
+                bad.append((rel, f"first sentence says {lat.group(1) if lat else 0} set for later years, "
+                                 f"the year pages have {n_later}")); continue
+
         # The breakdown, where present, must add up to the total it is a breakdown of.
         parts = [int(x.replace(",", "")) for x in
                  re.findall(r"([\d,]+) (?:approvals|Complete Response Letters)", lede)]

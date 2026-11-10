@@ -1,0 +1,4 @@
+{
+ "_note": "Forward tickers that no price feed carries, each with a reason. polygon_enrich.py fails the price step (naming the ticker) for any OTHER forward ticker that returns nothing. Empty on 2026-11-10: FMP returned all 46 forward tickers.",
+ "tickers": {}
+}

@@ -50,21 +50,8 @@ def load_key():
 
 
 def daily(t, start, end, key):
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-           f"?adjusted=true&sort=asc&limit=50000&apiKey={key}")
-    for i in range(4):
-        try:
-            with urllib.request.urlopen(url, timeout=30) as r:
-                rows = (json.loads(r.read().decode()) or {}).get("results") or []
-                return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(), x["c"])
-                        for x in rows if x.get("c")]
-        except urllib.error.HTTPError as e:
-            if e.code == 429 or e.code >= 500:
-                time.sleep(2 ** i); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    import price_source  # 2026-11-10: FMP primary, Polygon fallback (audit 11-09 §4)
+    return price_source.closes(t, start, end)
 
 
 def chart(rows, marks):
@@ -303,7 +290,7 @@ forecasts, price targets, or recommendations anywhere on this page.</p>
 </div>
 
 <div class="card">{ch}
-<div class="note" style="margin-top:9px">SLS daily closes, {chart_span} (Polygon, split-adjusted). Gold markers = REGAL
+<div class="note" style="margin-top:9px">SLS daily closes, {chart_span} (FMP, split-adjusted). Gold markers = REGAL
 milestone disclosures. Green marker = the June 24 2026 executive change-of-control amendment. Hover any marker for the date and close.</div></div>
 
 {act_block}
@@ -437,7 +424,7 @@ a signal about any single company.</p>
 
 <h2>4. Every dated catalyst and its measured stock reaction</h2>
 <p>Day-of move is the close on the first trading day on or after the announcement versus the prior close; +5d is
-five sessions later versus that same prior close. Computed from Polygon split-adjusted daily closes. The full
+five sessions later versus that same prior close. Computed from FMP split-adjusted daily closes. The full
 21-event table, including volume multiples, is in the companion study.</p>
 <div class="card">
 <div class="fact">Across 21 dated events since Nov 2024, the <b>mean absolute day-of move was 6.1%</b>; only <b>8 of 21 (38%)</b> closed higher on the day.</div>
@@ -510,7 +497,7 @@ without weighting. Neither column is a recommendation.</p>
 <li><a href="https://www.meridiancp.com/app/uploads/2024/01/Meridian_2023-Study-of-CIC-Severance-Arrangements-1.pdf">Meridian Compensation Partners: 2023 Study of Change-in-Control Severance Arrangements</a>, market prevalence of double-trigger vesting (91%) and CEO cash multiples.</li>
 <li><a href="/research/sls-deep-dive">pdufa.bio: SLS event-reaction study</a> (full 21-event table)</li>
 </ul>
-<p class="note">Stock-reaction figures are computed by pdufa.bio from Polygon split-adjusted daily closes; daily closes
+<p class="note">Stock-reaction figures are computed by pdufa.bio from FMP split-adjusted daily closes; daily closes
 understate intraday ranges. Where an announcement fell on a non-trading day, the first following session is used.
 Page compiled {TODAY.isoformat()} and updated as new filings are published.</p>
 

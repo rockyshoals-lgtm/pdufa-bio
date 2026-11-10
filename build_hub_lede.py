@@ -93,6 +93,25 @@ def parse(doc):
     return out
 
 
+def later_rows(today):
+    """(count, first_year): pending goal-date rows published on the month pages of years AFTER the year /calendar's
+    live grid ends, read from those pages (never recomputed). Shared by the /calendar lede and the homepage."""
+    cal = os.path.join(SITE, "calendar", "index.html")
+    if not os.path.exists(cal):
+        return 0, None
+    heads = re.findall(r'<div class="mhead">[A-Za-z]+ (\d{4})</div>', open(cal, encoding="utf-8", errors="replace").read())
+    cal_year = max(heads) if heads else today[:4]
+    n = 0
+    for p in glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "*", "index.html")):
+        if p.split(os.sep)[-3] <= cal_year:
+            continue
+        doc = open(p, encoding="utf-8", errors="replace").read()
+        for r in parse(re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)):
+            if not (r["approved"] or r["crl"]) and (not r["iso"] or r["iso"] >= today):
+                n += 1
+    return n, int(cal_year) + 1
+
+
 def sentence(path, rows):
     n = len(rows)
     dates = [r["date"] for r in rows if r["date"]]
@@ -110,11 +129,26 @@ def sentence(path, rows):
         upcoming = sum(1 for r in rest if not r["iso"] or r["iso"] >= today)
         awaiting = len(rest) - upcoming
 
-        s = (f"This page lists {n} FDA decision dates"
-             + (f" covering {when}" if when else "") + ". ")
+        # Audit 2026-11-09 §5 item 3: this is the most-quoted sentence on the site (9.3K Bing AI citations in 60
+        # days, a third of all of them), and Bing was still quoting a stale copy that opened on a backward-looking
+        # count. The FIRST sentence is now the forward fact: what is still ahead, the next date, and what is already
+        # set for next year. Every figure is counted from published rows; tests/test_lede_matches_table.py recounts.
+        nxt = min((r["iso"] for r in rest if r["iso"] and r["iso"] >= today), default=None)
+        later, later_year = later_rows(today)
+        cal_year = today[:4]
+        s = ""
+        if upcoming:
+            s = f"{upcoming} FDA PDUFA goal date{'s are' if upcoming != 1 else ' is'} still ahead in {cal_year}"
+            if nxt:
+                y_, m_, d_ = (int(x) for x in nxt.split("-"))
+                s += f", the next on {MONTHS[m_ - 1]} {d_}, {y_}"
+            if later:
+                s += f", and {later} more {'are' if later != 1 else 'is'} already set for {later_year} and later"
+            s += "; each links the filing it came from, and the calendar is updated daily. "
+        s += (f"This page lists {n} FDA decision dates"
+              + (f" covering {when}" if when else "") + ". ")
         if decided:
-            s += f"{upcoming} are still ahead, and {decided} have been decided and are marked "\
-                 f"with the outcome. "
+            s += f"{decided} of them have been decided and are marked with the outcome. "
             if awaiting:
                 s += (f"{awaiting} passed its target date without a published decision."
                       if awaiting == 1 else
@@ -124,8 +158,8 @@ def sentence(path, rows):
               "only a month or a quarter we say so instead of inventing a day.")
         return s
 
-    if path == "decisions":
-        s = f"This page lists {n} FDA decisions"
+    if path == "decisions" or re.fullmatch(r"decisions/\d{4}", path):
+        s = f"This page lists {n} FDA decisions" + (f" made in {path[-4:]}" if path != "decisions" else "")
         if ap or crl:
             s += f", {ap} approvals and {crl} Complete Response Letters"
         s += (f", covering {when}. " if when else ". ")
@@ -252,7 +286,9 @@ def main():
     a = ap_.parse_args()
 
     done = skipped = 0
-    for rel in TARGETS:
+    years = sorted(os.path.basename(os.path.dirname(p))
+                   for p in glob.glob(os.path.join(SITE, "decisions", "20[0-9][0-9]", "index.html")))
+    for rel in TARGETS + [f"decisions/{y}" for y in years]:
         p = os.path.join(SITE, rel, "index.html")
         if not os.path.exists(p):
             print(f"  skip /{rel}: no page"); continue

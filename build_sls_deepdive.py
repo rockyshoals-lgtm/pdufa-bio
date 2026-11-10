@@ -46,21 +46,8 @@ def load_key():
 
 
 def daily(t, start, end, key):
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-           f"?adjusted=true&sort=asc&limit=50000&apiKey={key}")
-    for i in range(4):
-        try:
-            with urllib.request.urlopen(url, timeout=30) as r:
-                rows = (json.loads(r.read().decode()) or {}).get("results") or []
-                return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(), x["c"])
-                        for x in rows if x.get("c")]
-        except urllib.error.HTTPError as e:
-            if e.code == 429 or e.code >= 500:
-                time.sleep(2 ** i); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    import price_source  # 2026-11-10: FMP primary, Polygon fallback (audit 11-09 §4)
+    return price_source.closes(t, start, end)
 
 
 EV = json.load(open(os.path.join(HERE, "_sls_reactions.json"), encoding="utf-8"))
@@ -188,7 +175,7 @@ opinions, estimates of success, or price targets on this page.</p>
 </div>
 
 <div class="card">{chart}
-<div class="note" style="margin-top:8px">SLS daily closes, Oct 2024 to Aug 2026 (Polygon, split-adjusted). Gold dots mark the five
+<div class="note" style="margin-top:8px">SLS daily closes, Oct 2024 to Aug 2026 (split-adjusted). Gold dots mark the five
 REGAL milestone disclosures: the 60th-event interim-analysis trigger (Dec 10, 2024), the interim analysis passing
 (Jan 23, 2025), the IDMC periodic review (Aug 7, 2025), the 72-event disclosure (Dec 29, 2025) and the 78-event
 disclosure (May 12, 2026). Hover a dot for the date and close.</div></div>
@@ -236,7 +223,7 @@ this setting, standard treatment carries "an expected median overall survival of
 <h2>Every dated catalyst and its measured stock reaction</h2>
 <p>Day-of move is the close on the first trading day on or after the announcement versus the prior close. +5d is
 the close five trading sessions later versus that same prior close. Volume is that day's volume divided by its
-trailing 30-day average. Computed from Polygon split-adjusted daily closes.</p>
+trailing 30-day average. Computed from split-adjusted daily closes (FMP; Polygon before 2026-11-10).</p>
 <div class="card"><table>
 <tr><th>Date</th><th>Event</th><th class="num">Day-of</th><th class="num">+5d</th><th class="num">Vol</th></tr>
 {"".join(trs)}
@@ -347,7 +334,7 @@ over the trailing year.</div>
 <li><a href="https://clinicaltrials.gov/study/NCT04229979">ClinicalTrials.gov: REGAL (NCT04229979)</a>: design, population, endpoint.</li>
 <li><a href="https://ir.sellaslifesciences.com/news/default.aspx">SELLAS investor news archive</a>: full dated press-release history.</li>
 </ul>
-<p class="note">Stock reaction figures on this page are computed by pdufa.bio from Polygon split-adjusted daily
+<p class="note">Stock reaction figures on this page are computed by pdufa.bio from split-adjusted daily
 closing prices. Daily closes understate intraday ranges. Event dates are announcement dates; where an announcement
 fell on a non-trading day, the first following trading session is used.</p>
 

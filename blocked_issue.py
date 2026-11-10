@@ -34,8 +34,37 @@ def open_blocked():
     return [i for i in json.loads(out or "[]") if str(i.get("title", "")).startswith("BLOCKED:")]
 
 
+def since_last_deploy():
+    """'Days since last green deploy: N (run R, finished YYYY-MM-DD HH:MM ET)'. Audit 2026-11-09 §2a: each frozen build
+    cut Bing AI citations ~80% within a day, so the age of the live build is the number that matters on this issue."""
+    import datetime as dt
+    try:
+        out = gh("run", "list", "--workflow", "pdufa-rebuild.yml", "--status", "success", "--limit", "1",
+                 "--json", "databaseId,updatedAt")
+        last = (json.loads(out or "[]") or [None])[0]
+        if not last:
+            return "Days since last green deploy: unknown (no successful run found)."
+        t = dt.datetime.fromisoformat(last["updatedAt"].replace("Z", "+00:00"))
+        try:
+            from site_dates import _ET
+        except Exception:  # noqa: BLE001
+            _ET = dt.timezone(dt.timedelta(hours=-5))
+        now = dt.datetime.now(dt.timezone.utc)
+        days = (now - t).total_seconds() / 86400
+        return (f"Days since last green deploy: {days:.1f} (run {last['databaseId']}, finished "
+                f"{t.astimezone(_ET):%Y-%m-%d %H:%M} ET). Bing AI citations fell ~80% within a day of past freezes.")
+    except Exception as e:  # noqa: BLE001
+        return f"Days since last green deploy: unavailable ({str(e)[:100]})."
+
+
+OWNER = "@rockyshoals-lgtm"  # a mention makes GitHub email the owner (no SMTP secret yet)
+
+
 def compose(report):
     body = io.open(report, encoding="utf-8").read()
+    if not body.startswith("**Days since last green deploy"):
+        body = f"**{since_last_deploy()}**\n\ncc {OWNER}\n\n" + body
+        io.open(report, "w", encoding="utf-8").write(body)
     meta = json.load(io.open(os.path.splitext(report)[0] + ".json", encoding="utf-8"))
     names = ", ".join(os.path.basename(f) for f in meta["failed"])
     title = (PREFIX + names)[:230]
@@ -88,7 +117,8 @@ def main():
         n = str(existing[0]["number"])
         gh("issue", "edit", n, "--title", title, "--body-file", a.report)
         gh("issue", "comment", n, "--body", f"Still blocked: run {meta['run_id']} on `{meta['sha']}` failed "
-                                            f"{', '.join(os.path.basename(f) for f in meta['failed'])}.")
+                                            f"{', '.join(os.path.basename(f) for f in meta['failed'])}. "
+                                            f"{body.splitlines()[0].strip('*')}")
         print(f"updated #{n}: {title}")
     else:
         out = gh("issue", "create", "--title", title, "--body-file", a.report)

@@ -53,22 +53,9 @@ KEY = load_key()
 
 
 def bars(t, start, end):
-    """[(date, close, volume)] ascending."""
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-           f"?adjusted=true&sort=asc&limit=50000&apiKey={KEY}")
-    for i in range(4):
-        try:
-            with urllib.request.urlopen(url, timeout=30) as r:
-                rows = (json.loads(r.read().decode()) or {}).get("results") or []
-                return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(),
-                         x["c"], x.get("v") or 0) for x in rows if x.get("c")]
-        except urllib.error.HTTPError as e:
-            if e.code == 429 or e.code >= 500:
-                time.sleep(2 ** i); continue
-            return []
-        except Exception:
-            time.sleep(0.8)
-    return []
+    """[(date, close, volume)] ascending, split-adjusted. 2026-11-10: price_source (FMP primary, Polygon fallback)."""
+    import price_source
+    return price_source.daily(t, start, end)
 
 
 def mcap_tier(mcap):

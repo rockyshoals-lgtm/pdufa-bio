@@ -63,11 +63,11 @@ def load_key():
 
 
 def bars(key):
-    u = (f"https://api.polygon.io/v2/aggs/ticker/VKTX/range/1/day/2024-01-01/"
-         f"{TODAY.isoformat()}?adjusted=true&sort=asc&limit=50000&apiKey={key}")
-    res = json.loads(urllib.request.urlopen(u, timeout=30).read()).get("results") or []
-    return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(),
-             x["c"], x.get("v") or 0) for x in res]
+    import price_source  # 2026-11-10: FMP primary, Polygon fallback (audit 11-09 §4)
+    out = price_source.daily("VKTX", "2024-01-01", TODAY.isoformat())
+    if not out:
+        raise SystemExit("VKTX: no price series from any feed")
+    return out
 
 
 def main():
@@ -187,7 +187,7 @@ the tape are each linked below.</div>
 {"".join(rows)}
 </table>
 <div class="note" style="margin-top:10px">Day move is that session's close against the prior close,
-computed from Polygon split-adjusted daily closes at build time. Daily closes understate intraday
+computed from FMP split-adjusted daily closes at build time. Daily closes understate intraday
 ranges, so each figure is a floor. Historical price behaviour, not a forecast.</div></div>
 
 <div class="mhead">What we are not telling you</div>
