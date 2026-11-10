@@ -212,10 +212,18 @@ def main():
                 # sentence; the verifier simply never knew about it. A row waiting on the FDA
                 # past its goal date is neither ahead nor decided, and the page is right to say
                 # so -- so count it.
+                # 2026-11-10 (audit 11-09 item 3): the lede now opens forward-first, "{ahead} FDA PDUFA goal dates
+                # are still ahead in {year}, ... This page lists {tot} FDA decision dates ... {dec} of them have been
+                # decided". Both forms are read; the sum rule is unchanged.
                 m = re.search(r"(\d+) FDA decision dates.*?(\d+) are still ahead, and (\d+) "
                               r"have been decided", text, re.S)
-                if m:
-                    tot, ahead, dec = (int(x) for x in m.groups())
+                m2 = re.search(r"(\d+) FDA PDUFA goal dates? (?:are|is) still ahead in \d{4}.*?This page lists (\d+) "
+                               r"FDA decision dates.*?(\d+) of them have been decided", text, re.S)
+                if m2:
+                    ahead, tot, dec = (int(x) for x in m2.groups())
+                if m or m2:
+                    if m:
+                        tot, ahead, dec = (int(x) for x in m.groups())
                     aw = re.search(r"(\d+) (?:passed its|have passed their) target date "
                                    r"without a published decision", text)
                     awaiting = int(aw.group(1)) if aw else 0
