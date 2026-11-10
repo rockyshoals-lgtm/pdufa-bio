@@ -64,8 +64,20 @@ def main():
     for f in files:
         rel = os.path.relpath(f, HERE)
         raw = open(f, encoding="utf-8").read()
+        # 2026-11-10: PyYAML silently keeps the last of two equal mapping keys; GitHub rejects the whole workflow
+        # ("'FMP_API_KEY' is already defined"), so a duplicated env key killed dispatch with no local failure.
+        class _NoDup(yaml.SafeLoader):
+            pass
+
+        def _map(loader, node, deep=False):
+            keys = [loader.construct_object(k, deep=deep) for k, _ in node.value]
+            dup = sorted({k for k in keys if keys.count(k) > 1}, key=str)
+            if dup:
+                raise yaml.constructor.ConstructorError(None, None, f"duplicate key(s) {dup}", node.start_mark)
+            return yaml.SafeLoader.construct_mapping(loader, node, deep)
+        _NoDup.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _map)
         try:
-            doc = yaml.safe_load(raw)
+            doc = yaml.load(raw, Loader=_NoDup)
         except Exception as e:
             ok = False
             print(f"\nFAIL: {rel} is not valid YAML")

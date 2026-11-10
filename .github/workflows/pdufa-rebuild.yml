@@ -78,7 +78,6 @@ jobs:
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
-          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python polygon_enrich.py
 
       - name: "PRICES issue: a forward ticker got no price data (named)"
