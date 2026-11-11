@@ -1,8 +1,15 @@
 {
  "held_since": "2026-11-09T20:50:43Z",
- "consecutive_held_runs": 7,
+ "consecutive_held_runs": 8,
  "emailed_at": "2026-11-09T22:50:50Z",
  "leads": [
+  {
+   "source": "edgar",
+   "row_id": "pdufa_capr_2026-08-22",
+   "key": "edgar:https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
+   "text": "8-K filed 2026-11-10 states an approval of 'Deramiocel' https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
+   "first_seen": "2026-11-11T01:00:05Z"
+  },
   {
    "source": "drug_pages",
    "row_id": "drug:asundexian",
@@ -53,6 +60,7 @@
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000081",
   "edgar_8k|pdufa_nvcr_2026-11-15|0001645113-26-000085",
+  "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_ex2-1.htm",
   "edgar|edgar:https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",

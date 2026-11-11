@@ -1,8 +1,8 @@
 {
- "built": "2026-11-10T19:30:37+00:00",
- "data_built_at": "2026-11-10T19:30:37+00:00",
- "commit": "035218a5f",
- "commit_at_build": "035218a5f",
+ "built": "2026-11-11T01:05:13+00:00",
+ "data_built_at": "2026-11-11T01:05:13+00:00",
+ "commit": "10143572b",
+ "commit_at_build": "10143572b",
  "as_of_eastern": "2026-11-10",
  "next_date": "2026-11-14",
  "next_ticker": "CYTK",
@@ -11,6 +11,11 @@
  "days_since_goal": null,
  "held_since": "2026-11-09T20:50:43Z",
  "held_leads": [
+  {
+   "row_id": "pdufa_capr_2026-08-22",
+   "source": "edgar",
+   "first_seen": "2026-11-11T01:00:05Z"
+  },
   {
    "row_id": "drug:asundexian",
    "source": "drug_pages",
