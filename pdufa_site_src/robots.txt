@@ -10,6 +10,10 @@ Disallow: /_retired_pdufa_2026-07-19/
 Disallow: /preview
 Disallow: /holding
 Disallow: /ping
+# 2026-11-11 (audit 11-10 order 4): build metadata and client-side JSON took ~10% of Googlebot's requests
+Disallow: /build-info.json
+Disallow: /search-index.json
+Disallow: /historic.json
 Allow: /api/v1/
 Disallow: /api/
 

@@ -97,6 +97,12 @@ def fetch_month(y, m):
     return out
 
 
+def crumbs(items):
+    return ('<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": BASE + u}
+                                for i, (n, u) in enumerate(items)]}) + "</script>")
+
+
 def page(y, m, items, fetched, prev_, next_, tpl):
     name = f"{MON[m - 1].capitalize()} {y}"
     url = f"{BASE}/fda-approvals/{y}/{MON[m - 1]}"
@@ -142,7 +148,7 @@ def page(y, m, items, fetched, prev_, next_, tpl):
     head = re.sub(r'(<meta property="og:title" content=")[^"]*(")', lambda mm: mm.group(1) + esc(title.split(" | ")[0]) + mm.group(2), head)
     head = re.sub(r'<script type="application/ld\+json"[^>]*>.*?</script>', "", head, flags=re.S)
     head = re.sub(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", "", head, flags=re.S)
-    head = head.replace("</head>", f'<script type="application/ld+json">{json.dumps(faq, ensure_ascii=False)}</script></head>', 1)
+    head = head.replace("</head>", f'<script type="application/ld+json">{json.dumps(faq, ensure_ascii=False)}</script>' + crumbs([("Home", "/"), ("FDA approvals by month", "/fda-approvals"), (name, f"/fda-approvals/{y}/{MON[m - 1]}")]) + "</head>", 1)
     foot = tpl[tpl.index("<footer"):] if "<footer" in tpl else "</div></body></html>"
     foot = re.sub(r"<!--(SITELINKS|RELATED):BEGIN-->.*?<!--\1:END-->", "", foot, flags=re.S)
     return head + body + foot, len(items), n_new, n_eff
@@ -193,11 +199,12 @@ def main():
     ttl = f"FDA Approvals by Month 2025-{td.year}: Every New Application and New Use | pdufa.bio"
     head = re.sub(r"<title>.*?</title>", f"<title>{esc(ttl)}</title>", head, count=1, flags=re.S)
     for pat in (r'(<meta name="description" content=")[^"]*(")', r'(<meta property="og:description" content=")[^"]*(")'):
-        head = re.sub(pat, lambda mm: mm.group(1) + esc(hub_first[:156]) + mm.group(2), head)
+        head = re.sub(pat, lambda mm: mm.group(1) + esc(f"Every FDA drug approval by month from Drugs@FDA: {tot_n} new drug and biologic applications so far in {td.year}, each with its letter.") + mm.group(2), head)
     for pat in (r'(<link rel="canonical" href=")[^"]*(")', r'(<meta property="og:url" content=")[^"]*(")'):
         head = re.sub(pat, lambda mm: mm.group(1) + f"{BASE}/fda-approvals" + mm.group(2), head)
     head = re.sub(r'<script type="application/ld\+json"[^>]*>.*?</script>', "", head, flags=re.S)
     head = re.sub(r"<!--DMOD:BEGIN-->.*?<!--DMOD:END-->", "", head, flags=re.S)
+    head = head.replace("</head>", crumbs([("Home", "/"), ("FDA approvals by month", "/fda-approvals")]) + "</head>", 1)
     foot = tpl[tpl.index("<footer"):] if "<footer" in tpl else "</div></body></html>"
     foot = re.sub(r"<!--(SITELINKS|RELATED):BEGIN-->.*?<!--\1:END-->", "", foot, flags=re.S)
     if not a.dry_run:
