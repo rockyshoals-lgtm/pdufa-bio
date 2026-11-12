@@ -168,10 +168,14 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     estimated target is removed rather than restated."""
     P = pretty(dcd)
     ok = word == "Approved"
+    nal = word == "Not approvable letter"   # 2026-11-11: device PMA (NVCR); never a CRL, and the letter's day is not public
     verb_story = (f"was approved by the FDA on {P} to treat" if ok else
+                  f"received an FDA Not Approvable Letter on its device PMA (announced {P}) for" if nal else
                   f"received a Complete Response Letter from the FDA on {P} for")
     verb_faq = (f"drug, approved by the FDA on {P} for" if ok else
+                f"device that received an FDA Not Approvable Letter (announced {P}) for" if nal else
                 f"candidate that received a Complete Response Letter from the FDA on {P} for")
+    faq_on = f"(announced {P}; the letter's own date is not public)" if nal else f"on {P}"
     # Audit 09-14 P0-C. `goal_sourced` is False when the goal date we carried was never traced
     # to a filing (BAYRY's November 30) or is only a window. Stating it as "the FDA goal date"
     # would republish, as a key fact and in the FAQ, the very number the page elsewhere says we
@@ -206,14 +210,16 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     # "vs." -- both sides are lazy, anchored on the fixed template words around them
     doc = re.sub(r"The FDA PDUFA target date for " + re.escape(tk) + r" \((.*?)\) is \d{4}-\d{2}-\d{2} "
                  r"for (.*?)\. Dates are company/FDA-sourced and can slip\. Verify against primary filings\.",
-                 lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} on "
-                            f"{P}: {word}.{goal_sent} Verify against the linked primary source."),
+                 lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} "
+                            f"{faq_on}: {word}.{goal_sent} Verify against the linked primary source."),
                  doc)
     # the windowed / unsourced FAQ shapes fix_event_page_windows.py writes
+    # 2026-11-11: the quarter-window shape ("is Q4 2026 for", NVCR) was not matched and stayed pending
     doc = re.sub(r"The FDA PDUFA target date for " + re.escape(tk) + r" \((.*?)\) (?:is expected in [^.]{4,24} for|is not sourced for|"
+                 r"is (?:Q[1-4]|H[12]) \d{4} for|"
                  r"has not been sourced\. We hold no filing or release stating a date for) (.*?)\. (?:[^<\"]*?)Verify against primary filings\.",
-                 lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} on "
-                            f"{P}: {word}.{goal_sent} Verify against the linked primary source."),
+                 lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} "
+                            f"{faq_on}: {word}.{goal_sent} Verify against the linked primary source."),
                  doc)
     doc = doc.replace("candidate under FDA review for", verb_faq)
     doc = doc.replace("candidate under FDA review", verb_faq[: -len(" for")])

@@ -91,7 +91,8 @@ def main():
             bad.append((rel, "S4", "accelerated approval stated without conditional language"))
 
         # 5. patent cliff / LOE without the 'earliest date, not a guarantee' framing
-        if re.search(r"\bloss of exclusivity\b|\bpatent cliff\b|\bloses its last patent\b",
+        # (2026-11-11: /sitemap lists other pages' titles; the disclosure lives on the page each title links to)
+        if rel != "/sitemap" and re.search(r"\bloss of exclusivity\b|\bpatent cliff\b|\bloses its last patent\b",
                      txt, re.I) \
                 and not re.search(r"earliest date|not a guarantee|settlement", txt, re.I):
             bad.append((rel, "S4", "LOE/cliff claim without the earliest-date disclosure"))

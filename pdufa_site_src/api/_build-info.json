@@ -1,45 +1,14 @@
 {
- "built": "2026-11-12T02:11:36+00:00",
- "data_built_at": "2026-11-12T02:11:36+00:00",
- "commit": "2a361a958",
- "commit_at_build": "2a361a958",
- "as_of_eastern": "2026-11-11",
+ "built": "2026-11-12T06:08:19+00:00",
+ "data_built_at": "2026-11-12T06:08:19+00:00",
+ "commit": "1c07be76a",
+ "commit_at_build": "1c07be76a",
+ "as_of_eastern": "2026-11-12",
  "next_date": "2026-11-14",
  "next_ticker": "CYTK",
- "next_days": 3,
+ "next_days": 2,
  "next_status": "upcoming",
  "days_since_goal": null,
- "held_since": "2026-11-09T20:50:43Z",
- "held_leads": [
-  {
-   "row_id": "pdufa_capr_2026-08-22",
-   "source": "edgar",
-   "first_seen": "2026-11-11T01:00:05Z"
-  },
-  {
-   "row_id": "drug:asundexian",
-   "source": "drug_pages",
-   "first_seen": "2026-11-09T22:50:50Z"
-  },
-  {
-   "row_id": "drug:enflonsia",
-   "source": "drug_pages",
-   "first_seen": "2026-11-10T17:27:25Z"
-  },
-  {
-   "row_id": "pdufa_bmy_2027-05-13",
-   "source": "fda_drugs_feed",
-   "first_seen": "2026-11-10T19:26:54Z"
-  },
-  {
-   "row_id": "pdufa_jazz_2027-04-16",
-   "source": "fda_drugs_feed",
-   "first_seen": "2026-11-10T17:27:25Z"
-  },
-  {
-   "row_id": "pdufa_nvcr_2026-11-15",
-   "source": "edgar_8k",
-   "first_seen": "2026-11-09T20:50:43Z"
-  }
- ]
+ "held_since": null,
+ "held_leads": []
 }

@@ -59,10 +59,41 @@ def load_feed(src):
     return io.open(src, encoding="utf-8").read()
 
 
+MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july", "august",
+                                          "september", "october", "november", "december"])}
+MAX_AGE_DAYS = 14
+STALE = []   # (item, own_date) dropped on the last leads_from() call, for the run log
+
+
+def own_date(it):
+    """The FDA's own action date, from the item's "On {Month D, YYYY}, the FDA ..." sentence, or None.
+
+    Audit 2026-11-11 §0a: on Nov 10, 2026 the FDA's feed republished oncology notices from 2021-2024 (adagrasib June
+    21, 2024; Darzalex Faspro January 15, 2021; entrectinib October 20, 2023; ...) with a pubDate of Nov 10, 2026.
+    The watcher dated each by pubDate and held the BMY and JAZZ rows on two-year-old approvals. The item's own
+    sentence is the date; pubDate is when the web page was touched."""
+    m = re.search(r"\bOn\s+(January|February|March|April|May|June|July|August|September|October|November|December)"
+                  r"\s+(\d{1,2}),\s+(\d{4})", it.get("desc", "") + " " + it.get("title", ""))
+    if not m:
+        return None
+    try:
+        return dt.date(int(m.group(3)), MONTHS[m.group(1).lower()], int(m.group(2)))
+    except ValueError:
+        return None
+
+
 def leads_from(xml, rows, since=None, acked=()):
     armed = [r for r in rows if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() == "upcoming"]
     leads, untracked = [], []
+    del STALE[:]
     for it in W.parse_items(xml):
+        od = own_date(it)
+        if od is not None:
+            ref = it["date"] if isinstance(it.get("date"), dt.date) else dt.date.today()
+            if (ref - od).days > MAX_AGE_DAYS:
+                STALE.append((it, od))      # a republished old notice: never a lead
+                continue
+            it = dict(it, date=od, pub_date=it.get("date"))
         if since and it["date"] and it["date"] < since:
             continue
         text = it["title"] + " \n " + it["desc"]
@@ -72,7 +103,7 @@ def leads_from(xml, rows, since=None, acked=()):
                 key = f"{r['id']}|{it['link']}"
                 if key not in acked:
                     leads.append((r, term, it, key))
-        elif re.search(r"\bFDA (Approves|Grants)\b", it["title"]):
+        elif re.search(r"\bFDA (Approves|Grants|Expands)\b", it["title"], re.I):   # 2026-11-11: "FDA approves pimicotinib" (lower case) was missed
             untracked.append(it)
     return leads, untracked
 
@@ -107,6 +138,8 @@ def main():
           f"{len(untracked)} FDA approval notice(s) naming no tracked drug")
     for it in untracked:
         print(f"   untracked: {it['date']} {it['title'][:90]} -- {it['desc'][:110]}")
+    for it, od in STALE:
+        print(f"   republished (own date {od}, feed date {it.get('date')}): {it['title'][:90]} -- not a lead")
     if leads:
         print("FDA DRUGS-FEED WATCH: the FDA has posted a decision on armed event(s):")
         for r, term, it, key in leads:

@@ -130,10 +130,12 @@ def build(e, px, write=True):
     prices, dates, piv = window(px, tk, d)
     chart, note, runup = svg(prices, dates, piv, d, e['outcome'], e.get('fda_action_date'))
     appr = e['outcome'] == 'Approved'
+    nal = e['outcome'] == 'Not approvable letter'   # 2026-11-11: device PMA letter (NVCR); never labelled a CRL
     ban = ('<div class="ban ap">✓ APPROVED</div>' if appr
+           else '<div class="ban cr">✕ NOT APPROVABLE LETTER (device PMA)</div>' if nal
            else '<div class="ban cr">✕ COMPLETE RESPONSE LETTER</div>')
     ocol = '#5fd07a' if appr else '#ff8f6b'
-    otxt = 'Approved' if appr else 'CRL'
+    otxt = 'Approved' if appr else ('Not approvable letter' if nal else 'CRL')
 
     tpl = open(os.path.join(SITE, 'fda-decision', 'VERA-2026-07-07', 'index.html'), encoding='utf-8').read()
     head = tpl[:tpl.index('<div class="bc">')]          # chrome/CSS only -- carries no data

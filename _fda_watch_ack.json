@@ -70,6 +70,11 @@
    "ticker": "MLYS",
    "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/1933414/000193341426000142/mlys2026q38kex991.htm",
    "reason": "Q3 2026 results restate the Dec 22, 2026 lorundrostat PDUFA date; no approval."
+  },
+  {
+   "ticker": "CAPR",
+   "ap_date": "edgar:https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
+   "reason": "Capricor Q3 2026 results (8-K Nov 10): says 'if approved' and 'as we approach our PDUFA date'; no approval. Nov 22, 2026 goal stands."
   }
  ]
 }

@@ -9,6 +9,9 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-11-11 audit (audit 100k plan google indexing works)** — `2026-11-11_audit_100k_plan_google_indexing_works.md` — 2026-11-11, measured 22:58 to 23:50 Eastern = 2026-11-12 03:58 to 04:50 UTC (Wednesday night). Per RULE 1 every time carries its zone. The Bing console shows Pacific; its data still ends Nov 8.
+- **2026-11-11 BUILDER (decisions feed fix internal links)** — `2026-11-11_BUILDER_decisions_feed_fix_internal_links.md` — 2026-11-11 ~20:30 Pacific to 2026-11-12 ~01:00 Eastern. RULE 1. Facts and build mechanics only. Not investment advice.
+- **2026-11-10 audit (audit google has indexed 56 pages and asundexian is held)** — `2026-11-10_audit_google_has_indexed_56_pages_and_asundexian_is_held.md` — 2026-11-10, measured 23:20 Eastern to 00:15 Eastern Nov 11 = 2026-11-11 04:20 to 05:15 UTC (Tuesday night). Per RULE 1 every time carries its zone. Bing console shows Pacific; Google Search Console dates are Pacific-day.
 - **2026-11-10 BUILDER (red team 1109 orders)** — `2026-11-10_BUILDER_red_team_1109_orders.md` — 2026-11-09 20:00 to 2026-11-10 ~00:30 Pacific = 23:00 Nov 9 to ~03:30 Nov 10 Eastern. RULE 1.
 - **2026-11-09b note (ONE DOCUMENT state bing ai analysis polygon replacement)** — `2026-11-09b_ONE_DOCUMENT_state_bing_ai_analysis_polygon_replacement.md` — 2026-11-09, measured 22:20 to 22:55 Eastern = 2026-11-10 03:20 to 03:55 UTC (Monday night). Bing Webmaster data runs to November 7; the console shows Pacific times. Per RULE 1 every time carries its zone.
 - **2026-11-09 audit (audit state rankings and polygon replacement)** — `2026-11-09_audit_state_rankings_and_polygon_replacement.md` — 2026-11-09, measured 22:20 to 22:40 Eastern = 2026-11-10 03:20 to 03:40 UTC (Monday night). Per RULE 1 every time carries its zone.

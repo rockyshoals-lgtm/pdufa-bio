@@ -173,8 +173,8 @@ def main():
         # Provenance labels are NOT drug names -- 24 pages briefly read "Primary-sourced
         # was approved on..." because the label sat where the drug belongs in old titles.
         JUNK = {"price-only", "source-verified", "primary-sourced", "unverified", ""}
-        if drug.lower() in JUNK:
-            drug = listing_drug.get(slug, "")
+        if (drug or "").lower() in JUNK:   # 2026-11-11: page_facts returns None for a page built today
+            drug = listing_drug.get(slug, "") or ""
         if drug.lower() in JUNK:
             drug = ""
         if not oc:

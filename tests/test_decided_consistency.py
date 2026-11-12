@@ -19,7 +19,7 @@ import json, os, re, sys
 SITE = 'pdufa_site_src'
 DATASET = os.path.join(SITE, 'api', 'v1', 'dataset.mjs')
 LIB = os.path.join(SITE, 'api', 'v1', '_lib.mjs')
-OK_OUTCOMES = {'Approved', 'CRL', 'Withdrawn'}
+OK_OUTCOMES = {'Approved', 'CRL', 'Withdrawn', 'Not approvable letter'}  # 2026-11-11: device PMA (NVCR Optune Mya)
 
 
 def main():

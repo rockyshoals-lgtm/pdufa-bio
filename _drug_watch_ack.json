@@ -59,6 +59,18 @@
    "source": "sponsor:INO:2026-10-30",
    "reason": "Not a drug: conference name; page removed 2026-11-01.",
    "acked": "2026-11-01"
+  },
+  {
+   "slug": "asundexian",
+   "source": "fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
+   "reason": "Published 2026-11-11: Sunharbo (asundexian) approved Nov 9, 2026 (FDA press announcement); decision page /fda-decision/BAYRY-2026-11-09.",
+   "acked": "2026-11-11"
+  },
+  {
+   "slug": "enflonsia",
+   "source": "openfda:20261014",
+   "reason": "BLA 761432 S-3 (approved 2026-10-14) updates injection-site erythema/swelling rates in Adverse Reactions (FDA letter). Not the second-RSV-season sBLA we track (goal March 2027). Verified non-event.",
+   "acked": "2026-11-11"
   }
  ]
 }

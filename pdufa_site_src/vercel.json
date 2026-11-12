@@ -2718,6 +2718,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/pimicotinib",
+   "destination": "/drug/pimjetmi",
+   "permanent": true
+  },
+  {
    "source": "/drug/pirtobrutinib",
    "destination": "/drug/jaypirca",
    "permanent": true

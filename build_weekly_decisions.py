@@ -129,8 +129,9 @@ def main():
                 f'<div class="d">{esc(_cdn(r.get("name")))}, before its {pretty(r.get("d"))} goal date</div></a>')
 
     span = f"{short(mon)} to {short(sun)}, {sun.year}"
-    title = f"FDA approval decisions this week: {span} | pdufa.bio"
     n_dec, n_pend = len(decided), len(pending)
+    # Audit 2026-11-11 order 5: the title answers in the SERP ("fda approval decision biotech": 1.1K impressions, 0 clicks)
+    title = f"FDA approval decisions this week ({span}): {n_dec} decided, {n_pend} due | pdufa.bio"
     # Audit 2026-10-16 3b: "fda approval decision biotech" (477 impressions, 0 clicks) -- the page never said biotech.
     desc = (f"FDA approval decisions for biotech and pharma, week of {span}: {n_dec} decided"
             + ((" (" + ", ".join(str(r.get("t")) + " " + str(r.get("oc")) for r in decided[:3]) + ")") if decided else "")

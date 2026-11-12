@@ -106,6 +106,8 @@ BOILER = [
     # the company index is generated from the rows already on the page, so neither is new content
     # about the subject. Counting them would mark all 850 pages as changed on any sweep.
     re.compile(r"<!--FRESH:BEGIN-->.*?<!--FRESH:END-->", re.S),
+    # 2026-11-11: inject_site_links.py's site-wide Browse row and peer links are navigation, not page content.
+    re.compile(r"<!--(SITELINKS|RELATED|LINKHUB):BEGIN-->.*?<!--\1:END-->", re.S),
     re.compile(r"<!--TICKERIDX:BEGIN-->.*?<!--TICKERIDX:END-->", re.S),
     # The modification date itself, in both the meta block and the JSON-LD. This one is not
     # optional: the date is DERIVED from this hash, so if it also fed back into it, every build

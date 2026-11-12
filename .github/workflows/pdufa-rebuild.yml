@@ -867,6 +867,11 @@ jobs:
 
       # Rebuilt again here, after the normalisers: build_stock_runup lifts the noindex on hubs that
       # gained real content, and those pages only belong in the sitemap once that has happened.
+      # 2026-11-11 (audit order 2): site-wide Browse links, homepage next/latest decisions, related links on every leaf,
+      # and the HTML /sitemap. tests/test_reachability.py holds every sitemap URL within 3 clicks of /.
+      - name: Internal links (site links, homepage hub, related, /sitemap)
+        run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
+
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
         run: python build_sitemap.py
 
@@ -1008,7 +1013,7 @@ jobs:
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json _decision_published.json
-          git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json 2>/dev/null || true
+          git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true

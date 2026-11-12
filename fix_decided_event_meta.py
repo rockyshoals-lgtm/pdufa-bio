@@ -127,6 +127,9 @@ def describe(row, drug, word, dcd):
         cands = [f"Approval of {drug}{f_ind} was announced on {pretty(dcd)}.{g} The FDA's action day is not yet on record.",
                  f"Approval of {drug} was announced on {pretty(dcd)}.{g} The FDA's action day is not yet on record.",
                  f"Approval of {drug} was announced on {pretty(dcd)}; the FDA's action day is not yet on record."]
+    elif word == "Not approvable letter":
+        cands = [f"{drug}: the FDA issued a Not Approvable Letter on the device PMA, announced {pretty(dcd)}. Source linked.",
+                 f"{drug}: FDA Not Approvable Letter on the device PMA, announced {pretty(dcd)}."]
     else:
         when = fday or dcd
         cands = [f"{drug} received a Complete Response Letter from the FDA on {pretty(when)}{f_ind}.{g} Source linked.",
@@ -166,7 +169,9 @@ def main():
         tk, dcd = lm.group(1), lm.group(2)
         row = by_url.get(f"/fda-decision/{tk}-{dcd}") or by_tkd.get((tk, dcd)) or {}
         word = ("Approved" if re.search(r"Approved</b>", ban) else
-                "Complete Response Letter" if "Complete Response" in ban or "CRL" in ban else None)
+                "Complete Response Letter" if "Complete Response" in ban or "CRL" in ban else
+                # 2026-11-11: a device PMA outcome (NVCR Optune Mya) is its own word, never a CRL
+                "Not approvable letter" if re.search(r"Not approvable letter</b>", ban, re.I) else None)
         if not word:
             continue
         orig = doc
