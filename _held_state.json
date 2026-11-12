@@ -1,7 +1,7 @@
 {
  "held_since": "2026-11-12T17:53:05Z",
- "consecutive_held_runs": 1,
- "emailed_at": null,
+ "consecutive_held_runs": 2,
+ "emailed_at": "2026-11-12T19:39:38Z",
  "leads": [
   {
    "source": "fda_drugs_feed",
