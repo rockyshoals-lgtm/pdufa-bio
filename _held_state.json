@@ -1,8 +1,16 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-11-12T17:53:05Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "fda_drugs_feed",
+   "row_id": "pdufa_mrk_2027-06-15",
+   "key": "pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer",
+   "text": "2026-11-12 \"FDA grants accelerated approval to sacituzumab govitecan for advanced urothelial cancer\" [Sacituzumab] http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer",
+   "first_seen": "2026-11-12T17:53:05Z"
+  }
+ ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
@@ -25,6 +33,7 @@
   "fda_drugs_feed|pdufa_ibrx_2027-01-06|http://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle",
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "fda_drugs_feed|pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
+  "fda_drugs_feed|pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer",
   "fda_press|press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
   "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
