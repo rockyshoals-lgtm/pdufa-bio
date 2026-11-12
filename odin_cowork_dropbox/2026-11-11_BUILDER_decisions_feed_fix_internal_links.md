@@ -80,3 +80,25 @@ commit list. `POLYGON_API_KEY` comes out after Nov 17.
 
 ## Still David's
 Work the Google list daily (about 10 a day); SMTP; `/surges` RULE 2 ruling; outreach to the five linking sites.
+
+## Outcome (appended 2026-11-12 ~00:05 Pacific = 03:05 Eastern)
+- The 11-10 audit had been in the dropbox all along (`2026-11-10_audit_google_has_indexed_56_pages_and_asundexian_is_held.md`,
+  untracked, never committed); I worked from the 11-09 one. Its orders overlap tonight's; two extra items done tonight:
+  robots.txt now disallows `/build-info.json`, `/search-index.json`, `/historic.json` (order 4); the "Cite this page"
+  line (order 6) is not done.
+- Run 43167340508 blocked (#78-class BLOCKED): the 24 /fda-approvals pages lacked BreadcrumbList (they are built after
+  build_breadcrumbs, now carry their own), the hub description was cut mid-word, and INDEX listed the two audit notes
+  that were not in git. All fixed.
+- **Run 43170355597 green**: https://github.com/rockyshoals-lgtm/pdufa-bio/actions/runs/43170355597 . Issues #70-#72 and
+  #74-#77 closed with reasons and the run link; 0 open.
+- Live after deploy: /fda-decision/BAYRY-2026-11-09 ("Sunharbo Approved Nov 9, 2026 for Secondary Stroke Prevention"),
+  /fda-decision/MKKGY-2026-11-10, /fda-decision/NVCR-2026-11-09, /sitemap (1,685 pages), /fda-approvals/2026/october,
+  the weekly title with counts, and the homepage hub all 200.
+- **/drug/asundexian still read "under FDA review" live**: `_drug_pages_manual.json` held a hand row (st "Under review",
+  NDA accepted 2026-05-19, goal undisclosed) that build_drug_pages merges with the dataset. Retired
+  (`apply_1112_asundexian_manual.py`); its review history moved to the dataset row. Locally the page now opens "The FDA
+  approved Sunharbo (asundexian) on Nov 9, 2026" and is titled "Sunharbo (asundexian) FDA Approval: Approved Nov 9,
+  2026". Pushed with this note; the next run deploys it.
+- Caught locally before push: a race between two of my own scripts zeroed /fda-decision/ACAD-2025-12-12 (restored from
+  git); rewrite_decision_snippets crashed on a page with no parseable drug (fixed); the NVCR event page FAQ wording was
+  extended so a device letter never reads as a CRL and never claims the letter's own date.
