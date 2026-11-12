@@ -1,51 +1,8 @@
 {
- "held_since": "2026-11-09T20:50:43Z",
- "consecutive_held_runs": 11,
- "emailed_at": "2026-11-09T22:50:50Z",
- "leads": [
-  {
-   "source": "edgar",
-   "row_id": "pdufa_capr_2026-08-22",
-   "key": "edgar:https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
-   "text": "8-K filed 2026-11-10 states an approval of 'Deramiocel' https://www.sec.gov/Archives/edgar/data/1133869/000110465926125150/capr-ex99d1.htm",
-   "first_seen": "2026-11-11T01:00:05Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:asundexian",
-   "key": "asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
-   "text": "/drug/asundexian fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke- 'asundexian' appears with approval language",
-   "first_seen": "2026-11-09T22:50:50Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:enflonsia",
-   "key": "enflonsia|openfda:20261014",
-   "text": "/drug/enflonsia openfda:20261014 AP 20261014 (SUPPL-3, class EFFICACY)",
-   "first_seen": "2026-11-10T17:27:25Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_bmy_2027-05-13",
-   "key": "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
-   "text": "2026-11-10 \"FDA grants accelerated approval to Darzalex Faspro for newly diagnosed light chain amyloidosis\" [dexamethasone] http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
-   "first_seen": "2026-11-10T19:26:54Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_jazz_2027-04-16",
-   "key": "pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
-   "text": "2026-11-10 \"FDA expands pediatric indication for entrectinib and approves new pellet formulation\" [formulation] http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
-   "first_seen": "2026-11-10T17:27:25Z"
-  },
-  {
-   "source": "edgar_8k",
-   "row_id": "pdufa_nvcr_2026-11-15",
-   "key": "pdufa_nvcr_2026-11-15|0001645113-26-000085",
-   "text": "8-K 2026-11-09 [Optune] The Not Approvable Letter indicates that the FDA determined that uncertainty around the degree of clinical benefit provided by Optune Mya prevented approval of the PMA application. https://www.sec.gov/Archives/edgar/data/1645113/000164511326000085/myadecisionpr.htm",
-   "first_seen": "2026-11-09T20:50:43Z"
-  }
- ],
+ "held_since": null,
+ "consecutive_held_runs": 0,
+ "emailed_at": null,
+ "leads": [],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
@@ -72,6 +29,6 @@
   "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
- "last_clear_run": "2026-11-09T03:26:39Z",
+ "last_clear_run": "2026-11-12T06:48:26Z",
  "email_status": "mention-issue"
 }

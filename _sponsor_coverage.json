@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-11",
+ "as_of": "2026-11-12",
  "horizon_days": 60,
  "sponsors": {
   "BBIO": {
@@ -94,17 +94,6 @@
     "fda_feeds"
    ],
    "cik": 1933414
-  },
-  "NVCR": {
-   "company": "NovoCure Limited",
-   "goals": [
-    "2026-11-15"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1645113
   },
   "PRAX": {
    "company": "Praxis Precision Medicines Inc.",
