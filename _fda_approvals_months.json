@@ -7618,7 +7618,7 @@
 ]
 },
 "2026-10": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-13",
 "items": [
 {
 "app": "NDA219617",
@@ -8017,17 +8017,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761105Orig1s053; 761262Orig1s019ltr.pdf"
 },
 {
-"app": "NDA217439",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-4",
-"class": "Efficacy",
-"date": "2026-10-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
-},
-{
 "app": "NDA211651",
 "brand": "Talzenna",
 "generic": "talazoparib",
@@ -8039,9 +8028,20 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
 },
 {
+"app": "NDA217439",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-4",
+"class": "Efficacy",
+"date": "2026-10-26",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
+},
+{
 "app": "BLA761187",
-"brand": "Ranibizumab",
-"generic": "ranibizumab",
+"brand": "Lucamzi",
+"generic": "ranibizumab-blrz",
 "sponsor": "Xbrane Biopharma Ab",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -8074,7 +8074,7 @@
 ]
 },
 "2026-11": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-13",
 "items": [
 {
 "app": "BLA761433",
@@ -8086,6 +8086,39 @@
 "class": "Efficacy",
 "date": "2026-11-05",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf"
+},
+{
+"app": "NDA221291",
+"brand": "",
+"generic": "",
+"sponsor": "Bayer Healthcare",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-09",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221291Orig1s000ltr.pdf"
+},
+{
+"app": "NDA219457",
+"brand": "Multibic",
+"generic": "multibic",
+"sponsor": "Fresenius Medical Care Renal Therapies Group Llc",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 2 - New Active Ingredient",
+"date": "2026-11-09",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219457Orig1s000ltr.pdf"
+},
+{
+"app": "NDA221093",
+"brand": "Oxderys",
+"generic": "doxorubicin hydrochloride",
+"sponsor": "Avyxa Holdings",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 5 - New Formulation or New Manufacturer",
+"date": "2026-11-09",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221093Orig1s000ltr.pdf"
 }
 ]
 }

@@ -1,4 +1,4 @@
-# Google Search Console: request indexing for these, in order (2026-11-12 Eastern).
+# Google Search Console: request indexing for these, in order (2026-11-13 Eastern).
 # About 10 requests a day per property. Then run: python build_google_request_list.py --requested <paths>
 # Skipped: 3 known indexed (_google_indexed.json), 2 requested in the last 7 days.
 https://www.pdufa.bio/fda-decision/MKKGY-2026-11-10	# decision 2026-11-10: MKKGY Pimjetmi (pimicotinib) - tenosynovial giant cell t
