@@ -890,6 +890,15 @@
    "satralizumab-mwge"
   ]
  },
+ "RHHBY-2026-11-13": {
+  "checked": "2026-11-13",
+  "name": "Gazyva (obinutuzumab)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Gazyva",
+   "obinutuzumab"
+  ]
+ },
  "RVMD-2026-08-26": {
   "checked": "2026-10-03",
   "class": "TYPE 1",
