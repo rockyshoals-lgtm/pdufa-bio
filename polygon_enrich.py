@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""polygon_enrich.py — make the forward calendar's market data GENUINELY current.
+"""polygon_enrich.py (name kept for workflow history; FMP only since 2026-11-10, Polygon code removed 2026-11-13) — make the forward calendar's market data GENUINELY current.
 
 WHY THIS EXISTS
 The site advertised "live" data whose every row was stamped 2026-07-11 for twelve days. The badge
@@ -33,26 +33,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, 'pdufa_site_src')
 DATA_JS = os.path.join(SITE, 'api', 'data.js')
 DATASET = os.path.join(SITE, 'api', 'v1', 'dataset.mjs')
-BASE = 'https://api.polygon.io'
 sys.path.insert(0, HERE)
 from site_dates import eastern_today  # noqa: E402
 TODAY = eastern_today()   # RULE 1: was dt.date.today() on a UTC runner, so SLATE.as_of read tomorrow after 20:00 ET
 NO_FEED = os.path.join(HERE, '_price_no_feed.json')   # tickers no feed carries, each with a reason
 NOW_ISO = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
-
-def load_key():
-    for p in (os.path.join(HERE, 'Odin Perfection', '.env_master'), os.path.join(HERE, '.env')):
-        if os.path.exists(p):
-            for line in open(p, encoding='utf-8', errors='ignore'):
-                line = line.strip()
-                if line and not line.startswith('#') and '=' in line:
-                    k, v = line.split('=', 1)
-                    os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-    k = os.environ.get('POLYGON_API_KEY')
-    if not k:
-        sys.exit('No POLYGON_API_KEY in Odin Perfection/.env_master')
-    return k
 
 
 def cap_tier(mcap):
@@ -90,42 +76,6 @@ class Feed:
     def mcap(self, t):
         return self.m.get(t)
 
-
-class Poly:
-    def __init__(self, key):
-        self.key = key
-
-    def _get(self, path, params=None):
-        params = dict(params or {}); params['apiKey'] = self.key
-        url = BASE + path + '?' + urllib.parse.urlencode(params)
-        for attempt in range(5):
-            try:
-                with urllib.request.urlopen(url, timeout=30) as r:
-                    return json.loads(r.read().decode('utf-8', 'replace'))
-            except urllib.error.HTTPError as e:
-                if e.code == 429 or e.code >= 500:
-                    time.sleep(min(15, 2 ** attempt)); continue
-                return None
-            except Exception:
-                time.sleep(min(10, 2 ** attempt))
-        return None
-
-    def price_adv(self, t):
-        """Last close + ~20-session average daily volume, from daily bars."""
-        start = (TODAY - dt.timedelta(days=45)).isoformat()
-        j = self._get(f'/v2/aggs/ticker/{t}/range/1/day/{start}/{TODAY.isoformat()}',
-                      {'adjusted': 'true', 'sort': 'asc', 'limit': 60})
-        rows = (j or {}).get('results') or []
-        if not rows:
-            return None, None
-        price = rows[-1].get('c')
-        vols = [r.get('v') for r in rows[-20:] if r.get('v')]
-        adv = round(sum(vols) / len(vols)) if vols else None
-        return price, adv
-
-    def mcap(self, t):
-        j = self._get(f'/v3/reference/tickers/{t}')
-        return ((j or {}).get('results') or {}).get('market_cap')
 
 
 def read_slate(txt):

@@ -133,6 +133,19 @@ def main():
         print(f"   BLIND: last successful read of the FDA drugs feed: {ent.get('last_ok') or 'never'}")
         return 0
     leads, untracked = leads_from(xml, rows, since, acked)
+    # 2026-11-13: the republished Trodelvy 2021 notice (#79) carried no "On {date}" in the feed's description, only on
+    # the page itself. Before raising a lead, read the linked FDA page; if its first "On {Month D, YYYY}" sentence is
+    # more than MAX_AGE_DAYS old, the item is a republished notice, not a decision.
+    kept = []
+    for r, term, it, key in leads:
+        page = load_feed(it["link"]) if re.match(r"^https?://", str(it.get("link") or "")) and a.feed == FEED else None
+        od = own_date({"desc": re.sub(r"<[^>]+>", " ", page or ""), "title": ""}) if page else None
+        ref = it["date"] if isinstance(it.get("date"), dt.date) else dt.date.today()
+        if od is not None and (ref - od).days > MAX_AGE_DAYS:
+            STALE.append((it, od))
+            continue
+        kept.append((r, term, it, key))
+    leads = kept
     n = len(W.parse_items(xml))
     print(f"FDA drugs feed: {n} item(s) read; {len(leads)} unreviewed lead(s) on armed events; "
           f"{len(untracked)} FDA approval notice(s) naming no tracked drug")

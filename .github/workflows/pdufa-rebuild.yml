@@ -13,7 +13,7 @@ name: pdufa daily rebuild
 #   FMP_API_KEY       PRICES OF RECORD since 2026-11-10 (price_source.py): daily closes, batch quotes, market caps.
 #                     Paid FMP /stable/ plan on David's account (the plan's per-minute limit is set on that account;
 #                     one run makes ~50 calls for the forward slate plus one per run-up/readout series it extends).
-#   POLYGON_API_KEY   FALLBACK ONLY until 2026-11-17 (PRICE_POLYGON_FALLBACK); then the secret and code are removed.
+#   (Polygon key)     removed 2026-11-13; no step reads it (tests/test_prices_fmp_only.py). Delete the repo secret.
 #   ALPACA_KEY_ID / ALPACA_SECRET_KEY  optional free fallback (not set yet). price_source.py uses them if both are in the
 #                     env: add the two secrets, then add them to the price step's env block (test_workflow_valid checks).
 # Vercel: connect this repo under the Vercel project -> Git, and set Root Directory = pdufa_site_src.
@@ -77,7 +77,6 @@ jobs:
         continue-on-error: true
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
         run: python polygon_enrich.py
 
       - name: "PRICES issue: a forward ticker got no price data (named)"
@@ -108,7 +107,6 @@ jobs:
       # ---------------------------------------------------------------------------------------
       - name: "Run-up study: fold in newly decided PDUFAs"
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: |
           python extend_runup_study.py
@@ -116,9 +114,15 @@ jobs:
 
       - name: "Run-up study: compute T-120 baseline for new events only"
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python add_t120_baseline.py
+
+      # 2026-11-13: fill study cells that were blank only because the closes did not exist yet (post_2d/post_5d on rows
+      # appended the day after a decision), then write each PDUFA row's own measured run-up into the public dataset.
+      - name: "Run-up study: fill post-decision blanks; measured run-up per PDUFA row in the dataset"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python backfill_runup_blanks.py && python sync_runup_to_dataset.py
 
       - name: "Run-up study: recompute the published statistics (single source of truth)"
         run: python runup_study_stats.py
@@ -139,7 +143,6 @@ jobs:
 
       - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_home_board.py
 
@@ -450,7 +453,6 @@ jobs:
 
       - name: Refresh /readouts (drop past months + auto-log readout window moves)
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_readout_results.py
 
@@ -469,7 +471,6 @@ jobs:
       - name: "SLS: collect filings, press releases, quotes and price"
         continue-on-error: true          # a bad day at EDGAR must not block the whole deploy
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}       # price fallback when Polygon's SLS series stalls (2026-10-23)
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python sls_daily.py
@@ -480,7 +481,6 @@ jobs:
         # cosmetic next to the calendar: keep the previous page and deploy everything else.
         continue-on-error: true
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: |
@@ -498,7 +498,6 @@ jobs:
       - name: Rebuild the VKTX tracker (measured reactions from daily closes)
         continue-on-error: true
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_vktx_hub.py
 
@@ -575,7 +574,6 @@ jobs:
       - name: Rebuild the retail deep dives (plain English, measured reactions)
         continue-on-error: true
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_retail_pages.py
 
@@ -584,7 +582,6 @@ jobs:
       - name: Rebuild per-stock run-up (measured, small-n disclosed)
         continue-on-error: true
         env:
-          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_stock_runup.py
 

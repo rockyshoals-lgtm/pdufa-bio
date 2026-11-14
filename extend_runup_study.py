@@ -46,7 +46,7 @@ def load_key():
                 if line and not line.startswith("#") and "=" in line:
                     k, v = line.split("=", 1)
                     os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-    return os.environ.get("POLYGON_API_KEY")
+    return os.environ.get("FMP_API_KEY")   # 2026-11-13: prices come from price_source (FMP)
 
 
 KEY = load_key()
@@ -97,6 +97,8 @@ def main():
     for m in re.finditer(r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', html):
         tk, d = m.group(1), m.group(2)
         tail = html[m.end():m.end() + 260].lower()
+        if "not approvable" in tail:
+            continue   # 2026-11-13: a device PMA letter (NVCR) is not a PDUFA event; it would have been read as APPROVAL
         oc = "CRL" if ("crl" in tail or "complete response" in tail) else "APPROVAL"
         dec.setdefault((tk, d), oc)
 

@@ -836,7 +836,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -872,7 +872,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -957,7 +957,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -1324,9 +1324,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-16",
+    "t120": 7.47,
+    "t30": 2.59,
+    "t14": 1.24,
+    "t7": 1.36,
+    "t3": -1.21,
+    "post_1d": -0.13,
+    "post_5d": -2.16,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-06-17",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215960Orig1s000ltr.pdf",
@@ -1370,9 +1378,17 @@ export default [
    "cohort_move_p75_pct": 3.63,
    "cohort_n": 302,
    "runup_summary": {
-    "t30": -0.13,
-    "t7": -0.05,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-16",
+    "t120": 16.88,
+    "t30": 10.8,
+    "t14": -5.46,
+    "t7": -1.77,
+    "t3": 2.59,
+    "post_1d": -23.83,
+    "post_5d": -24.19,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-06-17",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215960Orig1s000ltr.pdf",
@@ -1416,9 +1432,17 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-18",
+    "t120": 8.74,
+    "t30": 1.04,
+    "t14": -7.44,
+    "t7": -13.39,
+    "t3": -13.39,
+    "post_1d": 5.15,
+    "post_5d": 24.12,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-06-20",
    "decision_source": "FDA Complete Response Letter, NDA 218995, dated June 20, 2026 (openFDA transparency/crl)",
@@ -1465,9 +1489,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-26",
+    "t120": -6.9,
+    "t30": 24.48,
+    "t14": 27.18,
+    "t7": 5.18,
+    "t3": 2.78,
+    "post_1d": -0.89,
+    "post_5d": -3.44,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Arcutis 10-Q 2026-05-06",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1787306/000178730626000040/arqt-20260331.htm",
@@ -1513,9 +1545,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-25",
+    "t120": 63.8,
+    "t30": 13.28,
+    "t14": 6.02,
+    "t7": 4.15,
+    "t3": 2.65,
+    "post_1d": 0.72,
+    "post_5d": 0.81,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "decision_source": "Lantheus press release 2026-06-26 (GlobeNewswire)",
    "decision_source_url": "https://investor.lantheus.com/news-releases/news-release-details/lantheus-receives-complete-response-letter-fda-lnth-2501-ga-68",
@@ -1558,9 +1598,17 @@ export default [
    "cohort_move_p75_pct": 3.63,
    "cohort_n": 302,
    "runup_summary": {
-    "t30": -0.13,
-    "t7": -0.05,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-29",
+    "t120": 39.49,
+    "t30": -10.05,
+    "t14": 15.62,
+    "t7": 9.22,
+    "t3": -2.41,
+    "post_1d": -39.09,
+    "post_5d": -29.48,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-06-29",
    "decision_source": "FDA Complete Response Letter, NDA 218607, dated June 29, 2026 (openFDA transparency/crl)",
@@ -1607,9 +1655,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-11",
+    "t120": 1.42,
+    "t30": -1.58,
+    "t14": -3.94,
+    "t7": 2.72,
+    "t3": 0.4,
+    "post_1d": -1.94,
+    "post_5d": -4.03,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "date_note": "No AstraZeneca filing states a PDUFA goal date for Truqap (capivasertib) in this indication. AstraZeneca names capivasertib in many 6-K/20-F filings but as portfolio narrative; it does not publish goal dates. The June 30 day is unsourced and is withdrawn. The month is retained only because our own sourced decision page places the FDA action in June 2026 -- it is NOT independently sourced to a goal-date statement.",
    "fda_action_date": "2026-06-12",
@@ -1653,9 +1709,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-23",
+    "t120": -4.99,
+    "t30": 0.37,
+    "t14": 4.14,
+    "t7": 2.94,
+    "t3": 2.26,
+    "post_1d": 0.7,
+    "post_5d": 4.34,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Ionis 8-K 2026-04-29 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126017637/ef20071749_ex99-1.htm",
@@ -1691,9 +1755,17 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-06-25",
+    "t120": -44.12,
+    "t30": 3.14,
+    "t14": 4.95,
+    "t7": 6.69,
+    "t3": -1.36,
+    "post_1d": 2.93,
+    "post_5d": 11.56,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Viridian 8-K 2026-05-05 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526205010/d149508dex991.htm",
@@ -1737,9 +1809,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-06",
+    "t120": -17.61,
+    "t30": 15.92,
+    "t14": 17.13,
+    "t7": 1.57,
+    "t3": -6.48,
+    "post_1d": 7.05,
+    "post_5d": 3.41,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Vera Therapeutics 8-K 2026-02-26 (EX-99.1)",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1831828/000119312526073421/vera-ex99_1.htm",
@@ -1778,9 +1858,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-03-24",
+    "t120": -59.31,
+    "t30": -18.13,
+    "t14": -5.24,
+    "t7": 5.19,
+    "t3": -0.76,
+    "post_1d": 19.66,
+    "post_5d": 19.19,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "date_history": [
     {
@@ -2601,7 +2689,20 @@ export default [
    "fda_action_date": "2026-07-15",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220848Orig1s000ltr.pdf",
    "fda_action_record": "NDA 220848 ORIG-1",
-   "census_note": "Not in the decision-timing census (checked 2026-10-24): Merck's releases and filings give no goal date for enlicitide (the Sept 21 PDUFA in its Q4 2025 release is WINREVAIR's)."
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Merck's releases and filings give no goal date for enlicitide (the Sept 21 PDUFA in its Q4 2025 release is WINREVAIR's).",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-15",
+    "t120": 11.25,
+    "t30": 7.33,
+    "t14": 2.5,
+    "t7": -2.5,
+    "t3": 0.06,
+    "post_1d": 3.25,
+    "post_5d": 3.12,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   }
  },
  {
@@ -2641,9 +2742,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-13",
+    "t120": -2.96,
+    "t30": -20.72,
+    "t14": 15.41,
+    "t7": -0.67,
+    "t3": -4.69,
+    "post_1d": 6.99,
+    "post_5d": -15.22,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-07-14",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219908Orig1s000ltr.pdf",
@@ -2679,9 +2788,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-23",
+    "t120": 10.28,
+    "t30": 3.51,
+    "t14": -8.5,
+    "t7": -3.19,
+    "t3": -2.79,
+    "post_1d": 2.93,
+    "post_5d": 8.41,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_note": "Goal date July 24, 2026 from Otsuka America's release of January 27, 2026 (found 2026-10-24); the FDA's letter for NDA 218145 is dated the same day.",
    "fda_action_date": "2026-07-24",
@@ -2718,9 +2835,17 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-23",
+    "t120": -32.82,
+    "t30": 8.96,
+    "t14": -13.94,
+    "t7": 0.26,
+    "t3": -2.26,
+    "post_1d": 6.17,
+    "post_5d": 5.66,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-07-23",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209988Orig1s007correctedltr.pdf",
@@ -2816,9 +2941,17 @@ export default [
    "cohort_move_p75_pct": 3.63,
    "cohort_n": 302,
    "runup_summary": {
-    "t30": -0.13,
-    "t7": -0.05,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-23",
+    "t120": 187.02,
+    "t30": 87.31,
+    "t14": -8.97,
+    "t7": -23.7,
+    "t3": -4.35,
+    "post_1d": 6.44,
+    "post_5d": -21.21,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-07-24",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761320Orig1s000ltr.pdf",
@@ -2882,9 +3015,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-07-28",
+    "t120": 30.56,
+    "t30": 8.37,
+    "t14": 7.2,
+    "t7": 3.3,
+    "t3": 3.36,
+    "post_1d": -0.22,
+    "post_5d": -0.9,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-07-28",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219990Orig1s000ltr.pdf",
@@ -2921,7 +3062,20 @@ export default [
    "fda_action_record": "CBER accelerated approval notice",
    "source": "Replimune 8-K 2026-07-31 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926088857/tm2621708d1_ex99-1.htm",
-   "source_quote": "The FDA's target action date under the Class 1 resubmission is August 2, 2026."
+   "source_quote": "The FDA's target action date under the Class 1 resubmission is August 2, 2026.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-05",
+    "t120": 51.67,
+    "t30": 5.81,
+    "t14": 22.21,
+    "t7": 21.96,
+    "t3": 5.63,
+    "post_1d": 8.71,
+    "post_5d": 28.83,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-08-06"
@@ -2958,9 +3112,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-04",
+    "t120": 35.71,
+    "t30": -3.97,
+    "t14": -16.53,
+    "t7": 5.4,
+    "t3": -1.61,
+    "post_1d": -1.29,
+    "post_5d": 6.28,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Moderna 8-K 2026-07-31 (EX-99.1, Q2 2026 results)",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000147/exhibit9912026q2pressrelea.htm",
@@ -3086,9 +3248,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-12",
+    "t120": 37.65,
+    "t30": -9.2,
+    "t14": -2.89,
+    "t7": -0.45,
+    "t3": -0.22,
+    "post_1d": 0.21,
+    "post_5d": -0.25,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Lantheus 8-K 2025-11-06 (EX-99.1)",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1521036/000119312525268103/lnth-ex99_1.htm",
@@ -3653,9 +3823,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-12",
+    "t120": 5.64,
+    "t30": 10.55,
+    "t14": 3.56,
+    "t7": -2.7,
+    "t3": -1.58,
+    "post_1d": 1.49,
+    "post_5d": 6.14,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-08-13",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221075Orig1s000ltr.pdf",
@@ -3724,9 +3902,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-18",
+    "t120": 11.26,
+    "t30": -28.94,
+    "t14": 1.96,
+    "t7": -1.62,
+    "t3": -3.37,
+    "post_1d": 2.94,
+    "post_5d": 3.81,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-08-19",
    "fda_action_source_url": "https://www.fda.gov/media/194371/download",
@@ -3775,9 +3961,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-24",
+    "t120": 36.32,
+    "t30": 7.38,
+    "t14": -2.73,
+    "t7": 3.51,
+    "t3": 0.92,
+    "post_1d": 2.26,
+    "post_5d": -1.49,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Jazz Pharmaceuticals 8-K 2026-05-07 (EX-99.1, Q1 2026 results)",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
@@ -3828,9 +4022,17 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-24",
+    "t120": 17.67,
+    "t30": 15.36,
+    "t14": 26.24,
+    "t7": 11.68,
+    "t3": 5.73,
+    "post_1d": -4.52,
+    "post_5d": 2.22,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Jazz Pharmaceuticals 8-K 2026-05-07 (EX-99.1) -- Jazz holds the BLA; Zymeworks licensed zanidatamab to Jazz",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
@@ -3881,9 +4083,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-26",
+    "t120": 2.03,
+    "t30": 12.44,
+    "t14": 13.17,
+    "t7": 6.6,
+    "t3": 1.35,
+    "post_1d": 0.52,
+    "post_5d": 1.03,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "goal_source": "Gilead 8-K 2026-05-07 (EX-99.1, Q1 2026 results)",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000022/exhibit991earningspressrel.htm",
@@ -3921,9 +4131,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-18",
+    "t120": 3.31,
+    "t30": 19.82,
+    "t14": 16.51,
+    "t7": 3.3,
+    "t3": 0.53,
+    "post_1d": 3.78,
+    "post_5d": 2.88,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-08-19",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761508Orig1s000ltr.pdf",
@@ -4184,9 +4402,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-11",
+    "t120": 29.03,
+    "t30": 12.23,
+    "t14": -0.35,
+    "t7": 4.06,
+    "t3": -5.76,
+    "post_1d": 4.34,
+    "post_5d": 11.51,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "brand": "Pixclara",
    "decision_source": "Telix 6-K 2026-09-14 (EX-99.1, ASX announcement)",
@@ -5224,7 +5450,20 @@ export default [
    "fda_action_date": "2026-09-18",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218881Orig1s001ltr.pdf",
    "fda_action_record": "NDA 218881 S-001",
-   "census_note": "Not in the decision-timing census (checked 2026-10-24): Lilly stated no goal date for the Inluriyo + Verzenio sNDA."
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Lilly stated no goal date for the Inluriyo + Verzenio sNDA.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-17",
+    "t120": 28.48,
+    "t30": -1.49,
+    "t14": -2.01,
+    "t7": 2.54,
+    "t3": 1.24,
+    "post_1d": 0.04,
+    "post_5d": 2.56,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-09-18"
@@ -5265,17 +5504,14 @@ export default [
    "cohort_move_p25_pct": -2.05,
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
-   "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
-   },
+   "runup_summary": null,
    "fda_action_date": "2026-07-22",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220185Orig1s000ltr.pdf",
    "fda_action_record": "NDA 220185 ORIG-1",
    "source": "Nuvalent 8-K 2026-05-07 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1861560/000186156026000020/nuvl-ex99_1.htm",
-   "source_quote": "under FDA review with PDUFA target action date of September 18, 2026"
+   "source_quote": "under FDA review with PDUFA target action date of September 18, 2026",
+   "runup_note": "No run-up record: no usable daily closes around the decision"
   },
   "oc": "Approved",
   "dcd": "2026-07-22"
@@ -5312,9 +5548,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-16",
+    "t120": -35.11,
+    "t30": -50.1,
+    "t14": -51.29,
+    "t7": -15.82,
+    "t3": -9.93,
+    "post_1d": 12.58,
+    "post_5d": 15.53,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Ultragenyx 8-K 2026-04-02 (Item 8.01)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm",
@@ -5361,7 +5605,20 @@ export default [
    "review": "Label update (supplemental application) approved September 22, 2026, one day after the September 21 PDUFA goal date, adding HYPERION efficacy and safety data in adults newly diagnosed with PAH (WHO Group 1) at intermediate to high risk. Not a new indication: the approved indication is unchanged; the label gains HYPERION data and additional hypersensitivity safety language.",
    "fda_action_date": "2026-09-21",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761363Orig1s012,s016,s017ltr.pdf",
-   "fda_action_record": "BLA 761363 S-017"
+   "fda_action_record": "BLA 761363 S-017",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-21",
+    "t120": 26.59,
+    "t30": 16.27,
+    "t14": 1.18,
+    "t7": 3.31,
+    "t3": 3.17,
+    "post_1d": 0.94,
+    "post_5d": -0.54,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-09-22"
@@ -5398,9 +5655,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-02",
+    "t120": -15.22,
+    "t30": 13.55,
+    "t14": 9.77,
+    "t7": -1.14,
+    "t3": 0.46,
+    "post_1d": -5.22,
+    "post_5d": -9.26,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "fda_action_date": "2026-09-03",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf",
@@ -5446,7 +5711,20 @@ export default [
    "goal_unsourced": true,
    "goal_note": "pdufa.bio holds no goal date for this supplemental BLA: Roche is not an SEC registrant and we hold no release stating one. The approval is sourced to the FDA's letter and notice; no early/late margin is computed.",
    "review": "Supplemental BLA (efficacy) approved September 25, 2026 with Breakthrough Therapy, Orphan Drug and Priority Review designations (FDA notice). Phase 3 INShore (NCT05627557), 85 patients aged 2 and older, Gazyva versus mycophenolate mofetil. Gazyva was previously approved for certain cancers and for adults with active lupus nephritis.",
-   "census_note": "Not in the decision-timing census (checked 2026-10-24): Genentech/Roche stated only that priority review was granted (May 2026), no goal date."
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Genentech/Roche stated only that priority review was granted (May 2026), no goal date.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-24",
+    "t120": 9.93,
+    "t30": -3.03,
+    "t14": -0.76,
+    "t7": -0.26,
+    "t3": -0.9,
+    "post_1d": -0.64,
+    "post_5d": -4.47,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   }
  },
  {
@@ -5461,7 +5739,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5497,7 +5775,19 @@ export default [
    "market_cap_usd": 25112223751.94,
    "cash_runway_months": null,
    "days_to_decision": 78,
-   "runup_summary": null,
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-24",
+    "t120": 29.72,
+    "t30": 3.04,
+    "t14": -2.78,
+    "t7": 2.22,
+    "t3": -0.17,
+    "post_1d": -0.44,
+    "post_5d": -5.87,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   },
    "source": "Mirum 8-K 2026-05-06 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm",
    "review": "NDA approved with Fast Track, Priority Review and Orphan Drug designations (FDA notice). 100 mg orally once daily. The FDA issued a Rare Pediatric Disease Priority Review Voucher to Incyte. Incyte developed zilurgisertib and licensed it to Mirum for worldwide development and commercialization; an EU marketing authorization application is under review. Efficacy: PROGRESS Cohort 1, 63 patients, mean total new HO volume -3.2 cm3 on Atebrioz vs +24.6 cm3 on placebo at week 24.",
@@ -5550,7 +5840,20 @@ export default [
    "fda_notice_title": "FDA Approves Third Treatment for Fibrodysplasia Ossificans Progressiva",
    "fda_action_date": "2026-09-25",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf",
-   "fda_action_record": "NDA 221198 ORIG-1"
+   "fda_action_record": "NDA 221198 ORIG-1",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-24",
+    "t120": -5.11,
+    "t30": -9.71,
+    "t14": -11.2,
+    "t7": -4.83,
+    "t3": -2.87,
+    "post_1d": 0.38,
+    "post_5d": -6.09,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-09-25"
@@ -5567,7 +5870,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5623,9 +5926,17 @@ export default [
    "cohort_move_p75_pct": 8.11,
    "cohort_n": 116,
    "runup_summary": {
-    "t30": 0.0,
-    "t7": -1.05,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-08",
+    "t120": 75.36,
+    "t30": 48.57,
+    "t14": 8.33,
+    "t7": 4.7,
+    "t3": 2.63,
+    "post_1d": -1.28,
+    "post_5d": -23.72,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Biofrontera 8-K 2026-09-14 (EX-99.1); FDA action date from openFDA NDA208081 SUPPL-40 (AP 2026-09-09)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm",
@@ -5694,7 +6005,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5824,7 +6135,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -6087,7 +6398,19 @@ export default [
    "market_cap_usd": 162155713607.05,
    "cash_runway_months": null,
    "days_to_decision": 82,
-   "runup_summary": null,
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-26",
+    "t120": 6.35,
+    "t30": 14.02,
+    "t14": 8.02,
+    "t7": 5.32,
+    "t3": 0.82,
+    "post_1d": -0.99,
+    "post_5d": 2.54,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   },
    "source": "Priovant/Roivant 8-K 2026-03-03 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126007447/ef20066998_ex99-1.htm",
    "date_note": "Roivant states the FDA \"assigns PDUFA target action date in the third quarter of calendar year 2026\". The sponsor gave a QUARTER; our 2026-09-30 was the last day of it, not an announced day. Day withdrawn 2026-09-10; quarter is the sourced precision.",
@@ -6199,9 +6522,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-27",
+    "t120": 62.34,
+    "t30": 13.24,
+    "t14": 2.49,
+    "t7": -4.98,
+    "t3": -3.37,
+    "post_1d": -3.46,
+    "post_5d": -0.47,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Takeda/Protagonist 6-K 2026-03-02",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000007/form6k_030226.htm",
@@ -6239,9 +6570,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-26",
+    "t120": 23.65,
+    "t30": 5.33,
+    "t14": 4.64,
+    "t7": 1.41,
+    "t3": 1.24,
+    "post_1d": 2.26,
+    "post_5d": -6.99,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Priovant/Roivant 8-K 2026-03-03 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126007447/ef20066998_ex99-1.htm",
@@ -6352,7 +6691,20 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-1.htm",
    "fda_action_date": "2026-09-11",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761463Orig1s000ltr.pdf",
-   "fda_action_record": "BLA 761463 ORIG-1"
+   "fda_action_record": "BLA 761463 ORIG-1",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-10",
+    "t120": 22.35,
+    "t30": 13.47,
+    "t14": 0.76,
+    "t7": -1.99,
+    "t3": 0.61,
+    "post_1d": -0.47,
+    "post_5d": -11.95,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-09-11"
@@ -6455,9 +6807,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-08-04",
+    "t120": -8.51,
+    "t30": 7.05,
+    "t14": 0.67,
+    "t7": -3.94,
+    "t3": -4.0,
+    "post_1d": 0.97,
+    "post_5d": 5.56,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Takeda 6-K 2026-02-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000005/form6k_021026.htm",
@@ -6644,7 +7004,20 @@ export default [
    "goal_note": "In June 2026 Lilly said a U.S. decision on its CLL submission (BRUIN CLL-313 and CLL-314) was expected in the second half of 2026; pdufa.bio holds no goal day, so no early or late margin is computed.",
    "review": "Supplemental NDA 216059 for first-line use. BRUIN CLL-313 (NCT05023980): 282 previously untreated patients without 17p deletion, randomized 1:1 to pirtobrutinib or bendamustine plus rituximab; IRC-assessed PFS hazard ratio 0.20 (95% CI 0.11 to 0.37), median PFS not estimable vs 33.5 months at a median follow-up of 28 months; OS immature. 200 mg orally once daily. Orphan drug designation (FDA notification).",
    "goal_source_url": "https://lilly.mediaroom.com/2026-06-26-Lillys-Jaypirca-pirtobrutinib-recommended-by-CHMP-for-approval-in-the-European-Union-for-adults-with-chronic-lymphocytic-leukemia-CLL-across-all-lines-of-therapy",
-   "census_note": "Not in the decision-timing census (checked 2026-10-24): Lilly stated no goal date for the first-line CLL/SLL sNDA."
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Lilly stated no goal date for the first-line CLL/SLL sNDA.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-01",
+    "t120": 22.39,
+    "t30": -10.19,
+    "t14": 3.06,
+    "t7": -1.73,
+    "t3": -2.95,
+    "post_1d": -0.61,
+    "post_5d": 1.72,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   }
  },
  {
@@ -6683,7 +7056,20 @@ export default [
    "goal_unsourced": true,
    "goal_note": "pdufa.bio holds no goal date for this supplemental NDA; no early or late margin is computed.",
    "review": "Efficacy supplement to NDA 218436 (Rhapsido, first approved September 30, 2025 for chronic spontaneous urticaria). Approval based on the symptomatic dermographism cohort of the Phase III RemIND trial: complete response at Week 12 in 29.3% of patients on Rhapsido versus 14.0% on placebo (p=0.0229), per Novartis.",
-   "census_note": "Not in the decision-timing census (checked 2026-10-24): Novartis stated no goal date for the symptomatic dermographism sNDA."
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): Novartis stated no goal date for the symptomatic dermographism sNDA.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-05",
+    "t120": -8.12,
+    "t30": -11.29,
+    "t14": 1.67,
+    "t7": -1.84,
+    "t3": -1.15,
+    "post_1d": -0.1,
+    "post_5d": 2.06,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   }
  },
  {
@@ -6721,7 +7107,20 @@ export default [
    "decision_date_note": "The FDA's notification is dated October 8, 2026 and states the approval was made that day. The goal date, October 9, 2026, is from Genentech's release of June 10, 2026.",
    "review": "Supplemental BLA, Priority Review, reviewed under Project Orbis. ATOMIC/ML39057 (NCT02912559): 711 adults and one pediatric patient with resected Stage III dMMR colon cancer, randomized 1:1 to atezolizumab plus mFOLFOX6 for 12 cycles then atezolizumab for 6 months, or mFOLFOX6 alone; investigator-assessed DFS hazard ratio 0.50 (95% CI 0.35 to 0.73; p 0.0001), median DFS not reached in either arm. Tecentriq Hybreza (atezolizumab and hyaluronidase-tqjs) approved for the same use in patients 12 and older weighing at least 40 kg (FDA notification).",
    "announcement_url": "https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com",
-   "announcement": "Genentech press release, October 8, 2026"
+   "announcement": "Genentech press release, October 8, 2026",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-07",
+    "t120": 8.29,
+    "t30": -7.53,
+    "t14": -1.03,
+    "t7": 1.31,
+    "t3": 3.48,
+    "post_1d": -1.29,
+    "post_5d": 3.0,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-10-08"
@@ -6738,7 +7137,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6759,7 +7158,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -6780,7 +7179,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -6827,11 +7226,7 @@ export default [
    "cohort_move_p25_pct": -0.93,
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
-   "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
-   },
+   "runup_summary": null,
    "source": "Merck & Co., Inc. 10-Q 2026-05-04",
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000162828026029802/mrk-20260331.htm",
    "source_quote": "th previously treated extensive-stage - 38 - small cell lung cancer who experienced disease progression on or after platinum-based chemotherapy. The FDA set a Prescription Drug User Fee Act (PDUFA) target action date of October 10, 2026. The biologics license application (BLA) is based on results from the Phase 2 IDeate-Lung01 trial. I-DXd is being devel",
@@ -6841,7 +7236,8 @@ export default [
    "withdrawn_source_url": "https://www.merck.com/news/ifinatamab-deruxtecan-biologics-license-application-for-certain-patients-with-previously-treated-extensive-stage-small-cell-lung-cancer-voluntarily-withdrawn/",
    "withdrawn_quote": "The decision to withdraw the BLA is based on discussions with the U.S. Food and Drug Administration (FDA) that data supporting the application, including from the IDeate-Lung01 Phase 2 trial, do not satisfy requirements needed to support an accelerated approval for the proposed indication.",
    "withdrawn_note": "Merck and Daiichi Sankyo voluntarily withdrew the BLA (accelerated approval, ES-SCLC after platinum-based chemotherapy) on September 25, 2026, fifteen days before its October 10, 2026 goal date. No FDA decision was issued. Enrollment continues in the IDeate-Lung02 Phase 3 trial.",
-   "trial": "IDeate-Lung01 (NCT05280470)"
+   "trial": "IDeate-Lung01 (NCT05280470)",
+   "runup_note": "Run-up is measured for day-dated goals and decided events only"
   }
  },
  {
@@ -7380,7 +7776,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -7416,7 +7812,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -7473,7 +7869,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -7494,7 +7890,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -7642,7 +8038,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SITC",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -7678,7 +8074,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AASLD",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7714,7 +8110,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACR",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -7750,7 +8146,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AHA",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -7771,7 +8167,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ACAAI",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -7792,7 +8188,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/SNO",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -7813,7 +8209,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -7842,7 +8238,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/CTAD",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -7871,7 +8267,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -7907,7 +8303,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -7928,7 +8324,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -7949,7 +8345,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -7978,7 +8374,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -7999,7 +8395,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -8020,7 +8416,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/JPM",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-01-14",
    "location": "",
@@ -8041,7 +8437,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -8062,7 +8458,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -8083,7 +8479,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -8104,7 +8500,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -8125,7 +8521,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -8146,7 +8542,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -8241,7 +8637,20 @@ export default [
    },
    "fda_action_date": "2026-10-15",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761149Orig1s008ltr.pdf",
-   "fda_action_record": "BLA 761149 S-008"
+   "fda_action_record": "BLA 761149 S-008",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-14",
+    "t120": 7.39,
+    "t30": 4.9,
+    "t14": 1.62,
+    "t7": 6.06,
+    "t3": 2.96,
+    "post_1d": 1.96,
+    "post_5d": 6.14,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-10-15"
@@ -8547,7 +8956,20 @@ export default [
    "source_quote": "The FDA has assigned a PDUFA goal date of October 17, 2026.",
    "fda_action_date": "2026-10-16",
    "fda_action_source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217064",
-   "fda_action_record": "NDA 217064 S-005"
+   "fda_action_record": "NDA 217064 S-005",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-15",
+    "t120": -22.56,
+    "t30": -8.99,
+    "t14": -14.92,
+    "t7": -7.53,
+    "t3": -12.72,
+    "post_1d": -5.19,
+    "post_5d": -5.68,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "oc": "Approved",
   "dcd": "2026-10-16"
@@ -8584,9 +9006,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-15",
+    "t120": 24.88,
+    "t30": 6.61,
+    "t14": 2.19,
+    "t7": 3.88,
+    "t3": 3.88,
+    "post_1d": 2.39,
+    "post_5d": 1.43,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Viatris Inc 8-K 2026-02-26",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000010/exhibit991-4q25earningsrel.htm",
@@ -8636,9 +9066,17 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-10",
+    "t120": -30.16,
+    "t30": -10.03,
+    "t14": -7.49,
+    "t7": -5.88,
+    "t3": -3.78,
+    "post_1d": 3.75,
+    "post_5d": -0.28,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Pharming 6-K 2026-09-11",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1828316/000182831626000037/fdaapprovespharmingsjoenja.htm",
@@ -8684,9 +9122,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-19",
+    "t120": -9.2,
+    "t30": -0.86,
+    "t14": 0.22,
+    "t7": 6.27,
+    "t3": 3.32,
+    "post_1d": 2.37,
+    "post_5d": 3.32,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Ionis (licensor) 8-K 2026-07-29 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm",
@@ -8736,9 +9182,17 @@ export default [
    "cohort_move_p75_pct": 3.63,
    "cohort_n": 302,
    "runup_summary": {
-    "t30": -0.13,
-    "t7": -0.05,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-29",
+    "t120": -47.14,
+    "t30": -36.21,
+    "t14": -32.89,
+    "t7": -23.58,
+    "t3": -11.27,
+    "post_1d": -21.95,
+    "post_5d": 87.87,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "INOVIO PHARMACEUTICALS, INC. 8-K 2026-05-13",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1055726/000105572626000019/ino-33126x8kex991.htm",
@@ -8773,7 +9227,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CYTK-aficamten",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Obstructive hypertrophic cardiomyopathy (MAPLE-HCM sNDA, aficamten vs metoprolol)",
@@ -8785,9 +9239,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -26.43,
+    "t30": -14.44,
+    "t7": -11.75,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "CYTOKINETICS INC 8-K 2026-05-05",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1061983/000119312526206360/cytk-ex99_1.htm",
@@ -8806,7 +9264,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/SMMT-ivonescimab",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -8818,9 +9276,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -16.76,
+    "t30": -15.57,
+    "t7": -12.49,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Summit Therapeutics Inc. 8-K 2026-01-29",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000006/a2026_prx0129xfdablaacce.htm",
@@ -8839,7 +9301,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/TEVA-igalmi",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "At-home agitation in bipolar disorder or schizophrenia (sNDA)",
@@ -8851,9 +9313,13 @@ export default [
    "cohort_move_p75_pct": 8.11,
    "cohort_n": 116,
    "runup_summary": {
-    "t30": 0.0,
-    "t7": -1.05,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 28.58,
+    "t30": 12.57,
+    "t7": 6.33,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "BioXcel Therapeutics, Inc. 8-K 2026-05-15",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1720893/000110465926061773/tm2614679d1_ex99-1.htm",
@@ -9178,7 +9644,9 @@ export default [
    "announcement": "Novocure 8-K, November 9, 2026",
    "announcement_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000085/myadecisionpr.htm",
    "decision_quote": "Novocure (Nasdaq: NVCR) announced today that it has received a Not Approvable Letter from the U.S. Food and Drug Administration (FDA) in response to its Premarket Approval (PMA) application for Optune Mya",
-   "decision_note": "A device PMA Not Approvable Letter, not a drug Complete Response Letter. Per Novocure, the FDA cited uncertainty around the degree of clinical benefit and raised no safety concerns; Novocure plans to meet the FDA. The letter's own date is not public; the date shown is Novocure's announcement."
+   "decision_note": "A device PMA Not Approvable Letter, not a drug Complete Response Letter. Per Novocure, the FDA cited uncertainty around the degree of clinical benefit and raised no safety concerns; Novocure plans to meet the FDA. The letter's own date is not public; the date shown is Novocure's announcement.",
+   "runup_summary": null,
+   "runup_note": "No run-up record: device PMA decision, not a PDUFA event"
   },
   "dm": "2026-11",
   "oc": "Not approvable letter",
@@ -9358,7 +9826,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -9383,9 +9851,13 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -67.54,
+    "t30": 6.48,
+    "t7": 6.84,
+    "source": "FMP split-adjusted daily closes"
    },
    "review": "PDUFA target action date extended from August 22, 2026 to November 22, 2026. Capricor submitted a BLA amendment after the July 2026 advisory committee meeting containing 24-month open-label extension data from the pivotal Phase 3 HOPE-3 study and additional robustness analyses, in support of a refined proposed indication focused on upper limb function (the HOPE-3 primary endpoint). CBER accepted it, classified it a major amendment, and added three months to review it. The application remains under review: this is an extension, not a Complete Response Letter.",
    "prior_pdufa_date": "2026-08-22",
@@ -9418,11 +9890,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
-   "market_cap_usd": 1023693008.0,
+   "market_cap_usd": 1023693031.0,
    "cash_runway_months": 22.8,
    "days_to_decision": 135,
    "cohort_move_median_pct": 0.0,
@@ -9430,9 +9902,13 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -9.73,
+    "t30": -3.53,
+    "t7": -0.43,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Savara Inc 10-Q 2026-05-12",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1160308/000119312526219371/svra-20260331.htm",
@@ -9451,7 +9927,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
@@ -9463,9 +9939,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 15.61,
+    "t30": 16.43,
+    "t7": 0.53,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "BridgeBio Pharma, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm",
@@ -9483,7 +9963,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Micro",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/PYPD-d-plex100",
   "_d": {
    "indication": "Prevention of surgical site infections in patients undergoing abdominal colorectal surgery",
@@ -9492,7 +9972,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm",
    "source_quote": "The FDA did not identify any filing review issues and set a Prescription Drug User Fee Act (PDUFA) target action date of November 28, 2026",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 127151655.0
+   "market_cap_usd": 127151655.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 29.34,
+    "t30": 20.62,
+    "t7": 7.56,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -9519,9 +10008,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-08",
+    "t120": 24.41,
+    "t30": 6.95,
+    "t14": 1.45,
+    "t7": 1.49,
+    "t3": 0.7,
+    "post_1d": -0.07,
+    "post_5d": -1.89,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "FDA approval letter, NDA 219972/S-001 (2026-09-09)",
    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf",
@@ -9548,7 +10045,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
@@ -9560,9 +10057,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -15.85,
+    "t30": -7.93,
+    "t7": -9.3,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
@@ -9582,7 +10083,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -9605,11 +10106,7 @@ export default [
    "cohort_move_p25_pct": -2.05,
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
-   "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
-   },
+   "runup_summary": null,
    "former_ticker": "NUVL",
    "acquisition": {
     "acquirer": "GSK plc",
@@ -9637,7 +10134,8 @@ export default [
     }
    ],
    "source_note": "Former day 2026-11-27 (Royalty Pharma 8-K quoting Nuvalent) retired 2026-10-10; see date_history.",
-   "date_note": "Day 2026-11-27 withdrawn 2026-10-10: no primary source of the sponsor of record (GSK) states it; GSK's 6-K gives November 2026."
+   "date_note": "Day 2026-11-27 withdrawn 2026-10-10: no primary source of the sponsor of record (GSK) states it; GSK's 6-K gives November 2026.",
+   "runup_note": "Run-up is measured for day-dated goals and decided events only"
   },
   "dm": "2026-11"
  },
@@ -9653,7 +10151,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
@@ -9664,11 +10162,7 @@ export default [
    "cohort_move_p25_pct": -0.93,
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
-   "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
-   },
+   "runup_summary": null,
    "source": "Regeneron 8-K 2026-07-30 (EX-99.1, Q2 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000023/exhibit991q22026.htm",
    "source_quote": "The FDA will review the New Drug Application (NDA) under priority review with a target action date in November 2026, following use of a Priority Review Voucher.",
@@ -9684,7 +10178,8 @@ export default [
      "url": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000023/exhibit991q22026.htm",
      "why": "Precision downgraded from day to month: Regeneron's 8-K of 2026-07-30 states 'a target action date in November 2026' and no filing states a day."
     }
-   ]
+   ],
+   "runup_note": "Run-up is measured for day-dated goals and decided events only"
   },
   "dm": "2026-11"
  },
@@ -9700,7 +10195,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
@@ -9712,9 +10207,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 14.55,
+    "t30": 15.41,
+    "t7": -1.05,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Genentech press release 2026-06-01",
    "source_url": "https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen",
@@ -9733,9 +10232,9 @@ export default [
   "type": "PDUFA",
   "ta": "Nephrology",
   "cap": "Large",
-  "st": "Upcoming",
-  "ua": "2026-11-13T19:16:50Z",
-  "url": "/pdufa/RHHBY-gazyva-pmn",
+  "st": "Decided",
+  "ua": "2026-11-14T03:41:05Z",
+  "url": "/fda-decision/RHHBY-2026-11-13",
   "_d": {
    "indication": "Primary membranous nephropathy (pMN) in adults",
    "brand": "Gazyva",
@@ -9745,8 +10244,34 @@ export default [
    "source_quote": "The FDA has already granted Breakthrough Therapy Designation (BTD) to Gazyva in pMN and is expected to make a decision on approval by November 2026.",
    "event_slug": "RHHBY-gazyva-pmn",
    "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day.",
-   "market_cap_usd": 386518708364.0
-  }
+   "market_cap_usd": 386518708364.0,
+   "decision_date_unsourced": true,
+   "trial": "MAJESTY",
+   "indication_short": "primary membranous nephropathy",
+   "title_indication": "Primary Membranous Nephropathy",
+   "decision_source": "FDA notice, November 13, 2026",
+   "decision_source_url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy",
+   "announcement": "FDA notice, November 13, 2026",
+   "announcement_url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy",
+   "decision_quote": "The U.S. Food and Drug Administration has approved Gazyva (obinutuzumab) injection to treat adults with primary membranous nephropathy at risk of disease progression, to induce remission of proteinuria",
+   "decision_note": "The FDA's notice is dated November 13, 2026 and does not state the action day; the day will be taken from Drugs@FDA when the supplement posts. The goal was guided only to November 2026, so no early or late margin is stated.",
+   "seo_desc": "Gazyva (obinutuzumab) was approved by the FDA for adults with primary membranous nephropathy, per the FDA's notice of November 13, 2026, the first drug for the disease.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-14",
+    "t120": 7.39,
+    "t30": 4.9,
+    "t14": 1.62,
+    "t7": 6.06,
+    "t3": 2.96,
+    "post_1d": 1.96,
+    "post_5d": 6.14,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
+  },
+  "oc": "Approved",
+  "dcd": "2026-11-13"
  },
  {
   "id": "pdufa_vrtx_2026-11-30",
@@ -9760,7 +10285,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
@@ -9772,9 +10297,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 23.55,
+    "t30": 6.71,
+    "t7": -1.9,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Vertex 8-K 2026-08-03 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
@@ -9794,7 +10323,7 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -9806,9 +10335,13 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -35.85,
+    "t30": -13.82,
+    "t7": 2.84,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Vanda Pharmaceuticals Inc. 8-K 2026-08-05",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026053308/vnda8-k852026exhibit991.htm",
@@ -10734,7 +11267,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
@@ -10744,7 +11277,16 @@ export default [
    "source": "Corcept 8-K 2026-07-29 (EX-99.1)",
    "review": "Corcept resubmitted the NDA for relacorilant in Cushing's syndrome in June 2026, after a December 2025 CRL, and states a PDUFA date of December 17, 2026 in its second-quarter release.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026050607/cort072926ex991pressrelease.htm",
-   "source_quote": "We expect a decision on our NDA by December 17, 2026."
+   "source_quote": "We expect a decision on our NDA by December 17, 2026.",
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 20.84,
+    "t30": -37.25,
+    "t7": -7.93,
+    "source": "FMP split-adjusted daily closes"
+   }
   },
   "dm": "2026-12"
  },
@@ -10760,7 +11302,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant-evera",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "ER+/HER2-, ESR1-mutated metastatic breast cancer",
@@ -10772,9 +11314,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 14.55,
+    "t30": 15.41,
+    "t7": -1.05,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Genentech press release 2026-02-19",
    "source_url": "https://www.gene.com/media/press-releases/15100/2026-02-19/fda-accepts-new-drug-application-for-gen",
@@ -10795,7 +11341,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
@@ -10807,9 +11353,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -48.88,
+    "t30": -35.12,
+    "t7": -9.82,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Mineralys Therapeutics, Inc. 8-K 2026-08-11",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1933414/000193341426000112/mlys2026q28kex991.htm",
@@ -10828,7 +11378,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
@@ -10836,7 +11386,16 @@ export default [
    "market_cap_usd": 208476114241.0,
    "source_url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
    "source": "company press release",
-   "source_quote": "Food and Drug Administration with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026."
+   "source_quote": "Food and Drug Administration with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026.",
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 25.69,
+    "t30": 16.13,
+    "t7": -3.67,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -10851,7 +11410,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -10876,9 +11435,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -6.41,
+    "t30": 11.04,
+    "t7": 15.22,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Praxis 8-K 2026-06-29 (extension); 8-K 2026-08-06 EX-99.1 (restated)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
@@ -10912,14 +11475,23 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
    "market_cap_usd": 23869187791.0,
    "source": "Viatris Inc 8-K 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000037/exhibit991-2q26earningsrel.htm",
-   "source_quote": "any announced that the FDA accepted for review the New Drug Application for MR-107A-02 (fast-acting meloxicam), a non-opioid, for the treatment of moderate-to-severe acute pain. The FDA has assigned a PDUFA goal date of December 27, 2026. The Company signed a distribution agreement with Accord Healthcare to commercialize three biosimilar products (filgras"
+   "source_quote": "any announced that the FDA accepted for review the New Drug Application for MR-107A-02 (fast-acting meloxicam), a non-opioid, for the treatment of moderate-to-severe acute pain. The FDA has assigned a PDUFA goal date of December 27, 2026. The Company signed a distribution agreement with Accord Healthcare to commercialize three biosimilar products (filgras",
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 28.04,
+    "t30": 18.3,
+    "t7": 8.32,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -10934,7 +11506,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
@@ -10946,9 +11518,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -15.85,
+    "t30": -7.93,
+    "t7": -9.3,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
@@ -10981,9 +11557,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-25",
+    "t120": 27.89,
+    "t30": 5.39,
+    "t14": 3.07,
+    "t7": 0.7,
+    "t3": -0.33,
+    "post_1d": 0.73,
+    "post_5d": -0.58,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "date_note": "EDGAR full-text: \"tavapadon\" + \"target action date\" returns 0 filings; AbbVie names tavapadon in 8-K/10-K but never states an FDA goal date. Day withdrawn 2026-09-10; month retained.",
    "brand": "JUVMO",
@@ -11096,9 +11680,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-20",
+    "t120": -8.84,
+    "t30": 5.49,
+    "t14": 4.55,
+    "t7": 6.04,
+    "t3": 1.28,
+    "post_1d": -0.22,
+    "post_5d": 0.75,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "date_note": "No AstraZeneca filing states a goal date for Ultomiris in IgA nephropathy (searched Ultomiris/ravulizumab + IgA nephropathy + PDUFA; hits are third parties and pre-2022 Alexion). AstraZeneca files 6-K/20-F, so EDGAR would show one. Day withdrawn 2026-09-10; month retained.",
    "brand": "Ultomiris",
@@ -11144,9 +11736,17 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-15",
+    "t120": 28.76,
+    "t30": 3.43,
+    "t14": -2.13,
+    "t7": -2.16,
+    "t3": -0.25,
+    "post_1d": 0.11,
+    "post_5d": 1.03,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "date_note": "Bayer is not an SEC registrant, so EDGAR cannot confirm or deny this date; no Bayer release has been read for it either. Day withdrawn 2026-09-10 for want of any source; month retained.",
    "brand": "KERENDIA",
@@ -11581,16 +12181,13 @@ export default [
    "cohort_move_p25_pct": -0.93,
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
-   "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
-   },
+   "runup_summary": null,
    "date_note": "FDA goal date not announced. Novo Nordisk's Q3 2026 6-K (Nov 4) states no goal date; it gives a US launch expectation only. Relabelled 2026-11-10 (David); the row's date field is a sort key, not a goal date, and the row is excluded from the calendar and from counts of dated goals.",
    "source": "Novo Nordisk 6-K 2026-11-04 (Q3 2026 company announcement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm",
    "source_quote": "preparing for the US launch of CagriSema in early 2027, subject to regulatory approval",
-   "goal_date": "not announced"
+   "goal_date": "not announced",
+   "runup_note": "Run-up is measured for day-dated goals and decided events only"
   },
   "dm": "2026-12"
  },
@@ -11629,7 +12226,9 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm",
    "source_quote": "In the US, the regulatory review of denecimig is still ongoing, and pending regulatory decision, a US launch is expected in H1 2027.",
    "brand": "Frehemgo",
-   "goal_date": "not announced"
+   "goal_date": "not announced",
+   "runup_summary": null,
+   "runup_note": "Run-up is measured for day-dated goals and decided events only"
   }
  },
  {
@@ -11731,7 +12330,7 @@ export default [
   "ta": "Immunology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-13T19:16:50Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/RHHBY-gazyva",
   "_d": {
    "indication": "Systemic lupus erythematosus (SLE)",
@@ -11742,7 +12341,9 @@ export default [
    "source_quote": "The FDA is expected to make a decision on an approval by December 2026.",
    "event_slug": "RHHBY-gazyva",
    "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day.",
-   "market_cap_usd": 386518708364.0
+   "market_cap_usd": 384359852010.0,
+   "runup_summary": null,
+   "runup_note": "Run-up is measured for day-dated goals and decided events only"
   }
  },
  {
@@ -11984,9 +12585,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-09-15",
+    "t120": 35.51,
+    "t30": -5.84,
+    "t14": -18.31,
+    "t7": -14.33,
+    "t3": -7.64,
+    "post_1d": -0.34,
+    "post_5d": 5.17,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "Nuvation Bio Inc. 8-K 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1811063/000119312526336751/d261840dex991.htm",
@@ -12028,9 +12637,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-13",
+    "t120": 21.44,
+    "t30": 23.27,
+    "t14": 13.56,
+    "t7": -4.72,
+    "t3": -1.11,
+    "post_1d": 1.12,
+    "post_5d": -10.51,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "source": "ImmunityBio, Inc. 8-K 2026-08-04",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/ibrx-202684x8kexhibit991.htm",
@@ -12068,7 +12685,7 @@ export default [
   "ta": "Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
@@ -12080,7 +12697,16 @@ export default [
    "trial": "METEOROID",
    "event_slug": "RHHBY-enspryng-mogad",
    "source_note": "sBLA, Priority Review, per Genentech release of September 9, 2026.",
-   "market_cap_usd": 384359852010.0
+   "market_cap_usd": 384359852010.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 14.55,
+    "t30": 15.41,
+    "t7": -1.05,
+    "source": "FMP split-adjusted daily closes"
+   }
   },
   "url": "/pdufa/RHHBY-enspryng-mogad"
  },
@@ -12407,7 +13033,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/DYN-z-rostudirsen",
   "_d": {
    "indication": "Duchenne muscular dystrophy amenable to exon 51 skipping",
@@ -12416,7 +13042,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526323940/dyn-ex99_1.htm",
    "source_quote": "Biologics License Application (BLA) for z-rostudirsen in exon 51 DMD accepted for review by FDA; Priority Review granted; PDUFA target action date set for January 21, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 3215560268.0
+   "market_cap_usd": 3215560285.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -5.45,
+    "t30": 12.89,
+    "t7": -7.44,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12430,7 +13065,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/INSM-arikayce",
   "_d": {
    "indication": "MAC lung disease, as part of a combination antibacterial drug regimen",
@@ -12439,7 +13074,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1104506/000110450626000047/insm-20260930.htm",
    "source_quote": "In September 2026, our US supplemental new drug application (sNDA) for ARIKAYCE in patients with MAC lung disease was accepted and granted priority review by the FDA as part of a combination antibacterial drug regimen, with a target action date of January 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 26580080800.0
+   "market_cap_usd": 26580080800.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 11.29,
+    "t30": 9.04,
+    "t7": 10.15,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12454,7 +13098,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -12479,9 +13123,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -6.41,
+    "t30": 11.04,
+    "t7": 15.22,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Praxis 8-K 2026-08-06 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000082/praxisq22026pr.htm",
@@ -12503,7 +13151,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -12512,7 +13160,16 @@ export default [
    "source_quote": "PDUFA target action date of January 30, 2027",
    "review": "Supplemental NDA for lower doses of Joenja, accepted with Priority Review (6-K of September 25, 2026). Follows the September 11, 2026 approval for children aged 4 to 11 weighing at least 27 kg.",
    "prior_decision": "/fda-decision/PHAR-2026-09-11",
-   "market_cap_usd": 891804060.0
+   "market_cap_usd": 891804060.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -7.49,
+    "t30": 29.23,
+    "t7": 1.12,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12527,7 +13184,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
@@ -12539,9 +13196,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 11.51,
+    "t30": -0.66,
+    "t7": 0.67,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Agios press release 2026-10-30 (GlobeNewswire)",
    "source_url": "https://www.globenewswire.com/news-release/2026/10/30/3392151/31990/en/agios-announces-new-pdufa-goal-date-of-february-1-2027-for-mitapivat-sickle-cell-disease-snda-company-is-launch-ready-and-in-labeling-discussions-with-fda.html",
@@ -12571,7 +13232,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -12596,9 +13257,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 25.69,
+    "t30": 16.13,
+    "t7": -3.67,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "GILEAD SCIENCES, INC. 10-Q 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000031/gild-20260630.htm",
@@ -12616,7 +13281,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/BBIO-infigratinib",
   "_d": {
    "indication": "Children with achondroplasia",
@@ -12626,7 +13291,16 @@ export default [
    "source": "BridgeBio 8-K 2026-10-06 (EX-99.1, NDA accepted, priority review)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126039334/ef20083591_ex99-1.htm",
    "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 4, 2027",
-   "market_cap_usd": 15252918300.0
+   "market_cap_usd": 15252918300.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 15.61,
+    "t30": 16.43,
+    "t7": 0.53,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12640,7 +13314,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/VSTM-avmapki-fakzynja-blister-pack",
   "_d": {
    "indication": "New blister-pack presentation of the approved AVMAPKI FAKZYNJA co-pack (priority review)",
@@ -12648,7 +13322,16 @@ export default [
    "source": "Verastem 8-K 2026-11-05 (EX-99.1, Q3 2026 results presentation)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1526119/000110465926123386/tm2628982d2_ex99-1.htm",
    "source_quote": "FDA decision on NDA for AVMAPKI FAKZYNJA CO-PACK Blister Pack by February 7, 2027",
-   "market_cap_usd": 1030801089.0
+   "market_cap_usd": 1030801089.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 87.61,
+    "t30": 6.23,
+    "t7": -16.95,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12662,7 +13345,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/RHHBY-lunsumio-polivy",
   "_d": {
    "indication": "With Polivy (polatuzumab vedotin), relapsed or refractory large B-cell lymphoma after at least one prior line of systemic therapy",
@@ -12673,7 +13356,16 @@ export default [
    "source": "Roche press release 2026-06-18 (sBLA accepted)",
    "source_url": "https://www.roche.com/media/releases/med-cor-2026-06-18",
    "source_quote": "The FDA is expected to make a decision on approval by 9 February 2027.",
-   "market_cap_usd": 384359852010.0
+   "market_cap_usd": 384359852010.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 14.55,
+    "t30": 15.41,
+    "t7": -1.05,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12687,7 +13379,7 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/BLTE-tinlarebant",
   "_d": {
    "indication": "Stargardt disease type 1 (STGD1)",
@@ -12696,7 +13388,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
    "source_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA) date of February 12, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 6618928227.0
+   "market_cap_usd": 6618928063.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 15.74,
+    "t30": 3.01,
+    "t7": 6.72,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12784,7 +13485,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -12804,9 +13505,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 33.87,
+    "t30": 12.32,
+    "t7": -17.0,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Arcutis Biotherapeutics, Inc. 8-K 2026-08-05",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1787306/000178730626000049/pressreleaseex991q22026.htm",
@@ -12825,7 +13530,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-zipalertinib",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Relapsed EGFR exon 20 insertion non-small cell lung cancer",
@@ -12837,9 +13542,13 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -33.51,
+    "t30": -33.72,
+    "t7": -17.69,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Cullinan Therapeutics, Inc. 8-K 2026-05-07",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1789972/000119312526210290/cgem-ex99_1.htm",
@@ -12858,7 +13567,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/APMD-ad109",
   "_d": {
    "indication": "Obstructive sleep apnea",
@@ -12867,7 +13576,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1745648/000119312526385355/apmd-ex99_1.htm",
    "source_quote": "U.S. Food and Drug Administration (FDA) Accepted the NDA for AD109, with a proposed proprietary name Oxnimbi, and assigned a PDUFA target action date of February 28, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 704392781.0
+   "market_cap_usd": 704392781.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": null,
+    "t30": -21.34,
+    "t7": 10.59,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12881,7 +13599,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/BMRN-voxzogo-achondroplasia",
   "_d": {
    "indication": "Children with achondroplasia (application for full approval)",
@@ -12890,7 +13608,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
    "source_quote": "BioMarin's application for full approval of VOXZOGO in children with achondroplasia is under review by the FDA, with a PDUFA target action date of February 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 11085149627.0
+   "market_cap_usd": 11085149627.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 8.23,
+    "t30": 0.09,
+    "t7": 0.18,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12933,7 +13660,20 @@ export default [
    "announcement": "GSK press release (Philadelphia), October 19, 2026",
    "review": "Supplemental BLA under the accelerated approval pathway, Priority Review, with a Commissioner's National Priority Voucher; Fast Track and Breakthrough Therapy designations. AZUR-1 (NCT05723562): single-arm, open-label, 154 previously untreated patients, dostarlimab 500 mg IV every 3 weeks for nine cycles. Per the FDA, sustained clinical complete response at 12 months (cCR12) per independent central review was 47% (95% CI 27 to 56) in 116 evaluable patients and 68% (95% CI 60 to 76) by investigator in 144; ORR per ICR 79%; with a median follow-up of 26.3 months, no patient with cCR12, cCR or near CR had progressed. Continued approval may be contingent on a confirmatory trial.",
    "fda_action_record_note": "Drugs@FDA (openFDA, updated 2026-10-22) records BLA 761174 supplement 15 approved 2026-10-19, the day the FDA's notification states; no letter PDF is linked yet, so the notification stays the cited source.",
-   "census_note": "Not in the decision-timing census (checked 2026-10-24): GSK stated the goal only as February 2027 (month)."
+   "census_note": "Not in the decision-timing census (checked 2026-10-24): GSK stated the goal only as February 2027 (month).",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-10-16",
+    "t120": -8.69,
+    "t30": -2.67,
+    "t14": -0.38,
+    "t7": 5.3,
+    "t3": 7.0,
+    "post_1d": -0.1,
+    "post_5d": 2.5,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   },
   "dm": "2027-02"
  },
@@ -12948,7 +13688,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/PVLA-qtorin-rapamycin",
   "_d": {
    "indication": "Microcystic lymphatic malformations",
@@ -12957,7 +13697,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1583648/000119312526435113/pvla-ex99_1.htm",
    "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 2229022323.0
+   "market_cap_usd": 2229022323.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 29.67,
+    "t30": 15.11,
+    "t7": -6.04,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -12972,7 +13721,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
@@ -12984,9 +13733,13 @@ export default [
    "cohort_move_p75_pct": 1.03,
    "cohort_n": 790,
    "runup_summary": {
-    "t30": 0.38,
-    "t7": -0.01,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 38.06,
+    "t30": 18.17,
+    "t7": -5.15,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Exelixis 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000114/exel20260930exhibit991.htm",
@@ -13015,7 +13768,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/NTLA-lonvo-z",
   "_d": {
    "indication": "Hereditary angioedema",
@@ -13024,7 +13777,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652130/000119312526385194/ntla-ex99_1.htm",
    "source_quote": "FDA sets Prescription Drug User Fee Act (PDUFA) date of March 10, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1361472600.0
+   "market_cap_usd": 1361472600.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -23.08,
+    "t30": -20.88,
+    "t7": -21.2,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -13038,7 +13800,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/BMY-reblozyl-mf",
   "_d": {
    "indication": "Adults with myelofibrosis-associated anemia receiving red blood cell transfusions, with concomitant JAK inhibitor therapy",
@@ -13047,7 +13809,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 129656364260.0
+   "market_cap_usd": 129656364260.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 9.31,
+    "t30": 3.73,
+    "t7": -1.18,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -13390,7 +14161,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/AQST-anaphylm",
   "_d": {
    "indication": "Anaphylaxis (Class 2 resubmission after the January 30, 2026 CRL)",
@@ -13399,7 +14170,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000058/a2026-10x19aquestivepduf.htm",
    "source_quote": "Aquestive Therapeutics Announces FDA Acceptance of Anaphylm NDA Resubmission and PDUFA Goal Date of March 16, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 491438927.0
+   "market_cap_usd": 491438927.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -4.17,
+    "t30": -14.07,
+    "t7": 2.89,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -13413,7 +14193,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/MRK-enflonsia",
   "_d": {
    "indication": "RSV lower respiratory tract disease in children under 2 at increased risk, through their second RSV season",
@@ -13422,7 +14202,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set PDUFA date of March 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 364265340000.0
+   "market_cap_usd": 364265340000.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 23.42,
+    "t30": 2.4,
+    "t7": -1.73,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -13436,7 +14225,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/ETON-libervant",
   "_d": {
    "indication": "Seizure clusters, expansion to patients ages 6 to 11",
@@ -13445,7 +14234,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926032600/ex_1025429.htm",
    "source_quote": "The NDA has a Prescription Drug User Fee Act (PDUFA) target action date of March 29, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1843881846.0
+   "market_cap_usd": 1843881846.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 104.31,
+    "t30": 15.48,
+    "t7": 26.04,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -13713,7 +14511,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/HRMY-pitolisant-gr",
   "_d": {
    "indication": "Pitolisant gastro-resistant formulation (NDA accepted July 2026)",
@@ -13722,7 +14520,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926090086/hrmy-20260804xex99d1.htm",
    "source_quote": "Pitolisant GR NDA Accepted in July; Target PDUFA Date April 1, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1982495198.0
+   "market_cap_usd": 1982495198.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 12.2,
+    "t30": -14.83,
+    "t7": -1.92,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -13737,7 +14544,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-ozekibart",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Unresectable or metastatic conventional chondrosarcoma",
@@ -13749,9 +14556,13 @@ export default [
    "cohort_move_p75_pct": 2.75,
    "cohort_n": 274,
    "runup_summary": {
-    "t30": 0.36,
-    "t7": 0.08,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -22.04,
+    "t30": -14.11,
+    "t7": -3.99,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Inhibrx Biosciences, Inc. 8-K 2026-06-15",
    "source_url": "https://www.sec.gov/Archives/edgar/data/2007919/000200791926000033/inhibrx-20260615.htm",
@@ -14091,7 +14902,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/JAZZ-cannabidiol-capsule",
   "_d": {
    "indication": "Oral cannabidiol capsule formulation",
@@ -14100,7 +14911,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000056/a3q26earningsrelease.htm",
    "source_quote": "The PDUFA target action date for our New Drug Application (NDA) for the oral cannabidiol capsule formulation is April 16, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 15504865511.0
+   "market_cap_usd": 15504865511.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 1.74,
+    "t30": 2.5,
+    "t7": 2.94,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14114,7 +14934,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/MRK-idvynso",
   "_d": {
    "indication": "Adults with HIV-1 infection (treatment-naive; 96-week data in virologically suppressed adults)",
@@ -14123,7 +14943,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set a PDUFA date for both sNDAs of April 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 364265340000.0
+   "market_cap_usd": 364265340000.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 23.42,
+    "t30": 2.4,
+    "t7": -1.73,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14138,7 +14967,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
@@ -14150,9 +14979,13 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "t30": 2.19,
-    "t7": -0.33,
-    "t1": 0.0
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 11.65,
+    "t30": 6.96,
+    "t7": -2.83,
+    "source": "FMP split-adjusted daily closes"
    },
    "source": "Pharvaris N.V. 6-K 2026-09-08",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1830487/000119312526384472/phvs-ex99_1.htm",
@@ -14170,7 +15003,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/IMNM-varegacestat",
   "_d": {
    "indication": "Adults with desmoid tumors",
@@ -14179,7 +15012,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1472012/000119312526344577/imnm-ex99_1.htm",
    "source_quote": "Varegacestat PDUFA target action date set for April 28, 2027, following U.S. FDA acceptance of New Drug Application (NDA) for adults with desmoid tumors",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 2216229121.0
+   "market_cap_usd": 2216229121.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -14.33,
+    "t30": -10.19,
+    "t7": -3.84,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14194,14 +15036,23 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": 7452891875.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
    "source": "company filing (SEC)",
-   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) – Axsome Therapeutics, Inc."
+   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) – Axsome Therapeutics, Inc.",
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -39.5,
+    "t30": -20.95,
+    "t7": 3.42,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14215,7 +15066,7 @@ export default [
   "ta": "Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/QURE-amt-130",
   "_d": {
    "indication": "Huntington's disease (Accelerated Approval pathway; FDA tentatively plans an advisory committee)",
@@ -14224,7 +15075,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1590560/000110465926120915/tm2628699d1_ex99-1.htm",
    "source_quote": "The application has been granted Priority Review with a Prescription Drug User Fee Act (PDUFA) target action date of May 1, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1670006257.0
+   "market_cap_usd": 1670006257.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -5.33,
+    "t30": 1.49,
+    "t7": 3.39,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14239,7 +15099,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -14260,7 +15120,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -14281,14 +15141,23 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": 15252918300.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
    "source": "company filing (SEC)",
-   "source_quote": "BridgeBio Announces FDA Acceptance of NDA for Encaleret for ADH1 - PDUFA target action date of May 8, 2027"
+   "source_quote": "BridgeBio Announces FDA Acceptance of NDA for Encaleret for ADH1 - PDUFA target action date of May 8, 2027",
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 15.61,
+    "t30": 16.43,
+    "t7": 0.53,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14302,7 +15171,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/BMY-mezigdomide",
   "_d": {
    "indication": "Relapsed or refractory multiple myeloma",
@@ -14311,7 +15180,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA accepted a New Drug Application for mezigdomide in combination with carfilzomib and dexamethasone (MeziKd) in patients with relapsed or refractory multiple myeloma (RRMM), granting a PDUFA date of May 13, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 129656364260.0
+   "market_cap_usd": 129656364260.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 9.31,
+    "t30": 3.73,
+    "t7": -1.18,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14326,7 +15204,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -14529,7 +15407,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -14549,7 +15427,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/ZBIO-obexelimab",
   "_d": {
    "indication": "IgG4-related disease",
@@ -14558,7 +15436,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1953926/000110465926095437/tm2622871d1_ex99-1.htm",
    "source_quote": "Obexelimab BLA submission for the treatment of IgG4-RD accepted by FDA; PDUFA target action date of May 27, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1899576382.0
+   "market_cap_usd": 1899576382.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 49.55,
+    "t30": -1.02,
+    "t7": -1.58,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14572,7 +15459,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/BMRN-voxzogo-hypochondroplasia",
   "_d": {
    "indication": "Hypochondroplasia",
@@ -14581,7 +15468,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
    "source_quote": "Food and Drug Administration (FDA) has set a PDUFA target action date of May 30, 2027 for its supplemental NDA to expand the use of VOXZOGO for the treatment of HCH",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 11085149627.0
+   "market_cap_usd": 11085149627.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 8.23,
+    "t30": 0.09,
+    "t7": 0.18,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14596,7 +15492,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -14617,7 +15513,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -14637,7 +15533,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/URGN-ugn-103",
   "_d": {
    "indication": "Low-grade intermediate-risk non-muscle invasive bladder cancer (LG-IR-NMIBC)",
@@ -14645,7 +15541,16 @@ export default [
    "source": "UroGen 8-K 2026-11-04 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1668243/000143774926034769/ex_1036873.htm",
    "source_quote": "The FDA accepted UroGen's NDA for UGN-103 (next-generation novel mitomycin-based formulation) for review; PDUFA goal date set for June 14, 2027",
-   "market_cap_usd": 1284071404.0
+   "market_cap_usd": 1284071404.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -11.13,
+    "t30": -36.76,
+    "t7": -8.91,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -14970,7 +15875,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/MRK-sac-tmt",
   "_d": {
    "indication": "Adults with endometrial cancer previously treated with platinum chemotherapy and a PD-1/PD-L1 inhibitor",
@@ -14979,7 +15884,16 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 364265340000.0
+   "market_cap_usd": 364265340000.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": 23.42,
+    "t30": 2.4,
+    "t7": -1.73,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -15057,7 +15971,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -15078,7 +15992,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-11-14T01:14:56Z",
+  "ua": "2026-11-14T03:55:29Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -15098,7 +16012,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-14T01:08:51Z",
+  "ua": "2026-11-14T03:50:36Z",
   "url": "/pdufa/COGT-bezuclastinib-advsm",
   "_d": {
    "indication": "Advanced systemic mastocytosis",
@@ -15106,7 +16020,16 @@ export default [
    "source": "Cogent 8-K 2026-11-05 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
    "source_quote": "AdvSM PDUFA target action date June 29, 2027",
-   "market_cap_usd": 4969268640.0
+   "market_cap_usd": 4969268640.0,
+   "runup_summary": {
+    "basis": "so far",
+    "unit": "pct",
+    "as_of": "2026-11-13",
+    "t120": -15.85,
+    "t30": -7.93,
+    "t7": -9.3,
+    "source": "FMP split-adjusted daily closes"
+   }
   }
  },
  {
@@ -17049,7 +17972,20 @@ export default [
    "decision_quote": "The U.S. Food and Drug Administration today approved Sunharbo (asundexian) 50 mg tablets, the first factor XIa (FXIa) inhibitor for use in combination with antiplatelet therapy to reduce the risk of stroke",
    "seo_desc": "Sunharbo (asundexian), Bayer, was approved by the FDA on November 9, 2026, the first factor XIa inhibitor, for secondary stroke prevention.",
    "review": "Bayer announced on May 19, 2026 that the FDA accepted the New Drug Application for asundexian, an oral Factor XIa inhibitor, and granted Priority Review. The application rests on the Phase 3 OCEANIC-STROKE trial, which met its primary efficacy outcome (time to first ischemic stroke) and its primary safety outcome (time to ISTH major bleeding); results were presented at the International Stroke Conference 2026 and published in the New England Journal of Medicine. Asundexian received Fast Track designation in 2023. Bayer has not publicly disclosed the PDUFA goal date, so no date is stated here.",
-   "review_source_url": "https://www.bayer.com/en/us/news-stories/asundexian-in-patients-after-a-non-cardioembolic-ischemic-stroke"
+   "review_source_url": "https://www.bayer.com/en/us/news-stories/asundexian-in-patients-after-a-non-cardioembolic-ischemic-stroke",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-11-06",
+    "t120": 39.11,
+    "t30": 6.9,
+    "t14": 26.49,
+    "t7": 19.77,
+    "t3": 6.38,
+    "post_1d": 3.78,
+    "post_5d": 2.15,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   }
  },
  {
@@ -17087,7 +18023,20 @@ export default [
    "announcement": "FDA oncology approval notification, November 10, 2026",
    "announcement_url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-pimicotinib-symptomatic-tenosynovial-giant-cell-tumor",
    "decision_quote": "On November 10, 2026, the Food and Drug Administration approved pimicotinib (Pimjetmi, EMD Serono, Inc.), a kinase inhibitor, for adults with symptomatic tenosynovial giant cell tumor (TGCT)",
-   "seo_desc": "Pimjetmi (pimicotinib), EMD Serono, was approved by the FDA on November 10, 2026 for symptomatic tenosynovial giant cell tumor."
+   "seo_desc": "Pimjetmi (pimicotinib), EMD Serono, was approved by the FDA on November 10, 2026 for symptomatic tenosynovial giant cell tumor.",
+   "runup_summary": {
+    "basis": "decided",
+    "unit": "pct",
+    "eve_date": "2026-11-09",
+    "t120": 21.25,
+    "t30": 6.7,
+    "t14": 2.09,
+    "t7": 0.33,
+    "t3": -0.94,
+    "post_1d": -0.15,
+    "post_5d": null,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
+   }
   }
  }
 ];

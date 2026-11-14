@@ -35,7 +35,11 @@ def decided():
         if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() == "decided":
             for dt_ in filter(None, (r.get("d"), r.get("dcd"))):
                 out.add((str(r.get("t") or "").upper(), str(dt_)))
-    return out
+    # 2026-11-13: two applications can share a (ticker, date) key (RHHBY 2026-11-30: Gazyva pMN decided, giredestrant
+    # pending). A key that a still-pending PDUFA row also holds is not proof the listed event decided.
+    pend = {(str(r.get("t") or "").upper(), str(r.get("d"))) for r in rows
+            if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() in ("upcoming", "awaiting")}
+    return out - pend
 
 
 def main():

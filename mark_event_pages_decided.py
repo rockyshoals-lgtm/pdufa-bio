@@ -216,7 +216,7 @@ def decided_language(doc, tk, drug, word, dcd, goal, archive_only, goal_sourced=
     # the windowed / unsourced FAQ shapes fix_event_page_windows.py writes
     # 2026-11-11: the quarter-window shape ("is Q4 2026 for", NVCR) was not matched and stayed pending
     doc = re.sub(r"The FDA PDUFA target date for " + re.escape(tk) + r" \((.*?)\) (?:is expected in [^.]{4,24} for|is not sourced for|"
-                 r"is (?:Q[1-4]|H[12]) \d{4} for|"
+                 r"is (?:Q[1-4]|H[12]|January|February|March|April|May|June|July|August|September|October|November|December) \d{4} for|"
                  r"has not been sourced\. We hold no filing or release stating a date for) (.*?)\. (?:[^<\"]*?)Verify against primary filings\.",
                  lambda m: (f"The FDA decided {tk}'s ({m.group(1)}) application for {m.group(2)} "
                             f"{faq_on}: {word}.{goal_sent} Verify against the linked primary source."),

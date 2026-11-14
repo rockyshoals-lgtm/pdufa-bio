@@ -12,7 +12,7 @@ The check is an identity join, not text matching: any slate (ticker, date) that 
 dataset.mjs as a Decided PDUFA is a failure. The fix is one command:
     python pdufa_site_src/build_slate_from_crawl.py --sweep-only
 """
-import io, json, os, sys
+import io, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(os.path.dirname(HERE), "pdufa_site_src")
@@ -41,7 +41,15 @@ def main():
         print("FAIL: no decided PDUFAs parsed from dataset.mjs -- vacuous pass refused")
         return 1
 
-    bad = [c for c in cats if (c.get("ticker"), c.get("date")) in decided]
+    # 2026-11-13: two applications can share (ticker, date) (RHHBY 2026-11-30: Gazyva pMN decided, giredestrant
+    # pending). A slate row is decided only if no PENDING dataset row on that key names the same drug.
+    tok = lambda s: set(re.findall(r"[a-z]{5,}", str(s).lower()))
+    pend = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() in ("upcoming", "awaiting"):
+            pend.setdefault((r.get("t"), r.get("d")), []).append(r.get("name"))
+    bad = [c for c in cats if (c.get("ticker"), c.get("date")) in decided
+           and not any(tok(c.get("drug")) & tok(n) for n in pend.get((c.get("ticker"), c.get("date")), []))]
     for c in bad:
         print(f"  FAIL slate carries {c['ticker']} {c['date']} "
               f"({str(c.get('drug'))[:40]}) -- the dataset records it as DECIDED, and the "

@@ -42,7 +42,7 @@ def load_key():
                 if line and not line.startswith("#") and "=" in line:
                     k, v = line.split("=", 1)
                     os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-    return os.environ.get("POLYGON_API_KEY")
+    return os.environ.get("FMP_API_KEY")   # 2026-11-13: prices come from price_source (FMP)
 
 
 def daily(t, start, end, key):

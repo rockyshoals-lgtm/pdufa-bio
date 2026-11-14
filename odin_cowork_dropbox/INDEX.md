@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-11-13 BUILDER (currency fmp only runup per pdufa)** — `2026-11-13_BUILDER_currency_fmp_only_runup_per_pdufa.md` — 2026-11-13 ~19:40 to ~22:30 Pacific = 22:40 Nov 13 to ~01:30 Nov 14 Eastern. RULE 1. Facts only. Not investment advice.
 - **2026-11-11 audit (audit 100k plan google indexing works)** — `2026-11-11_audit_100k_plan_google_indexing_works.md` — 2026-11-11, measured 22:58 to 23:50 Eastern = 2026-11-12 03:58 to 04:50 UTC (Wednesday night). Per RULE 1 every time carries its zone. The Bing console shows Pacific; its data still ends Nov 8.
 - **2026-11-11 BUILDER (decisions feed fix internal links)** — `2026-11-11_BUILDER_decisions_feed_fix_internal_links.md` — 2026-11-11 ~20:30 Pacific to 2026-11-12 ~01:00 Eastern. RULE 1. Facts and build mechanics only. Not investment advice.
 - **2026-11-10 audit (audit google has indexed 56 pages and asundexian is held)** — `2026-11-10_audit_google_has_indexed_56_pages_and_asundexian_is_held.md` — 2026-11-10, measured 23:20 Eastern to 00:15 Eastern Nov 11 = 2026-11-11 04:20 to 05:15 UTC (Tuesday night). Per RULE 1 every time carries its zone. Bing console shows Pacific; Google Search Console dates are Pacific-day.

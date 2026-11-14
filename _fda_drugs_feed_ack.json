@@ -9,7 +9,10 @@
   "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-approves-isatuximab-irfc-bortezomib-lenalidomide-and-dexamethasone-newly-diagnosed-multiple",
   "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-approves-belantamab-mafodotin-blmf-relapsed-or-refractory-multiple-myeloma",
   "pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
-  "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis"
+  "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis",
+  "pdufa_rhhby_2026-11-30_pmn|http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy",
+  "pdufa_rhhby_2026-12-31_sle|http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy",
+  "pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer"
  ],
  "reasons": {
   "pdufa_rhhby_2026-10-15|http://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-mct8-deficiency": "FDA notice 'FDA Approves First Treatment for MCT8 Deficiency' matched Enspryng (thyroid eye disease) on the lone word 'thyroid'. Not a satralizumab decision. Audit 10-03 Tier 0; matcher rule 1.3(d) now forbids lone organ-word matches.",
@@ -20,6 +23,9 @@
   "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-approves-isatuximab-irfc-bortezomib-lenalidomide-and-dexamethasone-newly-diagnosed-multiple": "Sanofi's isatuximab regimen, matched on 'dexamethasone'; BMY's mezigdomide NDA (May 13, 2027) is unrelated and pending.",
   "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-approves-belantamab-mafodotin-blmf-relapsed-or-refractory-multiple-myeloma": "GSK's belantamab mafodotin, matched on 'dexamethasone'; BMY's mezigdomide NDA (May 13, 2027) is unrelated and pending.",
   "pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation": "Republished 2023 notice (entrectinib pediatric pellets, Oct 20, 2023) with a Nov 10, 2026 pubDate; matched on 'formulation'. Not a JAZZ action.",
-  "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis": "Republished 2021 notice (Darzalex Faspro AL amyloidosis, Jan 15, 2021) with a Nov 10, 2026 pubDate; matched on 'dexamethasone'. Not a BMY action."
+  "pdufa_bmy_2027-05-13|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-darzalex-faspro-newly-diagnosed-light-chain-amyloidosis": "Republished 2021 notice (Darzalex Faspro AL amyloidosis, Jan 15, 2021) with a Nov 10, 2026 pubDate; matched on 'dexamethasone'. Not a BMY action.",
+  "pdufa_rhhby_2026-11-30_pmn|http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy": "Published 2026-11-13: /fda-decision/RHHBY-2026-11-13.",
+  "pdufa_rhhby_2026-12-31_sle|http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy": "The pMN approval notice; our SLE row is a different sBLA (goal Dec 2026).",
+  "pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer": "Republished April 13, 2021 Trodelvy urothelial notice (withdrawn Nov 22, 2024) with a Nov 12, 2026 pubDate; not MRK's sacituzumab tirumotecan."
  }
 }

@@ -141,7 +141,10 @@ def page(r, slug):
              "url": url, "startDate": iso_claim, "endDate": iso_claim}]},
         ensure_ascii=False)
 
-    kv = [("FDA PDUFA target date", d if dp == "day" else human + " (window)"),
+    # 2026-11-13: one owner formats a window (site_windows.window_label; test_cross_surface_values). The page said
+    # "December 2026 (window)" where every other surface says "Dec 2026".
+    from site_windows import window_label as _wl
+    kv = [("FDA PDUFA target date", d if dp == "day" else _wl(r)),
           ("Drug / candidate", drug), ("Company", comp)]
     if ind:
         kv.insert(2, ("Indication", ind))

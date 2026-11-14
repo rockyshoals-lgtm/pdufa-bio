@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """add_decision_chart.py -- inject a run-up -> decision-day reaction chart into a decision page.
 
-Builds an SVG from REAL Polygon daily closes spanning ~8 weeks before the FDA decision through today:
+Builds an SVG from REAL daily closes (FMP via price_source; Polygon before 2026-11-10) spanning ~8 weeks before the FDA decision through today:
 the run-up is drawn neutral, the segment AFTER the decision day is colored green/red (the reaction),
 and the decision day itself is marked with a gold dot + dashed line. A caption states the day-of move.
-If Polygon has no data for the ticker (e.g. some ADRs), the page keeps its honest "no chart" note.
+If FMP has no data for the ticker (e.g. some ADRs), the page keeps its honest "no chart" note.
 
 Idempotent: the block carries id="reaction-chart" and is replaced (not duplicated) on re-run.
 
@@ -30,25 +30,13 @@ def load_key():
                 if line and not line.startswith("#") and "=" in line:
                     k, v = line.split("=", 1)
                     os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-    return os.environ.get("POLYGON_API_KEY")
+    return os.environ.get("FMP_API_KEY")   # 2026-11-13: FMP via price_source
 
 
 def poly_daily(key, t, start, end):
-    url = (f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-           f"?adjusted=true&sort=asc&limit=300&apiKey={key}")
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=25) as r:
-                rows = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("results") or []
-                return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(), x["c"])
-                        for x in rows if x.get("c") is not None and x.get("t") is not None]
-        except urllib.error.HTTPError as e:
-            if e.code in (429,) or e.code >= 500:
-                time.sleep(2 ** attempt); continue
-            return []
-        except Exception:
-            time.sleep(1)
-    return []
+    """[(iso_date, close)] ascending. 2026-11-13: FMP via price_source (name kept for callers)."""
+    import price_source
+    return price_source.closes(t, start, end)
 
 
 def build_chart(dated, decision_date):
@@ -108,12 +96,12 @@ def main():
         raise SystemExit(f"decision page not found: {page}")
     key = load_key()
     if not key:
-        raise SystemExit("no POLYGON_API_KEY -> leaving the honest no-chart note in place")
+        raise SystemExit("no FMP_API_KEY -> leaving the honest no-chart note in place")
     start = (dt.date.fromisoformat(a.date) - dt.timedelta(days=a.days_before)).isoformat()
     dated = poly_daily(key, a.ticker, start, TODAY.isoformat())
     block = build_chart(dated, a.date)
     if not block:
-        print(f"no Polygon data for {a.ticker} -> keeping no-chart note (nothing fabricated)")
+        print(f"no price data (FMP) for {a.ticker} -> keeping no-chart note (nothing fabricated)")
         return
     inject(page, block)
     print(f"injected reaction chart into {os.path.relpath(page, SITE)} ({len(dated)} daily closes)")

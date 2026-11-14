@@ -7,8 +7,8 @@ day's citations. Now:
 
   primary   FMP /stable/ (paid key, already a repo secret): historical-price-eod/full, batch-quote-short,
             market-capitalization-batch. One batch call covers every forward ticker.
-  fallback  Polygon, ONLY while PRICE_POLYGON_FALLBACK is not "0" and POLYGON_API_KEY is set. Kept for one week after
-            the 2026-11-10 cutover, then deleted (see the workflow header).
+  Polygon   REMOVED 2026-11-13 (David). Closes Polygon recorded before the 2026-11-10 cutover stay in the caches as
+            the series of record; nothing fetches from Polygon any more (tests/test_prices_fmp_only.py).
   fallback  Alpaca market data (free, IEX feed) when ALPACA_KEY_ID and ALPACA_SECRET_KEY exist. Dormant until David
             adds the two secrets; closes only (IEX volumes are partial, so Alpaca volume is never published).
 
@@ -22,7 +22,7 @@ Every series is [(iso_date, close, volume)] ascending; the date is the Eastern t
     daily(ticker, start, end)    -> [(date, close, volume)]
     quotes(tickers)              -> {ticker: {"price": float, "volume": int}}
     market_caps(tickers)         -> {ticker: float}
-    source_of(ticker)            -> "FMP" | "Polygon" | "Alpaca" | None   (which feed served the last daily() call)
+    source_of(ticker)            -> "FMP" | "Alpaca" | None   (which feed served the last daily() call)
 """
 import datetime as dt
 import json
@@ -37,7 +37,7 @@ UA = {"User-Agent": "pdufa.bio-research-script/1.0"}
 FMP = "https://financialmodelingprep.com/stable/"
 _cache = {}
 _served = {}
-STATS = {"FMP": 0, "Polygon": 0, "Alpaca": 0, "miss": 0, "calls": 0}
+STATS = {"FMP": 0, "Alpaca": 0, "miss": 0, "calls": 0}
 
 
 def _env():
@@ -86,18 +86,6 @@ def _fmp_daily(t, start, end):
     out = [(str(x["date"])[:10], float(x["close"]), int(x.get("volume") or 0)) for x in rows
            if x.get("date") and x.get("close") is not None]
     return sorted(out)
-
-
-def _polygon_daily(t, start, end):
-    k = os.environ.get("POLYGON_API_KEY")
-    if not k or os.environ.get("PRICE_POLYGON_FALLBACK", "1") == "0":
-        return []
-    j = _get(f"https://api.polygon.io/v2/aggs/ticker/{t}/range/1/day/{start}/{end}"
-             f"?adjusted=true&sort=asc&limit=50000&apiKey={k}", tries=3)
-    rows = (j or {}).get("results") or []
-    # Polygon daily bars are stamped at the ET-midnight bar start in UTC ms, so the UTC date is the trading date.
-    return [(dt.datetime.fromtimestamp(x["t"] / 1000, dt.timezone.utc).date().isoformat(), float(x["c"]),
-             int(x.get("v") or 0)) for x in rows if x.get("c") is not None and x.get("t") is not None]
 
 
 def _alpaca_daily(t, start, end):
@@ -153,10 +141,9 @@ def daily(ticker, start, end=None):
     key = (str(ticker).upper(), start, end)
     if key in _cache:
         return _cache[key]
-    for name, fn in (("FMP", _fmp_daily), ("Polygon", _polygon_daily), ("Alpaca", _alpaca_daily)):
+    for name, fn in (("FMP", _fmp_daily), ("Alpaca", _alpaca_daily)):
         rows = fn(ticker, start, end)
-        if name != "Polygon":
-            rows = _apply_recorded(ticker, rows)
+        rows = _apply_recorded(ticker, rows)
         if rows:
             STATS[name] += 1
             _served[key[0]] = name
@@ -216,5 +203,5 @@ def _eastern_today():
 
 
 def summary():
-    return (f"price_source: {STATS['FMP']} series from FMP, {STATS['Polygon']} Polygon fallback, "
-            f"{STATS['Alpaca']} Alpaca fallback, {STATS['miss']} with no data; {STATS['calls']} HTTP calls")
+    return (f"price_source: {STATS['FMP']} series from FMP, {STATS['Alpaca']} Alpaca fallback, "
+            f"{STATS['miss']} with no data; {STATS['calls']} HTTP calls")

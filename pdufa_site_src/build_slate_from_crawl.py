@@ -325,8 +325,22 @@ def main():
         except Exception as e:
             print(f"  WARN: dataset.mjs unreadable for the exact sweep ({e}); "
                   f"falling back to text matching alone")
+    # 2026-11-13: two RHHBY applications share (RHHBY, 2026-11-30): Gazyva pMN (decided Nov 13, month-precision goal)
+    # and giredestrant lidERA (pending, day goal). The exact sweep keyed on (ticker, date) alone removed giredestrant.
+    # An exact hit no longer sweeps a slate catalyst whose drug matches a still-pending row on the same key.
+    pending = {}
+    try:
+        for r in drows:
+            if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() in ("upcoming", "awaiting"):
+                pending.setdefault((r.get("t"), r.get("d")), []).append(str(r.get("name") or "").lower())
+    except NameError:
+        pass
+    _tok = lambda s_: set(re.findall(r"[a-z]{5,}", str(s_).lower()))
     swept = []
     for k in list(existing.keys()):
+        cat_drug = str(existing[k].get("drug") or "")
+        if k in pending and any(_tok(cat_drug) & _tok(n) for n in pending[k]):
+            continue
         hit = exact.get(k) or already_decided(existing[k], DECIDED)
         if hit:
             swept.append((k, hit))
