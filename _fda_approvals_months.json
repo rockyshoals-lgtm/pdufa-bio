@@ -8017,17 +8017,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761105Orig1s053; 761262Orig1s019ltr.pdf"
 },
 {
-"app": "NDA211651",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-14",
-"class": "Efficacy",
-"date": "2026-10-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
-},
-{
 "app": "NDA217439",
 "brand": "Talzenna",
 "generic": "talazoparib",
@@ -8037,6 +8026,17 @@
 "class": "Efficacy",
 "date": "2026-10-26",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
+},
+{
+"app": "NDA211651",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-14",
+"class": "Efficacy",
+"date": "2026-10-26",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
 },
 {
 "app": "BLA761187",
@@ -8119,6 +8119,17 @@
 "class": "Type 5 - New Formulation or New Manufacturer",
 "date": "2026-11-09",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221093Orig1s000ltr.pdf"
+},
+{
+"app": "NDA211448",
+"brand": "Mezofy",
+"generic": "aripiprazole",
+"sponsor": "Cmg Pharm Co Ltd",
+"kind": "efficacy supplement",
+"sub": "SUPPL-1",
+"class": "Efficacy",
+"date": "2026-11-10",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211448Orig1s001ltr.pdf"
 }
 ]
 }
