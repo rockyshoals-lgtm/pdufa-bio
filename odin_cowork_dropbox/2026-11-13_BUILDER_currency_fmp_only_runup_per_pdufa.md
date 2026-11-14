@@ -47,3 +47,16 @@ with the pdufa runup for all pdufas we have missed". Choices: remove Polygon now
 
 ## Still David's
 Delete the POLYGON_API_KEY secret; Google list daily; SMTP; `/surges`; outreach.
+
+## Outcome (appended 2026-11-13 ~21:00 Pacific = 2026-11-14 ~00:00 Eastern)
+- Local guards caught two more places where two applications on one (ticker, date) broke: the slate's decided-sweep
+  removed RHHBY giredestrant (Nov 30) because the decided Gazyva pMN row shares (RHHBY, 2026-11-30); restored, and the
+  sweep, test_slate_no_decided and test_condition_pages_current now require the drug to match before treating a key as
+  decided. The Gazyva pMN event page FAQ ("is November 2026 for") now reads decided; event pages built for window goals
+  print the one window label ("Dec 2026", not "December 2026 (window)").
+- **Run 43556415713 green**: https://github.com/rockyshoals-lgtm/pdufa-bio/actions/runs/43556415713 . Price step 12 s, 44/44
+  tickers from FMP; the run folded Gazyva pMN into the study (1,886 events); 0 study blanks left except CORC 2025-12-30;
+  runup_summary measured on 59 decided + 55 upcoming rows. Issues #79-#82 closed; 0 open.
+- Live: /fda-decision/RHHBY-2026-11-13 ("Gazyva (obinutuzumab) FDA Approval Announced Nov 13, 2026"), /pdufa/RHHBY-giredestrant
+  (Nov 30 2026, still pending), /runup-by-year ("1,886 FDA Decisions"), and /api/v1/events?ticker=CYTK returns
+  runup_summary {"basis": "so far", "unit": "pct", "as_of": "2026-11-13", ...}.
