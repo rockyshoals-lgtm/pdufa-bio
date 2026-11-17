@@ -1,0 +1,782 @@
+{
+ "_comment": "Curated, sourced mappings for the per-application pages (/fda-application/<appl>), built by build_fda_application_pages.py and guarded by tests/test_fda_application_pages.py. FDA facts (brand, ingredient, applicant, products, approval dates) are NOT stored here; they are read from the FDA Orange Book at build time. Every code name, owner/ticker and history row carries its own primary source: URL, publisher, document, the document's date, the date we read it, and a verbatim quote (quote_2: a second verbatim excerpt from the SAME document) that itself contains the mapped value. applicant_verified is the FDA applicant of record the owner was verified against: if the Orange Book applicant changes, owner and history are withheld until a person re-verifies. Add an application only after reading every source yourself.",
+ "sponsor_domains": {
+  "Teva": [
+   "tevapharm.com"
+  ],
+  "BioXcel Therapeutics": [
+   "bioxcel.com"
+  ],
+  "Cytokinetics": [
+   "cytokinetics.com"
+  ],
+  "Protagonist Therapeutics": [
+   "protagonist-inc.com"
+  ],
+  "Takeda": [
+   "takeda.com"
+  ],
+  "Roivant Sciences": [
+   "roivant.com"
+  ],
+  "Pfizer": [
+   "pfizer.com"
+  ],
+  "Incyte": [
+   "incyte.com"
+  ],
+  "Mirum Pharmaceuticals": [
+   "mirumpharma.com"
+  ],
+  "GSK": [
+   "gsk.com"
+  ],
+  "Ionis Pharmaceuticals": [
+   "ionis.com",
+   "ionispharma.com"
+  ],
+  "Celcuity": [
+   "celcuity.com"
+  ],
+  "Telix Pharmaceuticals": [
+   "telixpharma.com"
+  ],
+  "AbbVie": [
+   "abbvie.com"
+  ],
+  "Merck": [
+   "merck.com"
+  ],
+  "Corcept Therapeutics": [
+   "corcept.com"
+  ]
+ },
+ "applications": [
+  {
+   "appl": "NDA 215390",
+   "brand": "IGALMI",
+   "ingredient": "dexmedetomidine hydrochloride",
+   "applicant_verified": "TEVA NEUROSCIENCE INC",
+   "drug_pages": [
+    "igalmi"
+   ],
+   "code_names": [
+    {
+     "name": "BXCL501",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1720893/000110465926036214/btai-20251231x10k.htm",
+      "publisher": "BioXcel Therapeutics",
+      "doc": "10-K",
+      "doc_date": "2026-03-27",
+      "read": "2026-11-17",
+      "quote": "BXCL501 (currently marketed and commercialized as IGALMI)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Teva Pharmaceutical Industries Ltd.",
+    "ticker": "TEVA",
+    "exchange": "NYSE/TASE",
+    "src": {
+     "url": "https://www.globenewswire.com/news-release/2026/11/16/3403459/0/en/u-s-fda-approves-igalmi-as-first-at-home-acute-treatment-for-agitation-associated-with-schizophrenia-schizoaffective-disorder-or-bipolar-i-or-ii-disorder-in-adults.html",
+     "publisher": "Teva",
+     "doc": "press release",
+     "doc_date": "2026-11-16",
+     "read": "2026-11-17",
+     "quote": "a U.S. affiliate of Teva Pharmaceutical Industries Ltd. (NYSE and TASE: TEVA)",
+     "quote_2": "Teva acquired IGALMI in late October 2026."
+    }
+   },
+   "history": [
+    {
+     "company": "BioXcel Therapeutics",
+     "ticker": "BTAI",
+     "role": "sold_to_owner",
+     "date": "2026-10-26",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1720893/000110465926120737/tm2624733d2_8k.htm",
+      "publisher": "BioXcel Therapeutics",
+      "doc": "8-K",
+      "doc_date": "2026-10-30",
+      "read": "2026-11-17",
+      "quote": "On October 26, 2026, the Debtors completed the Sale, pursuant to which Teva acquired",
+      "quote_2": "BTAI",
+      "note": "quote_2 is the verbatim Trading Symbol cell on the 8-K cover (Section 12(b) table, Nasdaq). The same 8-K also says Nasdaq suspended trading on September 8, 2026 and the stock now trades on OTC Pink under the symbol BTAIQ."
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 219083",
+   "brand": "MYQORZO",
+   "ingredient": "aficamten",
+   "applicant_verified": "CYTOKINETICS INC",
+   "drug_pages": [
+    "myqorzo",
+    "aficamten"
+   ],
+   "code_names": [
+    {
+     "name": "CK-274",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1061983/000156459022007218/cytk-10k_20211231.htm",
+      "publisher": "Cytokinetics",
+      "doc": "10-K",
+      "doc_date": "2022-02-25",
+      "read": "2026-11-17",
+      "quote": "aficamten (also known as CK-274)"
+     }
+    },
+    {
+     "name": "CK-3773274",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1061983/000156459022007218/cytk-10k_20211231.htm",
+      "publisher": "Cytokinetics",
+      "doc": "10-K",
+      "doc_date": "2022-02-25",
+      "read": "2026-11-17",
+      "quote": "aficamten (also known asCK-3773274 or CK-274), a novel cardiac myosin inhibitor"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Cytokinetics, Incorporated",
+    "ticker": "CYTK",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://www.globenewswire.com/fr/news-release/2025/12/19/3208724/35409/en/p.html",
+     "publisher": "Cytokinetics",
+     "doc": "press release",
+     "doc_date": "2025-12-19",
+     "read": "2026-11-17",
+     "quote": "Cytokinetics, Incorporated (Nasdaq: CYTK) today announced that the U.S. Food and Drug Administration (FDA) has approved"
+    }
+   },
+   "history": []
+  },
+  {
+   "appl": "NDA 220605",
+   "brand": "MIMRYLO",
+   "ingredient": "rusfertide",
+   "applicant_verified": "TAKEDA PHARMACEUTICALS AMERICA INC",
+   "drug_pages": [
+    "rusfertide"
+   ],
+   "code_names": [
+    {
+     "name": "PTG-300",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1377121/000155837022002385/ptgx-20211231x10k.htm",
+      "publisher": "Protagonist Therapeutics",
+      "doc": "10-K",
+      "doc_date": "2022-02-28",
+      "read": "2026-11-17",
+      "quote": "Our most advanced clinical asset, rusfertide (generic name for PTG-300), is an injectable hepcidin mimetic"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Takeda Pharmaceutical Company Limited",
+    "ticker": "TAK",
+    "exchange": "NYSE",
+    "src": {
+     "url": "https://www.takeda.com/en-us/newsroom/news-releases/2026/fda-approval-mimrylo/",
+     "publisher": "Takeda",
+     "doc": "press release",
+     "doc_date": "2026-08-28",
+     "read": "2026-11-17",
+     "quote": "Takeda (TSE:4502/NYSE:TAK) announced U.S. Food and Drug Administration (FDA) approval of the New Drug Application (NDA)* for MIMRYLO",
+     "quote_2": "Takeda now has exclusive global development and commercialization rights for MIMRYLO."
+    }
+   },
+   "history": [
+    {
+     "company": "Protagonist Therapeutics",
+     "ticker": "PTGX",
+     "role": "licensor",
+     "date": "2024-01-31",
+     "src": {
+      "url": "https://www.takeda.com/newsroom/newsreleases/2024/takeda-and-protagonist-therapeutics-inc-enter-into-worldwide-license-and-collaboration-agreement-for-rusfertide-a-late-stage-rare-hematology-asset/",
+      "publisher": "Takeda",
+      "doc": "press release",
+      "doc_date": "2024-01-31",
+      "read": "2026-11-17",
+      "quote": "Takeda (TSE:4502/NYSE:TAK) and Protagonist Therapeutics, Inc., (Nasdaq: PTGX) today announced the signing",
+      "quote_2": "license and collaboration agreement for the development and commercialization of rusfertide"
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 220106",
+   "brand": "LISRAYA",
+   "ingredient": "brepocitinib tosylate",
+   "applicant_verified": "PRIOVANT THERAPEUTICS INC",
+   "drug_pages": [
+    "brepocitinib"
+   ],
+   "code_names": [
+    {
+     "name": "PF-06700841",
+     "src": {
+      "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/b7931030-synopsis.pdf",
+      "publisher": "Pfizer",
+      "doc": "clinical study report synopsis",
+      "doc_date": "2021-05-20",
+      "read": "2026-11-17",
+      "quote": "Investigational Product: Brepocitinib (PF-06700841)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Roivant Sciences Ltd.",
+    "ticker": "ROIV",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126034735/ef20081229_ex99-1.htm",
+     "publisher": "Roivant Sciences",
+     "doc": "press release (8-K exhibit 99.1)",
+     "doc_date": "2026-08-27",
+     "read": "2026-11-17",
+     "quote": "Roivant (Nasdaq: ROIV) today announced that the U.S. Food and Drug Administration (FDA) has approved"
+    }
+   },
+   "history": [
+    {
+     "company": "Pfizer",
+     "role": "minority_owner_of_applicant",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126034854/ef20081283_ex99-1.htm",
+      "publisher": "Roivant Sciences",
+      "doc": "investor presentation (8-K exhibit 99.1)",
+      "doc_date": "2026-08-28",
+      "read": "2026-11-17",
+      "quote": "ROIV owns 71%1 of Priovant, with Pfizer owning 24%.",
+      "quote_2": "As of June 30, 2026. 65% on a fully diluted basis."
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 221198",
+   "brand": "ATEBRIOZ",
+   "ingredient": "zilurgisertib",
+   "applicant_verified": "MIRUM PHARMACEUTICALS INC",
+   "drug_pages": [
+    "atebrioz"
+   ],
+   "code_names": [
+    {
+     "name": "INCB000928",
+     "src": {
+      "url": "https://investor.incyte.com/news-releases/news-release-details/data-across-incytes-oncology-portfolio-accepted-presentation",
+      "publisher": "Incyte",
+      "doc": "press release",
+      "doc_date": "2023-05-25",
+      "read": "2026-11-17",
+      "quote": "Phase 1/2 Study of the Activin Receptor-Like Kinase (ALK)-2 Inhibitor Zilurgisertib (INCB000928, LIMBER-104)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Mirum Pharmaceuticals, Inc.",
+    "ticker": "MIRM",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva",
+     "publisher": "Mirum Pharmaceuticals and Incyte",
+     "doc": "press release",
+     "doc_date": "2026-09-25",
+     "read": "2026-11-17",
+     "quote": "Mirum Pharmaceuticals, Inc. (Nasdaq:MIRM) and Incyte (Nasdaq:INCY) today announced"
+    }
+   },
+   "history": [
+    {
+     "company": "Incyte",
+     "ticker": "INCY",
+     "role": "licensor",
+     "src": {
+      "url": "https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva",
+      "publisher": "Mirum Pharmaceuticals and Incyte",
+      "doc": "press release",
+      "doc_date": "2026-09-25",
+      "read": "2026-11-17",
+      "quote": "Atebrioz was developed by Incyte and licensed to Mirum Pharmaceuticals, Inc. for worldwide development and commercialization.",
+      "quote_2": "Mirum Pharmaceuticals, Inc. (Nasdaq:MIRM) and Incyte (Nasdaq:INCY) today announced"
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 215960",
+   "brand": "UTEBZI",
+   "ingredient": "tebipenem pivoxil hydrobromide",
+   "applicant_verified": "GLAXOSMITHKLINE LLC",
+   "drug_pages": [
+    "tebipenem-hbr"
+   ],
+   "code_names": [
+    {
+     "name": "SPR994",
+     "src": {
+      "url": "https://www.gsk.com/en-gb/media/press-releases/gsk-and-spero-therapeutics-announce-exclusive-licence-agreement-for-tebipenem-hbr-a-late-stage-antibiotic-that-may-treat-complicated-urinary-tract-infections",
+      "publisher": "GSK",
+      "doc": "press release",
+      "doc_date": "2022-09-22",
+      "read": "2026-11-17",
+      "quote": "Tebipenem HBr (tebipenem pivoxil hydrobromide; formerly SPR994)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "GSK plc",
+    "ticker": "GSK",
+    "exchange": "LSE/NYSE",
+    "src": {
+     "url": "https://www.gsk.com/en-gb/media/press-releases/utebzi-tebipenem-pivoxil-approved-in-the-us-for-adults-with-complicated-urinary-tract-infections-cutis/",
+     "publisher": "GSK",
+     "doc": "press release",
+     "doc_date": "2026-06-17",
+     "read": "2026-11-17",
+     "quote": "GSK plc (LSE/NYSE: GSK) and Spero Therapeutics (Nasdaq: SPRO) today announced"
+    }
+   },
+   "history": [
+    {
+     "company": "Spero Therapeutics",
+     "ticker": "SPRO",
+     "role": "licensor",
+     "date": "2022-09-22",
+     "src": {
+      "url": "https://www.gsk.com/en-gb/media/press-releases/gsk-and-spero-therapeutics-announce-exclusive-licence-agreement-for-tebipenem-hbr-a-late-stage-antibiotic-that-may-treat-complicated-urinary-tract-infections",
+      "publisher": "GSK",
+      "doc": "press release",
+      "doc_date": "2022-09-22",
+      "read": "2026-11-17",
+      "quote": "GSK plc (LSE/NYSE: GSK) and Spero Therapeutics, Inc. (Nasdaq: SPRO) today announced they have entered into an exclusive licence agreement for tebipenem pivoxil hydrobromide (tebipenem HBr)"
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 220185",
+   "brand": "JIDEYTRO",
+   "ingredient": "zidesamtinib",
+   "applicant_verified": "NUVALENT INC",
+   "drug_pages": [
+    "zidesamtinib"
+   ],
+   "code_names": [
+    {
+     "name": "NVL-520",
+     "src": {
+      "url": "https://www.gsk.com/en-gb/media/press-releases/gsk-enters-agreement-to-acquire-nuvalent-inc/",
+      "publisher": "GSK",
+      "doc": "press release",
+      "doc_date": "2026-06-09",
+      "read": "2026-11-17",
+      "quote": "Zidesamtinib (NVL-520) and neladalkib (NVL-655) are two late-stage, potential best-in-class,"
+     }
+    }
+   ],
+   "owner": {
+    "company": "GSK plc",
+    "ticker": "GSK",
+    "exchange": "LSE/NYSE",
+    "src": {
+     "url": "https://www.gsk.com/en-gb/media/press-releases/jideytro-zidesamtinib-approved-in-the-us-for-previously-treated-ros1-positive-non-small-cell-lung-cancer",
+     "publisher": "GSK",
+     "doc": "press release",
+     "doc_date": "2026-07-22",
+     "read": "2026-11-17",
+     "quote": "GSK plc (LSE/NYSE: GSK)",
+     "quote_2": "part of the portfolio from the recently completed acquisition of Nuvalent, Inc."
+    }
+   },
+   "history": [
+    {
+     "company": "Nuvalent, Inc.",
+     "ticker": "NUVL",
+     "role": "acquired_by_owner",
+     "date": "2026-07-15",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/0001131399/000165495426006663/a5060m.htm",
+      "publisher": "GSK",
+      "doc": "6-K",
+      "doc_date": "2026-07-15",
+      "read": "2026-11-17",
+      "quote": "GSK plc (LSE/NYSE: GSK) today announced completion of its acquisition of Nuvalent, Inc.",
+      "quote_2": "Nuvalent (NASDAQ: NUVL) is a clinical-stage biopharmaceutical company focused on creating precisely targeted"
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 220210",
+   "brand": "ZANVASTRO",
+   "ingredient": "zilganersen",
+   "applicant_verified": "IONIS PHARMACEUTICALS INC",
+   "drug_pages": [
+    "zilganersen"
+   ],
+   "code_names": [
+    {
+     "name": "ION373",
+     "src": {
+      "url": "https://ir.ionis.com/node/31726",
+      "publisher": "Ionis Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2024-10-01",
+      "read": "2026-11-17",
+      "quote": "About Zilganersen (ION373)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Ionis Pharmaceuticals, Inc.",
+    "ticker": "IONS",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://ir.ionis.com/node/35086",
+     "publisher": "Ionis Pharmaceuticals",
+     "doc": "press release",
+     "doc_date": "2026-09-03",
+     "read": "2026-11-17",
+     "quote": "Ionis Pharmaceuticals, Inc. (Nasdaq: IONS)"
+    }
+   },
+   "history": [
+    {
+     "company": "Recordati",
+     "role": "partner",
+     "src": {
+      "url": "https://ir.ionis.com/node/35086",
+      "publisher": "Ionis Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2026-09-03",
+      "read": "2026-11-17",
+      "quote": "Recordati obtained exclusive rights to develop and commercialize zilganersen in all countries outside the U.S."
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 219908",
+   "brand": "REVTORPYK",
+   "ingredient": "gedatolisib",
+   "applicant_verified": "CELCUITY INC",
+   "drug_pages": [
+    "gedatolisib"
+   ],
+   "code_names": [],
+   "owner": {
+    "company": "Celcuity Inc.",
+    "ticker": "CELC",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://www.celcuity.com/?p=3743",
+     "publisher": "Celcuity",
+     "doc": "press release",
+     "doc_date": "2026-07-14",
+     "read": "2026-11-17",
+     "quote": "MINNEAPOLIS, July 14, 2026 (GLOBE NEWSWIRE) -- Celcuity Inc. (Nasdaq: CELC), a biotechnology company focused on developing"
+    }
+   },
+   "history": []
+  },
+  {
+   "appl": "NDA 218592",
+   "brand": "PIXCLARA",
+   "ingredient": "floretyrosine F-18",
+   "applicant_verified": "TELIX PHARMACEUTICALS US INC",
+   "drug_pages": [
+    "pixclara"
+   ],
+   "code_names": [
+    {
+     "name": "TLX101-Px",
+     "src": {
+      "url": "https://www.globenewswire.com/news-release/2026/09/14/3360898/0/en/fda-approves-telix-s-brain-cancer-imaging-drug-pixclara.html",
+      "publisher": "Telix Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2026-09-14",
+      "read": "2026-11-17",
+      "quote": "Pixclara (TLX101-Px) is also the subject of a Phase 3 registrational study for potential indication expansion"
+     }
+    },
+    {
+     "name": "TLX101-CDx",
+     "src": {
+      "url": "https://www.prnewswire.com/apac/news-releases/fda-accepts-new-drug-application-and-grants-priority-review-for-tlx101-cdx-pixclara-brain-cancer-imaging-agent-302285197.html",
+      "publisher": "Telix Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2024-10-24",
+      "read": "2026-11-17",
+      "quote": "TLX101-CDx (Pixclara) is a PET imaging agent, which has been granted fast track and orphan drug"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Telix Pharmaceuticals Limited",
+    "ticker": "TLX",
+    "exchange": "ASX/Nasdaq",
+    "src": {
+     "url": "https://www.globenewswire.com/news-release/2026/09/14/3360898/0/en/fda-approves-telix-s-brain-cancer-imaging-drug-pixclara.html",
+     "publisher": "Telix Pharmaceuticals",
+     "doc": "press release",
+     "doc_date": "2026-09-14",
+     "read": "2026-11-17",
+     "quote": "(ASX: TLX, NASDAQ: TLX, “Telix”) today announces that the United States (U.S.) Food and Drug Administration (FDA)"
+    }
+   },
+   "history": []
+  },
+  {
+   "appl": "NDA 221276",
+   "brand": "HIBSAGO",
+   "ingredient": "bepirovirsen",
+   "applicant_verified": "GLAXOSMITHKLINE LLC",
+   "drug_pages": [
+    "bepirovirsen"
+   ],
+   "code_names": [
+    {
+     "name": "GSK3228836",
+     "src": {
+      "url": "https://ir.ionispharma.com/news-releases/news-release-details/ionis-announces-positive-data-gsks-phase-2b-clinical-study",
+      "publisher": "Ionis Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2022-11-08",
+      "read": "2026-11-17",
+      "quote": "Bepirovirsen (formerly IONIS-HBVRx), also known as GSK3228836, was discovered, and jointly developed with GSK."
+     }
+    },
+    {
+     "name": "IONIS-HBVRx",
+     "src": {
+      "url": "https://ir.ionispharma.com/news-releases/news-release-details/ionis-announces-positive-data-gsks-phase-2b-clinical-study",
+      "publisher": "Ionis Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2022-11-08",
+      "read": "2026-11-17",
+      "quote": "Bepirovirsen (formerly IONIS-HBVRx), also known as GSK3228836, was discovered, and jointly developed with GSK."
+     }
+    }
+   ],
+   "owner": {
+    "company": "GSK plc",
+    "ticker": "GSK",
+    "exchange": "LSE/NYSE",
+    "src": {
+     "url": "https://www.gsk.com/en-gb/media/press-releases/hibsago-bepirovirsen-approved-in-the-us-for-the-treatment-of-chronic-hepatitis-b-chb/",
+     "publisher": "GSK",
+     "doc": "press release",
+     "doc_date": "2026-10-20",
+     "read": "2026-11-17",
+     "quote": "GSK plc (LSE/NYSE: GSK) today announced that the US Food and Drug Administration (FDA) has approved"
+    }
+   },
+   "history": [
+    {
+     "company": "Ionis Pharmaceuticals",
+     "ticker": "IONS",
+     "role": "licensor",
+     "src": {
+      "url": "https://ir.ionispharma.com/news-releases/news-release-details/ionis-announces-positive-data-gsks-phase-2b-clinical-study",
+      "publisher": "Ionis Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2022-11-08",
+      "read": "2026-11-17",
+      "quote": "GSK licensed bepirovirsen from Ionis in August 2019 under a collaborative development and licensing agreement.",
+      "quote_2": "Ionis Pharmaceuticals, Inc. (Nasdaq: IONS) today announced that GSK presented positive end of study data"
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 220415",
+   "brand": "JUVMO",
+   "ingredient": "tavapadon",
+   "applicant_verified": "ABBVIE INC",
+   "drug_pages": [
+    "tavapadon"
+   ],
+   "code_names": [],
+   "owner": {
+    "company": "AbbVie Inc.",
+    "ticker": "ABBV",
+    "exchange": "NYSE",
+    "src": {
+     "url": "https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease",
+     "publisher": "AbbVie",
+     "doc": "press release",
+     "doc_date": "2026-09-28",
+     "read": "2026-11-17",
+     "quote": "AbbVie (NYSE: ABBV) today announced that the U.S. Food and Drug Administration (FDA) has approved"
+    }
+   },
+   "history": [
+    {
+     "company": "Cerevel Therapeutics",
+     "ticker": "CERE",
+     "role": "acquired_by_owner",
+     "date": "2024-08-01",
+     "src": {
+      "url": "https://news.abbvie.com/2024-08-01-AbbVie-Completes-Acquisition-of-Cerevel-Therapeutics",
+      "publisher": "AbbVie",
+      "doc": "press release",
+      "doc_date": "2024-08-01",
+      "read": "2026-11-17",
+      "quote": "AbbVie (NYSE: ABBV) today announced that it has completed its acquisition of Cerevel Therapeutics (NASDAQ: CERE).",
+      "quote_2": "Tavapadon, a first-in-class dopamine D1/D5 selective partial agonist for the management of Parkinson's disease"
+     }
+    }
+   ]
+  },
+  {
+   "appl": "NDA 220848",
+   "brand": "LIPFENDRA",
+   "ingredient": "enlicitide decanoate",
+   "applicant_verified": "MERCK SHARP AND DOHME LLC",
+   "drug_pages": [
+    "lipfendra"
+   ],
+   "code_names": [
+    {
+     "name": "MK-0616",
+     "src": {
+      "url": "https://www.sec.gov/Archives/edgar/data/310158/000162828025007732/mrk-20241231.htm",
+      "publisher": "Merck",
+      "doc": "10-K",
+      "doc_date": "2025-02-25",
+      "read": "2026-11-17",
+      "quote": "MK-0616 (enlicitide decanoate)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Merck & Co., Inc.",
+    "ticker": "MRK",
+    "exchange": "NYSE",
+    "src": {
+     "url": "https://www.merck.com/news/mercks-lipfendra-enlicitide-is-the-first-and-only-once-daily-oral-pcsk9-inhibitor-approved-by-the-u-s-fda-to-reduce-ldl-c-in-adults-with-hypercholesterolemia/",
+     "publisher": "Merck",
+     "doc": "press release",
+     "doc_date": "2026-07-16",
+     "read": "2026-11-17",
+     "quote": "Merck (NYSE: MRK), known as MSD outside of the United States and Canada, today announced"
+    }
+   },
+   "history": []
+  },
+  {
+   "appl": "NDA 218614",
+   "brand": "TRYNGOLZA",
+   "ingredient": "olezarsen",
+   "applicant_verified": "IONIS PHARMACEUTICALS INC",
+   "drug_pages": [
+    "olezarsen"
+   ],
+   "code_names": [
+    {
+     "name": "IONIS-APOCIII-LRx",
+     "src": {
+      "url": "https://ir.ionis.com/news-releases/news-release-details/ionis-reports-third-quarter-2021-financial-results-and-recent",
+      "publisher": "Ionis Pharmaceuticals",
+      "doc": "press release",
+      "doc_date": "2021-11-03",
+      "read": "2026-11-17",
+      "quote": "Initiated the Phase 3 CORE study of olezarsen (IONIS-APOCIII-LRx) in patients with severe hypertriglyceridemia (sHTG)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Ionis Pharmaceuticals, Inc.",
+    "ticker": "IONS",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://ir.ionis.com/news-releases/news-release-details/tryngolzatm-olezarsen-approved-us-first-ever-treatment-adults",
+     "publisher": "Ionis Pharmaceuticals",
+     "doc": "press release",
+     "doc_date": "2024-12-19",
+     "read": "2026-11-17",
+     "quote": "Ionis Pharmaceuticals, Inc. (Nasdaq: IONS) announced today that the U.S. Food and Drug Administration (FDA) has approved"
+    }
+   },
+   "history": []
+  },
+  {
+   "appl": "NDA 220641",
+   "brand": "LIFYORLI",
+   "ingredient": "relacorilant",
+   "applicant_verified": "CORCEPT THERAPEUTICS INC",
+   "drug_pages": [
+    "relacorilant"
+   ],
+   "code_names": [
+    {
+     "name": "CORT125134",
+     "src": {
+      "url": "https://ir.corcept.com/news-releases/news-release-details/corcept-therapeutics-announces-third-quarter-2017-financial",
+      "publisher": "Corcept Therapeutics",
+      "doc": "press release",
+      "doc_date": "2017-11-02",
+      "read": "2026-11-17",
+      "quote": "relacorilant (the newly-approved generic name for CORT125134)"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Corcept Therapeutics Incorporated",
+    "ticker": "CORT",
+    "exchange": "Nasdaq",
+    "src": {
+     "url": "https://ir.corcept.com/news-releases/news-release-details/fda-approves-corcepts-selective-glucocorticoid-receptor",
+     "publisher": "Corcept Therapeutics",
+     "doc": "press release",
+     "doc_date": "2026-03-25",
+     "read": "2026-11-17",
+     "quote": "Corcept Therapeutics Incorporated (NASDAQ: CORT), a commercial-stage company engaged in the discovery"
+    }
+   },
+   "history": []
+  },
+  {
+   "appl": "NDA 216964",
+   "brand": "IDVYNSO",
+   "ingredient": "doravirine and islatravir",
+   "applicant_verified": "MERCK SHARP AND DOHME LLC",
+   "drug_pages": [
+    "idvynso"
+   ],
+   "code_names": [
+    {
+     "name": "MK-8591A",
+     "src": {
+      "url": "https://www.merck.com/news/merck-announces-late-breaking-data-from-three-phase-3-trials-evaluating-doravirine-islatravir-dor-isl-an-investigational-once-daily-two-drug-regimen-for-the-treatment-of-adults-living-with-hiv-1/",
+      "publisher": "Merck",
+      "doc": "press release",
+      "doc_date": "2026-02-25",
+      "read": "2026-11-17",
+      "quote": "doravirine/islatravir [DOR/ISL (100 mg/0.25 mg), (MK-8591A)] in adults with HIV-1"
+     }
+    }
+   ],
+   "owner": {
+    "company": "Merck & Co., Inc.",
+    "ticker": "MRK",
+    "exchange": "NYSE",
+    "src": {
+     "url": "https://www.merck.com/news/fda-approves-mercks-once-daily-idvynso-doravirine-islatravir/",
+     "publisher": "Merck",
+     "doc": "press release",
+     "doc_date": "2026-04-21",
+     "read": "2026-11-17",
+     "quote": "Merck (NYSE: MRK), known as MSD outside of the United States and Canada, announced today"
+    }
+   },
+   "history": []
+  }
+ ]
+}
