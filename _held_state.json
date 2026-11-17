@@ -1,28 +1,14 @@
 {
  "held_since": "2026-11-17T19:36:19Z",
- "consecutive_held_runs": 2,
+ "consecutive_held_runs": 3,
  "emailed_at": "2026-11-17T20:33:45Z",
  "leads": [
   {
    "source": "drug_pages",
-   "row_id": "drug:neladalkib",
-   "key": "neladalkib|fda-oncology-notifications",
-   "text": "/drug/neladalkib fda-oncology-notifications 'neladalkib' appears with approval language",
-   "first_seen": "2026-11-17T19:36:19Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:neladalkib",
-   "key": "neladalkib|sponsor:GSK:2026-11-17",
-   "text": "/drug/neladalkib sponsor:GSK:2026-11-17 'neladalkib' appears with approval language",
-   "first_seen": "2026-11-17T19:36:19Z"
-  },
-  {
-   "source": "fda_drugs_feed",
-   "row_id": "pdufa_nuvl_2026-11-27",
-   "key": "pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
-   "text": "2026-11-17 \"FDA grants accelerated approval to neladalkib for previously treated locally advanced or metastatic ALK-positive non-small cell lung cancer\" [Neladalkib] http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
-   "first_seen": "2026-11-17T20:33:45Z"
+   "row_id": "drug:rap-219-long-acting",
+   "key": "rap-219-long-acting|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
+   "text": "/drug/rap-219-long-acting fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset- 'acting' appears with approval language",
+   "first_seen": "2026-11-17T21:23:57Z"
   }
  ],
  "issued_keys": [
@@ -34,6 +20,7 @@
   "drug_pages|neladalkib|fda-oncology-notifications",
   "drug_pages|neladalkib|sponsor:GSK:2026-11-17",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
+  "drug_pages|rap-219-long-acting|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",

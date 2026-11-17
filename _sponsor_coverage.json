@@ -43,6 +43,7 @@
     "2026-12-17"
    ],
    "channels": [
+    "sponsor_feed",
     "edgar_8k",
     "fda_feeds"
    ],
@@ -59,18 +60,6 @@
     "fda_feeds"
    ],
    "cik": 882095
-  },
-  "GSK": {
-   "company": "GSK plc",
-   "goals": [
-    "2026-11-27"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1131399
   },
   "MLYS": {
    "company": "Mineralys Therapeutics, Inc.",
@@ -100,6 +89,7 @@
     "2026-11-28"
    ],
    "channels": [
+    "sponsor_feed",
     "edgar_8k",
     "fda_feeds"
    ],
@@ -111,6 +101,7 @@
     "2026-11-30"
    ],
    "channels": [
+    "sponsor_feed",
     "edgar_8k",
     "fda_feeds"
    ],

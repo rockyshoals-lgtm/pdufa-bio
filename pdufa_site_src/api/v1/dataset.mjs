@@ -261,7 +261,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-17",
-    "searched": "5 sponsor press releases (FMP) through 2026-11-17; ClinicalTrials.gov 2026-11-17"
+    "searched": "6 sponsor press releases (FMP) through 2026-11-17; ClinicalTrials.gov 2026-11-17"
    }
   },
   "dm": "2026-04"
@@ -836,7 +836,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -872,7 +872,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -957,7 +957,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -2471,7 +2471,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2785,7 +2785,7 @@ export default [
   "ua": "2026-10-24T20:36:26Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2909,7 +2909,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) — DMD",
+  "name": "Deramiocel (CTGTAC) \u2014 DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2975,7 +2975,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) — Melanoma",
+  "name": "RP1 (CTGTAC) \u2014 Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3502,7 +3502,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-09",
-    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO® (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
+    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO\u00ae (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
     "url": "https://www.prnewswire.com/news-releases/biomarin-announces-positive-results-of-phase-3-voxzogo-vosoritide-study-in-hypochondroplasia-published-in-nejm-evidence-302873026.html",
     "checked": "2026-10-11",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3655,7 +3655,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-10-18",
-    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 ‘304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
+    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 \u2018304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
     "url": "https://www.businesswire.com/news/home/20261018527252/en/Veradermics-to-Hold-Conference-Call-to-Discuss-Topline-Results-from-Phase-3-%E2%80%98304%E2%80%99-Clinical-Trial-of-VDPHL01-in-Males-with-Mild-to-Moderate-Pattern-Hair-Loss/",
     "checked": "2026-10-18",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -5212,7 +5212,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5241,7 +5241,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5277,7 +5277,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5327,7 +5327,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5348,7 +5348,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5369,7 +5369,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -5390,7 +5390,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5419,7 +5419,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -5455,7 +5455,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -5512,7 +5512,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -5533,7 +5533,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -5681,7 +5681,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SITC",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -5717,7 +5717,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AASLD",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5753,7 +5753,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACR",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -5789,7 +5789,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AHA",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5810,7 +5810,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACAAI",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -5831,7 +5831,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SNO",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -5852,7 +5852,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -5881,7 +5881,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/CTAD",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -5910,7 +5910,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -5946,7 +5946,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -5967,7 +5967,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -5988,7 +5988,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -6017,7 +6017,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -6038,7 +6038,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -6911,7 +6911,7 @@ export default [
   "company": "Alzamend Neuro, Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
-  "name": "AL001 Phase 1/2A lithium brain imaging trial in healthy adults Full pharmacokinetic and…",
+  "name": "AL001 Phase 1/2A lithium brain imaging trial in healthy adults Full pharmacokinetic and\u2026",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
@@ -6943,7 +6943,7 @@ export default [
     {
      "date": "2026-12-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (10-Q 2026-09-10): “fourth quarter of 2026”. Was 2026-09-30 (quarter)."
+     "why": "Re-sourced to the company's newest statement (10-Q 2026-09-10): \u201cfourth quarter of 2026\u201d. Was 2026-09-30 (quarter)."
     }
    ],
    "source_url": "https://www.sec.gov/Archives/edgar/data/1677077/000121465926011572/alz9226210q.htm",
@@ -7049,7 +7049,7 @@ export default [
      "why": "The company's release of 2026-07-29 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ],
-   "review": "MannKind Corporation reported this readout on 2026-07-29: “MannKind Reports Positive Phase 1b INFLO-1 Results, Demonstrating Safety and Tolerability of Nintedanib DPI and Clinical Validation of Its DPI Technology in IPF” (press release).",
+   "review": "MannKind Corporation reported this readout on 2026-07-29: \u201cMannKind Reports Positive Phase 1b INFLO-1 Results, Demonstrating Safety and Tolerability of Nintedanib DPI and Clinical Validation of Its DPI Technology in IPF\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/07/29/3335054/29517/en/MannKind-Reports-Positive-Phase-1b-INFLO-1-Results-Demonstrating-Safety-and-Tolerability-of-Nintedanib-DPI-and-Clinical-Validation-of-Its-DPI-Technology-in-IPF.html"
   }
  },
@@ -7089,7 +7089,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/JPM",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-01-14",
    "location": "",
@@ -7110,7 +7110,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GI",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-01-23",
    "location": "",
@@ -7131,7 +7131,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/WORLD",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-02-04",
    "location": "",
@@ -7152,7 +7152,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO-GU",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-02-13",
    "location": "",
@@ -7173,7 +7173,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAD",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-03-23",
    "location": "",
@@ -7215,7 +7215,7 @@ export default [
     {
      "date": "2027-03-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-04): “first quarter of 2027”. Was 2026-09-30 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-04): \u201cfirst quarter of 2027\u201d. Was 2026-09-30 (quarter)."
     }
    ],
    "guided_window": "2027-Q1",
@@ -7313,7 +7313,7 @@ export default [
      "why": "The company's release of 2026-07-28 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ],
-   "review": "ProMIS Neurosciences Inc. reported this readout on 2026-07-28: “ProMIS Neurosciences Reports Positive Blinded Six-Month Interim Safety and Biomarker Data for PMN310 in the PRECISE-AD Phase 1b Alzheimer's Disease Trial” (press release).",
+   "review": "ProMIS Neurosciences Inc. reported this readout on 2026-07-28: \u201cProMIS Neurosciences Reports Positive Blinded Six-Month Interim Safety and Biomarker Data for PMN310 in the PRECISE-AD Phase 1b Alzheimer's Disease Trial\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/07/28/3334059/0/en/ProMIS-Neurosciences-Reports-Positive-Blinded-Six-Month-Interim-Safety-and-Biomarker-Data-for-PMN310-in-the-PRECISE-AD-Phase-1b-Alzheimer-s-Disease-Trial.html"
   }
  },
@@ -7492,7 +7492,7 @@ export default [
      "why": "The company's release of 2026-10-21 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (month)."
     }
    ],
-   "review": "Roivant Sciences Ltd. reported this readout on 2026-10-21: “Roivant and Priovant Announce Positive Results in CLARITY-1 and CLARITY-2 Phase 3 Trials for Brepocitinib in Non-Infectious Uveitis (NIU)” (press release).",
+   "review": "Roivant Sciences Ltd. reported this readout on 2026-10-21: \u201cRoivant and Priovant Announce Positive Results in CLARITY-1 and CLARITY-2 Phase 3 Trials for Brepocitinib in Non-Infectious Uveitis (NIU)\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/10/21/3385358/34323/en/roivant-and-priovant-announce-positive-results-in-clarity-1-and-clarity-2-phase-3-trials-for-brepocitinib-in-non-infectious-uveitis-niu.html"
   }
  },
@@ -7533,7 +7533,7 @@ export default [
      "why": "The company's release of 2026-10-22 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ],
-   "review": "Scynexis Inc reported this readout on 2026-10-22: “SCYNEXIS Completes Phase 1 Study of Intravenous SCY-247, a Novel, Triterpenoid Antifungal in Development for Treatment and Prevention of Invasive Fungal Diseases” (press release).",
+   "review": "Scynexis Inc reported this readout on 2026-10-22: \u201cSCYNEXIS Completes Phase 1 Study of Intravenous SCY-247, a Novel, Triterpenoid Antifungal in Development for Treatment and Prevention of Invasive Fungal Diseases\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/10/22/3386244/0/en/scynexis-completes-phase-1-study-of-intravenous-scy-247-a-novel-triterpenoid-antifungal-in-development-for-treatment-and-prevention-of-invasive-fungal-diseases.html"
   }
  },
@@ -7593,7 +7593,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AACR",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-04-07",
    "location": "",
@@ -7614,7 +7614,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ACC",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-04-12",
    "location": "",
@@ -7635,7 +7635,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AAN",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-05-05",
    "location": "",
@@ -7656,7 +7656,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASGCT",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-05-07",
    "location": "",
@@ -7677,7 +7677,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ATS",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-05-19",
    "location": "",
@@ -7698,7 +7698,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/DDW",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-05-18",
    "location": "",
@@ -7719,7 +7719,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASCO",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-06-08",
    "location": "",
@@ -7740,7 +7740,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EHA",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-06-13",
    "location": "",
@@ -7761,7 +7761,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/EASL",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-06-19",
    "location": "",
@@ -7782,7 +7782,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ADA",
-  "ua": "2026-11-17T20:35:46Z",
+  "ua": "2026-11-17T21:27:49Z",
   "_d": {
    "end": "2027-06-21",
    "location": "",
@@ -7824,7 +7824,7 @@ export default [
     {
      "date": "2027-12-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-05): “in 2027”. Was 2026-09-30 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-05): \u201cin 2027\u201d. Was 2026-09-30 (quarter)."
     }
    ],
    "guided_window": "2027",
@@ -7869,7 +7869,7 @@ export default [
      "why": "The company's release of 2026-08-25 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ],
-   "review": "Spyre Therapeutics, Inc. reported this readout on 2026-08-25: “Spyre Therapeutics Announces Topline Results from the Rheumatoid Arthritis Sub-study of the SKYWAY Phase 2 Trial of SPY072” (press release).",
+   "review": "Spyre Therapeutics, Inc. reported this readout on 2026-08-25: \u201cSpyre Therapeutics Announces Topline Results from the Rheumatoid Arthritis Sub-study of the SKYWAY Phase 2 Trial of SPY072\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/08/25/3350866/0/en/spyre-therapeutics-announces-topline-results-from-the-rheumatoid-arthritis-sub-study-of-the-skyway-phase-2-trial-of-spy072.html"
   }
  },
@@ -8000,7 +8000,7 @@ export default [
      "why": "The company's release of 2026-08-06 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ],
-   "review": "Vistagen Therapeutics, Inc. reported this readout on 2026-08-06: “Vistagen Announces Topline Results for Repeat Dose Study of Fasedienol for Acute Treatment of Social Anxiety Disorder” (press release).",
+   "review": "Vistagen Therapeutics, Inc. reported this readout on 2026-08-06: \u201cVistagen Announces Topline Results for Repeat Dose Study of Fasedienol for Acute Treatment of Social Anxiety Disorder\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/08/06/3340279/0/en/vistagen-announces-topline-results-for-repeat-dose-study-of-fasedienol-for-acute-treatment-of-social-anxiety-disorder.html"
   }
  },
@@ -8037,7 +8037,7 @@ export default [
     {
      "date": "2027-06-30",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-09): “1H'27”. Was 2026-09-30 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-09): \u201c1H'27\u201d. Was 2026-09-30 (quarter)."
     }
    ],
    "guided_window": "2027-H1",
@@ -8082,7 +8082,7 @@ export default [
      "why": "The company's release of 2026-10-29 reports this readout; a reported row carries the day it was reported. Was 2026-09-30 (quarter)."
     }
    ],
-   "review": "Xenon Pharmaceuticals Inc. reported this readout on 2026-10-29: “Xenon Announces Positive Phase 1 and New Preclinical Data at IASP 2026 Supporting Advancement of XEN1701 and XEN1120 to Phase 2 Proof-of-Concept Studies in Acute Pain” (press release).",
+   "review": "Xenon Pharmaceuticals Inc. reported this readout on 2026-10-29: \u201cXenon Announces Positive Phase 1 and New Preclinical Data at IASP 2026 Supporting Advancement of XEN1701 and XEN1120 to Phase 2 Proof-of-Concept Studies in Acute Pain\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/10/29/3391282/33485/en/xenon-announces-positive-phase-1-and-new-preclinical-data-at-iasp-2026-supporting-advancement-of-xen1701-and-xen1120-to-phase-2-proof-of-concept-studies-in-acute-pain.html"
   }
  },
@@ -8361,7 +8361,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-17",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-17"
+    "searched": "8 sponsor press releases (FMP) through 2026-11-17"
    }
   },
   "dm": "2026-10"
@@ -8656,7 +8656,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
+  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -10148,7 +10148,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -10165,7 +10165,7 @@ export default [
     }
    },
    "indication": "Duchenne muscular dystrophy; refined proposed indication focused on upper limb function",
-   "market_cap_usd": 499779637.0,
+   "market_cap_usd": 487039020.0,
    "cash_runway_months": 36.1,
    "days_to_decision": 43,
    "cohort_move_median_pct": 0.0,
@@ -10176,9 +10176,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -70.46,
-    "t30": 10.97,
-    "t7": -4.44,
+    "t120": -71.11,
+    "t30": 8.52,
+    "t7": -6.56,
     "source": "FMP split-adjusted daily closes"
    },
    "review": "PDUFA target action date extended from August 22, 2026 to November 22, 2026. Capricor submitted a BLA amendment after the July 2026 advisory committee meeting containing 24-month open-label extension data from the pivotal Phase 3 HOPE-3 study and additional robustness analyses, in support of a refined proposed indication focused on upper limb function (the HOPE-3 primary endpoint). CBER accepted it, classified it a major amendment, and added three months to review it. The application remains under review: this is an extension, not a Complete Response Letter.",
@@ -10212,11 +10212,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
-   "market_cap_usd": 981973185.0,
+   "market_cap_usd": 988393329.0,
    "cash_runway_months": 22.8,
    "days_to_decision": 135,
    "cohort_move_median_pct": 0.0,
@@ -10227,9 +10227,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -12.67,
-    "t30": -4.41,
-    "t7": -7.97,
+    "t120": -11.98,
+    "t30": -3.66,
+    "t7": -7.25,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Savara Inc 10-Q 2026-05-12",
@@ -10249,11 +10249,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
-   "market_cap_usd": 14937886123.0,
+   "market_cap_usd": 14960716800.0,
    "cash_runway_months": 25.4,
    "days_to_decision": 140,
    "cohort_move_median_pct": 0.0,
@@ -10264,9 +10264,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 12.04,
-    "t30": 14.54,
-    "t7": 3.23,
+    "t120": 12.2,
+    "t30": 14.7,
+    "t7": 3.38,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "BridgeBio Pharma, Inc. 8-K 2026-08-10",
@@ -10285,7 +10285,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Micro",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/PYPD-d-plex100",
   "_d": {
    "indication": "Prevention of surgical site infections in patients undergoing abdominal colorectal surgery",
@@ -10294,14 +10294,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm",
    "source_quote": "The FDA did not identify any filing review issues and set a Prescription Drug User Fee Act (PDUFA) target action date of November 28, 2026",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 131620244.0,
+   "market_cap_usd": 132838950.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 36.13,
-    "t30": 26.32,
-    "t7": 5.54,
+    "t120": 37.39,
+    "t30": 27.49,
+    "t7": 6.51,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -10367,11 +10367,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
-   "market_cap_usd": 4831813380.0,
+   "market_cap_usd": 4845732900.0,
    "cash_runway_months": 36.5,
    "days_to_decision": 143,
    "cohort_move_median_pct": -0.01,
@@ -10382,9 +10382,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -21.45,
-    "t30": -8.53,
-    "t7": -12.2,
+    "t120": -21.28,
+    "t30": -8.33,
+    "t7": -12.01,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
@@ -10423,13 +10423,17 @@ export default [
    "cohort_move_p75_pct": 2.51,
    "cohort_n": 222,
    "runup_summary": {
-    "basis": "so far",
+    "basis": "decided",
     "unit": "pct",
-    "as_of": "2026-11-17",
-    "t120": -3.76,
-    "t30": 5.83,
-    "t7": -2.02,
-    "source": "FMP split-adjusted daily closes"
+    "eve_date": "2026-10-19",
+    "t120": -9.2,
+    "t30": -0.86,
+    "t14": 0.22,
+    "t7": 6.27,
+    "t3": 3.32,
+    "post_1d": 2.37,
+    "post_5d": 3.32,
+    "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
    "former_ticker": "NUVL",
    "acquisition": {
@@ -10498,11 +10502,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
-   "market_cap_usd": 98649109230.0,
+   "market_cap_usd": 99061797767.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -10542,11 +10546,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
-   "market_cap_usd": 384359857277.0,
+   "market_cap_usd": 384041155787.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -10557,9 +10561,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 15.16,
-    "t30": 14.75,
-    "t7": 1.57,
+    "t120": 15.07,
+    "t30": 14.65,
+    "t7": 1.48,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Genentech press release 2026-06-01",
@@ -10632,11 +10636,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
-   "market_cap_usd": 135036700549.0,
+   "market_cap_usd": 135439825451.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -10647,9 +10651,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 18.94,
-    "t30": 6.07,
-    "t7": -2.61,
+    "t120": 19.25,
+    "t30": 6.35,
+    "t7": -2.36,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Vertex 8-K 2026-08-03 (EX-99.1)",
@@ -10670,11 +10674,11 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 232058471.0,
+   "market_cap_usd": 230389507.0,
    "cash_runway_months": 19.2,
    "days_to_decision": 155,
    "cohort_move_median_pct": 0.0,
@@ -10685,9 +10689,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -42.25,
-    "t30": -15.16,
-    "t7": 0.39,
+    "t120": -42.62,
+    "t30": -15.71,
+    "t7": -0.26,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Vanda Pharmaceuticals Inc. 8-K 2026-08-05",
@@ -11614,13 +11618,13 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
    },
    "indication": "Cushing's syndrome (hypercortisolism)",
-   "market_cap_usd": 7611760650.0,
+   "market_cap_usd": 7668671010.0,
    "source": "Corcept 8-K 2026-07-29 (EX-99.1)",
    "review": "Corcept resubmitted the NDA for relacorilant in Cushing's syndrome in June 2026, after a December 2025 CRL, and states a PDUFA date of December 17, 2026 in its second-quarter release.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026050607/cort072926ex991pressrelease.htm",
@@ -11629,9 +11633,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 1.71,
-    "t30": -41.83,
-    "t7": -4.42,
+    "t120": 2.47,
+    "t30": -41.4,
+    "t7": -3.71,
     "source": "FMP split-adjusted daily closes"
    }
   },
@@ -11705,11 +11709,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
-   "market_cap_usd": 1280535521.0,
+   "market_cap_usd": 1282306663.0,
    "cash_runway_months": 56.8,
    "days_to_decision": 165,
    "cohort_move_median_pct": -0.01,
@@ -11720,9 +11724,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -54.15,
-    "t30": -34.12,
-    "t7": -5.68,
+    "t120": -54.09,
+    "t30": -34.03,
+    "t7": -5.54,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Mineralys Therapeutics, Inc. 8-K 2026-08-11",
@@ -11742,12 +11746,12 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
    "indication": "Relapsed or refractory multiple myeloma (fourth-line), BCMA CAR-T",
-   "market_cap_usd": 210603294964.0,
+   "market_cap_usd": 211180052420.0,
    "source_url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
    "source": "company press release",
    "source_quote": "Food and Drug Administration with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026.",
@@ -11755,9 +11759,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 24.58,
-    "t30": 17.66,
-    "t7": 1.68,
+    "t120": 24.99,
+    "t30": 18.05,
+    "t7": 2.02,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -11774,7 +11778,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -11791,7 +11795,7 @@ export default [
     }
    },
    "indication": "Developmental epileptic encephalopathies (DEEs)",
-   "market_cap_usd": 8523545962.0,
+   "market_cap_usd": 8526900148.0,
    "cash_runway_months": 33.4,
    "days_to_decision": 170,
    "cohort_move_median_pct": -0.01,
@@ -11802,9 +11806,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -13.6,
-    "t30": 8.76,
-    "t7": 9.75,
+    "t120": -13.49,
+    "t30": 8.9,
+    "t7": 9.88,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Praxis 8-K 2026-06-29 (extension); 8-K 2026-08-06 EX-99.1 (restated)",
@@ -11824,7 +11828,7 @@ export default [
     }
    ],
    "review": "NDA for SCN2A and SCN8A developmental and epileptic encephalopathies. Review extended by three months (major amendment) to December 27, 2026; mid-cycle meeting complete with no major safety or efficacy concerns identified to date and no advisory committee planned (Praxis, August 6, 2026).",
-   "source_quote": "for its New Drug Application (“NDA”) for relutrigine for the treatment of SCN2A and SCN8A developmental and epileptic encephalopathies (“DEEs”), setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026."
+   "source_quote": "for its New Drug Application (\u201cNDA\u201d) for relutrigine for the treatment of SCN2A and SCN8A developmental and epileptic encephalopathies (\u201cDEEs\u201d), setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026."
   }
  },
  {
@@ -11839,11 +11843,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
-   "market_cap_usd": 23508054281.0,
+   "market_cap_usd": 23445000231.0,
    "source": "Viatris Inc 8-K 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000037/exhibit991-2q26earningsrel.htm",
    "source_quote": "any announced that the FDA accepted for review the New Drug Application for MR-107A-02 (fast-acting meloxicam), a non-opioid, for the treatment of moderate-to-severe acute pain. The FDA has assigned a PDUFA goal date of December 27, 2026. The Company signed a distribution agreement with Accord Healthcare to commercialize three biosimilar products (filgras",
@@ -11851,9 +11855,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 27.31,
-    "t30": 16.93,
-    "t7": 3.01,
+    "t120": 26.94,
+    "t30": 16.59,
+    "t7": 2.71,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -11870,11 +11874,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
-   "market_cap_usd": 4831813380.0,
+   "market_cap_usd": 4845732900.0,
    "cash_runway_months": 36.5,
    "days_to_decision": 173,
    "cohort_move_median_pct": -0.01,
@@ -11885,9 +11889,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -21.45,
-    "t30": -8.53,
-    "t7": -12.2,
+    "t120": -21.28,
+    "t30": -8.33,
+    "t7": -12.01,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
@@ -11991,7 +11995,7 @@ export default [
      "why": "The company's release of 2026-11-08 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Alnylam Pharmaceuticals, Inc. reported this readout on 2026-11-08: “Vir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and Tobevibart in Chronic Hepatitis Delta” (press release).",
+   "review": "Alnylam Pharmaceuticals, Inc. reported this readout on 2026-11-08: \u201cVir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and Tobevibart in Chronic Hepatitis Delta\u201d (press release).",
    "reported_source_url": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/"
   }
  },
@@ -12149,7 +12153,7 @@ export default [
      "why": "The company's release of 2026-10-13 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Biomea Fusion, Inc. reported this readout on 2026-10-13: “Biomea Fusion Announces Phase 1 Results for BMF-650, its Investigational Next-Generation Oral Small Molecule GLP-1 Receptor Agonist” (press release).",
+   "review": "Biomea Fusion, Inc. reported this readout on 2026-10-13: \u201cBiomea Fusion Announces Phase 1 Results for BMF-650, its Investigational Next-Generation Oral Small Molecule GLP-1 Receptor Agonist\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/10/13/3380154/0/en/biomea-fusion-announces-phase-1-results-for-bmf-650-its-investigational-next-generation-oral-small-molecule-glp-1-receptor-agonist.html"
   }
  },
@@ -12279,13 +12283,13 @@ export default [
     {
      "date": "2027-03-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-16): “first quarter of 2027”. Was 2026-12-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-16): \u201cfirst quarter of 2027\u201d. Was 2026-12-31 (quarter)."
     }
    ],
    "guided_window": "2027-Q1",
    "guided_label": "first quarter of 2027",
    "readout_described": "Phase 1 topline",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Both quoted sentences verbatim on Enanta FY release (businesswire, 2026-11-16). Page says EDP-978 is 'in development for the treatment of chronic urticaria and potentially other mast cell-mediated diseases' and calls the study 'a randomized, double-blind, placebo-controlled, first-in-human Phase 1…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Both quoted sentences verbatim on Enanta FY release (businesswire, 2026-11-16). Page says EDP-978 is 'in development for the treatment of chronic urticaria and potentially other mast cell-mediated diseases' and calls the study 'a randomized, double-blind, placebo-controlled, first-in-human Phase 1\u2026",
    "nct_stated": "NCT07540910"
   },
   "dm": "2027-03"
@@ -12374,7 +12378,7 @@ export default [
      "why": "The company's release of 2026-11-16 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Helus Pharma Inc. (formerly Cybin Inc.) reported this readout on 2026-11-16: “Helus Pharma Announces Positive Topline Results from Phase 3 APPROACH Study evaluating HLP003 as Adjunctive Treatment in Major Depressive Disorder” (press release).",
+   "review": "Helus Pharma Inc. (formerly Cybin Inc.) reported this readout on 2026-11-16: \u201cHelus Pharma Announces Positive Topline Results from Phase 3 APPROACH Study evaluating HLP003 as Adjunctive Treatment in Major Depressive Disorder\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/11/16/3403358/0/en/helus-pharma-announces-positive-topline-results-from-phase-3-approach-study-evaluating-hlp003-as-adjunctive-treatment-in-major-depressive-disorder.html"
   }
  },
@@ -12384,7 +12388,7 @@ export default [
   "company": "Century Therapeutics, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "CNTY-813 (iPSC-derived islet replacement) First-in-human CNTY-813 study Initial safety…",
+  "name": "CNTY-813 (iPSC-derived islet replacement) First-in-human CNTY-813 study Initial safety\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -12411,7 +12415,7 @@ export default [
     {
      "date": "2027-12-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-12): “2H 2027”. Was 2026-12-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-12): \u201c2H 2027\u201d. Was 2026-12-31 (quarter)."
     }
    ],
    "guided_window": "2027-H2",
@@ -12445,7 +12449,7 @@ export default [
    "guided_window": "2026-Q4",
    "guidance_text": "topline results expected in the fourth quarter of this year.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Inventiva 6-K EX-99.1 dated 2026-10-06 (sec.gov): lanifibranor in Phase 3 NATiV3 'for the treatment of patients with MASH with moderate and advanced fibrosis, with topline results expected in the fourth quarter of this year'. Page does not say F2-F3. No newer Inventiva release found (FMP press…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Inventiva 6-K EX-99.1 dated 2026-10-06 (sec.gov): lanifibranor in Phase 3 NATiV3 'for the treatment of patients with MASH with moderate and advanced fibrosis, with topline results expected in the fourth quarter of this year'. Page does not say F2-F3. No newer Inventiva release found (FMP press\u2026",
    "ta_basis": "SEC filing sentence (Inventiva EX-99.2 2026-09-28): lanifibranor NATiV3 Phase 3 in non-cirrhotic MASH",
    "guided_label": "fourth quarter of 2026",
    "readout_described": "Phase 3 topline",
@@ -12490,7 +12494,7 @@ export default [
      "why": "The company's release of 2026-11-16 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Kyntra Bio, Inc. reported this readout on 2026-11-16: “Kyntra Bio Reports Third Quarter 2026 Financial Results and Provides Business Update” (press release).",
+   "review": "Kyntra Bio, Inc. reported this readout on 2026-11-16: \u201cKyntra Bio Reports Third Quarter 2026 Financial Results and Provides Business Update\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/11/16/3404117/33525/en/kyntra-bio-reports-third-quarter-2026-financial-results-and-provides-business-update.html"
   }
  },
@@ -12527,7 +12531,7 @@ export default [
     {
      "date": "2027-12-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-16): “2H 2027”. Was 2026-12-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-16): \u201c2H 2027\u201d. Was 2026-12-31 (quarter)."
     }
    ],
    "guided_window": "2027-H2",
@@ -12573,7 +12577,7 @@ export default [
      "why": "The company's release of 2026-09-28 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Mirum Pharmaceuticals, Inc. reported this readout on 2026-09-28: “Mirum Pharmaceuticals Announces Primary Endpoint Met in Phase 3 AZURE-1 Study of Brelovitug in Chronic Hepatitis Delta Virus” (press release).",
+   "review": "Mirum Pharmaceuticals, Inc. reported this readout on 2026-09-28: \u201cMirum Pharmaceuticals Announces Primary Endpoint Met in Phase 3 AZURE-1 Study of Brelovitug in Chronic Hepatitis Delta Virus\u201d (press release).",
    "reported_source_url": "https://www.businesswire.com/news/home/20260928804552/en/Mirum-Pharmaceuticals-Announces-Primary-Endpoint-Met-in-Phase-3-AZURE-1-Study-of-Brelovitug-in-Chronic-Hepatitis-Delta-Virus/"
   }
  },
@@ -12613,7 +12617,7 @@ export default [
      "why": "The company's release of 2026-11-05 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "MetaVia Inc. reported this readout on 2026-11-05: “MetaVia Announces Statistically Significant 68% Reduction in Liver Fat from DA-1726 Phase 1 Part 3B Interim Data” (press release).",
+   "review": "MetaVia Inc. reported this readout on 2026-11-05: \u201cMetaVia Announces Statistically Significant 68% Reduction in Liver Fat from DA-1726 Phase 1 Part 3B Interim Data\u201d (press release).",
    "reported_source_url": "https://www.prnewswire.com/news-releases/metavia-announces-statistically-significant-68-reduction-in-liver-fat-from-da-1726-phase-1-part-3b-interim-data-302930487.html"
   }
  },
@@ -12727,7 +12731,7 @@ export default [
      "why": "The company's release of 2026-10-05 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Vaxcyte, Inc. reported this readout on 2026-10-05: “Vaxcyte Reports Positive Topline Data from OPUS-1, the Pivotal Adult Phase 3 Trial of VAX-31, the Company's 31-Valent Pneumococcal Conjugate Vaccine Candidate” (press release).",
+   "review": "Vaxcyte, Inc. reported this readout on 2026-10-05: \u201cVaxcyte Reports Positive Topline Data from OPUS-1, the Pivotal Adult Phase 3 Trial of VAX-31, the Company's 31-Valent Pneumococcal Conjugate Vaccine Candidate\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/10/05/3374299/0/en/vaxcyte-reports-positive-topline-data-from-opus-1-the-pivotal-adult-phase-3-trial-of-vax-31-the-company-s-31-valent-pneumococcal-conjugate-vaccine-candidate.html"
   }
  },
@@ -12768,7 +12772,7 @@ export default [
      "why": "The company's release of 2026-10-20 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "Rapport Therapeutics, Inc. reported this readout on 2026-10-20: “Rapport Therapeutics Announces Positive Topline Results from its Phase 2 Trial of RAP-219 for the Treatment of Bipolar Mania” (press release).",
+   "review": "Rapport Therapeutics, Inc. reported this readout on 2026-10-20: \u201cRapport Therapeutics Announces Positive Topline Results from its Phase 2 Trial of RAP-219 for the Treatment of Bipolar Mania\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/10/20/3384169/0/en/rapport-therapeutics-announces-positive-topline-results-from-its-phase-2-trial-of-rap-219-for-the-treatment-of-bipolar-mania.html"
   }
  },
@@ -12778,7 +12782,7 @@ export default [
   "company": "REGENXBIO Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
-  "name": "surabgene lomparvovec (sura-vec, ABBV-RGX-314), subretinal ATMOSPHERE and ASCENT pivotal…",
+  "name": "surabgene lomparvovec (sura-vec, ABBV-RGX-314), subretinal ATMOSPHERE and ASCENT pivotal\u2026",
   "type": "Readout",
   "ta": "Ophthalmology",
   "cap": "",
@@ -12795,13 +12799,13 @@ export default [
    "guided_filed": "2026-11-05",
    "program": "surabgene lomparvovec (sura-vec, ABBV-RGX-314), subretinal",
    "accession": "0001193125-26-286825",
-   "guidance_text": "Topline data from pivotal subretinal wet AMD studies, ATMOSPHERE ® and ASCENT ® , expected in Q4 2026",
+   "guidance_text": "Topline data from pivotal subretinal wet AMD studies, ATMOSPHERE \u00ae and ASCENT \u00ae , expected in Q4 2026",
    "source_url": "https://www.prnewswire.com/news-releases/regenxbio-reports-third-quarter-2026-financial-results-and-operational-highlights-302930190.html",
    "ta_basis": "Sponsor SEC filing: sura-vec (RGX-314) for wet AMD",
    "guided_window": "2026-Q4",
    "guided_label": "Q4 2026",
    "readout_described": "Pivotal topline (with AbbVie)",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. REGENXBIO Q3 release 2026-11-05 (PR Newswire) contains the bullet (only spacing around ® differs); body 'REGENXBIO expects to announce topline data with AbbVie from the ATMOSPHERE® and ASCENT® pivotal trials' in Q4 2026. FMP: no newer RGNX release reporting data."
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. REGENXBIO Q3 release 2026-11-05 (PR Newswire) contains the bullet (only spacing around \u00ae differs); body 'REGENXBIO expects to announce topline data with AbbVie from the ATMOSPHERE\u00ae and ASCENT\u00ae pivotal trials' in Q4 2026. FMP: no newer RGNX release reporting data."
   },
   "dm": "2026-12"
  },
@@ -12817,7 +12821,7 @@ export default [
   "ta": "Immunology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/RHHBY-gazyva",
   "_d": {
    "indication": "Systemic lupus erythematosus (SLE)",
@@ -12828,7 +12832,7 @@ export default [
    "source_quote": "The FDA is expected to make a decision on an approval by December 2026.",
    "event_slug": "RHHBY-gazyva",
    "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day.",
-   "market_cap_usd": 384359857277.0,
+   "market_cap_usd": 384041155787.0,
    "runup_summary": null,
    "runup_note": "Run-up is measured for day-dated goals and decided events only"
   }
@@ -12867,7 +12871,7 @@ export default [
     {
      "date": "2026-11-30",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-12): “late November 2026”. Was 2026-12-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-12): \u201clate November 2026\u201d. Was 2026-12-31 (quarter)."
     }
    ],
    "guided_window": "2026-11",
@@ -12963,7 +12967,7 @@ export default [
      "why": "The company's release of 2026-11-17 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "SELLAS Life Sciences Group, Inc. reported this readout on 2026-11-17: “SELLAS Life Sciences Announces Positive Pivotal Phase 3 REGAL Trial Data Showing Immunotherapeutic Cancer Vaccine, Galinpepimut-S (GPS), Demonstrated a Statistically Significant and Clinically Meaningful Improvement in Overall Survival in Patients with Acute Myeloid Leukemia” (press release).",
+   "review": "SELLAS Life Sciences Group, Inc. reported this readout on 2026-11-17: \u201cSELLAS Life Sciences Announces Positive Pivotal Phase 3 REGAL Trial Data Showing Immunotherapeutic Cancer Vaccine, Galinpepimut-S (GPS), Demonstrated a Statistically Significant and Clinically Meaningful Improvement in Overall Survival in Patients with Acute Myeloid Leukemia\u201d (press release).",
    "reported_source_url": "https://www.globenewswire.com/news-release/2026/11/17/3404429/0/en/sellas-life-sciences-announces-positive-pivotal-phase-3-regal-trial-data-showing-immunotherapeutic-cancer-vaccine-galinpepimut-s-gps-demonstrated-a-statistically-significant-and-cl.html"
   }
  },
@@ -12973,7 +12977,7 @@ export default [
   "company": "Syndax Pharmaceuticals Inc",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "revumenib (informs SNDX-62122) Phase 1/2 proof-of-principle trial of revumenib in MF…",
+  "name": "revumenib (informs SNDX-62122) Phase 1/2 proof-of-principle trial of revumenib in MF\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -13000,7 +13004,7 @@ export default [
     {
      "date": "2027-12-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-02): “second half of 2027”. Was 2026-12-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-02): \u201csecond half of 2027\u201d. Was 2026-12-31 (quarter)."
     }
    ],
    "guided_window": "2027-H2",
@@ -13046,7 +13050,7 @@ export default [
      "why": "The company's release of 2026-10-12 reports this readout; a reported row carries the day it was reported. Was 2026-12-31 (quarter)."
     }
    ],
-   "review": "First Tracks Biotherapeutics, Inc. reported this readout on 2026-10-12: “First Tracks Biotherapeutics Announces Positive Top-Line Results for ANB033 in Gluten-Challenge Study in Celiac Disease” (press release).",
+   "review": "First Tracks Biotherapeutics, Inc. reported this readout on 2026-10-12: \u201cFirst Tracks Biotherapeutics Announces Positive Top-Line Results for ANB033 in Gluten-Challenge Study in Celiac Disease\u201d (press release).",
    "reported_source_url": "https://firsttracksbio.gcs-web.com/news-releases/news-release-details/first-tracks-biotherapeutics-announces-positive-top-line-results"
   }
  },
@@ -13206,7 +13210,7 @@ export default [
   "ta": "Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
@@ -13218,14 +13222,14 @@ export default [
    "trial": "METEOROID",
    "event_slug": "RHHBY-enspryng-mogad",
    "source_note": "sBLA, Priority Review, per Genentech release of September 9, 2026.",
-   "market_cap_usd": 384359857277.0,
+   "market_cap_usd": 384041155787.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 15.16,
-    "t30": 14.75,
-    "t7": 1.57,
+    "t120": 15.07,
+    "t30": 14.65,
+    "t7": 1.48,
     "source": "FMP split-adjusted daily closes"
    }
   },
@@ -13554,7 +13558,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/DYN-z-rostudirsen",
   "_d": {
    "indication": "Duchenne muscular dystrophy amenable to exon 51 skipping",
@@ -13563,14 +13567,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526323940/dyn-ex99_1.htm",
    "source_quote": "Biologics License Application (BLA) for z-rostudirsen in exon 51 DMD accepted for review by FDA; Priority Review granted; PDUFA target action date set for January 21, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 3015993169.0,
+   "market_cap_usd": 3001939147.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -13.16,
-    "t30": 4.66,
-    "t7": -10.8,
+    "t120": -13.69,
+    "t30": 4.03,
+    "t7": -11.34,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13586,7 +13590,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/INSM-arikayce",
   "_d": {
    "indication": "MAC lung disease, as part of a combination antibacterial drug regimen",
@@ -13595,14 +13599,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1104506/000110450626000047/insm-20260930.htm",
    "source_quote": "In September 2026, our US supplemental new drug application (sNDA) for ARIKAYCE in patients with MAC lung disease was accepted and granted priority review by the FDA as part of a combination antibacterial drug regimen, with a target action date of January 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 26639313400.0,
+   "market_cap_usd": 26733646800.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 12.02,
-    "t30": 15.36,
-    "t7": 6.11,
+    "t120": 12.45,
+    "t30": 15.8,
+    "t7": 6.51,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13619,7 +13623,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -13636,7 +13640,7 @@ export default [
     }
    },
    "indication": "Essential tremor",
-   "market_cap_usd": 8523545962.0,
+   "market_cap_usd": 8526900148.0,
    "cash_runway_months": 33.4,
    "days_to_decision": 203,
    "cohort_move_median_pct": -0.01,
@@ -13647,9 +13651,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -13.6,
-    "t30": 8.76,
-    "t7": 9.75,
+    "t120": -13.49,
+    "t30": 8.9,
+    "t7": 9.88,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Praxis 8-K 2026-08-06 (EX-99.1)",
@@ -13672,7 +13676,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -13681,14 +13685,14 @@ export default [
    "source_quote": "PDUFA target action date of January 30, 2027",
    "review": "Supplemental NDA for lower doses of Joenja, accepted with Priority Review (6-K of September 25, 2026). Follows the September 11, 2026 approval for children aged 4 to 11 weighing at least 27 kg.",
    "prior_decision": "/fda-decision/PHAR-2026-09-11",
-   "market_cap_usd": 869507864.0,
+   "market_cap_usd": 851849296.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -9.88,
-    "t30": 27.17,
-    "t7": 0.16,
+    "t120": -11.71,
+    "t30": 24.59,
+    "t7": -1.87,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13705,11 +13709,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
-   "market_cap_usd": 1773469790.0,
+   "market_cap_usd": 1787710468.0,
    "cash_runway_months": 23.2,
    "days_to_decision": 114,
    "cohort_move_median_pct": -0.01,
@@ -13720,9 +13724,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -2.39,
-    "t30": -6.39,
-    "t7": 0.96,
+    "t120": -1.74,
+    "t30": -5.77,
+    "t7": 1.63,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Agios press release 2026-10-30 (GlobeNewswire)",
@@ -13753,7 +13757,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -13770,7 +13774,7 @@ export default [
     }
    },
    "indication": "HIV pre-exposure prophylaxis (PrEP)",
-   "market_cap_usd": 210603294964.0,
+   "market_cap_usd": 211180052420.0,
    "cash_runway_months": null,
    "days_to_decision": 207,
    "cohort_move_median_pct": 0.0,
@@ -13781,9 +13785,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 24.58,
-    "t30": 17.66,
-    "t7": 1.68,
+    "t120": 24.99,
+    "t30": 18.05,
+    "t7": 2.02,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "GILEAD SCIENCES, INC. 10-Q 2026-08-06",
@@ -13802,7 +13806,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/BBIO-infigratinib",
   "_d": {
    "indication": "Children with achondroplasia",
@@ -13812,14 +13816,14 @@ export default [
    "source": "BridgeBio 8-K 2026-10-06 (EX-99.1, NDA accepted, priority review)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126039334/ef20083591_ex99-1.htm",
    "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 4, 2027",
-   "market_cap_usd": 14937886123.0,
+   "market_cap_usd": 14960716800.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 12.04,
-    "t30": 14.54,
-    "t7": 3.23,
+    "t120": 12.2,
+    "t30": 14.7,
+    "t7": 3.38,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13835,7 +13839,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/VSTM-avmapki-fakzynja-blister-pack",
   "_d": {
    "indication": "New blister-pack presentation of the approved AVMAPKI FAKZYNJA co-pack (priority review)",
@@ -13843,14 +13847,14 @@ export default [
    "source": "Verastem 8-K 2026-11-05 (EX-99.1, Q3 2026 results presentation)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1526119/000110465926123386/tm2628982d2_ex99-1.htm",
    "source_quote": "FDA decision on NDA for AVMAPKI FAKZYNJA CO-PACK Blister Pack by February 7, 2027",
-   "market_cap_usd": 930757929.0,
+   "market_cap_usd": 933769683.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 72.22,
-    "t30": -4.67,
-    "t7": -12.15,
+    "t120": 72.73,
+    "t30": -4.39,
+    "t7": -11.89,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13866,7 +13870,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/RHHBY-lunsumio-polivy",
   "_d": {
    "indication": "With Polivy (polatuzumab vedotin), relapsed or refractory large B-cell lymphoma after at least one prior line of systemic therapy",
@@ -13877,14 +13881,14 @@ export default [
    "source": "Roche press release 2026-06-18 (sBLA accepted)",
    "source_url": "https://www.roche.com/media/releases/med-cor-2026-06-18",
    "source_quote": "The FDA is expected to make a decision on approval by 9 February 2027.",
-   "market_cap_usd": 384359857277.0,
+   "market_cap_usd": 384041155787.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 15.16,
-    "t30": 14.75,
-    "t7": 1.57,
+    "t120": 15.07,
+    "t30": 14.65,
+    "t7": 1.48,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13900,7 +13904,7 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/BLTE-tinlarebant",
   "_d": {
    "indication": "Stargardt disease type 1 (STGD1)",
@@ -13909,14 +13913,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
    "source_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA) date of February 12, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 6362998594.0,
+   "market_cap_usd": 6351722394.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 7.03,
-    "t30": 1.8,
-    "t7": 2.73,
+    "t120": 6.57,
+    "t30": 1.36,
+    "t7": 2.29,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14006,7 +14010,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -14018,7 +14022,7 @@ export default [
     "slip": null
    },
    "indication": "Atopic dermatitis, infants 3-24 months",
-   "market_cap_usd": 3423136850.0,
+   "market_cap_usd": 3456015150.0,
    "cash_runway_months": null,
    "days_to_decision": 228,
    "cohort_move_median_pct": -0.01,
@@ -14029,9 +14033,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 26.28,
-    "t30": 13.19,
-    "t7": 5.97,
+    "t120": 27.47,
+    "t30": 14.26,
+    "t7": 6.97,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Arcutis Biotherapeutics, Inc. 8-K 2026-08-05",
@@ -14051,11 +14055,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-zipalertinib",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Relapsed EGFR exon 20 insertion non-small cell lung cancer",
-   "market_cap_usd": 586235727.0,
+   "market_cap_usd": 602141348.0,
    "cash_runway_months": 23.6,
    "days_to_decision": 232,
    "cohort_move_median_pct": 0.0,
@@ -14066,9 +14070,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -41.24,
-    "t30": -44.46,
-    "t7": -20.2,
+    "t120": -39.62,
+    "t30": -42.92,
+    "t7": -17.99,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Cullinan Therapeutics, Inc. 8-K 2026-05-07",
@@ -14088,7 +14092,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/APMD-ad109",
   "_d": {
    "indication": "Obstructive sleep apnea",
@@ -14097,14 +14101,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1745648/000119312526385355/apmd-ex99_1.htm",
    "source_quote": "U.S. Food and Drug Administration (FDA) Accepted the NDA for AD109, with a proposed proprietary name Oxnimbi, and assigned a PDUFA target action date of February 28, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 732909864.0,
+   "market_cap_usd": 741027866.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
     "t120": null,
-    "t30": -5.6,
-    "t7": 16.59,
+    "t30": -4.56,
+    "t7": 17.88,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14120,7 +14124,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/BMRN-voxzogo-achondroplasia",
   "_d": {
    "indication": "Children with achondroplasia (application for full approval)",
@@ -14129,14 +14133,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
    "source_quote": "BioMarin's application for full approval of VOXZOGO in children with achondroplasia is under review by the FDA, with a PDUFA target action date of February 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 11293371466.0,
+   "market_cap_usd": 11333078886.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 10.39,
-    "t30": 3.56,
-    "t7": 3.91,
+    "t120": 10.94,
+    "t30": 4.07,
+    "t7": 4.43,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14209,7 +14213,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/PVLA-qtorin-rapamycin",
   "_d": {
    "indication": "Microcystic lymphatic malformations",
@@ -14218,14 +14222,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1583648/000119312526435113/pvla-ex99_1.htm",
    "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 2089708428.0,
+   "market_cap_usd": 2110174268.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 23.23,
-    "t30": 11.55,
-    "t7": -18.84,
+    "t120": 24.59,
+    "t30": 12.77,
+    "t7": -17.95,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14242,11 +14246,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
-   "market_cap_usd": 17147443762.0,
+   "market_cap_usd": 17217823186.0,
    "cash_runway_months": null,
    "days_to_decision": 146,
    "cohort_move_median_pct": 0.0,
@@ -14257,9 +14261,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 32.58,
-    "t30": 16.94,
-    "t7": -1.95,
+    "t120": 33.14,
+    "t30": 17.44,
+    "t7": -1.54,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Exelixis 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
@@ -14289,7 +14293,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/NTLA-lonvo-z",
   "_d": {
    "indication": "Hereditary angioedema",
@@ -14298,14 +14302,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652130/000119312526385194/ntla-ex99_1.htm",
    "source_quote": "FDA sets Prescription Drug User Fee Act (PDUFA) date of March 10, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1403580000.0,
+   "market_cap_usd": 1372701240.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -26.86,
-    "t30": -19.12,
-    "t7": -11.85,
+    "t120": -28.51,
+    "t30": -20.94,
+    "t7": -13.83,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14321,7 +14325,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/BMY-reblozyl-mf",
   "_d": {
    "indication": "Adults with myelofibrosis-associated anemia receiving red blood cell transfusions, with concomitant JAK inhibitor therapy",
@@ -14330,14 +14334,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 124924305562.0,
+   "market_cap_usd": 125404665732.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 7.43,
-    "t30": 2.6,
-    "t7": -1.61,
+    "t120": 7.8,
+    "t30": 2.95,
+    "t7": -1.27,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14682,7 +14686,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/AQST-anaphylm",
   "_d": {
    "indication": "Anaphylaxis (Class 2 resubmission after the January 30, 2026 CRL)",
@@ -14691,14 +14695,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000058/a2026-10x19aquestivepduf.htm",
    "source_quote": "Aquestive Therapeutics Announces FDA Acceptance of Anaphylm NDA Resubmission and PDUFA Goal Date of March 16, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 461902310.0,
+   "market_cap_usd": 465044509.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -8.71,
-    "t30": -20.39,
-    "t7": 1.66,
+    "t120": -7.96,
+    "t30": -19.74,
+    "t7": 2.49,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14714,7 +14718,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/MRK-enflonsia",
   "_d": {
    "indication": "RSV lower respiratory tract disease in children under 2 at increased risk, through their second RSV season",
@@ -14723,14 +14727,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set PDUFA date of March 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 354182467500.0,
+   "market_cap_usd": 353442892500.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.87,
-    "t30": 1.25,
-    "t7": -2.06,
+    "t120": 19.58,
+    "t30": 1.01,
+    "t7": -2.29,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14746,7 +14750,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/ETON-libervant",
   "_d": {
    "indication": "Seizure clusters, expansion to patients ages 6 to 11",
@@ -14755,14 +14759,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926032600/ex_1025429.htm",
    "source_quote": "The NDA has a Prescription Drug User Fee Act (PDUFA) target action date of March 29, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1821961774.0,
+   "market_cap_usd": 1835806030.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 98.02,
-    "t30": 15.19,
-    "t7": 11.74,
+    "t120": 99.78,
+    "t30": 16.21,
+    "t7": 12.73,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14773,7 +14777,7 @@ export default [
   "company": "Aktis Oncology, Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "AKY-1189 ([225Ac]Ac-AKY-1189, Nectin-4 radioconjugate) NECTINIUM-2 Phase 1b Phase 1b…",
+  "name": "AKY-1189 ([225Ac]Ac-AKY-1189, Nectin-4 radioconjugate) NECTINIUM-2 Phase 1b Phase 1b\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -14824,7 +14828,7 @@ export default [
    "guided_filed": "2026-11-10",
    "program": "sutantatug envedotin (CRB-701) + Keytruda",
    "accession": "0001193125-26-219707",
-   "guidance_text": "Anticipate reporting sutantatug envedotin plus Keytruda® combination data in first-line (1L) OPSCC in Q1 2027",
+   "guidance_text": "Anticipate reporting sutantatug envedotin plus Keytruda\u00ae combination data in first-line (1L) OPSCC in Q1 2027",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/10/3399418/0/en/corbus-pharmaceuticals-reports-q3-2026-financial-results-and-provides-a-corporate-update.html",
    "ta_basis": "Sponsor SEC filing: CRB-701 ... HNSCC (head and neck squamous cell carcinoma)",
    "guided_window": "2027-Q1",
@@ -14840,7 +14844,7 @@ export default [
   "company": "Dyne Therapeutics, Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "z-basivarsen (DYNE-101) Phase 1/2 ACHIEVE registrational expansion cohort (REC) REC…",
+  "name": "z-basivarsen (DYNE-101) Phase 1/2 ACHIEVE registrational expansion cohort (REC) REC\u2026",
   "type": "Readout",
   "ta": "Rare disease",
   "cap": "",
@@ -14872,7 +14876,7 @@ export default [
   "company": "Moleculin Biotech, Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "Annamycin + cytarabine MIRACLE (MB-108) pivotal Phase 2/3, Part A Comprehensive Part A…",
+  "name": "Annamycin + cytarabine MIRACLE (MB-108) pivotal Phase 2/3, Part A Comprehensive Part A\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -14943,7 +14947,7 @@ export default [
     {
      "date": "2028-03-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-09): “1Q 2028”. Was 2027-03-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-09): \u201c1Q 2028\u201d. Was 2027-03-31 (quarter)."
     }
    ],
    "guided_window": "2028-Q1",
@@ -15041,7 +15045,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/HRMY-pitolisant-gr",
   "_d": {
    "indication": "Pitolisant gastro-resistant formulation (NDA accepted July 2026)",
@@ -15050,14 +15054,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926090086/hrmy-20260804xex99d1.htm",
    "source_quote": "Pitolisant GR NDA Accepted in July; Target PDUFA Date April 1, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1921458305.0,
+   "market_cap_usd": 1938452799.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 4.16,
-    "t30": -16.67,
-    "t7": -0.94,
+    "t120": 4.83,
+    "t30": -16.13,
+    "t7": -0.3,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15074,11 +15078,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-ozekibart",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Unresectable or metastatic conventional chondrosarcoma",
-   "market_cap_usd": 1083263929.0,
+   "market_cap_usd": 1091756019.0,
    "cash_runway_months": 14.7,
    "days_to_decision": 278,
    "cohort_move_median_pct": 0.0,
@@ -15089,9 +15093,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -29.14,
-    "t30": -21.12,
-    "t7": -12.82,
+    "t120": -28.66,
+    "t30": -20.59,
+    "t7": -12.23,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Inhibrx Biosciences, Inc. 8-K 2026-06-15",
@@ -15432,7 +15436,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/JAZZ-cannabidiol-capsule",
   "_d": {
    "indication": "Oral cannabidiol capsule formulation",
@@ -15441,14 +15445,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000056/a3q26earningsrelease.htm",
    "source_quote": "The PDUFA target action date for our New Drug Application (NDA) for the oral cannabidiol capsule formulation is April 16, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 15405372480.0,
+   "market_cap_usd": 15450946707.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 1.79,
-    "t30": 3.54,
-    "t7": 2.05,
+    "t120": 2.26,
+    "t30": 4.03,
+    "t7": 2.53,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15464,7 +15468,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/MRK-idvynso",
   "_d": {
    "indication": "Adults with HIV-1 infection (treatment-naive; 96-week data in virologically suppressed adults)",
@@ -15473,14 +15477,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set a PDUFA date for both sNDAs of April 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 354182467500.0,
+   "market_cap_usd": 353442892500.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.87,
-    "t30": 1.25,
-    "t7": -2.06,
+    "t120": 19.58,
+    "t30": 1.01,
+    "t7": -2.29,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15497,11 +15501,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
-   "market_cap_usd": 2255670585.0,
+   "market_cap_usd": 2266201260.0,
    "cash_runway_months": 20.0,
    "days_to_decision": 287,
    "cohort_move_median_pct": -0.01,
@@ -15512,9 +15516,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 7.6,
-    "t30": 3.25,
-    "t7": -6.57,
+    "t120": 8.1,
+    "t30": 3.73,
+    "t7": -6.14,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Pharvaris N.V. 6-K 2026-09-08",
@@ -15533,7 +15537,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/IMNM-varegacestat",
   "_d": {
    "indication": "Adults with desmoid tumors",
@@ -15542,14 +15546,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1472012/000119312526344577/imnm-ex99_1.htm",
    "source_quote": "Varegacestat PDUFA target action date set for April 28, 2027, following U.S. FDA acceptance of New Drug Application (NDA) for adults with desmoid tumors",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 2025541303.0,
+   "market_cap_usd": 2028493126.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -23.91,
-    "t30": -11.19,
-    "t7": -8.34,
+    "t120": -23.78,
+    "t30": -11.03,
+    "t7": -8.18,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15566,21 +15570,21 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 7122037969.0,
+   "market_cap_usd": 7150967961.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
    "source": "company filing (SEC)",
-   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) – Axsome Therapeutics, Inc.",
+   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) \u2013 Axsome Therapeutics, Inc.",
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -41.9,
-    "t30": -22.4,
-    "t7": 2.2,
+    "t120": -41.61,
+    "t30": -22.02,
+    "t7": 2.7,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15596,7 +15600,7 @@ export default [
   "ta": "Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/QURE-amt-130",
   "_d": {
    "indication": "Huntington's disease (Accelerated Approval pathway; FDA tentatively plans an advisory committee)",
@@ -15605,14 +15609,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1590560/000110465926120915/tm2628699d1_ex99-1.htm",
    "source_quote": "The application has been granted Priority Review with a Prescription Drug User Fee Act (PDUFA) target action date of May 1, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1461693842.0,
+   "market_cap_usd": 1457485511.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -16.14,
-    "t30": -9.63,
-    "t7": -3.96,
+    "t120": -16.38,
+    "t30": -9.89,
+    "t7": -4.24,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15629,11 +15633,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 14937886123.0,
+   "market_cap_usd": 14960716800.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
    "source": "company filing (SEC)",
    "source_quote": "BridgeBio Announces FDA Acceptance of NDA for Encaleret for ADH1 - PDUFA target action date of May 8, 2027",
@@ -15641,9 +15645,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 12.04,
-    "t30": 14.54,
-    "t7": 3.23,
+    "t120": 12.2,
+    "t30": 14.7,
+    "t7": 3.38,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15659,7 +15663,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/BMY-mezigdomide",
   "_d": {
    "indication": "Relapsed or refractory multiple myeloma",
@@ -15668,14 +15672,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA accepted a New Drug Application for mezigdomide in combination with carfilzomib and dexamethasone (MeziKd) in patients with relapsed or refractory multiple myeloma (RRMM), granting a PDUFA date of May 13, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 124924305562.0,
+   "market_cap_usd": 125404665732.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 7.43,
-    "t30": 2.6,
-    "t7": -1.61,
+    "t120": 7.8,
+    "t30": 2.95,
+    "t7": -1.27,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15873,7 +15877,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/ZBIO-obexelimab",
   "_d": {
    "indication": "IgG4-related disease",
@@ -15882,14 +15886,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1953926/000110465926095437/tm2622871d1_ex99-1.htm",
    "source_quote": "Obexelimab BLA submission for the treatment of IgG4-RD accepted by FDA; PDUFA target action date of May 27, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1885334645.0,
+   "market_cap_usd": 1881943756.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 49.25,
-    "t30": 2.82,
-    "t7": -1.98,
+    "t120": 49.52,
+    "t30": 3.01,
+    "t7": -1.8,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15905,7 +15909,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/BMRN-voxzogo-hypochondroplasia",
   "_d": {
    "indication": "Hypochondroplasia",
@@ -15914,14 +15918,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
    "source_quote": "Food and Drug Administration (FDA) has set a PDUFA target action date of May 30, 2027 for its supplemental NDA to expand the use of VOXZOGO for the treatment of HCH",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 11293371466.0,
+   "market_cap_usd": 11333078886.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 10.39,
-    "t30": 3.56,
-    "t7": 3.91,
+    "t120": 10.94,
+    "t30": 4.07,
+    "t7": 4.43,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15937,7 +15941,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/URGN-ugn-103",
   "_d": {
    "indication": "Low-grade intermediate-risk non-muscle invasive bladder cancer (LG-IR-NMIBC)",
@@ -15945,14 +15949,14 @@ export default [
    "source": "UroGen 8-K 2026-11-04 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1668243/000143774926034769/ex_1036873.htm",
    "source_quote": "The FDA accepted UroGen's NDA for UGN-103 (next-generation novel mitomycin-based formulation) for review; PDUFA goal date set for June 14, 2027",
-   "market_cap_usd": 1427536219.0,
+   "market_cap_usd": 1465057786.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 1.11,
-    "t30": -29.98,
-    "t7": 17.21,
+    "t120": 4.11,
+    "t30": -27.9,
+    "t7": 20.69,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -16279,7 +16283,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/MRK-sac-tmt",
   "_d": {
    "indication": "Adults with endometrial cancer previously treated with platinum chemotherapy and a PD-1/PD-L1 inhibitor",
@@ -16288,14 +16292,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 354182467500.0,
+   "market_cap_usd": 353442892500.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.87,
-    "t30": 1.25,
-    "t7": -2.06,
+    "t120": 19.58,
+    "t30": 1.01,
+    "t7": -2.29,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -16374,7 +16378,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T20:30:28Z",
+  "ua": "2026-11-17T21:20:47Z",
   "url": "/pdufa/COGT-bezuclastinib-advsm",
   "_d": {
    "indication": "Advanced systemic mastocytosis",
@@ -16382,14 +16386,14 @@ export default [
    "source": "Cogent 8-K 2026-11-05 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
    "source_quote": "AdvSM PDUFA target action date June 29, 2027",
-   "market_cap_usd": 4831813380.0,
+   "market_cap_usd": 4845732900.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -21.45,
-    "t30": -8.53,
-    "t7": -12.2,
+    "t120": -21.28,
+    "t30": -8.33,
+    "t7": -12.01,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -16400,7 +16404,7 @@ export default [
   "company": "Opus Genetics, Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "OPGx-BEST1 Phase 1/2 BIRD-1, Cohort 2 Topline incl. 3-month Cohort 2 data and 6-month…",
+  "name": "OPGx-BEST1 Phase 1/2 BIRD-1, Cohort 2 Topline incl. 3-month Cohort 2 data and 6-month\u2026",
   "type": "Readout",
   "ta": "Ophthalmology",
   "cap": "",
@@ -16429,7 +16433,7 @@ export default [
     {
      "date": "2027-03-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-10): “Q1 2027”. Was 2027-06-30 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-10): \u201cQ1 2027\u201d. Was 2027-06-30 (quarter)."
     }
    ],
    "guided_label": "Q1 2027",
@@ -16443,7 +16447,7 @@ export default [
   "company": "Prokidney Corp.",
   "d": "2027-06-30",
   "dp": "quarter",
-  "name": "rilparencel (REACT) PROACT 1 (REGEN-006) Phase 3 Phase 3 surrogate endpoint (eGFR slope)…",
+  "name": "rilparencel (REACT) PROACT 1 (REGEN-006) Phase 3 Phase 3 surrogate endpoint (eGFR slope)\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -17670,7 +17674,7 @@ export default [
   "company": "Adlai Nortye Group Ltd.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "AN4035 (CEACAM5 ADC, pan-RAS(ON) inhibitor payload) Global Phase I (Phase Ia) Full Phase…",
+  "name": "AN4035 (CEACAM5 ADC, pan-RAS(ON) inhibitor payload) Global Phase I (Phase Ia) Full Phase\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -17732,7 +17736,7 @@ export default [
   "company": "EyePoint, Inc.",
   "d": "2027-12-31",
   "dp": "quarter",
-  "name": "DURAVYU (vorolanib intravitreal insert, EYP-1901) COMO and CAPRI Phase 3 Phase 3 topline…",
+  "name": "DURAVYU (vorolanib intravitreal insert, EYP-1901) COMO and CAPRI Phase 3 Phase 3 topline\u2026",
   "type": "Readout",
   "ta": "Ophthalmology",
   "cap": "",
@@ -17764,7 +17768,7 @@ export default [
   "company": "Structure Therapeutics Inc.",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "ACCG-2671 (oral small molecule amylin receptor agonist) Phase 1/2a MAD portion (12-week)…",
+  "name": "ACCG-2671 (oral small molecule amylin receptor agonist) Phase 1/2a MAD portion (12-week)\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -17793,7 +17797,7 @@ export default [
     {
      "date": "2027-06-30",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-09): “first half of 2027”. Was 2027-12-31 (year)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-09): \u201cfirst half of 2027\u201d. Was 2027-12-31 (year)."
     }
    ],
    "guided_label": "first half of 2027",
@@ -17865,7 +17869,7 @@ export default [
     {
      "date": "2027-12-31",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-10): “2H 2027”. Was 2027-12-31 (quarter)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-10): \u201c2H 2027\u201d. Was 2027-12-31 (quarter)."
     }
    ],
    "guided_window": "2027-H2",
@@ -17880,7 +17884,7 @@ export default [
   "company": "Korro Bio, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "KRRO-121 (GalNAc RNA-editing oligonucleotide) ANCHOR Phase 1/2 (Part 2, UCD patients)…",
+  "name": "KRRO-121 (GalNAc RNA-editing oligonucleotide) ANCHOR Phase 1/2 (Part 2, UCD patients)\u2026",
   "type": "Readout",
   "ta": "Rare disease",
   "cap": "",
@@ -17972,7 +17976,7 @@ export default [
   "company": "Vaxcyte, Inc.",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "VAX-31 (31-valent PCV) OPUS-2 and OPUS-3 Phase 3 Phase 3 safety, tolerability and…",
+  "name": "VAX-31 (31-valent PCV) OPUS-2 and OPUS-3 Phase 3 Phase 3 safety, tolerability and\u2026",
   "type": "Readout",
   "ta": "Infectious",
   "cap": "",
@@ -18001,7 +18005,7 @@ export default [
     {
      "date": "2027-06-30",
      "changed": "2026-11-17",
-     "why": "Re-sourced to the company's newest statement (press release 2026-11-04): “first half of 2027”. Was 2027-12-31 (year)."
+     "why": "Re-sourced to the company's newest statement (press release 2026-11-04): \u201cfirst half of 2027\u201d. Was 2027-12-31 (year)."
     }
    ],
    "guided_label": "first half of 2027",
@@ -18062,7 +18066,7 @@ export default [
    "guided_filed": "2026-11-10",
    "program": "dabogratinib (TYRA-300)",
    "accession": "0001193125-26-220638",
-   "guidance_text": "LG-UTUC: Initial Phase 2 results – 2027",
+   "guidance_text": "LG-UTUC: Initial Phase 2 results \u2013 2027",
    "review": "Phase 2a/b in low-grade upper tract urothelial carcinoma; first patient dosed. Company guides initial results in 2027.",
    "date_history": [
     {
@@ -18484,7 +18488,7 @@ export default [
   "company": "Shattuck Labs, Inc.",
   "d": "2028-06-30",
   "dp": "year",
-  "name": "SL-325 (DR3 antagonist antibody) RECEPTIVE-CD1 Phase 2b Phase 2b 12-week induction data…",
+  "name": "SL-325 (DR3 antagonist antibody) RECEPTIVE-CD1 Phase 2b Phase 2b 12-week induction data\u2026",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -18575,7 +18579,7 @@ export default [
    "trial": "Phase 2",
    "guided_precision": "month",
    "guided_window": "2027-02",
-   "guided_label": "in conjunction with its fourth quarter and full year 2026…",
+   "guided_label": "in conjunction with its fourth quarter and full year 2026\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-10-29",
    "guidance_text": "now expects to announce clinical data from the Phase 2 trial of ALN-6400 in patients with hereditary hemorrhagic telangiectasia (HHT) ... fourth quarter and full year 2026 earnings call in February 2027",
@@ -18614,7 +18618,7 @@ export default [
    "trial": "Phase 1",
    "guided_precision": "month",
    "guided_window": "2027-02",
-   "guided_label": "in conjunction with its fourth quarter and full year 2026…",
+   "guided_label": "in conjunction with its fourth quarter and full year 2026\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-10-29",
    "guidance_text": "as well as from the Phase 1 trial of ALN-2232 in obesity and weight management ... fourth quarter and full year 2026 earnings call in February 2027",
@@ -18653,7 +18657,7 @@ export default [
    "trial": "Phase 1",
    "guided_precision": "window",
    "guided_window": "2026-12-12..2026-12-15",
-   "guided_label": "at the 2026 American Society of Hematology (ASH) Annual…",
+   "guided_label": "at the 2026 American Society of Hematology (ASH) Annual\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-10-29",
    "guidance_text": "will share Phase 1 healthy volunteer data for ALN-6400 ... 2026 American Society of Hematology (ASH) Annual Meeting and Exposition",
@@ -18715,7 +18719,7 @@ export default [
   "company": "MetaVia Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "DA-1726 (GLP-1/glucagon dual agonist) Phase 1 Parts 3A and 3B Phase 1 Parts 3A and 3B…",
+  "name": "DA-1726 (GLP-1/glucagon dual agonist) Phase 1 Parts 3A and 3B Phase 1 Parts 3A and 3B\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -18754,7 +18758,7 @@ export default [
   "company": "SELLAS Life Sciences Group, Inc.",
   "d": "2026-12-15",
   "dp": "month",
-  "name": "SLS009 (tambiciclib) + azacitidine/venetoclax Phase 2 (completed) Phase 2 data…",
+  "name": "SLS009 (tambiciclib) + azacitidine/venetoclax Phase 2 (completed) Phase 2 data\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -18871,7 +18875,7 @@ export default [
   "company": "Structure Therapeutics Inc.",
   "d": "2028-12-31",
   "dp": "year",
-  "name": "aleniglipron (oral small molecule GLP-1 RA) ACCOMPLISH-1 and ACCOMPLISH-2 Phase 3 Phase…",
+  "name": "aleniglipron (oral small molecule GLP-1 RA) ACCOMPLISH-1 and ACCOMPLISH-2 Phase 3 Phase\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -18909,7 +18913,7 @@ export default [
   "company": "Structure Therapeutics Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
-  "name": "aleniglipron (oral small molecule GLP-1 RA) Supplementary body composition, type 2…",
+  "name": "aleniglipron (oral small molecule GLP-1 RA) Supplementary body composition, type 2\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -18986,7 +18990,7 @@ export default [
   "company": "Alzamend Neuro, Inc.",
   "d": "2026-11-18",
   "dp": "day",
-  "name": "AL001 Phase 1/2A clinical trial (7T resting-state fMRI) Poster presentation of fMRI…",
+  "name": "AL001 Phase 1/2A clinical trial (7T resting-state fMRI) Poster presentation of fMRI\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -19062,7 +19066,7 @@ export default [
   "company": "Roivant Sciences Ltd.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "IMVT-1402 (imeroprubart) Potentially registrational trials in GD and MG Topline data…",
+  "name": "IMVT-1402 (imeroprubart) Potentially registrational trials in GD and MG Topline data\u2026",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -19176,7 +19180,7 @@ export default [
   "company": "Spyre Therapeutics, Inc.",
   "d": "2027-09-30",
   "dp": "quarter",
-  "name": "SPY120, SPY130, SPY230 (combinations of SPY001/SPY002/SPY003) Phase 2 SKYLINE Part B…",
+  "name": "SPY120, SPY130, SPY230 (combinations of SPY001/SPY002/SPY003) Phase 2 SKYLINE Part B\u2026",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -19329,7 +19333,7 @@ export default [
   "company": "SELLAS Life Sciences Group, Inc.",
   "d": "2026-12-14",
   "dp": "day",
-  "name": "SLS009 (tambiciclib) + azacitidine + venetoclax Phase 2 (r/r AML) Phase 2 data poster at…",
+  "name": "SLS009 (tambiciclib) + azacitidine + venetoclax Phase 2 (r/r AML) Phase 2 data poster at\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -19344,10 +19348,10 @@ export default [
    "trial": "Phase 2 (r/r AML)",
    "guided_precision": "day",
    "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 6:00 – 8:00 PM CST",
+   "guided_label": "Monday, December 14, 2026, 6:00 \u2013 8:00 PM CST",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
-   "guidance_text": "616. Acute Myeloid Leukemias: Investigational Drug and Cellular Therapies (Poster III) ... Monday, December 14, 2026, 6:00 – 8:00 PM CST",
+   "guidance_text": "616. Acute Myeloid Leukemias: Investigational Drug and Cellular Therapies (Poster III) ... Monday, December 14, 2026, 6:00 \u2013 8:00 PM CST",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 data poster at ASH 2026 (Abstract 5155)",
@@ -19405,7 +19409,7 @@ export default [
   "company": "Zenas BioPharma, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "ZB021 (oral IL-17AA/AF inhibitor) Proof-of-concept trial (planned after SAD/MAD)…",
+  "name": "ZB021 (oral IL-17AA/AF inhibitor) Proof-of-concept trial (planned after SAD/MAD)\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -19442,7 +19446,7 @@ export default [
   "company": "BioAge Labs, Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
-  "name": "BGE-102 (oral NLRP3 inhibitor) Phase 2 QUELL-CV Phase 2 topline (cardiovascular…",
+  "name": "BGE-102 (oral NLRP3 inhibitor) Phase 2 QUELL-CV Phase 2 topline (cardiovascular\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -19519,7 +19523,7 @@ export default [
   "company": "KAZIA THERAPEUTICS LTD",
   "d": "2028-12-31",
   "dp": "year",
-  "name": "paxalisib + fulvestrant (with palbociclib) HR+/HER2- three-arm expansion of the ongoing…",
+  "name": "paxalisib + fulvestrant (with palbociclib) HR+/HER2- three-arm expansion of the ongoing\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -19635,7 +19639,7 @@ export default [
   "company": "Cullinan Therapeutics, Inc.",
   "d": "2026-12-31",
   "dp": "month",
-  "name": "CLN-978 (CD19xCD3 T cell engager) ongoing clinical trials (multi-dose regimen)…",
+  "name": "CLN-978 (CD19xCD3 T cell engager) ongoing clinical trials (multi-dose regimen)\u2026",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -19653,7 +19657,7 @@ export default [
    "guided_label": "December",
    "guided_form": "press release",
    "guided_filed": "2026-11-10",
-   "guidance_text": "CLN-978 (CD19 TCE) multi-dose regimen data in SLE, RA, and Sjögren's disease will be shared in December",
+   "guidance_text": "CLN-978 (CD19 TCE) multi-dose regimen data in SLE, RA, and Sj\u00f6gren's disease will be shared in December",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/10/3399334/0/en/cullinan-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
    "source": "company guidance (company release)",
    "readout_described": "Multi-dose regimen data (webcast)",
@@ -19674,7 +19678,7 @@ export default [
   "company": "Cullinan Therapeutics, Inc.",
   "d": "2026-12-13",
   "dp": "day",
-  "name": "CLN-049 (FLT3xCD3 T cell engager) Phase 1 dose escalation study Updated Phase 1 dose…",
+  "name": "CLN-049 (FLT3xCD3 T cell engager) Phase 1 dose escalation study Updated Phase 1 dose\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -19712,7 +19716,7 @@ export default [
   "company": "Inhibrx Biosciences, Inc.",
   "d": "2026-11-20",
   "dp": "month",
-  "name": "ozekibart (INBRX-109) + irinotecan/temozolomide Phase 1/2 study Updated Phase 1/2…",
+  "name": "ozekibart (INBRX-109) + irinotecan/temozolomide Phase 1/2 study Updated Phase 1/2\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -19727,7 +19731,7 @@ export default [
    "trial": "Phase 1/2 study",
    "guided_precision": "window",
    "guided_window": "2026-11-19..2026-11-20",
-   "guided_label": "at the annual Connective Tissue Oncology Society (CTOS)…",
+   "guided_label": "at the annual Connective Tissue Oncology Society (CTOS)\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-13",
    "guidance_text": "The Company plans to present updated results from the Phase 1/2 study evaluating ozekibart (INBRX-109) ... at the annual Connective Tissue Oncology Society (CTOS) meeting in Seoul, South Korea from November 19th-20th, 2026.",
@@ -19751,7 +19755,7 @@ export default [
   "company": "Inhibrx Biosciences, Inc.",
   "d": "2026-11-20",
   "dp": "day",
-  "name": "ozekibart (INBRX-109) ChonDRAgon (randomized Phase 2) Subgroup analysis and updated PFS…",
+  "name": "ozekibart (INBRX-109) ChonDRAgon (randomized Phase 2) Subgroup analysis and updated PFS\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -19789,7 +19793,7 @@ export default [
   "company": "Inhibrx Biosciences, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "ordastobart (INBRX-106) + pembrolizumab HexAgon Phase 2 expansion Phase 2 expansion…",
+  "name": "ordastobart (INBRX-106) + pembrolizumab HexAgon Phase 2 expansion Phase 2 expansion\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -19942,7 +19946,7 @@ export default [
   "company": "Agenus Inc",
   "d": "2027-12-31",
   "dp": "quarter",
-  "name": "botensilimab + balstilimab (BOT+BAL) ROBBIN (Phase 3) Interim pathologic response…",
+  "name": "botensilimab + balstilimab (BOT+BAL) ROBBIN (Phase 3) Interim pathologic response\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -20134,7 +20138,7 @@ export default [
   "company": "IMMUTEP Ltd",
   "d": "2026-11-19",
   "dp": "day",
-  "name": "eftilagimod alfa (efti) + pembrolizumab + radiotherapy EFTISARC-NEO…",
+  "name": "eftilagimod alfa (efti) + pembrolizumab + radiotherapy EFTISARC-NEO\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -20149,14 +20153,14 @@ export default [
    "trial": "EFTISARC-NEO (investigator-initiated Phase II)",
    "guided_precision": "day",
    "guided_window": "2026-11-19",
-   "guided_label": "19 November 2026 at the Connective Tissue Oncology Society…",
+   "guided_label": "19 November 2026 at the Connective Tissue Oncology Society\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-10",
    "guidance_text": "Further detail and analyses will be presented in a poster discussion session on 19 November 2026 at the Connective Tissue Oncology Society (CTOS) 2026 Annual Meeting",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/10/3400380/0/en/immutep-announces-release-of-ctos-2026-abstract-reporting-first-survival-data-from-eftisarc-neo.html",
    "source": "company guidance (company release)",
    "readout_described": "Interim disease-free survival data (CTOS poster discussion)",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Immutep GNW 2026-11-10 18:02 ET (Sydney 11-11); quote verbatim; EFTISARC-NEO interim DFS; companion 11-05 release gives 19 Nov 4:30 PM KST (= Nov 19 2:30 AM ET, same date). NCT06128863 matches efti+pembrolizumab STS; registry sponsor is Maria Sklodowska-Curie Institute (investigator-initiated, as…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Immutep GNW 2026-11-10 18:02 ET (Sydney 11-11); quote verbatim; EFTISARC-NEO interim DFS; companion 11-05 release gives 19 Nov 4:30 PM KST (= Nov 19 2:30 AM ET, same date). NCT06128863 matches efti+pembrolizumab STS; registry sponsor is Maria Sklodowska-Curie Institute (investigator-initiated, as\u2026",
    "nct_stated": "NCT06128863",
    "date_history": [
     {
@@ -20173,7 +20177,7 @@ export default [
   "company": "IMMUTEP Ltd",
   "d": "2026-12-14",
   "dp": "day",
-  "name": "eftilagimod alfa (efti) + pembrolizumab TACTI-003 Part B (Phase IIb) Final median…",
+  "name": "eftilagimod alfa (efti) + pembrolizumab TACTI-003 Part B (Phase IIb) Final median\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -20404,7 +20408,7 @@ export default [
   "company": "Vaxart, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "oral COVID-19 vaccine candidate Phase 2b COVID-19 trial (400-person sentinel safety…",
+  "name": "oral COVID-19 vaccine candidate Phase 2b COVID-19 trial (400-person sentinel safety\u2026",
   "type": "Readout",
   "ta": "Infectious",
   "cap": "",
@@ -20442,7 +20446,7 @@ export default [
   "company": "Bolt Biotherapeutics, Inc.",
   "d": "2027-06-30",
   "dp": "quarter",
-  "name": "PRA-216 (IL-4Rα/TSLP bispecific) Phase 2 studies Phase 2 initial data",
+  "name": "PRA-216 (IL-4R\u03b1/TSLP bispecific) Phase 2 studies Phase 2 initial data",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -20453,7 +20457,7 @@ export default [
    "nct_id": null,
    "indication": "Asthma, atopic dermatitis, COPD",
    "market_cap_usd": null,
-   "program": "PRA-216 (IL-4Rα/TSLP bispecific)",
+   "program": "PRA-216 (IL-4R\u03b1/TSLP bispecific)",
    "trial": "Phase 2 studies",
    "guided_precision": "quarter",
    "guided_window": "2027-Q2",
@@ -21068,7 +21072,7 @@ export default [
   "company": "Rapport Therapeutics, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "RAP-641 (α6β4 nAChR) Phase 1 Phase 1 preliminary results",
+  "name": "RAP-641 (\u03b16\u03b24 nAChR) Phase 1 Phase 1 preliminary results",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
@@ -21079,7 +21083,7 @@ export default [
    "nct_id": null,
    "indication": "Chronic pain and migraine",
    "market_cap_usd": null,
-   "program": "RAP-641 (α6β4 nAChR)",
+   "program": "RAP-641 (\u03b16\u03b24 nAChR)",
    "trial": "Phase 1",
    "guided_precision": "half",
    "guided_window": "2027-H2",
@@ -21223,7 +21227,7 @@ export default [
   "company": "Aktis Oncology, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "AKY-2519 ([225Ac]Ac-AKY-2519, B7-H3 radioconjugate) BActinium-1 Phase 1b Phase 1b…",
+  "name": "AKY-2519 ([225Ac]Ac-AKY-2519, B7-H3 radioconjugate) BActinium-1 Phase 1b Phase 1b\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -21262,7 +21266,7 @@ export default [
   "company": "Moleculin Biotech, Inc.",
   "d": "2028-12-31",
   "dp": "year",
-  "name": "Annamycin + cytarabine MIRACLE (MB-108) pivotal Phase 2/3 Primary efficacy data, 2nd…",
+  "name": "Annamycin + cytarabine MIRACLE (MB-108) pivotal Phase 2/3 Primary efficacy data, 2nd\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -21381,7 +21385,7 @@ export default [
   "company": "Prokidney Corp.",
   "d": "2029-12-31",
   "dp": "year",
-  "name": "rilparencel (REACT) PROACT 1 (REGEN-006) Phase 3 Phase 3 confirmatory endpoint…",
+  "name": "rilparencel (REACT) PROACT 1 (REGEN-006) Phase 3 Phase 3 confirmatory endpoint\u2026",
   "type": "Readout",
   "ta": "Nephrology",
   "cap": "",
@@ -22036,7 +22040,7 @@ export default [
   "company": "Atossa Therapeutics, Inc.",
   "d": "2026-12-31",
   "dp": "month",
-  "name": "(Z)-endoxifen + elagolix / (Z)-endoxifen + abemaciclib I-SPY2 Phase 2 Select data…",
+  "name": "(Z)-endoxifen + elagolix / (Z)-endoxifen + abemaciclib I-SPY2 Phase 2 Select data\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -22089,7 +22093,7 @@ export default [
    "trial": "Karisma",
    "guided_precision": "month",
    "guided_window": "2026-12",
-   "guided_label": "In December 2026, presentations at the San Antonio Breast…",
+   "guided_label": "In December 2026, presentations at the San Antonio Breast\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-10",
    "guidance_text": "In December 2026, presentations at the San Antonio Breast Cancer Symposium will include Karisma follow-up results",
@@ -22151,7 +22155,7 @@ export default [
   "company": "Erasca, Inc.",
   "d": "2026-11-20",
   "dp": "month",
-  "name": "ERAS-0015 (pan-RAS molecular glue) AURORAS-1 Phase 1 Updated monotherapy data (oral…",
+  "name": "ERAS-0015 (pan-RAS molecular glue) AURORAS-1 Phase 1 Updated monotherapy data (oral\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -22169,7 +22173,7 @@ export default [
    "guided_label": "ENA, November 18-20, 2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-12",
-   "guidance_text": "An oral plenary presentation will feature updated ERAS-0015 monotherapy data ... taking place November 18–20, 2026, in Barcelona, Spain",
+   "guidance_text": "An oral plenary presentation will feature updated ERAS-0015 monotherapy data ... taking place November 18\u201320, 2026, in Barcelona, Spain",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402156/0/en/erasca-reports-third-quarter-2026-business-updates-and-financial-results.html",
    "source": "company guidance (company release)",
    "readout_described": "Updated monotherapy data (oral plenary) at ENA 2026",
@@ -22226,7 +22230,7 @@ export default [
   "company": "Erasca, Inc.",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "ERAS-0015 combinations including panitumumab AURORAS-1 Phase 1 (combination dose…",
+  "name": "ERAS-0015 combinations including panitumumab AURORAS-1 Phase 1 (combination dose\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -22300,7 +22304,7 @@ export default [
   "company": "Fractyl Health, Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "Revita (Revita DMR System) REMAIN-1 Pivotal Cohort Topline 12-month data (second…",
+  "name": "Revita (Revita DMR System) REMAIN-1 Pivotal Cohort Topline 12-month data (second\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -22416,7 +22420,7 @@ export default [
   "company": "Kyverna Therapeutics, Inc.",
   "d": "2026-12-15",
   "dp": "month",
-  "name": "miv-cel (mivocabtagene autoleucel, KYV-101) KYSA-8 registrational Additional one-year…",
+  "name": "miv-cel (mivocabtagene autoleucel, KYV-101) KYSA-8 registrational Additional one-year\u2026",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
@@ -22493,7 +22497,7 @@ export default [
   "company": "Mesoblast Ltd",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "rexlemestrocel-L expanded 350-patient Phase 3 pivotal trial Phase 3 primary endpoint…",
+  "name": "rexlemestrocel-L expanded 350-patient Phase 3 pivotal trial Phase 3 primary endpoint\u2026",
   "type": "Readout",
   "ta": "Musculoskeletal",
   "cap": "",
@@ -22531,7 +22535,7 @@ export default [
   "company": "BeOne Medicines Ltd.",
   "d": "2026-12-15",
   "dp": "month",
-  "name": "BRUKINSA (zanubrutinib) MANGROVE Phase 3 Interim analysis results (ASH 2026 Plenary…",
+  "name": "BRUKINSA (zanubrutinib) MANGROVE Phase 3 Interim analysis results (ASH 2026 Plenary\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -22553,7 +22557,7 @@ export default [
    "source_url": "https://www.businesswire.com/news/home/20261105790053/en/BeOne-Medicines-Announces-Third-Quarter-2026-Financial-Results-and-Business-Updates/",
    "source": "company guidance (company release)",
    "readout_described": "Interim analysis results (ASH 2026 Plenary Scientific Session)",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. BeOne Q3 release (FMP-dated 2026-11-05); verbatim: interim analysis results from Phase 3 MANGROVE in first-line MCL to be presented during the ASH 2026 Plenary Scientific Session. Release body does not name rituximab or 'previously untreated' (only in an unrelated teaser), so drug/indication set…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. BeOne Q3 release (FMP-dated 2026-11-05); verbatim: interim analysis results from Phase 3 MANGROVE in first-line MCL to be presented during the ASH 2026 Plenary Scientific Session. Release body does not name rituximab or 'previously untreated' (only in an unrelated teaser), so drug/indication set\u2026",
    "date_history": [
     {
      "date": "2026-12-15",
@@ -22646,7 +22650,7 @@ export default [
   "company": "Taysha Gene Therapies, Inc.",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "TSHA-102 REVEAL pivotal (6-month interim analysis) Topline data from 6-month interim…",
+  "name": "TSHA-102 REVEAL pivotal (6-month interim analysis) Topline data from 6-month interim\u2026",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
@@ -22798,7 +22802,7 @@ export default [
   "company": "Harmony Biosciences Holdings, Inc.",
   "d": "2026-12-31",
   "dp": "month",
-  "name": "EPX-100 (clemizole hydrochloride) ARGUS open-label extension (18-month) Updated OLE data…",
+  "name": "EPX-100 (clemizole hydrochloride) ARGUS open-label extension (18-month) Updated OLE data\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -22836,7 +22840,7 @@ export default [
   "company": "BridgeBio Pharma, Inc.",
   "d": "2028-12-31",
   "dp": "year",
-  "name": "BBP-418 FORTIFY (Phase 3) Month 36 final analysis Phase 3 final analysis topline (Month…",
+  "name": "BBP-418 FORTIFY (Phase 3) Month 36 final analysis Phase 3 final analysis topline (Month\u2026",
   "type": "Readout",
   "ta": "Rare disease",
   "cap": "",
@@ -22932,7 +22936,7 @@ export default [
    "guided_label": "by the end of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
-   "guidance_text": "BELLA Part B – Enrollment nearing completion in Phase 2 trial of relacorilant plus nab-paclitaxel and bevacizumab ... Results expected by the end of next year",
+   "guidance_text": "BELLA Part B \u2013 Enrollment nearing completion in Phase 2 trial of relacorilant plus nab-paclitaxel and bevacizumab ... Results expected by the end of next year",
    "source_url": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 results",
@@ -22970,7 +22974,7 @@ export default [
    "guided_label": "by the end of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
-   "guidance_text": "BELLA Part C – Enrollment completed in Phase 2 trial of relacorilant plus nab-paclitaxel in 92 patients ... Results expected by the end of next year",
+   "guidance_text": "BELLA Part C \u2013 Enrollment completed in Phase 2 trial of relacorilant plus nab-paclitaxel in 92 patients ... Results expected by the end of next year",
    "source_url": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 results",
@@ -23008,7 +23012,7 @@ export default [
    "guided_label": "by the end of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
-   "guidance_text": "TRIDENT – Enrollment continues in Phase 2 trial of relacorilant plus nab-paclitaxel and gemcitabine ... Results expected by the end of next year",
+   "guidance_text": "TRIDENT \u2013 Enrollment continues in Phase 2 trial of relacorilant plus nab-paclitaxel and gemcitabine ... Results expected by the end of next year",
    "source_url": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 results",
@@ -23028,7 +23032,7 @@ export default [
   "company": "Corcept Therapeutics Inc",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "Relacorilant + enzalutamide Randomized, placebo-controlled Phase 2 (with University of…",
+  "name": "Relacorilant + enzalutamide Randomized, placebo-controlled Phase 2 (with University of\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -23046,7 +23050,7 @@ export default [
    "guided_label": "by the end of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
-   "guidance_text": "Prostate cancer – Enrollment continues in randomized, placebo-controlled Phase 2 trial of relacorilant plus enzalutamide ... Results expected by the end of next year",
+   "guidance_text": "Prostate cancer \u2013 Enrollment continues in randomized, placebo-controlled Phase 2 trial of relacorilant plus enzalutamide ... Results expected by the end of next year",
    "source_url": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 results",
@@ -23084,7 +23088,7 @@ export default [
    "guided_label": "by the end of 2027",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
-   "guidance_text": "SYNERGY – Enrollment continues in Phase 1b dose-finding trial of nenocorilant plus nivolumab ... Results expected by the end of next year",
+   "guidance_text": "SYNERGY \u2013 Enrollment continues in Phase 1b dose-finding trial of nenocorilant plus nivolumab ... Results expected by the end of next year",
    "source_url": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 1b results",
@@ -23332,7 +23336,7 @@ export default [
   "company": "Adagene Inc.",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "Muzastotug (ADG126) + pembrolizumab (KEYTRUDA) Randomized Phase 2 dose-optimization…",
+  "name": "Muzastotug (ADG126) + pembrolizumab (KEYTRUDA) Randomized Phase 2 dose-optimization\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -23354,7 +23358,7 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1818838/000110465926124143/tm2629316d1_ex99-1.htm",
    "source": "company guidance (SEC filing)",
    "readout_described": "Phase 2 initial results",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Quote verbatim on Adagene EX-99.1 dated 2026-11-09 (muzastotug/ADG126 + KEYTRUDA, late-line MSS CRC without liver mets). Page calls it 'randomized Phase 2 dose-optimization trial'; '(within Phase 1b/2 protocol)' is not on the page. NCT05405595 sponsor Adagene, ADG126+pembrolizumab, randomized…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Quote verbatim on Adagene EX-99.1 dated 2026-11-09 (muzastotug/ADG126 + KEYTRUDA, late-line MSS CRC without liver mets). Page calls it 'randomized Phase 2 dose-optimization trial'; '(within Phase 1b/2 protocol)' is not on the page. NCT05405595 sponsor Adagene, ADG126+pembrolizumab, randomized\u2026",
    "nct_stated": "NCT05405595",
    "date_history": [
     {
@@ -23409,7 +23413,7 @@ export default [
   "company": "Atea Pharmaceuticals, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "Bemnifosbuvir/ruzasvir (BEM/RZR) C-FORWARD (Phase 3, outside North America) Phase 3…",
+  "name": "Bemnifosbuvir/ruzasvir (BEM/RZR) C-FORWARD (Phase 3, outside North America) Phase 3\u2026",
   "type": "Readout",
   "ta": "Infectious",
   "cap": "",
@@ -23486,7 +23490,7 @@ export default [
   "company": "Biohaven Ltd.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "Taldefgrobep alfa (monotherapy and with GLP-1-based therapy) Phase 2 obesity trial Phase…",
+  "name": "Taldefgrobep alfa (monotherapy and with GLP-1-based therapy) Phase 2 obesity trial Phase\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -23942,7 +23946,7 @@ export default [
   "company": "Innate Pharma SA",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "Monalizumab + durvalumab PACIFIC-9 (Phase 3, AstraZeneca-led) Phase 3 high-level data…",
+  "name": "Monalizumab + durvalumab PACIFIC-9 (Phase 3, AstraZeneca-led) Phase 3 high-level data\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -23980,7 +23984,7 @@ export default [
   "company": "Innate Pharma SA",
   "d": "2026-11-18",
   "dp": "day",
-  "name": "IPH4502 (Nectin-4 exatecan ADC) IPH4502-101 (Phase 1 dose escalation) Phase 1…",
+  "name": "IPH4502 (Nectin-4 exatecan ADC) IPH4502-101 (Phase 1 dose escalation) Phase 1\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24019,7 +24023,7 @@ export default [
   "company": "Legend Biotech Corp",
   "d": "2026-12-13",
   "dp": "day",
-  "name": "LB2501 (in vivo CD19/CD20 dual-targeting CAR-T) First-in-human Phase 1 (China) Phase 1…",
+  "name": "LB2501 (in vivo CD19/CD20 dual-targeting CAR-T) First-in-human Phase 1 (China) Phase 1\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24034,10 +24038,10 @@ export default [
    "trial": "First-in-human Phase 1 (China)",
    "guided_precision": "day",
    "guided_window": "2026-12-13",
-   "guided_label": "Dec 13, 2026, 6:00–8:00 PM",
+   "guided_label": "Dec 13, 2026, 6:00\u20138:00 PM",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
-   "guidance_text": "Update of the first-in-human trial of LB2501, an in vivo CD19/CD20 dual targeting CAR-T therapy, in relapsed/refractory…",
+   "guidance_text": "Update of the first-in-human trial of LB2501, an in vivo CD19/CD20 dual targeting CAR-T therapy, in relapsed/refractory\u2026",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
    "source": "company guidance (company release)",
    "readout_described": "Phase 1 updated data, ASH 2026 poster #4169",
@@ -24058,7 +24062,7 @@ export default [
   "company": "Legend Biotech Corp",
   "d": "2026-12-12",
   "dp": "day",
-  "name": "Ciltacabtagene autoleucel (CARVYKTI) CARTITUDE-4 subgroup analyses Durable survival…",
+  "name": "Ciltacabtagene autoleucel (CARVYKTI) CARTITUDE-4 subgroup analyses Durable survival\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24073,10 +24077,10 @@ export default [
    "trial": "CARTITUDE-4 subgroup analyses",
    "guided_precision": "day",
    "guided_window": "2026-12-12",
-   "guided_label": "Dec 12, 2026, 3:15–3:30 PM",
+   "guided_label": "Dec 12, 2026, 3:15\u20133:30 PM",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
-   "guidance_text": "First report of durable survival outcomes with ciltacabtagene autoleucel (cilta-cel) in patients with daratumumab-refractory…",
+   "guidance_text": "First report of durable survival outcomes with ciltacabtagene autoleucel (cilta-cel) in patients with daratumumab-refractory\u2026",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
    "source": "company guidance (company release)",
    "readout_described": "Durable survival outcomes, ASH 2026 oral #276",
@@ -24096,7 +24100,7 @@ export default [
   "company": "Legend Biotech Corp",
   "d": "2026-12-13",
   "dp": "day",
-  "name": "LUCAR-G39D (allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells) Phase 1 Phase 1…",
+  "name": "LUCAR-G39D (allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells) Phase 1 Phase 1\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -24111,14 +24115,14 @@ export default [
    "trial": "Phase 1",
    "guided_precision": "day",
    "guided_window": "2026-12-13",
-   "guided_label": "Dec 13, 2026, 6:00–8:00 PM",
+   "guided_label": "Dec 13, 2026, 6:00\u20138:00 PM",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
-   "guidance_text": "Update of a phase 1 study of LUCAR-G39D: An allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells in adults with…",
+   "guidance_text": "Update of a phase 1 study of LUCAR-G39D: An allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells in adults with\u2026",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
    "source": "company guidance (company release)",
    "readout_described": "Phase 1 update, ASH 2026 poster #2392",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Title/poster #2392/Dec 13 verbatim on Legend 2026-11-04; title truncated at 'in adults with…', so no indication is stated -> null.",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Title/poster #2392/Dec 13 verbatim on Legend 2026-11-04; title truncated at 'in adults with\u2026', so no indication is stated -> null.",
    "date_history": [
     {
      "date": "2026-12-13",
@@ -24171,7 +24175,7 @@ export default [
   "company": "Medicinova Inc",
   "d": "2026-12-31",
   "dp": "year",
-  "name": "MN-166 (ibudilast) COMBAT-ALS (Phase 2b/3), double-blind portion Phase 2b/3 topline…",
+  "name": "MN-166 (ibudilast) COMBAT-ALS (Phase 2b/3), double-blind portion Phase 2b/3 topline\u2026",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
@@ -24248,7 +24252,7 @@ export default [
   "company": "Oncolytics Biotech Inc",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "Pelareorep + mFOLFIRINOX, with and without atezolizumab GOBLET (Phase 1/2) Cohort 5…",
+  "name": "Pelareorep + mFOLFIRINOX, with and without atezolizumab GOBLET (Phase 1/2) Cohort 5\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24286,7 +24290,7 @@ export default [
   "company": "Oncolytics Biotech Inc",
   "d": "2026-12-31",
   "dp": "year",
-  "name": "Pelareorep + FOLFIRI + bevacizumab REO 033 (randomized) Part A Part A interim clinical…",
+  "name": "Pelareorep + FOLFIRI + bevacizumab REO 033 (randomized) Part A Part A interim clinical\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24324,7 +24328,7 @@ export default [
   "company": "TriSalus Life Sciences, Inc.",
   "d": "2027-03-31",
   "dp": "quarter",
-  "name": "PROTECT registry (interim analysis) Registry interim analysis, first multi-center U.S.…",
+  "name": "PROTECT registry (interim analysis) Registry interim analysis, first multi-center U.S.\u2026",
   "type": "Readout",
   "ta": "",
   "cap": "",
@@ -24493,7 +24497,7 @@ export default [
    "trial": "Phase 1 trial of IM-1021",
    "guided_precision": "day",
    "guided_window": "2026-12-14",
-   "guided_label": "at the 2026 American Society of Hematology (ASH) Annual…",
+   "guided_label": "at the 2026 American Society of Hematology (ASH) Annual\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-09",
    "guidance_text": "expects to present an updated dataset at the 2026 American Society of Hematology (ASH) Annual Meeting on December 14, 2026.",
@@ -24516,7 +24520,7 @@ export default [
   "company": "Intellia Therapeutics, Inc.",
   "d": "2026-11-18",
   "dp": "day",
-  "name": "nexiguran ziclumeran (nex-z) Phase 1 clinical trial (long-term follow-up) Phase 1…",
+  "name": "nexiguran ziclumeran (nex-z) Phase 1 clinical trial (long-term follow-up) Phase 1\u2026",
   "type": "Readout",
   "ta": "Rare disease",
   "cap": "",
@@ -24531,7 +24535,7 @@ export default [
    "trial": "Phase 1 clinical trial (long-term follow-up)",
    "guided_precision": "day",
    "guided_window": "2026-11-18",
-   "guided_label": "Wednesday, November 18, 10:04 a.m. UYT (International…",
+   "guided_label": "Wednesday, November 18, 10:04 a.m. UYT (International\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
    "guidance_text": "Long-term follow-up in patients with ATTRv-PN from the Phase 1 clinical trial will be presented ... Wednesday, November 18, 10:04 a.m. UYT",
@@ -24744,7 +24748,7 @@ export default [
   "company": "Verastem, Inc.",
   "d": "2027-06-30",
   "dp": "quarter",
-  "name": "VS-7375 + gemcitabine/nab-paclitaxel 1L mPDAC combination cohort (trial not named in…",
+  "name": "VS-7375 + gemcitabine/nab-paclitaxel 1L mPDAC combination cohort (trial not named in\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24898,7 +24902,7 @@ export default [
   "company": "ADC Therapeutics SA",
   "d": "2026-12-14",
   "dp": "day",
-  "name": "ZYNLONTA (loncastuximab tesirine) + rituximab LOTIS-5 (Phase 3) Phase 3 full results,…",
+  "name": "ZYNLONTA (loncastuximab tesirine) + rituximab LOTIS-5 (Phase 3) Phase 3 full results,\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24913,7 +24917,7 @@ export default [
    "trial": "LOTIS-5 (Phase 3)",
    "guided_precision": "day",
    "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 3:00 - 3:15 p.m. CT (68th ASH…",
+   "guided_label": "Monday, December 14, 2026, 3:00 - 3:15 p.m. CT (68th ASH\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
    "guidance_text": "as well as full results from the Phase 3 LOTIS-5 r/r DLBCL study ... Monday, December 14, 2026",
@@ -24936,7 +24940,7 @@ export default [
   "company": "ADC Therapeutics SA",
   "d": "2026-12-13",
   "dp": "day",
-  "name": "ZYNLONTA + glofitamab LOTIS-7 (Phase 1b) Updated Phase 1b results, oral presentation at…",
+  "name": "ZYNLONTA + glofitamab LOTIS-7 (Phase 1b) Updated Phase 1b results, oral presentation at\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24951,7 +24955,7 @@ export default [
    "trial": "LOTIS-7 (Phase 1b)",
    "guided_precision": "day",
    "guided_window": "2026-12-13",
-   "guided_label": "Sunday, December 13, 2026, 12:00 - 12:15 p.m. CT (68th ASH…",
+   "guided_label": "Sunday, December 13, 2026, 12:00 - 12:15 p.m. CT (68th ASH\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
    "guidance_text": "expanded LOTIS-7 data evaluating ZYNLONTA in combination with glofitamab ... Sunday, December 13, 2026",
@@ -24974,7 +24978,7 @@ export default [
   "company": "ADC Therapeutics SA",
   "d": "2026-12-14",
   "dp": "day",
-  "name": "ZYNLONTA (fixed-duration monotherapy) Multicenter Phase 2 investigator-initiated trial…",
+  "name": "ZYNLONTA (fixed-duration monotherapy) Multicenter Phase 2 investigator-initiated trial\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -24989,14 +24993,14 @@ export default [
    "trial": "Multicenter Phase 2 investigator-initiated trial",
    "guided_precision": "day",
    "guided_window": "2026-12-14",
-   "guided_label": "Monday, December 14, 2026, 11:15 - 11:30 a.m. CT (68th ASH…",
+   "guided_label": "Monday, December 14, 2026, 11:15 - 11:30 a.m. CT (68th ASH\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
    "guidance_text": "Report of a Multicenter Phase II Study ... Monday, December 14, 2026",
    "source_url": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2 IIT data, oral presentation at ASH 2026 (Abstract #784)",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. First quote span \"Multicenter Phase II study of fixed-duration ZYNLONTA in r/r MZL\" is NOT on the page; page has abstract #784 title fragment \"Report of a Multicenter Phase II Study\" and body \"An investigator-led, multicenter Phase 2 study demonstrated high response rates and encouraging…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. First quote span \"Multicenter Phase II study of fixed-duration ZYNLONTA in r/r MZL\" is NOT on the page; page has abstract #784 title fragment \"Report of a Multicenter Phase II Study\" and body \"An investigator-led, multicenter Phase 2 study demonstrated high response rates and encouraging\u2026",
    "date_history": [
     {
      "date": "2026-12-14",
@@ -25051,7 +25055,7 @@ export default [
   "company": "Arvinas, Inc.",
   "d": "2026-12-15",
   "dp": "month",
-  "name": "ARV-393 (zaloblideg, PROTAC BCL6 degrader) Phase 1 (early monotherapy dose-escalation…",
+  "name": "ARV-393 (zaloblideg, PROTAC BCL6 degrader) Phase 1 (early monotherapy dose-escalation\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -25066,14 +25070,14 @@ export default [
    "trial": "Phase 1 (early monotherapy dose-escalation cohorts)",
    "guided_precision": "window",
    "guided_window": "2026-12-12..2026-12-15",
-   "guided_label": "68th American Society of Hematology Annual Meeting (Dec.…",
+   "guided_label": "68th American Society of Hematology Annual Meeting (Dec.\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-03",
    "guidance_text": "Submitted initial Phase 1 monotherapy dose escalation data for presentation at the 68th American Society of Hematology Annual Meeting (Dec. 12-15, 2026).",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/03/3394044/0/en/arvinas-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
    "source": "company guidance (company release)",
    "readout_described": "Preliminary Phase 1 data at ASH 2026",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Quote joins two different sentences: milestone bullet \"Present data from early monotherapy dose escalation cohorts ... (Q4 2026).\" has no ASH mention; the ASH dates come from Q3-highlights sentence. Use that sentence verbatim. ASH meeting Dec 12-15, 2026 window verified; 2026-11-04 Arvinas release…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Quote joins two different sentences: milestone bullet \"Present data from early monotherapy dose escalation cohorts ... (Q4 2026).\" has no ASH mention; the ASH dates come from Q3-highlights sentence. Use that sentence verbatim. ASH meeting Dec 12-15, 2026 window verified; 2026-11-04 Arvinas release\u2026",
    "date_history": [
     {
      "date": "2026-12-15",
@@ -25354,7 +25358,7 @@ export default [
   "company": "Coherus Oncology, Inc.",
   "d": "2027-06-30",
   "dp": "year",
-  "name": "casdozokitug + toripalimab + bevacizumab Randomized Phase 2 First data readout…",
+  "name": "casdozokitug + toripalimab + bevacizumab Randomized Phase 2 First data readout\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -25392,7 +25396,7 @@ export default [
   "company": "Cardiff Oncology, Inc.",
   "d": "2026-12-13",
   "dp": "day",
-  "name": "onvansertib Investigator-sponsored clinical trial in CMML Updated investigator-sponsored…",
+  "name": "onvansertib Investigator-sponsored clinical trial in CMML Updated investigator-sponsored\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -25407,10 +25411,10 @@ export default [
    "trial": "Investigator-sponsored clinical trial in CMML",
    "guided_precision": "day",
    "guided_window": "2026-12-13",
-   "guided_label": "American Society of Hematology (ASH) Annual Meeting on…",
+   "guided_label": "American Society of Hematology (ASH) Annual Meeting on\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-12",
-   "guidance_text": "Updated data from an investigator-sponsored clinical trial in CMML ... will be presented at the American Society of Hematology (“ASH”) Annual Meeting on December 13, 2026.",
+   "guidance_text": "Updated data from an investigator-sponsored clinical trial in CMML ... will be presented at the American Society of Hematology (\u201cASH\u201d) Annual Meeting on December 13, 2026.",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3401392/0/en/cardiff-oncology-reports-third-quarter-2026-results-and-provides-business-update.html",
    "source": "company guidance (company release)",
    "readout_described": "Updated investigator-sponsored trial data at ASH 2026",
@@ -25448,7 +25452,7 @@ export default [
    "guided_label": "November 2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-05",
-   "guidance_text": "Completed the Halneuron® Phase 2b trial in Chemotherapy Induced Neuropathy, top-line results to be announced in November 2026",
+   "guidance_text": "Completed the Halneuron\u00ae Phase 2b trial in Chemotherapy Induced Neuropathy, top-line results to be announced in November 2026",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/05/3396434/0/en/dogwood-therapeutics-announces-third-quarter-2026-financial-results.html",
    "source": "company guidance (company release)",
    "readout_described": "Phase 2b topline results",
@@ -25546,7 +25550,7 @@ export default [
   "company": "IDEAYA Biosciences, Inc.",
   "d": "2027-12-31",
   "dp": "year",
-  "name": "IDE034 (B7H3/PTK7 bispecific TOP1 ADC) Phase 1 dose escalation Initial Phase 1 clinical…",
+  "name": "IDE034 (B7H3/PTK7 bispecific TOP1 ADC) Phase 1 dose escalation Initial Phase 1 clinical\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -25599,7 +25603,7 @@ export default [
    "trial": "SENTRY (Phase 3)",
    "guided_precision": "day",
    "guided_window": "2026-12-13",
-   "guided_label": "December 13, 2026 from 10:15 a.m. CT to 10:30 a.m. CT…",
+   "guided_label": "December 13, 2026 from 10:15 a.m. CT to 10:30 a.m. CT\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
    "guidance_text": "Week 48 Data from the Phase 3 SENTRY Trial Selected for Oral Presentation ... December 13, 2026 from 10:15 a.m. CT to 10:30 a.m. CT",
@@ -25637,7 +25641,7 @@ export default [
    "trial": "SENTRY-2 (Phase 2)",
    "guided_precision": "day",
    "guided_window": "2026-12-12",
-   "guided_label": "December 12, 2026 from 2:45 p.m. CT to 3:00 p.m. CT (68th…",
+   "guided_label": "December 12, 2026 from 2:45 p.m. CT to 3:00 p.m. CT (68th\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
    "guidance_text": "Data from the Phase 2 SENTRY-2 Trial Selected for Oral Presentation ... December 12, 2026 from 2:45 p.m. CT to 3:00 p.m. CT",
@@ -25675,7 +25679,7 @@ export default [
    "trial": "STOMP (Arm 12)",
    "guided_precision": "day",
    "guided_window": "2026-12-12",
-   "guided_label": "December 12, 2026 from 5:30 p.m. CT to 7:30 p.m. CT (68th…",
+   "guided_label": "December 12, 2026 from 5:30 p.m. CT to 7:30 p.m. CT (68th\u2026",
    "guided_form": "press release",
    "guided_filed": "2026-11-04",
    "guidance_text": "was selected for a poster presentation ... December 12, 2026 from 5:30 p.m. CT to 7:30 p.m. CT",
@@ -25698,7 +25702,7 @@ export default [
   "company": "MBX Biosciences, Inc.",
   "d": "2026-12-31",
   "dp": "quarter",
-  "name": "MBX 4291 (GLP-1/GIP co-agonist prodrug) Phase 1 MAD (Part C, Cohort 1) Unblinded 12-week…",
+  "name": "MBX 4291 (GLP-1/GIP co-agonist prodrug) Phase 1 MAD (Part C, Cohort 1) Unblinded 12-week\u2026",
   "type": "Readout",
   "ta": "Metabolic",
   "cap": "",
@@ -25759,7 +25763,7 @@ export default [
    "source_url": "https://www.businesswire.com/news/home/20261104238983/en/Arcus-Biosciences-Reports-Third-Quarter-2026-Financial-Results-and-Provides-a-Pipeline-Update/",
    "source": "company guidance (company release)",
    "readout_described": "More mature PFS and OS data (multiple readouts)",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Arcus Q3 release 2026-11-04; full sentence: \"Multiple additional data readouts, including more mature progression-free survival (PFS) and overall survival (OS) data from the second-line and first-line cohorts of ARC-20, are expected in 2027.\" (ellipsis omits nothing material); casdatifan ARC-20;…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Arcus Q3 release 2026-11-04; full sentence: \"Multiple additional data readouts, including more mature progression-free survival (PFS) and overall survival (OS) data from the second-line and first-line cohorts of ARC-20, are expected in 2027.\" (ellipsis omits nothing material); casdatifan ARC-20;\u2026",
    "date_history": [
     {
      "date": "2027-12-31",
@@ -25852,7 +25856,7 @@ export default [
   "company": "Tango Therapeutics, Inc.",
   "d": "2027-01-31",
   "dp": "month",
-  "name": "vopimetostat (TNG462) monotherapy Phase 1/2 (trial not named in sentence) Monotherapy…",
+  "name": "vopimetostat (TNG462) monotherapy Phase 1/2 (trial not named in sentence) Monotherapy\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -25891,7 +25895,7 @@ export default [
   "company": "Tango Therapeutics, Inc.",
   "d": "2027-01-31",
   "dp": "month",
-  "name": "TNG456 (brain-penetrant PRMT5 inhibitor) Phase 1/2 (trial not named in sentence)…",
+  "name": "TNG456 (brain-penetrant PRMT5 inhibitor) Phase 1/2 (trial not named in sentence)\u2026",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
@@ -25952,7 +25956,7 @@ export default [
    "source_url": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/",
    "source": "company guidance (company release)",
    "readout_described": "Phase 3 topline data",
-   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Vir release 2026-11-08 (BusinessWire, ECLIPSE 1 topline); sentence: \"The elebsiran and tobevibart regimen is also being evaluated in the ECLIPSE 2 and ECLIPSE 3 pivotal trials with data expected in the first quarter of 2027.\" Spans verbatim; Q1 2027 (ECLIPSE 2). Later VIR releases (offering 11-12)…",
+   "red_team": "2026-11-17: source re-opened by an independent red-team pass; quote, program, timing and date checked. Vir release 2026-11-08 (BusinessWire, ECLIPSE 1 topline); sentence: \"The elebsiran and tobevibart regimen is also being evaluated in the ECLIPSE 2 and ECLIPSE 3 pivotal trials with data expected in the first quarter of 2027.\" Spans verbatim; Q1 2027 (ECLIPSE 2). Later VIR releases (offering 11-12)\u2026",
    "date_history": [
     {
      "date": "2027-03-31",
