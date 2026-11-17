@@ -1452,7 +1452,10 @@ export default [
    "fda_action_record": "CRL letter CRL_NDA218995_20260620_Redacted",
    "source": "Achieve 10-Q 2026-05-12",
    "source_url": "https://www.sec.gov/Archives/edgar/data/949858/000119312526218177/achv-20260331.htm",
-   "source_quote": "assigned a Prescription Drug User Fee Act, or PDUFA, targeted action date of June 20, 2026."
+   "source_quote": "assigned a Prescription Drug User Fee Act, or PDUFA, targeted action date of June 20, 2026.",
+   "announcement": "Achieve Life Sciences press release, June 22, 2026",
+   "announcement_url": "https://ir.achievelifesciences.com/news-events/press-releases/detail/264/achieve-life-sciences-receives-complete-response-letter-from-fda-for-cytisinicline-nda",
+   "announcement_date": "2026-06-22"
   },
   "oc": "CRL",
   "dcd": "2026-06-22"
@@ -1618,7 +1621,10 @@ export default [
    "fda_action_record": "CRL letter CRL_NDA218607_20260629",
    "source": "Unicycive 8-K 2026-05-12 (EX-99.1)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1766140/000121390026054736/ea029027701ex99-1.htm",
-   "source_quote": "with a Prescription Drug User Fee Act (PDUFA) target action date of June 29, 2026"
+   "source_quote": "with a Prescription Drug User Fee Act (PDUFA) target action date of June 29, 2026",
+   "announcement": "Unicycive Therapeutics press release, June 30, 2026",
+   "announcement_url": "https://ir.unicycive.com/news/detail/123/unicycive-therapeutics-receives-complete-response-letter",
+   "announcement_date": "2026-06-30"
   },
   "oc": "CRL",
   "dcd": "2026-06-30"
