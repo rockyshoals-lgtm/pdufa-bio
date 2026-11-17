@@ -125,6 +125,7 @@ def load_data():
             readouts[tkr].append(dict(date=str(r.get('d') or ''), drug=r.get('name'),
                                       outcome=(r.get('_d') or {}).get('readout_outcome') or r.get('oc'), url=r.get('url'),
                                       precision=r.get('dp') or 'day',
+                                      label=(r.get('_d') or {}).get('guided_label'),
                                       status=r.get('st')))
             nm = r.get('company')
             if nm and str(nm).strip() not in ('', tkr):
@@ -282,7 +283,7 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
             badge = (f'<span class="badge app">✓ {esc(oc)}</span>' if oc.lower().startswith('pos')
                      else (f'<span class="badge crl">✕ {esc(oc)}</span>'
                            if oc.lower().startswith('neg') else ''))
-            when = pretty(r['date']) if r.get('precision') == 'day' else r['date'][:7]
+            when = (pretty(r['date']) if r.get('precision') == 'day' else esc(r['label']) if (r.get('precision') == 'year' and r.get('label')) else r['date'][:4] if r.get('precision') == 'year' else r['date'][:7])  # 2026-11-17: a year-precision window is not its December
             href = r.get('url') or '/readouts'
             ext = ' rel="nofollow"' if str(href).startswith('http') else ''
             out.append(f'<a class="row" href="{esc(href)}"{ext}>'
