@@ -66,6 +66,8 @@ export function liveStatus(e, today = easternToday()) {
        first, dated; "No topline as of {date}" replaces a bare "Window passed" once a check has run. */
     const res = e._d && e._d.resolution;
     if (res && res.state === 'sponsor_release' && res.date) return 'Sponsor release ' + String(res.date).slice(0, 10);
+    /* 2026-11-17 stale-window check: the company itself stopped the trial (quoted and linked on the row). */
+    if (res && res.state === 'company_stopped' && res.date) return 'Stopped per company ' + String(res.date).slice(0, 10);
     if (reg) {
       const os_ = String(reg.overall_status || '');
       if (os_ === 'TERMINATED') return 'Terminated per registry';

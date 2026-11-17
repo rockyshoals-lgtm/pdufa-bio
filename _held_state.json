@@ -1,16 +1,8 @@
 {
- "held_since": "2026-11-17T19:36:19Z",
- "consecutive_held_runs": 3,
- "emailed_at": "2026-11-17T20:33:45Z",
- "leads": [
-  {
-   "source": "drug_pages",
-   "row_id": "drug:rap-219-long-acting",
-   "key": "rap-219-long-acting|fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
-   "text": "/drug/rap-219-long-acting fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset- 'acting' appears with approval language",
-   "first_seen": "2026-11-17T21:23:57Z"
-  }
- ],
+ "held_since": null,
+ "consecutive_held_runs": 0,
+ "emailed_at": null,
+ "leads": [],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
@@ -44,6 +36,6 @@
   "sponsor_feed|pdufa_ino_2026-10-30|https://ir.inovio.com/news/news-details/2026/INOVIO-Announces-FDA-Accelerated-Approval-of-VOCERYQ-an-Immunotherapy-to-Reduce-the-Frequency-of-Surgery-in-Adults-with-Recurrent-Respiratory-Papillomatosis-RRP/default.aspx",
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
- "last_clear_run": "2026-11-14T04:27:33Z",
+ "last_clear_run": "2026-11-17T22:21:38Z",
  "email_status": "mention-issue (already open)"
 }
