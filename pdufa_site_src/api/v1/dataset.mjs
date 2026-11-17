@@ -10403,9 +10403,9 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-11-17T19:33:08Z",
+  "st": "Decided",
+  "url": "/fda-decision/GSK-2026-11-17",
+  "ua": "2026-11-17T21:02:37Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05384626",
@@ -10415,7 +10415,7 @@ export default [
     "pcd_type": "estimated",
     "note": "ALKOVE-1 (neladalkib). Corrected 2026-11-17: the row carried NCT05118789, which is ARROS-1 (zidesamtinib)."
    },
-   "indication": "TKI-pretreated ALK-positive NSCLC",
+   "indication": "Adults with locally advanced or metastatic ALK-positive NSCLC previously treated with one prior ALK TKI consisting of alectinib, or with two or more prior ALK TKIs and platinum-based chemotherapy (accelerated approval)",
    "market_cap_usd": 99094107130.0,
    "cash_runway_months": 49.4,
    "cohort_move_median_pct": -0.01,
@@ -10467,8 +10467,24 @@ export default [
    ],
    "source_note": "Goal day from the applicant's own release; the current sponsor (GSK) lists the decision in H2 2026. Month precision 2026-10-10 to 2026-11-17; see date_history.",
    "confirming_source": "GSK plc 6-K 2026-07-28 (Q2 2026 results): neladalkib listed as 'PDUFA H2 2026'",
-   "confirming_source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006949/a1493o.htm"
-  }
+   "confirming_source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006949/a1493o.htm",
+   "brand": "Nelkarmi",
+   "inn": "neladalkib",
+   "trial": "ALKOVE-1",
+   "decision_source": "FDA accelerated approval notification, November 17, 2026 (Cancer Approvals)",
+   "decision_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
+   "fda_notice_title": "FDA grants accelerated approval to neladalkib for previously treated locally advanced or metastatic ALK-positive non-small cell lung cancer",
+   "decision_quote": "On November 17, 2026, the Food and Drug Administration granted accelerated approval to neladalkib (Nelkarmi, Nuvalent, Inc.), a kinase inhibitor, for adults with locally advanced or metastatic anaplastic lymphoma kinase (ALK)-positive non-small cell lung cancer (NSCLC) who have previously received the following therapy in the unresectable locally advanced or metastatic setting: one prior ALK tyrosine kinase inhibitor (TKI) consisting of alectinib, or two or more prior ALK TKIs and platinum-based chemotherapy.",
+   "decision_note": "Accelerated approval on November 17, 2026, 10 days before the November 27, 2026 goal date (Nuvalent, May 27, 2026). GSK's release says the approval came ahead of the original target action date of 27 November 2026.",
+   "fda_action_date": "2026-11-17",
+   "fda_action_source_url": "https://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
+   "fda_action_record": "FDA accelerated approval notification, November 17, 2026 (letter not yet on Drugs@FDA)",
+   "announcement": "GSK plc press release (London), November 17, 2026",
+   "announcement_url": "https://www.gsk.com/en-gb/media/press-releases/nelkarmi-neladalkib-approved-in-the-us-for-previously-treated-advanced-alk-positive-non-small-cell-lung-cancer/",
+   "review": "NDA under the accelerated approval pathway with Priority Review; Breakthrough Therapy and Orphan Drug designations. Per the FDA, ALKOVE-1 (NCT05384626) is a single-arm, open-label, multi-cohort trial: confirmed ORR by blinded independent central review was 49% (95% CI 37 to 62) in 67 patients after alectinib alone and 32% (95% CI 24 to 40) in 155 patients after two or more ALK TKIs and platinum-based chemotherapy. Recommended dose 150 mg orally once daily. Continued approval may be contingent on a confirmatory trial."
+  },
+  "oc": "Approved",
+  "dcd": "2026-11-17"
  },
  {
   "id": "pdufa_regn_2026-11-30",

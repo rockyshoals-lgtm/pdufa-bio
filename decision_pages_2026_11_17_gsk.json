@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "GSK",
+  "date": "2026-11-17",
+  "fda_action_date": "2026-11-17",
+  "outcome": "Approved",
+  "drug": "Nelkarmi (neladalkib)",
+  "indication": "Previously treated locally advanced or metastatic ALK-positive NSCLC: after alectinib as the only ALK TKI, or after two or more ALK TKIs and platinum chemotherapy (accelerated approval)",
+  "company": "GSK plc",
+  "cap": "Large",
+  "headline": "The FDA granted accelerated approval to Nelkarmi (neladalkib) on November 17, 2026 for adults with previously treated locally advanced or metastatic ALK-positive non-small cell lung cancer, on the single-arm ALKOVE-1 study, 10 days before its November 27 goal date.",
+  "pdufa_note": "The FDA's notification states that on November 17, 2026 it granted accelerated approval to neladalkib (Nelkarmi, Nuvalent, Inc.) for adults with locally advanced or metastatic ALK-positive NSCLC who previously received one prior ALK TKI consisting of alectinib, or two or more prior ALK TKIs and platinum-based chemotherapy (<a href=\"https://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA, November 17, 2026</a>). GSK, which acquired Nuvalent in July 2026, announced the approval the same day from London (<a href=\"https://www.gsk.com/en-gb/media/press-releases/nelkarmi-neladalkib-approved-in-the-us-for-previously-treated-advanced-alk-positive-non-small-cell-lung-cancer/\" rel=\"noopener\" style=\"color:#e3ba5e\">GSK's announcement</a>). The PDUFA goal date was November 27, 2026, assigned when the NDA was accepted with Priority Review (<a href=\"https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC\" rel=\"noopener\" style=\"color:#e3ba5e\">Nuvalent, May 27, 2026</a>); the FDA acted 10 days early. The FDA's letter had not been posted on Drugs@FDA when this page was published. Per the FDA, in ALKOVE-1 (NCT05384626) confirmed overall response by blinded independent central review was 49% (95% CI 37 to 62) in 67 patients after alectinib and 32% (95% CI 24 to 40) in 155 patients after two or more ALK TKIs and platinum-based chemotherapy; 52% and 51% of responders had a response lasting at least 12 months. Neladalkib holds Breakthrough Therapy and Orphan Drug designations; continued approval may be contingent on a confirmatory trial.",
+  "source": "https://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
+  "source_label": "FDA accelerated approval notification, November 17, 2026",
+  "h1": "Nelkarmi (neladalkib) <span class=\"g\">FDA accelerated approval for ALK-positive NSCLC</span>: Nov 17, 2026"
+ }
+]
