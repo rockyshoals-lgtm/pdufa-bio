@@ -5912,7 +5912,7 @@
   {
    "ticker": "ERAS",
    "company": "Erasca",
-   "drug": "ERAS-0015 combinations (incl. panitumumab)",
+   "drug": "ERAS-0015 combinations including panitumumab",
    "indication": "RAS-mutant solid tumors",
    "trial": "AURORAS-1 Phase 1 (combination dose escalation)",
    "nct_id": null,
