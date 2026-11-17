@@ -33,3 +33,14 @@ Acked: #84/#87 (giredestrant drug-page leads: published), #85 (Genentech's Gazyv
 - **Teva feed:** no machine-readable Teva feed exists that we can read (IR renders client-side; /rss/news-releases.xml
   is an empty shell; GlobeNewswire search is robots-disallowed). Recorded in `_sponsor_feeds.json` with feeds [];
   Teva has no pending tracked PDUFA now.
+
+## Outcome (appended 2026-11-17, times UTC unless stated)
+- First push `ce46f16a97` -> run 44031055622 FAILED on one guard, `test_dropbox_index_complete`: INDEX listed two
+  notes that were never committed (11-14 Bing audit, 11-16 URGENT order). Committed both in `9bd630ca49`.
+- Run 44032690197: all CI guards passed; data commit `64fd0407b7`; `/build-info.json` built 2026-11-17T06:45:54Z
+  (= Nov 16 22:45 Pacific, Nov 17 01:45 Eastern), as_of_eastern 2026-11-17.
+- Live: `/fda-decision/SMMT-2026-11-15`, `RHHBY-2026-11-16`, `CYTK-2026-11-16`, `TEVA-2026-11-16` all 200; all four
+  listed on `/fda-decisions-today`. `tests/test_past_goal_replay.py` is in the tree.
+- Issues: #83 closed by the workflow (all guards passed); #84-#91 closed with reasons (#86/#89/#91 resolved by the
+  published decisions; #84/#87 the evERA approval; #85/#88/#90 false leads for SLE and lidERA, which stay Upcoming).
+  Open issues: 0.
