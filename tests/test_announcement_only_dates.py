@@ -21,7 +21,7 @@ def main():
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         v = re.search(r"<!--VERIFIED:BEGIN-->(.*?)<!--VERIFIED:END-->", doc, re.S)
-        if not v or "FDA action day not yet posted" not in v.group(1):
+        if not v or not re.search(r"FDA action day (?:not yet posted|not found in a public FDA record)", v.group(1)):
             continue
         n += 1
         if os.environ.get("PLANT") and n == 1:

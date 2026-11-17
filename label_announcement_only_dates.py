@@ -27,12 +27,15 @@ import sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
-NOT_POSTED = "FDA action day not yet posted"
+# 2026-11-17 red team: "not yet posted on Drugs@FDA" was wrong for a device (Drugs@FDA never lists a PMA) and for a
+# complete response letter (not a Drugs@FDA action). The line now says what we know: no public FDA record states the day.
+NOT_POSTED_RX = re.compile(r"FDA action day (?:not yet posted|not found in a public FDA record)")
+KV_TEXT = "not found in a public FDA record"
 H1 = re.compile(r'(<h1>[A-Z][A-Z./ ]{0,12} <span class="g">FDA decision</span>: )([A-Z][a-z]{2} \d{1,2}, \d{4})(</h1>)')
 H1_DONE = re.compile(r'(<h1>[A-Z][A-Z./ ]{0,12} <span class="g">FDA decision</span>: )<!--ANNONLY-->announced '
                      r'([A-Z][a-z]{2} \d{1,2}, \d{4})(</h1>)')
 KV = re.compile(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b></div>')
-KV_DONE = re.compile(r'<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>not yet posted on Drugs@FDA</b></div>'
+KV_DONE = re.compile(r'<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>(?:not yet posted on Drugs@FDA|not found in a public FDA record)</b></div>'
                      r'<div class="kv"><span>Announced</span><b>(\d{4}-\d{2}-\d{2})</b></div><!--/ANNONLY:KV-->')
 CAP = re.compile(r"FDA decision (\d{1,2}/\d{1,2}/\d{2})\. ")
 CAP_DONE = re.compile(r"<!--ANNONLY-->Decision announced (\d{1,2}/\d{1,2}/\d{2})\. ")
@@ -45,8 +48,8 @@ def verified_block(doc):
 
 def label(doc):
     doc = H1.sub(lambda m: m.group(1) + "<!--ANNONLY-->announced " + m.group(2) + m.group(3), doc, count=1)
-    doc = KV.sub(lambda m: ('<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>not yet posted on '
-                            'Drugs@FDA</b></div><div class="kv"><span>Announced</span><b>' + m.group(1) +
+    doc = KV.sub(lambda m: ('<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>' + KV_TEXT +
+                            '</b></div><div class="kv"><span>Announced</span><b>' + m.group(1) +
                             '</b></div><!--/ANNONLY:KV-->'), doc, count=1)
     doc = CAP.sub(lambda m: "<!--ANNONLY-->Decision announced " + m.group(1) + ". ", doc)
     return doc
@@ -63,13 +66,13 @@ def main():
     n_lab = n_un = 0
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        if "ANNONLY" not in doc and NOT_POSTED not in doc:
+        if "ANNONLY" not in doc and not NOT_POSTED_RX.search(doc):
             continue
         base = unlabel(doc)
-        new = label(base) if NOT_POSTED in verified_block(base) else base
+        new = label(base) if NOT_POSTED_RX.search(verified_block(base)) else base
         if new != doc:
             io.open(p, "w", encoding="utf-8", newline="").write(new)
-            if NOT_POSTED in verified_block(base):
+            if NOT_POSTED_RX.search(verified_block(base)):
                 n_lab += 1
                 print(f"  labelled announcement-only: {os.path.relpath(p, SITE)}")
             else:

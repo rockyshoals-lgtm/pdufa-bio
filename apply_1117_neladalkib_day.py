@@ -34,16 +34,16 @@ if r.get("dp") != "day":
         "date": "2026-11-27", "precision": "day", "changed": "2026-11-17",
         "source": "Nuvalent press release 2026-05-27 (NDA acceptance)", "source_url": NUV,
         "why": ("Day restored: the applicant's own announcement states 'assigned a PDUFA target action date of "
-                "November 27, 2026'. GSK's 6-K 2026-07-28 ('anticipated in November 2026') is consistent and is kept "
-                "as the current sponsor's confirmation.")})
+                "November 27, 2026'. GSK's 6-K 2026-07-28 lists neladalkib as 'PDUFA H2 2026', "
+                "consistent with it, and is kept as the current sponsor's confirmation.")})
     r["d"], r["dp"] = "2026-11-27", "day"
     r.pop("dm", None)
     d["source"] = "Nuvalent press release 2026-05-27 (NDA acceptance; Nuvalent was the applicant, acquired by GSK 2026-07-15)"
     d["source_url"] = NUV
     d["source_quote"] = QUOTE
-    d["confirming_source"] = "GSK plc 6-K 2026-07-28 (Q2 2026 results): PDUFA date anticipated in November 2026"
+    d["confirming_source"] = "GSK plc 6-K 2026-07-28 (Q2 2026 results): neladalkib listed as 'PDUFA H2 2026'"
     d["confirming_source_url"] = SIXK
-    d["source_note"] = ("Goal day from the applicant's own release; the current sponsor (GSK) confirms the month. "
+    d["source_note"] = ("Goal day from the applicant's own release; the current sponsor (GSK) lists the decision in H2 2026. "
                         "Month precision 2026-10-10 to 2026-11-17; see date_history.")
     d.pop("date_note", None)
     d.pop("runup_note", None)

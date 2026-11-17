@@ -10129,18 +10129,12 @@ export default [
   "ua": "2026-11-17T12:00:00Z",
   "_d": {
    "nct_id": {
-    "nct": "NCT05118789",
+    "nct": "NCT05384626",
     "status": "recruiting",
     "ongoing": true,
-    "pcd": "2027-12-31",
+    "pcd": "2027-12",
     "pcd_type": "estimated",
-    "updated": "2025-10-24",
-    "slip": {
-     "from": "2025-10-31",
-     "to": "2027-12-31",
-     "days": 791,
-     "on": "2025-10-22"
-    }
+    "note": "ALKOVE-1 (neladalkib). Corrected 2026-11-17: the row carried NCT05118789, which is ARROS-1 (zidesamtinib)."
    },
    "indication": "TKI-pretreated ALK-positive NSCLC",
    "market_cap_usd": 101325232057.0,
@@ -10181,11 +10175,11 @@ export default [
      "changed": "2026-11-17",
      "source": "Nuvalent press release 2026-05-27 (NDA acceptance)",
      "source_url": "https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC",
-     "why": "Day restored: the applicant's own announcement states 'assigned a PDUFA target action date of November 27, 2026'. GSK's 6-K 2026-07-28 ('anticipated in November 2026') is consistent and is kept as the current sponsor's confirmation."
+     "why": "Day restored: the applicant's own announcement states 'assigned a PDUFA target action date of November 27, 2026'. GSK's 6-K 2026-07-28 lists neladalkib as 'PDUFA H2 2026', consistent with it, and is kept as the current sponsor's confirmation. Correction: the 2026-10-10 entry quotes that 6-K as 'anticipated in November 2026'; the 6-K's words are 'PDUFA H2 2026'."
     }
    ],
-   "source_note": "Goal day from the applicant's own release; the current sponsor (GSK) confirms the month. Month precision 2026-10-10 to 2026-11-17; see date_history.",
-   "confirming_source": "GSK plc 6-K 2026-07-28 (Q2 2026 results): PDUFA date anticipated in November 2026",
+   "source_note": "Goal day from the applicant's own release; the current sponsor (GSK) lists the decision in H2 2026. Month precision 2026-10-10 to 2026-11-17; see date_history.",
+   "confirming_source": "GSK plc 6-K 2026-07-28 (Q2 2026 results): neladalkib listed as 'PDUFA H2 2026'",
    "confirming_source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006949/a1493o.htm"
   }
  },

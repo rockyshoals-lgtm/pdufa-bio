@@ -123,11 +123,25 @@ def main():
     decs = sorted({(m.group(2), m.group(1), m.group(3)) for m in re.finditer(
         r'<a class="row" href="(/fda-decision/([A-Z0-9.]+-\d{4}-\d{2}-\d{2}))"><div class="t">(?:[^<]|<span[^>]*>[^<]*</span>)*</div><div class="d">'
         r'(?:<span[^>]*>[^<]*</span>:\s*)?([^<]*)</div>', dec_doc)})
-    # 2026-11-17: some archive rows carry the placeholder "source-verified" where a drug name belongs; a link label
-    # reading "TRAW 2025-06-03: source-verified" names nothing, so such a row is labelled "FDA decision" instead. Rows
-    # the archive marks "price-only" (outcome inferred from the share price, never verified) are not linked at all.
-    decs = [(k[-10:], u, k.rsplit("-", 3)[0],
-             (lambda x: "FDA decision" if x.strip().lower() in ("", "source-verified") else x)(html.unescape(d)[:60]))
+    # 2026-11-17: some archive rows carry a placeholder ("source-verified", "primary-sourced") where a drug name
+    # belongs. Such a link takes the drug from the decision page's own <title> ("YUVIWEL (navepegritide) Approved
+    # Feb 27, 2026 | ...") and is otherwise labelled "FDA decision". Rows the archive marks "price-only" (outcome
+    # inferred from the share price, never verified) are not linked at all. A long name is cut at a word, with "...".
+    # The date shown is the FDA action day where the record holds one that differs from the page's announcement day.
+    from calendar_decided_rows_once import action_dates  # noqa: E402
+    fad = action_dates()
+
+    def drug_label(u, d):
+        x = html.unescape(d).strip()
+        if x.lower() in ("", "source-verified", "primary-sourced"):
+            ttl = re.search(r"<title>([^<|]*)", docs.get(u, ""))
+            m = re.match(r"(.+?) (?:Approved|CRL|Complete Response)\b", ttl.group(1).strip()) if ttl else None
+            x = m.group(1) if m and not re.match(r"^[A-Z0-9./]+ FDA Decision", m.group(1)) else "FDA decision"
+        if len(x) > 60:
+            x = x[:60].rsplit(" ", 1)[0].rstrip(" ,;:-(") + "\u2026"
+        return x
+
+    decs = [(fad.get(u, k[-10:]), u, k.rsplit("-", 3)[0], drug_label(u, d))
             for k, u, d in decs if live(u) and "price-only" not in d.lower()]   # an inferred outcome is never linked as a decision
     decs.sort()
 
@@ -174,6 +188,10 @@ def main():
                     title = {"drug": "Other drugs", "ticker": "Other companies", "conference": "Other conferences",
                              "condition": "Other conditions"}[parts[0]]
         new = doc
+        if not items and u.startswith("/pdufa/") and "<!--RELATED:BEGIN-->" in new:
+            # 2026-11-17 red team: a page that has left the upcoming list kept the block written when it was on it,
+            # with dates that have since moved (GSK 2026-11-30 on /pdufa/RHHBY-gazyva-pmn). A stale list is removed.
+            new = re.sub(r"<!--RELATED:BEGIN-->.*?<!--RELATED:END-->", "", new, flags=re.S)
         if items:
             new = put(new, "<!--RELATED:BEGIN-->", "<!--RELATED:END-->",
                       nav_block(title, items, "<!--RELATED:BEGIN-->", "<!--RELATED:END-->"))

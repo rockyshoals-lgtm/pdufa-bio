@@ -47,7 +47,7 @@ def main():
         n += 1
         txt = html.unescape(re.sub(r"<[^>]+>", "", m.group(1)))
         if os.environ.get("PLANT_VERIFIED") == "1" and slug == "RHHBY-2026-10-15":
-            txt = txt.replace("FDA action day not yet posted on Drugs@FDA", "FDA action day October 15, 2026 (FDA letter)")
+            txt = txt.replace("FDA action day not yet posted on Drugs@FDA", "FDA action day October 15, 2026 (FDA letter)").replace("FDA action day not found in a public FDA record", "FDA action day October 15, 2026 (FDA letter)")
         d = r.get("_d") or {}
         fad = d.get("fda_action_date")
         if fad and f"FDA action day {pretty(fad)}" not in txt:
