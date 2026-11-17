@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-14",
+ "as_of": "2026-11-17",
  "horizon_days": 60,
  "sponsors": {
   "BBIO": {
@@ -47,18 +47,6 @@
     "fda_feeds"
    ],
    "cik": 1088856
-  },
-  "CYTK": {
-   "company": "Cytokinetics Inc",
-   "goals": [
-    "2026-11-14"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1061983
   },
   "GILD": {
    "company": "Gilead Sciences, Inc.",
@@ -132,7 +120,6 @@
    "company": "Roche Holding AG",
    "goals": [
     "2026-11-30",
-    "2026-12-18",
     "2026-12-31",
     "2027-01-10"
    ],
@@ -141,17 +128,6 @@
     "fda_feeds"
    ],
    "cik": null
-  },
-  "SMMT": {
-   "company": "Summit Therapeutics Inc.",
-   "goals": [
-    "2026-11-14"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1599298
   },
   "SVRA": {
    "company": "Savara",
@@ -163,17 +139,6 @@
     "fda_feeds"
    ],
    "cik": 1160308
-  },
-  "TEVA": {
-   "company": "Teva Pharmaceutical Industries",
-   "goals": [
-    "2026-11-14"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 818686
   },
   "VNDA": {
    "company": "Vanda Pharmaceuticals Inc.",

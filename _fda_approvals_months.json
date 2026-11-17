@@ -7618,7 +7618,7 @@
 ]
 },
 "2026-10": {
-"fetched": "2026-11-14",
+"fetched": "2026-11-17",
 "items": [
 {
 "app": "NDA219617",
@@ -7871,7 +7871,7 @@
 "sub": "SUPPL-8",
 "class": "Efficacy",
 "date": "2026-10-16",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761467Orig1s008ltr.pdf"
 },
 {
 "app": "NDA217064",
@@ -8074,7 +8074,7 @@
 ]
 },
 "2026-11": {
-"fetched": "2026-11-14",
+"fetched": "2026-11-17",
 "items": [
 {
 "app": "BLA761433",
@@ -8086,17 +8086,6 @@
 "class": "Efficacy",
 "date": "2026-11-05",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf"
-},
-{
-"app": "NDA221291",
-"brand": "",
-"generic": "",
-"sponsor": "Bayer Healthcare",
-"kind": "new application",
-"sub": "ORIG-1",
-"class": "Type 1 - New Molecular Entity",
-"date": "2026-11-09",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221291Orig1s000ltr.pdf"
 },
 {
 "app": "NDA219457",
@@ -8121,6 +8110,17 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221093Orig1s000ltr.pdf"
 },
 {
+"app": "NDA221291",
+"brand": "Sunharbo",
+"generic": "asundexian",
+"sponsor": "Bayer Healthcare",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-09",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221291Orig1s000ltr.pdf"
+},
+{
 "app": "NDA211448",
 "brand": "Mezofy",
 "generic": "aripiprazole",
@@ -8130,6 +8130,50 @@
 "class": "Efficacy",
 "date": "2026-11-10",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211448Orig1s001ltr.pdf"
+},
+{
+"app": "NDA220414",
+"brand": "Pimjetmi",
+"generic": "pimicotinib",
+"sponsor": "Emd Serono",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-10",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220414Orig1s000ltr.pdf"
+},
+{
+"app": "BLA761501",
+"brand": "Pebrilzo",
+"generic": "pertuzumab",
+"sponsor": "Biocon Biologics Inc",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "",
+"date": "2026-11-12",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761501Orig1s000ltr.pdf"
+},
+{
+"app": "BLA761069",
+"brand": "Imfinzi",
+"generic": "durvalumab",
+"sponsor": "Astrazeneca Uk Ltd",
+"kind": "efficacy supplement",
+"sub": "SUPPL-59",
+"class": "Efficacy",
+"date": "2026-11-13",
+"letter": ""
+},
+{
+"app": "BLA761488",
+"brand": "Klygefa",
+"generic": "gefurulimab",
+"sponsor": "Alexion Pharm",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-13",
+"letter": ""
 }
 ]
 }
