@@ -311,7 +311,8 @@ def index_page(entries, as_of):
         {"@type": "ListItem", "position": 2, "name": "FDA applications", "item": f"{BASE}/fda-application"}]})
     return SHELL.format(
         title="FDA Applications: Brand, Code Name, Applicant and Owner | pdufa.bio",
-        desc=esc(lede[:158].rsplit(" ", 1)[0] + "."), canon=f"{BASE}/fda-application",
+        desc=esc(f"{len(entries)} FDA applications, each with its brand, ingredient, code names, FDA applicant "
+                 f"and owner. FDA facts from the Orange Book; every other name sourced."), canon=f"{BASE}/fda-application",
         ld=f'<script type="application/ld+json">{ld}</script>', h1="FDA applications",
         body=f'<p class="lede">{esc(lede)}</p>' + items)
 
