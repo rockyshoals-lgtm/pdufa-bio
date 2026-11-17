@@ -95,6 +95,12 @@
    "source": "sponsor:GSK:2026-11-17",
    "acked": "2026-11-17",
    "reason": "Published 2026-11-17: Nelkarmi (neladalkib) accelerated approval Nov 17, 2026, /fda-decision/GSK-2026-11-17 (FDA notification and GSK release read)."
+  },
+  {
+   "slug": "rap-219-long-acting",
+   "source": "fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
+   "reason": "Not this drug: the FDA press announcement of 2026-11-17 is the approval of Lembaz (adrabetadex, Mandos LLC, a Beren Therapeutics subsidiary) for infantile-onset Niemann-Pick disease type C. The token 'acting' matched 'Acting FDA Commissioner' in the release, not RAP-219 (Rapport Therapeutics), which the release does not mention. RAP-219 is not approved; its readout rows are unchanged.",
+   "acked": "2026-11-17"
   }
  ]
 }
