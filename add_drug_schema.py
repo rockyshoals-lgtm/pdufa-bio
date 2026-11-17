@@ -73,17 +73,14 @@ def facts(doc, slug):
         else:
             alts.append(brand)
     alts = [a for a in dict.fromkeys(alts) if a and a.lower() != name.lower()]
-    sm = re.search(r"Sponsor:\s*([^<(]{3,120}?)\s*\((?:[A-Z]{1,6}(?:,\s*)?)+\)", doc)
-    makers = ([s.strip() for s in _html.unescape(sm.group(1)).split(",") if s.strip()]
-              if sm else [])
-    ld = {"@context": "https://schema.org", "@type": "Drug", "name": name,
-          "url": f"https://www.pdufa.bio/drug/{slug}"}
+    # 2026-11-17 currency audit (Search Console "Product snippets" invalid items): schema.org's Drug is a subtype of
+    # Product, so Google read 595 pages as products missing offers/review/aggregateRating. A drug page sells nothing and
+    # rates nothing. The entity is typed MedicalEntity, with Drug kept as additionalType for engines that read it;
+    # manufacturer (a Product property) goes. tests/test_drug_schema.py also fails on any Product-family @type.
+    ld = {"@context": "https://schema.org", "@type": "MedicalEntity", "additionalType": "https://schema.org/Drug",
+          "name": name, "url": f"https://www.pdufa.bio/drug/{slug}"}
     if alts:
         ld["alternateName"] = alts
-    if makers:
-        ld["manufacturer"] = ([{"@type": "Organization", "name": mk} for mk in makers]
-                              if len(makers) > 1
-                              else {"@type": "Organization", "name": makers[0]})
     return ld
 
 

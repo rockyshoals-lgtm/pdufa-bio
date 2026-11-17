@@ -159,6 +159,7 @@ jobs:
           python sync_event_urls.py
           python ensure_calendar_month_pages.py
           python ensure_calendar_rows.py
+          python sync_calendar_row_ta.py   # 2026-11-17: a row's area tag follows the dataset (CORT GRACE read "Infectious")
           python build_calendar_year_hub.py
 
       # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its
@@ -169,7 +170,7 @@ jobs:
         run: python sync_decisions_listing.py
 
       - name: Mark decided PDUFAs on the calendar pages (idempotent)
-        run: python mark_calendar_decided.py && python mark_calendar_period_rows.py && python sync_api_urls_to_calendar.py && python build_withdrawn_pages.py && python mark_calendar_awaiting.py   # 2026-11-17: was only in the local chain; its absence froze CI (#83)
+        run: python mark_calendar_decided.py && python mark_calendar_period_rows.py && python sync_api_urls_to_calendar.py && python build_withdrawn_pages.py && python mark_calendar_awaiting.py && python calendar_decided_rows_once.py   # 2026-11-17: mark_calendar_awaiting was only in the local chain; its absence froze CI (#83). calendar_decided_rows_once: one decision one row per ticker, decision date shown (currency audit 11-17)
 
       # Audit 2026-09-05b section 3: AI answer boxes quote sentences, not tables. This
       # keeps the /calendar explainer block's numbers (early/on/late split) computed
@@ -312,6 +313,17 @@ jobs:
 
       - name: "Verified against: three dates, three sources, one line on every decision page"
         run: python inject_verified_against.py
+
+      # Currency audit 2026-11-17: where the Verified line says the FDA action day is not yet posted, the h1, key facts
+      # and chart caption state the ANNOUNCEMENT day as such; restored to the canonical form once the FDA day is on record.
+      # MUST run after inject_verified_against.py and before fix_decision_h1_action_date.py / fix_chart_captions.py.
+      - name: "Announcement-only decision pages say 'announced', not 'FDA decision'"
+        run: python label_announcement_only_dates.py
+
+      # Currency audit 2026-11-17, moat move 1: each decision page says when it was first committed to this public
+      # repository, linked to the commit (ledger _decision_first_recorded.json, append-only). Times shown in ET.
+      - name: "Decision pages: first committed to the public repository (our own latency, checkable)"
+        run: python inject_first_recorded.py
 
       - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
         run: python build_decision_lede.py
@@ -1009,7 +1021,7 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json _decision_published.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json
           git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true

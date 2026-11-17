@@ -110,9 +110,11 @@ def main():
         if srcu:
             art["isBasedOn"] = srcu
         if d.get("brand") or d.get("inn"):
-            drug = {"@type": "Drug", "name": d.get("brand") or d.get("inn")}
-            if d.get("brand") and d.get("inn"):
-                drug["nonProprietaryName"] = d["inn"]
+            # MedicalEntity, not Drug: Drug is a Product subtype and Google validates it as a product (2026-11-17)
+            drug = {"@type": "MedicalEntity", "additionalType": "https://schema.org/Drug",
+                    "name": d.get("brand") or d.get("inn")}
+            if d.get("brand") and d.get("inn") and d["brand"] != d["inn"]:
+                drug["alternateName"] = d["inn"]
             art["about"] = drug
         block = B + json.dumps(art, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + E
         # 2026-10-24: both tags go BEFORE build_date_modified.py's <!--DMOD:BEGIN--> block, never inside it or after it.

@@ -106,6 +106,10 @@ def ev_sentence(r, decided=False):
             verb = "approved"
         elif oc.upper() == "CRL":
             verb = "issued a Complete Response Letter for"
+        elif oc.lower().startswith("not approvable"):
+            # 2026-11-17 currency audit: NVCR's PMA Not Approvable Letter read "the FDA acted on" -- the outcome
+            # was in the row and the sentence dropped it. A device PMA letter is named as what it is, not as a CRL.
+            verb = "issued a Not Approvable Letter for"
         else:
             verb = "acted on"
         link = f"/fda-decision/{tk}-{(page_dcd if decided else '') or dcd or d}"

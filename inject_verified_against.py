@@ -59,6 +59,7 @@ def short_source(s):
     s = re.sub(r",?\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)"
                r" \d{1,2},? \d{4}.*$", "", s)
     s = re.sub(r",?\s+\d{4}-\d{2}-\d{2}.*$", "", s)
+    s = re.sub(r"\s+filed$", "", s.strip(" ,"))   # 2026-11-17: "8-K filed" next to a release's own date read as the filing date
     return s.strip(" ,")[:70]
 
 
@@ -70,7 +71,7 @@ def line(r):
         rec = d.get("fda_action_record") or "FDA record"
         parts.append(f"FDA action day {pretty(fad)} ({link(short_source(rec), d.get('fda_action_source_url'))})")
     elif d.get("decision_date_unsourced"):
-        parts.append("FDA action day not yet posted on Drugs@FDA")
+        parts.append("FDA action day not found in a public FDA record")   # 2026-11-17: was "not yet posted on Drugs@FDA", wrong for devices and CRLs
     dcd = r.get("dcd")
     if dcd:
         who = d.get("announcement") or d.get("decision_source") or "sponsor announcement"

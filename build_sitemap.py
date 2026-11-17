@@ -44,7 +44,8 @@ SKIP_DIRS = {"api", "fonts", ".well-known", "_next", "assets", "img", "images"}
 NOINDEX = re.compile(r'name="robots"[^>]*content="[^"]*noindex', re.I)
 SKIP_PAT = re.compile(r'(^|/)_'                       # any backup / retired path segment
                       r'|(^|/)(today|app|login|account|preview|index_redesign|ping|holding|changelog)\b'
-                      r'|\.bak|\.tmp', re.I)
+                      r'|\.bak|\.tmp'
+                      r'|_bak(/|$)', re.I)                 # 2026-11-17: /pdufa/COGT-bezuclastinib-summit/summit_bak was listed
 
 # UTC, not local. The timestamp recorded alongside this is UTC, and CI runs UTC, so a local
 # build using a local date produced pages whose ts (04:10 UTC on the 8th) sat in the "future"
