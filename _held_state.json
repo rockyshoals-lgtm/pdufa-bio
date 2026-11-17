@@ -1,7 +1,7 @@
 {
  "held_since": "2026-11-17T19:36:19Z",
- "consecutive_held_runs": 1,
- "emailed_at": null,
+ "consecutive_held_runs": 2,
+ "emailed_at": "2026-11-17T20:33:45Z",
  "leads": [
   {
    "source": "drug_pages",
@@ -16,6 +16,13 @@
    "key": "neladalkib|sponsor:GSK:2026-11-17",
    "text": "/drug/neladalkib sponsor:GSK:2026-11-17 'neladalkib' appears with approval language",
    "first_seen": "2026-11-17T19:36:19Z"
+  },
+  {
+   "source": "fda_drugs_feed",
+   "row_id": "pdufa_nuvl_2026-11-27",
+   "key": "pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
+   "text": "2026-11-17 \"FDA grants accelerated approval to neladalkib for previously treated locally advanced or metastatic ALK-positive non-small cell lung cancer\" [Neladalkib] http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
+   "first_seen": "2026-11-17T20:33:45Z"
   }
  ],
  "issued_keys": [
@@ -43,6 +50,7 @@
   "fda_drugs_feed|pdufa_ino_2026-10-30|http://www.fda.gov/news-events/press-announcements/fda-approves-immunotherapy-may-allow-certain-patients-rectal-cancer-avoid-chemotherapy-radiation-and",
   "fda_drugs_feed|pdufa_jazz_2027-04-16|http://www.fda.gov/drugs/cancer-approvals/fda-expands-pediatric-indication-entrectinib-and-approves-new-pellet-formulation",
   "fda_drugs_feed|pdufa_mrk_2027-06-15|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer",
+  "fda_drugs_feed|pdufa_nuvl_2026-11-27|http://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk",
   "fda_drugs_feed|pdufa_rhhby_2026-11-30_pmn|http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy",
   "fda_drugs_feed|pdufa_rhhby_2026-12-31_sle|http://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy",
   "fda_press|press:http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
@@ -50,5 +58,5 @@
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"
  ],
  "last_clear_run": "2026-11-14T04:27:33Z",
- "email_status": "mention-issue"
+ "email_status": "mention-issue (already open)"
 }

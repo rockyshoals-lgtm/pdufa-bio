@@ -2243,6 +2243,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/avalotcagene-ontaparvovec",
+   "destination": "/drug/dtx301",
+   "permanent": true
+  },
+  {
    "source": "/drug/axicabtagene-ciloleucel",
    "destination": "/drug/yescarta",
    "permanent": true
@@ -2310,6 +2315,11 @@
   {
    "source": "/drug/chenodiol",
    "destination": "/drug/ctexli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/clemizole-hydrochloride",
+   "destination": "/drug/epx-100",
    "permanent": true
   },
   {
@@ -2458,6 +2468,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/extended-release-oral-minoxidil",
+   "destination": "/drug/vdphl01",
+   "permanent": true
+  },
+  {
    "source": "/drug/fast-acting-meloxicam",
    "destination": "/drug/mr-107a-02",
    "permanent": true
@@ -2470,6 +2485,11 @@
   {
    "source": "/drug/fitusiran",
    "destination": "/drug/qfitlia",
+   "permanent": true
+  },
+  {
+   "source": "/drug/fixed-duration-monotherapy",
+   "destination": "/drug/zynlonta",
    "permanent": true
   },
   {
@@ -2513,13 +2533,43 @@
    "permanent": true
   },
   {
+   "source": "/drug/high-dose",
+   "destination": "/drug/pitolisant-hd",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ibudilast",
+   "destination": "/drug/mn-166",
+   "permanent": true
+  },
+  {
    "source": "/drug/icotrokinra",
    "destination": "/drug/icotyde",
    "permanent": true
   },
   {
+   "source": "/drug/imeroprubart",
+   "destination": "/drug/imvt-1402",
+   "permanent": true
+  },
+  {
    "source": "/drug/imlunestrant",
    "destination": "/drug/inluriyo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/inhaled-nintedanib",
+   "destination": "/drug/ap02",
+   "permanent": true
+  },
+  {
+   "source": "/drug/inhaled-pirfenidone",
+   "destination": "/drug/ap01",
+   "permanent": true
+  },
+  {
+   "source": "/drug/inhaled-rapamycin",
+   "destination": "/drug/lam-001",
    "permanent": true
   },
   {
@@ -2530,6 +2580,11 @@
   {
    "source": "/drug/insulin-icodec-abae",
    "destination": "/drug/awiqli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/interim-analysis",
+   "destination": "/drug/protect-registry",
    "permanent": true
   },
   {
@@ -2643,6 +2698,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/monotherapy",
+   "destination": "/drug/selinexor",
+   "permanent": true
+  },
+  {
    "source": "/drug/mosunetuzumab-axgb",
    "destination": "/drug/lunsumio-velo",
    "permanent": true
@@ -2680,6 +2740,11 @@
   {
    "source": "/drug/oral-semaglutide",
    "destination": "/drug/rybelsus",
+   "permanent": true
+  },
+  {
+   "source": "/drug/orexin-2-agonist",
+   "destination": "/drug/bp-205",
    "permanent": true
   },
   {
@@ -2758,18 +2823,23 @@
    "permanent": true
   },
   {
+   "source": "/drug/registrational",
+   "destination": "/drug/elsunersen-embrave3",
+   "permanent": true
+  },
+  {
    "source": "/drug/retifanlimab-dlwr",
    "destination": "/drug/zynyz",
    "permanent": true
   },
   {
-   "source": "/drug/revumenib",
-   "destination": "/drug/revuforj",
+   "source": "/drug/ribitol",
+   "destination": "/drug/bbp-418",
    "permanent": true
   },
   {
-   "source": "/drug/ribitol",
-   "destination": "/drug/bbp-418",
+   "source": "/drug/rintatolimod",
+   "destination": "/drug/ampligen",
    "permanent": true
   },
   {
@@ -2860,6 +2930,11 @@
   {
    "source": "/drug/tenecteplase",
    "destination": "/drug/tnkase",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tetrodotoxin",
+   "destination": "/drug/halneuron",
    "permanent": true
   },
   {

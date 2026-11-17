@@ -836,7 +836,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESC",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-08-31",
    "location": "",
@@ -872,7 +872,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-09-09",
    "location": "",
@@ -957,7 +957,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/WCLC",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-09-15",
    "location": "",
@@ -5212,7 +5212,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-09-28",
    "location": "",
@@ -5241,7 +5241,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-09-30",
    "location": "",
@@ -5277,7 +5277,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/EASD",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-02",
    "location": "",
@@ -5327,7 +5327,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conferences",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-03",
    "location": "",
@@ -5348,7 +5348,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AAO",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5369,7 +5369,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACG",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-14",
    "location": "",
@@ -5390,7 +5390,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASBMR",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-12",
    "location": "",
@@ -5419,7 +5419,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ASN",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-25",
    "location": "",
@@ -5455,7 +5455,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ECTRIMS",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-23",
    "location": "",
@@ -5512,7 +5512,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/IDWeek",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-24",
    "location": "",
@@ -5533,7 +5533,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ESMO",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-10-27",
    "location": "",
@@ -5681,7 +5681,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SITC",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-08",
    "location": "",
@@ -5717,7 +5717,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AASLD",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5753,7 +5753,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACR",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-11",
    "location": "",
@@ -5789,7 +5789,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/AHA",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-09",
    "location": "",
@@ -5810,7 +5810,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/ACAAI",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-16",
    "location": "",
@@ -5831,7 +5831,7 @@ export default [
   "cap": "",
   "st": "Ended",
   "url": "/conference/SNO",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-15",
    "location": "",
@@ -5852,7 +5852,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/ObesityWeek",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-17",
    "location": "",
@@ -5881,7 +5881,7 @@ export default [
   "cap": "",
   "st": "In progress",
   "url": "/conference/CTAD",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-19",
    "location": "",
@@ -5910,7 +5910,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ENA",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-11-20",
    "location": "",
@@ -5946,7 +5946,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/AES",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-12-08",
    "location": "",
@@ -5967,7 +5967,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-Asia",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-12-06",
    "location": "",
@@ -5988,7 +5988,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/SABCS",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-12-11",
    "location": "",
@@ -6017,7 +6017,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ASH",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-12-15",
    "location": "",
@@ -6038,7 +6038,7 @@ export default [
   "cap": "",
   "st": "Scheduled",
   "url": "/conference/ESMO-IO",
-  "ua": "2026-11-17T19:39:32Z",
+  "ua": "2026-11-17T20:35:46Z",
   "_d": {
    "end": "2026-12-16",
    "location": "",
@@ -6900,7 +6900,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-17",
-    "searched": "Company's newest release (press release 2026-11-13) read 2026-11-17: no results and no timing for this readout. Old window Q3 2026 (topline Phase 3). HERO was terminated early (clinical hold); exploratory HERO/OLE data released 2026-10-23 ('Aardvark Therapeutics Reports Exploratory Data from the…"
+    "searched": "60 sponsor press releases (FMP) through 2026-11-17"
    }
   },
   "dm": "2026-09"
@@ -6983,7 +6983,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-17",
-    "searched": "Company's newest release (press release 2026-11-12) read 2026-11-17: no results and no timing for this readout. Q2 release (2026-08-11) said BDC-4182 initial data 'expected to be released with Bolt's 3Q 2026 results'. The Q3 2026 release (2026-11-12), after the Prana acquisition, mentions BDC-4182…"
+    "searched": "5 sponsor press releases (FMP) through 2026-11-17"
    }
   },
   "dm": "2026-09"
@@ -7076,6 +7076,111 @@ export default [
    "guided_filed": "2026-07-08"
   },
   "dm": "2026-09"
+ },
+ {
+  "id": "conf_jpm_2027-01-11",
+  "t": "JPM",
+  "company": "J.P. Morgan Healthcare Conference",
+  "d": "2027-01-11",
+  "dp": "day",
+  "name": "J.P. Morgan Healthcare Conference",
+  "type": "Conference",
+  "ta": "Healthcare investing (company presentations)",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/JPM",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-01-14",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_asco gi_2027-01-21",
+  "t": "ASCO GI",
+  "company": "ASCO Gastrointestinal Cancers Symposium",
+  "d": "2027-01-21",
+  "dp": "day",
+  "name": "ASCO Gastrointestinal Cancers Symposium",
+  "type": "Conference",
+  "ta": "GI oncology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ASCO-GI",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-01-23",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_world_2027-01-31",
+  "t": "WORLD",
+  "company": "WORLDSymposium Annual Research Meeting",
+  "d": "2027-01-31",
+  "dp": "day",
+  "name": "WORLDSymposium Annual Research Meeting",
+  "type": "Conference",
+  "ta": "Lysosomal and rare metabolic disease",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/WORLD",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-02-04",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_asco gu_2027-02-11",
+  "t": "ASCO GU",
+  "company": "ASCO Genitourinary Cancers Symposium",
+  "d": "2027-02-11",
+  "dp": "day",
+  "name": "ASCO Genitourinary Cancers Symposium",
+  "type": "Conference",
+  "ta": "GU oncology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ASCO-GU",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-02-13",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_aad_2027-03-19",
+  "t": "AAD",
+  "company": "American Academy of Dermatology Annual Meeting",
+  "d": "2027-03-19",
+  "dp": "day",
+  "name": "American Academy of Dermatology Annual Meeting",
+  "type": "Conference",
+  "ta": "Dermatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/AAD",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-03-23",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
  },
  {
   "id": "readout_ocgn_2026-09-30",
@@ -7241,7 +7346,7 @@ export default [
    "resolution": {
     "state": "no_topline",
     "checked": "2026-11-17",
-    "searched": "Company's newest release (press release 2026-11-17) read 2026-11-17: no results and no timing for this readout. Old window Q3 2026 came from a pipeline-slide fragment; IM1305 is preclinical (Ph1 initiation shown as 2027). Newest release (Q3 2026, 2026-11-17) mentions only preclinical IM1305 data…"
+    "searched": "3 sponsor press releases (FMP) through 2026-11-17"
    }
   },
   "dm": "2026-09"
@@ -7477,6 +7582,216 @@ export default [
   "dcd": "2026-09-11"
  },
  {
+  "id": "conf_aacr_2027-04-02",
+  "t": "AACR",
+  "company": "AACR Annual Meeting",
+  "d": "2027-04-02",
+  "dp": "day",
+  "name": "AACR Annual Meeting",
+  "type": "Conference",
+  "ta": "Cancer research",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/AACR",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-04-07",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_acc_2027-04-10",
+  "t": "ACC",
+  "company": "American College of Cardiology Scientific Session",
+  "d": "2027-04-10",
+  "dp": "day",
+  "name": "American College of Cardiology Scientific Session",
+  "type": "Conference",
+  "ta": "Cardiovascular",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ACC",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-04-12",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_aan_2027-05-01",
+  "t": "AAN",
+  "company": "American Academy of Neurology Annual Meeting",
+  "d": "2027-05-01",
+  "dp": "day",
+  "name": "American Academy of Neurology Annual Meeting",
+  "type": "Conference",
+  "ta": "Neurology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/AAN",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-05-05",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_asgct_2027-05-03",
+  "t": "ASGCT",
+  "company": "American Society of Gene and Cell Therapy Annual Meeting",
+  "d": "2027-05-03",
+  "dp": "day",
+  "name": "American Society of Gene and Cell Therapy Annual Meeting",
+  "type": "Conference",
+  "ta": "Gene and cell therapy",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ASGCT",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-05-07",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_ats_2027-05-14",
+  "t": "ATS",
+  "company": "American Thoracic Society International Conference",
+  "d": "2027-05-14",
+  "dp": "day",
+  "name": "American Thoracic Society International Conference",
+  "type": "Conference",
+  "ta": "Pulmonary and critical care",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ATS",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-05-19",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_ddw_2027-05-15",
+  "t": "DDW",
+  "company": "Digestive Disease Week",
+  "d": "2027-05-15",
+  "dp": "day",
+  "name": "Digestive Disease Week",
+  "type": "Conference",
+  "ta": "GI and hepatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/DDW",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-05-18",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_asco_2027-06-04",
+  "t": "ASCO",
+  "company": "ASCO Annual Meeting",
+  "d": "2027-06-04",
+  "dp": "day",
+  "name": "ASCO Annual Meeting",
+  "type": "Conference",
+  "ta": "Oncology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ASCO",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-06-08",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_eha_2027-06-10",
+  "t": "EHA",
+  "company": "European Hematology Association Congress",
+  "d": "2027-06-10",
+  "dp": "day",
+  "name": "European Hematology Association Congress",
+  "type": "Conference",
+  "ta": "Haematology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/EHA",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-06-13",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_easl_2027-06-16",
+  "t": "EASL",
+  "company": "EASL Congress, International Liver Congress",
+  "d": "2027-06-16",
+  "dp": "day",
+  "name": "EASL Congress, International Liver Congress",
+  "type": "Conference",
+  "ta": "Hepatology",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/EASL",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-06-19",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
+  "id": "conf_ada_2027-06-18",
+  "t": "ADA",
+  "company": "American Diabetes Association Scientific Sessions",
+  "d": "2027-06-18",
+  "dp": "day",
+  "name": "American Diabetes Association Scientific Sessions",
+  "type": "Conference",
+  "ta": "Diabetes",
+  "cap": "",
+  "st": "Scheduled",
+  "url": "/conference/ADA",
+  "ua": "2026-11-17T20:35:46Z",
+  "_d": {
+   "end": "2027-06-21",
+   "location": "",
+   "organiser_url": "",
+   "presenters": [],
+   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
+  }
+ },
+ {
   "id": "readout_sttk_2026-09-30",
   "t": "STTK",
   "company": "Shattuck Labs, Inc.",
@@ -7638,9 +7953,12 @@ export default [
    "program": "VK2735",
    "guidance_text": "Viking states it expects to report results from the VANQUISH-2 study in the third quarter of 2026. Both VANQUISH Phase 3 trials of subcutaneous VK2735 are fully enrolled. Full record at /vktx.",
    "resolution": {
-    "state": "no_topline",
+    "state": "sponsor_release",
+    "date": "2026-09-22",
+    "headline": "Viking Therapeutics Announces Positive Topline Results from Maintenance Study of GLP-1/GIP Agonist VK2735 Demonstrating the Promise of Multiple Maintenance Dosing Regimens",
+    "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-topline-results-from-maintenance-study-of-glp-1gip-agonist-vk2735-demonstrating-the-promise-of-multiple-maintenance-dosing-regimens-302885584.html",
     "checked": "2026-11-17",
-    "searched": "Company's newest release (press release 2026-10-28) read 2026-11-17: no results and no timing for this readout. Site row said results Q3 2026 (source given only as '/vktx', not a primary URL - could not verify that original claim). Newest release (Q3 2026, 2026-10-28) gives NO results/topline…"
+    "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
    }
   },
   "dm": "2026-09"
@@ -8185,90 +8503,6 @@ export default [
   "dm": "2026-09"
  },
  {
-  "id": "conf_jpm_2027-01-11",
-  "t": "JPM",
-  "company": "J.P. Morgan Healthcare Conference",
-  "d": "2027-01-11",
-  "dp": "day",
-  "name": "J.P. Morgan Healthcare Conference",
-  "type": "Conference",
-  "ta": "Healthcare investing (company presentations)",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/JPM",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-01-14",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_asco gi_2027-01-21",
-  "t": "ASCO GI",
-  "company": "ASCO Gastrointestinal Cancers Symposium",
-  "d": "2027-01-21",
-  "dp": "day",
-  "name": "ASCO Gastrointestinal Cancers Symposium",
-  "type": "Conference",
-  "ta": "GI oncology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ASCO-GI",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-01-23",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_world_2027-01-31",
-  "t": "WORLD",
-  "company": "WORLDSymposium Annual Research Meeting",
-  "d": "2027-01-31",
-  "dp": "day",
-  "name": "WORLDSymposium Annual Research Meeting",
-  "type": "Conference",
-  "ta": "Lysosomal and rare metabolic disease",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/WORLD",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-02-04",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_asco gu_2027-02-11",
-  "t": "ASCO GU",
-  "company": "ASCO Genitourinary Cancers Symposium",
-  "d": "2027-02-11",
-  "dp": "day",
-  "name": "ASCO Genitourinary Cancers Symposium",
-  "type": "Conference",
-  "ta": "GU oncology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ASCO-GU",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-02-13",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "readout_ilmn_2026-09-15",
   "t": "ILMN",
   "company": "Illumina, Inc.",
@@ -8581,69 +8815,6 @@ export default [
    }
   },
   "dm": "2026-10"
- },
- {
-  "id": "conf_aad_2027-03-19",
-  "t": "AAD",
-  "company": "American Academy of Dermatology Annual Meeting",
-  "d": "2027-03-19",
-  "dp": "day",
-  "name": "American Academy of Dermatology Annual Meeting",
-  "type": "Conference",
-  "ta": "Dermatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/AAD",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-03-23",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_aacr_2027-04-02",
-  "t": "AACR",
-  "company": "AACR Annual Meeting",
-  "d": "2027-04-02",
-  "dp": "day",
-  "name": "AACR Annual Meeting",
-  "type": "Conference",
-  "ta": "Cancer research",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/AACR",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-04-07",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_acc_2027-04-10",
-  "t": "ACC",
-  "company": "American College of Cardiology Scientific Session",
-  "d": "2027-04-10",
-  "dp": "day",
-  "name": "American College of Cardiology Scientific Session",
-  "type": "Conference",
-  "ta": "Cardiovascular",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ACC",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-04-12",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
  },
  {
   "id": "readout_rcus_2026-10-15",
@@ -9926,174 +10097,6 @@ export default [
   "dm": "2026-11"
  },
  {
-  "id": "conf_aan_2027-05-01",
-  "t": "AAN",
-  "company": "American Academy of Neurology Annual Meeting",
-  "d": "2027-05-01",
-  "dp": "day",
-  "name": "American Academy of Neurology Annual Meeting",
-  "type": "Conference",
-  "ta": "Neurology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/AAN",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-05-05",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_asgct_2027-05-03",
-  "t": "ASGCT",
-  "company": "American Society of Gene and Cell Therapy Annual Meeting",
-  "d": "2027-05-03",
-  "dp": "day",
-  "name": "American Society of Gene and Cell Therapy Annual Meeting",
-  "type": "Conference",
-  "ta": "Gene and cell therapy",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ASGCT",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-05-07",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_ats_2027-05-14",
-  "t": "ATS",
-  "company": "American Thoracic Society International Conference",
-  "d": "2027-05-14",
-  "dp": "day",
-  "name": "American Thoracic Society International Conference",
-  "type": "Conference",
-  "ta": "Pulmonary and critical care",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ATS",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-05-19",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_ddw_2027-05-15",
-  "t": "DDW",
-  "company": "Digestive Disease Week",
-  "d": "2027-05-15",
-  "dp": "day",
-  "name": "Digestive Disease Week",
-  "type": "Conference",
-  "ta": "GI and hepatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/DDW",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-05-18",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_asco_2027-06-04",
-  "t": "ASCO",
-  "company": "ASCO Annual Meeting",
-  "d": "2027-06-04",
-  "dp": "day",
-  "name": "ASCO Annual Meeting",
-  "type": "Conference",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ASCO",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-06-08",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_eha_2027-06-10",
-  "t": "EHA",
-  "company": "European Hematology Association Congress",
-  "d": "2027-06-10",
-  "dp": "day",
-  "name": "European Hematology Association Congress",
-  "type": "Conference",
-  "ta": "Haematology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/EHA",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-06-13",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_easl_2027-06-16",
-  "t": "EASL",
-  "company": "EASL Congress, International Liver Congress",
-  "d": "2027-06-16",
-  "dp": "day",
-  "name": "EASL Congress, International Liver Congress",
-  "type": "Conference",
-  "ta": "Hepatology",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/EASL",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-06-19",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
-  "id": "conf_ada_2027-06-18",
-  "t": "ADA",
-  "company": "American Diabetes Association Scientific Sessions",
-  "d": "2027-06-18",
-  "dp": "day",
-  "name": "American Diabetes Association Scientific Sessions",
-  "type": "Conference",
-  "ta": "Diabetes",
-  "cap": "",
-  "st": "Scheduled",
-  "url": "/conference/ADA",
-  "ua": "2026-11-17T19:39:32Z",
-  "_d": {
-   "end": "2027-06-21",
-   "location": "",
-   "organiser_url": "",
-   "presenters": [],
-   "presenter_note": "Presenters are sourced from company filings and releases; this is not the organiser's programme."
-  }
- },
- {
   "id": "readout_vir_2026-11-15",
   "t": "VIR",
   "company": "Vir Biotechnology, Inc.",
@@ -10145,7 +10148,7 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -10162,7 +10165,7 @@ export default [
     }
    },
    "indication": "Duchenne muscular dystrophy; refined proposed indication focused on upper limb function",
-   "market_cap_usd": 499490077.0,
+   "market_cap_usd": 499779637.0,
    "cash_runway_months": 36.1,
    "days_to_decision": 43,
    "cohort_move_median_pct": 0.0,
@@ -10173,9 +10176,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -70.35,
-    "t30": 11.35,
-    "t7": -4.11,
+    "t120": -70.46,
+    "t30": 10.97,
+    "t7": -4.44,
     "source": "FMP split-adjusted daily closes"
    },
    "review": "PDUFA target action date extended from August 22, 2026 to November 22, 2026. Capricor submitted a BLA amendment after the July 2026 advisory committee meeting containing 24-month open-label extension data from the pivotal Phase 3 HOPE-3 study and additional robustness analyses, in support of a refined proposed indication focused on upper limb function (the HOPE-3 primary endpoint). CBER accepted it, classified it a major amendment, and added three months to review it. The application remains under review: this is an extension, not a Complete Response Letter.",
@@ -10209,11 +10212,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/SVRA-molbreevi",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Autoimmune pulmonary alveolar proteinosis (aPAP) BLA",
-   "market_cap_usd": 978465271.0,
+   "market_cap_usd": 981973185.0,
    "cash_runway_months": 22.8,
    "days_to_decision": 135,
    "cohort_move_median_pct": 0.0,
@@ -10224,9 +10227,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -12.58,
-    "t30": -4.31,
-    "t7": -7.88,
+    "t120": -12.67,
+    "t30": -4.41,
+    "t7": -7.97,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Savara Inc 10-Q 2026-05-12",
@@ -10246,11 +10249,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
-   "market_cap_usd": 14916886575.0,
+   "market_cap_usd": 14937886123.0,
    "cash_runway_months": 25.4,
    "days_to_decision": 140,
    "cohort_move_median_pct": 0.0,
@@ -10261,9 +10264,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 11.98,
-    "t30": 14.47,
-    "t7": 3.18,
+    "t120": 12.04,
+    "t30": 14.54,
+    "t7": 3.23,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "BridgeBio Pharma, Inc. 8-K 2026-08-10",
@@ -10282,7 +10285,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Micro",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/PYPD-d-plex100",
   "_d": {
    "indication": "Prevention of surgical site infections in patients undergoing abdominal colorectal surgery",
@@ -10296,9 +10299,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 35.29,
-    "t30": 25.54,
-    "t7": 4.89,
+    "t120": 36.13,
+    "t30": 26.32,
+    "t7": 5.54,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -10364,11 +10367,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Gastrointestinal stromal tumors (GIST), 2L+",
-   "market_cap_usd": 4812917632.0,
+   "market_cap_usd": 4831813380.0,
    "cash_runway_months": 36.5,
    "days_to_decision": 143,
    "cohort_move_median_pct": -0.01,
@@ -10379,9 +10382,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -21.8,
-    "t30": -8.93,
-    "t7": -12.59,
+    "t120": -21.45,
+    "t30": -8.53,
+    "t7": -12.2,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
@@ -10479,11 +10482,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
-   "market_cap_usd": 98992499191.0,
+   "market_cap_usd": 98649109230.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -10523,11 +10526,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/RHHBY-giredestrant",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Adjuvant early breast cancer (ER+/HER2-)",
-   "market_cap_usd": 384678568493.0,
+   "market_cap_usd": 384359857277.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -10538,9 +10541,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 15.24,
-    "t30": 14.82,
-    "t7": 1.63,
+    "t120": 15.16,
+    "t30": 14.75,
+    "t7": 1.57,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Genentech press release 2026-06-01",
@@ -10613,11 +10616,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VRTX-povetacicept",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "IgA nephropathy",
-   "market_cap_usd": 135452502335.0,
+   "market_cap_usd": 135036700549.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
    "cohort_move_median_pct": 0.0,
@@ -10628,9 +10631,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.13,
-    "t30": 6.24,
-    "t7": -2.45,
+    "t120": 18.94,
+    "t30": 6.07,
+    "t7": -2.61,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Vertex 8-K 2026-08-03 (EX-99.1)",
@@ -10651,11 +10654,11 @@ export default [
   "cap": "Micro",
   "st": "Upcoming",
   "url": "/pdufa/VNDA-imsidolimab",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 229397805.0,
+   "market_cap_usd": 232058471.0,
    "cash_runway_months": 19.2,
    "days_to_decision": 155,
    "cohort_move_median_pct": 0.0,
@@ -10666,9 +10669,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -42.85,
-    "t30": -16.04,
-    "t7": -0.65,
+    "t120": -42.25,
+    "t30": -15.16,
+    "t7": 0.39,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Vanda Pharmaceuticals Inc. 8-K 2026-08-05",
@@ -11595,13 +11598,13 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/CORT-relacorilant",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06108219"
    },
    "indication": "Cushing's syndrome (hypercortisolism)",
-   "market_cap_usd": 7710259350.0,
+   "market_cap_usd": 7611760650.0,
    "source": "Corcept 8-K 2026-07-29 (EX-99.1)",
    "review": "Corcept resubmitted the NDA for relacorilant in Cushing's syndrome in June 2026, after a December 2025 CRL, and states a PDUFA date of December 17, 2026 in its second-quarter release.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026050607/cort072926ex991pressrelease.htm",
@@ -11610,9 +11613,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 2.95,
-    "t30": -41.12,
-    "t7": -3.26,
+    "t120": 1.71,
+    "t30": -41.83,
+    "t7": -4.42,
     "source": "FMP split-adjusted daily closes"
    }
   },
@@ -11686,11 +11689,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/MLYS-lorundrostat",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Hypertension",
-   "market_cap_usd": 1287398696.0,
+   "market_cap_usd": 1280535521.0,
    "cash_runway_months": 56.8,
    "days_to_decision": 165,
    "cohort_move_median_pct": -0.01,
@@ -11701,9 +11704,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -53.9,
-    "t30": -33.76,
-    "t7": -5.15,
+    "t120": -54.15,
+    "t30": -34.12,
+    "t7": -5.68,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Mineralys Therapeutics, Inc. 8-K 2026-08-11",
@@ -11723,12 +11726,12 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-anito-cel",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "review": "BLA accepted; pivotal Phase 2 iMMagine-1",
    "note": "PDUFA action date stated by the sponsor",
    "indication": "Relapsed or refractory multiple myeloma (fourth-line), BCMA CAR-T",
-   "market_cap_usd": 210832757608.0,
+   "market_cap_usd": 210603294964.0,
    "source_url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
    "source": "company press release",
    "source_quote": "Food and Drug Administration with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026.",
@@ -11736,9 +11739,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 24.77,
-    "t30": 17.84,
-    "t7": 1.84,
+    "t120": 24.58,
+    "t30": 17.66,
+    "t7": 1.68,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -11755,7 +11758,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-relutrigine",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -11772,7 +11775,7 @@ export default [
     }
    },
    "indication": "Developmental epileptic encephalopathies (DEEs)",
-   "market_cap_usd": 8515501506.0,
+   "market_cap_usd": 8523545962.0,
    "cash_runway_months": 33.4,
    "days_to_decision": 170,
    "cohort_move_median_pct": -0.01,
@@ -11783,9 +11786,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -13.69,
-    "t30": 8.64,
-    "t7": 9.63,
+    "t120": -13.6,
+    "t30": 8.76,
+    "t7": 9.75,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Praxis 8-K 2026-06-29 (extension); 8-K 2026-08-06 EX-99.1 (restated)",
@@ -11820,11 +11823,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/VTRS-mr-107a-02",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "indication": "Moderate-to-severe acute pain (non-opioid)",
    "source_note": "Re-added 2026-08-13 after dataset loss; NDA accepted 2026-05-18, PDUFA 2026-12-27 per Viatris release.",
-   "market_cap_usd": 23591173215.0,
+   "market_cap_usd": 23508054281.0,
    "source": "Viatris Inc 8-K 2026-08-06",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000037/exhibit991-2q26earningsrel.htm",
    "source_quote": "any announced that the FDA accepted for review the New Drug Application for MR-107A-02 (fast-acting meloxicam), a non-opioid, for the treatment of moderate-to-severe acute pain. The FDA has assigned a PDUFA goal date of December 27, 2026. The Company signed a distribution agreement with Accord Healthcare to commercialize three biosimilar products (filgras",
@@ -11832,9 +11835,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 27.75,
-    "t30": 17.33,
-    "t7": 3.37,
+    "t120": 27.31,
+    "t30": 16.93,
+    "t7": 3.01,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -11851,11 +11854,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/COGT-bezuclastinib-summit",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Nonadvanced systemic mastocytosis (NonAdvSM)",
-   "market_cap_usd": 4812917632.0,
+   "market_cap_usd": 4831813380.0,
    "cash_runway_months": 36.5,
    "days_to_decision": 173,
    "cohort_move_median_pct": -0.01,
@@ -11866,9 +11869,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -21.8,
-    "t30": -8.93,
-    "t7": -12.59,
+    "t120": -21.45,
+    "t30": -8.53,
+    "t7": -12.2,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Cogent Biosciences, Inc. 8-K 2026-08-10",
@@ -12798,7 +12801,7 @@ export default [
   "ta": "Immunology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/RHHBY-gazyva",
   "_d": {
    "indication": "Systemic lupus erythematosus (SLE)",
@@ -12809,7 +12812,7 @@ export default [
    "source_quote": "The FDA is expected to make a decision on an approval by December 2026.",
    "event_slug": "RHHBY-gazyva",
    "source_note": "Month precision: Genentech states the month of the expected FDA decision, not a day.",
-   "market_cap_usd": 384678568493.0,
+   "market_cap_usd": 384359857277.0,
    "runup_summary": null,
    "runup_note": "Run-up is measured for day-dated goals and decided events only"
   }
@@ -13187,7 +13190,7 @@ export default [
   "ta": "Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
@@ -13199,14 +13202,14 @@ export default [
    "trial": "METEOROID",
    "event_slug": "RHHBY-enspryng-mogad",
    "source_note": "sBLA, Priority Review, per Genentech release of September 9, 2026.",
-   "market_cap_usd": 384678568493.0,
+   "market_cap_usd": 384359857277.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 15.24,
-    "t30": 14.82,
-    "t7": 1.63,
+    "t120": 15.16,
+    "t30": 14.75,
+    "t7": 1.57,
     "source": "FMP split-adjusted daily closes"
    }
   },
@@ -13535,7 +13538,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/DYN-z-rostudirsen",
   "_d": {
    "indication": "Duchenne muscular dystrophy amenable to exon 51 skipping",
@@ -13544,14 +13547,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526323940/dyn-ex99_1.htm",
    "source_quote": "Biologics License Application (BLA) for z-rostudirsen in exon 51 DMD accepted for review by FDA; Priority Review granted; PDUFA target action date set for January 21, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 3010315345.0,
+   "market_cap_usd": 3015993169.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -13.5,
-    "t30": 4.25,
-    "t7": -11.15,
+    "t120": -13.16,
+    "t30": 4.66,
+    "t7": -10.8,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13567,7 +13570,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/INSM-arikayce",
   "_d": {
    "indication": "MAC lung disease, as part of a combination antibacterial drug regimen",
@@ -13576,14 +13579,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1104506/000110450626000047/insm-20260930.htm",
    "source_quote": "In September 2026, our US supplemental new drug application (sNDA) for ARIKAYCE in patients with MAC lung disease was accepted and granted priority review by the FDA as part of a combination antibacterial drug regimen, with a target action date of January 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 26610794000.0,
+   "market_cap_usd": 26639313400.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 12.11,
-    "t30": 15.46,
-    "t7": 6.19,
+    "t120": 12.02,
+    "t30": 15.36,
+    "t7": 6.11,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13600,7 +13603,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PRAX-ulixacaltamide",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05818553",
@@ -13617,7 +13620,7 @@ export default [
     }
    },
    "indication": "Essential tremor",
-   "market_cap_usd": 8515501506.0,
+   "market_cap_usd": 8523545962.0,
    "cash_runway_months": 33.4,
    "days_to_decision": 203,
    "cohort_move_median_pct": -0.01,
@@ -13628,9 +13631,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -13.69,
-    "t30": 8.64,
-    "t7": 9.63,
+    "t120": -13.6,
+    "t30": 8.76,
+    "t7": 9.75,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Praxis 8-K 2026-08-06 (EX-99.1)",
@@ -13653,7 +13656,7 @@ export default [
   "oc": null,
   "dcd": null,
   "url": "/pdufa/PHAR-joenja",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Activated PI3K-delta syndrome (APDS), children aged 4 years and older weighing 13 kg or more (lower-dose formulation)",
@@ -13662,14 +13665,14 @@ export default [
    "source_quote": "PDUFA target action date of January 30, 2027",
    "review": "Supplemental NDA for lower doses of Joenja, accepted with Priority Review (6-K of September 25, 2026). Follows the September 11, 2026 approval for children aged 4 to 11 weighing at least 27 kg.",
    "prior_decision": "/fda-decision/PHAR-2026-09-11",
-   "market_cap_usd": 856087352.0,
+   "market_cap_usd": 869507864.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -11.27,
-    "t30": 25.21,
-    "t7": -1.38,
+    "t120": -9.88,
+    "t30": 27.17,
+    "t7": 0.16,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13686,11 +13689,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/AGIO-mitapivat",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Sickle cell disease (sNDA)",
-   "market_cap_usd": 1773954249.0,
+   "market_cap_usd": 1773469790.0,
    "cash_runway_months": 23.2,
    "days_to_decision": 114,
    "cohort_move_median_pct": -0.01,
@@ -13701,9 +13704,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -2.22,
-    "t30": -6.23,
-    "t7": 1.14,
+    "t120": -2.39,
+    "t30": -6.39,
+    "t7": 0.96,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Agios press release 2026-10-30 (GlobeNewswire)",
@@ -13734,7 +13737,7 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GILD-yeztugo",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": {
     "nct": "NCT06333808",
@@ -13751,7 +13754,7 @@ export default [
     }
    },
    "indication": "HIV pre-exposure prophylaxis (PrEP)",
-   "market_cap_usd": 210832757608.0,
+   "market_cap_usd": 210603294964.0,
    "cash_runway_months": null,
    "days_to_decision": 207,
    "cohort_move_median_pct": 0.0,
@@ -13762,9 +13765,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 24.77,
-    "t30": 17.84,
-    "t7": 1.84,
+    "t120": 24.58,
+    "t30": 17.66,
+    "t7": 1.68,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "GILEAD SCIENCES, INC. 10-Q 2026-08-06",
@@ -13783,7 +13786,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/BBIO-infigratinib",
   "_d": {
    "indication": "Children with achondroplasia",
@@ -13793,14 +13796,14 @@ export default [
    "source": "BridgeBio 8-K 2026-10-06 (EX-99.1, NDA accepted, priority review)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126039334/ef20083591_ex99-1.htm",
    "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 4, 2027",
-   "market_cap_usd": 14916886575.0,
+   "market_cap_usd": 14937886123.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 11.98,
-    "t30": 14.47,
-    "t7": 3.18,
+    "t120": 12.04,
+    "t30": 14.54,
+    "t7": 3.23,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13816,7 +13819,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/VSTM-avmapki-fakzynja-blister-pack",
   "_d": {
    "indication": "New blister-pack presentation of the approved AVMAPKI FAKZYNJA co-pack (priority review)",
@@ -13824,14 +13827,14 @@ export default [
    "source": "Verastem 8-K 2026-11-05 (EX-99.1, Q3 2026 results presentation)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1526119/000110465926123386/tm2628982d2_ex99-1.htm",
    "source_quote": "FDA decision on NDA for AVMAPKI FAKZYNJA CO-PACK Blister Pack by February 7, 2027",
-   "market_cap_usd": 941330571.0,
+   "market_cap_usd": 930757929.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 74.43,
-    "t30": -3.45,
-    "t7": -11.02,
+    "t120": 72.22,
+    "t30": -4.67,
+    "t7": -12.15,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13847,7 +13850,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/RHHBY-lunsumio-polivy",
   "_d": {
    "indication": "With Polivy (polatuzumab vedotin), relapsed or refractory large B-cell lymphoma after at least one prior line of systemic therapy",
@@ -13858,14 +13861,14 @@ export default [
    "source": "Roche press release 2026-06-18 (sBLA accepted)",
    "source_url": "https://www.roche.com/media/releases/med-cor-2026-06-18",
    "source_quote": "The FDA is expected to make a decision on approval by 9 February 2027.",
-   "market_cap_usd": 384678568493.0,
+   "market_cap_usd": 384359857277.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 15.24,
-    "t30": 14.82,
-    "t7": 1.63,
+    "t120": 15.16,
+    "t30": 14.75,
+    "t7": 1.57,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13881,7 +13884,7 @@ export default [
   "ta": "Ophthalmology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/BLTE-tinlarebant",
   "_d": {
    "indication": "Stargardt disease type 1 (STGD1)",
@@ -13890,14 +13893,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
    "source_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA) date of February 12, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 6440433871.0,
+   "market_cap_usd": 6362998594.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 8.03,
-    "t30": 2.75,
-    "t7": 3.7,
+    "t120": 7.03,
+    "t30": 1.8,
+    "t7": 2.73,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -13987,7 +13990,7 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/ARQT-zoryve",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": {
     "nct": "NCT04655313",
@@ -13999,7 +14002,7 @@ export default [
     "slip": null
    },
    "indication": "Atopic dermatitis, infants 3-24 months",
-   "market_cap_usd": 3454093034.0,
+   "market_cap_usd": 3423136850.0,
    "cash_runway_months": null,
    "days_to_decision": 228,
    "cohort_move_median_pct": -0.01,
@@ -14010,9 +14013,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 27.52,
-    "t30": 14.3,
-    "t7": 7.01,
+    "t120": 26.28,
+    "t30": 13.19,
+    "t7": 5.97,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Arcutis Biotherapeutics, Inc. 8-K 2026-08-05",
@@ -14032,11 +14035,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/CGEM-zipalertinib",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Relapsed EGFR exon 20 insertion non-small cell lung cancer",
-   "market_cap_usd": 562214994.0,
+   "market_cap_usd": 586235727.0,
    "cash_runway_months": 23.6,
    "days_to_decision": 232,
    "cohort_move_median_pct": 0.0,
@@ -14047,9 +14050,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -43.66,
-    "t30": -46.75,
-    "t7": -23.49,
+    "t120": -41.24,
+    "t30": -44.46,
+    "t7": -20.2,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Cullinan Therapeutics, Inc. 8-K 2026-05-07",
@@ -14069,7 +14072,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/APMD-ad109",
   "_d": {
    "indication": "Obstructive sleep apnea",
@@ -14078,14 +14081,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1745648/000119312526385355/apmd-ex99_1.htm",
    "source_quote": "U.S. Food and Drug Administration (FDA) Accepted the NDA for AD109, with a proposed proprietary name Oxnimbi, and assigned a PDUFA target action date of February 28, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 722294016.0,
+   "market_cap_usd": 732909864.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
     "t120": null,
-    "t30": -6.65,
-    "t7": 15.3,
+    "t30": -5.6,
+    "t7": 16.59,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14101,7 +14104,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/BMRN-voxzogo-achondroplasia",
   "_d": {
    "indication": "Children with achondroplasia (application for full approval)",
@@ -14110,14 +14113,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
    "source_quote": "BioMarin's application for full approval of VOXZOGO in children with achondroplasia is under review by the FDA, with a PDUFA target action date of February 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 11274970289.0,
+   "market_cap_usd": 11293371466.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 10.49,
-    "t30": 3.65,
-    "t7": 4.0,
+    "t120": 10.39,
+    "t30": 3.56,
+    "t7": 3.91,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14190,7 +14193,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/PVLA-qtorin-rapamycin",
   "_d": {
    "indication": "Microcystic lymphatic malformations",
@@ -14199,14 +14202,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1583648/000119312526435113/pvla-ex99_1.htm",
    "source_quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 28, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 2072604833.0,
+   "market_cap_usd": 2089708428.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 22.4,
-    "t30": 10.79,
-    "t7": -19.39,
+    "t120": 23.23,
+    "t30": 11.55,
+    "t7": -18.84,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14223,11 +14226,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/EXEL-zanzalintinib",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "2L metastatic colorectal cancer",
-   "market_cap_usd": 17093879994.0,
+   "market_cap_usd": 17147443762.0,
    "cash_runway_months": null,
    "days_to_decision": 146,
    "cohort_move_median_pct": 0.0,
@@ -14238,9 +14241,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 32.26,
-    "t30": 16.66,
-    "t7": -2.18,
+    "t120": 32.58,
+    "t30": 16.94,
+    "t7": -1.95,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Exelixis 8-K 2026-10-29 (EX-99.1, Q3 2026 results)",
@@ -14270,7 +14273,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/NTLA-lonvo-z",
   "_d": {
    "indication": "Hereditary angioedema",
@@ -14279,14 +14282,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652130/000119312526385194/ntla-ex99_1.htm",
    "source_quote": "FDA sets Prescription Drug User Fee Act (PDUFA) date of March 10, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1399888585.0,
+   "market_cap_usd": 1403580000.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -27.07,
-    "t30": -19.35,
-    "t7": -12.1,
+    "t120": -26.86,
+    "t30": -19.12,
+    "t7": -11.85,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14302,7 +14305,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/BMY-reblozyl-mf",
   "_d": {
    "indication": "Adults with myelofibrosis-associated anemia receiving red blood cell transfusions, with concomitant JAK inhibitor therapy",
@@ -14311,14 +14314,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 124341741100.0,
+   "market_cap_usd": 124924305562.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 6.89,
-    "t30": 2.08,
-    "t7": -2.11,
+    "t120": 7.43,
+    "t30": 2.6,
+    "t7": -1.61,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14663,7 +14666,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/AQST-anaphylm",
   "_d": {
    "indication": "Anaphylaxis (Class 2 resubmission after the January 30, 2026 CRL)",
@@ -14672,14 +14675,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000058/a2026-10x19aquestivepduf.htm",
    "source_quote": "Aquestive Therapeutics Announces FDA Acceptance of Anaphylm NDA Resubmission and PDUFA Goal Date of March 16, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 463159186.0,
+   "market_cap_usd": 461902310.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -8.31,
-    "t30": -20.04,
-    "t7": 2.11,
+    "t120": -8.71,
+    "t30": -20.39,
+    "t7": 1.66,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14695,7 +14698,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/MRK-enflonsia",
   "_d": {
    "indication": "RSV lower respiratory tract disease in children under 2 at increased risk, through their second RSV season",
@@ -14704,14 +14707,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set PDUFA date of March 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 353911290000.0,
+   "market_cap_usd": 354182467500.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.68,
-    "t30": 1.09,
-    "t7": -2.21,
+    "t120": 19.87,
+    "t30": 1.25,
+    "t7": -2.06,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -14727,7 +14730,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/ETON-libervant",
   "_d": {
    "indication": "Seizure clusters, expansion to patients ages 6 to 11",
@@ -14736,7 +14739,7 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926032600/ex_1025429.htm",
    "source_quote": "The NDA has a Prescription Drug User Fee Act (PDUFA) target action date of March 29, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1821240719.0,
+   "market_cap_usd": 1821961774.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
@@ -15022,7 +15025,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/HRMY-pitolisant-gr",
   "_d": {
    "indication": "Pitolisant gastro-resistant formulation (NDA accepted July 2026)",
@@ -15031,14 +15034,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926090086/hrmy-20260804xex99d1.htm",
    "source_quote": "Pitolisant GR NDA Accepted in July; Target PDUFA Date April 1, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1924652847.0,
+   "market_cap_usd": 1921458305.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 4.23,
-    "t30": -16.61,
-    "t7": -0.87,
+    "t120": 4.16,
+    "t30": -16.67,
+    "t7": -0.94,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15055,11 +15058,11 @@ export default [
   "cap": "Small",
   "st": "Upcoming",
   "url": "/pdufa/INBX-ozekibart",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Unresectable or metastatic conventional chondrosarcoma",
-   "market_cap_usd": 1087635074.0,
+   "market_cap_usd": 1083263929.0,
    "cash_runway_months": 14.7,
    "days_to_decision": 278,
    "cohort_move_median_pct": 0.0,
@@ -15070,9 +15073,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -29.0,
-    "t30": -20.97,
-    "t7": -12.66,
+    "t120": -29.14,
+    "t30": -21.12,
+    "t7": -12.82,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Inhibrx Biosciences, Inc. 8-K 2026-06-15",
@@ -15413,7 +15416,7 @@ export default [
   "ta": "CNS/Neurology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/JAZZ-cannabidiol-capsule",
   "_d": {
    "indication": "Oral cannabidiol capsule formulation",
@@ -15422,14 +15425,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000056/a3q26earningsrelease.htm",
    "source_quote": "The PDUFA target action date for our New Drug Application (NDA) for the oral cannabidiol capsule formulation is April 16, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 15356922584.0,
+   "market_cap_usd": 15405372480.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 1.66,
-    "t30": 3.41,
-    "t7": 1.93,
+    "t120": 1.79,
+    "t30": 3.54,
+    "t7": 2.05,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15445,7 +15448,7 @@ export default [
   "ta": "Infectious Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/MRK-idvynso",
   "_d": {
    "indication": "Adults with HIV-1 infection (treatment-naive; 96-week data in virologically suppressed adults)",
@@ -15454,14 +15457,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set a PDUFA date for both sNDAs of April 22, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 353911290000.0,
+   "market_cap_usd": 354182467500.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.68,
-    "t30": 1.09,
-    "t7": -2.21,
+    "t120": 19.87,
+    "t30": 1.25,
+    "t7": -2.06,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15478,11 +15481,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/PHVS-deucrictibant-ir",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": "Hereditary angioedema, on-demand",
-   "market_cap_usd": 2261988990.0,
+   "market_cap_usd": 2255670585.0,
    "cash_runway_months": 20.0,
    "days_to_decision": 287,
    "cohort_move_median_pct": -0.01,
@@ -15493,9 +15496,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 8.14,
-    "t30": 3.76,
-    "t7": -6.11,
+    "t120": 7.6,
+    "t30": 3.25,
+    "t7": -6.57,
     "source": "FMP split-adjusted daily closes"
    },
    "source": "Pharvaris N.V. 6-K 2026-09-08",
@@ -15514,7 +15517,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/IMNM-varegacestat",
   "_d": {
    "indication": "Adults with desmoid tumors",
@@ -15523,14 +15526,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1472012/000119312526344577/imnm-ex99_1.htm",
    "source_quote": "Varegacestat PDUFA target action date set for April 28, 2027, following U.S. FDA acceptance of New Drug Application (NDA) for adults with desmoid tumors",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 2024218886.0,
+   "market_cap_usd": 2025541303.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -23.79,
-    "t30": -11.05,
-    "t7": -8.19,
+    "t120": -23.91,
+    "t30": -11.19,
+    "t7": -8.34,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15547,11 +15550,11 @@ export default [
   "cap": "Mid",
   "st": "Upcoming",
   "url": "/pdufa/AXSM-axs-12",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 7148090742.0,
+   "market_cap_usd": 7122037969.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
    "source": "company filing (SEC)",
    "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) – Axsome Therapeutics, Inc.",
@@ -15559,9 +15562,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -41.57,
-    "t30": -21.96,
-    "t7": 2.78,
+    "t120": -41.9,
+    "t30": -22.4,
+    "t7": 2.2,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15577,7 +15580,7 @@ export default [
   "ta": "Neurology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/QURE-amt-130",
   "_d": {
    "indication": "Huntington's disease (Accelerated Approval pathway; FDA tentatively plans an advisory committee)",
@@ -15586,14 +15589,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1590560/000110465926120915/tm2628699d1_ex99-1.htm",
    "source_quote": "The application has been granted Priority Review with a Prescription Drug User Fee Act (PDUFA) target action date of May 1, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1462745925.0,
+   "market_cap_usd": 1461693842.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -15.93,
-    "t30": -9.4,
-    "t7": -3.72,
+    "t120": -16.14,
+    "t30": -9.63,
+    "t7": -3.96,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15610,11 +15613,11 @@ export default [
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/BBIO-encaleret",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "_d": {
    "nct_id": null,
    "indication": null,
-   "market_cap_usd": 14916886575.0,
+   "market_cap_usd": 14937886123.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
    "source": "company filing (SEC)",
    "source_quote": "BridgeBio Announces FDA Acceptance of NDA for Encaleret for ADH1 - PDUFA target action date of May 8, 2027",
@@ -15622,9 +15625,9 @@ export default [
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 11.98,
-    "t30": 14.47,
-    "t7": 3.18,
+    "t120": 12.04,
+    "t30": 14.54,
+    "t7": 3.23,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15640,7 +15643,7 @@ export default [
   "ta": "Hematology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/BMY-mezigdomide",
   "_d": {
    "indication": "Relapsed or refractory multiple myeloma",
@@ -15649,14 +15652,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
    "source_quote": "The FDA accepted a New Drug Application for mezigdomide in combination with carfilzomib and dexamethasone (MeziKd) in patients with relapsed or refractory multiple myeloma (RRMM), granting a PDUFA date of May 13, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 124341741100.0,
+   "market_cap_usd": 124924305562.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 6.89,
-    "t30": 2.08,
-    "t7": -2.11,
+    "t120": 7.43,
+    "t30": 2.6,
+    "t7": -1.61,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15854,7 +15857,7 @@ export default [
   "ta": "Immunology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/ZBIO-obexelimab",
   "_d": {
    "indication": "IgG4-related disease",
@@ -15863,14 +15866,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1953926/000110465926095437/tm2622871d1_ex99-1.htm",
    "source_quote": "Obexelimab BLA submission for the treatment of IgG4-RD accepted by FDA; PDUFA target action date of May 27, 2027",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 1870075642.0,
+   "market_cap_usd": 1885334645.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 49.0,
-    "t30": 2.65,
-    "t7": -2.14,
+    "t120": 49.25,
+    "t30": 2.82,
+    "t7": -1.98,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15886,7 +15889,7 @@ export default [
   "ta": "Rare Disease",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/BMRN-voxzogo-hypochondroplasia",
   "_d": {
    "indication": "Hypochondroplasia",
@@ -15895,14 +15898,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
    "source_quote": "Food and Drug Administration (FDA) has set a PDUFA target action date of May 30, 2027 for its supplemental NDA to expand the use of VOXZOGO for the treatment of HCH",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 11274970289.0,
+   "market_cap_usd": 11293371466.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 10.49,
-    "t30": 3.65,
-    "t7": 4.0,
+    "t120": 10.39,
+    "t30": 3.56,
+    "t7": 3.91,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -15918,7 +15921,7 @@ export default [
   "ta": "Oncology",
   "cap": "Small",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/URGN-ugn-103",
   "_d": {
    "indication": "Low-grade intermediate-risk non-muscle invasive bladder cancer (LG-IR-NMIBC)",
@@ -15926,14 +15929,14 @@ export default [
    "source": "UroGen 8-K 2026-11-04 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1668243/000143774926034769/ex_1036873.htm",
    "source_quote": "The FDA accepted UroGen's NDA for UGN-103 (next-generation novel mitomycin-based formulation) for review; PDUFA goal date set for June 14, 2027",
-   "market_cap_usd": 1407917099.0,
+   "market_cap_usd": 1427536219.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 0.42,
-    "t30": -30.46,
-    "t7": 16.4,
+    "t120": 1.11,
+    "t30": -29.98,
+    "t7": 17.21,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -16260,7 +16263,7 @@ export default [
   "ta": "Oncology",
   "cap": "Large",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/MRK-sac-tmt",
   "_d": {
    "indication": "Adults with endometrial cancer previously treated with platinum chemotherapy and a PD-1/PD-L1 inhibitor",
@@ -16269,14 +16272,14 @@ export default [
    "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
    "source_quote": "U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.",
    "source_note": "Found 2026-11-03 by an EDGAR full-text sweep; the date is the sponsor's own statement.",
-   "market_cap_usd": 353911290000.0,
+   "market_cap_usd": 354182467500.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": 19.68,
-    "t30": 1.09,
-    "t7": -2.21,
+    "t120": 19.87,
+    "t30": 1.25,
+    "t7": -2.06,
     "source": "FMP split-adjusted daily closes"
    }
   }
@@ -16355,7 +16358,7 @@ export default [
   "ta": "Oncology",
   "cap": "Mid",
   "st": "Upcoming",
-  "ua": "2026-11-17T19:33:08Z",
+  "ua": "2026-11-17T20:30:28Z",
   "url": "/pdufa/COGT-bezuclastinib-advsm",
   "_d": {
    "indication": "Advanced systemic mastocytosis",
@@ -16363,14 +16366,14 @@ export default [
    "source": "Cogent 8-K 2026-11-05 (EX-99.1, Q3 2026 results)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
    "source_quote": "AdvSM PDUFA target action date June 29, 2027",
-   "market_cap_usd": 4812917632.0,
+   "market_cap_usd": 4831813380.0,
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
     "as_of": "2026-11-17",
-    "t120": -21.8,
-    "t30": -8.93,
-    "t7": -12.59,
+    "t120": -21.45,
+    "t30": -8.53,
+    "t7": -12.2,
     "source": "FMP split-adjusted daily closes"
    }
   }
