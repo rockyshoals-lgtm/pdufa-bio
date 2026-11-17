@@ -52,6 +52,19 @@ SITE_LINKS = [
 ]
 
 
+def shown_date(r):
+    """The date as its source gave it: a day, or the period for month/quarter rows ("Nov 2026", "Q4 2026")."""
+    d = str(r.get("d") or "")
+    dp = r.get("dp") or "day"
+    if dp == "month" and len(d) >= 7:
+        return f"{MON[int(d[5:7]) - 1][:3].capitalize()} {d[:4]}"
+    if dp == "quarter" and len(d) >= 7:
+        return f"Q{(int(d[5:7]) - 1) // 3 + 1} {d[:4]}"
+    if dp == "year" and len(d) >= 4:
+        return d[:4]
+    return d
+
+
 def page_exists(href):
     if href in ("/", "/sitemap"):   # /sitemap is written by this script
         return True
@@ -98,15 +111,24 @@ def main():
     live = lambda u: u in docs and u not in noindex
 
     # ---- upcoming event pages (by goal date) and decision pages (by date)
+    # A month- or quarter-precision row carries a sentinel day (the period's last day) in "d" for sorting only; it is
+    # shown as its period ("Nov 2026"), never as a day the source did not give (2026-11-17 currency audit).
     up = sorted({(r["d"], r["url"], r["t"], re.sub(r"\s+-\s+.*$", "", str(r.get("name") or ""))[:60])
                  for r in rows if r.get("type") == "PDUFA" and r.get("st") in ("Upcoming", "Awaiting")
                  and str(r.get("url") or "").startswith("/pdufa/") and str(r.get("d") or "") >= today
                  and live(r["url"])})
+    shown = {r["url"]: shown_date(r) for r in rows if str(r.get("url") or "").startswith("/pdufa/")
+             and r.get("st") in ("Upcoming", "Awaiting")}
     dec_doc = docs.get("/decisions", "")
     decs = sorted({(m.group(2), m.group(1), m.group(3)) for m in re.finditer(
-        r'<a class="row" href="(/fda-decision/([A-Z0-9.]+-\d{4}-\d{2}-\d{2}))"><div class="t">[^<]*</div><div class="d">'
+        r'<a class="row" href="(/fda-decision/([A-Z0-9.]+-\d{4}-\d{2}-\d{2}))"><div class="t">(?:[^<]|<span[^>]*>[^<]*</span>)*</div><div class="d">'
         r'(?:<span[^>]*>[^<]*</span>:\s*)?([^<]*)</div>', dec_doc)})
-    decs = [(k[-10:], u, k.rsplit("-", 3)[0], html.unescape(d)[:60]) for k, u, d in decs if live(u)]
+    # 2026-11-17: some archive rows carry the placeholder "source-verified" where a drug name belongs; a link label
+    # reading "TRAW 2025-06-03: source-verified" names nothing, so such a row is labelled "FDA decision" instead. Rows
+    # the archive marks "price-only" (outcome inferred from the share price, never verified) are not linked at all.
+    decs = [(k[-10:], u, k.rsplit("-", 3)[0],
+             (lambda x: "FDA decision" if x.strip().lower() in ("", "source-verified") else x)(html.unescape(d)[:60]))
+            for k, u, d in decs if live(u) and "price-only" not in d.lower()]   # an inferred outcome is never linked as a decision
     decs.sort()
 
     out, n_rel = {}, 0
@@ -125,7 +147,7 @@ def main():
         if u in up_idx:
             i = up_idx[u]
             near = [x for x in up[max(0, i - 3):i + 4] if x[1] != u][:6]
-            items = [(f"{t} {d}: {nm}", h) for d, h, t, nm in near]
+            items = [(f"{t} {shown.get(h, d)}: {nm}", h) for d, h, t, nm in near]
             d0, t0 = up[i][0], up[i][2]
             for t_, h_ in ((f"All {MON[int(d0[5:7]) - 1].capitalize()} {d0[:4]} PDUFA dates", f"/calendar/{d0[:4]}/{MON[int(d0[5:7]) - 1]}"),
                            (f"{t0} catalyst hub", f"/ticker/{t0}")):
@@ -170,7 +192,7 @@ def main():
     hub = ('<!--LINKHUB:BEGIN--><section style="margin:26px 0 8px;padding-top:14px;border-top:1px solid #1a3358;'
            'display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;font-size:13.5px">'
            f'<div><h2 style="font-size:15px;margin:0">Next FDA decision dates</h2>'
-           f'{ul([(f"{d}  {t}: {nm}", h) for d, h, t, nm in nxt])}</div>'
+           f'{ul([(f"{shown.get(h, d)}  {t}: {nm}", h) for d, h, t, nm in nxt])}</div>'
            f'<div><h2 style="font-size:15px;margin:0">Latest FDA decisions</h2>'
            f'{ul([(f"{d}  {t}: {nm}", h) for d, h, t, nm in last])}</div>'
            f'<div><h2 style="font-size:15px;margin:0">Daily pages, studies and data</h2>'

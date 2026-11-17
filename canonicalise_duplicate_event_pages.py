@@ -47,7 +47,10 @@ DUPES = {"ABBV-tavapadon-2": "ABBV-tavapadon", "NVO-cagrisema": "NVO-am833",
          # 2026-10-18: the RYZUMVI presbyopia event's two pre-canonical twins. Neither is linked from any page;
          # neither received the decided banner; both said "under FDA review" the day after the goal passed and
          # blocked both Sunday deploys (test_no_past_target_pending_pages). The partner page is the one we keep.
-         "IRD": "IRD-phentolamine-ophthalmic", "VTRS-mr-141": "IRD-phentolamine-ophthalmic"}
+         "IRD": "IRD-phentolamine-ophthalmic", "VTRS-mr-141": "IRD-phentolamine-ophthalmic",
+         # 2026-11-17 currency audit: the pre-acquisition Nuvalent page for neladalkib still indexed beside the
+         # GSK page (GSK completed the Nuvalent acquisition 2026-07-15). One NDA, one goal date; GSK's is kept.
+         "NUVL-neladalkib": "GSK-neladalkib"}
 SKIP = re.compile(r"[\\/]_pdufa_(x?bak\d*|bak\d*)[\\/]|[\\/]_[a-z]+bak")
 
 

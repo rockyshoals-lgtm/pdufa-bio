@@ -2465,7 +2465,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-07-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
@@ -2779,7 +2779,7 @@ export default [
   "ua": "2026-10-24T20:36:26Z",
   "_d": {
    "nct_id": null,
-   "indication": "ADHD in adults and pediatric patients aged 6 years and older (\u226520kg)",
+   "indication": "ADHD in adults and pediatric patients aged 6 years and older (≥20kg)",
    "market_cap_usd": null,
    "cash_runway_months": null,
    "days_to_decision": 14,
@@ -2903,7 +2903,7 @@ export default [
   "company": "Capricor Therapeutics Inc.",
   "d": "2026-07-29",
   "dp": "day",
-  "name": "Deramiocel (CTGTAC) \u2014 DMD",
+  "name": "Deramiocel (CTGTAC) — DMD",
   "type": "AdComm",
   "ta": "Rare disease",
   "cap": "",
@@ -2969,7 +2969,7 @@ export default [
   "company": "Replimune Group, Inc.",
   "d": "2026-07-30",
   "dp": "day",
-  "name": "RP1 (CTGTAC) \u2014 Melanoma",
+  "name": "RP1 (CTGTAC) — Melanoma",
   "type": "AdComm",
   "ta": "Oncology",
   "cap": "",
@@ -3496,7 +3496,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-09",
-    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO\u00ae (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
+    "headline": "BioMarin Announces Positive Results of Phase 3 VOXZOGO® (vosoritide) Study in Hypochondroplasia Published in NEJM Evidence",
     "url": "https://www.prnewswire.com/news-releases/biomarin-announces-positive-results-of-phase-3-voxzogo-vosoritide-study-in-hypochondroplasia-published-in-nejm-evidence-302873026.html",
     "checked": "2026-10-11",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -3649,7 +3649,7 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-10-18",
-    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 \u2018304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
+    "headline": "Veradermics to Hold Conference Call to Discuss Topline Results from Phase 3 ‘304' Clinical Trial of VDPHL01 in Males with Mild-to-Moderate Pattern Hair Loss",
     "url": "https://www.businesswire.com/news/home/20261018527252/en/Veradermics-to-Hold-Conference-Call-to-Discuss-Topline-Results-from-Phase-3-%E2%80%98304%E2%80%99-Clinical-Trial-of-VDPHL01-in-Males-with-Mild-to-Moderate-Pattern-Hair-Loss/",
     "checked": "2026-10-18",
     "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here"
@@ -7604,7 +7604,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "150μg CFA (Elonva®) at stimulation day (SD) 1 an",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -10118,15 +10118,15 @@ export default [
   "id": "pdufa_nuvl_2026-11-27",
   "t": "GSK",
   "company": "GSK plc",
-  "d": "2026-11-30",
-  "dp": "month",
+  "d": "2026-11-27",
+  "dp": "day",
   "name": "Neladalkib (NVL-655) - (ALKOVE-1)",
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
   "st": "Upcoming",
   "url": "/pdufa/GSK-neladalkib",
-  "ua": "2026-11-17T06:38:48Z",
+  "ua": "2026-11-17T12:00:00Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05118789",
@@ -10158,9 +10158,9 @@ export default [
     "source_url": "https://www.sec.gov/Archives/edgar/data/1861560/000119312526304126/d52896d8k.htm",
     "note": "Nuvalent 8-K 2026-07-15 (merger completion); tender offer commenced 2026-06-24 at $124.00 per share. NUVL no longer trades."
    },
-   "source": "GSK plc 6-K 2026-07-28 (Q2 2026 results)",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006949/a1493o.htm",
-   "source_quote": "Neladalkib is an investigational ALK tyrosine kinase inhibitor (TKI) currently under review with the US FDA for use by patients with TKI pre-treated ALK-positive NSCLC, with PDUFA date anticipated in November 2026.",
+   "source": "Nuvalent press release 2026-05-27 (NDA acceptance; Nuvalent was the applicant, acquired by GSK 2026-07-15)",
+   "source_url": "https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC",
+   "source_quote": "The application has been granted Priority Review and assigned a PDUFA target action date of November 27, 2026.",
    "date_history": [
     {
      "date": "2026-11-27",
@@ -10174,13 +10174,20 @@ export default [
      "precision": "month",
      "changed": "2026-10-10",
      "why": "Nuvalent was acquired by GSK (July 2026). GSK's Q2 2026 results 6-K, the sponsor's own current statement, gives only 'PDUFA date anticipated in November 2026'; no primary source states the 27th. Audit 2026-10-10 ruling: month precision, GSK 6-K as source."
+    },
+    {
+     "date": "2026-11-27",
+     "precision": "day",
+     "changed": "2026-11-17",
+     "source": "Nuvalent press release 2026-05-27 (NDA acceptance)",
+     "source_url": "https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC",
+     "why": "Day restored: the applicant's own announcement states 'assigned a PDUFA target action date of November 27, 2026'. GSK's 6-K 2026-07-28 ('anticipated in November 2026') is consistent and is kept as the current sponsor's confirmation."
     }
    ],
-   "source_note": "Former day 2026-11-27 (Royalty Pharma 8-K quoting Nuvalent) retired 2026-10-10; see date_history.",
-   "date_note": "Day 2026-11-27 withdrawn 2026-10-10: no primary source of the sponsor of record (GSK) states it; GSK's 6-K gives November 2026.",
-   "runup_note": "Run-up is measured for day-dated goals and decided events only"
-  },
-  "dm": "2026-11"
+   "source_note": "Goal day from the applicant's own release; the current sponsor (GSK) confirms the month. Month precision 2026-10-10 to 2026-11-17; see date_history.",
+   "confirming_source": "GSK plc 6-K 2026-07-28 (Q2 2026 results): PDUFA date anticipated in November 2026",
+   "confirming_source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006949/a1493o.htm"
+  }
  },
  {
   "id": "pdufa_regn_2026-11-30",
@@ -11520,7 +11527,7 @@ export default [
     }
    ],
    "review": "NDA for SCN2A and SCN8A developmental and epileptic encephalopathies. Review extended by three months (major amendment) to December 27, 2026; mid-cycle meeting complete with no major safety or efficacy concerns identified to date and no advisory committee planned (Praxis, August 6, 2026).",
-   "source_quote": "for its New Drug Application (\u201cNDA\u201d) for relutrigine for the treatment of SCN2A and SCN8A developmental and epileptic encephalopathies (\u201cDEEs\u201d), setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026."
+   "source_quote": "for its New Drug Application (“NDA”) for relutrigine for the treatment of SCN2A and SCN8A developmental and epileptic encephalopathies (“DEEs”), setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026."
   }
  },
  {
@@ -15103,7 +15110,7 @@ export default [
    "market_cap_usd": 7206723945.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526304039/axsm-ex99_1.htm",
    "source": "company filing (SEC)",
-   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) \u2013 Axsome Therapeutics, Inc.",
+   "source_quote": "Axsome Therapeutics Announces FDA Acceptance of New Drug Application for AXS-12 for the Treatment of Cataplexy in Narcolepsy FDA sets PDUFA target action date of May 1, 2027 NEW YORK, July 15, 2026 (Globe Newswire) – Axsome Therapeutics, Inc.",
    "runup_summary": {
     "basis": "so far",
     "unit": "pct",
