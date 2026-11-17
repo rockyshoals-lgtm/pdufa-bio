@@ -235,6 +235,9 @@ def build_section(readouts, key, limit):
         if res.get("state") == "sponsor_release" and res.get("date"):
             found = (f'<span style="color:#46d17f">Sponsor release {esc(str(res["date"])[:10])}</span>')
             href = esc(res.get("url") or r["url"] or "#")
+        elif res.get("state") == "company_stopped" and res.get("date"):
+            found = f'<span style="color:#ff7a72">Stopped per company {esc(str(res["date"])[:10])}</span>'
+            href = esc(res.get("url") or r["url"] or "#")
         elif ros in ("TERMINATED", "WITHDRAWN", "SUSPENDED"):
             found = f'<span style="color:#ff7a72">{ros.title()} per ClinicalTrials.gov</span>'
         elif res.get("state") == "no_topline" and res.get("checked"):

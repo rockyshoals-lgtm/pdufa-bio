@@ -49,6 +49,8 @@ def expected(typ, st, dp, d, end, today, reg=None, res=None):
         res = res or {}
         if res.get("state") == "sponsor_release" and res.get("date"):
             return "Sponsor release " + str(res["date"])[:10]
+        if res.get("state") == "company_stopped" and res.get("date"):
+            return "Stopped per company " + str(res["date"])[:10]
         ended = ((end or d)[:7] < today[:7]) if dp == "month" else (d[:10] < today)
         if reg:
             os_ = reg.get("overall_status") or ""
