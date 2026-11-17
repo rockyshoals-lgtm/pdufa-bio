@@ -99,7 +99,7 @@ def main():
 
     html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="index,follow,max-image-preview:large">
 <title>Viking Therapeutics (VKTX): VK2735 Phase 3 Readout Dates | pdufa.bio</title>
-<meta name="description" content="Viking Therapeutics (VKTX) catalyst record: VANQUISH-1 and VANQUISH-2 Phase 3 trials of VK2735 in obesity, both fully enrolled, with VANQUISH-2 data guided to Q3 2026. Every dated event and the measured stock reaction, from SEC filings and daily closes. No price targets.">
+<meta name="description" content="Viking Therapeutics (VKTX) catalyst record: VANQUISH-1 and VANQUISH-2 Phase 3 trials of VK2735 in obesity, both fully enrolled; the company now says both studies are expected to be completed in 2027. Every dated event and the measured stock reaction, from SEC filings and daily closes. No price targets.">
 <link rel="canonical" href="https://www.pdufa.bio/vktx"><meta name="theme-color" content="#060b14">
 <meta property="og:type" content="article"><meta property="og:title" content="Viking Therapeutics (VKTX): VK2735 Phase 3 readout dates"><meta property="og:url" content="https://www.pdufa.bio/vktx">
 <script type="application/ld+json">{json.dumps({
@@ -149,7 +149,7 @@ There are no price targets, no probability of success, and no forecasts anywhere
 <div class="stats">
   <div class="stat"><div class="note">Last close</div><div class="big">${last_c:,.2f}</div><div class="note">{last_d}</div></div>
   <div class="stat"><div class="note">52-week range</div><div class="big" style="font-size:19px">${lo52:,.2f} to ${hi52:,.2f}</div><div class="note">daily closes</div></div>
-  <div class="stat"><div class="note">Next guided readout</div><div class="big" style="color:var(--gold);font-size:20px">Q3 2026</div><div class="note">VANQUISH-2, company guidance</div></div>
+  <div class="stat"><div class="note">VANQUISH studies</div><div class="big" style="color:var(--gold);font-size:20px">Complete in 2027</div><div class="note">company guidance, Oct 28, 2026</div></div>
   <div class="stat"><div class="note">Down from peak</div><div class="big">{100*(last_c/peak-1):+.0f}%</div><div class="note">peak ${peak:,.2f} on {peak_d}</div></div>
 </div>
 
@@ -158,8 +158,12 @@ There are no price targets, no probability of success, and no forecasts anywhere
 enrollment in November 2025; VANQUISH-2 (obesity with type 2 diabetes, approximately 1,000 adults)
 completed enrollment in March 2026. Each evaluates subcutaneous VK2735 once weekly for 78 weeks,
 with the primary endpoint being percent change in body weight from baseline at week 78.</div>
-<div class="fact"><b>The company guides VANQUISH-2 data to the third quarter of 2026.</b> That is
-company guidance, quoted as given. It is a quarter, not a date, and we do not convert it into one.</div>
+<div class="fact"><b>The company now says both VANQUISH studies are expected to be completed in 2027.</b>
+Its third-quarter 2026 release (October 28, 2026) states: &ldquo;The company expects these studies to be
+completed in 2027.&rdquo; It gives no date for topline results, so we show none. Earlier guidance had
+pointed VANQUISH-2 data to the third quarter of 2026; no VANQUISH-2 results had been released as of
+November 17, 2026. The same release says results from Part 2 of the VK2735 maintenance dosing study are
+expected in 2027. Source: <a href="https://www.prnewswire.com/news-releases/viking-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update-302922632.html" rel="nofollow">Viking Therapeutics, October 28, 2026</a>.</div>
 <div class="fact"><b>Other stated 2026 milestones.</b> In its Q1 2026 update Viking said it expects
 to initiate a Phase 3 trial of <b>oral</b> VK2735 in 4Q26, expects data from the VK2735 maintenance
 dosing study in 3Q26, and had filed an IND for the amylin agonist VK3019. Quarter-end cash was

@@ -33,15 +33,28 @@ def esc(s):
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def label(d, prec):
+def label(d, prec, dd=None):
     """Render the date at the precision the company actually gave. Printing 'Dec 31' for guidance
-    that said 'Q4' invents a day and is exactly what the watchlist split exists to prevent."""
+    that said 'Q4' invents a day and is exactly what the watchlist split exists to prevent.
+    2026-11-17 (readout mine): a half-year or looser window is stored at YEAR precision on its last day,
+    and this printed that day ("2027-12-31") for 8 live rows. It now prints the company's own words
+    (_d.guided_label), else "2H 2027" / "2027" from the stored window; never the placeholder day."""
+    dd = dd or {}
     y, m = int(d[:4]), int(d[5:7])
     if prec == "quarter":
         return f"Q{(m - 1) // 3 + 1} {y}"
     if prec == "month":
         return dt.date(y, m, 1).strftime("%b %Y")
-    return d
+    if prec == "day":
+        return dt.date(y, m, int(d[8:10])).strftime("%b %-d, %Y") if os.name != "nt" else d
+    gl = str(dd.get("guided_label") or "").strip()
+    if gl:
+        return gl[:1].upper() + gl[1:]
+    gw = str(dd.get("guided_window") or "")
+    hm = re.match(r"^(\d{4})-H([12])$", gw)
+    if hm:
+        return f"{hm.group(2)}H {hm.group(1)}"
+    return str(y)
 
 
 def main():
@@ -80,7 +93,7 @@ def main():
         ev = ('<span class="pill" style="background:rgba(240,200,106,.12);color:#f0c86a;'
               'border:1px solid #6b5a2f">event-driven</span>') if d.get("event_driven") else ""
         rep = r.get("_reported")
-        date_cell = esc(label(r["d"], r.get("dp")))
+        date_cell = esc(label(r["d"], r.get("dp"), d))
         if rep:
             oc = str(rep.get("outcome", "")).lower()
             col = "#46d17f" if oc == "positive" else "#ff7a72" if oc == "negative" else "#9db3d4"
@@ -112,11 +125,11 @@ def main():
         '</style>'
         '<div class="mhead" style="color:#f0c86a;margin-top:22px">Company-guided readouts</div>'
         f'<p style="color:#9db3d4;font-size:14.5px;line-height:1.6">These {len(rows)} dates are not '
-        'trial-registry estimates. Each one is timing the company itself stated in an SEC filing, '
-        'and each row links to that filing so you can read the sentence it came from. Dates are shown '
-        'at the precision the company used: a quarter stays a quarter rather than being rendered as '
-        'a specific day it never named. Guidance that was vaguer than a quarter is not on this page '
-        'at all.</p>'
+        'trial-registry estimates. Each one is timing the company itself stated, in an SEC filing '
+        'or its own press release, and each row links to that source so you can read the sentence it '
+        'came from. Dates are shown at the precision the company used: a quarter stays a quarter, and '
+        'looser guidance such as "second half of 2027" or "mid-2027" is printed in the company\'s own '
+        'words, never as a specific day it did not name.</p>'
         '<div class="card"><table class="gtbl">'
         '<tr><th>Guided</th><th>Ticker</th><th>Program</th><th>Company</th><th>Source</th></tr>'
         + "".join(trs) +
