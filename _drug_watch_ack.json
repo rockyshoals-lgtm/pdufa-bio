@@ -83,6 +83,18 @@
    "source": "sponsor:RHHBY:2026-11-16",
    "reason": "Published 2026-11-17: the evERA approval; lidERA still pending.",
    "acked": "2026-11-17"
+  },
+  {
+   "slug": "neladalkib",
+   "source": "fda-oncology-notifications",
+   "acked": "2026-11-17",
+   "reason": "Published 2026-11-17: Nelkarmi (neladalkib) accelerated approval Nov 17, 2026, /fda-decision/GSK-2026-11-17 (FDA notification and GSK release read)."
+  },
+  {
+   "slug": "neladalkib",
+   "source": "sponsor:GSK:2026-11-17",
+   "acked": "2026-11-17",
+   "reason": "Published 2026-11-17: Nelkarmi (neladalkib) accelerated approval Nov 17, 2026, /fda-decision/GSK-2026-11-17 (FDA notification and GSK release read)."
   }
  ]
 }
