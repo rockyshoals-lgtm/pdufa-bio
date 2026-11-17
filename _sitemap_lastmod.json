@@ -46,8 +46,8 @@
 },
 "pdufa_site_src/calendar/2026/november/index.html": {
 "date": "2026-11-17",
-"hash": "3a7bfc2af3f5bafe",
-"ts": "2026-11-17T03:07:00-05:00"
+"hash": "e660f2d248b4f717",
+"ts": "2026-11-17T14:36:23-05:00"
 },
 "pdufa_site_src/calendar/2026/october/index.html": {
 "date": "2026-11-17",
@@ -96,8 +96,8 @@
 },
 "pdufa_site_src/calendar/index.html": {
 "date": "2026-11-17",
-"hash": "3289736464e56ecd",
-"ts": "2026-11-17T03:07:00-05:00"
+"hash": "e29ef8f7772361ee",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/clinical-trial-success-rates/index.html": {
 "date": "2026-11-10",
@@ -106,8 +106,8 @@
 },
 "pdufa_site_src/condition/cancer/index.html": {
 "date": "2026-11-17",
-"hash": "b0b29589d654e405",
-"ts": "2026-11-17T03:25:06-05:00"
+"hash": "e81804a52d7de440",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/condition/cardiovascular/index.html": {
 "date": "2026-10-13",
@@ -116,8 +116,8 @@
 },
 "pdufa_site_src/condition/cns-neurology/index.html": {
 "date": "2026-11-17",
-"hash": "6c675dbbb181e051",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "4e4f1f504e0ef1e7",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/condition/hematology/index.html": {
 "date": "2026-11-04",
@@ -131,13 +131,13 @@
 },
 "pdufa_site_src/condition/index.html": {
 "date": "2026-11-17",
-"hash": "bbb130bacf052a0c",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "e3e084ba4d670fa5",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/condition/infectious-disease/index.html": {
-"date": "2026-11-04",
-"hash": "f7860c5f06b5fe89",
-"ts": "2026-11-04T00:27:39-05:00"
+"date": "2026-11-17",
+"hash": "816d1d355d0ff5c3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/condition/obesity-metabolic/index.html": {
 "date": "2026-10-15",
@@ -156,198 +156,198 @@
 },
 "pdufa_site_src/conference/AACR/index.html": {
 "date": "2026-11-17",
-"hash": "f008d1a4f3b325d9",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "19c80fc5d196645a",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/AAD/index.html": {
 "date": "2026-11-17",
-"hash": "e26d733d7588a5db",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "0c6475f33c5752fe",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/conference/AAN/index.html": {
 "date": "2026-11-17",
-"hash": "0043722d7e96d4d2",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "e7a895ed829c2f18",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/AAO/index.html": {
 "date": "2026-11-17",
-"hash": "1ee427c3f70acca7",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "fb0a578d3a3c8e51",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/conference/AASLD/index.html": {
 "date": "2026-11-17",
-"hash": "59e7db9b48e60dd7",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "62da685e01060d14",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/conference/ACAAI/index.html": {
 "date": "2026-11-17",
-"hash": "facd3e85832a4cb9",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "a250b30856565b14",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ACC/index.html": {
 "date": "2026-11-17",
-"hash": "ca1d090cff0ab5eb",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "b8d5f96ce8b2e52c",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ACG/index.html": {
 "date": "2026-11-17",
-"hash": "e2f7a16b3bbd2cff",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "d729c3f6dca192ea",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ACR/index.html": {
 "date": "2026-11-17",
-"hash": "5a86e2fcb4b29483",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "d0ebe651084b284b",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ADA/index.html": {
 "date": "2026-11-17",
-"hash": "dee8668ecc40a9db",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "9b36628e57352059",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/AES/index.html": {
 "date": "2026-11-17",
-"hash": "1899521ca117e0d1",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "bb182fc68ea3b6a7",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/AHA/index.html": {
 "date": "2026-11-17",
-"hash": "48dd1a089a884f02",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "cf78ab295523db4c",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ASBMR/index.html": {
 "date": "2026-11-17",
-"hash": "7dbda02f1f94a210",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "92219b9ad9d64d57",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ASCO-GI/index.html": {
 "date": "2026-11-17",
-"hash": "ef9f3635970dd053",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "cb1402fa1cff1531",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ASCO-GU/index.html": {
 "date": "2026-11-17",
-"hash": "cffbc258bd6efab4",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "7397cef0086f2bc8",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ASCO/index.html": {
 "date": "2026-11-17",
-"hash": "1ee241d2378801bd",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "1b3a5c0400006303",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ASGCT/index.html": {
 "date": "2026-11-17",
-"hash": "6a5b42414cbe683d",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "3d19578e2c134bab",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/conference/ASH/index.html": {
 "date": "2026-11-17",
-"hash": "3133d34b0685ae58",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "26853cf77687ea5c",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ASN/index.html": {
 "date": "2026-11-17",
-"hash": "59d4e317330cece9",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "34bd19568300dbfe",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ATS/index.html": {
 "date": "2026-11-17",
-"hash": "53baac97460697ba",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "9891fb94cef75ee1",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/CTAD/index.html": {
 "date": "2026-11-17",
-"hash": "50f02ffc651f737d",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "7361fb63ab6ecbcb",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/DDW/index.html": {
 "date": "2026-11-17",
-"hash": "ce442341ab078196",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "301fd23470cff914",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/EASD/index.html": {
 "date": "2026-11-17",
-"hash": "ae5138eea0262e65",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "6bc56c7e74278e7b",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/EASL/index.html": {
 "date": "2026-11-17",
-"hash": "ba18cbdc5b38447e",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "ee81e785a3e8ebda",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ECTRIMS/index.html": {
 "date": "2026-11-17",
-"hash": "d1d7ecbe4a21003e",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "6e5313f49d97fed9",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/conference/EHA/index.html": {
 "date": "2026-11-17",
-"hash": "6db54340d3bee758",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "79a023ae085818ea",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ENA/index.html": {
 "date": "2026-11-17",
-"hash": "c54031f124d2d20e",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "5284c50608e9f8bf",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/conference/ESC/index.html": {
 "date": "2026-11-17",
-"hash": "ebec8bca426cc934",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "03b965e7f6a2ba26",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ESMO-Asia/index.html": {
 "date": "2026-11-17",
-"hash": "5006b4eacd0f2783",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "9df44f7147c58770",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ESMO-IO/index.html": {
 "date": "2026-11-17",
-"hash": "a2d6230312fb2905",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "2a391692a83cb095",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ESMO/index.html": {
 "date": "2026-11-17",
-"hash": "4fdc87cc370e6178",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "05d0b819409471d6",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/IDWeek/index.html": {
 "date": "2026-11-17",
-"hash": "7e92527940ac9dad",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "24a6f92e98ceee9e",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/JPM/index.html": {
 "date": "2026-11-17",
-"hash": "d2d58452dc1e4373",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "80047dcd648efbfe",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/ObesityWeek/index.html": {
 "date": "2026-11-17",
-"hash": "83db32d6dd5f0e54",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "c78441e85f83eb20",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/SABCS/index.html": {
 "date": "2026-11-17",
-"hash": "2ff24b104ce59de4",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "be5b0d137e6684e9",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/SITC/index.html": {
 "date": "2026-11-17",
-"hash": "4d864906b627aaed",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "3086018f11de7352",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/SNO/index.html": {
 "date": "2026-11-17",
-"hash": "842a138d1c68755d",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "eed3ad44bc83fd20",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/WCLC/index.html": {
 "date": "2026-11-17",
-"hash": "ebd18849c6deb589",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "a8460c35162909ba",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conference/WORLD/index.html": {
 "date": "2026-11-17",
-"hash": "4c49f92d49d16796",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "5ab3dfcd2775939f",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/conferences/index.html": {
 "date": "2026-11-17",
@@ -357,7 +357,7 @@
 "pdufa_site_src/corrections/index.html": {
 "date": "2026-11-17",
 "hash": "a1618cc9132dd01d",
-"ts": "2026-11-17T01:45:53-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/coverage/index.html": {
 "date": "2026-11-05",
@@ -366,123 +366,123 @@
 },
 "pdufa_site_src/crl/2025/april/index.html": {
 "date": "2026-11-17",
-"hash": "0a99ae64d9150c58",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "7e2ca702434cf7f5",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/august/index.html": {
 "date": "2026-11-17",
-"hash": "86476a5ec734e8df",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "9aeb3e923c4d38f2",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/december/index.html": {
 "date": "2026-11-17",
-"hash": "fdc9a31710243999",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "722619a45e017036",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/february/index.html": {
 "date": "2026-11-17",
-"hash": "ee6b5890dfb439e6",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "f3acf3b8bb6ab97c",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/january/index.html": {
 "date": "2026-11-17",
-"hash": "86497cd72ed073b1",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "1d8b9f730e36e212",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/july/index.html": {
 "date": "2026-11-17",
-"hash": "8a5661ffa42cd987",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "5ff7c8580eb1462d",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/june/index.html": {
 "date": "2026-11-17",
-"hash": "d036a64d2dca7d4d",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "d91035014243117e",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/march/index.html": {
 "date": "2026-11-17",
-"hash": "7778565d3f028dba",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "d121e0f3435c5ed3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/may/index.html": {
 "date": "2026-11-17",
-"hash": "a166c26a0e2017f3",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "29b15a1629c6f5c9",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/november/index.html": {
 "date": "2026-11-17",
-"hash": "bc1fe16d6905ff33",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "f80800f233e0bfc0",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/october/index.html": {
 "date": "2026-11-17",
-"hash": "1f4f217a33488462",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "1870a906e3f9b8ed",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2025/september/index.html": {
 "date": "2026-11-17",
-"hash": "615b411bd61834b1",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "e6e0f5559f6828ff",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/april/index.html": {
 "date": "2026-11-17",
-"hash": "b148f823d290ec76",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "a3504f92d7989dba",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/august/index.html": {
 "date": "2026-11-17",
-"hash": "3ac30d0a7048df36",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "4935c050e88b9f82",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/february/index.html": {
 "date": "2026-11-17",
-"hash": "a65920adf5d9b042",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "8ba05a39693a3e19",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/january/index.html": {
 "date": "2026-11-17",
-"hash": "a292a1a3f6c64ac6",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "7bc25d8654083bb6",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/july/index.html": {
 "date": "2026-11-17",
-"hash": "a8d0b0676cb5b1aa",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "40a453bb528a93e6",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/june/index.html": {
 "date": "2026-11-17",
-"hash": "3546023ef1aae6c0",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "82820d1f869b2a3c",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/march/index.html": {
 "date": "2026-11-17",
-"hash": "394a6c1d2b5a7f1d",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "e74f6b9194813b81",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/may/index.html": {
 "date": "2026-11-17",
-"hash": "fca8fa4ce6b3d3c8",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "09bd290ab0d02ea3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/november/index.html": {
 "date": "2026-11-17",
-"hash": "537050ad4bea913f",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "5dceccbae6586dbb",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/october/index.html": {
 "date": "2026-11-17",
-"hash": "5479e9e22fc1d494",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "15cefe541b45932c",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/2026/september/index.html": {
 "date": "2026-11-17",
-"hash": "fa074cb7a304adfa",
-"ts": "2026-11-17T03:06:59-05:00"
+"hash": "625efa116a596df5",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/crl/index.html": {
 "date": "2026-11-17",
-"hash": "fadfc4529ea99a67",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "1716882c580495f3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/decisions/2025/index.html": {
 "date": "2026-11-17",
@@ -500,14 +500,14 @@
 "ts": "2026-11-17T01:42:43-05:00"
 },
 "pdufa_site_src/decisions/crl/index.html": {
-"date": "2026-11-10",
-"hash": "76031a96de25a961",
-"ts": "2026-11-10T00:34:07-05:00"
+"date": "2026-11-17",
+"hash": "d40dba4802bbb3f3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/decisions/index.html": {
 "date": "2026-11-17",
-"hash": "d9ba59a5eb2c842f",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "4b587bf167899526",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/developers/index.html": {
 "date": "2026-11-17",
@@ -526,8 +526,8 @@
 },
 "pdufa_site_src/drug/18f-mfbg/index.html": {
 "date": "2026-11-17",
-"hash": "47855098f1e49e32",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "f53249d8e7c6fbe0",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/4d-150-ivt/index.html": {
 "date": "2026-11-17",
@@ -586,8 +586,8 @@
 },
 "pdufa_site_src/drug/aficamten/index.html": {
 "date": "2026-11-17",
-"hash": "86a6b4f7f490fc2b",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "184dd63b57008525",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/afrezza/index.html": {
 "date": "2026-11-17",
@@ -946,8 +946,8 @@
 },
 "pdufa_site_src/drug/bictegravir/index.html": {
 "date": "2026-11-17",
-"hash": "1bda1647b0025cd2",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "25cc54307c9e335f",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/biib122/index.html": {
 "date": "2026-11-17",
@@ -1026,8 +1026,8 @@
 },
 "pdufa_site_src/drug/bulevirtide/index.html": {
 "date": "2026-11-17",
-"hash": "c484546014c689e9",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "60102efbebed591d",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/buntanetap-posiphen/index.html": {
 "date": "2026-11-17",
@@ -1462,7 +1462,7 @@
 "pdufa_site_src/drug/everolimus/index.html": {
 "date": "2026-11-17",
 "hash": "de67b6e4be99d07d",
-"ts": "2026-11-17T02:59:03-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/evo756/index.html": {
 "date": "2026-11-17",
@@ -1522,7 +1522,7 @@
 "pdufa_site_src/drug/filspari/index.html": {
 "date": "2026-11-17",
 "hash": "98c8091bf4faca91",
-"ts": "2026-11-17T02:59:04-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/foundayo/index.html": {
 "date": "2026-11-17",
@@ -1556,8 +1556,8 @@
 },
 "pdufa_site_src/drug/gazyva/index.html": {
 "date": "2026-11-17",
-"hash": "53da84a37e3909a0",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "515c280d8b7d84bf",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/gedatolisib-with/index.html": {
 "date": "2026-10-13",
@@ -1687,7 +1687,7 @@
 "pdufa_site_src/drug/idose-tr/index.html": {
 "date": "2026-11-17",
 "hash": "bef0b1f950d97cfd",
-"ts": "2026-11-17T02:59:03-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/idsa-shea-hivma-idweek/index.html": {
 "date": "2026-10-22",
@@ -1722,7 +1722,7 @@
 "pdufa_site_src/drug/iluvien/index.html": {
 "date": "2026-11-17",
 "hash": "1c071caa9bf7f069",
-"ts": "2026-11-17T02:59:04-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/im1305/index.html": {
 "date": "2026-11-17",
@@ -2004,8 +2004,8 @@
 },
 "pdufa_site_src/drug/libervant/index.html": {
 "date": "2026-11-17",
-"hash": "3e7a6cefe7a8cb33",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "5761833921bb9c92",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/libtayo/index.html": {
 "date": "2026-11-17",
@@ -2299,7 +2299,7 @@
 "pdufa_site_src/drug/neratinib/index.html": {
 "date": "2026-11-17",
 "hash": "9fd7a3c5b8344959",
-"ts": "2026-11-17T02:59:03-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/nereus/index.html": {
 "date": "2026-11-17",
@@ -2787,8 +2787,8 @@
 },
 "pdufa_site_src/drug/ryzumvi/index.html": {
 "date": "2026-11-17",
-"hash": "d2c36c849850eb58",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "070ccb83d3c3bb20",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/s-303-treated/index.html": {
 "date": "2026-11-17",
@@ -2963,7 +2963,7 @@
 "pdufa_site_src/drug/sotagliflozin/index.html": {
 "date": "2026-11-17",
 "hash": "377b520cfc228435",
-"ts": "2026-11-17T02:59:03-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/sotyktu/index.html": {
 "date": "2026-11-17",
@@ -2981,8 +2981,8 @@
 },
 "pdufa_site_src/drug/spn-812/index.html": {
 "date": "2026-11-17",
-"hash": "a38ea2a2f77d687b",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "a8ef30fb4f61b530",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/spravato/index.html": {
 "date": "2026-11-17",
@@ -3325,8 +3325,8 @@
 },
 "pdufa_site_src/drug/varegacestat/index.html": {
 "date": "2026-11-17",
-"hash": "af5982a80f3a6c02",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "94b524d23cd5e687",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/vax-31-opus-2/index.html": {
 "date": "2026-11-17",
@@ -3521,7 +3521,7 @@
 "pdufa_site_src/drug/yutiq/index.html": {
 "date": "2026-11-17",
 "hash": "0b24a2c9d6e26195",
-"ts": "2026-11-17T02:59:04-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/yutrepia/index.html": {
 "date": "2026-11-17",
@@ -3620,8 +3620,8 @@
 },
 "pdufa_site_src/drug/zipalertinib/index.html": {
 "date": "2026-11-17",
-"hash": "12a47459498174ca",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "18783da469e998dd",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/zoryve/index.html": {
 "date": "2026-11-17",
@@ -3631,7 +3631,7 @@
 "pdufa_site_src/drug/zusduri/index.html": {
 "date": "2026-11-17",
 "hash": "98ac6a4a600d51fa",
-"ts": "2026-11-17T02:59:03-05:00"
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/drug/zycubo/index.html": {
 "date": "2026-11-17",
@@ -3645,13 +3645,13 @@
 },
 "pdufa_site_src/fda-approval-decisions-this-week/index.html": {
 "date": "2026-11-17",
-"hash": "33510a61b6e4314e",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "b1ea92cc6cb2ddb0",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approval-letters/index.html": {
 "date": "2026-11-17",
-"hash": "3bba9b488f5e00a2",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "2d8e2f983294d0fc",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/fda-approval-rate/index.html": {
 "date": "2026-11-17",
@@ -3660,118 +3660,118 @@
 },
 "pdufa_site_src/fda-approvals/2025/april/index.html": {
 "date": "2026-11-17",
-"hash": "32a6b8fafc7bf363",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "16c6564f25d67e2b",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/august/index.html": {
 "date": "2026-11-17",
-"hash": "1afc76e7a49f694b",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "17eee4e756877a7b",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/december/index.html": {
 "date": "2026-11-17",
-"hash": "861bbc7fc2aaea4b",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "141ca200e9a9c09d",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/february/index.html": {
 "date": "2026-11-17",
-"hash": "bbb6b4f12aa34b35",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "b9f5ad4fe8adae7f",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/january/index.html": {
 "date": "2026-11-17",
-"hash": "f0abf14e5f657f20",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "c8dd916c68c3f304",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/july/index.html": {
 "date": "2026-11-17",
-"hash": "bfae918c630e4b08",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "e492ff8179e8a4e1",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/june/index.html": {
 "date": "2026-11-17",
-"hash": "8492e93feabb82f2",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "a076e5f665b18014",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/march/index.html": {
 "date": "2026-11-17",
-"hash": "ab4467dd60499b12",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "4a077903e6e204e1",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/may/index.html": {
 "date": "2026-11-17",
-"hash": "d6b7231e7db49c39",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "1007914f02245626",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/november/index.html": {
 "date": "2026-11-17",
-"hash": "fe511f73821a1854",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "8c6beeada726ccbf",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/october/index.html": {
 "date": "2026-11-17",
-"hash": "6040f827a187827e",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "fe875c7bf5fed734",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/september/index.html": {
 "date": "2026-11-17",
-"hash": "4df726a686b26e3a",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "0f57d0ec13a026b1",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/april/index.html": {
 "date": "2026-11-17",
-"hash": "6e6b42a4c62262fb",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "3768570197fa2a97",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/august/index.html": {
 "date": "2026-11-17",
-"hash": "4f7b0d772f8f7a79",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "974d47ab80657969",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/february/index.html": {
 "date": "2026-11-17",
-"hash": "b6f7f74f9e67ca3e",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "113bf65c52a89316",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/january/index.html": {
 "date": "2026-11-17",
-"hash": "ae8ca90b63d255c3",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "5a75b8a9d0b3df83",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/july/index.html": {
 "date": "2026-11-17",
-"hash": "963c57edcfd82264",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "6385d79547b21404",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/june/index.html": {
 "date": "2026-11-17",
-"hash": "74baf6e1365a00d0",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "4243457301ad8241",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/march/index.html": {
 "date": "2026-11-17",
-"hash": "95cbcdfa68fa5bd2",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "c4c10405cd1f3b91",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/may/index.html": {
 "date": "2026-11-17",
-"hash": "5c5a119d1a60525f",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "4f5d8032523f7b24",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/november/index.html": {
 "date": "2026-11-17",
-"hash": "006363ba6783ef2d",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "300ba010c3366891",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/october/index.html": {
 "date": "2026-11-17",
-"hash": "9c7b9744b3be1b8e",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "1b94eaf4053ad01a",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/2026/september/index.html": {
 "date": "2026-11-17",
-"hash": "f8354a7f2b2f6d9f",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "5cf0e2e5ab10398d",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-approvals/index.html": {
 "date": "2026-11-17",
@@ -3825,18 +3825,18 @@
 },
 "pdufa_site_src/fda-decision/ABBV-2026-05-27/index.html": {
 "date": "2026-11-17",
-"hash": "3f0a5432557533f4",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "d53bc83d6af69cfe",
+"ts": "2026-11-17T14:36:23-05:00"
 },
 "pdufa_site_src/fda-decision/ABBV-2026-06-16/index.html": {
 "date": "2026-11-17",
-"hash": "773c0dacaaa7f85e",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "a80a6a1e3a881016",
+"ts": "2026-11-17T14:36:23-05:00"
 },
 "pdufa_site_src/fda-decision/ABBV-2026-06-26/index.html": {
 "date": "2026-11-17",
-"hash": "022d0098cb7d6d07",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "404d4686f4d7ae04",
+"ts": "2026-11-17T14:36:22-05:00"
 },
 "pdufa_site_src/fda-decision/ABBV-2026-09-28/index.html": {
 "date": "2026-11-17",
@@ -4340,8 +4340,8 @@
 },
 "pdufa_site_src/fda-decision/CYTK-2026-11-16/index.html": {
 "date": "2026-11-17",
-"hash": "f61cd5c4c4bbd0ec",
-"ts": "2026-11-17T03:03:40-05:00"
+"hash": "86c5d9b9c683b4a0",
+"ts": "2026-11-17T14:36:23-05:00"
 },
 "pdufa_site_src/fda-decision/DNLI-2026-03-25/index.html": {
 "date": "2026-11-17",
@@ -4875,8 +4875,8 @@
 },
 "pdufa_site_src/fda-decision/LNTH-2026-06-26/index.html": {
 "date": "2026-11-17",
-"hash": "0eb478a7857a3a77",
-"ts": "2026-11-17T03:03:40-05:00"
+"hash": "33f03be2cf5264dd",
+"ts": "2026-11-17T14:36:23-05:00"
 },
 "pdufa_site_src/fda-decision/LNTH-2026-08-13/index.html": {
 "date": "2026-11-17",
@@ -5055,8 +5055,8 @@
 },
 "pdufa_site_src/fda-decision/NVCR-2026-11-09/index.html": {
 "date": "2026-11-17",
-"hash": "4b18c8a3d04f9ceb",
-"ts": "2026-11-17T03:03:40-05:00"
+"hash": "87115e407c84d4e2",
+"ts": "2026-11-17T14:36:23-05:00"
 },
 "pdufa_site_src/fda-decision/NVO-2025-08-15/index.html": {
 "date": "2026-11-17",
@@ -5410,8 +5410,8 @@
 },
 "pdufa_site_src/fda-decision/RHHBY-2026-11-13/index.html": {
 "date": "2026-11-17",
-"hash": "92f5e02f6bf90f45",
-"ts": "2026-11-17T03:03:40-05:00"
+"hash": "5e3064c96eb4afd4",
+"ts": "2026-11-17T14:36:22-05:00"
 },
 "pdufa_site_src/fda-decision/RHHBY-2026-11-16/index.html": {
 "date": "2026-11-17",
@@ -5450,8 +5450,8 @@
 },
 "pdufa_site_src/fda-decision/SMMT-2026-11-15/index.html": {
 "date": "2026-11-17",
-"hash": "e605612353b50603",
-"ts": "2026-11-17T03:25:06-05:00"
+"hash": "bc3f44e1cdecb4e1",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/fda-decision/SNDX-2025-10-24/index.html": {
 "date": "2026-11-17",
@@ -5585,8 +5585,8 @@
 },
 "pdufa_site_src/fda-decision/TEVA-2026-11-16/index.html": {
 "date": "2026-11-17",
-"hash": "b3c43de4d4d0653f",
-"ts": "2026-11-17T03:03:40-05:00"
+"hash": "17fba380e5b25fb8",
+"ts": "2026-11-17T14:36:22-05:00"
 },
 "pdufa_site_src/fda-decision/TLX-2025-03-21/index.html": {
 "date": "2026-11-12",
@@ -5730,13 +5730,13 @@
 },
 "pdufa_site_src/fda-decisions-today/index.html": {
 "date": "2026-11-17",
-"hash": "793ff1e0a122895d",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "420c204353d077a5",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/fda-this-month/index.html": {
 "date": "2026-11-17",
-"hash": "b7b3e3abfacb44f4",
-"ts": "2026-11-17T03:07:00-05:00"
+"hash": "aca680e42a6d224e",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/glossary/index.html": {
 "date": "2026-11-05",
@@ -5745,8 +5745,8 @@
 },
 "pdufa_site_src/index.html": {
 "date": "2026-11-17",
-"hash": "ff8eac1a729daec0",
-"ts": "2026-11-17T03:25:05-05:00"
+"hash": "453d5e403ff1ab4e",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/learn/accelerated-approval-explained/index.html": {
 "date": "2026-11-05",
@@ -5785,8 +5785,8 @@
 },
 "pdufa_site_src/learn/what-is-a-pdufa-date/index.html": {
 "date": "2026-11-17",
-"hash": "189e7d966759951c",
-"ts": "2026-11-17T01:42:44-05:00"
+"hash": "e9992cc731c90b0e",
+"ts": "2026-11-17T14:36:22-05:00"
 },
 "pdufa_site_src/learn/why-cross-trial-comparisons-mislead/index.html": {
 "date": "2026-10-13",
@@ -5801,212 +5801,212 @@
 "pdufa_site_src/patent-cliff/2026/index.html": {
 "date": "2026-11-17",
 "hash": "a31736a574cdfe82",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/2027/index.html": {
 "date": "2026-11-17",
 "hash": "bafbb0a7c6627d6c",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/2028/index.html": {
 "date": "2026-11-17",
 "hash": "6b2b1d7cfeb15d67",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/2029/index.html": {
 "date": "2026-11-17",
 "hash": "2aee2ba10d6bbc84",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/2030/index.html": {
 "date": "2026-11-17",
 "hash": "0c06772992f67fb1",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/2031/index.html": {
 "date": "2026-11-17",
 "hash": "df12884cbc774cc1",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/blood/index.html": {
 "date": "2026-11-17",
 "hash": "3f76dfc48079fe64",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/cancer/index.html": {
 "date": "2026-11-17",
 "hash": "ce2239cde5e17422",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/cardiovascular/index.html": {
 "date": "2026-11-17",
 "hash": "f67975ccb2aac351",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/abbvie/index.html": {
 "date": "2026-11-17",
 "hash": "594e8ada46e3fb0f",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/actelion-pharmaceuticals-us/index.html": {
 "date": "2026-11-17",
 "hash": "b17f36fe1ee80e94",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/astrazeneca-ab/index.html": {
 "date": "2026-11-17",
 "hash": "a222087c78b2c8ae",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/azurity-pharmaceuticals/index.html": {
 "date": "2026-11-17",
 "hash": "fb03f58da07a4e96",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/bayer-healthcare-pharmaceuticals/index.html": {
 "date": "2026-11-17",
 "hash": "0313a33514d8679a",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/boehringer-ingelheim-pharmaceuticals/index.html": {
 "date": "2026-11-17",
 "hash": "566b1cfd4caf4dc4",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/cubist-pharmaceuticals/index.html": {
 "date": "2026-11-17",
 "hash": "a9d44a832778c92b",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/gilead-sciences/index.html": {
 "date": "2026-11-17",
 "hash": "eee553f048543de7",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/haleon-us-holdings/index.html": {
 "date": "2026-11-17",
 "hash": "d8df730efd860e83",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/harrow-eye/index.html": {
 "date": "2026-11-17",
 "hash": "ef9a44aa5b7af5bf",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/merck-sharp-and-dohme/index.html": {
 "date": "2026-11-17",
 "hash": "42ed778812d23dd2",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/novartis-pharmaceuticals/index.html": {
 "date": "2026-11-17",
 "hash": "561cd1ebb8d0e147",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/pf-prism-cv/index.html": {
 "date": "2026-11-17",
 "hash": "a9982bdb6cce3204",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/pfizer/index.html": {
 "date": "2026-11-17",
 "hash": "388a0df3f13694e9",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/salix-pharmaceuticals/index.html": {
 "date": "2026-11-17",
 "hash": "678c2a0a40a0d3cc",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/takeda-pharmaceuticals-usa/index.html": {
 "date": "2026-11-17",
 "hash": "7ce452e5065d253d",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/teva-branded-pharmaceutical-products-r-and-d/index.html": {
 "date": "2026-11-17",
 "hash": "34135eefaf5c09af",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/company/viiv-healthcare/index.html": {
 "date": "2026-11-17",
 "hash": "2cdde4bde895784e",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/dermatology/index.html": {
 "date": "2026-11-17",
 "hash": "9bbc4b156890fb99",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/diabetes/index.html": {
 "date": "2026-11-17",
 "hash": "e3b220d6781f56e3",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/exclusivity/index.html": {
 "date": "2026-11-17",
 "hash": "bca62dee58bb7323",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/eye-ear/index.html": {
 "date": "2026-11-17",
 "hash": "6a83f4e7ba1c23aa",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/genitourinary-hormones/index.html": {
 "date": "2026-11-17",
 "hash": "885f7faccaaa2857",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/index.html": {
 "date": "2026-11-17",
 "hash": "be21e9cc058a4314",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/infectious-disease/index.html": {
 "date": "2026-11-17",
 "hash": "d273258697ddc320",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/metabolism-digestive/index.html": {
 "date": "2026-11-17",
 "hash": "68e1a0ba2f10759b",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/musculoskeletal/index.html": {
 "date": "2026-11-17",
 "hash": "a24cf3160446ca3e",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/neurology-psychiatry/index.html": {
 "date": "2026-11-17",
 "hash": "5473be2ece96a814",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/pain/index.html": {
 "date": "2026-11-17",
 "hash": "b784ca65e84c08cf",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/psychiatry/index.html": {
 "date": "2026-11-17",
 "hash": "e802f015bd4c099f",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/respiratory/index.html": {
 "date": "2026-11-17",
 "hash": "1ddb0554b0047857",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/patent-cliff/various/index.html": {
 "date": "2026-11-17",
 "hash": "207fd2985b160144",
-"ts": "2026-11-17T01:45:54-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/pdufa-date-changes/index.html": {
 "date": "2026-11-17",
-"hash": "337d551864469bb0",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "615840e0b86bf6ef",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/pdufa/ABBV-rinvoq/index.html": {
 "date": "2026-11-17",
@@ -6271,7 +6271,7 @@
 "pdufa_site_src/pdufa/CORT/index.html": {
 "date": "2026-11-17",
 "hash": "8e34797ceb19a99a",
-"ts": "2026-11-17T01:45:53-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/pdufa/CYTK-aficamten/index.html": {
 "date": "2026-11-17",
@@ -6513,8 +6513,8 @@
 },
 "pdufa_site_src/pdufa/MRK-ifinatamab-deruxtecan/index.html": {
 "date": "2026-11-17",
-"hash": "8af0c184204b6ad3",
-"ts": "2026-11-17T02:59:04-05:00"
+"hash": "71280ca036cf5b1d",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/pdufa/MRK-keytruda/index.html": {
 "date": "2026-11-17",
@@ -6828,13 +6828,13 @@
 },
 "pdufa_site_src/pdufa/SMMT-ivonescimab/index.html": {
 "date": "2026-11-17",
-"hash": "b3084b4a431fc41c",
-"ts": "2026-11-17T01:42:42-05:00"
+"hash": "abb13422316b8a8d",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/pdufa/SMMT/index.html": {
 "date": "2026-11-17",
-"hash": "e5ab4e98769e42fd",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "2c85465dc0253330",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/pdufa/SRRK-apitegromab/index.html": {
 "date": "2026-10-17",
@@ -7073,18 +7073,18 @@
 },
 "pdufa_site_src/readouts/index.html": {
 "date": "2026-11-17",
-"hash": "e5cc8ff848e0ac71",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "c6f043a2bf072090",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/readouts/oncology/index.html": {
 "date": "2026-11-17",
-"hash": "31d48bb79eb9b854",
-"ts": "2026-11-17T01:42:42-05:00"
+"hash": "75f2a19c07f16bc3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/readouts/rare-disease/index.html": {
 "date": "2026-11-17",
-"hash": "a7aafcc0fc147248",
-"ts": "2026-11-17T01:42:42-05:00"
+"hash": "25d556656e5ab6c7",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/research/conference-runup/index.html": {
 "date": "2026-11-05",
@@ -7093,23 +7093,23 @@
 },
 "pdufa_site_src/research/fda-decision-timing/index.html": {
 "date": "2026-11-17",
-"hash": "4501a35b46b60702",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "2b8f6c86d0e695b8",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/research/implied-vs-actual/index.html": {
 "date": "2026-11-17",
-"hash": "f41cfe02f52eb3ca",
-"ts": "2026-11-17T02:59:03-05:00"
+"hash": "a111002802584cbc",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/research/index.html": {
 "date": "2026-11-17",
 "hash": "5e8cd3d01f972f48",
-"ts": "2026-11-17T01:45:53-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/research/pdufa-stock-run-up-by-market-cap/index.html": {
 "date": "2026-11-17",
-"hash": "c2db483da1f4a356",
-"ts": "2026-11-17T01:42:43-05:00"
+"hash": "36b1787df51fc4f8",
+"ts": "2026-11-17T14:36:22-05:00"
 },
 "pdufa_site_src/research/readout-reaction/index.html": {
 "date": "2026-11-05",
@@ -7129,17 +7129,17 @@
 "pdufa_site_src/runup-by-year/index.html": {
 "date": "2026-11-17",
 "hash": "895b32eb4012544f",
-"ts": "2026-11-17T01:45:53-05:00"
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/screener/index.html": {
 "date": "2026-11-17",
-"hash": "24b9bf2b4747bf69",
-"ts": "2026-11-17T03:25:06-05:00"
+"hash": "ccc4a6b2f0f82b1b",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/sitemap/index.html": {
 "date": "2026-11-17",
-"hash": "546e19184305ad33",
-"ts": "2026-11-17T03:03:39-05:00"
+"hash": "a86343d9a5c8aca6",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/sls/index.html": {
 "date": "2026-11-17",
@@ -7228,8 +7228,8 @@
 },
 "pdufa_site_src/ticker/AGIO/index.html": {
 "date": "2026-11-17",
-"hash": "95a94cfdd72917ce",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "23a871bb2f736895",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/AGMB/index.html": {
 "date": "2026-11-17",
@@ -7378,8 +7378,8 @@
 },
 "pdufa_site_src/ticker/APMD/index.html": {
 "date": "2026-11-17",
-"hash": "aeffe13b68b70189",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "dba041f7b90dbc99",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/APTO/index.html": {
 "date": "2026-11-12",
@@ -7388,8 +7388,8 @@
 },
 "pdufa_site_src/ticker/AQST/index.html": {
 "date": "2026-11-17",
-"hash": "8837b44fef0704d6",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "d73cdc9deb033c90",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/ARDX/index.html": {
 "date": "2026-11-17",
@@ -7473,8 +7473,8 @@
 },
 "pdufa_site_src/ticker/AXSM/index.html": {
 "date": "2026-11-17",
-"hash": "cf8cb4b59107ba9e",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "87a8fae54b986060",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/AZN/index.html": {
 "date": "2026-11-17",
@@ -7488,8 +7488,8 @@
 },
 "pdufa_site_src/ticker/BBIO/index.html": {
 "date": "2026-11-17",
-"hash": "4dfe789db3630854",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "96bb61eb25c26cd9",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/BCAB/index.html": {
 "date": "2026-11-17",
@@ -7543,8 +7543,8 @@
 },
 "pdufa_site_src/ticker/BLTE/index.html": {
 "date": "2026-11-17",
-"hash": "be3c109bfa5b48a0",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "bf70951e3e57f8cf",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/BMEA/index.html": {
 "date": "2026-11-17",
@@ -7553,8 +7553,8 @@
 },
 "pdufa_site_src/ticker/BMRN/index.html": {
 "date": "2026-11-17",
-"hash": "a743a2811f13e0c9",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "a89f1ad6f142db7d",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/BMY/index.html": {
 "date": "2026-11-17",
@@ -7603,8 +7603,8 @@
 },
 "pdufa_site_src/ticker/CAPR/index.html": {
 "date": "2026-11-17",
-"hash": "39193a636f9d3b80",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "94ac942b67c1e48a",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/CASI/index.html": {
 "date": "2026-11-17",
@@ -7628,8 +7628,8 @@
 },
 "pdufa_site_src/ticker/CGEM/index.html": {
 "date": "2026-11-17",
-"hash": "67198c6786cdc17e",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "0b8336cf0b0bbe79",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/CGON/index.html": {
 "date": "2026-11-12",
@@ -7698,8 +7698,8 @@
 },
 "pdufa_site_src/ticker/COGT/index.html": {
 "date": "2026-11-17",
-"hash": "950c44046cce35fa",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "f3cc37b2d6d0e2da",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/CORT/index.html": {
 "date": "2026-11-17",
@@ -7773,8 +7773,8 @@
 },
 "pdufa_site_src/ticker/DYN/index.html": {
 "date": "2026-11-17",
-"hash": "a11385c00c0ccfc2",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "c93d6001f013f4c2",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/EBS/index.html": {
 "date": "2026-11-17",
@@ -7818,8 +7818,8 @@
 },
 "pdufa_site_src/ticker/ETON/index.html": {
 "date": "2026-11-17",
-"hash": "fe58d304c35dd356",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "23f7def3be1770a3",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/EVMN/index.html": {
 "date": "2026-11-17",
@@ -7833,8 +7833,8 @@
 },
 "pdufa_site_src/ticker/EXEL/index.html": {
 "date": "2026-11-17",
-"hash": "95760db128adae45",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "e6b2666736c22e0b",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/EYPT/index.html": {
 "date": "2026-11-17",
@@ -7908,8 +7908,8 @@
 },
 "pdufa_site_src/ticker/GSK/index.html": {
 "date": "2026-11-17",
-"hash": "6c326eb32b28e159",
-"ts": "2026-11-17T03:25:05-05:00"
+"hash": "9d57791a7d1d40f5",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/GUTS/index.html": {
 "date": "2026-11-12",
@@ -7938,8 +7938,8 @@
 },
 "pdufa_site_src/ticker/HRMY/index.html": {
 "date": "2026-11-17",
-"hash": "6b4dbb0c21946f8a",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "19e42983b874f90d",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/HUMA/index.html": {
 "date": "2026-11-17",
@@ -7948,8 +7948,8 @@
 },
 "pdufa_site_src/ticker/IBRX/index.html": {
 "date": "2026-11-17",
-"hash": "5dac4aa212f00dd5",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "9ae942059a750abe",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/IDYA/index.html": {
 "date": "2026-11-17",
@@ -7958,8 +7958,8 @@
 },
 "pdufa_site_src/ticker/ILMN/index.html": {
 "date": "2026-11-17",
-"hash": "d2a202dc5deec230",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "2a9588f084dc8b0d",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/IMA/index.html": {
 "date": "2026-11-17",
@@ -7978,8 +7978,8 @@
 },
 "pdufa_site_src/ticker/IMNM/index.html": {
 "date": "2026-11-17",
-"hash": "e18678b1b74d29cf",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "bb6345c3548a0e89",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/IMUX/index.html": {
 "date": "2026-11-17",
@@ -7993,8 +7993,8 @@
 },
 "pdufa_site_src/ticker/INBX/index.html": {
 "date": "2026-11-17",
-"hash": "d2479b31ac396c08",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "b3457ca6eb1fd4f1",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/INCY/index.html": {
 "date": "2026-11-17",
@@ -8018,8 +8018,8 @@
 },
 "pdufa_site_src/ticker/INSM/index.html": {
 "date": "2026-11-17",
-"hash": "4d13fed0eb263ba4",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "90d4cd62d3c87b34",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/INTE/index.html": {
 "date": "2026-11-17",
@@ -8303,8 +8303,8 @@
 },
 "pdufa_site_src/ticker/MLYS/index.html": {
 "date": "2026-11-17",
-"hash": "fa6e26c6b3f483d6",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "9cc3e37db3430c9e",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/MNKD/index.html": {
 "date": "2026-11-17",
@@ -8368,13 +8368,13 @@
 },
 "pdufa_site_src/ticker/NTLA/index.html": {
 "date": "2026-11-17",
-"hash": "d398ed0eff60b3ba",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "7b4eaf41e81fa80d",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/NUVB/index.html": {
 "date": "2026-11-17",
-"hash": "dd3718827784298c",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "79f8d302536c5470",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/NUVL/index.html": {
 "date": "2026-11-17",
@@ -8498,8 +8498,8 @@
 },
 "pdufa_site_src/ticker/PHVS/index.html": {
 "date": "2026-11-17",
-"hash": "58308dfbd52f40f3",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "af062ae48df67c24",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/PLRX/index.html": {
 "date": "2026-11-12",
@@ -8518,8 +8518,8 @@
 },
 "pdufa_site_src/ticker/PRAX/index.html": {
 "date": "2026-11-17",
-"hash": "d2d87b26552bea99",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "9152789b28ffaf9e",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/PROK/index.html": {
 "date": "2026-11-17",
@@ -8548,13 +8548,13 @@
 },
 "pdufa_site_src/ticker/PVLA/index.html": {
 "date": "2026-11-17",
-"hash": "1ad512d264141d57",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "806883a6fa9768b7",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/PYPD/index.html": {
 "date": "2026-11-17",
-"hash": "c86526d3081b9765",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "5ca3778315a0d12e",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/QNCX/index.html": {
 "date": "2026-11-17",
@@ -8563,8 +8563,8 @@
 },
 "pdufa_site_src/ticker/QURE/index.html": {
 "date": "2026-11-17",
-"hash": "ce7a45a146cfbabf",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "5dbff903e40ea57c",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/RAPP/index.html": {
 "date": "2026-11-17",
@@ -8732,13 +8732,13 @@
 },
 "pdufa_site_src/ticker/SUPN/index.html": {
 "date": "2026-11-17",
-"hash": "5d361412acda0f83",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "bf3f6b298ac61729",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/SVRA/index.html": {
 "date": "2026-11-17",
-"hash": "0e7e0594909b66d3",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "26c61b8881295038",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/SWTX/index.html": {
 "date": "2026-11-17",
@@ -8877,8 +8877,8 @@
 },
 "pdufa_site_src/ticker/VIR/index.html": {
 "date": "2026-11-17",
-"hash": "eaf155dda2df95ac",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "9cd28b69e997c94a",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/VKTX/index.html": {
 "date": "2026-09-01",
@@ -8886,8 +8886,8 @@
 },
 "pdufa_site_src/ticker/VNDA/index.html": {
 "date": "2026-11-17",
-"hash": "a24df05648a14428",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "4129be86900cb6e9",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/VRDN/index.html": {
 "date": "2026-11-17",
@@ -8896,13 +8896,13 @@
 },
 "pdufa_site_src/ticker/VRTX/index.html": {
 "date": "2026-11-17",
-"hash": "8efecaf9b529eafd",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "14c6b2f4a858f121",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/VSTM/index.html": {
 "date": "2026-11-17",
-"hash": "5b8f1755bae18ade",
-"ts": "2026-11-17T01:45:54-05:00"
+"hash": "c81407ce419d1edb",
+"ts": "2026-11-17T14:45:19-05:00"
 },
 "pdufa_site_src/ticker/VTGN/index.html": {
 "date": "2026-11-17",
@@ -8991,8 +8991,8 @@
 },
 "pdufa_site_src/vktx/index.html": {
 "date": "2026-11-17",
-"hash": "0a1b93e3cff8ad13",
-"ts": "2026-11-17T01:45:53-05:00"
+"hash": "c4fb30b874010c1a",
+"ts": "2026-11-17T14:45:18-05:00"
 },
 "pdufa_site_src/why-no-approval-probability/index.html": {
 "date": "2026-11-05",

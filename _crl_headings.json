@@ -3671,6 +3671,24 @@
   "letter_date": "03/11/2025",
   "text_layer": true
  },
+ "CRL_BLA761393_20260909.pdf": {
+  "application_number": [
+   "BLA 761393"
+  ],
+  "headings": [
+   "Prescribing Information",
+   "Proprietary Name",
+   "Carton and Container Labeling",
+   "Safety Update",
+   "Additional Comments",
+   "Product Quality",
+   "Product Quality Microbiology",
+   "Clinical",
+   "Other"
+  ],
+  "letter_date": "09/09/2026",
+  "text_layer": true
+ },
  "CRL_BLA761400_20240820.pdf": {
   "application_number": [
    "BLA 761400"
@@ -3907,6 +3925,35 @@
    "Carton and Container Labeling"
   ],
   "letter_date": "12/30/2025",
+  "text_layer": true
+ },
+ "CRL_BLA761494_20260818.pdf": {
+  "application_number": [
+   "BLA 761494"
+  ],
+  "headings": [
+   "Carton and Container Labeling",
+   "Proprietary Name",
+   "Safety Update",
+   "Additional Comments",
+   "Product Quality Microbiology"
+  ],
+  "letter_date": "08/18/2026",
+  "text_layer": true
+ },
+ "CRL_BLA761524_20261113.pdf": {
+  "application_number": [
+   "BLA 761524"
+  ],
+  "headings": [
+   "Clinical/Statistical",
+   "Prescribing Information",
+   "Carton and Container Labeling",
+   "Proprietary Name",
+   "Safety Update",
+   "Other"
+  ],
+  "letter_date": "11/13/2026",
   "text_layer": true
  },
  "CRL_NDA 217711_20250827.pdf": {
@@ -4254,6 +4301,16 @@
   "letter_date": "03/07/2024",
   "text_layer": true
  },
+ "CRL_NDA215783_20251217.pdf": {
+  "application_number": [
+   "NDA 215783"
+  ],
+  "headings": [
+   "Other"
+  ],
+  "letter_date": "12/17/2025",
+  "text_layer": true
+ },
  "CRL_NDA215818_20250425.pdf": {
   "application_number": [
    "NDA 215818"
@@ -4308,6 +4365,22 @@
    "Other"
   ],
   "letter_date": "10/07/2025",
+  "text_layer": true
+ },
+ "CRL_NDA216195_20260818.pdf": {
+  "application_number": [
+   "NDA 216195"
+  ],
+  "headings": [
+   "Product Quality",
+   "Facility Inspections",
+   "Prescribing Information",
+   "Carton and Container Labeling",
+   "Proprietary Name",
+   "Safety Update",
+   "Other"
+  ],
+  "letter_date": "08/18/2026",
   "text_layer": true
  },
  "CRL_NDA216442_20250402.pdf": {
@@ -5224,6 +5297,17 @@
   "letter_date": "04/23/2026",
   "text_layer": true
  },
+ "CRL_NDA220381_20260729.pdf": {
+  "application_number": [
+   "NDA 220381/Original 2",
+   "NDA 220381"
+  ],
+  "headings": [
+   "Safety Update"
+  ],
+  "letter_date": "07/29/2026",
+  "text_layer": true
+ },
  "CRL_NDA220544_20260702_Redacted.pdf": {
   "application_number": [
    "NDA 220544"
@@ -5252,6 +5336,21 @@
    "Other"
   ],
   "letter_date": "02/13/2026",
+  "text_layer": true
+ },
+ "CRL_NDA220748_20260617.pdf": {
+  "application_number": [
+   "NDA 220748"
+  ],
+  "headings": [
+   "Facility Inspections",
+   "Prescribing Information",
+   "Carton and Container Labeling",
+   "Proprietary Name",
+   "Safety Update",
+   "Other"
+  ],
+  "letter_date": "06/17/2026",
   "text_layer": true
  },
  "Pages from 214835Orig1s000_ORIGINAL_APPROVAL_PACKAGE.pdf": {

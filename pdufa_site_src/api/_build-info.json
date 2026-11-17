@@ -1,14 +1,25 @@
 {
- "built": "2026-11-17T08:25:06+00:00",
- "data_built_at": "2026-11-17T08:25:06+00:00",
- "commit": "a297e04e7",
- "commit_at_build": "a297e04e7",
+ "built": "2026-11-17T19:45:19+00:00",
+ "data_built_at": "2026-11-17T19:45:19+00:00",
+ "commit": "7d3b0ed24",
+ "commit_at_build": "7d3b0ed24",
  "as_of_eastern": "2026-11-17",
  "next_date": "2026-11-22",
  "next_ticker": "CAPR",
  "next_days": 5,
  "next_status": "upcoming",
  "days_since_goal": null,
- "held_since": null,
- "held_leads": []
+ "held_since": "2026-11-17T19:36:19Z",
+ "held_leads": [
+  {
+   "row_id": "drug:neladalkib",
+   "source": "drug_pages",
+   "first_seen": "2026-11-17T19:36:19Z"
+  },
+  {
+   "row_id": "drug:neladalkib",
+   "source": "drug_pages",
+   "first_seen": "2026-11-17T19:36:19Z"
+  }
+ ]
 }

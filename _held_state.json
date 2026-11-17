@@ -1,14 +1,31 @@
 {
- "held_since": null,
- "consecutive_held_runs": 0,
+ "held_since": "2026-11-17T19:36:19Z",
+ "consecutive_held_runs": 1,
  "emailed_at": null,
- "leads": [],
+ "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:neladalkib",
+   "key": "neladalkib|fda-oncology-notifications",
+   "text": "/drug/neladalkib fda-oncology-notifications 'neladalkib' appears with approval language",
+   "first_seen": "2026-11-17T19:36:19Z"
+  },
+  {
+   "source": "drug_pages",
+   "row_id": "drug:neladalkib",
+   "key": "neladalkib|sponsor:GSK:2026-11-17",
+   "text": "/drug/neladalkib sponsor:GSK:2026-11-17 'neladalkib' appears with approval language",
+   "first_seen": "2026-11-17T19:36:19Z"
+  }
+ ],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
   "drug_pages|enflonsia|openfda:20261014",
   "drug_pages|european-respiratory|fda-press:fda-approves-first-plasmid-dna-based-immunotherapy-adults-re",
   "drug_pages|european-respiratory|sponsor:INO:2026-10-30",
+  "drug_pages|neladalkib|fda-oncology-notifications",
+  "drug_pages|neladalkib|sponsor:GSK:2026-11-17",
   "drug_pages|phentolamine-ophthalmic|sponsor:IRD:2026-10-16",
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
