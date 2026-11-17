@@ -130,11 +130,21 @@ def main():
     # to the same-ticker row whose goal date is closest to it; co-listed partners (other tickers)
     # are unaffected.
     claim = {}
+    # 2026-11-17: a row that already points at a decision page OWNS that decision. RHHBY's evERA approval (Nov 16,
+    # row goal Dec 18, url /fda-decision/RHHBY-2026-11-16) was claimed by the lidERA row instead (goal Nov 30, 14 days
+    # from the decision versus 32), turning a still-pending application "Approved" on the API and its page.
+    for r in arr:
+        u = str(r.get("url") or "")
+        m_ = re.match(r"^/fda-decision/(.+)-(\d{4}-\d{2}-\d{2})$", u)
+        if r.get("type") == "PDUFA" and m_:
+            claim[(m_.group(1), m_.group(2))] = (-1, r.get("id"))
     for r in arr:
         if r.get("type") != "PDUFA":
             continue
         tk, d = r.get("t"), str(r.get("d") or "")[:10]
         for (dtk, ddate), (oc, ddrug) in decs.items():
+            if claim.get((dtk, ddate), (0,))[0] == -1:
+                continue                                    # owned by the row that links its page
             if dtk != tk:
                 continue
             try:

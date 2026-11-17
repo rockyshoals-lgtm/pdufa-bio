@@ -51,7 +51,12 @@ ACK = os.path.join(HERE, "_newswire_ack.json")
 UA = {"User-Agent": "Mozilla/5.0 (compatible; pdufa.bio builder; +https://www.pdufa.bio/about)"}
 DECISION = re.compile(r"\b(FDA|Food and Drug Administration)\b.{0,160}?\b(approv\w*|complete response|CRL|"
                       r"accelerated approval|clearance)\b|\b(approv\w*|complete response letter)\b.{0,160}?"
-                      r"\b(FDA|Food and Drug Administration)\b", re.I | re.S)
+                      r"\b(FDA|Food and Drug Administration)\b"
+                      # 2026-11-17: an sNDA headlined as a label change carries no "approv" ("Cytokinetics Announces
+                      # Prescribing Information for MYQORZO (aficamten) Expanded to Include Data from Phase 3
+                      # MAPLE-HCM", Nov 16) and no lead was raised for a decided goal.
+                      r"|\b(prescribing information|label|labeling)\b.{0,80}?\b(expand\w*|updat\w*|includ\w*)\b"
+                      r"|\b(expand\w*|updat\w*)\b.{0,40}?\b(prescribing information|label|labeling)\b", re.I | re.S)
 # Audit 2026-10-08 P0: the watchers heard only approvals and CRLs. Merck withdrew the I-DXd BLA on
 # 2026-09-25 and nothing listened for the word; the homepage named an Oct 10 decision for 13 days.
 # The other ways a goal date stops being the date: a WITHDRAWAL, a goal-date EXTENSION (incl. a major

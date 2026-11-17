@@ -9,6 +9,9 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-11-17 BUILDER (unblock 83 decisions and past goal fix)** — `2026-11-17_BUILDER_unblock_83_decisions_and_past_goal_fix.md` — 2026-11-16 ~22:00 Pacific to 2026-11-17 Eastern early morning. RULE 1: GitHub/UTC, page dates Eastern.
+- **2026-11-16 note (URGENT unblock 83 four decisions and the awaiting gap)** — `2026-11-16_URGENT_unblock_83_four_decisions_and_the_awaiting_gap.md` — 2026-11-17 00:40 to 01:10 Eastern = 05:40 to 06:10 UTC (Tuesday, just after midnight). RULE 1: GitHub times are UTC.
+- **2026-11-14 audit (audit bing sitemap was broken indexnow flood)** — `2026-11-14_audit_bing_sitemap_was_broken_indexnow_flood.md` — 2026-11-14, measured 23:04 Eastern to 00:20 Eastern Nov 15 = 2026-11-15 04:04 to 05:20 UTC (Saturday night, the CYTK / SMMT / TEVA goal day). Per RULE 1 every time carries its zone. Bing console times are Pacific.
 - **2026-11-13 BUILDER (currency fmp only runup per pdufa)** — `2026-11-13_BUILDER_currency_fmp_only_runup_per_pdufa.md` — 2026-11-13 ~19:40 to ~22:30 Pacific = 22:40 Nov 13 to ~01:30 Nov 14 Eastern. RULE 1. Facts only. Not investment advice.
 - **2026-11-11 audit (audit 100k plan google indexing works)** — `2026-11-11_audit_100k_plan_google_indexing_works.md` — 2026-11-11, measured 22:58 to 23:50 Eastern = 2026-11-12 03:58 to 04:50 UTC (Wednesday night). Per RULE 1 every time carries its zone. The Bing console shows Pacific; its data still ends Nov 8.
 - **2026-11-11 BUILDER (decisions feed fix internal links)** — `2026-11-11_BUILDER_decisions_feed_fix_internal_links.md` — 2026-11-11 ~20:30 Pacific to 2026-11-12 ~01:00 Eastern. RULE 1. Facts and build mechanics only. Not investment advice.

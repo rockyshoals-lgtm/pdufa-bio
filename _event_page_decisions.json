@@ -46,6 +46,13 @@
    "reviewer": "builder 2026-11-01",
    "why": "Tirzepatide cardiovascular outcomes (SURPASS-CVOT): Mounjaro NDA 215866 S-044/S-045 approved 2026-08-27 per the FDA letter, adding the MACE risk-reduction indication.",
    "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s044,215866Orig1s045ltr.pdf"
+  },
+  {
+   "slug": "BTAI",
+   "decision": "TEVA-2026-11-16",
+   "reviewer": "builder 2026-11-17",
+   "why": "Shape (b): IGALMI moved from BioXcel (BTAIQ, bankrupt) to Teva in late October 2026; the at-home sNDA (goal 2026-11-14) was approved and announced by Teva on 2026-11-16, filed under TEVA. /pdufa/BTAI is the legacy BioXcel page for the same application.",
+   "source": "https://ir.tevapharm.com/news-and-events/press-releases/default.aspx"
   }
  ]
 }

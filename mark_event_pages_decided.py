@@ -332,6 +332,9 @@ def main():
                             else ("Approved" if a_hit[1] == "ap" else "CRL"))
                     cands = [{"t": dtk, "name": nm, "oc": oc_h, "dcd": ddate,
                               "d": (d_hit.get("d") if d_hit else None),
+                              # 2026-11-17: carry the row's provenance so an unsourced FDA day states no margin
+                              # (/pdufa/BTAI read "2 days after its November 14 goal" for Teva's announcement day)
+                              "dp": (d_hit.get("dp") if d_hit else None), "_d": (d_hit.get("_d") if d_hit else {}),
                               "_archive": not bool(d_hit), "_hand": True}]
                 else:
                     print(f"  SKIP /pdufa/{slug}: hand link {hand[slug]} not found in the "
@@ -410,6 +413,12 @@ def main():
             if not cands:
                 # Archive fallback (2026-09-06): the dataset never held this event.
                 cands = archive_candidates(archive, tk, drug_part, doc0)
+                # 2026-11-17: an archive decision that a dataset row already owns (its url is that decision page) is
+                # that row's decision, and this page did not match that row. RHHBY's evERA approval (Wilserdly, Nov 16,
+                # row url /fda-decision/RHHBY-2026-11-16) was stamped "Approved" on /pdufa/RHHBY-giredestrant, the
+                # still-pending lidERA application, through this fallback.
+                owned = {str(x.get("url") or "") for x in decided}
+                cands = [c for c in cands if f"/fda-decision/{tk}-{c.get('dcd')}" not in owned]
                 # the same indication rule for an archive decision that has a dataset row (Gazyva INS)
                 if pim and cands:
                     ptoks = toks(pim.group(1))

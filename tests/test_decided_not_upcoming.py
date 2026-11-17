@@ -15,6 +15,7 @@ import datetime as dt
 import io
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,7 +40,17 @@ def test_no_upcoming_row_has_a_published_decision():
         if r.get("type") == "PDUFA" and str(r.get("d") or "")[:10]:
             goals.setdefault(str(r.get("t", "")).upper(), set()).add(str(r.get("d"))[:10])
 
+    # 2026-11-17: a row whose url IS a decision page owns that decision (RHHBY evERA Nov 16 vs the pending lidERA row,
+    # goal Nov 30). Same rule as sync_api_from_pages / mark_calendar_decided.
+    owners = {}
+    for r in rows:
+        m_ = re.match(r"^/fda-decision/(.+)-(\d{4}-\d{2}-\d{2})$", str(r.get("url") or ""))
+        if r.get("type") == "PDUFA" and m_:
+            owners[(m_.group(1).upper(), m_.group(2))] = str(r.get("d") or "")[:10]
+
     def owned_elsewhere(tk, ddate, d):
+        if (str(tk).upper(), ddate) in owners:
+            return owners[(str(tk).upper(), ddate)] != d
         try:
             dd = dt.date.fromisoformat(ddate); mine = abs((dd - dt.date.fromisoformat(d)).days)
             return any(abs((dd - dt.date.fromisoformat(g)).days) < mine for g in goals.get(tk, ()) if g != d)

@@ -188,5 +188,11 @@
    "https://newsroom.viatris.com/press-releases?pagetemplate=rss"
   ],
   "how": "hand-verified 2026-09-27 (audit 09-27 item 3): feed parses and carries current releases"
+ },
+ "TEVA": {
+  "checked": "2026-11-17",
+  "company": "Teva Pharmaceutical Industries",
+  "feeds": [],
+  "how": "2026-11-17 (order #83): Teva IR (Q4 platform) renders client-side; /rss/news-releases.xml returns an empty shell and GlobeNewswire search is robots-disallowed. No machine-readable feed found; Teva rows rely on the FDA feeds, Drugs@FDA and EDGAR. Teva currently has no pending tracked PDUFA (IGALMI at-home decided Nov 16)."
  }
 }

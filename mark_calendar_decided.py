@@ -120,7 +120,31 @@ def _load_goals():
 GOALS = _load_goals()
 
 
+def _load_owners():
+    """{(TICKER, decision date): goal date of the dataset row whose url IS that decision page}. 2026-11-17: the
+    proximity rule gave RHHBY's evERA approval (Nov 16; row goal Dec 18) to the lidERA row (goal Nov 30, closer).
+    A row that links the decision page owns it, whatever the distance."""
+    import json
+    try:
+        src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+        rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        m_ = re.match(r"^/fda-decision/(.+)-(\d{4}-\d{2}-\d{2})$", str(r.get("url") or ""))
+        if r.get("type") == "PDUFA" and m_:
+            out[(m_.group(1).upper(), m_.group(2))] = str(r.get("d") or "")[:10]
+    return out
+
+
+OWNERS = _load_owners()
+
+
 def _owned_elsewhere(tk, ddate, caldate):
+    o = OWNERS.get((str(tk).upper(), ddate))
+    if o:
+        return o != caldate and caldate != ddate   # a decided row's calendar entry may carry the action day itself
     try:
         dd, cd = dt.date.fromisoformat(ddate), dt.date.fromisoformat(caldate)
     except Exception:

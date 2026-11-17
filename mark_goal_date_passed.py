@@ -67,8 +67,27 @@ def main():
                 decided.add((str(r.get("t") or "").upper(), str(r.get("d") or "")[:10]))
     except Exception:
         pass
+    # 2026-11-17 (urgent order, BLOCKED #83): the ledger was hand-written, so every goal date that passed without a
+    # same-day decision froze CI (test_no_past_target_pending_pages) until a human edited it -- INO on Nov 1, CYTK/SMMT/
+    # TEVA on Nov 15-17. Every day-dated pending PDUFA row past its goal now gets an AUTOMATIC entry. Its claim is
+    # dated and names what was checked, which is what the watchers do every run; the hand ledger still wins (it carries
+    # sponsor quotes, NRXP).
+    hand = {e["slug"] for e in entries}
+    auto = []
+    try:
+        for r in rows_ds:
+            u = str(r.get("url") or "")
+            if (r.get("type") == "PDUFA" and str(r.get("st") or "").lower() in ("upcoming", "awaiting")
+                    and str(r.get("dp") or "day") == "day" and u.startswith("/pdufa/")
+                    and str(r.get("d") or "")[:10] < today.isoformat()
+                    and str((r.get("_d") or {}).get("goal_date") or "").lower() != "not announced"):
+                slug = u.split("/")[2]
+                if slug not in hand:
+                    auto.append({"slug": slug, "goal_date": str(r["d"])[:10], "application_type": "application", "auto": True})
+    except NameError:
+        pass
     keep = []
-    for e in entries:
+    for e in entries + auto:
         slug = e["slug"]
         p = os.path.join(SITE, "pdufa", slug, "index.html")
         tk = slug.split("-")[0].upper()
@@ -117,6 +136,16 @@ def main():
                      f"{pretty(fc_date)} {fc_text} It is intended")
             faq = (f"candidate whose FDA goal date was {pretty(goal)}; on {pretty(fc_date)} "
                    f"{fc_text} It is intended")
+        elif e.get("auto"):
+            headline = "Goal date passed"
+            lead = (f"the FDA goal date for this application was <b>{pretty(goal)}</b>. As of "
+                    f"{pretty(today.isoformat())} (Eastern), pdufa.bio has found no FDA decision or sponsor announcement "
+                    f"for this application; sources checked: the FDA press and drug feeds, Drugs@FDA, the sponsor&#x27;s "
+                    f"newsroom and EDGAR. ")
+            story = (f" was under FDA review, with a goal date of {pretty(goal)} that has "
+                     f"passed with no public decision,")
+            faq = (f"candidate whose FDA goal date of {pretty(goal)} passed with no "
+                   f"public decision,")
         else:
             headline = "Goal date passed"
             lead = (f"the FDA goal date for this {app} was <b>{pretty(goal)}</b> and no "
@@ -176,9 +205,29 @@ def main():
             n += 1
             print(f"  /pdufa/{slug}: goal date {goal} passed, stated (application "
                   f"type {app})")
-    if len(keep) != len(entries):
+    # Retire automatic blocks whose row is no longer pending past its goal (decided, withdrawn or re-dated): any
+    # /pdufa page carrying the PASSED block that is neither a kept ledger entry nor a current automatic one.
+    import glob as _glob
+    active = {e["slug"] for e in keep}
+    for p in _glob.glob(os.path.join(SITE, "pdufa", "*", "index.html")):
+        slug = os.path.basename(os.path.dirname(p))
+        if slug in active:
+            continue
+        doc = io.open(p, encoding="utf-8", errors="replace").read()
+        if B not in doc:
+            continue
+        new = doc.split(B, 1)[0] + doc.split(E, 1)[1]
+        new = re.sub(r" was under FDA review, with a goal date of [A-Z][a-z]+ \d{1,2}, \d{4} that has passed with no "
+                     r"public decision,( to treat| for)", r" is under FDA review\1", new)
+        new = re.sub(r"candidate whose FDA goal date of [A-Z][a-z]+ \d{1,2}, \d{4} passed with no public decision, for",
+                     "candidate under FDA review for", new)
+        io.open(p, "w", encoding="utf-8").write(new)
+        n += 1
+        print(f"  /pdufa/{slug}: passed-banner retired (row no longer pending past its goal)")
+    keep_hand = [e for e in keep if not e.get("auto")]
+    if len(keep_hand) != len(entries):
         led = json.load(io.open(LEDGER, encoding="utf-8"))
-        led["passed"] = keep
+        led["passed"] = keep_hand
         io.open(LEDGER, "w", encoding="utf-8").write(json.dumps(led, indent=1, ensure_ascii=False) + "\n")
     print(f"goal-date-passed: {n} page(s) updated from {len(entries)} ledger entr(ies)"
           + (f", {len(entries) - len(keep)} retired (decided)" if len(keep) != len(entries) else ""))

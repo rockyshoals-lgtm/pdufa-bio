@@ -71,6 +71,18 @@
    "source": "openfda:20261014",
    "reason": "BLA 761432 S-3 (approved 2026-10-14) updates injection-site erythema/swelling rates in Adverse Reactions (FDA letter). Not the second-RSV-season sBLA we track (goal March 2027). Verified non-event.",
    "acked": "2026-11-11"
+  },
+  {
+   "slug": "giredestrant",
+   "source": "fda-oncology-notifications",
+   "reason": "Published 2026-11-17: Wilserdly (giredestrant) + everolimus approved Nov 16, 2026, /fda-decision/RHHBY-2026-11-16. lidERA (Nov 30) still pending.",
+   "acked": "2026-11-17"
+  },
+  {
+   "slug": "giredestrant",
+   "source": "sponsor:RHHBY:2026-11-16",
+   "reason": "Published 2026-11-17: the evERA approval; lidERA still pending.",
+   "acked": "2026-11-17"
   }
  ]
 }
