@@ -705,6 +705,14 @@ jobs:
         # FDA payload as the approval date; every approval self-populates its brand.
         run: python fetch_fda_brands.py && python fetch_chembl_synonyms.py && python add_drug_schema.py && python link_pdufa_explainer.py
 
+      # 2026-11-17: one page per FDA application (/fda-application/nda-NNNNNN) joining brand, ingredient,
+      # code names, FDA applicant of record, owner and ticker. FDA facts are read from the Orange Book
+      # (fetched above); every other name comes from _fda_applications.json with a primary-source quote.
+      # Runs after the drug pages so its "drug page" links and the back-links it adds resolve.
+      # tests/test_fda_application_pages.py asserts the result.
+      - name: FDA application pages (/fda-application/{appl}) + links from drug pages
+        run: python build_fda_application_pages.py && python link_application_pages.py
+
       # Audit 2026-10-03 item 4.1: ten specialist funds' latest 13F-HR read from EDGAR (CIK verified
       # against the filer name; the old checkpoint file had three wrong CIKs and is not used), then one
       # facts-only paragraph per held ticker on decision and drug pages. A failed read keeps the cache.
