@@ -156,8 +156,11 @@ def main():
                 f"ClinicalTrials.gov records {nct} as {info['status'].replace('_', ' ').lower()} "
                 f"as of {TODAY}, with primary completion {info['pcd']} "
                 f"({info['pcd_type'].lower()}). A terminated or withdrawn trial may never "
-                f"produce the readout this row anticipated. We have not seen a sponsor statement "
-                f"and record no outcome.")
+                f"produce the readout this row anticipated. " + (
+                    f"The company's own statement of {str(_res.get('date'))[:10]} is recorded as the outcome."
+                    if (_res := dd.get("resolution") or {}).get("state") in ("company_stopped", "sponsor_release")
+                    and _res.get("date") else
+                    "We have not seen a sponsor statement and record no outcome."))
             noted += 1
 
     if a.dry_run:

@@ -132,9 +132,12 @@ def main():
             n_skip += 1
             continue
         res = d.get("resolution") or {}
-        if res.get("state") == "sponsor_release":
+        if res.get("state") == "sponsor_release" or res.get("reviewed"):
             n_skip += 1
-            continue                                  # a found release is kept; never downgraded
+            continue                                  # a found release is kept; never downgraded. A resolution
+            #                                           checked by hand (reviewed=<date>, e.g. a release for the
+            #                                           right trial, or the company stopping it) is never
+            #                                           re-matched by headline (2026-11-17 stale-window check).
         if not key:
             rp = reg.get("results_first_submitted")
             if rp and not res:
