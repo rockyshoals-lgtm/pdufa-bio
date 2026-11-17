@@ -25,7 +25,7 @@ from site_dates import eastern_today  # noqa: E402
 PAGE = os.path.join(HERE, "pdufa_site_src", "readouts", "index.html")
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
           "October", "November", "December"]
-RES = re.compile(r"Sponsor release \d{4}-\d{2}-\d{2}|(?:Terminated|Withdrawn|Suspended) per ClinicalTrials\.gov|"
+RES = re.compile(r"Sponsor release \d{4}-\d{2}-\d{2}|Stopped per company \d{4}-\d{2}-\d{2}|(?:Terminated|Withdrawn|Suspended) per ClinicalTrials\.gov|"
                  r"No topline found as of \d{4}-\d{2}-\d{2}|Results posted on ClinicalTrials\.gov \d{4}-\d{2}-\d{2}|"
                  r"Trial completed per ClinicalTrials\.gov; no sponsor result on record|Window passed; not yet checked")
 

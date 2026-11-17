@@ -9,6 +9,7 @@
      one-line summary, edit the line here and re-run: existing summaries are preserved. -->
 
 
+- **2026-11-17 note (stale readout windows)** — `2026-11-17_stale_readout_windows.md` — David, 2026-11-17: "Please correct any dates that are old or stale for readout window". Pipeline note for the
 - **2026-11-17 note (readout mine sourced readouts)** — `2026-11-17_readout_mine_sourced_readouts.md` — David, 2026-11-17: "mine for accurate readout dates that are sourced" and "Go live after red team".
 - **2026-11-17 BUILDER (unblock 83 decisions and past goal fix)** — `2026-11-17_BUILDER_unblock_83_decisions_and_past_goal_fix.md` — 2026-11-16 ~22:00 Pacific to 2026-11-17 Eastern early morning. RULE 1: GitHub/UTC, page dates Eastern.
 - **2026-11-16 note (URGENT unblock 83 four decisions and the awaiting gap)** — `2026-11-16_URGENT_unblock_83_four_decisions_and_the_awaiting_gap.md` — 2026-11-17 00:40 to 01:10 Eastern = 05:40 to 06:10 UTC (Tuesday, just after midnight). RULE 1: GitHub times are UTC.

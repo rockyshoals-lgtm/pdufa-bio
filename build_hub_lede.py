@@ -74,7 +74,7 @@ def span(dates):
 # Audit 2026-10-11: a passed readout window's resolution text carries its own date ("No topline found as
 # of 2026-10-11", "Sponsor release 2026-09-09"). That is the date we looked, not the row's window, and
 # it must not be read as the row's date (on 10-11 it turned 79 passed rows into "expected" ones).
-RESOLUTION_DATE = re.compile(r"(?:as of|Sponsor release|ClinicalTrials\.gov)\s+\d{4}-\d{2}-\d{2}", re.I)
+RESOLUTION_DATE = re.compile(r"(?:as of|Sponsor release|Stopped per company|ClinicalTrials\.gov)\s+\d{4}-\d{2}-\d{2}", re.I)
 
 
 def parse(doc):
