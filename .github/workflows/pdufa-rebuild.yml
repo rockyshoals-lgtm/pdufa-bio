@@ -332,6 +332,11 @@ jobs:
       - name: "Decision page h1 states the FDA action day (announcement day in brackets)"
         run: python fix_decision_h1_action_date.py
 
+      # 2026-11-17: key facts gave the announcement day as the "FDA decision date" on 8 pages whose h1 and Verified
+      # line give the FDA's own day (SMMT, UNCY, ACHV, ...). Guard: tests/test_decision_kv_action_date.py.
+      - name: "Decision key facts state the FDA action day (announcement day in its own row)"
+        run: python fix_decision_kv_action_date.py
+
       # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
       - name: "/fda-approval-letters hub"
         run: python build_fda_letters_hub.py
@@ -373,6 +378,7 @@ jobs:
           python inject_verified_against.py
           python label_announcement_only_dates.py
           python fix_decision_h1_action_date.py
+          python fix_decision_kv_action_date.py
           python build_fda_letters_hub.py
           python inject_calendar_explainer.py
           python sync_learn_timing.py
