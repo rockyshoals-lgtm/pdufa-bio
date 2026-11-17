@@ -9279,7 +9279,7 @@ export default [
   "cap": "Large",
   "st": "Decided",
   "url": "/fda-decision/SMMT-2026-11-15",
-  "ua": "2026-11-17T05:50:06Z",
+  "ua": "2026-11-17T19:27:35Z",
   "_d": {
    "nct_id": null,
    "indication": null,
@@ -9306,13 +9306,16 @@ export default [
    "source": "Summit Therapeutics Inc. 8-K 2026-01-29",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000006/a2026_prx0129xfdablaacce.htm",
    "source_quote": "ion (BLA) Seeking Approval for Ivonescimab in Combination with Chemotherapy in Treatment of Patients with EGFRm NSCLC Post-TKI Therapy BLA Filing Based on HARMONi Global Phase III Study Results PDUFA Goal Action Date of November 14, 2026 Significant Unmet Need Remains; Over 14,000 U.S. Patients Eligible for Treatment Each Year in This Setting Miami, Flori",
-   "decision_source": "Summit Therapeutics 8-K filed 2026-11-16 (EX-99.1, release dated November 15, 2026)",
-   "decision_source_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000092/ivonescimabcrlscenariopr.htm",
+   "decision_source": "FDA Complete Response Letter, BLA 761524, dated November 13, 2026 (openFDA transparency/crl)",
+   "decision_source_url": "https://download.open.fda.gov/crl/CRL_BLA761524_20261113.pdf",
    "announcement": "Summit Therapeutics 8-K filed 2026-11-16 (EX-99.1, release dated November 15, 2026)",
    "announcement_url": "https://www.sec.gov/Archives/edgar/data/1599298/000159929826000092/ivonescimabcrlscenariopr.htm",
    "decision_quote": "Summit Therapeutics Inc. (NASDAQ: SMMT) today announced that the U.S. Food and Drug Administration (FDA) has issued a Complete Response Letter (CRL) regarding the Biologics License Application (BLA) for ivonescimab in combination with platinum-containing chemotherapy",
-   "decision_note": "Per Summit: the FDA determined that substantial evidence of effectiveness is not established in the absence of a statistically significant overall survival improvement. The release does not state the letter's own date; the date shown is Summit's announcement, so no early or late margin is stated.",
-   "decision_date_unsourced": true
+   "decision_note": "Per Summit: the FDA determined that substantial evidence of effectiveness is not established in the absence of a statistically significant overall survival improvement. The FDA's letter (BLA 761524) is dated November 13, 2026, one day before the November 14 goal date; Summit announced it on November 15.",
+   "fda_action_date": "2026-11-13",
+   "decision_date_note": "2026-11-15 is the company's announcement date; the FDA's letter is dated 2026-11-13.",
+   "fda_action_source_url": "https://download.open.fda.gov/crl/CRL_BLA761524_20261113.pdf",
+   "fda_action_record": "CRL letter CRL_BLA761524_20261113"
   },
   "oc": "CRL",
   "dcd": "2026-11-15"

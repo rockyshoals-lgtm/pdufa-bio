@@ -359,6 +359,24 @@ jobs:
       - name: FDA CRL letters onto CRL decision pages
         run: python link_crl_letters.py
 
+      # 2026-11-17 (BLOCKED #95): a letter newly released by the FDA gives its row the FDA action day HERE, after the
+      # snippet, Verified line, announcement-only label and h1 steps had already run from the row without it, so two
+      # guards failed and nothing committed (every later run failed the same way). Re-run those steps now that the
+      # row carries the letter (a dated letter also enters the timing count on /calendar and /learn, and the
+      # /fda-approval-letters table). All are idempotent; on a run with no new letter they change nothing.
+      - name: "New CRL letter: record it as the FDA action-day source"
+        run: python sync_fda_action_dates.py
+      - name: "New CRL letter: snippets, FDA record, Verified line, label, h1, letters hub and timing counts again"
+        run: |
+          python rewrite_decision_snippets.py
+          python inject_fda_action_record.py
+          python inject_verified_against.py
+          python label_announcement_only_dates.py
+          python fix_decision_h1_action_date.py
+          python build_fda_letters_hub.py
+          python inject_calendar_explainer.py
+          python sync_learn_timing.py
+
       # /crl hub -- asked in three audits: the full released-CRL corpus, by year, each
       # letter linking FDA's own PDF; counts never rates. Runs after the letter linker
       # so decision-page cross-links are current.
