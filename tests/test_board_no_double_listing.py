@@ -35,7 +35,7 @@ def tickers_in(segment):
     the decided section as empty and passed happily while REPL was sitting in both. A guard that
     cannot see one side of the comparison is worse than no guard, because it reports safety.
     """
-    out = {m.group(1) for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"', segment)}
+    out = {m.group(1) for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z.]{1,6})(?:-[a-z0-9-]+)?"', segment)}
     out |= {m.group(1) for m in re.finditer(r'href="/fda-decision/([A-Z]{1,6})-\d{4}-\d{2}-\d{2}"',
                                             segment)}
     return out
@@ -57,7 +57,8 @@ def catalysts_in(segment):
     CATALYST: the same DRUG must not be both pending and decided.
     """
     out = []
-    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"|'
+    # 2026-11-18 (change 8): upcoming tiles now link the goal's own event page (/pdufa/RHHBY-giredestrant).
+    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z.]{1,6})(?:-[a-z0-9-]+)?"|'
                          r'href="/fda-decision/([A-Z]{1,6})-\d{4}-\d{2}-\d{2}"', segment):
         tk = m.group(1) or m.group(2)
         tail = re.sub(r"<[^>]+>", " ", segment[m.end():m.end() + 220]).lower()

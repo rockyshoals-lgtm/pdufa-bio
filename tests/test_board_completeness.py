@@ -60,7 +60,8 @@ def main():
     first_tile = None
     for m in re.finditer(r"PDUFA (\d{4}-\d{2}-\d{2})", re.sub(r"<[^>]+>", " ", board)):
         pass
-    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"[^>]*>(.*?)</a>', board, re.S):
+    # 2026-11-18 (change 8): a card links its goal's own event page (/pdufa/RHHBY-giredestrant) when there is one.
+    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z.]{1,6})(?:-[a-z0-9-]+)?"[^>]*>(.*?)</a>', board, re.S):
         txt = re.sub(r"<[^>]+>", " ", m.group(2))
         dm = re.search(r"(\d{4}-\d{2}-\d{2})", txt)
         wm = re.search(r'<span class="dg">(.*?) · PDUFA (?:window|date not announced)', m.group(2), re.S)

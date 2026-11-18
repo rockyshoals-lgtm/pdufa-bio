@@ -26,6 +26,9 @@
    +'@media (hover:none){#cmdkBtn kbd{display:none}}@media (max-width:480px){.ck-ty{min-width:0}.ck-dt{font-size:11px}}';
   var s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
   var btn=document.createElement('div');btn.id='cmdkBtn';btn.setAttribute('role','button');btn.setAttribute('tabindex','0');btn.setAttribute('aria-label','Search');btn.setAttribute('aria-haspopup','dialog');btn.innerHTML='<span>Search</span> <kbd>⌘K</kbd>';document.body.appendChild(btn);
+  /* Design change 8 (2026-11-18): a page with its own search box (#pdq, home and /calendar) showed two searches at once.
+     The floating button stays out of sight while that box is on screen and comes back once it scrolls away; Cmd/Ctrl+K still opens search. */
+  (function(){var q=document.getElementById('pdq');if(!q||!('IntersectionObserver' in window))return;new IntersectionObserver(function(es){btn.style.display=es[0].isIntersecting?'none':''}).observe(q);})();
   (function(){var last=window.pageYOffset||0,t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var y=window.pageYOffset||0;if(window.innerWidth<=720){if(y>last+8&&y>120)btn.classList.add('hide');else if(y<last-8)btn.classList.remove('hide');}last=y;},60);},{passive:true});})();
   var o=document.createElement('div');o.id='cmdkO';o.innerHTML='<div id="cmdkB"><input id="cmdkI" placeholder="Search any ticker, drug, or catalyst…" autocomplete="off" spellcheck="false"><div id="cmdkR"></div></div>';document.body.appendChild(o);
   var inp=o.querySelector('#cmdkI'),res=o.querySelector('#cmdkR'),DATA=null,sel=0,rows=[];
