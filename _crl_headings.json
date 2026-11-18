@@ -5219,6 +5219,23 @@
   "letter_date": "08/18/2025",
   "text_layer": true
  },
+ "CRL_NDA220054_20261019.pdf": {
+  "application_number": [
+   "NDA 220054"
+  ],
+  "headings": [
+   "Clinical",
+   "Product Quality",
+   "Prescribing Information",
+   "Carton and Container Labeling",
+   "Proprietary Name",
+   "Safety Update",
+   "Additional Comments",
+   "Other"
+  ],
+  "letter_date": "10/19/2026",
+  "text_layer": true
+ },
  "CRL_NDA220138_20260615_Redacted.pdf": {
   "application_number": [
    "NDA 220138"

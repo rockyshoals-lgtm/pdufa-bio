@@ -135,47 +135,8 @@ def main():
         p4 += (' Full record: <a class="lit" href="/research/fda-decision-timing">'
                "FDA decision timing</a>.</p>")
 
-    # Audit 09-05 (0800 slot) ORDER 6: the page's decided census and the API's differ
-    # because the archive holds sourced decisions (sNDA/BLA supplements, partner listings)
-    # that were never dated forward events in the API dataset. Say so, with the number.
-    try:
-        ds = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
-                     errors="replace").read().replace("\x00", "")
-        arr, _ = json.JSONDecoder().raw_decode(ds[ds.find("["):])
-        api_by_date = {}
-        for r in arr:
-            if r.get("type") == "PDUFA" and str(r.get("st", "")).lower() == "decided":
-                api_by_date.setdefault(str(r.get("dcd")), set()).add(str(r.get("t")).upper())
-        # a partner-labelled row (GSK / SPRO) is covered by EITHER ticker's API row
-        page_dec, archive_only = set(), []
-        for tk, dcd, label in re.findall(
-                r'<a class="row"[^>]*href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"[^>]*>'
-                r'\s*<div class="t">([A-Z /]+)', t):
-            if (tk, dcd) in page_dec:
-                continue
-            page_dec.add((tk, dcd))
-            labels = {x.strip() for x in label.split("/")} | {tk}
-            if not (labels & api_by_date.get(dcd, set())):
-                archive_only.append((tk, dcd))
-        heads_ = re.findall(r'<div class="mhead">([A-Za-z]+) (\d{4})</div>', t)
-        api_window = 0
-        if heads_:
-            mnum = {m: i for i, m in enumerate(
-                ["January", "February", "March", "April", "May", "June", "July", "August",
-                 "September", "October", "November", "December"], 1)}
-            lo = f"{heads_[0][1]}-{mnum[heads_[0][0]]:02d}-01"
-            hi = f"{heads_[-1][1]}-{mnum[heads_[-1][0]]:02d}-31"
-            api_window = sum(1 for r in arr if r.get("type") == "PDUFA"
-                             and str(r.get("st", "")).lower() == "decided"
-                             and lo <= str(r.get("d", "")) <= hi)
-        if page_dec:
-            p4 += (f"<p>{len(archive_only)} of the {len(page_dec)} decided rows on this page "
-                   f"are archive decision records with no row in the API dataset; the API's "
-                   f"{api_window} Decided rows in this window cover the other "
-                   f"{len(page_dec) - len(archive_only)}, counting a partner-held application "
-                   f"once per listed ticker. Each archive row links its own sourced decision page.</p>")
-    except Exception as e:      # the sentence is a courtesy; the page must still build
-        print(f"calendar explainer: census sentence skipped ({e})")
+    # 2026-11-18 (design red team, change 7): the "N of the M decided rows ... no row in the API dataset" sentence
+    # described our own pipeline, not the calendar, so it is gone; /api documents the dataset's coverage.
 
     block = (
         "<!--EXPLAINER:BEGIN-->"
@@ -195,8 +156,8 @@ def main():
         + p4 +
         "<p>On or around the goal date the FDA typically either approves the "
         "application or issues a Complete Response Letter explaining what stands in "
-        "the way of approval. Decided rows below state the outcome in words and "
-        "link the decision record.</p>"
+        "the way of approval. Decided rows state the outcome in words and link the "
+        "decision record.</p>"
         "</div>"
         f'<h2 style="font-size:16px;margin:18px 0 4px">Upcoming FDA PDUFA dates, '
         f"updated {stamp}</h2>"

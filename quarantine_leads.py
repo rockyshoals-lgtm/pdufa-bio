@@ -305,6 +305,14 @@ def cmd_apply(a):
             # badges the rest of the site carries, or tests/test_provenance_badges.py would block the deploy
             if p.endswith(".html"):
                 old = badge_decision_provenance.apply(old)
+            # 2026-11-18 (change 11 red team): a held page's committed copy can predate a site-wide chrome pass. The
+            # fonts, type rules and logo mark (inject_site_type.py) are re-added, so tests/test_one_look.py does not
+            # block every deploy while a row is held; build_sitemap strips them from the content hash, so the held
+            # page's lastmod is unchanged.
+            if p.endswith(".html"):
+                import inject_site_type
+                if inject_site_type.public(p, old):
+                    old = inject_site_type.apply(old)[0]
             cur = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
             if cur != old:
                 if not a.dry_run:
