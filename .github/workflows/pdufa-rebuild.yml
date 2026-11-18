@@ -54,18 +54,18 @@ jobs:
     steps:
       # 2026-11-18 (run 446): a run that crosses midnight Eastern stamps some pages with one date and later pages with
       # the next, and tests/test_one_date_per_page.py correctly fails it -- a BLOCKED issue and a failed-run email for a
-      # build that had nothing wrong with its data. Runs take 14-20 minutes, so one that would start in the last
-      # 30 minutes of the Eastern day waits until just after midnight and builds entirely on the new date.
+      # build that had nothing wrong with its data. Runs have taken 15 to 27 minutes, so one that would start in the last
+      # 45 minutes of the Eastern day waits until just after midnight and builds entirely on the new date.
       - name: "Midnight guard: never build across midnight Eastern"
         run: |
           NOW=$(TZ=America/New_York date +%s)
           MID=$(TZ=America/New_York date -d 'tomorrow 00:00:30' +%s)
           WAIT=$((MID - NOW))
-          if [ "$WAIT" -gt 0 ] && [ "$WAIT" -le 1830 ]; then
+          if [ "$WAIT" -gt 0 ] && [ "$WAIT" -le 2730 ]; then
             echo "Eastern time is $(TZ=America/New_York date +%H:%M:%S); waiting ${WAIT}s so the whole build is on one date"
             sleep "$WAIT"
           else
-            echo "Eastern time is $(TZ=America/New_York date +%H:%M:%S); no midnight in the next 30 minutes"
+            echo "Eastern time is $(TZ=America/New_York date +%H:%M:%S); no midnight in the next 45 minutes"
           fi
 
       - uses: actions/checkout@v5

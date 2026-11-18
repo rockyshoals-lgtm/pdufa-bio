@@ -15,7 +15,9 @@ every one-off failure cost three emails. Now:
   * A first failure inside that window opens no issue and mentions no one: it prints a ::warning:: and a step-summary
     line naming the failed tests, and the next run either passes or escalates.
   * One ROLLING issue: escalation reopens the newest closed BLOCKED issue this script made (marked ROLLING) instead of
-    opening a new one, and the owner is @-mentioned in a comment at that moment.
+    opening a new one, and the owner is @-mentioned at that moment (in the body when a new issue is opened).
+  * A WATCHDOG (--watchdog, hourly in pdufa-blocked-watchdog.yml) escalates a first failure that nothing followed
+    once the live build is RECENT_HOURS old, so a quiet night with no further rebuild cannot hide a freeze.
 
     python blocked_issue.py --report _blocked.md            # on a failed guard step
     python blocked_issue.py --resolve                       # on a passing run: close any open BLOCKED issue
@@ -77,8 +79,8 @@ def hours_since_green():
     """Hours since the last successful rebuild finished, or None when GitHub can't say."""
     import datetime as dt
     try:
-        out = gh("run", "list", "--workflow", "pdufa-rebuild.yml", "--status", "success", "--limit", "1",
-                 "--json", "updatedAt")
+        out = gh("run", "list", "--workflow", "pdufa-rebuild.yml", "--branch", "main", "--status", "success",
+                 "--limit", "1", "--json", "updatedAt")
         last = (json.loads(out or "[]") or [None])[0]
         if not last:
             return None
@@ -88,10 +90,17 @@ def hours_since_green():
         return None
 
 
+FAILED = ("failure", "timed_out", "startup_failure")
+
+
 def previous_run_failed():
-    """Did the last COMPLETED rebuild before this one fail? None when GitHub can't say."""
+    """Did the last COMPLETED rebuild on main before this one fail? None when GitHub can't say.
+    A re-run (attempt 2 or later) of a failed run is itself a second failure in a row: it keeps its run id, so the
+    run list would skip it as this run."""
+    if int(os.environ.get("GITHUB_RUN_ATTEMPT", "1") or 1) > 1:
+        return True
     try:
-        out = gh("run", "list", "--workflow", "pdufa-rebuild.yml", "--limit", "10",
+        out = gh("run", "list", "--workflow", "pdufa-rebuild.yml", "--branch", "main", "--limit", "10",
                  "--json", "databaseId,status,conclusion")
         me = str(os.environ.get("GITHUB_RUN_ID", ""))
         for r in json.loads(out or "[]"):
@@ -99,7 +108,7 @@ def previous_run_failed():
                 continue
             if r.get("conclusion") in ("cancelled", "skipped"):
                 continue
-            return r.get("conclusion") == "failure"
+            return r.get("conclusion") in FAILED
         return None
     except Exception:  # noqa: BLE001
         return None
@@ -120,7 +129,7 @@ def should_escalate(prev_failed, hours):
 def closed_rolling():
     out = gh("issue", "list", "--state", "closed", "--search", f'"{PREFIX.strip()}" in:title', "--json",
              "number,title,body", "--limit", "30")
-    for i in json.loads(out or "[]"):   # newest first
+    for i in sorted(json.loads(out or "[]"), key=lambda x: -int(x.get("number") or 0)):   # newest first
         if str(i.get("title", "")).startswith("BLOCKED:") and ROLLING in (i.get("body") or ""):
             return str(i["number"])
     return None
@@ -143,9 +152,12 @@ def main():
     ap.add_argument("--resolve", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--watchdog", action="store_true")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
+    if a.watchdog:
+        return watchdog()
     if a.resolve:
         if a.dry_run:
             print("dry run: would close any open BLOCKED issue"); return 0
@@ -186,8 +198,13 @@ def main():
     if existing:
         # already escalated this episode: the owner is subscribed, so the comment reaches him without a new mention
         n = str(existing[0]["number"])
+        d = issue_view(n)
+        who = "" if owner_mentioned(d) else f"{OWNER} "
+        old = (d or {}).get("body") or ""
+        if old.startswith(OWNER):   # keep the opening mention line when the body is replaced
+            io.open(a.report, "w", encoding="utf-8").write(old.split("\n\n", 1)[0] + "\n\n" + body)
         gh("issue", "edit", n, "--title", title, "--body-file", a.report)
-        gh("issue", "comment", n, "--body", f"Still blocked: run {meta['run_id']} on `{meta['sha']}` failed "
+        gh("issue", "comment", n, "--body", f"{who}Still blocked: run {meta['run_id']} on `{meta['sha']}` failed "
                                             f"{failed}. {body.splitlines()[0].strip('*')}")
         print(f"updated #{n}: {title}")
         return 0
@@ -202,17 +219,76 @@ def main():
         return 0
     alert = (f"{OWNER} the rebuild is blocked ({why}): run {meta['run_id']} on `{meta['sha']}` failed {failed}. "
              f"{body.splitlines()[0].strip('*')}")
+    escalate(title, a.report, alert, why)
+    return 0
+
+
+def escalate(title, body_path, alert, why):
+    """Open (or reopen the rolling) BLOCKED issue and mention the owner. On create the mention is IN the body, so
+    opening and notifying are one call; on reopen it is a comment, and if that comment fails the next run's
+    'existing' path sees no mention on the issue and adds it (owner_mentioned)."""
     n = closed_rolling()
     if n:
         gh("issue", "reopen", n)
-        gh("issue", "edit", n, "--title", title, "--body-file", a.report)
+        gh("issue", "edit", n, "--title", title, "--body-file", body_path)
         gh("issue", "comment", n, "--body", alert)
         print(f"reopened rolling #{n} ({why}): {title}")
     else:
-        out = gh("issue", "create", "--title", title, "--body-file", a.report)
-        n = out.strip().rstrip("/").rsplit("/", 1)[-1]
-        gh("issue", "comment", n, "--body", alert)
+        body = io.open(body_path, encoding="utf-8").read()
+        out = gh("issue", "create", "--title", title, "--body", alert + "\n\n" + body)
         print(f"opened: {out.strip()} ({why})  {title}")
+
+
+def issue_view(n):
+    try:
+        return json.loads(gh("issue", "view", str(n), "--json", "body,comments") or "{}")
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def owner_mentioned(d):
+    """Was the owner mentioned on this issue (gh issue view JSON) since it was last (re)opened? True when GitHub
+    can't say, so a read failure never causes an extra ping."""
+    if d is None:
+        return True
+    if OWNER in (d.get("body") or ""):
+        return True
+    cs = d.get("comments") or []
+    # comments after the last "A later run passed" closing comment belong to this episode
+    last_close = max([k for k, c in enumerate(cs) if "A later run passed" in (c.get("body") or "")], default=-1)
+    return any(OWNER in (c.get("body") or "") for c in cs[last_close + 1:])
+
+
+def watchdog():
+    """Run on its own schedule (pdufa-blocked-watchdog.yml). A first failure is not escalated, and the next rebuild
+    can be many hours away (11-17: 15.5 h between scheduled runs). If the newest finished rebuild on main failed, no
+    rebuild is running, no BLOCKED issue is open, and the live build is RECENT_HOURS or more old, escalate now."""
+    if open_blocked():
+        print("watchdog: a BLOCKED issue is already open"); return 0
+    try:
+        runs = json.loads(gh("run", "list", "--workflow", "pdufa-rebuild.yml", "--branch", "main", "--limit", "10",
+                             "--json", "databaseId,status,conclusion,headSha,url") or "[]")
+    except Exception as e:  # noqa: BLE001
+        print(f"watchdog: run history unavailable ({e})"); return 0
+    if any(r.get("status") != "completed" for r in runs):
+        print("watchdog: a rebuild is running; it reports for itself"); return 0
+    done = [r for r in runs if r.get("conclusion") not in ("cancelled", "skipped")]
+    if not done or done[0].get("conclusion") not in FAILED:
+        print("watchdog: the newest rebuild did not fail"); return 0
+    hours = hours_since_green()
+    if hours is not None and hours < RECENT_HOURS:
+        print(f"watchdog: live build is {hours:.1f} h old; not yet"); return 0
+    r = done[0]
+    why = "run history unavailable" if hours is None else f"live build is {hours:.1f} h old and no rebuild has passed"
+    import tempfile
+    path = os.path.join(tempfile.mkdtemp(), "_blocked.md")
+    io.open(path, "w", encoding="utf-8").write(
+        f"**{since_last_deploy()}**\n\n# BLOCKED: rebuild run {r['databaseId']} failed and nothing has passed since\n\n"
+        f"Commit `{str(r.get('headSha', ''))[:9]}`. Run page: {r.get('url', '')}. The run's own log names the failed "
+        f"step or guard. Live stays on the previous build until a run passes.\n\n{ROLLING}\n")
+    title = (PREFIX + f"run {r['databaseId']}")[:230]
+    escalate(title, path, f"{OWNER} the rebuild is blocked ({why}): run {r['databaseId']} failed. {r.get('url', '')}",
+             why)
     return 0
 
 

@@ -253,7 +253,12 @@ def resolved_issues(issues, acked):
         t = str(i.get("title") or "")
         if not (t.startswith("HELD: ") or t.startswith("ESCALATION: pdufa.bio")):
             continue
-        keys = [k.strip() for k in ACK_KEY.findall(i.get("body") or "")]
+        body = i.get("body") or ""
+        keys = [k.strip() for k in ACK_KEY.findall(body)]
+        # a key line the pattern cannot read (a backtick in a title-only newswire key) must keep the issue open,
+        # never be skipped: closing on the keys we could read would close an issue that still has a live lead
+        if len(keys) != len(re.findall(r"ack key:", body)):
+            continue
         if keys and all(k in acked for k in keys):
             out.append((i["number"], f"every lead it names is acked on main ({len(keys)} key(s))"))
     return out
@@ -298,6 +303,8 @@ def cmd_collect(a):
             state["email_status"] = how
             print(f"ESCALATION: {state['consecutive_held_runs']} consecutive held runs -> email ({how})")
     io.open(a.state, "w", encoding="utf-8", newline="\n").write(json.dumps(state, indent=1, ensure_ascii=False) + "\n")
+    if not a.no_issue:
+        close_resolved()   # 2026-11-18: HELD/ESCALATION issues whose leads are all acked close themselves
     return 0
 
 

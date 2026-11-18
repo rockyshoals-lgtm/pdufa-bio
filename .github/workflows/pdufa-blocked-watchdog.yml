@@ -1,0 +1,26 @@
+name: pdufa.bio blocked-rebuild watchdog
+
+# 2026-11-18: blocked_issue.py no longer pings the owner on a first failed rebuild (most are fixed by the next run).
+# The next rebuild can be many hours away, so this hourly check escalates a failure that nothing has followed once
+# the live build is 6 hours old. It reads run history and opens or reopens one issue; it builds and pushes nothing.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write                 # open or reopen the one BLOCKED issue
+  actions: read                 # read pdufa-rebuild.yml run history
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: "Escalate a failed rebuild that nothing has followed"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 blocked_issue.py --watchdog
