@@ -1,0 +1,11 @@
+{
+ "_comment": "check_pdufa_decided.py: approval headlines checked by hand and found to be about a DIFFERENT application than the open PDUFA row they matched. One entry per (row, headline). A newer headline about the row's own application is still flagged. Never ack a headline you have not read.",
+ "acks": [
+  {"ticker": "GILD", "date": "2027-02-02", "checked": "2026-11-18",
+   "url_prefix": "https://www.businesswire.com/news/home/20260817093045/",
+   "why": "Bixlenvo (bictegravir/lenacapavir, once-daily tablet for virologically suppressed HIV, approved Aug 2026) is a different product from the once-weekly oral Yeztugo PrEP sNDA this row tracks; Gilead's Q3 2026 10-Q still gives that application a PDUFA date of February 2, 2027."},
+  {"ticker": "RHHBY", "date": "2026-11-30", "checked": "2026-11-18",
+   "url_prefix": "https://www.businesswire.com/news/home/20261106913762/",
+   "why": "The WILSERDLY approval is giredestrant with everolimus in ESR1-mutated advanced breast cancer (evERA). This row is the separate lidERA NDA in ER+ early breast cancer (adjuvant), Priority Review, PDUFA November 30, 2026 per Genentech's June 1, 2026 release; no FDA action on it found as of Nov 18."}
+ ]
+}

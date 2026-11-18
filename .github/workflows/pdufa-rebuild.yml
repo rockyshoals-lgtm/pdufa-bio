@@ -957,6 +957,16 @@ jobs:
       - name: "Quarantine: hold each lead's own row and pages at the last commit; held_since into build-info"
         run: python quarantine_leads.py apply
 
+      # 2026-11-18 (red team): tests/test_date_checks_current.py blocks a date due within 14 days that was not
+      # re-read in the last 30. This keeps that true without a person: every open PDUFA goal and guided readout
+      # due in the next 30 days is re-read (its own source, then the company's SEC filings since) and a
+      # CONFIRMED ledger entry is written only when they agree. A moved date, a possible FDA action, an
+      # unreadable source with nothing newer, or a non-SEC filer is listed for a human (review issue below) and
+      # left to the guard. Advisory: a network failure confirms nothing and never blocks the deploy by itself.
+      - name: "Re-check open dates due in the next 30 days against their sources (ledger for the date guard)"
+        continue-on-error: true
+        run: python recheck_upcoming_dates.py > recheck.txt 2>&1 || true; cat recheck.txt
+
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         env:
           # tests/test_readouts_passed_windows_resolved.py is strict about unchecked passed windows only
@@ -1025,6 +1035,7 @@ jobs:
           grep -q "ADCOM NEEDS RESULT" adcom.txt 2>/dev/null && NEED=1
           grep -q "READOUT NEEDS VERIFICATION" readouts.txt 2>/dev/null && NEED=1
           grep -q "READOUT WATCH:" readouts_watch.txt 2>/dev/null && NEED=1
+          grep -q "DATE RECHECK NEEDS A HUMAN" recheck.txt 2>/dev/null && NEED=1
           if [ "$NEED" = "1" ]; then
             {
               echo "The server-side rebuild found item(s) needing primary-source verification before publishing."
@@ -1041,6 +1052,9 @@ jobs:
               echo '```'; cat readouts.txt; echo '```'
               echo; echo "## Registry watch — ClinicalTrials.gov contradicts a pending readout (TERMINATED / COMPLETED / results posted)"
               echo '```'; cat readouts_watch.txt 2>/dev/null || echo "(not run)"; echo '```'
+              echo; echo "## Date re-check — open dates due in 30 days that could not be confirmed automatically"
+              echo "(re-open the source, then record_date_check.py; the date guard blocks once a row is 14 days out)"
+              echo '```'; cat recheck.txt 2>/dev/null || echo "(not run)"; echo '```'
             } > issue.md
             gh issue create --title "pdufa.bio review: verify + publish ($(date -u +%F))" \
               --body-file issue.md --label "reconciliation" || echo "issue create skipped"
@@ -1077,6 +1091,7 @@ jobs:
           git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
+          git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then
