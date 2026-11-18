@@ -184,6 +184,36 @@ def block(date_iso):
         f'</div>{SCRIPT}{E}')
 
 
+def calendar_updates():
+    """[date, Eastern date of updated_at] for each undecided day-precision PDUFA row in the dataset.
+
+    Design red team 2026-11-18 (change 12): the homepage's "Data through" eyebrow fetched /api/v1/events?limit=3000
+    on every home load (every row the API holds) only to take the most common updated_at date among the upcoming
+    PDUFA rows. The rows it reads are these, from the same dataset the API serves, so they ride in build-info.json,
+    which the page already fetches; the page keeps the rows dated today or later and takes the same mode."""
+    if not os.path.exists(DATASET):
+        return []
+    m = re.search(r"export default (\[.*\])", open(DATASET, encoding="utf-8", errors="replace").read(), re.S)
+    if not m:
+        return []
+    from site_dates import _ET
+    out = []
+    for r in json.loads(m.group(1)):
+        if r.get("type") != "PDUFA" or r.get("dp") != "day" or r.get("st") == "Decided" or not r.get("ua"):
+            continue
+        d = str(r.get("d") or "")[:10]
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", d) or d < (_eastern_today() - dt.timedelta(days=2)).isoformat():
+            continue
+        try:
+            t = dt.datetime.fromisoformat(str(r["ua"]).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=dt.timezone.utc)
+        out.append([d, t.astimezone(_ET).date().isoformat()])
+    return sorted(out)
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
@@ -236,7 +266,8 @@ def main():
             "next_ticker": nxt[1] if nxt else None,
             "next_days": (None if awaiting else nxt[2]) if nxt else None,
             "next_status": ("awaiting" if awaiting else "upcoming") if nxt else None,
-            "days_since_goal": (-nxt[2] if awaiting else None) if nxt else None}
+            "days_since_goal": (-nxt[2] if awaiting else None) if nxt else None,
+            "calendar_updates": calendar_updates()}
     if not a.dry_run:
         for out in (os.path.join(SITE, "build-info.json"), os.path.join(SITE, "api", "_build-info.json")):
             json.dump(info, open(out, "w", encoding="utf-8"), indent=1)

@@ -94,7 +94,7 @@ def next_dates_faq(doc, up):
            "sponsor's own filing or release and links its source on the event page; goal dates can move if the FDA "
            "extends a review. The full list is on the calendar.")
     vis = (f'{QB}<details style="border-top:1px solid var(--line);padding:11px 0" open><summary style="cursor:pointer;'
-           f'font-weight:600;color:#eef4fc;font-size:14.5px;list-style:none">{QNAME}</summary><p style="margin:8px 0 0;'
+           f'font-weight:600;color:#eef4fc;font-size:14.5px">{QNAME}</summary><p style="margin:8px 0 0;'
            f'font-size:14px;line-height:1.75;color:var(--mut2)">{_h.escape(ans)} <a href="/calendar">See the calendar</a>.'
            f'</p></details>{QE}')
     if QB in doc:

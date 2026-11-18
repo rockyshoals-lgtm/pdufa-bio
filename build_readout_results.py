@@ -131,6 +131,19 @@ def load_past_readouts():
     return out
 
 
+def spark_label(text):
+    """Design red team 2026-11-18 (change 12): a sparkline showed up or down by colour alone and said nothing to a screen
+    reader. Each one is now an image with a name and a tooltip that state the move in words."""
+    return f' role="img" aria-label="{text}"', f"<title>{text}</title>"
+
+
+def move_words(pct):
+    if pct is None:
+        return "change not available"
+    r = round(pct)
+    return "flat" if r == 0 else f"{'up' if r > 0 else 'down'} {abs(r)}%"
+
+
 def spark(closes):
     cs = closes[-46:] if len(closes) > 46 else closes
     if len(cs) < 2:
@@ -139,7 +152,8 @@ def spark(closes):
     pts = " ".join(f"{round(i*72/(n-1),1)},{round(19-(c-lo)/rng*18,1)}" for i, c in enumerate(cs))
     move = (cs[-1] / cs[0] - 1) * 100.0 if cs[0] else None
     color = "#46d17f" if (move is None or move >= 0) else "#ff7a72"
-    svg = (f'<svg width="72" height="20" viewBox="0 0 72 20" style="flex:0 0 auto">'
+    attr, title = spark_label(f"Share price over {n} trading days around the readout: {move_words(move)}")
+    svg = (f'<svg width="72" height="20" viewBox="0 0 72 20" style="flex:0 0 auto"{attr}>{title}'
            f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="1.4"/></svg>')
     return svg, move
 
@@ -227,7 +241,8 @@ def build_section(readouts, key, limit):
             mv = '<div style="margin-left:auto;color:#7c93b6;font-size:12px">no price data</div>'
         else:
             col = "#46d17f" if move >= 0 else "#ff7a72"
-            mv = f'<div style="margin-left:auto;font-weight:800;color:{col}">{"+" if move>=0 else ""}{move:.0f}%</div>'
+            mv = (f'<div style="margin-left:auto;font-weight:800;color:{col}">'
+                  f'{"0" if round(move) == 0 else f"{move:+.0f}"}%</div>')
         href = esc(r["url"] or "#")
         # Audit 2026-10-11 section 2c: each passed window states what we found and when we looked.
         res, reg = r.get("resolution") or {}, r.get("registry") or {}

@@ -938,6 +938,12 @@ jobs:
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
+      # 2026-11-18 design red team (change 12): skip link, named charts and sparklines, FAQ markers, a live count on
+      # the screener, 3:1 field borders. Before the phone pass, whose phone copy of a chart carries the chart's name.
+      # tests/test_accessibility.py fails if it is skipped.
+      - name: "Accessibility (skip link, chart names, FAQ markers, field borders)"
+        run: python inject_a11y.py
+
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"

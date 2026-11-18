@@ -44,6 +44,9 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
+import inject_a11y  # noqa: E402
+import inject_mobile_polish  # noqa: E402
 STATE = os.path.join(HERE, "_held_state.json")
 LEADS = os.environ.get("WATCH_LEADS_JSONL") or os.path.join(HERE, "_watch_leads.jsonl")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
@@ -299,6 +302,10 @@ def cmd_apply(a):
             old = _git_show(p)
             if old is None:
                 continue
+            if p.endswith(".html"):
+                # a page committed before the accessibility pass gets it too (named charts first, then the phone
+                # copies that carry their names), or the page it restores would fail tests/test_accessibility.py
+                old = inject_mobile_polish.apply(inject_a11y.apply(old))[0]
             cur = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
             if cur != old:
                 if not a.dry_run:

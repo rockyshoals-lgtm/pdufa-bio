@@ -199,17 +199,15 @@ document.addEventListener('keydown',function(e){
    to one manually-added row — and prints "Data through {date}". If that bulk refresh is more than
    a week old the live-dot dims to amber, so the badge can never overstate currency. */
 (function(){try{
-  /* Rotate the cache key by the hour (limit 3000..3023, all >= row count so nothing is dropped).
-     The API caches per full URL for 30 min; a fixed URL would leave the badge showing the PREVIOUS
-     refresh for up to half an hour. Rotating hourly matches the hourly enrich, so each refresh is
-     reflected within the same hour. Only 'limit' is an accepted param — arbitrary cache-busters 400. */
-  fetch('/api/v1/events?limit='+(3000+new Date().getUTCHours())).then(function(r){return r.json();}).then(function(j){
-    var rows=(j&&(j.data||j.events))||(Array.isArray(j)?j:[]);
-    /* Measure currency over the FORWARD PDUFA calendar only — the data users act on. Decided
-       events keep their historical timestamps by design, so including them would understate how
-       fresh the upcoming calendar actually is. Mode (most common date) = the last real refresh. */
-    /* 2026-11-05: Eastern dates (RULE 1). updated_at is UTC, so an 01:00 UTC rebuild read as the NEXT day and the badge said 'Data through Nov 5' beside 'Data as of Nov 4, 9:03 PM ET'. */var ET=function(x){return new Date(x).toLocaleDateString('en-CA',{timeZone:'America/New_York'});};var tISO=ET(Date.now()),counts={},best=null,bestN=0;
-    for(var i=0;i<rows.length;i++){var r=rows[i];if(!r||!r.updated_at||r.type!=='PDUFA'||r.status==='Decided')continue;if(String(r.date||'').slice(0,10)<tISO)continue;var d=ET(r.updated_at);counts[d]=(counts[d]||0)+1;if(counts[d]>bestN){bestN=counts[d];best=d;}}
+  /* Design red team 2026-11-18 (change 12): this used to fetch the events API with limit 3000 (every row it holds)
+     on every home load to find one date. build-info.json, which the page already reads, now carries what it needs:
+     [date, Eastern date of updated_at] for each undecided day-precision PDUFA row in the same dataset the API serves.
+     Measure currency over the FORWARD PDUFA calendar only, the data users act on (decided events keep their
+     historical timestamps by design). Mode (most common date) = the last real refresh. Eastern dates (RULE 1). */
+  fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){
+    var rows=(j&&j.calendar_updates)||[];
+    var tISO=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'}),counts={},best=null,bestN=0;
+    for(var i=0;i<rows.length;i++){var r=rows[i];if(!r||String(r[0])<tISO||!r[1])continue;var d=String(r[1]);counts[d]=(counts[d]||0)+1;if(counts[d]>bestN){bestN=counts[d];best=d;}}
     if(!best)return;
     var el=document.getElementById('fresh');if(!el)return;
     var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],p=best.split('-');

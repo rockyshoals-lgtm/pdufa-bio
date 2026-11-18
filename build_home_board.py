@@ -70,6 +70,19 @@ def poly_daily(key, t, days=95):
     return price_source.closes(t, (TODAY - dt.timedelta(days=days)).isoformat(), TODAY.isoformat())
 
 
+def spark_label(text):
+    """Design red team 2026-11-18 (change 12): a sparkline showed up or down by colour alone and said nothing to a screen
+    reader. Each one is now an image with a name and a tooltip that state the move in words."""
+    return f' role="img" aria-label="{text}"', f"<title>{text}</title>"
+
+
+def move_words(pct):
+    if pct is None:
+        return "change not available"
+    r = round(pct)
+    return "flat" if r == 0 else f"{'up' if r > 0 else 'down'} {abs(r)}%"
+
+
 def sparkline_reaction(dated, decision_date):
     """64x20 run-up polyline with a GOLD dot on the decision day, so the day-of reaction is visible.
     Returns (svg, day_of_move_pct_or_None). Move = decision-day close vs the prior trading close."""
@@ -90,7 +103,11 @@ def sparkline_reaction(dated, decision_date):
         if j > 0 and allc[j - 1]:
             move = (allc[j] / allc[j - 1] - 1) * 100.0
     dot = f'<circle cx="{X(di)}" cy="{Y(cs[di])}" r="2.4" fill="#e3ba5e" stroke="#02060d" stroke-width="0.6"/>'
-    svg = (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto">'
+    words = f"Share price over the last {n} trading days: {move_words((cs[-1] / cs[0] - 1) * 100 if cs[0] else None)}"
+    if move is not None:
+        words += f"; decision day {move_words(move)}"
+    attr, title = spark_label(words)
+    svg = (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto"{attr}>{title}'
            f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="1.4"/>{dot}</svg>')
     return svg, move
 
@@ -105,7 +122,9 @@ def sparkline(closes):
     n = len(cs)
     pts = " ".join(f"{round(i * 64 / (n - 1), 1)},{round(19 - (c - lo) / rng * 18, 1)}" for i, c in enumerate(cs))
     color = "#46d17f" if cs[-1] >= cs[0] else "#ff7a72"
-    return (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto">'
+    attr, title = spark_label(f"Share price over the last {n} trading days: "
+                              f"{move_words((cs[-1] / cs[0] - 1) * 100 if cs[0] else None)}")
+    return (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto"{attr}>{title}'
             f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="1.4"/></svg>')
 
 

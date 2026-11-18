@@ -26,6 +26,8 @@ MODE = '"eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode"'
 STAT = '"eventStatus":"https://schema.org/EventScheduled"'
 PAGES = ["calendar/index.html", "readouts/index.html", "adcomm/index.html"]
 
+READOUT_ITEMLIST = re.compile(r'<script type="application/ld\+json">\{"@context":\s*"https://schema\.org",\s*'
+                              r'"@type":\s*"ItemList",\s*"name":\s*"Clinical Trial Readout Calendar".*?</script>', re.S)
 EV_DATED = re.compile(r'\{"@type":"Event",("name":"(?:[^"\\]|\\.)*","url":"([^"]*)","startDate":"[^"]*")\}')
 EV_BARE = re.compile(r'\{"@type":"Event",("name":"((?:[^"\\]|\\.)*)","url":"([^"]*)")\}')
 DASH = "—"
@@ -136,6 +138,15 @@ def fix_page(path, url2d, name2d, tickeridx, dry):
     nul = raw.count("\x00")
     html = raw.replace("\x00", "")
     stats = {"loc_only": 0, "dated": 0, "unmatched": 0, "tz_only": 0}
+    # Design red team 2026-11-18 (change 12): /readouts shipped about 308KB of HTML, 39KB of it one JSON-LD ItemList
+    # of 150 trial readouts marked up as online Events "attended" at their ClinicalTrials.gov record. A readout is not
+    # an event anyone attends, and an ItemList whose items live on another site is not one search engines use for
+    # this page. It is dropped; the page keeps its BreadcrumbList and FAQPage, which they do use.
+    if path.replace("\\", "/").endswith("readouts/index.html"):
+        html, n_il = READOUT_ITEMLIST.subn("", html)
+        if n_il and not dry:
+            open(path, "w", encoding="utf-8").write(html)
+        stats["itemlist_dropped"] = n_il
 
     def dated(m):  # has startDate; may be missing location and/or a timezone on startDate
         body, url = m.group(1), m.group(2)
