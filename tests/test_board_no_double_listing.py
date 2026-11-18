@@ -35,7 +35,7 @@ def tickers_in(segment):
     the decided section as empty and passed happily while REPL was sitting in both. A guard that
     cannot see one side of the comparison is worse than no guard, because it reports safety.
     """
-    out = {m.group(1) for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"', segment)}
+    out = {m.group(1) for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z.]{1,6})(?:-[a-z0-9-]+)?"', segment)}
     out |= {m.group(1) for m in re.finditer(r'href="/fda-decision/([A-Z]{1,6})-\d{4}-\d{2}-\d{2}"',
                                             segment)}
     return out
@@ -57,7 +57,8 @@ def catalysts_in(segment):
     CATALYST: the same DRUG must not be both pending and decided.
     """
     out = []
-    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"|'
+    # 2026-11-18 (change 8): upcoming tiles now link the goal's own event page (/pdufa/RHHBY-giredestrant).
+    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z.]{1,6})(?:-[a-z0-9-]+)?"|'
                          r'href="/fda-decision/([A-Z]{1,6})-\d{4}-\d{2}-\d{2}"', segment):
         tk = m.group(1) or m.group(2)
         tail = re.sub(r"<[^>]+>", " ", segment[m.end():m.end() + 220]).lower()
@@ -65,6 +66,15 @@ def catalysts_in(segment):
         # look like one catalyst on 2026-10-03
         out.append((tk, {w for w in re.findall(r"[a-z]{5,}", tail) if w not in STOPW and w != tk.lower()}))
     return out
+
+
+def title_tokens(slug):
+    p = os.path.join(HERE, "pdufa_site_src", "fda-decision", slug, "index.html")
+    if not os.path.exists(p):
+        return set()
+    t = re.search(r"<title>(.*?)(?: Approved| CRL| Complete Response| Not Approved| Withdrawn|\|)",
+                  open(p, encoding="utf-8", errors="replace").read()[:4000], re.S)
+    return {w for w in re.findall(r"[a-z]{5,}", (t.group(1) if t else "").lower()) if w not in STOPW} - {slug.split("-")[0].lower()}
 
 
 def main():
@@ -84,10 +94,21 @@ def main():
     decided = html[i_dec:i_up] if i_dec < i_up else html[i_dec:i_dec + 20000]
 
     up, dec = catalysts_in(upcoming), catalysts_in(decided)
-    # Same ticker AND an overlapping drug name = the same application in both sections.
+    # 2026-11-18 (change 8 red team): decided tiles carry no drug text, so every decided token set was empty and the
+    # drug-level comparison could never fire. Read each decided tile's drug from its decision page's <title>.
+    dec = [(tk, toks | title_tokens(href)) for (tk, toks), href in
+           zip(dec, re.findall(r'href="/fda-decision/([A-Z.]+-\d{4}-\d{2}-\d{2})"', decided))] \
+        if len(dec) == len(re.findall(r'href="/fda-decision/', decided)) else dec
+    # Same ticker AND an overlapping drug name = the same application in both sections, unless each side names
+    # something the other does not (Roche: giredestrant (lidERA) still pending beside Wilserdly (giredestrant),
+    # the separate evERA application, approved Nov 16). A pending tile that adds nothing to the decided title is the
+    # same application.
     both = sorted({f"{tk} ({', '.join(sorted(ut & dt_)[:2])})"
                    for tk, ut in up for tk2, dt_ in dec
-                   if tk == tk2 and (ut & dt_)})
+                   if tk == tk2 and (ut & dt_) and not ((ut - dt_) and (dt_ - ut))})
+    n_dec_tokens = sum(1 for _tk, t in dec if t)
+    if dec and not n_dec_tokens:
+        both.append("(no decided tile has a drug name to compare; the check cannot see that side)")
 
     print(f"homepage board: {len(up)} upcoming, {len(dec)} recently decided")
 

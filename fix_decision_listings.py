@@ -30,7 +30,7 @@ NOTE = ('<div class="note" style="border:1px solid #6b5a2f;background:rgba(240,2
         'border-radius:10px;padding:11px 13px;margin:12px 0;color:#e8d9a8;font-size:13px;'
         'line-height:1.6"><b>Not inferred from price.</b> This page lists {kept} decision(s) whose '
         'outcome was read from a document rather than from the share-price reaction. '
-        '<b>{sourced} of them link that document</b>; the rest are older entries we have not yet '
+        '<b>{sourced} of them link that document</b>; the rest are entries (some from 2026) we have not yet '
         'gone back and sourced, and we would rather say so than call them all verified. '
         'A further {dropped} record(s) in our archive have '
         'their outcome inferred from the share-price reaction rather than read from a filing, and '
@@ -48,20 +48,18 @@ def sourced_slugs():
     difference was published on /decisions as "142 with a primary source". Requiring the source to
     be present is the whole point of the claim.
     """
-    import re as _re
-    GOOD = _re.compile(r"(fda\.gov|sec\.gov|clinicaltrials\.gov|nih\.gov|doi\.org|nejm\.org|"
-                       r"thelancet\.com|jamanetwork\.com|globenewswire\.com|prnewswire\.com|"
-                       r"businesswire\.com|accessnewswire\.com|stocktitan\.net|newsroom\.|"
-                       r"ir\.|investors?\.)", _re.I)
+    # 2026-11-18 (change 10 red team): this read pages its own way ("price-only" only, any non-pdufa link, the 13F
+    # block's sec.gov links and our public-commit link included) and printed "367 of them link the document" while
+    # /decisions said 359. One reading now, refresh_provenance_counts.page_kind.
+    from refresh_provenance_counts import page_kind
     ok, sourced = set(), set()
     for p in glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html")):
-        t = open(p, encoding="utf-8", errors="replace").read()
-        if "price-only" in t:
+        kind = page_kind(open(p, encoding="utf-8", errors="replace").read())
+        if kind == "inferred":
             continue
         slug = os.path.basename(os.path.dirname(p))
         ok.add(slug)                       # not inferred from price: eligible to be listed
-        ext = [u for u in _re.findall(r'href="(https?://[^"]+)"', t) if "pdufa.bio" not in u]
-        if any(GOOD.search(u) for u in ext):
+        if kind == "sourced":
             sourced.add(slug)              # and it shows you the document
     return ok, sourced
 

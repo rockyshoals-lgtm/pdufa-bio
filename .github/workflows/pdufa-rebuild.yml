@@ -132,6 +132,8 @@ jobs:
 
       # 2026-11-18: each decision page's run-up and decision-day chips are the study's figures for that event (306
       # pages showed an old "low→high" figure matching nothing). Before build_decision_faq.py, which quotes them.
+      # Change 10 (2026-11-18): and the event's own decision-day move, with what it is measured on, on every page the
+      # study measured.
       - name: "Run-up study: write the study's figures onto each decision page"
         run: python sync_decision_runup_chip.py
 
@@ -153,6 +155,12 @@ jobs:
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_home_board.py
+
+      # 2026-11-18 (design red team, change 7): /calendar is committed shaped (open months first, decided months
+      # folded, notes at the end). Every calendar writer below expects date order, so put the page back first;
+      # shape_calendar.py runs again just before the phone pass.
+      - name: Put /calendar back in date order for its writers
+        run: python shape_calendar.py --undo
 
       # Reconcile the calendar against the slate BEFORE marking outcomes, so a catalyst added here
       # is marked in the same run. REPL had a confirmed date, an adcomm page and a slate row, and
@@ -335,6 +343,12 @@ jobs:
 
       - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
         run: python build_decision_lede.py
+
+      # Design red team 2026-11-18 (change 10): the fact-first sentence is the page's one statement of the decision; a
+      # summary under it that says nothing the rest of the page does not is removed (no fact leaves the page).
+      # Guard: tests/test_decision_page_one_statement.py.
+      - name: "Decision pages state the decision once (drop a summary the page already says)"
+        run: python dedupe_decision_summary.py
 
       # Red team 2026-11-01: the h1 carried the announcement day while the title carried the FDA's action day.
       - name: "Decision page h1 states the FDA action day (announcement day in brackets)"
@@ -945,6 +959,9 @@ jobs:
 
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
+      - name: "Calendar: open months first, decided months folded, notes last (design change 7)"
+        run: python shape_calendar.py
+
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"
         run: python inject_mobile_polish.py
 

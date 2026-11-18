@@ -64,6 +64,12 @@ def main():
             continue
         rel = "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/")
         checked += 1
+        if rel == "/calendar":
+            # design change 7: the shaped page keeps only the lede's first sentence on top and moves the rest (the
+            # "This page lists ..." counts) into "About this calendar". Check the lede the writers built, in full.
+            sys.path.insert(0, HERE)
+            import shape_calendar
+            doc = shape_calendar.unshape(doc)
 
         lede = html.unescape(re.sub(r"<[^>]+>", "", doc.split(B, 1)[1].split(E, 1)[0]))
         body = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
@@ -98,8 +104,8 @@ def main():
                     n = 0
                     for fr in frags:
                         s_ = html.unescape(re.sub(r"<[^>]+>", " ", fr)).lower()
-                        if "approved" in s_ or "crl" in s_ or "complete response" in s_:
-                            continue
+                        if "approved" in s_ or "crl" in s_ or "complete response" in s_ or re.search(r"\(est\.?\)", s_):
+                            continue  # change 8: an (est.) row is our estimate, not a goal date
                         d_ = re.search(r"\d{4}-\d{2}-\d{2}", s_)
                         if not d_ or d_.group(0) >= today_:
                             n += 1
@@ -157,7 +163,7 @@ def main():
             import build_hub_lede as bhl
             today_ = eastern_today().isoformat()
             prow = bhl.parse(body)
-            rest = [r for r in prow if not (r["approved"] or r["crl"])]
+            rest = [r for r in prow if not (r["approved"] or r["crl"] or r["est"])]
             ahead = [r for r in rest if not r["iso"] or r["iso"] >= today_]
             first = re.match(r"([\d,]+) FDA PDUFA goal dates? (?:are|is) still ahead in (\d{4})", lede)
             if ahead and not first:
