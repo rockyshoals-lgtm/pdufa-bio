@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""apply_1118_retire_decisions.py -- 20 decision pages that record an FDA action that did not happen.
+"""apply_1118_retire_decisions.py -- 20 decision pages retired: 17 record an FDA action that
+did not happen or duplicate another page, 3 were dated on a day nothing happened and move to the announcement day.
 
 2026-11-18 (David, 2026-11-17 Eastern: "Red team the readout and pdufa dates again, let's build our moat here too
 as the most accurate"). verify_decisions.py (2026-08-12) labelled a page "verified" when ANY 8-K/6-K filed within
@@ -27,6 +28,10 @@ primary sources (FDA letters, Drugs@FDA, openFDA CRL files, company releases). 1
   second page for one FDA action
     RGNX-2026-02-08  same CRL as RGNX-2026-02-09 (letter Feb 7, announced Feb 9)
     IRON-2026-02-15  same CRL as IRON-2026-02-13 (letter Feb 13)
+  wrong day (301 to the page dated the day the action was announced; built from decision_pages_2026_11_18.json)
+    SNY-2025-06-02   Dupixent bullous pemphigoid: FDA approved June 18, Sanofi announced June 20
+    REGN-2025-06-02  the same approval, Regeneron's page
+    SNY-2025-12-28   tolebrutinib: CRL dated Dec 23, announced Dec 24 (Dec 28 was the target date)
 
 What this does, for each slug: deletes the page, adds a permanent redirect, removes every link to it from every
 page (HTML rows and lists, JSON-LD ItemLists, sitemap.xml), marks its _decision_verification.json entry
