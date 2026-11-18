@@ -38,32 +38,40 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 PAGE = os.path.join(SITE, "decisions", "index.html")
 B, E = "<!--PROVENANCE:BEGIN-->", "<!--PROVENANCE:END-->"
 
-PRICE_ONLY = re.compile(r"outcome unverified|price[- ]only|consistent with an? (approval|CRL)", re.I)
+# 2026-11-18 (change 10 red team): CYTK-2025-11-07, PHIO-2025-07-28 and URGN-2025-04-27 say "Outcome consistent with
+# price" and cite nothing, yet counted as unsourced; their Verified line now says the outcome is inferred.
+PRICE_ONLY = re.compile(r"outcome unverified|price[- ]only|consistent with an? (approval|CRL)|"
+                        r"The outcome shown is inferred from the stock", re.I)
 GOOD = re.compile(r"(fda\.gov|sec\.gov|clinicaltrials\.gov|nih\.gov|doi\.org|nejm\.org|"
                   r"thelancet\.com|jamanetwork\.com|globenewswire\.com|prnewswire\.com|"
                   r"businesswire\.com|accessnewswire\.com|stocktitan\.net|newsroom\.|"
                   r"ir\.|investors?\.)", re.I)
 
 
+def page_kind(html):
+    """"inferred", "sourced" or "unsourced" for one decision page; fix_decision_listings.py reads pages the same way,
+    so /decisions, /decisions/approvals and /decisions/crl give one set of numbers."""
+    if PRICE_ONLY.search(html):
+        return "inferred"
+    body = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", html, flags=re.S)
+    ext = [u for u in re.findall(r'href="(https?://[^"]+)"', body)
+           if "pdufa.bio" not in u and "github.com/rockyshoals-lgtm/pdufa-bio" not in u]
+    return "sourced" if ext else "unsourced"
+
+
 def classify():
+    # Sourced means the page links an external document you can go and read. Whether that host is a regulator or the
+    # company's own newsroom is a quality question, reported separately; it is not the difference between showing
+    # evidence and showing none. 2026-11-18 (design red team, change 10): neither our own public commit (the
+    # first-recorded line on every page) nor a fund's 13F filing (the 13F block) is evidence of the FDA's decision;
+    # counted, they took the unsourced number from 20 to 0. tests/test_verified_provenance.py reads pages the same way.
     sourced = inferred = unsourced = 0
     unsourced_slugs = []
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
-        html = open(p, encoding="utf-8", errors="replace").read()
-        if PRICE_ONLY.search(html):
+        kind = page_kind(open(p, encoding="utf-8", errors="replace").read())
+        if kind == "inferred":
             inferred += 1
-            continue
-        # Sourced means the page links an external document you can go and read. Whether that
-        # host is a regulator or the company's own newsroom is a quality question, reported
-        # separately; it is not the difference between showing evidence and showing none. The two
-        # checks disagreed by exactly the 3 pages citing an unusual host until this was aligned.
-        # 2026-11-18 (design red team, change 10): neither our own public commit (the first-recorded line on every
-        # page) nor a fund's 13F filing (the 13F block) is evidence of the FDA's decision. Counted, they took this
-        # number from 20 to 0. tests/test_verified_provenance.py reads pages the same way.
-        body = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", html, flags=re.S)
-        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', body)
-               if "pdufa.bio" not in u and "github.com/rockyshoals-lgtm/pdufa-bio" not in u]
-        if ext:
+        elif kind == "sourced":
             sourced += 1
         else:
             unsourced += 1
@@ -107,7 +115,7 @@ def main():
         f'<b style="color:#f0c86a">Inferred</b> pages say on their face that the outcome was read '
         f'from how the stock reacted, not from a document. '
         f'<b style="color:#ff8f8f">Unsourced</b> pages assert an outcome and show you nothing; '
-        f'they are older entries we have not yet gone back and sourced, and we would rather count '
+        f'they are entries (some from 2026) we have not yet gone back and sourced, and we would rather count '
         f'them honestly than fold them into a total. '
         f'This split used to read "Verified {s + u} with a primary source", which counted the '
         f'unsourced ones, because the old rule treated the absence of a disclaimer as evidence. '

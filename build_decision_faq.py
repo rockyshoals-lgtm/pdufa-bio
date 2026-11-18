@@ -94,7 +94,11 @@ def main():
     for _slug, _v in ((json.load(open(_vp, encoding="utf-8")).get("results") or {}) if os.path.exists(_vp) else {}).items():
         _ev = (_v or {}).get("evidence") or {}
         _m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", _slug)
-        if _m and _ev.get("kind") == "approval" and _ev.get("approval_date") and "Drugs@FDA" in str(_ev.get("source_label")):
+        # 2026-11-18 red team (change 10): the verifier reads an APPLICATION's action date, which can be another
+        # supplement's (JNJ-2025-03-20: Mar 25 is a manufacturing change; the indication was approved Mar 20; on
+        # MRK-2026-02-20 it gave Feb 10). The FAQ named those as the FDA's day. Only a date equal to the page's own.
+        if (_m and _ev.get("kind") == "approval" and _ev.get("approval_date") == _m.group(2)
+                and "Drugs@FDA" in str(_ev.get("source_label"))):
             fda_day.setdefault((_m.group(1), _m.group(2)), _ev["approval_date"])
 
     def art(word):
@@ -110,9 +114,15 @@ def main():
         tk, date = m.groups()
         low = doc.lower()
         # sourced pages only: no price-inference language, and an external citation present
-        if ("price-only" in low or "outcome unverified" in low
-                or not re.search(r'href="https?://(?!www\.pdufa\.bio)', doc)):
+        # 2026-11-18 (change 10 red team): the 13F block's sec.gov links and the page's public-commit link counted as
+        # a citation, so 20 pages that cite nothing (ABBV-2026-05-27) answered "The primary source is linked on this
+        # page". Only links outside our own blocks count, and a page that no longer qualifies loses its old FAQ.
+        body = re.sub(r"<!--(DFAQ|F13|FIRSTREC|VERIFIED):BEGIN-->.*?<!--\1:END-->", "", doc, flags=re.S)
+        if ("price-only" in low or "outcome unverified" in low or "outcome shown is inferred" in low
+                or not re.search(r'href="https?://(?!www\.pdufa\.bio|github\.com/rockyshoals-lgtm/)', body)):
             skipped += 1
+            if B in doc and not a.dry_run:
+                open(p, "w", encoding="utf-8").write(re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S))
             continue
         t = re.search(r"<title>[A-Z]+ FDA Decision [^:]+: (Approved|Complete Response Letter"
                       r"|CRL)", doc)
@@ -204,13 +214,12 @@ def main():
         # not "the recorded reaction to this event"; those pages answer the run-up question instead.
         bm = re.search(r"<span>Move measured on</span><b>([^<]+)</b>", doc)
         basis = html.unescape(bm.group(1)).strip() if bm else ""
-        if mm and basis and not basis.startswith("not recorded") and "does not include" not in basis:
+        if mm and basis and not re.match(r"(?:day )?not recorded", basis) and "does not include" not in basis:
             mv = html.unescape(mm.group(1)).strip()
             qa.append((f"How did {tk} stock react to the FDA decision?",
                        f"{tk} moved {mv}, measured as the {basis.replace(', against', ' against')}"
-                       f". That is the "
-                       f"recorded reaction to this specific event. Historical measurement, not a prediction, "
-                       f"and not investment advice."))
+                       f". It is one trading day's move, so it can include news other than the decision. "
+                       f"Historical measurement, not a prediction, and not investment advice."))
         elif rm:
             runup = html.unescape(rm.group(1)).strip()
             qa.append((f"How did {tk} stock trade into the FDA decision?",

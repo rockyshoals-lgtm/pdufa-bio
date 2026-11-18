@@ -113,8 +113,10 @@ def basis_text(day, eve, announced=False, after_close=False):
     return text
 
 
-NOT_RECORDED = ('<div class="kv"><span>Move measured on</span><b>not recorded; this figure is not in the run-up '
-                "study</b></div>")
+# red team 2026-11-18: "not recorded; this figure is not in the run-up study" read as if the move itself was not
+# recorded. It is the measuring day that is not on record.
+NOT_RECORDED = ('<div class="kv"><span>Move measured on</span><b>day not recorded for this figure, which is not from '
+                "the run-up study</b></div>")
 
 
 def after_close(doc, day):

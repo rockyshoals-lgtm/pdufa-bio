@@ -95,7 +95,7 @@ def line(r):
         y, m = (int(x) for x in str(goal)[:7].split("-"))
         parts.append(f"Goal month {MON[m]} {y}, no day stated ({link(short_source(d.get('source') or 'sponsor filing'), d.get('source_url'))})")
     else:
-        parts.append("Goal date none sourced")
+        parts.append("Goal date: none on record")
     return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9">'
             f'<b style="color:#cfe0f5">Verified against:</b> ' + " &middot; ".join(parts) + f'.</p>{E}')
 
@@ -127,12 +127,19 @@ def _named(label, url):
     t = html.unescape(re.sub(r"<[^>]+>", "", label)).strip()
     t = re.sub(r"\s*\((?:FDA notice|letter not yet on Drugs@FDA)\)", "", t)
     t = re.sub(r"\s+(?:of \d{4}-\d{2}-\d{2}|containing\b).*$", "", t)
-    t = re.sub(r",?\s+(?:" + MONTHS + r") \d{1,2},? \d{4}.*$", "", t).strip(" ,")
+    # a citation's own date is stated outside ("Novocure 8-K exhibit, February 11, 2026; ..."); a date the citation
+    # is ABOUT stays (FBIO: "FDA approval letter for NDA 211241 (January 2026), citing the CRL of September 30, 2025"
+    # lost its date and read "citing the CRL of").
+    t = re.sub(r",\s+(?:" + MONTHS + r") \d{1,2},? \d{4}.*$", "", t).strip(" ,")
     if not t or GENERIC.match(t):
         host = re.sub(r"^https?://(?:www\.)?", "", url or "").split("/")[0]
         t = "SEC filing" if host.endswith("sec.gov") else ("FDA document" if host.endswith("fda.gov") else
                                                           "sponsor release")
-    return t[:80]
+    # FBIO's "... citing the CRL of September 30, 2025" ran past 80 characters and was cut to "September 3"
+    return t if len(t) <= 110 else t[:110].rsplit(" ", 1)[0] + "\u2026"
+
+
+NO_FDA = "No FDA record of the action day on this page"
 
 
 def page_line(doc, day=None):
@@ -140,7 +147,13 @@ def page_line(doc, day=None):
     483), built only from the sources the page itself holds, and saying plainly when it holds none. day is the page's
     own day (its URL's); a Drugs@FDA validation date is called the FDA's day only when it is that day."""
     val = _kv(doc, "Validation") or ""
-    if val.startswith("Outcome consistent with price"):
+    ps = (re.search(r'<div class="kv"><span>Primary source</span><b>(.*?)</b></div>', doc, re.S)
+          or re.search(r'>Primary source: (.*?)</p>', doc, re.S))
+    cites = re.findall(r'<a href="(https?://[^"]+)"[^>]*>(.*?)</a>', ps.group(1), re.S) if ps else []
+    # red team: CORT-2025-12-31 shows the FDA's own CRL card and ALVO-2025-11-02 an SEC filing, yet both were told
+    # "not taken from an FDA record or a company filing". The inferred wording is for a page that cites nothing.
+    if val.startswith("Outcome consistent with price") and not (FDAREC.search(doc) or CRLSRC.search(doc) or cites
+                                                                or SEC.search(val)):
         return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9"><b style="color:#cfe0f5">'
                 "Verified against:</b> no primary source yet. The outcome shown is inferred from the stock&#x27;s price "
                 f"move, not taken from an FDA record or a company filing.</p>{E}")
@@ -165,29 +178,43 @@ def page_line(doc, day=None):
             # that date is not the page's day: after it on 5 (AMRX-2025-01-23: Jan 28), or up to 10 days before
             # (MRK-2026-02-20, Keytruda BLA 125514: Feb 10), and a large application carries many actions. So the
             # application is cited, and its date is not called this decision's FDA day.
-            parts.append(f"FDA record: {link(f'{daf.group(1)} {daf.group(2)} on Drugs@FDA', url)} (the application, "
-                         "not dated to this action)")
+            # Red team: some of these dates are right (CSLLY-2025-06-17: BLA 761367 has one action, Jun 16) and some
+            # are another supplement (JNJ-2025-03-20: Mar 25 is a manufacturing change; the new indication is Mar 20).
+            # Say what the record lists, and that it is not matched to this decision.
+            parts.append(f"FDA record: {link(f'{daf.group(1)} {daf.group(2)} on Drugs@FDA', url)}, which lists an "
+                         f"action on {pretty(daf.group(3))}, not matched to this decision")
     elif letter:
         parts.append(f"FDA action day {letter.group(2)} (FDA approval letter, {esc(letter.group(1))})")
     elif fann:
         parts.append(f"FDA announcement {fann.group(1)}")
-    # the page's primary source: a key-facts row, or (older template) a "Primary source:" paragraph that can link more
-    # than one document (NVCR-2026-02-11: Novocure's 8-K exhibit and the FDA's PMA record). Red team: reading only
-    # the row, 14 pages that cite an FDA letter, an FDA press release or a sponsor release were told "no source".
-    ps = (re.search(r'<div class="kv"><span>Primary source</span><b>(.*?)</b></div>', doc, re.S)
-          or re.search(r'>Primary source: (.*?)</p>', doc, re.S))
-    cites = re.findall(r'<a href="(https?://[^"]+)"[^>]*>(.*?)</a>', ps.group(1), re.S) if ps else []
+    # the page's primary source (read above): a key-facts row, or (older template) a "Primary source:" paragraph.
+    # Red team: reading only the row, 14 pages that cite an FDA letter, an FDA press release or a sponsor release
+    # were told "no source".
     fda_cites = [c for c in cites if re.search(r"//(?:www\.)?(?:accessdata\.)?fda\.gov/|open\.fda\.gov/", c[0])]
     other = [c for c in cites if c not in fda_cites]
     if not parts and fda_cites:
         u, lab = fda_cites[0]
         parts.append(f"FDA record: {link(_named(lab, html.unescape(u)), html.unescape(u))}")
     if not parts:
-        parts.append("FDA action day not cited to an FDA record on this page")
+        # NVCR-2026-02-11 links the FDA's PMA record in its narrative, not in the primary-source line
+        body = re.sub(r"<!--(DFAQ|F13|FIRSTREC|VERIFIED):BEGIN-->.*?<!--\1:END-->", "", doc, flags=re.S)
+        own = re.search(r'<a href="(https://www\.accessdata\.fda\.gov/(?:scripts/cdrh/cfdocs/cfpma/pma\.cfm\?id=P\d+|'
+                        r'drugsatfda_docs/appletter/[^"]+))"[^>]*>(.*?)</a>', body, re.S)
+        if own:
+            u = html.unescape(own.group(1))
+            pma = re.search(r"pma\.cfm\?id=(P\d+)", u)
+            parts.append("FDA record: " + link(f"FDA PMA record {pma.group(1)}" if pma else _named(own.group(2), u), u))
+    if not parts:
+        parts.append(NO_FDA)
     ann = _kv(doc, "Announced")
     src = None
     if other:
         src = ", ".join(link(_named(lab, html.unescape(u)), html.unescape(u)) for u, lab in other[:2])
+        if not ann:
+            # NVCR: "Novocure 8-K exhibit, February 11, 2026" carries the day key facts do not state
+            dm = re.search(r",\s+((?:" + MONTHS + r") \d{1,2}, \d{4})", html.unescape(re.sub(r"<[^>]+>", "", other[0][1])))
+            if dm:
+                ann = iso_long(dm.group(1))
     elif SEC.search(val):
         sm = SEC.search(val)
         src = f"SEC filing {sm.group(1)}, filed {pretty(sm.group(2))}"
@@ -201,10 +228,10 @@ def page_line(doc, day=None):
                      + (f" ({src})" if src else ""))
     elif src:
         parts.append(f"Announcement, date not stated on this page ({src})")
-    if parts == ["FDA action day not cited to an FDA record on this page"]:
+    if parts == [NO_FDA]:
         return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9"><b style="color:#cfe0f5">'
                 f"Verified against:</b> no source for this decision is cited on this page yet.</p>{E}")
-    parts.append("Goal date none sourced")
+    parts.append("Goal date: none on record")
     return (f'{B}<p class="note" style="margin:6px 0 10px;font-size:12.5px;color:#a7bcd9">'
             f'<b style="color:#cfe0f5">Verified against:</b> ' + " &middot; ".join(parts) + f'.</p>{E}')
 

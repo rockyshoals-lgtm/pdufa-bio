@@ -16,8 +16,10 @@ decision pages carried the "Verified against" line (51 the first-recorded line).
      "Decision-day move" row lacks the "Move measured on" row (with the study's eve close when it measured it);
   4. a page keeps a summary paragraph under its banner that says nothing the rest of the page does not;
   5. a page's FAQ asks whether the decision was an approval twice, or its FAQPage JSON-LD differs from its questions.
+     a page that cites a source (an FDA record, the FDA's letter card, a filing or a primary-source link) is told
+     its outcome is inferred or that it cites nothing;
 PLANT=fda claims an FDA day on an inferred page, PLANT=move drops GSK-2026-11-17's basis row, PLANT=faq repeats a
-question; each must FAIL.
+question, PLANT=cite tells CORT-2025-12-31 it has no source; each must FAIL.
 
     python tests/test_decision_page_one_statement.py
 """
@@ -94,8 +96,19 @@ def main():
             if claim and claim.group(1) != held:
                 bad.append(f"/fda-decision/{slug}: its Verified-against line names FDA action day {claim.group(1)}; the "
                            f"page's own FDA record holds {held or 'none'}")
-            if val.startswith("Outcome consistent with price") and "inferred" not in text:
+            # red team: CORT-2025-12-31 shows the FDA's CRL card and ALVO-2025-11-02 an SEC filing, yet both were
+            # told the outcome was inferred, "not taken from an FDA record or a company filing"
+            ps = (re.search(r'<div class="kv"><span>Primary source</span><b>(.*?)</b></div>', doc, re.S)
+                  or re.search(r'>Primary source: (.*?)</p>', doc, re.S))
+            cited = bool(rec or crl or iva.SEC.search(val) or daf or let
+                         or (ps and re.search(r'<a href="https?://', ps.group(1))))
+            if plant == "cite" and slug == "CORT-2025-12-31":
+                text = "Verified against: no primary source yet. The outcome shown is inferred from the stock's price move."
+            if val.startswith("Outcome consistent with price") and not cited and "inferred" not in text:
                 bad.append(f"/fda-decision/{slug}: the outcome is inferred from price and the line does not say so")
+            if cited and ("inferred from the stock" in text or "no source for this decision is cited" in text):
+                bad.append(f"/fda-decision/{slug}: the page cites a source, and its Verified-against line says it has "
+                           "none")
         # 3
         run, mv = sdr.expected(fig, tk, day)
         row = (re.search(r'<div class="kv"><span>Decision-day move</span><b>([^<]*)</b></div>', doc)

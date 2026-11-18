@@ -32,7 +32,10 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 
 # How an unverified, price-inferred page announces itself. Those are allowed to have no source:
 # they say on their face that they are inferred.
-PRICE_ONLY = re.compile(r"outcome unverified|price[- ]only|consistent with an? (approval|CRL)", re.I)
+# 2026-11-18 (change 10 red team): CYTK-2025-11-07, PHIO-2025-07-28 and URGN-2025-04-27 say "Outcome consistent with
+# price" and cite nothing, yet counted as unsourced; their Verified line now says the outcome is inferred.
+PRICE_ONLY = re.compile(r"outcome unverified|price[- ]only|consistent with an? (approval|CRL)|"
+                        r"The outcome shown is inferred from the stock", re.I)
 
 # Hosts that can actually establish that an FDA decision happened.
 GOOD = re.compile(r"(fda\.gov|sec\.gov|clinicaltrials\.gov|nih\.gov|doi\.org|nejm\.org|"
