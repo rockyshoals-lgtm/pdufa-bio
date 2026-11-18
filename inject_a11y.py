@@ -132,7 +132,11 @@ def name_charts(doc):
                 down = 'stroke="#ff7a72"' in body
                 if not (up or down):
                     continue
-                words = f"Share price over the period shown: {'rose' if up else 'fell'}"
+                # the builders colour a line green when it ends at or above where it starts, so green alone does
+                # not say "rose": a line that ends level with its start (or is a single flat run) is "was flat"
+                pts = re.findall(r"[\d.]+,([\d.]+)", (re.search(r'points="([^"]*)"', body) or [None, ""])[1])
+                flat = len(pts) >= 2 and abs(float(pts[0]) - float(pts[-1])) < 0.05
+                words = f"Share price over the period shown: {'was flat' if flat else 'rose' if up else 'fell'}"
                 new = tag[:-1] + f' role="img" aria-label="{words}"><title>{words}</title>'
             else:
                 continue
@@ -155,7 +159,7 @@ def skip_link(doc):
 
 def summary_markers(doc):
     def fix(m):
-        tag = re.sub(r";\s*list-style:\s*none\s*(?=[;\"])|list-style:\s*none\s*;?\s*", "", m.group(0))
+        tag = re.sub(r";\s*list-style(?:-type)?:\s*none\s*(?=[;\"])|list-style(?:-type)?:\s*none\s*;?\s*", "", m.group(0))
         return tag.replace(' style=""', "")
     return re.sub(r"<summary\b[^>]*>", fix, doc)
 

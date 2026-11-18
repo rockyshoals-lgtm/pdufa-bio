@@ -55,7 +55,7 @@ SKIP = re.compile(r"(_bak|_xbak|/_|\\_|app\.html|holding\.html|preview\.html|pin
 # worst kind to publish on a site whose whole pitch is provenance.
 SCRIPT = """<script>
 (function(){var e=document.querySelector('[data-fresh]');if(!e)return;
-fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+(window.pdBI=window.pdBI||fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()})).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
 /* A goal date that has PASSED with no decision is not "today" and not a negative countdown.

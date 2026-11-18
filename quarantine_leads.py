@@ -294,6 +294,20 @@ def cmd_apply(a):
         new, n = restore_rows(src, head, set(held_ids))
         if n and not a.dry_run:
             io.open(DATASET, "w", encoding="utf-8").write(new)
+            # 2026-11-18 (design change 12): the homepage's "Data through" date reads calendar_updates from
+            # build-info.json, which build_freshness_stamp.py wrote from the dataset before this step put the held
+            # rows back; recompute it from the restored rows so the page and tests/test_accessibility.py agree.
+            try:
+                import build_freshness_stamp as _F
+                cu = _F.calendar_updates()
+                for p in (os.path.join(SITE, "build-info.json"), os.path.join(SITE, "api", "_build-info.json")):
+                    if os.path.exists(p):
+                        bi = json.load(io.open(p, encoding="utf-8"))
+                        if "calendar_updates" in bi:
+                            bi["calendar_updates"] = cu
+                            io.open(p, "w", encoding="utf-8", newline="\n").write(json.dumps(bi, indent=1) + "\n")
+            except Exception as ex:  # noqa: BLE001
+                print(f"  note: calendar_updates not refreshed after the restore ({ex.__class__.__name__}: {ex})")
         restored.append(f"dataset rows x{n}")
     for rid in held_ids:
         slug = rid[5:] if rid.startswith("drug:") else None

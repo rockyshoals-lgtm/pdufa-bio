@@ -12,7 +12,7 @@ on the T-120 baseline, which is now the single baseline used everywhere on the s
 
     python build_runup_by_year.py [--dry-run]
 """
-import argparse, csv, os, statistics as st, sys, collections
+import argparse, csv, math, os, re, statistics as st, sys, collections
 import datetime as dt
 
 try:
@@ -32,9 +32,10 @@ TODAY = _eastern_today()
 
 def fnum(r, k):
     try:
-        return float(r.get(k))
+        x = float(r.get(k))
     except Exception:
         return None
+    return x if math.isfinite(x) else None   # "nan" and "inf" in the CSV are no value, not a number
 
 
 def med(vals):
@@ -73,7 +74,10 @@ def tier_runup_chart(rows, order):
     def e(x):
         return x.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
     said = e("; ".join(f"{t}: {'up' if v >= 0 else 'down'} {abs(v):.1f}% (n={n:,})" for t, v, n in vals))
-    out = [f'<div class="rc" role="figure" aria-label="Median run-up from T-120 to T-1 by market-cap tier. {said}.">']
+    yrs = sorted({(r.get("pdufa_date") or "")[:4] for r in rows if re.match(r"^\d{4}", r.get("pdufa_date") or "")})
+    yspan = f", decisions {yrs[0]} to {yrs[-1]}" if yrs else ""
+    out = [f'<div class="rc" role="figure" aria-label="Median run-up from T-120 to T-1 by market-cap tier{yspan}. '
+           f'{said}.">']
     for t, v, n in vals:
         w = 100.0 * abs(v) / span
         left = zero if v >= 0 else zero - w
@@ -221,7 +225,9 @@ days. Part of the gap between the earlier and later approval rates comes from th
 T-120 to the last session before the decision.</p>
 <div class="card">{chart}
 <div class="note" style="margin-top:12px">Medians of the events in each tier with a full 120 sessions of history
-(n shown). A bar right of the line is a rise into the decision; left is a fall. The typical peak inside the window is far
+(n shown), across every decision in the study, {dmin[:4]} to {dmax[:4]}. The
+<a href="/research/pdufa-stock-run-up-by-market-cap">run-up by market cap study</a> covers 2024 onward only, so its tier
+medians are not the same as these. A bar right of the line is a rise into the decision; left is a fall. The typical peak inside the window is far
 higher than where the run-up ended (see <b>Peak run-up</b> by year above).</div></div>
 
 <h2>Decision-day move by market-cap tier</h2>

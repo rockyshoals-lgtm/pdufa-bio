@@ -78,7 +78,7 @@ footer b{color:var(--mut)}
 <div class="eyebrow"><span class="dot"></span><span id="fresh">Data through Nov 18 · free, no login</span></div>
 <h1>Every FDA decision, with the <span class="g">facts to weigh it.</span></h1><!--FRESH:BEGIN--><div data-fresh style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut2);margin:0 0 10px"><span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#46d17f"></span><span>Page updated <time datetime="2026-11-18" style="color:#eef4fc">November 18, 2026</time></span><span style="color:var(--mut2)">·</span><span>next FDA decision <b data-fresh-next style="color:#eef4fc">on the calendar</b> <a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span><span style="color:var(--mut2)">·</span><span data-fresh-built style="color:var(--mut2)" title="when the dataset was last rebuilt (Eastern)">Data as of Nov 18, 2026 3:12 AM ET</span></div><script>
 (function(){var e=document.querySelector('[data-fresh]');if(!e)return;
-fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+(window.pdBI=window.pdBI||fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()})).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
 /* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
@@ -204,7 +204,8 @@ document.addEventListener('keydown',function(e){
      [date, Eastern date of updated_at] for each undecided day-precision PDUFA row in the same dataset the API serves.
      Measure currency over the FORWARD PDUFA calendar only, the data users act on (decided events keep their
      historical timestamps by design). Mode (most common date) = the last real refresh. Eastern dates (RULE 1). */
-  fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){
+  /* one request: the freshness stamp's script above stores it in window.pdBI */
+  (window.pdBI=window.pdBI||fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json();})).then(function(j){
     var rows=(j&&j.calendar_updates)||[];
     var tISO=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'}),counts={},best=null,bestN=0;
     for(var i=0;i<rows.length;i++){var r=rows[i];if(!r||String(r[0])<tISO||!r[1])continue;var d=String(r[1]);counts[d]=(counts[d]||0)+1;if(counts[d]>bestN){bestN=counts[d];best=d;}}

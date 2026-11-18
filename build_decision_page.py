@@ -122,9 +122,10 @@ def svg(prices, dates, piv, ddate, outcome, fda_date=None):
             f'{mdy(pre_d[lo_i])} (T-120 to T-1). {when} '
             f'Historical price action, not a forecast.')
     runup = (pre_p[-1] / pre_p[0] - 1) * 100
-    # Design red team 2026-11-18 (change 12): a role="img" chart with no name reads as "image"; it carries its caption.
-    o[0] = o[0].replace('role="img"', 'role="img" aria-label="%s"'
-                        % html.escape("Price into the decision (T-120). " + note, quote=True), 1)
+    # Design red team 2026-11-18 (change 12): a role="img" chart with no name reads as "image". It is named as
+    # inject_a11y.py names an older page's chart: its section heading, then its caption.
+    head = f"Run-up into the decision (T-120 \u2192 T+{min(max(0, len(prices) - 1 - piv), POST)})"
+    o[0] = o[0].replace('role="img"', 'role="img" aria-label="%s"' % html.escape(head + ". " + note, quote=True), 1)
     return "".join(o), note, runup
 
 

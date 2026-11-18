@@ -138,7 +138,7 @@ def spark_label(text):
 
 
 def move_words(pct):
-    if pct is None:
+    if pct is None or pct != pct or pct in (float("inf"), float("-inf")):   # None, NaN or infinite: no move
         return "change not available"
     r = round(pct)
     return "flat" if r == 0 else f"{'up' if r > 0 else 'down'} {abs(r)}%"
@@ -237,7 +237,7 @@ def build_section(readouts, key, limit):
         s, e = window_bounds(r["ym"])
         svg, move = spark(poly_daily(key, r["t"], s, e))
         win = f"{MON3[int(r['ym'][5:7]) - 1]} {r['ym'][:4]}"
-        if move is None:
+        if move is None or move != move:
             mv = '<div style="margin-left:auto;color:#7c93b6;font-size:12px">no price data</div>'
         else:
             col = "#46d17f" if move >= 0 else "#ff7a72"

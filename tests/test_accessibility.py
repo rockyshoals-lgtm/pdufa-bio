@@ -9,16 +9,19 @@ run-up study was all tables; /readouts carried 39KB of JSON-LD marking trial rea
 homepage fetched every row of the events API (limit 3000) to print one date. This fails if:
 
   1. a public page is not at inject_a11y.py's state (the pass would change it);
-  2. a page with the site header has no "Skip to content" link ahead of the header's links, or no target after them;
-  3. an <svg role="img"> has no name, or a sparkline (64x20 or 72x20) is neither named nor hidden from screen readers;
-     or the sparkline and chart builders stop naming what they draw;
-  4. a <summary> hides its disclosure marker (list-style:none, or a ::-webkit-details-marker / ::marker rule that
-     hides it);
+  2. a page with the site header has no "Skip to content" link ahead of the header's links, or no target after them
+     (or has the header without the markers the pass places them by);
+  3. an <svg role="img"> has no name, or a sparkline (64x20 or 72x20) is neither named nor hidden from screen readers,
+     or a chart's phone copy is named differently from it; or the sparkline and chart builders stop naming what they
+     draw;
+  4. a <summary> hides its disclosure marker (list-style or list-style-type none, a display other than list-item, or
+     a ::-webkit-details-marker / ::marker rule that hides it);
   5. the field-border colour is under 3:1 against a field (#081426) or a card (#0e1c33), or a page with a text field
      lacks the rule that applies it;
   6. the screener's count line is not a live region;
   7. /readouts carries the Event ItemList again, or more than 4KB of JSON-LD;
-  8. /runup-by-year has no chart of the run-up by market-cap tier, or its chart differs from the study's medians;
+  8. /runup-by-year has no chart of the run-up by market-cap tier, or a bar does not print the median this guard
+     recomputes from the study;
   9. the homepage fetches the events API again, or build-info.json's calendar_updates differs from the dataset;
  10. the workflow does not run inject_a11y.py before inject_mobile_polish.py, the local chain does not run it, or
      quarantine_leads.py does not apply it to the pages it restores.
@@ -107,6 +110,8 @@ def main():
                 bad.append(f"/{rel}: the skip link has no single target after the header's links")
             else:
                 n_skip += 1
+        elif '<a class="brand"' in body:
+            bad.append(f"/{rel}: has the site header but not its NAVC markers, so it gets no skip link")
         # 3. charts and sparklines
         for m in A.SVG_OPEN.finditer(body):
             tag = m.group(0)
@@ -120,13 +125,24 @@ def main():
                     n_named += 1
             elif re.search(r'\bheight="20"', tag) and re.search(r'viewBox="0 0 (?:64|72) 20"', tag):
                 bad.append(f"/{rel}: a sparkline has no name and is not hidden: {tag[:90]}")
-        # 4. FAQ markers
+        # 3c. a phone copy of a chart (inject_mobile_polish.py) is named as the desktop chart before it
+        last = None
+        for m in A.SVG_OPEN.finditer(body):
+            tag = m.group(0)
+            lab = re.search(r'aria-label="([^"]*)"', tag)
+            if "pd-phs" in tag:
+                if 'role="img"' in tag and last is not None and (lab.group(1) if lab else None) != last:
+                    bad.append(f"/{rel}: a phone copy of a chart is named differently from the desktop chart")
+            elif 'role="img"' in tag and lab:
+                last = lab.group(1)
+        # 4. FAQ markers (list-style none, or a display other than list-item, drops the marker)
+        HIDE = r"list-style(?:-type)?:\s*none|display:\s*(?:block|flex|grid|inline-flex|inline-block)"
         for m in re.finditer(r"<summary\b[^>]*>", body):
-            if re.search(r"list-style:\s*none", m.group(0)):
+            if re.search(HIDE, m.group(0)):
                 bad.append(f"/{rel}: a <summary> hides its disclosure marker")
                 break
         for st in re.findall(r"<style\b[^>]*>(.*?)</style>", doc, re.S):
-            if re.search(r"summary[^{}]*\{[^}]*list-style:\s*none|details-marker\s*\{[^}]*display:\s*none|"
+            if re.search(r"(?:^|[},\s])summary(?![-\w:])[^{}]*\{[^}]*(?:" + HIDE + r")|details-marker\s*\{[^}]*display:\s*none|"
                          r"summary::marker\s*\{[^}]*(?:content:\s*(?:''|\"\")|display:\s*none)", st):
                 bad.append(f"/{rel}: a style rule hides the FAQ disclosure marker")
                 break
@@ -161,7 +177,7 @@ def main():
         import build_decision_page as D
         s, _n, _r = D.svg([10, 12, 11, 9, 10, 13, 12], ["2025-01-0%d" % i for i in range(1, 8)], 4, "2025-01-05",
                           "Approved")
-        if 'aria-label="Price into the decision (T-120). Daily close' not in s:
+        if 'aria-label="Run-up into the decision (T-120 \u2192 T+' not in s:
             bad.append("build_decision_page.py draws its chart with no name")
     except Exception as ex:  # noqa: BLE001
         bad.append(f"could not exercise the chart builders ({ex.__class__.__name__}: {ex})")
@@ -175,6 +191,23 @@ def main():
     page = io.open(os.path.join(SITE, "runup-by-year", "index.html"), encoding="utf-8", errors="replace").read()
     order = ["Nano (<$50M)", "Micro ($50M-$300M)", "Small ($300M-$2B)", "Mid ($2B-$10B)", "Large (>$10B)"]
     want = B.tier_runup_chart(list(csv.DictReader(io.open(study, encoding="utf-8-sig", errors="replace"))), order)
+    # the medians recomputed here, independently of the builder, must be the numbers the chart prints
+    import statistics
+    rows8 = list(csv.DictReader(io.open(study, encoding="utf-8-sig", errors="replace")))
+    for tier in order:
+        v = []
+        for r in rows8:
+            if r.get("mcap_tier") == tier:
+                try:
+                    x = float(r.get("T-120_T-1"))
+                except (TypeError, ValueError):
+                    continue
+                if x == x and abs(x) != float("inf"):
+                    v.append(x * 100)
+        if v:
+            txt = f"{statistics.median(v):+.1f}%".replace("-", "&minus;")
+            if f'<div class="rc-v">{txt}</div>' not in page:
+                bad.append(f"/runup-by-year: the {tier} bar does not print the study's median {txt} (n={len(v)})")
     if not want or want.count('class="rc-r"') < 4:
         bad.append("/runup-by-year: the study yields no run-up-by-tier chart")
     elif want not in page:
@@ -183,9 +216,14 @@ def main():
     # 9b. build-info carries what the home eyebrow reads
     import build_freshness_stamp as F
     bi = json.load(io.open(os.path.join(SITE, "build-info.json"), encoding="utf-8"))
-    if bi.get("calendar_updates") != F.calendar_updates():
-        bad.append("build-info.json: calendar_updates is missing or differs from the dataset "
-                   "(python build_freshness_stamp.py)")
+    # the page reads only rows dated today or later; compare those, so an Eastern midnight between the stamp and
+    # this guard does not fail it (quarantine_leads.py apply recomputes the list after restoring held rows)
+    today = F._eastern_today().isoformat()
+    cur = bi.get("calendar_updates")
+    if not isinstance(cur, list):
+        bad.append("build-info.json: no calendar_updates list (python build_freshness_stamp.py)")
+    elif ([x for x in cur if str(x[0]) >= today] != [x for x in F.calendar_updates() if str(x[0]) >= today]):
+        bad.append("build-info.json: calendar_updates differs from the dataset (python build_freshness_stamp.py)")
     # 10. wiring
     wf = io.open(os.path.join(HERE, ".github", "workflows", "pdufa-rebuild.yml"), encoding="utf-8").read()
     a, c = wf.find("python inject_a11y.py"), wf.find("python inject_mobile_polish.py")
@@ -203,7 +241,8 @@ def main():
             print("  FAIL " + x)
         if len(bad) > 30:
             print(f"  ... and {len(bad) - 30} more")
-        print("  fix: python inject_a11y.py && python inject_mobile_polish.py")
+        print("  fix: python inject_a11y.py && python inject_mobile_polish.py (pages); python build_freshness_stamp.py "
+              "(build-info); python build_runup_by_year.py (the run-up chart)")
         sys.exit(1)
     print("  PASS: skip links, named charts and sparklines, FAQ markers, 3:1 field borders, a live screener count, "
           "a light /readouts and homepage, and the run-up chart")

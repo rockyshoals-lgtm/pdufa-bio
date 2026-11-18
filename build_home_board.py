@@ -77,7 +77,7 @@ def spark_label(text):
 
 
 def move_words(pct):
-    if pct is None:
+    if pct is None or pct != pct or pct in (float("inf"), float("-inf")):   # None, NaN or infinite: no move
         return "change not available"
     r = round(pct)
     return "flat" if r == 0 else f"{'up' if r > 0 else 'down'} {abs(r)}%"
@@ -276,9 +276,10 @@ def render_decided(decs, key):
         word = "Approved" if outcome == "ap" else "CRL"
         spk, move = sparkline_reaction(poly_daily(key, tk), date)   # gold dot marks the decision day
         mv = ""
-        if move is not None:
+        if move is not None and move == move:
             mc = "#46d17f" if move >= 0 else "#ff7a72"
-            mv = f' · <b style="color:{mc}">{"+" if move >= 0 else ""}{move:.0f}%</b>'
+            # a move that rounds to zero prints "0%", as the sparkline's name says "flat" (not "-0%" or "+0%")
+            mv = f' · <b style="color:{mc}">{"0" if round(move) == 0 else f"{move:+.0f}"}%</b>'
         cards.append(
             f'<a class="{cls}" href="/fda-decision/{tk}-{date}"><span class="di">{icon}</span>'
             f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{date} · {word}{mv}</span></a>')

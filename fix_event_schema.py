@@ -141,7 +141,9 @@ def fix_page(path, url2d, name2d, tickeridx, dry):
     # Design red team 2026-11-18 (change 12): /readouts shipped about 308KB of HTML, 39KB of it one JSON-LD ItemList
     # of 150 trial readouts marked up as online Events "attended" at their ClinicalTrials.gov record. A readout is not
     # an event anyone attends, and an ItemList whose items live on another site is not one search engines use for
-    # this page. It is dropped; the page keeps its BreadcrumbList and FAQPage, which they do use.
+    # this page. It is dropped (39KB raw, about 3.5KB gzipped); the page keeps its BreadcrumbList and FAQPage. (Google
+    # has shown FAQ rich results for few sites since 2023, so the FAQPage is kept as accurate markup, not for a
+    # rich result.)
     if path.replace("\\", "/").endswith("readouts/index.html"):
         html, n_il = READOUT_ITEMLIST.subn("", html)
         if n_il and not dry:
