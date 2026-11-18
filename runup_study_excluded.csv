@@ -188,6 +188,7 @@ SNY_20251228,SNY,2025-12-28,2025-12-26,Tolebrutinib,CRL,source re-checked: page 
 CORC_20251230,CORC,2025-12-30,2025-11-24,Relacorilant (relacorilant),CRL,no published decision page (page retired or moved to another date),
 IBRX_20260116,IBRX,2026-01-16,2026-01-15,CD19 CAR-NK cell therapy  with rituximab - (QUILT-106),CRL,"decision page says its CRL label was wrong: Mislabel: FDA discussions/ex-US approval, not a CRL",
 GLSI_20260122,GLSI,2026-01-22,2026-01-21,GP2 (GLSI-100)  - (FLAMINGO-01),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+RGNX_20260208,RGNX,2026-02-08,2026-02-06,RGX-121 (clemidsogene lanparvovec),CRL,no published decision page (page retired or moved to another date),
 RGNX_20260209,RGNX,2026-02-09,2026-02-06,Ranibizumab,CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",RGNX 2026-02-08 RGX-121 (clemidsogene lanparvovec)
 NVCR_20260212,NVCR,2026-02-12,2026-02-11,Temozolomide,APPROVAL,no published decision page (page retired or moved to another date),
 EBS_20260213,EBS,2026-02-13,2026-02-12,,APPROVAL,no published decision page (page retired or moved to another date),
