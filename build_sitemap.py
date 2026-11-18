@@ -149,11 +149,82 @@ BOILER = [
 ]
 
 
-def content_hash(html):
-    """Hash of the page with template furniture removed, so lastmod tracks content."""
+# 2026-11-18 (Google SEO): site-wide statistics and countdowns that are restated on hundreds of pages.
+# The run-up study's size ("study of 1,885 FDA decisions", "(n=897)", "1,885-decision run-up study"), the
+# market-cap cohort medians quoted beside it, and the "in 16 days" / "166 business days" countdowns change
+# whenever ONE decision joins the study or a day passes. Hashed as content, they moved lastmod (and the
+# visible "Page updated" stamp and dateModified, which read this state) on 497 of 1,799 pages between the
+# Nov 12 and Nov 13 refreshes, when 48 pages had changed about their own subject. A sitemap where a third
+# of the site "changed today" every day is the untrustworthy lastmod Google says it ignores, and
+# Search Console showed 1,588 URLs discovered but never crawled. The NUMBER is masked, not the sentence:
+# a reworded or added sentence still counts as a change, and so does anything about the page's subject
+# (a new decision row, a moved date, a 13F filing, the stock's own measured run-up). The page itself
+# still shows the current figures; only the date we claim it changed stops moving for them.
+_PCT = r"-?\d+(?:\.\d+)?%"
+VOLATILE = [
+    (re.compile(r"(study of )\d[\d,]*( FDA decisions)"), r"\1#\2"),
+    (re.compile(r"(built on )\d[\d,]*( decisions)"), r"\1#\2"),
+    (re.compile(r"\d[\d,]*(-decision run-up study)"), r"#\1"),
+    (re.compile(r"(across )\d[\d,]*( past decisions)"), r"\1#\2"),
+    (re.compile(r"\(\d[\d,]*( (?:nano|micro|small|mid|large|mega)-cap decisions in our)"), r"(#\1"),
+    (re.compile(_PCT + r" median \(n=\d[\d,]*\)"), "#% median (n=#)"),
+    (re.compile(r"(median decision-day move of )" + _PCT), r"\1#%"),
+    (re.compile(r"(median peak from T-120 was )" + _PCT), r"\1#%"),
+    (re.compile(r"(median move to the day before the decision was )" + _PCT), r"\1#%"),
+    (re.compile(r"(the median stock rose )" + _PCT), r"\1#%"),
+    (re.compile(r"(but was only )" + _PCT + r"( higher the day before)"), r"\1#%\2"),
+    (re.compile(r'<span class="up">in \d+ days?</span>'), '<span class="up">in # days</span>'),
+    (re.compile(r"\d+( business days to decision)"), r"#\1"),
+    (re.compile(r"(<span>Business days away</span><b>)\d+(</b>)"), r"\1#\2"),
+    (re.compile(r"\d+ of 120 sessions elapsed, \d+ to go"), "# of 120 sessions elapsed, # to go"),
+]
+# Bumped when the hash definition changes, so the first run under a new definition can tell "the
+# definition changed" apart from "the page changed" (see last_changed). Never reuse a number.
+HASH_VERSION = 2
+
+
+def _strip_boiler(html):
     for rx in BOILER:
         html = rx.sub("", html)
+    return html
+
+
+def _digest(html):
     return hashlib.sha1(re.sub(r"\s+", " ", html).encode("utf-8", "replace")).hexdigest()[:16]
+
+
+def content_hash_v1(html):
+    """The pre-2026-11-18 definition (furniture only). Kept to migrate state written under it."""
+    return _digest(_strip_boiler(html))
+
+
+def content_hash(html):
+    """Hash of the page with template furniture and site-wide statistics removed, so lastmod tracks
+    a change to what the page says about its own subject."""
+    html = _strip_boiler(html)
+    for rx, rep in VOLATILE:
+        html = rx.sub(rep, html)
+    return _digest(html)
+
+
+_HEAD_BLOBS = None
+
+
+def head_version(key):
+    """The page as last committed (HEAD), or None. Used once per page, on the first run after the
+    hash definition changes, to ask whether the page changed under the NEW definition."""
+    global _HEAD_BLOBS
+    if _HEAD_BLOBS is None:
+        _HEAD_BLOBS = {}
+    if key in _HEAD_BLOBS:
+        return _HEAD_BLOBS[key]
+    try:
+        p = subprocess.run(["git", "show", f"HEAD:{key}"], cwd=HERE, capture_output=True, timeout=30)
+        out = p.stdout.decode("utf-8", "replace") if p.returncode == 0 else None
+    except Exception:
+        out = None
+    _HEAD_BLOBS[key] = out
+    return out
 
 
 def load_state():
@@ -186,7 +257,18 @@ def last_changed(rel, full, html):
     if ts and str(ts)[:10] != str(prev.get("date") or "")[:10]:
         ts = None
 
-    if prev and prev.get("hash") == h:
+    unchanged = bool(prev) and prev.get("hash") == h
+    if prev and not unchanged and prev.get("hv") != HASH_VERSION:
+        # State written under an older hash definition: its hash cannot be compared with h. The page is
+        # unchanged if it still matches the old definition, or if the committed copy (HEAD) and this
+        # copy agree under the new one -- i.e. only masked statistics moved since the last deploy.
+        if content_hash_v1(html) == prev.get("hash"):
+            unchanged = True
+        else:
+            head = head_version(key)
+            unchanged = head is not None and content_hash(head) == h
+
+    if unchanged:
         d = prev.get("date") or git_dates().get(key) or TODAY
     elif prev:
         d = TODAY                                   # a real content change
@@ -203,7 +285,7 @@ def last_changed(rel, full, html):
         # gets a timestamp the first time it actually changes after this.
 
     d = min(d, TODAY)             # a sitemap claiming tomorrow is a reason to distrust all of it
-    st[key] = {"hash": h, "date": d}
+    st[key] = {"hash": h, "date": d, "hv": HASH_VERSION}
     if ts:
         st[key]["ts"] = ts
     return d
