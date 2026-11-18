@@ -20,6 +20,11 @@ Checks:
   5. (2026-11-18) Each decision page's "120-day run-up (T-120→T-1)" and "Decision-day move" figures are the study's
      figures for that event (sync_decision_runup_chip.py), and no page shows the retired "low→high" chip.
      Plant: PLANT_RUNUP_STUDY=chip must FAIL.
+  6. (2026-11-18) Every row with a decision page carries its own drug's indication: the page's Indication line, or
+     for a page without one the primary-sourced entry in runup_study_indications.json naming that drug, else blank.
+     Until 11-18 the extender copied the ticker's first row's indication (Pfizer's Hympavzi "Dermatomyositis").
+     An entry that no longer fits its row (drug line edited, page gained an Indication line) fails too.
+     Plant: PLANT_RUNUP_STUDY=indication must FAIL.
 
     python tests/test_runup_study_current.py
 """
@@ -142,6 +147,45 @@ def main():
         print("   fix: python sync_decision_runup_chip.py")
     else:
         print("  PASS: every decision page's run-up and decision-day figures are the study's")
+
+    # 2026-11-18: a row's indication is its own drug's, never another row's (runup_study_events.expected_indication)
+    from runup_study_events import expected_indication, load_sourced_indications
+    sourced, ind_bad = load_sourced_indications(), []
+    for k, e in sorted(sourced.items()):
+        if not (e.get("source", "").startswith("https://") and e.get("indication") and e.get("drug")):
+            ind_bad.append(f"runup_study_indications.json {k}: entry needs drug, indication and an https source")
+    # an entry goes stale silently if the page's Drug line is edited (a typo fixed) or the page gains its own
+    # Indication line: the row would fall back to blank and still match. Fail loudly instead (red team 2026-11-18).
+    in_study = {f"{r['ticker'].strip().upper()}-{r['pdufa_date'][:10]}": r for r in rows}
+    for k, e in sorted(sourced.items()):
+        r = in_study.get(k)
+        if r is None:
+            continue   # row left the study (excluded); the entry is kept as the record of what was read
+        f = decision_facts(*k.split("-", 1))
+        if f and f.get("indication"):
+            ind_bad.append(f"runup_study_indications.json {k}: the page now has its own Indication line; drop the entry")
+        elif e.get("drug") != r.get("asset", ""):
+            ind_bad.append(f"runup_study_indications.json {k}: entry is for '{e.get('drug', '')[:30]}', the row's drug is "
+                           f"now '{r.get('asset', '')[:30]}'; re-read the source and update the entry's drug")
+    for r in rows:
+        tk, d = r["ticker"].strip().upper(), r["pdufa_date"][:10]
+        ind = r.get("indication", "")
+        if os.environ.get("PLANT_RUNUP_STUDY") == "indication" and (tk, d) == ("PFE", "2026-06-08"):
+            ind = "Dermatomyositis"   # the ticker's first row's indication, as the old extender wrote it
+        exp = expected_indication(tk, d, r.get("asset", ""), None, sourced)
+        if exp is None:
+            continue   # 2020-2024 research row with no decision page
+        if ind != exp[0]:
+            ind_bad.append(f"{tk} {d} {r.get('asset', '')[:30]}: indication '{ind[:40]}', expected "
+                           f"'{exp[0][:40]}' ({exp[1][:40]})")
+    if ind_bad:
+        ok = False
+        print(f"\nFAIL: {len(ind_bad)} study row(s) carry an indication that is not their own drug's:")
+        for x in ind_bad[:15]:
+            print(f"   {x}")
+        print("   fix: source the indication into runup_study_indications.json, then python curate_runup_study.py")
+    else:
+        print("  PASS: every row with a decision page carries its own drug's sourced indication (or none)")
 
     stats = json.load(open(STATS, encoding="utf-8"))
     if stats.get("n_events") != len(rows):

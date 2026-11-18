@@ -1,0 +1,401 @@
+{
+ "_about": "Indications for run-up study rows whose /fda-decision page carries no Indication line, each read from a primary source for THAT FDA action (FDA letter, label or FDA page, or the sponsor's own release or SEC filing) on 2026-11-18. Until then extend_runup_study.py copied the ticker's first dataset row's indication onto new rows (Pfizer's Hympavzi read 'Dermatomyositis'). curate_runup_study.py applies an entry only while its drug matches the row's drug; a page without an Indication line and without an entry here leaves the row's indication blank. tests/test_runup_study_current.py check 6 enforces it. Add an entry only from a primary source you read.",
+ "rows": {
+  "ABBV-2026-02-20": {
+   "drug": "VENCLEXTA (venetoclax) with acalabrutinib",
+   "indication": "Adults with CLL or SLL, Calquence with venetoclax",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-acalabrutinib-venetoclax-chronic-lymphocytic-leukemia-or-small-lymphocytic-lymphoma",
+   "kind": "fda_page",
+   "quote": "On February 19, 2026, the Food and Drug Administration approved acalabrutinib ... for adults with chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)",
+   "checked": "2026-11-18",
+   "note": "same FDA action as RHHBY-2026-02-20; same source"
+  },
+  "ABBV-2026-04-23": {
+   "drug": "trenibotulinumtoxinE (AGN-151586)",
+   "indication": "Moderate to severe glabellar lines",
+   "source": "https://news.abbvie.com/2026-04-23-AbbVie-Provides-Update-on-TrenibotulinumtoxinE-TrenibotE-Biologics-License-Application-in-the-U-S",
+   "kind": "company_release",
+   "quote": "evaluating TrenibotE for the treatment of moderate to severe glabellar lines",
+   "checked": "2026-11-18"
+  },
+  "ABBV-2026-05-27": {
+   "drug": "LINZESS (Iinaclotide)",
+   "indication": "Functional constipation in children 2 years and older (expanded from 6-17)",
+   "source": "https://investor.ironwoodpharma.com/press-releases/press-release-details/2026/FDA-Approves-Use-of-LINZESS-linaclotide-in-Pediatric-Patients-Two-Years-of-Age-and-Older-with-Functional-Constipation-FC/default.aspx",
+   "kind": "company_release",
+   "quote": "has approved the use of LINZESS (linaclotide) in pediatric patients 2 years of age and older with functional constipation",
+   "checked": "2026-11-18"
+  },
+  "ABBV-2026-06-16": {
+   "drug": "JUVÉDERM - (SKINVIVE) (injectable HA)",
+   "indication": "Reduce neck lines to improve neck appearance, adults over 21 (SKINVIVE by JUVEDERM)",
+   "source": "https://news.abbvie.com/2026-06-16-Allergan-Aesthetics-Receives-U-S-FDA-Approval-for-SKINVIVE-by-JUVEDERM-R-for-the-Improvement-of-Neck-Appearance",
+   "kind": "company_release",
+   "quote": "reduce neck lines for improvement of neck appearance in adults over the age of 21.",
+   "checked": "2026-11-18"
+  },
+  "ABBV-2026-06-26": {
+   "drug": "SKYRIZI (risankizumab-rzaa)",
+   "indication": "Pediatric (age 6+) moderate-to-severe plaque psoriasis and active psoriatic arthritis",
+   "source": "https://news.abbvie.com/2026-06-26-SKYRIZI-R-risankizumab-rzaa-Now-FDA-Approved-for-Pediatric-Use-in-Psoriatic-Disease",
+   "kind": "company_release",
+   "quote": "for the treatment of children six years of age and older with moderate-to-severe plaque psoriasis",
+   "checked": "2026-11-18"
+  },
+  "ACHV-2026-06-22": {
+   "drug": "Cytisinicline - (ORCA-3)",
+   "indication": "Smoking cessation in adults",
+   "source": "https://ir.achieverx.com/news-events/press-releases/detail/264/achieve-life-sciences-receives-complete-response-letter-from-fda-for-cytisinicline-nda",
+   "kind": "company_release",
+   "quote": "New Drug Application (NDA) for cytisinicline for smoking cessation in adults",
+   "checked": "2026-11-18"
+  },
+  "ALDX-2025-04-03": {
+   "drug": "Reproxalap (ADX-102) - (TRANQUILITY)",
+   "indication": "Signs and symptoms of dry eye disease",
+   "source": "https://www.sec.gov/Archives/edgar/data/1341235/000119312525072424/d946200dex992.htm",
+   "kind": "sec_filing",
+   "quote": "for the Treatment of Signs and Symptoms of Dry Eye Disease",
+   "checked": "2026-11-18"
+  },
+  "AQST-2026-02-02": {
+   "drug": "Anaphylm (dibutepinephrine) sublingual film",
+   "indication": "Type I allergic reactions incl. anaphylaxis, patients weighing 30 kg or more",
+   "source": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000005/aqst-20260130.htm",
+   "kind": "sec_filing",
+   "quote": "Type I allergic reactions, including anaphylaxis, in patients weighing 30kg or more",
+   "checked": "2026-11-18"
+  },
+  "ATRA-2025-01-16": {
+   "drug": "Tabelecleucel (tab-cel)",
+   "indication": "EBV+ post-transplant lymphoproliferative disease, age 2+, after anti-CD20 therapy",
+   "source": "https://d1io3yog0oux5.cloudfront.net/_25f88f0867c3eadb19613055a1a6147f/atarabio/news/2025-01-16_Atara_Biotherapeutics_Provides_Regulatory_and_367.pdf",
+   "kind": "company_release",
+   "quote": "as monotherapy treatment for adult and pediatric patients two years of age and older with Epstein-Barr virus positive post-transplant lymphoproliferative disease (EBV+ PTLD)",
+   "checked": "2026-11-18"
+  },
+  "ATRA-2026-01-12": {
+   "drug": "EBVALLO (Tabelecleucel (ATA 129)) - (ALLELE)",
+   "indication": "EBV+ PTLD, age 2+, after at least one prior therapy including anti-CD20",
+   "source": "https://www.sec.gov/Archives/edgar/data/1604464/000119312526010342/d34257dex991.htm",
+   "kind": "sec_filing",
+   "quote": "Epstein-Barr virus positive post-transplant lymphoproliferative disease (EBV+ PTLD)",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-02-20": {
+   "drug": "CALQUENCE (acalabrutinib) with venetoclax",
+   "indication": "Adults with CLL or SLL, Calquence with venetoclax",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-acalabrutinib-venetoclax-chronic-lymphocytic-leukemia-or-small-lymphocytic-lymphoma",
+   "kind": "fda_page",
+   "quote": "On February 19, 2026, the Food and Drug Administration approved acalabrutinib ... for adults with chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)",
+   "checked": "2026-11-18",
+   "note": "same FDA action as RHHBY-2026-02-20; same source"
+  },
+  "AZN-2026-04-28": {
+   "drug": "BREZTRI AEROSPHERE (budesonide/glycopyrrolat",
+   "indication": "Maintenance treatment of asthma, age 12+",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212122Orig1s009ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "provides for the addition of the indication of the maintenance treatment of asthma in adult and pediatric patients 12 years of age and older",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-05-22": {
+   "drug": "Datopotamab Deruxtecan (Dato-DXd) - (TROPION",
+   "indication": "Unresectable or metastatic TNBC, adults not candidates for PD-1/PD-L1 therapy",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "for the treatment of adult patients with unresectable or metastatic triple-negative breast cancer (TNBC) who are not candidates for PD-1/PD-L1 inhibitor therapy",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-05-28": {
+   "drug": "Imfinzi (durvalumab)",
+   "indication": "BCG-naive high-risk non-muscle-invasive bladder cancer (NMIBC), with BCG",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s053ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "IMFINZI, in combination with Bacillus Calmette Guérin (BCG), for the treatment of adult patients with BCG-naïve, high-risk non-muscle-invasive bladder cancer (NMIBC).",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-06-12": {
+   "drug": "TRUQAP (capivasertib) in combination with ab",
+   "indication": "PTEN-deficient metastatic prostate cancer (androgen pathway modulation-naive or -sensitive), with abiraterone",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218197Orig1s004ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "TRUQAP, in combination with abiraterone and prednisone, is indicated for treatment of adult patients with metastatic androgen pathway modulation-naïve or -sensitive (mAPMN/S) prostate cancer that is PTEN-deficient",
+   "checked": "2026-11-18"
+  },
+  "BAYRY-2026-06-15": {
+   "drug": "AMBELVIST (gadoquatrane)",
+   "indication": "MRI contrast for lesions with abnormal vascularity, CNS and body, all ages",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219627Origs1s000correctedltr.pdf",
+   "kind": "fda_letter",
+   "quote": "for use with magnetic resonance imaging (MRI) to detect and visualize lesions with abnormal vascularity in:",
+   "checked": "2026-11-18"
+  },
+  "BIIB-2026-03-30": {
+   "drug": "SPINRAZA (nusinersen)",
+   "indication": "Spinal muscular atrophy (SMA): new high-dose regimen (50 mg/5 mL and 28 mg/5 mL)",
+   "source": "https://investors.biogen.com/news-releases/news-release-details/fda-approves-new-high-dose-regimen-spinrazar-nusinersen-spinal",
+   "kind": "company_release",
+   "quote": "was approved by the U.S. Food and Drug Administration (FDA) for the treatment of spinal muscular atrophy (SMA)",
+   "checked": "2026-11-18",
+   "note": "same FDA action as IONS-2026-03-30; same source"
+  },
+  "CAPR-2025-07-11": {
+   "drug": "Deramiocel (CAP-1002) - (HOPE-2)",
+   "indication": "Cardiomyopathy associated with Duchenne muscular dystrophy",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001133869/000155837025009186/capr-20250711xex99d1.htm",
+   "kind": "sec_filing",
+   "quote": "the treatment of cardiomyopathy associated with Duchenne muscular dystrophy",
+   "checked": "2026-11-18"
+  },
+  "CORT-2025-12-31": {
+   "drug": "Relacorilant - (GRACE)",
+   "indication": "Hypertension secondary to hypercortisolism (Cushing's syndrome)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1088856/000119312525338184/d50993dex991.htm",
+   "kind": "sec_filing",
+   "quote": "as a treatment for patients with hypertension secondary to hypercortisolism",
+   "checked": "2026-11-18"
+  },
+  "CORT-2026-03-25": {
+   "drug": "Relacorilant + nab-paclitaxel - (ROSELLA)",
+   "indication": "Platinum-resistant ovarian, fallopian tube or peritoneal cancer, with nab-paclitaxel",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220641Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "for the treatment of adults with platinum-resistant epithelial ovarian, fallopian tube, or primary peritoneal cancer",
+   "checked": "2026-11-18"
+  },
+  "FBIO-2025-10-01": {
+   "drug": "CUTX-101 (copper histidinate)",
+   "indication": "Menkes disease in pediatric patients",
+   "source": "https://www.sec.gov/Archives/edgar/data/1429260/000110465925095366/fbio-20251001xex99.htm",
+   "kind": "sec_filing",
+   "quote": "intended to treat Menkes disease in pediatric patients",
+   "checked": "2026-11-18"
+  },
+  "GILD-2026-05-26": {
+   "drug": "Hepcludex (Bulevirtide) - (MYR301)",
+   "indication": "Chronic hepatitis delta virus (HDV), adults without or with compensated cirrhosis",
+   "source": "https://fda.gov/news-events/press-announcements/fda-approves-first-treatment-chronic-hepatitis-delta-virus-hdv-infection",
+   "kind": "fda_page",
+   "quote": "approved Hepcludex (bulevirtide-gmod) injection to treat chronic hepatitis delta virus (HDV) infection",
+   "checked": "2026-11-18"
+  },
+  "GILD-2026-06-24": {
+   "drug": "Trodelvy (sacituzumab govitecan-hziy) plus K",
+   "indication": "1L unresectable/metastatic TNBC: alone, or + Keytruda if PD-L1 CPS>=10",
+   "source": "https://www.gilead.com/news/news-details/2026/u-s--fda-approves-trodelvy-for-first-line-treatment-of-metastatic-triple-negative-breast-cancer",
+   "kind": "company_release",
+   "quote": "in combination with Keytruda® (pembrolizumab) or Keytruda Qlex™ (pembrolizumab and berahyaluronidase alfa-mph)",
+   "checked": "2026-11-18"
+  },
+  "GSK-2026-03-19": {
+   "drug": "Linerixibat - (GLISTEN)",
+   "indication": "Cholestatic pruritus in adults with primary biliary cholangitis (PBC)",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220295Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "This NDA provides for the use of Lynavoy (linerixibat) tablets for the treatment of cholestatic pruritus associated with primary biliary cholangitis (PBC) in adult patients.",
+   "checked": "2026-11-18"
+  },
+  "GSK-2026-06-17": {
+   "drug": "Utebzi (Tebipenem HBr) - (PIVOT-PO)",
+   "indication": "Complicated UTI incl. pyelonephritis, adults with limited or no alternative oral options",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215960Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "for the treatment of complicated urinary tract infections (cUTI), including pyelonephritis",
+   "checked": "2026-11-18"
+  },
+  "IONS-2026-03-30": {
+   "drug": "SPINRAZA (Nusinersen) - (DEVOTE)",
+   "indication": "Spinal muscular atrophy (SMA): new high-dose regimen (50 mg/5 mL and 28 mg/5 mL)",
+   "source": "https://investors.biogen.com/news-releases/news-release-details/fda-approves-new-high-dose-regimen-spinrazar-nusinersen-spinal",
+   "kind": "company_release",
+   "quote": "was approved by the U.S. Food and Drug Administration (FDA) for the treatment of spinal muscular atrophy (SMA)",
+   "checked": "2026-11-18"
+  },
+  "IONS-2026-06-24": {
+   "drug": "TRYNGOLZA (olezarsen) - (CORE)",
+   "indication": "Lower TG and acute pancreatitis risk, adults with severe hypertriglyceridemia",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218614Orig1s004ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "new indication to reduce triglycerides (TG) and the risk of acute pancreatitis in adults with severe hypertriglyceridemia",
+   "checked": "2026-11-18"
+  },
+  "JNJ-2026-03-18": {
+   "drug": "ICOTYDE (icotrokinra)",
+   "indication": "Moderate-to-severe plaque psoriasis, adults and children 12+ (>=40 kg)",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220149Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "This NDA provides for the use of Icotyde (icotrokinra) tablets for treatment of moderate-to-severe plaque psoriasis (PsO)",
+   "checked": "2026-11-18",
+   "note": "same FDA action as PTGX-2026-03-18; same source"
+  },
+  "LNTH-2026-03-06": {
+   "drug": "PYLARIFY TruVu (piflufolastat F 18) Injectio",
+   "indication": "PSMA PET imaging in men with prostate cancer (suspected metastasis or recurrence)",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220089Orig1s000lbl.pdf",
+   "kind": "fda_label",
+   "quote": "PYLARIFY TRUVU is indicated for positron emission tomography (PET) of prostate-specific membrane antigen (PSMA) positive lesions in men with prostate cancer",
+   "checked": "2026-11-18"
+  },
+  "LNTH-2026-06-26": {
+   "drug": "LNTH-2501 (Gallium-68 edotreotide)",
+   "indication": "PET localization of SSTR-positive neuroendocrine tumors, adults and children",
+   "source": "https://investor.lantheus.com/news-releases/news-release-details/lantheus-receives-complete-response-letter-fda-lnth-2501-ga-68",
+   "kind": "company_release",
+   "quote": "localization of somatostatin receptor positive neuroendocrine tumors (NETs) in adult and pediatric patients",
+   "checked": "2026-11-18"
+  },
+  "MIST-2025-03-28": {
+   "drug": "CARDAMYST (etripamil)",
+   "indication": "Conversion of acute PSVT episodes to sinus rhythm in adults",
+   "source": "https://www.sec.gov/Archives/edgar/data/1408443/000110465925029047/tm2510765d1_ex99-1.htm",
+   "kind": "sec_filing",
+   "quote": "a prescription medication in development for the conversion of acute episodes of PSVT to sinus rhythm in adults",
+   "checked": "2026-11-18"
+  },
+  "MRK-2026-02-11": {
+   "drug": "KEYTRUDA and KEYTRUDA QLEX",
+   "indication": "PD-L1+ (CPS>=1) platinum-resistant ovarian, fallopian tube or peritoneal cancer",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pembrolizumab-paclitaxel-platinum-resistant-epithelial-ovarian-fallopian-tube-or",
+   "kind": "fda_page",
+   "quote": "for adult patients with platinum-resistant epithelial ovarian, fallopian tube, or primary peritoneal carcinoma",
+   "checked": "2026-11-18"
+  },
+  "MRK-2026-06-12": {
+   "drug": "KEYTRUDA (pembrolizumab) and KEYTRUDA QLEX (",
+   "indication": "Adjuvant clear cell RCC with Welireg, intermediate-high/high risk after nephrectomy",
+   "source": "https://www.merck.com/news/fda-approves-keytruda-pembrolizumab-and-keytruda-qlex-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-with-welireg-belzutifan-for-adjuvant-treatment-of-certain-patients/",
+   "kind": "company_release",
+   "quote": "for the adjuvant treatment of adult patients with RCC with a clear cell component (ccRCC)",
+   "checked": "2026-11-18"
+  },
+  "MRK-2026-06-18": {
+   "drug": "CAPVAXIVE (Pneumococcal 21-valent Conjugate",
+   "indication": "Prevent invasive pneumococcal disease, ages 2-17 at increased risk",
+   "source": "https://www.merck.com/news/u-s-fda-approves-an-additional-indication-for-capvaxive-pneumococcal-21-valent-conjugate-vaccine-in-children-and-adolescents-aged-2-through-17-at-increased-risk-for-pneumococcal-disease/",
+   "kind": "company_release",
+   "quote": "is also indicated for the prevention of invasive disease in children and adolescents aged 2 through 17 years",
+   "checked": "2026-11-18"
+  },
+  "MRK-2026-06-24": {
+   "drug": "Trodelvy (sacituzumab govitecan-hziy) plus K",
+   "indication": "1L unresectable/metastatic TNBC, PD-L1 CPS>=10, with Trodelvy",
+   "source": "https://www.merck.com/news/fda-approves-keytruda-pembrolizumab-and-keytruda-qlex-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-with-trodelvy-sacituzumab-govitecan-hziy-as-first-line-treatment-of/",
+   "kind": "company_release",
+   "quote": "first-line treatment of adult patients with unresectable locally advanced or metastatic triple-negative breast cancer",
+   "checked": "2026-11-18"
+  },
+  "OTLK-2025-08-28": {
+   "drug": "LYTENAVA (bevacizumab-vikg) / ONS-5010 - (NORSE EIGHT)",
+   "indication": "Wet age-related macular degeneration (wet AMD)",
+   "source": "https://ir.outlooktherapeutics.com/news-releases/news-release-details/outlook-therapeutics-provides-regulatory-update-us-food-and-drug",
+   "kind": "company_release",
+   "quote": "for the treatment of wet age-related macular degeneration (wet AMD)",
+   "checked": "2026-11-18"
+  },
+  "PFE-2026-02-24": {
+   "drug": "BRAFTOVI (encorafenib) in combination with c",
+   "indication": "BRAF V600E metastatic colorectal cancer, adults, with cetuximab + FU-based chemo",
+   "source": "https://www.pfizer.com/print/pdf/node/562917",
+   "kind": "company_release",
+   "quote": "for the treatment of adult patients with metastatic colorectal cancer (mCRC) with a BRAF V600E mutation",
+   "checked": "2026-11-18"
+  },
+  "PFE-2026-05-01": {
+   "drug": "VEPPANU (vepdegestrant) - (VERITAC-2)",
+   "indication": "ER+/HER2-, ESR1-mutated advanced or metastatic breast cancer after 1+ endocrine therapy",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219835Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "for the treatment of adults with estrogen receptor (ER)-positive, human epidermal growth factor receptor 2 (HER2)-negative, ESR1-mutated advanced or metastatic breast cancer",
+   "checked": "2026-11-18"
+  },
+  "PFE-2026-06-08": {
+   "drug": "HYMPAVZI (marstacimab)",
+   "indication": "Hemophilia A or B with or without inhibitors, age 6+ (routine prophylaxis)",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761369Orig1s003ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "hemophilia A (congenital factor VIII deficiency) with or without factor VIII inhibitors, or hemophilia B (congenital factor IX deficiency) with or without factor IX inhibitors.",
+   "checked": "2026-11-18"
+  },
+  "PFE-2026-06-24": {
+   "drug": "IBRANCE (palbociclib) in combination with tr",
+   "indication": "HR+/HER2+ advanced breast cancer maintenance, + trastuzumab +/- pertuzumab + ET",
+   "source": "https://www.pfizer.com/news/press-release/press-release-detail/fda-approves-pfizers-ibrance-regimen-hr-her2-metastatic",
+   "kind": "company_release",
+   "quote": "IBRANCE® (palbociclib) in combination with trastuzumab, with or without pertuzumab, and endocrine therapy",
+   "checked": "2026-11-18"
+  },
+  "PHAR-2026-02-01": {
+   "drug": "Leniolisib - (pediactric)",
+   "indication": "APDS in children aged 4 to 11 years",
+   "source": "https://www.sec.gov/Archives/edgar/data/1828316/000182831626000004/pharminggroupreceivescompl.htm",
+   "kind": "sec_filing",
+   "quote": "as a treatment for children aged 4 to 11 years with activated phosphoinositide 3-kinase delta syndrome (APDS)",
+   "checked": "2026-11-18"
+  },
+  "PTGX-2026-03-18": {
+   "drug": "ICOTYDE (icotrokinra)",
+   "indication": "Moderate-to-severe plaque psoriasis, adults and children 12+ (>=40 kg)",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220149Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "This NDA provides for the use of Icotyde (icotrokinra) tablets for treatment of moderate-to-severe plaque psoriasis (PsO)",
+   "checked": "2026-11-18"
+  },
+  "REGN-2026-04-02": {
+   "drug": "EYLEA HD (aflibercept) - (PHOTON ext)",
+   "indication": "Up to every-20-week dosing for wet AMD and diabetic macular edema (existing indications)",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761355Orig1s005ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "to include up to every 20-week dosing for the approved indications of treatment of neovascular (wet) agerelated macular degeneration (nAMD) and diabetic macular edema (DME).",
+   "checked": "2026-11-18"
+  },
+  "REPL-2025-07-22": {
+   "drug": "RP1 (vusolimogene oderparepvec) and OPDIVO (nivolumab) - (IGNYTE-3)",
+   "indication": "Advanced melanoma (RP1 with nivolumab)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1737953/000110465925074989/tm2522849d1_ex99-1.htm",
+   "kind": "sec_filing",
+   "quote": "a Complete Response Letter (CRL) for the RP1 BLA in advanced melanoma.",
+   "checked": "2026-11-18"
+  },
+  "RHHBY-2026-02-20": {
+   "drug": "CALQUENCE plus venetoclax",
+   "indication": "Adults with CLL or SLL, Calquence with venetoclax",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-acalabrutinib-venetoclax-chronic-lymphocytic-leukemia-or-small-lymphocytic-lymphoma",
+   "kind": "fda_page",
+   "quote": "On February 19, 2026, the Food and Drug Administration approved acalabrutinib ... for adults with chronic lymphocytic leukemia (CLL) or small lymphocytic lymphoma (SLL)",
+   "checked": "2026-11-18"
+  },
+  "SPRO-2026-06-17": {
+   "drug": "Utebzi (Tebipenem HBr) - (PIVOT-PO)",
+   "indication": "Complicated UTI incl. pyelonephritis, adults with limited or no alternative oral options",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215960Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "for the treatment of complicated urinary tract infections (cUTI), including pyelonephritis",
+   "checked": "2026-11-18"
+  },
+  "UNCY-2025-06-30": {
+   "drug": "Oxylanthanum Carbonate (OLC)",
+   "indication": "Hyperphosphatemia in chronic kidney disease (CKD) patients on dialysis",
+   "source": "https://ir.unicycive.com/news/detail/104/unicycive-therapeutics-announces-receipt-of-complete",
+   "kind": "company_release",
+   "quote": "for OLC to treat hyperphosphatemia in patients with chronic kidney disease (CKD) on dialysis",
+   "checked": "2026-11-18"
+  },
+  "UNCY-2026-06-30": {
+   "drug": "Oxylanthanum Carbonate (OLC)",
+   "indication": "Hyperphosphatemia in chronic kidney disease patients on dialysis",
+   "source": "https://ir.unicycive.com/news/detail/123/unicycive-therapeutics-receives-complete-response-letter",
+   "kind": "company_release",
+   "quote": "for the treatment of hyperphosphatemia in patients with chronic kidney disease (CKD) on dialysis.",
+   "checked": "2026-11-18"
+  },
+  "VRDN-2026-06-26": {
+   "drug": "Lumvoa (veligrotug-vvze) - (THRIVE)",
+   "indication": "Thyroid eye disease",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761530Orig1s000ltr.pdf",
+   "kind": "fda_letter",
+   "quote": "Lumvoa is indicated for treatment of thyroid eye disease.",
+   "checked": "2026-11-18"
+  }
+ }
+}
