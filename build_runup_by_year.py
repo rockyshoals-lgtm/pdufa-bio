@@ -162,7 +162,10 @@ return from 120 trading days before the decision to the last session before it. 
 return from that same T-120 close to the highest close anywhere in the window, which is what was actually
 on the table for anyone who sold into the run-up rather than holding to the last session. <b>Run-up 30d</b> is the same measured
 over 30 trading days. <b>Decision day</b> is the first session on/after the decision versus the prior close.
-<b>T+5</b> is five sessions after the decision versus that same prior close. {"*" + str(TODAY.year) + " is a partial year." if str(TODAY.year) in byyr else ""}</div></div>
+<b>T+5</b> is five sessions after the decision versus that same prior close. {"*" + str(TODAY.year) + " is a partial year." if str(TODAY.year) in byyr else ""}<br><br>
+<b>Years are not like for like.</b> From 2025 every event is checked against its primary source; the 2020 to 2024 events
+are not, and still include some trial readouts recorded as approvals or CRLs and some decisions counted on two adjacent
+days. Part of the gap between the earlier and later approval rates comes from that difference, not from the FDA.</div></div>
 
 <h2>Decision-day move by market-cap tier</h2>
 <p>The single most useful number here: how far a stock typically moves on the day, by company size. This is the
@@ -176,10 +179,15 @@ answers &ldquo;how big is the move&rdquo; not &ldquo;which way&rdquo;. Smaller c
 median is several times the large-cap median.</div></div>
 
 <h2>Method &amp; limits</h2>
-<p class="note">Universe: every FDA PDUFA decision we have published in our decision archive with usable daily price
-history, {dmin} to {dmax}. Prices are split-adjusted daily closes (Polygon through 2026-11-09, FMP since; checked close by close at the switch). Returns are computed in trading days,
-not calendar days. Outcomes are taken from our published decision archive, each of which is sourced to a primary FDA,
-SEC or company filing.<br><br>
+<p class="note">Universe: FDA decisions with usable daily price history, {dmin} to {dmax}, one row per price event
+(two decisions for one company on the same day count once, and a move that answers an approval and a CRL together
+is left out because it belongs to neither). From 2025 every event is a decision in our
+<a href="/decisions">published archive</a> with a primary FDA, SEC or company source, and its outcome is the one that
+source states; records whose outcome was only inferred from the share price, whose cited source was re-read and did
+not state the FDA action, or whose own page says the label was wrong, are left out. The 2020 to 2024 events come from the research set the study began with: their
+dates and outcomes are not each linked to a primary source on this site. Prices are
+split-adjusted daily closes (Polygon through 2026-11-09, FMP since; checked close by close at the switch). Returns are
+computed in trading days, not calendar days.<br><br>
 <b>T-120 coverage.</b> {n120:,} of {len(rows):,} events ({100*n120/len(rows):.1f}%) have a full 120 sessions of prior trading history; the rest are companies that had not been listed long enough, and they are excluded from the T-120 columns rather than measured over a short window. Coverage is 100% for {years[-1]}.<br><br><b>Limits worth stating.</b> Daily closes understate intraday ranges, so every move here is a floor, not a ceiling.
 Medians hide dispersion, a typical move of a few percent coexists with a long tail of very large ones. A
 partial current year is marked with an asterisk and will move as more decisions land. Market-cap tier is assigned

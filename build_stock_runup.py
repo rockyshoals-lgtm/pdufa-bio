@@ -195,15 +195,24 @@ def render(ticker, live, ev, cohort):
 
     if ev:
         n = len(ev)
+        # 2026-11-18: the hub's "FDA decision history" lists our decision pages (2025 onward); this table lists the
+        # run-up study's events, which reach back to 2020. SRPT showed "history (1)" over a table of 5 with
+        # nothing saying why. Each row with a decision page links to it; the note says what the rest are.
+        def _date_cell(e):
+            d = (e["date"] or "")[:10]
+            if os.path.exists(os.path.join(SITE, "fda-decision", f"{ticker}-{d}", "index.html")):
+                return f'<a href="/fda-decision/{ticker}-{d}">{d}</a>'
+            return d
+        n_pages = sum(1 for e in ev if _date_cell(e).startswith("<a "))
         rows = "".join(
-            f'<tr><td class="lit" style="padding:7px 10px;white-space:nowrap">{e["date"]}</td>'
+            f'<tr><td class="lit" style="padding:7px 10px;white-space:nowrap">{_date_cell(e)}</td>'
             f'<td style="padding:7px 10px;color:var(--mut2)">{e["outcome"] or "-"}</td>'
             f'<td style="padding:7px 10px;text-align:right">{pct(e["t1"])}</td>'
             f'<td style="padding:7px 10px;text-align:right">'
             f'{pct(e["peak"]) if e["peak"] is not None else "-"}</td></tr>' for e in ev[:12])
         o.append(
             f'<div style="font-size:12px;color:var(--mut2);text-transform:uppercase;'
-            f'letter-spacing:.5px;margin:0 0 6px">{ticker}\'s past FDA decisions '
+            f'letter-spacing:.5px;margin:0 0 6px">{ticker}\'s FDA decisions in the run-up study '
             f'(n={n})</div>'
             f'<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;'
             f'font-size:13px;border:1px solid var(--line);border-radius:10px">'
@@ -216,6 +225,13 @@ def render(ticker, live, ev, cohort):
         if n > 12:
             o.append(f'<div style="font-size:12px;color:var(--mut2);margin-top:6px">'
                      f'Showing the 12 most recent of {n}.</div>')
+        if n_pages < n:
+            o.append(f'<div style="font-size:12px;color:var(--mut2);margin-top:6px">'
+                     + (f'Linked dates have a page in our decision archive. ' if n_pages else '')
+                     + f'{"The other" if n_pages else "These"} {n - n_pages} '
+                     f'{"is a decision" if n - n_pages == 1 else "are decisions"} from the 2020 to 2024 research set '
+                     f'the study began with, which has no per-decision pages, so the decision history above '
+                     f'does not list {"it" if n - n_pages == 1 else "them"}.</div>')
 
         if n >= MIN_N_FOR_MEDIAN:
             m1 = statistics.median([e["t1"] for e in ev])

@@ -113,6 +113,27 @@ def main():
     except Exception:
         pass
 
+    # 2026-11-18: only primary-sourced decisions enter, labelled from their own page (runup_study_events.py). A
+    # page that is unverified today and sourced later enters then; a second page for a price event already in
+    # the study (same ticker, same eve close) never does.
+    from runup_study_events import decision_facts, eligibility, excluded_keys, load_exclusions
+    excl = load_exclusions()
+    # curate_runup_study.py removed these as a second row of one FDA action or one price event; don't re-price them
+    same = excluded_keys("same ")
+    have_eve = {(r["ticker"], (r.get("eve_date") or "")[:10]) for r in existing}
+    facts = {}
+    for k in list(dec):
+        if f"{k[0]}_{k[1].replace('-', '')}" in same:
+            dec.pop(k)
+            continue
+        f = decision_facts(*k)
+        ok, why = eligibility(k[0], k[1], f, excl)
+        if not ok:
+            dec.pop(k)
+            continue
+        facts[k] = f
+        if f and f["outcome"] in ("APPROVAL", "CRL"):
+            dec[k] = f["outcome"]
     todo = sorted([k for k in dec if k not in have], key=lambda x: x[1])
     if a.limit:
         todo = todo[:a.limit]
@@ -156,11 +177,16 @@ def main():
         dec_vol = vols[eve_i + 1] if eve_i + 1 < len(vols) else vols[eve_i]
         vr = (dec_vol / (sum(base) / len(base))) if base else ""
 
+        if (tk, dates[eve_i]) in have_eve:
+            skipped.append((tk, d, f"same price event as a study row (eve {dates[eve_i]})")); continue
         m = meta.get(tk, {})
+        f = facts.get((tk, d)) or {}
         row = {c: "" for c in cols}
         row.update({
-            "ticker": tk, "company": m.get("company", "") or "", "asset": m.get("name", "") or "",
-            "indication": ((m.get("_d") or {}).get("indication") or "") if isinstance(m.get("_d"), dict) else "",
+            # labels from THIS decision's page; meta is only the ticker's company name (its first dataset row
+            # can be another product entirely: the 2026-11-18 tebipenem-for-neladalkib mislabel)
+            "ticker": tk, "company": m.get("company", "") or "", "asset": f.get("drug", "") or "",
+            "indication": f.get("indication", "") or "",
             "pdufa_date": d, "outcome": dec[(tk, d)],
             "outcome_bin": "1" if dec[(tk, d)] == "APPROVAL" else "0",
             "eve_price": eve_p, "eve_date": dates[eve_i],
@@ -170,8 +196,8 @@ def main():
             "vol_ratio": vr,
             # 2026-11-03: the dataset field almost never exists, so 97 rows shipped untiered and every by-size
             # figure silently excluded them. FMP's market cap on the eve date is the fallback (fmp_mcap.py).
-            "mcap_tier": mcap_tier(((m.get("_d") or {}).get("market_cap_usd")) if isinstance(m.get("_d"), dict) else None)
-                         or _fmp_tier(tk, dates[eve_i]),
+            # FMP's market cap ON THE EVE DATE; the dataset field is today's cap of whichever row came first
+            "mcap_tier": _fmp_tier(tk, dates[eve_i]),
             "cache_key": f"{tk}_{d.replace('-', '')}",
             "T-90_T-7": frac(90, 7), "T-90_T-3": frac(90, 3), "T-90_T-1": frac(90, 1),
             "T-60_T-7": frac(60, 7), "T-60_T-3": frac(60, 3), "T-60_T-1": frac(60, 1),
@@ -179,6 +205,7 @@ def main():
             "T-25_T-7": frac(25, 7), "T-25_T-3": frac(25, 3), "T-25_T-1": frac(25, 1),
         })
         added.append(row)
+        have_eve.add((tk, dates[eve_i]))
         if n % 20 == 0:
             print(f"  {n}/{len(todo)}  ({len(added)} computed, {len(skipped)} skipped)")
         time.sleep(0.09)

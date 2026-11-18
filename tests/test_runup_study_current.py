@@ -13,6 +13,13 @@ Checks:
   2. runup_study_stats.json agrees with the CSV it claims to summarise. If these disagree, pages
      are quoting a statistic computed from a different dataset than the one we ship.
   3. Published pages quote the same event count as the dataset.
+  4. (2026-11-18) Every row with a decision page is eligible (primary-sourced approval or CRL, not listed in
+     runup_study_exclusions.json), carries that page's drug and outcome, and no price event is counted twice.
+     One FDA action (same ticker, Drugs@FDA application and action date) is one row too.
+     Plants: PLANT_RUNUP_STUDY=label and =mislabel (a "label corrected" page counted as a CRL) must FAIL.
+  5. (2026-11-18) Each decision page's "120-day run-up (T-120→T-1)" and "Decision-day move" figures are the study's
+     figures for that event (sync_decision_runup_chip.py), and no page shows the retired "low→high" chip.
+     Plant: PLANT_RUNUP_STUDY=chip must FAIL.
 
     python tests/test_runup_study_current.py
 """
@@ -44,7 +51,15 @@ def main():
     arch = {(m.group(1), m.group(2))
             for m in re.finditer(r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"', html)}
     cutoff = (dt.date.today() - dt.timedelta(days=GRACE_DAYS)).isoformat()
-    due = {k for k in arch if k[1] <= cutoff}
+    # 2026-11-18: only primary-sourced decisions belong in the study (runup_study_events.eligibility), and a row
+    # curate_runup_study.py removed with a reason (runup_study_excluded.csv) is accounted for, not missing.
+    sys.path.insert(0, HERE)
+    from runup_study_events import decision_facts, eligibility, excluded_keys, load_exclusions
+    excl, gone = load_exclusions(), excluded_keys("same ")   # a second page of one FDA action or price event
+    facts = {k: decision_facts(*k) for k in arch}
+    elig = {k for k in arch if eligibility(k[0], k[1], facts[k], excl)[0]
+            and f"{k[0]}_{k[1].replace('-', '')}" not in gone}
+    due = {k for k in elig if k[1] <= cutoff}
     missing = sorted(due - have, key=lambda x: x[1])
 
     print(f"archive: {len(arch):,} decisions, {len(due):,} past the {GRACE_DAYS}-day grace window")
@@ -60,6 +75,73 @@ def main():
               "&& python runup_study_stats.py")
     else:
         print(f"  PASS: study current ({len(missing)} unmeasurable, within tolerance)")
+
+    # 2026-11-18: every study row with a decision page is eligible, carries that page's drug and outcome, and no
+    # price event is counted twice. The extender once labelled every new row with the ticker's FIRST dataset row
+    # (GSK's Nov 17 neladalkib approval read "tebipenem") and counted unverified, price-inferred pages as approvals.
+    bad_rows, eve_seen, act_seen, dupes = [], {}, {}, []
+    for r in rows:
+        tk, d = r["ticker"].strip().upper(), r["pdufa_date"][:10]
+        f = decision_facts(tk, d)
+        if os.environ.get("PLANT_RUNUP_STUDY") == "mislabel" and (tk, d) == ("GSK", "2026-11-17"):
+            f = decision_facts("EQ", "2025-03-27")   # a page that says its own CRL label was wrong
+        if f and f.get("fda_action"):
+            ka = (tk,) + f["fda_action"]
+            if ka in act_seen:
+                dupes.append(f"{tk} {d} and {act_seen[ka]}: same FDA action {ka[1]} {ka[2]}")
+            act_seen[ka] = d
+        row_ok, why = eligibility(tk, d, f, excl)   # not `ok`: that is the guard's overall verdict
+        if not row_ok:
+            bad_rows.append(f"{tk} {d}: in the study but {why}")
+        elif f:
+            if f["drug"] and r.get("asset", "") != f["drug"]:
+                bad_rows.append(f"{tk} {d}: study says '{r.get('asset', '')[:40]}', page says '{f['drug'][:40]}'")
+            if f["outcome"] in ("APPROVAL", "CRL") and r.get("outcome") != f["outcome"]:
+                bad_rows.append(f"{tk} {d}: study outcome {r.get('outcome')}, page outcome {f['outcome']}")
+        k = (tk, (r.get("eve_date") or "")[:10])
+        if k[1] and k in eve_seen:
+            dupes.append(f"{tk} {d} and {eve_seen[k]}: same eve close {k[1]}")
+        eve_seen[k] = d
+    if os.environ.get("PLANT_RUNUP_STUDY") == "label":
+        bad_rows.append("PLANT: GSK 2026-11-17 study says 'Tebipenem HBr', page says 'Nelkarmi (neladalkib)'")
+    if bad_rows or dupes:
+        ok = False
+        print(f"\nFAIL: {len(bad_rows)} study row(s) disagree with their decision page, {len(dupes)} double-counted:")
+        for x in (bad_rows + dupes)[:20]:
+            print(f"   {x}")
+        print("   fix: python curate_runup_study.py && python runup_study_stats.py")
+    else:
+        print("  PASS: every study row matches its decision page (drug, outcome, eligibility); no event counted twice")
+
+    # 2026-11-18: a decision page's run-up and decision-day figures are the study's (sync_decision_runup_chip.py).
+    # 306 pages showed an old "T-120 run-up (low→high)" figure that matched neither its own price range nor the study
+    # (LLY Jan 15, 2025: "+1.0% ($725.72→$932.06)").
+    import glob as _g
+    from sync_decision_runup_chip import OLD_CHIP, RUN_CHIP, DAY_CHIP, expected, study_figures
+    fig, chip_bad = study_figures(), []
+    for p in sorted(_g.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
+        slug = os.path.basename(os.path.dirname(p))
+        tk, d = slug.split("-", 1)
+        doc = open(p, encoding="utf-8", errors="replace").read()
+        if os.environ.get("PLANT_RUNUP_STUDY") == "chip" and slug == "LLY-2025-01-15":
+            doc = doc.replace("<span>120-day run-up (T-120→T-1)</span><b>", "<span>120-day run-up (T-120→T-1)</span><b>+1.0")
+        run, day = expected(fig, tk, d)
+        if OLD_CHIP.search(doc):
+            chip_bad.append(f"/fda-decision/{slug}: still shows the old low-high run-up chip")
+        m = RUN_CHIP.search(doc)
+        if m and run is not None and not doc[m.end(1):].startswith(run + "</b>"):
+            chip_bad.append(f"/fda-decision/{slug}: run-up chip differs from the study ({run})")
+        m = DAY_CHIP.search(doc)
+        if m and day is not None and not doc[m.end(1):].startswith(day + "</b>"):
+            chip_bad.append(f"/fda-decision/{slug}: decision-day move differs from the study ({day})")
+    if chip_bad:
+        ok = False
+        print(f"\nFAIL: {len(chip_bad)} decision page figure(s) disagree with the run-up study:")
+        for x in chip_bad[:15]:
+            print(f"   {x}")
+        print("   fix: python sync_decision_runup_chip.py")
+    else:
+        print("  PASS: every decision page's run-up and decision-day figures are the study's")
 
     stats = json.load(open(STATS, encoding="utf-8"))
     if stats.get("n_events") != len(rows):
