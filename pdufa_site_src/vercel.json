@@ -3101,6 +3101,21 @@
    "source": "/fda-decision/IRON-2026-02-15",
    "destination": "/fda-decision/IRON-2026-02-13",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNY-2025-06-02",
+   "destination": "/fda-decision/SNY-2025-06-20",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/REGN-2025-06-02",
+   "destination": "/fda-decision/REGN-2025-06-20",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNY-2025-12-28",
+   "destination": "/fda-decision/SNY-2025-12-24",
+   "permanent": true
   }
  ],
  "headers": [

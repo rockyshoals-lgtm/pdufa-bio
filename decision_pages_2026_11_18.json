@@ -1,0 +1,47 @@
+[
+ {
+  "ticker": "SNY",
+  "date": "2025-06-20",
+  "fda_action_date": "2025-06-18",
+  "outcome": "Approved",
+  "drug": "DUPIXENT (dupilumab)",
+  "indication": "Adults with bullous pemphigoid",
+  "company": "Sanofi",
+  "cap": "Large",
+  "headline": "The FDA approved Dupixent (dupilumab) for adults with bullous pemphigoid on June 18, 2025, its eighth approved use in the US. Sanofi and Regeneron announced it on June 20.",
+  "pdufa_note": "The FDA's approval letter for supplement 70 to BLA 761055 is dated June 18, 2025 (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>). Sanofi and Regeneron announced the approval on June 20, 2025 (<a href=\"https://www.globenewswire.com/news-release/2025/06/20/3102518/0/en/Press-Release-Dupixent-approved-in-the-US-as-the-only-targeted-medicine-to-treat-patients-with-bullous-pemphigoid.html\" rel=\"noopener\" style=\"color:#e3ba5e\">Sanofi's release</a>). This page replaces one dated June 2, 2025, a day nothing happened (see /corrections).",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
+  "source_label": "FDA approval letter, BLA 761055 S-070, June 18, 2025",
+  "h1": "Dupixent (dupilumab) <span class=\"g\">FDA approval for bullous pemphigoid</span>: Jun 18, 2025"
+ },
+ {
+  "ticker": "REGN",
+  "date": "2025-06-20",
+  "fda_action_date": "2025-06-18",
+  "outcome": "Approved",
+  "drug": "DUPIXENT (dupilumab)",
+  "indication": "Adults with bullous pemphigoid",
+  "company": "Regeneron Pharmaceuticals Inc.",
+  "cap": "Large",
+  "headline": "The FDA approved Dupixent (dupilumab) for adults with bullous pemphigoid on June 18, 2025, its eighth approved use in the US. Regeneron and Sanofi announced it on June 20.",
+  "pdufa_note": "The FDA's approval letter for supplement 70 to BLA 761055 is dated June 18, 2025 (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>). Regeneron and Sanofi announced the approval on June 20, 2025 (<a href=\"https://www.globenewswire.com/news-release/2025/06/20/3102518/0/en/Press-Release-Dupixent-approved-in-the-US-as-the-only-targeted-medicine-to-treat-patients-with-bullous-pemphigoid.html\" rel=\"noopener\" style=\"color:#e3ba5e\">joint release</a>). This page replaces one dated June 2, 2025, a day nothing happened (see /corrections).",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
+  "source_label": "FDA approval letter, BLA 761055 S-070, June 18, 2025",
+  "h1": "Dupixent (dupilumab) <span class=\"g\">FDA approval for bullous pemphigoid</span>: Jun 18, 2025"
+ },
+ {
+  "ticker": "SNY",
+  "date": "2025-12-24",
+  "fda_action_date": "2025-12-23",
+  "outcome": "CRL",
+  "drug": "tolebrutinib",
+  "indication": "Non-relapsing secondary progressive multiple sclerosis (nrSPMS)",
+  "company": "Sanofi",
+  "cap": "Large",
+  "headline": "The FDA issued a Complete Response Letter for tolebrutinib in non-relapsing secondary progressive multiple sclerosis on December 23, 2025, declining to approve it in its current form. Sanofi announced it on December 24.",
+  "pdufa_note": "The FDA's Complete Response Letter for NDA 219624 is dated December 23, 2025 (<a href=\"https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA CRL file</a>); in it the FDA writes that it was unable to identify a population for which the benefit could be clearly established. Sanofi announced the letter on December 24, 2025 (<a href=\"https://www.globenewswire.com/news-release/2025/12/24/3210238/0/en/Press-Release-Sanofi-provides-update-on-tolebrutinib-regulatory-submission-in-non-relapsing-secondary-progressive-multiple-sclerosis.html\" rel=\"noopener\" style=\"color:#e3ba5e\">Sanofi's release</a>). The review's target action date was December 28, 2025. This page replaces one dated December 28 (see /corrections).",
+  "source": "https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf",
+  "source_label": "FDA Complete Response Letter, NDA 219624, December 23, 2025",
+  "h1": "Tolebrutinib <span class=\"g\">FDA Complete Response Letter in nrSPMS</span>: Dec 23, 2025"
+ }
+]

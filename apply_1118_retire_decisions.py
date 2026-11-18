@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""apply_1118_retire_decisions.py -- 17 decision pages that record an FDA action that did not happen.
+"""apply_1118_retire_decisions.py -- 20 decision pages that record an FDA action that did not happen.
 
 2026-11-18 (David, 2026-11-17 Eastern: "Red team the readout and pdufa dates again, let's build our moat here too
 as the most accurate"). verify_decisions.py (2026-08-12) labelled a page "verified" when ANY 8-K/6-K filed within
@@ -68,6 +68,12 @@ RETIRE = {
     "OTLK-2026-04-07": ("/ticker/OTLK", "Outlook reported filing a formal dispute resolution request about the December 30, 2025 CRL. No new FDA action.", "Outlook Therapeutics 8-K of April 7, 2026"),
     "RGNX-2026-02-08": ("/fda-decision/RGNX-2026-02-09", "A second page for the RGX-121 Complete Response Letter, dated February 7, 2026 and announced February 9. Nothing happened on February 8.", "FDA CRL file for BLA 125840, dated February 7, 2026"),
     "IRON-2026-02-15": ("/fda-decision/IRON-2026-02-13", "A second page for the bitopertin Complete Response Letter of February 13, 2026. Nothing happened on February 15.", "FDA CRL file for NDA 220707, dated February 13, 2026"),
+    # 2026-11-18, second pass: three pages dated to a day nothing happened, for an FDA action that did happen.
+    # Each gets a new page on the day the action became public, built from price data by build_decision_page.py
+    # (decision_pages_2026_11_18.json), and the old address redirects there.
+    "SNY-2025-06-02": ("/fda-decision/SNY-2025-06-20", "The FDA approved Dupixent for bullous pemphigoid on June 18, 2025 and Sanofi announced it on June 20. Nothing happened on June 2, and the SEC filing the page cited does not mention the approval. The decision now has its page at the June 20 announcement.", "FDA approval letter for BLA 761055 S-070, June 18, 2025", "A Sanofi FDA decision page dated 2025-06-02 for the Dupixent bullous pemphigoid approval, labelled as verified from an SEC filing."),
+    "REGN-2025-06-02": ("/fda-decision/REGN-2025-06-20", "The FDA approved Dupixent for bullous pemphigoid on June 18, 2025 and Regeneron and Sanofi announced it on June 20. Nothing happened on June 2. The decision now has its page at the June 20 announcement.", "FDA approval letter for BLA 761055 S-070, June 18, 2025", "A Regeneron FDA decision page dated 2025-06-02 for the Dupixent bullous pemphigoid approval, marked as inferred from the share price."),
+    "SNY-2025-12-28": ("/fda-decision/SNY-2025-12-24", "The FDA's Complete Response Letter for tolebrutinib is dated December 23, 2025 and Sanofi announced it on December 24. December 28 was the review's target date, not the day of the letter. The decision now has its page at the December 24 announcement.", "FDA CRL file for NDA 219624, dated December 23, 2025", "A Sanofi FDA decision page dated 2025-12-28 for the tolebrutinib Complete Response Letter, labelled as verified from an SEC filing."),
 }
 SKIP_FILES = {os.path.join("corrections", "index.html"), os.path.join("changelog", "index.html")}
 
@@ -163,11 +169,11 @@ def main():
     reds = v.setdefault("redirects", [])
     have = {r["source"] for r in reds}
     for r in reds:
-        for s, (dst, _, _) in RETIRE.items():
+        for s, (dst, *_r) in RETIRE.items():
             if r["destination"].rstrip("/") == f"/fda-decision/{s}":
                 r["destination"] = dst
     added = 0
-    for s, (dst, _, _) in RETIRE.items():
+    for s, (dst, *_r) in RETIRE.items():
         if f"/fda-decision/{s}" not in have:
             reds.append({"source": f"/fda-decision/{s}", "destination": dst, "permanent": True})
             added += 1
@@ -209,7 +215,7 @@ def main():
 
     # 4. ledgers
     ver = jload("_decision_verification.json")
-    for s, (_, why, src) in RETIRE.items():
+    for s, (_, why, src, *_r) in RETIRE.items():
         e = ver["results"].get(s)
         if e and e.get("status") != "retracted":
             e["status_before_retraction"] = e.get("status")
@@ -257,13 +263,17 @@ def main():
     cor = jload("_corrections.json")
     pages = {e.get("page") for e in cor["entries"] if e.get("date") == TODAY}
     n = 0
-    for s, (dst, why, src) in RETIRE.items():
+    for e in cor["entries"]:                      # first pass wrote "A IRON FDA decision page ..."
+        m = re.match(r"A ([A-Z]{1,6}) FDA decision page dated (\d{4}-\d{2}-\d{2}), labelled", e.get("was") or "")
+        if e.get("date") == TODAY and m:
+            e["was"] = f"A decision page for {m.group(1)} dated {m.group(2)}, labelled" + e["was"][m.end():]
+    for s, (dst, why, src, *was) in RETIRE.items():
         page = f"/fda-decision/{s}"
         if page in pages:
             continue
         tk, d = s.split("-", 1)
         cor["entries"].append({"date": TODAY, "page": page,
-                               "was": f"A {tk} FDA decision page dated {d}, labelled as verified from an SEC filing.",
+                               "was": was[0] if was else f"A decision page for {tk} dated {d}, labelled as verified from an SEC filing.",
                                "now": why + " The page is retired and redirects to " + dst + ".",
                                "source": src})
         n += 1
