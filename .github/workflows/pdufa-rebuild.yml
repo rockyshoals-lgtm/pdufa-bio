@@ -156,6 +156,12 @@ jobs:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_home_board.py
 
+      # 2026-11-18 (design red team, change 7): /calendar is committed shaped (open months first, decided months
+      # folded, notes at the end). Every calendar writer below expects date order, so put the page back first;
+      # shape_calendar.py runs again just before the phone pass.
+      - name: Put /calendar back in date order for its writers
+        run: python shape_calendar.py --undo
+
       # Reconcile the calendar against the slate BEFORE marking outcomes, so a catalyst added here
       # is marked in the same run. REPL had a confirmed date, an adcomm page and a slate row, and
       # appeared on no calendar page at all; 42 dated PDUFAs were missing the same way.
@@ -948,6 +954,9 @@ jobs:
 
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
+      - name: "Calendar: open months first, decided months folded, notes last (design change 7)"
+        run: python shape_calendar.py
+
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"
         run: python inject_mobile_polish.py
 

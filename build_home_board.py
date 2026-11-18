@@ -43,8 +43,25 @@ try:
         if _tier in COH and _v.get("median_abs_pct") is not None:
             COH[_tier] = f"{float(_v['median_abs_pct']):.1f}%"
     COH[""] = COH["Small"]
-except Exception:  # noqa: BLE001  -- a missing stats file keeps the last typed values
-    pass
+    COHN = {_k.split(" ")[0]: int(_v["n"]) for _k, _v in _cs.items() if _v.get("n")}
+    _st = json.load(open(os.path.join(HERE, "runup_study_stats.json"), encoding="utf-8"))
+    COHY = (str(_st.get("date_min") or "")[:4], str(_st.get("date_max") or "")[:4])
+except Exception:  # noqa: BLE001  -- no stats file: no chips, rather than a figure nobody can trace
+    COHN, COHY = {}, ("", "")
+
+
+def coh_chip(cap):
+    """2026-11-18 (design red team, change 6): the chip read "3.5% cohort" with no label, so it could read as a
+    probability. It is the median size of the decision-day move, up or down, for the company's market-cap tier in the
+    run-up study; the tooltip and the screen-reader text now say so, with the tier, the years and the n. A card with no
+    recorded tier shows no chip: it used to borrow the small-cap figure without saying so."""
+    if cap not in COH or not cap or cap not in COHN:
+        return ""
+    lab = (f"{cap}-cap median decision-day move, up or down, {COHY[0]} to {COHY[1]}, n={COHN[cap]:,}"
+           if all(COHY) else f"{cap}-cap median decision-day move, up or down, n={COHN[cap]:,}")
+    return (f'<span class="coh" title="{lab}"><span aria-hidden="true">{COH[cap]}<i>cohort</i></span>'
+            f'<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">'
+            f'{lab}: {COH[cap]}</span></span>')
 
 
 def load_key():
@@ -182,10 +199,24 @@ def load_slate():
                     return True
         return False
 
+    # 2026-11-18 (design red team, change 8): the drug-name match deleted a live goal of a drug that already has one
+    # approval. Roche's giredestrant was approved with everolimus (Wilserdly, 2026-11-16), and the board dropped
+    # giredestrant's separate adjuvant application (lidERA, goal 2026-11-30) while /calendar, the lede and the
+    # dataset all listed it as upcoming. One drug can hold several applications. When the dataset holds this goal as
+    # its own open row, the dataset decides: it is upcoming.
+    ds = _dataset_rows()
+
+    def open_in_dataset(tk, gdate, gdrug):
+        gtok = _drug_tokens(gdrug)
+        return any(r.get("t") == tk and r.get("type") == "PDUFA" and str(r.get("d") or "")[:10] == gdate
+                   and r.get("st") in ("Upcoming", "Awaiting") and (not gtok or gtok & _drug_tokens(r.get("name")))
+                   for r in ds)
+
     cats = [c for c in slate["catalysts"] if c.get("ticker") and c.get("date")
             and str(c["date"])[:10] >= grace
-            and not resolved(c["ticker"].upper(), str(c["date"])[:10],
-                             c.get("drug") or c.get("drug_name") or "")]
+            and (open_in_dataset(c["ticker"].upper(), str(c["date"])[:10], c.get("drug") or c.get("drug_name") or "")
+                 or not resolved(c["ticker"].upper(), str(c["date"])[:10],
+                                 c.get("drug") or c.get("drug_name") or ""))]
     # collapse accidental duplicates on (ticker, date); keep the richest drug name so the board
     # never shows the same catalyst twice even if the slate has a stray dupe
     best = {}
@@ -292,12 +323,27 @@ def window_of(tk, date, rows, drug=""):
     return window_label(wins[0]) if len(wins) == 1 else None
 
 
+def event_link(tk, date, drug, ds):
+    """The goal's own event page (/pdufa/RHHBY-giredestrant), found as open_in_dataset finds the row, else the
+    ticker's page. Change 8: the board was the homepage's one list of next decisions, and the separate link list
+    under it (which linked the event pages) is gone, so the cards link the pages a reader means."""
+    gtok = _drug_tokens(drug)
+    for r in ds:
+        u = str(r.get("url") or "")
+        if (r.get("t") == tk and r.get("type") == "PDUFA" and str(r.get("d") or "")[:10] == date
+                and u.startswith("/pdufa/") and (not gtok or gtok & _drug_tokens(r.get("name")))
+                and os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html"))):
+            return u
+    return link_for(tk)
+
+
 def render_upcoming(cats, key):
     rows = []
     ds = _dataset_rows()
     for c in cats:
         tk, cap = c["ticker"], c.get("cap", "")
         date = str(c["date"])[:10]
+        href = event_link(tk, date, c.get("drug") or c.get("drug_name") or "", ds)
         win = window_of(tk, date, ds, c.get("drug") or c.get("drug_name") or "")
         if win:
             # No countdown: the box shows the window, and "PDUFA window ..." is not a day the hydrator can match.
@@ -308,11 +354,11 @@ def render_upcoming(cats, key):
                 big, small, label = "TBA", "date", "PDUFA date not announced"
             drug = esc(c.get("drug") or c.get("name") or tk)
             rows.append(
-                f'<a class="row" href="{link_for(tk)}"><span class="cd"><b>{esc(big)}</b>'
+                f'<a class="row" href="{href}"><span class="cd"><b>{esc(big)}</b>'
                 f'<i>{esc(small)}</i></span>'
                 f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
                 f'<span class="dg">{drug} · {esc(label)}</span></span>{sparkline(poly_closes(key, tk))}'
-                f'<span class="coh">{COH.get(cap, "±3%")}<i>cohort</i></span></a>')
+                f'{coh_chip(cap)}</a>')   # 2026-11-18: window rows get the same labeled chip (change 6 missed them)
             continue
         d = (TODAY - dt.date.fromisoformat(date)).days * -1
         # A PDUFA date that has passed with no outcome posted yet must not render as "-1 days".
@@ -323,11 +369,11 @@ def render_upcoming(cats, key):
         drug = esc(c.get("drug") or c.get("name") or tk)
         spk = sparkline(poly_closes(key, tk))
         rows.append(
-            f'<a class="row" href="{link_for(tk)}"><span class="cd"><b>{cd_n}</b>'
+            f'<a class="row" href="{href}"><span class="cd"><b>{cd_n}</b>'
             f'<i>{cd_u}</i></span>'
             f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
             f'<span class="dg">{drug} · PDUFA {date}</span></span>{spk}'
-            f'<span class="coh">{COH.get(cap, "±3%")}<i>cohort</i></span></a>')
+            f'{coh_chip(cap)}</a>')
     return "".join(rows)
 
 
@@ -444,18 +490,39 @@ def freshness_label():
     best = max(counts, key=counts.get)
     y, m, dd = (int(x) for x in best.split("-"))
     age = (TODAY - dt.date(y, m, dd)).days
-    return f"Data through {MON3[m - 1]} {dd} · free, no login", age
+    # Design change 8 (2026-11-18): the homepage carries one date stamp, in the freshness block under the h1. The
+    # eyebrow names the rows' own date once they are older than yesterday's refresh (the daily rebuild runs overnight
+    # Eastern), which is when a reader needs it. Red team: a week of silent staleness was too long.
+    if age > 1:
+        return f"Data through {MON3[m - 1]} {dd} · free, no login", age
+    return "Free, no login", age
 
 
 def stamp_freshness(html):
     label, age = freshness_label()
     if not label:
         return html
-    html = re.sub(r'(<span id="fresh">).*?(</span>)', lambda m: m.group(1) + label + m.group(2),
+    html = re.sub(r'(<span id="fresh"[^>]*>).*?(</span>)', lambda m: m.group(1) + label + m.group(2),
                   html, count=1, flags=re.S)
     if age is not None and age > 7:  # never overstate currency: dim the dot server-side too
-        html = html.replace('<span class="dot"></span><span id="fresh">',
-                            '<span class="dot" style="background:#e3ba5e;box-shadow:none"></span><span id="fresh">', 1)
+        html = html.replace('<span class="dot"></span><span id="fresh"',
+                            '<span class="dot" style="background:#e3ba5e;box-shadow:none"></span><span id="fresh"', 1)
+    return html
+
+
+TAGLINE = re.compile(r'\s*<p class="lede">.*?</p>', re.S)
+CTA = re.compile(r'\s*<div class="cta">.*?</div>', re.S)
+
+
+def trim_hero(html):
+    """Design red team 2026-11-18 (change 8). Above the first date the homepage stacked three freshness stamps
+    ("Data through Nov 18", "Page updated November 18, 2026", "Data as of Nov 18, 2026 3:12 AM ET"), two intro
+    paragraphs, and two buttons that repeat the links on the two lists below them. One stamp stays, under the h1
+    (build_freshness_stamp.py, home variant: the content date, with the rebuild time as its tooltip). The eyebrow
+    names a date only when the rows are stale (freshness_label). The one sentence is build_hub_lede.py's. The
+    tagline and the buttons go. Idempotent."""
+    html = TAGLINE.sub("", html, count=1)
+    html = CTA.sub("", html, count=1)
     return html
 
 
@@ -504,6 +571,7 @@ def main():
     html = replace_block(html, '<div class="decs">', render_decided(decs, key))
     html = stamp_study_size(html)  # keep the headline study count from drifting
     html = stamp_freshness(html)   # server-render the "Data through {date}" badge for non-JS crawlers
+    html = trim_hero(html)         # one sentence and one stamp above the first date (design change 8)
 
     if a.dry_run:
         print("\nDRY RUN -- not written.")

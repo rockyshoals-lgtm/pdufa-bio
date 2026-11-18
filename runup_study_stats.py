@@ -93,7 +93,7 @@ out["cohort_abs_move"] = {}
 for t in order:
     if tiers.get(t):
         m = st.median(tiers[t])
-        out["cohort_abs_move"][t] = {"median_abs_pct": round(m, 2), "n": len(tiers[t])}
+        out["cohort_abs_move"][t] = {"median_abs_pct": round(m, 4), "n": len(tiers[t])}  # 4 dp: 3.4464 prints 3.4; 3.45 printed 3.5
         print(f"    {t:22s} {m:5.1f}%   (n={len(tiers[t])})")
 
 print("\n  BY YEAR")
