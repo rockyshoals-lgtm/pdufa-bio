@@ -210,8 +210,11 @@ def render(p, series):
 
     out.append(
         f'<p style="font-size:11.5px;color:var(--mut2);line-height:1.65;margin:14px 0 0">'
-        f'Compiled from primary sources and last reviewed {esc(p.get("as_of",""))}. '
-        f'Every figure above links to the filing, regulator document or journal it came from. '
+        + (f'Compiled from primary sources and last fully reviewed {esc(p.get("as_of",""))}; '
+           f'regulatory status updated {esc(p["status_updated"])}. '
+           if p.get("status_updated") else
+           f'Compiled from primary sources and last reviewed {esc(p.get("as_of",""))}. ')
+        + f'Every figure above links to the filing, regulator document or journal it came from. '
         f'This is information, not investment advice, and nothing here forecasts an FDA decision.'
         f'</p>')
     out.append('</section>')

@@ -134,6 +134,12 @@
    "document": "XORTX Provides Update on FDA Type B Meeting Request",
    "finding": "Type B meeting responses only; NDA not yet filed. Page claiming approval is wrong.",
    "checked": "2026-11-18"
+  },
+  "CAPR-2024-09-24": {
+   "reason": "research row is not an FDA action: Capricor announced its intent to file a BLA that day; deramiocel has never been approved",
+   "cited_source": "https://www.capricor.com/investors/news-events/press-releases/detail/300/capricor-therapeutics-reports-third-quarter-2024-financial",
+   "document": "Capricor Therapeutics third quarter 2024 results release, November 13, 2024",
+   "finding": "The release lists 'Announced intent to file a biologics license application (BLA) for deramiocel' and a rolling BLA submission begun October 2024, and states 'Deramiocel is an Investigational New Drug and is not approved for any indications.' The 2024-09-24 row recorded that program update as an APPROVAL. Re-checked 2026-11-18 (design red team)."
   }
  }
 }

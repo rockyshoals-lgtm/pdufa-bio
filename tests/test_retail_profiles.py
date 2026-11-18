@@ -35,6 +35,22 @@ PROFILES = os.path.join(HERE, "retail_profiles")
 REQUIRED = ("ticker", "company", "asset", "plain", "technical", "results", "events", "caveats")
 VERDICTS = {"met", "missed", "contested", "note"}
 BEGIN, END = "<!--DEEPDIVE:BEGIN-->", "<!--DEEPDIVE:END-->"
+DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
+TODAY = __import__("datetime").datetime.now(
+    __import__("zoneinfo").ZoneInfo("America/New_York")).date().isoformat()
+
+
+def _live_pdufas():
+    if not os.path.exists(DATASET):
+        return []
+    m = re.search(r"export default (\[.*\])",
+                  open(DATASET, encoding="utf-8", errors="replace").read(), re.S)
+    rows = json.loads(m.group(1)) if m else []
+    return [e for e in rows if e.get("type") == "PDUFA" and e.get("st") == "Upcoming"
+            and e.get("dp") == "day" and e.get("d")]
+
+
+LIVE = _live_pdufas()
 
 
 def main():
@@ -94,6 +110,28 @@ def main():
                 ok = False
                 print(f"  FAIL {t}: reaction '{rr.get('what')}' hard-codes a percentage. "
                       f"Moves are measured from daily closes at build time, not typed.")
+
+        # 2026-11-18 design red team: CAPR's dossier said "the PDUFA date of 22 August 2026 stands"
+        # for three months after the FDA moved it to 22 November, four days before the decision.
+        # A dossier whose status still names an expected decision must name the date the dataset
+        # carries for that ticker's live PDUFA, and must not name a date already past.
+        st = p.get("status") or {}
+        if st.get("date") and "expected" in str(st.get("label", "")).lower():
+            live = sorted(e["d"] for e in LIVE if str(e.get("t", "")).upper() == t.upper())
+            if live and st["date"] not in live:
+                ok = False
+                print(f"  FAIL {t}: deep dive says the decision is expected {st['date']}, but the "
+                      f"dataset's live PDUFA date is {', '.join(live)}. Update the profile's status, "
+                      f"its caveats and its timeline, and set status_updated.")
+            if st["date"] < TODAY:
+                ok = False
+                print(f"  FAIL {t}: deep dive still says a decision is expected on {st['date']}, "
+                      f"which has passed")
+            for cav in p.get("caveats") or []:
+                for d in re.findall(r"\b(\d{1,2} (?:January|February|March|April|May|June|July|"
+                                    r"August|September|October|November|December) \d{4}) stands", cav):
+                    ok = False
+                    print(f"  FAIL {t}: caveat says the date of {d} stands; the status says {st['date']}")
 
         page = os.path.join(SITE, "ticker", t, "index.html")
         if os.path.exists(page):
