@@ -50,6 +50,13 @@ def main():
     known = {d for d in os.listdir(os.path.join(SITE, "ticker"))
              if os.path.isdir(os.path.join(SITE, "ticker", d))}
 
+    def own_page(r):
+        u = str(r.get("url") or "").split("#")[0].split("?")[0].rstrip("/")
+        if re.match(r"^/(?:pdufa|fda-decision|adcomm|readout|readouts)/[A-Za-z0-9.\-]+$", u) and \
+                os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html")):
+            return u
+        return None
+
     def has_pdufa_page(t):
         return os.path.exists(os.path.join(SITE, "pdufa", t, "index.html"))
 
@@ -71,8 +78,16 @@ def main():
         ta = esc(r.get("ta") or "")
         dp = r.get("dp") or "day"
         dtxt = d + ("" if dp == "day" else " (est.)")
-        # only link the drug to /pdufa/<T> when that page really exists; otherwise plain text
-        drug_cell = f'<a href="/pdufa/{t}">{nm}</a>' if (nm and has_pdufa_page(t)) else (nm or "n/a")
+        # The row's own page when it has one (design red team 2026-11-18, change 4: the screener linked every
+        # row, readouts included, to /pdufa/<T>, while the calendar linked the event's own page); otherwise a
+        # PDUFA row links /pdufa/<T> when that page really exists, and anything else is plain text.
+        own = own_page(r)
+        if nm and own:
+            drug_cell = f'<a href="{esc(own)}">{nm}</a>'
+        elif nm and r.get("type") == "PDUFA" and has_pdufa_page(t):
+            drug_cell = f'<a href="/pdufa/{t}">{nm}</a>'
+        else:
+            drug_cell = nm or "n/a"
         trs.append(
             f'<tr><td><a href="/ticker/{t}">{t}</a></td>'
             f'<td>{dtxt}</td><td>{typ}</td>'

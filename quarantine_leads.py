@@ -239,6 +239,18 @@ def _git_show(path):
     return r.stdout.decode("utf-8", "replace") if r.returncode == 0 else None
 
 
+def _load_event_links():
+    """(fn(doc, rel) -> doc with retarget_event_links.py applied, the set of redirected /pdufa/ URLs); (None, set())
+    if the pass cannot load, so a hold is never blocked by it."""
+    try:
+        import retarget_event_links as RL
+        tg = RL.targets()
+        return (lambda doc, rel: RL.apply(doc, rel, tg)), set(tg)
+    except Exception as ex:  # noqa: BLE001
+        print(f"  note: event-link pass unavailable for restored pages ({ex.__class__.__name__})")
+        return None, set()
+
+
 def held_paths(row, slug_hint=None):
     """The pages that render ONLY this row (shared pages keep rebuilding)."""
     out = []
@@ -292,6 +304,7 @@ def cmd_apply(a):
         if n and not a.dry_run:
             io.open(DATASET, "w", encoding="utf-8").write(new)
         restored.append(f"dataset rows x{n}")
+    _event_links = None
     for rid in held_ids:
         slug = rid[5:] if rid.startswith("drug:") else None
         row = rows.get(rid) or {}
@@ -299,6 +312,17 @@ def cmd_apply(a):
             old = _git_show(p)
             if old is None:
                 continue
+            # 2026-11-18 (design change 4): a bare /pdufa/{T} page this build retired into a redirect to the event's
+            # own page stays retired (vercel.json sends it there); and a restored page's event links go straight to
+            # the event's own page, as retarget_event_links.py makes every other page's.
+            rel = os.path.relpath(p, SITE).replace("\\", "/")
+            url = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
+            if _event_links is None:
+                _event_links = _load_event_links()
+            if url and not os.path.exists(p) and url in _event_links[1]:
+                continue
+            if _event_links[0]:
+                old = _event_links[0](old, rel)
             cur = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
             if cur != old:
                 if not a.dry_run:

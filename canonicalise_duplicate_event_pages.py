@@ -50,15 +50,45 @@ DUPES = {"ABBV-tavapadon-2": "ABBV-tavapadon", "NVO-cagrisema": "NVO-am833",
          "IRD": "IRD-phentolamine-ophthalmic", "VTRS-mr-141": "IRD-phentolamine-ophthalmic",
          # 2026-11-17 currency audit: the pre-acquisition Nuvalent page for neladalkib still indexed beside the
          # GSK page (GSK completed the Nuvalent acquisition 2026-07-15). One NDA, one goal date; GSK's is kept.
-         "NUVL-neladalkib": "GSK-neladalkib"}
+         "NUVL-neladalkib": "GSK-neladalkib",
+         # 2026-11-18 design red team (change 4, one page per event): three decided events still had an indexable
+         # bare /pdufa/{T} page beside the drug-slug page, both self-canonical. /pdufa/INCY still counted down to a
+         # Sep 26 goal ("56 business days to decision") while /pdufa/INCY-zilurgisertib carries the decision;
+         # /pdufa/INO and /pdufa/SMMT repeated their twins' decisions under other titles. The drug-slug page is kept:
+         # a bare /pdufa/{T} becomes the ticker's index the day the ticker has a new goal date
+         # (build_pdufa_ticker_index.py), and the canonical must not point at that.
+         "INCY": "INCY-zilurgisertib", "INO": "INO-ino-3107-dna", "SMMT": "SMMT-ivonescimab"}
+INDEX_H1 = "<h1>{t} FDA decision dates</h1>"
+
+
+def is_ticker_index(slug, doc):
+    """A bare /pdufa/{T} that build_pdufa_ticker_index.py has turned into the ticker's index is no duplicate of an
+    event page any more; it is left alone (and the guard skips it)."""
+    return "-" not in slug and INDEX_H1.format(t=slug) in doc
+
+
+def active():
+    """DUPES without the bare entries that are now ticker indexes."""
+    out = {}
+    for dup, prim in DUPES.items():
+        p = os.path.join(SITE, "pdufa", dup, "index.html")
+        doc = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else ""
+        if not is_ticker_index(dup, doc):
+            out[dup] = prim
+    return out
+
+
 SKIP = re.compile(r"[\\/]_pdufa_(x?bak\d*|bak\d*)[\\/]|[\\/]_[a-z]+bak")
 
 
 def main():
-    for dup, prim in DUPES.items():
+    dupes = active()
+    for dup, prim in dupes.items():
         p = os.path.join(SITE, "pdufa", dup, "index.html")
         if not os.path.exists(os.path.join(SITE, "pdufa", prim, "index.html")):
             print(f"FAIL primary /pdufa/{prim} missing"); return 1
+        if not os.path.exists(p):
+            continue
         t = io.open(p, encoding="utf-8").read()
         t, n1 = re.subn(r'<link rel="canonical" href="[^"]*"',
                         f'<link rel="canonical" href="https://www.pdufa.bio/pdufa/{prim}"', t)
@@ -111,7 +141,7 @@ def main():
         rel = os.path.relpath(f, SITE).replace("\\", "/")
         t = io.open(f, encoding="utf-8", errors="replace").read()
         o = t
-        for dup, prim in DUPES.items():
+        for dup, prim in dupes.items():
             if rel == f"pdufa/{dup}/index.html":
                 continue
             t = re.sub(rf'(href=")(?:https://www\.pdufa\.bio)?/pdufa/{re.escape(dup)}(["/#?])', rf"\g<1>/pdufa/{prim}\2", t)
@@ -123,7 +153,7 @@ def main():
     if os.path.exists(sm):
         t = io.open(sm, encoding="utf-8").read()
         o = t
-        for dup in DUPES:
+        for dup in dupes:
             t = re.sub(rf"\s*<url>\s*<loc>https://www\.pdufa\.bio/pdufa/{re.escape(dup)}/?</loc>.*?</url>", "", t, flags=re.S)
         if t != o:
             io.open(sm, "w", encoding="utf-8").write(t); print("sitemap.xml: duplicates removed")

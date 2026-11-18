@@ -27,6 +27,27 @@ So this is a standing rule, run daily, not a repair:
 Drug-slugged redirects (/pdufa/LNTH-lnth-2501 -> the June decision) are untouched: they name a
 specific finished event and remain correct forever.
 
+ONE EVENT, ONE PAGE (design red team 2026-11-18, change 4). Four days before Capricor's Nov 22 decision the one
+event had three pages: /pdufa/CAPR (the original event page, kept by rule 3 because its headline names
+deramiocel), /pdufa/CAPR-deramiocel (the page the dataset, the calendar and the home cards link) and /ticker/CAPR
+(the company hub, which alone carried the sourced dossier). They differed in depth, fonts and facts, and the home
+page and the screener linked different ones. Ten tickers had the same split. So, on top of rules 1 to 3:
+
+  4. The event's own page is the one the dataset row links (/pdufa/{T}-{drug}, built by build_pdufa_event_pages.py).
+     A bare /pdufa/{T} is never a second page for an event that has one: rule 3 keeps it only for an upcoming drug
+     with no page of its own.
+  5. When /pdufa/{T} would list nothing but that one event (one upcoming goal, no past decision, nothing withdrawn,
+     and no dataset row that links /pdufa/{T} itself), it is a 301 to the event's own page and its file is
+     removed; rule 1 removes that redirect again the day a second event appears, and the index takes its place.
+     Otherwise it is the index, and each upcoming row links the event's own page (it linked /calendar).
+  6. An event page that loses its bare twin gets the twin's price chart markers, so refresh_event_page_currency.py
+     (which runs after this step) draws the 120-day chart there.
+  7. A decided event's bare twin that canonicalise_duplicate_event_pages.py DUPES names (INCY, INO, SMMT, IRD) is a
+     301 to its drug-slug page too, while the ticker has no upcoming goal date.
+  retarget_event_links.py then points every internal link at the page the redirect lands on, and
+  build_retail_pages.py puts a ticker's dossier on its event page (the hub keeps a pointer).
+  tests/test_one_event_one_page.py holds all of it.
+
     python build_pdufa_ticker_index.py [--dry-run]
 """
 import argparse, datetime as dt, html, json, os, re, sys
@@ -96,6 +117,34 @@ and company filings. pdufa.bio is not affiliated with the FDA.</div>
 """
 
 
+def own_page(r, t):
+    """The event's own page: the /pdufa/ page its dataset row links, when that is not the bare /pdufa/{T} and exists."""
+    u = str(r.get("url") or "").split("#")[0].split("?")[0].rstrip("/")
+    if re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", u) and u != f"/pdufa/{t}" \
+            and os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html")):
+        return u
+    return None
+
+
+CHART = re.compile(r"<!--EVRUNUP:B(?::[A-Z0-9.\-]+)?-->|<h2>[A-Z0-9.\-]+ run-up into the PDUFA \(last ~120 days\)</h2>")
+
+
+def carry_chart(twin, dest, t):
+    """Rule 6: the twin drew the event's 120-day price chart; its page now gets the (empty) markers, before its Key
+    facts, and refresh_event_page_currency.py draws them. Idempotent."""
+    if not CHART.search(twin):
+        return False
+    p = os.path.join(SITE, *dest.strip("/").split("/"), "index.html")
+    doc = open(p, encoding="utf-8", errors="replace").read()
+    if "<!--EVRUNUP:B" in doc:
+        return False
+    at = doc.find("<h2>Key facts</h2>")
+    if at < 0:
+        return False
+    open(p, "w", encoding="utf-8").write(doc[:at] + f"<!--EVRUNUP:B:{t}--><!--EVRUNUP:E-->" + doc[at:])
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
@@ -126,19 +175,59 @@ def main():
         if str(r.get("st", "")).lower() not in ("decided", "withdrawn") and str(r.get("d", "")) >= TODAY:
             up_by.setdefault(t, []).append(r)
 
-    # 1. redirect hygiene
+    wd_by = {}
+    for r in rows:
+        if r.get("type") == "PDUFA" and r.get("t") and str(r.get("st", "")).lower() == "withdrawn":
+            wd_by.setdefault(str(r["t"]).upper(), []).append(r)
+
+    # 4 + 5. the page each upcoming event owns, and the tickers whose bare URL becomes a redirect to it
+    sole = {t: own_page(ups[0], t) for t, ups in up_by.items()
+            if len(ups) == 1 and own_page(ups[0], t) and not arch.get(t) and not wd_by.get(t)
+            and not any(str(r.get("url") or "") == f"/pdufa/{t}" for r in all_by.get(t, []))}
+    # 7. a bare page the duplicate map names as the twin of the same ticker's drug-slug page (a decided event whose
+    #    two pages were both kept: /pdufa/INCY still counted down to a goal date the drug-slug page records as
+    #    decided) is retired the same way while the ticker has no upcoming goal; rule 1 drops the redirect again
+    #    the day it has one, and the bare URL becomes the ticker's index
+    try:
+        from canonicalise_duplicate_event_pages import DUPES
+    except ImportError:
+        DUPES = {}
+    twins = {d: f"/pdufa/{pr}" for d, pr in DUPES.items()
+             if re.match(r"^[A-Z]{1,6}$", d) and pr.startswith(d + "-") and d not in up_by
+             and os.path.exists(os.path.join(SITE, "pdufa", pr, "index.html"))}
+    retire = dict(twins)
+    retire.update(sole)
+
+    # 1. redirect hygiene (a bare redirect stays only where rule 5 wants it, with its destination)
     cfg = json.load(open(VJ, encoding="utf-8"))
-    kept, dropped = [], []
+    kept, dropped, added = [], [], []
     for rd in cfg.get("redirects", []):
         m = re.match(r"^/pdufa/([A-Z]{1,6})$", str(rd.get("source", "")))
-        if m and m.group(1) in up_by:
+        if (m and m.group(1) in up_by and rd.get("destination") != sole.get(m.group(1))) or \
+                (m and m.group(1) in twins and rd.get("destination") != twins[m.group(1)]):
             dropped.append(rd["source"])
             continue
         kept.append(rd)
-    if dropped and not a.dry_run:
+    have = {str(rd.get("source")) for rd in kept}
+    for t, dest in sorted(retire.items()):
+        if f"/pdufa/{t}" not in have:
+            kept.append({"source": f"/pdufa/{t}", "destination": dest, "permanent": True})
+            added.append(f"/pdufa/{t} -> {dest}")
+    if (dropped or added) and not a.dry_run:
         cfg["redirects"] = kept
         json.dump(cfg, open(VJ, "w", encoding="utf-8"), indent=1)
     print(f"stale bare-ticker redirects removed: {len(dropped)} {dropped}")
+    print(f"bare-ticker redirects to the one event's own page added: {len(added)} {added}")
+    retired = 0
+    for t, dest in sorted(retire.items()):
+        p = os.path.join(SITE, "pdufa", t, "index.html")
+        if os.path.exists(p):
+            if not a.dry_run:
+                if t in sole:
+                    carry_chart(open(p, encoding="utf-8", errors="replace").read(), dest, t)
+                os.remove(p)
+            retired += 1
+    print(f"bare pages retired behind a redirect: {retired}")
 
     # 2 + 3. index pages
     STOP = {"the", "with", "plus", "and", "for", "cream", "tablet", "tablets", "capsule",
@@ -149,10 +238,6 @@ def main():
     # of up_by, so its generated index page was never rewritten and kept "1 upcoming ... Oct 10".
     # A generated index (h1 "{T} FDA decision dates") is now rebuilt for every ticker with a PDUFA
     # row, upcoming or not; withdrawn applications get their own dated section.
-    wd_by = {}
-    for r in rows:
-        if r.get("type") == "PDUFA" and r.get("t") and str(r.get("st", "")).lower() == "withdrawn":
-            wd_by.setdefault(str(r["t"]).upper(), []).append(r)
     for t in all_by:
         if t in up_by:
             continue
@@ -160,6 +245,8 @@ def main():
         if os.path.exists(pp) and f"<h1>{t} FDA decision dates</h1>" in open(pp, encoding="utf-8", errors="replace").read():
             up_by[t] = []
     for t, ups in sorted(up_by.items()):
+        if t in sole:
+            continue
         ups.sort(key=lambda r: r["d"])
         nearest = ups[0] if ups else None
         drug0 = str(nearest.get("name") or "") if nearest else ""
@@ -184,9 +271,16 @@ def main():
             # whatever its headline names; it is regenerated as the index.
             self_decided = ("no longer an upcoming decision" in existing
                             or "<!--DECBAN:BEGIN-->" in existing)
-            if toks & h1toks and not self_decided:
+            # rule 4: only for an upcoming drug that has no page of its own; otherwise this page is its twin
+            named = [r for r in ups if {w for w in re.findall(r"[a-z0-9]+(?:-[a-z0-9]+)*",
+                                                              str(r.get("name") or "").lower())
+                                        if len(w) >= 3 and w not in STOP and not w.isdigit()} & h1toks]
+            if toks & h1toks and not self_decided and not all(own_page(r, t) for r in named):
                 kept_pages += 1
                 continue          # live event page already about a currently-upcoming drug
+            for r in named:
+                if own_page(r, t) and not a.dry_run:
+                    carry_chart(existing, own_page(r, t), t)
 
         evs = []
         for r in ups:
@@ -194,7 +288,7 @@ def main():
                 if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d"))) else None
             cd = (f'<span class="up">in {days} day{"s" if days != 1 else ""}</span>'
                   if days is not None and (r.get("dp") or "day") == "day" and days >= 0 else "")
-            evs.append(f'<a class="row" href="/calendar"><span class="t">'
+            evs.append(f'<a class="row" href="{esc(own_page(r, t) or "/calendar")}"><span class="t">'
                        f'{esc(pretty(r["d"], r.get("dp") or "day"))} {cd}</span>'
                        f'<span class="d">{esc(str(r.get("name") or ""))[:70]}</span></a>')
         hist = "".join(

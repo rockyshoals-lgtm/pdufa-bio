@@ -938,6 +938,13 @@ jobs:
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
+      # 2026-11-18 design red team (change 4, one page per event): every link to an event lands on the event's own
+      # page in one hop, never on a retired bare /pdufa/{T} or an old slug that vercel.json redirects. After every pass
+      # that writes links (inject_site_links.py above), before the sitemap. tests/test_one_event_one_page.py fails if
+      # it is skipped.
+      - name: "Event links go to the event's own page (one page per event)"
+        run: python retarget_event_links.py
+
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"
