@@ -101,7 +101,7 @@ def svg(prices, dates, piv, ddate, outcome, fda_date=None):
     o.append(f'<line x1="{xp:.1f}" y1="{Y0:.0f}" x2="{xp:.1f}" y2="{Y1:.0f}" stroke="#e3ba5e" '
              f'stroke-width="1" stroke-dasharray="3 3" opacity="0.85"/>')
     o.append(f'<text x="{xp-69.9:.1f}" y="177" fill="#e3ba5e" font-size="10" font-family="system-ui" '
-             f'text-anchor="end">{"announced" if (fda_date and fda_date != ddate) else "PDUFA"} {mdy(ddate)}</text>')
+             f'text-anchor="end">{"announced" if (fda_date and fda_date != ddate) else "FDA decision"} {mdy(ddate)}</text>')
     pts = " ".join(f'{X(i):.1f},{Y(p):.1f}' for i, p in enumerate(prices))
     o.append(f'<polyline points="{pts}" fill="none" stroke="#7aa8ff" stroke-width="1.6"/>')
     o.append(f'<circle cx="{X(hi_i):.1f}" cy="{Y(pre_p[hi_i]):.1f}" r="2.6" fill="#5fd07a"/>'

@@ -26,7 +26,26 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 PAGE = os.path.join(SITE, "screener", "index.html")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
-TODAY = dt.date.today()
+sys.path.insert(0, HERE)
+try:
+    from site_dates import eastern_today
+    TODAY = eastern_today()
+except Exception:  # noqa: BLE001
+    TODAY = dt.date.today()
+from site_windows import is_day, window_label, window_span  # noqa: E402
+
+
+def date_text(r):
+    """Design red team 2026-11-18 (change 1): a month/quarter/year row is printed as its window ("Nov 2026", "Q4 2026"),
+    never as the day it is stored under; an exact day stays that day. " (est.)" marks pdufa.bio's own estimates. One
+    definition, shared with the interactive list (sync_screener_data.date_text), so the two cannot disagree."""
+    from sync_screener_data import date_text as _dt
+    return _dt(r)
+
+
+def ends(r):
+    """Last day of the row's window (its own day for a day row): an open window is still ahead."""
+    return window_span(r)[1] or str(r.get("d") or "")[:10]
 START, END = "<!--ssr-rows-->", "<!--/ssr-rows-->"
 
 
@@ -54,11 +73,11 @@ def main():
         return os.path.exists(os.path.join(SITE, "pdufa", t, "index.html"))
 
     fwd = [r for r in arr
-           if str(r.get("d") or "")[:10] >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
+           if ends(r) >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
            and r.get("t") in known]
-    fwd.sort(key=lambda r: (str(r.get("d") or "9999"), str(r.get("t"))))
+    fwd.sort(key=lambda r: (ends(r), 0 if is_day(r) else 1, str(r.get("t"))))   # window end, days first (change 1)
     dropped = sum(1 for r in arr
-                  if str(r.get("d") or "")[:10] >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
+                  if ends(r) >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
                   and r.get("t") and r.get("t") not in known)
     fwd = fwd[:a.rows]
 
@@ -69,8 +88,7 @@ def main():
         typ = esc(r.get("type") or "")
         nm = esc(r.get("name") or "")[:52]
         ta = esc(r.get("ta") or "")
-        dp = r.get("dp") or "day"
-        dtxt = d + ("" if dp == "day" else " (est.)")
+        dtxt = esc(date_text(r))
         # only link the drug to /pdufa/<T> when that page really exists; otherwise plain text
         drug_cell = f'<a href="/pdufa/{t}">{nm}</a>' if (nm and has_pdufa_page(t)) else (nm or "n/a")
         trs.append(
