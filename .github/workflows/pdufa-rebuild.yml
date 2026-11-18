@@ -1072,7 +1072,8 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_excluded.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json
+          git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
