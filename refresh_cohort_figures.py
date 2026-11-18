@@ -176,6 +176,12 @@ def _bin(x):
     return len(BINS) - 1
 
 
+def _pct(c, n):
+    """A bar's share: one decimal under 1% so a bar that holds rows never reads "(0%)" (red team of change 6)."""
+    p = 100 * c / n
+    return f"{p:.1f}%" if 0 < p < 1 else f"{round(p):.0f}%"
+
+
 def _svg(word, counts, n, phone):
     w, x0, bw, step, base, top, fs = ((320, 6.4, 31.3, 34.5, 84.5, 16.0, 12.2) if phone else
                                       (300, 6.0, 29.3, 32.33, 76.5, 8.0, 9))
@@ -193,7 +199,7 @@ def _svg(word, counts, n, phone):
         h = round(68.0 * c / peak, 1)
         x = round(x0 + i * step, 1)
         fill, op = ("#5b8fd0", "0.55") if i == 4 else (("#ff7a72" if i < 4 else "#46d17f"), "0.92")
-        out.append(f'<g><title>{lab}: {c:,} of {n:,} ({round(100 * c / n):.0f}%)</title><rect x="{x}" y="{round(base - 0.5 - h, 1)}" '
+        out.append(f'<g><title>{lab}: {c:,} of {n:,} ({_pct(c, n)})</title><rect x="{x}" y="{round(base - 0.5 - h, 1)}" '
                    f'width="{bw}" height="{h}" rx="1.5" fill="{fill}" opacity="{op}"/></g>')
         if i in AXIS:
             out.append(f'<text x="{round(x + bw / 2, 1)}" y="{lab_y}" fill="#7c93b6" font-size="{fs}" text-anchor="middle"{halo}>'
@@ -211,8 +217,8 @@ def cohort_histogram(word):
     counts = [0] * len(BINS)
     for x in vals:
         counts[_bin(x)] += 1
-    # the chip's own figure (runup_study_stats.json rounds to 2 places: 3.45 prints 3.5 there), so the two never
-    # print different decimals for the same median
+    # the chip's own figure, so the two never print different decimals for the same median (the stats file keeps 4
+    # places: at 2 the small-cap 3.4464 was stored 3.45 and printed 3.5)
     size = (TIER.get(word.capitalize()) or {}).get("median_abs_pct")
     if size is None or (TIER.get(word.capitalize()) or {}).get("n") != n:
         size = round(_st.median([abs(x) for x in vals]), 2)
@@ -227,7 +233,7 @@ def cohort_histogram(word):
 
 
 HIST_RE = re.compile(r'<div class="coh-dist-v1".*?<!--PH:E--><div class="lit"[^>]*>[^<]*</div></div>', re.S)
-HIST_WORD = re.compile(r'Decision-day move &middot; (nano|micro|small|mid|large)-cap cohort')
+PHONE_SVG = re.compile(r'<svg class="pd-phs".*?</svg>', re.S)
 n_hist = 0
 for p in glob.glob(os.path.join(SITE, "pdufa", "*", "index.html")):
     h = open(p, encoding="utf-8", errors="replace").read()
@@ -235,10 +241,13 @@ for p in glob.glob(os.path.join(SITE, "pdufa", "*", "index.html")):
     if not m:
         continue
     mt = TIER_RE.search(h)
-    wm = HIST_WORD.search(m.group(0))
-    word = mt.group(2).strip().lower() if mt and mt.group(2).strip() in TIER else (wm.group(1) if wm else None)
-    new = cohort_histogram(word) if word else None
-    if new and new != m.group(0):
+    # red team of change 6: the histogram is the page's own tier's or none. A page whose tier is not one we track
+    # ("Not listed") used to keep whichever tier the old histogram drew, beside a card that names no tier.
+    word = mt.group(2).strip().lower() if mt and mt.group(2).strip() in TIER else None
+    new = (cohort_histogram(word) if word else None) or ""
+    # inject_mobile_polish.py redraws the phone copy a hair differently (x 22.0 vs 22.1); compare without it so a CI run
+    # does not rewrite 60 pages only for polish to rewrite them back
+    if PHONE_SVG.sub("", new) != PHONE_SVG.sub("", m.group(0)):
         n_hist += 1
         if not a.dry_run:
             open(p, "w", encoding="utf-8").write(h[:m.start()] + new + h[m.end():])

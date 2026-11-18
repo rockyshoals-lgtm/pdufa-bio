@@ -32,23 +32,23 @@
  "post_5d_median_crl": -2.97,
  "cohort_abs_move": {
   "Nano (<$50M)": {
-   "median_abs_pct": 8.17,
+   "median_abs_pct": 8.1717,
    "n": 94
   },
   "Micro ($50M-$300M)": {
-   "median_abs_pct": 4.36,
+   "median_abs_pct": 4.3592,
    "n": 262
   },
   "Small ($300M-$2B)": {
-   "median_abs_pct": 3.45,
+   "median_abs_pct": 3.4464,
    "n": 257
   },
   "Mid ($2B-$10B)": {
-   "median_abs_pct": 2.28,
+   "median_abs_pct": 2.2794,
    "n": 231
   },
   "Large (>$10B)": {
-   "median_abs_pct": 1.0,
+   "median_abs_pct": 1.0009,
    "n": 840
   }
  },

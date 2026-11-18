@@ -46,7 +46,7 @@ try:
     COHN = {_k.split(" ")[0]: int(_v["n"]) for _k, _v in _cs.items() if _v.get("n")}
     _st = json.load(open(os.path.join(HERE, "runup_study_stats.json"), encoding="utf-8"))
     COHY = (str(_st.get("date_min") or "")[:4], str(_st.get("date_max") or "")[:4])
-except Exception:  # noqa: BLE001  -- a missing stats file keeps the last typed values
+except Exception:  # noqa: BLE001  -- no stats file: no chips, rather than a figure nobody can trace
     COHN, COHY = {}, ("", "")
 
 

@@ -10,7 +10,10 @@ on any /pdufa/ page:
   1. the histogram's n differs from the chip's n or the lead sentence's count, or from runup_study_stats.json;
   2. the histogram's median differs from the chip's median, or is not labelled as a median size (up or down);
   3. the histogram's bars do not add up to its n, or a bar's count differs from the study rows for that tier;
-  4. the histogram names a tier other than the page's market-cap tier, or prints an "up %" share (it reads as odds).
+  4. the histogram names a tier other than the page's market-cap tier, or prints an "up %" share (it reads as odds);
+  5. a page with a histogram has no tracked tier, no cohort chip or no lead sentence to check it against, or the
+     histogram's median is not the study rows' true median at one decimal (3.4464 stored as 3.45 printed 3.5), or its
+     aria-label or footnote names another n; or fewer than 20 histograms are found at all.
 
     python tests/test_cohort_one_value.py
 """
@@ -44,6 +47,7 @@ def bin_of(x):
 def main():
     stats = json.load(open(os.path.join(HERE, "runup_study_stats.json"), encoding="utf-8")).get("cohort_abs_move", {})
     want = collections.defaultdict(lambda: [0] * 9)
+    absv = collections.defaultdict(list)
     for r in csv.DictReader(open(os.path.join(HERE, "pdufa_runup_bifrost_v2.csv"), encoding="utf-8-sig", errors="replace")):
         try:
             v = float(r.get("post_1d"))
@@ -51,13 +55,15 @@ def main():
             continue
         if r.get("mcap_tier"):
             want[r["mcap_tier"]][bin_of(v)] += 1
+            absv[r["mcap_tier"]].append(abs(v))
+    import statistics
 
     bad = []
     hists = 0
     for p in sorted(glob.glob(os.path.join(SITE, "pdufa", "*", "index.html"))):
         slug = "/pdufa/" + os.path.basename(os.path.dirname(p))
         doc = open(p, encoding="utf-8", errors="replace").read()
-        blk = re.search(r'<div class="coh-dist-v1".*?<!--PH:E-->', doc, re.S)
+        blk = re.search(r'<div class="coh-dist-v1".*?<!--PH:E--><div class="lit"[^>]*>[^<]*</div>', doc, re.S)
         if not blk:
             continue
         blk = blk.group(0)
@@ -71,18 +77,32 @@ def main():
             bad.append(f"{slug}: histogram prints an 'up %' share")
         word, n, med = head.group(1), int(head.group(2).replace(",", "")), head.group(3)
         tier = re.search(r"<span>Market-cap tier</span><b>([A-Za-z]+)</b>", doc)
-        if tier and tier.group(1).lower() in KEY and tier.group(1).lower() != word:
+        if not tier or tier.group(1).lower() not in KEY:
+            bad.append(f"{slug}: a {word}-cap histogram on a page with no tracked market-cap tier")
+        elif tier.group(1).lower() != word:
             bad.append(f"{slug}: histogram is the {word}-cap cohort, the page's tier is {tier.group(1)}")
         st = stats.get(KEY.get(word, ""), {})
         if st and n != st.get("n"):
             bad.append(f"{slug}: histogram n={n}, the study's {word}-cap n={st.get('n')}")
         if st and med != f"{st.get('median_abs_pct'):.1f}":
             bad.append(f"{slug}: histogram median size {med}%, the study's {st.get('median_abs_pct'):.1f}%")
+        true = absv.get(KEY.get(word, ""))
+        if true and med != f"{statistics.median(true):.1f}":
+            bad.append(f"{slug}: histogram median size {med}%, the study rows' median is {statistics.median(true):.3f}%")
+        for lab, rx in (("aria-label", r'aria-label="Decision-day move distribution for \w+-cap PDUFAs, n=([\d,]+)"'),
+                        ("footnote", r"move after the FDA decision, ([\d,]+) \w+-cap decisions")):
+            got = {int(x.replace(",", "")) for x in re.findall(rx, blk)}
+            if got != {n}:
+                bad.append(f"{slug}: histogram {lab} gives n={sorted(got)}, header n={n}")
         chip = re.search(r"Cohort decision-day move \(history\)</span><b>(\d+\.\d)% median \(n=([\d,]+)\)", doc)
-        if chip and (chip.group(1), int(chip.group(2).replace(",", ""))) != (med, n):
+        if not chip:
+            bad.append(f"{slug}: histogram with no cohort chip to check it against")
+        elif (chip.group(1), int(chip.group(2).replace(",", ""))) != (med, n):
             bad.append(f"{slug}: chip says {chip.group(1)}% (n={chip.group(2)}), histogram {med}% (n={n})")
         lead = re.search(r"median decision-day move of (\d+\.\d)% in either direction \(([\d,]+) \w+-cap decisions", doc)
-        if lead and (lead.group(1), int(lead.group(2).replace(",", ""))) != (med, n):
+        if not lead:
+            bad.append(f"{slug}: histogram with no cohort sentence to check it against")
+        elif (lead.group(1), int(lead.group(2).replace(",", ""))) != (med, n):
             bad.append(f"{slug}: card text says {lead.group(1)}% across {lead.group(2)}, histogram {med}% (n={n})")
         for svg in re.findall(r"<svg.*?</svg>", blk, re.S):
             counts = [int(m.group(1).replace(",", "")) for m in re.finditer(r"<title>[^<]*: ([\d,]+) of [\d,]+ \(", svg)]
@@ -92,6 +112,8 @@ def main():
             elif KEY.get(word) in want and counts != want[KEY[word]]:
                 bad.append(f"{slug}: histogram bars {counts}, study rows give {want[KEY[word]]}")
     print(f"{hists} cohort histogram(s) checked")
+    if hists < 20:
+        bad.append(f"only {hists} cohort histogram(s) found; the /pdufa pages carry about 60")
     if bad:
         for b in bad[:30]:
             print("  FAIL " + b)
