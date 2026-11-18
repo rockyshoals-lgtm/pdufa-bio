@@ -56,14 +56,131 @@ def norm(s):
     s = re.sub(r'[()]', ' ', s)
     s = re.sub(r'[^a-z0-9 ]', ' ', s)
     stop = {'the','and','with','plus','in','for','a','of','combination','tablet','tablets',
-            'capsule','capsules','injection','solution','cream','foam','placebo','oral'}
+            'capsule','capsules','injection','solution','cream','foam','placebo','oral',
+            # 2026-11-18: generic words matched other drugs' approvals. 'treatment' in the MRK
+            # IDVYNSO row's name matched Merck KGaA's PIMJETMI release ("...for Patients with").
+            'treatment','naive','patients','children','adults','pediatric','lower','doses',
+            'weekly','daily','sndas','supplemental','formulation','first','second','resubmission',
+            'relapsed','refractory','disease','syndrome','cancer','tumor','tumors','chronic',
+            'advanced','full','approval','label','expansion','season','study','trial','phase'}
     return [w for w in s.split() if w not in stop and len(w) > 4]
+
+
+def row_source_dates(path):
+    """(ticker, date) -> the date of the document each open PDUFA row is sourced to. A release older
+    than the row's own source cannot have decided it: that source already says the goal is pending
+    (PHAR's Sep 25 sNDA acceptance came two weeks after the Sep 11 Joenja approval)."""
+    out = {}
+    try:
+        src = open(path, encoding='utf-8').read()
+        rows = json.loads(src[src.index('['):src.rindex(']') + 1])
+    except Exception:
+        return out
+    for r in rows:
+        if r.get('type') != 'PDUFA':
+            continue
+        d = r.get('_d') or {}
+        m = re.search(r'(20\d\d-\d\d-\d\d)', str(d.get('source') or ''))
+        k = (r.get('t'), r.get('d'))
+        if not m:
+            out[k] = None          # an unsourced row on the same day: never skip a release for it
+        elif k not in out or (out[k] is not None and m.group(1) < out[k]):
+            out[k] = m.group(1)    # two rows on one day (RHHBY Nov 30): the EARLIER source, so a
+                                   # release between the two sources is still read
+    return {k: v for k, v in out.items() if v}
+
+
+def load_acks(path):
+    """Headlines checked by hand and found to be about a DIFFERENT application than the row."""
+    try:
+        return json.load(open(path, encoding='utf-8')).get('acks', [])
+    except Exception:
+        return []
+
+
+def acked(acks, ticker, date, url, title):
+    for a in acks:
+        if a.get('ticker') == ticker and a.get('date') == date and (
+                (a.get('url_prefix') and str(url).startswith(a['url_prefix'])) or
+                (a.get('title_prefix') and str(title).startswith(a['title_prefix']))):
+            return True
+    return False
+
+
+def match(c, releases, src_date=None, acks=()):
+    """The first release that looks like the FDA acting on this row's drug, or None."""
+    toks = norm(c.get('drug'))
+    if not toks:
+        return None
+    for title, blob, pub, url in releases:
+        if FUTURE.search(title):
+            continue
+        act = 'Approved' if APPROVED.search(title) else ('CRL' if CRL.search(title) else None)
+        if not act:
+            continue
+        # the PR must actually be about THIS drug
+        if not any(re.search(r'\b' + re.escape(t) + r'\b', blob, re.I) for t in toks):
+            continue
+        if src_date and pub and pub[:10] < src_date:
+            continue
+        if acked(acks, c.get('ticker'), c.get('date'), url, title):
+            continue
+        return (c['ticker'], c.get('date'), act, pub, title, url)
+    return None
+
+
+def self_test():
+    idv = {'ticker': 'MRK', 'date': '2027-04-22', 'drug': 'IDVYNSO - treatment-naive HIV-1 (P053) and 96-week data (sNDAs)'}
+    pim = ('FDA Approves PIMJETMI (pimicotinib) for Patients with Tenosynovial Giant Cell Tumor',
+           'FDA Approves PIMJETMI . the first treatment for adults with TGCT', '2026-11-10', 'https://x/pim')
+    joe = {'ticker': 'PHAR', 'date': '2027-01-30', 'drug': 'Joenja (leniolisib) lower doses (sNDA)'}
+    old = ("FDA approves Pharming's Joenja as first treatment for children with APDS",
+           "FDA approves Pharming's Joenja . leniolisib children", '2026-09-11', 'https://x/joe')
+    new = ("FDA approves Pharming's Joenja lower doses for children from 13 kg",
+           "FDA approves Joenja . leniolisib lower doses", '2026-12-20', 'https://x/joe2')
+    gil = {'ticker': 'GILD', 'date': '2027-02-02', 'drug': 'Yeztugo (lenacapavir) once-weekly oral'}
+    bix = ("U.S. FDA Approves Gilead's Bixlenvo", 'Bixlenvo bictegravir lenacapavir', '2026-08-27',
+           'https://x/bix')
+    ack = [{'ticker': 'GILD', 'date': '2027-02-02', 'url_prefix': 'https://x/bix'}]
+    cases = [
+        (match(idv, [pim]) is None, 'a generic word never ties another drug\'s approval to a row'),
+        (match(joe, [old], '2026-09-25') is None, 'an approval older than the row\'s own source is skipped'),
+        (match(joe, [new], '2026-09-25') is not None, 'a newer approval of the same drug is still flagged'),
+        (match(gil, [bix], '2026-08-06', ack) is None, 'a hand-checked different product is skipped'),
+        (match(gil, [bix], '2026-08-06') is not None, 'without the ack the same headline is flagged'),
+    ]
+    import tempfile
+    with tempfile.NamedTemporaryFile('w', suffix='.mjs', delete=False, encoding='utf-8') as f:
+        f.write('export default ' + json.dumps([
+            {'type': 'PDUFA', 't': 'RHHBY', 'd': '2026-11-30', '_d': {'source': 'press release 2026-06-01'}},
+            {'type': 'PDUFA', 't': 'RHHBY', 'd': '2026-11-30', '_d': {'source': 'press release 2026-10-20'}},
+            {'type': 'PDUFA', 't': 'ABC', 'd': '2026-12-01', '_d': {'source': '8-K 2026-09-01'}},
+            {'type': 'PDUFA', 't': 'ABC', 'd': '2026-12-01', '_d': {}}]) + ';')
+    try:
+        sd = row_source_dates(f.name)
+    finally:
+        os.unlink(f.name)
+    cases += [
+        (sd.get(('RHHBY', '2026-11-30')) == '2026-06-01', 'two rows on one day keep the earlier source'),
+        (('ABC', '2026-12-01') not in sd, 'an unsourced row on the same day disables the skip'),
+    ]
+    bad = [why for ok, why in cases if not ok]
+    for why in bad:
+        print('SELF-TEST FAILED:', why)
+    return not bad
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--days', type=int, default=0, help='only PDUFAs within N days (0 = all)')
     ap.add_argument('--api', default=os.path.join(HERE, 'pdufa_site_src', 'api', 'data.js'))
+    ap.add_argument('--self-test', action='store_true')
     a = ap.parse_args()
+    if not self_test():
+        return 1
+    if a.self_test:
+        print('OK -- decided-PDUFA matcher: generic words, older releases and hand-checked other '
+              'products are skipped; a newer approval of the row\'s drug is flagged.')
+        return 0
     key = os.environ.get('FMP_API_KEY')
     if not key:
         print('FMP_API_KEY not set — cannot read company PRs. Nothing to do.'); return 1
@@ -108,22 +225,13 @@ def main():
         for tk, v in ex.map(fetch, tickers):
             prs[tk] = v
 
+    srcd = row_source_dates(os.path.join(HERE, 'pdufa_site_src', 'api', 'v1', 'dataset.mjs'))
+    acks = load_acks(os.path.join(HERE, '_pdufa_decided_ack.json'))
     found = []
     for c in cats:
-        toks = norm(c.get('drug'))
-        if not toks:
-            continue
-        for title, blob, pub, url in prs.get(c['ticker'], []):
-            if FUTURE.search(title):
-                continue
-            act = 'Approved' if APPROVED.search(title) else ('CRL' if CRL.search(title) else None)
-            if not act:
-                continue
-            # the PR must actually be about THIS drug
-            if not any(re.search(r'\b' + re.escape(t) + r'\b', blob, re.I) for t in toks):
-                continue
-            found.append((c['ticker'], c.get('date'), act, pub, title, url))
-            break
+        m = match(c, prs.get(c['ticker'], []), srcd.get((c['ticker'], c.get('date'))), acks)
+        if m:
+            found.append(m)
 
     if not found:
         print('No forward PDUFA appears to have been decided already. Calendar is clean.')
