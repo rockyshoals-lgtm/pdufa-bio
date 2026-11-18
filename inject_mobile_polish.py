@@ -24,6 +24,11 @@ What it found, and what this pass does about each:
 8. Linked list rows on ticker, drug and PDUFA pages (a date span, then a description span, both inline) ran
    together: /ticker/SRPT read "2026-09Eteplirsen". The description now starts its own line, as on the
    calendar and decision pages, which already used block elements for it.
+9. Links no rule colours (the CSV download on /research/conference-runup, among others) fell back to the
+   browser's default dark blue, nearly invisible on the site's near-black background. They now take the site's
+   link blue; any colour a page sets itself still wins (zero-specificity :where()).
+10. /calendar opens on months that are all decided (June to October) before the first date still ahead. A
+   "Jump to upcoming dates" link under the lede goes to the first month that still has an open goal date.
 
 The search button (cmdk.js) is a static file and is fixed there. Nothing here changes a fact, a number, a date,
 a link target or any text: only layout. build_sitemap.py strips everything this adds before hashing, so the sweep
@@ -67,6 +72,12 @@ CSS = (
     '.pd-tw>table{margin-left:0;margin-right:0}'
     # 6. anchors clear the sticky header
     ':target{scroll-margin-top:76px}'
+    # 9. links nobody coloured: site blue instead of the browser's dark blue (anything a page sets wins)
+    ':where(a){color:#6fb6ff}'
+    # 10. calendar: jump past decided months
+    '.pd-jump{display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;margin:0 0 14px;'
+    'border:1px solid #294d80;border-radius:10px;color:#eef4fc;font-size:13.5px;font-weight:600;text-decoration:none}'
+    '.pd-jump:hover{border-color:#e3ba5e;text-decoration:none}'
     # 8. list rows: the description sits under its date, not glued to it ("2026-09Eteplirsen")
     '.row>.t+.d{display:block}'
     # 5. notch / rounded corners in landscape (env() is 0 where there is none)
@@ -171,8 +182,36 @@ def wrap_tables(doc):
     return "".join(out), len(p.spans)
 
 
+JUMP_B, JUMP_E = "<!--JUMP:BEGIN-->", "<!--JUMP:END-->"
+ANCHOR = '<!--JUMP:B--><div id="pd-upcoming"></div><!--JUMP:E-->'
+MHEAD = '<div class="mhead">'
+
+
+def calendar_jump(doc):
+    """On a calendar page (month heads + a lede), link past the decided months to the first month that still has
+    an open goal date (a row linking /pdufa/, not a published /fda-decision/ record). No date arithmetic, so the
+    result depends on the page alone and the guard can recompute it. The month head itself is left untouched
+    (tests/test_calendar_rows_under_their_month.py reads it); the target is an empty div just above it."""
+    doc = re.sub(re.escape(JUMP_B) + ".*?" + re.escape(JUMP_E), "", doc, flags=re.S)
+    doc = doc.replace(ANCHOR, "")
+    if "<!--LEDE:END-->" not in doc or MHEAD not in doc:
+        return doc
+    heads = [m.start() for m in re.finditer(re.escape(MHEAD), doc)]
+    for i, at in enumerate(heads):
+        seg = doc[at:heads[i + 1] if i + 1 < len(heads) else len(doc)]
+        if re.search(r'<a class="row" href="/pdufa/', seg):
+            if i == 0:
+                return doc          # the first month is already open: nothing to skip
+            doc = doc[:at] + ANCHOR + doc[at:]
+            return doc.replace("<!--LEDE:END-->", "<!--LEDE:END-->" + JUMP_B
+                               + '<a class="pd-jump" href="#pd-upcoming">Jump to upcoming dates &darr;</a>'
+                               + JUMP_E, 1)
+    return doc
+
+
 def apply(doc):
     new, n = wrap_tables(doc)
+    new = calendar_jump(new)
     # A current style block stays exactly where it is. Later build steps (freshness stamp, dateModified, article
     # schema, quarantine) also insert before </head>, so "always re-insert last" moved the block on every run and the
     # guard's apply(doc) == doc failed on 1,826 pages after the 2026-11-18 rebuild (issue 113). Only a missing,

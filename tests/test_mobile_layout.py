@@ -8,7 +8,10 @@ A real browser is not available in CI, so this checks the things that broke layo
   2. every public page declares a responsive viewport and does not disable pinch-zoom;
   3. no page's own CSS fixes an element wider than a small phone (360px) outside a media query;
   4. the rebuild workflow and the local chain both run inject_mobile_polish.py, before the sitemap;
-  5. the search button (cmdk.js) uses its compact, keyboard-reachable form up to the 720px menu breakpoint.
+  5. the search button (cmdk.js) uses its compact, keyboard-reachable form up to the 720px menu breakpoint;
+  6. no page's CSS sets text smaller than 10px (the homepage countdown labels were 8px);
+  7. /decisions is newest-first inside each year (its sorter had silently stopped matching the year headers);
+  8. the screener's event-type filters are real buttons, and its rows keep their date on a phone.
 
 A planted bare table and a planted no-zoom viewport must each be caught, so the guard cannot pass vacuously.
 
@@ -26,6 +29,7 @@ import inject_mobile_polish as M  # noqa: E402
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 VIEWPORT = re.compile(r'<meta[^>]+name="viewport"[^>]*content="([^"]*)"', re.I)
+TINY = re.compile(r"font-size\s*:\s*([0-9](?:\.\d+)?)px")
 WIDE = re.compile(r"(?<![-\w])(?:min-)?width\s*:\s*(\d{3,})px")
 
 
@@ -57,6 +61,11 @@ def page_problems(rel, doc):
         probs.append(f"{rel}: no responsive viewport meta")
     elif re.search(r"user-scalable\s*=\s*(no|0)|maximum-scale\s*=\s*1(\.0)?\b", m.group(1)):
         probs.append(f"{rel}: viewport disables pinch-zoom ({m.group(1)})")
+    css = "".join(re.findall(r"<style[^>]*>(.*?)</style>", doc, re.S))
+    for sel, decl in re.findall(r"([^{}@]+)\{([^{}]*)\}", css):
+        for z in TINY.findall(decl):
+            if float(z) < 10:
+                probs.append(f"{rel}: '{sel.strip()[-40:]}' sets {z}px text, too small to read on a phone")
     for sel, decl in re.findall(r"([^{}]+)\{([^{}]*)\}", top_level_css(doc)):
         if "max-width" in decl or re.search(r"\b(table|th|td|svg|canvas)\b", sel):
             continue
@@ -96,6 +105,21 @@ def main():
     if not page_problems("planted", re.sub(r'<style id="mobilepolish">.*?</style>', "", later, flags=re.S)):
         fails.append("guard self-check: a missing style block was not caught")
 
+    if not page_problems("planted", good.replace("</head>", "<style>.x i{font-size:8px}</style></head>")):
+        fails.append("guard self-check: 8px text was not caught")
+
+    dec = io.open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8", errors="replace").read()
+    for block in re.split(r'<div class="mhead"', dec)[1:]:
+        ds = re.findall(r'<a class="row" href="/fda-decision/[^"]*?-(\d{4}-\d{2}-\d{2})"', block)
+        if any(b > a for a, b in zip(ds, ds[1:])):
+            fails.append("decisions/index.html: a year block is not newest-first (fix: python fix_decisions_order.py)")
+            break
+    scr = io.open(os.path.join(SITE, "screener", "index.html"), encoding="utf-8", errors="replace").read()
+    if 'class="tg' in scr.replace('<button type="button" class="tg', ""):
+        fails.append("screener: event-type filters must be <button>s (keyboard and screen readers)")
+    if ".dt{display:none}" in scr:
+        fails.append("screener: rows hide their date on phones")
+
     wf = open(os.path.join(HERE, ".github", "workflows", "pdufa-rebuild.yml"), encoding="utf-8").read()
     a, b = wf.find("python inject_mobile_polish.py"), wf.rfind("run: python build_sitemap.py")
     if a < 0 or b < 0 or a > b:
@@ -118,7 +142,7 @@ def main():
         return 1
     print(f"OK -- {n} pages: tables scroll in place, mobile polish current, responsive viewport with zoom allowed, "
           f"no fixed width over 360px; workflow and chain run the pass before the sitemap; search button compact "
-          f"to 720px. Self-check caught a planted bare table and a planted no-zoom viewport.")
+          f"to 720px; no text under 10px; /decisions newest-first; screener filters are buttons. Self-check caught a planted bare table and a planted no-zoom viewport and planted 8px text.")
     return 0
 
 

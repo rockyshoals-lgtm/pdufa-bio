@@ -126,6 +126,8 @@ BOILER = [
     # 2026-11-17: inject_mobile_polish.py wraps wide tables in a scroll box on ~2,000 pages in one sweep. Layout
     # chrome, not content: strip the two marker-tagged halves so the table inside hashes exactly as before.
     re.compile(r'<!--TW:B--><div class="pd-tw">|</div><!--TW:E-->'),
+    # inject_mobile_polish.py's calendar jump link and its target id move as months close; not a content change
+    re.compile(r'<!--JUMP:BEGIN-->.*?<!--JUMP:END-->|<!--JUMP:B-->.*?<!--JUMP:E-->', re.S),
     re.compile(r"<nav[^>]*>.*?</nav>", re.S),
     re.compile(r'<div class="nav">.*?</div>', re.S),
     re.compile(r'<div class="legal".*?</div>', re.S),
