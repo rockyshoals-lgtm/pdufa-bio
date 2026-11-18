@@ -8,7 +8,7 @@
   "status": {
     "label": "FDA decision expected",
     "date": "2026-11-22",
-    "detail": "BLA 125842. On 24 August 2026 Capricor announced that the FDA had classified an amendment to the application as major and moved the goal date from 22 August to 22 November 2026. The amendment added 24-month HOPE-3 extension data in support of a refined proposed indication focused on upper limb function, the trial's primary endpoint; the original application sought a cardiomyopathy indication. This is the second review cycle: the first ended in a Complete Response Letter on 9 July 2025. An FDA advisory committee voted 3 for and 9 against on 29 July 2026.",
+    "detail": "On 24 August 2026 Capricor announced that the FDA had classified an amendment to the application as major and moved the goal date from 22 August to 22 November 2026. The amendment added 24-month open-label extension data from the Phase 3 HOPE-3 trial and additional robustness analyses, in support of a refined proposed indication focused on upper limb function, the primary endpoint of HOPE-3. The earlier steps, including the July 2025 Complete Response Letter and the July 2026 advisory committee vote, are in the timeline below with their sources.",
     "source": "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
   },
   "plain": "Deramiocel is an experimental cell therapy made from heart cells recovered from donated human hearts. It is given as a drip into a vein once every three months in an outpatient clinic, so there is no surgery and no hospital stay. The cells are not meant to replace damaged muscle: the idea is that they release tiny packages called exosomes that calm inflammation and scarring, with the aim of slowing the loss of heart and arm function in boys and young men with Duchenne muscular dystrophy.",
@@ -79,7 +79,7 @@
   },
 
   "caveats": [
-    "Advisory committee votes are advice. The FDA is not bound by them, and After the vote the PDUFA date was extended to 22 November 2026, following a major amendment to the application.",
+    "Advisory committee votes are advice. The FDA is not bound by them. After the vote, the PDUFA date was extended to 22 November 2026, following a major amendment to the application.",
     "The committee voted only on whether the evidence showed effectiveness. It did not vote on overall benefit against risk.",
     "This is the second review cycle. The first ended in a Complete Response Letter in July 2025.",
     "The efficacy claim rests on a statistical analysis plan the FDA says it never reviewed or agreed to, finalised one day before the data were unblinded.",

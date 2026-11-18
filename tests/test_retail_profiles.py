@@ -124,9 +124,11 @@ def main():
                       f"dataset's live PDUFA date is {', '.join(live)}. Update the profile's status, "
                       f"its caveats and its timeline, and set status_updated.")
             if st["date"] < TODAY:
-                ok = False
-                print(f"  FAIL {t}: deep dive still says a decision is expected on {st['date']}, "
-                      f"which has passed")
+                # Not a failure: an FDA action can be published days after the goal date, or the FDA can miss it,
+                # and a hard fail would hold every deploy until someone hand-edits the profile. The page says the
+                # date has passed (build_retail_pages.passed_note, checked below); this asks for the update.
+                print(f"  NOTE {t}: deep dive's expected decision date {st['date']} has passed; "
+                      f"update the profile from the FDA action or the sponsor's next disclosure")
             for cav in p.get("caveats") or []:
                 for d in re.findall(r"\b(\d{1,2} (?:January|February|March|April|May|June|July|"
                                     r"August|September|October|November|December) \d{4}) stands", cav):
@@ -138,6 +140,15 @@ def main():
             doc = open(page, encoding="utf-8", errors="replace").read()
             if BEGIN in doc:
                 blk = doc.split(BEGIN, 1)[1].split(END, 1)[0]
+                # The published block must carry the profile's status, not an older render of it.
+                if st.get("date") and f'>{st["date"]}</div>' not in blk:
+                    ok = False
+                    print(f"  FAIL {t}: published deep dive does not show the profile's status date "
+                          f"{st['date']}; run build_retail_pages.py")
+                if (st.get("date") and "expected" in str(st.get("label", "")).lower() and st["date"] < TODAY
+                        and "This goal date has passed." not in blk):
+                    ok = False
+                    print(f"  FAIL {t}: goal date {st['date']} has passed but the page does not say so")
                 if "not investment advice" not in blk.lower():
                     ok = False
                     print(f"  FAIL {t}: published deep dive is missing the advice disclaimer")

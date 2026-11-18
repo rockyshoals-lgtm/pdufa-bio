@@ -8,7 +8,7 @@
   "status": {
     "label": "FDA approved",
     "date": "2026-09-03",
-    "detail": "The FDA approved zilganersen for Alexander disease on 3 September 2026, 19 days before its 22 September goal date. The application was a New Drug Application under Priority Review, in its first review cycle, with no advisory committee. Zilganersen carries Orphan Drug, Rare Pediatric Disease, Fast Track and Breakthrough Therapy designations.",
+    "detail": "The FDA approved zilganersen (Zanvastro) for the treatment of Alexander disease in pediatric and adult patients on 3 September 2026, under NDA 220210. The goal date had been 22 September 2026; the review and designation history is in the timeline below with its sources.",
     "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf"
   },
   "plain": "Alexander disease is an ultra-rare inherited brain disorder. A faulty gene makes the brain's support cells produce far too much of a protein called GFAP, which builds up and progressively damages the brain. It usually begins in early childhood and is usually fatal. Zilganersen is given by injection into the fluid around the spinal cord, through a lumbar puncture, once every twelve weeks, and instructs the body to make less of that protein. The goal is not to cure the disease but to slow it, for example to stop a child's walking from continuing to deteriorate.",
@@ -70,7 +70,7 @@
     "The entire application rests on a single small trial, with 54 participants enrolled across two dose cohorts and a 2:1 randomisation. The number analysed for the primary endpoint has not been disclosed.",
     "The primary p-value of 0.0412 is marginal. In a trial this small, a modest shift in a few patients could change it.",
     "Every measure other than the primary endpoint is nominal, meaning not adjusted for multiple testing. They support the result rather than independently confirming it.",
-    "The primary endpoint was reported in patients aged 5 and over, while the trial enrolled from age 2. Whether that population was pre-specified is not publicly known; the approval letter and label linked above record the approved population.",
+    "The primary endpoint was reported in patients aged 5 and over, while the trial enrolled from age 2. Whether that population was pre-specified is not publicly known; the FDA approval letter linked in the timeline approves zilganersen for Alexander disease in pediatric and adult patients.",
     "No peer-reviewed publication exists. Confidence intervals, per-group patient numbers and full safety tables are not public.",
     "Ionis's own descriptions of the study population are inconsistent across releases, giving both 54 participants aged 1.5 to 53 and 53 people aged 2 to 53.",
     "The trial had no independent data monitoring committee, per its ClinicalTrials.gov record.",

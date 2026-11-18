@@ -102,6 +102,24 @@ def validate(p, path):
             raise ValueError(f"{p['ticker']}: every event needs (date, what, source URL): {e}")
 
 
+def _today_et():
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+    except Exception:  # noqa: BLE001
+        return dt.date.today().isoformat()
+
+
+def passed_note(st):
+    """Design red team 2026-11-18: a hand-written "decision expected" date can pass before anyone edits the profile
+    (an FDA action published days later, or a missed goal date). The page then says so in words rather than going on
+    implying the decision is still ahead; tests/test_retail_profiles.py flags the profile for review."""
+    if "expected" in str(st.get("label", "")).lower() and str(st.get("date", "")) < _today_et():
+        return (' <b style="color:#eef4fc">This goal date has passed.</b> FDA actions are recorded on '
+                '<a href="/decisions">pdufa.bio\'s decisions page</a> once the FDA or the company discloses them.')
+    return ""
+
+
 def render(p, series):
     t = p["ticker"]
     out = [BEGIN,
@@ -120,7 +138,7 @@ def render(p, series):
             f'{esc(st["date"])}</div>'
             f'<div style="font-size:13px;color:var(--mut2);line-height:1.65">'
             f'{esc(st.get("detail",""))} '
-            f'<a href="{esc(st.get("source",""))}" rel="nofollow noopener">Source</a></div></div>')
+            f'<a href="{esc(st.get("source",""))}" rel="nofollow noopener">Source</a>{passed_note(st)}</div></div>')
 
     # what it is: plain first, technical beneath
     out.append(f'<h3 style="font-size:16px;margin:18px 0 6px">What {esc(p["asset"])} is</h3>')
