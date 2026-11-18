@@ -55,8 +55,14 @@ def main():
             unverified += 1
             continue
         verified += 1
-        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', html)
-               if "pdufa.bio" not in u]
+        # 2026-11-18 (design red team, change 10): every page now links its own public commit in the first-recorded
+        # line. That is our record, not a source, and it dropped this count from 9 to 0 when it was first added.
+        # The 13F block (inject_13f_block.py) links funds' 13F filings on sec.gov, which say nothing about the FDA's
+        # decision; counted as a source, it hid 11 pages that cite none (ABBV-2026-05-27, CYTK-2025-11-07, ...). The
+        # floor was raised from 9 to their true count of 20 on 2026-11-18 for that measurement fix, not a regression.
+        body = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", html, flags=re.S)
+        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', body)
+               if "pdufa.bio" not in u and "github.com/rockyshoals-lgtm/pdufa-bio" not in u]
         if not ext:
             unsourced.append(slug)
         elif not any(GOOD.search(u) for u in ext):

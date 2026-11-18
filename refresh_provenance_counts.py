@@ -57,7 +57,12 @@ def classify():
         # host is a regulator or the company's own newsroom is a quality question, reported
         # separately; it is not the difference between showing evidence and showing none. The two
         # checks disagreed by exactly the 3 pages citing an unusual host until this was aligned.
-        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', html) if "pdufa.bio" not in u]
+        # 2026-11-18 (design red team, change 10): neither our own public commit (the first-recorded line on every
+        # page) nor a fund's 13F filing (the 13F block) is evidence of the FDA's decision. Counted, they took this
+        # number from 20 to 0. tests/test_verified_provenance.py reads pages the same way.
+        body = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", html, flags=re.S)
+        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', body)
+               if "pdufa.bio" not in u and "github.com/rockyshoals-lgtm/pdufa-bio" not in u]
         if ext:
             sourced += 1
         else:

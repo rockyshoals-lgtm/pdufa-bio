@@ -132,6 +132,8 @@ jobs:
 
       # 2026-11-18: each decision page's run-up and decision-day chips are the study's figures for that event (306
       # pages showed an old "low→high" figure matching nothing). Before build_decision_faq.py, which quotes them.
+      # Change 10 (2026-11-18): and the event's own decision-day move, with what it is measured on, on every page the
+      # study measured.
       - name: "Run-up study: write the study's figures onto each decision page"
         run: python sync_decision_runup_chip.py
 
@@ -335,6 +337,12 @@ jobs:
 
       - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
         run: python build_decision_lede.py
+
+      # Design red team 2026-11-18 (change 10): the fact-first sentence is the page's one statement of the decision; a
+      # summary under it that says nothing the rest of the page does not is removed (no fact leaves the page).
+      # Guard: tests/test_decision_page_one_statement.py.
+      - name: "Decision pages state the decision once (drop a summary the page already says)"
+        run: python dedupe_decision_summary.py
 
       # Red team 2026-11-01: the h1 carried the announcement day while the title carried the FDA's action day.
       - name: "Decision page h1 states the FDA action day (announcement day in brackets)"

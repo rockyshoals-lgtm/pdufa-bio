@@ -97,15 +97,27 @@ MOVE_ROW = re.compile(r'(<div class="kv"><span>Decision-day move</span><b>[^<]*<
                       r'(<div class="kv"><span>Move measured on</span><b>[^<]*</b></div>)?')
 
 
-def move_basis(doc, day, label):
+def move_basis(doc, day, label, tk=None):
     """Red team of change 2: once key facts give the FDA's day, the "Decision-day move" row beside it still measures the
     page's day (CAPR: -33.0% beside FDA decision date 2025-07-09; the move is Jul 11's). Name the day it is measured
     on, in a row of its own, so the label other tools match stays as it is."""
     # a "move day" page's own Announced row says when the news came; the row states the day and nothing more, since
     # that day is not always after the news (NVO-2026-03-26: announced after the close the same day)
-    row = (f'<div class="kv"><span>Move measured on</span><b>{day}' + (", the announcement day" if label == "announced"
-           else "") + "</b></div>")
+    # change 10: the row names the session and the close it is measured against, the same text
+    # sync_decision_runup_chip.py writes for every page whose event the run-up study measured
+    from sync_decision_runup_chip import NOT_RECORDED, after_close, basis_row, study_eves
+    global _EVES
+    if _EVES is None:
+        _EVES = study_eves()
+    eve = _EVES.get((tk, day))
+    if eve:
+        row = basis_row(day, eve, label == "announced", after_close(doc, day))
+    else:
+        row = NOT_RECORDED
     return MOVE_ROW.sub(lambda m: m.group(1) + row, doc, count=1)
+
+
+_EVES = None
 
 
 def main():
@@ -124,7 +136,7 @@ def main():
         label, caption = basis(doc, day, ds.get((tk, day)))
         new = fix(doc, day, label, caption)
         if label in ("announced", "move day"):
-            new = move_basis(new, day, label)
+            new = move_basis(new, day, label, tk)
         if new != doc:
             n += 1
             print(f"  /fda-decision/{slug}: chart marker '{label or 'FDA decision'}'" + (f" ({caption})" if caption else ""))

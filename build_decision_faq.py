@@ -199,11 +199,17 @@ def main():
                        else f"The application covered {ind}. The decision was announced on {pretty(date)}."))
         mm = re.search(r"<span>Decision-day move</span><b>([^<]+)</b>", doc)
         rm = re.search(r"<span>120-day run-up[^<]*</span><b>([^<]+)</b>", doc)
-        if mm:
+        # 2026-11-18 (design red team, change 10): the answer names what the move is measured on (the key facts'
+        # "Move measured on" row). A move the study did not measure, or one taken before after-the-close news, is
+        # not "the recorded reaction to this event"; those pages answer the run-up question instead.
+        bm = re.search(r"<span>Move measured on</span><b>([^<]+)</b>", doc)
+        basis = html.unescape(bm.group(1)).strip() if bm else ""
+        if mm and basis and not basis.startswith("not recorded") and "does not include" not in basis:
             mv = html.unescape(mm.group(1)).strip()
             qa.append((f"How did {tk} stock react to the FDA decision?",
-                       f"On the decision day {tk} moved {mv}. That is the recorded reaction "
-                       f"to this specific event. Historical measurement, not a prediction, "
+                       f"{tk} moved {mv}, measured as the {basis.replace(', against', ' against')}"
+                       f". That is the "
+                       f"recorded reaction to this specific event. Historical measurement, not a prediction, "
                        f"and not investment advice."))
         elif rm:
             runup = html.unescape(rm.group(1)).strip()
@@ -215,8 +221,14 @@ def main():
 
         # 2026-10-04: hand-written, sourced Q&As for a page (_decision_extra_faq.json), each answer a fact
         # stated in the FDA's own document; appended after the generated questions.
+        # 2026-11-18 (design red team, change 10): a hand-written "Was neladalkib approved by the FDA?" sat beside the
+        # generated "Was Nelkarmi (neladalkib) approved by the FDA?" -- one question, asked twice. A hand-written
+        # question about whether this decision was an approval takes the generated one's place ("also approved for
+        # ..." is a different question and is added as usual).
         for qq, aa in EXTRA.get(slug, []):
-            if qq not in {x for x, _ in qa}:
+            if re.match(r"(?:Was|Did) (?!.*\balso\b).*\bapproved\b", qq) and qa and qa[0][0] == q:
+                qa[0] = (qq, aa)
+            elif qq not in {x for x, _ in qa}:
                 qa.append((qq, aa))
         cards = "".join(
             f'<h3 style="font-size:14.5px;margin:10px 0 3px">{html.escape(qq)}</h3>'
