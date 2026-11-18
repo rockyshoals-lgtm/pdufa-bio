@@ -193,7 +193,6 @@ def _digest(html):
     return hashlib.sha1(re.sub(r"\s+", " ", html).encode("utf-8", "replace")).hexdigest()[:16]
 
 
-<<<<<<< HEAD
 def _unshaped(html):
     """2026-11-18 (design change 7): shape_calendar.py reorders /calendar last in the build, and this script runs once
     before it and once after. Hash the page in its date order both times, so the reordering alone is not a change."""
@@ -206,21 +205,12 @@ def _unshaped(html):
 def content_hash_v1(html):
     """The pre-2026-11-18 definition (furniture only). Kept to migrate state written under it."""
     return _digest(_strip_boiler(_unshaped(html)))
-=======
-def content_hash_v1(html):
-    """The pre-2026-11-18 definition (furniture only). Kept to migrate state written under it."""
-    return _digest(_strip_boiler(html))
->>>>>>> dbdc74d36cf53f110fd0b79fb3b3ba03f0a090c4
 
 
 def content_hash(html):
     """Hash of the page with template furniture and site-wide statistics removed, so lastmod tracks
     a change to what the page says about its own subject."""
-<<<<<<< HEAD
     html = _strip_boiler(_unshaped(html))
-=======
-    html = _strip_boiler(html)
->>>>>>> dbdc74d36cf53f110fd0b79fb3b3ba03f0a090c4
     for rx, rep in VOLATILE:
         html = rx.sub(rep, html)
     return _digest(html)
