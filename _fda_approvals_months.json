@@ -7898,7 +7898,7 @@
 {
 "app": "NDA219456",
 "brand": "Calrezdy",
-"generic": "calcuim chloride",
+"generic": "calcium chloride",
 "sponsor": "Fresenius Medcl Care",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -7909,7 +7909,7 @@
 {
 "app": "NDA219455",
 "brand": "Cienby",
-"generic": "sodium ctirate",
+"generic": "trisodium citrate",
 "sponsor": "Fresenius Medcl Care",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -7932,7 +7932,7 @@
 "app": "NDA221276",
 "brand": "Hibsago",
 "generic": "bepirovirsen",
-"sponsor": "Glaxosmithkline Llc",
+"sponsor": "Glaxosmithkline",
 "kind": "new application",
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
@@ -8053,7 +8053,7 @@
 "app": "NDA220748",
 "brand": "Axycis",
 "generic": "cisplatin",
-"sponsor": "Avyxa Holdings, Llc.",
+"sponsor": "Avyxa Holdings",
 "kind": "new application",
 "sub": "ORIG-1",
 "class": "Type 5 - New Formulation or New Manufacturer",
@@ -8154,6 +8154,28 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761501Orig1s000ltr.pdf"
 },
 {
+"app": "BLA125486",
+"brand": "Gazyva",
+"generic": "obinutuzumab",
+"sponsor": "Genentech",
+"kind": "efficacy supplement",
+"sub": "SUPPL-44",
+"class": "Efficacy",
+"date": "2026-11-13",
+"letter": ""
+},
+{
+"app": "NDA215390",
+"brand": "Igalmi",
+"generic": "dexmedetomidine",
+"sponsor": "Teva",
+"kind": "efficacy supplement",
+"sub": "SUPPL-3",
+"class": "Efficacy",
+"date": "2026-11-13",
+"letter": ""
+},
+{
 "app": "BLA761069",
 "brand": "Imfinzi",
 "generic": "durvalumab",
@@ -8172,6 +8194,28 @@
 "kind": "new application",
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
+"date": "2026-11-13",
+"letter": ""
+},
+{
+"app": "NDA219083",
+"brand": "Myqorzo",
+"generic": "aficamten",
+"sponsor": "Cytokinetics",
+"kind": "efficacy supplement",
+"sub": "SUPPL-2",
+"class": "Efficacy",
+"date": "2026-11-13",
+"letter": ""
+},
+{
+"app": "NDA217369",
+"brand": "Zurzuvae",
+"generic": "zuranolone",
+"sponsor": "Biogen",
+"kind": "efficacy supplement",
+"sub": "SUPPL-4",
+"class": "Efficacy",
 "date": "2026-11-13",
 "letter": ""
 }
