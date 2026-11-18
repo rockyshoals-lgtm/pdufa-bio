@@ -92,23 +92,27 @@ def screener_row(r):
 # 2026-11-18 (design red team, change 9): the area dropdown was typed in by hand. 8 of its 23 areas matched no row,
 # 102 rows sat in areas it did not offer (Dermatology, Respiratory, Endocrinology, ...), 117 had no area, and spelling
 # twins split one area in two (Cardiology / Cardiovascular, Rare disease / Rare Disease). Each row now carries `ar`, its
-# area folded onto one name, and the dropdown is written from the rows themselves (with counts), so every option
+# area folded onto one name, and the dropdown is written from the rows themselves, so every option
 # finds rows and every row can be found. The row still prints its own label (`ta`).
+# Order matters: the first pattern that matches wins. Red team: patterns are anchored on word starts, so "Bronchiectasis"
+# is not oncology, "Adrenal" not nephrology, "Drug delivery" not hepatology, "Plasma" not neurology, and a rare
+# metabolic disease is a rare disease.
 AREA_FOLD = [
-    (r"onc|cancer|tumou?r|leuk|lymphom|myelom", "Oncology"),
+    (r"\bonc|\bcancer|\btumou?r|\bleuk(?:a)?emi|\blymphom|\bmyelom|\bcarcinom|\bsarcom", "Oncology"),
+    (r"\brare\b", "Rare disease"),
     (r"^hae?matolog", "Hematology"),
-    (r"cardio|cardiology|heart", "Cardiovascular"),
-    (r"^cns|neuro|alzheimer|epilep|multiple sclerosis|parkinson|psychiat|migraine|dmd|sma\b", "Neurology / CNS"),
-    (r"diabet|metabol|obesity|endocrin", "Metabolic / endocrine"),
-    (r"hepat|liver|mash|nash|gastro|^gi\b", "Gastroenterology / hepatology"),
-    (r"infect|vaccin|antivir|antibiot", "Infectious disease"),
-    (r"^rare", "Rare disease"),
-    (r"immunolog|allerg|rheumat", "Immunology / rheumatology"),
-    (r"ophthalm|ocular|retina", "Ophthalmology"),
-    (r"respir|pulmon|lung", "Respiratory"),
-    (r"musculo|bone", "Musculoskeletal"),
-    (r"nephro|renal|kidney", "Nephrology"),
-    (r"dermat|skin", "Dermatology"),
+    (r"\bcardio|\bheart\b", "Cardiovascular"),
+    (r"\bcns\b|\bneuro|\balzheimer|\bepilep|\bmultiple sclerosis|\bparkinson|\bpsychiat|\bmigraine|\bdmd\b|\bsma\b",
+     "Neurology / CNS"),
+    (r"\bdiabet|\bmetabol|\bobesity|\bendocrin", "Metabolic / endocrine"),
+    (r"\bhepat|\bliver\b|\bmash\b|\bnash\b|\bgastro|^gi\b", "Gastroenterology / hepatology"),
+    (r"\binfect|\bvaccin|\bantivir|\bantibiot", "Infectious disease"),
+    (r"\bimmunolog|\ballerg|\brheumat", "Immunology / rheumatology"),
+    (r"\bophthalm|\bocular\b|\bretina", "Ophthalmology"),
+    (r"\brespir|\bpulmon|\blung\b", "Respiratory"),
+    (r"\bmusculo|\bbone\b", "Musculoskeletal"),
+    (r"\bnephro|\brenal\b|\bkidney", "Nephrology"),
+    (r"\bdermat|\bskin\b", "Dermatology"),
 ]
 NO_AREA = "Not classified"
 
@@ -127,6 +131,18 @@ def area(ta):
     return t[:1].upper() + t[1:]
 
 
+def one_spelling(rows):
+    """Labels no pattern knows keep their own name; two spellings of one ("Women's Health", "Women's health") take the
+    commoner, so the dropdown never offers the same area twice."""
+    from collections import Counter
+    c = Counter(r["ar"] for r in rows)
+    best = {}
+    for k in sorted(c, key=lambda k: (-c[k], k)):
+        best.setdefault(re.sub(r"\s+", " ", k).strip().lower(), k)
+    for r in rows:
+        r["ar"] = best[re.sub(r"\s+", " ", r["ar"]).strip().lower()]
+
+
 def on_site(r, out):
     """The site's own page for a row whose source is off-site: the decision page, the PDUFA page, else the company hub
     (at its readout list for a readout). The page links the source."""
@@ -140,17 +156,20 @@ def on_site(r, out):
                 return f"/fda-decision/{t}-{str(day)[:10]}"
         if os.path.exists(os.path.join(SITE, "pdufa", t, "index.html")):
             return f"/pdufa/{t}"
-    return f"/ticker/{t}"
+    if os.path.exists(os.path.join(SITE, "ticker", t, "index.html")):
+        return f"/ticker/{t}"
+    return out["url"]                   # no page here (a conference code): the source is the only page there is
 
 
 def area_options(rows):
-    """The dropdown's <option>s, built from the rows: largest area first, "Other" and "Not classified" last."""
+    """The dropdown's <option>s, built from the rows: largest area first, "Other" and "Not classified" last. No counts
+    in the labels: the page filters from today by default, so a count over every row would promise rows it hides."""
     from collections import Counter
     c = Counter(r["ar"] for r in rows)
     order = sorted(c, key=lambda k: (k in ("Other", NO_AREA), k == NO_AREA, -c[k], k))
     esc = lambda x: x.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
     return '<option value="">All areas</option>' + "".join(
-        f'<option value="{esc(k)}">{esc(k)} ({c[k]})</option>' for k in order)
+        f'<option value="{esc(k)}">{esc(k)}</option>' for k in order)
 
 
 def decision_day(r):
@@ -192,6 +211,7 @@ def main():
             continue
         out.append(row)
     out.sort(key=sort_key)
+    one_spelling(out)
     doc = io.open(PAGE, encoding="utf-8").read()
     m = re.search(r"const DATA=(\[.*?\]);\s*\nconst q=", doc, re.S)
     if not m:

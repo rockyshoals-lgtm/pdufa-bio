@@ -135,10 +135,16 @@ def main():
             day = dd[0]
             nm = str(r.get("name") or "")[:50]
             url = r.get("url") or f"/ticker/{r.get('t')}"
-            # design change 9: a row whose source is off-site opens the site's own page, which links the source
-            off = str(url).startswith("http")
+            # design change 9: a row whose source is off-site opens its decision page here, which links the source
+            if str(url).startswith("http"):
+                for dd_ in (r.get("dcd"), (r.get("_d") or {}).get("fda_action_date") if isinstance(r.get("_d"), dict)
+                            else None, r.get("d")):
+                    slug = f"{r.get('t')}-{str(dd_ or '')[:10]}"
+                    if dd_ and os.path.exists(os.path.join(SITE, "fda-decision", slug, "index.html")):
+                        url = f"/fda-decision/{slug}"
+                        break
             mine = [e for e in data if e["t"] == r.get("t") and e["type"] == "PDUFA" and e["name"] == nm
-                    and (e["url"].startswith("/") if off else e["url"] == url)]
+                    and e["url"] == url]
             if not any(e["d"] == day for e in mine):
                 bad.append(f"/screener: decided {r.get('t')} {r.get('id')} missing from its "
                            f"{'announcement' if dd[1] else 'FDA action'} date {day}")
