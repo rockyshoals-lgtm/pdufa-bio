@@ -9,14 +9,15 @@ catalysts. This fails if any of that returns, and equally if a fix over-corrects
 
   1. screener DATA: a row stored as month / quarter / year carries its window label (site_windows.window_label, with
      " (est.)" for Estimated); a day-precision row carries no label and keeps its exact day;
-  2. screener DATA: a decided PDUFA with a decision date sits on that date with its outcome, and nothing else
-     carries an outcome; the page's JS marks only a recorded outcome, a check for approvals and a cross for CRLs;
+  2. screener DATA: a decided PDUFA sits on the FDA's action date (_d.fda_action_date) with its outcome, never on
+     the announcement / URL date (dcd) when the FDA date is known; with no FDA date it sits on dcd marked "announced".
+     Nothing else carries an outcome; the page's JS marks a check for approvals and a cross for CRLs;
   3. the server-rendered screener table prints no "YYYY-MM-DD (est.)" and prints day rows as their day;
   4. home: no countdown card names a day for a goal the dataset holds only as a window, and every day goal keeps
      its countdown. Cards are matched to dataset rows by drug identity (shared name tokens), whatever the row's
      status, so a window cannot swallow another drug's day and a decided-but-unarchived goal keeps its window;
   5. order and filters follow the window: DATA is sorted by window end (a day row's own day), To keeps a window
-     that starts by then, and a decision dated from the sponsor's announcement is marked "announced".
+     that starts by then.
 
     python tests/test_date_precision.py
 """
@@ -46,6 +47,18 @@ SCREENER = os.path.join(SITE, "screener", "index.html")
 HOME = os.path.join(SITE, "index.html")
 
 
+def decision_day(r):
+    """(day, announced) for a decided PDUFA, computed here and not imported, so a builder bug cannot pass its own
+    test: the FDA's action date (_d.fda_action_date) when on record, else the announcement / URL date (dcd)."""
+    if r.get("type") != "PDUFA" or r.get("st") != "Decided":
+        return None
+    fda = str((r.get("_d") or {}).get("fda_action_date") or "") if isinstance(r.get("_d"), dict) else ""
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", fda):
+        return fda, False
+    dcd = str(r.get("dcd") or "")
+    return (dcd, True) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", dcd) else None
+
+
 def load_rows():
     src = open(DATASET, encoding="utf-8", errors="replace").read()
     return json.loads(src[src.index("["):src.rindex("]") + 1])
@@ -65,9 +78,6 @@ def main():
         by_key.setdefault((r.get("t") or "", r.get("url") or f"/ticker/{r.get('t')}", str(r.get("name") or "")[:50],
                            r.get("type")), []).append(r)
 
-    def unsourced(r):
-        return bool(isinstance(r.get("_d"), dict) and r["_d"].get("decision_date_unsourced"))
-
     def not_announced(r):
         return bool(isinstance(r.get("_d"), dict) and str(r["_d"].get("goal_date") or "").lower() == "not announced")
 
@@ -76,8 +86,7 @@ def main():
         cands = by_key.get((e["t"], e["url"], e["name"], e["type"]), [])
         if not cands:
             continue
-        decided = [r for r in cands if r.get("type") == "PDUFA" and r.get("st") == "Decided"
-                   and len(str(r.get("dcd") or "")) == 10 and r["dcd"] == e["d"]]
+        decided = [r for r in cands if decision_day(r) and decision_day(r)[0] == e["d"]]
         if decided:
             r = decided[0]
             placed += 1
@@ -85,14 +94,13 @@ def main():
                 bad.append(f"/screener {e['t']} {e['d']}: decided row printed as window {e['w']!r}")
             if (e.get("oc") or "") != (r.get("oc") or ""):
                 bad.append(f"/screener {e['t']} {e['d']}: outcome {e.get('oc')!r}, dataset says {r.get('oc')!r}")
-            if bool(e.get("a")) != unsourced(r):
+            if bool(e.get("a")) != decision_day(r)[1]:
                 bad.append(f"/screener {e['t']} {e['d']}: 'announced' mark is {bool(e.get('a'))}, but the dataset "
-                           f"{'flags' if unsourced(r) else 'does not flag'} the decision date as the sponsor's")
+                           f"{'has no' if decision_day(r)[1] else 'has an'} FDA action date for it")
             continue
         r = next((r for r in cands if str(r.get("d")) == e["d"]), None)
         if r is None:
-            if any(x.get("type") == "PDUFA" and x.get("st") == "Decided" and len(str(x.get("dcd") or "")) == 10
-                   for x in cands):
+            if any(decision_day(x) for x in cands):
                 bad.append(f"/screener {e['t']} {e['d']}: decided PDUFA not placed on its decision date")
             continue
         if (e.get("oc") or "") != ((r.get("oc") or "") if r.get("type") == "PDUFA" and r.get("st") == "Decided"
@@ -119,19 +127,23 @@ def main():
             if (e.get("s") or e["d"]) != s0 or (e.get("e") or e["d"]) != e0:
                 bad.append(f"/screener {e['t']} {e.get('w')}: filters on {e.get('s') or e['d']}..{e.get('e') or e['d']}, "
                            f"window is {s0}..{e0}")
-    # every decided PDUFA with a decision date in the screener's range is on that date, and not on its goal date
+    # every decided PDUFA in the screener's range is on its FDA action date: not its goal date, and not the
+    # announcement / URL date (dcd) when the FDA date is known
     for r in rows:
-        if r.get("type") == "PDUFA" and r.get("st") == "Decided" and len(str(r.get("dcd") or "")) == 10:
-            if r["dcd"] >= FLOOR:
-                nm = str(r.get("name") or "")[:50]
-                if not any(e["t"] == r.get("t") and e["d"] == r["dcd"] and e["type"] == "PDUFA" and e["name"] == nm
-                           for e in data):
-                    bad.append(f"/screener: decided {r.get('t')} {r.get('id')} missing from its decision date "
-                               f"{r['dcd']}")
-                if any(e["t"] == r.get("t") and e["d"] == str(r.get("d")) and e["d"] != r["dcd"] and e["name"] == nm
-                       and e["url"] == (r.get("url") or f"/ticker/{r.get('t')}") and e["type"] == "PDUFA"
-                       for e in data):
-                    bad.append(f"/screener: decided {r.get('t')} {r.get('id')} still listed on goal date {r.get('d')}")
+        dd = decision_day(r)
+        if dd and dd[0] >= FLOOR:
+            day = dd[0]
+            nm = str(r.get("name") or "")[:50]
+            url = r.get("url") or f"/ticker/{r.get('t')}"
+            mine = [e for e in data if e["t"] == r.get("t") and e["type"] == "PDUFA" and e["name"] == nm
+                    and e["url"] == url]
+            if not any(e["d"] == day for e in mine):
+                bad.append(f"/screener: decided {r.get('t')} {r.get('id')} missing from its "
+                           f"{'announcement' if dd[1] else 'FDA action'} date {day}")
+            for wrong, what in ((str(r.get("d") or ""), "goal"), (str(r.get("dcd") or ""), "announcement")):
+                if wrong and wrong != day and any(e["d"] == wrong and e.get("oc") for e in mine):
+                    bad.append(f"/screener: decided {r.get('t')} {r.get('id')} listed on its {what} date {wrong}, "
+                               f"not the FDA action date {day}")
     ends = [e.get("e") or e["d"] for e in data]
     if ends != sorted(ends):
         k = next(i for i in range(1, len(ends)) if ends[i] < ends[i - 1])

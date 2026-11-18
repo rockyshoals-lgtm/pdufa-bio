@@ -16,8 +16,9 @@ an approval from September showed as a December catalyst. Now, through site_wind
   * a row whose stored precision is month, quarter or year carries `w`, its label ("Nov 2026", "Q4 2026", "2026",
     plus " (est.)" when st is Estimated), and `e`, the window's last day, so the From filter keeps an open window;
   * a day-precision row is untouched: an exact day a source gives is printed as that day;
-  * a decided PDUFA with a decision date (dcd) is placed on that FDA action date, with its outcome (oc), so the page
-    marks approvals and complete response letters differently and never lists a decided application as upcoming.
+  * a decided PDUFA is placed on the FDA's action date (_d.fda_action_date) with its outcome (oc), so the page marks
+    approvals and complete response letters differently and never lists a decided application as upcoming. Only
+    when no FDA date is on record does it fall back to the announcement date (dcd), marked "announced".
 
     python sync_screener_data.py [--dry-run]
 """
@@ -57,7 +58,7 @@ def screener_row(r):
       w   the printed date when it differs from d (window label, "Not announced", " (est.)");
       s/e the window's first / last day when they differ from d, so From and To filter on the whole window;
       oc  the recorded outcome of a decided PDUFA;
-      a   1 when the decision date is the sponsor's announcement day, not a sourced FDA action date."""
+      a   1 when no FDA action date is on record and the row sits on the sponsor's announcement day (dcd)."""
     d = str(r.get("d") or "")
     out = {"t": r.get("t") or "", "d": d, "name": str(r.get("name") or "")[:50], "type": r.get("type"),
            "ta": r.get("ta") or "", "cap": r.get("cap") or "", "st": r.get("st") or "",
@@ -65,11 +66,11 @@ def screener_row(r):
     decided = r.get("type") == "PDUFA" and r.get("st") == "Decided"
     if decided and r.get("oc"):
         out["oc"] = str(r.get("oc"))
-    dcd = str(r.get("dcd") or "")
-    if decided and len(dcd) == 10:
-        out["d"] = dcd                       # the FDA action date, a day
-        if ((r.get("_d") or {}) if isinstance(r.get("_d"), dict) else {}).get("decision_date_unsourced"):
-            out["a"] = 1                     # LNTH, NVCR: the day the sponsor announced it
+    day = decision_day(r)
+    if decided and day:
+        out["d"], announced = day
+        if announced:
+            out["a"] = 1                     # no FDA action date on record: the day the sponsor announced it
         return out
     w = date_text(r)
     if w != d:
@@ -80,6 +81,23 @@ def screener_row(r):
     if e and e != d:
         out["e"] = e
     return out
+
+
+def decision_day(r):
+    """(day, announced) for a decided PDUFA, or None. The day is the FDA's action date (_d.fda_action_date, from
+    sync_fda_action_dates.py). `dcd` is NOT that date: it is the /decisions URL date, set from the sponsor's
+    announcement (SMMT's CRL is dated 2026-11-13 by the FDA, announced 2026-11-15). Only when no FDA date is on
+    record does the row fall back to `dcd`, marked as the announcement day."""
+    if not (r.get("type") == "PDUFA" and r.get("st") == "Decided"):
+        return None
+    meta = r.get("_d") if isinstance(r.get("_d"), dict) else {}
+    fda = str(meta.get("fda_action_date") or "")
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", fda):
+        return fda, False
+    dcd = str(r.get("dcd") or "")
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", dcd):
+        return dcd, True
+    return None
 
 
 def sort_key(row):
