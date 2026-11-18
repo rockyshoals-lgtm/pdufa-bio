@@ -86,6 +86,15 @@ def main():
         fails.append("guard self-check: a bare table was not caught")
     if not page_problems("planted", good.replace("initial-scale=1", "initial-scale=1,maximum-scale=1")):
         fails.append("guard self-check: a no-zoom viewport was not caught")
+    # a later build step inserting before </head> (freshness stamp, dateModified, schema) must not count as stale:
+    # that is what blocked the 2026-11-18 rebuild (issue 113); a stale or missing style block still must be caught
+    later = good.replace("</head>", '<meta property="og:updated_time" content="2026-11-18"></head>', 1)
+    if page_problems("planted", later):
+        fails.append("guard self-check: a tag inserted after the style block by a later step was flagged")
+    if not page_problems("planted", later.replace("overscroll-behavior-x:contain", "overscroll-behavior-x:auto")):
+        fails.append("guard self-check: a stale style block was not caught")
+    if not page_problems("planted", re.sub(r'<style id="mobilepolish">.*?</style>', "", later, flags=re.S)):
+        fails.append("guard self-check: a missing style block was not caught")
 
     wf = open(os.path.join(HERE, ".github", "workflows", "pdufa-rebuild.yml"), encoding="utf-8").read()
     a, b = wf.find("python inject_mobile_polish.py"), wf.rfind("run: python build_sitemap.py")

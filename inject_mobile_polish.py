@@ -173,6 +173,13 @@ def wrap_tables(doc):
 
 def apply(doc):
     new, n = wrap_tables(doc)
+    # A current style block stays exactly where it is. Later build steps (freshness stamp, dateModified, article
+    # schema, quarantine) also insert before </head>, so "always re-insert last" moved the block on every run and the
+    # guard's apply(doc) == doc failed on 1,826 pages after the 2026-11-18 rebuild (issue 113). Only a missing,
+    # stale or duplicated block is replaced.
+    blocks = re.findall(r'<style id="%s">.*?</style>' % STYLE_ID, new, flags=re.S)
+    if blocks == [CSS]:
+        return new, n
     new = re.sub(r'<style id="%s">.*?</style>' % STYLE_ID, "", new, flags=re.S)
     if "</head>" in new:
         new = new.replace("</head>", CSS + "</head>", 1)
