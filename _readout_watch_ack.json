@@ -165,10 +165,6 @@
    "reason": "Ruling 2026-10-03: the row's NCT03152318 is a different trial ('A Study of the Treatment of Recurrent Malignant Glioma With rQNestin34.5v.2'), not Aglatimagene Besadenovec; registry signals on it are not facts about this row. NCT needs a hand fix."
   },
   {
-   "id": "readout_agio_2027-03-15",
-   "reason": "Ruling 2026-10-03: the row's NCT04278781 is a different trial ('AG-120 in People With IDH1 Mutant Chondrosarcoma'), not Mitapivat; registry signals on it are not facts about this row. NCT needs a hand fix."
-  },
-  {
    "id": "readout_cldx_2027-03-15",
    "reason": "Ruling 2026-10-03: the row's NCT03688178 is a different trial ('DC Migration Study to Evaluate TReg Depletion In GBM Patients With and Without Varlilumab'), not Barzolvolimab; registry signals on it are not facts about this row. NCT needs a hand fix."
   },
@@ -195,10 +191,6 @@
   {
    "id": "readout_tars_2027-10-15",
    "reason": "Ruling 2026-10-03: the row's NCT07562087 is a different trial ('A Study to Evaluate Safety and Efficacy of TP-05 in Healthy Participants With Tick Exposur'), not TP-03; registry signals on it are not facts about this row. NCT needs a hand fix."
-  },
-  {
-   "id": "readout_mygn_2027-11-15",
-   "reason": "Ruling 2026-10-03: the row's NCT05642780 is a different trial ('SKB264 in Combination With Pembrolizumab in Subjects With Selected Solid Tumors'), not Niraparib; registry signals on it are not facts about this row. NCT needs a hand fix."
   },
   {
    "id": "readout_anip_2026-07-15",

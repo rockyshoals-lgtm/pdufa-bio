@@ -1,0 +1,7 @@
+{
+ "_comment": "Exceptions for tests/test_open_goal_not_in_fda_record.py: an FDA record that matched an open PDUFA row's drug by name but is a DIFFERENT product. One entry per (row id, application). Each needs a reason a reader can check against the Orange Book line.",
+ "acks": [
+  {"id": "pdufa_gild_2027-02-02", "appl_no": "221443", "checked": "2026-11-18",
+   "why": "NDA 221443 is BIXLENVO + SUNLENCA starter pack (bictegravir/lenacapavir co-package, Orange Book approval Aug 27, 2026), not the once-weekly oral Yeztugo application this row tracks."}
+ ]
+}
