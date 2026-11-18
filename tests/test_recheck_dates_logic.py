@@ -18,5 +18,5 @@ import recheck_upcoming_dates as R  # noqa: E402
 if __name__ == "__main__":
     if not R.self_test():
         sys.exit(1)
-    print("OK -- date re-check confirms only agreeing sources; moved dates, FDA actions and unsearchable "
-          "companies go to a human.")
+    print("OK -- date re-check confirms only when the source still carries the date and no newer filing names "
+          "the drug; anything newer, unreadable or unsearchable goes to a human.")
