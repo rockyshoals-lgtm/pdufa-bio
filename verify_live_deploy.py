@@ -6,7 +6,7 @@ For each graded URL, N fetches spaced S seconds apart with Cache-Control: no-cac
   * bodies are byte-identical across passes (no flip-flop between two builds);
   * /build-info.json `built` is not older than --min-built (ISO), if given;
   * /api/v1/events meta.as_of == Eastern date now (T-1 rule: a build is never dated tomorrow);
-  * /calendar lede sums: ahead + decided == total.
+  * /calendar lede sums: ahead + decided + awaiting + (est.) rows == total.
 
 Exit 0 only if every check passes on every pass. Prints one line per fetch so the output can be
 pasted verbatim into a builder ack.
@@ -227,11 +227,20 @@ def main():
                     aw = re.search(r"(\d+) (?:passed its|have passed their) target date "
                                    r"without a published decision", text)
                     awaiting = int(aw.group(1)) if aw else 0
+                    # 2026-11-18 (design change 8): a fourth bucket. A row marked (est.) gives an estimated quarter
+                    # with no source, so the lede no longer counts it as "still ahead" and says so in its own words
+                    # ("except 2 rows marked (est.), which give an estimated quarter ... not counted among the goal
+                    # dates still ahead"). Run 44407202365 failed here on 16+88+1!=107 because this check did not
+                    # know that sentence; the page was right, 16+88+1+2 = 107.
+                    es = re.search(r"except (\d+) rows? marked \(est\.\)", text)
+                    est = int(es.group(1)) if es else 0
                     note.append(f"lede {tot}={ahead}+{dec}"
-                                + (f"+{awaiting}aw" if awaiting else ""))
-                    if ahead + dec + awaiting != tot:
+                                + (f"+{awaiting}aw" if awaiting else "")
+                                + (f"+{est}est" if est else ""))
+                    if ahead + dec + awaiting + est != tot:
                         fails.append(f"calendar lede {ahead}+{dec}"
-                                     + (f"+{awaiting}" if awaiting else "") + f"!={tot}")
+                                     + (f"+{awaiting}" if awaiting else "")
+                                     + (f"+{est}est" if est else "") + f"!={tot}")
                 else:
                     fails.append("calendar lede not found")
                     note.append("LEDE MISSING")
