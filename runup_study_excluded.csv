@@ -1,0 +1,227 @@
+cache_key,ticker,pdufa_date,eve_date,asset,outcome,reason,kept_row
+BMY_20200515,BMY,2020-05-15,2020-05-14,OPDIVO (nivolumab) + YERVOY (ipilimumab),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",BMY 2020-05-15 POMALYST (pomalidomide)
+GMAB_20200820,GMAB,2020-08-20,2020-08-19,ARZERRA (ofatumumab),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",GMAB 2020-08-20 DARZALEX (Daratumumab) and KYPROLIS (carfilzomib)
+RHHBY_20201123,RHHBY,2020-11-23,2020-11-20,XOFLUZA (baloxavir marboxil),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",RHHBY 2020-11-21 Ronapreve (REGEN-COV 2066)
+TGTX_20210205,TGTX,2021-02-05,2021-02-04,UKONIQ (umbralisib),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",TGTX 2021-02-05 UKONIQ (umbralisib)
+ETON_20210528,ETON,2021-05-28,2021-05-27,Dehydrated alcohol injection (DS-100),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ETON 2021-05-28 ZONISADE (Zonisamide Oral Suspension)
+RHHBY_20211211,RHHBY,2021-12-11,2021-12-10,Lunsumio (mosunetuzumab-axgb),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",RHHBY 2021-12-11 Glofitamab (Glofit) + Polatuzumab Vedotin (Pola) - (NP39488)
+ALLO_20211213,ALLO,2021-12-13,2021-12-10,ALLO-501 - (ALPHA),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ALLO 2021-12-13 ALLO-715 - (UNIVERSAL)
+ABBV_20220114,ABBV,2022-01-14,2022-01-13,RINVOQ (Upadacitinib),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ABBV 2022-01-14 RINVOQ (Upadacitinib)
+PFE_20220329,PFE,2022-03-29,2022-03-28,"Cabenuva (cabotegravir, rilpivirine)",APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",PFE 2022-03-29 Comirnaty (BNT162b2)
+RYTM_20220616,RYTM,2022-06-16,2022-06-15,IMCIVREE (setmelanotide),APPROVAL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2022-06-16 APPROVAL; 2022-06-16 CRL
+RYTM_20220616#IMCIVREE (setmelanot,RYTM,2022-06-16,2022-06-15,IMCIVREE (setmelanotide),CRL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2022-06-16 APPROVAL; 2022-06-16 CRL
+AZN_20220805,AZN,2022-08-05,2022-08-04,ENHERTU (trastuzumab deruxtecan),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",AZN 2022-08-05 CALQUENCE (acalabrutinib)
+LLY_20220921,LLY,2022-09-21,2022-09-20,RETEVMO (Selpercatinib),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",LLY 2022-09-21 RETEVMO (Selpercatinib)
+RHHBY_20221212,RHHBY,2022-12-12,2022-12-09,Cevostamab (FcRH5xCD3) - (GO39775),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",RHHBY 2022-12-12 Cevostamab - (CAMMA 1)
+ADMA_20221213,ADMA,2022-12-13,2022-12-12,ASCENIV (RI-002),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ADMA 2022-12-13 BIVIGAM
+LLY_20230127,LLY,2023-01-27,2023-01-26,Pirtobrutinib (LOXO-305),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",LLY 2023-01-27 Jaypirca (pirtobrutinib)
+NVO_20230504,NVO,2023-05-04,2023-05-03,Concizumab,CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",NVO 2023-05-04 Concizumab - (Explorer 7)
+ANIP_20230515,ANIP,2023-05-15,2023-05-12,Alendronate Sodium Oral Solution (RLD Fosamax generic),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ANIP 2023-05-15 Methsuximide Capsules USP (Celontin generics)
+SRPT_20230515,SRPT,2023-05-15,2023-05-12,ELEVIDYS (delandistrogene moxeparvovec-rokl),APPROVAL,research row re-checked: not an FDA action: ELEVIDYS was approved on 2023-06-22 (its own study row); May 2023 held the advisory committee and the review extension,
+AZN_20230610,AZN,2023-06-10,2023-06-09,GC012F,CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",AZN 2023-06-10 FasTCAR-T GC012F
+CLDX_20230610,CLDX,2023-06-10,2023-06-09,Barzolvolimab (CDX-0159),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",CLDX 2023-06-10 Barzolvolimab - (CindU)
+ASND_20230617,ASND,2023-06-17,2023-06-16,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ASND 2023-06-17 Breyanzi (lisocabtagene maraleucel) - (TRANSCEND NHL 001)
+BMY_20230617,BMY,2023-06-17,2023-06-16,Breyanzi (lisocabtagene maraleucel) - (TRANSCEND FL),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",BMY 2023-06-17 Breyanzi (lisocabtagene maraleucel) - (TRANSCEND NHL 001)
+BIIB_20230804,BIIB,2023-08-04,2023-08-03,Zuranolone (SAGE-217),CRL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2023-08-04 CRL; 2023-08-04 APPROVAL
+BIIB_20230804#Zuranolone (SAGE-217,BIIB,2023-08-04,2023-08-03,Zuranolone (SAGE-217),APPROVAL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2023-08-04 CRL; 2023-08-04 APPROVAL
+REGN_20230818,REGN,2023-08-18,2023-08-17,EYLEA HD (aflibercept 8 mg),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",REGN 2023-08-18 Veopoz (pozelimab-bbfg)
+AMRX_20230906,AMRX,2023-09-06,2023-09-05,Lisdexamfetamine Dimesylate  (Vyvanse generic),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",AMRX 2023-09-06 Calcium gluconate in sodium chloride injection
+MRK_20231016,MRK,2023-10-16,2023-10-13,KEYTRUDA (pembrolizumab) in combination with chemotherapy,APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",MRK 2023-10-16 KEYTRUDA (pembrolizumab) - (KEYNOTE-671)
+GLPG_20231209,GLPG,2023-12-09,2023-12-08,GLPG5101 - (ATALANTA-1),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",GLPG 2023-12-09 GLPG5201 - (EUPLAGIA-1)
+CLNN_20231221,CLNN,2023-12-21,2023-12-20,CNM-Au8 - (HEALEY ALS),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",CLNN 2023-12-21 CNM-Au8 - (RESCUE-ALS)
+AZN_20231222,AZN,2023-12-22,2023-12-21,WAINUA (eplontersen),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",AZN 2023-12-22 WAINUA (eplontersen)
+IONS_20231222,IONS,2023-12-22,2023-12-21,WAINUA (eplontersen),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",IONS 2023-12-22 WAINUA (eplontersen)
+ALVO_20240119,ALVO,2024-01-19,2024-01-18,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ALVO 2024-01-19 SIMLANDI (adalimumab-ryvk) - (Humira biosimilar)
+TEVA_20240119,TEVA,2024-01-19,2024-01-18,SELARSDI (ustekinumab-aekn) - (STELARA biosimilar),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",TEVA 2024-01-19 SIMLANDI (adalimumab-ryvk) - (Humira biosimilar)
+ONC_20240314,ONC,2024-03-14,2024-03-13,Tislelizumab-jsgr (Tevimbra),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ONC 2024-03-14 TEVIMBRA
+ABBV_20240322,ABBV,2024-03-22,2024-03-21,Mirvetuximab - (MIRASOL),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ABBV 2024-03-22 ELAHERE (mirvetuximab soravtansine-gynx)
+AZN_20240325,AZN,2024-03-25,2024-03-22,ULTOMIRIS (ravulizumab-cwvz),APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",AZN 2024-03-25 ULTOMIRIS (ravulizumab-cwvz) - (CHAMPION-NMOSD)
+REGN_20240325,REGN,2024-03-25,2024-03-22,Odronextamab - (OLYMPIA),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",REGN 2024-03-25 Odronextamab
+ZLAB_20240325,ZLAB,2024-03-25,2024-03-22,Odronextamab,CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ZLAB 2024-03-25 Odronextamab - (OLYMPIA)
+GMAB_20240602,GMAB,2024-06-02,2024-05-31,MCLA-145 with Keytruda (pembrolizumab),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",GMAB 2024-06-02 MCLA-145 with Keytruda (pembrolizumab)
+MRK_20240617,MRK,2024-06-17,2024-06-14,KEYTRUDA (pembrolizumab) Plus Carboplatin and Paclitaxel,APPROVAL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2024-06-17 APPROVAL; 2024-06-17 CRL
+MRK_20240617#EVX-01 + KEYTRUDA (p,MRK,2024-06-17,2024-06-14,EVX-01 + KEYTRUDA (pembrolizumab) / OPDIVO (nivolumab),CRL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2024-06-17 APPROVAL; 2024-06-17 CRL
+ALPMY_20241018,ALPMY,2024-10-18,2024-10-17,Zolbetuximab,APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ALPMY 2024-10-18 VYLOY (zolbetuximab-clzb)
+KZIA_20250102,KZIA,2025-01-02,2024-12-31,Paxalisib (GDC-0084) - (GBM AGILE),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+JSPR_20250108,JSPR,2025-01-08,2025-01-07,Subcutaneous briquilimab - (BEACON),CRL,"decision page says its CRL label was wrong: Mislabel: Phase 1b/2a BEACON clinical data, no NDA/CRL",
+PHIO_20250113,PHIO,2025-01-13,2025-01-10,PH-762,CRL,"decision page says its CRL label was wrong: Mislabel: PH-762 Phase 1b data, clinical-stage",
+LEXX_20250115,LEXX,2025-01-15,2025-01-14,DehydraTECH-liraglutide - (GLP-1-H25-5). (Pilot Study #5),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+INCY_20250116,INCY,2025-01-16,2025-01-15,Niktimvo (axatilimab-csfr),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+SNDX_20250116,SNDX,2025-01-16,2025-01-15,Niktimvo (axatilimab-csfr),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+AZN_20250117,AZN,2025-01-17,2025-01-16,Datopotamab Deruxtecan - (TROPION-Breast01),APPROVAL,"same FDA action as another page (BLA761394, action date 2025-01-17)",AZN 2025-01-17 Datopotamab Deruxtecan - (TROPION-Breast01)
+INBX_20250121,INBX,2025-01-21,2025-01-17,ozekibart (INBRX-109) in combination with FOLFIRI,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+IRON_20250121,IRON,2025-01-21,2025-01-17,Bitopertin - (APOLLO),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+CHRS_20250122,CHRS,2025-01-22,2025-01-21,Casdozokitug/toripalimab/bevacizumab,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+LSTA_20250122,LSTA,2025-01-22,2025-01-21,LSTA1 in combination with gemcitabine and nab-paclitaxel - (ASCEND),CRL,"decision page says its CRL label was wrong: Mislabel: certepetide Phase 2b ASCEND data, no CRL",
+AMRX_20250123,AMRX,2025-01-23,2025-01-22,Memantine/donepezil 14-10 mg and 28-10 mg extended-release capsules,APPROVAL,"same FDA action as another page (ANDA217640, action date 2025-01-28)",AMRX 2025-01-23 Everolimus
+AMRX_20250123#Rifaximin 550 mg ora,AMRX,2025-01-23,2025-01-22,Rifaximin 550 mg oral tablets,APPROVAL,"same FDA action as another page (ANDA217640, action date 2025-01-28)",AMRX 2025-01-23 Everolimus
+NVO_20250128,NVO,2025-01-28,2025-01-27,Semaglutide - (FLOW),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+NVS_20250129,NVS,2025-01-29,2025-01-28,Farabursen (RGLS8429) (MAD),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+RNAZ_20250206,RNAZ,2025-02-06,2025-02-05,TTX-MC138 - (PRE-I-SPY),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+ALLO_20250214,ALLO,2025-02-14,2025-02-13,ALLO-501/501A + ALLO-647 - (ALPHA2),CRL,"decision page says its CRL label was wrong: Mislabel: Phase 1 data publication, clinical-stage",
+CLLS_20250214,CLLS,2025-02-14,2025-02-13,ALLO-501/501A + ALLO-647 - (ALPHA2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+GSK_20250217,GSK,2025-02-17,2025-02-14,MenABCWY,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+HRMY_20250219,HRMY,2025-02-19,2025-02-18,WAKIX (pitolisant) - (INTUNE),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+IBRX_20250219,IBRX,2025-02-19,2025-02-18,ANKTIVA,APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+APTO_20250220,APTO,2025-02-20,2025-02-19,,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+SLS_20250220,SLS,2025-02-20,2025-02-19,SLS009 (tambiciclib) with zanubrutinib,CRL,no published decision page (page retired or moved to another date),
+PHIO_20250310,PHIO,2025-03-10,2025-03-07,PH-762,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+RNAZ_20250313,RNAZ,2025-03-13,2025-03-12,TTX-MC138 - (PRE-I-SPY),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+GLSI_20250317,GLSI,2025-03-17,2025-03-14,GP2 (GLSI-100)  - (FLAMINGO-01),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+AURA_20250324,AURA,2025-03-24,2025-03-21,Belzupacap sarotalocan (AU-011),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CGON_20250324,CGON,2025-03-24,2025-03-21,Cretostimogene - (BOND-003),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CNTA_20250324,CNTA,2025-03-24,2025-03-21,SerpinPC - (PRESent-3),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+WVE_20250326,WVE,2025-03-26,2025-03-25,WVE-N531 - (FORWARD-53),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+EQ_20250327,EQ,2025-03-27,2025-03-26,Itolizumab - (EQUATOR),CRL,"decision page says its CRL label was wrong: Mislabel: Phase 3 EQUATOR readout miss, no CRL",
+CMPX_20250401,CMPX,2025-04-01,2025-03-31,CTX-009 (DLL4 X VEGF-A bispecific) - (COMPANION-002),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+BMY_20250411,BMY,2025-04-11,2025-04-10,Opdivo (nivolumab) plus Yervoy (ipilimumab) - (CheckMate -9DW),APPROVAL,"same FDA action as another page (BLA125554, action date 2025-04-08)",BMY 2025-04-08 Opdivo (nivolumab) plus Yervoy - (CheckMate -8HW)
+IRWD_20250414,IRWD,2025-04-14,2025-04-11,Apraglutide - (STARS),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+REGN_20250418,REGN,2025-04-18,2025-04-17,Dupixent (dupilumab),APPROVAL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2025-04-18 APPROVAL; 2025-04-20 CRL
+REGN_20250420,REGN,2025-04-20,2025-04-17,EYLEA HD (24-week dosing),CRL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2025-04-18 APPROVAL; 2025-04-20 CRL
+EQ_20250424,EQ,2025-04-24,2025-04-23,Itolizumab - (EQUATOR),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+JNJ_20250424,JNJ,2025-04-24,2025-04-23,INLEXZO (gemcitabine intravesical system)  (TAR-200) - (SunRISe-1),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+ALXO_20250425,ALXO,2025-04-25,2025-04-24,ALX148 (evorpacept) + rituximab and lenalidomide,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+TARA_20250426,TARA,2025-04-26,2025-04-25,TARA-002 - (ADVANCED-2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+URGN_20250427,URGN,2025-04-27,2025-04-25,UGN-102 - (OPTIMA II),CRL,"decision page says its CRL label was wrong: ZUSDURI (UGN-102) was FDA-APPROVED June 12, 2025; the April 2025 date was not a CRL: archi",
+CLDI_20250428,CLDI,2025-04-28,2025-04-25,CLD-400 - (RTNova),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+XRTX_20250430,XRTX,2025-04-30,2025-04-29,XRx-026,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+PHIO_20250507,PHIO,2025-05-07,2025-05-06,PH-762,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+OGEN_20250513,OGEN,2025-05-13,2025-05-12,ONP-002,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+CING_20250514,CING,2025-05-14,2025-05-13,"CTx-1301 (fixed dose, pediatric study)",APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+BCTX_20250523,BCTX,2025-05-23,2025-05-22,Bria-IMT - (BRIA-ABC),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+BMY_20250523,BMY,2025-05-23,2025-05-22,Iberdomide in Combination with Dexamethasone - (CC-220-MM-001),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+REGN_20250523,REGN,2025-05-23,2025-05-22,Linvoseltamab +  carfilzomib - (LINKER-MM2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+SVRA_20250527,SVRA,2025-05-27,2025-05-23,MOLBREEVI (Molgradex) - (IMPALA-2),CRL,"decision page says its CRL label was wrong: Refusal-to-File (CMC completeness), not a CRL",
+MRNA_20250531,MRNA,2025-05-31,2025-05-30,mRNA-1283 - (NEXTCove),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+GMAB_20250602,GMAB,2025-06-02,2025-05-30,Rinatabart sesutecan (Rina-S) - (RAINFOL),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+REGN_20250602,REGN,2025-06-02,2025-05-30,DUPIXENT (dupilumab),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+SNY_20250602,SNY,2025-06-02,2025-05-30,DUPIXENT (dupilumab),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+IMMX_20250603,IMMX,2025-06-03,2025-06-02,NXC-201 (HBI10101) - (NEXICART-2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+TRAW_20250603,TRAW,2025-06-03,2025-06-02,Rigosertib,CRL,"decision page says its CRL label was wrong: Mislabel: IND-stage; clinical hold not CRL, no NDA",
+AXSM_20250609,AXSM,2025-06-09,2025-06-06,Esreboxetine (AXS-14) - (FORWARD),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+MRK_20250609,MRK,2025-06-09,2025-06-06,ENFLONSIA (Clesrovimab) (MK-1654-004) - (CLEVER),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+ADCT_20250612,ADCT,2025-06-12,2025-06-11,ZYNLONTA (Loncastuximab Tesirine-Ipyl) - (LOTIS-7),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+AMRX_20250612,AMRX,2025-06-12,2025-06-11,Prednisolone Acetate Ophthalmic Suspension,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+BMY_20250612,BMY,2025-06-12,2025-06-11,Iberdomide in Combination with Dexamethasone - (CC-220-MM-001),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+MRNA_20250612,MRNA,2025-06-12,2025-06-11,mRESVIA (mRNA-1345),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+NRIX_20250612,NRIX,2025-06-12,2025-06-11,Bexobrutideg (NX-5948),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+JNJ_20250613,JNJ,2025-06-13,2025-06-12,JNJ-4496,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+GMAB_20250615,GMAB,2025-06-15,2025-06-13,EPCORE (Epcoritamab) - (EPCORE  NHL-2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+INCY_20250615,INCY,2025-06-15,2025-06-13,INCA033989,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+JSPR_20250616,JSPR,2025-06-16,2025-06-13,Subcutaneous briquilimab - (SPOTLIGHT),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+LTRN_20250616,LTRN,2025-06-16,2025-06-13,LP-300 - (Harmonic),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+LYEL_20250617,LYEL,2025-06-17,2025-06-16,LYL314 (IMPT-314),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+GLPG_20250619,GLPG,2025-06-19,2025-06-18,GLPG5101 - (ATALANTA-1),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+GHRS_20250620,GHRS,2025-06-20,2025-06-18,GH001-TRD-201,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+AVBP_20250623,AVBP,2025-06-23,2025-06-20,Firmonertinib monotherapy - (FURTHER),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+AZN_20250623,AZN,2025-06-23,2025-06-20,Datopotamab deruxtecan - (TROPION-Lung05),APPROVAL,"same FDA action as another page (BLA761464, action date 2025-06-23)",AZN 2025-06-23 DATROWAY (datopotamab deruxtecan-dlnk)- (TROPION-Lung01)
+DSNKY_20250623,DSNKY,2025-06-23,2025-06-20,Datopotamab deruxtecan - (TROPION-Lung05),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+BMY_20250627,BMY,2025-06-27,2025-06-26,Breyanzi® (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+ABBV_20250630,ABBV,2025-06-30,2025-06-27,JUVÉDERM - (SKINVIVE) (injectable HA),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+INTS_20250630,INTS,2025-06-30,2025-06-27,INT230-6,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+TAK_20250630,TAK,2025-06-30,2025-06-27,GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 µg/mL 10% solution],APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+CMND_20250703,CMND,2025-07-03,2025-07-02,CMND-100,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+JSPR_20250707,JSPR,2025-07-07,2025-07-03,Subcutaneous briquilimab - (BEACON),CRL,"decision page says its CRL label was wrong: Mislabel: clinical data update/restructuring, not a CRL",
+ABEO_20250711,ABEO,2025-07-11,2025-07-10,UX111 - (ABO-102),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CUE_20250716,CUE,2025-07-16,2025-07-15,CUE-101,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+RHHBY_20250718,RHHBY,2025-07-18,2025-07-17,Columvi + GemOx - (STARGLO),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+PHIO_20250728,PHIO,2025-07-28,2025-07-25,PH-762,CRL,decision page says its CRL label was wrong: Phio is a preclinical/early-clinical company with no PDUFA on this date; the large move wa,
+ANIK_20250730,ANIK,2025-07-30,2025-07-29,HYALOFAST - (FastTRACK),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+REGN_20250730,REGN,2025-07-30,2025-07-29,Odronextamab,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+ZLAB_20250730,ZLAB,2025-07-30,2025-07-29,Odronextamab,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+IBRX_20250813,IBRX,2025-08-13,2025-08-12,CD19 CAR-NK cell therapy  with rituximab - (QUILT-106),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+PGEN_20250815,PGEN,2025-08-15,2025-08-14,PAPZIMEOS (zopapogene imadenovec-drba),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+PTCT_20250819,PTCT,2025-08-19,2025-08-18,Vatiquinone - (MOVE-FA),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+VALN_20250825,VALN,2025-08-25,2025-08-22,IXCHIQ,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+MRKR_20250826,MRKR,2025-08-26,2025-08-25,Neldaleucel (MT-601) - (APOLLO),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+MRNA_20250827,MRNA,2025-08-27,2025-08-26,Spikevax and mNEXSPIKE - (LP.8.1 variant),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+PFE_20250827,PFE,2025-08-27,2025-08-26,COMIRNATY LP.8.1,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+PRTA_20250827,PRTA,2025-08-27,2025-08-26,PRX012 - (ASCENT),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+TEVA_20250828,TEVA,2025-08-28,2025-08-27,Generic Saxenda (liraglutide injection),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+TAK_20250905,TAK,2025-09-05,2025-09-04,VONVENDI [von Willebrand factor (Recombinant)],APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+GMAB_20250912,GMAB,2025-09-12,2025-09-11,Epcoritamab-bysp - (EPCORE CLL-1 ),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+KRYS_20250915,KRYS,2025-09-15,2025-09-12,VYJUVEK (beremagene geperpavec-svdt),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+JNJ_20250919,JNJ,2025-09-19,2025-09-18,TREMFYA (guselkumab),APPROVAL,"same FDA action as another page (BLA761061, action date 2025-09-26)",JNJ 2025-09-29 TREMFYA (guselkumab)
+BIIB_20250923,BIIB,2025-09-23,2025-09-22,SPINRAZA (Nusinersen) - (DEVOTE),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+IONS_20250923,IONS,2025-09-23,2025-09-22,SPINRAZA (Nusinersen) - (DEVOTE),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CGEM_20251013,CGEM,2025-10-13,2025-10-10,Zipalertinib - (REZILIENT2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+REGN_20251017,REGN,2025-10-17,2025-10-16,Solnerstotug (formerly SNS-101) with Libtayo - (VISTA),CRL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+SNSE_20251017,SNSE,2025-10-17,2025-10-16,Solnerstotug (formerly SNS-101) with Libtayo - (VISTA),CRL,"decision page says its CRL label was wrong: Mislabel: ESMO Phase 1/2 clinical data, clinical-stage",
+RHHBY_20251020,RHHBY,2025-10-20,2025-10-17,Gazyva/Gazyvaro,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+ONCY_20251028,ONCY,2025-10-28,2025-10-27,Pelareorep and mFOLFIRINOX with and without atezolizumab - (GOBLET),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+AMRX_20251029,AMRX,2025-10-29,2025-10-28,Beclomethasone Dipropionate HFA Inhalation Aerosol,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+ESLA_20251103,ESLA,2025-11-03,2025-10-31,EB103 (CD19) - (STARLIGHT-1),CRL,"decision page says its CRL label was wrong: Mislabel: STARLIGHT-1 Phase I cohort completion, no CRL",
+BHVN_20251104,BHVN,2025-11-04,2025-11-03,Troriluzole (BHV4157-206-RWE),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+IBRX_20251105,IBRX,2025-11-05,2025-11-04,t-haNK (N-803 ANKTIVA) in combination with rituximab - (QUILT.106),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CLDX_20251106,CLDX,2025-11-06,2025-11-05,Barzolvolimab - (CindU),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+BCAB_20251107,BCAB,2025-11-07,2025-11-06,Mecbotamab Vedotin (BA3011),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+CYTK_20251107,CYTK,2025-11-07,2025-11-06,Aficamten (CK-274) - (MAPLE-HCM),CRL,"decision page says its CRL label was wrong: Aficamten (MYQORZO) was FDA-APPROVED Dec 19, 2025; the CRL label on this date appears to b",
+RPRX_20251107,RPRX,2025-11-07,2025-11-06,Aficamten (CK-274) - (MAPLE-HCM),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+ENGN_20251111,ENGN,2025-11-11,2025-11-10,Detalimogene voraplasmid (EG-70) - (LEGEND),CRL,"decision page says its CRL label was wrong: Mislabel: LEGEND clinical CR-rate data, BLA not filed",
+KZIA_20251118,KZIA,2025-11-18,2025-11-17,Paxalisib,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+TARA_20251119,TARA,2025-11-19,2025-11-18,TARA-002 - (STARBORN-1),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+RHHBY_20251125,RHHBY,2025-11-25,2025-11-24,SRP-9001-103 - (ENDEAVOR),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+SRPT_20251125,SRPT,2025-11-25,2025-11-24,SRP-9001-103 - (ENDEAVOR),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+AMRX_20251201,AMRX,2025-12-01,2025-11-28,RESTASIS (Cyclosporine Ophthalmic Emulsion),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+JANX_20251201,JANX,2025-12-01,2025-11-28,PSMA-TRACTr (JANX007) - (ENGAGER-PSMA-01),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+BMY_20251204,BMY,2025-12-04,2025-12-03,Breyanzi (lisocabtagene maraleucel),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+PLRX_20251204,PLRX,2025-12-04,2025-12-03,PLN-101095,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+PRTC_20251205,PRTC,2025-12-05,2025-12-04,LYT-200,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CASI_20251207,CASI,2025-12-07,2025-12-05,CID-103,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+CLLS_20251207,CLLS,2025-12-07,2025-12-05,UCART20x22 - (NatHaLi-01),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+GLPG_20251207,GLPG,2025-12-07,2025-12-05,GLPG5101 - (ATALANTA-1),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+IMMX_20251207,IMMX,2025-12-07,2025-12-05,NXC-201 (HBI10101) - (NEXICART-2),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+ALXO_20251208,ALXO,2025-12-08,2025-12-05,ALX148 (evorpacept) + rituximab and lenalidomide,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+AUTL_20251208,AUTL,2025-12-08,2025-12-05,Obe-cel - (CATULUS),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+LYEL_20251208,LYEL,2025-12-08,2025-12-05,LYL314 (IMPT-314),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+NRIX_20251208,NRIX,2025-12-08,2025-12-05,NX-5948-301,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+ONC_20251208,ONC,2025-12-08,2025-12-05,Sonrotoclax,CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+AAPG_20251209,AAPG,2025-12-09,2025-12-08,Olverembatinib - (POLARIS-1),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+ALPMY_20251217,ALPMY,2025-12-17,2025-12-16,KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+MRK_20251217,MRK,2025-12-17,2025-12-16,KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+PFE_20251217,PFE,2025-12-17,2025-12-16,KEYTRUDA (pembrolizumab) plus Padcev  (enfortumab vedotin-ejfv) - (KEYNOTE-B15/EV-304),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+COCP_20251218,COCP,2025-12-18,2025-12-17,CDI-988,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+PBM_20251219,PBM,2025-12-19,2025-12-18,Psilocybin (NPX5),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+AMRX_20251222,AMRX,2025-12-22,2025-12-19,Boncresa (denosumab-mobz),APPROVAL,"same FDA action as another page (BLA761457, action date 2025-12-19)",AMRX 2025-12-22 Oziltus (denosumab-mobz)
+CRSP_20251222,CRSP,2025-12-22,2025-12-19,Zugocabtagene geleucel (zugo-cel; formerly CTX112),CRL,"decision page says outcome unverified (price-inferred, no primary source)",
+SNY_20251228,SNY,2025-12-28,2025-12-26,Tolebrutinib,CRL,source re-checked: page dated 4 days after the FDA action its source reports; the eve and decision-day prices are measured after the news,
+CORC_20251230,CORC,2025-12-30,2025-11-24,Relacorilant (relacorilant),CRL,no published decision page (page retired or moved to another date),
+IBRX_20260116,IBRX,2026-01-16,2026-01-15,CD19 CAR-NK cell therapy  with rituximab - (QUILT-106),CRL,"decision page says its CRL label was wrong: Mislabel: FDA discussions/ex-US approval, not a CRL",
+GLSI_20260122,GLSI,2026-01-22,2026-01-21,GP2 (GLSI-100)  - (FLAMINGO-01),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+RGNX_20260209,RGNX,2026-02-09,2026-02-06,Ranibizumab,CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",RGNX 2026-02-08 RGX-121 (clemidsogene lanparvovec)
+NVCR_20260212,NVCR,2026-02-12,2026-02-11,Temozolomide,APPROVAL,no published decision page (page retired or moved to another date),
+EBS_20260213,EBS,2026-02-13,2026-02-12,,APPROVAL,no published decision page (page retired or moved to another date),
+IRON_20260215,IRON,2026-02-15,2026-02-13,Bitopertin (EPP),CRL,"source re-checked: duplicate page of the same FDA action as IRON-2026-02-13 (bitopertin CRL received Feb 13, 2026; source cited by both)",
+HRMY_20260217,HRMY,2026-02-17,2026-02-13,,APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+INVA_20260217,INVA,2026-02-17,2026-02-13,,APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+JNJ_20260217,JNJ,2026-02-17,2026-02-13,,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+ABBV_20260220,ABBV,2026-02-20,2026-02-19,Tavapadon (TEMPO),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+AZN_20260220,AZN,2026-02-20,2026-02-19,Truqap - (CAPItello-281),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+VNDA_20260221,VNDA,2026-02-21,2026-02-20,Bysanti (milsaperidone),APPROVAL,"source re-checked: duplicate page of the same FDA action as VNDA-2026-02-20 (Bysanti approval announced Feb 20, 2026; Feb 21 is a Saturday)",
+AMPH_20260224,AMPH,2026-02-24,2026-02-23,,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+REGN_20260224,REGN,2026-02-24,2026-02-23,Garetosmab - (OPTIMA),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
+OTLK_20260305,OTLK,2026-03-05,2026-03-04,bevacizumab,CRL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+GSK_20260313,GSK,2026-03-13,2026-03-12,Tebipenem HBr (SPR994) - (PIVOT-PO),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+NVO_20260326,NVO,2026-03-26,2026-03-25,Semaglutide,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+BIIB_20260330,BIIB,2026-03-30,2026-03-27,Litifilimab,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+OTLK_20260407,OTLK,2026-04-07,2026-04-06,bevacizumab,CRL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+LGND_20260413,LGND,2026-04-13,2026-04-10,,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+MRK_20260421,MRK,2026-04-21,2026-04-20,Lipfendra (enlicitide decanoate),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+REGN_20260422,REGN,2026-04-22,2026-04-21,Garetosmab - (OPTIMA),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+SNY_20260422,SNY,2026-04-22,2026-04-21,Venglustat,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+REGN_20260423,REGN,2026-04-23,2026-04-22,Garetosmab - (OPTIMA),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+AZN_20260427,AZN,2026-04-27,2026-04-24,Truqap - (CAPItello-281),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+JAGX_20260429,JAGX,2026-04-29,2026-04-28,,APPROVAL,no published decision page (page retired or moved to another date),
+AZN_20260515,AZN,2026-05-15,2026-05-14,Truqap - (CAPItello-281),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+SPRY_20260515,SPRY,2026-05-15,2026-05-14,,APPROVAL,no published decision page (page retired or moved to another date),
+AZN_20260518,AZN,2026-05-18,2026-05-15,Truqap - (CAPItello-281),APPROVAL,source re-checked: the cited SEC document does not establish an FDA action on this date,
+PGEN_20260527,PGEN,2026-05-27,2026-05-26,,APPROVAL,no published decision page (page retired or moved to another date),
+MNKD_20260529,MNKD,2026-05-29,2026-05-28,FUROSCIX ReadyFlow Autoinjector (SCP-111),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+BMY_20260601,BMY,2026-06-01,2026-05-29,Nivolumab,APPROVAL,no published decision page (page retired or moved to another date),
+LGND_20260608,LGND,2026-06-08,2026-06-05,,APPROVAL,no published decision page (page retired or moved to another date),
+XOMA_20260608,XOMA,2026-06-08,2026-06-05,,APPROVAL,no published decision page (page retired or moved to another date),
+ZVRA_20260608,ZVRA,2026-06-08,2026-06-05,,APPROVAL,no published decision page (page retired or moved to another date),
+ACHV_20260620,ACHV,2026-06-20,2026-06-18,Cytisinicline - (ORCA-3),CRL,no published decision page (page retired or moved to another date),
+LNTH_20260629,LNTH,2026-06-29,2026-06-26,LNTH-2501 (Gallium-68 edotreotide),CRL,no published decision page (page retired or moved to another date),
+UNCY_20260629,UNCY,2026-06-29,2026-06-26,Oxylanthanum Carbonate (OLC),CRL,no published decision page (page retired or moved to another date),
+ARQT_20260630,ARQT,2026-06-30,2026-06-29,ZORYVE (roflumilast) Cream 0.3%,APPROVAL,no published decision page (page retired or moved to another date),
