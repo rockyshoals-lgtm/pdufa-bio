@@ -19,10 +19,14 @@
    +'@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}'
    /* audit 2026-10-04 P2: on a phone the pill covered the primary-source link and table headers. Below 480px it is a
       44px icon that hides on scroll-down and returns on scroll-up; the keyboard hint is a desktop affordance. */
-   +'@media (max-width:480px){#cmdkBtn{right:12px;bottom:12px;padding:0;width:44px;height:44px;justify-content:center;border-radius:50%}#cmdkBtn span,#cmdkBtn kbd{display:none}#cmdkBtn:before{content:"";width:16px;height:16px;border:2px solid #9db3d4;border-radius:50%;box-shadow:5px 5px 0 -3px #9db3d4}#cmdkBtn.hide{transform:translateY(80px);opacity:0;pointer-events:none}}';
+   +'@media (max-width:720px){#cmdkBtn{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));padding:0;width:44px;height:44px;justify-content:center;border-radius:50%}#cmdkBtn span,#cmdkBtn kbd{display:none}#cmdkBtn:before{content:"";width:16px;height:16px;border:2px solid #9db3d4;border-radius:50%;box-shadow:5px 5px 0 -3px #9db3d4}#cmdkBtn.hide{transform:translateY(80px);opacity:0;pointer-events:none}}'
+   /* mobile red team 2026-11-17: the full pill still covered table cells and sparklines from 481 to 720px (large
+      phones in landscape, small tablets), so the icon form and hide-on-scroll now apply up to the same 720px the
+      menu uses. A touch screen has no keyboard shortcut to hint at; results rows keep the drug name readable. */
+   +'@media (hover:none){#cmdkBtn kbd{display:none}}@media (max-width:480px){.ck-ty{min-width:0}.ck-dt{font-size:11px}}';
   var s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
-  var btn=document.createElement('div');btn.id='cmdkBtn';btn.setAttribute('role','button');btn.setAttribute('aria-label','Search');btn.innerHTML='<span>Search</span> <kbd>⌘K</kbd>';document.body.appendChild(btn);
-  (function(){var last=window.pageYOffset||0,t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var y=window.pageYOffset||0;if(window.innerWidth<=480){if(y>last+8&&y>120)btn.classList.add('hide');else if(y<last-8)btn.classList.remove('hide');}last=y;},60);},{passive:true});})();
+  var btn=document.createElement('div');btn.id='cmdkBtn';btn.setAttribute('role','button');btn.setAttribute('tabindex','0');btn.setAttribute('aria-label','Search');btn.setAttribute('aria-haspopup','dialog');btn.innerHTML='<span>Search</span> <kbd>⌘K</kbd>';document.body.appendChild(btn);
+  (function(){var last=window.pageYOffset||0,t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var y=window.pageYOffset||0;if(window.innerWidth<=720){if(y>last+8&&y>120)btn.classList.add('hide');else if(y<last-8)btn.classList.remove('hide');}last=y;},60);},{passive:true});})();
   var o=document.createElement('div');o.id='cmdkO';o.innerHTML='<div id="cmdkB"><input id="cmdkI" placeholder="Search any ticker, drug, or catalyst…" autocomplete="off" spellcheck="false"><div id="cmdkR"></div></div>';document.body.appendChild(o);
   var inp=o.querySelector('#cmdkI'),res=o.querySelector('#cmdkR'),DATA=null,sel=0,rows=[];
   function esc(x){return (x||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -34,5 +38,5 @@
   function move(d){var a=res.querySelectorAll('a');if(!a.length)return;a[sel]&&a[sel].classList.remove('sel');sel=(sel+d+a.length)%a.length;a[sel].classList.add('sel');a[sel].scrollIntoView({block:'nearest'})}
   inp.addEventListener('input',function(){render(inp.value)});
   document.addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();o.classList.contains('on')?close():open()}else if(e.key==='Escape')close();else if(o.classList.contains('on')){if(e.key==='ArrowDown'){e.preventDefault();move(1)}else if(e.key==='ArrowUp'){e.preventDefault();move(-1)}else if(e.key==='Enter'){var a=res.querySelectorAll('a');if(a[sel])window.location.href=a[sel].getAttribute('href')}}});
-  btn.addEventListener('click',open);o.addEventListener('click',function(e){if(e.target===o)close()});
+  btn.addEventListener('click',open);btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();open()}});o.addEventListener('click',function(e){if(e.target===o)close()});
 })();
