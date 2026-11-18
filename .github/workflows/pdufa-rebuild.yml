@@ -938,6 +938,11 @@ jobs:
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
+      # 2026-11-18 design red team, change 11: one look everywhere. After the last page builder, every public page gets
+      # the site fonts, the type rules and the logo mark it lacks (1,371 pages lacked one). tests/test_one_look.py.
+      - name: "One look: site fonts, type rules and logo mark on every page"
+        run: python inject_site_type.py
+
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"

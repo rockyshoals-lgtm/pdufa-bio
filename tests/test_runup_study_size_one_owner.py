@@ -46,8 +46,10 @@ def main():
     anchors = {
         "index.html": [rf"{n:,} events in the run-up study"],
         "decisions/index.html": [rf"{n:,} PDUFA decisions, 2020 to \d{{4}}, {rate:.1f}% approved"],
-        "pricing.html": [rf"the {t120:,}-event T-120→T\+5 daily data"],
-        "developers/index.html": [rf"price path for {t120:,} FDA decisions"],
+        "pricing.html": [rf"T-120→T\+5 daily data for {t120:,} of the study’s {n:,} events \(those with a full daily "
+                         r"price path\)"],
+        "developers/index.html": [rf"price path for {t120:,} FDA decisions \(of the study’s {n:,}; the rest lack a full "
+                                  r"daily path\)"],
         "vktx/index.html": [rf"run-up study \({n:,} FDA decisions\)"],
         "fda-approval-rate/index.html": [rf"{rate:.1f}% approvals / \(approvals \+ CRLs\), all review cycles: our universe, n={n:,}",
                                          rf"Our figure: {n:,} FDA decisions on listed biotechs"],
