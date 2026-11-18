@@ -226,6 +226,10 @@ def main():
                 if t in sole:
                     carry_chart(open(p, encoding="utf-8", errors="replace").read(), dest, t)
                 os.remove(p)
+                try:
+                    os.rmdir(os.path.dirname(p))   # an empty page directory trips tests/test_no_sync_artefacts.py
+                except OSError:
+                    pass                           # it still holds the page's og.png; that file stays served
             retired += 1
     print(f"bare pages retired behind a redirect: {retired}")
 

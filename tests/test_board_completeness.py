@@ -59,7 +59,9 @@ def main():
     first_tile = None
     for m in re.finditer(r"PDUFA (\d{4}-\d{2}-\d{2})", re.sub(r"<[^>]+>", " ", board)):
         pass
-    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"[^>]*>(.*?)</a>', board, re.S):
+    # a tile links the event's own page (/pdufa/CAPR-deramiocel) or, for a ticker with no page of its own, the bare
+    # /pdufa/{T} or /ticker/{T}; retarget_event_links.py (design change 4) moves bare links to the event's page
+    for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})(?:-[A-Za-z0-9.\-]+)?"[^>]*>(.*?)</a>', board, re.S):
         txt = re.sub(r"<[^>]+>", " ", m.group(2))
         dm = re.search(r"(\d{4}-\d{2}-\d{2})", txt)
         if dm:

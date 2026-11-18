@@ -58,6 +58,16 @@ def exists(u):
     return os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html"))
 
 
+class Targets(dict):
+    """The map, plus `soft`: the rule-2 sources, which are pages of their own (a ticker index) and not redirects."""
+    soft = frozenset()
+
+
+# The HTML sitemap lists every page by its own URL, the ticker indexes included; rule 2 does not apply there, or the
+# indexes would lose their one link (tests/test_reachability.py).
+SOFT_EXEMPT = {"sitemap/index.html"}
+
+
 def targets(today=None):
     """{"/pdufa/X": "/the/page/it/should/link"} for every /pdufa/ URL a link must not stop at."""
     today = today or today_et()
@@ -77,7 +87,7 @@ def targets(today=None):
             out[src] = d
     srcd = io.open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows, _ = json.JSONDecoder().raw_decode(srcd[srcd.find("["):])
-    up, linked = {}, set()
+    up, linked, soft = {}, set(), set()
     for r in rows:
         if r.get("type") != "PDUFA" or not r.get("t"):
             continue
@@ -103,12 +113,17 @@ def targets(today=None):
         u = urls[0]
         if re.match(rf"^/pdufa/{SLUG}$", u) and u != bare and exists(u):
             out[bare] = u
-    return out
+            soft.add(bare)
+    res = Targets(out)
+    res.soft = frozenset(s for s in soft if s not in red)
+    return res
 
 
 def apply(doc, rel, tg):
     """The page with its links retargeted. rel is its path under the site ("pdufa/CAPR/index.html")."""
     own = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
+    if rel in SOFT_EXEMPT and getattr(tg, "soft", None):
+        tg = {k: v for k, v in tg.items() if k not in tg.soft}
     if not tg:
         return doc
     alt = "|".join(re.escape(s[len("/pdufa/"):]) for s in sorted(tg, key=len, reverse=True))
