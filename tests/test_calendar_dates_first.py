@@ -10,9 +10,12 @@ wrote decided rows in two templates. shape_calendar.py shapes the page last in t
   2. a month with no open goal date comes before one that has one, or is not folded; open months out of date order;
   3. the notes (the rest of the lede, the explainer, the subscribe box, the heat map) are not in "About this
      calendar" after the months, or the page still describes the API dataset;
-  4. a decided row uses the "· ✓ Approved" template, opens with a comma, or shows a cut-off version of its decision
-     page's name;
-  5. shape_calendar.py would change the page (it is not at its shaped state), or undo then shape does not give it back.
+  4. a decided row uses the "· ✓ Approved" template, opens with a comma, ends with a dash, or shows a cut-off version
+     of its decision page's name (or a drug name cut with "…");
+  4b. a folded month's summary miscounts its rows or calls a withdrawn row decided; the subscribe box or heat map
+     is gone;
+  5. shape_calendar.py would change the page (it is not at its shaped state), undo then shape does not give it back,
+     or a block appended before </head> after shaping (build_date_modified.py) would make the next shape move it.
 
     python tests/test_calendar_dates_first.py
 """
@@ -42,6 +45,12 @@ def main():
         bad.append("/calendar is not at its shaped state")
     elif sc.shape(sc.unshape(doc)) != doc:
         bad.append("/calendar: undo then shape does not give the page back")
+    else:
+        # build_date_modified.py re-appends its metas just before </head> after the page is shaped
+        late = doc.replace("</head>", '<!--DMOD:BEGIN--><meta property="og:updated_time" content="x"><!--DMOD:END-->'
+                           "</head>", 1)
+        if sc.shape(late) != late:
+            bad.append("/calendar: a block appended before </head> after shaping makes the next shape move the page")
     h1 = doc.find("<h1")
     first = doc.find(sc.MHEAD)
     top = doc[h1:first]
@@ -79,7 +88,21 @@ def main():
                           ("the heat map", r'class="hmap"')):
             if re.search(pat, doc) and not re.search(pat, rest):
                 bad.append(f"/calendar: {what} is not in 'About this calendar'")
-    if "API dataset" in doc or "no row in the API" in doc:
+    for what, pat in (("the subscribe box", r"<!--SUBSCRIBE:BEGIN-->"), ("the heat map", r'class="hmap"')):
+        if not re.search(pat, doc):
+            bad.append(f"/calendar: {what} is gone")
+    for sm in re.finditer(r'<details class="mdone"><summary>([A-Za-z]+ \d{4})(\s*)<span>(\d+) dates?, (.*?)</span>'
+                          r'</summary>(.*?)</details>', doc, re.S):
+        n = len(re.findall(r'<a class="row"', sm.group(5)))
+        wd = len(re.findall(r'<a class="row"[^>]*\bdata-wd="1"', sm.group(5)))
+        want = "all decided" if not wd else f"{n - wd} decided, {wd} withdrawn"
+        if not sm.group(2):
+            bad.append(f"/calendar: the {sm.group(1)} summary runs the month into its count for a screen reader")
+        if int(sm.group(3)) != n or sm.group(4) != want:
+            bad.append(f"/calendar: {sm.group(1)} says '{sm.group(3)} dates, {sm.group(4)}'; it holds {n}, {want}")
+    if re.search(r'<a class="row"[^>]*href="/fda-decision/[^"]+"><div class="t">[^<]*? · \d{4}-\d{2}-\d{2} · <span', doc):
+        bad.append("/calendar: a decided row uses the '· ✓ Approved' template")
+    if re.search(r"API dataset|no row in (?:the|our) API|our API", doc):
         bad.append("/calendar: the page still describes our API dataset")
     if sc.B_ROW.search(doc):
         bad.append("/calendar: a decided row uses the '· ✓ Approved' template")
@@ -87,6 +110,10 @@ def main():
         body = m.group(3).strip()
         if re.match(r"[,;:]", body):
             bad.append(f"/calendar {m.group(2)}: name opens with '{body[:12]}'")
+        if re.search(r"\s[-\u2013\u2014]\s*$", re.sub(r"<[^>]+>", "", body)):
+            bad.append(f"/calendar {m.group(2)}: name ends with a dash: '{body[-30:]}'")
+        if "<" not in body and body.partition(": ")[0].endswith("\u2026"):
+            bad.append(f"/calendar {m.group(2)}: the drug name is cut: '{body.partition(': ')[0]}'")
         bare = re.sub(r"<[^>]+>", "", body).rstrip(" ,;:")
         name = sc.page_name(m.group(2))
         if name and len(name) > len(bare) >= 6 and name.startswith(bare) and (

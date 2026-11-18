@@ -59,7 +59,6 @@ CSS = (f'<style id="{STYLE_ID}">'
        ".mdone>summary span{font-family:inherit;font-weight:400;color:var(--mut2);font-size:13px;margin-left:6px}"
        ".mdone .mhead{display:none}.mdone .grid{margin:4px 0 14px}"
        ".calabout{margin:26px 0 8px;padding-top:14px;border-top:1px solid var(--line)}"
-       ".row .d{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}"
        "</style>")
 GREEN, RED = "#5fd07a", "#ff8f6b"
 
@@ -118,9 +117,10 @@ def unshape(s):
         i = s.find(M_B) if M_B in s else s.find(MHEAD)
         s = s[:i] + stash["TOPSEG"] + s[i:]
     # the months: every block, open and folded, back in date order where the open ones stood
-    blocks = []
+    blocks, dpos = [], len(s)
     d = re.search(re.escape(D_B) + r".*?" + re.escape(D_E), s, re.S)
     if d:
+        dpos = d.start()
         part = d.group(0)
         blocks += [part[b:e] for b, e, _n in month_blocks(part)]
         s = s[:d.start()] + s[d.end():]
@@ -130,6 +130,13 @@ def unshape(s):
         blocks += [part[b:e] for b, e, _n in month_blocks(part)]
         blocks.sort(key=lambda b: month_key(re.match(re.escape(MHEAD) + r"([A-Za-z]+ \d{4})", b).group(1)))
         s = s[:m.start()] + "".join(blocks) + s[m.end():]
+    elif blocks:
+        # the open-months markers are gone (a writer rewrote that stretch): put the folded months back after the
+        # last month still on the page rather than drop them
+        rest = month_blocks(s)
+        at = rest[-1][1] if rest else dpos
+        s = s[:at] + "".join(sorted(blocks, key=lambda b: month_key(
+            re.match(re.escape(MHEAD) + r"([A-Za-z]+ \d{4})", b).group(1)))) + s[at:]
     s = re.sub(r'<style id="%s">.*?</style>' % STYLE_ID, "", s, flags=re.S)
     return s
 
@@ -176,8 +183,15 @@ def whole_names(s):
             name[len(stem)].isalnum() or stem.count("(") > stem.count(")"))   # stopped mid-word or inside a bracket
         if name and "<" not in text and cut:
             text = H.escape(name, quote=False)
-        elif text.endswith(",") and "<" not in text:
+        elif "<" not in text:
             text = text.rstrip(" ,")
+            # "EBGLYSS (lebrikizumab-lbkz) -": a dash with nothing after it
+            text = re.sub(r"\s+[-\u2013\u2014]$", "", text)
+            # "MR-141 (phentolamine ophthalmic solution…: Presbyopia": a drug name cut by an old build and marked
+            # with an ellipsis takes its decision page's name; a cut indication keeps its ellipsis, which says so
+            drug, sep, rest = text.partition(": ")
+            if name and drug.endswith("\u2026"):
+                text = H.escape(name, quote=False) + (sep + rest if sep else "")
         return head + text + tail
     return A_ROW.sub(a, s)
 
@@ -202,10 +216,12 @@ def shape(s):
         parts = []
         for blk, name in done:
             n = len(re.findall(r'<a class="row"', blk))
-            parts.append(f'<details class="mdone"><summary>{name}<span>{n} date{"s" if n != 1 else ""}, all '
-                         f'decided</span></summary>{blk}</details>')
+            wd = len(re.findall(r'<a class="row"[^>]*\bdata-wd="1"', blk))
+            what = "all decided" if not wd else f"{n - wd} decided, {wd} withdrawn"
+            parts.append(f'<details class="mdone"><summary>{name} <span>{n} date{"s" if n != 1 else ""}, '
+                         f'{what}</span></summary>{blk}</details>')
         folded = (D_B + '<section class="caldone" style="margin:26px 0 8px;padding-top:14px;border-top:1px solid '
-                  'var(--line)"><h2 style="font-size:16px;margin:0 0 4px">Decided earlier this year</h2>'
+                  'var(--line)"><h2 style="font-size:16px;margin:0 0 4px">Months with no open goal date</h2>'
                   + "".join(parts) + "</section>" + D_E)
     s = s[:lo] + M_B + "".join(t[0] for t in open_) + M_E + s[hi:]
     # the decided months go after the 2027+ list when there is one, else straight after the open months
@@ -244,7 +260,12 @@ def shape(s):
                 at = s.find(mark) + len(mark)
                 break
         s = s[:at] + about + s[at:]
-    if "</head>" in s:
+    # right after the title: writers that re-append their own block before </head> each run (build_date_modified's
+    # DMOD metas) would otherwise land between this style and </head>, and the next shape would move it back
+    t = s.find("</title>")
+    if t >= 0:
+        s = s[:t + 8] + CSS + s[t + 8:]
+    elif "</head>" in s:
         s = s.replace("</head>", CSS + "</head>", 1)
     return s
 
