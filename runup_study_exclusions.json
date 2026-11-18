@@ -1,0 +1,272 @@
+{
+ "_about": "Decision pages kept out of the run-up study, each with its reason. 35 are pages whose cited primary source was re-read on 2026-11-18 and does not support the FDA action on the page date: verify_decisions.py (2026-08-12) accepted any SEC filing within 14 days containing \"approval of\", \"FDA approval\" or \"complete response letter\"; 82 pages rested on such a match and 35 did not hold up (shareholder votes, warrants, financing papers, earnings recaps, a Phase 2 data release). Two are a second page for one FDA action (IRON-2026-02-15, VNDA-2026-02-21) and one is dated days after the action it reports (SNY-2025-12-28), so its price window starts after the news. Remove an entry only with a source that states the action on that date; a page re-dated to the true action date gets a new id and enters the study on its own. Entries for dates before 2025 are rows of the 2020 to 2024 research set, which has no decision pages; they are keyed the same way.",
+ "pages": {
+  "ABBV-2026-02-20": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1551152/000110465926020643/tm266774d4_ex1-1.htm",
+   "document": "Underwriting Agreement (Exhibit 1.1), AbbVie $8.0B senior notes",
+   "finding": "Debt underwriting agreement; FDA mentioned only in generic legal-proceedings representation. No product, no FDA action.",
+   "checked": "2026-11-18"
+  },
+  "AMPH-2026-02-24": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1297184/000129718426000015/amph-20260303xex10d1.htm",
+   "document": "Executive Employment Agreement (Exhibit 10.1)",
+   "finding": "Employment contract exhibit; no FDA content at all. Citation is wrong.",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-02-20": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/901832/000110465926019110/tm261135d3_ex99-1.pdf",
+   "document": "AstraZeneca Annual Report and Form 20-F Information 2025",
+   "finding": "Annual report recapping 2025 events (Saphnelo SC CRL in 2025; Imfinzi, Enhertu, Koselugo granules approvals mentioned in passing). Nothing announces an FDA action dated near 2026-02-20.",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-04-27": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
+   "document": "Breztri approved in the US for asthma (AstraZeneca 6-K)",
+   "finding": "Doc holds ONE US approval (Breztri asthma, announced 28 Apr; press coverage dated 04-28). Same URL cited by AZN-2026-04-28. Either this page duplicates 04-28 or it is a different product this doc does not cover. FDA action date not stated i",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-05-15": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+   "document": "Datroway approved in US for 1L triple-negative BC (AstraZeneca 6-K)",
+   "finding": "Doc's only US approval is Datroway 1L TNBC; press coverage dates it 2026-05-22. Does not support a 05-15 event.",
+   "checked": "2026-11-18"
+  },
+  "AZN-2026-05-18": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+   "document": "Datroway approved in US for 1L triple-negative BC (AstraZeneca 6-K)",
+   "finding": "Doc's only US approval is Datroway 1L TNBC (press coverage 2026-05-22), matched by AZN-2026-05-22. Does not support a 05-18 event.",
+   "checked": "2026-11-18"
+  },
+  "BCAB-2025-11-07": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1826892/000119312525290474/bcab-ex10_1.htm",
+   "document": "Prepaid Advance Agreement (Exhibit 10.1), BioAtla",
+   "finding": "Financing contract; full text read (both chunks). No FDA, no product (mecbotamab vedotin not mentioned). Mecbotamab vedotin is not FDA approved.",
+   "checked": "2026-11-18"
+  },
+  "BIIB-2026-03-30": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/875045/000119312526134889/d14986dex992.htm",
+   "document": "Biogen to Acquire Apellis (Ex 99.2)",
+   "finding": "Acquisition announcement; only mentions existing approvals, no new FDA action.",
+   "checked": "2026-11-18"
+  },
+  "GSK-2026-03-13": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
+   "document": "Lynavoy (linerixibat) approved by the US FDA for cholestatic pruritus in PBC (GSK 6-K)",
+   "finding": "Doc announces approval 'today' 2026-03-19, 6 days AFTER this page date; does not support 03-13. Same doc backs GSK-2026-03-19 -> likely duplicate page with wrong date.",
+   "checked": "2026-11-18"
+  },
+  "HRMY-2026-02-17": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926018858/hrmy-20260224xex99d1.htm",
+   "document": "Harmony Biosciences Reports Strong 2025 Financial Results (Ex 99.1)",
+   "finding": "Earnings release, passing mention of past approval. Doc states action Feb 13 (no year, context 2026), 4 days before page date 02-17 -> page date likely wrong (should be 2026-02-13) and this is not the primary announcement.",
+   "checked": "2026-11-18"
+  },
+  "IBRX-2025-02-19": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000031/ibrx-202533x8kexhibit991.htm",
+   "document": "ImmunityBio press release (Ex. 99.1): J-code operational update and Q4/FY2024 results",
+   "finding": "Only past (April 2024) approval in passing. Feb 2025 FDA items are an expanded-access authorization for rBCG and an RMAT designation - neither is an approval/CRL.",
+   "checked": "2026-11-18"
+  },
+  "INVA-2026-02-17": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1080014/000119312526071974/d23292dex991.htm",
+   "document": "Innoviva press release (Ex. 99.1): Q4 and FY2025 results",
+   "finding": "Earnings recap of a December 2025 approval; nothing near 2026-02-17.",
+   "checked": "2026-11-18"
+  },
+  "IRON-2025-01-21": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525009095/d858127dex991.htm",
+   "document": "Disc Medicine press release (Ex. 99.1): Type C meeting outcome on APOLLO confirmatory trial",
+   "finding": "Plan to submit NDA under accelerated approval in 2H25; bitopertin described as investigational. Only approval mentioned is Scenesse in background.",
+   "checked": "2026-11-18"
+  },
+  "IRON-2026-02-15": {
+   "reason": "duplicate page of the same FDA action as IRON-2026-02-13 (bitopertin CRL received Feb 13, 2026; source cited by both)",
+   "checked": "2026-11-18"
+  },
+  "IRWD-2025-04-14": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925034381/tm2512215d1_ex99-1.htm",
+   "document": "Ironwood Pharmaceuticals Provides Clinical and Regulatory Update on Apraglutide",
+   "finding": "FDA feedback requiring another Phase 3; not an approval or CRL. LINZESS approvals mentioned only in passing.",
+   "checked": "2026-11-18"
+  },
+  "KZIA-2025-01-02": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1075880/000119312525005004/d868096dex41.htm",
+   "document": "Exhibit 4.1 Prefunded Warrant to Purchase Ordinary Shares (ADSs), Kazia Therapeutics",
+   "finding": "Securities instrument; no FDA content, no product.",
+   "checked": "2026-11-18"
+  },
+  "LEXX-2025-01-15": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1348362/000164033425000087/lxrp_8k.htm",
+   "document": "Lexaria Bioscience Form 8-K, Item 5.07 shareholder vote results",
+   "finding": "Annual/special meeting vote results (directors, auditors, say-on-pay, warrant proposal). Shareholder 'approval' only; no FDA action.",
+   "checked": "2026-11-18"
+  },
+  "LGND-2026-04-13": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/886163/000119312526179529/d143046d8k.htm",
+   "document": "Ligand Form 8-K (merger agreement with XOMA Royalty)",
+   "finding": "8-K covers XOMA Royalty merger; no FDA approval/CRL. Also dated 2 weeks after page date.",
+   "checked": "2026-11-18"
+  },
+  "MNKD-2026-05-29": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/899460/000119312526243074/mnkd-20260527.htm",
+   "document": "MannKind Form 8-K Item 8.01 regulatory update",
+   "finding": "Release from a PMR, not an approval; pediatric sBLA outcome not reported in this doc.",
+   "checked": "2026-11-18"
+  },
+  "MRK-2026-04-21": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/310158/000110465926052081/tm2612241d1_ex99-1.htm",
+   "document": "Merck Announces First-Quarter 2026 Financial Results (Ex 99.1)",
+   "finding": "Earnings release, passing mention; action given only as 'April', no day -> cannot confirm 04-21. Not primary announcement.",
+   "checked": "2026-11-18"
+  },
+  "NVO-2025-01-28": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/353278/000162828025003924/caq42024.htm",
+   "document": "Novo Nordisk Form 6-K: Financial report 1 Jan-31 Dec 2024 (Company announcement No 7/2025)",
+   "finding": "Annual results recap, not the announcement; states only 'January 2025' (consistent with page month, day not stated). Better primary source would be the Jan 2025 announcement itself.",
+   "checked": "2026-11-18"
+  },
+  "NVO-2026-03-26": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001932/f6k_032626.htm",
+   "document": "Novo Nordisk 6-K: Resolutions from the Annual General Meeting (No 21/2026)",
+   "finding": "AGM resolutions only; any 'approval' is shareholder approval. No FDA action.",
+   "checked": "2026-11-18"
+  },
+  "NVS-2025-01-29": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1114448/000137036825000008/a250131-99_1.pdf",
+   "document": "Novartis AG Annual Report 2024 (Form 20-F structure)",
+   "finding": "Full text read (both chunks). No farabursen/RGLS8429/Regulus; no dated FDA approval or CRL, only generic statements that Entresto/Cosentyx are approved in the US. Page label (Regulus farabursen MAD study) is a readout, not an FDA decision.",
+   "checked": "2026-11-18"
+  },
+  "OTLK-2026-03-05": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926024189/tm268164d1_8k.htm",
+   "document": "Outlook Therapeutics Form 8-K (Type A meeting update)",
+   "finding": "Reports Type A meeting re: an older CRL dated 2025-12-30; no new CRL on 03-05.",
+   "checked": "2026-11-18"
+  },
+  "OTLK-2026-04-07": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926040387/tm2611268d1_8k.htm",
+   "document": "Outlook Therapeutics Form 8-K (formal dispute resolution request)",
+   "finding": "FDRR filing re: older 2025-12-30 CRL; no new FDA action.",
+   "checked": "2026-11-18"
+  },
+  "PGEN-2025-08-15": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1356090/000110465925079497/tm2523710d1_ex99-1.htm",
+   "document": "Precigen investor presentation (Ex. 99.1)",
+   "finding": "Undated slide deck that treats approval as already granted; does not announce the action or give any approval date. Supports the fact of full approval, not the page date. Classed here rather than confirmed for that reason.",
+   "checked": "2026-11-18"
+  },
+  "REGN-2025-10-17": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/872589/000087258925000026/exhibit991q32025.htm",
+   "document": "Regeneron Q3 2025 results press release (Ex. 99.1)",
+   "finding": "Solnerstotug/SNS-101 not mentioned at all - page label is wrong. Only CRL in doc is EYLEA HD PFS, 'yesterday' relative to 2025-10-28 (~2025-10-27, 10 days from page date). Libtayo adjuvant CSCC approval stated only as 'October 2025' (approv",
+   "checked": "2026-11-18"
+  },
+  "REGN-2026-04-22": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000014/exhibit991q12026.htm",
+   "document": "Regeneron Reports First Quarter 2026 Results (Ex 99.1)",
+   "finding": "Earnings release; April approvals listed with month only, no day -> cannot tie to 04-22. Not the primary announcement; page also lacks a label.",
+   "checked": "2026-11-18"
+  },
+  "REGN-2026-04-23": {
+   "reason": "the cited SEC document does not establish an FDA action on this date",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000014/exhibit991q12026.htm",
+   "document": "Regeneron Reports First Quarter 2026 Results (Ex 99.1)",
+   "finding": "Same earnings release as REGN-2026-04-22; month-only dates, cannot confirm 04-23. Also notes EYLEA HD PFS: FDA did not act by April PDUFA (not a CRL).",
+   "checked": "2026-11-18"
+  },
+  "RNAZ-2025-02-06": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925009122/tm255410d1_ex99-1.htm",
+   "document": "TransCode Therapeutics Announces Adjournment of Special Meeting and Information for Adjourned Special Meeting",
+   "finding": "Shareholder meeting adjournment; does not mention FDA. TTX-MC138 is an early-stage investigational product.",
+   "checked": "2026-11-18"
+  },
+  "RNAZ-2025-03-13": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925027565/tm2510166d1_ex4-1.htm",
+   "document": "Exhibit 4.1 Common Stock Purchase Warrant, TransCode Therapeutics",
+   "finding": "Warrant instrument; no drug, product or FDA reference.",
+   "checked": "2026-11-18"
+  },
+  "SNY-2025-06-02": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1121404/000119312525136654/d81295dex993.htm",
+   "document": "Sanofi Launches 2025 Global Employee Stock Purchase Plan",
+   "finding": "Employee share offering; no FDA/Dupixent content. Citation is wrong.",
+   "checked": "2026-11-18"
+  },
+  "SNY-2025-12-28": {
+   "reason": "page dated 4 days after the FDA action its source reports; the eve and decision-day prices are measured after the news",
+   "cited_source": "Sanofi press release, 2025-12-24, \"Sanofi provides update on tolebrutinib regulatory submission in nrSPMS\"",
+   "document": "Sanofi press release (SEC filing cited on the page)",
+   "finding": "Release dated 2025-12-24 says \"Today's FDA decision\" (CRL). 2025-12-28 was the revised target action date, not the action date.",
+   "checked": "2026-11-18"
+  },
+  "SNY-2026-04-22": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526180848/d137048dex992.htm",
+   "document": "Sanofi provides update on the regulatory submission for Sarclisa subcutaneous in the US (Ex 99.2)",
+   "finding": "PDUFA extension (major amendment), NOT an approval. Page claiming approval on 04-22 is wrong.",
+   "checked": "2026-11-18"
+  },
+  "SRPT-2023-05-15": {
+   "reason": "not an FDA action: ELEVIDYS was approved on 2023-06-22 (its own study row); May 2023 held the advisory committee and the review extension",
+   "cited_source": "FDA, ELEVIDYS approval, June 22, 2023 (BLA 125781)",
+   "document": "2020-2024 research row, no decision page",
+   "finding": "The study counted ELEVIDYS as approved twice, on 2023-05-15 and 2023-06-22. The FDA approved it once, on June 22, 2023.",
+   "checked": "2026-11-18"
+  },
+  "TAK-2025-06-30": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1395064/000139506425000107/form6k_070125.htm",
+   "document": "Results of the Exercise of Voting Rights of the 149th Ordinary General Meeting of Shareholders (Form 6-K)",
+   "finding": "Shareholder-vote results; no GAMMAGARD/FDA content. Citation is wrong.",
+   "checked": "2026-11-18"
+  },
+  "VNDA-2026-02-21": {
+   "reason": "duplicate page of the same FDA action as VNDA-2026-02-20 (Bysanti approval announced Feb 20, 2026; Feb 21 is a Saturday)",
+   "checked": "2026-11-18"
+  },
+  "WVE-2025-03-26": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1631574/000119312525063184/d918658dex991.htm",
+   "document": "Wave Life Sciences Announces Positive Data from FORWARD-53 Clinical Trial in DMD",
+   "finding": "Phase 2 data + FDA feedback; NDA planned 2026. Not an approval. Page claiming approval is wrong.",
+   "checked": "2026-11-18"
+  },
+  "XRTX-2025-04-30": {
+   "reason": "the cited SEC document announces no FDA approval or CRL",
+   "cited_source": "https://www.sec.gov/Archives/edgar/data/1729214/000117184325002624/exh_991.htm",
+   "document": "XORTX Provides Update on FDA Type B Meeting Request",
+   "finding": "Type B meeting responses only; NDA not yet filed. Page claiming approval is wrong.",
+   "checked": "2026-11-18"
+  }
+ }
+}
