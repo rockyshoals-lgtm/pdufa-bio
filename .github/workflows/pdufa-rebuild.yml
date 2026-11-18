@@ -860,6 +860,12 @@ jobs:
       - name: "Withdrawn applications: event page + calendar row (never 'upcoming')"
         run: python build_withdrawn_pages.py
 
+      # 2026-11-18 (design red team, change 5): /calendar/2025 and earlier years are rebuilt from the archive so their
+      # counts say which outcomes are sourced. Before the breadcrumb and Open Graph passes, which fill those on the
+      # page it writes (run after them, it left /calendar/2025 without either and failed both guards).
+      - name: "Year archive pages from the decisions archive"
+        run: python build_year_archive.py
+
       # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
       - name: "BreadcrumbList on every indexable page"
@@ -881,7 +887,7 @@ jobs:
         run: python noindex_empty_months.py
 
       - name: "Answer-first lede above every hub table"
-        run: python fix_not_announced_pages.py && python build_decision_subhubs.py && python build_year_archive.py && python build_crl_months.py && python build_hub_lede.py && python sync_home_event_schema.py
+        run: python fix_not_announced_pages.py && python build_decision_subhubs.py && python build_crl_months.py && python build_hub_lede.py && python sync_home_event_schema.py
 
       # Audit 2026-09-06 (0840) NEW-1: the /calendar ItemList was pre-rendered and owned by no
       # step -- 54 Events vs 48 ahead rows, 16 decided drugs still EventScheduled to Google/Bing.

@@ -168,8 +168,12 @@ def main():
         bad.append("the workflow does not run badge_decision_provenance.py after inject_site_links.py and before "
                    "inject_mobile_polish.py")
     chain = io.open(os.path.join(HERE, "_chain_0919.bat"), encoding="utf-8", errors="replace").read()
-    if " badge_decision_provenance.py inject_mobile_polish.py " not in chain:
-        bad.append("_chain_0919.bat does not run badge_decision_provenance.py before inject_mobile_polish.py")
+    # the same order as the workflow (2026-11-18: change 11's site-type and calendar passes now sit between the two)
+    ca, cb, cc = (chain.find(" inject_site_links.py "), chain.find(" badge_decision_provenance.py "),
+                  chain.find(" inject_mobile_polish.py "))
+    if not (0 <= ca < cb < cc):
+        bad.append("_chain_0919.bat does not run badge_decision_provenance.py after inject_site_links.py and before "
+                   "inject_mobile_polish.py")
     q = io.open(os.path.join(HERE, "quarantine_leads.py"), encoding="utf-8").read()
     if "badge_decision_provenance.apply(old)" not in q:
         bad.append("quarantine_leads.py restores committed pages without their provenance badges")
