@@ -6,6 +6,9 @@
    "why": "Bixlenvo (bictegravir/lenacapavir, once-daily tablet for virologically suppressed HIV, approved Aug 2026) is a different product from the once-weekly oral Yeztugo PrEP sNDA this row tracks; Gilead's Q3 2026 10-Q still gives that application a PDUFA date of February 2, 2027."},
   {"ticker": "RHHBY", "date": "2026-11-30", "checked": "2026-11-18",
    "url_prefix": "https://www.businesswire.com/news/home/20261106913762/",
-   "why": "The WILSERDLY approval is giredestrant with everolimus in ESR1-mutated advanced breast cancer (evERA). This row is the separate lidERA NDA in ER+ early breast cancer (adjuvant), Priority Review, PDUFA November 30, 2026 per Genentech's June 1, 2026 release; no FDA action on it found as of Nov 18."}
+   "why": "The WILSERDLY approval is giredestrant with everolimus in ESR1-mutated advanced breast cancer (evERA). This row is the separate lidERA NDA in ER+ early breast cancer (adjuvant), Priority Review, PDUFA November 30, 2026 per Genentech's June 1, 2026 release; no FDA action on it found as of Nov 18."},
+  {"ticker": "RHHBY", "date": "2026-11-30", "checked": "2026-11-18",
+   "url_prefix": "https://www.globenewswire.com/news-release/2026/11/16/3404197/",
+   "why": "Roche's own Nov 16, 2026 release of the same WILSERDLY approval (giredestrant with everolimus, ESR1-mutated locally advanced or metastatic breast cancer, evERA) acked above from Genentech's release. Not the lidERA early breast cancer NDA this row tracks."}
  ]
 }
