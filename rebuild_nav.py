@@ -95,14 +95,24 @@ def nav_match(html):
     nav-link rule and give the buttons the same size and colour; hover still brightens them."""
     head = html[:html.find("</head>")] if "</head>" in html else html[:60000]
     head = re.sub(r'<style id="' + MATCH_ID + r'">.*?</style>', "", head, flags=re.S)
-    size, colour = "14px", "var(--mut,#8fa3bd)"
+    size, colour, pad, gap = "14px", "var(--mut,#8fa3bd)", None, None
     for body in _LINK_RULE.findall(_MEDIA.sub("", head)):
         m = re.search(r"font-size:\s*([^;!}]+)", body)
         size = m.group(1).strip() if m else size
         m = re.search(r"(?<![\w-])color:\s*([^;!}]+)", body)
         colour = m.group(1).strip() if m else colour
-    return (f'<style id="{MATCH_ID}">.navdd .navddb{{font-size:{size};color:{colour}}}'
-            '.navdd:hover .navddb,.navdd:focus-within .navddb{color:#eef4fc}</style>')
+        m = re.search(r"(?<![\w-])padding:\s*([^;!}]+)", body)
+        pad = m.group(1).strip() if m else pad
+        m = re.search(r"margin-left:\s*([^;!}]+)", body)
+        gap = m.group(1).strip() if m else gap
+    # 2026-11-18 red team of change 11, live on /pdufa/CAPR-deramiocel: on templates whose links are spaced by
+    # "margin-left:14px" with no padding, the buttons kept navcanon's "padding:7px 11px", so Patents-Explore sat
+    # 11px apart, Explore-Research 22px and Research-Pro 25px. The buttons now take the links' own spacing, and
+    # the menu items inside a dropdown drop the links' margin (they are a column, not a row).
+    space = f"padding:{pad or '7px 0'};margin-left:{gap or '0'}"
+    menu = ".navdd .navddm a{margin-left:0}" if gap else ""
+    return (f'<style id="{MATCH_ID}">.navdd .navddb{{font-size:{size};color:{colour};{space}}}'
+            '.navdd:hover .navddb,.navdd:focus-within .navddb{color:#eef4fc}' + menu + '</style>')
 
 
 def nav_inner():

@@ -9,6 +9,7 @@ This guard keeps three promises:
   2. /calendar's FAQ numbers AGREE with its own lede -- the FAQ is parsed from the lede at build
      time, and this re-checks the equality independently, so a lede rewrite can never leave a
      stale count answering searchers.
+     PLANT=faq sets the FAQ to a stale count and must fail.
   3. /calendar and /decisions carry a live countdown token ("today"/"tomorrow"/"in N days"),
      the honest mechanism that lets their dateModified move daily (audit section 3). If the
      countdown vanishes, the freshness story silently reverts to '4 days ago' snippets.
@@ -55,13 +56,26 @@ def main():
                        f"build_hub_faq.py")
 
     cal = docs.get("calendar", "")
-    txt = re.sub(r"<[^>]+>", " ", cal)
-    lede = re.search(r"lists\s+([\d,]+)\s+FDA decision dates.*?([\d,]+)\s+are still ahead",
-                     txt, re.S)
-    faq = re.search(r"([\d,]+) FDA decision dates are on the 2026 calendar; ([\d,]+)", txt)
-    if lede and faq and (lede.group(1) != faq.group(1) or lede.group(2) != faq.group(2)):
-        bad.append(f"/calendar: FAQ says {faq.group(1)}/{faq.group(2)} but the lede says "
-                   f"{lede.group(1)}/{lede.group(2)} -- the page disagrees with itself")
+    # red team 2026-11-18: this check matched FAQ wording retired long ago ("on the 2026 calendar;"), so it never
+    # ran, and the FAQ said 25 still ahead for days while the lede said 16. It now reads the lede with the FAQ cut
+    # out, and the FAQ from its own block, and fails when either is missing so a rewording cannot switch it off.
+    if os.environ.get("PLANT") == "faq":
+        cal = re.sub(r"and \d+ are still ahead as of", "and 25 are still ahead as of", cal)
+    faqblk = re.search(r"HUBFAQ:BEGIN(.*?)HUBFAQ:END", cal, re.S)
+    txt = re.sub(r"<[^>]+>", " ", re.sub(r"HUBFAQ:BEGIN.*?HUBFAQ:END", "", cal, flags=re.S))
+    ftxt = re.sub(r"<[^>]+>", " ", faqblk.group(1)) if faqblk else ""
+    n_l = re.search(r"lists\s+([\d,]+)\s+FDA decision dates", txt)
+    a_l = re.search(r"([\d,]+)\s+FDA PDUFA goal dates?\s+(?:are|is)\s+still ahead in \d{4}", txt)
+    faq = re.search(r"([\d,]+) FDA decision dates are on this calendar[^.]*?(?:and ([\d,]+) (?:are|is) still "
+                    r"ahead as of|\.)", ftxt)
+    if cal and not (n_l and faq):
+        bad.append("/calendar: could not read the decision count from both the lede and the FAQ")
+    elif cal:
+        if n_l.group(1) != faq.group(1):
+            bad.append(f"/calendar: FAQ says {faq.group(1)} dates but the lede lists {n_l.group(1)}")
+        if (a_l.group(1) if a_l else None) != faq.group(2):
+            bad.append(f"/calendar: FAQ says {faq.group(2) or 'nothing'} still ahead but the lede says "
+                       f"{a_l.group(1) if a_l else 'nothing'} -- the page disagrees with itself")
 
     for rel in ("calendar", "decisions"):
         m = re.search(r"HUBFAQ:BEGIN(.*?)HUBFAQ:END", docs.get(rel, ""), re.S)
