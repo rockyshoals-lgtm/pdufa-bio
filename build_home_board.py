@@ -43,8 +43,25 @@ try:
         if _tier in COH and _v.get("median_abs_pct") is not None:
             COH[_tier] = f"{float(_v['median_abs_pct']):.1f}%"
     COH[""] = COH["Small"]
-except Exception:  # noqa: BLE001  -- a missing stats file keeps the last typed values
-    pass
+    COHN = {_k.split(" ")[0]: int(_v["n"]) for _k, _v in _cs.items() if _v.get("n")}
+    _st = json.load(open(os.path.join(HERE, "runup_study_stats.json"), encoding="utf-8"))
+    COHY = (str(_st.get("date_min") or "")[:4], str(_st.get("date_max") or "")[:4])
+except Exception:  # noqa: BLE001  -- no stats file: no chips, rather than a figure nobody can trace
+    COHN, COHY = {}, ("", "")
+
+
+def coh_chip(cap):
+    """2026-11-18 (design red team, change 6): the chip read "3.5% cohort" with no label, so it could read as a
+    probability. It is the median size of the decision-day move, up or down, for the company's market-cap tier in the
+    run-up study; the tooltip and the screen-reader text now say so, with the tier, the years and the n. A card with no
+    recorded tier shows no chip: it used to borrow the small-cap figure without saying so."""
+    if cap not in COH or not cap or cap not in COHN:
+        return ""
+    lab = (f"{cap}-cap median decision-day move, up or down, {COHY[0]} to {COHY[1]}, n={COHN[cap]:,}"
+           if all(COHY) else f"{cap}-cap median decision-day move, up or down, n={COHN[cap]:,}")
+    return (f'<span class="coh" title="{lab}"><span aria-hidden="true">{COH[cap]}<i>cohort</i></span>'
+            f'<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">'
+            f'{lab}: {COH[cap]}</span></span>')
 
 
 def load_key():
@@ -327,7 +344,7 @@ def render_upcoming(cats, key):
             f'<i>{cd_u}</i></span>'
             f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
             f'<span class="dg">{drug} · PDUFA {date}</span></span>{spk}'
-            f'<span class="coh">{COH.get(cap, "±3%")}<i>cohort</i></span></a>')
+            f'{coh_chip(cap)}</a>')
     return "".join(rows)
 
 

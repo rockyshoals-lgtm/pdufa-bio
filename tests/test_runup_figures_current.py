@@ -50,8 +50,17 @@ def main():
             elif val != want[t]:
                 fails.append(f"{rel}: cohort chip '{val}', study says '{want[t]}' for {t}")
     home = io.open(os.path.join(SITE, "index.html"), encoding="utf-8").read()
-    pairs = re.findall(r'<em class="cap">(Nano|Micro|Small|Mid|Large)</em>.*?<span class="coh">\s*([\d.]+%)<i>cohort',
-                       home, re.S)
+    # one card at a time, so a card with no chip (no recorded tier, design red team change 6) cannot borrow the next
+    # card's chip; the chip's tooltip must name the card's own tier
+    pairs = []
+    for card in re.findall(r'<a class="row" href="[^"]*">.*?</a>', home, re.S):
+        tm = re.search(r'<em class="cap">(Nano|Micro|Small|Mid|Large)</em>', card)
+        cm = re.search(r'<span class="coh"([^>]*)>(?:<span aria-hidden="true">)?\s*([\d.]+%)<i>cohort', card)
+        if tm and cm:
+            pairs.append((tm.group(1), cm.group(2)))
+            ttl = re.search(r'title="([^"]*)"', cm.group(1))
+            if ttl and not ttl.group(1).startswith(f"{tm.group(1)}-cap median decision-day move"):
+                fails.append(f"/: home {tm.group(1)} chip is labelled {ttl.group(1)!r}")
     if not pairs:
         fails.append("/: home board cohort chips not found (markup changed?)")
     for t, c in pairs:
