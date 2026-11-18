@@ -38,10 +38,15 @@ SKIP = re.compile(r"(_bak|_xbak|/_|\\_|app\.html|holding\.html|preview\.html|pin
 FONTS = ('<!--TYPE:B--><link rel="preload" href="/fonts/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin>'
          '<link rel="preload" href="/fonts/IBMPlexMono-600.woff2" as="font" type="font/woff2" crossorigin>'
          '<link rel="stylesheet" href="/fonts/fonts.css"><!--TYPE:E-->')
-TYPESYS = ("<style id=\"typesys\">h1,h2,h3,.brand{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,"
-           "'Segoe UI',sans-serif !important;letter-spacing:-.5px}body{font-variant-numeric:tabular-nums;"
-           "font-feature-settings:\"tnum\" 1}.tk,.dt,.dd,.row .t,.count{font-family:'IBM Plex Mono',ui-monospace,"
+# The homepage's rules (build_ticker_hubs.py) set ".row .t" in mono, where it holds a ticker and a date. Red team: on
+# pages from other builders ".row .t" holds names and prose (/pdufa-date-changes "PRAX · Relutrigine (PRAX-562) -
+# (EMBOLD)", /condition), so mono widened it and it wrapped sooner on a phone; and "letter-spacing:-.5px" overrode
+# a page's own h1 spacing. The late rules keep the fonts and tabular figures and leave those two alone.
+TYPESYS = ("<style id=\"typesys\" data-late=\"1\">h1,h2,h3,.brand{font-family:'Space Grotesk',-apple-system,"
+           "BlinkMacSystemFont,'Segoe UI',sans-serif !important}body{font-variant-numeric:tabular-nums;"
+           "font-feature-settings:\"tnum\" 1}.tk,.dt,.dd,.count{font-family:'IBM Plex Mono',ui-monospace,"
            "SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.2px}</style>")
+LATE = re.compile(r'<style id="typesys" data-late="1">.*?</style>', re.S)
 MARK = ('<!--LM:B--><svg class="lm" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" '
         'style="flex:none;vertical-align:-4px;margin-right:7px"><rect x="1" y="1" width="22" height="22" rx="6" '
         'fill="#081426" stroke="#294d80"/><rect x="6.5" y="9" width="2.4" height="9" rx="1" fill="#f0c86a"/>'
@@ -52,6 +57,8 @@ BRAND = re.compile(r'(<a class="brand" href="/">)(?!<svg|<!--LM:B-->)(pdufa<b>\.
 
 
 def public(p, doc):
+    # red team: SKIP was tested against the absolute path, so a checkout under any "/_" folder skipped every page
+    p = os.path.relpath(p, SITE)
     return not SKIP.search(p) and "</head>" in doc and 'http-equiv="refresh"' not in doc[:4000]
 
 
@@ -65,6 +72,9 @@ def apply(doc):
         added.append("fonts")
     if 'id="typesys"' not in doc:
         doc = doc.replace("</head>", TYPESYS + "</head>", 1)
+        added.append("type rules")
+    elif LATE.search(doc) and LATE.search(doc).group(0) != TYPESYS:
+        doc = LATE.sub(lambda _m: TYPESYS, doc, count=1)
         added.append("type rules")
     if BRAND.search(doc):
         doc = BRAND.sub(lambda m: m.group(1) + MARK + m.group(2), doc, count=1)

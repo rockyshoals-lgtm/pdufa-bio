@@ -91,14 +91,19 @@ def main():
     # 1,684 events. Both are right (1,618 is the events with a full daily path), but nothing said so. Name the subset.
     changed += edit("pricing.html", [(
         r"(<b>Full run-up dataset</b>: )(?:the \d{1,2},\d{3}-event T-120&rarr;T\+5 daily data(?: \([^)]*\))?|T-120&rarr;T\+5 "
-        r"daily data for [\d,]+ of the study&rsquo;s [\d,]+ events \(those with a full daily price path\))",
-        rf"\g<1>T-120&rarr;T+5 daily data for {fmt(t120)} of the study&rsquo;s {fmt(n)} events (those with a full daily "
-        "price path)")], a.dry_run)
+        r"daily data for [\d,]+ of the study&rsquo;s [\d,]+ events \((?:those with a full daily price path|those with "
+        r"120 trading days of history before the decision; the days after fill in as they trade)\))",
+        # red team: 1,618 counts events with 120 sessions of history before the decision (runup_study_stats.py);
+        # the newest have no T+5 yet, so "a full daily price path" overstated it
+        rf"\g<1>T-120&rarr;T+5 daily data for {fmt(t120)} of the study&rsquo;s {fmt(n)} events (those with 120 trading "
+        "days of history before the decision; the days after fill in as they trade)")], a.dry_run)
 
     changed += edit("developers/index.html", [(
-        r"(the full daily T-120 &rarr; T\+5 price path for <b>)\d{1,2},\d{3}( FDA decisions</b>)(?: \(of the study&rsquo;s "
-        r"[\d,]+; the rest lack a full daily path\))?",
-        rf"\g<1>{fmt(t120)}\g<2> (of the study&rsquo;s {fmt(n)}; the rest lack a full daily path)")], a.dry_run)
+        r"(the (?:full )?daily T-120 &rarr; T\+5 price path for <b>)\d{1,2},\d{3}( FDA decisions</b>)(?: \(of the "
+        r"study&rsquo;s [\d,]+(?:; the rest lack a full daily path|, those with 120 trading days of history before the "
+        r"decision; the days after fill in as they trade)\))?",
+        rf"the daily T-120 &rarr; T+5 price path for <b>{fmt(t120)}\g<2> (of the study&rsquo;s {fmt(n)}, those with 120 trading days of history before the "
+        "decision; the days after fill in as they trade)")], a.dry_run)
 
     changed += edit("vktx/index.html", [(
         r'(<a href="/runup-by-year">run-up study</a> \()\d{1,2},\d{3}( FDA decisions\))',

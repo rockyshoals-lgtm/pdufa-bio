@@ -9,7 +9,9 @@ fails if a public page:
   1. does not load /fonts/fonts.css, or lacks <style id="typesys">;
   2. shows the pdufa.bio wordmark without the logo mark;
   3. has the Explore/Research buttons without the navmatch rule, or with a size or colour other than its own nav
-     links' (rebuild_nav.nav_match reads them from the page).
+     links' (rebuild_nav.nav_match reads them from the page);
+  4. the rebuild workflow, the local chain or quarantine_leads.py (which restores a held page from the last commit)
+     skips the pass, or fewer than 1,000 pages are checked.
 PLANT=font drops fonts.css from /pdufa/CAPR-deramiocel, PLANT=mark drops its logo mark, PLANT=nav sets home's
 buttons to 16px; each must FAIL.
 
@@ -48,18 +50,31 @@ def main():
         if plant == "nav" and rel == "index.html":
             doc = re.sub(r'(\.navdd \.navddb\{font-size:)[^;]+', r"\g<1>16px", doc)
         pages += 1
-        if "/fonts/fonts.css" not in doc:
+        if not re.search(r'<link rel="stylesheet" href="/fonts/fonts\.css">', doc[:doc.find("</head>")]):
             bad.append(f"/{rel}: loads no site font (/fonts/fonts.css)")
         if 'id="typesys"' not in doc:
             bad.append(f"/{rel}: lacks the type rules (<style id=\"typesys\">)")
-        if ist.BRAND.search(doc):
+        if ist.BRAND.search(doc) or re.search(r'<a class="brand"[^>]*>(?!<svg|<!--LM:B-->)', doc):
             bad.append(f"/{rel}: the wordmark has no logo mark")
+        if re.search(r'<style id="typesys" data-late="1">[^<]*\.row \.t\b', doc):
+            bad.append(f"/{rel}: the late type rules set row names in mono")
         if 'class="navddb"' in doc:
             cur = re.search(r'<style id="navmatch">.*?</style>', doc, re.S)
             if not cur:
                 bad.append(f"/{rel}: Explore/Research have no navmatch rule (they render larger than the links)")
             elif cur.group(0) != rn.nav_match(doc):
                 bad.append(f"/{rel}: Explore/Research size or colour differs from its nav links: {cur.group(0)[22:90]}")
+    if pages < 1000:
+        bad.append(f"only {pages} public page(s) found; the skip pattern or the site path is wrong")
+    # 4. the pass runs everywhere a page is written: CI, the local chain, and a held page restored by quarantine
+    wf = io.open(os.path.join(HERE, ".github", "workflows", "pdufa-rebuild.yml"), encoding="utf-8").read()
+    if "python inject_site_type.py" not in wf:
+        bad.append("the rebuild workflow does not run inject_site_type.py")
+    chain = io.open(os.path.join(HERE, "_chain_0919.bat"), encoding="utf-8", errors="replace").read()
+    if "inject_site_type.py" not in chain:
+        bad.append("the local chain (_chain_0919.bat) does not run inject_site_type.py")
+    if "inject_site_type.apply" not in io.open(os.path.join(HERE, "quarantine_leads.py"), encoding="utf-8").read():
+        bad.append("quarantine_leads.py restores held pages without the site fonts and logo mark")
     print(f"{pages} public page(s) checked")
     if bad:
         for b in bad[:30]:
