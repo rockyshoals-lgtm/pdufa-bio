@@ -36,6 +36,10 @@ What it found, and what this pass does about each:
    labels about 3px tall on a 320px phone, the /calendar weekly density chart about 3px. A chart at least 700
    units wide whose smallest label would draw under 10px in a phone column is put in a sideways-scrolling box
    (div.pd-cx) and drawn on phones at the width that makes its smallest label 11px. Wider screens are unchanged.
+13. Narrower charts did the same: the run-up price chart on ~540 decision and PDUFA pages (640 units wide, 9-11 unit
+   labels) drew "$27.37" and "PDUFA 12/15/25" 4-5px tall on a phone. Each such chart gets a phone-sized drawing of
+   the same points and labels (phone_charts.py): 320 units wide, labels at least 11px in a 290px column, kept
+   inside the chart and off each other. Phones show it; wider screens show the original.
 
 The search button (cmdk.js) is a static file and is fixed there. Nothing here changes a fact, a number, a date,
 a link target or any text: only layout. build_sitemap.py strips everything this adds before hashing, so the sweep
@@ -50,6 +54,9 @@ import os
 import re
 import sys
 from html.parser import HTMLParser
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import phone_charts  # noqa: E402
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -89,6 +96,8 @@ CSS = (
     '.row>.t+.d{display:block}'
     # 12. wide charts: scroll sideways on phones at a readable size (width per chart in --cxw)
     '.pd-cx{max-width:100%}'
+    # 13. narrower charts: a phone-sized drawing replaces the original on phones
+    '.pd-ph>.pd-phs{display:none!important}'
     # 5. notch / rounded corners in landscape (env() is 0 where there is none)
     '@supports(padding:max(0px)){html{padding-left:env(safe-area-inset-left);'
     'padding-right:env(safe-area-inset-right)}}'
@@ -108,6 +117,7 @@ CSS = (
     # 12. (see above)
     '.pd-cx{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}'
     '.pd-cx>svg{min-width:var(--cxw);max-width:none!important}'
+    '.pd-ph>svg:not(.pd-phs){display:none!important}.pd-ph>.pd-phs{display:block!important;width:100%;height:auto}'
     '}'
     '</style>'
 )
@@ -252,6 +262,7 @@ def apply(doc):
     new, n = wrap_tables(doc)
     new = calendar_jump(new)
     new = wrap_charts(new)
+    new = phone_charts.wrap_phone_charts(new)
     # A current style block stays exactly where it is. Later build steps (freshness stamp, dateModified, article
     # schema, quarantine) also insert before </head>, so "always re-insert last" moved the block on every run and the
     # guard's apply(doc) == doc failed on 1,826 pages after the 2026-11-18 rebuild (issue 113). Only a missing,
