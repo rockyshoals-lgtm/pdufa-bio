@@ -20,7 +20,8 @@ def main():
             continue
         if j.get("@type") == "Dataset":
             size = ((j.get("size") or {}).get("value"))
-    rows = len(re.findall(r"<tr[^>]*>", doc)) - 1
+    # one table per year since 2025 actions joined (2026-11-18); each table has its own header row
+    rows = len(re.findall(r"<tr[^>]*>(?!\s*<th)", doc))
     vals = {"title": t and int(t.group(1)), "h1": h and int(h.group(1)), "schema": size, "table_rows": rows}
     if None in vals.values() or len(set(vals.values())) != 1:
         print(f"FAIL: /fda-approval-letters counts disagree: {vals}")
