@@ -1,0 +1,804 @@
+{
+ "_comment": "Red team of every open PDUFA date and upcoming readout date, 2026-11-17 (Eastern) (David: 'Red team the readout and pdufa dates again, let's build our moat here too as the most accurate'). Each item was checked by an agent against the company's newest release / SEC filing / ClinicalTrials.gov record; changing items are re-opened by a separate red-team pass before publishing. Applied by apply_1118_date_redteam.py.",
+ "checked": "2026-11-17",
+ "items": [
+  {
+   "id": "pdufa_capr_2026-08-22",
+   "action": "re_source",
+   "source": "Capricor press release 2026-11-09 (GlobeNewswire)",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/09/3398455/0/en/capricor-s-hope-3-phase-3-cardiac-results-for-deramiocel-win-american-heart-association-outstanding-research-award-in-pediatric-cardiology.html",
+   "source_quote": "Our Biologics License Application remains under FDA review, with a PDUFA target action date of November 22, 2026.",
+   "fix_history_url": [
+    "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html",
+    "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
+   ],
+   "why": "row had no quote and its extension link did not load; date unchanged"
+  },
+  {
+   "id": "pdufa_mlys_2026-12-22",
+   "action": "re_source",
+   "source": "Mineralys Q3 2026 results press release 2026-11-04 (GlobeNewswire)",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/04/3395833/0/en/mineralys-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "source_quote": "Commercialization plans for lorundrostat are on track ahead of PDUFA target date of December 22, 2026",
+   "why": "Date is right, but the stored source_quote is raw EDGAR wrapper text ('EX-99.1 3 mlys2026q28kex991.htm EX-99.1 Document Exhibit 99.1 ...'), not a clean quote. The Q2 8-K does say 'with a Prescription Drug User Fee Act (PDUFA) target date of December 22, 2026.' The newer Q3 release (2026-11-04) says ",
+   "name": "Lorundrostat"
+  },
+  {
+   "id": "pdufa_axsm_2027-05-01",
+   "action": "re_source",
+   "source": "Axsome 8-K 2026-11-02 (EX-99.1, Q3 2026 results)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526442628/axsm-ex99_1.htm",
+   "source_quote": "The PDUFA target action date is May 1, 2027.",
+   "why": "Exact filing for the cited exhibit: Axsome Form 8-K filed 2026-07-15 (Item 8.01, accession 0001193125-26-304039), EX-99.1 press release dated July 15, 2026: 'The FDA has set a Prescription Drug User Fee Act (PDUFA) target action date of May 1, 2027.' Date is right; fix the source label from 'company",
+   "indication": "Cataplexy in narcolepsy"
+  },
+  {
+   "id": "pdufa_insm_2027-01-28",
+   "action": "re_source",
+   "source": "Insmed press release 2026-10-29 (PRNewswire, Q3 2026 results)",
+   "source_url": "https://www.prnewswire.com/news-releases/insmed-reports-third-quarter-2026-financial-results-and-provides-business-update-302922707.html",
+   "source_quote": "The FDA granted Priority Review to the sNDA and set a target action date of January 28, 2027,",
+   "why": "Date is right, but the cited 10-Q quote could not be located: WebFetch returned only the first ~107k characters of the 10-Q (financial statements/notes), not the MD&A section where the sentence would be. The Q3 2026 results release (Oct 29 2026, PRNewswire) verifiably states the date; the Sep 21 202"
+  },
+  {
+   "id": "pdufa_nvo_2026-12-31",
+   "action": "novo_window",
+   "dp": "quarter",
+   "d": "2026-12-31",
+   "date_note": "FDA goal date not announced. Novo Nordisk's Q3 2026 6-K (Nov 4) states no goal date. Its R&D milestones table lists the CagriSema US decision under Q4 2026, so the row is keyed to that quarter as a sort key only; it stays off the calendar and out of counts of dated goals. Relabelled 2026-11-10 (David); quarter set 2026-11-17 (red team).",
+   "why": "6-K milestones table puts the US decision in Q4 2026; no Novo document states a month (sort key only, not a stated goal date)"
+  },
+  {
+   "id": "pdufa_nvo_mim8_2026-09-30",
+   "action": "novo_window",
+   "dp": "year",
+   "d": "2027-06-30",
+   "date_note": "FDA goal date not announced. Novo Nordisk's Q3 2026 6-K (Nov 4) says the US review of denecimig was extended (manufacturing facility remediation) and lists the US decision under H1 2027; it gives no goal date. The row's date is a sort key at the end of H1 2027 only; it stays off the calendar and out of counts of dated goals. Relabelled 2026-11-10 (David); moved from the 2026 year-end key 2026-11-17 (red team).",
+   "why": "6-K: review extended, US decision H1 2027; the 2026 year-end sort key was wrong (sort key only, not a stated goal date)"
+  },
+  {
+   "id": "readout_onc_2026-12-15-brukinsa",
+   "action": "to_day",
+   "d": "2026-12-13",
+   "label": "December 13, 2026 (ASH 2026 Plenary Session)",
+   "quote": "Full results from the MANGROVE study will be presented during the Plenary Scientific Session at the 68th American Society of Hematology (ASH) Annual Meeting on December 13, 2026",
+   "source_url": "https://www.businesswire.com/news/home/20261103605806/en/U.S.-FDA-Grants-Priority-Review-to-BeOne-Medicines%E2%80%99-BRUKINSA-Combination-in-First-Line-Mantle-Cell-Lymphoma",
+   "source_date": "2026-11-04",
+   "why": "Opened BeOne Q3 release 2026-11-05: MANGROVE interim results to be presented at the ASH 2026 Plenary Scientific Session, no day given (quote fragment present). BeOne's FDA Priority Review release (BW id 20261103, FMP-dated 2026-11-04) gives the exact day: 'Full results from the MANGROVE study will be presented during the Plenary Scientific Session at the 68th American Society of Hematology (ASH) A"
+  },
+  {
+   "id": "readout_arvn_2026-12-15-arv393",
+   "action": "to_day",
+   "d": "2026-12-14",
+   "label": "December 14, 2026 (ASH 2026 poster)",
+   "quote": "Presentation Type: Poster ... Session Date: Monday, December 14 ... Session Time: 6:00-8:00 PM CT",
+   "source_url": "https://ir.arvinas.com/news-releases/news-release-details/arvinas-present-preliminary-clinical-data-early-monotherapy-dose",
+   "source_date": "2026-11-04",
+   "why": "Q3 release (2026-11-03) verbatim: 'Submitted initial Phase 1 monotherapy dose escalation data for presentation at the 68th American Society of Hematology Annual Meeting (Dec. 12-15, 2026).' Newer Arvinas release 2026-11-04 gives the exact session: Poster, 'Session Date: Monday, December 14', 6:00-8:00 PM CT. No data disclosed yet (release points to abstract only). Tighten to day 2026-12-14."
+  },
+  {
+   "id": "readout_agio_2026-12-15",
+   "action": "to_day",
+   "d": "2026-12-12",
+   "label": "December 12, 2026 (ASH 2026 oral)",
+   "quote": "Long-term hemoglobin response from the Phase 3 RISE UP trial of mitapivat in patients with sickle cell disease ... Oral ... Saturday, December 12, 2026, 5:15 – 5:30 p.m. CST",
+   "source_url": "https://investor.agios.com/news-releases/news-release-details/agios-highlight-strength-and-differentiation-rare-hematology",
+   "source_date": "2026-11-04",
+   "why": "Agios Q3 release (2026-11-05) confirms RISE UP data at ASH 2026 (Dec 12-15). Agios ASH release 2026-11-04 gives exact slot: Abstract 336 'Long-term hemoglobin response from the Phase 3 RISE UP trial of mitapivat in patients with sickle cell disease', Oral, Saturday, December 12, 2026, 5:15-5:30 p.m. CST (eGFR post-hoc oral Dec 14). Tighten to 2026-12-12. NOTE: the 11-04 release already discloses a",
+   "note": "headline abstract results were already in Agios' Nov 4 release; Dec 12 is the full presentation"
+  },
+  {
+   "id": "readout_agio_2026-12-15-ag236",
+   "action": "to_day",
+   "d": "2026-12-13",
+   "label": "December 13, 2026 (ASH 2026 poster)",
+   "quote": "Safety and tolerability of AG-236, an investigational TMPRSS6-targeting small interfering RNA for polycythemia vera in healthy participants ... Poster ... Sunday, December 13, 2026, 6:00 – 8:00 p.m. CST",
+   "source_url": "https://investor.agios.com/news-releases/news-release-details/agios-highlight-strength-and-differentiation-rare-hematology",
+   "source_date": "2026-11-04",
+   "why": "Q3 release 2026-11-05 quote verified. Agios ASH release 2026-11-04: Abstract 3772 'Safety and tolerability of AG-236, an investigational TMPRSS6-targeting small interfering RNA for polycythemia vera in healthy participants', Poster, Sunday, December 13, 2026, 6:00-8:00 p.m. CST. Tighten to 2026-12-13. NOTE: first AG-236 clinical results already disclosed in the 11-04 release ('AG-236 produced sust",
+   "note": "first AG-236 results were already in Agios' Nov 4 release; Dec 13 is the poster"
+  },
+  {
+   "id": "readout_eras_2026-11-20",
+   "action": "to_day",
+   "d": "2026-11-20",
+   "label": "November 20, 2026 (ENA 2026 oral)",
+   "quote": "Date and Time: Friday, November 20, 12:30 p.m. Central European Time",
+   "source_url": "https://www.globenewswire.com/news-release/2026/09/10/3359447/0/en/erasca-announces-multiple-presentations-at-the-upcoming-38th-eortc-nci-aacr-symposium.html",
+   "source_date": "2026-09-10",
+   "why": "Both quote fragments are on Erasca's Nov 12 Q3 release (ENA Nov 18-20, Barcelona). Erasca's Sep 10 ENA release gives the exact slot: the ERAS-0015 AURORAS-1 oral (Plenary Session 6) is Friday Nov 20, 12:30 p.m. CET (= 6:30 a.m. ET Nov 20); Nov 16 release sets a virtual investor event Fri Nov 20 8:00 a.m. ET on updated ERAS-0015 Phase 1 data. Not yet presented as of Nov 18 (Nov 17 BMS-collaboration"
+  },
+  {
+   "id": "readout_vxrt_2027-12-31",
+   "action": "to_half",
+   "d": "2027-06-30",
+   "window": "2027-H1",
+   "label": "by mid-year 2027",
+   "why": "Opened Vaxart EX-99.1 (Q3 release, 2026-11-05): subheadline and body say topline data from the complete Phase 2b (400 sentinel + ~5,000 main cohort) are expected 'by mid-year 2027'. 'By mid-year' is a ceiling, so the window ends 2027-06-30, not 2027-12-31 (row currently shows year-end 2027 with dp year). No Vaxart 8-K since 11-05 mentions the trial (EDGAR FTS). Per dataset convention for H1 window"
+  },
+  {
+   "id": "readout_asnd_2027-09-30",
+   "action": "quote",
+   "quote": "stabilized or improved foramen magnum stenosis, and increased linear growth; topline pivotal data expected Q3 2027",
+   "why": "Opened Ascendis Q3 release (2026-11-12). Date is right: the milestone bullet ends 'topline pivotal data expected Q3 2027'. But the row's quote 'Pivotal data expected Q3 2027.' is not verbatim (page says 'topline pivotal data expected Q3 2027', lowercase, no period). Ascendis news list newest is this"
+  },
+  {
+   "id": "readout_sls_2026-12-15",
+   "action": "remove",
+   "why": "duplicate of readout_sls_2026-12-14 (same SLS009 r/r AML Phase 2 ASH poster, Monday December 14, 2026, 6:00-8:00 PM CST per SELLAS' Nov 4 release)"
+  },
+  {
+   "id": "readout_inbx_2026-11-20",
+   "action": "reported",
+   "d": "2026-11-17",
+   "url": "https://www.prnewswire.com/news-releases/inhibrx-announces-updated-clinical-data-for-ozekibart-inbrx-109-in-ewing-sarcoma-302942893.html",
+   "review": "Inhibrx released the updated Phase 1/2 data on November 17, 2026, after the market close: ozekibart (INBRX-109) with irinotecan and temozolomide in relapsed or refractory Ewing sarcoma, ORR 62.7% and DCR 86.3% (data cutoff September 18, 2026). The CTOS poster follows on November 19. Reported per the company's own release; no primary-endpoint verdict is stated.",
+   "quote": "today announced updated clinical data from the Phase 1/2 expansion study evaluating ozekibart (INBRX-109)",
+   "why": "Quote verbatim on Inhibrx Nov 13 Q3 release. But on Nov 17, 2026 (after the close, 16:53 ET) Inhibrx released the updated Ewing sarcoma Phase 1/2 data (ozekibart + IRI/TMZ: ORR 62.7%, DCR 86.3%; Sept 18, 2026 cutoff); the CTOS poster itself is Thu Nov 19 (Oct 13 release: 5:30-6:30 PM KST = 3:30-4:30"
+  },
+  {
+   "id": "readout_immp_2026-12-14",
+   "action": "date_quote",
+   "date_quote": "14 December 2026, 17:30 GMT (15 December 2026, 4:30am AEDT)",
+   "why": "the quoted sentence is a poster/oral title; these are the release's own date and time words for that listing (re-read 2026-11-17)"
+  },
+  {
+   "id": "readout_legn_2026-12-12",
+   "action": "date_quote",
+   "date_quote": "Date: Dec 12, 2026 ... Time: 3:15–3:30 PM",
+   "why": "the quoted sentence is a poster/oral title; these are the release's own date and time words for that listing (re-read 2026-11-17)"
+  },
+  {
+   "id": "readout_legn_2026-12-13",
+   "action": "date_quote",
+   "date_quote": "Date: Dec 13, 2026 ... Time: 6:00–8:00 PM",
+   "why": "the quoted sentence is a poster/oral title; these are the release's own date and time words for that listing (re-read 2026-11-17)"
+  },
+  {
+   "id": "readout_legn_2026-12-13-lucarg39d",
+   "action": "date_quote",
+   "date_quote": "Date: Dec 13, 2026 ... Time: 6:00–8:00 PM",
+   "why": "the quoted sentence is a poster/oral title; these are the release's own date and time words for that listing (re-read 2026-11-17)"
+  },
+  {
+   "id": "readout_ilmn_2026-09-15",
+   "action": "est_remove",
+   "why": "trial is sponsored by Innervate Radiopharmaceuticals, not Illumina"
+  },
+  {
+   "id": "readout_vir_2026-11-15",
+   "action": "est_rename",
+   "name": "tobevibart + elebsiran",
+   "old": "Bulevirtide",
+   "why": "Registry PCD 2029-03 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_actu_2026-12-15",
+   "action": "est_rename",
+   "name": "elraglusib (9-ING-41) + FOLFIRINOX + losartan",
+   "old": "Losartan",
+   "why": "Registry PCD 2026-12-31 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_beam_2026-12-15",
+   "action": "est_rename",
+   "name": "BEAM-201",
+   "old": "BEAM-302",
+   "why": "Registry PCD 2026-12 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_biib_2026-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT06685757",
+   "pcd": "2026-12-01",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Biogen",
+   "why": "Only felzartamab trial with PCD Nov-2026..Jan-2027 is Biogen Ph3 late AMR (TRANSCEND) NCT06685757, PCD 2026-12-01 est; month matches our d",
+   "old_d": "2026-12-15"
+  },
+  {
+   "id": "readout_bmy_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No BMS-lead interventional nivolumab trial has PCD in Dec-2026 or Jan-2027 (lead-sponsor filtered search: 0); only investigator trials and 2 BMS observational studies; cannot identify"
+  },
+  {
+   "id": "readout_exel_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Exelixis-lead cabozantinib trial with PCD Dec-2026..Mar-2027; Dec-2026 hits are investigator trials (Baptist, Utah, Fox Chase, McGregor); cannot identify"
+  },
+  {
+   "id": "readout_ino_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No recruiting/active VGX-3100 trial in the registry; cannot identify"
+  },
+  {
+   "id": "readout_ions_2026-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT05392114",
+   "pcd": "2026-12",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Ionis Pharmaceuticals, Inc.",
+   "why": "Only donidalorsen trial with PCD Dec-2026 is Ionis Ph3 OLE (OASISplus) NCT05392114, PCD 2026-12 est; other donidalorsen trials completed or PCD 2029-06",
+   "old_d": "2026-12-15"
+  },
+  {
+   "id": "readout_jazz_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Jazz-lead CPX-351 trial with PCD Dec-2026; only Princess Maxima (NCT07156435) and Georgetown (NCT04990102) investigator trials; cannot identify"
+  },
+  {
+   "id": "readout_lxeo_2026-12-15",
+   "action": "est_rename",
+   "name": "LX2020",
+   "old": "LX1001",
+   "why": "Registry PCD 2026-12 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_mnov_2026-12-15",
+   "action": "est_rename",
+   "name": "MN-001 (tipelukast)",
+   "old": "MN-166",
+   "why": "Registry PCD 2026-12-31 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_mrk_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Merck Sharp & Dohme-lead pembrolizumab trial with PCD in Dec-2026 (lead-sponsor search returned only KEYNOTE-667 at 2027-02-12); cannot identify"
+  },
+  {
+   "id": "readout_nvo_2026-12-15",
+   "action": "est_remove",
+   "why": "Red team B found one Novo semaglutide trial completing 2026-12: NCT07225816, a 71-patient Phase 1 study of fasting and gastric contents (PCD 2026-12-13). That is a mechanism study, not a semaglutide readout anyone would trade on; removed."
+  },
+  {
+   "id": "readout_onc_2026-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT04170283",
+   "pcd": "2026-12-31",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "BeOne Medicines",
+   "name": "Zanubrutinib (long-term extension)",
+   "old_d": "2026-12-15",
+   "why": "Red team B: the only interventional BeOne zanubrutinib trial completing 2026-12 is the Ph3 long-term extension NCT04170283 (n=955, PCD 2026-12-31). Kept and labelled as an extension, matching the other extension rows."
+  },
+  {
+   "id": "readout_pfe_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Pfizer-lead interventional elranatamab trial with PCD Dec-2026; Dec hits are investigator trials (OCOG, Thomas Lund, MGH); cannot identify"
+  },
+  {
+   "id": "readout_smmt_2026-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Summit-lead ivonescimab trial with PCD Dec-2026; all 13 Dec-2026 hits are Akeso or Chinese/US investigator trials; cannot identify"
+  },
+  {
+   "id": "readout_traw_2026-12-15",
+   "action": "est_rename",
+   "name": "TRX-100",
+   "old": "rigosertib",
+   "why": "Registry PCD 2026-12 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_vnda_2026-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT07221578",
+   "pcd": "2026-12",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Vanda Pharmaceuticals",
+   "why": "VQW-765 Ph3 social anxiety NCT07221578 (Vanda), PCD 2026-12 est; only other VQW-765 trial completed 2022",
+   "old_d": "2026-12-15"
+  },
+  {
+   "id": "readout_canf_2026-12-31",
+   "action": "est_remove",
+   "why": "Not a registry date: a Q4 2026 'clinical readout' from Can-Fite's July 6 8-K. Can-Fite's Nov 6, 2026 release now guides piclidenoson interim data to Q1 2027, already listed as readout_canf_2027-03-31; this row is superseded."
+  },
+  {
+   "id": "readout_ewtx_2026-12-31",
+   "action": "est_remove",
+   "why": "Not a registry date: a Q4 2026 'clinical readout' from Edgewise's July 13 8-K. Edgewise's Nov 4, 2026 Q3 release gives no data-readout timing for any program, so the Q4 guidance is no longer current; removed."
+  },
+  {
+   "id": "readout_guts_2026-12-31",
+   "action": "est_remove",
+   "why": "Not a registry date: a Q4 2026 'clinical readout' from Fractyl's July 15 8-K. Fractyl's Nov 12, 2026 Q3 release now guides REMAIN-1 topline to Q1 2027, already listed as readout_guts_2027-03-31; this row is superseded."
+  },
+  {
+   "id": "readout_aplm_2027-01-15",
+   "action": "est_rename",
+   "name": "APL-101 (vebreltinib) + osimertinib",
+   "old": "Uproleselan",
+   "why": "Registry PCD 2027-01-31 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_bmy_2027-01-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No BMS-lead interventional nivolumab trial with PCD Jan-2027 (lead-sponsor search: 0); cannot identify"
+  },
+  {
+   "id": "readout_cadl_2027-01-15",
+   "action": "est_rename",
+   "name": "CAN-3110",
+   "old": "Aglatimagene Besadenovec",
+   "why": "Registry PCD 2027-01 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_exel_2027-01-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Exelixis-lead cabozantinib trial with PCD Jan-2027; only UC Irvine investigator trial NCT04472767 (2027-01-31); cannot identify"
+  },
+  {
+   "id": "readout_gild_2027-01-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Gilead-lead pembrolizumab (MK-3475) trial with PCD Jan-2027; nearest is ASCENT-04 SG+pembro 1L TNBC NCT05382286, PCD 2027-02 est. If that is the intended trial, our month is one early"
+  },
+  {
+   "id": "readout_nuvl_2027-01-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No neladalkib trial with PCD Jan-2027: ALKOVE-1 NCT05384626 PCD 2027-12, ALKAZAR NCT06765109 PCD 2029-12. If ALKOVE-1 was intended, our month (2027-01) does not match registry 2027-12"
+  },
+  {
+   "id": "readout_rare_2027-01-15",
+   "action": "est_add_nct",
+   "nct": "NCT06636071",
+   "pcd": "2027-01",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Ultragenyx Pharmaceutical Inc",
+   "why": "Only setrusumab trial with PCD Jan-2027 is the Japanese pediatric OI Ph3 NCT06636071 (n=6), PCD 2027-01 est; Orbit/Cosmic PCDs were Oct-2025",
+   "old_d": "2027-01-15"
+  },
+  {
+   "id": "readout_regn_2027-01-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Regeneron-lead odronextamab trial with PCD Dec-2026..Feb-2027; only an investigator trial (von Keudell, NCT07128641, 2027-01-02); cannot identify"
+  },
+  {
+   "id": "readout_azn_2027-02-15",
+   "action": "est_add_nct",
+   "nct": "NCT04529772",
+   "pcd": "2027-02-22",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Acerta Pharma BV (AstraZeneca subsidiary)",
+   "why": "Acalabrutinib + R-CHOP Ph3 non-GCB DLBCL (ESCALADE) NCT04529772, PCD 2027-02-22 est; only AZ/Acerta R-CHOP trial in window. Published name 'R-Chop' is the backbone, drug is acalabrutinib",
+   "old_d": "2027-02-15",
+   "name": "acalabrutinib + R-CHOP"
+  },
+  {
+   "id": "readout_mrk_2027-02-15",
+   "action": "est_add_nct",
+   "nct": "NCT03407144",
+   "pcd": "2027-02-12",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Merck Sharp & Dohme LLC",
+   "why": "Only MSD-lead pembrolizumab trial with PCD Feb-2027 is KEYNOTE-667 pediatric cHL NCT03407144, PCD 2027-02-12 est",
+   "old_d": "2027-02-15"
+  },
+  {
+   "id": "readout_agio_2027-03-15",
+   "action": "est_remove",
+   "why": "trial is an MSKCC ivosidenib study; ivosidenib is no longer an Agios asset and the row named mitapivat"
+  },
+  {
+   "id": "readout_cldx_2027-03-15",
+   "action": "est_rename",
+   "name": "varlilumab + dendritic cell vaccine",
+   "old": "Barzolvolimab",
+   "why": "Registry PCD 2027-03-31 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_cogt_2027-03-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No bezuclastinib (CGT9486) trial with PCD Mar-2027; SUMMIT 2025-05-22, PEAK 2025-09-30, APEX 2025-09-19, SARC investigator trial 2026-06; cannot identify"
+  },
+  {
+   "id": "readout_gild_2027-03-15",
+   "action": "est_add_nct",
+   "nct": "NCT05186974",
+   "pcd": "2027-03",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Gilead Sciences",
+   "why": "Only Gilead-lead sacituzumab trial with PCD Mar-2027 is EVOKE-02 1L NSCLC Ph2 NCT05186974, PCD 2027-03 est",
+   "old_d": "2027-03-15"
+  },
+  {
+   "id": "readout_ions_2027-03-15",
+   "action": "est_add_nct",
+   "nct": "NCT05681351",
+   "pcd": "2027-03",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Ionis Pharmaceuticals, Inc.",
+   "why": "Only olezarsen trial with PCD Jan..May-2027 is the sHTG OLE NCT05681351, PCD 2027-03 est",
+   "old_d": "2027-03-15"
+  },
+  {
+   "id": "readout_ipha_2027-03-15",
+   "action": "est_rename",
+   "name": "IPH5301",
+   "old": "Monalizumab",
+   "why": "Registry PCD 2027-03 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_nuvb_2027-03-15",
+   "action": "est_rename",
+   "name": "NUV-1511",
+   "old": "safusidenib",
+   "why": "Registry PCD 2027-03 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_onc_2027-03-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No BeOne/BeiGene-lead zanubrutinib trial with PCD Mar-2027 (only Shanghai Zhongshan and Weill Cornell investigator trials); cannot identify"
+  },
+  {
+   "id": "readout_cldx_2027-04-15",
+   "action": "est_rename",
+   "name": "CDX-1140 + TCR-T cells + pembrolizumab",
+   "old": "Barzolvolimab",
+   "why": "Registry PCD 2027-04-15 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_iova_2027-04-15",
+   "action": "est_rename",
+   "name": "LN-145 TIL",
+   "old": "Lifileucel plus Pembrolizumab",
+   "why": "Registry PCD 2027-04-30 ESTIMATED, ACTIVE_NOT_RECRUITING; matches our pcd/status exactly"
+  },
+  {
+   "id": "readout_nvs_2027-04-15",
+   "action": "est_add_nct",
+   "nct": "NCT06517758",
+   "pcd": "2027-04-30",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Novartis Pharmaceuticals",
+   "why": "Only interventional iptacopan trial with PCD 2027-04: Ph3 gMG (NCT06517758), PCD 2027-04-30 ESTIMATED, Novartis-led. (Other Apr-2027 record NCT06931691 is an observational China PNH cohort.)",
+   "old_d": "2027-04-15"
+  },
+  {
+   "id": "readout_regn_2027-04-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: 'Cemiplimab' is too generic. The only Regeneron-led cemiplimab trial with PCD 2027-04 is NCT05259709 (89Zr-REGN5054 anti-CD8 PET imaging + cemiplimab, Ph1, n=22, PCD 2027-04-29); other Apr-2027 cemiplimab trials are MD Anderson (NCT05961709) and Serv"
+  },
+  {
+   "id": "readout_smmt_2027-04-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Summit Therapeutics-sponsored ivonescimab trial has PCD in 2027 Apr-Dec (Summit-led: HARMONi-3 NCT05899608 PCD 2028-12-31; HARMONi NCT06396065 PCD 2025-04-12). Dozens of Akeso/investigator ivonescimab trials have PCDs in this month, so no single r"
+  },
+  {
+   "id": "readout_tlx_2027-04-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: Searched TLX591/rosopatamab/J591 trials with PCD in 2027: none in this month. Telix-led TLX591 trials: ProstACT Global NCT06520345 (PCD 2027-12), plus completed/terminated earlier ones."
+  },
+  {
+   "id": "readout_biib_2027-05-15",
+   "action": "est_add_nct",
+   "nct": "NCT06935357",
+   "pcd": "2027-05-31",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Biogen",
+   "why": "Only felzartamab trial with PCD in 2027: Ph3 PREVAIL in IgAN, PCD 2027-05-31 ESTIMATED, Biogen-led, recruiting.",
+   "old_d": "2027-05-15"
+  },
+  {
+   "id": "readout_cgtx_2027-04-15",
+   "action": "est_rename",
+   "name": "CT1812",
+   "old": "Dextromethorphan-Bupropion",
+   "why": "CT.gov: CT1812 START early AD Ph2 (not dextromethorphan-bupropion); PCD 2027-05-31 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Cognition Therapeutics. Registry intervention is CT1812 (START, early AD), not dextromethorphan-bupropion; sponsor Cognition Therapeutics matches CGTX."
+  },
+  {
+   "id": "readout_fdmt_2027-05-15",
+   "action": "est_rename",
+   "name": "4D-110",
+   "old": "4D-150 IVT",
+   "why": "CT.gov: 4D-110 choroideremia Ph1 (not 4D-150); PCD 2027-05-26 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor 4D Molecular Therapeutics. Registry trial is 4D-110 in choroideremia (Ph1, n=13), not 4D-150 IVT; 4D-150 Ph3 is NCT06864988 (separate row)."
+  },
+  {
+   "id": "readout_regn_2027-05-15",
+   "action": "est_add_nct",
+   "nct": "NCT03564340",
+   "pcd": "2027-05-10",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Regeneron Pharmaceuticals",
+   "name": "Ubamatamab +/- cemiplimab",
+   "old_d": "2027-05-15",
+   "why": "Red team B: the only Regeneron-run trial with cemiplimab completing 2027-05 is the Ph1/2 ubamatamab (alone or with cemiplimab) study NCT03564340, PCD 2027-05-10; renamed to the drug it tests."
+  },
+  {
+   "id": "readout_ions_2027-06-15",
+   "action": "est_add_nct",
+   "nct": "NCT05185843",
+   "pcd": "2027-06",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Ionis Pharmaceuticals, Inc.",
+   "why": "Only olezarsen trial with PCD 2027-06: open-label safety study in FCS patients previously on volanesorsen (n=24), Ionis-led. Not a pivotal readout. (SHTG OLE NCT05681351 has PCD 2027-03.)",
+   "old_d": "2027-06-15"
+  },
+  {
+   "id": "readout_jazz_2027-06-15",
+   "action": "est_add_nct",
+   "nct": "NCT03897127",
+   "pcd": "2027-06",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "University of Ulm",
+   "why": "Only CPX-351 trial with PCD 2027-06: Ph3 standard vs CPX-351 induction in AML (AMLSG), sponsor University of Ulm, not Jazz.",
+   "old_d": "2027-06-15"
+  },
+  {
+   "id": "readout_lnth_2027-06-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No PI-2620 trial with PCD 2027-06, and no Lantheus or Life Molecular Imaging-sponsored trial with PCD 2027-06. PI-2620 records with 2027 PCDs: MJFF PD study NCT07020026 (2027-04) and ADNI4 observational NCT05617014 (2027-07-31)."
+  },
+  {
+   "id": "readout_nvs_2027-06-15",
+   "action": "est_add_nct",
+   "nct": "NCT06840392",
+   "pcd": "2027-06-03",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Novartis Pharmaceuticals",
+   "why": "Only remibrutinib trial with PCD 2027-06: Ph3 RECHARGE-2 in hidradenitis suppurativa, PCD 2027-06-03 ESTIMATED.",
+   "old_d": "2027-06-15"
+  },
+  {
+   "id": "readout_smmt_2027-06-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Summit Therapeutics-sponsored ivonescimab trial has PCD in 2027 Apr-Dec (Summit-led: HARMONi-3 NCT05899608 PCD 2028-12-31; HARMONi NCT06396065 PCD 2025-04-12). Dozens of Akeso/investigator ivonescimab trials have PCDs in this month, so no single r"
+  },
+  {
+   "id": "readout_svra_2027-06-15",
+   "action": "est_add_nct",
+   "nct": "NCT06431776",
+   "pcd": "2027-06",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Savara Inc.",
+   "why": "Only Savara molgramostim trial with PCD 2027-06: open-label Ph3 in pediatric aPAP (n=5), recruiting. Small pediatric study, not the IMPALA-2 pivotal.",
+   "old_d": "2027-06-15"
+  },
+  {
+   "id": "readout_btai_2027-07-15",
+   "action": "est_add_nct",
+   "nct": "NCT05025605",
+   "pcd": "2027-07-31",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "BioXcel Therapeutics Inc",
+   "why": "BXCL501 (sublingual dexmedetomidine) pediatric schizophrenia/bipolar agitation study, PCD 2027-07-31, sponsor BioXcel. Our ticker t=TEVA but the sponsor is BioXcel (BTAI); the row id already says btai. Red team B asked to change the ticker to BTAI; kept TEVA because BioXcel sold BXCL501 to Teva (BioXcel 8-K 2026-10-30, Item 2.01, recorded in ticker_history); the registry sponsor field has not been updated.",
+   "old_d": "2027-07-15"
+  },
+  {
+   "id": "readout_tlx_2027-07-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: Searched TLX591/rosopatamab/J591 trials with PCD in 2027: none in this month. Telix-led TLX591 trials: ProstACT Global NCT06520345 (PCD 2027-12), plus completed/terminated earlier ones."
+  },
+  {
+   "id": "readout_asnd_2027-08-15",
+   "action": "est_rename",
+   "name": "TransCon IL-2 β/γ",
+   "old": "TransCon CNP",
+   "why": "CT.gov: TransCon IL-2 b/g IL Believe Ph1/2 (not TransCon CNP); PCD 2027-08 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Ascendis Pharma Oncology Division A/S. Registry trial is TransCon IL-2 b/g (IL Believe, oncology Ph1/2), not TransCon CNP; sponsor Ascendis Pharma Oncology matches."
+  },
+  {
+   "id": "readout_ions_2027-08-15",
+   "action": "est_add_nct",
+   "nct": "NCT06914609",
+   "pcd": "2027-08",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Ionis Pharmaceuticals, Inc.",
+   "why": "ION582 (obudanersen) Ph3 in Angelman syndrome, PCD 2027-08 ESTIMATED, Ionis-led.",
+   "old_d": "2027-08-15"
+  },
+  {
+   "id": "readout_nvcr_2027-08-15",
+   "action": "est_rename",
+   "name": "TTFields",
+   "old": "Temozolomide",
+   "why": "CT.gov: TTFields NovoTTF-200T early lung adeno Ph1 (no temozolomide), investigator-sponsored; PCD 2027-08 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Memorial Sloan Kettering Cancer Center. MSK-sponsored Ph1 (n=12) of NovoTTF-200T TTFields in resectable lung adenocarcinoma; no temozolomide in the regi"
+  },
+  {
+   "id": "readout_rare_2027-08-15",
+   "action": "est_add_nct",
+   "nct": "NCT05933200",
+   "pcd": "2027-08",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Ultragenyx Pharmaceutical Inc",
+   "why": "Triheptanoin vs MCT Ph3 in pediatric LC-FAOD, PCD 2027-08 ESTIMATED, Ultragenyx-led.",
+   "old_d": "2027-08-15"
+  },
+  {
+   "id": "readout_smmt_2027-08-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Summit Therapeutics-sponsored ivonescimab trial has PCD in 2027 Apr-Dec (Summit-led: HARMONi-3 NCT05899608 PCD 2028-12-31; HARMONi NCT06396065 PCD 2025-04-12). Dozens of Akeso/investigator ivonescimab trials have PCDs in this month, so no single r"
+  },
+  {
+   "id": "readout_tlx_2027-08-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: Searched TLX591/rosopatamab/J591 trials with PCD in 2027: none in this month. Telix-led TLX591 trials: ProstACT Global NCT06520345 (PCD 2027-12), plus completed/terminated earlier ones. A non-Telix record matches the month: Convergent Therapeutics Ac"
+  },
+  {
+   "id": "readout_chrs_2027-09-15",
+   "action": "est_rename",
+   "name": "casdozokitug + toripalimab + bevacizumab",
+   "old": "CHS-1420",
+   "why": "CT.gov: Casdozokitug + toripalimab + bev HCC Ph2 (not CHS-1420); PCD 2027-09 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Coherus Oncology, Inc.. Registry trial is casdozokitug + toripalimab + bevacizumab in HCC (Ph2), not CHS-1420; sponsor Coherus matches."
+  },
+  {
+   "id": "readout_incy_2027-09-15",
+   "action": "est_rename",
+   "name": "axatilimab",
+   "old": "Corticosteroids",
+   "why": "CT.gov: Axatilimab + corticosteroids cGVHD Ph3 AXemplify-357; PCD 2027-09-28 ESTIMATED, RECRUITING, sponsor Incyte Corporation. Trial is axatilimab (INCA034176) + corticosteroids AXemplify-357 Ph3; our name 'Corticosteroids' should be axatilimab."
+  },
+  {
+   "id": "readout_smmt_2027-09-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Summit Therapeutics-sponsored ivonescimab trial has PCD in 2027 Apr-Dec (Summit-led: HARMONi-3 NCT05899608 PCD 2028-12-31; HARMONi NCT06396065 PCD 2025-04-12). Dozens of Akeso/investigator ivonescimab trials have PCDs in this month, so no single r"
+  },
+  {
+   "id": "readout_vnda_2027-09-15",
+   "action": "est_add_nct",
+   "nct": "NCT06138613",
+   "pcd": "2027-09-30",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Vanda Pharmaceuticals",
+   "why": "Only tradipitant trial with PCD 2027-09: open-label Ph3 Motion Delos (motion sickness), PCD 2027-09-30.",
+   "old_d": "2027-09-15"
+  },
+  {
+   "id": "readout_lly_2027-10-15",
+   "action": "est_add_nct",
+   "nct": "NCT05556512",
+   "pcd": "2027-10",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "Eli Lilly and Company",
+   "name": "Tirzepatide (SURMOUNT-MMO)",
+   "old_d": "2027-10-15",
+   "why": "Red team B: two Lilly Ph3 tirzepatide trials complete 2027-10; SURMOUNT-MMO NCT05556512 (morbidity/mortality outcomes, n=15,374, PCD 2027-10) is the registrational one; SURMOUNT-ADOLESCENTS-2 NCT06439277 also completes that month. Kept rather than removed."
+  },
+  {
+   "id": "readout_mrk_2027-10-15",
+   "action": "est_add_nct",
+   "nct": "NCT07071623",
+   "pcd": "2027-10-18",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Merck Sharp & Dohme LLC",
+   "why": "Only MK-8527 trial with PCD 2027-10: Ph3 once-monthly oral HIV PrEP in women, PCD 2027-10-18.",
+   "old_d": "2027-10-15"
+  },
+  {
+   "id": "readout_onc_2027-10-15",
+   "action": "est_add_nct",
+   "nct": "NCT05707377",
+   "pcd": "2027-10",
+   "pcd_type": "estimated",
+   "status": "active_not_recruiting",
+   "sponsor": "BeOne Medicines",
+   "why": "Only BeOne-led zanubrutinib trial with PCD 2027-10: Ph2/3 vs tacrolimus in primary membranous nephropathy.",
+   "old_d": "2027-10-15"
+  },
+  {
+   "id": "readout_tars_2027-10-15",
+   "action": "est_rename",
+   "name": "TP-05",
+   "old": "TP-03",
+   "why": "CT.gov: TP-05 (lotilaner) Lyme Ph2b (not TP-03); PCD 2027-10 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Tarsus Pharmaceuticals, Inc.. Registry trial is TP-05 (oral lotilaner) for Lyme prevention Ph2b, not TP-03; sponsor Tarsus matches."
+  },
+  {
+   "id": "readout_tlx_2027-10-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: Searched TLX591/rosopatamab/J591 trials with PCD in 2027: none in this month. Telix-led TLX591 trials: ProstACT Global NCT06520345 (PCD 2027-12), plus completed/terminated earlier ones. A non-Telix record matches the month: Weill Cornell 225Ac-J591 +"
+  },
+  {
+   "id": "readout_iova_2026-11-15",
+   "action": "est_rename",
+   "name": "lifileucel",
+   "old": "Lifileucel plus Pembrolizumab",
+   "why": "CT.gov: Lifileucel pilot melanoma brain mets n=10 (no pembrolizumab arm); PCD 2027-11 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Memorial Sloan Kettering Cancer Center. MSK-sponsored pilot (n=10) of lifileucel alone in melanoma brain mets; registry lists no pembrolizumab arm."
+  },
+  {
+   "id": "readout_mygn_2027-11-15",
+   "action": "est_remove",
+   "why": "trial is Klus Pharma SKB264 + pembrolizumab; no Myriad drug"
+  },
+  {
+   "id": "readout_onc_2027-11-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No BeOne-led zanubrutinib (BGB-3111) trial has PCD 2027-11. Nov-2027 zanubrutinib records are Curis (NCT07271667), Ruijin Hospital (NCT06136351) and Loxo/Lilly BRUIN MCL-321 (NCT04662255, zanubrutinib is a comparator)."
+  },
+  {
+   "id": "readout_regn_2027-11-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No cemdisiran trial has PCD 2027-11. Regeneron cemdisiran trials: GA Ph3 NCT06541704 (PCD 2028-07-31), PNH OLE NCT05744921 (2028-10-10), PNH Ph3 NCT07154745 (2030-01-18); gMG Ph3 NCT05070858 PCD 2025-07-08. Note: Regeneron's REGN5678 + cemiplimab NCT"
+  },
+  {
+   "id": "readout_vera_2027-11-15",
+   "action": "est_add_nct",
+   "nct": "NCT06983028",
+   "pcd": "2027-11",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Vera Therapeutics, Inc.",
+   "why": "Only atacicept trial with PCD 2027-11: Ph2 PIONEER (multiple autoimmune glomerular diseases), Vera-led.",
+   "old_d": "2027-11-15"
+  },
+  {
+   "id": "readout_legn_2027-12-15",
+   "action": "est_rename",
+   "name": "LB1908",
+   "old": "LCAR-B38M CAR-T Cell",
+   "why": "CT.gov: LB1908 (Claudin18.2 CAR-T) Ph1 gastric/pancreatic; PCD 2027-12 ESTIMATED, ACTIVE_NOT_RECRUITING, sponsor Legend Biotech USA Inc. Registry trial is LB1908 (Claudin18.2 CAR-T, Ph1 GI cancers), not LCAR-B38M (cilta-cel); sponsor Legend Biotech matches."
+  },
+  {
+   "id": "readout_lly_2027-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT05509777",
+   "pcd": "2027-12",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Eli Lilly and Company",
+   "why": "Only mirikizumab trial with PCD 2027-12: Ph3 pediatric Crohn's disease, Lilly-led.",
+   "old_d": "2027-12-15"
+  },
+  {
+   "id": "readout_nuvl_2027-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT05384626",
+   "pcd": "2027-12",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Nuvalent Inc.",
+   "why": "Neladalkib (NVL-655) ALKOVE-1 Ph1/2, PCD 2027-12, Nuvalent-led (only neladalkib record with PCD Oct-Dec 2027).",
+   "old_d": "2027-12-15"
+  },
+  {
+   "id": "readout_rare_2027-12-15",
+   "action": "est_remove",
+   "why": "the only matching registry record is withdrawn with 0 enrolled and is not an Ultragenyx trial"
+  },
+  {
+   "id": "readout_smmt_2027-12-15",
+   "action": "est_remove",
+   "why": "no ClinicalTrials.gov record matches this drug and month: No Summit Therapeutics-sponsored ivonescimab trial has PCD in 2027 Apr-Dec (Summit-led: HARMONi-3 NCT05899608 PCD 2028-12-31; HARMONi NCT06396065 PCD 2025-04-12). Dozens of Akeso/investigator ivonescimab trials have PCDs in this month, so no single r"
+  },
+  {
+   "id": "readout_tak_2027-12-15",
+   "action": "est_remove",
+   "why": "trial is an MD Anderson fruquintinib + tislelizumab study, not a Takeda-run readout"
+  },
+  {
+   "id": "readout_tlx_2027-12-15",
+   "action": "est_add_nct",
+   "nct": "NCT06520345",
+   "pcd": "2027-12",
+   "pcd_type": "estimated",
+   "status": "recruiting",
+   "sponsor": "Telix Pharmaceuticals (Innovations) Pty Limited",
+   "why": "177Lu-TLX591 (rosopatamab) Ph3 ProstACT Global in mCRPC, PCD 2027-12 ESTIMATED, Telix-led, recruiting.",
+   "old_d": "2027-12-15"
+  },
+  {
+   "id": "readout_cmps_2026-06-15",
+   "action": "est_remove",
+   "why": "trial is an investigator n=20 psilocybin mechanism study, not COMPASS COMP360"
+  }
+ ]
+}

@@ -896,6 +896,13 @@ def main():
               if not str(r.get("source", "")).startswith("/drug/")]
         for g, s in sorted(aliases.items()):
             rd.append({"source": f"/drug/{g}", "destination": f"/drug/{s}", "permanent": True})
+        # 2026-11-18: a drug page that left the site (no sourced event names it any more) 301s to its
+        # company's ticker page instead of 404ing (_drug_pages_retired.json); it drops out if it gets a page again.
+        _rp = os.path.join(HERE, "_drug_pages_retired.json")
+        if os.path.exists(_rp):
+            for g, dst in sorted(json.load(open(_rp, encoding="utf-8")).get("pages", {}).items()):
+                if g not in drugs and g not in aliases:
+                    rd.append({"source": f"/drug/{g}", "destination": dst, "permanent": True})
         cfg["redirects"] = rd
         json.dump(cfg, open(vj, "w", encoding="utf-8"), indent=1)
     print(f"generic-name aliases: {len(aliases)} redirect(s) (e.g. "

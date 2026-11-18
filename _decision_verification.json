@@ -87,7 +87,7 @@
   "ABBV-2025-06-30": {
    "ticker": "ABBV",
    "date": "2025-06-30",
-   "asset": "JUV\u00c9DERM - (SKINVIVE) (injectable HA)",
+   "asset": "JUVÉDERM - (SKINVIVE) (injectable HA)",
    "claimed": "approval",
    "status": "unverified",
    "evidence": null
@@ -129,13 +129,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208573Orig1s031ltr.pdf",
+    "source_label": "FDA approval letter, NDA 208573 S-031, February 19, 2026",
+    "quote": "provides for the use of Venclexta in combination with acalabrutinib",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-02-19",
+    "announced": "2026-02-20"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-02-26",
     "accession": "0001104659-26-020643",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1551152/000110465926020643/tm266774d4_ex1-1.htm",
     "source_label": "SEC filing 0001104659-26-020643 of 2026-02-26 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "ABEO-2025-04-29": {
    "ticker": "ABEO",
@@ -149,7 +159,10 @@
     "filing_date": "2025-04-29",
     "accession": "0001641172-25-006548",
     "source_url": "https://www.sec.gov/Archives/edgar/data/318306/000164117225006548/ex99-1.htm",
-    "source_label": "SEC filing 0001641172-25-006548 of 2025-04-29 containing 'FDA approval'"
+    "source_label": "SEC filing 0001641172-25-006548 of 2025-04-29 containing 'FDA approval'",
+    "quote": "today announced the U.S. Food and Drug Administration (FDA) has approved ZEVASKYN™",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/318306/000164117225006548/ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "ABEO-2025-07-11": {
@@ -773,13 +786,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/805928/000080592825000140/axgn-20251203.htm",
+    "source_label": "Axogen 8-K, December 3, 2025",
+    "quote": "On December 3, 2025, the Company announced it received FDA approval of its Biologics License Application for Avance ® (acellular nerve allograft-arwx).",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2025-12-03, after the close"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2025-12-04",
     "accession": "0000805928-25-000140",
     "source_url": "https://www.sec.gov/Archives/edgar/data/805928/000080592825000140/axgn-20251203.htm",
     "source_label": "SEC filing 0000805928-25-000140 of 2025-12-04 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "AXSM-2025-01-30": {
    "ticker": "AXSM",
@@ -929,15 +952,25 @@
    "date": "2026-02-20",
    "asset": "",
    "claimed": "approval",
-   "status": "conflicting_evidence_needs_human_review",
+   "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.astrazeneca.com/media-centre/press-releases/2026/fixed-duration-calquence-combo-approved-in-us.html",
+    "source_label": "AstraZeneca release, February 20, 2026",
+    "quote": "AstraZeneca's Calquence (acalabrutinib) in combination with venetoclax has been approved in the US",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2026-02-20"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2026-02-24",
     "accession": "0001104659-26-019110",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000110465926019110/tm261135d3_ex99-1.pdf",
     "source_label": "SEC filing 0001104659-26-019110 of 2026-02-24 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "conflicting_evidence_needs_human_review"
   },
   "BAYRY-2025-10-24": {
    "ticker": "BAYRY",
@@ -974,7 +1007,7 @@
    "date": "2025-11-07",
    "asset": "Mecbotamab Vedotin (BA3011)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -982,6 +1015,12 @@
     "accession": "0001193125-25-290474",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1826892/000119312525290474/bcab-ex10_1.htm",
     "source_label": "SEC filing 0001193125-25-290474 of 2025-11-21 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "BioAtla reported Phase 2 survival data for mecbotamab vedotin that day; the drug is not approved. The cited filing is a financing agreement.",
+    "source": "BioAtla release of November 7, 2025"
    }
   },
   "BCRX-2025-12-12": {
@@ -1102,7 +1141,7 @@
   "BMY-2025-06-27": {
    "ticker": "BMY",
    "date": "2025-06-27",
-   "asset": "Breyanzi\u00ae (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy)",
+   "asset": "Breyanzi® (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy)",
    "claimed": "approval",
    "status": "unverified",
    "evidence": null
@@ -1127,7 +1166,10 @@
     "filing_date": "2025-08-27",
     "accession": "0001776985-25-000053",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1776985/000177698525000053/form6-klp81xadaptedfdaappr.htm",
-    "source_label": "SEC filing 0001776985-25-000053 of 2025-08-27 containing 'FDA approval'"
+    "source_label": "SEC filing 0001776985-25-000053 of 2025-08-27 containing 'FDA approval'",
+    "quote": "COMIRNATY® Receives U.S. FDA Approval for Adults 65 and Older",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1776985/000177698525000053/form6-klp81xadaptedfdaappr.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "CASI-2025-12-07": {
@@ -1391,7 +1433,10 @@
     "filing_date": "2026-02-25",
     "accession": "0001437749-26-005537",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926005537/ex_923604.htm",
-    "source_label": "SEC filing 0001437749-26-005537 of 2026-02-25 containing 'FDA approval'"
+    "source_label": "SEC filing 0001437749-26-005537 of 2026-02-25 containing 'FDA approval'",
+    "quote": "today announced the U.S. Food and Drug Administration (FDA) approval of a New Drug Application (NDA) for DESMODA™",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926005537/ex_923604.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "EXEL-2025-03-26": {
@@ -1650,7 +1695,10 @@
     "filing_date": "2025-07-17",
     "accession": "0001654954-25-008162",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425008162/a3837r.htm",
-    "source_label": "SEC filing 0001654954-25-008162 of 2025-07-17 containing 'FDA approval'"
+    "source_label": "SEC filing 0001654954-25-008162 of 2025-07-17 containing 'FDA approval'",
+    "quote": "US FDA approves GSK's Shingrix in a prefilled syringe presentation",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425008162/a3837r.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "GSK-2025-10-23": {
@@ -1726,7 +1774,7 @@
    "date": "2025-02-19",
    "asset": "ANKTIVA",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -1734,6 +1782,12 @@
     "accession": "0001326110-25-000031",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000031/ibrx-202533x8kexhibit991.htm",
     "source_label": "SEC filing 0001326110-25-000031 of 2025-03-03 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "ANKTIVA was approved on April 22, 2024. In February 2025 the FDA authorized expanded access to another BCG source and granted an RMAT designation, which are not approvals.",
+    "source": "ImmunityBio 8-K exhibit 99.1, February 2025"
    }
   },
   "IBRX-2025-08-13": {
@@ -1910,7 +1964,7 @@
    "date": "2026-02-17",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -1918,6 +1972,12 @@
     "accession": "0001193125-26-071974",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1080014/000119312526071974/d23292dex991.htm",
     "source_label": "SEC filing 0001193125-26-071974 of 2026-02-25 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited release is an earnings report that recaps the December 2025 NUZOLVENCE approval, which has its own page. No FDA action near February 17, 2026.",
+    "source": "Innoviva 8-K exhibit 99.1 of February 25, 2026"
    }
   },
   "IONI-2025-08-21": {
@@ -1978,7 +2038,7 @@
    "date": "2025-01-21",
    "asset": "Bitopertin - (APOLLO)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -1986,6 +2046,12 @@
     "accession": "0001193125-25-009095",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525009095/d858127dex991.htm",
     "source_label": "SEC filing 0001193125-25-009095 of 2025-01-21 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Disc Medicine announced a Type C meeting outcome and an NDA plan. Bitopertin was not approved; it received a Complete Response Letter on February 13, 2026.",
+    "source": "Disc Medicine 8-K exhibit 99.1 of January 21, 2025"
    }
   },
   "IRWD-2025-04-14": {
@@ -1993,7 +2059,7 @@
    "date": "2025-04-14",
    "asset": "Apraglutide - (STARS)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -2001,6 +2067,12 @@
     "accession": "0001104659-25-034381",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925034381/tm2512215d1_ex99-1.htm",
     "source_label": "SEC filing 0001104659-25-034381 of 2025-04-14 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Ironwood said the FDA wants a confirmatory Phase 3 trial before apraglutide is filed. No approval or CRL.",
+    "source": "Ironwood 8-K exhibit 99.1 of April 14, 2025"
    }
   },
   "JANX-2025-12-01": {
@@ -2281,7 +2353,7 @@
    "date": "2025-01-02",
    "asset": "Paxalisib (GDC-0084) - (GBM AGILE)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -2289,6 +2361,12 @@
     "accession": "0001193125-25-005004",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1075880/000119312525005004/d868096dex41.htm",
     "source_label": "SEC filing 0001193125-25-005004 of 2025-01-13 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited filing is a prefunded warrant. Paxalisib is not FDA approved.",
+    "source": "Kazia SEC filing 0001193125-25-005004"
    }
   },
   "KZIA-2025-11-18": {
@@ -2319,7 +2397,7 @@
    "date": "2025-01-15",
    "asset": "DehydraTECH-liraglutide - (GLP-1-H25-5). (Pilot Study #5)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -2327,6 +2405,12 @@
     "accession": "0001640334-25-000087",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1348362/000164033425000087/lxrp_8k.htm",
     "source_label": "SEC filing 0001640334-25-000087 of 2025-01-15 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited 8-K reports shareholder vote results from Lexaria's annual meeting. No FDA action.",
+    "source": "Lexaria 8-K of January 15, 2025"
    }
   },
   "LGND-2025-08-27": {
@@ -2582,7 +2666,7 @@
   "MRK-2026-02-20": {
    "ticker": "MRK",
    "date": "2026-02-20",
-   "asset": "KEYTRUDA + chemo \u00b1 bevacizumab (ovarian)",
+   "asset": "KEYTRUDA + chemo ± bevacizumab (ovarian)",
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
@@ -2664,13 +2748,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925050226/tm2515521d1_8k.htm",
+    "source_label": "Novavax 8-K, May 2025 (approval announced May 16, 2025)",
+    "quote": "On May 16, 2025, Novavax, Inc. (\"Novavax\" or the \"Company\") announced that the U.S. Food and Drug Administration (\"FDA\") has approved the Company's Biologics License Application (\"BLA\") for Nuvaxovid",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2025-05-16 per the Novavax 8-K; press release 2025-05-19"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2025-05-19",
     "accession": "0001104659-25-050226",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925050226/tm2515521d1_8k.htm",
     "source_label": "SEC filing 0001104659-25-050226 of 2025-05-19 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "NVAX-2025-08-27": {
    "ticker": "NVAX",
@@ -2684,7 +2778,10 @@
     "filing_date": "2025-08-27",
     "accession": "0001104659-25-084049",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925084049/tm2524511d2_8k.htm",
-    "source_label": "SEC filing 0001104659-25-084049 of 2025-08-27 containing 'approval of'"
+    "source_label": "SEC filing 0001104659-25-084049 of 2025-08-27 containing 'approval of'",
+    "quote": "approved the supplemental Biologics License Application (“BLA”) for the Nuvaxovid",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925084049/tm2524511d2_8k.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "NVO-2025-01-28": {
@@ -2692,15 +2789,25 @@
    "date": "2025-01-28",
    "asset": "Semaglutide - (FLOW)",
    "claimed": "approval",
-   "status": "conflicting_evidence_needs_human_review",
+   "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209637Orig1s025ltr.pdf",
+    "source_label": "FDA approval letter, NDA 209637 S-025, January 28, 2025",
+    "quote": "provides for a new indication to reduce the risk of sustained estimated glomerular filtration rate (eGFR) decline",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2025-01-28",
+    "announced": null
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2025-02-05",
     "accession": "0001628280-25-003924",
     "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000162828025003924/caq42024.htm",
     "source_label": "SEC filing 0001628280-25-003924 of 2025-02-05 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "conflicting_evidence_needs_human_review"
   },
   "NVO-2025-08-15": {
    "ticker": "NVO",
@@ -2752,7 +2859,7 @@
    "date": "2025-01-29",
    "asset": "Farabursen (RGLS8429) (MAD)",
    "claimed": "approval",
-   "status": "conflicting_evidence_needs_human_review",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -2760,6 +2867,12 @@
     "accession": "0001370368-25-000008",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1114448/000137036825000008/a250131-99_1.pdf",
     "source_label": "SEC filing 0001370368-25-000008 of 2025-01-31 containing 'complete response letter'"
+   },
+   "status_before_retraction": "conflicting_evidence_needs_human_review",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The page named no drug, and Novartis's full-year 2024 release lists no FDA approval or CRL near that date.",
+    "source": "Novartis Q4 and full-year 2024 release, January 31, 2025"
    }
   },
   "NVS-2025-03-20": {
@@ -2849,7 +2962,10 @@
     "filing_date": "2025-11-25",
     "accession": "0001171843-25-007547",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1114448/000117184325007547/f6k_112425.htm",
-    "source_label": "SEC filing 0001171843-25-007547 of 2025-11-25 containing 'FDA approval'"
+    "source_label": "SEC filing 0001171843-25-007547 of 2025-11-25 containing 'FDA approval'",
+    "quote": "Novartis today announced that the US Food and Drug Administration (FDA) has approved Itvisma (onasemnogene abeparvovec-brve)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1114448/000117184325007547/f6k_112425.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "OGEN-2025-05-13": {
@@ -2918,7 +3034,10 @@
     "filing_date": "2026-01-02",
     "accession": "0001104659-26-000066",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm",
-    "source_label": "SEC filing 0001104659-26-000066 of 2026-01-02 containing 'complete response letter'"
+    "source_label": "SEC filing 0001104659-26-000066 of 2026-01-02 containing 'complete response letter'",
+    "quote": "FDA issues Complete Response Letter (CRL) for resubmitted ONS-5010 BLA",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "PBM-2025-12-19": {
@@ -2982,13 +3101,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-immunotherapy-recurrent-respiratory-papillomatosis",
+    "source_label": "FDA announcement, August 14, 2025",
+    "quote": "Today, the U.S. Food and Drug Administration approved Papzimeos (zopapogene imadenovec-drba),",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2025-08-14",
+    "announced": "2025-08-15"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2025-08-18",
     "accession": "0001104659-25-079497",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1356090/000110465925079497/tm2523710d1_ex99-1.htm",
     "source_label": "SEC filing 0001104659-25-079497 of 2025-08-18 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "PHIO-2025-03-10": {
    "ticker": "PHIO",
@@ -3080,7 +3209,10 @@
     "filing_date": "2025-07-11",
     "accession": "0000950170-25-095334",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025095334/rare-20250711.htm",
-    "source_label": "SEC filing 0000950170-25-095334 of 2025-07-11 containing 'complete response letter'"
+    "source_label": "SEC filing 0000950170-25-095334 of 2025-07-11 containing 'complete response letter'",
+    "quote": "has issued a Complete Response Letter (“CRL”) for its Biologics License Application (“BLA”) for UX111",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025095334/rare-20250711.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "REGN-2025-04-18": {
@@ -3110,7 +3242,10 @@
     "filing_date": "2025-04-29",
     "accession": "0001804220-25-000020",
     "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000180422025000020/exhibit991q12025.htm",
-    "source_label": "SEC filing 0001804220-25-000020 of 2025-04-29 containing 'complete response letter'"
+    "source_label": "SEC filing 0001804220-25-000020 of 2025-04-29 containing 'complete response letter'",
+    "quote": "In April 2025, the FDA issued a CRL regarding the sBLA for the addition of extended dosing intervals.",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/872589/000180422025000020/exhibit991q12025.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "REGN-2025-05-23": {
@@ -3126,8 +3261,14 @@
    "date": "2025-06-02",
    "asset": "DUPIXENT (dupilumab)",
    "claimed": "approval",
-   "status": "unverified",
-   "evidence": null
+   "status": "retracted",
+   "evidence": null,
+   "status_before_retraction": "unverified",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The FDA approved Dupixent for bullous pemphigoid on June 18, 2025 and Regeneron and Sanofi announced it on June 20. Nothing happened on June 2. The decision now has its page at the June 20 announcement.",
+    "source": "FDA approval letter for BLA 761055 S-070, June 18, 2025"
+   }
   },
   "REGN-2025-07-02": {
    "ticker": "REGN",
@@ -3172,7 +3313,7 @@
    "date": "2025-10-17",
    "asset": "Solnerstotug (formerly SNS-101) with Libtayo - (VISTA)",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3180,6 +3321,12 @@
     "accession": "0000872589-25-000026",
     "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258925000026/exhibit991q32025.htm",
     "source_label": "SEC filing 0000872589-25-000026 of 2025-10-28 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Solnerstotug has no BLA and received no CRL. That day Regeneron announced a positive EU CHMP opinion for adjuvant Libtayo.",
+    "source": "Regeneron release of October 17, 2025"
    }
   },
   "REGN-2025-11-19": {
@@ -3324,7 +3471,7 @@
    "date": "2025-02-06",
    "asset": "TTX-MC138 - (PRE-I-SPY)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3332,6 +3479,12 @@
     "accession": "0001104659-25-009122",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925009122/tm255410d1_ex99-1.htm",
     "source_label": "SEC filing 0001104659-25-009122 of 2025-02-04 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "TransCode announced the adjournment of a stockholder meeting. TTX-MC138 is clinical-stage; no FDA action.",
+    "source": "TransCode 8-K exhibit 99.1 of February 4, 2025"
    }
   },
   "RNAZ-2025-03-13": {
@@ -3339,7 +3492,7 @@
    "date": "2025-03-13",
    "asset": "TTX-MC138 - (PRE-I-SPY)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3347,6 +3500,12 @@
     "accession": "0001104659-25-027565",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925027565/tm2510166d1_ex4-1.htm",
     "source_label": "SEC filing 0001104659-25-027565 of 2025-03-25 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited filing is a common stock purchase warrant. No FDA action.",
+    "source": "TransCode SEC filing 0001104659-25-027565"
    }
   },
   "RPRX-2025-11-07": {
@@ -3430,7 +3589,7 @@
    "date": "2025-06-02",
    "asset": "DUPIXENT (dupilumab)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3438,6 +3597,12 @@
     "accession": "0001193125-25-136654",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312525136654/d81295dex993.htm",
     "source_label": "SEC filing 0001193125-25-136654 of 2025-06-06 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The FDA approved Dupixent for bullous pemphigoid on June 18, 2025 and Sanofi announced it on June 20. Nothing happened on June 2, and the SEC filing the page cited does not mention the approval. The decision now has its page at the June 20 announcement.",
+    "source": "FDA approval letter for BLA 761055 S-070, June 18, 2025"
    }
   },
   "SNY-2025-08-29": {
@@ -3460,7 +3625,7 @@
    "date": "2025-12-28",
    "asset": "Tolebrutinib",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3468,6 +3633,12 @@
     "accession": "0001193125-25-332163",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312525332163/d65502dex991.htm",
     "source_label": "SEC filing 0001193125-25-332163 of 2025-12-29 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The FDA's Complete Response Letter for tolebrutinib is dated December 23, 2025 and Sanofi announced it on December 24. December 28 was the review's target date, not the day of the letter. The decision now has its page at the December 24 announcement.",
+    "source": "FDA CRL file for NDA 219624, dated December 23, 2025"
    }
   },
   "SNY-2026-02-24": {
@@ -3482,7 +3653,10 @@
     "filing_date": "2026-03-03",
     "accession": "0001193125-26-086540",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526086540/d28705dex991.htm",
-    "source_label": "SEC filing 0001193125-26-086540 of 2026-03-03 containing 'FDA approval'"
+    "source_label": "SEC filing 0001193125-26-086540 of 2026-03-03 containing 'FDA approval'",
+    "quote": "The US Food and Drug Administration (FDA) has approved Dupixent (dupilumab)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526086540/d28705dex991.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "SPRY-2025-03-05": {
@@ -3520,7 +3694,10 @@
     "filing_date": "2025-09-23",
     "accession": "0001104659-25-092317",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465925092317/tm2526733d1_ex99-1.htm",
-    "source_label": "SEC filing 0001104659-25-092317 of 2025-09-23 containing 'complete response letter'"
+    "source_label": "SEC filing 0001104659-25-092317 of 2025-09-23 containing 'complete response letter'",
+    "quote": "Complete Response Letter (CRL) for the apitegromab Biologics License Application",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465925092317/tm2526733d1_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "SUPN-2025-02-04": {
@@ -3556,17 +3733,27 @@
   "TAK-2025-06-30": {
    "ticker": "TAK",
    "date": "2025-06-30",
-   "asset": "GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 \u00b5g/mL 10% solution]",
+   "asset": "GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 µg/mL 10% solution]",
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.takeda.com/newsroom/newsreleases/2025/gammagard-immunoglobulin/",
+    "source_label": "Takeda release, June 30, 2025",
+    "quote": "today announced that the U.S. Food and Drug Administration (FDA) has approved GAMMAGARD LIQUID ERC",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2025-06-30"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2025-07-01",
     "accession": "0001395064-25-000107",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1395064/000139506425000107/form6k_070125.htm",
     "source_label": "SEC filing 0001395064-25-000107 of 2025-07-01 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "TAK-2025-09-05": {
    "ticker": "TAK",
@@ -3672,7 +3859,10 @@
     "filing_date": "2025-04-29",
     "accession": "0002007191-25-000049",
     "source_url": "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000049/pixpr.htm",
-    "source_label": "SEC filing 0002007191-25-000049 of 2025-04-29 containing 'complete response letter'"
+    "source_label": "SEC filing 0002007191-25-000049 of 2025-04-29 containing 'complete response letter'",
+    "quote": "Complete Response Letter (CRL) from the United States (U.S.) Food and Drug Administration (FDA)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000049/pixpr.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "TNXP-2025-08-15": {
@@ -3808,7 +3998,7 @@
    "date": "2025-03-26",
    "asset": "WVE-N531 - (FORWARD-53)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3816,6 +4006,12 @@
     "accession": "0001193125-25-063184",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1631574/000119312525063184/d918658dex991.htm",
     "source_label": "SEC filing 0001193125-25-063184 of 2025-03-26 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Wave reported Phase 2 data for WVE-N531 and said it plans to file in 2026. No approval.",
+    "source": "Wave 8-K exhibit 99.1 of March 26, 2025"
    }
   },
   "XERS-2025-03-17": {
@@ -3853,7 +4049,7 @@
    "date": "2025-04-30",
    "asset": "XRx-026",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3861,6 +4057,12 @@
     "accession": "0001171843-25-002624",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1729214/000117184325002624/exh_991.htm",
     "source_label": "SEC filing 0001171843-25-002624 of 2025-04-30 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "XORTX reported FDA responses to a Type B meeting request. No NDA had been filed; no approval.",
+    "source": "XORTX exhibit 99.1 of April 30, 2025"
    }
   },
   "ZLAB-2025-07-30": {
@@ -3883,7 +4085,10 @@
     "filing_date": "2025-11-03",
     "accession": "0001171843-25-006876",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1898416/000117184325006876/f6k_110325.htm",
-    "source_label": "SEC filing 0001171843-25-006876 of 2025-11-03 containing 'complete response letter'"
+    "source_label": "SEC filing 0001171843-25-006876 of 2025-11-03 containing 'complete response letter'",
+    "quote": "has issued a complete response letter (CRL) for Alvotech’s Biologics License Application (BLA) for AVT05",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1898416/000117184325006876/f6k_110325.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AQST-2026-02-02": {
@@ -3893,13 +4098,23 @@
    "claimed": "crl",
    "status": "verified_crl",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.biospace.com/press-releases/aquestive-therapeutics-announces-fda-issuance-of-complete-response-letter-for-anaphylm",
+    "source_label": "Aquestive release, February 2, 2026 (letter received January 30)",
+    "quote": "received a Complete Response Letter (CRL) from the U.S. Food and Drug Administration (FDA) on January 30, 2026",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2026-02-02"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2026-02-02",
     "accession": "0001398733-26-000005",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000005/q12026-crlmeetingsupplem.htm",
     "source_label": "SEC filing 0001398733-26-000005 of 2026-02-02 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "verified_crl"
   },
   "ATRA-2026-01-12": {
    "ticker": "ATRA",
@@ -3913,7 +4128,10 @@
     "filing_date": "2026-01-12",
     "accession": "0001193125-26-010342",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1604464/000119312526010342/d34257dex991.htm",
-    "source_label": "SEC filing 0001193125-26-010342 of 2026-01-12 containing 'complete response letter'"
+    "source_label": "SEC filing 0001193125-26-010342 of 2026-01-12 containing 'complete response letter'",
+    "quote": "Complete Response Letter (CRL) for the EBVALLO (tabelecleucel) Biologics License Application",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1604464/000119312526010342/d34257dex991.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "CORT-2025-12-31": {
@@ -3928,7 +4146,10 @@
     "filing_date": "2025-12-31",
     "accession": "0001193125-25-338184",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1088856/000119312525338184/d50993dex991.htm",
-    "source_label": "SEC filing 0001193125-25-338184 of 2025-12-31 containing 'complete response letter'"
+    "source_label": "SEC filing 0001193125-25-338184 of 2025-12-31 containing 'complete response letter'",
+    "quote": "Corcept Receives Complete Response Letter for Relacorilant as a Treatment for Patients with Hypercortisolism",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1088856/000119312525338184/d50993dex991.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "CYTK-2025-11-07": {
@@ -3946,20 +4167,30 @@
    "claimed": "crl",
    "status": "verified_crl",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211241Orig1s000ltr.pdf",
+    "source_label": "FDA approval letter for NDA 211241 (January 2026), citing the CRL of September 30, 2025",
+    "quote": "which constituted a complete response to our September 30, 2025, action letter.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2025-09-30",
+    "announced": "2025-10-01"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2025-10-01",
     "accession": "0001104659-25-095366",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1429260/000110465925095366/fbio-20251001x8k.htm",
     "source_label": "SEC filing 0001104659-25-095366 of 2025-10-01 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "verified_crl"
   },
   "IRON-2026-02-15": {
    "ticker": "IRON",
    "date": "2026-02-15",
    "asset": "Bitopertin (EPP)",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3967,6 +4198,12 @@
     "accession": "0001193125-26-051504",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526051504/iron-20260213.htm",
     "source_label": "SEC filing 0001193125-26-051504 of 2026-02-13 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second page for the bitopertin Complete Response Letter of February 13, 2026. Nothing happened on February 15.",
+    "source": "FDA CRL file for NDA 220707, dated February 13, 2026"
    }
   },
   "PHIO-2025-07-28": {
@@ -3982,7 +4219,7 @@
    "date": "2026-02-08",
    "asset": "RGX-121 (clemidsogene lanparvovec)",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3990,6 +4227,12 @@
     "accession": "0001193125-26-043342",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526043342/rgnx-ex99_1.htm",
     "source_label": "SEC filing 0001193125-26-043342 of 2026-02-10 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second page for the RGX-121 Complete Response Letter, dated February 7, 2026 and announced February 9. Nothing happened on February 8.",
+    "source": "FDA CRL file for BLA 125840, dated February 7, 2026"
    }
   },
   "URGN-2025-04-27": {
@@ -4007,13 +4250,23 @@
    "claimed": "crl",
    "status": "verified_crl",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_BLA761459_20260422.pdf",
+    "source_label": "FDA Complete Response Letter, BLA 761459, April 22, 2026",
+    "quote": "04/22/2026 01:23:25 PM",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-04-22",
+    "announced": "2026-04-23"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2026-04-29",
     "accession": "0001551152-26-000013",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000013/abbv-20260331xexhibit991.htm",
     "source_label": "SEC filing 0001551152-26-000013 of 2026-04-29 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "verified_crl"
   },
   "ABBV-2026-05-27": {
    "ticker": "ABBV",
@@ -4067,7 +4320,10 @@
     "filing_date": "2026-05-04",
     "accession": "0001140361-26-018667",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1368514/000114036126018667/ef20072196_ex99-1.htm",
-    "source_label": "SEC filing 0001140361-26-018667 of 2026-05-04 containing 'FDA approval'"
+    "source_label": "SEC filing 0001140361-26-018667 of 2026-05-04 containing 'FDA approval'",
+    "quote": "FDA Approval to Expand the Label for ASCENIV",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1368514/000114036126018667/ef20072196_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "ALDX-2026-03-17": {
@@ -4082,7 +4338,10 @@
     "filing_date": "2026-03-17",
     "accession": "0001193125-26-109511",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1341235/000119312526109511/aldx-20260317.htm",
-    "source_label": "SEC filing 0001193125-26-109511 of 2026-03-17 containing 'complete response letter'"
+    "source_label": "SEC filing 0001193125-26-109511 of 2026-03-17 containing 'complete response letter'",
+    "quote": "on March 17, 2026, Aldeyra announced receipt of the 2026 Complete Response Letter",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1341235/000119312526109511/aldx-20260317.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AMPH-2026-02-24": {
@@ -4092,13 +4351,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.biospace.com/press-releases/amphastar-announces-fda-approval-for-ipratropium-bromide-hfa",
+    "source_label": "Amphastar release, February 24, 2026",
+    "quote": "the U.S. Food and Drug Administration (\"FDA\") has approved the Company's Abbreviated New Drug Application (\"ANDA\")",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2026-02-24"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-03-06",
     "accession": "0001297184-26-000015",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1297184/000129718426000015/amph-20260303xex10d1.htm",
     "source_label": "SEC filing 0001297184-26-000015 of 2026-03-06 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "AMRX-2026-06-04": {
    "ticker": "AMRX",
@@ -4128,7 +4397,10 @@
     "filing_date": "2026-05-11",
     "accession": "0001104659-26-058143",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1697862/000110465926058143/tm2614130d1_ex99-1.htm",
-    "source_label": "SEC filing 0001104659-26-058143 of 2026-05-11 containing 'FDA approval'"
+    "source_label": "SEC filing 0001104659-26-058143 of 2026-05-11 containing 'FDA approval'",
+    "quote": "the U.S. Food and Drug Administration (FDA) approved a label expansion for VYVGART®",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1697862/000110465926058143/tm2614130d1_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "ARQT-2026-06-29": {
@@ -4159,7 +4431,10 @@
     "filing_date": "2026-05-01",
     "accession": "0001628280-26-029210",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1655759/000162828026029210/fdaapprovalpressrelease_.htm",
-    "source_label": "SEC filing 0001628280-26-029210 of 2026-05-01 containing 'FDA approval'"
+    "source_label": "SEC filing 0001628280-26-029210 of 2026-05-01 containing 'FDA approval'",
+    "quote": "the U.S. Food and Drug Administration (FDA) has granted approval for VEPPANU (vepdegestrant)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1655759/000162828026029210/fdaapprovalpressrelease_.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "ASND-2026-02-27": {
@@ -4174,7 +4449,10 @@
     "filing_date": "2026-03-02",
     "accession": "0001193125-26-084021",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1612042/000119312526084021/d116890d6k.htm",
-    "source_label": "SEC filing 0001193125-26-084021 of 2026-03-02 containing 'approval of'"
+    "source_label": "SEC filing 0001193125-26-084021 of 2026-03-02 containing 'approval of'",
+    "quote": "FDA has granted approval under the FDA’s Accelerated Approval Program for YUVIWEL",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1612042/000119312526084021/d116890d6k.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AXSM-2026-04-30": {
@@ -4189,7 +4467,10 @@
     "filing_date": "2026-04-30",
     "accession": "0001193125-26-197857",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526197857/axsm-ex99_1.htm",
-    "source_label": "SEC filing 0001193125-26-197857 of 2026-04-30 containing 'FDA approval'"
+    "source_label": "SEC filing 0001193125-26-197857 of 2026-04-30 containing 'FDA approval'",
+    "quote": "has approved AUVELITY® (dextromethorphan HBr and bupropion HCl) for the treatment of agitation associated with dementia",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526197857/axsm-ex99_1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AZN-2026-04-27": {
@@ -4199,13 +4480,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761451Orig1s000ltr.pdf",
+    "source_label": "FDA approval letter, BLA 761451, April 24, 2026",
+    "quote": "We have approved your BLA for Saphnelo (anifrolumab-fnia) accessorized pre-filled syringe and autoinjector",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-04-24",
+    "announced": "2026-04-27"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-04-28",
     "accession": "0001654954-26-003979",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
     "source_label": "SEC filing 0001654954-26-003979 of 2026-04-28 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "AZN-2026-04-28": {
    "ticker": "AZN",
@@ -4219,7 +4510,10 @@
     "filing_date": "2026-04-28",
     "accession": "0001654954-26-003979",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
-    "source_label": "SEC filing 0001654954-26-003979 of 2026-04-28 containing 'FDA approval'"
+    "source_label": "SEC filing 0001654954-26-003979 of 2026-04-28 containing 'FDA approval'",
+    "quote": "Breztri approved in the US for asthma as first and only triple therapy for patients 12 years of age and older",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AZN-2026-05-15": {
@@ -4229,13 +4523,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.astrazeneca.com/media-centre/press-releases/2026/enhertu-approved-in-two-her2-early-bc-settings.html",
+    "source_label": "AstraZeneca release, May 15, 2026",
+    "quote": "Enhertu approved in the US for two new indications for patients with HER2-positive early breast cancer",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2026-05-15"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-05-26",
     "accession": "0001654954-26-005309",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
     "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "AZN-2026-05-18": {
    "ticker": "AZN",
@@ -4244,13 +4548,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219878Orig1s000ltr.pdf",
+    "source_label": "FDA approval letter, NDA 219878, May 15, 2026",
+    "quote": "It is approved, effective on the date of this letter, for use as recommended in the enclosed agreed-upon labeling.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-05-15",
+    "announced": "2026-05-18"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-05-26",
     "accession": "0001654954-26-005309",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
     "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "AZN-2026-05-22": {
    "ticker": "AZN",
@@ -4264,7 +4578,10 @@
     "filing_date": "2026-05-26",
     "accession": "0001654954-26-005309",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
-    "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'"
+    "source_label": "SEC filing 0001654954-26-005309 of 2026-05-26 containing 'approval of'",
+    "quote": "Datroway (datopotamab deruxtecan) has been approved in the US",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AZN-2026-05-28": {
@@ -4287,7 +4604,10 @@
     "filing_date": "2026-06-15",
     "accession": "0001654954-26-005964",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005964/a1987i.htm",
-    "source_label": "SEC filing 0001654954-26-005964 of 2026-06-15 containing 'approval of'"
+    "source_label": "SEC filing 0001654954-26-005964 of 2026-06-15 containing 'approval of'",
+    "quote": "Truqap (capivasertib) in combination with abiraterone and prednisone has been approved in the US",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005964/a1987i.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "AZN-2026-06-30": {
@@ -4295,7 +4615,7 @@
    "date": "2026-06-30",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -4303,6 +4623,13 @@
     "accession": "0001654954-26-006251",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426006251/a1370k.htm",
     "source_label": "SEC filing 0001654954-26-006251 of 2026-06-29 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited AstraZeneca filing reports a European Commission approval of Enhertu, not an FDA action.",
+    "source": "AstraZeneca 6-K of June 29, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "BAYRY-2026-06-15": {
@@ -4320,13 +4647,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209531Orig1s016ltr.pdf",
+    "source_label": "FDA approval letter, NDA 209531 S-016, March 27, 2026",
+    "quote": "This Prior Approval sNDA provides for revisions throughout the Prescribing Information (PI) regarding a completed clinical study [Study 4 (NCT04089566)], which provides an additional higher dosing regimen.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-03-27",
+    "announced": "2026-03-30"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-03-31",
     "accession": "0001193125-26-134889",
     "source_url": "https://www.sec.gov/Archives/edgar/data/875045/000119312526134889/d14986dex992.htm",
     "source_label": "SEC filing 0001193125-26-134889 of 2026-03-31 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "BMRN-2026-02-27": {
    "ticker": "BMRN",
@@ -4379,7 +4716,10 @@
     "filing_date": "2026-06-02",
     "accession": "0001493152-26-026760",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1862150/000149315226026760/ex99-1.htm",
-    "source_label": "SEC filing 0001493152-26-026760 of 2026-06-02 containing 'complete response letter'"
+    "source_label": "SEC filing 0001493152-26-026760 of 2026-06-02 containing 'complete response letter'",
+    "quote": "Cingulate Receives Complete Response Letter from FDA for CTx-1301",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1862150/000149315226026760/ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "DNLI-2026-03-25": {
@@ -4394,7 +4734,10 @@
     "filing_date": "2026-03-25",
     "accession": "0001714899-26-000030",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1714899/000171489926000030/ex9912026pressrelease32526.htm",
-    "source_label": "SEC filing 0001714899-26-000030 of 2026-03-25 containing 'FDA approval'"
+    "source_label": "SEC filing 0001714899-26-000030 of 2026-03-25 containing 'FDA approval'",
+    "quote": "the U.S. Food and Drug Administration (FDA) has granted accelerated approval for AVLAYAH™ (tividenofusp alfa-eknm)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1714899/000171489926000030/ex9912026pressrelease32526.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "EBS-2026-02-13": {
@@ -4441,7 +4784,10 @@
     "filing_date": "2026-04-23",
     "accession": "0001140361-26-016324",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126016324/ef20070593_ex99-1.htm",
-    "source_label": "SEC filing 0001140361-26-016324 of 2026-04-23 containing 'complete response letter'"
+    "source_label": "SEC filing 0001140361-26-016324 of 2026-04-23 containing 'complete response letter'",
+    "quote": "has issued a Complete Response Letter (CRL) for the Company's New Drug Application (NDA) for GTx-104",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126016324/ef20070593_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "GSK-2026-03-13": {
@@ -4451,13 +4797,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/vaccines-blood-biologics/arexvy",
+    "source_label": "FDA, Arexvy product page (approval of March 12, 2026)",
+    "quote": "March 12, 2026 Approval Letter - AREXVY",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-03-12",
+    "announced": "2026-03-13"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-03-19",
     "accession": "0001654954-26-002482",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
     "source_label": "SEC filing 0001654954-26-002482 of 2026-03-19 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "GSK-2026-03-19": {
    "ticker": "GSK",
@@ -4471,7 +4827,10 @@
     "filing_date": "2026-03-19",
     "accession": "0001654954-26-002482",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
-    "source_label": "SEC filing 0001654954-26-002482 of 2026-03-19 containing 'approval of'"
+    "source_label": "SEC filing 0001654954-26-002482 of 2026-03-19 containing 'approval of'",
+    "quote": "the US Food and Drug Administration (FDA) has approved Lynavoy (linerixibat) for the treatment of cholestatic pruritus",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "GSK-2026-06-17": {
@@ -4486,7 +4845,10 @@
     "filing_date": "2026-06-17",
     "accession": "0001654954-26-006036",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
-    "source_label": "SEC filing 0001654954-26-006036 of 2026-06-17 containing 'FDA approval'"
+    "source_label": "SEC filing 0001654954-26-006036 of 2026-06-17 containing 'FDA approval'",
+    "quote": "the US Food and Drug Administration (FDA) has approved Utebzi",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "GSK-2026-06-18": {
@@ -4494,7 +4856,7 @@
    "date": "2026-06-18",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -4502,6 +4864,13 @@
     "accession": "0001654954-26-006036",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
     "source_label": "SEC filing 0001654954-26-006036 of 2026-06-17 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Utebzi approval announced June 17, 2026 (GSK-2026-06-17). June 18 was the target date.",
+    "source": "GSK 6-K of June 17, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "HALO-2026-03-05": {
@@ -4519,13 +4888,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211150Orig1s006ltr.pdf",
+    "source_label": "FDA approval letter, NDA 211150 S-006, February 13, 2026",
+    "quote": "provides for the new indication of treatment of cataplexy in patients 6 years of age and older with narcolepsy.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-02-13",
+    "announced": "2026-02-17"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-02-24",
     "accession": "0001104659-26-018858",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926018858/hrmy-20260224xex99d1.htm",
     "source_label": "SEC filing 0001104659-26-018858 of 2026-02-24 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "INCY-2026-04-08": {
    "ticker": "INCY",
@@ -4563,7 +4942,10 @@
     "filing_date": "2026-06-24",
     "accession": "0001140361-26-026232",
     "source_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126026232/ef20076807_ex99-1.htm",
-    "source_label": "SEC filing 0001140361-26-026232 of 2026-06-24 containing 'approval of'"
+    "source_label": "SEC filing 0001140361-26-026232 of 2026-06-24 containing 'approval of'",
+    "quote": "TRYNGOLZA® (olezarsen) approved by the FDA as the first and only treatment",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126026232/ef20076807_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "IRON-2026-02-13": {
@@ -4573,13 +4955,23 @@
    "claimed": "crl",
    "status": "verified_crl",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_NDA220707_20260213.pdf",
+    "source_label": "FDA Complete Response Letter, NDA 220707, February 13, 2026",
+    "quote": "02/13/2026 12:35:22 PM",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-02-13",
+    "announced": null
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2026-02-13",
     "accession": "0001193125-26-051504",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526051504/iron-20260213.htm",
     "source_label": "SEC filing 0001193125-26-051504 of 2026-02-13 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "verified_crl"
   },
   "IRWD-2026-05-27": {
    "ticker": "IRWD",
@@ -4594,7 +4986,7 @@
    "date": "2026-04-29",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -4602,6 +4994,13 @@
     "accession": "0001193125-26-179391",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526179391/d109088dex991.htm",
     "source_label": "SEC filing 0001193125-26-179391 of 2026-04-27 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited exhibit is about a Nasdaq listing extension and a reverse stock split. No FDA approval or CRL.",
+    "source": "Jaguar Health 8-K exhibit 99.1 of April 27, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "JNJ-2026-03-05": {
@@ -4635,20 +5034,30 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.businesswire.com/news/home/20260413839195/en/",
+    "source_label": "Travere Therapeutics release, April 13, 2026",
+    "quote": "today announced that the U.S. Food and Drug Administration (FDA) has approved FILSPARI® (sparsentan) to reduce proteinuria",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-04-13",
+    "announced": null
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-04-27",
     "accession": "0001193125-26-179529",
     "source_url": "https://www.sec.gov/Archives/edgar/data/886163/000119312526179529/d143046d8k.htm",
     "source_label": "SEC filing 0001193125-26-179529 of 2026-04-27 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "LGND-2026-06-08": {
    "ticker": "LGND",
    "date": "2026-06-08",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -4656,6 +5065,13 @@
     "accession": "0000886163-26-000038",
     "source_url": "https://www.sec.gov/Archives/edgar/data/886163/000088616326000038/lgnd-20260605.htm",
     "source_label": "SEC filing 0000886163-26-000038 of 2026-06-09 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited 8-K reports the votes at Ligand's June 5, 2026 annual meeting; it names no drug and no FDA action.",
+    "source": "Ligand 8-K of June 9, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "LLY-2026-04-01": {
@@ -4713,13 +5129,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0000899460/000119312526252544/mnkd-20260529.htm",
+    "source_label": "MannKind 8-K, May 29, 2026",
+    "quote": "On May 29, 2026, we announced that the U.S. Food and Drug Administration (FDA) approved Afrezza®(insulin human) Inhalation Powder for use in children and adolescents aged 6 and older.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-05-29",
+    "announced": null
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-05-28",
     "accession": "0001193125-26-243074",
     "source_url": "https://www.sec.gov/Archives/edgar/data/899460/000119312526243074/mnkd-20260527.htm",
     "source_label": "SEC filing 0001193125-26-243074 of 2026-05-28 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "MRK-2026-02-11": {
    "ticker": "MRK",
@@ -4736,13 +5162,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216964Orig1s000ltr.pdf",
+    "source_label": "FDA approval letter, NDA 216964, April 20, 2026",
+    "quote": "It is approved, effective on the date of this letter, for use as recommended in the enclosed agreed-upon labeling.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-04-20",
+    "announced": "2026-04-21"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-04-30",
     "accession": "0001104659-26-052081",
     "source_url": "https://www.sec.gov/Archives/edgar/data/310158/000110465926052081/tm2612241d1_ex99-1.htm",
     "source_label": "SEC filing 0001104659-26-052081 of 2026-04-30 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "MRK-2026-06-12": {
    "ticker": "MRK",
@@ -4773,7 +5209,7 @@
    "date": "2026-02-12",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -4781,6 +5217,13 @@
     "accession": "0001645113-26-000010",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000010/paxfdadecisionpr.htm",
     "source_label": "SEC filing 0001645113-26-000010 of 2026-02-11 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Optune Pax approval announced February 11, 2026 after the close (NVCR-2026-02-11).",
+    "source": "Novocure 8-K exhibit 99.1 of February 11, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "NVO-2026-03-03": {
@@ -4803,7 +5246,10 @@
     "filing_date": "2026-03-20",
     "accession": "0001171843-26-001813",
     "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001813/f6k_031926.htm",
-    "source_label": "SEC filing 0001171843-26-001813 of 2026-03-20 containing 'FDA approval'"
+    "source_label": "SEC filing 0001171843-26-001813 of 2026-03-20 containing 'FDA approval'",
+    "quote": "the US Food and Drug Administration (FDA) has approved Wegovy® HD",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001813/f6k_031926.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "NVO-2026-03-26": {
@@ -4813,13 +5259,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+    "source_label": "FDA, Novel Drug Approvals for 2026 (Awiqli, March 26, 2026)",
+    "quote": "Awiqli | insulin icodec-abae | 3/26/2026",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-03-26",
+    "announced": "2026-03-26, after the close"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-03-26",
     "accession": "0001171843-26-001932",
     "source_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001932/f6k_032626.htm",
     "source_label": "SEC filing 0001171843-26-001932 of 2026-03-26 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "NVS-2026-03-13": {
    "ticker": "NVS",
@@ -4841,7 +5297,10 @@
     "filing_date": "2026-05-15",
     "accession": "0001651308-26-000012",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1651308/000165130826000012/a20260515formxsonroapprova.htm",
-    "source_label": "SEC filing 0001651308-26-000012 of 2026-05-15 containing 'FDA approval'"
+    "source_label": "SEC filing 0001651308-26-000012 of 2026-05-15 containing 'FDA approval'",
+    "quote": "BEQALZI™ (sonrotoclax) Approved by U.S. FDA as First and Only BCL2 Inhibitor for R/R Mantle Cell Lymphoma",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1651308/000165130826000012/a20260515formxsonroapprova.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "OTLK-2026-03-05": {
@@ -4849,7 +5308,7 @@
    "date": "2026-03-05",
    "asset": "",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -4857,6 +5316,12 @@
     "accession": "0001104659-26-024189",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926024189/tm268164d1_8k.htm",
     "source_label": "SEC filing 0001104659-26-024189 of 2026-03-05 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Outlook reported a Type A meeting with the FDA about the existing December 30, 2025 CRL. No new FDA action.",
+    "source": "Outlook Therapeutics 8-K of March 5, 2026"
    }
   },
   "OTLK-2026-04-07": {
@@ -4864,7 +5329,7 @@
    "date": "2026-04-07",
    "asset": "",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -4872,6 +5337,12 @@
     "accession": "0001104659-26-040387",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926040387/tm2611268d1_8k.htm",
     "source_label": "SEC filing 0001104659-26-040387 of 2026-04-07 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Outlook reported filing a formal dispute resolution request about the December 30, 2025 CRL. No new FDA action.",
+    "source": "Outlook Therapeutics 8-K of April 7, 2026"
    }
   },
   "PFE-2026-02-24": {
@@ -4934,7 +5405,10 @@
     "filing_date": "2026-03-27",
     "accession": "0001140361-26-011573",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1281895/000114036126011573/ef20069038_ex99-1.htm",
-    "source_label": "SEC filing 0001140361-26-011573 of 2026-03-27 containing 'FDA approval'"
+    "source_label": "SEC filing 0001140361-26-011573 of 2026-03-27 containing 'FDA approval'",
+    "quote": "has granted accelerated approval for KRESLADI™",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1281895/000114036126011573/ef20069038_ex99-1.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "REGN-2026-04-02": {
@@ -4952,13 +5426,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s074ltr.pdf",
+    "source_label": "FDA approval letter, BLA 761055 S-074, April 22, 2026",
+    "quote": "This Prior Approval sBLA provides for expanding the indication for chronic spontaneous urticaria (CSU) to include pediatric patients aged 2 years to less than 12 years.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-04-22",
+    "announced": null
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-04-29",
     "accession": "0000872589-26-000014",
     "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000014/exhibit991q12026.htm",
     "source_label": "SEC filing 0000872589-26-000014 of 2026-04-29 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "REGN-2026-04-23": {
    "ticker": "REGN",
@@ -4967,13 +5451,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://investor.regeneron.com/news-releases/news-release-details/otarmenitm-lunsotogene-parvec-cwha-approved-fda-first-and-only",
+    "source_label": "Regeneron release, April 23, 2026",
+    "quote": "today announced the U.S. Food and Drug Administration (FDA) has granted accelerated approval for Otarmeni™ (lunsotogene parvec-cwha)",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": null,
+    "announced": "2026-04-23"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-04-29",
     "accession": "0000872589-26-000014",
     "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000014/exhibit991q12026.htm",
     "source_label": "SEC filing 0000872589-26-000014 of 2026-04-29 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "REPL-2026-04-10": {
    "ticker": "REPL",
@@ -4987,7 +5481,10 @@
     "filing_date": "2026-04-13",
     "accession": "0001104659-26-042141",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926042141/tm2611633d1_8k.htm",
-    "source_label": "SEC filing 0001104659-26-042141 of 2026-04-13 containing 'complete response letter'"
+    "source_label": "SEC filing 0001104659-26-042141 of 2026-04-13 containing 'complete response letter'",
+    "quote": "Complete Response Letter regarding the Biologics License Application (“BLA”) for RP1 (vusolimogene oderparepvec)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926042141/tm2611633d1_8k.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "RGNX-2026-02-09": {
@@ -4997,13 +5494,23 @@
    "claimed": "crl",
    "status": "verified_crl",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf",
+    "source_label": "FDA Complete Response Letter, BLA 125840, February 7, 2026",
+    "quote": "February 7, 2026",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-02-07",
+    "announced": "2026-02-09"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "complete response letter",
     "filing_date": "2026-02-10",
     "accession": "0001193125-26-043342",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526043342/rgnx-ex99_1.htm",
     "source_label": "SEC filing 0001193125-26-043342 of 2026-02-10 containing 'complete response letter'"
-   }
+   },
+   "status_before_recheck": "verified_crl"
   },
   "RHHBY-2026-02-20": {
    "ticker": "RHHBY",
@@ -5020,13 +5527,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213793Orig1s009ltr.pdf",
+    "source_label": "FDA approval letter, NDA 213793 S-009, March 19, 2026",
+    "quote": "addition of an indication to reduce excess body weight and maintain weight reduction long term",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-03-19",
+    "announced": "2026-03-19, after the close"
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "FDA approval",
     "filing_date": "2026-03-20",
     "accession": "0001628280-26-019995",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1649904/000162828026019995/ex992ahoapprovaldeckfina.htm",
     "source_label": "SEC filing 0001628280-26-019995 of 2026-03-20 containing 'FDA approval'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "SNY-2026-04-22": {
    "ticker": "SNY",
@@ -5035,13 +5552,23 @@
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
+    "kind": "primary",
+    "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s074ltr.pdf",
+    "source_label": "FDA approval letter, BLA 761055 S-074, April 22, 2026",
+    "quote": "This Prior Approval sBLA provides for expanding the indication for chronic spontaneous urticaria (CSU) to include pediatric patients aged 2 years to less than 12 years.",
+    "quote_checked": "2026-11-18",
+    "fda_action_date": "2026-04-22",
+    "announced": null
+   },
+   "evidence_before_recheck": {
     "kind": "filing",
     "phrase": "approval of",
     "filing_date": "2026-04-27",
     "accession": "0001193125-26-180848",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526180848/d137048dex992.htm",
     "source_label": "SEC filing 0001193125-26-180848 of 2026-04-27 containing 'approval of'"
-   }
+   },
+   "status_before_recheck": "verified_approved"
   },
   "SPRO-2026-06-17": {
    "ticker": "SPRO",
@@ -5055,7 +5582,10 @@
     "filing_date": "2026-06-22",
     "accession": "0001193125-26-277506",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
-    "source_label": "SEC filing 0001193125-26-277506 of 2026-06-22 containing 'FDA approval'"
+    "source_label": "SEC filing 0001193125-26-277506 of 2026-06-22 containing 'FDA approval'",
+    "quote": "the U.S. Food and Drug Administration (“FDA”) has granted approval for Utebzi (tebipenem pivoxil)",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "SPRO-2026-06-18": {
@@ -5063,7 +5593,7 @@
    "date": "2026-06-18",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5071,6 +5601,13 @@
     "accession": "0001193125-26-277506",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
     "source_label": "SEC filing 0001193125-26-277506 of 2026-06-22 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Utebzi approval announced June 17, 2026 (SPRO-2026-06-17).",
+    "source": "Spero 8-K of June 17, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "SPRY-2026-05-15": {
@@ -5078,7 +5615,7 @@
    "date": "2026-05-15",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5086,6 +5623,13 @@
     "accession": "0001193125-26-225055",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1671858/000119312526225055/spry-ex99_2.htm",
     "source_label": "SEC filing 0001193125-26-225055 of 2026-05-15 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited exhibit is ARS Pharmaceuticals' first-quarter 2026 investor presentation. No FDA action in May 2026.",
+    "source": "ARS Pharmaceuticals 8-K exhibits of May 15, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "TEVA-2026-03-30": {
@@ -5147,7 +5691,10 @@
     "filing_date": "2026-02-23",
     "accession": "0001628280-26-010376",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026010376/vnda8-k2232026exhibit991.htm",
-    "source_label": "SEC filing 0001628280-26-010376 of 2026-02-23 containing 'FDA approval'"
+    "source_label": "SEC filing 0001628280-26-010376 of 2026-02-23 containing 'FDA approval'",
+    "quote": "the U.S. Food and Drug Administration (FDA) has approved BYSANTI",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026010376/vnda8-k2232026exhibit991.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "VRDN-2026-06-26": {
@@ -5162,7 +5709,10 @@
     "filing_date": "2026-06-29",
     "accession": "0001193125-26-286273",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
-    "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+    "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'",
+    "quote": "has approved Lumvoa™ (veligrotug-vvze) for the treatment of thyroid eye disease",
+    "quote_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
+    "quote_checked": "2026-11-18"
    }
   },
   "VRDN-2026-06-29": {
@@ -5170,7 +5720,7 @@
    "date": "2026-06-29",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5178,6 +5728,13 @@
     "accession": "0001193125-26-286273",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
     "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Lumvoa approval announced June 26, 2026 (VRDN-2026-06-26). June 29 is the 8-K filing date.",
+    "source": "Viridian 8-K of June 26, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "VRDN-2026-06-30": {
@@ -5185,7 +5742,7 @@
    "date": "2026-06-30",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5193,6 +5750,13 @@
     "accession": "0001193125-26-286273",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
     "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A third entry for the Lumvoa approval announced June 26, 2026 (VRDN-2026-06-26).",
+    "source": "Viridian 8-K of June 26, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "XOMA-2026-06-08": {

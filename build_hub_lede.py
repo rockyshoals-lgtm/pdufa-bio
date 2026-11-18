@@ -112,6 +112,25 @@ def later_rows(today):
     return n, int(cal_year) + 1
 
 
+def _unlisted_decision_pages(rows):
+    """Decision pages that exist but are not rows on /decisions (e.g. a device not-approvable letter)."""
+    listed = {r.get("slug") for r in rows if r.get("slug")}
+    if not listed:
+        doc = open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8", errors="replace").read()
+        listed = set(re.findall(r'href="/fda-decision/([A-Z0-9\-]+-\d{4}-\d{2}-\d{2})"', doc))
+    out = []
+    for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
+        slug = os.path.basename(os.path.dirname(p))
+        m = re.fullmatch(r"([A-Z0-9\-]+)-(\d{4})-(\d{2})-(\d{2})", slug)
+        if not m or slug in listed:
+            continue
+        t = re.search(r"<title>([^<]*)", open(p, encoding="utf-8", errors="replace").read())
+        what = html.unescape(t.group(1)).split("):", 1)[-1].split("|")[0].strip() if t else ""
+        out.append(f"{m.group(1)}, {MONTHS[int(m.group(3)) - 1]} {int(m.group(4))}, {m.group(2)}"
+                   + (f": {what}" if what else ""))
+    return out
+
+
 def sentence(path, rows):
     n = len(rows)
     dates = [r["date"] for r in rows if r["date"]]
@@ -165,6 +184,15 @@ def sentence(path, rows):
         s += (f", covering {when}. " if when else ". ")
         s += ("Every decision has its own page carrying the source document and the share-price "
               "reaction we measured on the day.")
+        if path == "decisions":
+            # red team 2026-11-17: the provenance block counts every decision page (500) while this
+            # list holds only approvals and CRLs (499); say which pages the list leaves out and why.
+            other = _unlisted_decision_pages(rows)
+            if other:
+                k = len(other)
+                s += (f" The archive holds {n + k} decision pages: the {k} not listed here "
+                      f"{'is' if k == 1 else 'are'} neither an approval nor a Complete Response Letter ("
+                      + "; ".join(other) + ").")
         return s
 
     if path == "decisions/approvals":

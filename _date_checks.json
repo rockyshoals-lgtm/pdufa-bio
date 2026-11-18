@@ -1,0 +1,2035 @@
+{
+ "_comment": "Re-checks of open dates against their sources (tests/test_date_checks_current.py). One entry per row: date checked, verdict, newest source looked at. Write with record_date_check.py.",
+ "checks": {
+  "pdufa_rhhby_2026-11-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gene.com/media/press-releases/15115/2026-06-01/fda-accepts-new-drug-application-for-gen",
+   "by": "red team 2026-11-17",
+   "note": "Genentech 2026-06-01 release states the quoted Nov 30, 2026 decision date. Genentech's 2026-11-16 release approving WILSERDLY (giredestrant) for ESR1-mutated advanced BC (evERA, a different indication"
+  },
+  "pdufa_rhhby_2026-12-31_sle": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gene.com/media/press-releases/15107/2026-04-20/fda-accepts-application-for-genentechs-g",
+   "by": "red team 2026-11-17",
+   "note": "Genentech 2026-04-20 release states decision 'by December 2026'. Genentech 2026-11-15 release (Gazyva approved in primary membranous nephropathy) restates SLE decision expected by December 2026."
+  },
+  "pdufa_rhhby_2027-01-10": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gene.com/media/press-releases/15124/2026-09-09/us-fda-grants-priority-review-for-genent",
+   "by": "red team 2026-11-17",
+   "note": "Genentech 2026-09-09 release contains the quoted Jan 10, 2027 MOGAD decision date. Genentech newsroom through 2026-11-16 shows only the separate Enspryng TED approval (2026-10-15); no MOGAD action or"
+  },
+  "pdufa_rhhby_2027-02-09_sunmo": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.roche.com/media/releases/med-cor-2026-06-18",
+   "by": "red team 2026-11-17",
+   "note": "Roche 2026-06-18 release has the quoted '9 February 2027' date; Genentech's 2026-06-17 release says 'by February 9, 2027.' No later SUNMO action found in Genentech newsroom through 2026-11-16 or Roche"
+  },
+  "pdufa_nvo_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-17",
+   "note": "The quoted launch sentence is in the 2026-11-04 6-K but does not support a December (month) date. The same 6-K's 'Anticipated key R&D milestones' table puts the CagriSema 'US decision' in the Q4 2026"
+  },
+  "pdufa_nvo_mim8_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.sec.gov/Archives/edgar/data/353278/000162828026069805/caq32026.htm",
+   "by": "red team 2026-11-17",
+   "note": "The quoted sentence is in the 2026-11-04 6-K (highlights also say 'denecimig BLA review extended in the US'). The same 6-K's R&D milestones table puts the Frehemgo/denecimig 'US decision' in the H1 20"
+  },
+  "pdufa_aqst_2027-03-16": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1398733/000139873326000058/a2026-10x19aquestivepduf.htm",
+   "by": "red team 2026-11-17",
+   "note": "8-K EX-99.1 (release dated 2026-10-15) headline matches the quote; body: 'assigned a Prescription Drug User Fee Act (PDUFA) goal date of March 16, 2027'. Q3 2026 results release (2026-11-03, GlobeNews"
+  },
+  "pdufa_blte_2027-02-12": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1889109/000110465926094040/tm2622827d1_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "6-K EX-99.1 (2026-08-11) contains the quote verbatim. Q3 2026 results release (2026-11-12) restates 'assigned PDUFA target action date of February 12, 2027', says no advisory committee and 'The FDA's"
+  },
+  "pdufa_dyn_2027-01-21": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1818794/000119312526323940/dyn-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q2 8-K EX-99.1 (2026-07-29) contains 'PDUFA target action date set for January 21, 2027'. Q3 8-K EX-99.1 (2026-11-05) says 'Dyne's BLA is under priority review by the FDA' with 'PDUFA target action da"
+  },
+  "pdufa_imnm_2027-04-28": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1472012/000119312526344577/imnm-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q2 8-K EX-99.1 (2026-08-11) contains the quote. Q3 release (2026-11-09, company IR site): 'The U.S. FDA accepted the varegacestat NDA in July 2026 and assigned a PDUFA target action date of April 28,"
+  },
+  "pdufa_mlys_2026-12-22": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395833/0/en/mineralys-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Date is right, but the stored source_quote is raw EDGAR wrapper text ('EX-99.1 3 mlys2026q28kex991.htm EX-99.1 Document Exhibit 99.1 ...'), not a clean quote. The Q2 8-K does say 'with a Prescription"
+  },
+  "pdufa_pvla_2027-02-28": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1583648/000119312526435113/pvla-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "8-K EX-99.1 (2026-10-28) contains the quote verbatim. Q3 release (2026-11-05, GlobeNewswire): 'accepted by the FDA with a February 28, 2027 PDUFA target action date.'"
+  },
+  "pdufa_svra_2026-11-22": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1160308/000119312526219371/svra-20260331.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q1 10-Q (2026-05-12) contains the major-amendment / three-month extension sentence with the November 22, 2026 date. Q3 10-Q (filed ~Nov 2026) financial notes say MOLBREEVI is 'under regulatory review"
+  },
+  "pdufa_vstm_2027-02-07": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1526119/000110465926123386/tm2628982d2_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Nov 2026 corporate presentation (8-K EX-99.1, 2026-11-05) contains 'FDA decision on NDA for AVMAPKI FAKZYNJA CO-PACK Blister Pack by February 7, 2027' and 'PDUFA date: February 7, 2027'. Q3 results re"
+  },
+  "pdufa_bbio_2026-11-27": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened the 8-K EX-99.1 (Aug 10, 2026): bullet reads 'All three planned NDAs are now submitted to the FDA: BBP-418 for LGMD2I/R9 was accepted with Priority Review (PDUFA November 27, 2026)' (row quote"
+  },
+  "pdufa_bbio_2027-02-04": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126039334/ef20083591_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened the Oct 6, 2026 8-K EX-99.1: 'The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 4, 2027' is present. BridgeBio's Q3 2026 release (Oct 29, 2026) restat"
+  },
+  "pdufa_bbio_2027-05-08": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1743881/000114036126029291/ef20078442_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened the EX-99.1 (July 22, 2026 release 'BridgeBio Announces FDA Acceptance of NDA for Encaleret for ADH1'); it states 'PDUFA target action date of May 8, 2027'. Row quote stitches the headline to t"
+  },
+  "pdufa_bmrn_2027-02-28": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened BioMarin's Q3 2026 release (8-K EX-99.1, Nov 2, 2026): states the full-approval application is under FDA review 'with a PDUFA target action date of February 28, 2027.' Searches found no newer c"
+  },
+  "pdufa_bmrn_2027-05-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1048477/000104847726000021/earningsrelease-2nov26ex991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Same Nov 2, 2026 Q3 release states FDA 'has set a PDUFA target action date of May 30, 2027 for its supplemental NDA' for HCH. No newer action found."
+  },
+  "pdufa_prax_2026-12-27": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm",
+   "by": "red team 2026-11-17",
+   "note": "June 29, 2026 8-K contains 'setting an updated PDUFA target action date from September 27, 2026 to December 27, 2026.' Praxis Q3 2026 release (8-K EX-99.1, Nov 9, 2026): 'The NDA for relutrigine for t"
+  },
+  "pdufa_prax_2027-01-29": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000082/praxisq22026pr.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 6, 2026 Q2 release highlights contain the quoted mid-cycle bullet ending 'PDUFA date of January 29, 2027' verbatim. Q3 2026 release (Nov 9, 2026): 'The New Drug Application (NDA) for ulixacaltamid"
+  },
+  "pdufa_capr_2026-08-22": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398455/0/en/capricor-s-hope-3-phase-3-cardiac-results-for-deramiocel-win-american-heart-association-outstanding-research-award-in-pediatric-cardiology.html",
+   "by": "red team 2026-11-17",
+   "note": "The row's source_url (GlobeNewswire path without the numeric release id) fails to load. The same Aug 24, 2026 release loads at the correct GlobeNewswire URL and as 8-K EX-99.1 and says the PDUFA date"
+  },
+  "pdufa_eton_2027-03-29": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926032600/ex_1025429.htm",
+   "by": "red team 2026-11-17",
+   "note": "Oct 14, 2026 8-K EX-99.1 (Eton/Aquestive LIBERVANT license release) contains the quote verbatim. Eton's Q3 2026 release (8-K EX-99.1, Nov 5, 2026): 'An NDA with a March 29, 2027, PDUFA date is current"
+  },
+  "pdufa_inbx_2027-04-14": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/2007919/000200791926000033/inhibrx-20260615.htm",
+   "by": "red team 2026-11-17",
+   "note": "June 15, 2026 8-K states FDA accepted the ozekibart BLA and 'has assigned a PDUFA goal date of April 14, 2027.' Inhibrx Q3 2026 release (Nov 13, 2026) does not restate the date but says commercial rea"
+  },
+  "pdufa_ntla_2027-03-10": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1652130/000119312526385194/ntla-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Sept 8, 2026 8-K EX-99.1 bullet 'FDA sets Prescription Drug User Fee Act (PDUFA) date of March 10, 2027' present. Intellia Q3 2026 release (Nov 5, 2026) restates 'Priority Review with a Prescription D"
+  },
+  "pdufa_pypd_2026-11-28": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1611842/000121390026082564/ea029964201ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "July 29, 2026 6-K EX-99.1 contains 'set a Prescription Drug User Fee Act (\"PDUFA\") target action date of November 28, 2026' (row quote omits the quotation marks around PDUFA; otherwise matches). PolyP"
+  },
+  "pdufa_urgn_2027-06-14": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1668243/000143774926034769/ex_1036873.htm",
+   "by": "red team 2026-11-17",
+   "note": "UroGen Q3 2026 release (8-K EX-99.1, Nov 4, 2026) highlight bullet contains 'The FDA accepted UroGen's NDA for UGN-103 (next-generation novel mitomycin-based formulation) for review; PDUFA goal date s"
+  },
+  "pdufa_vtrs_2026-12-27": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1792044/000179204426000037/exhibit991-2q26earningsrel.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 6, 2026 Q2 release states 'The FDA has assigned a PDUFA goal date of December 27, 2026.' NDA-acceptance release (May 18, 2026) says the same. Viatris Q3 2026 release (Nov 5, 2026) refers only to '"
+  },
+  "pdufa_cogt_2026-11-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 10 2026 8-K EX-99.1 shows 'Potential FDA approval of bezuclastinib in GIST - PDUFA date of November 30, 2026'. Newer Q3 release (Nov 5 2026) restates 'GIST; PDUFA action date November 30, 2026'. C"
+  },
+  "pdufa_cogt_2026-12-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 10 2026 8-K EX-99.1 shows 'Potential FDA approval of bezuclastinib in NonAdvSM - PDUFA date of December 30, 2026'. Q3 release (Nov 5 2026) restates 'NonAdvSM PDUFA target action date December 30,"
+  },
+  "pdufa_cogt_2027-06-29": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q3 2026 release (8-K EX-99.1, Nov 5 2026) contains 'AdvSM PDUFA target action date June 29, 2027' and 'Potential FDA approval of bezuclastinib in AdvSM - PDUFA date of June 29, 2027'. NDA acceptance r"
+  },
+  "pdufa_bmy_2027-03-11": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000014272/000001427226000022/a2026q3ex991-filing.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q2 2026 release (Jul 30 2026) contains 'The FDA granted a Prescription Drug User Fee Act (PDUFA) date of March 11, 2027.' Q3 2026 release does not mention Reblozyl-MF (no change reported). The 2026 FD"
+  },
+  "pdufa_bmy_2027-05-13": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0000014272/000001427226000022/a2026q3ex991-filing.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q2 2026 release (Jul 30 2026) contains '...granting a PDUFA date of May 13, 2027.' for MeziKd in RRMM (NDA acceptance announced Jul 13 2026 on BusinessWire). Q3 2026 release mentions no mezigdomide ch"
+  },
+  "pdufa_agio_2026-11-01": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001439222/000143922226000129/agio-110526xfyxex991earnin.htm",
+   "by": "red team 2026-11-17",
+   "note": "Oct 30 2026 GlobeNewswire release states 'The PDUFA goal date for this sNDA ... is now February 1, 2027.' Q3 2026 results (8-K, Nov 5 2026) restate it: 'we are launch-ready ahead of our PDUFA goal dat"
+  },
+  "pdufa_arqt_2027-02-23": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001787306/000178730626000056/pressreleaseex991q32026.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 5 2026 Q2 release supports the date ('...with a Prescription Drug User Fee Act (PDUFA) target action date of February 23, 2027.'). Q3 2026 release (dated Nov 4 2026) restates 'The FDA has set a ta"
+  },
+  "pdufa_cgem_2027-02-27": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399334/0/en/cullinan-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "May 7 2026 release contains 'The Prescription Drug User Fee Act (PDUFA) target action date is February 27, 2027.' Q3 release (Nov 10 2026) says the relapsed NDA 'remains under review with a Prescripti"
+  },
+  "pdufa_exel_2026-12-03": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/939767/000093976726000114/exel20260930exhibit991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Exelixis Q3 2026 release (8-K EX-99.1, Oct 29 2026) contains 'The updated PDUFA target action date is March 3, 2027.' and that FDA extended the review by three months in September 2026. Row's current"
+  },
+  "pdufa_insm_2027-01-28": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.prnewswire.com/news-releases/insmed-reports-third-quarter-2026-financial-results-and-provides-business-update-302922707.html",
+   "by": "red team 2026-11-17",
+   "note": "Date is right, but the cited 10-Q quote could not be located: WebFetch returned only the first ~107k characters of the 10-Q (financial statements/notes), not the MD&A section where the sentence would"
+  },
+  "pdufa_phar_2027-01-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1828316/000182831626000049/a2026q3pressrelease.htm",
+   "by": "red team 2026-11-17",
+   "note": "Sep 25 2026 6-K EX-99.1 contains '...assigned a Prescription Drug User Fee Act (PDUFA) target action date of January 30, 2027.' Q3 2026 release (6-K, Oct 27 2026) restates January 30, 2027. Pharming n"
+  },
+  "pdufa_qure_2027-05-01": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395189/0/en/uniqure-announces-third-quarter-2026-financial-results-and-provides-company-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 2 2026 8-K EX-99.1 contains the PDUFA sentence and the tentative advisory committee. Q3 release (Nov 4 2026) restates 'The BLA was granted Priority Review with a Prescription Drug User Fee Act (PD"
+  },
+  "pdufa_vnda_2026-12-12": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026067886/vnda8-k10282026exhibit991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 5 2026 8-K EX-99.1 contains 'PDUFA target action date of December 12, 2026'. Q3 2026 release (8-K, Oct 28 2026) restates 'is under review by the FDA with a Prescription Drug User Fee Act (PDUFA) t"
+  },
+  "pdufa_zbio_2027-05-27": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0001953926/000110465926123035/tm2628936d1_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Aug 13 2026 8-K EX-99.1 supports the date. Q3 2026 release (8-K, Nov 5 2026) states the BLA 'is under active review by the FDA' and 'has been assigned a Prescription Drug User Fee Act (PDUFA) target a"
+  },
+  "pdufa_mrk_2027-03-22": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened Merck Q3 2026 release (8-K EX-99.1, 2026-10-29): 'U.S. FDA set PDUFA date of March 22, 2027.' is present for ENFLONSIA. EDGAR full-text search shows the date restated in Merck's 10-Q filed 2026"
+  },
+  "pdufa_mrk_2027-04-22": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Merck Q3 2026 release (2026-10-29) contains 'U.S. FDA set a PDUFA date for both sNDAs of April 22, 2027.' for IDVYNSO. 10-Q of 2026-11-04 is an EDGAR full-text hit for the date set; Merck newsroom thr"
+  },
+  "pdufa_mrk_2027-06-15": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/310158/000110465926119825/tm2628203d1_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Merck Q3 2026 release (2026-10-29) contains 'U.S. FDA set Prescription Drug User Fee Act (PDUFA) date of June 15, 2027.' for sac-TMT (TroFuse-005). Newer items: Oct 26 TroFuse-005 data release and Nov"
+  },
+  "pdufa_gild_2026-12-23": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-acquire-arcellx-to-maximize-long-term-potential-of-anito-cel",
+   "by": "red team 2026-11-17",
+   "note": "Gilead/Arcellx acquisition release (2026-02-23) contains 'with an anticipated Prescription Drug User Fee Act (PDUFA) action date of December 23, 2026.' Newer: Gilead ASH 2026 release dated 2026-11-04"
+  },
+  "pdufa_gild_2027-02-02": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000039/gild-20260930.htm",
+   "by": "red team 2026-11-17",
+   "note": "WebFetch truncates the 10-Q before MD&A, but EDGAR full-text search for the exact phrase 'PDUFA ) target action date of February 2, 2027' hits gild-20260630.htm (10-Q filed 2026-08-06) and gild-202609"
+  },
+  "pdufa_apmd_2027-02-28": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1745648/000119312526385355/apmd-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cited 2026-09-08 release states 'The FDA has assigned a Prescription Drug User Fee Act (“PDUFA”) target action date of February 28, 2027.' (row quote is the headline wording). Newer Apnimed Q3 release"
+  },
+  "pdufa_axsm_2027-05-01": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526442628/axsm-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Exact filing for the cited exhibit: Axsome Form 8-K filed 2026-07-15 (Item 8.01, accession 0001193125-26-304039), EX-99.1 press release dated July 15, 2026: 'The FDA has set a Prescription Drug User F"
+  },
+  "pdufa_cort_2026-12-17": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1088856/000162828026069494/cort110326ex991pressrelease.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cited 2026-07-29 release contains 'We expect a decision on our NDA by December 17, 2026.' Corcept Q3 release (8-K EX-99.1, 2026-11-03) restates 'Prescription Drug User Fee Act (PDUFA) date of December"
+  },
+  "pdufa_hrmy_2027-04-01": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cited 2026-08-04 release contains 'Pitolisant GR NDA Accepted in July; Target PDUFA Date April 1, 2027'. Newer Harmony Q3 deck (8-K EX-99.2, 2026-11-04) slide 14: 'PITOLISANT GR – NDA UNDER FDA REVIEW"
+  },
+  "pdufa_jazz_2027-04-16": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000056/a3q26earningsrelease.htm",
+   "by": "red team 2026-11-17",
+   "note": "Jazz Q3 release (8-K EX-99.1, 2026-11-02) contains 'PDUFA target action date for our New Drug Application (NDA) for the oral cannabidiol capsule formulation is April 16, 2027.' EDGAR full-text search"
+  },
+  "pdufa_phvs_2027-04-23": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1830487/000119312526456847/phvs-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cited 2026-09-08 6-K exhibit is an investor deck with slide text 'Accepted FDA PDUFA goal April 23, 2027'. Newer Pharvaris Q3 6-K (EX-99.1, 2026-11-12): 'Deucrictibant IR NDA under review by the FDA w"
+  },
+  "pdufa_regn_2026-11-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000032/exhibit991q32026.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cited 2026-07-30 release contains 'with a target action date in November 2026.' Regeneron Q3 release (8-K EX-99.1, 2026-10-30): 'We expect an FDA decision for cemdisiran in generalized myasthenia grav"
+  },
+  "pdufa_vrtx_2026-11-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000287/ex-991_q32026.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cited Q2 release contains 'assigned a PDUFA target action date of November 30, 2026'. Vertex Q3 release (8-K EX-99.1, filed 2026-11-02): 'with an assigned PDUFA target action date of November 30, 2026"
+  },
+  "readout_dnli_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: 'Denali plans to present additional data from the Phase 1/2 study at a medical congress in the first quarter of 2027.' verbatim. Denali IR newsroom lists nothing a"
+  },
+  "readout_dnli_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: 'Data are expected in the first half of 2027.' under DNL593 verbatim. Note: site dp field reads 'year' while precision is 'half'; date 2027-06-30 is correct for 1H"
+  },
+  "readout_dnli_2027-06-30-dnl628": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: DNL628 initial clinical biomarker data 'are expected in the first half of 2027.' Note: dp 'year' vs precision 'half'; date correct. Denali IR newsroom lists nothin"
+  },
+  "readout_dnli_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: DNL921 safety and clinical proof-of-concept data 'expected in 2027.' Denali IR newsroom lists nothing after 11-03."
+  },
+  "readout_dnli_2027-12-31-dnl952": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: DNL952 'initial clinical data are expected in 2027.' Denali IR newsroom lists nothing after 11-03."
+  },
+  "readout_dnli_2028-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: 'Data from the COMPASS study are expected in the first half of 2028.' verbatim. Note: dp 'year' vs precision 'half'; date correct. Denali IR newsroom lists nothing"
+  },
+  "readout_dnli_2027-06-30-dnl151": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394747/0/en/denali-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Denali Q3 release 2026-11-03: DNL151 BEACON '...with data expected in the first half of 2027.' Note: dp 'year' vs precision 'half'; date correct. Denali IR newsroom lists nothing after 11-03."
+  },
+  "readout_atos_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/atossa-therapeutics-reports-third-quarter-2026-financial-results-and-provides-a-corporate-update-302933991.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Atossa Q3 release 2026-11-10: 'The Company anticipates topline data from the Phase 2 EVANGELINE study' ... 'in the second quarter of 2027.' FMP press-release index (lead only) shows no later co"
+  },
+  "readout_atos_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/atossa-therapeutics-reports-third-quarter-2026-financial-results-and-provides-a-corporate-update-302933991.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Atossa 2026-11-10: arms enrollment complete, 'select data will be presented at SABCS in December 2026.' Only month given; no newer Atossa release."
+  },
+  "readout_atos_2026-12-31-x": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/atossa-therapeutics-reports-third-quarter-2026-financial-results-and-provides-a-corporate-update-302933991.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Atossa 2026-11-10: CEO quote 'presentations at the San Antonio Breast Cancer Symposium will include Karisma follow-up results'; milestones say SABCS 'in December 2026'. No newer release."
+  },
+  "readout_gpcr_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398932/0/en/structure-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Structure Q3 release 2026-11-09: 'Topline data from the MAD portion are expected in the first half of 2027.' Row d 2027-06-30 correct (row id suffix 2027-12-31 is stale; dp 'year' vs precision"
+  },
+  "readout_gpcr_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398932/0/en/structure-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Structure 2026-11-09: 'Topline data are expected in the second half of 2028.' for ACCOMPLISH-1/2. Note dp 'year' vs precision 'half'."
+  },
+  "readout_gpcr_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398932/0/en/structure-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Structure 2026-11-09: 'Additional aleniglipron data expected in Q4 2026 from supplementary body composition, type 2 diabetes and SWITCH studies' (highlights). Searched for a later Structure rel"
+  },
+  "readout_roiv_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398229/34323/en/roivant-reports-financial-results-for-the-second-quarter-ended-september-30-2026-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Roivant 2026-11-09: Immunovant 'expects to report topline data across potentially registrational trials of IMVT-1402 in GD and MG in calendar year 2027.' Same-day Immunovant release: 'All other"
+  },
+  "readout_roiv_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398229/34323/en/roivant-reports-financial-results-for-the-second-quarter-ended-september-30-2026-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Roivant 2026-11-09: 'In calendar year 2028, topline data are expected for the potentially registrational trial of IMVT-1402 in CIDP.' verbatim."
+  },
+  "readout_roiv_2028-12-31-brepocitin": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398229/34323/en/roivant-reports-financial-results-for-the-second-quarter-ended-september-30-2026-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Roivant 2026-11-09: Priovant 'expects topline data from the Phase 3 study in CS in calendar year 2028.' Later Priovant 11-10 release is a Phase 2 BEACON publication only, no timing change."
+  },
+  "readout_aim_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402575/29489/en/aim-immunotech-approaches-major-clinical-inflection-point-with-phase-2-pancreatic-cancer-data-expected-q1-2027-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened AIM 2026-11-13: 'AIM anticipates topline clinical benefit results in Q1 2027 and survival results analyses in Q3 2027,' and subtitle 'Primary Phase 2 endpoint analysis expected to begin in Dece"
+  },
+  "readout_aim_2027-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402575/29489/en/aim-immunotech-approaches-major-clinical-inflection-point-with-phase-2-pancreatic-cancer-data-expected-q1-2027-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened AIM 2026-11-13: same sentence gives 'survival results analyses in Q3 2027'. Caution: same release also says 'additional median overall survival and immune-response data expected mid-year 2027'"
+  },
+  "readout_bioa_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397158/0/en/bioage-labs-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened BioAge 2026-11-05: 'Phase 2 diabetic macular edema data from QUELL-DME are anticipated in the second half of 2027'. Only later BioAge release (11-11) is an investor-conference notice. dp 'year'"
+  },
+  "readout_bioa_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3397158/0/en/bioage-labs-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened BioAge 2026-11-05: 'Phase 2 cardiovascular proof-of-concept data from QUELL-CV are anticipated in the fourth quarter of 2026'; CEO 'we expect the results later this year'. No BioAge data releas"
+  },
+  "readout_immp_2026-11-19": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400380/0/en/immutep-announces-release-of-ctos-2026-abstract-reporting-first-survival-data-from-eftisarc-neo.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Immutep 2026-11-10 (Sydney 11-11): 'Further detail and analyses will be presented in a poster discussion session on 19 November 2026' at CTOS (18-21 Nov, Seoul). Companion 11-05 release: '19 No"
+  },
+  "readout_immp_2026-12-14": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396391/0/en/immutep-announces-upcoming-poster-presentations-at-ctos-2026-and-esmo-immuno-oncology-advanced-therapies-congress-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Immutep 2026-11-05: TACTI-003 Part B final median OS poster at ESMO IO 2026 '14 December 2026, 17:30 GMT (15 December 2026, 4:30am AEDT)' = 12:30 ET 2026-12-14. No later change."
+  },
+  "readout_mbrx_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403393/0/en/moleculin-biotech-reports-third-quarter-2026-financial-results-as-pivotal-miracle-trial-advances-toward-key-q1-2027-data-readout.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Moleculin 2026-11-16: top bullet 'Comprehensive Part A data readout remains on track for the first quarter of 2027' and milestone 'Q1 2027: MIRACLE - Comprehensive Part A data readout following"
+  },
+  "readout_mbrx_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3403393/0/en/moleculin-biotech-reports-third-quarter-2026-financial-results-as-pivotal-miracle-trial-advances-toward-key-q1-2027-data-readout.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Moleculin 2026-11-16: milestone list '2H 2028: Primary efficacy data for MIRACLE 2nd line subjects' verbatim. dp 'year' vs precision 'half'."
+  },
+  "readout_prok_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402235/0/en/prokidney-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened ProKidney 2026-11-12: 'On track to deliver pivotal Phase 3 PROACT 1 surrogate endpoint (eGFR slope) topline results in Q2 2027' verbatim. Newest PROK release."
+  },
+  "readout_prok_2029-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402235/0/en/prokidney-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened ProKidney 2026-11-12: 'the confirmatory endpoint (composite time-to-event) topline readout is expected in 2H 2029' verbatim. dp 'year' vs precision 'half'."
+  },
+  "readout_trax_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394821/0/en/first-tracks-biotherapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened First Tracks 2026-11-03: 'reporting top-line results from the celiac disease mucosal-healing cohort in the first quarter of 2027' and bullet 'Enrollment complete with top-line data anticipated"
+  },
+  "readout_trax_2027-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394821/0/en/first-tracks-biotherapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened First Tracks 2026-11-03: EoE Phase 1b 'Top-line data anticipated in Q3 2027'."
+  },
+  "readout_agen_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105453521/en/Agenus-Reports-Third-Quarter-2026-Results-Highlighted-by-First-Marketing-Authorizations-for-BOTBAL-and-Global-Investigator-Support-for-Phase-3-ROBBIN-Study/",
+   "by": "red team 2026-11-17",
+   "note": "Opened Agenus 2026-11-05: 'with an interim pathologic response assessment of the first 100 patients enrolled anticipated in Q4 of 2027' and milestones 'Second half of 2027: Anticipated interim patholo"
+  },
+  "readout_anvs_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402540/0/en/annovis-provides-corporate-updates-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Annovis 2026-11-13: highlights bullet '...with database lock on February 8, 2027, and data readout in March 2027' verbatim; milestones 'with topline results in March 2027'. Later 11-17 DSMB rel"
+  },
+  "readout_chrs_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398986/33333/en/coherus-oncology-reports-third-quarter-2026-financial-results-and-announces-strategic-prioritization-plan.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Coherus 2026-11-09: 'first data readout is expected in 1H 2027' for casdozokitug/toripalimab/bevacizumab 1L uHCC. The same-day strategic prioritization plan deprioritizes tagmokitug cohorts in"
+  },
+  "readout_cytk_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395757/35409/en/cytokinetics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Cytokinetics 2026-11-04: 'We expect to present topline data in early 2027.' Later CYTK releases (11-09 HCMS/AHA analyses, 11-16 MAPLE label, 11-16 inducement) do not report CEDAR-HCM adolescent"
+  },
+  "readout_imnm_2026-12-14": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261109298014/en/Immunome-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Opened Immunome 2026-11-09: 'expects to present an updated dataset at the 2026 American Society of Hematology (ASH) Annual Meeting on December 14, 2026' verbatim; ASH 2026 runs Dec 12-15 (hematology.o"
+  },
+  "readout_ivevf_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1756594/000117184326006471/exh_991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened Inventiva 6-K EX-99.1 dated 2026-10-06: '...topline results expected in the fourth quarter of this year.' SEC filing list for CIK 1756594 shows nothing after the 10-27 SC 13G/A; inventivapharma"
+  },
+  "readout_lxrx_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396236/0/en/lexicon-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-clinical-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Lexicon 2026-11-05: 'Lexicon continues to expect topline results in the first quarter of 2027.' Lexicon 11-09 AHA release (FMP summary) says 'ahead of SONATA-HCM topline results in Q1 2027'."
+  },
+  "readout_mltx_2026-09-15": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395142/0/en/moonlake-reports-third-quarter-2026-financial-results-and-provides-a-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened MoonLake 2026-11-04: 'The Company expects to complete the VELA-TEEN clinical trial in the fourth quarter of 2026' / '...and plans to submit final results for presentation at a scientific confer"
+  },
+  "readout_onc_2026-12-15-brukinsa": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.businesswire.com/news/home/20261103605806/en/U.S.-FDA-Grants-Priority-Review-to-BeOne-Medicines%E2%80%99-BRUKINSA-Combination-in-First-Line-Mantle-Cell-Lymphoma",
+   "by": "red team 2026-11-17",
+   "note": "Opened BeOne Q3 release 2026-11-05: MANGROVE interim results to be presented at the ASH 2026 Plenary Scientific Session, no day given (quote fragment present). BeOne's FDA Priority Review release (BW"
+  },
+  "readout_rare_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394751/20739/en/ultragenyx-reports-third-quarter-2026-financial-results-announces-substantial-expense-reductions-and-reaffirms-profitability-in-2027.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Ultragenyx 2026-11-03: DTX301 section ends 'Data are expected in the first half of 2027.' and R&D focus is 'delivering primary data from the responder endpoint of the ongoing Phase 3 study for"
+  },
+  "readout_tlsi_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110152164/en/TriSalus-Life-Sciences-Reports-Third-Quarter-2026-Results/",
+   "by": "red team 2026-11-17",
+   "note": "Opened TriSalus 2026-11-10: 'Achieved the enrollment cutoff required for the interim analysis of the PROTECT registry in thyroid artery embolization;' ... 'the Company remains on track to deliver the"
+  },
+  "readout_vnda_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/vanda-pharmaceuticals-reports-third-quarter-2026-financial-results-302922677.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Vanda Q3 release 2026-10-28: 'The Phase III study of BYSANTI(TM) as a once-daily adjunctive treatment for major depressive disorder (MDD) is ongoing,' with results expected in the first half of"
+  },
+  "readout_vstm_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
+   "by": "red team 2026-11-17",
+   "note": "Opened Verastem Q3 2026 release (Business Wire, 2026-11-05); bullet 'Plan to report initial Phase 2 data from TARGET-D 201 in 2L PDAC in Q2 2027' present. Verastem investor newsroom lists no release a"
+  },
+  "readout_vstm_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
+   "by": "red team 2026-11-17",
+   "note": "Same Q3 release: 'expect to report initial data from TARGET-D 202 in 2L NSCLC and TARGET-D 203 in 2L CRC in 2H 2027' present verbatim; nothing newer from Verastem. 2027-12-31 is the correct window end"
+  },
+  "readout_vstm_2027-06-30-vs7375": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: 'Expect to report initial data from the 1L mPDAC combination with gemcitabine/Nab-paclitaxel in early Q2 2027' present verbatim; no newer Verastem release."
+  },
+  "readout_vstm_2027-12-31-vs7375": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: 'Plan to report initial data from the TARGET-D 101 mPDAC cohort evaluating VS-7375 600 mg plus cetuximab in early 2027' present; no newer release. 'early 2027' carried as year envelope (20"
+  },
+  "readout_vstm_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: 'Plan to report mature data from the TARGET-D 101 mCRC cohort evaluating VS-7375 900 mg in combination ... in Q1 2027 to allow for additional patient follow-up' present; no newer release."
+  },
+  "readout_vstm_2027-12-31-avutometin": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261105389426/en/Verastem-Oncology-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Business-Updates/",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: 'Report a topline readout of the primary endpoint in the RAMP 301 trial ... in mid-2027.' present; same mid-2027 guidance stated since Dec 2025; no newer release. 'mid-2027' carried as yea"
+  },
+  "readout_alny_2027-02-28": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029142833/en/Alnylam-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Period-Progress/",
+   "by": "red team 2026-11-17",
+   "note": "Opened Alnylam Q3 release (2026-10-29): 'The Company now expects to announce clinical data from the Phase 2 trial of ALN-6400 in patients with hereditary hemorrhagic telangiectasia (HHT) ... in conjun"
+  },
+  "readout_alny_2027-02-28-aln2232": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029142833/en/Alnylam-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Period-Progress/",
+   "by": "red team 2026-11-17",
+   "note": "Same Q3 release: '... as well as from the Phase 1 trial of ALN-2232 in obesity and weight management, in conjunction with its fourth quarter and full year 2026 earnings call in February 2027.' No newe"
+  },
+  "readout_alny_2026-12-15": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261029142833/en/Alnylam-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Period-Progress/",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: 'will share Phase 1 healthy volunteer data for ALN-6400 at the 2026 American Society of Hematology (ASH) Annual Meeting and Exposition, being held December 12-15 in New Orleans.' d 2026-12"
+  },
+  "readout_bmrn_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/biomarin-reports-third-quarter-2026-financial-and-operating-results-302926682.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened BioMarin Q3 2026 release (PR Newswire, 2026-11-02): 'The Phase 1/2a study in healthy volunteers and adults with HPP is ongoing, with data expected in 2027.' BioMarin newsroom's newest item is 2"
+  },
+  "readout_bmrn_2027-12-31-bmn": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/biomarin-reports-third-quarter-2026-financial-and-operating-results-302926682.html",
+   "by": "red team 2026-11-17",
+   "note": "Same release: 'Dose-response data from this study is expected in 2027.' (BMN 333 section). Nothing newer from BioMarin."
+  },
+  "readout_bmrn_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/biomarin-reports-third-quarter-2026-financial-and-operating-results-302926682.html",
+   "by": "red team 2026-11-17",
+   "note": "Same release: 'The Phase 3 ACTION 3 trial is fully enrolled, with pivotal data expected in 2028.' (BMN 820/DMX-200). Nothing newer from BioMarin."
+  },
+  "readout_rapp_2026-12-31-rap219": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395175/0/en/rapport-therapeutics-reports-third-quarter-2026-financials-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Rapport Q3 release (GlobeNewswire, 2026-11-04); subtitle reads 'Data from the Phase 2 FOS open-label long-term safety trial expected in 4Q 2026'; body: 'Initial data expected in fourth quarter"
+  },
+  "readout_rapp_2027-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395175/0/en/rapport-therapeutics-reports-third-quarter-2026-financials-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release Upcoming Milestones bullet: 'RAP-219 LAI: Phase 1 pharmacokinetic data expected in third quarter of 2027.' No newer Rapport release."
+  },
+  "readout_rapp_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395175/0/en/rapport-therapeutics-reports-third-quarter-2026-financials-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release Upcoming Milestones bullet: 'RAP-641: Phase 1 preliminary results expected in the second half of 2027.' No newer Rapport release. 2027-12-31 is the correct window end for 2H 2027 (dataset c"
+  },
+  "readout_zbio_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396247/0/en/zenas-biopharma-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Zenas Q3 release (2026-11-05): 'Phase 2 SunStone trial in Systemic Lupus Erythematosus (SLE) topline results expected in the fourth quarter of 2026'. Zenas news list through 2026-11-17 has no S"
+  },
+  "readout_zbio_2026-12-31-zb021": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396247/0/en/zenas-biopharma-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release highlights: 'ZB021 (oral IL-17AA/AF inhibitor) dosing ongoing in Phase 1 trial; initial clinical data expected in Q4 2026'. No ZB021 data release through 2026-11-17."
+  },
+  "readout_zbio_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396247/0/en/zenas-biopharma-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: '... proof-of-concept trial (POC) to evaluate clinical activity and safety with data anticipated in 2027'. Nothing newer."
+  },
+  "readout_bolt_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402184/0/en/bolt-biotherapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Bolt Q3 release (GlobeNewswire, 2026-11-12, 16:05 ET): first bullet contains 'Initiated Phase 2 studies with PRA-216' and 'with initial data expected in 2Q 2027'; CSO quote adds 'patient proof-"
+  },
+  "readout_bolt_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402184/0/en/bolt-biotherapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Same release: 'a second wholly owned INSPIRE program is expected to enter the clinic and generate initial clinical data in 2H 2027'. Nothing newer found. 2027-12-31 is the correct window end for 2H 20"
+  },
+  "readout_imvt_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398263/0/en/immunovant-provides-corporate-updates-and-reports-financial-results-for-the-quarter-ended-september-30-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Immunovant release (2026-11-09): 'The Company expects to report topline data across potentially registrational trials of IMVT-1402 in Graves' disease (GD) and ... myasthenia gravis (MG) in cale"
+  },
+  "readout_imvt_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398263/0/en/immunovant-provides-corporate-updates-and-reports-financial-results-for-the-quarter-ended-september-30-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "Same release: 'In calendar year 2028, topline data are expected for the potentially registrational trial of IMVT-1402 in chronic inflammatory demyelinating polyneuropathy (CIDP).' Nothing newer."
+  },
+  "readout_mirm_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103832135/en/Mirum-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Opened Mirum Q3 release (2026-11-03): 'Volixibat VANTAGE Phase 2b study in primary biliary cholangitis (PBC) topline data expected in Q1 2027.' The only later Mirum release (2026-11-10, AZURE-4 met pr"
+  },
+  "readout_mirm_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103832135/en/Mirum-Pharmaceuticals-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release: 'MRM-3379 BLOOM Phase 2 in fragile X syndrome (FXS) topline data expected in 2027.' 2026-11-10 AZURE-4 release gives no BLOOM change."
+  },
+  "readout_qure_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395189/0/en/uniqure-announces-third-quarter-2026-financial-results-and-provides-company-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened uniQure Q3 release (GlobeNewswire, 2026-11-04): AMT-260 text '... expects to present updated results in the first half of 2027' present verbatim. uniQure news list newest item is this 2026-11-0"
+  },
+  "readout_qure_2027-06-30-amt191": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395189/0/en/uniqure-announces-third-quarter-2026-financial-results-and-provides-company-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Same release: 'The Company expects to present updated results from the Phase I/II study in all dosing cohorts in the first half of 2027.' present verbatim; nothing newer."
+  },
+  "readout_upb_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399310/0/en/upstream-bio-reports-third-quarter-2026-financial-results-and-highlights-continued-progress.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Upstream Bio Q3 release (2026-11-10): VENTURE (Phase 2, COPD) 'Enrollment completion was announced in August 2026 and data from the study are expected in the second half of 2027.' Company IR li"
+  },
+  "readout_upb_2027-12-31-verekitug": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399310/0/en/upstream-bio-reports-third-quarter-2026-financial-results-and-highlights-continued-progress.html",
+   "by": "red team 2026-11-17",
+   "note": "Same release, VALOUR severe-asthma extension: 'Data from the study are expected in the second half of 2027.' present verbatim."
+  },
+  "readout_akba_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396286/37519/en/akebia-therapeutics-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Akebia Q3 release (GlobeNewswire, 2026-11-05): first patient dosed in Phase 2 open-label basket trial of ebribafusp alfa (C3G, LN, IgAN); 'Akebia expects to report initial data from this trial"
+  },
+  "readout_asnd_2027-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401477/0/en/ascendis-pharma-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Ascendis Q3 release (2026-11-12). Date is right: the milestone bullet ends 'topline pivotal data expected Q3 2027'. But the row's quote 'Pivotal data expected Q3 2027.' is not verbatim (page sa"
+  },
+  "readout_cldx_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/744218/000117184326007174/exh_991.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened Celldex EX-99.1 (Q3 release, 2026-11-05) on SEC: 'Topline data from this study are expected to be presented in late 2026.' (barzolvolimab AD Phase 2, enrollment complete). EDGAR full-text searc"
+  },
+  "readout_dwtx_2026-11-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396434/0/en/dogwood-therapeutics-announces-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Dogwood Q3 release (GlobeNewswire, 2026-11-05): bullet 'Completed the Halneuron® Phase 2b trial in Chemotherapy Induced Neuropathy, top-line results to be announced in November 2026' verbatim;"
+  },
+  "readout_imux_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/immunic-inc-reports-third-quarter-2026-financial-results-and-provides-corporate-update-302938612.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Immunic Q3 release (PR Newswire, 2026-11-13): CMO quote '... our Phase 3 ENSURE trials in relapsing MS continue to be on track to report top-line data in December 2026'; milestones section 'exp"
+  },
+  "readout_klrs_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399359/0/en/kalaris-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Kalaris Q3 release (GlobeNewswire, 2026-11-10): subtitle 'Preliminary data from the ongoing Phase 1b/2 study of TH103 in nAMD is now expected in 2H 2027' verbatim; delay tied to a pilot batch f"
+  },
+  "readout_maia_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/17/3404630/0/en/maia-biotechnology-reports-consistent-strong-efficacy-in-expanded-phase-2-thio-101-study-in-non-small-cell-lung-cancer.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened MAIA release (GlobeNewswire, 2026-11-17, THIO-101 expansion data): contains 'advancing toward regulatory milestones including 2027 interim survival analysis', referring to the pivotal THIO-104"
+  },
+  "readout_mnov_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/09/24/3368112/7767/en/medicinova-announces-completion-of-last-patient-last-visit-in-the-double-blind-portion-of-the-phase-2b-3-combat-als-trial-of-mn-166-ibudilast.html",
+   "by": "red team 2026-11-17",
+   "note": "Cited 2026-09-24 release contains 'MediciNova expects to report topline results from the double-blind portion of the study by the end of 2026.' verbatim. Newer: CEO shareholder update 2026-10-12 says"
+  },
+  "readout_phar_2026-11-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/27/3388693/0/en/pharming-group-reports-third-quarter-2026-financial-results-strong-revenue-growth-joenja-apds-expansion-and-cvid-topline-data-in-november.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Pharming Q3 release (GlobeNewswire, 2026-10-27): 'Pharming expects to report Phase II results for leniolisib in CVID patients with immune dysregulation ... in November 2026'; summary bullet 'Ph"
+  },
+  "readout_rcus_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104238983/en/Arcus-Biosciences-Reports-Third-Quarter-2026-Financial-Results-and-Provides-a-Pipeline-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Opened Arcus Q3 release (Business Wire, 2026-11-04): 'Multiple additional data readouts, including more mature progression-free survival (PFS) and overall survival (OS) data from the second-line and f"
+  },
+  "readout_tlx_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/20/3385039/0/en/telix-reports-third-quarter-2026-financial-performance.html",
+   "by": "red team 2026-11-17",
+   "note": "Opened Telix Q3 release (GlobeNewswire 2026-10-20 18:10 ET; dateline 2026-10-21 Melbourne): OPTIMAL-PSMA completed enrollment of 120 patients; 'A data readout is expected in the first half of 2027.' E"
+  },
+  "readout_vxrt_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.sec.gov/Archives/edgar/data/72444/000143774926035275/ex_1039446.htm",
+   "by": "red team 2026-11-17",
+   "note": "Opened Vaxart EX-99.1 (Q3 release, 2026-11-05): subheadline and body say topline data from the complete Phase 2b (400 sentinel + ~5,000 main cohort) are expected 'by mid-year 2027'. 'By mid-year' is a"
+  },
+  "readout_arvn_2026-12-15-arv393": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://ir.arvinas.com/news-releases/news-release-details/arvinas-present-preliminary-clinical-data-early-monotherapy-dose",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release (2026-11-03) verbatim: 'Submitted initial Phase 1 monotherapy dose escalation data for presentation at the 68th American Society of Hematology Annual Meeting (Dec. 12-15, 2026).' Newer Arvi"
+  },
+  "readout_arvn_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394044/0/en/arvinas-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Arvinas Q3 release 2026-11-03 contains 'Share additional monotherapy data from the ongoing Phase 1 dose escalation clinical trial ... in patients with B- and T-cell lymphomas (mid-2027).' Newsroom thr"
+  },
+  "readout_arvn_2027-12-31-arv393": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394044/0/en/arvinas-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-03: 'Share initial data from the combination cohort with glofitamab in patients with DLBCL ... in the ongoing Phase 1 clinical trial (mid-2027).' No newer change through 2026-11-11"
+  },
+  "readout_arvn_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394044/0/en/arvinas-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-03: 'Share initial data from the Phase 1 clinical trial in healthy volunteers ... in muscle (1H 2027).' under ARV-027. Note row dp is 'year' while d=2027-06-30 is a half-year window"
+  },
+  "readout_arvn_2027-12-31-arv6723": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394044/0/en/arvinas-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-03 verbatim under ARV-6723: 'Present initial monotherapy data from the Phase 1 clinical trial (2H 2027).' Nothing newer."
+  },
+  "readout_sndx_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3393699/0/en/syndax-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Syndax Q3 release 2026-11-02 verbatim: MF proof-of-principle trial of revumenib 'expected to initiate in the fourth quarter of 2026' 'with initial clinical data expected in the second half of 2027'. N"
+  },
+  "readout_sndx_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3393699/0/en/syndax-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-02: 'The Company expects topline data from the Phase 2 trial of axatilimab in combination with ruxolitinib to be presented at a medical meeting in the first quarter of 2027.' The 11"
+  },
+  "readout_sndx_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3393699/0/en/syndax-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-02 verbatim: 'The Company expects topline data from the Phase 3 trial of axatilimab in combination with corticosteroids in early 2028.' Nothing newer."
+  },
+  "readout_sndx_2026-12-31-revumenib": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3393699/0/en/syndax-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-02: 'The Company expects to publish safety and efficacy data from R/R NUP98r acute leukemia patients treated with revumenib in the fourth quarter of 2026.' Newsroom feed through 11-"
+  },
+  "readout_enta_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261116633822/en/Enanta-Pharmaceuticals-Reports-Financial-Results-for-its-Fiscal-Fourth-Quarter-and-Year-Ended-September-30-2026/",
+   "by": "red team 2026-11-17",
+   "note": "Enanta FY release (BusinessWire 2026-11-16) verbatim: 'Enanta now expects to report topline data from the trial in the first quarter of 2027.' (EDP-978). Published d=2027-03-31 quarter matches. Enanta"
+  },
+  "readout_enta_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261116633822/en/Enanta-Pharmaceuticals-Reports-Financial-Results-for-its-Fiscal-Fourth-Quarter-and-Year-Ended-September-30-2026/",
+   "by": "red team 2026-11-17",
+   "note": "Enanta 2026-11-16 release verbatim: 'Topline data from LOTUS are expected in the first quarter of 2027.' Nothing newer."
+  },
+  "readout_enta_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261116633822/en/Enanta-Pharmaceuticals-Reports-Financial-Results-for-its-Fiscal-Fourth-Quarter-and-Year-Ended-September-30-2026/",
+   "by": "red team 2026-11-17",
+   "note": "Enanta 2026-11-16 release verbatim: 'Topline data from the Phase 2b portion of RESOLVE are expected in 2027.' Nothing newer."
+  },
+  "readout_rnac_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396234/0/en/cartesian-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Cartesian Q3 release 2026-11-05: headline 'Phase 3 AURORA trial ... advances towards data readout expected in 1Q27' and CEO 'With Phase 3 AURORA data expected in the first quarter of 2027'. Searches o"
+  },
+  "readout_rnac_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396234/0/en/cartesian-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Cartesian Q3 release 2026-11-05 verbatim heading: 'Phase 2 TRITON Trial in Myositis Remains on Track with Data from Subset of Patients Expected in 1H27'. CEO quote in same release says only 'expected"
+  },
+  "readout_rnac_2027-06-30-descartes0": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396234/0/en/cartesian-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Cartesian Q3 release 2026-11-05: HELIOS heading '... Continues to Progress with Data Expected in 1H27'. No newer release found."
+  },
+  "readout_agio_2026-12-15": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://investor.agios.com/news-releases/news-release-details/agios-highlight-strength-and-differentiation-rare-hematology",
+   "by": "red team 2026-11-17",
+   "note": "Agios Q3 release (2026-11-05) confirms RISE UP data at ASH 2026 (Dec 12-15). Agios ASH release 2026-11-04 gives exact slot: Abstract 336 'Long-term hemoglobin response from the Phase 3 RISE UP trial o"
+  },
+  "readout_agio_2026-12-15-ag236": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://investor.agios.com/news-releases/news-release-details/agios-highlight-strength-and-differentiation-rare-hematology",
+   "by": "red team 2026-11-17",
+   "note": "Q3 release 2026-11-05 quote verified. Agios ASH release 2026-11-04: Abstract 3772 'Safety and tolerability of AG-236, an investigational TMPRSS6-targeting small interfering RNA for polycythemia vera i"
+  },
+  "readout_akts_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401509/0/en/aktis-oncology-reports-third-quarter-financial-results-and-highlights-clinical-trial-progress.html",
+   "by": "red team 2026-11-17",
+   "note": "Aktis Q3 release (GNW 2026-11-12) verbatim: 'Expect preliminary data from the ongoing Phase 1b NECTINIUM-2 trial in the first quarter of 2027.' Search found nothing newer from Aktis."
+  },
+  "readout_akts_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401509/0/en/aktis-oncology-reports-third-quarter-financial-results-and-highlights-clinical-trial-progress.html",
+   "by": "red team 2026-11-17",
+   "note": "Aktis Q3 release (GNW 2026-11-12) verbatim: 'Expect preliminary data from the ongoing Phase 1b BActinium-1 trial in 2027.' Nothing newer found."
+  },
+  "readout_cgem_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399334/0/en/cullinan-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Cullinan Q3 release 2026-11-10 verbatim: 'CLN-978 (CD19 TCE) multi-dose regimen data in SLE, RA, and Sjögren's disease will be shared in December' and 'In a December webcast, the Company will share da"
+  },
+  "readout_cgem_2026-12-13": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399334/0/en/cullinan-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Cullinan Q3 release 2026-11-10: 'The updated dose escalation results will be further detailed in a poster presentation at the 2026 ASH Annual Meeting on December 13, 2026.' NOTE: same release says 'In"
+  },
+  "readout_ipha_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.innate-pharma.com/media/all-press-releases/innate-pharma-reports-third-quarter-2026-business-and-financial-update",
+   "by": "red team 2026-11-17",
+   "note": "Innate Q3 update (company site, dated Thu 11/05/2026 07:00; BW id 20261104) verbatim: 'AstraZeneca has updated the expected timing for the PACIFIC-9 Phase 3 trial high-level data readout to the first"
+  },
+  "readout_ipha_2026-11-18": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261104506906/en/Innate-Pharma-Reports-Third-Quarter-2026-Business-and-Financial-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Innate Q3 release headline bullet verbatim: 'Phase 1 dose-escalation data for Nectin-4 ADC IPH4502 to be presented at ENA 2026 on November 18'; newsroom also lists 11-11 'Innate Pharma to host in-pers"
+  },
+  "readout_mrna_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.newswire.com/news/moderna-outlines-next-phase-of-growth-at-analyst-day-22888276",
+   "by": "red team 2026-11-17",
+   "note": "Moderna Analyst Day release (Newswire.com, Moderna's own, 2026-11-12) verbatim: 'Moderna expects a registrational study readout in late 2026.' Q3 8-K exhibit (11-06) says 'pivotal data expected in 202"
+  },
+  "readout_mrna_2026-12-12": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000194/exhibit9912026q3pressrelea.htm",
+   "by": "red team 2026-11-17",
+   "note": "Q3 8-K EX-99.1 (2026-11-06) verbatim: 'Abstract accepted for oral presentation at American Society of Hematology meeting on December 12th in New Orleans.' NOTE: Analyst Day release 2026-11-12 already"
+  },
+  "readout_sldb_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395847/0/en/solid-biosciences-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Solid Q3 release (GNW 2026-11-04) verbatim: 'Solid expects to report initial data in the first quarter of 2027, subject to participant enrollment.' (SGT-212 FALCON). Could not load Solid IR newsroom ("
+  },
+  "readout_sldb_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395847/0/en/solid-biosciences-reports-third-quarter-2026-financial-results-and-provides-business-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Solid Q3 release 2026-11-04: '...initial safety data anticipated in the first half of 2027, subject to participant enrollment.' (SGT-501 ARTEMIS; first participant dosing expected by end of 2026). dp"
+  },
+  "readout_vir_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/",
+   "by": "red team 2026-11-17",
+   "note": "Vir ECLIPSE 1 topline release (BusinessWire 2026-11-08, newer than Vir's Q3 release) verbatim: 'The elebsiran and tobevibart regimen is also being evaluated in the ECLIPSE 2 and ECLIPSE 3 pivotal tria"
+  },
+  "readout_vir_2027-03-31-elebsiran": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261108631000/en/Vir-Biotechnology-Announces-Primary-Endpoint-Met-in-Pivotal-Phase-3-ECLIPSE-1-Trial-for-Elebsiran-and-Tobevibart-in-Chronic-Hepatitis-Delta/",
+   "by": "red team 2026-11-17",
+   "note": "Same Vir 2026-11-08 sentence covers ECLIPSE 3: 'data expected in the first quarter of 2027'. Nothing newer found."
+  },
+  "readout_avir_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398942/0/en/atea-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Atea Q3 release (GNW 2026-11-09 16:05 ET) verbatim: 'Topline results from C-FORWARD, Atea’s Phase 3 trial in patients with HCV outside of North America, are anticipated in early 2027.' Headline also '"
+  },
+  "readout_cogt_2026-12-15": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526449926/cogt-ex99_1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Cogent 8-K EX-99.1 (2026-11-05) verbatim: 'Plan to present multiple posters featuring bezuclastinib at the 68th Annual Meeting of the American Society of Hematology (ASH) being held December 12-15, 20"
+  },
+  "readout_dyn_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396308/0/en/dyne-therapeutics-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Dyne Q3 release (GNW 2026-11-05) verbatim: 'Topline data from the ACHIEVE REC are planned for Q1 2027.' (to support potential BLA for Accelerated Approval in Q3 2027). Dyne IR newsroom would not load;"
+  },
+  "readout_ions_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261109740265/en/Ionis-reports-third-quarter-2026-financial-results-and-highlights-progress-on-key-programs/",
+   "by": "red team 2026-11-17",
+   "note": "Ionis Q3 release (BW 2026-11-09) verbatim: 'Completed enrollment in the Phase 3 REVEAL study, with data expected in the second half of 2027'. Ionis newsroom newer items (11-10 conferences, 11-12 donid"
+  },
+  "readout_krro_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396271/0/en/korro-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Korro Q3 release (GNW 2026-11-05) 'Anticipated Milestones over the next 12 months': 'KRRO-121: report interim data from ANCHOR in the second half of 2027'; also 'Anticipate reporting interim data in t"
+  },
+  "readout_mane_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110316485/en/Veradermics-Reports-Third-Quarter-2026-Financial-Results-and-Highlights-Recent-Corporate-and-Clinical-Progress/",
+   "by": "red team 2026-11-17",
+   "note": "Veradermics Q3 release (BW id 20261110) subhead verbatim: '...topline data from Phase 2/3 Study ‘306’ evaluating VDPHL01 in female pattern hair loss in 1H27' (curly quotes around 306); body: 'The Comp"
+  },
+  "readout_msle_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401379/0/en/satellos-reports-third-quarter-2026-financial-results-and-highlights-company-progress.html",
+   "by": "red team 2026-11-17",
+   "note": "Satellos Q3 release (GNW 2026-11-12) verbatim: 'Topline data from BASECAMP's 12-week placebo-controlled period are expected in the first quarter of 2027.' CEO: 'which we expect in the first quarter of"
+  },
+  "readout_phvs_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401374/0/en/pharvaris-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Pharvaris Q3 release (GNW 2026-11-12) verbatim: 'Pharvaris expects to announce topline data from part 1 of CREAATE in the first quarter of 2027.' Highlights: 'expected in 1Q2027'. Pharvaris IR newsroo"
+  },
+  "readout_rgnx_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/regenxbio-reports-third-quarter-2026-financial-results-and-operational-highlights-302930190.html",
+   "by": "red team 2026-11-17",
+   "note": "REGENXBIO Q3 release (PRN 2026-11-05) bullet: 'Topline data from pivotal subretinal wet AMD studies, ATMOSPHERE® and ASCENT®, expected in Q4 2026'. REGENXBIO IR newsroom newest item is that 11-05 rele"
+  },
+  "readout_trxb_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402951/0/en/trexbio-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "TRexBio Q3 release (GNW 2026-11-13) verbatim: '...topline Phase 1b data in atopic dermatitis expected in mid-2027' and 'Topline data are expected in mid-2027.' Published as year 2027 (loosest bucket)."
+  },
+  "readout_cort_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Corcept Q3 release (BW 2026-11-03): BELLA Part B bullet and 'Results expected by the end of next year' verbatim; 'next year' from a 2026 release = 2027. Corcept IR list shows only the 11-16"
+  },
+  "readout_cort_2027-12-31-relacorila": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Corcept Q3 release (BW 2026-11-03): BELLA Part C bullet and 'Results expected by the end of next year' verbatim; 'next year' from a 2026 release = 2027. Corcept IR list shows only the 11-16"
+  },
+  "readout_cort_2027-12-31-relacorila-2": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Corcept Q3 release (BW 2026-11-03): TRIDENT bullet and 'Results expected by the end of next year' verbatim; 'next year' from a 2026 release = 2027. Corcept IR list shows only the 11-16 case-"
+  },
+  "readout_cort_2027-12-31-relacorila-3": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Corcept Q3 release (BW 2026-11-03): prostate (relacorilant + enzalutamide, UChicago) bullet and 'Results expected by the end of next year' verbatim; 'next year' from a 2026 release = 2027. C"
+  },
+  "readout_cort_2027-12-31-nenocorila": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261103499437/en/Corcept-Therapeutics-Announces-Third-Quarter-Financial-Results-and-Provides-Corporate-Update/",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Corcept Q3 release (BW 2026-11-03): SYNERGY bullet and 'Results expected by the end of next year' verbatim; 'next year' from a 2026 release = 2027. Corcept IR list shows only the 11-16 case-"
+  },
+  "readout_adct_2026-12-14": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+   "by": "red team 2026-11-17",
+   "note": "ADCT 2026-11-04 release lists LOTIS-5 full results (Abstract #920) oral, Monday, December 14, 2026, 3:00-3:15 p.m. CT. Q3 release (11-09) gives no change."
+  },
+  "readout_adct_2026-12-13": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+   "by": "red team 2026-11-17",
+   "note": "ADCT 2026-11-04 release lists LOTIS-7 updated results (Abstract #619) oral, Sunday, December 13, 2026, 12:00-12:15 p.m. CT. Q3 release (11-09) gives no change."
+  },
+  "readout_adct_2026-12-14-zynlonta": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-abstracts-at-the-68th-ash-annual-meeting-highlighting-breadth-of-zynlonta-clinical-program-302928676.html",
+   "by": "red team 2026-11-17",
+   "note": "ADCT 2026-11-04 release lists fixed-duration loncastuximab multicenter Phase II IIT (Abstract #784) oral, Monday, December 14, 2026, 11:15-11:30 a.m. CT. Nothing newer changes it."
+  },
+  "readout_avln_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401531/0/en/avalyn-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Quote verbatim in the forward-looking statements of Avalyn's Q3 release (11-12); body also says MIST results 'are anticipated in the second half of 2027'. Date 2027-12-31 is right, but dp is 'year' wh"
+  },
+  "readout_avln_2027-12-31-ap02": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401531/0/en/avalyn-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "'Results from the AURA study of AP02, a global Phase 2 clinical trial in patients with IPF, are anticipated in late 2027.' verbatim in Avalyn Q3 release (11-12). 'late 2027' -> year 2027-12-31 accepta"
+  },
+  "readout_avln_2027-12-31-ap03": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401531/0/en/avalyn-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "'Results from the Phase 1 healthy volunteer study of AP03 are anticipated in the second half of 2027.' verbatim (Avalyn Q3, 11-12). Date right but dp 'year' should be 'half' (row's own precision field"
+  },
+  "readout_kpti_2026-12-13": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/karyopharm-to-present-selinexor-data-in-patients-with-myelofibrosis-and-multiple-myeloma-at-the-68th-american-society-of-hematology-annual-meeting-and-exposition-ash-302928745.html",
+   "by": "red team 2026-11-17",
+   "note": "Karyopharm 2026-11-04 release: SENTRY Week 48 oral (Pub #526) 'December 13, 2026 from 10:15 a.m. CT to 10:30 a.m. CT'. Later releases (11-17 FDA filing acceptance; 11-02 Ayrmid merger) do not change i"
+  },
+  "readout_kpti_2026-12-12": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/karyopharm-to-present-selinexor-data-in-patients-with-myelofibrosis-and-multiple-myeloma-at-the-68th-american-society-of-hematology-annual-meeting-and-exposition-ash-302928745.html",
+   "by": "red team 2026-11-17",
+   "note": "Karyopharm 2026-11-04 release: SENTRY-2 oral (Pub #244) 'December 12, 2026 from 2:45 p.m. CT to 3:00 p.m. CT'. Nothing newer changes it."
+  },
+  "readout_kpti_2026-12-12-selinexor": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/karyopharm-to-present-selinexor-data-in-patients-with-myelofibrosis-and-multiple-myeloma-at-the-68th-american-society-of-hematology-annual-meeting-and-exposition-ash-302928745.html",
+   "by": "red team 2026-11-17",
+   "note": "Karyopharm 2026-11-04 release: STOMP SMd poster (Pub #2242) 'December 12, 2026 from 5:30 p.m. CT to 7:30 p.m. CT'. Nothing newer changes it."
+  },
+  "readout_sls_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402212/0/en/sellas-life-sciences-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "SELLAS Q3 release (11-12): 'Preliminary topline data is expected in Q4 2026' for SLS009 1L AML (headline line matches quote). 11-17 releases are REGAL (GPS) topline and a stock offering; no SLS009 1L"
+  },
+  "readout_sls_2026-12-14": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395382/0/en/sellas-life-sciences-to-present-positive-phase-2-data-demonstrating-encouraging-response-and-survival-outcomes-with-sls009-combination-in-high-risk-aml-at-ash-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "SELLAS 11-04 release: session '616. Acute Myeloid Leukemias: Investigational Drug and Cellular Therapies (Poster III)', 'Monday, December 14, 2026, 6:00 – 8:00 PM CST' verbatim. Q3 release 11-12 reaff"
+  },
+  "readout_alzn_2026-08-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1677077/000121465926011572/alz9226210q.htm",
+   "by": "red team 2026-11-17",
+   "note": "Alzamend 10-Q (quarter ended 2026-07-31) contains both spans verbatim; 'Full pharmacokinetic and pharmacodynamic results are expected in the fourth quarter of 2026.' Alzamend IR press-release list sho"
+  },
+  "readout_alzn_2026-11-18": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/alzamend-neuros-phase-12a-lithium-neuroimaging-data-accepted-for-poster-presentation-at-neuroscience-2026-in-washington-dc-302856333.html",
+   "by": "red team 2026-11-17",
+   "note": "Alzamend 08-20 release: poster in Neuropsychiatric Disorders session (PSTR337) 'Wednesday, November 18, 2026, from 8:00 a.m. to 12:00 p.m.' at Neuroscience 2026 (Nov 14-18). The date is TODAY (2026-11"
+  },
+  "readout_cmpx_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398382/0/en/compass-therapeutics-reports-2026-third-quarter-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "'An update on the study is expected later this year.' verbatim in Compass Q3 release (11-09), CTX-10726 dose-escalation; CEO: 'Updates from the dose-escalation study of CTX-10726 are also expected on"
+  },
+  "readout_cmpx_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398382/0/en/compass-therapeutics-reports-2026-third-quarter-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "'Initial data from the first stage of the study are expected in the second half of 2027.' verbatim (Compass Q3, 11-09). Date right; dp 'year' should be 'half' (row's own precision field says half). No"
+  },
+  "readout_irla_2028-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402546/0/en/irulya-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "'The Phase 2b trial of LAM-001 in PH-ILD is ongoing, with data anticipated in the first quarter of 2028.' verbatim (IRulya Q3, 11-13). No newer release found."
+  },
+  "readout_irla_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402546/0/en/irulya-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "IRulya Q3 (11-13): 'plans to initiate a Phase 2 study of LAM-001 in SAPH in the fourth quarter of 2026, with data anticipated in the fourth quarter of 2028.' Trial not yet started per release. No newe"
+  },
+  "readout_ocgn_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395173/0/en/ocugen-provides-business-update-with-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "'Top-line data from the 140-patient Phase 3 liMeliGhT trial are expected in the first quarter of 2027' verbatim (Ocugen Q3, 11-04). Searches found no newer Ocugen data/timing release (only conference-"
+  },
+  "readout_ocgn_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395173/0/en/ocugen-provides-business-update-with-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "'Topline data from the Phase 2/3 pivotal confirmatory trial (N=63 subjects) are anticipated in the second quarter of 2027' verbatim (Ocugen Q3, 11-04). No newer release changes it."
+  },
+  "readout_syre_2027-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394730/0/en/spyre-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Spyre Q3 (11-03): 'topline induction results for three potential best-in-indication combinations, which are expected in Q3 2027'; CEO: 'we plan to deliver topline data in Q3 2027'. Later releases (11-"
+  },
+  "readout_syre_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394730/0/en/spyre-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "'Topline Week 16 results are planned in late 2027 or early 2028.' verbatim (Spyre Q3, 11-03). The window ends in 'early 2028', not end-2028: d=2028-12-31 dp=year displays as '2028' and overstates the"
+  },
+  "readout_vktx_vanquish2_2026q3": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/viking-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update-302922632.html",
+   "by": "red team 2026-11-17",
+   "note": "Viking Q3 (10-28): 'The company expects these studies to be completed in 2027.' Restated in Viking 11-15 ObesityWeek release ('The VANQUISH studies are expected to be completed in 2027.'). Note row is"
+  },
+  "readout_vktx_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/viking-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update-302922632.html",
+   "by": "red team 2026-11-17",
+   "note": "Viking Q3 (10-28): 'The company expects the results from Part 2 of this study to be available in 2027.' 11-15 ObesityWeek release reports no maintenance-study results."
+  },
+  "readout_bsem_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402222/0/en/biostem-technologies-reports-third-quarter-2026-financial-results-grows-hospital-revenue-for-second-consecutive-quarter-as-customers-expand-use-of-portfolio.html",
+   "by": "red team 2026-11-17",
+   "note": "BioStem Q3 (11-12): 'Top-line results from the Company's VLU study scheduled to be reported at the Innovations in Wound Healing meeting in early December' (curly apostrophe). No VLU results release fo"
+  },
+  "readout_crbp_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399418/0/en/corbus-pharmaceuticals-reports-q3-2026-financial-results-and-provides-a-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Corbus Q3 (11-10): 'Anticipate reporting sutantatug envedotin plus Keytruda® combination data in first-line (1L) OPSCC in Q1 2027' verbatim. Newer 11-16 release is CRB-913 CANYON-1 only."
+  },
+  "readout_eypt_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401419/0/en/eyepoint-reports-third-quarter-2026-financial-results-and-provides-recent-corporate-developments.html",
+   "by": "red team 2026-11-17",
+   "note": "EyePoint Q3 (11-12): 'Topline data for both DME trials are anticipated early in the fourth quarter of 2027.' Consistent with 10-19 strategic prioritization ('fourth quarter of 2027'). Wet AMD program"
+  },
+  "readout_iova_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396260/0/en/iovance-biotherapeutics-reports-record-third-quarter-2026-revenue-of-122m-business-achievements-and-corporate-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "'Confirmed clinical activity in both CSCC and MCC was observed, and initial results are expected in 1H27.' verbatim (Iovance Q3, 11-05). d=2027-06-30 with dp='year' is internally inconsistent (would d"
+  },
+  "readout_kytx_2026-12-15": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401507/0/en/kyverna-therapeutics-announces-completion-of-bla-submission-for-miv-cel-in-stiff-person-syndrome-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Kyverna 11-12 release: 'additional one-year biomarker data from KYSA-8 will be presented at ASH 2026' verbatim; no session date given. Kyverna IR list shows nothing newer. ASH runs Dec 12-15, 2026 so"
+  },
+  "readout_mbx_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398915/0/en/mbx-biosciences-reports-third-quarter-2026-financial-results-and-corporate-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "MBX Q3 (11-09) subtitle: '12-week MAD (Part C) data for MBX 4291, a GLP-1/GIP co-agonist prodrug for obesity designed for once-monthly dosing, on track for Q4 2026'; body: 'remains on track to report"
+  },
+  "readout_mtva_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/metavia-announces-completion-of-last-patient-visit-in-extended-24-week-phase-1-part-3a-study-of-da-1726-302941712.html",
+   "by": "red team 2026-11-17",
+   "note": "MetaVia 11-17 release subtitle 'Full Data from Parts 3A and 3B Expected in First Quarter of 2027'; body 'reporting the full data from Parts 3A and 3B in the first quarter of 2027'. Newest MTVA release"
+  },
+  "readout_pmn_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402215/0/en/promis-neurosciences-announces-third-quarter-2026-financial-results-and-reaffirms-first-quarter-2027-topline-data-timing.html",
+   "by": "red team 2026-11-17",
+   "note": "ProMIS Q3 (11-12): 'remains on track for unblinded 12-month topline data in the first quarter of 2027' verbatim. No newer release found."
+  },
+  "readout_scyx_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396422/0/en/scynexis-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "SCYNEXIS Q3 (11-05): 'remains on track to initiate its Phase 2 proof-of-concept study of SCY-770 in ADPKD patients in Q4 2026, with an anticipated interim analysis in Q4 2027.' No newer release found."
+  },
+  "readout_tsha_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401459/0/en/taysha-gene-therapies-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Taysha Q3 (11-12) summary line contains quote verbatim; milestones: 'expected in the first half of 2027'. d=2027-06-30 with dp='year' is inconsistent (displays as 2027); dp should be 'half'. No newer"
+  },
+  "readout_axsm_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392981/33090/en/axsome-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Axsome Q3 release (GNW 2026-11-02): 'The Company anticipates topline results from the SUMMIT Phase 3 trial in the second half of 2027.' verbatim in AXS-05 smoking cessation section. No newer"
+  },
+  "readout_axsm_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392981/33090/en/axsome-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Axsome Q3 release 2026-11-02, ENGAGE (solriamfetol, binge eating disorder): 'Target enrollment in the trial has been reached, and the Company anticipates topline results in the first quarter of 2027.'"
+  },
+  "readout_axsm_2027-12-31-solriamfet": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392981/33090/en/axsome-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Axsome Q3 release 2026-11-02, FOCUS-2/FOCUS-3 (solriamfetol ADHD children/adolescents): 'The Company anticipates topline results from both studies in the second half of 2027.' verbatim. dp 'year' vs p"
+  },
+  "readout_axsm_2027-12-31-solriamfet-2": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/02/3392981/33090/en/axsome-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Axsome Q3 release 2026-11-02, SUSTAIN (solriamfetol shift work disorder): 'The Company anticipates topline results from SUSTAIN in the second half of 2027.' verbatim. dp 'year' vs precision 'half' (d"
+  },
+  "readout_hrmy_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
+   "by": "red team 2026-11-17",
+   "note": "Harmony 8-K EX-99.2 deck dated 2026-11-04, slide 4: 'Phase 1b sleep-deprived healthy volunteer data expected Q1 2027' verbatim (BP-205). Harmony IR news list shows nothing after 2026-11-04 (Q3 release"
+  },
+  "readout_hrmy_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
+   "by": "red team 2026-11-17",
+   "note": "Harmony deck 2026-11-04 slide 14 (pitolisant HD Phase 3): 'TLD expected in 2027' verbatim. No newer Harmony release."
+  },
+  "readout_hrmy_2027-12-31-epx100": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
+   "by": "red team 2026-11-17",
+   "note": "Harmony deck 2026-11-04 slide 15: 'Phase 3 Topline Data Expected Mid-2027' verbatim. No newer Harmony release. Caveat: 'Mid-2027' is published as d=2027-12-31 dp=year with label 'Mid-2027'; this is a"
+  },
+  "readout_hrmy_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1802665/000110465926122377/hrmy-ex99d2.htm",
+   "by": "red team 2026-11-17",
+   "note": "Harmony deck 2026-11-04 slide 15: 'Updated data to be presented at AES Annual Meeting in December 2026' verbatim (18-month ARGUS OLE). No newer Harmony release (no AES abstract release yet)."
+  },
+  "readout_bhvn_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.biohaven.com/news-releases/news-release-details/biohaven-reports-recent-business-developments-and-third-quarter",
+   "by": "red team 2026-11-17",
+   "note": "Biohaven Q3 release 2026-10-29 (IR copy) contains 'RISE 3 topline data for our Kv7 activator opakalim remain on track for the second half of 2026' verbatim. Biohaven press list shows newest item 2026-"
+  },
+  "readout_bhvn_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.biohaven.com/news-releases/news-release-details/biohaven-reports-recent-business-developments-and-third-quarter",
+   "by": "red team 2026-11-17",
+   "note": "Biohaven Q3 release 2026-10-29: 'The study is being amended to include an assessment of taldefgrobep alfa in combination with a GLP-1-based therapy.' and '...we now anticipate topline data from the mo"
+  },
+  "readout_bhvn_2026-11-19": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://ir.biohaven.com/news-releases/news-release-details/biohaven-reports-recent-business-developments-and-third-quarter",
+   "by": "red team 2026-11-17",
+   "note": "Biohaven Q3 release 2026-10-29: 'were selected for an oral presentation at the 38th EORTC-NCI-AACR Symposium (ENA 2026), to be held November 18 to 20, 2026' and '(presentation scheduled for November 1"
+  },
+  "readout_legn_2026-12-13": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "Legend GNW 2026-11-04 ASH list: LB2501 first-in-human update, poster #4169, Dec 13, 2026, 6:00-8:00 PM. No newer Legend release changes it (Q3 results release seen in search, ASH schedule unchanged)."
+  },
+  "readout_legn_2026-12-12": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "Legend GNW 2026-11-04: 'First report of durable survival outcomes with ciltacabtagene autoleucel (cilta-cel) in patients with daratumumab-refractory relapsed/refractory multiple myeloma: CARTITUDE-4 s"
+  },
+  "readout_legn_2026-12-13-lucarg39d": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395361/0/en/legend-biotech-to-showcase-carvykti-leadership-and-next-generation-cell-therapy-innovation-at-ash-2026.html",
+   "by": "red team 2026-11-17",
+   "note": "Legend GNW 2026-11-04: 'Update of a phase 1 study of LUCAR-G39D: An allogeneic CD20/CD19 dual-targeted CAR gamma delta T cells in adults with relapsed / refractory B-cell non-Hodgkin lymphoma (NHL)',"
+  },
+  "readout_sttk_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396386/0/en/shattuck-labs-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Shattuck Q3 release GNW 2026-11-05: 'Shattuck expects to initiate a Phase 1 healthy volunteer clinical trial of SL-846 and report initial data in 2027.' verbatim. Later STTK items found are only induc"
+  },
+  "readout_sttk_2028-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396386/0/en/shattuck-labs-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Shattuck Q3 release 2026-11-05 headline bullet: '12-week induction data expected in the first half of 2028' for RECEPTIVE-CD1 (SL-325, Crohn's). No newer release changes it."
+  },
+  "readout_sttk_2028-06-30-sl325": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396386/0/en/shattuck-labs-reports-third-quarter-2026-financial-results-and-recent-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Shattuck Q3 release 2026-11-05: 'Primary endpoint is HiSCR50 response at Week 16, with data expected in the first half of 2028.' verbatim (RECEPTIVE-HS1; trial initiation expected Q4 2026). No newer r"
+  },
+  "readout_arqt_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395758/0/en/arcutis-announces-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Arcutis Q3 release GNW 2026-11-04 highlight: 'Remains on track to disclose topline results from Phase 2 trial of ZORYVE foam 0.3% in individuals with vitiligo and decision on program advancement in Q4"
+  },
+  "readout_arqt_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395758/0/en/arcutis-announces-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Arcutis Q3 release 2026-11-04: '...expects to report results, as well as a decision on program advancement, in the first quarter of 2027.' verbatim (HS proof-of-concept). No newer release."
+  },
+  "readout_fdmt_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402186/0/en/4dmt-reports-third-quarter-2026-financial-results-operational-highlights-and-expected-upcoming-milestones.html",
+   "by": "red team 2026-11-17",
+   "note": "4DMT Q3 release GNW 2026-11-12: 'topline data for 4FRONT-1 and 4FRONT-2 expected in Q2 2027 and H2 2027, respectively'; body: 4FRONT-1 'randomization completed (N=523) in March 2026; topline data expe"
+  },
+  "readout_fdmt_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402186/0/en/4dmt-reports-third-quarter-2026-financial-results-operational-highlights-and-expected-upcoming-milestones.html",
+   "by": "red team 2026-11-17",
+   "note": "4DMT Q3 release 2026-11-12, body: 4FRONT-2 'randomization completed (N=531) in August 2026; topline data expected in H2 2027'. No newer release."
+  },
+  "readout_kymr_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391085/0/en/kymera-therapeutics-announces-third-quarter-2026-financial-results-and-reports-positive-results-from-the-kt-579-phase-1-healthy-volunteer-trial.html",
+   "by": "red team 2026-11-17",
+   "note": "Kymera Q3 release GNW 2026-10-29 bullet 'Last patient completed last visit in KT-621 (STAT6) BROADEN2 Phase 2b AD trial, with topline data to be reported by year-end 2026.' Kymera IR press list newest"
+  },
+  "readout_kymr_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391085/0/en/kymera-therapeutics-announces-third-quarter-2026-financial-results-and-reports-positive-results-from-the-kt-579-phase-1-healthy-volunteer-trial.html",
+   "by": "red team 2026-11-17",
+   "note": "Kymera Q3 release 2026-10-29: 'KT-621 BREADTH Phase 2b asthma trial ongoing, with topline data expected to be reported in late 2027' verbatim. No newer release."
+  },
+  "readout_pcvx_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395828/0/en/vaxcyte-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Vaxcyte Q3 release GNW 2026-11-04: 'Announce safety, tolerability and immunogenicity data from the OPUS-2 and OPUS-3 Phase 3 trials in the first half of 2027.' verbatim (OPUS-1 already reported Oct 20"
+  },
+  "readout_pcvx_2027-12-31-vaxa1": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395828/0/en/vaxcyte-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Vaxcyte Q3 release 2026-11-04: 'Announce topline data from the Phase 1 study in adults in the second half of 2027.' verbatim (VAX-A1). No newer release."
+  },
+  "readout_tars_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394778/0/en/tarsus-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Tarsus Q3 release GNW 2026-11-03: TP-04 Kore Phase 2 'topline data expected in the first half of 2027'. Later Tarsus items found are investor-conference notices only."
+  },
+  "readout_tars_2027-06-30-tp05": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394778/0/en/tarsus-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Tarsus Q3 release 2026-11-03: 'Topline results are expected in the first half of 2027 and are anticipated to support a Phase 3-ready package.' verbatim (TP-05 Calliope). No newer release."
+  },
+  "readout_xene_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398912/33485/en/xenon-reports-q3-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Xenon Q3 release GNW 2026-11-09: 'Enrollment in Phase 3 X-NOVA2 study of azetukalner in MDD completed with topline data readout now expected in December 2026' verbatim. Searches found no later Xenon r"
+  },
+  "readout_xene_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398912/33485/en/xenon-reports-q3-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Xenon Q3 release 2026-11-09: 'Data from the Phase 1b study are expected in 2027.' verbatim (NBI-921355 with Neurocrine). No newer release."
+  },
+  "readout_canf_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/06/3397456/0/en/can-fite-to-pursue-global-licensing-and-strategic-partnerships-at-bio-europe-2026-following-recent-clinical-and-intellectual-property-milestones.html",
+   "by": "red team 2026-11-17",
+   "note": "Can-Fite GNW 2026-11-06: 'interim efficacy and safety data expected in the first quarter of 2027' (company description) and 'with results expected in the first quarter of 2027.' (bullet). Later Can-Fi"
+  },
+  "readout_crdf_2026-12-13": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401392/0/en/cardiff-oncology-reports-third-quarter-2026-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Cardiff Q3 release GNW 2026-11-12: 'Updated data from an investigator-sponsored clinical trial in CMML will be presented at the American Society of Hematology (\"ASH\") Annual Meeting on December 13, 20"
+  },
+  "readout_guts_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402200/0/en/fractyl-health-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Fractyl Q3 release GNW 2026-11-12: 'Q1 2027: Anticipated topline 12-month data from the REMAIN-1 Pivotal Cohort, including the second co-primary endpoint.' verbatim. Six-month data were reported Oct 2"
+  },
+  "readout_ipsc_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401435/0/en/century-therapeutics-reports-third-quarter-2026-financial-results-and-business-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Century Q3 release GNW 2026-11-12: 'Initial safety and early efficacy data from the first-in-human CNTY-813 study are anticipated in 2H 2027.' verbatim (IND planned Q4 2026). No newer release. Row id"
+  },
+  "readout_lona_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/16/3404108/0/en/leonabio-reports-third-quarter-2026-financial-results-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "LeonaBio GNW 2026-11-16 headline: 'On Track to Complete Enrollment of Phase 3 ELAINE-3 Clinical Trial of Lasofoxifene in 4Q 2026 with Topline Data Expected in 2H 2027'. Topline timing appears only in"
+  },
+  "readout_mdgl_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394036/0/en/madrigal-pharmaceuticals-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Madrigal Q3 release GNW 2026-11-03: 'MAESTRO NASH OUTCOMES on track, data expected late 2027.' Later Madrigal releases (AASLD real-world data; investor conferences) do not change it."
+  },
+  "readout_ntla_2026-11-18": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/03/3394179/0/en/intellia-therapeutics-announces-upcoming-nexiguran-ziclumeran-nex-z-medical-congress-presentations.html",
+   "by": "red team 2026-11-17",
+   "note": "Intellia GNW 2026-11-03: 'Long-term follow-up in patients with ATTRv-PN from the Phase 1 clinical trial will be presented' at ISA 2026 (Nov 15-18, Montevideo), poster #156, 'Wednesday, November 18, 10"
+  },
+  "readout_pvla_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396310/0/en/palvella-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Palvella Q3 release GNW 2026-11-05: 'Topline results from LOTU are expected in the second half of 2027.' verbatim (Phase 2 QTORIN rapamycin, angiokeratomas). Later items found are conference notices o"
+  },
+  "readout_slgl_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3401588/0/en/sol-gel-reports-third-quarter-2026-financial-results-and-provides-corporate-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Sol-Gel Q3 release GNW 2026-11-12: 'top-line results expected in late November 2026' (highlight) and 'Top-line results are expected in late November 2026.' Searches found no SGT-610 top-line release t"
+  },
+  "readout_ttrx_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023016/000121390026117180/ea031139901ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Turn Therapeutics 8-K EX-99.1 (2026-11-09) = Business Wire release: 'Turn Therapeutics expects to report topline results from the Phase 2b trial in the first quarter of 2027.' Newer Nov 2026 corporate"
+  },
+  "readout_eras_2026-11-20": {
+   "checked": "2026-11-17",
+   "verdict": "FIXED",
+   "source": "https://www.globenewswire.com/news-release/2026/09/10/3359447/0/en/erasca-announces-multiple-presentations-at-the-upcoming-38th-eortc-nci-aacr-symposium.html",
+   "by": "red team 2026-11-17",
+   "note": "Both quote fragments are on Erasca's Nov 12 Q3 release (ENA Nov 18-20, Barcelona). Erasca's Sep 10 ENA release gives the exact slot: the ERAS-0015 AURORAS-1 oral (Plenary Session 6) is Friday Nov 20,"
+  },
+  "readout_eras_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402156/0/en/erasca-reports-third-quarter-2026-business-updates-and-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Erasca Nov 12 Q3 release: 'Phase 1 monotherapy expansion data expected in the first half of 2027' is verbatim. Newer Erasca releases (Nov 16 investor event, Nov 17 BMS collaboration) give no"
+  },
+  "readout_eras_2027-06-30-eras0015": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402156/0/en/erasca-reports-third-quarter-2026-business-updates-and-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Erasca Nov 12 Q3 release: 'Phase 1 combination dose escalation data, including panitumumab combination, expected in the first half of 2027' is verbatim. Newer Erasca releases (Nov 16 investo"
+  },
+  "readout_eras_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/12/3402156/0/en/erasca-reports-third-quarter-2026-business-updates-and-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 12 Q3 release: ERAS-4001 BOREALIS-1 'Preliminary safety, tolerability, pharmacokinetics, and initial efficacy Phase 1 monotherapy data' 'expected in the second half of 2026'; headline 'expect prel"
+  },
+  "readout_inbx_2026-11-20": {
+   "checked": "2026-11-17",
+   "verdict": "RESOLVED",
+   "source": "https://www.prnewswire.com/news-releases/inhibrx-announces-updated-clinical-data-for-ozekibart-inbrx-109-in-ewing-sarcoma-302942893.html",
+   "by": "red team 2026-11-17",
+   "note": "Quote verbatim on Inhibrx Nov 13 Q3 release. But on Nov 17, 2026 (after the close, 16:53 ET) Inhibrx released the updated Ewing sarcoma Phase 1/2 data (ozekibart + IRI/TMZ: ORR 62.7%, DCR 86.3%; Sept"
+  },
+  "readout_inbx_2026-11-20-ozekibart": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/inhibrx-announces-participation-in-upcoming-scientific-conferences-302907553.html",
+   "by": "red team 2026-11-17",
+   "note": "Oct 13 Inhibrx release lists the CTOS oral 'Subgroup Analysis and Updated Progression-Free Survival (PFS) from the Randomized, Phase 2 ChonDRAgon Study', Fri Nov 20, 2026, 11:00 AM-12:30 PM KST (= Nov"
+  },
+  "readout_inbx_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/inhibrx-reports-third-quarter-2026-financial-results-302939250.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 13 Q3 release: 'the initial read out of which is expected around mid-2027' (HexAgon Phase 2 expansion). No newer release changes it (Nov 17 release is Ewing only)."
+  },
+  "readout_inbx_2027-12-31-ordastobar": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/inhibrx-reports-third-quarter-2026-financial-results-302939250.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 13 Q3 release: initial results from Phase 1/2 of ordastobart in perioperative NSCLC 'in mid-2027' verbatim. Nothing newer."
+  },
+  "readout_bmea_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400208/0/en/biomea-fusion-reports-third-quarter-2026-financial-results-and-corporate-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Biomea Nov 10 Q3 release: 'Primary endpoint data evaluating HbA1c reduction at Week 26 are expected in the first quarter of 2027. (COVALENT-211)' verbatim. Only later Biomea release is Nov 1"
+  },
+  "readout_bmea_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400208/0/en/biomea-fusion-reports-third-quarter-2026-financial-results-and-corporate-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Biomea Nov 10 Q3 release: 'Primary endpoint data evaluating HbA1c reduction at Week 26 are expected in the second quarter of 2027. (COVALENT-212)' verbatim. Only later Biomea release is Nov"
+  },
+  "readout_bmea_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3400208/0/en/biomea-fusion-reports-third-quarter-2026-financial-results-and-corporate-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Re-opened Biomea Nov 10 Q3 release: 'Topline data is anticipated at the end of 2027. (OPAL)' verbatim. Only later Biomea release is Nov 12 investor-conference notice; no timing change."
+  },
+  "readout_oncy_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/14/3380838/0/en/oncolytics-biotech-provides-update-on-goblet-study-clinical-data-and-final-pancan-grant-payment.html",
+   "by": "red team 2026-11-17",
+   "note": "Oct 14 release: 'Oncolytics expects to report final results from Cohort 4 in the fourth quarter of 2026.' verbatim. Newer: 10-Q filed Nov 13 (no GOBLET timing in text read), 8-Ks Nov 4/9/11 and Nov 13"
+  },
+  "readout_oncy_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/14/3380838/0/en/oncolytics-biotech-provides-update-on-goblet-study-clinical-data-and-final-pancan-grant-payment.html",
+   "by": "red team 2026-11-17",
+   "note": "Oct 14 release: 'Initial results from Cohort 5 are expected in the first half of 2027' (continues: could be extended as patients continue treatment). No newer change (10-Q Nov 13, Nov releases)."
+  },
+  "readout_oncy_2026-12-31-pelareorep": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/09/28/3369944/0/en/oncolytics-biotech-reports-accelerating-enrollment-in-randomized-reo-033-ras-mutant-mss-colorectal-cancer-study.html",
+   "by": "red team 2026-11-17",
+   "note": "Sep 28 release: 'Company expects to have sufficient Part A data to provide an interim clinical update by year-end 2026' verbatim. No interim REO 033 update reported through Nov 18; 10-Q and Nov releas"
+  },
+  "readout_whwk_2026-09-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/whitehawk-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights-302932756.html",
+   "by": "red team 2026-11-17",
+   "note": "Whitehawk Nov 9 Q3 release: 'On track to report initial Phase 1 data from HWK-007 and HWK-016 in 1H'27' verbatim. FMP press-release feed shows no newer Whitehawk release through Nov 18."
+  },
+  "readout_whwk_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/whitehawk-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights-302932756.html",
+   "by": "red team 2026-11-17",
+   "note": "Whitehawk Nov 9 Q3 release: 'On track to report initial Phase 1 data from HWK-007 and HWK-016 in 1H'27' verbatim. FMP press-release feed shows no newer Whitehawk release through Nov 18."
+  },
+  "readout_whwk_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/whitehawk-therapeutics-reports-third-quarter-2026-financial-results-and-recent-highlights-302932756.html",
+   "by": "red team 2026-11-17",
+   "note": "Whitehawk Nov 9 Q3 release: 'Initial Phase 1 data from HWK-206 is expected by year-end 2027.' verbatim. FMP press-release feed shows no newer Whitehawk release through Nov 18."
+  },
+  "readout_bbio_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391801/0/en/bridgebio-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "BridgeBio Oct 29 Q3 release: MAA based on FORTIFY Month 36 final analysis 'with topline results expected late 2027/early 2028.' Later BBIO releases (Nov 11, Nov 17) are acoramidis only."
+  },
+  "readout_bbio_2028-12-31-encaleret": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3391801/0/en/bridgebio-reports-third-quarter-2026-financial-results-and-corporate-updates.html",
+   "by": "red team 2026-11-17",
+   "note": "Oct 29 Q3 release: 'Topline results from the study are anticipated in early 2028.' (RECLAIM-HP). No newer change."
+  },
+  "readout_ima_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398978/0/en/imagenebio-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "ImageneBio Nov 9 Q3 release: body states 'Topline data from the study is anticipated in the fourth quarter of 2027.' (ADAPTIVE); the cited CEO line was confirmed verbatim in the prior pass. No newer I"
+  },
+  "readout_ima_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398978/0/en/imagenebio-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 9 release: 'Imagene is on track to initiate a Phase 2 study of olevaprubart in alopecia areata by the end of 2026.' and 'Initial data is expected in 2028.' verbatim."
+  },
+  "readout_kzia_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/kazia-therapeutics-limited-announces-pricing-of-up-to-120-million-public-offering-302862579.html",
+   "by": "red team 2026-11-17",
+   "note": "Aug 28 pricing release: 'Stage IV triple-negative breast cancer (TNBC) data readout, expected in the second half of 2027' verbatim. Newest primary: Kazia 20-F filed Nov 17, 2026 refers to 'the timing"
+  },
+  "readout_kzia_2028-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/kazia-therapeutics-expands-paxalisib-clinical-trial-into-hrher2--breast-cancer-supported-by-preclinical-data-showing-strong-clinical-activity-and-safety-in-hr-breast-cancer-302865460.html",
+   "by": "red team 2026-11-17",
+   "note": "Sep 1 release: 'Clinical updates are anticipated throughout 2027, with a full readout anticipated in 2028.' verbatim; Aug 28 release narrower ('HR+/HER2- data readout, expected in the first half of 20"
+  },
+  "readout_prax_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398230/0/en/praxis-precision-medicines-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Praxis Nov 9 Q3 release: EMERALD topline 'expected in the fourth quarter of 2026'. Nov 12 Investor Day release is the newest Praxis release (FMP feed through Nov 18); no EMERALD topline reported yet."
+  },
+  "readout_prax_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398230/0/en/praxis-precision-medicines-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 9 release: EMBRAVE3 topline 'anticipated in 2027.' No newer change."
+  },
+  "readout_tngx_2027-01-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398261/0/en/tango-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Tango Nov 9 Q3 release: 'Disclose vopimetostat lung cancer monotherapy data in January 2027' verbatim. No newer Tango release."
+  },
+  "readout_tngx_2027-01-31-tng456": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398261/0/en/tango-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Nov 9 release: 'Disclose TNG456 data in lung cancer, glioblastoma and other cancers in January 2027' verbatim."
+  },
+  "readout_adag_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1818838/000110465926124143/tm2629316d1_ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "Adagene EX-99.1 (Nov 9): 'initial results expected in 1H 2027 to inform dose regimen for the Phase 3 trial' verbatim. Newer Nov 17 City of Hope/Adagene release is a separate ivonescimab + muzastotug P"
+  },
+  "readout_anl_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/1944552/000121390026097850/ea030480101ex99-1.htm",
+   "by": "red team 2026-11-17",
+   "note": "ANL EX-99.1 (Sep 8): 'remain on track to report full Phase Ia data in the second half of 2027.' Newer: Oct 27 release sets an ENA oral (Thu Nov 19, 8:00 a.m. CET) with translational and EGFR-combinati"
+  },
+  "readout_cgtx_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/05/3396155/0/en/cognition-therapeutics-reports-financial-results-for-the-third-quarter-2026-and-provides-business-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Cognition Nov 5 Q3 release: 'Top-line results from START are anticipated in the second half of 2027' verbatim. Nov 17 CTAD release is about p-Tau217 screening in the ongoing START study; no timing cha"
+  },
+  "readout_cris_2026-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/curis-provides-third-quarter-2026-business-update-302938385.html",
+   "by": "red team 2026-11-17",
+   "note": "Curis Nov 12 Q3 release: 'To date, 12 patients have been enrolled in the study with initial data expected in December 2026.' verbatim. No newer Curis release in FMP feed through Nov 18; no named meeti"
+  },
+  "readout_idya_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/ideaya-biosciences-reports-financial-results-for-the-third-quarter-2026-and-provides-a-business-update-302926978.html",
+   "by": "red team 2026-11-17",
+   "note": "IDEAYA Nov 3 Q3 release: 'IDEAYA plans to provide initial clinical data from its ongoing Phase 1 dose escalation trial in 2027' (IDE034) verbatim. Newer Nov 15 (IDE101) and Nov 16 (IDE849 Type C) rele"
+  },
+  "readout_ird_2027-06-30": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/10/3399299/0/en/opus-genetics-announces-financial-results-for-third-quarter-2026-and-provides-corporate-update.html",
+   "by": "red team 2026-11-17",
+   "note": "Opus Genetics Nov 10 Q3 release headline 'OPGx-BEST1 Cohort 2 Dosing Complete and Data Expected in Q1 2027' verbatim; body: topline incl. 3-month Cohort 2 and 6-month Cohort 1 BVMD data in Q1 2027. No"
+  },
+  "readout_lsta_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.sec.gov/Archives/edgar/data/320017/000114036126043471/ny20085403x1_s3.htm",
+   "by": "red team 2026-11-17",
+   "note": "Lisata Form S-3 filed Nov 12, 2026: 'We expect to report topline data from the Phase 2 clinical trial in the fourth quarter of 2027.' verbatim (MAR002 acromegaly). No newer Lisata/Marea release (last"
+  },
+  "readout_meso_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/10/29/3390883/0/en/activity-report-for-quarter-ended-september-30-2026-appendix-4c.html",
+   "by": "red team 2026-11-17",
+   "note": "Mesoblast Appendix 4C release (dateline Oct 28, 2026): 'with the trial's primary endpoint of 12 month durable pain reduction to read out next year' -> 2027. Newer Nov 15 ASX investor-day release names"
+  },
+  "readout_ocul_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/09/3398240/0/en/ocular-therapeutix-reports-third-quarter-2026-financial-results-and-business-highlights.html",
+   "by": "red team 2026-11-17",
+   "note": "Ocular Nov 9 Q3 release: SOL-R primary endpoint moved from Week 56 to Week 40; 'topline results on track for 1Q 2028 after key secondary endpoints are evaluated.' Only later OCUL release is an inducem"
+  },
+  "readout_qncx_2027-03-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.globenewswire.com/news-release/2026/11/13/3402546/0/en/irulya-therapeutics-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+   "by": "red team 2026-11-17",
+   "note": "IRulya Therapeutics Nov 13 Q3 release: 'The Phase 2 trial of LAM-001 in BOS is fully enrolled, with data anticipated in the first quarter of 2027.' verbatim. Date OK. TICKER IS STALE: Quince Therapeut"
+  },
+  "readout_srrk_2027-12-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.businesswire.com/news/home/20261110252867/en/Scholar-Rock-Reports-Third-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/",
+   "by": "red team 2026-11-17",
+   "note": "Scholar Rock Nov 10 Q3 release: 'A Phase 1 study evaluating SRK-439 in healthy volunteers is progressing well.' then the quoted sentence verbatim. Only newer SRRK release is Nov 13 inducement grants."
+  },
+  "readout_tyra_2026-08-31": {
+   "checked": "2026-11-17",
+   "verdict": "CONFIRMED",
+   "source": "https://www.prnewswire.com/news-releases/tyra-biosciences-reports-third-quarter-2026-financial-results-and-recent-highlights-302934907.html",
+   "by": "red team 2026-11-17",
+   "note": "Tyra Nov 10 Q3 release milestone list: 'LG-UTUC: Initial Phase 2 results – 2027' verbatim. No newer Tyra release beyond conference notices."
+  }
+ }
+}

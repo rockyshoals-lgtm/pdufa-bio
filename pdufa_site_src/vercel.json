@@ -3016,6 +3016,106 @@
    "source": "/drug/zopapogene-imadenovec-drba",
    "destination": "/drug/papzimeos",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/BCAB-2025-11-07",
+   "destination": "/ticker/BCAB",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IRON-2025-01-21",
+   "destination": "/ticker/IRON",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IRWD-2025-04-14",
+   "destination": "/ticker/IRWD",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/KZIA-2025-01-02",
+   "destination": "/ticker/KZIA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LEXX-2025-01-15",
+   "destination": "/ticker/LEXX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/NVS-2025-01-29",
+   "destination": "/ticker/NVS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RNAZ-2025-02-06",
+   "destination": "/ticker/RNAZ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RNAZ-2025-03-13",
+   "destination": "/ticker/RNAZ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/WVE-2025-03-26",
+   "destination": "/ticker/WVE",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/XRTX-2025-04-30",
+   "destination": "/ticker/XRTX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IBRX-2025-02-19",
+   "destination": "/ticker/IBRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INVA-2026-02-17",
+   "destination": "/fda-decision/INVA-2025-12-15",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/REGN-2025-10-17",
+   "destination": "/ticker/REGN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/OTLK-2026-03-05",
+   "destination": "/ticker/OTLK",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/OTLK-2026-04-07",
+   "destination": "/ticker/OTLK",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RGNX-2026-02-08",
+   "destination": "/fda-decision/RGNX-2026-02-09",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IRON-2026-02-15",
+   "destination": "/fda-decision/IRON-2026-02-13",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNY-2025-06-02",
+   "destination": "/fda-decision/SNY-2025-06-20",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/REGN-2025-06-02",
+   "destination": "/fda-decision/REGN-2025-06-20",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNY-2025-12-28",
+   "destination": "/fda-decision/SNY-2025-12-24",
+   "permanent": true
   }
  ],
  "headers": [

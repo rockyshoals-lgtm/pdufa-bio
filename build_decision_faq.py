@@ -192,8 +192,11 @@ def main():
             ind = __import__("drug_names").clean_indication(html.unescape(im.group(1)))
             oc_txt = ("approved the application" if outcome == "Approved"
                       else "declined to approve the application in its current form")
+            # 2026-11-18: this said "The FDA approved ... on <page date>" even where the page date is only the
+            # announcement (NVAX: announced May 16, page May 19). The FDA's day only when its record holds it.
             qa.append((f"What was {drug} under FDA review for?",
-                       f"The application covered {ind}. The FDA {oc_txt} on {pretty(date)}."))
+                       f"The application covered {ind}. The FDA {oc_txt} on {pretty(fd)}." if fd and (tk, date) not in announced
+                       else f"The application covered {ind}. The decision was announced on {pretty(date)}."))
         mm = re.search(r"<span>Decision-day move</span><b>([^<]+)</b>", doc)
         rm = re.search(r"<span>120-day run-up[^<]*</span><b>([^<]+)</b>", doc)
         if mm:

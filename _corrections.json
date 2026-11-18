@@ -126,6 +126,146 @@
    "was": "The six decision slugs retired on October 15 (Canalevia, Miplyffa x3, Papzimeos) redirected to drug pages that no longer existed, so the redirects landed on 404s.",
    "now": "They redirect to the sponsors' ticker pages (JAGX, LGND, XOMA, ZVRA, PGEN), which exist and carry the history.",
    "source": "Site data"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/BCAB-2025-11-07",
+   "was": "A decision page for BCAB dated 2025-11-07, labelled as verified from an SEC filing.",
+   "now": "BioAtla reported Phase 2 survival data for mecbotamab vedotin that day; the drug is not approved. The cited filing is a financing agreement. The page is retired and redirects to /ticker/BCAB.",
+   "source": "BioAtla release of November 7, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/IRON-2025-01-21",
+   "was": "A decision page for IRON dated 2025-01-21, labelled as verified from an SEC filing.",
+   "now": "Disc Medicine announced a Type C meeting outcome and an NDA plan. Bitopertin was not approved; it received a Complete Response Letter on February 13, 2026. The page is retired and redirects to /ticker/IRON.",
+   "source": "Disc Medicine 8-K exhibit 99.1 of January 21, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/IRWD-2025-04-14",
+   "was": "A decision page for IRWD dated 2025-04-14, labelled as verified from an SEC filing.",
+   "now": "Ironwood said the FDA wants a confirmatory Phase 3 trial before apraglutide is filed. No approval or CRL. The page is retired and redirects to /ticker/IRWD.",
+   "source": "Ironwood 8-K exhibit 99.1 of April 14, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/KZIA-2025-01-02",
+   "was": "A decision page for KZIA dated 2025-01-02, labelled as verified from an SEC filing.",
+   "now": "The cited filing is a prefunded warrant. Paxalisib is not FDA approved. The page is retired and redirects to /ticker/KZIA.",
+   "source": "Kazia SEC filing 0001193125-25-005004"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/LEXX-2025-01-15",
+   "was": "A decision page for LEXX dated 2025-01-15, labelled as verified from an SEC filing.",
+   "now": "The cited 8-K reports shareholder vote results from Lexaria's annual meeting. No FDA action. The page is retired and redirects to /ticker/LEXX.",
+   "source": "Lexaria 8-K of January 15, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/NVS-2025-01-29",
+   "was": "A decision page for NVS dated 2025-01-29, labelled as verified from an SEC filing.",
+   "now": "The page named no drug, and Novartis's full-year 2024 release lists no FDA approval or CRL near that date. The page is retired and redirects to /ticker/NVS.",
+   "source": "Novartis Q4 and full-year 2024 release, January 31, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/RNAZ-2025-02-06",
+   "was": "A decision page for RNAZ dated 2025-02-06, labelled as verified from an SEC filing.",
+   "now": "TransCode announced the adjournment of a stockholder meeting. TTX-MC138 is clinical-stage; no FDA action. The page is retired and redirects to /ticker/RNAZ.",
+   "source": "TransCode 8-K exhibit 99.1 of February 4, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/RNAZ-2025-03-13",
+   "was": "A decision page for RNAZ dated 2025-03-13, labelled as verified from an SEC filing.",
+   "now": "The cited filing is a common stock purchase warrant. No FDA action. The page is retired and redirects to /ticker/RNAZ.",
+   "source": "TransCode SEC filing 0001104659-25-027565"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/WVE-2025-03-26",
+   "was": "A decision page for WVE dated 2025-03-26, labelled as verified from an SEC filing.",
+   "now": "Wave reported Phase 2 data for WVE-N531 and said it plans to file in 2026. No approval. The page is retired and redirects to /ticker/WVE.",
+   "source": "Wave 8-K exhibit 99.1 of March 26, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/XRTX-2025-04-30",
+   "was": "A decision page for XRTX dated 2025-04-30, labelled as verified from an SEC filing.",
+   "now": "XORTX reported FDA responses to a Type B meeting request. No NDA had been filed; no approval. The page is retired and redirects to /ticker/XRTX.",
+   "source": "XORTX exhibit 99.1 of April 30, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/IBRX-2025-02-19",
+   "was": "A decision page for IBRX dated 2025-02-19, labelled as verified from an SEC filing.",
+   "now": "ANKTIVA was approved on April 22, 2024. In February 2025 the FDA authorized expanded access to another BCG source and granted an RMAT designation, which are not approvals. The page is retired and redirects to /ticker/IBRX.",
+   "source": "ImmunityBio 8-K exhibit 99.1, February 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/INVA-2026-02-17",
+   "was": "A decision page for INVA dated 2026-02-17, labelled as verified from an SEC filing.",
+   "now": "The cited release is an earnings report that recaps the December 2025 NUZOLVENCE approval, which has its own page. No FDA action near February 17, 2026. The page is retired and redirects to /fda-decision/INVA-2025-12-15.",
+   "source": "Innoviva 8-K exhibit 99.1 of February 25, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/REGN-2025-10-17",
+   "was": "A decision page for REGN dated 2025-10-17, labelled as verified from an SEC filing.",
+   "now": "Solnerstotug has no BLA and received no CRL. That day Regeneron announced a positive EU CHMP opinion for adjuvant Libtayo. The page is retired and redirects to /ticker/REGN.",
+   "source": "Regeneron release of October 17, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/OTLK-2026-03-05",
+   "was": "A decision page for OTLK dated 2026-03-05, labelled as verified from an SEC filing.",
+   "now": "Outlook reported a Type A meeting with the FDA about the existing December 30, 2025 CRL. No new FDA action. The page is retired and redirects to /ticker/OTLK.",
+   "source": "Outlook Therapeutics 8-K of March 5, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/OTLK-2026-04-07",
+   "was": "A decision page for OTLK dated 2026-04-07, labelled as verified from an SEC filing.",
+   "now": "Outlook reported filing a formal dispute resolution request about the December 30, 2025 CRL. No new FDA action. The page is retired and redirects to /ticker/OTLK.",
+   "source": "Outlook Therapeutics 8-K of April 7, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/RGNX-2026-02-08",
+   "was": "A decision page for RGNX dated 2026-02-08, labelled as verified from an SEC filing.",
+   "now": "A second page for the RGX-121 Complete Response Letter, dated February 7, 2026 and announced February 9. Nothing happened on February 8. The page is retired and redirects to /fda-decision/RGNX-2026-02-09.",
+   "source": "FDA CRL file for BLA 125840, dated February 7, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/IRON-2026-02-15",
+   "was": "A decision page for IRON dated 2026-02-15, labelled as verified from an SEC filing.",
+   "now": "A second page for the bitopertin Complete Response Letter of February 13, 2026. Nothing happened on February 15. The page is retired and redirects to /fda-decision/IRON-2026-02-13.",
+   "source": "FDA CRL file for NDA 220707, dated February 13, 2026"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/SNY-2025-06-02",
+   "was": "A Sanofi FDA decision page dated 2025-06-02 for the Dupixent bullous pemphigoid approval, labelled as verified from an SEC filing.",
+   "now": "The FDA approved Dupixent for bullous pemphigoid on June 18, 2025 and Sanofi announced it on June 20. Nothing happened on June 2, and the SEC filing the page cited does not mention the approval. The decision now has its page at the June 20 announcement. The page is retired and redirects to /fda-decision/SNY-2025-06-20.",
+   "source": "FDA approval letter for BLA 761055 S-070, June 18, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/REGN-2025-06-02",
+   "was": "A Regeneron FDA decision page dated 2025-06-02 for the Dupixent bullous pemphigoid approval, marked as inferred from the share price.",
+   "now": "The FDA approved Dupixent for bullous pemphigoid on June 18, 2025 and Regeneron and Sanofi announced it on June 20. Nothing happened on June 2. The decision now has its page at the June 20 announcement. The page is retired and redirects to /fda-decision/REGN-2025-06-20.",
+   "source": "FDA approval letter for BLA 761055 S-070, June 18, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/SNY-2025-12-28",
+   "was": "A Sanofi FDA decision page dated 2025-12-28 for the tolebrutinib Complete Response Letter, labelled as verified from an SEC filing.",
+   "now": "The FDA's Complete Response Letter for tolebrutinib is dated December 23, 2025 and Sanofi announced it on December 24. December 28 was the review's target date, not the day of the letter. The decision now has its page at the December 24 announcement. The page is retired and redirects to /fda-decision/SNY-2025-12-24.",
+   "source": "FDA CRL file for NDA 219624, dated December 23, 2025"
   }
  ],
  "legacy": [

@@ -58,7 +58,7 @@ def main():
         m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug)
         if not (m and ent.get("date") and (m.group(1), m.group(2)) not in have):
             continue
-        rows.append({"t": m.group(1), "dcd": m.group(2), "oc": "Approved",
+        rows.append({"t": m.group(1), "dcd": m.group(2), "oc": ent.get("oc") or "Approved",
                      "_d": {"fda_action_source_url": ent.get("source_url"), "fda_action_date": ent["date"],
                             "fda_action_record": ent.get("record")}})
     n = skipped = 0

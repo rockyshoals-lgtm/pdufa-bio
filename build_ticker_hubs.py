@@ -30,9 +30,27 @@ import os, re, json, html, argparse, datetime as dt, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, 'pdufa_site_src')
 TODAY = dt.date.today().isoformat()
+try:
+    from site_dates import eastern_today as _et
+    _ET_TODAY = _et().isoformat()
+except Exception:
+    _ET_TODAY = (dt.datetime.utcnow() - dt.timedelta(hours=5)).date().isoformat()
+_PAST_LABEL = {'no_topline': 'Window passed, no topline announced', 'company_stopped': 'Stopped by company',
+               'sponsor_release': 'Results released', 'results_posted_registry': 'Results posted to registry'}
+
+
+def _window_end(d, precision):
+    """Last day of the window a readout row names. Month rows are keyed mid-month; quarter, half
+    and year rows are already keyed on the window's last day."""
+    d = str(d or '')
+    if precision == 'month' and len(d) >= 7:
+        y, m = int(d[:4]), int(d[5:7])
+        nxt = dt.date(y + (m == 12), m % 12 + 1, 1)
+        return (nxt - dt.timedelta(days=1)).isoformat()
+    return d
 
 # ---- site chrome, lifted verbatim from an existing /pdufa page so hubs are visually identical --
-HEAD_CSS = ("""<style>*{box-sizing:border-box}body{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}a{color:#6fb6ff;text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:820px;margin:0 auto;padding:22px 18px 60px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px;flex-wrap:wrap;row-gap:6px}.brand{font-size:19px;font-weight:800}.brand b{color:#e3ba5e}.nav{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:flex-end}.nav a{color:#a7bcd9;font-size:13px;margin-left:14px}.nav a:first-child{margin-left:0}.bc{font-size:12px;color:#94a9c9;margin:16px 0 4px}.bc a{color:#94a9c9}h1{font-size:27px;line-height:1.18;letter-spacing:-.4px;margin:6px 0 4px}h1 .g{color:#e3ba5e}h2{font-size:18px;margin:26px 0 8px;color:#e3ba5e}.sub{color:#a7bcd9;font-size:15px;margin:6px 0 16px}.card{background:#0c1d38;border:1px solid #1a3358;border-radius:12px;padding:14px 16px;margin:14px 0}.kv{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:7px 0;border-bottom:1px solid #112b48}.kv:last-child{border:0}.kv span{color:#a7bcd9}.kv b{color:#f2f6fc;text-align:right}.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}.app{background:#0e3320;color:#7ee2a0;border:1px solid #1f6e42}.crl{background:#3a1010;color:#ff8a8a;border:1px solid #6e2020}.chip{display:inline-block;font-size:12px;color:#a7bcd9;border:1px solid #2a496f;border-radius:20px;padding:4px 11px;margin:3px 6px 3px 0}.cta{display:block;background:linear-gradient(135deg,#13315c,#0c1d38);border:1px solid #e3ba5e;border-radius:12px;padding:15px 16px;margin:20px 0;color:#f2f6fc}.cta b{color:#e3ba5e}.note{font-size:12px;color:#94a9c9}.row{display:block;background:#0c1d38;border:1px solid #1a3358;border-radius:10px;padding:11px 13px;color:#f2f6fc;margin:8px 0}.row:hover{border-color:#2a496f;text-decoration:none}.row .t{font-weight:800}.row .d{font-size:12.5px;color:#a7bcd9}footer{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}footer b{color:#a7bcd9}</style>"""
+HEAD_CSS = ("""<style>*{box-sizing:border-box}body{margin:0;background:#02060d;color:#f2f6fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}a{color:#6fb6ff;text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:820px;margin:0 auto;padding:22px 18px 60px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a3358;padding-bottom:12px;flex-wrap:wrap;row-gap:6px}.brand{font-size:19px;font-weight:800}.brand b{color:#e3ba5e}.nav{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:flex-end}.nav a{color:#a7bcd9;font-size:13px;margin-left:14px}.nav a:first-child{margin-left:0}.bc{font-size:12px;color:#94a9c9;margin:16px 0 4px}.bc a{color:#94a9c9}h1{font-size:27px;line-height:1.18;letter-spacing:-.4px;margin:6px 0 4px}h1 .g{color:#e3ba5e}h2{font-size:18px;margin:26px 0 8px;color:#e3ba5e}.sub{color:#a7bcd9;font-size:15px;margin:6px 0 16px}.card{background:#0c1d38;border:1px solid #1a3358;border-radius:12px;padding:14px 16px;margin:14px 0}.kv{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:7px 0;border-bottom:1px solid #112b48}.kv:last-child{border:0}.kv span{color:#a7bcd9}.kv b{color:#f2f6fc;text-align:right}.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}.app{background:#0e3320;color:#7ee2a0;border:1px solid #1f6e42}.crl{background:#3a1010;color:#ff8a8a;border:1px solid #6e2020}.past{background:#16233a;color:#a7bcd9;border:1px solid #2a496f}.chip{display:inline-block;font-size:12px;color:#a7bcd9;border:1px solid #2a496f;border-radius:20px;padding:4px 11px;margin:3px 6px 3px 0}.cta{display:block;background:linear-gradient(135deg,#13315c,#0c1d38);border:1px solid #e3ba5e;border-radius:12px;padding:15px 16px;margin:20px 0;color:#f2f6fc}.cta b{color:#e3ba5e}.note{font-size:12px;color:#94a9c9}.row{display:block;background:#0c1d38;border:1px solid #1a3358;border-radius:10px;padding:11px 13px;color:#f2f6fc;margin:8px 0}.row:hover{border-color:#2a496f;text-decoration:none}.row .t{font-weight:800}.row .d{font-size:12.5px;color:#a7bcd9}footer{border-top:1px solid #1a3358;margin-top:34px;padding-top:16px;font-size:11.5px;color:#94a9c9;line-height:1.6}footer b{color:#a7bcd9}</style>"""
     """<link rel="preload" href="/fonts/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/IBMPlexMono-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fonts/fonts.css"><style id="typesys">h1,h2,h3,.brand{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif !important;letter-spacing:-.5px}body{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}.tk,.dt,.dd,.row .t,.count{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.2px}</style><link rel="icon" type="image/svg+xml" href="/favicon.svg">""")
 
 NAV = ('<div class="top"><a class="brand" href="/">pdufa<b>.bio</b></a>'
@@ -126,7 +144,8 @@ def load_data():
                                       outcome=(r.get('_d') or {}).get('readout_outcome') or r.get('oc'), url=r.get('url'),
                                       precision=r.get('dp') or 'day',
                                       label=(r.get('_d') or {}).get('guided_label'),
-                                      status=r.get('st')))
+                                      status=r.get('st'),
+                                      resolution=((r.get('_d') or {}).get('resolution') or {}).get('state')))
             nm = r.get('company')
             if nm and str(nm).strip() not in ('', tkr):
                 votes[tkr][str(nm).strip()] += 1
@@ -283,6 +302,10 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
             badge = (f'<span class="badge app">✓ {esc(oc)}</span>' if oc.lower().startswith('pos')
                      else (f'<span class="badge crl">✕ {esc(oc)}</span>'
                            if oc.lower().startswith('neg') else ''))
+            if not badge and r.get('status') != 'Reported' and _window_end(r['date'], r.get('precision')) < _ET_TODAY:
+                # red team 2026-11-17: SRPT's Sep 2026 registry window was listed with no status, two
+                # months after it closed, reading like a catalyst still to come.
+                badge = '<span class="badge past">' + _PAST_LABEL.get(r.get('resolution'), 'Date passed, no result yet') + '</span>'
             when = (pretty(r['date']) if r.get('precision') == 'day' else esc(r['label']) if (r.get('precision') == 'year' and r.get('label')) else r['date'][:4] if r.get('precision') == 'year' else r['date'][:7])  # 2026-11-17: a year-precision window is not its December
             href = r.get('url') or '/readouts'
             ext = ' rel="nofollow"' if str(href).startswith('http') else ''

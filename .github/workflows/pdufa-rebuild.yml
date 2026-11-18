@@ -268,7 +268,7 @@ jobs:
           python build_exclusivity_cliff.py
 
       - name: Sync the v1 API to the published pages (kills API/page drift)
-        run: python sync_decisions_listing.py && python sync_api_from_pages.py
+        run: python sync_decisions_listing.py && python fix_decisions_order.py && python sync_api_from_pages.py
 
       # Audit 2026-09-26 items 3-5: every decided approval's ACTION date from the FDA's own record
       # (Drugs@FDA submission status date + approval letter; CBER letters/notices hand-verified in
@@ -531,6 +531,12 @@ jobs:
           python build_sls_hub.py
           python build_sls_deepdive.py
           python build_sls_ownership.py
+
+      # Red team 2026-11-17: SELLAS announced the 80th event (Oct 28) and REGAL topline (Nov 17) by press
+      # release while the gate above kept the pages frozen on "Not yet". Announcements recorded in
+      # _sls_verified_through.json are applied to the pages whether or not the rebuild step ran.
+      - name: "SLS: apply recorded REGAL announcements to the tracker pages"
+        run: python sls_resolution.py
 
       - name: "SLS: flag for manual review (material filing found)"
         if: steps.sls.outcome != 'success'
