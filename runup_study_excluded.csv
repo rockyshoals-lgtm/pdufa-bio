@@ -199,6 +199,7 @@ INVA_20260217,INVA,2026-02-17,2026-02-13,,APPROVAL,source re-checked: the cited 
 JNJ_20260217,JNJ,2026-02-17,2026-02-13,,APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
 ABBV_20260220,ABBV,2026-02-20,2026-02-19,Tavapadon (TEMPO),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
 AZN_20260220,AZN,2026-02-20,2026-02-19,Truqap - (CAPItello-281),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
+MRK_20260220,MRK,2026-02-20,2026-02-19,KEYTRUDA + chemo ± bevacizumab (ovarian),APPROVAL,"source re-checked: same FDA action as MRK-2026-02-11 (Keytruda ovarian, BLA125514, action date 2026-02-10); this page is dated 10 days after the action, so its run-up runs across the decision",
 VNDA_20260221,VNDA,2026-02-21,2026-02-20,Bysanti (milsaperidone),APPROVAL,"source re-checked: duplicate page of the same FDA action as VNDA-2026-02-20 (Bysanti approval announced Feb 20, 2026; Feb 21 is a Saturday)",
 AMPH_20260224,AMPH,2026-02-24,2026-02-23,,APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
 REGN_20260224,REGN,2026-02-24,2026-02-23,Garetosmab - (OPTIMA),APPROVAL,"decision page says outcome unverified (price-inferred, no primary source)",
