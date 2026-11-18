@@ -2,6 +2,8 @@
  "_comment": "Exceptions for tests/test_open_goal_not_in_fda_record.py: an FDA record that matched an open PDUFA row's drug by name but is a DIFFERENT product. One entry per (row id, application). Each needs a reason a reader can check against the Orange Book line.",
  "acks": [
   {"id": "pdufa_gild_2027-02-02", "appl_no": "221443", "checked": "2026-11-18",
-   "why": "NDA 221443 is BIXLENVO + SUNLENCA starter pack (bictegravir/lenacapavir co-package, Orange Book approval Aug 27, 2026), not the once-weekly oral Yeztugo application this row tracks."}
+   "why": "NDA 221443 is BIXLENVO + SUNLENCA starter pack (bictegravir/lenacapavir co-package, Orange Book approval Aug 27, 2026), not the once-weekly oral Yeztugo application this row tracks."},
+  {"id": "pdufa_rhhby_2026-11-30", "appl_no": "novel:Wilserdly", "checked": "2026-11-18",
+   "why": "Wilserdly (giredestrant) was approved on November 16, 2026 with everolimus for ESR1-mutated advanced or metastatic breast cancer (evERA; FDA notice). This row is the separate adjuvant early breast cancer NDA (lidERA) that Genentech's release of June 1, 2026 says the FDA accepted with a November 30, 2026 decision date; the FDA notice names no adjuvant use."}
  ]
 }
