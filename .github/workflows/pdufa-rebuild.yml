@@ -960,12 +960,15 @@ jobs:
       # 2026-11-18 (red team): tests/test_date_checks_current.py blocks a date due within 14 days that was not
       # re-read in the last 30. This keeps that true without a person: every open PDUFA goal and guided readout
       # due in the next 30 days is re-read (its own source, then the company's SEC filings since) and a
-      # CONFIRMED ledger entry is written only when they agree. A moved date, a possible FDA action, an
-      # unreadable source with nothing newer, or a non-SEC filer is listed for a human (review issue below) and
-      # left to the guard. Advisory: a network failure confirms nothing and never blocks the deploy by itself.
+      # CONFIRMED ledger entry is written only when the source still carries the date and NO newer filing names
+      # the drug, its code or its trial. Anything newer is listed for a human (review issue below), as are
+      # unreadable sources and non-SEC filers near their deadline. Advisory: a network failure confirms nothing
+      # and never blocks the deploy by itself; a crash still prints the review-issue marker.
       - name: "Re-check open dates due in the next 30 days against their sources (ledger for the date guard)"
         continue-on-error: true
-        run: python recheck_upcoming_dates.py > recheck.txt 2>&1 || true; cat recheck.txt
+        run: |
+          python recheck_upcoming_dates.py > recheck.txt 2>&1 || echo "*** DATE RECHECK NEEDS A HUMAN - the re-check exited with an error (above) ***" >> recheck.txt
+          cat recheck.txt
 
       - name: CI guards — BLOCK the run (no commit, no deploy) if any hard-fails
         env:

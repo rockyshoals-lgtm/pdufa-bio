@@ -42,14 +42,24 @@ FMP_PR = 'https://financialmodelingprep.com/stable/news/press-releases'
 PR_CAP = 3000
 
 # The FDA acted. Company PRs are formulaic about this.
+# 2026-11-18 (second red team): the headline forms were too narrow and missed "Announces U.S. FDA
+# Approval of", "Receives U.S. FDA Approval", "FDA Grants Accelerated Approval", "Approved by FDA",
+# "U.S. Food and Drug Administration Approves", "Secures FDA Approval". Any headline with FDA (or its
+# full name) and an approval word in either order now counts.
 APPROVED = re.compile(
-    r'\bFDA\s+Approves\b|\bU\.?S\.?\s+FDA\s+Approves\b|Announces?\s+(?:the\s+)?FDA\s+Approval|'
-    r'Receives?\s+FDA\s+Approval|\bApproved\s+by\s+the\s+(?:U\.?S\.?\s+)?FDA\b|'
+    r'(?:\bFDA\b|Food\s+and\s+Drug\s+Administration)[^.;:|]{0,60}?\bapprov|'
+    r'\bapprov\w*[^.;:|]{0,40}?\b(?:FDA|Food\s+and\s+Drug\s+Administration)\b|'
     r'Announces?\s+(?:U\.?S\.?\s+)?Approval\s+of', re.I)
 CRL = re.compile(
     r'Complete\s+Response\s+Letter|\bCRL\b|Receives?\s+(?:a\s+)?Complete\s+Response', re.I)
-# forward-looking noise: "if approved", "seeking approval", "submits for approval"
-FUTURE = re.compile(r'\bif\s+approved\b|\bseek\w*\s+approval|submit\w*|\bfiles?\b|acceptance\s+of', re.I)
+# a neutral headline ("Provides Regulatory Update on X") is read in its body for the action
+NEUTRAL = re.compile(r'regulatory\s+update|update\s+on\s+(?:the\s+)?(?:FDA|regulatory|BLA|NDA|sNDA|sBLA)', re.I)
+BODY_ACT = re.compile(r'(?:FDA|Food and Drug Administration)\b[^.]{0,120}?\b(?:approved|issued a complete response|'
+                      r'granted (?:\w+ )?approval)|\bcomplete response letter\b|\bCRL\b', re.I)
+# forward-looking noise: "if approved", "seeking approval", "submits for approval", "PDUFA date set"
+FUTURE = re.compile(r'\bif\s+approved\b|\bseek\w*\s+approval|\bsubmit\w*|\bfiles?\b|\bfiling\b|'
+                    r'\bacceptance\s+of|\baccepts?\b|\bpotential\b|\bexpect|\banticipat|\bpath\s+to\b|'
+                    r'\bpriority\s+review\b|\bPDUFA\b|\bsupports?\s+approval|\btoward', re.I)
 
 def norm(s):
     s = (s or '').lower()
@@ -62,7 +72,8 @@ def norm(s):
             'treatment','naive','patients','children','adults','pediatric','lower','doses',
             'weekly','daily','sndas','supplemental','formulation','first','second','resubmission',
             'relapsed','refractory','disease','syndrome','cancer','tumor','tumors','chronic',
-            'advanced','full','approval','label','expansion','season','study','trial','phase'}
+            'advanced','full','approval','label','expansion','season','study','trial','phase',
+            'acting','cells','engager'}
     return [w for w in s.split() if w not in stop and len(w) > 4]
 
 
@@ -113,10 +124,13 @@ def match(c, releases, src_date=None, acks=()):
     if not toks:
         return None
     for title, blob, pub, url in releases:
-        if FUTURE.search(title):
-            continue
-        act = 'Approved' if APPROVED.search(title) else ('CRL' if CRL.search(title) else None)
-        if not act:
+        if CRL.search(title):
+            act = 'CRL'
+        elif APPROVED.search(title) and not FUTURE.search(title):
+            act = 'Approved'
+        elif NEUTRAL.search(title) and BODY_ACT.search(blob):
+            act = 'Regulatory update (body records an FDA action)'
+        else:
             continue
         # the PR must actually be about THIS drug
         if not any(re.search(r'\b' + re.escape(t) + r'\b', blob, re.I) for t in toks):
@@ -160,6 +174,28 @@ def self_test():
         sd = row_source_dates(f.name)
     finally:
         os.unlink(f.name)
+    sav = {'ticker': 'SVRA', 'date': '2026-11-22', 'drug': 'MOLBREEVI (molgramostim inhalation) - (IMPALA-2)'}
+    cor = {'ticker': 'CORT', 'date': '2026-12-17', 'drug': 'Relacorilant - (GRACE resubmission)'}
+    cap = {'ticker': 'CAPR', 'date': '2026-11-22', 'drug': 'Deramiocel (CAP-1002) - (HOPE-3)'}
+    hits = [
+        (sav, 'Savara Announces U.S. FDA Approval of MOLBREEVI for aPAP', 'MOLBREEVI molgramostim'),
+        (sav, 'Savara Receives U.S. FDA Approval for MOLBREEVI', 'MOLBREEVI'),
+        (sav, 'FDA Grants Accelerated Approval to Savara\'s MOLBREEVI', 'MOLBREEVI'),
+        (sav, 'MOLBREEVI Approved by FDA', 'MOLBREEVI'),
+        (sav, 'U.S. Food and Drug Administration Approves MOLBREEVI', 'MOLBREEVI'),
+        (sav, 'Savara Secures FDA Approval for MOLBREEVI', 'MOLBREEVI'),
+        (cor, 'Corcept Receives Complete Response Letter for Resubmitted Relacorilant NDA', 'relacorilant'),
+        (cap, 'Capricor Provides Regulatory Update on Deramiocel BLA',
+         'Capricor said the FDA issued a complete response letter for the deramiocel BLA.'),
+    ]
+    for c, t, b in hits:
+        cases.append((match(c, [(t, t + ' . ' + b, '2026-11-20', 'https://x/' + c['ticker'])]) is not None,
+                      'a real decision is caught: ' + t))
+    for c, t in [(sav, 'Savara Announces FDA Acceptance of MOLBREEVI BLA with Priority Review'),
+                 (sav, 'Savara Expects FDA Approval Decision for MOLBREEVI by PDUFA Date'),
+                 (sav, 'Savara Provides Regulatory Update on MOLBREEVI')]:
+        cases.append((match(c, [(t, t + ' . MOLBREEVI remains under review.', '2026-11-20', 'https://x/s')]) is None,
+                      'forward-looking or neutral news is not a decision: ' + t))
     cases += [
         (sd.get(('RHHBY', '2026-11-30')) == '2026-06-01', 'two rows on one day keep the earlier source'),
         (('ABC', '2026-12-01') not in sd, 'an unsourced row on the same day disables the skip'),
