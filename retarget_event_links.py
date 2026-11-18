@@ -4,21 +4,24 @@
 Design red team 2026-11-18 (change 4, "One canonical page per event"). Capricor's Nov 22 decision had three pages,
 and the site's surfaces split between them: the home cards and the calendar linked /pdufa/CAPR-deramiocel, the
 home list, the screener, the condition pages, /fda-decisions-today and /pdufa-date-changes linked /pdufa/CAPR.
-build_pdufa_ticker_index.py now keeps one page per event (rules 4 to 6); this pass rewrites the links:
+build_pdufa_ticker_index.py now keeps one page per event (rules 4 to 7), and the builders of those surfaces link the
+row's own page; this pass rewrites what is left:
 
   1. A link to a /pdufa/ URL that vercel.json redirects (an old drug slug, a retired bare /pdufa/{T}) points at
      where the redirect lands, followed to the end of a chain, when that is a page of this site. A reader gets
      there in one hop and a crawler sees the page it should index.
-  2. A link to a bare /pdufa/{T} whose ticker has exactly one upcoming PDUFA, when that event has its own page and
-     no dataset row links /pdufa/{T} itself, points at the event's own page. Before this change /pdufa/{T} WAS
-     that event's page, so every such link meant the event; now /pdufa/{T} is the ticker's index (it keeps a
-     past decision on record), and the event is one click further in.
-  3. A link to a known duplicate event page (canonicalise_duplicate_event_pages.py DUPES) points at its primary;
+  2. A link to a known duplicate event page (canonicalise_duplicate_event_pages.py DUPES) points at its primary;
      that step rewrites links once, and a pass after it (inject_site_links.py) could link the duplicate again.
 
-Only href attributes and absolute https://www.pdufa.bio/pdufa/... strings (JSON-LD) are rewritten, never a page's
-own URL (its canonical and og:url), and never inside the page the link names. Runs after inject_site_links.py and
-before build_sitemap.py. Idempotent; tests/test_one_event_one_page.py fails on any link this pass would change.
+A link to a bare /pdufa/{T} that is the ticker's index is left alone. An earlier draft sent it to the ticker's one
+upcoming event, and the red team found that readout rows, drug pages and ticker hubs use /pdufa/{T} to mean "the
+ticker's FDA page": a Zanidatamab readout landed on Jazz's cannabidiol page, and the indexes lost every inbound
+link. Surfaces that mean the event link the event's own page in their builders instead.
+
+Only href attributes outside scripts and absolute https://www.pdufa.bio/pdufa/... strings inside JSON-LD are
+rewritten, never a page's own URL (its canonical, og:url and twitter:url), and never inside the page the link
+names. Runs after inject_site_links.py and before build_sitemap.py. Idempotent; tests/test_one_event_one_page.py
+fails on any link this pass would change.
 
     python retarget_event_links.py [--dry-run]
 """
@@ -58,16 +61,6 @@ def exists(u):
     return os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html"))
 
 
-class Targets(dict):
-    """The map, plus `soft`: the rule-2 sources, which are pages of their own (a ticker index) and not redirects."""
-    soft = frozenset()
-
-
-# The HTML sitemap lists every page by its own URL, the ticker indexes included; rule 2 does not apply there, or the
-# indexes would lose their one link (tests/test_reachability.py).
-SOFT_EXEMPT = {"sitemap/index.html"}
-
-
 def targets(today=None):
     """{"/pdufa/X": "/the/page/it/should/link"} for every /pdufa/ URL a link must not stop at."""
     today = today or today_et()
@@ -85,18 +78,7 @@ def targets(today=None):
         d = d.split("#")[0].split("?")[0].rstrip("/")
         if d.startswith("/") and d != src and exists(d):
             out[src] = d
-    srcd = io.open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
-    rows, _ = json.JSONDecoder().raw_decode(srcd[srcd.find("["):])
-    up, linked, soft = {}, set(), set()
-    for r in rows:
-        if r.get("type") != "PDUFA" or not r.get("t"):
-            continue
-        t = str(r["t"]).upper()
-        u = str(r.get("url") or "").split("#")[0].split("?")[0].rstrip("/")
-        linked.add((t, u))
-        if str(r.get("st", "")).lower() not in ("decided", "withdrawn") and str(r.get("d", "")) >= today:
-            up.setdefault(t, []).append(u)
-    # 3. a known duplicate event page (canonicalise_duplicate_event_pages.py) is linked by its primary, even from a
+    # 2. a known duplicate event page (canonicalise_duplicate_event_pages.py) is linked by its primary, even from a
     #    pass that writes links after that step (inject_site_links.py)
     try:
         sys.path.insert(0, HERE)
@@ -106,29 +88,18 @@ def targets(today=None):
                 out[f"/pdufa/{dup}"] = f"/pdufa/{prim}"
     except ImportError:
         pass
-    for t, urls in up.items():
-        bare = f"/pdufa/{t}"
-        if bare in out or len(urls) != 1 or (t, bare) in linked:
-            continue
-        u = urls[0]
-        if re.match(rf"^/pdufa/{SLUG}$", u) and u != bare and exists(u):
-            out[bare] = u
-            soft.add(bare)
-    res = Targets(out)
-    res.soft = frozenset(s for s in soft if s not in red)
-    return res
+    return out
 
 
 def apply(doc, rel, tg):
     """The page with its links retargeted. rel is its path under the site ("pdufa/CAPR/index.html")."""
     own = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
-    if rel in SOFT_EXEMPT and getattr(tg, "soft", None):
-        tg = {k: v for k, v in tg.items() if k not in tg.soft}
     if not tg:
         return doc
     alt = "|".join(re.escape(s[len("/pdufa/"):]) for s in sorted(tg, key=len, reverse=True))
-    href = re.compile(rf'(href=")(?:{re.escape(BASE)})?/pdufa/({alt})(?=["/#?])/?')
-    absu = re.compile(rf'(")({re.escape(BASE)})/pdufa/({alt})(?=["/#?])/?')
+    # a trailing slash is consumed only where it ends the URL: /pdufa/CAPR/og.png is a file, not a link to the page
+    href = re.compile(rf'(href=")(?:{re.escape(BASE)})?/pdufa/({alt})(?=/?["#?])/?')
+    absu = re.compile(rf'(")({re.escape(BASE)})/pdufa/({alt})(?=/?["#?])/?')
 
     def h(m):
         src = "/pdufa/" + m.group(2)
@@ -138,15 +109,22 @@ def apply(doc, rel, tg):
         src = "/pdufa/" + m.group(3)
         return m.group(0) if src == own else m.group(1) + m.group(2) + tg[src]
 
-    # a page's own URL stays its own: the canonical link and og:url are left as they are
-    keep = re.compile(r'<link rel="canonical"[^>]*>|<meta property="og:url"[^>]*>')
+    # a page's own URL stays its own (canonical, og:url, twitter:url); a script is left as it is, except JSON-LD,
+    # whose absolute URLs are links like any other
+    keep = re.compile(r'<link rel="canonical"[^>]*>|<meta (?:property|name)="(?:og|twitter):url"[^>]*>'
+                      r'|<script\b(?![^>]*application/ld\+json)[^>]*>.*?</script>', re.S)
+    ld = re.compile(r'<script\b[^>]*application/ld\+json[^>]*>.*?</script>', re.S)
+
+    def fix(seg):
+        seg = href.sub(h, seg)
+        return ld.sub(lambda m: absu.sub(a, m.group(0)), seg)
+
     out, pos = [], 0
     for k in keep.finditer(doc):
-        seg = doc[pos:k.start()]
-        out.append(absu.sub(a, href.sub(h, seg)))
+        out.append(fix(doc[pos:k.start()]))
         out.append(k.group(0))
         pos = k.end()
-    out.append(absu.sub(a, href.sub(h, doc[pos:])))
+    out.append(fix(doc[pos:]))
     return "".join(out)
 
 

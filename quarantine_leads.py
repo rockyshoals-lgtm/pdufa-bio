@@ -28,6 +28,7 @@ Never publishes an outcome by itself. Facts only; not investment advice. Times a
 """
 import argparse
 import datetime as dt
+import glob
 import io
 import json
 import os
@@ -336,6 +337,27 @@ def cmd_apply(a):
     # had recorded the freshly built ticker/IBRX page as changed on 10-15, then this step put back the committed
     # page, whose schema says 10-14. A held row was meant to freeze one row and let the site deploy; it froze
     # every deploy. Restore the page's _sitemap_lastmod.json entry and its sitemap <lastmod> with it.
+    # 2026-11-18 (design change 4): a restored /ticker/{T} hub or event page comes from the last commit, which may
+    # predate the dossier's move to the event page (build_retail_pages.py decision 4); both would then disagree with
+    # the profile, and tests/test_one_event_one_page.py would block the deploy over a page the hold only froze. The
+    # dossier block is marker-bounded and comes from retail_profiles/, not from the held row, so it is placed again.
+    moved = set()
+    for rel in restored:
+        m = re.match(r"^ticker/([A-Z][A-Z0-9.]{0,6})/index\.html$", rel)
+        if m:
+            moved.add(m.group(1))
+        for pf in glob.glob(os.path.join(HERE, "retail_profiles", "*.json")):
+            try:
+                ev = str(json.load(io.open(pf, encoding="utf-8")).get("event_page") or "").strip("/")
+            except Exception:  # noqa: BLE001
+                continue
+            if ev and rel == ev + "/index.html":
+                moved.add(os.path.splitext(os.path.basename(pf))[0])
+    for t in sorted(moved):
+        if os.path.exists(os.path.join(HERE, "retail_profiles", f"{t}.json")) and not a.dry_run:
+            r = subprocess.run([sys.executable, "build_retail_pages.py", "--ticker", t], cwd=HERE,
+                               capture_output=True, text=True)
+            print(f"  {t}: dossier placed again on the restored pages (build_retail_pages.py exit {r.returncode})")
     pages = [r for r in restored if r.endswith(".html")]
     if pages and not a.dry_run:
         stf = os.path.join(HERE, "_sitemap_lastmod.json")

@@ -41,10 +41,11 @@ page and the screener linked different ones. Ten tickers had the same split. So,
      removed; rule 1 removes that redirect again the day a second event appears, and the index takes its place.
      Otherwise it is the index, and each upcoming row links the event's own page (it linked /calendar).
   6. An event page that loses its bare twin gets the twin's price chart markers, so refresh_event_page_currency.py
-     (which runs after this step) draws the 120-day chart there.
+     (which runs after this step) draws the 120-day chart there, and the twin's ClinicalTrials.gov link.
   7. A decided event's bare twin that canonicalise_duplicate_event_pages.py DUPES names (INCY, INO, SMMT, IRD) is a
-     301 to its drug-slug page too, while the ticker has no upcoming goal date.
-  retarget_event_links.py then points every internal link at the page the redirect lands on, and
+     301 to its drug-slug page too, while the ticker has no upcoming goal date (never once it is the ticker's index).
+  8. Every index is linked from the ticker's hub and from each of its event pages (link_indexes()).
+  retarget_event_links.py then points every link at a redirected URL at the page it lands on, and
   build_retail_pages.py puts a ticker's dossier on its event page (the hub keeps a pointer).
   tests/test_one_event_one_page.py holds all of it.
 
@@ -62,7 +63,14 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 VJ = os.path.join(SITE, "vercel.json")
 BASE = "https://www.pdufa.bio"
-TODAY = dt.datetime.now(dt.timezone.utc).date().isoformat()
+# The market's day (RULE 1): the 21:00 UTC run can start after midnight UTC while it is still the evening before in
+# New York, and a UTC date would retire a ticker's bare page (or count down) a day early. retarget_event_links.py and
+# tests/test_one_event_one_page.py use the same Eastern date.
+try:
+    from zoneinfo import ZoneInfo
+    TODAY = dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+except Exception:  # noqa: BLE001
+    TODAY = dt.date.today().isoformat()
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
@@ -145,6 +153,38 @@ def carry_chart(twin, dest, t):
     return True
 
 
+REGISTRY = re.compile(r'<a href="(https://clinicaltrials\.gov/study/(NCT\d{8}))"[^>]*>NCT\d{8}</a>')
+KV = re.compile(r'<div class="kv"><span>[^<]*</span><b>.*?</b></div>', re.S)
+
+
+def carry_registry(twin, dest):
+    """Rule 6 too: the twin's Key facts named the event's ClinicalTrials.gov record, which the drug-slug page does not
+    (the red team found eight NCT links that the change would otherwise have dropped). The link is carried into the
+    event page's Key facts; the twin's status words beside it ("active", designations) are not, because they were
+    true on the day that page was built. Idempotent."""
+    m = re.search(r'<span>ClinicalTrials\.gov</span><b>(.*?)</b>', twin, re.S)
+    reg = REGISTRY.search(m.group(1)) if m else None
+    if not reg:
+        return False
+    p = os.path.join(SITE, *dest.strip("/").split("/"), "index.html")
+    doc = open(p, encoding="utf-8", errors="replace").read()
+    if reg.group(2) in doc:
+        return False
+    at = doc.find('<h2>Key facts</h2><div class="card">')
+    if at < 0:
+        return False
+    pos = at + len('<h2>Key facts</h2><div class="card">')
+    while True:
+        k = KV.match(doc, pos)
+        if not k:
+            break
+        pos = k.end()
+    row = (f'<div class="kv"><span>ClinicalTrials.gov</span><b><a href="{reg.group(1)}" rel="nofollow noopener" '
+           f'target="_blank">{reg.group(2)}</a></b></div>')
+    open(p, "w", encoding="utf-8").write(doc[:pos] + row + doc[pos:])
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
@@ -164,6 +204,10 @@ def main():
                   else "CRL" if re.search(r"\bcrl\b|complete response", txt, re.I) else "")
             body = re.split(r"(?:Approved|CRL|Complete Response Letter)\s*:?\s*", txt, maxsplit=1)
             drug = re.sub(r"\s+", " ", body[1]).strip(" :") if len(body) > 1 else ""
+            # /decisions puts the row's evidence tier where it has no drug name ("source-verified", "price-only",
+            # "primary-sourced"); that is no drug, and an index row named "source-verified" says something false
+            if drug.lower() in ("source-verified", "price-only", "primary-sourced"):
+                drug = ""
             arch.setdefault(m.group(1), []).append((m.group(2), oc, drug))
 
     up_by, all_by = {}, {}
@@ -188,13 +232,20 @@ def main():
     #    two pages were both kept: /pdufa/INCY still counted down to a goal date the drug-slug page records as
     #    decided) is retired the same way while the ticker has no upcoming goal; rule 1 drops the redirect again
     #    the day it has one, and the bare URL becomes the ticker's index
+    #    A bare page that is already the ticker's index is never retired this way: once the ticker has had another
+    #    goal date it holds that decision too, and a redirect to the old twin would hide it.
     try:
-        from canonicalise_duplicate_event_pages import DUPES
+        from canonicalise_duplicate_event_pages import DUPES, is_ticker_index
     except ImportError:
-        DUPES = {}
+        DUPES, is_ticker_index = {}, (lambda slug, doc: True)
+
+    def _bare_doc(t):
+        q = os.path.join(SITE, "pdufa", t, "index.html")
+        return open(q, encoding="utf-8", errors="replace").read() if os.path.exists(q) else ""
     twins = {d: f"/pdufa/{pr}" for d, pr in DUPES.items()
              if re.match(r"^[A-Z]{1,6}$", d) and pr.startswith(d + "-") and d not in up_by
-             and os.path.exists(os.path.join(SITE, "pdufa", pr, "index.html"))}
+             and os.path.exists(os.path.join(SITE, "pdufa", pr, "index.html"))
+             and not is_ticker_index(d, _bare_doc(d))}
     retire = dict(twins)
     retire.update(sole)
 
@@ -224,7 +275,9 @@ def main():
         if os.path.exists(p):
             if not a.dry_run:
                 if t in sole:
-                    carry_chart(open(p, encoding="utf-8", errors="replace").read(), dest, t)
+                    _tw = open(p, encoding="utf-8", errors="replace").read()
+                    carry_chart(_tw, dest, t)
+                    carry_registry(_tw, dest)
                 os.remove(p)
                 try:
                     os.rmdir(os.path.dirname(p))   # an empty page directory trips tests/test_no_sync_artefacts.py
@@ -285,6 +338,8 @@ def main():
             for r in named:
                 if own_page(r, t) and not a.dry_run:
                     carry_chart(existing, own_page(r, t), t)
+                    if len(named) == 1:      # one drug named: the twin's trial record is that drug's
+                        carry_registry(existing, own_page(r, t))
 
         evs = []
         for r in ups:
@@ -343,7 +398,52 @@ def main():
         print(f"  index -> /pdufa/{t}  (nearest: {nearest['d'] if nearest else 'none'} {drug0[:40]})")
 
     print(f"indexes written: {written}; healthy event pages left alone: {kept_pages}")
+    if not a.dry_run:
+        print(f"links to the ticker's index: {link_indexes()} page(s) updated")
     return 0
+
+
+IDX_B, IDX_E = "<!--TIDX:B-->", "<!--TIDX:E-->"
+IDX_BLOCK = re.compile(re.escape(IDX_B) + ".*?" + re.escape(IDX_E), re.S)
+
+
+def link_indexes():
+    """Rule 8. Every ticker index is linked from the ticker's hub and from each of the ticker's own event pages. The
+    surfaces that used to reach the index (the home board, the screener, the condition pages, /fda-decisions-today)
+    link the event's own page since change 4, and the red team's run left the indexes linked from the HTML sitemap
+    alone (ten were already so on main). A marker-bounded line, removed again when the ticker has no index."""
+    pd = os.path.join(SITE, "pdufa")
+    idx = set()
+    for d in os.listdir(pd):
+        q = os.path.join(pd, d, "index.html")
+        if re.match(r"^[A-Z][A-Z0-9.]{0,6}$", d) and os.path.exists(q) and \
+                f"<h1>{d} FDA decision dates</h1>" in open(q, encoding="utf-8", errors="replace").read():
+            idx.add(d)
+    targets = []
+    for d in sorted(os.listdir(pd)):
+        m = re.match(r"^([A-Z][A-Z0-9.]{0,6})-", d)
+        if m:
+            targets.append((m.group(1), os.path.join(pd, d, "index.html"), ("<h2>FAQ</h2>", '<div class="legal"')))
+    td = os.path.join(SITE, "ticker")
+    for d in sorted(os.listdir(td)):
+        targets.append((d, os.path.join(td, d, "index.html"), ('<div class="legal"', "<footer")))
+    n = 0
+    for t, q, anchors in targets:
+        if not os.path.exists(q):
+            continue
+        doc = open(q, encoding="utf-8", errors="replace").read()
+        new = IDX_BLOCK.sub("", doc)
+        if t in idx:
+            line = (f'{IDX_B}<p class="sub" style="margin:14px 0"><a href="/pdufa/{t}">Every {esc(t)} FDA decision '
+                    f'date, past and upcoming &rarr;</a></p>{IDX_E}')
+            for anchor in anchors:
+                if anchor in new:
+                    new = new.replace(anchor, line + anchor, 1)
+                    break
+        if new != doc:
+            open(q, "w", encoding="utf-8").write(new)
+            n += 1
+    return n
 
 
 if __name__ == "__main__":

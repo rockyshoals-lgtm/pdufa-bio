@@ -4,8 +4,9 @@
 Design red team 2026-11-18 (change 4, "One canonical page per event"). Capricor's Nov 22 decision had three pages
 (/pdufa/CAPR, /pdufa/CAPR-deramiocel, /ticker/CAPR) with different depth and content: only the drug page carried the
 source quote, only the ticker page the full dossier, and the home cards, home list, screener and condition pages split
-between them. build_pdufa_ticker_index.py now keeps one page per event (rules 4 to 6 in its docstring),
-retarget_event_links.py points every link at it, and build_retail_pages.py puts the dossier on it. This fails if:
+between them. build_pdufa_ticker_index.py now keeps one page per event (rules 4 to 7 in its docstring), the builders
+of the event surfaces link it, retarget_event_links.py points links at redirected or duplicate URLs at it, and
+build_retail_pages.py puts the dossier on it. This fails if:
 
   1. a bare /pdufa/{T} event page and a /pdufa/{T}-{drug} page for the same drug are both indexable (one event,
      two pages; the duplicate map in canonicalise_duplicate_event_pages.py or a redirect settles which is kept);
@@ -16,15 +17,19 @@ retarget_event_links.py points every link at it, and build_retail_pages.py puts 
      the event's own page belongs;
   4. a /pdufa/ redirect in vercel.json lands nowhere (its chain does not end on a page of this site), or a redirected
      URL still has a page file, or is listed in sitemap.xml;
-  5. any page has an internal link that retarget_event_links.py would change (a link to a redirected /pdufa/ URL, or
-     to a bare /pdufa/{T} whose one upcoming event has its own page);
+  5. any page has an internal link that retarget_event_links.py would change (a link to a redirected /pdufa/ URL or
+     to a known duplicate event page);
   6. a retail profile's dossier is on its ticker hub when the profile names an event page (the hub only points there);
   7. the workflow does not run retarget_event_links.py after inject_site_links.py and before build_sitemap.py, the
-     local chain does not run it, or quarantine_leads.py does not apply it to the pages it restores.
+     local chain does not run it, or quarantine_leads.py does not apply it to the pages it restores;
+  8. a ticker index has no inbound link from any other page but the HTML sitemap (the red team's draft rewrote every
+     /pdufa/{T} link to the ticker's one upcoming event and left 15 indexes linked from nowhere else);
+  9. a homepage board tile for an upcoming event links anything but that event's own page, when it has one.
 
-PLANT=link puts a link to a redirected bare /pdufa/{T} on the homepage, PLANT=dupe gives a sole-event ticker its bare
-page back, PLANT=index drops an event link from a ticker index, PLANT=sitemap lists a redirected URL in sitemap.xml;
-each must FAIL.
+PLANT=link puts a link to a retired bare /pdufa/{T} on the homepage, PLANT=dupe gives a retired ticker its bare page
+back as a copy of its event page, PLANT=file gives a retired ticker a page file behind its redirect, PLANT=index drops
+an event link from a ticker index, PLANT=sitemap lists a retired URL in sitemap.xml, PLANT=orphan removes every
+inbound link to a ticker index, PLANT=board points a homepage tile at the bare /pdufa/{T}; each must FAIL.
 
     python tests/test_one_event_one_page.py
 """
@@ -62,7 +67,7 @@ def main():
     plant = os.environ.get("PLANT", "")
     bad = []
     today = RL.today_et()
-    tg = RL.targets(today)
+    tg = RL.targets()
     cfg = json.load(io.open(RL.VJ, encoding="utf-8"))
     red = {str(r.get("source")): r for r in cfg.get("redirects", []) if str(r.get("source", "")).startswith("/pdufa/")}
 
@@ -91,8 +96,9 @@ def main():
         if len(urls) == 1 and own and not history.get(t) and f"/pdufa/{t}" not in row_urls:
             sole[t] = own[0]
     planted = set()
-    if plant == "dupe" and sole:
-        t = sorted(sole)[0]
+    retired = sorted(t for t in sole if f"/pdufa/{t}" in red and not RL.exists(f"/pdufa/{t}"))
+    if plant == "dupe" and retired:
+        t = retired[0]
         # its event page, copied to where the bare page would be (a temp file: nothing on the site changes)
         import tempfile
         tmp = os.path.join(tempfile.mkdtemp(), "index.html")
@@ -150,8 +156,8 @@ def main():
     # 3b + 4. the redirects
     sm_path = os.path.join(SITE, "sitemap.xml")
     sm = io.open(sm_path, encoding="utf-8", errors="replace").read() if os.path.exists(sm_path) else ""
-    if plant == "sitemap" and red:
-        src = sorted(s for s in red if s in tg)[0]
+    if plant == "sitemap" and retired:
+        src = f"/pdufa/{retired[0]}"
         sm = sm.replace("</urlset>", f"<url><loc>{RL.BASE}{src}</loc></url></urlset>")
         planted.add("sitemap")
     locs = set(re.findall(r"<loc>https://www\.pdufa\.bio([^<]*)</loc>", sm))
@@ -168,7 +174,10 @@ def main():
             bad.append(f"vercel.json: {src} redirects to {r.get('destination')}, which (followed to its end) is no page "
                        "of this site")
             continue
-        if RL.exists(src):
+        fake = plant == "file" and retired and src == f"/pdufa/{retired[0]}"
+        if fake:
+            planted.add("file")
+        if RL.exists(src) or fake:
             bad.append(f"{src}: redirected in vercel.json, but its page file is still built (the redirect hides it)")
         if src in locs:
             bad.append(f"sitemap.xml lists {src}, which redirects to {tg[src]}")
@@ -179,7 +188,7 @@ def main():
         rel = os.path.relpath(p, SITE).replace(os.sep, "/")
         doc = io.open(p, encoding="utf-8", errors="replace", newline="").read()
         if plant == "link" and rel == "index.html":
-            src = next((s for s in sorted(tg) if BARE.match(s[len("/pdufa/"):]) and s in red), None)
+            src = f"/pdufa/{retired[0]}" if retired else None
             if src:
                 doc = doc.replace("</body>", f'<a href="{src}">x</a></body>', 1)
                 planted.add("link")
@@ -191,6 +200,54 @@ def main():
             diff = next((f"{x} -> {y}" for x, y in zip(a, b) if x != y), "a JSON-LD URL")
             bad.append(f"/{rel}: links an event by a URL that is not its page ({diff}); "
                        "python retarget_event_links.py")
+
+    # 8. every ticker index is linked from some page other than itself and the HTML sitemap
+    index_urls = set()
+    for t, p in bare_pages.items():
+        if p.startswith(os.path.join(SITE, "")) and f"<h1>{t} FDA decision dates</h1>" in \
+                io.open(p, encoding="utf-8", errors="replace").read():
+            index_urls.add(f"/pdufa/{t}")
+    inbound = {u: 0 for u in index_urls}
+    orphan = sorted(index_urls)[0] if (plant == "orphan" and index_urls) else None
+    for p in RL.pages():
+        rel = os.path.relpath(p, SITE).replace(os.sep, "/")
+        if rel == "sitemap/index.html":
+            continue
+        own = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
+        doc = io.open(p, encoding="utf-8", errors="replace").read()
+        for u in set(re.findall(r'href="(?:https://www\.pdufa\.bio)?(/pdufa/[A-Z][A-Z0-9.]{0,6})/?["#?]', doc)):
+            if u in inbound and u != own and u != orphan:
+                inbound[u] += 1
+    if orphan:
+        planted.add("orphan")
+    for u, n in sorted(inbound.items()):
+        if not n:
+            bad.append(f"{u}: the ticker's index is linked from no page but the HTML sitemap")
+
+    # 9. the homepage board links each upcoming event's own page
+    by_day = {}
+    for r in data:
+        if r.get("type") == "PDUFA" and r.get("t"):
+            u = clean(r.get("url"))
+            if re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", u) and u != f"/pdufa/{str(r['t']).upper()}" and RL.exists(u):
+                by_day.setdefault((str(r["t"]).upper(), str(r.get("d", ""))[:10]), set()).add(u)
+    home = io.open(os.path.join(SITE, "index.html"), encoding="utf-8", errors="replace").read()
+    if "Next FDA decisions" in home and "Recently decided" in home:
+        board = home[home.index("Next FDA decisions"):home.index("Recently decided")]
+        if plant == "board":
+            m = re.search(r'<a class="row" href="/pdufa/([A-Z][A-Z0-9.]{0,6})-[^"]+"', board)
+            if m:
+                board = board.replace(m.group(0), f'<a class="row" href="/pdufa/{m.group(1)}"', 1)
+                planted.add("board")
+        for m in re.finditer(r'<a class="row" href="([^"]+)">(.*?)</a>', board, re.S):
+            tm = re.search(r'<span class="tk">([A-Z][A-Z0-9.]{0,6})\b', m.group(2))
+            dm = re.search(r"PDUFA (\d{4}-\d{2}-\d{2})", m.group(2))
+            if not (tm and dm):
+                continue
+            want = by_day.get((tm.group(1), dm.group(1)), set())
+            if len(want) == 1 and clean(m.group(1)) not in want:
+                bad.append(f"homepage board: the {tm.group(1)} {dm.group(1)} tile links {m.group(1)}, not the event's "
+                           f"page {next(iter(want))} (python build_home_board.py)")
 
     # 6. the dossier sits on the event page
     for pf in sorted(glob.glob(os.path.join(HERE, "retail_profiles", "*.json"))):
@@ -222,7 +279,7 @@ def main():
     if "retarget_event_links" not in q or "_event_links[0](old, rel)" not in q:
         bad.append("quarantine_leads.py restores committed pages without retargeting their event links")
 
-    for want in ("link", "dupe", "index", "sitemap"):
+    for want in ("link", "dupe", "file", "index", "sitemap", "orphan", "board"):
         if plant == want and want not in planted:
             bad.append(f"PLANT={plant} found nothing to plant on")
     print(f"{len(bare_pages)} bare /pdufa/ page(s), {n_index} ticker index(es); {len(sole)} sole-event ticker(s) "

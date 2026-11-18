@@ -139,13 +139,16 @@ def event_page(p):
     return None
 
 
-def pointer(p, url):
-    """What the hub keeps when the dossier lives on the event page."""
+def pointer(p, url, moves=True):
+    """What the hub keeps when the dossier lives on the event page. It names the stock moves only when the dossier
+    has them (no price series: the reactions are omitted, and the pointer must not promise them)."""
+    what = "trial results, measured stock moves, sourced timeline and caveats" if moves else \
+        "trial results, sourced timeline and caveats"
     return (f'{BEGIN}<section class="deepdive" style="margin:26px 0 8px">'
             f'<h2 style="font-size:20px;margin:0 0 6px">{esc(p.get("headline") or p["asset"])}</h2>'
             f'<p style="font-size:14.5px;line-height:1.75;margin:0 0 8px">{esc(p["plain"])}</p>'
             f'<p style="font-size:14.5px;margin:0"><a href="{esc(url)}">The full {esc(p["asset"])} dossier, with its '
-            f'trial results, measured stock moves, sourced timeline and caveats, is on its FDA decision page '
+            f'{what}, is on its FDA decision page '
             f'&rarr;</a></p></section>{END}')
 
 
@@ -309,7 +312,7 @@ def main():
             # decision 4: the dossier on the event page (before its FAQ), a pointer on the hub
             targets = [(os.path.join(SITE, *ev.strip("/").split("/"), "index.html"), render(p, series, True),
                         ("<h2>FAQ</h2>", "<!--RELATED:BEGIN-->", "<footer", "</div></body>")),
-                       (page, pointer(p, ev), ('<div class="legal"', "<footer", "</div></body>"))]
+                       (page, pointer(p, ev, bool(series)), ('<div class="legal"', "<footer", "</div></body>"))]
 
         for path, block, anchors in targets:
             doc = open(path, encoding="utf-8", errors="replace").read()
@@ -325,8 +328,10 @@ def main():
                 else:
                     print(f"  SKIP {t}: no insertion point in {os.path.relpath(path, SITE)}"); continue
 
-            # The hub was noindexed for being thin. It is not thin now.
-            doc = doc.replace('<meta name="robots" content="noindex,follow">', "")
+            # The hub was noindexed for being thin. It is not thin now. A hub that keeps only the pointer is as thin
+            # as its builder made it, and keeps that builder's robots tag.
+            if "What the data showed" in block:
+                doc = doc.replace('<meta name="robots" content="noindex,follow">', "")
 
             if not a.dry_run:
                 open(path, "w", encoding="utf-8").write(doc)
