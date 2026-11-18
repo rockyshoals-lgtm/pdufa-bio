@@ -54,6 +54,13 @@
    "finding": "Annual/special meeting vote results (directors, auditors, say-on-pay, warrant proposal). Shareholder 'approval' only; no FDA action.",
    "checked": "2026-11-18"
   },
+  "MRK-2026-02-20": {
+   "reason": "same FDA action as MRK-2026-02-11 (Keytruda ovarian, BLA125514, action date 2026-02-10); this page is dated 10 days after the action, so its run-up runs across the decision",
+   "cited_source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pembrolizumab-paclitaxel-platinum-resistant-epithelial-ovarian-fallopian-tube-or",
+   "document": "FDA approval notice (Keytruda, platinum-resistant ovarian cancer)",
+   "finding": "MRK-2026-02-20's own Validation line names BLA125514 action 2026-02-10, the approval MRK-2026-02-11 records; the same-FDA-action dedupe missed it because the 02-11 page has no Validation line.",
+   "checked": "2026-11-18"
+  },
   "NVS-2025-01-29": {
    "reason": "the cited SEC document announces no FDA approval or CRL",
    "cited_source": "https://www.sec.gov/Archives/edgar/data/1114448/000137036825000008/a250131-99_1.pdf",

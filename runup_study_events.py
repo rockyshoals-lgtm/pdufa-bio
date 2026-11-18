@@ -31,6 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 EXCLUSIONS = os.path.join(HERE, "runup_study_exclusions.json")
 EXCLUDED_CSV = os.path.join(HERE, "runup_study_excluded.csv")
+INDICATIONS = os.path.join(HERE, "runup_study_indications.json")
 # The /fda-decision archive starts 2025-01-02. From then on every study row must match a published decision
 # page; a row whose page was retired (a moved date, a royalty holder's duplicate, the false SELLAS CRL) is not a
 # published decision. Rows before this date are the 2020-2024 research set, which has no per-event pages.
@@ -99,6 +100,34 @@ def excluded_keys(reason_prefix=""):
         return set()
     return {r["cache_key"] for r in csv.DictReader(open(EXCLUDED_CSV, encoding="utf-8"))
             if r.get("reason", "").startswith(reason_prefix)}
+
+
+def load_sourced_indications():
+    """runup_study_indications.json: indications read from a primary source for decision pages that carry none."""
+    if not os.path.exists(INDICATIONS):
+        return {}
+    return json.load(open(INDICATIONS, encoding="utf-8")).get("rows", {})
+
+
+def expected_indication(tk, d, asset, facts=None, sourced=None):
+    """(indication, where it came from) a study row must carry, or None for a 2020-2024 research row with no page.
+
+    Found 2026-11-18: until that day extend_runup_study.py copied the ticker's FIRST dataset row's indication onto
+    every new row, so Pfizer's Hympavzi read "Dermatomyositis", Merck's Keytruda and Capvaxive "Hypercholesterolemia",
+    GSK's linerixibat "cUTI". A row's indication is its own decision page's Indication line; where the page has none,
+    the entry in runup_study_indications.json for that page, read from the FDA letter or label or the sponsor's own
+    release, and only while that entry names the row's drug; otherwise blank. Never another row's.
+    """
+    facts = facts if facts is not None else decision_facts(tk, d)
+    if facts is None:
+        return None
+    if facts.get("indication"):
+        return facts["indication"], "decision page"
+    sourced = sourced if sourced is not None else load_sourced_indications()
+    e = sourced.get(page_id(tk, d))
+    if e and e.get("indication") and e.get("drug") == asset and e.get("source"):
+        return e["indication"], "primary source " + e["source"]
+    return "", "no sourced indication"
 
 
 def eligibility(tk, d, facts=None, excl=None):
