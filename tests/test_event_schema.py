@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Guard: every schema.org Event on /calendar and /readouts must be VALID for Google — i.e. carry
-both `startDate` and `location`. Undatable catalysts must be demoted to a non-Event type (WebPage),
-not left as an invalid Event. Also fails on stray NUL bytes (encoding corruption). This locks in the
-fix_event_schema.py result so a future page regeneration can't silently reintroduce 200+ invalid
-Events on the two highest-value index pages.
+"""Guard: every schema.org Event on the built site must be VALID for Google -- i.e. carry both
+`startDate` and `location`. Undatable catalysts must be demoted to a non-Event type (WebPage), not
+left as an invalid Event. On /calendar, /readouts and /adcomm it also fails on date-only startDates
+and stray NUL bytes (encoding corruption). Locks in fix_event_schema.py so a page regeneration can't
+silently reintroduce invalid Events; since 2026-11-18 the required-field check covers every page.
 """
 import os, re, sys
 
@@ -54,6 +54,8 @@ def _events(n):
 n_pages = n_ev = 0
 for p in sorted(glob.glob(os.path.join(SITE, "**", "*.html"), recursive=True)):
     rel = os.path.relpath(p, SITE).replace(os.sep, "/")
+    if any(part.startswith("_") for part in rel.split("/")):
+        continue              # _pdufa_bak8 etc.: backups that .vercelignore keeps off the live site
     h = open(p, encoding="utf-8", errors="replace").read()
     if '"Event"' not in h:
         continue
