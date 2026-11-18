@@ -139,7 +139,7 @@ def main():
         qa.append(("When is the next FDA decision?", nxt, ""))
     qa += [("How often is this calendar updated?",
             "Daily. Dates come from FDA announcements, sponsor press releases and SEC filings, "
-            "and every date on the page links its source.", ""),
+            "and each row links its own page, which names its source or says plainly that it has none.", ""),
            ("What happens on a PDUFA date?",
             "The FDA approves the application, issues a Complete Response Letter, or extends "
             "the review.",
@@ -278,8 +278,9 @@ def main():
          "Every tracked FDA decision date, readout window and conference presentation for that "
          "ticker, with outcomes and sources.", ""),
         ("Where does the data come from?",
-         "FDA announcements, sponsor press releases and SEC filings; every date links its "
-         "source.", "")], a.dry_run)
+         "FDA announcements, sponsor press releases and SEC filings. Each FDA decision links its own page, which names "
+         "its source or says plainly that it has none; one inferred from the stock's move is marked Inferred.",
+         "")], a.dry_run)
 
     # /research
     ok &= inject("research", [

@@ -946,6 +946,12 @@ jobs:
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
+      # 2026-11-18 (design red team, change 5): every link to a decision page whose outcome was inferred from the price
+      # move, or whose page cites no source, carries an "Inferred" or "Unsourced" badge wherever it is listed. After
+      # every writer of those lists (archive, calendar, hubs, drug pages, /sitemap). tests/test_provenance_badges.py.
+      - name: "Inferred and Unsourced badges on every list that links a decision page"
+        run: python badge_decision_provenance.py
+
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"

@@ -113,7 +113,8 @@ def main():
 
         lede = (f"This page lists all {len(evs)} FDA decisions from {y} in our archive: "
                 f"{ap_n} approvals and {crl_n} Complete Response Letters. Every decision links "
-                f"its own page with the source document and the share-price reaction we measured.")
+                f"its own page, which names its source document or says plainly that it has none; an outcome "
+                f"inferred from the price move is marked Inferred.")
         title = f"{y} FDA PDUFA Calendar &amp; Decisions: {len(evs)} On Record | pdufa.bio"
         desc = (f"The {y} FDA decision archive: {len(evs)} decisions, {ap_n} approvals, "
                 f"{crl_n} CRLs, each with its source document and measured stock reaction.")[:158]

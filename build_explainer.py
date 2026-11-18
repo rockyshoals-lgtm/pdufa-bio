@@ -59,9 +59,9 @@ QA = [
      "time anyone outside the trial learns whether the drug worked."),
     ("Where do these numbers come from?",
      "FDA publications, company filings with the SEC, company press releases and "
-     "ClinicalTrials.gov, with prices measured from daily closing data. Every date and outcome on "
-     "this site links to the document it came from. Where we have inferred something rather than "
-     "sourced it, the page says so."),
+     "ClinicalTrials.gov, with prices measured from daily closing data. Most dates and outcomes link "
+     "the document they came from. Where none is linked, or an outcome was inferred from the stock's "
+     "price move rather than read from a document, the page and every list that shows it say so."),
 ]
 
 
