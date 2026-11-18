@@ -32,13 +32,15 @@ try:
     TODAY = eastern_today()
 except Exception:  # noqa: BLE001
     TODAY = dt.date.today()
-from site_windows import window_label, window_span  # noqa: E402
+from site_windows import is_day, window_label, window_span  # noqa: E402
 
 
 def date_text(r):
     """Design red team 2026-11-18 (change 1): a month/quarter/year row is printed as its window ("Nov 2026", "Q4 2026"),
-    never as the day it is stored under; an exact day stays that day. " (est.)" marks pdufa.bio's own estimates."""
-    return window_label(r) + (" (est.)" if r.get("st") == "Estimated" else "")
+    never as the day it is stored under; an exact day stays that day. " (est.)" marks pdufa.bio's own estimates. One
+    definition, shared with the interactive list (sync_screener_data.date_text), so the two cannot disagree."""
+    from sync_screener_data import date_text as _dt
+    return _dt(r)
 
 
 def ends(r):
@@ -73,7 +75,7 @@ def main():
     fwd = [r for r in arr
            if ends(r) >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
            and r.get("t") in known]
-    fwd.sort(key=lambda r: (str(r.get("d") or "9999"), str(r.get("t"))))
+    fwd.sort(key=lambda r: (ends(r), 0 if is_day(r) else 1, str(r.get("t"))))   # window end, days first (change 1)
     dropped = sum(1 for r in arr
                   if ends(r) >= TODAY.isoformat() and r.get("st") not in ("Decided", "Withdrawn")
                   and r.get("t") and r.get("t") not in known)

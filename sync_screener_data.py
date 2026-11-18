@@ -42,27 +42,50 @@ except Exception:  # noqa: BLE001
 from site_windows import is_day, window_label, window_span  # noqa: E402
 
 
+def date_text(r):
+    """What a row prints as its date (also build_screener_rows.py's table): a stated day as that day, a month /
+    quarter / year as its window ("Nov 2026", "Q4 2026", "2026"), "Not announced" when the sponsor states no goal
+    date, and " (est.)" on pdufa.bio's own estimates."""
+    lab = window_label(r)                     # a day row's label is its day; not-announced wins over precision
+    return lab + (" (est.)" if r.get("st") == "Estimated" else "")
+
+
 def screener_row(r):
-    """The DATA entry for one dataset row (also used by tests/test_date_precision.py)."""
+    """The DATA entry for one dataset row (also used by tests/test_date_precision.py).
+
+    Keys the page reads: t d name type ta cap st url, plus
+      w   the printed date when it differs from d (window label, "Not announced", " (est.)");
+      s/e the window's first / last day when they differ from d, so From and To filter on the whole window;
+      oc  the recorded outcome of a decided PDUFA;
+      a   1 when the decision date is the sponsor's announcement day, not a sourced FDA action date."""
     d = str(r.get("d") or "")
     out = {"t": r.get("t") or "", "d": d, "name": str(r.get("name") or "")[:50], "type": r.get("type"),
            "ta": r.get("ta") or "", "cap": r.get("cap") or "", "st": r.get("st") or "",
            "url": r.get("url") or f"/ticker/{r.get('t')}"}
+    decided = r.get("type") == "PDUFA" and r.get("st") == "Decided"
+    if decided and r.get("oc"):
+        out["oc"] = str(r.get("oc"))
     dcd = str(r.get("dcd") or "")
-    if r.get("type") == "PDUFA" and r.get("st") == "Decided" and len(dcd) == 10:
+    if decided and len(dcd) == 10:
         out["d"] = dcd                       # the FDA action date, a day
-        if r.get("oc"):
-            out["oc"] = str(r.get("oc"))
+        if ((r.get("_d") or {}) if isinstance(r.get("_d"), dict) else {}).get("decision_date_unsourced"):
+            out["a"] = 1                     # LNTH, NVCR: the day the sponsor announced it
         return out
-    if not is_day(r):
-        lab = window_label(r)
-        if r.get("st") == "Estimated":
-            lab += " (est.)"
-        out["w"] = lab
-        end = window_span(r)[1]
-        if end and end != d:
-            out["e"] = end
+    w = date_text(r)
+    if w != d:
+        out["w"] = w
+    s, e = window_span(r)
+    if s and s != d:
+        out["s"] = s
+    if e and e != d:
+        out["e"] = e
     return out
+
+
+def sort_key(row):
+    """Window end (a day row's own day), exact days before windows that end the same day, then ticker. Sorting by
+    the storage day put "Nov 2026 (est.)" rows (stored on the 15th) ahead of Nov 16-30 exact days."""
+    return (row.get("e") or row["d"], 1 if row.get("s") else 0, row["t"])
 
 
 def main():
@@ -80,13 +103,13 @@ def main():
         if max(row["d"], row.get("e", "")) < floor:
             continue
         out.append(row)
-    out.sort(key=lambda x: (x["d"], x["t"]))
+    out.sort(key=sort_key)
     doc = io.open(PAGE, encoding="utf-8").read()
-    m = re.search(r"const DATA=(\[.*?\]);", doc, re.S)
+    m = re.search(r"const DATA=(\[.*?\]);\s*\nconst q=", doc, re.S)
     if not m:
         print("::warning::/screener: const DATA not found; nothing written")
         return 0
-    new = doc[:m.start(1)] + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + doc[m.end(1):]
+    new = doc[:m.start(1)] + json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + doc[m.end(1):]
     if new != doc and not a.dry_run:
         io.open(PAGE, "w", encoding="utf-8").write(new)
     print(f"/screener DATA: {len(out)} row(s) from the dataset (from {floor})" + (" [dry run]" if a.dry_run else ""))

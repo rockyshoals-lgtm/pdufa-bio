@@ -56,18 +56,26 @@ def main():
     i, j = home.index("Next FDA decisions"), home.index("Recently decided")
     board = home[i:j]
     tile_keys = set()
+    window_tiles = []
     first_tile = None
     for m in re.finditer(r"PDUFA (\d{4}-\d{2}-\d{2})", re.sub(r"<[^>]+>", " ", board)):
         pass
     for m in re.finditer(r'href="/(?:pdufa|ticker)/([A-Z]{1,6})"[^>]*>(.*?)</a>', board, re.S):
         txt = re.sub(r"<[^>]+>", " ", m.group(2))
         dm = re.search(r"(\d{4}-\d{2}-\d{2})", txt)
+        wm = re.search(r'<span class="dg">(.*?) · PDUFA (?:window|date not announced)', m.group(2), re.S)
+        if not dm and wm:
+            # 2026-11-18 (change 1): a goal known only as a month, quarter or year is a window card with no day in it.
+            # It is on the board as long as its ticker and drug are; keying only by day would call it missing.
+            window_tiles.append((m.group(1), tokens(wm.group(1))))
+            continue
         if dm:
             tile_keys.add((m.group(1), dm.group(1)))
             if first_tile is None or dm.group(1) < first_tile:
                 first_tile = dm.group(1)
-    if not tile_keys:
+    if not tile_keys and not window_tiles:
         print("FAIL: no tiles parsed from the homepage board -- markup changed?"); return 1
+    first_tile = first_tile or "9999-12-31"
 
     bad = []
     for c in slate.get("catalysts", []):
@@ -78,6 +86,9 @@ def main():
         if not (TODAY.isoformat() <= d < first_tile):
             continue                       # only the window the board has implicitly skipped
         if (tk, d) in tile_keys:
+            continue
+        ctok = tokens(c.get("drug") or c.get("drug_name"))
+        if ctok and any(t == tk and ctok & wt for t, wt in window_tiles):
             continue
         gtok = tokens(c.get("drug") or c.get("drug_name"))
         excused = any(t == tk and (tokens(dd) & gtok if gtok and tokens(dd) else

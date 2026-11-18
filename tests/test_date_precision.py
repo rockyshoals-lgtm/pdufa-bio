@@ -13,7 +13,10 @@ catalysts. This fails if any of that returns, and equally if a fix over-corrects
      carries an outcome; the page's JS marks only a recorded outcome, a check for approvals and a cross for CRLs;
   3. the server-rendered screener table prints no "YYYY-MM-DD (est.)" and prints day rows as their day;
   4. home: no countdown card names a day for a goal the dataset holds only as a window, and every day goal keeps
-     its countdown.
+     its countdown. Cards are matched to dataset rows by drug identity (shared name tokens), whatever the row's
+     status, so a window cannot swallow another drug's day and a decided-but-unarchived goal keeps its window;
+  5. order and filters follow the window: DATA is sorted by window end (a day row's own day), To keeps a window
+     that starts by then, and a decision dated from the sponsor's announcement is marked "announced".
 
     python tests/test_date_precision.py
 """
@@ -53,7 +56,7 @@ def main():
     doc = open(SCREENER, encoding="utf-8", errors="replace").read()
     bad = []
 
-    m = re.search(r"const DATA=(\[.*?\]);", doc, re.S)
+    m = re.search(r"const DATA=(\[.*?\]);\s*\nconst q=", doc, re.S)
     data = json.loads(m.group(1)) if m else []
     if not data:
         bad.append("/screener: const DATA missing or empty")
@@ -61,6 +64,13 @@ def main():
     for r in rows:
         by_key.setdefault((r.get("t") or "", r.get("url") or f"/ticker/{r.get('t')}", str(r.get("name") or "")[:50],
                            r.get("type")), []).append(r)
+
+    def unsourced(r):
+        return bool(isinstance(r.get("_d"), dict) and r["_d"].get("decision_date_unsourced"))
+
+    def not_announced(r):
+        return bool(isinstance(r.get("_d"), dict) and str(r["_d"].get("goal_date") or "").lower() == "not announced")
+
     labelled = exact = placed = 0
     for e in data:
         cands = by_key.get((e["t"], e["url"], e["name"], e["type"]), [])
@@ -73,8 +83,11 @@ def main():
             placed += 1
             if e.get("w"):
                 bad.append(f"/screener {e['t']} {e['d']}: decided row printed as window {e['w']!r}")
-            if r.get("oc") and e.get("oc") != r.get("oc"):
+            if (e.get("oc") or "") != (r.get("oc") or ""):
                 bad.append(f"/screener {e['t']} {e['d']}: outcome {e.get('oc')!r}, dataset says {r.get('oc')!r}")
+            if bool(e.get("a")) != unsourced(r):
+                bad.append(f"/screener {e['t']} {e['d']}: 'announced' mark is {bool(e.get('a'))}, but the dataset "
+                           f"{'flags' if unsourced(r) else 'does not flag'} the decision date as the sponsor's")
             continue
         r = next((r for r in cands if str(r.get("d")) == e["d"]), None)
         if r is None:
@@ -82,72 +95,107 @@ def main():
                    for x in cands):
                 bad.append(f"/screener {e['t']} {e['d']}: decided PDUFA not placed on its decision date")
             continue
-        if e.get("oc"):
-            bad.append(f"/screener {e['t']} {e['d']}: carries an outcome {e['oc']!r} the row has not got")
-        if is_day(r):
+        if (e.get("oc") or "") != ((r.get("oc") or "") if r.get("type") == "PDUFA" and r.get("st") == "Decided"
+                                   else ""):
+            bad.append(f"/screener {e['t']} {e['d']}: outcome {e.get('oc')!r}, dataset row says "
+                       f"{r.get('oc') if r.get('st') == 'Decided' else None!r}")
+        if e.get("a"):
+            bad.append(f"/screener {e['t']} {e['d']}: 'announced' mark on a row that is not a decision")
+        est = " (est.)" if r.get("st") == "Estimated" else ""
+        if not_announced(r):
+            if e.get("w") != "Not announced" + est:
+                bad.append(f"/screener {e['t']}: goal date not announced, but prints {e.get('w') or e['d']!r}")
+        elif is_day(r):
             exact += 1
-            if e.get("w"):
-                bad.append(f"/screener {e['t']} {e['d']}: exact day coarsened to {e['w']!r}")
+            if (e.get("w") or e["d"]) != e["d"] + est:
+                bad.append(f"/screener {e['t']} {e['d']}: exact day printed as {e.get('w')!r}")
         else:
             labelled += 1
-            want = window_label(r) + (" (est.)" if r.get("st") == "Estimated" else "")
+            want = window_label(r) + est
             if e.get("w") != want:
                 bad.append(f"/screener {e['t']} {e['d']} ({r.get('dp')}): prints {e.get('w') or e['d']!r}, "
                            f"want {want!r}")
-    # every decided PDUFA with a decision date in the screener's range is on that date
+            s0, e0 = window_span(r)
+            if (e.get("s") or e["d"]) != s0 or (e.get("e") or e["d"]) != e0:
+                bad.append(f"/screener {e['t']} {e.get('w')}: filters on {e.get('s') or e['d']}..{e.get('e') or e['d']}, "
+                           f"window is {s0}..{e0}")
+    # every decided PDUFA with a decision date in the screener's range is on that date, and not on its goal date
     for r in rows:
         if r.get("type") == "PDUFA" and r.get("st") == "Decided" and len(str(r.get("dcd") or "")) == 10:
             if r["dcd"] >= FLOOR:
-                if not any(e["t"] == r.get("t") and e["d"] == r["dcd"] and e["type"] == "PDUFA" for e in data):
+                nm = str(r.get("name") or "")[:50]
+                if not any(e["t"] == r.get("t") and e["d"] == r["dcd"] and e["type"] == "PDUFA" and e["name"] == nm
+                           for e in data):
                     bad.append(f"/screener: decided {r.get('t')} {r.get('id')} missing from its decision date "
                                f"{r['dcd']}")
-                if any(e["t"] == r.get("t") and e["d"] == str(r.get("d")) and e["d"] != r["dcd"]
-                       and e["url"] == (r.get("url") or "") and e["type"] == "PDUFA" for e in data):
+                if any(e["t"] == r.get("t") and e["d"] == str(r.get("d")) and e["d"] != r["dcd"] and e["name"] == nm
+                       and e["url"] == (r.get("url") or f"/ticker/{r.get('t')}") and e["type"] == "PDUFA"
+                       for e in data):
                     bad.append(f"/screener: decided {r.get('t')} {r.get('id')} still listed on goal date {r.get('d')}")
+    ends = [e.get("e") or e["d"] for e in data]
+    if ends != sorted(ends):
+        k = next(i for i in range(1, len(ends)) if ends[i] < ends[i - 1])
+        bad.append(f"/screener: DATA not in window-end order ({data[k - 1]['t']} {ends[k - 1]} before "
+                   f"{data[k]['t']} {ends[k]})")
 
-    js = doc[doc.find("function render(){"):]
+    js = doc[doc.find("function mark(e){"):]
     if "e.st==='Decided'?' · ✓'" in doc:
         bad.append("/screener JS: any Decided row still gets a check mark, CRLs included")
     if "esc(e.w||e.d)" not in js:
         bad.append("/screener JS: rows are not printed from their window label")
+    if "(e.s||e.d)<=t" not in js or "(e.e||e.d)>=f" not in js:
+        bad.append("/screener JS: From/To do not filter on the whole window")
+    if "/^approved/i" not in js:
+        bad.append("/screener JS: the approval check mark is not limited to 'Approved' outcomes")
 
     ssr = re.search(r"<!--ssr-rows-->(.*?)<!--/ssr-rows-->", doc, re.S)
     ssr = ssr.group(1) if ssr else ""
-    for d in re.findall(r"<td>(\d{4}-\d{2}-\d{2}) \(est\.\)</td>", ssr):
-        bad.append(f"/screener table: {d} (est.) prints a made-up day")
     for tk, cell in re.findall(r'<tr><td><a href="/ticker/([^"]+)">[^<]*</a></td><td>([^<]*)</td>', ssr):
-        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", cell):
-            if not any(r.get("t") == tk and str(r.get("d")) == cell and is_day(r) for r in rows):
-                bad.append(f"/screener table: {tk} printed as day {cell} with no day-precision row behind it")
+        dm = re.fullmatch(r"(\d{4}-\d{2}-\d{2})( \(est\.\))?", cell)
+        if dm:
+            day, est = dm.group(1), bool(dm.group(2))
+            if not any(r.get("t") == tk and str(r.get("d")) == day and is_day(r) and not not_announced(r)
+                       and (r.get("st") == "Estimated") == est for r in rows):
+                bad.append(f"/screener table: {tk} printed as day {cell!r} with no matching day-precision row behind it")
+
+    # home: every card on the board, matched to its goal by drug identity, whatever the goal's status
+    def tokens(name):
+        return {w for w in re.findall(r"[a-z0-9]{4,}", str(name or "").lower())}
 
     home = open(HOME, encoding="utf-8", errors="replace").read()
-    open_pdufa = [r for r in rows if r.get("type") == "PDUFA" and not is_closed(r)]
+    pdufa = [r for r in rows if r.get("type") == "PDUFA" and r.get("st") != "Withdrawn"]
     cards = 0
-    for card in re.findall(r'<a class="row" href="/pdufa/[^"]+">.*?</a>', home, re.S):
+    for card in re.findall(r'<a class="row" href="[^"]*">.*?</a>', home, re.S):
         tk = re.search(r'<span class="tk">([A-Z.]+)(?=[\s<])', card)
-        if not tk:
+        dg = re.search(r'<span class="dg">(.*?) · PDUFA (?:(\d{4}-\d{2}-\d{2})|window ([^<]+)|date not announced)</span>',
+                       card, re.S)
+        if not tk or not dg:
             continue
-        tk = tk.group(1)
-        dd = re.search(r"· PDUFA (\d{4}-\d{2}-\d{2})", card)
+        tk, gtok = tk.group(1), tokens(re.sub(r"&[a-z]+;", " ", dg.group(1)))
+        cards += 1
         cd = re.search(r'<span class="cd"><b>([^<]*)</b>', card)
-        if dd:
-            cards += 1
-            date = dd.group(1)
-            if any(is_day(r) and r.get("t") == tk and str(r.get("d")) == date for r in open_pdufa):
+        same = [r for r in pdufa if r.get("t") == tk and gtok & tokens(r.get("name"))]
+        if dg.group(2):
+            date = dg.group(2)
+            if any(is_day(r) and str(r.get("d")) == date for r in same):
                 if cd and not re.fullmatch(r"\d+", cd.group(1)):
                     bad.append(f"home {tk} {date}: a stated day lost its countdown")
                 continue
-            for r in open_pdufa:
-                if r.get("t") == tk and not is_day(r):
-                    s, e = window_span(r)
-                    if s and s <= date <= e:
-                        bad.append(f"home {tk}: counts down to {date}, but the goal is only {window_label(r)}")
-        wm = re.search(r"· PDUFA window ([^<]+)</span>", card)
-        if wm and cd and re.fullmatch(r"\d+", cd.group(1)):
-            bad.append(f"home {tk}: window card {wm.group(1)} still shows a countdown")
+            for r in same:
+                if not is_day(r):
+                    s0, e0 = window_span(r)
+                    if s0 and s0 <= date <= e0:
+                        bad.append(f"home {tk}: counts down to {date}, but the goal is only {window_label(r)} "
+                                   f"({r.get('st')})")
+        else:
+            if cd and re.fullmatch(r"\d+", cd.group(1)):
+                bad.append(f"home {tk}: window card still shows a countdown")
+            lab = dg.group(3) or "Not announced"
+            if not any(not is_day(r) or not_announced(r) for r in same if window_label(r) == lab):
+                bad.append(f"home {tk}: card shows {lab!r}, but no {lab!r} goal of this drug is in the dataset")
 
     print(f"screener: {labelled} window row(s) labelled, {exact} exact day(s) kept, {placed} decision(s) on their "
-          f"action date; home: {cards} dated card(s) checked")
+          f"action date; home: {cards} card(s) checked")
     if bad:
         for b in bad[:40]:
             print("  FAIL " + b)
