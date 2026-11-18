@@ -79,6 +79,31 @@ def pretty(iso):
         return iso or ''
 
 
+_ACT = None
+
+
+def fda_action_day(tk, page_date):
+    """The FDA's action day for /fda-decision/{tk}-{page_date}: the dataset's fda_action_date, else the page's own
+    key facts ("FDA decision date"), else the page date (when the decision was made public)."""
+    global _ACT
+    if _ACT is None:
+        try:
+            from calendar_decided_rows_once import action_dates
+            _ACT = action_dates()
+        except Exception:  # noqa: BLE001
+            _ACT = {}
+    fad = _ACT.get(f"/fda-decision/{tk}-{page_date}")
+    if fad:
+        return fad
+    pth = os.path.join(SITE, 'fda-decision', f'{tk}-{page_date}', 'index.html')
+    if os.path.exists(pth):
+        m = re.search(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b>',
+                      open(pth, encoding='utf-8', errors='replace').read())
+        if m:
+            return m.group(1)
+    return page_date
+
+
 def load_data():
     src = open(os.path.join(SITE, 'api', 'data.js'), encoding='utf-8').read()
     i = src.find('const SLATE=')
@@ -277,7 +302,7 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
                        f'<span class="d">{d2}</span></a>')
 
     # Decision history — link to the existing /fda-decision pages, newest first, verified to exist
-    ph = sorted(past.get(tk, []), key=lambda x: x['date'], reverse=True)
+    ph = sorted(past.get(tk, []), key=lambda x: (fda_action_day(tk, x['date']), x['date']), reverse=True)
     ph = [p for p in ph if os.path.exists(os.path.join(SITE, 'fda-decision', f"{tk}-{p['date']}", 'index.html'))]
     if ph:
         out.append(f'<h2>FDA decision history ({len(ph)})</h2>')
@@ -285,8 +310,13 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
             badge = '<span class="badge app">✓ Approved</span>' if p['outcome'] == 'Approved' else \
                     ('<span class="badge crl">✕ CRL</span>' if p['outcome'] == 'CRL' else '')
             lab = esc(p['label']) or 'FDA decision'
+            # 2026-11-18 (design red team, change 2): the row printed the archive link's date, which is when the
+            # decision was made public. CAPR's 2025 letter is dated Jul 9 but the row said Jul 11. The row now
+            # prints the FDA's own action day and names the announcement only where it differs.
+            act = fda_action_day(tk, p['date'])
+            when = pretty(act) if act == p['date'] else f'{pretty(act)} <small style="font-weight:400;color:#a7bcd9">(announced {pretty(p["date"])})</small>'
             out.append(f'<a class="row" href="/fda-decision/{tk}-{p["date"]}">'
-                       f'<span class="t">{pretty(p["date"])}{badge}</span>'
+                       f'<span class="t">{when}{badge}</span>'
                        f'<span class="d">{lab}</span></a>')
 
     # Clinical readouts. The hub has always SAID it covers "PDUFA dates, advisory committee

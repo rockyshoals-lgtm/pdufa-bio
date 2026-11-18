@@ -12,7 +12,7 @@ decision date" (SMMT: h1 Nov 13, key facts 2026-11-15). Each FDA day was re-read
   MNKD  NDA 209988 S-007 AP 2026-07-23            VTRS  NDA 219990 ORIG-1 AP 2026-07-28
 
 Rule: the FDA day comes ONLY from the page's own Verified line, and only when that line names a linked FDA record
-for it (the line itself is written from _d.fda_action_date by inject_verified_against.py and guarded). The
+for it, or, on a page with no Verified line, from its "The FDA's own letter" card, which links the letter itself (the line itself is written from _d.fda_action_date by inject_verified_against.py and guarded). The
 announcement day kept is the one key facts already showed. Pages whose Verified line says the FDA day is not on
 record are left to label_announcement_only_dates.py. Idempotent; facts only, not investment advice.
 """
@@ -21,6 +21,11 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 VF = re.compile(r'<!--VERIFIED:BEGIN-->.*?FDA action day ([A-Z][a-z]+ \d{1,2}, \d{4}) \(<a href="https://', re.S)
+# 2026-11-18 (design red team, change 2): an older page with no dataset row has no Verified line, but its
+# "The FDA's own letter" card (link_crl_letters.py) links the FDA's letter itself and names the day the FDA acted.
+# CAPR-2025-07-11 said "FDA decision date 2025-07-11"; the letter it links is dated July 9, 2025.
+CRLSRC = re.compile(r'<!--CRLSRC:BEGIN-->.*?<a href="https://download\.open\.fda\.gov/crl/[^"]+"[^>]*>.*?'
+                    r'the FDA acted on ([A-Z][a-z]+ \d{1,2}, \d{4})\.', re.S)
 KV = re.compile(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b></div>'
                 r'(?!<div class="kv"><span>Announced</span>)')
 
@@ -29,7 +34,7 @@ def main():
     n = 0
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        v, m = VF.search(doc), KV.search(doc)
+        v, m = VF.search(doc) or CRLSRC.search(doc), KV.search(doc)
         if not v or not m:
             continue
         fad = dt.datetime.strptime(v.group(1), "%B %d, %Y").strftime("%Y-%m-%d")

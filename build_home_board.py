@@ -70,11 +70,15 @@ def poly_daily(key, t, days=95):
     return price_source.closes(t, (TODAY - dt.timedelta(days=days)).isoformat(), TODAY.isoformat())
 
 
-def sparkline_reaction(dated, decision_date):
-    """64x20 run-up polyline with a GOLD dot on the decision day, so the day-of reaction is visible.
-    Returns (svg, day_of_move_pct_or_None). Move = decision-day close vs the prior trading close."""
+def sparkline_reaction(dated, disclosed):
+    """64x20 run-up polyline with a GOLD dot on the reaction day. Returns (svg, move_pct_or_None, reaction_day).
+
+    2026-11-18 (design red team, change 2): the move used to be read only on the page's own date, so SMMT's CRL,
+    announced on a Sunday (Nov 15), showed no move at all, and a decision dated by the FDA a day before it was
+    public was measured on a day the market could not have known. The reaction day is now the first trading day
+    ON OR AFTER the disclosure (the decision page's date), and the move is its close against the previous close."""
     if len(dated) < 2:
-        return "", None
+        return "", None, None
     win = dated[-44:] if len(dated) > 44 else dated
     ds = [d for d, _ in win]; cs = [c for _, c in win]
     lo, hi = min(cs), max(cs); rng = (hi - lo) or 1.0; n = len(cs)
@@ -82,17 +86,17 @@ def sparkline_reaction(dated, decision_date):
     Y = lambda c: round(19 - (c - lo) / rng * 18, 1)
     pts = " ".join(f"{X(i)},{Y(c)}" for i, c in enumerate(cs))
     color = "#46d17f" if cs[-1] >= cs[0] else "#ff7a72"
-    di = next((i for i, d in enumerate(ds) if d >= decision_date), n - 1)  # first day on/after decision
+    di = next((i for i, d in enumerate(ds) if d >= disclosed), n - 1)  # first day on/after disclosure
     alld = [d for d, _ in dated]; allc = [c for _, c in dated]
-    move = None
-    if decision_date in alld:
-        j = alld.index(decision_date)
-        if j > 0 and allc[j - 1]:
-            move = (allc[j] / allc[j - 1] - 1) * 100.0
+    move = day = None
+    j = next((k for k, d in enumerate(alld) if d >= disclosed), None)
+    if j is not None and j > 0 and allc[j - 1] and \
+            (dt.date.fromisoformat(alld[j]) - dt.date.fromisoformat(disclosed)).days <= 5:
+        move, day = (allc[j] / allc[j - 1] - 1) * 100.0, alld[j]
     dot = f'<circle cx="{X(di)}" cy="{Y(cs[di])}" r="2.4" fill="#e3ba5e" stroke="#02060d" stroke-width="0.6"/>'
-    svg = (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto">'
+    svg = (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto" aria-hidden="true">'
            f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="1.4"/>{dot}</svg>')
-    return svg, move
+    return svg, move, day
 
 
 def sparkline(closes):
@@ -322,21 +326,56 @@ def render_upcoming(cats, key):
     return "".join(rows)
 
 
+def fda_day(tk, page_date):
+    """The FDA's own action day for /fda-decision/{tk}-{page_date}: the dataset's fda_action_date, else the decision
+    page's own key facts ("FDA decision date"), else the page date. The page date is when it was made public."""
+    u = f"/fda-decision/{tk}-{page_date}"
+    try:
+        from calendar_decided_rows_once import action_dates
+        fad = action_dates().get(u)
+    except Exception:  # noqa: BLE001
+        fad = None
+    if fad:
+        return fad
+    p = os.path.join(SITE, "fda-decision", f"{tk}-{page_date}", "index.html")
+    if os.path.exists(p):
+        m = re.search(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b>',
+                      open(p, encoding="utf-8", errors="replace").read())
+        if m:
+            return m.group(1)
+    return page_date
+
+
+def _md(iso):
+    x = dt.date.fromisoformat(iso)
+    return f"{x.strftime('%b')} {x.day}"
+
+
+DECIDED_NOTE = ('<p class="decn" style="margin:8px 0 0;font-size:11.5px;line-height:1.45;color:var(--mut2,#94a9c9)">'
+                "Dates are the FDA's action day. The move is the close on the first trading day on or after the "
+                "decision was made public, against the close before it.</p>")
+
+
 def render_decided(decs, key):
     cards = []
-    for tk, date, outcome, _drug in decs:
+    acts = {(tk, date): fda_day(tk, date) for tk, date, _o, _d in decs}
+    for tk, date, outcome, _drug in sorted(decs, key=lambda r: (acts[(r[0], r[1])], r[1]), reverse=True):
         cls = "dec ap" if outcome == "ap" else "dec cr"   # CSS styles CRL cards via .dec.cr
         icon = "✓" if outcome == "ap" else "✕"
         word = "Approved" if outcome == "ap" else "CRL"
-        spk, move = sparkline_reaction(poly_daily(key, tk), date)   # gold dot marks the decision day
+        act = acts[(tk, date)]
+        spk, move, rday = sparkline_reaction(poly_daily(key, tk), date)   # gold dot marks the reaction day
         mv = ""
+        why = f"FDA action {_md(act)}" + (f", made public {_md(date)}" if date != act else "")
         if move is not None:
             mc = "#46d17f" if move >= 0 else "#ff7a72"
-            mv = f' · <b style="color:{mc}">{"+" if move >= 0 else ""}{move:.0f}%</b>'
+            r = round(move)
+            mv = f' · <b style="color:{mc}">{"+" if r > 0 else ""}{r}%</b>'
+            why += f"; move {'+' if r > 0 else ''}{r}% on {_md(rday)}, close against the previous close"
         cards.append(
-            f'<a class="{cls}" href="/fda-decision/{tk}-{date}"><span class="di">{icon}</span>'
-            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{date} · {word}{mv}</span></a>')
-    return "".join(cards)
+            f'<a class="{cls}" href="/fda-decision/{tk}-{date}" title="{esc(why)}"><span class="di">{icon}</span>'
+            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{act} · {word}{mv}</span></a>')
+    return "".join(cards) + (DECIDED_NOTE if cards else "")
 
 
 def _ua_eastern_date(ua):
