@@ -33,7 +33,7 @@ def main():
             bad.append(f"/crl/{y}/{mon}: no lede"); continue
         t = re.sub(r"<[^>]+>", "", lede.group(1))
         m1 = re.search(r"holds (\d+) letters? dated", t)
-        m2 = re.search(r", (\d+) (?:was|were) Complete Response Letters?", t)
+        m2 = re.search(r", (\d+) (?:was|were) (?:a )?Complete Response Letters?", t)
         if not m1 or int(m1.group(1)) != by.get(k, 0):
             bad.append(f"/crl/{y}/{mon}: says {m1.group(1) if m1 else '?'} released, corpus has {by.get(k, 0)}")
         if not m2 or int(m2.group(1)) != len(ours.get(k, [])):
