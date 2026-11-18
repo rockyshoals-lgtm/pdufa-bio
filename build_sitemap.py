@@ -128,6 +128,7 @@ BOILER = [
     re.compile(r'<!--TW:B--><div class="pd-tw">|</div><!--TW:E-->'),
     # inject_mobile_polish.py's calendar jump link and its target id move as months close; not a content change
     re.compile(r'<!--JUMP:BEGIN-->.*?<!--JUMP:END-->|<!--JUMP:B-->.*?<!--JUMP:E-->', re.S),
+    re.compile(r'<!--CX:B--><div class="pd-cx" style="--cxw:\d+px">|</div><!--CX:E-->'),
     re.compile(r"<nav[^>]*>.*?</nav>", re.S),
     re.compile(r'<div class="nav">.*?</div>', re.S),
     re.compile(r'<div class="legal".*?</div>', re.S),
