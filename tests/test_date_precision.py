@@ -135,8 +135,10 @@ def main():
             day = dd[0]
             nm = str(r.get("name") or "")[:50]
             url = r.get("url") or f"/ticker/{r.get('t')}"
+            # design change 9: a row whose source is off-site opens the site's own page, which links the source
+            off = str(url).startswith("http")
             mine = [e for e in data if e["t"] == r.get("t") and e["type"] == "PDUFA" and e["name"] == nm
-                    and e["url"] == url]
+                    and (e["url"].startswith("/") if off else e["url"] == url)]
             if not any(e["d"] == day for e in mine):
                 bad.append(f"/screener: decided {r.get('t')} {r.get('id')} missing from its "
                            f"{'announcement' if dd[1] else 'FDA action'} date {day}")

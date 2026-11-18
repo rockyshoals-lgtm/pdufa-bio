@@ -296,7 +296,7 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     # 404 for six days. Readouts come from the dataset, and a reported one carries its outcome.
     rh = sorted(readouts.get(tk, []), key=lambda x: x['date'], reverse=True)
     if rh:
-        out.append(f'<h2>Clinical readouts ({len(rh)})</h2>')
+        out.append(f'<h2 id="readouts">Clinical readouts ({len(rh)})</h2>')  # change 9: the screener links here
         for r in rh:
             oc = str(r.get('outcome') or '')
             badge = (f'<span class="badge app">✓ {esc(oc)}</span>' if oc.lower().startswith('pos')

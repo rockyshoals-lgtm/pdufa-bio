@@ -58,11 +58,17 @@ def screener_row(r):
       w   the printed date when it differs from d (window label, "Not announced", " (est.)");
       s/e the window's first / last day when they differ from d, so From and To filter on the whole window;
       oc  the recorded outcome of a decided PDUFA;
-      a   1 when no FDA action date is on record and the row sits on the sponsor's announcement day (dcd)."""
+      a   1 when no FDA action date is on record and the row sits on the sponsor's announcement day (dcd);
+      ar  the therapeutic area the dropdown filters on (ta folded onto one spelling; "Not classified" when empty)."""
     d = str(r.get("d") or "")
     out = {"t": r.get("t") or "", "d": d, "name": str(r.get("name") or "")[:50], "type": r.get("type"),
            "ta": r.get("ta") or "", "cap": r.get("cap") or "", "st": r.get("st") or "",
            "url": r.get("url") or f"/ticker/{r.get('t')}"}
+    out["ar"] = area(out["ta"])
+    # change 9: 456 readouts (and two decided PDUFAs) linked straight off-site, to the registry or a press release, while
+    # every other row opened its page here. Each now opens the site's own page, which links the same source one click on.
+    if str(out["url"]).startswith("http") and out["t"]:
+        out["url"] = on_site(r, out)
     decided = r.get("type") == "PDUFA" and r.get("st") == "Decided"
     if decided and r.get("oc"):
         out["oc"] = str(r.get("oc"))
@@ -81,6 +87,70 @@ def screener_row(r):
     if e and e != d:
         out["e"] = e
     return out
+
+
+# 2026-11-18 (design red team, change 9): the area dropdown was typed in by hand. 8 of its 23 areas matched no row,
+# 102 rows sat in areas it did not offer (Dermatology, Respiratory, Endocrinology, ...), 117 had no area, and spelling
+# twins split one area in two (Cardiology / Cardiovascular, Rare disease / Rare Disease). Each row now carries `ar`, its
+# area folded onto one name, and the dropdown is written from the rows themselves (with counts), so every option
+# finds rows and every row can be found. The row still prints its own label (`ta`).
+AREA_FOLD = [
+    (r"onc|cancer|tumou?r|leuk|lymphom|myelom", "Oncology"),
+    (r"^hae?matolog", "Hematology"),
+    (r"cardio|cardiology|heart", "Cardiovascular"),
+    (r"^cns|neuro|alzheimer|epilep|multiple sclerosis|parkinson|psychiat|migraine|dmd|sma\b", "Neurology / CNS"),
+    (r"diabet|metabol|obesity|endocrin", "Metabolic / endocrine"),
+    (r"hepat|liver|mash|nash|gastro|^gi\b", "Gastroenterology / hepatology"),
+    (r"infect|vaccin|antivir|antibiot", "Infectious disease"),
+    (r"^rare", "Rare disease"),
+    (r"immunolog|allerg|rheumat", "Immunology / rheumatology"),
+    (r"ophthalm|ocular|retina", "Ophthalmology"),
+    (r"respir|pulmon|lung", "Respiratory"),
+    (r"musculo|bone", "Musculoskeletal"),
+    (r"nephro|renal|kidney", "Nephrology"),
+    (r"dermat|skin", "Dermatology"),
+]
+NO_AREA = "Not classified"
+
+
+def area(ta):
+    """One filter name for a row's therapeutic-area label. Unknown labels keep their own name, capitalised."""
+    t = str(ta or "").strip()
+    if not t:
+        return NO_AREA
+    low = t.lower()
+    if low in ("other",) or "investing" in low or low.startswith("gene and cell"):
+        return "Other"
+    for pat, name in AREA_FOLD:
+        if re.search(pat, low):
+            return name
+    return t[:1].upper() + t[1:]
+
+
+def on_site(r, out):
+    """The site's own page for a row whose source is off-site: the decision page, the PDUFA page, else the company hub
+    (at its readout list for a readout). The page links the source."""
+    t = out["t"]
+    if out["type"] == "Readout":
+        return f"/ticker/{t}#readouts"
+    if out["type"] == "PDUFA":
+        for day in (r.get("dcd"), (r.get("_d") or {}).get("fda_action_date") if isinstance(r.get("_d"), dict) else None,
+                    r.get("d")):
+            if day and os.path.exists(os.path.join(SITE, "fda-decision", f"{t}-{str(day)[:10]}", "index.html")):
+                return f"/fda-decision/{t}-{str(day)[:10]}"
+        if os.path.exists(os.path.join(SITE, "pdufa", t, "index.html")):
+            return f"/pdufa/{t}"
+    return f"/ticker/{t}"
+
+
+def area_options(rows):
+    """The dropdown's <option>s, built from the rows: largest area first, "Other" and "Not classified" last."""
+    from collections import Counter
+    c = Counter(r["ar"] for r in rows)
+    order = sorted(c, key=lambda k: (k in ("Other", NO_AREA), k == NO_AREA, -c[k], k))
+    esc = lambda x: x.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+    return '<option value="">All areas</option>' + "".join(
+        f'<option value="{esc(k)}">{esc(k)} ({c[k]})</option>' for k in order)
 
 
 def decision_day(r):
@@ -128,6 +198,9 @@ def main():
         print("::warning::/screener: const DATA not found; nothing written")
         return 0
     new = doc[:m.start(1)] + json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + doc[m.end(1):]
+    new = re.sub(r'(<select id="ta"[^>]*>).*?(</select>)', lambda mm: mm.group(1) + area_options(out) + mm.group(2),
+                 new, count=1, flags=re.S)
+    new = new.replace("(!ta||e.ta===ta)", "(!ta||e.ar===ta)")
     if new != doc and not a.dry_run:
         io.open(PAGE, "w", encoding="utf-8").write(new)
     print(f"/screener DATA: {len(out)} row(s) from the dataset (from {floor})" + (" [dry run]" if a.dry_run else ""))
