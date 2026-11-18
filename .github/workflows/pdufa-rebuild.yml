@@ -1109,7 +1109,7 @@ jobs:
               if git push; then pushed=1; break; fi
               echo "push rejected (attempt $attempt) -- fetching and rebasing onto origin/main"
               git fetch origin main || true
-              if ! git rebase origin/main; then
+              if ! git rebase --autostash origin/main; then
                 git rebase --abort || true
                 echo "::error::rebase onto origin/main conflicted -- not forcing; resolve by hand"
                 exit 1

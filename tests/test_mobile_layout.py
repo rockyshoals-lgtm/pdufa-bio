@@ -11,7 +11,12 @@ A real browser is not available in CI, so this checks the things that broke layo
   5. the search button (cmdk.js) uses its compact, keyboard-reachable form up to the 720px menu breakpoint;
   6. no page's CSS sets text smaller than 10px (the homepage countdown labels were 8px);
   7. /decisions is newest-first inside each year (its sorter had silently stopped matching the year headers);
-  8. the screener's event-type filters are real buttons, and its rows keep their date on a phone.
+  8. the screener's event-type filters are real buttons, its rows keep their date on a phone, and its two date
+     fields may wrap (side by side they made the page 428px wide on every phone);
+  9. wide inline charts whose labels would draw under 10px on a phone scroll sideways at a readable size
+     (part of 1: a planted 782-unit chart with 9-unit labels must be caught);
+ 10. every narrower chart whose labels a phone would draw under 11px has a phone-sized drawing (part of 1), and
+     every phone drawing's smallest label is 11px or more in a 290px column (a planted run-up chart is checked).
 
 A planted bare table and a planted no-zoom viewport must each be caught, so the guard cannot pass vacuously.
 
@@ -26,6 +31,7 @@ import sys
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
 import inject_mobile_polish as M  # noqa: E402
+import phone_charts as PC  # noqa: E402
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 VIEWPORT = re.compile(r'<meta[^>]+name="viewport"[^>]*content="([^"]*)"', re.I)
@@ -61,6 +67,10 @@ def page_problems(rel, doc):
         probs.append(f"{rel}: no responsive viewport meta")
     elif re.search(r"user-scalable\s*=\s*(no|0)|maximum-scale\s*=\s*1(\.0)?\b", m.group(1)):
         probs.append(f"{rel}: viewport disables pinch-zoom ({m.group(1)})")
+    for ph in re.findall(r'<svg class="pd-phs".*?</svg>', doc, re.S):
+        px = PC.phone_label_px(ph)
+        if px is not None and px < PC.MIN_PX:
+            probs.append(f"{rel}: a phone chart drawing has {px:.1f}px labels (fix: python inject_mobile_polish.py)")
     css = "".join(re.findall(r"<style[^>]*>(.*?)</style>", doc, re.S))
     for sel, decl in re.findall(r"([^{}@]+)\{([^{}]*)\}", css):
         for z in TINY.findall(decl):
@@ -107,6 +117,22 @@ def main():
 
     if not page_problems("planted", good.replace("</head>", "<style>.x i{font-size:8px}</style></head>")):
         fails.append("guard self-check: 8px text was not caught")
+    chart = ('<svg viewBox="0 0 782 150" width="100%" role="img"><text x="1" y="9" font-size="9">Jun</text></svg>')
+    wrapped = M.apply(good.replace("</body>", chart + "</body>"))[0]
+    if page_problems("planted", wrapped) or "--cxw:956px" not in wrapped:
+        fails.append("guard self-check: a wide chart with 9-unit labels was not given its phone scroll box")
+    if not page_problems("planted", M.CX_OPEN.sub("", wrapped).replace(M.CX_CLOSE, "")):
+        fails.append("guard self-check: a wide chart with unreadable phone labels was not caught")
+    runup = ('<svg viewBox="0 0 640 190" role="img" style="width:100%;aspect-ratio:640/190;background:#071528">'
+             '<polyline points="14,100 300,12 600,150" fill="none" stroke="#7aa8ff"/>'
+             '<circle cx="300" cy="12" r="2.6" fill="#5fd07a"/><text x="300" y="10" font-size="10" '
+             'text-anchor="middle">$27.37</text><text x="548" y="177" font-size="10" text-anchor="end">PDUFA 12/15/25'
+             '</text><text x="14" y="164" font-size="10">6/30/25</text></svg>')
+    phoned = M.apply(good.replace("</body>", runup + "</body>"))[0]
+    if page_problems("planted", phoned) or (PC.phone_label_px(phoned[phoned.find('class="pd-phs"'):]) or 0) < 11:
+        fails.append("guard self-check: a run-up chart with 10-unit labels did not get an 11px phone drawing")
+    if not page_problems("planted", PC.STRIP.sub(r"\1", phoned)):
+        fails.append("guard self-check: a run-up chart with no phone drawing was not caught")
 
     dec = io.open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8", errors="replace").read()
     for block in re.split(r'<div class="mhead"', dec)[1:]:
@@ -119,6 +145,8 @@ def main():
         fails.append("screener: event-type filters must be <button>s (keyboard and screen readers)")
     if ".dt{display:none}" in scr:
         fails.append("screener: rows hide their date on phones")
+    if re.search(r"\.dts\{[^}]*flex-wrap:nowrap", scr):
+        fails.append("screener: the From and To date fields must be allowed to wrap on phones")
 
     wf = open(os.path.join(HERE, ".github", "workflows", "pdufa-rebuild.yml"), encoding="utf-8").read()
     a, b = wf.find("python inject_mobile_polish.py"), wf.rfind("run: python build_sitemap.py")
@@ -142,7 +170,7 @@ def main():
         return 1
     print(f"OK -- {n} pages: tables scroll in place, mobile polish current, responsive viewport with zoom allowed, "
           f"no fixed width over 360px; workflow and chain run the pass before the sitemap; search button compact "
-          f"to 720px; no text under 10px; /decisions newest-first; screener filters are buttons. Self-check caught a planted bare table and a planted no-zoom viewport and planted 8px text.")
+          f"to 720px; no text under 10px; wide charts scroll at a readable size; narrower charts have an 11px phone drawing; /decisions newest-first; screener filters are buttons. Self-check caught a planted bare table, a planted no-zoom viewport, planted 8px text, a planted wide chart with 9-unit labels and a planted run-up chart.")
     return 0
 
 

@@ -29,6 +29,17 @@ What it found, and what this pass does about each:
    link blue; any colour a page sets itself still wins (zero-specificity :where()).
 10. /calendar opens on months that are all decided (June to October) before the first date still ahead. A
    "Jump to upcoming dates" link under the lede goes to the first month that still has an open goal date.
+11. Card grids widened pages: a grid column is at least as wide as its widest unbreakable line, so one long
+   company name made every /tickers row 403px wide on a 320px phone. Grid items may now shrink (min-width:0)
+   on phones; a name that does not fit ends in an ellipsis where the page asks for one, and wraps otherwise.
+12. Wide charts shrank to unreadable text: the /readouts monthly bar chart (782 units wide, 9-unit labels) drew its
+   labels about 3px tall on a 320px phone, the /calendar weekly density chart about 3px. A chart at least 700
+   units wide whose smallest label would draw under 10px in a phone column is put in a sideways-scrolling box
+   (div.pd-cx) and drawn on phones at the width that makes its smallest label 11px. Wider screens are unchanged.
+13. Narrower charts did the same: the run-up price chart on ~540 decision and PDUFA pages (640 units wide, 9-11 unit
+   labels) drew "$27.37" and "PDUFA 12/15/25" 4-5px tall on a phone. Each such chart gets a phone-sized drawing of
+   the same points and labels (phone_charts.py): 320 units wide, labels at least 11px in a 290px column, kept
+   inside the chart and off each other. Phones show it; wider screens show the original.
 
 The search button (cmdk.js) is a static file and is fixed there. Nothing here changes a fact, a number, a date,
 a link target or any text: only layout. build_sitemap.py strips everything this adds before hashing, so the sweep
@@ -43,6 +54,9 @@ import os
 import re
 import sys
 from html.parser import HTMLParser
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import phone_charts  # noqa: E402
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -80,6 +94,10 @@ CSS = (
     '.pd-jump:hover{border-color:#e3ba5e;text-decoration:none}'
     # 8. list rows: the description sits under its date, not glued to it ("2026-09Eteplirsen")
     '.row>.t+.d{display:block}'
+    # 12. wide charts: scroll sideways on phones at a readable size (width per chart in --cxw)
+    '.pd-cx{max-width:100%}'
+    # 13. narrower charts: a phone-sized drawing replaces the original on phones
+    '.pd-ph>.pd-phs{display:none!important}'
     # 5. notch / rounded corners in landscape (env() is 0 where there is none)
     '@supports(padding:max(0px)){html{padding-left:env(safe-area-inset-left);'
     'padding-right:env(safe-area-inset-right)}}'
@@ -92,6 +110,14 @@ CSS = (
     'input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{font-size:16px!important}'
     # 7. link rows: room between lines for a fingertip
     'nav[aria-label="Browse pdufa.bio"]{line-height:2.4!important}'
+    '}'
+    '@media(max-width:640px){'
+    # 11. grid cards may shrink below their longest unbreakable line
+    '.grid>*{min-width:0}'
+    # 12. (see above)
+    '.pd-cx{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}'
+    '.pd-cx>svg{min-width:var(--cxw);max-width:none!important}'
+    '.pd-ph>svg:not(.pd-phs){display:none!important}.pd-ph>.pd-phs{display:block!important;width:100%;height:auto}'
     '}'
     '</style>'
 )
@@ -182,6 +208,29 @@ def wrap_tables(doc):
     return "".join(out), len(p.spans)
 
 
+CX_OPEN = re.compile(r'<!--CX:B--><div class="pd-cx" style="--cxw:\d+px">')
+CX_CLOSE = '</div><!--CX:E-->'
+SVG = re.compile(r'<svg\b[^>]*\bviewBox="0 0 ([\d.]+) [\d.]+"[^>]*>.*?</svg>', re.S)
+PHONE_COL, MIN_LABEL, CHART_MIN_W = 330.0, 11.0, 700
+
+
+def wrap_charts(doc):
+    """Wrap each wide inline chart whose smallest label would draw under 10px in a phone column (12. above)."""
+    base = CX_OPEN.sub("", doc).replace(CX_CLOSE, "")
+    if "<svg" not in base:
+        return base
+
+    def one(m):
+        w = float(m.group(1))
+        sizes = [float(z) for z in re.findall(r'<text\b[^>]*\bfont-size="([\d.]+)"', m.group(0))]
+        if w < CHART_MIN_W or not sizes or min(sizes) * PHONE_COL / w >= 10:
+            return m.group(0)
+        cxw = max(int(w), int(-(-w * MIN_LABEL // min(sizes))))
+        return f'<!--CX:B--><div class="pd-cx" style="--cxw:{cxw}px">' + m.group(0) + CX_CLOSE
+
+    return SVG.sub(one, base)
+
+
 JUMP_B, JUMP_E = "<!--JUMP:BEGIN-->", "<!--JUMP:END-->"
 ANCHOR = '<!--JUMP:B--><div id="pd-upcoming"></div><!--JUMP:E-->'
 MHEAD = '<div class="mhead">'
@@ -212,6 +261,8 @@ def calendar_jump(doc):
 def apply(doc):
     new, n = wrap_tables(doc)
     new = calendar_jump(new)
+    new = wrap_charts(new)
+    new = phone_charts.wrap_phone_charts(new)
     # A current style block stays exactly where it is. Later build steps (freshness stamp, dateModified, article
     # schema, quarantine) also insert before </head>, so "always re-insert last" moved the block on every run and the
     # guard's apply(doc) == doc failed on 1,826 pages after the 2026-11-18 rebuild (issue 113). Only a missing,
