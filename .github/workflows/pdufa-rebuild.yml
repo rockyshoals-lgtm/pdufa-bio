@@ -913,6 +913,11 @@ jobs:
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
+      # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
+      # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
+      - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"
+        run: python inject_mobile_polish.py
+
       - name: Regenerate sitemap after normalisers (picks up newly indexable pages)
         run: python build_sitemap.py
 
