@@ -41,6 +41,7 @@ ZLAB_20240325,ZLAB,2024-03-25,2024-03-22,Odronextamab,CRL,"same price event as a
 GMAB_20240602,GMAB,2024-06-02,2024-05-31,MCLA-145 with Keytruda (pembrolizumab),CRL,"same price event as an earlier row (same ticker, same eve-of-decision close)",GMAB 2024-06-02 MCLA-145 with Keytruda (pembrolizumab)
 MRK_20240617,MRK,2024-06-17,2024-06-14,KEYTRUDA (pembrolizumab) Plus Carboplatin and Paclitaxel,APPROVAL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2024-06-17 APPROVAL; 2024-06-17 CRL
 MRK_20240617#EVX-01 + KEYTRUDA (p,MRK,2024-06-17,2024-06-14,EVX-01 + KEYTRUDA (pembrolizumab) / OPDIVO (nivolumab),CRL,"same price event, mixed outcomes (an approval and a CRL share one eve close)",2024-06-17 APPROVAL; 2024-06-17 CRL
+CAPR_20240924,CAPR,2024-09-24,2024-09-23,CAP-1002 - (HOPE-3),APPROVAL,"research row re-checked: research row records an FDA APPROVAL for deramiocel, which has never been approved",
 ALPMY_20241018,ALPMY,2024-10-18,2024-10-17,Zolbetuximab,APPROVAL,"same price event as an earlier row (same ticker, same eve-of-decision close)",ALPMY 2024-10-18 VYLOY (zolbetuximab-clzb)
 KZIA_20250102,KZIA,2025-01-02,2024-12-31,Paxalisib (GDC-0084) - (GBM AGILE),APPROVAL,source re-checked: the cited SEC document announces no FDA approval or CRL,
 JSPR_20250108,JSPR,2025-01-08,2025-01-07,Subcutaneous briquilimab - (BEACON),CRL,"decision page says its CRL label was wrong: Mislabel: Phase 1b/2a BEACON clinical data, no NDA/CRL",

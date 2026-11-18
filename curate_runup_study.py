@@ -6,6 +6,9 @@ Runs after extend_runup_study.py and before runup_study_stats.py, every rebuild.
   1. Labels and outcomes come from the published decision page (runup_study_events.decision_facts), for every
      row that has one. Fixes the extender's first-row-per-ticker labels (2026-11-18: GSK Nov 17 neladalkib was
      "tebipenem"; AZN Apr-May 2026 rows all "Truqap").
+     Indications too: the page's Indication line, or for a page without one the primary-sourced entry in
+     runup_study_indications.json (FDA letter or label, or the sponsor's release), else blank (2026-11-18: the
+     extender had copied the ticker's first row's indication onto ~27 rows: Hympavzi "Dermatomyositis").
   2. A row whose decision page is not a primary-sourced approval or CRL leaves the study: "outcome unverified"
      pages (price-inferred; many are trial readouts, not PDUFA events) and the pages listed in
      runup_study_exclusions.json (cited source re-checked and found not to announce the FDA action).
@@ -35,7 +38,8 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from runup_study_events import EXCLUDED_CSV, decision_facts, eligibility, load_exclusions  # noqa: E402
+from runup_study_events import (EXCLUDED_CSV, decision_facts, eligibility, expected_indication,  # noqa: E402
+                                load_exclusions, load_sourced_indications)
 
 CSVF = os.path.join(HERE, "pdufa_runup_bifrost_v2.csv")
 EXCL_COLS = ["cache_key", "ticker", "pdufa_date", "eve_date", "asset", "outcome", "reason", "kept_row"]
@@ -49,9 +53,10 @@ def main():
     rows = list(csv.DictReader(open(CSVF, encoding="utf-8-sig", errors="replace")))
     cols = list(rows[0].keys())
     excl = load_exclusions()
+    sourced = load_sourced_indications()
     n0 = len(rows)
 
-    relabelled, outcome_fixed, removed = [], [], []
+    relabelled, outcome_fixed, removed, ind_fixed = [], [], [], []
     keep = []
     facts = {}
     for r in rows:
@@ -67,8 +72,12 @@ def main():
             if f["drug"] and r.get("asset", "") != f["drug"]:
                 relabelled.append((tk, d, r.get("asset", ""), f["drug"]))
                 r["asset"] = f["drug"]
-            if f["indication"] and r.get("indication", "") != f["indication"]:
-                r["indication"] = f["indication"]
+            # the page's Indication line, else the primary-sourced entry for this drug, else blank: never the
+            # indication the extender used to copy from the ticker's first row (2026-11-18)
+            ind, _src = expected_indication(tk, d, r.get("asset", ""), f, sourced)
+            if r.get("indication", "") != ind:
+                ind_fixed.append((tk, d, r.get("indication", ""), ind))
+                r["indication"] = ind
             if r.get("outcome") != f["outcome"]:
                 outcome_fixed.append((tk, d, r.get("outcome"), f["outcome"]))
                 r["outcome"] = f["outcome"]
@@ -121,7 +130,7 @@ def main():
                             f"{first['ticker']} {first['pdufa_date'][:10]} {first.get('asset', '')[:60]}"))
 
     print(f"study rows: {n0} -> {len(final)}  (removed {len(removed)}, relabelled {len(relabelled)}, "
-          f"outcome corrected {len(outcome_fixed)})")
+          f"outcome corrected {len(outcome_fixed)}, indication corrected {len(ind_fixed)})")
     by = {}
     for _, why, _k in removed:
         key = why.split(":")[0].split("(")[0].strip()
@@ -130,13 +139,15 @@ def main():
         print(f"   removed {v:4d}  {k}")
     for x in relabelled[:8]:
         print(f"   relabel {x[0]:6s} {x[1]}  '{x[2][:40]}' -> '{x[3][:40]}'")
+    for x in ind_fixed[:8]:
+        print(f"   indic.  {x[0]:6s} {x[1]}  '{x[2][:35]}' -> '{x[3][:35]}'")
     for x in outcome_fixed[:8]:
         print(f"   outcome {x[0]:6s} {x[1]}  {x[2]} -> {x[3]}")
 
     if a.dry_run:
         print("DRY RUN -- not written.")
         return
-    if not (removed or relabelled or outcome_fixed):
+    if not (removed or relabelled or outcome_fixed or ind_fixed):
         print("nothing to change.")
         return
 
