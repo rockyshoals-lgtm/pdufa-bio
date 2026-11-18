@@ -35,6 +35,22 @@ PROFILES = os.path.join(HERE, "retail_profiles")
 REQUIRED = ("ticker", "company", "asset", "plain", "technical", "results", "events", "caveats")
 VERDICTS = {"met", "missed", "contested", "note"}
 BEGIN, END = "<!--DEEPDIVE:BEGIN-->", "<!--DEEPDIVE:END-->"
+DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
+TODAY = __import__("datetime").datetime.now(
+    __import__("zoneinfo").ZoneInfo("America/New_York")).date().isoformat()
+
+
+def _live_pdufas():
+    if not os.path.exists(DATASET):
+        return []
+    m = re.search(r"export default (\[.*\])",
+                  open(DATASET, encoding="utf-8", errors="replace").read(), re.S)
+    rows = json.loads(m.group(1)) if m else []
+    return [e for e in rows if e.get("type") == "PDUFA" and e.get("st") == "Upcoming"
+            and e.get("dp") == "day" and e.get("d")]
+
+
+LIVE = _live_pdufas()
 
 
 def main():
@@ -95,11 +111,44 @@ def main():
                 print(f"  FAIL {t}: reaction '{rr.get('what')}' hard-codes a percentage. "
                       f"Moves are measured from daily closes at build time, not typed.")
 
+        # 2026-11-18 design red team: CAPR's dossier said "the PDUFA date of 22 August 2026 stands"
+        # for three months after the FDA moved it to 22 November, four days before the decision.
+        # A dossier whose status still names an expected decision must name the date the dataset
+        # carries for that ticker's live PDUFA, and must not name a date already past.
+        st = p.get("status") or {}
+        if st.get("date") and "expected" in str(st.get("label", "")).lower():
+            live = sorted(e["d"] for e in LIVE if str(e.get("t", "")).upper() == t.upper())
+            if live and st["date"] not in live:
+                ok = False
+                print(f"  FAIL {t}: deep dive says the decision is expected {st['date']}, but the "
+                      f"dataset's live PDUFA date is {', '.join(live)}. Update the profile's status, "
+                      f"its caveats and its timeline, and set status_updated.")
+            if st["date"] < TODAY:
+                # Not a failure: an FDA action can be published days after the goal date, or the FDA can miss it,
+                # and a hard fail would hold every deploy until someone hand-edits the profile. The page says the
+                # date has passed (build_retail_pages.passed_note, checked below); this asks for the update.
+                print(f"  NOTE {t}: deep dive's expected decision date {st['date']} has passed; "
+                      f"update the profile from the FDA action or the sponsor's next disclosure")
+            for cav in p.get("caveats") or []:
+                for d in re.findall(r"\b(\d{1,2} (?:January|February|March|April|May|June|July|"
+                                    r"August|September|October|November|December) \d{4}) stands", cav):
+                    ok = False
+                    print(f"  FAIL {t}: caveat says the date of {d} stands; the status says {st['date']}")
+
         page = os.path.join(SITE, "ticker", t, "index.html")
         if os.path.exists(page):
             doc = open(page, encoding="utf-8", errors="replace").read()
             if BEGIN in doc:
                 blk = doc.split(BEGIN, 1)[1].split(END, 1)[0]
+                # The published block must carry the profile's status, not an older render of it.
+                if st.get("date") and f'>{st["date"]}</div>' not in blk:
+                    ok = False
+                    print(f"  FAIL {t}: published deep dive does not show the profile's status date "
+                          f"{st['date']}; run build_retail_pages.py")
+                if (st.get("date") and "expected" in str(st.get("label", "")).lower() and st["date"] < TODAY
+                        and "This goal date has passed." not in blk):
+                    ok = False
+                    print(f"  FAIL {t}: goal date {st['date']} has passed but the page does not say so")
                 if "not investment advice" not in blk.lower():
                     ok = False
                     print(f"  FAIL {t}: published deep dive is missing the advice disclaimer")

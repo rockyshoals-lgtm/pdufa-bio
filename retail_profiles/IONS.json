@@ -4,11 +4,12 @@
   "asset": "Zilganersen (ION373)",
   "headline": "Ionis has one small, properly controlled trial in an ultra-rare brain disease, and a marginal p-value",
   "as_of": "2026-08-03",
+  "status_updated": "2026-11-18",
   "status": {
-    "label": "FDA decision expected",
-    "date": "2026-09-22",
-    "detail": "New Drug Application under Priority Review for Alexander disease, an ultra-rare inherited brain disorder. First review cycle, with no prior FDA action on this application and no advisory committee announced. Zilganersen carries Orphan Drug, Rare Pediatric Disease, Fast Track and Breakthrough Therapy designations.",
-    "source": "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-zilganersen-new-drug-application-alexander"
+    "label": "FDA approved",
+    "date": "2026-09-03",
+    "detail": "The FDA approved zilganersen (Zanvastro) for the treatment of Alexander disease in pediatric and adult patients on 3 September 2026, under NDA 220210. The goal date had been 22 September 2026; the review and designation history is in the timeline below with its sources.",
+    "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf"
   },
   "plain": "Alexander disease is an ultra-rare inherited brain disorder. A faulty gene makes the brain's support cells produce far too much of a protein called GFAP, which builds up and progressively damages the brain. It usually begins in early childhood and is usually fatal. Zilganersen is given by injection into the fluid around the spinal cord, through a lumbar puncture, once every twelve weeks, and instructs the body to make less of that protein. The goal is not to cure the disease but to slow it, for example to stop a child's walking from continuing to deteriorate.",
   "technical": "Antisense oligonucleotide administered by intrathecal bolus injection every 12 weeks, targeting GFAP messenger RNA to reduce production of glial fibrillary acidic protein in the central nervous system. Wholly owned by Ionis in the US; Recordati holds rights outside the US.",
@@ -44,7 +45,8 @@
     ["2026-03-23", "NDA accepted with Priority Review; PDUFA date 22 September 2026", "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-zilganersen-new-drug-application-alexander"],
     ["2026-04-21", "Full pivotal data presented at the AAN 2026 annual meeting", "https://ir.ionis.com/news-releases/news-release-details/ionis-presents-new-data-pivotal-study-zilganersen-alexander"],
     ["2026-06-25", "Recordati licensed ex-US rights: $30M upfront plus milestones and royalties", "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-license-agreement-recordati-zilganersen"],
-    ["2026-07-29", "Q2 2026 results reaffirmed the 22 September PDUFA date", "https://ir.ionis.com/news-releases/news-release-details/ionis-reports-second-quarter-2026-financial-results-and"]
+    ["2026-07-29", "Q2 2026 results reaffirmed the 22 September PDUFA date", "https://ir.ionis.com/news-releases/news-release-details/ionis-reports-second-quarter-2026-financial-results-and"],
+    ["2026-09-03", "FDA approved zilganersen for Alexander disease, 19 days before the goal date", "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf"]
   ],
 
   "reactions": [
@@ -68,13 +70,13 @@
     "The entire application rests on a single small trial, with 54 participants enrolled across two dose cohorts and a 2:1 randomisation. The number analysed for the primary endpoint has not been disclosed.",
     "The primary p-value of 0.0412 is marginal. In a trial this small, a modest shift in a few patients could change it.",
     "Every measure other than the primary endpoint is nominal, meaning not adjusted for multiple testing. They support the result rather than independently confirming it.",
-    "The primary endpoint was reported in patients aged 5 and over, while the trial enrolled from age 2. Whether that population was pre-specified is not publicly known, and the approved age range, if approved, is unknown.",
+    "The primary endpoint was reported in patients aged 5 and over, while the trial enrolled from age 2. Whether that population was pre-specified is not publicly known; the FDA approval letter linked in the timeline approves zilganersen for Alexander disease in pediatric and adult patients.",
     "No peer-reviewed publication exists. Confidence intervals, per-group patient numbers and full safety tables are not public.",
     "Ionis's own descriptions of the study population are inconsistent across releases, giving both 54 participants aged 1.5 to 53 and 53 people aged 2 to 53.",
     "The trial had no independent data monitoring committee, per its ClinicalTrials.gov record.",
     "Treatment requires a lumbar puncture every twelve weeks, indefinitely.",
     "Alexander disease affects roughly one person per one to three million, so the commercial scale is inherently small. Ionis has issued no revenue guidance for this drug.",
     "Ionis runs many programs. Share price moves around these dates are not attributable to this drug alone, and two of the dates below coincided with unrelated company news.",
-    "Priority Review is a commitment to a timeline, not to an outcome. The FDA can still issue a Complete Response Letter, extend the review, or convene an advisory committee."
+    "The caveats above were written before the FDA decision of 3 September 2026. The approval letter linked in the timeline is the record of what the FDA approved."
   ]
 }

@@ -2,13 +2,14 @@
   "ticker": "CAPR",
   "company": "Capricor Therapeutics, Inc.",
   "asset": "Deramiocel (CAP-1002)",
-  "headline": "Capricor's cell therapy for Duchenne heart disease, and why the FDA and The Lancet reached opposite conclusions",
+  "headline": "Capricor's cell therapy for Duchenne muscular dystrophy, and why the FDA and The Lancet reached opposite conclusions",
   "as_of": "2026-08-03",
+  "status_updated": "2026-11-18",
   "status": {
     "label": "FDA decision expected",
-    "date": "2026-08-22",
-    "detail": "BLA 125842, for cardiomyopathy in male patients with Duchenne muscular dystrophy. This is the second review cycle: the first ended in a Complete Response Letter on 9 July 2025. An FDA advisory committee voted 3 for and 9 against on 29 July 2026.",
-    "source": "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"
+    "date": "2026-11-22",
+    "detail": "On 24 August 2026 Capricor announced that the FDA had classified an amendment to the application as major and moved the goal date from 22 August to 22 November 2026. The amendment added 24-month open-label extension data from the Phase 3 HOPE-3 trial and additional robustness analyses, in support of a refined proposed indication focused on upper limb function, the primary endpoint of HOPE-3. The earlier steps, including the July 2025 Complete Response Letter and the July 2026 advisory committee vote, are in the timeline below with their sources.",
+    "source": "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
   },
   "plain": "Deramiocel is an experimental cell therapy made from heart cells recovered from donated human hearts. It is given as a drip into a vein once every three months in an outpatient clinic, so there is no surgery and no hospital stay. The cells are not meant to replace damaged muscle: the idea is that they release tiny packages called exosomes that calm inflammation and scarring, with the aim of slowing the loss of heart and arm function in boys and young men with Duchenne muscular dystrophy.",
   "technical": "Human allogeneic cardiosphere-derived cells (CDCs) derived from cadaver donor hearts. 1.5 x 10^8 (150 million) cells per intravenous infusion, every three months; four doses over twelve months in the Phase 3 trial. Capricor describes the mechanism as exosome-mediated macrophage reprogramming with immunomodulatory and anti-fibrotic effects; the FDA describes the same mechanism as hypothesised.",
@@ -54,10 +55,12 @@
     ["2026-03-10", "FDA lifted the Complete Response Letter and set a new PDUFA date of 22 August 2026", "https://www.capricor.com/investors/news-events/press-releases/detail/338/capricor-therapeutics-announces-establishment-of-new-pdufa"],
     ["2026-07-27", "FDA briefing document published ahead of the advisory committee", "https://www.fda.gov/media/193839/download"],
     ["2026-07-29", "HOPE-3 published in The Lancet; FDA advisory committee voted 3 for, 9 against", "https://www.capricor.com/investors/news-events/press-releases/detail/350/the-lancet-publishes-hope-3-data-for-capricor"],
-    ["2026-07-30", "Capricor disclosed the advisory committee vote and reaffirmed the PDUFA date", "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"]
+    ["2026-07-30", "Capricor disclosed the advisory committee vote and reaffirmed the PDUFA date", "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"],
+    ["2026-08-24", "FDA classified a BLA amendment as major and extended the PDUFA date to 22 November 2026; the amendment supports a refined proposed indication focused on upper limb function", "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"]
   ],
 
   "reactions": [
+    {"date": "2026-08-24", "what": "PDUFA date extended to 22 November 2026"},
     {"date": "2026-07-30", "what": "Advisory committee vote disclosed (3 for, 9 against)"},
     {"date": "2026-07-27", "what": "FDA briefing document published"},
     {"date": "2026-03-10", "what": "Complete Response Letter lifted, new PDUFA date set"},
@@ -76,12 +79,12 @@
   },
 
   "caveats": [
-    "Advisory committee votes are advice. The FDA is not bound by them, and the PDUFA date of 22 August 2026 stands.",
+    "Advisory committee votes are advice. The FDA is not bound by them. After the vote, the PDUFA date was extended to 22 November 2026, following a major amendment to the application.",
     "The committee voted only on whether the evidence showed effectiveness. It did not vote on overall benefit against risk.",
     "This is the second review cycle. The first ended in a Complete Response Letter in July 2025.",
     "The efficacy claim rests on a statistical analysis plan the FDA says it never reviewed or agreed to, finalised one day before the data were unblinded.",
     "The FDA's re-analyses under the original missing-data rules produced p=0.21 for arm function and p=0.22 for heart function.",
-    "Most patients in the trial did not have severe heart disease at entry, despite the application seeking a cardiomyopathy indication: mean baseline ejection fraction was 57%, and only 5 of 106 patients were below 45%.",
+    "Most patients in the trial did not have severe heart disease at entry, although the original application sought a cardiomyopathy indication: mean baseline ejection fraction was 57%, and only 5 of 106 patients were below 45%.",
     "Measurements of heart scarring were missing for more than half the patients in the group where they were collected.",
     "Chemistry and manufacturing sections were not fully reviewed in the first cycle because of the timing of the Complete Response Letter.",
     "Capricor is in litigation with its US distribution partner, seeking rescission of the agreement. The company states the FDA review is unaffected.",
