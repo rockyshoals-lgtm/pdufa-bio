@@ -55,9 +55,19 @@ def main():
             if f"<!--DM:{r['id']}-->" not in page:
                 fails.append(f"{r['id']}: {where} row carries no 'goal date moved' tag")
     # the notes state history as data, not as a prose date an engine can take for the page's own date
+    # The detector is deliberately wider than the converter (iso_dates): entities unescaped, ordinals, day-first and
+    # missing-space forms all count, so a form the converter misses still fails here (red team 2026-11-18). A verbatim
+    # quotation inside <q> or <blockquote> is exempt: a primary source's own words are never rewritten.
     import glob
+    import html as _html
+    mon = r"(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)"
+    prose = re.compile(rf"\b{mon}\.?\s*\d{{1,2}}(?:st|nd|rd|th)?,?\s*\d{{4}}\b|\b\d{{1,2}}(?:st|nd|rd|th)?\s+{mon}\.?,?\s+\d{{4}}\b")
     if os.environ.get("PLANT_PROSE") == "1":
-        cal = cal.replace("goal date moved from 2026-08-22", "goal date moved from Aug 22, 2026")
+        # any calendar-row tag, so the plant keeps testing something whichever rows are live
+        cal, k = re.subn(r'(<span class="dm"><!--DM:[^>]*--><span[^>]*>goal date moved from )(\d{4})-(\d{2})-(\d{2})',
+                         lambda m: m.group(1) + f"{G.MON[int(m.group(3))][:3]}&nbsp;{int(m.group(4))}, {m.group(2)}", cal)
+        if not k:
+            fails.append("PLANT_PROSE: /calendar has no goal-date tag to plant into; the plant proves nothing")
     n_notes = 0
     for p in glob.glob(os.path.join(SITE, "**", "index.html"), recursive=True):
         if os.sep + "_" in os.sep + os.path.relpath(p, SITE):
@@ -71,10 +81,11 @@ def main():
                  + re.findall(r'<span class="dm">.*?</span></span>', doc, re.S))
         for note in notes:
             n_notes += 1
-            m = G._PROSE_DATE.search(re.sub(r"<[^>]+>", "", note))
+            note = re.sub(r"<(q|blockquote)\b.*?</\1>", " ", note, flags=re.S | re.I)
+            m = prose.search(_html.unescape(re.sub(r"<[^>]+>", " ", note)).replace("\xa0", " "))
             if m:
                 fails.append(f"/{os.path.relpath(os.path.dirname(p), SITE)}: goal-date note states '{m.group(0)}' "
-                             f"as a prose date; write it as {G.iso_dates(m.group(0))}")
+                             f"as a prose date; write it as YYYY-MM-DD")
     if fails:
         print(f"FAIL: {len(fails)} goal-date move(s) not shown, or shown as a prose date:")
         for f in fails:

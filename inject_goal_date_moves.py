@@ -63,6 +63,27 @@ def iso_dates(text):
     return _PROSE_DATE.sub(one, text)
 
 
+def short_reason(why, old, new, limit=260):
+    """First sentence of the row's note, dates written as data, cut at a word (never inside a date).
+
+    A year-less mention of the old or new goal day ("from August 22 to ...") is the same date as old/new, so it is
+    written as that ISO date too; red team 2026-11-18 found it left as prose beside "extended ... from".
+    """
+    t = iso_dates(re.split(r"(?<=[.!?])\s", why.strip())[0])
+    for d in (old, new):
+        try:
+            y, m, dd = (int(x) for x in str(d)[:10].split("-"))
+        except Exception:  # noqa: BLE001
+            continue
+        mon = MON[m]
+        names = {mon, mon[:3]} | ({"Sept"} if m == 9 else set())
+        alt = "|".join(sorted(names, key=len, reverse=True))
+        t = re.sub(rf"\b(?:{alt})\.?\s+{dd}(?:st|nd|rd|th)?\b(?!,?\s*\d{{4}})", f"{y:04d}-{m:02d}-{dd:02d}", t)
+    if len(t) > limit:
+        t = t[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "\u2026"
+    return t
+
+
 def moves(r):
     """[(old_iso, new_iso, changed_iso, why)] for real day-to-day moves of the goal date."""
     hist = (r.get("_d") or {}).get("date_history") or []
@@ -99,7 +120,7 @@ def main():
         p = os.path.join(SITE, url.strip("/").replace("/", os.sep), "index.html") if url.startswith("/pdufa/") else ""
         if p and os.path.exists(p):
             doc = io.open(p, encoding="utf-8", errors="replace").read()
-            why_s = html.escape(iso_dates(re.split(r"(?<=[.!?])\s", why.strip())[0][:220]), quote=False)
+            why_s = html.escape(short_reason(why, old, new), quote=False)
             block = (f'{B}<p class="note" style="margin:6px 0 10px;font-size:13px;color:#f0c86a">'
                      f'<b>Goal date moved:</b> {old[:10]} &rarr; {new[:10]} (recorded {changed[:10]}). '
                      f'{why_s}</p>{E}')
