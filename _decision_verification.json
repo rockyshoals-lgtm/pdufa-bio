@@ -4615,7 +4615,7 @@
    "date": "2026-06-30",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -4623,6 +4623,13 @@
     "accession": "0001654954-26-006251",
     "source_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426006251/a1370k.htm",
     "source_label": "SEC filing 0001654954-26-006251 of 2026-06-29 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited AstraZeneca filing reports a European Commission approval of Enhertu, not an FDA action.",
+    "source": "AstraZeneca 6-K of June 29, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "BAYRY-2026-06-15": {
@@ -4849,7 +4856,7 @@
    "date": "2026-06-18",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -4857,6 +4864,13 @@
     "accession": "0001654954-26-006036",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
     "source_label": "SEC filing 0001654954-26-006036 of 2026-06-17 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Utebzi approval announced June 17, 2026 (GSK-2026-06-17). June 18 was the target date.",
+    "source": "GSK 6-K of June 17, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "HALO-2026-03-05": {
@@ -4972,7 +4986,7 @@
    "date": "2026-04-29",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -4980,6 +4994,13 @@
     "accession": "0001193125-26-179391",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1585608/000119312526179391/d109088dex991.htm",
     "source_label": "SEC filing 0001193125-26-179391 of 2026-04-27 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited exhibit is about a Nasdaq listing extension and a reverse stock split. No FDA approval or CRL.",
+    "source": "Jaguar Health 8-K exhibit 99.1 of April 27, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "JNJ-2026-03-05": {
@@ -5036,7 +5057,7 @@
    "date": "2026-06-08",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -5044,6 +5065,13 @@
     "accession": "0000886163-26-000038",
     "source_url": "https://www.sec.gov/Archives/edgar/data/886163/000088616326000038/lgnd-20260605.htm",
     "source_label": "SEC filing 0000886163-26-000038 of 2026-06-09 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited 8-K reports the votes at Ligand's June 5, 2026 annual meeting; it names no drug and no FDA action.",
+    "source": "Ligand 8-K of June 9, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "LLY-2026-04-01": {
@@ -5181,7 +5209,7 @@
    "date": "2026-02-12",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5189,6 +5217,13 @@
     "accession": "0001645113-26-000010",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1645113/000164511326000010/paxfdadecisionpr.htm",
     "source_label": "SEC filing 0001645113-26-000010 of 2026-02-11 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Optune Pax approval announced February 11, 2026 after the close (NVCR-2026-02-11).",
+    "source": "Novocure 8-K exhibit 99.1 of February 11, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "NVO-2026-03-03": {
@@ -5558,7 +5593,7 @@
    "date": "2026-06-18",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5566,6 +5601,13 @@
     "accession": "0001193125-26-277506",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
     "source_label": "SEC filing 0001193125-26-277506 of 2026-06-22 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Utebzi approval announced June 17, 2026 (SPRO-2026-06-17).",
+    "source": "Spero 8-K of June 17, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "SPRY-2026-05-15": {
@@ -5573,7 +5615,7 @@
    "date": "2026-05-15",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5581,6 +5623,13 @@
     "accession": "0001193125-26-225055",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1671858/000119312526225055/spry-ex99_2.htm",
     "source_label": "SEC filing 0001193125-26-225055 of 2026-05-15 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited exhibit is ARS Pharmaceuticals' first-quarter 2026 investor presentation. No FDA action in May 2026.",
+    "source": "ARS Pharmaceuticals 8-K exhibits of May 15, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "TEVA-2026-03-30": {
@@ -5671,7 +5720,7 @@
    "date": "2026-06-29",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5679,6 +5728,13 @@
     "accession": "0001193125-26-286273",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
     "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second entry for the Lumvoa approval announced June 26, 2026 (VRDN-2026-06-26). June 29 is the 8-K filing date.",
+    "source": "Viridian 8-K of June 26, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "VRDN-2026-06-30": {
@@ -5686,7 +5742,7 @@
    "date": "2026-06-30",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -5694,6 +5750,13 @@
     "accession": "0001193125-26-286273",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
     "source_label": "SEC filing 0001193125-26-286273 of 2026-06-29 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A third entry for the Lumvoa approval announced June 26, 2026 (VRDN-2026-06-26).",
+    "source": "Viridian 8-K of June 26, 2026",
+    "note": "page retired earlier; ledger entry corrected 2026-11-18"
    }
   },
   "XOMA-2026-06-08": {

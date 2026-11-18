@@ -902,6 +902,16 @@
    "marnetegragene"
   ]
  },
+ "REGN-2025-06-20": {
+  "checked": "2026-11-18",
+  "date": "2025-06-18",
+  "record": "BLA 761055 S-070",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
+  "name": "DUPIXENT (dupilumab)",
+  "oc": "Approved",
+  "basis": "red team 2026-11-18: FDA record read directly"
+ },
  "REGN-2026-04-02": {
   "checked": "2026-10-03",
   "class": "EFFICACY",
@@ -997,6 +1007,25 @@
    "IMCIVREE",
    "setmelanotide"
   ]
+ },
+ "SNY-2025-06-20": {
+  "checked": "2026-11-18",
+  "date": "2025-06-18",
+  "record": "BLA 761055 S-070",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
+  "name": "DUPIXENT (dupilumab)",
+  "oc": "Approved",
+  "basis": "red team 2026-11-18: FDA record read directly"
+ },
+ "SNY-2025-12-24": {
+  "checked": "2026-11-18",
+  "date": "2025-12-23",
+  "record": "NDA 219624 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf",
+  "name": "tolebrutinib",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA record read directly"
  },
  "SNY-2026-04-22": {
   "checked": "2026-10-03",

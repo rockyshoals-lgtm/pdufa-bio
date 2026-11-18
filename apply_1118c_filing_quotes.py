@@ -6,7 +6,8 @@ accurate"). verify_decisions.py once accepted any 8-K/6-K that merely CONTAINED 
 "complete response letter"; 35 of 82 pages so verified did not hold up (apply_1118_retire_decisions.py,
 apply_1118b_decision_sources.py). Every remaining filing-verified page was re-read by hand. This writes, for each,
 the sentence from the cited document that records the FDA action, its URL and the check date into the evidence in
-_decision_verification.json, from decision_filing_quotes_2026_11_18.json. tests/test_decision_filing_evidence.py
+_decision_verification.json, from decision_filing_quotes_2026_11_18.json. Nine more entries still said "verified" for
+pages that had already been retired; their filings record no FDA action on that date, so they are marked retracted. tests/test_decision_filing_evidence.py
 then requires a quote on every verified result that rests on a filing or a primary document.
 
 Idempotent. Facts only, not investment advice.
@@ -37,6 +38,21 @@ def apply(ledger, spec):
             continue
         ev.update(want)
         n += 1
+    # pages already retired (no page; redirect in vercel.json) whose ledger entry still said "verified"
+    for slug, (why, src) in (spec.get("retract") or {}).items():
+        r = res.get(slug)
+        if r is None:
+            missing.append(slug)
+            continue
+        if r.get("status") == "retracted":
+            continue
+        if os.path.isdir(os.path.join(HERE, "pdufa_site_src", "fda-decision", slug)):
+            raise SystemExit(f"{slug} still has a page; retire it with apply_1118_retire_decisions.py instead")
+        r["status_before_retraction"] = r.get("status")
+        r["status"] = "retracted"
+        r["retracted"] = {"date": spec["checked"], "why": why, "source": src,
+                          "note": "page retired earlier; ledger entry corrected 2026-11-18"}
+        n += 1
     return n, missing
 
 
@@ -47,7 +63,7 @@ def main():
     ledger = json.load(io.open(LEDGER, encoding="utf-8"))
     spec = json.load(io.open(SPEC, encoding="utf-8"))
     n, missing = apply(ledger, spec)
-    print(f"quotes written: {n} of {len(spec['pages'])}" + (f" | not verified in the ledger: {missing}" if missing else ""))
+    print(f"ledger entries changed: {n} ({len(spec['pages'])} quotes, {len(spec.get('retract') or {})} retractions)" + (f" | not verified in the ledger: {missing}" if missing else ""))
     if missing:
         raise SystemExit("a listed page is not a verified result; fix the spec")
     if not a.dry_run and n:

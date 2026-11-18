@@ -1,5 +1,5 @@
 {
- "_about": "Filing-verified decision pages re-read 2026-11-18: for each, the sentence in the cited filing (or the company release it furnishes) that records the FDA action, and where it is. Quotes are excerpts of at most ~125 characters. Written into _decision_verification.json by apply_1118c_filing_quotes.py; required by tests/test_decision_filing_evidence.py.",
+ "_about": "Filing-verified decision pages re-read 2026-11-18: for each, the sentence in the cited filing (or the company release it furnishes) that records the FDA action, and where it is. Quotes are excerpts of at most ~125 characters. Written into _decision_verification.json by apply_1118c_filing_quotes.py; required by tests/test_decision_filing_evidence.py. `retract`: ledger entries still marked verified for pages that were already retired (no page, a redirect in vercel.json) and whose cited filing, re-read 2026-11-18, records no FDA action on that date; they are marked retracted with the finding.",
  "checked": "2026-11-18",
  "pages": {
   "ABEO-2025-04-29": {
@@ -224,5 +224,43 @@
    "action_date": "",
    "note": "Viridian release (Business Wire, Waltham; 8-K filed June 29, 2026) records FDA approval of Lumvoa (veligrotug-vvze). Release prints no date and no approval date; it announces a call for Monday, June 29, consistent with a June 26-28 announcement. Page date not contradicted but not confirmed by the filing."
   }
+ },
+ "retract": {
+  "AZN-2026-06-30": [
+   "The cited AstraZeneca filing reports a European Commission approval of Enhertu, not an FDA action.",
+   "AstraZeneca 6-K of June 29, 2026"
+  ],
+  "JAGX-2026-04-29": [
+   "The cited exhibit is about a Nasdaq listing extension and a reverse stock split. No FDA approval or CRL.",
+   "Jaguar Health 8-K exhibit 99.1 of April 27, 2026"
+  ],
+  "LGND-2026-06-08": [
+   "The cited 8-K reports the votes at Ligand's June 5, 2026 annual meeting; it names no drug and no FDA action.",
+   "Ligand 8-K of June 9, 2026"
+  ],
+  "SPRY-2026-05-15": [
+   "The cited exhibit is ARS Pharmaceuticals' first-quarter 2026 investor presentation. No FDA action in May 2026.",
+   "ARS Pharmaceuticals 8-K exhibits of May 15, 2026"
+  ],
+  "GSK-2026-06-18": [
+   "A second entry for the Utebzi approval announced June 17, 2026 (GSK-2026-06-17). June 18 was the target date.",
+   "GSK 6-K of June 17, 2026"
+  ],
+  "SPRO-2026-06-18": [
+   "A second entry for the Utebzi approval announced June 17, 2026 (SPRO-2026-06-17).",
+   "Spero 8-K of June 17, 2026"
+  ],
+  "NVCR-2026-02-12": [
+   "A second entry for the Optune Pax approval announced February 11, 2026 after the close (NVCR-2026-02-11).",
+   "Novocure 8-K exhibit 99.1 of February 11, 2026"
+  ],
+  "VRDN-2026-06-29": [
+   "A second entry for the Lumvoa approval announced June 26, 2026 (VRDN-2026-06-26). June 29 is the 8-K filing date.",
+   "Viridian 8-K of June 26, 2026"
+  ],
+  "VRDN-2026-06-30": [
+   "A third entry for the Lumvoa approval announced June 26, 2026 (VRDN-2026-06-26).",
+   "Viridian 8-K of June 26, 2026"
+  ]
  }
 }
