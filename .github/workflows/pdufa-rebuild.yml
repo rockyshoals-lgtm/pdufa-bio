@@ -1059,8 +1059,19 @@ jobs:
               echo "(re-open the source, then record_date_check.py; the date guard blocks once a row is 14 days out)"
               echo '```'; cat recheck.txt 2>/dev/null || echo "(not run)"; echo '```'
             } > issue.md
-            gh issue create --title "pdufa.bio review: verify + publish ($(date -u +%F))" \
-              --body-file issue.md --label "reconciliation" || echo "issue create skipped"
+            # 2026-11-18: the "reconciliation" label never existed in this repo, so every create failed
+            # ("could not add label") and no review issue was ever opened. No label now, and one open
+            # review issue is kept up to date instead of a new one every run.
+            TITLE="pdufa.bio review: verify + publish ($(date -u +%F))"
+            OPEN=$(gh issue list --state open --search 'in:title "pdufa.bio review: verify + publish"' \
+              --json number --jq '.[0].number' 2>/dev/null)
+            if [ -n "$OPEN" ]; then
+              gh issue edit "$OPEN" --title "$TITLE" --body-file issue.md && echo "updated review issue #$OPEN" \
+                || echo "::warning::review issue update FAILED"
+            else
+              gh issue create --title "$TITLE" --body-file issue.md \
+                || echo "::warning::review issue create FAILED -- items needing a human were not filed"
+            fi
           else
             echo "Nothing needs review this run."
           fi
