@@ -244,7 +244,7 @@ def main():
         # simply not a DECISION. The rule is meant to exclude pages with nothing verified on
         # them, not pages whose verified thing happens to be a readout.
         has_reported_readout = bool(re.search(
-            r'<h2>Clinical readouts \(\d+\)</h2>.*?class="badge (?:app|crl)"', t, re.S))
+            r'<h2(?: id="readouts")?>Clinical readouts \(\d+\)</h2>.*?class="badge (?:app|crl)"', t, re.S))
         # 2026-10-18 (Bing "important pages using meta robots", PBYI and VYGR): a hub whose only row is a
         # registry-sourced readout (a ClinicalTrials.gov source_url on the row) is not thin; it is sourced. Index
         # it. Noindex stays for hubs with no sourced row at all.

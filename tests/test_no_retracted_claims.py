@@ -41,6 +41,13 @@ try:
     RETRACTED.update({s: why for s, (_, why, _) in _R1118.items()})
 except Exception:  # noqa: BLE001
     pass
+# 2026-10-15 retirements (apply_1015_anktiva_and_corrections.py) that recorded no FDA action. Three /ticker hubs that
+# no builder rewrites still listed one as an approval until apply_1118d_stale_hub_rows.py.
+try:
+    from apply_1118d_stale_hub_rows import RETIRED_1015 as _R1015
+    RETRACTED.update(_R1015)
+except Exception:  # noqa: BLE001
+    pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
 ALLOWED = {"corrections/index.html", "changelog/index.html"}
 DEC_LINK = re.compile(r"/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})")

@@ -139,6 +139,121 @@ def table_rows(sep=" "):
             f"{v('Mid')[0]:.1f}% mid and {v('Large')[0]:.1f}% large")
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# 2026-11-18 (design red team, change 6: "label every number and give it one value"). Each /pdufa/ page's cohort card
+# says "840 large-cap decisions" and "a median decision-day move of 1.0% in either direction", then draws a histogram
+# (coh-dist-v1) captioned "n=790 · median +0.0% · 50% up" from a July one-off cut that nothing refreshed: two counts and
+# two different "medians" for one cohort on one card. The histogram is now drawn here from the same study rows
+# (pdufa_runup_bifrost_v2.csv, post_1d by mcap_tier) that runup_study_stats.py turns into the chip, so its n is the
+# chip's n and its median is the same median size of move, labelled as such. The "50% up" share is gone: the review
+# asked for no "up %" beside a ticker, where it reads as odds for this stock.
+import csv as _csv
+import statistics as _st
+
+CSVF = os.path.join(HERE, "pdufa_runup_bifrost_v2.csv")
+TIER_KEY = {"Nano": "Nano (<$50M)", "Micro": "Micro ($50M-$300M)", "Small": "Small ($300M-$2B)",
+            "Mid": "Mid ($2B-$10B)", "Large": "Large (>$10B)"}
+MOVES = {}
+try:
+    for _r in _csv.DictReader(open(CSVF, encoding="utf-8-sig", errors="replace")):
+        try:
+            _v = float(_r.get("post_1d"))
+        except (TypeError, ValueError):
+            continue
+        if _r.get("mcap_tier"):
+            MOVES.setdefault(_r["mcap_tier"], []).append(_v)
+except OSError:
+    MOVES = {}
+BINS = [(None, -30, "under -30%"), (-30, -15, "-30 to -15%"), (-15, -7, "-15 to -7%"), (-7, -3, "-7 to -3%"),
+        (-3, 3, "-3 to +3%"), (3, 7, "+3 to +7%"), (7, 15, "+7 to +15%"), (15, 30, "+15 to +30%"), (30, None, "over +30%")]
+AXIS = {0: "&lt;-30", 4: "&#177;3", 8: "&gt;+30"}
+
+
+def _bin(x):
+    for i, (lo, hi, _l) in enumerate(BINS):
+        if (lo is None or x >= lo) and (hi is None or x < hi):
+            return i
+    return len(BINS) - 1
+
+
+def _pct(c, n):
+    """A bar's share: one decimal under 1% so a bar that holds rows never reads "(0%)" (red team of change 6)."""
+    p = 100 * c / n
+    return f"{p:.1f}%" if 0 < p < 1 else f"{round(p):.0f}%"
+
+
+def _svg(word, counts, n, phone):
+    w, x0, bw, step, base, top, fs = ((320, 6.4, 31.3, 34.5, 84.5, 16.0, 12.2) if phone else
+                                      (300, 6.0, 29.3, 32.33, 76.5, 8.0, 9))
+    lab_y = 98.0 if phone else 90
+    halo = ' stroke="#071528" stroke-width="3" stroke-linejoin="round" paint-order="stroke"' if phone else ""
+    aria = f"Decision-day move distribution for {word}-cap PDUFAs, n={n:,}"
+    head = (f'<svg class="pd-phs"  width="100%" style="" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace" '
+            f'role="img" aria-label="{aria}" viewBox="0 0.0 320 104.0">' if phone else
+            f'<svg viewBox="0 0 300 96" width="100%" style="max-width:340px" xmlns="http://www.w3.org/2000/svg" '
+            f'font-family="IBM Plex Mono,monospace" role="img" aria-label="{aria}">')
+    out = [head, f'<line x1="{x0}" y1="{base}" x2="{w - x0}" y2="{base}" stroke="#1e3a63"/>']
+    peak = max(counts) or 1
+    for i, (lo, hi, lab) in enumerate(BINS):
+        c = counts[i]
+        h = round(68.0 * c / peak, 1)
+        x = round(x0 + i * step, 1)
+        fill, op = ("#5b8fd0", "0.55") if i == 4 else (("#ff7a72" if i < 4 else "#46d17f"), "0.92")
+        out.append(f'<g><title>{lab}: {c:,} of {n:,} ({_pct(c, n)})</title><rect x="{x}" y="{round(base - 0.5 - h, 1)}" '
+                   f'width="{bw}" height="{h}" rx="1.5" fill="{fill}" opacity="{op}"/></g>')
+        if i in AXIS:
+            out.append(f'<text x="{round(x + bw / 2, 1)}" y="{lab_y}" fill="#7c93b6" font-size="{fs}" text-anchor="middle"{halo}>'
+                       f'{AXIS[i]}</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def cohort_histogram(word):
+    """The coh-dist-v1 card body for a tier word (nano/micro/small/mid/large), or None without study rows."""
+    vals = MOVES.get(TIER_KEY[word.capitalize()]) or []
+    if not vals:
+        return None
+    n = len(vals)
+    counts = [0] * len(BINS)
+    for x in vals:
+        counts[_bin(x)] += 1
+    # the chip's own figure, so the two never print different decimals for the same median (the stats file keeps 4
+    # places: at 2 the small-cap 3.4464 was stored 3.45 and printed 3.5)
+    size = (TIER.get(word.capitalize()) or {}).get("median_abs_pct")
+    if size is None or (TIER.get(word.capitalize()) or {}).get("n") != n:
+        size = round(_st.median([abs(x) for x in vals]), 2)
+    return ('<div class="coh-dist-v1" style="margin-top:12px"><div style="display:flex;justify-content:space-between;'
+            'align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap"><span class="lit" style="font-size:11px;'
+            f'color:#7c93b6;text-transform:uppercase;letter-spacing:.5px">Decision-day move &middot; {word}-cap cohort</span>'
+            f'<span class="lit" style="font-size:11px;color:#9db3d4">n={n:,} &middot; median size {size:.1f}%</span></div><!--PH:B--><div class="pd-ph">{_svg(word, counts, n, False)}{_svg(word, counts, n, True)}'
+            '</div><!--PH:E--><div class="lit" style="font-size:10.5px;color:#7c93b6;margin-top:2px">Next-day % move after '
+            f'the FDA decision, {n:,} {word}-cap decisions in our run-up study ({Y0}&#8211;{Y1}). Median size is the '
+            'middle move up or down. Red = down, green = up, blue = within &#177;3%. Historical dispersion, not a '
+            'forecast.</div></div>')
+
+
+HIST_RE = re.compile(r'<div class="coh-dist-v1".*?<!--PH:E--><div class="lit"[^>]*>[^<]*</div></div>', re.S)
+PHONE_SVG = re.compile(r'<svg class="pd-phs".*?</svg>', re.S)
+n_hist = 0
+for p in glob.glob(os.path.join(SITE, "pdufa", "*", "index.html")):
+    h = open(p, encoding="utf-8", errors="replace").read()
+    m = HIST_RE.search(h)
+    if not m:
+        continue
+    mt = TIER_RE.search(h)
+    # red team of change 6: the histogram is the page's own tier's or none. A page whose tier is not one we track
+    # ("Not listed") used to keep whichever tier the old histogram drew, beside a card that names no tier.
+    word = mt.group(2).strip().lower() if mt and mt.group(2).strip() in TIER else None
+    new = (cohort_histogram(word) if word else None) or ""
+    # inject_mobile_polish.py redraws the phone copy a hair differently (x 22.0 vs 22.1); compare without it so a CI run
+    # does not rewrite 60 pages only for polish to rewrite them back
+    if PHONE_SVG.sub("", new) != PHONE_SVG.sub("", m.group(0)):
+        n_hist += 1
+        if not a.dry_run:
+            open(p, "w", encoding="utf-8").write(h[:m.start()] + new + h[m.end():])
+print(f"{'would redraw' if a.dry_run else 'redrew'} {n_hist} cohort histogram(s) from the study rows")
+
+
 LEARN = os.path.join(SITE, "learn", "what-happens-to-a-stock-on-a-pdufa-date", "index.html")
 RATE = os.path.join(SITE, "fda-approval-rate", "index.html")
 COHORT_TXT = f"{N_ALL:,}-decision run-up study, {Y0}-{Y1}"
