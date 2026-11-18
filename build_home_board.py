@@ -244,11 +244,84 @@ def esc(s):
     return (str(s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
+def _dataset_rows():
+    try:
+        src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+        return json.loads(src[src.index("["):src.rindex("]") + 1])
+    except Exception:  # noqa: BLE001
+        return []
+
+
+def _drug_tokens(name):
+    """Identity tokens of a drug name (load_slate's tokens(): lowercased runs of 4+ alphanumerics)."""
+    return {w for w in re.findall(r"[a-z0-9]{4,}", str(name or "").lower())}
+
+
+def window_of(tk, date, rows, drug=""):
+    """Design red team 2026-11-18 (change 1). The slate stores every goal as a day, so a month-precision goal
+    (REGN cemdisiran, "Nov 2026") was baked as "PDUFA 2026-11-30, 12 days" and the client hydrator kept counting
+    down to a day nobody stated. Returns the window label when the dataset holds this goal only as a month,
+    quarter or year; None when it holds it as a day, since a stated day stays a day.
+
+    The goal is found by drug identity first (the same tokens load_slate matches decisions on), whatever its status:
+    precision belongs to the goal, so a goal the dataset already marks Decided, but which the decisions archive does
+    not list yet, keeps its window rather than falling back to the slate's storage day. Matching only by "this ticker
+    has a window containing the date" let one drug's window swallow another drug's exact day (RHHBY's Gazyva "Dec
+    2026" over giredestrant's Nov 30 if the slate date drifted)."""
+    from site_windows import is_day, is_withdrawn, window_label, window_span
+    cands = [r for r in rows if r.get("t") == tk and r.get("type") == "PDUFA" and r.get("d")
+             and not is_withdrawn(r)]
+    if not cands:
+        return None
+
+    def span(r):
+        s, e = window_span(r)
+        return (s or str(r.get("d"))[:10]), (e or str(r.get("d"))[:10])
+
+    def dist(r):
+        s, e = span(r)
+        if s <= date <= e:
+            return 0
+        a = dt.date.fromisoformat(date)
+        return min(abs((dt.date.fromisoformat(s) - a).days), abs((dt.date.fromisoformat(e) - a).days))
+
+    gtok = _drug_tokens(drug)
+    same = [r for r in cands if gtok and gtok & _drug_tokens(r.get("name"))]
+    if same:
+        best = min(same, key=lambda r: (-len(gtok & _drug_tokens(r.get("name"))), dist(r), str(r.get("d"))))
+        if dist(best) > 92:           # nothing of this drug near the slate date: no basis to coarsen it
+            return None
+        return None if is_day(best) else window_label(best)
+    # No name to match on: a day row of this ticker on the date keeps the day; otherwise only a single window row
+    # that contains the date may coarsen it.
+    if any(is_day(r) and str(r.get("d"))[:10] == date for r in cands):
+        return None
+    wins = [r for r in cands if not is_day(r) and dist(r) == 0]
+    return window_label(wins[0]) if len(wins) == 1 else None
+
+
 def render_upcoming(cats, key):
     rows = []
+    ds = _dataset_rows()
     for c in cats:
         tk, cap = c["ticker"], c.get("cap", "")
         date = str(c["date"])[:10]
+        win = window_of(tk, date, ds, c.get("drug") or c.get("drug_name") or "")
+        if win:
+            # No countdown: the box shows the window, and "PDUFA window ..." is not a day the hydrator can match.
+            parts = win.split(" ", 1)
+            big, small = (parts[0], parts[1]) if len(parts) == 2 else (win, "window")
+            label = f"PDUFA window {win}"
+            if win.lower() == "not announced":      # the sponsor states no goal date at all
+                big, small, label = "TBA", "date", "PDUFA date not announced"
+            drug = esc(c.get("drug") or c.get("name") or tk)
+            rows.append(
+                f'<a class="row" href="{link_for(tk)}"><span class="cd"><b>{esc(big)}</b>'
+                f'<i>{esc(small)}</i></span>'
+                f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
+                f'<span class="dg">{drug} · {esc(label)}</span></span>{sparkline(poly_closes(key, tk))}'
+                f'<span class="coh">{COH.get(cap, "±3%")}<i>cohort</i></span></a>')
+            continue
         d = (TODAY - dt.date.fromisoformat(date)).days * -1
         # A PDUFA date that has passed with no outcome posted yet must not render as "-1 days".
         # The client hydrator already rewrote this to "0 due" at view time, but the BAKED html is
