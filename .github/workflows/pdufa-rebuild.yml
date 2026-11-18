@@ -268,7 +268,7 @@ jobs:
           python build_exclusivity_cliff.py
 
       - name: Sync the v1 API to the published pages (kills API/page drift)
-        run: python sync_decisions_listing.py && python sync_api_from_pages.py
+        run: python sync_decisions_listing.py && python fix_decisions_order.py && python sync_api_from_pages.py
 
       # Audit 2026-09-26 items 3-5: every decided approval's ACTION date from the FDA's own record
       # (Drugs@FDA submission status date + approval letter; CBER letters/notices hand-verified in
