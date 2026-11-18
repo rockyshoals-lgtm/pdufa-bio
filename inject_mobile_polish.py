@@ -32,6 +32,8 @@ What it found, and what this pass does about each:
 11. Card grids widened pages: a grid column is at least as wide as its widest unbreakable line, so one long
    company name made every /tickers row 403px wide on a 320px phone. Grid items may now shrink (min-width:0)
    on phones; a name that does not fit ends in an ellipsis where the page asks for one, and wraps otherwise.
+   The /readouts past-window rows (label block fixed at min-width:150px, a 72px sparkline and the move) were
+   325px wide at 320px; the label block may now shrink and wrap on phones.
 12. Wide charts shrank to unreadable text: the /readouts monthly bar chart (782 units wide, 9-unit labels) drew its
    labels about 3px tall on a 320px phone, the /calendar weekly density chart about 3px. A chart at least 700
    units wide whose smallest label would draw under 10px in a phone column is put in a sideways-scrolling box
@@ -113,7 +115,7 @@ CSS = (
     '}'
     '@media(max-width:640px){'
     # 11. grid cards may shrink below their longest unbreakable line
-    '.grid>*{min-width:0}'
+    '.grid>*{min-width:0}.row>div[style*="min-width:150px"]{min-width:0!important;flex:1 1 auto}'
     # 12. (see above)
     '.pd-cx{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}'
     '.pd-cx>svg{min-width:var(--cxw);max-width:none!important}'
