@@ -23,7 +23,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PAGE = os.path.join(HERE, "pdufa_site_src", "decisions", "index.html")
-ROW = re.compile(r'<a class="row" href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})".*?</a>', re.S)
+ROW = re.compile(r'<a class="row" href="/fda-decision/([A-Z0-9.]{1,8})-(\d{4}-\d{2}-\d{2})".*?</a>', re.S)
 HEAD = re.compile(r'(<div class="mhead"[^>]*>)(\d{4})(\s*[^\d<]{1,12}\s*)(\d+)(</div>)')
 
 
