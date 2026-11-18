@@ -208,6 +208,10 @@ def main():
     if hp is not None and "<!--LINKHUB:BEGIN-->" in hp:
         out["/"] = re.sub(r"<!--LINKHUB:BEGIN-->.*?<!--LINKHUB:END-->", "", hp, flags=re.S)
 
+    def ul(items):
+        return "<ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.8\">" + "".join(
+            f'<li><a href="{h}" {A}>{esc(t)}</a></li>' for t, h in items) + "</ul>"
+
     # ---- /sitemap (HTML)
     sm = io.open(os.path.join(SITE, "sitemap.xml"), encoding="utf-8").read()
     locs = [re.sub(r"^https://www\.pdufa\.bio", "", x).rstrip("/") or "/" for x in re.findall(r"<loc>([^<]+)</loc>", sm)]

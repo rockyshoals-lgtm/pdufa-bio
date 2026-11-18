@@ -35,7 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # Audit 09-05 (0800 slot) P2-7: every date a page prints is the EASTERN calendar date of
 # the build, from one shared function (site_dates.py), never the runner's UTC clock.
 import sys as _sys; _sys.path.insert(0, HERE)
-from site_dates import eastern_today as _eastern_today
+from site_dates import eastern_today as _eastern_today, row_ahead as _row_ahead, row_is_estimate
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 B, E = "<!--LEDE:BEGIN-->", "<!--LEDE:END-->"
@@ -92,7 +92,7 @@ def parse(doc):
             # Design change 8 (2026-11-18): "ABBV · Q4 2026 (est.)" is an estimate with no external source
             # (_calendar_unbacked_q4_rows.json; its event page says "Date not sourced"), not a goal date anyone stated. It is not counted among the goal dates still ahead, which
             # the lede says each link the filing they came from; it is named separately.
-            "est": bool(re.search(r"\(est\.?\)", low)),
+            "est": row_is_estimate(t),
         })
     return out
 
@@ -111,7 +111,7 @@ def later_rows(today):
             continue
         doc = open(p, encoding="utf-8", errors="replace").read()
         for r in parse(re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)):
-            if not (r["approved"] or r["crl"] or r["est"]) and (not r["iso"] or r["iso"] >= today):
+            if not (r["approved"] or r["crl"]) and _row_ahead(r["text"], r["iso"], today):
                 n += 1
     return n, int(cal_year) + 1
 
@@ -151,7 +151,7 @@ def sentence(path, rows):
         rest = [r for r in rows if not (r["approved"] or r["crl"])]
         est = sum(1 for r in rest if r["est"])
         rest = [r for r in rest if not r["est"]]
-        upcoming = sum(1 for r in rest if not r["iso"] or r["iso"] >= today)
+        upcoming = sum(1 for r in rest if _row_ahead(r["text"], r["iso"], today))
         awaiting = len(rest) - upcoming
 
         # Audit 2026-11-09 §5 item 3: this is the most-quoted sentence on the site (9.3K Bing AI citations in 60
@@ -182,7 +182,7 @@ def sentence(path, rows):
         if est:
             s += (f"Each date comes from an FDA notice or a company filing, except {est} row{'s' if est != 1 else ''} "
                   f"marked (est.), which give{'' if est != 1 else 's'} an estimated quarter with no source behind it and "
-                  f"{'are' if est != 1 else 'is'} not counted among the goal dates above. Where the source gives only "
+                  f"{'are' if est != 1 else 'is'} not counted among the goal dates still ahead. Where the source gives only "
                   "a month or a quarter we say so instead of inventing a day.")
         else:
             s += ("Each date comes from an FDA notice or a company filing, and where the source gives "
@@ -285,8 +285,7 @@ def homepage_sentence():
         return None, None, None
 
     today = _eastern_today().isoformat()
-    ahead = sum(1 for r in cal if not (r["approved"] or r["crl"] or r["est"])
-                and (not r["iso"] or r["iso"] >= today))
+    ahead = sum(1 for r in cal if not (r["approved"] or r["crl"]) and _row_ahead(r["text"], r["iso"], today))
     ap = sum(1 for r in dec if r["approved"])
     crl = sum(1 for r in dec if r["crl"])
 
@@ -302,7 +301,7 @@ def homepage_sentence():
         if p.split(os.sep)[-3] <= cal_year:
             continue
         later += sum(1 for r in rows_of(os.path.relpath(os.path.dirname(p), SITE).replace(os.sep, "/"))
-                     if not (r["approved"] or r["crl"] or r["est"]) and (not r["iso"] or r["iso"] >= today))
+                     if not (r["approved"] or r["crl"]) and _row_ahead(r["text"], r["iso"], today))
     if later:
         s += f" through December {cal_year}, {later} more already set for {int(cal_year) + 1} and later,"
     if rd:

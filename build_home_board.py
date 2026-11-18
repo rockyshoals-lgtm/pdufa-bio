@@ -474,8 +474,9 @@ def freshness_label():
     y, m, dd = (int(x) for x in best.split("-"))
     age = (TODAY - dt.date(y, m, dd)).days
     # Design change 8 (2026-11-18): the homepage carries one date stamp, in the freshness block under the h1. The
-    # eyebrow names the rows' own date only when they have gone stale, which is when a reader needs it.
-    if age > 7:
+    # eyebrow names the rows' own date once they are older than yesterday's refresh (the daily rebuild runs overnight
+    # Eastern), which is when a reader needs it. Red team: a week of silent staleness was too long.
+    if age > 1:
         return f"Data through {MON3[m - 1]} {dd} · free, no login", age
     return "Free, no login", age
 

@@ -68,6 +68,15 @@ def catalysts_in(segment):
     return out
 
 
+def title_tokens(slug):
+    p = os.path.join(HERE, "pdufa_site_src", "fda-decision", slug, "index.html")
+    if not os.path.exists(p):
+        return set()
+    t = re.search(r"<title>(.*?)(?: Approved| CRL| Complete Response| Not Approved| Withdrawn|\|)",
+                  open(p, encoding="utf-8", errors="replace").read()[:4000], re.S)
+    return {w for w in re.findall(r"[a-z]{5,}", (t.group(1) if t else "").lower()) if w not in STOPW} - {slug.split("-")[0].lower()}
+
+
 def main():
     if not os.path.exists(HOME):
         print("FAIL: homepage not found")
@@ -85,10 +94,21 @@ def main():
     decided = html[i_dec:i_up] if i_dec < i_up else html[i_dec:i_dec + 20000]
 
     up, dec = catalysts_in(upcoming), catalysts_in(decided)
-    # Same ticker AND an overlapping drug name = the same application in both sections.
+    # 2026-11-18 (change 8 red team): decided tiles carry no drug text, so every decided token set was empty and the
+    # drug-level comparison could never fire. Read each decided tile's drug from its decision page's <title>.
+    dec = [(tk, toks | title_tokens(href)) for (tk, toks), href in
+           zip(dec, re.findall(r'href="/fda-decision/([A-Z.]+-\d{4}-\d{2}-\d{2})"', decided))] \
+        if len(dec) == len(re.findall(r'href="/fda-decision/', decided)) else dec
+    # Same ticker AND an overlapping drug name = the same application in both sections, unless each side names
+    # something the other does not (Roche: giredestrant (lidERA) still pending beside Wilserdly (giredestrant),
+    # the separate evERA application, approved Nov 16). A pending tile that adds nothing to the decided title is the
+    # same application.
     both = sorted({f"{tk} ({', '.join(sorted(ut & dt_)[:2])})"
                    for tk, ut in up for tk2, dt_ in dec
-                   if tk == tk2 and (ut & dt_)})
+                   if tk == tk2 and (ut & dt_) and not ((ut - dt_) and (dt_ - ut))})
+    n_dec_tokens = sum(1 for _tk, t in dec if t)
+    if dec and not n_dec_tokens:
+        both.append("(no decided tile has a drug name to compare; the check cannot see that side)")
 
     print(f"homepage board: {len(up)} upcoming, {len(dec)} recently decided")
 

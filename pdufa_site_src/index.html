@@ -202,11 +202,11 @@ document.addEventListener('keydown',function(e){
     if(!best)return;
     var el=document.getElementById('fresh');if(!el)return;
     var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],p=best.split('-');
-    var age=(Date.now()-Date.UTC(+p[0],+p[1]-1,+p[2]))/864e5;
+    var age=Math.round((Date.parse(tISO)-Date.parse(best))/864e5);
     /* Design change 8 (2026-11-18): the page's one date stamp sits under the h1. This names the rows' own date
-       only when they are more than a week old, and dims the dot, so staleness is never hidden. */
-    el.textContent=age>7?'Data through '+mo[+p[1]-1]+' '+(+p[2])+' · free, no login':'Free, no login';
-    if(age>7){var dot=el.parentNode.querySelector('.dot');if(dot){dot.style.background='#e3ba5e';dot.style.boxShadow='none';}}
+       (Eastern days) once they are older than yesterday's refresh, and dims the dot, so staleness is never hidden. */
+    el.textContent=age>1?'Data through '+mo[+p[1]-1]+' '+(+p[2])+' · free, no login':'Free, no login';
+    if(age>1){var dot=el.parentNode.querySelector('.dot');if(dot){dot.style.background='#e3ba5e';dot.style.boxShadow='none';}}
   }).catch(function(){});
 }catch(e){}})();
 </script></body></html>
