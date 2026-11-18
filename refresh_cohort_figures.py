@@ -145,7 +145,8 @@ def table_rows(sep=" "):
 # (coh-dist-v1) captioned "n=790 · median +0.0% · 50% up" from a July one-off cut that nothing refreshed: two counts and
 # two different "medians" for one cohort on one card. The histogram is now drawn here from the same study rows
 # (pdufa_runup_bifrost_v2.csv, post_1d by mcap_tier) that runup_study_stats.py turns into the chip, so its n is the
-# chip's n and its median is the same median size of move, labelled as such.
+# chip's n and its median is the same median size of move, labelled as such. The "50% up" share is gone: the review
+# asked for no "up %" beside a ticker, where it reads as odds for this stock.
 import csv as _csv
 import statistics as _st
 
@@ -215,12 +216,10 @@ def cohort_histogram(word):
     size = (TIER.get(word.capitalize()) or {}).get("median_abs_pct")
     if size is None or (TIER.get(word.capitalize()) or {}).get("n") != n:
         size = round(_st.median([abs(x) for x in vals]), 2)
-    up = round(100 * sum(1 for x in vals if x > 0) / n)
     return ('<div class="coh-dist-v1" style="margin-top:12px"><div style="display:flex;justify-content:space-between;'
             'align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap"><span class="lit" style="font-size:11px;'
             f'color:#7c93b6;text-transform:uppercase;letter-spacing:.5px">Decision-day move &middot; {word}-cap cohort</span>'
-            f'<span class="lit" style="font-size:11px;color:#9db3d4">n={n:,} &middot; median size {size:.1f}% &middot; '
-            f'{up}% up</span></div><!--PH:B--><div class="pd-ph">{_svg(word, counts, n, False)}{_svg(word, counts, n, True)}'
+            f'<span class="lit" style="font-size:11px;color:#9db3d4">n={n:,} &middot; median size {size:.1f}%</span></div><!--PH:B--><div class="pd-ph">{_svg(word, counts, n, False)}{_svg(word, counts, n, True)}'
             '</div><!--PH:E--><div class="lit" style="font-size:10.5px;color:#7c93b6;margin-top:2px">Next-day % move after '
             f'the FDA decision, {n:,} {word}-cap decisions in our run-up study ({Y0}&#8211;{Y1}). Median size is the '
             'middle move up or down. Red = down, green = up, blue = within &#177;3%. Historical dispersion, not a '

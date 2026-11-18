@@ -10,7 +10,7 @@ on any /pdufa/ page:
   1. the histogram's n differs from the chip's n or the lead sentence's count, or from runup_study_stats.json;
   2. the histogram's median differs from the chip's median, or is not labelled as a median size (up or down);
   3. the histogram's bars do not add up to its n, or a bar's count differs from the study rows for that tier;
-  4. the histogram names a tier other than the page's market-cap tier.
+  4. the histogram names a tier other than the page's market-cap tier, or prints an "up %" share (it reads as odds).
 
     python tests/test_cohort_one_value.py
 """
@@ -63,10 +63,12 @@ def main():
         blk = blk.group(0)
         hists += 1
         head = re.search(r"Decision-day move &middot; ([a-z]+)-cap cohort</span><span[^>]*>n=([\d,]+) &middot; "
-                         r"median size (\d+\.\d)% &middot; (\d+)% up<", blk)
+                         r"median size (\d+\.\d)%<", blk)
         if not head:
-            bad.append(f"{slug}: histogram header is not 'n=N · median size X% · Y% up'")
+            bad.append(f"{slug}: histogram header is not 'n=N · median size X%'")
             continue
+        if re.search(r"\d+% up<", blk):
+            bad.append(f"{slug}: histogram prints an 'up %' share")
         word, n, med = head.group(1), int(head.group(2).replace(",", "")), head.group(3)
         tier = re.search(r"<span>Market-cap tier</span><b>([A-Za-z]+)</b>", doc)
         if tier and tier.group(1).lower() in KEY and tier.group(1).lower() != word:
