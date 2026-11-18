@@ -329,7 +329,7 @@ def render_upcoming(cats, key):
                 f'<i>{esc(small)}</i></span>'
                 f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
                 f'<span class="dg">{drug} · {esc(label)}</span></span>{sparkline(poly_closes(key, tk))}'
-                f'<span class="coh">{COH.get(cap, "±3%")}<i>cohort</i></span></a>')
+                f'{coh_chip(cap)}</a>')   # 2026-11-18: window rows get the same labeled chip (change 6 missed them)
             continue
         d = (TODAY - dt.date.fromisoformat(date)).days * -1
         # A PDUFA date that has passed with no outcome posted yet must not render as "-1 days".
