@@ -1,21 +1,21 @@
 {
  "ABBV-2026-02-20": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2026-02-19",
-  "record": "NDA 208573 S-031",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208573Orig1s031ltr.pdf",
   "name": "VENCLEXTA (venetoclax) with acalabrutinib",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "NDA 208573 S-031",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208573Orig1s031ltr.pdf"
  },
  "ABBV-2026-04-23": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2026-04-22",
-  "record": "BLA 761459 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761459_20260422.pdf",
   "name": "trenibotulinumtoxinE (AGN-151586), glabellar lines",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "BLA 761459 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761459_20260422.pdf"
  },
  "ABBV-2026-05-27": {
   "checked": "2026-11-17",
@@ -354,13 +354,13 @@
   "terms": []
  },
  "FBIO-2025-10-01": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-09-30",
-  "record": "NDA 211241 CRL",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211241Orig1s000ltr.pdf",
   "name": "CUTX-101 (copper histidinate), Menkes disease; approved as ZYCUBO in January 2026",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "NDA 211241 CRL",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211241Orig1s000ltr.pdf"
  },
  "GILD-2026-02-06": {
   "checked": "2026-11-17",
@@ -394,13 +394,13 @@
   ]
  },
  "GSK-2026-03-13": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2026-03-12",
-  "record": "FDA product page",
-  "source_url": "https://www.fda.gov/vaccines-blood-biologics/arexvy",
   "name": "AREXVY (RSV vaccine, adjuvanted), adults 18 to 49 at increased risk",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "FDA product page",
+  "source_url": "https://www.fda.gov/vaccines-blood-biologics/arexvy"
  },
  "GSK-2026-03-19": {
   "checked": "2026-10-03",
@@ -476,13 +476,13 @@
   ]
  },
  "IRON-2026-02-13": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2026-02-13",
-  "record": "NDA 220707 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA220707_20260213.pdf",
   "name": "bitopertin, erythropoietic protoporphyria",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "NDA 220707 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA220707_20260213.pdf"
  },
  "IRWD-2026-05-27": {
   "checked": "2026-11-17",
@@ -711,13 +711,13 @@
   ]
  },
  "NVO-2025-01-28": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-01-28",
-  "record": "NDA 209637 S-025",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209637Orig1s025ltr.pdf",
   "name": "OZEMPIC (semaglutide), type 2 diabetes with chronic kidney disease",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "NDA 209637 S-025",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/209637Orig1s025ltr.pdf"
  },
  "NVO-2026-03-03": {
   "checked": "2026-11-17",
@@ -872,13 +872,13 @@
   ]
  },
  "PGEN-2025-08-15": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-08-14",
-  "record": "FDA announcement",
-  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-immunotherapy-recurrent-respiratory-papillomatosis",
   "name": "PAPZIMEOS (zopapogene imadenovec-drba)",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "FDA announcement",
+  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-immunotherapy-recurrent-respiratory-papillomatosis"
  },
  "PTGX-2026-03-18": {
   "checked": "2026-10-03",
@@ -903,14 +903,14 @@
   ]
  },
  "REGN-2025-06-20": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-06-18",
-  "record": "BLA 761055 S-070",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
   "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
   "name": "DUPIXENT (dupilumab)",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "BLA 761055 S-070",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"
  },
  "REGN-2026-04-02": {
   "checked": "2026-10-03",
@@ -948,13 +948,13 @@
   ]
  },
  "RGNX-2026-02-09": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2026-02-07",
-  "record": "BLA 125840 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf",
   "name": "clemidsogene lanparvovec (RGX-121), MPS II",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "BLA 125840 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf"
  },
  "RHHBY-2026-02-20": {
   "checked": "2026-11-17",
@@ -1009,23 +1009,23 @@
   ]
  },
  "SNY-2025-06-20": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-06-18",
-  "record": "BLA 761055 S-070",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
   "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf",
   "name": "DUPIXENT (dupilumab)",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "BLA 761055 S-070",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"
  },
  "SNY-2025-12-24": {
+  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-12-23",
-  "record": "NDA 219624 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf",
   "name": "tolebrutinib",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA record read directly"
+  "record": "NDA 219624 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"
  },
  "SNY-2026-04-22": {
   "checked": "2026-10-03",

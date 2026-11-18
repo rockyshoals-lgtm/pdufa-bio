@@ -2178,6 +2178,106 @@
    "permanent": true
   },
   {
+   "source": "/fda-decision/BCAB-2025-11-07",
+   "destination": "/ticker/BCAB",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IRON-2025-01-21",
+   "destination": "/ticker/IRON",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IRWD-2025-04-14",
+   "destination": "/ticker/IRWD",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/KZIA-2025-01-02",
+   "destination": "/ticker/KZIA",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/LEXX-2025-01-15",
+   "destination": "/ticker/LEXX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/NVS-2025-01-29",
+   "destination": "/ticker/NVS",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RNAZ-2025-02-06",
+   "destination": "/ticker/RNAZ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RNAZ-2025-03-13",
+   "destination": "/ticker/RNAZ",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/WVE-2025-03-26",
+   "destination": "/ticker/WVE",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/XRTX-2025-04-30",
+   "destination": "/ticker/XRTX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IBRX-2025-02-19",
+   "destination": "/ticker/IBRX",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/INVA-2026-02-17",
+   "destination": "/fda-decision/INVA-2025-12-15",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/REGN-2025-10-17",
+   "destination": "/ticker/REGN",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/OTLK-2026-03-05",
+   "destination": "/ticker/OTLK",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/OTLK-2026-04-07",
+   "destination": "/ticker/OTLK",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/RGNX-2026-02-08",
+   "destination": "/fda-decision/RGNX-2026-02-09",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/IRON-2026-02-15",
+   "destination": "/fda-decision/IRON-2026-02-13",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNY-2025-06-02",
+   "destination": "/fda-decision/SNY-2025-06-20",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/REGN-2025-06-02",
+   "destination": "/fda-decision/REGN-2025-06-20",
+   "permanent": true
+  },
+  {
+   "source": "/fda-decision/SNY-2025-12-28",
+   "destination": "/fda-decision/SNY-2025-12-24",
+   "permanent": true
+  },
+  {
    "source": "/drug/aceclidine-ophthalmic-solution",
    "destination": "/drug/vizz",
    "permanent": true
@@ -2393,6 +2493,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/doravirine-and-islatravir",
+   "destination": "/drug/idvynso",
+   "permanent": true
+  },
+  {
    "source": "/drug/dostarlimab-gxly",
    "destination": "/drug/jemperli",
    "permanent": true
@@ -2470,6 +2575,11 @@
   {
    "source": "/drug/extended-release-oral-minoxidil",
    "destination": "/drug/vdphl01",
+   "permanent": true
+  },
+  {
+   "source": "/drug/fam-trastuzumab-deruxtecan-nxki",
+   "destination": "/drug/enhertu",
    "permanent": true
   },
   {
@@ -2578,6 +2688,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/insulin-human",
+   "destination": "/drug/afrezza",
+   "permanent": true
+  },
+  {
    "source": "/drug/insulin-icodec-abae",
    "destination": "/drug/awiqli",
    "permanent": true
@@ -2620,6 +2735,11 @@
   {
    "source": "/drug/linvoseltamab-gcpt",
    "destination": "/drug/lynozyfic",
+   "permanent": true
+  },
+  {
+   "source": "/drug/long-term-extension",
+   "destination": "/drug/zanubrutinib",
    "permanent": true
   },
   {
@@ -2710,6 +2830,11 @@
   {
    "source": "/drug/navepegritide",
    "destination": "/drug/transcon-cnp",
+   "permanent": true
+  },
+  {
+   "source": "/drug/nusinersen",
+   "destination": "/drug/spinraza",
    "permanent": true
   },
   {
@@ -2943,8 +3068,8 @@
    "permanent": true
   },
   {
-   "source": "/drug/trastuzumab-deruxtecan",
-   "destination": "/drug/enhertu",
+   "source": "/drug/tipelukast",
+   "destination": "/drug/mn-001",
    "permanent": true
   },
   {
@@ -2965,6 +3090,11 @@
   {
    "source": "/drug/ustekinumab-aekn",
    "destination": "/drug/selarsdi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/vebreltinib",
+   "destination": "/drug/apl-101",
    "permanent": true
   },
   {
@@ -3018,103 +3148,158 @@
    "permanent": true
   },
   {
-   "source": "/fda-decision/BCAB-2025-11-07",
-   "destination": "/ticker/BCAB",
+   "source": "/drug/aglatimagene-besadenovec",
+   "destination": "/ticker/CADL",
    "permanent": true
   },
   {
-   "source": "/fda-decision/IRON-2025-01-21",
-   "destination": "/ticker/IRON",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/IRWD-2025-04-14",
+   "source": "/drug/apraglutide",
    "destination": "/ticker/IRWD",
    "permanent": true
   },
   {
-   "source": "/fda-decision/KZIA-2025-01-02",
-   "destination": "/ticker/KZIA",
+   "source": "/drug/beam-302",
+   "destination": "/ticker/BEAM",
    "permanent": true
   },
   {
-   "source": "/fda-decision/LEXX-2025-01-15",
-   "destination": "/ticker/LEXX",
+   "source": "/drug/bgb-3111",
+   "destination": "/ticker/ONC",
    "permanent": true
   },
   {
-   "source": "/fda-decision/NVS-2025-01-29",
-   "destination": "/ticker/NVS",
+   "source": "/drug/bulevirtide",
+   "destination": "/ticker/VIR",
    "permanent": true
   },
   {
-   "source": "/fda-decision/RNAZ-2025-02-06",
-   "destination": "/ticker/RNAZ",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/RNAZ-2025-03-13",
-   "destination": "/ticker/RNAZ",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/WVE-2025-03-26",
-   "destination": "/ticker/WVE",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/XRTX-2025-04-30",
-   "destination": "/ticker/XRTX",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/IBRX-2025-02-19",
-   "destination": "/ticker/IBRX",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/INVA-2026-02-17",
-   "destination": "/fda-decision/INVA-2025-12-15",
-   "permanent": true
-  },
-  {
-   "source": "/fda-decision/REGN-2025-10-17",
+   "source": "/drug/cemiplimab",
    "destination": "/ticker/REGN",
    "permanent": true
   },
   {
-   "source": "/fda-decision/OTLK-2026-03-05",
-   "destination": "/ticker/OTLK",
+   "source": "/drug/cgt9486",
+   "destination": "/ticker/COGT",
    "permanent": true
   },
   {
-   "source": "/fda-decision/OTLK-2026-04-07",
-   "destination": "/ticker/OTLK",
+   "source": "/drug/chs-1420",
+   "destination": "/ticker/CHRS",
    "permanent": true
   },
   {
-   "source": "/fda-decision/RGNX-2026-02-08",
-   "destination": "/fda-decision/RGNX-2026-02-09",
+   "source": "/drug/comp360-psilocybin",
+   "destination": "/ticker/CMPS",
    "permanent": true
   },
   {
-   "source": "/fda-decision/IRON-2026-02-15",
-   "destination": "/fda-decision/IRON-2026-02-13",
+   "source": "/drug/dehydratech",
+   "destination": "/ticker/LEXX",
    "permanent": true
   },
   {
-   "source": "/fda-decision/SNY-2025-06-02",
-   "destination": "/fda-decision/SNY-2025-06-20",
+   "source": "/drug/dextromethorphan-bupropion",
+   "destination": "/ticker/CGTX",
    "permanent": true
   },
   {
-   "source": "/fda-decision/REGN-2025-06-02",
-   "destination": "/fda-decision/REGN-2025-06-20",
+   "source": "/drug/elranatamab",
+   "destination": "/ticker/PFE",
    "permanent": true
   },
   {
-   "source": "/fda-decision/SNY-2025-12-28",
-   "destination": "/fda-decision/SNY-2025-12-24",
+   "source": "/drug/losartan",
+   "destination": "/ticker/ACTU",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lx1001",
+   "destination": "/ticker/LXEO",
+   "permanent": true
+  },
+  {
+   "source": "/drug/mecbotamab-vedotin",
+   "destination": "/ticker/BCAB",
+   "permanent": true
+  },
+  {
+   "source": "/drug/mk-3475",
+   "destination": "/ticker/GILD",
+   "permanent": true
+  },
+  {
+   "source": "/drug/niraparib",
+   "destination": "/ticker/MYGN",
+   "permanent": true
+  },
+  {
+   "source": "/drug/odronextamab",
+   "destination": "/ticker/REGN",
+   "permanent": true
+  },
+  {
+   "source": "/drug/pi-2620",
+   "destination": "/ticker/LNTH",
+   "permanent": true
+  },
+  {
+   "source": "/drug/rgx",
+   "destination": "/ticker/RGNX",
+   "permanent": true
+  },
+  {
+   "source": "/drug/rigosertib",
+   "destination": "/ticker/TRAW",
+   "permanent": true
+  },
+  {
+   "source": "/drug/safusidenib",
+   "destination": "/ticker/NUVB",
+   "permanent": true
+  },
+  {
+   "source": "/drug/solnerstotug",
+   "destination": "/ticker/REGN",
+   "permanent": true
+  },
+  {
+   "source": "/drug/temozolomide",
+   "destination": "/ticker/NVCR",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tislelizumab",
+   "destination": "/ticker/TAK",
+   "permanent": true
+  },
+  {
+   "source": "/drug/tp-03",
+   "destination": "/ticker/TARS",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ttx",
+   "destination": "/ticker/RNAZ",
+   "permanent": true
+  },
+  {
+   "source": "/drug/uproleselan",
+   "destination": "/ticker/APLM",
+   "permanent": true
+  },
+  {
+   "source": "/drug/vgx-3100",
+   "destination": "/ticker/INO",
+   "permanent": true
+  },
+  {
+   "source": "/drug/wve",
+   "destination": "/ticker/WVE",
+   "permanent": true
+  },
+  {
+   "source": "/drug/xrx",
+   "destination": "/ticker/XRTX",
    "permanent": true
   }
  ],
