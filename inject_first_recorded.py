@@ -6,8 +6,9 @@ Competitors publish a decision with no time on it. pdufa.bio's repository is pub
 first entered it is a checkable fact. Under the Verified-against line each /fda-decision page gets:
     "This page was first committed to pdufa.bio's public repository on Nov 17, 2026, 1:24 AM ET (public commit ce46f16)."
 (written once in Eastern; RULE 1: commit timestamps carry their own offset and are converted with zoneinfo, never
-assumed). Pages that came in with the repository's first import (2026-07-25/26) predate the repository and get no
-line: the import time is not when we first published them.
+assumed). Pages that came in with the repository's first import (2026-07-25/26) predate the repository: their
+line says so and names the import commit, never claiming the import time as when we first recorded the decision
+(2026-11-18, change 10: the line is on every decision page).
 
 Ledger: _decision_first_recorded.json {slug: {"ts": ISO with offset, "commit": sha or null}}. A page missing from the
 ledger is looked up with `git log --diff-filter=A` (works on a full clone; CI's shallow checkout usually finds
@@ -61,6 +62,17 @@ def fmt_et(iso):
     return f"{MON[t.month - 1]} {t.day}, {t.year}, {h}:{t.minute:02d} {'AM' if t.hour < 12 else 'PM'} ET"
 
 
+def import_block(entry):
+    """2026-11-18 (design red team, change 10: the line on every decision page). A page that came in with the
+    repository's first import has no first-recorded time of its own; it says that, and names the import commit."""
+    c = entry.get("commit") or ""
+    src = (f' (<a href="{REPO}{c}" rel="noopener" style="color:#94a9c9">public commit {c[:7]}</a>)' if c else "")
+    return (f'{B}<p class="note" style="margin:0 0 10px;font-size:12px;color:#94a9c9">This page has been in pdufa.bio&#x27;s '
+            f"public repository since the repository&#x27;s first import on {fmt_et(entry['ts'])}{src}, so the "
+            f"repository does not show when we first recorded this decision. Dates on this page are the FDA&#x27;s and "
+            f"the sponsor&#x27;s; this line is ours.</p>{E}")
+
+
 def block(entry, now_run):
     when = fmt_et(entry["ts"])
     if entry.get("commit"):
@@ -95,8 +107,9 @@ def main():
         base = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
         e = led.get(s)
         new = base
-        if e and dt.datetime.fromisoformat(e["ts"]).astimezone(ET) >= IMPORT_CUTOFF and "<!--VERIFIED:END-->" in base:
-            new = base.replace("<!--VERIFIED:END-->", "<!--VERIFIED:END-->" + block(e, now), 1)
+        if e and "<!--VERIFIED:END-->" in base:
+            post = dt.datetime.fromisoformat(e["ts"]).astimezone(ET) >= IMPORT_CUTOFF
+            new = base.replace("<!--VERIFIED:END-->", "<!--VERIFIED:END-->" + (block(e, now) if post else import_block(e)), 1)
             n += 1
         if new != doc:
             io.open(p, "w", encoding="utf-8", newline="").write(new)
