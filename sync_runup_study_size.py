@@ -59,6 +59,10 @@ def fmt(n):
     return f"{n:,}"
 
 
+STUDY_NOTE = ("Its events from 2020 to 2024 come from our research set and are not each checked against a source; "
+              "every record below links its own page, which names its source or says plainly that it has none.")
+
+
 def edit(rel, subs, dry):
     p = os.path.join(SITE, rel)
     if not os.path.exists(p):
@@ -85,7 +89,13 @@ def main():
 
     changed += edit("decisions/index.html", [(
         r"(run-up study</a>, which is built for it: )\d{1,2},\d{3}( PDUFA decisions, 2020 to )\d{4}(, <b>)[\d.]+(% approved</b>)",
-        rf"\g<1>{fmt(n)}\g<2>{y1}\g<3>{rate:.1f}\g<4>")], a.dry_run)
+        rf"\g<1>{fmt(n)}\g<2>{y1}\g<3>{rate:.1f}\g<4>"), (
+        # 2026-11-18 (design red team, change 5): the study's 2020 to 2024 events are not each checked against a
+        # source, and some archive rows are inferred; the sentence after the study's size says so. "sour[c]e" matches
+        # the old sentence without spelling it, so tests/test_provenance_badges.py does not read the pattern as the promise
+        r"(% approved</b>\. )(?:Every record below links to its sour[c]e, and unverified ones say so on the page\.|"
+        r"Its events from 2020 to 2024 come from our research set[^<]*?says plainly that it has none\.)",
+        r"\g<1>" + STUDY_NOTE)], a.dry_run)
 
     changed += edit("pricing.html", [(
         r"(<b>Full run-up dataset</b>: the )\d{1,2},\d{3}(-event T-120&rarr;T\+5 daily data)",

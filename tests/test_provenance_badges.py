@@ -17,7 +17,8 @@ outcomes into its statistics. This fails if:
      local chain does not run it, or quarantine_leads.py does not badge the pages it restores.
 
 PLANT=strip drops one badge, PLANT=wrong turns one Inferred badge into Unsourced, PLANT=promise puts the old promise
-back on the homepage, PLANT=study treats one study event as inferred; each must FAIL.
+back on the homepage, PLANT=study treats one study event as inferred, PLANT=leak leaves a badge's word as plain text in
+a table cell; each must FAIL.
 
     python tests/test_provenance_badges.py
 """
@@ -39,7 +40,13 @@ sys.path.insert(0, HERE)
 import badge_decision_provenance as bp  # noqa: E402
 
 PROMISE = re.compile(r"every date links its source|every date and outcome links|every date (?:is )?sourced|"
-                     r"each row links its source|with the source document and the share-price reaction", re.I)
+                     r"every date linked to its source|each row links its source|"
+                     r"with the source document and the share-price reaction|carrying the source document|"
+                     r"each with its source (?:document|and the stock)|each source-linked|CRLs, source-linked|"
+                     r"(?:every|each) record below links to its source|each item links to its source", re.I)
+# a badge's word left behind as plain text by a script that read a badged row ("<td>price-onlyInferred</td>")
+LEAK = re.compile(r">[^<]*[^\s>][ ]?\b(?:Inferred|Unsourced)\s*</")
+META = re.compile(r'<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]*)"')
 WORD = {"inferred": "Inferred", "unsourced": "Unsourced"}
 
 
@@ -85,7 +92,9 @@ def main():
                 continue
             planted = True
         if plant == "promise" and rel == "index.html":
-            doc = doc.replace("</main>", "<p>Every date links its source.</p></main>", 1)
+            doc = doc.replace("</body>", "<p>Every date links its source.</p></body>", 1)
+        if plant == "leak" and rel == "crl/index.html":
+            doc = doc.replace("</body>", "<table><tr><td>price-only Inferred</td></tr></table></body>", 1)
         if bp.apply(doc) != doc:
             bad.append(f"/{rel}: badge_decision_provenance.py would change this page")
         body = strip_scripts(doc)
@@ -101,7 +110,8 @@ def main():
             if k in WORD:
                 if got != [(k, WORD[k])]:
                     bad.append(f"/{rel}: the link to /fda-decision/{slug} ({k}) shows "
-                               + (", ".join(w for _c, w in got) or "no badge") + f"; it should say {WORD[k]}")
+                               + (", ".join(f"{w} (class pv-{c})" for c, w in got) or "no badge")
+                               + f"; it should say {WORD[k]} (class pv-{k})")
                 else:
                     badged += 1
             elif got:
@@ -109,8 +119,20 @@ def main():
                            f"{got[0][1]} badge")
         if body.count("<!--PV:B-->") != inside:
             bad.append(f"/{rel}: a provenance badge sits outside a link to a decision page")
-        if os.path.normcase(os.path.abspath(p)) not in held and PROMISE.search(re.sub(r"<[^>]+>", " ", body)):
-            bad.append(f"/{rel}: still promises '{PROMISE.search(re.sub(r'<[^>]+>', ' ', body)).group(0)}'")
+        bare = re.sub(r"<!--PV:B-->.*?<!--PV:E-->", "", body, flags=re.S)
+        lk = LEAK.search(bare)
+        if lk:
+            bad.append(f"/{rel}: a badge's word sits in the page as plain text ('{bare[max(0, lk.start() - 30):lk.end()]}'"
+                       "); a script read a badged row without dropping the badge")
+        # visible text, JSON-LD and the page's descriptions
+        said = " ".join([re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", doc))] + META.findall(doc))
+        pm = PROMISE.search(said)
+        if pm and os.path.normcase(os.path.abspath(p)) not in held:
+            bad.append(f"/{rel}: still promises '{pm.group(0)}'")
+        if rel.startswith("fda-decision/") and kinds.get(rel.split("/")[1]) == "unsourced":
+            for d in META.findall(doc):
+                if re.search(r"source document|Source and run-up", d):
+                    bad.append(f"/{rel}: cites no source, but its description promises one ('{d[-70:]}')")
     if plant in ("strip", "wrong") and not planted:
         bad.append(f"PLANT={plant} found nothing to plant on")
     # 3. the builders
@@ -118,13 +140,14 @@ def main():
         if os.path.basename(b) == "badge_decision_provenance.py":
             continue
         src = io.open(b, encoding="utf-8", errors="replace").read()
-        # docstrings and comments may quote the old promise; a string literal that prints it may not
-        for line in src.splitlines():
-            s = line.strip()
-            if s.startswith("#"):
-                continue
-            if PROMISE.search(s) and re.search(r"""^[rfb]*["']|\(\s*[rfb]*["']""", s):
-                bad.append(f"{os.path.basename(b)}: still writes '{PROMISE.search(s).group(0)}'")
+        # docstrings and comments may quote the old promise; a string literal that prints it may not. Adjacent
+        # literals are joined first, since a builder wraps a long sentence over several lines.
+        src = re.sub(r'"""[\s\S]*?"""|\'\'\'[\s\S]*?\'\'\'', " ", src)
+        src = re.sub(r"(?m)^\s*#.*$|\s#\s.*$", " ", src)
+        src = re.sub(r"""(["'])\s*\)?\s*\n\s*\+?\s*\(?\s*[rfb]*(["'])""", "", src)
+        hit = PROMISE.search(src)
+        if hit:
+            bad.append(f"{os.path.basename(b)}: still writes '{hit.group(0)}'")
     # 4. the study
     study = os.path.join(HERE, "pdufa_runup_bifrost_v2.csv")
     n_study = n_page = 0

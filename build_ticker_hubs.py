@@ -374,7 +374,8 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
                '<a class="chip" href="/readouts">Phase readouts →</a></div>')
     out.append('<a class="cta" href="/calendar"><b>See the full 2026 PDUFA calendar &rarr;</b></a>')
     out.append('<p class="note">This page aggregates ' + tk + "'s FDA catalysts from pdufa.bio's own "
-               'calendar and decision archive. Each item links to its source page. Facts and dates '
+               'calendar and decision archive. Each item links its own page, which names its source or says '
+               'plainly that it has none. Facts and dates '
                'only; verify against primary FDA / SEC / company filings.</p>')
     out.append(FOOTER)
     out.append('</div><script src="/cmdk.js" defer></script></body></html>')

@@ -35,7 +35,7 @@ sys.path.insert(0, HERE)
 from refresh_provenance_counts import page_kind  # noqa: E402
 
 STYLE = ("font-size:11px;font-weight:600;line-height:1.5;border:1px solid {b};color:{c};border-radius:4px;"
-         "padding:0 5px;margin-left:6px;white-space:nowrap;vertical-align:1px")
+         "padding:0 5px;margin-left:3px;white-space:nowrap;vertical-align:1px")
 BADGE = {
     "inferred": ("Inferred", "#6b5a2f", "#f0c86a",
                  "Outcome inferred from the stock's move, not read from an FDA record or a filing"),
@@ -49,9 +49,21 @@ AMB = re.compile(r'<span class="badge amb">unverified</span>')
 TAIL = re.compile(r"((?:</(?:div|span|small|b|strong|em)>\s*)+)$")
 
 
+# Static copy no builder owns that made the old promise; reworded here on every run (exact text, idempotent).
+WORDING = [
+    ("Approvals &amp; CRLs, source-linked, with 120-day charts.",
+     "Approvals &amp; CRLs with 120-day charts; inferred outcomes are marked."),
+    # ticker hubs that build_ticker_hubs.py no longer rewrites keep its old footer note
+    ("Each item links to its source page.",
+     "Each item links its own page, which names its source or says plainly that it has none."),
+]
+
+
 def badge(kind):
     word, border, colour, title = BADGE[kind]
-    return (f'<!--PV:B--><span class="pv pv-{kind}" title="{title}" style="{STYLE.format(b=border, c=colour)}">'
+    # the space keeps the word apart from the link's text for a screen reader ("BRAFTOVI Inferred", not
+    # "BRAFTOVIInferred") and for any script that reads the row as text
+    return (f'<!--PV:B--> <span class="pv pv-{kind}" title="{title}" style="{STYLE.format(b=border, c=colour)}">'
             f'{word}</span><!--PV:E-->')
 
 
@@ -68,6 +80,8 @@ def kinds():
 
 def apply(doc, kind_of=None):
     kind_of = kind_of or kinds()
+    for old, new in WORDING:
+        doc = doc.replace(old, new)
     if "/fda-decision/" not in doc and "<!--PV:B-->" not in doc:
         return doc
     doc = PV.sub("", doc)

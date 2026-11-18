@@ -26,6 +26,19 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 BASE = "https://www.pdufa.bio"
+sys.path.insert(0, HERE)
+from refresh_provenance_counts import page_kind  # noqa: E402
+_KINDS = {}
+
+
+def _kind(slug):
+    if slug not in _KINDS:
+        p = os.path.join(SITE, "fda-decision", slug, "index.html")
+        _KINDS[slug] = page_kind(open(p, encoding="utf-8", errors="replace").read()) if os.path.exists(p) \
+            else "unsourced"
+    return _KINDS[slug]
+
+
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
 
@@ -83,18 +96,25 @@ def main():
     for tk, y, m, d, frag in ROW.findall(dh):
         if int(y) >= this_year:
             continue                     # the live calendar owns the current year
+        frag = re.sub(r"<!--PV:B-->.*?<!--PV:E-->", "", frag, flags=re.S)   # provenance badges are not drug text
         txt = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", frag))).strip()
         outcome = ("Approved" if re.search(r"\bapproved\b", txt, re.I)
                    else "CRL" if re.search(r"\bcrl\b|complete response", txt, re.I) else "")
         body = re.split(r"(?:Approved|CRL|Complete Response Letter)\s*:?\s*", txt, maxsplit=1)
         drug = body[1].strip(" :") if len(body) > 1 else ""
+        if drug.lower() in ("price-only", "source-verified", "primary-sourced", "unverified"):
+            drug = ""                    # a provenance label sat where the drug name belongs
         years[y].append((f"{y}-{m}-{d}", tk, outcome, drug))
 
     built = 0
     for y, evs in sorted(years.items()):
         evs.sort()
-        ap_n = sum(1 for e in evs if e[2] == "Approved")
-        crl_n = sum(1 for e in evs if e[2] == "CRL")
+        # 2026-11-18 (design red team, change 5): outcomes read from a cited source are counted apart from those
+        # inferred from the price move or with no source yet; the badge pass marks those rows
+        kind = {e: _kind(f"{e[1]}-{e[0]}") for e in evs}
+        ap_n = sum(1 for e in evs if e[2] == "Approved" and kind[e] == "sourced")
+        crl_n = sum(1 for e in evs if e[2] == "CRL" and kind[e] == "sourced")
+        other_n = sum(1 for e in evs if kind[e] != "sourced")
 
         bymonth = defaultdict(list)
         for date, tk, outcome, drug in evs:
@@ -107,17 +127,21 @@ def main():
                 f'<span class="t">{tk} &middot; {date}'
                 + (f' <span class="ok">&#10003; Approved</span>' if oc == "Approved"
                    else f' <span class="bad">CRL</span>' if oc == "CRL" else "")
-                + f'</span><span class="d">{html.escape(drug[:90])}</span></a>'
+                + f'</span><span class="d">{html.escape(drug[:90] or "FDA decision")}</span></a>'
                 for date, tk, oc, drug in bymonth[m])
             sect.append(f"<h2>{MONTHS[m - 1]} {y}</h2>" + rows_h)
 
         lede = (f"This page lists all {len(evs)} FDA decisions from {y} in our archive: "
-                f"{ap_n} approvals and {crl_n} Complete Response Letters. Every decision links "
-                f"its own page, which names its source document or says plainly that it has none; an outcome "
-                f"inferred from the price move is marked Inferred.")
+                f"{ap_n} approvals and {crl_n} Complete Response Letters read from a cited source"
+                + (f", and {other_n} whose outcome was inferred from the price move or has no source yet, marked "
+                   f"Inferred or Unsourced" if other_n else "")
+                + ". Every decision links its own page, which names its source document or says plainly that it "
+                  "has none.")
         title = f"{y} FDA PDUFA Calendar &amp; Decisions: {len(evs)} On Record | pdufa.bio"
-        desc = (f"The {y} FDA decision archive: {len(evs)} decisions, {ap_n} approvals, "
-                f"{crl_n} CRLs, each with its source document and measured stock reaction.")[:158]
+        desc = (f"The {y} FDA decision archive: {len(evs)} decisions, {ap_n} sourced approvals and {crl_n} sourced "
+                f"CRLs, each linking its own page and the stock move we measured.")
+        if len(desc) > 158:   # clauses are dropped whole, never cut mid-word
+            desc = f"The {y} FDA decision archive: {len(evs)} decisions, {ap_n} sourced approvals, {crl_n} sourced CRLs."
 
         page = SHELL.format(title=title, desc=html.escape(desc, quote=True),
                             canon=f"{BASE}/calendar/{y}",
