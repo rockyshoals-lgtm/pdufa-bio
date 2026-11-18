@@ -70,13 +70,15 @@ def poly_daily(key, t, days=95):
     return price_source.closes(t, (TODAY - dt.timedelta(days=days)).isoformat(), TODAY.isoformat())
 
 
-def sparkline_reaction(dated, disclosed):
+def sparkline_reaction(dated, disclosed, after_close=False):
     """64x20 run-up polyline with a GOLD dot on the reaction day. Returns (svg, move_pct_or_None, reaction_day).
 
     2026-11-18 (design red team, change 2): the move used to be read only on the page's own date, so SMMT's CRL,
     announced on a Sunday (Nov 15), showed no move at all, and a decision dated by the FDA a day before it was
     public was measured on a day the market could not have known. The reaction day is now the first trading day
-    ON OR AFTER the disclosure (the decision page's date), and the move is its close against the previous close."""
+    ON OR AFTER the disclosure, or strictly AFTER it when the news came after the close (NVO-2026-03-26: "Announced
+    2026-03-26, after the close"; that day's close is before the news). The move is its close against the previous
+    close. The gold dot sits on the reaction day, and is left off when that day is not in the price series yet."""
     if len(dated) < 2:
         return "", None, None
     win = dated[-44:] if len(dated) > 44 else dated
@@ -86,14 +88,17 @@ def sparkline_reaction(dated, disclosed):
     Y = lambda c: round(19 - (c - lo) / rng * 18, 1)
     pts = " ".join(f"{X(i)},{Y(c)}" for i, c in enumerate(cs))
     color = "#46d17f" if cs[-1] >= cs[0] else "#ff7a72"
-    di = next((i for i, d in enumerate(ds) if d >= disclosed), n - 1)  # first day on/after disclosure
+    after = (lambda d: d > disclosed) if after_close else (lambda d: d >= disclosed)
     alld = [d for d, _ in dated]; allc = [c for _, c in dated]
     move = day = None
-    j = next((k for k, d in enumerate(alld) if d >= disclosed), None)
+    j = next((k for k, d in enumerate(alld) if after(d)), None)
     if j is not None and j > 0 and allc[j - 1] and \
             (dt.date.fromisoformat(alld[j]) - dt.date.fromisoformat(disclosed)).days <= 5:
         move, day = (allc[j] / allc[j - 1] - 1) * 100.0, alld[j]
-    dot = f'<circle cx="{X(di)}" cy="{Y(cs[di])}" r="2.4" fill="#e3ba5e" stroke="#02060d" stroke-width="0.6"/>'
+    dot = ""
+    if day in ds:
+        di = ds.index(day)
+        dot = f'<circle cx="{X(di)}" cy="{Y(cs[di])}" r="2.4" fill="#e3ba5e" stroke="#02060d" stroke-width="0.6"/>'
     svg = (f'<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto" aria-hidden="true">'
            f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="1.4"/>{dot}</svg>')
     return svg, move, day
@@ -326,9 +331,15 @@ def render_upcoming(cats, key):
     return "".join(rows)
 
 
+def _page_kv(tk, page_date):
+    p = os.path.join(SITE, "fda-decision", f"{tk}-{page_date}", "index.html")
+    return open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else ""
+
+
 def fda_day(tk, page_date):
-    """The FDA's own action day for /fda-decision/{tk}-{page_date}: the dataset's fda_action_date, else the decision
-    page's own key facts ("FDA decision date"), else the page date. The page date is when it was made public."""
+    """(day, known) for /fda-decision/{tk}-{page_date}. day is the FDA's own action day: the dataset's
+    fda_action_date, else the decision page's key facts ("FDA decision date"). When neither holds one (the page says
+    "not found in a public FDA record"), day is the page date and known is False: the card then says "announced"."""
     u = f"/fda-decision/{tk}-{page_date}"
     try:
         from calendar_decided_rows_once import action_dates
@@ -336,14 +347,24 @@ def fda_day(tk, page_date):
     except Exception:  # noqa: BLE001
         fad = None
     if fad:
-        return fad
-    p = os.path.join(SITE, "fda-decision", f"{tk}-{page_date}", "index.html")
-    if os.path.exists(p):
-        m = re.search(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b>',
-                      open(p, encoding="utf-8", errors="replace").read())
-        if m:
-            return m.group(1)
-    return page_date
+        return fad, True
+    doc = _page_kv(tk, page_date)
+    m = re.search(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b>', doc)
+    if m:
+        return m.group(1), True
+    m = re.search(r'<!--FDAREC:BEGIN-->.*?<b>FDA record of the action:</b> the FDA [a-z ]+? on <b>([A-Z][a-z]+ \d{1,2}, '
+                  r'\d{4})</b>, per <a href="https://www\.(?:accessdata\.)?fda\.gov/', doc, re.S)
+    if m:
+        return dt.datetime.strptime(m.group(1), "%B %d, %Y").date().isoformat(), True
+    return page_date, False
+
+
+def disclosure(tk, page_date):
+    """(day the decision was made public, after the close?) from the page's own "Announced" row, else the page date."""
+    m = re.search(r'<div class="kv"><span>Announced</span><b>(\d{4}-\d{2}-\d{2})([^<]*)</b>', _page_kv(tk, page_date))
+    if not m:
+        return page_date, False
+    return m.group(1), "after the close" in m.group(2).lower()
 
 
 def _md(iso):
@@ -352,29 +373,35 @@ def _md(iso):
 
 
 DECIDED_NOTE = ('<p class="decn" style="margin:8px 0 0;font-size:11.5px;line-height:1.45;color:var(--mut2,#94a9c9)">'
-                "Dates are the FDA's action day. The move is the close on the first trading day on or after the "
-                "decision was made public, against the close before it.</p>")
+                "Dates are the FDA's action day; a date marked announced has no public FDA record of its own. The move "
+                "is the close on the first trading day after the decision was made public (the same day if it came "
+                "before the close), against the close before it.</p>")
 
 
 def render_decided(decs, key):
     cards = []
     acts = {(tk, date): fda_day(tk, date) for tk, date, _o, _d in decs}
-    for tk, date, outcome, _drug in sorted(decs, key=lambda r: (acts[(r[0], r[1])], r[1]), reverse=True):
+    for tk, date, outcome, _drug in sorted(decs, key=lambda r: (acts[(r[0], r[1])][0], r[1]), reverse=True):
         cls = "dec ap" if outcome == "ap" else "dec cr"   # CSS styles CRL cards via .dec.cr
         icon = "✓" if outcome == "ap" else "✕"
         word = "Approved" if outcome == "ap" else "CRL"
-        act = acts[(tk, date)]
-        spk, move, rday = sparkline_reaction(poly_daily(key, tk), date)   # gold dot marks the reaction day
+        act, known = acts[(tk, date)]
+        pub, after_close = disclosure(tk, date)
+        spk, move, rday = sparkline_reaction(poly_daily(key, tk), pub, after_close)   # gold dot: reaction day
         mv = ""
-        why = f"FDA action {_md(act)}" + (f", made public {_md(date)}" if date != act else "")
+        why = (f"FDA action {_md(act)}" + (f", made public {_md(pub)}" if pub != act else "") if known else
+               f"Announced {_md(pub)}; no public FDA record of the action day")
+        if after_close:
+            why += " after the close"
         if move is not None:
-            mc = "#46d17f" if move >= 0 else "#ff7a72"
             r = round(move)
+            mc = "#46d17f" if r > 0 else ("#ff7a72" if r < 0 else "#94a9c9")
             mv = f' · <b style="color:{mc}">{"+" if r > 0 else ""}{r}%</b>'
             why += f"; move {'+' if r > 0 else ''}{r}% on {_md(rday)}, close against the previous close"
+        shown = act if known else f"{date} announced"
         cards.append(
             f'<a class="{cls}" href="/fda-decision/{tk}-{date}" title="{esc(why)}"><span class="di">{icon}</span>'
-            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{act} · {word}{mv}</span></a>')
+            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{shown} · {word}{mv}</span></a>')
     return "".join(cards) + (DECIDED_NOTE if cards else "")
 
 

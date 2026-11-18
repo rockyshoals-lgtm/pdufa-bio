@@ -79,9 +79,13 @@ def legacy_pass(doc):
     # <title> (and its og/twitter copies): the outcome's date
     new = re.sub(r"(\b(?:Approved|CRL)\b[^<\"]{0,40}?)" + re.escape(s_ann) + r"(?=[ <\"|])",
                  lambda m: m.group(1) + s_act, new)
-    # description: "... received a Complete Response Letter on July 11, 2025." -> dated <FDA day> (announced ...)
+    # description: "... received a Complete Response Letter on July 11, 2025." -> on <FDA day> (announced ...)
     new = re.sub(r"(received a (?:Complete Response|Not Approvable) [Ll]etter) on " + re.escape(l_ann) + r"(?=[.\"])",
-                 lambda m: f"{m.group(1)} dated {l_act} (announced {l_ann})", new)
+                 lambda m: f"{m.group(1)} on {l_act} (announced {l_ann})", new)
+    # red team: "dated" claimed the letter's own date, but CORT-2025-12-31 links a corrected letter dated Jan 28, 2026
+    # for a Dec 30 action. The day is the FDA's action day, so "on", as the rest of the site says it.
+    new = re.sub(r"(received a (?:Complete Response|Not Approvable) [Ll]etter) dated " + re.escape(l_act)
+                 + r" \(announced " + re.escape(l_ann) + r"\)", lambda m: f"{m.group(1)} on {l_act} (announced {l_ann})", new)
     new = re.sub(r"(was approved) on " + re.escape(l_ann) + r"(?=[.\"])",
                  lambda m: f"{m.group(1)} on {l_act} (announced {l_ann})", new)
     new = DESC_ATTR.sub(lambda m: m.group(1) + _fit(m.group(2)) + '"', new)
@@ -103,7 +107,7 @@ def main():
             n += 1
             print(f"  /fda-decision/{os.path.basename(os.path.dirname(p))}: title, description and h1 give the FDA's day")
             if not a.dry_run:
-                io.open(p, "w", encoding="utf-8").write(new)
+                io.open(p, "w", encoding="utf-8", newline="").write(new)
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         h, t, an = H1.search(doc), TITLE_DATE.search(doc), ANN.search(doc)
@@ -120,7 +124,7 @@ def main():
         n += 1
         print(f"  /fda-decision/{os.path.basename(os.path.dirname(p))}: h1 {h.group(2)} -> {act}{want}")
         if not a.dry_run:
-            io.open(p, "w", encoding="utf-8").write(new)
+            io.open(p, "w", encoding="utf-8", newline="").write(new)
     print(f"decision h1 action dates: {n} page(s) " + ("[dry run]" if a.dry_run else "written"))
     return 0
 
