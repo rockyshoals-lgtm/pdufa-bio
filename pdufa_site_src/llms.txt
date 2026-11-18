@@ -42,7 +42,7 @@ sponsor's own release).
   /research/fda-decision-timing/fda-decision-timing-2026.csv; earlier versions stay at their own addresses).
   Cite as "pdufa.bio, FDA decision timing 2026 (v41)". The counts grow as decisions are added;
   an older page copy quoting a smaller census (for example v32) is superseded by the figures above.
-- Released FDA Complete Response Letters (openFDA): **465** letters, of which
+- Released FDA Complete Response Letters (openFDA): **466** letters, of which
   **312** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)
 

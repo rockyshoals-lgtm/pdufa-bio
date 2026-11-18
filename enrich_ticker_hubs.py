@@ -252,12 +252,23 @@ def main():
         substantive = bool(df["verified"]) or bool(upcoming) or has_reported_readout or has_sourced_row
         if not substantive:
             t = re.sub(r'(<meta name="robots" content=")[^"]*(")', r"\1noindex,follow\2", t, count=1)
-            if "nothing we have verified" not in t:
-                t = t.replace("</h1>", "</h1><p class=\"note\" style=\"color:#f0c86a\">"
-                              "We do not currently track a confirmed FDA catalyst for "
-                              f"{company or tk}. Any decision listed below was inferred from share-price "
-                              "behaviour and has not been checked against a filing, so there is "
-                              "nothing we have verified to show here yet.</p>", 1)
+            # 2026-11-18: the note said "Any decision listed below was inferred..." on hubs that list no decision
+            # (ZVRA, JAGX once their retired rows came off), and a company name ending "Inc." gave "Inc..". The
+            # sentence about inferred decisions now appears only when the hub lists one; an existing note is
+            # rewritten, not kept, so hubs built earlier pick the fix up too.
+            who = (company or tk).rstrip(".")
+            lists_decision = '<a class="row" href="/fda-decision/' in t
+            note = ("<p class=\"note\" style=\"color:#f0c86a\">We do not currently track a confirmed FDA catalyst "
+                    f"for {who}. " + ("Any decision listed below was inferred from share-price behaviour and has "
+                                      "not been checked against a filing, so there is nothing we have verified "
+                                      "to show here yet.</p>" if lists_decision else
+                                      "There is nothing we have verified to show here yet.</p>"))
+            old_note = re.compile(r'<p class="note" style="color:#f0c86a">We do not currently track a confirmed FDA '
+                                  r'catalyst for .*?nothing we have verified to show here yet\.</p>', re.S)
+            if old_note.search(t):
+                t = old_note.sub(lambda m: note, t, count=1)
+            else:
+                t = t.replace("</h1>", "</h1>" + note, 1)
             noindexed += 1
         elif re.search(r'<meta name="robots" content="noindex', t):
             # the reverse was never written: a hub that became substantive stayed noindex for good
