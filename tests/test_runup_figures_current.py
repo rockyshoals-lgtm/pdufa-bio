@@ -59,8 +59,14 @@ def main():
         if tm and cm:
             pairs.append((tm.group(1), cm.group(2)))
             ttl = re.search(r'title="([^"]*)"', cm.group(1))
-            if ttl and not ttl.group(1).startswith(f"{tm.group(1)}-cap median decision-day move"):
+            if not ttl:
+                # 2026-11-18: window-dated cards (REGN "PDUFA window Nov 2026") shipped the bare "1.0% cohort"
+                # chip from a second code path; every chip carries the label now, on every card
+                fails.append(f"/: home {tm.group(1)} chip has no label: {card[:80]}")
+            elif not ttl.group(1).startswith(f"{tm.group(1)}-cap median decision-day move"):
                 fails.append(f"/: home {tm.group(1)} chip is labelled {ttl.group(1)!r}")
+        if re.search(r'<span class="coh"[^>]*>[^<]*±', card):
+            fails.append(f"/: home chip shows the borrowed '±3%' placeholder: {card[:80]}")
     if not pairs:
         fails.append("/: home board cohort chips not found (markup changed?)")
     for t, c in pairs:
