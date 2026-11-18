@@ -10,7 +10,29 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
 
 
+def stated(lede_html):
+    """(released, tracked) as the month page's lede states them; None where the sentence is missing."""
+    t = re.sub(r"<[^>]+>", "", lede_html)
+    m1 = re.search(r"holds (\d+) letters? dated", t)
+    m2 = re.search(r", (\d+) (?:was|were) (?:a )?Complete Response Letters?", t)
+    return (int(m1.group(1)) if m1 else None, int(m2.group(1)) if m2 else None)
+
+
+def self_test():
+    """2026-11-18: the builder writes '1 was a Complete Response Letter' for a one-CRL month and the regex had no
+    'a', so a correct page read as '?'. Singular and plural must both read, and a wrong count must still differ."""
+    one = ("The FDA's public release holds 2 letters dated March 2026 (openFDA). Of the 22 FDA decisions pdufa.bio "
+           "tracked in March 2026, 1 was a Complete Response Letter.")
+    many = ("The FDA's public release holds 1 letter dated June 2026. Of the 30 FDA decisions pdufa.bio tracked in "
+            "June 2026, 3 were Complete Response Letters.")
+    assert stated(one) == (2, 1), stated(one)
+    assert stated(many) == (1, 3), stated(many)
+    assert stated(one.replace("1 was a", "2 was a")) != (2, 1), "a wrong tracked count must not match"
+    assert stated("No counts here.") == (None, None), "a lede without the sentences must not read as a count"
+
+
 def main():
+    self_test()
     import build_crl_months as b
     from site_dates import eastern_today
     letters, _ = b.corpus()
@@ -31,13 +53,11 @@ def main():
         lede = re.search(r"<!--CRLLEDE:BEGIN-->(.*?)<!--CRLLEDE:END-->", doc, re.S)
         if not lede:
             bad.append(f"/crl/{y}/{mon}: no lede"); continue
-        t = re.sub(r"<[^>]+>", "", lede.group(1))
-        m1 = re.search(r"holds (\d+) letters? dated", t)
-        m2 = re.search(r", (\d+) (?:was|were) (?:a )?Complete Response Letters?", t)
-        if not m1 or int(m1.group(1)) != by.get(k, 0):
-            bad.append(f"/crl/{y}/{mon}: says {m1.group(1) if m1 else '?'} released, corpus has {by.get(k, 0)}")
-        if not m2 or int(m2.group(1)) != len(ours.get(k, [])):
-            bad.append(f"/crl/{y}/{mon}: says {m2.group(1) if m2 else '?'} tracked CRLs, /decisions/crl has {len(ours.get(k, []))}")
+        rel, trk = stated(lede.group(1))
+        if rel != by.get(k, 0):
+            bad.append(f"/crl/{y}/{mon}: says {'?' if rel is None else rel} released, corpus has {by.get(k, 0)}")
+        if trk != len(ours.get(k, [])):
+            bad.append(f"/crl/{y}/{mon}: says {'?' if trk is None else trk} tracked CRLs, /decisions/crl has {len(ours.get(k, []))}")
     if bad:
         print(f"FAIL: {len(bad)} CRL month page problem(s)")
         for x in bad[:20]:
