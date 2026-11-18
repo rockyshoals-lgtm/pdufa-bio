@@ -33,7 +33,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from site_dates import eastern_today
+from site_dates import eastern_today, row_ahead, window_end
 
 SITE = os.path.join(HERE, "pdufa_site_src")
 PAGE = os.path.join(SITE, "calendar", "index.html")
@@ -61,15 +61,24 @@ def ahead_rows(doc, today):
         if "✓" in t or "approved" in low or "crl" in low or "complete response" in low:
             continue
         iso = re.search(r"\d{4}-\d{2}-\d{2}", t)
-        q = re.search(r"\bQ([1-4])\s+(\d{4})", t)
-        if iso:
-            if iso.group(0) < today:
-                continue          # past goal date, no outcome: waiting on the FDA, not ahead
-            d, qq = iso.group(0), None
-        elif q:
-            d, qq = None, (int(q.group(1)), q.group(2))
-        else:
+        # design change 8 red team: the same rule as the lede (site_dates.row_ahead). A past goal date is waiting on
+        # the FDA, not ahead; a month or quarter is ahead until it ends; an "(est.)" row has no source and is no goal
+        # date. The lede and this list had swapped sets (it held the two (est.) rows and left out the month windows).
+        if not row_ahead(t, iso.group(0) if iso else None, today):
             continue
+        if iso:
+            d, qq = iso.group(0), None
+        else:
+            if not window_end(t):
+                continue
+            q = re.search(r"\bQ([1-4])\s+(\d{4})", t)
+            mo = re.search(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{4})\b", t)
+            if q:
+                d, qq = None, ("Q", int(q.group(1)), q.group(2))
+            elif mo:
+                d, qq = None, ("M", mo.group(1), mo.group(2))
+            else:
+                continue
         # "SRRK · 2026-09-30 Apitegromab - (SAPPHIRE)" -> ticker + description
         m = re.match(r"([A-Z][A-Z0-9.\-]*)\s*(?:&middot;|·)\s*(.*)", t)
         ticker = m.group(1) if m else href.group(1).split("/")[2].split("-")[0].upper()
@@ -79,6 +88,10 @@ def ahead_rows(doc, today):
         desc = text_of(re.sub(r'<span class="dm">.*?</span></span>', "", dfrag.group(1), flags=re.S)) if dfrag else t
         out.append((href.group(1), ticker, desc, d, qq))
     return out
+
+
+MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+               "November", "December"]
 
 
 def build_items(rows):
@@ -94,10 +107,16 @@ def build_items(rows):
         if iso:
             ev["startDate"] = iso
         else:
-            qn, yr = qq
-            ev["startDate"] = f"{yr}-{Q_LAST_MONTH[qn]}"
-            ev["description"] = (f"FDA goal date disclosed by the sponsor only as Q{qn} {yr}; "
-                                 f"no day has been announced.")
+            kind, w, yr = qq
+            if kind == "Q":
+                ev["startDate"] = f"{yr}-{Q_LAST_MONTH[w]}"
+                ev["description"] = (f"FDA goal date disclosed by the sponsor only as Q{w} {yr}; "
+                                     f"no day has been announced.")
+            else:
+                mi = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].index(w) + 1
+                ev["startDate"] = f"{yr}-{mi:02d}"
+                ev["description"] = (f"FDA goal date disclosed only as {MONTHS_LONG[mi - 1]} {yr}; "
+                                     f"no day has been announced.")
         items.append({"@type": "ListItem", "position": pos, "item": ev})
     return items
 
@@ -128,7 +147,7 @@ def main():
     print(f"  /calendar ItemList: {len(items)} items from {len(rows)} ahead rows "
           f"(as of {today} Eastern){' [dry run]' if a.dry_run else ''}")
     for href, ticker, desc, iso, qq in rows:
-        print(f"    {ticker:<6} {iso or ('Q%d %s' % qq):<10} {href}")
+        print(f"    {ticker:<6} {iso or (('Q%s %s' % qq[1:]) if qq[0] == 'Q' else ('%s %s' % qq[1:])):<10} {href}")
     sync_month_pages(today, a.dry_run)
 
 
