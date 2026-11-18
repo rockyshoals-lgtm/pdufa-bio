@@ -509,6 +509,8 @@ about any security. Event-driven readout timing, interim results and corporate t
 Verify every figure against primary FDA, SEC and company filings before acting. &copy; 2026 pdufa.bio</div>
 </main><script src="/cmdk.js" defer></script></body></html>"""
 
+    from sls_resolution import resolve  # announcements since the absence claims were written
+    html = resolve(html, "hub")
     os.makedirs(OUTDIR, exist_ok=True)
     open(os.path.join(OUTDIR, "index.html"), "w", encoding="utf-8").write(html)
     print(f"wrote sls/index.html ({len(html)} bytes, chart={'yes' if ch else 'no'}, "

@@ -532,6 +532,12 @@ jobs:
           python build_sls_deepdive.py
           python build_sls_ownership.py
 
+      # Red team 2026-11-17: SELLAS announced the 80th event (Oct 28) and REGAL topline (Nov 17) by press
+      # release while the gate above kept the pages frozen on "Not yet". Announcements recorded in
+      # _sls_verified_through.json are applied to the pages whether or not the rebuild step ran.
+      - name: "SLS: apply recorded REGAL announcements to the tracker pages"
+        run: python sls_resolution.py
+
       - name: "SLS: flag for manual review (material filing found)"
         if: steps.sls.outcome != 'success'
         run: echo "::warning::SELLAS filed something material. /sls dates were NOT advanced. Review the filing and update _sls_verified_through.json."

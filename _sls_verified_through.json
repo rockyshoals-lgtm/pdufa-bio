@@ -2,5 +2,23 @@
  "verified_through": "2026-09-06",
  "regal_events": 78,
  "as_of": "2026-05-11",
- "last_checked": "2026-09-06"
+ "last_checked": "2026-09-06",
+ "event80": {
+  "date": "2026-10-28",
+  "url": "https://www.globenewswire.com/news-release/2026/10/28/3390187/0/en/sellas-life-sciences-reaches-80th-event-in-phase-3-regal-trial-of-galinpepimut-s-gps-in-acute-myeloid-leukemia.html",
+  "quote": "Reaching the Pre-Specified 80th Event Triggers the Final Analysis of the Pivotal Phase 3 Trial"
+ },
+ "topline": {
+  "date": "2026-11-17",
+  "url": "https://www.globenewswire.com/news-release/2026/11/17/3404429/0/en/sellas-life-sciences-announces-positive-pivotal-phase-3-regal-trial-data-showing-immunotherapeutic-cancer-vaccine-galinpepimut-s-gps-demonstrated-a-statistically-significant-and-cl.html",
+  "quote": "REGAL trial met its primary endpoint with GPS demonstrating statistically significant and clinically meaningful reduction in risk of death by 41% with median overall survival of 24.0 months versus 14.7 months for best available treatment, and a hazard ratio of 0.59 (p=0.035)"
+ },
+ "since": [
+  {
+   "date": "2026-11-17",
+   "text": "After the close, SELLAS announced a proposed $150.0 million underwritten public offering of common stock",
+   "url": "https://www.globenewswire.com/news-release/2026/11/17/3405168/0/en/sellas-life-sciences-announces-proposed-150-0-million-underwritten-public-offering.html"
+  }
+ ],
+ "_resolution_note": "event80/topline/since: company releases (GlobeNewswire, times Eastern via FMP). Read by sls_resolution.py; red team 2026-11-17."
 }

@@ -346,6 +346,8 @@ timelines, event-driven readout dates and interim results can change. Verify eve
 and company filings before acting. Page compiled {TODAY.isoformat()}. &copy; 2026 pdufa.bio</div>
 </div><script src="/cmdk.js" defer></script></body></html>"""
 
+    from sls_resolution import resolve  # announcements since the absence claims were written
+    html = resolve(html, "deepdive")
     os.makedirs(OUTDIR, exist_ok=True)
     open(os.path.join(OUTDIR, "index.html"), "w", encoding="utf-8").write(html)
     print(f"wrote {os.path.relpath(os.path.join(OUTDIR, 'index.html'), SITE)}  ({len(html)} bytes, "
