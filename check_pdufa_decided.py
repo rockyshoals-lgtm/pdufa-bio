@@ -81,9 +81,13 @@ def row_source_dates(path):
             continue
         d = r.get('_d') or {}
         m = re.search(r'(20\d\d-\d\d-\d\d)', str(d.get('source') or ''))
-        if m:
-            out[(r.get('t'), r.get('d'))] = m.group(1)
-    return out
+        k = (r.get('t'), r.get('d'))
+        if not m:
+            out[k] = None          # an unsourced row on the same day: never skip a release for it
+        elif k not in out or (out[k] is not None and m.group(1) < out[k]):
+            out[k] = m.group(1)    # two rows on one day (RHHBY Nov 30): the EARLIER source, so a
+                                   # release between the two sources is still read
+    return {k: v for k, v in out.items() if v}
 
 
 def load_acks(path):
@@ -144,6 +148,21 @@ def self_test():
         (match(joe, [new], '2026-09-25') is not None, 'a newer approval of the same drug is still flagged'),
         (match(gil, [bix], '2026-08-06', ack) is None, 'a hand-checked different product is skipped'),
         (match(gil, [bix], '2026-08-06') is not None, 'without the ack the same headline is flagged'),
+    ]
+    import tempfile
+    with tempfile.NamedTemporaryFile('w', suffix='.mjs', delete=False, encoding='utf-8') as f:
+        f.write('export default ' + json.dumps([
+            {'type': 'PDUFA', 't': 'RHHBY', 'd': '2026-11-30', '_d': {'source': 'press release 2026-06-01'}},
+            {'type': 'PDUFA', 't': 'RHHBY', 'd': '2026-11-30', '_d': {'source': 'press release 2026-10-20'}},
+            {'type': 'PDUFA', 't': 'ABC', 'd': '2026-12-01', '_d': {'source': '8-K 2026-09-01'}},
+            {'type': 'PDUFA', 't': 'ABC', 'd': '2026-12-01', '_d': {}}]) + ';')
+    try:
+        sd = row_source_dates(f.name)
+    finally:
+        os.unlink(f.name)
+    cases += [
+        (sd.get(('RHHBY', '2026-11-30')) == '2026-06-01', 'two rows on one day keep the earlier source'),
+        (('ABC', '2026-12-01') not in sd, 'an unsourced row on the same day disables the skip'),
     ]
     bad = [why for ok, why in cases if not ok]
     for why in bad:
