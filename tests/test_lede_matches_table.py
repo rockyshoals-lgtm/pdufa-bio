@@ -64,6 +64,12 @@ def main():
             continue
         rel = "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/")
         checked += 1
+        if rel == "/calendar":
+            # design change 7: the shaped page keeps only the lede's first sentence on top and moves the rest (the
+            # "This page lists ..." counts) into "About this calendar". Check the lede the writers built, in full.
+            sys.path.insert(0, HERE)
+            import shape_calendar
+            doc = shape_calendar.unshape(doc)
 
         lede = html.unescape(re.sub(r"<[^>]+>", "", doc.split(B, 1)[1].split(E, 1)[0]))
         body = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
