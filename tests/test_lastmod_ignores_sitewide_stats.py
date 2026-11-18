@@ -92,6 +92,15 @@ def main():
                 fails.append(f"migration, {label}: lastmod {got}, expected {want}")
             if B._STATE[key].get("hv") != B.HASH_VERSION:
                 fails.append(f"migration, {label}: state not stamped with hash version {B.HASH_VERSION}")
+        # HEAD is not the copy the state describes: a PR merged a real change after the last state write
+        # (HEAD = baseline + real change), and this build reproduces it. Must re-date, not inherit.
+        merged = page(f13="$533.6 million")
+        B.head_version = lambda k: merged
+        B._STATE = {key: {"hash": B.content_hash_v1(old), "date": "2026-11-12"}}
+        if B.last_changed("pdufa/CGEM/index.html", __file__, page(f13="$533.6 million", study="1,886")) != "2026-11-18":
+            fails.append("migration: a change merged after the last state write kept the old date "
+                         "(HEAD was trusted as the state's baseline when it was not)")
+        B.head_version = lambda k: old
         # after migration, same-definition comparison
         B._STATE = {key: {"hash": B.content_hash(old), "date": "2026-11-12", "hv": B.HASH_VERSION}}
         if B.last_changed("pdufa/CGEM/index.html", __file__, new_stats) != "2026-11-12":

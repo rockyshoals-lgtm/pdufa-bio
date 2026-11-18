@@ -260,13 +260,17 @@ def last_changed(rel, full, html):
     unchanged = bool(prev) and prev.get("hash") == h
     if prev and not unchanged and prev.get("hv") != HASH_VERSION:
         # State written under an older hash definition: its hash cannot be compared with h. The page is
-        # unchanged if it still matches the old definition, or if the committed copy (HEAD) and this
-        # copy agree under the new one -- i.e. only masked statistics moved since the last deploy.
+        # unchanged if it still matches the old definition, or if the committed copy (HEAD) is the very
+        # copy the state was hashed from AND agrees with this copy under the new definition -- i.e. only
+        # masked statistics moved. HEAD alone is not enough: CI runs on a schedule, and a PR merged
+        # since the last state write puts a real change in HEAD that this build reproduces (red team,
+        # 2026-11-18: replaying #98 would have kept old dates on 8 decision pages whose facts changed).
         if content_hash_v1(html) == prev.get("hash"):
             unchanged = True
         else:
             head = head_version(key)
-            unchanged = head is not None and content_hash(head) == h
+            unchanged = (head is not None and content_hash_v1(head) == prev.get("hash")
+                         and content_hash(head) == h)
 
     if unchanged:
         d = prev.get("date") or git_dates().get(key) or TODAY
