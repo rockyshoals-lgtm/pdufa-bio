@@ -33,6 +33,14 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 RETRACTED = {
     "SLS-2025-02-20": "SELLAS has never submitted a marketing application, so no CRL is possible",
 }
+# 2026-11-18: pages "verified" from an SEC filing that records no FDA action, or a second page for one FDA
+# action (apply_1118_retire_decisions.py, where each reason and source is listed).
+try:
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from apply_1118_retire_decisions import RETIRE as _R1118
+    RETRACTED.update({s: why for s, (_, why, _) in _R1118.items()})
+except Exception:  # noqa: BLE001
+    pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
 ALLOWED = {"corrections/index.html", "changelog/index.html"}
 DEC_LINK = re.compile(r"/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})")

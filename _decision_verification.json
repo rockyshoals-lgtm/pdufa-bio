@@ -87,7 +87,7 @@
   "ABBV-2025-06-30": {
    "ticker": "ABBV",
    "date": "2025-06-30",
-   "asset": "JUV\u00c9DERM - (SKINVIVE) (injectable HA)",
+   "asset": "JUVÉDERM - (SKINVIVE) (injectable HA)",
    "claimed": "approval",
    "status": "unverified",
    "evidence": null
@@ -974,7 +974,7 @@
    "date": "2025-11-07",
    "asset": "Mecbotamab Vedotin (BA3011)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -982,6 +982,12 @@
     "accession": "0001193125-25-290474",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1826892/000119312525290474/bcab-ex10_1.htm",
     "source_label": "SEC filing 0001193125-25-290474 of 2025-11-21 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "BioAtla reported Phase 2 survival data for mecbotamab vedotin that day; the drug is not approved. The cited filing is a financing agreement.",
+    "source": "BioAtla release of November 7, 2025"
    }
   },
   "BCRX-2025-12-12": {
@@ -1102,7 +1108,7 @@
   "BMY-2025-06-27": {
    "ticker": "BMY",
    "date": "2025-06-27",
-   "asset": "Breyanzi\u00ae (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy)",
+   "asset": "Breyanzi® (lisocabtagene maraleucel; liso-cel) (CAR Tcell therapy)",
    "claimed": "approval",
    "status": "unverified",
    "evidence": null
@@ -1726,7 +1732,7 @@
    "date": "2025-02-19",
    "asset": "ANKTIVA",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -1734,6 +1740,12 @@
     "accession": "0001326110-25-000031",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1326110/000132611025000031/ibrx-202533x8kexhibit991.htm",
     "source_label": "SEC filing 0001326110-25-000031 of 2025-03-03 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "ANKTIVA was approved on April 22, 2024. In February 2025 the FDA authorized expanded access to another BCG source and granted an RMAT designation, which are not approvals.",
+    "source": "ImmunityBio 8-K exhibit 99.1, February 2025"
    }
   },
   "IBRX-2025-08-13": {
@@ -1910,7 +1922,7 @@
    "date": "2026-02-17",
    "asset": "",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "FDA approval",
@@ -1918,6 +1930,12 @@
     "accession": "0001193125-26-071974",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1080014/000119312526071974/d23292dex991.htm",
     "source_label": "SEC filing 0001193125-26-071974 of 2026-02-25 containing 'FDA approval'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited release is an earnings report that recaps the December 2025 NUZOLVENCE approval, which has its own page. No FDA action near February 17, 2026.",
+    "source": "Innoviva 8-K exhibit 99.1 of February 25, 2026"
    }
   },
   "IONI-2025-08-21": {
@@ -1978,7 +1996,7 @@
    "date": "2025-01-21",
    "asset": "Bitopertin - (APOLLO)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -1986,6 +2004,12 @@
     "accession": "0001193125-25-009095",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312525009095/d858127dex991.htm",
     "source_label": "SEC filing 0001193125-25-009095 of 2025-01-21 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Disc Medicine announced a Type C meeting outcome and an NDA plan. Bitopertin was not approved; it received a Complete Response Letter on February 13, 2026.",
+    "source": "Disc Medicine 8-K exhibit 99.1 of January 21, 2025"
    }
   },
   "IRWD-2025-04-14": {
@@ -1993,7 +2017,7 @@
    "date": "2025-04-14",
    "asset": "Apraglutide - (STARS)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -2001,6 +2025,12 @@
     "accession": "0001104659-25-034381",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1446847/000110465925034381/tm2512215d1_ex99-1.htm",
     "source_label": "SEC filing 0001104659-25-034381 of 2025-04-14 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Ironwood said the FDA wants a confirmatory Phase 3 trial before apraglutide is filed. No approval or CRL.",
+    "source": "Ironwood 8-K exhibit 99.1 of April 14, 2025"
    }
   },
   "JANX-2025-12-01": {
@@ -2281,7 +2311,7 @@
    "date": "2025-01-02",
    "asset": "Paxalisib (GDC-0084) - (GBM AGILE)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -2289,6 +2319,12 @@
     "accession": "0001193125-25-005004",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1075880/000119312525005004/d868096dex41.htm",
     "source_label": "SEC filing 0001193125-25-005004 of 2025-01-13 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited filing is a prefunded warrant. Paxalisib is not FDA approved.",
+    "source": "Kazia SEC filing 0001193125-25-005004"
    }
   },
   "KZIA-2025-11-18": {
@@ -2319,7 +2355,7 @@
    "date": "2025-01-15",
    "asset": "DehydraTECH-liraglutide - (GLP-1-H25-5). (Pilot Study #5)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -2327,6 +2363,12 @@
     "accession": "0001640334-25-000087",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1348362/000164033425000087/lxrp_8k.htm",
     "source_label": "SEC filing 0001640334-25-000087 of 2025-01-15 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited 8-K reports shareholder vote results from Lexaria's annual meeting. No FDA action.",
+    "source": "Lexaria 8-K of January 15, 2025"
    }
   },
   "LGND-2025-08-27": {
@@ -2582,7 +2624,7 @@
   "MRK-2026-02-20": {
    "ticker": "MRK",
    "date": "2026-02-20",
-   "asset": "KEYTRUDA + chemo \u00b1 bevacizumab (ovarian)",
+   "asset": "KEYTRUDA + chemo ± bevacizumab (ovarian)",
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
@@ -2752,7 +2794,7 @@
    "date": "2025-01-29",
    "asset": "Farabursen (RGLS8429) (MAD)",
    "claimed": "approval",
-   "status": "conflicting_evidence_needs_human_review",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -2760,6 +2802,12 @@
     "accession": "0001370368-25-000008",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1114448/000137036825000008/a250131-99_1.pdf",
     "source_label": "SEC filing 0001370368-25-000008 of 2025-01-31 containing 'complete response letter'"
+   },
+   "status_before_retraction": "conflicting_evidence_needs_human_review",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The page named no drug, and Novartis's full-year 2024 release lists no FDA approval or CRL near that date.",
+    "source": "Novartis Q4 and full-year 2024 release, January 31, 2025"
    }
   },
   "NVS-2025-03-20": {
@@ -3172,7 +3220,7 @@
    "date": "2025-10-17",
    "asset": "Solnerstotug (formerly SNS-101) with Libtayo - (VISTA)",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3180,6 +3228,12 @@
     "accession": "0000872589-25-000026",
     "source_url": "https://www.sec.gov/Archives/edgar/data/872589/000087258925000026/exhibit991q32025.htm",
     "source_label": "SEC filing 0000872589-25-000026 of 2025-10-28 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Solnerstotug has no BLA and received no CRL. That day Regeneron announced a positive EU CHMP opinion for adjuvant Libtayo.",
+    "source": "Regeneron release of October 17, 2025"
    }
   },
   "REGN-2025-11-19": {
@@ -3324,7 +3378,7 @@
    "date": "2025-02-06",
    "asset": "TTX-MC138 - (PRE-I-SPY)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3332,6 +3386,12 @@
     "accession": "0001104659-25-009122",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925009122/tm255410d1_ex99-1.htm",
     "source_label": "SEC filing 0001104659-25-009122 of 2025-02-04 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "TransCode announced the adjournment of a stockholder meeting. TTX-MC138 is clinical-stage; no FDA action.",
+    "source": "TransCode 8-K exhibit 99.1 of February 4, 2025"
    }
   },
   "RNAZ-2025-03-13": {
@@ -3339,7 +3399,7 @@
    "date": "2025-03-13",
    "asset": "TTX-MC138 - (PRE-I-SPY)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3347,6 +3407,12 @@
     "accession": "0001104659-25-027565",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1829635/000110465925027565/tm2510166d1_ex4-1.htm",
     "source_label": "SEC filing 0001104659-25-027565 of 2025-03-25 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "The cited filing is a common stock purchase warrant. No FDA action.",
+    "source": "TransCode SEC filing 0001104659-25-027565"
    }
   },
   "RPRX-2025-11-07": {
@@ -3556,7 +3622,7 @@
   "TAK-2025-06-30": {
    "ticker": "TAK",
    "date": "2025-06-30",
-   "asset": "GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 \u00b5g/mL 10% solution]",
+   "asset": "GAMMAGARD LIQUID ERC [Immune Globulin Infusion (Human) with less than or equal to 2 µg/mL 10% solution]",
    "claimed": "approval",
    "status": "verified_approved",
    "evidence": {
@@ -3808,7 +3874,7 @@
    "date": "2025-03-26",
    "asset": "WVE-N531 - (FORWARD-53)",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3816,6 +3882,12 @@
     "accession": "0001193125-25-063184",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1631574/000119312525063184/d918658dex991.htm",
     "source_label": "SEC filing 0001193125-25-063184 of 2025-03-26 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Wave reported Phase 2 data for WVE-N531 and said it plans to file in 2026. No approval.",
+    "source": "Wave 8-K exhibit 99.1 of March 26, 2025"
    }
   },
   "XERS-2025-03-17": {
@@ -3853,7 +3925,7 @@
    "date": "2025-04-30",
    "asset": "XRx-026",
    "claimed": "approval",
-   "status": "verified_approved",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "approval of",
@@ -3861,6 +3933,12 @@
     "accession": "0001171843-25-002624",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1729214/000117184325002624/exh_991.htm",
     "source_label": "SEC filing 0001171843-25-002624 of 2025-04-30 containing 'approval of'"
+   },
+   "status_before_retraction": "verified_approved",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "XORTX reported FDA responses to a Type B meeting request. No NDA had been filed; no approval.",
+    "source": "XORTX exhibit 99.1 of April 30, 2025"
    }
   },
   "ZLAB-2025-07-30": {
@@ -3959,7 +4037,7 @@
    "date": "2026-02-15",
    "asset": "Bitopertin (EPP)",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3967,6 +4045,12 @@
     "accession": "0001193125-26-051504",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1816736/000119312526051504/iron-20260213.htm",
     "source_label": "SEC filing 0001193125-26-051504 of 2026-02-13 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second page for the bitopertin Complete Response Letter of February 13, 2026. Nothing happened on February 15.",
+    "source": "FDA CRL file for NDA 220707, dated February 13, 2026"
    }
   },
   "PHIO-2025-07-28": {
@@ -3982,7 +4066,7 @@
    "date": "2026-02-08",
    "asset": "RGX-121 (clemidsogene lanparvovec)",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -3990,6 +4074,12 @@
     "accession": "0001193125-26-043342",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526043342/rgnx-ex99_1.htm",
     "source_label": "SEC filing 0001193125-26-043342 of 2026-02-10 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "A second page for the RGX-121 Complete Response Letter, dated February 7, 2026 and announced February 9. Nothing happened on February 8.",
+    "source": "FDA CRL file for BLA 125840, dated February 7, 2026"
    }
   },
   "URGN-2025-04-27": {
@@ -4849,7 +4939,7 @@
    "date": "2026-03-05",
    "asset": "",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -4857,6 +4947,12 @@
     "accession": "0001104659-26-024189",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926024189/tm268164d1_8k.htm",
     "source_label": "SEC filing 0001104659-26-024189 of 2026-03-05 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Outlook reported a Type A meeting with the FDA about the existing December 30, 2025 CRL. No new FDA action.",
+    "source": "Outlook Therapeutics 8-K of March 5, 2026"
    }
   },
   "OTLK-2026-04-07": {
@@ -4864,7 +4960,7 @@
    "date": "2026-04-07",
    "asset": "",
    "claimed": "crl",
-   "status": "verified_crl",
+   "status": "retracted",
    "evidence": {
     "kind": "filing",
     "phrase": "complete response letter",
@@ -4872,6 +4968,12 @@
     "accession": "0001104659-26-040387",
     "source_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926040387/tm2611268d1_8k.htm",
     "source_label": "SEC filing 0001104659-26-040387 of 2026-04-07 containing 'complete response letter'"
+   },
+   "status_before_retraction": "verified_crl",
+   "retracted": {
+    "date": "2026-11-18",
+    "why": "Outlook reported filing a formal dispute resolution request about the December 30, 2025 CRL. No new FDA action.",
+    "source": "Outlook Therapeutics 8-K of April 7, 2026"
    }
   },
   "PFE-2026-02-24": {

@@ -129,7 +129,49 @@ def cik_for(ticker):
     return _CIK.get(ticker.upper())
 
 
-def edgar_search(ticker, date, phrase, window=14):
+# 2026-11-18 red team: a filing that merely CONTAINS "approval of" / "FDA approval" / "complete response letter"
+# is not evidence. 35 of 82 pages "verified" that way rested on shareholder votes, warrants, financing papers,
+# earnings recaps and trial-data releases (apply_1118_retire_decisions.py). A filing now counts only when one of
+# its sentences says the FDA acted (approved / issued a CRL), names the page's drug when the page has one, and
+# is not about the future. That sentence is stored as the evidence's quote, and
+# tests/test_decision_filing_evidence.py requires it on every filing-verified result written from now on.
+_APPROVE = re.compile(r"\b(?:FDA|Food and Drug Administration)\b[^.]{0,200}?\b(?:has approved|approved|granted"
+                      r"(?: accelerated| full| traditional)? approval)\b|\b(?:received|announced|announces|"
+                      r"obtained)\b[^.]{0,120}?\b(?:FDA|Food and Drug Administration)\b[^.]{0,40}?\bapproval\b", re.I)
+_CRL = re.compile(r"\b(?:issued|received|receipt of)\b[^.]{0,120}?\b(?:complete response letter|CRL)\b", re.I)
+_FUTURE = re.compile(r"\b(?:if approved|potential(?:ly)? (?:FDA )?approval|seek(?:ing)? approval|expects?|expected|"
+                     r"anticipate[sd]?|plans? to|intends? to|would|could|may receive|path to approval|prior to approval|"
+                     r"in the event)\b", re.I)
+
+
+def fda_action_quote(url, kind, names):
+    """The sentence in the filing at `url` that records the FDA action (kind 'approval' or 'crl'), or ''."""
+    key = f"fdaq:{kind}:{'|'.join(sorted(n.lower() for n in names))}:{url}"
+    if key in CACHE:
+        return CACHE[key]
+    q = ""
+    time.sleep(0.45)
+    try:
+        req = urllib.request.Request(url, headers=UA)
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read().decode("utf-8", "replace")
+        text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw)).replace("&#160;", " ").replace("&nbsp;", " ")
+        pat = _APPROVE if kind == "approval" else _CRL
+        toks = [n.lower() for n in names if len(n) >= 4]
+        for sent in re.split(r"(?<=[.!?])\s+", text):
+            if len(sent) > 600 or not pat.search(sent) or _FUTURE.search(sent):
+                continue
+            if toks and not any(t in sent.lower() for t in toks):
+                continue
+            q = sent.strip()
+            break
+    except Exception:  # noqa: BLE001  (unreadable filing = no evidence)
+        q = ""
+    CACHE[key] = q
+    return q
+
+
+def edgar_search(ticker, date, phrase, window=14, names=()):
     cik = cik_for(ticker)
     if not cik:
         return None
@@ -144,6 +186,7 @@ def edgar_search(ticker, date, phrase, window=14):
            f"&dateRange=custom&startdt={start}&enddt={end}&forms=8-K,6-K&ciks={cik:010d}")
     j = fetch(url, "sec", 0.45)
     hits = (j.get("hits", {}) or {}).get("hits", []) or []
+    kind = "crl" if "complete response" in phrase else "approval"
     for h in hits:
         src = h.get("_source", {}) or {}
         acc = str(src.get("adsh", ""))
@@ -156,9 +199,14 @@ def edgar_search(ticker, date, phrase, window=14):
         url_doc = (f"https://www.sec.gov/Archives/edgar/data/{cik}/{accn}/{fname}"
                    if fname else
                    f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik:010d}")
+        if not fname:
+            continue
+        quote = fda_action_quote(url_doc, kind, names)
+        if not quote:
+            continue
         return {"kind": "filing", "phrase": phrase, "filing_date": fdate,
-                "accession": acc, "source_url": url_doc,
-                "source_label": f"SEC filing {acc} of {fdate} containing '{phrase}'"}
+                "accession": acc, "source_url": url_doc, "quote": quote, "quote_checked": dt.date.today().isoformat(),
+                "source_label": f"SEC filing {acc} of {fdate} recording the FDA action"}
     return None
 
 
@@ -231,12 +279,12 @@ def main():
         asset = row.get("asset", "")
         names = name_tokens(asset)
         ev_appr = openfda_approval(names, date) if names else None
-        ev_crl = edgar_search(tk, date, "complete response letter")
+        ev_crl = edgar_search(tk, date, "complete response letter", names=names)
         # approval evidence from EDGAR too (covers biologics openFDA may miss)
         ev_appr_sec = None
         if not ev_appr and not ev_crl:
-            ev_appr_sec = edgar_search(tk, date, "FDA approval") \
-                or edgar_search(tk, date, "approval of")
+            ev_appr_sec = edgar_search(tk, date, "FDA approval", names=names) \
+                or edgar_search(tk, date, "approval of", names=names)
 
         if ev_appr or (ev_appr_sec and claimed == "approval"):
             ev = ev_appr or ev_appr_sec
