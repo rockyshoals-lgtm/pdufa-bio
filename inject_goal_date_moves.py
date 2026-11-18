@@ -5,10 +5,21 @@ date_history has been in the API since 09-15 but no page showed it; regardsofwal
 did not. For every PDUFA row whose date_history records a change of the goal DAY (a later entry whose date differs
 from the first), the row's event page gets one marker-bounded sentence under the banner / sub line:
 
-  Goal date moved: August 22, 2026 -> November 22, 2026 (changed August 24, 2026). The FDA extended the goal date ...
+  Goal date moved: 2026-08-22 -> 2026-11-22 (recorded 2026-08-24). The FDA extended the goal date ...
 
 and its /calendar row (the live grid and the month archive) gets a short tag after the drug text:
-  "goal date moved from Aug 22, 2026"
+  "goal date moved from 2026-08-22"
+
+WHY THE DATES ARE ISO, NOT "August 22, 2026" (2026-11-18, Bing date fix)
+Bing printed "Aug 22, 2026" as the date of /calendar and /pdufa/CAPR, and "Jun 29, 2026" for
+/pdufa/PRAX-relutrigine, although each page carries a fresh dateModified, og:updated_time,
+article:modified_time and a visible "Page updated <date>" stamp, and Bing had recrawled /calendar
+(its result shows the current title). The date Bing printed was, on each page, the one written
+in prose beside a change verb in this block or tag: "goal date moved from Aug 22, 2026",
+"(recorded June 29, 2026)". Google's guidance on result dates says the same thing: other dates
+near the top that read like an update date compete with the real one. The facts stay; they are
+written as data (the row itself already says "CAPR · 2026-11-22"), so the only prose date near
+the top of the page is the page's own "Page updated" stamp.
 Rows whose history only records a precision downgrade or a re-key (same day, or the first entry is a sentinel the
 row never stated) are skipped; they are not moves. Idempotent.
 
@@ -38,6 +49,18 @@ def pretty(iso, short=False):
         return f"{MON[m][:3] if short else MON[m]} {d}, {y}"
     except Exception:  # noqa: BLE001
         return str(iso)
+
+
+_PROSE_DATE = re.compile(r"\b(January|February|March|April|May|June|July|August|September|October|November|December"
+                         r"|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(\d{1,2}),?\s+(\d{4})\b")
+
+
+def iso_dates(text):
+    """'8-K of June 29, 2026' -> '8-K of 2026-06-29': same fact, written as data (see the docstring)."""
+    def one(m):
+        mon = next(i for i, n in enumerate(MON) if i and n[:3] == m.group(1)[:3])
+        return f"{int(m.group(3)):04d}-{mon:02d}-{int(m.group(2)):02d}"
+    return _PROSE_DATE.sub(one, text)
 
 
 def moves(r):
@@ -76,9 +99,9 @@ def main():
         p = os.path.join(SITE, url.strip("/").replace("/", os.sep), "index.html") if url.startswith("/pdufa/") else ""
         if p and os.path.exists(p):
             doc = io.open(p, encoding="utf-8", errors="replace").read()
-            why_s = html.escape(re.split(r"(?<=[.!?])\s", why.strip())[0][:220], quote=False)
+            why_s = html.escape(iso_dates(re.split(r"(?<=[.!?])\s", why.strip())[0][:220]), quote=False)
             block = (f'{B}<p class="note" style="margin:6px 0 10px;font-size:13px;color:#f0c86a">'
-                     f'<b>Goal date moved:</b> {pretty(old)} &rarr; {pretty(new)} (recorded {pretty(changed)}). '
+                     f'<b>Goal date moved:</b> {old[:10]} &rarr; {new[:10]} (recorded {changed[:10]}). '
                      f'{why_s}</p>{E}')
             doc0 = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
             m = (re.search(r"<!--DECBAN:END-->", doc0) or re.search(r'<div class="sub">.*?</div>', doc0, re.S)
@@ -92,7 +115,11 @@ def main():
         for tk in str(r.get("t") or "").split("/"):
             cal_tags[(tk.strip().upper(), str(r.get("d") or "")[:10])] = (old, r["id"])
     # calendar rows: a short tag after the drug text of the row keyed (ticker, current date)
-    for cp in [os.path.join(SITE, "calendar", "index.html")] + sorted(glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "*", "index.html"))):
+    # 2026-11-18: the year pages (/calendar/2027) carry the same rows and tag; they were left out, so
+    # they kept the old wording after the ISO change.
+    for cp in ([os.path.join(SITE, "calendar", "index.html")]
+               + sorted(glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "index.html")))
+               + sorted(glob.glob(os.path.join(SITE, "calendar", "20[0-9][0-9]", "*", "index.html")))):
         # 2026-11-01: was "2026" only, so a goal moved INTO 2027 (AGIO, EXEL) was tagged nowhere.
         doc = io.open(cp, encoding="utf-8", errors="replace").read()
         doc0 = re.sub(r' <span class="dm"><!--DM:[^>]*--><span[^>]*>[^<]*</span></span>', "", doc)
@@ -101,7 +128,7 @@ def main():
             rx = re.compile(r'(<a class="row"[^>]*>\s*<div class="t">' + re.escape(tk) + r'(?:\s*/\s*[A-Z]{1,6})*\s*(?:&middot;|·)\s*'
                             + re.escape(iso) + r'.*?<div class="d">)(.*?)(</div>)', re.S)
             changed_doc = rx.sub(lambda m: m.group(1) + m.group(2) + f' <span class="dm">{CB}{rid}{CE}'
-                                 f'<span style="color:#f0c86a;font-size:11.5px">goal date moved from {pretty(old, True)}</span></span>' + m.group(3),
+                                 f'<span style="color:#f0c86a;font-size:11.5px">goal date moved from {old[:10]}</span></span>' + m.group(3),
                                  changed_doc, count=1)
         if changed_doc != doc:
             n_cal += 1
