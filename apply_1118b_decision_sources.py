@@ -122,7 +122,7 @@ FIX = {
     "GSK-2026-03-13": dict(oc="Approved", fda="2026-03-12", ann="2026-03-13", rec="FDA product page",
                            url="https://www.fda.gov/vaccines-blood-biologics/arexvy",
                            label="FDA, Arexvy product page (approval of March 12, 2026)",
-                           quote="March 12, 2026",
+                           quote="March 12, 2026 Approval Letter - AREXVY",
                            drug="AREXVY (RSV vaccine, adjuvanted)",
                            company="GSK plc"),
     "HRMY-2026-02-17": dict(oc="Approved", fda="2026-02-13", ann="2026-02-17", rec="NDA 211150 S-006",

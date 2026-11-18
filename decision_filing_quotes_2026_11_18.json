@@ -1,0 +1,228 @@
+{
+ "_about": "Filing-verified decision pages re-read 2026-11-18: for each, the sentence in the cited filing (or the company release it furnishes) that records the FDA action, and where it is. Quotes are excerpts of at most ~125 characters. Written into _decision_verification.json by apply_1118c_filing_quotes.py; required by tests/test_decision_filing_evidence.py.",
+ "checked": "2026-11-18",
+ "pages": {
+  "ABEO-2025-04-29": {
+   "quote": "today announced the U.S. Food and Drug Administration (FDA) has approved ZEVASKYN™",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/318306/000164117225006548/ex99-1.htm",
+   "action_date": "2025-04-29",
+   "note": "Abeona press release dated April 29, 2025 announcing approval of ZEVASKYN (prademagene zamikeracel). Quote is an excerpt (WebFetch limits quotes to ~125 chars)."
+  },
+  "BNTX-2025-08-27": {
+   "quote": "COMIRNATY® Receives U.S. FDA Approval for Adults 65 and Older",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1776985/000177698525000053/form6-klp81xadaptedfdaappr.htm",
+   "action_date": "2025-08-27",
+   "note": "BioNTech/Pfizer 6-K dated Aug 27, 2025: FDA approved the sBLA for the LP.8.1-adapted 2025-2026 COMIRNATY formula. Quote is the release headline."
+  },
+  "ETON-2026-02-25": {
+   "quote": "today announced the U.S. Food and Drug Administration (FDA) approval of a New Drug Application (NDA) for DESMODA™",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1710340/000143774926005537/ex_923604.htm",
+   "action_date": "2026-02-25",
+   "note": "Eton release dated Feb 25, 2026: FDA approval of DESMODA (desmopressin acetate) oral solution. Page asset field is blank; drug is DESMODA."
+  },
+  "GSK-2025-07-17": {
+   "quote": "US FDA approves GSK's Shingrix in a prefilled syringe presentation",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495425008162/a3837r.htm",
+   "action_date": "2025-07-17",
+   "note": "GSK release dated 17 July 2025. Quote is the headline."
+  },
+  "NVAX-2025-08-27": {
+   "quote": "approved the supplemental Biologics License Application (“BLA”) for the Nuvaxovid",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1000694/000110465925084049/tm2524511d2_8k.htm",
+   "action_date": "2025-08-27",
+   "note": "Novavax 8-K: 'On August 27, 2025 the Company announced that the U.S. Food and Drug Administration (“FDA”) approved' the sBLA for the Nuvaxovid 2025-2026 formula. Quote is an excerpt."
+  },
+  "NVS-2025-11-24": {
+   "quote": "Novartis today announced that the US Food and Drug Administration (FDA) has approved Itvisma (onasemnogene abeparvovec-brve)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1114448/000117184325007547/f6k_112425.htm",
+   "action_date": "2025-11-24",
+   "note": "Novartis release, Basel, November 24, 2025 (6-K filed Nov 25)."
+  },
+  "OTLK-2025-12-31": {
+   "quote": "FDA issues Complete Response Letter (CRL) for resubmitted ONS-5010 BLA",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm",
+   "action_date": "2025-12-31",
+   "note": "Outlook release dated Dec 31, 2025: CRL for resubmitted ONS-5010/LYTENAVA (bevacizumab-vikg) BLA. No separate CRL date stated; quote is a headline/subheading."
+  },
+  "RARE-2025-07-11": {
+   "quote": "has issued a Complete Response Letter (“CRL”) for its Biologics License Application (“BLA”) for UX111",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025095334/rare-20250711.htm",
+   "action_date": "2025-07-11",
+   "note": "Ultragenyx 8-K dated July 11, 2025. No separate CRL issue date stated."
+  },
+  "REGN-2025-04-20": {
+   "quote": "In April 2025, the FDA issued a CRL regarding the sBLA for the addition of extended dosing intervals.",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/872589/000180422025000020/exhibit991q12025.htm",
+   "action_date": "2025-04",
+   "note": "CAVEAT: Regeneron Q1 2025 results release dated Apr 29, 2025 (9 days after page date). It records the extended-dosing-interval CRL only as 'In April 2025' and says the data did not support intervals greater than every 16 weeks; the specific day (Apr 20) is not confirmed by this filing. The same release separately records a CRL for the EYLEA HD pre-filled syringe on April 23, 2025 (different application)."
+  },
+  "SNY-2026-02-24": {
+   "quote": "The US Food and Drug Administration (FDA) has approved Dupixent (dupilumab)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1121404/000119312526086540/d28705dex991.htm",
+   "action_date": "2026-02-24",
+   "note": "Sanofi/Regeneron release, Paris and Tarrytown, Feb 24, 2026: Dupixent approved for allergic fungal rhinosinusitis (AFRS). Page asset field is blank; drug is Dupixent. 6-K filed Mar 3."
+  },
+  "SRRK-2025-09-23": {
+   "quote": "Complete Response Letter (CRL) for the apitegromab Biologics License Application",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1727196/000110465925092317/tm2526733d1_ex99-1.htm",
+   "action_date": "2025-09-23",
+   "note": "Scholar Rock release dated Sep 23, 2025; CRL tied to Catalent Indiana fill-finish facility inspection."
+  },
+  "TLX-2025-04-28": {
+   "quote": "Complete Response Letter (CRL) from the United States (U.S.) Food and Drug Administration (FDA)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000049/pixpr.htm",
+   "action_date": "2025-04-28",
+   "note": "Telix release dated 28 April 2025: Telix received a CRL from the FDA for the TLX101-CDx NDA. Headline: 'Telix Provides Regulatory Update on TLX101-CDx'."
+  },
+  "ALVO-2025-11-02": {
+   "quote": "has issued a complete response letter (CRL) for Alvotech’s Biologics License Application (BLA) for AVT05",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1898416/000117184325006876/f6k_110325.htm",
+   "action_date": "2025-11-02",
+   "note": "Alvotech 6-K (signed Nov 2, 2025) furnishing release announcing CRL for AVT05 (golimumab biosimilar). No separate CRL issue date stated."
+  },
+  "ATRA-2026-01-12": {
+   "quote": "Complete Response Letter (CRL) for the EBVALLO (tabelecleucel) Biologics License Application",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1604464/000119312526010342/d34257dex991.htm",
+   "action_date": "2026-01-09",
+   "note": "Atara release (Jan 12, 2026). Release says the CRL was received after market close on 9 January 2026, 3 days before the page date (within tolerance; page could use Jan 9)."
+  },
+  "CORT-2025-12-31": {
+   "quote": "Corcept Receives Complete Response Letter for Relacorilant as a Treatment for Patients with Hypercortisolism",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1088856/000119312525338184/d50993dex991.htm",
+   "action_date": "2025-12-31",
+   "note": "Corcept release dated Dec 31, 2025. Quote is the headline."
+  },
+  "ADMA-2026-05-04": {
+   "quote": "FDA Approval to Expand the Label for ASCENIV",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1368514/000114036126018667/ef20072196_ex99-1.htm",
+   "action_date": "2026-05-04",
+   "note": "ADMA release dated May 4, 2026: sBLA approval expanding ASCENIV PI indication to patients 2 years and older. Quote is the start of the headline."
+  },
+  "ALDX-2026-03-17": {
+   "quote": "on March 17, 2026, Aldeyra announced receipt of the 2026 Complete Response Letter",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1341235/000119312526109511/aldx-20260317.htm",
+   "action_date": "2026-03-17",
+   "note": "Aldeyra 8-K dated Mar 17, 2026: second CRL for the reproxalap NDA (dry eye disease); PDUFA had been extended to Mar 16, 2026. Quote does not itself name reproxalap; the filing elsewhere refers to 'the reproxalap NDA'."
+  },
+  "ARGX-2026-05-08": {
+   "quote": "the U.S. Food and Drug Administration (FDA) approved a label expansion for VYVGART®",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1697862/000110465926058143/tm2614130d1_ex99-1.htm",
+   "action_date": "2026-05-08",
+   "note": "argenx release dated May 8, 2026 (6-K filed May 11): label expansion of VYVGART and VYVGART Hytrulo to gMG of all serotypes (ADAPT SERON)."
+  },
+  "ARVN-2026-05-01": {
+   "quote": "the U.S. Food and Drug Administration (FDA) has granted approval for VEPPANU (vepdegestrant)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1655759/000162828026029210/fdaapprovalpressrelease_.htm",
+   "action_date": "2026-05-01",
+   "note": "Arvinas/Pfizer release dated May 1, 2026; approval came ahead of June 5, 2026 PDUFA date."
+  },
+  "ASND-2026-02-27": {
+   "quote": "FDA has granted approval under the FDA’s Accelerated Approval Program for YUVIWEL",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1612042/000119312526084021/d116890d6k.htm",
+   "action_date": "2026-02-27",
+   "note": "Ascendis 6-K (signed Mar 2, 2026) says the approval was announced Feb 27, 2026."
+  },
+  "AXSM-2026-04-30": {
+   "quote": "has approved AUVELITY® (dextromethorphan HBr and bupropion HCl) for the treatment of agitation associated with dementia",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1579428/000119312526197857/axsm-ex99_1.htm",
+   "action_date": "2026-04-30",
+   "note": "Axsome release dated Apr 30, 2026: new indication (Alzheimer's agitation) for AUVELITY."
+  },
+  "AZN-2026-04-28": {
+   "quote": "Breztri approved in the US for asthma as first and only triple therapy for patients 12 years of age and older",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426003979/a1866c.htm",
+   "action_date": "2026-04-28",
+   "note": "AstraZeneca release dated 28 April 2026 (asthma indication). No specific approval date in text; page title says Apr 27, slug Apr 28 - both within tolerance."
+  },
+  "AZN-2026-05-22": {
+   "quote": "Datroway (datopotamab deruxtecan) has been approved in the US",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005309/a6573f.htm",
+   "action_date": "2026-05-22",
+   "note": "CAVEAT: AstraZeneca release in the 6-K is datelined 26 May 2026 ('Today's approval'), 4 days after the page date, so by the filing alone this is WRONG_DATE. But OncLive (published May 22, 2026, citing a Daiichi Sankyo release dated May 22, 2026) shows the approval was announced May 22; AZ announced after the UK/US bank-holiday weekend. Page date appears correct; the filing is a late announcement. 1L TNBC indication (TROPION-Breast02)."
+  },
+  "AZN-2026-06-12": {
+   "quote": "Truqap (capivasertib) in combination with abiraterone and prednisone has been approved in the US",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/901832/000165495426005964/a1987i.htm",
+   "action_date": "2026-06-15",
+   "note": "AstraZeneca release dated 15 June 2026 ('Today's landmark approval'); no specific FDA action date in text. 3 days after page date (Fri Jun 12 -> Mon Jun 15), within tolerance."
+  },
+  "CING-2026-06-02": {
+   "quote": "Cingulate Receives Complete Response Letter from FDA for CTx-1301",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1862150/000149315226026760/ex99-1.htm",
+   "action_date": "2026-06-02",
+   "note": "Cingulate release dated June 2, 2026; PDUFA target date was May 31, 2026; CRL issue date not stated. Quote is the headline."
+  },
+  "DNLI-2026-03-25": {
+   "quote": "the U.S. Food and Drug Administration (FDA) has granted accelerated approval for AVLAYAH™ (tividenofusp alfa-eknm)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1714899/000171489926000030/ex9912026pressrelease32526.htm",
+   "action_date": "2026-03-25",
+   "note": "Denali release dated Mar 25, 2026; page title says Mar 24, slug Mar 25 - within tolerance."
+  },
+  "GRCE-2026-04-23": {
+   "quote": "has issued a Complete Response Letter (CRL) for the Company's New Drug Application (NDA) for GTx-104",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126016324/ef20070593_ex99-1.htm",
+   "action_date": "2026-04-23",
+   "note": "Grace Therapeutics release dated Apr 23, 2026. Apostrophe in quote may be a curly quote in the original."
+  },
+  "GSK-2026-03-19": {
+   "quote": "the US Food and Drug Administration (FDA) has approved Lynavoy (linerixibat) for the treatment of cholestatic pruritus",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426002482/a3294x.htm",
+   "action_date": "2026-03-19",
+   "note": "GSK release, London, 19 March 2026 ('today'). Page title says 'Approved Mar 17' while slug and filing say Mar 19; title day is unsupported by this filing (2-day gap, within tolerance)."
+  },
+  "GSK-2026-06-17": {
+   "quote": "the US Food and Drug Administration (FDA) has approved Utebzi",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1131399/000165495426006036/a7252i.htm",
+   "action_date": "2026-06-17",
+   "note": "GSK/Spero release, London, 17 June 2026: Utebzi (tebipenem pivoxil) approved for cUTI. Same drug as page asset 'Tebipenem HBr (SPR994)'."
+  },
+  "IONS-2026-06-24": {
+   "quote": "TRYNGOLZA® (olezarsen) approved by the FDA as the first and only treatment",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/874015/000114036126026232/ef20076807_ex99-1.htm",
+   "action_date": "2026-06-24",
+   "note": "Ionis release, Carlsbad, June 24, 2026: sHTG indication for TRYNGOLZA (olezarsen)."
+  },
+  "NVO-2026-03-19": {
+   "quote": "the US Food and Drug Administration (FDA) has approved Wegovy® HD",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/353278/000117184326001813/f6k_031926.htm",
+   "action_date": "2026-03-19",
+   "note": "Novo Nordisk release, Bagsvaerd, 19 March 2026 (6-K filed Mar 20): Wegovy HD 7.2 mg."
+  },
+  "ONC-2026-05-13": {
+   "quote": "BEQALZI™ (sonrotoclax) Approved by U.S. FDA as First and Only BCL2 Inhibitor for R/R Mantle Cell Lymphoma",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1651308/000165130826000012/a20260515formxsonroapprova.htm",
+   "action_date": "2026-05-13",
+   "note": "BeOne Medicines release, San Carlos, May 13, 2026 (filed May 15): accelerated approval. Quote is the headline."
+  },
+  "RCKT-2026-03-27": {
+   "quote": "has granted accelerated approval for KRESLADI™",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1281895/000114036126011573/ef20069038_ex99-1.htm",
+   "action_date": "2026-03-27",
+   "note": "Rocket release, Cranbury NJ, March 27, 2026: accelerated approval of KRESLADI (marnetegragene autotemcel) for LAD-I."
+  },
+  "REPL-2026-04-10": {
+   "quote": "Complete Response Letter regarding the Biologics License Application (“BLA”) for RP1 (vusolimogene oderparepvec)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926042141/tm2611633d1_8k.htm",
+   "action_date": "2026-04-10",
+   "note": "Replimune 8-K dated April 10, 2026: second CRL, received April 10, 2026 (filed Apr 13)."
+  },
+  "SPRO-2026-06-17": {
+   "quote": "the U.S. Food and Drug Administration (“FDA”) has granted approval for Utebzi (tebipenem pivoxil)",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1701108/000119312526277506/d51395d8k.htm",
+   "action_date": "2026-06-17",
+   "note": "Spero 8-K (event June 17, 2026, signed June 22) furnishing June 17 release; approval came ahead of the June 18, 2026 PDUFA date."
+  },
+  "VNDA-2026-02-20": {
+   "quote": "the U.S. Food and Drug Administration (FDA) has approved BYSANTI",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1347178/000162828026010376/vnda8-k2232026exhibit991.htm",
+   "action_date": "2026-02-20",
+   "note": "Vanda release, Washington, February 20, 2026 (8-K filed Feb 23): BYSANTI (milsaperidone) tablets. Quote stops before a trademark symbol."
+  },
+  "VRDN-2026-06-26": {
+   "quote": "has approved Lumvoa™ (veligrotug-vvze) for the treatment of thyroid eye disease",
+   "quote_url": "https://www.sec.gov/Archives/edgar/data/1590750/000119312526286273/d164211dex991.htm",
+   "action_date": "",
+   "note": "Viridian release (Business Wire, Waltham; 8-K filed June 29, 2026) records FDA approval of Lumvoa (veligrotug-vvze). Release prints no date and no approval date; it announces a call for Monday, June 29, consistent with a June 26-28 announcement. Page date not contradicted but not confirmed by the filing."
+  }
+ }
+}
