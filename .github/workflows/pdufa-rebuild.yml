@@ -844,6 +844,17 @@ jobs:
       - name: Sponsor caveats rendered on event pages
         run: python inject_sponsor_caveat.py
 
+      # Design red team 2026-11-18: four parts of /pdufa/ event pages were written once and froze. Every price
+      # chart ended 2026-06-19; CAPR's month chip said August after its date moved to November; its "related"
+      # rows were all past decisions; and 17 pages carried an unsourced cash-runway estimate. This redraws the
+      # chart to the latest close (or withholds it when closes are not current), and fixes or removes the rest.
+      # After the event-page steps above, before inject_mobile_polish.py (which draws the phone copy of the chart).
+      # Guard: tests/test_event_page_currency.py.
+      - name: "Event pages: price chart to the latest close; month chip, related rows and runway kept current"
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python refresh_event_page_currency.py
+
       # Audit 2026-10-08 P0: MRK's I-DXd BLA was withdrawn 2026-09-25 and the event page, the
       # calendar row and the homepage kept naming an Oct 10 decision for 13 days. A Withdrawn row
       # (dataset st) gets a dated, sourced event page and a marked calendar row; every pending
