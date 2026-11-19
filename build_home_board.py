@@ -11,7 +11,7 @@ Replaces the hand-maintained (and fragile) homepage board with a real generator,
 
 Countdowns stay hydrator-driven (baked value is a placeholder the browser recomputes). Links go to
 /pdufa/{T} when that page exists, else the /ticker/{T} hub, else /calendar -- never a 404. (2026-11-18, design
-change 4: an upcoming tile links the event's own page, the one its dataset row links, when there is one.)
+changes 4 and 8: an upcoming tile links the event's own page, the one its dataset row links, via event_link.)
 
 Idempotent, backs up index.html first. Run standalone or from the hourly task.
 
@@ -273,30 +273,6 @@ def load_decisions():
             continue
         dedup.append((tk, date, outcome, drug))
     return dedup
-
-
-_EVENT_URLS = None
-
-
-def event_url(tk, date):
-    """The event's own page (design red team 2026-11-18, change 4: one page per event, every surface links it): the
-    /pdufa/ page the dataset's PDUFA row for this ticker and goal date links, when it exists. A ticker with two
-    events on the board has two different pages; /pdufa/{T} is its index, not either event."""
-    global _EVENT_URLS
-    if _EVENT_URLS is None:
-        _EVENT_URLS = {}
-        try:
-            src = open(DATASET, encoding="utf-8", errors="replace").read().replace("\x00", "")
-            rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
-        except Exception:  # noqa: BLE001
-            rows = []
-        for r in rows:
-            u = str(r.get("url") or "").split("#")[0].split("?")[0].rstrip("/")
-            if r.get("type") == "PDUFA" and r.get("t") and re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", u) \
-                    and os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html")):
-                _EVENT_URLS.setdefault((str(r["t"]).upper(), str(r.get("d", ""))[:10]), set()).add(u)
-    urls = _EVENT_URLS.get((str(tk).upper(), str(date)[:10]), set())
-    return next(iter(urls)) if len(urls) == 1 else link_for(tk)
 
 
 def link_for(tk):

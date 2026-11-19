@@ -331,6 +331,17 @@ def cmd_apply(a):
             old = _git_show(p)
             if old is None:
                 continue
+            # 2026-11-18 (design change 4): a bare /pdufa/{T} page this build retired into a redirect to the event's
+            # own page stays retired (vercel.json sends it there); and a restored page's event links go straight to
+            # the event's own page, as retarget_event_links.py makes every other page's.
+            rel = os.path.relpath(p, SITE).replace("\\", "/")
+            url = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
+            if _event_links is None:
+                _event_links = _load_event_links()
+            if url and not os.path.exists(p) and url in _event_links[1]:
+                continue
+            if _event_links[0]:
+                old = _event_links[0](old, rel)
             # 2026-11-18 (change 5): the committed page may predate this build's provenance badges; give it the
             # badges the rest of the site carries, or tests/test_provenance_badges.py would block the deploy
             if p.endswith(".html"):
