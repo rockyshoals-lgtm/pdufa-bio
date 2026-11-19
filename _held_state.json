@@ -1,6 +1,6 @@
 {
  "held_since": "2026-11-18T02:44:32Z",
- "consecutive_held_runs": 22,
+ "consecutive_held_runs": 23,
  "emailed_at": "2026-11-18T03:29:18Z",
  "leads": [
   {
@@ -16,13 +16,6 @@
    "key": "vidofludimus-calcium|openfda:20261019",
    "text": "/drug/vidofludimus-calcium openfda:20261019 AP 20261019 (ORIG-1, class TYPE 2)",
    "first_seen": "2026-11-18T02:44:32Z"
-  },
-  {
-   "source": "sponsor_feed",
-   "row_id": "pdufa_regn_2026-11-30",
-   "key": "pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy",
-   "text": "[decision] 2026-11-18 \"Livsayis™ (cemdisiran) Approved by the FDA as First and Only siRNA Therapy in Generalized Myasthenia Gravis and Only Treatment with Four-Times-a-Year Subcutaneo\" [Cemdisiran] https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy",
-   "first_seen": "2026-11-19T01:07:30Z"
   }
  ],
  "issued_keys": [

@@ -947,6 +947,15 @@
    "lunsotogene"
   ]
  },
+ "REGN-2026-11-18": {
+  "checked": "2026-11-18",
+  "name": "Livsayis (cemdisiran)",
+  "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
+  "terms": [
+   "Livsayis",
+   "cemdisiran"
+  ]
+ },
  "RGNX-2026-02-09": {
   "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",

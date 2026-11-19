@@ -95,18 +95,6 @@
    ],
    "cik": 1611842
   },
-  "REGN": {
-   "company": "Regeneron Pharmaceuticals Inc.",
-   "goals": [
-    "2026-11-30"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 872589
-  },
   "RHHBY": {
    "company": "Roche Holding AG",
    "goals": [
