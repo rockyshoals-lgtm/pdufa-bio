@@ -13,6 +13,8 @@ Checks (all planted, nothing read from the network):
      sentence, a 13F value) hashes differently;
   3. state written under the previous hash definition migrates without re-dating an unchanged page,
      and still re-dates a page whose content really changed;
+  3b. the accessibility pass (inject_a11y.py) alone leaves a page's hash where it was, and state written under
+     definition 2 migrates through it (2026-11-18, design change 12);
   4. advisory: each mask still matches something on the built site (a template reword that orphans a
      mask brings the churn back; it is printed, not failed, because it cannot make a page wrong).
 
@@ -110,6 +112,41 @@ def main():
     finally:
         B._STATE, B.TODAY, B.head_version = saved_state, saved_today, saved_head
 
+    # 3b. 2026-11-18 (design change 12): the accessibility pass (inject_a11y.py) runs on every page in one sweep. A
+    # page must hash the same before and after it, and state written under definition 2 must migrate through it.
+    import inject_a11y as A11
+    plain = ('<html><head><title>CGEM PDUFA</title></head><body><header><a class="brand" href="/">pdufa.bio</a>'
+             '<nav><!--NAVC:BEGIN--><a href="/calendar">Calendar</a><!--NAVC:END--></nav></header>'
+             '<h2>Run-up into the decision</h2><svg viewBox="0 0 600 200" role="img"><polyline points="0,1 9,2"/></svg>'
+             '<div class="note">T-120 to T+5, high Nov 2.</div>'
+             '<svg class="spk" width="64" height="20" viewBox="0 0 64 20" style="flex:0 0 auto">'
+             '<polyline points="0,19 64,1" fill="none" stroke="#46d17f" stroke-width="1.4"/></svg>'
+             '<div class="meta" id="meta">38 catalysts</div>'
+             '<details><summary style="cursor:pointer;list-style:none">Is this advice?</summary><p>No.</p></details>'
+             '<p>{f13}</p></body></html>')
+    before, before_real = plain.format(f13="$634.8 million"), plain.format(f13="$533.6 million")
+    after, after_real = A11.apply(before), A11.apply(before_real)
+    marks = ("pd-skip", 'aria-label="Run-up', 'aria-label="Share price', 'aria-live="polite"')
+    missing = [m for m in marks if m not in after] + (["summary marker"] if "list-style:none" in after else [])
+    if missing:
+        fails.append(f"accessibility: the planted page did not get {missing}, so this check would prove nothing")
+    if B.content_hash(after) != B.content_hash(before):
+        fails.append("accessibility: the accessibility pass alone moved a page's hash (every URL would re-date)")
+    if B.content_hash(after_real) == B.content_hash(after):
+        fails.append("accessibility: a real change on an accessible page left the hash alone")
+    saved_state, saved_today, saved_head = B._STATE, B.TODAY, B.head_version
+    try:
+        B.TODAY = "2026-11-18"
+        key = "pdufa_site_src/pdufa/CGEM/index.html"
+        B.head_version = lambda k: before                  # HEAD: the copy built before the pass
+        for html, want, label in ((after, "2026-11-12", "pass only"), (after_real, "2026-11-18", "pass and a real change")):
+            B._STATE = {key: {"hash": B.content_hash_v2(before), "date": "2026-11-12", "hv": 2}}
+            got = B.last_changed("pdufa/CGEM/index.html", __file__, html)
+            if got != want:
+                fails.append(f"accessibility migration from definition 2, {label}: lastmod {got}, expected {want}")
+    finally:
+        B._STATE, B.TODAY, B.head_version = saved_state, saved_today, saved_head
+
     # 4. advisory: every mask still finds its sentence somewhere on the built site
     site = os.path.join(HERE, "pdufa_site_src")
     pages = [p for p in glob.glob(os.path.join(site, "*", "*", "index.html")) if os.sep + "_" not in p][:2500]
@@ -124,7 +161,7 @@ def main():
             print("   " + f)
         return 1
     print(f"OK -- study size, cohort medians and countdowns leave the hash alone; {len(real)} kinds of real "
-          f"change move it; v1 state migrates without re-dating unchanged pages. {len(B.VOLATILE)} masks, "
+          f"change move it; v1 and v2 state migrate without re-dating unchanged pages; the accessibility pass leaves it alone. {len(B.VOLATILE)} masks, "
           f"{len(B.VOLATILE) - len(orphan)} matched on the built site.")
     return 0
 
