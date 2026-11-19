@@ -7833,7 +7833,7 @@
 "app": "NDA212608",
 "brand": "Ayvakit",
 "generic": "avapritinib",
-"sponsor": "Blueprint Medicines",
+"sponsor": "Sanofi",
 "kind": "efficacy supplement",
 "sub": "SUPPL-21",
 "class": "Efficacy",
@@ -8017,17 +8017,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761105Orig1s053; 761262Orig1s019ltr.pdf"
 },
 {
-"app": "NDA217439",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-4",
-"class": "Efficacy",
-"date": "2026-10-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
-},
-{
 "app": "NDA211651",
 "brand": "Talzenna",
 "generic": "talazoparib",
@@ -8037,6 +8026,17 @@
 "class": "Efficacy",
 "date": "2026-10-26",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
+},
+{
+"app": "NDA217439",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-4",
+"class": "Efficacy",
+"date": "2026-10-26",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
 },
 {
 "app": "BLA761187",
@@ -8162,7 +8162,7 @@
 "sub": "SUPPL-44",
 "class": "Efficacy",
 "date": "2026-11-13",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s044ltr.pdf"
 },
 {
 "app": "NDA215390",
@@ -8218,6 +8218,28 @@
 "class": "Efficacy",
 "date": "2026-11-13",
 "letter": ""
+},
+{
+"app": "NDA220791",
+"brand": "Wilserdly",
+"generic": "giredestran",
+"sponsor": "Genentech Inc",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-16",
+"letter": ""
+},
+{
+"app": "BLA125504",
+"brand": "Cosentyx",
+"generic": "secukinumab",
+"sponsor": "Novartis Pharms Corp",
+"kind": "efficacy supplement",
+"sub": "SUPPL-101",
+"class": "Efficacy",
+"date": "2026-11-17",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf"
 }
 ]
 }
