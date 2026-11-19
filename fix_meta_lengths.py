@@ -280,8 +280,12 @@ def main():
                 return s[:1].upper() + s[1:] if s else s
             nxt = f" {_cap(state[0])}." if state else ""
             hist = f" {_cap(state[1])}." if len(state) > 1 else ""
+            # 2026-11-18: a hub with no catalyst and no past decision has nothing for "every one" to refer to
+            # (ZVRA and JAGX after their retired rows came off: "No past FDA decision on file. Source document and
+            # measured run-up on every one.")
+            empty = bool(state) and all(b.lower().startswith("no ") for b in state)
             return fit([f"{co} ({tk}) FDA catalyst hub.", nxt, hist,
-                        " Source document and measured run-up on every one."])
+                        "" if empty else " Source document and measured run-up on every one."])
 
         co = short_company(name_of.get(tk, ""), tk)
         up = sorted([r for r in by_tk.get(tk, [])
@@ -301,7 +305,7 @@ def main():
 
         hist = f" {dec} FDA decision{'s' if dec != 1 else ''} on record." if dec else ""
         return fit([f"{co} ({tk}) FDA catalysts.", nxt, hist,
-                    " Source document and measured run-up on every one."])
+                    " Source document and measured run-up on every one." if (up or dec) else ""])
 
     facts = decision_facts()
 

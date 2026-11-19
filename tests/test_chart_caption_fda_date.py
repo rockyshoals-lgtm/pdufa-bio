@@ -20,7 +20,7 @@ def main():
         if "Daily close, T-120" not in doc:
             continue
         n += 1
-        if f"FDA decision {F.mdy(day)}." in doc or f'>PDUFA {F.mdy(day)}<' in doc:
+        if f"FDA decision {F.mdy(day)}." in doc or re.search(r'>(?:PDUFA|FDA decision) ' + re.escape(F.mdy(day)) + '<', doc):
             fails.append(f"/fda-decision/{tk}-{day}: caption calls the announcement day ({F.mdy(day)}) the FDA decision; FDA acted {fad}")
         elif f"FDA action {F.mdy(fad)}" not in doc:
             fails.append(f"/fda-decision/{tk}-{day}: caption does not name the FDA action day {fad}")

@@ -33,6 +33,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 STATS = os.path.join(HERE, "runup_study_stats.json")
 OUT = os.path.join(SITE, "calendar.ics")
@@ -48,6 +49,15 @@ PRECISION_NOTE = {
     "quarter": "Guidance is to the quarter only; this entry spans the quarter rather than claiming "
                "a day.",
 }
+
+
+def _decision_kind(e):
+    """page_kind() of the row's decision page, or None when it has none."""
+    import refresh_provenance_counts as rpc
+    u = str(e.get("url") or "")
+    slug = u.strip("/").split("/")[-1] if u.startswith("/fda-decision/") else f"{e.get('t') or ''}-{e.get('dcd') or ''}"
+    p = os.path.join(SITE, "fda-decision", slug, "index.html")
+    return rpc.page_kind(open(p, encoding="utf-8", errors="replace").read()) if os.path.exists(p) else None
 
 
 def esc(s):
@@ -165,7 +175,12 @@ def main():
         if e.get("st"):
             desc.append(f"Status: {e['st']}.")
         if e.get("oc"):
-            desc.append(f"Outcome: {e['oc']}.")
+            # 2026-11-18 (design red team, change 5): an outcome the decision page infers from the price move, or
+            # gives with no source, is said so here too
+            k = _decision_kind(e)
+            note = {"inferred": " (inferred from the stock's move, not read from a document)",
+                    "unsourced": " (no source cited yet)"}.get(k, "")
+            desc.append(f"Outcome: {e['oc']}{note}.")
         if typ == "PDUFA" and runup_note:
             desc.append(runup_note)
         desc.append("Source: pdufa.bio. Informational only, not investment advice.")

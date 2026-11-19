@@ -122,9 +122,13 @@ def main():
 
     # /calendar -- numbers parsed from its own lede so page and FAQ cannot disagree
     _, cal = read("calendar")
-    caltxt = re.sub(r"<[^>]+>", " ", cal or "")
-    m = re.search(r"lists\s+([\d,]+)\s+FDA decision dates.*?([\d,]+)\s+are still ahead",
-                  caltxt, re.S)
+    # red team 2026-11-18: the lede's forward-first rewrite (11-09) put "N FDA PDUFA goal dates are still ahead"
+    # BEFORE "This page lists", so the old "lists ... are still ahead" pattern ran on into this FAQ's own previous
+    # answer and kept re-quoting it: the page said 16 ahead while the FAQ said 25. Both numbers are now read from
+    # the lede alone (the FAQ block is cut out first), each with its own pattern.
+    caltxt = re.sub(r"<[^>]+>", " ", re.sub(r"HUBFAQ:BEGIN.*?HUBFAQ:END", "", cal or "", flags=re.S))
+    m = re.search(r"lists\s+([\d,]+)\s+FDA decision dates", caltxt)
+    ah = re.search(r"([\d,]+)\s+FDA PDUFA goal dates?\s+(?:are|is)\s+still ahead in \d{4}", caltxt)
     # the WINDOW must ride with the number (red team 2026-08-12: the FAQ said '67 on the 2026
     # calendar' while the lede said 'covering June 2026 to December 2026' -- half a year
     # silently became a full year, in the exact sentence offered to AI engines to repeat)
@@ -132,14 +136,18 @@ def main():
     window = f", covering {w.group(1)} to {w.group(2)}," if w else ""
     qa = []
     if m:
+        # no forward sentence in the lede means nothing is ahead, or the lede changed shape: either way the
+        # FAQ states only what it can read, rather than guess a count
+        tail = (f" and {ah.group(1)} {'is' if ah.group(1) == '1' else 'are'} still ahead as of {tstr}." if ah
+                else ".")
         qa.append(("How many FDA decisions are scheduled in 2026?",
-                   f"{m.group(1)} FDA decision dates are on this calendar{window} and "
-                   f"{m.group(2)} are still ahead as of {tstr}.", ""))
+                   f"{m.group(1)} FDA decision dates are on this calendar{window.rstrip(',') if not ah else window}"
+                   + tail, ""))
     if nxt:
         qa.append(("When is the next FDA decision?", nxt, ""))
     qa += [("How often is this calendar updated?",
             "Daily. Dates come from FDA announcements, sponsor press releases and SEC filings, "
-            "and every date on the page links its source.", ""),
+            "and each row links its own page, which names its source or says plainly that it has none.", ""),
            ("What happens on a PDUFA date?",
             "The FDA approves the application, issues a Complete Response Letter, or extends "
             "the review.",
@@ -278,8 +286,9 @@ def main():
          "Every tracked FDA decision date, readout window and conference presentation for that "
          "ticker, with outcomes and sources.", ""),
         ("Where does the data come from?",
-         "FDA announcements, sponsor press releases and SEC filings; every date links its "
-         "source.", "")], a.dry_run)
+         "FDA announcements, sponsor press releases and SEC filings. Each FDA decision links its own page, which names "
+         "its source or says plainly that it has none; one inferred from the stock's move is marked Inferred.",
+         "")], a.dry_run)
 
     # /research
     ok &= inject("research", [

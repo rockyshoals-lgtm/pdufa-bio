@@ -144,6 +144,16 @@ def eligibility(tk, d, facts=None, excl=None):
         return False, "source re-checked: " + excl[facts["page"]].get("reason", "")
     if facts["outcome"] == "UNVERIFIED":
         return False, "decision page says outcome unverified (price-inferred, no primary source)"
+    # 2026-11-18 (design red team, change 5): "primary-sourced" was assumed, never checked. 17 2026 pages that cite
+    # nothing (ABBV-2026-05-27, MRK-2026-06-12, ...) fed their outcomes into the study's statistics. The page has
+    # to cite a document, read the way /decisions counts it.
+    from refresh_provenance_counts import page_kind
+    kind = page_kind(open(os.path.join(SITE, "fda-decision", facts["page"], "index.html"), encoding="utf-8",
+                          errors="replace").read())
+    if kind == "inferred":
+        return False, "decision page says its outcome is inferred from the price move"
+    if kind == "unsourced":
+        return False, "decision page cites no source for the outcome"
     if facts["outcome"] == "OTHER" and "label corrected" in facts["outcome_text"].lower():
         return False, "decision page says its CRL label was wrong: " + (facts.get("crl_reason") or "")[:90]
     if facts["outcome"] == "OTHER":

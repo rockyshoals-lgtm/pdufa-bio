@@ -118,6 +118,13 @@ def main():
             cm = re.search(r"<span>Company</span><b>([^<]+)</b>", doc)
             page_co = toks(_html.unescape(cm.group(1))) if cm else toks(tk)
         hits = hand or [(iso, r) for iso, r in cands if toks(r.get("company_name")) & page_co]
+        if not hits:
+            # 2026-11-18 (design red team, change 2): /fda-decision/CAPR-2025-07-11 linked Capricor's letter but
+            # said it was "dated July 11, 2025"; the PDF says July 9. The page has no Company row and is not a
+            # dataset row, so the company check above never matched and the card was never re-rendered. A letter
+            # the page ALREADY links, from the same 4-day window, is the page's own earlier match: re-render it.
+            own = set(re.findall(r'href="https://download\.open\.fda\.gov/crl/([^"]+?\.pdf)"', doc))
+            hits = [(iso, r) for iso, r in cands if str(r.get("file_name") or "").strip() in own]
         if len(hits) != 1:
             if len(hits) > 1:
                 print(f"  SKIP {slug}: {len(hits)} same-day letters match the company "

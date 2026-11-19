@@ -65,6 +65,7 @@ def tracked():
     doc = io.open(os.path.join(SITE, "decisions", "crl", "index.html"), encoding="utf-8").read()
     for href, t, iso, drug in re.findall(r'<a class="row" href="(/fda-decision/[^"]+)"><div class="t">([A-Z0-9.]+) '
                                          r'(?:&middot;|·) (\d{4}-\d{2}-\d{2}).*?class="d">.*?</span>:\s*(.*?)</div></a>', doc, re.S):
+        drug = re.sub(r"<!--PV:B-->.*?<!--PV:E-->", "", drug, flags=re.S)   # the provenance badge is not drug text
         crl[iso[:7]].append((iso, t, html.unescape(re.sub(r"<[^>]+>", "", drug)).strip(), href))
     alld = collections.Counter(re.findall(r'<a class="row" href="/fda-decision/[^"]+"><div class="t">[A-Z0-9.]+ '
                                           r'(?:&middot;|·) (\d{4}-\d{2})-\d{2}',

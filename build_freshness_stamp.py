@@ -155,7 +155,20 @@ def built_eastern_label():
         return _eastern_today().strftime("%b %d, %Y").replace(" 0", " ") + " ET"
 
 
-def block(date_iso):
+# Design red team 2026-11-18 (change 8): the homepage showed three stamps above its first date ("Data through Nov 18",
+# "Page updated November 18, 2026", "Data as of Nov 18, 2026 3:12 AM ET"). Its block is now the one stamp: the
+# content-change date as a crawlable <time> (tests/test_freshness_crawlable.py), with the rebuild time as its tooltip
+# (tests/test_data_built_at.py). The countdown it carried repeats the first card of the list right under it, so the
+# homepage drops it. The eyebrow above the h1 names a date only when the rows have gone stale (build_home_board.py).
+HOME_SCRIPT = """<script>
+(function(){var b=document.querySelector('[data-fresh-built]');if(!b)return;
+fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+var w=j.data_built_at||j.built;if(w){var x=new Date(w);if(!isNaN(x)){b.setAttribute('title','Data as of '+x.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'})+' ET (last rebuild)');}}
+}).catch(function(){});})();
+</script>"""
+
+
+def block(date_iso, home=False):
     """Per-page markup. The date is baked because a crawler has to see it.
 
     The earlier version rendered the time client-side, which was fine for humans and useless for
@@ -167,6 +180,13 @@ def block(date_iso):
     clock, so an unchanged page emits identical bytes on every build. That is what keeps this from
     reintroducing the churn that broke lastmod twice already.
     """
+    if home:
+        when_h = (f'Updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>' if date_iso
+                  else '<span style="color:#eef4fc">Rebuilt daily</span>')
+        return (f'{B}<div data-fresh style="display:flex;gap:6px;align-items:center;font-size:12.5px;'
+                f'color:var(--mut2);margin:0 0 10px"><span style="display:inline-flex;width:7px;height:7px;'
+                f'border-radius:50%;background:#46d17f"></span><span data-fresh-built '
+                f'title="Data as of {built_eastern_label()} (last rebuild)">{when_h}</span></div>{HOME_SCRIPT}{E}')
     # audit 2026-10-04 P2: three dates read as one. "Page updated" is this page's content-change day;
     # "Data as of" (filled at request time) is when the dataset was rebuilt. Named, not guessed.
     when = (f'Page updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>'
@@ -281,7 +301,7 @@ def main():
         if SKIP.search(p):
             continue
         rel = os.path.relpath(p, SITE).replace("\\", "/")
-        blk = block(dates.get("pdufa_site_src/" + rel))
+        blk = block(dates.get("pdufa_site_src/" + rel), home=(rel == "index.html"))
         doc = open(p, encoding="utf-8", errors="replace").read()
         if B in doc:
             doc = doc.split(B, 1)[0] + blk + doc.split(E, 1)[1]

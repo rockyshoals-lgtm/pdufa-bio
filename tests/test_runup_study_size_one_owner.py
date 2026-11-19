@@ -9,7 +9,7 @@ now owns the rest, and this asserts the RENDER on every indexable page.
 
 Two statistics are legitimate:
   n_events          -- how many PDUFA decisions the study holds
-  t120_coverage_n   -- how many of them have the full daily T-120 -> T+5 price path
+  t120_coverage_n   -- how many have 120 trading days of history before the decision (T+5 fills in after)
 Anything else described as the run-up study / run-up dataset / T-120 series is a drift.
 
     python tests/test_runup_study_size_one_owner.py
@@ -46,8 +46,10 @@ def main():
     anchors = {
         "index.html": [rf"{n:,} events in the run-up study"],
         "decisions/index.html": [rf"{n:,} PDUFA decisions, 2020 to \d{{4}}, {rate:.1f}% approved"],
-        "pricing.html": [rf"the {t120:,}-event T-120→T\+5 daily data"],
-        "developers/index.html": [rf"price path for {t120:,} FDA decisions"],
+        "pricing.html": [rf"T-120→T\+5 daily data for {t120:,} of the study’s {n:,} events \(those with 120 trading "
+                         r"days of history before the decision; the days after fill in as they trade\)"],
+        "developers/index.html": [rf"price path for {t120:,} FDA decisions \(of the study’s {n:,}, those with 120 "
+                                  r"trading days of history before the decision; the days after fill in as they trade\)"],
         "vktx/index.html": [rf"run-up study \({n:,} FDA decisions\)"],
         "fda-approval-rate/index.html": [rf"{rate:.1f}% approvals / \(approvals \+ CRLs\), all review cycles: our universe, n={n:,}",
                                          rf"Our figure: {n:,} FDA decisions on listed biotechs"],

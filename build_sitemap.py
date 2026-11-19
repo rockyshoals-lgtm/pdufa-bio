@@ -122,7 +122,10 @@ BOILER = [
     # advanced their lastmod on 10-11. Strip the preceding comma too, and the og/article metas.
     re.compile(r',?\s*"date(?:Modified|Published)"\s*:\s*"[^"]*",?'),
     re.compile(r'<meta property="(?:og:updated_time|article:modified_time)"[^>]*>'),
-    re.compile(r'<style id="(navcanon|navpolish|typesys|mobilepolish)">.*?</style>', re.S),
+    re.compile(r'<style id="(navcanon|navpolish|typesys|mobilepolish|navmatch)">.*?</style>', re.S),
+    # 2026-11-18 (design red team, change 11): inject_site_type.py adds the site fonts and the logo mark to ~1,400
+    # pages that lacked them, inside these markers; rebuild_nav.py's navmatch style sizes the dropdown buttons.
+    re.compile(r'<!--TYPE:B-->.*?<!--TYPE:E-->|<!--LM:B-->.*?<!--LM:E-->', re.S),
     # 2026-11-17: inject_mobile_polish.py wraps wide tables in a scroll box on ~2,000 pages in one sweep. Layout
     # chrome, not content: strip the two marker-tagged halves so the table inside hashes exactly as before.
     re.compile(r'<!--TW:B--><div class="pd-tw">|</div><!--TW:E-->'),
@@ -193,15 +196,24 @@ def _digest(html):
     return hashlib.sha1(re.sub(r"\s+", " ", html).encode("utf-8", "replace")).hexdigest()[:16]
 
 
+def _unshaped(html):
+    """2026-11-18 (design change 7): shape_calendar.py reorders /calendar last in the build, and this script runs once
+    before it and once after. Hash the page in its date order both times, so the reordering alone is not a change."""
+    if "<!--CALSHAPE:" in html:
+        import shape_calendar
+        html = shape_calendar.unshape(html)
+    return html
+
+
 def content_hash_v1(html):
     """The pre-2026-11-18 definition (furniture only). Kept to migrate state written under it."""
-    return _digest(_strip_boiler(html))
+    return _digest(_strip_boiler(_unshaped(html)))
 
 
 def content_hash(html):
     """Hash of the page with template furniture and site-wide statistics removed, so lastmod tracks
     a change to what the page says about its own subject."""
-    html = _strip_boiler(html)
+    html = _strip_boiler(_unshaped(html))
     for rx, rep in VOLATILE:
         html = rx.sub(rep, html)
     return _digest(html)

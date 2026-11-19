@@ -132,6 +132,8 @@ jobs:
 
       # 2026-11-18: each decision page's run-up and decision-day chips are the study's figures for that event (306
       # pages showed an old "low→high" figure matching nothing). Before build_decision_faq.py, which quotes them.
+      # Change 10 (2026-11-18): and the event's own decision-day move, with what it is measured on, on every page the
+      # study measured.
       - name: "Run-up study: write the study's figures onto each decision page"
         run: python sync_decision_runup_chip.py
 
@@ -153,6 +155,12 @@ jobs:
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python build_home_board.py
+
+      # 2026-11-18 (design red team, change 7): /calendar is committed shaped (open months first, decided months
+      # folded, notes at the end). Every calendar writer below expects date order, so put the page back first;
+      # shape_calendar.py runs again just before the phone pass.
+      - name: Put /calendar back in date order for its writers
+        run: python shape_calendar.py --undo
 
       # Reconcile the calendar against the slate BEFORE marking outcomes, so a catalyst added here
       # is marked in the same run. REPL had a confirmed date, an adcomm page and a slate row, and
@@ -336,6 +344,12 @@ jobs:
       - name: "Fact-first first sentence on every approved decision page (+ novel count, clean names)"
         run: python build_decision_lede.py
 
+      # Design red team 2026-11-18 (change 10): the fact-first sentence is the page's one statement of the decision; a
+      # summary under it that says nothing the rest of the page does not is removed (no fact leaves the page).
+      # Guard: tests/test_decision_page_one_statement.py.
+      - name: "Decision pages state the decision once (drop a summary the page already says)"
+        run: python dedupe_decision_summary.py
+
       # Red team 2026-11-01: the h1 carried the announcement day while the title carried the FDA's action day.
       - name: "Decision page h1 states the FDA action day (announcement day in brackets)"
         run: python fix_decision_h1_action_date.py
@@ -344,6 +358,12 @@ jobs:
       # line give the FDA's own day (SMMT, UNCY, ACHV, ...). Guard: tests/test_decision_kv_action_date.py.
       - name: "Decision key facts state the FDA action day (announcement day in its own row)"
         run: python fix_decision_kv_action_date.py
+
+      # Red team 2026-11-18: CYTK and TEVA (Nov 16) named the FDA's record of a Nov 13 action yet still said the
+      # sponsor's release did not state the action day. Once the day is on record the note says it, with the margin.
+      # Guard: tests/test_no_stale_margin_note.py.
+      - name: "Decision pages: a 'no margin' note gives way to the FDA's recorded action day"
+        run: python fix_stale_margin_note.py
 
       # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
       - name: "/fda-approval-letters hub"
@@ -387,6 +407,7 @@ jobs:
           python label_announcement_only_dates.py
           python fix_decision_h1_action_date.py
           python fix_decision_kv_action_date.py
+          python fix_stale_margin_note.py
           python build_fda_letters_hub.py
           python inject_calendar_explainer.py
           python sync_learn_timing.py
@@ -846,6 +867,12 @@ jobs:
       - name: "Withdrawn applications: event page + calendar row (never 'upcoming')"
         run: python build_withdrawn_pages.py
 
+      # 2026-11-18 (design red team, change 5): /calendar/2025 and earlier years are rebuilt from the archive so their
+      # counts say which outcomes are sourced. Before the breadcrumb and Open Graph passes, which fill those on the
+      # page it writes (run after them, it left /calendar/2025 without either and failed both guards).
+      - name: "Year archive pages from the decisions archive"
+        run: python build_year_archive.py
+
       # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
       - name: "BreadcrumbList on every indexable page"
@@ -938,14 +965,22 @@ jobs:
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
-      # 2026-11-18 design red team (change 12): skip link, named charts and sparklines, FAQ markers, a live count on
-      # the screener, 3:1 field borders. Before the phone pass, whose phone copy of a chart carries the chart's name.
-      # tests/test_accessibility.py fails if it is skipped.
-      - name: "Accessibility (skip link, chart names, FAQ markers, field borders)"
-        run: python inject_a11y.py
+      # 2026-11-18 (design red team, change 5): every link to a decision page whose outcome was inferred from the price
+      # move, or whose page cites no source, carries an "Inferred" or "Unsourced" badge wherever it is listed. After
+      # every writer of those lists (archive, calendar, hubs, drug pages, /sitemap). tests/test_provenance_badges.py.
+      - name: "Inferred and Unsourced badges on every list that links a decision page"
+        run: python badge_decision_provenance.py
+
+      # 2026-11-18 design red team, change 11: one look everywhere. After the last page builder, every public page gets
+      # the site fonts, the type rules and the logo mark it lacks (1,371 pages lacked one). tests/test_one_look.py.
+      - name: "One look: site fonts, type rules and logo mark on every page"
+        run: python inject_site_type.py
 
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
+      - name: "Calendar: open months first, decided months folded, notes last (design change 7)"
+        run: python shape_calendar.py
+
       - name: "Phone and tablet layout (tables scroll in place, closed menu hidden, no zoom-on-focus)"
         run: python inject_mobile_polish.py
 

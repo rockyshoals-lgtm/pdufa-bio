@@ -1,8 +1,15 @@
 {
  "held_since": "2026-11-18T02:44:32Z",
- "consecutive_held_runs": 10,
+ "consecutive_held_runs": 20,
  "emailed_at": "2026-11-18T03:29:18Z",
  "leads": [
+  {
+   "source": "drug_pages",
+   "row_id": "drug:venglustat",
+   "key": "venglustat|fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
+   "text": "/drug/venglustat fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g 'venglustat' appears with approval language",
+   "first_seen": "2026-11-18T20:40:25Z"
+  },
   {
    "source": "drug_pages",
    "row_id": "drug:vidofludimus-calcium",
@@ -24,6 +31,7 @@
   "drug_pages|remibrutinib|openfda:20261006",
   "drug_pages|tecentriq|fda-oncology-notifications",
   "drug_pages|ultomiris|openfda:20261021",
+  "drug_pages|venglustat|fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
   "drug_pages|vidofludimus-calcium|openfda:20261019",
   "drugs_at_fda|MRK|2026-10-14",
   "edgar_8k|pdufa_nuvl_2026-11-27|0001654954-26-009181",

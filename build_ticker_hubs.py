@@ -79,6 +79,47 @@ def pretty(iso):
         return iso or ''
 
 
+_ACT = None
+FDAREC_DAY = re.compile(r'<!--FDAREC:BEGIN-->.*?<b>FDA record of the action:</b> the FDA [a-z ]+? on <b>([A-Z][a-z]+ \d{1,2}, \d{4})</b>, per <a href="https://www\.(?:accessdata\.)?fda\.gov/', re.S)
+
+
+def fda_action_day(tk, page_date):
+    """(day, known) for /fda-decision/{tk}-{page_date}: the dataset's fda_action_date, else the page's own key facts
+    ("FDA decision date"). With neither (the page says "not found in a public FDA record"), the page date and False."""
+    global _ACT
+    if _ACT is None:
+        try:
+            from calendar_decided_rows_once import action_dates
+            _ACT = action_dates()
+        except Exception:  # noqa: BLE001
+            _ACT = {}
+    fad = _ACT.get(f"/fda-decision/{tk}-{page_date}")
+    if fad:
+        return fad, True
+    pth = os.path.join(SITE, 'fda-decision', f'{tk}-{page_date}', 'index.html')
+    if os.path.exists(pth):
+        doc = open(pth, encoding='utf-8', errors='replace').read()
+        m = re.search(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b>', doc)
+        if m:
+            return m.group(1), True
+        m = FDAREC_DAY.search(doc)       # the page's "FDA record of the action" block, linking the FDA's letter
+        if m:
+            return dt.datetime.strptime(m.group(1), '%B %d, %Y').date().isoformat(), True
+    return page_date, False
+
+
+SMALL = '<small style="font-weight:400;color:#a7bcd9">'
+
+
+def history_when(tk, page_date):
+    """The history row's date: the FDA's day, naming the announcement where it differs; or, with no public FDA
+    record of the day, the announcement, said to be one."""
+    act, known = fda_action_day(tk, page_date)
+    if not known:
+        return f'{pretty(page_date)} {SMALL}(announced; no public FDA record of the day)</small>'
+    return pretty(act) if act == page_date else f'{pretty(act)} {SMALL}(announced {pretty(page_date)})</small>'
+
+
 def load_data():
     src = open(os.path.join(SITE, 'api', 'data.js'), encoding='utf-8').read()
     i = src.find('const SLATE=')
@@ -277,7 +318,7 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
                        f'<span class="d">{d2}</span></a>')
 
     # Decision history — link to the existing /fda-decision pages, newest first, verified to exist
-    ph = sorted(past.get(tk, []), key=lambda x: x['date'], reverse=True)
+    ph = sorted(past.get(tk, []), key=lambda x: (fda_action_day(tk, x['date'])[0], x['date']), reverse=True)
     ph = [p for p in ph if os.path.exists(os.path.join(SITE, 'fda-decision', f"{tk}-{p['date']}", 'index.html'))]
     if ph:
         out.append(f'<h2>FDA decision history ({len(ph)})</h2>')
@@ -285,8 +326,12 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
             badge = '<span class="badge app">✓ Approved</span>' if p['outcome'] == 'Approved' else \
                     ('<span class="badge crl">✕ CRL</span>' if p['outcome'] == 'CRL' else '')
             lab = esc(p['label']) or 'FDA decision'
+            # 2026-11-18 (design red team, change 2): the row printed the archive link's date, which is when the
+            # decision was made public. CAPR's 2025 letter is dated Jul 9 but the row said Jul 11. The row now
+            # prints the FDA's own action day and names the announcement only where it differs.
+            when = history_when(tk, p['date'])
             out.append(f'<a class="row" href="/fda-decision/{tk}-{p["date"]}">'
-                       f'<span class="t">{pretty(p["date"])}{badge}</span>'
+                       f'<span class="t">{when}{badge}</span>'
                        f'<span class="d">{lab}</span></a>')
 
     # Clinical readouts. The hub has always SAID it covers "PDUFA dates, advisory committee
@@ -296,7 +341,7 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
     # 404 for six days. Readouts come from the dataset, and a reported one carries its outcome.
     rh = sorted(readouts.get(tk, []), key=lambda x: x['date'], reverse=True)
     if rh:
-        out.append(f'<h2>Clinical readouts ({len(rh)})</h2>')
+        out.append(f'<h2 id="readouts">Clinical readouts ({len(rh)})</h2>')  # change 9: the screener links here
         for r in rh:
             oc = str(r.get('outcome') or '')
             badge = (f'<span class="badge app">✓ {esc(oc)}</span>' if oc.lower().startswith('pos')
@@ -329,7 +374,8 @@ def render(tk, fwd, past, name, slugs, readouts, confs):
                '<a class="chip" href="/readouts">Phase readouts →</a></div>')
     out.append('<a class="cta" href="/calendar"><b>See the full 2026 PDUFA calendar &rarr;</b></a>')
     out.append('<p class="note">This page aggregates ' + tk + "'s FDA catalysts from pdufa.bio's own "
-               'calendar and decision archive. Each item links to its source page. Facts and dates '
+               'calendar and decision archive. Each item links its own page, which names its source or says '
+               'plainly that it has none. Facts and dates '
                'only; verify against primary FDA / SEC / company filings.</p>')
     out.append(FOOTER)
     out.append('</div><script src="/cmdk.js" defer></script></body></html>')

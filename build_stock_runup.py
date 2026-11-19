@@ -298,18 +298,25 @@ def main():
         except Exception:
             cache = {}
 
-    n_live = n_hist = n_written = n_unblocked = 0
+    n_live = n_hist = n_written = n_unblocked = n_cleared = 0
     for t in tickers:
         ev = history(rows, t)
         live = None
         if key and t in upcoming:
             live = live_runup(bars(t, key, cache), upcoming[t])
-        if not ev and not live:
-            continue
-        block = render(t, live, ev, cohort)
-        if not block:
-            continue
         page = os.path.join(SITE, "ticker", t, "index.html")
+        block = render(t, live, ev, cohort) if (ev or live) else ""
+        if not block:
+            # 2026-11-18: with nothing to show, an earlier run's block came off the page. /ticker/ZVRA kept a
+            # "past FDA decisions (n=1)" table with an APPROVAL on 2026-06-08, a day retired on 2026-10-15 as an
+            # Orange Book patent listing (apply_1015_anktiva_and_corrections.py), once the study held no row for it.
+            doc = open(page, encoding="utf-8", errors="replace").read()
+            if BEGIN in doc and END in doc:
+                doc = doc.split(BEGIN, 1)[0] + doc.split(END, 1)[1]
+                if not a.dry_run:
+                    open(page, "w", encoding="utf-8").write(doc)
+                n_cleared += 1
+            continue
         doc = open(page, encoding="utf-8", errors="replace").read()
         if BEGIN in doc:
             doc = doc.split(BEGIN, 1)[0] + block + doc.split(END, 1)[1]
@@ -343,7 +350,7 @@ def main():
 
     print(f"stock run-up blocks: {n_written} page(s) written "
           f"({n_live} with a live run-up, {n_hist} with decision history, "
-          f"{n_unblocked} lifted out of noindex)"
+          f"{n_unblocked} lifted out of noindex, {n_cleared} emptied block(s) removed)"
           + (" [dry run]" if a.dry_run else ""))
 
 

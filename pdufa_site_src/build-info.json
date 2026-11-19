@@ -1,8 +1,8 @@
 {
- "built": "2026-11-18T08:12:10+00:00",
- "data_built_at": "2026-11-18T08:12:10+00:00",
- "commit": "241b75982",
- "commit_at_build": "241b75982",
+ "built": "2026-11-18T23:59:34+00:00",
+ "data_built_at": "2026-11-18T23:59:34+00:00",
+ "commit": "0a46dae8e",
+ "commit_at_build": "0a46dae8e",
  "as_of_eastern": "2026-11-18",
  "next_date": "2026-11-22",
  "next_ticker": "CAPR",
@@ -11,6 +11,11 @@
  "days_since_goal": null,
  "held_since": "2026-11-18T02:44:32Z",
  "held_leads": [
+  {
+   "row_id": "drug:venglustat",
+   "source": "drug_pages",
+   "first_seen": "2026-11-18T20:40:25Z"
+  },
   {
    "row_id": "drug:vidofludimus-calcium",
    "source": "drug_pages",
