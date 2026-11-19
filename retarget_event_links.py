@@ -18,8 +18,8 @@ upcoming event, and the red team found that readout rows, drug pages and ticker 
 ticker's FDA page": a Zanidatamab readout landed on Jazz's cannabidiol page, and the indexes lost every inbound
 link. Surfaces that mean the event link the event's own page in their builders instead.
 
-Only href attributes outside scripts and absolute https://www.pdufa.bio/pdufa/... strings inside JSON-LD are
-rewritten, never a page's own URL (its canonical, og:url and twitter:url), and never inside the page the link
+Only href attributes outside scripts, absolute https://www.pdufa.bio/pdufa/... strings inside JSON-LD and a script's
+JSON "url" fields (the /screener rows) are rewritten, never a page's own URL (its canonical, og:url and twitter:url), and never inside the page the link
 names. Runs after inject_site_links.py and before build_sitemap.py. Idempotent; tests/test_one_event_one_page.py
 fails on any link this pass would change.
 
@@ -46,7 +46,7 @@ VJ = os.path.join(SITE, "vercel.json")
 BASE = "https://www.pdufa.bio"
 SKIP = re.compile(r"[\\/]_[A-Za-z0-9]*bak|[\\/]_pdufa_|[\\/]api[\\/]")
 SLUG = r"[A-Za-z0-9.\-]+"
-LINKS = re.compile(r'href="[^"]*"|"https://www\.pdufa\.bio/pdufa/[^"]*"')
+LINKS = re.compile(r'href="[^"]*"|"https://www\.pdufa\.bio/pdufa/[^"]*"|"url"\s*:\s*"[^"]*"')
 
 
 def today_et():
@@ -119,10 +119,14 @@ def apply(doc, rel, tg):
         seg = href.sub(h, seg)
         return ld.sub(lambda m: absu.sub(a, m.group(0)), seg)
 
+    # a row a script renders carries its link as a JSON "url" field (the /screener data, built before
+    # build_pdufa_ticker_index.py retires a bare /pdufa/{T}); that field is a link like any other
+    jurl = re.compile(rf'("url"\s*:\s*")(?:{re.escape(BASE)})?/pdufa/({alt})(?=/?["#?])/?')
+
     out, pos = [], 0
     for k in keep.finditer(doc):
         out.append(fix(doc[pos:k.start()]))
-        out.append(k.group(0))
+        out.append(jurl.sub(h, k.group(0)) if k.group(0).startswith("<script") else k.group(0))
         pos = k.end()
     out.append(fix(doc[pos:]))
     return "".join(out)
