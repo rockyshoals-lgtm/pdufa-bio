@@ -359,6 +359,12 @@ jobs:
       - name: "Decision key facts state the FDA action day (announcement day in its own row)"
         run: python fix_decision_kv_action_date.py
 
+      # Red team 2026-11-18: CYTK and TEVA (Nov 16) named the FDA's record of a Nov 13 action yet still said the
+      # sponsor's release did not state the action day. Once the day is on record the note says it, with the margin.
+      # Guard: tests/test_no_stale_margin_note.py.
+      - name: "Decision pages: a 'no margin' note gives way to the FDA's recorded action day"
+        run: python fix_stale_margin_note.py
+
       # Audit 2026-09-27 item 4: the FDA's record behind every decision we date, as one page.
       - name: "/fda-approval-letters hub"
         run: python build_fda_letters_hub.py
@@ -401,6 +407,7 @@ jobs:
           python label_announcement_only_dates.py
           python fix_decision_h1_action_date.py
           python fix_decision_kv_action_date.py
+          python fix_stale_margin_note.py
           python build_fda_letters_hub.py
           python inject_calendar_explainer.py
           python sync_learn_timing.py
