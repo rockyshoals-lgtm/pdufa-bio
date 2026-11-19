@@ -39,7 +39,7 @@ def page_facts(path):
     doc = io.open(path, encoding="utf-8", errors="replace").read()
     tm = re.search(r"<title[^>]*>(.*?)</title>", doc, re.S)
     ttl = _html.unescape(re.sub(r"\s+", " ", tm.group(1))).strip() if tm else ""
-    oc = ("Approved" if re.search(r"\bApproved\b", ttl)
+    oc = ("Approved" if re.search(r"\bApproved\b|\bApproval Announced\b", ttl)
           else "CRL" if re.search(r"CRL|Complete Response", ttl, re.I) else None)
     dm = (re.match(r"^[A-Z]{1,6} FDA Decision [^:]+: (?:Approved|Complete Response "
                    r"Letter|CRL)\s*-\s*(.+?)\s*\|", ttl)

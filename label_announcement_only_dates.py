@@ -51,8 +51,18 @@ def label(doc):
     doc = KV.sub(lambda m: ('<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>' + KV_TEXT +
                             '</b></div><div class="kv"><span>Announced</span><b>' + m.group(1) +
                             '</b></div><!--/ANNONLY:KV-->'), doc, count=1)
-    doc = CAP.sub(lambda m: "<!--ANNONLY-->Decision announced " + m.group(1) + ". ", doc)
-    return doc
+    # 2026-11-19: build_decision_page.py now names the chart (design change 12) with an aria-label that repeats the
+    # caption, so "FDA decision m/d/yy. " also sits inside that attribute. A comment marker there ends the <svg> tag
+    # at its ">" (REGN-2026-11-18 blocked test_accessibility). Inside a tag the phrase is reworded with no marker;
+    # the marker goes only on the visible caption text.
+    parts = re.split(r"(<[^>]*>)", doc)
+    for i, seg in enumerate(parts):
+        if seg.startswith("<"):
+            if "aria-label=" in seg:
+                parts[i] = CAP.sub(lambda m: "Decision announced " + m.group(1) + ". ", seg)
+        else:
+            parts[i] = CAP.sub(lambda m: "<!--ANNONLY-->Decision announced " + m.group(1) + ". ", seg)
+    return "".join(parts)
 
 
 def unlabel(doc):
