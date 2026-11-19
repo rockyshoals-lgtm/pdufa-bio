@@ -12,7 +12,7 @@ on the T-120 baseline, which is now the single baseline used everywhere on the s
 
     python build_runup_by_year.py [--dry-run]
 """
-import argparse, csv, os, statistics as st, sys, collections
+import argparse, csv, math, os, re, statistics as st, sys, collections
 import datetime as dt
 
 try:
@@ -32,9 +32,10 @@ TODAY = _eastern_today()
 
 def fnum(r, k):
     try:
-        return float(r.get(k))
+        x = float(r.get(k))
     except Exception:
         return None
+    return x if math.isfinite(x) else None   # "nan" and "inf" in the CSV are no value, not a number
 
 
 def med(vals):
@@ -48,6 +49,49 @@ def pc(v, frac=False):
     x = v * 100 if frac else v
     s = f"{x:+.1f}%"
     return s.replace("-", "&minus;")
+
+
+# Design red team 2026-11-18 (change 12): the study was all tables. One chart carries the run-up by company size: the
+# median T-120 -> T-1 run-up per market-cap tier, a bar either side of zero. It is HTML, not an SVG, so its labels
+# stay readable at phone width, and every bar carries its signed figure in text (direction is never colour alone).
+# Blue for a rise, orange for a fall: a polarity pair checked for colour-blind separation and 3:1 against the card.
+UP, DOWN = "#3d8ad0", "#d9703a"
+
+
+def tier_runup_chart(rows, order):
+    vals = []
+    for t in order:
+        v = [fnum(r, "T-120_T-1") for r in rows if r.get("mcap_tier") == t]
+        v = [x * 100 for x in v if x is not None]
+        if v:
+            vals.append((t, st.median(v), len(v)))
+    if not vals:
+        return ""
+    neg = max([-v for _, v, _ in vals if v < 0] or [0.0])
+    pos = max([v for _, v, _ in vals if v > 0] or [0.0])
+    span = (neg + pos) or 1.0
+    zero = 100.0 * neg / span
+    def e(x):
+        return x.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+    said = e("; ".join(f"{t}: {'up' if v >= 0 else 'down'} {abs(v):.1f}% (n={n:,})" for t, v, n in vals))
+    yrs = sorted({(r.get("pdufa_date") or "")[:4] for r in rows if re.match(r"^\d{4}", r.get("pdufa_date") or "")})
+    yspan = f", decisions {yrs[0]} to {yrs[-1]}" if yrs else ""
+    out = [f'<div class="rc" role="figure" aria-label="Median run-up from T-120 to T-1 by market-cap tier{yspan}. '
+           f'{said}.">']
+    for t, v, n in vals:
+        w = 100.0 * abs(v) / span
+        left = zero if v >= 0 else zero - w
+        rad = "0 4px 4px 0" if v >= 0 else "4px 0 0 4px"
+        txt = f"{v:+.1f}%".replace("-", "&minus;")
+        out.append(f'<div class="rc-r" title="{e(t)}: median run-up {txt.replace("&minus;", "-")}, n={n:,}">'
+                   f'<div class="rc-l">{e(t).replace("(", "<span>(").replace(")", ")</span>")}'
+                   f'<small>n={n:,}</small></div>'
+                   f'<div class="rc-t" aria-hidden="true"><i style="left:{zero:.1f}%"></i>'
+                   f'<b style="left:{left:.1f}%;width:{max(w, 0.6):.1f}%;background:{UP if v >= 0 else DOWN};'
+                   f'border-radius:{rad}"></b></div>'
+                   f'<div class="rc-v">{txt}</div></div>')
+    out.append("</div>")
+    return "".join(out)
 
 
 def main():
@@ -97,6 +141,7 @@ def main():
             ttrs.append(f"<tr><td class='y'>{t}</td><td class='num'>{len(tiers[t])}</td>"
                         f"<td class='num'>{st.median(tiers[t]):.1f}%</td></tr>")
 
+    chart = tier_runup_chart(rows, order)
     allr120 = med([fnum(r, "T-120_T-1") for r in rows])
     allpk = med([fnum(r, "T-120_peak") for r in rows])
     n120 = sum(1 for r in rows if fnum(r, "T-120_T-1") is not None)
@@ -133,6 +178,14 @@ td.y{{color:var(--ink);font-weight:700;white-space:nowrap}}
 .big{{font-size:25px;font-weight:800;letter-spacing:-.5px;color:var(--ink)}}
 .note{{font-size:12px;color:var(--mut2);line-height:1.6}}
 .fresh{{display:inline-block;background:rgba(70,209,127,.13);border:1px solid #2f6b45;color:#46d17f;font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;margin:4px 0 2px}}
+.rc{{display:flex;flex-direction:column;gap:12px;margin:4px 0 2px}}
+.rc-r{{display:grid;grid-template-columns:minmax(92px,170px) 1fr 62px;gap:10px;align-items:center}}
+.rc-l{{color:var(--ink);font-size:13.5px;font-weight:700;line-height:1.25}}.rc-l span{{color:var(--mut);font-weight:400}}
+.rc-l small{{display:block;color:var(--mut2);font-size:11.5px;font-weight:400}}
+.rc-t{{position:relative;height:16px}}.rc-t i{{position:absolute;top:-5px;bottom:-5px;width:1px;background:#7c93b6}}
+.rc-t b{{position:absolute;top:0;bottom:0}}
+.rc-v{{text-align:right;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}}
+@media(max-width:420px){{.rc-r{{grid-template-columns:86px 1fr 54px;gap:7px}}.rc-l span{{display:block}}}}
 .legal{{border-top:1px solid var(--line);margin-top:36px;padding-top:16px;font-size:11.5px;color:#8aa0bf;line-height:1.6}}
 </style><link rel="icon" type="image/svg+xml" href="/favicon.svg"></head><body>
 <header class="site"><div class="hd"><a class="brand" href="/">pdufa<b>.bio</b></a><nav><a href="/calendar">Calendar</a><a href="/conferences">Conferences</a><a href="/adcomm">AdComm</a><a href="/decisions">Decisions</a><a href="/readouts">Readouts</a><a href="/screener">Screener</a><a href="/tickers">Tickers</a><a href="/sls" style="color:#46d17f;font-weight:700">SLS</a><a class="pro" href="/pricing" style="color:var(--gold)">Pro</a></nav></div></header>
@@ -167,6 +220,16 @@ over 30 trading days. <b>Decision day</b> is the first session on/after the deci
 ({sum(1 for r in rows if str(r.get("pdufa_date", ""))[:4] >= "2025"):,} events); the 2020 to 2024 events
 ({sum(1 for r in rows if str(r.get("pdufa_date", ""))[:4] < "2025"):,}) are not, and still include some trial readouts recorded as approvals or CRLs and some decisions counted on two adjacent
 days. Part of the gap between the earlier and later approval rates comes from that difference, not from the FDA.</div></div>
+
+<h2>Run-up by market-cap tier</h2>
+<p>How a stock typically moved over the 120 trading days into its decision, by company size: the median return from
+T-120 to the last session before the decision.</p>
+<div class="card">{chart}
+<div class="note" style="margin-top:12px">Medians of the events in each tier with a full 120 sessions of history
+(n shown), across every decision in the study, {dmin[:4]} to {dmax[:4]}. The
+<a href="/research/pdufa-stock-run-up-by-market-cap">run-up by market cap study</a> covers 2024 onward only, so its tier
+medians are not the same as these. A bar right of the line is a rise into the decision; left is a fall. The typical peak inside the window is far
+higher than where the run-up ended (see <b>Peak run-up</b> by year above).</div></div>
 
 <h2>Decision-day move by market-cap tier</h2>
 <p>The single most useful number here: how far a stock typically moves on the day, by company size. This is the

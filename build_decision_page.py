@@ -22,7 +22,7 @@ Nothing is inherited from another company's page.
 SELF-CHECK: --verify VERA regenerates the known-good VERA page and diffs the computed numbers
 against the ones already published. If the math is wrong, that fails loudly before anything ships.
 """
-import os, re, json, argparse, datetime as dt
+import os, re, json, argparse, html, datetime as dt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, 'pdufa_site_src')
@@ -122,6 +122,10 @@ def svg(prices, dates, piv, ddate, outcome, fda_date=None):
             f'{mdy(pre_d[lo_i])} (T-120 to T-1). {when} '
             f'Historical price action, not a forecast.')
     runup = (pre_p[-1] / pre_p[0] - 1) * 100
+    # Design red team 2026-11-18 (change 12): a role="img" chart with no name reads as "image". It is named as
+    # inject_a11y.py names an older page's chart: its section heading, then its caption.
+    head = f"Run-up into the decision (T-120 \u2192 T+{min(max(0, len(prices) - 1 - piv), POST)})"
+    o[0] = o[0].replace('role="img"', 'role="img" aria-label="%s"' % html.escape(head + ". " + note, quote=True), 1)
     return "".join(o), note, runup
 
 

@@ -96,7 +96,8 @@ def nav_match(html):
     head = html[:html.find("</head>")] if "</head>" in html else html[:60000]
     head = re.sub(r'<style id="' + MATCH_ID + r'">.*?</style>', "", head, flags=re.S)
     size, colour, pad, gap = "14px", "var(--mut,#8fa3bd)", None, None
-    for body in _LINK_RULE.findall(_MEDIA.sub("", head)):
+    rules = _LINK_RULE.findall(_MEDIA.sub("", head))
+    for body in rules:
         m = re.search(r"font-size:\s*([^;!}]+)", body)
         size = m.group(1).strip() if m else size
         m = re.search(r"(?<![\w-])color:\s*([^;!}]+)", body)
@@ -109,7 +110,11 @@ def nav_match(html):
     # "margin-left:14px" with no padding, the buttons kept navcanon's "padding:7px 11px", so Patents-Explore sat
     # 11px apart, Explore-Research 22px and Research-Pro 25px. The buttons now take the links' own spacing, and
     # the menu items inside a dropdown drop the links' margin (they are a column, not a row).
-    space = f"padding:{pad or '7px 0'};margin-left:{gap or '0'}"
+    # 2026-11-18, live on /ticker/CAPR: a link rule that sets no padding means the links have none, so the buttons
+    # must have none either. With the "7px 0" fallback, Explore and Research sat 7px below the other links on the
+    # 2,010 pages whose nav links carry no padding (the row aligns its items' tops). The fallback is kept only for
+    # a page whose link rule cannot be found at all.
+    space = f"padding:{pad or ('0' if rules else '7px 0')};margin-left:{gap or '0'}"
     menu = ".navdd .navddm a{margin-left:0}" if gap else ""
     return (f'<style id="{MATCH_ID}">.navdd .navddb{{font-size:{size};color:{colour};{space}}}'
             '.navdd:hover .navddb,.navdd:focus-within .navddb{color:#eef4fc}' + menu + '</style>')

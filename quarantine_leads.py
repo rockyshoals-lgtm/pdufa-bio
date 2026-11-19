@@ -46,6 +46,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 sys.path.insert(0, HERE)
 import badge_decision_provenance  # noqa: E402
+import inject_a11y  # noqa: E402
+import inject_mobile_polish  # noqa: E402
 STATE = os.path.join(HERE, "_held_state.json")
 LEADS = os.environ.get("WATCH_LEADS_JSONL") or os.path.join(HERE, "_watch_leads.jsonl")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
@@ -293,6 +295,20 @@ def cmd_apply(a):
         new, n = restore_rows(src, head, set(held_ids))
         if n and not a.dry_run:
             io.open(DATASET, "w", encoding="utf-8").write(new)
+            # 2026-11-18 (design change 12): the homepage's "Data through" date reads calendar_updates from
+            # build-info.json, which build_freshness_stamp.py wrote from the dataset before this step put the held
+            # rows back; recompute it from the restored rows so the page and tests/test_accessibility.py agree.
+            try:
+                import build_freshness_stamp as _F
+                cu = _F.calendar_updates()
+                for p in (os.path.join(SITE, "build-info.json"), os.path.join(SITE, "api", "_build-info.json")):
+                    if os.path.exists(p):
+                        bi = json.load(io.open(p, encoding="utf-8"))
+                        if "calendar_updates" in bi:
+                            bi["calendar_updates"] = cu
+                            io.open(p, "w", encoding="utf-8", newline="\n").write(json.dumps(bi, indent=1) + "\n")
+            except Exception as ex:  # noqa: BLE001
+                print(f"  note: calendar_updates not refreshed after the restore ({ex.__class__.__name__}: {ex})")
         restored.append(f"dataset rows x{n}")
     for rid in held_ids:
         slug = rid[5:] if rid.startswith("drug:") else None
@@ -313,6 +329,10 @@ def cmd_apply(a):
                 import inject_site_type
                 if inject_site_type.public(p, old):
                     old = inject_site_type.apply(old)[0]
+            if p.endswith(".html"):  # after the badges and the site type, as in the build
+                # a page committed before the accessibility pass gets it too (named charts first, then the phone
+                # copies that carry their names), or the page it restores would fail tests/test_accessibility.py
+                old = inject_mobile_polish.apply(inject_a11y.apply(old))[0]
             cur = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
             if cur != old:
                 if not a.dry_run:

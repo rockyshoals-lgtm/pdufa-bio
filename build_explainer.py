@@ -78,8 +78,8 @@ def build(stats):
 
     items = "".join(
         f'<details style="border-top:1px solid var(--line);padding:11px 0">'
-        f'<summary style="cursor:pointer;font-weight:600;color:#eef4fc;font-size:14.5px;'
-        f'list-style:none">{esc(q)}</summary>'
+        f'<summary style="cursor:pointer;font-weight:600;color:#eef4fc;font-size:14.5px"'
+        f'>{esc(q)}</summary>'
         f'<p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:var(--mut2)">'
         f'{esc(a)}</p></details>' for q, a in qa)
 

@@ -976,6 +976,13 @@ jobs:
       - name: "One look: site fonts, type rules and logo mark on every page"
         run: python inject_site_type.py
 
+      # 2026-11-18 design red team (change 12): skip link, named charts and sparklines, FAQ markers, a live count on
+      # the screener, 3:1 field borders. After the One look pass (so the skip link goes before the logo it adds), before
+      # the calendar shaping and the phone pass, whose phone copy of a chart carries the chart's name.
+      # tests/test_accessibility.py fails if it is skipped.
+      - name: "Accessibility (skip link, chart names, FAQ markers, field borders)"
+        run: python inject_a11y.py
+
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
       - name: "Calendar: open months first, decided months folded, notes last (design change 7)"
