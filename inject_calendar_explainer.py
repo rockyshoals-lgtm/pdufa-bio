@@ -150,8 +150,9 @@ def main():
         "submits a major amendment during review, the FDA can extend the goal date "
         "by 3 months.</p>"
         "<p>The FDA does not publish an official, forward-looking PDUFA calendar. "
-        f"Every date on this page comes from a company filing, press release or FDA "
-        f"notice, and each row links its source.</p>"
+        f"Each date comes from a company filing, press release or FDA notice, except a date "
+        f"marked (est.), and each row links its own page, which names its source or says "
+        f"plainly that it has none.</p>"
         + p4 +
         "<p>On or around the goal date the FDA typically either approves the "
         "application or issues a Complete Response Letter explaining what stands in "

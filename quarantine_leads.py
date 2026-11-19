@@ -44,6 +44,8 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
+import badge_decision_provenance  # noqa: E402
 STATE = os.path.join(HERE, "_held_state.json")
 LEADS = os.environ.get("WATCH_LEADS_JSONL") or os.path.join(HERE, "_watch_leads.jsonl")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
@@ -299,6 +301,10 @@ def cmd_apply(a):
             old = _git_show(p)
             if old is None:
                 continue
+            # 2026-11-18 (change 5): the committed page may predate this build's provenance badges; give it the
+            # badges the rest of the site carries, or tests/test_provenance_badges.py would block the deploy
+            if p.endswith(".html"):
+                old = badge_decision_provenance.apply(old)
             # 2026-11-18 (change 11 red team): a held page's committed copy can predate a site-wide chrome pass. The
             # fonts, type rules and logo mark (inject_site_type.py) are re-added, so tests/test_one_look.py does not
             # block every deploy while a row is held; build_sitemap strips them from the content hash, so the held

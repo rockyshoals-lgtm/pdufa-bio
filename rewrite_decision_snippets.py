@@ -31,6 +31,24 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_windows import earliness_allowed  # noqa: E402
 from drug_names import clean_drug_name  # noqa: E402
+from refresh_provenance_counts import page_kind  # noqa: E402
+
+SOURCE_TAILS = (" Decision source document and the 120-trading-day run-up into the date.", " Source and run-up included.")
+
+
+def hedge_unsourced(desc, tk, dcd):
+    """The snippet of a decision page that cites no source: no promise of a source document, and a plain note that
+    none is cited yet, inside 160 characters."""
+    for t in SOURCE_TAILS:
+        desc = desc.replace(t, "")
+    desc = desc.rstrip()
+    if "no source is cited" in desc or "source not yet cited" in desc:
+        return desc
+    for tail in ("; no source is cited for it yet.", "; source not yet cited."):
+        cand = desc.rstrip(".") + tail
+        if len(cand) <= 160:
+            return cand
+    return f"{tk}: FDA decision on {dt.date.fromisoformat(dcd).strftime('%B %d, %Y').replace(' 0', ' ')}; no source is cited for it yet."
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -339,6 +357,10 @@ def main():
 
         if _seo.get("seo_desc") and len(_seo["seo_desc"]) <= 158:
             desc = _seo["seo_desc"]
+        # 2026-11-18 (design red team, change 5): a page that cites no source must not promise a "decision source
+        # document" in its snippet, and says the outcome has none yet
+        if page_kind(doc) == "unsourced":
+            desc = hedge_unsourced(desc, tk, dcd)
         new = re.sub(r"<title[^>]*>.*?</title>",
                      f"<title>{_html.escape(title)}</title>", doc, count=1, flags=re.S)
         new = re.sub(r'(<meta name="description" content=")[^"]*(")',

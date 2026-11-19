@@ -194,8 +194,9 @@ def sentence(path, rows):
         if ap or crl:
             s += f", {ap} approvals and {crl} Complete Response Letters"
         s += (f", covering {when}. " if when else ". ")
-        s += ("Every decision has its own page carrying the source document and the share-price "
-              "reaction we measured on the day.")
+        s += ("Every decision has its own page, which names its source document or says plainly that it has none, "
+              "with the share-price reaction we measured on the day; an outcome inferred from the price move is "
+              "marked Inferred.")
         if path == "decisions":
             # red team 2026-11-17: the provenance block counts every decision page (500) while this
             # list holds only approvals and CRLs (499); say which pages the list leaves out and why.

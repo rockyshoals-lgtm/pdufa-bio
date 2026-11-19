@@ -867,6 +867,12 @@ jobs:
       - name: "Withdrawn applications: event page + calendar row (never 'upcoming')"
         run: python build_withdrawn_pages.py
 
+      # 2026-11-18 (design red team, change 5): /calendar/2025 and earlier years are rebuilt from the archive so their
+      # counts say which outcomes are sourced. Before the breadcrumb and Open Graph passes, which fill those on the
+      # page it writes (run after them, it left /calendar/2025 without either and failed both guards).
+      - name: "Year archive pages from the decisions archive"
+        run: python build_year_archive.py
+
       # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
       - name: "BreadcrumbList on every indexable page"
@@ -958,6 +964,12 @@ jobs:
       # and the HTML /sitemap. tests/test_reachability.py holds every sitemap URL within 3 clicks of /.
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
+
+      # 2026-11-18 (design red team, change 5): every link to a decision page whose outcome was inferred from the price
+      # move, or whose page cites no source, carries an "Inferred" or "Unsourced" badge wherever it is listed. After
+      # every writer of those lists (archive, calendar, hubs, drug pages, /sitemap). tests/test_provenance_badges.py.
+      - name: "Inferred and Unsourced badges on every list that links a decision page"
+        run: python badge_decision_provenance.py
 
       # 2026-11-18 design red team, change 11: one look everywhere. After the last page builder, every public page gets
       # the site fonts, the type rules and the logo mark it lacks (1,371 pages lacked one). tests/test_one_look.py.

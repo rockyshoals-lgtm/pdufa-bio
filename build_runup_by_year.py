@@ -163,8 +163,9 @@ return from that same T-120 close to the highest close anywhere in the window, w
 on the table for anyone who sold into the run-up rather than holding to the last session. <b>Run-up 30d</b> is the same measured
 over 30 trading days. <b>Decision day</b> is the first session on/after the decision versus the prior close.
 <b>T+5</b> is five sessions after the decision versus that same prior close. {"*" + str(TODAY.year) + " is a partial year." if str(TODAY.year) in byyr else ""}<br><br>
-<b>Years are not like for like.</b> From 2025 every event is checked against its primary source; the 2020 to 2024 events
-are not, and still include some trial readouts recorded as approvals or CRLs and some decisions counted on two adjacent
+<b>Years are not like for like.</b> From 2025 every event is checked against its primary source
+({sum(1 for r in rows if str(r.get("pdufa_date", ""))[:4] >= "2025"):,} events); the 2020 to 2024 events
+({sum(1 for r in rows if str(r.get("pdufa_date", ""))[:4] < "2025"):,}) are not, and still include some trial readouts recorded as approvals or CRLs and some decisions counted on two adjacent
 days. Part of the gap between the earlier and later approval rates comes from that difference, not from the FDA.</div></div>
 
 <h2>Decision-day move by market-cap tier</h2>
