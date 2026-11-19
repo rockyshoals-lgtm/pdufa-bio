@@ -59,9 +59,13 @@ def stats():
             {k: (st.median(v), len(v)) for k, v in run.items()}, last)
 
 
-def bars(vals, colour_neg="#ff7a72", base_pos=False):
-    """vals: [(label, value, n)] -> the page's SVG geometry."""
-    out = ['<svg viewBox="0 0 640 250" role="img" style="width:100%;display:block;aspect-ratio:640/250;background:#071528;'
+def bars(vals, colour_neg="#ff7a72", base_pos=False, name=""):
+    """vals: [(label, value, n)] -> the page's SVG geometry. name: what the chart shows; with the values it is the
+    chart's aria-label (design red team 2026-11-18, change 12: a role="img" chart with no name reads as "image")."""
+    said = "; ".join(f"{html.unescape(lab)}: {v:.1f}% (n={n:,})" if base_pos else
+                     f"{html.unescape(lab)}: {v:+.1f}% (n={n:,})" for lab, v, n in vals)
+    said = html.escape(f"{name}: {said}", quote=True)
+    out = [f'<svg viewBox="0 0 640 250" role="img" aria-label="{said}" style="width:100%;display:block;aspect-ratio:640/250;background:#071528;'
            'border:1px solid #1a3358;border-radius:12px">']
     if base_pos:
         base, span = 204.0, 158.0
@@ -107,7 +111,9 @@ def main():
     svgs = list(re.finditer(r'<svg viewBox="0 0 640 250".*?</svg>', doc, re.S))
     if len(svgs) != 2:
         print("::warning::chart markup not found; nothing written"); return 0
-    new = doc[:svgs[0].start()] + bars(rv, base_pos=True) + doc[svgs[0].end():svgs[1].start()] + bars(uv) + doc[svgs[1].end():]
+    new = (doc[:svgs[0].start()] + bars(rv, base_pos=True, name="Median decision reaction (absolute) by market-cap tier")
+           + doc[svgs[0].end():svgs[1].start()] + bars(uv, name="Median T-120 run-up into the date by market-cap tier")
+           + doc[svgs[1].end():])
     span = f"2024-{y1}"
     new = re.sub(r"[\d,]+ FDA Decisions \(2024-\d\d\)", f"{N:,} FDA Decisions ({span})", new)
     new = re.sub(r"across [\d,]+ FDA decisions \(2024-20\d\d\)", f"across {N:,} FDA decisions (2024-20{y1})", new)

@@ -32,7 +32,10 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 
 # How an unverified, price-inferred page announces itself. Those are allowed to have no source:
 # they say on their face that they are inferred.
-PRICE_ONLY = re.compile(r"outcome unverified|price[- ]only|consistent with an? (approval|CRL)", re.I)
+# 2026-11-18 (change 10 red team): CYTK-2025-11-07, PHIO-2025-07-28 and URGN-2025-04-27 say "Outcome consistent with
+# price" and cite nothing, yet counted as unsourced; their Verified line now says the outcome is inferred.
+PRICE_ONLY = re.compile(r"outcome unverified|price[- ]only|consistent with an? (approval|CRL)|"
+                        r"The outcome shown is inferred from the stock", re.I)
 
 # Hosts that can actually establish that an FDA decision happened.
 GOOD = re.compile(r"(fda\.gov|sec\.gov|clinicaltrials\.gov|nih\.gov|doi\.org|nejm\.org|"
@@ -55,8 +58,14 @@ def main():
             unverified += 1
             continue
         verified += 1
-        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', html)
-               if "pdufa.bio" not in u]
+        # 2026-11-18 (design red team, change 10): every page now links its own public commit in the first-recorded
+        # line. That is our record, not a source, and it dropped this count from 9 to 0 when it was first added.
+        # The 13F block (inject_13f_block.py) links funds' 13F filings on sec.gov, which say nothing about the FDA's
+        # decision; counted as a source, it hid 11 pages that cite none (ABBV-2026-05-27, CYTK-2025-11-07, ...). The
+        # floor was raised from 9 to their true count of 20 on 2026-11-18 for that measurement fix, not a regression.
+        body = re.sub(r"<!--F13:BEGIN-->.*?<!--F13:END-->", "", html, flags=re.S)
+        ext = [u for u in re.findall(r'href="(https?://[^"]+)"', body)
+               if "pdufa.bio" not in u and "github.com/rockyshoals-lgtm/pdufa-bio" not in u]
         if not ext:
             unsourced.append(slug)
         elif not any(GOOD.search(u) for u in ext):

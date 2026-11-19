@@ -59,6 +59,10 @@ def fmt(n):
     return f"{n:,}"
 
 
+STUDY_NOTE = ("Its events from 2020 to 2024 come from our research set and are not each checked against a source; "
+              "every record below links its own page, which names its source or says plainly that it has none.")
+
+
 def edit(rel, subs, dry):
     p = os.path.join(SITE, rel)
     if not os.path.exists(p):
@@ -85,15 +89,31 @@ def main():
 
     changed += edit("decisions/index.html", [(
         r"(run-up study</a>, which is built for it: )\d{1,2},\d{3}( PDUFA decisions, 2020 to )\d{4}(, <b>)[\d.]+(% approved</b>)",
-        rf"\g<1>{fmt(n)}\g<2>{y1}\g<3>{rate:.1f}\g<4>")], a.dry_run)
+        rf"\g<1>{fmt(n)}\g<2>{y1}\g<3>{rate:.1f}\g<4>"), (
+        # 2026-11-18 (design red team, change 5): the study's 2020 to 2024 events are not each checked against a
+        # source, and some archive rows are inferred; the sentence after the study's size says so. "sour[c]e" matches
+        # the old sentence without spelling it, so tests/test_provenance_badges.py does not read the pattern as the promise
+        r"(% approved</b>\. )(?:Every record below links to its sour[c]e, and unverified ones say so on the page\.|"
+        r"Its events from 2020 to 2024 come from our research set[^<]*?says plainly that it has none\.)",
+        r"\g<1>" + STUDY_NOTE)], a.dry_run)
 
+    # 2026-11-18 (design red team, change 11): /pricing said "1,618-event" while every other page says the study has
+    # 1,684 events. Both are right (1,618 is the events with a full daily path), but nothing said so. Name the subset.
     changed += edit("pricing.html", [(
-        r"(<b>Full run-up dataset</b>: the )\d{1,2},\d{3}(-event T-120&rarr;T\+5 daily data)",
-        rf"\g<1>{fmt(t120)}\g<2>")], a.dry_run)
+        r"(<b>Full run-up dataset</b>: )(?:the \d{1,2},\d{3}-event T-120&rarr;T\+5 daily data(?: \([^)]*\))?|T-120&rarr;T\+5 "
+        r"daily data for [\d,]+ of the study&rsquo;s [\d,]+ events \((?:those with a full daily price path|those with "
+        r"120 trading days of history before the decision; the days after fill in as they trade)\))",
+        # red team: 1,618 counts events with 120 sessions of history before the decision (runup_study_stats.py);
+        # the newest have no T+5 yet, so "a full daily price path" overstated it
+        rf"\g<1>T-120&rarr;T+5 daily data for {fmt(t120)} of the study&rsquo;s {fmt(n)} events (those with 120 trading "
+        "days of history before the decision; the days after fill in as they trade)")], a.dry_run)
 
     changed += edit("developers/index.html", [(
-        r"(the full daily T-120 &rarr; T\+5 price path for <b>)\d{1,2},\d{3}( FDA decisions</b>)",
-        rf"\g<1>{fmt(t120)}\g<2>")], a.dry_run)
+        r"(the (?:full )?daily T-120 &rarr; T\+5 price path for <b>)\d{1,2},\d{3}( FDA decisions</b>)(?: \(of the "
+        r"study&rsquo;s [\d,]+(?:; the rest lack a full daily path|, those with 120 trading days of history before the "
+        r"decision; the days after fill in as they trade)\))?",
+        rf"the daily T-120 &rarr; T+5 price path for <b>{fmt(t120)}\g<2> (of the study&rsquo;s {fmt(n)}, those with 120 trading days of history before the "
+        "decision; the days after fill in as they trade)")], a.dry_run)
 
     changed += edit("vktx/index.html", [(
         r'(<a href="/runup-by-year">run-up study</a> \()\d{1,2},\d{3}( FDA decisions\))',

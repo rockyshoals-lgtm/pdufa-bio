@@ -207,8 +207,8 @@ def main():
              "decisions, more came early than late."),
           ("How current is this page?",
            f"Rebuilt {pretty(tiso)} from the same dataset that drives the calendar and "
-           f"the decisions archive; every decision links the FDA notice, SEC filing or "
-           f"company release it came from.")]
+           f"the decisions archive; each decision links its own page, which names the FDA "
+           f"notice, SEC filing or company release it came from, or says plainly that it has none.")]
     faq_ld = ('<script type="application/ld+json">' + json.dumps(
         {"@context": "https://schema.org", "@type": "FAQPage",
          "url": f"{BASE}/fda-decisions-today",

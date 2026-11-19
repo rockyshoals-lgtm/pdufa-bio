@@ -70,10 +70,10 @@ def set_head(doc, title, desc, url, h1):
 def year_page(template, year, rows):
     ap = sum(1 for r in rows if is_ok(r)); crl = sum(1 for r in rows if is_crl(r))
     title = f"FDA Decisions {year}: {len(rows)} PDUFA Outcomes, {ap} Approvals, {crl} CRLs | pdufa.bio"
-    desc = (f"FDA decisions in {year}: {len(rows)} PDUFA outcomes tracked, {ap} approvals and {crl} CRLs, each with "
-            f"its source and the stock move we measured.")
+    desc = (f"FDA decisions in {year}: {len(rows)} PDUFA outcomes tracked, {ap} approvals and {crl} CRLs, each "
+            f"linking its own page; inferred outcomes are marked.")
     if len(desc) > 158:   # clauses are dropped whole, never cut mid-word (test_meta_lengths)
-        desc = f"FDA decisions in {year}: {len(rows)} PDUFA outcomes, {ap} approvals and {crl} CRLs, each source-linked."
+        desc = f"FDA decisions in {year}: {len(rows)} PDUFA outcomes, {ap} approvals and {crl} CRLs."
     doc = set_head(template, title, desc, f"{BASE}/decisions/{year}", f"FDA decisions in {year}")
     doc = swap_grid(doc, [(year, rows)])
     # Archive-wide blocks state archive-wide numbers (491 decisions, 371 verified): a year page must not carry them.

@@ -22,7 +22,7 @@ Nothing is inherited from another company's page.
 SELF-CHECK: --verify VERA regenerates the known-good VERA page and diffs the computed numbers
 against the ones already published. If the math is wrong, that fails loudly before anything ships.
 """
-import os, re, json, argparse, datetime as dt
+import os, re, json, argparse, html, datetime as dt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, 'pdufa_site_src')
@@ -101,7 +101,7 @@ def svg(prices, dates, piv, ddate, outcome, fda_date=None):
     o.append(f'<line x1="{xp:.1f}" y1="{Y0:.0f}" x2="{xp:.1f}" y2="{Y1:.0f}" stroke="#e3ba5e" '
              f'stroke-width="1" stroke-dasharray="3 3" opacity="0.85"/>')
     o.append(f'<text x="{xp-69.9:.1f}" y="177" fill="#e3ba5e" font-size="10" font-family="system-ui" '
-             f'text-anchor="end">{"announced" if (fda_date and fda_date != ddate) else "PDUFA"} {mdy(ddate)}</text>')
+             f'text-anchor="end">{"announced" if (fda_date and fda_date != ddate) else "FDA decision"} {mdy(ddate)}</text>')
     pts = " ".join(f'{X(i):.1f},{Y(p):.1f}' for i, p in enumerate(prices))
     o.append(f'<polyline points="{pts}" fill="none" stroke="#7aa8ff" stroke-width="1.6"/>')
     o.append(f'<circle cx="{X(hi_i):.1f}" cy="{Y(pre_p[hi_i]):.1f}" r="2.6" fill="#5fd07a"/>'
@@ -122,6 +122,10 @@ def svg(prices, dates, piv, ddate, outcome, fda_date=None):
             f'{mdy(pre_d[lo_i])} (T-120 to T-1). {when} '
             f'Historical price action, not a forecast.')
     runup = (pre_p[-1] / pre_p[0] - 1) * 100
+    # Design red team 2026-11-18 (change 12): a role="img" chart with no name reads as "image". It is named as
+    # inject_a11y.py names an older page's chart: its section heading, then its caption.
+    head = f"Run-up into the decision (T-120 \u2192 T+{min(max(0, len(prices) - 1 - piv), POST)})"
+    o[0] = o[0].replace('role="img"', 'role="img" aria-label="%s"' % html.escape(head + ". " + note, quote=True), 1)
     return "".join(o), note, runup
 
 

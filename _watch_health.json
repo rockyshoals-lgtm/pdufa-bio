@@ -5,8 +5,8 @@
  },
  "drug_watch_fda_press_rss": {
   "bodies_failed": 0,
-  "bodies_read": 6,
-  "in_window": 6,
+  "bodies_read": 7,
+  "in_window": 7,
   "items": 20,
   "last_attempt": "2026-11-18",
   "last_ok": "2026-11-18"

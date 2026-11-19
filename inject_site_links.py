@@ -8,8 +8,10 @@ next decisions' event pages. This writes four marker-bounded blocks, idempotentl
 published pages:
 
   1. SITELINKS on every page, above the footer: the hubs, the daily pages, the studies and /sitemap.
-  2. LINKHUB on the homepage: the next 12 FDA goal dates (event pages), the last 10 decisions (decision pages),
-     today / this week / this month, and the data pages.
+  2. LINKHUB on the homepage: REMOVED 2026-11-18 (design red team, change 8). It listed the next 12 goal dates and
+     the last 10 decisions a second time under the board's own two lists (and disagreed with them: it had RHHBY's
+     giredestrant, the board did not), then repeated SITELINKS word for word. The board's cards now link the event
+     pages, and SITELINKS links /sitemap, so every page stays within 3 clicks (tests/test_reachability.py).
   3. RELATED on every leaf page: event pages link the six nearest other upcoming goal dates, their month and their
      ticker; decision pages the six decisions nearest in time, their year and ticker; drug and ticker pages their
      six alphabetical neighbours. Every leaf therefore gets about six inbound links from its peers.
@@ -201,24 +203,14 @@ def main():
                             "<!--SITELINKS:BEGIN-->", "<!--SITELINKS:END-->"))
         out[u] = new
 
-    # ---- LINKHUB on the homepage
-    nxt = up[:12]
-    last = list(reversed(decs))[:10]
+    # ---- LINKHUB: removed from the homepage (change 8); take out a block an older build left
+    hp = out.get("/") or docs.get("/")
+    if hp is not None and "<!--LINKHUB:BEGIN-->" in hp:
+        out["/"] = re.sub(r"<!--LINKHUB:BEGIN-->.*?<!--LINKHUB:END-->", "", hp, flags=re.S)
+
     def ul(items):
         return "<ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.8\">" + "".join(
             f'<li><a href="{h}" {A}>{esc(t)}</a></li>' for t, h in items) + "</ul>"
-    hub = ('<!--LINKHUB:BEGIN--><section style="margin:26px 0 8px;padding-top:14px;border-top:1px solid #1a3358;'
-           'display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;font-size:13.5px">'
-           f'<div><h2 style="font-size:15px;margin:0">Next FDA decision dates</h2>'
-           f'{ul([(f"{shown.get(h, d)}  {t}: {nm}", h) for d, h, t, nm in nxt])}</div>'
-           f'<div><h2 style="font-size:15px;margin:0">Latest FDA decisions</h2>'
-           f'{ul([(f"{d}  {t}: {nm}", h) for d, h, t, nm in last])}</div>'
-           f'<div><h2 style="font-size:15px;margin:0">Daily pages, studies and data</h2>'
-           f'{ul([(t, h) for t, h in SITE_LINKS if page_exists(h)])}</div></section><!--LINKHUB:END-->')
-    hp = out.get("/") or docs.get("/")
-    if hp is not None:
-        out["/"] = put(hp, "<!--LINKHUB:BEGIN-->", "<!--LINKHUB:END-->", hub,
-                       before=("<!--SITELINKS:BEGIN-->", "<footer", "</body>"))
 
     # ---- /sitemap (HTML)
     sm = io.open(os.path.join(SITE, "sitemap.xml"), encoding="utf-8").read()
@@ -267,8 +259,8 @@ def main():
                 p = pages[u]
             if doc != docs.get(u):
                 io.open(p, "w", encoding="utf-8").write(doc)
-    print(f"site links: SITELINKS on {len(out) - 1} page(s); RELATED on {n_rel}; homepage LINKHUB {len(nxt)} next + "
-          f"{len(last)} latest; /sitemap {n_sm} pages" + (" [dry run]" if a.dry_run else ""))
+    print(f"site links: SITELINKS on {len(out) - 1} page(s); RELATED on {n_rel}; /sitemap {n_sm} pages"
+          + (" [dry run]" if a.dry_run else ""))
     return 0
 
 

@@ -83,6 +83,43 @@ CSS = (f'<style id="{CSS_ID}">.navdd{{position:relative;display:inline-flex;alig
        'border:0;box-shadow:none;padding:0}}</style>')
 
 
+MATCH_ID = "navmatch"
+_MEDIA = re.compile(r"@media[^{]*\{(?:[^{}]*\{[^}]*\})*[^}]*\}")
+_LINK_RULE = re.compile(r"(?<![\w-])(?:\.nav a|nav a|\.top nav a|header nav a|\.nav>a|nav>a)\s*\{([^}]*)\}")
+
+
+def nav_match(html):
+    """2026-11-18 (design red team, change 11): "Explore and Research render larger than their sibling nav links".
+    The two dropdown buttons take font:inherit (the body's 15-16px, in the body's bright colour) while each template
+    sets its nav links smaller and muted (13px #a7bcd9 on ticker hubs, 14px var(--mut) on home). Read the page's own
+    nav-link rule and give the buttons the same size and colour; hover still brightens them."""
+    head = html[:html.find("</head>")] if "</head>" in html else html[:60000]
+    head = re.sub(r'<style id="' + MATCH_ID + r'">.*?</style>', "", head, flags=re.S)
+    size, colour, pad, gap = "14px", "var(--mut,#8fa3bd)", None, None
+    rules = _LINK_RULE.findall(_MEDIA.sub("", head))
+    for body in rules:
+        m = re.search(r"font-size:\s*([^;!}]+)", body)
+        size = m.group(1).strip() if m else size
+        m = re.search(r"(?<![\w-])color:\s*([^;!}]+)", body)
+        colour = m.group(1).strip() if m else colour
+        m = re.search(r"(?<![\w-])padding:\s*([^;!}]+)", body)
+        pad = m.group(1).strip() if m else pad
+        m = re.search(r"margin-left:\s*([^;!}]+)", body)
+        gap = m.group(1).strip() if m else gap
+    # 2026-11-18 red team of change 11, live on /pdufa/CAPR-deramiocel: on templates whose links are spaced by
+    # "margin-left:14px" with no padding, the buttons kept navcanon's "padding:7px 11px", so Patents-Explore sat
+    # 11px apart, Explore-Research 22px and Research-Pro 25px. The buttons now take the links' own spacing, and
+    # the menu items inside a dropdown drop the links' margin (they are a column, not a row).
+    # 2026-11-18, live on /ticker/CAPR: a link rule that sets no padding means the links have none, so the buttons
+    # must have none either. With the "7px 0" fallback, Explore and Research sat 7px below the other links on the
+    # 2,010 pages whose nav links carry no padding (the row aligns its items' tops). The fallback is kept only for
+    # a page whose link rule cannot be found at all.
+    space = f"padding:{pad or ('0' if rules else '7px 0')};margin-left:{gap or '0'}"
+    menu = ".navdd .navddm a{margin-left:0}" if gap else ""
+    return (f'<style id="{MATCH_ID}">.navdd .navddb{{font-size:{size};color:{colour};{space}}}'
+            '.navdd:hover .navddb,.navdd:focus-within .navddb{color:#eef4fc}' + menu + '</style>')
+
+
 def nav_inner():
     a = "".join(f'<a href="{u}">{t}</a>' for u, t in PRIMARY)
     dds = ""
@@ -127,6 +164,14 @@ def main():
             if "</head>" in html:
                 html = html.replace("</head>", CSS + "</head>", 1)
                 css_added += 1
+
+        if 'class="navddb"' in html and "</head>" in html:
+            want = nav_match(html)
+            cur = re.search(r'<style id="' + MATCH_ID + r'">.*?</style>', html, re.S)
+            if not cur:
+                html = html.replace("</head>", want + "</head>", 1)
+            elif cur.group(0) != want:
+                html = html[:cur.start()] + want + html[cur.end():]
 
         if html != orig:
             changed += 1

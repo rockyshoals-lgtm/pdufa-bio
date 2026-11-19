@@ -59,9 +59,9 @@ QA = [
      "time anyone outside the trial learns whether the drug worked."),
     ("Where do these numbers come from?",
      "FDA publications, company filings with the SEC, company press releases and "
-     "ClinicalTrials.gov, with prices measured from daily closing data. Every date and outcome on "
-     "this site links to the document it came from. Where we have inferred something rather than "
-     "sourced it, the page says so."),
+     "ClinicalTrials.gov, with prices measured from daily closing data. Most dates and outcomes link "
+     "the document they came from. Where none is linked, or an outcome was inferred from the stock's "
+     "price move rather than read from a document, the page and every list that shows it say so."),
 ]
 
 
@@ -78,8 +78,8 @@ def build(stats):
 
     items = "".join(
         f'<details style="border-top:1px solid var(--line);padding:11px 0">'
-        f'<summary style="cursor:pointer;font-weight:600;color:#eef4fc;font-size:14.5px;'
-        f'list-style:none">{esc(q)}</summary>'
+        f'<summary style="cursor:pointer;font-weight:600;color:#eef4fc;font-size:14.5px"'
+        f'>{esc(q)}</summary>'
         f'<p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:var(--mut2)">'
         f'{esc(a)}</p></details>' for q, a in qa)
 

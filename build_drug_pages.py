@@ -258,6 +258,19 @@ def main():
                                 open(DATASET, encoding="utf-8", errors="replace").read(),
                                 re.S).group(1))
 
+    # 2026-11-18 (design red team, change 5): how each decision page holds its outcome (sourced, inferred from the
+    # price move, or unsourced), read the way /decisions counts it. The lede, the FAQ and the title said "The FDA
+    # approved X on <day>" and "every date links its source" for outcomes the decision page itself calls inferred.
+    from refresh_provenance_counts import page_kind as _page_kind
+    _kinds = {}
+
+    def kind_of(tk, day):
+        k = f"{tk}-{day}"
+        if k not in _kinds:
+            pp = os.path.join(SITE, "fda-decision", k, "index.html")
+            _kinds[k] = _page_kind(open(pp, encoding="utf-8", errors="replace").read()) if os.path.exists(pp) else None
+        return _kinds[k]
+
     # outcome facts from the decisions archive
     arch = {}
     darch = os.path.join(SITE, "decisions", "index.html")
@@ -581,11 +594,12 @@ def main():
         # FDA's own record states it (JUVMO: letter 2026-09-25, AbbVie release 09-28). The row is
         # keyed on the first public day; the page states the FDA's date.
         _dec = sorted(((FAD.get((str(r.get("t") or "").upper(), r.get("d") or ""), r.get("d")),
-                        arch.get((str(r.get("t") or "").upper(), r.get("d") or "")))
+                        arch.get((str(r.get("t") or "").upper(), r.get("d") or "")),
+                        kind_of(str(r.get("t") or "").upper(), r.get("d") or ""))
                        for r in rs
                        if arch.get((str(r.get("t") or "").upper(), r.get("d") or ""))
                        in ("Approved", "CRL")), key=lambda x: x[0] or "")
-        dec0 = _dec[-1] if _dec else None      # (date, outcome) of the latest real decision
+        dec0 = _dec[-1] if _dec else None      # (date, outcome, provenance) of the latest real decision
         lede = f"{name} "
         if comps:
             lede += f"is {_art(comps[0])} {esc(', '.join(comps[:2]))} program"
@@ -614,6 +628,13 @@ def main():
                 lede += (f"Its next catalyst is a {esc(str(n.get('type') or 'catalyst'))} "
                          f"{'on' if (n.get('dp') or 'day') == 'day' else 'in'} "
                          f"{esc(pretty(n['d'], n.get('dp') or 'day'))}. ")
+        elif dec0 is not None and dec0[2] in ("inferred", "unsourced"):
+            # an outcome the decision page does not source is stated as our record, with what it rests on
+            what = "an approval" if dec0[1] == "Approved" else "a Complete Response Letter"
+            lede = (f"Our record shows {what} for {name} on <b>{esc(pretty(dec0[0]))}</b>, "
+                    + ("inferred from the stock's price move, not read from an FDA record or a filing. "
+                       if dec0[2] == "inferred" else "but its decision page does not yet cite a source. ")
+                    + (lede.replace(f"{name} ", "It ", 1) if lede != f"{name} " else ""))
         elif dec0 is not None:
             # No upcoming event: the decision IS the first sentence (audit 2026-11-09 §5 item 7: camizestrant and
             # rusfertide pages still earned 168 Bing AI citations for "{drug} pdufa date" months after the FDA
@@ -627,7 +648,7 @@ def main():
                     + f" on <b>{esc(pretty(dec0[0]))}</b>. ")
         if n_dec:
             lede += f"{n_dec} FDA decision{'s' if n_dec != 1 else ''} on record below. "
-        lede += "Every date links its source."
+        lede = lede.rstrip()
 
         hubs = " &middot; ".join(
             f'<a class="lit" href="/ticker/{esc(t)}">{esc(t)} catalyst hub</a>' for t in tks
@@ -753,8 +774,14 @@ def main():
                     if arch.get((str(r.get('t') or '').upper(), r['d'])) == "Approved"]
             if appr:
                 ad = max(appr, key=lambda r: r.get("d") or "")
+                kd = kind_of(str(ad.get("t") or "").upper(), ad.get("d") or "")
                 a5 = (f"Yes. The FDA approved an application for {name} on "
-                      f"{pretty(ad['d'])}; the decision page linked above carries the source.")
+                      f"{pretty(ad['d'])}; the decision page linked above carries the source."
+                      if kd == "sourced" else
+                      f"Our record shows an approval on {pretty(ad['d'])}, inferred from the stock's price move; "
+                      f"no FDA record or filing confirming it is linked yet." if kd == "inferred" else
+                      f"Our record shows an approval on {pretty(ad['d'])}, but its decision page does not yet "
+                      f"cite a source.")
             else:
                 cd = max(dec_rows, key=lambda r: r.get("d") or "")
                 a5 = (f"Not in our records. The FDA issued a Complete Response Letter on "
@@ -763,8 +790,8 @@ def main():
                          f"{pretty(up[0]['d'], up[0].get('dp') or 'day')}." if up else "."))
             qa.append((f"Has {name} been approved by the FDA?", a5))
         qa.append(("Where does this data come from?",
-                   "FDA announcements, sponsor press releases and SEC filings; every date on "
-                   "this page links its source."))
+                   "FDA announcements, sponsor press releases and SEC filings. Each FDA decision links its "
+                   "own page, which names its source or says plainly that it has none."))
         faq_html = "<h2>Questions</h2>" + "".join(
             f"<h3 style='font-size:15px;margin:14px 0 4px'>{esc(q)}</h3>"
             f"<p style='color:var(--mut2)'>{esc(a)}</p>" for q, a in qa)
@@ -792,7 +819,7 @@ def main():
                 + faq_html + faq_ld)
 
         title = f"{name}: FDA Decision Dates &amp; Catalyst History | pdufa.bio"
-        if not up and dec0 is not None:
+        if not up and dec0 is not None and dec0[2] == "sourced":
             # decided and nothing pending: the title answers "{drug} pdufa date / fda approval" with the outcome
             title = (f"{name} FDA {'Approval' if dec0[1] == 'Approved' else 'Decision'}: "
                      f"{'Approved' if dec0[1] == 'Approved' else 'Complete Response Letter'} {pretty(dec0[0])} | pdufa.bio")
@@ -818,6 +845,11 @@ def main():
             when = (full_date(up_pdufa["d"]) if (up_pdufa.get("dp") or "day") == "day"
                     else pretty(up_pdufa["d"], up_pdufa.get("dp") or "day"))
             brand_desc = f"{name}: FDA PDUFA date {when}."
+        elif dec0 is not None and dec0[2] != "sourced":
+            brand_desc = (f"{name}: our record shows "
+                          + ("an FDA approval" if dec0[1] == "Approved" else "a Complete Response Letter")
+                          + f" on {full_date(dec0[0])}, "
+                          + ("inferred from the price move." if dec0[2] == "inferred" else "source not yet cited."))
         elif dec0 is not None and dec0[1] == "Approved":
             bl = (brands.get(slug) or {}).get("brands") or []
             bn = next((b for b in bl if b), "")
@@ -841,8 +873,7 @@ def main():
                               f"{pretty(n0['d'], n0.get('dp') or 'day')}.")
         desc = brand_desc or f"{name}: FDA catalyst dates and outcomes."
         for extra in ((f" For {', '.join(comps[:1]).rstrip('.')}." if comps else ""),
-                      (" Catalyst history we track, every date sourced." if brand_desc
-                       else " Every date and decision links its primary source."),
+                      (" Catalyst history we track." if brand_desc else " FDA decision history."),
                       " Facts only."):
             if extra and len(desc) + len(extra) <= 158:
                 desc += extra

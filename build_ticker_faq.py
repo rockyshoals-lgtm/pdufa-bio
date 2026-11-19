@@ -35,6 +35,18 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
+from refresh_provenance_counts import page_kind  # noqa: E402
+_KIND = {}
+
+
+def decision_kind(tk, day):
+    """page_kind() of /fda-decision/<tk>-<day>, the reader /decisions counts with."""
+    slug = f"{tk}-{day}"
+    if slug not in _KIND:
+        p = os.path.join(SITE, "fda-decision", slug, "index.html")
+        _KIND[slug] = page_kind(open(p, encoding="utf-8", errors="replace").read()) if os.path.exists(p) else "unsourced"
+    return _KIND[slug]
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
 STATS = os.path.join(HERE, "runup_study_stats.json")
 B, E = "<!--TICKERFAQ:BEGIN-->", "<!--TICKERFAQ:END-->"
@@ -127,15 +139,26 @@ def faqs(tk, company, rows, decisions, runup, cohort):
 
     # 2. History. Answers "has X been approved before".
     if decisions:
-        ap = sum(1 for _, _, o in decisions if o == "ap")
-        crl = len(decisions) - ap
-        last_t, last_d, last_o = decisions[0]
-        out.append((
-            f"Has {company} ({tk}) had an FDA decision before?",
-            f"Yes, {len(decisions)} in our archive: {ap} approval(s) and {crl} Complete Response "
-            f"Letter(s). The most recent was on {pretty(last_d, 'day')} and was "
-            f"{'an approval' if last_o == 'ap' else 'a Complete Response Letter'}. Each one has its "
-            f"own page with the source document and the share-price reaction we measured."))
+        # 2026-11-18 (design red team, change 5): an outcome inferred from the price move, or one whose decision page
+        # cites no source, is reported apart from the sourced ones, never counted as an approval or a CRL
+        good = [d for d in decisions if decision_kind(d[0], d[1]) == "sourced"]
+        other = len(decisions) - len(good)
+        ap = sum(1 for _, _, o in good if o == "ap")
+        crl = len(good) - ap
+        parts = []
+        if good:
+            parts.append(f"{ap} approval(s) and {crl} Complete Response Letter(s) read from a cited source")
+        if other:
+            parts.append(f"{other} whose outcome was inferred from the stock's move or whose page cites no source "
+                         f"yet, marked Inferred or Unsourced")
+        ans = f"Yes, {len(decisions)} in our archive: " + ", and ".join(parts) + "."
+        if good:
+            last_t, last_d, last_o = good[0]
+            ans += (f" The most recent with a cited source was on {pretty(last_d, 'day')} and was "
+                    f"{'an approval' if last_o == 'ap' else 'a Complete Response Letter'}.")
+        ans += (" Each one has its own page, which names its source document or says plainly that it has none, "
+                "and gives the share-price reaction we measured.")
+        out.append((f"Has {company} ({tk}) had an FDA decision before?", ans))
 
     # 3. The run-up question, answered with measurement rather than opinion.
     if runup:
@@ -158,9 +181,10 @@ def faqs(tk, company, rows, decisions, runup, cohort):
     out.append((
         f"Where does this {tk} data come from?",
         f"FDA publications, company filings with the SEC, company press releases and "
-        f"ClinicalTrials.gov, with share prices measured from daily closing data. Every date and "
-        f"outcome links the document it came from. Where an outcome was inferred from the price "
-        f"reaction rather than read from a filing, the page says so on its face."))
+        f"ClinicalTrials.gov, with share prices measured from daily closing data. Each FDA decision "
+        f"links its own page, which names its source or says plainly that it has none. Where an "
+        f"outcome was inferred from the price reaction rather than read from a filing, it is marked "
+        f"Inferred wherever it is listed."))
 
     return out
 
@@ -168,8 +192,8 @@ def faqs(tk, company, rows, decisions, runup, cohort):
 def render(items):
     body = "".join(
         f'<details style="border-top:1px solid var(--line);padding:11px 0">'
-        f'<summary style="cursor:pointer;font-weight:600;color:#eef4fc;font-size:14px;'
-        f'list-style:none">{esc(q)}</summary>'
+        f'<summary style="cursor:pointer;font-weight:600;color:#eef4fc;font-size:14px"'
+        f'>{esc(q)}</summary>'
         f'<p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:var(--mut2)">'
         f'{esc(a)}</p></details>' for q, a in items)
     ld = {"@context": "https://schema.org", "@type": "FAQPage",

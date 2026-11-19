@@ -55,7 +55,7 @@ SKIP = re.compile(r"(_bak|_xbak|/_|\\_|app\.html|holding\.html|preview\.html|pin
 # worst kind to publish on a site whose whole pitch is provenance.
 SCRIPT = """<script>
 (function(){var e=document.querySelector('[data-fresh]');if(!e)return;
-fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+(window.pdBI=window.pdBI||fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()})).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
 var n=j.next_days;if(j.next_date){var td=new Date();var t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());var p=j.next_date.split('-');n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);}
 /* A goal date that has PASSED with no decision is not "today" and not a negative countdown.
@@ -155,7 +155,20 @@ def built_eastern_label():
         return _eastern_today().strftime("%b %d, %Y").replace(" 0", " ") + " ET"
 
 
-def block(date_iso):
+# Design red team 2026-11-18 (change 8): the homepage showed three stamps above its first date ("Data through Nov 18",
+# "Page updated November 18, 2026", "Data as of Nov 18, 2026 3:12 AM ET"). Its block is now the one stamp: the
+# content-change date as a crawlable <time> (tests/test_freshness_crawlable.py), with the rebuild time as its tooltip
+# (tests/test_data_built_at.py). The countdown it carried repeats the first card of the list right under it, so the
+# homepage drops it. The eyebrow above the h1 names a date only when the rows have gone stale (build_home_board.py).
+HOME_SCRIPT = """<script>
+(function(){var b=document.querySelector('[data-fresh-built]');if(!b)return;
+fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+var w=j.data_built_at||j.built;if(w){var x=new Date(w);if(!isNaN(x)){b.setAttribute('title','Data as of '+x.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'})+' ET (last rebuild)');}}
+}).catch(function(){});})();
+</script>"""
+
+
+def block(date_iso, home=False):
     """Per-page markup. The date is baked because a crawler has to see it.
 
     The earlier version rendered the time client-side, which was fine for humans and useless for
@@ -167,6 +180,13 @@ def block(date_iso):
     clock, so an unchanged page emits identical bytes on every build. That is what keeps this from
     reintroducing the churn that broke lastmod twice already.
     """
+    if home:
+        when_h = (f'Updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>' if date_iso
+                  else '<span style="color:#eef4fc">Rebuilt daily</span>')
+        return (f'{B}<div data-fresh style="display:flex;gap:6px;align-items:center;font-size:12.5px;'
+                f'color:var(--mut2);margin:0 0 10px"><span style="display:inline-flex;width:7px;height:7px;'
+                f'border-radius:50%;background:#46d17f"></span><span data-fresh-built '
+                f'title="Data as of {built_eastern_label()} (last rebuild)">{when_h}</span></div>{HOME_SCRIPT}{E}')
     # audit 2026-10-04 P2: three dates read as one. "Page updated" is this page's content-change day;
     # "Data as of" (filled at request time) is when the dataset was rebuilt. Named, not guessed.
     when = (f'Page updated <time datetime="{date_iso}" style="color:#eef4fc">{human(date_iso)}</time>'
@@ -182,6 +202,36 @@ def block(date_iso):
         f'<a data-fresh-tk href="/calendar" style="color:var(--mut2)"></a></span>'
         f'<span style="color:var(--mut2)">·</span><span data-fresh-built style="color:var(--mut2)" title="when the dataset was last rebuilt (Eastern)">Data as of {built_eastern_label()}</span>'
         f'</div>{SCRIPT}{E}')
+
+
+def calendar_updates():
+    """[date, Eastern date of updated_at] for each undecided day-precision PDUFA row in the dataset.
+
+    Design red team 2026-11-18 (change 12): the homepage's "Data through" eyebrow fetched /api/v1/events?limit=3000
+    on every home load (every row the API holds) only to take the most common updated_at date among the upcoming
+    PDUFA rows. The rows it reads are these, from the same dataset the API serves, so they ride in build-info.json,
+    which the page already fetches; the page keeps the rows dated today or later and takes the same mode."""
+    if not os.path.exists(DATASET):
+        return []
+    m = re.search(r"export default (\[.*\])", open(DATASET, encoding="utf-8", errors="replace").read(), re.S)
+    if not m:
+        return []
+    from site_dates import _ET
+    out = []
+    for r in json.loads(m.group(1)):
+        if r.get("type") != "PDUFA" or r.get("dp") != "day" or r.get("st") == "Decided" or not r.get("ua"):
+            continue
+        d = str(r.get("d") or "")[:10]
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", d) or d < (_eastern_today() - dt.timedelta(days=2)).isoformat():
+            continue
+        try:
+            t = dt.datetime.fromisoformat(str(r["ua"]).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=dt.timezone.utc)
+        out.append([d, t.astimezone(_ET).date().isoformat()])
+    return sorted(out)
 
 
 def main():
@@ -236,7 +286,8 @@ def main():
             "next_ticker": nxt[1] if nxt else None,
             "next_days": (None if awaiting else nxt[2]) if nxt else None,
             "next_status": ("awaiting" if awaiting else "upcoming") if nxt else None,
-            "days_since_goal": (-nxt[2] if awaiting else None) if nxt else None}
+            "days_since_goal": (-nxt[2] if awaiting else None) if nxt else None,
+            "calendar_updates": calendar_updates()}
     if not a.dry_run:
         for out in (os.path.join(SITE, "build-info.json"), os.path.join(SITE, "api", "_build-info.json")):
             json.dump(info, open(out, "w", encoding="utf-8"), indent=1)
@@ -250,7 +301,7 @@ def main():
         if SKIP.search(p):
             continue
         rel = os.path.relpath(p, SITE).replace("\\", "/")
-        blk = block(dates.get("pdufa_site_src/" + rel))
+        blk = block(dates.get("pdufa_site_src/" + rel), home=(rel == "index.html"))
         doc = open(p, encoding="utf-8", errors="replace").read()
         if B in doc:
             doc = doc.split(B, 1)[0] + blk + doc.split(E, 1)[1]

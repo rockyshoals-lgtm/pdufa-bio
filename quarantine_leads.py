@@ -45,6 +45,10 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
+sys.path.insert(0, HERE)
+import badge_decision_provenance  # noqa: E402
+import inject_a11y  # noqa: E402
+import inject_mobile_polish  # noqa: E402
 STATE = os.path.join(HERE, "_held_state.json")
 LEADS = os.environ.get("WATCH_LEADS_JSONL") or os.path.join(HERE, "_watch_leads.jsonl")
 DATASET = os.path.join(SITE, "api", "v1", "dataset.mjs")
@@ -304,6 +308,20 @@ def cmd_apply(a):
         new, n = restore_rows(src, head, set(held_ids))
         if n and not a.dry_run:
             io.open(DATASET, "w", encoding="utf-8").write(new)
+            # 2026-11-18 (design change 12): the homepage's "Data through" date reads calendar_updates from
+            # build-info.json, which build_freshness_stamp.py wrote from the dataset before this step put the held
+            # rows back; recompute it from the restored rows so the page and tests/test_accessibility.py agree.
+            try:
+                import build_freshness_stamp as _F
+                cu = _F.calendar_updates()
+                for p in (os.path.join(SITE, "build-info.json"), os.path.join(SITE, "api", "_build-info.json")):
+                    if os.path.exists(p):
+                        bi = json.load(io.open(p, encoding="utf-8"))
+                        if "calendar_updates" in bi:
+                            bi["calendar_updates"] = cu
+                            io.open(p, "w", encoding="utf-8", newline="\n").write(json.dumps(bi, indent=1) + "\n")
+            except Exception as ex:  # noqa: BLE001
+                print(f"  note: calendar_updates not refreshed after the restore ({ex.__class__.__name__}: {ex})")
         restored.append(f"dataset rows x{n}")
     _event_links = None
     for rid in held_ids:
@@ -313,17 +331,22 @@ def cmd_apply(a):
             old = _git_show(p)
             if old is None:
                 continue
-            # 2026-11-18 (design change 4): a bare /pdufa/{T} page this build retired into a redirect to the event's
-            # own page stays retired (vercel.json sends it there); and a restored page's event links go straight to
-            # the event's own page, as retarget_event_links.py makes every other page's.
-            rel = os.path.relpath(p, SITE).replace("\\", "/")
-            url = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
-            if _event_links is None:
-                _event_links = _load_event_links()
-            if url and not os.path.exists(p) and url in _event_links[1]:
-                continue
-            if _event_links[0]:
-                old = _event_links[0](old, rel)
+            # 2026-11-18 (change 5): the committed page may predate this build's provenance badges; give it the
+            # badges the rest of the site carries, or tests/test_provenance_badges.py would block the deploy
+            if p.endswith(".html"):
+                old = badge_decision_provenance.apply(old)
+            # 2026-11-18 (change 11 red team): a held page's committed copy can predate a site-wide chrome pass. The
+            # fonts, type rules and logo mark (inject_site_type.py) are re-added, so tests/test_one_look.py does not
+            # block every deploy while a row is held; build_sitemap strips them from the content hash, so the held
+            # page's lastmod is unchanged.
+            if p.endswith(".html"):
+                import inject_site_type
+                if inject_site_type.public(p, old):
+                    old = inject_site_type.apply(old)[0]
+            if p.endswith(".html"):  # after the badges and the site type, as in the build
+                # a page committed before the accessibility pass gets it too (named charts first, then the phone
+                # copies that carry their names), or the page it restores would fail tests/test_accessibility.py
+                old = inject_mobile_polish.apply(inject_a11y.apply(old))[0]
             cur = io.open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else None
             if cur != old:
                 if not a.dry_run:

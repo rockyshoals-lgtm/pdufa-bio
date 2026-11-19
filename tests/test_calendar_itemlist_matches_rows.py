@@ -19,7 +19,7 @@ import sys
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
 sys.path.insert(0, HERE)
-from site_dates import eastern_today  # noqa: E402
+from site_dates import eastern_today, row_ahead, window_end  # noqa: E402
 
 
 def _ahead_hrefs(doc, today):
@@ -33,9 +33,8 @@ def _ahead_hrefs(doc, today):
         if "✓" in t or "approved" in low or "crl" in low or "complete response" in low:
             continue
         iso = re.search(r"\d{4}-\d{2}-\d{2}", t)
-        if iso and iso.group(0) < today:
-            continue
-        if not iso and not re.search(r"\bQ[1-4]\s+\d{4}", t):
+        # the lede's rule (site_dates.row_ahead): no past day, no ended window, no "(est.)" row
+        if not row_ahead(t, iso.group(0) if iso else None, today) or (not iso and not window_end(t)):
             continue
         out.append(href.group(1))
     return out

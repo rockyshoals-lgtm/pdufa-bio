@@ -122,7 +122,10 @@ BOILER = [
     # advanced their lastmod on 10-11. Strip the preceding comma too, and the og/article metas.
     re.compile(r',?\s*"date(?:Modified|Published)"\s*:\s*"[^"]*",?'),
     re.compile(r'<meta property="(?:og:updated_time|article:modified_time)"[^>]*>'),
-    re.compile(r'<style id="(navcanon|navpolish|typesys|mobilepolish)">.*?</style>', re.S),
+    re.compile(r'<style id="(navcanon|navpolish|typesys|mobilepolish|navmatch)">.*?</style>', re.S),
+    # 2026-11-18 (design red team, change 11): inject_site_type.py adds the site fonts and the logo mark to ~1,400
+    # pages that lacked them, inside these markers; rebuild_nav.py's navmatch style sizes the dropdown buttons.
+    re.compile(r'<!--TYPE:B-->.*?<!--TYPE:E-->|<!--LM:B-->.*?<!--LM:E-->', re.S),
     # 2026-11-17: inject_mobile_polish.py wraps wide tables in a scroll box on ~2,000 pages in one sweep. Layout
     # chrome, not content: strip the two marker-tagged halves so the table inside hashes exactly as before.
     re.compile(r'<!--TW:B--><div class="pd-tw">|</div><!--TW:E-->'),
@@ -178,9 +181,34 @@ VOLATILE = [
     (re.compile(r"(<span>Business days away</span><b>)\d+(</b>)"), r"\1#\2"),
     (re.compile(r"\d+ of 120 sessions elapsed, \d+ to go"), "# of 120 sessions elapsed, # to go"),
 ]
+# 2026-11-18 (design red team, change 12): inject_a11y.py adds a skip link and its target, a style block, names on
+# role="img" charts and sparklines, a live-region role on the screener count, and puts back the marker on FAQ
+# <summary> elements (list-style:none taken out of their inline style), on every public page in one sweep. That is
+# how the page is read, not what it says, and without this every one of ~1,800 URLs claimed a content change the
+# day it landed (tests/test_sitemap_lastmod.py: "every one of 1,796 URLs carries the same lastmod"). Hashed with
+# that markup taken out, the same way on both sides, so a page hashes alike before and after the pass.
+A11Y = [
+    (re.compile(r'<style id="pd-a11y">.*?</style>', re.S), ""),
+    (re.compile(r"<!--SKIPT?:B-->.*?<!--SKIPT?:E-->", re.S), ""),
+    (re.compile(r'(<div class="meta" id="meta") role="status" aria-live="polite"'), r"\1"),
+    (re.compile(r"<title>Share price[^<]*</title>"), ""),
+]
+_SVG_OPEN = re.compile(r"<svg\b[^>]*>")
+_SUMMARY = re.compile(r"<summary\b[^>]*>")
+
+
+def _unlabelled(html):
+    for rx, rep in A11Y:
+        html = rx.sub(rep, html)
+    html = _SVG_OPEN.sub(lambda m: re.sub(r'\s(?:aria-label="[^"]*"|role="img")', "", m.group(0)), html)
+    return _SUMMARY.sub(lambda m: re.sub(r'\s*;?\s*list-style(?:-type)?:\s*none\s*;?', "", m.group(0))
+                        .replace(' style=""', ""), html)
+
+
 # Bumped when the hash definition changes, so the first run under a new definition can tell "the
 # definition changed" apart from "the page changed" (see last_changed). Never reuse a number.
-HASH_VERSION = 2
+# 3: 2026-11-18, the accessibility markup above is taken out.
+HASH_VERSION = 3
 
 
 def _strip_boiler(html):
@@ -193,18 +221,37 @@ def _digest(html):
     return hashlib.sha1(re.sub(r"\s+", " ", html).encode("utf-8", "replace")).hexdigest()[:16]
 
 
+def _unshaped(html):
+    """2026-11-18 (design change 7): shape_calendar.py reorders /calendar last in the build, and this script runs once
+    before it and once after. Hash the page in its date order both times, so the reordering alone is not a change."""
+    if "<!--CALSHAPE:" in html:
+        import shape_calendar
+        html = shape_calendar.unshape(html)
+    return html
+
+
 def content_hash_v1(html):
     """The pre-2026-11-18 definition (furniture only). Kept to migrate state written under it."""
-    return _digest(_strip_boiler(html))
+    return _digest(_strip_boiler(_unshaped(html)))
 
 
-def content_hash(html):
-    """Hash of the page with template furniture and site-wide statistics removed, so lastmod tracks
-    a change to what the page says about its own subject."""
-    html = _strip_boiler(html)
+def content_hash_v2(html):
+    """The 2026-11-18 definition before the accessibility pass (furniture and site-wide statistics). Kept to migrate
+    state written under it."""
+    html = _strip_boiler(_unshaped(html))
     for rx, rep in VOLATILE:
         html = rx.sub(rep, html)
     return _digest(html)
+
+
+def content_hash(html):
+    """Hash of the page with template furniture, site-wide statistics and accessibility markup removed, so lastmod
+    tracks a change to what the page says about its own subject."""
+    return content_hash_v2(_unlabelled(html))
+
+
+# the definition a state entry was written under, by its "hv" (no "hv": the first definition)
+PREVIOUS = {2: content_hash_v2}
 
 
 _HEAD_BLOBS = None
@@ -265,11 +312,12 @@ def last_changed(rel, full, html):
         # masked statistics moved. HEAD alone is not enough: CI runs on a schedule, and a PR merged
         # since the last state write puts a real change in HEAD that this build reproduces (red team,
         # 2026-11-18: replaying #98 would have kept old dates on 8 decision pages whose facts changed).
-        if content_hash_v1(html) == prev.get("hash"):
+        old_hash = PREVIOUS.get(prev.get("hv"), content_hash_v1)
+        if old_hash(html) == prev.get("hash"):
             unchanged = True
         else:
             head = head_version(key)
-            unchanged = (head is not None and content_hash_v1(head) == prev.get("hash")
+            unchanged = (head is not None and old_hash(head) == prev.get("hash")
                          and content_hash(head) == h)
 
     if unchanged:
