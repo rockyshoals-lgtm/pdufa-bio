@@ -176,7 +176,10 @@ VOLATILE = [
     (re.compile(r"(median move to the day before the decision was )" + _PCT), r"\1#%"),
     (re.compile(r"(the median stock rose )" + _PCT), r"\1#%"),
     (re.compile(r"(but was only )" + _PCT + r"( higher the day before)"), r"\1#%\2"),
-    (re.compile(r'<span class="up">in \d+ days?</span>'), '<span class="up">in # days</span>'),
+    # 2026-11-19: the row countdown also carries its goal date (data-due, for the view-time recount) and reads "today"
+    # or "tomorrow" on its last two days. The date already shows beside it, so only the words are masked.
+    (re.compile(r'<span class="up"(?: data-due="[^"]*")?>(?:in \d+ days?|today|tomorrow)</span>'),
+     '<span class="up">in # days</span>'),
     (re.compile(r"\d+( business days to decision)"), r"#\1"),
     (re.compile(r"(<span>Business days away</span><b>)\d+(</b>)"), r"\1#\2"),
     (re.compile(r"\d+ of 120 sessions elapsed, \d+ to go"), "# of 120 sessions elapsed, # to go"),

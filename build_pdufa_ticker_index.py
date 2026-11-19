@@ -346,7 +346,12 @@ def main():
         for r in ups:
             days = (dt.date.fromisoformat(r["d"]) - dt.date.fromisoformat(TODAY)).days \
                 if re.match(r"^\d{4}-\d{2}-\d{2}$", str(r.get("d"))) else None
-            cd = (f'<span class="up">in {days} day{"s" if days != 1 else ""}</span>'
+            # 2026-11-19 (David: "Fix the countdowns"): the count is baked at build time in Eastern, so a page served the
+            # day after a rebuild said "in 4 days" while the header above it said "in 3 days". data-due lets the
+            # freshness script (build_freshness_stamp.py) recount at view time, the header's way; the baked text is the
+            # fallback for crawlers and readers without script, and uses the script's words so nothing flickers.
+            cd = (f'<span class="up" data-due="{esc(r["d"])}">'
+                  f'{"today" if days == 0 else "tomorrow" if days == 1 else f"in {days} days"}</span>'
                   if days is not None and (r.get("dp") or "day") == "day" and days >= 0 else "")
             evs.append(f'<a class="row" href="{esc(own_page(r, t) or "/calendar")}"><span class="t">'
                        f'{esc(pretty(r["d"], r.get("dp") or "day"))} {cd}</span>'
