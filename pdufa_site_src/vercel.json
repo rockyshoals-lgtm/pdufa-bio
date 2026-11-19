@@ -3376,6 +3376,11 @@
    "source": "/pdufa/ZBIO",
    "destination": "/pdufa/ZBIO-obexelimab",
    "permanent": true
+  },
+  {
+   "source": "/fda-decision/AGIO-2025-11-03",
+   "destination": "/ticker/AGIO",
+   "permanent": true
   }
  ],
  "headers": [

@@ -266,6 +266,13 @@
    "was": "A Sanofi FDA decision page dated 2025-12-28 for the tolebrutinib Complete Response Letter, labelled as verified from an SEC filing.",
    "now": "The FDA's Complete Response Letter for tolebrutinib is dated December 23, 2025 and Sanofi announced it on December 24. December 28 was the review's target date, not the day of the letter. The decision now has its page at the December 24 announcement. The page is retired and redirects to /fda-decision/SNY-2025-12-24.",
    "source": "FDA CRL file for NDA 219624, dated December 23, 2025"
+  },
+  {
+   "date": "2026-11-18",
+   "page": "/fda-decision/AGIO-2025-11-03",
+   "was": "A decision page for AGIO dated 2025-11-03 recording UCB's Kygevvi approval as an Agios approval.",
+   "now": "FDA approved Kygevvi (doxecitine and doxribtimine) on November 3, 2025 under NDA 219792, whose applicant is UCB, not Agios. Agios had no FDA action that day; its Aqvesme (mitapivat) approval of December 23, 2025 has its own page. The page is retired and redirects to /ticker/AGIO.",
+   "source": "Drugs@FDA, NDA 219792 (applicant UCB Inc, approved 2025-11-03), and the FDA approval letter https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219792Orig1000ltr.pdf"
   }
  ],
  "legacy": [

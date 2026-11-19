@@ -48,6 +48,12 @@ try:
     RETRACTED.update(_R1015)
 except Exception:  # noqa: BLE001
     pass
+# 2026-11-18: UCB's Kygevvi approval, recorded as an Agios one (apply_1118c_kygevvi.py).
+try:
+    from apply_1118c_kygevvi import RETIRE as _R1118C
+    RETRACTED.update({s: why for s, (_, why, _) in _R1118C.items()})
+except Exception:  # noqa: BLE001
+    pass
 # Pages allowed to mention a retracted slug, because their job is to document the retraction.
 ALLOWED = {"corrections/index.html", "changelog/index.html"}
 DEC_LINK = re.compile(r"/fda-decision/([A-Z]+-\d{4}-\d{2}-\d{2})")
