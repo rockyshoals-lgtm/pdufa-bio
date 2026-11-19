@@ -43,6 +43,7 @@
     "2026-12-17"
    ],
    "channels": [
+    "sponsor_feed",
     "edgar_8k",
     "fda_feeds"
    ],
@@ -88,6 +89,7 @@
     "2026-11-28"
    ],
    "channels": [
+    "sponsor_feed",
     "edgar_8k",
     "fda_feeds"
    ],
