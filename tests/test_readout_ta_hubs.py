@@ -42,7 +42,10 @@ def main():
         return 0
     src = io.open(ds, encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
-    today = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=4)).date().isoformat()
+    # the Eastern date, as build_readout_ta_hubs.py (site_dates.eastern_today) sees it. A fixed UTC-4 is a day
+    # ahead from 04:00 to 05:00 UTC in winter (EST is UTC-5) and failed run 44454745795 on rows dated today.
+    from zoneinfo import ZoneInfo
+    today = dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat()
 
     fail = 0
     for slug, tas in HUBS.items():
