@@ -110,7 +110,8 @@ def main():
         dh = open(darch, encoding="utf-8", errors="replace").read()
         for m in re.finditer(
                 r'href="/fda-decision/([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})"[^>]*>(.*?)</a>', dh, re.S):
-            txt = html.unescape(re.sub(r"<[^>]+>", " ", m.group(3)))
+            # a provenance badge (badge_decision_provenance.py, change 5) is a mark on the row, not its drug name
+            txt = html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"<!--PV:B-->.*?<!--PV:E-->", "", m.group(3), flags=re.S)))
             oc = ("Approved" if re.search(r"\bapproved\b", txt, re.I)
                   else "CRL" if re.search(r"\bcrl\b|complete response", txt, re.I) else "")
             body = re.split(r"(?:Approved|CRL|Complete Response Letter)\s*:?\s*", txt, maxsplit=1)
