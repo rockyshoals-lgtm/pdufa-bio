@@ -160,6 +160,14 @@
    "approved": 312,
    "unapproved": 154,
    "snapshot": "CRL_corpus_openFDA_2026-11-18.json"
+  },
+  {
+   "checked": "2026-11-19",
+   "last_updated": "2026-11-18",
+   "total": 466,
+   "approved": 312,
+   "unapproved": 154,
+   "snapshot": "CRL_corpus_openFDA_2026-11-19.json"
   }
  ]
 }
