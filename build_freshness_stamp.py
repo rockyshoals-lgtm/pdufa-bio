@@ -54,6 +54,12 @@ SKIP = re.compile(r"(_bak|_xbak|/_|\\_|app\.html|holding\.html|preview\.html|pin
 # rot; "Updated 4 hours ago" baked into a cached page becomes a lie about honesty, which is the
 # worst kind to publish on a site whose whole pitch is provenance.
 SCRIPT = """<script>
+/* 2026-11-19 (David: "Fix the countdowns"): a row countdown carries its goal date in data-due and is recounted here at
+   view time, with the same day math as the header's, so the two never disagree after midnight. No fetch needed. */
+(function(){function c(){var a=document.querySelectorAll('[data-due]'),td=new Date(),t0=Date.UTC(td.getFullYear(),td.getMonth(),td.getDate());
+for(var i=0;i<a.length;i++){var p=(a[i].getAttribute('data-due')||'').split('-');if(p.length!==3)continue;var n=Math.round((Date.UTC(+p[0],+p[1]-1,+p[2])-t0)/86400000);if(isNaN(n))continue;
+a[i].textContent=n<0?'awaiting a decision':(n===0?'today':(n===1?'tomorrow':'in '+n+' days'));}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',c);else c();})();
 (function(){var e=document.querySelector('[data-fresh]');if(!e)return;
 (window.pdBI=window.pdBI||fetch('/build-info.json',{cache:'no-store'}).then(function(r){return r.json()})).then(function(j){
 var d=e.querySelector('[data-fresh-next]');
