@@ -148,6 +148,13 @@
    "document": "Capricor Therapeutics third quarter 2024 results release, November 13, 2024",
    "finding": "The release lists 'Announced intent to file a biologics license application (BLA) for deramiocel' and a rolling BLA submission begun October 2024, and states 'Deramiocel is an Investigational New Drug and is not approved for any indications.' The 2024-09-24 row recorded an APPROVAL; on 13 November 2024, after that date, Capricor still described deramiocel as not approved for any indication. Design red team 2026-11-18.",
    "checked": "2026-11-18"
+  },
+  "AGIO-2025-11-03": {
+   "reason": "the decision is UCB's (Kygevvi, NDA 219792), not Agios's; no Agios FDA action on this date",
+   "cited_source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219792Orig1000ltr.pdf",
+   "document": "FDA approval letter, NDA 219792 (Kygevvi), applicant UCB Inc",
+   "finding": "Drugs@FDA lists UCB Inc as the applicant; the page and the study row had put the approval on AGIO.",
+   "checked": "2026-11-18"
   }
  }
 }
