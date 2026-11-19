@@ -73,9 +73,21 @@ def main():
     data = json.loads(m.group(1)) if m else []
     if not data:
         bad.append("/screener: const DATA missing or empty")
+    # design change 4: the screener links where a row's URL lands (retarget_event_links.py follows a retired bare
+    # /pdufa/{T} to the event's own page), so a row is matched by that page, not by the URL it was saved with
+    try:
+        sys.path.insert(0, HERE)
+        import retarget_event_links as _RL
+        _tg = _RL.targets()
+    except Exception:  # noqa: BLE001
+        _tg = {}
+
+    def lands(u):
+        return _tg.get(u, u)
+
     by_key = {}
     for r in rows:
-        by_key.setdefault((r.get("t") or "", r.get("url") or f"/ticker/{r.get('t')}", str(r.get("name") or "")[:50],
+        by_key.setdefault((r.get("t") or "", lands(r.get("url") or f"/ticker/{r.get('t')}"), str(r.get("name") or "")[:50],
                            r.get("type")), []).append(r)
 
     def not_announced(r):
@@ -144,7 +156,7 @@ def main():
                         url = f"/fda-decision/{slug}"
                         break
             mine = [e for e in data if e["t"] == r.get("t") and e["type"] == "PDUFA" and e["name"] == nm
-                    and e["url"] == url]
+                    and e["url"] == lands(url)]
             if not any(e["d"] == day for e in mine):
                 bad.append(f"/screener: decided {r.get('t')} {r.get('id')} missing from its "
                            f"{'announcement' if dd[1] else 'FDA action'} date {day}")
