@@ -3301,6 +3301,81 @@
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
    "permanent": true
+  },
+  {
+   "source": "/pdufa/APMD",
+   "destination": "/pdufa/APMD-ad109",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/BLTE",
+   "destination": "/pdufa/BLTE-tinlarebant",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/DYN",
+   "destination": "/pdufa/DYN-z-rostudirsen",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/IMNM",
+   "destination": "/pdufa/IMNM-varegacestat",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/INCY",
+   "destination": "/pdufa/INCY-zilurgisertib",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/INO",
+   "destination": "/pdufa/INO-ino-3107-dna",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/IRD",
+   "destination": "/pdufa/IRD-phentolamine-ophthalmic",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/MLYS",
+   "destination": "/pdufa/MLYS-lorundrostat",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/NTLA",
+   "destination": "/pdufa/NTLA-lonvo-z",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/PHVS",
+   "destination": "/pdufa/PHVS-deucrictibant-ir",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/PVLA",
+   "destination": "/pdufa/PVLA-qtorin-rapamycin",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/PYPD",
+   "destination": "/pdufa/PYPD-d-plex100",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/QURE",
+   "destination": "/pdufa/QURE-amt-130",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/SMMT",
+   "destination": "/pdufa/SMMT-ivonescimab",
+   "permanent": true
+  },
+  {
+   "source": "/pdufa/ZBIO",
+   "destination": "/pdufa/ZBIO-obexelimab",
+   "permanent": true
   }
  ],
  "headers": [
