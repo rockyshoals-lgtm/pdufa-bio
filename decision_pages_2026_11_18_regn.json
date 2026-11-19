@@ -1,0 +1,15 @@
+[
+ {
+  "ticker": "REGN",
+  "date": "2026-11-18",
+  "outcome": "Approved",
+  "drug": "Livsayis (cemdisiran)",
+  "indication": "Generalized myasthenia gravis in adults who are anti-AChR antibody-positive",
+  "company": "Regeneron Pharmaceuticals",
+  "cap": "Large",
+  "headline": "Regeneron announced on November 18, 2026 that the FDA approved Livsayis (cemdisiran) for adults with anti-AChR antibody-positive generalized myasthenia gravis, on the Phase 3 NIMBLE trial.",
+  "pdufa_note": "Regeneron announced on November 18, 2026 that the FDA approved Livsayis (cemdisiran), given under the skin four times a year, for adults with generalized myasthenia gravis who are anti-acetylcholine receptor antibody-positive (<a href=\"https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html\" rel=\"noopener\" style=\"color:#e3ba5e\">Regeneron's announcement</a>). The FDA's own record of the action day had not been posted when this page was published. Regeneron stated the target action date as November 2026 after using a Priority Review Voucher (<a href=\"https://www.sec.gov/Archives/edgar/data/872589/000087258926000023/exhibit991q22026.htm\" rel=\"noopener\" style=\"color:#e3ba5e\">Regeneron 8-K, July 30, 2026</a>); because that is a month, not a day, no early or late margin is given. Per Regeneron, in the Phase 3 NIMBLE trial the MG-ADL score improved 4.5 points with Livsayis versus 2.2 with placebo at week 24 (p=0.0005), and 76.6% versus 44.1% of patients improved by at least 3 points. Livsayis carries a boxed warning for serious meningococcal infections and is available only through a REMS.",
+  "source": "https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html",
+  "source_label": "Regeneron press release, November 18, 2026"
+ }
+]

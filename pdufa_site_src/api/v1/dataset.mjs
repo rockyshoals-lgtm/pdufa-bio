@@ -10545,12 +10545,12 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/REGN-cemdisiran",
-  "ua": "2026-11-19T00:12:21Z",
+  "st": "Decided",
+  "url": "/fda-decision/REGN-2026-11-18",
+  "ua": "2026-11-19T01:11:14Z",
   "_d": {
    "nct_id": null,
-   "indication": "Generalized myasthenia gravis (gMG), anti-AChR antibody-positive",
+   "indication": "Generalized myasthenia gravis (gMG) in adults who are anti-AChR antibody-positive",
    "market_cap_usd": 97796840172.0,
    "cash_runway_months": null,
    "days_to_decision": 143,
@@ -10575,9 +10575,22 @@ export default [
      "why": "Precision downgraded from day to month: Regeneron's 8-K of 2026-07-30 states 'a target action date in November 2026' and no filing states a day."
     }
    ],
-   "runup_note": "Run-up is measured for day-dated goals and decided events only"
+   "runup_note": "Run-up is measured for day-dated goals and decided events only",
+   "brand": "Livsayis",
+   "inn": "cemdisiran",
+   "trial": "NIMBLE",
+   "decision_source": "Regeneron press release, November 18, 2026 (GlobeNewswire)",
+   "decision_source_url": "https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html",
+   "decision_date_unsourced": true,
+   "decision_quote": "Regeneron Pharmaceuticals, Inc. (NASDAQ: REGN) today announced that the U.S. Food and Drug Administration (FDA) has approved Livsayis (cemdisiran) for the treatment of generalized myasthenia gravis (gMG) in adult patients who are anti-acetylcholine receptor (AChR) antibody-positive.",
+   "decision_note": "Regeneron announced the approval on November 18, 2026. The FDA's own record of the action day was not yet posted when this row was updated. The goal date is stated as a month (November 2026, Regeneron 8-K of July 30, 2026), so no early or late margin is published.",
+   "announcement": "Regeneron press release, November 18, 2026 (GlobeNewswire)",
+   "announcement_url": "https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html",
+   "review": "NDA under Priority Review following use of a Priority Review Voucher (Regeneron 8-K, July 30, 2026). Per Regeneron, the Phase 3 NIMBLE trial (randomized, double-blind, placebo-controlled): on the primary endpoint, MG-ADL total score improved 4.5 points with Livsayis versus 2.2 with placebo at week 24 (placebo-adjusted 2.3, p=0.0005); 76.6% versus 44.1% were MG-ADL responders (p<0.001); QMG improved 4.2 versus 1.5 points (placebo-adjusted 2.8, p=0.0015). Subcutaneous dosing four times a year. Boxed warning for serious meningococcal infections; available only through a REMS."
   },
-  "dm": "2026-11"
+  "dm": "2026-11",
+  "oc": "Approved",
+  "dcd": "2026-11-18"
  },
  {
   "id": "pdufa_rhhby_2026-11-30",
