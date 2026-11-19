@@ -35,6 +35,18 @@ MON = {m: i for i, m in enumerate(
     ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])}
 
 
+def eastern_today():
+    """The FDA's calendar day, in America/New_York: EDT (UTC-4) in summer, EST (UTC-5) from November to
+    March. A fixed UTC-4 made the 11 PM to midnight ET hour 'tomorrow' in winter (2026-11-19, issue 161:
+    at 23:10 EST on Nov 18 the guard called two Nov 18 readouts past-dated and blocked the rebuild).
+    Same day as site_dates.eastern_today, which the builders use."""
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.datetime.now(ZoneInfo("America/New_York")).date()
+    except Exception:
+        return (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=4)).date()
+
+
 def main():
     ds = os.path.join(SITE, "api", "v1", "dataset.mjs")
     if not os.path.exists(ds):
@@ -42,7 +54,7 @@ def main():
         return 0
     src = io.open(ds, encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
-    today = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=4)).date().isoformat()
+    today = eastern_today().isoformat()
 
     fail = 0
     for slug, tas in HUBS.items():

@@ -40,9 +40,15 @@ TARGET_ALT = re.compile(r"target date for [A-Z]{1,6} [^<]{0,200}?is (\d{4}-\d{2}
 
 
 def eastern_today():
-    """The FDA's calendar day. This machine runs Pacific; Eastern is 3 hours ahead, so a
-    Pacific-evening run is already tomorrow in Washington."""
-    return (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=4)).date()
+    """The FDA's calendar day (this machine runs Pacific; Eastern is 3 hours ahead), in America/New_York: EDT (UTC-4) in summer, EST (UTC-5) from November to
+    March. A fixed UTC-4 made the 11 PM to midnight ET hour 'tomorrow' in winter (2026-11-19, issue 161:
+    at 23:10 EST on Nov 18 the guard called two Nov 18 readouts past-dated and blocked the rebuild).
+    Same day as site_dates.eastern_today, which the builders use."""
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.datetime.now(ZoneInfo("America/New_York")).date()
+    except Exception:
+        return (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=4)).date()
 
 
 def test_no_past_target_pending_pages():
