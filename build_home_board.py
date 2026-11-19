@@ -10,7 +10,8 @@ Replaces the hand-maintained (and fragile) homepage board with a real generator,
                gives MNKD's decided tile a graph like the others).
 
 Countdowns stay hydrator-driven (baked value is a placeholder the browser recomputes). Links go to
-/pdufa/{T} when that page exists, else the /ticker/{T} hub, else /calendar -- never a 404.
+/pdufa/{T} when that page exists, else the /ticker/{T} hub, else /calendar -- never a 404. (2026-11-18, design
+changes 4 and 8: an upcoming tile links the event's own page, the one its dataset row links, via event_link.)
 
 Idempotent, backs up index.html first. Run standalone or from the hourly task.
 

@@ -22,6 +22,13 @@ Three design decisions worth stating, because each one was a fork:
    thin, and 478 URLs Google has declined to crawl. Publishing a stub for a heavily-searched ticker
    would add to exactly that pile.
 
+4. THE EVENT PAGE HOLDS IT (design red team 2026-11-18, change 4, which reverses decision 1 for one case). A
+   profile may name "event_page", the /pdufa/ page of the event the dossier is about. Capricor's sourced dossier sat
+   on /ticker/CAPR while the event page the calendar and the home cards link, /pdufa/CAPR-deramiocel, had none of
+   it: one event, two pages, and the deeper one not the one linked. When event_page exists, the full block goes
+   there (with the colours it needs set on the section, since the event page defines none of the hub's), and the
+   hub keeps a short pointer to it between the same markers. No new URL; one page holds the dossier.
+
 Stock reactions are MEASURED from Polygon daily closes at build time, never written into the
 profile. A number typed by hand drifts away from what happened; a number computed from closes
 cannot. Where a company's characterisation and the market's reaction disagree, both are shown and
@@ -29,7 +36,7 @@ neither is adjudicated.
 
     python build_retail_pages.py [--dry-run] [--ticker MRNA]
 """
-import argparse, datetime as dt, glob, html, json, os, sys, urllib.request
+import argparse, datetime as dt, glob, html, json, os, re, sys, urllib.request
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -120,10 +127,35 @@ def passed_note(st):
     return ""
 
 
-def render(p, series):
+EVENT_VARS = "--card:#0c1d38;--line:#1a3358;--mut2:#94a9c9;"
+
+
+def event_page(p):
+    """The /pdufa/ page the profile's event_page names, when it exists, else None."""
+    u = str(p.get("event_page") or "").split("#")[0].rstrip("/")
+    if re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", u) and os.path.exists(os.path.join(SITE, *u.strip("/").split("/"),
+                                                                                  "index.html")):
+        return u
+    return None
+
+
+def pointer(p, url, moves=True):
+    """What the hub keeps when the dossier lives on the event page. It names the stock moves only when the dossier
+    has them (no price series: the reactions are omitted, and the pointer must not promise them)."""
+    what = "trial results, measured stock moves, sourced timeline and caveats" if moves else \
+        "trial results, sourced timeline and caveats"
+    return (f'{BEGIN}<section class="deepdive" style="margin:26px 0 8px">'
+            f'<h2 style="font-size:20px;margin:0 0 6px">{esc(p.get("headline") or p["asset"])}</h2>'
+            f'<p style="font-size:14.5px;line-height:1.75;margin:0 0 8px">{esc(p["plain"])}</p>'
+            f'<p style="font-size:14.5px;margin:0"><a href="{esc(url)}">The full {esc(p["asset"])} dossier, with its '
+            f'{what}, is on its FDA decision page '
+            f'&rarr;</a></p></section>{END}')
+
+
+def render(p, series, on_event=False):
     t = p["ticker"]
     out = [BEGIN,
-           '<section class="deepdive" style="margin:26px 0 8px">']
+           '<section class="deepdive" style="margin:26px 0 8px' + (";" + EVENT_VARS if on_event else "") + '">']
 
     # header + status
     st = p.get("status") or {}
@@ -272,26 +304,37 @@ def main():
             continue
 
         series = bars(t, key)   # 2026-11-10: price_source needs no Polygon key
-        block = render(p, series)
+        ev = event_page(p)
+        if p.get("event_page") and not ev:
+            print(f"  note {t}: event_page {p['event_page']} does not exist; the dossier stays on /ticker/{t}")
+        targets = [(page, render(p, series), ('<div class="legal"', "<footer", "</div></body>"))]
+        if ev:
+            # decision 4: the dossier on the event page (before its FAQ), a pointer on the hub
+            targets = [(os.path.join(SITE, *ev.strip("/").split("/"), "index.html"), render(p, series, True),
+                        ("<h2>FAQ</h2>", "<!--RELATED:BEGIN-->", "<footer", "</div></body>")),
+                       (page, pointer(p, ev, bool(series)), ('<div class="legal"', "<footer", "</div></body>"))]
 
-        doc = open(page, encoding="utf-8", errors="replace").read()
-        if BEGIN in doc:
-            pre, rest = doc.split(BEGIN, 1)
-            doc = pre + block + rest.split(END, 1)[1]
-        else:
-            # Before the footer if we can find it, else at the end of the main wrapper.
-            for anchor in ('<div class="legal"', "<footer", "</div></body>"):
-                if anchor in doc:
-                    doc = doc.replace(anchor, block + anchor, 1)
-                    break
+        for path, block, anchors in targets:
+            doc = open(path, encoding="utf-8", errors="replace").read()
+            if BEGIN in doc:
+                pre, rest = doc.split(BEGIN, 1)
+                doc = pre + block + rest.split(END, 1)[1]
             else:
-                print(f"  SKIP {t}: no insertion point"); skipped += 1; continue
+                # Before the footer (the FAQ, on an event page) if we can find it, else at the end of the wrapper.
+                for anchor in anchors:
+                    if anchor in doc:
+                        doc = doc.replace(anchor, block + anchor, 1)
+                        break
+                else:
+                    print(f"  SKIP {t}: no insertion point in {os.path.relpath(path, SITE)}"); continue
 
-        # The hub was noindexed for being thin. It is not thin now.
-        doc = doc.replace('<meta name="robots" content="noindex,follow">', "")
+            # The hub was noindexed for being thin. It is not thin now. A hub that keeps only the pointer is as thin
+            # as its builder made it, and keeps that builder's robots tag.
+            if "What the data showed" in block:
+                doc = doc.replace('<meta name="robots" content="noindex,follow">', "")
 
-        if not a.dry_run:
-            open(page, "w", encoding="utf-8").write(doc)
+            if not a.dry_run:
+                open(path, "w", encoding="utf-8").write(doc)
         n_react = doc.count("</tr>")
         print(f"  {t}: {len(p['results'])} result(s), {len(p['events'])} timeline entries, "
               f"{len(series):,} sessions available")

@@ -28,6 +28,7 @@ Never publishes an outcome by itself. Facts only; not investment advice. Times a
 """
 import argparse
 import datetime as dt
+import glob
 import io
 import json
 import os
@@ -243,6 +244,18 @@ def _git_show(path):
     return r.stdout.decode("utf-8", "replace") if r.returncode == 0 else None
 
 
+def _load_event_links():
+    """(fn(doc, rel) -> doc with retarget_event_links.py applied, the set of redirected /pdufa/ URLs); (None, set())
+    if the pass cannot load, so a hold is never blocked by it."""
+    try:
+        import retarget_event_links as RL
+        tg = RL.targets()
+        return (lambda doc, rel: RL.apply(doc, rel, tg)), set(tg)
+    except Exception as ex:  # noqa: BLE001
+        print(f"  note: event-link pass unavailable for restored pages ({ex.__class__.__name__})")
+        return None, set()
+
+
 def held_paths(row, slug_hint=None):
     """The pages that render ONLY this row (shared pages keep rebuilding)."""
     out = []
@@ -310,6 +323,7 @@ def cmd_apply(a):
             except Exception as ex:  # noqa: BLE001
                 print(f"  note: calendar_updates not refreshed after the restore ({ex.__class__.__name__}: {ex})")
         restored.append(f"dataset rows x{n}")
+    _event_links = None
     for rid in held_ids:
         slug = rid[5:] if rid.startswith("drug:") else None
         row = rows.get(rid) or {}
@@ -317,6 +331,17 @@ def cmd_apply(a):
             old = _git_show(p)
             if old is None:
                 continue
+            # 2026-11-18 (design change 4): a bare /pdufa/{T} page this build retired into a redirect to the event's
+            # own page stays retired (vercel.json sends it there); and a restored page's event links go straight to
+            # the event's own page, as retarget_event_links.py makes every other page's.
+            rel = os.path.relpath(p, SITE).replace("\\", "/")
+            url = "/" + rel[:-len("/index.html")] if rel.endswith("/index.html") else None
+            if _event_links is None:
+                _event_links = _load_event_links()
+            if url and not os.path.exists(p) and url in _event_links[1]:
+                continue
+            if _event_links[0]:
+                old = _event_links[0](old, rel)
             # 2026-11-18 (change 5): the committed page may predate this build's provenance badges; give it the
             # badges the rest of the site carries, or tests/test_provenance_badges.py would block the deploy
             if p.endswith(".html"):
@@ -346,6 +371,27 @@ def cmd_apply(a):
     # had recorded the freshly built ticker/IBRX page as changed on 10-15, then this step put back the committed
     # page, whose schema says 10-14. A held row was meant to freeze one row and let the site deploy; it froze
     # every deploy. Restore the page's _sitemap_lastmod.json entry and its sitemap <lastmod> with it.
+    # 2026-11-18 (design change 4): a restored /ticker/{T} hub or event page comes from the last commit, which may
+    # predate the dossier's move to the event page (build_retail_pages.py decision 4); both would then disagree with
+    # the profile, and tests/test_one_event_one_page.py would block the deploy over a page the hold only froze. The
+    # dossier block is marker-bounded and comes from retail_profiles/, not from the held row, so it is placed again.
+    moved = set()
+    for rel in restored:
+        m = re.match(r"^ticker/([A-Z][A-Z0-9.]{0,6})/index\.html$", rel)
+        if m:
+            moved.add(m.group(1))
+        for pf in glob.glob(os.path.join(HERE, "retail_profiles", "*.json")):
+            try:
+                ev = str(json.load(io.open(pf, encoding="utf-8")).get("event_page") or "").strip("/")
+            except Exception:  # noqa: BLE001
+                continue
+            if ev and rel == ev + "/index.html":
+                moved.add(os.path.splitext(os.path.basename(pf))[0])
+    for t in sorted(moved):
+        if os.path.exists(os.path.join(HERE, "retail_profiles", f"{t}.json")) and not a.dry_run:
+            r = subprocess.run([sys.executable, "build_retail_pages.py", "--ticker", t], cwd=HERE,
+                               capture_output=True, text=True)
+            print(f"  {t}: dossier placed again on the restored pages (build_retail_pages.py exit {r.returncode})")
     pages = [r for r in restored if r.endswith(".html")]
     if pages and not a.dry_run:
         stf = os.path.join(HERE, "_sitemap_lastmod.json")

@@ -11,12 +11,15 @@ concludes the pending product is already approved.
 
 Two invariants, checked against the live dataset every run:
 
-  1. NO bare /pdufa/{TICKER} redirect in vercel.json for any ticker with an upcoming PDUFA.
+  1. NO bare /pdufa/{TICKER} redirect in vercel.json for any ticker with an upcoming PDUFA, except
+     the one design change 4 (2026-11-18, one page per event) writes: a ticker with exactly ONE
+     upcoming PDUFA may redirect to that row's own page (the url the dataset gives it), which must
+     exist and name the drug. That redirect lands on the live story by construction.
      (Drug-slugged redirects like /pdufa/LNTH-lnth-2501 name a specific finished event and are
      always allowed.)
-  2. /pdufa/{TICKER}/index.html EXISTS for every such ticker and mentions at least one upcoming
-     drug by name -- so the URL serves the live story, whether as a rich event page or as the
-     ticker index build_pdufa_ticker_index.py writes.
+  2. /pdufa/{TICKER}/index.html EXISTS for every other such ticker and mentions at least one
+     upcoming drug by name -- so the URL serves the live story, whether as a rich event page or as
+     the ticker index build_pdufa_ticker_index.py writes.
 
 build_pdufa_ticker_index.py is the fixer; this guard proves it ran and won.
 """
@@ -44,22 +47,35 @@ def main():
     src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"),
                encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows, _ = json.JSONDecoder().raw_decode(src[src.find("["):])
-    up = {}
+    up, up_urls = {}, {}
     for r in rows:
         if (r.get("type") == "PDUFA" and r.get("t")
                 and str(r.get("st", "")).lower() != "decided" and str(r.get("d", "")) >= TODAY):
             up.setdefault(str(r["t"]).upper(), set()).update(toks(r.get("name")))
+            up_urls.setdefault(str(r["t"]).upper(), []).append(str(r.get("url") or "").split("#")[0].rstrip("/"))
 
     cfg = json.load(open(os.path.join(SITE, "vercel.json"), encoding="utf-8"))
     bad = []
+    to_own = set()
     for rd in cfg.get("redirects", []):
         m = re.match(r"^/pdufa/([A-Z]{1,6})$", str(rd.get("source", "")))
         if m and m.group(1) in up:
+            t, dest = m.group(1), str(rd.get("destination") or "").rstrip("/")
+            own = up_urls.get(t, [])
+            dp = os.path.join(SITE, *dest.strip("/").split("/"), "index.html")
+            if len(own) == 1 and dest == own[0] and dest != f"/pdufa/{t}" and os.path.exists(dp):
+                doc = html.unescape(re.sub(r"<[^>]+>", " ", open(dp, encoding="utf-8", errors="replace").read()))
+                if up[t] and not (up[t] & toks(doc)):
+                    bad.append(f"/pdufa/{t} redirects to {dest}, which never names its upcoming drug")
+                to_own.add(t)
+                continue
             bad.append(f"/pdufa/{m.group(1)} redirects to {rd.get('destination')} while "
                        f"{m.group(1)} has an upcoming PDUFA -- a live catalyst resolving to a "
                        f"dead event")
 
     for t, names in sorted(up.items()):
+        if t in to_own:
+            continue
         p = os.path.join(SITE, "pdufa", t, "index.html")
         if not os.path.exists(p):
             bad.append(f"/pdufa/{t} has neither page nor (permitted) redirect: 404 for a ticker "

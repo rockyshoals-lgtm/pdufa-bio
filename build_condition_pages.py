@@ -220,6 +220,9 @@ def rowhtml(r):
         rid = (slugify(r["tk"]) + "-" + slugify(r["drug"])).strip("-")[:70]
         if os.path.exists(os.path.join(SITE, "readout", rid, "index.html")):
             u = "/readout/" + rid
+    elif re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", u or "") and os.path.exists(os.path.join(SITE, *u.strip("/").split("/"),
+                                                                                         "index.html")):
+        pass   # the event's own page (design red team 2026-11-18, change 4: one page per event, every surface links it)
     elif r["tk"] and os.path.exists(os.path.join(SITE, "pdufa", r["tk"], "index.html")):
         u = "/pdufa/" + r["tk"]
     if not u:

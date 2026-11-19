@@ -16,7 +16,9 @@ from collections import defaultdict
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(HERE, "pdufa_site_src")
 sys.path.insert(0, HERE)
-from canonicalise_duplicate_event_pages import DUPES  # one map, one owner
+from canonicalise_duplicate_event_pages import active  # one map, one owner
+# a bare /pdufa/{T} in the map that is now the ticker's index (build_pdufa_ticker_index.py) is no duplicate
+DUPES = active()
 # the same sBLA under two sponsors' tickers; both pages are intentional (auditor 09-15)
 ALLOWED_TWINS = {("GILD-trodelvy", "MRK-trodelvy")}
 SKIP = re.compile(r"[\\/]_pdufa_(x?bak\d*|bak\d*)[\\/]|[\\/]_[a-z]+bak")

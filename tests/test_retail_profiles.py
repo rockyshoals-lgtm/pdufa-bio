@@ -136,6 +136,21 @@ def main():
                     print(f"  FAIL {t}: caveat says the date of {d} stands; the status says {st['date']}")
 
         page = os.path.join(SITE, "ticker", t, "index.html")
+        # change 4 (design red team 2026-11-18): a profile that names its event page publishes the dossier there,
+        # and the hub keeps only a pointer to it
+        ev = str(p.get("event_page") or "").rstrip("/")
+        if ev:
+            evp = os.path.join(SITE, *ev.strip("/").split("/"), "index.html")
+            if not re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", ev) or not os.path.exists(evp):
+                ok = False
+                print(f"  FAIL {t}: event_page {ev} is not a page of this site")
+            else:
+                hub = open(page, encoding="utf-8", errors="replace").read() if os.path.exists(page) else ""
+                hb = hub.split(BEGIN, 1)[1].split(END, 1)[0] if BEGIN in hub else ""
+                if f'href="{ev}"' not in hb or "What the data showed" in hb:
+                    ok = False
+                    print(f"  FAIL {t}: /ticker/{t} should carry a pointer to {ev}, not the dossier itself")
+                page = evp
         if os.path.exists(page):
             doc = open(page, encoding="utf-8", errors="replace").read()
             if BEGIN in doc:
@@ -157,7 +172,7 @@ def main():
                     print(f"  FAIL {t}: published deep dive cites no sources")
                 if "noindex" in doc:
                     ok = False
-                    print(f"  FAIL {t}: hub still noindexed despite carrying a full deep dive")
+                    print(f"  FAIL {t}: {os.path.relpath(page, SITE)} still noindexed despite carrying a full deep dive")
                 print(f"  ok   {t}: {len(p['results'])} result(s), {len(p['events'])} timeline "
                       f"entries, block {len(blk):,} bytes")
             else:

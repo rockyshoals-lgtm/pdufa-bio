@@ -23,6 +23,7 @@ import html
 import io
 import json
 import os
+import re
 import sys
 
 try:
@@ -173,7 +174,11 @@ def main():
         tk, d = esc(r.get("t")), str(r.get("d"))
         days = (dt.date.fromisoformat(d) - today).days
         when = "today" if days == 0 else ("tomorrow" if days == 1 else f"in {days} days")
-        return (f'<a class="row" href="/pdufa/{tk}">'
+        # the event's own page when the row links one (change 4: one page per event); else the ticker's /pdufa/ page
+        u = str(r.get("url") or "").split("#")[0].rstrip("/")
+        own = u if (re.match(r"^/pdufa/[A-Za-z0-9.\-]+$", u) and
+                    os.path.exists(os.path.join(SITE, *u.strip("/").split("/"), "index.html"))) else f"/pdufa/{tk}"
+        return (f'<a class="row" href="{esc(own)}">'
                 f'<div class="t">{tk} &middot; {pretty(d)} <span style="color:#e3ba5e">'
                 f'{when}</span></div>'
                 f'<div class="d">{esc(_cdn(r.get("name")))}</div></a>')
