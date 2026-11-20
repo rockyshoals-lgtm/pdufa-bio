@@ -105,6 +105,10 @@ def paren_rescue(raw):
     for inner in re.findall(r"\(([^()]{3,45})\)", str(raw or "")):
         if not re.search(r"[a-z]", inner):
             continue
+        # "(Innovations in Wound Healing meeting)" is a venue: judge the WHOLE parenthetical for organisation words,
+        # because the core reduction keeps only "Innovations" and would publish /drug/innovations (2026-11-20).
+        if {w.lower() for w in re.findall(r"[A-Za-z]+", inner)} & ORG_WORDS:
+            continue
         got = clean_name(inner, rescue=False)
         if got:
             return got
@@ -135,6 +139,19 @@ def clean_name(raw, rescue=True):
     s = re.sub(r"\s+(?:AAV|rAAV\w*|lentiviral|mRNA|siRNA)?\s*\b(?:gene|cell)[ -]therapy\b", " ", s,
                flags=re.I)
     s = re.sub(r"\s+", " ", s).strip(" -:\u2013")
+    # 2026-11-20 (indexing round 3): a trial-stage tail is the event, not the drug. CORE keeps two words, so
+    # "Brepocitinib Phase 3 trial" published /drug/brepocitinib-phase titled "brepocitinib Phase", beside the real
+    # /drug/brepocitinib: 28 such pages (-phase, -study) sat in the sitemap as near-duplicates of their drug.
+    # Cut from the stage word to the end; never inside a word ("PhaseBio" keeps its name).
+    cut = re.sub(r"\s+(?:Phase\s*(?:[0-9IV]|$)|study\b|trial\b).*$", "", s, flags=re.I).strip(" -:\u2013")
+    # What is left of "VLU study" is an indication acronym (venous leg ulcer), not a drug: a bare capitals word
+    # with no digit, left by a study or trial cut, names the study.
+    if cut != s and re.fullmatch(r"[A-Z]{2,5}", cut):
+        return paren_rescue(raw) if rescue else None
+    s = cut
+    # A duration is a protocol, never a drug: "12-week placebo-controlled study" published /drug/12-week-....
+    if re.match(r"^\d+[- ](?:week|day|month)s?\b", s, re.I):
+        return paren_rescue(raw) if rescue else None
     prev = None
     while s != prev:
         prev = s

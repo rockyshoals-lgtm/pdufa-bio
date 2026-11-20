@@ -2808,6 +2808,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/linaclotide",
+   "destination": "/drug/linzess",
+   "permanent": true
+  },
+  {
    "source": "/drug/linvoseltamab-gcpt",
    "destination": "/drug/lynozyfic",
    "permanent": true
@@ -2953,6 +2958,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/palbociclib",
+   "destination": "/drug/ibrance",
+   "permanent": true
+  },
+  {
    "source": "/drug/paltusotine",
    "destination": "/drug/palsonify",
    "permanent": true
@@ -2960,6 +2970,11 @@
   {
    "source": "/drug/pariglasgene-brecaparvovec",
    "destination": "/drug/dtx401",
+   "permanent": true
+  },
+  {
+   "source": "/drug/pediatric-plaque-psoriasis",
+   "destination": "/drug/tapinarof",
    "permanent": true
   },
   {
@@ -3010,6 +3025,11 @@
   {
    "source": "/drug/prefilled-syringe",
    "destination": "/drug/shingrix",
+   "permanent": true
+  },
+  {
+   "source": "/drug/proposed-golimumab-biosimilar",
+   "destination": "/drug/avt05",
    "permanent": true
   },
   {
@@ -3108,8 +3128,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/tabelecleucel",
+   "destination": "/drug/ebvallo",
+   "permanent": true
+  },
+  {
    "source": "/drug/tafasitamab",
    "destination": "/drug/monjuvi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/talazoparib",
+   "destination": "/drug/talzenna",
    "permanent": true
   },
   {
@@ -3375,6 +3405,136 @@
   {
    "source": "/drug/xrx",
    "destination": "/ticker/XRTX",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ag-236-phase",
+   "destination": "/drug/ag-236",
+   "permanent": true
+  },
+  {
+   "source": "/drug/al001-phase",
+   "destination": "/drug/al001",
+   "permanent": true
+  },
+  {
+   "source": "/drug/aln-2232-phase",
+   "destination": "/drug/aln-2232",
+   "permanent": true
+  },
+  {
+   "source": "/drug/aln-6400-phase",
+   "destination": "/drug/aln-6400",
+   "permanent": true
+  },
+  {
+   "source": "/drug/amt-191-phase",
+   "destination": "/drug/amt-191",
+   "permanent": true
+  },
+  {
+   "source": "/drug/amt-260-phase",
+   "destination": "/drug/amt-260",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ap03-phase",
+   "destination": "/drug/ap03",
+   "permanent": true
+  },
+  {
+   "source": "/drug/arv-393-phase",
+   "destination": "/drug/arv-393",
+   "permanent": true
+  },
+  {
+   "source": "/drug/axpaxli-phase",
+   "destination": "/drug/axpaxli",
+   "permanent": true
+  },
+  {
+   "source": "/drug/barzolvolimab-phase",
+   "destination": "/drug/barzolvolimab",
+   "permanent": true
+  },
+  {
+   "source": "/drug/brepocitinib-phase",
+   "destination": "/drug/brepocitinib",
+   "permanent": true
+  },
+  {
+   "source": "/drug/gx-03-phase",
+   "destination": "/drug/gx-03",
+   "permanent": true
+  },
+  {
+   "source": "/drug/hwk-206-phase",
+   "destination": "/drug/hwk-206",
+   "permanent": true
+  },
+  {
+   "source": "/drug/im-1021-phase",
+   "destination": "/drug/im-1021",
+   "permanent": true
+  },
+  {
+   "source": "/drug/lasofoxifene-phase",
+   "destination": "/drug/lasofoxifene",
+   "permanent": true
+  },
+  {
+   "source": "/drug/mar002-phase",
+   "destination": "/drug/mar002",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ml-007c-ma-phase",
+   "destination": "/drug/ml-007c-ma",
+   "permanent": true
+  },
+  {
+   "source": "/drug/obexelimab-phase",
+   "destination": "/drug/obexelimab",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ocu400-phase",
+   "destination": "/drug/ocu400",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ocu410st-phase",
+   "destination": "/drug/ocu410st",
+   "permanent": true
+  },
+  {
+   "source": "/drug/opgx-best1-phase",
+   "destination": "/drug/opgx-best1",
+   "permanent": true
+  },
+  {
+   "source": "/drug/rap-219-phase",
+   "destination": "/drug/rap-219",
+   "permanent": true
+  },
+  {
+   "source": "/drug/scy-770-phase",
+   "destination": "/drug/scy-770",
+   "permanent": true
+  },
+  {
+   "source": "/drug/spy072-phase",
+   "destination": "/drug/spy072",
+   "permanent": true
+  },
+  {
+   "source": "/drug/srk-439-phase",
+   "destination": "/drug/srk-439",
+   "permanent": true
+  },
+  {
+   "source": "/drug/th103-phase",
+   "destination": "/drug/th103",
    "permanent": true
   }
  ],
