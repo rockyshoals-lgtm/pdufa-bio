@@ -8873,9 +8873,9 @@
 },
 "pdufa_site_src/pdufa/MRK-ifinatamab-deruxtecan/index.html": {
 "date": "2026-11-20",
-"hash": "576ffdf6e2bc1516",
+"hash": "750a409ab7e92e06",
 "hv": 3,
-"ts": "2026-11-20T08:21:00-05:00"
+"ts": "2026-11-20T09:21:35-05:00"
 },
 "pdufa_site_src/pdufa/MRK-keytruda/index.html": {
 "date": "2026-11-20",
@@ -9601,9 +9601,9 @@
 },
 "pdufa_site_src/runup-by-year/index.html": {
 "date": "2026-11-20",
-"hash": "54d51e1110217f00",
+"hash": "16221590626c4e5a",
 "hv": 3,
-"ts": "2026-11-20T07:35:04-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/screener/index.html": {
 "date": "2026-11-20",
@@ -9613,9 +9613,9 @@
 },
 "pdufa_site_src/sitemap/index.html": {
 "date": "2026-11-20",
-"hash": "b289e1f53cb24e5e",
+"hash": "53fa71ff1fa1a3b7",
 "hv": 3,
-"ts": "2026-11-20T08:21:02-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/sls/index.html": {
 "date": "2026-11-18",
@@ -9701,9 +9701,9 @@
 },
 "pdufa_site_src/ticker/ADCT/index.html": {
 "date": "2026-11-20",
-"hash": "df5a0750381d5a01",
+"hash": "20259f051ea1d019",
 "hv": 3,
-"ts": "2026-11-20T07:35:07-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/ADMA/index.html": {
 "date": "2026-11-18",
@@ -9813,10 +9813,10 @@
 "ts": "2026-11-20T07:35:06-05:00"
 },
 "pdufa_site_src/ticker/AMLX/index.html": {
-"date": "2026-11-18",
-"hash": "41297cc24f280357",
+"date": "2026-11-20",
+"hash": "bf896bb1c66dad17",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/AMPH/index.html": {
 "date": "2026-11-20",
@@ -10135,10 +10135,10 @@
 "ts": "2026-10-24T17:46:12-04:00"
 },
 "pdufa_site_src/ticker/BYSI/index.html": {
-"date": "2026-11-18",
-"hash": "1ef129b370d52523",
+"date": "2026-11-20",
+"hash": "7689fbe7b3b2e11d",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/CADL/index.html": {
 "date": "2026-11-20",
@@ -10557,10 +10557,10 @@
 "ts": "2026-11-19T21:21:03-05:00"
 },
 "pdufa_site_src/ticker/HUMA/index.html": {
-"date": "2026-11-18",
-"hash": "352d7fe87a071fc8",
+"date": "2026-11-20",
+"hash": "3e1bfcf6c8d2e275",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/IBRX/index.html": {
 "date": "2026-11-20",
@@ -10684,9 +10684,9 @@
 },
 "pdufa_site_src/ticker/IOVA/index.html": {
 "date": "2026-11-20",
-"hash": "3d91e5e015ac0917",
+"hash": "52e35bbdd76353b4",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/IPHA/index.html": {
 "date": "2026-11-20",
@@ -10948,10 +10948,10 @@
 "ts": "2026-11-18T19:21:58-05:00"
 },
 "pdufa_site_src/ticker/MDGL/index.html": {
-"date": "2026-11-18",
-"hash": "2887df7054ad04a4",
+"date": "2026-11-20",
+"hash": "e7a5bfee7c9396ef",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/MESO/index.html": {
 "date": "2026-11-20",
@@ -10961,9 +10961,9 @@
 },
 "pdufa_site_src/ticker/MGNX/index.html": {
 "date": "2026-11-20",
-"hash": "fdd92db672a4175e",
+"hash": "beecf063469e7a07",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/MIRM/index.html": {
 "date": "2026-11-18",
@@ -11114,10 +11114,10 @@
 "ts": "2026-11-20T07:35:06-05:00"
 },
 "pdufa_site_src/ticker/OCUL/index.html": {
-"date": "2026-11-18",
-"hash": "fc489c9f830845f5",
+"date": "2026-11-20",
+"hash": "06bf35183853388f",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/OGEN/index.html": {
 "date": "2026-11-12",
@@ -11173,9 +11173,9 @@
 },
 "pdufa_site_src/ticker/PBYI/index.html": {
 "date": "2026-11-20",
-"hash": "311d6ff1ad3df726",
+"hash": "074b5f9fb5312480",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/PCVX/index.html": {
 "date": "2026-11-18",
@@ -11295,9 +11295,9 @@
 },
 "pdufa_site_src/ticker/QURE/index.html": {
 "date": "2026-11-20",
-"hash": "16e3f2b9dc8f56d5",
+"hash": "c7c7fd7b87b1ec6d",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/RAPP/index.html": {
 "date": "2026-11-18",
@@ -11388,10 +11388,10 @@
 "ts": "2026-11-20T07:35:06-05:00"
 },
 "pdufa_site_src/ticker/SIGA/index.html": {
-"date": "2026-11-18",
-"hash": "34e0d875c9ae7065",
+"date": "2026-11-20",
+"hash": "7271e1eab1eb13c2",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/SION/index.html": {
 "date": "2026-11-18",
@@ -11411,10 +11411,10 @@
 "ts": "2026-11-18T19:21:58-05:00"
 },
 "pdufa_site_src/ticker/SLGL/index.html": {
-"date": "2026-11-18",
-"hash": "dbad78cc3406d4c2",
+"date": "2026-11-20",
+"hash": "c89fa65f970fb115",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/SLN/index.html": {
 "date": "2026-11-18",
@@ -11528,10 +11528,10 @@
 "ts": "2026-11-17T01:45:54-05:00"
 },
 "pdufa_site_src/ticker/TARS/index.html": {
-"date": "2026-11-18",
-"hash": "296739fd7da25063",
+"date": "2026-11-20",
+"hash": "296b0ca542382972",
 "hv": 3,
-"ts": "2026-11-18T19:21:58-05:00"
+"ts": "2026-11-20T09:21:37-05:00"
 },
 "pdufa_site_src/ticker/TECX/index.html": {
 "date": "2026-11-18",

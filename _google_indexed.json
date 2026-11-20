@@ -11,14 +11,21 @@
   "/calendar/2027",
   "/clinical-trial-success-rates",
   "/condition/cancer",
+  "/condition/rare-disease",
   "/crl",
   "/drug/aficamten",
+  "/fda-approval-decisions-this-week",
+  "/fda-approvals/2026/october",
   "/fda-decision/RHHBY-2026-11-13",
   "/fda-decisions-today",
   "/pdufa/BBIO-bbp-418",
+  "/pdufa/BMY",
+  "/pdufa/CAPR",
   "/pdufa/CAPR-deramiocel",
   "/pdufa/CYTK-aficamten",
   "/pdufa/SVRA-molbreevi",
+  "/research/fda-decision-timing",
+  "/runup-by-year",
   "/ticker/ABBV"
  ]
 }
