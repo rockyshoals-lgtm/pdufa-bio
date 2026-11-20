@@ -67,7 +67,7 @@ Full list: https://www.pdufa.bio/calendar
 
 ## Latest FDA decisions in our archive
 
-- REGN, Cemdisiran (C5 RNAi) - (NIMBLE): Approved, announced 2026-11-18 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/REGN-2026-11-18
+- REGN, Cemdisiran (C5 RNAi) - (NIMBLE): Approved, FDA action 2026-11-18. https://www.pdufa.bio/fda-decision/REGN-2026-11-18
 - GSK, Neladalkib (NVL-655) - (ALKOVE-1): Approved, FDA action 2026-11-17. https://www.pdufa.bio/fda-decision/GSK-2026-11-17
 - TEVA, IGALMI (dexmedetomidine sublingual film) - (SERENITY At-Home): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/TEVA-2026-11-16
 - RHHBY, Giredestrant (+ everolimus): Approved, FDA action 2026-11-16. https://www.pdufa.bio/fda-decision/RHHBY-2026-11-16

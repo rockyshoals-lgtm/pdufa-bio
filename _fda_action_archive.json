@@ -1192,5 +1192,18 @@
    "COSENTYX",
    "secukinumab"
   ]
+ },
+ "SNY-2026-11-18": {
+  "basis": "FDA News Release read directly 2026-11-20",
+  "checked": "2026-11-20",
+  "date": "2026-11-18",
+  "name": "Infilbray (venglustat)",
+  "oc": "Approved",
+  "record": "FDA News Release, November 18, 2026",
+  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease",
+  "terms": [
+   "Infilbray",
+   "venglustat"
+  ]
  }
 }

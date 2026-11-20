@@ -149,6 +149,11 @@ def build(e, px, write=True):
     for _b, _e in (("<!--BC:BEGIN-->", "<!--BC:END-->"), ("<!--DMOD:BEGIN-->", "<!--DMOD:END-->"),
                    ("<!--DFAQ:BEGIN-->", "<!--DFAQ:END-->")):
         head = re.sub(re.escape(_b) + r".*?" + re.escape(_e), "", head, flags=re.S)
+    # 2026-11-20 (red team): ...and its NewsArticle block and article:published_time. SNY/JNJ/AZN/NVS-2026-11
+    # were built carrying VERA's headline ("Atacicept Approved Jul 7, 2026"), VERA's letter as isBasedOn and
+    # datePublished 2026-07-26. inject_decision_article_schema.py writes this page's own on the next build.
+    head = re.sub(r'<script type="application/ld\+json" id="ld-article">.*?</script>', "", head, flags=re.S)
+    head = re.sub(r'<meta property="article:published_time" content="[^"]*">', "", head)
     tail = tpl[tpl.index('<div class="legal">'):]
 
     # REGEX, not a literal of the template's original title: the VERA template's title

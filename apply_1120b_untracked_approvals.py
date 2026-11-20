@@ -2,7 +2,7 @@
 """apply_1120b_untracked_approvals.py -- three FDA approvals on drugs we have pages for, which the site never recorded.
 
 Found 2026-11-20 by checking openFDA Drugs@FDA (AP submissions, ORIG or EFFICACY class, Nov 1-20, read in Chrome
-~09:30 UTC = 04:30 ET; RULE 1) against /fda-decision. None had a PDUFA row, so no watcher armed, and each drug page
+before 08:45 UTC = 03:45 ET; RULE 1) against /fda-decision. None had a PDUFA row, so no watcher armed, and each drug page
 still showed an older decision as the latest:
 
 1. JNJ RYBREVANT FASPRO, HNSCC (issue 135 item). FDA letter BLA 761433/S-002 "ACCELERATED APPROVAL", read in full:
@@ -22,7 +22,7 @@ still showed an older decision as the latest:
    2026-11-17; the letter's own signature says Nov 16, and the announcement came that evening, so Nov 16 is used.
    /drug/cosentyx said "most recent: Mar 13, 2026".
 
-No sponsor disclosed a goal date for any of these, so no margin is claimed. Not tracked, not added (no primary source
+We hold no disclosed goal date for any of these, so no margin is claimed. Not tracked, not added (no primary source
 read): KLYGEFA (gefurulimab, AZN/Alexion) BLA 761488 AP 11-13; ZURZUVAE efficacy supplement 11-13.
 Facts only; not investment advice.
 """
@@ -46,7 +46,7 @@ NVS_L = "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Ori
 NVS_R = ("https://www.globenewswire.com/news-release/2026/11/17/3404251/0/en/novartis-cosentyx-becomes-first-and-only-"
          "fda-approved-anti-il-17-biologic-for-people-with-polymyalgia-rheumatica-pmr.html")
 
-# closes, FMP historical-price-eod-light, read 2026-11-20 ~09:40 UTC; Eastern trading days; Oct 16 matches the cache.
+# closes, FMP historical-price-eod-light, read 2026-11-20 before 08:45 UTC; Eastern trading days; Oct 16 matches the cache.
 DAYS = ["2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-26", "2026-10-27", "2026-10-28",
         "2026-10-29", "2026-10-30", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-09",
         "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19"]
@@ -77,9 +77,8 @@ SPECS = [
                        f'that the supplemental application was received on May 20, 2026. Johnson &amp; Johnson announced '
                        f'the approval the same evening and reported a 42 percent overall response rate (95 percent '
                        f'confidence interval, 32 to 52 percent) (<a href="{JNJ_R}" {A}>Johnson &amp; Johnson, '
-                       f'November 5, 2026</a>). Under accelerated approval, continued approval may depend on '
-                       f'confirmatory evidence. No PDUFA goal date was publicly disclosed, so no early or late margin '
-                       f'is given.'),
+                       f'November 5, 2026</a>). We hold no publicly disclosed PDUFA goal date for this supplement, so '
+                       f'no early or late margin is given.'),
         "source": JNJ_L, "source_label": "FDA approval letter, BLA 761433 S-002",
         "h1": ('RYBREVANT FASPRO <span class="g">FDA approval for head and neck cancer</span>: Nov 5, 2026'),
     },
@@ -97,8 +96,8 @@ SPECS = [
                        f'combination with enfortumab vedotin-ejfv as neoadjuvant treatment, followed by Imfinzi '
                        f'monotherapy as adjuvant treatment after radical cystectomy, was approved for adults with '
                        f'muscle-invasive bladder cancer who are ineligible for or have refused cisplatin-based '
-                       f'chemotherapy (<a href="{AZN_R}" {A}>AstraZeneca, November 13, 2026</a>). No PDUFA goal date '
-                       f'was publicly disclosed, so no early or late margin is given.'),
+                       f'chemotherapy (<a href="{AZN_R}" {A}>AstraZeneca, November 13, 2026</a>). We hold no publicly '
+                       f'disclosed PDUFA goal date for this supplement, so no early or late margin is given.'),
         "source": AZN_D, "source_label": "Drugs@FDA, BLA 761069 S-059",
         "h1": ('Imfinzi (durvalumab) <span class="g">FDA approval for muscle-invasive bladder cancer</span>: '
                'Nov 13, 2026'),
@@ -114,12 +113,12 @@ SPECS = [
         "pdufa_note": (f'The FDA\'s supplement approval letter for BLA 125504 supplement 101, signed November 16, 2026 '
                        f'(<a href="{NVS_L}" {A}>FDA letter</a>), adds a new indication for the treatment of adult '
                        f'patients with polymyalgia rheumatica (PMR); the letter states that the supplemental application '
-                       f'was received on January 16, 2026. Drugs@FDA lists the approval under November 17; the date '
+                       f'was received on January 16, 2026. openFDA\'s Drugs@FDA data lists the approval under November 17; the date '
                        f'here is the letter\'s own signature date. Novartis announced the approval that evening (US '
                        f'Eastern time; its release is datelined Basel, November 17) for Cosentyx 150 mg in adults with '
                        f'PMR who have had an inadequate response to corticosteroids or who cannot tolerate a '
-                       f'corticosteroid taper (<a href="{NVS_R}" {A}>Novartis, November 17, 2026</a>). No PDUFA goal '
-                       f'date was publicly disclosed, so no early or late margin is given.'),
+                       f'corticosteroid taper (<a href="{NVS_R}" {A}>Novartis, November 17, 2026</a>). We hold no publicly '
+                       f'disclosed PDUFA goal date for this supplement, so no early or late margin is given.'),
         "source": NVS_L, "source_label": "FDA approval letter, BLA 125504 S-101",
         "h1": ('COSENTYX (secukinumab) <span class="g">FDA approval for polymyalgia rheumatica</span>: Nov 16, 2026'),
     },

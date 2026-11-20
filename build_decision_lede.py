@@ -128,11 +128,16 @@ def main():
                        # 2026-11-20: the same for inject_first_recorded.py, which also runs first. The Infilbray page
                        # (SNY-2026-11-18) had VERIFIED then FIRSTREC under the banner, matched nothing and got no lede.
                        r'(?:<!--FIRSTREC:BEGIN-->.*?<!--FIRSTREC:END-->\s*)?)'
-                       r'<p class="sub">(.*?)</p>', doc, re.S)
+                       # 2026-11-20 (red team): optional. dedupe_decision_summary.py removes the headline paragraph
+                       # when it repeats the lede, and 18 approved pages (REGN-2026-11-18 among them) then matched
+                       # nothing, so their ledes stopped following the FDA's record. With no headline, only the
+                       # lede is rewritten.
+                       r'(?:<p class="sub">(.*?)</p>)?', doc, re.S)
         if not hm:
             stats["skipped"] += 1
             continue
-        head = html.unescape(hm.group(2))
+        has_head = hm.group(2) is not None
+        head = html.unescape(hm.group(2) or "")
         old_drug = old_ind = None
         if " · " in head:
             a_, b_ = head.split(" · ", 1)
@@ -183,7 +188,7 @@ def main():
         block = (f'{B}<p class="sub fact" style="font-size:17px;color:#eef4fc;line-height:1.5">'
                  f'{sent}</p>{E}\n')
         # the headline below: drop a leading sentence the lede now states; clean cut fragments
-        newhead = hm.group(2)
+        newhead = hm.group(2) or ""
         lead = re.match(r"^\s*[^.]{3,160}? was approved by the FDA on [A-Z][a-z]+ \d{1,2}, \d{4}.*?\.\s+(.+)$",
                         html.unescape(newhead), re.S)
         if lead:
@@ -205,7 +210,8 @@ def main():
             tail = ""
         # 2026-10-24: no whitespace between the lede, the Verified line and the headline; inject_verified_against.py writes
         # them adjacent, and the two steps used to trade a newline every run (pages grew, lastmod moved).
-        new = (doc[:hm.start()] + g1 + (block.rstrip() + tail.strip() if tail else block) + f'<p class="sub">{newhead}</p>' + doc[hm.end():])
+        new = (doc[:hm.start()] + g1 + (block.rstrip() + tail.strip() if tail else block)
+               + (f'<p class="sub">{newhead}</p>' if has_head else "") + doc[hm.end():])
         if new != doc:
             changed += 1
             if not a.dry_run:

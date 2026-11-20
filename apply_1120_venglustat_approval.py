@@ -8,7 +8,8 @@ Resolves the two drug-page watcher leads that have held rows since Nov 18 (issue
    first treatment for the neurological symptoms of Type 3 Gaucher disease (GD3) in adults and pediatric patients
    weighing at least 15 kg". Randomized, double-blind, multicenter study of 43 patients aged 12+ with GD3 previously
    stabilized on enzyme replacement therapy (ERT); once-daily oral Infilbray vs IV ERT every two weeks for 52 weeks; at
-   Week 52 improvement on a measure combining ataxia and cognitive assessments vs ERT. Orphan Drug designation and
+   Week 52 improvement on a measure combining ataxia and cognitive assessments vs ERT. Most frequent side effects:
+   gastrointestinal symptoms and adverse effects on mood; serious psychiatric risks incl. suicidal ideation and behavior. Orphan Drug designation and
    Priority Review. "The approval of Infilbray was granted to Genzyme Corporation, a Sanofi Company."
    We never held a PDUFA row for venglustat (only an estimated SNY readout row; no goal date on our calendar), so, as for
    daraxonrasib (RVMD, Aug 26), the decision is a hand row in _drug_pages_manual.json plus a decision page. The FDA
@@ -39,14 +40,15 @@ SNY_CLOSES = {"2026-10-19": 39.57, "2026-10-20": 41.4, "2026-10-21": 40.97, "202
               "2026-11-02": 45.55, "2026-11-03": 45.33, "2026-11-04": 47.47, "2026-11-05": 46.91, "2026-11-06": 47.04,
               "2026-11-09": 48.12, "2026-11-10": 48.23, "2026-11-11": 48.43, "2026-11-12": 48.46, "2026-11-13": 48.37,
               "2026-11-16": 48.39, "2026-11-17": 47.53, "2026-11-18": 47.12, "2026-11-19": 46.06}
-INDICATION = ("Neurological manifestations of Type 3 Gaucher disease (GD3) in adults and pediatric patients weighing "
+INDICATION = ("Neurological symptoms of Type 3 Gaucher disease (GD3) in adults and pediatric patients weighing "
               "at least 15 kg")
 REVIEW = ("Per the FDA, Infilbray (venglustat) tablets were approved on November 18, 2026 with Orphan Drug designation "
           "and Priority Review; the approval was granted to Genzyme Corporation, a Sanofi company. The study: 43 "
           "patients aged 12 and older with GD3, previously stabilized on enzyme replacement therapy, randomized to "
           "once-daily oral Infilbray or intravenous enzyme replacement therapy every two weeks for 52 weeks; at Week 52 "
-          "Infilbray patients improved on a measure combining ataxia and cognitive assessments. No PDUFA goal date was "
-          "publicly disclosed, so this application was never a dated event on our calendar.")
+          "Infilbray patients improved on a measure combining ataxia and cognitive assessments compared with patients "
+          "taking enzyme replacement therapy. We hold no publicly disclosed PDUFA goal date for this application, so it "
+          "was never a dated event on our calendar.")
 
 
 def jload(p, default=None):
@@ -60,6 +62,10 @@ def jsave(p, d):
 
 # 1. hand row (the drug page merges it with dataset rows)
 m = jload("_drug_pages_manual.json")
+for r in m["rows"]:        # re-run: keep the hand row's text in step with this script
+    if r.get("url") == PAGE:
+        r["_d"].update({"indication": INDICATION, "review": REVIEW})
+        jsave("_drug_pages_manual.json", m)
 if not any(r.get("url") == PAGE for r in m["rows"]):
     m["rows"].append({
         "t": "SNY", "company": "Sanofi", "d": TODAY, "dp": "day", "type": "PDUFA", "st": "Decided",
@@ -75,6 +81,15 @@ if not any(a.get("slug") == "venglustat" and a.get("date") == TODAY for a in c["
     c["approvals"].append({"slug": "venglustat", "date": TODAY, "brand": "Infilbray", "source": FDA})
     jsave("_drug_approvals_confirmed.json", c)
 
+# 2b. FDA action day for the page (no dataset row holds it): the FDA's own release, which names the day
+fa = jload("_fda_action_archive.json", {})
+if not (fa.get("SNY-2026-11-18") or {}).get("date"):
+    fa["SNY-2026-11-18"] = {"basis": "FDA News Release read directly 2026-11-20", "checked": "2026-11-20",
+                            "date": TODAY, "name": "Infilbray (venglustat)", "oc": "Approved",
+                            "record": "FDA News Release, November 18, 2026", "source_url": FDA,
+                            "terms": ["Infilbray", "venglustat"]}
+    jsave("_fda_action_archive.json", fa)
+
 # 3. FAQ on the decision page
 faq = jload("_decision_extra_faq.json", {})
 faq["SNY-2026-11-18"] = [
@@ -87,10 +102,10 @@ faq["SNY-2026-11-18"] = [
      "Per the FDA, a randomized, double-blind study of 43 patients aged 12 and older with Type 3 Gaucher disease who had "
      "been stabilized on enzyme replacement therapy. Patients took Infilbray once daily by mouth or continued "
      "intravenous enzyme replacement therapy every two weeks for 52 weeks; at Week 52 the Infilbray group improved on a "
-     "measure combining ataxia and cognitive assessments."],
+     "measure combining ataxia and cognitive assessments compared with the enzyme replacement therapy group."],
     ["Did venglustat have a PDUFA date?",
-     "No goal date was publicly disclosed, so it was not a dated event on our calendar. The FDA's release says the "
-     "application had Priority Review and Orphan Drug designation."]]
+     "We hold no publicly disclosed goal date for it, so it was not a dated event on our calendar. The FDA's release "
+     "says the application had Priority Review and Orphan Drug designation."]]
 jsave("_decision_extra_faq.json", faq)
 
 # 4. decision page spec (built by build_decision_page.py)
@@ -109,11 +124,12 @@ spec = [{
                    f'double-blind, multicenter study enrolled 43 patients aged 12 and older with GD3 who had been '
                    f'stabilized on enzyme replacement therapy; patients took Infilbray once daily by mouth or '
                    f'intravenous enzyme replacement therapy every two weeks for 52 weeks, and at Week 52 the Infilbray '
-                   f'group improved on a measure combining ataxia and cognitive assessments. The FDA lists '
+                   f'group improved on a measure combining ataxia and cognitive assessments compared with the enzyme replacement '
+                   f'therapy group. The FDA lists '
                    f'gastrointestinal symptoms and mood effects as the most frequent side effects and reports serious '
                    f'psychiatric risks including suicidal ideation and behavior. The application had Orphan Drug '
-                   f'designation and Priority Review. No PDUFA goal date was publicly disclosed, so this application '
-                   f'was never a dated event on our calendar.'),
+                   f'designation and Priority Review. We hold no publicly disclosed PDUFA goal date for this '
+                   f'application, so it was never a dated event on our calendar.'),
     "source": FDA, "source_label": "FDA News Release, November 18, 2026",
     "h1": ('Infilbray (venglustat) <span class="g">FDA approval for Type 3 Gaucher disease</span>: Nov 18, 2026'),
 }]
