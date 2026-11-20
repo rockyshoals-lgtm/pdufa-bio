@@ -143,7 +143,10 @@ def clean_name(raw, rescue=True):
     # "Brepocitinib Phase 3 trial" published /drug/brepocitinib-phase titled "brepocitinib Phase", beside the real
     # /drug/brepocitinib: 28 such pages (-phase, -study) sat in the sitemap as near-duplicates of their drug.
     # Cut from the stage word to the end; never inside a word ("PhaseBio" keeps its name).
-    cut = re.sub(r"\s+(?:Phase\s*(?:[0-9IV]|$)|study\b|trial\b).*$", "", s, flags=re.I).strip(" -:\u2013")
+    # 2026-11-20 (repeated phrases): a disease stage ("paxalisib Stage IV TNBC study") and a dosing-arm word
+    # ("VK2735 maintenance dosing study") are the event too; without them CORE published /drug/paxalisib-stage.
+    cut = re.sub(r"\s+(?:Phase\s*(?:[0-9IV]|$)|study\b|trial\b|Stage\s+(?:[0-9]|[IV]+\b)|maintenance\b).*$", "", s,
+                 flags=re.I).strip(" -:\u2013")
     # What is left of "VLU study" is an indication acronym (venous leg ulcer), not a drug: a bare capitals word
     # with no digit, left by a study or trial cut, names the study.
     if cut != s and re.fullmatch(r"[A-Z]{2,5}", cut):
@@ -670,7 +673,10 @@ def main():
             lede += f"is {_art(comps[0])} {esc(', '.join(comps[:2]))} program"
             if inds:
                 _i0 = (pend_inds or ap_inds or inds)[0]
-                lede += f" in {esc(_i0[:1].lower() + _i0[1:] if _i0[:2] != _i0[:2].upper() else _i0)}"
+                _i0 = _i0[:1].lower() + _i0[1:] if _i0[:2] != _i0[:2].upper() else _i0
+                # 2026-11-20: Tecentriq's indication begins "In combination with ...", and the template's own
+                # " in " made "program in in combination". Don't write the preposition twice.
+                lede += f" {esc(_i0)}" if _i0.lower().startswith("in ") else f" in {esc(_i0)}"
             lede += ". "
         elif inds:
             lede += f"is in development for {esc(inds[0])}. "
