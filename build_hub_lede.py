@@ -318,6 +318,72 @@ def homepage_sentence():
     return s, ahead, dec_2026
 
 
+# --- Search snippets for the three pages Bing serves for "pdufa" and "fda approval decision biotech" (2026-11-20) ---
+# Bing Webmaster, 3 months to Nov 18: "pdufa" 3.0K impressions, 19 clicks (0.63%), served /calendar (pos 5.2), / (8.9)
+# and /decisions (8.6); "fda approval decision biotech" 1.1K impressions, 0 clicks, served /calendar, /decisions, /.
+# The old snippets described a calendar, which every rival has. These lead with what rivals lack: decisions dated and
+# linked to their primary source, and the FDA's own released CRLs. Every number is read from a page this build
+# publishes, and a number that cannot be read drops its clause rather than going stale.
+def _published_counts():
+    """{"sourced": n decisions linking a primary source, "crl_db": n released CRLs} as the pages publish them."""
+    out = {}
+    try:
+        d = open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8", errors="replace").read()
+        m = re.search(r"([\d,]+) of [\d,]+ FDA decisions in this archive link to a primary source", d)
+        if m:
+            out["sourced"] = int(m.group(1).replace(",", ""))
+    except OSError:
+        pass
+    try:
+        c = open(os.path.join(SITE, "crl", "index.html"), encoding="utf-8", errors="replace").read()
+        m = re.search(r"<title>[^<]*?([\d,]+) Released CRLs", c)
+        if m:
+            out["crl_db"] = int(m.group(1).replace(",", ""))
+    except OSError:
+        pass
+    return out
+
+
+def set_snippet(doc, title=None, desc=None):
+    """Write <title> and meta description, with their og:/twitter: mirrors, so all four say the same thing."""
+    if title:
+        doc = re.sub(r"(<title[^>]*>).*?(</title>)", lambda m: m.group(1) + html.escape(title, quote=False) + m.group(2),
+                     doc, count=1, flags=re.S)
+        for k in ('property="og:title"', 'name="twitter:title"'):
+            doc = re.sub(r'(<meta ' + k + r' content=")[^"]*(")',
+                         lambda m: m.group(1) + html.escape(title, quote=True) + m.group(2), doc, count=1)
+    if desc:
+        for k in ('name="description"', 'property="og:description"', 'name="twitter:description"'):
+            doc = re.sub(r'(<meta ' + k + r' content=")[^"]*(")',
+                         lambda m: m.group(1) + html.escape(desc, quote=True) + m.group(2), doc, count=1)
+    return doc
+
+
+def hub_snippets(rel, rows, counts):
+    """(title, description) for /calendar, /decisions or the homepage ("" = homepage)."""
+    ap = sum(1 for r in rows if r["approved"])
+    crl = sum(1 for r in rows if r["crl"])
+    src = counts.get("sourced")
+    db = counts.get("crl_db")
+    if rel == "calendar":
+        # Keyword-first: "FDA Calendar 2026" is the phrase /calendar ranks on (see the note above), so it stays first.
+        return (f"FDA Calendar 2026: {len(rows)} PDUFA Dates, Approvals and CRLs | pdufa.bio",
+                "2026 PDUFA dates by month, from company filings, press releases and FDA notices, with drug, "
+                "company and indication. Decided dates show the approval or CRL.")
+    if rel == "decisions":
+        d = f"FDA decisions by date: {ap} approvals and {crl} Complete Response Letters"
+        d += f", {src} linked to a primary source" if src else ""
+        d += f", and a database of {db} CRLs the FDA has released." if db else "."
+        return f"FDA Decisions Archive: {ap} Approvals and {crl} CRLs by Date | pdufa.bio", d
+    # homepage: without both counts the sentence is too thin to beat the description already on the page, so keep that
+    title = "PDUFA Dates 2026: FDA Decision Calendar and CRL Database | pdufa.bio"
+    if not (src and db):
+        return title, None
+    d = f"Upcoming PDUFA dates and {ap + crl} dated FDA decisions"
+    d += f", {src} linked to a primary source, plus a database of {db} CRLs the FDA has released."
+    return title, d
+
+
 TARGETS = ["calendar", "decisions", "decisions/approvals", "decisions/crl", "readouts", "adcomm"]
 
 
@@ -326,6 +392,7 @@ def main():
     a = ap_.parse_args()
 
     done = skipped = 0
+    counts = _published_counts()
     years = sorted(os.path.basename(os.path.dirname(p))
                    for p in glob.glob(os.path.join(SITE, "decisions", "20[0-9][0-9]", "index.html")))
     for rel in TARGETS + [f"decisions/{y}" for y in years]:
@@ -356,10 +423,10 @@ def main():
         # Audit 2026-10-16 3c-4: Bing AI share for "fda calendar 2026" slipped five reads running while the title
         # led "2026 FDA PDUFA Calendar". Lead with the query's own words; "PDUFA" stays in the title.
         titles = {
-            "calendar":  f"FDA Calendar 2026: {len(rows)} PDUFA Dates, Updated Daily | pdufa.bio",
-            "decisions": f"FDA Decisions Archive: {len(rows)} Tracked, Updated Daily | pdufa.bio",
             "readouts":  f"Clinical Trial Readout Calendar: {len(rows)} Dates | pdufa.bio",
         }
+        if rel in ("calendar", "decisions"):
+            doc = set_snippet(doc, *hub_snippets(rel, rows, counts))
         if rel in titles:
             doc = re.sub(r"(<title[^>]*>).*?(</title>)",
                          lambda m: m.group(1) + titles[rel] + m.group(2), doc, count=1, flags=re.S)
@@ -439,6 +506,11 @@ def main():
         if n_tiles < 3:
             print(f"  !! homepage stat tiles: only {n_tiles}/3 matched the expected "
                   f"markup -- the unmatched ones are still showing their OLD numbers")
+
+        dec_doc = open(os.path.join(SITE, "decisions", "index.html"), encoding="utf-8", errors="replace").read()
+        dec_rows = parse(re.sub(re.escape(B) + ".*?" + re.escape(E), "", dec_doc, flags=re.S))
+        if dec_rows:
+            doc = set_snippet(doc, *hub_snippets("", dec_rows, counts))
 
         if not a.dry_run:
             open(hp, "w", encoding="utf-8").write(doc)
