@@ -17,6 +17,8 @@ One owner for three questions every run-up script used to answer on its own, dif
      reason. A page marked "label corrected" says in its own CRL reason that it was not a CRL (a trial readout,
      a Refusal-to-File, an approval on another date) and is left out too. Rows removed from the study are kept,
      with the reason, in runup_study_excluded.csv.
+     The 2020-2024 research rows have no pages; since 2026-11-20 each needs an in-study entry with a source in
+     runup_study_research_sources.json (the FDA's Orange Book or CRL letters, or a dated release of the action).
 
 Facts only: nothing here decides an outcome; it reads what the page publishes and refuses what the page itself
 calls unverified.
@@ -32,6 +34,7 @@ SITE = os.path.join(HERE, "pdufa_site_src")
 EXCLUSIONS = os.path.join(HERE, "runup_study_exclusions.json")
 EXCLUDED_CSV = os.path.join(HERE, "runup_study_excluded.csv")
 INDICATIONS = os.path.join(HERE, "runup_study_indications.json")
+RESEARCH_SOURCES = os.path.join(HERE, "runup_study_research_sources.json")
 # The /fda-decision archive starts 2025-01-02. From then on every study row must match a published decision
 # page; a row whose page was retired (a moved date, a royalty holder's duplicate, the false SELLAS CRL) is not a
 # published decision. Rows before this date are the 2020-2024 research set, which has no per-event pages.
@@ -102,6 +105,25 @@ def excluded_keys(reason_prefix=""):
             if r.get("reason", "").startswith(reason_prefix)}
 
 
+_RESEARCH = None
+
+
+def load_research_sources():
+    """runup_study_research_sources.json: the 2020-2024 research rows, each checked against a primary source.
+
+    {"TK-DATE": {"in_study": true, "outcome": "APPROVAL"|"CRL", "drug": ..., "source": ..., "checked": ...}} for a row
+    whose FDA action a source states on that date, or {"in_study": false, "reason": ..., ...} for one that is not an
+    FDA approval or CRL (a trial readout, an advisory vote, an EUA), is dated off the action, is priced under a company
+    that was not a party to the product, or counts an action twice. Found 2026-11-20: 23% of the research rows came
+    from the old pipeline reading "complete response" or "approval" in trial-readout text.
+    """
+    global _RESEARCH
+    if _RESEARCH is None:
+        _RESEARCH = (json.load(open(RESEARCH_SOURCES, encoding="utf-8")).get("rows", {})
+                     if os.path.exists(RESEARCH_SOURCES) else {})
+    return _RESEARCH
+
+
 def load_sourced_indications():
     """runup_study_indications.json: indications read from a primary source for decision pages that carry none."""
     if not os.path.exists(INDICATIONS):
@@ -130,8 +152,9 @@ def expected_indication(tk, d, asset, facts=None, sourced=None):
     return "", "no sourced indication"
 
 
-def eligibility(tk, d, facts=None, excl=None):
-    """(eligible, reason). Rows with no decision page (the 2020-2024 research rows) are judged elsewhere."""
+def eligibility(tk, d, facts=None, excl=None, research=None):
+    """(eligible, reason). A row with no decision page (the 2020-2024 research set) needs a primary source on record
+    in runup_study_research_sources.json."""
     facts = facts if facts is not None else decision_facts(tk, d)
     excl = excl if excl is not None else load_exclusions()
     if facts is None:
@@ -139,7 +162,16 @@ def eligibility(tk, d, facts=None, excl=None):
             return False, "no published decision page (page retired or moved to another date)"
         if page_id(tk, d) in excl:   # a 2020-2024 research row checked and found not to be an FDA action
             return False, "research row re-checked: " + excl[page_id(tk, d)].get("reason", "")
-        return True, "no decision page (2020-2024 research set)"
+        # 2026-11-20: a research row needs the same thing a decision page needs, a source that states the FDA action
+        # on that date (runup_study_research_sources.json). Until then any row the old pipeline built was assumed good.
+        e = (research if research is not None else load_research_sources()).get(page_id(tk, d))
+        if not e:
+            return False, "research row with no recorded primary source for an FDA action on this date"
+        if not e.get("in_study"):
+            return False, "research row re-checked 2026-11-20: " + e.get("reason", "")
+        if not e.get("source"):
+            return False, "research row's entry names no source"
+        return True, "research row (2020-2024), primary source on record"
     if facts["page"] in excl:
         return False, "source re-checked: " + excl[facts["page"]].get("reason", "")
     if facts["outcome"] == "UNVERIFIED":

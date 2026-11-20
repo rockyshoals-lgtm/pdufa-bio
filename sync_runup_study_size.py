@@ -50,7 +50,8 @@ def load_stats():
     n = int(s["n_events"]); t120 = int(s["t120_coverage_n"]); rate = float(s["approval_rate"])
     y0, y1 = s["date_min"][:4], s["date_max"][:4]
     by = {y: v for y, v in (s.get("by_year") or {}).items()}
-    if not (1500 <= n <= 5000 and 0 < t120 <= n and 50 <= rate <= 95):
+    # 2026-11-20: floor lowered from 1,500 when the research set was source-checked (1,671 -> ~1,120 events)
+    if not (1000 <= n <= 5000 and 0 < t120 <= n and 50 <= rate <= 95):
         raise SystemExit(f"REFUSING: implausible stats n={n} t120={t120} rate={rate}")
     return n, t120, rate, y0, y1, by
 
@@ -59,8 +60,37 @@ def fmt(n):
     return f"{n:,}"
 
 
-STUDY_NOTE = ("Its events from 2020 to 2024 come from our research set and are not each checked against a source; "
-              "every record below links its own page, which names its source or says plainly that it has none.")
+# 2026-11-20: the research set was checked row by row (runup_study_research_sources.json); the note says so. It must
+# keep matching the pattern below ("Its events from 2020 to 2024 come from our research set ... has none.").
+STUDY_NOTE = ("Its events from 2020 to 2024 come from our research set, each re-checked on 2026-11-20 against the FDA's "
+              "records or a dated report of the action; every record below links its own page, which names its source "
+              "or says plainly that it has none.")
+
+
+FDA_RANGE = (75.0, 81.0)   # the FDA's first-cycle figure as /fda-approval-rate states it ("75-81%")
+
+
+def gap_paragraph(rate):
+    """The paragraph under the two rates on /fda-approval-rate, true for where our rate sits against the FDA's."""
+    if rate < FDA_RANGE[0]:
+        return ("<b>The gap is real, and it&rsquo;s the honest part.</b> Our rate sits below the FDA&rsquo;s even though "
+                "ours counts every review cycle and the FDA&rsquo;s counts only the first: a resubmission after a CRL is "
+                "approved far more often than a first submission, so an all-cycle rate is the flattering one, and ours is "
+                "still lower. That is what you should expect: <b>our universe is publicly-traded biotech</b>, smaller "
+                "sponsors, first-in-class assets, thinner CMC and clinical-operations budgets. The FDA&rsquo;s figure "
+                "covers <i>all</i> NDAs and BLAs, including big-pharma supplements that are far easier to get through on "
+                "the first pass.")
+    if rate <= FDA_RANGE[1]:
+        return ("<b>Ours sits inside the FDA&rsquo;s range.</b> The two are not the same measure: ours counts every "
+                "review cycle and the FDA&rsquo;s counts only the first, and a resubmission after a CRL is approved far "
+                "more often than a first submission. Our universe is <b>publicly-traded drugmakers</b>; the FDA&rsquo;s "
+                "figure covers <i>all</i> NDAs and BLAs.")
+    return ("<b>Why ours is higher.</b> The two are not the same measure. Ours counts every review cycle and the "
+            "FDA&rsquo;s counts only the first, and a resubmission after a CRL is approved far more often than a first "
+            "submission, so an all-cycle rate runs higher. Ours also counts a supplemental approval for a new use, which "
+            "large drugmakers file often and usually win, the same as a first approval, and a CRL enters it only once the "
+            "company or the FDA has made the letter public. Our universe is <b>publicly-traded drugmakers</b>, from small "
+            "biotechs to the largest companies; the FDA&rsquo;s figure covers <i>all</i> NDAs and BLAs.")
 
 
 def edit(rel, subs, dry):
@@ -132,8 +162,10 @@ def main():
          rf"\g<1>{rate:.1f}%\g<2>"),
         (r'(<div style="font-size:12px;color:#7c93b6">)[^<]*n=\d{1,2},\d{3}[^<]*(</div>)',
          rf"\g<1>approvals / (approvals + CRLs), all review cycles: our universe, n={fmt(n)}, {y0}-{y1}\g<2>"),
-        (r"(<b>The gap is real, and it&rsquo;s the honest part\.</b>)[^<]*?(<b>our universe is publicly-traded biotech</b>)",
-         r"\g<1> Our rate sits below the FDA&rsquo;s even though ours counts every review cycle and the FDA&rsquo;s counts only the first: a resubmission after a CRL is approved far more often than a first submission, so an all-cycle rate is the flattering one, and ours is still lower. That is what you should expect: \g<2>"),
+        # 2026-11-20: the gap paragraph follows the numbers. It said "ours is still lower" whatever the rate; after the
+        # research set was source-checked (trial readouts logged as CRLs removed) ours is above the FDA's 75-81%.
+        (r"(?s)<b>(?:The gap is real, and it&rsquo;s the honest part\.|Ours sits inside the FDA&rsquo;s range\.|"
+         r"Why ours is higher\.)</b>.*?(?=<br><br>\s*We publish both numbers)", gap_paragraph(rate)),
         (r"(Our figure: )\d{1,2},\d{3}( FDA decisions on listed biotechs\.)(?: All review cycles, \d{4}(?:&ndash;|-)\d{4}; the run-up dataset carries no review-cycle flag, so we do not publish a first-cycle rate of our own\.)*",
          rf"\g<1>{fmt(n)}\g<2> All review cycles, {y0}-{y1}; the run-up dataset carries no review-cycle flag, so we do not publish a first-cycle rate of our own."),
         (r"We publish both numbers rather than (?:the flattering one|only ours)\.", "We publish both numbers rather than only ours."),

@@ -12,6 +12,9 @@ Runs after extend_runup_study.py and before runup_study_stats.py, every rebuild.
   2. A row whose decision page is not a primary-sourced approval or CRL leaves the study: "outcome unverified"
      pages (price-inferred; many are trial readouts, not PDUFA events) and the pages listed in
      runup_study_exclusions.json (cited source re-checked and found not to announce the FDA action).
+     A 2020-2024 research row (no page) stays only with an in-study entry and source in
+     runup_study_research_sources.json (2026-11-20: 23% of the research set was trial readouts, advisory votes or EUAs
+     the old pipeline read as approvals or CRLs; others were misdated, double-counted or priced under the wrong company).
   3. One FDA action, one row: two pages of one ticker whose Drugs@FDA validation names the same application and
      action date are one decision; the page dated on or soonest after the action stays.
   4. One price event, one row. Two rows with the same ticker and the same eve-of-decision close are the same
@@ -39,7 +42,8 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from runup_study_events import (EXCLUDED_CSV, decision_facts, eligibility, expected_indication,  # noqa: E402
-                                load_exclusions, load_sourced_indications)
+                                RESEARCH_SOURCES, load_exclusions, load_research_sources,
+                                load_sourced_indications)
 
 CSVF = os.path.join(HERE, "pdufa_runup_bifrost_v2.csv")
 EXCL_COLS = ["cache_key", "ticker", "pdufa_date", "eve_date", "asset", "outcome", "reason", "kept_row"]
@@ -50,6 +54,10 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
+    # without the research sources file every 2020-2024 row would read as unsourced and leave the study (red team
+    # 2026-11-20); a missing file is a broken checkout, not a finding
+    if not load_research_sources():
+        raise SystemExit(f"REFUSING: {os.path.basename(RESEARCH_SOURCES)} is missing or empty")
     rows = list(csv.DictReader(open(CSVF, encoding="utf-8-sig", errors="replace")))
     cols = list(rows[0].keys())
     excl = load_exclusions()
