@@ -39,6 +39,11 @@ def fetch(url, timeout=25):
         return r.read().decode('utf-8', 'replace')
 
 
+def _norm_url(u):
+    """scheme-less, query-less, no trailing slash: http://x/y/?a=1 and https://x/y are one URL."""
+    return re.sub(r'^https?://', '', (u or '').split('?')[0].split('#')[0]).rstrip('/').lower()
+
+
 def covered(title, desc, link, archive, dataset_urls):
     """Is this FDA approval already represented in our decided archive?
 
@@ -54,7 +59,11 @@ def covered(title, desc, link, archive, dataset_urls):
     is reported separately: calling an unverifiable item "missing" is how a reconciliation report
     starts crying wolf, and Lipfendra IS in our archive under enlicitide.
     """
-    if link and link.split('?')[0] in dataset_urls:
+    # 2026-11-18: the press RSS gives http:// links while our rows store the https:// form, so Voceryq (in
+    # the dataset since its approval) was reported NOT IN ARCHIVE. Compare without the scheme, as an EXACT
+    # match against the dataset's own URLs (a substring test let www.fda.gov or a shorter slug "cover" anything).
+    bare = _norm_url(link)
+    if bare and (bare in dataset_urls):
         return True
     names = set()
     # "...approval to iberdomide (Zenbexus, Bristol-Myers Squibb Company)" -> both names
@@ -84,7 +93,8 @@ def main():
     # also match on the FDA article LINK: an approval whose FDA URL is already a source in our data
     # is covered even when the FDA headline never names the drug (e.g. Lipfendra's descriptive title).
     ds = os.path.join(SITE, 'api', 'v1', 'dataset.mjs')
-    dataset_urls = open(ds, encoding='utf-8').read() if os.path.exists(ds) else ''
+    _txt = open(ds, encoding='utf-8').read() if os.path.exists(ds) else ''
+    dataset_urls = {_norm_url(u) for u in re.findall(r'https?://[^\s"\'<>\\]+', _txt)} - {''}
 
     try:
         xml = fetch(RSS)

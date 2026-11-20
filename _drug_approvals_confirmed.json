@@ -139,6 +139,12 @@
    "date": "2026-11-16",
    "brand": "Cosentyx",
    "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf"
+  },
+  {
+   "slug": "talzenna",
+   "date": "2026-10-26",
+   "brand": "Talzenna",
+   "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive"
   }
  ]
 }

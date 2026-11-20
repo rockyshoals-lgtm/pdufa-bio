@@ -4014,11 +4014,11 @@ export default [
     "post_5d": -1.49,
     "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
-   "goal_source": "Jazz Pharmaceuticals 8-K 2026-05-07 (EX-99.1, Q1 2026 results)",
+   "goal_source": "Zymeworks 8-K 2026-05-07 (EX-99.1, Q1 2026 results)",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
    "goal_source_quote": "nidatamab in first-line HER2-positive unresectable locally advanced or metastatic gastroesophageal adenocarcinoma (GEA) PDUFA target action date of August 25, 2026 China s NMPA has accepted the sBLA for zanidatamab the U.S. FDA has granted Breakthrough Therapy Designation to zanidat",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
-   "source": "Jazz Pharmaceuticals 8-K 2026-05-07 (EX-99.1, Q1 2026 results)",
+   "source": "Zymeworks 8-K 2026-05-07 (EX-99.1, Q1 2026 results)",
    "fda_action_date": "2026-08-25",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761416Orig1s003ltr.pdf",
    "fda_action_record": "BLA 761416 S-003"
@@ -4075,11 +4075,11 @@ export default [
     "post_5d": 2.22,
     "source": "pdufa.bio run-up study (split-adjusted daily closes)"
    },
-   "goal_source": "Jazz Pharmaceuticals 8-K 2026-05-07 (EX-99.1) -- Jazz holds the BLA; Zymeworks licensed zanidatamab to Jazz",
+   "goal_source": "Zymeworks 8-K 2026-05-07 (EX-99.1) -- Jazz holds the BLA; Zymeworks licensed zanidatamab to Jazz",
    "goal_source_url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
    "goal_source_quote": "nidatamab in first-line HER2-positive unresectable locally advanced or metastatic gastroesophageal adenocarcinoma (GEA) PDUFA target action date of August 25, 2026 China s NMPA has accepted the sBLA for zanidatamab the U.S. FDA has granted Breakthrough Therapy Designation to zanidat",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
-   "source": "Jazz Pharmaceuticals 8-K 2026-05-07 (EX-99.1) -- Jazz holds the BLA; Zymeworks licensed zanidatamab to Jazz",
+   "source": "Zymeworks 8-K 2026-05-07 (EX-99.1) -- Jazz holds the BLA; Zymeworks licensed zanidatamab to Jazz",
    "fda_action_date": "2026-08-25",
    "fda_action_source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761416Orig1s003ltr.pdf",
    "fda_action_record": "BLA 761416 S-003"
@@ -7315,7 +7315,7 @@ export default [
  {
   "id": "pdufa_pfe_2026-09-30",
   "t": "PFE",
-  "company": "Roivant/Priovant",
+  "company": "Pfizer Inc.",
   "d": "2026-09-30",
   "dp": "quarter",
   "name": "Brepocitinib (VALOR)",
@@ -8377,9 +8377,9 @@ export default [
     "date": "2026-10-30",
     "headline": "Acumen Pharmaceuticals Announces Topline Results from Phase 2 ALTITUDE-AD Clinical Trial of Sabirnetug (ACU193) for the Treatment of Early Alzheimer's Disease; Trial Did Not Meet Primary Endpoint",
     "url": "https://www.globenewswire.com/news-release/2026/10/30/3392145/0/en/acumen-pharmaceuticals-announces-topline-results-from-phase-2-altitude-ad-clinical-trial-of-sabirnetug-acu193-for-the-treatment-of-early-alzheimer-s-disease-trial-did-not-meet-prim.html",
-    "checked": "2026-11-01",
-    "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here",
-    "reviewed": "2026-11-17"
+    "checked": "2026-11-18",
+    "reviewed": "2026-11-18",
+    "basis": "company release for this trial, checked by hand: Acumen's own release (GlobeNewswire, Oct 30, 2026, 07:00 ET) names NCT06335173: ALTITUDE-AD did not meet its primary endpoint (iADRS at 18 months, neither dose separated from placebo)."
    },
    "registry": {
     "overall_status": "ACTIVE_NOT_RECRUITING",
@@ -8400,14 +8400,14 @@ export default [
   "id": "readout_annx_2026-10-15",
   "t": "ANNX",
   "company": "Annexon, Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Tanruprubart",
+  "d": "2026-12-31",
+  "dp": "quarter",
+  "name": "Vonaprument (ARCHER II, geographic atrophy)",
   "type": "Readout",
   "ta": "Other",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06510816",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/09/3398918/0/en/annexon-reports-third-quarter-2026-financial-results-business-updates-and-key-anticipated-milestones.html",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": {
@@ -8420,41 +8420,67 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06510816",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-20"
-   }
+   "source": "company guidance (company release)",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/09/3398918/0/en/annexon-reports-third-quarter-2026-financial-results-business-updates-and-key-anticipated-milestones.html",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row showed before this check"
+    },
+    {
+     "date": "2026-12-31",
+     "changed": "2026-11-18",
+     "why": "Row named tanruprubart, but NCT06510816 is ARCHER II, Annexon's Phase 3 of vonaprument (formerly ANX007) in geographic atrophy. No results yet; Annexon guides the Month 15 primary endpoint assessment to Q4 2026."
+    }
+   ],
+   "guided_precision": "quarter",
+   "guided_window": "2026-Q4",
+   "guided_label": "DMC Month 15 assessment Q4 2026; data Q1 2027 if met",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-09",
+   "guidance_text": "ARCHER II Phase 3 Month 15 single study primary endpoint assessment expected in the fourth quarter of 2026",
+   "red_team": "2026-11-18: stale-window check; source re-opened by an independent red-team pass. "
   },
-  "dm": "2026-10"
+  "dm": "2026-12"
  },
  {
   "id": "readout_biib_2026-10-15",
   "t": "BIIB",
   "company": "Biogen Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Litifilimab",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "Litifilimab (AMETHYST Phase 3, cutaneous lupus)",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
-  "st": "Estimated",
-  "url": "/pdufa/BIIB",
+  "st": "Guided",
+  "url": "https://investors.biogen.com/node/31031",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "21 sponsor press releases (FMP) through 2026-11-20"
-   }
-  },
-  "dm": "2026-10"
+   "source": "company guidance (company release)",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row showed before this check"
+    },
+    {
+     "date": "2027-06-30",
+     "changed": "2026-11-18",
+     "why": "Row had no trial. The only litifilimab trial completing in October 2026 is AMETHYST (NCT05531565, CLE). Biogen released Phase 2 (Part A) 52-week data Oct 2, 2026 and said the Phase 3 part remains blinded, with a readout in the first half of 2027."
+    }
+   ],
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "Phase 3 part expected to read out 1H 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-10-02",
+   "guidance_text": "The Phase 3 part of the AMETHYST study remains blinded and is expected to read out in the first half of 2027.",
+   "source_url": "https://investors.biogen.com/node/31031",
+   "red_team": "2026-11-18: stale-window check; source re-opened by an independent red-team pass. "
+  }
  },
  {
   "id": "readout_cldx_2026-10-15",
@@ -8600,11 +8626,11 @@ export default [
    "resolution": {
     "state": "sponsor_release",
     "date": "2026-09-23",
-    "headline": "Roivant Announces Topline Results from Proof-of-Concept Study of IMVT-1402 in Cutaneous Lupus Erythematosus",
-    "url": "https://www.globenewswire.com/news-release/2026/09/23/3367356/34323/en/roivant-announces-topline-results-from-proof-of-concept-study-of-imvt-1402-in-cutaneous-lupus-erythematosus.html",
-    "checked": "2026-11-01",
-    "basis": "sponsor press-release headline naming the drug with results language; outcome not summarised here",
-    "reviewed": "2026-11-17"
+    "headline": "Immunovant Announces Topline Results from Proof-of-Concept Study of IMVT-1402 in Cutaneous Lupus Erythematosus",
+    "url": "https://www.globenewswire.com/news-release/2026/09/23/3367346/0/en/immunovant-announces-topline-results-from-proof-of-concept-study-of-imvt-1402-in-cutaneous-lupus-erythematosus.html",
+    "checked": "2026-11-18",
+    "reviewed": "2026-11-18",
+    "basis": "company release for this trial, checked by hand: Row pointed at Roivant's parallel release; Immunovant's own release (Sep 23, 2026) names NCT06980805 and is the primary source. Period 1 did not reach statistical significance on CLASI-A at Week 12."
    },
    "guidance_checked": {
     "date": "2026-11-17",
@@ -8617,14 +8643,14 @@ export default [
   "id": "readout_incy_2026-10-15",
   "t": "INCY",
   "company": "Incyte Corp",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Povorcitinib",
+  "d": "2026-12-31",
+  "dp": "quarter",
+  "name": "Povorcitinib (STOP-PN1/STOP-PN2, prurigo nodularis)",
   "type": "Readout",
   "ta": "Dermatology",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06516952",
+  "st": "Guided",
+  "url": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": {
@@ -8637,42 +8663,29 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06516952",
+   "source": "company guidance (company release)",
+   "source_url": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
    "ta_basis": "ClinicalTrials.gov conditions: Prurigo Nodularis",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "16 sponsor press releases (FMP) through 2026-11-20"
-   }
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row showed before this check"
+    },
+    {
+     "date": "2026-12-31",
+     "changed": "2026-11-18",
+     "why": "No STOP-PN1 results yet. Incyte's Q3 release (Oct 29, 2026) guides the prurigo nodularis Phase 3 data to Q4 2026."
+    }
+   ],
+   "guided_precision": "quarter",
+   "guided_window": "2026-Q4",
+   "guided_label": "Phase 3 prurigo nodularis data expected Q4 2026",
+   "guided_form": "press release",
+   "guided_filed": "2026-10-29",
+   "guidance_text": "Data from the Phase 3 studies (STOP-PN1 and STOP-PN2) evaluating povorcitinib in patients with moderate to severe prurigo nodularis (PN) are anticipated in the fourth quarter of 2026",
+   "red_team": "2026-11-18: stale-window check; source re-opened by an independent red-team pass. "
   },
-  "dm": "2026-10"
- },
- {
-  "id": "readout_mrk_2026-10-15",
-  "t": "MRK",
-  "company": "Merck & Co., Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Pembrolizumab",
-  "type": "Readout",
-  "ta": "Oncology",
-  "cap": "",
-  "st": "Estimated",
-  "url": "/pdufa/MRK",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "35 sponsor press releases (FMP) through 2026-11-20"
-   }
-  },
-  "dm": "2026-10"
+  "dm": "2026-12"
  },
  {
   "id": "readout_ogn_2026-10-15",
@@ -8680,7 +8693,7 @@ export default [
   "company": "Organon & Co.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "150\u03bcg CFA (Elonva\u00ae) at stimulation day (SD) 1 an",
+  "name": "Tapinarof (pediatric plaque psoriasis)",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
@@ -8702,8 +8715,10 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT05172726",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "12 sponsor press releases (FMP) through 2026-11-20; ClinicalTrials.gov 2026-11-20"
+    "checked": "2026-11-18",
+    "reviewed": "2026-11-18",
+    "searched": "Organon releases since Sep 1, 2026 (FMP); ClinicalTrials.gov NCT05172726 (completed, no results posted) and NCT06134479; web search",
+    "basis": "Row label was another sponsor's trial (Elonva, NCT06134479). NCT05172726 is Organon's open-label Phase 3 of tapinarof cream in children with plaque psoriasis (safety endpoints), completed Oct 14, 2026; no results released or posted."
    },
    "registry": {
     "overall_status": "COMPLETED",
@@ -8720,14 +8735,14 @@ export default [
   "id": "readout_olma_2026-06-15",
   "t": "OLMA",
   "company": "Olema Pharmaceuticals, Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Palazestrant",
+  "d": "2027-03-31",
+  "dp": "quarter",
+  "name": "Palazestrant (OPERA-01)",
   "type": "Readout",
   "ta": "Oncology",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06016738",
+  "st": "Guided",
+  "url": "https://www.globenewswire.com/news-release/2026/11/10/3399295/0/en/olema-oncology-reports-third-quarter-2026-financial-and-operating-results.html",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": {
@@ -8740,7 +8755,7 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
+   "source": "company guidance (company release)",
    "date_history": [
     {
      "date": "2026-06-15",
@@ -8750,16 +8765,23 @@ export default [
      "date": "2026-10-15",
      "changed": "2026-07-11",
      "why": "ClinicalTrials.gov's primary-completion estimate for this trial moved; the row was re-synced to the registry on 2026-07-11. /readouts defines an estimated date as that registry window, so the row follows it."
+    },
+    {
+     "date": "2027-03-31",
+     "changed": "2026-11-18",
+     "why": "No OPERA-01 results yet. Olema's Q3 release (Nov 10, 2026) guides top-line data to Q1 2027."
     }
    ],
-   "source_url": "https://clinicaltrials.gov/study/NCT06016738",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "9 sponsor press releases (FMP) through 2026-11-20"
-   }
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/10/3399295/0/en/olema-oncology-reports-third-quarter-2026-financial-and-operating-results.html",
+   "guided_precision": "quarter",
+   "guided_window": "2027-Q1",
+   "guided_label": "OPERA-01 top-line data expected Q1 2027",
+   "guided_form": "press release",
+   "guided_filed": "2026-11-10",
+   "guidance_text": "On track to announce top-line data from the pivotal Phase 3 OPERA-01 trial in the first quarter of 2027",
+   "red_team": "2026-11-18: stale-window check; source re-opened by an independent red-team pass. "
   },
-  "dm": "2026-10"
+  "dm": "2027-03"
  },
  {
   "id": "readout_pbyi_2026-12-15",
@@ -8808,34 +8830,10 @@ export default [
    },
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "7 sponsor press releases (FMP) through 2026-11-20; ClinicalTrials.gov 2026-11-20"
-   }
-  },
-  "dm": "2026-10"
- },
- {
-  "id": "readout_pfe_2026-10-15",
-  "t": "PFE",
-  "company": "Roivant/Priovant",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Palbociclib",
-  "type": "Readout",
-  "ta": "Other",
-  "cap": "",
-  "st": "Estimated",
-  "url": "/pdufa/PFE",
-  "ua": "2026-07-11T15:23:27Z",
-  "_d": {
-   "nct_id": null,
-   "indication": null,
-   "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "23 sponsor press releases (FMP) through 2026-11-20"
+    "checked": "2026-11-18",
+    "reviewed": "2026-11-18",
+    "searched": "Puma releases since Sep 1, 2026 incl. the Q3 2026 release of Nov 5 (alisertib only); ClinicalTrials.gov NCT03377387 (completed, no results posted); web search",
+    "basis": "NCT03377387 is a Memorial Sloan Kettering Phase Ib/II (n=34, primary endpoint MTD) with Puma only as collaborator; completed Oct 14, 2026 with no results released or posted."
    }
   },
   "dm": "2026-10"
@@ -9003,7 +9001,7 @@ export default [
   "company": "Sanofi",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "Venglustat",
+  "name": "Venglustat (LEAP Phase 2, Gaucher type 3)",
   "type": "Readout",
   "ta": "Rare disease",
   "cap": "",
@@ -9026,8 +9024,10 @@ export default [
    "ta_basis": "ClinicalTrials.gov conditions: Gaucher Disease Type 1, Gaucher Disease Type 3",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "17 sponsor press releases (FMP) through 2026-11-20"
+    "checked": "2026-11-18",
+    "reviewed": "2026-11-18",
+    "searched": "Sanofi releases since Sep 1, 2026 (FMP); ClinicalTrials.gov NCT02843035 (no results posted); web search",
+    "basis": "NCT02843035 is LEAP, a 12-patient Phase 2 of venglustat with Cerezyme in Gaucher disease type 3 (safety and CSF biomarker endpoints); no results released or posted. Sanofi's Feb 2026 LEAP2MONO Phase 3 result is a different trial."
    }
   },
   "dm": "2026-10"
@@ -9089,40 +9089,53 @@ export default [
   "id": "readout_vtrs_2026-10-15",
   "t": "VTRS",
   "company": "Viatris Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "Cenerimod",
+  "d": "2027-06-30",
+  "dp": "year",
+  "name": "Cenerimod (OPUS-1/OPUS-2, lupus)",
   "type": "Readout",
   "ta": "Immunology",
   "cap": "",
-  "st": "Estimated",
-  "url": "/pdufa/VTRS",
+  "st": "Guided",
+  "url": "https://investor.viatris.com/static-files/c3d9702b-a84e-47fb-8c01-6a4ad4cafe90",
   "ua": "2026-07-11T15:23:27Z",
   "_d": {
    "nct_id": null,
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "15 sponsor press releases (FMP) through 2026-11-20"
-   }
-  },
-  "dm": "2026-10"
+   "source": "company guidance (company release)",
+   "date_history": [
+    {
+     "date": "2026-10-15",
+     "note": "date the row showed before this check"
+    },
+    {
+     "date": "2027-06-30",
+     "changed": "2026-11-18",
+     "why": "Neither OPUS Phase 3 has an October 2026 completion (OPUS-1 2027-03-31, OPUS-2 2026-12-31). Viatris's Q3 2026 earnings presentation (Nov 5) says both are fully enrolled with results expected in H1 2027."
+    }
+   ],
+   "guided_precision": "half",
+   "guided_window": "2027-H1",
+   "guided_label": "OPUS results expected H1 2027",
+   "guided_form": "earnings presentation",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "OPUS Studies Fully Enrolled with >70% IFN-1 High Patients; Results Expected in H1 2027",
+   "source_url": "https://investor.viatris.com/static-files/c3d9702b-a84e-47fb-8c01-6a4ad4cafe90",
+   "red_team": "2026-11-18: stale-window check; source re-opened by an independent red-team pass. "
+  }
  },
  {
   "id": "readout_vygr_2027-05-15",
   "t": "VYGR",
   "company": "Voyager Therapeutics, Inc.",
-  "d": "2026-10-15",
-  "dp": "month",
-  "name": "VY7523",
+  "d": "2026-12-31",
+  "dp": "quarter",
+  "name": "VY7523 (tau PET data)",
   "type": "Readout",
   "ta": "CNS",
   "cap": "",
-  "st": "Estimated",
-  "url": "https://clinicaltrials.gov/study/NCT06874621",
+  "st": "Guided",
+  "url": "https://www.sec.gov/Archives/edgar/data/0001640266/000119312526449728/vygr-ex99_1.htm",
   "ua": "2026-10-23T14:53:55Z",
   "_d": {
    "nct_id": {
@@ -9135,8 +9148,8 @@ export default [
    },
    "indication": null,
    "market_cap_usd": null,
-   "source": "trial-estimate (not company-confirmed)",
-   "source_url": "https://clinicaltrials.gov/study/NCT06874621",
+   "source": "company guidance (SEC filing)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001640266/000119312526449728/vygr-ex99_1.htm",
    "date_history": [
     {
      "date": "2027-05-15",
@@ -9146,6 +9159,11 @@ export default [
      "date": "2026-10-15",
      "changed": "2026-10-23",
      "why": "ClinicalTrials.gov's primary-completion date for NCT06874621 is now 2026-10-13 (actual; registry status active_not_recruiting, record updated 2026-10-21); the row's window moved from 2027-05 to 2026-10 on 2026-10-23. /readouts defines an estimated date as that registry window, so the row follows it."
+    },
+    {
+     "date": "2026-12-31",
+     "changed": "2026-11-18",
+     "why": "Last patient visit complete; no efficacy data yet. Voyager's Q3 release (8-K, Nov 5, 2026) still guides tau PET data to Q4 2026."
     }
    ],
    "registry": {
@@ -9156,13 +9174,15 @@ export default [
     "checked": "2026-11-20",
     "source_url": "https://clinicaltrials.gov/study/NCT06874621"
    },
-   "resolution": {
-    "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "3 sponsor press releases (FMP) through 2026-11-20; ClinicalTrials.gov 2026-11-20"
-   }
+   "guided_precision": "quarter",
+   "guided_window": "2026-Q4",
+   "guided_label": "tau PET imaging data expected Q4 2026",
+   "guided_form": "8-K",
+   "guided_filed": "2026-11-05",
+   "guidance_text": "The last patient visit is complete, and Voyager continues to expect tau positron emission tomography (PET) imaging efficacy data in Q4 2026 from the multiple ascending dose (MAD) clinical trial in participants with Alzheimer\u2019s disease (AD).",
+   "red_team": "2026-11-18: stale-window check; source re-opened by an independent red-team pass. "
   },
-  "dm": "2026-10"
+  "dm": "2026-12"
  },
  {
   "id": "readout_wve_2026-06-15",
@@ -9170,7 +9190,7 @@ export default [
   "company": "Wave Life Sciences, Inc.",
   "d": "2026-10-15",
   "dp": "month",
-  "name": "WVE-210201",
+  "name": "WVE-N531 (FORWARD-53, exon 53)",
   "type": "Readout",
   "ta": "Rare disease",
   "cap": "",
@@ -9192,8 +9212,10 @@ export default [
    "source_url": "https://clinicaltrials.gov/study/NCT04906460",
    "resolution": {
     "state": "no_topline",
-    "checked": "2026-11-20",
-    "searched": "11 sponsor press releases (FMP) through 2026-11-20"
+    "checked": "2026-11-18",
+    "reviewed": "2026-11-18",
+    "searched": "Wave releases from Jan 2026 incl. Q2 (Jul 30) and Q3 (Oct 27) 2026 releases; ClinicalTrials.gov NCT04906460 (no results posted)",
+    "basis": "Row named WVE-210201 (suvodirsen, discontinued); NCT04906460 is FORWARD-53, WVE-N531 in exon 53 Duchenne. No Part C results; Wave gives no new timing (Q2 2026 release: exploring partnerships before an NDA)."
    },
    "date_history": [
     {
@@ -25489,6 +25511,47 @@ export default [
    "ta_basis": "Company release: indication stated as obesity"
   },
   "dm": "2026-12"
+ },
+ {
+  "id": "pdufa_pfe_2026-12-31",
+  "t": "PFE",
+  "company": "Pfizer Inc.",
+  "d": "2026-12-31",
+  "dp": "quarter",
+  "name": "Talzenna (talazoparib) with Xtandi (enzalutamide) - HRR-mutated metastatic castration-sensitive prostate cancer",
+  "type": "PDUFA",
+  "ta": "Oncology",
+  "cap": "Large",
+  "st": "Decided",
+  "url": "/fda-decision/PFE-2026-10-26",
+  "ua": "2026-11-20T09:13:36Z",
+  "oc": "Approved",
+  "dcd": "2026-10-26",
+  "_d": {
+   "nct_id": "NCT04821622",
+   "trial": "TALAPRO-3",
+   "brand": "Talzenna",
+   "inn": "talazoparib",
+   "indication": "Metastatic androgen pathway modulation-naive or -sensitive prostate cancer with HRR gene mutations (with enzalutamide)",
+   "indication_short": "HRR gene-mutated metastatic castration-sensitive prostate cancer, with enzalutamide",
+   "title_indication": "Prostate Cancer",
+   "seo_desc": "Talzenna (talazoparib) with Xtandi was approved by the FDA on October 26, 2026 for HRR gene-mutated metastatic castration-sensitive prostate cancer, on TALAPRO-3.",
+   "source": "Pfizer press release, July 22, 2026 (sNDA accepted for priority review)",
+   "source_url": "https://www.pfizer.com/news/press-release/press-release-detail/fda-grants-priority-review-pfizers-talzenna-plus-xtandi",
+   "source_quote": "The FDA has set a Prescription Drug User Fee Act (PDUFA) action date in the last quarter of 2026.",
+   "source_note": "Pfizer stated the goal date to the quarter only (Q4 2026), so no early or late margin is computed against the October 26, 2026 action day.",
+   "decision_source": "FDA approval notification, October 26, 2026 (Resources for Information | Approved Drugs)",
+   "decision_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive",
+   "fda_notice_title": "FDA approves talazoparib with enzalutamide for metastatic androgen pathway modulation-na\u00efve or -sensitive prostate cancer with HRR gene mutations",
+   "decision_quote": "On October 26, 2026, the Food and Drug Administration (FDA) approved talazoparib (Talzenna, Pfizer Inc.) in combination with enzalutamide for the treatment of adults with metastatic androgen pathway modulation-na\u00efve or -sensitive (mAPMN/S) prostate cancer with homologous recombination repair (HRR) gene mutations, as detected by an FDA-authorized test.",
+   "fda_action_date": "2026-10-26",
+   "fda_action_source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive",
+   "fda_action_record": "FDA approval notification, October 26, 2026 (NDA 211651 supplement)",
+   "decision_date_note": "The FDA's notification states the approval was granted on October 26, 2026. Pfizer announced it at 1:41 PM Eastern the same day, during the trading session.",
+   "announcement_url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-talzenna-plus-xtandi-fda-approved-earlier",
+   "announcement": "Pfizer press release, October 26, 2026",
+   "review": "Supplemental NDA under Priority Review, reviewed under Project Orbis. Per the FDA, TALAPRO-3 (NCT04821622) randomized 599 patients with HRR gene-mutated disease 1:1 to talazoparib or placebo, each with enzalutamide and continuous androgen deprivation; radiographic progression-free survival hazard ratio 0.48 (95% CI 0.36 to 0.65), p<0.0001, median not reached versus 45.8 months. Talazoparib 0.5 mg orally once daily with enzalutamide."
+  }
  },
  {
   "id": "readout_rcus_2027-12-31",

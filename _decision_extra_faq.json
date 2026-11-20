@@ -181,5 +181,19 @@
    "Is Cosentyx approved for polymyalgia rheumatica?",
    "Yes. The FDA's approval letter, signed November 16, 2026, adds polymyalgia rheumatica in adults as a new indication for Cosentyx (secukinumab). Novartis says the approval covers 150 mg for patients who had an inadequate response to corticosteroids or cannot tolerate a corticosteroid taper."
   ]
+ ],
+ "PFE-2026-10-26": [
+  [
+   "Was Talzenna with Xtandi approved for castration-sensitive prostate cancer?",
+   "Yes. The FDA approved talazoparib (Talzenna) with enzalutamide on October 26, 2026 for adults with metastatic androgen pathway modulation-naive or -sensitive prostate cancer with HRR gene mutations detected by an FDA-authorized test, per the FDA's own notification. Pfizer announced it the same day."
+  ],
+  [
+   "Was the Talzenna TALAPRO-3 decision early?",
+   "Pfizer's July 22, 2026 release gave the PDUFA action date only as the last quarter of 2026, so pdufa.bio does not publish an early or late margin. The FDA acted on October 26, 2026, inside that quarter."
+  ],
+  [
+   "What did TALAPRO-3 show?",
+   "Per the FDA, among 599 patients with HRR gene-mutated disease, adding talazoparib to enzalutamide cut the risk of radiographic progression or death (hazard ratio 0.48, 95% CI 0.36 to 0.65); median radiographic progression-free survival was not reached versus 45.8 months with placebo."
+  ]
  ]
 }

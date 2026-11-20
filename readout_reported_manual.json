@@ -355,6 +355,28 @@
    "source_url": "https://www.globenewswire.com/news-release/2026/10/20/3384169/0/en/rapport-therapeutics-announces-positive-topline-results-from-its-phase-2-trial-of-rap-219-for-the-treatment-of-bipolar-mania.html",
    "guided_window": "",
    "note": "readout mine 2026-11-17, red-teamed against the company's release"
+  },
+  {
+   "id": "readout_abos_2026-10-15",
+   "t": "ABOS",
+   "drug": "Sabirnetug (ACU193)",
+   "reported_date": "2026-10-30",
+   "outcome": "negative",
+   "summary": "Phase 2 ALTITUDE-AD in early Alzheimer's disease did not meet its primary endpoint: neither the 35 mg/kg nor the 50 mg/kg dose separated from placebo on change in iADRS at 18 months, and key secondary endpoints including CDR-SB were not significant. Amyloid plaque reduction on PET was statistically significant at both doses. Acumen said it will stop developing sabirnetug and explore strategic options.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/10/30/3392145/0/en/acumen-pharmaceuticals-announces-topline-results-from-phase-2-altitude-ad-clinical-trial-of-sabirnetug-acu193-for-the-treatment-of-early-alzheimer-s-disease-trial-did-not-meet-prim.html",
+   "guided_window": "Oct 2026 (registry estimate); Acumen's Oct 26 release had guided November 2026",
+   "note": "Reported two days before Acumen's own November guidance. Release went out 07:00 ET, before the open."
+  },
+  {
+   "id": "readout_imvt_2026-10-15",
+   "t": "IMVT",
+   "drug": "IMVT-1402 (imeroprubart)",
+   "reported_date": "2026-09-23",
+   "outcome": "negative",
+   "summary": "Proof-of-concept study in cutaneous lupus erythematosus (57 patients): the 12-week placebo-controlled Period 1 did not reach statistical significance on the primary endpoint, percent change in CLASI-A at Week 12. Immunovant reported numerical trends favoring the drug and a favorable safety profile, but said the result did not meet its internal bar and plans to stop development in CLE.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/09/23/3367346/0/en/immunovant-announces-topline-results-from-proof-of-concept-study-of-imvt-1402-in-cutaneous-lupus-erythematosus.html",
+   "guided_window": "Oct 2026 (registry estimate)",
+   "note": "Reported about a month before the registry's estimated completion. Period 1 topline only; Immunovant said it plans to stop development in CLE. Roivant issued a parallel release the same day."
   }
  ]
 }

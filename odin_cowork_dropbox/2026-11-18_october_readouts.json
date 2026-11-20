@@ -1,0 +1,178 @@
+{
+ "_note": "2026-11-18: the 21 readout rows whose window closed in October 2026, checked against primary sources (company releases, SEC filings, ClinicalTrials.gov). 7 were already confirmed in readout_reported_manual.json (ROIV, SCYX, XENE, BMEA, PCVX, RAPP, TRAX). The 14 below were researched by two independent passes and re-opened by a red-team pass; only rt_verdict CONFIRMED / FIX items change anything. Facts only, not investment advice. Dates are the companies' own (Eastern) calendar dates.",
+ "items": [
+  {
+   "id": "readout_abos_2026-10-15",
+   "action": "release",
+   "date": "2026-10-30",
+   "headline": "Acumen Pharmaceuticals Announces Topline Results from Phase 2 ALTITUDE-AD Clinical Trial of Sabirnetug (ACU193) for the Treatment of Early Alzheimer's Disease; Trial Did Not Meet Primary Endpoint",
+   "url": "https://www.globenewswire.com/news-release/2026/10/30/3392145/0/en/acumen-pharmaceuticals-announces-topline-results-from-phase-2-altitude-ad-clinical-trial-of-sabirnetug-acu193-for-the-treatment-of-early-alzheimer-s-disease-trial-did-not-meet-prim.html",
+   "why": "Acumen's own release (GlobeNewswire, Oct 30, 2026, 07:00 ET) names NCT06335173: ALTITUDE-AD did not meet its primary endpoint (iADRS at 18 months, neither dose separated from placebo).",
+   "manual": {
+    "drug": "Sabirnetug (ACU193)",
+    "outcome": "negative",
+    "summary": "Phase 2 ALTITUDE-AD in early Alzheimer's disease did not meet its primary endpoint: neither the 35 mg/kg nor the 50 mg/kg dose separated from placebo on change in iADRS at 18 months, and key secondary endpoints including CDR-SB were not significant. Amyloid plaque reduction on PET was statistically significant at both doses. Acumen said it will stop developing sabirnetug and explore strategic options.",
+    "guided_window": "Oct 2026 (registry estimate); Acumen's Oct 26 release had guided November 2026",
+    "note": "Reported two days before Acumen's own November guidance. Release went out 07:00 ET, before the open."
+   },
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_imvt_2026-10-15",
+   "action": "release",
+   "date": "2026-09-23",
+   "headline": "Immunovant Announces Topline Results from Proof-of-Concept Study of IMVT-1402 in Cutaneous Lupus Erythematosus",
+   "url": "https://www.globenewswire.com/news-release/2026/09/23/3367346/0/en/immunovant-announces-topline-results-from-proof-of-concept-study-of-imvt-1402-in-cutaneous-lupus-erythematosus.html",
+   "why": "Row pointed at Roivant's parallel release; Immunovant's own release (Sep 23, 2026) names NCT06980805 and is the primary source. Period 1 did not reach statistical significance on CLASI-A at Week 12.",
+   "manual": {
+    "drug": "IMVT-1402 (imeroprubart)",
+    "outcome": "negative",
+    "summary": "Proof-of-concept study in cutaneous lupus erythematosus (57 patients): the 12-week placebo-controlled Period 1 did not reach statistical significance on the primary endpoint, percent change in CLASI-A at Week 12. Immunovant reported numerical trends favoring the drug and a favorable safety profile, but said the result did not meet its internal bar and plans to stop development in CLE.",
+    "guided_window": "Oct 2026 (registry estimate)",
+    "note": "Reported about a month before the registry's estimated completion. Period 1 topline only; Immunovant said it plans to stop development in CLE. Roivant issued a parallel release the same day."
+   },
+   "rt_verdict": "FIX",
+   "rt_note": "Red team 2026-11-18: date, trial and outcome confirmed; the note claimed later periods continue, which the release does not say, and the drug lacked its INN. Both fixed."
+  },
+  {
+   "id": "readout_annx_2026-10-15",
+   "action": "re_guide",
+   "name": "Vonaprument (ARCHER II, geographic atrophy)",
+   "why": "Row named tanruprubart, but NCT06510816 is ARCHER II, Annexon's Phase 3 of vonaprument (formerly ANX007) in geographic atrophy. No results yet; Annexon guides the Month 15 primary endpoint assessment to Q4 2026.",
+   "precision": "quarter",
+   "window_end": "2026-12-31",
+   "label": "DMC Month 15 assessment Q4 2026; data Q1 2027 if met",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/09/3398918/0/en/annexon-reports-third-quarter-2026-financial-results-business-updates-and-key-anticipated-milestones.html",
+   "source_date": "2026-11-09",
+   "source_type": "press release",
+   "quote": "ARCHER II Phase 3 Month 15 single study primary endpoint assessment expected in the fourth quarter of 2026",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed. Label widened: Annexon says the Q4 2026 event is an independent DMC assessment, with sub-study results in Q1 2027 if the endpoint is met (same Nov 9 release)."
+  },
+  {
+   "id": "readout_biib_2026-10-15",
+   "action": "re_guide",
+   "name": "Litifilimab (AMETHYST Phase 3, cutaneous lupus)",
+   "why": "Row had no trial. The only litifilimab trial completing in October 2026 is AMETHYST (NCT05531565, CLE). Biogen released Phase 2 (Part A) 52-week data Oct 2, 2026 and said the Phase 3 part remains blinded, with a readout in the first half of 2027.",
+   "precision": "half",
+   "window_end": "2027-06-30",
+   "label": "Phase 3 part expected to read out 1H 2027",
+   "source_url": "https://investors.biogen.com/node/31031",
+   "source_date": "2026-10-02",
+   "source_type": "press release",
+   "quote": "The Phase 3 part of the AMETHYST study remains blinded and is expected to read out in the first half of 2027.",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_incy_2026-10-15",
+   "action": "re_guide",
+   "name": "Povorcitinib (STOP-PN1/STOP-PN2, prurigo nodularis)",
+   "why": "No STOP-PN1 results yet. Incyte's Q3 release (Oct 29, 2026) guides the prurigo nodularis Phase 3 data to Q4 2026.",
+   "precision": "quarter",
+   "window_end": "2026-12-31",
+   "label": "Phase 3 prurigo nodularis data expected Q4 2026",
+   "source_url": "https://www.businesswire.com/news/home/20261029846124/en/Incyte-Reports-Third-Quarter-2026-Financial-Results-and-Provides-Business-Updates/",
+   "source_date": "2026-10-29",
+   "source_type": "press release",
+   "quote": "Data from the Phase 3 studies (STOP-PN1 and STOP-PN2) evaluating povorcitinib in patients with moderate to severe prurigo nodularis (PN) are anticipated in the fourth quarter of 2026",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_mrk_2026-10-15",
+   "action": "remove",
+   "why": "No basis: the row names pembrolizumab with no trial. The only Merck-led pembrolizumab trial with an October 2026 registry completion is LITESPARK-022, whose primary readout came on Oct 28, 2025, a year earlier. No company-guided October 2026 readout.",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_ogn_2026-10-15",
+   "action": "no_topline",
+   "name": "Tapinarof (pediatric plaque psoriasis)",
+   "why": "Row label was another sponsor's trial (Elonva, NCT06134479). NCT05172726 is Organon's open-label Phase 3 of tapinarof cream in children with plaque psoriasis (safety endpoints), completed Oct 14, 2026; no results released or posted.",
+   "searched": "Organon releases since Sep 1, 2026 (FMP); ClinicalTrials.gov NCT05172726 (completed, no results posted) and NCT06134479; web search",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_olma_2026-06-15",
+   "action": "re_guide",
+   "name": "Palazestrant (OPERA-01)",
+   "why": "No OPERA-01 results yet. Olema's Q3 release (Nov 10, 2026) guides top-line data to Q1 2027.",
+   "precision": "quarter",
+   "window_end": "2027-03-31",
+   "label": "OPERA-01 top-line data expected Q1 2027",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/10/3399295/0/en/olema-oncology-reports-third-quarter-2026-financial-and-operating-results.html",
+   "source_date": "2026-11-10",
+   "source_type": "press release",
+   "quote": "On track to announce top-line data from the pivotal Phase 3 OPERA-01 trial in the first quarter of 2027",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_pbyi_2026-12-15",
+   "action": "no_topline",
+   "why": "NCT03377387 is a Memorial Sloan Kettering Phase Ib/II (n=34, primary endpoint MTD) with Puma only as collaborator; completed Oct 14, 2026 with no results released or posted.",
+   "searched": "Puma releases since Sep 1, 2026 incl. the Q3 2026 release of Nov 5 (alisertib only); ClinicalTrials.gov NCT03377387 (completed, no results posted); web search",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_pfe_2026-10-15",
+   "action": "remove",
+   "why": "No basis: no palbociclib trial sponsored by or run with Pfizer has an October 2026 primary completion in the registry, and the row's company field read Roivant/Priovant.",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_sny_2026-10-15",
+   "action": "no_topline",
+   "name": "Venglustat (LEAP Phase 2, Gaucher type 3)",
+   "why": "NCT02843035 is LEAP, a 12-patient Phase 2 of venglustat with Cerezyme in Gaucher disease type 3 (safety and CSF biomarker endpoints); no results released or posted. Sanofi's Feb 2026 LEAP2MONO Phase 3 result is a different trial.",
+   "searched": "Sanofi releases since Sep 1, 2026 (FMP); ClinicalTrials.gov NCT02843035 (no results posted); web search",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_vtrs_2026-10-15",
+   "action": "re_guide",
+   "name": "Cenerimod (OPUS-1/OPUS-2, lupus)",
+   "why": "Neither OPUS Phase 3 has an October 2026 completion (OPUS-1 2027-03-31, OPUS-2 2026-12-31). Viatris's Q3 2026 earnings presentation (Nov 5) says both are fully enrolled with results expected in H1 2027.",
+   "precision": "half",
+   "window_end": "2027-06-30",
+   "label": "OPUS results expected H1 2027",
+   "source_url": "https://investor.viatris.com/static-files/c3d9702b-a84e-47fb-8c01-6a4ad4cafe90",
+   "source_date": "2026-11-05",
+   "source_type": "earnings presentation",
+   "quote": "OPUS Studies Fully Enrolled with >70% IFN-1 High Patients; Results Expected in H1 2027",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_vygr_2027-05-15",
+   "action": "re_guide",
+   "name": "VY7523 (tau PET data)",
+   "why": "Last patient visit complete; no efficacy data yet. Voyager's Q3 release (8-K, Nov 5, 2026) still guides tau PET data to Q4 2026.",
+   "precision": "quarter",
+   "window_end": "2026-12-31",
+   "label": "tau PET imaging data expected Q4 2026",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001640266/000119312526449728/vygr-ex99_1.htm",
+   "source_date": "2026-11-05",
+   "source_type": "8-K",
+   "quote": "The last patient visit is complete, and Voyager continues to expect tau positron emission tomography (PET) imaging efficacy data in Q4 2026 from the multiple ascending dose (MAD) clinical trial in participants with Alzheimer’s disease (AD).",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  },
+  {
+   "id": "readout_wve_2026-06-15",
+   "action": "no_topline",
+   "name": "WVE-N531 (FORWARD-53, exon 53)",
+   "why": "Row named WVE-210201 (suvodirsen, discontinued); NCT04906460 is FORWARD-53, WVE-N531 in exon 53 Duchenne. No Part C results; Wave gives no new timing (Q2 2026 release: exploring partnerships before an NDA).",
+   "searched": "Wave releases from Jan 2026 incl. Q2 (Jul 30) and Q3 (Oct 27) 2026 releases; ClinicalTrials.gov NCT04906460 (no results posted)",
+   "rt_verdict": "CONFIRMED",
+   "rt_note": "Independent red team 2026-11-18: source re-opened and read; action, date and name confirmed."
+  }
+ ]
+}

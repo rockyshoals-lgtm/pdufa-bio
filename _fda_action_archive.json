@@ -18,12 +18,18 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_BLA761459_20260422.pdf"
  },
  "ABBV-2026-05-27": {
-  "checked": "2026-11-17",
-  "name": "LINZESS (Iinaclotide)",
-  "reason": "one decision-class approval (NDA202811 SUPPL-23) but dated 2026-05-21, outside 0-4 days before 2026-05-27",
+  "basis": "red team 2026-11-18: FDA record read directly (Drugs@FDA NDA 202811, SUPPL-23 action date 05/21/2026; 6 days before the announcement, outside the sync's 0-4 day rule)",
+  "checked": "2026-11-18",
+  "class": "EFFICACY",
+  "date": "2026-05-21",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/202811Orig1s023ltr.pdf",
+  "name": "LINZESS (linaclotide)",
+  "oc": "Approved",
+  "record": "NDA 202811 SUPPL-23",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/202811Orig1s023ltr.pdf",
   "terms": [
    "LINZESS",
-   "Iinaclotide"
+   "linaclotide"
   ]
  },
  "ABBV-2026-06-16": {
@@ -50,6 +56,33 @@
   "terms": [
    "ASCENIV"
   ]
+ },
+ "ALDX-2025-04-03": {
+  "checked": "2026-11-18",
+  "date": "2025-04-02",
+  "record": "NDA 216442 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA216442_20250402.pdf",
+  "name": "Reproxalap ophthalmic solution",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
+ "ALDX-2026-03-17": {
+  "checked": "2026-11-18",
+  "date": "2026-03-16",
+  "record": "NDA 216442 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA216442_20260316.pdf",
+  "name": "Reproxalap ophthalmic solution",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
+ "ALVO-2025-11-02": {
+  "checked": "2026-11-18",
+  "date": "2025-10-31",
+  "record": "BLA 761462 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761462_20251031.pdf",
+  "name": "AVT05 (proposed golimumab biosimilar)",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
  },
  "AMGN-2026-10-09": {
   "checked": "2026-10-15",
@@ -121,6 +154,24 @@
    "YUVIWEL",
    "navepegritide"
   ]
+ },
+ "ATRA-2025-01-16": {
+  "checked": "2026-11-18",
+  "date": "2025-01-15",
+  "record": "BLA 125745 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125745_20250115.pdf",
+  "name": "EBVALLO (tabelecleucel)",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
+ "ATRA-2026-01-12": {
+  "checked": "2026-11-18",
+  "date": "2026-01-09",
+  "record": "BLA 125745 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125745_20260109.pdf",
+  "name": "EBVALLO (tabelecleucel)",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
  },
  "AXSM-2026-04-30": {
   "checked": "2026-10-03",
@@ -220,6 +271,19 @@
    "camizestrant"
   ]
  },
+ "AZN-2026-11-13": {
+  "checked": "2026-11-20",
+  "class": "EFFICACY",
+  "date": "2026-11-13",
+  "letter": null,
+  "name": "Imfinzi (durvalumab)",
+  "record": "BLA 761069 SUPPL-59",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069",
+  "terms": [
+   "Imfinzi",
+   "durvalumab"
+  ]
+ },
  "BAYRY-2026-06-15": {
   "checked": "2026-10-03",
   "class": "TYPE 1",
@@ -310,6 +374,24 @@
    "mavacamten"
   ]
  },
+ "CAPR-2025-07-11": {
+  "checked": "2026-11-18",
+  "date": "2025-07-09",
+  "record": "BLA 125842 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125842_20250709.pdf",
+  "name": "Deramiocel",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
+ "CORT-2025-12-31": {
+  "checked": "2026-11-18",
+  "date": "2025-12-30",
+  "record": "NDA 219398 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf",
+  "name": "Relacorilant capsules",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
  "CRSP-2026-07-01": {
   "checked": "2026-11-17",
   "name": "Casgevy (exagamglogene autotemcel)",
@@ -353,14 +435,23 @@
   "reason": "no decision-class Drugs@FDA approval near this date (CBER product, or not yet posted)",
   "terms": []
  },
+ "ETON-2026-02-25": {
+  "checked": "2026-11-18",
+  "date": "2026-02-25",
+  "record": "NDA 219873",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219873Orig1s000ltr.pdf",
+  "name": "DESMODA (desmopressin acetate) oral solution",
+  "oc": "Approved",
+  "basis": "red team 2026-11-18: FDA approval letter read directly"
+ },
  "FBIO-2025-10-01": {
-  "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
   "date": "2025-09-30",
-  "name": "CUTX-101 (copper histidinate), Menkes disease; approved as ZYCUBO in January 2026",
-  "oc": "CRL",
   "record": "NDA 211241 CRL",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211241Orig1s000ltr.pdf"
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA211241_20250930.pdf",
+  "name": "CUTX-101 (copper histidinate)",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
  },
  "GILD-2026-02-06": {
   "checked": "2026-11-17",
@@ -485,12 +576,18 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_NDA220707_20260213.pdf"
  },
  "IRWD-2026-05-27": {
-  "checked": "2026-11-17",
-  "name": "LINZESS (Iinaclotide)",
-  "reason": "one decision-class approval (NDA202811 SUPPL-23) but dated 2026-05-21, outside 0-4 days before 2026-05-27",
+  "basis": "red team 2026-11-18: FDA record read directly (Drugs@FDA NDA 202811, SUPPL-23 action date 05/21/2026; 6 days before the announcement, outside the sync's 0-4 day rule)",
+  "checked": "2026-11-18",
+  "class": "EFFICACY",
+  "date": "2026-05-21",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/202811Orig1s023ltr.pdf",
+  "name": "LINZESS (linaclotide)",
+  "oc": "Approved",
+  "record": "NDA 202811 SUPPL-23",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/202811Orig1s023ltr.pdf",
   "terms": [
    "LINZESS",
-   "Iinaclotide"
+   "linaclotide"
   ]
  },
  "JNJ-2026-03-05": {
@@ -530,6 +627,19 @@
   "terms": [
    "TREMFYA",
    "guselkumab"
+  ]
+ },
+ "JNJ-2026-11-05": {
+  "checked": "2026-11-20",
+  "class": "EFFICACY",
+  "date": "2026-11-05",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
+  "name": "RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj)",
+  "record": "BLA 761433 SUPPL-2",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
+  "terms": [
+   "RYBREVANT FASPRO",
+   "amivantamab"
   ]
  },
  "LGND-2026-04-13": {
@@ -618,6 +728,15 @@
    "PYLARIFY",
    "piflufolastat"
   ]
+ },
+ "MIST-2025-03-28": {
+  "checked": "2026-11-18",
+  "date": "2025-03-27",
+  "record": "NDA 218571 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218571_20250327.pdf",
+  "name": "Etripamil nasal spray",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
  },
  "MNKD-2026-05-29": {
   "checked": "2026-10-03",
@@ -779,6 +898,19 @@
    "lutetium"
   ]
  },
+ "NVS-2026-11-16": {
+  "checked": "2026-11-20",
+  "class": "EFFICACY",
+  "date": "2026-11-16",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
+  "name": "COSENTYX (secukinumab)",
+  "record": "BLA 125504 SUPPL-101",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
+  "terms": [
+   "COSENTYX",
+   "secukinumab"
+  ]
+ },
  "ONC-2026-05-13": {
   "checked": "2026-10-03",
   "class": "TYPE 1",
@@ -791,6 +923,15 @@
    "BEQALZI",
    "Sonrotoclax"
   ]
+ },
+ "OTLK-2025-08-28": {
+  "checked": "2026-11-18",
+  "date": "2025-08-27",
+  "record": "BLA 761320 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761320_20250827.pdf",
+  "name": "ONS-5010 (bevacizumab-vikg)",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
  },
  "PFE-2026-02-24": {
   "checked": "2026-11-17",
@@ -956,6 +1097,15 @@
    "cemdisiran"
   ]
  },
+ "REPL-2025-07-22": {
+  "checked": "2026-11-18",
+  "date": "2025-07-21",
+  "record": "BLA 125827 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125827_20250721.pdf",
+  "name": "RP1 (vusolimogene oderparepvec) with nivolumab",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
  "RGNX-2026-02-09": {
   "basis": "red team 2026-11-18: FDA record read directly",
   "checked": "2026-11-18",
@@ -1036,6 +1186,15 @@
   "record": "NDA 219624 CRL",
   "source_url": "https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"
  },
+ "SNY-2026-02-24": {
+  "checked": "2026-11-18",
+  "date": "2026-02-23",
+  "record": "BLA 761055 S-075",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf",
+  "name": "DUPIXENT (dupilumab)",
+  "oc": "Approved",
+  "basis": "red team 2026-11-18: FDA approval letter read directly"
+ },
  "SNY-2026-04-22": {
   "checked": "2026-10-03",
   "class": "EFFICACY",
@@ -1047,6 +1206,19 @@
   "terms": [
    "DUPIXENT",
    "dupilumab"
+  ]
+ },
+ "SNY-2026-11-18": {
+  "basis": "FDA News Release read directly 2026-11-20",
+  "checked": "2026-11-20",
+  "date": "2026-11-18",
+  "name": "Infilbray (venglustat)",
+  "oc": "Approved",
+  "record": "FDA News Release, November 18, 2026",
+  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease",
+  "terms": [
+   "Infilbray",
+   "venglustat"
   ]
  },
  "SPRY-2026-03-27": {
@@ -1123,6 +1295,15 @@
    "sparsentan"
   ]
  },
+ "UNCY-2025-06-30": {
+  "checked": "2026-11-18",
+  "date": "2025-06-27",
+  "record": "NDA 218607 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218607_20250627.pdf",
+  "name": "Oxylanthanum carbonate tablets",
+  "oc": "CRL",
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+ },
  "VNDA-2026-02-20": {
   "checked": "2026-10-03",
   "class": "TYPE 1",
@@ -1152,58 +1333,6 @@
   "terms": [
    "RYZUMVI",
    "phentolamine"
-  ]
- },
- "JNJ-2026-11-05": {
-  "checked": "2026-11-20",
-  "class": "EFFICACY",
-  "date": "2026-11-05",
-  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
-  "name": "RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj)",
-  "record": "BLA 761433 SUPPL-2",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
-  "terms": [
-   "RYBREVANT FASPRO",
-   "amivantamab"
-  ]
- },
- "AZN-2026-11-13": {
-  "checked": "2026-11-20",
-  "class": "EFFICACY",
-  "date": "2026-11-13",
-  "letter": null,
-  "name": "Imfinzi (durvalumab)",
-  "record": "BLA 761069 SUPPL-59",
-  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069",
-  "terms": [
-   "Imfinzi",
-   "durvalumab"
-  ]
- },
- "NVS-2026-11-16": {
-  "checked": "2026-11-20",
-  "class": "EFFICACY",
-  "date": "2026-11-16",
-  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
-  "name": "COSENTYX (secukinumab)",
-  "record": "BLA 125504 SUPPL-101",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
-  "terms": [
-   "COSENTYX",
-   "secukinumab"
-  ]
- },
- "SNY-2026-11-18": {
-  "basis": "FDA News Release read directly 2026-11-20",
-  "checked": "2026-11-20",
-  "date": "2026-11-18",
-  "name": "Infilbray (venglustat)",
-  "oc": "Approved",
-  "record": "FDA News Release, November 18, 2026",
-  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease",
-  "terms": [
-   "Infilbray",
-   "venglustat"
   ]
  }
 }

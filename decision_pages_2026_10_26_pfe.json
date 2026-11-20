@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "PFE",
+  "date": "2026-10-26",
+  "fda_action_date": "2026-10-26",
+  "outcome": "Approved",
+  "drug": "Talzenna (talazoparib) with Xtandi (enzalutamide)",
+  "indication": "HRR gene-mutated metastatic castration-sensitive prostate cancer (TALAPRO-3)",
+  "company": "Pfizer Inc.",
+  "cap": "Large",
+  "headline": "The FDA approved Talzenna (talazoparib) with Xtandi (enzalutamide) on October 26, 2026 for HRR gene-mutated metastatic castration-sensitive prostate cancer, on TALAPRO-3.",
+  "pdufa_note": "The FDA's notification states that on October 26, 2026 it approved talazoparib (Talzenna, Pfizer Inc.) with enzalutamide for adults with metastatic androgen pathway modulation-naive or -sensitive prostate cancer with HRR gene mutations detected by an FDA-authorized test (<a href=\"https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA, October 26, 2026</a>). Pfizer announced the approval at 1:41 PM Eastern the same day (<a href=\"https://www.pfizer.com/news/press-release/press-release-detail/pfizers-talzenna-plus-xtandi-fda-approved-earlier\" rel=\"noopener\" style=\"color:#e3ba5e\">Pfizer's announcement</a>). Pfizer had said the PDUFA action date fell in the last quarter of 2026 (<a href=\"https://www.pfizer.com/news/press-release/press-release-detail/fda-grants-priority-review-pfizers-talzenna-plus-xtandi\" rel=\"noopener\" style=\"color:#e3ba5e\">Pfizer, July 22, 2026</a>), a quarter rather than a day, so no early or late margin is given. Per the FDA, TALAPRO-3 (NCT04821622) randomized 599 patients; adding talazoparib to enzalutamide gave a radiographic progression-free survival hazard ratio of 0.48 (95% CI 0.36 to 0.65), with the median not reached versus 45.8 months. The application had Priority Review and was reviewed under Project Orbis.",
+  "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive",
+  "source_label": "FDA approval notification, October 26, 2026",
+  "h1": "Talzenna (talazoparib) with Xtandi <span class=\"g\">FDA approval for HRR-mutated mCSPC</span>: Oct 26, 2026"
+ }
+]
