@@ -101,6 +101,18 @@
    "source": "fda-press:fda-approves-first-drug-shown-help-patients-infantile-onset-",
    "reason": "Not this drug: the FDA press announcement of 2026-11-17 is the approval of Lembaz (adrabetadex, Mandos LLC, a Beren Therapeutics subsidiary) for infantile-onset Niemann-Pick disease type C. The token 'acting' matched 'Acting FDA Commissioner' in the release, not RAP-219 (Rapport Therapeutics), which the release does not mention. RAP-219 is not approved; its readout rows are unchanged.",
    "acked": "2026-11-17"
+  },
+  {
+   "slug": "venglustat",
+   "source": "fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
+   "acked": "2026-11-20",
+   "reason": "REAL: Infilbray (venglustat) approved Nov 18, 2026 per the FDA news release (read 2026-11-20); published as /fda-decision/SNY-2026-11-18 and recorded in _drug_approvals_confirmed.json."
+  },
+  {
+   "slug": "vidofludimus-calcium",
+   "source": "openfda:20261019",
+   "acked": "2026-11-20",
+   "reason": "Not this drug: openFDA AP 2026-10-19 ORIG-1 is NDA219456 CALREZDY (calcium chloride), Fresenius Medical Care; matched only on the salt word CALCIUM. Vidofludimus calcium (IMUX) has no FDA action. Salt words now in STOP."
   }
  ]
 }

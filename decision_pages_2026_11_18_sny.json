@@ -1,0 +1,17 @@
+[
+ {
+  "ticker": "SNY",
+  "date": "2026-11-18",
+  "fda_action_date": "2026-11-18",
+  "outcome": "Approved",
+  "drug": "Infilbray (venglustat)",
+  "indication": "Neurological manifestations of Type 3 Gaucher disease (GD3) in adults and pediatric patients weighing at least 15 kg",
+  "company": "Sanofi",
+  "cap": "Large",
+  "headline": "The FDA approved Infilbray (venglustat) tablets on November 18, 2026, the first treatment for the neurological symptoms of Type 3 Gaucher disease, in adults and children weighing at least 15 kg.",
+  "pdufa_note": "The FDA's news release states that on November 18, 2026 it approved Infilbray (venglustat) tablets for the neurological symptoms of Type 3 Gaucher disease (GD3) in adults and pediatric patients weighing at least 15 kg, and that the approval was granted to Genzyme Corporation, a Sanofi company (<a href=\"https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA, November 18, 2026</a>). Per the FDA, a randomized, double-blind, multicenter study enrolled 43 patients aged 12 and older with GD3 who had been stabilized on enzyme replacement therapy; patients took Infilbray once daily by mouth or intravenous enzyme replacement therapy every two weeks for 52 weeks, and at Week 52 the Infilbray group improved on a measure combining ataxia and cognitive assessments. The FDA lists gastrointestinal symptoms and mood effects as the most frequent side effects and reports serious psychiatric risks including suicidal ideation and behavior. The application had Orphan Drug designation and Priority Review. No PDUFA goal date was publicly disclosed, so this application was never a dated event on our calendar.",
+  "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease",
+  "source_label": "FDA News Release, November 18, 2026",
+  "h1": "Infilbray (venglustat) <span class=\"g\">FDA approval for Type 3 Gaucher disease</span>: Nov 18, 2026"
+ }
+]

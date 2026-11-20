@@ -35,6 +35,24 @@
     "also_searched": "Etcamah",
     "also_searched_note": "Etcamah is the FDA-approved brand name for camizestrant (approved September 4, 2026)."
    }
+  },
+  {
+   "t": "SNY",
+   "company": "Sanofi",
+   "d": "2026-11-18",
+   "dp": "day",
+   "type": "PDUFA",
+   "st": "Decided",
+   "name": "Venglustat",
+   "url": "/fda-decision/SNY-2026-11-18",
+   "_d": {
+    "indication": "Neurological manifestations of Type 3 Gaucher disease (GD3) in adults and pediatric patients weighing at least 15 kg",
+    "review": "Per the FDA, Infilbray (venglustat) tablets were approved on November 18, 2026 with Orphan Drug designation and Priority Review; the approval was granted to Genzyme Corporation, a Sanofi company. The study: 43 patients aged 12 and older with GD3, previously stabilized on enzyme replacement therapy, randomized to once-daily oral Infilbray or intravenous enzyme replacement therapy every two weeks for 52 weeks; at Week 52 Infilbray patients improved on a measure combining ataxia and cognitive assessments. No PDUFA goal date was publicly disclosed, so this application was never a dated event on our calendar.",
+    "brand": "Infilbray",
+    "inn": "venglustat",
+    "decision_source": "FDA News Release, November 18, 2026",
+    "decision_source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease"
+   }
   }
  ]
 }
