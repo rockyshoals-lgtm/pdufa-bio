@@ -12,8 +12,12 @@
   "/clinical-trial-success-rates",
   "/condition/cancer",
   "/condition/rare-disease",
+  "/conferences",
   "/crl",
+  "/decisions",
+  "/developers",
   "/drug/aficamten",
+  "/drug/asundexian",
   "/fda-approval-decisions-this-week",
   "/fda-approvals/2026/october",
   "/fda-decision/RHHBY-2026-11-13",
@@ -26,6 +30,8 @@
   "/pdufa/SVRA-molbreevi",
   "/research/fda-decision-timing",
   "/runup-by-year",
-  "/ticker/ABBV"
+  "/ticker/ABBV",
+  "/ticker/AMGN",
+  "/ticker/AZN"
  ]
 }

@@ -1,6 +1,6 @@
 # Google Search Console: request indexing for these, in order (2026-11-20 Eastern).
 # About 10 requests a day per property. Then run: python build_google_request_list.py --requested <paths>
-# Skipped: 26 known indexed (_google_indexed.json), 10 requested in the last 7 days.
+# Skipped: 32 known indexed (_google_indexed.json), 10 requested in the last 7 days.
 https://www.pdufa.bio/pdufa/PYPD-d-plex100	# goal date 2026-11-28: PYPD D-PLEX100 - prevention of surgical site infections
 https://www.pdufa.bio/pdufa/COGT-bezuclastinib	# goal date 2026-11-30: COGT Bezuclastinib + sunitinib - (PEAK)
 https://www.pdufa.bio/pdufa/RHHBY-giredestrant	# goal date 2026-11-30: RHHBY Giredestrant (lidERA)
