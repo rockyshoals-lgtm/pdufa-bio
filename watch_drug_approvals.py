@@ -83,7 +83,13 @@ STOP = {"combination", "subcutaneous", "extension", "sublingual", "injection",
         "therapy", "disease", "diseases", "autologous", "allogeneic", "single",
         "treated", "muscle", "hematology", "oncology", "digestive", "european",
         "american", "recombinant", "expanded", "pediatric", "adjuvant", "chronic",
-        "advanced", "against", "receptor", "antibody", "inhibitor", "syndrome"}
+        "advanced", "against", "receptor", "antibody", "inhibitor", "syndrome",
+        # Salt and counter-ion words (2026-11-20): /drug/vidofludimus-calcium was held for two days
+        # because openFDA approved CALREZDY (calcium chloride) and "calcium" was a match key.
+        "calcium", "sodium", "potassium", "magnesium", "chloride", "hydrochloride", "acetate",
+        "sulfate", "phosphate", "citrate", "mesylate", "maleate", "tartrate", "fumarate",
+        "succinate", "bromide", "besylate", "tosylate", "hydrobromide", "dihydrochloride",
+        "monohydrate", "trihydrate"}
 
 
 def fetch(url, timeout=25):

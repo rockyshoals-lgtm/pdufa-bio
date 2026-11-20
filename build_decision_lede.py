@@ -124,7 +124,10 @@ def main():
         # Jemperli page got no lede and test_decision_lede_fact_first blocked. The block is allowed here and kept
         # in group 1; the lede goes after it tonight and inject_verified_against re-orders them on its next run.
         hm = re.search(r'(<div class="ban ap">[^<]*</div>\s*(?:' + re.escape(B) + r'.*?' + re.escape(E) + r'\s*)?'
-                       r'(?:<!--VERIFIED:BEGIN-->.*?<!--VERIFIED:END-->\s*)?)'
+                       r'(?:<!--VERIFIED:BEGIN-->.*?<!--VERIFIED:END-->\s*)?'
+                       # 2026-11-20: the same for inject_first_recorded.py, which also runs first. The Infilbray page
+                       # (SNY-2026-11-18) had VERIFIED then FIRSTREC under the banner, matched nothing and got no lede.
+                       r'(?:<!--FIRSTREC:BEGIN-->.*?<!--FIRSTREC:END-->\s*)?)'
                        r'<p class="sub">(.*?)</p>', doc, re.S)
         if not hm:
             stats["skipped"] += 1
@@ -195,7 +198,7 @@ def main():
                 newhead = html.escape(rebuilt, quote=False)
                 stats["headline_cleaned"] += 1
         g1 = re.sub(re.escape(B) + r".*?" + re.escape(E) + r"\s*", "", hm.group(1), flags=re.S)
-        vi = g1.find("<!--VERIFIED:BEGIN-->")
+        vi = min([i for i in (g1.find("<!--VERIFIED:BEGIN-->"), g1.find("<!--FIRSTREC:BEGIN-->")) if i >= 0] or [-1])
         if vi >= 0:        # lede directly under the banner, the Verified-against line after it (its own placement)
             g1, tail = g1[:vi], g1[vi:]
         else:
