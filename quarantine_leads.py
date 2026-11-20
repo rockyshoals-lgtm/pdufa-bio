@@ -214,6 +214,79 @@ def raise_issue(lead):
         print(f"   (issue create skipped: {e})")
 
 
+ACK_FILES = ("_drug_watch_ack.json", "_fda_drugs_feed_ack.json", "_newswire_ack.json", "_fda_watch_ack.json")
+
+
+def acked_keys(here=HERE):
+    """Every ack key on file, in the form the HELD issue prints ("ack key: `...`"). drug_pages keys are
+    "{slug}|{source}", fda_drugs_feed and sponsor_feed keys are the strings in "acked", drugs_at_fda keys are
+    "{ticker}|{ap_date}". A key that is in none of these stays open: the safe direction."""
+    keys = set()
+    for f in ACK_FILES:
+        p = os.path.join(here, f)
+        if not os.path.exists(p):
+            continue
+        try:
+            d = json.load(io.open(p, encoding="utf-8"))
+        except ValueError:
+            continue
+        for k in d.get("acked") or []:
+            if isinstance(k, str):
+                keys.add(k)
+        for x in d.get("acks") or []:
+            if not isinstance(x, dict):
+                continue
+            if x.get("slug") and x.get("source"):
+                keys.add(f"{x['slug']}|{x['source']}")
+            if x.get("ticker") and x.get("ap_date"):
+                keys.add(f"{x['ticker']}|{x['ap_date']}")
+    return keys
+
+
+ACK_KEY = re.compile(r"ack key:\s*`?([^`\n]+?)`?\s*(?:\(first seen|$)", re.M)
+
+
+def resolved_issues(issues, acked):
+    """(number, why) for each open HELD / ESCALATION issue whose every ack key is now acked.
+
+    2026-11-18 (David: "we are getting more blocked notices from github"): #93, #94, #97, #101 and #105 stayed open
+    for a day after their leads were published and acked, because nothing closed them. Closing keys only on the ack
+    files, never on "the lead did not appear this run": a watcher that failed to fetch also reports no leads, and
+    closing on that would hide a real one (issued_keys would then stop it reopening)."""
+    out = []
+    for i in issues:
+        t = str(i.get("title") or "")
+        if not (t.startswith("HELD: ") or t.startswith("ESCALATION: pdufa.bio")):
+            continue
+        body = i.get("body") or ""
+        keys = [k.strip() for k in ACK_KEY.findall(body)]
+        # a key line the pattern cannot read (a backtick in a title-only newswire key) must keep the issue open,
+        # never be skipped: closing on the keys we could read would close an issue that still has a live lead
+        if len(keys) != len(re.findall(r"ack key:", body)):
+            continue
+        if keys and all(k in acked for k in keys):
+            out.append((i["number"], f"every lead it names is acked on main ({len(keys)} key(s))"))
+    return out
+
+
+def close_resolved():
+    try:
+        out = subprocess.run(["gh", "issue", "list", "--state", "open", "--limit", "100", "--json",
+                              "number,title,body"], capture_output=True, text=True, timeout=60).stdout
+        issues = json.loads(out or "[]")
+    except Exception as e:  # noqa: BLE001
+        print(f"   (resolved-issue sweep skipped: {e})")
+        return
+    run = os.environ.get("GITHUB_RUN_ID", "local")
+    for n, why in resolved_issues(issues, acked_keys()):
+        try:
+            subprocess.run(["gh", "issue", "close", str(n), "--comment",
+                            f"Resolved: {why}. Closed by run {run}."], check=True, timeout=60)
+            print(f"   closed #{n}: {why}")
+        except Exception as e:  # noqa: BLE001
+            print(f"   (could not close #{n}: {e})")
+
+
 def cmd_collect(a):
     leads = read_leads(a.leads)
     state = load_state(a.state)
@@ -235,6 +308,8 @@ def cmd_collect(a):
             state["email_status"] = how
             print(f"ESCALATION: {state['consecutive_held_runs']} consecutive held runs -> email ({how})")
     io.open(a.state, "w", encoding="utf-8", newline="\n").write(json.dumps(state, indent=1, ensure_ascii=False) + "\n")
+    if not a.no_issue:
+        close_resolved()   # 2026-11-18: HELD/ESCALATION issues whose leads are all acked close themselves
     return 0
 
 
