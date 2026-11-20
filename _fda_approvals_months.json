@@ -7618,7 +7618,7 @@
 ]
 },
 "2026-10": {
-"fetched": "2026-11-19",
+"fetched": "2026-11-20",
 "items": [
 {
 "app": "NDA219617",
@@ -8017,17 +8017,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761105Orig1s053; 761262Orig1s019ltr.pdf"
 },
 {
-"app": "NDA211651",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-14",
-"class": "Efficacy",
-"date": "2026-10-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
-},
-{
 "app": "NDA217439",
 "brand": "Talzenna",
 "generic": "talazoparib",
@@ -8039,9 +8028,20 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
 },
 {
+"app": "NDA211651",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-14",
+"class": "Efficacy",
+"date": "2026-10-26",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
+},
+{
 "app": "BLA761187",
 "brand": "Lucamzi",
-"generic": "ranibizumab-blrz",
+"generic": "ranibizumab",
 "sponsor": "Xbrane Biopharma Ab",
 "kind": "new application",
 "sub": "ORIG-1",
@@ -8074,7 +8074,7 @@
 ]
 },
 "2026-11": {
-"fetched": "2026-11-19",
+"fetched": "2026-11-20",
 "items": [
 {
 "app": "BLA761433",
@@ -8167,13 +8167,13 @@
 {
 "app": "NDA215390",
 "brand": "Igalmi",
-"generic": "dexmedetomidine",
+"generic": "dexmedetomidine hydrochloride",
 "sponsor": "Teva",
 "kind": "efficacy supplement",
 "sub": "SUPPL-3",
 "class": "Efficacy",
 "date": "2026-11-13",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215390Orig1s003ltr.pdf"
 },
 {
 "app": "BLA761069",
@@ -8184,18 +8184,18 @@
 "sub": "SUPPL-59",
 "class": "Efficacy",
 "date": "2026-11-13",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s059ltr.pdf"
 },
 {
 "app": "BLA761488",
 "brand": "Klygefa",
-"generic": "gefurulimab",
+"generic": "gefurulimab-gaks",
 "sponsor": "Alexion Pharm",
 "kind": "new application",
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-13",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf"
 },
 {
 "app": "NDA219083",
@@ -8206,7 +8206,7 @@
 "sub": "SUPPL-2",
 "class": "Efficacy",
 "date": "2026-11-13",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219083Orig1s002ltr.pdf"
 },
 {
 "app": "NDA217369",
@@ -8217,7 +8217,84 @@
 "sub": "SUPPL-4",
 "class": "Efficacy",
 "date": "2026-11-13",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217369Orig1s004ltr.pdf"
+},
+{
+"app": "NDA215499",
+"brand": "Apretude",
+"generic": "cabotegravir",
+"sponsor": "Viiv Hlthcare",
+"kind": "efficacy supplement",
+"sub": "SUPPL-10",
+"class": "Efficacy",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215499Orig1s010ltr.pdf"
+},
+{
+"app": "NDA212888",
+"brand": "Cabenuva",
+"generic": "cabotegravir and rilpivirine",
+"sponsor": "Viiv Hlthcare",
+"kind": "efficacy supplement",
+"sub": "SUPPL-18",
+"class": "Efficacy",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212888Orig1s018ltr.pdf"
+},
+{
+"app": "BLA125504",
+"brand": "Cosentyx",
+"generic": "secukinumab",
+"sponsor": "Novartis Pharms Corp",
+"kind": "efficacy supplement",
+"sub": "SUPPL-101",
+"class": "Efficacy",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf"
+},
+{
+"app": "NDA215783",
+"brand": "Phenylephrine Hydrochloride In Sodium Chloride",
+"generic": "phenylephrine hydrochloride in sodium chloride",
+"sponsor": "Inforlife",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 5 - New Formulation or New Manufacturer",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215783Orig1s000ltr.pdf"
+},
+{
+"app": "NDA218160",
+"brand": "Retevmo",
+"generic": "selpercatinib",
+"sponsor": "Eli Lilly And Co",
+"kind": "efficacy supplement",
+"sub": "SUPPL-9",
+"class": "Efficacy",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213246Orig1s018,218160Orig1s009ltr.pdf"
+},
+{
+"app": "NDA213246",
+"brand": "Retevmo",
+"generic": "selpercatinib",
+"sponsor": "Eli Lilly And Co",
+"kind": "efficacy supplement",
+"sub": "SUPPL-18",
+"class": "Efficacy",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213246Orig1s018,218160Orig1s009ltr.pdf"
+},
+{
+"app": "NDA212887",
+"brand": "Vocabria",
+"generic": "cabotegravir sodium",
+"sponsor": "Viiv Hlthcare",
+"kind": "efficacy supplement",
+"sub": "SUPPL-12",
+"class": "Efficacy",
+"date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/212887Orig1s012ltr.pdf"
 },
 {
 "app": "NDA220791",
@@ -8228,18 +8305,29 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220791Orig1s000ltr.pdf"
+},
+{
+"app": "NDA220996",
+"brand": "Lembaz",
+"generic": "adrabetadex",
+"sponsor": "Mandos Llc",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-17",
 "letter": ""
 },
 {
-"app": "BLA125504",
-"brand": "Cosentyx",
-"generic": "secukinumab",
-"sponsor": "Novartis Pharms Corp",
-"kind": "efficacy supplement",
-"sub": "SUPPL-101",
-"class": "Efficacy",
+"app": "NDA220936",
+"brand": "Nelkarmi",
+"generic": "neladalkib",
+"sponsor": "Nuvalent",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
 "date": "2026-11-17",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf"
+"letter": ""
 }
 ]
 }
