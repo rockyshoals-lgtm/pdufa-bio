@@ -8,10 +8,12 @@ on a site where Google already declines to crawl 1,612 pages.
 
 Checks:
   1. clean_name on planted names (stage tails cut, study acronyms and durations rejected, real names kept);
-  2. no built /drug/ page has a slug ending -phase, -study or -trial, or starting with a duration.
+  2. no built /drug/ page has a slug ending -phase, -study or -trial, or starting with a duration;
+  3. every page in _drug_slug_folds.json still redirects to its drug in vercel.json.
 
     python tests/test_drug_slugs_not_events.py
 """
+import json
 import os
 import re
 import sys
@@ -46,6 +48,17 @@ def main():
     bad = sorted(s for s in (os.listdir(d) if os.path.isdir(d) else []) if BAD_SLUG.search(s))
     if bad:
         fails.append(f"{len(bad)} drug page(s) named for a trial stage or study: {bad[:8]}")
+    # 3. every folded page still 301s to its drug (build_drug_pages.py rewrites all /drug/ redirects each run, which
+    #    dropped them once, 2026-11-20).
+    fp = os.path.join(HERE, "_drug_slug_folds.json")
+    vj = os.path.join(HERE, "pdufa_site_src", "vercel.json")
+    if os.path.exists(fp) and os.path.exists(vj):
+        folds = json.load(open(fp, encoding="utf-8")).get("folds", {})
+        have = {(r.get("source"), r.get("destination")) for r in json.load(open(vj, encoding="utf-8")).get("redirects", [])}
+        lost = [o for o, n in folds.items() if os.path.isdir(os.path.join(d, n)) and not os.path.isdir(os.path.join(d, o))
+                and ("/drug/" + o, "/drug/" + n) not in have]
+        if lost:
+            fails.append(f"{len(lost)} folded drug page(s) lost their redirect: {lost[:8]}")
     if fails:
         print("FAIL: drug pages named for events")
         for f in fails:

@@ -2373,6 +2373,26 @@
    "permanent": true
   },
   {
+   "source": "/drug/ag-236-phase",
+   "destination": "/drug/ag-236",
+   "permanent": true
+  },
+  {
+   "source": "/drug/al001-phase",
+   "destination": "/drug/al001",
+   "permanent": true
+  },
+  {
+   "source": "/drug/aln-2232-phase",
+   "destination": "/drug/aln-2232",
+   "permanent": true
+  },
+  {
+   "source": "/drug/aln-6400-phase",
+   "destination": "/drug/aln-6400",
+   "permanent": true
+  },
+  {
    "source": "/drug/amikacin-liposome-inhalation-suspension",
    "destination": "/drug/arikayce",
    "permanent": true
@@ -2388,6 +2408,16 @@
    "permanent": true
   },
   {
+   "source": "/drug/amt-191-phase",
+   "destination": "/drug/amt-191",
+   "permanent": true
+  },
+  {
+   "source": "/drug/amt-260-phase",
+   "destination": "/drug/amt-260",
+   "permanent": true
+  },
+  {
    "source": "/drug/anifrolumab-fnia",
    "destination": "/drug/saphnelo",
    "permanent": true
@@ -2398,6 +2428,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/ap03-phase",
+   "destination": "/drug/ap03",
+   "permanent": true
+  },
+  {
    "source": "/drug/apitegromab-mstn",
    "destination": "/drug/isembyld",
    "permanent": true
@@ -2405,6 +2440,11 @@
   {
    "source": "/drug/apomorphine-hydrochloride",
    "destination": "/drug/onapgo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/arv-393-phase",
+   "destination": "/drug/arv-393",
    "permanent": true
   },
   {
@@ -2433,6 +2473,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/axpaxli-phase",
+   "destination": "/drug/axpaxli",
+   "permanent": true
+  },
+  {
    "source": "/drug/aztreonam-and-avibactam",
    "destination": "/drug/emblaveo",
    "permanent": true
@@ -2440,6 +2485,11 @@
   {
    "source": "/drug/baricitinib",
    "destination": "/drug/olumiant",
+   "permanent": true
+  },
+  {
+   "source": "/drug/barzolvolimab-phase",
+   "destination": "/drug/barzolvolimab",
    "permanent": true
   },
   {
@@ -2475,6 +2525,11 @@
   {
    "source": "/drug/brentuximab-vedotin",
    "destination": "/drug/adcetris",
+   "permanent": true
+  },
+  {
+   "source": "/drug/brepocitinib-phase",
+   "destination": "/drug/brepocitinib",
    "permanent": true
   },
   {
@@ -2718,8 +2773,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/gx-03-phase",
+   "destination": "/drug/gx-03",
+   "permanent": true
+  },
+  {
    "source": "/drug/high-dose",
    "destination": "/drug/pitolisant-hd",
+   "permanent": true
+  },
+  {
+   "source": "/drug/hwk-206-phase",
+   "destination": "/drug/hwk-206",
    "permanent": true
   },
   {
@@ -2730,6 +2795,11 @@
   {
    "source": "/drug/icotrokinra",
    "destination": "/drug/icotyde",
+   "permanent": true
+  },
+  {
+   "source": "/drug/im-1021-phase",
+   "destination": "/drug/im-1021",
    "permanent": true
   },
   {
@@ -2788,6 +2858,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/lasofoxifene-phase",
+   "destination": "/drug/lasofoxifene",
+   "permanent": true
+  },
+  {
    "source": "/drug/lebrikizumab-lbkz",
    "destination": "/drug/ebglyss",
    "permanent": true
@@ -2843,6 +2918,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/mar002-phase",
+   "destination": "/drug/mar002",
+   "permanent": true
+  },
+  {
    "source": "/drug/maralixibat",
    "destination": "/drug/livmarli",
    "permanent": true
@@ -2893,6 +2973,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/ml-007c-ma-phase",
+   "destination": "/drug/ml-007c-ma",
+   "permanent": true
+  },
+  {
    "source": "/drug/molgramostim-inhalation",
    "destination": "/drug/molbreevi",
    "permanent": true
@@ -2918,8 +3003,23 @@
    "permanent": true
   },
   {
+   "source": "/drug/obexelimab-phase",
+   "destination": "/drug/obexelimab",
+   "permanent": true
+  },
+  {
    "source": "/drug/obinutuzumab",
    "destination": "/drug/gazyva",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ocu400-phase",
+   "destination": "/drug/ocu400",
+   "permanent": true
+  },
+  {
+   "source": "/drug/ocu410st-phase",
+   "destination": "/drug/ocu410st",
    "permanent": true
   },
   {
@@ -2935,6 +3035,11 @@
   {
    "source": "/drug/opdivo-in",
    "destination": "/drug/opdivo",
+   "permanent": true
+  },
+  {
+   "source": "/drug/opgx-best1-phase",
+   "destination": "/drug/opgx-best1",
    "permanent": true
   },
   {
@@ -3038,6 +3143,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/rap-219-phase",
+   "destination": "/drug/rap-219",
+   "permanent": true
+  },
+  {
    "source": "/drug/ravulizumab",
    "destination": "/drug/ultomiris",
    "permanent": true
@@ -3088,6 +3198,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/scy-770-phase",
+   "destination": "/drug/scy-770",
+   "permanent": true
+  },
+  {
    "source": "/drug/sebetralstat",
    "destination": "/drug/ekterly",
    "permanent": true
@@ -3120,6 +3235,16 @@
   {
    "source": "/drug/sparsentan",
    "destination": "/drug/filspari",
+   "permanent": true
+  },
+  {
+   "source": "/drug/spy072-phase",
+   "destination": "/drug/spy072",
+   "permanent": true
+  },
+  {
+   "source": "/drug/srk-439-phase",
+   "destination": "/drug/srk-439",
    "permanent": true
   },
   {
@@ -3170,6 +3295,11 @@
   {
    "source": "/drug/tezepelumab-ekko",
    "destination": "/drug/tezspire",
+   "permanent": true
+  },
+  {
+   "source": "/drug/th103-phase",
+   "destination": "/drug/th103",
    "permanent": true
   },
   {

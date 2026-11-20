@@ -23,6 +23,7 @@ import re
 import subprocess
 import sys
 import time
+import urllib.error
 import urllib.request
 from zoneinfo import ZoneInfo
 
@@ -61,6 +62,41 @@ def repo_date(path):
     except Exception:
         return ""
     return m.group(1)[:10] if m else ""
+
+
+class _NoFollow(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):  # noqa: D401
+        return None
+
+
+def check_fold_redirects():
+    """2026-11-20: every folded stage-named drug page (_drug_slug_folds.json) must 301/308 LIVE to its drug.
+    build_drug_pages.py rewrites all /drug/ redirects each run and once dropped these 26, leaving 404s."""
+    fp = os.path.join(HERE, "_drug_slug_folds.json")
+    if not os.path.exists(fp):
+        return []
+    folds = json.load(io.open(fp, encoding="utf-8")).get("folds", {})
+    drug = os.path.join(SITE, "drug")
+    opener = urllib.request.build_opener(_NoFollow)
+    out, n = [], 0
+    for old, new in sorted(folds.items()):
+        if not os.path.isdir(os.path.join(drug, new)) or os.path.isdir(os.path.join(drug, old)):
+            continue
+        n += 1
+        code, loc = None, ""
+        try:
+            opener.open(urllib.request.Request(BASE + "/drug/" + old, headers={
+                "User-Agent": "pdufa.bio-verify/1.0"}), timeout=30)
+            code = 200
+        except urllib.error.HTTPError as e:
+            code, loc = e.code, e.headers.get("location", "")
+        except Exception as e:  # noqa: BLE001
+            out.append(f"/drug/{old}: fetch error {e}")
+            continue
+        if code not in (301, 308) or not loc.rstrip("/").endswith("/drug/" + new):
+            out.append(f"/drug/{old}: HTTP {code} {loc!r}, expected a permanent redirect to /drug/{new}")
+    print(f"fold redirects: {n - len(out)} of {n} live")
+    return out
 
 
 # WHY THIS IS A FLAG AND NOT AUTOMATIC (2026-09-09, caught before it shipped):
@@ -272,6 +308,7 @@ def main():
                 print(f"[{stamp}] live matches the deployed tree on {len(checkable)} url(s)")
         if p < a.passes - 1:
             time.sleep(a.gap)
+    fails += check_fold_redirects()
     print("RESULT:", "PASS" if not fails else "FAIL")
     for f in fails:
         print("  " + f)
