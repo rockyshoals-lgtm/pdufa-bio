@@ -58,31 +58,31 @@
   ]
  },
  "ALDX-2025-04-03": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-04-02",
-  "record": "NDA 216442 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA216442_20250402.pdf",
   "name": "Reproxalap ophthalmic solution",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "NDA 216442 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA216442_20250402.pdf"
  },
  "ALDX-2026-03-17": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2026-03-16",
-  "record": "NDA 216442 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA216442_20260316.pdf",
   "name": "Reproxalap ophthalmic solution",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "NDA 216442 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA216442_20260316.pdf"
  },
  "ALVO-2025-11-02": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-10-31",
-  "record": "BLA 761462 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761462_20251031.pdf",
   "name": "AVT05 (proposed golimumab biosimilar)",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "BLA 761462 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761462_20251031.pdf"
  },
  "AMGN-2026-10-09": {
   "checked": "2026-10-15",
@@ -156,22 +156,22 @@
   ]
  },
  "ATRA-2025-01-16": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-01-15",
-  "record": "BLA 125745 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125745_20250115.pdf",
   "name": "EBVALLO (tabelecleucel)",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "BLA 125745 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125745_20250115.pdf"
  },
  "ATRA-2026-01-12": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2026-01-09",
-  "record": "BLA 125745 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125745_20260109.pdf",
   "name": "EBVALLO (tabelecleucel)",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "BLA 125745 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125745_20260109.pdf"
  },
  "AXSM-2026-04-30": {
   "checked": "2026-10-03",
@@ -375,22 +375,22 @@
   ]
  },
  "CAPR-2025-07-11": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-07-09",
-  "record": "BLA 125842 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125842_20250709.pdf",
   "name": "Deramiocel",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "BLA 125842 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125842_20250709.pdf"
  },
  "CORT-2025-12-31": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-12-30",
-  "record": "NDA 219398 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf",
   "name": "Relacorilant capsules",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "NDA 219398 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf"
  },
  "CRSP-2026-07-01": {
   "checked": "2026-11-17",
@@ -436,22 +436,22 @@
   "terms": []
  },
  "ETON-2026-02-25": {
+  "basis": "red team 2026-11-18: FDA approval letter read directly",
   "checked": "2026-11-18",
   "date": "2026-02-25",
-  "record": "NDA 219873",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219873Orig1s000ltr.pdf",
   "name": "DESMODA (desmopressin acetate) oral solution",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA approval letter read directly"
+  "record": "NDA 219873",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219873Orig1s000ltr.pdf"
  },
  "FBIO-2025-10-01": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-09-30",
-  "record": "NDA 211241 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA211241_20250930.pdf",
   "name": "CUTX-101 (copper histidinate)",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "NDA 211241 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA211241_20250930.pdf"
  },
  "GILD-2026-02-06": {
   "checked": "2026-11-17",
@@ -730,13 +730,13 @@
   ]
  },
  "MIST-2025-03-28": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-03-27",
-  "record": "NDA 218571 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218571_20250327.pdf",
   "name": "Etripamil nasal spray",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "NDA 218571 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218571_20250327.pdf"
  },
  "MNKD-2026-05-29": {
   "checked": "2026-10-03",
@@ -925,13 +925,13 @@
   ]
  },
  "OTLK-2025-08-28": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-08-27",
-  "record": "BLA 761320 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761320_20250827.pdf",
   "name": "ONS-5010 (bevacizumab-vikg)",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "BLA 761320 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA761320_20250827.pdf"
  },
  "PFE-2026-02-24": {
   "checked": "2026-11-17",
@@ -1098,13 +1098,13 @@
   ]
  },
  "REPL-2025-07-22": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-07-21",
-  "record": "BLA 125827 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125827_20250721.pdf",
   "name": "RP1 (vusolimogene oderparepvec) with nivolumab",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "BLA 125827 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_BLA125827_20250721.pdf"
  },
  "RGNX-2026-02-09": {
   "basis": "red team 2026-11-18: FDA record read directly",
@@ -1187,13 +1187,13 @@
   "source_url": "https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"
  },
  "SNY-2026-02-24": {
+  "basis": "red team 2026-11-18: FDA approval letter read directly",
   "checked": "2026-11-18",
   "date": "2026-02-23",
-  "record": "BLA 761055 S-075",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf",
   "name": "DUPIXENT (dupilumab)",
   "oc": "Approved",
-  "basis": "red team 2026-11-18: FDA approval letter read directly"
+  "record": "BLA 761055 S-075",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761055Orig1s075ltr.pdf"
  },
  "SNY-2026-04-22": {
   "checked": "2026-10-03",
@@ -1296,13 +1296,13 @@
   ]
  },
  "UNCY-2025-06-30": {
+  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly",
   "checked": "2026-11-18",
   "date": "2025-06-27",
-  "record": "NDA 218607 CRL",
-  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218607_20250627.pdf",
   "name": "Oxylanthanum carbonate tablets",
   "oc": "CRL",
-  "basis": "red team 2026-11-18: FDA Complete Response Letter file read directly"
+  "record": "NDA 218607 CRL",
+  "source_url": "https://download.open.fda.gov/crl/CRL_NDA218607_20250627.pdf"
  },
  "VNDA-2026-02-20": {
   "checked": "2026-10-03",

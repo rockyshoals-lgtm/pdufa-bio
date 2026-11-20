@@ -1,23 +1,8 @@
 {
- "held_since": "2026-11-18T02:44:32Z",
- "consecutive_held_runs": 30,
- "emailed_at": "2026-11-18T03:29:18Z",
- "leads": [
-  {
-   "source": "drug_pages",
-   "row_id": "drug:venglustat",
-   "key": "venglustat|fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g",
-   "text": "/drug/venglustat fda-press:fda-approves-first-drug-treat-neurological-symptoms-type-3-g 'venglustat' appears with approval language",
-   "first_seen": "2026-11-18T20:40:25Z"
-  },
-  {
-   "source": "drug_pages",
-   "row_id": "drug:vidofludimus-calcium",
-   "key": "vidofludimus-calcium|openfda:20261019",
-   "text": "/drug/vidofludimus-calcium openfda:20261019 AP 20261019 (ORIG-1, class TYPE 2)",
-   "first_seen": "2026-11-18T02:44:32Z"
-  }
- ],
+ "held_since": null,
+ "consecutive_held_runs": 0,
+ "emailed_at": null,
+ "leads": [],
  "issued_keys": [
   "drug_pages|aficamten|sponsor:CYTK:2026-10-19",
   "drug_pages|asundexian|fda-press:fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-",
@@ -54,6 +39,6 @@
   "sponsor_feed|pdufa_ird_2026-10-17|https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia",
   "sponsor_feed|pdufa_regn_2026-11-30|https://investor.regeneron.com/news-releases/news-release-details/livsayistm-cemdisiran-approved-fda-first-and-only-sirna-therapy"
  ],
- "last_clear_run": "2026-11-17T22:21:38Z",
+ "last_clear_run": "2026-11-20T09:12:44Z",
  "email_status": "mention-issue (already open)"
 }
