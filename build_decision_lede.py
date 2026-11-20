@@ -4,7 +4,7 @@
 2.1  The answer box on a new approval goes to whoever publishes one clean, FDA-dated sentence first
      (trialfriend.com took Atebrioz, breakoutbiotechstocks.com took JUVMO). The 09-27 rule fixed the
      <title>/<meta> of FDA-notice pages; the VISIBLE first sentence of 126 approved pages still opened
-     "AbbVie Inc., LINZESS (Iinaclotide) · functional constipation (FC) in patients 2 to 5 ye." This
+     "AbbVie Inc., LINZESS (linaclotide) · functional constipation (FC) in patients 2 to 5 ye." This
      writes one sentence directly under the APPROVED banner, between markers, every run:
        FDA-dated     "{Drug} was approved by the FDA on {FDA date} for {indication}."
        FDA notice    "On {date}, the FDA announced its approval of {Drug} for {indication}."

@@ -72,6 +72,9 @@ def main():
                                          "company": str(r.get("company") or ""), "tickers": [], "pages": [],
                                          "announced": dcd if dcd and dcd != fd else "", "oc": r.get("oc")})
         ent["tickers"].append(tk)
+        # 2026-11-20: co-listed partners keep their own names. The LISRAYA action is filed under
+        # PFE (partner) and ROIV (sponsor); first row wins used to print one partner's name for both.
+        ent.setdefault("cos", {})[tk] = str(r.get("company") or "")
         if has_page:
             ent["pages"].append((tk, page))
     # Audit 2026-10-03 (2.1 / 3.1): archive decision pages with no API row, dated by Drugs@FDA through
@@ -100,6 +103,12 @@ def main():
         if tk not in ent["tickers"]:
             ent["tickers"].append(tk)
             ent["pages"].append((tk, f"/fda-decision/{slug}"))
+    def sponsor_cell(e):
+        cos = {t: c for t, c in (e.get("cos") or {}).items() if c}
+        if len(set(cos.values())) > 1:
+            return " / ".join(f'{esc(cos[t][:36])} ({esc(t)})' for t in sorted(cos))
+        return f'{esc(e["company"][:36])} ({esc("/".join(sorted(set(e["tickers"]))))})'
+
     acts = sorted(by_action.values(), key=lambda e: e["date"], reverse=True)
     n = len(acts)
     n_ap = sum(1 for e in acts if e["kind"] == "Approval letter")
@@ -193,7 +202,7 @@ def main():
         for e in ys:
             pages = " &middot; ".join(f'<a href="{esc(p)}">{esc(t)}</a>' for t, p in e["pages"]) or "&mdash;"
             body.append(f'<tr><td class="dt">{pretty(e["date"], short=True)}</td><td>{esc(e["drug"][:60])}</td>'
-                        f'<td>{esc(e["company"][:36])} ({esc("/".join(sorted(set(e["tickers"]))))})</td>'
+                        f'<td>{sponsor_cell(e)}</td>'
                         f'<td><a href="{esc(e["url"])}" rel="noopener">{esc(e["kind"])}</a>'
                         f'{"<br><span style=font-size:12px>" + esc(e["record"]) + "</span>" if e["record"] and not e["record"].startswith("CRL letter") else ""}</td>'
                         f'<td>{pretty(e["announced"], short=True) if e["announced"] else "same day"}</td><td>{pages}</td></tr>')

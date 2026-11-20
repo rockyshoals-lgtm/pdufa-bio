@@ -310,6 +310,14 @@ def main():
     T2 = re.compile(r"^([A-Z]{1,6}) FDA Decision \(([^)]+)\):\s*(.+?):\s*"
                     r"(Approved|Complete Response Letter|CRL)\s*\|", re.I)
     arch_rows = []
+    # 2026-11-18 red team: an archive page's FDA action day comes from _fda_action_archive.json (the FDA's own
+    # record) when the page has no dataset row. /drug/linzess said "approved May 27" (AbbVie's release) after the
+    # decision pages moved to the FDA's May 21 (NDA 202811 S-023), because this source never read the archive.
+    try:
+        _faa = json.load(open(os.path.join(HERE, "_fda_action_archive.json"), encoding="utf-8"))
+        _faa = _faa if isinstance(_faa, dict) else {}
+    except Exception:
+        _faa = {}
     for dp_ in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         slug_ = os.path.basename(os.path.dirname(dp_))
         md_ = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug_)
@@ -348,9 +356,13 @@ def main():
             drug_ = f"{drug_} ({ext_.group(1)})"
         # type "FDA decision", not "PDUFA" (red team 2026-10-04): an archive page carries the
         # decision day; whether that day was also the goal date is not established by the archive.
-        arch_rows.append({"t": md_.group(1), "d": md_.group(2), "dp": "day", "type": "FDA decision",
-                          "st": "Decided", "name": drug_,
-                          "url": f"/fda-decision/{slug_}"})
+        _ar = {"t": md_.group(1), "d": md_.group(2), "dp": "day", "type": "FDA decision",
+               "st": "Decided", "name": drug_,
+               "url": f"/fda-decision/{slug_}"}
+        _fd = str((_faa.get(slug_) or {}).get("date") or "")
+        if re.match(r"\d{4}-\d{2}-\d{2}$", _fd) and _fd != md_.group(2):
+            _ar["_d"] = {"fda_action_date": _fd}
+        arch_rows.append(_ar)
     print(f"archive source: {len(arch_rows)} decided rows with a parseable drug name")
 
     # THIRD SOURCE (audit 2026-08-18c): curated under-review rows. AI grounding queries cite us
@@ -390,6 +402,10 @@ def main():
         _fa = (_r.get("_d") or {}).get("fda_action_date")
         if _fa and _r.get("dcd") and str(_r.get("oc") or "") == "Approved":
             FAD[(str(_r.get("t") or "").upper(), _r["dcd"])] = _fa
+    for _r in arch_rows:     # the FDA's own day for archive-only decisions (see _faa above)
+        _fa = (_r.get("_d") or {}).get("fda_action_date")
+        if _fa:
+            FAD.setdefault((str(_r.get("t") or "").upper(), _r["d"]), _fa)
     drugs = {}
     rejected = []
     for r in rows + arch_rows + manual_rows:
@@ -578,6 +594,11 @@ def main():
                     f'<span class="t">{esc(typ)} &middot; {esc(when)}{badge}</span>'
                     f'<span class="d">{esc(tk)}</span></a>')
                 continue
+            # 2026-11-18: a decision is dated by the FDA's own day where its record states it (title and lede
+            # already were); the public day follows in brackets when it differs.
+            _fd = FAD.get((tk, day))
+            if outcome in ("Approved", "CRL") and _fd and _fd != day and not r.get("when_text"):
+                when = f"{pretty(_fd, 'day')} (announced {pretty(day, 'day')})"
             badge = (f' <span class="ok">&#10003; Approved</span>' if outcome == "Approved"
                      else f' <span class="bad">CRL</span>' if outcome == "CRL" else "")
             href = (f"/fda-decision/{tk}-{day}" if outcome in ("Approved", "CRL")
@@ -828,7 +849,7 @@ def main():
             else:
                 cd = max(dec_rows, key=_dday)
                 a5 = (f"Not in our records. The FDA issued a Complete Response Letter on "
-                      f"{pretty(_dday(cd))}"
+                      f"{pretty(FAD.get(_dkey(cd), _dday(cd)))}"
                       + (f"; the next tracked catalyst is "
                          f"{pretty(up[0]['d'], up[0].get('dp') or 'day')}." if up else "."))
             qa.append((f"Has {name} been approved by the FDA?", a5))
