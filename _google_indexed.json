@@ -1,1 +1,14 @@
-{"_note": "Paths Google Search Console shows as indexed (URL Inspection). Seeded 2026-11-11 from the red-team audit.", "indexed": ["/fda-decisions-today", "/pdufa/CYTK-aficamten", "/crl"]}
+{
+ "_note": "Paths Google Search Console shows as indexed (URL Inspection). Seeded 2026-11-11 from the red-team audit.",
+ "indexed": [
+  "/calendar/2026/december",
+  "/calendar/2026/november",
+  "/crl",
+  "/fda-decision/RHHBY-2026-11-13",
+  "/fda-decisions-today",
+  "/pdufa/BBIO-bbp-418",
+  "/pdufa/CAPR-deramiocel",
+  "/pdufa/CYTK-aficamten",
+  "/pdufa/SVRA-molbreevi"
+ ]
+}
