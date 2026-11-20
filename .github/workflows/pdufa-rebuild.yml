@@ -503,6 +503,13 @@ jobs:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python readout_miner.py --source edgar --edgar-days 30 --edgar-docs 200
 
+      # 2026-11-20: 60 readout names read "TP-04 Kore Phase 2 Phase 2 topline" (program + trial + readout joined
+      # with the shared phrase written twice), and every page built from the dataset showed it. Drop the second copy
+      # of any phrase repeated back to back in a row name, after the writers above and before the first page that
+      # prints names. Guard: tests/test_no_repeated_phrases.py.
+      - name: "Dataset names: no phrase written twice in a row"
+        run: python fix_repeated_phrases.py
+
       # Free subscribable calendar. Deliberately a STATIC file, not the Pro-gated /api/v1/calendar.ics,
       # so this costs the paid API tiering nothing. Runs after the dataset sync so the feed matches
       # the published pages, and before the normalisers so its injected copy gets swept like any other.

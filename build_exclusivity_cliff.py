@@ -34,7 +34,7 @@ BASE = "https://www.pdufa.bio"
 B, E = "<!--EXCL:BEGIN-->", "<!--EXCL:END-->"
 MEANING = {"NCE": "new chemical entity", "ODE": "orphan drug", "PED": "pediatric", "I": "new indication",
            "M": "miscellaneous", "NPP": "new patient population", "NP": "new product", "GAIN": "qualified infectious "
-           "disease product (GAIN)", "D": "new dosing schedule", "NS": "new strength"}
+           "disease product", "D": "new dosing schedule", "NS": "new strength"}
 MON = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
