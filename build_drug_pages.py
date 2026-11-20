@@ -1005,6 +1005,13 @@ def main():
         new = old.rsplit("-", 1)[0]
         if new in drugs and old not in drugs:
             aliases.setdefault(old, new)
+    # 2026-11-20: stage-named pages folded into the drug ("brepocitinib-phase" -> "brepocitinib") keep their inbound
+    # links. They live here, not hand-added to vercel.json, because this block replaces every /drug/ redirect.
+    _fp = os.path.join(HERE, "_drug_slug_folds.json")
+    if os.path.exists(_fp):
+        for old, new in sorted(json.load(open(_fp, encoding="utf-8")).get("folds", {}).items()):
+            if new in drugs and old not in drugs:
+                aliases.setdefault(old, new)
     vj =os.path.join(SITE, "vercel.json")
     if os.path.exists(vj) and not a.dry_run:
         cfg = json.load(open(vj, encoding="utf-8"))
