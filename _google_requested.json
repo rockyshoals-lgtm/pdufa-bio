@@ -1,1 +1,14 @@
-{"/pdufa/CAPR-deramiocel": "2026-11-11", "/pdufa/SVRA-molbreevi": "2026-11-11"}
+{
+ "/drug/aficamten": "2026-11-20",
+ "/drug/cemdisiran": "2026-11-20",
+ "/drug/ivonescimab": "2026-11-20",
+ "/fda-decision/CYTK-2026-11-16": "2026-11-20",
+ "/fda-decision/GSK-2026-11-17": "2026-11-20",
+ "/fda-decision/REGN-2026-11-18": "2026-11-20",
+ "/fda-decision/RHHBY-2026-11-16": "2026-11-20",
+ "/fda-decision/SMMT-2026-11-15": "2026-11-20",
+ "/fda-decision/TEVA-2026-11-16": "2026-11-20",
+ "/fda-this-month": "2026-11-20",
+ "/pdufa/CAPR-deramiocel": "2026-11-11",
+ "/pdufa/SVRA-molbreevi": "2026-11-11"
+}

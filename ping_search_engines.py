@@ -22,7 +22,7 @@ So this does the three things that do work:
 
     python ping_search_engines.py [--dry-run]
 """
-import argparse, datetime as dt, json, os, re, sys, urllib.error, urllib.request
+import argparse, datetime as dt, json, os, re, sys, time, urllib.error, urllib.request
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -121,33 +121,42 @@ def prioritise(urls):
 
 
 def post_indexnow(key, urls, dry):
+    """True when every endpoint accepted the list (200/202), after up to 3 tries each."""
+    import time
     body = json.dumps({"host": HOST, "key": key,
                        "keyLocation": f"https://{HOST}/{key}.txt",
                        "urlList": urls[:MAX_URLS]}).encode()
     if dry:
         print(f"  [dry-run] would POST {len(urls[:MAX_URLS])} URL(s) to IndexNow")
-        return
-    try:
-        # Two endpoints on purpose. api.indexnow.org fans out to every participating engine, but
-        # Bing Webmaster Tools' IndexNow panel showed ZERO submissions attributed to the property
-        # despite weeks of HTTP 200s from the shared endpoint (key file verified live and
-        # matching). Bing's own ingest endpoint is the one its console credits, so it gets a
-        # direct copy. Duplicate notification is explicitly harmless under the protocol.
-        for ep, label in (("https://api.indexnow.org/indexnow", "IndexNow (all engines)"),
-                          ("https://www.bing.com/indexnow", "IndexNow (Bing direct)")):
-            req = urllib.request.Request(ep, data=body, headers=UA, method="POST")
-            r = urllib.request.urlopen(req, timeout=25)
-            print(f"  {label}: HTTP {r.status} for {len(urls[:MAX_URLS])} URL(s)")
-    except urllib.error.HTTPError as e:
-        detail = {403: "key file not reachable yet -- it deploys with this commit, so the first "
-                       "run after a fresh key can fail; the next run succeeds",
-                  422: "URL/host mismatch"}.get(e.code, e.reason)
-        print(f"  IndexNow: HTTP {e.code} ({detail})")
-    except Exception as e:
-        print(f"  IndexNow: {type(e).__name__}: {e}")
+        return True
+    ok = True
+    # Two endpoints on purpose. api.indexnow.org fans out to every participating engine, but
+    # Bing Webmaster Tools' IndexNow panel showed ZERO submissions attributed to the property
+    # despite weeks of HTTP 200s from the shared endpoint (key file verified live and
+    # matching). Bing's own ingest endpoint is the one its console credits, so it gets a
+    # direct copy. Duplicate notification is explicitly harmless under the protocol.
+    for ep, label in (("https://api.indexnow.org/indexnow", "IndexNow (all engines)"),
+                      ("https://www.bing.com/indexnow", "IndexNow (Bing direct)")):
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(ep, data=body, headers=UA, method="POST")
+                r = urllib.request.urlopen(req, timeout=25)
+                print(f"  {label}: HTTP {r.status} for {len(urls[:MAX_URLS])} URL(s)")
+                break
+            except urllib.error.HTTPError as e:
+                detail = {403: "key file not reachable yet -- it deploys with this commit, so the first "
+                               "run after a fresh key can fail; the next run succeeds",
+                          422: "URL/host mismatch", 429: "too many requests"}.get(e.code, e.reason)
+                print(f"  {label}: HTTP {e.code} ({detail}), try {attempt + 1} of 3")
+            except Exception as e:
+                print(f"  {label}: {type(e).__name__}: {e}, try {attempt + 1} of 3")
+            time.sleep(10 * (attempt + 1))
+        else:
+            ok = False
+    return ok
 
 
-def submit_bing_batch(urls, dry):
+def submit_bing_batch(urls, dry, cap=40):
     """SubmitUrlBatch on the JSON protocol -- the quota-backed channel with real attribution.
 
     BWT showed 12 of ~100 daily submissions used while 418 pages sit unfetched on Google and Bing
@@ -162,19 +171,19 @@ def submit_bing_batch(urls, dry):
     key = os.environ.get("BING_WEBMASTER_API_KEY", "").strip()
     if not key:
         print("  Bing SubmitUrlBatch: no BING_WEBMASTER_API_KEY in env; skipped.")
-        return
+        return 0
     # Audit 2026-10-13 order 2, seen in the first ordered run (38506884875): the daily quota is shared by
     # the three scheduled runs and the console; a batch larger than what remains is REJECTED whole
     # ("Quota remaining for today: 20, Submitted: 80"), so the hubs at the front of the list were not
     # submitted at all. Submit 40 (three runs fit the quota), and on the quota error resubmit exactly
     # the remaining number, hubs first.
-    batch = urls[:40]
+    batch = urls[:max(0, cap)]
     if not batch:
-        print("  Bing SubmitUrlBatch: nothing changed; nothing to submit.")
-        return
+        print("  Bing SubmitUrlBatch: nothing to submit (nothing changed, or no quota left today).")
+        return 0
     if dry:
         print(f"  [dry-run] would SubmitUrlBatch {len(batch)} URL(s) to Bing")
-        return
+        return len(batch)
     for attempt in range(2):
         body = json.dumps({"siteUrl": "https://www.pdufa.bio/", "urlList": batch}).encode()
         try:
@@ -185,7 +194,7 @@ def submit_bing_batch(urls, dry):
             r = urllib.request.urlopen(req, timeout=45)
             print(f"  Bing SubmitUrlBatch: HTTP {r.status} for {len(batch)} URL(s) "
                   f"(quota-backed, console-attributed); first: {batch[0]}")
-            return
+            return len(batch)
         except urllib.error.HTTPError as e:
             detail = e.read().decode("utf-8", "replace")[:160]
             print(f"  Bing SubmitUrlBatch: HTTP {e.code} -- {detail}")
@@ -194,30 +203,31 @@ def submit_bing_batch(urls, dry):
                 batch = batch[:int(m.group(1))]
                 print(f"  Bing SubmitUrlBatch: resubmitting the first {len(batch)} (the remaining quota), hubs first")
                 continue
-            return
+            return 0
         except Exception as e:
             print(f"  Bing SubmitUrlBatch: {type(e).__name__}: {e}")
-            return
+            return 0
 
 
 def submit_gsc(dry):
     """Google Search Console sitemaps.submit. Needs a service-account JSON in the
-    GSC_SERVICE_ACCOUNT_JSON env var, and that account added as an owner of the property."""
+    GSC_SERVICE_ACCOUNT_JSON env var, and that account added as an owner of the property.
+    Returns None when not configured, else True only if every sitemap was accepted."""
     raw = os.environ.get("GSC_SERVICE_ACCOUNT_JSON", "").strip()
     if not raw:
         print("  Google Search Console: NOT CONFIGURED. This is the only real channel to Google; "
               "the old ping URL is gone. To enable: create a service account, add it as a user on "
               "the pdufa.bio GSC property, and put its JSON in the GSC_SERVICE_ACCOUNT_JSON secret.")
-        return
+        return None
     try:
         from google.oauth2 import service_account          # noqa
         from googleapiclient.discovery import build        # noqa
     except Exception:
         print("  Google Search Console: credential present but google-api-python-client is not "
               "installed in this environment; add it to the workflow's pip install step.")
-        return
+        return False
     if dry:
-        print("  [dry-run] would call searchconsole sitemaps.submit"); return
+        print("  [dry-run] would call searchconsole sitemaps.submit"); return True
     try:
         creds = service_account.Credentials.from_service_account_info(
             json.loads(raw), scopes=["https://www.googleapis.com/auth/webmasters"])
@@ -228,8 +238,17 @@ def submit_gsc(dry):
         # owner work out which they have, ask Google which properties this account can see and use
         # those. If it can see none, the service account was not added to the property, which is
         # the step people miss.
+        # Retried (red team, Nov 20): this step now fails the run, so a transient API error must not.
+        def _retry(call, tries=3):
+            for k in range(tries):
+                try:
+                    return call()
+                except Exception:  # noqa: BLE001
+                    if k == tries - 1:
+                        raise
+                    time.sleep(5 * (k + 1))
         try:
-            visible = [s["siteUrl"] for s in (svc.sites().list().execute().get("siteEntry") or [])]
+            visible = [s["siteUrl"] for s in (_retry(lambda: svc.sites().list().execute()).get("siteEntry") or [])]
         except Exception:
             visible = []
         wanted = [s for s in visible if HOST in s or s == f"sc-domain:{HOST.replace('www.', '')}"]
@@ -238,11 +257,16 @@ def submit_gsc(dry):
                   f"{' (' + ', '.join(visible[:4]) + ')' if visible else ''}, none of them pdufa.bio. "
                   f"Add its client_email as an OWNER on the property in Search Console "
                   f"(Settings -> Users and permissions). That is the step that is usually missed.")
-            return
-        feed = f"https://{HOST}/sitemap.xml"
-        for site in wanted:
+            return False
+        ok = True
+        # sitemap_index.xml (2026-11-20): Search Console lists each section sitemap under it with its own
+        # submitted-vs-indexed count, which is how we see WHICH kind of page Google is not indexing.
+        feeds = [f"https://{HOST}/sitemap.xml"]
+        if os.path.exists(os.path.join(SITE, "sitemap_index.xml")):
+            feeds.append(f"https://{HOST}/sitemap_index.xml")
+        for site, feed in [(st, fd) for st in wanted for fd in feeds]:
             try:
-                svc.sitemaps().submit(siteUrl=site, feedpath=feed).execute()
+                _retry(lambda: svc.sitemaps().submit(siteUrl=site, feedpath=feed).execute())
                 # Read the state back. lastSubmitted and lastDownloaded are different things and
                 # confusing them wastes an afternoon: submit is us telling Google the file changed
                 # (updates immediately, always), lastDownloaded is Google choosing to fetch it
@@ -251,20 +275,116 @@ def submit_gsc(dry):
                 # Logging both means this step can be judged from its own output.
                 try:
                     d = svc.sitemaps().get(siteUrl=site, feedpath=feed).execute()
-                    print(f"  Google Search Console: accepted for {site}\n"
+                    print(f"  Google Search Console: accepted {feed} for {site}\n"
                           f"      lastSubmitted (us)     {d.get('lastSubmitted')}\n"
                           f"      lastDownloaded (Google){d.get('lastDownloaded')}   "
                           f"warnings={d.get('warnings')} errors={d.get('errors')}")
                 except Exception:
-                    print(f"  Google Search Console: sitemap resubmitted for {site}")
+                    print(f"  Google Search Console: {feed} resubmitted for {site}")
             except Exception as e:
+                ok = False
                 msg = str(e)
-                print(f"  Google Search Console: {site} failed -> {type(e).__name__}: {msg[:180]}")
+                print(f"  Google Search Console: {site} {feed} failed -> {type(e).__name__}: {msg[:180]}")
                 if "403" in msg:
                     print("      403 means the service account is not an Owner on this property. "
                           "sitemaps.submit is not available to a 'Full' user.")
+        return ok
     except Exception as e:
         print(f"  Google Search Console: {type(e).__name__}: {e}")
+        return False
+
+
+# --------------------------------------------------------------------------------------------------------------
+# 2026-11-20 (indexing round 3): submit exactly what changed, prove it went, fail loudly when it did not.
+#
+# The 2-day lastmod window above sent IndexNow 1,739 of 1,785 URLs on the morning of Nov 20, three times a day, and
+# spent Bing's 100-a-day batch on the same hubs every run. Now the set is the pages whose content hash moved (or that
+# entered the sitemap) since the last build whose submission succeeded: _sitemap_lastmod.json at that commit vs now.
+# The workflow keeps that commit in the tag `indexed-ok`, moved only after a run whose submissions all landed, so a
+# failed run's pages are carried into the next run instead of being lost.
+
+def _git_show(ref, path):
+    import subprocess
+    try:
+        r = subprocess.run(["git", "show", f"{ref}:{path}"], cwd=HERE, capture_output=True, text=True,
+                           encoding="utf-8", errors="replace", timeout=60)
+        return r.stdout if r.returncode == 0 else None
+    except Exception:
+        return None
+
+
+def key_to_url(key):
+    rel = key[len("pdufa_site_src/"):] if key.startswith("pdufa_site_src/") else key
+    if rel == "index.html":
+        return "https://www.pdufa.bio/"
+    if rel.endswith("/index.html"):
+        return "https://www.pdufa.bio/" + rel[:-len("/index.html")]
+    if rel.endswith(".html") and "/" not in rel:
+        return "https://www.pdufa.bio/" + rel[:-len(".html")]
+    return None
+
+
+def sitemap_urls(xml):
+    return set(re.findall(r"<loc>([^<]+)</loc>", xml or ""))
+
+
+def changed_since(old_state, new_state, old_sitemap, new_sitemap):
+    """URLs in the current sitemap whose content hash or content date moved, or that are new to the sitemap."""
+    live = sitemap_urls(new_sitemap)
+    out = set(live - sitemap_urls(old_sitemap)) if old_sitemap is not None else set()
+    for k, v in new_state.items():
+        o = old_state.get(k)
+        if o is None or o.get("hash") != v.get("hash") or o.get("date") != v.get("date"):
+            u = key_to_url(k)
+            if u and u in live:
+                out.add(u)
+    return out
+
+
+def changed_this_build(refs):
+    """(urls newest-first with hubs first, ref used) or (None, None) when no base commit is readable."""
+    new_sm = open(SITEMAP, encoding="utf-8", errors="replace").read() if os.path.exists(SITEMAP) else ""
+    st_f = os.path.join(HERE, "_sitemap_lastmod.json")
+    new_state = json.load(open(st_f, encoding="utf-8")) if os.path.exists(st_f) else {}
+    for ref in refs:
+        if not ref:
+            continue
+        old_raw = _git_show(ref, "_sitemap_lastmod.json")
+        if old_raw is None:
+            print(f"  base {ref}: not readable here; trying the next")
+            continue
+        try:
+            old_state = json.loads(old_raw)
+        except Exception:
+            continue
+        old_sm = _git_show(ref, "pdufa_site_src/sitemap.xml")
+        got = changed_since(old_state, new_state, old_sm, new_sm)
+        dates = dict(re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", new_sm))
+        ordered = sorted(got, key=lambda u: (dates.get(u, ""), -u.count("/")), reverse=True)
+        return prioritise(ordered), ref
+    return None, None
+
+
+def bing_quota_left():
+    key = os.environ.get("BING_WEBMASTER_API_KEY", "").strip()
+    if not key:
+        return None
+    try:
+        q = urllib.request.urlopen(urllib.request.Request(
+            "https://ssl.bing.com/webmaster/api.svc/json/GetUrlSubmissionQuota?siteUrl=https%3A%2F%2Fwww.pdufa.bio%2F&apikey="
+            + key, headers=UA), timeout=30)
+        d = json.loads(q.read().decode("utf-8", "replace")).get("d") or {}
+        return int(d.get("DailyQuota"))
+    except Exception as e:
+        print(f"  Bing quota: could not read ({type(e).__name__}); using the fixed batch of 40")
+        return None
+
+
+def summary(lines):
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
 
 
 def main():
@@ -272,6 +392,9 @@ def main():
     # 2026-10-18: --only "url,url" submits exactly these (IndexNow + SubmitUrlBatch), the on-demand "request
     # indexing" path for bing-submit.yml. Nothing is read from the sitemap in that mode.
     ap.add_argument("--only", default="")
+    # 2026-11-20: --since REF submits the pages that changed since that commit (the workflow passes the tag
+    # indexed-ok, the last build whose submissions all landed). Without it, or if REF is unreadable, HEAD~1.
+    ap.add_argument("--since", default="")
     a = ap.parse_args()
 
     if a.only.strip():
@@ -283,10 +406,10 @@ def main():
         for u in only:
             print("    " + u)
         post_indexnow(indexnow_key(), only, a.dry_run)
-        submit_bing_batch(only, a.dry_run)
+        left = bing_quota_left()
+        submit_bing_batch(only, a.dry_run, cap=40 if left is None else min(40, left))
         return 0
 
-    urls, newest = changed_urls()
     # RULE 1, the timezone trap. The sitemap's lastmod values are stamped in UTC by
     # build_sitemap/build_date_modified, so the "is this in the future" test has to be made in
     # UTC too. Comparing a UTC date against this machine's LOCAL date (Pacific) made the check
@@ -295,8 +418,14 @@ def main():
     # the zone that wrote it. CI never saw it (12:00 and 21:00 UTC land at 05:00 and 14:00 PT,
     # same calendar day), which is exactly how a warning like this survives unnoticed.
     today = dt.datetime.now(dt.timezone.utc).date().isoformat()
-    print(f"sitemap newest lastmod {newest} (today {today}); {len(urls)} URL(s) changed recently")
-    if newest and newest > today:
+    urls, base = changed_this_build([a.since, "HEAD~1"])
+    if urls is None:
+        urls, newest = changed_urls()
+        base = "the 2-day lastmod window (no base commit readable)"
+    else:
+        newest = max(re.findall(r"<lastmod>([^<]+)</lastmod>", open(SITEMAP, encoding="utf-8").read()) or ["n/a"])
+    print(f"sitemap newest lastmod {newest} (today {today}); {len(urls)} URL(s) changed since {base}")
+    if newest and newest != "n/a" and newest > today:
         print(f"  WARNING: lastmod {newest} is in the future. A sitemap that claims tomorrow's date "
               f"is a reason for a crawler to distrust all of them.")
 
@@ -306,16 +435,39 @@ def main():
         open(kf, "w", encoding="utf-8").write(key)
         print(f"  wrote IndexNow key file -> /{key}.txt (deploys with this commit)")
 
+    in_ok, sent_bing, left = True, 0, None
     if urls:
         print("  submission order, first 20:")
         for u in urls[:20]:
             print("    " + u)
-        post_indexnow(key, urls, a.dry_run)
-        submit_bing_batch(urls, a.dry_run)
+        in_ok = post_indexnow(key, urls, a.dry_run)
+        left = bing_quota_left()
+        # Keep 5 of the day's quota for a by-hand submission from the console or bing-submit.yml.
+        cap = 40 if left is None else max(0, left - 5)
+        sent_bing = submit_bing_batch(urls, a.dry_run, cap=cap)
     else:
-        print("  nothing changed recently; no submission")
-    submit_gsc(a.dry_run)
+        print("  nothing changed since the last submitted build; no URL submission")
+    gsc_ok = submit_gsc(a.dry_run)
+
+    summary(["### Search engine submission",
+             f"- Changed pages since {base}: **{len(urls)}**",
+             f"- IndexNow (Bing, Yandex, Seznam, Naver): {'accepted' if in_ok else '**FAILED**'}"
+             + (f" for {len(urls)} URL(s)" if urls else " (nothing to send)"),
+             f"- Bing SubmitUrlBatch: {sent_bing} URL(s)" + ("" if left is None else f" (daily quota left before: {left})"),
+             "- Google Search Console sitemaps: " + {None: "not configured", True: "accepted", False: "**FAILED**"}[gsc_ok]])
+    # Loud on purpose (2026-11-20): a changed page that no engine was told about is the failure this step exists to
+    # prevent. A failure leaves the tag indexed-ok where it was, so the next run sends these pages again.
+    if not in_ok:
+        print("FAIL: changed pages were not submitted (see above); the next run will resend them.")
+        return 1
+    # Exit 2: every changed URL went out, only the Search Console sitemap call failed. The workflow still moves
+    # indexed-ok (the sitemap is resubmitted every run, so holding the tag would only resend URLs already sent and
+    # grow the backlog every run) and still fails the step so the failure is seen.
+    if gsc_ok is False:
+        print("FAIL: the Search Console sitemap submission failed; changed URLs were sent to IndexNow and Bing.")
+        return 2
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

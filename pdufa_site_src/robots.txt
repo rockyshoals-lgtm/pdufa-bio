@@ -18,3 +18,4 @@ Allow: /api/v1/
 Disallow: /api/
 
 Sitemap: https://www.pdufa.bio/sitemap.xml
+Sitemap: https://www.pdufa.bio/sitemap_index.xml

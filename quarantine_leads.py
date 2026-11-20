@@ -480,9 +480,13 @@ def cmd_apply(a):
                 else:
                     st.pop(k, None)
             io.open(stf, "w", encoding="utf-8").write(json.dumps(st, indent=0, sort_keys=True))
-        smf = os.path.join(SITE, "sitemap.xml")
-        head_sm = _git_show(smf)
-        if head_sm and os.path.exists(smf):
+        # 2026-11-20: the section sitemaps (sitemap-*.xml, listed in sitemap_index.xml) carry the same <lastmod>,
+        # so restore it there too or they claim today's date for a held page. The committed sitemap.xml is the
+        # reference for all of them (a section file may not be committed yet).
+        head_sm = _git_show(os.path.join(SITE, "sitemap.xml"))
+        for smf in [os.path.join(SITE, "sitemap.xml")] + sorted(glob.glob(os.path.join(SITE, "sitemap-*.xml"))):
+            if not (head_sm and os.path.exists(smf)):
+                continue
             sm = io.open(smf, encoding="utf-8").read()
             for rel in pages:
                 url = "https://www.pdufa.bio/" + rel[:-len("index.html")].rstrip("/")

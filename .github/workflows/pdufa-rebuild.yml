@@ -490,7 +490,7 @@ jobs:
         run: python fix_event_schema.py
 
       - name: Regenerate sitemap from live pages (real lastmod, no stale list)
-        run: python build_sitemap.py
+        run: python build_sitemap.py --no-state
 
       # Bounded on purpose. The default run also walks 411 CT.gov sponsors sequentially, which is
       # the stage that rate-limits and can take 20+ minutes, delaying the deploy for a data source
@@ -978,6 +978,16 @@ jobs:
       # gained real content, and those pages only belong in the sitemap once that has happened.
       # 2026-11-11 (audit order 2): site-wide Browse links, homepage next/latest decisions, related links on every leaf,
       # and the HTML /sitemap. tests/test_reachability.py holds every sitemap URL within 3 clicks of /.
+      # 2026-11-20 (indexing round 3): ask Google what it has actually indexed, read-only (URL Inspection API, at most
+      # 150 of the 2,000 a day; Search Analytics daily totals). Keeps _google_indexed.json current so the request list
+      # below stops offering pages Google already has, and puts per-kind coverage in the job summary. Advisory: Google's
+      # answer must never block a deploy.
+      - name: "Google index status (URL Inspection API, read-only, advisory)"
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python gsc_index_status.py --max 150
+
       - name: Internal links (site links, homepage hub, related, /sitemap)
         run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
 
@@ -1202,6 +1212,7 @@ jobs:
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true
           git add _date_checks.json 2>/dev/null || true   # recheck_upcoming_dates.py's CONFIRMED re-reads
+          git add _google_indexed.json _google_index_status.json _google_search_stats.json 2>/dev/null || true   # gsc_index_status.py
           git add catalysts_out/conference_presenters_mined.csv 2>/dev/null || true
           git add -f readout_miner.csv 2>/dev/null || true
           if git diff --cached --quiet; then
@@ -1297,8 +1308,12 @@ jobs:
       # bing.com/ping returns 410, both verified live. IndexNow is the only working push channel
       # (Bing/Yandex/Seznam/Naver); Google's supported route is the Search Console API, which needs
       # the GSC_SERVICE_ACCOUNT_JSON secret. Without it this step says so rather than pretending.
+      # 2026-11-20 (indexing round 3): the pages whose content changed since the last build whose submission landed
+      # (tag indexed-ok), not a 2-day window of every lastmod (which sent IndexNow 1,739 URLs per run). Not
+      # continue-on-error: a changed page no engine was told about fails the run, the tag stays put, and the next run
+      # sends the same pages again. tests/test_indexing_pipeline.py fails if this shape is lost.
       - name: Ping search engines (IndexNow + Bing SubmitUrlBatch + Search Console)
-        continue-on-error: true
+        if: env.PUSHED == '1'
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           # SubmitUrlBatch: the quota-backed Bing channel (~100/day, we were using 12). Same key
@@ -1306,10 +1321,36 @@ jobs:
           BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
         run: |
           sleep 60
-          python ping_search_engines.py
+          # Tell "no tag yet" (ls-remote exit 2) apart from a network error, so a failed read never diffs against
+          # HEAD~1 and then moves the tag past pages that were never sent.
+          have=""
+          for i in 1 2 3; do
+            rc=0; git ls-remote --exit-code --tags origin refs/tags/indexed-ok >/dev/null || rc=$?
+            if [ "$rc" = 0 ]; then have=1; break; elif [ "$rc" = 2 ]; then have=0; break; fi
+            sleep 10
+          done
+          if [ -z "$have" ]; then
+            echo "::error::could not read tag indexed-ok from origin; nothing submitted, tag left where it was"; exit 1
+          fi
+          if [ "$have" = 1 ]; then
+            git fetch --quiet --depth=1 origin +refs/tags/indexed-ok:refs/tags/indexed-ok \
+              || { echo "::error::could not fetch tag indexed-ok; nothing submitted, tag left where it was"; exit 1; }
+            SINCE=indexed-ok
+          else
+            SINCE=HEAD~1
+          fi
+          # 0: all sent. 2: every changed URL sent, only the Search Console sitemap call failed (tag moves, step
+          # still fails). 1: changed URLs not sent (tag stays, next run resends them).
+          rc=0; python ping_search_engines.py --since "$SINCE" || rc=$?
+          if [ "$rc" = 0 ] || [ "$rc" = 2 ]; then
+            git push --quiet -f origin HEAD:refs/tags/indexed-ok \
+              || echo "::warning::could not move tag indexed-ok; the next run resends from the old tag"
+          fi
+          exit "$rc"
 
       # Bing is where we actually rank, and GSC cannot see it. Advisory: no key, no failure.
       - name: "Bing rank snapshot (advisory)"
+        if: ${{ !cancelled() }}
         continue-on-error: true
         env:
           BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}

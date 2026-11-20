@@ -216,7 +216,15 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
-    state = json.load(open(STATE, encoding="utf-8"))
+    state = set(json.load(open(STATE, encoding="utf-8")))
+    # 2026-11-20: the first sitemap pass runs with --no-state, so a page built for the first time this run is in
+    # sitemap.xml but not yet in _sitemap_lastmod.json. Fit it too, or test_meta_lengths checks a page never fitted.
+    try:
+        sm = open(os.path.join(SITE, "sitemap.xml"), encoding="utf-8", errors="replace").read()
+        for u in re.findall(r"<loc>https://www\.pdufa\.bio(/[^<]*)</loc>", sm):
+            state.add("pdufa_site_src" + (u.rstrip("/") + "/index.html" if u != "/" else "/index.html"))
+    except OSError:
+        pass
     rows = load_rows()
     by_tk, name_of = {}, {}
     for r in rows:
