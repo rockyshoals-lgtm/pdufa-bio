@@ -69,7 +69,7 @@ def main():
         if not dm and wm:
             # 2026-11-18 (change 1): a goal known only as a month, quarter or year is a window card with no day in it.
             # It is on the board as long as its ticker and drug are; keying only by day would call it missing.
-            window_tiles.append((m.group(1), tokens(wm.group(1))))
+            window_tiles.append((m.group(1), tokens(re.sub(r"<[^>]+>", " ", wm.group(1)))))
             continue
         if dm:
             tile_keys.add((m.group(1), dm.group(1)))

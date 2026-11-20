@@ -377,7 +377,7 @@ def render_upcoming(cats, key):
                 f'<a class="row" href="{href}"><span class="cd"><b>{esc(big)}</b>'
                 f'<i>{esc(small)}</i></span>'
                 f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
-                f'<span class="dg">{drug} · {esc(label)}</span></span>{sparkline(poly_closes(key, tk))}'
+                f'<span class="dg"><bdi class="dn">{drug}</bdi> · {esc(label)}</span></span>{sparkline(poly_closes(key, tk))}'
                 f'{coh_chip(cap)}</a>')   # 2026-11-18: window rows get the same labeled chip (change 6 missed them)
             continue
         d = (TODAY - dt.date.fromisoformat(date)).days * -1
@@ -392,7 +392,7 @@ def render_upcoming(cats, key):
             f'<a class="row" href="{href}"><span class="cd"><b>{cd_n}</b>'
             f'<i>{cd_u}</i></span>'
             f'<span class="mid"><span class="tk">{esc(tk)} <em class="cap">{esc(cap)}</em></span>'
-            f'<span class="dg">{drug} · PDUFA {date}</span></span>{spk}'
+            f'<span class="dg"><bdi class="dn">{drug}</bdi> · PDUFA {date}</span></span>{spk}'
             f'{coh_chip(cap)}</a>')
     return "".join(rows)
 
@@ -423,6 +423,13 @@ def fda_day(tk, page_date):
     if m:
         return dt.datetime.strptime(m.group(1), "%B %d, %Y").date().isoformat(), True
     return page_date, False
+
+
+def drug_shown(tk, page_date):
+    """The decision page's own "Drug / candidate" fact (e.g. "Infilbray (venglustat)"), so a decided card names the
+    drug and not only the ticker (UX pass 2026-11-20). Empty when the page has none: the card then shows the ticker."""
+    m = re.search(r'<div class="kv"><span>Drug / candidate</span><b>([^<]{1,160})</b>', _page_kv(tk, page_date))
+    return __import__("html").unescape(m.group(1)).strip() if m else ""
 
 
 def disclosure(tk, page_date):
@@ -465,9 +472,11 @@ def render_decided(decs, key):
             mv = f' · <b style="color:{mc}">{"+" if r > 0 else ""}{r}%</b>'
             why += f"; move {'+' if r > 0 else ''}{r}% on {_md(rday)}, close against the previous close"
         shown = act if known else f"{date} announced"
+        nm = drug_shown(tk, date)
+        dn = f'<span class="dnm">{esc(nm)}</span>' if nm else ""
         cards.append(
             f'<a class="{cls}" href="/fda-decision/{tk}-{date}" title="{esc(why)}"><span class="di">{icon}</span>'
-            f'<span class="dt">{esc(tk)}</span>{spk}<span class="dd">{shown} · {word}{mv}</span></a>')
+            f'<span class="dt">{esc(tk)}</span>{dn}{spk}<span class="dd">{shown} · {word}{mv}</span></a>')
     return "".join(cards) + (DECIDED_NOTE if cards else "")
 
 

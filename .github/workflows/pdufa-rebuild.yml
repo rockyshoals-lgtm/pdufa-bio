@@ -1008,6 +1008,11 @@ jobs:
 
       # 2026-11-17 mobile red team: the last page-writing pass before the sitemap, so every table a builder or injector
       # wrote above gets its scroll box and every page its phone fixes. tests/test_mobile_layout.py fails if it is skipped.
+      # UX pass 2026-11-20: decided rows on /decisions and its sub-lists name the drug whole ("CTx-1301 (fixed dose,
+      # pediatri" read cut). After every writer of those lists. tests/test_decision_names_whole.py fails if skipped.
+      - name: "Decision lists: whole drug names (UX pass)"
+        run: python whole_decision_names.py
+
       - name: "Calendar: open months first, decided months folded, notes last (design change 7)"
         run: python shape_calendar.py
 
