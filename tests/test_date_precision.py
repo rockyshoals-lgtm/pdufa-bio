@@ -203,7 +203,7 @@ def main():
                        card, re.S)
         if not tk or not dg:
             continue
-        tk, gtok = tk.group(1), tokens(re.sub(r"&[a-z]+;", " ", dg.group(1)))
+        tk, gtok = tk.group(1), tokens(re.sub(r"&[a-z]+;|<[^>]+>", " ", dg.group(1)))
         cards += 1
         cd = re.search(r'<span class="cd"><b>([^<]*)</b>', card)
         same = [r for r in pdufa if r.get("t") == tk and gtok & tokens(r.get("name"))]

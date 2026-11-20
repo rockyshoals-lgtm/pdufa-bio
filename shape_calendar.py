@@ -59,6 +59,8 @@ CSS = (f'<style id="{STYLE_ID}">'
        ".mdone>summary span{font-family:inherit;font-weight:400;color:var(--mut2);font-size:13px;margin-left:6px}"
        ".mdone .mhead{display:none}.mdone .grid{margin:4px 0 14px}"
        ".calabout{margin:26px 0 8px;padding-top:14px;border-top:1px solid var(--line)}"
+       ".mdrows{margin:0 0 14px}.mdrows>summary{cursor:pointer;padding:6px 0;font-size:13px;color:var(--mut2)}"
+       ".mdrows>.grid{margin-top:6px}"
        "</style>")
 GREEN, RED = "#5fd07a", "#ff8f6b"
 
@@ -94,11 +96,101 @@ def is_open(block):
     return re.search(r'<a class="row" href="/pdufa/', block) is not None
 
 
+# ---------------------------------------------------------------- open months: open rows first (UX pass 2026-11-20)
+# On 2026-11-20 November listed 13 decided rows before its 7 open ones, under "Upcoming FDA PDUFA dates": a reader
+# scrolled past a month of outcomes to reach the first date still ahead. In a month that still holds an open goal,
+# the open rows come first and the decided and withdrawn rows fold below them. Reversible like the rest: the grid
+# keeps its rows' original order in a comment, and unshape puts every row back where it stood.
+RO = re.compile(r"<!--CALSHAPE:RO:([0-9,]+)-->")
+RD = re.compile(r'<!--CALSHAPE:RD:BEGIN--><details class="mdrows"><summary>[^<]*</summary><div class="grid">(.*?)'
+                r"</div></details><!--CALSHAPE:RD:END-->", re.S)
+ROW_SPLIT = re.compile(r'(?=<a class="row")')
+ROW_DAY = re.compile(r'<div class="t">[^<]*?(\d{4}-\d{2}-\d{2})')
+
+
+def _rows(inner):
+    """The <a class="row"> rows of a grid's inner html, or None when the grid holds anything else."""
+    parts = [p for p in ROW_SPLIT.split(inner) if p]
+    if not parts or any(not (p.startswith('<a class="row"') and p.endswith("</a>")) for p in parts):
+        return None
+    return parts
+
+
+def _settled(row):
+    return 'data-dec="1"' in row or 'data-wd="1"' in row or 'href="/fda-decision/' in row
+
+
+def open_rows_first(blk, name):
+    """A month block with its open rows first and its decided rows folded under them; unchanged when there is
+    nothing to fold or the grid holds anything but rows."""
+    g = blk.find('<div class="grid">')
+    if g < 0 or "<!--CALSHAPE:R" in blk:
+        return blk
+    end = close_div(blk, g)
+    rows = _rows(blk[g + len('<div class="grid">'):end - len("</div>")])
+    if not rows:
+        return blk
+    top = [i for i, r in enumerate(rows) if not _settled(r)]
+    low = [i for i, r in enumerate(rows) if _settled(r)]
+    if not top or not low:
+        return blk
+    n = len(low)
+    wd = sum('data-wd="1"' in rows[i] for i in low)
+    what = "already decided" if not wd else ("withdrawn" if wd == n else "already decided or withdrawn")
+    summary = f"{n} {'date' if n == 1 else 'dates'} in {name.split()[0]} {what}"
+    return (blk[:g] + '<div class="grid">' + "<!--CALSHAPE:RO:" + ",".join(map(str, top + low)) + "-->"
+            + "".join(rows[i] for i in top) + "</div>"
+            + '<!--CALSHAPE:RD:BEGIN--><details class="mdrows"><summary>' + summary + '</summary><div class="grid">'
+            + "".join(rows[i] for i in low) + "</div></details><!--CALSHAPE:RD:END-->" + blk[end:])
+
+
+def restore_rows(s):
+    """Every folded month's rows back in one grid, in their original order (date order when the order is lost)."""
+    while True:
+        d = RD.search(s)
+        if not d:
+            break
+        low = _rows(d.group(1)) or []
+        g = s.rfind('<div class="grid">', 0, d.start())
+        ok = g >= 0 and s[d.start() - len("</div>"):d.start()] == "</div>"
+        if not ok:
+            # something now sits between the grid and the fold (a writer touched the shaped page): the fold's rows
+            # go back to the end of the grid above it, then into date order below. Never left loose between months,
+            # where the month rebuild below would drop them.
+            if g < 0:
+                raise SystemExit("shape_calendar: folded rows with no month grid above them; refusing to drop them")
+            ge = close_div(s, g)
+            if ge > d.start():
+                raise SystemExit("shape_calendar: a fold sits inside a grid; refusing to guess where its rows go")
+            s = s[:ge - len("</div>")] + "".join(low) + s[ge - len("</div>"):d.start()] + s[d.end():]
+            g2 = s.rfind('<div class="grid">', 0, ge)
+            inner_end = close_div(s, g2) - len("</div>")
+            rows = _rows(RO.sub("", s[g2 + len('<div class="grid">'):inner_end], count=1))
+            if rows:
+                rows = sorted(rows, key=lambda r: ROW_DAY.search(r).group(1) if ROW_DAY.search(r) else "")
+                s = s[:g2 + len('<div class="grid">')] + "".join(rows) + s[inner_end:]
+            continue
+        inner = s[g + len('<div class="grid">'):d.start() - len("</div>")]
+        ro = RO.match(inner)
+        order = [int(x) for x in ro.group(1).split(",")] if ro else []
+        top = _rows(RO.sub("", inner, count=1)) or []
+        rows = top + low
+        if sorted(order) == list(range(len(rows))) and top:
+            back = [None] * len(rows)
+            for k, i in enumerate(order):
+                back[i] = rows[k]
+        else:
+            back = sorted(rows, key=lambda r: ROW_DAY.search(r).group(1) if ROW_DAY.search(r) else "")
+        s = s[:g] + '<div class="grid">' + "".join(back) + "</div>" + s[d.end():]
+    return RO.sub("", s)
+
+
 # ---------------------------------------------------------------- undo
 def unshape(s):
     """The page in the order its writers expect. A page with no CALSHAPE markers comes back unchanged."""
     if "<!--CALSHAPE:" not in s:
         return s
+    s = restore_rows(s)
     stash = {}
     a = re.search(re.escape(A_B) + r".*?" + re.escape(A_E), s, re.S)
     if a:
@@ -223,7 +315,7 @@ def shape(s):
         folded = (D_B + '<section class="caldone" style="margin:26px 0 8px;padding-top:14px;border-top:1px solid '
                   'var(--line)"><h2 style="font-size:16px;margin:0 0 4px">Months with no open goal date</h2>'
                   + "".join(parts) + "</section>" + D_E)
-    s = s[:lo] + M_B + "".join(t[0] for t in open_) + M_E + s[hi:]
+    s = s[:lo] + M_B + "".join(open_rows_first(t[0], t[1]) for t in open_) + M_E + s[hi:]
     # the decided months go after the 2027+ list when there is one, else straight after the open months
     at = s.find("<!--AHEAD:END-->")
     at = at + len("<!--AHEAD:END-->") if at >= 0 else s.find(M_E) + len(M_E)

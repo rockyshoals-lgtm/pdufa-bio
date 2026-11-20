@@ -121,10 +121,17 @@ def main():
         if p and os.path.exists(p):
             doc = io.open(p, encoding="utf-8", errors="replace").read()
             why_s = html.escape(short_reason(why, old, new), quote=False)
-            block = (f'{B}<p class="note" style="margin:6px 0 10px;font-size:13px;color:#f0c86a">'
-                     f'<b>Goal date moved:</b> {old[:10]} &rarr; {new[:10]} (recorded {changed[:10]}). '
-                     f'{why_s}</p>{E}')
             doc0 = re.sub(re.escape(B) + ".*?" + re.escape(E), "", doc, flags=re.S)
+            # UX pass 2026-11-20: /pdufa/CAPR-deramiocel told the move twice, this note's reason and then the
+            # "Date extended" box (EXTN) with the sponsor's own account, and the note's reason ended on an internal
+            # pointer ("... and /pdufa-date-changes records it"). Where the page has its own extension box, the note
+            # keeps the move as data and leaves the why to that box.
+            ext = re.search(r"<!--EXTN:BEGIN-->(.*?)<!--EXTN:END-->", doc0, re.S)
+            if ext and old[:10] in ext.group(1) and new[:10] in ext.group(1):   # the box tells this same move
+                why_s = ""
+            block = (f'{B}<p class="note" style="margin:6px 0 10px;font-size:13px;color:#f0c86a">'
+                     f'<b>Goal date moved:</b> {old[:10]} &rarr; {new[:10]} (recorded {changed[:10]}).'
+                     + (f' {why_s}' if why_s else '') + f'</p>{E}')
             m = (re.search(r"<!--DECBAN:END-->", doc0) or re.search(r'<div class="sub">.*?</div>', doc0, re.S)
                  or re.search(r"</h1>", doc0))
             if m:
