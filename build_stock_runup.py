@@ -228,8 +228,10 @@ def render(ticker, live, ev, cohort):
         if n_pages < n:
             o.append(f'<div style="font-size:12px;color:var(--mut2);margin-top:6px">'
                      + (f'Linked dates have a page in our decision archive. ' if n_pages else '')
-                     + f'{"The other" if n_pages else "These"} {n - n_pages} '
-                     f'{"is a decision" if n - n_pages == 1 else "are decisions"} from the 2020 to 2024 research set '
+                     # "These 1 is a decision" read wrong where a ticker's only study event is a research row
+                     + (("This decision is" if n == 1 else f"These {n} are decisions") if not n_pages else
+                        f'The other {n - n_pages} ' + ("is a decision" if n - n_pages == 1 else "are decisions"))
+                     + f' from the 2020 to 2024 research set '
                      f'the study began with, which has no per-decision pages, so the decision history above '
                      f'does not list {"it" if n - n_pages == 1 else "them"}.</div>')
 
