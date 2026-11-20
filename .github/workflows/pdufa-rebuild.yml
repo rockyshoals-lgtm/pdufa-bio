@@ -1023,6 +1023,15 @@ jobs:
       - name: "Quarantine: hold each lead's own row and pages at the last commit; held_since into build-info"
         run: python quarantine_leads.py apply
 
+      # 2026-11-20 (red team of the dated /llms.txt): /llms.txt now lists the next goal dates and the latest
+      # decisions straight from the API dataset, and it is built at the step above ("/llms.txt from the numbers'
+      # owners"), before fix_dead_internal_links.py rewrites dataset URLs and before the quarantine puts each held
+      # row back as last published. Built only there, a held (unverified) row could reach /llms.txt while the API
+      # still shows the old one, or tests/test_llms_txt_current.py would fail the whole run on that difference.
+      # Build it once more from the final dataset so the two always agree.
+      - name: "/llms.txt again, from the final dataset (after held rows are restored)"
+        run: python build_llms_txt.py
+
       # 2026-11-18 (red team): tests/test_date_checks_current.py blocks a date due within 14 days that was not
       # re-read in the last 30. This keeps that true without a person: every open PDUFA goal and guided readout
       # due in the next 30 days is re-read (its own source, then the company's SEC filings since) and a

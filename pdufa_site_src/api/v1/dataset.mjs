@@ -10592,12 +10592,15 @@ export default [
    "trial": "NIMBLE",
    "decision_source": "Regeneron press release, November 18, 2026 (GlobeNewswire)",
    "decision_source_url": "https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html",
-   "decision_date_unsourced": true,
    "decision_quote": "Regeneron Pharmaceuticals, Inc. (NASDAQ: REGN) today announced that the U.S. Food and Drug Administration (FDA) has approved Livsayis (cemdisiran) for the treatment of generalized myasthenia gravis (gMG) in adult patients who are anti-acetylcholine receptor (AChR) antibody-positive.",
    "decision_note": "Regeneron announced the approval on November 18, 2026. The FDA's own record of the action day was not yet posted when this row was updated. The goal date is stated as a month (November 2026, Regeneron 8-K of July 30, 2026), so no early or late margin is published.",
    "announcement": "Regeneron press release, November 18, 2026 (GlobeNewswire)",
    "announcement_url": "https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html",
-   "review": "NDA under Priority Review following use of a Priority Review Voucher (Regeneron 8-K, July 30, 2026). Per Regeneron, the Phase 3 NIMBLE trial (randomized, double-blind, placebo-controlled): on the primary endpoint, MG-ADL total score improved 4.5 points with Livsayis versus 2.2 with placebo at week 24 (placebo-adjusted 2.3, p=0.0005); 76.6% versus 44.1% were MG-ADL responders (p<0.001); QMG improved 4.2 versus 1.5 points (placebo-adjusted 2.8, p=0.0015). Subcutaneous dosing four times a year. Boxed warning for serious meningococcal infections; available only through a REMS."
+   "review": "NDA under Priority Review following use of a Priority Review Voucher (Regeneron 8-K, July 30, 2026). Per Regeneron, the Phase 3 NIMBLE trial (randomized, double-blind, placebo-controlled): on the primary endpoint, MG-ADL total score improved 4.5 points with Livsayis versus 2.2 with placebo at week 24 (placebo-adjusted 2.3, p=0.0005); 76.6% versus 44.1% were MG-ADL responders (p<0.001); QMG improved 4.2 versus 1.5 points (placebo-adjusted 2.8, p=0.0015). Subcutaneous dosing four times a year. Boxed warning for serious meningococcal infections; available only through a REMS.",
+   "fda_action_date": "2026-11-18",
+   "fda_action_source_url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+   "fda_action_record": "FDA Novel Drug Approvals for 2026 (Livsayis, no. 55)",
+   "decision_date_note": "The FDA's action date, November 18, 2026, is from the FDA's Novel Drug Approvals list (FDA Novel Drug Approvals for 2026 (Livsayis, no. 55)). 2026-11-18 is the day the sponsor announced it."
   },
   "dm": "2026-11",
   "oc": "Approved",

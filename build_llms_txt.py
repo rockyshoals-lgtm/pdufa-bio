@@ -61,7 +61,33 @@ def facts():
     crl = json.load(io.open(os.path.join(HERE, "_crl_capture_series.json"), encoding="utf-8"))
     last = crl["rows"][-1]
     f["crl_total"], f["crl_approved"] = last["total"], last["approved"]
+    f["next_rows"], f["recent_rows"] = dated_rows()
     return f
+
+
+def dated_rows(n_next=10, n_recent=8):
+    """2026-11-20 audit: the top Copilot grounding queries for pdufa.bio are "pdufa date", "fda calendar
+    2026" and "fda decisions today", yet the file we ask AI assistants to quote held no dates at all.
+    Lists the next day-precision goal dates and the latest decisions straight from the dataset rows.
+    Status comes from the rows (st), never from the clock, so the guard's re-render is a no-op."""
+    src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8").read()
+    rows = json.loads(src[src.index("["):src.rindex("]") + 1])
+    base = "https://www.pdufa.bio"
+    nxt = sorted((r for r in rows if r.get("type") == "PDUFA" and r.get("st") == "Upcoming"
+                  and r.get("dp") == "day" and str(r.get("url", "")).startswith("/")),
+                 key=lambda r: (r["d"], r["t"]))[:n_next]
+    up = [f"- {r['d']}: {r['t']} ({r.get('company', '').strip()}), {r['name'].strip()}. "
+          f"{base}{r['url']}" for r in nxt]
+    dec = sorted((r for r in rows if r.get("type") == "PDUFA" and r.get("st") == "Decided"
+                  and r.get("dcd") and r.get("oc") and str(r.get("url", "")).startswith("/fda-decision/")),
+                 key=lambda r: (r["dcd"], r["t"]), reverse=True)[:n_recent]
+    rec = []
+    for r in dec:
+        d = r.get("_d") or {}
+        fad = d.get("fda_action_date")
+        when = f"FDA action {fad}" if fad else f"announced {r['dcd']} (no public FDA record of the day yet)"
+        rec.append(f"- {r['t']}, {r['name'].strip()}: {r['oc']}, {when}. {base}{r['url']}")
+    return "\n".join(up), "\n".join(rec)
 
 
 def render(f):
@@ -113,6 +139,21 @@ the price move. /decisions publishes how many of each there are.
 - Released FDA Complete Response Letters (openFDA): **{f['crl_total']}** letters, of which
   **{f['crl_approved']}** went to applications the FDA has since approved. That ratio reflects
   which letters the FDA chose to release, not an approval rate. (/crl)
+
+## Next FDA decision dates (PDUFA goal dates on our calendar, from the last daily build)
+
+Each date is the goal date the sponsor or the FDA disclosed; each page links that source. A goal
+date is a deadline, not a prediction: the FDA can act before it, on it, or after it.
+
+{f['next_rows']}
+
+Full list: https://www.pdufa.bio/calendar
+
+## Latest FDA decisions in our archive
+
+{f['recent_rows']}
+
+Full archive: https://www.pdufa.bio/decisions
 
 ## Free API (no key required)
 

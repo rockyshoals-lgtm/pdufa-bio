@@ -107,6 +107,11 @@ def main():
                "mainEntityOfPage": canon.group(1) if canon else f"https://www.pdufa.bio/fda-decision/{slug}",
                "isAccessibleForFree": True}
         srcu = d.get("fda_action_source_url") or d.get("decision_source_url") or (r.get("url") if str(r.get("url") or "").startswith("http") else "")
+        if not srcu:
+            # 2026-11-20: a decision with no dataset row (an approval never on our calendar, built from a spec: SNY,
+            # JNJ, AZN, NVS in Nov 2026) still names its primary source on the page; cite that.
+            ps = re.search(r'Primary source: <a href="(https?://[^"]+)"', doc)
+            srcu = html.unescape(ps.group(1)) if ps else ""
         if srcu:
             art["isBasedOn"] = srcu
         if d.get("brand") or d.get("inn"):

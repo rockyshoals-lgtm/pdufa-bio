@@ -96,7 +96,7 @@
   "result": "found"
  },
  "pdufa_lnth_2026-06-29": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-20",
   "result": "crl-no-letter"
  },
  "pdufa_lnth_2026-08-13": {
@@ -146,7 +146,7 @@
   "result": "found"
  },
  "pdufa_nvcr_2026-11-15": {
-  "checked": "2026-11-17",
+  "checked": "2026-11-20",
   "result": "crl-no-letter"
  },
  "pdufa_otlk_2026-07-29": {
@@ -199,6 +199,11 @@
   "date": "2026-08-19",
   "label": "BLA 761508 ORIG-1",
   "result": "found"
+ },
+ "pdufa_regn_2026-11-30": {
+  "checked": "2026-11-20",
+  "date": "2026-11-18",
+  "result": "manual"
  },
  "pdufa_repl_2026-08-02": {
   "checked": "2026-09-27",
