@@ -121,6 +121,24 @@
    "date": "2026-11-18",
    "brand": "Infilbray",
    "source": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease"
+  },
+  {
+   "slug": "rybrevant-faspro",
+   "date": "2026-11-05",
+   "brand": "RYBREVANT FASPRO",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf"
+  },
+  {
+   "slug": "imfinzi",
+   "date": "2026-11-13",
+   "brand": "Imfinzi",
+   "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069"
+  },
+  {
+   "slug": "cosentyx",
+   "date": "2026-11-16",
+   "brand": "Cosentyx",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf"
   }
  ]
 }
