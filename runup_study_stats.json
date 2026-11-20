@@ -27,9 +27,9 @@
  "post_2d_median": 0.13,
  "post_2d_median_approval": 0.46,
  "post_2d_median_crl": -6.87,
- "post_5d_median": -0.02,
- "post_5d_median_approval": 0.39,
- "post_5d_median_crl": -6.58,
+ "post_5d_median": -0.08,
+ "post_5d_median_approval": 0.38,
+ "post_5d_median_crl": -6.75,
  "cohort_abs_move": {
   "Nano (<$50M)": {
    "median_abs_pct": 8.6022,
