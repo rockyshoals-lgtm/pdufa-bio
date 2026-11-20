@@ -220,6 +220,19 @@
    "camizestrant"
   ]
  },
+ "AZN-2026-11-13": {
+  "checked": "2026-11-20",
+  "class": "EFFICACY",
+  "date": "2026-11-13",
+  "letter": null,
+  "name": "Imfinzi (durvalumab)",
+  "record": "BLA 761069 SUPPL-59",
+  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069",
+  "terms": [
+   "Imfinzi",
+   "durvalumab"
+  ]
+ },
  "BAYRY-2026-06-15": {
   "checked": "2026-10-03",
   "class": "TYPE 1",
@@ -532,6 +545,19 @@
    "guselkumab"
   ]
  },
+ "JNJ-2026-11-05": {
+  "checked": "2026-11-20",
+  "class": "EFFICACY",
+  "date": "2026-11-05",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
+  "name": "RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj)",
+  "record": "BLA 761433 SUPPL-2",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
+  "terms": [
+   "RYBREVANT FASPRO",
+   "amivantamab"
+  ]
+ },
  "LGND-2026-04-13": {
   "checked": "2026-10-03",
   "class": "EFFICACY",
@@ -777,6 +803,19 @@
   "terms": [
    "Pluvicto",
    "lutetium"
+  ]
+ },
+ "NVS-2026-11-16": {
+  "checked": "2026-11-20",
+  "class": "EFFICACY",
+  "date": "2026-11-16",
+  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
+  "name": "COSENTYX (secukinumab)",
+  "record": "BLA 125504 SUPPL-101",
+  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
+  "terms": [
+   "COSENTYX",
+   "secukinumab"
   ]
  },
  "ONC-2026-05-13": {
@@ -1049,6 +1088,19 @@
    "dupilumab"
   ]
  },
+ "SNY-2026-11-18": {
+  "basis": "FDA News Release read directly 2026-11-20",
+  "checked": "2026-11-20",
+  "date": "2026-11-18",
+  "name": "Infilbray (venglustat)",
+  "oc": "Approved",
+  "record": "FDA News Release, November 18, 2026",
+  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease",
+  "terms": [
+   "Infilbray",
+   "venglustat"
+  ]
+ },
  "SPRY-2026-03-27": {
   "checked": "2026-10-15",
   "class": "EFFICACY",
@@ -1152,58 +1204,6 @@
   "terms": [
    "RYZUMVI",
    "phentolamine"
-  ]
- },
- "JNJ-2026-11-05": {
-  "checked": "2026-11-20",
-  "class": "EFFICACY",
-  "date": "2026-11-05",
-  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
-  "name": "RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj)",
-  "record": "BLA 761433 SUPPL-2",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf",
-  "terms": [
-   "RYBREVANT FASPRO",
-   "amivantamab"
-  ]
- },
- "AZN-2026-11-13": {
-  "checked": "2026-11-20",
-  "class": "EFFICACY",
-  "date": "2026-11-13",
-  "letter": null,
-  "name": "Imfinzi (durvalumab)",
-  "record": "BLA 761069 SUPPL-59",
-  "source_url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069",
-  "terms": [
-   "Imfinzi",
-   "durvalumab"
-  ]
- },
- "NVS-2026-11-16": {
-  "checked": "2026-11-20",
-  "class": "EFFICACY",
-  "date": "2026-11-16",
-  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
-  "name": "COSENTYX (secukinumab)",
-  "record": "BLA 125504 SUPPL-101",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf",
-  "terms": [
-   "COSENTYX",
-   "secukinumab"
-  ]
- },
- "SNY-2026-11-18": {
-  "basis": "FDA News Release read directly 2026-11-20",
-  "checked": "2026-11-20",
-  "date": "2026-11-18",
-  "name": "Infilbray (venglustat)",
-  "oc": "Approved",
-  "record": "FDA News Release, November 18, 2026",
-  "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease",
-  "terms": [
-   "Infilbray",
-   "venglustat"
   ]
  }
 }
