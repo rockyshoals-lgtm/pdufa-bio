@@ -1,0 +1,450 @@
+{
+"_note": "Google Search daily totals, from the Search Console API (gsc_index_status.py).",
+"daily": {
+"2026-08-22": {
+"clicks": 3,
+"impressions": 46,
+"position": 34.5
+},
+"2026-08-23": {
+"clicks": 2,
+"impressions": 53,
+"position": 19.0
+},
+"2026-08-24": {
+"clicks": 1,
+"impressions": 69,
+"position": 10.0
+},
+"2026-08-25": {
+"clicks": 4,
+"impressions": 78,
+"position": 17.5
+},
+"2026-08-26": {
+"clicks": 1,
+"impressions": 49,
+"position": 21.4
+},
+"2026-08-27": {
+"clicks": 1,
+"impressions": 115,
+"position": 18.5
+},
+"2026-08-28": {
+"clicks": 1,
+"impressions": 52,
+"position": 18.0
+},
+"2026-08-29": {
+"clicks": 0,
+"impressions": 55,
+"position": 17.9
+},
+"2026-08-30": {
+"clicks": 2,
+"impressions": 83,
+"position": 38.2
+},
+"2026-08-31": {
+"clicks": 1,
+"impressions": 106,
+"position": 13.8
+},
+"2026-09-01": {
+"clicks": 0,
+"impressions": 67,
+"position": 4.4
+},
+"2026-09-02": {
+"clicks": 0,
+"impressions": 94,
+"position": 5.8
+},
+"2026-09-03": {
+"clicks": 1,
+"impressions": 105,
+"position": 10.0
+},
+"2026-09-04": {
+"clicks": 0,
+"impressions": 81,
+"position": 11.6
+},
+"2026-09-05": {
+"clicks": 0,
+"impressions": 70,
+"position": 14.2
+},
+"2026-09-06": {
+"clicks": 0,
+"impressions": 84,
+"position": 14.7
+},
+"2026-09-07": {
+"clicks": 0,
+"impressions": 79,
+"position": 10.0
+},
+"2026-09-08": {
+"clicks": 2,
+"impressions": 123,
+"position": 5.5
+},
+"2026-09-09": {
+"clicks": 4,
+"impressions": 97,
+"position": 10.5
+},
+"2026-09-10": {
+"clicks": 3,
+"impressions": 160,
+"position": 7.2
+},
+"2026-09-11": {
+"clicks": 0,
+"impressions": 169,
+"position": 5.6
+},
+"2026-09-12": {
+"clicks": 1,
+"impressions": 113,
+"position": 8.4
+},
+"2026-09-13": {
+"clicks": 0,
+"impressions": 83,
+"position": 14.1
+},
+"2026-09-14": {
+"clicks": 0,
+"impressions": 117,
+"position": 4.8
+},
+"2026-09-15": {
+"clicks": 0,
+"impressions": 126,
+"position": 4.9
+},
+"2026-09-16": {
+"clicks": 0,
+"impressions": 83,
+"position": 5.8
+},
+"2026-09-17": {
+"clicks": 1,
+"impressions": 102,
+"position": 9.0
+},
+"2026-09-18": {
+"clicks": 1,
+"impressions": 72,
+"position": 11.8
+},
+"2026-09-19": {
+"clicks": 0,
+"impressions": 208,
+"position": 8.5
+},
+"2026-09-20": {
+"clicks": 1,
+"impressions": 155,
+"position": 5.4
+},
+"2026-09-21": {
+"clicks": 0,
+"impressions": 146,
+"position": 4.2
+},
+"2026-09-22": {
+"clicks": 0,
+"impressions": 82,
+"position": 5.2
+},
+"2026-09-23": {
+"clicks": 3,
+"impressions": 77,
+"position": 4.6
+},
+"2026-09-24": {
+"clicks": 3,
+"impressions": 108,
+"position": 6.0
+},
+"2026-09-25": {
+"clicks": 2,
+"impressions": 253,
+"position": 7.1
+},
+"2026-09-26": {
+"clicks": 0,
+"impressions": 142,
+"position": 6.5
+},
+"2026-09-27": {
+"clicks": 2,
+"impressions": 151,
+"position": 8.1
+},
+"2026-09-28": {
+"clicks": 3,
+"impressions": 130,
+"position": 5.8
+},
+"2026-09-29": {
+"clicks": 0,
+"impressions": 117,
+"position": 6.3
+},
+"2026-09-30": {
+"clicks": 2,
+"impressions": 123,
+"position": 7.3
+},
+"2026-10-01": {
+"clicks": 0,
+"impressions": 70,
+"position": 10.6
+},
+"2026-10-02": {
+"clicks": 0,
+"impressions": 57,
+"position": 4.9
+},
+"2026-10-03": {
+"clicks": 0,
+"impressions": 37,
+"position": 16.3
+},
+"2026-10-04": {
+"clicks": 0,
+"impressions": 52,
+"position": 12.7
+},
+"2026-10-05": {
+"clicks": 1,
+"impressions": 34,
+"position": 9.1
+},
+"2026-10-06": {
+"clicks": 2,
+"impressions": 42,
+"position": 11.5
+},
+"2026-10-07": {
+"clicks": 1,
+"impressions": 37,
+"position": 21.4
+},
+"2026-10-08": {
+"clicks": 1,
+"impressions": 41,
+"position": 14.9
+},
+"2026-10-09": {
+"clicks": 0,
+"impressions": 30,
+"position": 13.7
+},
+"2026-10-10": {
+"clicks": 1,
+"impressions": 41,
+"position": 30.0
+},
+"2026-10-11": {
+"clicks": 0,
+"impressions": 363,
+"position": 6.1
+},
+"2026-10-12": {
+"clicks": 0,
+"impressions": 104,
+"position": 5.0
+},
+"2026-10-13": {
+"clicks": 1,
+"impressions": 126,
+"position": 3.9
+},
+"2026-10-14": {
+"clicks": 3,
+"impressions": 129,
+"position": 9.4
+},
+"2026-10-15": {
+"clicks": 0,
+"impressions": 67,
+"position": 10.3
+},
+"2026-10-16": {
+"clicks": 1,
+"impressions": 63,
+"position": 13.0
+},
+"2026-10-17": {
+"clicks": 0,
+"impressions": 40,
+"position": 23.3
+},
+"2026-10-18": {
+"clicks": 1,
+"impressions": 48,
+"position": 22.8
+},
+"2026-10-19": {
+"clicks": 1,
+"impressions": 43,
+"position": 9.1
+},
+"2026-10-20": {
+"clicks": 2,
+"impressions": 49,
+"position": 7.1
+},
+"2026-10-21": {
+"clicks": 1,
+"impressions": 34,
+"position": 9.6
+},
+"2026-10-22": {
+"clicks": 0,
+"impressions": 44,
+"position": 12.8
+},
+"2026-10-23": {
+"clicks": 2,
+"impressions": 70,
+"position": 10.2
+},
+"2026-10-24": {
+"clicks": 1,
+"impressions": 32,
+"position": 18.3
+},
+"2026-10-25": {
+"clicks": 0,
+"impressions": 26,
+"position": 43.4
+},
+"2026-10-26": {
+"clicks": 1,
+"impressions": 30,
+"position": 15.1
+},
+"2026-10-27": {
+"clicks": 0,
+"impressions": 25,
+"position": 6.1
+},
+"2026-10-28": {
+"clicks": 0,
+"impressions": 16,
+"position": 5.4
+},
+"2026-10-29": {
+"clicks": 1,
+"impressions": 23,
+"position": 22
+},
+"2026-10-30": {
+"clicks": 1,
+"impressions": 30,
+"position": 11.7
+},
+"2026-10-31": {
+"clicks": 1,
+"impressions": 13,
+"position": 22.9
+},
+"2026-11-01": {
+"clicks": 0,
+"impressions": 17,
+"position": 24.6
+},
+"2026-11-02": {
+"clicks": 2,
+"impressions": 57,
+"position": 13.8
+},
+"2026-11-03": {
+"clicks": 0,
+"impressions": 140,
+"position": 6.0
+},
+"2026-11-04": {
+"clicks": 1,
+"impressions": 65,
+"position": 7.6
+},
+"2026-11-05": {
+"clicks": 0,
+"impressions": 49,
+"position": 6.7
+},
+"2026-11-06": {
+"clicks": 0,
+"impressions": 31,
+"position": 23.3
+},
+"2026-11-07": {
+"clicks": 0,
+"impressions": 19,
+"position": 16.9
+},
+"2026-11-08": {
+"clicks": 0,
+"impressions": 20,
+"position": 25.2
+},
+"2026-11-09": {
+"clicks": 1,
+"impressions": 33,
+"position": 25.6
+},
+"2026-11-10": {
+"clicks": 2,
+"impressions": 31,
+"position": 11.4
+},
+"2026-11-11": {
+"clicks": 1,
+"impressions": 78,
+"position": 8.4
+},
+"2026-11-12": {
+"clicks": 0,
+"impressions": 38,
+"position": 12.6
+},
+"2026-11-13": {
+"clicks": 2,
+"impressions": 57,
+"position": 13.5
+},
+"2026-11-14": {
+"clicks": 0,
+"impressions": 45,
+"position": 34.2
+},
+"2026-11-15": {
+"clicks": 0,
+"impressions": 105,
+"position": 10.5
+},
+"2026-11-16": {
+"clicks": 0,
+"impressions": 47,
+"position": 8.5
+},
+"2026-11-17": {
+"clicks": 3,
+"impressions": 33,
+"position": 20.9
+},
+"2026-11-18": {
+"clicks": 1,
+"impressions": 28,
+"position": 17.8
+}
+}
+}

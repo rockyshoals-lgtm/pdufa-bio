@@ -1,14 +1,24 @@
 {
- "_note": "Paths Google Search Console shows as indexed (URL Inspection). Seeded 2026-11-11 from the red-team audit.",
+ "_note": "Paths Search Console reports as indexed (URL Inspection API verdict PASS), kept each rebuild by gsc_index_status.py from _google_index_status.json; a path Google later reports unindexed drops out.",
  "indexed": [
+  "/",
+  "/calendar",
+  "/calendar/2026/august",
   "/calendar/2026/december",
   "/calendar/2026/november",
+  "/calendar/2026/october",
+  "/calendar/2026/september",
+  "/calendar/2027",
+  "/clinical-trial-success-rates",
+  "/condition/cancer",
   "/crl",
+  "/drug/aficamten",
   "/fda-decision/RHHBY-2026-11-13",
   "/fda-decisions-today",
   "/pdufa/BBIO-bbp-418",
   "/pdufa/CAPR-deramiocel",
   "/pdufa/CYTK-aficamten",
-  "/pdufa/SVRA-molbreevi"
+  "/pdufa/SVRA-molbreevi",
+  "/ticker/ABBV"
  ]
 }
