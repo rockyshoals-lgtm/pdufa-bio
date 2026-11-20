@@ -271,6 +271,21 @@ def main():
             _kinds[k] = _page_kind(open(pp, encoding="utf-8", errors="replace").read()) if os.path.exists(pp) else None
         return _kinds[k]
 
+    # 2026-11-19 (Livsayis red team): a decision page whose Verified line says no public FDA record states the
+    # action day (label_announcement_only_dates.py) is dated by the sponsor's announcement. The lede and the FAQ
+    # said "The FDA approved X on <announcement day>", asserting a day the decision page itself says we lack.
+    _ann = {}
+    _ANN_RX = re.compile(r"FDA action day (?:not yet posted|not found in a public FDA record)")
+
+    def ann_only(tk, day):
+        k = f"{tk}-{day}"
+        if k not in _ann:
+            pp = os.path.join(SITE, "fda-decision", k, "index.html")
+            doc = open(pp, encoding="utf-8", errors="replace").read() if os.path.exists(pp) else ""
+            vb = re.search(r"<!--VERIFIED:BEGIN-->(.*?)<!--VERIFIED:END-->", doc, re.S)
+            _ann[k] = bool(vb and _ANN_RX.search(vb.group(1)))
+        return _ann[k]
+
     # outcome facts from the decisions archive
     arch = {}
     darch = os.path.join(SITE, "decisions", "index.html")
@@ -529,6 +544,7 @@ def main():
                 continue
             if _moved:
                 day = _dcd                     # render the decision itself, dated by the decision page
+                dp = "day"                     # the decision page is dated to the day (a goal month is not)
                 typ = "FDA decision"
             # 2026-10-09 (audit P0): a WITHDRAWN application is dated by its withdrawal, labelled as
             # such, and links its event page; it is not a PDUFA date that is still ahead.
@@ -593,13 +609,24 @@ def main():
         # Audit 2026-10-03 (Tier 2.1/3.1): an approval is dated by the FDA's action date where the
         # FDA's own record states it (JUVMO: letter 2026-09-25, AbbVie release 09-28). The row is
         # keyed on the first public day; the page states the FDA's date.
-        _dec = sorted(((FAD.get((str(r.get("t") or "").upper(), r.get("d") or ""), r.get("d")),
-                        arch.get((str(r.get("t") or "").upper(), r.get("d") or "")),
-                        kind_of(str(r.get("t") or "").upper(), r.get("d") or ""))
+        # 2026-11-19: a row decided before its goal date (Livsayis: goal 11-30, decided 11-18) is keyed in the
+        # archive by its decision day, as the event table above renders it (_moved). Looking it up by the goal
+        # day found nothing, so /drug/cemdisiran listed "1 FDA decision on record" and, beside it, "No FDA
+        # decision for Cemdisiran (C5 RNAi) is in our archive yet."
+        def _dday(r):
+            _t, _g, _c = str(r.get("t") or "").upper(), str(r.get("d") or ""), str(r.get("dcd") or "")[:10]
+            if str(r.get("st") or "").lower() == "decided" and _c and _c != _g and (_t, _c) in arch:
+                return _c
+            return _g
+
+        def _dkey(r):
+            return (str(r.get("t") or "").upper(), _dday(r))
+
+        _dec = sorted(((FAD.get(_dkey(r), _dday(r)), arch.get(_dkey(r)), kind_of(*_dkey(r)),
+                        ann_only(*_dkey(r)) and _dkey(r) not in FAD)
                        for r in rs
-                       if arch.get((str(r.get("t") or "").upper(), r.get("d") or ""))
-                       in ("Approved", "CRL")), key=lambda x: x[0] or "")
-        dec0 = _dec[-1] if _dec else None      # (date, outcome, provenance) of the latest real decision
+                       if arch.get(_dkey(r)) in ("Approved", "CRL")), key=lambda x: x[0] or "")
+        dec0 = _dec[-1] if _dec else None      # (date, outcome, provenance, announced-only) of the latest decision
         lede = f"{name} "
         if comps:
             lede += f"is {_art(comps[0])} {esc(', '.join(comps[:2]))} program"
@@ -635,6 +662,12 @@ def main():
                     + ("inferred from the stock's price move, not read from an FDA record or a filing. "
                        if dec0[2] == "inferred" else "but its decision page does not yet cite a source. ")
                     + (lede.replace(f"{name} ", "It ", 1) if lede != f"{name} " else ""))
+        elif dec0 is not None and dec0[3]:
+            # the FDA's action day is not on a public FDA record: state the announcement as an announcement
+            what = (f"The FDA's approval of {name}" if dec0[1] == "Approved"
+                    else f"A Complete Response Letter for {name}")
+            lede = (what + f" was announced on <b>{esc(pretty(dec0[0]))}</b>; the FDA's action day is not yet "
+                    f"on a public FDA record. " + (lede.replace(f"{name} ", "It ", 1) if lede != f"{name} " else ""))
         elif dec0 is not None:
             # No upcoming event: the decision IS the first sentence (audit 2026-11-09 §5 item 7: camizestrant and
             # rusfertide pages still earned 168 Bing AI citations for "{drug} pdufa date" months after the FDA
@@ -738,17 +771,23 @@ def main():
                 a1 = (f"No upcoming catalyst is on our calendar for {name}; "
                       f"{n_dec if n_dec else 'no'} FDA decision"
                       f"{'s are' if n_dec != 1 else ' is'} on record below.")
-        dec_rows = [r for r in rs if arch.get((str(r.get('t') or '').upper(), r.get('d') or ''))
-                    in ("Approved", "CRL")]
+        dec_rows = [r for r in rs if arch.get(_dkey(r)) in ("Approved", "CRL")]
         q2 = f"What happened at {name}'s most recent FDA decision?"
         if dec_rows:
-            last = max(dec_rows, key=lambda r: r.get("d") or "")
-            oc = arch.get((str(last.get('t') or '').upper(), last['d']))
-            a2 = (f"On {pretty(last['d'])} the FDA "
-                  + ("approved the application" if oc == "Approved"
-                     else "issued a Complete Response Letter") +
-                  f". The decision page carries the source document and the measured share-price "
-                  f"reaction.")
+            last = max(dec_rows, key=_dday)
+            oc = arch.get(_dkey(last))
+            if ann_only(*_dkey(last)) and _dkey(last) not in FAD:
+                a2 = (("The FDA's approval of the application" if oc == "Approved"
+                       else "A Complete Response Letter") +
+                      f" was announced on {pretty(_dday(last))}; the FDA's action day is not yet on a public "
+                      f"FDA record. The decision page carries the announcement and the measured share-price "
+                      f"reaction.")
+            else:
+                a2 = (f"On {pretty(FAD.get(_dkey(last), _dday(last)))} the FDA "
+                      + ("approved the application" if oc == "Approved"
+                         else "issued a Complete Response Letter") +
+                      f". The decision page carries the source document and the measured share-price "
+                      f"reaction.")
         else:
             a2 = f"No FDA decision for {name} is in our archive yet."
         # 2026-08-12 audit: 2 Q&A per page = ~620 answerable queries across the index; 5-6 makes
@@ -770,22 +809,26 @@ def main():
                        f"{', '.join(comps[:2])}"
                        + (f" ({', '.join(tks)})" if tks else "") + "."))
         if dec_rows:
-            appr = [r for r in dec_rows
-                    if arch.get((str(r.get('t') or '').upper(), r['d'])) == "Approved"]
+            appr = [r for r in dec_rows if arch.get(_dkey(r)) == "Approved"]
             if appr:
-                ad = max(appr, key=lambda r: r.get("d") or "")
-                kd = kind_of(str(ad.get("t") or "").upper(), ad.get("d") or "")
-                a5 = (f"Yes. The FDA approved an application for {name} on "
-                      f"{pretty(ad['d'])}; the decision page linked above carries the source."
+                ad = max(appr, key=_dday)
+                kd = kind_of(*_dkey(ad))
+                _ad = pretty(FAD.get(_dkey(ad), _dday(ad)))
+                a5 = ((f"Yes. The FDA's approval of an application for {name} was announced on {_ad}; the "
+                       f"decision page linked above carries the announcement. The FDA's action day is not yet "
+                       f"on a public FDA record."
+                       if ann_only(*_dkey(ad)) and _dkey(ad) not in FAD else
+                       f"Yes. The FDA approved an application for {name} on "
+                       f"{_ad}; the decision page linked above carries the source.")
                       if kd == "sourced" else
-                      f"Our record shows an approval on {pretty(ad['d'])}, inferred from the stock's price move; "
+                      f"Our record shows an approval on {_ad}, inferred from the stock's price move; "
                       f"no FDA record or filing confirming it is linked yet." if kd == "inferred" else
-                      f"Our record shows an approval on {pretty(ad['d'])}, but its decision page does not yet "
+                      f"Our record shows an approval on {_ad}, but its decision page does not yet "
                       f"cite a source.")
             else:
-                cd = max(dec_rows, key=lambda r: r.get("d") or "")
+                cd = max(dec_rows, key=_dday)
                 a5 = (f"Not in our records. The FDA issued a Complete Response Letter on "
-                      f"{pretty(cd['d'])}"
+                      f"{pretty(_dday(cd))}"
                       + (f"; the next tracked catalyst is "
                          f"{pretty(up[0]['d'], up[0].get('dp') or 'day')}." if up else "."))
             qa.append((f"Has {name} been approved by the FDA?", a5))
@@ -822,7 +865,9 @@ def main():
         if not up and dec0 is not None and dec0[2] == "sourced":
             # decided and nothing pending: the title answers "{drug} pdufa date / fda approval" with the outcome
             title = (f"{name} FDA {'Approval' if dec0[1] == 'Approved' else 'Decision'}: "
-                     f"{'Approved' if dec0[1] == 'Approved' else 'Complete Response Letter'} {pretty(dec0[0])} | pdufa.bio")
+                     + (("Announced" if dec0[1] == "Approved" else "Complete Response Letter announced")
+                        if dec0[3] else ("Approved" if dec0[1] == "Approved" else "Complete Response Letter"))
+                     + f" {pretty(dec0[0])} | pdufa.bio")
         if len(html.unescape(title)) > 100:
             title = f"{name} FDA Catalysts | pdufa.bio"
         # Clause-fitting, not slicing: desc[:158] cut two long drug names mid-word on the first
@@ -854,10 +899,12 @@ def main():
             bl = (brands.get(slug) or {}).get("brands") or []
             bn = next((b for b in bl if b), "")
             bn = bn[:1].upper() + bn[1:].lower() if bn.isupper() else bn
-            brand_desc = (f"{name}: FDA approved on {full_date(dec0[0])}"
+            brand_desc = ((f"{name}: FDA approval announced {full_date(dec0[0])}" if dec0[3] else
+                           f"{name}: FDA approved on {full_date(dec0[0])}")
                           + (f" as {bn}" if bn and bn.lower() != name.lower() else "") + ".")
         elif dec0 is not None and dec0[1] == "CRL":
-            brand_desc = f"{name}: FDA issued a Complete Response Letter on {full_date(dec0[0])}."
+            brand_desc = (f"{name}: a Complete Response Letter was announced {full_date(dec0[0])}." if dec0[3] else
+                          f"{name}: FDA issued a Complete Response Letter on {full_date(dec0[0])}.")
         elif up:
             # Audit 2026-09-09 item 3: the same argument for the OTHER half of the corpus. A
             # drug still under review has one fact a searcher wants, and it was not in the
