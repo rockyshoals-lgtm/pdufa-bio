@@ -19,19 +19,27 @@
   "/drug/aficamten",
   "/drug/asundexian",
   "/fda-approval-decisions-this-week",
+  "/fda-approval-rate",
   "/fda-approvals/2026/october",
   "/fda-decision/RHHBY-2026-11-13",
   "/fda-decisions-today",
+  "/fda-this-month",
+  "/learn/what-is-a-pdufa-date",
+  "/methodology",
   "/pdufa/BBIO-bbp-418",
   "/pdufa/BMY",
   "/pdufa/CAPR",
   "/pdufa/CAPR-deramiocel",
   "/pdufa/CYTK-aficamten",
+  "/pdufa/LNTH",
+  "/pdufa/MRNA",
   "/pdufa/SVRA-molbreevi",
   "/research/fda-decision-timing",
   "/runup-by-year",
   "/ticker/ABBV",
   "/ticker/AMGN",
-  "/ticker/AZN"
+  "/ticker/AZN",
+  "/ticker/BMY",
+  "/ticker/BNTX"
  ]
 }
