@@ -381,6 +381,45 @@ def redirect_sources():
         return set()
 
 
+# 2026-11-20 (indexing round 3): the same URLs, split by kind of page, behind one sitemap index. sitemap.xml stays the
+# full list every other script reads; the split exists so Search Console reports indexed vs submitted PER KIND (event
+# pages vs decision pages vs drug pages ...), which is the number that says where Google's 1,612 "discovered, not
+# indexed" pages are. A URL listed in two submitted sitemaps is allowed by the protocol.
+SECTIONS = (("events", ("/pdufa/", "/adcomm/", "/fda-application/")),
+            ("decisions", ("/fda-decision/", "/crl", "/fda-approvals")),
+            ("drugs", ("/drug/",)),
+            ("tickers", ("/ticker/",)),
+            ("hubs", ("",)))
+INDEX_OUT = os.path.join(SITE, "sitemap_index.xml")
+
+
+def section_of(path):
+    for name, prefixes in SECTIONS:
+        if any(p and path.startswith(p) for p in prefixes):
+            return name
+    return "hubs"
+
+
+def write_section_sitemaps(urls):
+    parts = {name: {} for name, _ in SECTIONS}
+    for p, d in urls.items():
+        parts[section_of(p)][p] = d
+    head = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    index = []
+    for name, _ in SECTIONS:
+        part = parts[name]
+        if not part:
+            continue
+        body = "".join(f"<url><loc>{BASE}{p}</loc><lastmod>{part[p]}</lastmod></url>" for p in sorted(part))
+        open(os.path.join(SITE, f"sitemap-{name}.xml"), "w", encoding="utf-8").write(
+            head + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + body + "</urlset>\n")
+        index.append(f"<sitemap><loc>{BASE}/sitemap-{name}.xml</loc><lastmod>{max(part.values())}</lastmod></sitemap>")
+        print(f"    sitemap-{name}.xml  {len(part)} URLs")
+    open(INDEX_OUT, "w", encoding="utf-8").write(
+        head + '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(index) + "</sitemapindex>\n")
+    print(f"wrote sitemap_index.xml ({len(index)} section sitemaps)")
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     # Audit 2026-10-13 order 3: a LOCAL chain renders some blocks differently from CI (no Polygon key, for
@@ -457,6 +496,7 @@ def main():
         print("DRY RUN -- not written."); return
     open(OUT, "w", encoding="utf-8").write(xml)
     print(f"wrote sitemap.xml ({len(xml)} bytes)")
+    write_section_sitemaps(urls)
 
     # Committed, so a fresh CI checkout keeps knowing when each page's content last really changed.
     st = load_state()
