@@ -323,6 +323,14 @@
   {
    "id": "readout_sldb_2026-10-15",
    "reason": "Ruling 2026-10-03: recorded as the registry states it (COMPLETED, primary completion ACTUAL 2026-11-03); served as '... per registry'; no outcome inferred."
+  },
+  {
+   "id": "readout_annx_2026-10-15",
+   "reason": "Ruling 2026-10-03: the row's NCT06510816 is a different trial ('A Study Investigating the Efficacy and Safety of Intravitreal (IVT) Injections of Vonaprum'), not Tanruprubart; registry signals on it are not facts about this row. NCT needs a hand fix."
+  },
+  {
+   "id": "readout_vygr_2027-05-15",
+   "reason": "Ruling 2026-10-03: recorded as the registry states it (ACTIVE_NOT_RECRUITING, primary completion ACTUAL 2026-10-13); served as '... per registry'; no outcome inferred."
   }
  ],
  "note": "Reviewed readout-watcher signals. Shrink this list; never grow it silently."
