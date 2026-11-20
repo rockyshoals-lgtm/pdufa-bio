@@ -248,8 +248,12 @@ median is several times the large-cap median.</div></div>
 is left out because it belongs to neither). From 2025 every event is a decision in our
 <a href="/decisions">published archive</a> with a primary FDA, SEC or company source, and its outcome is the one that
 source states; records whose outcome was only inferred from the share price, whose cited source was re-read and did
-not state the FDA action, or whose own page says the label was wrong, are left out. The 2020 to 2024 events come from the research set the study began with: their
-dates and outcomes are not each linked to a primary source on this site. Prices are
+not state the FDA action, or whose own page says the label was wrong, are left out. The 2020 to 2024 events come from the research set the study began with. On 2026-11-20
+each was re-checked against the FDA's own records (Drugs@FDA approvals, the FDA's published CRL letters), the company's own
+release or SEC filing, or for a few a dated trade report; each is dated to the day the action became public. Rows that
+were not a PDUFA approval or CRL (trial readouts, advisory votes, emergency use authorizations, tentative approvals,
+generic-drug and device actions), matched neither the action nor its announcement, counted one action twice, or were
+priced under a company with no stake in the drug were removed. These events have no per-decision pages on this site. Prices are
 split-adjusted daily closes (Polygon through 2026-11-09, FMP since; checked close by close at the switch). Returns are
 computed in trading days, not calendar days.<br><br>
 <b>T-120 coverage.</b> {n120:,} of {len(rows):,} events ({100*n120/len(rows):.1f}%) have a full 120 sessions of prior trading history; the rest are companies that had not been listed long enough, and they are excluded from the T-120 columns rather than measured over a short window. Coverage is 100% for {years[-1]}.<br><br><b>Limits worth stating.</b> Daily closes understate intraday ranges, so every move here is a floor, not a ceiling.

@@ -25,6 +25,11 @@ Checks:
      Until 11-18 the extender copied the ticker's first row's indication (Pfizer's Hympavzi "Dermatomyositis").
      An entry that no longer fits its row (drug line edited, page gained an Indication line) fails too.
      Plant: PLANT_RUNUP_STUDY=indication must FAIL.
+  7. (2026-11-20) Every 2020-2024 research row (no decision page) has an in-study entry in
+     runup_study_research_sources.json with a source, and its outcome is the entry's. Until 11-20 the research set was
+     taken on trust; 23% of it was trial readouts the old pipeline read as approvals or CRLs. Every research row the
+     file keeps out is out of the study, and every entry names a reason or a source.
+     Plant: PLANT_RUNUP_STUDY=research (a trial readout put back in the study) must FAIL.
 
     python tests/test_runup_study_current.py
 """
@@ -186,6 +191,39 @@ def main():
         print("   fix: source the indication into runup_study_indications.json, then python curate_runup_study.py")
     else:
         print("  PASS: every row with a decision page carries its own drug's sourced indication (or none)")
+
+    # 2026-11-20: the research rows are held to a source too (runup_study_events.load_research_sources)
+    from runup_study_events import ARCHIVE_START, load_research_sources
+    research, res_bad = load_research_sources(), []
+    if not research:
+        res_bad.append("runup_study_research_sources.json is missing or empty")
+    for k, e in sorted(research.items()):
+        if e.get("in_study") and not (e.get("source") and e.get("outcome") in ("APPROVAL", "CRL")):
+            res_bad.append(f"runup_study_research_sources.json {k}: an in-study entry needs a source and an outcome")
+        if not e.get("in_study") and not e.get("reason"):
+            res_bad.append(f"runup_study_research_sources.json {k}: an entry kept out of the study needs its reason")
+    res_rows = [r for r in rows if r["pdufa_date"][:10] < ARCHIVE_START]
+    if os.environ.get("PLANT_RUNUP_STUDY") == "research":
+        k = next((k for k, e in sorted(research.items()) if not e.get("in_study")), None)
+        if k:
+            res_rows = res_rows + [{"ticker": k.split("-", 1)[0], "pdufa_date": k.split("-", 1)[1], "outcome": "CRL"}]
+    for r in res_rows:
+        tk, d = r["ticker"].strip().upper(), r["pdufa_date"][:10]
+        e = research.get(f"{tk}-{d}")
+        if not e or not e.get("in_study"):
+            res_bad.append(f"{tk} {d}: research row in the study, but "
+                           + ("it has no entry" if not e else "its entry keeps it out: " + e.get("reason", "")[:70]))
+        elif r.get("outcome") != e.get("outcome"):
+            res_bad.append(f"{tk} {d}: study outcome {r.get('outcome')}, the source says {e.get('outcome')}")
+    if res_bad:
+        ok = False
+        print(f"\nFAIL: {len(res_bad)} 2020-2024 research row(s) are not backed by a recorded source:")
+        for x in res_bad[:15]:
+            print(f"   {x}")
+        print("   fix: a row in the study with no in-study entry: python curate_runup_study.py && python "
+              "runup_study_stats.py. An outcome that differs: re-read the entry's source; correct the entry or the row.")
+    else:
+        print(f"  PASS: every 2020-2024 research row ({len(res_rows):,}) has a source on record and its outcome")
 
     stats = json.load(open(STATS, encoding="utf-8"))
     if stats.get("n_events") != len(rows):
