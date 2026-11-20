@@ -1316,14 +1316,32 @@ jobs:
           BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
         run: |
           sleep 60
-          if git fetch --quiet --depth=1 origin +refs/tags/indexed-ok:refs/tags/indexed-ok 2>/dev/null; then
+          # Tell "no tag yet" (ls-remote exit 2) apart from a network error, so a failed read never diffs against
+          # HEAD~1 and then moves the tag past pages that were never sent.
+          have=""
+          for i in 1 2 3; do
+            rc=0; git ls-remote --exit-code --tags origin refs/tags/indexed-ok >/dev/null || rc=$?
+            if [ "$rc" = 0 ]; then have=1; break; elif [ "$rc" = 2 ]; then have=0; break; fi
+            sleep 10
+          done
+          if [ -z "$have" ]; then
+            echo "::error::could not read tag indexed-ok from origin; nothing submitted, tag left where it was"; exit 1
+          fi
+          if [ "$have" = 1 ]; then
+            git fetch --quiet --depth=1 origin +refs/tags/indexed-ok:refs/tags/indexed-ok \
+              || { echo "::error::could not fetch tag indexed-ok; nothing submitted, tag left where it was"; exit 1; }
             SINCE=indexed-ok
           else
             SINCE=HEAD~1
           fi
-          python ping_search_engines.py --since "$SINCE"
-          git push --quiet -f origin HEAD:refs/tags/indexed-ok \
-            || echo "::warning::could not move tag indexed-ok; the next run diffs against its own parent instead"
+          # 0: all sent. 2: every changed URL sent, only the Search Console sitemap call failed (tag moves, step
+          # still fails). 1: changed URLs not sent (tag stays, next run resends them).
+          rc=0; python ping_search_engines.py --since "$SINCE" || rc=$?
+          if [ "$rc" = 0 ] || [ "$rc" = 2 ]; then
+            git push --quiet -f origin HEAD:refs/tags/indexed-ok \
+              || echo "::warning::could not move tag indexed-ok; the next run resends from the old tag"
+          fi
+          exit "$rc"
 
       # Bing is where we actually rank, and GSC cannot see it. Advisory: no key, no failure.
       - name: "Bing rank snapshot (advisory)"

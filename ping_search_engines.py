@@ -457,9 +457,15 @@ def main():
              "- Google Search Console sitemaps: " + {None: "not configured", True: "accepted", False: "**FAILED**"}[gsc_ok]])
     # Loud on purpose (2026-11-20): a changed page that no engine was told about is the failure this step exists to
     # prevent. A failure leaves the tag indexed-ok where it was, so the next run sends these pages again.
-    if not in_ok or gsc_ok is False:
+    if not in_ok:
         print("FAIL: changed pages were not submitted (see above); the next run will resend them.")
         return 1
+    # Exit 2: every changed URL went out, only the Search Console sitemap call failed. The workflow still moves
+    # indexed-ok (the sitemap is resubmitted every run, so holding the tag would only resend URLs already sent and
+    # grow the backlog every run) and still fails the step so the failure is seen.
+    if gsc_ok is False:
+        print("FAIL: the Search Console sitemap submission failed; changed URLs were sent to IndexNow and Bing.")
+        return 2
     return 0
 
 
