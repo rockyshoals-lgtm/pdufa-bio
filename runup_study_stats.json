@@ -1,21 +1,21 @@
 {
- "n_events": 1671,
+ "n_events": 1673,
  "date_min": "2020-01-08",
  "date_max": "2026-11-18",
- "n_approval": 1248,
+ "n_approval": 1250,
  "n_crl": 423,
  "approval_rate": 74.7,
- "t120_coverage_n": 1605,
+ "t120_coverage_n": 1607,
  "t120_coverage_pct": 96.1,
  "T-120_T-1_median_pct": 2.39,
- "T-120_T-1_mean_pct": 7.57,
+ "T-120_T-1_mean_pct": 7.56,
  "T-120_T-7_median_pct": 2.48,
- "T-120_T-7_mean_pct": 7.38,
+ "T-120_T-7_mean_pct": 7.37,
  "T-120_T-3_median_pct": 2.89,
- "T-120_T-3_mean_pct": 7.83,
+ "T-120_T-3_mean_pct": 7.82,
  "T-120_peak_median_pct": 17.45,
- "T-120_peak_mean_pct": 33.3,
- "runup_30d_median": 0.61,
+ "T-120_peak_mean_pct": 33.29,
+ "runup_30d_median": 0.62,
  "runup_21d_median": 0.28,
  "runup_14d_median": 0.11,
  "runup_7d_median": -0.02,
@@ -40,16 +40,16 @@
    "n": 261
   },
   "Small ($300M-$2B)": {
-   "median_abs_pct": 3.3869,
-   "n": 254
+   "median_abs_pct": 3.4464,
+   "n": 255
   },
   "Mid ($2B-$10B)": {
    "median_abs_pct": 2.265,
    "n": 230
   },
   "Large (>$10B)": {
-   "median_abs_pct": 0.9912,
-   "n": 832
+   "median_abs_pct": 0.9923,
+   "n": 833
   }
  },
  "by_year": {
@@ -108,13 +108,13 @@
    "approval_rate": 91.8
   },
   "2026": {
-   "n": 158,
-   "t120_median_pct": 12.12,
+   "n": 160,
+   "t120_median_pct": 11.63,
    "t120_peak_median_pct": 25.79,
-   "t120_n": 158,
-   "runup_30d_median": 2.69,
+   "t120_n": 160,
+   "runup_30d_median": 2.78,
    "post_1d_median": -0.12,
-   "approval_rate": 91.8
+   "approval_rate": 91.9
   }
  }
 }

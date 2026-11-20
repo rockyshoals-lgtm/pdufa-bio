@@ -2808,6 +2808,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/linaclotide",
+   "destination": "/drug/linzess",
+   "permanent": true
+  },
+  {
    "source": "/drug/linvoseltamab-gcpt",
    "destination": "/drug/lynozyfic",
    "permanent": true
@@ -2953,6 +2958,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/palbociclib",
+   "destination": "/drug/ibrance",
+   "permanent": true
+  },
+  {
    "source": "/drug/paltusotine",
    "destination": "/drug/palsonify",
    "permanent": true
@@ -2960,6 +2970,11 @@
   {
    "source": "/drug/pariglasgene-brecaparvovec",
    "destination": "/drug/dtx401",
+   "permanent": true
+  },
+  {
+   "source": "/drug/pediatric-plaque-psoriasis",
+   "destination": "/drug/tapinarof",
    "permanent": true
   },
   {
@@ -3010,6 +3025,11 @@
   {
    "source": "/drug/prefilled-syringe",
    "destination": "/drug/shingrix",
+   "permanent": true
+  },
+  {
+   "source": "/drug/proposed-golimumab-biosimilar",
+   "destination": "/drug/avt05",
    "permanent": true
   },
   {
@@ -3108,8 +3128,18 @@
    "permanent": true
   },
   {
+   "source": "/drug/tabelecleucel",
+   "destination": "/drug/ebvallo",
+   "permanent": true
+  },
+  {
    "source": "/drug/tafasitamab",
    "destination": "/drug/monjuvi",
+   "permanent": true
+  },
+  {
+   "source": "/drug/talazoparib",
+   "destination": "/drug/talzenna",
    "permanent": true
   },
   {
