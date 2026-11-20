@@ -22,7 +22,7 @@ So this does the three things that do work:
 
     python ping_search_engines.py [--dry-run]
 """
-import argparse, datetime as dt, json, os, re, sys, urllib.error, urllib.request
+import argparse, datetime as dt, json, os, re, sys, time, urllib.error, urllib.request
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -238,8 +238,17 @@ def submit_gsc(dry):
         # owner work out which they have, ask Google which properties this account can see and use
         # those. If it can see none, the service account was not added to the property, which is
         # the step people miss.
+        # Retried (red team, Nov 20): this step now fails the run, so a transient API error must not.
+        def _retry(call, tries=3):
+            for k in range(tries):
+                try:
+                    return call()
+                except Exception:  # noqa: BLE001
+                    if k == tries - 1:
+                        raise
+                    time.sleep(5 * (k + 1))
         try:
-            visible = [s["siteUrl"] for s in (svc.sites().list().execute().get("siteEntry") or [])]
+            visible = [s["siteUrl"] for s in (_retry(lambda: svc.sites().list().execute()).get("siteEntry") or [])]
         except Exception:
             visible = []
         wanted = [s for s in visible if HOST in s or s == f"sc-domain:{HOST.replace('www.', '')}"]
@@ -257,7 +266,7 @@ def submit_gsc(dry):
             feeds.append(f"https://{HOST}/sitemap_index.xml")
         for site, feed in [(st, fd) for st in wanted for fd in feeds]:
             try:
-                svc.sitemaps().submit(siteUrl=site, feedpath=feed).execute()
+                _retry(lambda: svc.sitemaps().submit(siteUrl=site, feedpath=feed).execute())
                 # Read the state back. lastSubmitted and lastDownloaded are different things and
                 # confusing them wastes an afternoon: submit is us telling Google the file changed
                 # (updates immediately, always), lastDownloaded is Google choosing to fetch it
