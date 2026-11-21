@@ -2598,6 +2598,11 @@
    "permanent": true
   },
   {
+   "source": "/drug/desmopressin-acetate",
+   "destination": "/drug/desmoda",
+   "permanent": true
+  },
+  {
    "source": "/drug/deucravacitinib",
    "destination": "/drug/sotyktu",
    "permanent": true
@@ -2755,6 +2760,11 @@
   {
    "source": "/drug/gedatolisib-with",
    "destination": "/drug/gedatolisib",
+   "permanent": true
+  },
+  {
+   "source": "/drug/gefurulimab-gaks",
+   "destination": "/drug/klygefa",
    "permanent": true
   },
   {
@@ -3335,6 +3345,11 @@
   {
    "source": "/drug/vebreltinib",
    "destination": "/drug/apl-101",
+   "permanent": true
+  },
+  {
+   "source": "/drug/venetoclax",
+   "destination": "/drug/venclexta",
    "permanent": true
   },
   {

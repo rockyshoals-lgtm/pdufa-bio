@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-20",
+ "as_of": "2026-11-21",
  "horizon_days": 60,
  "sponsors": {
   "BBIO": {
@@ -13,17 +13,6 @@
     "fda_feeds"
    ],
    "cik": 1743881
-  },
-  "CAPR": {
-   "company": "Capricor Therapeutics Inc.",
-   "goals": [
-    "2026-11-22"
-   ],
-   "channels": [
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1133869
   },
   "COGT": {
    "company": "Cogent Biosciences",
