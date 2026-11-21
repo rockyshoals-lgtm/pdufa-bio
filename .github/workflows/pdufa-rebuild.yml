@@ -193,6 +193,7 @@ jobs:
           python ensure_calendar_rows.py
           python sync_calendar_row_ta.py   # 2026-11-17: a row's area tag follows the dataset (CORT GRACE read "Infectious")
           python build_calendar_year_hub.py
+          python fix_calendar_row_labels.py   # 2026-11-21: hand-verified labels for pending rows (Copilot cited a wrong GIST label)
 
       # 2026-09-23: the listing must exist BEFORE marking. mark_calendar_decided reads its
       # decisions from /decisions; a decision page built since the last run had no listing row
@@ -952,6 +953,7 @@ jobs:
       # 2026-10-24 (Bing audit): month pages state their row count in title and description; the schema name follows.
       - name: "Calendar month titles carry the row count"
         run: |
+          python fix_calendar_row_labels.py
           python retitle_calendar_months.py
           python sync_jsonld_name_to_title.py
 

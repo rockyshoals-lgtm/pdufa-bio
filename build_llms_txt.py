@@ -76,8 +76,24 @@ def dated_rows(n_next=10, n_recent=8):
     nxt = sorted((r for r in rows if r.get("type") == "PDUFA" and r.get("st") == "Upcoming"
                   and r.get("dp") == "day" and str(r.get("url", "")).startswith("/")),
                  key=lambda r: (r["d"], r["t"]))[:n_next]
-    up = [f"- {r['d']}: {r['t']} ({r.get('company', '').strip()}), {r['name'].strip()}. "
-          f"{base}{r['url']}" for r in nxt]
+    # 2026-11-21 (round 4, AI citation): each line names the indication, so an answer can say what the date is for,
+    # and carries a sponsor's own word that the FDA will not act by the date (Savara, Nov 20), from the hand-verified
+    # goal-date ledger. A date line that an assistant quotes must not read as a decision expected that day.
+    try:
+        led = json.load(io.open(os.path.join(HERE, "_goal_date_passed.json"), encoding="utf-8")).get("passed", [])
+    except Exception:
+        led = []
+    miss = {"/pdufa/" + e["slug"]: e for e in led if e.get("announced_miss_date")}
+    up = []
+    for r in nxt:
+        ind = str((r.get("_d") or {}).get("indication") or "").strip().rstrip(".")
+        ind = re.sub(r"\s+(?:BLA|NDA|sBLA|sNDA)$", "", ind)
+        ind = f". Indication: {ind}" if 3 < len(ind) <= 90 else ""
+        m = miss.get(r["url"])
+        note = (f" The sponsor said on {m['announced_miss_date']} that the FDA will not act by this date; the review "
+                f"is ongoing." if m else "")
+        up.append(f"- {r['d']}: {r['t']} ({r.get('company', '').strip()}), {r['name'].strip()}{ind}.{note} "
+                  f"{base}{r['url']}")
     dec = sorted((r for r in rows if r.get("type") == "PDUFA" and r.get("st") == "Decided"
                   and r.get("dcd") and r.get("oc") and str(r.get("url", "")).startswith("/fda-decision/")),
                  key=lambda r: (r["dcd"], r["t"]), reverse=True)[:n_recent]

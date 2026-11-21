@@ -195,5 +195,33 @@
    "What did TALAPRO-3 show?",
    "Per the FDA, among 599 patients with HRR gene-mutated disease, adding talazoparib to enzalutamide cut the risk of radiographic progression or death (hazard ratio 0.48, 95% CI 0.36 to 0.65); median radiographic progression-free survival was not reached versus 45.8 months with placebo."
   ]
+ ],
+ "CAPR-2026-11-20": [
+  [
+   "Was deramiocel approved by the FDA?",
+   "No. Capricor announced on November 20, 2026 that the FDA issued a Complete Response Letter on its resubmitted BLA for deramiocel in Duchenne muscular dystrophy. Per Capricor, the FDA does not consider the data sufficient to establish substantial evidence of effectiveness and cites certain other clinical deficiencies."
+  ],
+  [
+   "Was the deramiocel decision before the PDUFA date?",
+   "Capricor announced the letter on November 20, two days before the November 22, 2026 goal date. Its release does not state the letter's own date, so pdufa.bio does not state an early or late margin."
+  ],
+  [
+   "Is this the first CRL for deramiocel?",
+   "No. Capricor announced an earlier Complete Response Letter for deramiocel on July 11, 2025, and then resubmitted the application."
+  ]
+ ],
+ "AZN-2026-11-16": [
+  [
+   "Is gefurulimab approved by the FDA?",
+   "Yes. The FDA approved Klygefa (gefurulimab-gaks) on November 13, 2026 for adults with generalized myasthenia gravis who are anti-acetylcholine receptor antibody positive (BLA 761488). AstraZeneca announced it on November 16, 2026."
+  ],
+  [
+   "How is Klygefa given?",
+   "Per AstraZeneca, Klygefa is self-administered under the skin once a week with an autoinjector. The FDA letter approves a REMS because of the risk of serious meningococcal infections."
+  ],
+  [
+   "Was the Klygefa decision early or late?",
+   "pdufa.bio holds no publicly disclosed PDUFA goal date for this application, so no margin is given. The FDA letter states that the application was received on November 13, 2025."
+  ]
  ]
 }

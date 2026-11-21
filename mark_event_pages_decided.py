@@ -261,7 +261,15 @@ def announcement_wording(doc, dcd):
            (f"FDA decision</span><b>Approved {P}</b>", f"FDA decision</span><b>Approved (announced {P})</b>"),
            (f"on {P}: Approved.", f"on {P}: Approved (the sponsor's announcement date; the filing does not state the day the FDA acted)."),
            (f", Approved {P}", f", Approval announced {P}"),
-           (f"FDA decision: Approved on {P}. Facts only", f"FDA decision: Approval announced by the sponsor on {P}. Facts only")]
+           (f"FDA decision: Approved on {P}. Facts only", f"FDA decision: Approval announced by the sponsor on {P}. Facts only"),
+           # 2026-11-21 red team: CAPR's CRL is known only from Capricor's release, which gives no letter date
+           (f"received a Complete Response Letter from the FDA on {P}",
+            f"received a Complete Response Letter from the FDA, announced on {P}"),
+           (f" on {P}: Complete Response Letter.",
+            f" (announced {P}; the letter's own date is not public): Complete Response Letter."),
+           (f"FDA decision <b>Complete Response Letter {P}</b>", f"FDA decision <b>Complete Response Letter (announced {P})</b>"),
+           (f"FDA decision</span><b>Complete Response Letter {P}</b>",
+            f"FDA decision</span><b>Complete Response Letter (announced {P})</b>")]
     for a, b in rep:
         doc = doc.replace(a, b)
     # the meta description must stay under the 158-char budget or fix_meta_lengths trims it
@@ -289,9 +297,16 @@ def load_hand_links():
     try:
         d = json.load(io.open(os.path.join(HERE, "_event_page_decisions.json"),
                               encoding="utf-8"))
+        HAND_META.update({x["slug"]: x for x in d.get("links", [])})
         return {x["slug"]: x["decision"] for x in d.get("links", [])}
     except Exception:
         return {}
+
+
+# 2026-11-21: a hand link to an archive-only decision may carry the FDA's own action day (a letter dated before the
+# sponsor's announcement: Klygefa, FDA letter Nov 13, AstraZeneca Nov 16). Without it the page said "approved by the
+# FDA on November 16", the announcement day.
+HAND_META = {}
 
 
 def main():
@@ -334,7 +349,10 @@ def main():
                               "d": (d_hit.get("d") if d_hit else None),
                               # 2026-11-17: carry the row's provenance so an unsourced FDA day states no margin
                               # (/pdufa/BTAI read "2 days after its November 14 goal" for Teva's announcement day)
-                              "dp": (d_hit.get("dp") if d_hit else None), "_d": (d_hit.get("_d") if d_hit else {}),
+                              "dp": (d_hit.get("dp") if d_hit else None),
+                              "_d": (d_hit.get("_d") if d_hit else
+                                     {k: HAND_META.get(slug, {}).get(k) for k in ("fda_action_date", "brand")
+                                      if HAND_META.get(slug, {}).get(k)}),
                               "_archive": not bool(d_hit), "_hand": True}]
                 else:
                     print(f"  SKIP /pdufa/{slug}: hand link {hand[slug]} not found in the "
@@ -550,7 +568,9 @@ def main():
             # on the event page states the FDA's day.
             for a_, b_ in ((f", {word} {pretty(dcd)}", f", {word} {pretty(acted)}"),
                            (f"<b>{word} {pretty(dcd)}</b>", f"<b>{word} {pretty(acted)}</b>"),
-                           (f"FDA decision: {word} on {pretty(dcd)}.", f"FDA decision: {word} on {pretty(acted)}.")):
+                           (f"FDA decision: {word} on {pretty(dcd)}.", f"FDA decision: {word} on {pretty(acted)}."),
+                           # 2026-11-21: the FAQ answer ("The FDA decided AZN's ... on November 16, 2026: Approved.")
+                           (f" on {pretty(dcd)}: {word}.", f" on {pretty(acted)}: {word}.")):
                 new = new.replace(a_, b_)
         # 2.3: the brand assigned at approval appears in the event page's title and h1 the same run.
         brand = str(_d.get("brand") or "").strip()

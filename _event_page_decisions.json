@@ -53,6 +53,15 @@
    "reviewer": "builder 2026-11-17",
    "why": "Shape (b): IGALMI moved from BioXcel (BTAIQ, bankrupt) to Teva in late October 2026; the at-home sNDA (goal 2026-11-14) was approved and announced by Teva on 2026-11-16, filed under TEVA. /pdufa/BTAI is the legacy BioXcel page for the same application.",
    "source": "https://ir.tevapharm.com/news-and-events/press-releases/default.aspx"
+  },
+  {
+   "slug": "AZN-gefurulimab",
+   "decision": "AZN-2026-11-16",
+   "reviewer": "builder 2026-11-21",
+   "why": "The automatic archive fallback had bannered this page with AZN-2026-02-20 (CALQUENCE with venetoclax, an unrelated application). This page is gefurulimab in generalized myasthenia gravis; the FDA approved it as Klygefa on November 13, 2026 (BLA 761488 letter) and AstraZeneca announced it on November 16.",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf",
+   "fda_action_date": "2026-11-13",
+   "brand": "Klygefa"
   }
  ]
 }

@@ -5,17 +5,16 @@
   "asset": "Deramiocel (CAP-1002)",
   "headline": "Capricor's cell therapy for Duchenne muscular dystrophy, and why the FDA and The Lancet reached opposite conclusions",
   "as_of": "2026-08-03",
-  "status_updated": "2026-11-18",
+  "status_updated": "2026-11-21",
   "status": {
-    "label": "FDA decision expected",
-    "date": "2026-11-22",
-    "detail": "On 24 August 2026 Capricor announced that the FDA had classified an amendment to the application as major and moved the goal date from 22 August to 22 November 2026. The amendment added 24-month open-label extension data from the Phase 3 HOPE-3 trial and additional robustness analyses, in support of a refined proposed indication focused on upper limb function, the primary endpoint of HOPE-3. The earlier steps, including the July 2025 Complete Response Letter and the July 2026 advisory committee vote, are in the timeline below with their sources.",
-    "source": "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
+    "label": "Complete Response Letter announced",
+    "date": "2026-11-20",
+    "detail": "On 20 November 2026 Capricor announced that it had received a Complete Response Letter for its resubmitted BLA. Per Capricor, the letter states that the FDA does not consider the data sufficient to establish substantial evidence of effectiveness and cites certain other clinical deficiencies; Capricor said it is reviewing the letter. The release does not state the letter's own date. The goal date had been 22 November 2026, moved from 22 August after the FDA classified an amendment to the application as major (Capricor, 24 August 2026). The earlier steps are in the timeline below with their sources.",
+    "source": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html"
   },
   "plain": "Deramiocel is an experimental cell therapy made from heart cells recovered from donated human hearts. It is given as a drip into a vein once every three months in an outpatient clinic, so there is no surgery and no hospital stay. The cells are not meant to replace damaged muscle: the idea is that they release tiny packages called exosomes that calm inflammation and scarring, with the aim of slowing the loss of heart and arm function in boys and young men with Duchenne muscular dystrophy.",
   "technical": "Human allogeneic cardiosphere-derived cells (CDCs) derived from cadaver donor hearts. 1.5 x 10^8 (150 million) cells per intravenous infusion, every three months; four doses over twelve months in the Phase 3 trial. Capricor describes the mechanism as exosome-mediated macrophage reprogramming with immunomodulatory and anti-fibrotic effects; the FDA describes the same mechanism as hypothesised.",
   "technical_source": "https://www.fda.gov/media/193839/download",
-
   "results": [
     {
       "trial": "HOPE-3, Phase 3, 106 patients",
@@ -46,29 +45,89 @@
       "source": "https://www.fda.gov/media/193839/download"
     }
   ],
-
   "events": [
-    ["2024-12-31", "Original BLA submitted, based on HOPE-2 and its open-label extension", "https://www.fda.gov/media/193839/download"],
-    ["2025-07-09", "FDA issued a Complete Response Letter, citing lack of substantial evidence of effectiveness", "https://www.capricor.com/investors/news-events/press-releases/detail/319/capricor-therapeutics-provides-regulatory-update-on"],
-    ["2025-08-13", "At a Type A meeting Capricor proposed changing the HOPE-3 primary endpoint to LVEF; FDA disagreed because the trial was already under way", "https://www.fda.gov/media/193839/download"],
-    ["2025-11-24", "Final statistical analysis plan (version 3.0) created, one day before database lock; not submitted to FDA for review", "https://www.fda.gov/media/193839/download"],
-    ["2025-12-03", "HOPE-3 topline announced as positive on the primary endpoint", "https://www.capricor.com/investors/news-events/press-releases/detail/331/capricor-therapeutics-announces-positive-topline-results"],
-    ["2026-03-10", "FDA lifted the Complete Response Letter and set a new PDUFA date of 22 August 2026", "https://www.capricor.com/investors/news-events/press-releases/detail/338/capricor-therapeutics-announces-establishment-of-new-pdufa"],
-    ["2026-07-27", "FDA briefing document published ahead of the advisory committee", "https://www.fda.gov/media/193839/download"],
-    ["2026-07-29", "HOPE-3 published in The Lancet; FDA advisory committee voted 3 for, 9 against", "https://www.capricor.com/investors/news-events/press-releases/detail/350/the-lancet-publishes-hope-3-data-for-capricor"],
-    ["2026-07-30", "Capricor disclosed the advisory committee vote and reaffirmed the PDUFA date", "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"],
-    ["2026-08-24", "FDA classified a BLA amendment as major and extended the PDUFA date to 22 November 2026; the amendment supports a refined proposed indication focused on upper limb function", "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"]
+    [
+      "2024-12-31",
+      "Original BLA submitted, based on HOPE-2 and its open-label extension",
+      "https://www.fda.gov/media/193839/download"
+    ],
+    [
+      "2025-07-09",
+      "FDA issued a Complete Response Letter, citing lack of substantial evidence of effectiveness",
+      "https://www.capricor.com/investors/news-events/press-releases/detail/319/capricor-therapeutics-provides-regulatory-update-on"
+    ],
+    [
+      "2025-08-13",
+      "At a Type A meeting Capricor proposed changing the HOPE-3 primary endpoint to LVEF; FDA disagreed because the trial was already under way",
+      "https://www.fda.gov/media/193839/download"
+    ],
+    [
+      "2025-11-24",
+      "Final statistical analysis plan (version 3.0) created, one day before database lock; not submitted to FDA for review",
+      "https://www.fda.gov/media/193839/download"
+    ],
+    [
+      "2025-12-03",
+      "HOPE-3 topline announced as positive on the primary endpoint",
+      "https://www.capricor.com/investors/news-events/press-releases/detail/331/capricor-therapeutics-announces-positive-topline-results"
+    ],
+    [
+      "2026-03-10",
+      "FDA lifted the Complete Response Letter and set a new PDUFA date of 22 August 2026",
+      "https://www.capricor.com/investors/news-events/press-releases/detail/338/capricor-therapeutics-announces-establishment-of-new-pdufa"
+    ],
+    [
+      "2026-07-27",
+      "FDA briefing document published ahead of the advisory committee",
+      "https://www.fda.gov/media/193839/download"
+    ],
+    [
+      "2026-07-29",
+      "HOPE-3 published in The Lancet; FDA advisory committee voted 3 for, 9 against",
+      "https://www.capricor.com/investors/news-events/press-releases/detail/350/the-lancet-publishes-hope-3-data-for-capricor"
+    ],
+    [
+      "2026-07-30",
+      "Capricor disclosed the advisory committee vote and reaffirmed the PDUFA date",
+      "https://www.sec.gov/Archives/edgar/data/1133869/000110465926088667/capr-20260729x8k.htm"
+    ],
+    [
+      "2026-08-24",
+      "FDA classified a BLA amendment as major and extended the PDUFA date to 22 November 2026; the amendment supports a refined proposed indication focused on upper limb function",
+      "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"
+    ],
+    [
+      "2026-11-20",
+      "Capricor announced a second Complete Response Letter, on the resubmitted BLA: the FDA does not consider the data sufficient to establish substantial evidence of effectiveness and cites certain other clinical deficiencies (letter date not stated)",
+      "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html"
+    ]
   ],
-
   "reactions": [
-    {"date": "2026-08-24", "what": "PDUFA date extended to 22 November 2026"},
-    {"date": "2026-07-30", "what": "Advisory committee vote disclosed (3 for, 9 against)"},
-    {"date": "2026-07-27", "what": "FDA briefing document published"},
-    {"date": "2026-03-10", "what": "Complete Response Letter lifted, new PDUFA date set"},
-    {"date": "2025-12-03", "what": "HOPE-3 topline announced"},
-    {"date": "2025-07-11", "what": "Complete Response Letter disclosed"}
+    {
+      "date": "2026-08-24",
+      "what": "PDUFA date extended to 22 November 2026"
+    },
+    {
+      "date": "2026-07-30",
+      "what": "Advisory committee vote disclosed (3 for, 9 against)"
+    },
+    {
+      "date": "2026-07-27",
+      "what": "FDA briefing document published"
+    },
+    {
+      "date": "2026-03-10",
+      "what": "Complete Response Letter lifted, new PDUFA date set"
+    },
+    {
+      "date": "2025-12-03",
+      "what": "HOPE-3 topline announced"
+    },
+    {
+      "date": "2025-07-11",
+      "what": "Complete Response Letter disclosed"
+    }
   ],
-
   "contested": {
     "heading": "Two expert bodies, one dataset, opposite conclusions",
     "plain": "On the same morning in July 2026, The Lancet published HOPE-3 as a trial that met its primary endpoint, and an FDA advisory committee voted 9 to 3 that the evidence did not establish effectiveness. Both were looking at the same patients. The difference is which analysis plan counts. Peer reviewers assessed the plan the company finalised in November 2025; the FDA assessed the plan agreed in 2022 and objected that the later version was never submitted to it, that the submitted analyses departed even from that later version, and that the result rests on how missing data from two placebo patients were handled. The committee was asked only whether the evidence showed effectiveness. It was not asked to weigh benefit against risk, a point Capricor has emphasised. The FDA acknowledged in its own briefing document that there is an urgent unmet need, since no approved therapy exists for heart disease in Duchenne.",
@@ -78,17 +137,15 @@
       "https://www.capricor.com/investors/news-events/press-releases/detail/351/capricor-therapeutics-provides-update-on-fda-advisory"
     ]
   },
-
   "caveats": [
-    "Advisory committee votes are advice. The FDA is not bound by them. After the vote, the PDUFA date was extended to 22 November 2026, following a major amendment to the application.",
+    "Advisory committee votes are advice. The FDA is not bound by them. After the vote, the PDUFA date was extended to 22 November 2026, following a major amendment to the application; the review then ended in a Complete Response Letter, announced 20 November 2026.",
     "The committee voted only on whether the evidence showed effectiveness. It did not vote on overall benefit against risk.",
-    "This is the second review cycle. The first ended in a Complete Response Letter in July 2025.",
+    "Both review cycles ended in a Complete Response Letter: the first in July 2025, the second announced 20 November 2026.",
     "The efficacy claim rests on a statistical analysis plan the FDA says it never reviewed or agreed to, finalised one day before the data were unblinded.",
     "The FDA's re-analyses under the original missing-data rules produced p=0.21 for arm function and p=0.22 for heart function.",
     "Most patients in the trial did not have severe heart disease at entry, although the original application sought a cardiomyopathy indication: mean baseline ejection fraction was 57%, and only 5 of 106 patients were below 45%.",
     "Measurements of heart scarring were missing for more than half the patients in the group where they were collected.",
     "Chemistry and manufacturing sections were not fully reviewed in the first cycle because of the timing of the Complete Response Letter.",
-    "Capricor is in litigation with its US distribution partner, seeking rescission of the agreement. The company states the FDA review is unaffected.",
-    "A PDUFA date is a goal, not a guarantee. The FDA can act early, act late, or issue another Complete Response Letter."
+    "Capricor is in litigation with its US distribution partner, seeking rescission of the agreement. The company stated the FDA review was unaffected."
   ]
 }

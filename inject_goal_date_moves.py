@@ -117,7 +117,10 @@ def main():
             continue
         old, new, changed, why = mv[-1]
         url = str(r.get("url") or "")
-        p = os.path.join(SITE, url.strip("/").replace("/", os.sep), "index.html") if url.startswith("/pdufa/") else ""
+        p = os.path.join(SITE, url.strip("/").replace("/", os.sep), "index.html") \
+            if url.startswith(("/pdufa/", "/fda-decision/")) else ""
+        # 2026-11-21: a DECIDED row's url is its decision page (CAPR, CRL announced 2026-11-20 after the goal moved
+        # 2026-08-22 -> 2026-11-22). The move is part of that decision's record, so the decision page states it too.
         if p and os.path.exists(p):
             doc = io.open(p, encoding="utf-8", errors="replace").read()
             why_s = html.escape(short_reason(why, old, new), quote=False)
@@ -133,6 +136,7 @@ def main():
                      f'<b>Goal date moved:</b> {old[:10]} &rarr; {new[:10]} (recorded {changed[:10]}).'
                      + (f' {why_s}' if why_s else '') + f'</p>{E}')
             m = (re.search(r"<!--DECBAN:END-->", doc0) or re.search(r'<div class="sub">.*?</div>', doc0, re.S)
+                 or (re.search(r"<!--FRESH:END-->", doc0) if url.startswith("/fda-decision/") else None)
                  or re.search(r"</h1>", doc0))
             if m:
                 new_doc = doc0[:m.end()] + block + doc0[m.end():]

@@ -47,6 +47,9 @@ A = 'style="color:#9ec5ff;text-decoration:none"'
 SITE_LINKS = [
     ("FDA calendar 2026", "/calendar"), ("2027 PDUFA dates", "/calendar/2027"), ("FDA decisions today", "/fda-decisions-today"),
     ("This week", "/fda-approval-decisions-this-week"), ("This month", "/fda-this-month"),
+    # 2026-11-21 (round 4, internal links): each of these had ONE inbound link site-wide
+    ("PDUFA date changes", "/pdufa-date-changes"), ("Trial success rates", "/clinical-trial-success-rates"),
+    ("Data coverage", "/coverage"),
     ("Decisions 2026", "/decisions/2026"), ("Decisions 2025", "/decisions/2025"), ("CRL database", "/crl"), ("FDA approvals by month", "/fda-approvals"),
     ("FDA approval letters", "/fda-approval-letters"), ("Decision timing study", "/research/fda-decision-timing"),
     ("Run-up study", "/runup-by-year"), ("FDA approval rate", "/fda-approval-rate"), ("Oncology readouts", "/readouts/oncology"),

@@ -1,0 +1,14 @@
+{
+ "_comment": "Hand-verified labels for PENDING calendar rows, applied to /calendar and every month page by fix_calendar_row_labels.py. Added 2026-11-21 (round-4 currency audit): month pages carried labels from an older generator, and Bing Copilot cites the month pages. Each label names the application the row's goal date belongs to, from the source given. Remove an entry when its row is decided.",
+ "labels": [
+  {"href": "/pdufa/COGT-bezuclastinib-summit", "label": "Bezuclastinib: Nonadvanced systemic mastocytosis (SUMMIT)",
+   "source": "https://www.sec.gov/Archives/edgar/data/1622229/000119312526341315/cogt-ex99_1.htm",
+   "why": "Cogent 8-K, Aug 10 2026: NonAdvSM PDUFA December 30, 2026; GIST is the separate November 30 application."},
+  {"href": "/pdufa/VRTX-povetacicept", "label": "Povetacicept (ALPN-303): IgA nephropathy",
+   "source": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+   "why": "Vertex 8-K, Aug 3 2026: BLA for accelerated approval in IgAN, PDUFA November 30, 2026. Not lupus nephritis."},
+  {"href": "/pdufa/MLYS-lorundrostat", "label": "Lorundrostat: Hypertension",
+   "source": "https://www.globenewswire.com/news-release/2026/11/04/3395833/0/en/mineralys-therapeutics-reports-third-quarter-2026-financial-results-and-provides-corporate-update.html",
+   "why": "Mineralys Q3 release, Nov 4 2026: PDUFA target date December 22, 2026. The month page read 'lorundrostat Dose 1'."}
+ ]
+}
