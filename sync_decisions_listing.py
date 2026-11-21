@@ -126,8 +126,15 @@ def main():
         pp = os.path.join(SITE, "fda-decision", slug, "index.html")
         kv = None
         if os.path.exists(pp):
-            kv = re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", io.open(pp, encoding="utf-8", errors="replace").read())
+            _pd = io.open(pp, encoding="utf-8", errors="replace").read()
+            kv = (re.search(r"<span>Drug / candidate</span><b>(.*?)</b>", _pd)
+                  or re.search(r"<span>Drug</span><b>(.*?)</b>", _pd))
         full = _html.unescape(kv.group(1)) if kv else ""
+        # 2026-11-21: four February rows (AZN/ABBV/SNY/ETON) read "primary-sourced", a provenance badge's word, not a
+        # drug. The decisions archive matches event pages on this text, so a row that names no drug is replaced too.
+        if full and text.strip().lower() in ("primary-sourced", "secondary-sourced", "sourced", "verified"):
+            new = clean_drug_name(full)
+            return m.group(0).replace(m.group(4), _html.escape(new, quote=False)) if new else m.group(0)
         # cut = the archive's widths, an open parenthesis, or a strict prefix of the page's own
         # name that stops mid-word ("TRUQAP (capivasertib) in combi")
         midword = bool(full) and full.startswith(text) and len(full) > len(text) and full[len(text)].isalnum()

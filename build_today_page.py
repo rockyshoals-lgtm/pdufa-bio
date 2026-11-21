@@ -134,6 +134,23 @@ def fda_record_rows(start_iso, end_iso, rows, esc, pretty):
     return note + '<div class="grid">' + "".join(out) + "</div>", len(extra), extra
 
 
+
+def announced_miss_note(row):
+    """2026-11-21 (Savara): when the sponsor has said the FDA will not act by the goal date (_goal_date_passed.json,
+    hand-verified, sourced), a sentence naming that goal date as the next decision says so."""
+    try:
+        import json as _j
+        led = _j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "_goal_date_passed.json"),
+                           encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return ""
+    url = str(row.get("url") or "").rstrip("/")
+    for e in led.get("passed", []):
+        if e.get("announced_miss_date") and url == "/pdufa/" + str(e.get("slug")):
+            who = str(row.get("company") or row.get("t") or "The sponsor").split(",")[0].replace(" Inc.", "").strip()
+            return f" {who} said on {pretty(e['announced_miss_date'])} that the FDA will not act by that date."
+    return ""
+
 def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8",
                   errors="replace").read().replace("\x00", "")
@@ -201,7 +218,7 @@ def main():
            lede),
           ("When is the next FDA decision?",
            (f"The next scheduled PDUFA date is {nxt.get('t')}'s "
-            f"{_cdn(nxt.get('name'))} on {pretty(nxt.get('d'))}."
+            f"{_cdn(nxt.get('name'))} on {pretty(nxt.get('d'))}." + announced_miss_note(nxt)
             if nxt else "No day-precision PDUFA date is currently scheduled.")
            + " The FDA can act before a goal date; in this archive's sourced 2026 "
              "decisions, more came early than late."),

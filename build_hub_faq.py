@@ -98,6 +98,23 @@ def inject(rel, qa, dry):
     return True
 
 
+
+def announced_miss_note(row):
+    """2026-11-21 (Savara): when the sponsor has said the FDA will not act by the goal date (_goal_date_passed.json,
+    hand-verified, sourced), a sentence naming that goal date as the next decision says so."""
+    try:
+        import json as _j
+        led = _j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "_goal_date_passed.json"),
+                           encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return ""
+    url = str(row.get("url") or "").rstrip("/")
+    for e in led.get("passed", []):
+        if e.get("announced_miss_date") and url == "/pdufa/" + str(e.get("slug")):
+            who = str(row.get("company") or row.get("t") or "The sponsor").split(",")[0].replace(" Inc.", "").strip()
+            return f" {who} said on {pretty(e['announced_miss_date'])} that the FDA will not act by that date."
+    return ""
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
@@ -116,7 +133,7 @@ def main():
         when = "today" if days == 0 else ("tomorrow" if days == 1 else f"in {days} days")
         nxt = (f"{str(n.get('t', '')).upper()}'s "
                f"{re.split(r'[(]', str(n.get('name') or 'application'))[0].strip()} "
-               f"on {pretty(n['d'])}, {when}.")
+               f"on {pretty(n['d'])}, {when}." + announced_miss_note(n))
 
     ok = True
 

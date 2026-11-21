@@ -225,7 +225,9 @@ def main():
             trail = body[m.end():m.end() + 110]
             # future-dated but already DECIDED (RARE approved 4 days before its goal date):
             # the row wears the checkmark/outcome and its dataset event is no longer upcoming.
-            if re.search(r"&#10003;|✓|\bApproved\b|\bCRL\b|Complete Response", trail):
+            # 2026-11-21: a CRL before its goal day (CAPR, announced Nov 20 for a Nov 22 goal) wears the cross, and its
+            # "CRL" label sits past the 110-char trail behind the announcement span; the cross is the outcome mark too.
+            if re.search(r"&#10003;|✓|&#10007;|✗|\bApproved\b|\bCRL\b|Complete Response", trail):
                 continue
             page_rows.append((m.group(1), m.group(2), toks(trail)))
     n_flag = 0

@@ -114,7 +114,13 @@ def main():
             print(f"  SKIP /pdufa/{slug}: page missing")
             continue
         goal = e["goal_date"]
-        if dt.date.fromisoformat(goal) >= today:
+        # 2026-11-21: a sponsor can say BEFORE the goal date that the FDA will not act by it (Savara, Nov 20, for a
+        # Nov 22 goal). That is a sourced fact about this page's own target, so it is stated from the announcement on,
+        # not two days later. The application is still under review, so the pending-tense phrases stay as they are.
+        miss_date = e.get("announced_miss_date")
+        miss_text = _html.escape(str(e.get("announced_miss_text", "")))
+        if dt.date.fromisoformat(goal) >= today and not (miss_date and miss_text
+                                                         and dt.date.fromisoformat(miss_date) <= today):
             continue                      # not past yet
         doc = io.open(p, encoding="utf-8", errors="replace").read()
         app = _html.escape(str(e.get("application_type", "application")))
@@ -127,7 +133,14 @@ def main():
         # dated, and says only that no approval has been published -- never "no decision".
         fc_date = e.get("first_cycle_date")
         fc_text = _html.escape(str(e.get("first_cycle_text", "")))
-        if fc_date and fc_text:
+        if miss_date and miss_text:
+            headline = "FDA will not act by the goal date"
+            was = "was" if dt.date.fromisoformat(goal) < today else "is"
+            lead = (f"the FDA goal date for this {app} {was} <b>{pretty(goal)}</b>. On <b>{pretty(miss_date)}</b> "
+                    f"{miss_text} No decision has been published as of {pretty(today.isoformat())}. ")
+            story = " is under FDA review"
+            faq = "candidate under FDA review"
+        elif fc_date and fc_text:
             headline = "First-cycle review completed"
             lead = (f"the FDA goal date for this {app} was <b>{pretty(goal)}</b>; on "
                     f"<b>{pretty(fc_date)}</b> {fc_text} No approval has been published as of "
@@ -200,6 +213,11 @@ def main():
             new = new.replace("FDA PDUFA target date", "FDA goal date (ANDA)")
             new = new.replace(f"When is the {slug.split('-')[0]} PDUFA date?",
                               f"When is the {slug.split('-')[0]} FDA goal date?")
+        # 2026-11-21 red team: the sponsor says the FDA will not act by the goal date and gives no new date, so the page's
+        # schema.org Event is postponed, not scheduled (EventPostponed: "postponed to a date not yet known").
+        if miss_date and miss_text:
+            new = re.sub(r'("eventStatus"\s*:\s*")https://schema\.org/EventScheduled(")',
+                         r"\1https://schema.org/EventPostponed\2", new)
         if new != doc:
             io.open(p, "w", encoding="utf-8").write(new)
             n += 1

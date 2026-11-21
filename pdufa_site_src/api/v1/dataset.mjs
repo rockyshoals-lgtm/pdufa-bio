@@ -10211,9 +10211,9 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Small",
-  "st": "Upcoming",
-  "url": "/pdufa/CAPR-deramiocel",
-  "ua": "2026-11-21T01:53:50Z",
+  "st": "Decided",
+  "url": "/fda-decision/CAPR-2026-11-20",
+  "ua": "2026-11-21T13:23:40Z",
   "_d": {
    "nct_id": {
     "nct": "NCT05126758",
@@ -10264,8 +10264,17 @@ export default [
    "source": "Capricor press release 2026-11-09 (GlobeNewswire)",
    "date_provenance": "https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html",
    "source_quote": "Our Biologics License Application remains under FDA review, with a PDUFA target action date of November 22, 2026.",
-   "red_team": "2026-11-17: date red team; source re-opened and checked against the company's newest disclosure. row had no quote and its extension link did not load; date unchanged"
-  }
+   "red_team": "2026-11-17: date red team; source re-opened and checked against the company's newest disclosure. row had no quote and its extension link did not load; date unchanged",
+   "decision_source": "Capricor Therapeutics press release, November 20, 2026 (GlobeNewswire, 7:55 PM ET)",
+   "decision_source_url": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+   "decision_date_unsourced": true,
+   "announcement": "Capricor Therapeutics press release, November 20, 2026 (GlobeNewswire, 7:55 PM ET)",
+   "announcement_url": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+   "decision_quote": "Capricor Therapeutics (NASDAQ: CAPR) ... today announced that it received a Complete Response Letter (CRL) from the U.S. Food and Drug Administration (FDA) for its resubmitted Biologics License Application (BLA) for Deramiocel",
+   "decision_note": "Per Capricor, the CRL states that the FDA does not consider the data sufficient to establish substantial evidence of effectiveness and cites certain other clinical deficiencies. The release does not state the letter's own date; the date shown is Capricor's announcement (the evening of Friday November 20, two days before the November 22 goal date), so no early or late margin is stated. This is the second CRL for deramiocel; the first was announced July 11, 2025."
+  },
+  "oc": "CRL",
+  "dcd": "2026-11-20"
  },
  {
   "id": "pdufa_svra_2026-11-22",

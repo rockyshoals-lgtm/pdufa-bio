@@ -13,6 +13,16 @@
    "first_cycle_text": "the FDA completed its first-cycle review, identifying no major deficiencies relating to the drug components and one major deficiency relating to the container closure system (the vial's Luer-lock tip); NRx says it has submitted the requested manufacturer's attestation and targets approval in 2026.",
    "source_2": "https://ir.nrxpharma.com/news-releases/news-release-details/fda-completes-first-cycle-review-preservative-free-ketamine-anda",
    "source_2_label": "NRx release on the first-cycle review"
+  },
+  {
+   "slug": "SVRA-molbreevi",
+   "goal_date": "2026-11-22",
+   "application_type": "BLA",
+   "announced_miss_date": "2026-11-20",
+   "announced_miss_text": "Savara said the FDA informed it that the agency will not meet that date for the BLA for molgramostim inhalation solution in autoimmune pulmonary alveolar proteinosis; the review is ongoing, and the agency has not provided a revised action date.",
+   "source": "https://www.businesswire.com/news/home/20261120300122/en/Savara-Informed-That-FDA-Will-Not-Take-Action-on-the-Molgramostim-BLA-for-Autoimmune-Pulmonary-Alveolar-Proteinosis-Autoimmune-PAP-by-the-PDUFA-Date/",
+   "source_label": "Savara release, November 20, 2026",
+   "reviewer": "builder 2026-11-21 (release read 13:20 UTC)"
   }
  ]
 }

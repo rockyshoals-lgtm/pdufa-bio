@@ -2,8 +2,8 @@
  "note": "Calendar rows showing a WINDOW (not a day) that have no dataset event behind them at all. Found 2026-09-10 by the new windowed-row census in tests/test_calendar_matches_dataset.py -- they were structurally invisible before, because that guard's ROW regex only matched YYYY-MM-DD and these rows read 'Q4 2026 (est.)'. Every one has a published /pdufa/* page asserting 2026-12-31, and none cites a sponsor statement of a goal date: three link only a ClinicalTrials.gov record (which is a trial, not an FDA goal date) and four link nothing external at all. This is the SAME defect the 09-10b ORDER raised for four dataset rows on 2026-12-31 -- the year-end placeholder -- so the real population is eleven, not four.",
  "why_a_list_and_not_a_fix": "Each needs its own primary-source pass before it can be sourced, re-dated or withdrawn, and rushing seven live pages at the end of a long session is how the wrong thing gets published. The guard reads this file and FAILS IF THE COUNT GROWS, so the number can only ratchet down, and it prints every row on every CI run so nothing is buried.",
  "recorded_on": "2026-09-10",
- "baseline_count": 2,
- "baseline_note": "THE RATCHET COMPARES AGAINST THIS NUMBER, not against the list's own length. The 09-10 version wrote `if len(UNBACKED) > UNBACKED_N` where both sides were derived from this same file, so it could never fire -- a guard that cannot fail is not a guard, and I shipped one. Baseline raised 7 -> 9 on 2026-09-14 for two pages the calendar-based census structurally could not see, because neither has a calendar row: /pdufa/GILD-trodelvy and /pdufa/MRK-trodelvy. That is a discovery, not a parking space. It may only go down from 9. Lowered to 8 on 2026-10-24: /pdufa/RHHBY-gazyva (SLE) is backed by Genentech's 2026-04-20 release (decision expected by December 2026). Lowered to 2 on 2026-11-01: Lunsumio + Polivy is dated 2027-02-09 (Genentech); Pluvicto (S-037, 2026-07-31), Tirzepatide/Mounjaro (S-044/S-045, 2026-08-27) and Tukysa (2026-10-07) were decided, each with an FDA letter; Trodelvy + Keytruda was approved 2026-06-24 (both GILD and MRK pages).",
+ "baseline_count": 1,
+ "baseline_note": "THE RATCHET COMPARES AGAINST THIS NUMBER, not against the list's own length. The 09-10 version wrote `if len(UNBACKED) > UNBACKED_N` where both sides were derived from this same file, so it could never fire -- a guard that cannot fail is not a guard, and I shipped one. Baseline raised 7 -> 9 on 2026-09-14 for two pages the calendar-based census structurally could not see, because neither has a calendar row: /pdufa/GILD-trodelvy and /pdufa/MRK-trodelvy. That is a discovery, not a parking space. It may only go down from 9. Lowered to 8 on 2026-10-24: /pdufa/RHHBY-gazyva (SLE) is backed by Genentech's 2026-04-20 release (decision expected by December 2026). Lowered to 2 on 2026-11-01: Lunsumio + Polivy is dated 2027-02-09 (Genentech); Pluvicto (S-037, 2026-07-31), Tirzepatide/Mounjaro (S-044/S-045, 2026-08-27) and Tukysa (2026-10-07) were decided, each with an FDA letter; Trodelvy + Keytruda was approved 2026-06-24 (both GILD and MRK pages). Lowered to 1 on 2026-11-21: gefurulimab was approved (Klygefa, FDA letter BLA 761488, November 13, 2026; AstraZeneca, November 16).",
  "rows": [
   {
    "ticker": "ABBV",
@@ -13,17 +13,6 @@
    "what": "RINVOQ (upadacitinib), non-segmental vitiligo",
    "external_sources": [
     "https://clinicaltrials.gov/study/NCT04927975"
-   ],
-   "verdict": "trial registry only; no sponsor goal date"
-  },
-  {
-   "ticker": "AZN",
-   "window": "Q4 2026",
-   "page": "/pdufa/AZN-gefurulimab",
-   "page_asserts": "2026-12-31",
-   "what": "Gefurulimab, generalised myasthenia gravis",
-   "external_sources": [
-    "https://clinicaltrials.gov/study/NCT06607627"
    ],
    "verdict": "trial registry only; no sponsor goal date"
   }

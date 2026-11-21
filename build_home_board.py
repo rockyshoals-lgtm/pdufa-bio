@@ -402,6 +402,25 @@ def _page_kv(tk, page_date):
     return open(p, encoding="utf-8", errors="replace").read() if os.path.exists(p) else ""
 
 
+_UNSRC = None
+
+
+def _unsourced_urls():
+    """Decision pages whose dataset row says the held date is the announcement day (decision_date_unsourced)."""
+    global _UNSRC
+    if _UNSRC is None:
+        _UNSRC = set()
+        try:
+            src = open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read()
+            for r in json.loads(src[src.index("["):src.rindex("]") + 1]):
+                d = r.get("_d") if isinstance(r.get("_d"), dict) else {}
+                if d.get("decision_date_unsourced") and not d.get("fda_action_date"):
+                    _UNSRC.add(str(r.get("url") or ""))
+        except Exception:  # noqa: BLE001
+            pass
+    return _UNSRC
+
+
 def fda_day(tk, page_date):
     """(day, known) for /fda-decision/{tk}-{page_date}. day is the FDA's own action day: the dataset's
     fda_action_date, else the decision page's key facts ("FDA decision date"). When neither holds one (the page says
@@ -414,14 +433,18 @@ def fda_day(tk, page_date):
         fad = None
     if fad:
         return fad, True
+    # 2026-11-21: a page built this run (CAPR's CRL) still carries its build-time "FDA decision date" fact; the
+    # announcement-only relabel runs later. The dataset row already says the day is the sponsor's announcement.
     doc = _page_kv(tk, page_date)
+    rec = re.search(r'<!--FDAREC:BEGIN-->.*?<b>FDA record of the action:</b> the FDA [a-z ]+? on <b>([A-Z][a-z]+ \d{1,2}, '
+                    r'\d{4})</b>, per <a href="https://www\.(?:accessdata\.)?fda\.gov/', doc, re.S)
+    if u in _unsourced_urls() and not rec:
+        return page_date, False
     m = re.search(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b>', doc)
     if m:
         return m.group(1), True
-    m = re.search(r'<!--FDAREC:BEGIN-->.*?<b>FDA record of the action:</b> the FDA [a-z ]+? on <b>([A-Z][a-z]+ \d{1,2}, '
-                  r'\d{4})</b>, per <a href="https://www\.(?:accessdata\.)?fda\.gov/', doc, re.S)
-    if m:
-        return dt.datetime.strptime(m.group(1), "%B %d, %Y").date().isoformat(), True
+    if rec:
+        return dt.datetime.strptime(rec.group(1), "%B %d, %Y").date().isoformat(), True
     return page_date, False
 
 

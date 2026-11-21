@@ -115,6 +115,19 @@ def ev_sentence(r, decided=False):
         link = f"/fda-decision/{tk}-{(page_dcd if decided else '') or dcd or d}"
         return (f'<p>{when}, the FDA {verb} <a class="lit" href="{esc(link)}">{who}</a>'
                 f"{ind_txt}.</p>")
+    # 2026-11-21 (Savara): the sponsor has said the FDA will not act by this goal date (hand ledger, sourced)
+    try:
+        _led = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "_goal_date_passed.json"),
+                              encoding="utf-8")).get("passed", [])
+    except Exception:  # noqa: BLE001
+        _led = []
+    _miss = next((e for e in _led if e.get("announced_miss_date")
+                  and str(href).rstrip("/") == "/pdufa/" + str(e.get("slug"))), None)
+    if _miss:
+        _md = dt.date.fromisoformat(_miss["announced_miss_date"])
+        return (f'<p><b>{MONTHS[day.month]} {day.day}</b>: the FDA goal date for '
+                f'<a class="lit" href="{esc(href)}">{who}</a>{ind_txt}. On {MONTHS[_md.month]} {_md.day} the sponsor '
+                f"said the FDA will not act by that date; the review is ongoing.</p>")
     return (f'<p><b>{MONTHS[day.month]} {day.day}</b>: the FDA is due to decide on '
             f'<a class="lit" href="{esc(href)}">{who}</a>{ind_txt}. That is the goal '
             f"date; the agency can act earlier or extend it.</p>")

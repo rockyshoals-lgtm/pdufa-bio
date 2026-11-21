@@ -44,9 +44,18 @@ def main():
         if not n:
             continue
         mname = month.capitalize()
+        # 2026-11-21 (round 4): Bing Copilot read this month's decided rows (marked with a tick) as still upcoming. The
+        # count now says how many already have a decision, in the chip, the description and the FAQ answer.
+        # Red team 2026-11-21: a withdrawn application (MRK I-DXd, October) wears data-dec too, but nothing was decided;
+        # it is counted apart. The description stays under the 160-character budget (test_meta_lengths).
+        wd = len(re.findall(r'<a class="row" data-dec="1" data-wd="1"', doc))
+        dec = len(re.findall(r'<a class="row" data-dec="1"', doc)) - wd
+        pend = n - dec - wd
+        parts = (f"{pend} awaiting a decision, {dec} decided" + (f", {wd} withdrawn" if wd else "")) if (dec or wd) else ""
+        split = f" ({parts})" if parts else ""
         title = f"{mname} {year} PDUFA Calendar: {n} FDA Decision Date{'s' if n != 1 else ''} | pdufa.bio"
-        desc = (f"{n} FDA PDUFA decision date{'s' if n != 1 else ''} in {mname} {year}, each with company, ticker, drug "
-                f"and indication and a link to its primary source. Updated daily.")
+        desc = (f"{n} FDA PDUFA date{'s' if n != 1 else ''} in {mname} {year}" + (f": {parts}" if parts else "")
+                + ". Each row gives company, ticker, drug and its primary source.")
         new = re.sub(r"<title>[^<]*</title>", f"<title>{html.escape(title, quote=False)}</title>", doc, count=1)
         new = sub_meta(new, "name", "description", desc)
         new = sub_meta(new, "property", "og:title", title)
@@ -57,10 +66,12 @@ def main():
         # never again -- /calendar/2027/february said "1 PDUFA dates" and "currently tracks 1" over three rows,
         # while its title said 3. Every number on the page is now the same number.
         new = re.sub(r'<span class="count">[^<]*</span>',
-                     f'<span class="count">{n} PDUFA date{"s" if n != 1 else ""}</span>', new, count=1)
-        new = re.sub(r"currently tracks \d+ FDA PDUFA decisions? with dates? in",
-                     f"currently tracks {n} FDA PDUFA decision{'s' if n != 1 else ''} with "
-                     f"date{'s' if n != 1 else ''} in", new)
+                     f'<span class="count">{n} PDUFA date{"s" if n != 1 else ""}'
+                     + (f' &middot; {parts}' if parts else '') + '</span>', new, count=1)
+        new = re.sub(r"currently tracks \d+ FDA PDUFA decisions? with dates? in ([A-Z][a-z]+ \d{4})"
+                     r"(?: \(\d+ (?:still pending|with no decision yet|awaiting a decision), \d+ (?:already )?decided(?:, \d+ withdrawn)?\))?",
+                     lambda m: (f"currently tracks {n} FDA PDUFA decision{'s' if n != 1 else ''} with "
+                                f"date{'s' if n != 1 else ''} in {m.group(1)}{split}"), new)
         if new != doc:
             changed += 1
             if not a.dry_run:

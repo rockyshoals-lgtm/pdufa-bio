@@ -1,0 +1,29 @@
+[
+ {
+  "ticker": "CAPR",
+  "date": "2026-11-20",
+  "outcome": "CRL",
+  "drug": "Deramiocel (CAP-1002)",
+  "indication": "Duchenne muscular dystrophy (resubmitted BLA; HOPE-3)",
+  "company": "Capricor Therapeutics Inc.",
+  "cap": "Small",
+  "headline": "Capricor announced on November 20, 2026 that it received a Complete Response Letter on its resubmitted BLA for deramiocel in Duchenne muscular dystrophy; the goal date was November 22, and the release does not date the letter.",
+  "pdufa_note": "Capricor announced on the evening of November 20, 2026 (7:55 PM ET) that it received a Complete Response Letter for its resubmitted BLA for deramiocel, its cell therapy for Duchenne muscular dystrophy (<a href=\"https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html\" rel=\"noopener\" style=\"color:#e3ba5e\">Capricor's announcement</a>). Per Capricor, the letter states that the FDA does not consider the data sufficient to establish substantial evidence of effectiveness and cites certain other clinical deficiencies; Capricor said it is reviewing the letter and will share next steps after its evaluation. The PDUFA goal date was November 22, 2026, moved from August 22 after a major amendment to the application (<a href=\"https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html\" rel=\"noopener\" style=\"color:#e3ba5e\">Capricor, August 24, 2026</a>). The release does not state the letter's own date, so no early or late margin is given. This is deramiocel's second Complete Response Letter; the first was announced on July 11, 2025 (<a href=\"/fda-decision/CAPR-2025-07-11\" style=\"color:#e3ba5e\">CAPR, July 11, 2025</a>). A Complete Response Letter means the FDA will not approve the application in its present form; the sponsor can resubmit.",
+  "source": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+  "source_label": "Capricor Therapeutics press release, November 20, 2026"
+ },
+ {
+  "ticker": "AZN",
+  "date": "2026-11-16",
+  "fda_action_date": "2026-11-13",
+  "outcome": "Approved",
+  "drug": "Klygefa (gefurulimab-gaks)",
+  "indication": "Generalized myasthenia gravis in adults who are anti-AChR antibody positive",
+  "company": "AstraZeneca PLC (Alexion)",
+  "cap": "Large",
+  "headline": "The FDA approved Klygefa (gefurulimab-gaks) on November 13, 2026 for adults with generalized myasthenia gravis who are anti-acetylcholine receptor antibody positive; AstraZeneca announced the approval on November 16.",
+  "pdufa_note": "The FDA's approval letter for BLA 761488, signed November 13, 2026 (<a href=\"https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf\" rel=\"noopener\" style=\"color:#e3ba5e\">FDA letter</a>), covers Klygefa (gefurulimab-gaks) for adults with generalized myasthenia gravis who are anti-acetylcholine receptor (AChR) antibody positive. The letter states that the application was received on November 13, 2025, and it approves a REMS because of the risk of serious meningococcal infections. AstraZeneca announced the approval on November 16, 2026 and describes once-weekly subcutaneous self-administration by autoinjector (<a href=\"https://www.astrazeneca.com/media-centre/press-releases/2026/klygefa-gefurulimab-approved-in-the-US.html\" rel=\"noopener\" style=\"color:#e3ba5e\">AstraZeneca, November 16, 2026</a>). Per AstraZeneca, in the Phase III PREVAIL trial (260 patients) the MG-ADL total score improved more than with placebo at week 26 (treatment difference -1.6, p&lt;0.0001). We hold no publicly disclosed PDUFA goal date for this application, so no early or late margin is given.",
+  "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf",
+  "source_label": "FDA approval letter, BLA 761488, November 13, 2026"
+ }
+]
