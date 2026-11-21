@@ -3275,6 +3275,906 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/pitolisant-hd": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/pixclara": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/plinabulin": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/pluvicto": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/pmn310": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/pmn310-precise-ad": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/poherdy": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/ponlimsi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/povetacicept": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/povorcitinib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/pra-216": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/protect-registry": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/prucalopride-tablets": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/ptc923": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/pylarify-truvu": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/qfitlia": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/qtorin-rapamycin": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rap-219": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rap-219-long-acting": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rap-641": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rasonque": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/reblozyl": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/recombinant-single-chain": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/redemplo": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/relacorilant": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/relutrigine": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/relutrigine-emerald": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/remibrutinib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/reolysin": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/repatha": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/reproxalap-ophthalmic": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/resmetirom": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/revita": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/revuforj": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/revumenib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/revumenib-publication": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rexlemestrocel-l": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rexlemestrocel-l-expanded": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rhapsido": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rilparencel-proact": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rilzabrutinib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rinvoq": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/risperidone-extended": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/romidepsin-injection": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/romvimza": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rp1": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rusfertide": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/ruxolitinib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rybelsus": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/rybrevant-faspro": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/ryzumvi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/s-303-treated": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/s095035": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sabirnetug": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/sacituzumab-govitecan": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sacituzumab-tirumotecan": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/saphnelo": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/scy-247": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/scy-770": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sd-101": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/second-wholly": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/selarsdi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/selinexor": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/semaglutide": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/sephience": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/seralutinib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/setmelanotide": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/setrusumab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sgt-003": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sgt-212-falcon": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sgt-501-artemis": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sgt-610": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/shingrix": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/sion-719": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/skyrizi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/skytrofa": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sl-325": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sl-846": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sln124": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sls009": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sns-101": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sodium-oxybate": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/sogroya": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/solriamfetol-engage": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/solriamfetol-focus-2": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/solriamfetol-sustain": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sonelokimab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sonelokimab-vela-teen": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sotagliflozin": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sotagliflozin-sonata-hcm": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sotyktu": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/spinraza": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/spn-812": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/spravato": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/spy001": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/spy072": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/spy120": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/srk-439": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sublingual-film": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sublocade": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/surabgene-lomparvovec": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/susvimo": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/sutantatug-envedotin": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/suzetrigine": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/symbravo": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/taldefgrobep-alfa": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/talzenna": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tapinarof": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tarlatamab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tavapadon": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tavocept": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tebipenem-hbr": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tecentriq": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tecovirimat-oral": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tecvayli": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tenapanor": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/teriparatide-injection": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tezepelumab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tezspire": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/th103": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tibulizumab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tinlarebant": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tirzepatide": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tividenofusp-alfa": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tlx101": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tlx597-tx": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tng456": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tnkase": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/tnx-103": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tobevibart": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tolebrutinib": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tonmya": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/topical-roflumilast": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tp-04-kore": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tp-05": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tp-05-calliope": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tradipitant": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/transcon-cnp": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/transcon-il-2": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/trb-061": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tremfya": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/trenibotulinumtoxine": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/treprostinil-palmitil": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/triheptanoin": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/trodelvy": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/drug/truqap": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/trx-100": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tryptyr": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tsha-101": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/tsha-102-reveal": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/fda-application": {
 "checked": "2026-11-20",
 "crawled": null,
