@@ -39,6 +39,7 @@ KV = re.compile(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-
 # which sync_decision_runup_chip.py and build_home_board.py read so the same day's close is not called the reaction.
 KV_DONE = re.compile(r'<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>(?:not yet posted on Drugs@FDA|not found in a public FDA record)</b></div>'
                      r'<div class="kv"><span>Announced</span><b>(\d{4}-\d{2}-\d{2})(?:, after the close)?</b></div><!--/ANNONLY:KV-->')
+AFTER_CLOSE = re.compile(r'<span>Announced</span><b>(\d{4}-\d{2}-\d{2}), after the close</b>')
 CAP = re.compile(r"FDA decision (\d{1,2}/\d{1,2}/\d{2})\. ")
 CAP_DONE = re.compile(r"<!--ANNONLY-->Decision announced (\d{1,2}/\d{1,2}/\d{2})\. ")
 
@@ -82,6 +83,11 @@ def main():
             continue
         base = unlabel(doc)
         new = label(base) if NOT_POSTED_RX.search(verified_block(base)) else base
+        # an "after the close" note survives the unlabel/label round trip (it lives only in the labelled form)
+        late = AFTER_CLOSE.search(doc)
+        if late and new is not base:
+            new = new.replace(f'<span>Announced</span><b>{late.group(1)}</b>',
+                              f'<span>Announced</span><b>{late.group(1)}, after the close</b>', 1)
         if new != doc:
             io.open(p, "w", encoding="utf-8", newline="").write(new)
             if NOT_POSTED_RX.search(verified_block(base)):
