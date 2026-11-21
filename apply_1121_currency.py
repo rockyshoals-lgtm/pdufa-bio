@@ -299,3 +299,17 @@ d = d.replace("<b>This is an extension, not a Complete Response Letter:</b> the 
 if d != d0:
     wr(p, d)
     print("  pdufa/CAPR-deramiocel: extension note set to past tense")
+
+
+# ---------------------------------------------------------------- 5. CAPR: the CRL came after the Nov 20 close
+# Red team 2026-11-21 (live check after #174): Capricor's release went out at 7:55 PM ET on November 20, after that
+# day's close, yet the page called the Nov 20 close (+0.8% on Nov 19) "how CAPR stock reacted". The Announced row
+# now says "after the close", as NVO-2026-03-26's does, so sync_decision_runup_chip.py writes that the move does not
+# include the reaction, build_decision_faq.py answers the run-up question instead, and the home card measures
+# strictly after the day. The next session's close (Nov 23) is the first that can include the news.
+p = os.path.join(SITE, "fda-decision", "CAPR-2026-11-20", "index.html")
+doc = rd(p)
+doc2 = doc.replace('<span>Announced</span><b>2026-11-20</b>', '<span>Announced</span><b>2026-11-20, after the close</b>', 1)
+if doc2 != doc:
+    wr(p, doc2)
+    print("  CAPR-2026-11-20: Announced 2026-11-20, after the close")
