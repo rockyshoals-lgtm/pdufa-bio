@@ -54,10 +54,13 @@ BOILER = [
     r"&?ldquo;FDA&rdquo;,?\s*&ldquo;PDUFA&rdquo;[^.<]*\.",
     r"Informational and educational purposes only\.?",
     r"Nothing on this page is investment[^.<]*\.",
+    # Before the next pattern, or that one leaves "pdufa.bio is not a registered ... broker-dealer and" with no full
+    # stop, and this one then ran on through the page's own next sentence ("Options involve substantial risk ...")
+    # and deleted it on every re-run (2026-11-20).
+    r"pdufabio is not a registered[^.<]*\.",
     r"does not recommend trades or publish individual-drug approval probabilities\.?",
     r"an independent company that is not affiliated[^.<]*\.",
     r"pdufabio is an independent publication[^.<]*\.",
-    r"pdufabio is not a registered[^.<]*\.",
     r"Verify (?:every date and outcome |against |every figure )?[^.<]*\.",
     r"Data and historical statistics only[^.<]*\.",
     r"Data is provided as is[^.<]*\.",
@@ -134,9 +137,22 @@ def trailing_links(body):
     return out
 
 
+def _norm(x):
+    return re.sub(r"[^a-z0-9]+", " ", x.lower()).strip()
+
+
+def _sentences(html_text):
+    t = re.sub(r"<[^>]+>", " ", mask(html_text))
+    t = re.sub(r"&[a-z]+;", " ", t)
+    return {_norm(x) for x in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", t)) if _norm(x)}
+
+
 def leftover(body):
     """Strip recognised boilerplate; return the page-specific remainder as clean text."""
-    t = mask(body)
+    # 2026-11-20: whitespace first. A sentence wrapped across a line in the builder's source ("Historical statistics
+    # only; past behaviour\ndoes not predict future outcomes.") slipped past the one-line BOILER pattern, and
+    # /runup-by-year printed "past behaviour does not predict future outcomes" twice.
+    t = re.sub(r"\s+", " ", mask(body))
     t = LINK_RE.sub(" ", t)       # anchors are re-attached separately by trailing_links()
     t = re.sub(r"</?b>|</?strong>", " ", t)
     for pat in BOILER:
@@ -146,6 +162,10 @@ def leftover(body):
     t = t.replace("&copy;", " ").replace("&mdash;", " ").replace("&ndash;", " ")
     t = re.sub(r"&middot;?|&[lr]dquo;|&nbsp;", " ", t)   # link separators are not page copy
     t = re.sub(r"[\s ]+", " ", t).strip(" .;,&-—")
+    # Belt and braces: a preserved sentence the canonical text already says is a stutter, whatever its wording
+    # around it. Drop it. Guard: tests/test_no_repeated_phrases.py (no sentence twice in one footer).
+    said = _sentences(canonical("", ""))
+    t = " ".join(x for x in re.split(r"(?<=[.!?])\s+", t) if _norm(x) not in said).strip()
     t = unmask(t)
     if len(t) <= 20:
         return ""

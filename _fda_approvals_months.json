@@ -8017,17 +8017,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761105Orig1s053; 761262Orig1s019ltr.pdf"
 },
 {
-"app": "NDA217439",
-"brand": "Talzenna",
-"generic": "talazoparib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-4",
-"class": "Efficacy",
-"date": "2026-10-26",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
-},
-{
 "app": "NDA211651",
 "brand": "Talzenna",
 "generic": "talazoparib",
@@ -8037,6 +8026,17 @@
 "class": "Efficacy",
 "date": "2026-10-26",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/211651Orig1s014ltr.pdf"
+},
+{
+"app": "NDA217439",
+"brand": "Talzenna",
+"generic": "talazoparib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-4",
+"class": "Efficacy",
+"date": "2026-10-26",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217439Orig1s004ltr.pdf"
 },
 {
 "app": "BLA761187",
@@ -8151,7 +8151,7 @@
 "sub": "ORIG-1",
 "class": "",
 "date": "2026-11-12",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761501Orig1s000ltr.pdf"
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761501Orig1s000Correctedltr.pdf"
 },
 {
 "app": "BLA125486",
@@ -8316,7 +8316,7 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-17",
-"letter": ""
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220996Orig1s000ltr.pdf"
 },
 {
 "app": "NDA220936",
@@ -8327,6 +8327,50 @@
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
 "date": "2026-11-17",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220936Orig1s000ltr.pdf"
+},
+{
+"app": "NDA221313",
+"brand": "",
+"generic": "",
+"sponsor": "Lupin Ltd",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 3 - New Dosage Form",
+"date": "2026-11-18",
+"letter": ""
+},
+{
+"app": "NDA217062",
+"brand": "",
+"generic": "",
+"sponsor": "Auson Pharm",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 3 - New Dosage Form",
+"date": "2026-11-18",
+"letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217062Orig1s000TAltr.pdf"
+},
+{
+"app": "NDA221144",
+"brand": "Infilbray",
+"generic": "venglustat",
+"sponsor": "Genzyme Corp A Sanofi Co",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-18",
+"letter": ""
+},
+{
+"app": "NDA221251",
+"brand": "Livsayis",
+"generic": "cemdisiran",
+"sponsor": "Regeneron Pharmaceuticals",
+"kind": "new application",
+"sub": "ORIG-1",
+"class": "Type 1 - New Molecular Entity",
+"date": "2026-11-18",
 "letter": ""
 }
 ]

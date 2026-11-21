@@ -45,6 +45,7 @@ except Exception:  # noqa: BLE001
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from site_dates import eastern_today  # noqa: E402
+from text_hygiene import join_phrases  # noqa: E402
 
 DATASET = os.path.join(HERE, "pdufa_site_src", "api", "v1", "dataset.mjs")
 MANUAL = os.path.join(HERE, "readout_reported_manual.json")
@@ -108,7 +109,9 @@ def row_name(r):
         parts.append(trial)
     if rd and rd.lower() not in " ".join(parts).lower():
         parts.append(rd)
-    return short(" ".join(p for p in parts if p), 90)
+    # 2026-11-20: "TP-04" + "Kore Phase 2" + "Phase 2 topline" was written "TP-04 Kore Phase 2 Phase 2 topline" (60
+    # rows). join_phrases writes a phrase shared at a seam once. Guard: tests/test_no_repeated_phrases.py.
+    return short(join_phrases(p for p in parts if p), 90)
 
 
 def prog_token(s):
