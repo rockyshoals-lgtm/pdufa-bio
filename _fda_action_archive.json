@@ -1347,18 +1347,5 @@
    "RYZUMVI",
    "phentolamine"
   ]
- },
- "AZN-2026-11-16": {
-  "checked": "2026-11-21",
-  "class": "TYPE 1",
-  "date": "2026-11-13",
-  "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf",
-  "name": "Klygefa (gefurulimab-gaks)",
-  "record": "BLA 761488 ORIG-1",
-  "source_url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf",
-  "terms": [
-   "Klygefa",
-   "gefurulimab"
-  ]
  }
 }
