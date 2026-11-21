@@ -25,6 +25,7 @@
   "/fda-decision/ATRA-2025-01-16",
   "/fda-decision/BAYRY-2026-11-09",
   "/fda-decision/CYTK-2026-11-16",
+  "/fda-decision/GSK-2026-11-17",
   "/fda-decision/RHHBY-2026-11-13",
   "/fda-decisions-today",
   "/fda-this-month",
@@ -50,11 +51,17 @@
   "/research/readout-reaction",
   "/research/short-interest-fda",
   "/runup-by-year",
+  "/screener",
+  "/sources",
   "/ticker/ABBV",
   "/ticker/AMGN",
   "/ticker/AZN",
   "/ticker/BMY",
   "/ticker/BNTX",
-  "/ticker/GILD"
+  "/ticker/GILD",
+  "/ticker/LLY",
+  "/tickers",
+  "/vktx",
+  "/why-no-approval-probability"
  ]
 }
