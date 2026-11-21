@@ -35,8 +35,10 @@ H1 = re.compile(r'(<h1>[A-Z][A-Z./ ]{0,12} <span class="g">FDA decision</span>: 
 H1_DONE = re.compile(r'(<h1>[A-Z][A-Z./ ]{0,12} <span class="g">FDA decision</span>: )<!--ANNONLY-->announced '
                      r'([A-Z][a-z]{2} \d{1,2}, \d{4})(</h1>)')
 KV = re.compile(r'<div class="kv"><span>FDA decision date</span><b>(\d{4}-\d{2}-\d{2})</b></div>')
+# 2026-11-21: an announcement made after that day's close keeps its note (CAPR-2026-11-20: Capricor, 7:55 PM ET),
+# which sync_decision_runup_chip.py and build_home_board.py read so the same day's close is not called the reaction.
 KV_DONE = re.compile(r'<!--ANNONLY:KV--><div class="kv"><span>FDA decision date</span><b>(?:not yet posted on Drugs@FDA|not found in a public FDA record)</b></div>'
-                     r'<div class="kv"><span>Announced</span><b>(\d{4}-\d{2}-\d{2})</b></div><!--/ANNONLY:KV-->')
+                     r'<div class="kv"><span>Announced</span><b>(\d{4}-\d{2}-\d{2})(?:, after the close)?</b></div><!--/ANNONLY:KV-->')
 CAP = re.compile(r"FDA decision (\d{1,2}/\d{1,2}/\d{2})\. ")
 CAP_DONE = re.compile(r"<!--ANNONLY-->Decision announced (\d{1,2}/\d{1,2}/\d{2})\. ")
 
