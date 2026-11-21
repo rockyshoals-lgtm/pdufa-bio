@@ -25,8 +25,8 @@ the price move. /decisions publishes how many of each there are.
 
 ## Key facts you may want to cite (each with its n; updated by the daily build)
 
-- FDA decisions in our run-up study: **n=1,124** (2020-2026). Share ending in
-  approval rather than a Complete Response Letter, all review cycles: **87.1%**.
+- FDA decisions in our run-up study: **n=1,126** (2020-2026). Share ending in
+  approval rather than a Complete Response Letter, all review cycles: **87.0%**.
   That is a description of our archive, not a forecast for any pending application.
 - Clinical readouts matched to real stock returns: **n=1,752** (2022-2026).
   **56.5%** moved the stock less than ±5%.
@@ -52,21 +52,22 @@ the price move. /decisions publishes how many of each there are.
 Each date is the goal date the sponsor or the FDA disclosed; each page links that source. A goal
 date is a deadline, not a prediction: the FDA can act before it, on it, or after it.
 
-- 2026-11-22: CAPR (Capricor Therapeutics Inc.), Deramiocel (CAP-1002) - (HOPE-3). https://www.pdufa.bio/pdufa/CAPR-deramiocel
-- 2026-11-22: SVRA (Savara), MOLBREEVI (molgramostim inhalation) - (IMPALA-2). https://www.pdufa.bio/pdufa/SVRA-molbreevi
-- 2026-11-27: BBIO (BridgeBio Pharma, Inc.), BBP-418 (ribitol) - (FORTIFY). https://www.pdufa.bio/pdufa/BBIO-bbp-418
-- 2026-11-28: PYPD (PolyPid Ltd.), D-PLEX100 - prevention of surgical site infections. https://www.pdufa.bio/pdufa/PYPD-d-plex100
-- 2026-11-30: COGT (Cogent Biosciences), Bezuclastinib + sunitinib - (PEAK). https://www.pdufa.bio/pdufa/COGT-bezuclastinib
-- 2026-11-30: RHHBY (Roche Holding AG), Giredestrant (lidERA). https://www.pdufa.bio/pdufa/RHHBY-giredestrant
-- 2026-11-30: VRTX (Vertex), Povetacicept (ALPN-303). https://www.pdufa.bio/pdufa/VRTX-povetacicept
+- 2026-11-22: SVRA (Savara), MOLBREEVI (molgramostim inhalation) - (IMPALA-2). Indication: Autoimmune pulmonary alveolar proteinosis (aPAP). The sponsor said on 2026-11-20 that the FDA will not act by this date; the review is ongoing. https://www.pdufa.bio/pdufa/SVRA-molbreevi
+- 2026-11-27: BBIO (BridgeBio Pharma, Inc.), BBP-418 (ribitol) - (FORTIFY). Indication: Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9). https://www.pdufa.bio/pdufa/BBIO-bbp-418
+- 2026-11-28: PYPD (PolyPid Ltd.), D-PLEX100 - prevention of surgical site infections. Indication: Prevention of surgical site infections in patients undergoing abdominal colorectal surgery. https://www.pdufa.bio/pdufa/PYPD-d-plex100
+- 2026-11-30: COGT (Cogent Biosciences), Bezuclastinib + sunitinib - (PEAK). Indication: Gastrointestinal stromal tumors (GIST), 2L+. https://www.pdufa.bio/pdufa/COGT-bezuclastinib
+- 2026-11-30: RHHBY (Roche Holding AG), Giredestrant (lidERA). Indication: Adjuvant early breast cancer (ER+/HER2-). https://www.pdufa.bio/pdufa/RHHBY-giredestrant
+- 2026-11-30: VRTX (Vertex), Povetacicept (ALPN-303). Indication: IgA nephropathy. https://www.pdufa.bio/pdufa/VRTX-povetacicept
 - 2026-12-12: VNDA (Vanda Pharmaceuticals Inc.), Imsidolimab. https://www.pdufa.bio/pdufa/VNDA-imsidolimab
-- 2026-12-17: CORT (Corcept Therapeutics Inc), Relacorilant - (GRACE resubmission). https://www.pdufa.bio/pdufa/CORT-relacorilant
-- 2026-12-22: MLYS (Mineralys Therapeutics, Inc.), Lorundrostat. https://www.pdufa.bio/pdufa/MLYS-lorundrostat
+- 2026-12-17: CORT (Corcept Therapeutics Inc), Relacorilant - (GRACE resubmission). Indication: Cushing's syndrome (hypercortisolism). https://www.pdufa.bio/pdufa/CORT-relacorilant
+- 2026-12-22: MLYS (Mineralys Therapeutics, Inc.), Lorundrostat. Indication: Hypertension. https://www.pdufa.bio/pdufa/MLYS-lorundrostat
+- 2026-12-23: GILD (Gilead Sciences, Inc.), Anito-cel (anitocabtagene autoleucel). Indication: Relapsed or refractory multiple myeloma (fourth-line), BCMA CAR-T. https://www.pdufa.bio/pdufa/GILD-anito-cel
 
 Full list: https://www.pdufa.bio/calendar
 
 ## Latest FDA decisions in our archive
 
+- CAPR, Deramiocel (CAP-1002) - (HOPE-3): CRL, announced 2026-11-20 (no public FDA record of the day yet). https://www.pdufa.bio/fda-decision/CAPR-2026-11-20
 - REGN, Cemdisiran (C5 RNAi) - (NIMBLE): Approved, FDA action 2026-11-18. https://www.pdufa.bio/fda-decision/REGN-2026-11-18
 - GSK, Neladalkib (NVL-655) - (ALKOVE-1): Approved, FDA action 2026-11-17. https://www.pdufa.bio/fda-decision/GSK-2026-11-17
 - TEVA, IGALMI (dexmedetomidine sublingual film) - (SERENITY At-Home): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/TEVA-2026-11-16
@@ -74,7 +75,6 @@ Full list: https://www.pdufa.bio/calendar
 - CYTK, Aficamten - (MAPLE-HCM): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/CYTK-2026-11-16
 - SMMT, Ivonescimab: CRL, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/SMMT-2026-11-15
 - RHHBY, Gazyva (obinutuzumab) - primary membranous nephropathy (MAJESTY): Approved, FDA action 2026-11-13. https://www.pdufa.bio/fda-decision/RHHBY-2026-11-13
-- MKKGY, Pimjetmi (pimicotinib) - tenosynovial giant cell tumor: Approved, FDA action 2026-11-10. https://www.pdufa.bio/fda-decision/MKKGY-2026-11-10
 
 Full archive: https://www.pdufa.bio/decisions
 
