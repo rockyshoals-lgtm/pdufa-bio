@@ -291,7 +291,8 @@ def main():
                     f'<span style="color:#a7bcd9">{esc(ans)}</span></p>')
     body.append('<p><a href="/crl/facts">Facts from the released letters</a> (sections cited, repeat CRLs, days to '
                 'approval) &middot; <a href="/crl/companies">every CRL, by company</a> &middot; '
-                '<a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a></p>')
+                '<a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a> &middot; '
+                '<a href="/feed">follow new letters by feed</a></p>')
     body.append('<p><a href="/decisions/crl">CRL decisions tracked by this site</a> '
                 '&middot; <a href="/decisions">the full decisions archive</a> &middot; '
                 '<a href="/learn/what-is-a-pdufa-date">what a PDUFA date is</a></p>')
