@@ -438,6 +438,13 @@ jobs:
       - name: CRL corpus hub (/crl)
         run: python build_crl_hub.py
 
+      # 2026-11-22 (David: "present facts about CRLs that no one else has", "deep dive of the CAPR CRL"): counts from
+      # the release joined to the Orange Book and our decision pages, and Capricor's two CRLs from primary sources.
+      - name: "CRL facts (/crl/facts) and the Capricor CRL case (/crl/capricor-deramiocel)"
+        run: |
+          python build_crl_facts.py
+          python build_crl_capricor.py
+
 
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
       # came BEFORE the goal date; everything upstream depends on our own crawl hearing

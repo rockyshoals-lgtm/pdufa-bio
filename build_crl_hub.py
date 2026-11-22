@@ -270,6 +270,8 @@ def main():
     for q, ans in qa:
         body.append(f'<p><b style="color:#f2f6fc">{esc(q)}</b><br>'
                     f'<span style="color:#a7bcd9">{esc(ans)}</span></p>')
+    body.append('<p><a href="/crl/facts">Facts from the released letters</a> (sections cited, repeat CRLs, days to '
+                'approval) &middot; <a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a></p>')
     body.append('<p><a href="/decisions/crl">CRL decisions tracked by this site</a> '
                 '&middot; <a href="/decisions">the full decisions archive</a> &middot; '
                 '<a href="/learn/what-is-a-pdufa-date">what a PDUFA date is</a></p>')
