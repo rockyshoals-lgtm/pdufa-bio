@@ -1,6 +1,6 @@
 # Google Search Console: request indexing for these, in order (2026-11-21 Eastern).
 # About 10 requests a day per property. Then run: python build_google_request_list.py --requested <paths>
-# Skipped: 77 known indexed (_google_indexed.json), 10 requested in the last 7 days.
+# Skipped: 78 known indexed (_google_indexed.json), 10 requested in the last 7 days.
 https://www.pdufa.bio/fda-decision/CAPR-2026-11-20	# decision 2026-11-20: CAPR Deramiocel (CAP-1002) - (HOPE-3)
 https://www.pdufa.bio/pdufa/PYPD-d-plex100	# goal date 2026-11-28: PYPD D-PLEX100 - prevention of surgical site infections
 https://www.pdufa.bio/pdufa/COGT-bezuclastinib	# goal date 2026-11-30: COGT Bezuclastinib + sunitinib - (PEAK)
