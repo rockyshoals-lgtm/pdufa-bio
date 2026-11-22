@@ -1122,7 +1122,7 @@
 "verdict": "NEUTRAL"
 },
 "/decisions/2026": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -6144,9 +6144,9 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/CAPR-2026-11-20": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "URL is unknown to Google",
+"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/CELC-2026-07-14": {
@@ -8376,7 +8376,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/COGT-bezuclastinib": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -8400,7 +8400,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/CORT-relacorilant": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -8838,9 +8838,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/PYPD-d-plex100": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/QURE-amt-130": {
@@ -8916,7 +8916,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/RHHBY-giredestrant": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -9024,9 +9024,9 @@
 "verdict": "PASS"
 },
 "/pdufa/VNDA-imsidolimab": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX": {
@@ -9036,9 +9036,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX-povetacicept": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/VSTM": {
@@ -9216,7 +9216,7 @@
 "verdict": "NEUTRAL"
 },
 "/readouts/oncology": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -9288,7 +9288,7 @@
 "verdict": "PASS"
 },
 "/sitemap": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"

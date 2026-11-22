@@ -1,11 +1,6 @@
 {
 "_note": "Google Search daily totals, from the Search Console API (gsc_index_status.py).",
 "daily": {
-"2026-08-23": {
-"clicks": 2,
-"impressions": 53,
-"position": 19.0
-},
 "2026-08-24": {
 "clicks": 1,
 "impressions": 69,
@@ -445,6 +440,11 @@
 "clicks": 1,
 "impressions": 43,
 "position": 16.5
+},
+"2026-11-20": {
+"clicks": 2,
+"impressions": 304,
+"position": 6.4
 }
 }
 }

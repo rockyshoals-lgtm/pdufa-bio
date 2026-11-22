@@ -1,29 +1,29 @@
 {
  "drug_watch_fda_oncology_notifications": {
-  "last_attempt": "2026-11-21",
-  "last_ok": "2026-11-21"
+  "last_attempt": "2026-11-22",
+  "last_ok": "2026-11-22"
  },
  "drug_watch_fda_press_rss": {
   "bodies_failed": 0,
   "bodies_read": 6,
   "in_window": 6,
   "items": 20,
-  "last_attempt": "2026-11-21",
-  "last_ok": "2026-11-21"
+  "last_attempt": "2026-11-22",
+  "last_ok": "2026-11-22"
  },
  "drug_watch_openfda_recent_ap": {
-  "last_attempt": "2026-11-21",
-  "last_ok": "2026-11-21"
+  "last_attempt": "2026-11-22",
+  "last_ok": "2026-11-22"
  },
  "edgar_8k": {
   "blind": [],
   "filings_read": 4,
-  "last_attempt": "2026-11-21",
-  "last_ok": "2026-11-21",
-  "sponsors_read": 11
+  "last_attempt": "2026-11-22",
+  "last_ok": "2026-11-22",
+  "sponsors_read": 12
  },
  "fda_drugs_whatsnew": {
-  "last_attempt": "2026-11-21",
-  "last_ok": "2026-11-21"
+  "last_attempt": "2026-11-22",
+  "last_ok": "2026-11-22"
  }
 }
