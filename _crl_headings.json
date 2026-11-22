@@ -378,8 +378,9 @@
    "Other",
    "Labeling"
   ],
-  "letter_date": "11/03/2014",
-  "text_layer": true
+  "letter_date": "03/22/2018",
+  "text_layer": true,
+  "v": 2
  },
  "206185_2018_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -815,8 +816,9 @@
    "Other",
    "Carton and Container Labeling"
   ],
-  "letter_date": "10/05/2018",
-  "text_layer": true
+  "letter_date": "05/02/2019",
+  "text_layer": true,
+  "v": 2
  },
  "209511_2021_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1065,7 +1067,8 @@
   ],
   "headings": [],
   "letter_date": "11/20/2018",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "210852_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1192,7 +1195,8 @@
    "Other"
   ],
   "letter_date": "12/12/2018",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "211413_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1333,7 +1337,8 @@
    "Other"
   ],
   "letter_date": "09/30/2019",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "212156_2021_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1530,7 +1535,8 @@
    "Other"
   ],
   "letter_date": "03/13/2020",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "213218_2022_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1538,7 +1544,8 @@
   ],
   "headings": [],
   "letter_date": "01/10/2020",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "213260_2023_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1798,7 +1805,8 @@
    "Other"
   ],
   "letter_date": "11/12/2020",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "214439_2022_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1837,7 +1845,8 @@
    "Other"
   ],
   "letter_date": "02/23/2021",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "214581_2022_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1926,7 +1935,8 @@
    "Other"
   ],
   "letter_date": "06/17/2021",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "214952_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -1999,7 +2009,8 @@
    "Other"
   ],
   "letter_date": "11/09/2021",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "215151_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -2236,7 +2247,8 @@
    "Other"
   ],
   "letter_date": "06/30/2023",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "217202_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -2263,7 +2275,8 @@
    "Other"
   ],
   "letter_date": "11/15/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "217347_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -2590,6 +2603,7 @@
    "BLA 761161"
   ],
   "headings": [
+   "Facilities",
    "Prescribing Information",
    "Proprietary Name",
    "Safety Update",
@@ -2597,7 +2611,8 @@
    "Other"
   ],
   "letter_date": "04/27/2021",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "761164_2022_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -2640,7 +2655,8 @@
    "Safety Update"
   ],
   "letter_date": "04/23/2021",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "761183_2023_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -2963,7 +2979,8 @@
    "Additional Comments"
   ],
   "letter_date": "06/27/2023",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "761365_2024_Orig1s000OtherActionLtrs.pdf": {
   "application_number": [
@@ -3006,7 +3023,8 @@
   ],
   "headings": [],
   "letter_date": "07/04/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA125706_20230801.pdf": {
   "application_number": [
@@ -3149,10 +3167,14 @@
    "BL 125842"
   ],
   "headings": [
+   "Clinical and Biostatistics",
+   "Chemistry, Manufacturing, and Controls (CMC)",
+   "CMC [Facility and Equipment]",
    "Additional Comments"
   ],
   "letter_date": "07/09/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA125845_20250707.pdf": {
   "application_number": [
@@ -3245,7 +3267,8 @@
    "Other"
   ],
   "letter_date": "04/19/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761211_20250806.pdf": {
   "application_number": [
@@ -3409,7 +3432,8 @@
    "Other"
   ],
   "letter_date": "07/30/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761308_20240516.pdf": {
   "application_number": [
@@ -3433,7 +3457,8 @@
    "Other"
   ],
   "letter_date": "03/20/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761308_20260709_Redacted.pdf": {
   "application_number": [
@@ -3496,7 +3521,8 @@
    "Other"
   ],
   "letter_date": "08/27/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761320_20251230.pdf": {
   "application_number": [
@@ -3510,7 +3536,8 @@
    "Other"
   ],
   "letter_date": "12/30/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761326_20240710.pdf": {
   "application_number": [
@@ -3625,7 +3652,8 @@
    "Other"
   ],
   "letter_date": "06/27/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761377_20250326.pdf": {
   "application_number": [
@@ -3821,7 +3849,8 @@
    "Other"
   ],
   "letter_date": "10/23/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761451_20251010.pdf": {
   "application_number": [
@@ -3846,7 +3875,8 @@
    "Other"
   ],
   "letter_date": "12/16/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_BLA761459_20260422.pdf": {
   "application_number": [
@@ -4093,7 +4123,8 @@
    "Other"
   ],
   "letter_date": "09/22/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA210168_20240322.pdf": {
   "application_number": [
@@ -4103,7 +4134,8 @@
    "Other"
   ],
   "letter_date": "03/22/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA210168_20250620.pdf": {
   "application_number": [
@@ -4115,7 +4147,8 @@
    "Other"
   ],
   "letter_date": "06/20/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA210862_20251104.pdf": {
   "application_number": [
@@ -4156,7 +4189,8 @@
    "Other"
   ],
   "letter_date": "09/30/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA212271_20241211.pdf": {
   "application_number": [
@@ -4408,7 +4442,8 @@
    "Other"
   ],
   "letter_date": "03/16/2026",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA216586_20240516.pdf": {
   "application_number": [
@@ -4480,7 +4515,8 @@
    "Safety Update"
   ],
   "letter_date": "11/06/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA217002_20240226.pdf": {
   "application_number": [
@@ -4623,7 +4659,8 @@
    "Other"
   ],
   "letter_date": "03/10/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA217724_20241008.pdf": {
   "application_number": [
@@ -4651,7 +4688,8 @@
    "Other"
   ],
   "letter_date": "08/16/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA218223_20240308.pdf": {
   "application_number": [
@@ -4872,7 +4910,8 @@
    "Other"
   ],
   "letter_date": "10/21/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA218600_20260610_Redacted.pdf": {
   "application_number": [
@@ -4977,7 +5016,8 @@
    "Additional Comments"
   ],
   "letter_date": "12/05/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA218828_20241219.pdf": {
   "application_number": [
@@ -5061,12 +5101,14 @@
    "NDA 219045"
   ],
   "headings": [
+   "Labeling",
    "Carton and Container Labeling",
    "Safety Update",
    "Additional Comments"
   ],
   "letter_date": "10/21/2024",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA219107_20260721.pdf": {
   "application_number": [
@@ -5161,7 +5203,8 @@
    "Other"
   ],
   "letter_date": "10/22/2025",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA219846_20251023.pdf": {
   "application_number": [
@@ -5261,7 +5304,8 @@
    "Safety Update"
   ],
   "letter_date": "03/05/2026",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA220184_20251222.pdf": {
   "application_number": [
@@ -5353,7 +5397,8 @@
    "Other"
   ],
   "letter_date": "02/13/2026",
-  "text_layer": true
+  "text_layer": true,
+  "v": 2
  },
  "CRL_NDA220748_20260617.pdf": {
   "application_number": [

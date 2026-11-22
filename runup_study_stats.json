@@ -1,35 +1,35 @@
 {
- "n_events": 1126,
+ "n_events": 1130,
  "date_min": "2020-01-08",
  "date_max": "2026-11-20",
  "n_approval": 980,
- "n_crl": 146,
- "approval_rate": 87.0,
- "t120_coverage_n": 1092,
+ "n_crl": 150,
+ "approval_rate": 86.7,
+ "t120_coverage_n": 1096,
  "t120_coverage_pct": 97.0,
- "T-120_T-1_median_pct": 4.42,
- "T-120_T-1_mean_pct": 10.4,
- "T-120_T-7_median_pct": 4.72,
- "T-120_T-7_mean_pct": 10.0,
- "T-120_T-3_median_pct": 4.87,
- "T-120_T-3_mean_pct": 10.58,
- "T-120_peak_median_pct": 17.3,
- "T-120_peak_mean_pct": 29.66,
- "runup_30d_median": 0.76,
- "runup_21d_median": 0.37,
- "runup_14d_median": 0.14,
+ "T-120_T-1_median_pct": 4.37,
+ "T-120_T-1_mean_pct": 10.32,
+ "T-120_T-7_median_pct": 4.68,
+ "T-120_T-7_mean_pct": 9.94,
+ "T-120_T-3_median_pct": 4.82,
+ "T-120_T-3_mean_pct": 10.52,
+ "T-120_peak_median_pct": 17.26,
+ "T-120_peak_mean_pct": 29.58,
+ "runup_30d_median": 0.78,
+ "runup_21d_median": 0.39,
+ "runup_14d_median": 0.15,
  "runup_7d_median": 0.0,
- "runup_5d_median": 0.01,
+ "runup_5d_median": 0.0,
  "runup_3d_median": 0.0,
- "post_1d_median": -0.05,
+ "post_1d_median": -0.06,
  "post_1d_median_approval": 0.07,
- "post_1d_median_crl": -2.32,
+ "post_1d_median_crl": -2.24,
  "post_2d_median": 0.13,
  "post_2d_median_approval": 0.46,
- "post_2d_median_crl": -6.87,
- "post_5d_median": -0.08,
+ "post_2d_median_crl": -6.67,
+ "post_5d_median": -0.09,
  "post_5d_median_approval": 0.38,
- "post_5d_median_crl": -6.75,
+ "post_5d_median_crl": -6.42,
  "cohort_abs_move": {
   "Nano (<$50M)": {
    "median_abs_pct": 8.6022,
@@ -41,15 +41,15 @@
   },
   "Small ($300M-$2B)": {
    "median_abs_pct": 3.5714,
-   "n": 149
+   "n": 150
   },
   "Mid ($2B-$10B)": {
-   "median_abs_pct": 2.3671,
-   "n": 157
+   "median_abs_pct": 2.3665,
+   "n": 158
   },
   "Large (>$10B)": {
-   "median_abs_pct": 0.9865,
-   "n": 645
+   "median_abs_pct": 0.9864,
+   "n": 647
   }
  },
  "by_year": {
@@ -99,13 +99,13 @@
    "approval_rate": 89.7
   },
   "2025": {
-   "n": 184,
-   "t120_median_pct": 5.42,
-   "t120_peak_median_pct": 20.87,
-   "t120_n": 182,
-   "runup_30d_median": 3.31,
-   "post_1d_median": 0.02,
-   "approval_rate": 91.8
+   "n": 188,
+   "t120_median_pct": 4.27,
+   "t120_peak_median_pct": 20.43,
+   "t120_n": 186,
+   "runup_30d_median": 3.52,
+   "post_1d_median": 0.01,
+   "approval_rate": 89.9
   },
   "2026": {
    "n": 163,

@@ -587,6 +587,18 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/crl/capricor-deramiocel": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/facts": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/decisions": {
 "checked": "2026-11-20",
 "crawled": "2026-10-15",
@@ -5513,6 +5525,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/BHVN-2025-11-04": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/BIIB-2025-01-26": {
 "checked": "2026-11-20",
 "crawled": null,
@@ -5523,6 +5541,12 @@
 "checked": "2026-11-20",
 "crawled": null,
 "state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/BIIB-2025-09-23": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/BIIB-2026-03-30": {
@@ -6695,6 +6719,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-decision/PTCT-2025-08-19": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/PTGX-2026-03-18": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -6750,6 +6780,12 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/REGN-2025-07-02": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/fda-decision/REGN-2025-07-30": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "URL is unknown to Google",
