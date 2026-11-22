@@ -1,0 +1,270 @@
+{
+ "_what": "Hand-gathered primary sources for /crl/capricor-deramiocel (build_crl_capricor.py). Every quote is copied from the document named, read on the date given; letter quotes are re-checked against the FDA's own released text on every build and dropped if they no longer match. Times are Eastern (ET), as the release datelines and FMP give them. Closes are FMP end-of-day, split-adjusted, read 2026-11-22. Facts only: no view on any outcome.",
+ "ticker": "CAPR",
+ "company": "Capricor Therapeutics",
+ "drug": "deramiocel",
+ "indication": "Duchenne muscular dystrophy (DMD)",
+ "application": "BL 125842",
+ "letter_file": "CRL_BLA125842_20250709.pdf",
+ "letter_date": "2025-07-09",
+ "read": "2026-11-21 and 2026-11-22",
+ "letter_quotes": [
+  {
+   "topic": "Primary endpoint",
+   "q": "The HOPE-2 study failed to demonstrate efficacy for its prespecified primary efficacy endpoint, which was change from baseline to Month 12 in the mid-level (elbow) dimension of the Performance of Upper Limb version 1.2 (PUL 1.2)"
+  },
+  {
+   "topic": "Study design",
+   "q": "As stated in your response to an FDA information request [...] the HOPE-2 study was intended to evaluate the effectiveness of deramiocel on neuromuscular function and was not designed to assess effectiveness for the treatment of cardiomyopathy in patients with DMD",
+   "note": "The date of the information request is redacted in the released letter."
+  },
+  {
+   "topic": "Secondary and exploratory endpoints",
+   "q": "include 50 secondary and exploratory endpoints, including post hoc analyses of 26 endpoints of cardiac MRI assessments"
+  },
+  {
+   "topic": "Multiplicity",
+   "q": "no prespecified multiplicity adjustment strategy was employed for control of the overall Type 1 error rate"
+  },
+  {
+   "topic": "Conclusion",
+   "q": "Your BLA does not meet the statutory requirement for substantial evidence of effectiveness."
+  },
+  {
+   "topic": "What the FDA recommended",
+   "q": "If you wish to seek approval of deramiocel for treatment of cardiomyopathy in patients with DMD, we recommend that you conduct adequate and well-controlled study(ies), whose primary objective is evaluation of cardiac outcomes in deramiocel-treated patients with DMD cardiomyopathy, compared to a randomized, concurrent control group over an appropriate duration of follow up"
+  },
+  {
+   "topic": "Deadline",
+   "q": "Within one year after the date of this letter, you are required to resubmit or withdraw the application"
+  }
+ ],
+ "letter_headings_present": [
+  "Chemistry, Manufacturing, and Controls (CMC)",
+  "CMC [Facility and Equipment]"
+ ],
+ "events": [
+  {
+   "date": "2025-07-09",
+   "time": "",
+   "who": "FDA",
+   "what": "The FDA's Complete Response Letter for BLA 125842 is dated July 9, 2025.",
+   "url": "https://download.open.fda.gov/crl/CRL_BLA125842_20250709.pdf",
+   "src": "FDA letter (PDF)"
+  },
+  {
+   "date": "2025-07-11",
+   "time": "6:30 a.m.",
+   "who": "Capricor",
+   "what": "Capricor announces the CRL. It quotes the FDA's finding that the BLA \"does not meet the statutory requirement for substantial evidence of effectiveness\" and says CMC review materials \"were not reviewed by the FDA due to the timing of the CRL issuance\".",
+   "url": "https://www.globenewswire.com/news-release/2025/07/11/3113911/0/en/Capricor-Therapeutics-Provides-Regulatory-Update-on-Deramiocel-BLA-for-Duchenne-Muscular-Dystrophy.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2025-09-09",
+   "time": "9:20 a.m.",
+   "who": "Capricor",
+   "what": "After the FDA posts the letter, Capricor says it was \"not notified in advance that the CRL would be posted\".",
+   "url": "https://www.globenewswire.com/news-release/2025/09/09/3147015/0/en/Capricor-Therapeutics-Responds-to-FDA-Posting-of-Complete-Response-Letter-CRL-for-Deramiocel.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2025-09-25",
+   "time": "7:15 a.m.",
+   "who": "Capricor",
+   "what": "After a Type A meeting, Capricor says \"The HOPE-3 clinical trial should serve as the 'additional study' requested in the CRL\" and \"All CMC items identified in the CRL have been addressed and communicated to the FDA.\"",
+   "url": "https://www.globenewswire.com/news-release/2025/09/25/3156168/0/en/Capricor-Therapeutics-Provides-Regulatory-Update-on-Deramiocel-Program-for-Duchenne-Muscular-Dystrophy-Following-Type-A-Meeting.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2025-12-03",
+   "time": "7:20 a.m.",
+   "who": "Capricor",
+   "what": "Capricor reports HOPE-3 topline results: primary endpoint PUL v2.0 (n=105), p=0.029; key secondary endpoint LVEF (n=83), p=0.041.",
+   "url": "https://www.globenewswire.com/news-release/2025/12/03/3198753/0/en/Capricor-Therapeutics-Announces-Positive-Topline-Results-from-Pivotal-Phase-3-HOPE-3-Study-of-Deramiocel-in-Duchenne-Muscular-Dystrophy.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-03-10",
+   "time": "9:25 a.m.",
+   "who": "Capricor",
+   "what": "Capricor says the FDA classified the resubmission as Class 2 with a PDUFA date of August 22, 2026, and that \"the FDA has not identified any potential review issues\".",
+   "url": "https://www.globenewswire.com/news-release/2026/03/10/3252978/0/en/Capricor-Therapeutics-Announces-Establishment-of-New-PDUFA-Date-for-Deramiocel-BLA.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-06-26",
+   "time": "10:02 a.m.",
+   "who": "Capricor",
+   "what": "Capricor announces an FDA advisory committee meeting on the BLA for July 29, 2026.",
+   "url": "https://www.globenewswire.com/news-release/2026/06/26/3318280/0/en/Capricor-Therapeutics-Announces-FDA-Advisory-Committee-Meeting-to-Review-BLA-for-Deramiocel-for-the-Treatment-of-Duchenne-Muscular-Dystrophy.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-07-27",
+   "time": "11:00 a.m.",
+   "who": "Capricor",
+   "what": "Commenting on the FDA's briefing materials, Capricor says post hoc analyses in them \"rely on SAP version 1.1, an unsigned incomplete internal draft\".",
+   "url": "https://www.globenewswire.com/news-release/2026/07/27/3333710/0/en/Capricor-Comments-on-Briefing-Materials-Ahead-of-July-29-FDA-Advisory-Committee-Meeting-for-Deramiocel.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-07-30",
+   "time": "9:30 a.m.",
+   "who": "Capricor",
+   "what": "Capricor reports that at the public meeting on July 29, 2026 the committee voted \"(3 for, 9 against, 0 abstain)\", and says the voting question \"addressed a narrower indication than Capricor had proposed\".",
+   "url": "https://www.globenewswire.com/news-release/2026/07/30/3336165/0/en/Capricor-Therapeutics-Provides-Update-on-FDA-Advisory-Committee-Meeting-for-Deramiocel.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-08-24",
+   "time": "9:25 a.m.",
+   "who": "Capricor",
+   "what": "Capricor says the PDUFA date moved from August 22 to November 22, 2026, after a BLA amendment with 24-month open-label extension data from HOPE-3.",
+   "url": "https://www.globenewswire.com/news-release/2026/08/24/3349793/0/en/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html",
+   "src": "Capricor release"
+  },
+  {
+   "date": "2026-11-20",
+   "time": "7:55 p.m.",
+   "who": "Capricor",
+   "what": "Capricor announces a second CRL. It says the FDA \"does not consider the data sufficient to establish substantial evidence of effectiveness\" and \"cites certain other clinical deficiencies\". The release gives no date for the letter.",
+   "url": "https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html",
+   "src": "Capricor release"
+  }
+ ],
+ "side_by_side": [
+  {
+   "topic": "Effectiveness",
+   "fda": "\"Your BLA does not meet the statutory requirement for substantial evidence of effectiveness.\"",
+   "co": "July 11, 2025: the release quotes the same finding."
+  },
+  {
+   "topic": "The study asked for",
+   "fda": "\"If you wish to seek approval of deramiocel for treatment of cardiomyopathy in patients with DMD\", a study \"whose primary objective is evaluation of cardiac outcomes\" against \"a randomized, concurrent control group\".",
+   "co": "September 25, 2025: \"The HOPE-3 clinical trial should serve as the 'additional study' requested in the CRL.\""
+  },
+  {
+   "topic": "Manufacturing (CMC)",
+   "fda": "The released letter has a CMC section and a \"CMC [Facility and Equipment]\" section; no text under either appears in the released version.",
+   "co": "July 11, 2025: CMC materials \"were not reviewed by the FDA due to the timing of the CRL issuance\". September 25, 2025: \"All CMC items identified in the CRL have been addressed and communicated to the FDA.\""
+  },
+  {
+   "topic": "Publication of the letter",
+   "fda": "The FDA released the letter under its CRL transparency program.",
+   "co": "September 9, 2025: Capricor was \"not notified in advance that the CRL would be posted\"."
+  }
+ ],
+ "moves": [
+  {
+   "what": "First CRL announced",
+   "when": "2025-07-11 6:30 a.m., before the open",
+   "before": [
+    "2025-07-10",
+    11.4
+   ],
+   "after": [
+    "2025-07-11",
+    7.64
+   ]
+  },
+  {
+   "what": "Capricor responds to the FDA's posting of the letter",
+   "when": "2025-09-09 9:20 a.m., before the open",
+   "before": [
+    "2025-09-08",
+    6.35
+   ],
+   "after": [
+    "2025-09-09",
+    6.48
+   ]
+  },
+  {
+   "what": "Type A meeting outcome",
+   "when": "2025-09-25 7:15 a.m., before the open",
+   "before": [
+    "2025-09-24",
+    6.19
+   ],
+   "after": [
+    "2025-09-25",
+    6.52
+   ]
+  },
+  {
+   "what": "HOPE-3 topline",
+   "when": "2025-12-03 7:20 a.m., before the open",
+   "before": [
+    "2025-12-02",
+    6.36
+   ],
+   "after": [
+    "2025-12-03",
+    29.96
+   ]
+  },
+  {
+   "what": "Class 2 resubmission, new PDUFA date",
+   "when": "2026-03-10 9:25 a.m., before the open",
+   "before": [
+    "2026-03-09",
+    30.63
+   ],
+   "after": [
+    "2026-03-10",
+    33.4
+   ]
+  },
+  {
+   "what": "FDA briefing materials posted; Capricor comments on them",
+   "when": "Capricor's comments 2026-07-27 11:00 a.m., during the session; when the FDA posted the materials is not in these sources, and the span includes the weekend of July 25 and 26",
+   "before": [
+    "2026-07-24",
+    19.7
+   ],
+   "after": [
+    "2026-07-27",
+    7.0
+   ]
+  },
+  {
+   "what": "Advisory committee vote (July 29)",
+   "when": "vote at the public meeting 2026-07-29; Capricor's release 2026-07-30 9:30 a.m., at the open; the price file shows no volume on July 29",
+   "before": [
+    "2026-07-28",
+    6.57
+   ],
+   "after": [
+    "2026-07-30",
+    4.19
+   ]
+  },
+  {
+   "what": "PDUFA date extended",
+   "when": "2026-08-24 9:25 a.m., before the open",
+   "before": [
+    "2026-08-21",
+    6.29
+   ],
+   "after": [
+    "2026-08-24",
+    6.8
+   ]
+  },
+  {
+   "what": "Second CRL announced",
+   "when": "2026-11-20 7:55 p.m., after the close",
+   "before": [
+    "2026-11-20",
+    7.59
+   ],
+   "after": null
+  }
+ ],
+ "pages": {
+  "first": "/fda-decision/CAPR-2025-07-11",
+  "second": "/fda-decision/CAPR-2026-11-20",
+  "adcomm": "/adcomm/CAPR-2026-07-29"
+ }
+}

@@ -89,7 +89,12 @@ def main():
         doc = doc.replace(" - Price-only&quot;", "&quot;")
         doc = re.sub(r"( content=\"[^\"]{0,120}) - Price-only([\"|])", r"\1\2", doc)
         # pretty-format meta descriptions carry their own 'Approved. Price-only.' sentence
+        # 2026-11-22: kind "primary" is the FDA's own document (a released CRL, an approval letter); it is
+        # neither Drugs@FDA nor an SEC filing, and the page must not say it was checked against one.
+        # red team: ten older "primary" entries cite the company or the SEC, so the FDA wording follows the source's host
+        fda_doc = bool(re.match(r"https?://(?:[a-z0-9-]+\.)*fda\.gov/", str(ev.get("source_url") or "")))
         src_word = ("Verified against Drugs@FDA." if ev["kind"] == "approval"
+                    else "Verified against the FDA's own letter." if fda_doc
                     else "Verified against the company's SEC filing.")
         doc = doc.replace(": Approved. Price-only.", f": Approved. {src_word}")
         doc = doc.replace(": CRL. Price-only.", f": CRL. {src_word}")
@@ -118,13 +123,14 @@ def main():
             f'{esc(ev["source_label"])}</a></b>')
         # meta description
         short_src = ("Drugs@FDA" if ev["kind"] == "approval"
+                     else "the FDA's own letter" if fda_doc
                      else "the company's SEC filing")
         doc = re.sub(
             r'(content="On \d{4}-\d{2}-\d{2} the FDA decision for [A-Z]+ \([^)]*\) was )'
             r"not verified against a primary source\.[^\"]*",
             lambda m: (m.group(1) + ("Approved" if outcome == "Approved"
                                      else "a Complete Response Letter")
-                       + f". Verified against {short_src}; source linked on the page.\""),
+                       + f". Verified against {short_src}; source linked on the page."),   # the closing quote stays in the doc
             doc)
         # drug + indication rows, once, after the decision-date row
         if asset and "<span>Drug</span>" not in doc:

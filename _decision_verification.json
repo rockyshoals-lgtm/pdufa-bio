@@ -1057,8 +1057,16 @@
    "date": "2025-11-04",
    "asset": "Troriluzole (BHV4157-206-RWE)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_NDA210862_20251104.pdf",
+    "source_label": "FDA Complete Response Letter, NDA 210862, November 4, 2025",
+    "quote": "refer to your new drug application (NDA) om &) 4) for (troriluzole) capsules",
+    "quote_source": "openFDA transparency/crl record of this letter (text field)",
+    "quote_checked": "2026-11-22",
+    "fda_action_date": "2025-11-04"
+   }
   },
   "BIIB-2025-01-26": {
    "ticker": "BIIB",
@@ -1095,8 +1103,16 @@
    "date": "2025-09-23",
    "asset": "SPINRAZA (Nusinersen) - (DEVOTE)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_NDA209531_20250922.pdf",
+    "source_label": "FDA Complete Response Letter, NDA 209531/S-016, September 22, 2025",
+    "quote": "refer to your su mental new drug application (SNDA) for Spinraza (nusinersen) injection",
+    "quote_source": "openFDA transparency/crl record of this letter (text field)",
+    "quote_checked": "2026-11-22",
+    "fda_action_date": "2025-09-22"
+   }
   },
   "BMY-2025-04-08": {
    "ticker": "BMY",
@@ -3210,8 +3226,16 @@
    "date": "2025-08-19",
    "asset": "Vatiquinone - (MOVE-FA)",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_NDA220049_20250818.pdf",
+    "source_label": "FDA Complete Response Letter, NDA 220049, August 18, 2025",
+    "quote": "refer to your new drug application (NDA) oe or vatiquinone oral capsules, oe We have completed our",
+    "quote_source": "openFDA transparency/crl record of this letter (text field)",
+    "quote_checked": "2026-11-22",
+    "fda_action_date": "2025-08-18"
+   }
   },
   "RARE-2025-07-11": {
    "ticker": "RARE",
@@ -3306,8 +3330,16 @@
    "date": "2025-07-30",
    "asset": "Odronextamab",
    "claimed": "crl",
-   "status": "unverified",
-   "evidence": null
+   "status": "verified_crl",
+   "evidence": {
+    "kind": "primary",
+    "source_url": "https://download.open.fda.gov/crl/CRL_BLA761303_20250730.pdf",
+    "source_label": "FDA Complete Response Letter, BLA 761303, July 30, 2025",
+    "quote": "refer to your biologics license application (BLA) oe (odronextamab)",
+    "quote_source": "openFDA transparency/crl record of this letter (text field)",
+    "quote_checked": "2026-11-22",
+    "fda_action_date": "2025-07-30"
+   }
   },
   "REGN-2025-10-08": {
    "ticker": "REGN",

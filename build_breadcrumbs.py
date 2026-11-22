@@ -39,7 +39,7 @@ LABELS = {
     "research": "Research", "developers": "API", "sls": "SLS Tracker", "learn": "Learn",
     "runup-by-year": "Run-up by Year", "condition": "Conditions", "about": "About",
     "corrections": "Corrections", "methodology": "Methodology", "account": "Account",
-    "pricing": "Pricing", "search": "Search", "login": "Sign in",
+    "pricing": "Pricing", "search": "Search", "login": "Sign in", "crl": "Complete Response Letters",
 }
 # Path segments that map to a real hub page get a link; others are labels only.
 
