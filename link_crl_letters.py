@@ -41,12 +41,29 @@ CORPUS = newest_corpus() or os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.js
 B, E = "<!--CRLSRC:BEGIN-->", "<!--CRLSRC:END-->"
 STOP = {"inc", "corp", "llc", "ltd", "pharmaceuticals", "pharmaceutical", "pharma",
         "therapeutics", "biosciences", "bioscience", "sciences", "company", "holdings",
-        "group", "limited", "plc"}
+        "group", "limited", "plc",
+        # 2026-11-22: generic words alone must never match two companies. With the SEC-name fallback,
+        # Xeris Biopharma's page shared only "biopharma" with Accord BioPharma's letter (BLA 761424).
+        "biopharma", "biopharmaceuticals", "biopharmaceutical", "biotherapeutics", "biologics", "biotech",
+        "biotechnology", "holding", "corporation", "incorporated", "international", "global", "medical",
+        "health", "healthcare", "technologies", "laboratories", "labs", "life", "the", "and", "usa"}
 
 
 def toks(s):
     return {w for w in re.findall(r"[a-z0-9]{3,}", str(s or "").lower())
             if w not in STOP}
+
+
+def _sec_names():
+    try:
+        j = json.load(io.open(os.path.join(HERE, "sec_ticker_cik.json"), encoding="utf-8"))
+        return {str(v.get("ticker") or "").upper(): str(v.get("title") or "") for v in j.values()}
+    except Exception:
+        return {}
+
+
+SEC_NAMES = _sec_names()
+LEDGER = os.path.join(HERE, "_decision_verification.json")
 
 
 def load_findings():
@@ -88,7 +105,12 @@ def main():
         iso = f"{m.group(3)}-{m.group(1)}-{m.group(2)}"
         by_date.setdefault(iso, []).append((iso, r))
 
-    linked = skipped = ds_changed = 0
+    linked = skipped = ds_changed = ledger_changed = 0
+    try:
+        ledger_doc = json.load(io.open(LEDGER, encoding="utf-8"))
+        ledger = ledger_doc.get("results", {})
+    except Exception:
+        ledger_doc, ledger = {}, {}
     for p in sorted(glob.glob(os.path.join(SITE, "fda-decision", "*", "index.html"))):
         slug = os.path.basename(os.path.dirname(p))
         m = re.match(r"([A-Z]{1,6})-(\d{4}-\d{2}-\d{2})$", slug)
@@ -116,7 +138,12 @@ def main():
         page_co = toks((row or {}).get("company") or "")
         if not page_co:
             cm = re.search(r"<span>Company</span><b>([^<]+)</b>", doc)
-            page_co = toks(_html.unescape(cm.group(1))) if cm else toks(tk)
+            # 2026-11-22 (CRL moat task): a page with no dataset row and no Company row fell back to the
+            # ticker itself ({"srrk"}), so no letter could ever match: Scholar Rock's apitegromab letter
+            # (BLA 761463, dated 2025-09-22) sat in the release while /fda-decision/SRRK-2025-09-23 linked
+            # none, and the same for Aquestive's Anaphylm letter (NDA 219870, 2026-01-30). The SEC's own
+            # ticker -> registrant name file (sec_ticker_cik.json) is the next owner of the name.
+            page_co = toks(_html.unescape(cm.group(1))) if cm else (toks(SEC_NAMES.get(tk)) or toks(tk))
         hits = hand or [(iso, r) for iso, r in cands if toks(r.get("company_name")) & page_co]
         if not hits:
             # 2026-11-18 (design red team, change 2): /fda-decision/CAPR-2025-07-11 linked Capricor's letter but
@@ -199,6 +226,29 @@ def main():
                                                 f"is dated {letter_iso}" + (f" and states the action date as {action}" if action != letter_iso else "") + ".")
                 row["ua"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
                 ds_changed += 1
+        # 2026-11-22 (CRL moat task): a page now carrying the FDA's own letter must stop saying its outcome is
+        # inferred from the price. The verification ledger is what upgrade_verified_decisions.py reads, so the letter
+        # goes there as the page's primary source -- but only when the drug the ledger names for this page appears in
+        # the FDA's own record of the letter (openFDA text), so a same-company letter for another drug never counts.
+        ve = ledger.get(slug)
+        if ve and ve.get("status") == "unverified" and ve.get("claimed") == "crl":
+            words = [w for w in re.findall(r"[A-Za-z]{5,}", str(ve.get("asset") or "")) if w.lower() not in STOP]
+            ltxt = str(r.get("text") or "")
+            hit = next((w for w in words if re.search(r"\b" + re.escape(w) + r"\b", ltxt, re.I)), None)
+            if hit:
+                m_ = re.search(r"\b" + re.escape(hit) + r"\b", ltxt, re.I)
+                ledger[slug] = dict(ve, status="verified_crl", evidence={
+                    "kind": "primary", "source_url": url,
+                    "source_label": f"FDA Complete Response Letter, {app}, {pretty(letter_iso)}",
+                    "quote": re.sub(r"\s+", " ", ltxt[max(0, m_.start() - 60):m_.end() + 40]).strip(),
+                    "quote_source": "openFDA transparency/crl record of this letter (text field)",
+                    "quote_checked": dt.date.today().isoformat(),
+                    "fda_action_date": action, "announced": dcd})
+                ledger_changed += 1
+                print(f"  /fda-decision/{slug}: verification ledger -> verified_crl ({hit!r} named in the letter)")
+    if ledger_changed:
+        io.open(LEDGER, "w", encoding="utf-8", newline="\n").write(
+            json.dumps(dict(ledger_doc, results=ledger), indent=1))   # verify_decisions.py's own format
     if ds_changed:
         io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), "w", encoding="utf-8").write(
             src[:i0] + json.dumps(rows, indent=1, ensure_ascii=False) + src[j0:])

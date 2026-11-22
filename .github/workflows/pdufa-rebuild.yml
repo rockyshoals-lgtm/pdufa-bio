@@ -418,6 +418,9 @@ jobs:
         run: python sync_fda_action_dates.py
       - name: "New CRL letter: snippets, FDA record, Verified line, label, h1, letters hub and timing counts again"
         run: |
+          # 2026-11-22: a page the linker just gave the FDA's own letter (and the ledger a verified_crl entry) stops
+          # saying "outcome unverified" in its title, badge and description before the snippets and Verified line are rewritten.
+          python upgrade_verified_decisions.py
           python rewrite_decision_snippets.py
           python inject_fda_action_record.py
           python inject_verified_against.py
