@@ -20,6 +20,16 @@ export default async (req, res) => {
   if (!stripeReady() || !kvReady())
     return res.status(503).json({ error: { code: 'unconfigured', message: 'Accounts are not available yet.' } });
 
+  // Fail closed before any lookup or token is created. A sign-in link is a credential: it must
+  // never be written to a log, where anyone with log access could use it. (Previously the link
+  // and the address were logged here when RESEND_API_KEY was unset.) Checking before the Stripe
+  // lookup also keeps this answer identical for every address, so it reveals nothing.
+  if (!RESEND) {
+    console.error('auth_request_unconfigured: RESEND_API_KEY unset');
+    return res.status(503).json({ error: { code: 'unconfigured',
+      message: 'Email sign-in is not configured yet. Please contact support@pdufa.bio and we will send your key.' } });
+  }
+
   // Always answer the same way — never reveal whether an email has an account.
   const generic = { ok: true, message: 'If that email has a pdufa.bio subscription, a sign-in link is on its way.' };
 
@@ -32,12 +42,6 @@ export default async (req, res) => {
     await kvSet('magic:' + token, JSON.stringify({ email, customer: cust.id }), 900);   // 15 min
     const link = `${SITE}/api/auth/verify?token=${token}`;
 
-    if (!RESEND) {
-      // No mail provider configured — fail loudly in logs, generically to the user.
-      console.error('RESEND_API_KEY unset; magic link for', email, '->', link);
-      return res.status(503).json({ error: { code: 'unconfigured',
-        message: 'Email sign-in is not configured yet. Please contact support@pdufa.bio and we will send your key.' } });
-    }
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: 'Bearer ' + RESEND, 'Content-Type': 'application/json' },
@@ -51,7 +55,7 @@ export default async (req, res) => {
       }),
       signal: AbortSignal.timeout(8000),
     });
-    if (!r.ok) console.error('resend_failed', await r.text());
+    if (!r.ok) console.error('resend_failed', r.status);   // status only: the body can echo the address
     return res.status(200).json(generic);
   } catch (e) {
     console.error('auth_request_error', e.message);
