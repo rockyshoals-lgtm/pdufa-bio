@@ -593,6 +593,516 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/crl/companies": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/3m-health-care-infection-prevention-division": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/ab-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/abbvie": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/acacia-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/accord-biopharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/accord-healthcare": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/adamis-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/aft-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/agile-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/aldeyra-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/alvotech": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/amgen": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/amneal-eu": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/amphastar-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/antares-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/armstrong-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/astellas-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/auromedics-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/azurity-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/b-braun-medical": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/baxter-healthcare": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/braeburn": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/braintree-laboratories": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/bridge-regulatory-affairs": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/celitrion": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/celltrion": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/chiesi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/cipla": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/clarus-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/cmp-development": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/coherus-biosciences": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/conjupro-biotherapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/cormedix": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/daiichi-sankyo": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/dr-reddys-laboratories": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/elevar-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/eli-lilly": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/fennec-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/fera-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/ferring-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/fresenius-kabi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/gan-lee-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/gilead-sciences": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/glaxosmithkline": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/heron-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/hikma-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/hospira": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/hq-specialty-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/hugel": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/innopharma-licensing": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/intelgenx": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/jiangsu-hengrui-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/kashiv-biosciences": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/laboratorios-farmaceuticos-rovi": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/metacel-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/mylan": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/mylan-laboratories": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/mylan-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/neuroderm": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/novo-nordisk": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/ocular-therapeutix": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/outlook-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/recro-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/regeneron-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/replimune": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/sandoz": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/sedor-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/seikagaku": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/shandong-luye-pharmaceutical": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/shilpa-medicare": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/sun-pharma-advanced-research": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/sun-pharmaceutical-industries": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/takeda-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/tanvex-biopharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/telix-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/teva-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/tris-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/unicycive-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/united-therapeutics": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/verrica-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/viiv-healthcare": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/xspray-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/zealand-pharma": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/company/zhejiang-novus-pharmaceuticals": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/crl/facts": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -612,7 +1122,7 @@
 "verdict": "NEUTRAL"
 },
 "/decisions/2026": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -3059,6 +3569,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/odronextamab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/olevaprubart": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -4157,6 +4673,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/drug/troriluzole": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/drug/truqap": {
 "checked": "2026-11-21",
 "crawled": null,
@@ -4290,6 +4812,12 @@
 "verdict": "NEUTRAL"
 },
 "/drug/varlilumab": {
+"checked": "2026-11-21",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/drug/vatiquinone": {
 "checked": "2026-11-21",
 "crawled": null,
 "state": "Discovered - currently not indexed",
@@ -5616,9 +6144,9 @@
 "verdict": "NEUTRAL"
 },
 "/fda-decision/CAPR-2026-11-20": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "URL is unknown to Google",
+"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/fda-decision/CELC-2026-07-14": {
@@ -7848,7 +8376,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/COGT-bezuclastinib": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -7872,7 +8400,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/CORT-relacorilant": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -8094,9 +8622,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/MLYS-lorundrostat": {
-"checked": "2026-11-20",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "URL is unknown to Google",
+"state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
 "/pdufa/MRK": {
@@ -8310,9 +8838,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/PYPD-d-plex100": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/QURE-amt-130": {
@@ -8388,7 +8916,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/RHHBY-giredestrant": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -8496,9 +9024,9 @@
 "verdict": "PASS"
 },
 "/pdufa/VNDA-imsidolimab": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX": {
@@ -8508,9 +9036,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX-povetacicept": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/VSTM": {
@@ -8688,7 +9216,7 @@
 "verdict": "NEUTRAL"
 },
 "/readouts/oncology": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -8760,7 +9288,7 @@
 "verdict": "PASS"
 },
 "/sitemap": {
-"checked": "2026-11-21",
+"checked": "2026-11-22",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"

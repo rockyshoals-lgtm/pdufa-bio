@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-21",
+ "as_of": "2026-11-22",
  "horizon_days": 60,
  "sponsors": {
   "BBIO": {
@@ -36,6 +36,17 @@
     "fda_feeds"
    ],
    "cik": 1088856
+  },
+  "DYN": {
+   "company": "Dyne Therapeutics, Inc.",
+   "goals": [
+    "2027-01-21"
+   ],
+   "channels": [
+    "edgar_8k",
+    "fda_feeds"
+   ],
+   "cik": 1818794
   },
   "GILD": {
    "company": "Gilead Sciences, Inc.",
