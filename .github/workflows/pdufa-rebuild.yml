@@ -444,6 +444,7 @@ jobs:
         run: |
           python build_crl_facts.py
           python build_crl_capricor.py
+          python build_crl_companies.py   # 2026-11-22: /crl/companies and /crl/company/<slug>, every letter by company
 
 
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions

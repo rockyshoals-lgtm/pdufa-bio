@@ -71,6 +71,9 @@ def crumb_for(rel, doc):
             entry["item"] = f"{BASE}/{target}"
         elif not last and target == "fda-decision":
             entry["item"] = f"{BASE}/decisions"          # the decisions archive is the section's hub
+        elif not last and target == "crl/company":
+            entry["name"] = "By company"                  # 2026-11-22: /crl/company/<slug> pages hang off /crl/companies
+            entry["item"] = f"{BASE}/crl/companies"
         elif last:
             entry["item"] = f"{BASE}/{target}"
         items.append(entry)

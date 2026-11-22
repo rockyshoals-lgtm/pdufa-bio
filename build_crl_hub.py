@@ -61,9 +61,14 @@ def main():
         if not m or not fn.lower().endswith(".pdf"):
             no_file += 1
             continue
-        key = (fn, m.group(0))
+        # 2026-11-22 (CRL red team): keying on (file, date) merged two different applications that share one combined
+        # PDF (NDA 215973/215974, NDA 212887/212888) and kept a true repeat filed under a second name (BLA 761215,
+        # "Pages from 761215Orig2s000.pdf"). A record repeats another only when its date, application numbers and
+        # text are the same; tests/test_crl_hub_counts.py checks the count with the same rule.
+        key = (m.group(0), tuple(sorted(str(a).strip() for a in (r.get("application_number") or []))),
+               re.sub(r"\s+", " ", str(r.get("text") or "")).strip().lower())
         if key in seen:
-            dupes += 1          # FDA's release repeats two records verbatim
+            dupes += 1          # the same letter released twice
             continue
         seen.add(key)
         apps = r.get("application_number")
@@ -73,6 +78,8 @@ def main():
             "company": str(r.get("company_name") or "").strip(),
             "app": ", ".join(apps) if isinstance(apps, list) else str(apps or ""),
             "status": str(r.get("approval_status") or "").strip(),
+            "cr": str(r.get("letter_type") or "") == "COMPLETE RESPONSE",
+            "type": str(r.get("letter_type") or "").strip(),
             "url": "https://download.open.fda.gov/crl/" + _urlq(fn),
         })
     rows.sort(key=lambda x: x["iso"], reverse=True)
@@ -92,14 +99,18 @@ def main():
                 os.path.dirname(p), SITE).replace("\\", "/")
 
     n = len(rows)
+    # 2026-11-22: the release also holds other FDA actions (tentative approvals, a refusal to file, a rescission of a
+    # CRL, provisional determinations, and records with no letter type). Only letters openFDA types COMPLETE RESPONSE
+    # are counted as CRLs; tests/test_crl_hub_counts.py checks the count.
+    n_cr = sum(1 for r in rows if r["cr"])
     n24 = sum(1 for r in rows if r["year"] >= "2024")
     today = dt.date.today()
     # Audit 2026-10-11 section 4b item 6: the grounding query is "fda complete response letter
     # database" (36 citations, 15.79% share); the phrase now sits in the title, the h1 and the first
     # sentence, with the count and the FDA release-policy caveat.
-    title = (f"FDA Complete Response Letter Database: {n_records} Released CRLs by Year "
+    title = (f"FDA Complete Response Letter Database: {n_cr} Released CRLs by Year "
              f"| pdufa.bio")
-    desc = (f"FDA complete response letter database: {n_records} CRLs the FDA has released "
+    desc = (f"FDA complete response letter database: {n_cr} CRLs the FDA has released "
             f"(openFDA), by year, each linking the FDA's PDF. {n_approved} went to applications "
             f"since approved; why that is not an approval rate.")
     # by-year split of openFDA's approval_status -- the shape that shows the release policy
@@ -114,17 +125,19 @@ def main():
          "A Complete Response Letter (CRL) is the FDA's formal notice that it will not "
          "approve a drug application in its current form. It lists the deficiencies "
          "the sponsor must address; it is not a permanent rejection. Of the "
-         f"{n_records} letters the FDA has released, {n_approved} were issued to "
+         f"{n_records} records in the FDA's release, openFDA labels {n_approved} as issued to "
          "applications the FDA has since approved."),
         ("How many FDA Complete Response Letters are published here?",
          f"{n_records} records in the FDA's release (openFDA transparency/crl, last updated "
          f"{last_updated}): {n} distinct letters with a hosted PDF are listed, {dupes} "
          f"record{'s' if dupes != 1 else ''} repeat{'s' if dupes == 1 else ''} another verbatim and "
          f"{no_file} {'is' if no_file == 1 else 'are'} still marked under review for release. "
+         f"openFDA types {n_cr} of the listed letters as Complete Response Letters; the rest are other "
+         f"actions the release also holds or carry no type. "
          f"{n24} of the listed letters were issued in 2024 or later; the rest go back to 2002."),
         ("How many CRLs are later approved?",
          f"This corpus cannot say. openFDA labels {n_approved} of the {n_records} released "
-         f"letters as belonging to applications the FDA has since approved and {n_unapproved} "
+         f"records as belonging to applications the FDA has since approved and {n_unapproved} "
          f"as not approved, but the split follows the FDA's release policy, not the odds: the "
          f"agency released archived letters only for applications it had approved, then every "
          f"letter from 2024 on. Nearly every letter dated 2023 or earlier is on an approved "
@@ -163,13 +176,17 @@ def main():
             f'<a href="/" style="color:#94a9c9">Home</a> &rsaquo; '
             f'<a href="/decisions" style="color:#94a9c9">Decisions</a> &rsaquo; '
             f'CRL letters</div>'
-            f'<h1>FDA complete response letter database: <span class="g">{n_records} released '
+            f'<h1>FDA complete response letter database: <span class="g">{n_cr} released '
             f'CRLs</span></h1>'
-            f'<div class="sub">This is a database of the {n_records} complete response letters the FDA '
+            f'<div class="sub">This is a database of the letters the FDA '
             f'has released under its CRL transparency program, published through openFDA; the FDA '
             f'releases letters selectively, so the set is not every CRL ever issued. This page lists every '
             f'released letter with a hosted file ({n} distinct letters from {n_records} '
-            f'records), newest first, each linking the original PDF on FDA&#x27;s servers. '
+            f'records), newest first, each linking the original PDF on FDA&#x27;s servers. openFDA types '
+            f'{n_cr} of them as complete response letters; the other {n - n_cr} are other actions the '
+            f'release also holds (tentative approvals, a refusal to file, a letter rescinding two earlier '
+            f'CRLs, provisional determinations) or carry no type; they are listed and marked in the '
+            f'Letter column but not counted as CRLs. '
             f'{n24} listed letters are from 2024 or later; the archive reaches back to 2002. '
             f'Where a letter matches a decision this site tracked, the decision page '
             f'(with the run-up chart and outcome) is linked beside it. This page '
@@ -260,7 +277,9 @@ def main():
             body.append(
                 f'<tr><td class="dt">{MON[d.month][:3]} {d.day}, {d.year}</td>'
                 f'<td>{esc(r["company"][:44])}</td><td>{esc(r["app"][:28])}</td>'
-                f'<td><a href="{esc(r["url"])}" rel="noopener">letter (PDF)</a></td>'
+                f'<td><a href="{esc(r["url"])}" rel="noopener">'
+                + ("letter (PDF)" if r["cr"] else (f'{esc("rescission of earlier CRLs" if "RESCIND" in r["type"].upper() else r["type"].lower())}, not a CRL (PDF)' if r["type"]
+                                                    else "no letter type given (PDF)")) + '</a></td>'
                 f'<td style="font-size:12.5px">{esc("; ".join(_secs(r["url"]))) or "&middot;"}</td>'
                 f'<td>' + (f'<a href="{our}">decision page</a>' if our else "&mdash;")
                 + '</td></tr>')
@@ -271,7 +290,8 @@ def main():
         body.append(f'<p><b style="color:#f2f6fc">{esc(q)}</b><br>'
                     f'<span style="color:#a7bcd9">{esc(ans)}</span></p>')
     body.append('<p><a href="/crl/facts">Facts from the released letters</a> (sections cited, repeat CRLs, days to '
-                'approval) &middot; <a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a></p>')
+                'approval) &middot; <a href="/crl/companies">every CRL, by company</a> &middot; '
+                '<a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a></p>')
     body.append('<p><a href="/decisions/crl">CRL decisions tracked by this site</a> '
                 '&middot; <a href="/decisions">the full decisions archive</a> &middot; '
                 '<a href="/learn/what-is-a-pdufa-date">what a PDUFA date is</a></p>')
