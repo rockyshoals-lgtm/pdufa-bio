@@ -580,16 +580,442 @@
 "hash": "748203907a98a4e8",
 "hv": 3
 },
+"pdufa_site_src/crl/companies/index.html": {
+"date": "2026-11-21",
+"hash": "9e770bd7b0a846b4",
+"hv": 3
+},
+"pdufa_site_src/crl/company/3m-health-care-infection-prevention-division/index.html": {
+"date": "2026-11-21",
+"hash": "d65299ea3016abce",
+"hv": 3
+},
+"pdufa_site_src/crl/company/ab-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "467da71598c1c252",
+"hv": 3
+},
+"pdufa_site_src/crl/company/abbvie/index.html": {
+"date": "2026-11-21",
+"hash": "c7baac128efe8e92",
+"hv": 3
+},
+"pdufa_site_src/crl/company/acacia-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "4dc952888302aa5e",
+"hv": 3
+},
+"pdufa_site_src/crl/company/accord-biopharma/index.html": {
+"date": "2026-11-21",
+"hash": "efc6a1d82ca44c08",
+"hv": 3
+},
+"pdufa_site_src/crl/company/accord-healthcare/index.html": {
+"date": "2026-11-21",
+"hash": "dde1f27ba441965c",
+"hv": 3
+},
+"pdufa_site_src/crl/company/adamis-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "34bc0143a7fc744d",
+"hv": 3
+},
+"pdufa_site_src/crl/company/aft-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "623e7df68d57535a",
+"hv": 3
+},
+"pdufa_site_src/crl/company/agile-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "982d829f776a3113",
+"hv": 3
+},
+"pdufa_site_src/crl/company/aldeyra-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "51ba7b43d285c917",
+"hv": 3
+},
+"pdufa_site_src/crl/company/alvotech/index.html": {
+"date": "2026-11-21",
+"hash": "f228dd1d3d16399c",
+"hv": 3
+},
+"pdufa_site_src/crl/company/amgen/index.html": {
+"date": "2026-11-21",
+"hash": "3604d74e883dac24",
+"hv": 3
+},
+"pdufa_site_src/crl/company/amneal-eu/index.html": {
+"date": "2026-11-21",
+"hash": "02a4cf724512fef7",
+"hv": 3
+},
+"pdufa_site_src/crl/company/amphastar-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "1f1f3e26b4281e02",
+"hv": 3
+},
+"pdufa_site_src/crl/company/antares-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "2656c85213e37dbe",
+"hv": 3
+},
+"pdufa_site_src/crl/company/armstrong-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "5e52f0f42b5cf362",
+"hv": 3
+},
+"pdufa_site_src/crl/company/astellas-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "c5e8c521131c0615",
+"hv": 3
+},
+"pdufa_site_src/crl/company/auromedics-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "a40e7d4c7ec71ef8",
+"hv": 3
+},
+"pdufa_site_src/crl/company/azurity-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "0db0076fe8170717",
+"hv": 3
+},
+"pdufa_site_src/crl/company/b-braun-medical/index.html": {
+"date": "2026-11-21",
+"hash": "07fdf6af28591458",
+"hv": 3
+},
+"pdufa_site_src/crl/company/baxter-healthcare/index.html": {
+"date": "2026-11-21",
+"hash": "cdd856d418263290",
+"hv": 3
+},
+"pdufa_site_src/crl/company/braeburn/index.html": {
+"date": "2026-11-21",
+"hash": "2205fceb410b29bc",
+"hv": 3
+},
+"pdufa_site_src/crl/company/braintree-laboratories/index.html": {
+"date": "2026-11-21",
+"hash": "5e85493d11f7e090",
+"hv": 3
+},
+"pdufa_site_src/crl/company/bridge-regulatory-affairs/index.html": {
+"date": "2026-11-21",
+"hash": "e62742c4652c495e",
+"hv": 3
+},
+"pdufa_site_src/crl/company/celitrion/index.html": {
+"date": "2026-11-21",
+"hash": "53a1fa27487af432",
+"hv": 3
+},
+"pdufa_site_src/crl/company/celltrion/index.html": {
+"date": "2026-11-21",
+"hash": "dfe21d1fb723fd8e",
+"hv": 3
+},
+"pdufa_site_src/crl/company/chiesi/index.html": {
+"date": "2026-11-21",
+"hash": "ffab8bc428c0e128",
+"hv": 3
+},
+"pdufa_site_src/crl/company/cipla/index.html": {
+"date": "2026-11-21",
+"hash": "24babd17a116a471",
+"hv": 3
+},
+"pdufa_site_src/crl/company/clarus-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "bab716572f8d0459",
+"hv": 3
+},
+"pdufa_site_src/crl/company/cmp-development/index.html": {
+"date": "2026-11-21",
+"hash": "7b9839ebc5987a03",
+"hv": 3
+},
+"pdufa_site_src/crl/company/coherus-biosciences/index.html": {
+"date": "2026-11-21",
+"hash": "e36c2c233b715597",
+"hv": 3
+},
+"pdufa_site_src/crl/company/conjupro-biotherapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "b6a8ef82f9064fb1",
+"hv": 3
+},
+"pdufa_site_src/crl/company/cormedix/index.html": {
+"date": "2026-11-21",
+"hash": "bfb5500ace2e3899",
+"hv": 3
+},
+"pdufa_site_src/crl/company/daiichi-sankyo/index.html": {
+"date": "2026-11-21",
+"hash": "ba0105b883ad0983",
+"hv": 3
+},
+"pdufa_site_src/crl/company/dr-reddys-laboratories/index.html": {
+"date": "2026-11-21",
+"hash": "1ccbdd2fbfe96bb8",
+"hv": 3
+},
+"pdufa_site_src/crl/company/elevar-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "79ac5724631b4cb2",
+"hv": 3
+},
+"pdufa_site_src/crl/company/eli-lilly/index.html": {
+"date": "2026-11-21",
+"hash": "2bed790ce31d73d4",
+"hv": 3
+},
+"pdufa_site_src/crl/company/fennec-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "c7bfaacd2a9bc282",
+"hv": 3
+},
+"pdufa_site_src/crl/company/fera-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "06ed8a4321182e74",
+"hv": 3
+},
+"pdufa_site_src/crl/company/ferring-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "0319cb22bab77664",
+"hv": 3
+},
+"pdufa_site_src/crl/company/fresenius-kabi/index.html": {
+"date": "2026-11-21",
+"hash": "4dad328f7a43bbf8",
+"hv": 3
+},
+"pdufa_site_src/crl/company/gan-lee-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "3432b0522ed4d2bf",
+"hv": 3
+},
+"pdufa_site_src/crl/company/gilead-sciences/index.html": {
+"date": "2026-11-21",
+"hash": "072a8e7a2774cdd8",
+"hv": 3
+},
+"pdufa_site_src/crl/company/glaxosmithkline/index.html": {
+"date": "2026-11-21",
+"hash": "44d1794ae1f54680",
+"hv": 3
+},
+"pdufa_site_src/crl/company/heron-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "c1074bbc84d99fbb",
+"hv": 3
+},
+"pdufa_site_src/crl/company/hikma-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "6c113583891b34ec",
+"hv": 3
+},
+"pdufa_site_src/crl/company/hospira/index.html": {
+"date": "2026-11-21",
+"hash": "754734fd5ef9284e",
+"hv": 3
+},
+"pdufa_site_src/crl/company/hq-specialty-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "ca60d910aa53aa51",
+"hv": 3
+},
+"pdufa_site_src/crl/company/hugel/index.html": {
+"date": "2026-11-21",
+"hash": "5a063ecbaae78577",
+"hv": 3
+},
+"pdufa_site_src/crl/company/innopharma-licensing/index.html": {
+"date": "2026-11-21",
+"hash": "b45e8bf3015ddfe0",
+"hv": 3
+},
+"pdufa_site_src/crl/company/intelgenx/index.html": {
+"date": "2026-11-21",
+"hash": "30493842cc0175fa",
+"hv": 3
+},
+"pdufa_site_src/crl/company/jiangsu-hengrui-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "a12aeb83cfa8687c",
+"hv": 3
+},
+"pdufa_site_src/crl/company/kashiv-biosciences/index.html": {
+"date": "2026-11-21",
+"hash": "6d31c577aa748290",
+"hv": 3
+},
+"pdufa_site_src/crl/company/laboratorios-farmaceuticos-rovi/index.html": {
+"date": "2026-11-21",
+"hash": "85af582a65e35777",
+"hv": 3
+},
+"pdufa_site_src/crl/company/metacel-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "237da2ab96765964",
+"hv": 3
+},
+"pdufa_site_src/crl/company/mylan-laboratories/index.html": {
+"date": "2026-11-21",
+"hash": "70cf5855679a292a",
+"hv": 3
+},
+"pdufa_site_src/crl/company/mylan-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "a792d13f6ba31b39",
+"hv": 3
+},
+"pdufa_site_src/crl/company/mylan/index.html": {
+"date": "2026-11-21",
+"hash": "64c4894c9a2e288c",
+"hv": 3
+},
+"pdufa_site_src/crl/company/neuroderm/index.html": {
+"date": "2026-11-21",
+"hash": "6271ee43aae08f25",
+"hv": 3
+},
+"pdufa_site_src/crl/company/novo-nordisk/index.html": {
+"date": "2026-11-21",
+"hash": "0d005893eed4567c",
+"hv": 3
+},
+"pdufa_site_src/crl/company/ocular-therapeutix/index.html": {
+"date": "2026-11-21",
+"hash": "2608a06c515910d9",
+"hv": 3
+},
+"pdufa_site_src/crl/company/outlook-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "a182810b7de1e7e9",
+"hv": 3
+},
+"pdufa_site_src/crl/company/recro-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "32bb4e03c7504a4a",
+"hv": 3
+},
+"pdufa_site_src/crl/company/regeneron-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "c70595b1ef141268",
+"hv": 3
+},
+"pdufa_site_src/crl/company/replimune/index.html": {
+"date": "2026-11-21",
+"hash": "229a22cc188883b2",
+"hv": 3
+},
+"pdufa_site_src/crl/company/sandoz/index.html": {
+"date": "2026-11-21",
+"hash": "d3f6cc953cc16083",
+"hv": 3
+},
+"pdufa_site_src/crl/company/sedor-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "3963f8c622b21abe",
+"hv": 3
+},
+"pdufa_site_src/crl/company/seikagaku/index.html": {
+"date": "2026-11-21",
+"hash": "460cf6824728ec3d",
+"hv": 3
+},
+"pdufa_site_src/crl/company/shandong-luye-pharmaceutical/index.html": {
+"date": "2026-11-21",
+"hash": "304cb77499f6d386",
+"hv": 3
+},
+"pdufa_site_src/crl/company/shilpa-medicare/index.html": {
+"date": "2026-11-21",
+"hash": "664159dc9a1d6cfe",
+"hv": 3
+},
+"pdufa_site_src/crl/company/sun-pharma-advanced-research/index.html": {
+"date": "2026-11-21",
+"hash": "c3977113a14efc8d",
+"hv": 3
+},
+"pdufa_site_src/crl/company/sun-pharmaceutical-industries/index.html": {
+"date": "2026-11-21",
+"hash": "b0b9bd12479ac4bb",
+"hv": 3
+},
+"pdufa_site_src/crl/company/takeda-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "b245efe463511572",
+"hv": 3
+},
+"pdufa_site_src/crl/company/tanvex-biopharma/index.html": {
+"date": "2026-11-21",
+"hash": "e02720572c6cb421",
+"hv": 3
+},
+"pdufa_site_src/crl/company/telix-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "df3b6e84a78f858f",
+"hv": 3
+},
+"pdufa_site_src/crl/company/teva-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "4d62ea4b8d5aa153",
+"hv": 3
+},
+"pdufa_site_src/crl/company/tris-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "41a0140130073d30",
+"hv": 3
+},
+"pdufa_site_src/crl/company/unicycive-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "85359c2fea026410",
+"hv": 3
+},
+"pdufa_site_src/crl/company/united-therapeutics/index.html": {
+"date": "2026-11-21",
+"hash": "a46a06c0995f81cb",
+"hv": 3
+},
+"pdufa_site_src/crl/company/verrica-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "4016fc4bdfd5ca20",
+"hv": 3
+},
+"pdufa_site_src/crl/company/viiv-healthcare/index.html": {
+"date": "2026-11-21",
+"hash": "a6d35d6db234ea0e",
+"hv": 3
+},
+"pdufa_site_src/crl/company/xspray-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "a46da67b0873adf2",
+"hv": 3
+},
+"pdufa_site_src/crl/company/zealand-pharma/index.html": {
+"date": "2026-11-21",
+"hash": "6c01604cd9462522",
+"hv": 3
+},
+"pdufa_site_src/crl/company/zhejiang-novus-pharmaceuticals/index.html": {
+"date": "2026-11-21",
+"hash": "cbdf3ddf57b61139",
+"hv": 3
+},
 "pdufa_site_src/crl/facts/index.html": {
 "date": "2026-11-21",
-"hash": "43cea3af7883c1c0",
-"hv": 3
+"hash": "4cb5e9ecf826a269",
+"hv": 3,
+"ts": "2026-11-21T22:10:31-05:00"
 },
 "pdufa_site_src/crl/index.html": {
 "date": "2026-11-21",
-"hash": "2f2a7a6fb13608b9",
+"hash": "e72dfe7c2cfca6ba",
 "hv": 3,
-"ts": "2026-11-21T21:00:46-05:00"
+"ts": "2026-11-21T22:10:31-05:00"
 },
 "pdufa_site_src/decisions/2025/index.html": {
 "date": "2026-11-21",
@@ -617,9 +1043,9 @@
 },
 "pdufa_site_src/decisions/index.html": {
 "date": "2026-11-21",
-"hash": "cbd9dc9eedae4c13",
+"hash": "4990113348b73a36",
 "hv": 3,
-"ts": "2026-11-21T21:00:46-05:00"
+"ts": "2026-11-21T22:10:31-05:00"
 },
 "pdufa_site_src/developers/index.html": {
 "date": "2026-11-21",
@@ -6225,8 +6651,9 @@
 },
 "pdufa_site_src/fda-decision/BHVN-2025-11-04/index.html": {
 "date": "2026-11-21",
-"hash": "b195d0694959a87e",
-"hv": 3
+"hash": "8f0226db6efcc9fb",
+"hv": 3,
+"ts": "2026-11-21T22:10:30-05:00"
 },
 "pdufa_site_src/fda-decision/BIIB-2025-01-26/index.html": {
 "date": "2026-11-18",
@@ -6242,8 +6669,9 @@
 },
 "pdufa_site_src/fda-decision/BIIB-2025-09-23/index.html": {
 "date": "2026-11-21",
-"hash": "5582edd0a9d9b95c",
-"hv": 3
+"hash": "2d07aec9479aa429",
+"hv": 3,
+"ts": "2026-11-21T22:10:31-05:00"
 },
 "pdufa_site_src/fda-decision/BIIB-2026-03-30/index.html": {
 "date": "2026-11-20",
@@ -7447,8 +7875,9 @@
 },
 "pdufa_site_src/fda-decision/PTCT-2025-08-19/index.html": {
 "date": "2026-11-21",
-"hash": "aafef763a7367f53",
-"hv": 3
+"hash": "0009b8c127c01688",
+"hv": 3,
+"ts": "2026-11-21T22:10:30-05:00"
 },
 "pdufa_site_src/fda-decision/PTGX-2026-03-18/index.html": {
 "date": "2026-11-20",
@@ -7512,8 +7941,9 @@
 },
 "pdufa_site_src/fda-decision/REGN-2025-07-30/index.html": {
 "date": "2026-11-21",
-"hash": "ce61a6b643e9001d",
-"hv": 3
+"hash": "331ed8dc79228877",
+"hv": 3,
+"ts": "2026-11-21T22:10:30-05:00"
 },
 "pdufa_site_src/fda-decision/REGN-2025-10-08/index.html": {
 "date": "2026-11-18",
@@ -8024,9 +8454,9 @@
 },
 "pdufa_site_src/index.html": {
 "date": "2026-11-21",
-"hash": "74db0c1b01b9c0f0",
+"hash": "aca46713bc5272b6",
 "hv": 3,
-"ts": "2026-11-21T21:00:42-05:00"
+"ts": "2026-11-21T22:10:27-05:00"
 },
 "pdufa_site_src/learn/accelerated-approval-explained/index.html": {
 "date": "2026-11-05",
@@ -8941,9 +9371,9 @@
 },
 "pdufa_site_src/pdufa/MRK-ifinatamab-deruxtecan/index.html": {
 "date": "2026-11-21",
-"hash": "9a4b470ee3f1a74d",
+"hash": "7413a21e91dda22a",
 "hv": 3,
-"ts": "2026-11-21T21:00:42-05:00"
+"ts": "2026-11-21T22:10:27-05:00"
 },
 "pdufa_site_src/pdufa/MRK-keytruda/index.html": {
 "date": "2026-11-21",
@@ -9681,9 +10111,9 @@
 },
 "pdufa_site_src/sitemap/index.html": {
 "date": "2026-11-21",
-"hash": "ec6f280657bdd332",
+"hash": "898f747197d6f4e8",
 "hv": 3,
-"ts": "2026-11-21T21:00:46-05:00"
+"ts": "2026-11-21T22:10:31-05:00"
 },
 "pdufa_site_src/sls/index.html": {
 "date": "2026-11-18",
