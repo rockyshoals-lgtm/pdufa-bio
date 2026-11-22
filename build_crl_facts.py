@@ -125,14 +125,15 @@ def main():
     snap = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(CORPUS))
     snap = snap.group(1) if snap else ""
 
-    # one row per record, a verbatim repeat counted once. Red team: keying on (file, date) alone merged two different
-    # applications that share one combined PDF (Gilead NDA 215974, ViiV NDA 212887) and kept a true repeat; a record
-    # is a repeat only when its file, date, type, application numbers and text are all the same.
+    # one row per letter, a repeat counted once. Red team: keying on (file, date) alone merged two different
+    # applications that share one combined PDF (Gilead NDA 215974, ViiV NDA 212887) and kept a true repeat released
+    # under a second file name (BLA 761215); a record repeats another when its date, type, application numbers and
+    # text are all the same (the /crl hub uses the same rule).
     seen, letters = set(), []
     for r in recs:
         d = iso(r.get("letter_date"))
         fn = str(r.get("file_name") or "").strip()
-        k = (fn, d, str(r.get("letter_type")), tuple(sorted(r.get("application_number") or [])),
+        k = (d, str(r.get("letter_type")), tuple(sorted(str(x).strip() for x in (r.get("application_number") or []))),
              re.sub(r"\s+", " ", str(r.get("text") or "")).strip().lower())
         if not d or k in seen:
             continue
@@ -257,11 +258,14 @@ def main():
             f"approval (Orange Book), each reproducible from FDA files.")
     B = []
     B.append(f'<h1>FDA Complete Response Letters: <span class="g">facts from the release</span></h1>')
-    B.append(f'<p class="sub">The FDA has released {n_all} records under its CRL transparency program '
-             f'(openFDA, last updated {esc(last_updated)}; snapshot read {esc(snap)}). {n_cr} are Complete Response '
-             f'Letters dated {yr0} to {yr1}. Each count below says which files it comes from and how it is made, so '
+    n_rec = len(recs)
+    B.append(f'<p class="sub">The FDA has released {n_rec} records under its CRL transparency program '
+             f'(openFDA, last updated {esc(last_updated)}; snapshot read {esc(snap)}). '
+             + (f'{n_rec - n_all} of them {"repeats" if n_rec - n_all == 1 else "repeat"} another record (same date, application numbers and text), '
+                f'leaving {n_all} distinct records. ' if n_rec != n_all else '') +
+             f'{n_cr} are Complete Response Letters dated {yr0} to {yr1}. Each count below says which files it comes from and how it is made, so '
              f'anyone can redo it. Counts and date differences only: no approval rates, no predictions. '
-             f'<a href="/crl">Every letter, by year</a>.</p>')
+             f'<a href="/crl">Every letter, by year</a>; <a href="/crl/companies">every CRL, by company</a>.</p>')
 
     B.append('<h2>Letters in the release, by year</h2><table><tr><th>Letter year</th><th>Complete Response Letters</th></tr>')
     for y in sorted(by_year, reverse=True):
@@ -364,7 +368,7 @@ def main():
              f'transparency/crl, snapshot {esc(snap)}), the section headings each PDF\'s text layer carries '
              '(_crl_headings.json), the Orange Book products file (_orange_book/products.txt), and this site\'s '
              'decision pages. The script is build_crl_facts.py in the site\'s public repository; it runs on every '
-             'rebuild. A record the FDA repeated verbatim is counted once. <a href="/crl/capricor-deramiocel">'
+             'rebuild. A letter the FDA released twice (same date, application numbers and text) is counted once. <a href="/crl/capricor-deramiocel">'
              'Capricor\'s two CRLs for deramiocel</a>, from the primary sources.</p>')
 
     doc = (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
@@ -379,7 +383,7 @@ def main():
     out = os.path.join(SITE, "crl", "facts", "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     io.open(out, "w", encoding="utf-8").write(doc)
-    print(f"/crl/facts: {n_cr} CRLs ({n_all} records); sections {n_head}/{n_read} read 2024+ letters; "
+    print(f"/crl/facts: {n_cr} CRLs ({n_all} distinct of {len(recs)} records); sections {n_head}/{n_read} read 2024+ letters; "
           f"{n_multi} repeat-CRL applications; {len(gaps)} NDA CRL->approval gaps (median "
           f"{med_s} d); {len(stale_status)} openFDA-unapproved but OB-approved; "
           f"{len(rescind)} rescission(s); {len(lag)} decision pages with the letter")

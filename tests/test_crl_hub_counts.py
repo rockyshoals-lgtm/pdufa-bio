@@ -35,8 +35,6 @@ def main():
     doc = io.open(p, encoding="utf-8", errors="replace").read()
     t = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"(?s)<script.*?</script>|<style.*?</style>", "", doc))))
     fails = []
-    if f"{n} Released CRLs" not in re.search(r"<title>([^<]*)", doc).group(1):
-        fails.append(f"title does not say '{n} Released CRLs'")
     if not re.search(rf"\b{n} records in the FDA's release", t):
         fails.append(f"released block does not say '{n} records'")
     if not re.search(rf"openFDA labels {ap} of them as letters to applications the FDA has since approved and {un} as", t):
@@ -48,6 +46,28 @@ def main():
         a, u, tot = map(int, m.groups())
         if a + u != tot or a > ap or u > un or tot > n:
             fails.append(f"by-year totals inconsistent: {a}+{u}={tot} vs corpus {ap}/{un}/{n}")
+    # 2026-11-22 (CRL red team): the distinct-letter count. A record repeats another only when its letter date,
+    # application numbers and text are the same; two applications sharing one combined PDF are two letters.
+    keys, n_pdf, cr_keys = set(), 0, set()
+    for r in recs:
+        if not (re.match(r"\d{2}/\d{2}/\d{4}", str(r.get("letter_date") or ""))
+                and str(r.get("file_name") or "").strip().lower().endswith(".pdf")):
+            continue
+        n_pdf += 1
+        k = (str(r.get("letter_date"))[:10], tuple(sorted(str(a).strip() for a in (r.get("application_number") or []))),
+             re.sub(r"\s+", " ", str(r.get("text") or "")).strip().lower())
+        keys.add(k)
+        if str(r.get("letter_type") or "") == "COMPLETE RESPONSE":
+            cr_keys.add(k)
+    # 2026-11-22: the release also holds tentative approvals, a refusal to file, a rescission and untyped records;
+    # the title and h1 count only the distinct letters openFDA types COMPLETE RESPONSE (as /crl/facts does)
+    if f"{len(cr_keys)} Released CRLs" not in re.search(r"<title>([^<]*)", doc).group(1):
+        fails.append(f"title does not say '{len(cr_keys)} Released CRLs' (distinct letters typed COMPLETE RESPONSE)")
+    if not re.search(rf"\b{len(cr_keys)} released CRLs\b", t):
+        fails.append(f"h1 does not say '{len(cr_keys)} released CRLs'")
+    if not re.search(rf"\b{len(keys)} distinct letters\b", t):
+        fails.append(f"page does not say '{len(keys)} distinct letters' (records with a PDF: {n_pdf}, repeats: "
+                     f"{n_pdf - len(keys)})")
     if re.search(r"\b\d{1,3}(?:\.\d)?% of (?:CRLs|letters|applications)", t) or "approval rate after a CRL" in t.lower() and "%" in t:
         fails.append("page states a percentage rate from the corpus (counts only -- release policy, not odds)")
     if fails:
