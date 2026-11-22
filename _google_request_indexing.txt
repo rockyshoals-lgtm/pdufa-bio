@@ -1,9 +1,6 @@
 # Google Search Console: request indexing for these, in order (2026-11-22 Eastern).
 # About 10 requests a day per property. Then run: python build_google_request_list.py --requested <paths>
-# Skipped: 78 known indexed (_google_indexed.json), 10 requested in the last 7 days.
-https://www.pdufa.bio/fda-decision/CAPR-2026-11-20	# decision 2026-11-20: CAPR Deramiocel (CAP-1002) - (HOPE-3)
-https://www.pdufa.bio/pdufa/PYPD-d-plex100	# goal date 2026-11-28: PYPD D-PLEX100 - prevention of surgical site infections
-https://www.pdufa.bio/pdufa/COGT-bezuclastinib	# goal date 2026-11-30: COGT Bezuclastinib + sunitinib - (PEAK)
+# Skipped: 78 known indexed (_google_indexed.json), 20 requested in the last 7 days.
 https://www.pdufa.bio/pdufa/RHHBY-giredestrant	# goal date 2026-11-30: RHHBY Giredestrant (lidERA)
 https://www.pdufa.bio/pdufa/VRTX-povetacicept	# goal date 2026-11-30: VRTX Povetacicept (ALPN-303)
 https://www.pdufa.bio/pdufa/VNDA-imsidolimab	# goal date 2026-12-12: VNDA Imsidolimab
@@ -11,3 +8,5 @@ https://www.pdufa.bio/pdufa/CORT-relacorilant	# goal date 2026-12-17: CORT Relac
 https://www.pdufa.bio/pdufa/MLYS-lorundrostat	# goal date 2026-12-22: MLYS Lorundrostat
 https://www.pdufa.bio/decisions/2026	# hub / study
 https://www.pdufa.bio/readouts/oncology	# hub / study
+https://www.pdufa.bio/sitemap	# hub / study
+https://www.pdufa.bio/fda-approval-letters	# hub / study
