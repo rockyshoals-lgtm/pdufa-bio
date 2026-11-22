@@ -59,12 +59,12 @@ FAMILIES = [
     ("Clinical pharmacology", r"clinical pharmacology"),
     ("Nonclinical", r"nonclinical|pharmacology/toxicology|toxicolog"),
     ("Human factors or device", r"human factors|device"),
-    ("Clinical microbiology", r"clinical microbiology|^microbiology"),
+    ("Clinical microbiology", r"clinical microbiology"),
+    # red team: all ten bare "Microbiology" headings in the 2024+ letters sit in product-quality sections, so a bare
+    # heading is counted as written and assigned to no clinical or quality family
+    ("Microbiology (heading as written, not further specified)", r"^microbiology$"),
     ("REMS", r"risk evaluation"),
 ]
-CLINICALISH = {"Clinical or statistical", "Clinical pharmacology", "Nonclinical", "Human factors or device",
-               "Clinical microbiology", "REMS"}
-QUALITYISH = {"Product quality or CMC", "Facility inspections"}
 
 
 def esc(s):
@@ -125,12 +125,15 @@ def main():
     snap = re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(CORPUS))
     snap = snap.group(1) if snap else ""
 
-    # one row per (file, letter date): FDA's release repeats a few records verbatim
+    # one row per record, a verbatim repeat counted once. Red team: keying on (file, date) alone merged two different
+    # applications that share one combined PDF (Gilead NDA 215974, ViiV NDA 212887) and kept a true repeat; a record
+    # is a repeat only when its file, date, type, application numbers and text are all the same.
     seen, letters = set(), []
     for r in recs:
         d = iso(r.get("letter_date"))
         fn = str(r.get("file_name") or "").strip()
-        k = (fn, d, str(r.get("letter_type")))
+        k = (fn, d, str(r.get("letter_type")), tuple(sorted(r.get("application_number") or [])),
+             re.sub(r"\s+", " ", str(r.get("text") or "")).strip().lower())
         if not d or k in seen:
             continue
         seen.add(k)
@@ -138,8 +141,21 @@ def main():
         letters.append({"date": d, "file": fn, "type": str(r.get("letter_type") or "(none given)"),
                         "status": str(r.get("approval_status") or ""), "company": str(r.get("company_name") or "").strip(),
                         "apps": apps, "app_txt": ", ".join(r.get("application_number") or []),
-                        "url": PDF + _urlq(fn) if fn.lower().endswith(".pdf") else ""})
+                        "url": PDF + _urlq(fn) if fn.lower().endswith(".pdf") else "",
+                        "text": re.sub(r"\s+", " ", str(r.get("text") or ""))})
     crl = [L for L in letters if L["type"] == CR]
+    # letters the FDA later rescinded as "issued in error": the rescission names them by date; they stay in the
+    # yearly count (they are in the release) and leave the repeat and letter-to-approval counts
+    rescind = [L for L in letters if "RESCIND" in L["type"].upper()]
+    voided = set()
+    for R in rescind:
+        m = re.search(r"refer to our letters? dated (.{0,120}?)(?:,? informing|\.)", R["text"], re.I)
+        for ds in re.findall(r"(?:" + "|".join(MON[1:]) + r") \d{1,2}, \d{4}", m.group(1) if m else ""):
+            vd = dt.datetime.strptime(ds, "%B %d, %Y").date()
+            for L in crl:
+                if L["date"] == vd and set(L["apps"]) & set(R["apps"]):
+                    voided.add(id(L))
+    counted = [L for L in crl if id(L) not in voided]
     n_all, n_cr = len(letters), len(crl)
     types = collections.Counter(L["type"] for L in letters if L["type"] != CR)
     by_year = collections.Counter(L["date"].year for L in crl)
@@ -153,7 +169,7 @@ def main():
     files = collections.Counter(L["file"] for L in crl)
     own = [L for L in crl if L["date"].year >= 2024 and files[L["file"]] == 1 and L["url"]]
     fam_n = collections.Counter()
-    n_read = n_head = n_quality_only = n_clin = 0
+    n_read = n_head = 0
     for L in own:
         rec = hcache.get(L["file"])
         if not rec or not rec.get("text_layer"):
@@ -166,14 +182,10 @@ def main():
         n_head += 1
         for f_ in fams:
             fam_n[f_] += 1
-        if fams <= QUALITYISH:
-            n_quality_only += 1
-        if fams & CLINICALISH:
-            n_clin += 1
 
     # --- 3. applications with more than one released CRL --------------------------------------------------------
     by_app = collections.defaultdict(list)
-    for L in crl:
+    for L in counted:
         for t, n, sfx in L["apps"]:
             key = (t, n, sfx if is_supplement(sfx) else "")
             if L not in by_app[key]:
@@ -199,10 +211,14 @@ def main():
         days = (hit[0] - last["date"]).days
         gaps.append(days)
         gap_rows.append((n, last, hit, days))
-        if last["status"] == "Unapproved":
+        # only an approval the Orange Book dates before openFDA's own last update can show openFDA's label is stale
+        if last["status"] == "Unapproved" and (not last_updated or hit[0].isoformat() < last_updated):
             stale_status.append((n, last, hit))
     gaps.sort()
+    # quartiles: Python statistics.quantiles(n=4), its default "exclusive" method
     q = statistics.quantiles(gaps, n=4) if len(gaps) >= 4 else [0, 0, 0]
+    med = statistics.median(gaps) if gaps else 0
+    med_s = f"{med:g}"
     buckets = collections.OrderedDict([("under 1 year", 0), ("1 to 2 years", 0), ("2 to 3 years", 0),
                                        ("3 years or more", 0)])
     for g in gaps:
@@ -210,11 +226,9 @@ def main():
                 else "3 years or more"] += 1
     fastest = sorted(gap_rows, key=lambda x: x[3])[:5]
 
-    # --- 6. rescissions ------------------------------------------------------------------------------------------
-    rescind = [L for L in letters if "RESCIND" in L["type"].upper()]
 
     # --- 7. our decision pages that carry the FDA's letter -------------------------------------------------------
-    lag = []
+    lag, lag_skipped = [], []
     try:   # hand-verified letters: a corrected letter carries a later date than the FDA's action
         act = {x["file_name"]: dt.date.fromisoformat(x["fda_action_date"]) for x in json.load(io.open(
             os.path.join(HERE, "_crl_letter_findings.json"), encoding="utf-8"))["letters"] if x.get("fda_action_date")}
@@ -230,6 +244,7 @@ def main():
         fn = _uq(m.group(1))
         ld = act.get(fn) or next((L["date"] for L in crl if L["file"] == fn), None)
         if not sd or not ld:
+            lag_skipped.append(slug)
             continue
         lag.append(((dt.date.fromisoformat(sd.group(1)) - ld).days, slug, ld))
     lag.sort()
@@ -261,21 +276,21 @@ def main():
              f'<p class="sub">{len(own)} Complete Response Letters dated 2024 or later have a PDF of their own. '
              f'{n_read} of them have a text layer we read; {n_head} carry at least one deficiency section heading in '
              f'the FDA\'s own words (labeling, safety update and other administrative sections set aside). The other '
-             f'{n_read - n_head} number their deficiencies without a section heading, so they are left out of the '
-             f'table rather than guessed. A letter can name several sections.</p>'
+             f'{n_read - n_head} carry no deficiency heading that the extractor recognizes yet, so they are left out of '
+             f'the table rather than guessed; they are read again as its vocabulary grows. A letter can name several '
+             f'sections.</p>'
              f'<table><tr><th>Section family (the letter\'s own heading)</th><th>Letters, of {n_head}</th></tr>')
     for name, _ in FAMILIES:
         if fam_n[name]:
             B.append(f'<tr><td class="dt">{esc(name)}</td><td>{fam_n[name]}</td></tr>')
-    B.append(f'</table><p class="sub">{n_quality_only} of the {n_head} name only product quality, CMC or facility '
-             f'sections; {n_clin} name at least one clinical, statistical, clinical pharmacology, nonclinical, '
-             f'human factors, device, microbiology or REMS section. Headings are read from the PDF text layer only '
-             f'(extract_crl_headings.py), never from openFDA\'s OCR text.</p>')
+    B.append('</table><p class="sub">Headings are read from the PDF text layer only (extract_crl_headings.py), '
+             'never from openFDA\'s OCR text.</p>')
 
     B.append(f'<h2>Applications with more than one released CRL</h2>'
              f'<p class="sub">{n_multi} applications (an original NDA or BLA, or one supplement) have two or more '
              f'Complete Response Letters in the release; {n_multi3} have three or more. Grouped on the application '
-             f'number the FDA printed on each record.</p>'
+             f'number the FDA printed on each record' + (f'; {len(voided)} letters the FDA later rescinded as issued in '
+                                                    f'error are left out' if voided else '') + '.</p>'
              '<table><tr><th>Application</th><th>Company</th><th>Letters</th><th>Letter dates</th></tr>')
     for (t, n, sfx), ls in multi[:15]:
         app = f"{t} {n:06d}" + (f"/{sfx}" if sfx else "")
@@ -290,8 +305,8 @@ def main():
     B.append(f'<h2>From the last released CRL to approval (NDAs)</h2>'
              f'<p class="sub">For {len(gaps)} original NDAs, the FDA\'s Orange Book (products file, '
              f'FDA files dated {esc(ob_as_of) or "as downloaded"}) lists a first approval after the last Complete Response Letter '
-             f'in the release. Days from that letter to that approval: median <b>{int(statistics.median(gaps)) if gaps else 0}</b>, '
-             f'middle half {int(q[0])} to {int(q[2])}, shortest {gaps[0] if gaps else 0}, longest '
+             f'in the release' + (' (rescinded letters left out)' if voided else '') + f'. Days from that letter to that approval: median <b>{med_s}</b>, '
+             f'middle half (quartiles) {q[0]:g} to {q[2]:g}, shortest {gaps[0] if gaps else 0}, longest '
              f'{gaps[-1] if gaps else 0}.</p><table><tr><th>Letter to approval</th><th>NDAs</th></tr>')
     for k, v in buckets.items():
         B.append(f'<tr><td class="dt">{esc(k)}</td><td>{v}</td></tr>')
@@ -310,7 +325,8 @@ def main():
         B.append(f'<h2>Labeled "Unapproved" by openFDA, approved in the Orange Book</h2>'
                  f'<p class="sub">openFDA\'s approval_status field says these {len(stale_status)} letters belong '
                  f'to applications not approved. The Orange Book lists each NDA as approved after the letter. '
-                 f'Both are FDA files; the Orange Book is the record of approval.</p>'
+                 f'Both are FDA files; the Orange Book lists each product as approved, and each approval it lists is dated '
+                 f'before openFDA\'s last update ({esc(last_updated)}).</p>'
                  '<table><tr><th>NDA</th><th>Product</th><th>CRL</th><th>Orange Book approval</th></tr>')
         for n, L, hit in sorted(stale_status, key=lambda x: x[2][0], reverse=True):
             B.append(f'<tr><td class="dt">{n:06d}</td><td>{esc(hit[1][:36])}</td>'
@@ -324,16 +340,20 @@ def main():
             B.append(f'<p class="sub">{esc(L["app_txt"])}, {esc(L["company"])}: a record typed '
                      f'"{esc(L["type"].title())}" dated {esc(pretty(L["date"]))}'
                      + (f' (<a href="{esc(L["url"])}" rel="noopener">PDF</a>)' if L["url"] else "")
-                     + '. It is not counted as a CRL above.</p>')
+                     + '. It is not counted as a CRL above. It names the FDA\'s earlier letters on the application as '
+                     'issued in error; those letters stay in the yearly count, because they are in the release, and are '
+                     'left out of the repeat-CRL and letter-to-approval counts.</p>')
 
     if lag:
         B.append(f'<h2>The letter\'s date against our decision page\'s date</h2>'
                  f'<p class="sub">{len(lag)} decision pages on this site carry the FDA\'s own released letter. '
                  f'Days from the letter\'s date (the FDA\'s stated action date, for a corrected letter) to the date our decision page '
-                 f'is filed under, the day the decision first became public in the sources that page cites:</p><table><tr><th>Days after the letter</th><th>Pages</th></tr>')
+                 f'is filed under:</p><table><tr><th>Days after the letter</th><th>Pages</th></tr>')
         for k in sorted(lag_n):
             B.append(f'<tr><td class="dt">{"4 or more" if k == 4 else k}</td><td>{lag_n[k]}</td></tr>')
-        B.append('</table>')
+        B.append('</table>' + (f'<p class="sub">{len(lag_skipped)} more page{"s" if len(lag_skipped) != 1 else ""} {"link" if len(lag_skipped) != 1 else "links"} '
+                               f'a letter that is not in the snapshot read here and {"are" if len(lag_skipped) != 1 else "is"} '
+                               f'not counted.</p>' if lag_skipped else ''))
         late = [x for x in lag if x[0] >= 4]
         if late:
             B.append('<p class="sub">Four days or more: ' + "; ".join(
@@ -361,7 +381,7 @@ def main():
     io.open(out, "w", encoding="utf-8").write(doc)
     print(f"/crl/facts: {n_cr} CRLs ({n_all} records); sections {n_head}/{n_read} read 2024+ letters; "
           f"{n_multi} repeat-CRL applications; {len(gaps)} NDA CRL->approval gaps (median "
-          f"{int(statistics.median(gaps)) if gaps else 0} d); {len(stale_status)} openFDA-unapproved but OB-approved; "
+          f"{med_s} d); {len(stale_status)} openFDA-unapproved but OB-approved; "
           f"{len(rescind)} rescission(s); {len(lag)} decision pages with the letter")
     return 0
 

@@ -15,7 +15,8 @@
   },
   {
    "topic": "Study design",
-   "q": "the HOPE-2 study was intended to evaluate the effectiveness of deramiocel on neuromuscular function and was not designed to assess effectiveness for the treatment of cardiomyopathy in patients with DMD"
+   "q": "As stated in your response to an FDA information request [...] the HOPE-2 study was intended to evaluate the effectiveness of deramiocel on neuromuscular function and was not designed to assess effectiveness for the treatment of cardiomyopathy in patients with DMD",
+   "note": "The date of the information request is redacted in the released letter."
   },
   {
    "topic": "Secondary and exploratory endpoints",
@@ -31,7 +32,7 @@
   },
   {
    "topic": "What the FDA recommended",
-   "q": "we recommend that you conduct adequate and well-controlled study(ies), whose primary objective is evaluation of cardiac outcomes in deramiocel-treated patients with DMD cardiomyopathy, compared to a randomized, concurrent control group"
+   "q": "If you wish to seek approval of deramiocel for treatment of cardiomyopathy in patients with DMD, we recommend that you conduct adequate and well-controlled study(ies), whose primary objective is evaluation of cardiac outcomes in deramiocel-treated patients with DMD cardiomyopathy, compared to a randomized, concurrent control group over an appropriate duration of follow up"
   },
   {
    "topic": "Deadline",
@@ -71,7 +72,7 @@
    "date": "2025-09-25",
    "time": "7:15 a.m.",
    "who": "Capricor",
-   "what": "After a Type A meeting, Capricor says \"The HOPE-3 clinical trial should serve as the \"additional study\" requested in the CRL\" and \"All CMC items identified in the CRL have been addressed and communicated to the FDA.\"",
+   "what": "After a Type A meeting, Capricor says \"The HOPE-3 clinical trial should serve as the 'additional study' requested in the CRL\" and \"All CMC items identified in the CRL have been addressed and communicated to the FDA.\"",
    "url": "https://www.globenewswire.com/news-release/2025/09/25/3156168/0/en/Capricor-Therapeutics-Provides-Regulatory-Update-on-Deramiocel-Program-for-Duchenne-Muscular-Dystrophy-Following-Type-A-Meeting.html",
    "src": "Capricor release"
   },
@@ -79,7 +80,7 @@
    "date": "2025-12-03",
    "time": "7:20 a.m.",
    "who": "Capricor",
-   "what": "HOPE-3 topline: primary endpoint PUL v2.0 (n=105), p=0.029; key secondary LVEF (n=83), p=0.041.",
+   "what": "Capricor reports HOPE-3 topline results: primary endpoint PUL v2.0 (n=105), p=0.029; key secondary endpoint LVEF (n=83), p=0.041.",
    "url": "https://www.globenewswire.com/news-release/2025/12/03/3198753/0/en/Capricor-Therapeutics-Announces-Positive-Topline-Results-from-Pivotal-Phase-3-HOPE-3-Study-of-Deramiocel-in-Duchenne-Muscular-Dystrophy.html",
    "src": "Capricor release"
   },
@@ -108,12 +109,12 @@
    "src": "Capricor release"
   },
   {
-   "date": "2026-07-29",
-   "time": "",
-   "who": "FDA advisory committee",
-   "what": "The committee votes \"(3 for, 9 against, 0 abstain)\"; Capricor says the question \"addressed a narrower indication than Capricor had proposed\".",
+   "date": "2026-07-30",
+   "time": "9:30 a.m.",
+   "who": "Capricor",
+   "what": "Capricor reports that at the public meeting on July 29, 2026 the committee voted \"(3 for, 9 against, 0 abstain)\", and says the voting question \"addressed a narrower indication than Capricor had proposed\".",
    "url": "https://www.globenewswire.com/news-release/2026/07/30/3336165/0/en/Capricor-Therapeutics-Provides-Update-on-FDA-Advisory-Committee-Meeting-for-Deramiocel.html",
-   "src": "Capricor release, July 30, 2026, 9:30 a.m."
+   "src": "Capricor release"
   },
   {
    "date": "2026-08-24",
@@ -140,8 +141,8 @@
   },
   {
    "topic": "The study asked for",
-   "fda": "A study \"whose primary objective is evaluation of cardiac outcomes\" against \"a randomized, concurrent control group\".",
-   "co": "September 25, 2025: \"The HOPE-3 clinical trial should serve as the \"additional study\" requested in the CRL.\" HOPE-3's primary endpoint is PUL v2.0 (upper limb); LVEF (cardiac) is its key secondary endpoint (December 3, 2025)."
+   "fda": "\"If you wish to seek approval of deramiocel for treatment of cardiomyopathy in patients with DMD\", a study \"whose primary objective is evaluation of cardiac outcomes\" against \"a randomized, concurrent control group\".",
+   "co": "September 25, 2025: \"The HOPE-3 clinical trial should serve as the 'additional study' requested in the CRL.\""
   },
   {
    "topic": "Manufacturing (CMC)",
@@ -216,8 +217,8 @@
    ]
   },
   {
-   "what": "Capricor's comments on the FDA briefing materials",
-   "when": "2026-07-27 11:00 a.m., during the session; when the FDA posted the materials is not in these sources",
+   "what": "FDA briefing materials posted; Capricor comments on them",
+   "when": "Capricor's comments 2026-07-27 11:00 a.m., during the session; when the FDA posted the materials is not in these sources, and the span includes the weekend of July 25 and 26",
    "before": [
     "2026-07-24",
     19.7
@@ -229,7 +230,7 @@
   },
   {
    "what": "Advisory committee vote (July 29)",
-   "when": "results released 2026-07-30 9:30 a.m.; the price file shows no volume on July 29",
+   "when": "vote at the public meeting 2026-07-29; Capricor's release 2026-07-30 9:30 a.m., at the open; the price file shows no volume on July 29",
    "before": [
     "2026-07-28",
     6.57

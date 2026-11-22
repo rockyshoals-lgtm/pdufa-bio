@@ -36,7 +36,8 @@ CHEMISTRY MANUFACTURING CONTROLS CMC OTHER ADDITIONAL COMMENTS BIOEQUIVALENCE EF
 REQUIREMENTS COMMITMENTS DRUG SUBSTANCE ASSAY STERILITY BIOANALYTICAL ABUSE DEPENDENCE INSTRUCTIONS FOR USE PATIENT
 MEDICATION GUIDE PACKAGE INSERT AND OF THE TO A IN ON WITH STUDY STUDIES DATA INTEGRITY BIOMETRICS CLINICAL/STATISTICAL
 REGULATORY SECTION PHARMACOKINETICS DOSING DOSE PRODUCT/CMC COMBINATION FINANCIAL DISCLOSURE ENVIRONMENTAL ASSESSMENT
-ESTABLISHMENT ESTABLISHMENTS COMPLIANCE CURRENT GOOD PRACTICE CGMP NOMENCLATURE QUALITY/MICROBIOLOGY""".split())
+ESTABLISHMENT ESTABLISHMENTS COMPLIANCE CURRENT GOOD PRACTICE CGMP NOMENCLATURE QUALITY/MICROBIOLOGY
+BIOSTATISTICS EQUIPMENT""".split())
 SKIP = re.compile(r"^(NDA|BLA|ANDA|COMPLETE RESPONSE|CORRECTED|PAGE|REFERENCE|DEAR|ATTENTION|U\.S\.|FOOD AND DRUG)", re.I)
 
 
@@ -45,7 +46,14 @@ TITLE_OK = {"clinical and statistical", "clinical", "statistical", "product qual
             "product quality microbiology", "prescribing information", "carton and container labeling",
             "proprietary name", "additional comments", "other", "biopharmaceutics", "device", "immunogenicity",
             "clinical/statistical", "pharmacology/toxicology", "chemistry, manufacturing, and controls",
-            "facilities", "risk evaluation and mitigation strategy", "medication guide", "data integrity"}
+            "facilities", "risk evaluation and mitigation strategy", "medication guide", "data integrity",
+            # 2026-11-22 (CRL red team): headings the FDA prints that the first vocabulary missed
+            "clinical and biostatistics", "chemistry, manufacturing, and controls (cmc)",
+            "cmc [facility and equipment]"}
+# Version of the reading rules. A letter cached under an older version that yielded no deficiency section is read
+# again (within --limit), so a widened vocabulary reaches letters already in the cache.
+VERSION = 2
+ENUM = re.compile(r"^(?:\(?(?:\d{1,2}|[A-Za-z]|[IVX]{1,4})[.)]\s+)")
 # sections that name a deficiency, as opposed to the administrative ones nearly every letter carries
 SUBSTANTIVE = {"Clinical", "Clinical and Statistical", "Statistical", "Clinical/Statistical", "Product Quality",
                "Product Quality Microbiology", "Microbiology", "Facility Inspections", "Facilities",
@@ -57,7 +65,7 @@ SUBSTANTIVE = {"Clinical", "Clinical and Statistical", "Statistical", "Clinical/
 def headings_from_text(txt):
     out = []
     for line in txt.splitlines():
-        t = re.sub(r"\s+", " ", line).strip().rstrip(":")
+        t = ENUM.sub("", re.sub(r"\s+", " ", line).strip()).rstrip(":").strip()   # "1. PRODUCT QUALITY" -> its words
         if t.lower() in TITLE_OK and t != t.upper():
             h = t[0].upper() + t[1:]
             if h.lower() not in {x.lower() for x in out}:
@@ -110,12 +118,14 @@ def main():
     done = 0
     for L in letters:
         fn = L.get("file_name")
-        if not fn or fn in cache:
+        old = cache.get(fn)
+        if not fn or (old and (old.get("v", 1) >= VERSION or not old.get("text_layer")
+                               or substantive_sections(fn, cache))):
             continue
         if a.limit and done >= a.limit:
             break
         url = "https://download.open.fda.gov/crl/" + urllib.parse.quote(fn)
-        rec = {"application_number": L.get("application_number"), "letter_date": L.get("letter_date")}
+        rec = {"application_number": L.get("application_number"), "letter_date": L.get("letter_date"), "v": VERSION}
         try:
             data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "pdufa.bio rockyshoals@gmail.com"}),
                                           timeout=60).read()

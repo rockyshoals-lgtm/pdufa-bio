@@ -218,7 +218,10 @@ def page_line(doc, day=None):
     elif SEC.search(val):
         sm = SEC.search(val)
         src = f"SEC filing {sm.group(1)}, filed {pretty(sm.group(2))}"
-    elif val.startswith("Verified") and not (daf or letter or fann):
+    elif val.startswith("Verified") and not (daf or letter or fann) and not (
+            crl and "FDA Complete Response Letter" in val):
+        # 2026-11-22 (CRL red team): a page verified against the FDA's own CRL already shows the FDA's day from the
+        # letter card; the same letter is not the company's announcement, so it is not listed again as one.
         m = re.match(r"Verified \d{4}-\d{2}-\d{2}: (.+)$", val)
         if m:
             src = esc(_named(m.group(1), None))

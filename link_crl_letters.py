@@ -63,6 +63,42 @@ def _sec_names():
 
 
 SEC_NAMES = _sec_names()
+# 2026-11-22 (CRL red team): a shared word counts only when it is DISTINCTIVE -- found in at most two SEC
+# registrant names. "Bio", "Thera" style words that survive STOP but name dozens of companies never match alone.
+_TOKN = {}
+for _n in SEC_NAMES.values():
+    for _w in toks(_n):
+        _TOKN[_w] = _TOKN.get(_w, 0) + 1
+
+
+def distinctive(shared):
+    return {w for w in shared if _TOKN.get(w, 0) <= 2}
+
+
+GENERIC = {"combination", "system", "therapy", "therapies", "injection", "tablets", "tablet", "capsules", "capsule",
+           "solution", "suspension", "extended", "release", "delayed", "dosage", "forms", "form", "intravenous",
+           "subcutaneous", "topical", "ophthalmic", "inhalation", "powder", "vaccine", "approval", "label", "expansion",
+           "pediatric", "adult", "adults", "patients", "treatment", "supplemental", "application", "resubmission",
+           "complete", "response", "letter", "phase", "trial", "study", "oral", "nasal", "spray", "film", "kit", "plus"}
+
+
+def drug_words(name):
+    """The drug's own words: parenthesized text (trial names, codes) and generic dosage/label words dropped."""
+    name = re.sub(r"\([^)]*\)", " ", str(name or ""))
+    return [w for w in re.findall(r"[A-Za-z][A-Za-z-]{4,}", name)
+            if w.lower() not in STOP and w.lower() not in GENERIC]
+
+
+def named_in(words, text):
+    """First drug word named in the letter: the 'Please refer to your ... for X' clause first, then anywhere."""
+    t = re.sub(r"\s+", " ", str(text or ""))
+    ref = re.search(r"refer to your[^.]{0,400}", t, re.I)
+    for scope in ([ref.group(0)] if ref else []) + [t]:
+        for w in words:
+            m = re.search(r"\b" + re.escape(w) + r"\b", scope, re.I)
+            if m:
+                return w, scope, m
+    return None
 LEDGER = os.path.join(HERE, "_decision_verification.json")
 
 
@@ -118,7 +154,14 @@ def main():
             continue
         tk, dcd = m.group(1), m.group(2)
         doc = io.open(p, encoding="utf-8", errors="replace").read()
-        if not re.search(r"CRL|Complete Response", doc[:3000], re.I):
+        # 2026-11-22 (CRL red team): the old gate searched doc[:3000], which holds the stylesheet's ".crl" class, so
+        # it let 332 of 483 pages through, approvals included. The page must SAY it is a CRL: its title or heading,
+        # its outcome badge, its price-inferred CRL badge, or the verification ledger's claimed outcome.
+        _t = re.search(r"<title>([^<]*)</title>", doc)
+        _h = re.search(r"<h1[^>]*>(.*?)</h1>", doc, re.S)
+        _head = (_t.group(1) if _t else "") + " " + (_h.group(1) if _h else "")
+        if not (re.search(r"\bCRL\b|Complete Response", _head) or 'class="badge crl"' in doc
+                or "price consistent with a CRL" in doc or (ledger.get(slug) or {}).get("claimed") == "crl"):
             continue                     # approvals and withdrawals have other sources
         # The LETTER is dated the FDA action day; our page often carries the company's
         # ANNOUNCEMENT day (ACHV: goal Fri Jun 20, announced Mon Jun 22). Accept a
@@ -144,7 +187,24 @@ def main():
             # none, and the same for Aquestive's Anaphylm letter (NDA 219870, 2026-01-30). The SEC's own
             # ticker -> registrant name file (sec_ticker_cik.json) is the next owner of the name.
             page_co = toks(_html.unescape(cm.group(1))) if cm else (toks(SEC_NAMES.get(tk)) or toks(tk))
-        hits = hand or [(iso, r) for iso, r in cands if toks(r.get("company_name")) & page_co]
+        # 2026-11-22 (CRL red team): a same-window letter must share a DISTINCTIVE company word, and where the page
+        # names its drug (title, ledger, dataset row), the letter must name it too or carry an application number
+        # the page cites. A wrong primary source is worse than none.
+        page_drug = drug_words(" ".join([
+            re.sub(r"\s+(?:CRL|Approved)\b.*$", "", _t.group(1)) if _t and not _t.group(1).startswith(tk + " ") else "",
+            str((ledger.get(slug) or {}).get("asset") or ""), str((row or {}).get("name") or "")]))
+
+        def _fits(r_):
+            if not distinctive(toks(r_.get("company_name")) & page_co):
+                return False
+            if not page_drug:
+                return True
+            if named_in(page_drug, r_.get("text")):
+                return True
+            return any(re.sub(r"\D", "", a.split("/")[0]) in re.sub(r"\D", " ", doc).split()
+                       for a in (r_.get("application_number") or []))
+
+        hits = hand or [(iso, r) for iso, r in cands if _fits(r)]
         if not hits:
             # 2026-11-18 (design red team, change 2): /fda-decision/CAPR-2025-07-11 linked Capricor's letter but
             # said it was "dated July 11, 2025"; the PDF says July 9. The page has no Company row and is not a
@@ -153,6 +213,8 @@ def main():
             own = set(re.findall(r'href="https://download\.open\.fda\.gov/crl/([^"]+?\.pdf)"', doc))
             hits = [(iso, r) for iso, r in cands if str(r.get("file_name") or "").strip() in own]
         if len(hits) != 1:
+            if not hits and B in doc:
+                print(f"  NOTE {slug}: carries a letter card that no longer matches; card left as is -- check by hand")
             if len(hits) > 1:
                 print(f"  SKIP {slug}: {len(hits)} same-day letters match the company "
                       f"-- resolve by hand")
@@ -169,7 +231,10 @@ def main():
         url = "https://download.open.fda.gov/crl/" + _urlq(fn)
         dated = (f"dated {pretty(letter_iso)}" if not f.get("letter_type_note")
                  else f"dated {pretty(letter_iso)} (a corrected letter; it states the action date remains {pretty(action)})")
-        ann = "" if action == dcd else f" The company announced the decision on {pretty(dcd)}; the FDA acted on {pretty(action)}."
+        # 2026-11-22 (CRL red team): "the company announced the decision on <page date>" had no source on some pages;
+        # what is known is the letter's date and the date this page is filed under.
+        ann = "" if action == dcd else (f" The letter records that the FDA acted on {pretty(action)}. This page is filed under {pretty(dcd)}."
+                                        if action != letter_iso else f" This page is filed under {pretty(dcd)}.")
         card = (f'{B}<div style="background:#0c1d38;border:1px solid #2a496f;'
                 f'border-radius:10px;padding:11px 14px;margin:10px 0 14px;'
                 f'font-size:14px"><b style="color:#e3ba5e">The FDA\'s own letter</b> '
@@ -232,18 +297,20 @@ def main():
         # the FDA's own record of the letter (openFDA text), so a same-company letter for another drug never counts.
         ve = ledger.get(slug)
         if ve and ve.get("status") == "unverified" and ve.get("claimed") == "crl":
-            words = [w for w in re.findall(r"[A-Za-z]{5,}", str(ve.get("asset") or "")) if w.lower() not in STOP]
-            ltxt = str(r.get("text") or "")
-            hit = next((w for w in words if re.search(r"\b" + re.escape(w) + r"\b", ltxt, re.I)), None)
-            if hit:
-                m_ = re.search(r"\b" + re.escape(hit) + r"\b", ltxt, re.I)
+            found = named_in(drug_words(ve.get("asset")), r.get("text"))
+            if found:
+                hit, scope, m_ = found
+                # the quote starts and ends on whole words of the openFDA OCR text
+                a_, b_ = max(0, m_.start() - 60), min(len(scope), m_.end() + 40)
+                a_ = scope.rfind(" ", 0, a_) + 1 if a_ else 0
+                b_ = scope.find(" ", b_) if scope.find(" ", b_) != -1 else len(scope)
                 ledger[slug] = dict(ve, status="verified_crl", evidence={
                     "kind": "primary", "source_url": url,
                     "source_label": f"FDA Complete Response Letter, {app}, {pretty(letter_iso)}",
-                    "quote": re.sub(r"\s+", " ", ltxt[max(0, m_.start() - 60):m_.end() + 40]).strip(),
+                    "quote": scope[a_:b_].strip(),
                     "quote_source": "openFDA transparency/crl record of this letter (text field)",
                     "quote_checked": dt.date.today().isoformat(),
-                    "fda_action_date": action, "announced": dcd})
+                    "fda_action_date": action})
                 ledger_changed += 1
                 print(f"  /fda-decision/{slug}: verification ledger -> verified_crl ({hit!r} named in the letter)")
     if ledger_changed:

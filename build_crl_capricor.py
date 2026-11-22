@@ -70,21 +70,41 @@ def main():
         return 0
     text = norm(first.get("text"))
     quotes, dropped = [], 0
+    def in_letter(q_):
+        # a quote may skip a redaction or a clause, marked "[...]"; every part must be in the letter, in order
+        at = 0
+        for part in [x.strip(" ,") for x in q_.split("[...]")]:
+            i = text.find(norm(part), at)
+            if i < 0:
+                return False
+            at = i + len(norm(part))
+        return True
+
     for q in case["letter_quotes"]:
-        if norm(q["q"]) in text:
+        if in_letter(q["q"]):
             quotes.append(q)
         else:
             dropped += 1
             print(f"  WARN quote not found in the FDA's released text, dropped: {q['q'][:70]}")
     heads = [h for h in case["letter_headings_present"] if norm(h) in text]
+    # the side-by-side table's FDA column quotes the letter too: each quoted piece is checked, the row dropped if any misses
+    sbs = []
+    for s_ in case["side_by_side"]:
+        bad = [x for x in re.findall(r'"([^"]+)"', s_["fda"]) if norm(x).rstrip(".") not in text]
+        if bad:
+            dropped += 1
+            print(f"  WARN side-by-side quote not found in the FDA's released text, row dropped: {bad[0][:70]}")
+        else:
+            sbs.append(s_)
+    last_upd = str((raw.get("meta") or {}).get("last_updated") or "") if isinstance(raw, dict) else ""
     later = sorted((r for r in mine if r is not first and str(r.get("letter_type")) == "COMPLETE RESPONSE"),
                    key=lambda r: r.get("letter_date", "")[-4:] + r.get("letter_date", ""))
     second_released = later[-1] if later else None
 
     pdf = "https://download.open.fda.gov/crl/" + case["letter_file"]
     title = "Capricor Deramiocel CRLs: FDA Letter vs. Company Statements | pdufa.bio"
-    desc = ("Capricor's two Complete Response Letters for deramiocel (BLA 125842): the FDA's own words, the "
-            "company's statements, a dated timeline in ET, and closes around each step.")
+    desc = ("Capricor's two CRLs for deramiocel (BLA 125842): the FDA's words beside the company's, a dated "
+            "timeline in ET, and closes around each step.")
     B = []
     B.append('<h1>Capricor and deramiocel: <span class="g">two Complete Response Letters</span></h1>')
     B.append(f'<p class="sub">{esc(case["company"])} applied for approval of {esc(case["drug"])} for '
@@ -97,13 +117,15 @@ def main():
     rows = [("Application", esc(case["application"])),
             ("First CRL", f'dated {pretty(case["letter_date"])}; <a href="{esc(pdf)}" rel="noopener">the FDA\'s letter (PDF)</a>'),
             ("Resubmission", "Class 2; PDUFA date August 22, 2026, moved to November 22, 2026 (Capricor)"),
-            ("Advisory committee", 'July 29, 2026: 3 for, 9 against, 0 abstain (Capricor); '
+            ("Advisory committee", 'Capricor reports a vote of 3 for, 9 against, 0 abstain at the July 29, 2026 meeting; '
                                    f'<a href="{esc(case["pages"]["adcomm"])}">meeting page</a>'),
             ("Second CRL", "announced by Capricor November 20, 2026, 7:55 p.m. ET, after the market close"),
             ("Second letter's text", (f'in the FDA\'s release: <a href="https://download.open.fda.gov/crl/'
                                       f'{esc(second_released.get("file_name"))}" rel="noopener">letter dated '
                                       f'{esc(second_released.get("letter_date"))} (PDF)</a>') if second_released
-             else f"not in the FDA's CRL release as of the snapshot read for this page ({esc(snap)})")]
+             else (f"not in the FDA's CRL release as of the snapshot read for this page ({esc(snap)}; openFDA last "
+                   f"updated {esc(last_upd)}"
+                   + (", before Capricor's November 20, 2026 announcement)" if last_upd and last_upd < "2026-11-20" else ")")))]
     for k, v in rows:
         B.append(f'<tr><td class="dt">{esc(k)}</td><td>{v}</td></tr>')
     B.append('</table>')
@@ -112,16 +134,18 @@ def main():
              f'letter (<a href="{esc(pdf)}" rel="noopener">PDF</a>); each quote is checked against the text of the '
              f'letter in the FDA\'s own release (openFDA transparency/crl) every time this page is built.</p><table><tr><th>Topic</th><th>The letter</th></tr>')
     for q in quotes:
-        B.append(f'<tr><td class="dt">{esc(q["topic"])}</td><td>&ldquo;{esc(q["q"])}&rdquo;</td></tr>')
+        B.append(f'<tr><td class="dt">{esc(q["topic"])}</td><td>&ldquo;{esc(q["q"]).replace("[...]", "[&hellip;]")}&rdquo;'
+                 + (f' <span style="font-size:12.5px">({esc(q["note"])})</span>' if q.get("note") else "") + '</td></tr>')
     B.append('</table>')
     if heads:
         B.append('<p class="sub">The letter also has sections headed ' + " and ".join(
-            f'&ldquo;{esc(h)}&rdquo;' for h in heads) + '. The released version shows no text under either '
-            'heading, so what the FDA wrote about manufacturing is not public.</p>')
+            f'&ldquo;{esc(h)}&rdquo;' for h in heads) + '. In the released text the pages after these headings '
+            'are blank and the numbered items resume at item 13, so what the FDA wrote about manufacturing is not in '
+            'the released version.</p>')
 
     B.append('<h2>The letter and the company, side by side</h2><table><tr><th>Topic</th><th>FDA letter, '
              'July 9, 2025</th><th>Capricor</th></tr>')
-    for s in case["side_by_side"]:
+    for s in sbs:
         B.append(f'<tr><td class="dt">{esc(s["topic"])}</td><td>{esc(s["fda"])}</td><td>{esc(s["co"])}</td></tr>')
     B.append('</table>')
 
