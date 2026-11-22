@@ -1,0 +1,27 @@
+Subject: pdufa.bio weekly: 6 FDA decisions recorded, 3 goal dates ahead
+
+pdufa.bio weekly FDA alert, November 22, 2026
+
+FDA DECISIONS RECORDED THIS WEEK
+- Mon Nov 16: CYTK Aficamten (MAPLE-HCM). Outcome on record: Approved. Source: NDA 219083 S-002 https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219083
+- Mon Nov 16: TEVA IGALMI (dexmedetomidine sublingual film) (SERENITY At-Home). Outcome on record: Approved. Source: NDA 215390 S-003 https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215390
+- Mon Nov 16: RHHBY Giredestrant (+ everolimus). Outcome on record: Approved. Source: Novel Drug Approvals https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026
+- Tue Nov 17: GSK Neladalkib (NVL-655) (ALKOVE-1). Outcome on record: Approved. Source: Novel Drug Approvals https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026
+- Wed Nov 18: REGN Cemdisiran (C5 RNAi) (NIMBLE). Outcome on record: Approved. Source: Novel Drug Approvals https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026
+- Fri Nov 20: CAPR Deramiocel (CAP-1002) (HOPE-3). Outcome on record: CRL. Source: Capricor Therapeutics press release https://www.globenewswire.com/news-release/2026/11/21/3407877/0/en/capricor-therapeutics-provides-regulatory-update-on-deramiocel-bla-for-duchenne-muscular-dystrophy.html
+
+PDUFA GOAL DATES, NEXT SEVEN DAYS
+- Sun Nov 22: SVRA MOLBREEVI (molgramostim inhalation) (IMPALA-2) (confirmed) https://www.pdufa.bio/pdufa/SVRA-molbreevi
+- Fri Nov 27: BBIO BBP-418 (ribitol) (FORTIFY) (confirmed) https://www.pdufa.bio/pdufa/BBIO-bbp-418
+- Sat Nov 28: PYPD D-PLEX100, prevention of surgical site infections (confirmed) https://www.pdufa.bio/pdufa/PYPD-d-plex100
+
+Goal dates are the FDA's target action dates as disclosed by the company. The FDA can act earlier or later.
+Full calendar: https://www.pdufa.bio/calendar
+
+Facts only: dates and outcomes as the public record shows them, with sources. Not investment advice, and not a recommendation to buy or sell any security. pdufa.bio is not affiliated with the FDA.
+Corrections: https://www.pdufa.bio/corrections
+
+You get this because you signed up and confirmed at pdufa.bio/alerts.
+Unsubscribe (one click): {{UNSUBSCRIBE_URL}}
+Privacy: https://www.pdufa.bio/privacy
+[POSTAL ADDRESS: required by CAN-SPAM, David to supply]
