@@ -301,6 +301,7 @@ def main():
     body.append('<p><a href="/crl/facts">Facts from the released letters</a> (sections cited, repeat CRLs, days to '
                 'approval) &middot; <a href="/crl/companies">every CRL, by company</a> &middot; '
                 '<a href="/crl/offices">which FDA office signed each CRL</a> &middot; '
+                '<a href="/crl/phrases">what the letters say, term by term</a> &middot; '
                 '<a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a> &middot; '
                 '<a href="/feed">follow new letters by feed</a></p>')
     body.append('<p><a href="/decisions/crl">CRL decisions tracked by this site</a> '

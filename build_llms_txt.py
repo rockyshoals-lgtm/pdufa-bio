@@ -192,6 +192,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /fda-approval-letters - the FDA's own record (approval letter, notice or CRL) behind every decision we date
 - /pdufa-date-changes - PDUFA dates the FDA or sponsor moved, with before and after
 - /crl/offices - which FDA division and office signed each released CRL, counted from the letters' signature blocks
+- /crl/phrases - how many released CRLs contain each of a fixed list of regulatory terms in their text, each letter listed at /crl/phrase/<term>
 - /crl/letter/<application>-<date> - one page per released CRL (for example /crl/letter/nda-218995-2026-06-20): the letter's text as the FDA released it, its facts and its PDF
 - /feed - Atom feeds: /feed/decisions.xml (sourced FDA decisions and goal-date changes) and /feed/crl.xml (CRLs as the FDA releases them)
 - /adcomm - advisory committee meetings and outcomes
