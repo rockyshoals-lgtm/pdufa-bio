@@ -99,7 +99,8 @@ def main():
             raw = re.sub(r'(<div class="legal"[^>]*>.*?)(</div>)',
                          r"\1 Past behaviour does not predict future outcomes.\2", raw, count=1, flags=re.S)
         rel = os.path.relpath(p, SITE).replace("\\", "/")
-        # the FDA's own words on /crl/letter pages are kept as released, stutters included (crl_verbatim.py)
+        # quoted text is kept as recorded, stutters included (crl_verbatim.py): the FDA's words on /crl/letter pages and
+        # the dataset values in the /changes record table
         txt = strip_verbatim(STRIP.sub(" ", raw), p)
         for node in re.findall(r">([^<]{6,})<", txt):
             rp = repeat(html.unescape(node))
