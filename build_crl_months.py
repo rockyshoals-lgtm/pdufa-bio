@@ -39,6 +39,16 @@ B, E = "<!--CRLMONTHS:BEGIN-->", "<!--CRLMONTHS:END-->"
 esc = lambda s: html.escape(str(s or "").strip(), quote=True)
 
 
+def _text_pages():
+    """{(PDF file, ISO date): /crl/letter slug}, the per-letter pages build_crl_letters.py writes (2026-11-23)."""
+    from build_feeds import crl_letters            # a failure here fails the build: no silent loss of the links
+    from build_crl_letters import by_file_date
+    return by_file_date(crl_letters(include_rescinded=True)[0])
+
+
+TEXT = _text_pages()
+
+
 def corpus():
     p = newest_corpus() or os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
     raw = json.load(io.open(p, encoding="utf-8"))
@@ -55,7 +65,8 @@ def corpus():
         out.append({"iso": f"{m.group(3)}-{m.group(1)}-{m.group(2)}", "company": str(r.get("company_name") or "").strip(),
                     "app": ", ".join(apps) if isinstance(apps, list) else str(apps or ""),
                     "status": str(r.get("approval_status") or "").strip(),
-                    "url": "https://download.open.fda.gov/crl/" + _q(fn)})
+                    "url": "https://download.open.fda.gov/crl/" + _q(fn), "fn": fn,
+                    "cr": str(r.get("letter_type") or "") == "COMPLETE RESPONSE"})
     return out, upd
 
 
@@ -88,7 +99,9 @@ def page(y, m, letters, ours, n_dec, upd, prev_, next_):
     desc = (f"FDA complete response letters {name}: {n} released by the FDA (openFDA), {len(ours)} among the PDUFA "
             f"decisions pdufa.bio tracked. Counts and sources only.")[:158]
     rows = "".join(f'<tr><td class="dt">{l["iso"]}</td><td>{esc(l["company"][:48])}</td><td>{esc(l["app"][:28])}</td>'
-                   f'<td>{esc(l["status"])}</td><td><a href="{esc(l["url"])}" rel="noopener">letter (PDF)</a></td></tr>'
+                   f'<td>{esc(l["status"])}</td><td><a href="{esc(l["url"])}" rel="noopener">letter (PDF)</a>'
+                   + (f' &middot; <a href="/crl/letter/{TEXT[(l["fn"], l["iso"])]}">its text</a>'
+                      if l.get("cr") and (l.get("fn"), l["iso"]) in TEXT else '') + '</td></tr>'
                    for l in sorted(letters, key=lambda x: x["iso"], reverse=True))
     trows = "".join(f'<tr><td class="dt">{iso}</td><td>{esc(t)}</td><td>{esc(drug[:60])}</td>'
                     f'<td><a href="{href}">decision page</a></td></tr>' for iso, t, drug, href in sorted(ours, reverse=True))
