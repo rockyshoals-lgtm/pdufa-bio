@@ -1,0 +1,210 @@
+{
+ "daf": {
+  "first": "2025-01-01",
+  "last": "2026-11-18",
+  "fetched": "2026-11-23",
+  "read_first": "2026-11-12",
+  "n_orig": 283,
+  "n_supp": 459,
+  "orig_by_weekday": [
+   28,
+   44,
+   62,
+   60,
+   89,
+   0,
+   0
+  ],
+  "supp_by_weekday": [
+   51,
+   63,
+   81,
+   101,
+   160,
+   3,
+   0
+  ],
+  "n_gas": 9,
+  "gas_weekend": 4,
+  "weekend": [
+   [
+    "NDA215985",
+    "SUPPL-12",
+    "2025-10-04"
+   ],
+   [
+    "NDA022526",
+    "SUPPL-13",
+    "2025-12-13"
+   ],
+   [
+    "NDA207947",
+    "SUPPL-14",
+    "2026-05-23"
+   ]
+  ],
+  "holidays": []
+ },
+ "orange_book": {
+  "n": 3977,
+  "n_undated_left_out": 1574,
+  "n_mixed": 146,
+  "not_001": 185,
+  "first": "1982-01-05",
+  "last": "2026-10-30",
+  "files_dated": "2026-11-13",
+  "by_weekday": [
+   537,
+   650,
+   700,
+   795,
+   1283,
+   10,
+   2
+  ],
+  "weekend": [
+   [
+    18582,
+    "1982-05-08"
+   ],
+   [
+    19115,
+    "1985-01-12"
+   ],
+   [
+    19345,
+    "1985-01-26"
+   ],
+   [
+    20632,
+    "1997-11-22"
+   ],
+   [
+    20934,
+    "1999-02-28"
+   ],
+   [
+    21527,
+    "2004-11-27"
+   ],
+   [
+    21350,
+    "2005-05-07"
+   ],
+   [
+    21807,
+    "2005-10-29"
+   ],
+   [
+    22519,
+    "2011-04-23"
+   ],
+   [
+    208510,
+    "2017-01-28"
+   ],
+   [
+    210132,
+    "2018-10-28"
+   ],
+   [
+    209472,
+    "2020-02-08"
+   ]
+  ],
+  "both": 184,
+  "later": [
+   [
+    "NDA220482",
+    "2026-05-29",
+    "2026-08-27"
+   ],
+   [
+    "NDA218145",
+    "2026-07-24",
+    "2026-10-30"
+   ]
+  ],
+  "earlier": 0
+ },
+ "study_n": 41,
+ "goal_rows": [
+  {
+   "slug": "ACHV-2026-06-22",
+   "goal": "2026-06-20",
+   "actual": "2026-06-20",
+   "kind": "complete response letter"
+  },
+  {
+   "slug": "CORT-2026-03-25",
+   "goal": "2026-07-11",
+   "actual": "2026-03-25",
+   "kind": "approval letter"
+  },
+  {
+   "slug": "MNKD-2026-07-24",
+   "goal": "2026-07-26",
+   "actual": "2026-07-23",
+   "kind": "corrected approval letter"
+  },
+  {
+   "slug": "REPL-2026-08-06",
+   "goal": "2026-08-02",
+   "actual": "2026-08-06",
+   "kind": "FDA web notice"
+  },
+  {
+   "slug": "RARE-2026-08-19",
+   "goal": "2026-08-23",
+   "actual": "2026-08-19",
+   "kind": "approval letter"
+  },
+  {
+   "slug": "RARE-2026-09-17",
+   "goal": "2026-09-19",
+   "actual": "2026-09-17",
+   "kind": "approval letter"
+  },
+  {
+   "slug": "INCY-2026-09-25",
+   "goal": "2026-09-26",
+   "actual": "2026-09-25",
+   "kind": "approval letter"
+  },
+  {
+   "slug": "IRD-2026-10-16",
+   "goal": "2026-10-17",
+   "actual": "2026-10-16",
+   "kind": "Drugs@FDA action date"
+  },
+  {
+   "slug": "PHAR-2026-09-11",
+   "goal": "2026-10-24",
+   "actual": "2026-09-11",
+   "kind": "approval letter"
+  },
+  {
+   "slug": "CYTK-2026-11-16",
+   "goal": "2026-11-14",
+   "actual": "2026-11-13",
+   "kind": "Drugs@FDA action date"
+  },
+  {
+   "slug": "SMMT-2026-11-15",
+   "goal": "2026-11-14",
+   "actual": "2026-11-13",
+   "kind": "complete response letter"
+  },
+  {
+   "slug": "TEVA-2026-11-16",
+   "goal": "2026-11-14",
+   "actual": "2026-11-13",
+   "kind": "Drugs@FDA action date"
+  }
+ ],
+ "lede": "Of the 283 original NDA and BLA approvals in Drugs@FDA (medical gases aside) from January 1, 2025 to November 18, 2026, 89 (31%) carry a Friday action date and none a Saturday or Sunday date. Of the 459 efficacy supplement approvals, 160 (35%) are Fridays and 3 fall on a weekend.",
+ "goal_lede": "Of the 41 sourced 2026 decisions in our timing study, 12 had a goal date on a Saturday, Sunday or federal holiday. The FDA record is dated before the goal date in 10 of them (7 within 3 days before, 5 of those on the Friday just before), on the goal date in 1 and after it in 1. None of these goal dates fell on a federal holiday. The record dated after the goal date is an FDA web notice.",
+ "ob_lede": "For NDAs since 1982, the Orange Book, the FDA's list of approved drug products, gives a longer record. Of the 3,977 NDAs with an approval date on every product they list, from January 5, 1982 to October 30, 2026, the earliest date listed is a Friday for 1,283 (32%) and a Saturday or Sunday for 12.",
+ "title": "FDA Approval Dates by Day of the Week: 742 Actions Counted | pdufa.bio",
+ "desc": "89 of 283 original FDA drug approvals since 2025 are dated on a Friday. Weekday counts from Drugs@FDA and the Orange Book, with every record as data."
+}

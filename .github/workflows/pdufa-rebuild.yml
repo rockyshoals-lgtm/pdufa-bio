@@ -755,6 +755,9 @@ jobs:
           # audit 2026-10-03 item 3.4: one fact-first sentence (dates + city) under every /conference h1
           python inject_conference_lede.py
           python build_early_decisions.py
+          # 2026-11-23 (audit move 8): weekday of every dated NDA first approval in the Orange Book, and the 2026
+          # decisions with a weekend or holiday goal date. Reads build_early_decisions' rows, so it runs after it.
+          python build_fda_approval_weekdays.py || echo "::warning::/research/fda-approval-weekdays not rebuilt"
           python add_amlx_avexitide.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
@@ -1258,6 +1261,7 @@ jobs:
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
           git add -f pdufa_site_src/changes/data/row-history.csv 2>/dev/null || true   # *.csv is ignored; the /changes download
+          git add -f pdufa_site_src/research/fda-approval-weekdays/data/drugs-at-fda-approval-dates.csv pdufa_site_src/research/fda-approval-weekdays/data/orange-book-nda-dates.csv _fda_approval_weekdays.json 2>/dev/null || true   # the weekday study's download and guard file
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
