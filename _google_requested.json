@@ -1,7 +1,13 @@
 {
+ "/crl": "2026-11-22",
+ "/crl/capricor-deramiocel": "2026-11-22",
+ "/crl/companies": "2026-11-22",
+ "/crl/facts": "2026-11-22",
+ "/decisions/crl": "2026-11-22",
  "/drug/aficamten": "2026-11-20",
  "/drug/cemdisiran": "2026-11-20",
  "/drug/ivonescimab": "2026-11-20",
+ "/fda-decision/CAPR-2026-11-20": "2026-11-22",
  "/fda-decision/CYTK-2026-11-16": "2026-11-20",
  "/fda-decision/GSK-2026-11-17": "2026-11-20",
  "/fda-decision/REGN-2026-11-18": "2026-11-20",
@@ -9,6 +15,10 @@
  "/fda-decision/SMMT-2026-11-15": "2026-11-20",
  "/fda-decision/TEVA-2026-11-16": "2026-11-20",
  "/fda-this-month": "2026-11-20",
+ "/learn/what-is-a-crl": "2026-11-22",
  "/pdufa/CAPR-deramiocel": "2026-11-11",
- "/pdufa/SVRA-molbreevi": "2026-11-11"
+ "/pdufa/COGT-bezuclastinib": "2026-11-22",
+ "/pdufa/PYPD-d-plex100": "2026-11-22",
+ "/pdufa/SVRA-molbreevi": "2026-11-11",
+ "/research/pdufa-stock-run-up-by-market-cap": "2026-11-22"
 }
