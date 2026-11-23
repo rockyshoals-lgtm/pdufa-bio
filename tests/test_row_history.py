@@ -219,6 +219,17 @@ def main():
     if not (desc.startswith("Changes to 12 fields of each row of pdufa.bio's") and f"since {first_day}" in desc
             and f"{led['versions']} " in desc):
         fails.append(f"/changes: the description {desc!r} is not the ledger's")
+    m = re.search(r'<script type="application/ld\+json">(\{"@context":"https://schema.org","@type":"Dataset".*?)'
+                  r'</script>', doc, re.S)
+    ld = json.loads(m.group(1)) if m else {}
+    if not (ld.get("description", "").startswith(
+            f"{len(full):,} changes to 12 fields of each row of pdufa.bio's published PDUFA dataset, read from "
+            f"{led['versions']:,} versions in the public repository between {led['first_ts']} and {led['last_ts']},")
+            and ld.get("temporalCoverage") == f"{first_day}/{led['last_ts'][:10]}"
+            and ld.get("dateModified") == led["last_ts"][:10]
+            and sorted(d.get("contentUrl") for d in ld.get("distribution", [])) ==
+            ["https://www.pdufa.bio/changes/data/row-history.csv", "https://www.pdufa.bio/changes/data/row-history.json"]):
+        fails.append("/changes: the Dataset schema is missing or not the ledger's")
     lede = text_of((re.search(r'data-changes="lede">(.*?)</p>', doc, re.S) or [None, ""])[1])
     want_lede = (f"{len(full):,} changes to 12 fields across {n_ids:,} row ids of pdufa.bio's published dataset, "
                  f"read from {led['versions']:,} versions committed to the public repository between "
