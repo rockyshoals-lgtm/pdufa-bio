@@ -34,13 +34,17 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, HERE)
+from crl_verbatim import strip_verbatim  # noqa: E402
 SITE = os.path.join(HERE, "pdufa_site_src")
 
 NEG = re.compile(r"\bnot\b|\bno\b|\bnever\b|\bisn't\b|\bnot a\b|\brather than\b", re.I)
 
 
-def text_of(doc):
+def text_of(doc, path=""):
     t = re.sub(r"<script.*?</script>", " ", doc, flags=re.S)
+    # the FDA's own words on /crl/letter pages (build_crl_letters.py) are quoted as released, not house copy
+    t = strip_verbatim(t, path)
     t = html.unescape(re.sub(r"<[^>]+>", " ", t))
     return re.sub(r"\s+", " ", t)
 
@@ -50,7 +54,7 @@ def main():
     for p in glob.glob(os.path.join(SITE, "**", "index.html"), recursive=True):
         rel = "/" + os.path.relpath(os.path.dirname(p), SITE).replace("\\", "/")
         rel = "/" if rel == "/." else rel
-        txt = text_of(open(p, encoding="utf-8", errors="replace").read())
+        txt = text_of(open(p, encoding="utf-8", errors="replace").read(), p)
 
         # 1. CRL described as rejection/denial. The negation must live in the SAME clause
         #    (backward window + matched span) -- 'A CRL is not final' one sentence later does

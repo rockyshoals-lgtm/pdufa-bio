@@ -446,6 +446,7 @@ jobs:
           python build_crl_capricor.py
           python build_crl_companies.py   # 2026-11-22: /crl/companies and /crl/company/<slug>, every letter by company
           python build_crl_offices.py     # 2026-11-22: /crl/offices, the FDA division and office each letter's signature names
+          python build_crl_letters.py     # 2026-11-23: /crl/letter/<slug>, one page per released CRL with the FDA's own text
           python build_crl_dataset.py     # 2026-11-22 (moat move 6): /crl/data CSV and JSON, a dated copy per FDA release
 
 
@@ -1240,7 +1241,7 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot

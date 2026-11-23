@@ -29,6 +29,8 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from crl_verbatim import strip_verbatim  # noqa: E402
 SITE = os.path.join(HERE, "pdufa_site_src")
 REVIEW = os.path.join(HERE, "dash_sweep_review.txt")
 
@@ -162,6 +164,7 @@ def main():
                 blocks.append(m.group(0))
                 return f"\x00BLK{len(blocks)-1}\x00"
             html = SKIP_BLOCK.sub(stash, html)
+            html = strip_verbatim(html, p, stash)   # the FDA's own words on /crl/letter pages (crl_verbatim.py)
 
             html = sweep(html, log)
 

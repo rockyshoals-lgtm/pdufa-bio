@@ -21,6 +21,8 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, HERE)
+from crl_verbatim import strip_verbatim  # noqa: E402
 SITE = os.path.join(HERE, "pdufa_site_src")
 
 # Not live routes: scratch copies, backups, the maintenance holding page.
@@ -59,7 +61,7 @@ def main():
     for p in pages():
         n += 1
         html = open(p, encoding="utf-8", errors="replace").read()
-        prose = SCRIPT.sub(" ", html)
+        prose = strip_verbatim(SCRIPT.sub(" ", html), p)   # the FDA's words on /crl/letter pages only
         for m in DASH.finditer(prose):
             dash_hits.append((p, re.sub(r"\s+", " ", prose[max(0, m.start() - 60):m.start() + 50])))
         for need in REQUIRED:
