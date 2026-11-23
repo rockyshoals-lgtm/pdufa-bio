@@ -1,0 +1,23 @@
+{
+  "_comment": "Hand-checked 2026-11-23 (red team of build_crl_bla_approvals.py). For each BLA on /crl/facts' BLA section: the date of the FDA action letter that the Drugs@FDA approval letter says the resubmission (or amendment) was a complete response to, read from that approval letter's own text. null = not read (the text layer of the letter's first page was not returned). A BLA not listed here shows 'not read' on the page until it is added.",
+  "read_on": "2026-11-23",
+  "letters": {
+    "761258": "2024-01-19",
+    "761367": "2024-10-07",
+    "761400": null,
+    "761377": "2025-03-26",
+    "761424": "2025-03-13",
+    "761212": "2024-11-14",
+    "761433": "2024-12-13",
+    "761152": "2021-10-15",
+    "761027": "2025-06-26",
+    "761211": "2025-08-06",
+    "761385": "2025-07-30",
+    "761451": "2025-10-10",
+    "761147": "2025-08-05",
+    "761320": "2025-12-30",
+    "761376": "2025-10-16",
+    "761463": "2025-09-22",
+    "761187": "2025-10-17"
+  }
+}
