@@ -1,6 +1,6 @@
 {
 "2025-01": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761279",
@@ -36,23 +36,23 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219122Orig1s000ltr.pdf"
 },
 {
-"app": "NDA210259",
-"brand": "Calquence",
-"generic": "acalabrutinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-11",
-"class": "Efficacy",
-"date": "2025-01-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210259Orig1s011;216387Orig1s005ltr.pdf"
-},
-{
 "app": "NDA216387",
 "brand": "Calquence",
 "generic": "acalabrutinib",
 "sponsor": "Astrazeneca",
 "kind": "efficacy supplement",
 "sub": "SUPPL-5",
+"class": "Efficacy",
+"date": "2025-01-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210259Orig1s011;216387Orig1s005ltr.pdf"
+},
+{
+"app": "NDA210259",
+"brand": "Calquence",
+"generic": "acalabrutinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-01-16",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/210259Orig1s011;216387Orig1s005ltr.pdf"
@@ -255,10 +255,12 @@
 "date": "2025-01-31",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217188Orig1s008ltr.pdf"
 }
-]
+],
+"openfda_total": 444,
+"complete": true
 },
 "2025-02": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "NDA220266",
@@ -579,10 +581,12 @@
 "date": "2025-02-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/103909Orig1s5197ltr.pdf"
 }
-]
+],
+"openfda_total": 343,
+"complete": true
 },
 "2025-03": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761380",
@@ -969,7 +973,9 @@
 "date": "2025-03-28",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219019Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 427,
+"complete": true
 },
 "2025-04": {
 "fetched": "2026-11-12",
@@ -8071,7 +8077,9 @@
 "date": "2026-10-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761067Orig1s031ltr.pdf"
 }
-]
+],
+"openfda_total": 294,
+"complete": true
 },
 "2026-11": {
 "fetched": "2026-11-23",
@@ -8373,6 +8381,8 @@
 "date": "2026-11-18",
 "letter": ""
 }
-]
+],
+"openfda_total": 150,
+"complete": true
 }
 }
