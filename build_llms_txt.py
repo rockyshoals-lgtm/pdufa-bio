@@ -201,6 +201,7 @@ Full archive: https://www.pdufa.bio/decisions
 - /conferences - medical conference presentations by US-listed sponsors
 - /research/fda-decision-timing - does the FDA decide early? Sourced cases only
 - /research/fda-approval-weekdays - the weekday of every FDA original and efficacy supplement approval action date in Drugs@FDA since January 2025, with the Orange Book's NDA approval dates since 1982, US federal holidays, and the 2026 decisions whose goal date fell on a weekend or holiday (two CSVs)
+- /fda-approvals/companies - every FDA original NDA/BLA and efficacy supplement approval in Drugs@FDA since January 2025, grouped by sponsor company, each with its FDA letter (CSV)
 - /research/readout-reaction - how much clinical readouts actually move stocks
 - /research/conference-runup - the conference run-up study
 - /research/short-interest-fda - why short interest does not predict FDA outcomes

@@ -1035,7 +1035,12 @@ jobs:
         run: python gsc_index_status.py --max 150
 
       - name: Internal links (site links, homepage hub, related, /sitemap)
-        run: python build_fda_approvals_months.py && python inject_site_links.py && python build_google_request_list.py
+        # 2026-11-23: /fda-approvals/companies (every approval by company, CSV) and the matching line on each
+        # /crl/company page, from the cache the month pages just refreshed. tests/test_fda_approvals_companies.py.
+        run: |
+          python build_fda_approvals_months.py
+          python build_fda_approvals_companies.py || echo "::warning::/fda-approvals/companies not rebuilt this run; tests/test_fda_approvals_companies.py checks it against the cache"
+          python inject_site_links.py && python build_google_request_list.py
 
       # 2026-11-18 design red team (change 4, one page per event): every link to an event lands on the event's own
       # page in one hop, never on a retired bare /pdufa/{T} or an old slug that vercel.json redirects. After every pass
@@ -1262,6 +1267,7 @@ jobs:
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
           git add -f pdufa_site_src/changes/data/row-history.csv 2>/dev/null || true   # *.csv is ignored; the /changes download
           git add -f pdufa_site_src/research/fda-approval-weekdays/data/drugs-at-fda-approval-dates.csv pdufa_site_src/research/fda-approval-weekdays/data/orange-book-nda-dates.csv _fda_approval_weekdays.json 2>/dev/null || true   # the weekday study's download and guard file
+          git add -f pdufa_site_src/fda-approvals/data/approvals-by-company.csv 2>/dev/null || true   # /fda-approvals/companies download
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
