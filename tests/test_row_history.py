@@ -226,7 +226,9 @@ def main():
             f"{len(full):,} changes to 12 fields of each row of pdufa.bio's published PDUFA dataset, read from "
             f"{led['versions']:,} versions in the public repository between {led['first_ts']} and {led['last_ts']},")
             and ld.get("temporalCoverage") == f"{first_day}/{led['last_ts'][:10]}"
-            and ld.get("dateModified") == led["last_ts"][:10]
+            # dateModified is restamped site-wide by build_date_modified.py from the page's own content-change
+            # date (run 45128589624 failed when this pinned the ledger's day), so only its presence is ours.
+            and re.match(r"\d{4}-\d{2}-\d{2}", str(ld.get("dateModified", "")))
             and sorted(d.get("contentUrl") for d in ld.get("distribution", [])) ==
             ["https://www.pdufa.bio/changes/data/row-history.csv", "https://www.pdufa.bio/changes/data/row-history.json"]):
         fails.append("/changes: the Dataset schema is missing or not the ledger's")

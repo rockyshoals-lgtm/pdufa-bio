@@ -68,7 +68,9 @@ def key_of(name):
     n = re.sub(r"[^a-z0-9&' ,./\-]", " ", n)
     n = re.sub(r"\s+", " ", n).strip(" ,.-")
     n = _strip_forms(" " + n).strip()
-    return re.sub(r"\s+", " ", re.sub(r"[.,']", "", n)).strip()
+    # red team 2026-11-23: hyphens, ampersands and slashes count as punctuation too ("Bristol-Myers Squibb" and
+    # "Bristol Myers Squibb" are one group), as the stated rule says; after the form words, so "A/S" still goes
+    return re.sub(r"\s+", " ", re.sub(r"[-&/]", " ", re.sub(r"[.,']", "", n))).strip()
 
 
 def label_of(name):
