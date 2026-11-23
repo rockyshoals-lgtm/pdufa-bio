@@ -205,7 +205,8 @@ def write_page(led):
          f'first version ({esc(led["first_ts"])}) held {led["first_rows"]:,} rows. By field: {esc(counts)}.'
          f'{rebuilt}</p>',
          f'<p class="sub">The full record, every compared field: <a href="/changes/data/row-history.csv">CSV</a> '
-         f'&middot; <a href="/changes/data/row-history.json">JSON</a>. The table shows the newest {len(recent)} '
+         f'&middot; <a href="/changes/data/row-history.json">JSON</a>, free under CC BY 4.0 like the dataset itself: '
+         f'cite pdufa.bio and link this page. The table shows the newest {len(recent)} '
          'changes to date, date precision, status, outcome, decided date, company, name, ticker or type, and rows '
          'entering or leaving.</p>',
          '<table data-changes="recent" data-verbatim="record"><tr><th>Committed (ET)</th><th>Row</th><th>Field</th>'
@@ -220,6 +221,23 @@ def write_page(led):
     B.append('<p class="sub"><a href="/pdufa-date-changes">Goal-date changes, each with its source</a> &middot; '
              '<a href="/feed">feeds</a> &middot; <a href="/developers">the API</a> &middot; <a href="/corrections">'
              'corrections</a></p>')
+    ld = {"@context": "https://schema.org", "@type": "Dataset",
+          "name": "pdufa.bio dataset change history",
+          "description": (f"{len(ch):,} changes to 12 fields of each row of pdufa.bio's published PDUFA dataset, read "
+                          f"from {led['versions']:,} versions in the public repository between {led['first_ts']} and "
+                          f"{led['last_ts']}, each with its old value, new value, commit and time. Changes to this "
+                          "site's records, not FDA or company actions."),
+          "url": "https://www.pdufa.bio/changes", "license": "https://creativecommons.org/licenses/by/4.0/",
+          "isAccessibleForFree": True,
+          "creator": {"@type": "Organization", "name": "pdufa.bio", "url": "https://www.pdufa.bio/"},
+          "isBasedOn": REPO, "temporalCoverage": f"{led['first_ts'][:10]}/{led['last_ts'][:10]}",
+          "dateModified": led["last_ts"][:10],
+          "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
+                            "contentUrl": "https://www.pdufa.bio/changes/data/row-history.csv"},
+                           {"@type": "DataDownload", "encodingFormat": "application/json",
+                            "contentUrl": "https://www.pdufa.bio/changes/data/row-history.json"}]}
+    B.append('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False, separators=(",", ":"))
+             + '</script>')
     os.makedirs(os.path.dirname(DATA_JSON), exist_ok=True)
     io.open(OUT, "w", encoding="utf-8").write(page(title, desc, "/changes", B))
     io.open(DATA_JSON, "w", encoding="utf-8").write(json.dumps(
