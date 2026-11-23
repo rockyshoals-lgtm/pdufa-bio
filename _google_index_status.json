@@ -8399,6 +8399,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/fda-approvals/companies": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/ABBV-2025-02-07": {
 "checked": "2026-11-20",
 "crawled": null,

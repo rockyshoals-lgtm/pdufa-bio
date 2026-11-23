@@ -121,9 +121,9 @@
 },
 "pdufa_site_src/changes/index.html": {
 "date": "2026-11-23",
-"hash": "c7ce0e30f499245a",
+"hash": "9260fc13c7db7281",
 "hv": 3,
-"ts": "2026-11-23T04:09:16-05:00"
+"ts": "2026-11-23T05:09:50-05:00"
 },
 "pdufa_site_src/clinical-trial-success-rates/index.html": {
 "date": "2026-11-18",
@@ -1098,10 +1098,10 @@
 "ts": "2026-11-22T12:45:25-05:00"
 },
 "pdufa_site_src/crl/facts/index.html": {
-"date": "2026-11-22",
-"hash": "aaa8a6da36413fe8",
+"date": "2026-11-23",
+"hash": "a37f6de6ce227b23",
 "hv": 3,
-"ts": "2026-11-22T21:27:03-05:00"
+"ts": "2026-11-23T05:09:54-05:00"
 },
 "pdufa_site_src/crl/index.html": {
 "date": "2026-11-23",
@@ -4087,10 +4087,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/acalabrutinib/index.html": {
-"date": "2026-11-21",
-"hash": "fe04608f44f361d0",
+"date": "2026-11-23",
+"hash": "4621c5cdada781b0",
 "hv": 3,
-"ts": "2026-11-21T09:39:29-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/accg-2671-phase/index.html": {
 "date": "2026-11-17",
@@ -4386,10 +4386,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/apl-101/index.html": {
-"date": "2026-11-21",
-"hash": "1372a2a675f6f583",
+"date": "2026-11-23",
+"hash": "2d1ec2392435943c",
 "hv": 3,
-"ts": "2026-11-21T09:39:29-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/apraglutide/index.html": {
 "date": "2026-11-17",
@@ -4415,10 +4415,10 @@
 "ts": "2026-11-20T07:17:03-05:00"
 },
 "pdufa_site_src/drug/arikayce/index.html": {
-"date": "2026-11-21",
-"hash": "69b1190938f4f235",
+"date": "2026-11-23",
+"hash": "d4b3ffc2a40863af",
 "hv": 3,
-"ts": "2026-11-21T09:39:30-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/arv-027/index.html": {
 "date": "2026-11-18",
@@ -4545,10 +4545,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/axatilimab/index.html": {
-"date": "2026-11-21",
-"hash": "427a4df961ee6aec",
+"date": "2026-11-23",
+"hash": "89f9fd353dc30d59",
 "hv": 3,
-"ts": "2026-11-21T09:39:30-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/drug/axpaxli-phase/index.html": {
 "date": "2026-11-18",
@@ -4892,10 +4892,10 @@
 "ts": "2026-10-13T20:08:58-04:00"
 },
 "pdufa_site_src/drug/calquence/index.html": {
-"date": "2026-11-21",
-"hash": "f1a99d93c6f6df9a",
+"date": "2026-11-23",
+"hash": "807c508aa8f3105b",
 "hv": 3,
-"ts": "2026-11-21T09:39:29-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/camizestrant/index.html": {
 "date": "2026-11-18",
@@ -4951,10 +4951,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/casdozokitug/index.html": {
-"date": "2026-11-20",
-"hash": "20ed7be5152fb9eb",
+"date": "2026-11-23",
+"hash": "0d9561c77f194016",
 "hv": 3,
-"ts": "2026-11-20T07:17:03-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/casgevy/index.html": {
 "date": "2026-11-18",
@@ -5307,10 +5307,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/dtx301/index.html": {
-"date": "2026-11-20",
-"hash": "405fa3820892b38a",
+"date": "2026-11-23",
+"hash": "ff2c80726b813a9a",
 "hv": 3,
-"ts": "2026-11-20T07:17:03-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/dtx401/index.html": {
 "date": "2026-11-18",
@@ -5342,10 +5342,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/ebribafusp-alfa/index.html": {
-"date": "2026-11-20",
-"hash": "ef9df89882ed09d6",
+"date": "2026-11-23",
+"hash": "a3136d4f53a93e8e",
 "hv": 3,
-"ts": "2026-11-20T04:43:02-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/drug/ebvallo/index.html": {
 "date": "2026-11-20",
@@ -5651,10 +5651,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/gazyva/index.html": {
-"date": "2026-11-20",
-"hash": "d393640686c1e55a",
+"date": "2026-11-23",
+"hash": "d569bbe37ec14071",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/gedatolisib-with/index.html": {
 "date": "2026-10-13",
@@ -6085,10 +6085,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/jemperli/index.html": {
-"date": "2026-11-20",
-"hash": "753bab044b7504d7",
+"date": "2026-11-23",
+"hash": "df74e39439d1b52e",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/jideytro/index.html": {
 "date": "2026-10-03",
@@ -6096,10 +6096,10 @@
 "ts": "2026-10-03T15:42:48-04:00"
 },
 "pdufa_site_src/drug/joenja/index.html": {
-"date": "2026-11-20",
-"hash": "0e155b481e52cf41",
+"date": "2026-11-23",
+"hash": "4c46273134ba4db8",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/joint-actrims-ectrims/index.html": {
 "date": "2026-10-22",
@@ -6250,9 +6250,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/lasofoxifene/index.html": {
-"date": "2026-11-20",
-"hash": "6c7a8a031b356791",
-"hv": 3
+"date": "2026-11-23",
+"hash": "e51f5a7be40e6f5b",
+"hv": 3,
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/lb1908/index.html": {
 "date": "2026-11-18",
@@ -6291,10 +6292,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/libervant/index.html": {
-"date": "2026-11-20",
-"hash": "d1a0bc9e755c6d81",
+"date": "2026-11-23",
+"hash": "9d805c3cb2fa11dd",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/libtayo/index.html": {
 "date": "2026-11-18",
@@ -6308,10 +6309,10 @@
 "ts": "2026-10-13T20:08:58-04:00"
 },
 "pdufa_site_src/drug/lifileucel/index.html": {
-"date": "2026-11-20",
-"hash": "89a61cb9b253743d",
+"date": "2026-11-23",
+"hash": "0d1f77cbb0204922",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/lifyorli/index.html": {
 "date": "2026-10-03",
@@ -6702,10 +6703,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/neffy/index.html": {
-"date": "2026-11-20",
-"hash": "e3bd6ce137d88bf6",
+"date": "2026-11-23",
+"hash": "f198bad1632e159c",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/neladalkib/index.html": {
 "date": "2026-11-18",
@@ -6714,10 +6715,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/nenocorilant/index.html": {
-"date": "2026-11-20",
-"hash": "160c186ca06caef4",
+"date": "2026-11-23",
+"hash": "a41ce0275d99bd05",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/neratinib/index.html": {
 "date": "2026-11-20",
@@ -6748,10 +6749,10 @@
 "ts": "2026-11-17T02:59:04-05:00"
 },
 "pdufa_site_src/drug/nivisnebart/index.html": {
-"date": "2026-11-20",
-"hash": "ea911c127a856bb9",
+"date": "2026-11-23",
+"hash": "1ce9b2006e99cdd9",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/nivolumab/index.html": {
 "date": "2026-11-18",
@@ -7086,10 +7087,10 @@
 "ts": "2026-11-20T11:34:22-05:00"
 },
 "pdufa_site_src/drug/pelareorep/index.html": {
-"date": "2026-11-22",
-"hash": "7bd5593686c3863b",
+"date": "2026-11-23",
+"hash": "bb48e7038a789985",
 "hv": 3,
-"ts": "2026-11-22T19:29:10-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/drug/pembrolizumab/index.html": {
 "date": "2026-11-20",
@@ -7508,10 +7509,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/sacituzumab-tirumotecan/index.html": {
-"date": "2026-11-20",
-"hash": "14f37293edb72f90",
+"date": "2026-11-23",
+"hash": "a02ab8d09acc59f0",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/safusidenib/index.html": {
 "date": "2026-11-17",
@@ -7827,10 +7828,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/surabgene-lomparvovec/index.html": {
-"date": "2026-11-20",
-"hash": "5cd72ff2f8ca2be1",
+"date": "2026-11-23",
+"hash": "af2eb0ae154b107f",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/drug/surf303-phase/index.html": {
 "date": "2026-11-17",
@@ -7872,10 +7873,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/talzenna/index.html": {
-"date": "2026-11-20",
-"hash": "4758a0060a19d49c",
+"date": "2026-11-23",
+"hash": "14db96e5d6000880",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/tanruprubart/index.html": {
 "date": "2026-11-18",
@@ -7884,10 +7885,10 @@
 "ts": "2026-11-18T19:21:57-05:00"
 },
 "pdufa_site_src/drug/tapinarof/index.html": {
-"date": "2026-11-20",
-"hash": "579754d6e11c9dbb",
+"date": "2026-11-23",
+"hash": "658f7459fd879084",
 "hv": 3,
-"ts": "2026-11-20T07:35:06-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/tarlatamab/index.html": {
 "date": "2026-11-18",
@@ -8001,10 +8002,10 @@
 "ts": "2026-11-17T02:59:03-05:00"
 },
 "pdufa_site_src/drug/tividenofusp-alfa/index.html": {
-"date": "2026-11-20",
-"hash": "eab64822b7373bd6",
+"date": "2026-11-23",
+"hash": "1bcec87bc5a15799",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/tlx101-px/index.html": {
 "date": "2026-09-19",
@@ -8144,9 +8145,9 @@
 },
 "pdufa_site_src/drug/troriluzole/index.html": {
 "date": "2026-11-23",
-"hash": "23a745a1028e1c71",
+"hash": "deefecc7e2061fae",
 "hv": 3,
-"ts": "2026-11-23T04:09:16-05:00"
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/truqap/index.html": {
 "date": "2026-11-18",
@@ -8224,10 +8225,10 @@
 "ts": "2026-11-18T19:21:56-05:00"
 },
 "pdufa_site_src/drug/ubamatamab/index.html": {
-"date": "2026-11-20",
-"hash": "e13cef5acd33ce51",
+"date": "2026-11-23",
+"hash": "fb24ae906da22c7f",
 "hv": 3,
-"ts": "2026-11-20T07:35:05-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/drug/ucart22/index.html": {
 "date": "2026-11-18",
@@ -8312,9 +8313,10 @@
 "ts": "2026-11-20T07:35:05-05:00"
 },
 "pdufa_site_src/drug/vatiquinone/index.html": {
-"date": "2026-11-21",
-"hash": "5be76778dfdcd007",
-"hv": 3
+"date": "2026-11-23",
+"hash": "18d8557cd79a26e6",
+"hv": 3,
+"ts": "2026-11-23T05:09:49-05:00"
 },
 "pdufa_site_src/drug/vax-31-opus-2/index.html": {
 "date": "2026-11-17",
@@ -8911,9 +8913,9 @@
 },
 "pdufa_site_src/fda-approvals/2025/april/index.html": {
 "date": "2026-11-23",
-"hash": "f8a37debb613778c",
+"hash": "86633d873fdaf611",
 "hv": 3,
-"ts": "2026-11-23T04:09:19-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/august/index.html": {
 "date": "2026-11-23",
@@ -8947,9 +8949,9 @@
 },
 "pdufa_site_src/fda-approvals/2025/june/index.html": {
 "date": "2026-11-23",
-"hash": "9f193bfc6d644279",
+"hash": "71150618d4d77c2d",
 "hv": 3,
-"ts": "2026-11-23T04:09:19-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/march/index.html": {
 "date": "2026-11-23",
@@ -8959,9 +8961,9 @@
 },
 "pdufa_site_src/fda-approvals/2025/may/index.html": {
 "date": "2026-11-23",
-"hash": "5f92ec1a35213d9b",
+"hash": "c3924584adb4b99c",
 "hv": 3,
-"ts": "2026-11-23T04:09:19-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/fda-approvals/2025/november/index.html": {
 "date": "2026-11-23",
@@ -9049,8 +9051,9 @@
 },
 "pdufa_site_src/fda-approvals/companies/index.html": {
 "date": "2026-11-23",
-"hash": "c9294d37289fdd12",
-"hv": 3
+"hash": "d1ed7f7d346bc137",
+"hv": 3,
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/fda-approvals/index.html": {
 "date": "2026-11-23",
@@ -12337,9 +12340,9 @@
 },
 "pdufa_site_src/pdufa/MRK-ifinatamab-deruxtecan/index.html": {
 "date": "2026-11-23",
-"hash": "4cc20b4d9331156a",
+"hash": "7952829e99527bd3",
 "hv": 3,
-"ts": "2026-11-23T04:09:16-05:00"
+"ts": "2026-11-23T05:09:48-05:00"
 },
 "pdufa_site_src/pdufa/MRK-keytruda/index.html": {
 "date": "2026-11-21",
@@ -13082,9 +13085,9 @@
 },
 "pdufa_site_src/sitemap/index.html": {
 "date": "2026-11-23",
-"hash": "3b91f9ca6b5d60af",
+"hash": "b0dc60b88421ecf7",
 "hv": 3,
-"ts": "2026-11-23T04:09:19-05:00"
+"ts": "2026-11-23T05:09:54-05:00"
 },
 "pdufa_site_src/sls/index.html": {
 "date": "2026-11-18",
