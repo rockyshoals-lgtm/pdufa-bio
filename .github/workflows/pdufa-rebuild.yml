@@ -445,6 +445,8 @@ jobs:
           python build_crl_facts.py
           python build_crl_capricor.py
           python build_crl_companies.py   # 2026-11-22: /crl/companies and /crl/company/<slug>, every letter by company
+          python build_crl_offices.py     # 2026-11-22: /crl/offices, the FDA division and office each letter's signature names
+          python build_crl_dataset.py     # 2026-11-22 (moat move 6): /crl/data CSV and JSON, a dated copy per FDA release
 
 
       # Early-approval safety net (David, 2026-09-01): 16 of 28 sourced 2026 decisions
@@ -908,6 +910,13 @@ jobs:
       - name: "Year archive pages from the decisions archive"
         run: python build_year_archive.py
 
+      # 2026-11-22 (David: "Continue to increase our moat"; Nov 17 audit moat move 4, a change feed): Atom feeds of
+      # sourced FDA decisions and goal-date changes (/feed/decisions.xml) and of the FDA's CRL release (/feed/crl.xml),
+      # with the /feed page and <link rel="alternate"> on the hubs. After every builder of the pages it reads and before
+      # the breadcrumb, Open Graph, nav and footer passes, which finish the /feed page. tests/test_feeds.py.
+      - name: "Atom feeds (/feed): FDA decisions, goal-date changes, released CRLs"
+        run: python build_feeds.py
+
       # Sitelinks groundwork: engines pick sub-links from hierarchy signals they trust, and the
       # hub tier lacked breadcrumb schema while leaf pages had it. Every indexable page, daily.
       - name: "BreadcrumbList on every indexable page"
@@ -1074,6 +1083,11 @@ jobs:
       - name: "Quarantine: hold each lead's own row and pages at the last commit; held_since into build-info"
         run: python quarantine_leads.py apply
 
+      # The feeds again, from the decision pages as every fixer and the quarantine left them, so a held page is
+      # never in a feed. On /feed only the counted spans are rewritten, so the passes above keep their work on it.
+      - name: "Atom feeds from the finished pages"
+        run: python build_feeds.py --xml-only
+
       # 2026-11-20 (red team of the dated /llms.txt): /llms.txt now lists the next goal dates and the latest
       # decisions straight from the API dataset, and it is built at the step above ("/llms.txt from the numbers'
       # owners"), before fix_dead_internal_links.py rewrites dataset URLs and before the quarantine puts each held
@@ -1226,8 +1240,12 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
+          git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
+          # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
+          # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
+          git add CRL_corpus_openFDA_*.json 2>/dev/null || true
           git add _held_state.json _watch_health.json _fda_novel_approvals.json _fda_action_archive.json _sponsor_coverage.json _13f_specialists.json _adcomm_fr_notices.json _cusip_symbol_map.json _orange_book _crl_headings.json _readout_watch_ack.json _crl_capture_series.json _google_request_indexing.txt _fda_approvals_months.json 2>/dev/null || true
           git add readout_reported_manual.json _provenance_baseline.json _bing_rank_history.json 2>/dev/null || true
           git add _decision_verification.json _decision_verification_cache.json 2>/dev/null || true

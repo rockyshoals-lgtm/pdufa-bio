@@ -1109,6 +1109,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/crl/offices": {
+"checked": "2026-11-22",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/decisions": {
 "checked": "2026-11-20",
 "crawled": "2026-10-15",
@@ -7804,6 +7810,12 @@
 "crawled": "2026-11-20",
 "state": "Submitted and indexed",
 "verdict": "PASS"
+},
+"/feed": {
+"checked": "2026-11-22",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
 },
 "/glossary": {
 "checked": "2026-11-20",

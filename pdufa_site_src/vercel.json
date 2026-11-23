@@ -428,11 +428,6 @@
    "permanent": true
   },
   {
-   "source": "/feed",
-   "destination": "/developers",
-   "permanent": true
-  },
-  {
    "source": "/pdufa/TAK-rusfertide",
    "destination": "/pdufa/PTGX-rusfertide",
    "permanent": true
@@ -3814,6 +3809,23 @@
     {
      "key": "Cache-Control",
      "value": "public, max-age=300"
+    },
+    {
+     "key": "Access-Control-Allow-Origin",
+     "value": "*"
+    }
+   ]
+  },
+  {
+   "source": "/feed/(decisions|crl).xml",
+   "headers": [
+    {
+     "key": "Content-Type",
+     "value": "application/atom+xml; charset=utf-8"
+    },
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
     },
     {
      "key": "Access-Control-Allow-Origin",
