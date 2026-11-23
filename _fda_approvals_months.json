@@ -2319,7 +2319,7 @@
 "complete": true
 },
 "2025-07": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761248",
@@ -2443,17 +2443,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219935Orig1s000ltr.pdf"
 },
 {
-"app": "NDA214919",
-"brand": "Glycopyrrolate",
-"generic": "glycopyrrolate",
-"sponsor": "Fresenius Kabi Usa",
-"kind": "efficacy supplement",
-"sub": "SUPPL-2",
-"class": "Efficacy",
-"date": "2025-07-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214919Orig1s002ltr.pdf"
-},
-{
 "app": "NDA017558",
 "brand": "Glycopyrrolate",
 "generic": "glycopyrrolate",
@@ -2463,6 +2452,17 @@
 "class": "Efficacy",
 "date": "2025-07-16",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/017558Orig1s068ltr.pdf"
+},
+{
+"app": "NDA214919",
+"brand": "Glycopyrrolate",
+"generic": "glycopyrrolate",
+"sponsor": "Fresenius Kabi Usa",
+"kind": "efficacy supplement",
+"sub": "SUPPL-2",
+"class": "Efficacy",
+"date": "2025-07-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/214919Orig1s002ltr.pdf"
 },
 {
 "app": "NDA210997",
@@ -2673,10 +2673,12 @@
 "date": "2025-07-31",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218585Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 414,
+"complete": true
 },
 "2025-08": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "NDA219840",
@@ -2877,17 +2879,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/216403Orig1s005ltr.pdf"
 },
 {
-"app": "NDA217700",
-"brand": "Ojemda",
-"generic": "tovorafenib",
-"sponsor": "Day One Biopharms",
-"kind": "efficacy supplement",
-"sub": "SUPPL-2",
-"class": "Efficacy",
-"date": "2025-08-27",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217700Orig1s002, s003, s004ltr.pdf"
-},
-{
 "app": "NDA218033",
 "brand": "Ojemda",
 "generic": "tovorafenib",
@@ -2897,6 +2888,17 @@
 "class": "Efficacy",
 "date": "2025-08-27",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218033Orig1s002, s003ltr.pdf"
+},
+{
+"app": "NDA217700",
+"brand": "Ojemda",
+"generic": "tovorafenib",
+"sponsor": "Day One Biopharms",
+"kind": "efficacy supplement",
+"sub": "SUPPL-2",
+"class": "Efficacy",
+"date": "2025-08-27",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/217700Orig1s002, s003, s004ltr.pdf"
 },
 {
 "app": "NDA218698",
@@ -2975,10 +2977,12 @@
 "date": "2025-08-29",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219685Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 274,
+"complete": true
 },
 "2025-09": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-23",
 "items": [
 {
 "app": "BLA761105",
@@ -3047,17 +3051,6 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/208692Orig1s018ltr.pdf"
 },
 {
-"app": "NDA213756",
-"brand": "Koselugo",
-"generic": "selumetinib",
-"sponsor": "Astrazeneca",
-"kind": "efficacy supplement",
-"sub": "SUPPL-5",
-"class": "Efficacy",
-"date": "2025-09-10",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s005ltr.pdf"
-},
-{
 "app": "NDA219943",
 "brand": "Koselugo",
 "generic": "selumetinib",
@@ -3067,6 +3060,17 @@
 "class": "Type 3 - New Dosage Form",
 "date": "2025-09-10",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/219943Orig1s000ltr.pdf"
+},
+{
+"app": "NDA213756",
+"brand": "Koselugo",
+"generic": "selumetinib",
+"sponsor": "Astrazeneca",
+"kind": "efficacy supplement",
+"sub": "SUPPL-5",
+"class": "Efficacy",
+"date": "2025-09-10",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/213756Orig1s005ltr.pdf"
 },
 {
 "app": "NDA219500",
@@ -3102,23 +3106,23 @@
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761436Orig1s000ltr.pdf"
 },
 {
-"app": "NDA212436",
-"brand": "Ibrance",
-"generic": "palbociclib",
-"sponsor": "Pfizer",
-"kind": "efficacy supplement",
-"sub": "SUPPL-11",
-"class": "Efficacy",
-"date": "2025-09-16",
-"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
-},
-{
 "app": "NDA207103",
 "brand": "Ibrance",
 "generic": "palbociclib",
 "sponsor": "Pfizer",
 "kind": "efficacy supplement",
 "sub": "SUPPL-23",
+"class": "Efficacy",
+"date": "2025-09-16",
+"letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
+},
+{
+"app": "NDA212436",
+"brand": "Ibrance",
+"generic": "palbociclib",
+"sponsor": "Pfizer",
+"kind": "efficacy supplement",
+"sub": "SUPPL-11",
 "class": "Efficacy",
 "date": "2025-09-16",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/207103Orig1s023;212436Orig1s011ltr.pdf"
@@ -3288,7 +3292,9 @@
 "date": "2025-09-30",
 "letter": "http://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218436Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 325,
+"complete": true
 },
 "2025-10": {
 "fetched": "2026-11-12",
