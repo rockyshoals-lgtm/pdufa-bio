@@ -764,6 +764,10 @@ jobs:
           python build_fda_approvals_months.py
           python build_fda_approvals_companies.py || echo "::warning::/fda-approvals/companies not rebuilt this run; tests/test_fda_approvals_companies.py checks it against the cache"
           python build_fda_approval_weekdays.py || echo "::warning::/research/fda-approval-weekdays not rebuilt"
+          # 2026-11-23: the BLA section of /crl/facts (last released CRL to the ORIG-1 approval Drugs@FDA lists) reads the
+          # same refreshed cache, so it is written here, after build_crl_facts.py wrote the page earlier in the run.
+          # tests/test_crl_bla_approvals.py recounts it from the CRL release and the cache.
+          python build_crl_bla_approvals.py || echo "::warning::/crl/facts BLA section not rebuilt"
           python add_amlx_avexitide.py
 
       - name: Explain what a PDUFA date is (plain English + FAQ schema)
