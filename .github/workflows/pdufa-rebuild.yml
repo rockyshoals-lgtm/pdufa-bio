@@ -445,6 +445,7 @@ jobs:
           python build_crl_facts.py
           python build_crl_capricor.py
           python build_crl_companies.py   # 2026-11-22: /crl/companies and /crl/company/<slug>, every letter by company
+          python build_crl_offices.py     # 2026-11-22: /crl/offices, the FDA division and office each letter's signature names
           python build_crl_dataset.py     # 2026-11-22 (moat move 6): /crl/data CSV and JSON, a dated copy per FDA release
 
 

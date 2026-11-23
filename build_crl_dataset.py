@@ -52,7 +52,8 @@ DS, DE = "<!--CRLDATA:LD:BEGIN-->", "<!--CRLDATA:LD:END-->"
 VS, VE = "<!--CRLDATA:BEGIN-->", "<!--CRLDATA:END-->"
 COLS = ["letter_date", "application_numbers", "company_name_as_printed", "company_group", "openfda_approval_status",
         "rescinded_by_fda", "rescission_date", "letter_pdf", "orange_book_nda_first_approval_after_letter",
-        "orange_book_trade_name", "deficiency_sections", "pdufa_bio_page"]
+        "orange_book_trade_name", "deficiency_sections", "signing_division_as_printed", "signing_office_as_printed",
+        "signing_center", "signer_name_shown_as_b4", "pdufa_bio_page"]
 
 
 def rows(corpus=None):
@@ -100,6 +101,10 @@ def rows(corpus=None):
             "orange_book_nda_first_approval_after_letter": after[0][0].isoformat() if after else "",
             "orange_book_trade_name": after[0][1] if after else "",
             "deficiency_sections": secs,
+            "signing_division_as_printed": L["sig"]["division"],
+            "signing_office_as_printed": L["sig"]["office"],
+            "signing_center": L["sig"]["center"],
+            "signer_name_shown_as_b4": bool(L["sig"]["withheld"]),
             "pdufa_bio_page": page,
         })
     return out, last_updated, ob_as_of
@@ -155,6 +160,12 @@ def main():
             "deficiency_sections: the letter's own section headings read from its PDF text layer, labeling and "
             "administrative sections left out; only 2024+ letters whose PDF holds this letter alone; blank when "
             "none was read.",
+            "signing_division_as_printed and signing_office_as_printed: the first Division of and the first Office "
+            "of (other than the Office of New Drugs when a narrower office is named) in the letter's signature "
+            "block, from its last Sincerely to the electronic signature page legend, as printed with OCR misreads, "
+            "or from openFDA's approver_center field where the scan missed one; signing_center is CDER or CBER where "
+            "the block or that field names the Center; signer_name_shown_as_b4 is true where (b) (4) stands in that "
+            "block or on the line after the legend. Blank where none is read (see /crl/offices).",
             "pdufa_bio_page: pdufa.bio's decision page that cites this letter's PDF, when exactly one indexable page "
             "does and the PDF holds this letter alone; blank otherwise.",
             "In the CSV, booleans are true or false, and a text cell that starts with = + - or @ is written with a "

@@ -193,6 +193,61 @@ def decision_entries():
 
 
 # --------------------------------------------------------------------------------------------------------- CRLs
+# ------------------------------------------------------------------------------------------ the letter's signature
+SIG_STOP = {"Office", "Division", "Center", "U.S.", "Food", "Silver", "Spring,", "Reference", "Signature", "This",
+            "Following", "Sincerely,", "Page", "MD", "www.fda.gov"}
+SIG_SMALL = {"and", "of", "&", "for", "the", "I", "II", "III", "IV", "V", "1", "2", "3", "|", "products", "Products"}
+SINCERELY = re.compile(r"Sin\S*\s?cere\s?[l1]?y|Sincere\s?y|Sincerely", re.I)
+LEGEND = re.compile(r"This is a representation of an electronic record", re.I)
+B4 = re.compile(r"\((?:b|©|bp)\)\s?\(4\)")
+NOISE = re.compile(r"Silver Spring,? MD 20993|www\.fda\.gov|Reference ID:? ?\d+|(?:NDA|BLA|BL) ?\d{6}\S* Page \d+")
+
+
+def signature(text, center_field=None):
+    """What the letter's own signature block prints: the divisions and offices it names (in order, as printed, OCR
+    and all), whether it names the Center for Drug Evaluation and Research or for Biologics, and whether the
+    signature shows the FOIA exemption 4 mark "(b) (4)" (or its OCR forms "(©) (4)", "(bp) (4)").
+
+    The block runs from the last "Sincerely" (OCR forms included) to the electronic signature page legend, or 900
+    characters; the address, page headers and reference ids inside it are dropped (a page break can put the address
+    before the names). openFDA's approver_center field, where it holds a division or office the text scan missed,
+    is added after the text's own names."""
+    t = re.sub(r"\s+", " ", str(text or ""))
+    ms = list(SINCERELY.finditer(t))
+    start = ms[-1].start() if ms else -1
+    leg = LEGEND.search(t, start if start >= 0 else 0)
+    if start < 0:
+        start = max(0, (leg.start() if leg else len(t)) - 900)
+    end = leg.start() if leg and leg.start() > start else min(len(t), start + 900)
+    blk = NOISE.sub(" ", t[start:end])
+    toks, units, k = blk.split(" "), [], 0
+    while k < len(toks):
+        if toks[k] in ("Office", "Division") and k + 1 < len(toks) and toks[k + 1] == "of":
+            n, w = k + 2, [toks[k], "of"]
+            while n < len(toks) and toks[n] not in SIG_STOP and (toks[n][:1].isupper() or toks[n] in SIG_SMALL):
+                w.append(toks[n])
+                n += 1
+            if len(w) > 2:
+                units.append(" ".join(w).strip(" ,"))
+            k = n
+        else:
+            k += 1
+    cf = center_field if isinstance(center_field, list) else ([center_field] if center_field else [])
+    cf = [re.sub(r"\s+", " ", str(e)).strip() for e in cf if str(e or "").strip()]
+    for e in cf:
+        if re.match(r"(Office|Division) of ", e) and e not in units:
+            units.append(e)
+    tail = t[leg.end():leg.end() + 160] if leg else ""
+    withheld = bool(B4.search(blk) or B4.search(tail))
+    both = blk + " " + " ".join(cf)
+    center = ("CDER" if re.search(r"Center [ft]or Drug Evaluation", both) else
+              "CBER" if re.search(r"Center [ft]or Biologics", both) else "")
+    div = next((u for u in units if u.startswith("Division of")), "")
+    offs = [u for u in units if u.startswith("Office of")]
+    off = next((u for u in offs if u != "Office of New Drugs"), offs[0] if offs else "")
+    return {"division": div, "office": off, "center": center, "withheld": withheld}
+
+
 def crl_letters(include_rescinded=False, corpus=None):
     raw = json.load(io.open(corpus or CORPUS, encoding="utf-8"))
     recs = raw.get("results") if isinstance(raw, dict) else raw
@@ -219,7 +274,8 @@ def crl_letters(include_rescinded=False, corpus=None):
                         "rescinded": False,
                         "url": PDF + _urlq(fn) if fn.lower().endswith(".pdf") else "",
                         "ckey": key_of(nm) if nm and not GARBLED.search(nm) else "",
-                        "status": str(r.get("approval_status") or "").strip(), "resc_date": None})
+                        "status": str(r.get("approval_status") or "").strip(), "resc_date": None,
+                        "sig": signature(r.get("text"), r.get("approver_center"))})
     for R in rescinds:                                # letters the FDA rescinded as issued in error (as /crl/facts)
         m = re.search(r"refer to our letters? dated (.{0,120}?)(?:,? informing|\.)", R["text"], re.I)
         for ds in re.findall(r"(?:" + "|".join(MON[1:]) + r") \d{1,2}, \d{4}", m.group(1) if m else ""):
