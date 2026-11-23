@@ -757,6 +757,12 @@ jobs:
           python build_early_decisions.py
           # 2026-11-23 (audit move 8): weekday of every dated NDA first approval in the Orange Book, and the 2026
           # decisions with a weekend or holiday goal date. Reads build_early_decisions' rows, so it runs after it.
+          # 2026-11-23: refresh the Drugs@FDA month cache FIRST. Run 45131808182 built the weekdays page here and
+          # refreshed the cache later, so the page no longer matched the cache and the guard blocked the deploy.
+          # /fda-approvals/companies (every approval by company, CSV, a line on each /crl/company page) reads the
+          # same cache. tests/test_fda_approval_weekdays.py, test_fda_approvals_companies.py.
+          python build_fda_approvals_months.py
+          python build_fda_approvals_companies.py || echo "::warning::/fda-approvals/companies not rebuilt this run; tests/test_fda_approvals_companies.py checks it against the cache"
           python build_fda_approval_weekdays.py || echo "::warning::/research/fda-approval-weekdays not rebuilt"
           python add_amlx_avexitide.py
 
@@ -1035,12 +1041,9 @@ jobs:
         run: python gsc_index_status.py --max 150
 
       - name: Internal links (site links, homepage hub, related, /sitemap)
-        # 2026-11-23: /fda-approvals/companies (every approval by company, CSV) and the matching line on each
-        # /crl/company page, from the cache the month pages just refreshed. tests/test_fda_approvals_companies.py.
-        run: |
-          python build_fda_approvals_months.py
-          python build_fda_approvals_companies.py || echo "::warning::/fda-approvals/companies not rebuilt this run; tests/test_fda_approvals_companies.py checks it against the cache"
-          python inject_site_links.py && python build_google_request_list.py
+        # /fda-approvals (months, companies) are built in the conferences step, before the weekdays page, so every
+        # page that reads _fda_approvals_months.json reads the same refreshed cache (run 45131808182).
+        run: python inject_site_links.py && python build_google_request_list.py
 
       # 2026-11-18 design red team (change 4, one page per event): every link to an event lands on the event's own
       # page in one hop, never on a retired bare /pdufa/{T} or an old slug that vercel.json redirects. After every pass
