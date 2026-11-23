@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title>pdufa.bio: FDA decisions and PDUFA date changes</title>
+<subtitle>Every FDA decision whose outcome the FDA or the sponsor stated, and every PDUFA goal-date change pdufa.bio recorded, each with its source.</subtitle>
+<id>https://www.pdufa.bio/feed/decisions.xml</id>
+<link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/decisions.xml"/>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
+<updated>2026-11-21T14:14:12Z</updated>
+<author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
+<rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AZN-2026-11-16</id>
+<title>Klygefa (gefurulimab-gaks) Approved Nov 13, 2026 | AZN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AZN-2026-11-16"/>
+<published>2026-11-16T17:00:00Z</published>
+<updated>2026-11-21T14:14:12Z</updated>
+<category term="Approved"/>
+<summary>Klygefa (gefurulimab-gaks), AstraZeneca PLC (Alexion): Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.</summary>
+<content type="html">&lt;p&gt;Klygefa (gefurulimab-gaks), AstraZeneca PLC (Alexion): Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761488Orig1s000ltr.pdf"&gt;BLA 761488 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 21, 2026, 9:14 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/PFE-2026-10-26</id>
+<title>Talzenna with Xtandi Approved Oct 26, 2026 for Prostate Cancer | PFE FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PFE-2026-10-26"/>
+<published>2026-10-26T16:00:00Z</published>
+<updated>2026-11-20T11:26:07Z</updated>
+<category term="Approved"/>
+<summary>Talzenna (talazoparib) with Xtandi (enzalutamide), Pfizer Inc.: Approved. FDA action date: October 26, 2026.</summary>
+<content type="html">&lt;p&gt;Talzenna (talazoparib) with Xtandi (enzalutamide), Pfizer Inc.: Approved. FDA action date: October 26, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-talazoparib-enzalutamide-metastatic-androgen-pathway-modulation-naive-or-sensitive"&gt;FDA approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.pfizer.com/news/press-release/press-release-detail/pfizers-talzenna-plus-xtandi-fda-approved-earlier"&gt;Pfizer press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 20, 2026, 6:26 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/SNY-2026-11-18</id>
+<title>Infilbray (venglustat) Approved Nov 18, 2026 | SNY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SNY-2026-11-18"/>
+<published>2026-11-18T17:00:00Z</published>
+<updated>2026-11-20T09:09:34Z</updated>
+<category term="Approved"/>
+<summary>Infilbray (venglustat), Sanofi: Approved. FDA action date: November 18, 2026.</summary>
+<content type="html">&lt;p&gt;Infilbray (venglustat), Sanofi: Approved. FDA action date: November 18, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-neurological-symptoms-type-3-gaucher-disease"&gt;FDA News Release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 20, 2026, 4:09 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/NVS-2026-11-16</id>
+<title>COSENTYX (secukinumab) Approved Nov 16, 2026 | NVS FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NVS-2026-11-16"/>
+<published>2026-11-16T17:00:00Z</published>
+<updated>2026-11-20T09:09:34Z</updated>
+<category term="Approved"/>
+<summary>COSENTYX (secukinumab), Novartis: Approved. FDA action date: November 16, 2026.</summary>
+<content type="html">&lt;p&gt;COSENTYX (secukinumab), Novartis: Approved. FDA action date: November 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125504Orig1s101,761349Orig1s016ltr.pdf"&gt;BLA 125504 SUPPL-101 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 20, 2026, 4:09 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AZN-2026-11-13</id>
+<title>Imfinzi (durvalumab) Approved Nov 13, 2026 | AZN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AZN-2026-11-13"/>
+<published>2026-11-13T17:00:00Z</published>
+<updated>2026-11-20T09:09:34Z</updated>
+<category term="Approved"/>
+<summary>Imfinzi (durvalumab), AstraZeneca: Approved. FDA action date: November 13, 2026.</summary>
+<content type="html">&lt;p&gt;Imfinzi (durvalumab), AstraZeneca: Approved. FDA action date: November 13, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=761069"&gt;BLA 761069 SUPPL-59 (Drugs@FDA)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 20, 2026, 4:09 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/JNJ-2026-11-05</id>
+<title>RYBREVANT FASPRO Approved Nov 5, 2026 | JNJ FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/JNJ-2026-11-05"/>
+<published>2026-11-05T17:00:00Z</published>
+<updated>2026-11-20T09:09:34Z</updated>
+<category term="Approved"/>
+<summary>RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj), Johnson &amp; Johnson: Approved. FDA action date: November 5, 2026.</summary>
+<content type="html">&lt;p&gt;RYBREVANT FASPRO (amivantamab and hyaluronidase-lpuj), Johnson &amp;amp; Johnson: Approved. FDA action date: November 5, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761433Orig1s002ltr.pdf"&gt;BLA 761433 SUPPL-2 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 20, 2026, 4:09 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/REGN-2026-11-18</id>
+<title>Livsayis (cemdisiran) Approved Nov 18, 2026 | REGN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/REGN-2026-11-18"/>
+<published>2026-11-18T17:00:00Z</published>
+<updated>2026-11-19T03:14:37Z</updated>
+<category term="Approved"/>
+<summary>Livsayis (cemdisiran), Regeneron Pharmaceuticals: Approved. FDA action date: November 18, 2026.</summary>
+<content type="html">&lt;p&gt;Livsayis (cemdisiran), Regeneron Pharmaceuticals: Approved. FDA action date: November 18, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026"&gt;FDA Novel Drug Approvals for 2026&lt;/a&gt; &amp;middot; &lt;a href="https://www.globenewswire.com/news-release/2026/11/18/3406224/0/en/livsayis-cemdisiran-approved-by-the-fda-as-first-and-only-sirna-therapy-in-generalized-myasthenia-gravis-and-only-treatment-with-four-times-a-year-subcutaneous-dosing.html"&gt;Regeneron press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/872589/000087258926000023/exhibit991q22026.htm"&gt;Regeneron 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 18, 2026, 10:14 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/SNY-2025-12-24</id>
+<title>tolebrutinib CRL Dec 23, 2025 | SNY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SNY-2025-12-24"/>
+<published>2025-12-24T17:00:00Z</published>
+<updated>2026-11-18T03:25:35Z</updated>
+<category term="Complete Response Letter"/>
+<summary>tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.</summary>
+<content type="html">&lt;p&gt;tolebrutinib, Sanofi: Complete Response Letter. FDA action date: December 23, 2025. Announced: December 24, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"&gt;FDA Complete Response Letter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/SNY-2025-06-20</id>
+<title>DUPIXENT (dupilumab) Approved Jun 18, 2025 | SNY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SNY-2025-06-20"/>
+<published>2025-06-20T16:00:00Z</published>
+<updated>2026-11-18T03:25:35Z</updated>
+<category term="Approved"/>
+<summary>DUPIXENT (dupilumab), Sanofi: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.</summary>
+<content type="html">&lt;p&gt;DUPIXENT (dupilumab), Sanofi: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"&gt;BLA 761055 S-070 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/REGN-2025-06-20</id>
+<title>DUPIXENT (dupilumab) Approved Jun 18, 2025 | REGN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/REGN-2025-06-20"/>
+<published>2025-06-20T16:00:00Z</published>
+<updated>2026-11-18T03:25:35Z</updated>
+<category term="Approved"/>
+<summary>DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.</summary>
+<content type="html">&lt;p&gt;DUPIXENT (dupilumab), Regeneron Pharmaceuticals Inc.: Approved. FDA action date: June 18, 2025. Announced: June 20, 2025.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/761055Orig1s070ltr.pdf"&gt;BLA 761055 S-070 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 10:25 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2026-11-17</id>
+<title>Nelkarmi (neladalkib) Approved Nov 17, 2026, 10 Days Early | GSK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2026-11-17"/>
+<published>2026-11-17T17:00:00Z</published>
+<updated>2026-11-17T21:20:04Z</updated>
+<category term="Approved"/>
+<summary>Nelkarmi (neladalkib), GSK plc: Approved. FDA action date: November 17, 2026.</summary>
+<content type="html">&lt;p&gt;Nelkarmi (neladalkib), GSK plc: Approved. FDA action date: November 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-grants-accelerated-approval-neladalkib-previously-treated-locally-advanced-or-metastatic-alk"&gt;FDA accelerated approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gsk.com/en-gb/media/press-releases/nelkarmi-neladalkib-approved-in-the-us-for-previously-treated-advanced-alk-positive-non-small-cell-lung-cancer/"&gt;GSK plc press release&lt;/a&gt; &amp;middot; &lt;a href="https://investors.nuvalent.com/2026-05-27-Nuvalent-Announces-Key-Program-and-Business-Updates,-Strengthening-Foundation-for-Global-Leadership-in-ROS1-and-ALK-positive-NSCLC"&gt;Nuvalent press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 4:20 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/TEVA-2026-11-16</id>
+<title>IGALMI Approved Nov 13, 2026, 1 Day Early | TEVA FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TEVA-2026-11-16"/>
+<published>2026-11-16T17:00:00Z</published>
+<updated>2026-11-17T06:24:56Z</updated>
+<category term="Approved"/>
+<summary>IGALMI (dexmedetomidine) at-home sNDA, Teva Pharmaceutical Industries: Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.</summary>
+<content type="html">&lt;p&gt;IGALMI (dexmedetomidine) at-home sNDA, Teva Pharmaceutical Industries: Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=215390"&gt;NDA 215390 S-003&lt;/a&gt; &amp;middot; &lt;a href="https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/U-S--FDA-Approves-IGALMI-as-First-At-Home-Acute-Treatment-for-Agitation-Associated-with-Schizophrenia-Schizoaffective-Disorder-or-Bipolar-I-or-II-Disorder-in-Adults/default.aspx"&gt;Teva press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1720893/000110465926061773/tm2614679d1_ex99-1.htm"&gt;BioXcel Therapeutics, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 1:24 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-11-16</id>
+<title>Wilserdly (giredestrant) Approved Nov 16, 2026, 32 Days Early | RHHBY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-11-16"/>
+<published>2026-11-16T17:00:00Z</published>
+<updated>2026-11-17T06:24:56Z</updated>
+<category term="Approved"/>
+<summary>Wilserdly (giredestrant) + everolimus, Roche Holding AG (Genentech): Approved. FDA action date: November 16, 2026.</summary>
+<content type="html">&lt;p&gt;Wilserdly (giredestrant) + everolimus, Roche Holding AG (Genentech): Approved. FDA action date: November 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-giredestrant-combination-everolimus-er-positive-her2-negative-esr1-mutated-locally"&gt;FDA oncology approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15100/2026-02-19/fda-accepts-new-drug-application-for-gen"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 1:24 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/CYTK-2026-11-16</id>
+<title>MYQORZO (aficamten) Approved Nov 13, 2026, 1 Day Early | CYTK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/CYTK-2026-11-16"/>
+<published>2026-11-16T17:00:00Z</published>
+<updated>2026-11-17T06:24:56Z</updated>
+<category term="Approved"/>
+<summary>MYQORZO (aficamten) MAPLE-HCM sNDA, Cytokinetics Inc: Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.</summary>
+<content type="html">&lt;p&gt;MYQORZO (aficamten) MAPLE-HCM sNDA, Cytokinetics Inc: Approved. FDA action date: November 13, 2026. Announced: November 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=219083"&gt;NDA 219083 S-002&lt;/a&gt; &amp;middot; &lt;a href="https://www.globenewswire.com/news-release/2026/11/16/3403219/35409/en/cytokinetics-announces-prescribing-information-for-myqorzo-aficamten-expanded-to-include-data-from-phase-3-maple-hcm.html"&gt;Cytokinetics press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1061983/000119312526206360/cytk-ex99_1.htm"&gt;CYTOKINETICS INC 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 1:24 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/SMMT-2026-11-15</id>
+<title>Ivonescimab CRL Nov 13, 2026 | SMMT FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SMMT-2026-11-15"/>
+<published>2026-11-15T17:00:00Z</published>
+<updated>2026-11-17T06:24:56Z</updated>
+<category term="Complete Response Letter"/>
+<summary>Ivonescimab, Summit Therapeutics Inc.: Complete Response Letter. FDA action date: November 13, 2026. Announced: November 15, 2026.</summary>
+<content type="html">&lt;p&gt;Ivonescimab, Summit Therapeutics Inc.: Complete Response Letter. FDA action date: November 13, 2026. Announced: November 15, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761524_20261113.pdf"&gt;CRL letter CRL_BLA761524_20261113&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1599298/000159929826000092/ivonescimabcrlscenariopr.htm"&gt;Summit Therapeutics 8-K&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1599298/000159929826000006/a2026_prx0129xfdablaacce.htm"&gt;Summit Therapeutics Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 17, 2026, 1:24 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-11-13</id>
+<title>Gazyva (obinutuzumab) - primary membranous Approved Nov 13, 2026 | RHHBY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-11-13"/>
+<published>2026-11-13T17:00:00Z</published>
+<updated>2026-11-14T04:23:20Z</updated>
+<category term="Approved"/>
+<summary>Gazyva (obinutuzumab), Roche Holding AG (Genentech): Approved. FDA action date: November 13, 2026.</summary>
+<content type="html">&lt;p&gt;Gazyva (obinutuzumab), Roche Holding AG (Genentech): Approved. FDA action date: November 13, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=125486"&gt;BLA 125486 S-044&lt;/a&gt; &amp;middot; &lt;a href="https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-drug-treat-adults-primary-membranous-nephropathy"&gt;FDA notice&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15121/2026-07-14/fda-grants-priority-review-to-genentechs"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 13, 2026, 11:23 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/MKKGY-2026-11-10</id>
+<title>Pimjetmi Approved Nov 10, 2026 for Tenosynovial Giant Cell Tumor | MKKGY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/MKKGY-2026-11-10"/>
+<published>2026-11-10T17:00:00Z</published>
+<updated>2026-11-12T06:19:19Z</updated>
+<category term="Approved"/>
+<summary>Pimjetmi (pimicotinib), Merck KGaA (EMD Serono): Approved. FDA action date: November 10, 2026.</summary>
+<content type="html">&lt;p&gt;Pimjetmi (pimicotinib), Merck KGaA (EMD Serono): Approved. FDA action date: November 10, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/cancer-approvals/fda-approves-pimicotinib-symptomatic-tenosynovial-giant-cell-tumor"&gt;FDA oncology approval notification&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 12, 2026, 1:19 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/NVCR-2026-11-09</id>
+<title>NVCR FDA Decision (Nov 9, 2026): Optune Mya: Not approvable letter</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NVCR-2026-11-09"/>
+<published>2026-11-09T17:00:00Z</published>
+<updated>2026-11-12T06:19:19Z</updated>
+<category term="Not approvable letter"/>
+<summary>Optune Mya, NovoCure Limited: Not approvable letter. FDA action date: not on record. Announced: November 9, 2026.</summary>
+<content type="html">&lt;p&gt;Optune Mya, NovoCure Limited: Not approvable letter. FDA action date: not on record. Announced: November 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.sec.gov/Archives/edgar/data/1645113/000164511326000085/myadecisionpr.htm"&gt;Novocure 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 12, 2026, 1:19 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/BAYRY-2026-11-09</id>
+<title>Sunharbo Approved Nov 9, 2026 for Secondary Stroke Prevention | BAYRY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BAYRY-2026-11-09"/>
+<published>2026-11-09T17:00:00Z</published>
+<updated>2026-11-12T06:19:19Z</updated>
+<category term="Approved"/>
+<summary>Sunharbo (asundexian), Bayer AG: Approved. FDA action date: November 9, 2026.</summary>
+<content type="html">&lt;p&gt;Sunharbo (asundexian), Bayer AG: Approved. FDA action date: November 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-factor-xla-inhibitor-help-prevent-stroke-certain-adults-high-risk"&gt;FDA press announcement&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 12, 2026, 1:19 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/INO-2026-10-30</id>
+<title>VOCERYQ (INO-3107) Approved Oct 30, 2026 | INO FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/INO-2026-10-30"/>
+<published>2026-10-30T16:00:00Z</published>
+<updated>2026-11-02T02:41:34Z</updated>
+<category term="Approved"/>
+<summary>Voceryq (INO-3107), INOVIO Pharmaceuticals: Approved. FDA action date: October 30, 2026.</summary>
+<content type="html">&lt;p&gt;Voceryq (INO-3107), INOVIO Pharmaceuticals: Approved. FDA action date: October 30, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis"&gt;FDA press announcement&lt;/a&gt; &amp;middot; &lt;a href="https://www.prnewswire.com/news-releases/inovio-announces-fda-accelerated-approval-of-voceryq-an-immunotherapy-to-reduce-the-frequency-of-surgery-in-adults-with-recurrent-respiratory-papillomatosis-rrp-302925406.html"&gt;INOVIO press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1055726/000105572626000019/ino-33126x8kex991.htm"&gt;INOVIO PHARMACEUTICALS, INC. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 1, 2026, 9:41 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AZN-2026-10-21</id>
+<title>Ultomiris - IgA nephropathy Approved Oct 21, 2026 for IgA Nephropathy | AZN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AZN-2026-10-21"/>
+<published>2026-10-21T16:00:00Z</published>
+<updated>2026-11-02T02:41:34Z</updated>
+<category term="Approved"/>
+<summary>Ultomiris (ravulizumab), AstraZeneca (Alexion): Approved. FDA action date: October 21, 2026.</summary>
+<content type="html">&lt;p&gt;Ultomiris (ravulizumab), AstraZeneca (Alexion): Approved. FDA action date: October 21, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=761108"&gt;BLA 761108 S-046&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/901832/000165495426009093/a9580z.htm"&gt;AstraZeneca 6-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 1, 2026, 9:41 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/LLY-2026-08-27</id>
+<title>Mounjaro (tirzepatide) Approved Aug 27, 2026 | LLY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-08-27"/>
+<published>2026-08-27T16:00:00Z</published>
+<updated>2026-11-02T02:41:34Z</updated>
+<category term="Approved"/>
+<summary>Mounjaro (tirzepatide), Eli Lilly: Approved. FDA action date: August 27, 2026.</summary>
+<content type="html">&lt;p&gt;Mounjaro (tirzepatide), Eli Lilly: Approved. FDA action date: August 27, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s044,215866Orig1s045ltr.pdf"&gt;FDA approval letter, NDA 215866 S-044/S-045&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 1, 2026, 9:41 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/NVS-2026-07-31</id>
+<title>Pluvicto Approved Jul 31, 2026 | NVS FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NVS-2026-07-31"/>
+<published>2026-07-31T16:00:00Z</published>
+<updated>2026-11-02T02:41:34Z</updated>
+<category term="Approved"/>
+<summary>Pluvicto (lutetium Lu 177 vipivotide tetraxetan), Novartis: Approved. FDA action date: July 31, 2026.</summary>
+<content type="html">&lt;p&gt;Pluvicto (lutetium Lu 177 vipivotide tetraxetan), Novartis: Approved. FDA action date: July 31, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215833Orig1s037ltr.pdf"&gt;NDA 215833 SUPPL-37 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Nov 1, 2026, 9:41 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2026-10-20</id>
+<title>Hibsago Approved Oct 20, 2026, 6 Days Early for Chronic Hepatitis B | GSK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2026-10-20"/>
+<published>2026-10-20T16:00:00Z</published>
+<updated>2026-10-21T12:43:29Z</updated>
+<category term="Approved"/>
+<summary>Hibsago (bepirovirsen), GSK plc: Approved. FDA action date: October 20, 2026.</summary>
+<content type="html">&lt;p&gt;Hibsago (bepirovirsen), GSK plc: Approved. FDA action date: October 20, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221276Orig1s000Ltr.pdf"&gt;NDA 221276 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://us.gsk.com/en-us/media/press-releases/hibsago-bepirovirsen-approved-in-the-us-for-the-treatment-of-chronic-hepatitis-b-chb/"&gt;GSK press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm"&gt;Ionis 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 21, 2026, 8:43 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/GSK-2026-10-19</id>
+<title>Jemperli Approved Oct 19, 2026 for Locally Advanced Rectal Cancer | GSK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GSK-2026-10-19"/>
+<published>2026-10-19T16:00:00Z</published>
+<updated>2026-10-20T06:13:22Z</updated>
+<category term="Approved"/>
+<summary>Jemperli (dostarlimab-gxly), GSK plc: Approved. FDA action date: October 19, 2026.</summary>
+<content type="html">&lt;p&gt;Jemperli (dostarlimab-gxly), GSK plc: Approved. FDA action date: October 19, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-dostarlimab-locally-advanced-rectal-cancer"&gt;BLA 761174 S-015&lt;/a&gt; &amp;middot; &lt;a href="https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-approved-in-us-as-first-and-only-immunotherapy-for-adults-with-msi-hdmmr-locally-advanced-rectal-cancer/"&gt;GSK press release&lt;/a&gt; &amp;middot; &lt;a href="https://us.gsk.com/en-us/media/press-releases/jemperli-dostarlimab-gxly-accepted-for-priority-review-by-the-us-fda/"&gt;GSK press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 20, 2026, 2:13 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/VTRS-2026-10-16</id>
+<title>RYZUMVI Approved Oct 16, 2026, 1 Day Early for Presbyopia | VTRS FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/VTRS-2026-10-16"/>
+<published>2026-10-16T16:00:00Z</published>
+<updated>2026-10-17T04:40:44Z</updated>
+<category term="Approved"/>
+<summary>RYZUMVI (phentolamine ophthalmic solution) 0.75%, Viatris Inc. (commercial partner of Opus Genetics): Approved. FDA action date: October 16, 2026.</summary>
+<content type="html">&lt;p&gt;RYZUMVI (phentolamine ophthalmic solution) 0.75%, Viatris Inc. (commercial partner of Opus Genetics): Approved. FDA action date: October 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=217064"&gt;NDA 217064 S-005&lt;/a&gt; &amp;middot; &lt;a href="https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"&gt;Opus Genetics press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1792044/000179204426000010/exhibit991-4q25earningsrel.htm"&gt;Viatris Inc 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 17, 2026, 12:40 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/IRD-2026-10-16</id>
+<title>RYZUMVI Approved Oct 16, 2026, 1 Day Early for Presbyopia | IRD FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/IRD-2026-10-16"/>
+<published>2026-10-16T16:00:00Z</published>
+<updated>2026-10-17T04:40:44Z</updated>
+<category term="Approved"/>
+<summary>RYZUMVI (phentolamine ophthalmic solution) 0.75%, Opus Genetics, Inc.: Approved. FDA action date: October 16, 2026.</summary>
+<content type="html">&lt;p&gt;RYZUMVI (phentolamine ophthalmic solution) 0.75%, Opus Genetics, Inc.: Approved. FDA action date: October 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=217064"&gt;NDA 217064 S-005&lt;/a&gt; &amp;middot; &lt;a href="https://ir.opusgtx.com/press-releases/detail/546/opus-genetics-announces-fda-approval-of-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"&gt;Opus Genetics press release&lt;/a&gt; &amp;middot; &lt;a href="https://ir.opusgtx.com/press-releases/detail/519/opus-genetics-announces-fda-acceptance-of-supplemental-new-drug-application-for-phentolamine-ophthalmic-solution-0-75-for-the-treatment-of-presbyopia"&gt;Opus Genetics press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 17, 2026, 12:40 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/TEVA-2026-09-25</id>
+<title>Degevma (denosumab-adet) Approved Sep 25, 2026 | TEVA FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TEVA-2026-09-25"/>
+<published>2026-09-25T16:00:00Z</published>
+<updated>2026-10-16T08:27:21Z</updated>
+<category term="Approved"/>
+<summary>Degevma (denosumab-adet), Teva Pharmaceutical Industries: Approved. FDA action date: September 25, 2026.</summary>
+<content type="html">&lt;p&gt;Degevma (denosumab-adet), Teva Pharmaceutical Industries: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761481Orig1s000ltr.pdf"&gt;BLA 761481 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 16, 2026, 4:27 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/LLY-2026-09-25</id>
+<title>Olumiant (baricitinib) Approved Sep 25, 2026 | LLY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-09-25"/>
+<published>2026-09-25T16:00:00Z</published>
+<updated>2026-10-16T08:27:21Z</updated>
+<category term="Approved"/>
+<summary>Olumiant (baricitinib), Eli Lilly and Company: Approved. FDA action date: September 25, 2026.</summary>
+<content type="html">&lt;p&gt;Olumiant (baricitinib), Eli Lilly and Company: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/207924Orig1s009ltr.pdf"&gt;NDA 207924 SUPPL-9 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 16, 2026, 4:27 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/MRK-2026-09-24</id>
+<title>Welireg (belzutifan) plus Lenvima (lenvatinib) Approved Sep 24, 2026 | MRK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/MRK-2026-09-24"/>
+<published>2026-09-24T16:00:00Z</published>
+<updated>2026-10-16T08:27:21Z</updated>
+<category term="Approved"/>
+<summary>Welireg (belzutifan) plus Lenvima (lenvatinib), Merck &amp; Co. and Eisai: Approved. FDA action date: September 24, 2026.</summary>
+<content type="html">&lt;p&gt;Welireg (belzutifan) plus Lenvima (lenvatinib), Merck &amp;amp; Co. and Eisai: Approved. FDA action date: September 24, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215383Orig1s013ltr.pdf"&gt;NDA 215383 SUPPL-13 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 16, 2026, 4:27 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/LLY-2026-09-23</id>
+<title>Onswik (insulin efsitora alfa-gobe) Approved Sep 23, 2026 | LLY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-09-23"/>
+<published>2026-09-23T16:00:00Z</published>
+<updated>2026-10-16T08:27:21Z</updated>
+<category term="Approved"/>
+<summary>Onswik (insulin efsitora alfa-gobe), Eli Lilly and Company: Approved. FDA action date: September 23, 2026.</summary>
+<content type="html">&lt;p&gt;Onswik (insulin efsitora alfa-gobe), Eli Lilly and Company: Approved. FDA action date: September 23, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761408Orig1s000ltr.pdf"&gt;BLA 761408 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 16, 2026, 4:27 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-10-15</id>
+<title>Enspryng Approved Oct 15, 2026 for Thyroid Eye Disease | RHHBY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-10-15"/>
+<published>2026-10-15T16:00:00Z</published>
+<updated>2026-10-16T07:47:30Z</updated>
+<category term="Approved"/>
+<summary>Enspryng (satralizumab-mwge), Roche Holding AG (Genentech): Approved. FDA action date: October 15, 2026.</summary>
+<content type="html">&lt;p&gt;Enspryng (satralizumab-mwge), Roche Holding AG (Genentech): Approved. FDA action date: October 15, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761149Orig1s008ltr.pdf"&gt;BLA 761149 S-008&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15137/2026-10-15/fda-approves-genentechs-enspryng-a-first"&gt;Genentech press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.roche.com/media/releases/med-cor-2026-10-16"&gt;Roche media release, Basel&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15118/2026-06-29/fda-grants-priority-review-to-genentechs"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 16, 2026, 3:47 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/IBRX-2026-10-14</id>
+<title>ANKTIVA (N-803) + BCG Approved Oct 14, 2026, 84 Days Early | IBRX FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/IBRX-2026-10-14"/>
+<published>2026-10-14T16:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>Anktiva (nogapendekin alfa inbakicept-pmln) + BCG - papillary-only NMIBC, ImmunityBio: Approved. FDA action date: October 14, 2026.</summary>
+<content type="html">&lt;p&gt;Anktiva (nogapendekin alfa inbakicept-pmln) + BCG - papillary-only NMIBC, ImmunityBio: Approved. FDA action date: October 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-expanded-indication-nogapendekin-alfa-inbakicept-pmln-bcg-unresponsive-non-muscle"&gt;FDA approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1326110/000119312526421820/d188887dex991.htm"&gt;ImmunityBio 8-K exhibit 99.1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1326110/000132611026000077/ibrx-202684x8kexhibit991.htm"&gt;ImmunityBio, Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AMGN-2026-10-09</id>
+<title>Repatha (evolocumab) - cardiovascular risk Approved Oct 9, 2026 | AMGN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AMGN-2026-10-09"/>
+<published>2026-10-09T16:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>Repatha (evolocumab) - cardiovascular risk reduction label expansion (VESALIUS-CV), Amgen: Approved. FDA action date: October 9, 2026.</summary>
+<content type="html">&lt;p&gt;Repatha (evolocumab) - cardiovascular risk reduction label expansion (VESALIUS-CV), Amgen: Approved. FDA action date: October 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=125522"&gt;BLA 125522 SUPPL-47 (Drugs@FDA)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/TEVA-2026-10-08</id>
+<title>Weltruza (olanzapine) extended-release Approved Oct 8, 2026 | TEVA FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TEVA-2026-10-08"/>
+<published>2026-10-08T16:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>Weltruza (olanzapine) extended-release injectable suspension (TEV-749), Teva Pharmaceutical Industries: Approved. FDA action date: October 8, 2026.</summary>
+<content type="html">&lt;p&gt;Weltruza (olanzapine) extended-release injectable suspension (TEV-749), Teva Pharmaceutical Industries: Approved. FDA action date: October 8, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219007Orig1s000ltr.pdf"&gt;NDA 219007 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/PFE-2026-10-07</id>
+<title>Tukysa (tucatinib) + trastuzumab + pertuzumab Approved Oct 7, 2026 | PFE FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PFE-2026-10-07"/>
+<published>2026-10-07T16:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>Tukysa (tucatinib) + trastuzumab + pertuzumab - HER2+ metastatic breast cancer maintenance (HER2CLIMB-05), Pfizer (Seagen): Approved. FDA action date: October 7, 2026.</summary>
+<content type="html">&lt;p&gt;Tukysa (tucatinib) + trastuzumab + pertuzumab - HER2+ metastatic breast cancer maintenance (HER2CLIMB-05), Pfizer (Seagen): Approved. FDA action date: October 7, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213411Orig1s010ltr.pdf"&gt;NDA 213411 SUPPL-10 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/BMY-2026-09-30</id>
+<title>Camzyos (mavacamten) - pediatric oHCM Approved Sep 30, 2026 | BMY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BMY-2026-09-30"/>
+<published>2026-09-30T16:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>Camzyos (mavacamten) - pediatric oHCM (SCOUT-HCM), Bristol Myers Squibb: Approved. FDA action date: September 30, 2026.</summary>
+<content type="html">&lt;p&gt;Camzyos (mavacamten) - pediatric oHCM (SCOUT-HCM), Bristol Myers Squibb: Approved. FDA action date: September 30, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214998Orig1s013ltr.pdf"&gt;NDA 214998 SUPPL-13 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/SPRY-2026-03-27</id>
+<title>neffy (epinephrine nasal spray) Approved Mar 26, 2026 | SPRY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SPRY-2026-03-27"/>
+<published>2026-03-27T16:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>neffy (epinephrine nasal spray) - age limit removed, patients 15 kg and over, ARS Pharmaceuticals: Approved. FDA action date: March 26, 2026. Announced: March 27, 2026.</summary>
+<content type="html">&lt;p&gt;neffy (epinephrine nasal spray) - age limit removed, patients 15 kg and over, ARS Pharmaceuticals: Approved. FDA action date: March 26, 2026. Announced: March 27, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214697Orig1s002ltr.pdf"&gt;NDA 214697 SUPPL-2 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/EBS-2026-02-12</id>
+<title>OTC NARCAN Nasal Spray - 6-count and 24-count Approved Feb 11, 2026 | EBS FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/EBS-2026-02-12"/>
+<published>2026-02-12T17:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>OTC NARCAN Nasal Spray - 6-count and 24-count multipacks, Emergent BioSolutions: Approved. FDA action date: February 11, 2026. Announced: February 12, 2026.</summary>
+<content type="html">&lt;p&gt;OTC NARCAN Nasal Spray - 6-count and 24-count multipacks, Emergent BioSolutions: Approved. FDA action date: February 11, 2026. Announced: February 12, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208411Orig1s011ltr.pdf"&gt;FDA approval letter, NDA 208411 supplement 11&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/NVCR-2026-02-11</id>
+<title>Optune Pax (Tumor Treating Fields) Approved Feb 11, 2026 | NVCR FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NVCR-2026-02-11"/>
+<published>2026-02-11T17:00:00Z</published>
+<updated>2026-10-16T01:39:55Z</updated>
+<category term="Approved"/>
+<summary>Optune Pax (Tumor Treating Fields) - locally advanced pancreatic cancer, Novocure: Approved. FDA action date: February 11, 2026.</summary>
+<content type="html">&lt;p&gt;Optune Pax (Tumor Treating Fields) - locally advanced pancreatic cancer, Novocure: Approved. FDA action date: February 11, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P250034"&gt;FDA PMA record P250034&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1645113/000164511326000010/paxfdadecisionpr.htm"&gt;Novocure 8-K exhibit&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 15, 2026, 9:39 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/NVS-2026-10-06</id>
+<title>Rhapsido (remibrutinib) Approved Oct 6, 2026 for Dermographism | NVS FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NVS-2026-10-06"/>
+<published>2026-10-06T16:00:00Z</published>
+<updated>2026-10-10T16:20:09Z</updated>
+<category term="Approved"/>
+<summary>Rhapsido (remibrutinib), Novartis: Approved. FDA action date: October 6, 2026.</summary>
+<content type="html">&lt;p&gt;Rhapsido (remibrutinib), Novartis: Approved. FDA action date: October 6, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;amp;ApplNo=218436"&gt;NDA 218436 S-001&lt;/a&gt; &amp;middot; &lt;a href="https://www.novartis.com/us-en/news/media-releases/novartis-rhapsido-remibrutinib-receives-fda-approval-first-treatment-symptomatic-dermographism-sd-expanding-its-use-beyond-chronic-spontaneous-urticaria-csu"&gt;Novartis media release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 10, 2026, 12:20 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-10-08</id>
+<title>Tecentriq Approved Oct 8, 2026, 1 Day Early for dMMR Colon Cancer | RHHBY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-10-08"/>
+<published>2026-10-08T16:00:00Z</published>
+<updated>2026-10-09T01:51:30Z</updated>
+<category term="Approved"/>
+<summary>Tecentriq (atezolizumab), Genentech, a Roche company: Approved. FDA action date: October 8, 2026.</summary>
+<content type="html">&lt;p&gt;Tecentriq (atezolizumab), Genentech, a Roche company: Approved. FDA action date: October 8, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-combination-chemotherapy-stage-iii-mismatch-repair-deficient-colon-cancer"&gt;FDA approval notification&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15135/2026-10-08/fda-approves-genentechs-tecentriq-in-com"&gt;Genentech press release&lt;/a&gt; &amp;middot; &lt;a href="https://www.gene.com/media/press-releases/15116/2026-06-10/fda-grants-priority-review-for-genentech"&gt;Genentech press release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 8, 2026, 9:51 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/LLY-2026-10-02</id>
+<title>Jaypirca (pirtobrutinib) Approved Oct 2, 2026 for First-Line CLL/SLL | LLY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-10-02"/>
+<published>2026-10-02T16:00:00Z</published>
+<updated>2026-10-04T17:28:48Z</updated>
+<category term="Approved"/>
+<summary>Jaypirca (pirtobrutinib), Eli Lilly and Company: Approved. FDA action date: October 2, 2026.</summary>
+<content type="html">&lt;p&gt;Jaypirca (pirtobrutinib), Eli Lilly and Company: Approved. FDA action date: October 2, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pirtobrutinib-previously-untreated-chronic-lymphocytic-leukemia-or-small-lymphocytic"&gt;FDA approval notification, NDA 216059&lt;/a&gt; &amp;middot; &lt;a href="https://lilly.mediaroom.com/2026-10-02-Lillys-Jaypirca-pirtobrutinib-,-the-first-and-only-approved-non-covalent-BTK-inhibitor,-receives-expanded-indication-from-U-S-FDA-for-certain-patients-with-previously-untreated-CLL-SLL"&gt;FDA approval notification&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 4, 2026, 1:28 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RHHBY-2026-09-25</id>
+<title>Gazyva (obinutuzumab) Approved Sep 25, 2026 | RHHBY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RHHBY-2026-09-25"/>
+<published>2026-09-25T16:00:00Z</published>
+<updated>2026-10-03T22:53:14Z</updated>
+<category term="Approved"/>
+<summary>Gazyva (obinutuzumab), Roche Holding AG: Approved. FDA action date: September 25, 2026.</summary>
+<content type="html">&lt;p&gt;Gazyva (obinutuzumab), Roche Holding AG: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125486Orig1s043ltr.pdf"&gt;BLA 125486 SUPPL-43&lt;/a&gt; &amp;middot; &lt;a href="https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-drug-treat-idiopathic-nephrotic-syndrome-patients-2-years-and-older"&gt;FDA approval letter, BLA 125486 supplement 043&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 3, 2026, 6:53 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/ABBV-2026-09-28</id>
+<title>JUVMO (tavapadon) Approved Sep 25, 2026 | ABBV FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ABBV-2026-09-28"/>
+<published>2026-09-28T16:00:00Z</published>
+<updated>2026-10-03T19:28:32Z</updated>
+<category term="Approved"/>
+<summary>JUVMO (tavapadon), AbbVie: Approved. FDA action date: September 25, 2026. Announced: September 28, 2026.</summary>
+<content type="html">&lt;p&gt;JUVMO (tavapadon), AbbVie: Approved. FDA action date: September 25, 2026. Announced: September 28, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220415Orig1s000ltr.pdf"&gt;NDA 220415 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://news.abbvie.com/2026-09-28-U-S-FDA-Approves-AbbVies-JUVMO-TM-tavapadon-for-Parkinsons-Disease"&gt;FDA approval letter, NDA 220415&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Oct 3, 2026, 3:28 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/MIRM-2026-09-25</id>
+<title>Atebrioz (zilurgisertib) Approved Sep 25, 2026, 1 Day Early | MIRM FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/MIRM-2026-09-25"/>
+<published>2026-09-25T16:00:00Z</published>
+<updated>2026-09-27T04:35:21Z</updated>
+<category term="Approved"/>
+<summary>Atebrioz (zilurgisertib), Mirum Pharmaceuticals, Inc.: Approved. FDA action date: September 25, 2026.</summary>
+<content type="html">&lt;p&gt;Atebrioz (zilurgisertib), Mirum Pharmaceuticals, Inc.: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf"&gt;NDA 221198 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva"&gt;FDA notice&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm"&gt;Mirum 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 27, 2026, 12:35 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/INCY-2026-09-25</id>
+<title>Atebrioz (zilurgisertib) Approved Sep 25, 2026, 1 Day Early | INCY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/INCY-2026-09-25"/>
+<published>2026-09-25T16:00:00Z</published>
+<updated>2026-09-27T04:35:21Z</updated>
+<category term="Approved"/>
+<summary>Atebrioz (zilurgisertib), Incyte Corp: Approved. FDA action date: September 25, 2026.</summary>
+<content type="html">&lt;p&gt;Atebrioz (zilurgisertib), Incyte Corp: Approved. FDA action date: September 25, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221198Orig1s000ltr.pdf"&gt;NDA 221198 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.businesswire.com/news/home/20260925436454/en/Mirum-Pharmaceuticals-and-Incyte-Announce-U.S.-FDA-Approval-of-Atebrioz-zilurgisertib-for-Adult-and-Pediatric-Patients-with-Fibrodysplasia-Ossificans-Progressiva"&gt;FDA notice&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1759425/000175942526000036/mirm-20260506xexx991.htm"&gt;Mirum 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 27, 2026, 12:35 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/BAYRY-2026-09-16</id>
+<title>KERENDIA (finerenone), T1D-CKD Approved Sep 16, 2026 | BAYRY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BAYRY-2026-09-16"/>
+<published>2026-09-16T16:00:00Z</published>
+<updated>2026-09-24T01:25:52Z</updated>
+<category term="Approved"/>
+<summary>KERENDIA (finerenone), T1D-CKD, Bayer AG: Approved. FDA action date: September 16, 2026.</summary>
+<content type="html">&lt;p&gt;KERENDIA (finerenone), T1D-CKD, Bayer AG: Approved. FDA action date: September 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215341Orig1s011ltr.pdf"&gt;NDA 215341 S-011&lt;/a&gt; &amp;middot; &lt;a href="https://www.bayer.com/media/en-us/us-fda-approves-finerenone-for-new-indication-in-patients-with-chronic-kidney-disease-associated-with-type-1-diabetes/"&gt;FDA approval letter NDA 215341/S-011 dated&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:25 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/NUVB-2026-09-16</id>
+<title>IBTROZI (taletrectinib) sNDA Approved Sep 16, 2026, 110 Days Early | NUVB FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/NUVB-2026-09-16"/>
+<published>2026-09-16T16:00:00Z</published>
+<updated>2026-09-24T01:10:48Z</updated>
+<category term="Approved"/>
+<summary>IBTROZI (taletrectinib) - sNDA S-004 label update, Nuvation Bio Inc.: Approved. FDA action date: September 16, 2026.</summary>
+<content type="html">&lt;p&gt;IBTROZI (taletrectinib) - sNDA S-004 label update, Nuvation Bio Inc.: Approved. FDA action date: September 16, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219713Orig1s004ltr.pdf"&gt;NDA 219713 S-004&lt;/a&gt; &amp;middot; &lt;a href="https://www.prnewswire.com/news-releases/nuvation-bio-announces-fda-approval-of-supplemental-new-drug-application-for-ibtrozi-taletrectinib-with-updated-duration-of-response-in-tki-naive-advanced-ros1-positive-non-small-cell-lung-cancer-302881232.html"&gt;FDA approval letter NDA 219713/S-004 dated&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1811063/000119312526336751/d261840dex991.htm"&gt;Nuvation Bio Inc. 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:10 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/MRK-2026-09-22</id>
+<title>WINREVAIR (sotatercept-csrk) Approved Sep 21, 2026, On Goal Date | MRK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/MRK-2026-09-22"/>
+<published>2026-09-22T16:00:00Z</published>
+<updated>2026-09-24T01:01:10Z</updated>
+<category term="Approved"/>
+<summary>WINREVAIR (sotatercept-csrk) - HYPERION label update, Merck &amp; Co., Inc.: Approved. FDA action date: September 21, 2026. Announced: September 22, 2026.</summary>
+<content type="html">&lt;p&gt;WINREVAIR (sotatercept-csrk) - HYPERION label update, Merck &amp;amp; Co., Inc.: Approved. FDA action date: September 21, 2026. Announced: September 22, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761363Orig1s012,s016,s017ltr.pdf"&gt;BLA 761363 S-017&lt;/a&gt; &amp;middot; &lt;a href="https://www.merck.com/news/u-s-fda-approves-update-to-the-label-for-winrevair-sotatercept-csrk-to-include-data-from-the-phase-3-hyperion-trial-evaluating-adults-recently-diagnosed-with-pulmonary-arterial-hypertensio/"&gt;Merck news release&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/310158/000031015826000212/mrk-20260630.htm"&gt;Merck 10-Q and 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 23, 2026, 9:01 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/RARE-2026-09-17</id>
+<title>FAYUVI Approved Sep 17, 2026, 2 Days Early | RARE FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RARE-2026-09-17"/>
+<published>2026-09-17T16:00:00Z</published>
+<updated>2026-09-19T21:14:07Z</updated>
+<category term="Approved"/>
+<summary>FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.</summary>
+<content type="html">&lt;p&gt;FAYUVI (rebisufligene etisparvovec-hopf; UX111), Ultragenyx Pharmaceutical Inc.: Approved. FDA action date: September 17, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.fda.gov/media/194921/download"&gt;CBER approval letter&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000151567326000006/rare-20260917.htm"&gt;Ultragenyx 8-K&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526139084/rare-20260402.htm"&gt;Ultragenyx 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/TLX-2026-09-14</id>
+<title>Pixclara Approved Sep 11, 2026, On Goal Date | TLX FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/TLX-2026-09-14"/>
+<published>2026-09-14T16:00:00Z</published>
+<updated>2026-09-19T21:14:07Z</updated>
+<category term="Approved"/>
+<summary>Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.</summary>
+<content type="html">&lt;p&gt;Pixclara (floretyrosine F 18; TLX101-Px), Telix Pharmaceuticals Limited: Approved. FDA action date: September 11, 2026. Announced: September 14, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218592Orig1s000ltr.pdf"&gt;NDA 218592 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/2007191/000162828026061892/pixclaraapprovalvfinal.htm"&gt;Telix 6-K&lt;/a&gt; &amp;middot; &lt;a href="https://telixpharma.com/news-views/fda-accepts-nda-for-tlx101-px-pixclara/"&gt;Telix release&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 19, 2026, 5:14 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/LLY-2026-09-18</id>
+<title>Inluriyo (imlunestrant) + Verzenio Approved Sep 18, 2026 | LLY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/LLY-2026-09-18"/>
+<published>2026-09-18T16:00:00Z</published>
+<updated>2026-09-19T01:33:50Z</updated>
+<category term="Approved"/>
+<summary>Inluriyo (imlunestrant) with Verzenio (abemaciclib), Eli Lilly and Company: Approved. FDA action date: September 18, 2026.</summary>
+<content type="html">&lt;p&gt;Inluriyo (imlunestrant) with Verzenio (abemaciclib), Eli Lilly and Company: Approved. FDA action date: September 18, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218881Orig1s001ltr.pdf"&gt;NDA 218881 S-001&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 18, 2026, 9:33 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/SRRK-2026-09-11</id>
+<title>ISEMBYLD (apitegromab-mstn) Approved Sep 11, 2026, 19 Days Early | SRRK FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SRRK-2026-09-11"/>
+<published>2026-09-11T16:00:00Z</published>
+<updated>2026-09-14T15:54:05Z</updated>
+<category term="Approved"/>
+<summary>ISEMBYLD (apitegromab-mstn), Scholar Rock Holding Corporation: Approved. FDA action date: September 11, 2026.</summary>
+<content type="html">&lt;p&gt;ISEMBYLD (apitegromab-mstn), Scholar Rock Holding Corporation: Approved. FDA action date: September 11, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761463Orig1s000ltr.pdf"&gt;BLA 761463 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1727196/000110465926107273/tm2625362d1_ex99-1.htm"&gt;Scholar Rock 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/PHAR-2026-09-11</id>
+<title>Joenja (leniolisib) Approved Sep 11, 2026, 43 Days Early | PHAR FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/PHAR-2026-09-11"/>
+<published>2026-09-11T16:00:00Z</published>
+<updated>2026-09-14T15:54:05Z</updated>
+<category term="Approved"/>
+<summary>Joenja (leniolisib), Pharming Group N.V.: Approved. FDA action date: September 11, 2026.</summary>
+<content type="html">&lt;p&gt;Joenja (leniolisib), Pharming Group N.V.: Approved. FDA action date: September 11, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217759Orig1s006ltr.pdf"&gt;NDA 217759 S-006&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1828316/000182831626000037/fdaapprovespharmingsjoenja.htm"&gt;Pharming 6-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/BFRI-2026-09-09</id>
+<title>Ameluz Approved Sep 9, 2026, 19 Days Early | BFRI FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BFRI-2026-09-09"/>
+<published>2026-09-09T16:00:00Z</published>
+<updated>2026-09-14T15:54:05Z</updated>
+<category term="Approved"/>
+<summary>Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light, Biofrontera Inc.: Approved. FDA action date: September 9, 2026.</summary>
+<content type="html">&lt;p&gt;Ameluz (aminolevulinic acid hydrochloride) with RhodoLED red light, Biofrontera Inc.: Approved. FDA action date: September 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/208081Orig1s040ltr.pdf"&gt;NDA 208081 S-040&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/1858685/000149315226042508/ex99-1.htm"&gt;Biofrontera 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/BAYRY-2026-09-09</id>
+<title>HYRNUO (sevabertinib) - HER2-mutant NSCLC Approved Sep 9, 2026 | BAYRY FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/BAYRY-2026-09-09"/>
+<published>2026-09-09T16:00:00Z</published>
+<updated>2026-09-14T15:54:05Z</updated>
+<category term="Approved"/>
+<summary>HYRNUO (sevabertinib), Bayer: Approved. FDA action date: September 9, 2026.</summary>
+<content type="html">&lt;p&gt;HYRNUO (sevabertinib), Bayer: Approved. FDA action date: September 9, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/219972Orig1s001ltr.pdf"&gt;NDA 219972 S-001&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 14, 2026, 11:54 AM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/AZN-2026-09-04</id>
+<title>Etcamah (camizestrant) Approved Sep 4, 2026 | AZN FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/AZN-2026-09-04"/>
+<published>2026-09-04T16:00:00Z</published>
+<updated>2026-09-05T20:38:55Z</updated>
+<category term="Approved"/>
+<summary>Etcamah (camizestrant), AstraZeneca PLC: Approved. FDA action date: September 4, 2026.</summary>
+<content type="html">&lt;p&gt;Etcamah (camizestrant), AstraZeneca PLC: Approved. FDA action date: September 4, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220359Orig1s000ltr.pdf"&gt;NDA 220359 ORIG-1 (FDA letter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 5, 2026, 4:38 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/IONS-2026-09-03</id>
+<title>Zilganersen (ION373) Approved Sep 3, 2026, 19 Days Early | IONS FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/IONS-2026-09-03"/>
+<published>2026-09-03T16:00:00Z</published>
+<updated>2026-09-05T20:38:55Z</updated>
+<category term="Approved"/>
+<summary>Zanvastro (zilganersen), Ionis Pharmaceuticals, Inc.: Approved. FDA action date: September 3, 2026.</summary>
+<content type="html">&lt;p&gt;Zanvastro (zilganersen), Ionis Pharmaceuticals, Inc.: Approved. FDA action date: September 3, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220210Orig1s000ltr.pdf"&gt;NDA 220210 ORIG-1&lt;/a&gt; &amp;middot; &lt;a href="https://www.sec.gov/Archives/edgar/data/874015/000114036126029960/ef20078953_ex99-1.htm"&gt;Ionis 8-K&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 5, 2026, 4:38 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>https://www.pdufa.bio/fda-decision/ROIV-2026-08-27</id>
+<title>Brepocitinib Approved Aug 27, 2026 | ROIV FDA Decision</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ROIV-2026-08-27"/>
+<published>2026-08-27T16:00:00Z</published>
+<updated>2026-09-05T20:38:55Z</updated>
+<category term="Approved"/>
+<summary>LISRAYA (brepocitinib), Roivant Sciences Ltd. (Priovant Therapeutics): Approved. FDA action date: August 27, 2026.</summary>
+<content type="html">&lt;p&gt;LISRAYA (brepocitinib), Roivant Sciences Ltd. (Priovant Therapeutics): Approved. FDA action date: August 27, 2026.&lt;/p&gt;&lt;p&gt;Sources: &lt;a href="https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220106Orig1s000ltr.pdf"&gt;NDA 220106 ORIG-1&lt;/a&gt;&lt;/p&gt;&lt;p&gt;First committed to pdufa.bio's public repository on Sep 5, 2026, 4:38 PM ET.&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:pdufa-date-change/CAPR/2026-08-22/2026-11-22</id>
+<title>CAPR Deramiocel (CAP-1002): PDUFA goal date moved from August 22, 2026 to November 22, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/pdufa-date-changes"/>
+<published>2026-08-24T16:00:00Z</published>
+<updated>2026-08-24T16:00:00Z</updated>
+<category term="PDUFA goal date change"/>
+<summary>The PDUFA goal date for Deramiocel (CAP-1002) (Capricor Therapeutics Inc.) moved 92 days later, from August 22, 2026 to November 22, 2026; pdufa.bio recorded the new date on August 24, 2026.</summary>
+<content type="html">&lt;p&gt;The PDUFA goal date for Deramiocel (CAP-1002) (Capricor Therapeutics Inc.) moved 92 days later, from August 22, 2026 to November 22, 2026; pdufa.bio recorded the new date on August 24, 2026.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.globenewswire.com/news-release/2026/08/24/capricor-therapeutics-announces-extension-of-pdufa-target-action-date-as-fda-continues-review-of-deramiocel-bla.html"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:pdufa-date-change/PRAX/2026-09-27/2026-12-27</id>
+<title>PRAX Relutrigine (PRAX-562): PDUFA goal date moved from September 27, 2026 to December 27, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/pdufa-date-changes"/>
+<published>2026-06-29T16:00:00Z</published>
+<updated>2026-06-29T16:00:00Z</updated>
+<category term="PDUFA goal date change"/>
+<summary>The PDUFA goal date for Relutrigine (PRAX-562) (Praxis Precision Medicines Inc.) moved 91 days later, from September 27, 2026 to December 27, 2026; pdufa.bio recorded the new date on June 29, 2026.</summary>
+<content type="html">&lt;p&gt;The PDUFA goal date for Relutrigine (PRAX-562) (Praxis Precision Medicines Inc.) moved 91 days later, from September 27, 2026 to December 27, 2026; pdufa.bio recorded the new date on June 29, 2026.&lt;/p&gt;&lt;p&gt;Source: &lt;a href="https://www.sec.gov/Archives/edgar/data/1689548/000168954826000069/prax-20260629.htm"&gt;the announcement&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+</feed>
