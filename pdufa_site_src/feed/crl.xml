@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title>pdufa.bio: FDA Complete Response Letters, as the FDA releases them</title>
+<subtitle>Complete Response Letters in the FDA's CRL release (openFDA, last updated 2026-11-18), each linking the FDA's PDF.</subtitle>
+<id>https://www.pdufa.bio/feed/crl.xml</id>
+<link rel="self" type="application/atom+xml" href="https://www.pdufa.bio/feed/crl.xml"/>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/feed"/>
+<updated>2026-11-13T17:00:00Z</updated>
+<author><name>pdufa.bio</name><uri>https://www.pdufa.bio</uri></author>
+<rights>Facts from FDA and sponsor documents, each linked. Not investment advice.</rights>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761524_20261113.pdf%7C2026-11-13%7CBLA%20761524%7Ce9636831</id>
+<title>Complete Response Letter, BLA 761524: Summit Therapeutics Inc., November 13, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SMMT-2026-11-15"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761524_20261113.pdf"/>
+<published>2026-11-13T17:00:00Z</published>
+<updated>2026-11-13T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Summit Therapeutics Inc. on BLA 761524, dated November 13, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Summit Therapeutics Inc. on BLA 761524, dated November 13, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761524_20261113.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220054_20261019.pdf%7C2026-10-19%7CNDA%20220054%7Cb134147d</id>
+<title>Complete Response Letter, NDA 220054: Cristcot HCA LLC, October 19, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220054_20261019.pdf"/>
+<published>2026-10-19T16:00:00Z</published>
+<updated>2026-10-19T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Cristcot HCA LLC on NDA 220054, dated October 19, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Cristcot HCA LLC on NDA 220054, dated October 19, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220054_20261019.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761393_20260909.pdf%7C2026-09-09%7CBLA%20761393%7C5027699e</id>
+<title>Complete Response Letter, BLA 761393: SEIKAGAKU Corporation, September 9, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/seikagaku"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761393_20260909.pdf"/>
+<published>2026-09-09T16:00:00Z</published>
+<updated>2026-09-09T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to SEIKAGAKU Corporation on BLA 761393, dated September 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to SEIKAGAKU Corporation on BLA 761393, dated September 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761393_20260909.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA216195_20260818.pdf%7C2026-08-18%7CNDA%20216195%7Ca824d381</id>
+<title>Complete Response Letter, NDA 216195: Xspray Pharma AB, August 18, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/xspray-pharma"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA216195_20260818.pdf"/>
+<published>2026-08-18T16:00:00Z</published>
+<updated>2026-08-18T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Xspray Pharma AB on NDA 216195, dated August 18, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Xspray Pharma AB on NDA 216195, dated August 18, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA216195_20260818.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761494_20260818.pdf%7C2026-08-18%7CBLA%20761494%7C78bea441</id>
+<title>Complete Response Letter, BLA 761494: SamChunDang Pharm. Co., Ltd., August 18, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761494_20260818.pdf"/>
+<published>2026-08-18T16:00:00Z</published>
+<updated>2026-08-18T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to SamChunDang Pharm. Co., Ltd. on BLA 761494, dated August 18, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to SamChunDang Pharm. Co., Ltd. on BLA 761494, dated August 18, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761494_20260818.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA218705_20260807.pdf%7C2026-08-07%7CNDA%20218705%7C2571c7f2</id>
+<title>Complete Response Letter, NDA 218705: ITM Solucin GmbH, August 7, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA218705_20260807.pdf"/>
+<published>2026-08-07T16:00:00Z</published>
+<updated>2026-08-07T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to ITM Solucin GmbH on NDA 218705, dated August 7, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to ITM Solucin GmbH on NDA 218705, dated August 7, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA218705_20260807.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220381_20260729.pdf%7C2026-07-29%7CNDA%20220381%2CNDA%20220381%2FOriginal%202%7C41c7c6eb</id>
+<title>Complete Response Letter, NDA 220381, NDA 220381/Original 2: Fresenius Kabi USA, LLC, July 29, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/fresenius-kabi"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220381_20260729.pdf"/>
+<published>2026-07-29T16:00:00Z</published>
+<updated>2026-07-29T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Fresenius Kabi USA, LLC on NDA 220381, NDA 220381/Original 2, dated July 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Fresenius Kabi USA, LLC on NDA 220381, NDA 220381/Original 2, dated July 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220381_20260729.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA219107_20260721.pdf%7C2026-07-21%7CNDA%20219107%7C8ab52be7</id>
+<title>Complete Response Letter, NDA 219107: Apiject Systems Corp., July 21, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA219107_20260721.pdf"/>
+<published>2026-07-21T16:00:00Z</published>
+<updated>2026-07-21T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Apiject Systems Corp. on NDA 219107, dated July 21, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Apiject Systems Corp. on NDA 219107, dated July 21, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219107_20260721.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA216586_20260709_Redacted.pdf%7C2026-07-09%7CNDA%20216586%7C784823fe</id>
+<title>Complete Response Letter, NDA 216586: Elevar Therapeutics Inc., July 9, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/elevar-therapeutics"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA216586_20260709_Redacted.pdf"/>
+<published>2026-07-09T16:00:00Z</published>
+<updated>2026-07-09T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Elevar Therapeutics Inc. on NDA 216586, dated July 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Elevar Therapeutics Inc. on NDA 216586, dated July 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA216586_20260709_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761308_20260709_Redacted.pdf%7C2026-07-09%7CBLA%20761308%7C0d2ec3ff</id>
+<title>Complete Response Letter, BLA 761308: Jiangsu Hengrui Pharmaceuticals Co., Ltd., July 9, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/jiangsu-hengrui-pharmaceuticals"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761308_20260709_Redacted.pdf"/>
+<published>2026-07-09T16:00:00Z</published>
+<updated>2026-07-09T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Jiangsu Hengrui Pharmaceuticals Co., Ltd. on BLA 761308, dated July 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Jiangsu Hengrui Pharmaceuticals Co., Ltd. on BLA 761308, dated July 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761308_20260709_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220544_20260702_Redacted.pdf%7C2026-07-02%7CNDA%20220544%7Ca2a79873</id>
+<title>Complete Response Letter, NDA 220544: Ascelia Pharma AB, July 2, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220544_20260702_Redacted.pdf"/>
+<published>2026-07-02T16:00:00Z</published>
+<updated>2026-07-02T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Ascelia Pharma AB on NDA 220544, dated July 2, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Ascelia Pharma AB on NDA 220544, dated July 2, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220544_20260702_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA218607_20260629.pdf%7C2026-06-29%7CNDA%20218607%7C250db241</id>
+<title>Complete Response Letter, NDA 218607: Unicycive Therapeutics Inc., June 29, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/UNCY-2026-06-30"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA218607_20260629.pdf"/>
+<published>2026-06-29T16:00:00Z</published>
+<updated>2026-06-29T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Unicycive Therapeutics Inc. on NDA 218607, dated June 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Unicycive Therapeutics Inc. on NDA 218607, dated June 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA218607_20260629.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761311_20260629_Redacted.pdf%7C2026-06-29%7CBLA%20761311%7C57104576</id>
+<title>Complete Response Letter, BLA 761311: Ipsen Biopharm Ltd., June 29, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761311_20260629_Redacted.pdf"/>
+<published>2026-06-29T16:00:00Z</published>
+<updated>2026-06-29T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Ipsen Biopharm Ltd. on BLA 761311, dated June 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Ipsen Biopharm Ltd. on BLA 761311, dated June 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761311_20260629_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA216900_20260626_Redacted.pdf%7C2026-06-26%7CNDA%20216900%7C30122459</id>
+<title>Complete Response Letter, NDA 216900: Evergreen Theragnostics, Inc., June 26, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA216900_20260626_Redacted.pdf"/>
+<published>2026-06-26T16:00:00Z</published>
+<updated>2026-06-26T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Evergreen Theragnostics, Inc. on NDA 216900, dated June 26, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Evergreen Theragnostics, Inc. on NDA 216900, dated June 26, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA216900_20260626_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761438_20260626_Redacted.pdf%7C2026-06-26%7CBLA%20761438%7C1f75d01a</id>
+<title>Complete Response Letter, BLA 761438: Swedish Orphan Biovitrum AB (publ), June 26, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761438_20260626_Redacted.pdf"/>
+<published>2026-06-26T16:00:00Z</published>
+<updated>2026-06-26T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Swedish Orphan Biovitrum AB (publ) on BLA 761438, dated June 26, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Swedish Orphan Biovitrum AB (publ) on BLA 761438, dated June 26, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761438_20260626_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761266_20260623_Redacted.pdf%7C2026-06-23%7CBLA%20761266%7C2af2a643</id>
+<title>Complete Response Letter, BLA 761266: Tanvex BioPharma USA, Inc., June 23, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/tanvex-biopharma"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761266_20260623_Redacted.pdf"/>
+<published>2026-06-23T16:00:00Z</published>
+<updated>2026-06-23T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Tanvex BioPharma USA, Inc. on BLA 761266, dated June 23, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Tanvex BioPharma USA, Inc. on BLA 761266, dated June 23, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761266_20260623_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA218995_20260620_Redacted.pdf%7C2026-06-20%7CNDA%20218995%7C7c465c44</id>
+<title>Complete Response Letter, NDA 218995: Achieve Life Sciences, Inc., June 20, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ACHV-2026-06-22"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA218995_20260620_Redacted.pdf"/>
+<published>2026-06-20T16:00:00Z</published>
+<updated>2026-06-20T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Achieve Life Sciences, Inc. on NDA 218995, dated June 20, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Achieve Life Sciences, Inc. on NDA 218995, dated June 20, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA218995_20260620_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220748_20260617.pdf%7C2026-06-17%7CNDA%20220748%7C20e3ae82</id>
+<title>Complete Response Letter, NDA 220748: Avyxa Holdings, LLC, June 17, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220748_20260617.pdf"/>
+<published>2026-06-17T16:00:00Z</published>
+<updated>2026-06-17T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Avyxa Holdings, LLC on NDA 220748, dated June 17, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Avyxa Holdings, LLC on NDA 220748, dated June 17, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220748_20260617.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220138_20260615_Redacted.pdf%7C2026-06-15%7CNDA%20220138%7C3341f2c7</id>
+<title>Complete Response Letter, NDA 220138: Tris Pharma, Inc., June 15, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/tris-pharma"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220138_20260615_Redacted.pdf"/>
+<published>2026-06-15T16:00:00Z</published>
+<updated>2026-06-15T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Tris Pharma, Inc. on NDA 220138, dated June 15, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Tris Pharma, Inc. on NDA 220138, dated June 15, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220138_20260615_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA218600_20260610_Redacted.pdf%7C2026-06-10%7CNDA%20218600%7Ce6f53b43</id>
+<title>Complete Response Letter, NDA 218600: Bridge Regulatory Affairs, LLC, June 10, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/bridge-regulatory-affairs"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA218600_20260610_Redacted.pdf"/>
+<published>2026-06-10T16:00:00Z</published>
+<updated>2026-06-10T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Bridge Regulatory Affairs, LLC on NDA 218600, dated June 10, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Bridge Regulatory Affairs, LLC on NDA 218600, dated June 10, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA218600_20260610_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA217644_20260604_Redacted.pdf%7C2026-06-04%7CNDA%20217644%7Ca044d173</id>
+<title>Complete Response Letter, NDA 217644: Xspray Pharma AB, June 4, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/xspray-pharma"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA217644_20260604_Redacted.pdf"/>
+<published>2026-06-04T16:00:00Z</published>
+<updated>2026-06-04T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Xspray Pharma AB on NDA 217644, dated June 4, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Xspray Pharma AB on NDA 217644, dated June 4, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA217644_20260604_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220283_20260529_Redacted.pdf%7C2026-05-29%7CNDA%20220283%7C201bf496</id>
+<title>Complete Response Letter, NDA 220283: Cingulate Therapeutics, LLC, May 29, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/CING-2026-06-02"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220283_20260529_Redacted.pdf"/>
+<published>2026-05-29T16:00:00Z</published>
+<updated>2026-05-29T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Cingulate Therapeutics, LLC on NDA 220283, dated May 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Cingulate Therapeutics, LLC on NDA 220283, dated May 29, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220283_20260529_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA217363_20260515_Redacted.pdf%7C2026-05-15%7CNDA%20217363%7Cfc62f583</id>
+<title>Complete Response Letter, NDA 217363: Ocuvex Therapeutics, Inc., May 15, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA217363_20260515_Redacted.pdf"/>
+<published>2026-05-15T16:00:00Z</published>
+<updated>2026-05-15T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Ocuvex Therapeutics, Inc. on NDA 217363, dated May 15, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Ocuvex Therapeutics, Inc. on NDA 217363, dated May 15, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA217363_20260515_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220304_20260423_Redacted.pdf%7C2026-04-23%7CNDA%20220304%7C1bbbb95e</id>
+<title>Complete Response Letter, NDA 220304: Grace Therapeutics U.S., Inc., April 23, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/GRCE-2026-04-23"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220304_20260423_Redacted.pdf"/>
+<published>2026-04-23T16:00:00Z</published>
+<updated>2026-04-23T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Grace Therapeutics U.S., Inc. on NDA 220304, dated April 23, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Grace Therapeutics U.S., Inc. on NDA 220304, dated April 23, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220304_20260423_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761459_20260422.pdf%7C2026-04-22%7CBLA%20761459%7C9ecbac45</id>
+<title>Complete Response Letter, BLA 761459: AbbVie Inc., April 22, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ABBV-2026-04-23"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761459_20260422.pdf"/>
+<published>2026-04-22T16:00:00Z</published>
+<updated>2026-04-22T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to AbbVie Inc. on BLA 761459, dated April 22, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to AbbVie Inc. on BLA 761459, dated April 22, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761459_20260422.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220045_20260413_Redacted.pdf%7C2026-04-13%7CNDA%20220045%7C8c58af92</id>
+<title>Complete Response Letter, NDA 220045: Eagle Pharmaceuticals, Inc., April 13, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220045_20260413_Redacted.pdf"/>
+<published>2026-04-13T16:00:00Z</published>
+<updated>2026-04-13T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Eagle Pharmaceuticals, Inc. on NDA 220045, dated April 13, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Eagle Pharmaceuticals, Inc. on NDA 220045, dated April 13, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220045_20260413_Redacted.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761401_20260410.pdf%7C2026-04-10%7CBLA%20761401%7Cb3a14e1d</id>
+<title>Complete Response Letter, BLA 761401: Telix Pharmaceuticals (US) Inc., April 10, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/telix-pharmaceuticals"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761401_20260410.pdf"/>
+<published>2026-04-10T16:00:00Z</published>
+<updated>2026-04-10T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Telix Pharmaceuticals (US) Inc. on BLA 761401, dated April 10, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Telix Pharmaceuticals (US) Inc. on BLA 761401, dated April 10, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761401_20260410.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA125827_20260410.pdf%7C2026-04-10%7CBL%20125827%7C6beb82ea</id>
+<title>Complete Response Letter, BL 125827: Replimune, Inc., April 10, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/REPL-2026-04-10"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA125827_20260410.pdf"/>
+<published>2026-04-10T16:00:00Z</published>
+<updated>2026-04-10T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Replimune, Inc. on BL 125827, dated April 10, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Replimune, Inc. on BL 125827, dated April 10, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA125827_20260410.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA216442_20260316.pdf%7C2026-03-16%7CNDA%20216442%7C9a492624</id>
+<title>Complete Response Letter, NDA 216442: Aldeyra Therapeutics, Inc., March 16, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/ALDX-2026-03-17"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA216442_20260316.pdf"/>
+<published>2026-03-16T16:00:00Z</published>
+<updated>2026-03-16T16:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Aldeyra Therapeutics, Inc. on NDA 216442, dated March 16, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Aldeyra Therapeutics, Inc. on NDA 216442, dated March 16, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA216442_20260316.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220140_20260305.pdf%7C2026-03-05%7CNDA%20220140%7C3422898c</id>
+<title>Complete Response Letter, NDA 220140: Rosemont Pharmaceuticals Holdings, Inc., March 5, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220140_20260305.pdf"/>
+<published>2026-03-05T17:00:00Z</published>
+<updated>2026-03-05T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Rosemont Pharmaceuticals Holdings, Inc. on NDA 220140, dated March 5, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Rosemont Pharmaceuticals Holdings, Inc. on NDA 220140, dated March 5, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220140_20260305.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA215818_20260227.pdf%7C2026-02-27%7CNDA%20215818%7C2aa7d115</id>
+<title>Complete Response Letter, NDA 215818: Fresenius Kabi USA, LLC, February 27, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/fresenius-kabi"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA215818_20260227.pdf"/>
+<published>2026-02-27T17:00:00Z</published>
+<updated>2026-02-27T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Fresenius Kabi USA, LLC on NDA 215818, dated February 27, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Fresenius Kabi USA, LLC on NDA 215818, dated February 27, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA215818_20260227.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA214610_20260227.pdf%7C2026-02-27%7CNDA%20214610%7Ce12846c1</id>
+<title>Complete Response Letter, NDA 214610: Fresenius Kabi USA, LLC, February 27, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/fresenius-kabi"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA214610_20260227.pdf"/>
+<published>2026-02-27T17:00:00Z</published>
+<updated>2026-02-27T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Fresenius Kabi USA, LLC on NDA 214610, dated February 27, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Fresenius Kabi USA, LLC on NDA 214610, dated February 27, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA214610_20260227.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761253_20260227.pdf%7C2026-02-27%7CBLA%20761253%7Cfb6808ec</id>
+<title>Complete Response Letter, BLA 761253: Ferring Pharmaceuticals Inc., February 27, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/ferring-pharmaceuticals"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761253_20260227.pdf"/>
+<published>2026-02-27T17:00:00Z</published>
+<updated>2026-02-27T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Ferring Pharmaceuticals Inc. on BLA 761253, dated February 27, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Ferring Pharmaceuticals Inc. on BLA 761253, dated February 27, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761253_20260227.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761403_20260226.pdf%7C2026-02-26%7CBLA%20761403%7C98b52753</id>
+<title>Complete Response Letter, BLA 761403: Amphastar Pharmaceuticals, Inc., February 26, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/amphastar-pharmaceuticals"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf"/>
+<published>2026-02-26T17:00:00Z</published>
+<updated>2026-02-26T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Amphastar Pharmaceuticals, Inc. on BLA 761403, dated February 26, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Amphastar Pharmaceuticals, Inc. on BLA 761403, dated February 26, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761403_20260226.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220707_20260213.pdf%7C2026-02-13%7CNDA%20220707%7Cebb24e0e</id>
+<title>Complete Response Letter, NDA 220707: Disc Medicine, Inc., February 13, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/IRON-2026-02-13"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220707_20260213.pdf"/>
+<published>2026-02-13T17:00:00Z</published>
+<updated>2026-02-13T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Disc Medicine, Inc. on NDA 220707, dated February 13, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Disc Medicine, Inc. on NDA 220707, dated February 13, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220707_20260213.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA125840_20260207.pdf%7C2026-02-07%7CBL%20125840%7C181fe277</id>
+<title>Complete Response Letter, BL 125840: REGENXBIO, Inc., February 7, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/RGNX-2026-02-09"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf"/>
+<published>2026-02-07T17:00:00Z</published>
+<updated>2026-02-07T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to REGENXBIO, Inc. on BL 125840, dated February 7, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to REGENXBIO, Inc. on BL 125840, dated February 7, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA125840_20260207.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA219870_20260130.pdf%7C2026-01-30%7CNDA%20219870%7Cff6b99dd</id>
+<title>Complete Response Letter, NDA 219870: Aquestive Therapeutics Inc., January 30, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA219870_20260130.pdf"/>
+<published>2026-01-30T17:00:00Z</published>
+<updated>2026-01-30T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Aquestive Therapeutics Inc. on NDA 219870, dated January 30, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Aquestive Therapeutics Inc. on NDA 219870, dated January 30, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219870_20260130.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA219398_20260128.pdf%7C2026-01-28%7CNDA%20219398%7C3f831b11</id>
+<title>Complete Response Letter, NDA 219398: Corcept Therapeutics, January 28, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf"/>
+<published>2026-01-28T17:00:00Z</published>
+<updated>2026-01-28T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Corcept Therapeutics on NDA 219398, dated January 28, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Corcept Therapeutics on NDA 219398, dated January 28, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219398_20260128.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA125745_20260109.pdf%7C2026-01-09%7CBL%20125745%7Ceab5cff9</id>
+<title>Complete Response Letter, BL 125745: Pierre Fabre Pharmaceuticals Inc., January 9, 2026</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA125745_20260109.pdf"/>
+<published>2026-01-09T17:00:00Z</published>
+<updated>2026-01-09T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Pierre Fabre Pharmaceuticals Inc. on BL 125745, dated January 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Pierre Fabre Pharmaceuticals Inc. on BL 125745, dated January 9, 2026, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA125745_20260109.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761471_20251230.pdf%7C2025-12-30%7CBLA%20761471%7Cc0dba1b2</id>
+<title>Complete Response Letter, BLA 761471: Dr. Reddy’s Laboratories, Inc., December 30, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/dr-reddys-laboratories"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761471_20251230.pdf"/>
+<published>2025-12-30T17:00:00Z</published>
+<updated>2025-12-30T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Dr. Reddy’s Laboratories, Inc. on BLA 761471, dated December 30, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Dr. Reddy’s Laboratories, Inc. on BLA 761471, dated December 30, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761471_20251230.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761320_20251230.pdf%7C2025-12-30%7CBLA%20761320%7C389c6a32</id>
+<title>Complete Response Letter, BLA 761320: Outlook Therapeutics, Inc., December 30, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/OTLK-2025-12-31"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761320_20251230.pdf"/>
+<published>2025-12-30T17:00:00Z</published>
+<updated>2025-12-30T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Outlook Therapeutics, Inc. on BLA 761320, dated December 30, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Outlook Therapeutics, Inc. on BLA 761320, dated December 30, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761320_20251230.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA219624_20251223.pdf%7C2025-12-23%7CNDA%20219624%7Cde9a289b</id>
+<title>Complete Response Letter, NDA 219624: Genzyme Corporation, December 23, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/fda-decision/SNY-2025-12-24"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"/>
+<published>2025-12-23T17:00:00Z</published>
+<updated>2025-12-23T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Genzyme Corporation on NDA 219624, dated December 23, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Genzyme Corporation on NDA 219624, dated December 23, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA219624_20251223.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA220184_20251222.pdf%7C2025-12-22%7CNDA%20220184%7C15e78d06</id>
+<title>Complete Response Letter, NDA 220184: MedicaSafe, Inc., December 22, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA220184_20251222.pdf"/>
+<published>2025-12-22T17:00:00Z</published>
+<updated>2025-12-22T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to MedicaSafe, Inc. on NDA 220184, dated December 22, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to MedicaSafe, Inc. on NDA 220184, dated December 22, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA220184_20251222.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA215783_20251217.pdf%7C2025-12-17%7CNDA%20215783%7C32fb18bf</id>
+<title>Complete Response Letter, NDA 215783: InfoRLife SA, December 17, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA215783_20251217.pdf"/>
+<published>2025-12-17T17:00:00Z</published>
+<updated>2025-12-17T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to InfoRLife SA on NDA 215783, dated December 17, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to InfoRLife SA on NDA 215783, dated December 17, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA215783_20251217.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761458_20251216.pdf%7C2025-12-16%7CBLA%20761458%2CBLA%20761458%2FOriginal%202%7C32718747</id>
+<title>Complete Response Letter, BLA 761458, BLA 761458/Original 2: GlaxoSmithKline LLC, December 16, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/glaxosmithkline"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761458_20251216.pdf"/>
+<published>2025-12-16T17:00:00Z</published>
+<updated>2025-12-16T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to GlaxoSmithKline LLC on BLA 761458, BLA 761458/Original 2, dated December 16, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to GlaxoSmithKline LLC on BLA 761458, BLA 761458/Original 2, dated December 16, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761458_20251216.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761427_20251212.pdf%7C2025-12-12%7CBLA%20761427%2CBLA%20761427%2FOriginal%202%7Cf4fe8cf8</id>
+<title>Complete Response Letter, BLA 761427, BLA 761427/Original 2: LIB Therapeutics, Inc., December 12, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761427_20251212.pdf"/>
+<published>2025-12-12T17:00:00Z</published>
+<updated>2025-12-12T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to LIB Therapeutics, Inc. on BLA 761427, BLA 761427/Original 2, dated December 12, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to LIB Therapeutics, Inc. on BLA 761427, BLA 761427/Original 2, dated December 12, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761427_20251212.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761271_20251209.pdf%7C2025-12-09%7CBLA%20761271%7C0f75207f</id>
+<title>Complete Response Letter, BLA 761271: Sandoz Inc., December 9, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/sandoz"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761271_20251209.pdf"/>
+<published>2025-12-09T17:00:00Z</published>
+<updated>2025-12-09T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Sandoz Inc. on BLA 761271, dated December 9, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Sandoz Inc. on BLA 761271, dated December 9, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761271_20251209.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761461_20251126.pdf%7C2025-11-26%7CBLA%20761461%7Cb3b3ef12</id>
+<title>Complete Response Letter, BLA 761461: Alvotech USA Inc., November 26, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/alvotech"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf"/>
+<published>2025-11-26T17:00:00Z</published>
+<updated>2025-11-26T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Alvotech USA Inc. on BLA 761461, dated November 26, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Alvotech USA Inc. on BLA 761461, dated November 26, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761461_20251126.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_BLA761435_20251124.pdf%7C2025-11-24%7CBLA%20761435%7C1de6f86d</id>
+<title>Complete Response Letter, BLA 761435: Alvotech USA Inc., November 24, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/alvotech"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf"/>
+<published>2025-11-24T17:00:00Z</published>
+<updated>2025-11-24T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Alvotech USA Inc. on BLA 761435, dated November 24, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Alvotech USA Inc. on BLA 761435, dated November 24, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_BLA761435_20251124.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<id>tag:pdufa.bio,2026:crl/CRL_NDA216987_20251106.pdf%7C2025-11-06%7CNDA%20216987%7Cc9f2ccf0</id>
+<title>Complete Response Letter, NDA 216987: Accord Healthcare Inc., November 6, 2025</title>
+<link rel="alternate" type="text/html" href="https://www.pdufa.bio/crl/company/accord-healthcare"/>
+<link rel="related" type="application/pdf" href="https://download.open.fda.gov/crl/CRL_NDA216987_20251106.pdf"/>
+<published>2025-11-06T17:00:00Z</published>
+<updated>2025-11-06T17:00:00Z</updated>
+<category term="Complete Response Letter"/>
+<summary>The FDA's Complete Response Letter to Accord Healthcare Inc. on NDA 216987, dated November 6, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).</summary>
+<content type="html">&lt;p&gt;The FDA's Complete Response Letter to Accord Healthcare Inc. on NDA 216987, dated November 6, 2025, from the FDA's CRL release (openFDA, last updated 2026-11-18).&lt;/p&gt;&lt;p&gt;The letter: &lt;a href="https://download.open.fda.gov/crl/CRL_NDA216987_20251106.pdf"&gt;FDA PDF&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+</feed>
