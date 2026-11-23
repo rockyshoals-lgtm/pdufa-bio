@@ -157,6 +157,7 @@ def main():
              'and 2020. The FDA releases letters selectively; a count here is what the release holds.</p>'
              '<p class="sub"><a href="/crl/facts">Facts from all released CRLs</a> &middot; '
              '<a href="/crl/companies">every CRL, by company</a> &middot; '
+             '<a href="/crl/phrases">what the letters say, term by term</a> &middot; '
              '<a href="/crl/data/crl-letters.csv">the letters as data</a> &middot; <a href="/crl">every released '
              'letter, by year</a></p>')
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

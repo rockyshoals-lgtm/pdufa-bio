@@ -227,6 +227,13 @@ def write(L, slug, comp, dec, last_updated):
     links.append('<a href="/crl/offices">which FDA office signed each CRL</a>')
     links.append('<a href="/crl">every released letter, by year</a>')
     B.append('<p class="sub">' + " &middot; ".join(links) + '</p>')
+    from build_crl_phrases import PHRASES, matches   # the /crl/phrases terms this letter's text contains
+    terms = {p[0]: p[1] for p in PHRASES}
+    found = matches(L)
+    if found:
+        B.append('<p class="sub" data-crl-letter="terms">Terms from <a href="/crl/phrases">/crl/phrases</a> that this '
+                 'letter\'s released text contains: ' + ", ".join(f'<a href="/crl/phrase/{s}">{esc(terms[s])}</a>'
+                                                            for s in found) + '.</p>')
     B.append('<h2>The letter\'s text</h2>')
     if paras:
         B.append('<p class="sub">As openFDA extracted it from the PDF, with line breaks and spacing collapsed and '
