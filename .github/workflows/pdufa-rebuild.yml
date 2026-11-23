@@ -84,6 +84,18 @@ jobs:
         run: pip install --quiet requests pandas openpyxl python-dateutil pillow
              google-api-python-client google-auth
 
+      # 2026-11-23 (audit 11-17, moat move 4): /changes, the changes to 12 fields of each row of the published dataset,
+      # read from the public commits (ledger _row_history.json, append-only). It reads committed versions only, so
+      # this run's own changes are recorded by the next run, under the commit that published them. The checkout is
+      # shallow; fetch back past the ledger's last commit first. With no committed ledger the step does nothing: a
+      # ledger started from a shallow checkout would name the wrong first version (build_row_history.py refuses it).
+      - name: "/changes: dataset changes field by field, from the public commits"
+        run: |
+          if [ ! -f _row_history.json ]; then echo "::warning::_row_history.json is not in the checkout; /changes not updated"; exit 0; fi
+          SINCE=$(python -c "import json;print(json.load(open('_row_history.json'))['last_ts'][:10])")
+          git fetch --quiet --shallow-since="$(date -d "$SINCE -3 days" +%Y-%m-%d)" origin "${GITHUB_REF_NAME:-main}" || git fetch --quiet --unshallow origin
+          python build_row_history.py || echo "::warning::/changes not updated this run (history fetch or read failed); the next run catches up"
+
       # 2026-11-10 (audit 11-09 §4): FMP via price_source.py, ~20 s (Polygon's free tier took ~25 min and a 429 on
       # 10-22 froze three runs). Everything that refreshed is written; if any forward ticker not on
       # _price_no_feed.json got no data, the step fails NAMING it and the next step opens one PRICES issue. The
@@ -1242,9 +1254,10 @@ jobs:
           # surface is born, and it wasn't. Backups are excluded explicitly instead.
           git add pdufa_site_src
           git reset -q -- 'pdufa_site_src/*.bak*' 'pdufa_site_src/**/*.bak*' 2>/dev/null || true
-          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json
+          git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json _row_history.json
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
+          git add -f pdufa_site_src/changes/data/row-history.csv 2>/dev/null || true   # *.csv is ignored; the /changes download
           # the FDA CRL snapshot capture_crl_corpus.py writes only when the release changed: committed, so a run that cannot
           # reach openFDA reads the newest release, not the August 2026 file (red team of /crl/data, Nov 22)
           git add CRL_corpus_openFDA_*.json 2>/dev/null || true
