@@ -74,6 +74,12 @@ def crumb_for(rel, doc):
         elif not last and target == "crl/company":
             entry["name"] = "By company"                  # 2026-11-22: /crl/company/<slug> pages hang off /crl/companies
             entry["item"] = f"{BASE}/crl/companies"
+        elif not last and target == "crl/phrase":
+            entry["name"] = "By term"                     # 2026-11-23: /crl/phrase/<slug> pages hang off /crl/phrases
+            entry["item"] = f"{BASE}/crl/phrases"
+        elif not last and target == "crl/letter":
+            entry["name"] = "Letters"                     # 2026-11-23: /crl/letter/<slug> pages are listed on /crl
+            entry["item"] = f"{BASE}/crl"
         elif last:
             entry["item"] = f"{BASE}/{target}"
         items.append(entry)

@@ -32,6 +32,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "pdufa_site_src")
 sys.path.insert(0, HERE)
 from capture_crl_corpus import newest_corpus  # noqa: E402  (the newest dated snapshot on disk)
+from build_crl_letters import by_repeat_key, repeat_key  # noqa: E402  (2026-11-23: each letter's own page)
+from build_feeds import crl_letters as _crl_letters  # noqa: E402
+
+TEXT = by_repeat_key(_crl_letters(include_rescinded=True)[0])
 CORPUS = newest_corpus() or os.path.join(HERE, "CRL_corpus_openFDA_2026-08-29.json")
 BASE = "https://www.pdufa.bio"
 MON = ["", "January", "February", "March", "April", "May", "June", "July", "August",
@@ -81,6 +85,9 @@ def main():
             "cr": str(r.get("letter_type") or "") == "COMPLETE RESPONSE",
             "type": str(r.get("letter_type") or "").strip(),
             "url": "https://download.open.fda.gov/crl/" + _urlq(fn),
+            "text_page": TEXT.get(repeat_key(f"{m.group(3)}-{m.group(1)}-{m.group(2)}", apps if isinstance(apps, list)
+                                             else [], r.get("text"))) if r.get("letter_type") == "COMPLETE RESPONSE"
+            else None,
         })
     rows.sort(key=lambda x: x["iso"], reverse=True)
     by_year = collections.OrderedDict()
@@ -279,7 +286,9 @@ def main():
                 f'<td>{esc(r["company"][:44])}</td><td>{esc(r["app"][:28])}</td>'
                 f'<td><a href="{esc(r["url"])}" rel="noopener">'
                 + ("letter (PDF)" if r["cr"] else (f'{esc("rescission of earlier CRLs" if "RESCIND" in r["type"].upper() else r["type"].lower())}, not a CRL (PDF)' if r["type"]
-                                                    else "no letter type given (PDF)")) + '</a></td>'
+                                                    else "no letter type given (PDF)")) + '</a>'
+                + (f' &middot; <a href="/crl/letter/{r["text_page"]}">its text</a>' if r.get("text_page") else '')
+                + '</td>'
                 f'<td style="font-size:12.5px">{esc("; ".join(_secs(r["url"]))) or "&middot;"}</td>'
                 f'<td>' + (f'<a href="{our}">decision page</a>' if our else "&mdash;")
                 + '</td></tr>')
@@ -292,6 +301,7 @@ def main():
     body.append('<p><a href="/crl/facts">Facts from the released letters</a> (sections cited, repeat CRLs, days to '
                 'approval) &middot; <a href="/crl/companies">every CRL, by company</a> &middot; '
                 '<a href="/crl/offices">which FDA office signed each CRL</a> &middot; '
+                '<a href="/crl/phrases">what the letters say, term by term</a> &middot; '
                 '<a href="/crl/capricor-deramiocel">Capricor\'s two deramiocel CRLs</a> &middot; '
                 '<a href="/feed">follow new letters by feed</a></p>')
     body.append('<p><a href="/decisions/crl">CRL decisions tracked by this site</a> '
