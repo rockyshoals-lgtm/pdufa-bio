@@ -20,6 +20,7 @@
    "company_group is the company's group on /crl/companies: printed names are grouped with case, accents, punctuation and corporate-form words set aside, and the group is labeled with its most common printed form. Blank where the release prints a heading or a bare corporate-form word in place of a name (no lower-case letter).",
    "orange_book_nda_first_approval_after_letter: the earliest approval the Orange Book products file lists for the NDA, when that date is after the letter (original NDAs only; the earliest such NDA when a letter names several), with orange_book_trade_name its trade name. Blank for BLAs (not in the Orange Book), supplements, NDAs with no listed approval, and NDAs whose first listed approval is on or before the letter's date (the NDA was already approved, or approved the same day), even when other products under that NDA were approved later.",
    "deficiency_sections: the letter's own section headings read from its PDF text layer, labeling and administrative sections left out; only 2024+ letters whose PDF holds this letter alone; blank when none was read.",
+   "signing_division_as_printed and signing_office_as_printed: the first Division of and the first Office of (other than the Office of New Drugs when a narrower office is named) in the letter's signature block, from its last Sincerely to the electronic signature page legend, as printed with OCR misreads, or from openFDA's approver_center field where the scan missed one; signing_center is CDER or CBER where the block or that field names the Center; signer_name_shown_as_b4 is true where (b) (4) stands in that block or on the line after the legend. Blank where none is read (see /crl/offices).",
    "pdufa_bio_page: pdufa.bio's decision page that cites this letter's PDF, when exactly one indexable page does and the PDF holds this letter alone; blank otherwise.",
    "In the CSV, booleans are true or false, and a text cell that starts with = + - or @ is written with a leading apostrophe so a spreadsheet shows it as text; the JSON keeps every value as printed."
   ],
@@ -35,6 +36,10 @@
    "orange_book_nda_first_approval_after_letter",
    "orange_book_trade_name",
    "deficiency_sections",
+   "signing_division_as_printed",
+   "signing_office_as_printed",
+   "signing_center",
+   "signer_name_shown_as_b4",
    "pdufa_bio_page"
   ],
   "not_advice": "Facts from FDA documents. Not a prediction about any application and not investment advice."
@@ -52,6 +57,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical/Statistical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/SMMT-2026-11-15"
   },
   {
@@ -66,6 +75,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -80,6 +93,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Product Quality Microbiology; Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -94,6 +111,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -108,6 +129,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -122,6 +147,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality Microbiology; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -136,6 +165,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -150,6 +183,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Drug-Device Combination Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -164,6 +201,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -178,6 +219,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -192,6 +237,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical/Statistical; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -206,6 +255,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/UNCY-2026-06-30"
   },
   {
@@ -220,6 +273,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Product Quality; Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -234,6 +291,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -248,6 +309,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical Pharmacology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -262,6 +327,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -276,6 +345,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical Pharmacology; Nonclinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ACHV-2026-06-22"
   },
   {
@@ -290,6 +363,10 @@
    "orange_book_nda_first_approval_after_letter": "2026-10-29",
    "orange_book_trade_name": "Axycis",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -304,6 +381,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Human Factors",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -318,6 +399,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -332,6 +417,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical Pharmacology; Product Quality; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -346,6 +435,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/CING-2026-06-02"
   },
   {
@@ -360,6 +453,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -374,6 +471,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Nonclinical; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/GRCE-2026-04-23"
   },
   {
@@ -388,6 +489,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ABBV-2026-04-23"
   },
   {
@@ -402,6 +507,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -416,6 +525,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -430,6 +543,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/REPL-2026-04-10"
   },
   {
@@ -444,6 +561,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ALDX-2026-03-17"
   },
   {
@@ -458,6 +579,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -472,6 +597,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -486,6 +615,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -500,6 +633,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -514,6 +651,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -528,6 +669,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/IRON-2026-02-13"
   },
   {
@@ -542,6 +687,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/RGNX-2026-02-09"
   },
   {
@@ -556,6 +705,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical Pharmacology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -570,6 +723,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -584,6 +741,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Chemistry, Manufacturing, and Controls",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -598,6 +759,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -612,6 +777,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/OTLK-2025-12-31"
   },
   {
@@ -626,6 +795,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Risk Evaluation and Mitigation Strategy Requirements",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/SNY-2025-12-24"
   },
   {
@@ -640,6 +813,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Risk Evaluation and Mitigation Strategy Requirements",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -654,6 +831,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -668,6 +849,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -682,6 +867,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -696,6 +885,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Microbiology; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -710,6 +903,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -724,6 +921,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -738,6 +939,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -752,6 +957,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Nonclinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/BHVN-2025-11-04"
   },
   {
@@ -766,6 +975,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -780,6 +993,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -794,6 +1011,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -808,6 +1029,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -822,6 +1047,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Chemistry, Manufacturing, and Controls",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -836,6 +1065,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -850,6 +1083,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical/Statistical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -864,6 +1101,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -878,6 +1119,10 @@
    "orange_book_nda_first_approval_after_letter": "2026-01-12",
    "orange_book_trade_name": "Zycubo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -892,6 +1137,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/BIIB-2025-09-23"
   },
   {
@@ -906,6 +1155,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/SRRK-2025-09-23"
   },
   {
@@ -920,6 +1173,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical Pharmacology; Nonclinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -934,6 +1191,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -948,6 +1209,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/OTLK-2025-08-28"
   },
   {
@@ -962,6 +1227,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/PTCT-2025-08-19"
   },
   {
@@ -976,6 +1245,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Product Quality; Clinical Pharmacology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -990,6 +1263,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1004,6 +1281,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1018,6 +1299,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Risk Evaluation and Mitigation Strategy Requirements",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1032,6 +1317,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/REGN-2025-07-30"
   },
   {
@@ -1046,6 +1335,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1060,6 +1353,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/REPL-2025-07-22"
   },
   {
@@ -1074,6 +1371,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical and Biostatistics; Chemistry, Manufacturing, and Controls (CMC); CMC [Facility and Equipment]",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/CAPR-2025-07-11"
   },
   {
@@ -1088,6 +1389,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/RARE-2025-07-11"
   },
   {
@@ -1102,6 +1407,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/UNCY-2025-06-30"
   },
   {
@@ -1116,6 +1425,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1130,6 +1443,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1144,6 +1461,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1158,6 +1479,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Nonclinical; Human Factors; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1172,6 +1497,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1186,6 +1515,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-09-19",
    "orange_book_trade_name": "Forzinity",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1200,6 +1533,10 @@
    "orange_book_nda_first_approval_after_letter": "2026-09-11",
    "orange_book_trade_name": "Pixclara",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/TLX-2025-04-28"
   },
   {
@@ -1214,6 +1551,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1228,6 +1569,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1242,6 +1587,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1256,6 +1605,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ALDX-2025-04-03"
   },
   {
@@ -1270,6 +1623,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-12-12",
    "orange_book_trade_name": "Cardamyst",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/MIST-2025-03-28"
   },
   {
@@ -1284,6 +1641,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1298,6 +1659,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1312,6 +1677,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1326,6 +1695,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1340,6 +1713,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Product Quality Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1354,6 +1731,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1368,6 +1749,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Quality Microbiology; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1382,6 +1767,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Nonclinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1396,6 +1785,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Chemistry, Manufacturing, and Controls",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": "https://www.pdufa.bio/fda-decision/ATRA-2025-01-16"
   },
   {
@@ -1410,6 +1803,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-09-16",
    "orange_book_trade_name": "Subvenite",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1424,6 +1821,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Microbiology; Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1438,6 +1839,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1452,6 +1857,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1466,6 +1875,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1480,6 +1893,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical Pharmacology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1494,6 +1911,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1508,6 +1929,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-10-22",
    "orange_book_trade_name": "Contepo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1522,6 +1947,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1536,6 +1965,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1550,6 +1983,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1564,6 +2001,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Ophthalmology",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1578,6 +2019,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1592,6 +2037,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-01-16",
    "orange_book_trade_name": "Brynovin",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "Division of Diabetes, Lipid Disorders, and Obesity",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1606,6 +2055,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1620,6 +2073,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1634,6 +2091,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1648,6 +2109,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1662,6 +2127,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1676,6 +2145,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1690,6 +2163,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Microbiology; Product Quality; Device",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1704,6 +2181,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "Division of Dermatology and Dentistry",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1718,6 +2199,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Risk Evaluation and Mitigation Strategy Requirements",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1732,6 +2217,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-03-13",
    "orange_book_trade_name": "Arbli",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1746,6 +2235,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1760,6 +2253,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Risk Evaluation and Mitigation Strategy Requirements",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1774,6 +2271,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-12-22",
    "orange_book_trade_name": "Mucinex 12Hr Cold & Fever Multi-Symptom",
    "deficiency_sections": "Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1788,6 +2289,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1802,6 +2307,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Human Factors; Nonclinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1816,6 +2325,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-09-24",
    "orange_book_trade_name": "Bondlido",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1830,6 +2343,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Chemistry, Manufacturing, and Controls (CMC); Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1844,6 +2361,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Regulatory",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1858,6 +2379,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1872,6 +2397,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1886,6 +2415,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-10-16",
    "orange_book_trade_name": "Vyalev",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 1",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1900,6 +2433,10 @@
    "orange_book_nda_first_approval_after_letter": "2026-05-29",
    "orange_book_trade_name": "Cavhanza",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1914,6 +2451,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Chemistry, Manufacturing, and Controls",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -1928,6 +2469,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1942,6 +2487,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-08-28",
    "orange_book_trade_name": "Lopressor",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1956,6 +2505,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Nonclinical; Device; Facility Inspections; Clinical Pharmacology; Human Factors",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1970,6 +2523,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1984,6 +2541,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -1998,6 +2559,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2012,6 +2577,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality (Microbiology); Product Quality; Drug Substance; Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2026,6 +2595,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2040,6 +2613,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2054,6 +2631,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Chemistry, Manufacturing, and Controls (CMC)",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Clinical Evaluation",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2068,6 +2649,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections; Product Quality; Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2082,6 +2667,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2096,6 +2685,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2110,6 +2703,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-12-12",
    "orange_book_trade_name": "Ontralfy",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 1",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2124,6 +2721,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2138,6 +2739,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2152,6 +2757,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2166,6 +2775,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2180,6 +2793,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2194,6 +2811,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Microbiology; Clinical/Statistical; Clinical Pharmacology; Nonclinical; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2208,6 +2829,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2222,6 +2847,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality; Biopharmaceutics; Nonclinical; Clinical Pharmacology; Clinical",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2236,6 +2865,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Nonclinical; Clinical Pharmacology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2250,6 +2883,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Chemistry, Manufacturing and Controls",
+   "signing_division_as_printed": "Division of Diabetes, Lipid Disorders, and Obesity",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2264,6 +2901,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Product Quality",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2278,6 +2919,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Microbiology",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2292,6 +2937,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Human Factors",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2306,6 +2955,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Product Quality; Facility Inspections; Biopharmaceutics",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2320,6 +2973,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "Clinical; Facility Inspections",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2334,6 +2991,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2348,6 +3009,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-10-07",
    "orange_book_trade_name": "Lasix Onyu",
    "deficiency_sections": "Device",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2362,6 +3027,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2376,6 +3045,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Urology, Obstetrics, and Gynecology",
+   "signing_office_as_printed": "Office of Rare Diseases, Pediatrics, Urologic and Reproductive Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2390,6 +3063,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2404,6 +3081,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Dermatology and Dentistry",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2418,6 +3099,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": true,
    "pdufa_bio_page": ""
   },
   {
@@ -2432,6 +3117,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2446,6 +3135,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-06-18",
    "orange_book_trade_name": "Sofdra",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2460,6 +3153,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-08-09",
    "orange_book_trade_name": "Neffy",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Pulmonology, Allergy, and Critical Care",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2474,6 +3171,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-08-26",
    "orange_book_trade_name": "Bortezomib",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2488,6 +3189,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Clinical Evaluation",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2502,6 +3207,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematologic Malignancies II",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2516,6 +3225,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-03-29",
    "orange_book_trade_name": "Risvan",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2530,6 +3243,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-08-07",
    "orange_book_trade_name": "Crexont",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 1",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2544,6 +3261,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2558,6 +3279,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Ophthalmology",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2572,6 +3297,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-11-22",
    "orange_book_trade_name": "Rapiblyk",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2586,6 +3315,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2600,6 +3333,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-02-13",
    "orange_book_trade_name": "Legubeti",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hepatology and Nutrition",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2614,6 +3351,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-08-09",
    "orange_book_trade_name": "Yorvipath",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2628,6 +3369,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2642,6 +3387,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2656,6 +3405,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2670,6 +3423,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-10-16",
    "orange_book_trade_name": "Vyalev",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 1",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2684,6 +3441,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-10-18",
    "orange_book_trade_name": "Zituvio",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Diabetes, Lipid Disorders, and Obesity",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2698,6 +3459,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonmalignant Hematology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2712,6 +3477,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-11-01",
    "orange_book_trade_name": "Voquezna",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2726,6 +3495,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cellular and Gene Therapies",
+   "signing_office_as_printed": "Office of Tissues and Advanced Therapies",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2740,6 +3513,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2754,6 +3531,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-09",
    "orange_book_trade_name": "Zolpidem Tartrate",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2768,6 +3549,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-12-22",
    "orange_book_trade_name": "Abacavir Sulfate And Lamivudine",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Antivirals",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2782,6 +3567,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-05-01",
    "orange_book_trade_name": "Myhibbin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2796,6 +3585,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-08-16",
    "orange_book_trade_name": "Sohonos",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2810,6 +3603,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2824,6 +3621,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2838,6 +3639,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-08-22",
    "orange_book_trade_name": "Focinvez",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2852,6 +3657,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-11-15",
    "orange_book_trade_name": "Defencath",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2866,6 +3675,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-03-29",
    "orange_book_trade_name": "Risvan",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2880,6 +3693,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-10-17",
    "orange_book_trade_name": "Combogesic Iv",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2894,6 +3711,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-12-22",
    "orange_book_trade_name": "Olpruva",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rare Diseases and Medical Genetics",
+   "signing_office_as_printed": "Office of Rare Diseases, Pediatrics, Urologic and Reproductive Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2908,6 +3729,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-15",
    "orange_book_trade_name": "Suflave",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2922,6 +3747,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-07-21",
    "orange_book_trade_name": "Ycanth",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Dermatology and Dentistry",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2936,6 +3765,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2950,6 +3783,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2964,6 +3801,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-04-28",
    "orange_book_trade_name": "Liqrev",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2978,6 +3819,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-07",
    "orange_book_trade_name": "Frindovyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 1",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -2992,6 +3837,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-04-28",
    "orange_book_trade_name": "Uzedy",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3006,6 +3855,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-22",
    "orange_book_trade_name": "Pemetrexed",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 2",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3020,6 +3873,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3034,6 +3891,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-03-27",
    "orange_book_trade_name": "Vafseo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3048,6 +3909,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-12-22",
    "orange_book_trade_name": "Sunlenca",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3062,6 +3927,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-12-22",
    "orange_book_trade_name": "Sunlenca",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3076,6 +3945,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-12-18",
    "orange_book_trade_name": "Filsuvez",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3090,6 +3963,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Plasma Protein Therapeutics",
+   "signing_office_as_printed": "Office of Tissues and Advanced Therapies",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3104,6 +3981,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-01-13",
    "orange_book_trade_name": "Rykindo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3118,6 +3999,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-09-14",
    "orange_book_trade_name": "Terlivaz",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3132,6 +4017,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3146,6 +4035,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-11-29",
    "orange_book_trade_name": "Jylamvo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3160,6 +4053,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-02-09",
    "orange_book_trade_name": "Eohilia",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3174,6 +4071,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Diabetes, Lipid Disorders, and Obesity",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3188,6 +4089,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-23",
    "orange_book_trade_name": "Brixadi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3202,6 +4107,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-09-20",
    "orange_book_trade_name": "Pedmark",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 2",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3216,6 +4125,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3230,6 +4143,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 3",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3244,6 +4161,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-09-22",
    "orange_book_trade_name": "Omlonti",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Ophthalmology",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3258,6 +4179,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-05",
    "orange_book_trade_name": "Mydcombi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Ophthalmology",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3272,6 +4197,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-07-27",
    "orange_book_trade_name": "Kyzatrex",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Urology, Obstetrics, and Gynecology",
+   "signing_office_as_printed": "Office of Rare Diseases, Pediatrics, Urologic and Reproductive Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3286,6 +4215,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-05-23",
    "orange_book_trade_name": "Tyvaso Dpi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3300,6 +4233,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3314,6 +4251,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3328,6 +4269,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-12-23",
    "orange_book_trade_name": "Xenoview",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3342,6 +4287,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-03-29",
    "orange_book_trade_name": "Risvan",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3356,6 +4305,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-07-21",
    "orange_book_trade_name": "Ycanth",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Dermatology and Dentistry",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3370,6 +4323,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-07-26",
    "orange_book_trade_name": "Meropenem",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3384,6 +4341,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-01-20",
    "orange_book_trade_name": "Vancomycin Hydrochloride",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3398,6 +4359,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cellular and Gene Therapies",
+   "signing_office_as_printed": "Office of Tissues and Advanced Therapies",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3412,6 +4377,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonmalignant Hematology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3426,6 +4395,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-04-28",
    "orange_book_trade_name": "Liqrev",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3440,6 +4413,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3454,6 +4431,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonmalignant Hematology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3468,6 +4449,10 @@
    "orange_book_nda_first_approval_after_letter": "2025-01-21",
    "orange_book_trade_name": "Grafapex",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3482,6 +4467,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-10-17",
    "orange_book_trade_name": "Xphozah",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3496,6 +4485,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-10-25",
    "orange_book_trade_name": "Orlynvah",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3510,6 +4503,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3524,6 +4521,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-09-29",
    "orange_book_trade_name": "Technegas Kit",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3538,6 +4539,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3552,6 +4557,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-22",
    "orange_book_trade_name": "Pemetrexed",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 2",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3566,6 +4575,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-09-20",
    "orange_book_trade_name": "Miplyffa",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Rare Diseases, Pediatrics, Urologic and Reproductive Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3580,6 +4593,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-10-06",
    "orange_book_trade_name": "Norepinephrine Bitartrate In 0.9% Sodium Chloride",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3594,6 +4611,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-07-15",
    "orange_book_trade_name": "Zonisade",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 2",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3608,6 +4629,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonmalignant Hematology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3622,6 +4647,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-05-16",
    "orange_book_trade_name": "Carmustine",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematologic Malignancies II",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3636,6 +4665,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-01-25",
    "orange_book_trade_name": "Dapzura Rt",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3650,6 +4683,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Rare Diseases, Pediatrics, Urologic and Reproductive Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3664,6 +4701,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3678,6 +4719,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-02-24",
    "orange_book_trade_name": "Norliqva",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3692,6 +4737,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3706,6 +4755,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-11-15",
    "orange_book_trade_name": "Defencath",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3720,6 +4773,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-06-17",
    "orange_book_trade_name": "Tadliq",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephrology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3734,6 +4791,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-01-14",
    "orange_book_trade_name": "Sovuna",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Rheumatology and Transplant Medicine",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3748,6 +4809,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-08-30",
    "orange_book_trade_name": "Konvomep",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3762,6 +4827,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-11-04",
    "orange_book_trade_name": "Dyanavel Xr 10",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3776,6 +4845,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-08",
    "orange_book_trade_name": "Cefazolin Sodium",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3790,6 +4863,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-06-03",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3804,6 +4881,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonmalignant Hematology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3818,6 +4899,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-12-22",
    "orange_book_trade_name": "Leqvio",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3832,6 +4917,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-10-07",
    "orange_book_trade_name": "Furoscix",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiology and Nephology",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3846,6 +4935,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-23",
    "orange_book_trade_name": "Brixadi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3860,6 +4953,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-01-20",
    "orange_book_trade_name": "Vancomycin Hydrochloride",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3874,6 +4971,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Antivirals",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3888,6 +4989,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-05-28",
    "orange_book_trade_name": "Lybalvi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3902,6 +5007,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-10-15",
    "orange_book_trade_name": "Zimhi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3916,6 +5025,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3930,6 +5043,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-07-16",
    "orange_book_trade_name": "Fexinidazole",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3944,6 +5061,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-04-02",
    "orange_book_trade_name": "Qelbree",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3958,6 +5079,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-07",
    "orange_book_trade_name": "Frindovyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 1",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3972,6 +5097,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-03-01",
    "orange_book_trade_name": "Combogesic",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -3986,6 +5115,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-02-01",
    "orange_book_trade_name": "Atorvaliq",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Diabetes, Lipid Disorders, and Obesity",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4000,6 +5133,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-09-14",
    "orange_book_trade_name": "Terlivaz",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4014,6 +5151,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-03-22",
    "orange_book_trade_name": "Hyftor",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Dermatology and Dentistry",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4028,6 +5169,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-09-20",
    "orange_book_trade_name": "Pedmark",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 2",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4042,6 +5187,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CBER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4056,6 +5205,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-03-11",
    "orange_book_trade_name": "Adlarity",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 1",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4070,6 +5223,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-07-21",
    "orange_book_trade_name": "Ycanth",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Dermatology and Dentistry",
+   "signing_office_as_printed": "Office of Immunology and Inflammation",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4084,6 +5241,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-05-12",
    "orange_book_trade_name": "Zynrelef Kit",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4098,6 +5259,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-10-15",
    "orange_book_trade_name": "Seglentis",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4112,6 +5277,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-03-23",
    "orange_book_trade_name": "Roszet",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Diabetes, Lipid Disorders, and Obesity",
+   "signing_office_as_printed": "Office of Cardiology, Hematology, Endocrinology, and Nephrology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4126,6 +5295,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-07",
    "orange_book_trade_name": "Frindovyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 1",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4140,6 +5313,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-06-16",
    "orange_book_trade_name": "Micafungin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4154,6 +5331,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-02-18",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4168,6 +5349,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-04-14",
    "orange_book_trade_name": "Rizafilm",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 2",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4182,6 +5367,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-08-26",
    "orange_book_trade_name": "Vancomycin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4196,6 +5385,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-11-10",
    "orange_book_trade_name": "Sutab",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4210,6 +5403,10 @@
    "orange_book_nda_first_approval_after_letter": "2024-08-26",
    "orange_book_trade_name": "Bortezomib",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematologic Malignancies II",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4224,6 +5421,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-04-29",
    "orange_book_trade_name": "Kloxxado",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesiology, Addiction Medicine, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4238,6 +5439,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-01-13",
    "orange_book_trade_name": "Rykindo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4252,6 +5457,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-08-19",
    "orange_book_trade_name": "Cystadrops",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Ophthalmology",
+   "signing_office_as_printed": "Office of Specialty Medicine",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4266,6 +5475,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-07-30",
    "orange_book_trade_name": "Cyclophosphamide",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 1",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4280,6 +5493,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-06-14",
    "orange_book_trade_name": "Soaanz",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation |",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4294,6 +5511,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-08",
    "orange_book_trade_name": "Cefazolin Sodium",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infectives",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4308,6 +5529,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-11-05",
    "orange_book_trade_name": "Sesquient",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology 2",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4322,6 +5547,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-21",
    "orange_book_trade_name": "Cabenuva Kit",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4336,6 +5565,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-21",
    "orange_book_trade_name": "Vocabria",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Infectious Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4350,6 +5583,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology and Inborn Errors Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4364,6 +5601,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-10-15",
    "orange_book_trade_name": "Zimhi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Addiction, and Pain Medicine",
+   "signing_office_as_printed": "Office of Neuroscience",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4378,6 +5619,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-07",
    "orange_book_trade_name": "Frindovyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology 1",
+   "signing_office_as_printed": "Office of Oncologic Diseases",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4392,6 +5637,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-03-13",
    "orange_book_trade_name": "Romidepsin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4406,6 +5655,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-10-22",
    "orange_book_trade_name": "Xipere",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of New Drugs",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4420,6 +5673,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-08-25",
    "orange_book_trade_name": "Cyclophosphamide",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4434,6 +5691,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-07-23",
    "orange_book_trade_name": "Breztri Aerosphere",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Pulmonary, Allergy, and Rheumatology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4448,6 +5709,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology & Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4462,6 +5727,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4476,6 +5745,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-12-12",
    "orange_book_trade_name": "Vyondys 53",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation |",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4490,6 +5763,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation |",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4504,6 +5781,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-10-26",
    "orange_book_trade_name": "Eysuvis",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of New Drugs",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4518,6 +5799,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-12-22",
    "orange_book_trade_name": "Abacavir Sulfate And Lamivudine",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Antiviral Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4532,6 +5817,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-03-09",
    "orange_book_trade_name": "Fluorescein Sodium And Benoxinate Hydrochloride",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of New Drugs",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4546,6 +5835,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-07-30",
    "orange_book_trade_name": "Cyclophosphamide",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4560,6 +5853,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-01-13",
    "orange_book_trade_name": "Ryaltris",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Pulmonary, Allergy, and Rheumatology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4574,6 +5871,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-10-30",
    "orange_book_trade_name": "Bronchitol",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Pulmonary, Allergy, and Rheumatology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4588,6 +5889,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4602,6 +5907,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-15",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4616,6 +5925,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-07",
    "orange_book_trade_name": "Frindovyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products |",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4630,6 +5943,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-26",
    "orange_book_trade_name": "Barhemsys",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4644,6 +5961,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-05-12",
    "orange_book_trade_name": "Zynrelef Kit",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IT",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4658,6 +5979,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-06-19",
    "orange_book_trade_name": "Gimoti",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Gastroenterology and Inborn Errors Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4672,6 +5997,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-05-17",
    "orange_book_trade_name": "Nayzilam",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4686,6 +6015,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-04-14",
    "orange_book_trade_name": "Rizafilm",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4700,6 +6033,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-02-18",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4714,6 +6051,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-11-05",
    "orange_book_trade_name": "Sesquient",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4728,6 +6069,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-20",
    "orange_book_trade_name": "Anjeso",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IT",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4742,6 +6087,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-05-21",
    "orange_book_trade_name": "Kynmobi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4756,6 +6105,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-12-20",
    "orange_book_trade_name": "Genosyl",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4770,6 +6123,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Hematology & Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4784,6 +6141,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-08-25",
    "orange_book_trade_name": "Cyclophosphamide",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4798,6 +6159,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-08-15",
    "orange_book_trade_name": "Epinephrine",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4812,6 +6177,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-08-28",
    "orange_book_trade_name": "Xaracoll",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, And Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4826,6 +6195,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-12",
    "orange_book_trade_name": "Tetracaine Hydrochloride",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of New Drugs",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4840,6 +6213,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-06-03",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4854,6 +6231,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-10-30",
    "orange_book_trade_name": "Olinvyk",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4868,6 +6249,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-08",
    "orange_book_trade_name": "Cefazolin Sodium",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infective Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4882,6 +6267,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-26",
    "orange_book_trade_name": "Barhemsys",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4896,6 +6285,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-15",
    "orange_book_trade_name": "Efavirenz, Lamivudine And Tenofovir Disoproxil Fumarate",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Antiviral Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4910,6 +6303,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-04-03",
    "orange_book_trade_name": "Welchol",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4924,6 +6321,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-11-04",
    "orange_book_trade_name": "Dyanavel Xr 10",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4938,6 +6339,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-06-07",
    "orange_book_trade_name": "Frindovyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products |",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4952,6 +6357,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-01-10",
    "orange_book_trade_name": "Numbrino",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4966,6 +6375,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-08-21",
    "orange_book_trade_name": "Pemetrexed",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 2",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4980,6 +6393,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-09-18",
    "orange_book_trade_name": "Ozobax",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -4994,6 +6411,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-01-20",
    "orange_book_trade_name": "Vancomycin Hydrochloride",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infective Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5008,6 +6429,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-04-25",
    "orange_book_trade_name": "Duobrii",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Dermatology and Dental Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5022,6 +6447,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-10-07",
    "orange_book_trade_name": "Furoscix",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5036,6 +6465,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5050,6 +6483,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-20",
    "orange_book_trade_name": "Anjeso",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5064,6 +6501,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5078,6 +6519,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5092,6 +6537,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5106,6 +6555,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-08-25",
    "orange_book_trade_name": "Cyclophosphamide",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products |",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5120,6 +6573,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5134,6 +6591,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products |",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5148,6 +6609,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Pulmonary, Allergy, and Rheumatology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5162,6 +6627,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-27",
    "orange_book_trade_name": "Jatenzo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5176,6 +6645,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-06-21",
    "orange_book_trade_name": "Daptomycin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anti-Infective Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5190,6 +6663,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-15",
    "orange_book_trade_name": "Efavirenz, Lamivudine And Tenofovir Disoproxil Fumarate",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Antiviral Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5204,6 +6681,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5218,6 +6699,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-05-02",
    "orange_book_trade_name": "Bortezomib",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5232,6 +6717,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-05-23",
    "orange_book_trade_name": "Brixadi",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5246,6 +6735,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-03-01",
    "orange_book_trade_name": "Combogesic",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, And Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5260,6 +6753,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-14",
    "orange_book_trade_name": "Twirla",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5274,6 +6771,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-15",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5288,6 +6789,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-05-02",
    "orange_book_trade_name": "Bortezomib",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5302,6 +6807,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-08-19",
    "orange_book_trade_name": "Cligavyx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products |",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5316,6 +6825,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-09-28",
    "orange_book_trade_name": "Xyosted (Autoinjector)",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5330,6 +6843,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-11-02",
    "orange_book_trade_name": "Dsuvia",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5344,6 +6861,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-02-18",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5358,6 +6879,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-08-21",
    "orange_book_trade_name": "Pemetrexed",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 2",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5372,6 +6897,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-08-08",
    "orange_book_trade_name": "Soluprep S",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonprescription Drug Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5386,6 +6915,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-05-26",
    "orange_book_trade_name": "Vesicare Ls",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5400,6 +6933,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-08-08",
    "orange_book_trade_name": "Jornay Pm",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5414,6 +6951,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5428,6 +6969,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-11-30",
    "orange_book_trade_name": "Dextenza",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5442,6 +6987,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5456,6 +7005,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-03-13",
    "orange_book_trade_name": "Romidepsin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5470,6 +7023,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-07-30",
    "orange_book_trade_name": "Remodulin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5484,6 +7041,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-07-16",
    "orange_book_trade_name": "Infugem",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 2",
+   "signing_office_as_printed": "Office of Hematology and Oncology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5498,6 +7059,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-05-29",
    "orange_book_trade_name": "Imvexxy",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive, and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5512,6 +7077,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-12-19",
    "orange_book_trade_name": "Licart",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5526,6 +7095,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-12-20",
    "orange_book_trade_name": "Elepsia Xr",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5540,6 +7113,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-03-07",
    "orange_book_trade_name": "Rextovy",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IT",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5554,6 +7131,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-15",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5568,6 +7149,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-09-18",
    "orange_book_trade_name": "Ozobax",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5582,6 +7167,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-11-07",
    "orange_book_trade_name": "Primatene Mist",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonprescription Drug Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5596,6 +7185,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-09-12",
    "orange_book_trade_name": "Xelpros",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5610,6 +7203,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-04-29",
    "orange_book_trade_name": "Milprosa",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive, and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5624,6 +7221,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-06-03",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5638,6 +7239,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-07-30",
    "orange_book_trade_name": "Remodulin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5652,6 +7257,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-09-07",
    "orange_book_trade_name": "Cassipa",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5666,6 +7275,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-10-10",
    "orange_book_trade_name": "Fluorodopa F18",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5680,6 +7293,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-07-24",
    "orange_book_trade_name": "Xeglyze",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5694,6 +7311,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-11-30",
    "orange_book_trade_name": "Dextenza",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5708,6 +7329,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-29",
    "orange_book_trade_name": "Avaclyr",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5722,6 +7347,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5736,6 +7365,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-12-18",
    "orange_book_trade_name": "Ezallor Sprinkle",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5750,6 +7383,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-03-13",
    "orange_book_trade_name": "Romidepsin",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5764,6 +7401,10 @@
    "orange_book_nda_first_approval_after_letter": "2017-04-03",
    "orange_book_trade_name": "Austedo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5778,6 +7419,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-02-28",
    "orange_book_trade_name": "Ztlido",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5792,6 +7437,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-08-08",
    "orange_book_trade_name": "Soluprep S",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonprescription Drug Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5806,6 +7455,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-10-04",
    "orange_book_trade_name": "Bortezomib",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5820,6 +7473,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-05-22",
    "orange_book_trade_name": "Phexx",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5834,6 +7491,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-06-26",
    "orange_book_trade_name": "Mycapssa",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5848,6 +7509,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-15",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5862,6 +7527,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-06-21",
    "orange_book_trade_name": "Ablysinol",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5876,6 +7545,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-07-16",
    "orange_book_trade_name": "Infugem",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 2",
+   "signing_office_as_printed": "Office of Hematology and Oncology",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5890,6 +7563,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-12-20",
    "orange_book_trade_name": "Elepsia Xr",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5904,6 +7581,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5918,6 +7599,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-09-12",
    "orange_book_trade_name": "Xelpros",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5932,6 +7617,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-08-28",
    "orange_book_trade_name": "Leuprolide Acetate For Depot Suspension",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5946,6 +7635,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-06-03",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5960,6 +7653,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-01-15",
    "orange_book_trade_name": "Acetaminophen",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5974,6 +7671,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-06-21",
    "orange_book_trade_name": "Nocdurna",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -5988,6 +7689,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-10-04",
    "orange_book_trade_name": "Bortezomib",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Hematology Products",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6002,6 +7707,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-09-12",
    "orange_book_trade_name": "Xelpros",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6016,6 +7725,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-27",
    "orange_book_trade_name": "Jatenzo",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6030,6 +7743,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-11-07",
    "orange_book_trade_name": "Primatene Mist",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Nonprescription Clinical Evaluation",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6044,6 +7761,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-29",
    "orange_book_trade_name": "Avaclyr",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Transplant and Ophthalmology Products",
+   "signing_office_as_printed": "Office of Antimicrobial Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6058,6 +7779,10 @@
    "orange_book_nda_first_approval_after_letter": "2021-02-01",
    "orange_book_trade_name": "Posimir",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia, and Addiction Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6072,6 +7797,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-04-14",
    "orange_book_trade_name": "Rizafilm",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6086,6 +7815,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-02-08",
    "orange_book_trade_name": "Radiogenix System",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Medical Imaging Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6100,6 +7833,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-10-10",
    "orange_book_trade_name": "Fluorodopa F18",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation IV",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6114,6 +7851,10 @@
    "orange_book_nda_first_approval_after_letter": "2023-08-14",
    "orange_book_trade_name": "Hepzato",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6128,6 +7869,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-14",
    "orange_book_trade_name": "Twirla",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Bone, Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6142,6 +7887,10 @@
    "orange_book_nda_first_approval_after_letter": "2014-08-13",
    "orange_book_trade_name": "Belsomra",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6156,6 +7905,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-12-20",
    "orange_book_trade_name": "Genosyl",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Cardiovascular and Renal Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6170,6 +7923,10 @@
    "orange_book_nda_first_approval_after_letter": "",
    "orange_book_trade_name": "",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6184,6 +7941,10 @@
    "orange_book_nda_first_approval_after_letter": "2013-09-16",
    "orange_book_trade_name": "Cyclophosphamide",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Oncology Products 1",
+   "signing_office_as_printed": "Office of Hematology and Oncology Products",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6198,6 +7959,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-12-20",
    "orange_book_trade_name": "Elepsia Xr",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6212,6 +7977,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-10-30",
    "orange_book_trade_name": "Bronchitol",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Pulmonary, Allergy, Rheumatology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6226,6 +7995,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-02-14",
    "orange_book_trade_name": "Twirla",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IIT",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6240,6 +8013,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-06-21",
    "orange_book_trade_name": "Nocdurna",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation IT",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6254,6 +8031,10 @@
    "orange_book_nda_first_approval_after_letter": "2013-02-28",
    "orange_book_trade_name": "Abilify Maintena Kit",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Psychiatry Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6268,6 +8049,10 @@
    "orange_book_nda_first_approval_after_letter": "2014-02-18",
    "orange_book_trade_name": "Northera",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6282,6 +8067,10 @@
    "orange_book_nda_first_approval_after_letter": "2014-01-08",
    "orange_book_trade_name": "Farxiga",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6296,6 +8085,10 @@
    "orange_book_nda_first_approval_after_letter": "2020-04-29",
    "orange_book_trade_name": "Milprosa",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Reproductive and Urologic Products",
+   "signing_office_as_printed": "Office of Drug Evaluation III",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6310,6 +8103,10 @@
    "orange_book_nda_first_approval_after_letter": "2019-03-29",
    "orange_book_trade_name": "Mavenclad",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6324,6 +8121,10 @@
    "orange_book_nda_first_approval_after_letter": "2018-06-21",
    "orange_book_trade_name": "Nocdurna",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Metabolism and Endocrinology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6338,6 +8139,10 @@
    "orange_book_nda_first_approval_after_letter": "2010-11-02",
    "orange_book_trade_name": "Ofirmev",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Anesthesia, Analgesia and Rheumatology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation II",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6352,6 +8157,10 @@
    "orange_book_nda_first_approval_after_letter": "2022-09-14",
    "orange_book_trade_name": "Terlivaz",
    "deficiency_sections": "",
+   "signing_division_as_printed": "",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   },
   {
@@ -6366,6 +8175,10 @@
    "orange_book_nda_first_approval_after_letter": "2010-06-29",
    "orange_book_trade_name": "Alsuma (Autoinjector)",
    "deficiency_sections": "",
+   "signing_division_as_printed": "Division of Neurology Products",
+   "signing_office_as_printed": "Office of Drug Evaluation I",
+   "signing_center": "CDER",
+   "signer_name_shown_as_b4": false,
    "pdufa_bio_page": ""
   }
  ]
