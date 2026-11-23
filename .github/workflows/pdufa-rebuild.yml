@@ -460,6 +460,7 @@ jobs:
           python build_crl_offices.py     # 2026-11-22: /crl/offices, the FDA division and office each letter's signature names
           python build_crl_letters.py     # 2026-11-23: /crl/letter/<slug>, one page per released CRL with the FDA's own text
           python build_crl_phrases.py     # 2026-11-23: /crl/phrases, which released CRLs contain which regulatory terms
+          python build_crl_review_clock.py || echo "::warning::/crl/review-clock not rebuilt"   # 2026-11-23: days between the dates each CRL prints (after the slug ledger)
           python build_crl_dataset.py     # 2026-11-22 (moat move 6): /crl/data CSV and JSON, a dated copy per FDA release
 
 
@@ -1272,6 +1273,7 @@ jobs:
           git add runup_study_stats.json pdufa_runup_bifrost_v2.csv runup_study_exclusions.json runup_t120_short.json _sitemap_lastmod.json _decision_published.json _decision_first_recorded.json _crl_first_seen.json _crl_letter_slugs.json _row_history.json
           git add -f runup_study_excluded.csv   # .gitignore has *.csv; this one is the study's audit trail of removed rows
           git add -f pdufa_site_src/crl/data/crl-letters.csv 2>/dev/null || true   # *.csv is ignored; the CRL dataset download
+          git add -f pdufa_site_src/crl/data/crl-review-clock.csv 2>/dev/null || true   # /crl/review-clock download
           git add -f pdufa_site_src/changes/data/row-history.csv 2>/dev/null || true   # *.csv is ignored; the /changes download
           git add -f pdufa_site_src/research/fda-approval-weekdays/data/drugs-at-fda-approval-dates.csv pdufa_site_src/research/fda-approval-weekdays/data/orange-book-nda-dates.csv _fda_approval_weekdays.json 2>/dev/null || true   # the weekday study's download and guard file
           git add -f pdufa_site_src/fda-approvals/data/approvals-by-company.csv 2>/dev/null || true   # /fda-approvals/companies download

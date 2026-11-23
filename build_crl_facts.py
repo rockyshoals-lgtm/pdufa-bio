@@ -276,7 +276,8 @@ def main():
              f'anyone can redo it. Counts and date differences only: no approval rates, no predictions. '
              f'<a href="/crl">Every letter, by year</a>; <a href="/crl/companies">every CRL, by company</a>; '
              f'<a href="/crl/offices">which FDA office signed each</a>; <a href="/crl/phrases">what the letters '
-             f'say, term by term</a>; <a href="/feed">new letters by feed</a>.</p>')
+             f'say, term by term</a>; <a href="/crl/review-clock">days from receipt to each letter, by the letters\' own '
+             f'dates</a>; <a href="/feed">new letters by feed</a>.</p>')
 
     B.append('<h2>Letters in the release, by year</h2><table><tr><th>Letter year</th><th>Complete Response Letters</th></tr>')
     for y in sorted(by_year, reverse=True):
