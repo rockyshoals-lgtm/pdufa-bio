@@ -3755,8 +3755,254 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/crl/letter/nda-220045-2026-04-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220049-2025-08-18": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220054-2026-10-19": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220138-2026-06-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220140-2026-03-05": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220184-2025-12-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220283-2026-05-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220304-2026-04-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220381-2026-07-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220544-2026-07-02": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220707-2026-02-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-220748-2026-06-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/crl/offices": {
 "checked": "2026-11-22",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/accelerated-approval": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/adequate-and-well-controlled": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/advisory-committee": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/bioequivalence": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/biosimilar": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/carcinogenicity": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/comparability": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/confirmatory-trial": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/container-closure": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/device-constituent": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/dissolution": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/drug-master-file": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/end-of-review-meeting": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/extractables-and-leachables": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/form-fda-483": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/human-factors": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/immunogenicity": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/impurities": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/liver-injury": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/microbiology": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/post-hoc": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/pre-approval-inspection": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/qt": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/rems": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/stability-data": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/statistical-analysis-plan": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/sterility": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrase/substantial-evidence-of-effectiveness": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/phrases": {
+"checked": "2026-11-23",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -11112,7 +11358,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/GILD-anito-cel": {
-"checked": "2026-11-20",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -11895,6 +12141,12 @@
 "checked": "2026-11-20",
 "crawled": "2026-07-31",
 "state": "Crawled - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/research/fda-approval-weekdays": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/research/fda-decision-timing": {
