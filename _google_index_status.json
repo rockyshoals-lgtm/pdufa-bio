@@ -125,6 +125,12 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/changes": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/clinical-trial-success-rates": {
 "checked": "2026-11-20",
 "crawled": "2026-09-25",
@@ -2909,6 +2915,846 @@
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
 },
+"/crl/letter/nda-212937-2021-11-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213072-2020-05-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213135-2020-03-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213218-2020-01-10": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213260-2020-10-16": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213378-original-1-2020-11-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213426-2020-06-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213478-2020-08-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213586-2022-04-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213593-2021-01-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213645-2021-04-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213895-2020-03-20": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213931-2021-07-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213953-2021-10-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213972-2021-07-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-213976-2021-12-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214012-2020-12-18": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214273-2021-05-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214315-2024-01-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214324-2021-10-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214375-2021-10-05": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214429-2020-11-12": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214439-2021-04-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214520-2021-02-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214520-2022-08-04": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214522-2021-02-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214581-2021-02-12": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214610-2024-12-11": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214610-2026-02-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214628-2021-06-14": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214697-2023-09-19": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214759-2021-07-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214835-2021-09-24": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214835-2022-07-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214835-2023-07-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214860-2022-06-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214927-2021-06-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214952-2021-08-05": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-214952-2022-04-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215000-2021-04-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215029-2024-07-11": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215040-2023-05-05": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215064-2022-02-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215092-2021-11-09": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215151-2023-02-07": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215179-2021-06-24": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215179-2022-04-14": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215192-2022-03-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215212-2021-09-14": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215244-2025-05-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215291-2024-01-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215320-2022-06-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215344-2022-06-06": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215352-2021-10-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215455-2024-08-08": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215559-2022-12-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215644-2024-10-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215644-2025-06-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215721-2023-01-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215749-2024-03-07": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215783-2025-12-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215818-2025-04-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215818-2026-02-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215973-2022-02-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-215974-2022-02-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216190-2024-03-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216195-2024-07-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216195-2025-10-07": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216195-2026-08-18": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216442-2025-04-02": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216442-2026-03-16": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216482-2023-01-06": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216490-2023-04-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216586-2024-05-16": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216586-2025-03-20": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216586-2026-07-09": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216686-2022-10-19": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216900-2026-06-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216962-2023-03-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216962-2024-06-18": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216987-2024-05-10": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-216987-2025-11-06": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217002-2024-02-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217186-2023-06-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217202-2023-05-31": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217225-s-001-2024-11-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217294-2024-01-12": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217338-2024-07-26": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217347-2023-09-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217363-2026-05-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217379-2024-06-14": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217382-2025-06-02": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217433-2024-07-15": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217556-2024-02-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217644-2026-06-04": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217711-2025-08-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217719-2025-03-10": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-217724-2024-10-08": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218026-2024-08-16": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218223-2024-03-08": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218224-2024-03-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218258-2024-01-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218317-2024-05-24": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218317-2025-10-21": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218345-2024-07-01": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218345-2025-04-02": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218353-2025-04-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218408-2024-03-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218470-2024-01-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218506-2024-06-13": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218528-2024-01-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218571-2025-03-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218592-2025-04-25": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218600-2024-10-21": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218600-2026-06-10": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218607-2025-06-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218607-2026-06-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218679-2025-08-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218698-2024-06-12": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218705-2026-08-07": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218762-2024-04-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218762-2024-12-05": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218772-2024-08-19": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218828-2024-12-19": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218879-2025-01-03": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218923-2024-10-10": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218923-2025-07-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-218995-2026-06-20": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219029-2025-05-29": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219045-2024-10-21": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219107-2026-07-21": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219112-2025-01-17": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219122-2024-11-04": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219195-2024-11-27": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219357-2024-12-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219398-2026-01-28": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219624-2025-12-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219694-2025-10-22": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219846-2025-10-23": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
+"/crl/letter/nda-219870-2026-01-30": {
+"checked": "2026-11-23",
+"crawled": null,
+"state": "URL is unknown to Google",
+"verdict": "NEUTRAL"
+},
 "/crl/offices": {
 "checked": "2026-11-22",
 "crawled": null,
@@ -2928,7 +3774,7 @@
 "verdict": "NEUTRAL"
 },
 "/decisions/2026": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -7152,7 +7998,7 @@
 "verdict": "PASS"
 },
 "/fda-approval-letters": {
-"checked": "2026-11-21",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -10212,9 +11058,9 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/CORT-relacorilant": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
-"state": "Discovered - currently not indexed",
+"state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
 "/pdufa/CYTK": {
@@ -10434,7 +11280,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/MLYS-lorundrostat": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -10728,7 +11574,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/RHHBY-giredestrant": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -10836,7 +11682,7 @@
 "verdict": "PASS"
 },
 "/pdufa/VNDA-imsidolimab": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -10848,7 +11694,7 @@
 "verdict": "NEUTRAL"
 },
 "/pdufa/VRTX-povetacicept": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
@@ -11028,7 +11874,7 @@
 "verdict": "NEUTRAL"
 },
 "/readouts/oncology": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
@@ -11100,7 +11946,7 @@
 "verdict": "PASS"
 },
 "/sitemap": {
-"checked": "2026-11-22",
+"checked": "2026-11-23",
 "crawled": null,
 "state": "Discovered - currently not indexed",
 "verdict": "NEUTRAL"
