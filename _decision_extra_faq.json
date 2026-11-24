@@ -223,5 +223,19 @@
    "Was the Klygefa decision early or late?",
    "pdufa.bio holds no publicly disclosed PDUFA goal date for this application, so no margin is given. The FDA letter states that the application was received on November 13, 2025."
   ]
+ ],
+ "BBIO-2026-11-23": [
+  [
+   "Was BBP-418 (ribitol) approved by the FDA?",
+   "Yes. BridgeBio announced on November 23, 2026 that the FDA granted traditional (full) approval to Welgemda (BBP-418, ribitol) for limb-girdle muscular dystrophy type 2I/R9 in adult and pediatric patients weighing at least 30 kg."
+  ],
+  [
+   "Was the Welgemda decision early?",
+   "BridgeBio announced the approval on November 23, 2026, four days before the November 27, 2026 PDUFA goal date it had disclosed. pdufa.bio publishes a margin only from the FDA's own record of the action day, which had not been read when this page was published."
+  ],
+  [
+   "What did the FORTIFY trial show?",
+   "Per BridgeBio, at 12 months the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo (p<0.0001), and forced vital capacity (percent predicted) a 4.89% benefit (p=0.0071)."
+  ]
  ]
 }
