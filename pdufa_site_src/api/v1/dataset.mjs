@@ -10320,12 +10320,12 @@ export default [
   "type": "PDUFA",
   "ta": "",
   "cap": "Large",
-  "st": "Upcoming",
-  "url": "/pdufa/BBIO-bbp-418",
-  "ua": "2026-11-23T10:32:03Z",
+  "st": "Decided",
+  "url": "/fda-decision/BBIO-2026-11-23",
+  "ua": "2026-11-24T01:17:02Z",
   "_d": {
    "nct_id": null,
-   "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9)",
+   "indication": "Limb-girdle muscular dystrophy type 2I/R9 (LGMD2I/R9) in adult and pediatric patients weighing at least 30 kg",
    "market_cap_usd": 14810720030.0,
    "cash_runway_months": 25.4,
    "days_to_decision": 140,
@@ -10344,8 +10344,21 @@ export default [
    },
    "source": "BridgeBio Pharma, Inc. 8-K 2026-08-10",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000026/bbio-20260630xex991.htm",
-   "source_quote": "the benefit of patients and healthcare delivery systems for which heart failure remains a top concern - All three planned NDAs are now submitted to the FDA BBP-418 for LGMD2I R9 was accepted with Priority Review (PDUFA November 27, 2026) encaleret for ADH1 was accepted with Priority Review (PDUFA May 8, 2027), with no advisory committee planned for eithe"
-  }
+   "source_quote": "the benefit of patients and healthcare delivery systems for which heart failure remains a top concern - All three planned NDAs are now submitted to the FDA BBP-418 for LGMD2I R9 was accepted with Priority Review (PDUFA November 27, 2026) encaleret for ADH1 was accepted with Priority Review (PDUFA May 8, 2027), with no advisory committee planned for eithe",
+   "brand": "Welgemda",
+   "inn": "ribitol",
+   "trial": "FORTIFY",
+   "decision_source": "BridgeBio 8-K Exhibit 99.1, November 23, 2026 (SEC EDGAR)",
+   "decision_source_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm",
+   "decision_date_unsourced": true,
+   "decision_quote": "BridgeBio Pharma, Inc. (Nasdaq: BBIO) today announced that the FDA granted traditional (full) approval to Welgemda (BBP-418, ribitol)",
+   "decision_note": "BridgeBio announced the approval on November 23, 2026, four days before the November 27, 2026 goal date it disclosed. The FDA's own record of the action day was not read when this row was updated, so no early or late margin is published yet.",
+   "announcement": "BridgeBio 8-K Exhibit 99.1, November 23, 2026 (SEC EDGAR)",
+   "announcement_url": "https://www.sec.gov/Archives/edgar/data/1743881/000174388126000050/bbiowelgemdapdufa-ex991.htm",
+   "review": "NDA accepted with Priority Review, PDUFA goal date November 27, 2026 (BridgeBio 8-K, August 10, 2026). BridgeBio states the FDA granted traditional (full) approval. Per BridgeBio, in the Phase 3 FORTIFY trial the 100-meter timed test showed a 0.27 m/s velocity benefit relative to placebo at 12 months (p<0.0001), and forced vital capacity (percent predicted) a 4.89% benefit at 12 months (p=0.0071)."
+  },
+  "oc": "Approved",
+  "dcd": "2026-11-23"
  },
  {
   "id": "pdufa_pypd_2026-11-28",
