@@ -182,7 +182,10 @@ jobs:
       - name: Regenerate homepage board (sorted + sparklines w/ decision-day reaction + auto-promote)
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-        run: python build_home_board.py
+        # 2026-11-24: the listing first. The board drops a goal only when /decisions holds its decision, and the listing
+        # row for a new decision page was written further down, after the board. A decision page pushed without its
+        # listing row (Welgemda, BBIO 2026-11-23) left its goal on the board, and the home guard blocked every run.
+        run: python sync_decisions_listing.py && python build_home_board.py
 
       # 2026-11-18 (design red team, change 7): /calendar is committed shaped (open months first, decided months
       # folded, notes at the end). Every calendar writer below expects date order, so put the page back first;
