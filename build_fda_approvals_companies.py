@@ -143,7 +143,8 @@ def main():
     first_day, last_day = items[0]["day"], items[-1]["day"]
     reads = sorted(set(fetched.values()))
     read_txt = (f"read from openFDA on {reads[0]}" if len(reads) == 1 else
-                f"read from openFDA between {reads[0]} and {reads[-1]}, the latest months last")
+                f"read from openFDA between {reads[0]} and {reads[-1]} (each approval's read date is in the CSV's "
+                f"openfda_read_on column)")
     rows = sorted(groups.items(), key=lambda kv: (-len(kv[1]), labels[kv[0]].lower(), kv[0]))
     multi = sum(1 for _, xs in rows if len(xs) > 1)
 
@@ -176,7 +177,8 @@ def main():
          f'<p class="sub" data-acomp="method" style="font-size:13px">{esc(method)}</p>',
          f'<p class="sub">Every approval, one row each: <a href="/fda-approvals/data/approvals-by-company.csv">CSV</a>, '
          f'free under CC BY 4.0: cite pdufa.bio and link this page. By month: <a href="/fda-approvals">FDA approvals by '
-         f'month</a> &middot; letters: <a href="/crl/companies">Complete Response Letters by company</a></p>',
+         f'month</a> &middot; by drug: <a href="/fda-approvals/drugs">FDA approvals by drug application</a> &middot; '
+         f'letters: <a href="/crl/companies">Complete Response Letters by company</a></p>',
          '<table data-acomp="table"><tr><th>Sponsor</th><th>Original approvals</th><th>Efficacy supplements</th>'
          '<th>Latest action date</th></tr>']
     for k, xs in rows:

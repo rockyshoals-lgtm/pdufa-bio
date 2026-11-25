@@ -57,7 +57,7 @@ SITE_LINKS = [
     ("FDA approvals by month", "/fda-approvals"),
     # 2026-11-23: new pages each had 2-3 inbound links; Google URL Inspection showed /fda-approvals/companies
     # "URL is unknown to Google" and /research/fda-approval-weekdays "Discovered - currently not indexed"
-    ("FDA approvals by company", "/fda-approvals/companies"), ("Approval weekdays", "/research/fda-approval-weekdays"),
+    ("FDA approvals by company", "/fda-approvals/companies"), ("FDA approvals by drug", "/fda-approvals/drugs"), ("Approval weekdays", "/research/fda-approval-weekdays"),
     ("CRL review clock", "/crl/review-clock"), ("Dataset changes", "/changes"),
     ("FDA approval letters", "/fda-approval-letters"), ("Decision timing study", "/research/fda-decision-timing"),
     ("Run-up study", "/runup-by-year"), ("FDA approval rate", "/fda-approval-rate"), ("Oncology readouts", "/readouts/oncology"),

@@ -40,10 +40,10 @@ def main():
     src = io.open(os.path.join(SITE, "api", "v1", "dataset.mjs"), encoding="utf-8", errors="replace").read().replace("\x00", "")
     rows = json.loads(src[src.index("["):src.rindex("]") + 1])
     coarse = []
-    # 2026-11-25: a ticker can hold a day-precision row and a coarse row with the same end date (RHHBY: giredestrant
-    # lidERA goal November 30, dp=day; Gazyva MAJESTY window November 2026, d=2026-11-30, dp=month). The ticker then
-    # does not say which row a "November 30 goal date" sentence is about, so such a coarse row is matched by its
-    # drug name alone. Run 45545587232 blocked on the giredestrant sentence, which is correct.
+    # 2026-11-25: Roche had a coarse row (Gazyva, "November 2026") and a day row (adjuvant giredestrant, "by November
+    # 30") ending on the same day. The day row's correct "Ahead of its November 30 goal date ... (RHHBY)" sentence
+    # matched the coarse row on the ticker alone. Where a ticker has a day-precision row with the same goal day, the
+    # ticker says nothing about which row a sentence is for, so only the coarse row's drug name counts.
     day_rows = {(str(r.get("t") or "").upper(), str(r.get("d") or "")) for r in rows
                 if r.get("type") == "PDUFA" and (r.get("dp") or "day") == "day"}
     for r in rows:
@@ -68,8 +68,8 @@ def main():
         for tk, first, label, d, shared in coarse:
             for m in re.finditer(rf"(?:{re.escape(label)},? \d{{4}} goal date|{re.escape(label)} goal date|goal date of {re.escape(label)}|goal date, {re.escape(label)})", t):
                 win = t[max(0, m.start() - 220): m.end() + 220]
-                named = bool(first and len(first) > 4 and first in win.lower())
-                if named or (not shared and re.search(rf"\b{re.escape(tk)}\b", win)):
+                by_ticker = not shared and re.search(rf"\b{re.escape(tk)}\b", win)
+                if by_ticker or (first and len(first) > 4 and first in win.lower()):
                     fails.append(f"/{rel.replace('/index.html', '')}: '{m.group(0)}' stated for {tk} ({d}, precision != day)")
                     break
     if fails:
