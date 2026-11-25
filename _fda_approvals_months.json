@@ -6616,7 +6616,7 @@
 "complete": true
 },
 "2026-07": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA209092",
@@ -6908,7 +6908,7 @@
 "app": "NDA218145",
 "brand": "Simtriyo",
 "generic": "centanafadine hydrochloride",
-"sponsor": "Otsuka Pharmaceutical Co Ltd",
+"sponsor": "Otsuka",
 "kind": "new application",
 "sub": "ORIG-1",
 "class": "Type 1 - New Molecular Entity",
@@ -7003,10 +7003,12 @@
 "date": "2026-07-31",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761376Orig1s000ltr.pdf"
 }
-]
+],
+"openfda_total": 352,
+"complete": true
 },
 "2026-08": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220860",
@@ -7294,10 +7296,12 @@
 "date": "2026-08-28",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761044Orig1s021,125261Orig1s173ltr.pdf"
 }
-]
+],
+"openfda_total": 365,
+"complete": true
 },
 "2026-09": {
-"fetched": "2026-11-12",
+"fetched": "2026-11-25",
 "items": [
 {
 "app": "NDA220613",
@@ -7651,7 +7655,9 @@
 "date": "2026-09-30",
 "letter": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/214998Orig1s013ltr.pdf"
 }
-]
+],
+"openfda_total": 281,
+"complete": true
 },
 "2026-10": {
 "fetched": "2026-11-25",

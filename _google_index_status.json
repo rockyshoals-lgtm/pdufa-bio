@@ -8429,6 +8429,12 @@
 "state": "URL is unknown to Google",
 "verdict": "NEUTRAL"
 },
+"/fda-approvals/types": {
+"checked": "2026-11-25",
+"crawled": null,
+"state": "Discovered - currently not indexed",
+"verdict": "NEUTRAL"
+},
 "/fda-decision/ABBV-2025-02-07": {
 "checked": "2026-11-20",
 "crawled": null,
