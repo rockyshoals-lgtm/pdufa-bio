@@ -41,6 +41,16 @@ try:
 except Exception:  # noqa: BLE001
     eastern_today = dt.date.today
 from site_windows import is_day, window_label, window_span  # noqa: E402
+from strip_dashes import sweep as _sweep_dashes  # noqa: E402
+
+
+def _no_dash(text):
+    """The name as every other page prints it. strip_dashes.py rewrites em and en dashes across the site's HTML but skips
+    <script>, where this page keeps its rows, so a dataset name with a dash ("RAP-219 Phase 2a (RNS) \u2014 seizure
+    severity", 2026-11-25) printed one way here and another on /ticker/RAPP, and the screener guard blocked the rebuild.
+    The same sweep, applied before the 50-character cut, makes the two agree."""
+    import collections
+    return _sweep_dashes(text, collections.Counter()) if ("\u2014" in text or "\u2013" in text) else text
 
 
 def date_text(r):
@@ -61,7 +71,7 @@ def screener_row(r):
       a   1 when no FDA action date is on record and the row sits on the sponsor's announcement day (dcd);
       ar  the therapeutic area the dropdown filters on (ta folded onto one spelling; "Not classified" when empty)."""
     d = str(r.get("d") or "")
-    out = {"t": r.get("t") or "", "d": d, "name": str(r.get("name") or "")[:50], "type": r.get("type"),
+    out = {"t": r.get("t") or "", "d": d, "name": _no_dash(str(r.get("name") or ""))[:50], "type": r.get("type"),
            "ta": r.get("ta") or "", "cap": r.get("cap") or "", "st": r.get("st") or "",
            "url": r.get("url") or f"/ticker/{r.get('t')}"}
     out["ar"] = area(out["ta"])
