@@ -1,19 +1,7 @@
 {
- "as_of": "2026-11-23",
+ "as_of": "2026-11-24",
  "horizon_days": 60,
  "sponsors": {
-  "BBIO": {
-   "company": "BridgeBio Pharma, Inc.",
-   "goals": [
-    "2026-11-27"
-   ],
-   "channels": [
-    "sponsor_feed",
-    "edgar_8k",
-    "fda_feeds"
-   ],
-   "cik": 1743881
-  },
   "COGT": {
    "company": "Cogent Biosciences",
    "goals": [
